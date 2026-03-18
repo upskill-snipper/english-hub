@@ -1,7 +1,4 @@
--- The English Hub — Initial Database Schema
--- Run this in Supabase SQL Editor
-
--- Profiles (extends Supabase auth.users)
+-- Users table (extends Supabase auth.users)
 CREATE TABLE IF NOT EXISTS public.profiles (
   id UUID REFERENCES auth.users(id) ON DELETE CASCADE PRIMARY KEY,
   email TEXT NOT NULL,
@@ -15,7 +12,6 @@ CREATE TABLE IF NOT EXISTS public.profiles (
   updated_at TIMESTAMPTZ DEFAULT NOW()
 );
 
--- Courses
 CREATE TABLE IF NOT EXISTS public.courses (
   id TEXT PRIMARY KEY,
   title TEXT NOT NULL,
@@ -33,7 +29,6 @@ CREATE TABLE IF NOT EXISTS public.courses (
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
--- Modules
 CREATE TABLE IF NOT EXISTS public.modules (
   id TEXT PRIMARY KEY,
   course_id TEXT REFERENCES public.courses(id) ON DELETE CASCADE,
@@ -46,7 +41,6 @@ CREATE TABLE IF NOT EXISTS public.modules (
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
--- Quiz questions
 CREATE TABLE IF NOT EXISTS public.quiz_questions (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   module_id TEXT REFERENCES public.modules(id) ON DELETE CASCADE,
@@ -60,7 +54,6 @@ CREATE TABLE IF NOT EXISTS public.quiz_questions (
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
--- Enrolments
 CREATE TABLE IF NOT EXISTS public.enrolments (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   user_id UUID REFERENCES public.profiles(id) ON DELETE CASCADE,
@@ -71,7 +64,6 @@ CREATE TABLE IF NOT EXISTS public.enrolments (
   UNIQUE(user_id, course_id)
 );
 
--- Module progress
 CREATE TABLE IF NOT EXISTS public.module_progress (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   user_id UUID REFERENCES public.profiles(id) ON DELETE CASCADE,
@@ -85,7 +77,6 @@ CREATE TABLE IF NOT EXISTS public.module_progress (
   UNIQUE(user_id, module_id)
 );
 
--- Assessment attempts
 CREATE TABLE IF NOT EXISTS public.assessment_attempts (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   user_id UUID REFERENCES public.profiles(id) ON DELETE CASCADE,
@@ -97,7 +88,6 @@ CREATE TABLE IF NOT EXISTS public.assessment_attempts (
   attempted_at TIMESTAMPTZ DEFAULT NOW()
 );
 
--- Certificates
 CREATE TABLE IF NOT EXISTS public.certificates (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   user_id UUID REFERENCES public.profiles(id) ON DELETE CASCADE,
@@ -105,10 +95,10 @@ CREATE TABLE IF NOT EXISTS public.certificates (
   assessment_attempt_id UUID REFERENCES public.assessment_attempts(id),
   score INTEGER NOT NULL,
   grade TEXT CHECK (grade IN ('Pass','Merit','Distinction')),
-  issued_at TIMESTAMPTZ DEFAULT NOW()
+  issued_at TIMESTAMPTZ DEFAULT NOW(),
+  verification_url TEXT GENERATED ALWAYS AS ('https://theenglishhub.app/verify/' || id::TEXT) STORED
 );
 
--- Practice sessions
 CREATE TABLE IF NOT EXISTS public.practice_sessions (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   user_id UUID REFERENCES public.profiles(id) ON DELETE CASCADE,
@@ -122,16 +112,40 @@ CREATE TABLE IF NOT EXISTS public.practice_sessions (
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
--- Trigger: auto-create profile on user signup
+-- RLS
+ALTER TABLE public.profiles ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.enrolments ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.module_progress ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.assessment_attempts ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.certificates ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.practice_sessions ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.courses ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.modules ENABLE ROW LEVEL SECURITY;
+
+-- Policies
+CREATE POLICY "Users can view own profile" ON public.profiles FOR SELECT USING (auth.uid() = id);
+CREATE POLICY "Users can update own profile" ON public.profiles FOR UPDATE USING (auth.uid() = id);
+CREATE POLICY "Users can insert own profile" ON public.profiles FOR INSERT WITH CHECK (auth.uid() = id);
+CREATE POLICY "Users can view own enrolments" ON public.enrolments FOR SELECT USING (auth.uid() = user_id);
+CREATE POLICY "Users can insert own enrolments" ON public.enrolments FOR INSERT WITH CHECK (auth.uid() = user_id);
+CREATE POLICY "Users can manage own progress" ON public.module_progress FOR ALL USING (auth.uid() = user_id);
+CREATE POLICY "Users can manage own assessments" ON public.assessment_attempts FOR ALL USING (auth.uid() = user_id);
+CREATE POLICY "Users can view own certificates" ON public.certificates FOR SELECT USING (auth.uid() = user_id);
+CREATE POLICY "Users can insert own certificates" ON public.certificates FOR INSERT WITH CHECK (auth.uid() = user_id);
+CREATE POLICY "Public can verify certificates" ON public.certificates FOR SELECT USING (TRUE);
+CREATE POLICY "Courses are public" ON public.courses FOR SELECT USING (published = TRUE);
+CREATE POLICY "Modules preview public" ON public.modules FOR SELECT USING (is_preview = TRUE);
+CREATE POLICY "Enrolled users view modules" ON public.modules FOR SELECT USING (
+  EXISTS (SELECT 1 FROM public.enrolments WHERE user_id = auth.uid() AND course_id = modules.course_id)
+);
+CREATE POLICY "Users can manage own practice" ON public.practice_sessions FOR ALL USING (auth.uid() = user_id);
+
+-- Trigger: auto-create profile on signup
 CREATE OR REPLACE FUNCTION public.handle_new_user()
-RETURNS trigger AS $$
+RETURNS TRIGGER AS $$
 BEGIN
   INSERT INTO public.profiles (id, email, full_name)
-  VALUES (
-    NEW.id,
-    NEW.email,
-    COALESCE(NEW.raw_user_meta_data->>'full_name', NEW.email)
-  );
+  VALUES (NEW.id, NEW.email, NEW.raw_user_meta_data->>'full_name');
   RETURN NEW;
 END;
 $$ LANGUAGE plpgsql SECURITY DEFINER;
@@ -140,46 +154,3 @@ DROP TRIGGER IF EXISTS on_auth_user_created ON auth.users;
 CREATE TRIGGER on_auth_user_created
   AFTER INSERT ON auth.users
   FOR EACH ROW EXECUTE FUNCTION public.handle_new_user();
-
--- Row Level Security
-ALTER TABLE public.profiles ENABLE ROW LEVEL SECURITY;
-ALTER TABLE public.enrolments ENABLE ROW LEVEL SECURITY;
-ALTER TABLE public.module_progress ENABLE ROW LEVEL SECURITY;
-ALTER TABLE public.assessment_attempts ENABLE ROW LEVEL SECURITY;
-ALTER TABLE public.certificates ENABLE ROW LEVEL SECURITY;
-ALTER TABLE public.practice_sessions ENABLE ROW LEVEL SECURITY;
-
--- RLS Policies
-CREATE POLICY "Users can view own profile" ON public.profiles FOR SELECT USING (auth.uid() = id);
-CREATE POLICY "Users can update own profile" ON public.profiles FOR UPDATE USING (auth.uid() = id);
-CREATE POLICY "Service role full access profiles" ON public.profiles FOR ALL USING (auth.role() = 'service_role');
-
-CREATE POLICY "Users can view own enrolments" ON public.enrolments FOR SELECT USING (auth.uid() = user_id);
-CREATE POLICY "Users can insert own enrolments" ON public.enrolments FOR INSERT WITH CHECK (auth.uid() = user_id);
-CREATE POLICY "Service role full access enrolments" ON public.enrolments FOR ALL USING (auth.role() = 'service_role');
-
-CREATE POLICY "Users can manage own progress" ON public.module_progress FOR ALL USING (auth.uid() = user_id);
-CREATE POLICY "Users can manage own assessments" ON public.assessment_attempts FOR ALL USING (auth.uid() = user_id);
-CREATE POLICY "Users can view own certificates" ON public.certificates FOR SELECT USING (auth.uid() = user_id);
-CREATE POLICY "Public can verify certificates" ON public.certificates FOR SELECT USING (TRUE);
-CREATE POLICY "Service role full access certificates" ON public.certificates FOR ALL USING (auth.role() = 'service_role');
-CREATE POLICY "Users can manage own practice" ON public.practice_sessions FOR ALL USING (auth.uid() = user_id);
-
--- Public read for published courses and preview modules
-ALTER TABLE public.courses ENABLE ROW LEVEL SECURITY;
-ALTER TABLE public.modules ENABLE ROW LEVEL SECURITY;
-ALTER TABLE public.quiz_questions ENABLE ROW LEVEL SECURITY;
-
-CREATE POLICY "Anyone can view published courses" ON public.courses FOR SELECT USING (published = TRUE);
-CREATE POLICY "Service role full access courses" ON public.courses FOR ALL USING (auth.role() = 'service_role');
-
-CREATE POLICY "Preview modules public" ON public.modules FOR SELECT USING (is_preview = TRUE);
-CREATE POLICY "Enrolled users can view modules" ON public.modules FOR SELECT USING (
-  EXISTS (SELECT 1 FROM public.enrolments WHERE user_id = auth.uid() AND course_id = modules.course_id)
-);
-CREATE POLICY "Service role full access modules" ON public.modules FOR ALL USING (auth.role() = 'service_role');
-
-CREATE POLICY "Enrolled users can view quiz questions" ON public.quiz_questions FOR SELECT USING (
-  EXISTS (SELECT 1 FROM public.enrolments WHERE user_id = auth.uid() AND course_id = quiz_questions.course_id)
-);
-CREATE POLICY "Service role full access questions" ON public.quiz_questions FOR ALL USING (auth.role() = 'service_role');
