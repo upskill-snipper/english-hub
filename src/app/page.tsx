@@ -41,6 +41,8 @@ function PricingToggle({
       </span>
       <button
         onClick={() => setAnnual(!annual)}
+        role="switch"
+        aria-checked={annual}
         className={`relative w-14 h-7 rounded-full transition-colors duration-300 ${
           annual ? 'bg-brand-accent' : 'bg-brand-border'
         }`}
@@ -99,6 +101,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
     <div className="border border-brand-border rounded-xl overflow-hidden">
       <button
         onClick={() => setOpen(!open)}
+        aria-expanded={open}
         className="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-brand-card/60 transition-colors duration-200"
       >
         <span className="font-medium text-brand-text pr-4">{q}</span>
@@ -127,7 +130,7 @@ export default function Home() {
   const [annual, setAnnual] = useState(true)
 
   return (
-    <div className="min-h-screen bg-brand-bg">
+    <main id="main-content" className="min-h-screen bg-brand-bg">
       {/* ━━━ HERO ━━━ */}
       <section className="relative overflow-hidden pt-20 pb-24 sm:pt-28 sm:pb-32">
         {/* Glow effect */}
@@ -137,7 +140,7 @@ export default function Home() {
         <div className="relative max-w-4xl mx-auto px-6 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-accent/30 bg-brand-accent/10 text-brand-accent text-sm font-medium mb-8">
             <Sparkles className="w-4 h-4" />
-            New: GCSE 2025 Revision Guides Now Live
+            New: GCSE 2026 Revision Guides Now Live
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-brand-text leading-tight tracking-tight">
@@ -176,7 +179,7 @@ export default function Home() {
                 <BookOpen className="w-5 h-5 text-brand-accent" />
               </div>
               <div>
-                <p className="text-xl font-bold text-brand-text">8+</p>
+                <p className="text-xl font-bold text-brand-text">15+</p>
                 <p className="text-xs text-brand-muted">Courses</p>
               </div>
             </div>
@@ -360,7 +363,23 @@ export default function Home() {
                 levelColor: 'bg-purple-500/20 text-purple-400',
                 price: '£39',
                 duration: '7 weeks',
-                desc: 'Power & Conflict, Love & Relationships, and unseen poetry mastery.',
+                desc: 'Power & Conflict, Love & Relationships, Edexcel Anthology, and unseen poetry mastery.',
+              },
+              {
+                title: 'Edexcel Language Paper 1',
+                level: 'GCSE',
+                levelColor: 'bg-brand-accent/20 text-brand-accent',
+                price: '£49',
+                duration: '8 weeks',
+                desc: 'Master 19th-century non-fiction analysis and transactional writing for Edexcel 1EN2.',
+              },
+              {
+                title: 'Edexcel Literature Paper 1',
+                level: 'GCSE',
+                levelColor: 'bg-purple-500/20 text-purple-400',
+                price: '£49',
+                duration: '8 weeks',
+                desc: 'Shakespeare and Post-1914 Literature with extract-based response techniques.',
               },
               {
                 title: 'GCSE Revision Blitz',
@@ -503,7 +522,7 @@ export default function Home() {
                 href="/auth/register"
                 className="btn-primary w-full text-center"
               >
-                Start Free Trial
+                Get Pro Access
               </Link>
             </div>
 
@@ -664,12 +683,12 @@ export default function Home() {
             {/* Links */}
             <div className="flex flex-wrap gap-x-8 gap-y-3 text-sm">
               {[
-                { label: 'About', href: '/about' },
                 { label: 'Courses', href: '/courses' },
                 { label: 'Practice', href: '/practice' },
-                { label: 'Contact', href: '/contact' },
-                { label: 'Privacy Policy', href: '/privacy' },
-                { label: 'Terms', href: '/terms' },
+                { label: 'Revision', href: '/revision' },
+                { label: 'Dashboard', href: '/dashboard' },
+                { label: 'Login', href: '/auth/login' },
+                { label: 'Register', href: '/auth/register' },
               ].map((link) => (
                 <Link
                   key={link.label}
@@ -683,10 +702,10 @@ export default function Home() {
           </div>
 
           <div className="mt-10 pt-6 border-t border-brand-border text-center text-xs text-brand-muted">
-            &copy; 2024 The English Hub. All rights reserved.
+            &copy; {new Date().getFullYear()} The English Hub. All rights reserved.
           </div>
         </div>
       </footer>
-    </div>
+    </main>
   )
 }

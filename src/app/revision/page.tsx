@@ -18,6 +18,7 @@ import {
 } from 'lucide-react'
 import { flashcardDecks, type FlashcardDeck } from '@/data/flashcard-data'
 import { techniques, type Technique } from '@/data/techniques-data'
+import { shuffleArray } from '@/lib/utils'
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 
@@ -28,17 +29,6 @@ interface CardStatus {
 }
 
 type View = 'decks' | 'study' | 'summary'
-
-// ─── Helpers ────────────────────────────────────────────────────────────────
-
-function shuffleArray<T>(arr: T[]): T[] {
-  const a = [...arr]
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[a[i], a[j]] = [a[j], a[i]]
-  }
-  return a
-}
 
 // ─── Technique categories from data ─────────────────────────────────────────
 
@@ -58,6 +48,18 @@ export default function RevisionPage() {
   const [flipped, setFlipped] = useState(false)
   const [isShuffled, setIsShuffled] = useState(false)
   const [cardStatus, setCardStatus] = useState<CardStatus>({})
+
+  // ── Deck filter state ─────────────────────────────────────────────────
+  const [deckFilter, setDeckFilter] = useState('All')
+  const DECK_BOARDS = ['All', 'AQA', 'Edexcel', 'Universal'] as const
+
+  const filteredDecks = useMemo(() => {
+    return flashcardDecks.filter((d) => {
+      if (deckFilter === 'All') return true
+      if (deckFilter === 'Universal') return d.board === 'All'
+      return d.board === deckFilter
+    })
+  }, [deckFilter])
 
   // ── Technique state ────────────────────────────────────────────────────
   const [techSearch, setTechSearch] = useState('')
@@ -177,7 +179,7 @@ export default function RevisionPage() {
   // ── Render ─────────────────────────────────────────────────────────────
 
   return (
-    <div className="min-h-screen pb-20">
+    <main id="main-content" className="min-h-screen pb-20">
       {/* Header */}
       <div className="border-b border-brand-border bg-brand-card/50">
         <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
@@ -198,12 +200,30 @@ export default function RevisionPage() {
         {/* ── Deck Selector ───────────────────────────────────────────── */}
         {view === 'decks' && (
           <section className="mb-16">
-            <h2 className="mb-6 flex items-center gap-2 text-xl font-bold text-brand-text">
+            <h2 className="mb-4 flex items-center gap-2 text-xl font-bold text-brand-text">
               <Layers className="h-5 w-5 text-brand-accent" />
               Flashcard Decks
             </h2>
+
+            {/* Board filter pills */}
+            <div className="mb-6 flex flex-wrap gap-2">
+              {DECK_BOARDS.map((board) => (
+                <button
+                  key={board}
+                  onClick={() => setDeckFilter(board)}
+                  className={`rounded-full px-3.5 py-1.5 text-xs font-medium transition-colors ${
+                    deckFilter === board
+                      ? 'bg-brand-accent text-white'
+                      : 'bg-brand-border/50 text-brand-muted hover:bg-brand-border hover:text-brand-text'
+                  }`}
+                >
+                  {board}
+                </button>
+              ))}
+            </div>
+
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {flashcardDecks.map((deck) => (
+              {filteredDecks.map((deck) => (
                 <button
                   key={deck.id}
                   onClick={() => startDeck(deck)}
@@ -468,6 +488,7 @@ export default function RevisionPage() {
                   value={techSearch}
                   onChange={(e) => setTechSearch(e.target.value)}
                   placeholder="Search techniques..."
+                  aria-label="Search techniques"
                   className="input-field pl-10 text-sm sm:w-64"
                 />
               </div>
@@ -477,6 +498,7 @@ export default function RevisionPage() {
                 <select
                   value={techCategory}
                   onChange={(e) => setTechCategory(e.target.value)}
+                  aria-label="Filter by category"
                   className="input-field appearance-none pl-10 pr-8 text-sm"
                 >
                   {techCategories.map((c) => (
@@ -512,7 +534,7 @@ export default function RevisionPage() {
           )}
         </section>
       </div>
-    </div>
+    </main>
   )
 }
 

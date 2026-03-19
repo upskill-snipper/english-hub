@@ -18,6 +18,7 @@ import {
 import { createClient } from '@/lib/supabase/client'
 import { useAuthStore } from '@/store/auth-store'
 import { practiceQuestions, type PracticeQuestion } from '@/data/practice-data'
+import { formatTime } from '@/lib/utils'
 
 // ─── Constants ──────────────────────────────────────────────────────────────
 
@@ -55,6 +56,7 @@ export default function PracticePage() {
   // Saving
   const [saving, setSaving] = useState(false)
   const [saved, setSaved] = useState(false)
+  const [saveError, setSaveError] = useState<string | null>(null)
 
   const { user } = useAuthStore()
   const questionTypes = getUniqueQuestionTypes()
@@ -114,19 +116,12 @@ export default function PracticePage() {
     }
   }, [showModel])
 
-  // ── Format time ────────────────────────────────────────────────────────
-
-  function formatTime(s: number) {
-    const m = Math.floor(s / 60)
-    const sec = s % 60
-    return `${m.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}`
-  }
-
   // ── Save session ───────────────────────────────────────────────────────
 
   async function saveSession() {
     if (!user || !currentQuestion || saving) return
     setSaving(true)
+    setSaveError(null)
     try {
       const supabase = createClient()
       await supabase.from('practice_sessions').insert({
@@ -142,7 +137,7 @@ export default function PracticePage() {
       })
       setSaved(true)
     } catch {
-      // Silently handle — user can retry
+      setSaveError('Failed to save your session. Please try again.')
     } finally {
       setSaving(false)
     }
@@ -157,7 +152,7 @@ export default function PracticePage() {
   // ── Render ─────────────────────────────────────────────────────────────
 
   return (
-    <div className="min-h-screen pb-20">
+    <main id="main-content" className="min-h-screen pb-20">
       {/* Header */}
       <div className="border-b border-brand-border bg-brand-card/50">
         <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
@@ -180,8 +175,9 @@ export default function PracticePage() {
           <div className="grid gap-4 sm:grid-cols-3">
             {/* Board */}
             <div>
-              <label className="label">Board</label>
+              <label htmlFor="board-filter" className="label">Board</label>
               <select
+                id="board-filter"
                 value={board}
                 onChange={(e) => setBoard(e.target.value)}
                 className="input-field"
@@ -195,8 +191,9 @@ export default function PracticePage() {
             </div>
             {/* Question Type */}
             <div>
-              <label className="label">Question Type</label>
+              <label htmlFor="question-type-filter" className="label">Question Type</label>
               <select
+                id="question-type-filter"
                 value={questionType}
                 onChange={(e) => setQuestionType(e.target.value)}
                 className="input-field"
@@ -210,8 +207,9 @@ export default function PracticePage() {
             </div>
             {/* Difficulty */}
             <div>
-              <label className="label">Difficulty</label>
+              <label htmlFor="difficulty-filter" className="label">Difficulty</label>
               <select
+                id="difficulty-filter"
                 value={difficulty}
                 onChange={(e) => setDifficulty(e.target.value)}
                 className="input-field"
@@ -322,7 +320,7 @@ export default function PracticePage() {
                 onChange={(e) => setAnswer(e.target.value)}
                 placeholder="Write your answer here..."
                 rows={10}
-                className="input-field resize-y font-[0.95rem] leading-relaxed"
+                className="input-field resize-y text-base leading-relaxed"
               />
             </div>
 
@@ -423,6 +421,7 @@ export default function PracticePage() {
                         onClick={() => setRating(s)}
                         onMouseEnter={() => setHoverRating(s)}
                         onMouseLeave={() => setHoverRating(0)}
+                        aria-label={`Rate ${s} out of 5`}
                         className="p-1 transition-transform hover:scale-110"
                       >
                         <Star
@@ -465,6 +464,11 @@ export default function PracticePage() {
                     <ChevronRight className="h-4 w-4" />
                   </button>
                 </div>
+                {saveError && (
+                  <div className="bg-red-500/10 border border-red-500/20 rounded-lg p-3 text-red-400 text-sm mt-2">
+                    {saveError}
+                  </div>
+                )}
               </div>
             )}
           </div>
@@ -481,6 +485,6 @@ export default function PracticePage() {
           </div>
         )}
       </div>
-    </div>
+    </main>
   )
 }

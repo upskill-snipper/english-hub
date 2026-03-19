@@ -841,7 +841,7 @@ const ks3CoursesExtra: CourseData[] = [
     duration: '3-5 hours',
     level: 'KS3 (Years 7-9)',
     description: 'Discover how poets use rhythm, rhyme, imagery, and figurative language to create powerful effects. Learn to compare poems, write confidently about poetry, and build a strong foundation for GCSE Literature.',
-    color: 'linear-gradient(135deg, #6366f1, #8b5cf6)',
+    color: '#6366f1',
     moduleList: [
       {
         id: 'ks3p-m1',
@@ -1075,7 +1075,7 @@ const ks3CoursesExtra: CourseData[] = [
     duration: '3-5 hours',
     level: 'KS3 (Years 7-9)',
     description: 'Demystify Shakespeare for KS3 students. Understand the language, explore key plays including Macbeth, Romeo and Juliet, and The Tempest, analyse characters and themes, and discover why performance matters.',
-    color: 'linear-gradient(135deg, #f59e0b, #ef4444)',
+    color: '#f59e0b',
     moduleList: [
       {
         id: 'ks3s-m1',
@@ -1313,7 +1313,7 @@ const ks3CoursesExtra: CourseData[] = [
     duration: '3-5 hours',
     level: 'KS3 (Years 7-9)',
     description: 'Develop critical thinking skills for the modern media landscape. Learn to analyse advertisements, detect bias in news, understand persuasion on social media, and create your own media texts with confidence.',
-    color: 'linear-gradient(135deg, #06b6d4, #3b82f6)',
+    color: '#06b6d4',
     moduleList: [
       {
         id: 'ks3ml-m1',

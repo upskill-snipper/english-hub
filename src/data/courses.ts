@@ -37,9 +37,11 @@ export interface CourseData {
 
 import { ks3Courses } from './ks3-courses';
 import { gcseCourses } from './gcse-courses';
+import { edexcelCourses } from './edexcel-courses';
+import { edexcelLitCourses } from './edexcel-lit-courses';
 
 // ─── Master Course List ──────────────────────────────────────────────────────
 
-export const allCourses: CourseData[] = [...ks3Courses, ...gcseCourses];
+export const allCourses: CourseData[] = [...ks3Courses, ...gcseCourses, ...edexcelCourses, ...edexcelLitCourses];
 
 export default allCourses;

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import Stripe from 'stripe'
-import { stripe } from '@/lib/stripe'
+import { stripe, PRICE_IDS, COURSE_PRICE_MAP } from '@/lib/stripe'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
 
 interface CheckoutRequestBody {
@@ -26,6 +26,17 @@ export async function POST(request: NextRequest) {
         { error: 'Invalid mode. Must be "subscription" or "payment"' },
         { status: 400 }
       )
+    }
+
+    // Validate priceId against known price IDs (filter out undefined/empty values)
+    const validPriceIds = new Set(
+      [
+        ...Object.values(PRICE_IDS),
+        ...Object.values(COURSE_PRICE_MAP),
+      ].filter((id): id is string => typeof id === 'string' && id.length > 0)
+    )
+    if (!validPriceIds.has(priceId)) {
+      return NextResponse.json({ error: 'Invalid price ID' }, { status: 400 })
     }
 
     // Authenticate user

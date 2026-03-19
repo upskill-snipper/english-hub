@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/client'
-import allCourses from '@/data/courses'
+import { getCourseName } from '@/lib/utils'
 import type { Certificate } from '@/lib/types'
 import {
   Award,
@@ -58,11 +58,6 @@ export default function CertificatePage() {
 
     setStudentName(profile?.full_name || 'Student')
     setLoading(false)
-  }
-
-  function getCourseName(courseId: string): string {
-    const course = allCourses.find((c) => c.id === courseId)
-    return course?.title || courseId
   }
 
   function getGradeColor(grade: string): string {
@@ -142,7 +137,7 @@ export default function CertificatePage() {
             Back to dashboard
           </Link>
 
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-3">
             <button
               onClick={handleShare}
               className="inline-flex items-center gap-2 px-4 py-2 text-sm rounded-lg border border-brand-border text-brand-muted hover:text-brand-text hover:border-brand-accent/50 transition-colors"
@@ -212,7 +207,7 @@ export default function CertificatePage() {
             </p>
 
             {/* Grade and Score */}
-            <div className="inline-flex items-center gap-6 bg-brand-bg/50 rounded-xl px-6 py-4 mb-8">
+            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 bg-brand-bg/50 rounded-xl px-6 py-4 mb-8">
               <div>
                 <p className="text-brand-muted text-xs uppercase tracking-wider mb-1">
                   Grade

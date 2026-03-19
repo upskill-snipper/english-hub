@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/client'
-import { Mail, Lock, User, GraduationCap, BookOpen, Loader2, ArrowLeft, CheckCircle } from 'lucide-react'
+import { Mail, Lock, User, GraduationCap, BookOpen, Loader2, ArrowLeft, CheckCircle, Eye, EyeOff } from 'lucide-react'
 
 const YEAR_GROUPS = ['Year 7', 'Year 8', 'Year 9', 'Year 10', 'Year 11', 'Year 12', 'Adult']
 const EXAM_BOARDS = ['AQA', 'Edexcel', 'OCR', 'WJEC', 'Other']
@@ -15,6 +15,8 @@ export default function RegisterPage() {
   const [confirmPassword, setConfirmPassword] = useState('')
   const [yearGroup, setYearGroup] = useState('')
   const [examBoard, setExamBoard] = useState('')
+  const [showPassword, setShowPassword] = useState(false)
+  const [showConfirm, setShowConfirm] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [success, setSuccess] = useState(false)
   const [loading, setLoading] = useState(false)
@@ -28,8 +30,8 @@ export default function RegisterPage() {
       return
     }
 
-    if (password.length < 6) {
-      setError('Password must be at least 6 characters.')
+    if (password.length < 8) {
+      setError('Password must be at least 8 characters.')
       return
     }
 
@@ -175,15 +177,23 @@ export default function RegisterPage() {
                 <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-brand-muted/50" />
                 <input
                   id="password"
-                  type="password"
+                  type={showPassword ? 'text' : 'password'}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  placeholder="At least 6 characters"
-                  className="input-field pl-11"
+                  placeholder="At least 8 characters"
+                  className="input-field pl-11 pr-11"
                   required
-                  minLength={6}
+                  minLength={8}
                   autoComplete="new-password"
                 />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-brand-muted/50 hover:text-brand-muted transition-colors"
+                  aria-label={showPassword ? 'Hide password' : 'Show password'}
+                >
+                  {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                </button>
               </div>
             </div>
 
@@ -195,15 +205,23 @@ export default function RegisterPage() {
                 <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-brand-muted/50" />
                 <input
                   id="confirmPassword"
-                  type="password"
+                  type={showConfirm ? 'text' : 'password'}
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   placeholder="Repeat your password"
-                  className="input-field pl-11"
+                  className="input-field pl-11 pr-11"
                   required
-                  minLength={6}
+                  minLength={8}
                   autoComplete="new-password"
                 />
+                <button
+                  type="button"
+                  onClick={() => setShowConfirm(!showConfirm)}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-brand-muted/50 hover:text-brand-muted transition-colors"
+                  aria-label={showConfirm ? 'Hide password' : 'Show password'}
+                >
+                  {showConfirm ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                </button>
               </div>
             </div>
 

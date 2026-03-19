@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/client'
-import allCourses from '@/data/courses'
+import { getCourseName } from '@/lib/utils'
 import type { Certificate } from '@/lib/types'
 import {
   ShieldCheck,
@@ -57,11 +57,6 @@ export default function VerifyPage() {
 
     setStudentName(profile?.full_name || 'Student')
     setLoading(false)
-  }
-
-  function getCourseName(courseId: string): string {
-    const course = allCourses.find((c) => c.id === courseId)
-    return course?.title || courseId
   }
 
   if (loading) {

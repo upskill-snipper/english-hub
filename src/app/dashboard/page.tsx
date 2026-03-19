@@ -14,21 +14,13 @@ import {
   Layers,
   FileText,
   Sparkles,
+  TrendingUp,
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { useAuthStore } from '@/store/auth-store'
 import { allCourses } from '@/data/courses'
+import { formatDate } from '@/lib/utils'
 import type { Enrolment, ModuleProgress, Certificate, CourseData } from '@/lib/types'
-
-// ─── Helpers ────────────────────────────────────────────────────────────────
-
-function formatDate(iso: string) {
-  return new Date(iso).toLocaleDateString('en-GB', {
-    day: 'numeric',
-    month: 'short',
-    year: 'numeric',
-  })
-}
 
 function formatRelativeDate(iso: string) {
   const date = new Date(iso)
@@ -47,7 +39,7 @@ function formatRelativeDate(iso: string) {
 const gradeBadgeColors: Record<string, string> = {
   Distinction: 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30',
   Merit: 'bg-blue-500/20 text-blue-400 border-blue-500/30',
-  Pass: 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30',
+  Pass: 'bg-brand-accent/20 text-brand-accent border-brand-accent/30',
 }
 
 const courseMap = new Map<string, CourseData>(
@@ -58,21 +50,21 @@ const courseMap = new Map<string, CourseData>(
 
 function StatCardSkeleton() {
   return (
-    <div className="rounded-xl border border-[#1a2840] bg-[#0f1828] p-5 animate-pulse">
-      <div className="h-4 w-24 rounded bg-[#1a2840] mb-3" />
-      <div className="h-8 w-16 rounded bg-[#1a2840] mb-2" />
-      <div className="h-3 w-20 rounded bg-[#1a2840]" />
+    <div className="rounded-xl border border-brand-border bg-brand-card p-5 animate-pulse">
+      <div className="h-4 w-24 rounded bg-brand-border mb-3" />
+      <div className="h-8 w-16 rounded bg-brand-border mb-2" />
+      <div className="h-3 w-20 rounded bg-brand-border" />
     </div>
   )
 }
 
 function CourseCardSkeleton() {
   return (
-    <div className="rounded-xl border border-[#1a2840] bg-[#0f1828] p-5 animate-pulse">
-      <div className="h-5 w-48 rounded bg-[#1a2840] mb-3" />
-      <div className="h-3 w-full rounded bg-[#1a2840] mb-4" />
-      <div className="h-2 w-full rounded-full bg-[#1a2840] mb-3" />
-      <div className="h-9 w-28 rounded bg-[#1a2840]" />
+    <div className="rounded-xl border border-brand-border bg-brand-card p-5 animate-pulse">
+      <div className="h-5 w-48 rounded bg-brand-border mb-3" />
+      <div className="h-3 w-full rounded bg-brand-border mb-4" />
+      <div className="h-2 w-full rounded-full bg-brand-border mb-3" />
+      <div className="h-9 w-28 rounded bg-brand-border" />
     </div>
   )
 }
@@ -80,10 +72,10 @@ function CourseCardSkeleton() {
 function ActivitySkeleton() {
   return (
     <div className="flex items-center gap-3 py-3 animate-pulse">
-      <div className="h-9 w-9 rounded-full bg-[#1a2840] shrink-0" />
+      <div className="h-9 w-9 rounded-full bg-brand-border shrink-0" />
       <div className="flex-1">
-        <div className="h-4 w-48 rounded bg-[#1a2840] mb-2" />
-        <div className="h-3 w-32 rounded bg-[#1a2840]" />
+        <div className="h-4 w-48 rounded bg-brand-border mb-2" />
+        <div className="h-3 w-32 rounded bg-brand-border" />
       </div>
     </div>
   )
@@ -98,6 +90,7 @@ export default function DashboardPage() {
   const [certificates, setCertificates] = useState<Certificate[]>([])
   const [recentActivity, setRecentActivity] = useState<ModuleProgress[]>([])
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     if (!user) return
@@ -105,35 +98,47 @@ export default function DashboardPage() {
     const supabase = createClient()
 
     async function fetchDashboardData() {
-      const userId = user!.id
+      try {
+        setError(null)
+        const userId = user!.id
 
-      const [enrolRes, progressRes, certRes, activityRes] = await Promise.all([
-        supabase
-          .from('enrolments')
-          .select('*')
-          .eq('user_id', userId),
-        supabase
-          .from('module_progress')
-          .select('*')
-          .eq('user_id', userId),
-        supabase
-          .from('certificates')
-          .select('*')
-          .eq('user_id', userId),
-        supabase
-          .from('module_progress')
-          .select('*')
-          .eq('user_id', userId)
-          .eq('completed', true)
-          .order('completed_at', { ascending: false })
-          .limit(5),
-      ])
+        const [enrolRes, progressRes, certRes, activityRes] = await Promise.all([
+          supabase
+            .from('enrolments')
+            .select('*')
+            .eq('user_id', userId),
+          supabase
+            .from('module_progress')
+            .select('*')
+            .eq('user_id', userId),
+          supabase
+            .from('certificates')
+            .select('*')
+            .eq('user_id', userId),
+          supabase
+            .from('module_progress')
+            .select('*')
+            .eq('user_id', userId)
+            .eq('completed', true)
+            .order('completed_at', { ascending: false })
+            .limit(5),
+        ])
 
-      if (enrolRes.data) setEnrolments(enrolRes.data)
-      if (progressRes.data) setModuleProgress(progressRes.data)
-      if (certRes.data) setCertificates(certRes.data)
-      if (activityRes.data) setRecentActivity(activityRes.data)
-      setLoading(false)
+        if (enrolRes.error) console.error('Failed to fetch enrolments:', enrolRes.error)
+        if (progressRes.error) console.error('Failed to fetch module progress:', progressRes.error)
+        if (certRes.error) console.error('Failed to fetch certificates:', certRes.error)
+        if (activityRes.error) console.error('Failed to fetch recent activity:', activityRes.error)
+
+        if (enrolRes.data) setEnrolments(enrolRes.data)
+        if (progressRes.data) setModuleProgress(progressRes.data)
+        if (certRes.data) setCertificates(certRes.data)
+        if (activityRes.data) setRecentActivity(activityRes.data)
+      } catch (err) {
+        console.error('Failed to fetch dashboard data:', err)
+        setError('Something went wrong loading your dashboard. Please try again.')
+      } finally {
+        setLoading(false)
+      }
     }
 
     fetchDashboardData()
@@ -197,24 +202,42 @@ export default function DashboardPage() {
   // ── Quick Actions ───────────────────────────────────────────────────────
 
   const quickActions = [
-    { label: 'Browse Courses', href: '/courses', icon: BookOpen, color: 'text-emerald-400' },
+    { label: 'Browse Courses', href: '/courses', icon: BookOpen, color: 'text-brand-accent' },
     { label: 'Practice Questions', href: '/practice', icon: FileText, color: 'text-blue-400' },
     { label: 'Revision Flashcards', href: '/revision', icon: Layers, color: 'text-purple-400' },
-    { label: 'View Certificates', href: '/certificate', icon: Award, color: 'text-yellow-400' },
+    { label: 'Grade Dashboard', href: '/dashboard/grades', icon: TrendingUp, color: 'text-green-400' },
+    { label: 'View Certificates', href: '#certificates', icon: Award, color: 'text-yellow-400' },
   ]
 
   // ── Render ──────────────────────────────────────────────────────────────
 
   return (
-    <div className="min-h-screen bg-[#0a0e1a] text-[#f1f5f9]">
+    <div className="min-h-screen bg-brand-bg text-brand-text">
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         {/* ── Welcome Header ─────────────────────────────────────────── */}
         <div className="mb-8">
           <h1 className="text-2xl font-bold sm:text-3xl">
             Welcome back, {firstName}
           </h1>
-          <p className="mt-1 text-[#94a3b8]">{todayString}</p>
+          <p className="mt-1 text-brand-muted">{todayString}</p>
         </div>
+
+        {/* ── Error Banner ─────────────────────────────────────────── */}
+        {error && (
+          <div className="mb-6 flex items-center justify-between rounded-lg border border-brand-error/30 bg-brand-error/10 px-4 py-3 text-sm text-brand-error">
+            <span>{error}</span>
+            <button
+              onClick={() => {
+                setLoading(true)
+                setError(null)
+                window.location.reload()
+              }}
+              className="ml-4 shrink-0 rounded-md bg-brand-error/20 px-3 py-1 text-xs font-medium text-brand-error transition-colors hover:bg-brand-error/30"
+            >
+              Retry
+            </button>
+          </div>
+        )}
 
         {/* ── Stats Row ──────────────────────────────────────────────── */}
         <div className="mb-8 grid grid-cols-2 gap-4 lg:grid-cols-4">
@@ -228,7 +251,7 @@ export default function DashboardPage() {
           ) : (
             <>
               <StatCard
-                icon={<BookOpen className="h-5 w-5 text-emerald-400" />}
+                icon={<BookOpen className="h-5 w-5 text-brand-accent" />}
                 label="Courses Enrolled"
                 value={enrolments.length}
                 sub={enrolments.length === 1 ? 'course' : 'courses'}
@@ -250,7 +273,7 @@ export default function DashboardPage() {
                   profile?.subscription_status === 'pro' ? (
                     <Crown className="h-5 w-5 text-yellow-400" />
                   ) : (
-                    <Sparkles className="h-5 w-5 text-[#94a3b8]" />
+                    <Sparkles className="h-5 w-5 text-brand-muted" />
                   )
                 }
                 label="Subscription"
@@ -270,7 +293,7 @@ export default function DashboardPage() {
             {enrolledCourses.length > 0 && (
               <Link
                 href="/courses"
-                className="flex items-center gap-1 text-sm text-emerald-400 hover:text-emerald-300 transition-colors"
+                className="flex items-center gap-1 text-sm text-brand-accent hover:text-brand-accent transition-colors"
               >
                 View all <ArrowRight className="h-4 w-4" />
               </Link>
@@ -285,7 +308,7 @@ export default function DashboardPage() {
             </div>
           ) : enrolledCourses.length === 0 ? (
             <EmptyState
-              icon={<BookOpen className="h-10 w-10 text-[#94a3b8]" />}
+              icon={<BookOpen className="h-10 w-10 text-brand-muted" />}
               title="No courses yet"
               description="Browse our catalogue to get started."
               actionLabel="Browse Courses"
@@ -296,42 +319,42 @@ export default function DashboardPage() {
               {enrolledCourses.map((ec) => (
                 <div
                   key={ec.id}
-                  className="group rounded-xl border border-[#1a2840] bg-[#0f1828] p-5 transition-colors hover:border-emerald-500/30"
+                  className="group rounded-xl border border-brand-border bg-brand-card p-5 transition-colors hover:border-brand-accent/30"
                 >
                   <div className="mb-1 flex items-center gap-2">
                     <span
                       className="inline-block h-2.5 w-2.5 rounded-full"
                       style={{ backgroundColor: ec.course.color }}
                     />
-                    <span className="text-xs font-medium uppercase tracking-wider text-[#94a3b8]">
+                    <span className="text-xs font-medium uppercase tracking-wider text-brand-muted">
                       {ec.course.level}
                     </span>
                   </div>
                   <h3 className="mb-1 font-semibold leading-snug">
                     {ec.course.title}
                   </h3>
-                  <p className="mb-3 text-sm text-[#94a3b8]">
+                  <p className="mb-3 text-sm text-brand-muted">
                     {ec.completedModules} / {ec.totalModules} modules completed
                   </p>
 
                   {/* Progress bar */}
-                  <div className="mb-4 h-2 w-full overflow-hidden rounded-full bg-[#1a2840]">
+                  <div className="mb-4 h-2 w-full overflow-hidden rounded-full bg-brand-border">
                     <div
-                      className="h-full rounded-full bg-emerald-500 transition-all duration-500"
+                      className="h-full rounded-full bg-brand-accent transition-all duration-500"
                       style={{ width: `${ec.progress}%` }}
                     />
                   </div>
 
                   {ec.nextModule ? (
                     <Link
-                      href={`/courses/${ec.course_id}/modules/${ec.nextModule.id}`}
-                      className="inline-flex items-center gap-2 rounded-lg bg-emerald-500/10 px-4 py-2 text-sm font-medium text-emerald-400 transition-colors hover:bg-emerald-500/20"
+                      href={`/learn/${ec.course_id}/${ec.nextModule.id}`}
+                      className="inline-flex items-center gap-2 rounded-lg bg-brand-accent/10 px-4 py-2 text-sm font-medium text-brand-accent transition-colors hover:bg-brand-accent/20"
                     >
                       <Play className="h-4 w-4" />
                       Continue
                     </Link>
                   ) : (
-                    <span className="inline-flex items-center gap-2 rounded-lg bg-emerald-500/15 px-4 py-2 text-sm font-medium text-emerald-400">
+                    <span className="inline-flex items-center gap-2 rounded-lg bg-brand-accent/15 px-4 py-2 text-sm font-medium text-brand-accent">
                       <CheckCircle className="h-4 w-4" />
                       Completed
                     </span>
@@ -349,20 +372,20 @@ export default function DashboardPage() {
             <h2 className="mb-4 text-lg font-semibold sm:text-xl">
               Recent Activity
             </h2>
-            <div className="rounded-xl border border-[#1a2840] bg-[#0f1828] p-5">
+            <div className="rounded-xl border border-brand-border bg-brand-card p-5">
               {loading ? (
-                <div className="divide-y divide-[#1a2840]">
+                <div className="divide-y divide-brand-border">
                   {Array.from({ length: 3 }).map((_, i) => (
                     <ActivitySkeleton key={i} />
                   ))}
                 </div>
               ) : recentActivity.length === 0 ? (
-                <div className="py-8 text-center text-[#94a3b8]">
+                <div className="py-8 text-center text-brand-muted">
                   <Clock className="mx-auto mb-2 h-8 w-8" />
                   <p className="text-sm">No activity yet. Start a course to track your progress.</p>
                 </div>
               ) : (
-                <div className="divide-y divide-[#1a2840]">
+                <div className="divide-y divide-brand-border">
                   {recentActivity.map((activity) => {
                     const course = courseMap.get(activity.course_id)
                     const mod = course?.moduleList.find(
@@ -373,14 +396,14 @@ export default function DashboardPage() {
                         key={activity.id}
                         className="flex items-center gap-3 py-3 first:pt-0 last:pb-0"
                       >
-                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-emerald-500/10">
-                          <CheckCircle className="h-4 w-4 text-emerald-400" />
+                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-accent/10">
+                          <CheckCircle className="h-4 w-4 text-brand-accent" />
                         </div>
                         <div className="min-w-0 flex-1">
                           <p className="truncate text-sm font-medium">
                             {mod?.title ?? 'Unknown module'}
                           </p>
-                          <p className="truncate text-xs text-[#94a3b8]">
+                          <p className="truncate text-xs text-brand-muted">
                             {course?.title ?? 'Unknown course'}
                             {activity.completed_at && (
                               <span className="ml-2">
@@ -412,11 +435,11 @@ export default function DashboardPage() {
                 <Link
                   key={action.href}
                   href={action.href}
-                  className="group flex flex-col items-center gap-2 rounded-xl border border-[#1a2840] bg-[#0f1828] p-5 text-center transition-colors hover:border-emerald-500/30"
+                  className="group flex flex-col items-center gap-2 rounded-xl border border-brand-border bg-brand-card p-5 text-center transition-colors hover:border-brand-accent/30"
                 >
                   <action.icon className={`h-7 w-7 ${action.color}`} />
                   <span className="text-sm font-medium">{action.label}</span>
-                  <ArrowRight className="h-4 w-4 text-[#94a3b8] transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="h-4 w-4 text-brand-muted transition-transform group-hover:translate-x-1" />
                 </Link>
               ))}
             </div>
@@ -426,7 +449,7 @@ export default function DashboardPage() {
         {/* ── Certificates ───────────────────────────────────────────── */}
         {!loading && certificates.length > 0 && (
           <section className="mb-8">
-            <h2 className="mb-4 text-lg font-semibold sm:text-xl">
+            <h2 id="certificates" className="mb-4 text-lg font-semibold sm:text-xl">
               Your Certificates
             </h2>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -435,7 +458,7 @@ export default function DashboardPage() {
                 return (
                   <div
                     key={cert.id}
-                    className="flex items-start gap-4 rounded-xl border border-[#1a2840] bg-[#0f1828] p-5"
+                    className="flex items-start gap-4 rounded-xl border border-brand-border bg-brand-card p-5"
                   >
                     <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-yellow-500/10">
                       <Award className="h-5 w-5 text-yellow-400" />
@@ -452,16 +475,16 @@ export default function DashboardPage() {
                         >
                           {cert.grade}
                         </span>
-                        <span className="text-xs text-[#94a3b8]">
+                        <span className="text-xs text-brand-muted">
                           {cert.score}%
                         </span>
-                        <span className="text-xs text-[#94a3b8]">
+                        <span className="text-xs text-brand-muted">
                           {formatDate(cert.issued_at)}
                         </span>
                       </div>
                       <Link
                         href={cert.verification_url}
-                        className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-emerald-400 hover:text-emerald-300 transition-colors"
+                        className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-brand-accent hover:text-brand-accent transition-colors"
                       >
                         View Certificate <ArrowRight className="h-3 w-3" />
                       </Link>
@@ -491,15 +514,15 @@ function StatCard({
   sub: string
 }) {
   return (
-    <div className="rounded-xl border border-[#1a2840] bg-[#0f1828] p-5">
-      <div className="mb-2 flex items-center gap-2 text-[#94a3b8]">
+    <div className="rounded-xl border border-brand-border bg-brand-card p-5">
+      <div className="mb-2 flex items-center gap-2 text-brand-muted">
         {icon}
         <span className="text-xs font-medium uppercase tracking-wider">
           {label}
         </span>
       </div>
       <div className="text-2xl font-bold">{value}</div>
-      <p className="mt-0.5 text-xs text-[#94a3b8]">{sub}</p>
+      <p className="mt-0.5 text-xs text-brand-muted">{sub}</p>
     </div>
   )
 }
@@ -510,7 +533,7 @@ function SubscriptionBadge({
   status: 'free' | 'pro' | 'cancelled'
 }) {
   const styles: Record<string, string> = {
-    free: 'bg-[#94a3b8]/10 text-[#94a3b8] border-[#94a3b8]/30',
+    free: 'bg-brand-muted/10 text-brand-muted border-brand-muted/30',
     pro: 'bg-yellow-500/10 text-yellow-400 border-yellow-500/30',
     cancelled: 'bg-red-500/10 text-red-400 border-red-500/30',
   }
@@ -547,13 +570,13 @@ function EmptyState({
   actionHref: string
 }) {
   return (
-    <div className="flex flex-col items-center justify-center rounded-xl border border-dashed border-[#1a2840] bg-[#0f1828]/50 py-12 text-center">
+    <div className="flex flex-col items-center justify-center rounded-xl border border-dashed border-brand-border bg-brand-card/50 py-12 text-center">
       <div className="mb-3">{icon}</div>
       <h3 className="mb-1 font-semibold">{title}</h3>
-      <p className="mb-4 text-sm text-[#94a3b8]">{description}</p>
+      <p className="mb-4 text-sm text-brand-muted">{description}</p>
       <Link
         href={actionHref}
-        className="inline-flex items-center gap-2 rounded-lg bg-emerald-500 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-emerald-600"
+        className="inline-flex items-center gap-2 rounded-lg bg-brand-accent px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-brand-accent/90"
       >
         {actionLabel} <ArrowRight className="h-4 w-4" />
       </Link>

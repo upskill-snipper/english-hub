@@ -6,6 +6,14 @@ import { createServiceRoleClient } from '@/lib/supabase/server'
 // Disable body parsing — we need the raw body for signature verification
 export const runtime = 'nodejs'
 
+/** Thrown when required metadata fields are missing from a Stripe event. */
+class WebhookMetadataError extends Error {
+  constructor(message: string) {
+    super(message)
+    this.name = 'WebhookMetadataError'
+  }
+}
+
 export async function POST(request: NextRequest) {
   const body = await request.text()
   const signature = request.headers.get('stripe-signature')
@@ -70,6 +78,14 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ received: true })
   } catch (error) {
+    if (error instanceof WebhookMetadataError) {
+      console.error(`Missing metadata in ${event.type}: ${error.message}`)
+      return NextResponse.json(
+        { error: error.message },
+        { status: 400 }
+      )
+    }
+
     console.error(`Error handling webhook event ${event.type}:`, error)
     return NextResponse.json(
       { error: 'Webhook handler failed' },
@@ -88,8 +104,9 @@ async function handleCheckoutCompleted(
 ) {
   const userId = session.metadata?.userId
   if (!userId) {
-    console.error('checkout.session.completed: missing userId in metadata')
-    return
+    throw new WebhookMetadataError(
+      `checkout.session.completed: missing userId in metadata (session ${session.id})`
+    )
   }
 
   if (session.mode === 'subscription') {
@@ -107,16 +124,17 @@ async function handleCheckoutCompleted(
   if (session.mode === 'payment') {
     const courseId = session.metadata?.courseId
     if (!courseId) {
-      console.warn('checkout.session.completed (payment): no courseId in metadata, skipping enrolment')
-      return
+      throw new WebhookMetadataError(
+        `checkout.session.completed (payment): missing courseId in metadata (session ${session.id})`
+      )
     }
 
-    const { error } = await supabase.from('enrolments').insert({
+    const { error } = await supabase.from('enrolments').upsert({
       user_id: userId,
       course_id: courseId,
-      status: 'active',
-      stripe_session_id: session.id,
-    })
+      payment_type: 'one_time',
+      stripe_payment_intent_id: session.payment_intent as string,
+    }, { onConflict: 'user_id,course_id' })
 
     if (error) {
       console.error('Failed to create enrolment record:', error)
@@ -129,9 +147,19 @@ async function handleSubscriptionUpdated(
   subscription: Stripe.Subscription,
   supabase: ReturnType<typeof createServiceRoleClient>
 ) {
-  const userId = subscription.metadata?.userId
+  let userId = subscription.metadata?.userId
   if (!userId) {
-    console.error('customer.subscription.updated: missing userId in metadata')
+    // Fallback: look up user by stripe_customer_id
+    const customerId = subscription.customer as string
+    const { data: profile } = await supabase
+      .from('profiles')
+      .select('id')
+      .eq('stripe_customer_id', customerId)
+      .single()
+    if (profile) userId = profile.id
+  }
+  if (!userId) {
+    console.error('Could not resolve user for subscription', subscription.id)
     return
   }
 
@@ -163,9 +191,19 @@ async function handleSubscriptionDeleted(
   subscription: Stripe.Subscription,
   supabase: ReturnType<typeof createServiceRoleClient>
 ) {
-  const userId = subscription.metadata?.userId
+  let userId = subscription.metadata?.userId
   if (!userId) {
-    console.error('customer.subscription.deleted: missing userId in metadata')
+    // Fallback: look up user by stripe_customer_id
+    const customerId = subscription.customer as string
+    const { data: profile } = await supabase
+      .from('profiles')
+      .select('id')
+      .eq('stripe_customer_id', customerId)
+      .single()
+    if (profile) userId = profile.id
+  }
+  if (!userId) {
+    console.error('Could not resolve user for subscription', subscription.id)
     return
   }
 

@@ -16,6 +16,8 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
 
   return (
+    <>
+    <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:px-4 focus:py-2 focus:bg-brand-accent focus:text-white focus:rounded">Skip to content</a>
     <header className="sticky top-0 z-50 border-b border-brand-border bg-brand-bg/95 backdrop-blur supports-[backdrop-filter]:bg-brand-bg/80">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
@@ -26,7 +28,7 @@ export function Header() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-1 md:flex">
+        <nav aria-label="Main navigation" className="hidden items-center gap-1 md:flex">
           {user &&
             NAV_LINKS.map((link) => (
               <Link
@@ -52,10 +54,10 @@ export function Header() {
             </>
           ) : (
             <>
-              <Link href="/login" className="btn-ghost text-sm">
+              <Link href="/auth/login" className="btn-ghost text-sm">
                 Login
               </Link>
-              <Link href="/register" className="btn-primary text-sm">
+              <Link href="/auth/register" className="btn-primary text-sm">
                 Register
               </Link>
             </>
@@ -76,7 +78,7 @@ export function Header() {
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="border-t border-brand-border bg-brand-bg md:hidden">
-          <nav className="flex flex-col gap-1 px-4 py-3">
+          <nav aria-label="Mobile navigation" className="flex flex-col gap-1 px-4 py-3">
             {user &&
               NAV_LINKS.map((link) => (
                 <Link
@@ -105,14 +107,14 @@ export function Header() {
             ) : (
               <>
                 <Link
-                  href="/login"
+                  href="/auth/login"
                   className="btn-ghost justify-start text-sm"
                   onClick={() => setMobileOpen(false)}
                 >
                   Login
                 </Link>
                 <Link
-                  href="/register"
+                  href="/auth/register"
                   className="btn-primary mt-1 text-sm"
                   onClick={() => setMobileOpen(false)}
                 >
@@ -124,6 +126,7 @@ export function Header() {
         </div>
       )}
     </header>
+    </>
   )
 }
 

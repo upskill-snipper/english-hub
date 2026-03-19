@@ -8,16 +8,21 @@ import { allCourses as courses } from '@/data/courses'
 const TIERS = ['All', 'KS3', 'GCSE'] as const
 type Tier = (typeof TIERS)[number]
 
+const BOARDS = ['All', 'AQA', 'Edexcel'] as const
+type Board = (typeof BOARDS)[number]
+
 export default function CourseCataloguePage() {
   const [activeTier, setActiveTier] = useState<Tier>('All')
+  const [board, setBoard] = useState<Board>('All')
 
-  const filtered =
-    activeTier === 'All'
-      ? courses
-      : courses.filter((c) => c.tier === activeTier)
+  const filtered = courses.filter((c) => {
+    if (activeTier !== 'All' && c.tier?.toUpperCase() !== activeTier) return false
+    if (board !== 'All' && c.board !== board) return false
+    return true
+  })
 
   return (
-    <div className="min-h-screen bg-brand-bg">
+    <main id="main-content" className="min-h-screen bg-brand-bg">
       {/* Hero */}
       <section className="border-b border-brand-border">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
@@ -35,11 +40,12 @@ export default function CourseCataloguePage() {
       {/* Filter tabs + grid */}
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         {/* Tabs */}
-        <div className="mb-8 flex gap-2">
+        <div role="group" aria-label="Filter by level" className="mb-8 flex gap-2">
           {TIERS.map((tier) => (
             <button
               key={tier}
               type="button"
+              aria-pressed={activeTier === tier}
               onClick={() => setActiveTier(tier)}
               className={`rounded-lg px-5 py-2.5 text-sm font-medium transition-colors duration-200 ${
                 activeTier === tier
@@ -48,6 +54,25 @@ export default function CourseCataloguePage() {
               }`}
             >
               {tier}
+            </button>
+          ))}
+        </div>
+
+        {/* Board filter */}
+        <div role="group" aria-label="Filter by exam board" className="mb-8 flex gap-2">
+          {BOARDS.map((b) => (
+            <button
+              key={b}
+              type="button"
+              aria-pressed={board === b}
+              onClick={() => setBoard(b)}
+              className={`rounded-lg px-4 py-2 text-xs font-medium transition-colors duration-200 ${
+                board === b
+                  ? 'bg-brand-accent text-white'
+                  : 'bg-brand-card text-brand-muted hover:text-brand-text border border-brand-border'
+              }`}
+            >
+              {b}
             </button>
           ))}
         </div>
@@ -65,7 +90,7 @@ export default function CourseCataloguePage() {
           </div>
         )}
       </section>
-    </div>
+    </main>
   )
 }
 
@@ -99,6 +124,11 @@ function CourseCard({ course }: CourseCardProps) {
           <span className="inline-flex items-center rounded-md bg-brand-bg px-2.5 py-0.5 text-xs font-medium text-brand-muted">
             {course.level}
           </span>
+          {course.board && (
+            <span className="rounded-full bg-blue-500/20 px-2 py-0.5 text-xs font-medium text-blue-400">
+              {course.board}
+            </span>
+          )}
         </div>
 
         {/* Title */}

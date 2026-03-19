@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS public.profiles (
   full_name TEXT,
   year_group TEXT CHECK (year_group IN ('Year 7','Year 8','Year 9','Year 10','Year 11','Year 12','Adult')),
   exam_board TEXT CHECK (exam_board IN ('AQA','Edexcel','OCR','WJEC','Other')),
-  subscription_status TEXT DEFAULT 'free' CHECK (subscription_status IN ('free','pro','cancelled')),
+  subscription_status TEXT DEFAULT 'free' CHECK (subscription_status IN ('free','pro','cancelled','past_due','unpaid','incomplete','paused')),
   subscription_end_date TIMESTAMPTZ,
   stripe_customer_id TEXT UNIQUE,
   created_at TIMESTAMPTZ DEFAULT NOW(),
@@ -127,11 +127,11 @@ CREATE POLICY "Users can view own profile" ON public.profiles FOR SELECT USING (
 CREATE POLICY "Users can update own profile" ON public.profiles FOR UPDATE USING (auth.uid() = id);
 CREATE POLICY "Users can insert own profile" ON public.profiles FOR INSERT WITH CHECK (auth.uid() = id);
 CREATE POLICY "Users can view own enrolments" ON public.enrolments FOR SELECT USING (auth.uid() = user_id);
-CREATE POLICY "Users can insert own enrolments" ON public.enrolments FOR INSERT WITH CHECK (auth.uid() = user_id);
+-- Enrolment inserts are handled by the Stripe webhook using the service role client
 CREATE POLICY "Users can manage own progress" ON public.module_progress FOR ALL USING (auth.uid() = user_id);
 CREATE POLICY "Users can manage own assessments" ON public.assessment_attempts FOR ALL USING (auth.uid() = user_id);
 CREATE POLICY "Users can view own certificates" ON public.certificates FOR SELECT USING (auth.uid() = user_id);
-CREATE POLICY "Users can insert own certificates" ON public.certificates FOR INSERT WITH CHECK (auth.uid() = user_id);
+-- Certificate inserts are handled server-side using the service role client
 CREATE POLICY "Public can verify certificates" ON public.certificates FOR SELECT USING (TRUE);
 CREATE POLICY "Courses are public" ON public.courses FOR SELECT USING (published = TRUE);
 CREATE POLICY "Modules preview public" ON public.modules FOR SELECT USING (is_preview = TRUE);
@@ -154,3 +154,28 @@ DROP TRIGGER IF EXISTS on_auth_user_created ON auth.users;
 CREATE TRIGGER on_auth_user_created
   AFTER INSERT ON auth.users
   FOR EACH ROW EXECUTE FUNCTION public.handle_new_user();
+
+-- Updated_at trigger
+CREATE OR REPLACE FUNCTION public.update_updated_at()
+RETURNS TRIGGER AS $$
+BEGIN
+  NEW.updated_at = NOW();
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER profiles_updated_at
+  BEFORE UPDATE ON public.profiles
+  FOR EACH ROW EXECUTE FUNCTION public.update_updated_at();
+
+-- Add unique constraint for certificate deduplication
+ALTER TABLE public.certificates ADD CONSTRAINT unique_user_course_cert UNIQUE (user_id, course_id);
+
+-- Performance indexes
+CREATE INDEX IF NOT EXISTS idx_module_progress_user_course ON public.module_progress(user_id, course_id);
+CREATE INDEX IF NOT EXISTS idx_module_progress_user_completed ON public.module_progress(user_id, completed, completed_at);
+CREATE INDEX IF NOT EXISTS idx_enrolments_user_course ON public.enrolments(user_id, course_id);
+CREATE INDEX IF NOT EXISTS idx_assessment_attempts_user_course ON public.assessment_attempts(user_id, course_id);
+CREATE INDEX IF NOT EXISTS idx_practice_sessions_user ON public.practice_sessions(user_id);
+CREATE INDEX IF NOT EXISTS idx_modules_course ON public.modules(course_id);
+CREATE INDEX IF NOT EXISTS idx_certificates_user_course ON public.certificates(user_id, course_id);

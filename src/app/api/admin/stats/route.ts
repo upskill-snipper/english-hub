@@ -3,7 +3,9 @@ import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supab
 
 export const dynamic = 'force-dynamic'
 
-const ADMIN_EMAIL = 'admin@theenglishhub.app'
+const ADMIN_EMAILS = (process.env.ADMIN_EMAILS || 'admin@theenglishhub.app')
+  .split(',')
+  .map((e) => e.trim().toLowerCase())
 
 export async function GET() {
   try {
@@ -18,7 +20,7 @@ export async function GET() {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    if (user.email !== ADMIN_EMAIL) {
+    if (!user.email || !ADMIN_EMAILS.includes(user.email.toLowerCase())) {
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
     }
 

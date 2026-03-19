@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { useAuthStore } from '@/store/auth-store'
-import allCourses from '@/data/courses'
+import { getCourseName } from '@/lib/utils'
 import {
   Shield,
   Users,
@@ -16,7 +16,9 @@ import {
   RefreshCw,
 } from 'lucide-react'
 
-const ADMIN_EMAIL = 'admin@theenglishhub.app'
+const ADMIN_EMAILS = (process.env.NEXT_PUBLIC_ADMIN_EMAILS || 'admin@theenglishhub.app')
+  .split(',')
+  .map((e) => e.trim().toLowerCase())
 
 interface AdminStats {
   totalUsers: number
@@ -48,7 +50,7 @@ export default function AdminPage() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
-  const isAdmin = profile?.email === ADMIN_EMAIL
+  const isAdmin = !!profile?.email && ADMIN_EMAILS.includes(profile.email.toLowerCase())
 
   useEffect(() => {
     if (!user && !useAuthStore.getState().isLoading) {
@@ -86,11 +88,6 @@ export default function AdminPage() {
     }
 
     setLoading(false)
-  }
-
-  function getCourseName(courseId: string): string {
-    const course = allCourses.find((c) => c.id === courseId)
-    return course?.title || courseId
   }
 
   if (loading || !isAdmin) {

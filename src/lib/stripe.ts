@@ -19,7 +19,7 @@ export const PRICE_IDS = {
   BUNDLE: process.env.STRIPE_PRICE_BUNDLE!,
 } as const
 
-export const COURSE_PRICE_MAP: Record<string, string> = {
+const _COURSE_PRICE_ENTRIES: Record<string, string> = {
   'ks3-reading': PRICE_IDS.KS3_READING,
   'ks3-writing': PRICE_IDS.KS3_WRITING,
   'ks3-grammar': PRICE_IDS.KS3_GRAMMAR,
@@ -28,4 +28,15 @@ export const COURSE_PRICE_MAP: Record<string, string> = {
   'gcse-lit-poetry': PRICE_IDS.GCSE_LIT_POETRY,
   'gcse-lit-prose': PRICE_IDS.GCSE_LIT_PROSE,
   'gcse-revision-blitz': PRICE_IDS.GCSE_REVISION,
+  'edexcel-lang-paper1': process.env.STRIPE_PRICE_EDEXCEL_LANG_P1 || '',
+  'edexcel-lang-paper2': process.env.STRIPE_PRICE_EDEXCEL_LANG_P2 || '',
+  'edexcel-lit-paper1': process.env.STRIPE_PRICE_EDEXCEL_LIT_P1 || '',
+  'edexcel-lit-paper2': process.env.STRIPE_PRICE_EDEXCEL_LIT_P2 || '',
+  'edexcel-igcse-lang-a': process.env.STRIPE_PRICE_EDEXCEL_IGCSE_A || '',
+  'edexcel-igcse-lang-b': process.env.STRIPE_PRICE_EDEXCEL_IGCSE_B || '',
 }
+
+// Filter out entries with empty price IDs (unset env vars)
+export const COURSE_PRICE_MAP: Record<string, string> = Object.fromEntries(
+  Object.entries(_COURSE_PRICE_ENTRIES).filter(([, v]) => v !== '')
+)

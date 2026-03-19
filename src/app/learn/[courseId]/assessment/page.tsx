@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useCallback, useRef, useMemo } from 'react'
 import { useParams, useRouter } from 'next/navigation'
+import Link from 'next/link'
 import {
   ArrowLeft,
   ArrowRight,
@@ -13,11 +14,13 @@ import {
   Loader2,
   AlertTriangle,
   BarChart3,
+  Lock,
 } from 'lucide-react'
 import { allCourses } from '@/data/courses'
 import type { CourseQuiz } from '@/data/courses'
 import { createClient } from '@/lib/supabase/client'
 import { useAuthStore } from '@/store/auth-store'
+import { shuffleArray, formatTime } from '@/lib/utils'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -34,23 +37,6 @@ interface AssessmentResult {
   grade: 'Fail' | 'Pass' | 'Merit' | 'Distinction'
   passed: boolean
   answers: { questionId: string; selected: number; correct: boolean }[]
-}
-
-// ─── Helpers ─────────────────────────────────────────────────────────────────
-
-function shuffleArray<T>(array: T[]): T[] {
-  const shuffled = [...array]
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
-  }
-  return shuffled
-}
-
-function formatTime(seconds: number): string {
-  const mins = Math.floor(seconds / 60)
-  const secs = seconds % 60
-  return `${mins}:${secs.toString().padStart(2, '0')}`
 }
 
 function getGrade(
@@ -94,13 +80,44 @@ export default function AssessmentPage() {
   const params = useParams()
   const router = useRouter()
   const courseId = params.courseId as string
-  const { user } = useAuthStore()
+  const { user, profile } = useAuthStore()
 
   const course = allCourses.find((c) => c.id === courseId) ?? null
+  const [hasAccess, setHasAccess] = useState<boolean | null>(null)
 
-  // Build question pool from all modules
+  // Check if user has access (pro subscriber OR enrolled in this course)
+  useEffect(() => {
+    async function checkAccess() {
+      if (!user) return
+
+      // Pro subscribers have access to everything
+      if (profile?.subscription_status === 'pro') {
+        setHasAccess(true)
+        return
+      }
+
+      // Check enrolment
+      const supabase = createClient()
+      const { data } = await supabase
+        .from('enrolments')
+        .select('id')
+        .eq('user_id', user.id)
+        .eq('course_id', courseId)
+        .single()
+
+      setHasAccess(!!data)
+    }
+    checkAccess()
+  }, [user, profile, courseId])
+
+  // Build question pool: prefer curated assessment questions, fall back to module quizzes
   const allQuestions: AssessmentQuestion[] = useMemo(() => {
     if (!course) return []
+
+    if (course.assessmentQuestions && course.assessmentQuestions.length > 0) {
+      return course.assessmentQuestions.map(q => ({ ...q, moduleTitle: 'Assessment' }))
+    }
+
     const questions: AssessmentQuestion[] = []
     for (const mod of course.moduleList) {
       for (const q of mod.quiz) {
@@ -117,8 +134,10 @@ export default function AssessmentPage() {
   const [timeLeft, setTimeLeft] = useState(30 * 60) // 30 minutes
   const [result, setResult] = useState<AssessmentResult | null>(null)
   const [error, setError] = useState<string | null>(null)
+  const [certificateId, setCertificateId] = useState<string | null>(null)
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
   const startTimeRef = useRef<number>(0)
+  const handleSubmitRef = useRef<() => void>(() => {})
 
   // Timer
   useEffect(() => {
@@ -128,7 +147,7 @@ export default function AssessmentPage() {
       setTimeLeft((prev) => {
         if (prev <= 1) {
           clearInterval(timerRef.current!)
-          handleSubmit()
+          handleSubmitRef.current()
           return 0
         }
         return prev - 1
@@ -138,7 +157,6 @@ export default function AssessmentPage() {
     return () => {
       if (timerRef.current) clearInterval(timerRef.current)
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [phase])
 
   const startAssessment = useCallback(() => {
@@ -160,6 +178,14 @@ export default function AssessmentPage() {
 
   const handleSubmit = useCallback(async () => {
     if (phase === 'submitting') return
+
+    // Check for unanswered questions and confirm
+    const unanswered = questions.length - Object.keys(answers).length
+    if (unanswered > 0) {
+      const confirm = window.confirm(`You have ${unanswered} unanswered question(s). Submit anyway?`)
+      if (!confirm) return
+    }
+
     setPhase('submitting')
 
     if (timerRef.current) clearInterval(timerRef.current)
@@ -219,20 +245,36 @@ export default function AssessmentPage() {
 
         if (attemptError) throw attemptError
 
-        // If passed, create certificate
+        // If passed, create or update certificate (keep highest score)
+        // Requires UNIQUE(user_id, course_id) constraint on certificates table
         if (passed && attemptData) {
-          const { error: certError } = await supabase
+          const { data: existingCert } = await supabase
             .from('certificates')
-            .insert({
-              user_id: user.id,
-              course_id: courseId,
-              assessment_attempt_id: attemptData.id,
-              score: percentage,
-              grade: grade === 'Fail' ? null : grade,
-            })
+            .select('id, score')
+            .eq('user_id', user.id)
+            .eq('course_id', courseId)
+            .single()
 
-          if (certError) {
-            console.error('Failed to create certificate:', certError)
+          if (!existingCert || percentage > existingCert.score) {
+            const { data: certData, error: certError } = await supabase
+              .from('certificates')
+              .upsert({
+                user_id: user.id,
+                course_id: courseId,
+                assessment_attempt_id: attemptData.id,
+                score: percentage,
+                grade: grade === 'Fail' ? null : grade,
+              }, { onConflict: 'user_id,course_id' })
+              .select('id')
+              .single()
+
+            if (certError) {
+              console.error('Failed to create/update certificate:', certError)
+            } else if (certData) {
+              setCertificateId(certData.id)
+            }
+          } else if (existingCert) {
+            setCertificateId(existingCert.id)
           }
         }
       } catch (err) {
@@ -244,6 +286,9 @@ export default function AssessmentPage() {
     setResult(assessmentResult)
     setPhase('results')
   }, [phase, questions, answers, user, courseId])
+
+  // Keep handleSubmitRef in sync so the timer never uses a stale closure
+  handleSubmitRef.current = handleSubmit
 
   // ─── Render: Not Found ───────────────────────────────────────────────────────
 
@@ -260,6 +305,22 @@ export default function AssessmentPage() {
           <button onClick={() => router.push('/')} className="btn-primary">
             Go Home
           </button>
+        </div>
+      </div>
+    )
+  }
+
+  if (hasAccess === false) {
+    return (
+      <div className="min-h-screen bg-brand-bg flex items-center justify-center p-4">
+        <div className="card max-w-md w-full text-center space-y-4 p-8">
+          <Lock className="w-12 h-12 text-brand-muted mx-auto" />
+          <h2 className="text-xl font-bold text-brand-text">Course Access Required</h2>
+          <p className="text-brand-muted">You need to purchase this course or subscribe to Pro to access this content.</p>
+          <div className="flex gap-3 justify-center">
+            <Link href={`/courses/${courseId}`} className="btn-primary">View Course</Link>
+            <Link href="/account/billing" className="btn-secondary">Subscribe</Link>
+          </div>
         </div>
       </div>
     )
@@ -361,6 +422,7 @@ export default function AssessmentPage() {
                 Question {currentIndex + 1} of {questions.length}
               </span>
               <span
+                aria-live="polite"
                 className={`flex items-center gap-1.5 text-sm font-mono font-semibold ${
                   isTimeLow ? 'text-brand-error animate-pulse' : 'text-brand-text'
                 }`}
@@ -643,9 +705,9 @@ export default function AssessmentPage() {
 
           {/* Actions */}
           <div className="flex flex-col sm:flex-row gap-3">
-            {result.passed && (
+            {result.passed && certificateId && (
               <a
-                href={`/certificates?course=${courseId}`}
+                href={`/certificate/${certificateId}`}
                 className="btn-primary flex-1 flex items-center justify-center gap-2"
               >
                 <Award size={18} />

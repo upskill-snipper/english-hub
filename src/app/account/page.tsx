@@ -124,6 +124,17 @@ export default function AccountPage() {
 
     setPasswordLoading(true)
 
+    // Verify current password first
+    const { error: signInError } = await supabase.auth.signInWithPassword({
+      email: user?.email || '',
+      password: currentPassword,
+    })
+    if (signInError) {
+      setPasswordMessage({ type: 'error', text: 'Current password is incorrect' })
+      setPasswordLoading(false)
+      return
+    }
+
     const { error } = await supabase.auth.updateUser({
       password: newPassword,
     })
@@ -333,6 +344,22 @@ export default function AccountPage() {
           )}
 
           <form onSubmit={handlePasswordChange} className="space-y-4">
+            <div>
+              <label htmlFor="currentPassword" className="label">
+                Current Password
+              </label>
+              <input
+                id="currentPassword"
+                type="password"
+                value={currentPassword}
+                onChange={(e) => setCurrentPassword(e.target.value)}
+                className="input-field"
+                placeholder="Enter current password"
+                required
+                autoComplete="current-password"
+              />
+            </div>
+
             <div>
               <label htmlFor="newPassword" className="label">
                 New Password

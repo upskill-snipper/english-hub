@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { useRouter, useParams } from 'next/navigation'
+import { useParams } from 'next/navigation'
 import {
   BookOpen,
   Clock,
@@ -17,22 +17,37 @@ import { useAuthStore } from '@/store/auth-store'
 import { allCourses as courses } from '@/data/courses'
 import type { CourseData } from '@/data/courses'
 
+// Client-side course price ID map (uses NEXT_PUBLIC env vars)
+const COURSE_STRIPE_PRICES: Record<string, string> = {
+  'ks3-reading': process.env.NEXT_PUBLIC_STRIPE_PRICE_KS3_READING || '',
+  'ks3-writing': process.env.NEXT_PUBLIC_STRIPE_PRICE_KS3_WRITING || '',
+  'ks3-grammar': process.env.NEXT_PUBLIC_STRIPE_PRICE_KS3_GRAMMAR || '',
+  'gcse-lang-reading': process.env.NEXT_PUBLIC_STRIPE_PRICE_GCSE_LANG_READING || '',
+  'gcse-lang-writing': process.env.NEXT_PUBLIC_STRIPE_PRICE_GCSE_LANG_WRITING || '',
+  'gcse-lit-poetry': process.env.NEXT_PUBLIC_STRIPE_PRICE_GCSE_LIT_POETRY || '',
+  'gcse-lit-prose': process.env.NEXT_PUBLIC_STRIPE_PRICE_GCSE_LIT_PROSE || '',
+  'gcse-revision-blitz': process.env.NEXT_PUBLIC_STRIPE_PRICE_GCSE_REVISION || '',
+  'edexcel-lang-paper1': process.env.NEXT_PUBLIC_STRIPE_PRICE_EDEXCEL_LANG_P1 || '',
+  'edexcel-lang-paper2': process.env.NEXT_PUBLIC_STRIPE_PRICE_EDEXCEL_LANG_P2 || '',
+  'edexcel-lit-paper1': process.env.NEXT_PUBLIC_STRIPE_PRICE_EDEXCEL_LIT_P1 || '',
+  'edexcel-lit-paper2': process.env.NEXT_PUBLIC_STRIPE_PRICE_EDEXCEL_LIT_P2 || '',
+  'edexcel-igcse-lang-a': process.env.NEXT_PUBLIC_STRIPE_PRICE_EDEXCEL_IGCSE_A || '',
+  'edexcel-igcse-lang-b': process.env.NEXT_PUBLIC_STRIPE_PRICE_EDEXCEL_IGCSE_B || '',
+}
+
 export default function CourseDetailPage() {
   const params = useParams<{ id: string }>()
-  const router = useRouter()
   const { user, profile } = useAuthStore()
 
-  const [course, setCourse] = useState<CourseData | null>(null)
+  const [course] = useState<CourseData | null>(
+    () => courses.find((c) => c.id === params.id) ?? null
+  )
   const [isEnrolled, setIsEnrolled] = useState(false)
   const [loading, setLoading] = useState(true)
+  const [purchasing, setPurchasing] = useState(false)
+  const [purchaseError, setPurchaseError] = useState<string | null>(null)
 
   const isPro = profile?.subscription_status === 'pro'
-
-  /* ---- Resolve course from static data ---- */
-  useEffect(() => {
-    const found = courses.find((c) => c.id === params.id) ?? null
-    setCourse(found)
-  }, [params.id])
 
   /* ---- Check enrolment ---- */
   useEffect(() => {
@@ -77,8 +92,32 @@ export default function CourseDetailPage() {
   const hasAccess = isEnrolled || isPro
   const ctaLabel = hasAccess ? 'Start Learning' : `Buy for £${course.price}`
   const ctaHref = hasAccess
-    ? `/courses/${course.id}/learn`
+    ? `/learn/${course.id}/${course.moduleList[0]?.id}`
     : `/api/stripe/checkout?course=${course.id}`
+
+  async function handlePurchase() {
+    setPurchasing(true)
+    setPurchaseError(null)
+    try {
+      const priceId = COURSE_STRIPE_PRICES[course!.id]
+      if (!priceId) {
+        setPurchaseError('This course is not available for purchase right now. Please try again later.')
+        setPurchasing(false)
+        return
+      }
+      const res = await fetch('/api/stripe/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ priceId, courseId: course!.id, mode: 'payment' }),
+      })
+      const data = await res.json()
+      if (!res.ok) throw new Error(data.error ?? 'Checkout failed')
+      window.location.href = data.url
+    } catch (err: unknown) {
+      setPurchaseError(err instanceof Error ? err.message : 'Something went wrong')
+      setPurchasing(false)
+    }
+  }
 
   return (
     <div className="min-h-screen bg-brand-bg">
@@ -109,6 +148,11 @@ export default function CourseDetailPage() {
                 <span className="inline-flex items-center rounded-md bg-brand-card px-2.5 py-0.5 text-xs font-medium text-brand-muted border border-brand-border">
                   {course.level}
                 </span>
+                {course.board && (
+                  <span className="px-3 py-1 rounded-full text-sm font-medium bg-blue-500/20 text-blue-400">
+                    {course.board}
+                  </span>
+                )}
               </div>
 
               <h1 className="text-3xl font-bold tracking-tight text-brand-text sm:text-4xl">
@@ -139,10 +183,14 @@ export default function CourseDetailPage() {
                 price={course.price}
                 ctaLabel={ctaLabel}
                 ctaHref={ctaHref}
+                hasAccess={hasAccess}
                 loading={loading}
+                purchasing={purchasing}
+                onPurchase={handlePurchase}
                 moduleCount={course.moduleList.length}
                 duration={course.duration}
                 level={course.level}
+                purchaseError={purchaseError}
               />
             </div>
           </div>
@@ -234,10 +282,14 @@ export default function CourseDetailPage() {
                 price={course.price}
                 ctaLabel={ctaLabel}
                 ctaHref={ctaHref}
+                hasAccess={hasAccess}
                 loading={loading}
+                purchasing={purchasing}
+                onPurchase={handlePurchase}
                 moduleCount={course.moduleList.length}
                 duration={course.duration}
                 level={course.level}
+                purchaseError={purchaseError}
               />
             </div>
           </aside>
@@ -256,10 +308,18 @@ export default function CourseDetailPage() {
 
           {loading ? (
             <div className="h-11 w-36 animate-pulse rounded-lg bg-brand-card" />
-          ) : (
+          ) : hasAccess ? (
             <Link href={ctaHref} className="btn-primary text-sm">
               {ctaLabel}
             </Link>
+          ) : (
+            <button
+              onClick={handlePurchase}
+              disabled={purchasing}
+              className="btn-primary text-sm"
+            >
+              {purchasing ? 'Redirecting...' : ctaLabel}
+            </button>
           )}
         </div>
       </div>
@@ -278,20 +338,28 @@ interface PriceCardProps {
   price: number
   ctaLabel: string
   ctaHref: string
+  hasAccess: boolean
   loading: boolean
+  purchasing: boolean
+  onPurchase: () => void
   moduleCount: number
   duration: string
   level: string
+  purchaseError?: string | null
 }
 
 function PriceCard({
   price,
   ctaLabel,
   ctaHref,
+  hasAccess,
   loading,
+  purchasing,
+  onPurchase,
   moduleCount,
   duration,
   level,
+  purchaseError,
 }: PriceCardProps) {
   return (
     <div className="card w-full overflow-hidden lg:w-80">
@@ -303,13 +371,25 @@ function PriceCard({
 
         {loading ? (
           <div className="h-12 w-full animate-pulse rounded-lg bg-brand-bg" />
-        ) : (
+        ) : hasAccess ? (
           <Link
             href={ctaHref}
             className="btn-primary w-full justify-center text-base"
           >
             {ctaLabel}
           </Link>
+        ) : (
+          <button
+            onClick={onPurchase}
+            disabled={purchasing}
+            className="btn-primary w-full justify-center text-base"
+          >
+            {purchasing ? 'Redirecting...' : ctaLabel}
+          </button>
+        )}
+
+        {purchaseError && (
+          <p className="mt-2 text-center text-xs text-red-400">{purchaseError}</p>
         )}
 
         <p className="mt-3 text-center text-xs text-brand-muted">

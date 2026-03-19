@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/client'
 import { useAuthStore } from '@/store/auth-store'
-import allCourses from '@/data/courses'
+import { getCourseName } from '@/lib/utils'
 import {
   CreditCard,
   Crown,
@@ -61,11 +61,6 @@ export default function BillingPage() {
       setEnrolments(data)
     }
     setPageLoading(false)
-  }
-
-  function getCourseName(courseId: string): string {
-    const course = allCourses.find((c) => c.id === courseId)
-    return course?.title || courseId
   }
 
   const isPro = profile?.subscription_status === 'pro'

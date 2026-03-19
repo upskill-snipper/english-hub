@@ -1,7 +1,9 @@
 'use client'
 
-import { useEffect, useState, useCallback, useRef } from 'react'
+import { useEffect, useState, useCallback, useRef, useMemo } from 'react'
+import DOMPurify from 'dompurify'
 import { useParams, useRouter } from 'next/navigation'
+import Link from 'next/link'
 import {
   Menu,
   X,
@@ -14,6 +16,7 @@ import {
   ChevronRight,
   BookOpen,
   Loader2,
+  Lock,
 } from 'lucide-react'
 import { allCourses } from '@/data/courses'
 import type { CourseData, CourseModule, CourseQuiz } from '@/data/courses'
@@ -349,11 +352,12 @@ export default function CoursePlayerPage() {
   const courseId = params.courseId as string
   const moduleId = params.moduleId as string
 
-  const { user } = useAuthStore()
+  const { user, profile } = useAuthStore()
   const { completedModules, markModuleComplete, setCourse, setModule } =
     useCourseStore()
 
   const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [hasAccess, setHasAccess] = useState<boolean | null>(null)
   const [quizResults, setQuizResults] = useState<(boolean | null)[]>([])
   const [quizScore, setQuizScore] = useState(0)
   const [completing, setCompleting] = useState(false)
@@ -375,6 +379,49 @@ export default function CoursePlayerPage() {
     course && moduleIndex < (course?.moduleList.length ?? 0) - 1
       ? course.moduleList[moduleIndex + 1]
       : null
+
+  // Check if user has access (pro subscriber OR enrolled in this course)
+  useEffect(() => {
+    async function checkAccess() {
+      if (!user) return
+
+      try {
+        // Pro subscribers have access to everything
+        if (profile?.subscription_status === 'pro') {
+          setHasAccess(true)
+          return
+        }
+
+        // Check if module is a free preview (first module)
+        const modIndex = course?.moduleList.findIndex(m => m.id === moduleId)
+        if (modIndex === 0) {
+          setHasAccess(true)
+          return
+        }
+
+        // Check enrolment
+        const supabase = createClient()
+        const { data, error } = await supabase
+          .from('enrolments')
+          .select('id')
+          .eq('user_id', user.id)
+          .eq('course_id', courseId)
+          .single()
+
+        if (error) {
+          console.error('Failed to check course access:', error)
+          setHasAccess(false)
+          return
+        }
+
+        setHasAccess(!!data)
+      } catch (err) {
+        console.error('Error checking course access:', err)
+        setHasAccess(false)
+      }
+    }
+    checkAccess()
+  }, [user, profile, courseId, moduleId, course])
 
   // Load progress from Supabase
   useEffect(() => {
@@ -469,7 +516,7 @@ export default function CoursePlayerPage() {
           time_spent_seconds: timeSpent,
           completed_at: new Date().toISOString(),
         },
-        { onConflict: 'user_id,course_id,module_id' }
+        { onConflict: 'user_id,module_id' }
       )
 
       if (error) throw error
@@ -495,6 +542,11 @@ export default function CoursePlayerPage() {
 
   // ─── Render ──────────────────────────────────────────────────────────────────
 
+  const sanitizedContent = useMemo(
+    () => DOMPurify.sanitize(currentModule?.content || ''),
+    [currentModule?.content]
+  )
+
   if (!course || !currentModule) {
     return (
       <div className="min-h-screen bg-brand-bg flex items-center justify-center">
@@ -508,6 +560,22 @@ export default function CoursePlayerPage() {
           <button onClick={() => router.push('/')} className="btn-primary">
             Go Home
           </button>
+        </div>
+      </div>
+    )
+  }
+
+  if (hasAccess === false) {
+    return (
+      <div className="min-h-screen bg-brand-bg flex items-center justify-center p-4">
+        <div className="card max-w-md w-full text-center space-y-4 p-8">
+          <Lock className="w-12 h-12 text-brand-muted mx-auto" />
+          <h2 className="text-xl font-bold text-brand-text">Course Access Required</h2>
+          <p className="text-brand-muted">You need to purchase this course or subscribe to Pro to access this content.</p>
+          <div className="flex gap-3 justify-center">
+            <Link href={`/courses/${courseId}`} className="btn-primary">View Course</Link>
+            <Link href="/account/billing" className="btn-secondary">Subscribe</Link>
+          </div>
         </div>
       </div>
     )
@@ -602,7 +670,7 @@ export default function CoursePlayerPage() {
             {/* HTML Content */}
             <div
               className="course-content"
-              dangerouslySetInnerHTML={{ __html: currentModule.content }}
+              dangerouslySetInnerHTML={{ __html: sanitizedContent }}
             />
 
             {/* Quiz Section */}
