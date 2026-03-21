@@ -1,25 +1,33 @@
 'use client'
 
 import { usePathname } from 'next/navigation'
-import { BookOpen, GraduationCap, ArrowRight } from 'lucide-react'
+import { BookOpen, GraduationCap, ArrowRight, Layers } from 'lucide-react'
 import { useBoardStore, type ExamBoard } from '@/store/board-store'
 
 const boards = [
+  {
+    id: 'KS3' as ExamBoard,
+    icon: Layers,
+    color: 'bg-emerald-500',
+    title: 'KS3',
+    subtitle: 'Key Stage 3 English',
+    description: 'Foundation courses in reading, writing, and grammar for Years 7–9',
+  },
   {
     id: 'AQA' as ExamBoard,
     icon: BookOpen,
     color: 'bg-blue-500',
     title: 'AQA',
     subtitle: 'GCSE English Language & Literature',
-    description: 'AQA-specific courses, practice questions, and revision materials',
+    description: 'AQA-specific courses, practice questions, and revision materials plus KS3 foundations',
   },
   {
     id: 'Edexcel' as ExamBoard,
     icon: GraduationCap,
     color: 'bg-violet-500',
     title: 'Edexcel',
-    subtitle: 'GCSE & IGCSE English',
-    description: 'Edexcel-specific courses including International GCSE content',
+    subtitle: 'GCSE, IGCSE & KS3 English',
+    description: 'Edexcel-specific courses including International GCSE content plus KS3 foundations',
   },
 ] as const
 
@@ -40,7 +48,7 @@ export function BoardGate() {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-brand-bg/95 backdrop-blur-sm p-4">
-      <div className="w-full max-w-lg">
+      <div className="w-full max-w-3xl">
         {/* Header */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-accent/10 mb-5">
@@ -56,7 +64,7 @@ export function BoardGate() {
         </div>
 
         {/* Board cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {boards.map((board) => {
             const Icon = board.icon
             return (

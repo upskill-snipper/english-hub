@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 import { persist, createJSONStorage } from 'zustand/middleware'
 
-export type ExamBoard = 'AQA' | 'Edexcel'
+export type ExamBoard = 'AQA' | 'Edexcel' | 'KS3'
 
 interface BoardState {
   selectedBoard: ExamBoard | null  // null = not yet chosen

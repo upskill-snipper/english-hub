@@ -6,6 +6,10 @@ import { GraduationCap } from 'lucide-react'
 import type { ExamBoard } from '@/store/board-store'
 
 const BOARD_INFO: Record<ExamBoard, { subtitle: string; color: string }> = {
+  KS3: {
+    subtitle: 'Key Stage 3 English',
+    color: 'bg-emerald-500',
+  },
   AQA: {
     subtitle: 'GCSE English Language & Literature',
     color: 'bg-purple-500',

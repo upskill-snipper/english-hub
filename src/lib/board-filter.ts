@@ -2,14 +2,19 @@ import type { ExamBoard } from '@/store/board-store';
 
 /**
  * Returns true if a course/item matches the selected board.
- * Items with no board (e.g. KS3) are "generic" and show for everyone.
+ * - KS3 users only see items with no board or board='All' (i.e. KS3 content)
+ * - AQA/Edexcel users see their board-specific content PLUS generic KS3 content
  */
 export function matchesBoard(
   itemBoard: string | undefined | null,
   selectedBoard: ExamBoard | null
 ): boolean {
   if (!selectedBoard) return true;       // no board selected yet — show all
-  if (!itemBoard) return true;           // generic content (KS3) — show for everyone
+  if (selectedBoard === 'KS3') {
+    // KS3 users only see generic (no board) or 'All' content
+    return !itemBoard || itemBoard === 'All';
+  }
+  if (!itemBoard || itemBoard === 'All') return true; // generic content — show for AQA/Edexcel
   return itemBoard === selectedBoard;    // board-specific — must match
 }
 
@@ -22,6 +27,7 @@ export function matchesDeckBoard(
 ): boolean {
   if (!selectedBoard) return true;
   if (deckBoard === 'All') return true;
+  if (selectedBoard === 'KS3') return deckBoard === 'All';
   // IGCSE decks should show for Edexcel users
   if (deckBoard === 'IGCSE') return selectedBoard === 'Edexcel';
   return deckBoard === selectedBoard;
@@ -35,6 +41,10 @@ export function matchesPracticeBoard(
   selectedBoard: ExamBoard | null
 ): boolean {
   if (!selectedBoard) return true;
+  if (selectedBoard === 'KS3') {
+    // KS3 users only see questions with no board or tier KS3
+    return !question.board || question.board === 'All' || question.tier === 'KS3';
+  }
   const isIgcse = question.id.includes('igcse') || question.tier === 'IGCSE';
   if (isIgcse) return selectedBoard === 'Edexcel';
   if (!question.board) return true;

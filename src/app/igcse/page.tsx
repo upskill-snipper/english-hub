@@ -81,13 +81,13 @@ const examStructure = [
 export default function IGCSELandingPage() {
   const { selectedBoard } = useBoardStore();
 
-  // Block AQA users from IGCSE page entirely
-  if (selectedBoard === 'AQA') {
+  // Block non-Edexcel users from IGCSE page
+  if (selectedBoard && selectedBoard !== 'Edexcel') {
     return (
       <div className="flex min-h-[60vh] flex-col items-center justify-center gap-4 bg-brand-bg text-brand-text">
         <h1 className="text-2xl font-bold">IGCSE courses are for Edexcel students</h1>
         <p className="text-brand-muted text-center max-w-md">
-          You have AQA selected as your exam board. IGCSE courses are only available for Edexcel students.
+          You have <strong>{selectedBoard}</strong> selected. IGCSE courses are only available for Edexcel students.
         </p>
         <Link href="/courses" className="btn-primary text-sm">
           Browse your courses

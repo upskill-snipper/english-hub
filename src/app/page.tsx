@@ -139,7 +139,9 @@ export default function Home() {
         <div className="relative max-w-4xl mx-auto px-6 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-accent/30 bg-brand-accent/10 text-brand-accent text-sm font-medium mb-8">
             <Sparkles className="w-4 h-4" />
-            {selectedBoard === 'AQA'
+            {selectedBoard === 'KS3'
+              ? 'New: KS3 Reading, Writing & Grammar Courses'
+              : selectedBoard === 'AQA'
               ? 'New: AQA GCSE Course Content Updated'
               : 'New: Edexcel IGCSE English Language A & B — Now Live'}
           </div>
@@ -151,7 +153,9 @@ export default function Home() {
           </h1>
 
           <p className="mt-6 text-lg sm:text-xl text-brand-muted max-w-2xl mx-auto leading-relaxed">
-            {selectedBoard === 'AQA'
+            {selectedBoard === 'KS3'
+              ? 'Expert-written courses for Key Stage 3 English. Build your reading, writing, and grammar foundations \u2014 from struggling to confident.'
+              : selectedBoard === 'AQA'
               ? 'Expert-written courses for KS3 and AQA GCSE English. From struggling to confident \u2014 we\u2019ll get you there.'
               : 'Expert-written courses for KS3, GCSE, and IGCSE English. From struggling to confident \u2014 we\u2019ll get you there.'}
           </p>
@@ -222,34 +226,45 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className={`grid sm:grid-cols-2 ${selectedBoard === 'KS3' ? 'lg:grid-cols-3' : 'lg:grid-cols-4'} gap-6`}>
             {[
               {
                 icon: BookMarked,
                 color: 'text-blue-400 bg-blue-500/10',
-                title: 'KS3',
+                title: 'KS3 Reading',
                 subtitle: 'Years 7–9',
-                desc: 'Build your foundation with core reading, writing, and analysis skills.',
+                desc: 'Build your foundation with core reading comprehension and analysis skills.',
               },
               {
                 icon: PenTool,
-                color: 'text-brand-accent bg-brand-accent/10',
-                title: 'GCSE Language',
-                subtitle: selectedBoard === 'AQA' ? 'AQA' : 'Edexcel',
-                desc: selectedBoard === 'AQA'
-                  ? 'Master Paper 1 explorations in creative reading & writing and Paper 2 writers\u2019 viewpoints & perspectives.'
-                  : 'Master reading comprehension and creative & transactional writing for Edexcel GCSE.',
+                color: 'text-emerald-400 bg-emerald-500/10',
+                title: 'KS3 Writing',
+                subtitle: 'Years 7–9',
+                desc: 'Develop creative and transactional writing skills with structured lessons.',
               },
-              {
-                icon: BookOpen,
-                color: 'text-purple-400 bg-purple-500/10',
-                title: 'GCSE Literature',
-                subtitle: selectedBoard === 'AQA' ? 'AQA Set Texts' : 'Edexcel Set Texts',
-                desc: selectedBoard === 'AQA'
-                  ? 'Poetry, prose, and drama \u2014 AQA set texts with model answers and essay plans.'
-                  : 'Poetry, prose, and drama \u2014 Edexcel set texts with model answers and essay plans.',
-              },
-              ...(selectedBoard !== 'AQA'
+              ...(selectedBoard !== 'KS3'
+                ? [
+                    {
+                      icon: PenTool,
+                      color: 'text-brand-accent bg-brand-accent/10',
+                      title: 'GCSE Language',
+                      subtitle: selectedBoard === 'AQA' ? 'AQA' : 'Edexcel',
+                      desc: selectedBoard === 'AQA'
+                        ? 'Master Paper 1 explorations in creative reading & writing and Paper 2 writers\u2019 viewpoints & perspectives.'
+                        : 'Master reading comprehension and creative & transactional writing for Edexcel GCSE.',
+                    },
+                    {
+                      icon: BookOpen,
+                      color: 'text-purple-400 bg-purple-500/10',
+                      title: 'GCSE Literature',
+                      subtitle: selectedBoard === 'AQA' ? 'AQA Set Texts' : 'Edexcel Set Texts',
+                      desc: selectedBoard === 'AQA'
+                        ? 'Poetry, prose, and drama \u2014 AQA set texts with model answers and essay plans.'
+                        : 'Poetry, prose, and drama \u2014 Edexcel set texts with model answers and essay plans.',
+                    },
+                  ]
+                : []),
+              ...(selectedBoard === 'Edexcel'
                 ? [
                     {
                       icon: GraduationCap,
@@ -265,7 +280,9 @@ export default function Home() {
                 color: 'text-amber-400 bg-amber-500/10',
                 title: 'Revision',
                 subtitle: 'Exam-Ready',
-                desc: 'Intensive revision courses to boost your grade in weeks, not months.',
+                desc: selectedBoard === 'KS3'
+                  ? 'Flashcards and revision tools to consolidate your Key Stage 3 knowledge.'
+                  : 'Intensive revision courses to boost your grade in weeks, not months.',
               },
             ].map((card) => (
               <Link
@@ -365,29 +382,34 @@ export default function Home() {
                 price: '£29',
                 duration: '6 weeks',
                 desc: 'Core reading skills — inference, analysis, and comparison for Years 7-9.',
-                board: 'all' as const,
+                boards: ['all'],
               },
               {
-                title: selectedBoard === 'AQA' ? 'AQA Language Paper 1' : 'GCSE Language Reading',
+                title: 'KS3 Writing',
+                level: 'KS3',
+                levelColor: 'bg-blue-500/20 text-blue-400',
+                price: '£29',
+                duration: '6 weeks',
+                desc: 'Creative and transactional writing foundations for Years 7-9.',
+                boards: ['KS3'],
+              },
+              {
+                title: 'KS3 Grammar',
+                level: 'KS3',
+                levelColor: 'bg-blue-500/20 text-blue-400',
+                price: '£29',
+                duration: '6 weeks',
+                desc: 'Master sentence structure, punctuation, and grammar essentials.',
+                boards: ['KS3'],
+              },
+              {
+                title: 'AQA Language Paper 1',
                 level: 'GCSE',
                 levelColor: 'bg-brand-accent/20 text-brand-accent',
                 price: '£49',
                 duration: '8 weeks',
-                desc: selectedBoard === 'AQA'
-                  ? 'Explorations in creative reading and writing — fiction extracts and descriptive/narrative tasks.'
-                  : 'Paper 1 & Paper 2 reading: from extract analysis to critical comparison.',
-                board: 'all' as const,
-              },
-              {
-                title: selectedBoard === 'AQA' ? 'AQA Literature Poetry' : 'GCSE Literature Poetry',
-                level: 'GCSE',
-                levelColor: 'bg-purple-500/20 text-purple-400',
-                price: '£39',
-                duration: '7 weeks',
-                desc: selectedBoard === 'AQA'
-                  ? 'Power & Conflict, Love & Relationships, and unseen poetry mastery for AQA.'
-                  : 'Power & Conflict, Love & Relationships, Edexcel Anthology, and unseen poetry mastery.',
-                board: 'all' as const,
+                desc: 'Explorations in creative reading and writing — fiction extracts and descriptive/narrative tasks.',
+                boards: ['AQA'],
               },
               {
                 title: 'AQA Language Paper 2',
@@ -396,7 +418,16 @@ export default function Home() {
                 price: '£49',
                 duration: '8 weeks',
                 desc: 'Writers\u2019 viewpoints and perspectives — non-fiction reading and transactional writing for AQA.',
-                board: 'AQA' as const,
+                boards: ['AQA'],
+              },
+              {
+                title: 'AQA Literature Poetry',
+                level: 'GCSE',
+                levelColor: 'bg-purple-500/20 text-purple-400',
+                price: '£39',
+                duration: '7 weeks',
+                desc: 'Power & Conflict, Love & Relationships, and unseen poetry mastery for AQA.',
+                boards: ['AQA'],
               },
               {
                 title: 'Edexcel Language Paper 1',
@@ -405,7 +436,7 @@ export default function Home() {
                 price: '£49',
                 duration: '8 weeks',
                 desc: 'Master 19th-century non-fiction analysis and transactional writing for Edexcel 1EN2.',
-                board: 'Edexcel' as const,
+                boards: ['Edexcel'],
               },
               {
                 title: 'Edexcel Literature Paper 1',
@@ -414,7 +445,16 @@ export default function Home() {
                 price: '£49',
                 duration: '8 weeks',
                 desc: 'Shakespeare and Post-1914 Literature with extract-based response techniques.',
-                board: 'Edexcel' as const,
+                boards: ['Edexcel'],
+              },
+              {
+                title: 'IGCSE Language A',
+                level: 'IGCSE',
+                levelColor: 'bg-emerald-500/20 text-emerald-400',
+                price: '£49',
+                duration: '10 weeks',
+                desc: 'Edexcel IGCSE English Language Spec A (4EA1) — non-fiction and transactional writing.',
+                boards: ['Edexcel'],
               },
               {
                 title: 'GCSE Revision Blitz',
@@ -423,9 +463,9 @@ export default function Home() {
                 price: '£59',
                 duration: '4 weeks',
                 desc: 'Intensive exam prep: timed practice, model answers, and grade boosters.',
-                board: 'all' as const,
+                boards: ['AQA', 'Edexcel'],
               },
-            ] as const).filter((course) => course.board === 'all' || course.board === selectedBoard).map((course) => (
+            ] as const).filter((course) => (course.boards as readonly string[]).includes('all') || (selectedBoard && (course.boards as readonly string[]).includes(selectedBoard))).map((course) => (
               <Link
                 key={course.title}
                 href="/courses"
@@ -712,7 +752,9 @@ export default function Home() {
                 The English Hub
               </Link>
               <p className="text-sm text-brand-muted mt-2 max-w-xs">
-                {selectedBoard === 'AQA'
+                {selectedBoard === 'KS3'
+                  ? 'Expert English courses for Key Stage 3 students.'
+                  : selectedBoard === 'AQA'
                   ? 'Expert English courses for KS3 and AQA GCSE students.'
                   : 'Expert English courses for KS3, GCSE, and IGCSE students.'}
               </p>
