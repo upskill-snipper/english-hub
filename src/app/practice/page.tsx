@@ -89,7 +89,7 @@ export default function PracticePage() {
   const [saveError, setSaveError] = useState<string | null>(null)
 
   const { user } = useAuthStore()
-  const questionTypes = getUniqueQuestionTypes()
+  const questionTypes = useMemo(() => getUniqueQuestionTypes(), [])
 
   // Board exam guide for contextual tips
   const boardGuide = useMemo(
@@ -108,12 +108,16 @@ export default function PracticePage() {
 
   // ── Filtered questions ─────────────────────────────────────────────────
 
-  const filtered = practiceQuestions.filter((q) => {
-    if (!matchesPracticeBoard(q, selectedBoard)) return false
-    if (questionType !== 'All' && (q.questionType || q.type) !== questionType) return false
-    if (difficulty !== 'All' && (q.difficulty || q.tier) !== difficulty) return false
-    return true
-  })
+  const filtered = useMemo(
+    () =>
+      practiceQuestions.filter((q) => {
+        if (!matchesPracticeBoard(q, selectedBoard)) return false
+        if (questionType !== 'All' && (q.questionType || q.type) !== questionType) return false
+        if (difficulty !== 'All' && (q.difficulty || q.tier) !== difficulty) return false
+        return true
+      }),
+    [selectedBoard, questionType, difficulty]
+  )
 
   // ── Pick random question ───────────────────────────────────────────────
 
@@ -197,7 +201,7 @@ export default function PracticePage() {
   // ── Render ─────────────────────────────────────────────────────────────
 
   return (
-    <main id="main-content" className="min-h-screen pb-20">
+    <main className="min-h-screen pb-20">
       {/* Header */}
       <div className="border-b border-brand-border bg-brand-card/50">
         <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
@@ -398,8 +402,9 @@ export default function PracticePage() {
 
             {/* Answer textarea */}
             <div>
-              <label className="label">Your Answer</label>
+              <label htmlFor="answer-textarea" className="label">Your Answer</label>
               <textarea
+                id="answer-textarea"
                 value={answer}
                 onChange={(e) => setAnswer(e.target.value)}
                 placeholder="Write your answer here..."

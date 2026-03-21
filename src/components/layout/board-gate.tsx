@@ -63,14 +63,14 @@ export function BoardGate() {
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-brand-bg/95 backdrop-blur-sm p-4">
+    <div role="dialog" aria-modal="true" aria-labelledby="board-gate-heading" className="fixed inset-0 z-50 flex items-center justify-center bg-brand-bg/95 backdrop-blur-sm p-4">
       <div className="w-full max-w-5xl">
         {/* Header */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-accent/10 mb-5">
             <GraduationCap className="w-8 h-8 text-brand-accent" />
           </div>
-          <h1 className="text-2xl sm:text-3xl font-bold text-brand-text mb-3">
+          <h1 id="board-gate-heading" className="text-2xl sm:text-3xl font-bold text-brand-text mb-3">
             Welcome to The English Hub
           </h1>
           <p className="text-brand-muted leading-relaxed max-w-md mx-auto">

@@ -4,14 +4,8 @@ import { useState, Suspense } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/client'
+import { validateRedirect } from '@/lib/utils'
 import { Mail, Lock, Loader2, ArrowLeft, Eye, EyeOff } from 'lucide-react'
-
-function validateRedirect(url: string | null): string {
-  if (!url || !url.startsWith('/') || url.startsWith('//') || url.includes(':')) {
-    return '/dashboard'
-  }
-  return url
-}
 
 function LoginForm() {
   const router = useRouter()
@@ -71,7 +65,7 @@ function LoginForm() {
           </div>
 
           {error && (
-            <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-3 mb-6 text-red-400 text-sm">
+            <div role="alert" aria-live="assertive" className="bg-red-500/10 border border-red-500/30 rounded-lg p-3 mb-6 text-red-400 text-sm">
               {error}
             </div>
           )}

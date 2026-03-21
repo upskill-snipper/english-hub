@@ -530,18 +530,26 @@ function StatCard({
 function SubscriptionBadge({
   status,
 }: {
-  status: 'free' | 'pro' | 'cancelled'
+  status: string
 }) {
   const styles: Record<string, string> = {
     free: 'bg-brand-muted/10 text-brand-muted border-brand-muted/30',
     pro: 'bg-yellow-500/10 text-yellow-400 border-yellow-500/30',
     cancelled: 'bg-red-500/10 text-red-400 border-red-500/30',
+    past_due: 'bg-orange-500/10 text-orange-400 border-orange-500/30',
+    unpaid: 'bg-red-500/10 text-red-400 border-red-500/30',
+    incomplete: 'bg-orange-500/10 text-orange-400 border-orange-500/30',
+    paused: 'bg-brand-muted/10 text-brand-muted border-brand-muted/30',
   }
 
   const labels: Record<string, string> = {
     free: 'Free',
     pro: 'Pro',
     cancelled: 'Cancelled',
+    past_due: 'Past Due',
+    unpaid: 'Unpaid',
+    incomplete: 'Incomplete',
+    paused: 'Paused',
   }
 
   return (

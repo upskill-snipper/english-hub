@@ -25,7 +25,7 @@ export default function CourseCataloguePage() {
   })
 
   return (
-    <main id="main-content" className="min-h-screen bg-brand-bg">
+    <main className="min-h-screen bg-brand-bg">
       {/* Hero */}
       <section className="border-b border-brand-border">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">

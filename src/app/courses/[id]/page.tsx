@@ -13,7 +13,7 @@ import {
   Play,
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
-import { PRICING, PRICING_DISPLAY } from '@/constants/pricing'
+import { PRICING } from '@/constants/pricing'
 import { useAuthStore } from '@/store/auth-store'
 import { useBoardStore } from '@/store/board-store'
 import { matchesBoard } from '@/lib/board-filter'

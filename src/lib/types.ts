@@ -4,7 +4,7 @@ export interface Profile {
   full_name: string | null
   year_group: string | null
   exam_board: string | null
-  subscription_status: 'free' | 'pro' | 'cancelled'
+  subscription_status: 'free' | 'pro' | 'cancelled' | 'past_due' | 'unpaid' | 'incomplete' | 'paused'
   subscription_end_date: string | null
   stripe_customer_id: string | null
   created_at: string

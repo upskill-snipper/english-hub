@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/client'
 import { useAuthStore } from '@/store/auth-store'
-import { PRICING, PRICING_DISPLAY } from '@/constants/pricing'
+import { PRICING } from '@/constants/pricing'
 import { getCourseName } from '@/lib/utils'
 import {
   CreditCard,
@@ -25,9 +25,6 @@ interface EnrolmentRow {
   enrolled_at: string
   payment_type: 'free' | 'one_time' | 'subscription'
 }
-
-const PRO_MONTHLY_PRICE_ID = process.env.NEXT_PUBLIC_STRIPE_PRO_MONTHLY_PRICE_ID || ''
-const PRO_ANNUAL_PRICE_ID = process.env.NEXT_PUBLIC_STRIPE_PRO_ANNUAL_PRICE_ID || ''
 
 export default function BillingPage() {
   const router = useRouter()
@@ -70,15 +67,15 @@ export default function BillingPage() {
     ? new Date(profile.subscription_end_date)
     : null
 
-  async function handleCheckout(priceId: string) {
-    setCheckoutLoading(priceId)
+  async function handleCheckout(plan: 'monthly' | 'annual') {
+    setCheckoutLoading(plan)
     setError(null)
 
     try {
       const res = await fetch('/api/stripe/checkout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ priceId, mode: 'subscription' }),
+        body: JSON.stringify({ plan, mode: 'subscription' }),
       })
 
       const data = await res.json()
@@ -146,6 +143,28 @@ export default function BillingPage() {
         {error && (
           <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-3 mb-6 text-red-400 text-sm">
             {error}
+          </div>
+        )}
+
+        {profile?.subscription_status === 'past_due' && (
+          <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4 mb-6 text-yellow-400 text-sm">
+            <p className="font-semibold mb-1">Payment failed</p>
+            <p>
+              We were unable to process your last payment. Please update your
+              payment method to keep your Pro access.
+            </p>
+            <button
+              onClick={handleManageSubscription}
+              disabled={portalLoading}
+              className="mt-3 inline-flex items-center gap-1.5 text-yellow-300 underline underline-offset-2 hover:text-yellow-200 transition-colors disabled:opacity-50"
+            >
+              {portalLoading ? (
+                <Loader2 className="w-3.5 h-3.5 animate-spin" />
+              ) : (
+                <ExternalLink className="w-3.5 h-3.5" />
+              )}
+              Update payment method
+            </button>
           </div>
         )}
 
@@ -233,11 +252,11 @@ export default function BillingPage() {
                     </li>
                   </ul>
                   <button
-                    onClick={() => handleCheckout(PRO_MONTHLY_PRICE_ID)}
+                    onClick={() => handleCheckout('monthly')}
                     disabled={checkoutLoading !== null}
                     className="btn-primary w-full text-sm"
                   >
-                    {checkoutLoading === PRO_MONTHLY_PRICE_ID ? (
+                    {checkoutLoading === 'monthly' ? (
                       <>
                         <Loader2 className="w-4 h-4 animate-spin mr-2" />
                         Loading...
@@ -273,11 +292,11 @@ export default function BillingPage() {
                     </li>
                   </ul>
                   <button
-                    onClick={() => handleCheckout(PRO_ANNUAL_PRICE_ID)}
+                    onClick={() => handleCheckout('annual')}
                     disabled={checkoutLoading !== null}
                     className="btn-primary w-full text-sm"
                   >
-                    {checkoutLoading === PRO_ANNUAL_PRICE_ID ? (
+                    {checkoutLoading === 'annual' ? (
                       <>
                         <Loader2 className="w-4 h-4 animate-spin mr-2" />
                         Loading...

@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/client'
 import { useAuthStore } from '@/store/auth-store'
+import { YEAR_GROUPS, EXAM_BOARDS } from '@/lib/utils'
 import {
   User,
   Save,
@@ -17,19 +18,6 @@ import {
   GraduationCap,
   BookOpen,
 } from 'lucide-react'
-
-const YEAR_GROUPS = [
-  'Year 7',
-  'Year 8',
-  'Year 9',
-  'Year 10',
-  'Year 11',
-  'Year 12',
-  'Year 13',
-  'Other',
-]
-
-const EXAM_BOARDS = ['AQA', 'Edexcel', 'OCR', 'WJEC', 'Other']
 
 export default function AccountPage() {
   const router = useRouter()
@@ -207,6 +195,8 @@ export default function AccountPage() {
 
           {profileMessage && (
             <div
+              role="alert"
+              aria-live="assertive"
               className={`flex items-center gap-2 rounded-lg p-3 mb-4 text-sm ${
                 profileMessage.type === 'success'
                   ? 'bg-emerald-500/10 border border-emerald-500/30 text-emerald-400'

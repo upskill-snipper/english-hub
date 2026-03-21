@@ -11,13 +11,7 @@ async function verifyAdmin(supabase: ReturnType<typeof createServerSupabaseClien
   } = await supabase.auth.getUser()
   if (!user) return null
 
-  const { data: profile } = await supabase
-    .from('profiles')
-    .select('email')
-    .eq('id', user.id)
-    .single()
-
-  if (!profile?.email || !ADMIN_EMAILS.includes(profile.email.toLowerCase())) {
+  if (!user.email || !ADMIN_EMAILS.includes(user.email.toLowerCase())) {
     return null
   }
 
@@ -38,6 +32,11 @@ export async function GET(request: NextRequest) {
   const supabaseAdmin = createServiceRoleClient()
 
   const statusFilter = request.nextUrl.searchParams.get('status')
+
+  const validStatuses = ['pending', 'active', 'suspended', 'terminated']
+  if (statusFilter && !validStatuses.includes(statusFilter)) {
+    return NextResponse.json({ error: 'Invalid status filter' }, { status: 400 })
+  }
 
   let query = supabaseAdmin
     .from('affiliates')

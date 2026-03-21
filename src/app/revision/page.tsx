@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useCallback, useMemo } from 'react'
+import { useState, useEffect, useCallback, useMemo, memo } from 'react'
 import { PRICING, PRICING_DISPLAY } from '@/constants/pricing'
 import {
   ChevronLeft,
@@ -71,7 +71,7 @@ export default function RevisionPage() {
   // ── Technique state ────────────────────────────────────────────────────
   const [techSearch, setTechSearch] = useState('')
   const [techCategory, setTechCategory] = useState('All')
-  const techCategories = getTechniqueCategories()
+  const techCategories = useMemo(() => getTechniqueCategories(), [])
 
   const filteredTechniques = useMemo(() => {
     return techniques.filter((t) => {
@@ -186,7 +186,7 @@ export default function RevisionPage() {
   // ── Render ─────────────────────────────────────────────────────────────
 
   return (
-    <main id="main-content" className="min-h-screen pb-20">
+    <main className="min-h-screen pb-20">
       {/* Header */}
       <div className="border-b border-brand-border bg-brand-card/50">
         <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
@@ -348,6 +348,7 @@ export default function RevisionPage() {
               onClick={() => setFlipped((f) => !f)}
               className="card group relative mx-auto min-h-[280px] max-w-2xl cursor-pointer select-none overflow-hidden p-8 transition-all hover:border-brand-accent/40 sm:min-h-[320px]"
               role="button"
+              aria-label="Flip flashcard"
               tabIndex={0}
               onKeyDown={(e) => {
                 if (e.key === ' ' || e.key === 'Enter') {
@@ -590,7 +591,7 @@ export default function RevisionPage() {
 
 // ─── Technique Card Component ───────────────────────────────────────────────
 
-function TechniqueCard({ technique }: { technique: Technique }) {
+const TechniqueCard = memo(function TechniqueCard({ technique }: { technique: Technique }) {
   const [expanded, setExpanded] = useState(false)
 
   return (
@@ -598,6 +599,7 @@ function TechniqueCard({ technique }: { technique: Technique }) {
       className="card cursor-pointer p-5 transition-colors hover:border-brand-accent/40"
       onClick={() => setExpanded(!expanded)}
       role="button"
+      aria-expanded={expanded}
       tabIndex={0}
       onKeyDown={(e) => {
         if (e.key === 'Enter' || e.key === ' ') {
@@ -651,4 +653,4 @@ function TechniqueCard({ technique }: { technique: Technique }) {
       </p>
     </div>
   )
-}
+})

@@ -198,7 +198,7 @@ export default function Home() {
   const selectedBoard = useBoardStore((s) => s.selectedBoard)
 
   return (
-    <main id="main-content" className="min-h-screen bg-brand-bg">
+    <main className="min-h-screen bg-brand-bg">
       {/* ━━━ HERO ━━━ */}
       <section className="relative overflow-hidden pt-20 pb-24 sm:pt-28 sm:pb-32">
         {/* Glow effect */}

@@ -91,7 +91,10 @@ export default function AssessmentPage() {
   // Check if user has access (pro subscriber OR enrolled in this course)
   useEffect(() => {
     async function checkAccess() {
-      if (!user) return
+      if (!user) {
+        setHasAccess(false)
+        return
+      }
 
       // Pro subscribers have access to everything
       if (profile?.subscription_status === 'pro') {

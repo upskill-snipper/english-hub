@@ -4,7 +4,8 @@ import { stripe, PRICE_IDS, COURSE_PRICE_MAP } from '@/lib/stripe'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
 
 interface CheckoutRequestBody {
-  priceId: string
+  priceId?: string
+  plan?: 'monthly' | 'annual'
   courseId?: string
   mode: 'subscription' | 'payment'
   rewardful_referral?: string | null
@@ -13,11 +14,21 @@ interface CheckoutRequestBody {
 export async function POST(request: NextRequest) {
   try {
     const body: CheckoutRequestBody = await request.json()
-    const { priceId, courseId, mode, rewardful_referral } = body
+    const { courseId, mode, rewardful_referral } = body
+    let { priceId } = body
+
+    // Resolve plan identifier to a server-side price ID
+    if (!priceId && body.plan) {
+      if (body.plan === 'monthly') {
+        priceId = process.env.STRIPE_PRICE_PRO_MONTHLY
+      } else if (body.plan === 'annual') {
+        priceId = process.env.STRIPE_PRICE_PRO_ANNUAL
+      }
+    }
 
     if (!priceId || !mode) {
       return NextResponse.json(
-        { error: 'Missing required fields: priceId and mode' },
+        { error: 'Missing required fields: priceId (or plan) and mode' },
         { status: 400 }
       )
     }

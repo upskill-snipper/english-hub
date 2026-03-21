@@ -383,10 +383,6 @@ export default function CoursePlayerPage() {
       ? course.moduleList[moduleIndex + 1]
       : null
 
-  if (moduleIndex < 0 || !currentModule) {
-    notFound()
-  }
-
   // Is this a free preview module? (first module in the course)
   const isPreviewModule = moduleIndex === 0
 

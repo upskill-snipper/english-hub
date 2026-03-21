@@ -1,5 +1,11 @@
 'use client'
 
+import DOMPurify from 'dompurify'
+
+const sanitize = (html: string) => {
+  if (typeof window !== 'undefined') return DOMPurify.sanitize(html)
+  return html
+}
 import { useState } from 'react'
 import Link from 'next/link'
 import { PRICING, PRICING_DISPLAY } from '@/constants/pricing'
@@ -175,7 +181,7 @@ export default function ExamGuidePage() {
   )
 
   return (
-    <main id="main-content" className="min-h-screen bg-brand-bg pb-20">
+    <main className="min-h-screen bg-brand-bg pb-20">
       {/* ══════════════════════════════════════════════════════════════════════
           HERO SECTION
          ══════════════════════════════════════════════════════════════════════ */}
@@ -317,7 +323,7 @@ export default function ExamGuidePage() {
           <div
             className="prose-brand max-w-none text-sm leading-relaxed text-brand-muted [&_em]:text-brand-accent/80 [&_li]:ml-4 [&_li]:text-brand-muted [&_ol]:my-3 [&_ol]:list-decimal [&_ol]:space-y-1.5 [&_p+p]:mt-3 [&_p]:text-brand-muted [&_strong]:text-brand-text [&_ul]:my-3 [&_ul]:list-disc [&_ul]:space-y-1.5"
             dangerouslySetInnerHTML={{
-              __html: genericOverview.landscape.content,
+              __html: sanitize(genericOverview.landscape.content),
             }}
           />
 
@@ -391,7 +397,7 @@ export default function ExamGuidePage() {
             <div
               className="prose-brand max-w-none text-sm leading-relaxed text-brand-muted [&_em]:text-brand-accent/80 [&_li]:ml-4 [&_li]:text-brand-muted [&_ol]:my-3 [&_ol]:list-decimal [&_ol]:space-y-1.5 [&_p+p]:mt-3 [&_p]:text-brand-muted [&_strong]:text-brand-text [&_ul]:my-3 [&_ul]:list-disc [&_ul]:space-y-1.5"
               dangerouslySetInnerHTML={{
-                __html: genericOverview.markSchemeExplainer.content,
+                __html: sanitize(genericOverview.markSchemeExplainer.content),
               }}
             />
           </div>
@@ -431,7 +437,7 @@ export default function ExamGuidePage() {
                     <p
                       className="text-sm leading-relaxed text-brand-text [&_em]:text-brand-accent/80"
                       dangerouslySetInnerHTML={{
-                        __html: `&ldquo;${comp.level45}&rdquo;`,
+                        __html: sanitize(`&ldquo;${comp.level45}&rdquo;`),
                       }}
                     />
                   </div>

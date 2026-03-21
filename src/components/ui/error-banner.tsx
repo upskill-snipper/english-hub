@@ -17,7 +17,7 @@ export function ErrorBanner({ message, onDismiss, onRetry }: ErrorBannerProps) {
           </button>
         )}
         {onDismiss && (
-          <button onClick={onDismiss} className="text-red-300 hover:text-red-200 text-xs">
+          <button onClick={onDismiss} aria-label="Dismiss error" className="text-red-300 hover:text-red-200 text-xs">
             ✕
           </button>
         )}

@@ -5,9 +5,7 @@ import Link from 'next/link'
 import { createClient } from '@/lib/supabase/client'
 import { Mail, Lock, User, GraduationCap, BookOpen, Loader2, ArrowLeft, CheckCircle, Eye, EyeOff } from 'lucide-react'
 import { PRICING_DISPLAY } from '@/constants/pricing'
-
-const YEAR_GROUPS = ['Year 7', 'Year 8', 'Year 9', 'Year 10', 'Year 11', 'Year 12', 'Adult']
-const EXAM_BOARDS = ['AQA', 'Edexcel', 'OCR', 'WJEC', 'Other']
+import { YEAR_GROUPS, EXAM_BOARDS } from '@/lib/utils'
 
 export default function RegisterPage() {
   const [fullName, setFullName] = useState('')
@@ -126,7 +124,7 @@ export default function RegisterPage() {
           </div>
 
           {error && (
-            <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-3 mb-6 text-red-400 text-sm">
+            <div role="alert" aria-live="assertive" className="bg-red-500/10 border border-red-500/30 rounded-lg p-3 mb-6 text-red-400 text-sm">
               {error}
             </div>
           )}
