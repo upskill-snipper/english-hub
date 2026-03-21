@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useCallback, useMemo } from 'react'
+import { PRICING, PRICING_DISPLAY } from '@/constants/pricing'
 import {
   ChevronLeft,
   ChevronRight,
@@ -210,10 +211,10 @@ export default function RevisionPage() {
                   </p>
                   <p className="mt-1 text-brand-muted">
                     <span className="font-semibold text-brand-accent">First month FREE!</span>
-                    {' '}Then &pound;5.99/month on a rolling monthly contract.
+                    {' '}Then {PRICING_DISPLAY.monthly} on a rolling monthly contract.
                   </p>
                   <p className="mt-1 text-sm text-brand-muted">
-                    Annual subscription also available &mdash; save 34%. Start your free trial today.
+                    Annual subscription also available &mdash; save {PRICING.ANNUAL_SAVE_PERCENT}%. Start your free trial today.
                   </p>
                 </div>
                 <Link

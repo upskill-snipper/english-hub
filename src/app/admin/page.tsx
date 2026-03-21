@@ -16,6 +16,7 @@ import {
   RefreshCw,
 } from 'lucide-react'
 
+// TODO: Move admin check to a server component so ADMIN_EMAILS doesn't need to be exposed client-side
 const ADMIN_EMAILS = (process.env.NEXT_PUBLIC_ADMIN_EMAILS || 'admin@theenglishhub.app')
   .split(',')
   .map((e) => e.trim().toLowerCase())

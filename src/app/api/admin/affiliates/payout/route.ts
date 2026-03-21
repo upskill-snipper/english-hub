@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
 
-const ADMIN_EMAILS = (process.env.NEXT_PUBLIC_ADMIN_EMAILS || 'admin@theenglishhub.app')
+const ADMIN_EMAILS = (process.env.ADMIN_EMAILS || 'admin@theenglishhub.app')
   .split(',')
   .map((e) => e.trim().toLowerCase())
 
@@ -100,10 +100,15 @@ export async function POST(request: NextRequest) {
       }
 
       // Link referrals to this payout
-      await supabaseAdmin
+      const { error: linkError } = await supabaseAdmin
         .from('affiliate_referrals')
         .update({ payout_id: payout.id })
         .in('id', data.referralIds)
+
+      if (linkError) {
+        console.error(`Failed to link referrals to payout ${payout.id}:`, linkError)
+        // Continue processing other affiliates but log the failure
+      }
 
       payoutResults.push({
         payout_id: payout.id,
@@ -202,10 +207,15 @@ export async function POST(request: NextRequest) {
 
     // If paid, update referral commission status
     if (status === 'paid') {
-      await supabaseAdmin
+      const { error: referralUpdateError } = await supabaseAdmin
         .from('affiliate_referrals')
         .update({ commission_status: 'paid' })
         .eq('payout_id', payoutId)
+
+      if (referralUpdateError) {
+        console.error(`Failed to update referral commission status for payout ${payoutId}:`, referralUpdateError)
+        return NextResponse.json({ error: 'Payout status updated but failed to update referral commissions' }, { status: 500 })
+      }
     }
 
     return NextResponse.json({ success: true })

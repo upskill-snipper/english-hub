@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useCallback, useRef, useMemo } from 'react'
 import DOMPurify from 'dompurify'
-import { useParams, useRouter } from 'next/navigation'
+import { useParams, useRouter, notFound } from 'next/navigation'
 import Link from 'next/link'
 import {
   Menu,
@@ -383,6 +383,10 @@ export default function CoursePlayerPage() {
       ? course.moduleList[moduleIndex + 1]
       : null
 
+  if (moduleIndex < 0 || !currentModule) {
+    notFound()
+  }
+
   // Is this a free preview module? (first module in the course)
   const isPreviewModule = moduleIndex === 0
 
@@ -557,21 +561,7 @@ export default function CoursePlayerPage() {
   )
 
   if (!course || !currentModule) {
-    return (
-      <div className="min-h-screen bg-brand-bg flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-brand-text mb-2">
-            Course not found
-          </h1>
-          <p className="text-brand-muted mb-6">
-            The course or module you&apos;re looking for doesn&apos;t exist.
-          </p>
-          <button onClick={() => router.push('/')} className="btn-primary">
-            Go Home
-          </button>
-        </div>
-      </div>
-    )
+    notFound()
   }
 
   if (course && selectedBoard && !matchesBoard(course.board, selectedBoard)) {

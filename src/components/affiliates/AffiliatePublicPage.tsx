@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { PRICING } from '@/constants/pricing'
 import {
   Sparkles,
   Link2,
@@ -116,7 +117,7 @@ export default function AffiliatePublicPage({
                     <span className="font-semibold">Tier 1</span>
                     <span className="text-brand-muted text-xs ml-2">Starting</span>
                   </td>
-                  <td className="py-4 pr-6 font-semibold">£5.99</td>
+                  <td className="py-4 pr-6 font-semibold">{PRICING.CURRENCY}{PRICING.MONTHLY}</td>
                   <td className="py-4 pr-6 font-semibold">£10.00</td>
                   <td className="py-4 font-semibold">£5.00</td>
                 </tr>

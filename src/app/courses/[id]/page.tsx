@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { useParams } from 'next/navigation'
+import { useParams, notFound } from 'next/navigation'
 import {
   BookOpen,
   Clock,
@@ -13,6 +13,7 @@ import {
   Play,
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
+import { PRICING, PRICING_DISPLAY } from '@/constants/pricing'
 import { useAuthStore } from '@/store/auth-store'
 import { useBoardStore } from '@/store/board-store'
 import { matchesBoard } from '@/lib/board-filter'
@@ -62,14 +63,7 @@ export default function CourseDetailPage() {
 
   /* ---- 404 ---- */
   if (!course) {
-    return (
-      <div className="flex min-h-[60vh] flex-col items-center justify-center gap-4 bg-brand-bg text-brand-text">
-        <h1 className="text-2xl font-bold">Course not found</h1>
-        <Link href="/courses" className="btn-primary text-sm">
-          Back to courses
-        </Link>
-      </div>
-    )
+    notFound()
   }
 
   // Board mismatch — course belongs to a different exam board
@@ -269,7 +263,7 @@ export default function CourseDetailPage() {
             <span className="text-sm font-medium text-brand-text">
               First month free!
             </span>
-            <span className="ml-1.5 text-xs text-brand-muted">Then £5.99/mo</span>
+            <span className="ml-1.5 text-xs text-brand-muted">Then {PRICING.CURRENCY}{PRICING.MONTHLY}/mo</span>
           </div>
 
           {loading ? (
@@ -320,7 +314,7 @@ function SubscriptionCard({
           </span>
         </div>
         <div className="mb-6">
-          <span className="text-3xl font-bold text-brand-text">£5.99</span>
+          <span className="text-3xl font-bold text-brand-text">{PRICING.CURRENCY}{PRICING.MONTHLY}</span>
           <span className="ml-2 text-sm text-brand-muted">/month after trial</span>
         </div>
 
@@ -336,7 +330,7 @@ function SubscriptionCard({
         )}
 
         <p className="mt-3 text-center text-xs text-brand-muted">
-          Annual subscription also available — £79/year (save 34%)
+          Annual subscription also available — {PRICING.CURRENCY}{PRICING.ANNUAL}/year (save {PRICING.ANNUAL_SAVE_PERCENT}%)
         </p>
         {!hasAccess && (
           <p className="mt-1 text-center text-xs text-brand-muted">

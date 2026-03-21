@@ -43,7 +43,7 @@ export function matchesPracticeBoard(
   if (!selectedBoard) return true;
   if (selectedBoard === 'KS3') {
     // KS3 users only see questions with no board or tier KS3
-    return !question.board || question.board === 'All' || question.tier === 'KS3';
+    return !question.board || question.board === 'All' || question.board === 'KS3' || question.tier === 'KS3';
   }
   const isIgcse = question.id.includes('igcse') || question.tier === 'IGCSE';
   if (isIgcse) return selectedBoard === 'Edexcel';

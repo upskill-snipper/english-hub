@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { PRICING, PRICING_DISPLAY } from '@/constants/pricing'
 import {
   BookOpen,
   ChevronDown,
@@ -691,10 +692,10 @@ export default function ExamGuidePage() {
                   <p className="mt-1 text-brand-muted">
                     Structured lessons, practice questions, and model answers.{' '}
                     <span className="font-semibold text-brand-accent">First month FREE!</span>
-                    {' '}Then &pound;5.99/month on a rolling monthly contract.
+                    {' '}Then {PRICING_DISPLAY.monthly} on a rolling monthly contract.
                   </p>
                   <p className="mt-1 text-sm text-brand-muted">
-                    Annual subscription also available &mdash; save 34%.
+                    Annual subscription also available &mdash; save {PRICING.ANNUAL_SAVE_PERCENT}%.
                   </p>
                 </div>
                 <Link

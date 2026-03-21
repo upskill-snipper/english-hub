@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState, useCallback, useRef, useMemo } from 'react'
-import { useParams, useRouter } from 'next/navigation'
+import { useParams, useRouter, notFound } from 'next/navigation'
 import Link from 'next/link'
 import {
   ArrowLeft,
@@ -296,21 +296,7 @@ export default function AssessmentPage() {
   // ─── Render: Not Found ───────────────────────────────────────────────────────
 
   if (!course) {
-    return (
-      <div className="min-h-screen bg-brand-bg flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-brand-text mb-2">
-            Course not found
-          </h1>
-          <p className="text-brand-muted mb-6">
-            The course you&apos;re looking for doesn&apos;t exist.
-          </p>
-          <button onClick={() => router.push('/')} className="btn-primary">
-            Go Home
-          </button>
-        </div>
-      </div>
-    )
+    notFound()
   }
 
   if (course && selectedBoard && !matchesBoard(course.board, selectedBoard)) {

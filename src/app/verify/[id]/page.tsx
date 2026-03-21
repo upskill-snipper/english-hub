@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useParams } from 'next/navigation'
+import { useParams, notFound } from 'next/navigation'
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/client'
 import { getCourseName } from '@/lib/utils'
@@ -68,31 +68,7 @@ export default function VerifyPage() {
   }
 
   if (!found || !certificate) {
-    return (
-      <div className="min-h-screen flex items-center justify-center px-4 bg-brand-bg">
-        <div className="max-w-md w-full text-center">
-          <div className="bg-brand-card border border-red-500/30 rounded-2xl p-8">
-            <ShieldX className="w-16 h-16 text-red-400 mx-auto mb-4" />
-            <h1 className="text-2xl font-bold text-brand-text mb-2">
-              Certificate Not Found
-            </h1>
-            <p className="text-brand-muted mb-6">
-              We could not verify this certificate. It may have been removed or
-              the ID may be incorrect.
-            </p>
-            <p className="text-xs text-brand-muted/60 font-mono mb-6">
-              ID: {id}
-            </p>
-            <Link
-              href="/"
-              className="inline-flex items-center gap-2 text-brand-accent hover:underline text-sm"
-            >
-              Visit The English Hub
-            </Link>
-          </div>
-        </div>
-      </div>
-    )
+    notFound()
   }
 
   const issuedDate = new Date(certificate.issued_at)

@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/client'
 import { Mail, Lock, User, GraduationCap, BookOpen, Loader2, ArrowLeft, CheckCircle, Eye, EyeOff } from 'lucide-react'
+import { PRICING_DISPLAY } from '@/constants/pricing'
 
 const YEAR_GROUPS = ['Year 7', 'Year 8', 'Year 9', 'Year 10', 'Year 11', 'Year 12', 'Adult']
 const EXAM_BOARDS = ['AQA', 'Edexcel', 'OCR', 'WJEC', 'Other']
@@ -120,7 +121,7 @@ export default function RegisterPage() {
               Start Your Free Trial
             </h1>
             <p className="text-brand-muted mt-2">
-              First month free, then &pound;5.99/month. Cancel anytime.
+              {PRICING_DISPLAY.trialText}. Cancel anytime.
             </p>
           </div>
 

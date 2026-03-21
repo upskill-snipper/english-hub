@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useCallback, useRef, useMemo } from 'react'
+import { PRICING, PRICING_DISPLAY } from '@/constants/pricing'
 import {
   Filter,
   Shuffle,
@@ -221,10 +222,10 @@ export default function PracticePage() {
                   </p>
                   <p className="mt-1 text-brand-muted">
                     <span className="font-semibold text-brand-accent">First month FREE!</span>
-                    {' '}Then &pound;5.99/month on a rolling monthly contract. Cancel anytime.
+                    {' '}Then {PRICING_DISPLAY.monthly} on a rolling monthly contract. Cancel anytime.
                   </p>
                   <p className="mt-1 text-sm text-brand-muted">
-                    Annual subscription also available &mdash; save 34%.
+                    Annual subscription also available &mdash; save {PRICING.ANNUAL_SAVE_PERCENT}%.
                   </p>
                 </div>
                 <Link

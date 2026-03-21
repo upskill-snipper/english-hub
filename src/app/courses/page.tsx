@@ -7,6 +7,7 @@ import { allCourses as courses } from '@/data/courses'
 import { useBoardStore } from '@/store/board-store'
 import { useAuthStore } from '@/store/auth-store'
 import { matchesBoard } from '@/lib/board-filter'
+import { PRICING, PRICING_DISPLAY } from '@/constants/pricing'
 
 const TIERS = ['All', 'KS3', 'GCSE', 'IGCSE'] as const
 type Tier = (typeof TIERS)[number]
@@ -56,10 +57,10 @@ export default function CourseCataloguePage() {
                 </p>
                 <p className="mt-1 text-brand-muted">
                   <span className="font-semibold text-brand-accent">First month FREE!</span>
-                  {' '}Then just &pound;5.99/month on a rolling monthly contract.
+                  {' '}Then just {PRICING_DISPLAY.monthly} on a rolling monthly contract.
                 </p>
                 <p className="mt-1 text-sm text-brand-muted">
-                  Annual subscription also available &mdash; save 34%.
+                  Annual subscription also available &mdash; save {PRICING.ANNUAL_SAVE_PERCENT}%.
                 </p>
               </div>
               <Link

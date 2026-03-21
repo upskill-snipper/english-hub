@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useBoardStore } from '@/store/board-store'
+import { PRICING, PRICING_DISPLAY } from '@/constants/pricing'
 import {
   BookOpen,
   GraduationCap,
@@ -629,7 +630,7 @@ export default function Home() {
               Featured Courses
             </h2>
             <p className="mt-3 text-brand-muted max-w-xl mx-auto">
-              All courses included with your subscription. First month free!
+              All courses included with your subscription. First {PRICING.TRIAL_DAYS}-day month free!
             </p>
           </div>
 
@@ -861,7 +862,7 @@ export default function Home() {
               </p>
               <div className="mb-2">
                 <span className="text-4xl font-extrabold text-brand-text">
-                  £5.99
+                  {PRICING.CURRENCY}{PRICING.MONTHLY}
                 </span>
                 <span className="text-brand-muted text-sm ml-1">/month</span>
               </div>
@@ -899,19 +900,19 @@ export default function Home() {
               </div>
               <h3 className="text-lg font-bold text-brand-text">Annual</h3>
               <p className="text-brand-muted text-sm mt-1 mb-6">
-                Pay yearly and save 33%.
+                Pay yearly and save {PRICING.ANNUAL_SAVE_PERCENT}%.
               </p>
               <div className="mb-2">
                 <span className="text-4xl font-extrabold text-brand-text">
-                  £47.88
+                  {PRICING.CURRENCY}{PRICING.ANNUAL}
                 </span>
                 <span className="text-brand-muted text-sm ml-1">/year</span>
                 <span className="ml-2 text-xs text-brand-accent font-semibold">
-                  Save 33%
+                  Save {PRICING.ANNUAL_SAVE_PERCENT}%
                 </span>
               </div>
               <p className="text-sm text-brand-muted mb-1">
-                Just <span className="text-brand-text font-semibold">£3.99/month</span> — billed annually
+                Just <span className="text-brand-text font-semibold">{PRICING.CURRENCY}{PRICING.ANNUAL_MONTHLY}/month</span> — billed annually
               </p>
               <p className="text-sm text-emerald-400 font-semibold mb-6">
                 First month completely free

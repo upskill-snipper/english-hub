@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/client'
 import { useAuthStore } from '@/store/auth-store'
+import { PRICING, PRICING_DISPLAY } from '@/constants/pricing'
 import { getCourseName } from '@/lib/utils'
 import {
   CreditCard,
@@ -216,7 +217,7 @@ export default function BillingPage() {
                     Pro Monthly
                   </h3>
                   <p className="text-2xl font-bold text-brand-accent mb-1">
-                    &pound;9.99
+                    {PRICING.CURRENCY}{PRICING.MONTHLY}
                     <span className="text-sm font-normal text-brand-muted">
                       /month
                     </span>
@@ -250,13 +251,13 @@ export default function BillingPage() {
                 {/* Annual */}
                 <div className="border border-brand-accent/40 rounded-xl p-5 relative">
                   <span className="absolute -top-3 left-4 bg-brand-accent text-white text-xs font-bold px-2 py-0.5 rounded-full">
-                    Save 33%
+                    Save {PRICING.ANNUAL_SAVE_PERCENT}%
                   </span>
                   <h3 className="text-lg font-semibold text-brand-text mb-1">
                     Pro Annual
                   </h3>
                   <p className="text-2xl font-bold text-brand-accent mb-1">
-                    &pound;79.99
+                    {PRICING.CURRENCY}{PRICING.ANNUAL}
                     <span className="text-sm font-normal text-brand-muted">
                       /year
                     </span>

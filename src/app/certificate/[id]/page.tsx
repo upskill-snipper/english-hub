@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { useParams } from 'next/navigation'
+import { useParams, notFound } from 'next/navigation'
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/client'
 import { getCourseName } from '@/lib/utils'
@@ -104,20 +104,7 @@ export default function CertificatePage() {
   }
 
   if (error || !certificate) {
-    return (
-      <div className="min-h-screen flex items-center justify-center px-4">
-        <div className="text-center">
-          <Award className="w-16 h-16 text-brand-muted/30 mx-auto mb-4" />
-          <h1 className="text-2xl font-bold text-brand-text mb-2">
-            Certificate Not Found
-          </h1>
-          <p className="text-brand-muted mb-6">{error}</p>
-          <Link href="/dashboard" className="btn-primary">
-            Go to Dashboard
-          </Link>
-        </div>
-      </div>
-    )
+    notFound()
   }
 
   const issuedDate = new Date(certificate.issued_at)

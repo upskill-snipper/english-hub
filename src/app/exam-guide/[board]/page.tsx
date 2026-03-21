@@ -24,6 +24,7 @@ import {
   Users,
   Layers,
 } from 'lucide-react'
+import DOMPurify from 'dompurify'
 import {
   getGuideByBoard,
   type BoardExamGuide,
@@ -546,7 +547,7 @@ export default function BoardExamGuidePage() {
               <div
                 className="text-brand-muted leading-relaxed prose prose-sm max-w-none
                   [&_strong]:text-brand-text [&_em]:text-brand-accent [&_a]:text-brand-accent"
-                dangerouslySetInnerHTML={{ __html: guide.overview }}
+                dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(guide.overview) }}
               />
             </div>
           </div>
