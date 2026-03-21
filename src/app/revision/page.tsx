@@ -19,6 +19,8 @@ import {
 import { flashcardDecks, type FlashcardDeck } from '@/data/flashcard-data'
 import { techniques, type Technique } from '@/data/techniques-data'
 import { shuffleArray } from '@/lib/utils'
+import { useBoardStore } from '@/store/board-store'
+import { matchesDeckBoard } from '@/lib/board-filter'
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 
@@ -49,18 +51,12 @@ export default function RevisionPage() {
   const [isShuffled, setIsShuffled] = useState(false)
   const [cardStatus, setCardStatus] = useState<CardStatus>({})
 
-  // ── Deck filter state ─────────────────────────────────────────────────
-  const [deckFilter, setDeckFilter] = useState('All')
-  const DECK_BOARDS = ['All', 'AQA', 'Edexcel', 'IGCSE', 'Universal'] as const
+  // ── Board filter (global store) ──────────────────────────────────────
+  const { selectedBoard } = useBoardStore()
 
   const filteredDecks = useMemo(() => {
-    return flashcardDecks.filter((d) => {
-      if (deckFilter === 'All') return true
-      if (deckFilter === 'Universal') return d.board === 'All'
-      if (deckFilter === 'IGCSE') return d.id.includes('igcse') || d.title.toLowerCase().includes('igcse')
-      return d.board === deckFilter && !d.id.includes('igcse') && !d.title.toLowerCase().includes('igcse')
-    })
-  }, [deckFilter])
+    return flashcardDecks.filter((d) => matchesDeckBoard(d.board, selectedBoard))
+  }, [selectedBoard])
 
   // ── Technique state ────────────────────────────────────────────────────
   const [techSearch, setTechSearch] = useState('')
@@ -205,23 +201,6 @@ export default function RevisionPage() {
               <Layers className="h-5 w-5 text-brand-accent" />
               Flashcard Decks
             </h2>
-
-            {/* Board filter pills */}
-            <div className="mb-6 flex flex-wrap gap-2">
-              {DECK_BOARDS.map((board) => (
-                <button
-                  key={board}
-                  onClick={() => setDeckFilter(board)}
-                  className={`rounded-full px-3.5 py-1.5 text-xs font-medium transition-colors ${
-                    deckFilter === board
-                      ? 'bg-brand-accent text-white'
-                      : 'bg-brand-border/50 text-brand-muted hover:bg-brand-border hover:text-brand-text'
-                  }`}
-                >
-                  {board}
-                </button>
-              ))}
-            </div>
 
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {filteredDecks.map((deck) => (

@@ -4,20 +4,20 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { BookOpen, Clock, GraduationCap } from 'lucide-react'
 import { allCourses as courses } from '@/data/courses'
+import { useBoardStore } from '@/store/board-store'
+import { matchesBoard } from '@/lib/board-filter'
 
 const TIERS = ['All', 'KS3', 'GCSE', 'IGCSE'] as const
 type Tier = (typeof TIERS)[number]
 
-const BOARDS = ['All', 'AQA', 'Edexcel'] as const
-type Board = (typeof BOARDS)[number]
 
 export default function CourseCataloguePage() {
   const [activeTier, setActiveTier] = useState<Tier>('All')
-  const [board, setBoard] = useState<Board>('All')
+  const { selectedBoard } = useBoardStore()
 
   const filtered = courses.filter((c) => {
+    if (!matchesBoard(c.board, selectedBoard)) return false
     if (activeTier !== 'All' && c.tier?.toUpperCase() !== activeTier) return false
-    if (board !== 'All' && c.board !== board) return false
     return true
   })
 
@@ -58,24 +58,6 @@ export default function CourseCataloguePage() {
           ))}
         </div>
 
-        {/* Board filter */}
-        <div role="group" aria-label="Filter by exam board" className="mb-8 flex gap-2">
-          {BOARDS.map((b) => (
-            <button
-              key={b}
-              type="button"
-              aria-pressed={board === b}
-              onClick={() => setBoard(b)}
-              className={`rounded-lg px-4 py-2 text-xs font-medium transition-colors duration-200 ${
-                board === b
-                  ? 'bg-brand-accent text-white'
-                  : 'bg-brand-card text-brand-muted hover:text-brand-text border border-brand-border'
-              }`}
-            >
-              {b}
-            </button>
-          ))}
-        </div>
 
         {/* Grid */}
         {filtered.length === 0 ? (

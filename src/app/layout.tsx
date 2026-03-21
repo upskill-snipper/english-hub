@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from 'next'
 import Script from 'next/script'
 import { SupabaseProvider } from '@/components/providers/supabase-provider'
 import { Header } from '@/components/layout/header'
+import { BoardSidebar } from '@/components/layout/board-sidebar'
+import { BoardGate } from '@/components/layout/board-gate'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -52,7 +54,13 @@ export default function RootLayout({
         </a>
         <SupabaseProvider>
           <Header />
-          <main id="main-content">{children}</main>
+          <BoardGate />
+          <div className="flex flex-col md:flex-row min-h-[calc(100vh-4rem)]">
+            <BoardSidebar />
+            <div id="main-content" className="flex-1 min-w-0">
+              {children}
+            </div>
+          </div>
         </SupabaseProvider>
       </body>
     </html>

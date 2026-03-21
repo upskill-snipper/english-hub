@@ -17,12 +17,13 @@ import {
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { useAuthStore } from '@/store/auth-store'
+import { useBoardStore } from '@/store/board-store'
+import { matchesPracticeBoard } from '@/lib/board-filter'
 import { practiceQuestions, type PracticeQuestion } from '@/data/practice-data'
 import { formatTime } from '@/lib/utils'
 
 // ─── Constants ──────────────────────────────────────────────────────────────
 
-const BOARDS = ['All', 'AQA', 'Edexcel', 'IGCSE', 'OCR', 'WJEC'] as const
 const DIFFICULTIES = ['All', 'Foundation', 'Higher'] as const
 const GRADE_TABS = ['Grade 4-5', 'Grade 6-7', 'Grade 8-9'] as const
 
@@ -36,7 +37,7 @@ function getUniqueQuestionTypes(): string[] {
 
 export default function PracticePage() {
   // Filters
-  const [board, setBoard] = useState<string>('All')
+  const { selectedBoard } = useBoardStore()
   const [questionType, setQuestionType] = useState<string>('All')
   const [difficulty, setDifficulty] = useState<string>('All')
 
@@ -64,14 +65,7 @@ export default function PracticePage() {
   // ── Filtered questions ─────────────────────────────────────────────────
 
   const filtered = practiceQuestions.filter((q) => {
-    if (board !== 'All') {
-      const isIgcse = q.id.includes('igcse') || q.tier === 'IGCSE'
-      if (board === 'IGCSE') {
-        if (!isIgcse) return false
-      } else {
-        if (q.board !== board || isIgcse) return false
-      }
-    }
+    if (!matchesPracticeBoard(q, selectedBoard)) return false
     if (questionType !== 'All' && (q.questionType || q.type) !== questionType) return false
     if (difficulty !== 'All' && (q.difficulty || q.tier) !== difficulty) return false
     return true
@@ -179,23 +173,7 @@ export default function PracticePage() {
             <Filter className="h-4 w-4" />
             Filters
           </div>
-          <div className="grid gap-4 sm:grid-cols-3">
-            {/* Board */}
-            <div>
-              <label htmlFor="board-filter" className="label">Board</label>
-              <select
-                id="board-filter"
-                value={board}
-                onChange={(e) => setBoard(e.target.value)}
-                className="input-field"
-              >
-                {BOARDS.map((b) => (
-                  <option key={b} value={b}>
-                    {b}
-                  </option>
-                ))}
-              </select>
-            </div>
+          <div className="grid gap-4 sm:grid-cols-2">
             {/* Question Type */}
             <div>
               <label htmlFor="question-type-filter" className="label">Question Type</label>

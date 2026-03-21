@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { useBoardStore } from '@/store/board-store'
 import {
   BookOpen,
   GraduationCap,
@@ -11,7 +12,6 @@ import {
   Star,
   ChevronDown,
   CheckCircle,
-  Users,
   FileQuestion,
   Clock,
   Sparkles,
@@ -19,8 +19,6 @@ import {
   BookMarked,
   RotateCcw,
   Quote,
-  Zap,
-  X,
 } from 'lucide-react'
 
 /* ───────────────────── Pricing toggle state ───────────────────── */
@@ -128,6 +126,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 
 export default function Home() {
   const [annual, setAnnual] = useState(true)
+  const selectedBoard = useBoardStore((s) => s.selectedBoard)
 
   return (
     <main id="main-content" className="min-h-screen bg-brand-bg">
@@ -243,13 +242,17 @@ export default function Home() {
                 subtitle: 'All Set Texts',
                 desc: 'Poetry, prose, and drama — with model answers and essay plans.',
               },
-              {
-                icon: GraduationCap,
-                color: 'text-emerald-400 bg-emerald-500/10',
-                title: 'IGCSE',
-                subtitle: 'Edexcel iGCSE',
-                desc: 'International GCSE English Language A & B — tailored to the Edexcel specification.',
-              },
+              ...(selectedBoard !== 'AQA'
+                ? [
+                    {
+                      icon: GraduationCap,
+                      color: 'text-emerald-400 bg-emerald-500/10',
+                      title: 'IGCSE',
+                      subtitle: 'Edexcel iGCSE',
+                      desc: 'International GCSE English Language A & B — tailored to the Edexcel specification.',
+                    },
+                  ]
+                : []),
               {
                 icon: RotateCcw,
                 color: 'text-amber-400 bg-amber-500/10',
