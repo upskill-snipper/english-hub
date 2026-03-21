@@ -20,6 +20,8 @@ import { allCourses } from '@/data/courses'
 import type { CourseQuiz } from '@/data/courses'
 import { createClient } from '@/lib/supabase/client'
 import { useAuthStore } from '@/store/auth-store'
+import { useBoardStore } from '@/store/board-store'
+import { matchesBoard } from '@/lib/board-filter'
 import { shuffleArray, formatTime } from '@/lib/utils'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
@@ -81,6 +83,7 @@ export default function AssessmentPage() {
   const router = useRouter()
   const courseId = params.courseId as string
   const { user, profile } = useAuthStore()
+  const { selectedBoard } = useBoardStore()
 
   const course = allCourses.find((c) => c.id === courseId) ?? null
   const [hasAccess, setHasAccess] = useState<boolean | null>(null)
@@ -306,6 +309,20 @@ export default function AssessmentPage() {
             Go Home
           </button>
         </div>
+      </div>
+    )
+  }
+
+  if (course && selectedBoard && !matchesBoard(course.board, selectedBoard)) {
+    return (
+      <div className="flex min-h-[60vh] flex-col items-center justify-center gap-4 bg-brand-bg text-brand-text">
+        <h1 className="text-2xl font-bold">Course not available</h1>
+        <p className="text-brand-muted text-center max-w-md">
+          This course is for the <strong>{course.board}</strong> exam board.
+        </p>
+        <Link href="/courses" className="btn-primary text-sm">
+          Browse your courses
+        </Link>
       </div>
     )
   }

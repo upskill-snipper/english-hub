@@ -14,6 +14,8 @@ import {
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { useAuthStore } from '@/store/auth-store'
+import { useBoardStore } from '@/store/board-store'
+import { matchesBoard } from '@/lib/board-filter'
 import { allCourses as courses } from '@/data/courses'
 import type { CourseData } from '@/data/courses'
 
@@ -38,6 +40,7 @@ const COURSE_STRIPE_PRICES: Record<string, string> = {
 export default function CourseDetailPage() {
   const params = useParams<{ id: string }>()
   const { user, profile } = useAuthStore()
+  const { selectedBoard } = useBoardStore()
 
   const [course] = useState<CourseData | null>(
     () => courses.find((c) => c.id === params.id) ?? null
@@ -84,6 +87,21 @@ export default function CourseDetailPage() {
         <h1 className="text-2xl font-bold">Course not found</h1>
         <Link href="/courses" className="btn-primary text-sm">
           Back to courses
+        </Link>
+      </div>
+    )
+  }
+
+  // Board mismatch — course belongs to a different exam board
+  if (course && selectedBoard && !matchesBoard(course.board, selectedBoard)) {
+    return (
+      <div className="flex min-h-[60vh] flex-col items-center justify-center gap-4 bg-brand-bg text-brand-text">
+        <h1 className="text-2xl font-bold">Course not available</h1>
+        <p className="text-brand-muted text-center max-w-md">
+          This course is for the <strong>{course.board}</strong> exam board. You currently have <strong>{selectedBoard}</strong> selected.
+        </p>
+        <Link href="/courses" className="btn-primary text-sm">
+          Browse your courses
         </Link>
       </div>
     )

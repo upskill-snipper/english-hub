@@ -9,7 +9,6 @@ import {
   CheckCircle,
   Clock,
   ArrowRight,
-  AlertTriangle,
 } from 'lucide-react'
 import { allCourses } from '@/data/courses'
 import { useBoardStore } from '@/store/board-store'
@@ -80,22 +79,25 @@ const examStructure = [
 /* ───────────────────── Page ───────────────────── */
 
 export default function IGCSELandingPage() {
-  const { selectedBoard, setBoard } = useBoardStore();
+  const { selectedBoard } = useBoardStore();
+
+  // Block AQA users from IGCSE page entirely
+  if (selectedBoard === 'AQA') {
+    return (
+      <div className="flex min-h-[60vh] flex-col items-center justify-center gap-4 bg-brand-bg text-brand-text">
+        <h1 className="text-2xl font-bold">IGCSE courses are for Edexcel students</h1>
+        <p className="text-brand-muted text-center max-w-md">
+          You have AQA selected as your exam board. IGCSE courses are only available for Edexcel students.
+        </p>
+        <Link href="/courses" className="btn-primary text-sm">
+          Browse your courses
+        </Link>
+      </div>
+    )
+  }
 
   return (
     <main id="main-content" className="min-h-screen bg-brand-bg">
-      {selectedBoard === 'AQA' && (
-        <div className="bg-amber-500/10 border-b border-amber-500/20 px-4 py-3">
-          <div className="mx-auto max-w-7xl flex items-center gap-3">
-            <AlertTriangle className="h-5 w-5 text-amber-400 shrink-0" />
-            <p className="text-sm text-amber-200">
-              These courses are for the <strong>Edexcel IGCSE</strong> specification. You currently have <strong>AQA</strong> selected as your exam board.
-              <button onClick={() => setBoard('Edexcel')} className="ml-2 underline hover:text-amber-100">Switch to Edexcel</button>
-            </p>
-          </div>
-        </div>
-      )}
-
       {/* ━━━ HERO ━━━ */}
       <section className="relative overflow-hidden pt-20 pb-24 sm:pt-28 sm:pb-32">
         {/* Glow effect */}

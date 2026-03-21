@@ -17,6 +17,8 @@ import {
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { useAuthStore } from '@/store/auth-store'
+import { useBoardStore } from '@/store/board-store'
+import { matchesBoard } from '@/lib/board-filter'
 import { allCourses } from '@/data/courses'
 import { formatDate } from '@/lib/utils'
 import type { AssessmentAttempt, CourseData } from '@/lib/types'
@@ -114,6 +116,7 @@ function CardSkeleton({ className = '' }: { className?: string }) {
 
 export default function GradeDashboardPage() {
   const { user } = useAuthStore()
+  const { selectedBoard } = useBoardStore()
   const [assessments, setAssessments] = useState<AssessmentAttempt[]>([])
   const [practiceSessions, setPracticeSessions] = useState<PracticeSession[]>([])
   const [loading, setLoading] = useState(true)
@@ -236,6 +239,8 @@ export default function GradeDashboardPage() {
   const recommendations = useMemo(() => {
     const weakAreas = weaknesses.map((w) => w.courseId)
     // Recommend courses from allCourses that relate to weak areas or grade level
+    // Filter by selected board (KS3/generic content always shows)
+    const boardCourses = allCourses.filter((c) => matchesBoard(c.board, selectedBoard))
     const recs: CourseData[] = []
 
     const isGcseLevel = (c: CourseData) =>
@@ -243,35 +248,35 @@ export default function GradeDashboardPage() {
 
     if (averageScore < 50) {
       // Below Grade 5: recommend foundation/KS3 courses
-      const foundation = allCourses.filter(
+      const foundation = boardCourses.filter(
         (c) => c.level === 'KS3' || c.tier === 'Foundation'
       )
       recs.push(...foundation.slice(0, 3))
     } else if (averageScore < 70) {
       // Grade 5-6: recommend GCSE/IGCSE courses not yet attempted or weak areas
-      const improvement = allCourses.filter(
+      const improvement = boardCourses.filter(
         (c) => isGcseLevel(c) && (!weakAreas.length || weakAreas.includes(c.id))
       )
       if (improvement.length > 0) {
         recs.push(...improvement.slice(0, 3))
       } else {
-        recs.push(...allCourses.filter((c) => isGcseLevel(c)).slice(0, 3))
+        recs.push(...boardCourses.filter((c) => isGcseLevel(c)).slice(0, 3))
       }
     } else {
       // Grade 7+: extension/challenge content
-      const extension = allCourses.filter(
+      const extension = boardCourses.filter(
         (c) => c.tier === 'Higher' || isGcseLevel(c)
       )
       recs.push(...extension.slice(0, 3))
     }
 
-    // If no specific recs, just pick first 3 courses
+    // If no specific recs, just pick first 3 board-filtered courses
     if (recs.length === 0) {
-      recs.push(...allCourses.slice(0, 3))
+      recs.push(...boardCourses.slice(0, 3))
     }
 
     return recs.slice(0, 3)
-  }, [averageScore, weaknesses])
+  }, [averageScore, weaknesses, selectedBoard])
 
   // ── Render ───────────────────────────────────────────────────────────────
 

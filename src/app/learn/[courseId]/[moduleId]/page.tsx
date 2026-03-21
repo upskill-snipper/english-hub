@@ -23,6 +23,8 @@ import type { CourseData, CourseModule, CourseQuiz } from '@/data/courses'
 import { createClient } from '@/lib/supabase/client'
 import { useAuthStore } from '@/store/auth-store'
 import { useCourseStore } from '@/store/course-store'
+import { useBoardStore } from '@/store/board-store'
+import { matchesBoard } from '@/lib/board-filter'
 
 // ─── Quiz Card ───────────────────────────────────────────────────────────────
 
@@ -355,6 +357,7 @@ export default function CoursePlayerPage() {
   const { user, profile } = useAuthStore()
   const { completedModules, markModuleComplete, setCourse, setModule } =
     useCourseStore()
+  const { selectedBoard } = useBoardStore()
 
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [hasAccess, setHasAccess] = useState<boolean | null>(null)
@@ -561,6 +564,20 @@ export default function CoursePlayerPage() {
             Go Home
           </button>
         </div>
+      </div>
+    )
+  }
+
+  if (course && selectedBoard && !matchesBoard(course.board, selectedBoard)) {
+    return (
+      <div className="flex min-h-[60vh] flex-col items-center justify-center gap-4 bg-brand-bg text-brand-text">
+        <h1 className="text-2xl font-bold">Course not available</h1>
+        <p className="text-brand-muted text-center max-w-md">
+          This course is for the <strong>{course.board}</strong> exam board.
+        </p>
+        <Link href="/courses" className="btn-primary text-sm">
+          Browse your courses
+        </Link>
       </div>
     )
   }

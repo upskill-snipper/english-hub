@@ -33,13 +33,8 @@ export function BoardGate() {
   // Board already selected
   if (selectedBoard !== null) return null
 
-  // Don't block landing, auth, affiliates, or verify pages
-  if (
-    pathname === '/' ||
-    pathname.startsWith('/auth') ||
-    pathname.startsWith('/affiliates') ||
-    pathname.startsWith('/verify')
-  ) {
+  // Only skip auth-related pages (users must be able to log in/register without a board)
+  if (pathname.startsWith('/auth') || pathname.startsWith('/verify')) {
     return null
   }
 
