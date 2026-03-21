@@ -11,7 +11,7 @@ const boards = [
     color: 'bg-emerald-500',
     title: 'KS3',
     subtitle: 'Key Stage 3 English',
-    description: 'Foundation courses in reading, writing, and grammar for Years 7–9',
+    description: 'Foundation courses in reading, writing, and grammar for Years 7–9.',
   },
   {
     id: 'AQA' as ExamBoard,
@@ -19,7 +19,7 @@ const boards = [
     color: 'bg-blue-500',
     title: 'AQA',
     subtitle: 'GCSE English Language & Literature',
-    description: 'AQA-specific courses, practice questions, and revision materials plus KS3 foundations',
+    description: 'AQA-specific courses, practice questions, and revision materials, plus KS3 foundations.',
   },
   {
     id: 'Edexcel' as ExamBoard,
@@ -27,7 +27,7 @@ const boards = [
     color: 'bg-violet-500',
     title: 'Edexcel',
     subtitle: 'GCSE, IGCSE & KS3 English',
-    description: 'Edexcel-specific courses including International GCSE content plus KS3 foundations',
+    description: 'Edexcel-specific courses including International GCSE content, plus KS3 foundations.',
   },
   {
     id: 'OCR' as ExamBoard,
@@ -35,7 +35,7 @@ const boards = [
     color: 'bg-orange-500',
     title: 'OCR',
     subtitle: 'GCSE English Language & Literature',
-    description: 'OCR-specific practice questions and revision materials plus KS3 foundations',
+    description: 'OCR-specific practice questions and revision materials, plus KS3 foundations.',
   },
   {
     id: 'WJEC' as ExamBoard,
@@ -43,7 +43,7 @@ const boards = [
     color: 'bg-red-500',
     title: 'WJEC Eduqas',
     subtitle: 'GCSE English Language & Literature',
-    description: 'WJEC Eduqas practice questions and revision materials plus KS3 foundations',
+    description: 'WJEC Eduqas practice questions and revision materials, plus KS3 foundations.',
   },
 ] as const
 

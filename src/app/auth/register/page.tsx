@@ -117,10 +117,10 @@ export default function RegisterPage() {
         <div className="card p-8">
           <div className="text-center mb-8">
             <h1 className="text-2xl font-bold text-brand-text">
-              Create your account
+              Start Your Free Trial
             </h1>
             <p className="text-brand-muted mt-2">
-              Join The English Hub and start improving your grades
+              First month free, then &pound;5.99/month. Cancel anytime.
             </p>
           </div>
 
@@ -291,7 +291,7 @@ export default function RegisterPage() {
               href="/auth/login"
               className="text-brand-accent hover:text-brand-accent-hover transition-colors font-medium"
             >
-              Login
+              Sign in
             </Link>
           </p>
         </div>

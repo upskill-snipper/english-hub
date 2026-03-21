@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import Stripe from 'stripe'
 import { stripe } from '@/lib/stripe'
 import { createServiceRoleClient } from '@/lib/supabase/server'
+import { attributeAffiliateReferral } from '@/lib/affiliate/attribution'
 
 // Disable body parsing — we need the raw body for signature verification
 export const runtime = 'nodejs'
@@ -47,7 +48,23 @@ export async function POST(request: NextRequest) {
   try {
     switch (event.type) {
       case 'checkout.session.completed': {
-        await handleCheckoutCompleted(event.data.object as Stripe.Checkout.Session, supabase)
+        const session = event.data.object as Stripe.Checkout.Session
+        await handleCheckoutCompleted(session, supabase)
+
+        // Affiliate attribution — if this checkout came via an affiliate link
+        const rewardfulReferralId = session.metadata?.rewardful_referral
+        if (rewardfulReferralId) {
+          try {
+            await attributeAffiliateReferral({
+              rewardfulReferralId,
+              stripeSession: session,
+              supabase,
+            })
+          } catch (err) {
+            // Log but do not fail the webhook — attribution is non-critical
+            console.error('Affiliate attribution error:', err)
+          }
+        }
         break
       }
 
@@ -215,5 +232,25 @@ async function handleSubscriptionDeleted(
   if (error) {
     console.error('Failed to set subscription_status to cancelled:', error)
     throw error
+  }
+
+  // Void any pending/confirmed affiliate commission for this subscription
+  const { data: referral } = await supabase
+    .from('affiliate_referrals')
+    .select('id, commission_status')
+    .eq('stripe_subscription_id', subscription.id)
+    .in('commission_status', ['pending', 'confirmed'])
+    .single()
+
+  if (referral) {
+    await supabase
+      .from('affiliate_referrals')
+      .update({
+        commission_status: 'voided',
+        commission_voided_reason: 'Subscription cancelled before payout',
+      })
+      .eq('id', referral.id)
+
+    console.log(`Voided affiliate commission for referral ${referral.id} (subscription cancelled)`)
   }
 }

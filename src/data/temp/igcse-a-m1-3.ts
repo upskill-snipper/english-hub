@@ -195,7 +195,7 @@ export const igcseAChunk1: CourseModule[] = [
 
 <p>The vegetation, such as it was, consisted of a few wiry shrubs and scattered cacti that rose like candlesticks from the barren ground. I was struck by the absence of any birdsong. On other islands we had been greeted by the chatter of finches and the alarm calls of mockingbirds, yet here the silence was broken only by the distant rumble of surf and the occasional hiss of an iguana disturbed by our footsteps.</p>
 
-<p>By noon the heat had become intolerable, and even the hardiest members of our landing party sought the thin shade of an overhanging cliff. I used the rest to examine specimens I had collected that morning: three varieties of shell, a lump ofite volcanic rock streaked with olivine, and a small lizard, quite dead, that I had found wedged in a crack. It occurred to me then that these islands, though desolate, might offer more to the naturalist than any tropical paradise.</p>
+<p>By noon the heat had become intolerable, and even the hardiest members of our landing party sought the thin shade of an overhanging cliff. I used the rest to examine specimens I had collected that morning: three varieties of shell, a lump of volcanic rock streaked with olivine, and a small lizard, quite dead, that I had found wedged in a crack. It occurred to me then that these islands, though desolate, might offer more to the naturalist than any tropical paradise.</p>
 </blockquote>
 
 <h3>Step-by-Step: How to Answer Retrieval Questions</h3>

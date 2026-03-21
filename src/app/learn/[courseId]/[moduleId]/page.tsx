@@ -383,21 +383,27 @@ export default function CoursePlayerPage() {
       ? course.moduleList[moduleIndex + 1]
       : null
 
-  // Check if user has access (pro subscriber OR enrolled in this course)
+  // Is this a free preview module? (first module in the course)
+  const isPreviewModule = moduleIndex === 0
+
+  // Check if user has access (preview module, pro subscriber, OR enrolled)
   useEffect(() => {
     async function checkAccess() {
-      if (!user) return
+      // Free preview modules are accessible to everyone
+      if (isPreviewModule) {
+        setHasAccess(true)
+        return
+      }
+
+      // Non-preview modules require authentication
+      if (!user) {
+        setHasAccess(false)
+        return
+      }
 
       try {
         // Pro subscribers have access to everything
         if (profile?.subscription_status === 'pro') {
-          setHasAccess(true)
-          return
-        }
-
-        // Check if module is a free preview (first module)
-        const modIndex = course?.moduleList.findIndex(m => m.id === moduleId)
-        if (modIndex === 0) {
           setHasAccess(true)
           return
         }
@@ -424,7 +430,7 @@ export default function CoursePlayerPage() {
       }
     }
     checkAccess()
-  }, [user, profile, courseId, moduleId, course])
+  }, [user, profile, courseId, moduleId, course, isPreviewModule])
 
   // Load progress from Supabase
   useEffect(() => {
@@ -776,6 +782,26 @@ export default function CoursePlayerPage() {
                 <p className="text-brand-muted text-sm mt-1">
                   Your progress has been saved.
                 </p>
+              </div>
+            )}
+
+            {/* Preview CTA — shown on free preview modules for non-subscribed users */}
+            {isPreviewModule && (!user || (profile?.subscription_status !== 'pro')) && (
+              <div className="mt-10 rounded-xl border border-brand-accent/30 bg-brand-accent/5 p-6 sm:p-8 text-center">
+                <h3 className="text-xl font-bold text-brand-text mb-2">
+                  Enjoying this? Subscribe for full access — first month free!
+                </h3>
+                <p className="text-brand-muted mb-5 max-w-lg mx-auto">
+                  Unlock all {course.moduleList.length} modules in this course, plus every course on the platform.
+                </p>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                  <Link href="/account/billing" className="btn-primary px-6 py-3 text-base">
+                    Start Free Trial
+                  </Link>
+                  <Link href={`/courses/${courseId}`} className="btn-secondary px-6 py-3 text-base">
+                    View Full Course
+                  </Link>
+                </div>
               </div>
             )}
 

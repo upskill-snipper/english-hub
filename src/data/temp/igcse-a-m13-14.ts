@@ -224,7 +224,7 @@ export const igcseAChunk5: CourseModule[] = [
     content: `
 <h2>Paper 2 Exam Technique &amp; Final Revision Strategy</h2>
 
-<p>Paper 2 of Edexcel IGCSE English Language Specification A (4EA1) is worth <strong>60 marks</strong> and lasts <strong>1 hour 30 minutes</strong>. It contains two sections: <strong>Section A — Reading</strong> (an unseen literary text with structured questions) and <strong>Section B — Imaginative Writing</strong> (a choice of narrative or descriptive writing). This module gives you a complete strategy for every minute of the exam, along with a revision plan for the final week.</p>
+<p>Paper 2 of Edexcel IGCSE English Language Specification A (4EA1) is worth <strong>70 marks</strong> and lasts <strong>1 hour 30 minutes</strong>. It contains two sections: <strong>Section A — Reading</strong> (an unseen literary text with structured questions) and <strong>Section B — Imaginative Writing</strong> (a choice of narrative or descriptive writing). This module gives you a complete strategy for every minute of the exam, along with a revision plan for the final week.</p>
 
 <h3>Paper 2 Timing Plan (1h 30min = 90 minutes)</h3>
 

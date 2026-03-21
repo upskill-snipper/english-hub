@@ -310,7 +310,7 @@ export default function GradeDashboardPage() {
             className="mb-6 inline-flex items-center gap-2 text-sm text-brand-muted hover:text-brand-text transition-colors"
           >
             <ArrowLeft className="h-4 w-4" />
-            Back to Dashboard
+            Back to dashboard
           </Link>
 
           <div className="flex flex-col items-center justify-center rounded-xl border border-dashed border-brand-border bg-brand-card/50 py-16 text-center">
@@ -319,7 +319,7 @@ export default function GradeDashboardPage() {
             </div>
             <h1 className="mb-2 text-xl font-bold sm:text-2xl">Grade Dashboard Locked</h1>
             <p className="mb-6 max-w-md text-brand-muted">
-              Complete at least 5 practice tests or assessments to unlock your Grade Dashboard
+              Complete at least 5 practice tests or assessments to unlock your Grade Dashboard.
             </p>
 
             {/* Progress bar */}
@@ -371,7 +371,7 @@ export default function GradeDashboardPage() {
               className="mb-2 inline-flex items-center gap-2 text-sm text-brand-muted hover:text-brand-text transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
-              Back to Dashboard
+              Back to dashboard
             </Link>
             <h1 className="text-2xl font-bold sm:text-3xl">Grade Dashboard</h1>
             <p className="mt-1 text-brand-muted">
@@ -424,7 +424,7 @@ export default function GradeDashboardPage() {
 
             {last10.length === 0 ? (
               <div className="flex h-48 items-center justify-center text-brand-muted text-sm">
-                No assessment data yet
+                No assessment data yet.
               </div>
             ) : (
               <div className="flex h-48 items-end gap-2">
@@ -483,7 +483,7 @@ export default function GradeDashboardPage() {
                     Top Strengths
                   </h3>
                   {strengths.length === 0 ? (
-                    <p className="text-sm text-brand-muted">No data yet</p>
+                    <p className="text-sm text-brand-muted">No data yet.</p>
                   ) : (
                     <div className="space-y-2">
                       {strengths.map((s) => (
@@ -510,7 +510,7 @@ export default function GradeDashboardPage() {
                     Areas for Improvement
                   </h3>
                   {weaknesses.length === 0 ? (
-                    <p className="text-sm text-brand-muted">No data yet</p>
+                    <p className="text-sm text-brand-muted">No data yet.</p>
                   ) : (
                     <div className="space-y-2">
                       {weaknesses.map((w) => (
@@ -541,7 +541,7 @@ export default function GradeDashboardPage() {
 
             {assessments.length < 3 ? (
               <p className="text-sm text-brand-muted">
-                Complete at least 3 assessments to see your trajectory.
+                Complete at least three assessments to see your trajectory.
               </p>
             ) : (
               <div className="flex flex-col items-center text-center">
@@ -566,12 +566,12 @@ export default function GradeDashboardPage() {
                   {trajectory.trend === 'improving'
                     ? 'Your scores are improving!'
                     : trajectory.trend === 'declining'
-                    ? 'Your scores are declining'
-                    : 'Your scores are stable'}
+                    ? 'Your scores are declining.'
+                    : 'Your scores are stable.'}
                 </p>
                 <p className="mt-1 text-sm text-brand-muted">
                   {trajectory.change > 0 ? '+' : ''}
-                  {trajectory.change}% change from your first 3 to last 3 assessments
+                  {trajectory.change}% change from your first three to last three assessments.
                 </p>
               </div>
             )}
@@ -586,7 +586,7 @@ export default function GradeDashboardPage() {
 
             {recommendations.length === 0 ? (
               <p className="text-sm text-brand-muted">
-                Keep practising to receive personalised recommendations.
+                Keep practising to receive personalised recommendations!
               </p>
             ) : (
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

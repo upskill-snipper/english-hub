@@ -1,12 +1,19 @@
-import type { CourseData, CourseQuiz, CourseModule } from './courses';
+import type { CourseData } from './courses';
 
-// =============================================================================
-// Edexcel GCSE English Literature - Paper 1 & Paper 2
-// =============================================================================
-
-// --- Paper 1 Modules ---------------------------------------------------------
-
-const paper1Modules: CourseModule[] = [
+const edexcelLitPaper1: CourseData = {
+  id: 'edexcel-lit-paper1',
+  title: 'Edexcel GCSE English Literature \u2013 Paper 1',
+  subtitle: 'Shakespeare & Post-1914 Literature',
+  tier: 'GCSE',
+  board: 'Edexcel',
+  specId: '1ET2',
+  specCode: '1ET2/01',
+  price: 0,
+  duration: '14 weeks',
+  level: 'GCSE (Years 10-11)',
+  description: 'Master Edexcel Literature Paper 1: Shakespeare (Macbeth) and Post-1914 Literature (An Inspector Calls). Extract-based responses with context, character analysis, and writer\'s methods.',
+  color: '#e11d48',
+  moduleList: [
 // ──────────────────────────────────────────────
   // MODULE 1 — Paper 1 Overview & Assessment Objectives
   // ──────────────────────────────────────────────
@@ -1219,12 +1226,38 @@ const paper1Modules: CourseModule[] = [
           'Aim for a roughly 50/50 split — two paragraphs on the extract and two on the wider text. Students who focus almost entirely on the extract miss marks for demonstrating knowledge of the whole text.',
       },
     ],
-  },
-];
+  }
+  ],
+  assessmentQuestions: [
+    { id: 'edx-lt1-a1', question: 'How long is Edexcel Literature Paper 1 and what percentage of the GCSE does it represent?', options: ['1 hour 30 minutes, 40%', '1 hour 45 minutes, 50%', '2 hours, 50%', '2 hours 15 minutes, 60%'], correct: 1, explanation: 'Paper 1 is 1 hour 45 minutes long and worth 80 marks, accounting for 50% of the total GCSE.' },
+    { id: 'edx-lt1-a2', question: 'What is Macbeth\'s hamartia (tragic flaw)?', options: ['Cowardice', 'Vaulting ambition', 'Jealousy', 'Loyalty'], correct: 1, explanation: 'Macbeth identifies his own flaw as "vaulting ambition, which o\'erleaps itself" in Act 1 Scene 7. It drives every destructive choice in the play.' },
+    { id: 'edx-lt1-a3', question: 'What does "extract-to-whole" mean in the Edexcel Shakespeare question?', options: ['Only analyse the extract', 'Analyse the extract first, then discuss the wider play', 'Ignore the extract and write about the whole play', 'Compare two extracts from different acts'], correct: 1, explanation: 'Extract-to-whole means starting with detailed analysis of the printed passage, then broadening to show how the theme or character develops across the full text.' },
+    { id: 'edx-lt1-a4', question: 'Which assessment objective tests spelling, punctuation and grammar on Paper 1?', options: ['AO1', 'AO2', 'AO3', 'AO4'], correct: 3, explanation: 'AO4 assesses SPaG and is worth up to 4 additional marks. It is tested on one essay only \u2014 typically the Shakespeare response.' },
+    { id: 'edx-lt1-a5', question: 'Why would Duncan\'s murder have been particularly shocking to a Jacobean audience?', options: ['Because murder was rare on stage', 'Because they believed in the Divine Right of Kings, making regicide a sin against God', 'Because Duncan was based on a real English king', 'Because the audience sympathised with Lady Macbeth'], correct: 1, explanation: 'The Divine Right of Kings held that monarchs were appointed by God. Killing a king was not merely treason but a violation of the sacred, divinely ordained order.' },
+    { id: 'edx-lt1-a6', question: 'What does the "L" in the PETAL framework stand for?', options: ['Language', 'Link to context', 'Literary device', 'Line reference'], correct: 1, explanation: 'In PETAL, L stands for "Link to context" \u2014 connecting your analysis to the social, historical, or literary context of the text (AO3).' },
+    { id: 'edx-lt1-a7', question: 'When was An Inspector Calls written, and when is it set?', options: ['Written 1912, set 1945', 'Written 1945, set 1912', 'Written 1945, set 1945', 'Written 1912, set 1912'], correct: 1, explanation: 'The play was written in 1945 but set in 1912. This time gap creates dramatic irony \u2014 the audience knows about events the characters cannot foresee.' },
+    { id: 'edx-lt1-a8', question: 'Which character serves as Priestley\'s primary mouthpiece for socialist ideas?', options: ['Mr Birling', 'Sheila Birling', 'Inspector Goole', 'Gerald Croft'], correct: 2, explanation: 'Inspector Goole delivers the play\'s central message: "We are members of one body. We are responsible for each other." He functions as Priestley\'s socialist conscience.' },
+    { id: 'edx-lt1-a9', question: 'What does the lighting change from "pink and intimate" to "brighter and harder" symbolise?', options: ['The time of day changing', 'The transition from comfortable illusion to harsh moral scrutiny', 'The Inspector turning on a lamp', 'Sheila becoming more confident'], correct: 1, explanation: 'Priestley uses lighting symbolically: "pink and intimate" represents the Birlings\' comfortable self-deception; "brighter and harder" signals the arrival of truth and moral accountability.' },
+    { id: 'edx-lt1-a10', question: 'What is the ideal balance between extract analysis and wider-text analysis in a Paper 1 essay?', options: ['80% extract, 20% wider text', '70% extract, 30% wider text', '50% extract, 50% wider text', '30% extract, 70% wider text'], correct: 2, explanation: 'Aim for roughly 50/50 \u2014 two paragraphs on the extract and two on the wider text. Students who focus almost entirely on the extract miss marks for whole-text knowledge.' },
+    { id: 'edx-lt1-a11', question: 'Why is the cyclical structure of An Inspector Calls significant?', options: ['It allows the play to be performed twice', 'It snatches away comfortable resolution, showing ignoring responsibility has consequences', 'It proves the Inspector was a real officer', 'It shows Mr Birling was right to be suspicious'], correct: 1, explanation: 'The phone ringing again destroys any relief. Priestley shows that those who refuse to learn the lesson of social responsibility will be forced to confront it again.' },
+    { id: 'edx-lt1-a12', question: 'What should you do if you are running over time on Section A (Shakespeare)?', options: ['Skip the review and keep writing', 'Stop at the 50-minute mark and move on to Section B', 'Write a shorter conclusion and continue for another 10 minutes', 'Abandon Section B entirely'], correct: 1, explanation: 'Two solid essays always earn more marks than one excellent and one rushed essay. Stop at 50 minutes and move on.' },
+  ],
+};
 
-// --- Paper 2 Modules ---------------------------------------------------------
-
-const paper2Modules: CourseModule[] = [
+const edexcelLitPaper2: CourseData = {
+  id: 'edexcel-lit-paper2',
+  title: 'Edexcel GCSE English Literature \u2013 Paper 2',
+  subtitle: '19th-Century Novel & Poetry Anthology',
+  tier: 'GCSE',
+  board: 'Edexcel',
+  specId: '1ET2',
+  specCode: '1ET2/02',
+  price: 0,
+  duration: '14 weeks',
+  level: 'GCSE (Years 10-11)',
+  description: 'Master Edexcel Literature Paper 2: 19th-Century Novel (A Christmas Carol) and Poetry Anthology. Extract responses, poetry analysis, and comparison essays.',
+  color: '#d97706',
+  moduleList: [
 // ──────────────────────────────────────────────
   // MODULE 1 — Paper 2 Overview & Assessment Objectives
   // ──────────────────────────────────────────────
@@ -2310,7 +2343,7 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
     content: `
 <h2>Paper 2 Exam Strategy &amp; Practice</h2>
 
-<p>Edexcel GCSE English Literature Paper 2 lasts <strong>2 hours 15 minutes</strong> and covers your 19th-century novel, the poetry anthology, and an unseen poem comparison. With <strong>80 marks</strong> across three distinct tasks, time management is everything. This module gives you a complete timing plan, open-book strategy, common pitfalls, and a revision toolkit to take into exam season.</p>
+<p>Edexcel GCSE English Literature Paper 2 lasts <strong>2 hours 15 minutes</strong> and covers your 19th-century novel, the poetry anthology, and an unseen poem comparison. With <strong>96 marks</strong> across three distinct tasks, time management is everything. This module gives you a complete timing plan, open-book strategy, common pitfalls, and a revision toolkit to take into exam season.</p>
 
 <h3>Full Paper 2 Timing Plan</h3>
 
@@ -2445,368 +2478,22 @@ Rode the six hundred.</em><div class="source">Tennyson (1854), stanza 1</div></d
           'Theme grids list poems along one axis and themes along the other, allowing you to quickly identify comparison pairs for any theme the exam might ask about.',
       },
     ],
-  },
-];
-
-// --- Paper 1 Assessment Questions ---------------------------------------------
-
-const paper1Assessment: CourseQuiz[] = [
-  {
-    id: 'edx-lt1-assess-q1',
-    question: 'How long is Edexcel Literature Paper 1, and how many marks is it worth?',
-    options: [
-      '1 hour 30 minutes, 60 marks',
-      '1 hour 45 minutes, 80 marks',
-      '2 hours, 100 marks',
-      '2 hours 15 minutes, 80 marks',
-    ],
-    correct: 1,
-    explanation:
-      'Paper 1 is 1 hour 45 minutes long and worth 80 marks (40 for Shakespeare, 40 for Post-1914 Literature).',
-  },
-  {
-    id: 'edx-lt1-assess-q2',
-    question: 'Which assessment objective tests spelling, punctuation and grammar, and on which section is it assessed?',
-    options: [
-      'AO3, assessed on both sections equally',
-      'AO4, assessed on the Shakespeare section only',
-      'AO4, assessed on the Post-1914 section only',
-      'AO2, assessed on both sections equally',
-    ],
-    correct: 1,
-    explanation:
-      'AO4 (SPaG) is worth up to 4 additional marks and is assessed on the Shakespeare essay only. Proofreading this response is therefore essential.',
-  },
-  {
-    id: 'edx-lt1-assess-q3',
-    question: 'What does "extract-based" mean on Edexcel Paper 1?',
-    options: [
-      'You must only write about the printed passage',
-      'You are given a passage as a starting point and must also discuss the wider text',
-      'You select your own extract from memory',
-      'Two extracts are provided for comparison',
-    ],
-    correct: 1,
-    explanation:
-      'Both Paper 1 questions provide a printed extract as a starting point. You must analyse the extract and range across the wider text to access the top mark bands.',
-  },
-  {
-    id: 'edx-lt1-assess-q4',
-    question: 'Which quotation from Macbeth best illustrates the theme of guilt?',
-    options: [
-      '"Fair is foul, and foul is fair"',
-      '"Will all great Neptune\'s ocean wash this blood clean from my hand?"',
-      '"When you durst do it, then you were a man"',
-      '"A man has to make his own way"',
-    ],
-    correct: 1,
-    explanation:
-      'Macbeth\'s rhetorical question about Neptune\'s ocean uses hyperbole to convey that his guilt is cosmic in scale \u2014 no physical act can undo a moral transgression.',
-  },
-  {
-    id: 'edx-lt1-assess-q5',
-    question: 'Why is it important to treat characters as "constructs" in your essays?',
-    options: [
-      'It makes your essay longer',
-      'It shows awareness that the writer deliberately created characters to explore themes and influence the audience',
-      'It is only necessary for the Shakespeare question',
-      'It helps you avoid using quotations',
-    ],
-    correct: 1,
-    explanation:
-      'Referring to Shakespeare\'s or Priestley\'s intentions demonstrates that you understand characters are deliberate authorial creations used to explore themes \u2014 essential for AO1 and AO2.',
-  },
-  {
-    id: 'edx-lt1-assess-q6',
-    question: 'What is the significance of Lady Macbeth speaking in prose during the sleepwalking scene?',
-    options: [
-      'She has become a lower-status character',
-      'The shift from commanding verse to prose signals her psychological breakdown',
-      'Prose is always used in Act 5',
-      'Shakespeare ran out of verse ideas for this scene',
-    ],
-    correct: 1,
-    explanation:
-      'Lady Macbeth previously spoke in controlled, powerful verse. The shift to prose reflects her fractured mind \u2014 she has lost the ordered control she once exercised over language and action.',
-  },
-  {
-    id: 'edx-lt1-assess-q7',
-    question: 'When was An Inspector Calls written and when is it set?',
-    options: [
-      'Written 1912, set 1945',
-      'Written 1945, set 1912',
-      'Written 1945, set 1945',
-      'Written 1912, set 1912',
-    ],
-    correct: 1,
-    explanation:
-      'The play was written in 1945 but set in 1912, creating dramatic irony \u2014 the audience knows about the Titanic, two World Wars, and the failures of Birling\'s predictions.',
-  },
-  {
-    id: 'edx-lt1-assess-q8',
-    question: 'Which character serves as Priestley\'s primary mouthpiece for socialist ideas?',
-    options: [
-      'Mr Birling',
-      'Sheila Birling',
-      'Inspector Goole',
-      'Gerald Croft',
-    ],
-    correct: 2,
-    explanation:
-      'Inspector Goole delivers Priestley\'s collectivist message directly: "We are members of one body. We are responsible for each other."',
-  },
-  {
-    id: 'edx-lt1-assess-q9',
-    question: 'What does the lighting change from "pink and intimate" to "brighter and harder" symbolise?',
-    options: [
-      'The time shifting from evening to night',
-      'The transition from comfortable illusion to harsh moral scrutiny',
-      'The Inspector turning on an interrogation lamp',
-      'Sheila becoming more confident',
-    ],
-    correct: 1,
-    explanation:
-      'The lighting change is a symbolic stage direction: "pink and intimate" represents self-deception, while "brighter and harder" signals the arrival of truth and moral accountability.',
-  },
-  {
-    id: 'edx-lt1-assess-q10',
-    question: 'In the PETAL framework, what does the "L" stand for?',
-    options: [
-      'Language',
-      'Link to context',
-      'Literary device',
-      'Line reference',
-    ],
-    correct: 1,
-    explanation:
-      'L stands for "Link to context" \u2014 connecting your analysis to the social, historical, or literary context of the text (AO3).',
-  },
-  {
-    id: 'edx-lt1-assess-q11',
-    question: 'What distinguishes a Grade 9 response from a Grade 5 response?',
-    options: [
-      'A Grade 9 response is significantly longer',
-      'A Grade 9 response analyses specific language features and integrates context with conceptualised interpretation',
-      'A Grade 9 response uses more quotations',
-      'A Grade 9 response always disagrees with the question',
-    ],
-    correct: 1,
-    explanation:
-      'Grade 9 responses stand out through close language analysis, conceptualised interpretation beyond surface meaning, and seamless integration of context and writer\'s purpose.',
-  },
-  {
-    id: 'edx-lt1-assess-q12',
-    question: 'What should you do if you are running over time on Section A (Shakespeare)?',
-    options: [
-      'Skip the review and keep writing',
-      'Stop at the 50-minute mark and move on to Section B',
-      'Abandon Section B and focus on Section A',
-      'Write a shorter conclusion and continue for 10 more minutes',
-    ],
-    correct: 1,
-    explanation:
-      'Two solid essays always earn more marks than one excellent essay and one rushed essay. Stop at 50 minutes and give Section B the time it needs.',
-  },
-];
-
-// --- Paper 2 Assessment Questions ---------------------------------------------
-
-const paper2Assessment: CourseQuiz[] = [
-  {
-    id: 'edx-lt2-assess-q1',
-    question: 'How long is Edexcel Literature Paper 2, and how many sections does it have?',
-    options: [
-      '1 hour 45 minutes, 2 sections',
-      '2 hours, 2 sections',
-      '2 hours 15 minutes, 2 sections (A and B, with B split into two parts)',
-      '2 hours 30 minutes, 3 sections',
-    ],
-    correct: 2,
-    explanation:
-      'Paper 2 is 2 hours 15 minutes. Section A covers the 19th-century novel (40 marks). Section B has two parts: a single anthology poem (20 marks) and a comparison with an unseen poem (20 marks).',
-  },
-  {
-    id: 'edx-lt2-assess-q2',
-    question: 'Which section of Paper 2 is "open book"?',
-    options: [
-      'Section A \u2014 you receive the full novel',
-      'Section B \u2014 you receive a clean, unannotated poetry anthology',
-      'Both sections',
-      'Neither section',
-    ],
-    correct: 1,
-    explanation:
-      'Section B is open book: you receive a clean copy of the Edexcel poetry anthology with no annotations. Section A (the novel) is closed book \u2014 only the printed extract is provided.',
-  },
-  {
-    id: 'edx-lt2-assess-q3',
-    question: 'What was Dickens\'s primary purpose in writing A Christmas Carol?',
-    options: [
-      'To create an entertaining ghost story',
-      'To popularise the Christmas tree',
-      'To challenge Malthusian economics and laissez-faire capitalism by championing generosity and social responsibility',
-      'To write a biography of a Victorian businessman',
-    ],
-    correct: 2,
-    explanation:
-      'Dickens had a didactic purpose: to attack greed, expose suffering caused by Malthusian attitudes, and argue that individual moral transformation could remedy social injustice.',
-  },
-  {
-    id: 'edx-lt2-assess-q4',
-    question: 'What does the simile "solitary as an oyster" suggest about Scrooge?',
-    options: [
-      'He is physically small',
-      'He is hard-shelled and closed off, yet contains hidden potential',
-      'He lives near the sea',
-      'He is slow and lazy',
-    ],
-    correct: 1,
-    explanation:
-      'The oyster simile conveys Scrooge\'s hard exterior and self-imposed isolation. Oysters contain pearls, hinting at the goodness hidden within him that the Ghosts will bring to the surface.',
-  },
-  {
-    id: 'edx-lt2-assess-q5',
-    question: 'How does Dickens use time as a structural method in A Christmas Carol?',
-    options: [
-      'The novella unfolds over five days',
-      'Events span a full year',
-      'The entire story takes place in one night yet covers a lifetime, creating urgency',
-      'Time moves backwards from death to youth',
-    ],
-    correct: 2,
-    explanation:
-      'Dickens compresses past, present, and future into a single night, creating urgency \u2014 Scrooge must change now \u2014 mirroring the argument that society cannot delay social reform.',
-  },
-  {
-    id: 'edx-lt2-assess-q6',
-    question: 'In the SMILE framework for poetry analysis, what does the "S" stand for?',
-    options: [
-      'Symbolism',
-      'Structure',
-      'Simile',
-      'Setting',
-    ],
-    correct: 1,
-    explanation:
-      'S stands for Structure \u2014 stanza length, rhyme scheme, enjambment, caesura, and whether the form mirrors the poem\'s meaning.',
-  },
-  {
-    id: 'edx-lt2-assess-q7',
-    question: 'What is a "volta" in poetry?',
-    options: [
-      'A repeated refrain at the end of each stanza',
-      'A mid-line pause created by punctuation',
-      'A turn or shift in argument, mood, or perspective',
-      'The use of iambic pentameter',
-    ],
-    correct: 2,
-    explanation:
-      'A volta is the "turn" where the poem\'s direction shifts. In Petrarchan sonnets it typically appears at line 9; in Shakespearean sonnets, before the final couplet.',
-  },
-  {
-    id: 'edx-lt2-assess-q8',
-    question: 'What does "integrated comparison" mean in the poetry comparison essay?',
-    options: [
-      'Writing about Poem A first, then Poem B',
-      'Discussing both poems within the same paragraphs throughout',
-      'Analysing only shared techniques',
-      'Quoting both poems in the introduction only',
-    ],
-    correct: 1,
-    explanation:
-      'An integrated comparison weaves both poems into every paragraph with comparative vocabulary, demonstrating genuine comparison rather than two separate analyses.',
-  },
-  {
-    id: 'edx-lt2-assess-q9',
-    question: 'What does the R in the PETER comparison framework stand for?',
-    options: [
-      'Repetition',
-      'Response / Comparison',
-      'Review',
-      'Reference to context',
-    ],
-    correct: 1,
-    explanation:
-      'R stands for Response / Comparison \u2014 the step where you draw both poems together and make an explicit comparative judgement about their approaches or effects.',
-  },
-  {
-    id: 'edx-lt2-assess-q10',
-    question: 'What is the most common timing mistake students make on Paper 2?',
-    options: [
-      'Spending too long on the single poem',
-      'Spending too long on the novel and rushing the poetry',
-      'Spending too long on the comparison',
-      'Spending too long reading the unseen poem',
-    ],
-    correct: 1,
-    explanation:
-      'The novel (40 marks) tempts overwriting, but the two poetry questions are also worth 40 marks combined. Sticking to the 55-minute novel allocation is essential.',
-  },
-  {
-    id: 'edx-lt2-assess-q11',
-    question: 'Why is "feature-spotting" considered a weak approach?',
-    options: [
-      'Examiners only want content discussion',
-      'It identifies techniques without explaining their effect on meaning',
-      'You should only discuss one technique per paragraph',
-      'Sound devices are not relevant to AO2',
-    ],
-    correct: 1,
-    explanation:
-      'Feature-spotting lists techniques without analysing their effect. Examiners reward responses that explain how and why a technique creates meaning \u2014 not those that name devices like a checklist.',
-  },
-  {
-    id: 'edx-lt2-assess-q12',
-    question: 'What is the single most effective revision activity for Paper 2?',
-    options: [
-      'Re-reading your anthology poems multiple times',
-      'Creating colour-coded notes',
-      'Timed practice under exam conditions',
-      'Memorising every quotation from the novel',
-    ],
-    correct: 2,
-    explanation:
-      'Timed practice under exam conditions is the most effective preparation. It builds the stamina and time-management discipline needed to write three essays in 135 minutes.',
-  },
-];
-
-// --- Course Objects -----------------------------------------------------------
-
-const edexcelLitPaper1: CourseData = {
-  id: 'edexcel-lit-paper1',
-  title: 'Edexcel GCSE English Literature \u2013 Paper 1',
-  subtitle: 'Shakespeare & Post-1914 Literature',
-  tier: 'GCSE',
-  board: 'Edexcel',
-  specId: '1ET2',
-  specCode: '1ET2/01',
-  price: 29.99,
-  duration: '14 weeks',
-  level: 'GCSE (Years 10-11)',
-  color: '#e11d48',
-  description:
-    'Master Edexcel Literature Paper 1: Shakespeare (Macbeth) and Post-1914 Literature (An Inspector Calls). Extract-based responses with context, character analysis, and writer\'s methods.',
-  moduleList: paper1Modules,
-  assessmentQuestions: paper1Assessment,
-};
-
-const edexcelLitPaper2: CourseData = {
-  id: 'edexcel-lit-paper2',
-  title: 'Edexcel GCSE English Literature \u2013 Paper 2',
-  subtitle: '19th-Century Novel & Poetry Anthology',
-  tier: 'GCSE',
-  board: 'Edexcel',
-  specId: '1ET2',
-  specCode: '1ET2/02',
-  price: 29.99,
-  duration: '14 weeks',
-  level: 'GCSE (Years 10-11)',
-  color: '#d97706',
-  description:
-    'Master Edexcel Literature Paper 2: 19th-Century Novel (A Christmas Carol) and Poetry Anthology (Relationships/Conflict). Extract responses, poetry analysis, and comparison essays.',
-  moduleList: paper2Modules,
-  assessmentQuestions: paper2Assessment,
+  }
+  ],
+  assessmentQuestions: [
+    { id: 'edx-lt2-a1', question: 'How long is Edexcel Literature Paper 2?', options: ['1 hour 45 minutes', '2 hours', '2 hours 15 minutes', '2 hours 30 minutes'], correct: 2, explanation: 'Paper 2 is 2 hours 15 minutes (135 minutes), covering the 19th-century novel, anthology poetry, and an unseen poem comparison.' },
+    { id: 'edx-lt2-a2', question: 'What was the Poor Law Amendment Act of 1834 designed to do?', options: ['Abolish child labour', 'Create harsh workhouses to discourage the poor from seeking help', 'Introduce free education', 'Ban debtors\' prisons'], correct: 1, explanation: 'The Act created workhouses designed to be so unpleasant that only the truly desperate would enter. Scrooge\'s question "Are there no workhouses?" shows he has internalised this cruel philosophy.' },
+    { id: 'edx-lt2-a3', question: 'What does the simile "solitary as an oyster" suggest about Scrooge?', options: ['He is physically small', 'He is hard-shelled and closed off, yet contains hidden potential', 'He lives near the sea', 'He is slow-moving and lazy'], correct: 1, explanation: 'The oyster simile conveys Scrooge\'s hard exterior and isolation. However, oysters contain pearls, hinting at the goodness hidden within him that the Ghosts will bring to the surface.' },
+    { id: 'edx-lt2-a4', question: 'Why does Dickens call his chapters "staves" rather than "chapters"?', options: ['To make the novella seem longer', 'Because "stave" means "ghost" in Victorian English', 'Because a stave is a musical term, reinforcing that the novella is a carol', 'To confuse the reader'], correct: 2, explanation: 'A "stave" is a set of lines in music. Dickens reinforces the title \u2014 the text is a carol, a song of joy \u2014 and the structure mirrors the journey from discord to harmony.' },
+    { id: 'edx-lt2-a5', question: 'How many marks is the 19th-century novel question worth on Paper 2?', options: ['20 marks', '30 marks', '40 marks', '50 marks'], correct: 2, explanation: 'The novel question is worth 40 marks \u2014 the single biggest chunk of the paper. It requires analysis of both the printed extract and the wider text.' },
+    { id: 'edx-lt2-a6', question: 'In the SMILE framework for poetry, what does the "I" stand for?', options: ['Intention', 'Imagery', 'Interpretation', 'Irony'], correct: 1, explanation: 'The "I" stands for Imagery \u2014 identifying similes, metaphors, personification, and symbols the poet uses to create vivid pictures and convey meaning.' },
+    { id: 'edx-lt2-a7', question: 'What does AO2 require you to analyse in poetry?', options: ['The poet\'s biography', 'Language, form and structure and their effects on meaning', 'Historical context only', 'Your personal feelings about the poem'], correct: 1, explanation: 'AO2 focuses on analysing how writers use language, form and structure to create meanings and effects. It is the key assessment objective for the poetry questions.' },
+    { id: 'edx-lt2-a8', question: 'What does "integrated comparison" mean in a poetry essay?', options: ['Writing about Poem A then Poem B separately', 'Discussing both poems within the same paragraphs, moving between them fluidly', 'Analysing only shared techniques', 'Quoting from both poems in your introduction only'], correct: 1, explanation: 'An integrated comparison discusses both poems within each paragraph, weaving between them with comparative vocabulary \u2014 not two separate mini-essays.' },
+    { id: 'edx-lt2-a9', question: 'What does the R in the PETER comparison framework stand for?', options: ['Repetition', 'Response / Comparison', 'Review', 'Reference to context'], correct: 1, explanation: 'R stands for Response / Comparison \u2014 the crucial step where you draw both poems together and make an explicit comparative judgement about their effects or approaches.' },
+    { id: 'edx-lt2-a10', question: 'What is the most common timing mistake on Paper 2?', options: ['Spending too long on the single poem', 'Spending too long on the novel and rushing the poetry', 'Spending too long on the comparison', 'Spending too long reading the unseen poem'], correct: 1, explanation: 'The novel (40 marks) tempts students to overwrite, but the two poetry questions are also worth 40 marks combined. Sticking to the 55-minute novel allocation is essential.' },
+    { id: 'edx-lt2-a11', question: 'What narrative function does Tiny Tim serve in A Christmas Carol?', options: ['Comic relief', 'A symbol of innocence whose fate exposes the consequences of social neglect', 'A plot device for conflict with Scrooge', 'A representation of Scrooge\'s childhood'], correct: 1, explanation: 'Tiny Tim is a symbol of innocence and consequence. His potential death makes both Scrooge and the reader complicit in poverty\'s toll \u2014 Dickens\'s most emotionally compelling argument.' },
+    { id: 'edx-lt2-a12', question: 'Which section of Paper 2 is open book?', options: ['Section A \u2014 the full novel text is provided', 'Section B \u2014 a clean, unannotated copy of the poetry anthology', 'Both sections', 'Neither section \u2014 the entire paper is closed book'], correct: 1, explanation: 'Section B is open book: you receive a clean copy of the Edexcel poetry anthology with no annotations. Section A (the novel) is closed book \u2014 you only see the printed extract.' },
+  ],
 };
 
 export const edexcelLitCourses: CourseData[] = [edexcelLitPaper1, edexcelLitPaper2];
-

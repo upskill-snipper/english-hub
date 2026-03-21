@@ -16,10 +16,13 @@ import {
   RefreshCw,
   Filter,
 } from 'lucide-react'
+import Link from 'next/link'
 import { flashcardDecks, type FlashcardDeck } from '@/data/flashcard-data'
 import { techniques, type Technique } from '@/data/techniques-data'
+import { getGuideByBoard } from '@/data/exam-guides'
 import { shuffleArray } from '@/lib/utils'
 import { useBoardStore } from '@/store/board-store'
+import { useAuthStore } from '@/store/auth-store'
 import { matchesDeckBoard } from '@/lib/board-filter'
 
 // ─── Types ──────────────────────────────────────────────────────────────────
@@ -53,9 +56,15 @@ export default function RevisionPage() {
 
   // ── Board filter (global store) ──────────────────────────────────────
   const { selectedBoard } = useBoardStore()
+  const { user } = useAuthStore()
 
   const filteredDecks = useMemo(() => {
     return flashcardDecks.filter((d) => matchesDeckBoard(d.board, selectedBoard))
+  }, [selectedBoard])
+
+  // ── Board exam guide (for tips banner) ──────────────────────────────
+  const boardGuide = useMemo(() => {
+    return selectedBoard ? getGuideByBoard(selectedBoard) : undefined
   }, [selectedBoard])
 
   // ── Technique state ────────────────────────────────────────────────────
@@ -188,6 +197,58 @@ export default function RevisionPage() {
           </p>
         </div>
       </div>
+
+      {/* Subscription CTA */}
+      {!user && (
+        <div className="border-b border-brand-border">
+          <div className="mx-auto max-w-5xl px-4 py-6 sm:px-6">
+            <div className="rounded-2xl border border-brand-accent/30 bg-brand-accent/10 p-6 sm:p-8">
+              <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <p className="text-lg font-bold text-brand-text sm:text-xl">
+                    Access 295 flashcards, technique guides, and board-specific revision tools
+                  </p>
+                  <p className="mt-1 text-brand-muted">
+                    <span className="font-semibold text-brand-accent">First month FREE!</span>
+                    {' '}Then &pound;5.99/month on a rolling monthly contract.
+                  </p>
+                  <p className="mt-1 text-sm text-brand-muted">
+                    Annual subscription also available &mdash; save 34%. Start your free trial today.
+                  </p>
+                </div>
+                <Link
+                  href="/auth/register"
+                  className="inline-flex shrink-0 items-center rounded-lg bg-brand-accent px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-accent/90"
+                >
+                  Start Free Trial
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ── Board Exam Tips Banner ──────────────────────────────────── */}
+      {boardGuide && (
+        <div className="border-b border-brand-border bg-brand-accent/5">
+          <div className="mx-auto flex max-w-5xl flex-col gap-3 px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-brand-muted">
+              {boardGuide.uniqueFeatures.slice(0, 2).map((tip, i) => (
+                <span key={i} className="flex items-start gap-1.5">
+                  <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-accent" />
+                  <span className="line-clamp-1">{tip}</span>
+                </span>
+              ))}
+            </div>
+            <Link
+              href={`/exam-guide/${selectedBoard?.toLowerCase()}`}
+              className="shrink-0 text-sm font-medium text-brand-accent hover:underline"
+            >
+              View your full {boardGuide.boardName} exam guide &rarr;
+            </Link>
+          </div>
+        </div>
+      )}
 
       <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
         {/* ════════════════════════════════════════════════════════════════
@@ -491,11 +552,19 @@ export default function RevisionPage() {
             </div>
           </div>
 
-          {/* Results count */}
-          <p className="mb-4 text-sm text-brand-muted">
-            {filteredTechniques.length} technique
-            {filteredTechniques.length !== 1 ? 's' : ''} found
-          </p>
+          {/* Terminology guide link */}
+          <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
+            <p className="text-sm text-brand-muted">
+              {filteredTechniques.length} technique
+              {filteredTechniques.length !== 1 ? 's' : ''} found
+            </p>
+            <Link
+              href="/exam-guide#terminology"
+              className="text-sm font-medium text-brand-accent hover:underline"
+            >
+              See the full terminology guide &rarr;
+            </Link>
+          </div>
 
           {/* Technique grid */}
           {filteredTechniques.length > 0 ? (

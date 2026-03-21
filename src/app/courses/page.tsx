@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { BookOpen, Clock, GraduationCap } from 'lucide-react'
 import { allCourses as courses } from '@/data/courses'
 import { useBoardStore } from '@/store/board-store'
+import { useAuthStore } from '@/store/auth-store'
 import { matchesBoard } from '@/lib/board-filter'
 
 const TIERS = ['All', 'KS3', 'GCSE', 'IGCSE'] as const
@@ -14,6 +15,7 @@ type Tier = (typeof TIERS)[number]
 export default function CourseCataloguePage() {
   const [activeTier, setActiveTier] = useState<Tier>('All')
   const { selectedBoard } = useBoardStore()
+  const { user } = useAuthStore()
 
   const filtered = courses.filter((c) => {
     if (!matchesBoard(c.board, selectedBoard)) return false
@@ -34,11 +36,57 @@ export default function CourseCataloguePage() {
             confidence. Pick your level, choose a course, and start learning
             today.
           </p>
+          <p className="mt-2 text-sm text-brand-muted">
+            Need to understand your exam structure first?{' '}
+            <Link href="/exam-guide" className="text-brand-accent underline underline-offset-2 hover:text-brand-accent/80">
+              Check out our comprehensive Exam Guide
+            </Link>.
+          </p>
         </div>
       </section>
 
+      {/* Subscription CTA */}
+      {!user && (
+        <section className="mx-auto max-w-7xl px-4 pt-10 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border border-brand-accent/30 bg-brand-accent/10 p-6 sm:p-8">
+            <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p className="text-lg font-bold text-brand-text sm:text-xl">
+                  Subscribe to unlock all courses
+                </p>
+                <p className="mt-1 text-brand-muted">
+                  <span className="font-semibold text-brand-accent">First month FREE!</span>
+                  {' '}Then just &pound;5.99/month on a rolling monthly contract.
+                </p>
+                <p className="mt-1 text-sm text-brand-muted">
+                  Annual subscription also available &mdash; save 34%.
+                </p>
+              </div>
+              <Link
+                href="/auth/register"
+                className="inline-flex shrink-0 items-center rounded-lg bg-brand-accent px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-accent/90"
+              >
+                Start Free Trial
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Filter tabs + grid */}
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+        {/* Board context badge */}
+        {selectedBoard && (
+          <div className="mb-4">
+            <Link
+              href={`/exam-guide/${selectedBoard.toLowerCase()}`}
+              className="inline-flex items-center gap-1.5 rounded-full bg-blue-500/10 px-3 py-1.5 text-xs font-medium text-blue-400 transition-colors hover:bg-blue-500/20"
+            >
+              Showing courses for {selectedBoard} — View exam guide →
+            </Link>
+          </div>
+        )}
+
         {/* Tabs */}
         <div role="group" aria-label="Filter by level" className="mb-8 flex gap-2">
           {TIERS.map((tier) => (
@@ -142,8 +190,8 @@ function CourseCard({ course }: CourseCardProps) {
 
         {/* Footer */}
         <div className="mt-5 flex items-center justify-between border-t border-brand-border pt-5">
-          <span className="text-xl font-bold text-brand-text">
-            £{course.price}
+          <span className="text-xs text-brand-muted">
+            Included with subscription
           </span>
           <span className="inline-flex items-center rounded-lg bg-brand-accent/10 px-4 py-2 text-sm font-semibold text-brand-accent transition-colors duration-200 group-hover:bg-brand-accent group-hover:text-white">
             View Course

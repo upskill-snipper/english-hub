@@ -66,7 +66,7 @@ function LoginForm() {
           <div className="text-center mb-8">
             <h1 className="text-2xl font-bold text-brand-text">Welcome back</h1>
             <p className="text-brand-muted mt-2">
-              Sign in to your English Hub account
+              Sign in to your English Hub account.
             </p>
           </div>
 
@@ -153,7 +153,7 @@ function LoginForm() {
               href="/auth/register"
               className="text-brand-accent hover:text-brand-accent-hover transition-colors font-medium"
             >
-              Register
+              Start Free Trial
             </Link>
           </p>
         </div>

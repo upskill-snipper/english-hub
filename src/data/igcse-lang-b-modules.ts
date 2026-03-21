@@ -504,7 +504,7 @@ At length, upon the morning of the third day, the weather being very squally and
 <ol>
   <li><strong>Identify key quotations:</strong> Underline the most interesting or unusual language choices.</li>
   <li><strong>Name the technique:</strong> Is it a simile, metaphor, personification, onomatopoeia, or something else?</li>
-  <li><strong>Explore the effect in detail:</strong> Don't just say "this creates an image" — explain precisely what image and what emotional response it generates.</li>
+  <li><strong>Explore the effect in detail:</strong> Do not just say "this creates an image" — explain precisely what image and what emotional response it generates.</li>
   <li><strong>Consider word-level choices:</strong> Zoom in on individual words. Why "groaned" rather than "moved"? Why "sullen" rather than "grey"?</li>
 </ol>
 
@@ -803,7 +803,7 @@ We forded the rushing stream at a point where it was three feet deep, the water 
 
 <p>This question rewards clear comprehension supported by textual evidence. It is a bridge between retrieval/inference (Module 2-3) and full literary analysis (Module 7).</p>
 
-<h3>Practice Extract: Charlotte Bronte, <em>Jane Eyre</em> (1847)</h3>
+<h3>Practice Extract: Charlotte Brontë, <em>Jane Eyre</em> (1847)</h3>
 
 <blockquote>
 "Do you think I am an automaton? — a machine without feelings? and can bear to have my morsel of bread snatched from my lips, and my drop of living water dashed from my cup? Do you think, because I am poor, obscure, plain, and little, I am soulless and heartless? You think wrong! — I have as much soul as you — and full as much heart! And if God had gifted me with some beauty and much wealth, I should have made it as hard for you to leave me, as it is now for me to leave you. I am not talking to you now through the medium of custom, conventionalities, nor even of mortal flesh: it is my spirit that addresses your spirit; just as if both had passed through the grave, and we stood at God's feet, equal — as we are!"
@@ -1622,7 +1622,7 @@ Date: March 2026</p>
   <li>A headline or title identifying what is being reviewed.</li>
   <li>An engaging opening that establishes your overall verdict or hooks the reader.</li>
   <li>Descriptive detail — give the reader a sense of the experience.</li>
-  <li>Critical evaluation — what worked, what didn't, and why.</li>
+  <li>Critical evaluation — what worked, what did not, and why.</li>
   <li>A clear recommendation or conclusion.</li>
   <li>A confident, authoritative personal voice.</li>
 </ul>
@@ -1980,7 +1980,7 @@ Date: March 2026</p>
 <ul>
   <li><strong>Figurative language:</strong> Simile, metaphor, personification — but used purposefully, not scattered randomly. One powerful metaphor is worth more than five weak similes.</li>
   <li><strong>Precise nouns and verbs:</strong> Instead of "The bird flew across the sky," write "The heron glided across the estuary." Specificity creates vivid images.</li>
-  <li><strong>Sensory layering:</strong> Don't rely only on sight. Include sounds, smells, textures, and even temperature. Engage at least three senses in your description.</li>
+  <li><strong>Sensory layering:</strong> Do not rely only on sight. Include sounds, smells, textures, and even temperature. Engage at least three senses in your description.</li>
   <li><strong>Varied sentence length:</strong> Long, flowing sentences for immersive description; short sentences for emphasis or contrast. "The room was empty. Completely, irrevocably empty."</li>
   <li><strong>Pathetic fallacy:</strong> Use the natural environment to mirror mood. Rain for sadness, sunshine for hope, wind for unease.</li>
   <li><strong>Extended metaphor:</strong> Sustain a single metaphor across a paragraph or the whole piece for cohesion (e.g., describing a market as a stage where stallholders "perform").</li>
@@ -2004,7 +2004,7 @@ Date: March 2026</p>
 <strong>Before:</strong> "The garden was nice and colourful in summer."
 <strong>After:</strong> "In June, the garden erupted: lavender spilling over the path edges, roses fat and heavy on their stems, the whole plot humming with the low, busy industry of bees."
 
-<p><em>Annotation: In each case, the "after" version replaces vague adjectives ("rough," "big," "nice," "colourful") with specific, sensory detail. The sea doesn't just have "big waves" — it "hurls itself" with "percussive" force. The garden isn't "nice" — it "erupts" with named flowers and the sound of bees. Precision and specificity are the hallmarks of strong descriptive writing.</em></p>
+<p><em>Annotation: In each case, the "after" version replaces vague adjectives ("rough," "big," "nice," "colourful") with specific, sensory detail. The sea does not just have "big waves" — it "hurls itself" with "percussive" force. The garden is not "nice" — it "erupts" with named flowers and the sound of bees. Precision and specificity are the hallmarks of strong descriptive writing.</em></p>
 </div>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> If you are given an image stimulus, do not simply describe what you see in the photograph. Use the image as a <em>starting point</em>, then bring it to life with sounds, smells, textures, movement, and mood that the photograph cannot capture. The examiner wants to see imagination, not a catalogue of visible objects.</div>
@@ -2014,7 +2014,7 @@ Date: March 2026</p>
 <ul>
   <li>Descriptive writing creates <strong>atmosphere and immersion</strong>, not plot.</li>
   <li>Use a <strong>structural thread</strong>: Camera Lens, Five Senses, or Time Passing.</li>
-  <li>Engage at least <strong>three senses</strong> — don't rely only on sight.</li>
+  <li>Engage at least <strong>three senses</strong> — do not rely only on sight.</li>
   <li>Use figurative language <strong>purposefully</strong> — quality over quantity.</li>
   <li>Replace vague adjectives with <strong>precise, specific detail</strong>.</li>
   <li>Balance elaborate imagery with <strong>plain, exact observation</strong>.</li>
@@ -2094,7 +2094,7 @@ Date: March 2026</p>
     content: `
 <h2>Exam Technique and Final Revision Strategy</h2>
 
-<p>This final module brings together everything you have learned across the course and focuses on the <strong>practical strategies</strong> that will help you perform at your best on exam day. Knowing the content is only half the battle — knowing how to <strong>deploy</strong> that knowledge under timed conditions is what separates students who achieve their potential from those who don't.</p>
+<p>This final module brings together everything you have learned across the course and focuses on the <strong>practical strategies</strong> that will help you perform at your best on exam day. Knowing the content is only half the battle — knowing how to <strong>deploy</strong> that knowledge under timed conditions is what separates students who achieve their potential from those who do not.</p>
 
 <h3>Part 1: Paper 2 Exam Technique</h3>
 

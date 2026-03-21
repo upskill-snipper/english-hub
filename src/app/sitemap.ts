@@ -21,6 +21,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.7,
     },
+    {
+      url: 'https://theenglishhub.app/exam-guide',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: 'https://theenglishhub.app/exam-guide/aqa',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: 'https://theenglishhub.app/exam-guide/edexcel',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: 'https://theenglishhub.app/exam-guide/ocr',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: 'https://theenglishhub.app/exam-guide/wjec',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
   ]
 
   const courseRoutes: MetadataRoute.Sitemap = allCourses.map((course) => ({

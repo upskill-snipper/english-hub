@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useCallback, useRef } from 'react'
+import { useState, useEffect, useCallback, useRef, useMemo } from 'react'
 import {
   Filter,
   Shuffle,
@@ -21,6 +21,8 @@ import { useBoardStore } from '@/store/board-store'
 import { matchesPracticeBoard } from '@/lib/board-filter'
 import { practiceQuestions, type PracticeQuestion } from '@/data/practice-data'
 import { formatTime } from '@/lib/utils'
+import { getGuideByBoard } from '@/data/exam-guides'
+import Link from 'next/link'
 
 // ─── Constants ──────────────────────────────────────────────────────────────
 
@@ -31,6 +33,32 @@ const GRADE_TABS = ['Grade 4-5', 'Grade 6-7', 'Grade 8-9'] as const
 function getUniqueQuestionTypes(): string[] {
   const types = new Set(practiceQuestions.map((q) => q.questionType || q.type || 'Other').filter(Boolean))
   return ['All', ...Array.from(types).sort()]
+}
+
+// ─── Contextual Tip Helper ──────────────────────────────────────────────────
+
+function getContextualExaminerTip(
+  questionType: string | undefined,
+  tips: { question: string; tips: string[] }[]
+): { label: string; tip: string } | null {
+  if (!tips.length) return null
+
+  const qt = (questionType || '').toLowerCase()
+  let matched: { question: string; tips: string[] } | undefined
+
+  if (qt.includes('language') || qt.includes('analysis')) {
+    matched = tips.find((t) => /language|ao2/i.test(t.question))
+  } else if (qt.includes('creative') || qt.includes('writing') || qt.includes('narrative') || qt.includes('descriptive')) {
+    matched = tips.find((t) => /creative|writing|ao5|ao6/i.test(t.question))
+  } else if (qt.includes('evaluat')) {
+    matched = tips.find((t) => /evaluat|ao4/i.test(t.question))
+  }
+
+  if (!matched) matched = tips[0]
+  if (!matched?.tips.length) return null
+
+  const randomTip = matched.tips[Math.floor(Math.random() * matched.tips.length)]
+  return { label: matched.question, tip: randomTip }
 }
 
 // ─── Component ──────────────────────────────────────────────────────────────
@@ -61,6 +89,21 @@ export default function PracticePage() {
 
   const { user } = useAuthStore()
   const questionTypes = getUniqueQuestionTypes()
+
+  // Board exam guide for contextual tips
+  const boardGuide = useMemo(
+    () => (selectedBoard ? getGuideByBoard(selectedBoard) : undefined),
+    [selectedBoard]
+  )
+
+  const contextualTip = useMemo(
+    () =>
+      boardGuide && currentQuestion
+        ? getContextualExaminerTip(currentQuestion.questionType || currentQuestion.type, boardGuide.examinerTips)
+        : null,
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [boardGuide, currentQuestion?.id]
+  )
 
   // ── Filtered questions ─────────────────────────────────────────────────
 
@@ -166,6 +209,36 @@ export default function PracticePage() {
         </div>
       </div>
 
+      {/* Subscription CTA */}
+      {!user && (
+        <div className="border-b border-brand-border">
+          <div className="mx-auto max-w-5xl px-4 py-6 sm:px-6">
+            <div className="rounded-2xl border border-brand-accent/30 bg-brand-accent/10 p-6 sm:p-8">
+              <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <p className="text-lg font-bold text-brand-text sm:text-xl">
+                    Unlock 40+ exam-style practice questions with detailed model answers and examiner tips
+                  </p>
+                  <p className="mt-1 text-brand-muted">
+                    <span className="font-semibold text-brand-accent">First month FREE!</span>
+                    {' '}Then &pound;5.99/month on a rolling monthly contract. Cancel anytime.
+                  </p>
+                  <p className="mt-1 text-sm text-brand-muted">
+                    Annual subscription also available &mdash; save 34%.
+                  </p>
+                </div>
+                <Link
+                  href="/auth/register"
+                  className="inline-flex shrink-0 items-center rounded-lg bg-brand-accent px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-accent/90"
+                >
+                  Start Free Trial
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
         {/* ── Filter Bar ──────────────────────────────────────────────── */}
         <div className="card mb-8 p-4 sm:p-6">
@@ -208,9 +281,19 @@ export default function PracticePage() {
             </div>
           </div>
           <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
-            <span className="text-sm text-brand-muted">
-              {filtered.length} question{filtered.length !== 1 ? 's' : ''} available
-            </span>
+            <div className="flex items-center gap-3">
+              <span className="text-sm text-brand-muted">
+                {filtered.length} question{filtered.length !== 1 ? 's' : ''} available
+              </span>
+              {selectedBoard && (
+                <Link
+                  href={`/exam-guide/${selectedBoard.toLowerCase()}`}
+                  className="text-sm font-medium text-brand-accent hover:underline"
+                >
+                  📖 View your board&apos;s full exam guide →
+                </Link>
+              )}
+            </div>
             <div className="flex items-center gap-3">
               {/* Timer toggle */}
               <button
@@ -296,6 +379,21 @@ export default function PracticePage() {
                 {currentQuestion.question}
               </h2>
             </div>
+
+            {/* Board Examiner Tip Callout */}
+            {contextualTip && (
+              <div className="flex items-start gap-3 rounded-lg border border-brand-accent/25 bg-brand-accent/5 px-4 py-3">
+                <Lightbulb className="mt-0.5 h-4 w-4 shrink-0 text-brand-accent" />
+                <div className="text-sm">
+                  <span className="font-semibold text-brand-accent">Examiner Tip</span>
+                  <span className="mx-1.5 text-brand-border">·</span>
+                  <span className="text-xs text-brand-muted">{contextualTip.label}</span>
+                  <p className="mt-1 leading-relaxed text-brand-muted">
+                    {contextualTip.tip}
+                  </p>
+                </div>
+              </div>
+            )}
 
             {/* Answer textarea */}
             <div>

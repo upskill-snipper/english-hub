@@ -111,7 +111,7 @@ export default function VerifyPage() {
                 Certificate Verified
               </h1>
               <p className="text-brand-muted text-xs">
-                This certificate is authentic and valid
+                This certificate is authentic and valid.
               </p>
             </div>
           </div>

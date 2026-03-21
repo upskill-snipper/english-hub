@@ -2776,13 +2776,13 @@ const paper2Assessment: CourseQuiz[] = [
 
 const edexcelLangPaper1: CourseData = {
   id: 'edexcel-lang-paper1',
-  title: 'Edexcel GCSE English Language – Paper 1',
+  title: 'Edexcel GCSE English Language — Paper 1',
   subtitle: 'Non-Fiction Texts & Transactional Writing (1EN2/01)',
   tier: 'GCSE',
   board: 'Edexcel',
   specId: '1EN2',
   specCode: '1EN2/01',
-  price: 29.99,
+  price: 0,
   duration: '12 weeks',
   level: 'GCSE (Years 10-11)',
   color: '#7c3aed',
@@ -2794,13 +2794,13 @@ const edexcelLangPaper1: CourseData = {
 
 const edexcelLangPaper2: CourseData = {
   id: 'edexcel-lang-paper2',
-  title: 'Edexcel GCSE English Language – Paper 2',
+  title: 'Edexcel GCSE English Language — Paper 2',
   subtitle: 'Fiction, Literary Non-Fiction & Imaginative Writing (1EN2/02)',
   tier: 'GCSE',
   board: 'Edexcel',
   specId: '1EN2',
   specCode: '1EN2/02',
-  price: 29.99,
+  price: 0,
   duration: '12 weeks',
   level: 'GCSE (Years 10-11)',
   color: '#4f46e5',

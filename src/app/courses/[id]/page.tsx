@@ -19,24 +19,6 @@ import { matchesBoard } from '@/lib/board-filter'
 import { allCourses as courses } from '@/data/courses'
 import type { CourseData } from '@/data/courses'
 
-// Client-side course price ID map (uses NEXT_PUBLIC env vars)
-const COURSE_STRIPE_PRICES: Record<string, string> = {
-  'ks3-reading': process.env.NEXT_PUBLIC_STRIPE_PRICE_KS3_READING || '',
-  'ks3-writing': process.env.NEXT_PUBLIC_STRIPE_PRICE_KS3_WRITING || '',
-  'ks3-grammar': process.env.NEXT_PUBLIC_STRIPE_PRICE_KS3_GRAMMAR || '',
-  'gcse-lang-reading': process.env.NEXT_PUBLIC_STRIPE_PRICE_GCSE_LANG_READING || '',
-  'gcse-lang-writing': process.env.NEXT_PUBLIC_STRIPE_PRICE_GCSE_LANG_WRITING || '',
-  'gcse-lit-poetry': process.env.NEXT_PUBLIC_STRIPE_PRICE_GCSE_LIT_POETRY || '',
-  'gcse-lit-prose': process.env.NEXT_PUBLIC_STRIPE_PRICE_GCSE_LIT_PROSE || '',
-  'gcse-revision-blitz': process.env.NEXT_PUBLIC_STRIPE_PRICE_GCSE_REVISION || '',
-  'edexcel-lang-paper1': process.env.NEXT_PUBLIC_STRIPE_PRICE_EDEXCEL_LANG_P1 || '',
-  'edexcel-lang-paper2': process.env.NEXT_PUBLIC_STRIPE_PRICE_EDEXCEL_LANG_P2 || '',
-  'edexcel-lit-paper1': process.env.NEXT_PUBLIC_STRIPE_PRICE_EDEXCEL_LIT_P1 || '',
-  'edexcel-lit-paper2': process.env.NEXT_PUBLIC_STRIPE_PRICE_EDEXCEL_LIT_P2 || '',
-  'edexcel-igcse-lang-a': process.env.NEXT_PUBLIC_STRIPE_PRICE_EDEXCEL_IGCSE_A || '',
-  'edexcel-igcse-lang-b': process.env.NEXT_PUBLIC_STRIPE_PRICE_EDEXCEL_IGCSE_B || '',
-}
-
 export default function CourseDetailPage() {
   const params = useParams<{ id: string }>()
   const { user, profile } = useAuthStore()
@@ -47,8 +29,6 @@ export default function CourseDetailPage() {
   )
   const [isEnrolled, setIsEnrolled] = useState(false)
   const [loading, setLoading] = useState(true)
-  const [purchasing, setPurchasing] = useState(false)
-  const [purchaseError, setPurchaseError] = useState<string | null>(null)
 
   const isPro = profile?.subscription_status === 'pro'
 
@@ -108,34 +88,10 @@ export default function CourseDetailPage() {
   }
 
   const hasAccess = isEnrolled || isPro
-  const ctaLabel = hasAccess ? 'Start Learning' : `Buy for £${course.price}`
+  const ctaLabel = hasAccess ? 'Start Learning' : 'Subscribe to Access'
   const ctaHref = hasAccess
     ? `/learn/${course.id}/${course.moduleList[0]?.id}`
-    : `/api/stripe/checkout?course=${course.id}`
-
-  async function handlePurchase() {
-    setPurchasing(true)
-    setPurchaseError(null)
-    try {
-      const priceId = COURSE_STRIPE_PRICES[course!.id]
-      if (!priceId) {
-        setPurchaseError('This course is not available for purchase right now. Please try again later.')
-        setPurchasing(false)
-        return
-      }
-      const res = await fetch('/api/stripe/checkout', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ priceId, courseId: course!.id, mode: 'payment' }),
-      })
-      const data = await res.json()
-      if (!res.ok) throw new Error(data.error ?? 'Checkout failed')
-      window.location.href = data.url
-    } catch (err: unknown) {
-      setPurchaseError(err instanceof Error ? err.message : 'Something went wrong')
-      setPurchasing(false)
-    }
-  }
+    : '/account/billing'
 
   return (
     <div className="min-h-screen bg-brand-bg">
@@ -195,20 +151,16 @@ export default function CourseDetailPage() {
               </div>
             </div>
 
-            {/* Desktop sidebar price card */}
+            {/* Desktop sidebar subscription card */}
             <div className="hidden lg:block">
-              <PriceCard
-                price={course.price}
+              <SubscriptionCard
                 ctaLabel={ctaLabel}
                 ctaHref={ctaHref}
                 hasAccess={hasAccess}
                 loading={loading}
-                purchasing={purchasing}
-                onPurchase={handlePurchase}
                 moduleCount={course.moduleList.length}
                 duration={course.duration}
                 level={course.level}
-                purchaseError={purchaseError}
               />
             </div>
           </div>
@@ -293,21 +245,17 @@ export default function CourseDetailPage() {
             </div>
           </div>
 
-          {/* Desktop sidebar (sticky) — duplicate price card for scroll */}
+          {/* Desktop sidebar (sticky) — subscription card for scroll */}
           <aside className="hidden w-80 shrink-0 lg:block">
             <div className="sticky top-24">
-              <PriceCard
-                price={course.price}
+              <SubscriptionCard
                 ctaLabel={ctaLabel}
                 ctaHref={ctaHref}
                 hasAccess={hasAccess}
                 loading={loading}
-                purchasing={purchasing}
-                onPurchase={handlePurchase}
                 moduleCount={course.moduleList.length}
                 duration={course.duration}
                 level={course.level}
-                purchaseError={purchaseError}
               />
             </div>
           </aside>
@@ -318,26 +266,18 @@ export default function CourseDetailPage() {
       <div className="fixed inset-x-0 bottom-0 z-40 border-t border-brand-border bg-brand-bg/95 backdrop-blur p-4 lg:hidden">
         <div className="mx-auto flex max-w-lg items-center justify-between gap-4">
           <div>
-            <span className="text-xl font-bold text-brand-text">
-              £{course.price}
+            <span className="text-sm font-medium text-brand-text">
+              First month free!
             </span>
-            <span className="ml-1.5 text-xs text-brand-muted">one-time</span>
+            <span className="ml-1.5 text-xs text-brand-muted">Then £5.99/mo</span>
           </div>
 
           {loading ? (
             <div className="h-11 w-36 animate-pulse rounded-lg bg-brand-card" />
-          ) : hasAccess ? (
+          ) : (
             <Link href={ctaHref} className="btn-primary text-sm">
               {ctaLabel}
             </Link>
-          ) : (
-            <button
-              onClick={handlePurchase}
-              disabled={purchasing}
-              className="btn-primary text-sm"
-            >
-              {purchasing ? 'Redirecting...' : ctaLabel}
-            </button>
           )}
         </div>
       </div>
@@ -349,70 +289,60 @@ export default function CourseDetailPage() {
 }
 
 /* ================================================================== */
-/* Price card component                                                */
+/* Subscription card component                                         */
 /* ================================================================== */
 
-interface PriceCardProps {
-  price: number
+interface SubscriptionCardProps {
   ctaLabel: string
   ctaHref: string
   hasAccess: boolean
   loading: boolean
-  purchasing: boolean
-  onPurchase: () => void
   moduleCount: number
   duration: string
   level: string
-  purchaseError?: string | null
 }
 
-function PriceCard({
-  price,
+function SubscriptionCard({
   ctaLabel,
   ctaHref,
   hasAccess,
   loading,
-  purchasing,
-  onPurchase,
   moduleCount,
   duration,
   level,
-  purchaseError,
-}: PriceCardProps) {
+}: SubscriptionCardProps) {
   return (
     <div className="card w-full overflow-hidden lg:w-80">
       <div className="p-6">
+        <div className="mb-2">
+          <span className="text-lg font-bold text-brand-accent">
+            First month free!
+          </span>
+        </div>
         <div className="mb-6">
-          <span className="text-3xl font-bold text-brand-text">£{price}</span>
-          <span className="ml-2 text-sm text-brand-muted">one-time</span>
+          <span className="text-3xl font-bold text-brand-text">£5.99</span>
+          <span className="ml-2 text-sm text-brand-muted">/month after trial</span>
         </div>
 
         {loading ? (
           <div className="h-12 w-full animate-pulse rounded-lg bg-brand-bg" />
-        ) : hasAccess ? (
+        ) : (
           <Link
             href={ctaHref}
             className="btn-primary w-full justify-center text-base"
           >
             {ctaLabel}
           </Link>
-        ) : (
-          <button
-            onClick={onPurchase}
-            disabled={purchasing}
-            className="btn-primary w-full justify-center text-base"
-          >
-            {purchasing ? 'Redirecting...' : ctaLabel}
-          </button>
-        )}
-
-        {purchaseError && (
-          <p className="mt-2 text-center text-xs text-red-400">{purchaseError}</p>
         )}
 
         <p className="mt-3 text-center text-xs text-brand-muted">
-          Lifetime access. Learn at your own pace.
+          Annual subscription also available — £79/year (save 34%)
         </p>
+        {!hasAccess && (
+          <p className="mt-1 text-center text-xs text-brand-muted">
+            Cancel anytime. All courses included.
+          </p>
+        )}
       </div>
 
       <div className="border-t border-brand-border px-6 py-4">

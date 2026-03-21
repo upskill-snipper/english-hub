@@ -7,12 +7,13 @@ interface CheckoutRequestBody {
   priceId: string
   courseId?: string
   mode: 'subscription' | 'payment'
+  rewardful_referral?: string | null
 }
 
 export async function POST(request: NextRequest) {
   try {
     const body: CheckoutRequestBody = await request.json()
-    const { priceId, courseId, mode } = body
+    const { priceId, courseId, mode, rewardful_referral } = body
 
     if (!priceId || !mode) {
       return NextResponse.json(
@@ -104,6 +105,7 @@ export async function POST(request: NextRequest) {
       metadata: {
         userId: user.id,
         ...(courseId && { courseId }),
+        ...(rewardful_referral && { rewardful_referral }),
       },
     }
 

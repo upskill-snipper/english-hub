@@ -12,8 +12,8 @@ export const metadata: Metadata = {
   description:
     'Professional KS3, GCSE, and IGCSE English tutoring platform. Structured courses, exam-style practice, and revision tools to help you achieve top grades.',
   openGraph: {
-    title: 'The English Hub – Master English. Ace Your Exams.',
-    description: 'Expert GCSE, IGCSE & KS3 English courses, practice questions, and revision tools. AQA & Edexcel exam boards.',
+    title: 'The English Hub — Master English. Ace Your Exams.',
+    description: 'Expert GCSE, IGCSE & KS3 English courses, practice questions, and revision tools. AQA, Edexcel, OCR & WJEC Eduqas exam boards.',
     url: 'https://theenglishhub.app',
     siteName: 'The English Hub',
     type: 'website',
@@ -21,8 +21,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'The English Hub – Master English. Ace Your Exams.',
-    description: 'Expert GCSE, IGCSE & KS3 English courses, practice questions, and revision tools.',
+    title: 'The English Hub — Master English. Ace Your Exams.',
+    description: 'Expert GCSE, IGCSE & KS3 English courses, practice questions, and revision tools. AQA, Edexcel, OCR & WJEC Eduqas exam boards.',
   },
 }
 

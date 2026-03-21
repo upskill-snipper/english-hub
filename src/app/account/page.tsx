@@ -130,7 +130,7 @@ export default function AccountPage() {
       password: currentPassword,
     })
     if (signInError) {
-      setPasswordMessage({ type: 'error', text: 'Current password is incorrect' })
+      setPasswordMessage({ type: 'error', text: 'Current password is incorrect.' })
       setPasswordLoading(false)
       return
     }

@@ -12,6 +12,7 @@ import {
 } from 'lucide-react'
 import { allCourses } from '@/data/courses'
 import { useBoardStore } from '@/store/board-store'
+import { useAuthStore } from '@/store/auth-store'
 
 const igcseCourses = allCourses.filter(
   (c) => c.tier?.toUpperCase() === 'IGCSE'
@@ -80,12 +81,13 @@ const examStructure = [
 
 export default function IGCSELandingPage() {
   const { selectedBoard } = useBoardStore();
+  const { user } = useAuthStore();
 
   // Block non-Edexcel users from IGCSE page
   if (selectedBoard && selectedBoard !== 'Edexcel') {
     return (
       <div className="flex min-h-[60vh] flex-col items-center justify-center gap-4 bg-brand-bg text-brand-text">
-        <h1 className="text-2xl font-bold">IGCSE courses are for Edexcel students</h1>
+        <h1 className="text-2xl font-bold">IGCSE courses are for Edexcel students.</h1>
         <p className="text-brand-muted text-center max-w-md">
           You have <strong>{selectedBoard}</strong> selected. IGCSE courses are only available for Edexcel students.
         </p>
@@ -118,23 +120,67 @@ export default function IGCSELandingPage() {
 
           <p className="mt-6 text-lg sm:text-xl text-brand-muted max-w-2xl mx-auto leading-relaxed">
             Complete courses for Specification A (4EA1) and Specification B
-            (4EB1). Expert-written lessons, model answers, and exam strategies
-            &mdash; everything you need to achieve a top grade.
+            (4EB1). Expert-written lessons, examiner-style model answers, and
+            proven exam strategies &mdash; everything you need to achieve a
+            grade 9.
           </p>
+
+          {!user && (
+            <div className="mt-8 flex flex-col items-center gap-1">
+              <p className="text-xl sm:text-2xl font-bold text-brand-accent">
+                First month FREE! Then &pound;5.99/month
+              </p>
+              <p className="text-sm text-brand-muted">
+                Annual subscription also available.
+              </p>
+            </div>
+          )}
 
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/courses" className="btn-primary text-lg px-8 py-4">
               Browse IGCSE Courses
             </Link>
-            <Link
-              href="/auth/register"
-              className="btn-secondary text-lg px-8 py-4"
-            >
-              Start Free
-            </Link>
+            {!user && (
+              <Link
+                href="/auth/register"
+                className="btn-secondary text-lg px-8 py-4"
+              >
+                Start Free Today
+              </Link>
+            )}
           </div>
         </div>
       </section>
+
+      {/* Subscription CTA Banner */}
+      {!user && (
+        <section className="bg-brand-card/30 border-b border-brand-border">
+          <div className="max-w-4xl mx-auto px-6 py-10">
+            <div className="rounded-2xl border border-brand-accent/30 bg-brand-accent/10 p-6 sm:p-8">
+              <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <p className="text-lg font-bold text-brand-text sm:text-xl">
+                    Get full access to all IGCSE courses, practice questions, and model answers.
+                  </p>
+                  <p className="mt-1 text-brand-muted">
+                    <span className="font-semibold text-brand-accent">First month FREE!</span>
+                    {' '}Then &pound;5.99/month on a rolling monthly contract. Cancel anytime.
+                  </p>
+                  <p className="mt-1 text-sm text-brand-muted">
+                    Annual subscription also available &mdash; save 34%.
+                  </p>
+                </div>
+                <Link
+                  href="/auth/register"
+                  className="inline-flex shrink-0 items-center rounded-lg bg-brand-accent px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-accent/90"
+                >
+                  Start Free Trial
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ━━━ WHY IGCSE ━━━ */}
       <section className="py-20 sm:py-28 bg-brand-card/30">
@@ -145,7 +191,8 @@ export default function IGCSELandingPage() {
             </h2>
             <p className="mt-3 text-brand-muted max-w-xl mx-auto">
               The International GCSE is trusted by schools, universities, and
-              employers worldwide.
+              employers worldwide &mdash; and our courses are built to help you
+              excel in every paper.
             </p>
           </div>
 
@@ -205,8 +252,8 @@ export default function IGCSELandingPage() {
               Our IGCSE Courses
             </h2>
             <p className="mt-3 text-brand-muted max-w-xl mx-auto">
-              Two dedicated courses — one for each specification. Pick yours or
-              study both.
+              Two dedicated courses &mdash; one for each specification. Pick
+              yours or study both to maximise your preparation.
             </p>
           </div>
 
@@ -276,8 +323,8 @@ export default function IGCSELandingPage() {
 
                   {/* Footer */}
                   <div className="mt-5 flex items-center justify-between border-t border-brand-border pt-5">
-                    <span className="text-xl font-bold text-brand-text">
-                      &pound;{course.price}
+                    <span className="text-xs text-brand-muted">
+                      Included with subscription
                     </span>
                     <span className="inline-flex items-center rounded-lg bg-brand-accent/10 px-4 py-2 text-sm font-semibold text-brand-accent transition-colors duration-200 group-hover:bg-brand-accent group-hover:text-white">
                       View Course
@@ -441,20 +488,41 @@ export default function IGCSELandingPage() {
 
             <div className="relative">
               <h2 className="text-3xl sm:text-4xl font-bold text-brand-text mb-4">
-                Ready to Start Your IGCSE Journey?
+                Ready to Achieve a Top Grade?
               </h2>
-              <p className="text-brand-muted max-w-lg mx-auto mb-8">
-                Join thousands of international students mastering English with
-                expert-written courses, model answers, and proven exam
-                strategies.
+              <p className="text-brand-muted max-w-lg mx-auto mb-6">
+                Join thousands of international students who have transformed
+                their English skills with expert-written courses, examiner-style
+                model answers, and proven exam strategies.
               </p>
+
+              {!user && (
+                <div className="mb-8 flex flex-col items-center gap-1">
+                  <p className="text-xl sm:text-2xl font-bold text-brand-accent">
+                    First month FREE! Then &pound;5.99/month
+                  </p>
+                  <p className="text-sm text-brand-muted">
+                    Annual subscription also available.
+                  </p>
+                </div>
+              )}
+
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link
-                  href="/auth/register"
-                  className="btn-primary text-lg px-10 py-4"
-                >
-                  Start Free Today
-                </Link>
+                {!user ? (
+                  <Link
+                    href="/auth/register"
+                    className="btn-primary text-lg px-10 py-4"
+                  >
+                    Start Free Today
+                  </Link>
+                ) : (
+                  <Link
+                    href="/courses"
+                    className="btn-primary text-lg px-10 py-4"
+                  >
+                    Browse IGCSE Courses
+                  </Link>
+                )}
                 <Link
                   href="/courses"
                   className="btn-secondary text-lg px-8 py-4 inline-flex items-center gap-2"

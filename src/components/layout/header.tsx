@@ -9,6 +9,7 @@ const NAV_LINKS = [
   { href: '/courses', label: 'Courses' },
   { href: '/practice', label: 'Practice' },
   { href: '/revision', label: 'Revision' },
+  { href: '/exam-guide', label: 'Exam Guide' },
 ]
 
 export function Header() {
@@ -55,7 +56,7 @@ export function Header() {
           ) : (
             <>
               <Link href="/auth/login" className="btn-ghost text-sm">
-                Login
+                Log in
               </Link>
               <Link href="/auth/register" className="btn-primary text-sm">
                 Register
@@ -111,7 +112,7 @@ export function Header() {
                   className="btn-ghost justify-start text-sm"
                   onClick={() => setMobileOpen(false)}
                 >
-                  Login
+                  Log in
                 </Link>
                 <Link
                   href="/auth/register"
@@ -147,7 +148,7 @@ function SignOutButton() {
       className="btn-ghost text-sm text-brand-muted hover:text-brand-error"
     >
       <LogOut className="mr-1.5 h-4 w-4" />
-      Sign Out
+      Sign out
     </button>
   )
 }
