@@ -1,11 +1,14 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Geist } from 'next/font/google'
 import Script from 'next/script'
 import { SupabaseProvider } from '@/components/providers/supabase-provider'
 import { Header } from '@/components/layout/header'
 import { BoardSidebar } from '@/components/layout/board-sidebar'
 import { BoardGate } from '@/components/layout/board-gate'
 import './globals.css'
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const inter = Inter({
   subsets: ['latin'],
@@ -45,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={cn("font-sans", geist.variable)}>
       <head>
         {process.env.NEXT_PUBLIC_REWARDFUL_KEY && (
           <Script
