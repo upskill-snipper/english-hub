@@ -15,12 +15,15 @@ import {
   FileText,
   Sparkles,
   TrendingUp,
+  Flame,
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { useAuthStore } from '@/store/auth-store'
 import { allCourses } from '@/data/courses'
 import { formatDate } from '@/lib/utils'
 import type { Enrolment, ModuleProgress, Certificate, CourseData } from '@/lib/types'
+
+// ─── Helpers ────────────────────────────────────────────────────────────────
 
 function formatRelativeDate(iso: string) {
   const date = new Date(iso)
@@ -36,10 +39,17 @@ function formatRelativeDate(iso: string) {
   return formatDate(iso)
 }
 
+function getGreeting() {
+  const hour = new Date().getHours()
+  if (hour < 12) return 'Good morning'
+  if (hour < 17) return 'Good afternoon'
+  return 'Good evening'
+}
+
 const gradeBadgeColors: Record<string, string> = {
-  Distinction: 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30',
-  Merit: 'bg-blue-500/20 text-blue-400 border-blue-500/30',
-  Pass: 'bg-brand-accent/20 text-brand-accent border-brand-accent/30',
+  Distinction: 'bg-yellow-500/15 text-yellow-400 border-yellow-500/30',
+  Merit: 'bg-brand-blue/15 text-blue-400 border-blue-500/30',
+  Pass: 'bg-brand-accent/15 text-brand-accent border-brand-accent/30',
 }
 
 const courseMap = new Map<string, CourseData>(
@@ -50,21 +60,30 @@ const courseMap = new Map<string, CourseData>(
 
 function StatCardSkeleton() {
   return (
-    <div className="rounded-xl border border-brand-border bg-brand-card p-5 animate-pulse">
-      <div className="h-4 w-24 rounded bg-brand-border mb-3" />
-      <div className="h-8 w-16 rounded bg-brand-border mb-2" />
-      <div className="h-3 w-20 rounded bg-brand-border" />
+    <div className="card p-5 animate-pulse">
+      <div className="flex items-center gap-3 mb-3">
+        <div className="h-10 w-10 rounded-lg bg-brand-border" />
+        <div className="h-3 w-20 rounded bg-brand-border" />
+      </div>
+      <div className="h-8 w-14 rounded bg-brand-border mb-1" />
+      <div className="h-3 w-16 rounded bg-brand-border" />
     </div>
   )
 }
 
 function CourseCardSkeleton() {
   return (
-    <div className="rounded-xl border border-brand-border bg-brand-card p-5 animate-pulse">
-      <div className="h-5 w-48 rounded bg-brand-border mb-3" />
-      <div className="h-3 w-full rounded bg-brand-border mb-4" />
-      <div className="h-2 w-full rounded-full bg-brand-border mb-3" />
-      <div className="h-9 w-28 rounded bg-brand-border" />
+    <div className="card p-5 animate-pulse">
+      <div className="flex items-center gap-2 mb-3">
+        <div className="h-2.5 w-2.5 rounded-full bg-brand-border" />
+        <div className="h-3 w-16 rounded bg-brand-border" />
+      </div>
+      <div className="h-5 w-48 rounded bg-brand-border mb-2" />
+      <div className="h-3 w-32 rounded bg-brand-border mb-4" />
+      <div className="progress-track mb-4">
+        <div className="progress-fill" style={{ width: '0%' }} />
+      </div>
+      <div className="h-9 w-28 rounded-md bg-brand-border" />
     </div>
   )
 }
@@ -72,10 +91,10 @@ function CourseCardSkeleton() {
 function ActivitySkeleton() {
   return (
     <div className="flex items-center gap-3 py-3 animate-pulse">
-      <div className="h-9 w-9 rounded-full bg-brand-border shrink-0" />
+      <div className="h-9 w-9 rounded-lg bg-brand-border shrink-0" />
       <div className="flex-1">
-        <div className="h-4 w-48 rounded bg-brand-border mb-2" />
-        <div className="h-3 w-32 rounded bg-brand-border" />
+        <div className="h-4 w-40 rounded bg-brand-border mb-1.5" />
+        <div className="h-3 w-28 rounded bg-brand-border" />
       </div>
     </div>
   )
@@ -188,43 +207,46 @@ export default function DashboardPage() {
     } & Enrolment>
   }, [enrolments, moduleProgress])
 
-  // ── Today's date ────────────────────────────────────────────────────────
-
-  const todayString = new Date().toLocaleDateString('en-GB', {
-    weekday: 'long',
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-  })
-
   const firstName = profile?.full_name?.split(' ')[0] ?? 'Student'
+  const greeting = getGreeting()
 
   // ── Quick Actions ───────────────────────────────────────────────────────
 
   const quickActions = [
-    { label: 'Browse Courses', href: '/courses', icon: BookOpen, color: 'text-brand-accent' },
-    { label: 'Practice Questions', href: '/practice', icon: FileText, color: 'text-blue-400' },
-    { label: 'Revision Flashcards', href: '/revision', icon: Layers, color: 'text-purple-400' },
-    { label: 'Grade Dashboard', href: '/dashboard/grades', icon: TrendingUp, color: 'text-green-400' },
-    { label: 'View Certificates', href: '#certificates', icon: Award, color: 'text-yellow-400' },
+    { label: 'Browse Courses', href: '/courses', icon: BookOpen, color: 'text-brand-accent', bg: 'bg-brand-accent/10' },
+    { label: 'Practice Questions', href: '/practice', icon: FileText, color: 'text-blue-400', bg: 'bg-blue-500/10' },
+    { label: 'Revision Cards', href: '/revision', icon: Layers, color: 'text-purple-400', bg: 'bg-purple-500/10' },
+    { label: 'Grade Dashboard', href: '/dashboard/grades', icon: TrendingUp, color: 'text-green-400', bg: 'bg-green-500/10' },
   ]
 
   // ── Render ──────────────────────────────────────────────────────────────
 
   return (
-    <div className="min-h-screen bg-brand-bg text-brand-text">
-      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        {/* ── Welcome Header ─────────────────────────────────────────── */}
-        <div className="mb-8">
-          <h1 className="text-2xl font-bold sm:text-3xl">
-            Welcome back, {firstName}
+    <div className="min-h-screen bg-brand-bg">
+      <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
+
+        {/* ── Greeting Header ─────────────────────────────────────────── */}
+        <div className="mb-6 animate-fade-in">
+          <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">
+            {greeting}, {firstName}
           </h1>
-          <p className="mt-1 text-brand-muted">{todayString}</p>
+          <p className="mt-1 text-body-sm text-brand-muted">
+            {new Date().toLocaleDateString('en-GB', {
+              weekday: 'long',
+              day: 'numeric',
+              month: 'long',
+              year: 'numeric',
+            })}
+          </p>
         </div>
 
         {/* ── Error Banner ─────────────────────────────────────────── */}
         {error && (
-          <div className="mb-6 flex items-center justify-between rounded-lg border border-brand-error/30 bg-brand-error/10 px-4 py-3 text-sm text-brand-error">
+          <div
+            role="alert"
+            aria-live="assertive"
+            className="mb-6 flex items-center justify-between rounded-lg border border-brand-error/30 bg-brand-error/10 px-4 py-3 text-sm text-brand-error animate-slide-up"
+          >
             <span>{error}</span>
             <button
               onClick={() => {
@@ -232,7 +254,7 @@ export default function DashboardPage() {
                 setError(null)
                 window.location.reload()
               }}
-              className="ml-4 shrink-0 rounded-md bg-brand-error/20 px-3 py-1 text-xs font-medium text-brand-error transition-colors hover:bg-brand-error/30"
+              className="ml-4 shrink-0 rounded-md bg-brand-error/20 px-3 py-1.5 text-xs font-medium text-brand-error transition-colors hover:bg-brand-error/30"
             >
               Retry
             </button>
@@ -240,7 +262,7 @@ export default function DashboardPage() {
         )}
 
         {/* ── Stats Row ──────────────────────────────────────────────── */}
-        <div className="mb-8 grid grid-cols-2 gap-4 lg:grid-cols-4">
+        <div className="mb-6 grid grid-cols-2 gap-3 lg:grid-cols-4">
           {loading ? (
             <>
               <StatCardSkeleton />
@@ -251,57 +273,78 @@ export default function DashboardPage() {
           ) : (
             <>
               <StatCard
-                icon={<BookOpen className="h-5 w-5 text-brand-accent" />}
-                label="Courses Enrolled"
+                icon={<BookOpen className="h-5 w-5" />}
+                iconBg="bg-brand-accent/10"
+                iconColor="text-brand-accent"
+                label="Enrolled"
                 value={enrolments.length}
                 sub={enrolments.length === 1 ? 'course' : 'courses'}
               />
               <StatCard
-                icon={<CheckCircle className="h-5 w-5 text-blue-400" />}
-                label="Modules Completed"
+                icon={<CheckCircle className="h-5 w-5" />}
+                iconBg="bg-blue-500/10"
+                iconColor="text-blue-400"
+                label="Completed"
                 value={completedModulesCount}
                 sub={completedModulesCount === 1 ? 'module' : 'modules'}
               />
               <StatCard
-                icon={<Trophy className="h-5 w-5 text-yellow-400" />}
-                label="Certificates Earned"
+                icon={<Trophy className="h-5 w-5" />}
+                iconBg="bg-yellow-500/10"
+                iconColor="text-yellow-400"
+                label="Certificates"
                 value={certificates.length}
-                sub={certificates.length === 1 ? 'certificate' : 'certificates'}
+                sub={certificates.length === 1 ? 'earned' : 'earned'}
               />
               <StatCard
                 icon={
-                  profile?.subscription_status === 'pro' ? (
-                    <Crown className="h-5 w-5 text-yellow-400" />
-                  ) : (
-                    <Sparkles className="h-5 w-5 text-brand-muted" />
-                  )
+                  profile?.subscription_status === 'pro'
+                    ? <Crown className="h-5 w-5" />
+                    : <Sparkles className="h-5 w-5" />
                 }
-                label="Subscription"
-                value={
-                  <SubscriptionBadge status={profile?.subscription_status ?? 'free'} />
-                }
+                iconBg={profile?.subscription_status === 'pro' ? 'bg-yellow-500/10' : 'bg-brand-muted/10'}
+                iconColor={profile?.subscription_status === 'pro' ? 'text-yellow-400' : 'text-brand-muted'}
+                label="Plan"
+                value={<SubscriptionBadge status={profile?.subscription_status ?? 'free'} />}
                 sub="current plan"
               />
             </>
           )}
         </div>
 
+        {/* ── Quick Actions (pill row) ──────────────────────────────── */}
+        <div className="mb-6 flex flex-wrap gap-2">
+          {quickActions.map((action) => (
+            <Link
+              key={action.href}
+              href={action.href}
+              className="group inline-flex items-center gap-2 rounded-full border border-brand-border bg-surface px-4 py-2 text-sm font-medium text-brand-text transition-all duration-200 hover:border-brand-accent/30 hover:bg-surface-raised"
+            >
+              <span className={`flex h-6 w-6 items-center justify-center rounded-md ${action.bg}`}>
+                <action.icon className={`h-3.5 w-3.5 ${action.color}`} />
+              </span>
+              {action.label}
+              <ArrowRight className="h-3.5 w-3.5 text-brand-muted transition-transform group-hover:translate-x-0.5" />
+            </Link>
+          ))}
+        </div>
+
         {/* ── Continue Learning ───────────────────────────────────────── */}
-        <section className="mb-8">
-          <div className="mb-4 flex items-center justify-between">
-            <h2 className="text-lg font-semibold sm:text-xl">Continue Learning</h2>
+        <section className="mb-6">
+          <div className="mb-3 flex items-center justify-between">
+            <h2 className="text-lg font-semibold">Continue Learning</h2>
             {enrolledCourses.length > 0 && (
               <Link
                 href="/courses"
-                className="flex items-center gap-1 text-sm text-brand-accent hover:text-brand-accent transition-colors"
+                className="flex items-center gap-1 text-body-sm font-medium text-brand-accent hover:text-brand-accent-hover transition-colors"
               >
-                View all <ArrowRight className="h-4 w-4" />
+                View all <ArrowRight className="h-3.5 w-3.5" />
               </Link>
             )}
           </div>
 
           {loading ? (
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               <CourseCardSkeleton />
               <CourseCardSkeleton />
               <CourseCardSkeleton />
@@ -315,47 +358,58 @@ export default function DashboardPage() {
               actionHref="/courses"
             />
           ) : (
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {enrolledCourses.map((ec) => (
                 <div
                   key={ec.id}
-                  className="group rounded-xl border border-brand-border bg-brand-card p-5 transition-colors hover:border-brand-accent/30"
+                  className="card-interactive p-5 animate-fade-in"
                 >
-                  <div className="mb-1 flex items-center gap-2">
+                  {/* Level badge */}
+                  <div className="mb-2 flex items-center gap-2">
                     <span
-                      className="inline-block h-2.5 w-2.5 rounded-full"
+                      className="inline-block h-2 w-2 rounded-full"
                       style={{ backgroundColor: ec.course.color }}
                     />
-                    <span className="text-xs font-medium uppercase tracking-wider text-brand-muted">
+                    <span className="text-overline uppercase text-brand-muted">
                       {ec.course.level}
                     </span>
                   </div>
-                  <h3 className="mb-1 font-semibold leading-snug">
+
+                  {/* Title */}
+                  <h3 className="mb-1 font-semibold leading-snug text-brand-text">
                     {ec.course.title}
                   </h3>
-                  <p className="mb-3 text-sm text-brand-muted">
-                    {ec.completedModules} / {ec.totalModules} modules completed
+
+                  {/* Progress text */}
+                  <p className="mb-3 text-body-sm text-brand-muted">
+                    {ec.completedModules} of {ec.totalModules} modules
                   </p>
 
                   {/* Progress bar */}
-                  <div className="mb-4 h-2 w-full overflow-hidden rounded-full bg-brand-border">
+                  <div className="progress-track mb-4">
                     <div
-                      className="h-full rounded-full bg-brand-accent transition-all duration-500"
+                      className="progress-fill"
                       style={{ width: `${ec.progress}%` }}
+                      role="progressbar"
+                      aria-valuenow={Math.round(ec.progress)}
+                      aria-valuemin={0}
+                      aria-valuemax={100}
+                      aria-label={`${Math.round(ec.progress)}% complete`}
                     />
                   </div>
 
+                  {/* Action */}
                   {ec.nextModule ? (
                     <Link
                       href={`/learn/${ec.course_id}/${ec.nextModule.id}`}
-                      className="inline-flex items-center gap-2 rounded-lg bg-brand-accent/10 px-4 py-2 text-sm font-medium text-brand-accent transition-colors hover:bg-brand-accent/20"
+                      className="inline-flex items-center gap-2 rounded-md bg-brand-accent/10 px-3.5 py-2 text-sm font-medium text-brand-accent transition-colors hover:bg-brand-accent/20"
                     >
-                      <Play className="h-4 w-4" />
+                      <Play className="h-3.5 w-3.5" />
                       Continue
                     </Link>
                   ) : (
-                    <span className="inline-flex items-center gap-2 rounded-lg bg-brand-accent/15 px-4 py-2 text-sm font-medium text-brand-accent">
-                      <CheckCircle className="h-4 w-4" />
+                    <span className="inline-flex items-center gap-2 rounded-md bg-brand-accent/15 px-3.5 py-2 text-sm font-medium text-brand-accent">
+                      <CheckCircle className="h-3.5 w-3.5" />
                       Completed
                     </span>
                   )}
@@ -365,14 +419,13 @@ export default function DashboardPage() {
           )}
         </section>
 
-        {/* ── Two-column: Recent Activity + Quick Actions ─────────────── */}
-        <div className="mb-8 grid gap-6 lg:grid-cols-2">
+        {/* ── Two-column: Activity + Certificates ──────────────────────── */}
+        <div className="grid gap-4 lg:grid-cols-2">
+
           {/* Recent Activity */}
           <section>
-            <h2 className="mb-4 text-lg font-semibold sm:text-xl">
-              Recent Activity
-            </h2>
-            <div className="rounded-xl border border-brand-border bg-brand-card p-5">
+            <h2 className="mb-3 text-lg font-semibold">Recent Activity</h2>
+            <div className="card p-5">
               {loading ? (
                 <div className="divide-y divide-brand-border">
                   {Array.from({ length: 3 }).map((_, i) => (
@@ -381,8 +434,8 @@ export default function DashboardPage() {
                 </div>
               ) : recentActivity.length === 0 ? (
                 <div className="py-8 text-center text-brand-muted">
-                  <Clock className="mx-auto mb-2 h-8 w-8" />
-                  <p className="text-sm">No activity yet. Start a course to track your progress.</p>
+                  <Clock className="mx-auto mb-2 h-8 w-8 opacity-50" />
+                  <p className="text-body-sm">No activity yet. Start a course to track your progress.</p>
                 </div>
               ) : (
                 <div className="divide-y divide-brand-border">
@@ -396,24 +449,24 @@ export default function DashboardPage() {
                         key={activity.id}
                         className="flex items-center gap-3 py-3 first:pt-0 last:pb-0"
                       >
-                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-accent/10">
+                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand-accent/10">
                           <CheckCircle className="h-4 w-4 text-brand-accent" />
                         </div>
                         <div className="min-w-0 flex-1">
-                          <p className="truncate text-sm font-medium">
+                          <p className="truncate text-sm font-medium text-brand-text">
                             {mod?.title ?? 'Unknown module'}
                           </p>
-                          <p className="truncate text-xs text-brand-muted">
+                          <p className="truncate text-caption text-brand-muted">
                             {course?.title ?? 'Unknown course'}
                             {activity.completed_at && (
-                              <span className="ml-2">
-                                {formatRelativeDate(activity.completed_at)}
+                              <span className="ml-1.5 opacity-70">
+                                · {formatRelativeDate(activity.completed_at)}
                               </span>
                             )}
                           </p>
                         </div>
                         {activity.quiz_score !== null && (
-                          <span className="shrink-0 rounded-md bg-blue-500/10 px-2 py-0.5 text-xs font-medium text-blue-400">
+                          <span className="shrink-0 rounded-md bg-blue-500/10 px-2 py-0.5 text-caption font-medium text-blue-400">
                             {activity.quiz_score}%
                           </span>
                         )}
@@ -425,76 +478,75 @@ export default function DashboardPage() {
             </div>
           </section>
 
-          {/* Quick Actions */}
+          {/* Certificates */}
           <section>
-            <h2 className="mb-4 text-lg font-semibold sm:text-xl">
-              Quick Actions
+            <h2 className="mb-3 text-lg font-semibold">
+              {certificates.length > 0 ? 'Your Certificates' : 'Achievements'}
             </h2>
-            <div className="grid grid-cols-2 gap-3">
-              {quickActions.map((action) => (
-                <Link
-                  key={action.href}
-                  href={action.href}
-                  className="group flex flex-col items-center gap-2 rounded-xl border border-brand-border bg-brand-card p-5 text-center transition-colors hover:border-brand-accent/30"
-                >
-                  <action.icon className={`h-7 w-7 ${action.color}`} />
-                  <span className="text-sm font-medium">{action.label}</span>
-                  <ArrowRight className="h-4 w-4 text-brand-muted transition-transform group-hover:translate-x-1" />
-                </Link>
-              ))}
+            <div className="card p-5">
+              {loading ? (
+                <div className="space-y-3">
+                  {Array.from({ length: 2 }).map((_, i) => (
+                    <div key={i} className="flex items-center gap-3 animate-pulse">
+                      <div className="h-10 w-10 rounded-lg bg-brand-border" />
+                      <div className="flex-1">
+                        <div className="h-4 w-36 rounded bg-brand-border mb-1.5" />
+                        <div className="h-3 w-24 rounded bg-brand-border" />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : certificates.length === 0 ? (
+                <div className="py-8 text-center text-brand-muted">
+                  <Award className="mx-auto mb-2 h-8 w-8 opacity-50" />
+                  <p className="text-body-sm">Complete a course to earn your first certificate.</p>
+                </div>
+              ) : (
+                <div className="space-y-3">
+                  {certificates.map((cert) => {
+                    const course = courseMap.get(cert.course_id)
+                    return (
+                      <div
+                        key={cert.id}
+                        className="flex items-start gap-3 rounded-lg p-3 transition-colors hover:bg-surface-raised"
+                      >
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-yellow-500/10">
+                          <Award className="h-5 w-5 text-yellow-400" />
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <h3 className="truncate text-sm font-semibold text-brand-text">
+                            {course?.title ?? 'Unknown course'}
+                          </h3>
+                          <div className="mt-1 flex flex-wrap items-center gap-2">
+                            <span
+                              className={`inline-flex items-center rounded-md border px-2 py-0.5 text-caption font-medium ${
+                                gradeBadgeColors[cert.grade] ?? gradeBadgeColors.Pass
+                              }`}
+                            >
+                              {cert.grade}
+                            </span>
+                            <span className="text-caption text-brand-muted">
+                              {cert.score}%
+                            </span>
+                            <span className="text-caption text-brand-muted opacity-70">
+                              · {formatDate(cert.issued_at)}
+                            </span>
+                          </div>
+                          <Link
+                            href={cert.verification_url}
+                            className="mt-1.5 inline-flex items-center gap-1 text-caption font-medium text-brand-accent hover:text-brand-accent-hover transition-colors"
+                          >
+                            View Certificate <ArrowRight className="h-3 w-3" />
+                          </Link>
+                        </div>
+                      </div>
+                    )
+                  })}
+                </div>
+              )}
             </div>
           </section>
         </div>
-
-        {/* ── Certificates ───────────────────────────────────────────── */}
-        {!loading && certificates.length > 0 && (
-          <section className="mb-8">
-            <h2 id="certificates" className="mb-4 text-lg font-semibold sm:text-xl">
-              Your Certificates
-            </h2>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {certificates.map((cert) => {
-                const course = courseMap.get(cert.course_id)
-                return (
-                  <div
-                    key={cert.id}
-                    className="flex items-start gap-4 rounded-xl border border-brand-border bg-brand-card p-5"
-                  >
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-yellow-500/10">
-                      <Award className="h-5 w-5 text-yellow-400" />
-                    </div>
-                    <div className="min-w-0 flex-1">
-                      <h3 className="truncate font-semibold">
-                        {course?.title ?? 'Unknown course'}
-                      </h3>
-                      <div className="mt-1 flex flex-wrap items-center gap-2">
-                        <span
-                          className={`inline-flex items-center rounded-md border px-2 py-0.5 text-xs font-medium ${
-                            gradeBadgeColors[cert.grade] ?? gradeBadgeColors.Pass
-                          }`}
-                        >
-                          {cert.grade}
-                        </span>
-                        <span className="text-xs text-brand-muted">
-                          {cert.score}%
-                        </span>
-                        <span className="text-xs text-brand-muted">
-                          {formatDate(cert.issued_at)}
-                        </span>
-                      </div>
-                      <Link
-                        href={cert.verification_url}
-                        className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-brand-accent hover:text-brand-accent transition-colors"
-                      >
-                        View Certificate <ArrowRight className="h-3 w-3" />
-                      </Link>
-                    </div>
-                  </div>
-                )
-              })}
-            </div>
-          </section>
-        )}
       </div>
     </div>
   )
@@ -504,25 +556,31 @@ export default function DashboardPage() {
 
 function StatCard({
   icon,
+  iconBg,
+  iconColor,
   label,
   value,
   sub,
 }: {
   icon: React.ReactNode
+  iconBg: string
+  iconColor: string
   label: string
   value: React.ReactNode
   sub: string
 }) {
   return (
-    <div className="rounded-xl border border-brand-border bg-brand-card p-5">
-      <div className="mb-2 flex items-center gap-2 text-brand-muted">
-        {icon}
-        <span className="text-xs font-medium uppercase tracking-wider">
+    <div className="card p-5 animate-fade-in">
+      <div className="mb-3 flex items-center gap-3">
+        <div className={`flex h-10 w-10 items-center justify-center rounded-lg ${iconBg}`}>
+          <span className={iconColor}>{icon}</span>
+        </div>
+        <span className="text-overline uppercase text-brand-muted">
           {label}
         </span>
       </div>
-      <div className="text-2xl font-bold">{value}</div>
-      <p className="mt-0.5 text-xs text-brand-muted">{sub}</p>
+      <div className="text-2xl font-bold tracking-tight">{value}</div>
+      <p className="mt-0.5 text-caption text-brand-muted">{sub}</p>
     </div>
   )
 }
@@ -554,7 +612,7 @@ function SubscriptionBadge({
 
   return (
     <span
-      className={`inline-flex items-center rounded-md border px-2.5 py-1 text-sm font-semibold ${
+      className={`inline-flex items-center rounded-md border px-2 py-0.5 text-sm font-semibold ${
         styles[status] ?? styles.free
       }`}
     >
@@ -578,13 +636,13 @@ function EmptyState({
   actionHref: string
 }) {
   return (
-    <div className="flex flex-col items-center justify-center rounded-xl border border-dashed border-brand-border bg-brand-card/50 py-12 text-center">
+    <div className="flex flex-col items-center justify-center rounded-lg border border-dashed border-brand-border bg-surface/50 py-12 text-center">
       <div className="mb-3">{icon}</div>
       <h3 className="mb-1 font-semibold">{title}</h3>
-      <p className="mb-4 text-sm text-brand-muted">{description}</p>
+      <p className="mb-4 text-body-sm text-brand-muted">{description}</p>
       <Link
         href={actionHref}
-        className="inline-flex items-center gap-2 rounded-lg bg-brand-accent px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-brand-accent/90"
+        className="btn-primary"
       >
         {actionLabel} <ArrowRight className="h-4 w-4" />
       </Link>
