@@ -143,6 +143,10 @@ export default function Home() {
               ? 'New: KS3 Reading, Writing & Grammar Courses'
               : selectedBoard === 'AQA'
               ? 'New: AQA GCSE Course Content Updated'
+              : selectedBoard === 'OCR'
+              ? 'New: OCR GCSE Practice Questions & Revision'
+              : selectedBoard === 'WJEC'
+              ? 'New: WJEC Eduqas GCSE Practice Questions & Revision'
               : 'New: Edexcel IGCSE English Language A & B — Now Live'}
           </div>
 
@@ -155,6 +159,10 @@ export default function Home() {
           <p className="mt-6 text-lg sm:text-xl text-brand-muted max-w-2xl mx-auto leading-relaxed">
             {selectedBoard === 'KS3'
               ? 'Expert-written courses for Key Stage 3 English. Build your reading, writing, and grammar foundations \u2014 from struggling to confident.'
+              : selectedBoard === 'OCR'
+              ? 'Expert-written courses for KS3 and OCR GCSE English. Practice questions, revision tools, and more.'
+              : selectedBoard === 'WJEC'
+              ? 'Expert-written courses for KS3 and WJEC Eduqas GCSE English. Practice questions, revision tools, and more.'
               : selectedBoard === 'AQA'
               ? 'Expert-written courses for KS3 and AQA GCSE English. From struggling to confident \u2014 we\u2019ll get you there.'
               : 'Expert-written courses for KS3, GCSE, and IGCSE English. From struggling to confident \u2014 we\u2019ll get you there.'}
@@ -248,18 +256,26 @@ export default function Home() {
                       icon: PenTool,
                       color: 'text-brand-accent bg-brand-accent/10',
                       title: 'GCSE Language',
-                      subtitle: selectedBoard === 'AQA' ? 'AQA' : 'Edexcel',
+                      subtitle: selectedBoard ?? 'All Boards',
                       desc: selectedBoard === 'AQA'
                         ? 'Master Paper 1 explorations in creative reading & writing and Paper 2 writers\u2019 viewpoints & perspectives.'
+                        : selectedBoard === 'OCR'
+                        ? 'Master Component 01 non-fiction reading and Component 02 fiction analysis for OCR GCSE.'
+                        : selectedBoard === 'WJEC'
+                        ? 'Master Component 1 20th-century fiction and Component 2 non-fiction reading for WJEC Eduqas.'
                         : 'Master reading comprehension and creative & transactional writing for Edexcel GCSE.',
                     },
                     {
                       icon: BookOpen,
                       color: 'text-purple-400 bg-purple-500/10',
                       title: 'GCSE Literature',
-                      subtitle: selectedBoard === 'AQA' ? 'AQA Set Texts' : 'Edexcel Set Texts',
+                      subtitle: `${selectedBoard ?? 'All'} Set Texts`,
                       desc: selectedBoard === 'AQA'
                         ? 'Poetry, prose, and drama \u2014 AQA set texts with model answers and essay plans.'
+                        : selectedBoard === 'OCR'
+                        ? 'Poetry, prose, and drama \u2014 OCR set texts with model answers and essay plans.'
+                        : selectedBoard === 'WJEC'
+                        ? 'Poetry, prose, and drama \u2014 WJEC Eduqas set texts with model answers and essay plans.'
                         : 'Poetry, prose, and drama \u2014 Edexcel set texts with model answers and essay plans.',
                     },
                   ]
@@ -457,13 +473,31 @@ export default function Home() {
                 boards: ['Edexcel'],
               },
               {
+                title: 'OCR Language Practice',
+                level: 'GCSE',
+                levelColor: 'bg-orange-500/20 text-orange-400',
+                price: '£49',
+                duration: '8 weeks',
+                desc: 'Component 01 & 02 practice — non-fiction synthesis, evaluation, fiction analysis, and creative writing for OCR.',
+                boards: ['OCR'],
+              },
+              {
+                title: 'WJEC Eduqas Language',
+                level: 'GCSE',
+                levelColor: 'bg-red-500/20 text-red-400',
+                price: '£49',
+                duration: '8 weeks',
+                desc: 'Component 1 & 2 practice — 20th-century fiction, non-fiction reading, and writing tasks for WJEC Eduqas.',
+                boards: ['WJEC'],
+              },
+              {
                 title: 'GCSE Revision Blitz',
                 level: 'Revision',
                 levelColor: 'bg-amber-500/20 text-amber-400',
                 price: '£59',
                 duration: '4 weeks',
                 desc: 'Intensive exam prep: timed practice, model answers, and grade boosters.',
-                boards: ['AQA', 'Edexcel'],
+                boards: ['AQA', 'Edexcel', 'OCR', 'WJEC'],
               },
             ] as const).filter((course) => (course.boards as readonly string[]).includes('all') || (selectedBoard && (course.boards as readonly string[]).includes(selectedBoard))).map((course) => (
               <Link
@@ -752,11 +786,7 @@ export default function Home() {
                 The English Hub
               </Link>
               <p className="text-sm text-brand-muted mt-2 max-w-xs">
-                {selectedBoard === 'KS3'
-                  ? 'Expert English courses for Key Stage 3 students.'
-                  : selectedBoard === 'AQA'
-                  ? 'Expert English courses for KS3 and AQA GCSE students.'
-                  : 'Expert English courses for KS3, GCSE, and IGCSE students.'}
+                Expert English courses for KS3, GCSE, IGCSE, and all major exam boards.
               </p>
             </div>
 

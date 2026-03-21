@@ -1,7 +1,7 @@
 'use client'
 
 import { usePathname } from 'next/navigation'
-import { BookOpen, GraduationCap, ArrowRight, Layers } from 'lucide-react'
+import { BookOpen, GraduationCap, ArrowRight, Layers, Pencil, FileText } from 'lucide-react'
 import { useBoardStore, type ExamBoard } from '@/store/board-store'
 
 const boards = [
@@ -29,6 +29,22 @@ const boards = [
     subtitle: 'GCSE, IGCSE & KS3 English',
     description: 'Edexcel-specific courses including International GCSE content plus KS3 foundations',
   },
+  {
+    id: 'OCR' as ExamBoard,
+    icon: Pencil,
+    color: 'bg-orange-500',
+    title: 'OCR',
+    subtitle: 'GCSE English Language & Literature',
+    description: 'OCR-specific practice questions and revision materials plus KS3 foundations',
+  },
+  {
+    id: 'WJEC' as ExamBoard,
+    icon: FileText,
+    color: 'bg-red-500',
+    title: 'WJEC Eduqas',
+    subtitle: 'GCSE English Language & Literature',
+    description: 'WJEC Eduqas practice questions and revision materials plus KS3 foundations',
+  },
 ] as const
 
 export function BoardGate() {
@@ -48,7 +64,7 @@ export function BoardGate() {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-brand-bg/95 backdrop-blur-sm p-4">
-      <div className="w-full max-w-3xl">
+      <div className="w-full max-w-5xl">
         {/* Header */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-accent/10 mb-5">
@@ -64,7 +80,7 @@ export function BoardGate() {
         </div>
 
         {/* Board cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
           {boards.map((board) => {
             const Icon = board.icon
             return (

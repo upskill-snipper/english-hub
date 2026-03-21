@@ -12,11 +12,19 @@ const BOARD_INFO: Record<ExamBoard, { subtitle: string; color: string }> = {
   },
   AQA: {
     subtitle: 'GCSE English Language & Literature',
-    color: 'bg-purple-500',
+    color: 'bg-blue-500',
   },
   Edexcel: {
     subtitle: 'GCSE & IGCSE English',
-    color: 'bg-sky-500',
+    color: 'bg-violet-500',
+  },
+  OCR: {
+    subtitle: 'GCSE English Language & Literature',
+    color: 'bg-orange-500',
+  },
+  WJEC: {
+    subtitle: 'GCSE English Language & Literature',
+    color: 'bg-red-500',
   },
 }
 

@@ -3,7 +3,7 @@ import type { ExamBoard } from '@/store/board-store';
 /**
  * Returns true if a course/item matches the selected board.
  * - KS3 users only see items with no board or board='All' (i.e. KS3 content)
- * - AQA/Edexcel users see their board-specific content PLUS generic KS3 content
+ * - AQA/Edexcel/OCR/WJEC users see their board-specific content PLUS generic KS3 content
  */
 export function matchesBoard(
   itemBoard: string | undefined | null,
@@ -14,7 +14,7 @@ export function matchesBoard(
     // KS3 users only see generic (no board) or 'All' content
     return !itemBoard || itemBoard === 'All';
   }
-  if (!itemBoard || itemBoard === 'All') return true; // generic content — show for AQA/Edexcel
+  if (!itemBoard || itemBoard === 'All') return true; // generic content — show for all exam boards
   return itemBoard === selectedBoard;    // board-specific — must match
 }
 
