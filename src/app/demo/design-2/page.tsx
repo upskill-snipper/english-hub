@@ -1,366 +1,267 @@
 'use client'
 
-import { useState } from 'react'
-import Link from 'next/link'
-import {
-  ArrowLeft,
-  BookOpen,
-  PenTool,
-  RotateCcw,
-  Map,
-  LayoutDashboard,
-  TrendingUp,
-  Clock,
-  CheckCircle2,
-  Flame,
-  Star,
-  ChevronRight,
-  Zap,
-  Award,
-  Target,
-  Play,
-} from 'lucide-react'
+import React, { useState } from 'react'
 
-// ─── Static demo data ───────────────────────────────────────────────────────
-
-const NAV_ITEMS = [
-  { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
-  { id: 'courses', label: 'Courses', icon: BookOpen },
-  { id: 'practice', label: 'Practice', icon: PenTool },
-  { id: 'revision', label: 'Revision', icon: RotateCcw },
-  { id: 'guide', label: 'Guide', icon: Map },
-]
-
-const FILTER_CHIPS = [
-  { id: 'all', label: 'All' },
-  { id: 'in-progress', label: 'In Progress' },
-  { id: 'completed', label: 'Completed' },
-]
-
-const STATS = [
-  { label: 'Streak', value: '12', unit: 'days', icon: Flame, color: 'text-orange-400', bg: 'bg-orange-400/10' },
-  { label: 'XP Earned', value: '3,240', unit: 'xp', icon: Zap, color: 'text-yellow-400', bg: 'bg-yellow-400/10' },
-  { label: 'Completed', value: '18', unit: 'topics', icon: CheckCircle2, color: 'text-brand-accent', bg: 'bg-brand-accent/10' },
-  { label: 'Accuracy', value: '84', unit: '%', icon: Target, color: 'text-blue-400', bg: 'bg-blue-400/10' },
-]
+// ─── Mock Data ───────────────────────────────────────────────────────────────
 
 const COURSES = [
-  {
-    id: 1,
-    title: 'Language & Structure',
-    exam: 'AQA English Language',
-    progress: 72,
-    lessons: 18,
-    completed: 13,
-    color: 'from-blue-500 to-blue-700',
-    chipColor: 'bg-blue-500/15 text-blue-400',
-    badge: 'AQA',
-  },
-  {
-    id: 2,
-    title: 'Power & Conflict Poetry',
-    exam: 'AQA English Literature',
-    progress: 45,
-    lessons: 24,
-    completed: 11,
-    color: 'from-purple-500 to-purple-700',
-    chipColor: 'bg-purple-500/15 text-purple-400',
-    badge: 'AQA',
-  },
-  {
-    id: 3,
-    title: 'Macbeth',
-    exam: 'Edexcel English Literature',
-    progress: 88,
-    lessons: 16,
-    completed: 14,
-    color: 'from-brand-accent to-emerald-700',
-    chipColor: 'bg-brand-accent/15 text-brand-accent',
-    badge: 'Edexcel',
-  },
-  {
-    id: 4,
-    title: 'Unseen Poetry',
-    exam: 'OCR English Literature',
-    progress: 30,
-    lessons: 12,
-    completed: 4,
-    color: 'from-orange-500 to-orange-700',
-    chipColor: 'bg-orange-500/15 text-orange-400',
-    badge: 'OCR',
-  },
+  { id: 1, title: 'GCSE ENGLISH LANG', paper: 'Paper 1', progress: 72, color: '#84cc16', xp: 1480 },
+  { id: 2, title: 'IGCSE LITERATURE', paper: 'Paper 2', progress: 45, color: '#ec4899', xp: 920 },
+  { id: 3, title: 'CREATIVE WRITING', paper: 'Coursework', progress: 88, color: '#3b82f6', xp: 2100 },
+  { id: 4, title: 'POETRY ANALYSIS', paper: 'Anthology', progress: 31, color: '#facc15', xp: 640 },
 ]
 
 const ACTIVITY = [
-  { id: 1, icon: CheckCircle2, iconColor: 'text-brand-accent', text: 'Completed "Metaphor & Simile" quiz', sub: '15 min ago · +80 XP', dot: 'bg-brand-accent' },
-  { id: 2, icon: Star, iconColor: 'text-yellow-400', text: 'Earned "Streak Master" badge', sub: '2 hours ago · 12-day streak', dot: 'bg-yellow-400' },
-  { id: 3, icon: BookOpen, iconColor: 'text-blue-400', text: 'Started "Language Techniques" lesson', sub: 'Yesterday · AQA Language', dot: 'bg-blue-400' },
-  { id: 4, icon: Award, iconColor: 'text-purple-400', text: 'Scored 92% on Power & Conflict test', sub: '2 days ago · Personal best', dot: 'bg-purple-400' },
-  { id: 5, icon: RotateCcw, iconColor: 'text-orange-400', text: 'Revised "An Inspector Calls" flashcards', sub: '3 days ago · 24 cards', dot: 'bg-orange-400' },
+  { time: '2m ago', action: 'Completed "Unseen Poetry" drill', xp: '+45 XP', color: '#ec4899' },
+  { time: '1h ago', action: 'Streak restored — 14 days running', xp: '+20 XP', color: '#84cc16' },
+  { time: '3h ago', action: 'Paper 1 Q5 practice submitted', xp: '+80 XP', color: '#3b82f6' },
+  { time: '5h ago', action: 'Flashcard set "Macbeth Act 3" cleared', xp: '+35 XP', color: '#facc15' },
+  { time: '1d ago', action: 'Timed essay: 38/40 — new personal best', xp: '+120 XP', color: '#ec4899' },
 ]
 
-// ─── Component ───────────────────────────────────────────────────────────────
+const TERMINAL_LINES = [
+  '> loading module: unseen-prose-extraction.v3',
+  '> user.streak = 14 | user.xp = 5140 | rank = "RELENTLESS"',
+  '> next_task: Paper 2 Section B — Descriptive Writing',
+]
 
-export default function Design2Page() {
-  const [activeNav, setActiveNav] = useState('dashboard')
-  const [activeFilter, setActiveFilter] = useState('all')
+// ─── Page ────────────────────────────────────────────────────────────────────
 
-  const filteredCourses = COURSES.filter((c) => {
-    if (activeFilter === 'all') return true
-    if (activeFilter === 'in-progress') return c.progress < 100 && c.progress > 0
-    if (activeFilter === 'completed') return c.progress === 100
-    return true
-  })
-
-  const today = new Date().toLocaleDateString('en-GB', {
-    weekday: 'long',
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-  })
+export default function NeonBrutalistDashboard() {
+  const [hoveredCourse, setHoveredCourse] = useState<number | null>(null)
+  const [hoveredActivity, setHoveredActivity] = useState<number | null>(null)
 
   return (
-    <div className="min-h-screen bg-brand-bg text-brand-text">
+    <div className="min-h-screen bg-black text-white font-mono selection:bg-lime-400 selection:text-black overflow-x-hidden">
 
-      {/* ── Page header ── */}
-      <div className="border-b border-brand-border bg-surface">
-        <div className="max-w-5xl mx-auto px-4 py-3 flex items-center gap-3">
-          <Link
-            href="/demo"
-            className="flex items-center gap-1.5 text-brand-muted hover:text-brand-text transition-colors text-sm"
-          >
-            <ArrowLeft size={15} />
-            Back to demos
-          </Link>
-          <span className="text-brand-border">·</span>
-          <span className="text-brand-muted text-sm font-medium">Design 2: Pill Navigation</span>
+      {/* ── TOP BAR ── */}
+      <header className="border-b-4 border-pink-500 px-6 py-4 flex items-center justify-between">
+        <div className="flex items-center gap-4">
+          <span className="text-4xl font-black font-sans uppercase tracking-tighter text-lime-400"
+            style={{ textShadow: '0 0 20px #84cc16, 0 0 40px #84cc1666' }}>
+            ENG//HUB
+          </span>
+          <span className="text-xs text-zinc-600 border border-zinc-800 px-2 py-0.5 uppercase">v2.0-neon</span>
         </div>
-      </div>
+        <div className="flex items-center gap-6">
+          <span className="text-yellow-400 font-black text-lg font-sans">14-DAY STREAK</span>
+          <div className="border-2 border-lime-400 px-3 py-1 shadow-[3px_3px_0_#84cc16] hover:shadow-[1px_1px_0_#84cc16] hover:translate-x-[2px] hover:translate-y-[2px] transition-all cursor-pointer">
+            <span className="text-sm uppercase">calum_x</span>
+          </div>
+        </div>
+      </header>
 
-      {/* ── Pill Navigation bar ── */}
-      <div className="sticky top-0 z-30 bg-brand-bg/80 backdrop-blur-md border-b border-brand-border">
-        <div className="max-w-5xl mx-auto px-4 py-3">
-          <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide pb-0.5">
-            {NAV_ITEMS.map(({ id, label, icon: Icon }) => {
-              const isActive = activeNav === id
+      {/* ── STATS STRIP ── */}
+      <section className="flex flex-wrap border-b-2 border-zinc-800">
+        {[
+          { label: 'TOTAL XP', value: '5,140', accent: '#84cc16', border: 'border-l-lime-400' },
+          { label: 'RANK', value: 'RELENTLESS', accent: '#ec4899', border: 'border-l-pink-500' },
+          { label: 'COURSES', value: '4', accent: '#3b82f6', border: 'border-l-blue-500' },
+          { label: 'ESSAYS', value: '23', accent: '#facc15', border: 'border-l-yellow-400' },
+          { label: 'ACCURACY', value: '91%', accent: '#84cc16', border: 'border-l-lime-400' },
+          { label: 'HOURS', value: '47.2', accent: '#ec4899', border: 'border-l-pink-500' },
+        ].map((stat, i) => (
+          <div key={i}
+            className={`flex-1 min-w-[140px] border-l-4 ${stat.border} border-r border-r-zinc-900 px-4 py-5 hover:bg-zinc-950 transition-colors`}>
+            <div className="text-[10px] uppercase tracking-widest text-zinc-500 mb-1">{stat.label}</div>
+            <div className="text-2xl font-black font-sans" style={{ color: stat.accent, textShadow: `0 0 12px ${stat.accent}55` }}>
+              {stat.value}
+            </div>
+          </div>
+        ))}
+      </section>
+
+      {/* ── MAIN CONTENT ── */}
+      <div className="flex flex-col lg:flex-row">
+
+        {/* ── LEFT: COURSES + VERTICAL LABEL ── */}
+        <div className="relative flex-1 p-6 lg:p-8">
+
+          {/* Vertical rotated label */}
+          <div className="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2"
+            style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg) translateX(50%)' }}>
+            <span className="text-[10px] uppercase tracking-[0.4em] text-zinc-700 font-bold">
+              active modules
+            </span>
+          </div>
+
+          <h2 className="text-4xl font-black font-sans uppercase tracking-tight mb-6 text-white"
+            style={{ textShadow: '0 0 30px #3b82f644' }}>
+            ACTIVE COURSES
+          </h2>
+
+          <div className="space-y-4 lg:pl-6">
+            {COURSES.map((course) => {
+              const isHovered = hoveredCourse === course.id
               return (
-                <button
-                  key={id}
-                  onClick={() => setActiveNav(id)}
-                  className={[
-                    'flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-200 flex-shrink-0',
-                    isActive
-                      ? 'bg-surface-raised text-brand-text border border-brand-border shadow-medium'
-                      : 'text-brand-muted hover:text-brand-text hover:bg-surface/60',
-                  ].join(' ')}
+                <div
+                  key={course.id}
+                  onMouseEnter={() => setHoveredCourse(course.id)}
+                  onMouseLeave={() => setHoveredCourse(null)}
+                  className="rounded-none border-2 p-4 transition-all duration-150 cursor-pointer"
+                  style={{
+                    borderColor: isHovered ? course.color : '#27272a',
+                    boxShadow: isHovered ? `6px_6px_0_${course.color}` : '4px 4px 0 #18181b',
+                    ...(isHovered && { boxShadow: `6px 6px 0 ${course.color}` }),
+                  }}
                 >
-                  <Icon size={15} className={isActive ? 'text-brand-accent' : ''} />
-                  {label}
-                  {isActive && (
-                    <span className="w-1.5 h-1.5 rounded-full bg-brand-accent" />
-                  )}
-                </button>
+                  <div className="flex items-start justify-between mb-3">
+                    <div>
+                      <h3 className="text-lg font-black font-sans uppercase" style={{ color: course.color }}>
+                        {course.title}
+                      </h3>
+                      <span className="text-xs text-zinc-500">{course.paper}</span>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-2xl font-black font-sans" style={{ color: course.color, textShadow: `0 0 10px ${course.color}44` }}>
+                        {course.progress}%
+                      </div>
+                      <div className="text-[10px] text-zinc-600 uppercase">{course.xp} xp</div>
+                    </div>
+                  </div>
+                  {/* Progress bar */}
+                  <div className="h-2 bg-zinc-900 rounded-none border border-zinc-800 overflow-hidden">
+                    <div
+                      className="h-full rounded-none transition-all duration-500"
+                      style={{ width: `${course.progress}%`, backgroundColor: course.color, boxShadow: `0 0 8px ${course.color}88` }}
+                    />
+                  </div>
+                </div>
               )
             })}
           </div>
-        </div>
-      </div>
 
-      {/* ── Main content ── */}
-      <div className="max-w-5xl mx-auto px-4 py-6 space-y-6">
-
-        {/* ── Greeting ── */}
-        <div className="flex items-start justify-between gap-4">
-          <div>
-            <h1 className="text-2xl font-bold text-brand-text">
-              Good morning, Alex 👋
-            </h1>
-            <p className="text-brand-muted text-sm mt-1">{today}</p>
-          </div>
-          <div className="flex items-center gap-2 bg-surface-raised border border-brand-border rounded-full px-4 py-2 flex-shrink-0">
-            <Flame size={15} className="text-orange-400" />
-            <span className="text-sm font-semibold text-brand-text">12</span>
-            <span className="text-xs text-brand-muted">day streak</span>
-          </div>
-        </div>
-
-        {/* ── Stat cards ── */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-          {STATS.map(({ label, value, unit, icon: Icon, color, bg }) => (
-            <div
-              key={label}
-              className="bg-surface border border-brand-border rounded-2xl p-4 flex flex-col gap-3"
-            >
-              <div className={`w-9 h-9 rounded-full ${bg} flex items-center justify-center`}>
-                <Icon size={16} className={color} />
-              </div>
+          {/* ── ASYMMETRIC OVERLAP ELEMENT ── */}
+          <div className="mt-8 -mr-4 lg:-mr-12 border-2 border-yellow-400 rounded-none p-5 bg-black shadow-[8px_8px_0_#facc15] relative z-10">
+            <div className="flex items-center justify-between flex-wrap gap-3">
               <div>
-                <div className="flex items-baseline gap-1">
-                  <span className="text-xl font-bold text-brand-text">{value}</span>
-                  <span className={`text-xs font-medium ${color}`}>{unit}</span>
+                <div className="text-[10px] uppercase tracking-widest text-yellow-400 mb-1">weekly challenge</div>
+                <div className="text-xl font-black font-sans uppercase text-white">
+                  WRITE 3 TIMED ESSAYS BEFORE FRIDAY
                 </div>
-                <p className="text-xs text-brand-muted mt-0.5">{label}</p>
+              </div>
+              <div className="border-2 border-yellow-400 px-4 py-2 text-yellow-400 font-black font-sans uppercase text-sm hover:bg-yellow-400 hover:text-black transition-colors cursor-pointer">
+                2 / 3 DONE
               </div>
             </div>
-          ))}
+          </div>
         </div>
 
-        {/* ── Courses section ── */}
-        <div>
+        {/* ── RIGHT: ACTIVITY FEED ── */}
+        <div className="w-full lg:w-[420px] border-l-0 lg:border-l-2 border-t-2 lg:border-t-0 border-zinc-800 p-6 lg:p-8">
+          <h2 className="text-4xl font-black font-sans uppercase tracking-tight mb-6"
+            style={{ color: '#ec4899', textShadow: '0 0 25px #ec489944' }}>
+            FEED
+          </h2>
 
-          {/* Section heading + filter chips */}
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
-            <h2 className="text-base font-semibold text-brand-text">My Courses</h2>
-            <div className="flex items-center gap-2">
-              {FILTER_CHIPS.map(({ id, label }) => {
-                const isActive = activeFilter === id
-                return (
-                  <button
-                    key={id}
-                    onClick={() => setActiveFilter(id)}
-                    className={[
-                      'px-3.5 py-1.5 rounded-full text-xs font-medium transition-all duration-200',
-                      isActive
-                        ? 'bg-brand-accent text-white shadow-glow-sm'
-                        : 'bg-surface border border-brand-border text-brand-muted hover:text-brand-text hover:border-brand-accent/40',
-                    ].join(' ')}
-                  >
-                    {label}
-                  </button>
-                )
-              })}
-            </div>
+          <div className="space-y-0">
+            {ACTIVITY.map((item, i) => {
+              const isHovered = hoveredActivity === i
+              return (
+                <div
+                  key={i}
+                  onMouseEnter={() => setHoveredActivity(i)}
+                  onMouseLeave={() => setHoveredActivity(null)}
+                  className="border-b border-zinc-900 py-3 px-3 -mx-3 transition-all duration-100 cursor-default"
+                  style={{
+                    backgroundColor: isHovered ? '#0a0a0a' : 'transparent',
+                    borderLeft: isHovered ? `3px solid ${item.color}` : '3px solid transparent',
+                  }}
+                >
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <div className="text-sm text-zinc-300 leading-snug">{item.action}</div>
+                      <div className="text-[10px] text-zinc-600 mt-1 uppercase">{item.time}</div>
+                    </div>
+                    <span className="text-xs font-black font-sans whitespace-nowrap shrink-0 px-2 py-0.5 border rounded-none"
+                      style={{ color: item.color, borderColor: item.color }}>
+                      {item.xp}
+                    </span>
+                  </div>
+                </div>
+              )
+            })}
           </div>
 
-          {/* Course card grid */}
-          {filteredCourses.length === 0 ? (
-            <div className="bg-surface border border-brand-border rounded-2xl p-8 text-center">
-              <CheckCircle2 size={32} className="text-brand-accent mx-auto mb-3" />
-              <p className="text-brand-text font-medium">No courses here yet</p>
-              <p className="text-brand-muted text-sm mt-1">Try a different filter</p>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {filteredCourses.map((course) => (
-                <div
-                  key={course.id}
-                  className="bg-surface border border-brand-border rounded-2xl overflow-hidden hover:border-brand-accent/30 transition-all duration-200 group cursor-pointer"
-                >
-                  {/* Gradient top strip */}
-                  <div className={`h-1.5 w-full bg-gradient-to-r ${course.color}`} />
+          {/* ── QUICK ACTIONS ── */}
+          <div className="mt-8 space-y-3">
+            <div className="text-[10px] uppercase tracking-widest text-zinc-600 mb-2">quick actions</div>
+            {[
+              { label: 'START PRACTICE', color: '#84cc16', shadow: '#84cc16' },
+              { label: 'REVIEW ESSAYS', color: '#3b82f6', shadow: '#3b82f6' },
+              { label: 'FLASHCARDS', color: '#ec4899', shadow: '#ec4899' },
+            ].map((btn, i) => (
+              <button
+                key={i}
+                className="block w-full text-left rounded-none border-2 px-4 py-3 font-black font-sans uppercase text-sm transition-all duration-100 hover:translate-x-[2px] hover:translate-y-[2px]"
+                style={{
+                  borderColor: btn.color,
+                  color: btn.color,
+                  boxShadow: `4px 4px 0 ${btn.shadow}`,
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.boxShadow = `1px 1px 0 ${btn.shadow}`
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.boxShadow = `4px 4px 0 ${btn.shadow}`
+                  e.currentTarget.style.transform = ''
+                }}
+              >
+                {'>'} {btn.label}
+              </button>
+            ))}
+          </div>
 
-                  <div className="p-4 space-y-3">
-                    {/* Title row */}
-                    <div className="flex items-start justify-between gap-2">
-                      <div>
-                        <span className={`inline-block text-xs font-semibold px-2.5 py-0.5 rounded-full mb-2 ${course.chipColor}`}>
-                          {course.badge}
-                        </span>
-                        <h3 className="font-semibold text-brand-text leading-snug">{course.title}</h3>
-                        <p className="text-xs text-brand-muted mt-0.5">{course.exam}</p>
-                      </div>
-                      <button className="w-9 h-9 rounded-full bg-surface-raised border border-brand-border flex items-center justify-center flex-shrink-0 group-hover:bg-brand-accent/10 group-hover:border-brand-accent/30 transition-all duration-200">
-                        <Play size={13} className="text-brand-muted group-hover:text-brand-accent transition-colors ml-0.5" />
-                      </button>
-                    </div>
-
-                    {/* Progress bar */}
-                    <div>
-                      <div className="flex items-center justify-between mb-1.5">
-                        <span className="text-xs text-brand-muted">
-                          {course.completed}/{course.lessons} lessons
-                        </span>
-                        <span className="text-xs font-semibold text-brand-text">{course.progress}%</span>
-                      </div>
-                      <div className="h-2 bg-surface-raised rounded-full overflow-hidden">
-                        <div
-                          className={`h-full bg-gradient-to-r ${course.color} rounded-full transition-all duration-500`}
-                          style={{ width: `${course.progress}%` }}
-                        />
-                      </div>
-                    </div>
-
-                    {/* Footer chip */}
-                    <div className="flex items-center gap-2 pt-0.5">
-                      <div className="flex items-center gap-1.5 bg-surface-raised rounded-full px-3 py-1">
-                        <TrendingUp size={11} className="text-brand-accent" />
-                        <span className="text-xs text-brand-muted">
-                          {course.progress >= 80 ? 'Almost done!' : course.progress >= 50 ? 'On track' : 'Just started'}
-                        </span>
-                      </div>
-                      <div className="flex items-center gap-1.5 bg-surface-raised rounded-full px-3 py-1">
-                        <Clock size={11} className="text-brand-muted" />
-                        <span className="text-xs text-brand-muted">
-                          {course.lessons - course.completed} left
-                        </span>
-                      </div>
-                    </div>
+          {/* ── GRADE TARGETS ── */}
+          <div className="mt-8 border-2 border-blue-500 rounded-none p-4 shadow-[4px_4px_0_#3b82f6]">
+            <div className="text-[10px] uppercase tracking-widest text-blue-400 mb-3">grade targets</div>
+            <div className="grid grid-cols-2 gap-3">
+              {[
+                { subject: 'ENG LANG', current: '6', target: '8', color: '#84cc16' },
+                { subject: 'ENG LIT', current: '5', target: '7', color: '#ec4899' },
+              ].map((g, i) => (
+                <div key={i} className="border border-zinc-800 p-3 rounded-none">
+                  <div className="text-[10px] text-zinc-500 uppercase mb-1">{g.subject}</div>
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-3xl font-black font-sans" style={{ color: g.color, textShadow: `0 0 15px ${g.color}44` }}>
+                      {g.current}
+                    </span>
+                    <span className="text-zinc-600 text-sm font-bold">{'//'}</span>
+                    <span className="text-xl font-black font-sans text-zinc-400">{g.target}</span>
                   </div>
                 </div>
               ))}
             </div>
-          )}
-        </div>
-
-        {/* ── Activity feed ── */}
-        <div className="bg-surface border border-brand-border rounded-2xl overflow-hidden">
-          {/* Card header */}
-          <div className="flex items-center justify-between px-5 py-4 border-b border-brand-border">
-            <div className="flex items-center gap-2">
-              <div className="w-7 h-7 rounded-full bg-brand-accent/10 flex items-center justify-center">
-                <Zap size={13} className="text-brand-accent" />
-              </div>
-              <h2 className="text-sm font-semibold text-brand-text">Recent Activity</h2>
-            </div>
-            <button className="flex items-center gap-1 text-xs text-brand-accent hover:text-brand-text transition-colors rounded-full px-2.5 py-1 hover:bg-surface-raised">
-              See all
-              <ChevronRight size={12} />
-            </button>
-          </div>
-
-          {/* Activity list */}
-          <div className="divide-y divide-brand-border">
-            {ACTIVITY.map(({ id, icon: Icon, iconColor, text, sub, dot }) => (
-              <div key={id} className="flex items-start gap-4 px-5 py-3.5 hover:bg-surface-raised/50 transition-colors">
-                {/* Icon pill */}
-                <div className="w-8 h-8 rounded-full bg-surface-raised border border-brand-border flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <Icon size={14} className={iconColor} />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className="text-sm text-brand-text leading-snug">{text}</p>
-                  <div className="flex items-center gap-1.5 mt-0.5">
-                    <span className={`w-1.5 h-1.5 rounded-full ${dot} flex-shrink-0`} />
-                    <span className="text-xs text-brand-muted truncate">{sub}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
-
-        {/* ── Quick action pills ── */}
-        <div className="pb-4">
-          <h2 className="text-sm font-semibold text-brand-text mb-3">Quick Actions</h2>
-          <div className="flex flex-wrap gap-2">
-            {[
-              { label: 'Start a quiz', icon: Zap, color: 'text-yellow-400 bg-yellow-400/10 border-yellow-400/20' },
-              { label: 'Flashcard session', icon: RotateCcw, color: 'text-purple-400 bg-purple-400/10 border-purple-400/20' },
-              { label: 'Continue lesson', icon: Play, color: 'text-brand-accent bg-brand-accent/10 border-brand-accent/20' },
-              { label: 'View progress', icon: TrendingUp, color: 'text-blue-400 bg-blue-400/10 border-blue-400/20' },
-              { label: 'Earn badges', icon: Award, color: 'text-orange-400 bg-orange-400/10 border-orange-400/20' },
-            ].map(({ label, icon: Icon, color }) => (
-              <button
-                key={label}
-                className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border transition-all duration-200 hover:scale-105 active:scale-95 ${color}`}
-              >
-                <Icon size={14} />
-                {label}
-              </button>
-            ))}
-          </div>
-        </div>
-
       </div>
+
+      {/* ── NOW STUDYING — TERMINAL BAR ── */}
+      <footer className="fixed bottom-0 left-0 right-0 border-t-2 border-lime-400 bg-black z-50">
+        <div className="px-6 py-3 flex items-center gap-4 overflow-hidden">
+          <span className="shrink-0 bg-lime-400 text-black text-[10px] font-black uppercase px-2 py-0.5 tracking-wider">
+            NOW STUDYING
+          </span>
+          <div className="flex-1 overflow-hidden">
+            <div className="flex items-center gap-2 text-lime-400 text-sm whitespace-nowrap">
+              {TERMINAL_LINES.map((line, i) => (
+                <React.Fragment key={i}>
+                  <span className="opacity-70">{line}</span>
+                  {i < TERMINAL_LINES.length - 1 && <span className="text-zinc-700 mx-2">|</span>}
+                </React.Fragment>
+              ))}
+              <span className="animate-pulse text-lime-400 ml-1 text-base">{'│'}</span>
+            </div>
+          </div>
+          <div className="shrink-0 hidden sm:flex items-center gap-2">
+            <div className="w-2 h-2 rounded-full bg-lime-400 animate-pulse" />
+            <span className="text-[10px] text-lime-400 uppercase tracking-wider">live</span>
+          </div>
+        </div>
+      </footer>
+
+      {/* Bottom spacer for fixed terminal bar */}
+      <div className="h-14" />
     </div>
   )
 }

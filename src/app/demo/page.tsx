@@ -1,164 +1,99 @@
 'use client'
 
 import Link from 'next/link'
-import { Palette, ArrowRight } from 'lucide-react'
 
 const designs = [
   {
     number: 1,
     slug: 'design-1',
-    name: 'Spotify Learn',
-    description: 'Sidebar + main stage + Now Studying bar. Familiar Spotify-like layout.',
-    color: 'emerald',
-    dot: 'bg-emerald-500',
-    ring: 'ring-emerald-500/30',
-    badge: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
-    glow: 'hover:shadow-emerald-500/10',
+    name: 'Bento Box',
+    description: 'Apple-style asymmetric grid. Gradient mesh cards, massive display numbers, SVG progress rings. Premium and spacious.',
+    gradient: 'from-emerald-500/20 to-cyan-500/20',
+    border: 'hover:border-emerald-500/30',
   },
   {
     number: 2,
     slug: 'design-2',
-    name: 'Pill Navigation',
-    description: 'No sidebar. Horizontal pill nav + chip filters. Mobile-first feel.',
-    color: 'blue',
-    dot: 'bg-blue-500',
-    ring: 'ring-blue-500/30',
-    badge: 'bg-blue-500/10 text-blue-400 border-blue-500/20',
-    glow: 'hover:shadow-blue-500/10',
+    name: 'Neon Brutalist',
+    description: 'True black. Thick neon borders, hard offset shadows, monospace type, terminal command bar. Punk energy.',
+    gradient: 'from-lime-500/20 to-pink-500/20',
+    border: 'hover:border-lime-400/30',
   },
   {
     number: 3,
     slug: 'design-3',
-    name: 'Tinted Sections',
-    description: 'Each section has a color tint. Instant visual orientation.',
-    color: 'purple',
-    dot: 'bg-purple-500',
-    ring: 'ring-purple-500/30',
-    badge: 'bg-purple-500/10 text-purple-400 border-purple-500/20',
-    glow: 'hover:shadow-purple-500/10',
+    name: 'Soft Aurora',
+    description: 'Light theme. Warm off-white, floating gradient blobs, frosted glass, pastel accents. Calm and airy.',
+    gradient: 'from-violet-500/20 to-pink-500/20',
+    border: 'hover:border-violet-400/30',
   },
   {
     number: 4,
     slug: 'design-4',
-    name: 'Board Blocks',
-    description: 'UI accent adapts to selected exam board. Click to see it change.',
-    color: 'orange',
-    dot: 'bg-orange-500',
-    ring: 'ring-orange-500/30',
-    badge: 'bg-orange-500/10 text-orange-400 border-orange-500/20',
-    glow: 'hover:shadow-orange-500/10',
+    name: 'Editorial',
+    description: 'Magazine layout. Enormous serif typography, no cards, thin dividers, monochrome with one amber accent.',
+    gradient: 'from-amber-500/20 to-orange-500/20',
+    border: 'hover:border-amber-400/30',
   },
   {
     number: 5,
     slug: 'design-5',
-    name: 'Midnight Scholar',
-    description: 'Dark academia with serif headings + gold accents. Premium scholarly feel.',
-    color: 'gold',
-    dot: 'bg-yellow-500',
-    ring: 'ring-yellow-500/30',
-    badge: 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20',
-    glow: 'hover:shadow-yellow-500/10',
+    name: 'Dopamine',
+    description: 'Bold gradients, emoji icons, gamified XP & streaks, chunky progress bars. Duolingo meets Spotify Wrapped.',
+    gradient: 'from-purple-500/20 to-pink-500/20',
+    border: 'hover:border-purple-400/30',
   },
 ]
 
-export default function DemoIndexPage() {
+export default function DemoGallery() {
   return (
-    <div className="min-h-screen bg-brand-bg text-brand-text">
-      {/* Header */}
-      <div className="border-b border-brand-border bg-surface">
-        <div className="mx-auto max-w-6xl px-6 py-8">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-accent/10 border border-brand-accent/20">
-              <Palette className="h-5 w-5 text-brand-accent" />
-            </div>
-            <span className="text-xs font-semibold uppercase tracking-widest text-brand-muted">
-              The English Hub
-            </span>
-          </div>
+    <div className="min-h-screen bg-[#050505] text-white">
+      <div className="mx-auto max-w-5xl px-6 py-16">
+        <p className="text-[10px] uppercase tracking-[0.3em] text-neutral-500 mb-4">
+          The English Hub
+        </p>
+        <h1 className="text-5xl sm:text-6xl font-light tracking-tight mb-3">
+          Pick a direction
+        </h1>
+        <p className="text-neutral-500 text-lg mb-16 max-w-xl">
+          Five completely different design systems. Same content, wildly different vibes.
+        </p>
 
-          <h1 className="text-4xl font-bold tracking-tight text-brand-text mb-3">
-            Design Gallery
-            <span className="text-brand-accent"> — </span>
-            Choose Your Favourite
-          </h1>
-          <p className="max-w-2xl text-brand-muted leading-relaxed">
-            Five distinct design concepts for The English Hub. Each explores a different
-            visual language and navigation model. Browse them all, then pick the one that
-            feels right.
-          </p>
-        </div>
-      </div>
-
-      {/* Grid */}
-      <div className="mx-auto max-w-6xl px-6 py-12">
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {designs.map((design) => (
+        <div className="space-y-4">
+          {designs.map((d) => (
             <Link
-              key={design.slug}
-              href={`/demo/${design.slug}`}
-              className={[
-                'group relative flex flex-col rounded-xl border border-brand-border',
-                'bg-surface p-6 shadow-medium transition-all duration-200',
-                'hover:border-brand-border hover:bg-surface-raised',
-                `hover:shadow-[0_8px_30px_rgba(0,0,0,0.4)] ${design.glow}`,
-                `hover:ring-1 ${design.ring}`,
-              ].join(' ')}
+              key={d.slug}
+              href={`/demo/${d.slug}`}
+              className={`group relative flex items-center gap-8 p-8 rounded-2xl border border-white/5 bg-white/[0.02] transition-all duration-300 hover:bg-white/[0.04] ${d.border}`}
             >
-              {/* Number badge */}
-              <div className="mb-5 flex items-center justify-between">
-                <span
-                  className={[
-                    'inline-flex items-center rounded-full border px-2.5 py-0.5',
-                    'text-xs font-semibold tracking-wide',
-                    design.badge,
-                  ].join(' ')}
-                >
-                  {String(design.number).padStart(2, '0')}
-                </span>
+              {/* Gradient blob on hover */}
+              <div className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${d.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl -z-10`} />
 
-                {/* Color dot */}
-                <span
-                  className={[
-                    'h-2.5 w-2.5 rounded-full opacity-60 transition-opacity',
-                    'group-hover:opacity-100',
-                    design.dot,
-                  ].join(' ')}
-                />
-              </div>
+              {/* Number */}
+              <span className="text-6xl font-extralight text-white/10 group-hover:text-white/20 transition-colors tabular-nums">
+                {String(d.number).padStart(2, '0')}
+              </span>
 
               {/* Content */}
-              <div className="flex-1">
-                <h2 className="mb-2 text-lg font-semibold text-brand-text group-hover:text-white transition-colors">
-                  {design.name}
+              <div className="flex-1 min-w-0">
+                <h2 className="text-xl font-medium text-white/90 group-hover:text-white transition-colors mb-1">
+                  {d.name}
                 </h2>
-                <p className="text-sm leading-relaxed text-brand-muted">
-                  {design.description}
+                <p className="text-sm text-neutral-500 group-hover:text-neutral-400 transition-colors">
+                  {d.description}
                 </p>
               </div>
 
-              {/* CTA */}
-              <div className="mt-6 flex items-center gap-1.5 text-sm font-medium text-brand-accent">
-                <span>View Demo</span>
-                <ArrowRight
-                  className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1"
-                />
-              </div>
-
-              {/* Subtle top accent line */}
-              <div
-                className={[
-                  'absolute inset-x-0 top-0 h-px rounded-t-xl opacity-0',
-                  'transition-opacity duration-200 group-hover:opacity-100',
-                  design.dot,
-                ].join(' ')}
-              />
+              {/* Arrow */}
+              <span className="text-neutral-600 group-hover:text-white/50 transition-all group-hover:translate-x-1 text-2xl">
+                &rarr;
+              </span>
             </Link>
           ))}
         </div>
 
-        {/* Footer note */}
-        <p className="mt-12 text-center text-xs text-brand-muted/60 tracking-wide">
-          All designs share the same content — only the visual treatment differs.
+        <p className="mt-16 text-center text-[10px] uppercase tracking-[0.3em] text-neutral-600">
+          Same mock data &middot; different visual language
         </p>
       </div>
     </div>
