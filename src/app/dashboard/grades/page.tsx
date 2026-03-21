@@ -238,6 +238,9 @@ export default function GradeDashboardPage() {
     // Recommend courses from allCourses that relate to weak areas or grade level
     const recs: CourseData[] = []
 
+    const isGcseLevel = (c: CourseData) =>
+      c.level === 'GCSE' || c.tier === 'IGCSE'
+
     if (averageScore < 50) {
       // Below Grade 5: recommend foundation/KS3 courses
       const foundation = allCourses.filter(
@@ -245,19 +248,19 @@ export default function GradeDashboardPage() {
       )
       recs.push(...foundation.slice(0, 3))
     } else if (averageScore < 70) {
-      // Grade 5-6: recommend GCSE courses not yet attempted or weak areas
+      // Grade 5-6: recommend GCSE/IGCSE courses not yet attempted or weak areas
       const improvement = allCourses.filter(
-        (c) => c.level === 'GCSE' && (!weakAreas.length || weakAreas.includes(c.id))
+        (c) => isGcseLevel(c) && (!weakAreas.length || weakAreas.includes(c.id))
       )
       if (improvement.length > 0) {
         recs.push(...improvement.slice(0, 3))
       } else {
-        recs.push(...allCourses.filter((c) => c.level === 'GCSE').slice(0, 3))
+        recs.push(...allCourses.filter((c) => isGcseLevel(c)).slice(0, 3))
       }
     } else {
       // Grade 7+: extension/challenge content
       const extension = allCourses.filter(
-        (c) => c.tier === 'Higher' || c.level === 'GCSE'
+        (c) => c.tier === 'Higher' || isGcseLevel(c)
       )
       recs.push(...extension.slice(0, 3))
     }

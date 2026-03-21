@@ -16,11 +16,13 @@ export interface CourseModule {
   quiz: CourseQuiz[];
 }
 
+export type CourseTier = 'KS3' | 'GCSE' | 'IGCSE' | 'Foundation' | 'Higher';
+
 export interface CourseData {
   id: string;
   title: string;
   subtitle: string;
-  tier: string;
+  tier: CourseTier;
   board?: string;
   specId?: string;
   specCode?: string;
@@ -39,9 +41,10 @@ import { ks3Courses } from './ks3-courses';
 import { gcseCourses } from './gcse-courses';
 import { edexcelCourses } from './edexcel-courses';
 import { edexcelLitCourses } from './edexcel-lit-courses';
+import { igcseCourses } from './igcse-courses';
 
 // ─── Master Course List ──────────────────────────────────────────────────────
 
-export const allCourses: CourseData[] = [...ks3Courses, ...gcseCourses, ...edexcelCourses, ...edexcelLitCourses];
+export const allCourses: CourseData[] = [...ks3Courses, ...gcseCourses, ...edexcelCourses, ...edexcelLitCourses, ...igcseCourses];
 
 export default allCourses;

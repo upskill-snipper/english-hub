@@ -51,13 +51,14 @@ export default function RevisionPage() {
 
   // ── Deck filter state ─────────────────────────────────────────────────
   const [deckFilter, setDeckFilter] = useState('All')
-  const DECK_BOARDS = ['All', 'AQA', 'Edexcel', 'Universal'] as const
+  const DECK_BOARDS = ['All', 'AQA', 'Edexcel', 'IGCSE', 'Universal'] as const
 
   const filteredDecks = useMemo(() => {
     return flashcardDecks.filter((d) => {
       if (deckFilter === 'All') return true
       if (deckFilter === 'Universal') return d.board === 'All'
-      return d.board === deckFilter
+      if (deckFilter === 'IGCSE') return d.id.includes('igcse') || d.title.toLowerCase().includes('igcse')
+      return d.board === deckFilter && !d.id.includes('igcse') && !d.title.toLowerCase().includes('igcse')
     })
   }, [deckFilter])
 

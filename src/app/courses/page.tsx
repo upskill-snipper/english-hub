@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { BookOpen, Clock, GraduationCap } from 'lucide-react'
 import { allCourses as courses } from '@/data/courses'
 
-const TIERS = ['All', 'KS3', 'GCSE'] as const
+const TIERS = ['All', 'KS3', 'GCSE', 'IGCSE'] as const
 type Tier = (typeof TIERS)[number]
 
 const BOARDS = ['All', 'AQA', 'Edexcel'] as const

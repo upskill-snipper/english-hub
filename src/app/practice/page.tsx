@@ -22,7 +22,7 @@ import { formatTime } from '@/lib/utils'
 
 // ─── Constants ──────────────────────────────────────────────────────────────
 
-const BOARDS = ['All', 'AQA', 'Edexcel', 'OCR', 'WJEC'] as const
+const BOARDS = ['All', 'AQA', 'Edexcel', 'IGCSE', 'OCR', 'WJEC'] as const
 const DIFFICULTIES = ['All', 'Foundation', 'Higher'] as const
 const GRADE_TABS = ['Grade 4-5', 'Grade 6-7', 'Grade 8-9'] as const
 
@@ -64,7 +64,14 @@ export default function PracticePage() {
   // ── Filtered questions ─────────────────────────────────────────────────
 
   const filtered = practiceQuestions.filter((q) => {
-    if (board !== 'All' && q.board !== board) return false
+    if (board !== 'All') {
+      const isIgcse = q.id.includes('igcse') || q.tier === 'IGCSE'
+      if (board === 'IGCSE') {
+        if (!isIgcse) return false
+      } else {
+        if (q.board !== board || isIgcse) return false
+      }
+    }
     if (questionType !== 'All' && (q.questionType || q.type) !== questionType) return false
     if (difficulty !== 'All' && (q.difficulty || q.tier) !== difficulty) return false
     return true

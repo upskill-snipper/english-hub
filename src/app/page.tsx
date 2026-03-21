@@ -75,7 +75,7 @@ const faqs = [
   },
   {
     q: 'What exam boards do you cover?',
-    a: 'We cover AQA, Edexcel, OCR, and WJEC/Eduqas. Each course is mapped to the relevant specification so you only study what you need.',
+    a: 'We cover AQA GCSE, Edexcel GCSE, Edexcel International GCSE (IGCSE), OCR, and WJEC/Eduqas. Each course is mapped to the relevant specification so you only study what you need.',
   },
   {
     q: 'Can I cancel my subscription?',
@@ -140,7 +140,7 @@ export default function Home() {
         <div className="relative max-w-4xl mx-auto px-6 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-accent/30 bg-brand-accent/10 text-brand-accent text-sm font-medium mb-8">
             <Sparkles className="w-4 h-4" />
-            New: GCSE 2026 Revision Guides Now Live
+            New: Edexcel IGCSE English Language A &amp; B — Now Live
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-brand-text leading-tight tracking-tight">
@@ -242,6 +242,13 @@ export default function Home() {
                 title: 'GCSE Literature',
                 subtitle: 'All Set Texts',
                 desc: 'Poetry, prose, and drama — with model answers and essay plans.',
+              },
+              {
+                icon: GraduationCap,
+                color: 'text-emerald-400 bg-emerald-500/10',
+                title: 'IGCSE',
+                subtitle: 'Edexcel iGCSE',
+                desc: 'International GCSE English Language A & B — tailored to the Edexcel specification.',
               },
               {
                 icon: RotateCcw,
