@@ -66,14 +66,14 @@ export function RecommendationCard({
       variant="ghost"
       size="sm"
       onClick={onAction}
-      {...(actionHref ? { asChild: true } : {})}
+      {...(actionHref ? { render: <a href={actionHref} /> } : {})}
       className="mt-3 gap-1.5"
     >
       {actionHref ? (
-        <a href={actionHref}>
+        <>
           {actionLabel}
           <ArrowRight className="h-3.5 w-3.5" />
-        </a>
+        </>
       ) : (
         <>
           {actionLabel}

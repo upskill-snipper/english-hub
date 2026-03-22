@@ -77,7 +77,7 @@ const QUOTE_MATCH_DATA = [
   {
     quote: '"It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife."',
     answer: 'Pride and Prejudice - Jane Austen',
-    options: ['Pride and Prejudice - Jane Austen', 'Emma - Jane Austen', 'Sense and Sensibility - Jane Austen', 'Jane Eyre - Charlotte Bronte'],
+    options: ['Pride and Prejudice - Jane Austen', 'Emma - Jane Austen', 'Sense and Sensibility - Jane Austen', 'Jane Eyre - Charlotte Brontë'],
   },
   {
     quote: '"All animals are equal, but some animals are more equal than others."',
@@ -107,7 +107,7 @@ const QUOTE_MATCH_DATA = [
   {
     quote: '"Do I dare disturb the universe?"',
     answer: 'The Love Song of J. Alfred Prufrock - T.S. Eliot',
-    options: ['The Waste Land - T.S. Eliot', 'The Love Song of J. Alfred Prufrock - T.S. Eliot', 'Ozymandias - Percy Shelley', 'Invictus - W.E. Henley'],
+    options: ['The Waste Land - T.S. Eliot', 'The Love Song of J. Alfred Prufrock - T.S. Eliot', 'Ozymandias - Percy Bysshe Shelley', 'Invictus - W.E. Henley'],
   },
   {
     quote: '"If music be the food of love, play on."',
@@ -121,8 +121,8 @@ const QUOTE_MATCH_DATA = [
   },
   {
     quote: '"Reader, I married him."',
-    answer: 'Jane Eyre - Charlotte Bronte',
-    options: ['Jane Eyre - Charlotte Bronte', 'Wuthering Heights - Emily Bronte', 'Pride and Prejudice - Jane Austen', 'Tess of the D\'Urbervilles - Thomas Hardy'],
+    answer: 'Jane Eyre - Charlotte Brontë',
+    options: ['Jane Eyre - Charlotte Brontë', 'Wuthering Heights - Emily Brontë', 'Pride and Prejudice - Jane Austen', 'Tess of the D\'Urbervilles - Thomas Hardy'],
   },
   {
     quote: '"Bent double, like old beggars under sacks."',
@@ -137,7 +137,7 @@ const QUOTE_MATCH_DATA = [
   {
     quote: '"I wandered lonely as a cloud."',
     answer: 'Daffodils - William Wordsworth',
-    options: ['Daffodils - William Wordsworth', 'Tintern Abbey - William Wordsworth', 'Ozymandias - Percy Shelley', 'The Tyger - William Blake'],
+    options: ['Daffodils - William Wordsworth', 'Tintern Abbey - William Wordsworth', 'Ozymandias - Percy Bysshe Shelley', 'The Tyger - William Blake'],
   },
   {
     quote: '"It was the best of times, it was the worst of times."',
@@ -157,7 +157,7 @@ const QUOTE_MATCH_DATA = [
   {
     quote: '"Some say the world will end in fire, some say in ice."',
     answer: 'Fire and Ice - Robert Frost',
-    options: ['The Waste Land - T.S. Eliot', 'Fire and Ice - Robert Frost', 'Ozymandias - Percy Shelley', 'Do Not Go Gentle - Dylan Thomas'],
+    options: ['The Waste Land - T.S. Eliot', 'Fire and Ice - Robert Frost', 'Ozymandias - Percy Bysshe Shelley', 'Do Not Go Gentle - Dylan Thomas'],
   },
   {
     quote: '"The half-blood prince."',
@@ -166,8 +166,8 @@ const QUOTE_MATCH_DATA = [
   },
   {
     quote: '"I am no bird; and no net ensnares me."',
-    answer: 'Jane Eyre - Charlotte Bronte',
-    options: ['Wuthering Heights - Emily Bronte', 'Jane Eyre - Charlotte Bronte', 'The Mill on the Floss - George Eliot', 'Middlemarch - George Eliot'],
+    answer: 'Jane Eyre - Charlotte Brontë',
+    options: ['Wuthering Heights - Emily Brontë', 'Jane Eyre - Charlotte Brontë', 'The Mill on the Floss - George Eliot', 'Middlemarch - George Eliot'],
   },
   {
     quote: '"Out, out, brief candle! Life\'s but a walking shadow."',
