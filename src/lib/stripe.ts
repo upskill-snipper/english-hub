@@ -1,22 +1,23 @@
 import Stripe from 'stripe'
+import { requireEnv } from '@/lib/env-check'
 
-export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+export const stripe = new Stripe(requireEnv('STRIPE_SECRET_KEY'), {
   apiVersion: '2026-02-25.clover',
   typescript: true,
 })
 
 export const PRICE_IDS = {
-  PRO_MONTHLY: process.env.STRIPE_PRICE_PRO_MONTHLY!,
-  PRO_ANNUAL: process.env.STRIPE_PRICE_PRO_ANNUAL!,
-  KS3_READING: process.env.STRIPE_PRICE_KS3_READING!,
-  KS3_WRITING: process.env.STRIPE_PRICE_KS3_WRITING!,
-  KS3_GRAMMAR: process.env.STRIPE_PRICE_KS3_GRAMMAR!,
-  GCSE_LANG_READING: process.env.STRIPE_PRICE_GCSE_LANG_READING!,
-  GCSE_LANG_WRITING: process.env.STRIPE_PRICE_GCSE_LANG_WRITING!,
-  GCSE_LIT_POETRY: process.env.STRIPE_PRICE_GCSE_LIT_POETRY!,
-  GCSE_LIT_PROSE: process.env.STRIPE_PRICE_GCSE_LIT_PROSE!,
-  GCSE_REVISION: process.env.STRIPE_PRICE_GCSE_REVISION!,
-  BUNDLE: process.env.STRIPE_PRICE_BUNDLE!,
+  PRO_MONTHLY: requireEnv('STRIPE_PRICE_PRO_MONTHLY'),
+  PRO_ANNUAL: requireEnv('STRIPE_PRICE_PRO_ANNUAL'),
+  KS3_READING: requireEnv('STRIPE_PRICE_KS3_READING'),
+  KS3_WRITING: requireEnv('STRIPE_PRICE_KS3_WRITING'),
+  KS3_GRAMMAR: requireEnv('STRIPE_PRICE_KS3_GRAMMAR'),
+  GCSE_LANG_READING: requireEnv('STRIPE_PRICE_GCSE_LANG_READING'),
+  GCSE_LANG_WRITING: requireEnv('STRIPE_PRICE_GCSE_LANG_WRITING'),
+  GCSE_LIT_POETRY: requireEnv('STRIPE_PRICE_GCSE_LIT_POETRY'),
+  GCSE_LIT_PROSE: requireEnv('STRIPE_PRICE_GCSE_LIT_PROSE'),
+  GCSE_REVISION: requireEnv('STRIPE_PRICE_GCSE_REVISION'),
+  BUNDLE: requireEnv('STRIPE_PRICE_BUNDLE'),
 } as const
 
 const _COURSE_PRICE_ENTRIES: Record<string, string> = {

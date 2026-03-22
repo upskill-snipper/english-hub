@@ -1,11 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createServiceRoleClient } from '@/lib/supabase/server'
 import { SUBJECTS, type SubjectId } from '@/data/subjects'
+import { rateLimit, getClientIp } from '@/lib/rate-limit'
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 export async function POST(req: NextRequest) {
   try {
+    // Rate limit: 5 requests per hour per IP
+    const ip = getClientIp(req.headers)
+    const rl = rateLimit(`waitlist:${ip}`, { limit: 5, windowSeconds: 3600 })
+    if (!rl.success) {
+      return NextResponse.json(
+        { error: 'Too many requests. Please try again later.' },
+        { status: 429 }
+      )
+    }
+
     const body = await req.json()
     const { email, subject } = body as { email?: string; subject?: string }
 

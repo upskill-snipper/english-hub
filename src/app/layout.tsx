@@ -5,6 +5,7 @@ import { SupabaseProvider } from '@/components/providers/supabase-provider'
 import { TooltipProvider } from '@/components/ui/tooltip'
 import { Toaster } from '@/components/ui/sonner'
 import { Header } from '@/components/layout/header'
+import { Footer } from '@/components/layout/footer'
 import { BoardSidebar } from '@/components/layout/board-sidebar'
 import { BoardGate } from '@/components/layout/board-gate'
 import './globals.css'
@@ -72,6 +73,7 @@ export default function RootLayout({
                 {children}
               </div>
             </div>
+            <Footer />
             <Toaster richColors position="bottom-right" />
           </TooltipProvider>
         </SupabaseProvider>

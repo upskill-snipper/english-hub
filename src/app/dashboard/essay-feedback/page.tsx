@@ -1,7 +1,8 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import {
   ArrowLeft,
   Send,
@@ -16,6 +17,7 @@ import {
   PenLine,
 } from 'lucide-react'
 import { useAuthStore } from '@/store/auth-store'
+import { useBoardStore } from '@/store/board-store'
 import { markSchemes, getPapersForBoard, getQuestionTypes } from '@/data/mark-schemes'
 import { getQuestionsForType } from '@/data/exam-questions'
 import { cn } from '@/lib/utils'
@@ -93,7 +95,16 @@ function getScoreBarColor(score: number, max: number) {
 // ── Main page ────────────────────────────────────────────────────────────────
 
 export default function EssayFeedbackPage() {
-  const { user } = useAuthStore()
+  const { user, isLoading } = useAuthStore()
+  const router = useRouter()
+  const { selectedBoard: globalBoard } = useBoardStore()
+
+  // Auth redirect guard
+  useEffect(() => {
+    if (!isLoading && !user) {
+      router.push('/auth/login?redirect=' + encodeURIComponent(window.location.pathname))
+    }
+  }, [isLoading, user, router])
 
   // Form state
   const [board, setBoard] = useState('')
@@ -108,6 +119,13 @@ export default function EssayFeedbackPage() {
   const [error, setError] = useState<string | null>(null)
   const [feedback, setFeedback] = useState<FeedbackData | null>(null)
   const [remaining, setRemaining] = useState<number | null>(null)
+
+  // Auto-populate board from global board-gate selection (skip KS3 as essay feedback is GCSE-only)
+  useEffect(() => {
+    if (globalBoard && globalBoard !== 'KS3' && !board) {
+      setBoard(globalBoard)
+    }
+  }, [globalBoard]) // eslint-disable-line react-hooks/exhaustive-deps
 
   // Derived: available papers / question types
   const availablePapers = useMemo(() => {
@@ -216,6 +234,20 @@ export default function EssayFeedbackPage() {
     setEssay('')
     setQuestionText('')
     setSelectedQuestionId('')
+  }
+
+  // ── Auth guard renders ─────────────────────────────────────────────────────
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <Loader2 className="h-8 w-8 animate-spin text-primary" />
+      </div>
+    )
+  }
+
+  if (!user) {
+    return null // Will redirect via useEffect
   }
 
   // ── Render ─────────────────────────────────────────────────────────────────
@@ -430,6 +462,14 @@ function FeedbackResults({
   return (
     <div className="space-y-6 animate-fade-in">
 
+      {/* Disclaimer Banner */}
+      <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4 text-sm text-amber-200">
+        <p className="font-medium">Important Disclaimer</p>
+        <p className="mt-1 text-xs text-muted-foreground">
+          This is an AI-generated estimate based on the mark scheme criteria. It is not an official grade and should be used alongside your teacher&apos;s guidance. Actual exam grades may differ.
+        </p>
+      </div>
+
       {/* Grade Band Hero */}
       <Card className={cn('border', gradeStyle.border)}>
         <CardContent className="py-6">
@@ -572,7 +612,7 @@ function FeedbackResults({
       {/* Actions */}
       <div className="flex items-center justify-between">
         <p className="text-xs text-muted-foreground">
-          This feedback is AI-generated. Use it alongside your teacher&apos;s guidance for best results.
+          AI-generated feedback is approximate and should not replace teacher assessment.
         </p>
         <Button size="lg" onClick={onTryAgain}>
           <RefreshCw className="h-4 w-4" />

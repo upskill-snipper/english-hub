@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useEffect, useMemo } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import {
   Clock,
   Play,
@@ -19,6 +20,7 @@ import {
   Eye,
   History,
   Send,
+  Loader2,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import {
@@ -29,7 +31,9 @@ import {
   type MockExamPaper,
   type MockExamSection,
 } from '@/data/mock-exams'
+import { useAuthStore } from '@/store/auth-store'
 import { useExamStore } from '@/store/exam-store'
+import { useBoardStore } from '@/store/board-store'
 import { useExamTimer, type TimerWarning } from '@/hooks/useExamTimer'
 
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
@@ -62,10 +66,33 @@ const BOARD_CONFIG: Record<string, { color: string; bg: string; ring: string }> 
 // ─── Main Page ───────────────────────────────────────────────────────────────
 
 export default function MockExamPage() {
+  const { user, isLoading } = useAuthStore()
+  const router = useRouter()
   const { phase, _hasHydrated } = useExamStore()
+  const { _hasHydrated: boardHydrated } = useBoardStore()
+
+  // Auth redirect guard
+  useEffect(() => {
+    if (!isLoading && !user) {
+      router.push('/auth/login?redirect=' + encodeURIComponent(window.location.pathname))
+    }
+  }, [isLoading, user, router])
+
+  // Auth loading state
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <Loader2 className="h-8 w-8 animate-spin text-primary" />
+      </div>
+    )
+  }
+
+  if (!user) {
+    return null // Will redirect via useEffect
+  }
 
   // Wait for hydration to avoid flash of wrong state
-  if (!_hasHydrated) {
+  if (!_hasHydrated || !boardHydrated) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="animate-pulse text-muted-foreground">Loading...</div>
@@ -87,7 +114,8 @@ export default function MockExamPage() {
 // ═══════════════════════════════════════════════════════════════════════════════
 
 function ExamConfigScreen() {
-  const [selectedBoard, setSelectedBoard] = useState<string | null>(null)
+  const { selectedBoard: globalBoard } = useBoardStore()
+  const [selectedBoard, setSelectedBoard] = useState<string | null>(globalBoard)
   const [selectedExamId, setSelectedExamId] = useState<string | null>(null)
   const { startExam, examHistory } = useExamStore()
 

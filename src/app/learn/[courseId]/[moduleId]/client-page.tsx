@@ -40,13 +40,18 @@ function QuizCard({
   onAnswer: (correct: boolean) => void
 }) {
   const [selected, setSelected] = useState<number | null>(null)
-  const answered = selected !== null
+  const [submitted, setSubmitted] = useState(false)
   const isCorrect = selected === quiz.correct
 
   function handleSelect(optionIndex: number) {
-    if (answered) return
+    if (submitted) return
     setSelected(optionIndex)
-    onAnswer(optionIndex === quiz.correct)
+  }
+
+  function handleSubmit() {
+    if (selected === null || submitted) return
+    setSubmitted(true)
+    onAnswer(selected === quiz.correct)
   }
 
   return (
@@ -55,7 +60,7 @@ function QuizCard({
         <span className="text-sm font-medium text-muted-foreground">
           Question {index + 1} of {total}
         </span>
-        {answered && (
+        {submitted && (
           <span
             className={`text-sm font-semibold ${
               isCorrect ? 'text-primary' : 'text-destructive'
@@ -73,7 +78,7 @@ function QuizCard({
           let borderClass = 'border-border hover:border-primary/50'
           let bgClass = 'bg-background'
 
-          if (answered) {
+          if (submitted) {
             if (i === quiz.correct) {
               borderClass = 'border-primary'
               bgClass = 'bg-primary/10'
@@ -92,17 +97,17 @@ function QuizCard({
             <button
               key={i}
               onClick={() => handleSelect(i)}
-              disabled={answered}
+              disabled={submitted}
               className={`w-full text-left p-4 rounded-lg border transition-all duration-200 ${borderClass} ${bgClass} ${
-                !answered ? 'cursor-pointer' : 'cursor-default'
+                !submitted ? 'cursor-pointer' : 'cursor-default'
               }`}
             >
               <div className="flex items-start gap-3">
                 <span
                   className={`flex-shrink-0 w-7 h-7 rounded-full border-2 flex items-center justify-center text-sm font-semibold ${
-                    answered && i === quiz.correct
+                    submitted && i === quiz.correct
                       ? 'border-primary text-primary'
-                      : answered && i === selected
+                      : submitted && i === selected
                         ? 'border-destructive text-destructive'
                         : 'border-muted-foreground/40 text-muted-foreground'
                   }`}
@@ -116,7 +121,17 @@ function QuizCard({
         })}
       </div>
 
-      {answered && (
+      {/* Submit button — shown after selecting an option but before submitting */}
+      {selected !== null && !submitted && (
+        <button
+          onClick={handleSubmit}
+          className="mt-4 btn-primary w-full py-3 text-sm font-semibold"
+        >
+          Check Answer
+        </button>
+      )}
+
+      {submitted && (
         <div
           className={`mt-4 p-4 rounded-lg border ${
             isCorrect

@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useMemo } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import {
   ArrowLeft,
   ArrowRight,
@@ -14,6 +15,7 @@ import {
   BookOpen,
   Award,
   Zap,
+  Loader2,
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { useAuthStore } from '@/store/auth-store'
@@ -115,11 +117,20 @@ function CardSkeleton({ className = '' }: { className?: string }) {
 // ─── Main Component ──────────────────────────────────────────────────────────
 
 export default function GradeDashboardPage() {
-  const { user } = useAuthStore()
+  const { user, isLoading } = useAuthStore()
+  const router = useRouter()
   const { selectedBoard } = useBoardStore()
   const [assessments, setAssessments] = useState<AssessmentAttempt[]>([])
   const [practiceSessions, setPracticeSessions] = useState<PracticeSession[]>([])
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+
+  // Auth redirect guard
+  useEffect(() => {
+    if (!isLoading && !user) {
+      router.push('/auth/login?redirect=' + encodeURIComponent(window.location.pathname))
+    }
+  }, [isLoading, user, router])
 
   useEffect(() => {
     if (!user) return
@@ -127,22 +138,32 @@ export default function GradeDashboardPage() {
     const supabase = createClient()
 
     async function fetchData() {
-      const [assessRes, practiceRes] = await Promise.all([
-        supabase
-          .from('assessment_attempts')
-          .select('*')
-          .eq('user_id', user!.id)
-          .order('attempted_at', { ascending: true }),
-        supabase
-          .from('practice_sessions')
-          .select('*')
-          .eq('user_id', user!.id)
-          .order('created_at', { ascending: true }),
-      ])
+      try {
+        setError(null)
+        const [assessRes, practiceRes] = await Promise.all([
+          supabase
+            .from('assessment_attempts')
+            .select('*')
+            .eq('user_id', user!.id)
+            .order('attempted_at', { ascending: true }),
+          supabase
+            .from('practice_sessions')
+            .select('*')
+            .eq('user_id', user!.id)
+            .order('created_at', { ascending: true }),
+        ])
 
-      if (assessRes.data) setAssessments(assessRes.data)
-      if (practiceRes.data) setPracticeSessions(practiceRes.data)
-      setLoading(false)
+        if (assessRes.error) console.error('Failed to fetch assessments:', assessRes.error)
+        if (practiceRes.error) console.error('Failed to fetch practice sessions:', practiceRes.error)
+
+        if (assessRes.data) setAssessments(assessRes.data)
+        if (practiceRes.data) setPracticeSessions(practiceRes.data)
+      } catch (err) {
+        console.error('Failed to fetch grade data:', err)
+        setError('Something went wrong loading your grades. Please try again.')
+      } finally {
+        setLoading(false)
+      }
     }
 
     fetchData()
@@ -278,7 +299,46 @@ export default function GradeDashboardPage() {
     return recs.slice(0, 3)
   }, [averageScore, weaknesses, selectedBoard])
 
+  // ── Auth guard renders ─────────────────────────────────────────────────
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <Loader2 className="h-8 w-8 animate-spin text-primary" />
+      </div>
+    )
+  }
+
+  if (!user) {
+    return null // Will redirect via useEffect
+  }
+
   // ── Render ───────────────────────────────────────────────────────────────
+
+  if (error) {
+    return (
+      <div className="min-h-screen bg-background text-foreground">
+        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+          <Link
+            href="/dashboard"
+            className="mb-6 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Back to dashboard
+          </Link>
+          <div className="flex flex-col items-center justify-center rounded-xl border border-destructive/30 bg-destructive/5 py-16 text-center">
+            <p className="mb-4 text-sm text-destructive">{error}</p>
+            <button
+              onClick={() => window.location.reload()}
+              className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary/90"
+            >
+              Retry
+            </button>
+          </div>
+        </div>
+      </div>
+    )
+  }
 
   if (loading) {
     return (

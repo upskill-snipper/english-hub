@@ -204,10 +204,10 @@ export async function POST(
 
     const studentId = profile.id
 
-    // Check seat limit
+    // Check seat limit and subscription status
     const { data: school } = await admin
       .from('schools')
-      .select('seat_limit, seats_used')
+      .select('seat_limit, seats_used, subscription_status')
       .eq('id', member.school_id)
       .single()
 
@@ -259,11 +259,14 @@ export async function POST(
 
     await admin.from('classes').update({ student_count: studentCount || 0 }).eq('id', classId)
 
-    // Grant pro access to the student
-    await admin
-      .from('profiles')
-      .update({ subscription_status: 'pro' })
-      .eq('id', studentId)
+    // Grant pro access to the student only if the school has an active subscription
+    const schoolSubStatus = school?.subscription_status
+    if (schoolSubStatus === 'active' || schoolSubStatus === 'trialing') {
+      await admin
+        .from('profiles')
+        .update({ subscription_status: 'pro' })
+        .eq('id', studentId)
+    }
 
     return NextResponse.json({ success: true, student_id: studentId }, { status: 201 })
   } catch (error) {

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
+import { rateLimit } from '@/lib/rate-limit'
 
 // ── POST: Link a child account to the authenticated parent ──────────────────
 
@@ -13,6 +14,19 @@ export async function POST(request: NextRequest) {
 
     if (authError || !user) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    }
+
+    // ── Rate limiting: 5 requests per hour per user ────────────────────────
+    const rateLimitResult = rateLimit(`link-child:${user.id}`, {
+      limit: 5,
+      windowSeconds: 3600,
+    })
+
+    if (!rateLimitResult.success) {
+      return NextResponse.json(
+        { error: 'Too many link requests. Please try again later.' },
+        { status: 429 }
+      )
     }
 
     let body: { child_email?: string; invite_code?: string }
@@ -97,12 +111,12 @@ export async function POST(request: NextRequest) {
 
     if (existingLink) {
       return NextResponse.json(
-        { error: 'This child account is already linked to your parent account.' },
+        { error: 'This child account is already linked or has a pending request.' },
         { status: 409 }
       )
     }
 
-    // ── Create or update the link ────────────────────────────────────────────
+    // ── Create the link as pending (requires child approval) ─────────────
 
     const { data: link, error: linkError } = await serviceClient
       .from('parent_child_links')
@@ -110,8 +124,8 @@ export async function POST(request: NextRequest) {
         {
           parent_id: user.id,
           child_id: childUserId,
-          status: 'active',
-          linked_at: new Date().toISOString(),
+          status: 'pending',
+          requested_at: new Date().toISOString(),
         },
         { onConflict: 'parent_id,child_id' }
       )
@@ -119,14 +133,14 @@ export async function POST(request: NextRequest) {
       .single()
 
     if (linkError) {
-      console.error('Failed to create parent-child link:', linkError)
+      console.error('Failed to create parent-child link request:', linkError)
       return NextResponse.json(
-        { error: 'Failed to link accounts. Please try again.' },
+        { error: 'Failed to send link request. Please try again.' },
         { status: 500 }
       )
     }
 
-    // ── Fetch child profile for response ─────────────────────────────────────
+    // ── Fetch child profile for response ─────────────────────────────────
 
     const { data: childProfile } = await serviceClient
       .from('profiles')
@@ -137,6 +151,8 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({
       success: true,
       link_id: link.id,
+      status: 'pending',
+      message: 'Link request sent. Your child must approve the request before you can view their progress.',
       child: {
         id: childProfile?.id,
         name: childProfile?.full_name ?? 'Student',

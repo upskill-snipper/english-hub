@@ -1,8 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
-import { BookOpen, Clock, GraduationCap } from 'lucide-react'
+import { BookOpen, Clock, GraduationCap, Play } from 'lucide-react'
 import { allCourses as courses } from '@/data/courses'
 import { useBoardStore } from '@/store/board-store'
 import { useAuthStore } from '@/store/auth-store'
@@ -19,11 +19,32 @@ import { cn } from '@/lib/utils'
 const TIERS = ['All', 'KS3', 'GCSE', 'IGCSE'] as const
 type Tier = (typeof TIERS)[number]
 
+function getDefaultTierForYearGroup(yearGroup: string | null | undefined): Tier {
+  if (!yearGroup) return 'All'
+  const normalized = yearGroup.trim().toLowerCase()
+  if (['7', '8', '9', 'year 7', 'year 8', 'year 9'].includes(normalized)) return 'KS3'
+  if (['10', '11', 'year 10', 'year 11'].includes(normalized)) return 'GCSE'
+  return 'All'
+}
 
 export default function CourseCataloguePage() {
-  const [activeTier, setActiveTier] = useState<Tier>('All')
   const { selectedBoard } = useBoardStore()
-  const { user } = useAuthStore()
+  const { user, profile } = useAuthStore()
+
+  const [activeTier, setActiveTier] = useState<Tier>('All')
+  const hasManuallySelected = useRef(false)
+
+  // Auto-select tier based on user's year group once profile loads
+  useEffect(() => {
+    if (hasManuallySelected.current) return
+    const tier = getDefaultTierForYearGroup(profile?.year_group)
+    setActiveTier(tier)
+  }, [profile?.year_group])
+
+  function handleTierChange(value: string) {
+    hasManuallySelected.current = true
+    setActiveTier(value as Tier)
+  }
 
   const filtered = courses.filter((c) => {
     if (!matchesBoard(c.board, selectedBoard)) return false
@@ -92,7 +113,7 @@ export default function CourseCataloguePage() {
         )}
 
         {/* Tabs */}
-        <Tabs value={activeTier} onValueChange={(value) => setActiveTier(value as Tier)} className="mb-8">
+        <Tabs value={activeTier} onValueChange={handleTierChange} className="mb-8">
           <TabsList>
             {TIERS.map((tier) => (
               <TabsTrigger key={tier} value={tier}>
@@ -191,18 +212,21 @@ function CourseCard({ course }: CourseCardProps) {
           </div>
         </CardContent>
 
-        <CardFooter className="flex items-center justify-between pt-5">
-          <span className="text-xs text-muted-foreground">
-            Included with subscription
-          </span>
-          <Button
-            variant="ghost"
-            size="sm"
-            className="bg-primary/10 text-primary font-semibold group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-200"
-            tabIndex={-1}
-          >
-            View Course
-          </Button>
+        <CardFooter className="flex-col items-stretch gap-3 pt-5">
+          <div className="flex items-center justify-between">
+            <span className="inline-flex items-center gap-1.5 text-xs font-medium text-primary">
+              <Play className="h-3 w-3" />
+              Free preview available
+            </span>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="bg-primary/10 text-primary font-semibold group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-200"
+              tabIndex={-1}
+            >
+              View Course
+            </Button>
+          </div>
         </CardFooter>
       </Card>
     </Link>

@@ -44,6 +44,7 @@ interface ExamState {
   nextSection: (maxSections: number) => void
   prevSection: () => void
   tick: () => void
+  setTimeRemaining: (seconds: number) => void
   togglePause: () => void
   submitExam: (board: string, paperTitle: string) => void
   resetExam: () => void
@@ -104,6 +105,9 @@ export const useExamStore = create<ExamState>()(
           if (state.isPaused || state.timeRemainingSeconds <= 0) return state
           return { timeRemainingSeconds: state.timeRemainingSeconds - 1 }
         }),
+
+      setTimeRemaining: (seconds) =>
+        set({ timeRemainingSeconds: Math.max(0, seconds) }),
 
       togglePause: () => set((state) => ({ isPaused: !state.isPaused })),
 

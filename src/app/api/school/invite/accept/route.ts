@@ -53,8 +53,7 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({
       school_name: (member.schools as unknown as { name: string } | null)?.name ?? 'Unknown School',
       role: member.role,
-      email: member.email,
-      full_name: member.full_name,
+      invite_status: member.invite_status,
     })
   } catch (error) {
     console.error('Invite lookup error:', error)
@@ -114,6 +113,14 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         { error: 'This invitation has expired. Please ask your school administrator for a new invite.' },
         { status: 410 }
+      )
+    }
+
+    // Verify the authenticated user's email matches the invited email
+    if (!user.email || user.email.toLowerCase() !== member.email?.toLowerCase()) {
+      return NextResponse.json(
+        { error: 'You can only accept invites sent to your email address.' },
+        { status: 403 }
       )
     }
 

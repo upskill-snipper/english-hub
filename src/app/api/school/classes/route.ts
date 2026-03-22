@@ -135,9 +135,9 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    const member = await verifySchoolMember(user.id)
+    const member = await verifySchoolMember(user.id, ['admin', 'head_of_department'])
     if (!member) {
-      return NextResponse.json({ error: 'Forbidden: not a school member' }, { status: 403 })
+      return NextResponse.json({ error: 'Forbidden: requires admin or head of department role' }, { status: 403 })
     }
 
     let body: { name?: string; year_group?: string; exam_board?: string; academic_year?: string }

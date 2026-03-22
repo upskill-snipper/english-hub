@@ -5,13 +5,10 @@ import { rateLimit, getClientIp } from '@/lib/rate-limit'
 
 export const dynamic = 'force-dynamic'
 
-function generateCode(): string {
+function generateCode(length = 8): string {
   const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789' // no ambiguous chars (no 0/O, 1/I/L)
-  let code = ''
-  for (let i = 0; i < 8; i++) {
-    code += chars[Math.floor(Math.random() * chars.length)]
-  }
-  return code
+  const randomBytes = crypto.getRandomValues(new Uint8Array(length))
+  return Array.from(randomBytes, b => chars[b % chars.length]).join('')
 }
 
 export async function GET(request: NextRequest) {
@@ -31,9 +28,9 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    const membership = await verifySchoolMember(user.id)
+    const membership = await verifySchoolMember(user.id, ['admin', 'head_of_department'])
     if (!membership) {
-      return NextResponse.json({ error: 'Forbidden: not a school member' }, { status: 403 })
+      return NextResponse.json({ error: 'Forbidden: requires admin or head of department role' }, { status: 403 })
     }
 
     const admin = createServiceRoleClient()
@@ -86,9 +83,9 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    const membership = await verifySchoolMember(user.id)
+    const membership = await verifySchoolMember(user.id, ['admin', 'head_of_department'])
     if (!membership) {
-      return NextResponse.json({ error: 'Forbidden: not a school member' }, { status: 403 })
+      return NextResponse.json({ error: 'Forbidden: requires admin or head of department role' }, { status: 403 })
     }
 
     let body: { class_id?: string; max_uses?: number; expires_days?: number }

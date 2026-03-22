@@ -1,32 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
-
-const ADMIN_EMAILS = (process.env.ADMIN_EMAILS || 'admin@theenglishhub.app')
-  .split(',')
-  .map((e) => e.trim().toLowerCase())
-
-async function verifyAdmin(supabase: ReturnType<typeof createServerSupabaseClient>) {
-  const {
-    data: { user },
-  } = await supabase.auth.getUser()
-  if (!user) return null
-
-  if (!user.email || !ADMIN_EMAILS.includes(user.email.toLowerCase())) {
-    return null
-  }
-
-  return user
-}
+import { createServiceRoleClient } from '@/lib/supabase/server'
+import { verifyAdmin } from '@/lib/admin-auth'
 
 /**
  * GET /api/admin/affiliates
  * Returns all affiliates with stats for admin management.
  */
 export async function GET(request: NextRequest) {
-  const supabase = createServerSupabaseClient()
-  const admin = await verifyAdmin(supabase)
-  if (!admin) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  const { error: authError } = await verifyAdmin()
+  if (authError) {
+    return NextResponse.json({ error: authError }, { status: authError === 'Unauthorized' ? 401 : 403 })
   }
 
   const supabaseAdmin = createServiceRoleClient()

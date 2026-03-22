@@ -16,6 +16,14 @@ class WebhookMetadataError extends Error {
 }
 
 export async function POST(request: NextRequest) {
+  if (!process.env.STRIPE_WEBHOOK_SECRET) {
+    console.error('STRIPE_WEBHOOK_SECRET is not configured')
+    return NextResponse.json(
+      { error: 'Webhook endpoint is not configured' },
+      { status: 500 }
+    )
+  }
+
   const body = await request.text()
   const signature = request.headers.get('stripe-signature')
 
@@ -145,13 +153,19 @@ async function handleCheckoutCompleted(
   }
 
   if (session.mode === 'subscription') {
+    const subscriptionId = session.subscription as string
+    const subscription = await stripe.subscriptions.retrieve(subscriptionId)
+
+    const activeStatuses = ['active', 'trialing']
+    const subscriptionStatus = activeStatuses.includes(subscription.status) ? 'pro' : 'incomplete'
+
     const { error } = await supabase
       .from('profiles')
-      .update({ subscription_status: 'pro' })
+      .update({ subscription_status: subscriptionStatus })
       .eq('id', userId)
 
     if (error) {
-      console.error('Failed to update subscription_status to pro:', error)
+      console.error(`Failed to update subscription_status to ${subscriptionStatus}:`, error)
       throw error
     }
   }

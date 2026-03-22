@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useMemo } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import {
   BookOpen,
   Award,
@@ -21,6 +22,7 @@ import {
   Timer,
   School,
   UserPlus,
+  Loader2,
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { useAuthStore } from '@/store/auth-store'
@@ -121,7 +123,8 @@ function ActivitySkeleton() {
 // ── Main Component ─────────────────────────────────────────────────────────
 
 export default function DashboardPage() {
-  const { user, profile } = useAuthStore()
+  const { user, profile, isLoading } = useAuthStore()
+  const router = useRouter()
   const [enrolments, setEnrolments] = useState<Enrolment[]>([])
   const [moduleProgress, setModuleProgress] = useState<ModuleProgress[]>([])
   const [certificates, setCertificates] = useState<Certificate[]>([])
@@ -129,6 +132,13 @@ export default function DashboardPage() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [schoolInfo, setSchoolInfo] = useState<{ name: string; role: string } | null>(null)
+
+  // Auth redirect guard
+  useEffect(() => {
+    if (!isLoading && !user) {
+      router.push('/auth/login?redirect=' + encodeURIComponent(window.location.pathname))
+    }
+  }, [isLoading, user, router])
 
   useEffect(() => {
     if (!user) return
@@ -269,6 +279,20 @@ export default function DashboardPage() {
     .join('')
     .toUpperCase()
     .slice(0, 2)
+
+  // ── Auth guard renders ─────────────────────────────────────────────────
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <Loader2 className="h-8 w-8 animate-spin text-primary" />
+      </div>
+    )
+  }
+
+  if (!user) {
+    return null // Will redirect via useEffect
+  }
 
   // ── Render ──────────────────────────────────────────────────────────────
 

@@ -33,19 +33,47 @@ export function useExamTimer(
   totalTimeMinutes: number,
   { onTimeUp, onWarning }: UseExamTimerOptions = {}
 ): UseExamTimerReturn {
-  const { timeRemainingSeconds, isPaused, tick, togglePause } = useExamStore()
+  const { timeRemainingSeconds, isPaused, setTimeRemaining, togglePause } = useExamStore()
   const prevWarningRef = useRef<TimerWarning>('none')
+  /** Wall-clock timestamp (ms) when the current running interval started */
+  const startTimeRef = useRef<number>(0)
+  /** The timeRemainingSeconds value captured when the interval started */
+  const baseRemainingRef = useRef<number>(0)
 
-  // Tick every second
+  // Wall-clock based tick — immune to setInterval drift and tab throttling
   useEffect(() => {
     if (isPaused || timeRemainingSeconds <= 0) return
 
-    const interval = setInterval(() => {
-      tick()
-    }, 1000)
+    // Capture baseline for this running interval
+    startTimeRef.current = Date.now()
+    baseRemainingRef.current = timeRemainingSeconds
 
-    return () => clearInterval(interval)
-  }, [isPaused, timeRemainingSeconds, tick])
+    const recalc = () => {
+      const elapsed = Math.floor((Date.now() - startTimeRef.current) / 1000)
+      const remaining = Math.max(0, baseRemainingRef.current - elapsed)
+      setTimeRemaining(remaining)
+    }
+
+    const interval = setInterval(recalc, 1000)
+
+    // Recalculate immediately when the tab regains focus (covers long
+    // background periods where setInterval is throttled).
+    const onVisibilityChange = () => {
+      if (document.visibilityState === 'visible') {
+        recalc()
+      }
+    }
+    document.addEventListener('visibilitychange', onVisibilityChange)
+
+    return () => {
+      clearInterval(interval)
+      document.removeEventListener('visibilitychange', onVisibilityChange)
+    }
+    // Only re-run when paused state changes or the timer reaches 0.
+    // We intentionally exclude timeRemainingSeconds to avoid resetting
+    // the wall-clock baseline on every tick.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isPaused, timeRemainingSeconds <= 0, setTimeRemaining])
 
   // Determine warning level
   const getWarning = useCallback((): TimerWarning => {

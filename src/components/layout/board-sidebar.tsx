@@ -62,25 +62,22 @@ export function BoardSidebar() {
 
   return (
     <>
-      {/* Mobile: thin horizontal strip */}
-      <div className="md:hidden flex items-center gap-2.5 px-4 h-10 bg-card/60 border-b border-border/40">
-        <GraduationCap className="h-3.5 w-3.5 text-muted-foreground" />
-        <span className="text-overline font-semibold uppercase tracking-widest text-muted-foreground">
-          Board:
-        </span>
-        <Badge
-          variant="outline"
-          className={cn(
-            'inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs font-semibold',
-            'bg-primary/10 border-primary/25 text-primary'
-          )}
+      {/* Mobile: minimal horizontal bar */}
+      <div className="md:hidden flex items-center justify-between px-4 h-9 bg-card/60 border-b border-border/40">
+        <div className="flex items-center gap-2">
+          <span className={cn('h-2 w-2 rounded-full shrink-0', color)} />
+          <span className="text-xs font-semibold text-foreground">
+            {selectedBoard}
+          </span>
+        </div>
+        <Button
+          variant="ghost"
+          size="sm"
+          onClick={clearBoard}
+          className="text-[11px] text-muted-foreground hover:text-primary h-6 px-2"
         >
-          <span className={cn('h-1.5 w-1.5 rounded-full', color)} />
-          {selectedBoard}
-        </Badge>
-        <span className="text-[10px] text-muted-foreground/50 hidden sm:inline truncate">
-          {subtitle}
-        </span>
+          Change
+        </Button>
       </div>
 
       {/* Desktop: sticky left sidebar */}

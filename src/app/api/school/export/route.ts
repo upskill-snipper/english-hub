@@ -8,7 +8,11 @@ export const dynamic = 'force-dynamic'
 
 function escapeCsvField(value: string | number | null | undefined): string {
   if (value === null || value === undefined) return ''
-  const str = String(value)
+  let str = String(value)
+  // Prevent CSV formula injection — prefix dangerous leading characters
+  if (/^[=+\-@]/.test(str)) {
+    str = `'${str}`
+  }
   if (str.includes(',') || str.includes('"') || str.includes('\n')) {
     return `"${str.replace(/"/g, '""')}"`
   }
@@ -45,9 +49,9 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    const membership = await verifySchoolMember(user.id)
+    const membership = await verifySchoolMember(user.id, ['admin', 'head_of_department'])
     if (!membership) {
-      return NextResponse.json({ error: 'Forbidden: not a school member' }, { status: 403 })
+      return NextResponse.json({ error: 'Forbidden: requires admin or head of department role' }, { status: 403 })
     }
 
     let body: { class_id?: string; format?: string }

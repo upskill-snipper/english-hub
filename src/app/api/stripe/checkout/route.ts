@@ -162,7 +162,7 @@ export async function POST(request: NextRequest) {
 
     if (error instanceof Stripe.errors.StripeError) {
       return NextResponse.json(
-        { error: error.message },
+        { error: 'Payment processing error. Please try again.' },
         { status: error.statusCode ?? 500 }
       )
     }

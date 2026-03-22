@@ -1,26 +1,17 @@
 import { NextResponse } from 'next/server'
-import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
+import { createServiceRoleClient } from '@/lib/supabase/server'
+import { verifyAdmin } from '@/lib/admin-auth'
 
 export const dynamic = 'force-dynamic'
 
-const ADMIN_EMAILS = (process.env.ADMIN_EMAILS || 'admin@theenglishhub.app')
-  .split(',')
-  .map((e) => e.trim().toLowerCase())
-
 export async function GET() {
   try {
-    // Verify the requesting user is authenticated and is the admin
-    const supabase = createServerSupabaseClient()
-    const {
-      data: { user },
-      error: authError,
-    } = await supabase.auth.getUser()
+    const { error: authError } = await verifyAdmin()
 
-    if (authError || !user) {
+    if (authError === 'Unauthorized') {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
-
-    if (!user.email || !ADMIN_EMAILS.includes(user.email.toLowerCase())) {
+    if (authError === 'Forbidden') {
       return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
     }
 

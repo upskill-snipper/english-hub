@@ -19,6 +19,8 @@ import { Skeleton } from '@/components/ui/skeleton'
 const NAV_LINKS = [
   { href: '/subjects', label: 'Subjects' },
   { href: '/courses', label: 'Courses' },
+  { href: '/mock-exams', label: 'Mock Exams' },
+  { href: '/games', label: 'Games' },
   { href: '/practice', label: 'Practice' },
   { href: '/revision', label: 'Revision' },
   { href: '/exam-guide', label: 'Exam Guide' },
@@ -72,12 +74,11 @@ export function Header() {
 
         {/* Desktop nav */}
         <nav aria-label="Main navigation" className="hidden items-center gap-0.5 md:flex">
-          {user &&
-            NAV_LINKS.map((link) => (
-              <Button key={link.href} variant="ghost" size="sm" render={<Link href={link.href} />}>
-                {link.label}
-              </Button>
-            ))}
+          {NAV_LINKS.map((link) => (
+            <Button key={link.href} variant="ghost" size="sm" render={<Link href={link.href} />}>
+              {link.label}
+            </Button>
+          ))}
         </nav>
 
         {/* Desktop auth buttons */}
@@ -88,6 +89,9 @@ export function Header() {
             <>
               <Button variant="ghost" size="sm" render={<Link href="/dashboard" />}>
                 Dashboard
+              </Button>
+              <Button variant="ghost" size="sm" render={<Link href="/account" />}>
+                Account
               </Button>
               {isSchoolMember && (
                 <Button variant="ghost" size="sm" render={<Link href="/school" />}>
@@ -131,8 +135,7 @@ export function Header() {
             </SheetHeader>
 
             <nav aria-label="Mobile navigation" className="flex flex-col gap-1 pt-4">
-              {user &&
-                NAV_LINKS.map((link) => (
+              {NAV_LINKS.map((link) => (
                   <Button
                     key={link.href}
                     variant="ghost"
@@ -157,6 +160,14 @@ export function Header() {
                     onClick={() => setMobileOpen(false)}
                   >
                     Dashboard
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    className="w-full justify-start"
+                    render={<Link href="/account" />}
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    Account
                   </Button>
                   {isSchoolMember && (
                     <Button

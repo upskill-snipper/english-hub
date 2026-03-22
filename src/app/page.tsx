@@ -19,6 +19,7 @@ import {
   ChevronDown,
   CheckCircle,
   FileQuestion,
+  FileText,
   Clock,
   Sparkles,
   PenTool,
@@ -31,6 +32,7 @@ import {
   Zap,
   Eye,
   ListChecks,
+  Timer,
 } from 'lucide-react'
 
 /* ───────────────────── Pricing toggle state ───────────────────── */
@@ -267,11 +269,11 @@ export default function Home() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12">
             {[
+              { icon: FileText, color: 'text-orange-400 bg-orange-500/10', value: '120+', label: 'Mock Exam Papers' },
+              { icon: Sparkles, color: 'text-cyan-400 bg-cyan-500/10', value: 'AI', label: 'Essay Feedback' },
               { icon: BookOpen, color: 'text-primary bg-primary/10', value: '13', label: 'Structured Courses' },
-              { icon: FileQuestion, color: 'text-blue-400 bg-blue-500/10', value: '40+', label: 'Practice Questions' },
               { icon: Layers, color: 'text-purple-400 bg-purple-500/10', value: '295', label: 'Flashcards' },
-              { icon: BookMarked, color: 'text-emerald-400 bg-emerald-500/10', value: '52', label: 'Terminology Entries' },
-              { icon: Award, color: 'text-amber-400 bg-amber-500/10', value: '4', label: 'Exam Boards' },
+              { icon: Award, color: 'text-amber-400 bg-amber-500/10', value: '4', label: 'Exam Boards Covered' },
             ].map((stat, i) => (
               <div key={stat.label} className="flex items-center gap-8 sm:gap-12">
                 {i > 0 && <div className="hidden sm:block w-px h-10 bg-border/50" />}
@@ -349,6 +351,20 @@ export default function Home() {
                 desc: 'Track your progress through every course and earn verifiable digital certificates on completion.',
                 preview: 'Features: Progress bars, completion badges, shareable certificates, revision streaks...',
               },
+              {
+                icon: Timer,
+                color: 'text-orange-400 bg-orange-500/10',
+                title: '120+ Mock Exam Papers',
+                desc: 'Full-length timed mock exams for AQA, Edexcel, OCR & WJEC. Real exam format with model answers at every grade band.',
+                preview: 'Includes: Timed exam mode, section navigation, Grade 4-5 / 6-7 / 8-9 model answers, mark schemes...',
+              },
+              {
+                icon: Sparkles,
+                color: 'text-cyan-400 bg-cyan-500/10',
+                title: 'AI Essay Feedback',
+                desc: 'Submit your essay and get instant, detailed feedback from our AI examiner. Grade band estimates, strengths, improvements, and paragraph-by-paragraph annotation.',
+                preview: 'Powered by AI trained on GCSE mark schemes. Supports AQA, Edexcel, OCR & WJEC papers...',
+              },
             ].map((item) => (
               <Card key={item.title} className="p-6 flex flex-col border-border/40 hover:border-border/70 transition-colors duration-300">
                 <div
@@ -373,6 +389,83 @@ export default function Home() {
 
       <Separator className="opacity-40" />
 
+      {/* ━━━ MOCK EXAMS & AI FEEDBACK ━━━ */}
+      <section className="py-24 sm:py-32 bg-card/20">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <Badge variant="outline" className="border-orange-500/20 bg-orange-500/[0.06] text-orange-400 text-sm font-semibold mb-6 gap-2 px-4 py-1.5">
+              <FileText className="w-4 h-4" />
+              New Feature
+            </Badge>
+            <h2 className="text-foreground">
+              Full Mock Exams & AI Feedback
+            </h2>
+            <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-body-lg">
+              The most comprehensive exam preparation tools available. Practice under real exam conditions and get instant AI-powered feedback on your writing.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Mock Exams Card */}
+            <Card className="p-8 border-border/40 hover:border-orange-500/30 transition-colors">
+              <div className="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center mb-6">
+                <FileText className="w-6 h-6 text-orange-400" />
+              </div>
+              <h3 className="text-xl font-bold tracking-tight text-foreground mb-3">120+ Mock Exam Papers</h3>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Full-length timed exams matching the real GCSE format. Every paper includes detailed model answers at three grade bands and official mark schemes.
+              </p>
+              <div className="grid grid-cols-2 gap-3 mb-6">
+                {[
+                  { label: 'AQA Papers', value: '30+' },
+                  { label: 'Edexcel Papers', value: '30+' },
+                  { label: 'OCR Papers', value: '30+' },
+                  { label: 'WJEC Papers', value: '30+' },
+                ].map((s) => (
+                  <div key={s.label} className="text-center p-3 rounded-lg bg-card border border-border/40">
+                    <p className="text-lg font-bold text-foreground">{s.value}</p>
+                    <p className="text-xs text-muted-foreground">{s.label}</p>
+                  </div>
+                ))}
+              </div>
+              <Button variant="secondary" className="w-full" render={<Link href="/mock-exams" />}>
+                Try a Free Mock Exam →
+              </Button>
+            </Card>
+
+            {/* AI Essay Feedback Card */}
+            <Card className="p-8 border-border/40 hover:border-cyan-500/30 transition-colors">
+              <div className="w-12 h-12 rounded-2xl bg-cyan-500/10 flex items-center justify-center mb-6">
+                <Sparkles className="w-6 h-6 text-cyan-400" />
+              </div>
+              <h3 className="text-xl font-bold tracking-tight text-foreground mb-3">AI Essay Feedback</h3>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Submit your essay and get instant, expert-level feedback. Our AI examiner analyses your work against real GCSE mark schemes.
+              </p>
+              <div className="space-y-3 mb-6">
+                {[
+                  'Estimated grade band (4-5, 6-7, or 8-9)',
+                  'Assessment objective scores with comments',
+                  'Specific strengths with direct quotes',
+                  'Actionable improvement suggestions',
+                  'Paragraph-by-paragraph annotation',
+                ].map((f) => (
+                  <div key={f} className="flex items-start gap-2.5">
+                    <CheckCircle className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                    <span className="text-sm text-muted-foreground">{f}</span>
+                  </div>
+                ))}
+              </div>
+              <Button variant="secondary" className="w-full" render={<Link href="/auth/register" />}>
+                Start Free Trial for AI Feedback →
+              </Button>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <Separator className="opacity-40" />
+
       {/* ━━━ HOW IT WORKS ━━━ */}
       <section className="py-24 sm:py-32">
         <div className="max-w-4xl mx-auto px-6">
@@ -381,7 +474,7 @@ export default function Home() {
               How It Works
             </h2>
             <p className="mt-4 text-muted-foreground max-w-xl mx-auto text-body-lg">
-              Five simple steps from sign-up to exam success.
+              Six simple steps from sign-up to exam success.
             </p>
           </div>
 
@@ -407,12 +500,18 @@ export default function Home() {
               },
               {
                 step: 4,
+                icon: Sparkles,
+                title: 'Get AI feedback on your essays',
+                desc: 'Submit your writing and receive instant, detailed feedback with grade estimates from our AI examiner.',
+              },
+              {
+                step: 5,
                 icon: Zap,
                 title: 'Revise with flashcards & guides',
                 desc: 'Lock in your knowledge with 295 flashcards, terminology glossaries, and board-specific exam guides.',
               },
               {
-                step: 5,
+                step: 6,
                 icon: Award,
                 title: 'Ace your exams',
                 desc: 'Walk into your exam with confidence, backed by structured preparation and proven techniques.',
@@ -856,7 +955,8 @@ export default function Home() {
                 {[
                   'First month FREE — no payment due today',
                   'All 13 courses included',
-                  'All 40+ practice questions',
+                  'All 120+ mock exam papers',
+                  'AI essay feedback (10/day)',
                   '295 flashcards & 52 terminology entries',
                   'Certificates on completion',
                   'Progress tracking & analytics',
@@ -901,7 +1001,8 @@ export default function Home() {
                 {[
                   'First month FREE — no payment due today',
                   'All 13 courses included',
-                  'All 40+ practice questions',
+                  'All 120+ mock exam papers',
+                  'AI essay feedback (10/day)',
                   '295 flashcards & 52 terminology entries',
                   'Certificates on completion',
                   'Progress tracking & analytics',

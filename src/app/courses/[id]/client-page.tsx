@@ -82,10 +82,9 @@ export default function CourseDetailPage() {
   }
 
   const hasAccess = isEnrolled || isPro
-  const ctaLabel = hasAccess ? 'Start Learning' : 'Subscribe to Access'
-  const ctaHref = hasAccess
-    ? `/learn/${course.id}/${course.moduleList[0]?.id}`
-    : '/account/billing'
+  const firstModuleHref = `/learn/${course.id}/${course.moduleList[0]?.id}`
+  const ctaLabel = hasAccess ? 'Start Learning' : 'Preview Free Module'
+  const ctaHref = hasAccess ? firstModuleHref : firstModuleHref
 
   return (
     <div className="min-h-screen bg-background">
@@ -186,16 +185,10 @@ export default function CourseDetailPage() {
                 {course.moduleList.map((mod, idx) => {
                   const isFreePreview = idx === 0
                   const locked = !hasAccess && !isFreePreview
+                  const moduleHref = `/learn/${course.id}/${mod.id}`
 
-                  return (
-                    <li
-                      key={mod.id}
-                      className={`group flex items-center gap-4 rounded-lg border px-4 py-3.5 transition-colors duration-200 ${
-                        locked
-                          ? 'border-border bg-background/50'
-                          : 'border-border hover:border-primary/30 hover:bg-primary/5'
-                      }`}
-                    >
+                  const content = (
+                    <>
                       {/* Number circle */}
                       <span
                         className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xs font-bold ${locked ? 'bg-muted text-muted-foreground' : ''}`}
@@ -214,7 +207,7 @@ export default function CourseDetailPage() {
                             {mod.title}
                           </span>
                           {isFreePreview && (
-                            <span className="shrink-0 rounded bg-primary/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-primary">
+                            <span className="shrink-0 rounded-md bg-primary/15 px-2 py-0.5 text-[11px] font-bold uppercase tracking-wider text-primary ring-1 ring-primary/20">
                               Free Preview
                             </span>
                           )}
@@ -229,6 +222,25 @@ export default function CourseDetailPage() {
                         <Lock className="h-4 w-4 shrink-0 text-muted-foreground/50" />
                       ) : (
                         <Play className="h-4 w-4 shrink-0 text-primary opacity-0 transition-opacity group-hover:opacity-100" />
+                      )}
+                    </>
+                  )
+
+                  return (
+                    <li key={mod.id}>
+                      {locked ? (
+                        <div
+                          className="group flex items-center gap-4 rounded-lg border px-4 py-3.5 transition-colors duration-200 border-border bg-background/50"
+                        >
+                          {content}
+                        </div>
+                      ) : (
+                        <Link
+                          href={moduleHref}
+                          className="group flex items-center gap-4 rounded-lg border px-4 py-3.5 transition-colors duration-200 border-border hover:border-primary/30 hover:bg-primary/5"
+                        >
+                          {content}
+                        </Link>
                       )}
                     </li>
                   )
@@ -258,10 +270,18 @@ export default function CourseDetailPage() {
       <div className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-background/95 backdrop-blur p-4 lg:hidden">
         <div className="mx-auto flex max-w-lg items-center justify-between gap-4">
           <div>
-            <span className="text-sm font-medium text-foreground">
-              First month free!
-            </span>
-            <span className="ml-1.5 text-xs text-muted-foreground">Then {PRICING.CURRENCY}{PRICING.MONTHLY}/mo</span>
+            {hasAccess ? (
+              <span className="text-sm font-medium text-foreground">
+                Ready to learn
+              </span>
+            ) : (
+              <>
+                <span className="text-sm font-medium text-foreground">
+                  Try it free
+                </span>
+                <span className="ml-1.5 text-xs text-muted-foreground">No sign-up needed</span>
+              </>
+            )}
           </div>
 
           {loading ? (
@@ -292,6 +312,7 @@ interface SubscriptionCardProps {
   moduleCount: number
   duration: string
   level: string
+  billingHref?: string
 }
 
 function SubscriptionCard({
@@ -302,39 +323,57 @@ function SubscriptionCard({
   moduleCount,
   duration,
   level,
+  billingHref,
 }: SubscriptionCardProps) {
   return (
     <div className="card w-full overflow-hidden lg:w-80">
       <div className="p-6">
-        <div className="mb-2">
-          <span className="text-lg font-bold text-primary">
-            First month free!
-          </span>
-        </div>
-        <div className="mb-6">
-          <span className="text-3xl font-bold text-foreground">{PRICING.CURRENCY}{PRICING.MONTHLY}</span>
-          <span className="ml-2 text-sm text-muted-foreground">/month after trial</span>
-        </div>
-
-        {loading ? (
-          <div className="h-12 w-full animate-pulse rounded-lg bg-background" />
+        {hasAccess ? (
+          <>
+            {loading ? (
+              <div className="h-12 w-full animate-pulse rounded-lg bg-background" />
+            ) : (
+              <Link
+                href={ctaHref}
+                className="btn-primary w-full justify-center text-base"
+              >
+                {ctaLabel}
+              </Link>
+            )}
+          </>
         ) : (
-          <Link
-            href={ctaHref}
-            className="btn-primary w-full justify-center text-base"
-          >
-            {ctaLabel}
-          </Link>
+          <>
+            {loading ? (
+              <div className="h-12 w-full animate-pulse rounded-lg bg-background" />
+            ) : (
+              <Link
+                href={ctaHref}
+                className="btn-primary w-full justify-center text-base"
+              >
+                {ctaLabel}
+              </Link>
+            )}
+
+            <div className="mt-4 rounded-lg border border-border/60 bg-background/50 p-3 text-center">
+              <p className="text-xs text-muted-foreground">
+                Want full access to all courses?
+              </p>
+              <Link
+                href={billingHref ?? '/account/billing'}
+                className="mt-1 inline-block text-sm font-semibold text-primary hover:underline"
+              >
+                Subscribe — first month free
+              </Link>
+              <p className="mt-0.5 text-[10px] text-muted-foreground">
+                {PRICING.CURRENCY}{PRICING.MONTHLY}/mo after trial · Cancel anytime
+              </p>
+            </div>
+          </>
         )}
 
         <p className="mt-3 text-center text-xs text-muted-foreground">
           Annual subscription also available — {PRICING.CURRENCY}{PRICING.ANNUAL}/year (save {PRICING.ANNUAL_SAVE_PERCENT}%)
         </p>
-        {!hasAccess && (
-          <p className="mt-1 text-center text-xs text-muted-foreground">
-            Cancel anytime. All courses included.
-          </p>
-        )}
       </div>
 
       <div className="border-t border-border px-6 py-4">

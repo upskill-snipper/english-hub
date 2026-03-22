@@ -39,7 +39,7 @@ export async function POST(request: NextRequest) {
     // Look up the join code with school and class info
     const { data: joinCode, error: codeError } = await admin
       .from('school_join_codes')
-      .select('*, schools(id, name, seat_limit, seats_used), classes(id, name)')
+      .select('*, schools(id, name, seat_limit, seats_used, subscription_status), classes(id, name)')
       .eq('code', code)
       .eq('is_active', true)
       .single()
@@ -67,8 +67,8 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Check seat limit
-    const school = joinCode.schools as { id: string; name: string; seat_limit: number; seats_used: number } | null
+    // Optimistic seat limit check (preliminary — re-verified after increment below)
+    const school = joinCode.schools as { id: string; name: string; seat_limit: number; seats_used: number; subscription_status: string | null } | null
     if (school && school.seats_used >= school.seat_limit) {
       return NextResponse.json(
         { error: 'This school has reached its student limit. Please contact your teacher.' },
@@ -154,19 +154,60 @@ export async function POST(request: NextRequest) {
       .update({ uses: joinCode.uses + 1 })
       .eq('id', joinCode.id)
 
-    // Update school seats_used if this is a new student at the school
+    // Update school seats_used if this is a new student at the school.
+    // Use a conditional update to guard against the race condition where concurrent
+    // requests read the same seats_used value before either increments it.
+    // The .lt('seats_used', seat_limit) filter ensures the DB won't increment past the limit.
     if (!alreadyInSchool && school) {
-      await admin
+      const { data: updatedSchool, error: seatError } = await admin
         .from('schools')
         .update({ seats_used: school.seats_used + 1 })
         .eq('id', school.id)
+        .lt('seats_used', school.seat_limit)
+        .select('id, seats_used')
+        .single()
+
+      if (seatError || !updatedSchool) {
+        // The seat limit was reached between our initial check and now (race condition).
+        // Roll back: remove the student from the class we just added them to.
+        if (classId) {
+          await admin
+            .from('class_students')
+            .update({ is_active: false, removed_at: new Date().toISOString() })
+            .eq('class_id', classId)
+            .eq('student_id', user.id)
+
+          // Re-sync class student count
+          const { count: rollbackCount } = await admin
+            .from('class_students')
+            .select('id', { count: 'exact', head: true })
+            .eq('class_id', classId)
+            .eq('is_active', true)
+
+          await admin.from('classes').update({ student_count: rollbackCount || 0 }).eq('id', classId)
+        }
+
+        // Roll back join code usage increment
+        await admin
+          .from('school_join_codes')
+          .update({ uses: joinCode.uses })
+          .eq('id', joinCode.id)
+
+        return NextResponse.json(
+          { error: 'This school has reached its student limit. Please contact your teacher.' },
+          { status: 422 }
+        )
+      }
     }
 
-    // Grant pro access to the student
-    await admin
-      .from('profiles')
-      .update({ subscription_status: 'pro' })
-      .eq('id', user.id)
+    // Grant pro access to the student only if the school has an active subscription
+    const schoolSubStatus = school?.subscription_status
+    if (schoolSubStatus === 'active' || schoolSubStatus === 'trialing') {
+      await admin
+        .from('profiles')
+        .update({ subscription_status: 'pro' })
+        .eq('id', user.id)
+    }
 
     const schoolName = (joinCode.schools as { name: string } | null)?.name ?? 'your school'
     const className = (joinCode.classes as { name: string } | null)?.name ?? null

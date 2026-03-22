@@ -1,8 +1,9 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/client'
+import { useBoardStore } from '@/store/board-store'
 import { Mail, Lock, User, GraduationCap, BookOpen, Loader2, ArrowLeft, CheckCircle, Eye, EyeOff } from 'lucide-react'
 import { PRICING_DISPLAY } from '@/constants/pricing'
 import { YEAR_GROUPS, EXAM_BOARDS } from '@/lib/utils'
@@ -13,12 +14,19 @@ import { Label } from '@/components/ui/label'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 
 export default function RegisterPage() {
+  const selectedBoard = useBoardStore((s) => s.selectedBoard)
   const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
   const [yearGroup, setYearGroup] = useState('')
   const [examBoard, setExamBoard] = useState('')
+
+  useEffect(() => {
+    if (selectedBoard && !examBoard) {
+      setExamBoard(selectedBoard)
+    }
+  }, [selectedBoard])
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirm, setShowConfirm] = useState(false)
   const [error, setError] = useState<string | null>(null)

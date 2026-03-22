@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
+import { rateLimit } from '@/lib/rate-limit'
 
 // ── GET: Return child's learning data for the authenticated parent ──────────
 
@@ -13,6 +14,15 @@ export async function GET() {
 
     if (authError || !user) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    }
+
+    // Rate limit: 30 requests per minute per user
+    const rl = rateLimit(`parent-progress:${user.id}`, { limit: 30, windowSeconds: 60 })
+    if (!rl.success) {
+      return NextResponse.json(
+        { error: 'Too many requests. Please try again later.' },
+        { status: 429 }
+      )
     }
 
     const serviceClient = createServiceRoleClient()

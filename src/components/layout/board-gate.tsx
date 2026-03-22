@@ -60,7 +60,8 @@ export function BoardGate() {
   if (selectedBoard !== null) return null
 
   // Only skip auth-related pages (users must be able to log in/register without a board)
-  if (pathname.startsWith('/auth') || pathname.startsWith('/verify')) {
+  const skipPaths = ['/auth', '/verify', '/for-teachers', '/for-parents', '/for-schools', '/subjects', '/account', '/admin', '/affiliates', '/creators', '/school']
+  if (skipPaths.some((p) => pathname.startsWith(p))) {
     return null
   }
 
@@ -73,24 +74,24 @@ export function BoardGate() {
     >
       <div className="w-full max-w-5xl animate-scale-in">
         {/* Header */}
-        <div className="text-center mb-10">
-          <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-primary/10 mb-5">
-            <GraduationCap className="w-7 h-7 text-primary" />
+        <div className="text-center mb-6 sm:mb-10">
+          <div className="inline-flex items-center justify-center w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-primary/10 mb-3 sm:mb-5">
+            <GraduationCap className="w-5 h-5 sm:w-7 sm:h-7 text-primary" />
           </div>
           <h1
             id="board-gate-heading"
-            className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground mb-3"
+            className="text-xl sm:text-3xl font-bold tracking-tight text-foreground mb-2 sm:mb-3"
           >
             Welcome to The English Hub
           </h1>
-          <p className="text-muted-foreground leading-relaxed max-w-md mx-auto text-body-sm">
+          <p className="text-muted-foreground leading-relaxed max-w-md mx-auto text-xs sm:text-body-sm">
             Select your exam board to personalise your learning experience. You
             can change this at any time from the sidebar.
           </p>
         </div>
 
         {/* Board cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-2 sm:gap-3">
           {boards.map((board) => {
             const Icon = board.icon
             return (
@@ -98,7 +99,7 @@ export function BoardGate() {
                 key={board.id}
                 onClick={() => setBoard(board.id)}
                 className={cn(
-                  'group flex flex-col items-center text-center rounded-2xl bg-card p-5 border border-border/50',
+                  'group flex flex-col items-center text-center rounded-xl sm:rounded-2xl bg-card p-3 sm:p-5 border border-border/50',
                   'hover:border-primary/30 hover:shadow-card-hover hover:bg-card',
                   'transition-all duration-300',
                   'focus-visible:outline-none focus-visible:ring-2',
@@ -108,26 +109,26 @@ export function BoardGate() {
                   <div className="flex flex-col items-center">
                     <div
                       className={cn(
-                        'flex items-center justify-center w-11 h-11 rounded-xl mb-4',
+                        'flex items-center justify-center w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl mb-2 sm:mb-4',
                         board.color
                       )}
                     >
-                      <Icon className="w-5 h-5 text-white" />
+                      <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                     </div>
 
-                    <h2 className="text-lg font-bold tracking-tight text-foreground mb-1">
+                    <h2 className="text-sm sm:text-lg font-bold tracking-tight text-foreground mb-1">
                       {board.title}
                     </h2>
 
-                    <Badge variant="secondary" className="mb-2 font-medium text-[10px]">
+                    <Badge variant="secondary" className="mb-1 sm:mb-2 font-medium text-[9px] sm:text-[10px]">
                       {board.subtitle}
                     </Badge>
 
-                    <p className="text-xs text-muted-foreground leading-relaxed mb-4">
+                    <p className="hidden sm:block text-xs text-muted-foreground leading-relaxed mb-4">
                       {board.description}
                     </p>
 
-                    <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span className="hidden sm:inline-flex items-center gap-1.5 text-sm font-semibold text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       Get started
                       <ArrowRight className="w-4 h-4" />
                     </span>
