@@ -320,7 +320,7 @@ export default function EssayFeedbackPage() {
               {/* Paper */}
               <div className="space-y-2">
                 <Label htmlFor="paper">Paper</Label>
-                <Select value={paper} onValueChange={handlePaperChange} disabled={!board}>
+                <Select key={board} value={paper} onValueChange={handlePaperChange} disabled={!board}>
                   <SelectTrigger className="w-full">
                     <SelectValue placeholder={board ? 'Select paper' : 'Select board first'} />
                   </SelectTrigger>
@@ -337,7 +337,7 @@ export default function EssayFeedbackPage() {
               {/* Question type */}
               <div className="space-y-2">
                 <Label htmlFor="questionType">Question Type</Label>
-                <Select value={questionType} onValueChange={(v) => { setQuestionType(v ?? ''); setSelectedQuestionId('') }} disabled={!paper}>
+                <Select key={`${board}-${paper}`} value={questionType} onValueChange={(v) => { setQuestionType(v ?? ''); setSelectedQuestionId('') }} disabled={!paper}>
                   <SelectTrigger className="w-full">
                     <SelectValue placeholder={paper ? 'Select type' : 'Select paper first'} />
                   </SelectTrigger>
@@ -355,7 +355,7 @@ export default function EssayFeedbackPage() {
             {/* Question selection */}
             <div className="space-y-2">
               <Label htmlFor="questionSelect">Question</Label>
-              <Select value={selectedQuestionId} onValueChange={handleQuestionSelect} disabled={!questionType}>
+              <Select key={`${board}-${paper}-${questionType}`} value={selectedQuestionId} onValueChange={handleQuestionSelect} disabled={!questionType}>
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder={questionType ? 'Select a question' : 'Select question type first'} />
                 </SelectTrigger>

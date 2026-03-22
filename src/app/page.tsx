@@ -111,11 +111,16 @@ const faqs = [
 
 function FAQItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false)
+  const id = q.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+  const triggerId = `faq-trigger-${id}`
+  const panelId = `faq-panel-${id}`
   return (
     <Card className="overflow-hidden border-border/40">
       <button
+        id={triggerId}
         onClick={() => setOpen(!open)}
         aria-expanded={open}
+        aria-controls={panelId}
         className="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-accent/30 transition-colors duration-200"
       >
         <span className="font-semibold text-foreground pr-4">{q}</span>
@@ -127,6 +132,9 @@ function FAQItem({ q, a }: { q: string; a: string }) {
         />
       </button>
       <div
+        id={panelId}
+        role="region"
+        aria-labelledby={triggerId}
         className={cn(
           'grid transition-all duration-300',
           open ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
@@ -731,7 +739,7 @@ export default function Home() {
                 levelColor: 'bg-blue-500/20 text-blue-400',
                 duration: '6 weeks',
                 desc: 'Creative and transactional writing foundations for Years 7-9.',
-                boards: ['KS3'],
+                boards: ['all'],
               },
               {
                 title: 'KS3 Grammar',
@@ -739,7 +747,7 @@ export default function Home() {
                 levelColor: 'bg-blue-500/20 text-blue-400',
                 duration: '6 weeks',
                 desc: 'Master sentence structure, punctuation, and grammar essentials.',
-                boards: ['KS3'],
+                boards: ['all'],
               },
               {
                 title: 'AQA Language Paper 1',

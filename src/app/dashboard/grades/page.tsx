@@ -95,10 +95,22 @@ function gradeColor(grade: number): string {
   return '#ef4444' // red
 }
 
+function gradeLabel(grade: number): string {
+  if (grade >= 7) return 'Excellent'
+  if (grade >= 5) return 'Good'
+  return 'Needs Work'
+}
+
 function scoreBarColor(score: number): string {
   if (score >= 70) return 'bg-green-500'
   if (score >= 50) return 'bg-amber-500'
   return 'bg-red-500'
+}
+
+function scoreLabel(score: number): string {
+  if (score >= 70) return 'Excellent'
+  if (score >= 50) return 'Good'
+  return 'Needs Work'
 }
 
 // ─── Skeleton Components ─────────────────────────────────────────────────────
@@ -466,9 +478,13 @@ export default function GradeDashboardPage() {
                 <span style={{ color: gradeColor(predictedGrade) }}>
                   {predictedGrade}
                 </span>
+                <span className="ml-2 text-sm font-medium text-muted-foreground">
+                  ({gradeLabel(predictedGrade)})
+                </span>
               </p>
               <p className="mt-1 text-sm text-primary">
-                Potential Grade: {potentialGrade}
+                Potential Grade: {potentialGrade}{' '}
+                <span className="text-muted-foreground">({gradeLabel(potentialGrade)})</span>
               </p>
               <p className="mt-1 text-xs text-muted-foreground">
                 Based on {assessments.length} assessment{assessments.length !== 1 ? 's' : ''}
@@ -506,7 +522,7 @@ export default function GradeDashboardPage() {
                     >
                       {/* Tooltip */}
                       <div className="pointer-events-none absolute -top-8 z-10 hidden rounded bg-background border border-border px-2 py-1 text-xs font-medium whitespace-nowrap group-hover:block">
-                        {item.score}%
+                        {item.score}% — {scoreLabel(item.score)}
                       </div>
                       {/* Bar */}
                       <div
@@ -555,7 +571,7 @@ export default function GradeDashboardPage() {
                             {s.courseName}
                           </span>
                           <span className="shrink-0 rounded-md bg-green-500/20 px-2 py-0.5 text-xs font-semibold text-green-400">
-                            {s.average}%
+                            {s.average}% — {scoreLabel(s.average)}
                           </span>
                         </div>
                       ))}
@@ -582,7 +598,7 @@ export default function GradeDashboardPage() {
                             {w.courseName}
                           </span>
                           <span className="shrink-0 rounded-md bg-amber-500/20 px-2 py-0.5 text-xs font-semibold text-amber-400">
-                            {w.average}%
+                            {w.average}% — {scoreLabel(w.average)}
                           </span>
                         </div>
                       ))}

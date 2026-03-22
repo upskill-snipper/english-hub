@@ -5,6 +5,15 @@ import { rateLimit, getClientIp } from '@/lib/rate-limit'
 
 export const dynamic = 'force-dynamic'
 
+function getCurrentAcademicYear(): string {
+  const now = new Date()
+  const year = now.getFullYear()
+  const month = now.getMonth() // 0-indexed
+  // Academic year starts in September (month 8)
+  if (month >= 8) return `${year}-${year + 1}`
+  return `${year - 1}-${year}`
+}
+
 export async function GET(request: NextRequest) {
   try {
     const ip = getClientIp(request.headers)
@@ -178,7 +187,7 @@ export async function POST(request: NextRequest) {
         name: name.trim(),
         year_group: year_group || null,
         exam_board: exam_board || null,
-        academic_year: academic_year || '2025-2026',
+        academic_year: academic_year || getCurrentAcademicYear(),
       })
       .select()
       .single()

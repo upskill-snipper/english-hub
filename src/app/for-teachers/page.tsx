@@ -65,11 +65,16 @@ const faqs = [
 
 function FAQItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false)
+  const id = q.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+  const triggerId = `faq-trigger-${id}`
+  const panelId = `faq-panel-${id}`
   return (
     <Card className="overflow-hidden border-border/40">
       <button
+        id={triggerId}
         onClick={() => setOpen(!open)}
         aria-expanded={open}
+        aria-controls={panelId}
         className="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-accent/30 transition-colors duration-200"
       >
         <span className="font-semibold text-foreground pr-4">{q}</span>
@@ -81,6 +86,9 @@ function FAQItem({ q, a }: { q: string; a: string }) {
         />
       </button>
       <div
+        id={panelId}
+        role="region"
+        aria-labelledby={triggerId}
         className={cn(
           'grid transition-all duration-300',
           open ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
