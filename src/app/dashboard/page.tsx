@@ -408,13 +408,13 @@ export default function DashboardPage() {
           </div>
 
           {/* ── Quick Actions ──────────────────────────────────────────── */}
-          <div className="mb-6 flex flex-wrap gap-2">
+          <div className="mb-6 flex gap-2 overflow-x-auto pb-2 sm:flex-wrap sm:overflow-x-visible sm:pb-0 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {quickActions.map((action) => (
               <Button
                 key={action.href}
                 variant="outline"
                 size="default"
-                className="group gap-2"
+                className="group gap-2 shrink-0"
                 render={<Link href={action.href} />}
               >
                 <span className={cn('flex h-6 w-6 items-center justify-center rounded-md', action.bg)}>

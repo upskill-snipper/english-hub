@@ -273,7 +273,7 @@ export default function Home() {
               { icon: Sparkles, color: 'text-cyan-400 bg-cyan-500/10', value: 'AI', label: 'Essay Feedback' },
               { icon: BookOpen, color: 'text-primary bg-primary/10', value: '13', label: 'Structured Courses' },
               { icon: Layers, color: 'text-purple-400 bg-purple-500/10', value: '295', label: 'Flashcards' },
-              { icon: Award, color: 'text-amber-400 bg-amber-500/10', value: '4', label: 'Exam Boards Covered' },
+              { icon: Award, color: 'text-amber-400 bg-amber-500/10', value: '5', label: '4 GCSE Boards + KS3' },
             ].map((stat, i) => (
               <div key={stat.label} className="flex items-center gap-8 sm:gap-12">
                 {i > 0 && <div className="hidden sm:block w-px h-10 bg-border/50" />}

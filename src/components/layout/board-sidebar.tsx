@@ -111,7 +111,7 @@ export function BoardSidebar() {
             variant="link"
             size="sm"
             onClick={clearBoard}
-            className="text-xs text-muted-foreground/40 hover:text-primary p-0 h-auto justify-start"
+            className="text-xs text-muted-foreground/70 hover:text-primary p-0 h-auto justify-start"
           >
             Change board
           </Button>

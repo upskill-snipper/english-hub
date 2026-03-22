@@ -180,6 +180,14 @@ export function Header() {
                       School Dashboard
                     </Button>
                   )}
+                  <Button
+                    variant="ghost"
+                    className="w-full justify-start"
+                    render={<Link href="/for-teachers" />}
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    For Teachers
+                  </Button>
                   <SignOutButton />
                 </>
               ) : (

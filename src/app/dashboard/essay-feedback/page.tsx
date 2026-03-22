@@ -413,7 +413,7 @@ export default function EssayFeedbackPage() {
             )}
 
             {/* Submit */}
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col-reverse gap-3 sm:flex-row sm:items-center sm:justify-between">
               <p className="text-xs text-muted-foreground">
                 Feedback is AI-generated and should be used as a guide, not a definitive grade.
               </p>
