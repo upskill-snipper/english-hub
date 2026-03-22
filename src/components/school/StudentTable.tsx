@@ -350,7 +350,11 @@ export function StudentTable({
                     col.align === 'center' && 'text-center',
                     col.align === 'right' && 'text-right',
                   )}
+                  role="columnheader"
+                  tabIndex={0}
+                  aria-sort={sortKey === col.key ? (sortDir === 'asc' ? 'ascending' : 'descending') : 'none'}
                   onClick={() => handleSort(col.key)}
+                  onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleSort(col.key) } }}
                 >
                   <span className="inline-flex items-center gap-1">
                     {col.label}
@@ -389,7 +393,10 @@ export function StudentTable({
                     'border-b border-border/50 last:border-0 transition-colors',
                     onRowClick && 'cursor-pointer hover:bg-accent/50',
                   )}
+                  role={onRowClick ? 'link' : undefined}
+                  tabIndex={onRowClick ? 0 : undefined}
                   onClick={() => onRowClick?.(student.student_id)}
+                  onKeyDown={onRowClick ? (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onRowClick(student.student_id) } } : undefined}
                 >
                   {visibleColumns.map((col) => renderCell(student, col.key))}
                 </tr>

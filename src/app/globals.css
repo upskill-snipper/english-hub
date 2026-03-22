@@ -255,3 +255,15 @@
 .focus-glow:focus-within {
   box-shadow: 0 0 0 1px hsl(162 72% 46% / 0.25), 0 0 24px hsl(162 72% 46% / 0.06);
 }
+
+/* ── Reduced motion — WCAG 2.3.3 ────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
