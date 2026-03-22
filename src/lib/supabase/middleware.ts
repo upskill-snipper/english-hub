@@ -29,10 +29,14 @@ export async function updateSession(request: NextRequest) {
   const { data: { user } } = await supabase.auth.getUser()
 
   // /learn is NOT listed here — it handles its own access control so preview modules stay public
-  const protectedRoutes = ['/dashboard', '/practice', '/revision', '/account', '/admin', '/affiliates/dashboard']
+  const protectedRoutes = ['/dashboard', '/practice', '/revision', '/account', '/admin', '/affiliates/dashboard', '/school']
   const isProtected = protectedRoutes.some(route => request.nextUrl.pathname.startsWith(route))
 
-  if (isProtected && !user) {
+  // Allow unauthenticated access to invite pages so users can see invite details before logging in
+  const publicSchoolRoutes = ['/school/invite']
+  const isPublicSchoolRoute = publicSchoolRoutes.some(route => request.nextUrl.pathname.startsWith(route))
+
+  if (isProtected && !isPublicSchoolRoute && !user) {
     const url = request.nextUrl.clone()
     url.pathname = '/auth/login'
     url.searchParams.set('redirect', request.nextUrl.pathname)

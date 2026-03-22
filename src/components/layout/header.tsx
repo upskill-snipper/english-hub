@@ -1,9 +1,9 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useAuthStore } from '@/store/auth-store'
-import { Menu, LogOut } from 'lucide-react'
+import { Menu, LogOut, School } from 'lucide-react'
 import {
   Sheet,
   SheetContent,
@@ -17,6 +17,7 @@ import { Separator } from '@/components/ui/separator'
 import { Skeleton } from '@/components/ui/skeleton'
 
 const NAV_LINKS = [
+  { href: '/subjects', label: 'Subjects' },
   { href: '/courses', label: 'Courses' },
   { href: '/practice', label: 'Practice' },
   { href: '/revision', label: 'Revision' },
@@ -26,6 +27,38 @@ const NAV_LINKS = [
 export function Header() {
   const { user, isLoading } = useAuthStore()
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [isSchoolMember, setIsSchoolMember] = useState(false)
+
+  useEffect(() => {
+    if (!user) {
+      setIsSchoolMember(false)
+      return
+    }
+
+    let cancelled = false
+
+    async function checkSchoolMembership() {
+      try {
+        const { createClient } = await import('@/lib/supabase/client')
+        const supabase = createClient()
+        const { data } = await supabase
+          .from('school_members')
+          .select('id, role')
+          .eq('user_id', user!.id)
+          .eq('invite_status', 'accepted')
+          .single()
+
+        if (!cancelled && data) {
+          setIsSchoolMember(true)
+        }
+      } catch {
+        // Not a school member or network error — ignore
+      }
+    }
+
+    checkSchoolMembership()
+    return () => { cancelled = true }
+  }, [user])
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/90 backdrop-blur-xl supports-[backdrop-filter]:bg-background/70">
@@ -56,10 +89,19 @@ export function Header() {
               <Button variant="ghost" size="sm" render={<Link href="/dashboard" />}>
                 Dashboard
               </Button>
+              {isSchoolMember && (
+                <Button variant="ghost" size="sm" render={<Link href="/school" />}>
+                  <School className="mr-1.5 h-4 w-4" />
+                  School
+                </Button>
+              )}
               <SignOutButton />
             </>
           ) : (
             <>
+              <Button variant="ghost" size="sm" render={<Link href="/for-teachers" />}>
+                For Teachers
+              </Button>
               <Button variant="ghost" size="sm" render={<Link href="/auth/login" />}>
                 Log in
               </Button>
@@ -116,10 +158,29 @@ export function Header() {
                   >
                     Dashboard
                   </Button>
+                  {isSchoolMember && (
+                    <Button
+                      variant="ghost"
+                      className="w-full justify-start"
+                      render={<Link href="/school" />}
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      <School className="mr-1.5 h-4 w-4" />
+                      School Dashboard
+                    </Button>
+                  )}
                   <SignOutButton />
                 </>
               ) : (
                 <>
+                  <Button
+                    variant="ghost"
+                    className="w-full justify-start"
+                    render={<Link href="/for-teachers" />}
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    For Teachers
+                  </Button>
                   <Button
                     variant="ghost"
                     className="w-full justify-start"

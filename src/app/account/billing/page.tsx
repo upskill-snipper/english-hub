@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/client'
 import { useAuthStore } from '@/store/auth-store'
+import { useRewardful } from '@/hooks/useRewardful'
 import { PRICING } from '@/constants/pricing'
 import { getCourseName } from '@/lib/utils'
 import {
@@ -29,6 +30,7 @@ interface EnrolmentRow {
 export default function BillingPage() {
   const router = useRouter()
   const { user, profile } = useAuthStore()
+  const { referral: rewardfulReferral } = useRewardful()
   const supabase = createClient()
 
   const [enrolments, setEnrolments] = useState<EnrolmentRow[]>([])
@@ -75,7 +77,11 @@ export default function BillingPage() {
       const res = await fetch('/api/stripe/checkout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ plan, mode: 'subscription' }),
+        body: JSON.stringify({
+          plan,
+          mode: 'subscription',
+          ...(rewardfulReferral && { rewardful_referral: rewardfulReferral }),
+        }),
       })
 
       const data = await res.json()

@@ -258,6 +258,154 @@ export interface AffiliatePayout {
   updated_at: string
 }
 
+// ── School Analytics Types ───────────────────────────────────
+
+export interface School {
+  id: string
+  name: string
+  slug: string
+  address: string | null
+  city: string | null
+  postcode: string | null
+  contact_email: string
+  contact_phone: string | null
+  school_type: 'secondary' | 'sixth_form' | 'independent' | 'academy' | 'mat' | 'other'
+  stripe_customer_id: string | null
+  subscription_status: 'trialing' | 'active' | 'past_due' | 'cancelled'
+  subscription_plan: 'department' | 'school' | 'mat' | 'custom'
+  seat_limit: number
+  seats_used: number
+  logo_url: string | null
+  created_at: string
+  updated_at: string
+}
+
+export interface SchoolMember {
+  id: string
+  school_id: string
+  user_id: string | null
+  role: 'admin' | 'head_of_department' | 'teacher'
+  full_name: string
+  email: string
+  department: string
+  invite_status: 'pending' | 'accepted' | 'expired'
+  invite_token: string | null
+  last_active_at: string | null
+  created_at: string
+}
+
+export interface Class {
+  id: string
+  school_id: string
+  teacher_id: string | null
+  name: string
+  year_group: string | null
+  exam_board: string | null
+  academic_year: string
+  student_count: number
+  is_active: boolean
+  created_at: string
+}
+
+export interface ClassStudent {
+  id: string
+  class_id: string
+  student_id: string
+  joined_at: string
+  is_active: boolean
+  // Joined data
+  student_name?: string
+  student_email?: string
+  year_group?: string
+}
+
+export interface SchoolJoinCode {
+  id: string
+  school_id: string
+  class_id: string | null
+  code: string
+  max_uses: number
+  uses: number
+  expires_at: string | null
+  is_active: boolean
+  created_at: string
+}
+
+export interface StudentAnalytics {
+  student_id: string
+  student_name: string
+  student_email: string
+  year_group: string | null
+  exam_board: string | null
+  modules_completed: number
+  total_modules: number
+  completion_rate: number
+  avg_quiz_score: number
+  total_time_spent_seconds: number
+  practice_sessions_count: number
+  avg_practice_rating: number
+  certificates_count: number
+  last_active_at: string | null
+  trajectory: 'improving' | 'stable' | 'declining'
+  strengths: string[]
+  weaknesses: string[]
+  predicted_grade: string | null
+}
+
+export interface ClassAnalytics {
+  class_id: string
+  class_name: string
+  student_count: number
+  avg_score: number
+  median_score: number
+  completion_rate: number
+  avg_time_spent_minutes: number
+  certificates_count: number
+  students_at_risk: number
+  weak_areas: WeakArea[]
+  top_performers: string[]
+  recommendations: Recommendation[]
+}
+
+export interface WeakArea {
+  course_id: string
+  course_name: string
+  module_id?: string
+  module_name?: string
+  avg_score: number
+  students_below_threshold: number
+  severity: 'critical' | 'warning' | 'minor'
+}
+
+export interface Recommendation {
+  priority: 1 | 2 | 3
+  title: string
+  description: string
+  affected_students: number
+  suggested_action: string
+  course_ids?: string[]
+}
+
+export interface SchoolOverview {
+  school: School
+  total_students: number
+  total_teachers: number
+  total_classes: number
+  active_students_this_week: number
+  avg_score_all: number
+  completion_rate_all: number
+  classes: ClassAnalytics[]
+  trends: TrendData[]
+}
+
+export interface TrendData {
+  date: string
+  avg_score: number
+  active_students: number
+  modules_completed: number
+  practice_sessions: number
+}
+
 export interface AffiliateCommissionDefaults {
   tier: 1 | 2 | 3
   commission_monthly_gbp: number

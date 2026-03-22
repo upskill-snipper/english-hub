@@ -71,7 +71,7 @@ function PricingToggle({
       >
         Annual
         <span className="ml-1.5 text-xs text-primary font-bold">
-          Save 33%
+          Save {PRICING.ANNUAL_SAVE_PERCENT}%
         </span>
       </span>
     </div>
@@ -906,7 +906,7 @@ export default function Home() {
                   'Certificates on completion',
                   'Progress tracking & analytics',
                   'Priority support',
-                  'Save £24.00 vs monthly',
+                  'Save £28.88 vs monthly',
                 ].map((f) => (
                   <li key={f} className="flex items-start gap-2.5 text-sm text-muted-foreground">
                     <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-0.5" />
@@ -1021,6 +1021,12 @@ export default function Home() {
               <Button variant="default" size="lg" className="text-base px-10 h-12 shadow-lg shadow-primary/20" render={<Link href="/auth/register" />}>
                 Start Free Trial
               </Button>
+              <p className="mt-8 text-sm text-muted-foreground">
+                Maths and Science coming soon.{' '}
+                <Link href="/subjects" className="text-primary hover:underline font-medium">
+                  View all subjects &rarr;
+                </Link>
+              </p>
             </div>
           </Card>
         </div>
@@ -1047,10 +1053,12 @@ export default function Home() {
             {/* Links */}
             <div className="flex flex-wrap gap-x-8 gap-y-3 text-sm">
               {[
+                { label: 'Subjects', href: '/subjects' },
                 { label: 'Courses', href: '/courses' },
                 { label: 'Practice', href: '/practice' },
                 { label: 'Revision', href: '/revision' },
                 { label: 'Exam Guide', href: '/exam-guide' },
+                { label: 'For Schools', href: '/for-schools' },
                 { label: 'Dashboard', href: '/dashboard' },
                 { label: 'Log in', href: '/auth/login' },
                 { label: 'Register', href: '/auth/register' },

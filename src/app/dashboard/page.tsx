@@ -17,6 +17,10 @@ import {
   TrendingUp,
   Flame,
   AlertCircle,
+  BarChart3,
+  Timer,
+  School,
+  UserPlus,
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { useAuthStore } from '@/store/auth-store'
@@ -124,6 +128,7 @@ export default function DashboardPage() {
   const [recentActivity, setRecentActivity] = useState<ModuleProgress[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [schoolInfo, setSchoolInfo] = useState<{ name: string; role: string } | null>(null)
 
   useEffect(() => {
     if (!user) return
@@ -135,7 +140,7 @@ export default function DashboardPage() {
         setError(null)
         const userId = user!.id
 
-        const [enrolRes, progressRes, certRes, activityRes] = await Promise.all([
+        const [enrolRes, progressRes, certRes, activityRes, schoolMemberRes] = await Promise.all([
           supabase
             .from('enrolments')
             .select('*')
@@ -155,6 +160,12 @@ export default function DashboardPage() {
             .eq('completed', true)
             .order('completed_at', { ascending: false })
             .limit(5),
+          supabase
+            .from('school_members')
+            .select('role, schools(name)')
+            .eq('user_id', userId)
+            .eq('invite_status', 'accepted')
+            .single(),
         ])
 
         if (enrolRes.error) console.error('Failed to fetch enrolments:', enrolRes.error)
@@ -166,6 +177,13 @@ export default function DashboardPage() {
         if (progressRes.data) setModuleProgress(progressRes.data)
         if (certRes.data) setCertificates(certRes.data)
         if (activityRes.data) setRecentActivity(activityRes.data)
+
+        if (schoolMemberRes.data) {
+          const schoolName = (schoolMemberRes.data as any).schools?.name ?? null
+          if (schoolName) {
+            setSchoolInfo({ name: schoolName, role: schoolMemberRes.data.role })
+          }
+        }
       } catch (err) {
         console.error('Failed to fetch dashboard data:', err)
         setError('Something went wrong loading your dashboard. Please try again.')
@@ -232,8 +250,15 @@ export default function DashboardPage() {
   const quickActions = [
     { label: 'Browse Courses', href: '/courses', icon: BookOpen, color: 'text-primary', bg: 'bg-primary/10' },
     { label: 'Practice Questions', href: '/practice', icon: FileText, color: 'text-blue-400', bg: 'bg-blue-500/10' },
+    { label: 'Essay Feedback', href: '/dashboard/essay-feedback', icon: Sparkles, color: 'text-amber-400', bg: 'bg-amber-500/10' },
     { label: 'Revision Cards', href: '/revision', icon: Layers, color: 'text-purple-400', bg: 'bg-purple-500/10' },
+    { label: 'Mock Exams', href: '/dashboard/mock-exam', icon: Timer, color: 'text-red-400', bg: 'bg-red-500/10' },
     { label: 'Grade Dashboard', href: '/dashboard/grades', icon: TrendingUp, color: 'text-green-400', bg: 'bg-green-500/10' },
+    { label: 'Analytics', href: '/dashboard/analytics', icon: BarChart3, color: 'text-cyan-400', bg: 'bg-cyan-500/10' },
+    ...(schoolInfo
+      ? [{ label: 'School Dashboard', href: '/school', icon: School, color: 'text-indigo-400', bg: 'bg-indigo-500/10' }]
+      : [{ label: 'Join School', href: '/school/join', icon: UserPlus, color: 'text-indigo-400', bg: 'bg-indigo-500/10' }]
+    ),
   ]
 
   // ── Initials for Avatar ─────────────────────────────────────────────────
@@ -261,14 +286,22 @@ export default function DashboardPage() {
               <h1 className="text-2xl font-bold tracking-tight sm:text-3xl text-foreground">
                 {greeting}, {firstName}
               </h1>
-              <p className="mt-1 text-sm text-muted-foreground">
-                {new Date().toLocaleDateString('en-GB', {
-                  weekday: 'long',
-                  day: 'numeric',
-                  month: 'long',
-                  year: 'numeric',
-                })}
-              </p>
+              <div className="mt-1 flex flex-wrap items-center gap-2">
+                <p className="text-sm text-muted-foreground">
+                  {new Date().toLocaleDateString('en-GB', {
+                    weekday: 'long',
+                    day: 'numeric',
+                    month: 'long',
+                    year: 'numeric',
+                  })}
+                </p>
+                {schoolInfo && (
+                  <Badge variant="secondary" className="gap-1">
+                    <School className="h-3 w-3" />
+                    {schoolInfo.name}
+                  </Badge>
+                )}
+              </div>
             </div>
           </div>
 

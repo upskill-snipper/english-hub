@@ -58,10 +58,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: 'https://theenglishhub.app/exam-guide/igcse',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
       url: 'https://theenglishhub.app/igcse',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
+    },
+    {
+      url: 'https://theenglishhub.app/creators',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.7,
     },
   ]
 

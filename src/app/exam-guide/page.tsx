@@ -89,6 +89,18 @@ const BOARD_CARDS = [
     description:
       'WJEC Eduqas for England. Unique paper structures with a focus on reading across both literary and non-literary texts.',
   },
+  {
+    id: 'IGCSE' as const,
+    slug: 'igcse',
+    color: 'border-purple-500/50',
+    hoverColor: 'hover:border-purple-500/80 hover:bg-purple-500/10',
+    activeRing: 'ring-2 ring-purple-500 ring-offset-2 ring-offset-background',
+    accent: 'text-purple-400',
+    dot: 'bg-purple-500',
+    badge: 'bg-purple-500/15 text-purple-400',
+    description:
+      'Edexcel International GCSE English Language (4EA1). Widely used in international and independent schools with a 45-poem anthology.',
+  },
 ]
 
 // ─── Terminology Tab Config ────────────────────────────────────────────────────
