@@ -31,16 +31,16 @@ export function SupabaseProvider({ children }: { children: React.ReactNode }) {
       setProfile(data as Profile)
     }
 
-    // Get the initial session
-    supabase.auth.getSession().then(({ data: { session }, error: sessionError }) => {
-      if (sessionError) {
-        console.error('Failed to get session:', sessionError.message)
+    // Get the initial user via getUser() which validates with the server,
+    // unlike getSession() which reads from localStorage and can be stale/tampered.
+    supabase.auth.getUser().then(({ data: { user }, error: userError }) => {
+      if (userError) {
+        console.error('Failed to get user:', userError.message)
         setLoading(false)
         return
       }
 
-      const user = session?.user ?? null
-      setUser(user)
+      setUser(user ?? null)
 
       if (user) {
         fetchProfile(user.id).finally(() => setLoading(false))

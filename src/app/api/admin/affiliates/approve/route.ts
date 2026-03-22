@@ -69,6 +69,11 @@ export async function POST(request: NextRequest) {
   }
 
   // ── Approve ─────────────────────────────────────────────
+  // NOTE: For MVP this intentionally transitions directly from 'pending' to 'active'
+  // without a separate agreement step. In a future release, add an intermediate
+  // 'agreement_pending' state and populate the agreement_signed_at / agreement_version
+  // fields before activating the affiliate.
+
   // 1. Create Rewardful affiliate account
   const nameParts = affiliate.full_name.split(' ')
   const rewardfulAffiliate = await createRewardfulAffiliate({

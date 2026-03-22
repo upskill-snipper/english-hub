@@ -189,10 +189,23 @@ function QuickTipsBanner({ selectedBoard }: { selectedBoard: string | null }) {
   const tips = (selectedBoard && examTips[selectedBoard]) || defaultTips
 
   useEffect(() => {
+    // Respect prefers-reduced-motion: skip auto-rotation for users who prefer reduced motion
+    const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
+    if (motionQuery.matches) return
+
     const interval = setInterval(() => {
       setTipIndex((prev) => (prev + 1) % tips.length)
     }, 8000)
-    return () => clearInterval(interval)
+
+    const handleChange = (e: MediaQueryListEvent) => {
+      if (e.matches) clearInterval(interval)
+    }
+    motionQuery.addEventListener('change', handleChange)
+
+    return () => {
+      clearInterval(interval)
+      motionQuery.removeEventListener('change', handleChange)
+    }
   }, [tips.length])
 
   return (
@@ -213,7 +226,7 @@ function QuickTipsBanner({ selectedBoard }: { selectedBoard: string | null }) {
 /* ───────────────────── Main Page ───────────────────── */
 
 export default function Home() {
-  const [annual, setAnnual] = useState(true)
+  const [annual, setAnnual] = useState(false)
   const selectedBoard = useBoardStore((s) => s.selectedBoard)
 
   return (
