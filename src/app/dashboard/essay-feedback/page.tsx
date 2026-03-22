@@ -17,6 +17,7 @@ import {
 } from 'lucide-react'
 import { useAuthStore } from '@/store/auth-store'
 import { markSchemes, getPapersForBoard, getQuestionTypes } from '@/data/mark-schemes'
+import { getQuestionsForType } from '@/data/exam-questions'
 import { cn } from '@/lib/utils'
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -99,6 +100,7 @@ export default function EssayFeedbackPage() {
   const [paper, setPaper] = useState('')
   const [questionType, setQuestionType] = useState('')
   const [questionText, setQuestionText] = useState('')
+  const [selectedQuestionId, setSelectedQuestionId] = useState('')
   const [essay, setEssay] = useState('')
 
   // Submission state
@@ -113,10 +115,18 @@ export default function EssayFeedbackPage() {
     return getPapersForBoard(board)
   }, [board])
 
+  // Question types that are short-answer on the actual exam — not suitable for essay feedback
+  const SHORT_ANSWER_TYPES = ['Information Retrieval', 'Summary & Synthesis', 'Summary']
+
   const availableQuestionTypes = useMemo(() => {
     if (!board || !paper) return []
-    return getQuestionTypes(board, paper)
+    return getQuestionTypes(board, paper).filter(qt => !SHORT_ANSWER_TYPES.includes(qt))
   }, [board, paper])
+
+  const availableQuestions = useMemo(() => {
+    if (!board || !paper || !questionType) return []
+    return getQuestionsForType(board, paper, questionType)
+  }, [board, paper, questionType])
 
   // Word count
   const wordCount = useMemo(() => {
@@ -130,12 +140,26 @@ export default function EssayFeedbackPage() {
     setBoard(value ?? '')
     setPaper('')
     setQuestionType('')
+    setSelectedQuestionId('')
   }
 
   // Handle paper change — reset question type
   function handlePaperChange(value: string | null) {
     setPaper(value ?? '')
     setQuestionType('')
+    setSelectedQuestionId('')
+  }
+
+  // Handle question selection from dropdown
+  function handleQuestionSelect(questionId: string | null) {
+    const id = questionId ?? ''
+    setSelectedQuestionId(id)
+    const question = availableQuestions.find(q => q.id === id)
+    if (question && !question.id.endsWith('-custom')) {
+      setQuestionText(question.text)
+    } else {
+      setQuestionText('')
+    }
   }
 
   // Submit essay
@@ -191,6 +215,7 @@ export default function EssayFeedbackPage() {
     setError(null)
     setEssay('')
     setQuestionText('')
+    setSelectedQuestionId('')
   }
 
   // ── Render ─────────────────────────────────────────────────────────────────
@@ -280,7 +305,7 @@ export default function EssayFeedbackPage() {
               {/* Question type */}
               <div className="space-y-2">
                 <Label htmlFor="questionType">Question Type</Label>
-                <Select value={questionType} onValueChange={(v) => setQuestionType(v ?? '')} disabled={!paper}>
+                <Select value={questionType} onValueChange={(v) => { setQuestionType(v ?? ''); setSelectedQuestionId('') }} disabled={!paper}>
                   <SelectTrigger className="w-full">
                     <SelectValue placeholder={paper ? 'Select type' : 'Select paper first'} />
                   </SelectTrigger>
@@ -295,17 +320,31 @@ export default function EssayFeedbackPage() {
               </div>
             </div>
 
-            {/* Question text */}
+            {/* Question selection */}
             <div className="space-y-2">
-              <Label htmlFor="questionText">Question</Label>
-              <Input
-                id="questionText"
-                placeholder="Type or paste the question you are answering..."
-                value={questionText}
-                onChange={(e) => setQuestionText(e.target.value)}
-              />
+              <Label htmlFor="questionSelect">Question</Label>
+              <Select value={selectedQuestionId} onValueChange={handleQuestionSelect} disabled={!questionType}>
+                <SelectTrigger className="w-full">
+                  <SelectValue placeholder={questionType ? 'Select a question' : 'Select question type first'} />
+                </SelectTrigger>
+                <SelectContent>
+                  {availableQuestions.map((q) => (
+                    <SelectItem key={q.id} value={q.id}>
+                      {q.text.length > 80 ? `${q.text.slice(0, 80)}...` : q.text}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              {selectedQuestionId.endsWith('-custom') && (
+                <Input
+                  id="questionText"
+                  placeholder="Type or paste the question you are answering..."
+                  value={questionText}
+                  onChange={(e) => setQuestionText(e.target.value)}
+                />
+              )}
               <p className="text-xs text-muted-foreground">
-                The exact question from your paper or the prompt you were given.
+                Choose a question from your exam board, or select &quot;I&apos;ll type my own question&quot; to enter a custom one.
               </p>
             </div>
 

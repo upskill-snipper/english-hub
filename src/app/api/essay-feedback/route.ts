@@ -107,9 +107,28 @@ function contentSafetyCheck(body: EssayFeedbackRequest): string | null {
     }
   }
 
-  // 3. Check essay looks like actual prose (not just instructions/code)
-  const sentences = body.essay.split(/[.!?]+/).filter((s) => s.trim().length > 10)
-  if (sentences.length < 3) {
+  // 3. Check essay looks like actual prose (not code, gibberish, or repeated words)
+  // Word count is already validated elsewhere (100+ words), so this only catches
+  // clearly non-prose content. Valid creative writing with short sentences,
+  // dialogue, or unconventional punctuation should pass.
+  const words = body.essay.trim().split(/\s+/)
+  const wordCount = words.length
+
+  // Detect code-like content (high density of braces, semicolons, arrows, etc.)
+  const codeChars = (body.essay.match(/[{};<>=()]/g) || []).length
+  if (codeChars / body.essay.length > 0.05 && codeChars > 20) {
+    return 'Your submission appears to contain code rather than an essay. Please submit English prose writing.'
+  }
+
+  // Detect single repeated word/phrase (e.g. "test test test test...")
+  const uniqueWords = new Set(words.map((w) => w.toLowerCase().replace(/[^a-z]/g, '')).filter(Boolean))
+  if (wordCount >= 20 && uniqueWords.size < Math.max(5, wordCount * 0.1)) {
+    return 'Your submission does not appear to be an essay. Please submit original continuous writing.'
+  }
+
+  // Detect keyboard mashing / random characters (very low ratio of real words)
+  const alphaWords = words.filter((w) => /^[a-zA-Z'-]+$/.test(w))
+  if (wordCount >= 20 && alphaWords.length / wordCount < 0.4) {
     return 'Your submission does not appear to be an essay. Please submit at least a few paragraphs of continuous writing.'
   }
 
