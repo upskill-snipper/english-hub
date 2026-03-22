@@ -159,9 +159,17 @@ async function handleCheckoutCompleted(
     const activeStatuses = ['active', 'trialing']
     const subscriptionStatus = activeStatuses.includes(subscription.status) ? 'pro' : 'incomplete'
 
+    const periodEnd = (subscription as any).current_period_end as number | undefined
+    const subscriptionEndDate = periodEnd
+      ? new Date(periodEnd * 1000).toISOString()
+      : null
+
     const { error } = await supabase
       .from('profiles')
-      .update({ subscription_status: subscriptionStatus })
+      .update({
+        subscription_status: subscriptionStatus,
+        ...(subscriptionEndDate && { subscription_end_date: subscriptionEndDate }),
+      })
       .eq('id', userId)
 
     if (error) {
@@ -224,10 +232,17 @@ async function handleSubscriptionUpdated(
   }
 
   const subscriptionStatus = statusMap[subscription.status] ?? 'free'
+  const periodEnd = (subscription as any).current_period_end as number | undefined
+  const subscriptionEndDate = periodEnd
+    ? new Date(periodEnd * 1000).toISOString()
+    : null
 
   const { error } = await supabase
     .from('profiles')
-    .update({ subscription_status: subscriptionStatus })
+    .update({
+      subscription_status: subscriptionStatus,
+      subscription_end_date: subscriptionEndDate,
+    })
     .eq('id', userId)
 
   if (error) {
@@ -256,9 +271,19 @@ async function handleSubscriptionDeleted(
     return
   }
 
+  const sub = subscription as any
+  const endTimestamp: number | undefined =
+    sub.ended_at ?? sub.cancel_at ?? sub.current_period_end
+  const subscriptionEndDate = endTimestamp
+    ? new Date(endTimestamp * 1000).toISOString()
+    : new Date().toISOString()
+
   const { error } = await supabase
     .from('profiles')
-    .update({ subscription_status: 'cancelled' })
+    .update({
+      subscription_status: 'cancelled',
+      subscription_end_date: subscriptionEndDate,
+    })
     .eq('id', userId)
 
   if (error) {

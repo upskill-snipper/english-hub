@@ -21,6 +21,7 @@ import {
   Clock,
   AlertCircle,
   ArrowRight,
+  Loader2,
 } from 'lucide-react'
 import { useAuthStore } from '@/store/auth-store'
 import { cn } from '@/lib/utils'
@@ -278,13 +279,20 @@ function WeeklyTrendsChart({
 // ── Main Component ──────────────────────────────────────────────────────
 
 export default function SchoolOverviewPage() {
-  const { user } = useAuthStore()
+  const { user, isLoading: authLoading } = useAuthStore()
   const router = useRouter()
   const [overview, setOverview] = useState<SchoolOverview | null>(null)
   const [topStudents, setTopStudents] = useState<StudentAnalytics[]>([])
   const [atRiskStudents, setAtRiskStudents] = useState<StudentAnalytics[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+
+  // Auth redirect guard
+  useEffect(() => {
+    if (!authLoading && !user) {
+      window.location.href = '/auth/login?redirect=' + encodeURIComponent(window.location.pathname)
+    }
+  }, [authLoading, user])
 
   useEffect(() => {
     if (!user) return
@@ -382,6 +390,20 @@ export default function SchoolOverviewPage() {
       bg: 'bg-purple-500/10',
     },
   ]
+
+  // ── Auth guard renders ────────────────────────────────────────────────
+
+  if (authLoading) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <Loader2 className="h-8 w-8 animate-spin text-primary" />
+      </div>
+    )
+  }
+
+  if (!user) {
+    return null // Will redirect via useEffect
+  }
 
   // ── Render ────────────────────────────────────────────────────────────
 

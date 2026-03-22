@@ -106,12 +106,12 @@ export default function EssayFeedbackPage() {
     }
   }, [isLoading, user, router])
 
-  // Form state
-  const [board, setBoard] = useState('')
-  const [paper, setPaper] = useState('')
-  const [questionType, setQuestionType] = useState('')
+  // Form state — use null (not '') for empty selections so Base UI Select shows placeholders
+  const [board, setBoard] = useState<string | null>(null)
+  const [paper, setPaper] = useState<string | null>(null)
+  const [questionType, setQuestionType] = useState<string | null>(null)
   const [questionText, setQuestionText] = useState('')
-  const [selectedQuestionId, setSelectedQuestionId] = useState('')
+  const [selectedQuestionId, setSelectedQuestionId] = useState<string | null>(null)
   const [essay, setEssay] = useState('')
 
   // Submission state
@@ -122,7 +122,7 @@ export default function EssayFeedbackPage() {
 
   // Auto-populate board from global board-gate selection (skip KS3 as essay feedback is GCSE-only)
   useEffect(() => {
-    if (globalBoard && globalBoard !== 'KS3' && !board) {
+    if (globalBoard && globalBoard !== 'KS3' && board === null) {
       setBoard(globalBoard)
     }
   }, [globalBoard]) // eslint-disable-line react-hooks/exhaustive-deps
@@ -155,24 +155,25 @@ export default function EssayFeedbackPage() {
 
   // Handle board change — reset downstream
   function handleBoardChange(value: string | null) {
-    setBoard(value ?? '')
-    setPaper('')
-    setQuestionType('')
-    setSelectedQuestionId('')
+    setBoard(value)
+    setPaper(null)
+    setQuestionType(null)
+    setSelectedQuestionId(null)
+    setQuestionText('')
   }
 
   // Handle paper change — reset question type
   function handlePaperChange(value: string | null) {
-    setPaper(value ?? '')
-    setQuestionType('')
-    setSelectedQuestionId('')
+    setPaper(value)
+    setQuestionType(null)
+    setSelectedQuestionId(null)
+    setQuestionText('')
   }
 
   // Handle question selection from dropdown
   function handleQuestionSelect(questionId: string | null) {
-    const id = questionId ?? ''
-    setSelectedQuestionId(id)
-    const question = availableQuestions.find(q => q.id === id)
+    setSelectedQuestionId(questionId)
+    const question = availableQuestions.find(q => q.id === questionId)
     if (question && !question.id.endsWith('-custom')) {
       setQuestionText(question.text)
     } else {
@@ -233,7 +234,7 @@ export default function EssayFeedbackPage() {
     setError(null)
     setEssay('')
     setQuestionText('')
-    setSelectedQuestionId('')
+    setSelectedQuestionId(null)
   }
 
   // ── Auth guard renders ─────────────────────────────────────────────────────
@@ -290,9 +291,9 @@ export default function EssayFeedbackPage() {
         {feedback ? (
           <FeedbackResults
             feedback={feedback}
-            board={board}
-            paper={paper}
-            questionType={questionType}
+            board={board!}
+            paper={paper!}
+            questionType={questionType!}
             onTryAgain={handleTryAgain}
           />
         ) : (
@@ -337,7 +338,7 @@ export default function EssayFeedbackPage() {
               {/* Question type */}
               <div className="space-y-2">
                 <Label htmlFor="questionType">Question Type</Label>
-                <Select key={`${board}-${paper}`} value={questionType} onValueChange={(v) => { setQuestionType(v ?? ''); setSelectedQuestionId('') }} disabled={!paper}>
+                <Select key={`${board}-${paper}`} value={questionType} onValueChange={(v) => { setQuestionType(v); setSelectedQuestionId(null); setQuestionText('') }} disabled={!paper}>
                   <SelectTrigger className="w-full">
                     <SelectValue placeholder={paper ? 'Select type' : 'Select paper first'} />
                   </SelectTrigger>
@@ -367,7 +368,7 @@ export default function EssayFeedbackPage() {
                   ))}
                 </SelectContent>
               </Select>
-              {selectedQuestionId.endsWith('-custom') && (
+              {selectedQuestionId?.endsWith('-custom') && (
                 <Input
                   id="questionText"
                   placeholder="Type or paste the question you are answering..."

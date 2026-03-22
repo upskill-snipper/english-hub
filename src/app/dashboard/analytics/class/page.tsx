@@ -14,6 +14,7 @@ import {
   Search,
   ChevronDown,
   ChevronUp,
+  Loader2,
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { useAuthStore } from '@/store/auth-store'
@@ -70,13 +71,20 @@ type SortDir = 'asc' | 'desc'
 // ── Main Component ───────────────────────────────────────────────────────────
 
 export default function ClassAnalyticsPage() {
-  const { user, profile } = useAuthStore()
+  const { user, profile, isLoading: authLoading } = useAuthStore()
   const [students, setStudents] = useState<StudentSummary[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [searchQuery, setSearchQuery] = useState('')
   const [sortField, setSortField] = useState<SortField>('name')
   const [sortDir, setSortDir] = useState<SortDir>('asc')
+
+  // Auth redirect guard
+  useEffect(() => {
+    if (!authLoading && !user) {
+      window.location.href = '/auth/login?redirect=' + encodeURIComponent(window.location.pathname)
+    }
+  }, [authLoading, user])
 
   useEffect(() => {
     if (!user) {
@@ -301,6 +309,20 @@ export default function ClassAnalyticsPage() {
     ) : (
       <ChevronDown className="h-3 w-3" />
     )
+  }
+
+  // ── Auth guard renders ─────────────────────────────────────────────────
+
+  if (authLoading) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <Loader2 className="h-8 w-8 animate-spin text-primary" />
+      </div>
+    )
+  }
+
+  if (!user) {
+    return null // Will redirect via useEffect
   }
 
   // ── Render ─────────────────────────────────────────────────────────────

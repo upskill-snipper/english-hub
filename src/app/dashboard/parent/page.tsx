@@ -18,6 +18,7 @@ import {
   TrendingUp,
   Unlink,
   UserPlus,
+  Loader2,
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { useAuthStore } from '@/store/auth-store'
@@ -277,12 +278,19 @@ function LinkChildForm({ onLinked }: { onLinked: () => void }) {
 // ── Main Component ───────────────────────────────────────────────────────────
 
 export default function ParentDashboardPage() {
-  const { user, profile } = useAuthStore()
+  const { user, profile, isLoading: authLoading } = useAuthStore()
   const [childProgress, setChildProgress] = useState<ChildProgress | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [hasLinkedChild, setHasLinkedChild] = useState(false)
   const [unlinking, setUnlinking] = useState(false)
+
+  // Auth redirect guard
+  useEffect(() => {
+    if (!authLoading && !user) {
+      window.location.href = '/auth/login?redirect=' + encodeURIComponent(window.location.pathname)
+    }
+  }, [authLoading, user])
 
   const fetchProgress = useCallback(async () => {
     if (!user) return
@@ -484,6 +492,20 @@ export default function ParentDashboardPage() {
     .join('')
     .toUpperCase()
     .slice(0, 2)
+
+  // ── Auth guard renders ────────────────────────────────────────────────────
+
+  if (authLoading) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <Loader2 className="h-8 w-8 animate-spin text-primary" />
+      </div>
+    )
+  }
+
+  if (!user) {
+    return null // Will redirect via useEffect
+  }
 
   // ── Render ────────────────────────────────────────────────────────────────
 

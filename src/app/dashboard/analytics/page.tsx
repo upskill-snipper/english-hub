@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo } from 'react'
+import { useEffect, useMemo } from 'react'
 import Link from 'next/link'
 import {
   ArrowLeft,
@@ -17,6 +17,7 @@ import {
   Layers,
   Users,
   Activity,
+  Loader2,
 } from 'lucide-react'
 import { useAuthStore } from '@/store/auth-store'
 import { useAnalytics } from '@/hooks/useAnalytics'
@@ -134,8 +135,15 @@ function RecIcon({ type }: { type: 'weak_area' | 'next_module' | 'revision' }) {
 // ── Main Component ───────────────────────────────────────────────────────────
 
 export default function AnalyticsPage() {
-  const { profile } = useAuthStore()
+  const { user, profile, isLoading } = useAuthStore()
   const analytics = useAnalytics()
+
+  // Auth redirect guard
+  useEffect(() => {
+    if (!isLoading && !user) {
+      window.location.href = '/auth/login?redirect=' + encodeURIComponent(window.location.pathname)
+    }
+  }, [isLoading, user])
 
   const {
     totalStudyTimeSeconds,
@@ -153,6 +161,18 @@ export default function AnalyticsPage() {
     loading,
     error,
   } = analytics
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <Loader2 className="h-8 w-8 animate-spin text-primary" />
+      </div>
+    )
+  }
+
+  if (!user) {
+    return null // Will redirect via useEffect
+  }
 
   return (
     <TooltipProvider>

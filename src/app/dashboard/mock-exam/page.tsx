@@ -411,7 +411,7 @@ function ExamInProgress() {
     <div className="flex min-h-screen flex-col">
       {/* Top Bar — Timer & Progress */}
       <div className={cn(
-        'sticky top-0 z-40 border-b bg-background/95 backdrop-blur-sm',
+        'sticky top-14 z-40 border-b bg-background/95 backdrop-blur-sm',
         warning === '1min' && 'border-red-500/50',
         warning === '5min' && 'border-yellow-500/50',
       )}>

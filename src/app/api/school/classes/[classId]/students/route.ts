@@ -215,6 +215,27 @@ export async function POST(
       return NextResponse.json({ error: 'School seat limit reached' }, { status: 422 })
     }
 
+    // Check if the student is already in any class at this school (for seat counting)
+    const { data: schoolClasses } = await admin
+      .from('classes')
+      .select('id')
+      .eq('school_id', member.school_id)
+
+    const schoolClassIds = (schoolClasses || []).map((c: { id: string }) => c.id)
+    let alreadyInSchool = false
+
+    if (schoolClassIds.length > 0) {
+      const { data: existingMembership } = await admin
+        .from('class_students')
+        .select('id')
+        .in('class_id', schoolClassIds)
+        .eq('student_id', studentId)
+        .eq('is_active', true)
+        .limit(1)
+
+      alreadyInSchool = !!existingMembership && existingMembership.length > 0
+    }
+
     // Check if already in class (active or inactive)
     const { data: existing } = await admin
       .from('class_students')
@@ -248,6 +269,15 @@ export async function POST(
         console.error('Add student error:', insertError)
         return NextResponse.json({ error: 'Failed to add student' }, { status: 500 })
       }
+    }
+
+    // Increment seats_used if this is a new student at the school
+    if (!alreadyInSchool && school) {
+      await admin
+        .from('schools')
+        .update({ seats_used: school.seats_used + 1 })
+        .eq('id', member.school_id)
+        .lt('seats_used', school.seat_limit)
     }
 
     // Update class student_count
