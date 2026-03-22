@@ -61,8 +61,8 @@ export default function VerifyPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-brand-bg">
-        <Loader2 className="w-8 h-8 animate-spin text-brand-accent" />
+      <div className="min-h-screen flex items-center justify-center bg-background">
+        <Loader2 className="w-8 h-8 animate-spin text-primary" />
       </div>
     )
   }
@@ -75,18 +75,18 @@ export default function VerifyPage() {
   const courseName = getCourseName(certificate.course_id)
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 py-12 bg-brand-bg">
+    <div className="min-h-screen flex items-center justify-center px-4 py-12 bg-background">
       <div className="max-w-lg w-full">
         {/* Verification Badge */}
-        <div className="bg-brand-card border border-brand-accent/30 rounded-2xl overflow-hidden">
+        <div className="bg-card border border-primary/30 rounded-2xl overflow-hidden">
           {/* Header */}
-          <div className="bg-brand-accent/10 border-b border-brand-accent/20 px-6 py-4 flex items-center gap-3">
-            <ShieldCheck className="w-6 h-6 text-brand-accent" />
+          <div className="bg-primary/10 border-b border-primary/20 px-6 py-4 flex items-center gap-3">
+            <ShieldCheck className="w-6 h-6 text-primary" />
             <div>
-              <h1 className="text-lg font-bold text-brand-accent">
+              <h1 className="text-lg font-bold text-primary">
                 Certificate Verified
               </h1>
-              <p className="text-brand-muted text-xs">
+              <p className="text-muted-foreground text-xs">
                 This certificate is authentic and valid.
               </p>
             </div>
@@ -95,45 +95,45 @@ export default function VerifyPage() {
           {/* Certificate Details */}
           <div className="p-6 space-y-5">
             <div className="flex items-start gap-3">
-              <User className="w-5 h-5 text-brand-muted mt-0.5" />
+              <User className="w-5 h-5 text-muted-foreground mt-0.5" />
               <div>
-                <p className="text-xs text-brand-muted uppercase tracking-wider">
+                <p className="text-xs text-muted-foreground uppercase tracking-wider">
                   Awarded To
                 </p>
-                <p className="text-brand-text font-semibold">{studentName}</p>
+                <p className="text-foreground font-semibold">{studentName}</p>
               </div>
             </div>
 
             <div className="flex items-start gap-3">
-              <GraduationCap className="w-5 h-5 text-brand-muted mt-0.5" />
+              <GraduationCap className="w-5 h-5 text-muted-foreground mt-0.5" />
               <div>
-                <p className="text-xs text-brand-muted uppercase tracking-wider">
+                <p className="text-xs text-muted-foreground uppercase tracking-wider">
                   Course
                 </p>
-                <p className="text-brand-text font-semibold">{courseName}</p>
+                <p className="text-foreground font-semibold">{courseName}</p>
               </div>
             </div>
 
             <div className="grid grid-cols-2 gap-4">
               <div className="flex items-start gap-3">
-                <Award className="w-5 h-5 text-brand-muted mt-0.5" />
+                <Award className="w-5 h-5 text-muted-foreground mt-0.5" />
                 <div>
-                  <p className="text-xs text-brand-muted uppercase tracking-wider">
+                  <p className="text-xs text-muted-foreground uppercase tracking-wider">
                     Grade
                   </p>
-                  <p className="text-brand-text font-semibold">
+                  <p className="text-foreground font-semibold">
                     {certificate.grade}
                   </p>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
-                <BarChart3 className="w-5 h-5 text-brand-muted mt-0.5" />
+                <BarChart3 className="w-5 h-5 text-muted-foreground mt-0.5" />
                 <div>
-                  <p className="text-xs text-brand-muted uppercase tracking-wider">
+                  <p className="text-xs text-muted-foreground uppercase tracking-wider">
                     Score
                   </p>
-                  <p className="text-brand-text font-semibold">
+                  <p className="text-foreground font-semibold">
                     {certificate.score}%
                   </p>
                 </div>
@@ -141,12 +141,12 @@ export default function VerifyPage() {
             </div>
 
             <div className="flex items-start gap-3">
-              <Calendar className="w-5 h-5 text-brand-muted mt-0.5" />
+              <Calendar className="w-5 h-5 text-muted-foreground mt-0.5" />
               <div>
-                <p className="text-xs text-brand-muted uppercase tracking-wider">
+                <p className="text-xs text-muted-foreground uppercase tracking-wider">
                   Issued
                 </p>
-                <p className="text-brand-text font-semibold">
+                <p className="text-foreground font-semibold">
                   {issuedDate.toLocaleDateString('en-GB', {
                     day: 'numeric',
                     month: 'long',
@@ -157,23 +157,23 @@ export default function VerifyPage() {
             </div>
 
             {/* Divider */}
-            <div className="border-t border-brand-border pt-4">
-              <p className="text-xs text-brand-muted text-center font-mono">
+            <div className="border-t border-border pt-4">
+              <p className="text-xs text-muted-foreground text-center font-mono">
                 Certificate ID: {certificate.id}
               </p>
             </div>
           </div>
 
           {/* Footer */}
-          <div className="bg-brand-bg/50 border-t border-brand-border px-6 py-3 text-center">
+          <div className="bg-background/50 border-t border-border px-6 py-3 text-center">
             <Link
               href="/"
-              className="text-brand-accent text-sm hover:underline"
+              className="text-primary text-sm hover:underline"
             >
               The English Hub
             </Link>
-            <span className="text-brand-muted text-sm mx-2">|</span>
-            <span className="text-brand-muted text-xs">
+            <span className="text-muted-foreground text-sm mx-2">|</span>
+            <span className="text-muted-foreground text-xs">
               Verified on{' '}
               {new Date().toLocaleDateString('en-GB', {
                 day: 'numeric',

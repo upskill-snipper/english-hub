@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createServiceRoleClient } from '@/lib/supabase/server'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
+import { rateLimit, getClientIp } from '@/lib/rate-limit'
 
 interface ApplicationBody {
   full_name: string
@@ -22,7 +23,25 @@ interface ApplicationBody {
 
 export async function POST(request: NextRequest) {
   try {
-    const body: ApplicationBody = await request.json()
+    // Rate limit: 5 applications per IP per hour
+    const ip = getClientIp(request.headers)
+    const rl = rateLimit(`affiliate-apply:${ip}`, { limit: 5, windowSeconds: 3600 })
+    if (!rl.success) {
+      return NextResponse.json(
+        { error: 'Too many requests. Please try again later.' },
+        { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+      )
+    }
+
+    let body: ApplicationBody
+    try {
+      body = await request.json()
+    } catch {
+      return NextResponse.json(
+        { error: 'Invalid request body' },
+        { status: 400 }
+      )
+    }
 
     // ── Validation ──────────────────────────────────────────
     const errors: string[] = []
@@ -100,14 +119,9 @@ export async function POST(request: NextRequest) {
       .single()
 
     if (existing) {
-      if (existing.status === 'terminated') {
-        return NextResponse.json(
-          { error: 'This email has been previously terminated from the affiliate programme' },
-          { status: 400 }
-        )
-      }
+      // Return a generic message to prevent email enumeration
       return NextResponse.json(
-        { error: 'An application with this email already exists' },
+        { error: 'An application with this email has already been submitted. If you believe this is an error, please contact support.' },
         { status: 400 }
       )
     }

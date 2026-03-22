@@ -103,11 +103,11 @@ function scoreBarColor(score: number): string {
 
 function CardSkeleton({ className = '' }: { className?: string }) {
   return (
-    <div className={`rounded-xl border border-brand-border bg-brand-card p-6 animate-pulse ${className}`}>
-      <div className="h-5 w-32 rounded bg-brand-border mb-4" />
-      <div className="h-8 w-20 rounded bg-brand-border mb-3" />
-      <div className="h-3 w-full rounded bg-brand-border mb-2" />
-      <div className="h-3 w-3/4 rounded bg-brand-border" />
+    <div className={`rounded-xl border border-border bg-card p-6 animate-pulse ${className}`}>
+      <div className="h-5 w-32 rounded bg-border mb-4" />
+      <div className="h-8 w-20 rounded bg-border mb-3" />
+      <div className="h-3 w-full rounded bg-border mb-2" />
+      <div className="h-3 w-3/4 rounded bg-border" />
     </div>
   )
 }
@@ -282,10 +282,10 @@ export default function GradeDashboardPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-brand-bg text-brand-text">
+      <div className="min-h-screen bg-background text-foreground">
         <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
           <div className="mb-6">
-            <div className="h-8 w-48 rounded bg-brand-border animate-pulse" />
+            <div className="h-8 w-48 rounded bg-border animate-pulse" />
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             <CardSkeleton className="lg:col-span-1" />
@@ -303,34 +303,34 @@ export default function GradeDashboardPage() {
 
   if (!isEligible) {
     return (
-      <div className="min-h-screen bg-brand-bg text-brand-text">
+      <div className="min-h-screen bg-background text-foreground">
         <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
           <Link
             href="/dashboard"
-            className="mb-6 inline-flex items-center gap-2 text-sm text-brand-muted hover:text-brand-text transition-colors"
+            className="mb-6 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to dashboard
           </Link>
 
-          <div className="flex flex-col items-center justify-center rounded-xl border border-dashed border-brand-border bg-brand-card/50 py-16 text-center">
-            <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-brand-border/50">
-              <Lock className="h-8 w-8 text-brand-muted" />
+          <div className="flex flex-col items-center justify-center rounded-xl border border-dashed border-border bg-card/50 py-16 text-center">
+            <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-border/50">
+              <Lock className="h-8 w-8 text-muted-foreground" />
             </div>
             <h1 className="mb-2 text-xl font-bold sm:text-2xl">Grade Dashboard Locked</h1>
-            <p className="mb-6 max-w-md text-brand-muted">
+            <p className="mb-6 max-w-md text-muted-foreground">
               Complete at least 5 practice tests or assessments to unlock your Grade Dashboard.
             </p>
 
             {/* Progress bar */}
             <div className="mb-2 w-64">
               <div className="flex items-center justify-between text-sm mb-1">
-                <span className="text-brand-muted">Progress</span>
+                <span className="text-muted-foreground">Progress</span>
                 <span className="font-medium">{totalSessions} / 5</span>
               </div>
-              <div className="h-3 w-full overflow-hidden rounded-full bg-brand-border">
+              <div className="h-3 w-full overflow-hidden rounded-full bg-border">
                 <div
-                  className="h-full rounded-full bg-brand-accent transition-all duration-500"
+                  className="h-full rounded-full bg-primary transition-all duration-500"
                   style={{ width: `${Math.min((totalSessions / 5) * 100, 100)}%` }}
                 />
               </div>
@@ -339,13 +339,13 @@ export default function GradeDashboardPage() {
             <div className="mt-6 flex gap-3">
               <Link
                 href="/practice"
-                className="inline-flex items-center gap-2 rounded-lg bg-brand-accent px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-brand-accent/90"
+                className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary/90"
               >
                 Practice Questions <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
                 href="/courses"
-                className="inline-flex items-center gap-2 rounded-lg border border-brand-border px-4 py-2 text-sm font-medium text-brand-text transition-colors hover:bg-brand-card"
+                className="inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-card"
               >
                 Browse Courses
               </Link>
@@ -361,20 +361,20 @@ export default function GradeDashboardPage() {
   const conicGradient = `conic-gradient(${gradeColor(predictedGrade)} ${averageScore * 3.6}deg, rgba(255,255,255,0.08) 0deg)`
 
   return (
-    <div className="min-h-screen bg-brand-bg text-brand-text">
+    <div className="min-h-screen bg-background text-foreground">
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <Link
               href="/dashboard"
-              className="mb-2 inline-flex items-center gap-2 text-sm text-brand-muted hover:text-brand-text transition-colors"
+              className="mb-2 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
               Back to dashboard
             </Link>
             <h1 className="text-2xl font-bold sm:text-3xl">Grade Dashboard</h1>
-            <p className="mt-1 text-brand-muted">
+            <p className="mt-1 text-muted-foreground">
               Your predicted grades based on {assessments.length} assessment{assessments.length !== 1 ? 's' : ''} and {practiceSessions.length} practice session{practiceSessions.length !== 1 ? 's' : ''}
             </p>
           </div>
@@ -382,8 +382,8 @@ export default function GradeDashboardPage() {
 
         <div className="grid gap-6 lg:grid-cols-3">
           {/* ── a) Grade Overview Card ─────────────────────────────────── */}
-          <div className="rounded-xl border border-brand-border bg-brand-card p-6">
-            <h2 className="mb-4 text-sm font-medium uppercase tracking-wider text-brand-muted">
+          <div className="rounded-xl border border-border bg-card p-6">
+            <h2 className="mb-4 text-sm font-medium uppercase tracking-wider text-muted-foreground">
               Grade Overview
             </h2>
 
@@ -393,9 +393,9 @@ export default function GradeDashboardPage() {
                 className="relative flex h-40 w-40 items-center justify-center rounded-full"
                 style={{ background: conicGradient }}
               >
-                <div className="flex h-28 w-28 flex-col items-center justify-center rounded-full bg-brand-card">
+                <div className="flex h-28 w-28 flex-col items-center justify-center rounded-full bg-card">
                   <span className="text-3xl font-bold">{averageScore}%</span>
-                  <span className="text-xs text-brand-muted">average</span>
+                  <span className="text-xs text-muted-foreground">average</span>
                 </div>
               </div>
             </div>
@@ -407,29 +407,29 @@ export default function GradeDashboardPage() {
                   {predictedGrade}
                 </span>
               </p>
-              <p className="mt-1 text-sm text-brand-accent">
+              <p className="mt-1 text-sm text-primary">
                 Potential Grade: {potentialGrade}
               </p>
-              <p className="mt-1 text-xs text-brand-muted">
+              <p className="mt-1 text-xs text-muted-foreground">
                 Based on {assessments.length} assessment{assessments.length !== 1 ? 's' : ''}
               </p>
             </div>
           </div>
 
           {/* ── b) Progress Over Time ──────────────────────────────────── */}
-          <div className="rounded-xl border border-brand-border bg-brand-card p-6 lg:col-span-2">
-            <h2 className="mb-4 text-sm font-medium uppercase tracking-wider text-brand-muted">
+          <div className="rounded-xl border border-border bg-card p-6 lg:col-span-2">
+            <h2 className="mb-4 text-sm font-medium uppercase tracking-wider text-muted-foreground">
               Progress Over Time
             </h2>
 
             {last10.length === 0 ? (
-              <div className="flex h-48 items-center justify-center text-brand-muted text-sm">
+              <div className="flex h-48 items-center justify-center text-muted-foreground text-sm">
                 No assessment data yet.
               </div>
             ) : (
               <div className="flex h-48 items-end gap-2">
                 {/* Y-axis labels */}
-                <div className="flex h-full flex-col justify-between text-xs text-brand-muted pr-2 shrink-0">
+                <div className="flex h-full flex-col justify-between text-xs text-muted-foreground pr-2 shrink-0">
                   <span>100%</span>
                   <span>75%</span>
                   <span>50%</span>
@@ -445,7 +445,7 @@ export default function GradeDashboardPage() {
                       className="group relative flex flex-1 flex-col items-center"
                     >
                       {/* Tooltip */}
-                      <div className="pointer-events-none absolute -top-8 z-10 hidden rounded bg-brand-bg border border-brand-border px-2 py-1 text-xs font-medium whitespace-nowrap group-hover:block">
+                      <div className="pointer-events-none absolute -top-8 z-10 hidden rounded bg-background border border-border px-2 py-1 text-xs font-medium whitespace-nowrap group-hover:block">
                         {item.score}%
                       </div>
                       {/* Bar */}
@@ -454,7 +454,7 @@ export default function GradeDashboardPage() {
                         style={{ height: `${Math.max(item.score, 2)}%` }}
                       />
                       {/* Date label */}
-                      <span className="mt-1 text-[10px] text-brand-muted leading-tight text-center hidden sm:block">
+                      <span className="mt-1 text-[10px] text-muted-foreground leading-tight text-center hidden sm:block">
                         {item.date.split(' ').slice(0, 2).join(' ')}
                       </span>
                     </div>
@@ -465,13 +465,13 @@ export default function GradeDashboardPage() {
           </div>
 
           {/* ── c) Strengths & Weaknesses ──────────────────────────────── */}
-          <div className="rounded-xl border border-brand-border bg-brand-card p-6 lg:col-span-2">
-            <h2 className="mb-4 text-sm font-medium uppercase tracking-wider text-brand-muted">
+          <div className="rounded-xl border border-border bg-card p-6 lg:col-span-2">
+            <h2 className="mb-4 text-sm font-medium uppercase tracking-wider text-muted-foreground">
               Strengths & Weaknesses
             </h2>
 
             {courseScores.length === 0 ? (
-              <p className="text-sm text-brand-muted">
+              <p className="text-sm text-muted-foreground">
                 Complete assessments in different courses to see your strengths and weaknesses.
               </p>
             ) : (
@@ -483,7 +483,7 @@ export default function GradeDashboardPage() {
                     Top Strengths
                   </h3>
                   {strengths.length === 0 ? (
-                    <p className="text-sm text-brand-muted">No data yet.</p>
+                    <p className="text-sm text-muted-foreground">No data yet.</p>
                   ) : (
                     <div className="space-y-2">
                       {strengths.map((s) => (
@@ -510,7 +510,7 @@ export default function GradeDashboardPage() {
                     Areas for Improvement
                   </h3>
                   {weaknesses.length === 0 ? (
-                    <p className="text-sm text-brand-muted">No data yet.</p>
+                    <p className="text-sm text-muted-foreground">No data yet.</p>
                   ) : (
                     <div className="space-y-2">
                       {weaknesses.map((w) => (
@@ -534,13 +534,13 @@ export default function GradeDashboardPage() {
           </div>
 
           {/* ── e) Grade Trajectory ─────────────────────────────────────── */}
-          <div className="rounded-xl border border-brand-border bg-brand-card p-6">
-            <h2 className="mb-4 text-sm font-medium uppercase tracking-wider text-brand-muted">
+          <div className="rounded-xl border border-border bg-card p-6">
+            <h2 className="mb-4 text-sm font-medium uppercase tracking-wider text-muted-foreground">
               Grade Trajectory
             </h2>
 
             {assessments.length < 3 ? (
-              <p className="text-sm text-brand-muted">
+              <p className="text-sm text-muted-foreground">
                 Complete at least three assessments to see your trajectory.
               </p>
             ) : (
@@ -551,7 +551,7 @@ export default function GradeDashboardPage() {
                       ? 'bg-green-500/10'
                       : trajectory.trend === 'declining'
                       ? 'bg-red-500/10'
-                      : 'bg-brand-border/50'
+                      : 'bg-border/50'
                   }`}
                 >
                   {trajectory.trend === 'improving' ? (
@@ -559,7 +559,7 @@ export default function GradeDashboardPage() {
                   ) : trajectory.trend === 'declining' ? (
                     <ArrowDown className="h-8 w-8 text-red-400" />
                   ) : (
-                    <Minus className="h-8 w-8 text-brand-muted" />
+                    <Minus className="h-8 w-8 text-muted-foreground" />
                   )}
                 </div>
                 <p className="text-lg font-semibold">
@@ -569,7 +569,7 @@ export default function GradeDashboardPage() {
                     ? 'Your scores are declining.'
                     : 'Your scores are stable.'}
                 </p>
-                <p className="mt-1 text-sm text-brand-muted">
+                <p className="mt-1 text-sm text-muted-foreground">
                   {trajectory.change > 0 ? '+' : ''}
                   {trajectory.change}% change from your first three to last three assessments.
                 </p>
@@ -578,14 +578,14 @@ export default function GradeDashboardPage() {
           </div>
 
           {/* ── d) Recommended Next Steps ──────────────────────────────── */}
-          <div className="rounded-xl border border-brand-border bg-brand-card p-6 lg:col-span-3">
-            <h2 className="mb-4 text-sm font-medium uppercase tracking-wider text-brand-muted">
-              <Zap className="inline h-4 w-4 mr-1 text-brand-accent" />
+          <div className="rounded-xl border border-border bg-card p-6 lg:col-span-3">
+            <h2 className="mb-4 text-sm font-medium uppercase tracking-wider text-muted-foreground">
+              <Zap className="inline h-4 w-4 mr-1 text-primary" />
               Recommended Next Steps
             </h2>
 
             {recommendations.length === 0 ? (
-              <p className="text-sm text-brand-muted">
+              <p className="text-sm text-muted-foreground">
                 Keep practising to receive personalised recommendations!
               </p>
             ) : (
@@ -593,26 +593,26 @@ export default function GradeDashboardPage() {
                 {recommendations.map((course) => (
                   <div
                     key={course.id}
-                    className="rounded-lg border border-brand-border bg-brand-bg p-4 transition-colors hover:border-brand-accent/30"
+                    className="rounded-lg border border-border bg-background p-4 transition-colors hover:border-primary/30"
                   >
                     <div className="mb-1 flex items-center gap-2">
                       <span
                         className="inline-block h-2.5 w-2.5 rounded-full"
                         style={{ backgroundColor: course.color }}
                       />
-                      <span className="text-xs font-medium uppercase tracking-wider text-brand-muted">
+                      <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
                         {course.level}
                       </span>
                     </div>
                     <h3 className="mb-1 font-semibold leading-snug text-sm">
                       {course.title}
                     </h3>
-                    <p className="mb-3 text-xs text-brand-muted line-clamp-2">
+                    <p className="mb-3 text-xs text-muted-foreground line-clamp-2">
                       {course.subtitle}
                     </p>
                     <Link
                       href={`/courses/${course.id}`}
-                      className="inline-flex items-center gap-2 rounded-lg bg-brand-accent/10 px-3 py-1.5 text-xs font-medium text-brand-accent transition-colors hover:bg-brand-accent/20"
+                      className="inline-flex items-center gap-2 rounded-lg bg-primary/10 px-3 py-1.5 text-xs font-medium text-primary transition-colors hover:bg-primary/20"
                     >
                       <BookOpen className="h-3.5 w-3.5" />
                       Start This Course

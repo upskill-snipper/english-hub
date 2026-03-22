@@ -32,7 +32,13 @@ export function SupabaseProvider({ children }: { children: React.ReactNode }) {
     }
 
     // Get the initial session
-    supabase.auth.getSession().then(({ data: { session } }) => {
+    supabase.auth.getSession().then(({ data: { session }, error: sessionError }) => {
+      if (sessionError) {
+        console.error('Failed to get session:', sessionError.message)
+        setLoading(false)
+        return
+      }
+
       const user = session?.user ?? null
       setUser(user)
 

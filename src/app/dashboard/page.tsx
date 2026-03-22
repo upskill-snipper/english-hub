@@ -16,14 +16,27 @@ import {
   Sparkles,
   TrendingUp,
   Flame,
+  AlertCircle,
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { useAuthStore } from '@/store/auth-store'
 import { allCourses } from '@/data/courses'
-import { formatDate } from '@/lib/utils'
+import { cn, formatDate } from '@/lib/utils'
 import type { Enrolment, ModuleProgress, Certificate, CourseData } from '@/lib/types'
 
-// ─── Helpers ────────────────────────────────────────────────────────────────
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import { Progress } from '@/components/ui/progress'
+import { Skeleton } from '@/components/ui/skeleton'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from '@/components/ui/tooltip'
+import { Separator } from '@/components/ui/separator'
+import { Button } from '@/components/ui/button'
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
+import { Avatar, AvatarFallback } from '@/components/ui/avatar'
+import { ScrollArea } from '@/components/ui/scroll-area'
+
+// ── Helpers ────────────────────────────────────────────────────────────────
 
 function formatRelativeDate(iso: string) {
   const date = new Date(iso)
@@ -46,61 +59,62 @@ function getGreeting() {
   return 'Good evening'
 }
 
-const gradeBadgeColors: Record<string, string> = {
-  Distinction: 'bg-yellow-500/15 text-yellow-400 border-yellow-500/30',
-  Merit: 'bg-brand-blue/15 text-blue-400 border-blue-500/30',
-  Pass: 'bg-brand-accent/15 text-brand-accent border-brand-accent/30',
-}
-
 const courseMap = new Map<string, CourseData>(
   allCourses.map((c) => [c.id, c])
 )
 
-// ─── Skeleton Components ────────────────────────────────────────────────────
+// ── Skeleton Components ────────────────────────────────────────────────────
 
 function StatCardSkeleton() {
   return (
-    <div className="card p-5 animate-pulse">
-      <div className="flex items-center gap-3 mb-3">
-        <div className="h-10 w-10 rounded-lg bg-brand-border" />
-        <div className="h-3 w-20 rounded bg-brand-border" />
-      </div>
-      <div className="h-8 w-14 rounded bg-brand-border mb-1" />
-      <div className="h-3 w-16 rounded bg-brand-border" />
-    </div>
+    <Card>
+      <CardHeader>
+        <div className="flex items-center gap-3">
+          <Skeleton className="h-10 w-10 rounded-lg" />
+          <Skeleton className="h-3 w-20" />
+        </div>
+      </CardHeader>
+      <CardContent>
+        <Skeleton className="h-8 w-14 mb-1" />
+        <Skeleton className="h-3 w-16" />
+      </CardContent>
+    </Card>
   )
 }
 
 function CourseCardSkeleton() {
   return (
-    <div className="card p-5 animate-pulse">
-      <div className="flex items-center gap-2 mb-3">
-        <div className="h-2.5 w-2.5 rounded-full bg-brand-border" />
-        <div className="h-3 w-16 rounded bg-brand-border" />
-      </div>
-      <div className="h-5 w-48 rounded bg-brand-border mb-2" />
-      <div className="h-3 w-32 rounded bg-brand-border mb-4" />
-      <div className="progress-track mb-4">
-        <div className="progress-fill" style={{ width: '0%' }} />
-      </div>
-      <div className="h-9 w-28 rounded-md bg-brand-border" />
-    </div>
+    <Card>
+      <CardHeader>
+        <div className="flex items-center gap-2">
+          <Skeleton className="h-5 w-16 rounded-full" />
+        </div>
+        <Skeleton className="h-5 w-48" />
+      </CardHeader>
+      <CardContent>
+        <Skeleton className="h-3 w-32 mb-3" />
+        <Skeleton className="h-1 w-full rounded-full mb-3" />
+      </CardContent>
+      <CardFooter>
+        <Skeleton className="h-8 w-28 rounded-lg" />
+      </CardFooter>
+    </Card>
   )
 }
 
 function ActivitySkeleton() {
   return (
-    <div className="flex items-center gap-3 py-3 animate-pulse">
-      <div className="h-9 w-9 rounded-lg bg-brand-border shrink-0" />
+    <div className="flex items-center gap-3 py-3">
+      <Skeleton className="h-9 w-9 rounded-lg shrink-0" />
       <div className="flex-1">
-        <div className="h-4 w-40 rounded bg-brand-border mb-1.5" />
-        <div className="h-3 w-28 rounded bg-brand-border" />
+        <Skeleton className="h-4 w-40 mb-1.5" />
+        <Skeleton className="h-3 w-28" />
       </div>
     </div>
   )
 }
 
-// ─── Main Component ─────────────────────────────────────────────────────────
+// ── Main Component ─────────────────────────────────────────────────────────
 
 export default function DashboardPage() {
   const { user, profile } = useAuthStore()
@@ -210,349 +224,374 @@ export default function DashboardPage() {
   const firstName = profile?.full_name?.split(' ')[0] ?? 'Student'
   const greeting = getGreeting()
 
+  const activeCourses = enrolledCourses.filter((ec) => ec.progress < 100)
+  const completedCourses = enrolledCourses.filter((ec) => ec.progress >= 100)
+
   // ── Quick Actions ───────────────────────────────────────────────────────
 
   const quickActions = [
-    { label: 'Browse Courses', href: '/courses', icon: BookOpen, color: 'text-brand-accent', bg: 'bg-brand-accent/10' },
+    { label: 'Browse Courses', href: '/courses', icon: BookOpen, color: 'text-primary', bg: 'bg-primary/10' },
     { label: 'Practice Questions', href: '/practice', icon: FileText, color: 'text-blue-400', bg: 'bg-blue-500/10' },
     { label: 'Revision Cards', href: '/revision', icon: Layers, color: 'text-purple-400', bg: 'bg-purple-500/10' },
     { label: 'Grade Dashboard', href: '/dashboard/grades', icon: TrendingUp, color: 'text-green-400', bg: 'bg-green-500/10' },
   ]
 
+  // ── Initials for Avatar ─────────────────────────────────────────────────
+
+  const initials = (profile?.full_name ?? 'S')
+    .split(' ')
+    .map((n) => n[0])
+    .join('')
+    .toUpperCase()
+    .slice(0, 2)
+
   // ── Render ──────────────────────────────────────────────────────────────
 
   return (
-    <div className="min-h-screen bg-brand-bg">
-      <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
+    <TooltipProvider>
+      <div className="min-h-screen bg-background">
+        <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
 
-        {/* ── Greeting Header ─────────────────────────────────────────── */}
-        <div className="mb-6 animate-fade-in">
-          <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">
-            {greeting}, {firstName}
-          </h1>
-          <p className="mt-1 text-body-sm text-brand-muted">
-            {new Date().toLocaleDateString('en-GB', {
-              weekday: 'long',
-              day: 'numeric',
-              month: 'long',
-              year: 'numeric',
-            })}
-          </p>
-        </div>
-
-        {/* ── Error Banner ─────────────────────────────────────────── */}
-        {error && (
-          <div
-            role="alert"
-            aria-live="assertive"
-            className="mb-6 flex items-center justify-between rounded-lg border border-brand-error/30 bg-brand-error/10 px-4 py-3 text-sm text-brand-error animate-slide-up"
-          >
-            <span>{error}</span>
-            <button
-              onClick={() => {
-                setLoading(true)
-                setError(null)
-                window.location.reload()
-              }}
-              className="ml-4 shrink-0 rounded-md bg-brand-error/20 px-3 py-1.5 text-xs font-medium text-brand-error transition-colors hover:bg-brand-error/30"
-            >
-              Retry
-            </button>
+          {/* ── Greeting Header ─────────────────────────────────────────── */}
+          <div className="mb-6 flex items-center gap-4 animate-fade-in">
+            <Avatar size="lg">
+              <AvatarFallback>{initials}</AvatarFallback>
+            </Avatar>
+            <div>
+              <h1 className="text-2xl font-bold tracking-tight sm:text-3xl text-foreground">
+                {greeting}, {firstName}
+              </h1>
+              <p className="mt-1 text-sm text-muted-foreground">
+                {new Date().toLocaleDateString('en-GB', {
+                  weekday: 'long',
+                  day: 'numeric',
+                  month: 'long',
+                  year: 'numeric',
+                })}
+              </p>
+            </div>
           </div>
-        )}
 
-        {/* ── Stats Row ──────────────────────────────────────────────── */}
-        <div className="mb-6 grid grid-cols-2 gap-3 lg:grid-cols-4">
-          {loading ? (
-            <>
-              <StatCardSkeleton />
-              <StatCardSkeleton />
-              <StatCardSkeleton />
-              <StatCardSkeleton />
-            </>
-          ) : (
-            <>
-              <StatCard
-                icon={<BookOpen className="h-5 w-5" />}
-                iconBg="bg-brand-accent/10"
-                iconColor="text-brand-accent"
-                label="Enrolled"
-                value={enrolments.length}
-                sub={enrolments.length === 1 ? 'course' : 'courses'}
-              />
-              <StatCard
-                icon={<CheckCircle className="h-5 w-5" />}
-                iconBg="bg-blue-500/10"
-                iconColor="text-blue-400"
-                label="Completed"
-                value={completedModulesCount}
-                sub={completedModulesCount === 1 ? 'module' : 'modules'}
-              />
-              <StatCard
-                icon={<Trophy className="h-5 w-5" />}
-                iconBg="bg-yellow-500/10"
-                iconColor="text-yellow-400"
-                label="Certificates"
-                value={certificates.length}
-                sub={certificates.length === 1 ? 'earned' : 'earned'}
-              />
-              <StatCard
-                icon={
-                  profile?.subscription_status === 'pro'
-                    ? <Crown className="h-5 w-5" />
-                    : <Sparkles className="h-5 w-5" />
-                }
-                iconBg={profile?.subscription_status === 'pro' ? 'bg-yellow-500/10' : 'bg-brand-muted/10'}
-                iconColor={profile?.subscription_status === 'pro' ? 'text-yellow-400' : 'text-brand-muted'}
-                label="Plan"
-                value={<SubscriptionBadge status={profile?.subscription_status ?? 'free'} />}
-                sub="current plan"
-              />
-            </>
+          {/* ── Error Banner ─────────────────────────────────────────── */}
+          {error && (
+            <Alert variant="destructive" className="mb-6">
+              <AlertCircle className="h-4 w-4" />
+              <AlertTitle>Error</AlertTitle>
+              <AlertDescription className="flex items-center justify-between">
+                <span>{error}</span>
+                <Button
+                  variant="destructive"
+                  size="sm"
+                  className="ml-4 shrink-0"
+                  onClick={() => {
+                    setLoading(true)
+                    setError(null)
+                    window.location.reload()
+                  }}
+                >
+                  Retry
+                </Button>
+              </AlertDescription>
+            </Alert>
           )}
-        </div>
 
-        {/* ── Quick Actions (pill row) ──────────────────────────────── */}
-        <div className="mb-6 flex flex-wrap gap-2">
-          {quickActions.map((action) => (
-            <Link
-              key={action.href}
-              href={action.href}
-              className="group inline-flex items-center gap-2 rounded-full border border-brand-border bg-surface px-4 py-2 text-sm font-medium text-brand-text transition-all duration-200 hover:border-brand-accent/30 hover:bg-surface-raised"
-            >
-              <span className={`flex h-6 w-6 items-center justify-center rounded-md ${action.bg}`}>
-                <action.icon className={`h-3.5 w-3.5 ${action.color}`} />
-              </span>
-              {action.label}
-              <ArrowRight className="h-3.5 w-3.5 text-brand-muted transition-transform group-hover:translate-x-0.5" />
-            </Link>
-          ))}
-        </div>
-
-        {/* ── Continue Learning ───────────────────────────────────────── */}
-        <section className="mb-6">
-          <div className="mb-3 flex items-center justify-between">
-            <h2 className="text-lg font-semibold">Continue Learning</h2>
-            {enrolledCourses.length > 0 && (
-              <Link
-                href="/courses"
-                className="flex items-center gap-1 text-body-sm font-medium text-brand-accent hover:text-brand-accent-hover transition-colors"
-              >
-                View all <ArrowRight className="h-3.5 w-3.5" />
-              </Link>
+          {/* ── Stats Row ──────────────────────────────────────────────── */}
+          <div className="mb-6 grid grid-cols-2 gap-3 lg:grid-cols-4">
+            {loading ? (
+              <>
+                <StatCardSkeleton />
+                <StatCardSkeleton />
+                <StatCardSkeleton />
+                <StatCardSkeleton />
+              </>
+            ) : (
+              <>
+                <StatCard
+                  icon={<BookOpen className="h-5 w-5" />}
+                  iconBg="bg-primary/10"
+                  iconColor="text-primary"
+                  label="Enrolled"
+                  value={enrolments.length}
+                  sub={enrolments.length === 1 ? 'course' : 'courses'}
+                  tooltip="Total number of courses you have enrolled in"
+                />
+                <StatCard
+                  icon={<CheckCircle className="h-5 w-5" />}
+                  iconBg="bg-blue-500/10"
+                  iconColor="text-blue-400"
+                  label="Completed"
+                  value={completedModulesCount}
+                  sub={completedModulesCount === 1 ? 'module' : 'modules'}
+                  tooltip="Total modules you have completed across all courses"
+                />
+                <StatCard
+                  icon={<Trophy className="h-5 w-5" />}
+                  iconBg="bg-yellow-500/10"
+                  iconColor="text-yellow-400"
+                  label="Certificates"
+                  value={certificates.length}
+                  sub={certificates.length === 1 ? 'earned' : 'earned'}
+                  tooltip="Certificates earned by passing final assessments"
+                />
+                <StatCard
+                  icon={
+                    profile?.subscription_status === 'pro'
+                      ? <Crown className="h-5 w-5" />
+                      : <Sparkles className="h-5 w-5" />
+                  }
+                  iconBg={profile?.subscription_status === 'pro' ? 'bg-yellow-500/10' : 'bg-muted'}
+                  iconColor={profile?.subscription_status === 'pro' ? 'text-yellow-400' : 'text-muted-foreground'}
+                  label="Plan"
+                  value={<SubscriptionBadge status={profile?.subscription_status ?? 'free'} />}
+                  sub="current plan"
+                  tooltip="Your current subscription plan"
+                />
+              </>
             )}
           </div>
 
-          {loading ? (
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              <CourseCardSkeleton />
-              <CourseCardSkeleton />
-              <CourseCardSkeleton />
-            </div>
-          ) : enrolledCourses.length === 0 ? (
-            <EmptyState
-              icon={<BookOpen className="h-10 w-10 text-brand-muted" />}
-              title="No courses yet"
-              description="Browse our catalogue to get started."
-              actionLabel="Browse Courses"
-              actionHref="/courses"
-            />
-          ) : (
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {enrolledCourses.map((ec) => (
-                <div
-                  key={ec.id}
-                  className="card-interactive p-5 animate-fade-in"
-                >
-                  {/* Level badge */}
-                  <div className="mb-2 flex items-center gap-2">
-                    <span
-                      className="inline-block h-2 w-2 rounded-full"
-                      style={{ backgroundColor: ec.course.color }}
-                    />
-                    <span className="text-overline uppercase text-brand-muted">
-                      {ec.course.level}
-                    </span>
+          {/* ── Quick Actions ──────────────────────────────────────────── */}
+          <div className="mb-6 flex flex-wrap gap-2">
+            {quickActions.map((action) => (
+              <Button
+                key={action.href}
+                variant="outline"
+                size="default"
+                className="group gap-2"
+                render={<Link href={action.href} />}
+              >
+                <span className={cn('flex h-6 w-6 items-center justify-center rounded-md', action.bg)}>
+                  <action.icon className={cn('h-3.5 w-3.5', action.color)} />
+                </span>
+                {action.label}
+                <ArrowRight className="h-3.5 w-3.5 text-muted-foreground transition-transform group-hover:translate-x-0.5" />
+              </Button>
+            ))}
+          </div>
+
+          <Separator className="mb-6" />
+
+          {/* ── Courses Tabs ───────────────────────────────────────────── */}
+          <section className="mb-6">
+            <Tabs defaultValue="continue">
+              <div className="mb-3 flex items-center justify-between">
+                <TabsList>
+                  <TabsTrigger value="continue">
+                    Continue Learning
+                    {activeCourses.length > 0 && (
+                      <Badge variant="secondary" className="ml-1.5">{activeCourses.length}</Badge>
+                    )}
+                  </TabsTrigger>
+                  <TabsTrigger value="completed">
+                    Completed
+                    {completedCourses.length > 0 && (
+                      <Badge variant="secondary" className="ml-1.5">{completedCourses.length}</Badge>
+                    )}
+                  </TabsTrigger>
+                </TabsList>
+                {enrolledCourses.length > 0 && (
+                  <Button variant="link" size="sm" render={<Link href="/courses" />}>
+                    View all <ArrowRight className="h-3.5 w-3.5" />
+                  </Button>
+                )}
+              </div>
+
+              <TabsContent value="continue">
+                {loading ? (
+                  <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                    <CourseCardSkeleton />
+                    <CourseCardSkeleton />
+                    <CourseCardSkeleton />
                   </div>
-
-                  {/* Title */}
-                  <h3 className="mb-1 font-semibold leading-snug text-brand-text">
-                    {ec.course.title}
-                  </h3>
-
-                  {/* Progress text */}
-                  <p className="mb-3 text-body-sm text-brand-muted">
-                    {ec.completedModules} of {ec.totalModules} modules
-                  </p>
-
-                  {/* Progress bar */}
-                  <div className="progress-track mb-4">
-                    <div
-                      className="progress-fill"
-                      style={{ width: `${ec.progress}%` }}
-                      role="progressbar"
-                      aria-valuenow={Math.round(ec.progress)}
-                      aria-valuemin={0}
-                      aria-valuemax={100}
-                      aria-label={`${Math.round(ec.progress)}% complete`}
-                    />
+                ) : activeCourses.length === 0 ? (
+                  <EmptyState
+                    icon={<BookOpen className="h-10 w-10 text-muted-foreground" />}
+                    title="No courses in progress"
+                    description="Browse our catalogue to get started."
+                    actionLabel="Browse Courses"
+                    actionHref="/courses"
+                  />
+                ) : (
+                  <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                    {activeCourses.map((ec) => (
+                      <CourseCard key={ec.id} ec={ec} />
+                    ))}
                   </div>
+                )}
+              </TabsContent>
 
-                  {/* Action */}
-                  {ec.nextModule ? (
-                    <Link
-                      href={`/learn/${ec.course_id}/${ec.nextModule.id}`}
-                      className="inline-flex items-center gap-2 rounded-md bg-brand-accent/10 px-3.5 py-2 text-sm font-medium text-brand-accent transition-colors hover:bg-brand-accent/20"
-                    >
-                      <Play className="h-3.5 w-3.5" />
-                      Continue
-                    </Link>
-                  ) : (
-                    <span className="inline-flex items-center gap-2 rounded-md bg-brand-accent/15 px-3.5 py-2 text-sm font-medium text-brand-accent">
-                      <CheckCircle className="h-3.5 w-3.5" />
-                      Completed
-                    </span>
-                  )}
-                </div>
-              ))}
-            </div>
-          )}
-        </section>
-
-        {/* ── Two-column: Activity + Certificates ──────────────────────── */}
-        <div className="grid gap-4 lg:grid-cols-2">
-
-          {/* Recent Activity */}
-          <section>
-            <h2 className="mb-3 text-lg font-semibold">Recent Activity</h2>
-            <div className="card p-5">
-              {loading ? (
-                <div className="divide-y divide-brand-border">
-                  {Array.from({ length: 3 }).map((_, i) => (
-                    <ActivitySkeleton key={i} />
-                  ))}
-                </div>
-              ) : recentActivity.length === 0 ? (
-                <div className="py-8 text-center text-brand-muted">
-                  <Clock className="mx-auto mb-2 h-8 w-8 opacity-50" />
-                  <p className="text-body-sm">No activity yet. Start a course to track your progress.</p>
-                </div>
-              ) : (
-                <div className="divide-y divide-brand-border">
-                  {recentActivity.map((activity) => {
-                    const course = courseMap.get(activity.course_id)
-                    const mod = course?.moduleList.find(
-                      (m) => m.id === activity.module_id
-                    )
-                    return (
-                      <div
-                        key={activity.id}
-                        className="flex items-center gap-3 py-3 first:pt-0 last:pb-0"
-                      >
-                        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand-accent/10">
-                          <CheckCircle className="h-4 w-4 text-brand-accent" />
-                        </div>
-                        <div className="min-w-0 flex-1">
-                          <p className="truncate text-sm font-medium text-brand-text">
-                            {mod?.title ?? 'Unknown module'}
-                          </p>
-                          <p className="truncate text-caption text-brand-muted">
-                            {course?.title ?? 'Unknown course'}
-                            {activity.completed_at && (
-                              <span className="ml-1.5 opacity-70">
-                                · {formatRelativeDate(activity.completed_at)}
-                              </span>
-                            )}
-                          </p>
-                        </div>
-                        {activity.quiz_score !== null && (
-                          <span className="shrink-0 rounded-md bg-blue-500/10 px-2 py-0.5 text-caption font-medium text-blue-400">
-                            {activity.quiz_score}%
-                          </span>
-                        )}
-                      </div>
-                    )
-                  })}
-                </div>
-              )}
-            </div>
+              <TabsContent value="completed">
+                {loading ? (
+                  <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                    <CourseCardSkeleton />
+                    <CourseCardSkeleton />
+                  </div>
+                ) : completedCourses.length === 0 ? (
+                  <EmptyState
+                    icon={<Trophy className="h-10 w-10 text-muted-foreground" />}
+                    title="No completed courses yet"
+                    description="Keep learning to complete your first course."
+                    actionLabel="Browse Courses"
+                    actionHref="/courses"
+                  />
+                ) : (
+                  <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                    {completedCourses.map((ec) => (
+                      <CourseCard key={ec.id} ec={ec} />
+                    ))}
+                  </div>
+                )}
+              </TabsContent>
+            </Tabs>
           </section>
 
-          {/* Certificates */}
-          <section>
-            <h2 className="mb-3 text-lg font-semibold">
-              {certificates.length > 0 ? 'Your Certificates' : 'Achievements'}
-            </h2>
-            <div className="card p-5">
-              {loading ? (
-                <div className="space-y-3">
-                  {Array.from({ length: 2 }).map((_, i) => (
-                    <div key={i} className="flex items-center gap-3 animate-pulse">
-                      <div className="h-10 w-10 rounded-lg bg-brand-border" />
-                      <div className="flex-1">
-                        <div className="h-4 w-36 rounded bg-brand-border mb-1.5" />
-                        <div className="h-3 w-24 rounded bg-brand-border" />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              ) : certificates.length === 0 ? (
-                <div className="py-8 text-center text-brand-muted">
-                  <Award className="mx-auto mb-2 h-8 w-8 opacity-50" />
-                  <p className="text-body-sm">Complete a course to earn your first certificate.</p>
-                </div>
-              ) : (
-                <div className="space-y-3">
-                  {certificates.map((cert) => {
-                    const course = courseMap.get(cert.course_id)
-                    return (
-                      <div
-                        key={cert.id}
-                        className="flex items-start gap-3 rounded-lg p-3 transition-colors hover:bg-surface-raised"
-                      >
-                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-yellow-500/10">
-                          <Award className="h-5 w-5 text-yellow-400" />
-                        </div>
-                        <div className="min-w-0 flex-1">
-                          <h3 className="truncate text-sm font-semibold text-brand-text">
-                            {course?.title ?? 'Unknown course'}
-                          </h3>
-                          <div className="mt-1 flex flex-wrap items-center gap-2">
-                            <span
-                              className={`inline-flex items-center rounded-md border px-2 py-0.5 text-caption font-medium ${
-                                gradeBadgeColors[cert.grade] ?? gradeBadgeColors.Pass
-                              }`}
-                            >
-                              {cert.grade}
-                            </span>
-                            <span className="text-caption text-brand-muted">
-                              {cert.score}%
-                            </span>
-                            <span className="text-caption text-brand-muted opacity-70">
-                              · {formatDate(cert.issued_at)}
-                            </span>
+          <Separator className="mb-6" />
+
+          {/* ── Two-column: Activity + Certificates ──────────────────────── */}
+          <div className="grid gap-4 lg:grid-cols-2">
+
+            {/* Recent Activity */}
+            <Card>
+              <CardHeader>
+                <CardTitle>Recent Activity</CardTitle>
+                <CardDescription>Your latest completed modules</CardDescription>
+              </CardHeader>
+              <CardContent>
+                {loading ? (
+                  <div className="space-y-0">
+                    {Array.from({ length: 3 }).map((_, i) => (
+                      <ActivitySkeleton key={i} />
+                    ))}
+                  </div>
+                ) : recentActivity.length === 0 ? (
+                  <div className="py-8 text-center text-muted-foreground">
+                    <Clock className="mx-auto mb-2 h-8 w-8 opacity-50" />
+                    <p className="text-sm">No activity yet. Start a course to track your progress.</p>
+                  </div>
+                ) : (
+                  <ScrollArea className="max-h-80">
+                    <div className="space-y-0">
+                      {recentActivity.map((activity, index) => {
+                        const course = courseMap.get(activity.course_id)
+                        const mod = course?.moduleList.find(
+                          (m) => m.id === activity.module_id
+                        )
+                        return (
+                          <div key={activity.id}>
+                            <div className="flex items-center gap-3 py-3">
+                              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                                <CheckCircle className="h-4 w-4 text-primary" />
+                              </div>
+                              <div className="min-w-0 flex-1">
+                                <p className="truncate text-sm font-medium text-foreground">
+                                  {mod?.title ?? 'Unknown module'}
+                                </p>
+                                <p className="truncate text-xs text-muted-foreground">
+                                  {course?.title ?? 'Unknown course'}
+                                  {activity.completed_at && (
+                                    <span className="ml-1.5 opacity-70">
+                                      · {formatRelativeDate(activity.completed_at)}
+                                    </span>
+                                  )}
+                                </p>
+                              </div>
+                              {activity.quiz_score !== null && (
+                                <Badge variant="secondary" className="shrink-0">
+                                  {activity.quiz_score}%
+                                </Badge>
+                              )}
+                            </div>
+                            {index < recentActivity.length - 1 && <Separator />}
                           </div>
-                          <Link
-                            href={cert.verification_url}
-                            className="mt-1.5 inline-flex items-center gap-1 text-caption font-medium text-brand-accent hover:text-brand-accent-hover transition-colors"
-                          >
-                            View Certificate <ArrowRight className="h-3 w-3" />
-                          </Link>
+                        )
+                      })}
+                    </div>
+                  </ScrollArea>
+                )}
+              </CardContent>
+            </Card>
+
+            {/* Certificates */}
+            <Card>
+              <CardHeader>
+                <CardTitle>
+                  {certificates.length > 0 ? 'Your Certificates' : 'Achievements'}
+                </CardTitle>
+                <CardDescription>
+                  {certificates.length > 0
+                    ? `${certificates.length} certificate${certificates.length !== 1 ? 's' : ''} earned`
+                    : 'Complete courses to earn certificates'}
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                {loading ? (
+                  <div className="space-y-3">
+                    {Array.from({ length: 2 }).map((_, i) => (
+                      <div key={i} className="flex items-center gap-3">
+                        <Skeleton className="h-10 w-10 rounded-lg" />
+                        <div className="flex-1">
+                          <Skeleton className="h-4 w-36 mb-1.5" />
+                          <Skeleton className="h-3 w-24" />
                         </div>
                       </div>
-                    )
-                  })}
-                </div>
-              )}
-            </div>
-          </section>
+                    ))}
+                  </div>
+                ) : certificates.length === 0 ? (
+                  <div className="py-8 text-center text-muted-foreground">
+                    <Award className="mx-auto mb-2 h-8 w-8 opacity-50" />
+                    <p className="text-sm">Complete a course to earn your first certificate.</p>
+                  </div>
+                ) : (
+                  <ScrollArea className="max-h-80">
+                    <div className="space-y-1">
+                      {certificates.map((cert, index) => {
+                        const course = courseMap.get(cert.course_id)
+                        return (
+                          <div key={cert.id}>
+                            <div className="flex items-start gap-3 rounded-lg p-3 transition-colors hover:bg-secondary">
+                              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-yellow-500/10">
+                                <Award className="h-5 w-5 text-yellow-400" />
+                              </div>
+                              <div className="min-w-0 flex-1">
+                                <h3 className="truncate text-sm font-semibold text-foreground">
+                                  {course?.title ?? 'Unknown course'}
+                                </h3>
+                                <div className="mt-1 flex flex-wrap items-center gap-2">
+                                  <GradeBadge grade={cert.grade} />
+                                  <span className="text-xs text-muted-foreground">
+                                    {cert.score}%
+                                  </span>
+                                  <span className="text-xs text-muted-foreground opacity-70">
+                                    · {formatDate(cert.issued_at)}
+                                  </span>
+                                </div>
+                                <Button
+                                  variant="link"
+                                  size="xs"
+                                  className="mt-1 h-auto p-0"
+                                  render={<Link href={cert.verification_url} />}
+                                >
+                                  View Certificate <ArrowRight className="h-3 w-3" />
+                                </Button>
+                              </div>
+                            </div>
+                            {index < certificates.length - 1 && <Separator />}
+                          </div>
+                        )
+                      })}
+                    </div>
+                  </ScrollArea>
+                )}
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </div>
-    </div>
+    </TooltipProvider>
   )
 }
 
-// ─── Sub-components ───────────────────────────────────────────────────────────
+// ── Sub-components ───────────────────────────────────────────────────────────
 
 function StatCard({
   icon,
@@ -561,6 +600,7 @@ function StatCard({
   label,
   value,
   sub,
+  tooltip,
 }: {
   icon: React.ReactNode
   iconBg: string
@@ -568,20 +608,30 @@ function StatCard({
   label: string
   value: React.ReactNode
   sub: string
+  tooltip: string
 }) {
   return (
-    <div className="card p-5 animate-fade-in">
-      <div className="mb-3 flex items-center gap-3">
-        <div className={`flex h-10 w-10 items-center justify-center rounded-lg ${iconBg}`}>
-          <span className={iconColor}>{icon}</span>
-        </div>
-        <span className="text-overline uppercase text-brand-muted">
-          {label}
-        </span>
-      </div>
-      <div className="text-2xl font-bold tracking-tight">{value}</div>
-      <p className="mt-0.5 text-caption text-brand-muted">{sub}</p>
-    </div>
+    <Tooltip>
+      <TooltipTrigger className="text-left">
+        <Card className="animate-fade-in">
+          <CardHeader>
+            <div className="flex items-center gap-3">
+              <div className={cn('flex h-10 w-10 items-center justify-center rounded-lg', iconBg)}>
+                <span className={iconColor}>{icon}</span>
+              </div>
+              <span className="text-xs uppercase tracking-wider text-muted-foreground">
+                {label}
+              </span>
+            </div>
+          </CardHeader>
+          <CardContent>
+            <div className="text-3xl font-bold tracking-tight text-foreground">{value}</div>
+            <p className="mt-0.5 text-sm text-muted-foreground">{sub}</p>
+          </CardContent>
+        </Card>
+      </TooltipTrigger>
+      <TooltipContent>{tooltip}</TooltipContent>
+    </Tooltip>
   )
 }
 
@@ -590,14 +640,14 @@ function SubscriptionBadge({
 }: {
   status: string
 }) {
-  const styles: Record<string, string> = {
-    free: 'bg-brand-muted/10 text-brand-muted border-brand-muted/30',
-    pro: 'bg-yellow-500/10 text-yellow-400 border-yellow-500/30',
-    cancelled: 'bg-red-500/10 text-red-400 border-red-500/30',
-    past_due: 'bg-orange-500/10 text-orange-400 border-orange-500/30',
-    unpaid: 'bg-red-500/10 text-red-400 border-red-500/30',
-    incomplete: 'bg-orange-500/10 text-orange-400 border-orange-500/30',
-    paused: 'bg-brand-muted/10 text-brand-muted border-brand-muted/30',
+  const variantMap: Record<string, 'default' | 'secondary' | 'destructive' | 'outline'> = {
+    free: 'secondary',
+    pro: 'default',
+    cancelled: 'destructive',
+    past_due: 'destructive',
+    unpaid: 'destructive',
+    incomplete: 'outline',
+    paused: 'secondary',
   }
 
   const labels: Record<string, string> = {
@@ -611,14 +661,89 @@ function SubscriptionBadge({
   }
 
   return (
-    <span
-      className={`inline-flex items-center rounded-md border px-2 py-0.5 text-sm font-semibold ${
-        styles[status] ?? styles.free
-      }`}
+    <Badge
+      variant={variantMap[status] ?? 'secondary'}
+      className={cn(
+        status === 'pro' && 'bg-yellow-500/10 text-yellow-400 border-yellow-500/30',
+      )}
     >
       {status === 'pro' && <Crown className="mr-1 h-3.5 w-3.5" />}
       {labels[status] ?? 'Free'}
-    </span>
+    </Badge>
+  )
+}
+
+function GradeBadge({ grade }: { grade: string }) {
+  const variantMap: Record<string, 'default' | 'secondary' | 'outline'> = {
+    Distinction: 'default',
+    Merit: 'secondary',
+    Pass: 'outline',
+  }
+
+  const colorMap: Record<string, string> = {
+    Distinction: 'bg-yellow-500/15 text-yellow-400 border-yellow-500/30',
+    Merit: 'bg-blue-500/15 text-blue-400 border-blue-500/30',
+    Pass: 'bg-primary/15 text-primary border-primary/30',
+  }
+
+  return (
+    <Badge
+      variant={variantMap[grade] ?? 'outline'}
+      className={colorMap[grade] ?? colorMap.Pass}
+    >
+      {grade}
+    </Badge>
+  )
+}
+
+function CourseCard({
+  ec,
+}: {
+  ec: {
+    id: string
+    course_id: string
+    course: CourseData
+    totalModules: number
+    completedModules: number
+    progress: number
+    nextModule: CourseData['moduleList'][number] | undefined
+  }
+}) {
+  return (
+    <Card className="animate-fade-in">
+      <CardHeader>
+        <div className="flex items-center gap-2">
+          <span
+            className="inline-block h-2 w-2 rounded-full"
+            style={{ backgroundColor: ec.course.color }}
+          />
+          <Badge variant="outline" className="text-xs uppercase">
+            {ec.course.level}
+          </Badge>
+        </div>
+        <CardTitle>{ec.course.title}</CardTitle>
+        <CardDescription>
+          {ec.completedModules} of {ec.totalModules} modules
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <Progress value={ec.progress} className="mb-1" />
+        <p className="text-xs text-muted-foreground text-right">{Math.round(ec.progress)}%</p>
+      </CardContent>
+      <CardFooter>
+        {ec.nextModule ? (
+          <Button size="sm" render={<Link href={`/learn/${ec.course_id}/${ec.nextModule.id}`} />}>
+            <Play className="h-3.5 w-3.5" />
+            Continue
+          </Button>
+        ) : (
+          <Badge variant="secondary">
+            <CheckCircle className="h-3.5 w-3.5 mr-1" />
+            Completed
+          </Badge>
+        )}
+      </CardFooter>
+    </Card>
   )
 }
 
@@ -636,16 +761,15 @@ function EmptyState({
   actionHref: string
 }) {
   return (
-    <div className="flex flex-col items-center justify-center rounded-lg border border-dashed border-brand-border bg-surface/50 py-12 text-center">
-      <div className="mb-3">{icon}</div>
-      <h3 className="mb-1 font-semibold">{title}</h3>
-      <p className="mb-4 text-body-sm text-brand-muted">{description}</p>
-      <Link
-        href={actionHref}
-        className="btn-primary"
-      >
-        {actionLabel} <ArrowRight className="h-4 w-4" />
-      </Link>
-    </div>
+    <Card className="border-dashed">
+      <CardContent className="flex flex-col items-center justify-center py-12 text-center">
+        <div className="mb-3">{icon}</div>
+        <h3 className="mb-1 font-semibold text-foreground">{title}</h3>
+        <p className="mb-4 text-sm text-muted-foreground">{description}</p>
+        <Button render={<Link href={actionHref} />}>
+          {actionLabel} <ArrowRight className="h-4 w-4" />
+        </Button>
+      </CardContent>
+    </Card>
   )
 }

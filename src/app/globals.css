@@ -1,188 +1,192 @@
-@import "tw-animate-css";
-@import "shadcn/tailwind.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  /* ── Mona Sans Premium Dark Theme ─────────────────────────────── */
+  :root {
+    /* Background scale — deep ink to slate */
+    --background: 228 28% 6%;
+    --foreground: 210 20% 95%;
+
+    /* Surface layers */
+    --card: 226 25% 8%;
+    --card-foreground: 210 20% 95%;
+    --popover: 226 22% 10%;
+    --popover-foreground: 210 20% 95%;
+
+    /* Primary — refined emerald */
+    --primary: 162 72% 46%;
+    --primary-foreground: 228 28% 6%;
+
+    /* Secondary — cool slate */
+    --secondary: 224 20% 13%;
+    --secondary-foreground: 210 15% 85%;
+
+    /* Muted — desaturated slate */
+    --muted: 224 18% 13%;
+    --muted-foreground: 218 15% 55%;
+
+    /* Accent — subtle lift */
+    --accent: 224 18% 15%;
+    --accent-foreground: 210 20% 95%;
+
+    /* Destructive — warm red */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 20% 95%;
+
+    /* Borders — precise, barely-there lines */
+    --border: 224 15% 15%;
+    --input: 224 18% 12%;
+    --ring: 162 72% 46%;
+
+    /* Charts */
+    --chart-1: 162 72% 46%;
+    --chart-2: 217 91% 60%;
+    --chart-3: 43 96% 56%;
+    --chart-4: 262 83% 58%;
+    --chart-5: 0 72% 51%;
+
+    /* Radius — generous, modern */
+    --radius: 0.75rem;
+
+    /* Sidebar */
+    --sidebar: 228 28% 7%;
+    --sidebar-foreground: 210 20% 95%;
+    --sidebar-primary: 162 72% 46%;
+    --sidebar-primary-foreground: 228 28% 6%;
+    --sidebar-accent: 224 18% 13%;
+    --sidebar-accent-foreground: 210 20% 95%;
+    --sidebar-border: 224 15% 13%;
+    --sidebar-ring: 162 72% 46%;
+  }
+
+  html {
+    @apply font-sans;
+    color-scheme: dark;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
   body {
     @apply font-sans antialiased bg-background text-foreground;
   }
+
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
   }
-  .theme {
-    --font-heading: var(--font-sans);
-    --font-sans: var(--font-sans);
+
+  /* ── Typographic scale — Mona Sans hierarchy ────────────────── */
+  h1, .h1 {
+    @apply text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.1];
+    letter-spacing: -0.025em;
   }
-  :root {
-    --background: oklch(1 0 0);
-    --foreground: oklch(0.145 0 0);
-    --card: oklch(1 0 0);
-    --card-foreground: oklch(0.145 0 0);
-    --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.145 0 0);
-    --primary: oklch(0.205 0 0);
-    --primary-foreground: oklch(0.985 0 0);
-    --secondary: oklch(0.97 0 0);
-    --secondary-foreground: oklch(0.205 0 0);
-    --muted: oklch(0.97 0 0);
-    --muted-foreground: oklch(0.556 0 0);
-    --accent: oklch(0.97 0 0);
-    --accent-foreground: oklch(0.205 0 0);
-    --destructive: oklch(0.577 0.245 27.325);
-    --border: oklch(0.922 0 0);
-    --input: oklch(0.922 0 0);
-    --ring: oklch(0.708 0 0);
-    --chart-1: oklch(0.87 0 0);
-    --chart-2: oklch(0.556 0 0);
-    --chart-3: oklch(0.439 0 0);
-    --chart-4: oklch(0.371 0 0);
-    --chart-5: oklch(0.269 0 0);
-    --radius: 0.625rem;
-    --sidebar: oklch(0.985 0 0);
-    --sidebar-foreground: oklch(0.145 0 0);
-    --sidebar-primary: oklch(0.205 0 0);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.97 0 0);
-    --sidebar-accent-foreground: oklch(0.205 0 0);
-    --sidebar-border: oklch(0.922 0 0);
-    --sidebar-ring: oklch(0.708 0 0);
+  h2, .h2 {
+    @apply text-3xl sm:text-4xl font-bold tracking-tight leading-[1.15];
+    letter-spacing: -0.02em;
   }
-  .dark {
-    --background: oklch(0.145 0 0);
-    --foreground: oklch(0.985 0 0);
-    --card: oklch(0.205 0 0);
-    --card-foreground: oklch(0.985 0 0);
-    --popover: oklch(0.205 0 0);
-    --popover-foreground: oklch(0.985 0 0);
-    --primary: oklch(0.922 0 0);
-    --primary-foreground: oklch(0.205 0 0);
-    --secondary: oklch(0.269 0 0);
-    --secondary-foreground: oklch(0.985 0 0);
-    --muted: oklch(0.269 0 0);
-    --muted-foreground: oklch(0.708 0 0);
-    --accent: oklch(0.269 0 0);
-    --accent-foreground: oklch(0.985 0 0);
-    --destructive: oklch(0.704 0.191 22.216);
-    --border: oklch(1 0 0 / 10%);
-    --input: oklch(1 0 0 / 15%);
-    --ring: oklch(0.556 0 0);
-    --chart-1: oklch(0.87 0 0);
-    --chart-2: oklch(0.556 0 0);
-    --chart-3: oklch(0.439 0 0);
-    --chart-4: oklch(0.371 0 0);
-    --chart-5: oklch(0.269 0 0);
-    --sidebar: oklch(0.205 0 0);
-    --sidebar-foreground: oklch(0.985 0 0);
-    --sidebar-primary: oklch(0.488 0.243 264.376);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.269 0 0);
-    --sidebar-accent-foreground: oklch(0.985 0 0);
-    --sidebar-border: oklch(1 0 0 / 10%);
-    --sidebar-ring: oklch(0.556 0 0);
+  h3, .h3 {
+    @apply text-xl sm:text-2xl font-semibold tracking-tight leading-snug;
+    letter-spacing: -0.015em;
   }
-  html {
-    @apply font-sans;
+  h4, .h4 {
+    @apply text-lg font-semibold leading-snug;
+    letter-spacing: -0.01em;
   }
 }
 
 @layer components {
-  /* ── Buttons ─────────────────────────────────────────────────────── */
+  /* ── Legacy button classes (used across existing pages) ──────── */
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md
-           bg-brand-accent text-white font-medium text-sm
-           hover:bg-brand-accent-hover active:scale-[0.98]
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg
+           bg-primary text-primary-foreground font-semibold text-sm
+           hover:bg-primary/90 active:scale-[0.98]
            transition-all duration-200
            disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100
-           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-brand-bg;
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
   }
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-md
-           border border-brand-border text-brand-text font-medium text-sm
-           hover:bg-surface-raised hover:border-brand-muted/50
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg
+           border border-border text-foreground font-semibold text-sm
+           hover:bg-accent hover:text-accent-foreground
            active:scale-[0.98] transition-all duration-200
-           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-brand-bg;
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
   }
   .btn-ghost {
-    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-md
-           text-brand-muted font-medium text-sm
-           hover:text-brand-text hover:bg-surface-raised
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg
+           text-muted-foreground font-medium text-sm
+           hover:text-foreground hover:bg-accent
            active:scale-[0.98] transition-all duration-200
-           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-brand-bg;
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
   }
 
-  /* ── Cards ───────────────────────────────────────────────────────── */
-  .card {
-    @apply bg-surface border border-brand-border rounded-lg;
-  }
+  /* ── Legacy card classes ──────────────────────────────────────── */
   .card-interactive {
-    @apply bg-surface border border-brand-border rounded-lg
+    @apply bg-card border border-border rounded-xl
            transition-all duration-200
-           hover:border-brand-accent/30 hover:bg-surface-raised hover:shadow-soft;
+           hover:border-primary/25 hover:bg-secondary hover:shadow-soft;
   }
   .card-accent-left {
-    @apply bg-surface border border-brand-border rounded-lg
-           border-l-[3px];
+    @apply bg-card border border-border rounded-xl border-l-[3px];
   }
 
-  /* ── Forms ───────────────────────────────────────────────────────── */
+  /* ── Legacy form classes ──────────────────────────────────────── */
   .input-field {
-    @apply w-full px-4 py-3 rounded-md bg-brand-bg border border-brand-border
-           text-brand-text text-sm
-           placeholder:text-brand-muted/60
-           focus:outline-none focus:ring-2 focus:ring-brand-accent/50 focus:border-brand-accent
+    @apply w-full px-4 py-3 rounded-lg bg-background border border-border
+           text-foreground text-sm
+           placeholder:text-muted-foreground/50
+           focus:outline-none focus:ring-2 focus:ring-ring/40 focus:border-ring
            transition-all duration-200;
   }
-  .label {
-    @apply block text-caption font-medium text-brand-muted mb-1.5;
-  }
 
-  /* ── Chips / Pills ───────────────────────────────────────────────── */
+  /* ── Chips / Pills ────────────────────────────────────────────── */
   .chip {
     @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full
-           text-body-sm font-medium border
+           text-sm font-medium border
            transition-all duration-200 cursor-pointer;
   }
   .chip-active {
-    @apply bg-brand-accent/15 text-brand-accent border-brand-accent/30;
+    @apply bg-primary/10 text-primary border-primary/25;
   }
   .chip-inactive {
-    @apply bg-surface text-brand-muted border-brand-border
-           hover:text-brand-text hover:border-brand-muted/50;
+    @apply bg-card text-muted-foreground border-border
+           hover:text-foreground hover:border-muted-foreground/40;
   }
 
-  /* ── Nav pills ───────────────────────────────────────────────────── */
+  /* ── Nav pills ────────────────────────────────────────────────── */
   .nav-pill {
     @apply px-4 py-2 rounded-full text-sm font-medium
-           text-brand-muted transition-all duration-200
-           hover:text-brand-text hover:bg-surface-raised;
+           text-muted-foreground transition-all duration-200
+           hover:text-foreground hover:bg-accent;
   }
   .nav-pill-active {
-    @apply px-4 py-2 rounded-full text-sm font-medium
-           text-brand-text bg-surface-raised;
+    @apply px-4 py-2 rounded-full text-sm font-semibold
+           text-foreground bg-accent;
   }
 
-  /* ── Progress bar ────────────────────────────────────────────────── */
+  /* ── Progress bar (legacy) ────────────────────────────────────── */
   .progress-track {
-    @apply h-1.5 w-full overflow-hidden rounded-full bg-brand-border;
+    @apply h-1.5 w-full overflow-hidden rounded-full bg-border;
   }
   .progress-fill {
-    @apply h-full rounded-full bg-brand-accent transition-all duration-500;
+    @apply h-full rounded-full bg-primary transition-all duration-500;
   }
 
-  /* ── Course content styling ──────────────────────────────────────── */
+  /* ── Course content styling ───────────────────────────────────── */
   .course-content h2 {
-    @apply text-xl sm:text-2xl font-bold text-brand-text mt-8 mb-4;
+    @apply text-xl sm:text-2xl font-bold text-foreground mt-10 mb-4;
+    letter-spacing: -0.015em;
   }
   .course-content h3 {
-    @apply text-lg sm:text-xl font-semibold text-brand-text mt-6 mb-3;
+    @apply text-lg sm:text-xl font-semibold text-foreground mt-8 mb-3;
+    letter-spacing: -0.01em;
   }
   .course-content p {
-    @apply text-brand-muted leading-relaxed mb-4;
+    @apply text-muted-foreground leading-relaxed mb-4;
   }
   .course-content ul, .course-content ol {
-    @apply ml-4 sm:ml-6 mb-4 space-y-2 text-brand-muted;
+    @apply ml-4 sm:ml-6 mb-4 space-y-2 text-muted-foreground;
   }
   .course-content ul {
     @apply list-disc;
@@ -194,13 +198,13 @@
     @apply leading-relaxed;
   }
   .course-content strong {
-    @apply text-brand-text font-semibold;
+    @apply text-foreground font-semibold;
   }
   .course-content em {
-    @apply italic text-brand-text/90;
+    @apply italic text-foreground/90;
   }
   .course-content img {
-    @apply max-w-full h-auto rounded-lg;
+    @apply max-w-full h-auto rounded-xl;
   }
   .course-content table {
     @apply w-full text-sm;
@@ -212,26 +216,26 @@
 
   /* Special content boxes */
   .course-content .key-term {
-    @apply bg-brand-blue/10 border border-brand-blue/30 rounded-lg p-4 my-4 text-brand-muted;
+    @apply bg-blue-500/10 border border-blue-500/20 rounded-xl p-5 my-5 text-muted-foreground;
   }
   .course-content .examiner-tip {
-    @apply bg-brand-warning/10 border border-brand-warning/30 rounded-lg p-4 my-4 text-brand-muted;
+    @apply bg-amber-500/10 border border-amber-500/20 rounded-xl p-5 my-5 text-muted-foreground;
   }
   .course-content .common-mistake {
-    @apply bg-brand-error/10 border border-brand-error/30 rounded-lg p-4 my-4 text-brand-muted;
+    @apply bg-red-500/10 border border-red-500/20 rounded-xl p-5 my-5 text-muted-foreground;
   }
   .course-content .model-answer {
-    @apply bg-brand-accent/10 border border-brand-accent/30 rounded-lg p-4 my-4 text-brand-muted;
+    @apply bg-primary/10 border border-primary/20 rounded-xl p-5 my-5 text-muted-foreground;
   }
   .course-content .text-extract {
-    @apply bg-brand-bg border-l-[3px] border-brand-accent/50 rounded-r-lg p-5 my-6 italic text-brand-text/80 leading-relaxed;
+    @apply bg-background border-l-[3px] border-primary/40 rounded-r-xl p-6 my-6 italic text-foreground/80 leading-relaxed;
   }
   .course-content .text-extract .source {
-    @apply not-italic text-sm text-brand-muted mt-3 font-medium;
+    @apply not-italic text-sm text-muted-foreground mt-3 font-medium;
   }
 }
 
-/* ── Custom scrollbar ──────────────────────────────────────────────── */
+/* ── Custom scrollbar — refined ──────────────────────────────── */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -240,14 +244,14 @@
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1a2840;
+  background: hsl(224 15% 18%);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #243550;
+  background: hsl(224 15% 24%);
 }
 
-/* ── Focus glow effect ─────────────────────────────────────────────── */
+/* ── Focus glow — refined ────────────────────────────────────── */
 .focus-glow:focus-within {
-  box-shadow: 0 0 0 1px rgba(16, 185, 129, 0.3), 0 0 20px rgba(16, 185, 129, 0.08);
+  box-shadow: 0 0 0 1px hsl(162 72% 46% / 0.25), 0 0 24px hsl(162 72% 46% / 0.06);
 }

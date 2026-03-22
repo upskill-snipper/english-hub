@@ -16,11 +16,6 @@ import {
   RefreshCw,
 } from 'lucide-react'
 
-// TODO: Move admin check to a server component so ADMIN_EMAILS doesn't need to be exposed client-side
-const ADMIN_EMAILS = (process.env.NEXT_PUBLIC_ADMIN_EMAILS || 'admin@theenglishhub.app')
-  .split(',')
-  .map((e) => e.trim().toLowerCase())
-
 interface AdminStats {
   totalUsers: number
   activeSubscribers: number
@@ -50,8 +45,7 @@ export default function AdminPage() {
   const [stats, setStats] = useState<AdminStats | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
-
-  const isAdmin = !!profile?.email && ADMIN_EMAILS.includes(profile.email.toLowerCase())
+  const [authorized, setAuthorized] = useState(false)
 
   useEffect(() => {
     if (!user && !useAuthStore.getState().isLoading) {
@@ -59,15 +53,10 @@ export default function AdminPage() {
       return
     }
 
-    if (profile && !isAdmin) {
-      router.push('/dashboard')
-      return
-    }
-
-    if (profile && isAdmin) {
+    if (user) {
       fetchStats()
     }
-  }, [user, profile, router, isAdmin])
+  }, [user, profile, router])
 
   async function fetchStats() {
     setLoading(true)
@@ -75,6 +64,16 @@ export default function AdminPage() {
 
     try {
       const res = await fetch('/api/admin/stats')
+
+      if (res.status === 401) {
+        router.push('/auth/login?redirect=/admin')
+        return
+      }
+      if (res.status === 403) {
+        router.push('/dashboard')
+        return
+      }
+
       const data = await res.json()
 
       if (!res.ok) {
@@ -83,6 +82,7 @@ export default function AdminPage() {
         return
       }
 
+      setAuthorized(true)
       setStats(data)
     } catch {
       setError('Something went wrong. Please try again.')
@@ -91,10 +91,10 @@ export default function AdminPage() {
     setLoading(false)
   }
 
-  if (loading || !isAdmin) {
+  if (loading || !authorized) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <Loader2 className="w-8 h-8 animate-spin text-brand-accent" />
+        <Loader2 className="w-8 h-8 animate-spin text-primary" />
       </div>
     )
   }
@@ -104,7 +104,7 @@ export default function AdminPage() {
       <div className="max-w-6xl mx-auto">
         <Link
           href="/dashboard"
-          className="inline-flex items-center gap-2 text-brand-muted hover:text-brand-text transition-colors mb-8"
+          className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8"
         >
           <ArrowLeft className="w-4 h-4" />
           Back to dashboard
@@ -112,13 +112,13 @@ export default function AdminPage() {
 
         <div className="flex items-center justify-between mb-8">
           <div className="flex items-center gap-3">
-            <Shield className="w-7 h-7 text-brand-accent" />
-            <h1 className="text-3xl font-bold text-brand-text">Admin Panel</h1>
+            <Shield className="w-7 h-7 text-primary" />
+            <h1 className="text-3xl font-bold text-foreground">Admin Panel</h1>
           </div>
           <button
             onClick={fetchStats}
             disabled={loading}
-            className="inline-flex items-center gap-2 px-3 py-2 text-sm rounded-lg border border-brand-border text-brand-muted hover:text-brand-text hover:border-brand-accent/50 transition-colors"
+            className="inline-flex items-center gap-2 px-3 py-2 text-sm rounded-lg border border-border text-muted-foreground hover:text-foreground hover:border-primary/50 transition-colors"
           >
             <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} />
             Refresh
@@ -158,14 +158,14 @@ export default function AdminPage() {
             </div>
 
             {/* Recent Users */}
-            <section className="bg-brand-card border border-brand-border rounded-xl p-6 mb-6">
-              <h2 className="text-lg font-semibold text-brand-text mb-4">
+            <section className="bg-card border border-border rounded-xl p-6 mb-6">
+              <h2 className="text-lg font-semibold text-foreground mb-4">
                 Recent Registrations
               </h2>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
-                    <tr className="border-b border-brand-border text-left text-brand-muted">
+                    <tr className="border-b border-border text-left text-muted-foreground">
                       <th className="pb-3 pr-4 font-medium">Email</th>
                       <th className="pb-3 pr-4 font-medium">Name</th>
                       <th className="pb-3 pr-4 font-medium">Year</th>
@@ -173,34 +173,34 @@ export default function AdminPage() {
                       <th className="pb-3 font-medium">Joined</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-brand-border">
+                  <tbody className="divide-y divide-border">
                     {stats.recentUsers.map((u) => (
-                      <tr key={u.id} className="text-brand-text">
+                      <tr key={u.id} className="text-foreground">
                         <td className="py-3 pr-4 font-mono text-xs">
                           {u.email}
                         </td>
                         <td className="py-3 pr-4">
                           {u.full_name || (
-                            <span className="text-brand-muted">--</span>
+                            <span className="text-muted-foreground">--</span>
                           )}
                         </td>
                         <td className="py-3 pr-4">
                           {u.year_group || (
-                            <span className="text-brand-muted">--</span>
+                            <span className="text-muted-foreground">--</span>
                           )}
                         </td>
                         <td className="py-3 pr-4">
                           <span
                             className={`inline-block text-xs px-2 py-0.5 rounded-full ${
                               u.subscription_status === 'pro'
-                                ? 'bg-brand-accent/10 text-brand-accent'
-                                : 'bg-brand-border text-brand-muted'
+                                ? 'bg-primary/10 text-primary'
+                                : 'bg-border text-muted-foreground'
                             }`}
                           >
                             {u.subscription_status}
                           </span>
                         </td>
-                        <td className="py-3 text-brand-muted text-xs">
+                        <td className="py-3 text-muted-foreground text-xs">
                           {new Date(u.created_at).toLocaleDateString('en-GB', {
                             day: 'numeric',
                             month: 'short',
@@ -212,7 +212,7 @@ export default function AdminPage() {
                   </tbody>
                 </table>
                 {stats.recentUsers.length === 0 && (
-                  <p className="text-brand-muted text-sm py-4 text-center">
+                  <p className="text-muted-foreground text-sm py-4 text-center">
                     No users yet.
                   </p>
                 )}
@@ -220,23 +220,23 @@ export default function AdminPage() {
             </section>
 
             {/* Recent Enrolments */}
-            <section className="bg-brand-card border border-brand-border rounded-xl p-6">
-              <h2 className="text-lg font-semibold text-brand-text mb-4">
+            <section className="bg-card border border-border rounded-xl p-6">
+              <h2 className="text-lg font-semibold text-foreground mb-4">
                 Recent Enrolments
               </h2>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
-                    <tr className="border-b border-brand-border text-left text-brand-muted">
+                    <tr className="border-b border-border text-left text-muted-foreground">
                       <th className="pb-3 pr-4 font-medium">User ID</th>
                       <th className="pb-3 pr-4 font-medium">Course</th>
                       <th className="pb-3 pr-4 font-medium">Type</th>
                       <th className="pb-3 font-medium">Date</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-brand-border">
+                  <tbody className="divide-y divide-border">
                     {stats.recentEnrolments.map((e) => (
-                      <tr key={e.id} className="text-brand-text">
+                      <tr key={e.id} className="text-foreground">
                         <td className="py-3 pr-4 font-mono text-xs truncate max-w-[120px]">
                           {e.user_id.slice(0, 8)}...
                         </td>
@@ -247,16 +247,16 @@ export default function AdminPage() {
                           <span
                             className={`inline-block text-xs px-2 py-0.5 rounded-full ${
                               e.payment_type === 'subscription'
-                                ? 'bg-brand-accent/10 text-brand-accent'
+                                ? 'bg-primary/10 text-primary'
                                 : e.payment_type === 'one_time'
                                 ? 'bg-brand-blue/10 text-brand-blue'
-                                : 'bg-brand-border text-brand-muted'
+                                : 'bg-border text-muted-foreground'
                             }`}
                           >
                             {e.payment_type}
                           </span>
                         </td>
-                        <td className="py-3 text-brand-muted text-xs">
+                        <td className="py-3 text-muted-foreground text-xs">
                           {new Date(e.enrolled_at).toLocaleDateString('en-GB', {
                             day: 'numeric',
                             month: 'short',
@@ -268,7 +268,7 @@ export default function AdminPage() {
                   </tbody>
                 </table>
                 {stats.recentEnrolments.length === 0 && (
-                  <p className="text-brand-muted text-sm py-4 text-center">
+                  <p className="text-muted-foreground text-sm py-4 text-center">
                     No enrolments yet.
                   </p>
                 )}
@@ -291,12 +291,12 @@ function StatCard({
   value: number
 }) {
   return (
-    <div className="bg-brand-card border border-brand-border rounded-xl p-5">
-      <div className="flex items-center gap-2 text-brand-accent mb-2">
+    <div className="bg-card border border-border rounded-xl p-5">
+      <div className="flex items-center gap-2 text-primary mb-2">
         {icon}
-        <span className="text-sm text-brand-muted">{label}</span>
+        <span className="text-sm text-muted-foreground">{label}</span>
       </div>
-      <p className="text-3xl font-bold text-brand-text">
+      <p className="text-3xl font-bold text-foreground">
         {value.toLocaleString()}
       </p>
     </div>

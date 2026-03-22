@@ -80,10 +80,28 @@ export async function POST(request: NextRequest) {
 
       case 'invoice.payment_failed': {
         const invoice = event.data.object as Stripe.Invoice
+        const customerId = invoice.customer as string
+
+        const { data: failedProfile } = await supabase
+          .from('profiles')
+          .select('id, email')
+          .eq('stripe_customer_id', customerId)
+          .single()
+
         console.warn(
-          `Payment failed for customer ${invoice.customer}, invoice ${invoice.id}. ` +
-          'TODO: send notification email to user.'
+          JSON.stringify({
+            event: 'invoice.payment_failed',
+            invoiceId: invoice.id,
+            customerId,
+            userId: failedProfile?.id ?? null,
+            email: failedProfile?.email ?? null,
+            amountDue: invoice.amount_due,
+            currency: invoice.currency,
+          })
         )
+
+        // TODO: Integrate email notification (e.g. via Resend or SES) to alert
+        // the user that their payment failed and prompt them to update billing info.
         break
       }
 
@@ -243,7 +261,7 @@ async function handleSubscriptionDeleted(
     .single()
 
   if (referral) {
-    await supabase
+    const { error: voidError } = await supabase
       .from('affiliate_referrals')
       .update({
         commission_status: 'voided',
@@ -251,6 +269,10 @@ async function handleSubscriptionDeleted(
       })
       .eq('id', referral.id)
 
-    console.log(`Voided affiliate commission for referral ${referral.id} (subscription cancelled)`)
+    if (voidError) {
+      console.error(`Failed to void affiliate commission for referral ${referral.id}:`, voidError.message)
+    } else {
+      console.log(`Voided affiliate commission for referral ${referral.id} (subscription cancelled)`)
+    }
   }
 }

@@ -52,13 +52,13 @@ function QuizCard({
   return (
     <div className="card p-6 mb-6">
       <div className="flex items-center justify-between mb-4">
-        <span className="text-sm font-medium text-brand-muted">
+        <span className="text-sm font-medium text-muted-foreground">
           Question {index + 1} of {total}
         </span>
         {answered && (
           <span
             className={`text-sm font-semibold ${
-              isCorrect ? 'text-brand-accent' : 'text-brand-error'
+              isCorrect ? 'text-primary' : 'text-destructive'
             }`}
           >
             {isCorrect ? 'Correct!' : 'Incorrect'}
@@ -66,26 +66,26 @@ function QuizCard({
         )}
       </div>
 
-      <p className="text-brand-text font-medium mb-4 text-lg">{quiz.question}</p>
+      <p className="text-foreground font-medium mb-4 text-lg">{quiz.question}</p>
 
       <div className="space-y-3">
         {quiz.options.map((option, i) => {
-          let borderClass = 'border-brand-border hover:border-brand-accent/50'
-          let bgClass = 'bg-brand-bg'
+          let borderClass = 'border-border hover:border-primary/50'
+          let bgClass = 'bg-background'
 
           if (answered) {
             if (i === quiz.correct) {
-              borderClass = 'border-brand-accent'
-              bgClass = 'bg-brand-accent/10'
+              borderClass = 'border-primary'
+              bgClass = 'bg-primary/10'
             } else if (i === selected && !isCorrect) {
-              borderClass = 'border-brand-error'
-              bgClass = 'bg-brand-error/10'
+              borderClass = 'border-destructive'
+              bgClass = 'bg-destructive/10'
             } else {
-              borderClass = 'border-brand-border opacity-50'
+              borderClass = 'border-border opacity-50'
             }
           } else if (i === selected) {
-            borderClass = 'border-brand-accent'
-            bgClass = 'bg-brand-accent/10'
+            borderClass = 'border-primary'
+            bgClass = 'bg-primary/10'
           }
 
           return (
@@ -101,15 +101,15 @@ function QuizCard({
                 <span
                   className={`flex-shrink-0 w-7 h-7 rounded-full border-2 flex items-center justify-center text-sm font-semibold ${
                     answered && i === quiz.correct
-                      ? 'border-brand-accent text-brand-accent'
+                      ? 'border-primary text-primary'
                       : answered && i === selected
-                        ? 'border-brand-error text-brand-error'
-                        : 'border-brand-muted/40 text-brand-muted'
+                        ? 'border-destructive text-destructive'
+                        : 'border-muted-foreground/40 text-muted-foreground'
                   }`}
                 >
                   {String.fromCharCode(65 + i)}
                 </span>
-                <span className="text-brand-text pt-0.5">{option}</span>
+                <span className="text-foreground pt-0.5">{option}</span>
               </div>
             </button>
           )
@@ -120,12 +120,12 @@ function QuizCard({
         <div
           className={`mt-4 p-4 rounded-lg border ${
             isCorrect
-              ? 'bg-brand-accent/10 border-brand-accent/30'
-              : 'bg-brand-error/10 border-brand-error/30'
+              ? 'bg-primary/10 border-primary/30'
+              : 'bg-destructive/10 border-destructive/30'
           }`}
         >
-          <p className="text-brand-muted text-sm leading-relaxed">
-            <span className="font-semibold text-brand-text">Explanation: </span>
+          <p className="text-muted-foreground text-sm leading-relaxed">
+            <span className="font-semibold text-foreground">Explanation: </span>
             {quiz.explanation}
           </p>
         </div>
@@ -150,10 +150,10 @@ function QuizProgressDots({
           key={i}
           className={`w-3 h-3 rounded-full transition-colors ${
             results[i] === true
-              ? 'bg-brand-accent'
+              ? 'bg-primary'
               : results[i] === false
-                ? 'bg-brand-error'
-                : 'bg-brand-border'
+                ? 'bg-destructive'
+                : 'bg-border'
           }`}
         />
       ))}
@@ -189,31 +189,31 @@ function Sidebar({
   const sidebarContent = (
     <div className="flex flex-col h-full">
       {/* Header */}
-      <div className="p-5 border-b border-brand-border">
+      <div className="p-5 border-b border-border">
         <div className="flex items-center justify-between mb-3">
-          <h2 className="text-brand-text font-bold text-lg leading-tight line-clamp-2">
+          <h2 className="text-foreground font-bold text-lg leading-tight line-clamp-2">
             {course.title}
           </h2>
           <button
             onClick={onClose}
-            className="md:hidden p-1 text-brand-muted hover:text-brand-text transition-colors"
+            className="md:hidden p-1 text-muted-foreground hover:text-foreground transition-colors"
           >
             <X size={20} />
           </button>
         </div>
-        <div className="flex items-center gap-2 text-sm text-brand-muted mb-3">
+        <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
           <BookOpen size={14} />
           <span>
             {completedCount} / {course.moduleList.length} modules
           </span>
         </div>
-        <div className="w-full h-2 bg-brand-bg rounded-full overflow-hidden">
+        <div className="w-full h-2 bg-background rounded-full overflow-hidden">
           <div
-            className="h-full bg-brand-accent rounded-full transition-all duration-500"
+            className="h-full bg-primary rounded-full transition-all duration-500"
             style={{ width: `${progressPercent}%` }}
           />
         </div>
-        <span className="text-xs text-brand-muted mt-1 block">
+        <span className="text-xs text-muted-foreground mt-1 block">
           {progressPercent}% complete
         </span>
       </div>
@@ -233,23 +233,23 @@ function Sidebar({
                   }}
                   className={`w-full text-left flex items-start gap-3 px-3 py-3 rounded-lg transition-all duration-200 ${
                     isCurrent
-                      ? 'bg-brand-accent/10 border border-brand-accent/30'
-                      : 'hover:bg-brand-bg border border-transparent'
+                      ? 'bg-primary/10 border border-primary/30'
+                      : 'hover:bg-background border border-transparent'
                   }`}
                 >
                   <span className="flex-shrink-0 mt-0.5">
                     {isCompleted ? (
                       <CheckCircle
                         size={18}
-                        className="text-brand-accent"
+                        className="text-primary"
                       />
                     ) : (
                       <Circle
                         size={18}
                         className={
                           isCurrent
-                            ? 'text-brand-accent'
-                            : 'text-brand-muted/40'
+                            ? 'text-primary'
+                            : 'text-muted-foreground/40'
                         }
                       />
                     )}
@@ -258,15 +258,15 @@ function Sidebar({
                     <span
                       className={`block text-sm font-medium leading-snug ${
                         isCurrent
-                          ? 'text-brand-accent'
+                          ? 'text-primary'
                           : isCompleted
-                            ? 'text-brand-text'
-                            : 'text-brand-muted'
+                            ? 'text-foreground'
+                            : 'text-muted-foreground'
                       }`}
                     >
                       {i + 1}. {mod.title}
                     </span>
-                    <span className="flex items-center gap-1 text-xs text-brand-muted/60 mt-1">
+                    <span className="flex items-center gap-1 text-xs text-muted-foreground/60 mt-1">
                       <Clock size={11} />
                       {mod.duration}
                     </span>
@@ -274,7 +274,7 @@ function Sidebar({
                   {isCurrent && (
                     <ChevronRight
                       size={16}
-                      className="text-brand-accent flex-shrink-0 mt-0.5"
+                      className="text-primary flex-shrink-0 mt-0.5"
                     />
                   )}
                 </button>
@@ -284,12 +284,12 @@ function Sidebar({
         </ul>
 
         {/* Assessment Link */}
-        <div className="mt-4 pt-4 border-t border-brand-border">
+        <div className="mt-4 pt-4 border-t border-border">
           <a
             href={`/learn/${course.id}/assessment`}
             className={`flex items-center gap-3 px-3 py-3 rounded-lg transition-all duration-200 ${
               completedCount === course.moduleList.length
-                ? 'bg-brand-accent/10 border border-brand-accent/30 hover:bg-brand-accent/20'
+                ? 'bg-primary/10 border border-primary/30 hover:bg-primary/20'
                 : 'opacity-50 cursor-not-allowed border border-transparent'
             }`}
             onClick={(e) => {
@@ -300,15 +300,15 @@ function Sidebar({
               size={18}
               className={
                 completedCount === course.moduleList.length
-                  ? 'text-brand-accent'
-                  : 'text-brand-muted/40'
+                  ? 'text-primary'
+                  : 'text-muted-foreground/40'
               }
             />
             <span
               className={`text-sm font-medium ${
                 completedCount === course.moduleList.length
-                  ? 'text-brand-accent'
-                  : 'text-brand-muted'
+                  ? 'text-primary'
+                  : 'text-muted-foreground'
               }`}
             >
               Final Assessment
@@ -322,7 +322,7 @@ function Sidebar({
   return (
     <>
       {/* Desktop sidebar */}
-      <aside className="hidden md:flex md:flex-col w-[280px] flex-shrink-0 bg-brand-card border-r border-brand-border h-screen sticky top-0 overflow-hidden">
+      <aside className="hidden md:flex md:flex-col w-[280px] flex-shrink-0 bg-card border-r border-border h-screen sticky top-0 overflow-hidden">
         {sidebarContent}
       </aside>
 
@@ -336,7 +336,7 @@ function Sidebar({
 
       {/* Mobile drawer */}
       <aside
-        className={`md:hidden fixed inset-y-0 left-0 z-50 w-[280px] bg-brand-card border-r border-brand-border transform transition-transform duration-300 ${
+        className={`md:hidden fixed inset-y-0 left-0 z-50 w-[280px] bg-card border-r border-border transform transition-transform duration-300 ${
           open ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
@@ -562,9 +562,9 @@ export default function CoursePlayerPage() {
 
   if (course && selectedBoard && !matchesBoard(course.board, selectedBoard)) {
     return (
-      <div className="flex min-h-[60vh] flex-col items-center justify-center gap-4 bg-brand-bg text-brand-text">
+      <div className="flex min-h-[60vh] flex-col items-center justify-center gap-4 bg-background text-foreground">
         <h1 className="text-2xl font-bold">Course not available</h1>
-        <p className="text-brand-muted text-center max-w-md">
+        <p className="text-muted-foreground text-center max-w-md">
           This course is for the <strong>{course.board}</strong> exam board.
         </p>
         <Link href="/courses" className="btn-primary text-sm">
@@ -576,11 +576,11 @@ export default function CoursePlayerPage() {
 
   if (hasAccess === false) {
     return (
-      <div className="min-h-screen bg-brand-bg flex items-center justify-center p-4">
+      <div className="min-h-screen bg-background flex items-center justify-center p-4">
         <div className="card max-w-md w-full text-center space-y-4 p-8">
-          <Lock className="w-12 h-12 text-brand-muted mx-auto" />
-          <h2 className="text-xl font-bold text-brand-text">Course Access Required</h2>
-          <p className="text-brand-muted">You need to purchase this course or subscribe to Pro to access this content.</p>
+          <Lock className="w-12 h-12 text-muted-foreground mx-auto" />
+          <h2 className="text-xl font-bold text-foreground">Course Access Required</h2>
+          <p className="text-muted-foreground">You need to purchase this course or subscribe to Pro to access this content.</p>
           <div className="flex gap-3 justify-center">
             <Link href={`/courses/${courseId}`} className="btn-primary">View Course</Link>
             <Link href="/account/billing" className="btn-secondary">Subscribe</Link>
@@ -601,7 +601,7 @@ export default function CoursePlayerPage() {
     quizResults.every((r) => r !== null)
 
   return (
-    <div className="flex min-h-screen bg-brand-bg">
+    <div className="flex min-h-screen bg-background">
       {/* Sidebar */}
       <Sidebar
         course={course}
@@ -615,37 +615,37 @@ export default function CoursePlayerPage() {
       {/* Main Content */}
       <main className="flex-1 flex flex-col min-w-0" ref={contentRef}>
         {/* Top Bar */}
-        <header className="sticky top-0 z-30 bg-brand-bg/95 backdrop-blur-sm border-b border-brand-border">
+        <header className="sticky top-0 z-30 bg-background/95 backdrop-blur-sm border-b border-border">
           <div className="flex items-center gap-3 px-4 py-3 md:px-6">
             <button
               onClick={() => setSidebarOpen(true)}
-              className="md:hidden p-2 text-brand-muted hover:text-brand-text transition-colors"
+              className="md:hidden p-2 text-muted-foreground hover:text-foreground transition-colors"
               aria-label="Open navigation"
             >
               <Menu size={22} />
             </button>
             <div className="flex-1 min-w-0">
-              <div className="flex items-center gap-2 text-sm text-brand-muted mb-1">
+              <div className="flex items-center gap-2 text-sm text-muted-foreground mb-1">
                 <a
                   href={`/courses/${courseId}`}
-                  className="hover:text-brand-accent transition-colors"
+                  className="hover:text-primary transition-colors"
                 >
                   {course.title}
                 </a>
                 <ChevronRight size={14} />
-                <span className="truncate text-brand-text">
+                <span className="truncate text-foreground">
                   Module {moduleIndex + 1}
                 </span>
               </div>
               {/* Progress bar */}
-              <div className="w-full h-1.5 bg-brand-card rounded-full overflow-hidden">
+              <div className="w-full h-1.5 bg-card rounded-full overflow-hidden">
                 <div
-                  className="h-full bg-brand-accent rounded-full transition-all duration-500"
+                  className="h-full bg-primary rounded-full transition-all duration-500"
                   style={{ width: `${progressPercent}%` }}
                 />
               </div>
             </div>
-            <span className="text-xs text-brand-muted whitespace-nowrap hidden sm:block">
+            <span className="text-xs text-muted-foreground whitespace-nowrap hidden sm:block">
               {completedCount}/{course.moduleList.length} complete
             </span>
           </div>
@@ -657,21 +657,21 @@ export default function CoursePlayerPage() {
             {/* Module Header */}
             <div className="mb-8">
               <div className="flex items-center gap-3 mb-3">
-                <span className="text-sm font-medium text-brand-accent">
+                <span className="text-sm font-medium text-primary">
                   Module {moduleIndex + 1} of {course.moduleList.length}
                 </span>
-                <span className="flex items-center gap-1 text-sm text-brand-muted">
+                <span className="flex items-center gap-1 text-sm text-muted-foreground">
                   <Clock size={14} />
                   {currentModule.duration}
                 </span>
                 {moduleCompleted && (
-                  <span className="flex items-center gap-1 text-sm text-brand-accent">
+                  <span className="flex items-center gap-1 text-sm text-primary">
                     <CheckCircle size={14} />
                     Completed
                   </span>
                 )}
               </div>
-              <h1 className="text-3xl font-bold text-brand-text">
+              <h1 className="text-3xl font-bold text-foreground">
                 {currentModule.title}
               </h1>
             </div>
@@ -684,11 +684,11 @@ export default function CoursePlayerPage() {
 
             {/* Quiz Section */}
             {currentModule.quiz.length > 0 && (
-              <section className="mt-12 pt-8 border-t border-brand-border">
-                <h2 className="text-2xl font-bold text-brand-text mb-2">
+              <section className="mt-12 pt-8 border-t border-border">
+                <h2 className="text-2xl font-bold text-foreground mb-2">
                   Knowledge Check
                 </h2>
-                <p className="text-brand-muted mb-6">
+                <p className="text-muted-foreground mb-6">
                   Test your understanding of this module.
                 </p>
 
@@ -709,10 +709,10 @@ export default function CoursePlayerPage() {
 
                 {allQuizAnswered && (
                   <div className="card p-6 text-center">
-                    <div className="text-4xl font-bold text-brand-text mb-2">
+                    <div className="text-4xl font-bold text-foreground mb-2">
                       {quizScore}/{currentModule.quiz.length}
                     </div>
-                    <p className="text-brand-muted">
+                    <p className="text-muted-foreground">
                       {quizScore === currentModule.quiz.length
                         ? 'Perfect score! Excellent work.'
                         : quizScore >= currentModule.quiz.length * 0.7
@@ -757,15 +757,15 @@ export default function CoursePlayerPage() {
             )}
 
             {moduleCompleted && (
-              <div className="mt-8 card p-6 text-center border-brand-accent/30">
+              <div className="mt-8 card p-6 text-center border-primary/30">
                 <CheckCircle
                   size={32}
-                  className="text-brand-accent mx-auto mb-2"
+                  className="text-primary mx-auto mb-2"
                 />
-                <p className="text-brand-text font-semibold">
+                <p className="text-foreground font-semibold">
                   Module Completed
                 </p>
-                <p className="text-brand-muted text-sm mt-1">
+                <p className="text-muted-foreground text-sm mt-1">
                   Your progress has been saved.
                 </p>
               </div>
@@ -773,11 +773,11 @@ export default function CoursePlayerPage() {
 
             {/* Preview CTA — shown on free preview modules for non-subscribed users */}
             {isPreviewModule && (!user || (profile?.subscription_status !== 'pro')) && (
-              <div className="mt-10 rounded-xl border border-brand-accent/30 bg-brand-accent/5 p-6 sm:p-8 text-center">
-                <h3 className="text-xl font-bold text-brand-text mb-2">
+              <div className="mt-10 rounded-xl border border-primary/30 bg-primary/5 p-6 sm:p-8 text-center">
+                <h3 className="text-xl font-bold text-foreground mb-2">
                   Enjoying this? Subscribe for full access — first month free!
                 </h3>
-                <p className="text-brand-muted mb-5 max-w-lg mx-auto">
+                <p className="text-muted-foreground mb-5 max-w-lg mx-auto">
                   Unlock all {course.moduleList.length} modules in this course, plus every course on the platform.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -792,7 +792,7 @@ export default function CoursePlayerPage() {
             )}
 
             {/* Navigation Buttons */}
-            <div className="flex items-center justify-between mt-8 pt-6 border-t border-brand-border pb-8">
+            <div className="flex items-center justify-between mt-8 pt-6 border-t border-border pb-8">
               {prevModule ? (
                 <button
                   onClick={() =>

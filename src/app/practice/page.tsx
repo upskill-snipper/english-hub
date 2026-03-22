@@ -21,9 +21,18 @@ import { useAuthStore } from '@/store/auth-store'
 import { useBoardStore } from '@/store/board-store'
 import { matchesPracticeBoard } from '@/lib/board-filter'
 import { practiceQuestions, type PracticeQuestion } from '@/data/practice-data'
-import { formatTime } from '@/lib/utils'
+import { cn, formatTime } from '@/lib/utils'
 import { getGuideByBoard } from '@/data/exam-guides'
 import Link from 'next/link'
+
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { Separator } from '@/components/ui/separator'
+import { Label } from '@/components/ui/label'
+import { Textarea } from '@/components/ui/textarea'
 
 // ─── Constants ──────────────────────────────────────────────────────────────
 
@@ -203,12 +212,12 @@ export default function PracticePage() {
   return (
     <main className="min-h-screen pb-20">
       {/* Header */}
-      <div className="border-b border-brand-border bg-brand-card/50">
+      <div className="border-b border-border bg-card/50">
         <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
-          <h1 className="text-3xl font-bold text-brand-text sm:text-4xl">
+          <h1 className="text-3xl font-bold text-foreground sm:text-4xl">
             Practice Mode
           </h1>
-          <p className="mt-2 text-brand-muted">
+          <p className="mt-2 text-muted-foreground">
             Sharpen your skills with exam-style questions and model answers.
           </p>
         </div>
@@ -216,112 +225,111 @@ export default function PracticePage() {
 
       {/* Subscription CTA */}
       {!user && (
-        <div className="border-b border-brand-border">
+        <div className="border-b border-border">
           <div className="mx-auto max-w-5xl px-4 py-6 sm:px-6">
-            <div className="rounded-2xl border border-brand-accent/30 bg-brand-accent/10 p-6 sm:p-8">
-              <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
+            <Card className="border-primary/30 bg-primary/10">
+              <CardContent className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
                 <div>
-                  <p className="text-lg font-bold text-brand-text sm:text-xl">
+                  <p className="text-lg font-bold text-foreground sm:text-xl">
                     Unlock 40+ exam-style practice questions with detailed model answers and examiner tips
                   </p>
-                  <p className="mt-1 text-brand-muted">
-                    <span className="font-semibold text-brand-accent">First month FREE!</span>
+                  <p className="mt-1 text-muted-foreground">
+                    <span className="font-semibold text-primary">First month FREE!</span>
                     {' '}Then {PRICING_DISPLAY.monthly} on a rolling monthly contract. Cancel anytime.
                   </p>
-                  <p className="mt-1 text-sm text-brand-muted">
+                  <p className="mt-1 text-sm text-muted-foreground">
                     Annual subscription also available &mdash; save {PRICING.ANNUAL_SAVE_PERCENT}%.
                   </p>
                 </div>
-                <Link
-                  href="/auth/register"
-                  className="inline-flex shrink-0 items-center rounded-lg bg-brand-accent px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-accent/90"
-                >
+                <Button render={<Link href="/auth/register" />} size="lg" className="shrink-0 px-6 py-3">
                   Start Free Trial
-                </Link>
-              </div>
-            </div>
+                </Button>
+              </CardContent>
+            </Card>
           </div>
         </div>
       )}
 
       <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
         {/* ── Filter Bar ──────────────────────────────────────────────── */}
-        <div className="card mb-8 p-4 sm:p-6">
-          <div className="mb-3 flex items-center gap-2 text-sm font-medium text-brand-muted">
-            <Filter className="h-4 w-4" />
-            Filters
-          </div>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {/* Question Type */}
-            <div>
-              <label htmlFor="question-type-filter" className="label">Question Type</label>
-              <select
-                id="question-type-filter"
-                value={questionType}
-                onChange={(e) => setQuestionType(e.target.value)}
-                className="input-field"
-              >
-                {questionTypes.map((t) => (
-                  <option key={t} value={t}>
-                    {t}
-                  </option>
-                ))}
-              </select>
+        <Card className="mb-8">
+          <CardContent>
+            <div className="mb-3 flex items-center gap-2 text-sm font-medium text-muted-foreground">
+              <Filter className="h-4 w-4" />
+              Filters
             </div>
-            {/* Difficulty */}
-            <div>
-              <label htmlFor="difficulty-filter" className="label">Difficulty</label>
-              <select
-                id="difficulty-filter"
-                value={difficulty}
-                onChange={(e) => setDifficulty(e.target.value)}
-                className="input-field"
-              >
-                {DIFFICULTIES.map((d) => (
-                  <option key={d} value={d}>
-                    {d}
-                  </option>
-                ))}
-              </select>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {/* Question Type */}
+              <div className="space-y-1.5">
+                <Label htmlFor="question-type-filter">Question Type</Label>
+                <Select value={questionType} onValueChange={(v) => v && setQuestionType(v)}>
+                  <SelectTrigger id="question-type-filter" className="w-full">
+                    <SelectValue placeholder="Select type" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {questionTypes.map((t) => (
+                      <SelectItem key={t} value={t}>
+                        {t}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+              {/* Difficulty */}
+              <div className="space-y-1.5">
+                <Label htmlFor="difficulty-filter">Difficulty</Label>
+                <Select value={difficulty} onValueChange={(v) => v && setDifficulty(v)}>
+                  <SelectTrigger id="difficulty-filter" className="w-full">
+                    <SelectValue placeholder="Select difficulty" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {DIFFICULTIES.map((d) => (
+                      <SelectItem key={d} value={d}>
+                        {d}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
             </div>
-          </div>
-          <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
-            <div className="flex items-center gap-3">
-              <span className="text-sm text-brand-muted">
-                {filtered.length} question{filtered.length !== 1 ? 's' : ''} available
-              </span>
-              {selectedBoard && (
-                <Link
-                  href={`/exam-guide/${selectedBoard.toLowerCase()}`}
-                  className="text-sm font-medium text-brand-accent hover:underline"
-                >
-                  📖 View your board&apos;s full exam guide →
-                </Link>
-              )}
-            </div>
-            <div className="flex items-center gap-3">
-              {/* Timer toggle */}
-              <button
-                onClick={() => setTimedMode(!timedMode)}
-                className={`btn-ghost gap-2 text-sm ${
-                  timedMode ? 'text-brand-accent' : ''
-                }`}
-              >
-                {timedMode ? (
-                  <Clock className="h-4 w-4" />
-                ) : (
-                  <ClockFading className="h-4 w-4" />
+            <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
+              <div className="flex items-center gap-3">
+                <span className="text-sm text-muted-foreground">
+                  {filtered.length} question{filtered.length !== 1 ? 's' : ''} available
+                </span>
+                {selectedBoard && (
+                  <Link
+                    href={`/exam-guide/${selectedBoard.toLowerCase()}`}
+                    className="text-sm font-medium text-primary hover:underline"
+                  >
+                    View your board&apos;s full exam guide
+                  </Link>
                 )}
-                {timedMode ? 'Timed' : 'Untimed'}
-              </button>
-              {/* New random question */}
-              <button onClick={handleNext} className="btn-ghost gap-2 text-sm">
-                <Shuffle className="h-4 w-4" />
-                Random Question
-              </button>
+              </div>
+              <div className="flex items-center gap-3">
+                {/* Timer toggle */}
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setTimedMode(!timedMode)}
+                  className={cn(timedMode && 'text-primary')}
+                >
+                  {timedMode ? (
+                    <Clock className="h-4 w-4" />
+                  ) : (
+                    <ClockFading className="h-4 w-4" />
+                  )}
+                  {timedMode ? 'Timed' : 'Untimed'}
+                </Button>
+                {/* New random question */}
+                <Button variant="ghost" size="sm" onClick={handleNext}>
+                  <Shuffle className="h-4 w-4" />
+                  Random Question
+                </Button>
+              </div>
             </div>
-          </div>
-        </div>
+          </CardContent>
+        </Card>
 
         {/* ── Question Area ───────────────────────────────────────────── */}
         {currentQuestion ? (
@@ -329,40 +337,42 @@ export default function PracticePage() {
             {/* Timer display */}
             {timedMode && (
               <div className="flex items-center justify-center">
-                <div className="card inline-flex items-center gap-2 px-5 py-2.5 text-lg font-mono font-semibold text-brand-accent">
-                  <Clock className="h-5 w-5" />
-                  {formatTime(elapsed)}
-                </div>
+                <Card className="inline-flex flex-row items-center gap-2 px-5 py-2.5">
+                  <Clock className="h-5 w-5 text-primary" />
+                  <span className="font-mono text-lg font-semibold text-primary">
+                    {formatTime(elapsed)}
+                  </span>
+                </Card>
               </div>
             )}
 
             {/* Meta badges */}
             <div className="flex flex-wrap items-center gap-2">
-              <span className="rounded-full bg-brand-accent/15 px-3 py-1 text-xs font-medium text-brand-accent">
+              <Badge className="bg-primary/15 text-primary">
                 {currentQuestion.board}
-              </span>
-              <span className="rounded-full bg-brand-blue/15 px-3 py-1 text-xs font-medium text-brand-blue">
+              </Badge>
+              <Badge variant="secondary">
                 Paper {currentQuestion.paper}
-              </span>
-              <span className="rounded-full bg-brand-warning/15 px-3 py-1 text-xs font-medium text-brand-warning">
+              </Badge>
+              <Badge className="bg-amber-500/15 text-amber-600 dark:text-amber-400">
                 {currentQuestion.questionType}
-              </span>
-              <span className="rounded-full bg-brand-border px-3 py-1 text-xs font-medium text-brand-muted">
+              </Badge>
+              <Badge variant="outline">
                 {currentQuestion.difficulty}
-              </span>
+              </Badge>
             </div>
 
             {/* Extract */}
             {currentQuestion.extract && (
-              <div className="card overflow-hidden">
-                <div className="flex items-center gap-2 border-b border-brand-border px-5 py-3">
-                  <BookOpen className="h-4 w-4 text-brand-accent" />
-                  <span className="text-sm font-medium text-brand-text">
+              <Card>
+                <CardHeader className="border-b">
+                  <CardTitle className="flex items-center gap-2">
+                    <BookOpen className="h-4 w-4 text-primary" />
                     Source Text
-                  </span>
-                </div>
-                <div className="px-5 py-5">
-                  <div className="border-l-4 border-brand-accent/40 pl-5 text-[0.95rem] italic leading-relaxed text-brand-text/80">
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="border-l-4 border-primary/40 pl-5 text-[0.95rem] italic leading-relaxed text-foreground/80">
                     {currentQuestion.extract.split('\n').map((para, i) => (
                       <p key={i} className={i > 0 ? 'mt-4' : ''}>
                         {para}
@@ -370,30 +380,32 @@ export default function PracticePage() {
                     ))}
                   </div>
                   {currentQuestion.extractSource && (
-                    <p className="mt-4 text-sm font-medium text-brand-muted">
+                    <p className="mt-4 text-sm font-medium text-muted-foreground">
                       — {currentQuestion.extractSource}
                     </p>
                   )}
-                </div>
-              </div>
+                </CardContent>
+              </Card>
             )}
 
             {/* Question */}
-            <div className="card p-5">
-              <h2 className="text-lg font-semibold text-brand-text">
-                {currentQuestion.question}
-              </h2>
-            </div>
+            <Card>
+              <CardContent>
+                <h2 className="text-lg font-semibold text-foreground">
+                  {currentQuestion.question}
+                </h2>
+              </CardContent>
+            </Card>
 
             {/* Board Examiner Tip Callout */}
             {contextualTip && (
-              <div className="flex items-start gap-3 rounded-lg border border-brand-accent/25 bg-brand-accent/5 px-4 py-3">
-                <Lightbulb className="mt-0.5 h-4 w-4 shrink-0 text-brand-accent" />
+              <div className="flex items-start gap-3 rounded-lg border border-primary/25 bg-primary/5 px-4 py-3">
+                <Lightbulb className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                 <div className="text-sm">
-                  <span className="font-semibold text-brand-accent">Examiner Tip</span>
-                  <span className="mx-1.5 text-brand-border">·</span>
-                  <span className="text-xs text-brand-muted">{contextualTip.label}</span>
-                  <p className="mt-1 leading-relaxed text-brand-muted">
+                  <span className="font-semibold text-primary">Examiner Tip</span>
+                  <span className="mx-1.5 text-border">·</span>
+                  <span className="text-xs text-muted-foreground">{contextualTip.label}</span>
+                  <p className="mt-1 leading-relaxed text-muted-foreground">
                     {contextualTip.tip}
                   </p>
                 </div>
@@ -401,160 +413,164 @@ export default function PracticePage() {
             )}
 
             {/* Answer textarea */}
-            <div>
-              <label htmlFor="answer-textarea" className="label">Your Answer</label>
-              <textarea
+            <div className="space-y-1.5">
+              <Label htmlFor="answer-textarea">Your Answer</Label>
+              <Textarea
                 id="answer-textarea"
                 value={answer}
                 onChange={(e) => setAnswer(e.target.value)}
                 placeholder="Write your answer here..."
                 rows={10}
-                className="input-field resize-y text-base leading-relaxed"
+                className="resize-y text-base leading-relaxed"
               />
             </div>
 
             {/* Show Model Answer button */}
             {!showModel && (
-              <button
-                onClick={() => setShowModel(true)}
-                className="btn-primary gap-2"
-              >
+              <Button onClick={() => setShowModel(true)}>
                 <Eye className="h-4 w-4" />
                 Show Model Answer
-              </button>
+              </Button>
             )}
 
             {/* ── Model Answers ────────────────────────────────────────── */}
             {showModel && (
               <div className="space-y-6">
                 {/* Grade tabs */}
-                <div className="card overflow-hidden">
-                  <div className="flex border-b border-brand-border">
+                <Card>
+                  <Tabs value={activeGradeTab} onValueChange={setActiveGradeTab}>
+                    <CardHeader className="border-b pb-0">
+                      <TabsList className="w-full">
+                        {GRADE_TABS.map((tab) => (
+                          <TabsTrigger key={tab} value={tab}>
+                            {tab}
+                          </TabsTrigger>
+                        ))}
+                      </TabsList>
+                    </CardHeader>
                     {GRADE_TABS.map((tab) => (
-                      <button
-                        key={tab}
-                        onClick={() => setActiveGradeTab(tab)}
-                        className={`flex-1 px-4 py-3 text-sm font-medium transition-colors ${
-                          activeGradeTab === tab
-                            ? 'border-b-2 border-brand-accent bg-brand-accent/10 text-brand-accent'
-                            : 'text-brand-muted hover:bg-brand-card hover:text-brand-text'
-                        }`}
-                      >
-                        {tab}
-                      </button>
+                      <TabsContent key={tab} value={tab}>
+                        <CardContent>
+                          <div className="whitespace-pre-line text-[0.95rem] leading-relaxed text-muted-foreground">
+                            {currentQuestion.modelAnswers[tab] ||
+                              'No model answer available for this grade.'}
+                          </div>
+                        </CardContent>
+                      </TabsContent>
                     ))}
-                  </div>
-                  <div className="p-5">
-                    <div className="whitespace-pre-line text-[0.95rem] leading-relaxed text-brand-muted">
-                      {currentQuestion.modelAnswers[activeGradeTab] ||
-                        'No model answer available for this grade.'}
-                    </div>
-                  </div>
-                </div>
+                  </Tabs>
+                </Card>
 
                 {/* Mark Scheme */}
                 {currentQuestion.markScheme &&
                   currentQuestion.markScheme.length > 0 && (
-                    <div className="card p-5">
-                      <div className="mb-3 flex items-center gap-2 text-sm font-semibold text-brand-text">
-                        <CheckCircle2 className="h-4 w-4 text-brand-accent" />
-                        Mark Scheme Points
-                      </div>
-                      <ul className="space-y-2">
-                        {currentQuestion.markScheme.map((point, i) => (
-                          <li
-                            key={i}
-                            className="flex items-start gap-2 text-sm text-brand-muted"
-                          >
-                            <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-accent/15 text-xs font-semibold text-brand-accent">
-                              {i + 1}
-                            </span>
-                            {point}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                    <Card>
+                      <CardContent>
+                        <div className="mb-3 flex items-center gap-2 text-sm font-semibold text-foreground">
+                          <CheckCircle2 className="h-4 w-4 text-primary" />
+                          Mark Scheme Points
+                        </div>
+                        <ul className="space-y-2">
+                          {currentQuestion.markScheme.map((point, i) => (
+                            <li
+                              key={i}
+                              className="flex items-start gap-2 text-sm text-muted-foreground"
+                            >
+                              <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/15 text-xs font-semibold text-primary">
+                                {i + 1}
+                              </span>
+                              {point}
+                            </li>
+                          ))}
+                        </ul>
+                      </CardContent>
+                    </Card>
                   )}
 
                 {/* Examiner Tips */}
                 {currentQuestion.examinerTips &&
                   currentQuestion.examinerTips.length > 0 && (
-                    <div className="card border-brand-warning/30 p-5">
-                      <div className="mb-3 flex items-center gap-2 text-sm font-semibold text-brand-text">
-                        <Lightbulb className="h-4 w-4 text-brand-warning" />
-                        Examiner Tips
-                      </div>
-                      <ul className="space-y-2">
-                        {currentQuestion.examinerTips.map((tip, i) => (
-                          <li
-                            key={i}
-                            className="flex items-start gap-2 text-sm text-brand-muted"
-                          >
-                            <ChevronRight className="mt-0.5 h-4 w-4 shrink-0 text-brand-warning" />
-                            {tip}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                    <Card className="border-amber-500/30">
+                      <CardContent>
+                        <div className="mb-3 flex items-center gap-2 text-sm font-semibold text-foreground">
+                          <Lightbulb className="h-4 w-4 text-amber-500" />
+                          Examiner Tips
+                        </div>
+                        <ul className="space-y-2">
+                          {currentQuestion.examinerTips.map((tip, i) => (
+                            <li
+                              key={i}
+                              className="flex items-start gap-2 text-sm text-muted-foreground"
+                            >
+                              <ChevronRight className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" />
+                              {tip}
+                            </li>
+                          ))}
+                        </ul>
+                      </CardContent>
+                    </Card>
                   )}
 
                 {/* Self-rating */}
-                <div className="card p-5">
-                  <p className="mb-3 text-sm font-semibold text-brand-text">
-                    How did you do? Rate yourself:
-                  </p>
-                  <div className="flex items-center gap-1">
-                    {[1, 2, 3, 4, 5].map((s) => (
-                      <button
-                        key={s}
-                        onClick={() => setRating(s)}
-                        onMouseEnter={() => setHoverRating(s)}
-                        onMouseLeave={() => setHoverRating(0)}
-                        aria-label={`Rate ${s} out of 5`}
-                        className="p-1 transition-transform hover:scale-110"
-                      >
-                        <Star
-                          className={`h-7 w-7 ${
-                            s <= (hoverRating || rating)
-                              ? 'fill-brand-warning text-brand-warning'
-                              : 'text-brand-border'
-                          }`}
-                        />
-                      </button>
-                    ))}
-                    {rating > 0 && (
-                      <span className="ml-3 text-sm text-brand-muted">
-                        {rating}/5
-                      </span>
-                    )}
-                  </div>
-                </div>
+                <Card>
+                  <CardContent>
+                    <p className="mb-3 text-sm font-semibold text-foreground">
+                      How did you do? Rate yourself:
+                    </p>
+                    <div className="flex items-center gap-1">
+                      {[1, 2, 3, 4, 5].map((s) => (
+                        <button
+                          key={s}
+                          onClick={() => setRating(s)}
+                          onMouseEnter={() => setHoverRating(s)}
+                          onMouseLeave={() => setHoverRating(0)}
+                          aria-label={`Rate ${s} out of 5`}
+                          className="p-1 transition-transform hover:scale-110"
+                        >
+                          <Star
+                            className={cn(
+                              'h-7 w-7',
+                              s <= (hoverRating || rating)
+                                ? 'fill-amber-500 text-amber-500'
+                                : 'text-border'
+                            )}
+                          />
+                        </button>
+                      ))}
+                      {rating > 0 && (
+                        <span className="ml-3 text-sm text-muted-foreground">
+                          {rating}/5
+                        </span>
+                      )}
+                    </div>
+                  </CardContent>
+                </Card>
 
                 {/* Save & Next */}
                 <div className="flex flex-wrap items-center gap-3">
                   {user && (
-                    <button
+                    <Button
+                      variant="secondary"
                       onClick={saveSession}
                       disabled={saving || saved}
-                      className="btn-secondary gap-2"
                     >
                       {saving ? (
                         <Loader2 className="h-4 w-4 animate-spin" />
                       ) : saved ? (
-                        <CheckCircle2 className="h-4 w-4 text-brand-accent" />
+                        <CheckCircle2 className="h-4 w-4 text-primary" />
                       ) : (
                         <Save className="h-4 w-4" />
                       )}
                       {saved ? 'Saved' : saving ? 'Saving...' : 'Save Session'}
-                    </button>
+                    </Button>
                   )}
-                  <button onClick={handleNext} className="btn-primary gap-2">
+                  <Button onClick={handleNext}>
                     Next Question
                     <ChevronRight className="h-4 w-4" />
-                  </button>
+                  </Button>
                 </div>
                 {saveError && (
-                  <div className="bg-red-500/10 border border-red-500/20 rounded-lg p-3 text-red-400 text-sm mt-2">
+                  <div className="mt-2 rounded-lg border border-destructive/20 bg-destructive/10 p-3 text-sm text-destructive">
                     {saveError}
                   </div>
                 )}
@@ -563,15 +579,15 @@ export default function PracticePage() {
           </div>
         ) : (
           /* No questions match */
-          <div className="card flex flex-col items-center justify-center p-12 text-center">
-            <BookOpen className="mb-4 h-12 w-12 text-brand-border" />
-            <h2 className="text-lg font-semibold text-brand-text">
+          <Card className="flex flex-col items-center justify-center p-12 text-center">
+            <BookOpen className="mb-4 h-12 w-12 text-border" />
+            <h2 className="text-lg font-semibold text-foreground">
               No questions found
             </h2>
-            <p className="mt-1 text-sm text-brand-muted">
+            <p className="mt-1 text-sm text-muted-foreground">
               Try adjusting your filters to see available questions.
             </p>
-          </div>
+          </Card>
         )}
       </div>
     </main>

@@ -69,9 +69,9 @@ export default function CourseDetailPage() {
   // Board mismatch — course belongs to a different exam board
   if (course && selectedBoard && !matchesBoard(course.board, selectedBoard)) {
     return (
-      <div className="flex min-h-[60vh] flex-col items-center justify-center gap-4 bg-brand-bg text-brand-text">
+      <div className="flex min-h-[60vh] flex-col items-center justify-center gap-4 bg-background text-foreground">
         <h1 className="text-2xl font-bold">Course not available</h1>
-        <p className="text-brand-muted text-center max-w-md">
+        <p className="text-muted-foreground text-center max-w-md">
           This course is for the <strong>{course.board}</strong> exam board. You currently have <strong>{selectedBoard}</strong> selected.
         </p>
         <Link href="/courses" className="btn-primary text-sm">
@@ -88,13 +88,13 @@ export default function CourseDetailPage() {
     : '/account/billing'
 
   return (
-    <div className="min-h-screen bg-brand-bg">
+    <div className="min-h-screen bg-background">
       {/* ============== HEADER ============== */}
-      <section className="border-b border-brand-border">
+      <section className="border-b border-border">
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
           <Link
             href="/courses"
-            className="mb-6 inline-flex items-center gap-1.5 text-sm text-brand-muted hover:text-brand-accent transition-colors"
+            className="mb-6 inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-primary transition-colors"
           >
             <ArrowLeft className="h-4 w-4" />
             All courses
@@ -113,7 +113,7 @@ export default function CourseDetailPage() {
                 >
                   {course.tier}
                 </span>
-                <span className="inline-flex items-center rounded-md bg-brand-card px-2.5 py-0.5 text-xs font-medium text-brand-muted border border-brand-border">
+                <span className="inline-flex items-center rounded-md bg-card px-2.5 py-0.5 text-xs font-medium text-muted-foreground border border-border">
                   {course.level}
                 </span>
                 {course.board && (
@@ -123,23 +123,23 @@ export default function CourseDetailPage() {
                 )}
               </div>
 
-              <h1 className="text-3xl font-bold tracking-tight text-brand-text sm:text-4xl">
+              <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
                 {course.title}
               </h1>
-              <p className="mt-2 text-lg text-brand-muted">{course.subtitle}</p>
+              <p className="mt-2 text-lg text-muted-foreground">{course.subtitle}</p>
 
               {/* Stats row */}
-              <div className="mt-6 flex flex-wrap gap-5 text-sm text-brand-muted">
+              <div className="mt-6 flex flex-wrap gap-5 text-sm text-muted-foreground">
                 <span className="inline-flex items-center gap-1.5">
-                  <Clock className="h-4 w-4 text-brand-accent" />
+                  <Clock className="h-4 w-4 text-primary" />
                   {course.duration}
                 </span>
                 <span className="inline-flex items-center gap-1.5">
-                  <BookOpen className="h-4 w-4 text-brand-accent" />
+                  <BookOpen className="h-4 w-4 text-primary" />
                   {course.moduleList.length} modules
                 </span>
                 <span className="inline-flex items-center gap-1.5">
-                  <GraduationCap className="h-4 w-4 text-brand-accent" />
+                  <GraduationCap className="h-4 w-4 text-primary" />
                   {course.level}
                 </span>
               </div>
@@ -168,17 +168,17 @@ export default function CourseDetailPage() {
           <div className="flex-1">
             {/* Description */}
             <div className="card p-6 sm:p-8">
-              <h2 className="mb-4 text-xl font-bold text-brand-text">
+              <h2 className="mb-4 text-xl font-bold text-foreground">
                 About This Course
               </h2>
-              <p className="leading-relaxed text-brand-muted">
+              <p className="leading-relaxed text-muted-foreground">
                 {course.description}
               </p>
             </div>
 
             {/* Module list */}
             <div className="card mt-6 p-6 sm:p-8">
-              <h2 className="mb-6 text-xl font-bold text-brand-text">
+              <h2 className="mb-6 text-xl font-bold text-foreground">
                 What You&apos;ll Learn
               </h2>
 
@@ -192,18 +192,16 @@ export default function CourseDetailPage() {
                       key={mod.id}
                       className={`group flex items-center gap-4 rounded-lg border px-4 py-3.5 transition-colors duration-200 ${
                         locked
-                          ? 'border-brand-border bg-brand-bg/50'
-                          : 'border-brand-border hover:border-brand-accent/30 hover:bg-brand-accent/5'
+                          ? 'border-border bg-background/50'
+                          : 'border-border hover:border-primary/30 hover:bg-primary/5'
                       }`}
                     >
                       {/* Number circle */}
                       <span
-                        className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xs font-bold"
-                        style={{
-                          backgroundColor: locked
-                            ? '#1a2840'
-                            : `${course.color}20`,
-                          color: locked ? '#94a3b8' : course.color,
+                        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xs font-bold ${locked ? 'bg-muted text-muted-foreground' : ''}`}
+                        style={locked ? undefined : {
+                          backgroundColor: `${course.color}20`,
+                          color: course.color,
                         }}
                       >
                         {idx + 1}
@@ -212,25 +210,25 @@ export default function CourseDetailPage() {
                       {/* Details */}
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2">
-                          <span className="truncate text-sm font-medium text-brand-text">
+                          <span className="truncate text-sm font-medium text-foreground">
                             {mod.title}
                           </span>
                           {isFreePreview && (
-                            <span className="shrink-0 rounded bg-brand-accent/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-brand-accent">
+                            <span className="shrink-0 rounded bg-primary/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-primary">
                               Free Preview
                             </span>
                           )}
                         </div>
-                        <span className="mt-0.5 block text-xs text-brand-muted">
+                        <span className="mt-0.5 block text-xs text-muted-foreground">
                           {mod.duration}
                         </span>
                       </div>
 
                       {/* Icon */}
                       {locked ? (
-                        <Lock className="h-4 w-4 shrink-0 text-brand-muted/50" />
+                        <Lock className="h-4 w-4 shrink-0 text-muted-foreground/50" />
                       ) : (
-                        <Play className="h-4 w-4 shrink-0 text-brand-accent opacity-0 transition-opacity group-hover:opacity-100" />
+                        <Play className="h-4 w-4 shrink-0 text-primary opacity-0 transition-opacity group-hover:opacity-100" />
                       )}
                     </li>
                   )
@@ -257,17 +255,17 @@ export default function CourseDetailPage() {
       </div>
 
       {/* ============== MOBILE STICKY BAR ============== */}
-      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-brand-border bg-brand-bg/95 backdrop-blur p-4 lg:hidden">
+      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-border bg-background/95 backdrop-blur p-4 lg:hidden">
         <div className="mx-auto flex max-w-lg items-center justify-between gap-4">
           <div>
-            <span className="text-sm font-medium text-brand-text">
+            <span className="text-sm font-medium text-foreground">
               First month free!
             </span>
-            <span className="ml-1.5 text-xs text-brand-muted">Then {PRICING.CURRENCY}{PRICING.MONTHLY}/mo</span>
+            <span className="ml-1.5 text-xs text-muted-foreground">Then {PRICING.CURRENCY}{PRICING.MONTHLY}/mo</span>
           </div>
 
           {loading ? (
-            <div className="h-11 w-36 animate-pulse rounded-lg bg-brand-card" />
+            <div className="h-11 w-36 animate-pulse rounded-lg bg-card" />
           ) : (
             <Link href={ctaHref} className="btn-primary text-sm">
               {ctaLabel}
@@ -309,17 +307,17 @@ function SubscriptionCard({
     <div className="card w-full overflow-hidden lg:w-80">
       <div className="p-6">
         <div className="mb-2">
-          <span className="text-lg font-bold text-brand-accent">
+          <span className="text-lg font-bold text-primary">
             First month free!
           </span>
         </div>
         <div className="mb-6">
-          <span className="text-3xl font-bold text-brand-text">{PRICING.CURRENCY}{PRICING.MONTHLY}</span>
-          <span className="ml-2 text-sm text-brand-muted">/month after trial</span>
+          <span className="text-3xl font-bold text-foreground">{PRICING.CURRENCY}{PRICING.MONTHLY}</span>
+          <span className="ml-2 text-sm text-muted-foreground">/month after trial</span>
         </div>
 
         {loading ? (
-          <div className="h-12 w-full animate-pulse rounded-lg bg-brand-bg" />
+          <div className="h-12 w-full animate-pulse rounded-lg bg-background" />
         ) : (
           <Link
             href={ctaHref}
@@ -329,39 +327,39 @@ function SubscriptionCard({
           </Link>
         )}
 
-        <p className="mt-3 text-center text-xs text-brand-muted">
+        <p className="mt-3 text-center text-xs text-muted-foreground">
           Annual subscription also available — {PRICING.CURRENCY}{PRICING.ANNUAL}/year (save {PRICING.ANNUAL_SAVE_PERCENT}%)
         </p>
         {!hasAccess && (
-          <p className="mt-1 text-center text-xs text-brand-muted">
+          <p className="mt-1 text-center text-xs text-muted-foreground">
             Cancel anytime. All courses included.
           </p>
         )}
       </div>
 
-      <div className="border-t border-brand-border px-6 py-4">
-        <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-brand-muted">
+      <div className="border-t border-border px-6 py-4">
+        <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
           This course includes
         </h4>
-        <ul className="space-y-2.5 text-sm text-brand-muted">
+        <ul className="space-y-2.5 text-sm text-muted-foreground">
           <li className="flex items-center gap-2.5">
-            <CheckCircle className="h-4 w-4 text-brand-accent" />
+            <CheckCircle className="h-4 w-4 text-primary" />
             {moduleCount} structured modules
           </li>
           <li className="flex items-center gap-2.5">
-            <CheckCircle className="h-4 w-4 text-brand-accent" />
+            <CheckCircle className="h-4 w-4 text-primary" />
             {duration} of content
           </li>
           <li className="flex items-center gap-2.5">
-            <CheckCircle className="h-4 w-4 text-brand-accent" />
+            <CheckCircle className="h-4 w-4 text-primary" />
             {level} level
           </li>
           <li className="flex items-center gap-2.5">
-            <CheckCircle className="h-4 w-4 text-brand-accent" />
+            <CheckCircle className="h-4 w-4 text-primary" />
             Quizzes & practice questions
           </li>
           <li className="flex items-center gap-2.5">
-            <CheckCircle className="h-4 w-4 text-brand-accent" />
+            <CheckCircle className="h-4 w-4 text-primary" />
             Certificate on completion
           </li>
         </ul>

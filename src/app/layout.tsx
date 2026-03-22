@@ -1,19 +1,19 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter, Geist } from 'next/font/google'
+import localFont from 'next/font/local'
 import Script from 'next/script'
 import { SupabaseProvider } from '@/components/providers/supabase-provider'
+import { TooltipProvider } from '@/components/ui/tooltip'
+import { Toaster } from '@/components/ui/sonner'
 import { Header } from '@/components/layout/header'
 import { BoardSidebar } from '@/components/layout/board-sidebar'
 import { BoardGate } from '@/components/layout/board-gate'
 import './globals.css'
-import { cn } from "@/lib/utils";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
+const monaSans = localFont({
+  src: '../../public/fonts/MonaSansVF.woff2',
+  variable: '--font-mona',
   display: 'swap',
+  weight: '200 900',
 })
 
 export const metadata: Metadata = {
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: '#0a0e1a',
+  themeColor: '#090c14',
   width: 'device-width',
   initialScale: 1,
 }
@@ -48,7 +48,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={cn("font-sans", geist.variable)}>
+    <html lang="en" className={monaSans.variable}>
       <head>
         {process.env.NEXT_PUBLIC_REWARDFUL_KEY && (
           <Script
@@ -58,19 +58,22 @@ export default function RootLayout({
           />
         )}
       </head>
-      <body className="min-h-screen font-sans">
-        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-brand-accent focus:text-white focus:rounded">
+      <body className="min-h-screen font-sans antialiased">
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md">
           Skip to content
         </a>
         <SupabaseProvider>
-          <Header />
-          <BoardGate />
-          <div className="flex flex-col md:flex-row min-h-[calc(100vh-4rem)]">
-            <BoardSidebar />
-            <div id="main-content" className="flex-1 min-w-0">
-              {children}
+          <TooltipProvider>
+            <Header />
+            <BoardGate />
+            <div className="flex flex-col md:flex-row min-h-[calc(100vh-3.5rem)]">
+              <BoardSidebar />
+              <div id="main-content" className="flex-1 min-w-0">
+                {children}
+              </div>
             </div>
-          </div>
+            <Toaster richColors position="bottom-right" />
+          </TooltipProvider>
         </SupabaseProvider>
       </body>
     </html>

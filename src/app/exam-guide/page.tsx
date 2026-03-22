@@ -46,7 +46,7 @@ const BOARD_CARDS = [
     slug: 'aqa',
     color: 'border-blue-500/50',
     hoverColor: 'hover:border-blue-500/80 hover:bg-blue-500/10',
-    activeRing: 'ring-2 ring-blue-500 ring-offset-2 ring-offset-brand-bg',
+    activeRing: 'ring-2 ring-blue-500 ring-offset-2 ring-offset-background',
     accent: 'text-blue-400',
     dot: 'bg-blue-500',
     badge: 'bg-blue-500/15 text-blue-400',
@@ -58,7 +58,7 @@ const BOARD_CARDS = [
     slug: 'edexcel',
     color: 'border-violet-500/50',
     hoverColor: 'hover:border-violet-500/80 hover:bg-violet-500/10',
-    activeRing: 'ring-2 ring-violet-500 ring-offset-2 ring-offset-brand-bg',
+    activeRing: 'ring-2 ring-violet-500 ring-offset-2 ring-offset-background',
     accent: 'text-violet-400',
     dot: 'bg-violet-500',
     badge: 'bg-violet-500/15 text-violet-400',
@@ -70,7 +70,7 @@ const BOARD_CARDS = [
     slug: 'ocr',
     color: 'border-orange-500/50',
     hoverColor: 'hover:border-orange-500/80 hover:bg-orange-500/10',
-    activeRing: 'ring-2 ring-orange-500 ring-offset-2 ring-offset-brand-bg',
+    activeRing: 'ring-2 ring-orange-500 ring-offset-2 ring-offset-background',
     accent: 'text-orange-400',
     dot: 'bg-orange-500',
     badge: 'bg-orange-500/15 text-orange-400',
@@ -82,7 +82,7 @@ const BOARD_CARDS = [
     slug: 'wjec',
     color: 'border-red-500/50',
     hoverColor: 'hover:border-red-500/80 hover:bg-red-500/10',
-    activeRing: 'ring-2 ring-red-500 ring-offset-2 ring-offset-brand-bg',
+    activeRing: 'ring-2 ring-red-500 ring-offset-2 ring-offset-background',
     accent: 'text-red-400',
     dot: 'bg-red-500',
     badge: 'bg-red-500/15 text-red-400',
@@ -117,16 +117,16 @@ function Collapsible({
   const [open, setOpen] = useState(defaultOpen)
 
   return (
-    <div className="overflow-hidden rounded-xl border border-brand-border bg-brand-card/40">
+    <div className="overflow-hidden rounded-xl border border-border bg-card/40">
       <button
         onClick={() => setOpen(!open)}
         aria-expanded={open}
-        className="flex w-full items-center gap-3 px-6 py-4 text-left transition-colors duration-200 hover:bg-brand-card/60"
+        className="flex w-full items-center gap-3 px-6 py-4 text-left transition-colors duration-200 hover:bg-card/60"
       >
-        {Icon && <Icon className="h-5 w-5 shrink-0 text-brand-accent" />}
-        <span className="flex-1 font-semibold text-brand-text">{title}</span>
+        {Icon && <Icon className="h-5 w-5 shrink-0 text-primary" />}
+        <span className="flex-1 font-semibold text-foreground">{title}</span>
         <ChevronDown
-          className={`h-5 w-5 shrink-0 text-brand-muted transition-transform duration-300 ${
+          className={`h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-300 ${
             open ? 'rotate-180' : ''
           }`}
         />
@@ -181,24 +181,24 @@ export default function ExamGuidePage() {
   )
 
   return (
-    <main className="min-h-screen bg-brand-bg pb-20">
+    <main className="min-h-screen bg-background pb-20">
       {/* ══════════════════════════════════════════════════════════════════════
           HERO SECTION
          ══════════════════════════════════════════════════════════════════════ */}
-      <section className="relative overflow-hidden border-b border-brand-border bg-brand-card/50">
-        <div className="pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-accent/10 blur-[120px]" />
+      <section className="relative overflow-hidden border-b border-border bg-card/50">
+        <div className="pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/10 blur-[120px]" />
 
         <div className="relative mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-brand-accent/30 bg-brand-accent/10 px-4 py-1.5 text-sm font-medium text-brand-accent">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
             <GraduationCap className="h-4 w-4" />
             Complete GCSE Exam Guide
           </div>
 
-          <h1 className="text-3xl font-extrabold leading-tight tracking-tight text-brand-text sm:text-4xl md:text-5xl">
+          <h1 className="text-3xl font-extrabold leading-tight tracking-tight text-foreground sm:text-4xl md:text-5xl">
             Exam Guide
           </h1>
 
-          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-brand-muted">
+          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">
             Comprehensive exam board guides, assessment objectives, mark schemes,
             grade boundaries, and proven strategies for achieving top grades.
             Pick your board for a tailored breakdown, or explore the universal
@@ -227,16 +227,16 @@ export default function ExamGuidePage() {
           <div className="flex gap-3 rounded-xl border border-amber-500/30 bg-amber-500/10 p-5">
             <Info className="mt-0.5 h-5 w-5 shrink-0 text-amber-400" />
             <div>
-              <p className="font-semibold text-brand-text">
+              <p className="font-semibold text-foreground">
                 You have KS3 selected as your current level
               </p>
-              <p className="mt-1 text-sm leading-relaxed text-brand-muted">
+              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
                 The board-specific guides below are tailored for GCSE exam boards
                 (AQA, Edexcel, OCR, WJEC). However, the{' '}
-                <strong className="text-brand-text">Generic Overview</strong>,{' '}
-                <strong className="text-brand-text">Grade 9 Strategy</strong>{' '}
+                <strong className="text-foreground">Generic Overview</strong>,{' '}
+                <strong className="text-foreground">Grade 9 Strategy</strong>{' '}
                 sections, and{' '}
-                <strong className="text-brand-text">
+                <strong className="text-foreground">
                   Terminology Reference
                 </strong>{' '}
                 are useful at any level and will help you build a strong
@@ -250,10 +250,10 @@ export default function ExamGuidePage() {
             BOARD NAVIGATION CARDS
            ════════════════════════════════════════════════════════════════════ */}
         <section>
-          <h2 className="mb-2 text-2xl font-bold text-brand-text sm:text-3xl">
+          <h2 className="mb-2 text-2xl font-bold text-foreground sm:text-3xl">
             Choose Your Exam Board
           </h2>
-          <p className="mb-6 text-brand-muted">
+          <p className="mb-6 text-muted-foreground">
             Each guide covers the full specification, papers, mark schemes, grade
             boundaries, and examiner tips.
           </p>
@@ -279,7 +279,7 @@ export default function ExamGuidePage() {
                       </h3>
                     </div>
                     {isSelected && (
-                      <span className="shrink-0 rounded-full bg-brand-accent/20 px-2.5 py-0.5 text-xs font-semibold text-brand-accent">
+                      <span className="shrink-0 rounded-full bg-primary/20 px-2.5 py-0.5 text-xs font-semibold text-primary">
                         Your board
                       </span>
                     )}
@@ -298,11 +298,11 @@ export default function ExamGuidePage() {
                     </div>
                   )}
 
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-brand-muted">
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
                     {board.description}
                   </p>
 
-                  <p className="mt-3 flex items-center gap-1 text-xs font-medium text-brand-accent opacity-0 transition-opacity group-hover:opacity-100">
+                  <p className="mt-3 flex items-center gap-1 text-xs font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
                     View full guide
                     <ChevronRight className="h-3 w-3" />
                   </p>
@@ -321,40 +321,40 @@ export default function ExamGuidePage() {
           defaultOpen
         >
           <div
-            className="prose-brand max-w-none text-sm leading-relaxed text-brand-muted [&_em]:text-brand-accent/80 [&_li]:ml-4 [&_li]:text-brand-muted [&_ol]:my-3 [&_ol]:list-decimal [&_ol]:space-y-1.5 [&_p+p]:mt-3 [&_p]:text-brand-muted [&_strong]:text-brand-text [&_ul]:my-3 [&_ul]:list-disc [&_ul]:space-y-1.5"
+            className="prose-brand max-w-none text-sm leading-relaxed text-muted-foreground [&_em]:text-primary/80 [&_li]:ml-4 [&_li]:text-muted-foreground [&_ol]:my-3 [&_ol]:list-decimal [&_ol]:space-y-1.5 [&_p+p]:mt-3 [&_p]:text-muted-foreground [&_strong]:text-foreground [&_ul]:my-3 [&_ul]:list-disc [&_ul]:space-y-1.5"
             dangerouslySetInnerHTML={{
               __html: sanitize(genericOverview.landscape.content),
             }}
           />
 
           {/* ── Universal Assessment Objectives ────────────────────────────── */}
-          <div className="mt-8 border-t border-brand-border pt-6">
-            <h3 className="mb-1 text-lg font-bold text-brand-text">
+          <div className="mt-8 border-t border-border pt-6">
+            <h3 className="mb-1 text-lg font-bold text-foreground">
               Universal Assessment Objectives
             </h3>
-            <p className="mb-5 text-sm font-medium text-brand-accent">
+            <p className="mb-5 text-sm font-medium text-primary">
               {genericOverview.universalAOs.keyPrinciple}
             </p>
 
             {/* Language AOs */}
-            <h4 className="mb-3 flex items-center gap-2 text-sm font-bold text-brand-text">
-              <ScrollText className="h-4 w-4 text-brand-accent" />
+            <h4 className="mb-3 flex items-center gap-2 text-sm font-bold text-foreground">
+              <ScrollText className="h-4 w-4 text-primary" />
               English Language AOs
             </h4>
             <div className="mb-6 space-y-2">
               {genericOverview.universalAOs.language.map((ao) => (
                 <div
                   key={ao.code}
-                  className="flex items-start gap-4 rounded-lg border border-brand-border bg-brand-bg/50 p-3"
+                  className="flex items-start gap-4 rounded-lg border border-border bg-background/50 p-3"
                 >
-                  <span className="inline-flex h-7 w-14 shrink-0 items-center justify-center rounded-md bg-brand-accent/10 text-xs font-bold text-brand-accent">
+                  <span className="inline-flex h-7 w-14 shrink-0 items-center justify-center rounded-md bg-primary/10 text-xs font-bold text-primary">
                     {ao.code}
                   </span>
                   <div className="min-w-0 flex-1">
-                    <p className="text-sm leading-relaxed text-brand-text">
+                    <p className="text-sm leading-relaxed text-foreground">
                       {ao.description}
                     </p>
-                    <p className="mt-1 text-xs text-brand-muted">
+                    <p className="mt-1 text-xs text-muted-foreground">
                       Weighting: {ao.weighting}
                     </p>
                   </div>
@@ -363,7 +363,7 @@ export default function ExamGuidePage() {
             </div>
 
             {/* Literature AOs */}
-            <h4 className="mb-3 flex items-center gap-2 text-sm font-bold text-brand-text">
+            <h4 className="mb-3 flex items-center gap-2 text-sm font-bold text-foreground">
               <BookMarked className="h-4 w-4 text-violet-400" />
               English Literature AOs
             </h4>
@@ -371,16 +371,16 @@ export default function ExamGuidePage() {
               {genericOverview.universalAOs.literature.map((ao) => (
                 <div
                   key={ao.code}
-                  className="flex items-start gap-4 rounded-lg border border-brand-border bg-brand-bg/50 p-3"
+                  className="flex items-start gap-4 rounded-lg border border-border bg-background/50 p-3"
                 >
                   <span className="inline-flex h-7 w-14 shrink-0 items-center justify-center rounded-md bg-violet-500/10 text-xs font-bold text-violet-400">
                     {ao.code}
                   </span>
                   <div className="min-w-0 flex-1">
-                    <p className="text-sm leading-relaxed text-brand-text">
+                    <p className="text-sm leading-relaxed text-foreground">
                       {ao.description}
                     </p>
-                    <p className="mt-1 text-xs text-brand-muted">
+                    <p className="mt-1 text-xs text-muted-foreground">
                       Weighting: {ao.weighting}
                     </p>
                   </div>
@@ -390,12 +390,12 @@ export default function ExamGuidePage() {
           </div>
 
           {/* ── Mark Scheme Explainer ───────────────────────────────────────── */}
-          <div className="mt-8 border-t border-brand-border pt-6">
-            <h3 className="mb-3 text-lg font-bold text-brand-text">
+          <div className="mt-8 border-t border-border pt-6">
+            <h3 className="mb-3 text-lg font-bold text-foreground">
               {genericOverview.markSchemeExplainer.title}
             </h3>
             <div
-              className="prose-brand max-w-none text-sm leading-relaxed text-brand-muted [&_em]:text-brand-accent/80 [&_li]:ml-4 [&_li]:text-brand-muted [&_ol]:my-3 [&_ol]:list-decimal [&_ol]:space-y-1.5 [&_p+p]:mt-3 [&_p]:text-brand-muted [&_strong]:text-brand-text [&_ul]:my-3 [&_ul]:list-disc [&_ul]:space-y-1.5"
+              className="prose-brand max-w-none text-sm leading-relaxed text-muted-foreground [&_em]:text-primary/80 [&_li]:ml-4 [&_li]:text-muted-foreground [&_ol]:my-3 [&_ol]:list-decimal [&_ol]:space-y-1.5 [&_p+p]:mt-3 [&_p]:text-muted-foreground [&_strong]:text-foreground [&_ul]:my-3 [&_ul]:list-disc [&_ul]:space-y-1.5"
               dangerouslySetInnerHTML={{
                 __html: sanitize(genericOverview.markSchemeExplainer.content),
               }}
@@ -403,39 +403,39 @@ export default function ExamGuidePage() {
           </div>
 
           {/* ── Level 3 to Level 4/5 Comparisons ───────────────────────────── */}
-          <div className="mt-8 border-t border-brand-border pt-6">
-            <h3 className="mb-1 text-lg font-bold text-brand-text">
+          <div className="mt-8 border-t border-border pt-6">
+            <h3 className="mb-1 text-lg font-bold text-foreground">
               {genericOverview.level3ToLevel4.title}
             </h3>
-            <p className="mb-4 text-sm text-brand-muted">
+            <p className="mb-4 text-sm text-muted-foreground">
               {genericOverview.level3ToLevel4.subtitle}
             </p>
             <div className="space-y-4">
               {genericOverview.level3ToLevel4.comparisons.map((comp, i) => (
                 <div
                   key={i}
-                  className="overflow-hidden rounded-xl border border-brand-border"
+                  className="overflow-hidden rounded-xl border border-border"
                 >
-                  <div className="border-b border-brand-border bg-brand-card/60 p-4">
+                  <div className="border-b border-border bg-card/60 p-4">
                     <div className="mb-2 flex items-center gap-2">
                       <span className="rounded-full bg-amber-500/20 px-2 py-0.5 text-xs font-semibold text-amber-400">
                         Level 3
                       </span>
-                      <span className="text-xs text-brand-muted">Grade 5-6</span>
+                      <span className="text-xs text-muted-foreground">Grade 5-6</span>
                     </div>
-                    <p className="text-sm italic text-brand-muted">
+                    <p className="text-sm italic text-muted-foreground">
                       &ldquo;{comp.level3}&rdquo;
                     </p>
                   </div>
                   <div className="p-4">
                     <div className="mb-2 flex items-center gap-2">
-                      <span className="rounded-full bg-brand-accent/20 px-2 py-0.5 text-xs font-semibold text-brand-accent">
+                      <span className="rounded-full bg-primary/20 px-2 py-0.5 text-xs font-semibold text-primary">
                         Level 4/5
                       </span>
-                      <span className="text-xs text-brand-muted">Grade 8-9</span>
+                      <span className="text-xs text-muted-foreground">Grade 8-9</span>
                     </div>
                     <p
-                      className="text-sm leading-relaxed text-brand-text [&_em]:text-brand-accent/80"
+                      className="text-sm leading-relaxed text-foreground [&_em]:text-primary/80"
                       dangerouslySetInnerHTML={{
                         __html: sanitize(`&ldquo;${comp.level45}&rdquo;`),
                       }}
@@ -447,34 +447,34 @@ export default function ExamGuidePage() {
           </div>
 
           {/* ── Grade Boundary Summary Table ────────────────────────────────── */}
-          <div className="mt-8 border-t border-brand-border pt-6">
-            <h3 className="mb-1 text-lg font-bold text-brand-text">
+          <div className="mt-8 border-t border-border pt-6">
+            <h3 className="mb-1 text-lg font-bold text-foreground">
               {genericOverview.gradeBoundarySummary.title}
             </h3>
-            <p className="mb-4 text-sm font-medium text-brand-accent">
+            <p className="mb-4 text-sm font-medium text-primary">
               {genericOverview.gradeBoundarySummary.insight}
             </p>
 
             <div className="overflow-x-auto">
               <table className="w-full border-collapse text-sm">
                 <thead>
-                  <tr className="border-b border-brand-border">
-                    <th className="px-3 py-3 text-left text-xs font-semibold uppercase tracking-wider text-brand-muted">
+                  <tr className="border-b border-border">
+                    <th className="px-3 py-3 text-left text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                       Board
                     </th>
-                    <th className="px-3 py-3 text-left text-xs font-semibold uppercase tracking-wider text-brand-muted">
+                    <th className="px-3 py-3 text-left text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                       Subject
                     </th>
-                    <th className="px-3 py-3 text-center text-xs font-semibold uppercase tracking-wider text-brand-muted">
+                    <th className="px-3 py-3 text-center text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                       Max
                     </th>
-                    <th className="px-3 py-3 text-center text-xs font-semibold uppercase tracking-wider text-brand-accent">
+                    <th className="px-3 py-3 text-center text-xs font-semibold uppercase tracking-wider text-primary">
                       Grade 9
                     </th>
-                    <th className="px-3 py-3 text-center text-xs font-semibold uppercase tracking-wider text-brand-muted">
+                    <th className="px-3 py-3 text-center text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                       Grade 7
                     </th>
-                    <th className="px-3 py-3 text-center text-xs font-semibold uppercase tracking-wider text-brand-muted">
+                    <th className="px-3 py-3 text-center text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                       Grade 4
                     </th>
                   </tr>
@@ -483,22 +483,22 @@ export default function ExamGuidePage() {
                   {genericOverview.gradeBoundarySummary.boards.map((row) => (
                     <tr
                       key={`${row.board}-${row.subject}`}
-                      className="border-b border-brand-border/50 transition-colors hover:bg-brand-card/40"
+                      className="border-b border-border/50 transition-colors hover:bg-card/40"
                     >
-                      <td className="px-3 py-3 font-medium text-brand-text">
+                      <td className="px-3 py-3 font-medium text-foreground">
                         {row.board}
                       </td>
-                      <td className="px-3 py-3 text-brand-muted">{row.subject}</td>
-                      <td className="px-3 py-3 text-center text-brand-muted">
+                      <td className="px-3 py-3 text-muted-foreground">{row.subject}</td>
+                      <td className="px-3 py-3 text-center text-muted-foreground">
                         {row.max}
                       </td>
-                      <td className="px-3 py-3 text-center font-semibold text-brand-accent">
+                      <td className="px-3 py-3 text-center font-semibold text-primary">
                         {row.grade9}
                       </td>
-                      <td className="px-3 py-3 text-center text-brand-text">
+                      <td className="px-3 py-3 text-center text-foreground">
                         {row.grade7}
                       </td>
-                      <td className="px-3 py-3 text-center text-brand-muted">
+                      <td className="px-3 py-3 text-center text-muted-foreground">
                         {row.grade4}
                       </td>
                     </tr>
@@ -515,12 +515,12 @@ export default function ExamGuidePage() {
         <section>
           <div className="mb-5 flex items-center gap-3">
             <Star className="h-6 w-6 text-amber-400" />
-            <h2 className="text-2xl font-bold text-brand-text sm:text-3xl">
+            <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
               {grade9Strategy.title}
             </h2>
           </div>
 
-          <p className="mb-5 text-sm text-brand-muted">
+          <p className="mb-5 text-sm text-muted-foreground">
             Detailed strategies drawn from examiner reports and top-band
             exemplars. Each section includes worked examples demonstrating the
             difference between competent and exceptional responses.
@@ -535,7 +535,7 @@ export default function ExamGuidePage() {
                 defaultOpen={i === 0}
               >
                 <div className="mt-2 space-y-4">
-                  <p className="whitespace-pre-line text-sm leading-relaxed text-brand-muted">
+                  <p className="whitespace-pre-line text-sm leading-relaxed text-muted-foreground">
                     {section.content}
                   </p>
                   {section.examples && section.examples.length > 0 && (
@@ -543,12 +543,12 @@ export default function ExamGuidePage() {
                       {section.examples.map((ex, j) => (
                         <div
                           key={j}
-                          className="rounded-lg border border-brand-accent/20 bg-brand-accent/5 p-4"
+                          className="rounded-lg border border-primary/20 bg-primary/5 p-4"
                         >
-                          <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-brand-accent">
+                          <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-primary">
                             {ex.label}
                           </p>
-                          <p className="text-sm italic leading-relaxed text-brand-text">
+                          <p className="text-sm italic leading-relaxed text-foreground">
                             {ex.text}
                           </p>
                         </div>
@@ -566,8 +566,8 @@ export default function ExamGuidePage() {
            ════════════════════════════════════════════════════════════════════ */}
         <section>
           <div className="mb-5 flex items-center gap-3">
-            <BookOpen className="h-6 w-6 text-brand-accent" />
-            <h2 className="text-2xl font-bold text-brand-text sm:text-3xl">
+            <BookOpen className="h-6 w-6 text-primary" />
+            <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
               Terminology Quick Reference
             </h2>
           </div>
@@ -583,8 +583,8 @@ export default function ExamGuidePage() {
                   onClick={() => setActiveTermTab(tab.key)}
                   className={`inline-flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
                     isActive
-                      ? 'bg-brand-accent text-white'
-                      : 'border border-brand-border bg-brand-card text-brand-muted hover:text-brand-text'
+                      ? 'bg-primary text-white'
+                      : 'border border-border bg-card text-muted-foreground hover:text-foreground'
                   }`}
                 >
                   <TabIcon className="h-3.5 w-3.5" />
@@ -593,7 +593,7 @@ export default function ExamGuidePage() {
                     className={`ml-1 rounded-full px-1.5 py-0.5 text-xs ${
                       isActive
                         ? 'bg-white/20 text-white'
-                        : 'bg-brand-border text-brand-muted'
+                        : 'bg-border text-muted-foreground'
                     }`}
                   >
                     {termCounts[tab.key] ?? 0}
@@ -605,14 +605,14 @@ export default function ExamGuidePage() {
 
           {/* Search within category */}
           <div className="relative mb-5">
-            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-brand-muted" />
+            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
             <input
               type="text"
               placeholder="Search terms in this category..."
               value={termSearch}
               onChange={(e) => setTermSearch(e.target.value)}
               aria-label="Search terminology"
-              className="w-full rounded-lg border border-brand-border bg-brand-card py-2.5 pl-9 pr-4 text-sm text-brand-text placeholder-brand-muted/50 transition-colors focus:border-brand-accent/40 focus:outline-none focus:ring-2 focus:ring-brand-accent/40 sm:max-w-sm"
+              className="w-full rounded-lg border border-border bg-card py-2.5 pl-9 pr-4 text-sm text-foreground placeholder-muted-foreground/50 transition-colors focus:border-primary/40 focus:outline-none focus:ring-2 focus:ring-primary/40 sm:max-w-sm"
             />
           </div>
 
@@ -622,25 +622,25 @@ export default function ExamGuidePage() {
               {filteredTerms.map((term) => (
                 <div
                   key={term.term}
-                  className="rounded-xl border border-brand-border bg-brand-card/30 p-4 transition-colors hover:bg-brand-card/50"
+                  className="rounded-xl border border-border bg-card/30 p-4 transition-colors hover:bg-card/50"
                 >
                   <div className="mb-2 flex items-center gap-2">
-                    <h3 className="text-sm font-bold text-brand-text">
+                    <h3 className="text-sm font-bold text-foreground">
                       {term.term}
                     </h3>
-                    <span className="rounded-full bg-brand-accent/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-brand-accent">
+                    <span className="rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-primary">
                       {term.category}
                     </span>
                   </div>
-                  <p className="text-xs leading-relaxed text-brand-muted">
+                  <p className="text-xs leading-relaxed text-muted-foreground">
                     {term.definition}
                   </p>
                   {term.example && (
-                    <div className="mt-3 rounded-lg bg-brand-accent/5 p-3">
-                      <p className="mb-1 text-[10px] font-semibold uppercase tracking-wide text-brand-accent">
+                    <div className="mt-3 rounded-lg bg-primary/5 p-3">
+                      <p className="mb-1 text-[10px] font-semibold uppercase tracking-wide text-primary">
                         Example
                       </p>
-                      <p className="text-xs italic leading-relaxed text-brand-muted">
+                      <p className="text-xs italic leading-relaxed text-muted-foreground">
                         {term.example}
                       </p>
                     </div>
@@ -649,9 +649,9 @@ export default function ExamGuidePage() {
               ))}
             </div>
           ) : (
-            <div className="flex flex-col items-center justify-center rounded-xl border border-brand-border p-12 text-center">
-              <Search className="mb-3 h-8 w-8 text-brand-border" />
-              <p className="text-sm text-brand-muted">
+            <div className="flex flex-col items-center justify-center rounded-xl border border-border p-12 text-center">
+              <Search className="mb-3 h-8 w-8 text-border" />
+              <p className="text-sm text-muted-foreground">
                 No terms match your search in this category.
               </p>
             </div>
@@ -663,12 +663,12 @@ export default function ExamGuidePage() {
            ════════════════════════════════════════════════════════════════════ */}
         <section>
           <div className="mb-2 flex items-center gap-3">
-            <Clock className="h-6 w-6 text-brand-accent" />
-            <h2 className="text-2xl font-bold text-brand-text sm:text-3xl">
+            <Clock className="h-6 w-6 text-primary" />
+            <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
               Historical Context Timeline
             </h2>
           </div>
-          <p className="mb-8 text-sm text-brand-muted">
+          <p className="mb-8 text-sm text-muted-foreground">
             Essential context for Literature essays. Weave these points into your
             analysis — do not bolt them on as a separate paragraph.
           </p>
@@ -676,7 +676,7 @@ export default function ExamGuidePage() {
           {/* Vertical timeline */}
           <div className="relative">
             {/* Vertical line */}
-            <div className="absolute bottom-0 left-[18px] top-0 w-px bg-brand-border sm:left-[22px]" />
+            <div className="absolute bottom-0 left-[18px] top-0 w-px bg-border sm:left-[22px]" />
 
             <div className="space-y-6">
               {contextPeriods.map((period) => (
@@ -689,24 +689,24 @@ export default function ExamGuidePage() {
         {/* Subscription CTA */}
         {!user && (
           <section>
-            <div className="rounded-2xl border border-brand-accent/30 bg-brand-accent/10 p-6 sm:p-8">
+            <div className="rounded-2xl border border-primary/30 bg-primary/10 p-6 sm:p-8">
               <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
                 <div>
-                  <p className="text-lg font-bold text-brand-text sm:text-xl">
+                  <p className="text-lg font-bold text-foreground sm:text-xl">
                     Love the exam guide? Our courses go even deeper.
                   </p>
-                  <p className="mt-1 text-brand-muted">
+                  <p className="mt-1 text-muted-foreground">
                     Structured lessons, practice questions, and model answers.{' '}
-                    <span className="font-semibold text-brand-accent">First month FREE!</span>
+                    <span className="font-semibold text-primary">First month FREE!</span>
                     {' '}Then {PRICING_DISPLAY.monthly} on a rolling monthly contract.
                   </p>
-                  <p className="mt-1 text-sm text-brand-muted">
+                  <p className="mt-1 text-sm text-muted-foreground">
                     Annual subscription also available &mdash; save {PRICING.ANNUAL_SAVE_PERCENT}%.
                   </p>
                 </div>
                 <Link
                   href="/auth/register"
-                  className="inline-flex shrink-0 items-center rounded-lg bg-brand-accent px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-accent/90"
+                  className="inline-flex shrink-0 items-center rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary/90"
                 >
                   Start Free Trial
                 </Link>
@@ -719,13 +719,13 @@ export default function ExamGuidePage() {
             BOTTOM CTA
            ════════════════════════════════════════════════════════════════════ */}
         <section className="pt-4">
-          <div className="relative overflow-hidden rounded-2xl border border-brand-border bg-brand-card p-10 text-center sm:p-14">
-            <div className="pointer-events-none absolute left-1/2 top-0 h-[250px] w-[400px] -translate-x-1/2 rounded-full bg-brand-accent/10 blur-[100px]" />
+          <div className="relative overflow-hidden rounded-2xl border border-border bg-card p-10 text-center sm:p-14">
+            <div className="pointer-events-none absolute left-1/2 top-0 h-[250px] w-[400px] -translate-x-1/2 rounded-full bg-primary/10 blur-[100px]" />
             <div className="relative">
-              <h2 className="mb-3 text-2xl font-bold text-brand-text sm:text-3xl">
+              <h2 className="mb-3 text-2xl font-bold text-foreground sm:text-3xl">
                 Ready to dive deeper?
               </h2>
-              <p className="mx-auto mb-8 max-w-md text-brand-muted">
+              <p className="mx-auto mb-8 max-w-md text-muted-foreground">
                 Choose your exam board for a full specification breakdown with
                 papers, mark schemes, grade boundaries, and examiner tips.
               </p>
@@ -734,7 +734,7 @@ export default function ExamGuidePage() {
                   <Link
                     key={board.id}
                     href={`/exam-guide/${board.slug}`}
-                    className="inline-flex items-center gap-2 rounded-lg border border-brand-border bg-brand-card px-5 py-2.5 text-sm font-medium text-brand-text transition-all hover:border-brand-accent/40 hover:text-brand-accent"
+                    className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-medium text-foreground transition-all hover:border-primary/40 hover:text-primary"
                   >
                     <span className={`h-2 w-2 rounded-full ${board.dot}`} />
                     {board.id}
@@ -766,31 +766,31 @@ function TimelinePeriod({
   return (
     <div className="relative pl-12 sm:pl-14">
       {/* Timeline dot */}
-      <div className="absolute left-[12px] top-5 h-3.5 w-3.5 rounded-full border-2 border-brand-accent bg-brand-bg sm:left-[16px]" />
+      <div className="absolute left-[12px] top-5 h-3.5 w-3.5 rounded-full border-2 border-primary bg-background sm:left-[16px]" />
 
-      <div className="rounded-xl border border-brand-border bg-brand-card/40 transition-colors hover:bg-brand-card/60">
+      <div className="rounded-xl border border-border bg-card/40 transition-colors hover:bg-card/60">
         <button
           onClick={() => setExpanded(!expanded)}
           className="flex w-full items-start justify-between gap-3 p-5 text-left"
         >
           <div>
-            <h3 className="text-base font-bold text-brand-text">
+            <h3 className="text-base font-bold text-foreground">
               {period.period}
             </h3>
-            <p className="mt-0.5 text-xs font-medium text-brand-accent">
+            <p className="mt-0.5 text-xs font-medium text-primary">
               {period.years}
             </p>
-            <p className="mt-1.5 text-xs text-brand-muted">
-              <span className="font-medium text-brand-text/80">Texts: </span>
+            <p className="mt-1.5 text-xs text-muted-foreground">
+              <span className="font-medium text-foreground/80">Texts: </span>
               {period.relevantTexts}
             </p>
           </div>
           <div className="flex shrink-0 items-center gap-2 pt-1">
-            <span className="rounded-full bg-brand-border px-2 py-0.5 text-xs text-brand-muted">
+            <span className="rounded-full bg-border px-2 py-0.5 text-xs text-muted-foreground">
               {period.keyPoints.length} points
             </span>
             <ChevronDown
-              className={`h-4 w-4 text-brand-muted transition-transform duration-200 ${
+              className={`h-4 w-4 text-muted-foreground transition-transform duration-200 ${
                 expanded ? 'rotate-180' : ''
               }`}
             />
@@ -798,11 +798,11 @@ function TimelinePeriod({
         </button>
 
         {expanded && (
-          <div className="space-y-3 border-t border-brand-border px-5 pb-5 pt-4">
+          <div className="space-y-3 border-t border-border px-5 pb-5 pt-4">
             {period.keyPoints.map((point, j) => (
               <div key={j} className="flex gap-3">
-                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-accent/60" />
-                <p className="text-sm leading-relaxed text-brand-muted">
+                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                <p className="text-sm leading-relaxed text-muted-foreground">
                   {point}
                 </p>
               </div>

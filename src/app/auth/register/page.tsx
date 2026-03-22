@@ -6,6 +6,11 @@ import { createClient } from '@/lib/supabase/client'
 import { Mail, Lock, User, GraduationCap, BookOpen, Loader2, ArrowLeft, CheckCircle, Eye, EyeOff } from 'lucide-react'
 import { PRICING_DISPLAY } from '@/constants/pricing'
 import { YEAR_GROUPS, EXAM_BOARDS } from '@/lib/utils'
+import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { Alert, AlertDescription } from '@/components/ui/alert'
 
 export default function RegisterPage() {
   const [fullName, setFullName] = useState('')
@@ -83,20 +88,22 @@ export default function RegisterPage() {
     return (
       <div className="min-h-screen flex items-center justify-center px-4 py-12">
         <div className="w-full max-w-md">
-          <div className="card p-8 text-center">
-            <CheckCircle className="w-12 h-12 text-brand-accent mx-auto mb-4" />
-            <h1 className="text-2xl font-bold text-brand-text mb-2">
-              Check your email
-            </h1>
-            <p className="text-brand-muted mb-6">
-              We&apos;ve sent a confirmation link to{' '}
-              <span className="text-brand-text font-medium">{email}</span>.
-              Please click the link to verify your account before signing in.
-            </p>
-            <Link href="/auth/login" className="btn-primary inline-flex">
-              Back to login
-            </Link>
-          </div>
+          <Card className="text-center">
+            <CardContent className="pt-8">
+              <CheckCircle className="w-12 h-12 text-primary mx-auto mb-4" />
+              <h1 className="text-2xl font-bold text-foreground mb-2">
+                Check your email
+              </h1>
+              <p className="text-muted-foreground mb-6">
+                We&apos;ve sent a confirmation link to{' '}
+                <span className="text-foreground font-medium">{email}</span>.
+                Please click the link to verify your account before signing in.
+              </p>
+              <Button render={<Link href="/auth/login" />}>
+                Back to login
+              </Button>
+            </CardContent>
+          </Card>
         </div>
       </div>
     )
@@ -105,195 +112,198 @@ export default function RegisterPage() {
   return (
     <div className="min-h-screen flex items-center justify-center px-4 py-12">
       <div className="w-full max-w-md">
-        <Link
-          href="/"
-          className="inline-flex items-center gap-2 text-brand-muted hover:text-brand-text transition-colors mb-8"
+        <Button
+          variant="ghost"
+          size="sm"
+          className="mb-8 text-muted-foreground hover:text-foreground"
+          render={<Link href="/" />}
         >
           <ArrowLeft className="w-4 h-4" />
           Back to home
-        </Link>
+        </Button>
 
-        <div className="card p-8">
-          <div className="text-center mb-8">
-            <h1 className="text-2xl font-bold text-brand-text">
-              Start Your Free Trial
-            </h1>
-            <p className="text-brand-muted mt-2">
+        <Card>
+          <CardHeader className="text-center">
+            <CardTitle className="text-2xl">Start Your Free Trial</CardTitle>
+            <CardDescription>
               {PRICING_DISPLAY.trialText}. Cancel anytime.
+            </CardDescription>
+          </CardHeader>
+
+          <CardContent>
+            {error && (
+              <Alert variant="destructive" className="mb-6">
+                <AlertDescription>{error}</AlertDescription>
+              </Alert>
+            )}
+
+            <form onSubmit={handleSubmit} className="space-y-5">
+              <div className="space-y-1.5">
+                <Label htmlFor="fullName">
+                  Full name <span className="text-destructive">*</span>
+                </Label>
+                <div className="relative">
+                  <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/50" />
+                  <Input
+                    id="fullName"
+                    type="text"
+                    value={fullName}
+                    onChange={(e) => setFullName(e.target.value)}
+                    placeholder="Your full name"
+                    className="pl-11"
+                    required
+                    autoComplete="name"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-1.5">
+                <Label htmlFor="email">
+                  Email address <span className="text-destructive">*</span>
+                </Label>
+                <div className="relative">
+                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/50" />
+                  <Input
+                    id="email"
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="you@example.com"
+                    className="pl-11"
+                    required
+                    autoComplete="email"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-1.5">
+                <Label htmlFor="password">
+                  Password <span className="text-destructive">*</span>
+                </Label>
+                <div className="relative">
+                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/50" />
+                  <Input
+                    id="password"
+                    type={showPassword ? 'text' : 'password'}
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="At least 8 characters"
+                    className="pl-11 pr-11"
+                    required
+                    minLength={8}
+                    autoComplete="new-password"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground/50 hover:text-muted-foreground transition-colors"
+                    aria-label={showPassword ? 'Hide password' : 'Show password'}
+                  >
+                    {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                  </button>
+                </div>
+              </div>
+
+              <div className="space-y-1.5">
+                <Label htmlFor="confirmPassword">
+                  Confirm password <span className="text-destructive">*</span>
+                </Label>
+                <div className="relative">
+                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/50" />
+                  <Input
+                    id="confirmPassword"
+                    type={showConfirm ? 'text' : 'password'}
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    placeholder="Repeat your password"
+                    className="pl-11 pr-11"
+                    required
+                    minLength={8}
+                    autoComplete="new-password"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowConfirm(!showConfirm)}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground/50 hover:text-muted-foreground transition-colors"
+                    aria-label={showConfirm ? 'Hide password' : 'Show password'}
+                  >
+                    {showConfirm ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                  </button>
+                </div>
+              </div>
+
+              <div className="space-y-1.5">
+                <Label htmlFor="yearGroup">Year group</Label>
+                <div className="relative">
+                  <GraduationCap className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/50" />
+                  <select
+                    id="yearGroup"
+                    value={yearGroup}
+                    onChange={(e) => setYearGroup(e.target.value)}
+                    className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 pl-11 text-base shadow-xs transition-[color,box-shadow] outline-none file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm appearance-none"
+                  >
+                    <option value="">Select year group</option>
+                    {YEAR_GROUPS.map((yg) => (
+                      <option key={yg} value={yg}>
+                        {yg}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+
+              <div className="space-y-1.5">
+                <Label htmlFor="examBoard">Exam board</Label>
+                <div className="relative">
+                  <BookOpen className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/50" />
+                  <select
+                    id="examBoard"
+                    value={examBoard}
+                    onChange={(e) => setExamBoard(e.target.value)}
+                    className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 pl-11 text-base shadow-xs transition-[color,box-shadow] outline-none file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm appearance-none"
+                  >
+                    <option value="">Select exam board</option>
+                    {EXAM_BOARDS.map((board) => (
+                      <option key={board} value={board}>
+                        {board}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+
+              <Button
+                type="submit"
+                disabled={loading}
+                className="w-full"
+                size="lg"
+              >
+                {loading ? (
+                  <>
+                    <Loader2 className="w-5 h-5 animate-spin mr-2" />
+                    Creating account...
+                  </>
+                ) : (
+                  'Create account'
+                )}
+              </Button>
+            </form>
+          </CardContent>
+
+          <CardFooter className="justify-center">
+            <p className="text-muted-foreground text-sm">
+              Already have an account?{' '}
+              <Button
+                variant="link"
+                size="sm"
+                className="h-auto p-0 font-medium"
+                render={<Link href="/auth/login" />}
+              >
+                Sign in
+              </Button>
             </p>
-          </div>
-
-          {error && (
-            <div role="alert" aria-live="assertive" className="bg-red-500/10 border border-red-500/30 rounded-lg p-3 mb-6 text-red-400 text-sm">
-              {error}
-            </div>
-          )}
-
-          <form onSubmit={handleSubmit} className="space-y-5">
-            <div>
-              <label htmlFor="fullName" className="label">
-                Full name <span className="text-red-400">*</span>
-              </label>
-              <div className="relative">
-                <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-brand-muted/50" />
-                <input
-                  id="fullName"
-                  type="text"
-                  value={fullName}
-                  onChange={(e) => setFullName(e.target.value)}
-                  placeholder="Your full name"
-                  className="input-field pl-11"
-                  required
-                  autoComplete="name"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label htmlFor="email" className="label">
-                Email address <span className="text-red-400">*</span>
-              </label>
-              <div className="relative">
-                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-brand-muted/50" />
-                <input
-                  id="email"
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="you@example.com"
-                  className="input-field pl-11"
-                  required
-                  autoComplete="email"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label htmlFor="password" className="label">
-                Password <span className="text-red-400">*</span>
-              </label>
-              <div className="relative">
-                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-brand-muted/50" />
-                <input
-                  id="password"
-                  type={showPassword ? 'text' : 'password'}
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="At least 8 characters"
-                  className="input-field pl-11 pr-11"
-                  required
-                  minLength={8}
-                  autoComplete="new-password"
-                />
-                <button
-                  type="button"
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-brand-muted/50 hover:text-brand-muted transition-colors"
-                  aria-label={showPassword ? 'Hide password' : 'Show password'}
-                >
-                  {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
-                </button>
-              </div>
-            </div>
-
-            <div>
-              <label htmlFor="confirmPassword" className="label">
-                Confirm password <span className="text-red-400">*</span>
-              </label>
-              <div className="relative">
-                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-brand-muted/50" />
-                <input
-                  id="confirmPassword"
-                  type={showConfirm ? 'text' : 'password'}
-                  value={confirmPassword}
-                  onChange={(e) => setConfirmPassword(e.target.value)}
-                  placeholder="Repeat your password"
-                  className="input-field pl-11 pr-11"
-                  required
-                  minLength={8}
-                  autoComplete="new-password"
-                />
-                <button
-                  type="button"
-                  onClick={() => setShowConfirm(!showConfirm)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-brand-muted/50 hover:text-brand-muted transition-colors"
-                  aria-label={showConfirm ? 'Hide password' : 'Show password'}
-                >
-                  {showConfirm ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
-                </button>
-              </div>
-            </div>
-
-            <div>
-              <label htmlFor="yearGroup" className="label">
-                Year group
-              </label>
-              <div className="relative">
-                <GraduationCap className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-brand-muted/50" />
-                <select
-                  id="yearGroup"
-                  value={yearGroup}
-                  onChange={(e) => setYearGroup(e.target.value)}
-                  className="input-field pl-11 appearance-none"
-                >
-                  <option value="">Select year group</option>
-                  {YEAR_GROUPS.map((yg) => (
-                    <option key={yg} value={yg}>
-                      {yg}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </div>
-
-            <div>
-              <label htmlFor="examBoard" className="label">
-                Exam board
-              </label>
-              <div className="relative">
-                <BookOpen className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-brand-muted/50" />
-                <select
-                  id="examBoard"
-                  value={examBoard}
-                  onChange={(e) => setExamBoard(e.target.value)}
-                  className="input-field pl-11 appearance-none"
-                >
-                  <option value="">Select exam board</option>
-                  {EXAM_BOARDS.map((board) => (
-                    <option key={board} value={board}>
-                      {board}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </div>
-
-            <button
-              type="submit"
-              disabled={loading}
-              className="btn-primary w-full"
-            >
-              {loading ? (
-                <>
-                  <Loader2 className="w-5 h-5 animate-spin mr-2" />
-                  Creating account...
-                </>
-              ) : (
-                'Create account'
-              )}
-            </button>
-          </form>
-
-          <p className="text-center text-brand-muted text-sm mt-6">
-            Already have an account?{' '}
-            <Link
-              href="/auth/login"
-              className="text-brand-accent hover:text-brand-accent-hover transition-colors font-medium"
-            >
-              Sign in
-            </Link>
-          </p>
-        </div>
+          </CardFooter>
+        </Card>
       </div>
     </div>
   )

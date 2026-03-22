@@ -166,7 +166,7 @@ export default function AccountPage() {
   if (pageLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <Loader2 className="w-8 h-8 animate-spin text-brand-accent" />
+        <Loader2 className="w-8 h-8 animate-spin text-primary" />
       </div>
     )
   }
@@ -176,21 +176,21 @@ export default function AccountPage() {
       <div className="max-w-2xl mx-auto">
         <Link
           href="/dashboard"
-          className="inline-flex items-center gap-2 text-brand-muted hover:text-brand-text transition-colors mb-8"
+          className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8"
         >
           <ArrowLeft className="w-4 h-4" />
           Back to dashboard
         </Link>
 
-        <h1 className="text-3xl font-bold text-brand-text mb-8">
+        <h1 className="text-3xl font-bold text-foreground mb-8">
           Account Settings
         </h1>
 
         {/* Profile Section */}
-        <section className="bg-brand-card border border-brand-border rounded-xl p-6 mb-6">
+        <section className="bg-card border border-border rounded-xl p-6 mb-6">
           <div className="flex items-center gap-3 mb-6">
-            <User className="w-5 h-5 text-brand-accent" />
-            <h2 className="text-xl font-semibold text-brand-text">Profile</h2>
+            <User className="w-5 h-5 text-primary" />
+            <h2 className="text-xl font-semibold text-foreground">Profile</h2>
           </div>
 
           {profileMessage && (
@@ -224,7 +224,7 @@ export default function AccountPage() {
                 disabled
                 className="input-field opacity-60 cursor-not-allowed"
               />
-              <p className="text-xs text-brand-muted mt-1">
+              <p className="text-xs text-muted-foreground mt-1">
                 Email cannot be changed.
               </p>
             </div>
@@ -248,7 +248,7 @@ export default function AccountPage() {
                 Year Group
               </label>
               <div className="relative">
-                <GraduationCap className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-brand-muted/50" />
+                <GraduationCap className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/50" />
                 <select
                   id="yearGroup"
                   value={yearGroup}
@@ -270,7 +270,7 @@ export default function AccountPage() {
                 Exam Board
               </label>
               <div className="relative">
-                <BookOpen className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-brand-muted/50" />
+                <BookOpen className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/50" />
                 <select
                   id="examBoard"
                   value={examBoard}
@@ -308,10 +308,10 @@ export default function AccountPage() {
         </section>
 
         {/* Change Password Section */}
-        <section className="bg-brand-card border border-brand-border rounded-xl p-6 mb-6">
+        <section className="bg-card border border-border rounded-xl p-6 mb-6">
           <div className="flex items-center gap-3 mb-6">
-            <Lock className="w-5 h-5 text-brand-accent" />
-            <h2 className="text-xl font-semibold text-brand-text">
+            <Lock className="w-5 h-5 text-primary" />
+            <h2 className="text-xl font-semibold text-foreground">
               Change Password
             </h2>
           </div>
@@ -402,13 +402,13 @@ export default function AccountPage() {
         </section>
 
         {/* Danger Zone */}
-        <section className="bg-brand-card border border-red-500/30 rounded-xl p-6">
+        <section className="bg-card border border-red-500/30 rounded-xl p-6">
           <div className="flex items-center gap-3 mb-4">
             <Trash2 className="w-5 h-5 text-red-400" />
             <h2 className="text-xl font-semibold text-red-400">Danger Zone</h2>
           </div>
 
-          <p className="text-brand-muted text-sm mb-4">
+          <p className="text-muted-foreground text-sm mb-4">
             Permanently delete your account and all associated data. This action
             cannot be undone.
           </p>

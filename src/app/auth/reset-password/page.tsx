@@ -5,6 +5,11 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import { Lock, Loader2, CheckCircle } from 'lucide-react'
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { Alert, AlertDescription } from '@/components/ui/alert'
 
 export default function ResetPasswordPage() {
   const router = useRouter()
@@ -38,8 +43,8 @@ export default function ResetPasswordPage() {
       return
     }
 
-    if (password.length < 6) {
-      setError('Password must be at least 6 characters.')
+    if (password.length < 8) {
+      setError('Password must be at least 8 characters.')
       return
     }
 
@@ -71,18 +76,20 @@ export default function ResetPasswordPage() {
     return (
       <div className="min-h-screen flex items-center justify-center px-4 py-12">
         <div className="w-full max-w-md">
-          <div className="card p-8 text-center">
-            <CheckCircle className="w-12 h-12 text-brand-accent mx-auto mb-4" />
-            <h1 className="text-2xl font-bold text-brand-text mb-2">
-              Password updated
-            </h1>
-            <p className="text-brand-muted mb-6">
-              Your password has been changed successfully. Redirecting you to login&hellip;
-            </p>
-            <Link href="/auth/login" className="btn-secondary inline-flex">
-              Go to login
-            </Link>
-          </div>
+          <Card className="text-center">
+            <CardContent className="pt-8">
+              <CheckCircle className="w-12 h-12 text-primary mx-auto mb-4" />
+              <h1 className="text-2xl font-bold text-foreground mb-2">
+                Password updated
+              </h1>
+              <p className="text-muted-foreground mb-6">
+                Your password has been changed successfully. Redirecting you to login&hellip;
+              </p>
+              <Button variant="outline" render={<Link href="/auth/login" />}>
+                Go to login
+              </Button>
+            </CardContent>
+          </Card>
         </div>
       </div>
     )
@@ -92,20 +99,24 @@ export default function ResetPasswordPage() {
     return (
       <div className="min-h-screen flex items-center justify-center px-4 py-12">
         <div className="w-full max-w-md">
-          <div className="card p-8 text-center">
-            <Loader2 className="w-10 h-10 animate-spin text-brand-accent mx-auto mb-4" />
-            <p className="text-brand-muted">Verifying reset link&hellip;</p>
-            <p className="text-brand-muted text-sm mt-3">
-              If nothing happens,{' '}
-              <Link
-                href="/auth/forgot-password"
-                className="text-brand-accent hover:text-brand-accent-hover transition-colors"
-              >
-                request a new link
-              </Link>
-              .
-            </p>
-          </div>
+          <Card className="text-center">
+            <CardContent className="pt-8">
+              <Loader2 className="w-10 h-10 animate-spin text-primary mx-auto mb-4" />
+              <p className="text-muted-foreground">Verifying reset link&hellip;</p>
+              <p className="text-muted-foreground text-sm mt-3">
+                If nothing happens,{' '}
+                <Button
+                  variant="link"
+                  size="sm"
+                  className="h-auto p-0"
+                  render={<Link href="/auth/forgot-password" />}
+                >
+                  request a new link
+                </Button>
+                .
+              </p>
+            </CardContent>
+          </Card>
         </div>
       </div>
     )
@@ -114,77 +125,74 @@ export default function ResetPasswordPage() {
   return (
     <div className="min-h-screen flex items-center justify-center px-4 py-12">
       <div className="w-full max-w-md">
-        <div className="card p-8">
-          <div className="text-center mb-8">
-            <h1 className="text-2xl font-bold text-brand-text">
-              Set new password
-            </h1>
-            <p className="text-brand-muted mt-2">
+        <Card>
+          <CardHeader className="text-center">
+            <CardTitle className="text-2xl">Set new password</CardTitle>
+            <CardDescription>
               Choose a strong password for your account.
-            </p>
-          </div>
+            </CardDescription>
+          </CardHeader>
 
-          {error && (
-            <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-3 mb-6 text-red-400 text-sm">
-              {error}
-            </div>
-          )}
+          <CardContent>
+            {error && (
+              <Alert variant="destructive" className="mb-6">
+                <AlertDescription>{error}</AlertDescription>
+              </Alert>
+            )}
 
-          <form onSubmit={handleSubmit} className="space-y-5">
-            <div>
-              <label htmlFor="password" className="label">
-                New password
-              </label>
-              <div className="relative">
-                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-brand-muted/50" />
-                <input
-                  id="password"
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Min. 6 characters"
-                  className="input-field pl-11"
-                  required
-                  autoComplete="new-password"
-                />
+            <form onSubmit={handleSubmit} className="space-y-5">
+              <div className="space-y-1.5">
+                <Label htmlFor="password">New password</Label>
+                <div className="relative">
+                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/50" />
+                  <Input
+                    id="password"
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Min. 6 characters"
+                    className="pl-11"
+                    required
+                    autoComplete="new-password"
+                  />
+                </div>
               </div>
-            </div>
 
-            <div>
-              <label htmlFor="confirmPassword" className="label">
-                Confirm new password
-              </label>
-              <div className="relative">
-                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-brand-muted/50" />
-                <input
-                  id="confirmPassword"
-                  type="password"
-                  value={confirmPassword}
-                  onChange={(e) => setConfirmPassword(e.target.value)}
-                  placeholder="Repeat your password"
-                  className="input-field pl-11"
-                  required
-                  autoComplete="new-password"
-                />
+              <div className="space-y-1.5">
+                <Label htmlFor="confirmPassword">Confirm new password</Label>
+                <div className="relative">
+                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/50" />
+                  <Input
+                    id="confirmPassword"
+                    type="password"
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    placeholder="Repeat your password"
+                    className="pl-11"
+                    required
+                    autoComplete="new-password"
+                  />
+                </div>
               </div>
-            </div>
 
-            <button
-              type="submit"
-              disabled={loading}
-              className="btn-primary w-full"
-            >
-              {loading ? (
-                <>
-                  <Loader2 className="w-5 h-5 animate-spin mr-2" />
-                  Updating password&hellip;
-                </>
-              ) : (
-                'Update password'
-              )}
-            </button>
-          </form>
-        </div>
+              <Button
+                type="submit"
+                disabled={loading}
+                className="w-full"
+                size="lg"
+              >
+                {loading ? (
+                  <>
+                    <Loader2 className="w-5 h-5 animate-spin mr-2" />
+                    Updating password&hellip;
+                  </>
+                ) : (
+                  'Update password'
+                )}
+              </Button>
+            </form>
+          </CardContent>
+        </Card>
       </div>
     </div>
   )

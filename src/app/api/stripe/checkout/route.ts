@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import Stripe from 'stripe'
 import { stripe, PRICE_IDS, COURSE_PRICE_MAP } from '@/lib/stripe'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
+import { rateLimit, getClientIp } from '@/lib/rate-limit'
 
 interface CheckoutRequestBody {
   priceId?: string
@@ -13,7 +14,22 @@ interface CheckoutRequestBody {
 
 export async function POST(request: NextRequest) {
   try {
-    const body: CheckoutRequestBody = await request.json()
+    // Rate limit: 10 checkout attempts per IP per 5 minutes
+    const ip = getClientIp(request.headers)
+    const rl = rateLimit(`checkout:${ip}`, { limit: 10, windowSeconds: 300 })
+    if (!rl.success) {
+      return NextResponse.json(
+        { error: 'Too many requests. Please try again later.' },
+        { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+      )
+    }
+
+    let body: CheckoutRequestBody
+    try {
+      body = await request.json()
+    } catch {
+      return NextResponse.json({ error: 'Invalid request body' }, { status: 400 })
+    }
     const { courseId, mode, rewardful_referral } = body
     let { priceId } = body
 

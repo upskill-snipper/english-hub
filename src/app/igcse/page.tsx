@@ -87,9 +87,9 @@ export default function IGCSELandingPage() {
   // Block non-Edexcel users from IGCSE page
   if (selectedBoard && selectedBoard !== 'Edexcel') {
     return (
-      <div className="flex min-h-[60vh] flex-col items-center justify-center gap-4 bg-brand-bg text-brand-text">
+      <div className="flex min-h-[60vh] flex-col items-center justify-center gap-4 bg-background text-foreground">
         <h1 className="text-2xl font-bold">IGCSE courses are for Edexcel students.</h1>
-        <p className="text-brand-muted text-center max-w-md">
+        <p className="text-muted-foreground text-center max-w-md">
           You have <strong>{selectedBoard}</strong> selected. IGCSE courses are only available for Edexcel students.
         </p>
         <Link href="/courses" className="btn-primary text-sm">
@@ -100,26 +100,26 @@ export default function IGCSELandingPage() {
   }
 
   return (
-    <main className="min-h-screen bg-brand-bg">
+    <main className="min-h-screen bg-background">
       {/* ━━━ HERO ━━━ */}
       <section className="relative overflow-hidden pt-20 pb-24 sm:pt-28 sm:pb-32">
         {/* Glow effect */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-accent/10 rounded-full blur-[128px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[128px] pointer-events-none" />
         <div className="absolute top-1/3 left-1/3 w-[400px] h-[400px] bg-cyan-500/5 rounded-full blur-[100px] pointer-events-none" />
 
         <div className="relative max-w-4xl mx-auto px-6 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-accent/30 bg-brand-accent/10 text-brand-accent text-sm font-medium mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-medium mb-8">
             <GraduationCap className="w-4 h-4" />
             International GCSE English Language
           </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-brand-text leading-tight tracking-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-foreground leading-tight tracking-tight">
             Edexcel IGCSE
             <br />
-            <span className="text-brand-accent">English Language</span>
+            <span className="text-primary">English Language</span>
           </h1>
 
-          <p className="mt-6 text-lg sm:text-xl text-brand-muted max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Complete courses for Specification A (4EA1) and Specification B
             (4EB1). Expert-written lessons, examiner-style model answers, and
             proven exam strategies &mdash; everything you need to achieve a
@@ -128,10 +128,10 @@ export default function IGCSELandingPage() {
 
           {!user && (
             <div className="mt-8 flex flex-col items-center gap-1">
-              <p className="text-xl sm:text-2xl font-bold text-brand-accent">
+              <p className="text-xl sm:text-2xl font-bold text-primary">
                 First month FREE! Then {PRICING_DISPLAY.monthly}
               </p>
-              <p className="text-sm text-brand-muted">
+              <p className="text-sm text-muted-foreground">
                 Annual subscription also available.
               </p>
             </div>
@@ -155,25 +155,25 @@ export default function IGCSELandingPage() {
 
       {/* Subscription CTA Banner */}
       {!user && (
-        <section className="bg-brand-card/30 border-b border-brand-border">
+        <section className="bg-card/30 border-b border-border">
           <div className="max-w-4xl mx-auto px-6 py-10">
-            <div className="rounded-2xl border border-brand-accent/30 bg-brand-accent/10 p-6 sm:p-8">
+            <div className="rounded-2xl border border-primary/30 bg-primary/10 p-6 sm:p-8">
               <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:justify-between">
                 <div>
-                  <p className="text-lg font-bold text-brand-text sm:text-xl">
+                  <p className="text-lg font-bold text-foreground sm:text-xl">
                     Get full access to all IGCSE courses, practice questions, and model answers.
                   </p>
-                  <p className="mt-1 text-brand-muted">
-                    <span className="font-semibold text-brand-accent">First month FREE!</span>
+                  <p className="mt-1 text-muted-foreground">
+                    <span className="font-semibold text-primary">First month FREE!</span>
                     {' '}Then {PRICING_DISPLAY.monthly} on a rolling monthly contract. Cancel anytime.
                   </p>
-                  <p className="mt-1 text-sm text-brand-muted">
+                  <p className="mt-1 text-sm text-muted-foreground">
                     Annual subscription also available &mdash; save {PRICING.ANNUAL_SAVE_PERCENT}%.
                   </p>
                 </div>
                 <Link
                   href="/auth/register"
-                  className="inline-flex shrink-0 items-center rounded-lg bg-brand-accent px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-accent/90"
+                  className="inline-flex shrink-0 items-center rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary/90"
                 >
                   Start Free Trial
                 </Link>
@@ -184,13 +184,13 @@ export default function IGCSELandingPage() {
       )}
 
       {/* ━━━ WHY IGCSE ━━━ */}
-      <section className="py-20 sm:py-28 bg-brand-card/30">
+      <section className="py-20 sm:py-28 bg-card/30">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-14">
-            <h2 className="text-3xl sm:text-4xl font-bold text-brand-text">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
               Why Choose IGCSE?
             </h2>
-            <p className="mt-3 text-brand-muted max-w-xl mx-auto">
+            <p className="mt-3 text-muted-foreground max-w-xl mx-auto">
               The International GCSE is trusted by schools, universities, and
               employers worldwide &mdash; and our courses are built to help you
               excel in every paper.
@@ -207,7 +207,7 @@ export default function IGCSELandingPage() {
               },
               {
                 icon: BookOpen,
-                color: 'text-brand-accent bg-brand-accent/10',
+                color: 'text-primary bg-primary/10',
                 title: 'Broader Text Types',
                 desc: 'IGCSE covers a wider range of reading and writing styles than domestic GCSE, building versatile English skills.',
               },
@@ -226,17 +226,17 @@ export default function IGCSELandingPage() {
             ].map((card) => (
               <div
                 key={card.title}
-                className="card p-6 hover:border-brand-accent/40 transition-all duration-300"
+                className="card p-6 hover:border-primary/40 transition-all duration-300"
               >
                 <div
                   className={`w-12 h-12 rounded-xl ${card.color} flex items-center justify-center mb-4`}
                 >
                   <card.icon className="w-6 h-6" />
                 </div>
-                <h3 className="text-lg font-bold text-brand-text mb-2">
+                <h3 className="text-lg font-bold text-foreground mb-2">
                   {card.title}
                 </h3>
-                <p className="text-sm text-brand-muted leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   {card.desc}
                 </p>
               </div>
@@ -249,10 +249,10 @@ export default function IGCSELandingPage() {
       <section className="py-20 sm:py-28">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-14">
-            <h2 className="text-3xl sm:text-4xl font-bold text-brand-text">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
               Our IGCSE Courses
             </h2>
-            <p className="mt-3 text-brand-muted max-w-xl mx-auto">
+            <p className="mt-3 text-muted-foreground max-w-xl mx-auto">
               Two dedicated courses &mdash; one for each specification. Pick
               yours or study both to maximise your preparation.
             </p>
@@ -263,7 +263,7 @@ export default function IGCSELandingPage() {
               <Link
                 key={course.id}
                 href={`/courses/${course.id}`}
-                className="card group flex flex-col overflow-hidden transition-all duration-200 hover:border-brand-accent/40 hover:shadow-lg hover:shadow-brand-accent/5"
+                className="card group flex flex-col overflow-hidden transition-all duration-200 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5"
               >
                 {/* Colour accent bar */}
                 <div
@@ -283,7 +283,7 @@ export default function IGCSELandingPage() {
                     >
                       {course.tier}
                     </span>
-                    <span className="inline-flex items-center rounded-md bg-brand-bg px-2.5 py-0.5 text-xs font-medium text-brand-muted">
+                    <span className="inline-flex items-center rounded-md bg-background px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
                       {course.level}
                     </span>
                     {course.board && (
@@ -294,20 +294,20 @@ export default function IGCSELandingPage() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-lg font-bold text-brand-text group-hover:text-brand-accent transition-colors duration-200">
+                  <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors duration-200">
                     {course.title}
                   </h3>
-                  <p className="mt-1 text-sm text-brand-muted">
+                  <p className="mt-1 text-sm text-muted-foreground">
                     {course.subtitle}
                   </p>
 
                   {/* Description */}
-                  <p className="mt-3 line-clamp-3 flex-1 text-sm leading-relaxed text-brand-muted/80">
+                  <p className="mt-3 line-clamp-3 flex-1 text-sm leading-relaxed text-muted-foreground/80">
                     {course.description}
                   </p>
 
                   {/* Meta */}
-                  <div className="mt-4 flex flex-wrap items-center gap-4 text-xs text-brand-muted">
+                  <div className="mt-4 flex flex-wrap items-center gap-4 text-xs text-muted-foreground">
                     <span className="inline-flex items-center gap-1">
                       <Clock className="h-3.5 w-3.5" />
                       {course.duration}
@@ -323,11 +323,11 @@ export default function IGCSELandingPage() {
                   </div>
 
                   {/* Footer */}
-                  <div className="mt-5 flex items-center justify-between border-t border-brand-border pt-5">
-                    <span className="text-xs text-brand-muted">
+                  <div className="mt-5 flex items-center justify-between border-t border-border pt-5">
+                    <span className="text-xs text-muted-foreground">
                       Included with subscription
                     </span>
-                    <span className="inline-flex items-center rounded-lg bg-brand-accent/10 px-4 py-2 text-sm font-semibold text-brand-accent transition-colors duration-200 group-hover:bg-brand-accent group-hover:text-white">
+                    <span className="inline-flex items-center rounded-lg bg-primary/10 px-4 py-2 text-sm font-semibold text-primary transition-colors duration-200 group-hover:bg-primary group-hover:text-white">
                       View Course
                     </span>
                   </div>
@@ -339,13 +339,13 @@ export default function IGCSELandingPage() {
       </section>
 
       {/* ━━━ WHAT YOU'LL LEARN ━━━ */}
-      <section className="py-20 sm:py-28 bg-brand-card/30">
+      <section className="py-20 sm:py-28 bg-card/30">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-14">
-            <h2 className="text-3xl sm:text-4xl font-bold text-brand-text">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
               What You&rsquo;ll Learn
             </h2>
-            <p className="mt-3 text-brand-muted max-w-xl mx-auto">
+            <p className="mt-3 text-muted-foreground max-w-xl mx-auto">
               Each specification focuses on distinct skills. Here&rsquo;s what
               you&rsquo;ll master.
             </p>
@@ -359,10 +359,10 @@ export default function IGCSELandingPage() {
                   <BookOpen className="w-5 h-5 text-sky-400" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-brand-text">
+                  <h3 className="text-lg font-bold text-foreground">
                     Specification A (4EA1)
                   </h3>
-                  <p className="text-xs text-brand-muted">
+                  <p className="text-xs text-muted-foreground">
                     Non-fiction, transactional &amp; imaginative writing
                   </p>
                 </div>
@@ -371,9 +371,9 @@ export default function IGCSELandingPage() {
                 {specASkills.map((skill) => (
                   <li
                     key={skill}
-                    className="flex items-start gap-2.5 text-sm text-brand-muted"
+                    className="flex items-start gap-2.5 text-sm text-muted-foreground"
                   >
-                    <CheckCircle className="w-4 h-4 text-brand-accent shrink-0 mt-0.5" />
+                    <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-0.5" />
                     {skill}
                   </li>
                 ))}
@@ -387,10 +387,10 @@ export default function IGCSELandingPage() {
                   <BookOpen className="w-5 h-5 text-cyan-400" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-brand-text">
+                  <h3 className="text-lg font-bold text-foreground">
                     Specification B (4EB1)
                   </h3>
-                  <p className="text-xs text-brand-muted">
+                  <p className="text-xs text-muted-foreground">
                     Literary &amp; non-fiction reading, creative writing
                   </p>
                 </div>
@@ -399,9 +399,9 @@ export default function IGCSELandingPage() {
                 {specBSkills.map((skill) => (
                   <li
                     key={skill}
-                    className="flex items-start gap-2.5 text-sm text-brand-muted"
+                    className="flex items-start gap-2.5 text-sm text-muted-foreground"
                   >
-                    <CheckCircle className="w-4 h-4 text-brand-accent shrink-0 mt-0.5" />
+                    <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-0.5" />
                     {skill}
                   </li>
                 ))}
@@ -415,10 +415,10 @@ export default function IGCSELandingPage() {
       <section className="py-20 sm:py-28">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-14">
-            <h2 className="text-3xl sm:text-4xl font-bold text-brand-text">
+            <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
               Exam Structure
             </h2>
-            <p className="mt-3 text-brand-muted max-w-xl mx-auto">
+            <p className="mt-3 text-muted-foreground max-w-xl mx-auto">
               Both specifications consist of two externally examined papers.
             </p>
           </div>
@@ -426,27 +426,27 @@ export default function IGCSELandingPage() {
           <div className="space-y-8">
             {examStructure.map((spec) => (
               <div key={spec.spec} className="card overflow-hidden">
-                <div className="bg-brand-card/60 px-6 py-4 border-b border-brand-border">
-                  <h3 className="text-lg font-bold text-brand-text">
+                <div className="bg-card/60 px-6 py-4 border-b border-border">
+                  <h3 className="text-lg font-bold text-foreground">
                     {spec.spec}
                   </h3>
                 </div>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead>
-                      <tr className="border-b border-brand-border text-left">
-                        <th className="px-6 py-3 font-semibold text-brand-text">
+                      <tr className="border-b border-border text-left">
+                        <th className="px-6 py-3 font-semibold text-foreground">
                           Paper
                         </th>
-                        <th className="px-6 py-3 font-semibold text-brand-text">
+                        <th className="px-6 py-3 font-semibold text-foreground">
                           <span className="inline-flex items-center gap-1">
                             <Clock className="w-3.5 h-3.5" /> Time
                           </span>
                         </th>
-                        <th className="px-6 py-3 font-semibold text-brand-text">
+                        <th className="px-6 py-3 font-semibold text-foreground">
                           Marks
                         </th>
-                        <th className="px-6 py-3 font-semibold text-brand-text">
+                        <th className="px-6 py-3 font-semibold text-foreground">
                           Weight
                         </th>
                       </tr>
@@ -455,18 +455,18 @@ export default function IGCSELandingPage() {
                       {spec.papers.map((paper) => (
                         <tr
                           key={paper.name}
-                          className="border-b border-brand-border last:border-0"
+                          className="border-b border-border last:border-0"
                         >
-                          <td className="px-6 py-4 text-brand-muted">
+                          <td className="px-6 py-4 text-muted-foreground">
                             {paper.name}
                           </td>
-                          <td className="px-6 py-4 text-brand-muted">
+                          <td className="px-6 py-4 text-muted-foreground">
                             {paper.time}
                           </td>
-                          <td className="px-6 py-4 text-brand-muted">
+                          <td className="px-6 py-4 text-muted-foreground">
                             {paper.marks}
                           </td>
-                          <td className="px-6 py-4 font-semibold text-brand-text">
+                          <td className="px-6 py-4 font-semibold text-foreground">
                             {paper.weight}
                           </td>
                         </tr>
@@ -481,17 +481,17 @@ export default function IGCSELandingPage() {
       </section>
 
       {/* ━━━ CTA BANNER ━━━ */}
-      <section className="py-20 sm:py-28 bg-brand-card/30">
+      <section className="py-20 sm:py-28 bg-card/30">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <div className="relative card p-12 sm:p-16 overflow-hidden">
             {/* Glow */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-brand-accent/10 rounded-full blur-[100px] pointer-events-none" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
 
             <div className="relative">
-              <h2 className="text-3xl sm:text-4xl font-bold text-brand-text mb-4">
+              <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
                 Ready to Achieve a Top Grade?
               </h2>
-              <p className="text-brand-muted max-w-lg mx-auto mb-6">
+              <p className="text-muted-foreground max-w-lg mx-auto mb-6">
                 Join thousands of international students who have transformed
                 their English skills with expert-written courses, examiner-style
                 model answers, and proven exam strategies.
@@ -499,10 +499,10 @@ export default function IGCSELandingPage() {
 
               {!user && (
                 <div className="mb-8 flex flex-col items-center gap-1">
-                  <p className="text-xl sm:text-2xl font-bold text-brand-accent">
+                  <p className="text-xl sm:text-2xl font-bold text-primary">
                     First month FREE! Then {PRICING_DISPLAY.monthly}
                   </p>
-                  <p className="text-sm text-brand-muted">
+                  <p className="text-sm text-muted-foreground">
                     Annual subscription also available.
                   </p>
                 </div>

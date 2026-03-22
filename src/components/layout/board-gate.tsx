@@ -3,6 +3,8 @@
 import { usePathname } from 'next/navigation'
 import { BookOpen, GraduationCap, ArrowRight, Layers, Pencil, FileText } from 'lucide-react'
 import { useBoardStore, type ExamBoard } from '@/store/board-store'
+import { Badge } from '@/components/ui/badge'
+import { cn } from '@/lib/utils'
 
 const boards = [
   {
@@ -63,57 +65,73 @@ export function BoardGate() {
   }
 
   return (
-    <div role="dialog" aria-modal="true" aria-labelledby="board-gate-heading" className="fixed inset-0 z-50 flex items-center justify-center bg-brand-bg/95 backdrop-blur-sm p-4">
-      <div className="w-full max-w-5xl">
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="board-gate-heading"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-background/97 backdrop-blur-lg p-4"
+    >
+      <div className="w-full max-w-5xl animate-scale-in">
         {/* Header */}
-        <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-accent/10 mb-5">
-            <GraduationCap className="w-8 h-8 text-brand-accent" />
+        <div className="text-center mb-10">
+          <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-primary/10 mb-5">
+            <GraduationCap className="w-7 h-7 text-primary" />
           </div>
-          <h1 id="board-gate-heading" className="text-2xl sm:text-3xl font-bold text-brand-text mb-3">
+          <h1
+            id="board-gate-heading"
+            className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground mb-3"
+          >
             Welcome to The English Hub
           </h1>
-          <p className="text-brand-muted leading-relaxed max-w-md mx-auto">
+          <p className="text-muted-foreground leading-relaxed max-w-md mx-auto text-body-sm">
             Select your exam board to personalise your learning experience. You
             can change this at any time from the sidebar.
           </p>
         </div>
 
         {/* Board cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
           {boards.map((board) => {
             const Icon = board.icon
             return (
               <button
                 key={board.id}
                 onClick={() => setBoard(board.id)}
-                className="group flex flex-col items-center text-center bg-brand-card border border-brand-border rounded-xl p-6
-                           hover:border-brand-accent/40 hover:shadow-lg hover:shadow-brand-accent/5
-                           transition-all duration-200 focus-visible:outline-none focus-visible:ring-2
-                           focus-visible:ring-brand-accent focus-visible:ring-offset-2 focus-visible:ring-offset-brand-bg"
+                className={cn(
+                  'group flex flex-col items-center text-center rounded-2xl bg-card p-5 border border-border/50',
+                  'hover:border-primary/30 hover:shadow-card-hover hover:bg-card',
+                  'transition-all duration-300',
+                  'focus-visible:outline-none focus-visible:ring-2',
+                  'focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background'
+                )}
               >
-                <div
-                  className={`flex items-center justify-center w-12 h-12 rounded-full ${board.color} mb-4`}
-                >
-                  <Icon className="w-6 h-6 text-white" />
-                </div>
+                  <div className="flex flex-col items-center">
+                    <div
+                      className={cn(
+                        'flex items-center justify-center w-11 h-11 rounded-xl mb-4',
+                        board.color
+                      )}
+                    >
+                      <Icon className="w-5 h-5 text-white" />
+                    </div>
 
-                <h2 className="text-lg font-bold text-brand-text mb-1">
-                  {board.title}
-                </h2>
+                    <h2 className="text-lg font-bold tracking-tight text-foreground mb-1">
+                      {board.title}
+                    </h2>
 
-                <p className="text-sm font-medium text-brand-accent mb-2">
-                  {board.subtitle}
-                </p>
+                    <Badge variant="secondary" className="mb-2 font-medium text-[10px]">
+                      {board.subtitle}
+                    </Badge>
 
-                <p className="text-sm text-brand-muted leading-relaxed mb-4">
-                  {board.description}
-                </p>
+                    <p className="text-xs text-muted-foreground leading-relaxed mb-4">
+                      {board.description}
+                    </p>
 
-                <span className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-accent opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                  Get started
-                  <ArrowRight className="w-4 h-4" />
-                </span>
+                    <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      Get started
+                      <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </div>
               </button>
             )
           })}

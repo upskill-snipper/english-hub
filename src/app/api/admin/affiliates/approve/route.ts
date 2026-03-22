@@ -36,7 +36,12 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
-  const body: ApproveBody = await request.json()
+  let body: ApproveBody
+  try {
+    body = await request.json()
+  } catch {
+    return NextResponse.json({ error: 'Invalid request body' }, { status: 400 })
+  }
 
   if (!body.affiliateId || !body.action) {
     return NextResponse.json({ error: 'Missing affiliateId or action' }, { status: 400 })
@@ -89,14 +94,18 @@ export async function POST(request: NextRequest) {
     last_name: nameParts.slice(1).join(' ') || undefined,
   })
 
+  if (!rewardfulAffiliate) {
+    return NextResponse.json(
+      { error: 'Failed to create Rewardful affiliate account. Please retry.' },
+      { status: 502 }
+    )
+  }
+
   // 2. Update affiliate record
   const updateData: Record<string, unknown> = {
     status: 'active',
     activated_at: new Date().toISOString(),
-  }
-
-  if (rewardfulAffiliate) {
-    updateData.rewardful_affiliate_id = rewardfulAffiliate.id
+    rewardful_affiliate_id: rewardfulAffiliate.id,
   }
 
   const { error: updateError } = await supabaseAdmin

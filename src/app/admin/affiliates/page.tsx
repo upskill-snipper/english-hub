@@ -19,11 +19,6 @@ import {
   ChevronDown,
 } from 'lucide-react'
 
-// TODO: Move admin check to a server component so ADMIN_EMAILS doesn't need to be exposed client-side
-const ADMIN_EMAILS = (process.env.NEXT_PUBLIC_ADMIN_EMAILS || 'admin@theenglishhub.app')
-  .split(',')
-  .map((e) => e.trim().toLowerCase())
-
 interface AffiliateWithStats {
   id: string
   full_name: string
@@ -54,11 +49,11 @@ interface AffiliateWithStats {
 export default function AdminAffiliatesPage() {
   const router = useRouter()
   const { user, profile } = useAuthStore()
-  const isAdmin = !!profile?.email && ADMIN_EMAILS.includes(profile.email.toLowerCase())
 
   const [affiliates, setAffiliates] = useState<AffiliateWithStats[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [authorized, setAuthorized] = useState(false)
   const [filter, setFilter] = useState<string>('')
   const [actionLoading, setActionLoading] = useState<string | null>(null)
   const [expandedId, setExpandedId] = useState<string | null>(null)
@@ -77,28 +72,35 @@ export default function AdminAffiliatesPage() {
         ? `/api/admin/affiliates?status=${filter}`
         : '/api/admin/affiliates'
       const res = await fetch(url)
+
+      if (res.status === 401) {
+        router.push('/auth/login?redirect=/admin/affiliates')
+        return
+      }
+      if (res.status === 403) {
+        router.push('/dashboard')
+        return
+      }
+
       if (!res.ok) throw new Error('Failed to fetch')
       const data = await res.json()
+      setAuthorized(true)
       setAffiliates(data)
     } catch {
       setError('Failed to load affiliates')
     }
     setLoading(false)
-  }, [filter])
+  }, [filter, router])
 
   useEffect(() => {
     if (!user && !useAuthStore.getState().isLoading) {
       router.push('/auth/login?redirect=/admin/affiliates')
       return
     }
-    if (profile && !isAdmin) {
-      router.push('/dashboard')
-      return
-    }
-    if (profile && isAdmin) {
+    if (user) {
       fetchAffiliates()
     }
-  }, [user, profile, router, isAdmin, fetchAffiliates])
+  }, [user, profile, router, fetchAffiliates])
 
   const handleAction = async (affiliateId: string, action: 'approve' | 'reject') => {
     setActionLoading(affiliateId)
@@ -159,10 +161,10 @@ export default function AdminAffiliatesPage() {
   const formatDate = (d: string) =>
     new Date(d).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
 
-  if (loading || !isAdmin) {
+  if (loading || !authorized) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <Loader2 className="w-8 h-8 animate-spin text-brand-accent" />
+        <Loader2 className="w-8 h-8 animate-spin text-primary" />
       </div>
     )
   }
@@ -175,7 +177,7 @@ export default function AdminAffiliatesPage() {
       <div className="max-w-6xl mx-auto">
         <Link
           href="/admin"
-          className="inline-flex items-center gap-2 text-brand-muted hover:text-brand-text transition-colors mb-8"
+          className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8"
         >
           <ArrowLeft className="w-4 h-4" />
           Back to admin
@@ -183,13 +185,13 @@ export default function AdminAffiliatesPage() {
 
         <div className="flex items-center justify-between mb-8">
           <div className="flex items-center gap-3">
-            <Shield className="w-7 h-7 text-brand-accent" />
-            <h1 className="text-3xl font-bold text-brand-text">Affiliate Management</h1>
+            <Shield className="w-7 h-7 text-primary" />
+            <h1 className="text-3xl font-bold text-foreground">Affiliate Management</h1>
           </div>
           <button
             onClick={fetchAffiliates}
             disabled={loading}
-            className="inline-flex items-center gap-2 px-3 py-2 text-sm rounded-lg border border-brand-border text-brand-muted hover:text-brand-text transition-colors"
+            className="inline-flex items-center gap-2 px-3 py-2 text-sm rounded-lg border border-border text-muted-foreground hover:text-foreground transition-colors"
           >
             <RefreshCw className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} />
             Refresh
@@ -222,8 +224,8 @@ export default function AdminAffiliatesPage() {
               onClick={() => setFilter(f)}
               className={`px-3 py-1.5 rounded-lg text-sm transition-colors ${
                 filter === f
-                  ? 'bg-brand-accent text-white'
-                  : 'bg-brand-card border border-brand-border text-brand-muted hover:text-brand-text'
+                  ? 'bg-primary text-white'
+                  : 'bg-card border border-border text-muted-foreground hover:text-foreground'
               }`}
             >
               {f || 'All'}
@@ -234,36 +236,36 @@ export default function AdminAffiliatesPage() {
         {/* Pending Applications */}
         {pending.length > 0 && !filter && (
           <section className="card p-6 mb-6">
-            <h2 className="text-lg font-semibold text-brand-text mb-4 flex items-center gap-2">
+            <h2 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
               <AlertTriangle className="w-5 h-5 text-yellow-400" />
               Pending Applications ({pending.length})
             </h2>
             <div className="space-y-4">
               {pending.map((a) => (
-                <div key={a.id} className="bg-brand-bg rounded-lg border border-brand-border p-4">
+                <div key={a.id} className="bg-background rounded-lg border border-border p-4">
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
-                        <span className="font-semibold text-brand-text">{a.full_name}</span>
+                        <span className="font-semibold text-foreground">{a.full_name}</span>
                         {a.is_minor && (
                           <span className="text-xs px-2 py-0.5 rounded-full bg-yellow-500/10 text-yellow-400">
                             Under 18
                           </span>
                         )}
                       </div>
-                      <p className="text-sm text-brand-muted">{a.email}</p>
-                      <div className="flex gap-4 mt-2 text-xs text-brand-muted">
+                      <p className="text-sm text-muted-foreground">{a.email}</p>
+                      <div className="flex gap-4 mt-2 text-xs text-muted-foreground">
                         {a.tiktok_handle && <span>TikTok: {a.tiktok_handle}</span>}
                         {a.instagram_handle && <span>IG: {a.instagram_handle}</span>}
                         {a.approx_follower_count && <span>Followers: {a.approx_follower_count}</span>}
                       </div>
                       {a.audience_description && (
-                        <p className="text-sm text-brand-muted mt-2 italic">
+                        <p className="text-sm text-muted-foreground mt-2 italic">
                           &quot;{a.audience_description}&quot;
                         </p>
                       )}
                       {a.content_plan && (
-                        <p className="text-sm text-brand-muted mt-1">
+                        <p className="text-sm text-muted-foreground mt-1">
                           <strong>Content plan:</strong> {a.content_plan}
                         </p>
                       )}
@@ -272,7 +274,7 @@ export default function AdminAffiliatesPage() {
                           href={a.best_post_url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1 text-sm text-brand-accent hover:underline mt-1"
+                          className="inline-flex items-center gap-1 text-sm text-primary hover:underline mt-1"
                         >
                           View best post <ExternalLink className="w-3 h-3" />
                         </a>
@@ -309,16 +311,16 @@ export default function AdminAffiliatesPage() {
 
         {/* All Affiliates Table */}
         <section className="card p-6 mb-6">
-          <h2 className="text-lg font-semibold text-brand-text mb-4">
+          <h2 className="text-lg font-semibold text-foreground mb-4">
             {filter ? `${filter.charAt(0).toUpperCase() + filter.slice(1)} Affiliates` : 'All Affiliates'} ({affiliates.length})
           </h2>
           {affiliates.length === 0 ? (
-            <p className="text-brand-muted text-sm py-8 text-center">No affiliates found.</p>
+            <p className="text-muted-foreground text-sm py-8 text-center">No affiliates found.</p>
           ) : (
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-brand-border text-left text-brand-muted">
+                  <tr className="border-b border-border text-left text-muted-foreground">
                     <th className="pb-3 pr-4 font-medium">Name</th>
                     <th className="pb-3 pr-4 font-medium">Status</th>
                     <th className="pb-3 pr-4 font-medium">Tier</th>
@@ -328,17 +330,17 @@ export default function AdminAffiliatesPage() {
                     <th className="pb-3 font-medium">Joined</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-brand-border">
+                <tbody className="divide-y divide-border">
                   {affiliates.map((a) => (
                     <tr
                       key={a.id}
-                      className="text-brand-text cursor-pointer hover:bg-brand-card/50"
+                      className="text-foreground cursor-pointer hover:bg-card/50"
                       onClick={() => setExpandedId(expandedId === a.id ? null : a.id)}
                     >
                       <td className="py-3 pr-4">
                         <div className="flex items-center gap-2">
                           <ChevronDown
-                            className={`w-3 h-3 text-brand-muted transition-transform ${
+                            className={`w-3 h-3 text-muted-foreground transition-transform ${
                               expandedId === a.id ? 'rotate-180' : ''
                             }`}
                           />
@@ -357,7 +359,7 @@ export default function AdminAffiliatesPage() {
                       <td className="py-3 pr-4">{a.stats.total_referrals}</td>
                       <td className="py-3 pr-4">{formatGBP(a.stats.total_commission_paid)}</td>
                       <td className="py-3 pr-4">{formatGBP(a.stats.pending_commission)}</td>
-                      <td className="py-3 text-brand-muted text-xs">{formatDate(a.created_at)}</td>
+                      <td className="py-3 text-muted-foreground text-xs">{formatDate(a.created_at)}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -368,8 +370,8 @@ export default function AdminAffiliatesPage() {
 
         {/* Payout Calculator */}
         <section className="card p-6">
-          <h2 className="text-lg font-semibold text-brand-text mb-4 flex items-center gap-2">
-            <DollarSign className="w-5 h-5 text-brand-accent" />
+          <h2 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
+            <DollarSign className="w-5 h-5 text-primary" />
             Monthly Payout Calculator
           </h2>
           <div className="flex items-end gap-4 mb-4">
@@ -406,27 +408,27 @@ export default function AdminAffiliatesPage() {
           </div>
 
           {payoutResult && (
-            <div className="bg-brand-bg rounded-lg border border-brand-border p-4">
+            <div className="bg-background rounded-lg border border-border p-4">
               {payoutResult.error ? (
                 <p className="text-red-400 text-sm">{payoutResult.error}</p>
               ) : payoutResult.message ? (
-                <p className="text-brand-muted text-sm">{payoutResult.message}</p>
+                <p className="text-muted-foreground text-sm">{payoutResult.message}</p>
               ) : (
                 <div>
-                  <p className="text-brand-muted text-sm mb-3">
+                  <p className="text-muted-foreground text-sm mb-3">
                     {payoutResult.payouts.length} payout(s) created:
                   </p>
                   <div className="space-y-2">
                     {payoutResult.payouts.map((p: any) => (
                       <div
                         key={p.payout_id}
-                        className="flex items-center justify-between bg-brand-card rounded-lg p-3"
+                        className="flex items-center justify-between bg-card rounded-lg p-3"
                       >
                         <div>
-                          <span className="text-sm text-brand-text font-medium">
+                          <span className="text-sm text-foreground font-medium">
                             Affiliate: {p.affiliate_id.slice(0, 8)}...
                           </span>
-                          <span className="text-sm text-brand-muted ml-3">
+                          <span className="text-sm text-muted-foreground ml-3">
                             {p.referral_count} referral(s) · {formatGBP(p.gross_commission_gbp)}
                           </span>
                         </div>
@@ -437,7 +439,7 @@ export default function AdminAffiliatesPage() {
                                 disclosure_check_passed: true,
                               })
                             }
-                            className="text-xs px-2 py-1 rounded border border-brand-border text-brand-muted hover:text-brand-text"
+                            className="text-xs px-2 py-1 rounded border border-border text-muted-foreground hover:text-foreground"
                           >
                             Mark Disclosure OK
                           </button>
@@ -460,12 +462,12 @@ function StatusBadge({ status }: { status: string }) {
     pending: 'bg-yellow-500/10 text-yellow-400',
     agreement_sent: 'bg-blue-500/10 text-blue-400',
     agreement_signed: 'bg-blue-500/10 text-blue-400',
-    active: 'bg-brand-accent/10 text-brand-accent',
+    active: 'bg-primary/10 text-primary',
     suspended: 'bg-orange-500/10 text-orange-400',
     terminated: 'bg-red-500/10 text-red-400',
   }
   return (
-    <span className={`inline-block text-xs px-2 py-0.5 rounded-full ${styles[status] ?? 'bg-brand-border text-brand-muted'}`}>
+    <span className={`inline-block text-xs px-2 py-0.5 rounded-full ${styles[status] ?? 'bg-border text-muted-foreground'}`}>
       {status}
     </span>
   )
@@ -482,11 +484,11 @@ function StatCard({
 }) {
   return (
     <div className="card p-5">
-      <div className="flex items-center gap-2 text-brand-accent mb-2">
+      <div className="flex items-center gap-2 text-primary mb-2">
         {icon}
-        <span className="text-sm text-brand-muted">{label}</span>
+        <span className="text-sm text-muted-foreground">{label}</span>
       </div>
-      <p className="text-2xl font-bold text-brand-text">
+      <p className="text-2xl font-bold text-foreground">
         {typeof value === 'number' ? value.toLocaleString() : value}
       </p>
     </div>

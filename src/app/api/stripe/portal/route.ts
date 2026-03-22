@@ -2,9 +2,20 @@ import { NextRequest, NextResponse } from 'next/server'
 import Stripe from 'stripe'
 import { stripe } from '@/lib/stripe'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
+import { rateLimit, getClientIp } from '@/lib/rate-limit'
 
-export async function POST(_request: NextRequest) {
+export async function POST(request: NextRequest) {
   try {
+    // Rate limit: 10 portal requests per IP per 5 minutes
+    const ip = getClientIp(request.headers)
+    const rl = rateLimit(`portal:${ip}`, { limit: 10, windowSeconds: 300 })
+    if (!rl.success) {
+      return NextResponse.json(
+        { error: 'Too many requests. Please try again later.' },
+        { status: 429 }
+      )
+    }
+
     const supabase = createServerSupabaseClient()
     const {
       data: { user },

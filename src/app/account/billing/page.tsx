@@ -120,7 +120,7 @@ export default function BillingPage() {
   if (pageLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <Loader2 className="w-8 h-8 animate-spin text-brand-accent" />
+        <Loader2 className="w-8 h-8 animate-spin text-primary" />
       </div>
     )
   }
@@ -130,13 +130,13 @@ export default function BillingPage() {
       <div className="max-w-2xl mx-auto">
         <Link
           href="/account"
-          className="inline-flex items-center gap-2 text-brand-muted hover:text-brand-text transition-colors mb-8"
+          className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8"
         >
           <ArrowLeft className="w-4 h-4" />
           Back to account
         </Link>
 
-        <h1 className="text-3xl font-bold text-brand-text mb-8">
+        <h1 className="text-3xl font-bold text-foreground mb-8">
           Billing &amp; Subscription
         </h1>
 
@@ -169,10 +169,10 @@ export default function BillingPage() {
         )}
 
         {/* Current Plan */}
-        <section className="bg-brand-card border border-brand-border rounded-xl p-6 mb-6">
+        <section className="bg-card border border-border rounded-xl p-6 mb-6">
           <div className="flex items-center gap-3 mb-4">
-            <Crown className="w-5 h-5 text-brand-accent" />
-            <h2 className="text-xl font-semibold text-brand-text">
+            <Crown className="w-5 h-5 text-primary" />
+            <h2 className="text-xl font-semibold text-foreground">
               Current Plan
             </h2>
           </div>
@@ -181,10 +181,10 @@ export default function BillingPage() {
             <span
               className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium ${
                 isPro
-                  ? 'bg-brand-accent/10 text-brand-accent border border-brand-accent/30'
+                  ? 'bg-primary/10 text-primary border border-primary/30'
                   : isCancelled
                   ? 'bg-yellow-500/10 text-yellow-400 border border-yellow-500/30'
-                  : 'bg-brand-border text-brand-muted border border-brand-border'
+                  : 'bg-border text-muted-foreground border border-border'
               }`}
             >
               {isPro && <Sparkles className="w-3.5 h-3.5" />}
@@ -193,7 +193,7 @@ export default function BillingPage() {
           </div>
 
           {subscriptionEnd && (
-            <div className="flex items-center gap-2 text-sm text-brand-muted mb-4">
+            <div className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
               <Calendar className="w-4 h-4" />
               {isPro ? 'Renews' : 'Access until'}{' '}
               {subscriptionEnd.toLocaleDateString('en-GB', {
@@ -224,30 +224,30 @@ export default function BillingPage() {
             </button>
           ) : (
             <div className="space-y-4">
-              <p className="text-brand-muted text-sm">
+              <p className="text-muted-foreground text-sm">
                 Upgrade to Pro for unlimited access to all courses, practice
                 papers, and premium features.
               </p>
 
               <div className="grid sm:grid-cols-2 gap-4">
                 {/* Monthly */}
-                <div className="border border-brand-border rounded-xl p-5 hover:border-brand-accent/50 transition-colors">
-                  <h3 className="text-lg font-semibold text-brand-text mb-1">
+                <div className="border border-border rounded-xl p-5 hover:border-primary/50 transition-colors">
+                  <h3 className="text-lg font-semibold text-foreground mb-1">
                     Pro Monthly
                   </h3>
-                  <p className="text-2xl font-bold text-brand-accent mb-1">
+                  <p className="text-2xl font-bold text-primary mb-1">
                     {PRICING.CURRENCY}{PRICING.MONTHLY}
-                    <span className="text-sm font-normal text-brand-muted">
+                    <span className="text-sm font-normal text-muted-foreground">
                       /month
                     </span>
                   </p>
-                  <ul className="text-sm text-brand-muted space-y-1 mb-4">
+                  <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                     <li className="flex items-center gap-1.5">
-                      <CheckCircle className="w-3.5 h-3.5 text-brand-accent" />
+                      <CheckCircle className="w-3.5 h-3.5 text-primary" />
                       All courses included
                     </li>
                     <li className="flex items-center gap-1.5">
-                      <CheckCircle className="w-3.5 h-3.5 text-brand-accent" />
+                      <CheckCircle className="w-3.5 h-3.5 text-primary" />
                       Cancel anytime
                     </li>
                   </ul>
@@ -268,26 +268,26 @@ export default function BillingPage() {
                 </div>
 
                 {/* Annual */}
-                <div className="border border-brand-accent/40 rounded-xl p-5 relative">
-                  <span className="absolute -top-3 left-4 bg-brand-accent text-white text-xs font-bold px-2 py-0.5 rounded-full">
+                <div className="border border-primary/40 rounded-xl p-5 relative">
+                  <span className="absolute -top-3 left-4 bg-primary text-white text-xs font-bold px-2 py-0.5 rounded-full">
                     Save {PRICING.ANNUAL_SAVE_PERCENT}%
                   </span>
-                  <h3 className="text-lg font-semibold text-brand-text mb-1">
+                  <h3 className="text-lg font-semibold text-foreground mb-1">
                     Pro Annual
                   </h3>
-                  <p className="text-2xl font-bold text-brand-accent mb-1">
+                  <p className="text-2xl font-bold text-primary mb-1">
                     {PRICING.CURRENCY}{PRICING.ANNUAL}
-                    <span className="text-sm font-normal text-brand-muted">
+                    <span className="text-sm font-normal text-muted-foreground">
                       /year
                     </span>
                   </p>
-                  <ul className="text-sm text-brand-muted space-y-1 mb-4">
+                  <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                     <li className="flex items-center gap-1.5">
-                      <CheckCircle className="w-3.5 h-3.5 text-brand-accent" />
+                      <CheckCircle className="w-3.5 h-3.5 text-primary" />
                       All courses included
                     </li>
                     <li className="flex items-center gap-1.5">
-                      <CheckCircle className="w-3.5 h-3.5 text-brand-accent" />
+                      <CheckCircle className="w-3.5 h-3.5 text-primary" />
                       Best value
                     </li>
                   </ul>
@@ -312,30 +312,30 @@ export default function BillingPage() {
         </section>
 
         {/* Individual Purchases */}
-        <section className="bg-brand-card border border-brand-border rounded-xl p-6">
+        <section className="bg-card border border-border rounded-xl p-6">
           <div className="flex items-center gap-3 mb-4">
-            <BookOpen className="w-5 h-5 text-brand-accent" />
-            <h2 className="text-xl font-semibold text-brand-text">
+            <BookOpen className="w-5 h-5 text-primary" />
+            <h2 className="text-xl font-semibold text-foreground">
               Course Purchases
             </h2>
           </div>
 
           {enrolments.length === 0 ? (
-            <p className="text-brand-muted text-sm">
+            <p className="text-muted-foreground text-sm">
               You have not purchased any individual courses yet.
             </p>
           ) : (
-            <div className="divide-y divide-brand-border">
+            <div className="divide-y divide-border">
               {enrolments.map((enrolment) => (
                 <div
                   key={enrolment.id}
                   className="flex items-center justify-between py-3 first:pt-0 last:pb-0"
                 >
                   <div>
-                    <p className="text-brand-text text-sm font-medium">
+                    <p className="text-foreground text-sm font-medium">
                       {getCourseName(enrolment.course_id)}
                     </p>
-                    <p className="text-brand-muted text-xs">
+                    <p className="text-muted-foreground text-xs">
                       Enrolled{' '}
                       {new Date(enrolment.enrolled_at).toLocaleDateString(
                         'en-GB',
@@ -350,10 +350,10 @@ export default function BillingPage() {
                   <span
                     className={`text-xs px-2 py-1 rounded-full ${
                       enrolment.payment_type === 'subscription'
-                        ? 'bg-brand-accent/10 text-brand-accent'
+                        ? 'bg-primary/10 text-primary'
                         : enrolment.payment_type === 'one_time'
                         ? 'bg-brand-blue/10 text-brand-blue'
-                        : 'bg-brand-border text-brand-muted'
+                        : 'bg-border text-muted-foreground'
                     }`}
                   >
                     {enrolment.payment_type === 'subscription'
