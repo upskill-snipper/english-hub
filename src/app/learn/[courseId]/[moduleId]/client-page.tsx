@@ -18,12 +18,12 @@ import {
   Loader2,
   Lock,
 } from 'lucide-react'
-import { allCourses } from '@/data/courses'
+import { loadCourseById } from '@/data/course-loader'
 import type { CourseData, CourseModule, CourseQuiz } from '@/data/courses'
 import { createClient } from '@/lib/supabase/client'
-import { useAuthStore } from '@/store/auth-store'
-import { useCourseStore } from '@/store/course-store'
-import { useBoardStore } from '@/store/board-store'
+import { useAuthUserProfile } from '@/store/auth-store'
+import { useCourseStore, useCourseProgress, useCourseActions } from '@/store/course-store'
+import { useSelectedBoard } from '@/store/board-store'
 import { matchesBoard } from '@/lib/board-filter'
 
 // ─── Quiz Card ───────────────────────────────────────────────────────────────
@@ -369,10 +369,10 @@ export default function CoursePlayerPage() {
   const courseId = params.courseId as string
   const moduleId = params.moduleId as string
 
-  const { user, profile } = useAuthStore()
-  const { completedModules, markModuleComplete, setCourse, setModule } =
-    useCourseStore()
-  const { selectedBoard } = useBoardStore()
+  const { user, profile } = useAuthUserProfile()
+  const { completedModules, markModuleComplete } = useCourseProgress()
+  const { setCourse, setModule } = useCourseActions()
+  const selectedBoard = useSelectedBoard()
 
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [hasAccess, setHasAccess] = useState<boolean | null>(null)
@@ -381,11 +381,20 @@ export default function CoursePlayerPage() {
   const [completing, setCompleting] = useState(false)
   const [moduleCompleted, setModuleCompleted] = useState(false)
   const [loadingProgress, setLoadingProgress] = useState(true)
+  const [course, setCourseData] = useState<CourseData | null>(null)
+  const [courseLoading, setCourseLoading] = useState(true)
   const contentRef = useRef<HTMLDivElement>(null)
   const startTimeRef = useRef<number>(Date.now())
 
-  // Find course and module
-  const course = allCourses.find((c) => c.id === courseId) ?? null
+  // Load course data dynamically
+  useEffect(() => {
+    loadCourseById(courseId).then((c) => {
+      setCourseData(c ?? null)
+      setCourseLoading(false)
+    })
+  }, [courseId])
+
+  // Derive module info from loaded course
   const moduleIndex = course
     ? course.moduleList.findIndex((m) => m.id === moduleId)
     : -1
@@ -571,6 +580,14 @@ export default function CoursePlayerPage() {
     [currentModule?.content]
   )
 
+  if (courseLoading) {
+    return (
+      <div className="flex min-h-[60vh] items-center justify-center">
+        <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
+      </div>
+    )
+  }
+
   if (!course || !currentModule) {
     notFound()
   }
@@ -585,6 +602,14 @@ export default function CoursePlayerPage() {
         <Link href="/courses" className="btn-primary text-sm">
           Browse your courses
         </Link>
+      </div>
+    )
+  }
+
+  if (hasAccess === null) {
+    return (
+      <div className="flex min-h-[60vh] items-center justify-center">
+        <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
       </div>
     )
   }
@@ -628,7 +653,7 @@ export default function CoursePlayerPage() {
       />
 
       {/* Main Content */}
-      <main className="flex-1 flex flex-col min-w-0" ref={contentRef}>
+      <main className="flex-1 flex flex-col min-w-0">
         {/* Top Bar */}
         <header className="sticky top-0 z-30 bg-background/95 backdrop-blur-sm border-b border-border">
           <div className="flex items-center gap-3 px-4 py-3 md:px-6">
@@ -667,7 +692,7 @@ export default function CoursePlayerPage() {
         </header>
 
         {/* Module Content */}
-        <div className="flex-1 overflow-y-auto">
+        <div className="flex-1 overflow-y-auto" ref={contentRef}>
           <div className="max-w-3xl mx-auto px-4 py-8 md:px-8">
             {/* Module Header */}
             <div className="mb-8">

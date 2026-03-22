@@ -3,8 +3,38 @@ import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supab
 import { verifySchoolMember } from '@/lib/school-auth'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
 import { allCourses } from '@/data/courses'
+import type { SupabaseClient } from '@supabase/supabase-js'
 
 export const dynamic = 'force-dynamic'
+
+const PAGE_SIZE = 1000
+
+/**
+ * Fetch all rows from a Supabase query that may exceed the default 1000-row limit.
+ * Pages through results using range-based pagination.
+ */
+async function fetchAllRows<T>(
+  client: SupabaseClient,
+  table: string,
+  select: string,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  filters: (query: any) => any
+): Promise<T[]> {
+  const all: T[] = []
+  let from = 0
+  while (true) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let query: any = client.from(table).select(select)
+    query = filters(query)
+    const { data, error } = await query.range(from, from + PAGE_SIZE - 1)
+    if (error) throw error
+    if (!data || data.length === 0) break
+    all.push(...(data as T[]))
+    if (data.length < PAGE_SIZE) break
+    from += PAGE_SIZE
+  }
+  return all
+}
 
 function escapeCsvField(value: string | number | null | undefined): string {
   if (value === null || value === undefined) return ''
@@ -13,7 +43,7 @@ function escapeCsvField(value: string | number | null | undefined): string {
   if (/^[=+\-@]/.test(str)) {
     str = `'${str}`
   }
-  if (str.includes(',') || str.includes('"') || str.includes('\n')) {
+  if (str.includes(',') || str.includes('"') || str.includes('\n') || str.includes('\r')) {
     return `"${str.replace(/"/g, '""')}"`
   }
   return str
@@ -32,10 +62,27 @@ function predictGrade(avgScore: number | null): string {
   return 'Grade 1'
 }
 
+// GET handler for direct browser navigation (e.g. window.open from quick actions)
+// Exports all active classes as CSV by default
+export async function GET(request: NextRequest) {
+  // Rewrite as a POST-like call with default params
+  return handleExport(request, { format: 'csv' })
+}
+
 export async function POST(request: NextRequest) {
+  let body: { class_id?: string; format?: string }
+  try {
+    body = await request.json()
+  } catch {
+    return NextResponse.json({ error: 'Invalid request body' }, { status: 400 })
+  }
+  return handleExport(request, body)
+}
+
+async function handleExport(request: NextRequest, params: { class_id?: string; format?: string }) {
   try {
     const ip = getClientIp(request.headers)
-    const rl = rateLimit(`school-export:${ip}`, { limit: 5, windowSeconds: 60 })
+    const rl = await rateLimit(`school-export:${ip}`, { limit: 5, windowSeconds: 60 })
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
@@ -54,14 +101,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Forbidden: requires admin or head of department role' }, { status: 403 })
     }
 
-    let body: { class_id?: string; format?: string }
-    try {
-      body = await request.json()
-    } catch {
-      return NextResponse.json({ error: 'Invalid request body' }, { status: 400 })
-    }
-
-    const { class_id, format = 'csv' } = body
+    const { class_id, format = 'csv' } = params
 
     if (format !== 'csv') {
       return NextResponse.json({ error: 'Only CSV format is currently supported' }, { status: 422 })
@@ -114,12 +154,24 @@ export async function POST(request: NextRequest) {
     // Total modules available from static course data
     const totalModulesAvailable = allCourses.reduce((sum, c) => sum + c.moduleList.length, 0)
 
-    // Fetch all data in parallel
-    const [profilesResult, progressResult, practiceResult, certificatesResult] = await Promise.all([
-      admin.from('profiles').select('id, email, full_name, year_group').in('id', studentIds),
-      admin.from('module_progress').select('user_id, quiz_score, completed, time_spent_seconds, completed_at').in('user_id', studentIds),
-      admin.from('practice_sessions').select('user_id').in('user_id', studentIds),
-      admin.from('certificates').select('user_id').in('user_id', studentIds),
+    // Fetch all data in parallel, paginating to avoid the default 1000-row limit
+    const [profiles, progressRows, practiceRows, certificateRows] = await Promise.all([
+      fetchAllRows<{ id: string; email: string; full_name: string; year_group: string }>(
+        admin, 'profiles', 'id, email, full_name, year_group',
+        (q) => q.in('id', studentIds)
+      ),
+      fetchAllRows<{ user_id: string; quiz_score: number | null; completed: boolean; time_spent_seconds: number; completed_at: string | null }>(
+        admin, 'module_progress', 'user_id, quiz_score, completed, time_spent_seconds, completed_at',
+        (q) => q.in('user_id', studentIds)
+      ),
+      fetchAllRows<{ user_id: string }>(
+        admin, 'practice_sessions', 'user_id',
+        (q) => q.in('user_id', studentIds)
+      ),
+      fetchAllRows<{ user_id: string }>(
+        admin, 'certificates', 'user_id',
+        (q) => q.in('user_id', studentIds)
+      ),
     ])
 
     // Aggregate module progress per student
@@ -132,10 +184,7 @@ export async function POST(request: NextRequest) {
     const fourWeeksAgo = new Date(now.getTime() - 28 * 24 * 60 * 60 * 1000)
     const eightWeeksAgo = new Date(now.getTime() - 56 * 24 * 60 * 60 * 1000)
 
-    for (const p of (progressResult.data || []) as Array<{
-      user_id: string; quiz_score: number | null; completed: boolean;
-      time_spent_seconds: number; completed_at: string | null
-    }>) {
+    for (const p of progressRows) {
       if (!progressByStudent.has(p.user_id)) {
         progressByStudent.set(p.user_id, { scores: [], completed: 0, timeSpent: 0, recentScores: [], previousScores: [] })
       }
@@ -157,13 +206,13 @@ export async function POST(request: NextRequest) {
 
     // Count practice sessions per student
     const practiceByStudent = new Map<string, number>()
-    for (const p of (practiceResult.data || []) as Array<{ user_id: string }>) {
+    for (const p of practiceRows) {
       practiceByStudent.set(p.user_id, (practiceByStudent.get(p.user_id) || 0) + 1)
     }
 
     // Count certificates per student
     const certsByStudent = new Map<string, number>()
-    for (const c of (certificatesResult.data || []) as Array<{ user_id: string }>) {
+    for (const c of certificateRows) {
       certsByStudent.set(c.user_id, (certsByStudent.get(c.user_id) || 0) + 1)
     }
 
@@ -183,9 +232,7 @@ export async function POST(request: NextRequest) {
       'Predicted Grade',
     ]
 
-    const rows = (profilesResult.data || []).map((profile: {
-      id: string; email: string; full_name: string; year_group: string
-    }) => {
+    const rows = profiles.map((profile) => {
       const progress = progressByStudent.get(profile.id)
       const practiceCount = practiceByStudent.get(profile.id) || 0
       const certCount = certsByStudent.get(profile.id) || 0

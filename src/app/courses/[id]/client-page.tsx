@@ -1,8 +1,7 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, memo } from 'react'
 import Link from 'next/link'
-import { useParams, notFound } from 'next/navigation'
 import {
   BookOpen,
   Clock,
@@ -17,17 +16,16 @@ import { PRICING } from '@/constants/pricing'
 import { useAuthStore } from '@/store/auth-store'
 import { useBoardStore } from '@/store/board-store'
 import { matchesBoard } from '@/lib/board-filter'
-import { allCourses as courses } from '@/data/courses'
 import type { CourseData } from '@/data/courses'
 
-export default function CourseDetailPage() {
-  const params = useParams<{ id: string }>()
+interface CourseDetailPageProps {
+  course: CourseData
+}
+
+export default function CourseDetailPage({ course }: CourseDetailPageProps) {
   const { user, profile } = useAuthStore()
   const { selectedBoard } = useBoardStore()
 
-  const [course] = useState<CourseData | null>(
-    () => courses.find((c) => c.id === params.id) ?? null
-  )
   const [isEnrolled, setIsEnrolled] = useState(false)
   const [loading, setLoading] = useState(true)
 
@@ -35,7 +33,7 @@ export default function CourseDetailPage() {
 
   /* ---- Check enrolment ---- */
   useEffect(() => {
-    if (!user || !course) {
+    if (!user) {
       setLoading(false)
       return
     }
@@ -47,7 +45,7 @@ export default function CourseDetailPage() {
           .from('enrolments')
           .select('id')
           .eq('user_id', user!.id)
-          .eq('course_id', course!.id)
+          .eq('course_id', course.id)
           .maybeSingle()
 
         setIsEnrolled(!!data)
@@ -59,12 +57,7 @@ export default function CourseDetailPage() {
     }
 
     checkEnrolment()
-  }, [user, course])
-
-  /* ---- 404 ---- */
-  if (!course) {
-    notFound()
-  }
+  }, [user, course.id])
 
   // Board mismatch — course belongs to a different exam board
   if (course && selectedBoard && !matchesBoard(course.board, selectedBoard)) {
@@ -315,7 +308,7 @@ interface SubscriptionCardProps {
   billingHref?: string
 }
 
-function SubscriptionCard({
+const SubscriptionCard = memo(function SubscriptionCard({
   ctaLabel,
   ctaHref,
   hasAccess,
@@ -405,4 +398,4 @@ function SubscriptionCard({
       </div>
     </div>
   )
-}
+})

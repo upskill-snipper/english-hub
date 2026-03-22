@@ -85,7 +85,7 @@ function WaitlistForm({ subject }: { subject: SubjectConfig }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="mt-4 flex gap-2">
+    <form onSubmit={handleSubmit} className="relative mt-4 flex gap-2">
       <div className="relative flex-1">
         <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
         <Input

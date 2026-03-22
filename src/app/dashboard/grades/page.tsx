@@ -21,7 +21,7 @@ import { createClient } from '@/lib/supabase/client'
 import { useAuthStore } from '@/store/auth-store'
 import { useBoardStore } from '@/store/board-store'
 import { matchesBoard } from '@/lib/board-filter'
-import { allCourses } from '@/data/courses'
+import { loadAllCourses } from '@/data/course-loader'
 import { formatDate } from '@/lib/utils'
 import type { AssessmentAttempt, CourseData } from '@/lib/types'
 
@@ -41,9 +41,7 @@ interface PracticeSession {
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
-const courseMap = new Map<string, CourseData>(
-  allCourses.map((c) => [c.id, c])
-)
+// courseMap is built dynamically inside the component — see useMemo below
 
 const GRADE_BOUNDARIES: Record<string, { grade: string; min: number }[]> = {
   Edexcel: [
@@ -132,10 +130,21 @@ export default function GradeDashboardPage() {
   const { user, isLoading } = useAuthStore()
   const router = useRouter()
   const { selectedBoard } = useBoardStore()
+  const [allCourses, setAllCourses] = useState<CourseData[]>([])
   const [assessments, setAssessments] = useState<AssessmentAttempt[]>([])
   const [practiceSessions, setPracticeSessions] = useState<PracticeSession[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+
+  const courseMap = useMemo(
+    () => new Map<string, CourseData>(allCourses.map((c) => [c.id, c])),
+    [allCourses]
+  )
+
+  // Load course data dynamically
+  useEffect(() => {
+    loadAllCourses().then(setAllCourses)
+  }, [])
 
   // Auth redirect guard
   useEffect(() => {

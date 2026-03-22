@@ -16,7 +16,7 @@ export async function GET(request: NextRequest) {
 
   const statusFilter = request.nextUrl.searchParams.get('status')
 
-  const validStatuses = ['pending', 'active', 'suspended', 'terminated']
+  const validStatuses = ['pending', 'agreement_sent', 'agreement_signed', 'active', 'suspended', 'terminated']
   if (statusFilter && !validStatuses.includes(statusFilter)) {
     return NextResponse.json({ error: 'Invalid status filter' }, { status: 400 })
   }

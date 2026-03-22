@@ -182,17 +182,18 @@ export default function PracticePage() {
     setSaveError(null)
     try {
       const supabase = createClient()
-      await supabase.from('practice_sessions').insert({
+      const { error } = await supabase.from('practice_sessions').insert({
         user_id: user.id,
         question_id: currentQuestion.id,
         board: currentQuestion.board,
-        question_type: currentQuestion.questionType,
-        difficulty: currentQuestion.difficulty,
+        question_type: currentQuestion.questionType || currentQuestion.type,
+        difficulty: currentQuestion.difficulty || currentQuestion.tier,
         answer,
         self_rating: rating,
         time_seconds: elapsed,
         timed_mode: timedMode,
       })
+      if (error) throw error
       setSaved(true)
     } catch {
       setSaveError('Failed to save your session. Please try again.')
@@ -351,14 +352,16 @@ export default function PracticePage() {
               <Badge className="bg-primary/15 text-primary">
                 {currentQuestion.board}
               </Badge>
-              <Badge variant="secondary">
-                Paper {currentQuestion.paper}
-              </Badge>
+              {currentQuestion.paper != null && (
+                <Badge variant="secondary">
+                  Paper {currentQuestion.paper}
+                </Badge>
+              )}
               <Badge className="bg-amber-500/15 text-amber-600 dark:text-amber-400">
-                {currentQuestion.questionType}
+                {currentQuestion.questionType || currentQuestion.type || 'General'}
               </Badge>
               <Badge variant="outline">
-                {currentQuestion.difficulty}
+                {currentQuestion.difficulty || currentQuestion.tier || 'Standard'}
               </Badge>
             </div>
 

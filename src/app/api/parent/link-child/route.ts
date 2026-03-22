@@ -16,8 +16,17 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
+    // ── Role check: only parent accounts can link children ────────────────
+    const parentRole = user.user_metadata?.role
+    if (parentRole !== 'parent') {
+      return NextResponse.json(
+        { error: 'Only parent accounts can link to a child.' },
+        { status: 403 }
+      )
+    }
+
     // ── Rate limiting: 5 requests per hour per user ────────────────────────
-    const rateLimitResult = rateLimit(`link-child:${user.id}`, {
+    const rateLimitResult = await rateLimit(`link-child:${user.id}`, {
       limit: 5,
       windowSeconds: 3600,
     })
@@ -68,7 +77,8 @@ export async function POST(request: NextRequest) {
       }
       childUserId = pendingLink.child_id
     } else if (child_email) {
-      // Look up child by email in profiles
+      // Look up child by email in profiles — use a generic error message
+      // to prevent email enumeration attacks
       const { data: childProfile, error: profileErr } = await serviceClient
         .from('profiles')
         .select('id')
@@ -77,8 +87,8 @@ export async function POST(request: NextRequest) {
 
       if (profileErr || !childProfile) {
         return NextResponse.json(
-          { error: 'No account found with that email address. Make sure your child has signed up first.' },
-          { status: 404 }
+          { error: 'If an account exists with that email, a link request has been sent. Ask your child to check their dashboard.' },
+          { status: 200 }
         )
       }
       childUserId = childProfile.id
@@ -170,7 +180,7 @@ export async function POST(request: NextRequest) {
 
 // ── DELETE: Unlink a child account ──────────────────────────────────────────
 
-export async function DELETE() {
+export async function DELETE(request: NextRequest) {
   try {
     const supabase = createServerSupabaseClient()
     const {
@@ -182,19 +192,53 @@ export async function DELETE() {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
+    // ── Role check ────────────────────────────────────────────────────────
+    const parentRole = user.user_metadata?.role
+    if (parentRole !== 'parent') {
+      return NextResponse.json(
+        { error: 'Only parent accounts can unlink children.' },
+        { status: 403 }
+      )
+    }
+
+    // ── Parse child_id from request body ──────────────────────────────────
+    let body: { child_id?: string }
+    try {
+      body = await request.json()
+    } catch {
+      return NextResponse.json({ error: 'Invalid request body' }, { status: 400 })
+    }
+
+    const { child_id } = body
+    if (!child_id) {
+      return NextResponse.json(
+        { error: 'child_id is required.' },
+        { status: 400 }
+      )
+    }
+
     const serviceClient = createServiceRoleClient()
 
-    const { error: deleteError } = await serviceClient
+    const { data: updated, error: deleteError } = await serviceClient
       .from('parent_child_links')
       .update({ status: 'unlinked', unlinked_at: new Date().toISOString() })
       .eq('parent_id', user.id)
+      .eq('child_id', child_id)
       .eq('status', 'active')
+      .select('id')
 
     if (deleteError) {
       console.error('Failed to unlink:', deleteError)
       return NextResponse.json(
         { error: 'Failed to unlink accounts.' },
         { status: 500 }
+      )
+    }
+
+    if (!updated || updated.length === 0) {
+      return NextResponse.json(
+        { error: 'No active link found for this child.' },
+        { status: 404 }
       )
     }
 

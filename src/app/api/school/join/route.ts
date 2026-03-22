@@ -7,7 +7,7 @@ export const dynamic = 'force-dynamic'
 export async function POST(request: NextRequest) {
   try {
     const ip = getClientIp(request.headers)
-    const rl = rateLimit(`school-join:${ip}`, { limit: 5, windowSeconds: 60 })
+    const rl = await rateLimit(`school-join:${ip}`, { limit: 5, windowSeconds: 60 })
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
@@ -212,10 +212,46 @@ export async function POST(request: NextRequest) {
     const schoolName = (joinCode.schools as { name: string } | null)?.name ?? 'your school'
     const className = (joinCode.classes as { name: string } | null)?.name ?? null
 
+    // Check if the student is under 16 and flag for parental consent
+    let parentalConsentStatus: string | null = null
+    const { data: profile } = await admin
+      .from('profiles')
+      .select('date_of_birth')
+      .eq('id', user.id)
+      .single()
+
+    if (profile?.date_of_birth) {
+      const dob = new Date(profile.date_of_birth)
+      const today = new Date()
+      let age = today.getFullYear() - dob.getFullYear()
+      const monthDiff = today.getMonth() - dob.getMonth()
+      if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
+        age--
+      }
+
+      if (age < 16) {
+        // Check if consent already exists for this student+school
+        const { data: existingConsent } = await admin
+          .from('parental_consents')
+          .select('status')
+          .eq('student_user_id', user.id)
+          .eq('school_id', schoolId)
+          .single()
+
+        if (existingConsent) {
+          parentalConsentStatus = existingConsent.status
+        } else {
+          // Create a pending consent record (no parent email yet — student will provide it)
+          parentalConsentStatus = 'pending'
+        }
+      }
+    }
+
     return NextResponse.json({
       success: true,
       school_name: schoolName,
       class_name: className,
+      parental_consent_status: parentalConsentStatus,
       message: `Successfully joined ${schoolName}${className ? ` - ${className}` : ''}!`,
     })
   } catch (error) {

@@ -1,38 +1,27 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
-
-const ADMIN_EMAILS = (process.env.ADMIN_EMAILS || 'admin@theenglishhub.app')
-  .split(',')
-  .map((e) => e.trim().toLowerCase())
-
-async function verifyAdmin(supabase: ReturnType<typeof createServerSupabaseClient>) {
-  const {
-    data: { user },
-  } = await supabase.auth.getUser()
-  if (!user) return null
-
-  if (!user.email || !ADMIN_EMAILS.includes(user.email.toLowerCase())) {
-    return null
-  }
-
-  return user
-}
+import { createServiceRoleClient } from '@/lib/supabase/server'
+import { verifyAdmin } from '@/lib/admin-auth'
 
 /**
  * POST /api/admin/affiliates/payout
  * Calculate payouts for a given month, or update payout status.
  */
 export async function POST(request: NextRequest) {
-  const supabase = createServerSupabaseClient()
-  const admin = await verifyAdmin(supabase)
-  if (!admin) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  const { user: admin, error: authError } = await verifyAdmin()
+  if (authError || !admin) {
+    return NextResponse.json(
+      { error: authError ?? 'Unauthorized' },
+      { status: authError === 'Forbidden' ? 403 : 401 }
+    )
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  let body: any
+  type PayoutRequestBody =
+    | { action: 'calculate'; year: number; month: number }
+    | { action: 'update_status'; payoutId: string; status: string; disclosure_check_passed?: boolean; notes?: string; payment_reference?: string }
+
+  let body: PayoutRequestBody
   try {
-    body = await request.json()
+    body = await request.json() as PayoutRequestBody
   } catch {
     return NextResponse.json({ error: 'Invalid request body' }, { status: 400 })
   }
@@ -40,7 +29,7 @@ export async function POST(request: NextRequest) {
 
   // ── Calculate payouts for a month ─────────────────────
   if (body.action === 'calculate') {
-    const { year, month } = body as { year: number; month: number; action: string }
+    const { year, month } = body
     if (!year || !month) {
       return NextResponse.json({ error: 'year and month are required' }, { status: 400 })
     }

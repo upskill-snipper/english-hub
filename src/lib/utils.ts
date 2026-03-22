@@ -1,10 +1,12 @@
 import { clsx, type ClassValue } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 
+/** Merge Tailwind CSS classes with clsx + tailwind-merge */
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
+/** Format a duration in seconds as a human-readable string (e.g. "1h 30m" or "45m") */
 export function formatDuration(seconds: number): string {
   const h = Math.floor(seconds / 3600)
   const m = Math.floor((seconds % 3600) / 60)
@@ -12,6 +14,7 @@ export function formatDuration(seconds: number): string {
   return `${m}m`
 }
 
+/** Format a date as a localised UK string (e.g. "18 Mar 2026") */
 export function formatDate(date: string | Date): string {
   return new Date(date).toLocaleDateString('en-GB', {
     day: 'numeric',
@@ -20,6 +23,7 @@ export function formatDate(date: string | Date): string {
   })
 }
 
+/** Format a price in pence as a GBP string (e.g. 1999 -> "£19.99") */
 export function formatPrice(pence: number): string {
   return `£${(pence / 100).toFixed(2)}`
 }
@@ -46,16 +50,30 @@ export function shuffleArray<T>(array: T[]): T[] {
   return shuffled
 }
 
-/** Format seconds as mm:ss */
+/** Format seconds as mm:ss (fractional seconds are truncated) */
 export function formatTime(seconds: number): string {
-  const mins = Math.floor(seconds / 60)
-  const secs = seconds % 60
+  const total = Math.floor(seconds)
+  const mins = Math.floor(total / 60)
+  const secs = total % 60
   return `${mins}:${secs.toString().padStart(2, '0')}`
 }
 
-/** Validate a redirect URL is safe (no open redirects) */
+/** Validate a redirect URL is safe (no open redirects).
+ *  Only allows relative paths starting with `/` — blocks protocol-relative,
+ *  absolute, backslash-based, and URLs containing control characters. */
 export function validateRedirect(url: string | null): string {
-  if (!url || !url.startsWith('/') || url.startsWith('//') || url.includes(':')) {
+  if (
+    !url ||
+    !url.startsWith('/') ||
+    url.startsWith('//') ||
+    url.includes(':') ||
+    url.includes('\\') ||
+    url.includes('@') ||
+    // Block encoded characters that could smuggle dangerous sequences
+    url.includes('%') ||
+    // Block control characters (tabs, newlines, null bytes)
+    /[\x00-\x1f]/.test(url)
+  ) {
     return '/dashboard'
   }
   return url

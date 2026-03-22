@@ -17,7 +17,7 @@ function getCurrentAcademicYear(): string {
 export async function GET(request: NextRequest) {
   try {
     const ip = getClientIp(request.headers)
-    const rl = rateLimit(`school-classes:${ip}`, { limit: 30, windowSeconds: 60 })
+    const rl = await rateLimit(`school-classes:${ip}`, { limit: 30, windowSeconds: 60 })
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
@@ -130,7 +130,7 @@ export async function GET(request: NextRequest) {
 export async function POST(request: NextRequest) {
   try {
     const ip = getClientIp(request.headers)
-    const rl = rateLimit(`school-classes-create:${ip}`, { limit: 10, windowSeconds: 60 })
+    const rl = await rateLimit(`school-classes-create:${ip}`, { limit: 10, windowSeconds: 60 })
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },

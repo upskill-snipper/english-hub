@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import Stripe from 'stripe'
 import { stripe, PRICE_IDS, COURSE_PRICE_MAP } from '@/lib/stripe'
+import { PRICING } from '@/constants/pricing'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
 
@@ -16,7 +17,7 @@ export async function POST(request: NextRequest) {
   try {
     // Rate limit: 10 checkout attempts per IP per 5 minutes
     const ip = getClientIp(request.headers)
-    const rl = rateLimit(`checkout:${ip}`, { limit: 10, windowSeconds: 300 })
+    const rl = await rateLimit(`checkout:${ip}`, { limit: 10, windowSeconds: 300 })
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
@@ -139,6 +140,7 @@ export async function POST(request: NextRequest) {
     if (mode === 'subscription') {
       sessionParams.allow_promotion_codes = true
       sessionParams.subscription_data = {
+        trial_period_days: PRICING.TRIAL_DAYS,
         metadata: {
           userId: user.id,
         },
@@ -158,7 +160,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ url: session.url })
   } catch (error) {
-    console.error('Checkout session error:', error)
+    console.error('[api/stripe/checkout] Checkout session error:', error)
 
     if (error instanceof Stripe.errors.StripeError) {
       return NextResponse.json(

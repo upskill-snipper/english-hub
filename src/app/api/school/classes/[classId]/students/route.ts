@@ -35,7 +35,7 @@ export async function GET(
 ) {
   try {
     const ip = getClientIp(request.headers)
-    const rl = rateLimit(`school-class-students:${ip}`, { limit: 30, windowSeconds: 60 })
+    const rl = await rateLimit(`school-class-students:${ip}`, { limit: 30, windowSeconds: 60 })
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
@@ -153,7 +153,7 @@ export async function POST(
 ) {
   try {
     const ip = getClientIp(request.headers)
-    const rl = rateLimit(`school-class-add-student:${ip}`, { limit: 20, windowSeconds: 60 })
+    const rl = await rateLimit(`school-class-add-student:${ip}`, { limit: 20, windowSeconds: 60 })
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
@@ -311,7 +311,7 @@ export async function DELETE(
 ) {
   try {
     const ip = getClientIp(request.headers)
-    const rl = rateLimit(`school-class-remove-student:${ip}`, { limit: 20, windowSeconds: 60 })
+    const rl = await rateLimit(`school-class-remove-student:${ip}`, { limit: 20, windowSeconds: 60 })
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },

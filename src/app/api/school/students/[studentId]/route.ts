@@ -1,43 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
+import { verifySchoolMember } from '@/lib/school-auth'
+import { verifyStudentInSchool } from '@/lib/school-student-auth'
 import { allCourses } from '@/data/courses'
 import type { StudentAnalytics, WeakArea, Recommendation } from '@/lib/types'
 
 export const dynamic = 'force-dynamic'
-
-async function getSchoolMembership(userId: string) {
-  const admin = createServiceRoleClient()
-  const { data, error } = await admin
-    .from('school_members')
-    .select('id, school_id, role')
-    .eq('user_id', userId)
-    .eq('invite_status', 'accepted')
-    .single()
-  if (error || !data) return null
-  return data as { id: string; school_id: string; role: string }
-}
-
-async function verifyStudentInSchool(studentId: string, schoolId: string) {
-  const admin = createServiceRoleClient()
-  const { data: classes } = await admin
-    .from('classes')
-    .select('id')
-    .eq('school_id', schoolId)
-
-  if (!classes || classes.length === 0) return false
-
-  const classIds = classes.map((c: { id: string }) => c.id)
-  const { data: membership } = await admin
-    .from('class_students')
-    .select('id')
-    .in('class_id', classIds)
-    .eq('student_id', studentId)
-    .eq('is_active', true)
-    .limit(1)
-
-  return !!membership && membership.length > 0
-}
 
 function predictGrade(avgScore: number): string {
   if (avgScore >= 90) return 'Grade 9'
@@ -57,7 +26,7 @@ export async function GET(
 ) {
   try {
     const ip = getClientIp(request.headers)
-    const rl = rateLimit(`school-student-detail:${ip}`, { limit: 30, windowSeconds: 60 })
+    const rl = await rateLimit(`school-student-detail:${ip}`, { limit: 30, windowSeconds: 60 })
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
@@ -71,12 +40,18 @@ export async function GET(
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    const membership = await getSchoolMembership(user.id)
+    const membership = await verifySchoolMember(user.id)
     if (!membership) {
       return NextResponse.json({ error: 'Forbidden: not a school member' }, { status: 403 })
     }
 
     const { studentId } = params
+    const staffRoles = ['admin', 'head_of_department', 'teacher']
+
+    // Students can only view their own progress
+    if (!staffRoles.includes(membership.role) && user.id !== studentId) {
+      return NextResponse.json({ error: 'Forbidden: you can only view your own progress' }, { status: 403 })
+    }
 
     if (!(await verifyStudentInSchool(studentId, membership.school_id))) {
       return NextResponse.json({ error: 'Student not found in your school' }, { status: 404 })

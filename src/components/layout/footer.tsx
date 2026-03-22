@@ -28,6 +28,7 @@ const FOOTER_SECTIONS = [
       { href: '/privacy-policy', label: 'Privacy Policy' },
       { href: '/terms', label: 'Terms of Service' },
       { href: '/cookie-policy', label: 'Cookie Policy' },
+      { href: '/refund-policy', label: 'Refund Policy' },
       { href: '/accessibility', label: 'Accessibility' },
     ],
   },

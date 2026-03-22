@@ -8,7 +8,7 @@ export async function POST(request: NextRequest) {
   try {
     // Rate limit: 10 portal requests per IP per 5 minutes
     const ip = getClientIp(request.headers)
-    const rl = rateLimit(`portal:${ip}`, { limit: 10, windowSeconds: 300 })
+    const rl = await rateLimit(`portal:${ip}`, { limit: 10, windowSeconds: 300 })
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
@@ -46,7 +46,7 @@ export async function POST(request: NextRequest) {
 
     const portalSession = await stripe.billingPortal.sessions.create({
       customer: profile.stripe_customer_id,
-      return_url: `${appUrl}/dashboard`,
+      return_url: `${appUrl}/account/billing`,
     })
 
     return NextResponse.json({ url: portalSession.url })

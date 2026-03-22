@@ -1,28 +1,81 @@
 /**
- * Simple in-memory rate limiter for API routes.
- * Uses a sliding window approach. Suitable for single-instance deployments.
- * For multi-instance (serverless), consider Vercel KV or Upstash Redis.
+ * Redis-backed rate limiter for API routes using Upstash.
+ * Works correctly across serverless function instances on Vercel.
+ *
+ * Falls back to a simple in-memory limiter if Redis is not configured,
+ * so the app still works in local development without Redis.
  */
+
+import { Ratelimit } from '@upstash/ratelimit'
+import { Redis } from '@upstash/redis'
+
+// ---------------------------------------------------------------------------
+// Redis client (lazy singleton)
+// ---------------------------------------------------------------------------
+
+let redis: Redis | null = null
+
+function getRedis(): Redis | null {
+  if (redis) return redis
+  const url = process.env.UPSTASH_REDIS_REST_URL
+  const token = process.env.UPSTASH_REDIS_REST_TOKEN
+  if (!url || !token) return null
+  redis = new Redis({ url, token })
+  return redis
+}
+
+// ---------------------------------------------------------------------------
+// In-memory fallback for local dev (same logic as before)
+// ---------------------------------------------------------------------------
 
 interface RateLimitEntry {
   count: number
   resetAt: number
 }
 
-const store = new Map<string, RateLimitEntry>()
-
-// Periodic cleanup to prevent memory leaks
-const CLEANUP_INTERVAL = 60_000 // 1 minute
+const memStore = new Map<string, RateLimitEntry>()
+const CLEANUP_INTERVAL = 60_000
 let lastCleanup = Date.now()
 
-function cleanup() {
+function memCleanup() {
   const now = Date.now()
   if (now - lastCleanup < CLEANUP_INTERVAL) return
   lastCleanup = now
-  store.forEach((entry, key) => {
-    if (entry.resetAt < now) store.delete(key)
+  memStore.forEach((entry, key) => {
+    if (entry.resetAt < now) memStore.delete(key)
   })
 }
+
+function memRateLimit(
+  key: string,
+  options: RateLimitOptions
+): RateLimitResult {
+  memCleanup()
+  const now = Date.now()
+  const windowMs = options.windowSeconds * 1000
+  const existing = memStore.get(key)
+
+  if (!existing || existing.resetAt < now) {
+    const entry: RateLimitEntry = { count: 1, resetAt: now + windowMs }
+    memStore.set(key, entry)
+    return { success: true, remaining: options.limit - 1, resetAt: entry.resetAt }
+  }
+
+  existing.count++
+  if (existing.count > options.limit) {
+    return { success: false, remaining: 0, resetAt: existing.resetAt }
+  }
+
+  return {
+    success: true,
+    remaining: options.limit - existing.count,
+    resetAt: existing.resetAt,
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Public API (same interface — drop-in replacement)
+// ---------------------------------------------------------------------------
 
 interface RateLimitOptions {
   /** Maximum requests allowed in the window */
@@ -37,39 +90,42 @@ interface RateLimitResult {
   resetAt: number
 }
 
+// Cache of Upstash Ratelimit instances keyed by "limit:window"
+const rlCache = new Map<string, Ratelimit>()
+
 /**
  * Check rate limit for a given key (typically IP or user ID).
+ * Uses Upstash Redis when configured, falls back to in-memory for local dev.
  */
-export function rateLimit(
+export async function rateLimit(
   key: string,
   options: RateLimitOptions
-): RateLimitResult {
-  cleanup()
+): Promise<RateLimitResult> {
+  const client = getRedis()
 
-  const now = Date.now()
-  const windowMs = options.windowSeconds * 1000
-  const existing = store.get(key)
-
-  if (!existing || existing.resetAt < now) {
-    // New window
-    const entry: RateLimitEntry = {
-      count: 1,
-      resetAt: now + windowMs,
-    }
-    store.set(key, entry)
-    return { success: true, remaining: options.limit - 1, resetAt: entry.resetAt }
+  if (!client) {
+    // Fallback to in-memory (local dev)
+    return memRateLimit(key, options)
   }
 
-  existing.count++
-
-  if (existing.count > options.limit) {
-    return { success: false, remaining: 0, resetAt: existing.resetAt }
+  const cacheKey = `${options.limit}:${options.windowSeconds}`
+  let limiter = rlCache.get(cacheKey)
+  if (!limiter) {
+    limiter = new Ratelimit({
+      redis: client,
+      limiter: Ratelimit.slidingWindow(options.limit, `${options.windowSeconds} s`),
+      analytics: false,
+      prefix: 'rl',
+    })
+    rlCache.set(cacheKey, limiter)
   }
+
+  const result = await limiter.limit(key)
 
   return {
-    success: true,
-    remaining: options.limit - existing.count,
-    resetAt: existing.resetAt,
+    success: result.success,
+    remaining: result.remaining,
+    resetAt: result.reset,
   }
 }
 

@@ -26,7 +26,7 @@ import {
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { useAuthStore } from '@/store/auth-store'
-import { allCourses } from '@/data/courses'
+import { loadAllCourses } from '@/data/course-loader'
 import { cn, formatDate } from '@/lib/utils'
 import type { Enrolment, ModuleProgress, Certificate, CourseData } from '@/lib/types'
 
@@ -65,9 +65,7 @@ function getGreeting() {
   return 'Good evening'
 }
 
-const courseMap = new Map<string, CourseData>(
-  allCourses.map((c) => [c.id, c])
-)
+// courseMap is now built dynamically inside the component — see useMemo below
 
 // ── Skeleton Components ────────────────────────────────────────────────────
 
@@ -125,6 +123,7 @@ function ActivitySkeleton() {
 export default function DashboardPage() {
   const { user, profile, isLoading } = useAuthStore()
   const router = useRouter()
+  const [allCourses, setAllCourses] = useState<CourseData[]>([])
   const [enrolments, setEnrolments] = useState<Enrolment[]>([])
   const [moduleProgress, setModuleProgress] = useState<ModuleProgress[]>([])
   const [certificates, setCertificates] = useState<Certificate[]>([])
@@ -132,6 +131,16 @@ export default function DashboardPage() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [schoolInfo, setSchoolInfo] = useState<{ name: string; role: string } | null>(null)
+
+  const courseMap = useMemo(
+    () => new Map<string, CourseData>(allCourses.map((c) => [c.id, c])),
+    [allCourses]
+  )
+
+  // Load course data dynamically
+  useEffect(() => {
+    loadAllCourses().then(setAllCourses)
+  }, [])
 
   // Auth redirect guard
   useEffect(() => {
@@ -189,7 +198,8 @@ export default function DashboardPage() {
         if (activityRes.data) setRecentActivity(activityRes.data)
 
         if (schoolMemberRes.data) {
-          const schoolName = (schoolMemberRes.data as any).schools?.name ?? null
+          const data = schoolMemberRes.data as unknown as { role: string; schools: { name: string } | null }
+          const schoolName = data.schools?.name ?? null
           if (schoolName) {
             setSchoolInfo({ name: schoolName, role: schoolMemberRes.data.role })
           }

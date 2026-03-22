@@ -18,7 +18,7 @@ import {
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { useAuthStore } from '@/store/auth-store'
-import { allCourses } from '@/data/courses'
+import { loadAllCourses } from '@/data/course-loader'
 import { formatDuration, formatDate, cn } from '@/lib/utils'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -53,9 +53,7 @@ interface ClassStats {
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
-const courseMap = new Map<string, CourseData>(
-  allCourses.map((c) => [c.id, c])
-)
+// courseMap is built dynamically inside the component — see useMemo below
 
 function formatStudyTime(seconds: number): string {
   if (seconds < 60) return '<1m'
@@ -72,9 +70,20 @@ type SortDir = 'asc' | 'desc'
 
 export default function ClassAnalyticsPage() {
   const { user, profile, isLoading: authLoading } = useAuthStore()
+  const [allCourses, setAllCourses] = useState<CourseData[]>([])
   const [students, setStudents] = useState<StudentSummary[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+
+  const courseMap = useMemo(
+    () => new Map<string, CourseData>(allCourses.map((c) => [c.id, c])),
+    [allCourses]
+  )
+
+  // Load course data dynamically
+  useEffect(() => {
+    loadAllCourses().then(setAllCourses)
+  }, [])
   const [searchQuery, setSearchQuery] = useState('')
   const [sortField, setSortField] = useState<SortField>('name')
   const [sortDir, setSortDir] = useState<SortDir>('asc')

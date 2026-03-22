@@ -25,7 +25,7 @@ export async function GET(
 ) {
   try {
     const ip = getClientIp(request.headers)
-    const rl = rateLimit(`school-class-analytics:${ip}`, { limit: 20, windowSeconds: 60 })
+    const rl = await rateLimit(`school-class-analytics:${ip}`, { limit: 20, windowSeconds: 60 })
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },

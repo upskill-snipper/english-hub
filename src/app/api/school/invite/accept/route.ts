@@ -8,7 +8,7 @@ export const dynamic = 'force-dynamic'
 export async function GET(request: NextRequest) {
   try {
     const ip = getClientIp(request.headers)
-    const rl = rateLimit(`invite-lookup:${ip}`, { limit: 20, windowSeconds: 60 })
+    const rl = await rateLimit(`invite-lookup:${ip}`, { limit: 20, windowSeconds: 60 })
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
@@ -25,7 +25,7 @@ export async function GET(request: NextRequest) {
 
     const { data: member, error: memberError } = await admin
       .from('school_members')
-      .select('id, role, full_name, email, invite_status, school_id, schools(name)')
+      .select('id, role, full_name, email, invite_status, invite_expires_at, school_id, schools(name)')
       .eq('invite_token', token)
       .single()
 
@@ -33,6 +33,18 @@ export async function GET(request: NextRequest) {
       return NextResponse.json(
         { error: 'This invite link is invalid or has already been used.' },
         { status: 404 }
+      )
+    }
+
+    // Check time-based expiration before status checks
+    if (member.invite_expires_at && new Date(member.invite_expires_at) < new Date()) {
+      await admin
+        .from('school_members')
+        .update({ invite_status: 'expired' })
+        .eq('id', member.id)
+      return NextResponse.json(
+        { error: 'This invitation has expired. Please ask your school administrator for a new invite.' },
+        { status: 410 }
       )
     }
 
@@ -65,7 +77,7 @@ export async function GET(request: NextRequest) {
 export async function POST(request: NextRequest) {
   try {
     const ip = getClientIp(request.headers)
-    const rl = rateLimit(`invite-accept:${ip}`, { limit: 10, windowSeconds: 60 })
+    const rl = await rateLimit(`invite-accept:${ip}`, { limit: 10, windowSeconds: 60 })
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
@@ -91,7 +103,7 @@ export async function POST(request: NextRequest) {
     // Find the pending invite
     const { data: member, error: memberError } = await admin
       .from('school_members')
-      .select('id, role, email, invite_status, school_id, schools(name)')
+      .select('id, role, email, invite_status, invite_expires_at, school_id, schools(name)')
       .eq('invite_token', token)
       .single()
 
@@ -99,6 +111,18 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         { error: 'This invite link is invalid or has already been used.' },
         { status: 404 }
+      )
+    }
+
+    // Check time-based expiration before status checks
+    if (member.invite_expires_at && new Date(member.invite_expires_at) < new Date()) {
+      await admin
+        .from('school_members')
+        .update({ invite_status: 'expired' })
+        .eq('id', member.id)
+      return NextResponse.json(
+        { error: 'This invitation has expired. Please ask your school administrator for a new invite.' },
+        { status: 410 }
       )
     }
 

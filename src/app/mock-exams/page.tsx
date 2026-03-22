@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useMemo, useCallback, memo } from 'react'
 import Link from 'next/link'
 import {
   Clock,
@@ -73,7 +73,7 @@ const BOARD_CONFIG: Record<string, {
 
 // ─── Inline Paper Preview ────────────────────────────────────────────────────
 
-function InlinePaperPreview({ paper }: { paper: MockExamPaper }) {
+const InlinePaperPreview = memo(function InlinePaperPreview({ paper }: { paper: MockExamPaper }) {
   const config = BOARD_CONFIG[paper.board]
   const FREE_QUESTION_LIMIT = 2
 
@@ -217,7 +217,7 @@ function InlinePaperPreview({ paper }: { paper: MockExamPaper }) {
       </div>
     </div>
   )
-}
+})
 
 // ─── Board Section with Expandable Preview ──────────────────────────────────
 
@@ -228,8 +228,8 @@ function BoardSection({ board }: { board: string }) {
   const [expanded, setExpanded] = useState(false)
   const previewRef = useRef<HTMLDivElement>(null)
 
-  const paper1Count = papers.filter(p => p.paperNumber === 1).length
-  const paper2Count = papers.filter(p => p.paperNumber === 2).length
+  const paper1Count = useMemo(() => papers.filter(p => p.paperNumber === 1).length, [papers])
+  const paper2Count = useMemo(() => papers.filter(p => p.paperNumber === 2).length, [papers])
 
   useEffect(() => {
     if (expanded && previewRef.current) {
@@ -277,15 +277,22 @@ function BoardSection({ board }: { board: string }) {
 // ─── Main Page ───────────────────────────────────────────────────────────────
 
 export default function MockExamsPage() {
-  const allBoards = getAvailableBoards()
+  const allBoards = useMemo(() => getAvailableBoards(), [])
   const { selectedBoard } = useBoardStore()
 
   // If a specific GCSE board is selected (not null, not KS3), filter to just that board
-  const boards = (selectedBoard && selectedBoard !== 'KS3')
-    ? allBoards.filter((b) => b === selectedBoard)
-    : allBoards
+  const boards = useMemo(
+    () =>
+      (selectedBoard && selectedBoard !== 'KS3')
+        ? allBoards.filter((b) => b === selectedBoard)
+        : allBoards,
+    [selectedBoard, allBoards]
+  )
 
-  const totalPapers = boards.reduce((sum, b) => sum + getMockExamsByBoard(b).length, 0)
+  const totalPapers = useMemo(
+    () => boards.reduce((sum, b) => sum + getMockExamsByBoard(b).length, 0),
+    [boards]
+  )
 
   return (
     <div className="min-h-screen bg-background">
@@ -317,7 +324,7 @@ export default function MockExamsPage() {
                   key={board}
                   href={`#${board.toLowerCase()}`}
                   className={cn(
-                    'flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition-colors hover:opacity-80',
+                    'flex items-center gap-2 rounded-full border px-4 py-2.5 text-sm font-medium transition-colors hover:opacity-80 min-h-[44px]',
                     config.badge,
                     isActive && 'ring-2 ring-offset-2 ring-offset-background ring-primary'
                   )}
@@ -343,7 +350,7 @@ export default function MockExamsPage() {
       {/* Features Bar */}
       <section className="border-b border-border/40 bg-card/30">
         <div className="max-w-5xl mx-auto px-4 py-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { icon: FileText, label: `${totalPapers}+ papers`, desc: 'Full exam-style papers' },
               { icon: Eye, label: 'Model Answers', desc: '3 grade bands per question' },

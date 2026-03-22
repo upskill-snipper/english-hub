@@ -2,7 +2,7 @@
 
 import { usePathname } from 'next/navigation'
 import { BookOpen, GraduationCap, ArrowRight, Layers, Pencil, FileText } from 'lucide-react'
-import { useBoardStore, type ExamBoard } from '@/store/board-store'
+import { useBoardStore, useBoardWithHydration, type ExamBoard } from '@/store/board-store'
 import { Badge } from '@/components/ui/badge'
 import { cn } from '@/lib/utils'
 
@@ -50,7 +50,8 @@ const boards = [
 ] as const
 
 export function BoardGate() {
-  const { selectedBoard, _hasHydrated, setBoard } = useBoardStore()
+  const { selectedBoard, _hasHydrated } = useBoardWithHydration()
+  const setBoard = useBoardStore((s) => s.setBoard)
   const pathname = usePathname()
 
   // Don't render during hydration

@@ -37,6 +37,7 @@ import { Separator } from '@/components/ui/separator'
 import { Skeleton } from '@/components/ui/skeleton'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
+import { ParentalConsentBanner } from '@/components/school/parental-consent-banner'
 
 // ── Helpers ─────────────────────────────────────────────────────────────
 
@@ -445,6 +446,11 @@ export default function SchoolOverviewPage() {
             </Button>
           </AlertDescription>
         </Alert>
+      )}
+
+      {/* ── Parental Consent Banner (for students under 16) ───────────── */}
+      {overview?.school?.id && (
+        <ParentalConsentBanner schoolId={overview.school.id} />
       )}
 
       {/* ── Stats Row (4 cards) ────────────────────────────────────────── */}

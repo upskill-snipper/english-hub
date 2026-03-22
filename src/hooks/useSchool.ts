@@ -1,8 +1,8 @@
 'use client'
 
 import { useEffect, useState, useCallback } from 'react'
-import { useAuthStore } from '@/store/auth-store'
-import { useSchoolStore } from '@/store/school-store'
+import { useAuthUser } from '@/store/auth-store'
+import { useSchoolData, useSchoolActions } from '@/store/school-store'
 import type { School, Class, SchoolMember } from '@/lib/types'
 
 interface UseSchoolReturn {
@@ -17,19 +17,9 @@ interface UseSchoolReturn {
 }
 
 export function useSchool(): UseSchoolReturn {
-  const { user } = useAuthStore()
-  const {
-    school,
-    classes,
-    members,
-    role,
-    isSchoolMember,
-    setSchool,
-    setClasses,
-    setMembers,
-    setRole,
-    setIsSchoolMember,
-  } = useSchoolStore()
+  const user = useAuthUser()
+  const { school, classes, members, role, isSchoolMember } = useSchoolData()
+  const { setSchool, setClasses, setMembers, setRole, setIsSchoolMember } = useSchoolActions()
 
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)

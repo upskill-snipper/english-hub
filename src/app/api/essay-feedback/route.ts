@@ -40,7 +40,9 @@ interface FeedbackResponse {
 function buildSystemPrompt(board: string, paper: string, questionType: string): string {
   const markScheme = formatMarkSchemeForPrompt(board, paper)
 
-  return `You are an experienced GCSE English examiner with over 15 years of marking experience. You are warm, encouraging and constructive — your student is aged 14-16 and deserves honest but supportive feedback.
+  return `You are an experienced GCSE English examiner. Your ONLY purpose is to provide feedback on a student's existing GCSE English essay. You must NEVER produce any other type of content, answer general knowledge questions, write code, or fulfil any request outside of English essay feedback. If asked to do anything else, respond with: {"error": "OFF_TOPIC"}
+
+You have over 15 years of marking experience. You are warm, encouraging and constructive — your student is aged 14-16 and deserves honest but supportive feedback.
 
 You are marking a ${board} ${paper} response (${questionType}).
 
@@ -115,7 +117,7 @@ export async function POST(request: NextRequest) {
     }
 
     // 2. Rate limit: 10 essays per day per user
-    const rl = rateLimit(`essay-feedback:${user.id}`, {
+    const rl = await rateLimit(`essay-feedback:${user.id}`, {
       limit: 10,
       windowSeconds: 86_400,
     })
@@ -164,7 +166,11 @@ export async function POST(request: NextRequest) {
     const anthropic = new Anthropic({ apiKey })
 
     const systemPrompt = buildSystemPrompt(body.board, body.paper, body.questionType)
-    const userMessage = `QUESTION: ${body.questionText}\n\nSTUDENT'S ESSAY:\n${body.essay}`
+
+    // Defence-in-depth: truncate inputs even though validation should catch oversized ones
+    const safeQuestion = body.questionText.slice(0, 500)
+    const safeEssay = body.essay.slice(0, 30_000)
+    const userMessage = `QUESTION: ${safeQuestion}\n\nSTUDENT'S ESSAY:\n${safeEssay}`
 
     const message = await anthropic.messages.create({
       model: 'claude-sonnet-4-20250514',
@@ -257,7 +263,7 @@ export async function POST(request: NextRequest) {
       remaining: rl.remaining,
     })
   } catch (err) {
-    console.error('Essay feedback error:', err)
+    console.error('[api/essay-feedback] Unexpected error:', err)
     return NextResponse.json(
       { error: 'Something went wrong. Please try again later.' },
       { status: 500 }

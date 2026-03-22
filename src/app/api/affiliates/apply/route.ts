@@ -25,7 +25,7 @@ export async function POST(request: NextRequest) {
   try {
     // Rate limit: 5 applications per IP per hour
     const ip = getClientIp(request.headers)
-    const rl = rateLimit(`affiliate-apply:${ip}`, { limit: 5, windowSeconds: 3600 })
+    const rl = await rateLimit(`affiliate-apply:${ip}`, { limit: 5, windowSeconds: 3600 })
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },

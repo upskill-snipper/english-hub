@@ -1,0 +1,51 @@
+export function WebsiteJsonLd() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'EducationalOrganization',
+    name: 'The English Hub',
+    url: 'https://theenglishhub.app',
+    description: 'Professional KS3, GCSE, and IGCSE English tutoring platform with structured courses, exam-style practice, and AI-powered feedback.',
+    areaServed: { '@type': 'Country', name: 'United Kingdom' },
+    audience: {
+      '@type': 'EducationalAudience',
+      educationalRole: 'student',
+      suggestedMinAge: 14,
+      suggestedMaxAge: 18,
+    },
+    offers: {
+      '@type': 'Offer',
+      price: '8.99',
+      priceCurrency: 'GBP',
+      availability: 'https://schema.org/InStock',
+      priceValidUntil: '2027-01-01',
+    },
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  )
+}
+
+export function CourseJsonLd({ name, description, provider }: { name: string; description: string; provider?: string }) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name,
+    description,
+    provider: {
+      '@type': 'Organization',
+      name: provider || 'The English Hub',
+      url: 'https://theenglishhub.app',
+    },
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  )
+}

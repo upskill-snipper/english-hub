@@ -2,11 +2,11 @@
 
 import { useEffect, useRef } from 'react'
 import { createClient } from '@/lib/supabase/client'
-import { useAuthStore } from '@/store/auth-store'
+import { useAuthActions } from '@/store/auth-store'
 import type { Profile } from '@/lib/types'
 
 export function SupabaseProvider({ children }: { children: React.ReactNode }) {
-  const { setUser, setProfile, setLoading, clear } = useAuthStore()
+  const { setUser, setProfile, setLoading, clear } = useAuthActions()
   const initialised = useRef(false)
 
   useEffect(() => {

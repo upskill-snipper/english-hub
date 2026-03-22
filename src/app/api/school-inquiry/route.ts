@@ -35,7 +35,7 @@ export async function POST(request: NextRequest) {
   try {
     // Rate limit: 5 inquiries per IP per hour
     const ip = getClientIp(request.headers)
-    const rl = rateLimit(`school-inquiry:${ip}`, { limit: 5, windowSeconds: 3600 })
+    const rl = await rateLimit(`school-inquiry:${ip}`, { limit: 5, windowSeconds: 3600 })
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
@@ -102,7 +102,7 @@ export async function POST(request: NextRequest) {
       // If the table doesn't exist yet, still return success
       // but log the error for the developer to create the table
       if (insertError.code === '42P01') {
-        console.warn(
+        console.error(
           'school_inquiries table does not exist. Create it with:\n' +
           'CREATE TABLE school_inquiries (\n' +
           '  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,\n' +
@@ -116,12 +116,11 @@ export async function POST(request: NextRequest) {
           '  created_at TIMESTAMPTZ DEFAULT now()\n' +
           ');'
         )
-      } else {
-        return NextResponse.json(
-          { error: 'Failed to submit inquiry. Please try again.' },
-          { status: 500 }
-        )
       }
+      return NextResponse.json(
+        { error: 'Failed to submit inquiry. Please try again.' },
+        { status: 500 }
+      )
     }
 
     // TODO: Send notification email to admin

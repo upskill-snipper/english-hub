@@ -180,7 +180,7 @@ export default function AnalyticsPage() {
         <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
 
           {/* ── Header ──────────────────────────────────────────────── */}
-          <div className="mb-6 flex items-center justify-between animate-fade-in">
+          <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between animate-fade-in">
             <div className="flex items-center gap-3">
               <Button variant="ghost" size="sm" render={<Link href="/dashboard" />}>
                 <ArrowLeft className="h-4 w-4" />
@@ -196,7 +196,7 @@ export default function AnalyticsPage() {
                 </p>
               </div>
             </div>
-            <Button variant="outline" size="sm" render={<Link href="/dashboard/analytics/class" />}>
+            <Button variant="outline" size="sm" className="self-start sm:self-auto" render={<Link href="/dashboard/analytics/class" />}>
               <Users className="h-4 w-4" />
               Class View
             </Button>

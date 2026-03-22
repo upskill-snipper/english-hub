@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 import { allCourses } from '@/data/courses'
 import CourseDetailPage from './client-page'
 
@@ -35,6 +36,9 @@ export function generateStaticParams() {
   return allCourses.map((course) => ({ id: course.id }))
 }
 
-export default function Page() {
-  return <CourseDetailPage />
+export default function Page({ params }: Props) {
+  const course = allCourses.find((c) => c.id === params.id)
+  if (!course) notFound()
+
+  return <CourseDetailPage course={course} />
 }

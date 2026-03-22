@@ -27,11 +27,20 @@ export function validateRequest(body: EssayFeedbackRequest): string | null {
   if (!body.questionType || body.questionType.trim().length === 0) {
     return 'Question type is required.'
   }
+  if (body.questionType.length > 100) {
+    return 'Invalid question type.'
+  }
   if (!body.questionText || body.questionText.trim().length < 5) {
     return 'Please provide the question you are answering.'
   }
+  if (body.questionText.length > 500) {
+    return 'Question text is too long. Please keep it under 500 characters.'
+  }
   if (!body.essay || body.essay.trim().length === 0) {
     return 'Please provide your essay.'
+  }
+  if (body.essay.length > 30_000) {
+    return 'Your essay is too long. Please keep it under 30,000 characters (roughly 5,000 words).'
   }
   const wordCount = body.essay.trim().split(/\s+/).length
   if (wordCount < 100) {

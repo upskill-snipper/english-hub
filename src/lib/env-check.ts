@@ -1,3 +1,4 @@
+/** Read a required environment variable, throwing if it is missing or empty */
 export function requireEnv(name: string): string {
   const value = process.env[name]
   if (!value) {

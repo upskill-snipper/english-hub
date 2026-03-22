@@ -31,9 +31,9 @@ import {
   type MockExamPaper,
   type MockExamSection,
 } from '@/data/mock-exams'
-import { useAuthStore } from '@/store/auth-store'
-import { useExamStore } from '@/store/exam-store'
-import { useBoardStore } from '@/store/board-store'
+import { useAuthUserLoading } from '@/store/auth-store'
+import { useExamStore, useExamPhaseStatus, useExamActions, useExamNavigation, useExamHistory, useExamAnswers } from '@/store/exam-store'
+import { useSelectedBoard, useBoardHydrated } from '@/store/board-store'
 import { useExamTimer, type TimerWarning } from '@/hooks/useExamTimer'
 
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
@@ -66,10 +66,10 @@ const BOARD_CONFIG: Record<string, { color: string; bg: string; ring: string }> 
 // ─── Main Page ───────────────────────────────────────────────────────────────
 
 export default function MockExamPage() {
-  const { user, isLoading } = useAuthStore()
+  const { user, isLoading } = useAuthUserLoading()
   const router = useRouter()
-  const { phase, _hasHydrated } = useExamStore()
-  const { _hasHydrated: boardHydrated } = useBoardStore()
+  const { phase, _hasHydrated } = useExamPhaseStatus()
+  const boardHydrated = useBoardHydrated()
 
   // Auth redirect guard
   useEffect(() => {
@@ -114,10 +114,19 @@ export default function MockExamPage() {
 // ═══════════════════════════════════════════════════════════════════════════════
 
 function ExamConfigScreen() {
-  const { selectedBoard: globalBoard } = useBoardStore()
+  const globalBoard = useSelectedBoard()
   const [selectedBoard, setSelectedBoard] = useState<string | null>(globalBoard)
   const [selectedExamId, setSelectedExamId] = useState<string | null>(null)
-  const { startExam, examHistory } = useExamStore()
+  const { startExam } = useExamActions()
+  const examHistory = useExamHistory()
+
+  // Sync local board state when global board changes (e.g. after hydration from localStorage)
+  useEffect(() => {
+    if (globalBoard && globalBoard !== selectedBoard) {
+      setSelectedBoard(globalBoard)
+      setSelectedExamId(null)
+    }
+  }, [globalBoard]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const availablePapers = selectedBoard ? getMockExamsByBoard(selectedBoard) : []
   const selectedPaper = selectedExamId ? getMockExamById(selectedExamId) : null
@@ -366,16 +375,10 @@ function ExamConfigScreen() {
 // ═══════════════════════════════════════════════════════════════════════════════
 
 function ExamInProgress() {
-  const {
-    currentExamId,
-    currentSectionIndex,
-    answers,
-    setAnswer,
-    setSection,
-    nextSection,
-    prevSection,
-    submitExam,
-  } = useExamStore()
+  const currentExamId = useExamStore((s) => s.currentExamId)
+  const answers = useExamAnswers()
+  const { currentSectionIndex, setSection, nextSection, prevSection } = useExamNavigation()
+  const { setAnswer, submitExam } = useExamActions()
 
   const paper = currentExamId ? getMockExamById(currentExamId) : null
   const [showSubmitDialog, setShowSubmitDialog] = useState(false)
@@ -391,10 +394,25 @@ function ExamInProgress() {
     setTimerWarning(warning)
   }, [])
 
-  const { formattedTime, isPaused, togglePause, warning, percentRemaining, isExpired } = useExamTimer(
+  const handleTabSwitch = useCallback((count: number) => {
+    // Could show a toast notification here. The count is persisted in the store
+    // and will be visible in the exam results.
+    console.warn(`[Mock Exam] Tab switch detected (total: ${count})`)
+  }, [])
+
+  const { formattedTime, isPaused, togglePause, warning, percentRemaining, isExpired, tabSwitchCount } = useExamTimer(
     paper?.totalTimeMinutes ?? 0,
-    { onTimeUp: handleTimeUp, onWarning: handleWarning }
+    { onTimeUp: handleTimeUp, onWarning: handleWarning, onTabSwitch: handleTabSwitch }
   )
+
+  // Auto-submit if time expired on rehydration (e.g. user closed the tab and came back after time ran out)
+  useEffect(() => {
+    if (isExpired && paper) {
+      submitExam(paper.board, paper.title)
+    }
+    // Only run when isExpired becomes true, not on every render
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isExpired])
 
   if (!paper) return null
 
@@ -490,6 +508,12 @@ function ExamInProgress() {
           <div className="bg-blue-500/10 border-b border-blue-500/20 px-4 py-1.5 text-center text-sm font-medium text-blue-400">
             <Pause className="mr-1.5 inline h-3.5 w-3.5" />
             Timer paused. Click resume to continue.
+          </div>
+        )}
+        {tabSwitchCount > 0 && (
+          <div className="bg-orange-500/10 border-b border-orange-500/20 px-4 py-1.5 text-center text-sm font-medium text-orange-400">
+            <AlertTriangle className="mr-1.5 inline h-3.5 w-3.5" />
+            You have left this tab {tabSwitchCount} time{tabSwitchCount !== 1 ? 's' : ''}. In a real exam, this would be flagged.
           </div>
         )}
       </div>
@@ -774,7 +798,12 @@ function SubmitConfirmDialog({
 // ═══════════════════════════════════════════════════════════════════════════════
 
 function ExamResults() {
-  const { currentExamId, answers, startedAt, examHistory, resetExam, timeRemainingSeconds } = useExamStore()
+  const currentExamId = useExamStore((s) => s.currentExamId)
+  const startedAt = useExamStore((s) => s.startedAt)
+  const timeRemainingSeconds = useExamStore((s) => s.timeRemainingSeconds)
+  const answers = useExamAnswers()
+  const examHistory = useExamHistory()
+  const { resetExam } = useExamActions()
   const [showModelAnswers, setShowModelAnswers] = useState<Record<string, boolean>>({})
   const [selectedGrade, setSelectedGrade] = useState<string>('Grade 6-7')
 

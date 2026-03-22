@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useMemo, useCallback, memo } from 'react'
 import { cn } from '@/lib/utils'
 import type { WeakArea } from '@/lib/types'
 
@@ -44,7 +44,7 @@ function severityBadge(severity: 'critical' | 'warning' | 'minor') {
 
 /* ── Component ─────────────────────────────────────────────────────────────── */
 
-export function WeakAreaHeatMap({
+export const WeakAreaHeatMap = memo(function WeakAreaHeatMap({
   weakAreas,
   onCellClick,
   className,
@@ -52,12 +52,16 @@ export function WeakAreaHeatMap({
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   // Sort by severity (critical first) then by score (lowest first)
-  const sorted = [...weakAreas].sort((a, b) => {
-    const severityOrder = { critical: 0, warning: 1, minor: 2 }
-    const severityDiff = severityOrder[a.severity] - severityOrder[b.severity]
-    if (severityDiff !== 0) return severityDiff
-    return a.avg_score - b.avg_score
-  })
+  const sorted = useMemo(
+    () =>
+      [...weakAreas].sort((a, b) => {
+        const severityOrder = { critical: 0, warning: 1, minor: 2 }
+        const severityDiff = severityOrder[a.severity] - severityOrder[b.severity]
+        if (severityDiff !== 0) return severityDiff
+        return a.avg_score - b.avg_score
+      }),
+    [weakAreas]
+  )
 
   if (sorted.length === 0) {
     return (
@@ -165,4 +169,4 @@ export function WeakAreaHeatMap({
       </div>
     </div>
   )
-}
+})

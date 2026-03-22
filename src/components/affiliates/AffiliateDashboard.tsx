@@ -44,7 +44,8 @@ export default function AffiliateDashboard({
   const [copied, setCopied] = useState(false)
   const [activeTab, setActiveTab] = useState<'referrals' | 'payouts'>('referrals')
 
-  const affiliateUrl = `https://theenglishhub.app?via=${affiliate.rewardful_affiliate_id ?? 'YOUR_CODE'}`
+  const viaToken = affiliate.rewardful_link_token ?? affiliate.rewardful_affiliate_id ?? 'YOUR_CODE'
+  const affiliateUrl = `https://theenglishhub.app?via=${viaToken}`
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(affiliateUrl)

@@ -102,7 +102,6 @@ export async function POST(request: NextRequest) {
             invoiceId: invoice.id,
             customerId,
             userId: failedProfile?.id ?? null,
-            email: failedProfile?.email ?? null,
             amountDue: invoice.amount_due,
             currency: invoice.currency,
           })
@@ -110,6 +109,108 @@ export async function POST(request: NextRequest) {
 
         // TODO: Integrate email notification (e.g. via Resend or SES) to alert
         // the user that their payment failed and prompt them to update billing info.
+        break
+      }
+
+      case 'invoice.paid': {
+        const invoice = event.data.object as Stripe.Invoice
+        const customerId = invoice.customer as string
+
+        const { data: paidProfile } = await supabase
+          .from('profiles')
+          .select('id, email, subscription_status')
+          .eq('stripe_customer_id', customerId)
+          .single()
+
+        console.log(
+          JSON.stringify({
+            event: 'invoice.paid',
+            invoiceId: invoice.id,
+            customerId,
+            userId: paidProfile?.id ?? null,
+            amountPaid: invoice.amount_paid,
+            currency: invoice.currency,
+          })
+        )
+
+        // If this is a subscription invoice, ensure status is 'pro'
+        // (handles edge case where payment succeeds after past_due)
+        if (paidProfile && (invoice as any).subscription) {
+          const periodEnd = (invoice as any).period_end as number | undefined
+          const subscriptionEndDate = periodEnd
+            ? new Date(periodEnd * 1000).toISOString()
+            : null
+
+          const { error } = await supabase
+            .from('profiles')
+            .update({
+              subscription_status: 'pro',
+              ...(subscriptionEndDate && { subscription_end_date: subscriptionEndDate }),
+            })
+            .eq('id', paidProfile.id)
+
+          if (error) {
+            console.error('Failed to update profile after invoice.paid:', error)
+            throw error
+          }
+        }
+        break
+      }
+
+      case 'charge.succeeded': {
+        const charge = event.data.object as Stripe.Charge
+
+        console.log(
+          JSON.stringify({
+            event: 'charge.succeeded',
+            chargeId: charge.id,
+            customerId: charge.customer as string | null,
+            amount: charge.amount,
+            currency: charge.currency,
+          })
+        )
+        break
+      }
+
+      case 'customer.subscription.created': {
+        const subscription = event.data.object as Stripe.Subscription
+
+        let userId = subscription.metadata?.userId
+        if (!userId) {
+          // Fallback: look up user by stripe_customer_id
+          const customerId = subscription.customer as string
+          const { data: profile } = await supabase
+            .from('profiles')
+            .select('id')
+            .eq('stripe_customer_id', customerId)
+            .single()
+          if (profile) userId = profile.id
+        }
+        if (!userId) {
+          console.error('Could not resolve user for subscription', subscription.id)
+          return NextResponse.json({ received: true })
+        }
+
+        const activeStatuses = ['active', 'trialing']
+        const subscriptionStatus = activeStatuses.includes(subscription.status) ? 'pro' : 'incomplete'
+
+        const periodEnd = (subscription as any).current_period_end as number | undefined
+        const subscriptionEndDate = periodEnd
+          ? new Date(periodEnd * 1000).toISOString()
+          : null
+
+        const { error } = await supabase
+          .from('profiles')
+          .update({
+            subscription_status: subscriptionStatus,
+            ...(subscriptionEndDate && { subscription_end_date: subscriptionEndDate }),
+          })
+          .eq('id', userId)
+
+        if (error) {
+          console.error('Failed to update profile for new subscription:', error)
+          throw error
+        }
         break
       }
 
@@ -291,27 +392,19 @@ async function handleSubscriptionDeleted(
     throw error
   }
 
-  // Void any pending/confirmed affiliate commission for this subscription
-  const { data: referral } = await supabase
+  // Void any pending/confirmed affiliate commissions for this subscription
+  const { error: voidError, count: voidedCount } = await supabase
     .from('affiliate_referrals')
-    .select('id, commission_status')
+    .update({
+      commission_status: 'voided',
+      commission_voided_reason: 'Subscription cancelled before payout',
+    })
     .eq('stripe_subscription_id', subscription.id)
     .in('commission_status', ['pending', 'confirmed'])
-    .single()
 
-  if (referral) {
-    const { error: voidError } = await supabase
-      .from('affiliate_referrals')
-      .update({
-        commission_status: 'voided',
-        commission_voided_reason: 'Subscription cancelled before payout',
-      })
-      .eq('id', referral.id)
-
-    if (voidError) {
-      console.error(`Failed to void affiliate commission for referral ${referral.id}:`, voidError.message)
-    } else {
-      console.log(`Voided affiliate commission for referral ${referral.id} (subscription cancelled)`)
-    }
+  if (voidError) {
+    console.error(`[stripe/webhook] Failed to void affiliate commissions for subscription ${subscription.id}:`, voidError)
+  } else if (voidedCount && voidedCount > 0) {
+    console.log(`Voided ${voidedCount} affiliate commission(s) for subscription ${subscription.id} (cancelled)`)
   }
 }

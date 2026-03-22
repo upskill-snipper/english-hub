@@ -22,7 +22,7 @@ import {
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { useAuthStore } from '@/store/auth-store'
-import { allCourses } from '@/data/courses'
+import { loadAllCourses } from '@/data/course-loader'
 import { cn, formatDate, formatDuration } from '@/lib/utils'
 import type { CourseData } from '@/lib/types'
 
@@ -77,9 +77,7 @@ interface WeeklyActivity {
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
-const courseMap = new Map<string, CourseData>(
-  allCourses.map((c) => [c.id, c])
-)
+// courseMap is built dynamically inside the component — see useMemo below
 
 function formatRelativeDate(iso: string) {
   const date = new Date(iso)
@@ -279,11 +277,22 @@ function LinkChildForm({ onLinked }: { onLinked: () => void }) {
 
 export default function ParentDashboardPage() {
   const { user, profile, isLoading: authLoading } = useAuthStore()
+  const [allCourses, setAllCourses] = useState<CourseData[]>([])
   const [childProgress, setChildProgress] = useState<ChildProgress | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [hasLinkedChild, setHasLinkedChild] = useState(false)
   const [unlinking, setUnlinking] = useState(false)
+
+  const courseMap = useMemo(
+    () => new Map<string, CourseData>(allCourses.map((c) => [c.id, c])),
+    [allCourses]
+  )
+
+  // Load course data dynamically
+  useEffect(() => {
+    loadAllCourses().then(setAllCourses)
+  }, [])
 
   // Auth redirect guard
   useEffect(() => {
@@ -466,10 +475,15 @@ export default function ParentDashboardPage() {
   // ── Unlink handler ────────────────────────────────────────────────────────
 
   async function handleUnlink() {
+    if (!childProgress?.child_id) return
     if (!confirm('Are you sure you want to unlink your child\'s account? You will lose access to their progress data.')) return
     setUnlinking(true)
     try {
-      const res = await fetch('/api/parent/link-child', { method: 'DELETE' })
+      const res = await fetch('/api/parent/link-child', {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ child_id: childProgress.child_id }),
+      })
       if (res.ok) {
         setHasLinkedChild(false)
         setChildProgress(null)

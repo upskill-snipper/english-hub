@@ -89,11 +89,13 @@ export async function POST(request: NextRequest) {
     )
   }
 
-  // 2. Update affiliate record
+  // 2. Update affiliate record (store link token for ?via= URL)
+  const linkToken = rewardfulAffiliate.links?.[0]?.token ?? null
   const updateData: Record<string, unknown> = {
     status: 'active',
     activated_at: new Date().toISOString(),
     rewardful_affiliate_id: rewardfulAffiliate.id,
+    rewardful_link_token: linkToken,
   }
 
   const { error: updateError } = await supabaseAdmin

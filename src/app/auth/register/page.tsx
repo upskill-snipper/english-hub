@@ -26,7 +26,7 @@ export default function RegisterPage() {
     if (selectedBoard && !examBoard) {
       setExamBoard(selectedBoard)
     }
-  }, [selectedBoard])
+  }, [selectedBoard, examBoard])
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirm, setShowConfirm] = useState(false)
   const [error, setError] = useState<string | null>(null)

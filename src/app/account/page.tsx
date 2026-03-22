@@ -17,6 +17,8 @@ import {
   AlertTriangle,
   GraduationCap,
   BookOpen,
+  CreditCard,
+  ChevronRight,
 } from 'lucide-react'
 
 export default function AccountPage() {
@@ -148,19 +150,25 @@ export default function AccountPage() {
     setDeleteLoading(true)
     setDeleteError(null)
 
-    const { error } = await supabase.rpc('delete_user_account')
+    try {
+      const res = await fetch('/api/account/delete', { method: 'POST' })
+      const data = await res.json()
 
-    if (error) {
-      setDeleteError(
-        error.message || 'Failed to delete account. Please contact support.'
-      )
+      if (!res.ok) {
+        setDeleteError(
+          data.error || 'Failed to delete account. Please contact support.'
+        )
+        setDeleteLoading(false)
+        return
+      }
+
+      await supabase.auth.signOut()
+      useAuthStore.getState().clear()
+      router.push('/')
+    } catch {
+      setDeleteError('Something went wrong. Please try again or contact support.')
       setDeleteLoading(false)
-      return
     }
-
-    await supabase.auth.signOut()
-    useAuthStore.getState().clear()
-    router.push('/')
   }
 
   if (pageLoading) {
@@ -307,6 +315,25 @@ export default function AccountPage() {
           </form>
         </section>
 
+        {/* Billing Link */}
+        <Link
+          href="/account/billing"
+          className="flex items-center justify-between bg-card border border-border rounded-xl p-6 mb-6 group hover:border-primary/40 transition-colors"
+        >
+          <div className="flex items-center gap-3">
+            <CreditCard className="w-5 h-5 text-primary" />
+            <div>
+              <h2 className="text-lg font-semibold text-foreground">
+                Billing &amp; Subscription
+              </h2>
+              <p className="text-sm text-muted-foreground">
+                Manage your plan, view purchases, and update payment details
+              </p>
+            </div>
+          </div>
+          <ChevronRight className="w-5 h-5 text-muted-foreground group-hover:text-foreground transition-colors" />
+        </Link>
+
         {/* Change Password Section */}
         <section className="bg-card border border-border rounded-xl p-6 mb-6">
           <div className="flex items-center gap-3 mb-6">
@@ -318,6 +345,8 @@ export default function AccountPage() {
 
           {passwordMessage && (
             <div
+              role="alert"
+              aria-live="assertive"
               className={`flex items-center gap-2 rounded-lg p-3 mb-4 text-sm ${
                 passwordMessage.type === 'success'
                   ? 'bg-emerald-500/10 border border-emerald-500/30 text-emerald-400'

@@ -3,7 +3,7 @@
 import { useEffect, useState, useMemo } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { useAuthStore } from '@/store/auth-store'
-import { allCourses } from '@/data/courses'
+import { loadAllCourses } from '@/data/course-loader'
 import type { Enrolment, ModuleProgress, AssessmentAttempt, Certificate, CourseData } from '@/lib/types'
 
 // ── Types ────────────────────────────────────────────────────────────────────
@@ -97,10 +97,6 @@ export interface AnalyticsData {
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
-const courseMap = new Map<string, CourseData>(
-  allCourses.map((c) => [c.id, c])
-)
-
 const SKILL_CATEGORIES: Record<string, string[]> = {
   'Reading Comprehension': ['Language Analysis', 'Structure Analysis', 'Evaluation', 'Reading'],
   'Creative Writing': ['Creative Writing', 'Descriptive Writing', 'Narrative Writing'],
@@ -193,6 +189,7 @@ function calculateExamReadiness(
 
 export function useAnalytics(): AnalyticsData {
   const { user } = useAuthStore()
+  const [allCourses, setAllCourses] = useState<CourseData[]>([])
   const [enrolments, setEnrolments] = useState<Enrolment[]>([])
   const [moduleProgress, setModuleProgress] = useState<ModuleProgress[]>([])
   const [assessments, setAssessments] = useState<AssessmentAttempt[]>([])
@@ -200,6 +197,15 @@ export function useAnalytics(): AnalyticsData {
   const [certificates, setCertificates] = useState<Certificate[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+
+  const courseMap = useMemo(
+    () => new Map<string, CourseData>(allCourses.map((c) => [c.id, c])),
+    [allCourses]
+  )
+
+  useEffect(() => {
+    loadAllCourses().then(setAllCourses)
+  }, [])
 
   useEffect(() => {
     if (!user) {
@@ -301,7 +307,7 @@ export function useAnalytics(): AnalyticsData {
       if (course) total += course.moduleList.length
     }
     return total
-  }, [enrolments])
+  }, [enrolments, courseMap])
 
   // ── Average practice score ─────────────────────────────────────────────
 
@@ -363,7 +369,7 @@ export function useAnalytics(): AnalyticsData {
         }
       })
       .filter(Boolean) as CourseProgress[]
-  }, [enrolments, moduleProgress])
+  }, [enrolments, moduleProgress, courseMap])
 
   // ── Skill scores ───────────────────────────────────────────────────────
 
@@ -424,7 +430,7 @@ export function useAnalytics(): AnalyticsData {
         percentage,
       }
     })
-  }, [practiceSessions, assessments])
+  }, [practiceSessions, assessments, courseMap])
 
   // ── Weekly activity ────────────────────────────────────────────────────
 
@@ -579,7 +585,7 @@ export function useAnalytics(): AnalyticsData {
     // Sort by timestamp descending, take top 10
     items.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime())
     return items.slice(0, 10)
-  }, [moduleProgress, assessments, practiceSessions])
+  }, [moduleProgress, assessments, practiceSessions, courseMap])
 
   // ── Exam readiness ─────────────────────────────────────────────────────
 

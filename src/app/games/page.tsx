@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useCallback, useRef } from 'react'
+import { useState, useEffect, useCallback, useRef, useMemo, memo } from 'react'
 import {
   Gamepad2,
   Lock,
@@ -368,6 +368,10 @@ function shuffleArray<T>(arr: T[]): T[] {
 }
 
 function scrambleWord(word: string): string {
+  // For multi-word terms, scramble each word separately to keep spaces in place
+  if (word.includes(' ')) {
+    return word.split(' ').map(w => scrambleWord(w)).join(' ')
+  }
   const letters = word.split('')
   let scrambled = shuffleArray(letters).join('')
   // make sure it's different from the original
@@ -734,20 +738,28 @@ function WordScrambleGame({ onExit }: { onExit: () => void }) {
     }
   }, [currentIndex, words.length])
 
+  // Allow Enter key to advance after answering
+  useEffect(() => {
+    if (gameState !== 'correct' && gameState !== 'wrong' && gameState !== 'timeout') return
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === 'Enter') nextWord()
+    }
+    window.addEventListener('keydown', handler)
+    return () => window.removeEventListener('keydown', handler)
+  }, [gameState, nextWord])
+
   // Save score on finish
   const hasSavedRef = useRef(false)
   useEffect(() => {
-    const isFinished = gameState === 'finished' || (gameState !== 'playing' && currentIndex + 1 >= words.length && (gameState === 'correct' || gameState === 'wrong' || gameState === 'timeout'))
-    if (isFinished && !hasSavedRef.current) {
+    if (gameState === 'finished' && !hasSavedRef.current) {
       hasSavedRef.current = true
       saveToLeaderboard('word-scramble', score, totalAnswered)
       window.dispatchEvent(new Event('leaderboard-updated'))
     }
-  }, [gameState, currentIndex, words.length, score, totalAnswered])
+  }, [gameState, score, totalAnswered])
 
   // finished screen
-  if (gameState === 'finished' || (gameState !== 'playing' && currentIndex + 1 >= words.length && (gameState === 'correct' || gameState === 'wrong' || gameState === 'timeout'))) {
-    const finalScore = gameState === 'correct' ? score : score
+  if (gameState === 'finished') {
     return (
       <div className="flex flex-col items-center gap-6 py-8">
         <div className="relative">
@@ -756,7 +768,7 @@ function WordScrambleGame({ onExit }: { onExit: () => void }) {
         </div>
         <h3 className="text-2xl font-bold text-foreground">Game Over!</h3>
         <div className="text-center space-y-1">
-          <p className="text-4xl font-black text-emerald-400">{finalScore}/{totalAnswered}</p>
+          <p className="text-4xl font-black text-emerald-400">{score}/{totalAnswered}</p>
           <p className="text-muted-foreground text-sm">correct answers</p>
         </div>
         <div className="flex gap-3">
@@ -850,7 +862,7 @@ function WordScrambleGame({ onExit }: { onExit: () => void }) {
           )}
         </div>
       ) : (
-        <div className="text-center space-y-3">
+        <div className="text-center space-y-3" role="status" aria-live="polite">
           {gameState === 'correct' && (
             <div className="flex items-center gap-2 text-emerald-400 animate-in zoom-in duration-300">
               <CheckCircle className="size-6" />
@@ -931,6 +943,16 @@ function QuoteMatchGame({ onExit }: { onExit: () => void }) {
       setGameState('playing')
     }
   }, [currentIndex, questions.length])
+
+  // Allow Enter key to advance after answering
+  useEffect(() => {
+    if (gameState !== 'answered') return
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === 'Enter') nextQuestion()
+    }
+    window.addEventListener('keydown', handler)
+    return () => window.removeEventListener('keydown', handler)
+  }, [gameState, nextQuestion])
 
   // Save score on finish
   const hasSavedRef = useRef(false)
@@ -1016,6 +1038,7 @@ function QuoteMatchGame({ onExit }: { onExit: () => void }) {
               disabled={gameState === 'answered'}
               className={cn(
                 'w-full text-left px-4 py-3 rounded-xl border-2 transition-all duration-200 text-sm font-medium',
+                'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-1 focus-visible:ring-offset-background',
                 'disabled:cursor-default',
                 optionStyle,
               )}
@@ -1078,6 +1101,16 @@ function GrammarFixGame({ onExit }: { onExit: () => void }) {
       setGameState('playing')
     }
   }, [currentIndex, questions.length])
+
+  // Allow Enter key to advance after answering
+  useEffect(() => {
+    if (gameState !== 'answered') return
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === 'Enter') nextQuestion()
+    }
+    window.addEventListener('keydown', handler)
+    return () => window.removeEventListener('keydown', handler)
+  }, [gameState, nextQuestion])
 
   // Save score on finish
   const hasSavedRef = useRef(false)
@@ -1167,6 +1200,7 @@ function GrammarFixGame({ onExit }: { onExit: () => void }) {
                 disabled={gameState === 'answered'}
                 className={cn(
                   'w-full text-left px-4 py-3 rounded-xl border-2 transition-all duration-200 text-sm font-medium',
+                  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-1 focus-visible:ring-offset-background',
                   'disabled:cursor-default',
                   optionStyle,
                 )}
@@ -1182,11 +1216,22 @@ function GrammarFixGame({ onExit }: { onExit: () => void }) {
         </div>
       </div>
 
-      {/* Next button */}
+      {/* Feedback & Next button */}
       {gameState === 'answered' && (
-        <Button onClick={nextQuestion} size="lg" className="mt-2 animate-in fade-in slide-in-from-bottom-2 duration-300">
-          {currentIndex + 1 >= questions.length ? 'See Results' : 'Next Sentence'} <ChevronRight className="size-4 ml-1" />
-        </Button>
+        <div className="w-full max-w-lg space-y-3 animate-in fade-in slide-in-from-bottom-2 duration-300" role="status" aria-live="polite">
+          {selectedAnswer !== currentQuestion.correct && (
+            <div className="bg-muted/50 rounded-lg px-4 py-3 text-sm text-muted-foreground">
+              <span className="font-medium text-foreground">The error was:</span>{' '}
+              {currentQuestion.error}. The correct fix is{' '}
+              <span className="font-semibold text-emerald-400">&ldquo;{currentQuestion.correct}&rdquo;</span>.
+            </div>
+          )}
+          <div className="flex justify-center">
+            <Button onClick={nextQuestion} size="lg">
+              {currentIndex + 1 >= questions.length ? 'See Results' : 'Next Sentence'} <ChevronRight className="size-4 ml-1" />
+            </Button>
+          </div>
+        </div>
       )}
     </div>
   )
@@ -1196,7 +1241,7 @@ function GrammarFixGame({ onExit }: { onExit: () => void }) {
 // GAME CARD
 // ═══════════════════════════════════════════════════════════════════════════════
 
-function GameCard({ game, isActive, onPlay }: { game: GameDef; isActive: boolean; onPlay: () => void }) {
+const GameCard = memo(function GameCard({ game, isActive, onPlay }: { game: GameDef; isActive: boolean; onPlay: () => void }) {
   const difficultyColor =
     game.difficulty === 'Easy' ? 'text-emerald-400' :
     game.difficulty === 'Medium' ? 'text-amber-400' : 'text-red-400'
@@ -1204,8 +1249,8 @@ function GameCard({ game, isActive, onPlay }: { game: GameDef; isActive: boolean
   return (
     <Card
       className={cn(
-        'relative overflow-hidden transition-all duration-300 group cursor-pointer',
-        'hover:shadow-lg hover:shadow-black/20 hover:-translate-y-0.5',
+        'relative overflow-hidden transition-all duration-300 group',
+        !game.locked && 'cursor-pointer hover:shadow-lg hover:shadow-black/20 hover:-translate-y-0.5',
         isActive && 'ring-2 ring-primary shadow-lg',
         game.locked && 'opacity-80',
       )}
@@ -1253,7 +1298,7 @@ function GameCard({ game, isActive, onPlay }: { game: GameDef; isActive: boolean
       )}
     </Card>
   )
-}
+})
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // MAIN PAGE
@@ -1262,12 +1307,17 @@ function GameCard({ game, isActive, onPlay }: { game: GameDef; isActive: boolean
 export default function GamesPage() {
   const [activeGame, setActiveGame] = useState<string | null>(null)
 
+  const handleExit = useCallback(() => setActiveGame(null), [])
+
+  const handlePlayGame = useCallback((gameId: string) => {
+    setActiveGame((prev) => (prev === gameId ? null : gameId))
+  }, [])
+
   const renderGame = () => {
-    const exit = () => setActiveGame(null)
     switch (activeGame) {
-      case 'word-scramble': return <WordScrambleGame onExit={exit} />
-      case 'quote-match': return <QuoteMatchGame onExit={exit} />
-      case 'grammar-fix': return <GrammarFixGame onExit={exit} />
+      case 'word-scramble': return <WordScrambleGame onExit={handleExit} />
+      case 'quote-match': return <QuoteMatchGame onExit={handleExit} />
+      case 'grammar-fix': return <GrammarFixGame onExit={handleExit} />
       default: return null
     }
   }
@@ -1349,7 +1399,7 @@ export default function GamesPage() {
                 key={game.id}
                 game={game}
                 isActive={activeGame === game.id}
-                onPlay={() => setActiveGame(activeGame === game.id ? null : game.id)}
+                onPlay={() => handlePlayGame(game.id)}
               />
             ))}
           </div>

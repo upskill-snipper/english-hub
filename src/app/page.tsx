@@ -288,24 +288,21 @@ export default function Home() {
             <span className="text-foreground font-bold">2,400+</span>{' '}
             students across the UK
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8">
             {[
               { icon: FileText, color: 'text-orange-400 bg-orange-500/10', value: '120+', label: 'Mock Exam Papers' },
               { icon: Sparkles, color: 'text-cyan-400 bg-cyan-500/10', value: 'AI', label: 'Essay Feedback' },
               { icon: BookOpen, color: 'text-primary bg-primary/10', value: '13', label: 'Structured Courses' },
               { icon: Layers, color: 'text-purple-400 bg-purple-500/10', value: '295', label: 'Flashcards' },
               { icon: Award, color: 'text-amber-400 bg-amber-500/10', value: '5', label: '4 GCSE Boards + KS3' },
-            ].map((stat, i) => (
-              <div key={stat.label} className="flex items-center gap-8 sm:gap-12">
-                {i > 0 && <div className="hidden sm:block w-px h-10 bg-border/50" />}
-                <div className="flex items-center gap-3">
-                  <div className={cn('w-10 h-10 rounded-xl flex items-center justify-center', stat.color)}>
-                    <stat.icon className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <p className="text-xl font-bold tracking-tight text-foreground">{stat.value}</p>
-                    <p className="text-xs text-muted-foreground">{stat.label}</p>
-                  </div>
+            ].map((stat) => (
+              <div key={stat.label} className="flex items-center gap-3">
+                <div className={cn('w-10 h-10 rounded-xl flex items-center justify-center shrink-0', stat.color)}>
+                  <stat.icon className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="text-xl font-bold tracking-tight text-foreground">{stat.value}</p>
+                  <p className="text-xs text-muted-foreground">{stat.label}</p>
                 </div>
               </div>
             ))}
@@ -683,7 +680,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
             {[
               {
                 icon: GraduationCap,
@@ -736,7 +733,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
             {([
               {
                 title: 'KS3 Reading',
@@ -894,7 +891,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
             {([
               { board: 'AQA', color: 'border-blue-500/30 hover:border-blue-500/60', accent: 'text-blue-400', bg: 'bg-blue-500/10', desc: 'Paper structure, mark schemes, and examiner tips.' },
               { board: 'Edexcel', color: 'border-violet-500/30 hover:border-violet-500/60', accent: 'text-violet-400', bg: 'bg-violet-500/10', desc: 'Paper structure, mark schemes, and examiner tips.' },
@@ -1060,7 +1057,7 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-5">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
             {[
               {
                 quote:
@@ -1173,7 +1170,7 @@ export default function Home() {
             </div>
 
             {/* Links */}
-            <div className="flex flex-wrap gap-x-8 gap-y-3 text-sm">
+            <div className="flex flex-wrap gap-x-6 gap-y-1 text-sm">
               {[
                 { label: 'Subjects', href: '/subjects' },
                 { label: 'Courses', href: '/courses' },
@@ -1188,7 +1185,7 @@ export default function Home() {
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="text-muted-foreground hover:text-foreground transition-colors duration-200"
+                  className="py-2 text-muted-foreground hover:text-foreground transition-colors duration-200"
                 >
                   {link.label}
                 </Link>

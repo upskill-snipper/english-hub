@@ -543,11 +543,13 @@ function JoinCodesSection({
   }
 
   async function handleDeactivate(codeId: string) {
+    if (!schoolId) return
     const supabase = createClient()
     await supabase
       .from('school_join_codes')
       .update({ is_active: false })
       .eq('id', codeId)
+      .eq('school_id', schoolId)
     onUpdate()
   }
 

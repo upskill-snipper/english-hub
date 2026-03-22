@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { useAuthStore } from '@/store/auth-store'
+import { usePathname } from 'next/navigation'
+import { useAuthStore, useAuthUserLoading } from '@/store/auth-store'
 import { Menu, LogOut, School } from 'lucide-react'
 import {
   Sheet,
@@ -27,7 +28,8 @@ const NAV_LINKS = [
 ]
 
 export function Header() {
-  const { user, isLoading } = useAuthStore()
+  const { user, isLoading } = useAuthUserLoading()
+  const pathname = usePathname()
   const [mobileOpen, setMobileOpen] = useState(false)
   const [isSchoolMember, setIsSchoolMember] = useState(false)
 
@@ -74,11 +76,20 @@ export function Header() {
 
         {/* Desktop nav */}
         <nav aria-label="Main navigation" className="hidden items-center gap-0.5 md:flex">
-          {NAV_LINKS.map((link) => (
-            <Button key={link.href} variant="ghost" size="sm" render={<Link href={link.href} />}>
-              {link.label}
-            </Button>
-          ))}
+          {NAV_LINKS.map((link) => {
+            const isActive = pathname === link.href || pathname.startsWith(link.href + '/')
+            return (
+              <Button
+                key={link.href}
+                variant="ghost"
+                size="sm"
+                render={<Link href={link.href} aria-current={isActive ? 'page' : undefined} />}
+                className={cn(isActive && 'bg-accent text-foreground')}
+              >
+                {link.label}
+              </Button>
+            )
+          })}
         </nav>
 
         {/* Desktop auth buttons */}
@@ -135,17 +146,20 @@ export function Header() {
             </SheetHeader>
 
             <nav aria-label="Mobile navigation" className="flex flex-col gap-1 pt-4">
-              {NAV_LINKS.map((link) => (
+              {NAV_LINKS.map((link) => {
+                const isActive = pathname === link.href || pathname.startsWith(link.href + '/')
+                return (
                   <Button
                     key={link.href}
                     variant="ghost"
-                    className="w-full justify-start"
-                    render={<Link href={link.href} />}
+                    className={cn('w-full justify-start', isActive && 'bg-accent text-foreground')}
+                    render={<Link href={link.href} aria-current={isActive ? 'page' : undefined} />}
                     onClick={() => setMobileOpen(false)}
                   >
                     {link.label}
                   </Button>
-                ))}
+                )
+              })}
 
               <Separator className="my-3" />
 

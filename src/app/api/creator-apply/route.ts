@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
   try {
     // Rate limit: 5 applications per IP per hour
     const ip = getClientIp(request.headers)
-    const rl = rateLimit(`creator-apply:${ip}`, { limit: 5, windowSeconds: 3600 })
+    const rl = await rateLimit(`creator-apply:${ip}`, { limit: 5, windowSeconds: 3600 })
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
@@ -80,6 +80,14 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    // Validate optional handle length
+    if (handle && handle.length > 200) {
+      return NextResponse.json(
+        { error: 'Social handle / URL must be 200 characters or fewer.' },
+        { status: 400 }
+      )
+    }
+
     // Store the application
     const supabase = createServiceRoleClient()
 
@@ -111,19 +119,14 @@ export async function POST(request: NextRequest) {
       })
 
     if (insertError) {
-      // If the table doesn't exist yet, fall back to logging
       console.error('Failed to insert creator application:', insertError)
-
-      // Still send notification even if DB insert fails
-      console.log('Creator application received:', {
-        name: name.trim(),
-        email: email.toLowerCase().trim(),
-        platform,
-        handle: handle?.trim() || null,
-        follower_count,
-        content_description: content_description.trim(),
-      })
+      return NextResponse.json(
+        { error: 'Failed to submit application. Please try again.' },
+        { status: 500 }
+      )
     }
+
+    // TODO: Send notification email to admin (ADMIN_EMAILS)
 
     return NextResponse.json({ success: true })
   } catch (error) {

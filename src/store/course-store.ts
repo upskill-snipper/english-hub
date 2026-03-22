@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+import { useShallow } from 'zustand/react/shallow'
 import type { CourseData, CourseModule } from '@/lib/types'
 
 interface CourseState {
@@ -39,3 +40,26 @@ export const useCourseStore = create<CourseState>((set) => ({
       completedModules: new Set(),
     }),
 }))
+
+// ── Optimized selectors ─────────────────────────────────────────────────────
+
+/** Select completed modules + markModuleComplete (shallow-compared) */
+export const useCourseProgress = () =>
+  useCourseStore(
+    useShallow((s) => ({
+      completedModules: s.completedModules,
+      markModuleComplete: s.markModuleComplete,
+    }))
+  )
+
+/** Select course actions (stable references) */
+export const useCourseActions = () =>
+  useCourseStore(
+    useShallow((s) => ({
+      setCourse: s.setCourse,
+      setModule: s.setModule,
+      setQuizAnswer: s.setQuizAnswer,
+      markModuleComplete: s.markModuleComplete,
+      reset: s.reset,
+    }))
+  )

@@ -61,7 +61,7 @@ export async function GET() {
       recentEnrolments: recentEnrolmentsResult.data ?? [],
     })
   } catch (error) {
-    console.error('Admin stats error:', error)
+    console.error('[api/admin/stats] Unexpected error:', error)
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

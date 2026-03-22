@@ -16,8 +16,17 @@ export async function GET() {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
+    // ── Role check: only parent accounts can view child progress ──────────
+    const parentRole = user.user_metadata?.role
+    if (parentRole !== 'parent') {
+      return NextResponse.json(
+        { error: 'Only parent accounts can access child progress.' },
+        { status: 403 }
+      )
+    }
+
     // Rate limit: 30 requests per minute per user
-    const rl = rateLimit(`parent-progress:${user.id}`, { limit: 30, windowSeconds: 60 })
+    const rl = await rateLimit(`parent-progress:${user.id}`, { limit: 30, windowSeconds: 60 })
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },

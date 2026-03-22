@@ -98,6 +98,7 @@ export interface Certificate {
   grade: 'Pass' | 'Merit' | 'Distinction'
   issued_at: string
   verification_url: string
+  student_name: string | null
 }
 
 export interface PracticeQuestion {
@@ -181,6 +182,7 @@ export interface Affiliate {
   id: string
   user_id: string | null
   rewardful_affiliate_id: string | null
+  rewardful_link_token: string | null
   full_name: string
   email: string
   tiktok_handle: string | null

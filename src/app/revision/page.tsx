@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useCallback, useMemo, memo } from 'react'
+import { useState, useEffect, useCallback, useMemo, memo, useRef } from 'react'
 import { PRICING, PRICING_DISPLAY } from '@/constants/pricing'
 import {
   ChevronLeft,
@@ -43,6 +43,82 @@ interface CardStatus {
 }
 
 type View = 'decks' | 'study' | 'summary'
+
+// ─── Progress persistence helpers ────────────────────────────────────────────
+
+const STORAGE_KEY = 'english-hub-revision-progress'
+
+interface PersistedProgress {
+  deckId: string
+  cardStatus: CardStatus
+  currentIndex: number
+  isShuffled: boolean
+  timestamp: number
+}
+
+function loadProgress(deckId: string): PersistedProgress | null {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY)
+    if (!raw) return null
+    const data: PersistedProgress = JSON.parse(raw)
+    // Only restore if same deck and less than 24h old
+    if (data.deckId === deckId && Date.now() - data.timestamp < 86_400_000) {
+      return data
+    }
+  } catch { /* ignore corrupt data */ }
+  return null
+}
+
+function saveProgress(deckId: string, cardStatus: CardStatus, currentIndex: number, isShuffled: boolean) {
+  try {
+    const data: PersistedProgress = { deckId, cardStatus, currentIndex, isShuffled, timestamp: Date.now() }
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data))
+  } catch { /* storage full or unavailable */ }
+}
+
+function clearProgress() {
+  try { localStorage.removeItem(STORAGE_KEY) } catch { /* ignore */ }
+}
+
+// ─── Swipe hook ──────────────────────────────────────────────────────────────
+
+function useSwipe(
+  ref: React.RefObject<HTMLElement | null>,
+  { onSwipeLeft, onSwipeRight }: { onSwipeLeft?: () => void; onSwipeRight?: () => void }
+) {
+  const touchStart = useRef<{ x: number; y: number } | null>(null)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+
+    function handleTouchStart(e: TouchEvent) {
+      const touch = e.touches[0]
+      touchStart.current = { x: touch.clientX, y: touch.clientY }
+    }
+
+    function handleTouchEnd(e: TouchEvent) {
+      if (!touchStart.current) return
+      const touch = e.changedTouches[0]
+      const dx = touch.clientX - touchStart.current.x
+      const dy = touch.clientY - touchStart.current.y
+      touchStart.current = null
+
+      // Only trigger if horizontal swipe is dominant and > 50px
+      if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+        if (dx < 0) onSwipeLeft?.()
+        else onSwipeRight?.()
+      }
+    }
+
+    el.addEventListener('touchstart', handleTouchStart, { passive: true })
+    el.addEventListener('touchend', handleTouchEnd, { passive: true })
+    return () => {
+      el.removeEventListener('touchstart', handleTouchStart)
+      el.removeEventListener('touchend', handleTouchEnd)
+    }
+  }, [ref, onSwipeLeft, onSwipeRight])
+}
 
 // ─── Technique categories from data ─────────────────────────────────────────
 
@@ -96,6 +172,102 @@ export default function RevisionPage() {
     })
   }, [techSearch, techCategory])
 
+  // ── Swipe ref for mobile ─────────────────────────────────────────────
+  const cardRef = useRef<HTMLDivElement>(null)
+
+  // ── Deck actions ───────────────────────────────────────────────────────
+
+  function startDeck(deck: FlashcardDeck) {
+    // Check for saved progress on this deck
+    const saved = loadProgress(deck.id)
+    setActiveDeck(deck)
+    if (saved) {
+      setCards(saved.isShuffled ? shuffleArray(deck.cards) : deck.cards)
+      setCurrentIndex(saved.currentIndex)
+      setCardStatus(saved.cardStatus)
+      setIsShuffled(saved.isShuffled)
+    } else {
+      setCards(deck.cards)
+      setCurrentIndex(0)
+      setCardStatus({})
+      setIsShuffled(false)
+    }
+    setFlipped(false)
+    setView('study')
+  }
+
+  function toggleShuffle() {
+    if (!activeDeck) return
+    if (isShuffled) {
+      setCards(activeDeck.cards)
+    } else {
+      setCards(shuffleArray(activeDeck.cards))
+    }
+    setIsShuffled(!isShuffled)
+    setCurrentIndex(0)
+    setFlipped(false)
+  }
+
+  const goToNext = useCallback(() => {
+    setCurrentIndex((i) => {
+      if (i < cards.length - 1) {
+        setFlipped(false)
+        return i + 1
+      }
+      return i
+    })
+  }, [cards.length])
+
+  const goToPrev = useCallback(() => {
+    setCurrentIndex((i) => {
+      if (i > 0) {
+        setFlipped(false)
+        return i - 1
+      }
+      return i
+    })
+  }, [])
+
+  function markCard(status: StudyStatus) {
+    if (!cards[currentIndex]) return
+    setCardStatus((prev) => ({ ...prev, [cards[currentIndex].id]: status }))
+    // Auto-advance
+    if (currentIndex < cards.length - 1) {
+      setCurrentIndex((i) => i + 1)
+      setFlipped(false)
+    } else {
+      // Last card — show summary
+      clearProgress()
+      setView('summary')
+    }
+  }
+
+  function restartDeck() {
+    if (!activeDeck) return
+    clearProgress()
+    setCards(isShuffled ? shuffleArray(activeDeck.cards) : activeDeck.cards)
+    setCurrentIndex(0)
+    setFlipped(false)
+    setCardStatus({})
+    setView('study')
+  }
+
+  function backToDecks() {
+    clearProgress()
+    setView('decks')
+    setActiveDeck(null)
+    setCards([])
+    setCurrentIndex(0)
+    setCardStatus({})
+  }
+
+  // ── Persist progress on every status/index change ───────────────────
+  useEffect(() => {
+    if (view === 'study' && activeDeck) {
+      saveProgress(activeDeck.id, cardStatus, currentIndex, isShuffled)
+    }
+  }, [view, activeDeck, cardStatus, currentIndex, isShuffled])
+
   // ── Keyboard navigation ────────────────────────────────────────────────
 
   useEffect(() => {
@@ -112,76 +284,10 @@ export default function RevisionPage() {
 
     window.addEventListener('keydown', handleKey)
     return () => window.removeEventListener('keydown', handleKey)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [view, currentIndex, cards.length])
+  }, [view, goToNext, goToPrev])
 
-  // ── Deck actions ───────────────────────────────────────────────────────
-
-  function startDeck(deck: FlashcardDeck) {
-    setActiveDeck(deck)
-    setCards(deck.cards)
-    setCurrentIndex(0)
-    setFlipped(false)
-    setIsShuffled(false)
-    setCardStatus({})
-    setView('study')
-  }
-
-  function toggleShuffle() {
-    if (!activeDeck) return
-    if (isShuffled) {
-      setCards(activeDeck.cards)
-    } else {
-      setCards(shuffleArray(activeDeck.cards))
-    }
-    setIsShuffled(!isShuffled)
-    setCurrentIndex(0)
-    setFlipped(false)
-  }
-
-  function goToNext() {
-    if (currentIndex < cards.length - 1) {
-      setCurrentIndex((i) => i + 1)
-      setFlipped(false)
-    }
-  }
-
-  function goToPrev() {
-    if (currentIndex > 0) {
-      setCurrentIndex((i) => i - 1)
-      setFlipped(false)
-    }
-  }
-
-  function markCard(status: StudyStatus) {
-    if (!cards[currentIndex]) return
-    setCardStatus((prev) => ({ ...prev, [cards[currentIndex].id]: status }))
-    // Auto-advance
-    if (currentIndex < cards.length - 1) {
-      setCurrentIndex((i) => i + 1)
-      setFlipped(false)
-    } else {
-      // Last card — show summary
-      setView('summary')
-    }
-  }
-
-  function restartDeck() {
-    if (!activeDeck) return
-    setCards(isShuffled ? shuffleArray(activeDeck.cards) : activeDeck.cards)
-    setCurrentIndex(0)
-    setFlipped(false)
-    setCardStatus({})
-    setView('study')
-  }
-
-  function backToDecks() {
-    setView('decks')
-    setActiveDeck(null)
-    setCards([])
-    setCurrentIndex(0)
-    setCardStatus({})
-  }
+  // ── Mobile swipe navigation ────────────────────────────────────────────
+  useSwipe(cardRef, { onSwipeLeft: goToNext, onSwipeRight: goToPrev })
 
   // ── Summary stats ──────────────────────────────────────────────────────
 
@@ -341,6 +447,7 @@ export default function RevisionPage() {
             </div>
 
             {/* Flashcard */}
+            <div ref={cardRef}>
             <Card
               className="group relative mx-auto min-h-[280px] max-w-2xl cursor-pointer select-none overflow-hidden transition-all hover:border-primary/40 sm:min-h-[320px]"
               onClick={() => setFlipped((f) => !f)}
@@ -387,10 +494,11 @@ export default function RevisionPage() {
                 </div>
 
                 <p className="absolute bottom-4 left-0 right-0 text-center text-xs text-muted-foreground/50">
-                  Click to flip &middot; Arrow keys to navigate
+                  Click to flip &middot; Arrow keys or swipe to navigate
                 </p>
               </CardContent>
             </Card>
+            </div>
 
             {/* Navigation + rating buttons */}
             <div className="mt-6 flex flex-col items-center gap-4">

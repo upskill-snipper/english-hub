@@ -31,8 +31,13 @@ describe('shuffleArray', () => {
 
 describe('validateRedirect', () => {
   it('allows valid relative paths', () => expect(validateRedirect('/dashboard')).toBe('/dashboard'))
+  it('allows paths with segments', () => expect(validateRedirect('/courses/abc')).toBe('/courses/abc'))
   it('blocks protocol-relative URLs', () => expect(validateRedirect('//evil.com')).toBe('/dashboard'))
   it('blocks absolute URLs', () => expect(validateRedirect('https://evil.com')).toBe('/dashboard'))
+  it('blocks backslash-based redirects', () => expect(validateRedirect('/\\evil.com')).toBe('/dashboard'))
+  it('blocks URLs with @ sign', () => expect(validateRedirect('/foo@evil.com')).toBe('/dashboard'))
+  it('blocks encoded characters', () => expect(validateRedirect('/%2fevil.com')).toBe('/dashboard'))
+  it('blocks control characters', () => expect(validateRedirect('/dash\tboard')).toBe('/dashboard'))
   it('defaults null', () => expect(validateRedirect(null)).toBe('/dashboard'))
   it('defaults empty', () => expect(validateRedirect('')).toBe('/dashboard'))
 })

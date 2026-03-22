@@ -1,9 +1,10 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useMemo, useCallback, memo } from 'react'
 import Link from 'next/link'
 import { BookOpen, Clock, GraduationCap, Play } from 'lucide-react'
-import { allCourses as courses } from '@/data/courses'
+import { loadAllCourses } from '@/data/course-loader'
+import type { CourseData } from '@/data/courses'
 import { useBoardStore } from '@/store/board-store'
 import { useAuthStore } from '@/store/auth-store'
 import { matchesBoard } from '@/lib/board-filter'
@@ -31,8 +32,14 @@ export default function CourseCataloguePage() {
   const { selectedBoard } = useBoardStore()
   const { user, profile } = useAuthStore()
 
+  const [courses, setCourses] = useState<CourseData[]>([])
   const [activeTier, setActiveTier] = useState<Tier>('All')
   const hasManuallySelected = useRef(false)
+
+  // Load course data dynamically
+  useEffect(() => {
+    loadAllCourses().then(setCourses)
+  }, [])
 
   // Auto-select tier based on user's year group once profile loads
   useEffect(() => {
@@ -41,16 +48,20 @@ export default function CourseCataloguePage() {
     setActiveTier(tier)
   }, [profile?.year_group])
 
-  function handleTierChange(value: string) {
+  const handleTierChange = useCallback((value: string) => {
     hasManuallySelected.current = true
     setActiveTier(value as Tier)
-  }
+  }, [])
 
-  const filtered = courses.filter((c) => {
-    if (!matchesBoard(c.board, selectedBoard)) return false
-    if (activeTier !== 'All' && c.tier?.toUpperCase() !== activeTier) return false
-    return true
-  })
+  const filtered = useMemo(
+    () =>
+      courses.filter((c) => {
+        if (!matchesBoard(c.board, selectedBoard)) return false
+        if (activeTier !== 'All' && c.tier?.toUpperCase() !== activeTier) return false
+        return true
+      }),
+    [courses, selectedBoard, activeTier]
+  )
 
   return (
     <main className="min-h-screen bg-background">
@@ -147,10 +158,10 @@ export default function CourseCataloguePage() {
 /* ------------------------------------------------------------------ */
 
 interface CourseCardProps {
-  course: (typeof courses)[number]
+  course: CourseData
 }
 
-function CourseCard({ course }: CourseCardProps) {
+const CourseCard = memo(function CourseCard({ course }: CourseCardProps) {
   return (
     <Link
       href={`/courses/${course.id}`}
@@ -231,4 +242,4 @@ function CourseCard({ course }: CourseCardProps) {
       </Card>
     </Link>
   )
-}
+})

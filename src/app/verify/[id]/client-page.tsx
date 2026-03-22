@@ -48,14 +48,21 @@ export default function VerifyPage() {
     setCertificate(cert)
     setFound(true)
 
-    // Fetch student name
-    const { data: profile } = await supabase
-      .from('profiles')
-      .select('full_name')
-      .eq('id', cert.user_id)
-      .single()
+    // Use denormalized student_name from the certificate itself.
+    // This avoids a profiles query that would fail for unauthenticated visitors
+    // (profiles RLS restricts reads to the owning user).
+    // Fall back to a profiles lookup for older certificates without student_name.
+    if (cert.student_name) {
+      setStudentName(cert.student_name)
+    } else {
+      const { data: profile } = await supabase
+        .from('profiles')
+        .select('full_name')
+        .eq('id', cert.user_id)
+        .single()
 
-    setStudentName(profile?.full_name || 'Student')
+      setStudentName(profile?.full_name || 'Student')
+    }
     setLoading(false)
   }
 

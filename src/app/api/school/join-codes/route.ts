@@ -14,7 +14,7 @@ function generateCode(length = 8): string {
 export async function GET(request: NextRequest) {
   try {
     const ip = getClientIp(request.headers)
-    const rl = rateLimit(`school-join-codes:${ip}`, { limit: 30, windowSeconds: 60 })
+    const rl = await rateLimit(`school-join-codes:${ip}`, { limit: 30, windowSeconds: 60 })
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
@@ -69,7 +69,7 @@ export async function GET(request: NextRequest) {
 export async function POST(request: NextRequest) {
   try {
     const ip = getClientIp(request.headers)
-    const rl = rateLimit(`school-join-codes-create:${ip}`, { limit: 10, windowSeconds: 60 })
+    const rl = await rateLimit(`school-join-codes-create:${ip}`, { limit: 10, windowSeconds: 60 })
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },

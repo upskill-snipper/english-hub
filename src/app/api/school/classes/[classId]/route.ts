@@ -22,7 +22,7 @@ export async function GET(
 ) {
   try {
     const ip = getClientIp(request.headers)
-    const rl = rateLimit(`school-class-detail:${ip}`, { limit: 30, windowSeconds: 60 })
+    const rl = await rateLimit(`school-class-detail:${ip}`, { limit: 30, windowSeconds: 60 })
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
@@ -181,7 +181,7 @@ export async function PATCH(
 ) {
   try {
     const ip = getClientIp(request.headers)
-    const rl = rateLimit(`school-class-update:${ip}`, { limit: 10, windowSeconds: 60 })
+    const rl = await rateLimit(`school-class-update:${ip}`, { limit: 10, windowSeconds: 60 })
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
@@ -262,7 +262,7 @@ export async function DELETE(
 ) {
   try {
     const ip = getClientIp(request.headers)
-    const rl = rateLimit(`school-class-delete:${ip}`, { limit: 5, windowSeconds: 60 })
+    const rl = await rateLimit(`school-class-delete:${ip}`, { limit: 5, windowSeconds: 60 })
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },

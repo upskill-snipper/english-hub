@@ -1,6 +1,6 @@
 'use client'
 
-import { useBoardStore } from '@/store/board-store'
+import { useBoardStore, useBoardWithHydration } from '@/store/board-store'
 import { GraduationCap } from 'lucide-react'
 import { Skeleton } from '@/components/ui/skeleton'
 import { Button } from '@/components/ui/button'
@@ -51,7 +51,8 @@ function SidebarSkeleton() {
 }
 
 export function BoardSidebar() {
-  const { selectedBoard, _hasHydrated, clearBoard } = useBoardStore()
+  const { selectedBoard, _hasHydrated } = useBoardWithHydration()
+  const clearBoard = useBoardStore((s) => s.clearBoard)
 
   if (!_hasHydrated) return <SidebarSkeleton />
 
@@ -63,7 +64,7 @@ export function BoardSidebar() {
   return (
     <>
       {/* Mobile: minimal horizontal bar */}
-      <div className="md:hidden flex items-center justify-between px-4 h-9 bg-card/60 border-b border-border/40">
+      <div className="md:hidden flex items-center justify-between px-4 h-11 bg-card/60 border-b border-border/40">
         <div className="flex items-center gap-2">
           <span className={cn('h-2 w-2 rounded-full shrink-0', color)} />
           <span className="text-xs font-semibold text-foreground">
@@ -74,7 +75,7 @@ export function BoardSidebar() {
           variant="ghost"
           size="sm"
           onClick={clearBoard}
-          className="text-[11px] text-muted-foreground hover:text-primary h-6 px-2"
+          className="text-xs text-muted-foreground hover:text-primary min-h-[44px] px-3"
         >
           Change
         </Button>

@@ -1,0 +1,19 @@
+{
+  "name": "The English Hub",
+  "short_name": "English Hub",
+  "description": "Master English. Ace Your Exams. GCSE, IGCSE & KS3 English courses and practice.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#090c14",
+  "theme_color": "#090c14",
+  "orientation": "portrait-primary",
+  "categories": ["education"],
+  "lang": "en-GB",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

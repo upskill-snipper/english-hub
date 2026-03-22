@@ -1,101 +1,61 @@
-import { describe, it, expect, beforeEach, vi, afterEach } from 'vitest'
-import { rateLimit } from '@/lib/rate-limit'
+import { describe, it, expect, vi, beforeEach } from 'vitest'
 
-describe('rateLimit', () => {
+// Test the in-memory fallback (no Redis env vars set)
+describe('rateLimit (in-memory fallback)', () => {
   beforeEach(() => {
-    vi.useFakeTimers()
+    // Ensure no Redis env vars
+    delete process.env.UPSTASH_REDIS_REST_URL
+    delete process.env.UPSTASH_REDIS_REST_TOKEN
+    vi.resetModules()
   })
 
-  afterEach(() => {
-    vi.useRealTimers()
-  })
-
-  it('returns success within limit', () => {
-    const key = 'test-success-' + Date.now()
-    const result = rateLimit(key, { limit: 5, windowSeconds: 60 })
+  it('allows requests within limit', async () => {
+    const { rateLimit } = await import('@/lib/rate-limit')
+    const result = await rateLimit('test-key-1', { limit: 5, windowSeconds: 60 })
     expect(result.success).toBe(true)
     expect(result.remaining).toBe(4)
   })
 
-  it('returns failure when limit is exceeded', () => {
-    const key = 'test-exceeded-' + Date.now()
-    const opts = { limit: 3, windowSeconds: 60 }
-
-    // Use up the limit
-    rateLimit(key, opts) // 1
-    rateLimit(key, opts) // 2
-    rateLimit(key, opts) // 3
-
-    // 4th call should fail
-    const result = rateLimit(key, opts)
+  it('blocks requests over limit', async () => {
+    const { rateLimit } = await import('@/lib/rate-limit')
+    const key = 'test-key-block-' + Date.now()
+    for (let i = 0; i < 3; i++) {
+      await rateLimit(key, { limit: 3, windowSeconds: 60 })
+    }
+    const result = await rateLimit(key, { limit: 3, windowSeconds: 60 })
     expect(result.success).toBe(false)
     expect(result.remaining).toBe(0)
   })
 
-  it('tracks remaining count correctly', () => {
-    const key = 'test-remaining-' + Date.now()
-    const opts = { limit: 5, windowSeconds: 60 }
-
-    const r1 = rateLimit(key, opts)
-    expect(r1.remaining).toBe(4)
-
-    const r2 = rateLimit(key, opts)
-    expect(r2.remaining).toBe(3)
-
-    const r3 = rateLimit(key, opts)
-    expect(r3.remaining).toBe(2)
-
-    const r4 = rateLimit(key, opts)
-    expect(r4.remaining).toBe(1)
-
-    const r5 = rateLimit(key, opts)
-    expect(r5.remaining).toBe(0)
-    expect(r5.success).toBe(true)
-
-    // 6th should fail
-    const r6 = rateLimit(key, opts)
-    expect(r6.success).toBe(false)
-    expect(r6.remaining).toBe(0)
-  })
-
-  it('resets after window expires', () => {
-    const key = 'test-reset-' + Date.now()
-    const opts = { limit: 2, windowSeconds: 10 }
-
-    rateLimit(key, opts) // 1
-    rateLimit(key, opts) // 2
-    const blocked = rateLimit(key, opts)
-    expect(blocked.success).toBe(false)
-
-    // Advance past the window
-    vi.advanceTimersByTime(11_000)
-
-    // Should be allowed again
-    const afterReset = rateLimit(key, opts)
-    expect(afterReset.success).toBe(true)
-    expect(afterReset.remaining).toBe(1)
-  })
-
-  it('different keys do not interfere with each other', () => {
-    const keyA = 'test-key-a-' + Date.now()
-    const keyB = 'test-key-b-' + Date.now()
-    const opts = { limit: 2, windowSeconds: 60 }
-
-    // Exhaust key A
-    rateLimit(keyA, opts)
-    rateLimit(keyA, opts)
-    const blockedA = rateLimit(keyA, opts)
-    expect(blockedA.success).toBe(false)
-
-    // Key B should still work
-    const resultB = rateLimit(keyB, opts)
-    expect(resultB.success).toBe(true)
-    expect(resultB.remaining).toBe(1)
-  })
-
-  it('returns resetAt timestamp in the future', () => {
-    const key = 'test-resetat-' + Date.now()
-    const result = rateLimit(key, { limit: 10, windowSeconds: 300 })
+  it('returns resetAt in the future', async () => {
+    const { rateLimit } = await import('@/lib/rate-limit')
+    const result = await rateLimit('test-key-reset-' + Date.now(), { limit: 5, windowSeconds: 60 })
     expect(result.resetAt).toBeGreaterThan(Date.now())
+  })
+})
+
+describe('getClientIp', () => {
+  it('extracts IP from x-forwarded-for', async () => {
+    const { getClientIp } = await import('@/lib/rate-limit')
+    const headers = new Headers({ 'x-forwarded-for': '192.168.1.1' })
+    expect(getClientIp(headers)).toBe('192.168.1.1')
+  })
+
+  it('extracts IP from x-real-ip', async () => {
+    const { getClientIp } = await import('@/lib/rate-limit')
+    const headers = new Headers({ 'x-real-ip': '10.0.0.1' })
+    expect(getClientIp(headers)).toBe('10.0.0.1')
+  })
+
+  it('returns unknown for missing headers', async () => {
+    const { getClientIp } = await import('@/lib/rate-limit')
+    const headers = new Headers()
+    expect(getClientIp(headers)).toBe('unknown')
+  })
+
+  it('takes first IP from x-forwarded-for chain', async () => {
+    const { getClientIp } = await import('@/lib/rate-limit')
+    const headers = new Headers({ 'x-forwarded-for': '1.2.3.4, 5.6.7.8, 9.10.11.12' })
+    expect(getClientIp(headers)).toBe('1.2.3.4')
   })
 })

@@ -1,5 +1,6 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { PRICING, PRICING_DISPLAY } from '@/constants/pricing'
 import {
@@ -11,13 +12,10 @@ import {
   Clock,
   ArrowRight,
 } from 'lucide-react'
-import { allCourses } from '@/data/courses'
+import { loadCoursesByBoard } from '@/data/course-loader'
+import type { CourseData } from '@/data/courses'
 import { useBoardStore } from '@/store/board-store'
 import { useAuthStore } from '@/store/auth-store'
-
-const igcseCourses = allCourses.filter(
-  (c) => c.tier?.toUpperCase() === 'IGCSE'
-)
 
 /* ───────────────────── Spec A / Spec B skills ───────────────────── */
 
@@ -83,6 +81,11 @@ const examStructure = [
 export default function IGCSELandingPage() {
   const { selectedBoard } = useBoardStore();
   const { user } = useAuthStore();
+  const [igcseCourses, setIgcseCourses] = useState<CourseData[]>([])
+
+  useEffect(() => {
+    loadCoursesByBoard('igcse').then(setIgcseCourses)
+  }, [])
 
   // Block non-Edexcel users from IGCSE page
   if (selectedBoard && selectedBoard !== 'Edexcel') {

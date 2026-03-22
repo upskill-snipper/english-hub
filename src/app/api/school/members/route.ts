@@ -8,7 +8,7 @@ export const dynamic = 'force-dynamic'
 export async function GET(request: NextRequest) {
   try {
     const ip = getClientIp(request.headers)
-    const rl = rateLimit(`school-members:${ip}`, { limit: 30, windowSeconds: 60 })
+    const rl = await rateLimit(`school-members:${ip}`, { limit: 30, windowSeconds: 60 })
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
@@ -49,7 +49,7 @@ export async function GET(request: NextRequest) {
 export async function POST(request: NextRequest) {
   try {
     const ip = getClientIp(request.headers)
-    const rl = rateLimit(`school-members-invite:${ip}`, { limit: 10, windowSeconds: 60 })
+    const rl = await rateLimit(`school-members-invite:${ip}`, { limit: 10, windowSeconds: 60 })
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },
@@ -114,8 +114,10 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'This email has already been invited' }, { status: 422 })
     }
 
-    // Generate invite token
+    // Generate invite token and set expiration (7 days from now)
+    // Requires DB column: invite_expires_at timestamptz
     const inviteToken = crypto.randomUUID()
+    const inviteExpiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString()
 
     // Check if the user already has an account
     const { data: existingProfile } = await admin
@@ -135,6 +137,7 @@ export async function POST(request: NextRequest) {
         department: 'English',
         invite_status: 'pending',
         invite_token: inviteToken,
+        invite_expires_at: inviteExpiresAt,
       })
       .select()
       .single()

@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useCallback, useRef } from 'react'
-import { useExamStore } from '@/store/exam-store'
+import { useExamTimer as useExamTimerState } from '@/store/exam-store'
 
 export type TimerWarning = 'none' | '5min' | '1min' | 'expired'
 
@@ -10,6 +10,8 @@ interface UseExamTimerOptions {
   onTimeUp?: () => void
   /** Called when a warning threshold is crossed */
   onWarning?: (warning: TimerWarning) => void
+  /** Called when the user switches away from the tab */
+  onTabSwitch?: (count: number) => void
 }
 
 interface UseExamTimerReturn {
@@ -27,13 +29,22 @@ interface UseExamTimerReturn {
   isExpired: boolean
   /** Percentage of time remaining (0-100) */
   percentRemaining: number
+  /** Number of times the user switched away from the tab */
+  tabSwitchCount: number
 }
 
 export function useExamTimer(
   totalTimeMinutes: number,
-  { onTimeUp, onWarning }: UseExamTimerOptions = {}
+  { onTimeUp, onWarning, onTabSwitch }: UseExamTimerOptions = {}
 ): UseExamTimerReturn {
-  const { timeRemainingSeconds, isPaused, setTimeRemaining, togglePause } = useExamStore()
+  const {
+    timeRemainingSeconds,
+    isPaused,
+    setTimeRemaining,
+    togglePause,
+    tabSwitchCount,
+    incrementTabSwitchCount,
+  } = useExamTimerState()
   const prevWarningRef = useRef<TimerWarning>('none')
   /** Wall-clock timestamp (ms) when the current running interval started */
   const startTimeRef = useRef<number>(0)
@@ -58,9 +69,13 @@ export function useExamTimer(
 
     // Recalculate immediately when the tab regains focus (covers long
     // background periods where setInterval is throttled).
+    // Also track tab switches for anti-cheat awareness.
     const onVisibilityChange = () => {
       if (document.visibilityState === 'visible') {
         recalc()
+      } else {
+        // User switched away from the tab
+        incrementTabSwitchCount()
       }
     }
     document.addEventListener('visibilitychange', onVisibilityChange)
@@ -73,7 +88,14 @@ export function useExamTimer(
     // We intentionally exclude timeRemainingSeconds to avoid resetting
     // the wall-clock baseline on every tick.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isPaused, timeRemainingSeconds <= 0, setTimeRemaining])
+  }, [isPaused, timeRemainingSeconds <= 0, setTimeRemaining, incrementTabSwitchCount])
+
+  // Fire onTabSwitch callback when tab switch count changes
+  useEffect(() => {
+    if (tabSwitchCount > 0 && onTabSwitch) {
+      onTabSwitch(tabSwitchCount)
+    }
+  }, [tabSwitchCount, onTabSwitch])
 
   // Determine warning level
   const getWarning = useCallback((): TimerWarning => {
@@ -114,6 +136,7 @@ export function useExamTimer(
     togglePause,
     isExpired: timeRemainingSeconds <= 0,
     percentRemaining,
+    tabSwitchCount,
   }
 }
 

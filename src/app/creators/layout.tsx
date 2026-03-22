@@ -1,30 +1,16 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Creator Partners — Earn Money Sharing Education | The English Hub',
+  title: 'For Creators — The English Hub',
   description:
-    'Join The English Hub affiliate program. Earn 20% recurring commission for every student you refer. Perfect for TikTok, YouTube, and Instagram creators.',
+    'Join The English Hub as a content creator. Publish courses, earn revenue and reach thousands of students preparing for GCSE and IGCSE English exams.',
   openGraph: {
-    title: 'Earn Money Sharing Education — The English Hub Creator Partners',
+    title: 'For Creators — The English Hub',
     description:
-      'Join our affiliate program and earn 20% recurring commission on every student you refer. Perfect for student creators on TikTok, YouTube, and Instagram.',
-    url: 'https://theenglishhub.app/creators',
-    siteName: 'The English Hub',
-    type: 'website',
-    locale: 'en_GB',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Earn Money Sharing Education — The English Hub Creator Partners',
-    description:
-      'Join our affiliate program and earn 20% recurring commission on every student you refer.',
+      'Join The English Hub as a content creator. Publish courses, earn revenue and reach thousands of students preparing for GCSE and IGCSE English exams.',
   },
 }
 
-export default function CreatorsLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   return children
 }

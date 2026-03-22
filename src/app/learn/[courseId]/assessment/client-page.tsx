@@ -16,7 +16,8 @@ import {
   BarChart3,
   Lock,
 } from 'lucide-react'
-import { allCourses } from '@/data/courses'
+import { loadCourseById } from '@/data/course-loader'
+import type { CourseData } from '@/data/courses'
 import type { CourseQuiz } from '@/data/courses'
 import { createClient } from '@/lib/supabase/client'
 import { useAuthStore } from '@/store/auth-store'
@@ -85,8 +86,17 @@ export default function AssessmentPage() {
   const { user, profile } = useAuthStore()
   const { selectedBoard } = useBoardStore()
 
-  const course = allCourses.find((c) => c.id === courseId) ?? null
+  const [course, setCourseData] = useState<CourseData | null>(null)
+  const [courseLoading, setCourseLoading] = useState(true)
   const [hasAccess, setHasAccess] = useState<boolean | null>(null)
+
+  // Load course data dynamically
+  useEffect(() => {
+    loadCourseById(courseId).then((c) => {
+      setCourseData(c ?? null)
+      setCourseLoading(false)
+    })
+  }, [courseId])
 
   // Check if user has access (pro subscriber OR enrolled in this course)
   useEffect(() => {
@@ -251,36 +261,29 @@ export default function AssessmentPage() {
 
         if (attemptError) throw attemptError
 
-        // If passed, create or update certificate (keep highest score)
-        // Requires UNIQUE(user_id, course_id) constraint on certificates table
+        // If passed, issue certificate via server-side API route
+        // (certificates table has no client INSERT policy by design)
         if (passed && attemptData) {
-          const { data: existingCert } = await supabase
-            .from('certificates')
-            .select('id, score')
-            .eq('user_id', user.id)
-            .eq('course_id', courseId)
-            .single()
-
-          if (!existingCert || percentage > existingCert.score) {
-            const { data: certData, error: certError } = await supabase
-              .from('certificates')
-              .upsert({
-                user_id: user.id,
-                course_id: courseId,
+          try {
+            const certRes = await fetch('/api/certificates', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
                 assessment_attempt_id: attemptData.id,
-                score: percentage,
-                grade: grade === 'Fail' ? null : grade,
-              }, { onConflict: 'user_id,course_id' })
-              .select('id')
-              .single()
+                course_id: courseId,
+              }),
+            })
 
-            if (certError) {
-              console.error('Failed to create/update certificate:', certError)
-            } else if (certData) {
-              setCertificateId(certData.id)
+            if (certRes.ok) {
+              const certJson = await certRes.json()
+              if (certJson.certificate_id) {
+                setCertificateId(certJson.certificate_id)
+              }
+            } else {
+              console.error('Failed to issue certificate:', await certRes.text())
             }
-          } else if (existingCert) {
-            setCertificateId(existingCert.id)
+          } catch (certErr) {
+            console.error('Failed to issue certificate:', certErr)
           }
         }
       } catch (err) {
@@ -298,6 +301,14 @@ export default function AssessmentPage() {
 
   // ─── Render: Not Found ───────────────────────────────────────────────────────
 
+  if (courseLoading) {
+    return (
+      <div className="flex min-h-[60vh] items-center justify-center">
+        <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
+      </div>
+    )
+  }
+
   if (!course) {
     notFound()
   }
@@ -312,6 +323,14 @@ export default function AssessmentPage() {
         <Link href="/courses" className="btn-primary text-sm">
           Browse your courses
         </Link>
+      </div>
+    )
+  }
+
+  if (hasAccess === null) {
+    return (
+      <div className="flex min-h-[60vh] items-center justify-center">
+        <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
       </div>
     )
   }

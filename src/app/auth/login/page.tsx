@@ -19,7 +19,13 @@ function LoginForm() {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [error, setError] = useState<string | null>(null)
+  const [error, setError] = useState<string | null>(() => {
+    const errorParam = searchParams.get('error')
+    if (errorParam === 'auth_callback_error') {
+      return 'Something went wrong verifying your account. Please try again or request a new link.'
+    }
+    return null
+  })
   const [loading, setLoading] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
 

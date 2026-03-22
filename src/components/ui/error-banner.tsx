@@ -1,24 +1,44 @@
 'use client'
 
+import { cn } from "@/lib/utils"
+import { XIcon } from "lucide-react"
+
 interface ErrorBannerProps {
   message: string
   onDismiss?: () => void
   onRetry?: () => void
+  className?: string
 }
 
-export function ErrorBanner({ message, onDismiss, onRetry }: ErrorBannerProps) {
+export function ErrorBanner({ message, onDismiss, onRetry, className }: ErrorBannerProps) {
   return (
-    <div className="bg-destructive/10 border border-destructive/30 rounded-lg p-3 mb-6 text-destructive text-sm flex items-center justify-between">
+    <div
+      data-slot="error-banner"
+      role="alert"
+      className={cn(
+        "flex items-center justify-between gap-2 rounded-lg border border-destructive/30 bg-destructive/10 p-3 text-sm text-destructive",
+        className
+      )}
+    >
       <span>{message}</span>
-      <div className="flex gap-2">
+      <div className="flex shrink-0 items-center gap-2">
         {onRetry && (
-          <button onClick={onRetry} className="text-destructive/80 hover:text-destructive underline text-xs">
+          <button
+            type="button"
+            onClick={onRetry}
+            className="text-xs text-destructive/80 underline transition-colors hover:text-destructive"
+          >
             Retry
           </button>
         )}
         {onDismiss && (
-          <button onClick={onDismiss} aria-label="Dismiss error" className="text-destructive/80 hover:text-destructive text-xs">
-            ✕
+          <button
+            type="button"
+            onClick={onDismiss}
+            aria-label="Dismiss error"
+            className="rounded-md p-0.5 text-destructive/80 transition-colors hover:text-destructive"
+          >
+            <XIcon className="size-3.5" />
           </button>
         )}
       </div>
