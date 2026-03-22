@@ -3,19 +3,15 @@ name: Backend — Build, Test & Deploy to Azure
 on:
   push:
     branches: [main]
-    paths: ['backend/**']
+    paths: ['backend/**', '.github/workflows/backend-azure-deploy.yml']
   pull_request:
     branches: [main]
     paths: ['backend/**']
 
 env:
-  AZURE_WEBAPP_NAME: english-hub-api    # ← Change to your App Service name
+  AZURE_WEBAPP_NAME: english-hub-api
   NODE_VERSION: '20.x'
   WORKING_DIRECTORY: backend
-
-permissions:
-  id-token: write   # Required for Azure OIDC login
-  contents: read
 
 jobs:
   # ─── Build & Test ──────────────────────────────────────────────────────────
@@ -51,15 +47,21 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Upload build artifact
+      - name: Prepare deploy package
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          mkdir -p ../deploy-package
+          cp -r dist/* ../deploy-package/
+          cp package.json package-lock.json ../deploy-package/
+          cd ../deploy-package
+          npm ci --omit=dev
+
+      - name: Upload deploy artifact
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: actions/upload-artifact@v4
         with:
-          name: backend-dist
-          path: |
-            ${{ env.WORKING_DIRECTORY }}/dist
-            ${{ env.WORKING_DIRECTORY }}/package.json
-            ${{ env.WORKING_DIRECTORY }}/package-lock.json
+          name: backend-deploy
+          path: deploy-package
           retention-days: 1
 
   # ─── Deploy to Azure App Service ───────────────────────────────────────────
@@ -67,47 +69,38 @@ jobs:
     runs-on: ubuntu-latest
     needs: build-and-test
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    environment: production
+    environment:
+      name: production
+      url: https://${{ env.AZURE_WEBAPP_NAME }}.azurewebsites.net
 
     steps:
-      - name: Download build artifact
+      - name: Download deploy artifact
         uses: actions/download-artifact@v4
         with:
-          name: backend-dist
+          name: backend-deploy
           path: deploy
-
-      - name: Setup Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-
-      - name: Install production dependencies
-        working-directory: deploy
-        run: npm ci --omit=dev
-
-      - name: Login to Azure
-        uses: azure/login@v2
-        with:
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
       - name: Deploy to Azure App Service
         uses: azure/webapps-deploy@v3
         with:
           app-name: ${{ env.AZURE_WEBAPP_NAME }}
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           package: deploy
 
       - name: Verify deployment health
         run: |
-          echo "Waiting 30s for App Service to start..."
-          sleep 30
+          echo "Waiting 45s for App Service to start..."
+          sleep 45
           HEALTH_URL="https://${{ env.AZURE_WEBAPP_NAME }}.azurewebsites.net/api/health"
-          STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$HEALTH_URL" --max-time 15)
-          echo "Health check returned: $STATUS"
-          if [ "$STATUS" != "200" ]; then
-            echo "::error::Health check failed with status $STATUS"
-            curl -s "$HEALTH_URL" || true
-            exit 1
-          fi
-          echo "Deployment verified successfully"
+          for i in 1 2 3; do
+            STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$HEALTH_URL" --max-time 20)
+            echo "Attempt $i: Health check returned $STATUS"
+            if [ "$STATUS" = "200" ]; then
+              echo "Deployment verified successfully"
+              exit 0
+            fi
+            sleep 15
+          done
+          echo "::error::Health check failed after 3 attempts"
+          curl -s "$HEALTH_URL" || true
+          exit 1
