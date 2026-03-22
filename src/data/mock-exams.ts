@@ -1196,18 +1196,28 @@ export const mockExamPapers: MockExamPaper[] = [
   },
 ]
 
+// ─── Import Expanded Exam Bank (120 additional papers) ──────────────────────
+
+import { expandedMockExams } from './mock-exams/index'
+
+/** All mock exam papers — original 8 + 120 expanded = 128 total */
+export const allMockExamPapers: MockExamPaper[] = [
+  ...mockExamPapers,
+  ...expandedMockExams,
+]
+
 // ─── Helper Functions ────────────────────────────────────────────────────────
 
 export function getMockExamsByBoard(board: string): MockExamPaper[] {
-  return mockExamPapers.filter((p) => p.board === board)
+  return allMockExamPapers.filter((p) => p.board === board)
 }
 
 export function getMockExamById(id: string): MockExamPaper | undefined {
-  return mockExamPapers.find((p) => p.id === id)
+  return allMockExamPapers.find((p) => p.id === id)
 }
 
 export function getAvailableBoards(): string[] {
-  return Array.from(new Set(mockExamPapers.map((p) => p.board)))
+  return Array.from(new Set(allMockExamPapers.map((p) => p.board)))
 }
 
 export function formatExamTime(minutes: number): string {
