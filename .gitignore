@@ -9,4 +9,9 @@ next-env.d.ts
 .vercel
 src/data/temp/
 
-.vercel
+# Business documents
+docs/Biz Files/
+*.docx
+*.xlsx
+*.pdf
+~$*
