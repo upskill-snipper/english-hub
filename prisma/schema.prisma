@@ -1,0 +1,450 @@
+// Prisma schema for The English Hub - EdTech SaaS Platform
+// PostgreSQL provider with privacy-first defaults
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ──────────────────────────────────────────────
+// Enums
+// ──────────────────────────────────────────────
+
+enum Role {
+  STUDENT
+  ADMIN
+  REVIEWER
+  TEACHER
+  PARENT
+}
+
+enum AccountStatus {
+  ACTIVE
+  SUSPENDED
+  DELETED
+}
+
+enum ConsentType {
+  TERMS
+  PRIVACY
+  AI_PROCESSING
+  DATA_TRANSFER
+  MARKETING
+  COOLING_OFF_WAIVER
+  COOKIE_ANALYTICS
+  COOKIE_MARKETING
+}
+
+enum ConsentMethod {
+  ACTIVE_CHECKBOX
+  EXPLICIT
+}
+
+enum Subject {
+  LANGUAGE
+  LITERATURE
+}
+
+enum ExamBoard {
+  AQA
+  EDEXCEL
+  CAMBRIDGE
+  CAIE
+  OCR
+}
+
+enum SuggestionType {
+  SUGGESTION
+  BUG_REPORT
+  FEEDBACK
+}
+
+enum SuggestionStatus {
+  PENDING
+  REVIEWED
+  RESOLVED
+}
+
+enum ReviewReason {
+  DISAGREE_WITH_SCORE
+  FEEDBACK_UNCLEAR
+  TECHNICAL_ERROR
+  BIAS_CONCERN
+  OTHER
+}
+
+enum ReviewStatus {
+  SUBMITTED
+  UNDER_REVIEW
+  COMPLETED
+}
+
+enum SubscriptionPlan {
+  MONTHLY
+  ANNUAL
+}
+
+enum SubscriptionStatus {
+  ACTIVE
+  CANCELLED
+  PAST_DUE
+  TRIALING
+}
+
+enum ReminderType {
+  MONTHLY_6TH
+  ANNUAL_RENEWAL
+  TRIAL_ENDING
+}
+
+enum DataRequestType {
+  ACCESS
+  PORTABILITY
+  ERASURE
+  RECTIFICATION
+}
+
+enum DataRequestStatus {
+  PENDING
+  PROCESSING
+  COMPLETED
+  REFUSED
+}
+
+enum Severity {
+  LOW
+  MEDIUM
+  HIGH
+  CRITICAL
+}
+
+enum ProfileVisibility {
+  PRIVATE
+  SCHOOL_ONLY
+  PUBLIC
+}
+
+// ──────────────────────────────────────────────
+// Models
+// ──────────────────────────────────────────────
+
+model User {
+  id                String        @id @default(cuid())
+  email             String        @unique
+  passwordHash      String
+  firstName         String
+  lastName          String
+  dateOfBirth       DateTime
+  school            String?
+  role              Role          @default(STUDENT)
+  selectedExamBoard ExamBoard?
+  isMinor           Boolean       @default(false)
+  country           String
+  accountStatus     AccountStatus @default(ACTIVE)
+  parentId          String?
+  linkedTeacherId   String?
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+  deletedAt         DateTime?
+
+  parent                 User?                @relation("ParentChild", fields: [parentId], references: [id])
+  children               User[]               @relation("ParentChild")
+  consents               Consent[]
+  essays                 Essay[]
+  humanReviewRequests    HumanReviewRequest[]
+  subscription           Subscription?
+  dataAccessRequests     DataAccessRequest[]
+  safeguardingReports    SafeguardingReport[] @relation("Reporter")
+  assignedReports        SafeguardingReport[] @relation("Assignee")
+  auditLogs              AuditLog[]
+  privacySettings        PrivacySettings?
+  reviewedRequests       HumanReviewRequest[] @relation("Reviewer")
+  suggestions            Suggestion[]
+  weeklyReportsAsParent  WeeklyReport[]       @relation("ParentReports")
+  weeklyReportsAsStudent WeeklyReport[]       @relation("StudentReports")
+  parentInvitesSent      ParentInvite[]       @relation("StudentInvites")
+  parentInvitesUsed      ParentInvite[]       @relation("ParentInviteUsed")
+
+  @@index([email])
+  @@index([role])
+  @@index([accountStatus])
+  @@index([deletedAt])
+  @@index([school])
+  @@index([parentId])
+  @@index([linkedTeacherId])
+}
+
+model Consent {
+  id          String        @id @default(cuid())
+  userId      String
+  consentType ConsentType
+  version     String
+  granted     Boolean
+  grantedAt   DateTime      @default(now())
+  withdrawnAt DateTime?
+  method      ConsentMethod
+  ipAddress   String
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([consentType])
+  @@index([userId, consentType])
+}
+
+model CookieConsent {
+  id          String   @id @default(cuid())
+  visitorId   String
+  analytics   Boolean  @default(false)
+  marketing   Boolean  @default(false)
+  consentedAt DateTime @default(now())
+  version     String
+
+  @@index([visitorId])
+}
+
+model Essay {
+  id        String    @id @default(cuid())
+  userId    String
+  title     String
+  content   String    @db.Text
+  subject   Subject
+  examBoard ExamBoard
+  createdAt DateTime  @default(now())
+  deletedAt DateTime?
+
+  user                User                 @relation(fields: [userId], references: [id], onDelete: Cascade)
+  aiFeedback          AIFeedback?
+  humanReviewRequests HumanReviewRequest[]
+
+  @@index([userId])
+  @@index([subject])
+  @@index([examBoard])
+  @@index([deletedAt])
+  @@index([userId, createdAt])
+}
+
+model AIFeedback {
+  id              String   @id @default(cuid())
+  essayId         String   @unique
+  overallScore    Float
+  grammarScore    Float
+  structureScore  Float
+  argumentScore   Float
+  vocabularyScore Float
+  feedbackText    String   @db.Text
+  criteria        String   @db.Text
+  limitations     String   @db.Text
+  modelVersion    String
+  createdAt       DateTime @default(now())
+
+  essay               Essay                @relation(fields: [essayId], references: [id], onDelete: Cascade)
+  humanReviewRequests HumanReviewRequest[]
+
+  @@index([essayId])
+}
+
+model HumanReviewRequest {
+  id               String       @id @default(cuid())
+  essayId          String
+  userId           String
+  aiFeedbackId     String
+  reason           ReviewReason
+  reasonDetail     String       @db.Text
+  selfAssessment   String?      @db.Text
+  status           ReviewStatus @default(SUBMITTED)
+  referenceNumber  String       @unique
+  reviewerResponse String?      @db.Text
+  reviewedById     String?
+  submittedAt      DateTime     @default(now())
+  reviewedAt       DateTime?
+
+  essay      Essay      @relation(fields: [essayId], references: [id], onDelete: Cascade)
+  user       User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  aiFeedback AIFeedback @relation(fields: [aiFeedbackId], references: [id], onDelete: Cascade)
+  reviewer   User?      @relation("Reviewer", fields: [reviewedById], references: [id], onDelete: SetNull)
+
+  @@index([essayId])
+  @@index([userId])
+  @@index([aiFeedbackId])
+  @@index([status])
+  @@index([referenceNumber])
+  @@index([reviewedById])
+}
+
+model Subscription {
+  id                   String             @id @default(cuid())
+  userId               String             @unique
+  stripeCustomerId     String
+  stripeSubscriptionId String             @unique
+  plan                 SubscriptionPlan
+  status               SubscriptionStatus @default(TRIALING)
+  currentPeriodStart   DateTime
+  currentPeriodEnd     DateTime
+  cancelledAt          DateTime?
+  coolingOffWaived     Boolean            @default(false)
+  coolingOffWaivedAt   DateTime?
+  paymentCount         Int                @default(0)
+  isTeacherPlan        Boolean            @default(false)
+  maxStudents          Int?
+  teacherPriceId       String?
+
+  user             User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  renewalReminders RenewalReminder[]
+
+  @@index([userId])
+  @@index([stripeCustomerId])
+  @@index([stripeSubscriptionId])
+  @@index([status])
+}
+
+model RenewalReminder {
+  id              String       @id @default(cuid())
+  subscriptionId  String
+  sentAt          DateTime     @default(now())
+  type            ReminderType
+  amount          Float
+  currency        String
+  nextPaymentDate DateTime
+
+  subscription Subscription @relation(fields: [subscriptionId], references: [id], onDelete: Cascade)
+
+  @@index([subscriptionId])
+  @@index([type])
+  @@index([nextPaymentDate])
+}
+
+model DataAccessRequest {
+  id              String            @id @default(cuid())
+  userId          String
+  type            DataRequestType
+  status          DataRequestStatus @default(PENDING)
+  requestedAt     DateTime          @default(now())
+  completedAt     DateTime?
+  responseDetails String?           @db.Text
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([status])
+  @@index([type])
+}
+
+model SafeguardingReport {
+  id          String    @id @default(cuid())
+  reporterId  String?
+  reportType  String
+  description String    @db.Text
+  severity    Severity
+  status      String    @default("OPEN")
+  createdAt   DateTime  @default(now())
+  assignedTo  String?
+  resolvedAt  DateTime?
+
+  reporter User? @relation("Reporter", fields: [reporterId], references: [id], onDelete: SetNull)
+  assignee User? @relation("Assignee", fields: [assignedTo], references: [id], onDelete: SetNull)
+
+  @@index([reporterId])
+  @@index([severity])
+  @@index([status])
+  @@index([assignedTo])
+  @@index([createdAt])
+}
+
+model AuditLog {
+  id         String   @id @default(cuid())
+  userId     String?
+  action     String
+  resource   String
+  resourceId String
+  details    Json?
+  ipAddress  String
+  timestamp  DateTime @default(now())
+
+  user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([userId])
+  @@index([action])
+  @@index([resource, resourceId])
+  @@index([timestamp])
+}
+
+model PrivacySettings {
+  id                   String            @id @default(cuid())
+  userId               String            @unique
+  analyticsEnabled     Boolean           @default(false)
+  marketingEnabled     Boolean           @default(false)
+  aiTrainingOptIn      Boolean           @default(false)
+  schoolSharingEnabled Boolean           @default(false)
+  researchDataEnabled  Boolean           @default(false)
+  profileVisibility    ProfileVisibility @default(PRIVATE)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model Suggestion {
+  id        String           @id @default(cuid())
+  type      SuggestionType
+  subject   String
+  message   String           @db.Text
+  page      String?
+  userId    String?
+  email     String?
+  status    SuggestionStatus @default(PENDING)
+  createdAt DateTime         @default(now())
+  updatedAt DateTime         @updatedAt
+
+  user User? @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([userId])
+  @@index([type])
+  @@index([status])
+  @@index([createdAt])
+}
+
+model ParentInvite {
+  id              String    @id @default(cuid())
+  code            String    @unique
+  studentId       String
+  expiresAt       DateTime
+  usedAt          DateTime?
+  usedByParentId  String?
+  createdAt       DateTime  @default(now())
+
+  student  User  @relation("StudentInvites", fields: [studentId], references: [id], onDelete: Cascade)
+  usedBy   User? @relation("ParentInviteUsed", fields: [usedByParentId], references: [id], onDelete: SetNull)
+
+  @@index([code])
+  @@index([studentId])
+  @@index([expiresAt])
+  @@index([usedByParentId])
+}
+
+model WeeklyReport {
+  id              String   @id @default(cuid())
+  parentId        String
+  studentId       String
+  weekStarting    DateTime
+  essaysCompleted Int
+  totalTimeSpent  Int
+  averageScore    Float?
+  projectedGrade  String?
+  strengths       Json?
+  weaknesses      Json?
+  recommendations Json?
+  sentAt          DateTime @default(now())
+
+  parent  User @relation("ParentReports", fields: [parentId], references: [id], onDelete: Cascade)
+  student User @relation("StudentReports", fields: [studentId], references: [id], onDelete: Cascade)
+
+  @@index([parentId])
+  @@index([studentId])
+  @@index([weekStarting])
+  @@index([parentId, weekStarting])
+}

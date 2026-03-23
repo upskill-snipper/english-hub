@@ -1,0 +1,395 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+
+/* ─── Metadata ───────────────────────────────────────────────── */
+
+export const metadata: Metadata = {
+  title: "Grade Targets | The English Hub",
+  description:
+    "Understand what each GCSE English grade looks like. Grade descriptors, self-assessment tools, and targeted advice for reaching Grade 5, 7, or 9 in English Language and Literature.",
+};
+
+/* ─── Data ───────────────────────────────────────────────────── */
+
+const GRADE_CARDS = [
+  {
+    grade: "5",
+    label: "Strong Pass",
+    href: "/resources/grade-targets/grade-5",
+    colour: "border-[#27AE60]",
+    bg: "bg-[#27AE60]",
+    tagline: "Solid foundations, clear understanding",
+    description:
+      "A Grade 5 shows you can explain ideas clearly, use relevant evidence, and write with control. Learn what examiners expect and how to move from a 4 to a secure 5.",
+    skills: [
+      "Clear explanations with supporting evidence",
+      "Appropriate use of subject terminology",
+      "Controlled, accurate writing",
+      "Awareness of writer's methods",
+    ],
+  },
+  {
+    grade: "7",
+    label: "Distinction",
+    href: "/resources/grade-targets/grade-7",
+    colour: "border-[#2E86C1]",
+    bg: "bg-[#2E86C1]",
+    tagline: "Thoughtful analysis, confident expression",
+    description:
+      "A Grade 7 demonstrates detailed, perceptive analysis and ambitious, well-crafted writing. Discover how to push beyond competent responses into genuinely impressive work.",
+    skills: [
+      "Detailed, perceptive analysis",
+      "Judicious use of quotations",
+      "Ambitious vocabulary and sentence structures",
+      "Thoughtful engagement with context",
+    ],
+  },
+  {
+    grade: "9",
+    label: "Exceptional",
+    href: "/resources/grade-targets/grade-9",
+    colour: "border-[#8E44AD]",
+    bg: "bg-[#8E44AD]",
+    tagline: "Critical insight, originality, sophistication",
+    description:
+      "A Grade 9 places you in the top 2% of candidates. It requires conceptualised responses, original thinking, and writing that is genuinely compelling. See what makes the very best stand out.",
+    skills: [
+      "Conceptualised, critical analysis",
+      "Original and convincing interpretations",
+      "Sophisticated, compelling writing",
+      "Seamless integration of context",
+    ],
+  },
+];
+
+const DESCRIPTORS = [
+  {
+    subject: "English Language",
+    areas: [
+      {
+        label: "Reading",
+        levels: [
+          { grade: "5", text: "Clear understanding; explains effects of language and structure with relevant examples" },
+          { grade: "7", text: "Detailed, perceptive analysis of language and structure; judicious quotation selection" },
+          { grade: "9", text: "Critical, exploratory analysis; conceptualised response with original interpretations" },
+        ],
+      },
+      {
+        label: "Writing",
+        levels: [
+          { grade: "5", text: "Clear, controlled writing; varied vocabulary; generally accurate SPAG" },
+          { grade: "7", text: "Compelling, well-structured writing; ambitious vocabulary; consistently accurate" },
+          { grade: "9", text: "Sophisticated, highly original writing; extensive vocabulary; virtually flawless SPAG" },
+        ],
+      },
+    ],
+  },
+  {
+    subject: "English Literature",
+    areas: [
+      {
+        label: "Analysis",
+        levels: [
+          { grade: "5", text: "Clear understanding of texts; explains effects of writer's methods with examples" },
+          { grade: "7", text: "Thoughtful, developed analysis; explores multiple interpretations of writer's choices" },
+          { grade: "9", text: "Critical, conceptualised response; perceptive, original analysis of writer's craft" },
+        ],
+      },
+      {
+        label: "Context",
+        levels: [
+          { grade: "5", text: "Relevant references to context that support the argument" },
+          { grade: "7", text: "Thoughtful consideration of context integrated into analysis" },
+          { grade: "9", text: "Seamless, sophisticated integration of context that enriches interpretation" },
+        ],
+      },
+    ],
+  },
+];
+
+const SELF_ASSESSMENT = [
+  {
+    question: "When I analyse a quotation, I usually...",
+    options: [
+      { text: "Identify a technique and say what it shows", level: "Grade 4-5" },
+      { text: "Explore why the writer chose specific words and their effects on the reader", level: "Grade 6-7" },
+      { text: "Offer multiple interpretations and connect choices to wider themes and context", level: "Grade 8-9" },
+    ],
+  },
+  {
+    question: "My creative/descriptive writing typically...",
+    options: [
+      { text: "Uses some techniques and has a clear structure", level: "Grade 4-5" },
+      { text: "Has ambitious vocabulary, varied sentences, and a deliberate structure", level: "Grade 6-7" },
+      { text: "Is genuinely original, with sophisticated techniques and a compelling voice", level: "Grade 8-9" },
+    ],
+  },
+  {
+    question: "When writing about context in Literature, I...",
+    options: [
+      { text: "Mention relevant historical or social context", level: "Grade 4-5" },
+      { text: "Integrate context into my analysis of the writer's intentions", level: "Grade 6-7" },
+      { text: "Use context to develop original interpretations and challenge readings", level: "Grade 8-9" },
+    ],
+  },
+  {
+    question: "My use of subject terminology is...",
+    options: [
+      { text: "I can name common techniques (simile, metaphor, alliteration)", level: "Grade 4-5" },
+      { text: "I use a wide range of terminology accurately and explore effects", level: "Grade 6-7" },
+      { text: "I use precise terminology fluently as part of a conceptualised argument", level: "Grade 8-9" },
+    ],
+  },
+];
+
+/* ─── Icons ──────────────────────────────────────────────────── */
+
+function ArrowRight() {
+  return (
+    <svg
+      className="h-4 w-4 transition-transform group-hover:translate-x-1"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={2}
+      stroke="currentColor"
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+    </svg>
+  );
+}
+
+function TargetIcon({ className = "h-8 w-8" }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 13a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" />
+    </svg>
+  );
+}
+
+/* ─── Page ───────────────────────────────────────────────────── */
+
+export default function GradeTargetsPage() {
+  return (
+    <>
+
+      {/* Hero */}
+      <section className="bg-gradient-to-br from-[#1A5276] to-[#1A5276]/80 px-4 py-16 text-white sm:py-20">
+        <div className="mx-auto max-w-4xl text-center">
+          <p className="text-sm font-semibold uppercase tracking-widest text-[#2E86C1]/80">
+            Resources
+          </p>
+          <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+            Grade Targets
+          </h1>
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+            What does each grade actually look like? Understand the difference
+            between a 5, a 7, and a 9 -- then build a clear plan to reach your
+            target grade.
+          </p>
+
+          <div className="mt-8 flex items-center justify-center gap-4 flex-wrap">
+            {GRADE_CARDS.map((card) => (
+              <Link
+                key={card.grade}
+                href={card.href}
+                className="rounded-lg bg-white/20 px-5 py-2.5 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+              >
+                Grade {card.grade}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Grade cards */}
+      <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
+        <h2 className="text-2xl font-bold text-gray-900">
+          What does each grade look like?
+        </h2>
+        <p className="mt-2 text-gray-600">
+          Select a grade to see detailed descriptors, example responses, and
+          targeted advice for reaching that level.
+        </p>
+
+        <div className="mt-8 grid gap-6 sm:grid-cols-3">
+          {GRADE_CARDS.map((card) => (
+            <Link
+              key={card.grade}
+              href={card.href}
+              className={`group flex flex-col rounded-xl border-2 ${card.colour} bg-white p-6 shadow-sm transition hover:shadow-lg`}
+            >
+              <div className="flex items-center gap-3">
+                <span
+                  className={`flex h-12 w-12 items-center justify-center rounded-full ${card.bg} text-xl font-bold text-white`}
+                >
+                  {card.grade}
+                </span>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#1A5276] transition-colors">
+                    Grade {card.grade}
+                  </h3>
+                  <p className="text-xs font-medium text-gray-500 uppercase tracking-wide">
+                    {card.label}
+                  </p>
+                </div>
+              </div>
+
+              <p className="mt-3 text-sm font-medium italic text-gray-500">
+                {card.tagline}
+              </p>
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-gray-600">
+                {card.description}
+              </p>
+
+              <ul className="mt-4 space-y-1.5">
+                {card.skills.map((skill) => (
+                  <li
+                    key={skill}
+                    className="flex items-start gap-2 text-sm text-gray-600"
+                  >
+                    <span className={`mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full ${card.bg}`} />
+                    {skill}
+                  </li>
+                ))}
+              </ul>
+
+              <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-[#2E86C1] group-hover:text-[#1A5276] transition-colors">
+                How to get a {card.grade} <ArrowRight />
+              </span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Grade descriptors comparison */}
+      <section className="bg-gray-50 px-4 py-12 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="text-2xl font-bold text-gray-900">
+            Grade Descriptors
+          </h2>
+          <p className="mt-2 text-gray-600">
+            Side-by-side comparison of what examiners expect at each level for
+            English Language and Literature.
+          </p>
+
+          {DESCRIPTORS.map((subject) => (
+            <div key={subject.subject} className="mt-8">
+              <h3 className="text-lg font-bold text-[#1A5276]">
+                {subject.subject}
+              </h3>
+
+              {subject.areas.map((area) => (
+                <div key={area.label} className="mt-4">
+                  <h4 className="text-sm font-semibold uppercase tracking-wide text-gray-500">
+                    {area.label}
+                  </h4>
+                  <div className="mt-2 grid gap-3 sm:grid-cols-3">
+                    {area.levels.map((level) => (
+                      <div
+                        key={level.grade}
+                        className="rounded-lg border border-gray-200 bg-white p-4"
+                      >
+                        <span
+                          className={`inline-block rounded-full px-2.5 py-0.5 text-xs font-bold text-white ${
+                            level.grade === "5"
+                              ? "bg-[#27AE60]"
+                              : level.grade === "7"
+                              ? "bg-[#2E86C1]"
+                              : "bg-[#8E44AD]"
+                          }`}
+                        >
+                          Grade {level.grade}
+                        </span>
+                        <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                          {level.text}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Self-assessment */}
+      <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="flex items-center gap-3">
+          <TargetIcon className="h-8 w-8 text-[#2E86C1]" />
+          <h2 className="text-2xl font-bold text-gray-900">
+            Where are you now?
+          </h2>
+        </div>
+        <p className="mt-2 text-gray-600">
+          A quick self-assessment to help you identify your current level and
+          what to work on next. Be honest -- this is for you, not your teacher!
+        </p>
+
+        <div className="mt-8 space-y-6">
+          {SELF_ASSESSMENT.map((item, idx) => (
+            <div
+              key={idx}
+              className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
+            >
+              <p className="font-semibold text-gray-900">
+                {idx + 1}. {item.question}
+              </p>
+              <div className="mt-4 space-y-3">
+                {item.options.map((option) => (
+                  <label
+                    key={option.level}
+                    className="flex cursor-pointer items-start gap-3 rounded-lg border border-gray-200 p-3 transition hover:border-[#2E86C1]/40 hover:bg-[#2E86C1]/5"
+                  >
+                    <input
+                      type="radio"
+                      name={`q${idx}`}
+                      className="mt-0.5 h-4 w-4 border-gray-300 text-[#2E86C1] focus:ring-[#2E86C1]"
+                    />
+                    <div>
+                      <p className="text-sm text-gray-700">{option.text}</p>
+                      <span
+                        className={`mt-1 inline-block rounded-full px-2 py-0.5 text-xs font-semibold ${
+                          option.level.includes("4-5")
+                            ? "bg-[#27AE60]/10 text-[#27AE60]"
+                            : option.level.includes("6-7")
+                            ? "bg-[#2E86C1]/10 text-[#2E86C1]"
+                            : "bg-[#8E44AD]/10 text-[#8E44AD]"
+                        }`}
+                      >
+                        {option.level}
+                      </span>
+                    </div>
+                  </label>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-8 rounded-xl border-2 border-[#2E86C1]/20 bg-[#2E86C1]/5 p-6">
+          <h3 className="font-bold text-[#1A5276]">What next?</h3>
+          <p className="mt-2 text-sm leading-relaxed text-gray-700">
+            If most of your answers fell in the <strong>Grade 4-5</strong> range,
+            start with our{" "}
+            <Link href="/resources/grade-targets/grade-5" className="font-semibold text-[#2E86C1] underline hover:text-[#1A5276]">
+              Getting a Grade 5
+            </Link>{" "}
+            guide. If you are mostly at <strong>Grade 6-7</strong>, check out{" "}
+            <Link href="/resources/grade-targets/grade-7" className="font-semibold text-[#2E86C1] underline hover:text-[#1A5276]">
+              Getting a Grade 7
+            </Link>
+            . And if you are aiming for the very top, our{" "}
+            <Link href="/resources/grade-targets/grade-9" className="font-semibold text-[#2E86C1] underline hover:text-[#1A5276]">
+              Getting a Grade 9
+            </Link>{" "}
+            guide will show you how to write responses that examiners remember.
+          </p>
+        </div>
+      </section>
+
+    </>
+  );
+}

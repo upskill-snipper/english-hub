@@ -1,0 +1,486 @@
+"use client";
+
+import Link from "next/link";
+import { useState } from "react";
+import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
+
+function Section({
+  title,
+  children,
+  defaultOpen = false,
+}: {
+  title: string;
+  children: React.ReactNode;
+  defaultOpen?: boolean;
+}) {
+  const [open, setOpen] = useState(defaultOpen);
+  return (
+    <div className="rounded-xl border border-gray-200 bg-white">
+      <button
+        onClick={() => setOpen(!open)}
+        className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-bold text-gray-900 hover:bg-gray-50 transition-colors"
+      >
+        <span className="text-lg">{title}</span>
+        <svg
+          className={`h-5 w-5 shrink-0 text-gray-400 transition-transform ${open ? "rotate-180" : ""}`}
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={2}
+          stroke="currentColor"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+        </svg>
+      </button>
+      {open && (
+        <div className="border-t border-gray-100 px-6 py-6 text-gray-700 leading-relaxed space-y-4">
+          {children}
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default function GradeBoundariesPage() {
+  return (
+    <>
+
+      {/* Hero */}
+      <section
+        className="px-4 py-16 text-white sm:py-20"
+        style={{ background: "linear-gradient(135deg, #1A5276, #2E86C1)" }}
+      >
+        <div className="mx-auto max-w-4xl text-center">
+          <p className="text-sm font-semibold uppercase tracking-widest text-blue-200">
+            WJEC Eduqas GCSE English Literature (C720QS)
+          </p>
+          <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+            Grade Boundaries
+          </h1>
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+            Recent grade boundaries, what each grade looks like in practice,
+            and how to push your marks into the next band.
+          </p>
+        </div>
+      </section>
+
+      {/* Breadcrumb */}
+      <nav className="mx-auto max-w-5xl px-4 pt-6" aria-label="Breadcrumb">
+        <ol className="flex flex-wrap items-center gap-2 text-sm text-gray-500">
+          <li>
+            <Link href="/" className="hover:text-[#1A5276] transition-colors">Home</Link>
+          </li>
+          <li>/</li>
+          <li>
+            <Link href="/resources/english-literature/wjec" className="hover:text-[#1A5276] transition-colors">
+              WJEC English Literature
+            </Link>
+          </li>
+          <li>/</li>
+          <li className="text-[#1A5276] font-medium">Grade Boundaries</li>
+        </ol>
+      </nav>
+
+      <div className="mx-auto max-w-5xl px-4 py-10 space-y-6">
+
+        {/* Important note */}
+        <div className="rounded-xl border border-warn-200 bg-warn-50 p-6">
+          <h2 className="font-bold text-warn-800">Important note</h2>
+          <p className="mt-2 text-sm text-warn-700">
+            Grade boundaries change every year based on the difficulty of the
+            papers and the performance of the whole cohort. The boundaries below
+            are from recent exam series and are provided as a <strong>guide</strong>{" "}
+            only. Your actual grade boundary may be slightly higher or lower.
+            Always check the{" "}
+            <a
+              href="https://www.wjec.co.uk/qualifications/grade-boundaries/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline font-semibold hover:text-warn-900"
+            >
+              WJEC Eduqas website
+            </a>{" "}
+            for the most up-to-date boundaries after results day.
+          </p>
+        </div>
+
+        {/* Overall grade boundaries */}
+        <Section title="Overall grade boundaries (combined Component 1 + Component 2)" defaultOpen>
+          <p>
+            The total number of marks across both components is <strong>160</strong>.
+            Component 1 (Shakespeare and Poetry) is worth 40% (64 marks) and
+            Component 2 (Post-1914 Prose/Drama and Unseen Poetry) is worth
+            60% (96 marks). Your raw marks from both components are combined
+            to produce your overall grade. Below are the approximate boundaries
+            from recent exam series:
+          </p>
+
+          <div className="overflow-x-auto mt-4">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-gray-200 text-left text-gray-500">
+                  <th className="py-2 pr-4">Grade</th>
+                  <th className="py-2 pr-4">June 2023</th>
+                  <th className="py-2 pr-4">June 2024</th>
+                  <th className="py-2 pr-4">June 2025</th>
+                  <th className="py-2 pr-4">Approx. %</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100">
+                <tr className="bg-success-50">
+                  <td className="py-2 pr-4 font-bold text-success-700">9</td>
+                  <td className="py-2 pr-4">118</td>
+                  <td className="py-2 pr-4">120</td>
+                  <td className="py-2 pr-4">121</td>
+                  <td className="py-2 pr-4">~75%</td>
+                </tr>
+                <tr className="bg-success-50/50">
+                  <td className="py-2 pr-4 font-bold text-success-700">8</td>
+                  <td className="py-2 pr-4">106</td>
+                  <td className="py-2 pr-4">108</td>
+                  <td className="py-2 pr-4">109</td>
+                  <td className="py-2 pr-4">~68%</td>
+                </tr>
+                <tr>
+                  <td className="py-2 pr-4 font-bold text-[#2E86C1]">7</td>
+                  <td className="py-2 pr-4">95</td>
+                  <td className="py-2 pr-4">97</td>
+                  <td className="py-2 pr-4">98</td>
+                  <td className="py-2 pr-4">~61%</td>
+                </tr>
+                <tr>
+                  <td className="py-2 pr-4 font-bold text-[#2E86C1]">6</td>
+                  <td className="py-2 pr-4">81</td>
+                  <td className="py-2 pr-4">83</td>
+                  <td className="py-2 pr-4">84</td>
+                  <td className="py-2 pr-4">~52%</td>
+                </tr>
+                <tr>
+                  <td className="py-2 pr-4 font-bold text-[#1A5276]">5</td>
+                  <td className="py-2 pr-4">67</td>
+                  <td className="py-2 pr-4">69</td>
+                  <td className="py-2 pr-4">70</td>
+                  <td className="py-2 pr-4">~44%</td>
+                </tr>
+                <tr>
+                  <td className="py-2 pr-4 font-bold text-yellow-600">4</td>
+                  <td className="py-2 pr-4">50</td>
+                  <td className="py-2 pr-4">52</td>
+                  <td className="py-2 pr-4">53</td>
+                  <td className="py-2 pr-4">~33%</td>
+                </tr>
+                <tr>
+                  <td className="py-2 pr-4 font-bold text-gray-500">3</td>
+                  <td className="py-2 pr-4">36</td>
+                  <td className="py-2 pr-4">38</td>
+                  <td className="py-2 pr-4">38</td>
+                  <td className="py-2 pr-4">~24%</td>
+                </tr>
+                <tr>
+                  <td className="py-2 pr-4 font-bold text-gray-500">2</td>
+                  <td className="py-2 pr-4">22</td>
+                  <td className="py-2 pr-4">23</td>
+                  <td className="py-2 pr-4">24</td>
+                  <td className="py-2 pr-4">~15%</td>
+                </tr>
+                <tr>
+                  <td className="py-2 pr-4 font-bold text-gray-400">1</td>
+                  <td className="py-2 pr-4">9</td>
+                  <td className="py-2 pr-4">9</td>
+                  <td className="py-2 pr-4">10</td>
+                  <td className="py-2 pr-4">~6%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p className="mt-4 text-sm text-gray-500">
+            Note: These boundaries are approximate and based on publicly
+            available WJEC Eduqas data. The &ldquo;Approx. %&rdquo; column shows
+            roughly what percentage of the total 160 marks you need.
+          </p>
+        </Section>
+
+        {/* What each grade looks like */}
+        <Section title="What each grade looks like in practice">
+          <p>
+            Understanding the grade descriptors helps you see exactly what
+            examiners expect at each level. Here is what typical work looks like
+            at the key grade boundaries:
+          </p>
+
+          <div className="mt-4 space-y-6">
+            <div className="rounded-lg border-l-4 border-success-500 bg-success-50/30 p-5">
+              <h3 className="text-lg font-bold text-success-700">Grade 9 &mdash; Exceptional</h3>
+              <div className="mt-3 space-y-2 text-sm">
+                <ul className="ml-5 list-disc space-y-1">
+                  <li>Critical, exploratory, conceptualised response to texts.</li>
+                  <li>Judicious use of precise references to support interpretation.</li>
+                  <li>Analysis of the writer&rsquo;s methods with subject terminology used judiciously.</li>
+                  <li>Exploration of the effects of the writer&rsquo;s methods on the reader.</li>
+                  <li>Exploration of ideas, perspectives, and contextual factors shown across the task.</li>
+                  <li>Perceptive, detailed comparison of texts (where required) with analysis of connections.</li>
+                  <li>Sophisticated exploration of unseen poetry, considering form, structure, and language with originality.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="rounded-lg border-l-4 border-[#2E86C1] bg-blue-50/30 p-5">
+              <h3 className="text-lg font-bold text-[#2E86C1]">Grades 7-8 &mdash; Strong</h3>
+              <div className="mt-3 space-y-2 text-sm">
+                <ul className="ml-5 list-disc space-y-1">
+                  <li>Thoughtful, developed response to texts with a clear personal voice.</li>
+                  <li>Apt references integrated into interpretations.</li>
+                  <li>Examination of the writer&rsquo;s methods with subject terminology used effectively.</li>
+                  <li>Understanding of the effects of the writer&rsquo;s methods on the reader.</li>
+                  <li>Thoughtful consideration of ideas, perspectives, and contextual factors.</li>
+                  <li>Detailed comparison of texts with clear analysis of connections and contrasts.</li>
+                  <li>Confident analysis of unseen poetry exploring form, structure, and language choices.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="rounded-lg border-l-4 border-[#1A5276] bg-blue-50/20 p-5">
+              <h3 className="text-lg font-bold text-[#1A5276]">Grades 5-6 &mdash; Secure</h3>
+              <div className="mt-3 space-y-2 text-sm">
+                <ul className="ml-5 list-disc space-y-1">
+                  <li>Clear, explained response to texts with relevant ideas.</li>
+                  <li>References used effectively to support explanations.</li>
+                  <li>Clear explanation of writer&rsquo;s methods with appropriate use of subject terminology.</li>
+                  <li>Understanding of some effects of the writer&rsquo;s methods.</li>
+                  <li>Some understanding of ideas, perspectives, and contextual factors.</li>
+                  <li>Clear comparison of texts with some relevant connections identified.</li>
+                  <li>Competent response to unseen poetry with some analysis of language and structure.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="rounded-lg border-l-4 border-yellow-400 bg-yellow-50/30 p-5">
+              <h3 className="text-lg font-bold text-yellow-700">Grade 4 &mdash; Standard pass</h3>
+              <div className="mt-3 space-y-2 text-sm">
+                <ul className="ml-5 list-disc space-y-1">
+                  <li>Some explained response to texts, though may lack consistency.</li>
+                  <li>References used to support some points, though not always well-selected.</li>
+                  <li>Some awareness of the writer&rsquo;s methods; some subject terminology used.</li>
+                  <li>Some comment on the effects of the writer&rsquo;s choices.</li>
+                  <li>Some awareness of contextual factors, though may be superficial.</li>
+                  <li>Some comparison of texts, though connections may be simple or undeveloped.</li>
+                  <li>Some response to unseen poetry with basic identification of features.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="rounded-lg border-l-4 border-gray-300 bg-gray-50/50 p-5">
+              <h3 className="text-lg font-bold text-gray-500">Grades 1-3 &mdash; Below standard pass</h3>
+              <div className="mt-3 space-y-2 text-sm">
+                <ul className="ml-5 list-disc space-y-1">
+                  <li>Simple, limited comments on texts with little development.</li>
+                  <li>References may be general or paraphrased rather than specific.</li>
+                  <li>Limited awareness of the writer&rsquo;s methods; little or no subject terminology.</li>
+                  <li>May retell the plot or describe events rather than analyse.</li>
+                  <li>Little or no reference to context.</li>
+                  <li>Limited or no comparison of texts.</li>
+                  <li>Simple comments on unseen poetry with little analysis.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </Section>
+
+        {/* How to push your grade up */}
+        <Section title="How to push your grade higher">
+          <p>
+            Here are targeted strategies for moving from one grade band to the
+            next:
+          </p>
+
+          <div className="mt-4 space-y-5">
+            <div className="rounded-lg border border-gray-200 p-5">
+              <h3 className="font-bold text-[#1A5276]">Grade 4 &rarr; Grade 5</h3>
+              <ul className="mt-2 ml-5 list-disc space-y-2 text-sm">
+                <li>
+                  <strong>Quotations:</strong> Move beyond retelling the story.
+                  Select short, specific quotations and explain what they
+                  reveal about the character, theme, or writer&rsquo;s purpose.
+                </li>
+                <li>
+                  <strong>Terminology:</strong> Learn and use key literary
+                  terms accurately &mdash; metaphor, simile, pathetic fallacy,
+                  iambic pentameter, enjambment. Even basic terminology used
+                  correctly lifts your analysis.
+                </li>
+                <li>
+                  <strong>Completeness:</strong> Attempt every question in full.
+                  Leaving out the unseen poetry or the comparison question is
+                  the most common reason students miss a Grade 5.
+                </li>
+              </ul>
+            </div>
+
+            <div className="rounded-lg border border-gray-200 p-5">
+              <h3 className="font-bold text-[#1A5276]">Grade 5 &rarr; Grade 7</h3>
+              <ul className="mt-2 ml-5 list-disc space-y-2 text-sm">
+                <li>
+                  <strong>Analysis depth:</strong> Move from explaining what a
+                  quotation means to analysing <em>how</em> the language
+                  creates its effect. Explore connotations of individual words
+                  and consider why the writer chose them.
+                </li>
+                <li>
+                  <strong>Context:</strong> Integrate contextual knowledge
+                  naturally. Instead of a separate paragraph about context,
+                  weave it into your analysis: &ldquo;Shakespeare uses this
+                  to reflect the Elizabethan belief that&hellip;&rdquo;
+                </li>
+                <li>
+                  <strong>Comparison:</strong> In Component 1 poetry comparison,
+                  use comparative connectives throughout (&ldquo;Similarly,&rdquo;
+                  &ldquo;In contrast,&rdquo; &ldquo;While both poets&hellip;&rdquo;)
+                  rather than writing about each poem separately.
+                </li>
+                <li>
+                  <strong>Unseen poetry:</strong> Practise reading poems you
+                  have never seen before. Build a toolkit for approaching
+                  unfamiliar texts: start with subject, then move to tone,
+                  imagery, form, and structure.
+                </li>
+              </ul>
+            </div>
+
+            <div className="rounded-lg border border-gray-200 p-5">
+              <h3 className="font-bold text-[#1A5276]">Grade 7 &rarr; Grade 9</h3>
+              <ul className="mt-2 ml-5 list-disc space-y-2 text-sm">
+                <li>
+                  <strong>Conceptualised response:</strong> Frame your essay
+                  around a clear argument or interpretation. A Grade 9 response
+                  has a thesis &mdash; a thread that runs through every
+                  paragraph, not a series of disconnected points.
+                </li>
+                <li>
+                  <strong>Alternative interpretations:</strong> Explore how a
+                  text could be read differently: &ldquo;A feminist reading
+                  might suggest&hellip;&rdquo; or &ldquo;While the surface
+                  reading implies X, the imagery subtly undermines
+                  this&hellip;&rdquo;
+                </li>
+                <li>
+                  <strong>Writer&rsquo;s craft:</strong> Go beyond individual
+                  techniques to consider how the whole text is constructed.
+                  How does the opening relate to the ending? How does the
+                  structure mirror the themes?
+                </li>
+                <li>
+                  <strong>Wider reading:</strong> Students who achieve Grade 9
+                  read widely and bring a mature critical vocabulary to their
+                  analysis. Read literary criticism, reviews, and essays to
+                  develop a sophisticated analytical voice.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </Section>
+
+        {/* Marks per question */}
+        <Section title="Marks per question at a glance">
+          <p className="mb-4">
+            WJEC Eduqas English Literature is split into two components.
+            Component 1 (Shakespeare and Poetry) is worth 40% and Component 2
+            (Post-1914 Prose/Drama and Unseen Poetry) is worth 60%.
+          </p>
+
+          <h3 className="font-bold text-[#1A5276] mb-2">Component 1 &mdash; Shakespeare and Poetry (40%)</h3>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-gray-200 text-left text-gray-500">
+                  <th className="py-2 pr-4">Section</th>
+                  <th className="py-2 pr-4">Question</th>
+                  <th className="py-2 pr-4">Marks</th>
+                  <th className="py-2 pr-4">Focus</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100">
+                <tr>
+                  <td className="py-2 pr-4 font-semibold">A &mdash; Shakespeare</td>
+                  <td className="py-2 pr-4">A1 (extract + essay)</td>
+                  <td className="py-2 pr-4">32 marks</td>
+                  <td className="py-2 pr-4">Shakespeare play (extract-based essay)</td>
+                </tr>
+                <tr>
+                  <td className="py-2 pr-4 font-semibold">B &mdash; Poetry</td>
+                  <td className="py-2 pr-4">B1 (comparison)</td>
+                  <td className="py-2 pr-4">32 marks</td>
+                  <td className="py-2 pr-4">Poetry anthology comparison (two poems)</td>
+                </tr>
+                <tr className="font-bold">
+                  <td className="py-2 pr-4" colSpan={2}>Component 1 Total</td>
+                  <td className="py-2 pr-4">64 marks</td>
+                  <td className="py-2 pr-4">40% of qualification</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 className="font-bold text-[#1A5276] mt-6 mb-2">Component 2 &mdash; Post-1914 Prose/Drama and Unseen Poetry (60%)</h3>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-gray-200 text-left text-gray-500">
+                  <th className="py-2 pr-4">Section</th>
+                  <th className="py-2 pr-4">Question</th>
+                  <th className="py-2 pr-4">Marks</th>
+                  <th className="py-2 pr-4">Focus</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100">
+                <tr>
+                  <td className="py-2 pr-4 font-semibold">A &mdash; Prose/Drama</td>
+                  <td className="py-2 pr-4">A1 (extract + essay)</td>
+                  <td className="py-2 pr-4">40 marks</td>
+                  <td className="py-2 pr-4">Post-1914 prose or drama (extract-based essay)</td>
+                </tr>
+                <tr>
+                  <td className="py-2 pr-4 font-semibold" rowSpan={2}>B &mdash; Unseen Poetry</td>
+                  <td className="py-2 pr-4">B1</td>
+                  <td className="py-2 pr-4">32 marks</td>
+                  <td className="py-2 pr-4">Analysis of unseen poem</td>
+                </tr>
+                <tr>
+                  <td className="py-2 pr-4">B2</td>
+                  <td className="py-2 pr-4">24 marks</td>
+                  <td className="py-2 pr-4">Comparison of two unseen poems</td>
+                </tr>
+                <tr className="font-bold">
+                  <td className="py-2 pr-4" colSpan={2}>Component 2 Total</td>
+                  <td className="py-2 pr-4">96 marks</td>
+                  <td className="py-2 pr-4">60% of qualification</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p className="mt-4 text-sm text-gray-500">
+            Component 2 carries more weight and includes unseen poetry, which
+            many students find challenging. Practising with unfamiliar poems
+            under timed conditions is one of the most effective ways to improve
+            your overall Literature grade.
+          </p>
+        </Section>
+
+        {/* Back link */}
+        <div className="pt-4">
+          <Link
+            href="/resources/english-literature/wjec"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-[#2E86C1] hover:text-[#1A5276] transition-colors"
+          >
+            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+            </svg>
+            Back to WJEC English Literature
+          </Link>
+        </div>
+      </div>
+
+      <ExamBoardDisclaimer />
+    </>
+  );
+}

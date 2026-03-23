@@ -13,6 +13,15 @@ const FOOTER_SECTIONS = [
     ],
   },
   {
+    title: 'Resources',
+    links: [
+      { href: '/resources/revision-notes', label: 'Revision Notes' },
+      { href: '/resources/practice', label: 'Practice Questions' },
+      { href: '/resources/exam-guide', label: 'Exam Guides' },
+      { href: '/resources/study-tools', label: 'Study Tools' },
+    ],
+  },
+  {
     title: 'Company',
     links: [
       { href: '/about', label: 'About' },
@@ -45,7 +54,7 @@ export function Footer() {
   return (
     <footer className="border-t border-border/60 bg-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-8 py-10 sm:grid-cols-4">
+        <div className="grid grid-cols-2 gap-8 py-10 sm:grid-cols-3 lg:grid-cols-5">
           {FOOTER_SECTIONS.map((section) => (
             <div key={section.title}>
               <h3 className="text-sm font-semibold text-foreground">

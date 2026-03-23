@@ -25,6 +25,7 @@ const NAV_LINKS = [
   { href: '/practice', label: 'Practice' },
   { href: '/revision', label: 'Revision' },
   { href: '/exam-guide', label: 'Exam Guide' },
+  { href: '/resources', label: 'Resources' },
 ]
 
 export function Header() {

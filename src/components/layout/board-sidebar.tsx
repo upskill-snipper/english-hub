@@ -1,5 +1,6 @@
 'use client'
 
+import { usePathname } from 'next/navigation'
 import { useBoardStore, useBoardWithHydration } from '@/store/board-store'
 import { GraduationCap } from 'lucide-react'
 import { Skeleton } from '@/components/ui/skeleton'
@@ -50,9 +51,16 @@ function SidebarSkeleton() {
   )
 }
 
+/** Routes where the BoardSidebar is hidden (they have their own navigation). */
+const HIDDEN_PREFIXES = ['/resources', '/dashboard', '/help', '/legal']
+
 export function BoardSidebar() {
+  const pathname = usePathname()
   const { selectedBoard, _hasHydrated } = useBoardWithHydration()
   const clearBoard = useBoardStore((s) => s.clearBoard)
+
+  // Hide on routes that don't need board selection
+  if (HIDDEN_PREFIXES.some((prefix) => pathname.startsWith(prefix))) return null
 
   if (!_hasHydrated) return <SidebarSkeleton />
 
