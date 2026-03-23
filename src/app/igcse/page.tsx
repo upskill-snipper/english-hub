@@ -41,36 +41,73 @@ const specBSkills = [
 
 const examStructure = [
   {
-    spec: 'Spec A (4EA1)',
+    spec: 'Spec A (4EA1) — English Language A',
     papers: [
       {
-        name: 'Paper 1 — Non-Fiction Texts & Transactional Writing',
+        name: 'Paper 1 (4EA1/01) — Non-fiction Texts and Transactional Writing',
         time: '2 h 15 min',
         marks: '90',
         weight: '60%',
+        sections: [
+          {
+            title: 'Section A: Reading (45 marks)',
+            details:
+              '5 questions on TWO non-fiction texts — Q1 (2 marks, select/identify), Q2 (4 marks, explain in own words), Q3 (5 marks, describe with quotations), Q4 (12 marks, language and structure analysis), Q5 (22 marks, comparison of both texts)',
+          },
+          {
+            title: 'Section B: Transactional Writing (45 marks)',
+            details:
+              '1 question from a choice of 2 (article, speech, letter, or report)',
+          },
+        ],
       },
       {
-        name: 'Paper 2 — Poetry & Prose Texts & Imaginative Writing',
+        name: 'Paper 2 (4EA1/02) — Poetry and Prose Texts and Imaginative Writing',
         time: '1 h 30 min',
         marks: '60',
         weight: '40%',
+        sections: [
+          {
+            title: 'Section A: Reading (30 marks)',
+            details: '1 extended analytical response on an anthology text',
+          },
+          {
+            title: 'Section B: Imaginative Writing (30 marks)',
+            details: '1 question from a choice of 3',
+          },
+        ],
+      },
+      {
+        name: 'Component 3 (4EA1/03) — Non-examined Assessment',
+        time: 'Coursework',
+        marks: '60',
+        weight: 'Alt. to Paper 2',
+        sections: [
+          {
+            title: 'Coursework alternative',
+            details:
+              'Non-examined assessment — an alternative route to Paper 2 for eligible centres',
+          },
+        ],
       },
     ],
   },
   {
-    spec: 'Spec B (4EB1)',
+    spec: 'Spec B (4EB1) — English Language B',
     papers: [
       {
         name: 'Paper 1 — Non-Fiction Texts & Transactional Writing',
         time: '2 h 15 min',
         marks: '90',
         weight: '60%',
+        sections: [],
       },
       {
         name: 'Paper 2 — Literary & Non-Fiction Texts & Creative Writing',
         time: '1 h 30 min',
         marks: '60',
         weight: '40%',
+        sections: [],
       },
     ],
   },
@@ -416,7 +453,7 @@ export default function IGCSELandingPage() {
               Exam Structure
             </h2>
             <p className="mt-3 text-muted-foreground max-w-xl mx-auto">
-              Both specifications consist of two externally examined papers.
+              Spec A has two examined papers plus a coursework option; Spec B has two examined papers.
             </p>
           </div>
 
@@ -455,15 +492,32 @@ export default function IGCSELandingPage() {
                           className="border-b border-border last:border-0"
                         >
                           <td className="px-6 py-4 text-muted-foreground">
-                            {paper.name}
+                            <div className="font-medium text-foreground">
+                              {paper.name}
+                            </div>
+                            {paper.sections && paper.sections.length > 0 && (
+                              <div className="mt-2 space-y-1.5">
+                                {paper.sections.map((section) => (
+                                  <div key={section.title} className="text-xs">
+                                    <span className="font-semibold text-muted-foreground">
+                                      {section.title}
+                                    </span>
+                                    <span className="text-muted-foreground/70">
+                                      {' — '}
+                                      {section.details}
+                                    </span>
+                                  </div>
+                                ))}
+                              </div>
+                            )}
                           </td>
-                          <td className="px-6 py-4 text-muted-foreground">
+                          <td className="px-6 py-4 text-muted-foreground align-top">
                             {paper.time}
                           </td>
-                          <td className="px-6 py-4 text-muted-foreground">
+                          <td className="px-6 py-4 text-muted-foreground align-top">
                             {paper.marks}
                           </td>
-                          <td className="px-6 py-4 font-semibold text-foreground">
+                          <td className="px-6 py-4 font-semibold text-foreground align-top">
                             {paper.weight}
                           </td>
                         </tr>

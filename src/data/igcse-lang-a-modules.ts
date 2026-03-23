@@ -17,64 +17,66 @@ export const igcseLangAModules: CourseModule[] = [
 
 <h3>The Two Papers at a Glance</h3>
 <ul>
-  <li><strong>Paper 1 (4EA1/01): Non-Fiction Texts and Transactional Writing</strong> — 2 hours 15 minutes, 100 marks, <strong>60%</strong> of the total qualification.</li>
-  <li><strong>Paper 2 (4EA1/02): Poetry and Prose Texts and Imaginative Writing</strong> — 1 hour 30 minutes, 70 marks, <strong>40%</strong> of the total qualification.</li>
+  <li><strong>Paper 1 (4EA1/01): Non-Fiction Texts and Transactional Writing</strong> — 2 hours 15 minutes, 90 marks, <strong>60%</strong> of the total qualification.</li>
+  <li><strong>Paper 2 (4EA1/02): Poetry and Prose Texts and Imaginative Writing</strong> — 1 hour 30 minutes, 60 marks, <strong>40%</strong> of the total qualification.</li>
 </ul>
 
-<p>Together the two papers total <strong>170 marks</strong> and cover <strong>100%</strong> of the qualification. There is no speaking and listening component in Specification A (unlike some domestic GCSE qualifications).</p>
+<p>Together the two papers total <strong>150 marks</strong> and cover <strong>100%</strong> of the qualification. There is no speaking and listening component in Specification A (unlike some domestic GCSE qualifications).</p>
 
 <h3>Paper 1 — Detailed Structure (4EA1/01)</h3>
 
 <p>Paper 1 is the larger paper and carries the majority of your final grade. It is divided into two sections:</p>
 
-<h3>Section A: Reading (60 marks)</h3>
-<p>You will be given <strong>one unseen non-fiction text</strong>. This could be from the 19th, 20th, or 21st century and may include extracts from letters, diaries, journalism, travel writing, autobiography, speeches, or essays. You answer <strong>four compulsory questions</strong>:</p>
+<h3>Section A: Reading (45 marks)</h3>
+<p>You will be given <strong>two unseen non-fiction texts</strong>. These could be from the 19th, 20th, or 21st century and may include extracts from letters, diaries, journalism, travel writing, autobiography, speeches, or essays. You answer <strong>five compulsory questions</strong>:</p>
 
 <ol>
-  <li><strong>Question 1 — Short-answer comprehension:</strong> Tests your ability to locate and retrieve explicit information from the text. Typically worth around 15 marks. Expect several sub-parts requiring brief, precise answers.</li>
-  <li><strong>Question 2 — Language analysis:</strong> Asks you to analyse how the writer uses language to create effects. You must select quotations and comment on word choices, imagery, and rhetorical techniques. Worth approximately 15 marks.</li>
-  <li><strong>Question 3 — Language and structure analysis:</strong> A broader question asking you to consider both language features and structural choices — how the text is organised, how the writer builds ideas, shifts tone, or controls the reader's focus. Worth approximately 15 marks.</li>
-  <li><strong>Question 4 — Evaluation and critical response:</strong> Requires you to evaluate the text and present a critical, personal response to a given statement. You must argue a position and support it with textual evidence. Worth approximately 15 marks.</li>
+  <li><strong>Question 1 — Select/identify (2 marks, AO1):</strong> Select two words or phrases from specified lines of the text. A short, precise retrieval task.</li>
+  <li><strong>Question 2 — Explain in own words (4 marks, AO1):</strong> Explain the writer's thoughts and feelings in your own words. Tests comprehension and the ability to paraphrase.</li>
+  <li><strong>Question 3 — Describe with quotations (5 marks, AO1):</strong> Describe a given topic using brief quotations from the text to support your points.</li>
+  <li><strong>Question 4 — Language and structure analysis (12 marks, AO2):</strong> Analyse how the writer uses language and structure to create specific effects. You must select quotations and comment on word choices, imagery, rhetorical techniques, and structural choices.</li>
+  <li><strong>Question 5 — Comparison (22 marks, AO3):</strong> Compare how both writers present their ideas and perspectives on a topic. This is the highest-tariff reading question and requires you to draw together both texts in a sustained comparative response.</li>
 </ol>
 
-<h3>Section B: Transactional Writing (40 marks)</h3>
-<p>You complete <strong>one extended writing task</strong>. The task will specify a particular form, audience, and purpose. Possible forms include: <strong>letter</strong>, <strong>article</strong>, <strong>speech</strong>, <strong>review</strong>, <strong>guide</strong>, or <strong>report</strong>. Marks are split between content/organisation (24 marks) and technical accuracy (16 marks).</p>
+<h3>Section B: Transactional Writing (45 marks)</h3>
+<p>You <strong>choose one task from a choice of two</strong>. Each task will specify a particular form, audience, and purpose, typically in response to a contentious statement. Possible forms include: <strong>article</strong>, <strong>speech</strong>, <strong>letter</strong>, or <strong>report</strong>. Marks are split between <strong>AO4</strong> — communicating effectively (27 marks) — and <strong>AO5</strong> — technical accuracy in spelling, punctuation, and grammar (18 marks).</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Paper 1 is 2 hours 15 minutes — that is 135 minutes. A sensible split is roughly 75 minutes on Section A (Reading) and 55 minutes on Section B (Writing), leaving 5 minutes for checking. Within Section A, allocate time proportionally: about 12 minutes per question for Q1–Q3, and 20 minutes for Q4 (the evaluation question).</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> Paper 1 is 2 hours 15 minutes — that is 135 minutes. A sensible split is roughly 70 minutes on Section A (Reading) and 60 minutes on Section B (Writing), leaving 5 minutes for checking. Within Section A, spend only a few minutes on Q1–Q3 (which are worth 11 marks combined), then dedicate approximately 15 minutes to Q4 (12 marks) and 30 minutes to Q5 (22 marks — the highest-tariff reading question).</div>
 
 <h3>Paper 2 — Detailed Structure (4EA1/02)</h3>
 
 <p>Paper 2 focuses on <strong>literary reading</strong> and <strong>imaginative writing</strong>. It is divided into two sections:</p>
 
 <h3>Section A: Reading (30 marks)</h3>
-<p>You are given <strong>one unseen literary text</strong> — either a prose fiction extract or a poem. You answer analysis questions that test your ability to examine language, structure, and form in a literary context. Questions assess close reading, inference, and the ability to comment on a writer's craft.</p>
+<p>You write <strong>one extended response</strong> on a text from the Pearson Edexcel poetry and prose anthology. The question tests your ability to examine language, structure, and form in a literary context, assessing close reading, inference, and the ability to comment on a writer's craft. Marks are split between <strong>AO1</strong> (12 marks) and <strong>AO2</strong> (18 marks).</p>
 
-<h3>Section B: Imaginative Writing (40 marks)</h3>
-<p>You complete <strong>one writing task</strong> chosen from a selection of prompts. Tasks require either <strong>narrative writing</strong> (storytelling) or <strong>descriptive writing</strong>. As with Paper 1, marks are divided between content/organisation (24 marks) and technical accuracy (16 marks).</p>
+<h3>Section B: Imaginative Writing (30 marks)</h3>
+<p>You <strong>choose one task from a choice of three</strong>. Options include: writing about a <strong>personal experience</strong> (real or imagined), writing a story with a given <strong>title</strong>, or writing a story prompted by an <strong>image</strong>. Marks are split between <strong>AO4</strong> — communicating effectively (18 marks) — and <strong>AO5</strong> — technical accuracy (12 marks).</p>
 
 <h3>Assessment Objectives</h3>
-<p>The entire qualification is assessed against four Assessment Objectives:</p>
+<p>The entire qualification is assessed against five Assessment Objectives:</p>
 <ul>
   <li><strong>AO1 — Read and understand a variety of texts:</strong> Select and interpret information; distinguish between fact and opinion; follow an argument; make inferences and deductions.</li>
   <li><strong>AO2 — Understand and analyse how writers use linguistic and structural devices:</strong> Explain, comment on and analyse the effects of language, form, and structure using appropriate terminology.</li>
-  <li><strong>AO3 — Write clearly, effectively and imaginatively:</strong> Adapt form and style for different purposes and audiences; organise ideas coherently using structural and grammatical devices.</li>
-  <li><strong>AO4 — Use language accurately:</strong> Use a range of sentence structures; use accurate spelling, punctuation, and grammar; deploy vocabulary effectively.</li>
+  <li><strong>AO3 — Compare writers' ideas and perspectives:</strong> Analyse and compare how writers convey their ideas and perspectives across texts.</li>
+  <li><strong>AO4 — Communicate effectively in writing:</strong> Write clearly, effectively, and imaginatively; adapt form and style for different purposes and audiences; organise ideas coherently using structural and grammatical devices.</li>
+  <li><strong>AO5 — Use language accurately:</strong> Use a range of sentence structures; use accurate spelling, punctuation, and grammar; deploy vocabulary effectively.</li>
 </ul>
 
 <div class="key-term"><strong>Key Term: Assessment Objective (AO)</strong> — A specific skill area that examiners use to award marks. Each question on the exam is linked to one or more AOs. Understanding which AOs are tested by each question helps you tailor your response to what the examiner is looking for.</div>
 
 <h3>How Assessment Objectives Map to Each Paper</h3>
 <ul>
-  <li><strong>Paper 1 Section A:</strong> AO1 and AO2 (reading and analysis of non-fiction)</li>
-  <li><strong>Paper 1 Section B:</strong> AO3 and AO4 (transactional writing)</li>
-  <li><strong>Paper 2 Section A:</strong> AO1 and AO2 (reading and analysis of literary texts)</li>
-  <li><strong>Paper 2 Section B:</strong> AO3 and AO4 (imaginative writing)</li>
+  <li><strong>Paper 1 Section A:</strong> AO1 (Q1–Q3: comprehension and retrieval), AO2 (Q4: language and structure analysis), and AO3 (Q5: comparison of writers' perspectives)</li>
+  <li><strong>Paper 1 Section B:</strong> AO4 (27 marks — effective communication) and AO5 (18 marks — technical accuracy)</li>
+  <li><strong>Paper 2 Section A:</strong> AO1 (12 marks) and AO2 (18 marks) — reading and analysis of anthology texts</li>
+  <li><strong>Paper 2 Section B:</strong> AO4 (18 marks — effective communication) and AO5 (12 marks — technical accuracy)</li>
 </ul>
 
 <h3>Grade Boundaries and Weighting</h3>
 <p>Grades are awarded from <strong>9</strong> (highest) to <strong>1</strong> (lowest), with a U (unclassified) grade for candidates who do not meet the minimum standard. Since Paper 1 is worth 60% and Paper 2 is worth 40%, strong performance on Paper 1 is essential — but a weak Paper 2 can significantly drag down your overall grade.</p>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Many students focus all their revision on Paper 1 because it is worth more marks, then neglect Paper 2. However, Paper 2's imaginative writing section (40 marks) is the single highest-tariff task across both papers. Neglecting creative writing practice is a serious strategic error.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Many students focus all their revision on Paper 1 because it is worth more marks, then neglect Paper 2. However, Paper 2 still accounts for 40% of your grade (60 marks), and a weak Paper 2 performance can significantly drag down your overall result. Neglecting literary analysis and imaginative writing practice is a serious strategic error.</div>
 
 <h3>Recommended Overall Study Plan</h3>
 <ol>
@@ -86,7 +88,7 @@ export const igcseLangAModules: CourseModule[] = [
   <li><strong>Week 12:</strong> Paper 2 exam technique and final revision (Module 14).</li>
 </ol>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The International GCSE uses unseen texts in both papers — you cannot predict what passage will appear. The best preparation is to practise with a wide range of texts from different periods and genres, building flexible analytical skills rather than memorising set texts.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> Paper 1 uses unseen non-fiction texts — you cannot predict what passage will appear. Paper 2 Section A is based on the anthology, so you can prepare by studying those texts thoroughly. The best preparation for Paper 1 is to practise with a wide range of texts from different periods and genres, building flexible analytical skills.</div>
 `,
     quiz: [
       {
@@ -99,40 +101,40 @@ export const igcseLangAModules: CourseModule[] = [
           '2 hours 30 minutes',
         ],
         correct: 2,
-        explanation: 'Paper 1 is 2 hours and 15 minutes (135 minutes). It is the longer paper, carrying 100 marks and 60% of the qualification. Students must divide this time between Section A (Reading) and Section B (Writing).',
+        explanation: 'Paper 1 is 2 hours and 15 minutes (135 minutes). It is the longer paper, carrying 90 marks and 60% of the qualification. Students must divide this time between Section A (Reading — 45 marks) and Section B (Writing — 45 marks).',
       },
       {
         id: 'igcse-a-m1-q2',
         question: 'What percentage of the total qualification does Paper 2 (4EA1/02) account for?',
         options: ['30%', '40%', '50%', '60%'],
         correct: 1,
-        explanation: 'Paper 2 is worth 40% of the total qualification (70 marks out of 170). Although it is the smaller paper, it still carries significant weight — particularly the 40-mark imaginative writing task.',
+        explanation: 'Paper 2 is worth 40% of the total qualification (60 marks out of 150). Although it is the smaller paper, it still carries significant weight — particularly the 30-mark imaginative writing task.',
       },
       {
         id: 'igcse-a-m1-q3',
         question: 'Which Assessment Objective focuses on using accurate spelling, punctuation, and grammar?',
-        options: ['AO1', 'AO2', 'AO3', 'AO4'],
+        options: ['AO1', 'AO2', 'AO4', 'AO5'],
         correct: 3,
-        explanation: 'AO4 assesses technical accuracy — the use of a range of sentence structures, accurate spelling, punctuation, grammar, and effective vocabulary deployment. It is tested in the writing sections of both papers.',
+        explanation: 'AO5 assesses technical accuracy — the use of a range of sentence structures, accurate spelling, punctuation, grammar, and effective vocabulary deployment. It is tested in the writing sections of both papers.',
       },
       {
         id: 'igcse-a-m1-q4',
         question: 'How many marks is Paper 1 Section A (Reading) worth?',
-        options: ['40 marks', '50 marks', '60 marks', '70 marks'],
+        options: ['30 marks', '40 marks', '45 marks', '60 marks'],
         correct: 2,
-        explanation: 'Paper 1 Section A is worth 60 marks across four questions testing reading and analysis of a non-fiction text. This is the highest-scoring reading section across both papers.',
+        explanation: 'Paper 1 Section A is worth 45 marks across five questions (Q1–Q5) testing reading, analysis, and comparison of two non-fiction texts. This is the highest-scoring reading section across both papers.',
       },
       {
         id: 'igcse-a-m1-q5',
         question: 'What type of text will appear in Paper 2 Section A?',
         options: [
           'A non-fiction newspaper article',
-          'An unseen literary text (prose fiction or poem)',
-          'A previously studied set text',
+          'An unseen literary text never studied before',
+          'A text from the Pearson Edexcel poetry and prose anthology',
           'A non-fiction speech transcript',
         ],
-        correct: 1,
-        explanation: 'Paper 2 Section A presents an unseen literary text, which may be a prose fiction extract or a poem. Students must analyse it using close reading skills. The text is always unseen — there are no set texts in this specification.',
+        correct: 2,
+        explanation: 'Paper 2 Section A is based on a text from the Pearson Edexcel poetry and prose anthology. Students write one extended response analysing the text, assessed on AO1 (12 marks) and AO2 (18 marks).',
       },
     ],
   },
@@ -145,14 +147,14 @@ export const igcseLangAModules: CourseModule[] = [
     title: 'Reading Non-Fiction: Comprehension & Retrieval Skills',
     duration: '50 min',
     content: `
-<h2>Paper 1, Question 1 — Comprehension and Retrieval</h2>
+<h2>Paper 1, Questions 1–3 — Comprehension and Retrieval</h2>
 
-<p>Question 1 on Paper 1 tests your ability to read an unseen non-fiction text and <strong>retrieve explicit information</strong>. This is the most straightforward question on the paper, but it requires precision: you must locate specific details, distinguish relevant from irrelevant information, and present your answers clearly and concisely. The question is typically worth around <strong>15 marks</strong> and may have several sub-parts.</p>
+<p>Questions 1–3 on Paper 1 test your ability to read unseen non-fiction texts and <strong>retrieve, explain, and describe information</strong>. These are the most straightforward questions on the paper, but they require precision. <strong>Question 1</strong> (2 marks, AO1) asks you to select two words or phrases from specified lines. <strong>Question 2</strong> (4 marks, AO1) asks you to explain the writer's thoughts and feelings in your own words. <strong>Question 3</strong> (5 marks, AO1) asks you to describe a topic using brief quotations from the text. Together these three questions are worth <strong>11 marks</strong>.</p>
 
 <div class="key-term"><strong>Key Term: Explicit Information</strong> — Information that is directly stated in the text. You do not need to infer or interpret — the answer is literally there in the words on the page. Your task is to find it and present it clearly.</div>
 
 <h3>What the Examiner Is Looking For</h3>
-<p>Q1 primarily tests <strong>AO1</strong>: the ability to read and understand texts, selecting and interpreting information and ideas. At this level, the focus is on:</p>
+<p>Questions 1–3 all test <strong>AO1</strong>: the ability to read and understand texts, selecting and interpreting information and ideas. At this level, the focus is on:</p>
 <ul>
   <li><strong>Locating specific details</strong> — finding facts, names, dates, places, or descriptions mentioned in the text.</li>
   <li><strong>Selecting relevant information</strong> — choosing the details that actually answer the question, not just anything that seems interesting.</li>
@@ -219,10 +221,10 @@ export const igcseLangAModules: CourseModule[] = [
     quiz: [
       {
         id: 'igcse-a-m2-q1',
-        question: 'Which Assessment Objective does Q1 on Paper 1 primarily test?',
+        question: 'Which Assessment Objective do Questions 1–3 on Paper 1 primarily test?',
         options: ['AO1', 'AO2', 'AO3', 'AO4'],
         correct: 0,
-        explanation: 'Q1 primarily tests AO1: the ability to read and understand texts by selecting and interpreting explicit and implicit information and ideas. It focuses on comprehension and retrieval rather than language analysis.',
+        explanation: 'Questions 1–3 all test AO1: the ability to read and understand texts by selecting and interpreting explicit and implicit information and ideas. They focus on comprehension and retrieval rather than language analysis.',
       },
       {
         id: 'igcse-a-m2-q2',
@@ -283,9 +285,9 @@ export const igcseLangAModules: CourseModule[] = [
     title: 'Reading Non-Fiction: Language Analysis for Paper 1',
     duration: '55 min',
     content: `
-<h2>Paper 1, Question 2 — Analysing the Writer's Use of Language</h2>
+<h2>Paper 1, Question 4 — Analysing the Writer's Use of Language and Structure</h2>
 
-<p>Question 2 asks you to analyse how the writer uses <strong>language</strong> to achieve particular effects. This question tests <strong>AO2</strong> — your ability to explain, comment on, and analyse how writers use linguistic devices to create meaning and impact. You must move beyond identifying features and demonstrate that you can explore <em>why</em> a writer has made specific word choices and <em>how</em> they affect the reader.</p>
+<p>Question 4 (12 marks, AO2) asks you to analyse how the writer uses <strong>language and structure</strong> to achieve particular effects. This question tests <strong>AO2</strong> — your ability to explain, comment on, and analyse how writers use linguistic and structural devices to create meaning and impact. You must move beyond identifying features and demonstrate that you can explore <em>why</em> a writer has made specific choices and <em>how</em> they affect the reader.</p>
 
 <div class="key-term"><strong>Key Term: Language Analysis</strong> — The close examination of a writer's word choices (diction), imagery, figurative language, tone, and rhetorical techniques. Effective analysis explains the effect of these choices on the reader, not just what they are.</div>
 
@@ -434,9 +436,9 @@ export const igcseLangAModules: CourseModule[] = [
     title: 'Reading Non-Fiction: Structure & Whole-Text Analysis',
     duration: '55 min',
     content: `
-<h2>Paper 1, Question 3 — Analysing Language and Structure</h2>
+<h2>Paper 1, Question 4 — Structural Analysis (continued)</h2>
 
-<p>Question 3 broadens the focus from individual language choices to the <strong>whole text</strong>, asking you to analyse how the writer uses both <strong>language and structure</strong> to influence the reader. This question tests <strong>AO2</strong> at a deeper level — you must consider not just what the writer says and how they say it, but also <em>how the text is organised</em> to guide the reader's experience.</p>
+<p>This module continues the study of Question 4 (12 marks, AO2) by broadening the focus from individual language choices to the <strong>whole text</strong>, asking you to analyse how the writer uses <strong>structure</strong> alongside language to influence the reader. Question 4 tests <strong>AO2</strong> at a deeper level — you must consider not just what the writer says and how they say it, but also <em>how the text is organised</em> to guide the reader's experience.</p>
 
 <div class="key-term"><strong>Key Term: Structure</strong> — The way a writer organises and arranges their text. This includes paragraph organisation, the sequence of ideas, shifts in focus or tone, the opening and ending, narrative perspective, pacing, and the overall shape of the argument or description.</div>
 
@@ -570,15 +572,15 @@ export const igcseLangAModules: CourseModule[] = [
     title: 'Reading Non-Fiction: Evaluation & Critical Response',
     duration: '55 min',
     content: `
-<h2>Paper 1, Question 4 — Evaluation and Critical Response</h2>
+<h2>Paper 1, Question 5 — Comparison of Writers' Ideas and Perspectives</h2>
 
-<p>Question 4 is the most demanding reading question on Paper 1. It asks you to <strong>evaluate</strong> the text — to make a critical judgement about how successfully the writer achieves a particular effect, and to support that judgement with carefully selected textual evidence. This question tests the highest-order reading skill: the ability to step back from the text, assess its effectiveness, and articulate a personal but evidence-based response.</p>
+<p>Question 5 is the most demanding and highest-tariff reading question on Paper 1, worth <strong>22 marks</strong> and testing <strong>AO3</strong>. It asks you to <strong>compare</strong> how both writers in the two non-fiction texts present their ideas and perspectives on a shared topic. This question tests the highest-order reading skill: the ability to synthesise your understanding of two texts, identify similarities and differences in the writers' viewpoints, methods, and effects, and present a sustained comparative argument supported by textual evidence.</p>
 
-<div class="key-term"><strong>Key Term: Evaluation</strong> — Making a critical judgement about a text's effectiveness. This goes beyond analysis (explaining how language works) to assessment (judging how <em>well</em> it works). You must argue a position — whether you agree, disagree, or partially agree with a given statement — and defend it with evidence.</div>
+<div class="key-term"><strong>Key Term: Comparison</strong> — Analysing two texts together to identify similarities and differences in the writers' ideas, perspectives, and methods. Effective comparison moves beyond listing points about each text separately and instead integrates references to both texts within each paragraph.</div>
 
-<h3>How Q4 Typically Works</h3>
-<p>The question usually presents a <strong>statement</strong> about the text and asks you to evaluate how far you agree. For example:</p>
-<blockquote><p><em>"A student said: 'The writer makes the reader feel genuine sympathy for the people described in this text.' To what extent do you agree with this statement? You should refer to the writer's use of language and structure in your response."</em></p></blockquote>
+<h3>How Q5 Typically Works</h3>
+<p>The question asks you to compare how both writers present their ideas and perspectives. For example:</p>
+<blockquote><p><em>"Compare how the writers of Text 1 and Text 2 present their ideas and perspectives on [topic]. Support your answer with detailed reference to the texts."</em></p></blockquote>
 
 <p>You are expected to:</p>
 <ol>
@@ -720,13 +722,13 @@ export const igcseLangAModules: CourseModule[] = [
     content: `
 <h2>Paper 1, Section B — Transactional Writing: Form, Audience &amp; Purpose</h2>
 
-<p>Section B of Paper 1 requires you to complete <strong>one extended transactional writing task</strong> worth <strong>40 marks</strong> — split between <strong>24 marks for content and organisation</strong> (AO3) and <strong>16 marks for technical accuracy</strong> (AO4). The task will always specify a <strong>form</strong> (what type of text to write), an <strong>audience</strong> (who you are writing for), and a <strong>purpose</strong> (what you are trying to achieve). Understanding these three elements is the foundation of effective transactional writing.</p>
+<p>Section B of Paper 1 requires you to <strong>choose one task from a choice of two</strong>, worth <strong>45 marks</strong> — split between <strong>27 marks for effective communication</strong> (AO4) and <strong>18 marks for technical accuracy</strong> (AO5). Each task will typically present a contentious statement and ask you to respond in a specified <strong>form</strong> (what type of text to write), for a particular <strong>audience</strong> (who you are writing for), and with a clear <strong>purpose</strong> (what you are trying to achieve). Understanding these three elements is the foundation of effective transactional writing.</p>
 
-<div class="key-term"><strong>Key Term: Transactional Writing</strong> — Writing that has a practical, real-world purpose and a specific audience. It "transacts" or communicates something — unlike creative writing, which may exist purely for artistic expression. Forms include letters, articles, speeches, reviews, guides, and reports.</div>
+<div class="key-term"><strong>Key Term: Transactional Writing</strong> — Writing that has a practical, real-world purpose and a specific audience. It "transacts" or communicates something — unlike creative writing, which may exist purely for artistic expression. Forms include articles, speeches, letters, and reports.</div>
 
-<h3>The Six Possible Forms</h3>
+<h3>The Four Main Forms</h3>
 
-<p>The specification lists six text types that may appear in the exam. You must be prepared for all of them:</p>
+<p>The specification focuses on four text types that may appear in the exam. You must be prepared for all of them:</p>
 
 <h3>1. Letter (Formal or Informal)</h3>
 <p>Letters require specific <strong>conventions</strong>: an address, date, appropriate greeting (Dear Sir/Madam or Dear Mr Smith), sign-off (Yours faithfully/Yours sincerely), and paragraphed content. Formal letters use impersonal, professional language; informal letters to known recipients may be warmer and more personal.</p>
@@ -749,13 +751,7 @@ export const igcseLangAModules: CourseModule[] = [
 <div class="model-answer"><strong>Model Opening (Speech):</strong>
 <p>"Good morning, everyone. I want to begin by asking you a question — and I want you to answer it honestly, even if only in your own mind. When was the last time you did something truly brave? Not reckless. Not foolish. Brave. When was the last time you stood up for something you believed in, even when it cost you something?"</p></div>
 
-<h3>4. Review</h3>
-<p>Reviews require a <strong>balance of description and evaluation</strong>. You must describe the subject (a book, film, restaurant, product, or event) but also assess it — offering a clear opinion supported by specific evidence. Reviews often use a star rating or recommendation at the end.</p>
-
-<h3>5. Guide</h3>
-<p>Guides are <strong>instructional and informative</strong>. They use a clear, logical structure, often with subheadings, numbered steps, and direct address. The tone is friendly but authoritative — you are the expert helping a less knowledgeable reader.</p>
-
-<h3>6. Report</h3>
+<h3>4. Report</h3>
 <p>Reports are <strong>formal, structured, and objective</strong>. They present findings or recommendations using clear headings, a formal register, and impersonal language. Reports often begin with an introduction stating the purpose and end with conclusions or recommendations.</p>
 
 <h3>Understanding Audience</h3>
@@ -796,8 +792,8 @@ export const igcseLangAModules: CourseModule[] = [
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> Spend 5 minutes planning your transactional writing before you start writing. Decide: (1) What form am I using? (2) What conventions does this form require? (3) Who is my audience and what register is appropriate? (4) What is my purpose and what are my 3–4 main points? A brief plan prevents the rambling, unfocused responses that examiners see too often.</div>
 
-<h3>Technical Accuracy (16 marks)</h3>
-<p>Remember that 16 of the 40 marks are for technical accuracy. This means:</p>
+<h3>Technical Accuracy (18 marks — AO5)</h3>
+<p>Remember that 18 of the 45 marks are for technical accuracy (AO5). This means:</p>
 <ul>
   <li><strong>Accurate spelling</strong> — especially of common words and homophones (their/there/they're, affect/effect)</li>
   <li><strong>Varied punctuation</strong> — use commas, semicolons, colons, dashes, and parentheses confidently</li>
@@ -809,22 +805,22 @@ export const igcseLangAModules: CourseModule[] = [
     quiz: [
       {
         id: 'igcse-a-m6-q1',
-        question: 'How are the 40 marks for transactional writing divided?',
+        question: 'How are the 45 marks for transactional writing divided?',
         options: [
-          '20 marks for content, 20 marks for accuracy',
-          '24 marks for content and organisation, 16 marks for technical accuracy',
-          '30 marks for content, 10 marks for accuracy',
-          '24 marks for accuracy, 16 marks for content',
+          '25 marks for content, 20 marks for accuracy',
+          '27 marks for effective communication (AO4), 18 marks for technical accuracy (AO5)',
+          '30 marks for content, 15 marks for accuracy',
+          '18 marks for accuracy, 27 marks for content',
         ],
         correct: 1,
-        explanation: 'The 40 marks split into 24 marks for content and organisation (AO3) and 16 marks for technical accuracy (AO4). This means that while strong content is crucial, nearly half the marks depend on spelling, punctuation, grammar, and sentence variety.',
+        explanation: 'The 45 marks split into 27 marks for effective communication (AO4) and 18 marks for technical accuracy (AO5). This means that while strong content is crucial, a significant proportion of the marks depend on spelling, punctuation, grammar, and sentence variety.',
       },
       {
         id: 'igcse-a-m6-q2',
-        question: 'Which of these is NOT one of the six transactional writing forms in the specification?',
-        options: ['Speech', 'Diary entry', 'Report', 'Guide'],
+        question: 'Which of these is NOT one of the transactional writing forms in the specification?',
+        options: ['Speech', 'Diary entry', 'Report', 'Article'],
         correct: 1,
-        explanation: 'The six forms specified are: letter, article, speech, review, guide, and report. A diary entry is not listed as a possible transactional writing form for Paper 1. Diary entries are personal and creative rather than transactional.',
+        explanation: 'The four forms specified are: article, speech, letter, and report. A diary entry is not listed as a possible transactional writing form for Paper 1. Diary entries are personal and creative rather than transactional.',
       },
       {
         id: 'igcse-a-m6-q3',
@@ -1036,17 +1032,16 @@ export const igcseLangAModules: CourseModule[] = [
 <p>You have <strong>135 minutes</strong> (2 hours 15 minutes) to complete Paper 1. Here is the recommended breakdown:</p>
 
 <ol>
-  <li><strong>0–10 min: Read the source text carefully.</strong> Read the entire non-fiction text at least once before attempting any questions. Underline key phrases, annotate the margins, and note shifts in tone or focus. This initial reading saves time later — you will know where to find evidence.</li>
-  <li><strong>10–25 min: Answer Question 1 (approx. 15 marks).</strong> Retrieval and comprehension. Keep answers precise and concise. Do not over-explain — write enough to earn the marks, then move on.</li>
-  <li><strong>25–45 min: Answer Question 2 (approx. 15 marks).</strong> Language analysis. Write 2–3 PEEL paragraphs with embedded quotations and close word-level analysis. Aim for quality over quantity.</li>
-  <li><strong>45–65 min: Answer Question 3 (approx. 15 marks).</strong> Language and structure analysis. Cover both elements, working through the text chronologically. Identify shifts and turning points.</li>
-  <li><strong>65–85 min: Answer Question 4 (approx. 15 marks).</strong> Evaluation and critical response. State your position, support with evidence, analyse, and evaluate. Include a counterpoint or nuance.</li>
-  <li><strong>85–90 min: Plan Section B.</strong> 5 minutes of planning for your transactional writing. Identify form, audience, purpose. Outline 4–5 paragraphs with key points.</li>
-  <li><strong>90–130 min: Write Section B (40 marks).</strong> 40 minutes of sustained, high-quality writing. Follow your plan. Aim for 400–500 words of polished prose.</li>
+  <li><strong>0–10 min: Read both source texts carefully.</strong> Read the two non-fiction texts at least once before attempting any questions. Underline key phrases, annotate the margins, and note shifts in tone or focus. This initial reading saves time later — you will know where to find evidence.</li>
+  <li><strong>10–15 min: Answer Questions 1–3 (11 marks total).</strong> Q1 (2 marks) — select two words/phrases; Q2 (4 marks) — explain thoughts and feelings in own words; Q3 (5 marks) — describe with quotations. Keep answers precise and concise.</li>
+  <li><strong>15–30 min: Answer Question 4 (12 marks).</strong> Language and structure analysis. Write 2–3 PEEL paragraphs with embedded quotations and close word-level analysis. Cover both language and structural features.</li>
+  <li><strong>30–65 min: Answer Question 5 (22 marks).</strong> Comparison of both writers' ideas and perspectives. This is the highest-tariff reading question — dedicate substantial time to a sustained comparative response drawing on both texts.</li>
+  <li><strong>65–70 min: Plan Section B.</strong> 5 minutes of planning for your transactional writing. Choose your task. Identify form, audience, purpose. Outline 4–5 paragraphs with key points.</li>
+  <li><strong>70–130 min: Write Section B (45 marks).</strong> 60 minutes of sustained, high-quality writing. Follow your plan. Aim for 400–500 words of polished prose.</li>
   <li><strong>130–135 min: Proofread.</strong> Check spelling, punctuation, and grammar. Fix any obvious errors. Ensure letter/article conventions are in place if applicable.</li>
 </ol>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The single most important timing rule is this: <strong>do not spend more than 20 minutes on any single reading question</strong>. Many students get absorbed in Q2 or Q3 and then rush Q4 and Section B. Since Section B is worth 40 marks — more than any individual reading question — underperforming there is catastrophic for your overall mark.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> The single most important timing rule is this: <strong>protect your time for Q5 and Section B</strong>. Many students spend too long on Q4 and then rush Q5 (22 marks) and Section B (45 marks). Since Q5 and Section B together account for 67 of the 90 marks on Paper 1, underperforming on them is catastrophic for your overall mark.</div>
 
 <h3>Reading the Question Stem</h3>
 <p>Before answering any question, decode what the examiner is asking:</p>
@@ -1067,7 +1062,7 @@ export const igcseLangAModules: CourseModule[] = [
 </ol>
 
 <h3>Section B: Writing Under Timed Conditions</h3>
-<p>The transactional writing task is worth <strong>40 marks</strong> and you should spend approximately <strong>45 minutes</strong> on it (including planning and checking). Key strategies:</p>
+<p>The transactional writing task is worth <strong>45 marks</strong> and you should spend approximately <strong>65 minutes</strong> on it (including planning and checking). Key strategies:</p>
 
 <ul>
   <li><strong>Plan for 5 minutes.</strong> Write a brief outline: opening hook, 3–4 main points in order, closing statement. Note down any key vocabulary or rhetorical techniques you want to use.</li>
@@ -1119,11 +1114,11 @@ export const igcseLangAModules: CourseModule[] = [
         options: [
           'Spend equal time on every question',
           'Always finish Section A before starting Section B',
-          'Do not spend more than 20 minutes on any single reading question',
+          'Protect your time for Q5 and Section B',
           'Write as fast as possible in the first hour',
         ],
         correct: 2,
-        explanation: 'No single reading question should take more than 20 minutes. Students who get absorbed in one question risk rushing Section B (worth 40 marks — the most valuable single task on the paper). Disciplined time management is the key to maximising your total mark.',
+        explanation: 'Q5 (22 marks) and Section B (45 marks) together account for 67 of the 90 marks on Paper 1. Students who get absorbed in earlier questions risk rushing these high-tariff tasks. Disciplined time management is the key to maximising your total mark.',
       },
       {
         id: 'igcse-a-m8-q3',
@@ -1174,20 +1169,14 @@ export const igcseLangAModules: CourseModule[] = [
     content: `
 <h2>Paper 2 (4EA1/02) — Poetry and Prose Texts and Imaginative Writing</h2>
 
-<p>Paper 2 is the second component of the Edexcel International GCSE English Language Specification A. It is worth <strong>70 marks</strong> and accounts for <strong>40%</strong> of your total qualification grade. You have <strong>1 hour 30 minutes</strong> (90 minutes) to complete two sections. While Paper 1 focuses on non-fiction and transactional writing, Paper 2 moves into the territory of <strong>literary reading</strong> and <strong>creative composition</strong> — demanding a different but equally important set of skills.</p>
+<p>Paper 2 is the second component of the Edexcel International GCSE English Language Specification A. It is worth <strong>60 marks</strong> and accounts for <strong>40%</strong> of your total qualification grade. You have <strong>1 hour 30 minutes</strong> (90 minutes) to complete two sections. While Paper 1 focuses on non-fiction and transactional writing, Paper 2 moves into the territory of <strong>literary reading</strong> and <strong>creative composition</strong> — demanding a different but equally important set of skills.</p>
 
-<div class="key-term"><strong>Key Term: Unseen Literary Text</strong> — A prose fiction extract or poem that you have not studied before. Unlike literature exams where you analyse set texts, Paper 2 tests your ability to respond to unfamiliar literary writing — demonstrating transferable analytical skills.</div>
+<div class="key-term"><strong>Key Term: Anthology Text</strong> — A text from the Pearson Edexcel poetry and prose anthology that you will have studied in class. Unlike Paper 1 where the texts are unseen, Paper 2 Section A is based on a text from this studied anthology.</div>
 
 <h3>Paper 2 Structure</h3>
 
 <h3>Section A: Reading (30 marks)</h3>
-<p>You will be given <strong>one unseen literary text</strong>. This will be either:</p>
-<ul>
-  <li>A <strong>prose fiction extract</strong> — a passage from a novel or short story, typically 300–600 words in length.</li>
-  <li>A <strong>poem</strong> — a complete poem or substantial extract from a longer poem.</li>
-</ul>
-
-<p>You will answer analysis questions that test your ability to:</p>
+<p>You write <strong>one extended response</strong> on a text from the Pearson Edexcel poetry and prose anthology. The question tests your ability to:</p>
 <ul>
   <li>Identify and interpret themes and ideas in the text.</li>
   <li>Analyse the writer's use of language, including imagery, figurative language, and word choice.</li>
@@ -1195,44 +1184,45 @@ export const igcseLangAModules: CourseModule[] = [
   <li>Comment on the effects of literary techniques on the reader.</li>
 </ul>
 
-<p>Section A tests <strong>AO1</strong> (understanding and interpretation) and <strong>AO2</strong> (analysis of language, form, and structure).</p>
+<p>Section A tests <strong>AO1</strong> (12 marks — understanding and interpretation) and <strong>AO2</strong> (18 marks — analysis of language, form, and structure).</p>
 
-<h3>Section B: Imaginative Writing (40 marks)</h3>
-<p>You complete <strong>one writing task</strong> from a choice of prompts. The tasks require either:</p>
+<h3>Section B: Imaginative Writing (30 marks)</h3>
+<p>You <strong>choose one task from a choice of three</strong>. Options include:</p>
 <ul>
-  <li><strong>Narrative writing</strong> — telling a story with plot, character, setting, and tension.</li>
-  <li><strong>Descriptive writing</strong> — creating a vivid, atmospheric piece focused on sensory detail and imagery.</li>
+  <li><strong>Personal experience narrative</strong> — writing about a personal experience (real or imagined).</li>
+  <li><strong>Titled story</strong> — writing a story with a given title.</li>
+  <li><strong>Image-prompted story</strong> — writing a story inspired by a provided image.</li>
 </ul>
 
-<p>Marks are divided: <strong>24 marks for content and organisation</strong> (AO3) and <strong>16 marks for technical accuracy</strong> (AO4). This is the same split as Paper 1's writing task.</p>
+<p>Marks are divided: <strong>18 marks for effective communication</strong> (AO4) and <strong>12 marks for technical accuracy</strong> (AO5).</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Many students find Paper 2 more enjoyable than Paper 1 because it involves literary texts and creative writing. However, do not let enjoyment lead to complacency. The time pressure on Paper 2 is actually tighter than Paper 1 — you have 90 minutes for 70 marks compared to 135 minutes for 100 marks. Minute per mark, Paper 2 gives you slightly less time.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> Many students find Paper 2 more enjoyable than Paper 1 because it involves literary texts and creative writing. However, do not let enjoyment lead to complacency. The time pressure on Paper 2 is actually tighter than Paper 1 — you have 90 minutes for 60 marks compared to 135 minutes for 90 marks. Minute per mark, Paper 2 gives you slightly less time.</div>
 
 <h3>Comparing Papers 1 and 2</h3>
 <ul>
-  <li><strong>Paper 1 reading = non-fiction; Paper 2 reading = literary fiction/poetry.</strong> The analytical skills are similar (language, structure, evaluation) but the focus shifts from real-world texts to imaginative, artistic texts.</li>
+  <li><strong>Paper 1 reading = unseen non-fiction; Paper 2 reading = anthology texts.</strong> The analytical skills are similar (language, structure) but the focus shifts from unseen real-world texts to studied literary texts.</li>
   <li><strong>Paper 1 writing = transactional; Paper 2 writing = imaginative.</strong> Transactional writing follows conventions (letter format, article headlines); imaginative writing has fewer formal constraints but demands higher creativity.</li>
-  <li><strong>Paper 1 = 60% of grade; Paper 2 = 40%.</strong> But Paper 2's writing section (40 marks) is the joint-highest single task alongside Paper 1's writing section.</li>
+  <li><strong>Paper 1 = 60% of grade (90 marks); Paper 2 = 40% (60 marks).</strong> Paper 1's writing section (45 marks) is the highest single task across both papers.</li>
 </ul>
 
 <h3>Assessment Objectives in Paper 2</h3>
 <ul>
   <li><strong>AO1 (Section A):</strong> Read and understand texts — select and interpret information, follow an argument, make inferences.</li>
   <li><strong>AO2 (Section A):</strong> Analyse how writers use linguistic and structural devices to achieve effects, using relevant subject terminology.</li>
-  <li><strong>AO3 (Section B):</strong> Write clearly, effectively, and imaginatively — organise information and ideas using structural and grammatical features to support coherence and cohesion.</li>
-  <li><strong>AO4 (Section B):</strong> Use a range of vocabulary and sentence structures for clarity, purpose, and effect; spell and punctuate accurately; use grammar correctly.</li>
+  <li><strong>AO4 (Section B — 18 marks):</strong> Communicate effectively in writing — adapt form and style; organise information and ideas using structural and grammatical features to support coherence and cohesion.</li>
+  <li><strong>AO5 (Section B — 12 marks):</strong> Use a range of vocabulary and sentence structures for clarity, purpose, and effect; spell and punctuate accurately; use grammar correctly.</li>
 </ul>
 
 <h3>Recommended Timing Plan for Paper 2</h3>
 <ol>
-  <li><strong>0–5 min:</strong> Read the unseen literary text carefully. If it is a poem, read it at least twice. Annotate key features.</li>
-  <li><strong>5–35 min:</strong> Complete Section A (Reading) — approximately 30 minutes for 30 marks.</li>
-  <li><strong>35–40 min:</strong> Read the Section B prompts. Choose your task. Plan your response (5 minutes).</li>
-  <li><strong>40–85 min:</strong> Write your Section B response (45 minutes for 40 marks).</li>
+  <li><strong>0–5 min:</strong> Read the anthology text question carefully. Annotate key features of the text.</li>
+  <li><strong>5–45 min:</strong> Complete Section A (Reading) — approximately 40 minutes for 30 marks. Write one extended analytical response.</li>
+  <li><strong>45–50 min:</strong> Read the Section B prompts. Choose your task from the three options. Plan your response (5 minutes).</li>
+  <li><strong>50–85 min:</strong> Write your Section B response (35 minutes for 30 marks).</li>
   <li><strong>85–90 min:</strong> Proofread your writing for technical accuracy.</li>
 </ol>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Spending too long on Section A and then rushing Section B. Since Section B is worth 40 marks (more than Section A's 30 marks), it should receive more time. If you find yourself spending more than 35 minutes on reading, you are jeopardising your writing mark. Stick to the timing plan.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Spending too long on Section A and then rushing Section B. Both sections are worth 30 marks each, so they deserve roughly equal time. If you find yourself spending more than 45 minutes on reading, you are jeopardising your writing mark. Stick to the timing plan.</div>
 
 <h3>Key Differences: Literary Analysis vs. Non-Fiction Analysis</h3>
 <p>When analysing literary texts (as opposed to non-fiction), you should pay attention to:</p>
@@ -1249,11 +1239,11 @@ export const igcseLangAModules: CourseModule[] = [
 <div class="examiner-tip"><strong>Examiner Tip:</strong> In Paper 2 Section A, always consider the writer's <em>purpose</em>. Even though the text is fiction or poetry, the writer has made deliberate choices. Ask yourself: What effect is the writer trying to create? How are they guiding the reader's emotions? What is the writer saying about the human experience? These questions lead to the most insightful analysis.</div>
 
 <h3>Preparing for Paper 2</h3>
-<p>Since the texts are unseen, the best preparation is wide reading:</p>
+<p>For Section A, study the anthology texts thoroughly. For Section B, the best preparation is wide reading and writing practice:</p>
 <ul>
   <li>Read short stories by classic and modern authors (Dickens, Brontë, Hardy, Mansfield, Orwell, Lahiri).</li>
   <li>Read poems from a variety of periods and styles — Romantic, Victorian, modern, contemporary.</li>
-  <li>Practise writing both narrative and descriptive pieces under timed conditions.</li>
+  <li>Practise writing personal experience narratives, titled stories, and image-prompted stories under timed conditions.</li>
   <li>Build your vocabulary — the richer your word bank, the more effective both your analysis and your writing will be.</li>
 </ul>
 `,
@@ -1273,33 +1263,33 @@ export const igcseLangAModules: CourseModule[] = [
       {
         id: 'igcse-a-m9-q2',
         question: 'How many marks is Paper 2 worth in total?',
-        options: ['40 marks', '50 marks', '70 marks', '100 marks'],
+        options: ['40 marks', '50 marks', '60 marks', '90 marks'],
         correct: 2,
-        explanation: 'Paper 2 is worth 70 marks: 30 marks for Section A (Reading) and 40 marks for Section B (Imaginative Writing). It accounts for 40% of the total qualification grade.',
+        explanation: 'Paper 2 is worth 60 marks: 30 marks for Section A (Reading) and 30 marks for Section B (Imaginative Writing). It accounts for 40% of the total qualification grade.',
       },
       {
         id: 'igcse-a-m9-q3',
         question: 'What type of text appears in Paper 2 Section A?',
         options: [
           'A non-fiction newspaper article',
-          'A previously studied set text',
-          'An unseen prose fiction extract or poem',
+          'An unseen literary text never studied before',
+          'A text from the Pearson Edexcel poetry and prose anthology',
           'A transactional writing sample to evaluate',
         ],
         correct: 2,
-        explanation: 'Paper 2 Section A presents an unseen literary text — either a prose fiction extract or a poem. The text is always new (unseen), testing your ability to analyse unfamiliar literary writing using transferable skills.',
+        explanation: 'Paper 2 Section A is based on a text from the Pearson Edexcel poetry and prose anthology. Students write one extended analytical response, assessed on AO1 (12 marks) and AO2 (18 marks).',
       },
       {
         id: 'igcse-a-m9-q4',
         question: 'Which section of Paper 2 is worth more marks?',
         options: [
           'Section A (Reading) — 30 marks',
-          'Section B (Imaginative Writing) — 40 marks',
-          'Both sections are worth equal marks',
+          'Section B (Imaginative Writing) — 30 marks',
+          'Both sections are worth equal marks (30 marks each)',
           'It varies from year to year',
         ],
-        correct: 1,
-        explanation: 'Section B (Imaginative Writing) is worth 40 marks compared to Section A\'s 30 marks. This means you should allocate more time to Section B — approximately 50 minutes compared to 35 minutes for Section A.',
+        correct: 2,
+        explanation: 'Both sections are worth 30 marks each, for a total of 60 marks. This means you should allocate roughly equal time to each section — approximately 40 minutes for reading and 35 minutes for writing, with time for planning and proofreading.',
       },
       {
         id: 'igcse-a-m9-q5',
@@ -1324,9 +1314,9 @@ export const igcseLangAModules: CourseModule[] = [
     title: 'Reading Literary Texts: Close Analysis of Prose Fiction',
     duration: '55 min',
     content: `
-<h2>Paper 2, Section A — Analysing Unseen Prose Fiction</h2>
+<h2>Paper 2, Section A — Analysing Prose Fiction from the Anthology</h2>
 
-<p>In Paper 2 Section A, you may be presented with an unseen prose fiction extract — a passage from a novel or short story. You must analyse how the writer uses language, structure, and narrative technique to create effects and convey meaning. This module teaches you how to approach an unfamiliar prose passage with confidence, extract its key features, and write compelling analytical responses.</p>
+<p>In Paper 2 Section A, you may be presented with a prose fiction extract from the Pearson Edexcel anthology — a passage from a novel or short story that you will have studied in class. You must analyse how the writer uses language, structure, and narrative technique to create effects and convey meaning, writing one extended response assessed on AO1 (12 marks) and AO2 (18 marks). This module teaches you how to approach prose passages with confidence, extract their key features, and write compelling analytical responses.</p>
 
 <div class="key-term"><strong>Key Term: Prose Fiction</strong> — Narrative writing in ordinary language (as opposed to verse/poetry). Prose fiction includes novels and short stories — texts that tell invented stories through character, plot, setting, and narrative voice. In the exam, you will encounter an extract of approximately 300–600 words.</div>
 
@@ -1447,17 +1437,17 @@ export const igcseLangAModules: CourseModule[] = [
   // ──────────────────────────────────────────────
   {
     id: 'igcse-a-m11',
-    title: 'Reading Literary Texts: Poetry Analysis & Unseen Response',
+    title: 'Reading Literary Texts: Poetry Analysis & Anthology Response',
     duration: '55 min',
     content: `
-<h2>Paper 2, Section A — Analysing Unseen Poetry</h2>
+<h2>Paper 2, Section A — Analysing Poetry from the Anthology</h2>
 
-<p>If Paper 2 Section A presents a poem rather than a prose extract, you need a specific set of skills to analyse it effectively. Poetry is more compressed than prose — every word carries greater weight, and the way the poem looks and sounds on the page is as important as what it says. This module teaches you how to approach an unseen poem systematically, identify its key features, and write responses that demonstrate genuine engagement with the poet's craft.</p>
+<p>If Paper 2 Section A presents a poem from the anthology, you need a specific set of skills to analyse it effectively. Poetry is more compressed than prose — every word carries greater weight, and the way the poem looks and sounds on the page is as important as what it says. This module teaches you how to approach anthology poems systematically, identify their key features, and write responses that demonstrate genuine engagement with the poet's craft.</p>
 
-<div class="key-term"><strong>Key Term: Unseen Poetry</strong> — A poem you have not studied before, encountered for the first time in the exam. You cannot rely on pre-learned notes or teacher explanations. Instead, you must use your analytical skills to unlock the poem's meaning and technique independently.</div>
+<div class="key-term"><strong>Key Term: Anthology Poetry</strong> — A poem from the Pearson Edexcel poetry and prose anthology that you will have studied in class. While you will have some familiarity with the text, you must still demonstrate strong analytical skills to unlock the poem's meaning and technique in exam conditions.</div>
 
-<h3>A Method for Reading Unseen Poetry</h3>
-<p>Follow these steps every time you encounter an unseen poem:</p>
+<h3>A Method for Reading Poetry in the Exam</h3>
+<p>Follow these steps when approaching your poem in the exam:</p>
 <ol>
   <li><strong>First reading: Get the gist.</strong> Read the whole poem through once without stopping. What is it broadly about? What is the mood or feeling?</li>
   <li><strong>Second reading: Look for meaning.</strong> What is the poet saying? Paraphrase each stanza in your own words. Identify the subject, the speaker, and the situation.</li>
@@ -1534,7 +1524,7 @@ The lone and level sands stretch far away."</p>
     quiz: [
       {
         id: 'igcse-a-m11-q1',
-        question: 'How many times should you read an unseen poem before beginning your analysis?',
+        question: 'How many times should you read a poem in the exam before beginning your analysis?',
         options: [
           'Once is sufficient',
           'At least two or three times, each with a different focus',
@@ -1605,7 +1595,7 @@ The lone and level sands stretch far away."</p>
     content: `
 <h2>Paper 2, Section B — Narrative Writing</h2>
 
-<p>If you choose a narrative writing prompt in Paper 2 Section B, you are tasked with telling a <strong>story</strong> — a piece of writing with characters, a setting, a sequence of events, and (ideally) tension, conflict, and resolution. The task is worth <strong>40 marks</strong>: 24 for content and organisation, 16 for technical accuracy. This is your opportunity to demonstrate <strong>creative flair</strong>, <strong>structural control</strong>, and <strong>sophisticated language use</strong>. However, narrative writing under exam conditions requires discipline — this module teaches you how to craft a compelling story within the constraints of time and length.</p>
+<p>If you choose a narrative writing prompt in Paper 2 Section B, you are tasked with telling a <strong>story</strong> — a piece of writing with characters, a setting, a sequence of events, and (ideally) tension, conflict, and resolution. The task is worth <strong>30 marks</strong>: 18 for effective communication (AO4) and 12 for technical accuracy (AO5). You choose from three options: a personal experience narrative, a titled story, or an image-prompted story. This is your opportunity to demonstrate <strong>creative flair</strong>, <strong>structural control</strong>, and <strong>sophisticated language use</strong>. However, narrative writing under exam conditions requires discipline — this module teaches you how to craft a compelling story within the constraints of time and length.</p>
 
 <div class="key-term"><strong>Key Term: Narrative Writing</strong> — Writing that tells a story. Effective narrative writing creates characters the reader cares about, places them in situations that generate tension or conflict, and resolves (or deliberately does not resolve) those tensions in a satisfying way. It uses literary techniques — imagery, dialogue, varied pace — to engage the reader.</div>
 
@@ -1762,9 +1752,9 @@ The lone and level sands stretch far away."</p>
     title: 'Imaginative Writing: Descriptive Writing Mastery',
     duration: '55 min',
     content: `
-<h2>Paper 2, Section B — Descriptive Writing</h2>
+<h2>Paper 2, Section B — Descriptive Writing Techniques for Imaginative Writing</h2>
 
-<p>Descriptive writing is often misunderstood by students. It is <strong>not</strong> simply "writing a lot of adjectives." Masterful descriptive writing creates a vivid, immersive experience for the reader through <strong>carefully selected sensory detail</strong>, <strong>powerful imagery</strong>, <strong>varied sentence structures</strong>, and <strong>deliberate control of pace and focus</strong>. When done well, descriptive writing makes the reader feel as though they are standing in the scene. This module teaches you the techniques that transform bland description into writing that examiners reward with the highest marks.</p>
+<p>Strong descriptive technique is essential for all three Paper 2 Section B options (personal experience narrative, titled story, or image-prompted story). Descriptive writing is often misunderstood by students. It is <strong>not</strong> simply "writing a lot of adjectives." Masterful descriptive technique creates a vivid, immersive experience for the reader through <strong>carefully selected sensory detail</strong>, <strong>powerful imagery</strong>, <strong>varied sentence structures</strong>, and <strong>deliberate control of pace and focus</strong>. When done well, description makes the reader feel as though they are standing in the scene. This module teaches you the techniques that transform bland description into writing that examiners reward with the highest marks.</p>
 
 <div class="key-term"><strong>Key Term: Descriptive Writing</strong> — Writing that focuses on creating a vivid picture through sensory detail, imagery, and atmosphere. Unlike narrative writing, descriptive writing does not need a plot or sequence of events — its purpose is to immerse the reader in a moment, place, or experience. The focus is on the quality of the writing itself.</div>
 
@@ -1927,25 +1917,25 @@ The lone and level sands stretch far away."</p>
     content: `
 <h2>Paper 2 Exam Technique — Performing Under Pressure</h2>
 
-<p>Paper 2 is shorter than Paper 1 — 90 minutes instead of 135 — but the time pressure is, if anything, greater. You have 70 marks to earn in 90 minutes, compared to 100 marks in 135 minutes for Paper 1. This means every minute matters, and strategic time management is the difference between a good performance and a great one. This module consolidates everything you have learned about Paper 2 and prepares you for exam-day success.</p>
+<p>Paper 2 is shorter than Paper 1 — 90 minutes instead of 135 — but the time pressure is, if anything, greater. You have 60 marks to earn in 90 minutes, compared to 90 marks in 135 minutes for Paper 1. This means every minute matters, and strategic time management is the difference between a good performance and a great one. This module consolidates everything you have learned about Paper 2 and prepares you for exam-day success.</p>
 
-<div class="key-term"><strong>Key Term: Time-per-Mark Ratio</strong> — A useful way to manage exam time. For Paper 2, you have approximately 1.3 minutes per mark (90 minutes ÷ 70 marks). For a 30-mark reading section, that means roughly 39 minutes. For a 40-mark writing section, roughly 51 minutes. These are ideal targets — adjust slightly to include reading and planning time.</div>
+<div class="key-term"><strong>Key Term: Time-per-Mark Ratio</strong> — A useful way to manage exam time. For Paper 2, you have 1.5 minutes per mark (90 minutes ÷ 60 marks). For each 30-mark section, that means roughly 45 minutes. These are ideal targets — adjust slightly to include reading and planning time.</div>
 
 <h3>Paper 2 Timing Plan (Refined)</h3>
 <ol>
-  <li><strong>0–7 min: Read and annotate the unseen text.</strong> If it is a poem, read it at least three times. If it is a prose extract, read it twice. Underline key language features, annotate structural shifts, note the tone and any changes. <strong>Do not skip this step.</strong> Investing 7 minutes in reading saves time in writing because you know the text thoroughly.</li>
-  <li><strong>7–37 min: Complete Section A — Reading (30 marks).</strong> You have 30 minutes for 30 marks — exactly one minute per mark. Write focused, analytical responses using PETAL paragraphs. Do not retell or summarise. Every sentence should contain analysis.</li>
-  <li><strong>37–42 min: Read Section B prompts and plan (5 min).</strong> Read all the prompts carefully. Choose the one that sparks the most ideas. Plan your response: decide on your opening, 3–4 key moments or images, and your ending. For narrative writing, plan the arc. For descriptive writing, plan the structure (spatial, temporal, sensory).</li>
-  <li><strong>42–82 min: Write Section B — Imaginative Writing (40 min).</strong> Follow your plan. Aim for 400–550 words of rich, polished writing. Vary your sentence structures. Use imagery and figurative language purposefully. Craft your ending deliberately.</li>
+  <li><strong>0–5 min: Read and annotate the anthology text question.</strong> Read the question carefully and annotate the relevant text. Underline key language features, annotate structural shifts, note the tone and any changes. <strong>Do not skip this step.</strong></li>
+  <li><strong>5–45 min: Complete Section A — Reading (30 marks).</strong> You have 40 minutes for 30 marks. Write one focused, extended analytical response using PETAL paragraphs. Do not retell or summarise. Every sentence should contain analysis.</li>
+  <li><strong>45–50 min: Read Section B prompts and plan (5 min).</strong> Read all three prompts carefully. Choose the one that sparks the most ideas. Plan your response: decide on your opening, 3–4 key moments or images, and your ending.</li>
+  <li><strong>50–82 min: Write Section B — Imaginative Writing (32 min).</strong> Follow your plan. Aim for 400–550 words of rich, polished writing. Vary your sentence structures. Use imagery and figurative language purposefully. Craft your ending deliberately.</li>
   <li><strong>82–90 min: Proofread (8 min).</strong> Read your Section B response carefully. Fix spelling errors, add missing punctuation, correct grammar. Check that your vocabulary is precise and varied. If time permits, also check Section A.</li>
 </ol>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Proofreading is worth more on Paper 2 than many students realise. Section B awards 16 marks for technical accuracy. If proofreading catches even 4–5 errors, that could be the difference between a Level 3 and a Level 4 in the accuracy band — potentially 3–4 marks gained from 8 minutes of careful checking. No other use of those 8 minutes would be as productive.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> Proofreading is worth more on Paper 2 than many students realise. Section B awards 12 marks for technical accuracy (AO5). If proofreading catches even 4–5 errors, that could be the difference between one accuracy band and the next — potentially 2–3 marks gained from 8 minutes of careful checking. No other use of those 8 minutes would be as productive.</div>
 
 <h3>Section A: Common Pitfalls and Solutions</h3>
 
 <p><strong>Pitfall 1: Running out of time on Section A.</strong></p>
-<p>Solution: Set a hard stop at 37 minutes. If you are not finished, write a brief concluding point and move on. Section B is worth more marks — sacrificing a few reading marks to protect your writing mark is the correct strategic choice.</p>
+<p>Solution: Set a hard stop at 45 minutes. If you are not finished, write a brief concluding point and move on. Section B is worth the same marks (30) — sacrificing a few reading marks to protect your writing mark is the correct strategic choice.</p>
 
 <p><strong>Pitfall 2: Paraphrasing instead of analysing.</strong></p>
 <p>Solution: After every sentence you write, ask: "Am I explaining how a technique works, or am I just saying what happens?" If it is the latter, rewrite it. Every sentence should contain analysis of language, structure, or form.</p>
@@ -1972,7 +1962,7 @@ The lone and level sands stretch far away."</p>
 <h3>Week 1: Skills Consolidation</h3>
 <ul>
   <li><strong>Day 1–2:</strong> Practise one full Section A response under timed conditions (30 minutes). Mark it against the assessment criteria. Identify your weakest skill area.</li>
-  <li><strong>Day 3–4:</strong> Write two Section B responses — one narrative, one descriptive — each in 40 minutes. Focus on openings and endings.</li>
+  <li><strong>Day 3–4:</strong> Write two Section B responses — one personal experience narrative and one titled story — each in 35 minutes. Focus on openings and endings.</li>
   <li><strong>Day 5:</strong> Complete a full Paper 2 mock under exam conditions (90 minutes, no interruptions).</li>
   <li><strong>Day 6–7:</strong> Review your mock. Identify 3 specific areas for improvement. Read model answers for those areas.</li>
 </ul>
@@ -1990,9 +1980,9 @@ The lone and level sands stretch far away."</p>
 
 <h3>Quick Reference: Paper 2 Mark Allocation</h3>
 <ul>
-  <li><strong>Section A (Reading):</strong> 30 marks — AO1 and AO2</li>
-  <li><strong>Section B (Writing):</strong> 40 marks — 24 marks AO3 (content and organisation) + 16 marks AO4 (technical accuracy)</li>
-  <li><strong>Total:</strong> 70 marks = 40% of qualification</li>
+  <li><strong>Section A (Reading):</strong> 30 marks — AO1 (12 marks) + AO2 (18 marks)</li>
+  <li><strong>Section B (Writing):</strong> 30 marks — AO4 (18 marks, effective communication) + AO5 (12 marks, technical accuracy)</li>
+  <li><strong>Total:</strong> 60 marks = 40% of qualification</li>
 </ul>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Neglecting Paper 2 revision because it is "only" 40% of the grade. Remember: a student who scores 90% on Paper 1 but 50% on Paper 2 will end up with a lower overall grade than a student who scores 75% on both. Consistent performance across both papers is the safest route to your target grade.</div>
@@ -2000,7 +1990,7 @@ The lone and level sands stretch far away."</p>
 <h3>Mindset on Exam Day</h3>
 <p>Finally, remember these principles when you sit down in the exam hall:</p>
 <ol>
-  <li><strong>Read slowly.</strong> The unseen text deserves your full attention. Rushing the reading is the most common source of misinterpretation.</li>
+  <li><strong>Read slowly.</strong> The text and question deserve your full attention. Rushing the reading is the most common source of misinterpretation.</li>
   <li><strong>Plan deliberately.</strong> Five minutes of planning saves twenty minutes of unfocused writing.</li>
   <li><strong>Write with precision.</strong> Every word should earn its place. Cut filler, cut repetition, cut vague adjectives.</li>
   <li><strong>Proofread rigorously.</strong> Technical accuracy marks are the easiest marks on the paper — you just have to catch your own errors.</li>
@@ -2014,23 +2004,23 @@ The lone and level sands stretch far away."</p>
         options: [
           '0.5 minutes per mark',
           '1 minute per mark',
-          '1.3 minutes per mark',
+          '1.5 minutes per mark',
           '2 minutes per mark',
         ],
         correct: 2,
-        explanation: 'Paper 2 gives you approximately 1.3 minutes per mark (90 minutes ÷ 70 marks). This ratio helps with time management — for a 30-mark section, you should spend roughly 39 minutes; for a 40-mark section, roughly 51 minutes, adjusted for reading and planning.',
+        explanation: 'Paper 2 gives you 1.5 minutes per mark (90 minutes ÷ 60 marks). This ratio helps with time management — for each 30-mark section, you should spend roughly 45 minutes, adjusted for reading and planning.',
       },
       {
         id: 'igcse-a-m14-q2',
         question: 'If you are running out of time, should you sacrifice Section A or Section B marks?',
         options: [
-          'Section A — it is worth fewer marks (30 vs 40)',
+          'Section A — protect your writing time',
           'Section B — creative writing is easier to rush',
           'Neither — write faster on both',
           'Both equally — skip one question from each section',
         ],
         correct: 0,
-        explanation: 'If time is tight, set a hard stop on Section A and protect Section B. Section B is worth 40 marks (10 more than Section A), making it the more valuable section. Sacrificing a few reading marks to ensure a complete, polished writing response is the correct strategic choice.',
+        explanation: 'If time is tight, set a hard stop on Section A and protect Section B. Both sections are worth 30 marks, but a complete, polished writing response is more likely to score well than a rushed one. Sacrificing a few reading marks to ensure a complete writing response is the correct strategic choice.',
       },
       {
         id: 'igcse-a-m14-q3',
@@ -2046,15 +2036,15 @@ The lone and level sands stretch far away."</p>
       },
       {
         id: 'igcse-a-m14-q4',
-        question: 'How many marks are awarded for technical accuracy in Section B?',
+        question: 'How many marks are awarded for technical accuracy (AO5) in Paper 2 Section B?',
         options: [
           '8 marks',
           '12 marks',
           '16 marks',
-          '24 marks',
+          '18 marks',
         ],
-        correct: 2,
-        explanation: '16 of the 40 marks in Section B are for technical accuracy (AO4): spelling, punctuation, grammar, and sentence variety. This is why proofreading is so important — catching 4-5 errors in the final minutes could gain 3-4 marks, making it the most productive use of checking time.',
+        correct: 1,
+        explanation: '12 of the 30 marks in Section B are for technical accuracy (AO5): spelling, punctuation, grammar, and sentence variety. This is why proofreading is so important — catching 4-5 errors in the final minutes could gain 2-3 marks, making it the most productive use of checking time.',
       },
       {
         id: 'igcse-a-m14-q5',
