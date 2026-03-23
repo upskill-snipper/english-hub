@@ -1,7 +1,7 @@
 'use client'
 
 import { usePathname } from 'next/navigation'
-import { BookOpen, GraduationCap, ArrowRight, Layers, Pencil, FileText } from 'lucide-react'
+import { BookOpen, GraduationCap, ArrowRight, Layers, Pencil, FileText, Globe } from 'lucide-react'
 import { useBoardStore, useBoardWithHydration, type ExamBoard } from '@/store/board-store'
 import { Badge } from '@/components/ui/badge'
 import { cn } from '@/lib/utils'
@@ -38,6 +38,14 @@ const boards = [
     title: 'OCR',
     subtitle: 'GCSE English Language & Literature',
     description: 'OCR-specific practice questions and revision materials, plus KS3 foundations.',
+  },
+  {
+    id: 'CAIE' as ExamBoard,
+    icon: Globe,
+    color: 'bg-purple-500',
+    title: 'CAIE',
+    subtitle: 'Cambridge IGCSE Literature',
+    description: 'Cambridge IGCSE Literature courses covering poetry, prose, and drama (0475/0992).',
   },
   {
     id: 'WJEC' as ExamBoard,

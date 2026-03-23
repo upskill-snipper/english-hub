@@ -122,11 +122,11 @@ export default function AssignmentsListingPage() {
         </div>
 
         <Tabs value={tab} onValueChange={(v) => v && setTab(v)}>
-          <TabsList>
-            <TabsTrigger value="active">Active</TabsTrigger>
-            <TabsTrigger value="draft">Drafts</TabsTrigger>
-            <TabsTrigger value="closed">Closed</TabsTrigger>
-            <TabsTrigger value="all">All</TabsTrigger>
+          <TabsList className="bg-transparent gap-1.5 p-0">
+            <TabsTrigger value="active" className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40">Active</TabsTrigger>
+            <TabsTrigger value="draft" className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40">Drafts</TabsTrigger>
+            <TabsTrigger value="closed" className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40">Closed</TabsTrigger>
+            <TabsTrigger value="all" className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40">All</TabsTrigger>
           </TabsList>
         </Tabs>
       </div>

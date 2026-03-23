@@ -36,7 +36,6 @@ import { useBoardStore } from '@/store/board-store'
 import { useAuthStore } from '@/store/auth-store'
 import {
   getGuideByBoard,
-  getAllGuides,
   terminologyList,
   grade9Strategy,
   contextPeriods,

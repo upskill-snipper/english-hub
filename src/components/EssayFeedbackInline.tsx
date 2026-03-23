@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect, useRef } from 'react'
 import {
   Send,
   Loader2,
@@ -55,6 +55,11 @@ export interface EssayFeedbackInlineProps {
    * Useful when the student has already typed an answer in an existing textarea.
    */
   existingAnswer?: string
+  /**
+   * If true, automatically submits the essay for feedback on mount (no collapsible wrapper).
+   * Renders feedback results directly without requiring user to expand/click.
+   */
+  autoSubmit?: boolean
   /** Additional className for the outer wrapper */
   className?: string
 }
@@ -103,6 +108,7 @@ export default function EssayFeedbackInline({
   questionType,
   questionText,
   existingAnswer,
+  autoSubmit = false,
   className,
 }: EssayFeedbackInlineProps) {
   const [open, setOpen] = useState(false)
@@ -111,6 +117,7 @@ export default function EssayFeedbackInline({
   const [error, setError] = useState<string | null>(null)
   const [feedback, setFeedback] = useState<FeedbackData | null>(null)
   const [remaining, setRemaining] = useState<number | null>(null)
+  const autoSubmitTriggered = useRef(false)
 
   // Use existingAnswer if provided, otherwise use local textarea value
   const essayText = existingAnswer ?? essay
@@ -162,16 +169,91 @@ export default function EssayFeedbackInline({
     }
   }
 
+  // Auto-submit on mount when autoSubmit is true and we have enough words
+  useEffect(() => {
+    if (autoSubmit && !autoSubmitTriggered.current && wordCount >= 100) {
+      autoSubmitTriggered.current = true
+      handleSubmit()
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [autoSubmit])
+
   function handleReset() {
     setFeedback(null)
     setError(null)
+    autoSubmitTriggered.current = false
     if (!existingAnswer) {
       setEssay('')
     }
   }
 
+  function handleRetry() {
+    setError(null)
+    handleSubmit()
+  }
+
   const canSubmit = wordCount >= 100 && !submitting
 
+  // ── Auto-submit mode: render directly without collapsible wrapper ──
+  if (autoSubmit) {
+    return (
+      <Card className={className}>
+        <CardHeader className="border-b">
+          <CardTitle className="flex items-center gap-2 text-sm">
+            <PenLine className="h-4 w-4 text-primary" />
+            AI Feedback
+            {remaining !== null && (
+              <span className="ml-1 text-xs font-normal text-muted-foreground">
+                ({remaining} review{remaining !== 1 ? 's' : ''} remaining today)
+              </span>
+            )}
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          {submitting && (
+            <div className="flex items-center gap-3 py-6">
+              <Loader2 className="h-5 w-5 animate-spin text-primary" />
+              <div>
+                <p className="text-sm font-medium text-foreground">Analysing your answer...</p>
+                <p className="text-xs text-muted-foreground">This usually takes a few seconds.</p>
+              </div>
+            </div>
+          )}
+
+          {error && (
+            <div className="space-y-3 py-2">
+              <div className="flex items-start gap-2 rounded-lg border border-destructive/30 bg-destructive/5 p-3 text-sm text-destructive">
+                <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
+                {error}
+              </div>
+              <Button size="sm" variant="secondary" onClick={handleRetry} disabled={submitting}>
+                <RefreshCw className="h-3.5 w-3.5" />
+                Retry
+              </Button>
+            </div>
+          )}
+
+          {feedback && (
+            <InlineFeedbackResults
+              feedback={feedback}
+              board={board}
+              paper={paper}
+              questionType={questionType}
+              onReset={handleReset}
+            />
+          )}
+
+          {!submitting && !error && !feedback && wordCount < 100 && (
+            <p className="py-4 text-sm text-muted-foreground">
+              Your answer needs at least 100 words for AI feedback ({wordCount} word{wordCount !== 1 ? 's' : ''} written).
+            </p>
+          )}
+        </CardContent>
+      </Card>
+    )
+  }
+
+  // ── Standard collapsible mode (standalone usage) ──
   return (
     <Collapsible open={open} onOpenChange={setOpen} className={className}>
       <CollapsibleTrigger

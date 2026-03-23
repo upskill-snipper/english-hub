@@ -143,8 +143,8 @@ const SCHOOL_FAQS = [
     a: 'Yes. The teacher dashboard shows completion rates, quiz scores, time spent, and weak areas for every student. You can filter by class, year group, or individual student.',
   },
   {
-    q: 'How does pricing work?',
-    a: 'We offer tailored pricing based on the size of your school or trust. Get in touch via the form below and we\'ll put together a package that works for your budget.',
+    q: 'How do we get started?',
+    a: 'Simply fill in the contact form below and we\'ll arrange a personalised demo for your department. From there, we can set up a free 30-day pilot so you can see the impact first-hand before making any decisions.',
   },
   {
     q: 'Is the platform GDPR compliant?',
@@ -562,7 +562,7 @@ export default function ForSchoolsPage() {
               Get in Touch
             </h2>
             <p className="mt-4 text-muted-foreground max-w-lg mx-auto text-body-lg">
-              Tell us about your school and we&rsquo;ll arrange a free demo, a 30-day pilot, and tailored pricing for your department or trust.
+              Tell us about your school and we&rsquo;ll arrange a free demo and a 30-day pilot for your department or trust.
             </p>
           </div>
 

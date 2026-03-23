@@ -2,7 +2,7 @@ import { create } from 'zustand'
 import { persist, createJSONStorage } from 'zustand/middleware'
 import { useShallow } from 'zustand/react/shallow'
 
-export type ExamBoard = 'AQA' | 'Edexcel' | 'OCR' | 'WJEC' | 'KS3'
+export type ExamBoard = 'AQA' | 'Edexcel' | 'CAIE' | 'OCR' | 'WJEC' | 'KS3'
 
 interface BoardState {
   selectedBoard: ExamBoard | null  // null = not yet chosen

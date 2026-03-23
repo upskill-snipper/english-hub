@@ -1459,15 +1459,15 @@ export default function LessonDetailPage() {
               {/* ── WORKSHEETS & MODEL ANSWERS TABS ────────────────── */}
               <Tabs defaultValue="worksheet" className="print-section">
                 <div className="flex items-center justify-between mb-4 no-print" data-print-hide>
-                  <TabsList>
-                    <TabsTrigger value="worksheet">
+                  <TabsList className="bg-transparent gap-1.5 p-0">
+                    <TabsTrigger value="worksheet" className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40">
                       <FileText className="h-3.5 w-3.5 mr-1.5" />
                       Worksheet
                       {totalMarks > 0 && (
                         <Badge variant="secondary" className="ml-2 text-[10px]">{totalMarks} marks</Badge>
                       )}
                     </TabsTrigger>
-                    <TabsTrigger value="answers">
+                    <TabsTrigger value="answers" className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40">
                       <GraduationCap className="h-3.5 w-3.5 mr-1.5" />
                       Model Answers
                     </TabsTrigger>

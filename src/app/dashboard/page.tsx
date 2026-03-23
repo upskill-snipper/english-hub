@@ -440,14 +440,14 @@ export default function DashboardPage() {
           <section className="mb-6">
             <Tabs defaultValue="continue">
               <div className="mb-3 flex items-center justify-between">
-                <TabsList>
-                  <TabsTrigger value="continue">
+                <TabsList className="bg-transparent gap-1.5 p-0">
+                  <TabsTrigger value="continue" className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40">
                     Continue Learning
                     {activeCourses.length > 0 && (
                       <Badge variant="secondary" className="ml-1.5">{activeCourses.length}</Badge>
                     )}
                   </TabsTrigger>
-                  <TabsTrigger value="completed">
+                  <TabsTrigger value="completed" className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40">
                     Completed
                     {completedCourses.length > 0 && (
                       <Badge variant="secondary" className="ml-1.5">{completedCourses.length}</Badge>

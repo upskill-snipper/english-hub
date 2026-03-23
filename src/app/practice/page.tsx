@@ -84,7 +84,6 @@ export default function PracticePage() {
   // Question state
   const [currentQuestion, setCurrentQuestion] = useState<PracticeQuestion | null>(null)
   const [answer, setAnswer] = useState('')
-  const [showModel, setShowModel] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [activeGradeTab, setActiveGradeTab] = useState<string>('Grade 6-7')
   const [rating, setRating] = useState(0)
@@ -141,7 +140,6 @@ export default function PracticePage() {
     const idx = Math.floor(Math.random() * filtered.length)
     setCurrentQuestion(filtered[idx])
     setAnswer('')
-    setShowModel(false)
     setSubmitted(false)
     setRating(0)
     setHoverRating(0)
@@ -445,7 +443,7 @@ export default function PracticePage() {
             {/* ── Post-submission: AI Feedback + Model Answers ──────── */}
             {submitted && (
               <div className="space-y-6">
-                {/* AI Essay Feedback (inline) */}
+                {/* AI Feedback — auto-submits on render */}
                 {user && currentQuestion && (
                   <EssayFeedbackInline
                     board={currentQuestion.board}
@@ -453,6 +451,7 @@ export default function PracticePage() {
                     questionType={currentQuestion.questionType || currentQuestion.type || 'General'}
                     questionText={currentQuestion.question}
                     existingAnswer={answer}
+                    autoSubmit
                   />
                 )}
 

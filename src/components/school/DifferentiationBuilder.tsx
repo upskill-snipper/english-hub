@@ -655,11 +655,11 @@ export function DifferentiationBuilder() {
           </div>
 
           <Tabs value={previewTab} onValueChange={setPreviewTab}>
-            <TabsList>
-              <TabsTrigger value="side-by-side">Side by Side</TabsTrigger>
-              <TabsTrigger value="foundation">Foundation</TabsTrigger>
-              <TabsTrigger value="core">Core</TabsTrigger>
-              <TabsTrigger value="extension">Extension</TabsTrigger>
+            <TabsList className="bg-transparent gap-1.5 p-0">
+              <TabsTrigger value="side-by-side" className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40">Side by Side</TabsTrigger>
+              <TabsTrigger value="foundation" className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40">Foundation</TabsTrigger>
+              <TabsTrigger value="core" className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40">Core</TabsTrigger>
+              <TabsTrigger value="extension" className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40">Extension</TabsTrigger>
             </TabsList>
 
             <TabsContent value="side-by-side">

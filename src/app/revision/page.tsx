@@ -14,7 +14,6 @@ import {
   ArrowRight,
   Trophy,
   RefreshCw,
-  Filter,
   Flame,
   Clock,
   Calendar,
@@ -59,13 +58,6 @@ import {
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select'
 import { Progress } from '@/components/ui/progress'
 import { Input } from '@/components/ui/input'
 
@@ -838,40 +830,36 @@ export default function RevisionPage() {
                 </p>
               </div>
 
-              <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-                {/* Search */}
-                <div className="relative">
-                  <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-                  <Input
-                    type="text"
-                    value={techSearch}
-                    onChange={(e) => setTechSearch(e.target.value)}
-                    placeholder="Search techniques..."
-                    aria-label="Search techniques"
-                    className="pl-10 text-sm sm:w-64"
-                  />
-                </div>
-                {/* Category filter */}
-                <Select
-                  value={techCategory}
-                  onValueChange={(v) => v && setTechCategory(v)}
-                >
-                  <SelectTrigger
-                    className="w-full sm:w-auto"
-                    aria-label="Filter by category"
-                  >
-                    <Filter className="h-4 w-4 text-muted-foreground" />
-                    <SelectValue placeholder="Category" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {techCategories.map((c) => (
-                      <SelectItem key={c} value={c}>
-                        {c}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+              {/* Search */}
+              <div className="relative">
+                <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+                <Input
+                  type="text"
+                  value={techSearch}
+                  onChange={(e) => setTechSearch(e.target.value)}
+                  placeholder="Search techniques..."
+                  aria-label="Search techniques"
+                  className="pl-10 text-sm sm:w-64"
+                />
               </div>
+            </div>
+
+            {/* Category filter pills */}
+            <div className="mb-4 flex flex-wrap gap-2">
+              {techCategories.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setTechCategory(cat)}
+                  className={cn(
+                    'rounded-full px-4 py-1.5 text-sm font-medium transition-all',
+                    techCategory === cat
+                      ? 'bg-primary text-primary-foreground shadow-sm'
+                      : 'bg-card text-muted-foreground border border-border hover:bg-card/80 hover:text-foreground'
+                  )}
+                >
+                  {cat}
+                </button>
+              ))}
             </div>
 
             {/* Terminology guide link */}

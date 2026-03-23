@@ -36,12 +36,8 @@ const faqs = [
     a: 'Your subscription gives you full access to the Lesson Builder, Student Analytics Dashboard, AI Essay Marking, Class Management tools, Predicted Grades, and Printable Resources. All features are included at no extra cost.',
   },
   {
-    q: 'Is there a free trial?',
-    a: 'Yes. Every teacher gets their first month completely free with no commitment. You can cancel at any time during the trial and you will not be charged.',
-  },
-  {
-    q: 'How does billing work after the trial?',
-    a: 'After your free trial month, you will be billed £9.99 per month. You can cancel at any time from your account settings and retain access until the end of your current billing period.',
+    q: 'How does billing work?',
+    a: 'You will be billed £9.99 per month from the date you subscribe. You can cancel at any time from your account settings and retain access until the end of your current billing period.',
   },
   {
     q: 'Which exam boards do you cover?',
@@ -134,7 +130,7 @@ export default function ForTeachersPage() {
               className="text-base px-8 h-12 shadow-lg shadow-primary/20"
               render={<Link href="/auth/register" />}
             >
-              Start Free Trial
+              Get Started &mdash; &pound;9.99/month
             </Button>
             <Button variant="secondary" size="lg" className="text-base px-8 h-12" render={<Link href="/courses" />}>
               Browse Courses
@@ -402,7 +398,7 @@ export default function ForTeachersPage() {
 
           <Card className="p-8 sm:p-10 border-primary/30 bg-primary/[0.03] relative overflow-hidden">
             <div className="absolute top-0 right-0 bg-primary text-primary-foreground text-xs font-semibold px-4 py-1.5 rounded-bl-lg">
-              First Month Free
+              All Features Included
             </div>
 
             <div className="mb-6">
@@ -437,11 +433,11 @@ export default function ForTeachersPage() {
               className="text-base px-10 h-12 shadow-lg shadow-primary/20 w-full sm:w-auto"
               render={<Link href="/auth/register" />}
             >
-              Start Free Trial
+              Subscribe Now
             </Button>
 
             <p className="text-xs text-muted-foreground mt-4">
-              No credit card required for your free trial month.
+              Cancel any time from your account settings.
             </p>
           </Card>
         </div>
@@ -475,7 +471,7 @@ export default function ForTeachersPage() {
           </h2>
           <p className="text-muted-foreground text-body-lg max-w-xl mx-auto mb-10 leading-relaxed">
             Join hundreds of English teachers who save hours every week with The English Hub.
-            Start your free trial today.
+            Subscribe today for just &pound;9.99/month.
           </p>
           <Button
             variant="default"
@@ -483,7 +479,7 @@ export default function ForTeachersPage() {
             className="text-base px-10 h-12 shadow-lg shadow-primary/20"
             render={<Link href="/auth/register" />}
           >
-            Start Free Trial
+            Subscribe Now
           </Button>
         </div>
       </section>

@@ -23,6 +23,10 @@ const BOARD_INFO: Record<ExamBoard, { subtitle: string; color: string }> = {
     subtitle: 'GCSE & IGCSE English',
     color: 'bg-violet-500',
   },
+  CAIE: {
+    subtitle: 'Cambridge IGCSE Literature',
+    color: 'bg-purple-500',
+  },
   OCR: {
     subtitle: 'GCSE English Language & Literature',
     color: 'bg-orange-500',

@@ -1001,12 +1001,12 @@ function SettingsContent() {
       </div>
 
       <Tabs defaultValue="profile">
-        <TabsList>
-          <TabsTrigger value="profile">Profile</TabsTrigger>
-          <TabsTrigger value="password">Password</TabsTrigger>
-          <TabsTrigger value="communication">Communication</TabsTrigger>
-          <TabsTrigger value="subscription">Subscription</TabsTrigger>
-          <TabsTrigger value="data-privacy">Data &amp; Privacy</TabsTrigger>
+        <TabsList className="bg-transparent gap-1.5 p-0 flex-wrap">
+          <TabsTrigger value="profile" className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40">Profile</TabsTrigger>
+          <TabsTrigger value="password" className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40">Password</TabsTrigger>
+          <TabsTrigger value="communication" className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40">Communication</TabsTrigger>
+          <TabsTrigger value="subscription" className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40">Subscription</TabsTrigger>
+          <TabsTrigger value="data-privacy" className="rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40">Data &amp; Privacy</TabsTrigger>
         </TabsList>
 
         <TabsContent value="profile">
