@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
-import { useExamBoard } from "@/contexts/ExamBoardContext";
+import { useExamBoardSafe } from "@/contexts/ExamBoardContext";
 
 /* ─── Constants ──────────────────────────────────────────────── */
 
@@ -34,7 +34,8 @@ function countWords(text: string): number {
 /* ─── Page ───────────────────────────────────────────────────── */
 
 export default function NewEssayPage() {
-  const { selectedBoard: contextBoard } = useExamBoard();
+  const examBoardCtx = useExamBoardSafe();
+  const contextBoard = examBoardCtx?.selectedBoard ?? null;
 
   const [title, setTitle] = useState("");
   const [subject, setSubject] = useState<string>("");
