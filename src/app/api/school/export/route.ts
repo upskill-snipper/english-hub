@@ -70,7 +70,7 @@ export async function GET(request: NextRequest) {
 }
 
 export async function POST(request: NextRequest) {
-  let body: { class_id?: string; format?: string }
+  let body: { class_id?: string; format?: string; date_range?: string }
   try {
     body = await request.json()
   } catch {
@@ -79,7 +79,10 @@ export async function POST(request: NextRequest) {
   return handleExport(request, body)
 }
 
-async function handleExport(request: NextRequest, params: { class_id?: string; format?: string }) {
+const SUPPORTED_FORMATS = ['csv', 'sims', 'alps', 'json'] as const
+type ExportFormat = typeof SUPPORTED_FORMATS[number]
+
+async function handleExport(request: NextRequest, params: { class_id?: string; format?: string; date_range?: string }) {
   try {
     const ip = getClientIp(request.headers)
     const rl = await rateLimit(`school-export:${ip}`, { limit: 5, windowSeconds: 60 })
@@ -101,10 +104,14 @@ async function handleExport(request: NextRequest, params: { class_id?: string; f
       return NextResponse.json({ error: 'Forbidden: requires admin or head of department role' }, { status: 403 })
     }
 
-    const { class_id, format = 'csv' } = params
+    const { class_id, format = 'csv', date_range } = params
+    const exportFormat = format as ExportFormat
 
-    if (format !== 'csv') {
-      return NextResponse.json({ error: 'Only CSV format is currently supported' }, { status: 422 })
+    if (!SUPPORTED_FORMATS.includes(exportFormat)) {
+      return NextResponse.json(
+        { error: `Unsupported format. Supported: ${SUPPORTED_FORMATS.join(', ')}` },
+        { status: 422 }
+      )
     }
 
     const admin = createServiceRoleClient()
@@ -154,6 +161,9 @@ async function handleExport(request: NextRequest, params: { class_id?: string; f
     // Total modules available from static course data
     const totalModulesAvailable = allCourses.reduce((sum, c) => sum + c.moduleList.length, 0)
 
+    // Compute date range filter
+    const dateFilter = computeDateFilter(date_range)
+
     // Fetch all data in parallel, paginating to avoid the default 1000-row limit
     const [profiles, progressRows, practiceRows, certificateRows] = await Promise.all([
       fetchAllRows<{ id: string; email: string; full_name: string; year_group: string }>(
@@ -162,15 +172,27 @@ async function handleExport(request: NextRequest, params: { class_id?: string; f
       ),
       fetchAllRows<{ user_id: string; quiz_score: number | null; completed: boolean; time_spent_seconds: number; completed_at: string | null }>(
         admin, 'module_progress', 'user_id, quiz_score, completed, time_spent_seconds, completed_at',
-        (q) => q.in('user_id', studentIds)
+        (q) => {
+          let filtered = q.in('user_id', studentIds)
+          if (dateFilter) filtered = filtered.gte('completed_at', dateFilter)
+          return filtered
+        }
       ),
       fetchAllRows<{ user_id: string }>(
         admin, 'practice_sessions', 'user_id',
-        (q) => q.in('user_id', studentIds)
+        (q) => {
+          let filtered = q.in('user_id', studentIds)
+          if (dateFilter) filtered = filtered.gte('created_at', dateFilter)
+          return filtered
+        }
       ),
       fetchAllRows<{ user_id: string }>(
         admin, 'certificates', 'user_id',
-        (q) => q.in('user_id', studentIds)
+        (q) => {
+          let filtered = q.in('user_id', studentIds)
+          if (dateFilter) filtered = filtered.gte('issued_at', dateFilter)
+          return filtered
+        }
       ),
     ])
 
@@ -216,23 +238,8 @@ async function handleExport(request: NextRequest, params: { class_id?: string; f
       certsByStudent.set(c.user_id, (certsByStudent.get(c.user_id) || 0) + 1)
     }
 
-    // Build CSV with spec-required headers
-    const headers = [
-      'Name',
-      'Email',
-      'Year Group',
-      'Modules Completed',
-      'Total Modules',
-      'Completion %',
-      'Avg Score',
-      'Time Spent (hrs)',
-      'Practice Sessions',
-      'Certificates',
-      'Trajectory',
-      'Predicted Grade',
-    ]
-
-    const rows = profiles.map((profile) => {
+    // Build structured student data used by all formats
+    const studentData = profiles.map((profile) => {
       const progress = progressByStudent.get(profile.id)
       const practiceCount = practiceByStudent.get(profile.id) || 0
       const certCount = certsByStudent.get(profile.id) || 0
@@ -262,33 +269,189 @@ async function handleExport(request: NextRequest, params: { class_id?: string; f
 
       const grade = predictGrade(avgScore)
 
-      return [
-        escapeCsvField(profile.full_name),
-        escapeCsvField(profile.email),
-        escapeCsvField(profile.year_group),
-        modulesCompleted,
-        totalModulesAvailable,
-        completionPct,
-        avgScore ?? '',
-        timeSpentHours,
-        practiceCount,
-        certCount,
+      return {
+        name: profile.full_name,
+        email: profile.email,
+        year_group: profile.year_group,
+        modules_completed: modulesCompleted,
+        total_modules: totalModulesAvailable,
+        completion_pct: completionPct,
+        avg_score: avgScore,
+        time_spent_hours: timeSpentHours,
+        practice_sessions: practiceCount,
+        certificates: certCount,
         trajectory,
-        escapeCsvField(grade),
-      ].join(',')
+        predicted_grade: grade,
+      }
     })
 
-    const csv = [headers.join(','), ...rows].join('\n')
+    const today = new Date().toISOString().split('T')[0]
+
+    // ── JSON format ──────────────────────────────────────────────
+    if (exportFormat === 'json') {
+      return NextResponse.json(
+        { exported_at: today, date_range: date_range || 'all-time', students: studentData },
+        {
+          status: 200,
+          headers: {
+            'Content-Disposition': `attachment; filename="school-export-${today}.json"`,
+          },
+        }
+      )
+    }
+
+    // ── SIMS format ──────────────────────────────────────────────
+    if (exportFormat === 'sims') {
+      const simsHeaders = [
+        'Forename', 'Surname', 'Email', 'Year Group', 'Subject',
+        'Assessment Name', 'Assessment Date', 'Grade', 'Score', 'Comment',
+      ]
+      const simsRows = studentData.map((s) => {
+        const nameParts = splitName(s.name)
+        return [
+          escapeCsvField(nameParts.forename),
+          escapeCsvField(nameParts.surname),
+          escapeCsvField(s.email),
+          escapeCsvField(s.year_group),
+          'English',
+          'Platform Progress Assessment',
+          formatDateDDMMYYYY(new Date()),
+          escapeCsvField(s.predicted_grade),
+          s.avg_score ?? '',
+          escapeCsvField(`Completion: ${s.completion_pct}% | Trajectory: ${s.trajectory}`),
+        ].join(',')
+      })
+      const simsCsv = BOM + [simsHeaders.join(','), ...simsRows].join('\r\n')
+      return new NextResponse(simsCsv, {
+        status: 200,
+        headers: {
+          'Content-Type': 'text/csv; charset=utf-8',
+          'Content-Disposition': `attachment; filename="sims-export-english-${today}.csv"`,
+        },
+      })
+    }
+
+    // ── ALPS format ──────────────────────────────────────────────
+    if (exportFormat === 'alps') {
+      const alpsHeaders = [
+        'Candidate Name', 'Candidate Number', 'Subject', 'Qualification',
+        'Prior Attainment', 'Current Grade', 'ALPS Score', 'Value Added', 'Teaching Group',
+      ]
+      const alpsRows = studentData.map((s) => {
+        const alpsScore = computeALPSScore(s.avg_score ?? 0, s.completion_pct)
+        return [
+          escapeCsvField(s.name),
+          '',
+          'English',
+          escapeCsvField(inferQualification(s.year_group)),
+          '',
+          escapeCsvField(s.predicted_grade),
+          alpsScore,
+          alpsScore <= 3 ? 'Positive' : alpsScore <= 5 ? 'Neutral' : 'Negative',
+          escapeCsvField(s.year_group),
+        ].join(',')
+      })
+      const alpsCsv = BOM + [alpsHeaders.join(','), ...alpsRows].join('\r\n')
+      return new NextResponse(alpsCsv, {
+        status: 200,
+        headers: {
+          'Content-Type': 'text/csv; charset=utf-8',
+          'Content-Disposition': `attachment; filename="alps-export-english-${today}.csv"`,
+        },
+      })
+    }
+
+    // ── Default CSV format ───────────────────────────────────────
+    const headers = [
+      'Name', 'Email', 'Year Group', 'Modules Completed', 'Total Modules',
+      'Completion %', 'Avg Score', 'Time Spent (hrs)', 'Practice Sessions',
+      'Certificates', 'Trajectory', 'Predicted Grade',
+    ]
+
+    const rows = studentData.map((s) =>
+      [
+        escapeCsvField(s.name),
+        escapeCsvField(s.email),
+        escapeCsvField(s.year_group),
+        s.modules_completed,
+        s.total_modules,
+        s.completion_pct,
+        s.avg_score ?? '',
+        s.time_spent_hours,
+        s.practice_sessions,
+        s.certificates,
+        s.trajectory,
+        escapeCsvField(s.predicted_grade),
+      ].join(',')
+    )
+
+    const csv = BOM + [headers.join(','), ...rows].join('\r\n')
 
     return new NextResponse(csv, {
       status: 200,
       headers: {
         'Content-Type': 'text/csv; charset=utf-8',
-        'Content-Disposition': `attachment; filename="school-export-${new Date().toISOString().split('T')[0]}.csv"`,
+        'Content-Disposition': `attachment; filename="school-export-${today}.csv"`,
       },
     })
   } catch (error) {
     console.error('Export error:', error)
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
   }
+}
+
+/* ── Helper functions ────────────────────────────────────────────────────────── */
+
+/** UTF-8 BOM for Excel compatibility */
+const BOM = '\uFEFF'
+
+/** Compute an ISO date string for the start of the requested date range. */
+function computeDateFilter(dateRange?: string): string | null {
+  if (!dateRange || dateRange === 'all-time') return null
+  const now = new Date()
+  if (dateRange === 'this-term') {
+    // Approximate UK school term: ~12 weeks back
+    const termStart = new Date(now.getTime() - 84 * 24 * 60 * 60 * 1000)
+    return termStart.toISOString()
+  }
+  if (dateRange === 'this-year') {
+    // UK academic year starts September 1
+    const year = now.getMonth() >= 8 ? now.getFullYear() : now.getFullYear() - 1
+    return new Date(year, 8, 1).toISOString()
+  }
+  return null
+}
+
+function splitName(fullName: string): { forename: string; surname: string } {
+  const parts = (fullName || '').trim().split(/\s+/)
+  if (parts.length <= 1) return { forename: fullName || '', surname: '' }
+  return { forename: parts[0], surname: parts.slice(1).join(' ') }
+}
+
+function formatDateDDMMYYYY(date: Date): string {
+  const day = String(date.getDate()).padStart(2, '0')
+  const month = String(date.getMonth() + 1).padStart(2, '0')
+  return `${day}/${month}/${date.getFullYear()}`
+}
+
+/** Simplified ALPS score (1-9, lower is better). */
+function computeALPSScore(avgScore: number, completionRate: number): number {
+  const combined = avgScore * 0.7 + completionRate * 0.3
+  if (combined >= 85) return 1
+  if (combined >= 75) return 2
+  if (combined >= 65) return 3
+  if (combined >= 55) return 4
+  if (combined >= 45) return 5
+  if (combined >= 35) return 6
+  if (combined >= 25) return 7
+  if (combined >= 15) return 8
+  return 9
+}
+
+/** Infer qualification level from year group string. */
+function inferQualification(yearGroup: string | null): string {
+  if (!yearGroup) return ''
+  if (yearGroup.includes('12') || yearGroup.includes('13')) return 'A Level'
+  if (yearGroup.includes('10') || yearGroup.includes('11')) return 'GCSE'
+  return 'KS3'
 }

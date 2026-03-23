@@ -14,7 +14,7 @@ export function WebsiteJsonLd() {
     },
     offers: {
       '@type': 'Offer',
-      price: '8.99',
+      price: '9.99',
       priceCurrency: 'GBP',
       availability: 'https://schema.org/InStock',
       priceValidUntil: '2027-01-01',
@@ -40,6 +40,28 @@ export function CourseJsonLd({ name, description, provider }: { name: string; de
       name: provider || 'The English Hub',
       url: 'https://theenglishhub.app',
     },
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  )
+}
+
+export function FAQPageJsonLd({ faqs }: { faqs: { question: string; answer: string }[] }) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
   }
 
   return (

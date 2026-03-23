@@ -25,6 +25,7 @@ import { cn, formatTime } from '@/lib/utils'
 import { getGuideByBoard } from '@/data/exam-guides'
 import Link from 'next/link'
 
+import EssayFeedbackInline from '@/components/EssayFeedbackInline'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -427,6 +428,17 @@ export default function PracticePage() {
                 className="resize-y text-base leading-relaxed"
               />
             </div>
+
+            {/* AI Essay Feedback (inline) */}
+            {user && currentQuestion && (
+              <EssayFeedbackInline
+                board={currentQuestion.board}
+                paper={currentQuestion.paper != null ? `Paper ${currentQuestion.paper}` : 'Paper 1'}
+                questionType={currentQuestion.questionType || currentQuestion.type || 'General'}
+                questionText={currentQuestion.question}
+                existingAnswer={answer}
+              />
+            )}
 
             {/* Show Model Answer button */}
             {!showModel && (

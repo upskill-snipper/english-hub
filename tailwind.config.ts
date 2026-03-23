@@ -144,6 +144,7 @@ const config: Config = {
         'scale-in': 'scaleIn 0.3s cubic-bezier(0.16,1,0.3,1)',
         'accordion-down': 'accordion-down 0.25s cubic-bezier(0.16,1,0.3,1)',
         'accordion-up': 'accordion-up 0.2s cubic-bezier(0.16,1,0.3,1)',
+        shake: 'shake 0.4s ease-in-out',
       },
       keyframes: {
         fadeIn: {
@@ -169,6 +170,13 @@ const config: Config = {
         'accordion-up': {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: '0' },
+        },
+        shake: {
+          '0%, 100%': { transform: 'translateX(0)' },
+          '20%': { transform: 'translateX(-6px)' },
+          '40%': { transform: 'translateX(6px)' },
+          '60%': { transform: 'translateX(-4px)' },
+          '80%': { transform: 'translateX(4px)' },
         },
       },
     },

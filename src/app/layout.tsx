@@ -9,6 +9,8 @@ import { Footer } from '@/components/layout/footer'
 import { BoardSidebar } from '@/components/layout/board-sidebar'
 import { BoardGate } from '@/components/layout/board-gate'
 import { WebsiteJsonLd } from '@/components/seo/json-ld'
+import { CookieConsent } from '@/components/cookie-consent'
+import { Analytics } from '@vercel/analytics/react'
 import './globals.css'
 
 const monaSans = localFont({
@@ -80,8 +82,34 @@ export default function RootLayout({
             </div>
             <Footer />
             <Toaster richColors position="bottom-right" />
+            <CookieConsent />
           </TooltipProvider>
         </SupabaseProvider>
+        <Analytics />
+        {process.env.NEXT_PUBLIC_GA4_ID && (
+          <Script
+            id="ga4-consent-check"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+                (function() {
+                  var consent = localStorage.getItem('cookie-consent');
+                  if (consent === 'all') {
+                    var s = document.createElement('script');
+                    s.src = 'https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA4_ID}';
+                    s.async = true;
+                    document.head.appendChild(s);
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    window.gtag = gtag;
+                    gtag('js', new Date());
+                    gtag('config', '${process.env.NEXT_PUBLIC_GA4_ID}');
+                  }
+                })();
+              `,
+            }}
+          />
+        )}
       </body>
     </html>
   )

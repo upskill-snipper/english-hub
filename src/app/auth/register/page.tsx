@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/client'
 import { useBoardStore } from '@/store/board-store'
-import { Mail, Lock, User, GraduationCap, BookOpen, Loader2, ArrowLeft, CheckCircle, Eye, EyeOff } from 'lucide-react'
+import { Mail, Lock, User, GraduationCap, BookOpen, Loader2, ArrowLeft, CheckCircle, Eye, EyeOff, Calendar } from 'lucide-react'
 import { PRICING_DISPLAY } from '@/constants/pricing'
 import { YEAR_GROUPS, EXAM_BOARDS } from '@/lib/utils'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card'
@@ -16,11 +16,31 @@ import { Alert, AlertDescription } from '@/components/ui/alert'
 export default function RegisterPage() {
   const selectedBoard = useBoardStore((s) => s.selectedBoard)
   const [fullName, setFullName] = useState('')
+  const [dobDay, setDobDay] = useState('')
+  const [dobMonth, setDobMonth] = useState('')
+  const [dobYear, setDobYear] = useState('')
+  const [parentGuardianEmail, setParentGuardianEmail] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
   const [yearGroup, setYearGroup] = useState('')
   const [examBoard, setExamBoard] = useState('')
+
+  const calculateAge = (day: string, month: string, year: string): number | null => {
+    if (!day || !month || !year) return null
+    const dob = new Date(parseInt(year), parseInt(month) - 1, parseInt(day))
+    const today = new Date()
+    let age = today.getFullYear() - dob.getFullYear()
+    const monthDiff = today.getMonth() - dob.getMonth()
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
+      age--
+    }
+    return age
+  }
+
+  const userAge = calculateAge(dobDay, dobMonth, dobYear)
+  const isUnder13 = userAge !== null && userAge < 13
+  const isUnder16 = userAge !== null && userAge >= 13 && userAge < 16
 
   useEffect(() => {
     if (selectedBoard && !examBoard) {
@@ -37,8 +57,18 @@ export default function RegisterPage() {
     e.preventDefault()
     setError(null)
 
-    if (!fullName || !email || !password || !confirmPassword) {
+    if (!fullName || !email || !password || !confirmPassword || !dobDay || !dobMonth || !dobYear) {
       setError('Please fill in all required fields.')
+      return
+    }
+
+    if (isUnder13) {
+      setError('You must be at least 13 years old to create an account.')
+      return
+    }
+
+    if (isUnder16 && !parentGuardianEmail) {
+      setError('Parent/Guardian email is required for users under 16.')
       return
     }
 
@@ -76,12 +106,15 @@ export default function RegisterPage() {
 
     // Upsert profile data
     if (data.user) {
+      const dateOfBirth = `${dobYear}-${dobMonth.padStart(2, '0')}-${dobDay.padStart(2, '0')}`
       const { error: profileError } = await supabase.from('profiles').upsert({
         id: data.user.id,
         email,
         full_name: fullName,
         year_group: yearGroup || null,
         exam_board: examBoard || null,
+        date_of_birth: dateOfBirth,
+        parent_guardian_email: parentGuardianEmail || null,
       })
 
       if (profileError) {
@@ -168,6 +201,67 @@ export default function RegisterPage() {
               </div>
 
               <div className="space-y-1.5">
+                <Label>
+                  Date of birth <span className="text-destructive">*</span>
+                </Label>
+                <div className="relative">
+                  <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/50" />
+                  <div className="flex gap-2 pl-11">
+                    <select
+                      id="dobDay"
+                      value={dobDay}
+                      onChange={(e) => setDobDay(e.target.value)}
+                      className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm appearance-none"
+                      required
+                    >
+                      <option value="">Day</option>
+                      {Array.from({ length: 31 }, (_, i) => i + 1).map((d) => (
+                        <option key={d} value={String(d)}>
+                          {d}
+                        </option>
+                      ))}
+                    </select>
+                    <select
+                      id="dobMonth"
+                      value={dobMonth}
+                      onChange={(e) => setDobMonth(e.target.value)}
+                      className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm appearance-none"
+                      required
+                    >
+                      <option value="">Month</option>
+                      {[
+                        'January', 'February', 'March', 'April', 'May', 'June',
+                        'July', 'August', 'September', 'October', 'November', 'December'
+                      ].map((m, i) => (
+                        <option key={i + 1} value={String(i + 1)}>
+                          {m}
+                        </option>
+                      ))}
+                    </select>
+                    <select
+                      id="dobYear"
+                      value={dobYear}
+                      onChange={(e) => setDobYear(e.target.value)}
+                      className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm appearance-none"
+                      required
+                    >
+                      <option value="">Year</option>
+                      {Array.from({ length: 100 }, (_, i) => new Date().getFullYear() - i).map((y) => (
+                        <option key={y} value={String(y)}>
+                          {y}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+                {isUnder13 && (
+                  <p className="text-sm text-destructive font-medium mt-1">
+                    You must be at least 13 years old to create an account.
+                  </p>
+                )}
+              </div>
+
+              <div className="space-y-1.5">
                 <Label htmlFor="email">
                   Email address <span className="text-destructive">*</span>
                 </Label>
@@ -242,6 +336,30 @@ export default function RegisterPage() {
                 </div>
               </div>
 
+              {isUnder16 && (
+                <div className="space-y-1.5">
+                  <Label htmlFor="parentGuardianEmail">
+                    Parent/Guardian email <span className="text-destructive">*</span>
+                  </Label>
+                  <div className="relative">
+                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/50" />
+                    <Input
+                      id="parentGuardianEmail"
+                      type="email"
+                      value={parentGuardianEmail}
+                      onChange={(e) => setParentGuardianEmail(e.target.value)}
+                      placeholder="parent@example.com"
+                      className="pl-11"
+                      required
+                      autoComplete="email"
+                    />
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    As you are under 16, a parent or guardian must provide consent. We will email them a consent form.
+                  </p>
+                </div>
+              )}
+
               <div className="space-y-1.5">
                 <Label htmlFor="yearGroup">Year group</Label>
                 <div className="relative">
@@ -284,7 +402,7 @@ export default function RegisterPage() {
 
               <Button
                 type="submit"
-                disabled={loading}
+                disabled={loading || isUnder13}
                 className="w-full"
                 size="lg"
               >

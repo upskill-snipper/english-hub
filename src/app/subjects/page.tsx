@@ -1,19 +1,13 @@
-'use client'
-
-import { useState } from 'react'
 import Link from 'next/link'
-import { BookOpen, Calculator, FlaskConical, ArrowRight, Mail, CheckCircle, Loader2 } from 'lucide-react'
+import { BookOpen, ArrowRight } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
 import { cn } from '@/lib/utils'
 import { SUBJECTS, type SubjectConfig } from '@/data/subjects'
 
 const ICON_MAP = {
   BookOpen,
-  Calculator,
-  FlaskConical,
 } as const
 
 const COLOR_MAP = {
@@ -25,100 +19,7 @@ const COLOR_MAP = {
     ring: 'ring-blue-500/30',
     glow: 'bg-blue-500/[0.06]',
   },
-  green: {
-    bg: 'bg-emerald-500/10',
-    text: 'text-emerald-400',
-    border: 'border-emerald-500/30 hover:border-emerald-500/50',
-    badge: 'bg-emerald-500/20 text-emerald-400',
-    ring: 'ring-emerald-500/30',
-    glow: 'bg-emerald-500/[0.06]',
-  },
-  purple: {
-    bg: 'bg-purple-500/10',
-    text: 'text-purple-400',
-    border: 'border-purple-500/30 hover:border-purple-500/50',
-    badge: 'bg-purple-500/20 text-purple-400',
-    ring: 'ring-purple-500/30',
-    glow: 'bg-purple-500/[0.06]',
-  },
 } as const
-
-function WaitlistForm({ subject }: { subject: SubjectConfig }) {
-  const [email, setEmail] = useState('')
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
-  const [message, setMessage] = useState('')
-
-  async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault()
-    if (!email.trim()) return
-
-    setStatus('loading')
-    try {
-      const res = await fetch('/api/waitlist', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: email.trim(), subject: subject.id }),
-      })
-      const data = await res.json()
-
-      if (res.ok) {
-        setStatus('success')
-        setMessage(data.message || "You're on the list!")
-        setEmail('')
-      } else {
-        setStatus('error')
-        setMessage(data.error || 'Something went wrong. Please try again.')
-      }
-    } catch {
-      setStatus('error')
-      setMessage('Something went wrong. Please try again.')
-    }
-  }
-
-  if (status === 'success') {
-    return (
-      <div className="flex items-center gap-2 text-sm text-emerald-400 font-medium mt-4">
-        <CheckCircle className="w-4 h-4 shrink-0" />
-        {message}
-      </div>
-    )
-  }
-
-  return (
-    <form onSubmit={handleSubmit} className="relative mt-4 flex gap-2">
-      <div className="relative flex-1">
-        <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-        <Input
-          type="email"
-          placeholder="Enter your email"
-          value={email}
-          onChange={(e) => {
-            setEmail(e.target.value)
-            if (status === 'error') setStatus('idle')
-          }}
-          className="pl-9 h-10"
-          required
-        />
-      </div>
-      <Button
-        type="submit"
-        variant="secondary"
-        size="sm"
-        className="h-10 px-4 shrink-0"
-        disabled={status === 'loading'}
-      >
-        {status === 'loading' ? (
-          <Loader2 className="w-4 h-4 animate-spin" />
-        ) : (
-          'Notify Me'
-        )}
-      </Button>
-      {status === 'error' && (
-        <p className="absolute -bottom-6 left-0 text-xs text-destructive">{message}</p>
-      )}
-    </form>
-  )
-}
 
 function SubjectCard({ subject }: { subject: SubjectConfig }) {
   const Icon = ICON_MAP[subject.icon]
@@ -129,7 +30,7 @@ function SubjectCard({ subject }: { subject: SubjectConfig }) {
       className={cn(
         'relative overflow-hidden transition-all duration-300',
         colors.border,
-        subject.available && 'hover:-translate-y-0.5 hover:shadow-card-hover'
+        'hover:-translate-y-0.5 hover:shadow-card-hover'
       )}
     >
       {/* Glow effect */}
@@ -146,15 +47,9 @@ function SubjectCard({ subject }: { subject: SubjectConfig }) {
           <div className={cn('w-14 h-14 rounded-2xl flex items-center justify-center', colors.bg)}>
             <Icon className={cn('w-7 h-7', colors.text)} />
           </div>
-          {subject.available ? (
-            <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/30">
-              Available Now
-            </Badge>
-          ) : (
-            <Badge variant="outline" className={cn(colors.badge, 'border-current/25')}>
-              Coming Soon
-            </Badge>
-          )}
+          <Badge className="bg-emerald-500/20 text-emerald-400 border-emerald-500/30">
+            Available Now
+          </Badge>
         </div>
 
         {/* Subject info */}
@@ -179,23 +74,14 @@ function SubjectCard({ subject }: { subject: SubjectConfig }) {
         </div>
 
         {/* CTA */}
-        {subject.available ? (
-          <Button
-            variant="default"
-            className="w-full shadow-lg shadow-primary/20"
-            render={<Link href="/courses" />}
-          >
-            Browse Courses
-            <ArrowRight className="w-4 h-4 ml-2" />
-          </Button>
-        ) : (
-          <div>
-            <p className="text-sm text-muted-foreground">
-              Be the first to know when {subject.name} launches. Join the waitlist:
-            </p>
-            <WaitlistForm subject={subject} />
-          </div>
-        )}
+        <Button
+          variant="default"
+          className="w-full shadow-lg shadow-primary/20"
+          render={<Link href="/courses" />}
+        >
+          Browse Courses
+          <ArrowRight className="w-4 h-4 ml-2" />
+        </Button>
       </CardContent>
     </Card>
   )
@@ -220,13 +106,12 @@ export default function SubjectsPage() {
           </Badge>
 
           <h1 className="text-foreground">
-            One Platform.{' '}
-            <span className="text-primary">Every Subject.</span>
+            Your English{' '}
+            <span className="text-primary">Revision Hub.</span>
           </h1>
 
           <p className="mt-6 text-body-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            We started with English — and we are expanding. Expert-written courses for every
-            major GCSE subject, all in one place.
+            Expert-written English courses for every major GCSE exam board, all in one place.
           </p>
         </div>
       </section>

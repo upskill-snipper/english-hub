@@ -53,6 +53,15 @@ import {
   DialogClose,
 } from '@/components/ui/dialog'
 import { ScrollArea } from '@/components/ui/scroll-area'
+import EssayFeedbackInline from '@/components/EssayFeedbackInline'
+
+// ─── Helpers ─────────────────────────────────────────────────────────────────
+
+function wordCountForAnswer(text: string): number {
+  const trimmed = text.trim()
+  if (!trimmed) return 0
+  return trimmed.split(/\s+/).length
+}
 
 // ─── Board Config ────────────────────────────────────────────────────────────
 
@@ -1002,6 +1011,18 @@ function ExamResults() {
                               : studentAnswer}
                           </p>
                         </div>
+                      )}
+
+                      {/* AI Essay Feedback (inline) — only for long-form answers */}
+                      {hasAnswer && wordCountForAnswer(studentAnswer) >= 100 && (
+                        <EssayFeedbackInline
+                          board={paper.board}
+                          paper={`Paper ${paper.paperNumber}`}
+                          questionType={question.questionType}
+                          questionText={question.questionText}
+                          existingAnswer={studentAnswer}
+                          className="my-2"
+                        />
                       )}
 
                       {/* Toggle model answer */}

@@ -67,9 +67,18 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="border-t border-border/60 py-6">
+        <div className="border-t border-border/60 py-6 space-y-2">
           <p className="text-center text-xs text-muted-foreground">
             &copy; 2026 The English Hub. All rights reserved.
+          </p>
+          <p className="text-center text-xs text-muted-foreground">
+            A trading name of Upskill Energy Limited · Company No. 16254656 · Registered in England and Wales
+          </p>
+          <p className="text-center text-xs text-muted-foreground">
+            Contact:{' '}
+            <a href="mailto:support@theenglishhub.app" className="hover:text-foreground transition-colors">
+              support@theenglishhub.app
+            </a>
           </p>
         </div>
       </div>
