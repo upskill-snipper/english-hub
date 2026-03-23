@@ -762,9 +762,9 @@ export default function LessonPlanDetailPage() {
     return (
       <>
         <div className="flex min-h-[60vh] items-center justify-center px-4">
-          <div className="max-w-md rounded-xl border border-gray-200 bg-white p-8 text-center shadow-sm">
-            <h2 className="text-lg font-bold text-gray-900">Lesson Plan Not Found</h2>
-            <p className="mt-2 text-sm text-gray-500">
+          <div className="max-w-md rounded-xl border border-border bg-card p-8 text-center shadow-md">
+            <h2 className="text-lg font-bold text-foreground">Lesson Plan Not Found</h2>
+            <p className="mt-2 text-sm text-muted-foreground">
               The lesson plan you are looking for does not exist or has been removed.
             </p>
             <Link
@@ -798,16 +798,16 @@ export default function LessonPlanDetailPage() {
           </nav>
 
           <div className="flex flex-wrap items-center gap-2">
-            <span className="rounded-full bg-white/20 px-3 py-1 text-xs font-semibold backdrop-blur-sm">
+            <span className="rounded-full bg-card/20 px-3 py-1 text-xs font-semibold backdrop-blur-sm">
               {plan.subject}
             </span>
-            <span className="rounded-full bg-white/20 px-3 py-1 text-xs font-semibold backdrop-blur-sm">
+            <span className="rounded-full bg-card/20 px-3 py-1 text-xs font-semibold backdrop-blur-sm">
               {plan.examBoard}
             </span>
-            <span className="rounded-full bg-white/20 px-3 py-1 text-xs font-semibold backdrop-blur-sm">
+            <span className="rounded-full bg-card/20 px-3 py-1 text-xs font-semibold backdrop-blur-sm">
               {plan.yearGroup}
             </span>
-            <span className="rounded-full bg-white/20 px-3 py-1 text-xs font-semibold backdrop-blur-sm">
+            <span className="rounded-full bg-card/20 px-3 py-1 text-xs font-semibold backdrop-blur-sm">
               {plan.duration}
             </span>
           </div>
@@ -822,7 +822,7 @@ export default function LessonPlanDetailPage() {
           {/* Print button */}
           <button
             onClick={() => window.print()}
-            className="mt-6 inline-flex items-center gap-2 rounded-lg bg-white/20 px-5 py-2.5 text-sm font-semibold backdrop-blur-sm transition hover:bg-white/30 print:hidden"
+            className="mt-6 inline-flex items-center gap-2 rounded-lg bg-card/20 px-5 py-2.5 text-sm font-semibold backdrop-blur-sm transition hover:bg-card/30 print:hidden"
           >
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M6.72 13.829c-.24.03-.48.062-.72.096m.72-.096a42.415 42.415 0 0 1 10.56 0m-10.56 0L6.34 18m10.94-4.171c.24.03.48.062.72.096m-.72-.096L17.66 18m0 0 .229 2.523a1.125 1.125 0 0 1-1.12 1.227H7.231c-.662 0-1.18-.568-1.12-1.227L6.34 18m11.318 0h1.091A2.25 2.25 0 0 0 21 15.75V9.456c0-1.081-.768-2.015-1.837-2.175a48.055 48.055 0 0 0-1.913-.247M6.34 18H5.25A2.25 2.25 0 0 1 3 15.75V9.456c0-1.081.768-2.015 1.837-2.175a48.041 48.041 0 0 1 1.913-.247m10.5 0a48.536 48.536 0 0 0-10.5 0m10.5 0V3.375c0-.621-.504-1.125-1.125-1.125h-8.25c-.621 0-1.125.504-1.125 1.125v3.659M18 10.5h.008v.008H18V10.5Zm-3 0h.008v.008H15V10.5Z" />
@@ -836,7 +836,7 @@ export default function LessonPlanDetailPage() {
       <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6 lg:px-8 print:px-0 print:py-4">
         {/* Learning Objectives */}
         <section className="mb-8">
-          <h2 className="flex items-center gap-2 text-xl font-bold text-[#1A5276]">
+          <h2 className="flex items-center gap-2 text-xl font-bold text-foreground">
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
             </svg>
@@ -848,7 +848,7 @@ export default function LessonPlanDetailPage() {
                 <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">
                   {i + 1}
                 </span>
-                <span className="text-sm text-gray-700">{obj}</span>
+                <span className="text-sm text-muted-foreground">{obj}</span>
               </li>
             ))}
           </ul>
@@ -856,7 +856,7 @@ export default function LessonPlanDetailPage() {
 
         {/* Key Vocabulary */}
         <section className="mb-8">
-          <h2 className="flex items-center gap-2 text-xl font-bold text-[#1A5276]">
+          <h2 className="flex items-center gap-2 text-xl font-bold text-foreground">
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
             </svg>
@@ -864,9 +864,9 @@ export default function LessonPlanDetailPage() {
           </h2>
           <div className="mt-4 grid gap-3 sm:grid-cols-2">
             {plan.keyVocabulary.map((vocab) => (
-              <div key={vocab.term} className="rounded-lg border border-gray-200 bg-white p-4">
-                <dt className="font-bold text-[#1A5276]">{vocab.term}</dt>
-                <dd className="mt-1 text-sm text-gray-600">{vocab.definition}</dd>
+              <div key={vocab.term} className="rounded-lg border border-border bg-card p-4">
+                <dt className="font-bold text-foreground">{vocab.term}</dt>
+                <dd className="mt-1 text-sm text-muted-foreground">{vocab.definition}</dd>
               </div>
             ))}
           </div>
@@ -874,7 +874,7 @@ export default function LessonPlanDetailPage() {
 
         {/* Lesson Structure */}
         <section className="mb-8">
-          <h2 className="flex items-center gap-2 text-xl font-bold text-[#1A5276]">
+          <h2 className="flex items-center gap-2 text-xl font-bold text-foreground">
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
             </svg>
@@ -889,33 +889,33 @@ export default function LessonPlanDetailPage() {
                 {plan.starterActivity.duration}
               </span>
             </div>
-            <p className="mt-2 text-sm leading-relaxed text-gray-700">{plan.starterActivity.description}</p>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{plan.starterActivity.description}</p>
           </div>
 
           {/* Main Activity */}
-          <div className="mt-4 rounded-xl border-l-4 border-[#2E86C1] bg-[#2E86C1]/5 p-5">
+          <div className="mt-4 rounded-xl border-l-4 border-[#2E86C1] bg-primary/5 p-5">
             <div className="flex items-center justify-between">
-              <h3 className="font-bold text-[#2E86C1]">Main: {plan.mainActivity.title}</h3>
-              <span className="rounded-full bg-[#2E86C1]/10 px-2.5 py-0.5 text-xs font-semibold text-[#2E86C1]">
+              <h3 className="font-bold text-primary">Main: {plan.mainActivity.title}</h3>
+              <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary">
                 {plan.mainActivity.duration}
               </span>
             </div>
-            <p className="mt-2 text-sm leading-relaxed text-gray-700">{plan.mainActivity.description}</p>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{plan.mainActivity.description}</p>
 
             {/* Differentiation */}
             <div className="mt-4 space-y-3">
-              <h4 className="text-sm font-bold text-gray-800">Differentiation</h4>
+              <h4 className="text-sm font-bold text-foreground">Differentiation</h4>
               <div className="rounded-lg bg-amber-50 border border-amber-200 p-4">
                 <p className="text-xs font-bold uppercase tracking-wider text-amber-700">Support</p>
-                <p className="mt-1 text-sm text-gray-700">{plan.mainActivity.differentiation.support}</p>
+                <p className="mt-1 text-sm text-muted-foreground">{plan.mainActivity.differentiation.support}</p>
               </div>
               <div className="rounded-lg bg-blue-50 border border-blue-200 p-4">
                 <p className="text-xs font-bold uppercase tracking-wider text-blue-700">Core</p>
-                <p className="mt-1 text-sm text-gray-700">{plan.mainActivity.differentiation.core}</p>
+                <p className="mt-1 text-sm text-muted-foreground">{plan.mainActivity.differentiation.core}</p>
               </div>
               <div className="rounded-lg bg-purple-50 border border-purple-200 p-4">
                 <p className="text-xs font-bold uppercase tracking-wider text-purple-700">Extension</p>
-                <p className="mt-1 text-sm text-gray-700">{plan.mainActivity.differentiation.extension}</p>
+                <p className="mt-1 text-sm text-muted-foreground">{plan.mainActivity.differentiation.extension}</p>
               </div>
             </div>
           </div>
@@ -928,13 +928,13 @@ export default function LessonPlanDetailPage() {
                 {plan.plenary.duration}
               </span>
             </div>
-            <p className="mt-2 text-sm leading-relaxed text-gray-700">{plan.plenary.description}</p>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{plan.plenary.description}</p>
           </div>
         </section>
 
         {/* Resources Needed */}
         <section className="mb-8">
-          <h2 className="flex items-center gap-2 text-xl font-bold text-[#1A5276]">
+          <h2 className="flex items-center gap-2 text-xl font-bold text-foreground">
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
             </svg>
@@ -942,8 +942,8 @@ export default function LessonPlanDetailPage() {
           </h2>
           <ul className="mt-4 grid gap-2 sm:grid-cols-2">
             {plan.resourcesNeeded.map((resource, i) => (
-              <li key={i} className="flex items-start gap-2 rounded-lg bg-gray-50 p-3 text-sm text-gray-700">
-                <svg className="mt-0.5 h-4 w-4 shrink-0 text-[#2E86C1]" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+              <li key={i} className="flex items-start gap-2 rounded-lg bg-muted p-3 text-sm text-muted-foreground">
+                <svg className="mt-0.5 h-4 w-4 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
                 </svg>
                 {resource}
@@ -954,7 +954,7 @@ export default function LessonPlanDetailPage() {
 
         {/* Assessment Criteria */}
         <section className="mb-8">
-          <h2 className="flex items-center gap-2 text-xl font-bold text-[#1A5276]">
+          <h2 className="flex items-center gap-2 text-xl font-bold text-foreground">
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M11.35 3.836c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15a2.25 2.25 0 0 1 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m8.9-4.414c.376.023.75.05 1.124.08 1.131.094 1.976 1.057 1.976 2.192V16.5A2.25 2.25 0 0 1 18 18.75h-2.25m-7.5-10.5H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V18.75m-7.5-10.5h6.375c.621 0 1.125.504 1.125 1.125v9.375m-8.25-3 1.5 1.5 3-3.75" />
             </svg>
@@ -962,11 +962,11 @@ export default function LessonPlanDetailPage() {
           </h2>
           <ul className="mt-4 space-y-2">
             {plan.assessmentCriteria.map((criterion, i) => (
-              <li key={i} className="flex items-start gap-3 rounded-lg border border-gray-200 bg-white p-3">
+              <li key={i} className="flex items-start gap-3 rounded-lg border border-border bg-card p-3">
                 <svg className="mt-0.5 h-5 w-5 shrink-0 text-[#27AE60]" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                 </svg>
-                <span className="text-sm text-gray-700">{criterion}</span>
+                <span className="text-sm text-muted-foreground">{criterion}</span>
               </li>
             ))}
           </ul>
@@ -974,7 +974,7 @@ export default function LessonPlanDetailPage() {
 
         {/* Homework Suggestions */}
         <section className="mb-8">
-          <h2 className="flex items-center gap-2 text-xl font-bold text-[#1A5276]">
+          <h2 className="flex items-center gap-2 text-xl font-bold text-foreground">
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
             </svg>
@@ -982,11 +982,11 @@ export default function LessonPlanDetailPage() {
           </h2>
           <ul className="mt-4 space-y-2">
             {plan.homeworkSuggestions.map((suggestion, i) => (
-              <li key={i} className="flex items-start gap-3 rounded-lg bg-gray-50 p-3">
-                <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#2E86C1] text-xs font-bold text-white">
+              <li key={i} className="flex items-start gap-3 rounded-lg bg-muted p-3">
+                <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
                   {i + 1}
                 </span>
-                <span className="text-sm text-gray-700">{suggestion}</span>
+                <span className="text-sm text-muted-foreground">{suggestion}</span>
               </li>
             ))}
           </ul>
@@ -996,7 +996,7 @@ export default function LessonPlanDetailPage() {
         <div className="print:hidden">
           <Link
             href="/resources/teaching/lesson-plans"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-[#2E86C1] hover:text-[#1A5276] transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-foreground transition-colors"
           >
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />

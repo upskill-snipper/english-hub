@@ -137,7 +137,7 @@ export default function ContextHubPage() {
             <Link
               key={era.slug}
               href={`/resources/context/${era.slug}`}
-              className={`group flex flex-col overflow-hidden rounded-2xl border-2 ${era.colour} bg-white shadow-sm transition hover:shadow-lg`}
+              className={`group flex flex-col overflow-hidden rounded-2xl border-2 ${era.colour} bg-card shadow-md transition hover:shadow-lg`}
             >
               {/* Gradient header */}
               <div className={`bg-gradient-to-br ${era.gradient} px-6 py-6 text-white`}>
@@ -152,7 +152,7 @@ export default function ContextHubPage() {
 
               {/* Body */}
               <div className="flex flex-1 flex-col p-6">
-                <p className="text-sm leading-relaxed text-gray-600">
+                <p className="text-sm leading-relaxed text-muted-foreground">
                   {era.description}
                 </p>
 
@@ -161,7 +161,7 @@ export default function ContextHubPage() {
                   {era.texts.map((text) => (
                     <span
                       key={text}
-                      className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-600"
+                      className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-muted-foreground"
                     >
                       {text}
                     </span>
@@ -181,12 +181,12 @@ export default function ContextHubPage() {
       </section>
 
       {/* Why context matters */}
-      <section className="bg-gray-50 px-4 py-14 sm:px-6 lg:px-8">
+      <section className="bg-muted px-4 py-14 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-center text-2xl font-bold text-gray-900">
+          <h2 className="text-center text-2xl font-bold text-foreground">
             Why does context matter in the exam?
           </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-center text-gray-600">
+          <p className="mx-auto mt-3 max-w-2xl text-center text-muted-foreground">
             AQA AO3, Edexcel AO4, and Cambridge say you must &ldquo;show
             understanding of the relationships between texts and the contexts in
             which they were written.&rdquo; Here is how to do it well.
@@ -213,15 +213,15 @@ export default function ContextHubPage() {
             ].map((tip, i) => (
               <div
                 key={tip.heading}
-                className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
+                className="rounded-xl border border-border bg-card p-6 shadow-md"
               >
                 <span className="flex h-9 w-9 items-center justify-center rounded-full bg-accent text-sm font-bold text-white">
                   {i + 1}
                 </span>
-                <h3 className="mt-4 text-base font-bold text-gray-900">
+                <h3 className="mt-4 text-base font-bold text-foreground">
                   {tip.heading}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {tip.body}
                 </p>
               </div>
@@ -232,7 +232,7 @@ export default function ContextHubPage() {
 
       {/* Quick links */}
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-gray-900">Continue exploring</h2>
+        <h2 className="text-2xl font-bold text-foreground">Continue exploring</h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-3">
           {[
             {
@@ -254,12 +254,12 @@ export default function ContextHubPage() {
             <Link
               key={link.href}
               href={link.href}
-              className="group rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition hover:shadow-md hover:border-accent/40"
+              className="group rounded-xl border border-border bg-card p-5 shadow-md transition hover:shadow-md hover:border-accent/40"
             >
-              <h3 className="font-bold text-gray-900 group-hover:text-primary transition-colors">
+              <h3 className="font-bold text-foreground group-hover:text-primary transition-colors">
                 {link.label}
               </h3>
-              <p className="mt-1 text-sm text-gray-500">{link.desc}</p>
+              <p className="mt-1 text-sm text-muted-foreground">{link.desc}</p>
             </Link>
           ))}
         </div>

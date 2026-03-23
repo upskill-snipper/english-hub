@@ -35,10 +35,10 @@ export default function UnseenAnalysisPage() {
       <div className="mx-auto max-w-4xl px-4 py-12 sm:py-16 lg:py-20">
         {/* ── Introduction ────────────────────────────────────────── */}
         <section aria-labelledby="intro-heading">
-          <h2 id="intro-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="intro-heading" className="text-2xl font-bold text-foreground">
             What Is the Unseen Component?
           </h2>
-          <div className="mt-4 space-y-3 text-sm leading-relaxed text-gray-700">
+          <div className="mt-4 space-y-3 text-sm leading-relaxed text-muted-foreground">
             <p>
               In the Cambridge IGCSE English Literature examination, unseen analysis
               tests your ability to respond to a text you have never seen before. You
@@ -58,11 +58,11 @@ export default function UnseenAnalysisPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Step-by-step: Unseen Poetry ─────────────────────────── */}
         <section aria-labelledby="poetry-steps-heading">
-          <h2 id="poetry-steps-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="poetry-steps-heading" className="text-2xl font-bold text-foreground">
             Unseen Poetry: Step-by-Step Framework
           </h2>
           <div className="mt-6 space-y-4">
@@ -114,12 +114,12 @@ export default function UnseenAnalysisPage() {
             ].map((s) => (
               <div
                 key={s.step}
-                className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm"
+                className="rounded-lg border border-border bg-card p-5 shadow-md"
               >
-                <h3 className="font-semibold text-[#1A5276]">{s.step}</h3>
+                <h3 className="font-semibold text-foreground">{s.step}</h3>
                 <ul className="mt-2 space-y-1.5">
                   {s.content.map((c, i) => (
-                    <li key={i} className="text-sm text-gray-700">
+                    <li key={i} className="text-sm text-muted-foreground">
                       &bull; {c}
                     </li>
                   ))}
@@ -129,11 +129,11 @@ export default function UnseenAnalysisPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Step-by-step: Unseen Prose ──────────────────────────── */}
         <section aria-labelledby="prose-steps-heading">
-          <h2 id="prose-steps-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="prose-steps-heading" className="text-2xl font-bold text-foreground">
             Unseen Prose: Step-by-Step Framework
           </h2>
           <div className="mt-6 space-y-4">
@@ -178,12 +178,12 @@ export default function UnseenAnalysisPage() {
             ].map((s) => (
               <div
                 key={s.step}
-                className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm"
+                className="rounded-lg border border-border bg-card p-5 shadow-md"
               >
-                <h3 className="font-semibold text-[#1A5276]">{s.step}</h3>
+                <h3 className="font-semibold text-foreground">{s.step}</h3>
                 <ul className="mt-2 space-y-1.5">
                   {s.content.map((c, i) => (
-                    <li key={i} className="text-sm text-gray-700">
+                    <li key={i} className="text-sm text-muted-foreground">
                       &bull; {c}
                     </li>
                   ))}
@@ -193,32 +193,32 @@ export default function UnseenAnalysisPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Worked example: Poetry ──────────────────────────────── */}
         <section aria-labelledby="worked-poetry-heading">
-          <h2 id="worked-poetry-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="worked-poetry-heading" className="text-2xl font-bold text-foreground">
             Worked Example: Unseen Poetry Response
           </h2>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-sm text-muted-foreground">
             Below is a model paragraph demonstrating how to analyse an unseen poem
             effectively. The example uses an imagined poem about a storm.
           </p>
 
-          <div className="mt-6 rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-            <p className="text-xs font-semibold uppercase tracking-wide text-[#1A5276]">
+          <div className="mt-6 rounded-lg border border-border bg-card p-5 shadow-md">
+            <p className="text-xs font-semibold uppercase tracking-wide text-foreground">
               Imagined question
             </p>
-            <p className="mt-1 text-sm font-medium text-gray-900">
+            <p className="mt-1 text-sm font-medium text-foreground">
               How does the poet convey the power of the storm in this poem?
             </p>
           </div>
 
-          <div className="mt-4 rounded-lg border-l-4 border-[#2E86C1] bg-white p-5 shadow-sm">
-            <p className="text-xs font-semibold uppercase tracking-wide text-[#1A5276]">
+          <div className="mt-4 rounded-lg border-l-4 border-[#2E86C1] bg-card p-5 shadow-md">
+            <p className="text-xs font-semibold uppercase tracking-wide text-foreground">
               Model paragraph
             </p>
-            <p className="mt-2 text-sm leading-relaxed text-gray-700">
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
               The poet conveys the storm&rsquo;s overwhelming power through violent
               personification. The wind &ldquo;tore the roof from its hinges and flung
               it like a playing card&rdquo; &mdash; the verbs &lsquo;tore&rsquo; and
@@ -233,9 +233,9 @@ export default function UnseenAnalysisPage() {
             </p>
           </div>
 
-          <div className="mt-4 rounded-lg border border-[#2E86C1]/20 bg-[#2E86C1]/5 p-5">
-            <p className="text-xs font-semibold text-[#1A5276]">Why this works:</p>
-            <ul className="mt-2 space-y-1 text-sm text-gray-700">
+          <div className="mt-4 rounded-lg border border-[#2E86C1]/20 bg-primary/5 p-5">
+            <p className="text-xs font-semibold text-foreground">Why this works:</p>
+            <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
               <li>&bull; Opens with a clear point about the writer&rsquo;s method (personification)</li>
               <li>&bull; Quotes are short and embedded, not copied as block text</li>
               <li>&bull; Analyses specific words (&lsquo;tore&rsquo;, &lsquo;flung&rsquo;) rather than just naming the technique</li>
@@ -245,34 +245,34 @@ export default function UnseenAnalysisPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Worked example: Prose ───────────────────────────────── */}
         <section aria-labelledby="worked-prose-heading">
-          <h2 id="worked-prose-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="worked-prose-heading" className="text-2xl font-bold text-foreground">
             Worked Example: Unseen Prose Response
           </h2>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-sm text-muted-foreground">
             Below is a model paragraph demonstrating how to analyse an unseen prose
             extract. The example uses an imagined passage describing a character&rsquo;s
             arrival in a new city.
           </p>
 
-          <div className="mt-6 rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-            <p className="text-xs font-semibold uppercase tracking-wide text-[#1A5276]">
+          <div className="mt-6 rounded-lg border border-border bg-card p-5 shadow-md">
+            <p className="text-xs font-semibold uppercase tracking-wide text-foreground">
               Imagined question
             </p>
-            <p className="mt-1 text-sm font-medium text-gray-900">
+            <p className="mt-1 text-sm font-medium text-foreground">
               How does the writer create a sense of the character&rsquo;s isolation in
               this passage?
             </p>
           </div>
 
-          <div className="mt-4 rounded-lg border-l-4 border-[#2E86C1] bg-white p-5 shadow-sm">
-            <p className="text-xs font-semibold uppercase tracking-wide text-[#1A5276]">
+          <div className="mt-4 rounded-lg border-l-4 border-[#2E86C1] bg-card p-5 shadow-md">
+            <p className="text-xs font-semibold uppercase tracking-wide text-foreground">
               Model paragraph
             </p>
-            <p className="mt-2 text-sm leading-relaxed text-gray-700">
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
               The writer creates a sense of isolation through the contrast between the
               crowded setting and the character&rsquo;s internal emptiness. Although
               the streets are &ldquo;thick with people&rdquo;, the narrator observes
@@ -289,9 +289,9 @@ export default function UnseenAnalysisPage() {
             </p>
           </div>
 
-          <div className="mt-4 rounded-lg border border-[#2E86C1]/20 bg-[#2E86C1]/5 p-5">
-            <p className="text-xs font-semibold text-[#1A5276]">Why this works:</p>
-            <ul className="mt-2 space-y-1 text-sm text-gray-700">
+          <div className="mt-4 rounded-lg border border-[#2E86C1]/20 bg-primary/5 p-5">
+            <p className="text-xs font-semibold text-foreground">Why this works:</p>
+            <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
               <li>&bull; Identifies the technique (juxtaposition, sentence structure) rather than just describing the scene</li>
               <li>&bull; Analyses a single word (&lsquo;thick&rsquo;) to show close reading</li>
               <li>&bull; Comments on sentence length as a structural choice</li>
@@ -301,14 +301,14 @@ export default function UnseenAnalysisPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Terminology toolkit ─────────────────────────────────── */}
         <section aria-labelledby="toolkit-heading">
-          <h2 id="toolkit-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="toolkit-heading" className="text-2xl font-bold text-foreground">
             Literary Terminology Toolkit
           </h2>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-sm text-muted-foreground">
             Know these terms and, more importantly, know how to explain their effect.
             Naming a technique without analysis does not earn marks.
           </p>
@@ -334,20 +334,20 @@ export default function UnseenAnalysisPage() {
             ].map((t) => (
               <div
                 key={t.term}
-                className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm"
+                className="rounded-lg border border-border bg-card p-4 shadow-md"
               >
-                <p className="font-semibold text-[#1A5276]">{t.term}</p>
-                <p className="mt-1 text-sm text-gray-700">{t.def}</p>
+                <p className="font-semibold text-foreground">{t.term}</p>
+                <p className="mt-1 text-sm text-muted-foreground">{t.def}</p>
               </div>
             ))}
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Examiner tips ───────────────────────────────────────── */}
         <section aria-labelledby="tips-heading">
-          <h2 id="tips-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="tips-heading" className="text-2xl font-bold text-foreground">
             Examiner Tips for Unseen Analysis
           </h2>
           <div className="mt-6 space-y-3">
@@ -383,14 +383,14 @@ export default function UnseenAnalysisPage() {
             ].map((item) => (
               <div
                 key={item.label}
-                className="flex items-start gap-3 rounded-lg border border-gray-200 bg-white p-4 shadow-sm"
+                className="flex items-start gap-3 rounded-lg border border-border bg-card p-4 shadow-md"
               >
-                <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#2E86C1]/10 text-xs font-bold text-[#2E86C1]">
+                <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
                   !
                 </span>
                 <div>
-                  <p className="text-sm font-semibold text-[#1A5276]">{item.label}</p>
-                  <p className="mt-1 text-sm text-gray-700">{item.tip}</p>
+                  <p className="text-sm font-semibold text-foreground">{item.label}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">{item.tip}</p>
                 </div>
               </div>
             ))}
@@ -401,7 +401,7 @@ export default function UnseenAnalysisPage() {
         <div className="mt-12 flex items-center gap-2 text-sm">
           <Link
             href="/resources/english-literature/caie"
-            className="font-medium text-[#1A5276] underline underline-offset-2 hover:text-[#2E86C1]"
+            className="font-medium text-foreground underline underline-offset-2 hover:text-primary"
           >
             &larr; Back to Cambridge IGCSE English Literature
           </Link>

@@ -55,20 +55,20 @@ export default function Paper1ReadingPage() {
 
         {/* Paper structure */}
         <section aria-labelledby="structure-heading">
-          <h2 id="structure-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="structure-heading" className="text-2xl font-bold text-foreground">
             Paper Structure
           </h2>
           <div className="mt-4 overflow-x-auto">
             <table className="w-full min-w-[500px] text-left text-sm">
               <thead>
                 <tr className="border-b-2 border-primary/20">
-                  <th className="py-3 pr-4 font-semibold text-gray-900">Section</th>
-                  <th className="py-3 pr-4 font-semibold text-gray-900">What You Do</th>
-                  <th className="py-3 pr-4 font-semibold text-gray-900">Marks</th>
-                  <th className="py-3 font-semibold text-gray-900">Suggested Time</th>
+                  <th className="py-3 pr-4 font-semibold text-foreground">Section</th>
+                  <th className="py-3 pr-4 font-semibold text-foreground">What You Do</th>
+                  <th className="py-3 pr-4 font-semibold text-foreground">Marks</th>
+                  <th className="py-3 font-semibold text-foreground">Suggested Time</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100 text-gray-700">
+              <tbody className="divide-y divide-gray-100 text-muted-foreground">
                 <tr>
                   <td className="py-3 pr-4 font-medium">Question 1</td>
                   <td className="py-3 pr-4">Detailed comprehension &mdash; factual retrieval, inference, vocabulary in context</td>
@@ -90,38 +90,38 @@ export default function Paper1ReadingPage() {
               </tbody>
             </table>
           </div>
-          <p className="mt-3 text-sm text-gray-500">
+          <p className="mt-3 text-sm text-muted-foreground">
             Extended paper total: 80 marks in 2 hours (plus 5 marks for
             spelling, punctuation, and grammar across the paper). Core candidates
             sit Paper 1 with slightly different question formats.
           </p>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Comprehension question types ─────────────────────── */}
         <section aria-labelledby="comprehension-heading">
-          <h2 id="comprehension-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="comprehension-heading" className="text-2xl font-bold text-foreground">
             Comprehension Question Types &amp; How to Answer
           </h2>
-          <p className="mt-3 text-gray-700 leading-relaxed">
+          <p className="mt-3 text-muted-foreground leading-relaxed">
             Question 1 tests your understanding of the passage through several
             sub-questions. Here are the main types you will encounter:
           </p>
 
           <div className="mt-6 space-y-6">
             {/* Type 1 */}
-            <div className="rounded-lg border border-gray-200 bg-white p-5">
+            <div className="rounded-lg border border-border bg-card p-5">
               <h3 className="font-semibold text-primary">
                 1. Factual Retrieval (&ldquo;According to the passage&hellip;&rdquo;)
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 These questions ask you to find specific information from the
                 passage. The answer is explicitly stated in the text.
               </p>
-              <div className="mt-3 rounded bg-gray-50 p-3">
-                <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">How to answer</p>
-                <ul className="mt-2 space-y-1 text-sm text-gray-700">
+              <div className="mt-3 rounded bg-muted p-3">
+                <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">How to answer</p>
+                <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                     Read the question carefully and identify the key words.
@@ -145,17 +145,17 @@ export default function Paper1ReadingPage() {
             </div>
 
             {/* Type 2 */}
-            <div className="rounded-lg border border-gray-200 bg-white p-5">
+            <div className="rounded-lg border border-border bg-card p-5">
               <h3 className="font-semibold text-primary">
                 2. Inference (&ldquo;What do you learn about&hellip;&rdquo;)
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 These questions require you to read between the lines. The answer
                 is implied rather than directly stated.
               </p>
-              <div className="mt-3 rounded bg-gray-50 p-3">
-                <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">How to answer</p>
-                <ul className="mt-2 space-y-1 text-sm text-gray-700">
+              <div className="mt-3 rounded bg-muted p-3">
+                <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">How to answer</p>
+                <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                     Identify what is suggested or implied, not just what is
@@ -176,17 +176,17 @@ export default function Paper1ReadingPage() {
             </div>
 
             {/* Type 3 */}
-            <div className="rounded-lg border border-gray-200 bg-white p-5">
+            <div className="rounded-lg border border-border bg-card p-5">
               <h3 className="font-semibold text-primary">
                 3. Vocabulary in Context (&ldquo;Explain the meaning of&hellip;&rdquo;)
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 You are given a word or phrase from the passage and asked to
                 explain its meaning <em>as it is used in the passage</em>.
               </p>
-              <div className="mt-3 rounded bg-gray-50 p-3">
-                <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">How to answer</p>
-                <ul className="mt-2 space-y-1 text-sm text-gray-700">
+              <div className="mt-3 rounded bg-muted p-3">
+                <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">How to answer</p>
+                <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                     Re-read the sentence containing the word.
@@ -210,17 +210,17 @@ export default function Paper1ReadingPage() {
             </div>
 
             {/* Type 4 */}
-            <div className="rounded-lg border border-gray-200 bg-white p-5">
+            <div className="rounded-lg border border-border bg-card p-5">
               <h3 className="font-semibold text-primary">
                 4. Selecting and Using Information (&ldquo;Give two reasons why&hellip;&rdquo;)
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 These questions ask you to pick out specific points from a
                 defined section of the passage.
               </p>
-              <div className="mt-3 rounded bg-gray-50 p-3">
-                <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">How to answer</p>
-                <ul className="mt-2 space-y-1 text-sm text-gray-700">
+              <div className="mt-3 rounded bg-muted p-3">
+                <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">How to answer</p>
+                <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                     Note exactly how many points are required (the number of
@@ -243,14 +243,14 @@ export default function Paper1ReadingPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Summary writing ──────────────────────────────────── */}
         <section aria-labelledby="summary-heading">
-          <h2 id="summary-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="summary-heading" className="text-2xl font-bold text-foreground">
             Summary Writing (Question 2)
           </h2>
-          <p className="mt-3 text-gray-700 leading-relaxed">
+          <p className="mt-3 text-muted-foreground leading-relaxed">
             The summary question is often the most challenging part of the
             reading paper. You must select relevant ideas from the passage(s)
             and present them in a concise, coherent piece of continuous prose.
@@ -263,8 +263,8 @@ export default function Paper1ReadingPage() {
                 1
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900">Read the question first</h3>
-                <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+                <h3 className="font-semibold text-foreground">Read the question first</h3>
+                <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Identify exactly what you are being asked to summarise. Underline
                   the focus of the question &mdash; e.g. &ldquo;the challenges
                   faced by the villagers&rdquo; or &ldquo;the differences between
@@ -278,8 +278,8 @@ export default function Paper1ReadingPage() {
                 2
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900">Identify relevant points</h3>
-                <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+                <h3 className="font-semibold text-foreground">Identify relevant points</h3>
+                <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Go through the passage(s) and underline or number every point
                   that is relevant to the question. Aim to find at least 12&ndash;15
                   content points. Do not include examples, quotations, or
@@ -293,8 +293,8 @@ export default function Paper1ReadingPage() {
                 3
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900">Organise your points</h3>
-                <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+                <h3 className="font-semibold text-foreground">Organise your points</h3>
+                <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Group similar ideas together. Decide on a logical order. If
                   you are comparing two passages, you might organise point by
                   point (alternating) or deal with one passage first and then
@@ -308,8 +308,8 @@ export default function Paper1ReadingPage() {
                 4
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900">Write in your own words</h3>
-                <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+                <h3 className="font-semibold text-foreground">Write in your own words</h3>
+                <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   This is critical. Cambridge examiners specifically penalise
                   &ldquo;lifting&rdquo; (copying directly from the passage). You
                   must rephrase the ideas using your own vocabulary and sentence
@@ -325,8 +325,8 @@ export default function Paper1ReadingPage() {
                 5
               </div>
               <div>
-                <h3 className="font-semibold text-gray-900">Stay within the word limit</h3>
-                <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+                <h3 className="font-semibold text-foreground">Stay within the word limit</h3>
+                <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The question will usually specify a word limit (typically around
                   200&ndash;250 words). Going significantly over may mean you
                   have included irrelevant material or are not being concise
@@ -368,23 +368,23 @@ export default function Paper1ReadingPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Note-making ──────────────────────────────────────── */}
         <section aria-labelledby="note-making-heading">
-          <h2 id="note-making-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="note-making-heading" className="text-2xl font-bold text-foreground">
             Note-Making Skills
           </h2>
-          <p className="mt-3 text-gray-700 leading-relaxed">
+          <p className="mt-3 text-muted-foreground leading-relaxed">
             Some questions (particularly on the Core paper) may test
             note-making. This is the skill of extracting key information from a
             passage and presenting it in an organised, concise format.
           </p>
 
           <div className="mt-6 grid gap-6 sm:grid-cols-2">
-            <div className="rounded-lg border border-gray-200 bg-white p-5">
+            <div className="rounded-lg border border-border bg-card p-5">
               <h3 className="font-semibold text-primary">What Examiners Want</h3>
-              <ul className="mt-3 space-y-2 text-sm text-gray-700">
+              <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                   Clear, short points &mdash; not full sentences.
@@ -407,9 +407,9 @@ export default function Paper1ReadingPage() {
                 </li>
               </ul>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-white p-5">
+            <div className="rounded-lg border border-border bg-card p-5">
               <h3 className="font-semibold text-primary">Technique</h3>
-              <ul className="mt-3 space-y-2 text-sm text-gray-700">
+              <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                   Read the question and identify the focus area.
@@ -435,14 +435,14 @@ export default function Paper1ReadingPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Language analysis (Q3) ───────────────────────────── */}
         <section aria-labelledby="analysis-heading">
-          <h2 id="analysis-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="analysis-heading" className="text-2xl font-bold text-foreground">
             Language Analysis (Question 3)
           </h2>
-          <p className="mt-3 text-gray-700 leading-relaxed">
+          <p className="mt-3 text-muted-foreground leading-relaxed">
             This is the highest-tariff question and separates good candidates
             from excellent ones. You must analyse <strong>how</strong> the
             writer uses language to create specific effects on the reader.
@@ -450,28 +450,28 @@ export default function Paper1ReadingPage() {
 
           <div className="mt-6 rounded-lg border border-accent-200 bg-accent-50 p-5">
             <h3 className="font-semibold text-accent-700">The KEY Formula</h3>
-            <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+            <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
               Use this framework for every analytical point you make:
             </p>
             <div className="mt-4 grid gap-3 sm:grid-cols-3">
-              <div className="rounded bg-white p-3 text-center shadow-sm">
+              <div className="rounded bg-card p-3 text-center shadow-md">
                 <p className="text-lg font-bold text-primary">K</p>
-                <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">Keyword / Quote</p>
-                <p className="mt-1 text-sm text-gray-700">
+                <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Keyword / Quote</p>
+                <p className="mt-1 text-sm text-muted-foreground">
                   Select a specific word, phrase, or technique from the passage.
                 </p>
               </div>
-              <div className="rounded bg-white p-3 text-center shadow-sm">
+              <div className="rounded bg-card p-3 text-center shadow-md">
                 <p className="text-lg font-bold text-primary">E</p>
-                <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">Explain</p>
-                <p className="mt-1 text-sm text-gray-700">
+                <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Explain</p>
+                <p className="mt-1 text-sm text-muted-foreground">
                   Identify the technique and explain what it means literally.
                 </p>
               </div>
-              <div className="rounded bg-white p-3 text-center shadow-sm">
+              <div className="rounded bg-card p-3 text-center shadow-md">
                 <p className="text-lg font-bold text-primary">Y</p>
-                <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">Why / Effect</p>
-                <p className="mt-1 text-sm text-gray-700">
+                <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Why / Effect</p>
+                <p className="mt-1 text-sm text-muted-foreground">
                   Explain the effect on the reader &mdash; what does the writer
                   achieve?
                 </p>
@@ -479,11 +479,11 @@ export default function Paper1ReadingPage() {
             </div>
           </div>
 
-          <div className="mt-6 rounded-lg border border-gray-200 bg-white p-5">
-            <h3 className="font-semibold text-gray-900">
+          <div className="mt-6 rounded-lg border border-border bg-card p-5">
+            <h3 className="font-semibold text-foreground">
               Example Response (Band 5&ndash;6 Quality)
             </h3>
-            <div className="mt-3 rounded bg-gray-50 p-4 text-sm text-gray-700 leading-relaxed">
+            <div className="mt-3 rounded bg-muted p-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 The writer describes the storm as a <em>&ldquo;furious
                 beast&rdquo;</em>, using a <strong>metaphor</strong> to compare
@@ -498,55 +498,55 @@ export default function Paper1ReadingPage() {
                 in the narrative.
               </p>
             </div>
-            <p className="mt-3 text-xs text-gray-500">
+            <p className="mt-3 text-xs text-muted-foreground">
               Notice: specific quotation &rarr; technique identified &rarr;
               meaning explained &rarr; effect on reader &rarr; link back to
               question. This is what top-band responses look like.
             </p>
           </div>
 
-          <h3 className="mt-8 text-lg font-semibold text-gray-900">
+          <h3 className="mt-8 text-lg font-semibold text-foreground">
             What to Look For in a Passage
           </h3>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
-            <div className="rounded-lg border border-gray-200 p-4">
+            <div className="rounded-lg border border-border p-4">
               <p className="text-sm font-semibold text-primary">Imagery</p>
-              <p className="mt-1 text-sm text-gray-600">
+              <p className="mt-1 text-sm text-muted-foreground">
                 Metaphors, similes, personification &mdash; how does the writer
                 paint pictures with words?
               </p>
             </div>
-            <div className="rounded-lg border border-gray-200 p-4">
+            <div className="rounded-lg border border-border p-4">
               <p className="text-sm font-semibold text-primary">Word Choice</p>
-              <p className="mt-1 text-sm text-gray-600">
+              <p className="mt-1 text-sm text-muted-foreground">
                 Adjectives, adverbs, verbs with strong connotations. What
                 associations do the chosen words carry?
               </p>
             </div>
-            <div className="rounded-lg border border-gray-200 p-4">
+            <div className="rounded-lg border border-border p-4">
               <p className="text-sm font-semibold text-primary">Sentence Structure</p>
-              <p className="mt-1 text-sm text-gray-600">
+              <p className="mt-1 text-sm text-muted-foreground">
                 Short sentences for impact/tension. Long, complex sentences for
                 detailed description. Lists for emphasis.
               </p>
             </div>
-            <div className="rounded-lg border border-gray-200 p-4">
+            <div className="rounded-lg border border-border p-4">
               <p className="text-sm font-semibold text-primary">Tone &amp; Mood</p>
-              <p className="mt-1 text-sm text-gray-600">
+              <p className="mt-1 text-sm text-muted-foreground">
                 How does the passage make you feel? Identify the overall tone
                 and explain how specific language choices create it.
               </p>
             </div>
-            <div className="rounded-lg border border-gray-200 p-4">
+            <div className="rounded-lg border border-border p-4">
               <p className="text-sm font-semibold text-primary">Sound Devices</p>
-              <p className="mt-1 text-sm text-gray-600">
+              <p className="mt-1 text-sm text-muted-foreground">
                 Alliteration, onomatopoeia, sibilance &mdash; how does the
                 writing sound when read aloud?
               </p>
             </div>
-            <div className="rounded-lg border border-gray-200 p-4">
+            <div className="rounded-lg border border-border p-4">
               <p className="text-sm font-semibold text-primary">Contrast &amp; Juxtaposition</p>
-              <p className="mt-1 text-sm text-gray-600">
+              <p className="mt-1 text-sm text-muted-foreground">
                 Does the writer place opposing ideas side by side to emphasise
                 a point or create surprise?
               </p>
@@ -554,17 +554,17 @@ export default function Paper1ReadingPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Passage analysis strategy ────────────────────────── */}
         <section aria-labelledby="strategy-heading">
-          <h2 id="strategy-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="strategy-heading" className="text-2xl font-bold text-foreground">
             Reading Passage Strategy
           </h2>
-          <p className="mt-3 text-gray-700 leading-relaxed">
+          <p className="mt-3 text-muted-foreground leading-relaxed">
             When you first see the passage, follow this approach:
           </p>
-          <ol className="mt-4 space-y-3 text-sm text-gray-700">
+          <ol className="mt-4 space-y-3 text-sm text-muted-foreground">
             <li className="flex gap-3">
               <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">1</span>
               <span>

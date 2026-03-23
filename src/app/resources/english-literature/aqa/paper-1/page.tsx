@@ -211,13 +211,13 @@ export default function Paper1Page() {
 
       {/* Paper structure */}
       <section className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
-        <h2 className="text-2xl font-bold text-gray-900">Paper Structure</h2>
+        <h2 className="text-2xl font-bold text-foreground">Paper Structure</h2>
         <div className="mt-6 grid gap-6 sm:grid-cols-2">
-          <div className="rounded-xl border border-gray-200 p-6">
+          <div className="rounded-xl border border-border p-6">
             <h3 className="text-lg font-bold text-primary">
               Section A: Shakespeare (34 marks)
             </h3>
-            <ul className="mt-3 space-y-2 text-sm text-gray-600">
+            <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
               <li>You answer on the play you have studied</li>
               <li>You are given an extract from the play (roughly 30 lines)</li>
               <li>
@@ -225,7 +225,7 @@ export default function Paper1Page() {
                 about the topic in the wider play
               </li>
               <li>
-                <span className="font-medium text-gray-800">
+                <span className="font-medium text-foreground">
                   Recommended time:
                 </span>{" "}
                 ~55 minutes (including reading)
@@ -236,11 +236,11 @@ export default function Paper1Page() {
               </li>
             </ul>
           </div>
-          <div className="rounded-xl border border-gray-200 p-6">
+          <div className="rounded-xl border border-border p-6">
             <h3 className="text-lg font-bold text-primary">
               Section B: 19th-Century Novel (30 marks)
             </h3>
-            <ul className="mt-3 space-y-2 text-sm text-gray-600">
+            <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
               <li>You answer on the novel you have studied</li>
               <li>You are given an extract from the novel</li>
               <li>
@@ -248,7 +248,7 @@ export default function Paper1Page() {
                 the whole novel
               </li>
               <li>
-                <span className="font-medium text-gray-800">
+                <span className="font-medium text-foreground">
                   Recommended time:
                 </span>{" "}
                 ~50 minutes (including reading)
@@ -260,12 +260,12 @@ export default function Paper1Page() {
       </section>
 
       {/* Shakespeare section */}
-      <section className="bg-gray-50 px-4 py-12 sm:py-16">
+      <section className="bg-muted px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Section A: Shakespeare
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             You will study one Shakespeare play. The most commonly taught are
             Macbeth and Romeo and Juliet.
           </p>
@@ -274,10 +274,10 @@ export default function Paper1Page() {
             {shakespearePlays.map((play) => (
               <div
                 key={play.title}
-                className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
+                className="rounded-xl border border-border bg-card p-6 shadow-md"
               >
                 <div className="flex flex-wrap items-center gap-3">
-                  <h3 className="text-lg font-bold text-gray-900">
+                  <h3 className="text-lg font-bold text-foreground">
                     {play.href.startsWith("/") ? (
                       <Link
                         href={play.href}
@@ -293,7 +293,7 @@ export default function Paper1Page() {
                     {play.popularity}
                   </span>
                 </div>
-                <p className="mt-2 text-sm text-gray-600 leading-relaxed">
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   {play.summary}
                 </p>
                 <div className="mt-3 flex flex-wrap gap-2">
@@ -318,10 +318,10 @@ export default function Paper1Page() {
 
       {/* 19th-century novel section */}
       <section className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
-        <h2 className="text-2xl font-bold text-gray-900">
+        <h2 className="text-2xl font-bold text-foreground">
           Section B: The 19th-Century Novel
         </h2>
-        <p className="mt-2 text-gray-600">
+        <p className="mt-2 text-muted-foreground">
           You will study one novel. A Christmas Carol and Jekyll and Hyde are by
           far the most popular choices.
         </p>
@@ -330,10 +330,10 @@ export default function Paper1Page() {
           {novels.map((novel) => (
             <div
               key={novel.title}
-              className="rounded-xl border border-gray-200 p-6 shadow-sm"
+              className="rounded-xl border border-border p-6 shadow-md"
             >
               <div className="flex flex-wrap items-center gap-3">
-                <h3 className="text-lg font-bold text-gray-900">
+                <h3 className="text-lg font-bold text-foreground">
                   {novel.href.startsWith("/") ? (
                     <Link
                       href={novel.href}
@@ -351,8 +351,8 @@ export default function Paper1Page() {
                   </span>
                 )}
               </div>
-              <p className="text-xs text-gray-500 mt-1">{novel.author}</p>
-              <p className="mt-2 text-sm text-gray-600 leading-relaxed">
+              <p className="text-xs text-muted-foreground mt-1">{novel.author}</p>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 {novel.summary}
               </p>
               <div className="mt-3 flex flex-wrap gap-2">
@@ -377,17 +377,17 @@ export default function Paper1Page() {
       {/* Exam technique */}
       <section className="bg-primary-50 px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Paper 1 Exam Technique
           </h2>
 
           <div className="mt-8 space-y-8">
             {/* Extract-based questions */}
-            <div className="rounded-xl bg-white p-6 shadow-sm border border-gray-200">
+            <div className="rounded-xl bg-card p-6 shadow-md border border-border">
               <h3 className="text-lg font-bold text-primary">
                 How to Approach Extract-Based Questions
               </h3>
-              <div className="mt-4 space-y-3 text-sm text-gray-700 leading-relaxed">
+              <div className="mt-4 space-y-3 text-sm text-muted-foreground leading-relaxed">
                 <p>
                   Both sections give you an extract and ask you to write about
                   it <em>and</em> the wider text. Here is a reliable approach:
@@ -435,11 +435,11 @@ export default function Paper1Page() {
             </div>
 
             {/* Essay structure */}
-            <div className="rounded-xl bg-white p-6 shadow-sm border border-gray-200">
+            <div className="rounded-xl bg-card p-6 shadow-md border border-border">
               <h3 className="text-lg font-bold text-primary">
                 Model Essay Structure (PETAL)
               </h3>
-              <div className="mt-4 space-y-3 text-sm text-gray-700 leading-relaxed">
+              <div className="mt-4 space-y-3 text-sm text-muted-foreground leading-relaxed">
                 <p>
                   Use the PETAL structure for each paragraph:
                 </p>
@@ -483,10 +483,10 @@ export default function Paper1Page() {
                       <span className="text-2xl font-bold text-primary">
                         {step.letter}
                       </span>
-                      <p className="text-sm font-semibold text-gray-800 mt-1">
+                      <p className="text-sm font-semibold text-foreground mt-1">
                         {step.label}
                       </p>
-                      <p className="text-xs text-gray-600 mt-1">
+                      <p className="text-xs text-muted-foreground mt-1">
                         {step.detail}
                       </p>
                     </div>
@@ -497,7 +497,7 @@ export default function Paper1Page() {
                   <h4 className="font-semibold text-accent-700">
                     Example paragraph opening (Macbeth):
                   </h4>
-                  <p className="mt-2 text-gray-700 italic">
+                  <p className="mt-2 text-muted-foreground italic">
                     &quot;Shakespeare presents Macbeth&apos;s guilt as overwhelming and
                     inescapable. In the extract, Macbeth sees a &lsquo;dagger of the
                     mind,&rsquo; a hallucination that Shakespeare uses as a visual
@@ -513,11 +513,11 @@ export default function Paper1Page() {
             </div>
 
             {/* Common mistakes */}
-            <div className="rounded-xl bg-white p-6 shadow-sm border border-gray-200">
+            <div className="rounded-xl bg-card p-6 shadow-md border border-border">
               <h3 className="text-lg font-bold text-primary">
                 Common Mistakes to Avoid
               </h3>
-              <ul className="mt-4 space-y-2 text-sm text-gray-700">
+              <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="mt-0.5 text-warn font-bold">x</span>
                   <span>

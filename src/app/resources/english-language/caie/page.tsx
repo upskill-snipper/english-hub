@@ -132,19 +132,19 @@ export default function CaieEnglishLanguagePage() {
 
       {/* ── Syllabus overview ───────────────────────────────────── */}
       <section className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
-        <h2 className="text-2xl font-bold text-gray-900">Syllabus Overview</h2>
+        <h2 className="text-2xl font-bold text-foreground">Syllabus Overview</h2>
         <div className="mt-6 overflow-x-auto">
           <table className="w-full min-w-[600px] text-left text-sm">
             <thead>
               <tr className="border-b-2 border-[#1A5276]/20">
-                <th className="py-3 pr-4 font-semibold text-gray-900">Component</th>
-                <th className="py-3 pr-4 font-semibold text-gray-900">Paper</th>
-                <th className="py-3 pr-4 font-semibold text-gray-900">Duration</th>
-                <th className="py-3 pr-4 font-semibold text-gray-900">Marks</th>
-                <th className="py-3 font-semibold text-gray-900">Weighting</th>
+                <th className="py-3 pr-4 font-semibold text-foreground">Component</th>
+                <th className="py-3 pr-4 font-semibold text-foreground">Paper</th>
+                <th className="py-3 pr-4 font-semibold text-foreground">Duration</th>
+                <th className="py-3 pr-4 font-semibold text-foreground">Marks</th>
+                <th className="py-3 font-semibold text-foreground">Weighting</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-100 text-gray-700">
+            <tbody className="divide-y divide-gray-100 text-muted-foreground">
               <tr>
                 <td className="py-3 pr-4 font-medium">Reading (Core)</td>
                 <td className="py-3 pr-4">Paper 1</td>
@@ -176,7 +176,7 @@ export default function CaieEnglishLanguagePage() {
             </tbody>
           </table>
         </div>
-        <p className="mt-4 text-sm text-gray-500">
+        <p className="mt-4 text-sm text-muted-foreground">
           Most international schools in Qatar and the Gulf region enter students
           for the <strong>Extended tier</strong> (grades A*&ndash;E or 9&ndash;1).
           Core tier candidates are eligible for grades C&ndash;G only.
@@ -184,10 +184,10 @@ export default function CaieEnglishLanguagePage() {
       </section>
 
       {/* ── Resource cards ──────────────────────────────────────── */}
-      <section className="bg-gray-50 px-4 py-12 sm:py-16">
+      <section className="bg-muted px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-gray-900">Study Resources</h2>
-          <p className="mt-2 text-gray-600">
+          <h2 className="text-2xl font-bold text-foreground">Study Resources</h2>
+          <p className="mt-2 text-muted-foreground">
             Select a topic below to access full, detailed revision material.
           </p>
 
@@ -196,21 +196,21 @@ export default function CaieEnglishLanguagePage() {
               <Link
                 key={r.href}
                 href={r.href}
-                className="group flex flex-col rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-all hover:border-[#2E86C1]/40 hover:shadow-md hover:shadow-[#2E86C1]/5"
+                className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-md transition-all hover:border-[#2E86C1]/40 hover:shadow-md hover:shadow-[#2E86C1]/5"
               >
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-[#1A5276]/10 text-[#1A5276] transition-colors group-hover:bg-[#2E86C1]/10 group-hover:text-[#2E86C1]">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-[#1A5276]/10 text-foreground transition-colors group-hover:bg-primary/10 group-hover:text-primary">
                   {r.icon}
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 group-hover:text-[#2E86C1]">
+                <h3 className="text-lg font-semibold text-foreground group-hover:text-primary">
                   {r.title}
                 </h3>
-                <p className="mt-0.5 text-xs font-medium uppercase tracking-wide text-[#2E86C1]">
+                <p className="mt-0.5 text-xs font-medium uppercase tracking-wide text-primary">
                   {r.subtitle}
                 </p>
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-gray-600">
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
                   {r.description}
                 </p>
-                <span className="mt-4 inline-flex items-center text-sm font-medium text-[#1A5276] group-hover:text-[#2E86C1]">
+                <span className="mt-4 inline-flex items-center text-sm font-medium text-foreground group-hover:text-primary">
                   View resource
                   <svg xmlns="http://www.w3.org/2000/svg" className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
@@ -224,13 +224,13 @@ export default function CaieEnglishLanguagePage() {
 
       {/* ── Key dates & tips ────────────────────────────────────── */}
       <section className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
-        <h2 className="text-2xl font-bold text-gray-900">
+        <h2 className="text-2xl font-bold text-foreground">
           Exam Tips for International Students
         </h2>
         <div className="mt-6 grid gap-6 sm:grid-cols-2">
-          <div className="rounded-lg border border-gray-200 border-l-4 border-l-[#2E86C1] bg-white p-5 shadow-sm">
-            <h3 className="font-semibold text-[#1A5276]">Time Management</h3>
-            <p className="mt-2 text-sm leading-relaxed text-gray-700">
+          <div className="rounded-lg border border-border border-l-4 border-l-[#2E86C1] bg-card p-5 shadow-md">
+            <h3 className="font-semibold text-foreground">Time Management</h3>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
               In Paper 2 (Extended Reading), you have 2 hours for three
               questions. Allocate roughly 25 minutes for Question 1 (detailed
               comprehension), 30 minutes for Question 2 (summary), and 55
@@ -238,27 +238,27 @@ export default function CaieEnglishLanguagePage() {
               check your work.
             </p>
           </div>
-          <div className="rounded-lg border border-gray-200 border-l-4 border-l-[#2E86C1] bg-white p-5 shadow-sm">
-            <h3 className="font-semibold text-[#1A5276]">Use the Passages</h3>
-            <p className="mt-2 text-sm leading-relaxed text-gray-700">
+          <div className="rounded-lg border border-border border-l-4 border-l-[#2E86C1] bg-card p-5 shadow-md">
+            <h3 className="font-semibold text-foreground">Use the Passages</h3>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
               Cambridge examiners reward candidates who engage closely with the
               text. Always refer to the passage using short, embedded quotations.
               Avoid copying long chunks &mdash; select precise words and phrases
               that support your point.
             </p>
           </div>
-          <div className="rounded-lg border border-gray-200 border-l-4 border-l-[#2E86C1] bg-white p-5 shadow-sm">
-            <h3 className="font-semibold text-[#1A5276]">Directed Writing Format</h3>
-            <p className="mt-2 text-sm leading-relaxed text-gray-700">
+          <div className="rounded-lg border border-border border-l-4 border-l-[#2E86C1] bg-card p-5 shadow-md">
+            <h3 className="font-semibold text-foreground">Directed Writing Format</h3>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
               In directed writing, always adopt the correct format (letter,
               report, speech, etc.) and use an appropriate register. Include
               content from the passage <strong>and</strong> your own ideas. This
               is where many students lose marks unnecessarily.
             </p>
           </div>
-          <div className="rounded-lg border border-gray-200 border-l-4 border-l-[#2E86C1] bg-white p-5 shadow-sm">
-            <h3 className="font-semibold text-[#1A5276]">Vocabulary Building</h3>
-            <p className="mt-2 text-sm leading-relaxed text-gray-700">
+          <div className="rounded-lg border border-border border-l-4 border-l-[#2E86C1] bg-card p-5 shadow-md">
+            <h3 className="font-semibold text-foreground">Vocabulary Building</h3>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
               Cambridge passages often use sophisticated vocabulary. Build your
               word bank by reading widely &mdash; newspapers, quality magazines,
               and fiction. For each new word, note its meaning, part of speech,

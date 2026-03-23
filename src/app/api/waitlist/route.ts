@@ -1,7 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createServiceRoleClient } from '@/lib/supabase/server'
-import { SUBJECTS, type SubjectId } from '@/data/subjects'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
+
+type SubjectId = 'english'
+
+const SUBJECTS: Record<SubjectId, { name: string; available: boolean }> = {
+  english: { name: 'English', available: true },
+}
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 

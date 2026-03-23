@@ -22,22 +22,22 @@ function Section({
 }) {
   const [open, setOpen] = useState(defaultOpen);
   return (
-    <div className="rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden">
+    <div className="rounded-xl border border-border bg-card shadow-md overflow-hidden">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="flex w-full items-center justify-between px-5 py-4 text-left transition-colors hover:bg-gray-50"
+        className="flex w-full items-center justify-between px-5 py-4 text-left transition-colors hover:bg-muted"
         aria-expanded={open}
         aria-controls={`section-${id}`}
       >
         <div className="flex items-center gap-3 min-w-0">
           <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-accent" />
           <div className="min-w-0">
-            <h2 className="text-lg font-bold text-gray-900 truncate">{title}</h2>
-            <p className="text-sm text-gray-500">{poet}</p>
+            <h2 className="text-lg font-bold text-foreground truncate">{title}</h2>
+            <p className="text-sm text-muted-foreground">{poet}</p>
           </div>
         </div>
         <svg
-          className={`h-5 w-5 shrink-0 text-gray-400 transition-transform ${open ? "rotate-180" : ""}`}
+          className={`h-5 w-5 shrink-0 text-muted-foreground transition-transform ${open ? "rotate-180" : ""}`}
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={2}
@@ -47,7 +47,7 @@ function Section({
         </svg>
       </button>
       {open && (
-        <div id={`section-${id}`} className="border-t border-gray-100 px-5 py-5 space-y-6">
+        <div id={`section-${id}`} className="border-t border-border px-5 py-5 space-y-6">
           {children}
         </div>
       )}
@@ -75,9 +75,9 @@ function Quote({
 }) {
   return (
     <div className="rounded-lg border-l-4 border-accent bg-accent-50/40 p-4">
-      <p className="text-sm font-semibold italic text-gray-800">&ldquo;{text}&rdquo;</p>
+      <p className="text-sm font-semibold italic text-foreground">&ldquo;{text}&rdquo;</p>
       <p className="mt-1 text-xs font-semibold text-accent-600">{technique}</p>
-      <p className="mt-2 text-sm text-gray-700 leading-relaxed">{analysis}</p>
+      <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{analysis}</p>
     </div>
   );
 }
@@ -92,8 +92,8 @@ function ThemeTag({ theme }: { theme: string }) {
 
 function ComparisonSuggestion({ poem, reason }: { poem: string; reason: string }) {
   return (
-    <li className="text-sm text-gray-700">
-      <span className="font-semibold text-gray-900">{poem}</span> &mdash; {reason}
+    <li className="text-sm text-muted-foreground">
+      <span className="font-semibold text-foreground">{poem}</span> &mdash; {reason}
     </li>
   );
 }
@@ -196,20 +196,20 @@ export default function PowerAndConflictPage() {
             Complete analysis of all 15 poems in the AQA Power and Conflict cluster. Key quotations, techniques, themes, context, and comparison guidance for every poem.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <span className="rounded-full bg-white/15 px-3 py-1 text-sm font-medium">15 Poems</span>
-            <span className="rounded-full bg-white/15 px-3 py-1 text-sm font-medium">60+ Key Quotes</span>
-            <span className="rounded-full bg-white/15 px-3 py-1 text-sm font-medium">AQA Paper 2</span>
+            <span className="rounded-full bg-card/15 px-3 py-1 text-sm font-medium">15 Poems</span>
+            <span className="rounded-full bg-card/15 px-3 py-1 text-sm font-medium">60+ Key Quotes</span>
+            <span className="rounded-full bg-card/15 px-3 py-1 text-sm font-medium">AQA Paper 2</span>
           </div>
         </div>
       </section>
 
       {/* Search & Filter */}
       <section className="mx-auto max-w-6xl px-4 pt-8 sm:px-6 lg:px-8">
-        <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm space-y-4">
+        <div className="rounded-xl border border-border bg-card p-5 shadow-md space-y-4">
           {/* Search bar */}
           <div className="relative">
             <svg
-              className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400 pointer-events-none"
+              className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground pointer-events-none"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={2}
@@ -222,12 +222,12 @@ export default function PowerAndConflictPage() {
               placeholder="Search poems by title, poet, or theme..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full rounded-lg border border-gray-300 py-2.5 pl-10 pr-4 text-sm text-gray-800 placeholder-gray-400 focus:border-[#2E86C1] focus:outline-none focus:ring-2 focus:ring-[#2E86C1]/20 transition-colors"
+              className="w-full rounded-lg border border-gray-300 py-2.5 pl-10 pr-4 text-sm text-foreground placeholder-gray-400 focus:border-[#2E86C1] focus:outline-none focus:ring-2 focus:ring-primary/20 transition-colors"
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery("")}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-muted-foreground"
                 aria-label="Clear search"
               >
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
@@ -239,7 +239,7 @@ export default function PowerAndConflictPage() {
 
           {/* Theme filters */}
           <div>
-            <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Filter by theme</p>
+            <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">Filter by theme</p>
             <div className="flex flex-wrap gap-2">
               {ALL_THEMES.map((theme) => (
                 <button
@@ -248,7 +248,7 @@ export default function PowerAndConflictPage() {
                   className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
                     activeTheme === theme
                       ? "bg-[#1A5276] text-white"
-                      : "bg-gray-100 text-gray-600 hover:bg-[#2E86C1]/10 hover:text-[#1A5276]"
+                      : "bg-gray-100 text-muted-foreground hover:bg-primary/10 hover:text-foreground"
                   }`}
                 >
                   {theme}
@@ -259,7 +259,7 @@ export default function PowerAndConflictPage() {
 
           {/* Period filters */}
           <div>
-            <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Filter by period</p>
+            <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-2">Filter by period</p>
             <div className="flex flex-wrap gap-2">
               {ALL_PERIODS.map((period) => (
                 <button
@@ -268,7 +268,7 @@ export default function PowerAndConflictPage() {
                   className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
                     activePeriod === period
                       ? "bg-[#1A5276] text-white"
-                      : "bg-gray-100 text-gray-600 hover:bg-[#2E86C1]/10 hover:text-[#1A5276]"
+                      : "bg-gray-100 text-muted-foreground hover:bg-primary/10 hover:text-foreground"
                   }`}
                 >
                   {period}
@@ -287,8 +287,8 @@ export default function PowerAndConflictPage() {
 
           {/* Result count */}
           {(searchQuery || activeTheme || activePeriod) && (
-            <p className="text-sm text-gray-500">
-              Showing <span className="font-semibold text-[#1A5276]">{matchCount}</span> of 15 poems
+            <p className="text-sm text-muted-foreground">
+              Showing <span className="font-semibold text-foreground">{matchCount}</span> of 15 poems
               {matchCount === 0 && " — try broadening your search."}
             </p>
           )}
@@ -297,14 +297,14 @@ export default function PowerAndConflictPage() {
 
       {/* Quick nav */}
       <section className="mx-auto max-w-6xl px-4 py-4 sm:px-6 lg:px-8">
-        <div className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
-          <p className="text-sm font-semibold text-gray-700 mb-3">Jump to a poem:</p>
+        <div className="rounded-xl border border-border bg-card p-4 shadow-md">
+          <p className="text-sm font-semibold text-muted-foreground mb-3">Jump to a poem:</p>
           <div className="flex flex-wrap gap-2">
             {POEM_META.filter((p) => visiblePoemIds.has(p.id)).map((p) => (
               <a
                 key={p.id}
                 href={`#${p.id}`}
-                className="rounded-lg bg-gray-100 px-3 py-1.5 text-xs font-medium text-gray-600 hover:bg-accent-50 hover:text-accent-600 transition-colors"
+                className="rounded-lg bg-gray-100 px-3 py-1.5 text-xs font-medium text-muted-foreground hover:bg-accent-50 hover:text-accent-600 transition-colors"
               >
                 {p.title}
               </a>
@@ -324,8 +324,8 @@ export default function PowerAndConflictPage() {
         <div className="space-y-4">
 
           {matchCount === 0 && (
-            <div className="rounded-xl border border-dashed border-gray-300 bg-gray-50 p-8 text-center">
-              <p className="text-gray-500 text-sm">No poems match your current filters. Try adjusting your search or clearing filters.</p>
+            <div className="rounded-xl border border-dashed border-gray-300 bg-muted p-8 text-center">
+              <p className="text-muted-foreground text-sm">No poems match your current filters. Try adjusting your search or clearing filters.</p>
             </div>
           )}
 
@@ -334,13 +334,13 @@ export default function PowerAndConflictPage() {
             <Section id="ozymandias" title="Ozymandias" poet="Percy Bysshe Shelley (1818)" defaultOpen>
 
               <SubSection title="Summary">
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   The speaker recounts a traveller&apos;s description of a ruined statue in the desert. The statue depicts Ozymandias (the Greek name for the Egyptian pharaoh Ramesses II), whose arrogant inscription boasts of his supreme power. Yet all that remains is a shattered monument surrounded by empty desert, undermining his claims. Shelley uses this image to argue that all human power is temporary, and nature ultimately triumphs over even the mightiest rulers.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   An irregular sonnet (loosely Petrarchan) with an unconventional rhyme scheme (ABABACDCEDEFEF) that mirrors the fragmented, broken statue it describes. The poem uses iambic pentameter, but this is frequently disrupted, reflecting the ruined grandeur. The narrative is framed through multiple voices (the speaker, the traveller, the sculptor, Ozymandias himself), distancing the reader from Ozymandias and diminishing his authority. The volta occurs around line 9 where the inscription is revealed, followed by the devastating ironic contrast of the empty desert.
                 </p>
               </SubSection>
@@ -400,13 +400,13 @@ export default function PowerAndConflictPage() {
             <Section id="london" title="London" poet="William Blake (1794)">
 
               <SubSection title="Summary">
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   The speaker walks through the streets of London, observing suffering and oppression everywhere. Each stanza presents a different aspect of the city&apos;s misery: the restricted lives of its people, the cries of chimney sweepers and soldiers, and the moral corruption symbolised by disease and exploitation. Blake attacks the institutions he blames &mdash; the Church, the monarchy, and the government &mdash; for creating and maintaining this suffering.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   Four quatrains with a regular ABAB rhyme scheme create a relentless, inescapable rhythm that mirrors the trapped, cyclical nature of suffering in the city. The poem is structured as a walk through London, with each stanza presenting a new scene of misery. The use of first person (&ldquo;I wander&rdquo;) makes the speaker a direct witness, increasing authenticity. The repetition of &ldquo;every&rdquo; and &ldquo;charter&apos;d&rdquo; creates a sense of universal, inescapable oppression.
                 </p>
               </SubSection>
@@ -466,13 +466,13 @@ export default function PowerAndConflictPage() {
             <Section id="the-prelude" title="Extract from The Prelude" poet="William Wordsworth (1850)">
 
               <SubSection title="Summary">
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   This autobiographical extract describes a young Wordsworth stealing a rowing boat at night and rowing across a lake. Initially confident and excited, he is terrified when a huge mountain appears to rise up and pursue him. He returns the boat and is left deeply unsettled for days, haunted by the experience. The episode represents a key moment in his spiritual development, where nature asserts its sublime power over human confidence.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   Written in blank verse (unrhymed iambic pentameter), the epic style reflects the grandeur of the subject and Wordsworth&apos;s ambition to write a great autobiographical poem. The extract has a clear narrative arc: confidence, terror, and lasting psychological impact. Enjambment creates a breathless, flowing quality that mirrors the movement of the boat and the escalating fear. The shift from first-person active agency (&ldquo;I&rdquo; rowing) to the mountain&apos;s dominance structurally enacts the transfer of power from human to nature.
                 </p>
               </SubSection>
@@ -532,13 +532,13 @@ export default function PowerAndConflictPage() {
             <Section id="my-last-duchess" title="My Last Duchess" poet="Robert Browning (1842)">
 
               <SubSection title="Summary">
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   Set in Renaissance Italy, the Duke of Ferrara shows a visitor (an envoy negotiating his next marriage) a portrait of his previous wife. Through his monologue, the Duke reveals his jealousy and controlling nature: he resented that the Duchess smiled at everyone equally and appeared to value simple pleasures as much as his noble name. He strongly implies that he had her killed (&ldquo;I gave commands; / Then all smiles stopped together&rdquo;). Now he controls her image as a painting, the ultimate act of possession.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   A dramatic monologue in rhyming couplets (heroic couplets in iambic pentameter). The rhyming couplets suggest the Duke&apos;s desire for order and control, but the heavy use of enjambment works against the neat rhyme, mirroring the way his controlled surface barely conceals his sinister nature. The single, unbroken stanza reflects the Duke&apos;s domination of the conversation &mdash; the envoy never speaks. The poem&apos;s structure mirrors the Duke&apos;s character: polished on the surface, disturbing beneath.
                 </p>
               </SubSection>
@@ -593,13 +593,13 @@ export default function PowerAndConflictPage() {
             <Section id="charge-of-the-light-brigade" title="The Charge of the Light Brigade" poet="Alfred Lord Tennyson (1854)">
 
               <SubSection title="Summary">
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   Tennyson commemorates the disastrous cavalry charge at the Battle of Balaclava during the Crimean War (1854), in which 600 British soldiers rode into a valley surrounded by Russian cannon due to a miscommunicated order. The poem celebrates the soldiers&apos; courage and obedience while acknowledging the catastrophic blunder that sent them to their deaths. It moves from the charge itself, through the battle, to a memorial honouring their sacrifice.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   Six stanzas of varying length use dactylic dimeter (a stressed syllable followed by two unstressed) to create a galloping, rhythmic effect that mimics the charge of the horses. Heavy repetition (&ldquo;Cannon to right of them,&rdquo; &ldquo;rode the six hundred&rdquo;) creates a ritualistic, memorial quality. The poem&apos;s structure mirrors the charge: stanzas 1&ndash;3 ride into the valley, stanzas 4&ndash;5 describe the fighting and retreat, and stanza 6 serves as a eulogy. The narrowing and expanding stanza lengths mirror the advance into and retreat from the valley.
                 </p>
               </SubSection>
@@ -654,13 +654,13 @@ export default function PowerAndConflictPage() {
             <Section id="exposure" title="Exposure" poet="Wilfred Owen (1917)">
 
               <SubSection title="Summary">
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   Owen describes soldiers in the trenches of World War I, not fighting but simply enduring the brutal cold. The real enemy is not the opposing army but the weather itself: freezing winds, snow, and rain that slowly drain the soldiers of life and hope. The poem conveys the monotony, futility, and psychological torment of trench warfare. The soldiers question what they are fighting for, and each stanza returns to the same bleak refrain: &ldquo;But nothing happens.&rdquo;
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   Eight five-line stanzas with a consistent ABBAC rhyme scheme use pararhyme (half-rhyme), where consonants match but vowels differ (e.g. &ldquo;knive us&rdquo; / &ldquo;nervous&rdquo;). This creates a sense of discord, unease, and incompleteness that reflects the soldiers&apos; suffering. Each stanza ends with a shortened final line, often returning to the refrain &ldquo;But nothing happens,&rdquo; which enacts the futility and monotony of their situation. The cyclical structure (the poem seems to go nowhere) mirrors the soldiers&apos; entrapment.
                 </p>
               </SubSection>
@@ -720,13 +720,13 @@ export default function PowerAndConflictPage() {
             <Section id="storm-on-the-island" title="Storm on the Island" poet="Seamus Heaney (1966)">
 
               <SubSection title="Summary">
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   The speaker describes a remote island community preparing for and enduring a violent storm. The inhabitants initially appear confident in their preparations &mdash; their houses are solidly built, they have no trees that could fall. However, as the storm intensifies, the poem reveals that nature&apos;s power is terrifying precisely because it is invisible and uncontrollable. The poem can also be read as an allegory for the political conflict in Northern Ireland (the first eight letters spell &ldquo;STORMONT,&rdquo; the seat of the Northern Irish government).
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   Written in blank verse (unrhymed iambic pentameter) in a single continuous stanza, the form reflects both the relentless force of the storm and conversational, seemingly casual speech (&ldquo;We are prepared: we build our houses squat&rdquo;). The poem moves from confident preparation to growing unease, and the final lines reveal a profound shift: what was dismissed as &ldquo;nothing&rdquo; becomes terrifying. The enjambment mirrors the unpredictable, unstoppable force of the wind.
                 </p>
               </SubSection>
@@ -781,13 +781,13 @@ export default function PowerAndConflictPage() {
             <Section id="bayonet-charge" title="Bayonet Charge" poet="Ted Hughes (1957)">
 
               <SubSection title="Summary">
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   The poem describes a single soldier&apos;s experience during a bayonet charge in World War I. It begins in medias res (in the middle of action) with the soldier already running. He is overwhelmed by terror and confusion, and the second stanza sees him freeze as patriotic ideals (&ldquo;King, honour, human dignity&rdquo;) dissolve under the reality of combat. The final stanza presents him as reduced to a terrified animal, driven by raw survival instinct rather than any noble cause.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   Three stanzas of irregular length use free verse with no consistent rhyme scheme, reflecting the chaos and disorder of battle. The poem begins in medias res, plunging the reader into the action without warning, just as the soldier is thrown into combat. The second stanza slows dramatically as the soldier pauses, creating a structural contrast between frantic action and frozen thought. Heavy enjambment and long, breathless sentences mirror the soldier&apos;s panicked running.
                 </p>
               </SubSection>
@@ -842,13 +842,13 @@ export default function PowerAndConflictPage() {
             <Section id="remains" title="Remains" poet="Simon Armitage (2008)">
 
               <SubSection title="Summary">
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   Based on the real testimony of a soldier, the speaker describes shooting a looter while on patrol. The soldier and his colleagues open fire, and the man is left dying in the road. The speaker is then haunted by the memory: the dead man&apos;s image stays with him, appearing when he tries to sleep, walk, or even think. The poem explores how a single act of violence can cause lasting psychological trauma, presenting the reality of PTSD (post-traumatic stress disorder).
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   Written in free verse with a colloquial, conversational tone that mimics a soldier recounting his experience. The poem begins with the casual &ldquo;On another occasion,&rdquo; as if this is just one of many stories, but this ordinariness makes the content more disturbing. The stanzas are mostly regular quatrains until the final couplet, where the structure breaks down, mirroring the soldier&apos;s psychological disintegration. The shift from past tense (the event) to present tense (the haunting) shows the trauma is ongoing and inescapable.
                 </p>
               </SubSection>
@@ -908,13 +908,13 @@ export default function PowerAndConflictPage() {
             <Section id="poppies" title="Poppies" poet="Jane Weir (2009)">
 
               <SubSection title="Summary">
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   A mother describes the experience of her son leaving for military service. The poem moves between different moments in time: pinning a poppy to his lapel, smoothing his collar, and later visiting a war memorial. Through domestic imagery and sensory details, Weir captures the private, personal grief of a mother whose loss is set against the public rituals of remembrance. The poem does not confirm whether the son has been killed, leaving the grief ambiguous and universal.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   Written in free verse with four stanzas of irregular length, the lack of a fixed structure reflects the mother&apos;s fragmented emotional state and the non-linear nature of memory. Enjambment creates a flowing, stream-of-consciousness quality as memories merge and overlap. The poem moves between past and present, domestic space and public memorial, personal grief and national remembrance. The lack of rhyme creates an intimate, prose-like tone that suits the personal subject matter.
                 </p>
               </SubSection>
@@ -974,13 +974,13 @@ export default function PowerAndConflictPage() {
             <Section id="war-photographer" title="War Photographer" poet="Carol Ann Duffy (1985)">
 
               <SubSection title="Summary">
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   A war photographer develops his photographs in a darkroom after returning from a conflict zone. As the images emerge, he remembers the suffering he witnessed. The poem contrasts the horror of war zones (Belfast, Phnom Penh, somewhere from which the &ldquo;running children in a nightmare heat&rdquo; come) with &ldquo;Rural England&rdquo; and its comfortable indifference. Duffy explores the photographer&apos;s moral conflict: he records suffering for a living, but the public barely engages with the images before moving on. The poem ends with him boarding a plane to another war zone, trapped in a cycle.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   Four sestets (six-line stanzas) with a regular ABBCDD rhyme scheme create a controlled, ordered structure that mirrors the photographer&apos;s attempt to impose order on chaotic, traumatic memories. The regularity contrasts with the disturbing content, just as the neat rows of photographs contrast with the chaos they depict. The poem moves from the darkroom to the war zone and back, with a cyclical ending as the photographer prepares to leave again &mdash; suggesting the cycle of violence and indifference is unbroken.
                 </p>
               </SubSection>
@@ -1040,13 +1040,13 @@ export default function PowerAndConflictPage() {
             <Section id="tissue" title="Tissue" poet="Imtiaz Dharker (2006)">
 
               <SubSection title="Summary">
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   Dharker uses paper as an extended metaphor to explore the structures humans create &mdash; maps, religious texts, receipts, architecture &mdash; and how fragile these constructs really are. The poem suggests that the things we use to organise, record, and control life (borders, money, buildings) are as thin and temporary as tissue paper. In the final stanza, the poem shifts to the human body itself, suggesting that human life is the most important &ldquo;tissue&rdquo; of all, more significant than any constructed system.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   Ten quatrains followed by a single isolated line create a structure that itself feels thin and fragile, like layers of tissue. The heavy use of enjambment (both within and between stanzas) means ideas flow across boundaries, mirroring the poem&apos;s argument that human-made borders and structures are artificial. The final single line (&ldquo;turned into your skin&rdquo;) breaks the pattern, drawing attention to its message: human life matters more than any system. The lack of rhyme and loose metre create a reflective, philosophical tone.
                 </p>
               </SubSection>
@@ -1101,13 +1101,13 @@ export default function PowerAndConflictPage() {
             <Section id="the-emigree" title="The Emigree" poet="Carol Rumens (1993)">
 
               <SubSection title="Summary">
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   The speaker reflects on a country they left as a child. Despite knowing the place has been affected by conflict or political oppression (&ldquo;There once was a country... I left it as a child&rdquo;), their memory of it remains sunlit and idealised. External forces &mdash; &ldquo;they&rdquo; who are &ldquo;at the door&rdquo; &mdash; try to intimidate and erase the speaker&apos;s connection to their homeland, but the speaker defiantly clings to their memories and identity. The poem explores how memory, language, and identity persist even under threat.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   Three stanzas of eight to nine lines with no regular rhyme scheme. Each stanza ends with a refrain about the city being &ldquo;sunlight,&rdquo; creating a defiant, resilient structure that resists the threats described. The poem moves from childhood memory to present-day threat, but the consistent light imagery shows that the speaker&apos;s inner world remains unbroken. The unnamed country and vague threats create a sense of universality: this could be any displaced person&apos;s experience.
                 </p>
               </SubSection>
@@ -1167,13 +1167,13 @@ export default function PowerAndConflictPage() {
             <Section id="checking-out-me-history" title="Checking Out Me History" poet="John Agard (1996)">
 
               <SubSection title="Summary">
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   Agard, a Guyanese-British poet, protests against a Eurocentric education system that taught him about British historical figures (Guy Fawkes, Lord Nelson, Florence Nightingale) while ignoring the achievements of Black and Caribbean figures (Toussaint L&apos;Ouverture, Nanny de Maroon, Mary Seacole). The poem alternates between mocking the British history he was taught and celebrating the figures who were hidden from him. It is a powerful statement about identity, education, and the politics of who controls historical narratives.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   The poem alternates between two distinct visual styles: italicised stanzas about Black historical figures and non-italicised stanzas about the British education system. This structural division physically enacts the separation between the two histories. The poem uses Caribbean dialect (&ldquo;dem,&rdquo; &ldquo;me,&rdquo; &ldquo;dat&rdquo;) as an act of linguistic resistance against Standard English. No regular rhyme scheme, but heavy use of rhythm and repetition creates a spoken-word, performance quality.
                 </p>
               </SubSection>
@@ -1228,13 +1228,13 @@ export default function PowerAndConflictPage() {
             <Section id="kamikaze" title="Kamikaze" poet="Beatrice Garland (2013)">
 
               <SubSection title="Summary">
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   The poem tells the story of a Japanese kamikaze pilot who turns his plane around instead of completing his suicide mission. As he flies towards his target, he sees the sea below and is reminded of his childhood &mdash; fishing with his father, the beauty of the natural world. These memories overpower his sense of duty, and he returns home. However, his family and community treat him as if he were dead: his wife refuses to speak to him, his children learn to act as if he does not exist. The poem ends ambiguously, questioning whether his decision was an act of courage or cowardice.
                 </p>
               </SubSection>
 
               <SubSection title="Form &amp; Structure">
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   Seven sestets (six-line stanzas) followed by a final couplet. The poem is narrated in the third person by the pilot&apos;s daughter, creating distance and suggesting the story has been passed down. The regular stanza length contrasts with the emotional turbulence of the content. The shift from third person to first person in the final lines (&ldquo;he must have wondered / which had been the better way to die&rdquo;) is devastating, as the daughter imagines her father&apos;s perspective. Enjambment creates a flowing, reflective quality that mirrors the act of remembering.
                 </p>
               </SubSection>
@@ -1298,8 +1298,8 @@ export default function PowerAndConflictPage() {
       {/* ================================================================== */}
       <section id="comparison-table" className="bg-primary-50 px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-2xl font-bold text-gray-900">Comparison Table</h2>
-          <p className="mt-2 text-gray-600">
+          <h2 className="text-2xl font-bold text-foreground">Comparison Table</h2>
+          <p className="mt-2 text-muted-foreground">
             Use this at-a-glance table to find poems that work well together for your comparison essay. Click to expand.
           </p>
 
@@ -1320,7 +1320,7 @@ export default function PowerAndConflictPage() {
           </button>
 
           {showTable && (
-            <div className="mt-6 overflow-x-auto rounded-xl border border-gray-200 bg-white shadow-sm">
+            <div className="mt-6 overflow-x-auto rounded-xl border border-border bg-card shadow-md">
               <table className="min-w-full text-sm">
                 <thead>
                   <tr className="bg-primary text-white">
@@ -1336,14 +1336,14 @@ export default function PowerAndConflictPage() {
                   {COMPARISON_DATA.map((row, i) => (
                     <tr
                       key={row.poem}
-                      className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}
+                      className={i % 2 === 0 ? "bg-card" : "bg-muted"}
                     >
                       <td className="px-4 py-3 font-semibold text-primary whitespace-nowrap">{row.poem}</td>
-                      <td className="px-4 py-3 text-gray-700 whitespace-nowrap">{row.poet}</td>
-                      <td className="px-4 py-3 text-gray-500 whitespace-nowrap">{row.type}</td>
-                      <td className="px-4 py-3 text-gray-700">{row.themes}</td>
-                      <td className="px-4 py-3 text-gray-700">{row.tone}</td>
-                      <td className="px-4 py-3 text-gray-700">{row.form}</td>
+                      <td className="px-4 py-3 text-muted-foreground whitespace-nowrap">{row.poet}</td>
+                      <td className="px-4 py-3 text-muted-foreground whitespace-nowrap">{row.type}</td>
+                      <td className="px-4 py-3 text-muted-foreground">{row.themes}</td>
+                      <td className="px-4 py-3 text-muted-foreground">{row.tone}</td>
+                      <td className="px-4 py-3 text-muted-foreground">{row.form}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -1357,8 +1357,8 @@ export default function PowerAndConflictPage() {
       {/*  Thematic Groupings                                                 */}
       {/* ================================================================== */}
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-gray-900">Thematic Groupings for Comparison</h2>
-        <p className="mt-2 text-gray-600 mb-8">
+        <h2 className="text-2xl font-bold text-foreground">Thematic Groupings for Comparison</h2>
+        <p className="mt-2 text-muted-foreground mb-8">
           When choosing poems to compare, group them by shared themes. Here are the key clusters.
         </p>
 
@@ -1412,12 +1412,12 @@ export default function PowerAndConflictPage() {
           ].map((group) => (
             <div
               key={group.theme}
-              className={`rounded-xl border-2 ${group.colour} bg-white p-5 shadow-sm`}
+              className={`rounded-xl border-2 ${group.colour} bg-card p-5 shadow-md`}
             >
-              <h3 className="font-bold text-gray-900">{group.theme}</h3>
+              <h3 className="font-bold text-foreground">{group.theme}</h3>
               <ul className="mt-3 space-y-1.5">
                 {group.poems.map((p) => (
-                  <li key={p} className="flex items-center gap-2 text-sm text-gray-600">
+                  <li key={p} className="flex items-center gap-2 text-sm text-muted-foreground">
                     <span className="h-1.5 w-1.5 rounded-full bg-accent shrink-0" />
                     {p}
                   </li>
@@ -1431,9 +1431,9 @@ export default function PowerAndConflictPage() {
       {/* ================================================================== */}
       {/*  Exam Tips                                                          */}
       {/* ================================================================== */}
-      <section className="bg-white px-4 py-12 sm:px-6 lg:px-8">
+      <section className="bg-card px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-2xl font-bold text-gray-900">Exam Tips for Power and Conflict</h2>
+          <h2 className="text-2xl font-bold text-foreground">Exam Tips for Power and Conflict</h2>
           <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
@@ -1463,10 +1463,10 @@ export default function PowerAndConflictPage() {
             ].map((tip) => (
               <div
                 key={tip.title}
-                className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm"
+                className="rounded-xl border border-border bg-card p-5 shadow-md"
               >
                 <h3 className="font-semibold text-primary">{tip.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-600">{tip.text}</p>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{tip.text}</p>
               </div>
             ))}
           </div>

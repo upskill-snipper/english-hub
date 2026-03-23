@@ -108,11 +108,11 @@ export default function OCREnglishLanguagePage() {
         <section aria-labelledby="overview-heading">
           <h2
             id="overview-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Specification Overview
           </h2>
-          <div className="mt-4 space-y-4 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>
               The OCR GCSE English Language specification (J351) is designed to
               inspire and engage students through a wide range of texts and
@@ -124,10 +124,10 @@ export default function OCREnglishLanguagePage() {
               <table className="mt-4 w-full border-collapse text-sm">
                 <thead>
                   <tr className="border-b-2 border-primary/20 text-left">
-                    <th className="py-3 pr-4 font-semibold text-gray-900">Component</th>
-                    <th className="py-3 pr-4 font-semibold text-gray-900">Title</th>
-                    <th className="py-3 pr-4 font-semibold text-gray-900">Weighting</th>
-                    <th className="py-3 font-semibold text-gray-900">Duration</th>
+                    <th className="py-3 pr-4 font-semibold text-foreground">Component</th>
+                    <th className="py-3 pr-4 font-semibold text-foreground">Title</th>
+                    <th className="py-3 pr-4 font-semibold text-foreground">Weighting</th>
+                    <th className="py-3 font-semibold text-foreground">Duration</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-100">
@@ -155,13 +155,13 @@ export default function OCREnglishLanguagePage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Section cards ─────────────────────────────────────── */}
         <section aria-labelledby="resources-heading">
           <h2
             id="resources-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Study Resources
           </h2>
@@ -170,15 +170,15 @@ export default function OCREnglishLanguagePage() {
               <Link
                 key={s.href}
                 href={s.href}
-                className="group flex flex-col rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition hover:border-accent/40 hover:shadow-md"
+                className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-md transition hover:border-accent/40 hover:shadow-md"
               >
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-accent-50 text-accent transition group-hover:bg-accent-100">
                   {s.icon}
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 group-hover:text-accent">
+                <h3 className="text-lg font-semibold text-foreground group-hover:text-accent">
                   {s.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {s.description}
                 </p>
               </Link>
@@ -186,54 +186,54 @@ export default function OCREnglishLanguagePage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Assessment objectives ─────────────────────────────── */}
         <section aria-labelledby="ao-heading">
           <h2
             id="ao-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Assessment Objectives
           </h2>
-          <div className="mt-4 space-y-4 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>
               Understanding the assessment objectives (AOs) is essential for
               knowing what the examiner is looking for. OCR English Language
               uses the following AOs:
             </p>
             <div className="space-y-3">
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                <p className="font-semibold text-gray-900">AO1 &mdash; Reading</p>
+              <div className="rounded-lg border border-border bg-muted p-4">
+                <p className="font-semibold text-foreground">AO1 &mdash; Reading</p>
                 <p className="mt-1 text-sm">
                   Identify and interpret explicit and implicit information and
                   ideas. Select and synthesise evidence from different texts.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                <p className="font-semibold text-gray-900">AO2 &mdash; Reading</p>
+              <div className="rounded-lg border border-border bg-muted p-4">
+                <p className="font-semibold text-foreground">AO2 &mdash; Reading</p>
                 <p className="mt-1 text-sm">
                   Explain, comment on and analyse how writers use language and
                   structure to achieve effects and influence readers, using
                   relevant subject terminology to support their views.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                <p className="font-semibold text-gray-900">AO3 &mdash; Reading</p>
+              <div className="rounded-lg border border-border bg-muted p-4">
+                <p className="font-semibold text-foreground">AO3 &mdash; Reading</p>
                 <p className="mt-1 text-sm">
                   Compare writers&rsquo; ideas and perspectives, as well as how
                   these are conveyed, across two or more texts.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                <p className="font-semibold text-gray-900">AO4 &mdash; Reading</p>
+              <div className="rounded-lg border border-border bg-muted p-4">
+                <p className="font-semibold text-foreground">AO4 &mdash; Reading</p>
                 <p className="mt-1 text-sm">
                   Evaluate texts critically and support this with appropriate
                   textual references.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                <p className="font-semibold text-gray-900">AO5 &mdash; Writing</p>
+              <div className="rounded-lg border border-border bg-muted p-4">
+                <p className="font-semibold text-foreground">AO5 &mdash; Writing</p>
                 <p className="mt-1 text-sm">
                   Communicate clearly, effectively and imaginatively, selecting
                   and adapting tone, style and register for different forms,
@@ -242,28 +242,28 @@ export default function OCREnglishLanguagePage() {
                   cohesion of texts.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                <p className="font-semibold text-gray-900">AO6 &mdash; Writing</p>
+              <div className="rounded-lg border border-border bg-muted p-4">
+                <p className="font-semibold text-foreground">AO6 &mdash; Writing</p>
                 <p className="mt-1 text-sm">
                   Use a range of vocabulary and sentence structures for clarity,
                   purpose and effect, with accurate spelling and punctuation.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                <p className="font-semibold text-gray-900">AO7 &mdash; Spoken Language</p>
+              <div className="rounded-lg border border-border bg-muted p-4">
+                <p className="font-semibold text-foreground">AO7 &mdash; Spoken Language</p>
                 <p className="mt-1 text-sm">
                   Demonstrate presentation skills in a formal setting.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                <p className="font-semibold text-gray-900">AO8 &mdash; Spoken Language</p>
+              <div className="rounded-lg border border-border bg-muted p-4">
+                <p className="font-semibold text-foreground">AO8 &mdash; Spoken Language</p>
                 <p className="mt-1 text-sm">
                   Listen and respond appropriately to spoken language, including
                   to questions and feedback on presentations.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                <p className="font-semibold text-gray-900">AO9 &mdash; Spoken Language</p>
+              <div className="rounded-lg border border-border bg-muted p-4">
+                <p className="font-semibold text-foreground">AO9 &mdash; Spoken Language</p>
                 <p className="mt-1 text-sm">
                   Use spoken Standard English effectively in speeches and
                   presentations.

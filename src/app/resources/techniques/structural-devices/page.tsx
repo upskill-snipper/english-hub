@@ -1524,7 +1524,7 @@ const CATEGORY_COLOURS: Record<string, string> = {
   "Dramatic Structure": "bg-warn-50 text-warn-700 border-warn-200",
   "Opening Techniques": "bg-success-100 text-success-800 border-success-300",
   "Ending Techniques": "bg-primary-50 text-primary-700 border-primary-200",
-  "Additional Structural Techniques": "bg-gray-100 text-gray-700 border-gray-300",
+  "Additional Structural Techniques": "bg-gray-100 text-muted-foreground border-gray-300",
 };
 
 /* ─── Icons ──────────────────────────────────────────────────── */
@@ -1532,7 +1532,7 @@ const CATEGORY_COLOURS: Record<string, string> = {
 function SearchIcon() {
   return (
     <svg
-      className="h-5 w-5 text-gray-400"
+      className="h-5 w-5 text-muted-foreground"
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
@@ -1550,7 +1550,7 @@ function SearchIcon() {
 function ChevronDown({ open }: { open: boolean }) {
   return (
     <svg
-      className={`h-5 w-5 shrink-0 text-gray-500 transition-transform duration-200 ${
+      className={`h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200 ${
         open ? "rotate-180" : ""
       }`}
       fill="none"
@@ -1571,10 +1571,10 @@ function ChevronDown({ open }: { open: boolean }) {
 
 function TechniqueCard({ t }: { t: Technique }) {
   const [open, setOpen] = useState(false);
-  const catColour = CATEGORY_COLOURS[t.category] ?? "bg-gray-100 text-gray-700 border-gray-300";
+  const catColour = CATEGORY_COLOURS[t.category] ?? "bg-gray-100 text-muted-foreground border-gray-300";
 
   return (
-    <div className="rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md">
+    <div className="rounded-xl border border-border bg-card shadow-md transition hover:shadow-md">
       <button
         onClick={() => setOpen(!open)}
         className="flex w-full items-start justify-between gap-4 p-5 text-left sm:p-6"
@@ -1582,11 +1582,11 @@ function TechniqueCard({ t }: { t: Technique }) {
       >
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-center gap-2">
-            <h3 className="text-base font-bold text-gray-900 sm:text-lg">
+            <h3 className="text-base font-bold text-foreground sm:text-lg">
               {t.name}
             </h3>
             {t.aka && (
-              <span className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-500">
+              <span className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
                 aka {t.aka}
               </span>
             )}
@@ -1594,7 +1594,7 @@ function TechniqueCard({ t }: { t: Technique }) {
               {t.category}
             </span>
           </div>
-          <p className="mt-1 text-sm leading-relaxed text-gray-600">
+          <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
             {t.definition}
           </p>
         </div>
@@ -1602,18 +1602,18 @@ function TechniqueCard({ t }: { t: Technique }) {
       </button>
 
       {open && (
-        <div className="border-t border-gray-100 px-5 pb-6 pt-4 sm:px-6">
+        <div className="border-t border-border px-5 pb-6 pt-4 sm:px-6">
           <div className="grid gap-5 sm:grid-cols-2">
             {/* Example */}
             <div className="rounded-lg bg-accent-50 p-4">
               <h4 className="text-xs font-bold uppercase tracking-wider text-accent-700">
                 Example
               </h4>
-              <p className="mt-2 text-sm italic leading-relaxed text-gray-800">
+              <p className="mt-2 text-sm italic leading-relaxed text-foreground">
                 {t.example}
               </p>
               {t.exampleSource && (
-                <p className="mt-1 text-xs text-gray-500">
+                <p className="mt-1 text-xs text-muted-foreground">
                   -- {t.exampleSource}
                 </p>
               )}
@@ -1624,17 +1624,17 @@ function TechniqueCard({ t }: { t: Technique }) {
               <h4 className="text-xs font-bold uppercase tracking-wider text-primary-700">
                 Effect on the reader
               </h4>
-              <p className="mt-2 text-sm leading-relaxed text-gray-800">
+              <p className="mt-2 text-sm leading-relaxed text-foreground">
                 {t.effect}
               </p>
             </div>
 
             {/* How to identify */}
-            <div className="rounded-lg bg-gray-50 p-4">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-gray-600">
+            <div className="rounded-lg bg-muted p-4">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
                 How to identify it
               </h4>
-              <p className="mt-2 text-sm leading-relaxed text-gray-700">
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 {t.howToIdentify}
               </p>
             </div>
@@ -1644,7 +1644,7 @@ function TechniqueCard({ t }: { t: Technique }) {
               <h4 className="text-xs font-bold uppercase tracking-wider text-success-700">
                 Exam sentence starter
               </h4>
-              <p className="mt-2 text-sm leading-relaxed text-gray-800">
+              <p className="mt-2 text-sm leading-relaxed text-foreground">
                 {t.sentenceStarter}
               </p>
             </div>
@@ -1652,14 +1652,14 @@ function TechniqueCard({ t }: { t: Technique }) {
 
           {/* Relevant questions */}
           <div className="mt-4">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-gray-500">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground">
               Most relevant to
             </h4>
             <div className="mt-2 flex flex-wrap gap-2">
               {t.relevantQuestions.map((q) => (
                 <span
                   key={q}
-                  className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600"
+                  className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-muted-foreground"
                 >
                   {q}
                 </span>
@@ -1751,7 +1751,7 @@ export default function StructuralDevicesPage() {
               setActiveLetter(null);
             }}
             placeholder="Search techniques (e.g. enjambment, cliffhanger, opening)..."
-            className="w-full rounded-xl border border-gray-300 bg-white py-3 pl-11 pr-4 text-sm text-gray-900 shadow-sm placeholder:text-gray-400 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+            className="w-full rounded-xl border border-gray-300 bg-card py-3 pl-11 pr-4 text-sm text-foreground shadow-md placeholder:text-muted-foreground focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
           />
         </div>
 
@@ -1762,7 +1762,7 @@ export default function StructuralDevicesPage() {
             className={`rounded-md px-2.5 py-1 text-xs font-bold transition ${
               activeLetter === null
                 ? "bg-primary text-white"
-                : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                : "bg-gray-100 text-muted-foreground hover:bg-gray-200"
             }`}
           >
             All
@@ -1781,8 +1781,8 @@ export default function StructuralDevicesPage() {
                   activeLetter === letter
                     ? "bg-primary text-white"
                     : available
-                    ? "bg-gray-100 text-gray-600 hover:bg-gray-200"
-                    : "bg-gray-50 text-gray-300 cursor-not-allowed"
+                    ? "bg-gray-100 text-muted-foreground hover:bg-gray-200"
+                    : "bg-muted text-gray-300 cursor-not-allowed"
                 }`}
               >
                 {letter}
@@ -1798,7 +1798,7 @@ export default function StructuralDevicesPage() {
             className={`rounded-full px-4 py-1.5 text-xs font-semibold transition ${
               activeCategory === null
                 ? "bg-accent text-white"
-                : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                : "bg-gray-100 text-muted-foreground hover:bg-gray-200"
             }`}
           >
             All categories
@@ -1812,7 +1812,7 @@ export default function StructuralDevicesPage() {
               className={`rounded-full px-4 py-1.5 text-xs font-semibold transition ${
                 activeCategory === cat
                   ? "bg-accent text-white"
-                  : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                  : "bg-gray-100 text-muted-foreground hover:bg-gray-200"
               }`}
             >
               {cat}
@@ -1821,7 +1821,7 @@ export default function StructuralDevicesPage() {
         </div>
 
         {/* Results count */}
-        <p className="mt-6 text-center text-sm text-gray-500">
+        <p className="mt-6 text-center text-sm text-muted-foreground">
           Showing {filtered.length} of {TECHNIQUES.length} techniques
           {activeCategory && <> in <strong>{activeCategory}</strong></>}
           {activeLetter && <> starting with <strong>{activeLetter}</strong></>}
@@ -1834,7 +1834,7 @@ export default function StructuralDevicesPage() {
             filtered.map((t) => <TechniqueCard key={t.name} t={t} />)
           ) : (
             <div className="rounded-xl border border-dashed border-gray-300 py-16 text-center">
-              <p className="text-gray-500">
+              <p className="text-muted-foreground">
                 No techniques match your search. Try a different term or clear
                 your filters.
               </p>
@@ -1854,10 +1854,10 @@ export default function StructuralDevicesPage() {
 
         {/* Cross-link */}
         <div className="mt-12 rounded-xl border-2 border-accent/20 bg-accent-50 p-6 text-center sm:p-8">
-          <h2 className="text-lg font-bold text-gray-900">
+          <h2 className="text-lg font-bold text-foreground">
             Looking for language devices?
           </h2>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-sm text-muted-foreground">
             Browse 45+ language and literary techniques including metaphor,
             irony, imagery, sound devices, and more.
           </p>

@@ -33,7 +33,7 @@ const GRADE_CARDS = [
     label: "Distinction",
     href: "/resources/grade-targets/grade-7",
     colour: "border-[#2E86C1]",
-    bg: "bg-[#2E86C1]",
+    bg: "bg-primary",
     tagline: "Thoughtful analysis, confident expression",
     description:
       "A Grade 7 demonstrates detailed, perceptive analysis and ambitious, well-crafted writing. Discover how to push beyond competent responses into genuinely impressive work.",
@@ -177,7 +177,7 @@ export default function GradeTargetsPage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-[#1A5276] to-[#1A5276]/80 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-[#2E86C1]/80">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary/80">
             Resources
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -194,7 +194,7 @@ export default function GradeTargetsPage() {
               <Link
                 key={card.grade}
                 href={card.href}
-                className="rounded-lg bg-white/20 px-5 py-2.5 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                className="rounded-lg bg-card/20 px-5 py-2.5 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-card/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
               >
                 Grade {card.grade}
               </Link>
@@ -205,10 +205,10 @@ export default function GradeTargetsPage() {
 
       {/* Grade cards */}
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-gray-900">
+        <h2 className="text-2xl font-bold text-foreground">
           What does each grade look like?
         </h2>
-        <p className="mt-2 text-gray-600">
+        <p className="mt-2 text-muted-foreground">
           Select a grade to see detailed descriptors, example responses, and
           targeted advice for reaching that level.
         </p>
@@ -218,7 +218,7 @@ export default function GradeTargetsPage() {
             <Link
               key={card.grade}
               href={card.href}
-              className={`group flex flex-col rounded-xl border-2 ${card.colour} bg-white p-6 shadow-sm transition hover:shadow-lg`}
+              className={`group flex flex-col rounded-xl border-2 ${card.colour} bg-card p-6 shadow-md transition hover:shadow-lg`}
             >
               <div className="flex items-center gap-3">
                 <span
@@ -227,19 +227,19 @@ export default function GradeTargetsPage() {
                   {card.grade}
                 </span>
                 <div>
-                  <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#1A5276] transition-colors">
+                  <h3 className="text-lg font-bold text-foreground group-hover:text-foreground transition-colors">
                     Grade {card.grade}
                   </h3>
-                  <p className="text-xs font-medium text-gray-500 uppercase tracking-wide">
+                  <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
                     {card.label}
                   </p>
                 </div>
               </div>
 
-              <p className="mt-3 text-sm font-medium italic text-gray-500">
+              <p className="mt-3 text-sm font-medium italic text-muted-foreground">
                 {card.tagline}
               </p>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-gray-600">
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
                 {card.description}
               </p>
 
@@ -247,7 +247,7 @@ export default function GradeTargetsPage() {
                 {card.skills.map((skill) => (
                   <li
                     key={skill}
-                    className="flex items-start gap-2 text-sm text-gray-600"
+                    className="flex items-start gap-2 text-sm text-muted-foreground"
                   >
                     <span className={`mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full ${card.bg}`} />
                     {skill}
@@ -255,7 +255,7 @@ export default function GradeTargetsPage() {
                 ))}
               </ul>
 
-              <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-[#2E86C1] group-hover:text-[#1A5276] transition-colors">
+              <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:text-foreground transition-colors">
                 How to get a {card.grade} <ArrowRight />
               </span>
             </Link>
@@ -264,45 +264,45 @@ export default function GradeTargetsPage() {
       </section>
 
       {/* Grade descriptors comparison */}
-      <section className="bg-gray-50 px-4 py-12 sm:px-6 lg:px-8">
+      <section className="bg-muted px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Grade Descriptors
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             Side-by-side comparison of what examiners expect at each level for
             English Language and Literature.
           </p>
 
           {DESCRIPTORS.map((subject) => (
             <div key={subject.subject} className="mt-8">
-              <h3 className="text-lg font-bold text-[#1A5276]">
+              <h3 className="text-lg font-bold text-foreground">
                 {subject.subject}
               </h3>
 
               {subject.areas.map((area) => (
                 <div key={area.label} className="mt-4">
-                  <h4 className="text-sm font-semibold uppercase tracking-wide text-gray-500">
+                  <h4 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
                     {area.label}
                   </h4>
                   <div className="mt-2 grid gap-3 sm:grid-cols-3">
                     {area.levels.map((level) => (
                       <div
                         key={level.grade}
-                        className="rounded-lg border border-gray-200 bg-white p-4"
+                        className="rounded-lg border border-border bg-card p-4"
                       >
                         <span
                           className={`inline-block rounded-full px-2.5 py-0.5 text-xs font-bold text-white ${
                             level.grade === "5"
                               ? "bg-[#27AE60]"
                               : level.grade === "7"
-                              ? "bg-[#2E86C1]"
+                              ? "bg-primary"
                               : "bg-[#8E44AD]"
                           }`}
                         >
                           Grade {level.grade}
                         </span>
-                        <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                           {level.text}
                         </p>
                       </div>
@@ -318,12 +318,12 @@ export default function GradeTargetsPage() {
       {/* Self-assessment */}
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="flex items-center gap-3">
-          <TargetIcon className="h-8 w-8 text-[#2E86C1]" />
-          <h2 className="text-2xl font-bold text-gray-900">
+          <TargetIcon className="h-8 w-8 text-primary" />
+          <h2 className="text-2xl font-bold text-foreground">
             Where are you now?
           </h2>
         </div>
-        <p className="mt-2 text-gray-600">
+        <p className="mt-2 text-muted-foreground">
           A quick self-assessment to help you identify your current level and
           what to work on next. Be honest -- this is for you, not your teacher!
         </p>
@@ -332,30 +332,30 @@ export default function GradeTargetsPage() {
           {SELF_ASSESSMENT.map((item, idx) => (
             <div
               key={idx}
-              className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
+              className="rounded-xl border border-border bg-card p-6 shadow-md"
             >
-              <p className="font-semibold text-gray-900">
+              <p className="font-semibold text-foreground">
                 {idx + 1}. {item.question}
               </p>
               <div className="mt-4 space-y-3">
                 {item.options.map((option) => (
                   <label
                     key={option.level}
-                    className="flex cursor-pointer items-start gap-3 rounded-lg border border-gray-200 p-3 transition hover:border-[#2E86C1]/40 hover:bg-[#2E86C1]/5"
+                    className="flex cursor-pointer items-start gap-3 rounded-lg border border-border p-3 transition hover:border-[#2E86C1]/40 hover:bg-primary/5"
                   >
                     <input
                       type="radio"
                       name={`q${idx}`}
-                      className="mt-0.5 h-4 w-4 border-gray-300 text-[#2E86C1] focus:ring-[#2E86C1]"
+                      className="mt-0.5 h-4 w-4 border-gray-300 text-primary focus:ring-primary"
                     />
                     <div>
-                      <p className="text-sm text-gray-700">{option.text}</p>
+                      <p className="text-sm text-muted-foreground">{option.text}</p>
                       <span
                         className={`mt-1 inline-block rounded-full px-2 py-0.5 text-xs font-semibold ${
                           option.level.includes("4-5")
                             ? "bg-[#27AE60]/10 text-[#27AE60]"
                             : option.level.includes("6-7")
-                            ? "bg-[#2E86C1]/10 text-[#2E86C1]"
+                            ? "bg-primary/10 text-primary"
                             : "bg-[#8E44AD]/10 text-[#8E44AD]"
                         }`}
                       >
@@ -369,20 +369,20 @@ export default function GradeTargetsPage() {
           ))}
         </div>
 
-        <div className="mt-8 rounded-xl border-2 border-[#2E86C1]/20 bg-[#2E86C1]/5 p-6">
-          <h3 className="font-bold text-[#1A5276]">What next?</h3>
-          <p className="mt-2 text-sm leading-relaxed text-gray-700">
+        <div className="mt-8 rounded-xl border-2 border-[#2E86C1]/20 bg-primary/5 p-6">
+          <h3 className="font-bold text-foreground">What next?</h3>
+          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
             If most of your answers fell in the <strong>Grade 4-5</strong> range,
             start with our{" "}
-            <Link href="/resources/grade-targets/grade-5" className="font-semibold text-[#2E86C1] underline hover:text-[#1A5276]">
+            <Link href="/resources/grade-targets/grade-5" className="font-semibold text-primary underline hover:text-foreground">
               Getting a Grade 5
             </Link>{" "}
             guide. If you are mostly at <strong>Grade 6-7</strong>, check out{" "}
-            <Link href="/resources/grade-targets/grade-7" className="font-semibold text-[#2E86C1] underline hover:text-[#1A5276]">
+            <Link href="/resources/grade-targets/grade-7" className="font-semibold text-primary underline hover:text-foreground">
               Getting a Grade 7
             </Link>
             . And if you are aiming for the very top, our{" "}
-            <Link href="/resources/grade-targets/grade-9" className="font-semibold text-[#2E86C1] underline hover:text-[#1A5276]">
+            <Link href="/resources/grade-targets/grade-9" className="font-semibold text-primary underline hover:text-foreground">
               Getting a Grade 9
             </Link>{" "}
             guide will show you how to write responses that examiners remember.

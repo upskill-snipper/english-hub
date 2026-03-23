@@ -151,13 +151,13 @@ export default function VocabularyHubPage() {
             </Link>
             <Link
               href="/resources/vocabulary/descriptive"
-              className="rounded-lg border-2 border-white/30 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white/20"
+              className="rounded-lg border-2 border-white/30 bg-card/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-card/20"
             >
               Descriptive Words
             </Link>
             <Link
               href="/resources/vocabulary/analytical"
-              className="rounded-lg border-2 border-white/30 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white/20"
+              className="rounded-lg border-2 border-white/30 bg-card/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-card/20"
             >
               Analytical Words
             </Link>
@@ -172,7 +172,7 @@ export default function VocabularyHubPage() {
             <Link
               key={c.title}
               href={c.href}
-              className={`group flex flex-col rounded-2xl border-2 ${c.colour} ${c.bg} p-8 shadow-sm transition hover:shadow-lg`}
+              className={`group flex flex-col rounded-2xl border-2 ${c.colour} ${c.bg} p-8 shadow-md transition hover:shadow-lg`}
             >
               <div className="flex items-start justify-between">
                 <span className={c.iconColour}>{c.icon}</span>
@@ -180,15 +180,15 @@ export default function VocabularyHubPage() {
                   {c.count} words
                 </span>
               </div>
-              <h2 className="mt-5 text-xl font-bold text-gray-900 group-hover:text-primary transition-colors">
+              <h2 className="mt-5 text-xl font-bold text-foreground group-hover:text-primary transition-colors">
                 {c.title}
               </h2>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-gray-600">
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
                 {c.description}
               </p>
               <ul className="mt-5 flex flex-wrap gap-2">
                 {c.topics.map((t) => (
-                  <li key={t} className="rounded-full bg-white px-3 py-1 text-xs font-medium text-gray-600 shadow-sm">
+                  <li key={t} className="rounded-full bg-card px-3 py-1 text-xs font-medium text-muted-foreground shadow-md">
                     {t}
                   </li>
                 ))}
@@ -202,12 +202,12 @@ export default function VocabularyHubPage() {
       </section>
 
       {/* Upgrade your vocabulary interactive section */}
-      <section className="bg-gray-50 px-4 py-14 sm:px-6 lg:px-8">
+      <section className="bg-muted px-4 py-14 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-center text-2xl font-bold text-gray-900">
+          <h2 className="text-center text-2xl font-bold text-foreground">
             Upgrade Your Vocabulary
           </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-center text-gray-600">
+          <p className="mx-auto mt-3 max-w-2xl text-center text-muted-foreground">
             Stop using overused words. Search below or browse the table to find
             more sophisticated alternatives that will impress examiners.
           </p>
@@ -215,7 +215,7 @@ export default function VocabularyHubPage() {
           {/* Search */}
           <div className="mx-auto mt-8 max-w-md">
             <div className="relative">
-              <svg className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+              <svg className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
               </svg>
               <input
@@ -223,7 +223,7 @@ export default function VocabularyHubPage() {
                 placeholder="Search for a word to upgrade..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full rounded-xl border border-gray-300 bg-white py-3 pl-10 pr-4 text-sm shadow-sm transition focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
+                className="w-full rounded-xl border border-gray-300 bg-card py-3 pl-10 pr-4 text-sm shadow-md transition focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
               />
             </div>
           </div>
@@ -231,12 +231,12 @@ export default function VocabularyHubPage() {
           {/* Upgrade cards */}
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {filteredUpgrades.map((w) => (
-              <div key={w.weak} className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+              <div key={w.weak} className="rounded-xl border border-border bg-card p-5 shadow-md">
                 <div className="flex items-center gap-2">
                   <span className="rounded-full bg-red-100 px-3 py-1 text-xs font-bold text-red-600 line-through">
                     {w.weak}
                   </span>
-                  <svg className="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                  <svg className="h-4 w-4 text-muted-foreground" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                   </svg>
                 </div>
@@ -244,7 +244,7 @@ export default function VocabularyHubPage() {
                   {w.upgrades.map((u) => (
                     <li key={u} className="flex items-center gap-2 text-sm">
                       <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-                      <span className="font-medium text-gray-700">{u}</span>
+                      <span className="font-medium text-muted-foreground">{u}</span>
                     </li>
                   ))}
                 </ul>
@@ -253,7 +253,7 @@ export default function VocabularyHubPage() {
           </div>
 
           {filteredUpgrades.length === 0 && (
-            <p className="mt-8 text-center text-sm text-gray-500">
+            <p className="mt-8 text-center text-sm text-muted-foreground">
               No matches found. Try searching for a different word.
             </p>
           )}
@@ -262,7 +262,7 @@ export default function VocabularyHubPage() {
 
       {/* Quick links */}
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-gray-900">Continue exploring</h2>
+        <h2 className="text-2xl font-bold text-foreground">Continue exploring</h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-3">
           {[
             { label: "Writing Skills", href: "/resources/writing-skills", desc: "Master creative, persuasive, and analytical writing." },
@@ -272,10 +272,10 @@ export default function VocabularyHubPage() {
             <Link
               key={link.href}
               href={link.href}
-              className="group rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition hover:shadow-md hover:border-accent/40"
+              className="group rounded-xl border border-border bg-card p-5 shadow-md transition hover:shadow-md hover:border-accent/40"
             >
-              <h3 className="font-bold text-gray-900 group-hover:text-primary transition-colors">{link.label}</h3>
-              <p className="mt-1 text-sm text-gray-500">{link.desc}</p>
+              <h3 className="font-bold text-foreground group-hover:text-primary transition-colors">{link.label}</h3>
+              <p className="mt-1 text-sm text-muted-foreground">{link.desc}</p>
             </Link>
           ))}
         </div>

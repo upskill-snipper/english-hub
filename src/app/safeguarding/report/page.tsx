@@ -44,10 +44,10 @@ function SupportResources() {
       <h2 className="text-sm font-semibold text-primary">
         If you need to talk to someone right now
       </h2>
-      <p className="mt-1 text-xs text-gray-500">
+      <p className="mt-1 text-xs text-muted-foreground">
         These services are free, confidential, and available 24/7.
       </p>
-      <ul className="mt-3 space-y-2.5 text-sm text-gray-700">
+      <ul className="mt-3 space-y-2.5 text-sm text-muted-foreground">
         <li className="flex items-start gap-2">
           <span
             className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent"
@@ -70,7 +70,7 @@ function SupportResources() {
             >
               0800 1111
             </a>
-            <span className="block text-xs text-gray-500">
+            <span className="block text-xs text-muted-foreground">
               Free, confidential helpline for under 19s
             </span>
           </div>
@@ -97,7 +97,7 @@ function SupportResources() {
             >
               0808 800 5000
             </a>
-            <span className="block text-xs text-gray-500">
+            <span className="block text-xs text-muted-foreground">
               For adults worried about a child
             </span>
           </div>
@@ -130,7 +130,7 @@ function SupportResources() {
             >
               Report online
             </a>
-            <span className="block text-xs text-gray-500">
+            <span className="block text-xs text-muted-foreground">
               Report online abuse or exploitation
             </span>
           </div>
@@ -230,22 +230,22 @@ export default function SafeguardingReportPage() {
           <h1 className="text-2xl font-semibold text-primary">
             You&apos;ve done the right thing by speaking up
           </h1>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             Thank you for telling us. Your report has been received and our
             safeguarding team will look at it carefully.
           </p>
 
-          <div className="mt-6 rounded-lg bg-gray-50 p-4 text-sm">
-            <p className="text-gray-500">Your reference number</p>
+          <div className="mt-6 rounded-lg bg-muted p-4 text-sm">
+            <p className="text-muted-foreground">Your reference number</p>
             <p className="mt-1 text-lg font-mono font-semibold text-primary">
               {result.referenceNumber}
             </p>
-            <p className="mt-1 text-xs text-gray-400">
+            <p className="mt-1 text-xs text-muted-foreground">
               Keep this safe in case you need to follow up.
             </p>
           </div>
 
-          <div className="mt-6 rounded-lg bg-primary/5 border border-primary/20 p-4 text-sm text-gray-700">
+          <div className="mt-6 rounded-lg bg-primary/5 border border-primary/20 p-4 text-sm text-muted-foreground">
             <p>
               <strong>What happens next?</strong>
             </p>
@@ -279,7 +279,7 @@ export default function SafeguardingReportPage() {
       <div className="mb-2">
         <Link
           href="/"
-          className="text-sm text-gray-400 hover:text-primary transition-colors"
+          className="text-sm text-muted-foreground hover:text-primary transition-colors"
         >
           &larr; Back to Home
         </Link>
@@ -288,14 +288,14 @@ export default function SafeguardingReportPage() {
       <h1 className="text-2xl font-semibold text-primary">
         Need help or worried about something?
       </h1>
-      <p className="mt-2 text-sm text-gray-600">
+      <p className="mt-2 text-sm text-muted-foreground">
         Whether it&apos;s about you or someone else, we&apos;re here to help.
         You can tell us as much or as little as you feel comfortable with.
         You don&apos;t have to give your name.
       </p>
 
       {/* Reassurance banner */}
-      <div className="mt-4 rounded-lg border border-success/20 bg-success/5 p-4 text-sm text-gray-700">
+      <div className="mt-4 rounded-lg border border-success/20 bg-success/5 p-4 text-sm text-muted-foreground">
         <p className="font-medium text-success-700">
           Speaking up takes courage
         </p>
@@ -315,7 +315,7 @@ export default function SafeguardingReportPage() {
       <form onSubmit={handleSubmit} className="mt-8 space-y-6">
         {/* Report type */}
         <fieldset>
-          <legend className="block text-sm font-medium text-gray-700">
+          <legend className="block text-sm font-medium text-muted-foreground">
             What best describes your concern?{" "}
             <span className="text-red-500">*</span>
           </legend>
@@ -326,7 +326,7 @@ export default function SafeguardingReportPage() {
                 className={`flex cursor-pointer items-center gap-3 rounded-lg border p-3 text-sm transition-colors ${
                   reportType === rt.value
                     ? "border-primary bg-primary/5 text-primary"
-                    : "border-gray-200 bg-white text-gray-700 hover:border-gray-300"
+                    : "border-border bg-card text-muted-foreground hover:border-gray-300"
                 }`}
               >
                 <input
@@ -359,12 +359,12 @@ export default function SafeguardingReportPage() {
         <div>
           <label
             htmlFor="description"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium text-muted-foreground"
           >
             Tell us what happened or what you&apos;re worried about{" "}
             <span className="text-red-500">*</span>
           </label>
-          <p className="mt-0.5 text-xs text-gray-400">
+          <p className="mt-0.5 text-xs text-muted-foreground">
             Take your time. Share as much or as little as you feel comfortable
             with.
           </p>
@@ -383,7 +383,7 @@ export default function SafeguardingReportPage() {
             className={`mt-1 text-right text-xs ${
               description.length >= DESCRIPTION_MAX
                 ? "text-red-500 font-medium"
-                : "text-gray-400"
+                : "text-muted-foreground"
             }`}
           >
             {description.length}/{DESCRIPTION_MAX}
@@ -391,12 +391,12 @@ export default function SafeguardingReportPage() {
         </div>
 
         {/* Optional contact details */}
-        <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-          <p className="text-sm font-medium text-gray-700">
+        <div className="rounded-lg border border-border bg-muted p-4">
+          <p className="text-sm font-medium text-muted-foreground">
             Your details{" "}
-            <span className="font-normal text-gray-400">(optional)</span>
+            <span className="font-normal text-muted-foreground">(optional)</span>
           </p>
-          <p className="mt-0.5 text-xs text-gray-400">
+          <p className="mt-0.5 text-xs text-muted-foreground">
             You can report anonymously. If you leave your details, we can
             follow up with you.
           </p>
@@ -405,7 +405,7 @@ export default function SafeguardingReportPage() {
             <div>
               <label
                 htmlFor="reporterName"
-                className="block text-xs font-medium text-gray-600"
+                className="block text-xs font-medium text-muted-foreground"
               >
                 Your name
               </label>
@@ -422,7 +422,7 @@ export default function SafeguardingReportPage() {
             <div>
               <label
                 htmlFor="reporterContact"
-                className="block text-xs font-medium text-gray-600"
+                className="block text-xs font-medium text-muted-foreground"
               >
                 Email or phone number
               </label>
@@ -458,7 +458,7 @@ export default function SafeguardingReportPage() {
           {submitting ? "Sending your report..." : "Send Report"}
         </button>
 
-        <p className="text-center text-xs text-gray-400">
+        <p className="text-center text-xs text-muted-foreground">
           Your report will be handled confidentially by our designated
           safeguarding lead.
         </p>

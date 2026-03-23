@@ -21,7 +21,7 @@ function Section({
     <section id={id} aria-labelledby={`${id}-heading`} className="scroll-mt-20">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between rounded-lg bg-gradient-to-r from-[#1A5276] to-[#2E86C1] px-5 py-3.5 text-left text-lg font-bold text-white shadow-sm transition hover:opacity-90"
+        className="flex w-full items-center justify-between rounded-lg bg-gradient-to-r from-[#1A5276] to-[#2E86C1] px-5 py-3.5 text-left text-lg font-bold text-white shadow-md transition hover:opacity-90"
         aria-expanded={open}
       >
         <span id={`${id}-heading`}>{title}</span>
@@ -42,8 +42,8 @@ function Section({
 
 function Card({ title, children }: { title?: string; children: React.ReactNode }) {
   return (
-    <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-      {title && <h3 className="font-semibold text-[#1A5276]">{title}</h3>}
+    <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+      {title && <h3 className="font-semibold text-foreground">{title}</h3>}
       <div className={title ? "mt-2" : ""}>{children}</div>
     </div>
   );
@@ -61,14 +61,14 @@ function QuoteCard({
   analysis: string;
 }) {
   return (
-    <div className="rounded-lg border-l-4 border-[#2E86C1] bg-white p-5 shadow-sm">
-      <blockquote className="text-base font-medium italic text-gray-900">
+    <div className="rounded-lg border-l-4 border-[#2E86C1] bg-card p-5 shadow-md">
+      <blockquote className="text-base font-medium italic text-foreground">
         &ldquo;{quote}&rdquo;
       </blockquote>
-      <p className="mt-1 text-xs font-semibold text-[#2E86C1]">
+      <p className="mt-1 text-xs font-semibold text-primary">
         {speaker} &mdash; {act}
       </p>
-      <p className="mt-3 text-sm leading-relaxed text-gray-700">{analysis}</p>
+      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{analysis}</p>
     </div>
   );
 }
@@ -83,13 +83,13 @@ export default function RomeoAndJulietRevisionPage() {
         <div className="flex flex-wrap items-center gap-2 mb-3">
           <span className="rounded-full bg-rose-100 px-3 py-1 text-xs font-bold uppercase tracking-wider text-rose-700">Shakespeare</span>
           {["AQA", "Edexcel", "CAIE", "OCR"].map((b) => (
-            <span key={b} className="rounded-full bg-[#EBF5FB] px-3 py-1 text-xs font-semibold text-[#2E86C1]">{b}</span>
+            <span key={b} className="rounded-full bg-[#EBF5FB] px-3 py-1 text-xs font-semibold text-primary">{b}</span>
           ))}
         </div>
-        <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           Romeo and Juliet &mdash; Complete Revision Guide
         </h1>
-        <p className="mt-3 max-w-3xl text-lg leading-relaxed text-gray-600">
+        <p className="mt-3 max-w-3xl text-lg leading-relaxed text-muted-foreground">
           Full act-by-act summary, character profiles, themes with evidence, 25+ key quotations with analysis, Elizabethan context, essay planning, and exam board advice.
         </p>
       </div>
@@ -97,11 +97,11 @@ export default function RomeoAndJulietRevisionPage() {
       {/* ── PLOT SUMMARY ──────────────────────────────────────── */}
       <Section title="Act-by-Act Plot Summary" id="plot" defaultOpen>
         <Card title="Act 1 -- The Feud and the Meeting">
-          <p className="text-sm leading-relaxed text-gray-700">
+          <p className="text-sm leading-relaxed text-muted-foreground">
             The Prologue, a sonnet, tells the audience that &ldquo;star-cross&apos;d lovers&rdquo; from two feuding families will die, and only their deaths will end the feud. A street brawl between Montague and Capulet servants escalates until Prince Escalus threatens death for further disturbances. Romeo (a Montague) is lovesick over Rosaline, using artificial Petrarchan oxymorons (&ldquo;O brawling love, O loving hate&rdquo;). Benvolio and Mercutio persuade him to gate-crash the Capulet ball. At the ball, Romeo sees Juliet and falls instantly in love, forgetting Rosaline entirely. They share a sonnet (the &ldquo;pilgrim&rdquo; sonnet) and kiss, then discover they belong to enemy families. Tybalt, Juliet&apos;s cousin, recognises Romeo and swears revenge but is restrained by Lord Capulet.
           </p>
-          <div className="mt-3 rounded bg-gray-50 p-3 text-sm text-gray-600">
-            <p className="font-semibold text-gray-700">Key Moments:</p>
+          <div className="mt-3 rounded bg-muted p-3 text-sm text-muted-foreground">
+            <p className="font-semibold text-muted-foreground">Key Moments:</p>
             <ul className="mt-1 space-y-1">
               <li>&bull; The Prologue -- dramatic irony from the very start</li>
               <li>&bull; The street brawl and Prince&apos;s warning (1.1)</li>
@@ -112,11 +112,11 @@ export default function RomeoAndJulietRevisionPage() {
         </Card>
 
         <Card title="Act 2 -- The Balcony and the Wedding">
-          <p className="text-sm leading-relaxed text-gray-700">
+          <p className="text-sm leading-relaxed text-muted-foreground">
             Romeo sneaks into the Capulet orchard and overhears Juliet on her balcony wishing he were not a Montague (&ldquo;What&apos;s in a name?&rdquo;). They declare their love and plan to marry the next day. Romeo asks Friar Lawrence to perform the ceremony. The Friar agrees, hoping the marriage will end the feud. Juliet&apos;s Nurse acts as a go-between. Romeo and Juliet are secretly married that afternoon. The speed of events is deliberate: Shakespeare compresses everything to heighten urgency and the sense of fate.
           </p>
-          <div className="mt-3 rounded bg-gray-50 p-3 text-sm text-gray-600">
-            <p className="font-semibold text-gray-700">Key Moments:</p>
+          <div className="mt-3 rounded bg-muted p-3 text-sm text-muted-foreground">
+            <p className="font-semibold text-muted-foreground">Key Moments:</p>
             <ul className="mt-1 space-y-1">
               <li>&bull; The balcony scene -- light/dark imagery (2.2)</li>
               <li>&bull; Juliet&apos;s &ldquo;What&apos;s in a name?&rdquo; speech (2.2)</li>
@@ -127,11 +127,11 @@ export default function RomeoAndJulietRevisionPage() {
         </Card>
 
         <Card title="Act 3 -- The Turning Point">
-          <p className="text-sm leading-relaxed text-gray-700">
+          <p className="text-sm leading-relaxed text-muted-foreground">
             This is the play&apos;s pivotal act. Tybalt challenges Romeo to a duel. Romeo refuses (because Tybalt is now his kinsman by marriage), but Mercutio fights Tybalt instead. Romeo intervenes and Mercutio is fatally wounded under Romeo&apos;s arm. Dying, Mercutio curses both houses: &ldquo;A plague o&apos; both your houses!&rdquo; Enraged, Romeo kills Tybalt in revenge and is banished from Verona by the Prince. Juliet learns of Tybalt&apos;s death and Romeo&apos;s banishment and is torn (&ldquo;Beautiful tyrant! fiend angelical!&rdquo;). Romeo spends one night with Juliet before fleeing to Mantua. Lord Capulet, unaware of the marriage, arranges Juliet&apos;s marriage to Count Paris. When Juliet refuses, Capulet threatens to disown her.
           </p>
-          <div className="mt-3 rounded bg-gray-50 p-3 text-sm text-gray-600">
-            <p className="font-semibold text-gray-700">Key Moments:</p>
+          <div className="mt-3 rounded bg-muted p-3 text-sm text-muted-foreground">
+            <p className="font-semibold text-muted-foreground">Key Moments:</p>
             <ul className="mt-1 space-y-1">
               <li>&bull; Mercutio&apos;s death and curse (3.1)</li>
               <li>&bull; Romeo kills Tybalt -- the turning point (3.1)</li>
@@ -143,13 +143,13 @@ export default function RomeoAndJulietRevisionPage() {
         </Card>
 
         <Card title="Act 4 -- The Plan">
-          <p className="text-sm leading-relaxed text-gray-700">
+          <p className="text-sm leading-relaxed text-muted-foreground">
             Juliet goes to Friar Lawrence in desperation. He gives her a potion that will make her appear dead for 42 hours. The plan: she will be laid in the Capulet tomb, Romeo will be informed by letter, and he will rescue her when she wakes. Juliet takes the potion alone the night before her wedding to Paris, delivering a powerful soliloquy about her fears. The Capulet household discovers her apparently dead body and the wedding becomes a funeral.
           </p>
         </Card>
 
         <Card title="Act 5 -- The Tragedy">
-          <p className="text-sm leading-relaxed text-gray-700">
+          <p className="text-sm leading-relaxed text-muted-foreground">
             The plan fails because Friar Lawrence&apos;s letter never reaches Romeo in Mantua (Friar John is quarantined due to plague). Romeo&apos;s servant Balthasar brings news of Juliet&apos;s &ldquo;death&rdquo; instead. Romeo buys poison (&ldquo;Then I defy you, stars!&rdquo;) and rides to Verona. At the tomb, he encounters Paris, kills him, then drinks poison beside Juliet&apos;s body. Juliet wakes moments later, finds Romeo dead, and kills herself with his dagger. The Friar confesses everything. The grief-stricken Montagues and Capulets finally make peace. The Prince concludes: &ldquo;All are punish&apos;d.&rdquo;
           </p>
         </Card>
@@ -158,7 +158,7 @@ export default function RomeoAndJulietRevisionPage() {
       {/* ── CHARACTERS ────────────────────────────────────────── */}
       <Section title="Character Profiles" id="characters">
         <Card title="Romeo">
-          <p className="text-sm leading-relaxed text-gray-700">
+          <p className="text-sm leading-relaxed text-muted-foreground">
             Romeo Montague begins as a conventional Petrarchan lover, moping over the unattainable Rosaline in artificial language (&ldquo;O brawling love, O loving hate&rdquo;). When he meets Juliet, his language transforms into genuinely passionate poetry. He is impulsive, emotional, and quick to act: he falls in love instantly, marries within hours, kills Tybalt in hot-blooded revenge, and takes his own life rather than live without Juliet. His impulsiveness is both his greatest virtue (total devotion) and his fatal flaw (he acts without thinking). He matures through the play -- by Act 5, he is no longer the self-indulgent boy of Act 1 but a young man facing genuine tragedy.
           </p>
           <div className="mt-4 grid gap-3 sm:grid-cols-2">
@@ -170,7 +170,7 @@ export default function RomeoAndJulietRevisionPage() {
         </Card>
 
         <Card title="Juliet">
-          <p className="text-sm leading-relaxed text-gray-700">
+          <p className="text-sm leading-relaxed text-muted-foreground">
             Juliet is thirteen years old but undergoes the most dramatic character development in the play. She begins as an obedient, sheltered daughter (&ldquo;I&apos;ll look to like, if looking liking move&rdquo;). By Act 2, she challenges social conventions, questioning the importance of names. By Act 3, she defies her father. By Act 4, she takes a terrifying potion alone. She is braver, more rational, and more emotionally mature than Romeo. She initiates the conversation about marriage (2.2), takes the potion despite her fears, and chooses death decisively when she wakes to find Romeo dead. She is arguably the play&apos;s true tragic hero.
           </p>
           <div className="mt-4 grid gap-3 sm:grid-cols-2">
@@ -182,7 +182,7 @@ export default function RomeoAndJulietRevisionPage() {
         </Card>
 
         <Card title="Mercutio">
-          <p className="text-sm leading-relaxed text-gray-700">
+          <p className="text-sm leading-relaxed text-muted-foreground">
             Romeo&apos;s witty, cynical friend who is neither Montague nor Capulet but related to the Prince. He is the play&apos;s most energetic character, full of bawdy humour and dazzling rhetoric (the Queen Mab speech). He mocks Romeo&apos;s romantic idealism. His death is the play&apos;s turning point: it transforms comedy into tragedy. His dying curse, &ldquo;A plague o&apos; both your houses!&rdquo; (repeated three times), blames the feud and foreshadows the lovers&apos; deaths.
           </p>
           <QuoteCard quote="A plague o' both your houses! / They have made worms' meat of me" speaker="Mercutio" act="Act 3, Scene 1"
@@ -190,13 +190,13 @@ export default function RomeoAndJulietRevisionPage() {
         </Card>
 
         <Card title="Tybalt">
-          <p className="text-sm leading-relaxed text-gray-700">
+          <p className="text-sm leading-relaxed text-muted-foreground">
             Juliet&apos;s cousin, nicknamed the &ldquo;Prince of Cats&rdquo; for his fencing skill. He embodies the destructive honour culture of the feud: aggressive, proud, and viewing any insult as requiring violent retaliation. He is not simply a villain -- he is a product of the feud, doing what his society expects of a young man defending family honour. His death sets the tragedy in motion.
           </p>
         </Card>
 
         <Card title="Friar Lawrence">
-          <p className="text-sm leading-relaxed text-gray-700">
+          <p className="text-sm leading-relaxed text-muted-foreground">
             A Franciscan friar and Romeo&apos;s confessor. He agrees to marry the lovers hoping to reconcile the families. He is wise in words (&ldquo;These violent delights have violent ends&rdquo;) but flawed in action -- his schemes are overly complicated and ultimately fail. He gives Juliet the sleeping potion, fails to ensure Romeo receives the letter, and flees the tomb when things go wrong. He represents the failure of good intentions when unmatched by practical wisdom.
           </p>
           <QuoteCard quote="These violent delights have violent ends / And in their triumph die, like fire and powder" speaker="Friar Lawrence" act="Act 2, Scene 6"
@@ -204,13 +204,13 @@ export default function RomeoAndJulietRevisionPage() {
         </Card>
 
         <Card title="The Nurse">
-          <p className="text-sm leading-relaxed text-gray-700">
+          <p className="text-sm leading-relaxed text-muted-foreground">
             Juliet&apos;s closest companion and surrogate mother. Warm, bawdy, and garrulous, she provides comic relief and genuine affection. She facilitates the secret marriage but, after Romeo&apos;s banishment, pragmatically advises Juliet to marry Paris. This betrayal isolates Juliet and drives her to the Friar&apos;s dangerous plan. She represents practical, earthly love versus Juliet&apos;s idealistic, absolute love.
           </p>
         </Card>
 
         <Card title="Lord Capulet">
-          <p className="text-sm leading-relaxed text-gray-700">
+          <p className="text-sm leading-relaxed text-muted-foreground">
             Initially reasonable (he tells Paris Juliet is too young and should have some choice). After Tybalt&apos;s death, he becomes tyrannical, threatening to disown Juliet if she refuses Paris. His rage reveals patriarchal power -- Juliet is his property. He genuinely grieves at her death, but his love is possessive and controlling.
           </p>
           <QuoteCard quote="Hang thee, young baggage! Disobedient wretch! [...] Or I will drag thee on a hurdle thither" speaker="Lord Capulet" act="Act 3, Scene 5"
@@ -218,7 +218,7 @@ export default function RomeoAndJulietRevisionPage() {
         </Card>
 
         <Card title="The Prince (Escalus)">
-          <p className="text-sm leading-relaxed text-gray-700">
+          <p className="text-sm leading-relaxed text-muted-foreground">
             The ruler of Verona, representing law and order. He appears three times and fails each time to end the feud. His final line, &ldquo;All are punish&apos;d,&rdquo; includes himself -- he has lost kinsmen (Mercutio, Paris) and failed in his duty as ruler.
           </p>
         </Card>
@@ -227,7 +227,7 @@ export default function RomeoAndJulietRevisionPage() {
       {/* ── THEMES ────────────────────────────────────────────── */}
       <Section title="Major Themes" id="themes">
         <Card title="Love">
-          <p className="text-sm leading-relaxed text-gray-700">
+          <p className="text-sm leading-relaxed text-muted-foreground">
             Shakespeare presents multiple types of love. Romeo&apos;s infatuation with Rosaline is Petrarchan and artificial. His love for Juliet is transformative and mutual. The Nurse&apos;s love is earthy and physical. Capulet&apos;s love is possessive. Shakespeare shows love as both the most beautiful and the most destructive force: it transcends the feud but leads to death. The shared sonnet when Romeo and Juliet first speak (1.5) makes their love literally collaborative.
           </p>
           <QuoteCard quote="My bounty is as boundless as the sea, / My love as deep; the more I give to thee, / The more I have, for both are infinite" speaker="Juliet" act="Act 2, Scene 2"
@@ -235,7 +235,7 @@ export default function RomeoAndJulietRevisionPage() {
         </Card>
 
         <Card title="Fate and Destiny">
-          <p className="text-sm leading-relaxed text-gray-700">
+          <p className="text-sm leading-relaxed text-muted-foreground">
             The Prologue announces the lovers are &ldquo;star-cross&apos;d.&rdquo; Characters sense impending doom throughout: Romeo feels &ldquo;some consequence yet hanging in the stars&rdquo; before the ball; Juliet sees Romeo &ldquo;as one dead in the bottom of a tomb.&rdquo; Yet the tragedy also results from human choices. Shakespeare creates tension between cosmic fate and individual agency. The plague that prevents the letter is both random chance and the fulfilment of Mercutio&apos;s curse.
           </p>
           <QuoteCard quote="I am fortune's fool!" speaker="Romeo" act="Act 3, Scene 1"
@@ -243,25 +243,25 @@ export default function RomeoAndJulietRevisionPage() {
         </Card>
 
         <Card title="Conflict and Violence">
-          <p className="text-sm leading-relaxed text-gray-700">
+          <p className="text-sm leading-relaxed text-muted-foreground">
             The feud is the play&apos;s structural foundation. Shakespeare shows conflict as self-perpetuating: the original cause is forgotten (&ldquo;ancient grudge&rdquo;), but honour demands its continuation. Violence breeds violence: Tybalt kills Mercutio, Romeo kills Tybalt, the lovers kill themselves. The Prince&apos;s failure to end the feud through threats suggests that only love and sacrifice can break the cycle.
           </p>
         </Card>
 
         <Card title="Family and Duty">
-          <p className="text-sm leading-relaxed text-gray-700">
+          <p className="text-sm leading-relaxed text-muted-foreground">
             Juliet is torn between filial duty and romantic love. The patriarchal family structure gives Lord Capulet absolute power. Her mother offers no protection. The Nurse fails her too. The play critiques a society where family honour takes precedence over individual happiness and children are treated as property.
           </p>
         </Card>
 
         <Card title="Youth vs Age">
-          <p className="text-sm leading-relaxed text-gray-700">
+          <p className="text-sm leading-relaxed text-muted-foreground">
             The young characters are passionate and absolute. The older characters fail them: Capulet&apos;s authoritarianism, the Nurse&apos;s pragmatism, the Friar&apos;s overcomplicated schemes, the Prince&apos;s inability to enforce peace. The older generation&apos;s feuds destroy the younger generation&apos;s chance at happiness.
           </p>
         </Card>
 
         <Card title="Light and Dark">
-          <p className="text-sm leading-relaxed text-gray-700">
+          <p className="text-sm leading-relaxed text-muted-foreground">
             Light and dark imagery runs throughout, often inverted. Romeo describes Juliet as light (&ldquo;Juliet is the sun&rdquo;) yet their love thrives in darkness. Daylight brings separation and danger. This inversion reinforces that conventional categories (Montague/Capulet, day/night, love/hate) are unreliable.
           </p>
           <QuoteCard quote="But soft, what light through yonder window breaks? / It is the east, and Juliet is the sun" speaker="Romeo" act="Act 2, Scene 2"
@@ -269,7 +269,7 @@ export default function RomeoAndJulietRevisionPage() {
         </Card>
 
         <Card title="Honour and Masculinity">
-          <p className="text-sm leading-relaxed text-gray-700">
+          <p className="text-sm leading-relaxed text-muted-foreground">
             Male characters are bound by a code of honour demanding violent response to insults. Tybalt, Mercutio, and Romeo all act on this code, and it destroys them all. Romeo&apos;s initial attempt to refuse the duel is a more mature response, but it is incompatible with his culture.
           </p>
         </Card>
@@ -277,7 +277,7 @@ export default function RomeoAndJulietRevisionPage() {
 
       {/* ── KEY QUOTATIONS ────────────────────────────────────── */}
       <Section title="Key Quotations" id="quotations">
-        <p className="text-sm text-gray-500 mb-4">Essential quotations to learn. Each connects to multiple themes.</p>
+        <p className="text-sm text-muted-foreground mb-4">Essential quotations to learn. Each connects to multiple themes.</p>
 
         <Card title="The Prologue">
           <div className="grid gap-3 sm:grid-cols-2">
@@ -333,27 +333,27 @@ export default function RomeoAndJulietRevisionPage() {
       {/* ── CONTEXT ──────────────────────────────────────────── */}
       <Section title="Historical and Social Context" id="context">
         <Card title="Elizabethan Marriage and Patriarchy">
-          <p className="text-sm leading-relaxed text-gray-700">
+          <p className="text-sm leading-relaxed text-muted-foreground">
             Marriages among the upper classes were arranged for financial or political advantage. A daughter was her father&apos;s property until marriage, when she became her husband&apos;s. Juliet&apos;s refusal to marry Paris was a radical act of disobedience. Romeo and Juliet&apos;s secret marriage challenges this system, suggesting individual choice matters more than family interests.
           </p>
         </Card>
         <Card title="Women's Status">
-          <p className="text-sm leading-relaxed text-gray-700">
+          <p className="text-sm leading-relaxed text-muted-foreground">
             Women had very limited rights. Lady Capulet&apos;s inability to protect Juliet reflects married women&apos;s limited power. Juliet&apos;s agency and intelligence make her a remarkably progressive character for the 1590s. Shakespeare gives her more complex soliloquies than Romeo.
           </p>
         </Card>
         <Card title="Italian Setting and Honour Culture">
-          <p className="text-sm leading-relaxed text-gray-700">
+          <p className="text-sm leading-relaxed text-muted-foreground">
             English audiences associated Italy with passion, violence, and vendetta culture. The code of honour driving Tybalt and Mercutio reflected real Italian feuding traditions. The Verona setting allowed Shakespeare to explore extreme passion while commenting on universal behaviour.
           </p>
         </Card>
         <Card title="The Sonnet Tradition">
-          <p className="text-sm leading-relaxed text-gray-700">
+          <p className="text-sm leading-relaxed text-muted-foreground">
             The Prologue is a sonnet; Romeo and Juliet share one when they first meet. The shared sonnet is structurally unique -- they collaborate on a form usually written by a single lovesick man, making their love mutual and equal.
           </p>
         </Card>
         <Card title="Plague in Elizabethan London">
-          <p className="text-sm leading-relaxed text-gray-700">
+          <p className="text-sm leading-relaxed text-muted-foreground">
             The plague preventing the letter was not just a plot device -- plague was constant reality. Theatres were regularly closed. Mercutio&apos;s curse (&ldquo;A plague o&apos; both your houses&rdquo;) gains extra resonance in this context.
           </p>
         </Card>
@@ -362,42 +362,42 @@ export default function RomeoAndJulietRevisionPage() {
       {/* ── ESSAY PLANNING ────────────────────────────────────── */}
       <Section title="Essay Planning Templates" id="essay-planning">
         <Card title="&ldquo;How does Shakespeare present love in Romeo and Juliet?&rdquo;">
-          <div className="space-y-3 text-sm text-gray-700">
-            <div className="rounded bg-gray-50 p-3">
-              <p className="font-semibold text-gray-800">P1: Love as transformation</p>
+          <div className="space-y-3 text-sm text-muted-foreground">
+            <div className="rounded bg-muted p-3">
+              <p className="font-semibold text-foreground">P1: Love as transformation</p>
               <p>Romeo&apos;s shift from Petrarchan clich&eacute;s to genuine poetry. The shared sonnet (1.5) as collaborative love. &ldquo;Did my heart love till now?&rdquo;</p>
             </div>
-            <div className="rounded bg-gray-50 p-3">
-              <p className="font-semibold text-gray-800">P2: Love vs social order</p>
+            <div className="rounded bg-muted p-3">
+              <p className="font-semibold text-foreground">P2: Love vs social order</p>
               <p>&ldquo;What&apos;s in a name?&rdquo; challenges the feud. Secret marriage as rebellion. Context: arranged marriages, patriarchal control.</p>
             </div>
-            <div className="rounded bg-gray-50 p-3">
-              <p className="font-semibold text-gray-800">P3: Love and death intertwined</p>
+            <div className="rounded bg-muted p-3">
+              <p className="font-semibold text-foreground">P3: Love and death intertwined</p>
               <p>&ldquo;Death-mark&apos;d love.&rdquo; Light/dark imagery. The tomb: love&apos;s fulfilment through death.</p>
             </div>
-            <div className="rounded bg-gray-50 p-3">
-              <p className="font-semibold text-gray-800">P4: Love as sacrifice that heals</p>
+            <div className="rounded bg-muted p-3">
+              <p className="font-semibold text-foreground">P4: Love as sacrifice that heals</p>
               <p>The deaths end the feud. &ldquo;All are punish&apos;d.&rdquo; Love achieves what authority could not.</p>
             </div>
           </div>
         </Card>
 
         <Card title="&ldquo;How does Shakespeare present conflict in Romeo and Juliet?&rdquo;">
-          <div className="space-y-3 text-sm text-gray-700">
-            <div className="rounded bg-gray-50 p-3">
-              <p className="font-semibold text-gray-800">P1: Public conflict</p>
+          <div className="space-y-3 text-sm text-muted-foreground">
+            <div className="rounded bg-muted p-3">
+              <p className="font-semibold text-foreground">P1: Public conflict</p>
               <p>Opening brawl. Prince&apos;s failed authority. &ldquo;Ancient grudge&rdquo; -- cause forgotten, hatred persists.</p>
             </div>
-            <div className="rounded bg-gray-50 p-3">
-              <p className="font-semibold text-gray-800">P2: Honour-driven conflict</p>
+            <div className="rounded bg-muted p-3">
+              <p className="font-semibold text-foreground">P2: Honour-driven conflict</p>
               <p>Tybalt as honour personified. Mercutio&apos;s death. Romeo torn between love and revenge.</p>
             </div>
-            <div className="rounded bg-gray-50 p-3">
-              <p className="font-semibold text-gray-800">P3: Internal conflict</p>
+            <div className="rounded bg-muted p-3">
+              <p className="font-semibold text-foreground">P3: Internal conflict</p>
               <p>Juliet&apos;s oxymorons. Romeo&apos;s conflict between pacifism and revenge. The Friar&apos;s conflict between caution and action.</p>
             </div>
-            <div className="rounded bg-gray-50 p-3">
-              <p className="font-semibold text-gray-800">P4: Resolution through sacrifice</p>
+            <div className="rounded bg-muted p-3">
+              <p className="font-semibold text-foreground">P4: Resolution through sacrifice</p>
               <p>&ldquo;A glooming peace&rdquo; -- peace at terrible cost. Only catastrophic loss breaks entrenched hatred.</p>
             </div>
           </div>
@@ -407,7 +407,7 @@ export default function RomeoAndJulietRevisionPage() {
       {/* ── EXAM BOARD TIPS ──────────────────────────────────── */}
       <Section title="Exam Board Comparison" id="exam-boards">
         <Card title="AQA -- Paper 1, Section A (30+4 marks, ~50 mins)">
-          <ul className="space-y-2 text-sm text-gray-700">
+          <ul className="space-y-2 text-sm text-muted-foreground">
             <li>&bull; <strong>Format:</strong> Extract + wider play. Roughly 50/50 split.</li>
             <li>&bull; <strong>AOs:</strong> AO1, AO2, AO3. SPaG marked separately (4 marks).</li>
             <li>&bull; <strong>Key tip:</strong> Zoom in on individual word choices. Weave context into analysis.</li>
@@ -415,21 +415,21 @@ export default function RomeoAndJulietRevisionPage() {
           </ul>
         </Card>
         <Card title="Edexcel -- Paper 1, Section A (40 marks, ~55 mins)">
-          <ul className="space-y-2 text-sm text-gray-700">
+          <ul className="space-y-2 text-sm text-muted-foreground">
             <li>&bull; <strong>Format:</strong> Extract-based, whole text reference. Heavier AO2 weighting.</li>
             <li>&bull; <strong>Key tip:</strong> Analyse HOW effects are achieved. Precise terminology.</li>
             <li>&bull; <strong>Closed book.</strong></li>
           </ul>
         </Card>
         <Card title="CAIE -- Paper 1, Drama (25 marks)">
-          <ul className="space-y-2 text-sm text-gray-700">
+          <ul className="space-y-2 text-sm text-muted-foreground">
             <li>&bull; <strong>Format:</strong> Passage-based OR essay question (choose one).</li>
             <li>&bull; <strong>Key tip:</strong> Personal engagement and close reading rewarded.</li>
             <li>&bull; <strong>Open/closed book depends on component variant.</strong></li>
           </ul>
         </Card>
         <Card title="OCR -- Shakespeare component (40 marks)">
-          <ul className="space-y-2 text-sm text-gray-700">
+          <ul className="space-y-2 text-sm text-muted-foreground">
             <li>&bull; <strong>Format:</strong> Extract-based. Depth over breadth.</li>
             <li>&bull; <strong>Key tip:</strong> Three well-analysed quotes beat ten surface-level ones.</li>
             <li>&bull; <strong>Closed book.</strong></li>
@@ -439,16 +439,16 @@ export default function RomeoAndJulietRevisionPage() {
 
       {/* ────────────────────────────────────────── PRACTICE QUESTIONS */}
       <Section title="Practice Questions" id="practice-questions">
-        <p className="text-sm text-gray-500 mb-6">
+        <p className="text-sm text-muted-foreground mb-6">
           Write your answer below each question and receive AI-powered feedback tailored to GCSE English Literature mark schemes.
           Aim for at least 150 words per response to get meaningful feedback.
         </p>
         <div className="space-y-8">
-          <div className="rounded-lg border border-gray-200 p-4">
-            <h3 className="font-bold text-gray-900 mb-1">Question 1</h3>
-            <p className="text-sm text-gray-700 mb-3">
+          <div className="rounded-lg border border-border p-4">
+            <h3 className="font-bold text-foreground mb-1">Question 1</h3>
+            <p className="text-sm text-muted-foreground mb-3">
               How does Shakespeare present the theme of love in <em>Romeo and Juliet</em>? Refer to the whole play in your answer.
-              <span className="ml-2 text-xs font-semibold text-gray-500">[30 marks]</span>
+              <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
               placeholder="Write your essay response here..."
@@ -461,11 +461,11 @@ export default function RomeoAndJulietRevisionPage() {
             />
           </div>
 
-          <div className="rounded-lg border border-gray-200 p-4">
-            <h3 className="font-bold text-gray-900 mb-1">Question 2</h3>
-            <p className="text-sm text-gray-700 mb-3">
+          <div className="rounded-lg border border-border p-4">
+            <h3 className="font-bold text-foreground mb-1">Question 2</h3>
+            <p className="text-sm text-muted-foreground mb-3">
               How does Shakespeare use the character of Juliet to challenge patriarchal expectations?
-              <span className="ml-2 text-xs font-semibold text-gray-500">[30 marks]</span>
+              <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
               placeholder="Write your essay response here..."
@@ -478,11 +478,11 @@ export default function RomeoAndJulietRevisionPage() {
             />
           </div>
 
-          <div className="rounded-lg border border-gray-200 p-4">
-            <h3 className="font-bold text-gray-900 mb-1">Question 3</h3>
-            <p className="text-sm text-gray-700 mb-3">
+          <div className="rounded-lg border border-border p-4">
+            <h3 className="font-bold text-foreground mb-1">Question 3</h3>
+            <p className="text-sm text-muted-foreground mb-3">
               How does Shakespeare present conflict and violence in <em>Romeo and Juliet</em>? Refer to the whole play in your answer.
-              <span className="ml-2 text-xs font-semibold text-gray-500">[30 marks]</span>
+              <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
               placeholder="Write your essay response here..."
@@ -495,11 +495,11 @@ export default function RomeoAndJulietRevisionPage() {
             />
           </div>
 
-          <div className="rounded-lg border border-gray-200 p-4">
-            <h3 className="font-bold text-gray-900 mb-1">Question 4</h3>
-            <p className="text-sm text-gray-700 mb-3">
+          <div className="rounded-lg border border-border p-4">
+            <h3 className="font-bold text-foreground mb-1">Question 4</h3>
+            <p className="text-sm text-muted-foreground mb-3">
               How does Shakespeare present the theme of fate and destiny in <em>Romeo and Juliet</em>?
-              <span className="ml-2 text-xs font-semibold text-gray-500">[30 marks]</span>
+              <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
               placeholder="Write your essay response here..."

@@ -369,8 +369,8 @@ export default function JekyllAndHydePage() {
 
       <div className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
         {/* ── Quick nav ─────────────────────────────────────────── */}
-        <nav className="rounded-xl bg-gray-50 p-6">
-          <h2 className="text-lg font-bold text-gray-900">On this page</h2>
+        <nav className="rounded-xl bg-muted p-6">
+          <h2 className="text-lg font-bold text-foreground">On this page</h2>
           <ul className="mt-3 grid gap-2 text-sm sm:grid-cols-2 lg:grid-cols-3">
             {[
               ["#plot", "Plot Summary"],
@@ -383,7 +383,7 @@ export default function JekyllAndHydePage() {
               <li key={href}>
                 <a
                   href={href}
-                  className="text-[#2E86C1] hover:underline"
+                  className="text-primary hover:underline"
                 >
                   {label}
                 </a>
@@ -394,22 +394,22 @@ export default function JekyllAndHydePage() {
 
         {/* ── Plot summary ──────────────────────────────────────── */}
         <section id="plot" className="mt-14 scroll-mt-20">
-          <h2 className="text-2xl font-bold text-gray-900">Plot Summary</h2>
+          <h2 className="text-2xl font-bold text-foreground">Plot Summary</h2>
           <div className="mt-6 space-y-6">
             {PLOT_SUMMARY.map((ch) => (
               <div
                 key={ch.chapter}
-                className="rounded-xl border border-gray-200 p-6 shadow-sm"
+                className="rounded-xl border border-border p-6 shadow-md"
               >
                 <div className="flex items-center gap-3">
                   <span className="rounded-full bg-[#1A5276] px-3 py-1 text-xs font-bold text-white">
                     {ch.chapter}
                   </span>
-                  <h3 className="text-lg font-bold text-gray-900">
+                  <h3 className="text-lg font-bold text-foreground">
                     {ch.title}
                   </h3>
                 </div>
-                <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   {ch.summary}
                 </p>
               </div>
@@ -419,31 +419,31 @@ export default function JekyllAndHydePage() {
 
         {/* ── Characters ────────────────────────────────────────── */}
         <section id="characters" className="mt-14 scroll-mt-20">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Character Analysis
           </h2>
           <div className="mt-6 space-y-6">
             {CHARACTERS.map((char) => (
               <div
                 key={char.name}
-                className="rounded-xl border border-gray-200 p-6 shadow-sm"
+                className="rounded-xl border border-border p-6 shadow-md"
               >
-                <h3 className="text-xl font-bold text-[#1A5276]">
+                <h3 className="text-xl font-bold text-foreground">
                   {char.name}
                 </h3>
-                <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   {char.description}
                 </p>
                 {char.key_quotes.length > 0 && (
                   <div className="mt-4">
-                    <h4 className="text-xs font-semibold uppercase tracking-wide text-[#2E86C1]">
+                    <h4 className="text-xs font-semibold uppercase tracking-wide text-primary">
                       Key Quotes
                     </h4>
                     <ul className="mt-2 space-y-1">
                       {char.key_quotes.map((q) => (
                         <li
                           key={q}
-                          className="text-sm italic text-gray-600"
+                          className="text-sm italic text-muted-foreground"
                         >
                           {q}
                         </li>
@@ -458,26 +458,26 @@ export default function JekyllAndHydePage() {
 
         {/* ── Themes ────────────────────────────────────────────── */}
         <section id="themes" className="mt-14 scroll-mt-20">
-          <h2 className="text-2xl font-bold text-gray-900">Key Themes</h2>
+          <h2 className="text-2xl font-bold text-foreground">Key Themes</h2>
           <div className="mt-6 space-y-6">
             {THEMES.map((t) => (
               <div
                 key={t.theme}
-                className="rounded-xl border-l-4 border-[#1A5276] bg-gray-50 p-6"
+                className="rounded-xl border-l-4 border-[#1A5276] bg-muted p-6"
               >
-                <h3 className="text-lg font-bold text-[#1A5276]">
+                <h3 className="text-lg font-bold text-foreground">
                   {t.theme}
                 </h3>
-                <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   {t.description}
                 </p>
                 <div className="mt-3">
-                  <h4 className="text-xs font-semibold uppercase tracking-wide text-[#2E86C1]">
+                  <h4 className="text-xs font-semibold uppercase tracking-wide text-primary">
                     Supporting Quotes
                   </h4>
                   <ul className="mt-2 space-y-1">
                     {t.quotes.map((q) => (
-                      <li key={q} className="text-sm italic text-gray-600">
+                      <li key={q} className="text-sm italic text-muted-foreground">
                         {q}
                       </li>
                     ))}
@@ -490,10 +490,10 @@ export default function JekyllAndHydePage() {
 
         {/* ── Key quotes ────────────────────────────────────────── */}
         <section id="quotes" className="mt-14 scroll-mt-20">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Key Quotes (20)
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             Memorise these quotes — the Edexcel exam is closed-book. Short
             quotes that you can embed naturally into sentences are best.
           </p>
@@ -501,15 +501,15 @@ export default function JekyllAndHydePage() {
             {KEY_QUOTES.map((q, i) => (
               <div
                 key={i}
-                className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm"
+                className="rounded-lg border border-border bg-card p-4 shadow-md"
               >
-                <p className="text-sm font-semibold italic text-[#1A5276]">
+                <p className="text-sm font-semibold italic text-foreground">
                   {q.quote}
                 </p>
-                <p className="mt-1 text-xs font-medium text-[#2E86C1]">
+                <p className="mt-1 text-xs font-medium text-primary">
                   — {q.speaker}
                 </p>
-                <p className="mt-2 text-sm text-gray-700">
+                <p className="mt-2 text-sm text-muted-foreground">
                   {q.significance}
                 </p>
               </div>
@@ -519,10 +519,10 @@ export default function JekyllAndHydePage() {
 
         {/* ── Context ───────────────────────────────────────────── */}
         <section id="context" className="mt-14 scroll-mt-20">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Victorian Context
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             Context is assessed through AO3. The best responses weave context
             into analysis rather than treating it as a bolt-on paragraph.
           </p>
@@ -530,10 +530,10 @@ export default function JekyllAndHydePage() {
             {CONTEXT_POINTS.map((c) => (
               <div
                 key={c.topic}
-                className="rounded-xl border border-gray-200 p-5 shadow-sm"
+                className="rounded-xl border border-border p-5 shadow-md"
               >
-                <h3 className="font-bold text-[#1A5276]">{c.topic}</h3>
-                <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+                <h3 className="font-bold text-foreground">{c.topic}</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   {c.detail}
                 </p>
               </div>
@@ -543,38 +543,38 @@ export default function JekyllAndHydePage() {
 
         {/* ── Exam technique ────────────────────────────────────── */}
         <section id="exam" className="mt-14 scroll-mt-20">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Edexcel Exam Technique for Jekyll and Hyde
           </h2>
 
           <div className="mt-6 space-y-6">
-            <div className="rounded-xl bg-gray-50 p-6">
-              <h3 className="text-lg font-bold text-[#1A5276]">
+            <div className="rounded-xl bg-muted p-6">
+              <h3 className="text-lg font-bold text-foreground">
                 What Does an Edexcel Jekyll and Hyde Question Look Like?
               </h3>
-              <p className="mt-2 text-sm text-gray-700">
+              <p className="mt-2 text-sm text-muted-foreground">
                 Jekyll and Hyde appears in <strong>Paper 2, Section A</strong> (19th-century novel). You will be given an <strong>extract</strong> from the novella and a question that asks you to analyse a character, theme, or idea. You must write about <strong>both the extract and the wider novella</strong>. The question is worth <strong>40 marks</strong> (no SPaG marks on Paper 2).
               </p>
-              <div className="mt-4 rounded-lg border-2 border-dashed border-[#2E86C1] bg-white p-4">
-                <p className="text-xs font-semibold uppercase tracking-wide text-[#2E86C1]">
+              <div className="mt-4 rounded-lg border-2 border-dashed border-[#2E86C1] bg-card p-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-primary">
                   Example Question
                 </p>
-                <p className="mt-2 text-sm text-gray-900 font-medium">
+                <p className="mt-2 text-sm text-foreground font-medium">
                   How does Stevenson present the theme of duality in this
                   extract and in the novella as a whole?
                 </p>
-                <p className="mt-1 text-xs text-gray-500">
+                <p className="mt-1 text-xs text-muted-foreground">
                   Refer closely to the extract and to the novella as a whole
                   in your answer. (40 marks)
                 </p>
               </div>
             </div>
 
-            <div className="rounded-xl bg-gray-50 p-6">
-              <h3 className="text-lg font-bold text-[#1A5276]">
+            <div className="rounded-xl bg-muted p-6">
+              <h3 className="text-lg font-bold text-foreground">
                 How to Structure Your Answer
               </h3>
-              <ol className="mt-4 space-y-3 text-sm text-gray-700">
+              <ol className="mt-4 space-y-3 text-sm text-muted-foreground">
                 <li className="flex gap-3">
                   <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">1</span>
                   <span>
@@ -602,61 +602,61 @@ export default function JekyllAndHydePage() {
               </ol>
             </div>
 
-            <div className="rounded-xl bg-gray-50 p-6">
-              <h3 className="text-lg font-bold text-[#1A5276]">
+            <div className="rounded-xl bg-muted p-6">
+              <h3 className="text-lg font-bold text-foreground">
                 Edexcel Paper 2 Section A — Key Facts
               </h3>
-              <ul className="mt-4 space-y-2 text-sm text-gray-700">
+              <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#2E86C1]" />
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   <strong>Extract-based:</strong> You are given a passage from the novella to analyse — this is different from Macbeth (Paper 1), which has no extract.
                 </li>
                 <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#2E86C1]" />
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   <strong>40 marks total:</strong> No separate SPaG marks on Paper 2, but clear, accurate writing still matters for the overall quality of your response.
                 </li>
                 <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#2E86C1]" />
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   <strong>Closed-book:</strong> You cannot take the text into the exam. Memorise short, versatile quotes that work across multiple themes.
                 </li>
                 <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#2E86C1]" />
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   <strong>Timing:</strong> Spend approximately 50-55 minutes on this question. Allow 5 minutes for reading the extract and planning.
                 </li>
               </ul>
             </div>
 
             <div className="rounded-xl border-2 border-[#2E86C1] bg-blue-50 p-6">
-              <h3 className="text-lg font-bold text-[#1A5276]">
+              <h3 className="text-lg font-bold text-foreground">
                 Top Tips for Top Marks
               </h3>
-              <ul className="mt-4 space-y-2 text-sm text-gray-700">
+              <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#2E86C1]" />
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   Use Stevenson&apos;s name — &quot;Stevenson presents...&quot; or &quot;Stevenson uses...&quot; shows awareness of authorial intent (AO2).
                 </li>
                 <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#2E86C1]" />
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   Analyse individual words within quotes — don&apos;t just identify techniques, explain their effect on the reader.
                 </li>
                 <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#2E86C1]" />
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   Embed context into analysis: &quot;A Victorian reader, influenced by Darwin&apos;s theory of evolution, would have found Hyde&apos;s &apos;ape-like fury&apos; particularly disturbing as it implies humanity&apos;s civilised veneer is dangerously thin.&quot;
                 </li>
                 <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#2E86C1]" />
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   Use literary terminology: novella, Gothic, doppelganger, pathetic fallacy, symbolism, foreshadowing, unreliable narrator, epistolary structure.
                 </li>
                 <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#2E86C1]" />
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   Consider alternative interpretations: &quot;While a Victorian audience might read Hyde as purely monstrous, a modern Freudian reading suggests he represents the repressed id that exists within everyone.&quot;
                 </li>
                 <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#2E86C1]" />
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   Balance extract and whole text — examiners want to see both. Don&apos;t spend all your time on the extract and neglect the wider novella, or vice versa.
                 </li>
                 <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#2E86C1]" />
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   Call it a &quot;novella&quot; not a &quot;novel&quot; — this shows you understand the form and will impress examiners.
                 </li>
               </ul>

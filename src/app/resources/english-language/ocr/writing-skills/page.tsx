@@ -41,19 +41,19 @@ export default function OCRWritingSkillsPage() {
         <section aria-labelledby="markscheme-heading">
           <h2
             id="markscheme-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Understanding the OCR Writing Mark Scheme
           </h2>
-          <div className="mt-4 space-y-4 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>
               OCR assesses writing through two assessment objectives. Both are
               assessed in Paper 1 (transactional writing) and Paper 2
               (creative writing):
             </p>
             <div className="mt-3 grid gap-4 sm:grid-cols-2">
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="font-semibold text-gray-900">AO5: Content and Organisation</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="font-semibold text-foreground">AO5: Content and Organisation</h3>
                 <p className="mt-2 text-sm">
                   Communicate clearly, effectively, and imaginatively,
                   selecting and adapting tone, style, and register for
@@ -65,8 +65,8 @@ export default function OCRWritingSkillsPage() {
                   Typically 24 marks per task
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="font-semibold text-gray-900">AO6: Technical Accuracy</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="font-semibold text-foreground">AO6: Technical Accuracy</h3>
                 <p className="mt-2 text-sm">
                   Use a range of vocabulary and sentence structures for
                   clarity, purpose, and effect, with accurate spelling and
@@ -80,17 +80,17 @@ export default function OCRWritingSkillsPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* Top band descriptors */}
         <section aria-labelledby="topband-heading">
           <h2
             id="topband-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             What Does a Top-Band Response Look Like?
           </h2>
-          <div className="mt-4 space-y-4 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>
               Understanding the top-band descriptors tells you exactly what
               the examiner is rewarding. Here is what separates a grade
@@ -100,7 +100,7 @@ export default function OCRWritingSkillsPage() {
             <div className="space-y-4">
               <div className="rounded-lg border border-success/30 bg-success-50 p-5">
                 <h3 className="font-semibold text-success-700">Top Band &mdash; AO5</h3>
-                <ul className="ml-4 mt-2 list-disc space-y-1 text-sm text-gray-700">
+                <ul className="ml-4 mt-2 list-disc space-y-1 text-sm text-muted-foreground">
                   <li>Communication is convincing and compelling throughout</li>
                   <li>Tone, style, and register are assuredly matched to purpose, form, and audience</li>
                   <li>Extensive and ambitious vocabulary with sustained crafting of linguistic devices</li>
@@ -112,7 +112,7 @@ export default function OCRWritingSkillsPage() {
 
               <div className="rounded-lg border border-success/30 bg-success-50 p-5">
                 <h3 className="font-semibold text-success-700">Top Band &mdash; AO6</h3>
-                <ul className="ml-4 mt-2 list-disc space-y-1 text-sm text-gray-700">
+                <ul className="ml-4 mt-2 list-disc space-y-1 text-sm text-muted-foreground">
                   <li>Sentence demarcation is consistently secure and accurate</li>
                   <li>Wide range of punctuation used with a high level of accuracy</li>
                   <li>Full range of sentence forms used for effect</li>
@@ -125,18 +125,18 @@ export default function OCRWritingSkillsPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Transactional Writing ──────────────────────────── */}
         <section aria-labelledby="transactional-heading">
           <h2
             id="transactional-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Transactional Writing (Paper 1, Section B)
           </h2>
 
-          <div className="mt-6 space-y-6 text-gray-700 leading-relaxed">
+          <div className="mt-6 space-y-6 text-muted-foreground leading-relaxed">
             <p>
               Transactional writing means writing for a real-world purpose and
               audience. You are communicating ideas, information, or a
@@ -146,7 +146,7 @@ export default function OCRWritingSkillsPage() {
 
             {/* Planning */}
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 Planning Your Response (5 Minutes)
               </h3>
               <p className="mt-2">
@@ -177,7 +177,7 @@ export default function OCRWritingSkillsPage() {
 
             {/* Openings */}
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 Crafting Powerful Openings
               </h3>
               <p className="mt-2">
@@ -185,48 +185,48 @@ export default function OCRWritingSkillsPage() {
                 Here are six strategies for compelling openings:
               </p>
               <div className="mt-4 space-y-3">
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                  <p className="font-semibold text-gray-900">1. Bold statement</p>
-                  <p className="mt-1 text-sm italic text-gray-600">
+                <div className="rounded-lg border border-border bg-muted p-4">
+                  <p className="font-semibold text-foreground">1. Bold statement</p>
+                  <p className="mt-1 text-sm italic text-muted-foreground">
                     &ldquo;Social media is the defining crisis of our
                     generation &mdash; and we are sleepwalking into disaster.&rdquo;
                   </p>
                 </div>
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                  <p className="font-semibold text-gray-900">2. Rhetorical question</p>
-                  <p className="mt-1 text-sm italic text-gray-600">
+                <div className="rounded-lg border border-border bg-muted p-4">
+                  <p className="font-semibold text-foreground">2. Rhetorical question</p>
+                  <p className="mt-1 text-sm italic text-muted-foreground">
                     &ldquo;When was the last time you looked up from your phone
                     and truly noticed the world around you?&rdquo;
                   </p>
                 </div>
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                  <p className="font-semibold text-gray-900">3. Anecdote</p>
-                  <p className="mt-1 text-sm italic text-gray-600">
+                <div className="rounded-lg border border-border bg-muted p-4">
+                  <p className="font-semibold text-foreground">3. Anecdote</p>
+                  <p className="mt-1 text-sm italic text-muted-foreground">
                     &ldquo;Last Tuesday, I watched a group of teenagers sitting
                     together in a cafe. Not one of them spoke. Every face was
                     lit by a screen.&rdquo;
                   </p>
                 </div>
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                  <p className="font-semibold text-gray-900">4. Shocking statistic</p>
-                  <p className="mt-1 text-sm italic text-gray-600">
+                <div className="rounded-lg border border-border bg-muted p-4">
+                  <p className="font-semibold text-foreground">4. Shocking statistic</p>
+                  <p className="mt-1 text-sm italic text-muted-foreground">
                     &ldquo;According to recent research, the average teenager
                     spends seven hours a day on their phone. Seven hours.
                     Almost a full working day.&rdquo;
                   </p>
                 </div>
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                  <p className="font-semibold text-gray-900">5. Contrast</p>
-                  <p className="mt-1 text-sm italic text-gray-600">
+                <div className="rounded-lg border border-border bg-muted p-4">
+                  <p className="font-semibold text-foreground">5. Contrast</p>
+                  <p className="mt-1 text-sm italic text-muted-foreground">
                     &ldquo;Fifty years ago, children played in the streets
                     until dark. Today, they sit in their bedrooms, scrolling
                     through a digital world that promises connection but
                     delivers isolation.&rdquo;
                   </p>
                 </div>
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                  <p className="font-semibold text-gray-900">6. Direct address</p>
-                  <p className="mt-1 text-sm italic text-gray-600">
+                <div className="rounded-lg border border-border bg-muted p-4">
+                  <p className="font-semibold text-foreground">6. Direct address</p>
+                  <p className="mt-1 text-sm italic text-muted-foreground">
                     &ldquo;Imagine waking up tomorrow and your phone has
                     disappeared. No notifications. No messages. No feed to
                     scroll. How would you feel?&rdquo;
@@ -237,7 +237,7 @@ export default function OCRWritingSkillsPage() {
 
             {/* Paragraphing */}
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 Effective Paragraphing
               </h3>
               <p className="mt-2">
@@ -262,20 +262,20 @@ export default function OCRWritingSkillsPage() {
                 Use a range of discourse markers to signal transitions:
               </p>
               <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-                <div className="rounded border border-gray-200 bg-gray-50 p-3">
-                  <p className="text-xs font-semibold uppercase text-gray-500">Adding</p>
+                <div className="rounded border border-border bg-muted p-3">
+                  <p className="text-xs font-semibold uppercase text-muted-foreground">Adding</p>
                   <p className="mt-1 text-sm">Furthermore, Moreover, In addition, Similarly</p>
                 </div>
-                <div className="rounded border border-gray-200 bg-gray-50 p-3">
-                  <p className="text-xs font-semibold uppercase text-gray-500">Contrasting</p>
+                <div className="rounded border border-border bg-muted p-3">
+                  <p className="text-xs font-semibold uppercase text-muted-foreground">Contrasting</p>
                   <p className="mt-1 text-sm">However, Conversely, On the other hand, Nevertheless</p>
                 </div>
-                <div className="rounded border border-gray-200 bg-gray-50 p-3">
-                  <p className="text-xs font-semibold uppercase text-gray-500">Cause/effect</p>
+                <div className="rounded border border-border bg-muted p-3">
+                  <p className="text-xs font-semibold uppercase text-muted-foreground">Cause/effect</p>
                   <p className="mt-1 text-sm">Consequently, Therefore, As a result, Thus</p>
                 </div>
-                <div className="rounded border border-gray-200 bg-gray-50 p-3">
-                  <p className="text-xs font-semibold uppercase text-gray-500">Concluding</p>
+                <div className="rounded border border-border bg-muted p-3">
+                  <p className="text-xs font-semibold uppercase text-muted-foreground">Concluding</p>
                   <p className="mt-1 text-sm">Ultimately, In conclusion, Above all, To summarise</p>
                 </div>
               </div>
@@ -283,7 +283,7 @@ export default function OCRWritingSkillsPage() {
 
             {/* Counter-arguments */}
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 Handling Counter-Arguments
               </h3>
               <p className="mt-2">
@@ -322,18 +322,18 @@ export default function OCRWritingSkillsPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Creative Writing ───────────────────────────────── */}
         <section aria-labelledby="creative-heading">
           <h2
             id="creative-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Creative Writing (Paper 2, Section B)
           </h2>
 
-          <div className="mt-6 space-y-6 text-gray-700 leading-relaxed">
+          <div className="mt-6 space-y-6 text-muted-foreground leading-relaxed">
             <p>
               Creative writing on Paper 2 tests your ability to write
               imaginatively. The examiner is looking for crafted, deliberate
@@ -343,7 +343,7 @@ export default function OCRWritingSkillsPage() {
 
             {/* Show don't tell */}
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 Show, Don&rsquo;t Tell
               </h3>
               <p className="mt-2">
@@ -355,13 +355,13 @@ export default function OCRWritingSkillsPage() {
               <div className="mt-4 grid gap-4 sm:grid-cols-2">
                 <div className="rounded-lg border border-warn/30 bg-warn-50 p-4">
                   <p className="text-sm font-semibold text-warn-700">Telling (weak)</p>
-                  <p className="mt-2 text-sm italic text-gray-700">
+                  <p className="mt-2 text-sm italic text-muted-foreground">
                     &ldquo;She was really scared.&rdquo;
                   </p>
                 </div>
                 <div className="rounded-lg border border-success/30 bg-success-50 p-4">
                   <p className="text-sm font-semibold text-success-700">Showing (strong)</p>
-                  <p className="mt-2 text-sm italic text-gray-700">
+                  <p className="mt-2 text-sm italic text-muted-foreground">
                     &ldquo;Her fingers tightened around the banister, knuckles
                     white. Each creak of the staircase sent her heart lurching
                     into her throat.&rdquo;
@@ -371,13 +371,13 @@ export default function OCRWritingSkillsPage() {
               <div className="mt-4 grid gap-4 sm:grid-cols-2">
                 <div className="rounded-lg border border-warn/30 bg-warn-50 p-4">
                   <p className="text-sm font-semibold text-warn-700">Telling (weak)</p>
-                  <p className="mt-2 text-sm italic text-gray-700">
+                  <p className="mt-2 text-sm italic text-muted-foreground">
                     &ldquo;The house was old and neglected.&rdquo;
                   </p>
                 </div>
                 <div className="rounded-lg border border-success/30 bg-success-50 p-4">
                   <p className="text-sm font-semibold text-success-700">Showing (strong)</p>
-                  <p className="mt-2 text-sm italic text-gray-700">
+                  <p className="mt-2 text-sm italic text-muted-foreground">
                     &ldquo;Paint peeled from the window frames like sunburnt
                     skin. The garden gate hung from a single hinge, swaying in
                     the wind with a rhythmic, mournful creak.&rdquo;
@@ -388,7 +388,7 @@ export default function OCRWritingSkillsPage() {
 
             {/* Vocabulary */}
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 Ambitious Vocabulary
               </h3>
               <p className="mt-2">
@@ -399,8 +399,8 @@ export default function OCRWritingSkillsPage() {
                 <table className="w-full border-collapse text-sm">
                   <thead>
                     <tr className="border-b-2 border-primary/20 text-left">
-                      <th className="py-3 pr-4 font-semibold text-gray-900">Generic</th>
-                      <th className="py-3 font-semibold text-gray-900">Precise Alternatives</th>
+                      <th className="py-3 pr-4 font-semibold text-foreground">Generic</th>
+                      <th className="py-3 font-semibold text-foreground">Precise Alternatives</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-100">
@@ -451,7 +451,7 @@ export default function OCRWritingSkillsPage() {
 
             {/* Sentence variety */}
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 Sentence Variety for Effect
               </h3>
               <p className="mt-2">
@@ -459,69 +459,69 @@ export default function OCRWritingSkillsPage() {
                 to improve your writing. Here are techniques to practise:
               </p>
               <div className="mt-4 space-y-4">
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                  <h4 className="font-semibold text-gray-900">Start with an adverbial</h4>
-                  <p className="mt-2 text-sm italic text-gray-600">
+                <div className="rounded-lg border border-border bg-muted p-5">
+                  <h4 className="font-semibold text-foreground">Start with an adverbial</h4>
+                  <p className="mt-2 text-sm italic text-muted-foreground">
                     &ldquo;Cautiously, she pushed open the door.&rdquo;
                   </p>
-                  <p className="mt-1 text-sm text-gray-700">
+                  <p className="mt-1 text-sm text-muted-foreground">
                     Fronted adverbials add variety and can set the tone for the
                     sentence.
                   </p>
                 </div>
 
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                  <h4 className="font-semibold text-gray-900">Start with a present participle (-ing)</h4>
-                  <p className="mt-2 text-sm italic text-gray-600">
+                <div className="rounded-lg border border-border bg-muted p-5">
+                  <h4 className="font-semibold text-foreground">Start with a present participle (-ing)</h4>
+                  <p className="mt-2 text-sm italic text-muted-foreground">
                     &ldquo;Gripping the railing, he leaned over the edge.&rdquo;
                   </p>
-                  <p className="mt-1 text-sm text-gray-700">
+                  <p className="mt-1 text-sm text-muted-foreground">
                     Creates a sense of simultaneous action and adds fluency.
                   </p>
                 </div>
 
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                  <h4 className="font-semibold text-gray-900">Use a subordinate clause first</h4>
-                  <p className="mt-2 text-sm italic text-gray-600">
+                <div className="rounded-lg border border-border bg-muted p-5">
+                  <h4 className="font-semibold text-foreground">Use a subordinate clause first</h4>
+                  <p className="mt-2 text-sm italic text-muted-foreground">
                     &ldquo;Although the sun was shining, the air carried a
                     bitter chill.&rdquo;
                   </p>
-                  <p className="mt-1 text-sm text-gray-700">
+                  <p className="mt-1 text-sm text-muted-foreground">
                     Creates contrast and sophistication within a single
                     sentence.
                   </p>
                 </div>
 
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                  <h4 className="font-semibold text-gray-900">Use a one-word or short sentence for impact</h4>
-                  <p className="mt-2 text-sm italic text-gray-600">
+                <div className="rounded-lg border border-border bg-muted p-5">
+                  <h4 className="font-semibold text-foreground">Use a one-word or short sentence for impact</h4>
+                  <p className="mt-2 text-sm italic text-muted-foreground">
                     &ldquo;Silence.&rdquo; / &ldquo;She ran.&rdquo; /
                     &ldquo;Nothing.&rdquo;
                   </p>
-                  <p className="mt-1 text-sm text-gray-700">
+                  <p className="mt-1 text-sm text-muted-foreground">
                     After a long, descriptive sentence, a sudden short sentence
                     creates dramatic impact.
                   </p>
                 </div>
 
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                  <h4 className="font-semibold text-gray-900">Use a colon to extend or explain</h4>
-                  <p className="mt-2 text-sm italic text-gray-600">
+                <div className="rounded-lg border border-border bg-muted p-5">
+                  <h4 className="font-semibold text-foreground">Use a colon to extend or explain</h4>
+                  <p className="mt-2 text-sm italic text-muted-foreground">
                     &ldquo;There was only one thing left to do: run.&rdquo;
                   </p>
-                  <p className="mt-1 text-sm text-gray-700">
+                  <p className="mt-1 text-sm text-muted-foreground">
                     A colon creates anticipation and delivers a punch at the
                     end of the sentence.
                   </p>
                 </div>
 
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                  <h4 className="font-semibold text-gray-900">Use a semicolon to link related ideas</h4>
-                  <p className="mt-2 text-sm italic text-gray-600">
+                <div className="rounded-lg border border-border bg-muted p-5">
+                  <h4 className="font-semibold text-foreground">Use a semicolon to link related ideas</h4>
+                  <p className="mt-2 text-sm italic text-muted-foreground">
                     &ldquo;The house was empty; the silence confirmed what she
                     already knew.&rdquo;
                   </p>
-                  <p className="mt-1 text-sm text-gray-700">
+                  <p className="mt-1 text-sm text-muted-foreground">
                     Demonstrates sophisticated punctuation and creates a
                     balanced, connected pair of clauses.
                   </p>
@@ -531,7 +531,7 @@ export default function OCRWritingSkillsPage() {
 
             {/* Punctuation guide */}
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 Punctuation for Effect
               </h3>
               <p className="mt-2">
@@ -539,47 +539,47 @@ export default function OCRWritingSkillsPage() {
                 to use each mark correctly:
               </p>
               <div className="mt-3 space-y-3">
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                  <p className="font-medium text-gray-900">Semicolon ( ; )</p>
+                <div className="rounded-lg border border-border bg-muted p-4">
+                  <p className="font-medium text-foreground">Semicolon ( ; )</p>
                   <p className="mt-1 text-sm">
                     Links two closely related independent clauses. Both sides
                     must be complete sentences. &ldquo;The rain fell
                     relentlessly; the streets were rivers within minutes.&rdquo;
                   </p>
                 </div>
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                  <p className="font-medium text-gray-900">Colon ( : )</p>
+                <div className="rounded-lg border border-border bg-muted p-4">
+                  <p className="font-medium text-foreground">Colon ( : )</p>
                   <p className="mt-1 text-sm">
                     Introduces an explanation, list, or elaboration of the
                     preceding clause. &ldquo;She had one rule: never look
                     back.&rdquo;
                   </p>
                 </div>
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                  <p className="font-medium text-gray-900">Dash ( &mdash; )</p>
+                <div className="rounded-lg border border-border bg-muted p-4">
+                  <p className="font-medium text-foreground">Dash ( &mdash; )</p>
                   <p className="mt-1 text-sm">
                     Creates a dramatic pause, interruption, or afterthought.
                     Can be used in pairs for parenthetical information.
                     &ldquo;The door opened &mdash; and there she stood.&rdquo;
                   </p>
                 </div>
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                  <p className="font-medium text-gray-900">Ellipsis ( &hellip; )</p>
+                <div className="rounded-lg border border-border bg-muted p-4">
+                  <p className="font-medium text-foreground">Ellipsis ( &hellip; )</p>
                   <p className="mt-1 text-sm">
                     Suggests trailing off, hesitation, or the passage of time.
                     &ldquo;She wanted to say something, but&hellip;&rdquo;
                   </p>
                 </div>
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                  <p className="font-medium text-gray-900">Exclamation mark ( ! )</p>
+                <div className="rounded-lg border border-border bg-muted p-4">
+                  <p className="font-medium text-foreground">Exclamation mark ( ! )</p>
                   <p className="mt-1 text-sm">
                     Use sparingly. One well-placed exclamation mark is
                     effective; five in a paragraph is not. Reserve for genuine
                     surprise, urgency, or emotion.
                   </p>
                 </div>
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                  <p className="font-medium text-gray-900">Brackets / parentheses ( )</p>
+                <div className="rounded-lg border border-border bg-muted p-4">
+                  <p className="font-medium text-foreground">Brackets / parentheses ( )</p>
                   <p className="mt-1 text-sm">
                     Used for additional information, asides, or clarification.
                     Can create an informal, conversational tone.
@@ -590,17 +590,17 @@ export default function OCRWritingSkillsPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Proofreading ───────────────────────────────────── */}
         <section aria-labelledby="proofread-heading">
           <h2
             id="proofread-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Proofreading Checklist
           </h2>
-          <div className="mt-4 space-y-4 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>
               Always leave 3&ndash;5 minutes at the end of each writing task
               to proofread. Check for the following:

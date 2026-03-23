@@ -23,7 +23,7 @@ const CATEGORIES = [
     label: "Writing Frame Templates",
     description: "Structured writing scaffolds to support students across different text types and exam questions.",
     icon: (
-      <svg className="h-6 w-6 text-[#2E86C1]" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+      <svg className="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
       </svg>
     ),
@@ -33,7 +33,7 @@ const CATEGORIES = [
     label: "Quote Organiser Templates",
     description: "Structured templates for collecting, categorising, and annotating key quotations from set texts.",
     icon: (
-      <svg className="h-6 w-6 text-[#2E86C1]" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+      <svg className="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
       </svg>
     ),
@@ -43,7 +43,7 @@ const CATEGORIES = [
     label: "Vocabulary Enhancement Worksheets",
     description: "Worksheets designed to build subject-specific vocabulary and improve analytical language in essays.",
     icon: (
-      <svg className="h-6 w-6 text-[#2E86C1]" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+      <svg className="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
       </svg>
     ),
@@ -53,7 +53,7 @@ const CATEGORIES = [
     label: "Exam Technique Checklists",
     description: "Step-by-step checklists students can use during revision and in the exam hall to stay on track.",
     icon: (
-      <svg className="h-6 w-6 text-[#2E86C1]" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+      <svg className="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15a2.25 2.25 0 0 1 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
       </svg>
     ),
@@ -234,7 +234,7 @@ export default function PrintableResourcesPage() {
               </Link>
               <Link
                 href="/resources"
-                className="inline-block rounded-lg border border-gray-300 px-6 py-2.5 text-sm font-semibold text-gray-700 transition hover:bg-gray-50"
+                className="inline-block rounded-lg border border-gray-300 px-6 py-2.5 text-sm font-semibold text-muted-foreground transition hover:bg-muted"
               >
                 Back to Resources
               </Link>
@@ -277,14 +277,14 @@ export default function PrintableResourcesPage() {
               <a
                 key={cat.slug}
                 href={`#${cat.slug}`}
-                className="group flex items-start gap-3 rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition hover:shadow-md hover:border-[#2E86C1]/40"
+                className="group flex items-start gap-3 rounded-xl border border-border bg-card p-4 shadow-md transition hover:shadow-md hover:border-[#2E86C1]/40"
               >
                 <div className="mt-0.5 shrink-0">{cat.icon}</div>
                 <div>
-                  <h3 className="text-sm font-bold text-gray-900 group-hover:text-[#1A5276] transition-colors">
+                  <h3 className="text-sm font-bold text-foreground group-hover:text-foreground transition-colors">
                     {cat.label}
                   </h3>
-                  <p className="mt-0.5 text-xs text-gray-500">
+                  <p className="mt-0.5 text-xs text-muted-foreground">
                     {count} resource{count !== 1 ? "s" : ""}
                   </p>
                 </div>
@@ -301,14 +301,14 @@ export default function PrintableResourcesPage() {
           <section
             key={cat.slug}
             id={cat.slug}
-            className="border-t border-gray-200 px-4 py-10 sm:px-6 lg:px-8 even:bg-gray-50"
+            className="border-t border-border px-4 py-10 sm:px-6 lg:px-8 even:bg-muted"
           >
             <div className="mx-auto max-w-6xl">
               <div className="flex items-center gap-3">
                 {cat.icon}
                 <div>
-                  <h2 className="text-xl font-bold text-gray-900">{cat.label}</h2>
-                  <p className="mt-1 text-sm text-gray-600">{cat.description}</p>
+                  <h2 className="text-xl font-bold text-foreground">{cat.label}</h2>
+                  <p className="mt-1 text-sm text-muted-foreground">{cat.description}</p>
                 </div>
               </div>
 
@@ -316,14 +316,14 @@ export default function PrintableResourcesPage() {
                 {resources.map((resource) => (
                   <div
                     key={resource.id}
-                    className="group flex flex-col rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition hover:shadow-md hover:border-[#2E86C1]/40"
+                    className="group flex flex-col rounded-xl border border-border bg-card p-5 shadow-md transition hover:shadow-md hover:border-[#2E86C1]/40"
                   >
                     {/* Tags */}
                     <div className="flex flex-wrap gap-1.5">
                       {resource.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="rounded-full bg-[#1A5276]/10 px-2 py-0.5 text-[11px] font-semibold text-[#1A5276]"
+                          className="rounded-full bg-[#1A5276]/10 px-2 py-0.5 text-[11px] font-semibold text-foreground"
                         >
                           {tag}
                         </span>
@@ -331,12 +331,12 @@ export default function PrintableResourcesPage() {
                     </div>
 
                     {/* Title */}
-                    <h3 className="mt-3 text-base font-bold text-gray-900 group-hover:text-[#1A5276] transition-colors">
+                    <h3 className="mt-3 text-base font-bold text-foreground group-hover:text-foreground transition-colors">
                       {resource.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="mt-2 flex-1 text-sm leading-relaxed text-gray-600">
+                    <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
                       {resource.description}
                     </p>
 
@@ -350,7 +350,7 @@ export default function PrintableResourcesPage() {
                         Print
                       </button>
                       <button
-                        className="inline-flex items-center gap-1.5 rounded-lg border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-700 transition hover:bg-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2E86C1] focus-visible:ring-offset-2"
+                        className="inline-flex items-center gap-1.5 rounded-lg border border-gray-300 px-4 py-2 text-sm font-semibold text-muted-foreground transition hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
                       >
                         <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
@@ -368,11 +368,11 @@ export default function PrintableResourcesPage() {
 
       {/* Teacher Plan notice */}
       <section className="bg-[#1A5276]/5 px-4 py-10 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl rounded-xl border border-[#2E86C1]/20 bg-white p-6 text-center shadow-sm sm:p-8">
-          <h3 className="text-lg font-bold text-gray-900">
+        <div className="mx-auto max-w-3xl rounded-xl border border-[#2E86C1]/20 bg-card p-6 text-center shadow-md sm:p-8">
+          <h3 className="text-lg font-bold text-foreground">
             Need more resources?
           </h3>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-sm text-muted-foreground">
             New printable resources are added regularly. All printable resources are included
             with the Teacher Plan at no extra cost.
           </p>
@@ -385,7 +385,7 @@ export default function PrintableResourcesPage() {
             </Link>
             <Link
               href="/resources/teaching/lesson-plans"
-              className="inline-block rounded-lg border border-gray-300 px-6 py-2.5 text-sm font-semibold text-gray-700 transition hover:bg-gray-50"
+              className="inline-block rounded-lg border border-gray-300 px-6 py-2.5 text-sm font-semibold text-muted-foreground transition hover:bg-muted"
             >
               Browse Lesson Plans
             </Link>

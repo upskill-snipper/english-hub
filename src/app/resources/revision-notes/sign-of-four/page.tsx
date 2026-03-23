@@ -17,17 +17,17 @@ function Section({
 }) {
   const [open, setOpen] = useState(defaultOpen);
   return (
-    <div className="mb-4 rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden">
+    <div className="mb-4 rounded-xl border border-border bg-card shadow-md overflow-hidden">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between px-5 py-4 text-left hover:bg-gray-50 transition-colors"
+        className="flex w-full items-center justify-between px-5 py-4 text-left hover:bg-muted transition-colors"
       >
         <span className="flex items-center gap-3">
           <span className="text-xl">{icon}</span>
-          <span className="text-lg font-bold text-gray-900">{title}</span>
+          <span className="text-lg font-bold text-foreground">{title}</span>
         </span>
         <svg
-          className={`h-5 w-5 text-gray-400 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+          className={`h-5 w-5 text-muted-foreground transition-transform duration-200 ${open ? "rotate-180" : ""}`}
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={2}
@@ -36,35 +36,35 @@ function Section({
           <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
         </svg>
       </button>
-      {open && <div className="border-t border-gray-100 px-5 py-5">{children}</div>}
+      {open && <div className="border-t border-border px-5 py-5">{children}</div>}
     </div>
   );
 }
 
 function QuoteCard({ quote, speaker, analysis }: { quote: string; speaker?: string; analysis: string }) {
   return (
-    <div className="rounded-lg border-l-4 border-[#2E86C1] bg-[#2E86C1]/5 p-4 mb-3">
-      <p className="text-sm font-semibold text-[#1A5276] italic">&ldquo;{quote}&rdquo;</p>
-      {speaker && <p className="mt-1 text-xs font-medium text-[#2E86C1]">&mdash; {speaker}</p>}
-      <p className="mt-2 text-sm text-gray-700">{analysis}</p>
+    <div className="rounded-lg border-l-4 border-[#2E86C1] bg-primary/5 p-4 mb-3">
+      <p className="text-sm font-semibold text-foreground italic">&ldquo;{quote}&rdquo;</p>
+      {speaker && <p className="mt-1 text-xs font-medium text-primary">&mdash; {speaker}</p>}
+      <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
   );
 }
 
 function CharacterCard({ name, description }: { name: string; description: string }) {
   return (
-    <div className="rounded-lg border border-gray-200 bg-gray-50 p-4 mb-3">
-      <h4 className="font-bold text-[#1A5276]">{name}</h4>
-      <p className="mt-1 text-sm text-gray-700 leading-relaxed">{description}</p>
+    <div className="rounded-lg border border-border bg-muted p-4 mb-3">
+      <h4 className="font-bold text-foreground">{name}</h4>
+      <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{description}</p>
     </div>
   );
 }
 
 function ThemeCard({ title, description }: { title: string; description: string }) {
   return (
-    <div className="rounded-lg border border-[#2E86C1]/20 bg-[#2E86C1]/5 p-4 mb-3">
-      <h4 className="font-bold text-[#1A5276]">{title}</h4>
-      <p className="mt-1 text-sm text-gray-700 leading-relaxed">{description}</p>
+    <div className="rounded-lg border border-[#2E86C1]/20 bg-primary/5 p-4 mb-3">
+      <h4 className="font-bold text-foreground">{title}</h4>
+      <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{description}</p>
     </div>
   );
 }
@@ -77,18 +77,18 @@ export default function SignOfFourPage() {
       {/* Hero */}
       <div className="mb-8">
         <div className="flex flex-wrap items-center gap-3 mb-2">
-          <span className="rounded-full bg-[#2E86C1]/10 px-3 py-1 text-xs font-bold text-[#2E86C1] uppercase tracking-wider">
+          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary uppercase tracking-wider">
             19th-Century Prose
           </span>
-          <span className="rounded-full bg-[#2E86C1]/10 px-3 py-1 text-xs font-bold text-[#2E86C1] uppercase tracking-wider">
+          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary uppercase tracking-wider">
             Edexcel
           </span>
         </div>
-        <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           The Sign of the Four
         </h1>
-        <p className="mt-1 text-lg text-gray-500">Arthur Conan Doyle, 1890</p>
-        <p className="mt-3 max-w-3xl text-gray-600 leading-relaxed">
+        <p className="mt-1 text-lg text-muted-foreground">Arthur Conan Doyle, 1890</p>
+        <p className="mt-3 max-w-3xl text-muted-foreground leading-relaxed">
           Conan Doyle&apos;s second Sherlock Holmes novel follows the detective and Dr Watson as they
           investigate a case brought to them by the mysterious Mary Morstan. A tale of stolen treasure,
           betrayal, and colonial violence, the novel explores themes of justice, empire, greed, and the
@@ -98,14 +98,14 @@ export default function SignOfFourPage() {
       </div>
 
       {/* Quick nav */}
-      <div className="mb-8 rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
-        <p className="text-sm font-semibold text-gray-700 mb-3">Jump to section:</p>
+      <div className="mb-8 rounded-xl border border-border bg-card p-4 shadow-md">
+        <p className="text-sm font-semibold text-muted-foreground mb-3">Jump to section:</p>
         <div className="flex flex-wrap gap-2">
           {["Chapter Summary", "Characters", "Themes", "Key Quotations", "Holmes\u2019s Methods", "Context", "Essay Planning"].map((s) => (
             <a
               key={s}
               href={`#${s.toLowerCase().replace(/[\u2019\s]+/g, "-")}`}
-              className="rounded-lg bg-gray-100 px-3 py-1.5 text-xs font-medium text-gray-600 hover:bg-[#2E86C1]/10 hover:text-[#2E86C1] transition-colors"
+              className="rounded-lg bg-gray-100 px-3 py-1.5 text-xs font-medium text-muted-foreground hover:bg-primary/10 hover:text-primary transition-colors"
             >
               {s}
             </a>
@@ -118,8 +118,8 @@ export default function SignOfFourPage() {
       <Section title="Chapter-by-Chapter Summary" icon="📖" defaultOpen>
         <div className="space-y-4">
           <div>
-            <h4 className="font-bold text-gray-900">Chapter 1: The Science of Deduction</h4>
-            <p className="text-sm text-gray-700 leading-relaxed">
+            <h4 className="font-bold text-foreground">Chapter 1: The Science of Deduction</h4>
+            <p className="text-sm text-muted-foreground leading-relaxed">
               Watson finds Holmes injecting himself with a seven-per-cent solution of cocaine, a habit
               Watson disapproves of but cannot prevent. Holmes is bored without a case and demonstrates
               his deductive method by analysing Watson&apos;s pocket watch, correctly deducing details about
@@ -129,8 +129,8 @@ export default function SignOfFourPage() {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-gray-900">Chapter 2: The Statement of the Case</h4>
-            <p className="text-sm text-gray-700 leading-relaxed">
+            <h4 className="font-bold text-foreground">Chapter 2: The Statement of the Case</h4>
+            <p className="text-sm text-muted-foreground leading-relaxed">
               Mary Morstan arrives at Baker Street with a mysterious problem. Her father, Captain Arthur
               Morstan, disappeared ten years ago after returning from India. For the last six years she has
               received an anonymous gift of a large, lustrous pearl each year. Now she has received a letter
@@ -139,8 +139,8 @@ export default function SignOfFourPage() {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-gray-900">Chapter 3: In Quest of a Solution</h4>
-            <p className="text-sm text-gray-700 leading-relaxed">
+            <h4 className="font-bold text-foreground">Chapter 3: In Quest of a Solution</h4>
+            <p className="text-sm text-muted-foreground leading-relaxed">
               Holmes, Watson, and Mary travel by cab through the fog-bound streets of London to the
               mysterious rendezvous. They are taken to the home of Thaddeus Sholto, the son of Major
               John Sholto, who was a friend of Captain Morstan in India. The journey through London&apos;s
@@ -149,8 +149,8 @@ export default function SignOfFourPage() {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-gray-900">Chapter 4: The Story of the Bald-Headed Man</h4>
-            <p className="text-sm text-gray-700 leading-relaxed">
+            <h4 className="font-bold text-foreground">Chapter 4: The Story of the Bald-Headed Man</h4>
+            <p className="text-sm text-muted-foreground leading-relaxed">
               Thaddeus Sholto reveals the truth. His father, Major Sholto, and Captain Morstan had
               discovered the Agra treasure in India. Major Sholto brought the treasure to England but
               betrayed Morstan, keeping it all. When Morstan came to confront him, the two argued and
@@ -161,8 +161,8 @@ export default function SignOfFourPage() {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-gray-900">Chapter 5: The Tragedy of Pondicherry Lodge</h4>
-            <p className="text-sm text-gray-700 leading-relaxed">
+            <h4 className="font-bold text-foreground">Chapter 5: The Tragedy of Pondicherry Lodge</h4>
+            <p className="text-sm text-muted-foreground leading-relaxed">
               The group travels to Pondicherry Lodge, the Sholto family home, to find Bartholomew Sholto
               (Thaddeus&apos;s twin brother) dead in his locked room. His face is frozen in a terrible smile,
               and a poisoned thorn is embedded in his skin. The Agra treasure chest is empty &mdash; the
@@ -172,8 +172,8 @@ export default function SignOfFourPage() {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-gray-900">Chapter 6: Sherlock Holmes Gives a Demonstration</h4>
-            <p className="text-sm text-gray-700 leading-relaxed">
+            <h4 className="font-bold text-foreground">Chapter 6: Sherlock Holmes Gives a Demonstration</h4>
+            <p className="text-sm text-muted-foreground leading-relaxed">
               Holmes demonstrates his deductive powers to the police detectives Athelney Jones, who has
               arrested the wrong man (Thaddeus). Holmes examines the crime scene methodically, identifies
               creosote on the rope used by the murderer&apos;s companion, and measures the small footprints.
@@ -183,8 +183,8 @@ export default function SignOfFourPage() {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-gray-900">Chapter 7: The Episode of the Barrel</h4>
-            <p className="text-sm text-gray-700 leading-relaxed">
+            <h4 className="font-bold text-foreground">Chapter 7: The Episode of the Barrel</h4>
+            <p className="text-sm text-muted-foreground leading-relaxed">
               Holmes and Watson follow the dog Toby through the streets of South London, tracking the
               creosote trail. Toby leads them on a winding chase through working-class neighbourhoods,
               timber yards, and along the Thames. The trail ends at a barrel of creosote at a wharf, a
@@ -194,8 +194,8 @@ export default function SignOfFourPage() {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-gray-900">Chapter 8: The Baker Street Irregulars</h4>
-            <p className="text-sm text-gray-700 leading-relaxed">
+            <h4 className="font-bold text-foreground">Chapter 8: The Baker Street Irregulars</h4>
+            <p className="text-sm text-muted-foreground leading-relaxed">
               Holmes enlists his network of street urchins, the Baker Street Irregulars, to search the
               river for a steam launch called the <em>Aurora</em>. While they wait, Watson reads Holmes&apos;s
               monograph and Holmes discusses the case. Watson returns to Mary to update her on events, and
@@ -204,8 +204,8 @@ export default function SignOfFourPage() {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-gray-900">Chapter 9: A Break in the Chain</h4>
-            <p className="text-sm text-gray-700 leading-relaxed">
+            <h4 className="font-bold text-foreground">Chapter 9: A Break in the Chain</h4>
+            <p className="text-sm text-muted-foreground leading-relaxed">
               Athelney Jones&apos;s investigation falters &mdash; he has arrested the wrong suspect and has no
               real leads. Holmes disguises himself as an old sailor and personally searches the docks for
               the <em>Aurora</em>, eventually locating it at Jacobson&apos;s Yard. He arranges for a police
@@ -215,8 +215,8 @@ export default function SignOfFourPage() {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-gray-900">Chapter 10: The End of the Islander</h4>
-            <p className="text-sm text-gray-700 leading-relaxed">
+            <h4 className="font-bold text-foreground">Chapter 10: The End of the Islander</h4>
+            <p className="text-sm text-muted-foreground leading-relaxed">
               A dramatic chase along the Thames. Holmes, Watson, and the police pursue the <em>Aurora</em>
               carrying Jonathan Small and his companion Tonga. Tonga fires a poisoned dart at the pursuers
               but Holmes and Watson shoot him dead. Small is captured but the treasure chest, when opened,
@@ -226,8 +226,8 @@ export default function SignOfFourPage() {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-gray-900">Chapter 11: The Great Agra Treasure</h4>
-            <p className="text-sm text-gray-700 leading-relaxed">
+            <h4 className="font-bold text-foreground">Chapter 11: The Great Agra Treasure</h4>
+            <p className="text-sm text-muted-foreground leading-relaxed">
               The empty treasure chest is opened at Baker Street. Watson realises that the disappearance
               of the treasure means Mary will not become wealthy &mdash; removing the class barrier between
               them. He proposes to her and she accepts. Holmes, rather than celebrating, returns to his
@@ -237,8 +237,8 @@ export default function SignOfFourPage() {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-gray-900">Chapter 12: The Strange Story of Jonathan Small</h4>
-            <p className="text-sm text-gray-700 leading-relaxed">
+            <h4 className="font-bold text-foreground">Chapter 12: The Strange Story of Jonathan Small</h4>
+            <p className="text-sm text-muted-foreground leading-relaxed">
               Jonathan Small narrates his backstory. A former soldier, he lost his leg to a crocodile in
               India. During the Indian Rebellion of 1857, he was drawn into a plot by three Sikh men (the
               &ldquo;Four&rdquo; of the title) to murder a merchant, Achmet, and steal the Agra treasure. The four
@@ -439,9 +439,9 @@ export default function SignOfFourPage() {
       {/* ─── Holmes's Methods ────────────────────────────────── */}
       <Section title="Holmes&rsquo;s Methods and Deduction" icon="🔍">
         <div className="space-y-4" id="holmes-s-methods">
-          <div className="rounded-lg bg-gray-50 p-4">
-            <h4 className="font-bold text-gray-900">Observation and Deduction</h4>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+          <div className="rounded-lg bg-muted p-4">
+            <h4 className="font-bold text-foreground">Observation and Deduction</h4>
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               Holmes&apos;s method rests on close observation of physical details that others overlook.
               His analysis of Watson&apos;s pocket watch in Chapter 1 is a masterclass: from scratches
               around the keyhole he deduces the owner&apos;s alcoholism; from the pawnbroker&apos;s marks
@@ -451,9 +451,9 @@ export default function SignOfFourPage() {
               However, Conan Doyle shows that this method has limits when applied to complex human situations.
             </p>
           </div>
-          <div className="rounded-lg bg-gray-50 p-4">
-            <h4 className="font-bold text-gray-900">Forensic Science</h4>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+          <div className="rounded-lg bg-muted p-4">
+            <h4 className="font-bold text-foreground">Forensic Science</h4>
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               Holmes employs cutting-edge (for 1890) forensic techniques: measuring footprints, analysing
               chemical residues (creosote), identifying poison types (the thorn), and studying handwriting.
               He treats the crime scene as a laboratory, using a magnifying glass and tape measure rather
@@ -462,9 +462,9 @@ export default function SignOfFourPage() {
               thrillingly modern to contemporary readers.
             </p>
           </div>
-          <div className="rounded-lg bg-gray-50 p-4">
-            <h4 className="font-bold text-gray-900">Disguise and Undercover Work</h4>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+          <div className="rounded-lg bg-muted p-4">
+            <h4 className="font-bold text-foreground">Disguise and Undercover Work</h4>
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               In Chapter 9, Holmes disguises himself as an old sailor to search the docks for the
               <em> Aurora</em>. This shows that Holmes&apos;s method is not purely cerebral &mdash; he is
               willing to take physical risks and immerse himself in London&apos;s underworld. His ability
@@ -474,9 +474,9 @@ export default function SignOfFourPage() {
               normally access.
             </p>
           </div>
-          <div className="rounded-lg bg-gray-50 p-4">
-            <h4 className="font-bold text-gray-900">Use of Informants: The Baker Street Irregulars</h4>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+          <div className="rounded-lg bg-muted p-4">
+            <h4 className="font-bold text-foreground">Use of Informants: The Baker Street Irregulars</h4>
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               Holmes employs a network of street children to gather intelligence across London. The
               Irregulars can go where adults cannot, blending into the urban landscape. This practical
               resourcefulness complements Holmes&apos;s intellectual powers. It also reveals the class
@@ -485,9 +485,9 @@ export default function SignOfFourPage() {
               may note the parallel with colonial exploitation: the powerful using the vulnerable as tools.
             </p>
           </div>
-          <div className="rounded-lg bg-gray-50 p-4">
-            <h4 className="font-bold text-gray-900">Holmes vs the Official Police</h4>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+          <div className="rounded-lg bg-muted p-4">
+            <h4 className="font-bold text-foreground">Holmes vs the Official Police</h4>
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               Athelney Jones represents the official police &mdash; confident but incompetent. He arrests
               Thaddeus Sholto based on circumstantial evidence and personal prejudice, while Holmes patiently
               builds a case from physical evidence. The contrast highlights a key theme: institutional
@@ -496,9 +496,9 @@ export default function SignOfFourPage() {
               brilliance must supplement (or replace) the system.
             </p>
           </div>
-          <div className="rounded-lg bg-gray-50 p-4">
-            <h4 className="font-bold text-gray-900">Limitations of Holmes&apos;s Method</h4>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+          <div className="rounded-lg bg-muted p-4">
+            <h4 className="font-bold text-foreground">Limitations of Holmes&apos;s Method</h4>
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               Despite his brilliance, Holmes&apos;s purely rational approach has blind spots. He cannot
               understand Watson&apos;s love for Mary; he dismisses women as untrustworthy; he is unable to
               find meaning in life beyond intellectual puzzles. His return to cocaine at the novel&apos;s
@@ -514,8 +514,8 @@ export default function SignOfFourPage() {
       <Section title="Historical and Social Context" icon="🏛️">
         <div className="space-y-4" id="context">
           <div className="rounded-lg bg-[#1A5276]/5 p-4">
-            <h4 className="font-bold text-[#1A5276]">Victorian Detective Fiction</h4>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+            <h4 className="font-bold text-foreground">Victorian Detective Fiction</h4>
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               <em>The Sign of the Four</em> was published in 1890, during the golden age of detective fiction.
               Conan Doyle drew on Edgar Allan Poe&apos;s C. Auguste Dupin stories and Wilkie Collins&apos;s
               <em> The Moonstone</em> (1868), which also involves a stolen Indian jewel and colonial guilt.
@@ -525,8 +525,8 @@ export default function SignOfFourPage() {
             </p>
           </div>
           <div className="rounded-lg bg-[#1A5276]/5 p-4">
-            <h4 className="font-bold text-[#1A5276]">The British Empire and India</h4>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+            <h4 className="font-bold text-foreground">The British Empire and India</h4>
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               By 1890, the British Empire controlled approximately a quarter of the world&apos;s land surface.
               India was the &ldquo;jewel in the crown&rdquo; &mdash; a phrase that resonates with the Agra
               treasure. The Indian Rebellion of 1857 (referred to in the novel as the &ldquo;Mutiny&rdquo;)
@@ -537,8 +537,8 @@ export default function SignOfFourPage() {
             </p>
           </div>
           <div className="rounded-lg bg-[#1A5276]/5 p-4">
-            <h4 className="font-bold text-[#1A5276]">The Agra Treasure and Colonial Wealth</h4>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+            <h4 className="font-bold text-foreground">The Agra Treasure and Colonial Wealth</h4>
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               The Agra treasure represents the vast wealth extracted from India by the British. Agra is a
               real city, home to the Taj Mahal, and was a centre of Mughal power. By setting the treasure&apos;s
               origin in a real place, Conan Doyle grounds the fiction in historical reality. The treasure&apos;s
@@ -548,8 +548,8 @@ export default function SignOfFourPage() {
             </p>
           </div>
           <div className="rounded-lg bg-[#1A5276]/5 p-4">
-            <h4 className="font-bold text-[#1A5276]">Opium and Drug Use</h4>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+            <h4 className="font-bold text-foreground">Opium and Drug Use</h4>
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               Holmes&apos;s cocaine use reflects a real Victorian phenomenon. Cocaine and opium were legal
               and widely available in the 1890s &mdash; cocaine was even an ingredient in some medicines and
               drinks. However, growing awareness of addiction was beginning to shift attitudes. Watson&apos;s
@@ -559,8 +559,8 @@ export default function SignOfFourPage() {
             </p>
           </div>
           <div className="rounded-lg bg-[#1A5276]/5 p-4">
-            <h4 className="font-bold text-[#1A5276]">The Victorian Class System</h4>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+            <h4 className="font-bold text-foreground">The Victorian Class System</h4>
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               Class shapes every relationship in the novel. Watson cannot propose to Mary while she stands to
               inherit a fortune because the class gap would make the proposal appear mercenary. Holmes employs
               working-class children (the Irregulars) as disposable labour. Jonathan Small is a working-class
@@ -570,8 +570,8 @@ export default function SignOfFourPage() {
             </p>
           </div>
           <div className="rounded-lg bg-[#1A5276]/5 p-4">
-            <h4 className="font-bold text-[#1A5276]">Race and Victorian Attitudes</h4>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+            <h4 className="font-bold text-foreground">Race and Victorian Attitudes</h4>
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               The novel&apos;s treatment of race, particularly through Tonga and the Sikh characters, reflects
               deeply problematic Victorian attitudes. Indigenous peoples are described in animalistic,
               dehumanising language. Tonga is presented as barely human &mdash; a &ldquo;savage&rdquo; whose
@@ -582,8 +582,8 @@ export default function SignOfFourPage() {
             </p>
           </div>
           <div className="rounded-lg bg-[#1A5276]/5 p-4">
-            <h4 className="font-bold text-[#1A5276]">Science and Rationalism</h4>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+            <h4 className="font-bold text-foreground">Science and Rationalism</h4>
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               The late Victorian period saw enormous faith in scientific progress. Darwin&apos;s theory of
               evolution, advances in chemistry and medicine, and the rise of forensic science all shaped the
               cultural landscape. Holmes embodies this faith &mdash; he applies the scientific method to
@@ -598,67 +598,67 @@ export default function SignOfFourPage() {
       {/* ─── Essay Planning ──────────────────────────────────── */}
       <Section title="Essay Planning" icon="✍️">
         <div className="space-y-6" id="essay-planning">
-          <div className="rounded-lg border border-[#2E86C1]/20 bg-[#2E86C1]/5 p-5">
-            <h4 className="font-bold text-[#1A5276]">Sample Question 1: How does Conan Doyle present the theme of justice?</h4>
-            <div className="mt-3 space-y-3 text-sm text-gray-700">
+          <div className="rounded-lg border border-[#2E86C1]/20 bg-primary/5 p-5">
+            <h4 className="font-bold text-foreground">Sample Question 1: How does Conan Doyle present the theme of justice?</h4>
+            <div className="mt-3 space-y-3 text-sm text-muted-foreground">
               <div>
-                <p className="font-semibold text-gray-900">Paragraph 1 &mdash; The failure of official justice</p>
+                <p className="font-semibold text-foreground">Paragraph 1 &mdash; The failure of official justice</p>
                 <p>Athelney Jones arrests the innocent Thaddeus Sholto. Conan Doyle presents the police as incompetent and assumption-driven, contrasting them with Holmes&apos;s evidence-based approach. Link to context: Victorian policing was still developing; the Metropolitan Police was only established in 1829.</p>
               </div>
               <div>
-                <p className="font-semibold text-gray-900">Paragraph 2 &mdash; Jonathan Small&apos;s sense of justice</p>
+                <p className="font-semibold text-foreground">Paragraph 2 &mdash; Jonathan Small&apos;s sense of justice</p>
                 <p>Small believes the treasure is rightfully his. His decision to throw it into the Thames is an act of rough justice &mdash; &ldquo;if I can&apos;t have the loot I&apos;ll take darned good care that no one else does.&rdquo; Conan Doyle complicates the reader&apos;s moral response: Small is a murderer but also a victim of betrayal.</p>
               </div>
               <div>
-                <p className="font-semibold text-gray-900">Paragraph 3 &mdash; Colonial justice and moral debt</p>
+                <p className="font-semibold text-foreground">Paragraph 3 &mdash; Colonial justice and moral debt</p>
                 <p>The treasure was originally stolen from Achmet through murder. Major Sholto then stole it from Small. Each &ldquo;transfer&rdquo; involves violence and betrayal. Conan Doyle implies that the treasure is cursed because it was born of injustice &mdash; colonial wealth cannot be legitimised.</p>
               </div>
               <div>
-                <p className="font-semibold text-gray-900">Paragraph 4 &mdash; Poetic justice and the resolution</p>
+                <p className="font-semibold text-foreground">Paragraph 4 &mdash; Poetic justice and the resolution</p>
                 <p>The treasure is lost, Small is captured, and Watson finds love. Conan Doyle creates a morally satisfying ending: greed is punished and love is rewarded. However, Holmes&apos;s return to cocaine complicates this &mdash; not everyone finds resolution.</p>
               </div>
             </div>
           </div>
 
-          <div className="rounded-lg border border-[#2E86C1]/20 bg-[#2E86C1]/5 p-5">
-            <h4 className="font-bold text-[#1A5276]">Sample Question 2: How does Conan Doyle present the relationship between Holmes and Watson?</h4>
-            <div className="mt-3 space-y-3 text-sm text-gray-700">
+          <div className="rounded-lg border border-[#2E86C1]/20 bg-primary/5 p-5">
+            <h4 className="font-bold text-foreground">Sample Question 2: How does Conan Doyle present the relationship between Holmes and Watson?</h4>
+            <div className="mt-3 space-y-3 text-sm text-muted-foreground">
               <div>
-                <p className="font-semibold text-gray-900">Paragraph 1 &mdash; Complementary opposites</p>
+                <p className="font-semibold text-foreground">Paragraph 1 &mdash; Complementary opposites</p>
                 <p>Holmes represents reason; Watson represents emotion. &ldquo;You really are an automaton &mdash; a calculating machine.&rdquo; Watson&apos;s criticism shows both frustration and intimacy &mdash; only a close friend could speak so bluntly. Their differences make them effective together.</p>
               </div>
               <div>
-                <p className="font-semibold text-gray-900">Paragraph 2 &mdash; Watson as narrator and mediator</p>
+                <p className="font-semibold text-foreground">Paragraph 2 &mdash; Watson as narrator and mediator</p>
                 <p>Watson translates Holmes&apos;s genius for the reader. His admiration (&ldquo;brilliant&rdquo;) and his criticisms (&ldquo;inhuman&rdquo;) create a nuanced portrait. Conan Doyle uses the first-person narration to position the reader alongside Watson, sharing his wonder and his concern.</p>
               </div>
               <div>
-                <p className="font-semibold text-gray-900">Paragraph 3 &mdash; The Mary Morstan disruption</p>
+                <p className="font-semibold text-foreground">Paragraph 3 &mdash; The Mary Morstan disruption</p>
                 <p>Watson&apos;s love for Mary introduces a tension. Holmes fears losing Watson and dismisses romance. The friendship is tested by Watson&apos;s emotional life, suggesting that pure intellectual partnership cannot fulfil all human needs.</p>
               </div>
               <div>
-                <p className="font-semibold text-gray-900">Paragraph 4 &mdash; The ending: divergent paths</p>
+                <p className="font-semibold text-foreground">Paragraph 4 &mdash; The ending: divergent paths</p>
                 <p>Watson gains a wife; Holmes gains the cocaine bottle. The contrast at the novel&apos;s end is poignant &mdash; Watson has found happiness through connection, while Holmes retreats into isolation and self-destruction. Conan Doyle implies that friendship alone cannot save Holmes from himself.</p>
               </div>
             </div>
           </div>
 
-          <div className="rounded-lg border border-[#2E86C1]/20 bg-[#2E86C1]/5 p-5">
-            <h4 className="font-bold text-[#1A5276]">Sample Question 3: How does Conan Doyle explore the theme of empire and colonialism?</h4>
-            <div className="mt-3 space-y-3 text-sm text-gray-700">
+          <div className="rounded-lg border border-[#2E86C1]/20 bg-primary/5 p-5">
+            <h4 className="font-bold text-foreground">Sample Question 3: How does Conan Doyle explore the theme of empire and colonialism?</h4>
+            <div className="mt-3 space-y-3 text-sm text-muted-foreground">
               <div>
-                <p className="font-semibold text-gray-900">Paragraph 1 &mdash; The Agra treasure as symbol</p>
+                <p className="font-semibold text-foreground">Paragraph 1 &mdash; The Agra treasure as symbol</p>
                 <p>The treasure originates in India and brings death to everyone who possesses it. Conan Doyle uses it as a symbol for colonial wealth &mdash; extracted through violence, it corrupts all who touch it. Link to context: India was the economic engine of the British Empire.</p>
               </div>
               <div>
-                <p className="font-semibold text-gray-900">Paragraph 2 &mdash; Jonathan Small&apos;s backstory</p>
+                <p className="font-semibold text-foreground">Paragraph 2 &mdash; Jonathan Small&apos;s backstory</p>
                 <p>Small&apos;s narrative in Chapter 12 immerses the reader in colonial India &mdash; military service, the 1857 Rebellion, imprisonment in the Andaman Islands. Conan Doyle shows how the Empire creates men like Small: ordinary soldiers drawn into extraordinary violence by imperial circumstances.</p>
               </div>
               <div>
-                <p className="font-semibold text-gray-900">Paragraph 3 &mdash; The treatment of Tonga</p>
+                <p className="font-semibold text-foreground">Paragraph 3 &mdash; The treatment of Tonga</p>
                 <p>Tonga is the most visible victim of colonial attitudes. Described in dehumanising, racist language, he is used as a weapon and killed without moral consequence. Conan Doyle reflects (and reinforces) the racial hierarchies that justified empire. Modern readers must critique this representation.</p>
               </div>
               <div>
-                <p className="font-semibold text-gray-900">Paragraph 4 &mdash; Empire in England</p>
+                <p className="font-semibold text-foreground">Paragraph 4 &mdash; Empire in England</p>
                 <p>Colonial influence permeates London: Pondicherry Lodge (named after an Indian territory), Thaddeus&apos;s Eastern luxuries, Watson&apos;s Afghan war wound. Conan Doyle shows that empire is not distant &mdash; it shapes domestic English life. The treasure&apos;s loss in the Thames symbolises the ultimate futility of imperial extraction.</p>
               </div>
             </div>
@@ -667,31 +667,31 @@ export default function SignOfFourPage() {
       </Section>
 
       {/* ─── Exam Tips ───────────────────────────────────────── */}
-      <div className="mt-6 rounded-xl border border-[#2E86C1]/20 bg-[#2E86C1]/5 p-6">
-        <h3 className="text-lg font-bold text-gray-900">Exam Tips for The Sign of the Four</h3>
-        <ul className="mt-3 space-y-2 text-sm text-gray-700">
+      <div className="mt-6 rounded-xl border border-[#2E86C1]/20 bg-primary/5 p-6">
+        <h3 className="text-lg font-bold text-foreground">Exam Tips for The Sign of the Four</h3>
+        <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
           <li className="flex items-start gap-2">
-            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#2E86C1]" />
+            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
             <span><strong>Always link to context.</strong> Connect events to the British Empire, Victorian attitudes to race and class, and the development of detective fiction. Examiners reward candidates who embed context naturally rather than bolting it on.</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#2E86C1]" />
+            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
             <span><strong>Use Conan Doyle&apos;s methods.</strong> Discuss narrative structure (Watson as first-person narrator), symbolism (the treasure, the fog, the Thames), language techniques (pathetic fallacy, juxtaposition), and the significance of the detective genre.</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#2E86C1]" />
+            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
             <span><strong>Refer to the writer&apos;s intentions.</strong> Use phrases like &ldquo;Conan Doyle perhaps suggests...&rdquo; or &ldquo;Conan Doyle uses Small to critique...&rdquo; to demonstrate awareness of authorial purpose.</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#2E86C1]" />
+            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
             <span><strong>Compare characters deliberately.</strong> Holmes vs Watson (reason vs emotion), Thaddeus vs Bartholomew (guilt vs greed), Small vs Sholto (loyalty vs betrayal). Examiners reward structured comparison.</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#2E86C1]" />
+            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
             <span><strong>Address problematic elements.</strong> The novel&apos;s treatment of race (Tonga, the Sikh characters) and gender (Holmes&apos;s misogyny) must be acknowledged critically. Show awareness that the text reflects Victorian prejudices that modern readers should interrogate.</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#2E86C1]" />
+            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
             <span><strong>Link multiple themes.</strong> Every quote should connect to at least two themes. For example, Holmes&apos;s cocaine use connects to reason vs emotion, Victorian science, empire (opium trade), and the limits of genius.</span>
           </li>
         </ul>

@@ -306,19 +306,19 @@ const categories = [
 function TechniqueCard({ t }: { t: Technique }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="rounded-xl border border-gray-200 bg-white">
+    <div className="rounded-xl border border-border bg-card">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left hover:bg-gray-50 transition-colors"
+        className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left hover:bg-muted transition-colors"
       >
         <div>
-          <span className="font-bold text-gray-900">{t.name}</span>
+          <span className="font-bold text-foreground">{t.name}</span>
           <span className="ml-3 rounded-full bg-accent-50 px-2.5 py-0.5 text-xs font-medium text-accent-700">
             {t.category}
           </span>
         </div>
         <svg
-          className={`h-5 w-5 shrink-0 text-gray-400 transition-transform ${open ? "rotate-180" : ""}`}
+          className={`h-5 w-5 shrink-0 text-muted-foreground transition-transform ${open ? "rotate-180" : ""}`}
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={2}
@@ -328,14 +328,14 @@ function TechniqueCard({ t }: { t: Technique }) {
         </svg>
       </button>
       {open && (
-        <div className="border-t border-gray-100 px-5 py-5 space-y-4 text-sm leading-relaxed text-gray-700">
+        <div className="border-t border-border px-5 py-5 space-y-4 text-sm leading-relaxed text-muted-foreground">
           <div>
             <h4 className="font-bold text-primary">Definition</h4>
             <p className="mt-1">{t.definition}</p>
           </div>
           <div>
             <h4 className="font-bold text-primary">Example</h4>
-            <p className="mt-1 italic text-gray-600">{t.example}</p>
+            <p className="mt-1 italic text-muted-foreground">{t.example}</p>
           </div>
           <div>
             <h4 className="font-bold text-primary">Effect on the reader</h4>
@@ -343,7 +343,7 @@ function TechniqueCard({ t }: { t: Technique }) {
           </div>
           <div>
             <h4 className="font-bold text-primary">How to write about it in an exam</h4>
-            <div className="mt-1 rounded-lg bg-gray-50 p-3 text-sm">
+            <div className="mt-1 rounded-lg bg-muted p-3 text-sm">
               <p>{t.howToWriteAboutIt}</p>
             </div>
           </div>
@@ -381,7 +381,7 @@ export default function TechniquesPage() {
 
       {/* Breadcrumb */}
       <nav className="mx-auto max-w-5xl px-4 pt-6" aria-label="Breadcrumb">
-        <ol className="flex flex-wrap items-center gap-2 text-sm text-gray-500">
+        <ol className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
           <li>
             <Link href="/" className="hover:text-primary transition-colors">Home</Link>
           </li>
@@ -399,22 +399,22 @@ export default function TechniquesPage() {
       <div className="mx-auto max-w-5xl px-4 py-10">
         {/* Intro */}
         <div className="rounded-xl border border-accent-100 bg-accent-50/50 p-6 sm:p-8 mb-8">
-          <h2 className="text-xl font-bold text-gray-900">
+          <h2 className="text-xl font-bold text-foreground">
             How to use this guide
           </h2>
-          <p className="mt-3 text-gray-700">
+          <p className="mt-3 text-muted-foreground">
             You do not need to memorise every technique listed here. Focus on
             understanding <strong>15-20 key devices</strong> well enough that
             you can identify them in an unseen text and explain their effect.
             For each technique, we provide:
           </p>
-          <ul className="mt-3 ml-5 list-disc space-y-1 text-gray-700">
+          <ul className="mt-3 ml-5 list-disc space-y-1 text-muted-foreground">
             <li>A clear <strong>definition</strong></li>
             <li>An <strong>example</strong> showing the technique in action</li>
             <li>An explanation of the <strong>effect on the reader</strong></li>
             <li>A model sentence showing <strong>how to write about it in an exam</strong></li>
           </ul>
-          <p className="mt-3 text-gray-700">
+          <p className="mt-3 text-muted-foreground">
             Remember: identifying a technique is not enough. You must always
             explain <em>why</em> the writer uses it and <em>how</em> it affects
             the reader. The model sentences below show you how to do this.
@@ -430,7 +430,7 @@ export default function TechniquesPage() {
               className={`rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
                 filter === cat
                   ? "bg-primary text-white"
-                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  : "bg-gray-100 text-muted-foreground hover:bg-gray-200"
               }`}
             >
               {cat}

@@ -23,16 +23,16 @@ function Section({
 }) {
   const [open, setOpen] = useState(defaultOpen);
   return (
-    <div className="rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden">
+    <div className="rounded-xl border border-border bg-card shadow-md overflow-hidden">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="flex w-full items-center justify-between px-5 py-4 text-left transition-colors hover:bg-gray-50"
+        className="flex w-full items-center justify-between px-5 py-4 text-left transition-colors hover:bg-muted"
         aria-expanded={open}
         aria-controls={`section-${id}`}
       >
         <div className="flex items-center gap-3">
           <span className={`h-2.5 w-2.5 rounded-full ${colour}`} />
-          <h2 className="text-lg font-bold text-gray-900">{title}</h2>
+          <h2 className="text-lg font-bold text-foreground">{title}</h2>
           {badge && (
             <span className="rounded-full bg-accent-50 px-2.5 py-0.5 text-xs font-semibold text-accent-600">
               {badge}
@@ -40,14 +40,14 @@ function Section({
           )}
         </div>
         <svg
-          className={`h-5 w-5 text-gray-400 transition-transform ${open ? "rotate-180" : ""}`}
+          className={`h-5 w-5 text-muted-foreground transition-transform ${open ? "rotate-180" : ""}`}
           fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"
         >
           <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
         </svg>
       </button>
       {open && (
-        <div id={`section-${id}`} className="border-t border-gray-100 px-5 py-5">
+        <div id={`section-${id}`} className="border-t border-border px-5 py-5">
           {children}
         </div>
       )}
@@ -69,8 +69,8 @@ function ContextExample({
   return (
     <div className="rounded-lg border-l-4 border-accent bg-accent-50/40 p-4">
       <p className="text-xs font-bold uppercase tracking-wider text-accent-600">{text}</p>
-      <p className="mt-1 text-sm font-semibold text-gray-800">{point}</p>
-      <p className="mt-2 text-sm text-gray-700">{analysis}</p>
+      <p className="mt-1 text-sm font-semibold text-foreground">{point}</p>
+      <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
   );
 }
@@ -86,7 +86,7 @@ function TimelineEvent({ year, event }: { year: string; event: string }) {
         </span>
         <div className="mt-1 h-full w-px bg-slate-200" />
       </div>
-      <p className="pb-6 text-sm text-gray-700">{event}</p>
+      <p className="pb-6 text-sm text-muted-foreground">{event}</p>
     </div>
   );
 }
@@ -99,7 +99,7 @@ export default function TwentiethCenturyContextPage() {
 
       {/* Breadcrumb */}
       <nav className="mx-auto max-w-6xl px-4 pt-6 sm:px-6 lg:px-8" aria-label="Breadcrumb">
-        <ol className="flex flex-wrap items-center gap-1.5 text-sm text-gray-500">
+        <ol className="flex flex-wrap items-center gap-1.5 text-sm text-muted-foreground">
           {[
             { href: "/", label: "Home" },
             { href: "/resources", label: "Resources" },
@@ -107,7 +107,7 @@ export default function TwentiethCenturyContextPage() {
           ].map((crumb, i) => (
             <li key={crumb.href} className="flex items-center gap-1.5">
               {i > 0 && (
-                <svg className="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <svg className="h-4 w-4 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
               )}
@@ -115,7 +115,7 @@ export default function TwentiethCenturyContextPage() {
             </li>
           ))}
           <li className="flex items-center gap-1.5">
-            <svg className="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <svg className="h-4 w-4 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
             </svg>
             <span className="font-medium text-primary">Twentieth Century</span>
@@ -135,10 +135,10 @@ export default function TwentiethCenturyContextPage() {
             <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-semibold text-accent-600">Animal Farm</span>
             <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-semibold text-accent-600">Blood Brothers</span>
           </div>
-          <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Twentieth-Century Context
           </h1>
-          <p className="mt-3 max-w-3xl text-lg text-gray-600 leading-relaxed">
+          <p className="mt-3 max-w-3xl text-lg text-muted-foreground leading-relaxed">
             The twentieth century reshaped Britain through two world wars, the birth of
             the welfare state, Cold War tensions, and Thatcher&apos;s revolution. These
             upheavals are the backdrop to some of the most studied GCSE texts.
@@ -172,7 +172,7 @@ export default function TwentiethCenturyContextPage() {
         <div className="mt-5 space-y-5">
           {/* WWI and WWII */}
           <Section id="wars" title="World War I & World War II" colour="bg-red-800">
-            <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 <strong>World War I (1914-1918)</strong> shattered the certainties of Edwardian Britain.
                 Before the war, there was a widespread belief -- especially among the upper classes --
@@ -198,7 +198,7 @@ export default function TwentiethCenturyContextPage() {
 
           {/* Class System Evolution */}
           <Section id="class" title="The Changing Class System" colour="bg-amber-700">
-            <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 The rigid Edwardian class system -- with its clear divisions between upper, middle,
                 and working classes -- gradually broke down across the century. The wars played a
@@ -222,7 +222,7 @@ export default function TwentiethCenturyContextPage() {
 
           {/* Socialism and Capitalism */}
           <Section id="socialism" title="Socialism vs Capitalism" colour="bg-blue-800">
-            <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 The twentieth century was defined by the ideological battle between
                 <strong> capitalism</strong> (private ownership, free markets, individual enterprise) and
@@ -247,7 +247,7 @@ export default function TwentiethCenturyContextPage() {
 
           {/* Welfare State */}
           <Section id="welfare" title="The Welfare State" colour="bg-green-700">
-            <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 After WWII, the Labour government of 1945 created the <strong>welfare state</strong>:
                 the NHS (1948), national insurance, council housing, and free secondary education.
@@ -271,7 +271,7 @@ export default function TwentiethCenturyContextPage() {
 
           {/* 1980s Britain */}
           <Section id="eighties" title="1980s Britain & Thatcherism" colour="bg-slate-800">
-            <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 <strong>Margaret Thatcher</strong> (Prime Minister 1979-1990) fundamentally reshaped
                 Britain. Her philosophy -- often called <strong>Thatcherism</strong> -- emphasised
@@ -301,7 +301,7 @@ export default function TwentiethCenturyContextPage() {
 
           {/* Post-war Society */}
           <Section id="postwar" title="Post-War Disillusionment" colour="bg-gray-700">
-            <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 The aftermath of WWII did not bring simple optimism. The revelations of the
                 Holocaust, the dropping of atomic bombs on Hiroshima and Nagasaki, and the onset
@@ -330,13 +330,13 @@ export default function TwentiethCenturyContextPage() {
 
           {/* Linking Context to Texts */}
           <Section id="linking" title="How to Link Context to Your Texts" badge="Exam skill" colour="bg-accent">
-            <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 Remember: context is not a bolt-on paragraph. It should be <strong>woven into your
                 analysis</strong> of the writer&apos;s methods and message.
               </p>
 
-              <h3 className="text-base font-bold text-gray-900 pt-2">An Inspector Calls</h3>
+              <h3 className="text-base font-bold text-foreground pt-2">An Inspector Calls</h3>
               <div className="space-y-3">
                 <ContextExample
                   text="An Inspector Calls"
@@ -350,7 +350,7 @@ export default function TwentiethCenturyContextPage() {
                 />
               </div>
 
-              <h3 className="text-base font-bold text-gray-900 pt-4">Lord of the Flies</h3>
+              <h3 className="text-base font-bold text-foreground pt-4">Lord of the Flies</h3>
               <div className="space-y-3">
                 <ContextExample
                   text="Lord of the Flies"
@@ -359,7 +359,7 @@ export default function TwentiethCenturyContextPage() {
                 />
               </div>
 
-              <h3 className="text-base font-bold text-gray-900 pt-4">Animal Farm</h3>
+              <h3 className="text-base font-bold text-foreground pt-4">Animal Farm</h3>
               <div className="space-y-3">
                 <ContextExample
                   text="Animal Farm"
@@ -368,7 +368,7 @@ export default function TwentiethCenturyContextPage() {
                 />
               </div>
 
-              <h3 className="text-base font-bold text-gray-900 pt-4">Blood Brothers</h3>
+              <h3 className="text-base font-bold text-foreground pt-4">Blood Brothers</h3>
               <div className="space-y-3">
                 <ContextExample
                   text="Blood Brothers"
@@ -378,8 +378,8 @@ export default function TwentiethCenturyContextPage() {
               </div>
 
               <div className="mt-6 rounded-xl border border-accent-100 bg-accent-50/50 p-5">
-                <h3 className="text-sm font-bold text-gray-900">Sentence starters for context</h3>
-                <ul className="mt-3 space-y-2 text-sm text-gray-700">
+                <h3 className="text-sm font-bold text-foreground">Sentence starters for context</h3>
+                <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                     <span>&ldquo;Writing in [year], [author] would have been acutely aware that...&rdquo;</span>
@@ -406,7 +406,7 @@ export default function TwentiethCenturyContextPage() {
         <div className="mt-10 flex flex-wrap gap-4">
           <Link
             href="/resources/context/elizabethan-jacobean"
-            className="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-5 py-3 text-sm font-semibold text-gray-700 shadow-sm transition hover:bg-gray-50"
+            className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-5 py-3 text-sm font-semibold text-muted-foreground shadow-md transition hover:bg-muted"
           >
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
@@ -415,7 +415,7 @@ export default function TwentiethCenturyContextPage() {
           </Link>
           <Link
             href="/resources/context/romantic"
-            className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-primary/90"
+            className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-primary/90"
           >
             Romantic Era
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">

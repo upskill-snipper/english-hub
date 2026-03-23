@@ -186,7 +186,7 @@ export default function Grade7Page() {
             Grade Targets
           </Link>
           <div className="mt-4 flex items-center justify-center gap-3">
-            <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#2E86C1] text-2xl font-bold text-white shadow-lg">
+            <span className="flex h-14 w-14 items-center justify-center rounded-full bg-primary text-2xl font-bold text-white shadow-lg">
               7
             </span>
             <div className="text-left">
@@ -208,10 +208,10 @@ export default function Grade7Page() {
 
       {/* What makes Grade 7 different */}
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-gray-900">
+        <h2 className="text-2xl font-bold text-foreground">
           What makes Grade 7 different from 5/6?
         </h2>
-        <p className="mt-2 text-gray-600">
+        <p className="mt-2 text-muted-foreground">
           The jump from 5/6 to 7 is not about knowing more -- it is about
           thinking more deeply and writing more precisely.
         </p>
@@ -220,13 +220,13 @@ export default function Grade7Page() {
           <table className="w-full min-w-[600px] border-collapse">
             <thead>
               <tr>
-                <th className="border-b-2 border-gray-200 px-4 py-3 text-left text-sm font-semibold text-gray-500 uppercase tracking-wide">
+                <th className="border-b-2 border-border px-4 py-3 text-left text-sm font-semibold text-muted-foreground uppercase tracking-wide">
                   Area
                 </th>
-                <th className="border-b-2 border-gray-200 px-4 py-3 text-left text-sm font-semibold text-[#27AE60] uppercase tracking-wide">
+                <th className="border-b-2 border-border px-4 py-3 text-left text-sm font-semibold text-[#27AE60] uppercase tracking-wide">
                   Grade 5/6
                 </th>
-                <th className="border-b-2 border-gray-200 px-4 py-3 text-left text-sm font-semibold text-[#2E86C1] uppercase tracking-wide">
+                <th className="border-b-2 border-border px-4 py-3 text-left text-sm font-semibold text-primary uppercase tracking-wide">
                   Grade 7
                 </th>
               </tr>
@@ -235,15 +235,15 @@ export default function Grade7Page() {
               {KEY_DIFFERENCES.map((row, idx) => (
                 <tr
                   key={row.area}
-                  className={idx % 2 === 0 ? "bg-gray-50" : "bg-white"}
+                  className={idx % 2 === 0 ? "bg-muted" : "bg-card"}
                 >
-                  <td className="border-b border-gray-100 px-4 py-3 text-sm font-semibold text-gray-900">
+                  <td className="border-b border-border px-4 py-3 text-sm font-semibold text-foreground">
                     {row.area}
                   </td>
-                  <td className="border-b border-gray-100 px-4 py-3 text-sm text-gray-600">
+                  <td className="border-b border-border px-4 py-3 text-sm text-muted-foreground">
                     {row.grade56}
                   </td>
-                  <td className="border-b border-gray-100 px-4 py-3 text-sm text-gray-600 font-medium">
+                  <td className="border-b border-border px-4 py-3 text-sm text-muted-foreground font-medium">
                     {row.grade7}
                   </td>
                 </tr>
@@ -254,12 +254,12 @@ export default function Grade7Page() {
       </section>
 
       {/* Advanced skills */}
-      <section className="bg-gray-50 px-4 py-12 sm:px-6 lg:px-8">
+      <section className="bg-muted px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Advanced skills for Grade 7
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             These are the skills that examiners associate with top-band
             responses. Master them and you will consistently hit Grade 7.
           </p>
@@ -268,19 +268,19 @@ export default function Grade7Page() {
             {ADVANCED_SKILLS.map((skill) => (
               <div
                 key={skill.title}
-                className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
+                className="rounded-xl border border-border bg-card p-6 shadow-md"
               >
-                <h3 className="text-lg font-bold text-[#1A5276]">
+                <h3 className="text-lg font-bold text-foreground">
                   {skill.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {skill.description}
                 </p>
-                <div className="mt-4 rounded-lg bg-[#2E86C1]/5 border border-[#2E86C1]/10 p-4">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-[#2E86C1]">
+                <div className="mt-4 rounded-lg bg-primary/5 border border-[#2E86C1]/10 p-4">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-primary">
                     Example
                   </p>
-                  <p className="mt-1 text-sm italic leading-relaxed text-gray-700">
+                  <p className="mt-1 text-sm italic leading-relaxed text-muted-foreground">
                     {skill.example}
                   </p>
                 </div>
@@ -292,10 +292,10 @@ export default function Grade7Page() {
 
       {/* Example responses */}
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-gray-900">
+        <h2 className="text-2xl font-bold text-foreground">
           Example Grade 7 Responses
         </h2>
-        <p className="mt-2 text-gray-600">
+        <p className="mt-2 text-muted-foreground">
           Study these carefully. Notice the depth of analysis, the precision of
           vocabulary, and how context is woven into the argument.
         </p>
@@ -304,31 +304,31 @@ export default function Grade7Page() {
           {EXAMPLE_RESPONSES.map((example) => (
             <div
               key={example.type}
-              className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm"
+              className="overflow-hidden rounded-xl border border-border bg-card shadow-md"
             >
-              <div className="border-b border-gray-200 bg-gray-50 px-6 py-4">
-                <span className="rounded-full bg-[#2E86C1]/10 px-3 py-1 text-xs font-semibold text-[#2E86C1]">
+              <div className="border-b border-border bg-muted px-6 py-4">
+                <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
                   {example.type}
                 </span>
-                <p className="mt-2 font-semibold text-gray-900">
+                <p className="mt-2 font-semibold text-foreground">
                   {example.question}
                 </p>
                 {example.extract && (
-                  <p className="mt-2 text-sm italic text-gray-500">
+                  <p className="mt-2 text-sm italic text-muted-foreground">
                     {example.extract}
                   </p>
                 )}
               </div>
 
               <div className="px-6 py-5">
-                <h4 className="text-xs font-semibold uppercase tracking-wide text-gray-400">
+                <h4 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
                   Student Response
                 </h4>
-                <div className="mt-2 rounded-lg bg-gray-50 p-4">
+                <div className="mt-2 rounded-lg bg-muted p-4">
                   {example.response.split("\n\n").map((para, i) => (
                     <p
                       key={i}
-                      className="mt-3 first:mt-0 text-sm leading-relaxed text-gray-700"
+                      className="mt-3 first:mt-0 text-sm leading-relaxed text-muted-foreground"
                     >
                       {para}
                     </p>
@@ -336,11 +336,11 @@ export default function Grade7Page() {
                 </div>
               </div>
 
-              <div className="border-t border-[#2E86C1]/20 bg-[#2E86C1]/5 px-6 py-4">
-                <h4 className="text-xs font-semibold uppercase tracking-wide text-[#2E86C1]">
+              <div className="border-t border-[#2E86C1]/20 bg-primary/5 px-6 py-4">
+                <h4 className="text-xs font-semibold uppercase tracking-wide text-primary">
                   Examiner Comment
                 </h4>
-                <p className="mt-1 text-sm leading-relaxed text-gray-700">
+                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
                   {example.annotation}
                 </p>
               </div>
@@ -352,10 +352,10 @@ export default function Grade7Page() {
       {/* How to push from 6 to 7 */}
       <section className="bg-gradient-to-br from-[#2E86C1]/5 to-[#2E86C1]/10 px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             How to push from Grade 6 to Grade 7
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             Six strategies to elevate your work from competent to compelling.
           </p>
 
@@ -363,13 +363,13 @@ export default function Grade7Page() {
             {PUSHING_FROM_6.map((item) => (
               <div
                 key={item.step}
-                className="rounded-xl border border-[#2E86C1]/20 bg-white p-6 shadow-sm"
+                className="rounded-xl border border-[#2E86C1]/20 bg-card p-6 shadow-md"
               >
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#2E86C1] text-sm font-bold text-white">
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
                   {item.step}
                 </span>
-                <h3 className="mt-3 font-bold text-gray-900">{item.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                <h3 className="mt-3 font-bold text-foreground">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {item.description}
                 </p>
               </div>
@@ -380,7 +380,7 @@ export default function Grade7Page() {
           <div className="mt-12 flex flex-col items-center justify-between gap-4 sm:flex-row">
             <Link
               href="/resources/grade-targets/grade-5"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-[#2E86C1] hover:text-[#1A5276] transition-colors"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-foreground transition-colors"
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />

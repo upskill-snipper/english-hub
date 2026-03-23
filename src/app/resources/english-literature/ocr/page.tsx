@@ -145,11 +145,11 @@ export default function OCREnglishLiteraturePage() {
         <section aria-labelledby="overview-heading">
           <h2
             id="overview-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Exam Overview
           </h2>
-          <p className="mt-3 text-gray-700 leading-relaxed">
+          <p className="mt-3 text-muted-foreground leading-relaxed">
             The OCR GCSE English Literature specification (J352) is assessed
             through two examined papers, each worth 50% of the final grade.
             There is no coursework or controlled assessment.
@@ -158,7 +158,7 @@ export default function OCREnglishLiteraturePage() {
           <div className="mt-6 grid gap-5 sm:grid-cols-2">
             {/* Component 01 */}
             <div
-              className="rounded-xl border-l-4 bg-white p-6 shadow-sm"
+              className="rounded-xl border-l-4 bg-card p-6 shadow-md"
               style={{ borderColor: "#1A5276" }}
             >
               <p
@@ -167,10 +167,10 @@ export default function OCREnglishLiteraturePage() {
               >
                 Component 01
               </p>
-              <h3 className="mt-1 text-lg font-semibold text-gray-900">
+              <h3 className="mt-1 text-lg font-semibold text-foreground">
                 Exploring Modern &amp; Literary Heritage Texts
               </h3>
-              <ul className="mt-3 space-y-1 text-sm text-gray-600">
+              <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="mt-0.5 block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
                   Modern prose or drama text (post-1914)
@@ -180,7 +180,7 @@ export default function OCREnglishLiteraturePage() {
                   19th-century prose text (literary heritage)
                 </li>
               </ul>
-              <div className="mt-4 flex gap-4 text-xs text-gray-500">
+              <div className="mt-4 flex gap-4 text-xs text-muted-foreground">
                 <span className="rounded-full bg-gray-100 px-3 py-1 font-medium">
                   50% of GCSE
                 </span>
@@ -192,7 +192,7 @@ export default function OCREnglishLiteraturePage() {
 
             {/* Component 02 */}
             <div
-              className="rounded-xl border-l-4 bg-white p-6 shadow-sm"
+              className="rounded-xl border-l-4 bg-card p-6 shadow-md"
               style={{ borderColor: "#2E86C1" }}
             >
               <p
@@ -201,10 +201,10 @@ export default function OCREnglishLiteraturePage() {
               >
                 Component 02
               </p>
-              <h3 className="mt-1 text-lg font-semibold text-gray-900">
+              <h3 className="mt-1 text-lg font-semibold text-foreground">
                 Exploring Poetry &amp; Shakespeare
               </h3>
-              <ul className="mt-3 space-y-1 text-sm text-gray-600">
+              <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="mt-0.5 block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
                   A Shakespeare play
@@ -218,7 +218,7 @@ export default function OCREnglishLiteraturePage() {
                   Unseen poetry
                 </li>
               </ul>
-              <div className="mt-4 flex gap-4 text-xs text-gray-500">
+              <div className="mt-4 flex gap-4 text-xs text-muted-foreground">
                 <span className="rounded-full bg-gray-100 px-3 py-1 font-medium">
                   50% of GCSE
                 </span>
@@ -230,17 +230,17 @@ export default function OCREnglishLiteraturePage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Exam paper cards ────────────────────────────────────── */}
         <section aria-labelledby="papers-heading">
           <h2
             id="papers-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Exam Papers
           </h2>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-sm text-muted-foreground">
             Detailed breakdowns of each paper, including question types, mark
             allocations, and timing advice.
           </p>
@@ -249,7 +249,7 @@ export default function OCREnglishLiteraturePage() {
               <Link
                 key={s.href}
                 href={s.href}
-                className="group flex flex-col rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-md"
+                className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-md transition hover:shadow-md"
                 style={{
                   borderTopWidth: "3px",
                   borderTopColor: "#2E86C1",
@@ -264,10 +264,10 @@ export default function OCREnglishLiteraturePage() {
                 <p className="text-xs font-bold uppercase tracking-wider text-accent">
                   {s.component} &middot; {s.duration}
                 </p>
-                <h3 className="mt-1 text-lg font-semibold text-gray-900 group-hover:text-accent">
+                <h3 className="mt-1 text-lg font-semibold text-foreground group-hover:text-accent">
                   {s.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {s.description}
                 </p>
               </Link>
@@ -275,17 +275,17 @@ export default function OCREnglishLiteraturePage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Text study guide cards ──────────────────────────────── */}
         <section aria-labelledby="guides-heading">
           <h2
             id="guides-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Text Study Guides
           </h2>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-sm text-muted-foreground">
             In-depth revision guides for each set text, covering characters,
             themes, key quotations, context, and essay planning.
           </p>
@@ -294,7 +294,7 @@ export default function OCREnglishLiteraturePage() {
               <Link
                 key={g.href}
                 href={g.href}
-                className="group flex flex-col rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-md"
+                className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-md transition hover:shadow-md"
                 style={{
                   borderTopWidth: "3px",
                   borderTopColor: "#1A5276",
@@ -313,14 +313,14 @@ export default function OCREnglishLiteraturePage() {
                   >
                     {g.paper}
                   </span>
-                  <span className="rounded-full border border-gray-200 bg-gray-50 px-2.5 py-0.5 text-xs font-medium text-gray-600">
+                  <span className="rounded-full border border-border bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
                     {g.genre}
                   </span>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 group-hover:text-accent">
+                <h3 className="text-lg font-semibold text-foreground group-hover:text-accent">
                   {g.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {g.description}
                 </p>
               </Link>
@@ -328,27 +328,27 @@ export default function OCREnglishLiteraturePage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Assessment objectives ─────────────────────────────── */}
         <section aria-labelledby="ao-heading">
           <h2
             id="ao-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Assessment Objectives
           </h2>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-sm text-muted-foreground">
             All questions are marked against these four assessment objectives.
             Understanding them will help you target your revision effectively.
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             <div
-              className="rounded-xl border-l-4 bg-white p-5 shadow-sm"
+              className="rounded-xl border-l-4 bg-card p-5 shadow-md"
               style={{ borderColor: "#1A5276" }}
             >
               <p className="font-bold text-primary">AO1</p>
-              <p className="mt-1.5 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">
                 Read, understand, and respond to texts. Maintain a critical
                 style and develop an informed personal response. Use textual
                 references, including quotations, to support and illustrate
@@ -356,32 +356,32 @@ export default function OCREnglishLiteraturePage() {
               </p>
             </div>
             <div
-              className="rounded-xl border-l-4 bg-white p-5 shadow-sm"
+              className="rounded-xl border-l-4 bg-card p-5 shadow-md"
               style={{ borderColor: "#2E86C1" }}
             >
               <p className="font-bold text-accent">AO2</p>
-              <p className="mt-1.5 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">
                 Analyse the language, form, and structure used by a writer to
                 create meanings and effects, using relevant subject terminology
                 where appropriate.
               </p>
             </div>
             <div
-              className="rounded-xl border-l-4 bg-white p-5 shadow-sm"
+              className="rounded-xl border-l-4 bg-card p-5 shadow-md"
               style={{ borderColor: "#1A5276" }}
             >
               <p className="font-bold text-primary">AO3</p>
-              <p className="mt-1.5 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">
                 Show understanding of the relationships between texts and the
                 contexts in which they were written.
               </p>
             </div>
             <div
-              className="rounded-xl border-l-4 bg-white p-5 shadow-sm"
+              className="rounded-xl border-l-4 bg-card p-5 shadow-md"
               style={{ borderColor: "#2E86C1" }}
             >
               <p className="font-bold text-accent">AO4</p>
-              <p className="mt-1.5 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">
                 Use a range of vocabulary and sentence structures for clarity,
                 purpose, and effect, with accurate spelling and punctuation.
                 (Only assessed in the Shakespeare section of Paper 2.)
@@ -390,51 +390,51 @@ export default function OCREnglishLiteraturePage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Key skills ────────────────────────────────────────── */}
         <section aria-labelledby="skills-heading">
           <h2
             id="skills-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Key Skills for English Literature
           </h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
-            <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+            <div className="rounded-xl border border-border bg-card p-5 shadow-md">
               <h3 className="font-semibold text-primary">
                 Close Language Analysis
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Zoom into individual words and phrases. Explore connotations,
                 the effect of techniques, and what specific language choices
                 reveal about characters, themes, and the writer&rsquo;s
                 intentions.
               </p>
             </div>
-            <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+            <div className="rounded-xl border border-border bg-card p-5 shadow-md">
               <h3 className="font-semibold text-primary">
                 Contextual Understanding
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Link your analysis to the historical, social, and cultural
                 context in which the text was written. Context should enhance
                 your analysis, not replace it.
               </p>
             </div>
-            <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+            <div className="rounded-xl border border-border bg-card p-5 shadow-md">
               <h3 className="font-semibold text-primary">Thematic Analysis</h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Track how themes develop across a whole text. Consider how
                 themes connect to the writer&rsquo;s message and how they
                 relate to the context of the period.
               </p>
             </div>
-            <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+            <div className="rounded-xl border border-border bg-card p-5 shadow-md">
               <h3 className="font-semibold text-primary">
                 Comparative Skills
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 For the poetry comparison, you must compare poems
                 effectively &mdash; exploring similarities and differences in
                 themes, methods, and effects.
@@ -443,17 +443,17 @@ export default function OCREnglishLiteraturePage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Grade Boundaries ────────────────────────────────────── */}
         <section aria-labelledby="grades-heading">
           <h2
             id="grades-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Grade Boundaries
           </h2>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-sm text-muted-foreground">
             Check the latest OCR GCSE English Literature grade boundaries,
             see what each grade looks like, and plan how to push your marks
             higher.

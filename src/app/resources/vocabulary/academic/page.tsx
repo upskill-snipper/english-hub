@@ -250,7 +250,7 @@ export default function AcademicVocabularyPage() {
 
       {/* Breadcrumb */}
       <nav className="mx-auto max-w-6xl px-4 pt-6" aria-label="Breadcrumb">
-        <ol className="flex flex-wrap items-center gap-2 text-sm text-gray-500">
+        <ol className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
           <li><Link href="/" className="hover:text-primary transition-colors">Home</Link></li>
           <li>/</li>
           <li><Link href="/resources" className="hover:text-primary transition-colors">Resources</Link></li>
@@ -265,7 +265,7 @@ export default function AcademicVocabularyPage() {
       <section className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
           <div className="relative flex-1">
-            <svg className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+            <svg className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
             </svg>
             <input
@@ -273,7 +273,7 @@ export default function AcademicVocabularyPage() {
               placeholder="Search words, definitions, or synonyms..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full rounded-xl border border-gray-300 bg-white py-3 pl-10 pr-4 text-sm shadow-sm transition focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
+              className="w-full rounded-xl border border-gray-300 bg-card py-3 pl-10 pr-4 text-sm shadow-md transition focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
             />
           </div>
           <div className="flex flex-wrap gap-2">
@@ -283,8 +283,8 @@ export default function AcademicVocabularyPage() {
                 onClick={() => setActiveCategory(f.id)}
                 className={`rounded-full px-4 py-2 text-sm font-medium transition ${
                   activeCategory === f.id
-                    ? "bg-primary text-white shadow-sm"
-                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                    ? "bg-primary text-white shadow-md"
+                    : "bg-gray-100 text-muted-foreground hover:bg-gray-200"
                 }`}
               >
                 {f.label}
@@ -301,17 +301,17 @@ export default function AcademicVocabularyPage() {
             <div key={cat.id} id={cat.id}>
               <h2 className={`mb-6 text-2xl font-bold text-primary border-b-2 ${cat.colour} pb-3`}>
                 {cat.title}
-                <span className="ml-3 text-base font-normal text-gray-400">
+                <span className="ml-3 text-base font-normal text-muted-foreground">
                   ({cat.words.length} words)
                 </span>
               </h2>
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {cat.words.map((w) => (
-                  <div key={w.word} className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm hover:shadow-md transition">
+                  <div key={w.word} className="rounded-xl border border-border bg-card p-5 shadow-md hover:shadow-md transition">
                     <h3 className="text-lg font-bold text-primary">{w.word}</h3>
-                    <p className="mt-1 text-sm text-gray-600">{w.definition}</p>
-                    <div className="mt-3 rounded-lg bg-gray-50 px-4 py-3">
-                      <p className="text-sm italic text-gray-700">
+                    <p className="mt-1 text-sm text-muted-foreground">{w.definition}</p>
+                    <div className="mt-3 rounded-lg bg-muted px-4 py-3">
+                      <p className="text-sm italic text-muted-foreground">
                         &ldquo;{w.example}&rdquo;
                       </p>
                     </div>
@@ -330,31 +330,31 @@ export default function AcademicVocabularyPage() {
         </div>
 
         {filteredCategories.length === 0 && !search && (
-          <p className="text-center text-sm text-gray-500">Select a category to view words.</p>
+          <p className="text-center text-sm text-muted-foreground">Select a category to view words.</p>
         )}
         {filteredCategories.length === 0 && search && (
-          <p className="text-center text-sm text-gray-500">
+          <p className="text-center text-sm text-muted-foreground">
             No words match &ldquo;{search}&rdquo;. Try a different search term.
           </p>
         )}
       </section>
 
       {/* Persuasive vocabulary */}
-      <section id="persuasive" className="bg-gray-50 px-4 py-14 sm:px-6 lg:px-8">
+      <section id="persuasive" className="bg-muted px-4 py-14 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
           <h2 className="mb-6 text-2xl font-bold text-primary border-b-2 border-[#E67E22] pb-3">
             Persuasive Vocabulary
-            <span className="ml-3 text-base font-normal text-gray-400">
+            <span className="ml-3 text-base font-normal text-muted-foreground">
               ({filteredPersuasive.length} words)
             </span>
           </h2>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {filteredPersuasive.map((w) => (
-              <div key={w.word} className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm hover:shadow-md transition">
+              <div key={w.word} className="rounded-xl border border-border bg-card p-5 shadow-md hover:shadow-md transition">
                 <h3 className="text-lg font-bold text-[#E67E22]">{w.word}</h3>
-                <p className="mt-1 text-sm text-gray-600">{w.definition}</p>
-                <div className="mt-3 rounded-lg bg-gray-50 px-4 py-3">
-                  <p className="text-sm italic text-gray-700">&ldquo;{w.example}&rdquo;</p>
+                <p className="mt-1 text-sm text-muted-foreground">{w.definition}</p>
+                <div className="mt-3 rounded-lg bg-muted px-4 py-3">
+                  <p className="text-sm italic text-muted-foreground">&ldquo;{w.example}&rdquo;</p>
                 </div>
                 <div className="mt-3 flex flex-wrap gap-1.5">
                   {w.synonyms.map((s) => (
@@ -371,22 +371,22 @@ export default function AcademicVocabularyPage() {
 
       {/* Words to replace */}
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
-        <h2 className="text-center text-2xl font-bold text-gray-900">
+        <h2 className="text-center text-2xl font-bold text-foreground">
           Words to Replace
         </h2>
-        <p className="mx-auto mt-3 max-w-2xl text-center text-gray-600">
+        <p className="mx-auto mt-3 max-w-2xl text-center text-muted-foreground">
           These overused words weaken your essays. Use the alternatives below to
           write with precision and sophistication.
         </p>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {WORDS_TO_REPLACE.map((item) => (
-            <div key={item.overused} className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+            <div key={item.overused} className="rounded-xl border border-border bg-card p-5 shadow-md">
               <div className="flex items-center gap-2 mb-4">
                 <span className="rounded-full bg-red-100 px-3 py-1 text-sm font-bold text-red-600 line-through">
                   {item.overused}
                 </span>
-                <svg className="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                <svg className="h-4 w-4 text-muted-foreground" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                 </svg>
                 <span className="text-xs font-medium text-green-600">Try instead:</span>
@@ -396,8 +396,8 @@ export default function AcademicVocabularyPage() {
                   <li key={alt.word} className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                     <div>
-                      <span className="font-semibold text-sm text-gray-800">{alt.word}</span>
-                      <span className="text-xs text-gray-500 ml-1">-- {alt.context}</span>
+                      <span className="font-semibold text-sm text-foreground">{alt.word}</span>
+                      <span className="text-xs text-muted-foreground ml-1">-- {alt.context}</span>
                     </div>
                   </li>
                 ))}
@@ -408,18 +408,18 @@ export default function AcademicVocabularyPage() {
       </section>
 
       {/* Continue exploring */}
-      <section className="bg-gray-50 px-4 py-14 sm:px-6 lg:px-8">
+      <section className="bg-muted px-4 py-14 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-2xl font-bold text-gray-900">Continue exploring</h2>
+          <h2 className="text-2xl font-bold text-foreground">Continue exploring</h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-3">
             {[
               { label: "Descriptive Vocabulary", href: "/resources/vocabulary/descriptive", desc: "200+ words for creative writing." },
               { label: "Analytical Vocabulary", href: "/resources/vocabulary/analytical", desc: "Master the language of analysis." },
               { label: "All Vocabulary", href: "/resources/vocabulary", desc: "Browse all vocabulary categories." },
             ].map((link) => (
-              <Link key={link.href} href={link.href} className="group rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition hover:shadow-md hover:border-accent/40">
-                <h3 className="font-bold text-gray-900 group-hover:text-primary transition-colors">{link.label}</h3>
-                <p className="mt-1 text-sm text-gray-500">{link.desc}</p>
+              <Link key={link.href} href={link.href} className="group rounded-xl border border-border bg-card p-5 shadow-md transition hover:shadow-md hover:border-accent/40">
+                <h3 className="font-bold text-foreground group-hover:text-primary transition-colors">{link.label}</h3>
+                <p className="mt-1 text-sm text-muted-foreground">{link.desc}</p>
               </Link>
             ))}
           </div>

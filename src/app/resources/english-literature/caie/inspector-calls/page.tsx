@@ -321,7 +321,7 @@ export default function InspectorCallsStudyGuide() {
             <a
               key={s}
               href={`#${s.toLowerCase().replace(/\s+/g, "-")}`}
-              className="rounded-full border border-[#2E86C1]/30 px-3 py-1 text-[#1A5276] transition hover:bg-[#2E86C1]/10"
+              className="rounded-full border border-[#2E86C1]/30 px-3 py-1 text-foreground transition hover:bg-primary/10"
             >
               {s}
             </a>
@@ -330,70 +330,70 @@ export default function InspectorCallsStudyGuide() {
 
         {/* ── Plot Summary ────────────────────────────────────────── */}
         <section id="plot-summary" aria-labelledby="plot-heading">
-          <h2 id="plot-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="plot-heading" className="text-2xl font-bold text-foreground">
             Plot Summary
           </h2>
           <div className="mt-6 space-y-4">
             {plotSummary.map((act) => (
               <div
                 key={act.act}
-                className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm"
+                className="rounded-lg border border-border bg-card p-5 shadow-md"
               >
-                <h3 className="font-semibold text-[#1A5276]">{act.act}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-700">{act.summary}</p>
+                <h3 className="font-semibold text-foreground">{act.act}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{act.summary}</p>
               </div>
             ))}
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Characters ──────────────────────────────────────────── */}
         <section id="characters" aria-labelledby="characters-heading">
-          <h2 id="characters-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="characters-heading" className="text-2xl font-bold text-foreground">
             Character Analysis
           </h2>
           <div className="mt-6 space-y-6">
             {characters.map((c) => (
               <div
                 key={c.name}
-                className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm"
+                className="rounded-lg border border-border bg-card p-5 shadow-md"
               >
-                <h3 className="text-lg font-semibold text-[#1A5276]">{c.name}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-700">{c.description}</p>
+                <h3 className="text-lg font-semibold text-foreground">{c.name}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{c.description}</p>
               </div>
             ))}
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Themes ──────────────────────────────────────────────── */}
         <section id="themes" aria-labelledby="themes-heading">
-          <h2 id="themes-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="themes-heading" className="text-2xl font-bold text-foreground">
             Key Themes
           </h2>
           <div className="mt-6 grid gap-5 sm:grid-cols-2">
             {themes.map((t) => (
               <div
                 key={t.name}
-                className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm"
+                className="rounded-lg border border-border bg-card p-5 shadow-md"
               >
-                <h3 className="font-semibold text-[#1A5276]">{t.name}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-700">{t.detail}</p>
+                <h3 className="font-semibold text-foreground">{t.name}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t.detail}</p>
               </div>
             ))}
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Key Quotes ──────────────────────────────────────────── */}
         <section id="key-quotes" aria-labelledby="quotes-heading">
-          <h2 id="quotes-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="quotes-heading" className="text-2xl font-bold text-foreground">
             Key Quotes ({keyQuotes.length})
           </h2>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-sm text-muted-foreground">
             Each quote includes the speaker, location, and detailed analysis suitable for
             Cambridge IGCSE responses.
           </p>
@@ -401,28 +401,28 @@ export default function InspectorCallsStudyGuide() {
             {keyQuotes.map((q, i) => (
               <div
                 key={i}
-                className="rounded-lg border-l-4 border-[#2E86C1] bg-white p-5 shadow-sm"
+                className="rounded-lg border-l-4 border-[#2E86C1] bg-card p-5 shadow-md"
               >
-                <blockquote className="text-base font-medium italic text-gray-900">
+                <blockquote className="text-base font-medium italic text-foreground">
                   &ldquo;{q.quote}&rdquo;
                 </blockquote>
-                <p className="mt-1 text-xs font-semibold text-[#2E86C1]">
+                <p className="mt-1 text-xs font-semibold text-primary">
                   {q.speaker} &mdash; {q.act}
                 </p>
-                <p className="mt-3 text-sm leading-relaxed text-gray-700">{q.analysis}</p>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{q.analysis}</p>
               </div>
             ))}
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Dramatic Devices ─────────────────────────────────────── */}
         <section id="dramatic-devices" aria-labelledby="devices-heading">
-          <h2 id="devices-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="devices-heading" className="text-2xl font-bold text-foreground">
             Dramatic Devices
           </h2>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-sm text-muted-foreground">
             Priestley&rsquo;s use of dramatic techniques is essential for AO2 (analysis of form
             and structure). Examiners reward candidates who discuss <em>how</em> Priestley shapes
             meaning, not just <em>what</em> happens.
@@ -431,30 +431,30 @@ export default function InspectorCallsStudyGuide() {
             {dramaticDevices.map((d) => (
               <div
                 key={d.name}
-                className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm"
+                className="rounded-lg border border-border bg-card p-5 shadow-md"
               >
-                <h3 className="font-semibold text-[#1A5276]">{d.name}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-700">{d.detail}</p>
+                <h3 className="font-semibold text-foreground">{d.name}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{d.detail}</p>
               </div>
             ))}
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Context ─────────────────────────────────────────────── */}
         <section id="context" aria-labelledby="context-heading">
-          <h2 id="context-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="context-heading" className="text-2xl font-bold text-foreground">
             Historical &amp; Social Context
           </h2>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-sm text-muted-foreground">
             The dual time frame (set in 1912, performed in 1945) is fundamental to the
             play&rsquo;s meaning. Cambridge examiners expect you to discuss both contexts and
             explain how the gap between them creates dramatic irony.
           </p>
-          <div className="mt-6 space-y-4 text-sm leading-relaxed text-gray-700">
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <h3 className="font-semibold text-[#1A5276]">1912: The Edwardian Setting</h3>
+          <div className="mt-6 space-y-4 text-sm leading-relaxed text-muted-foreground">
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <h3 className="font-semibold text-foreground">1912: The Edwardian Setting</h3>
               <p className="mt-2">
                 The play is set in 1912, just before the First World War and the sinking of the
                 Titanic. Britain was marked by extreme class divisions: the wealthy industrial
@@ -464,8 +464,8 @@ export default function InspectorCallsStudyGuide() {
                 hierarchy meant that the upper classes felt little obligation towards the poor.
               </p>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <h3 className="font-semibold text-[#1A5276]">1945: The Post-War Audience</h3>
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <h3 className="font-semibold text-foreground">1945: The Post-War Audience</h3>
               <p className="mt-2">
                 The play was first performed in 1945, just as the Second World War was ending.
                 The war had created a sense of national solidarity: people from all classes had
@@ -476,8 +476,8 @@ export default function InspectorCallsStudyGuide() {
                 never return.
               </p>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <h3 className="font-semibold text-[#1A5276]">J.B. Priestley&rsquo;s Socialism</h3>
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <h3 className="font-semibold text-foreground">J.B. Priestley&rsquo;s Socialism</h3>
               <p className="mt-2">
                 Priestley was a committed socialist who believed in collective responsibility and
                 social equality. During the war, his BBC radio broadcasts (the{" "}
@@ -487,8 +487,8 @@ export default function InspectorCallsStudyGuide() {
                 delivering the socialist message directly to the audience.
               </p>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <h3 className="font-semibold text-[#1A5276]">The Welfare State Debate</h3>
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <h3 className="font-semibold text-foreground">The Welfare State Debate</h3>
               <p className="mt-2">
                 In 1912, there was no state safety net for the poor. Charitable organisations
                 (like Mrs Birling&rsquo;s committee) were the only source of help, and they could
@@ -498,8 +498,8 @@ export default function InspectorCallsStudyGuide() {
                 Birling&rsquo;s prejudice means Eva is denied help at her most desperate moment.
               </p>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <h3 className="font-semibold text-[#1A5276]">The Role of Women</h3>
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <h3 className="font-semibold text-foreground">The Role of Women</h3>
               <p className="mt-2">
                 In 1912, women had limited legal rights and were largely dependent on men. The
                 Representation of the People Act (1918) gave some women the vote, and full
@@ -512,14 +512,14 @@ export default function InspectorCallsStudyGuide() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Assessment Objectives ───────────────────────────────── */}
         <section id="assessment-objectives" aria-labelledby="ao-heading">
-          <h2 id="ao-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="ao-heading" className="text-2xl font-bold text-foreground">
             Cambridge Assessment Objectives
           </h2>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-sm text-muted-foreground">
             Understanding the assessment objectives helps you target your revision and structure
             your exam answers for maximum marks.
           </p>
@@ -527,46 +527,46 @@ export default function InspectorCallsStudyGuide() {
             {assessmentObjectives.map((ao) => (
               <div
                 key={ao.code}
-                className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm"
+                className="rounded-lg border border-border bg-card p-5 shadow-md"
               >
                 <div className="flex items-center gap-2">
                   <span className="inline-block rounded-full bg-[#1A5276] px-2.5 py-0.5 text-xs font-bold text-white">
                     {ao.code}
                   </span>
-                  <h3 className="font-semibold text-[#1A5276]">{ao.description}</h3>
+                  <h3 className="font-semibold text-foreground">{ao.description}</h3>
                 </div>
-                <p className="mt-2 text-sm leading-relaxed text-gray-700">{ao.guidance}</p>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{ao.guidance}</p>
               </div>
             ))}
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Exam Questions ──────────────────────────────────────── */}
         <section id="exam-questions" aria-labelledby="exam-heading">
-          <h2 id="exam-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="exam-heading" className="text-2xl font-bold text-foreground">
             Cambridge-Style Exam Questions
           </h2>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-sm text-muted-foreground">
             Cambridge IGCSE An Inspector Calls questions appear in Paper 2 (Drama). You will
             choose between a passage-based question and an essay question. Below are examples
             of both types with guidance on how to approach them.
           </p>
 
           <div className="mt-6 space-y-6">
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <span className="inline-block rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-[#1A5276]">
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <span className="inline-block rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                 Passage-Based
               </span>
-              <p className="mt-3 text-sm font-medium text-gray-900">
+              <p className="mt-3 text-sm font-medium text-foreground">
                 Re-read the Inspector&rsquo;s final speech, from &ldquo;But just remember
                 this&rdquo; to the end of his dialogue. How does Priestley make this such a
                 powerful and significant moment in the play?
               </p>
-              <div className="mt-3 rounded bg-[#2E86C1]/5 p-3">
-                <p className="text-xs font-semibold text-[#1A5276]">How to approach:</p>
-                <ul className="mt-1 space-y-1 text-xs text-gray-700">
+              <div className="mt-3 rounded bg-primary/5 p-3">
+                <p className="text-xs font-semibold text-foreground">How to approach:</p>
+                <ul className="mt-1 space-y-1 text-xs text-muted-foreground">
                   <li>&bull; Work through the passage line by line, identifying key language choices</li>
                   <li>&bull; Analyse the shift from individual to collective pronouns (&lsquo;you&rsquo; to &lsquo;we&rsquo;)</li>
                   <li>&bull; Discuss the prophetic, biblical tone: &lsquo;fire and blood and anguish&rsquo;</li>
@@ -577,17 +577,17 @@ export default function InspectorCallsStudyGuide() {
               </div>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <span className="inline-block rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-[#1A5276]">
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <span className="inline-block rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                 Essay Question
               </span>
-              <p className="mt-3 text-sm font-medium text-gray-900">
+              <p className="mt-3 text-sm font-medium text-foreground">
                 How does Priestley present the theme of social responsibility in An Inspector
                 Calls?
               </p>
-              <div className="mt-3 rounded bg-[#2E86C1]/5 p-3">
-                <p className="text-xs font-semibold text-[#1A5276]">How to approach:</p>
-                <ul className="mt-1 space-y-1 text-xs text-gray-700">
+              <div className="mt-3 rounded bg-primary/5 p-3">
+                <p className="text-xs font-semibold text-foreground">How to approach:</p>
+                <ul className="mt-1 space-y-1 text-xs text-muted-foreground">
                   <li>&bull; Plan 3&ndash;4 key points with supporting quotations for each</li>
                   <li>&bull; Contrast Birling&rsquo;s individualism with the Inspector&rsquo;s collectivism</li>
                   <li>&bull; Track how each character responds to the idea of responsibility (accepting or denying)</li>
@@ -598,17 +598,17 @@ export default function InspectorCallsStudyGuide() {
               </div>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <span className="inline-block rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-[#1A5276]">
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <span className="inline-block rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                 Essay Question
               </span>
-              <p className="mt-3 text-sm font-medium text-gray-900">
+              <p className="mt-3 text-sm font-medium text-foreground">
                 How does Priestley use the character of Sheila Birling to convey his ideas about
                 change and responsibility?
               </p>
-              <div className="mt-3 rounded bg-[#2E86C1]/5 p-3">
-                <p className="text-xs font-semibold text-[#1A5276]">How to approach:</p>
-                <ul className="mt-1 space-y-1 text-xs text-gray-700">
+              <div className="mt-3 rounded bg-primary/5 p-3">
+                <p className="text-xs font-semibold text-foreground">How to approach:</p>
+                <ul className="mt-1 space-y-1 text-xs text-muted-foreground">
                   <li>&bull; Structure chronologically to show Sheila&rsquo;s moral arc across the play</li>
                   <li>&bull; Act 1: shallow and materialistic (&lsquo;Oh - it&rsquo;s wonderful!&rsquo; about the ring)</li>
                   <li>&bull; Mid-play: accepts guilt quickly, shows empathy, becomes the Inspector&rsquo;s ally</li>
@@ -619,18 +619,18 @@ export default function InspectorCallsStudyGuide() {
               </div>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <span className="inline-block rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-[#1A5276]">
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <span className="inline-block rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                 Passage-Based
               </span>
-              <p className="mt-3 text-sm font-medium text-gray-900">
+              <p className="mt-3 text-sm font-medium text-foreground">
                 Re-read the opening of Act 1, from the start of the play to the Inspector&rsquo;s
                 arrival. How does Priestley use this section to establish the characters and
                 setting, and to prepare the audience for what follows?
               </p>
-              <div className="mt-3 rounded bg-[#2E86C1]/5 p-3">
-                <p className="text-xs font-semibold text-[#1A5276]">How to approach:</p>
-                <ul className="mt-1 space-y-1 text-xs text-gray-700">
+              <div className="mt-3 rounded bg-primary/5 p-3">
+                <p className="text-xs font-semibold text-foreground">How to approach:</p>
+                <ul className="mt-1 space-y-1 text-xs text-muted-foreground">
                   <li>&bull; Analyse the stage directions: &lsquo;pink and intimate&rsquo; lighting symbolises comfortable illusion</li>
                   <li>&bull; Discuss Birling&rsquo;s speeches: dramatic irony in his predictions establishes him as unreliable</li>
                   <li>&bull; Note the celebration context: the engagement dinner creates a sense of surface harmony</li>
@@ -642,42 +642,42 @@ export default function InspectorCallsStudyGuide() {
             </div>
 
             {/* ── Exam Technique ───────────────────────────────────── */}
-            <div className="rounded-lg border-2 border-[#2E86C1]/30 bg-[#2E86C1]/5 p-5">
-              <h3 className="text-lg font-semibold text-[#1A5276]">
+            <div className="rounded-lg border-2 border-[#2E86C1]/30 bg-primary/5 p-5">
+              <h3 className="text-lg font-semibold text-foreground">
                 Cambridge Exam Technique: Key Tips
               </h3>
-              <ul className="mt-3 space-y-2 text-sm text-gray-700">
+              <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li>
-                  <strong className="text-[#1A5276]">Passage-based questions:</strong> Work
+                  <strong className="text-foreground">Passage-based questions:</strong> Work
                   through the extract methodically. Use short, embedded quotations from the
                   passage. Analyse language, form, and structure (AO2). Then connect outward to
                   the rest of the play and relevant context.
                 </li>
                 <li>
-                  <strong className="text-[#1A5276]">Essay questions:</strong> Plan before you
+                  <strong className="text-foreground">Essay questions:</strong> Plan before you
                   write. Select 3&ndash;4 key moments from across the play with quotations. Focus
                   on Priestley&rsquo;s methods and purpose, not just what happens. Integrate
                   context rather than adding it as a separate paragraph.
                 </li>
                 <li>
-                  <strong className="text-[#1A5276]">Always use the author&rsquo;s name:</strong>{" "}
+                  <strong className="text-foreground">Always use the author&rsquo;s name:</strong>{" "}
                   Write &ldquo;Priestley presents...&rdquo; or &ldquo;Priestley
                   uses...&rdquo; rather than &ldquo;the play shows...&rdquo;. This demonstrates
                   awareness of authorial intent and helps you discuss methods (AO2).
                 </li>
                 <li>
-                  <strong className="text-[#1A5276]">The 1912/1945 dual context:</strong> This is
+                  <strong className="text-foreground">The 1912/1945 dual context:</strong> This is
                   unique to An Inspector Calls and is essential for every answer. The gap between
                   setting and performance creates dramatic irony and carries Priestley&rsquo;s
                   political message.
                 </li>
                 <li>
-                  <strong className="text-[#1A5276]">Quote precisely:</strong> Short, embedded
+                  <strong className="text-foreground">Quote precisely:</strong> Short, embedded
                   quotations (&lsquo;fire and blood and anguish&rsquo;) are more effective than
                   long block quotes. Aim for at least one quotation per paragraph.
                 </li>
                 <li>
-                  <strong className="text-[#1A5276]">Link everything to Priestley&rsquo;s purpose:</strong>{" "}
+                  <strong className="text-foreground">Link everything to Priestley&rsquo;s purpose:</strong>{" "}
                   The strongest answers connect analysis to Priestley&rsquo;s socialist message.
                   Why does he make Birling wrong about the Titanic? Why does Sheila change but Mrs
                   Birling does not? Always ask: what is Priestley trying to make the audience
@@ -692,7 +692,7 @@ export default function InspectorCallsStudyGuide() {
         <div className="mt-12 flex items-center gap-2 text-sm">
           <Link
             href="/resources/english-literature/caie"
-            className="font-medium text-[#1A5276] underline underline-offset-2 hover:text-[#2E86C1]"
+            className="font-medium text-foreground underline underline-offset-2 hover:text-primary"
           >
             &larr; Back to Cambridge IGCSE English Literature
           </Link>

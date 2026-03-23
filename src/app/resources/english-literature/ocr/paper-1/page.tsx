@@ -42,11 +42,11 @@ export default function OCRLitPaper1Page() {
         <section aria-labelledby="structure-heading">
           <h2
             id="structure-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Paper Structure
           </h2>
-          <div className="mt-4 space-y-4 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>
               Paper 1 is a closed-book exam lasting 2 hours. You answer
               questions on two texts: one modern and one from the literary
@@ -56,10 +56,10 @@ export default function OCRLitPaper1Page() {
               <table className="mt-2 w-full border-collapse text-sm">
                 <thead>
                   <tr className="border-b-2 border-primary/20 text-left">
-                    <th className="py-3 pr-4 font-semibold text-gray-900">Section</th>
-                    <th className="py-3 pr-4 font-semibold text-gray-900">Focus</th>
-                    <th className="py-3 pr-4 font-semibold text-gray-900">Marks</th>
-                    <th className="py-3 font-semibold text-gray-900">Time Guide</th>
+                    <th className="py-3 pr-4 font-semibold text-foreground">Section</th>
+                    <th className="py-3 pr-4 font-semibold text-foreground">Focus</th>
+                    <th className="py-3 pr-4 font-semibold text-foreground">Marks</th>
+                    <th className="py-3 font-semibold text-foreground">Time Guide</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-100">
@@ -89,20 +89,20 @@ export default function OCRLitPaper1Page() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Section A: Modern text ─────────────────────────── */}
         <section aria-labelledby="modern-heading">
           <h2
             id="modern-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Section A: Modern Prose or Drama Text
           </h2>
 
-          <div className="mt-6 space-y-6 text-gray-700 leading-relaxed">
+          <div className="mt-6 space-y-6 text-muted-foreground leading-relaxed">
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 Set Texts
               </h3>
               <p className="mt-2">
@@ -122,7 +122,7 @@ export default function OCRLitPaper1Page() {
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 Question Format
               </h3>
               <p className="mt-2">
@@ -140,13 +140,13 @@ export default function OCRLitPaper1Page() {
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 How to Write a Strong Response
               </h3>
 
               <div className="mt-4 space-y-4">
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                  <h4 className="font-semibold text-gray-900">1. Plan Before You Write</h4>
+                <div className="rounded-lg border border-border bg-muted p-5">
+                  <h4 className="font-semibold text-foreground">1. Plan Before You Write</h4>
                   <p className="mt-2 text-sm">
                     Spend 5 minutes planning. Identify 3&ndash;4 key points
                     you want to make. For each point, note a quotation and the
@@ -155,8 +155,8 @@ export default function OCRLitPaper1Page() {
                   </p>
                 </div>
 
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                  <h4 className="font-semibold text-gray-900">2. Use the Introduction to Set Up Your Argument</h4>
+                <div className="rounded-lg border border-border bg-muted p-5">
+                  <h4 className="font-semibold text-foreground">2. Use the Introduction to Set Up Your Argument</h4>
                   <p className="mt-2 text-sm">
                     Your introduction should address the question directly and
                     outline your interpretation. Mention the writer by name and
@@ -167,8 +167,8 @@ export default function OCRLitPaper1Page() {
                   </p>
                 </div>
 
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                  <h4 className="font-semibold text-gray-900">3. Analyse Language Closely (AO2)</h4>
+                <div className="rounded-lg border border-border bg-muted p-5">
+                  <h4 className="font-semibold text-foreground">3. Analyse Language Closely (AO2)</h4>
                   <p className="mt-2 text-sm">
                     Every paragraph should include a quotation and close
                     analysis of specific words. Don&rsquo;t just name
@@ -190,8 +190,8 @@ export default function OCRLitPaper1Page() {
                   </div>
                 </div>
 
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                  <h4 className="font-semibold text-gray-900">4. Embed Context Naturally (AO3)</h4>
+                <div className="rounded-lg border border-border bg-muted p-5">
+                  <h4 className="font-semibold text-foreground">4. Embed Context Naturally (AO3)</h4>
                   <p className="mt-2 text-sm">
                     Context should be woven into your analysis, not bolted on
                     as a separate paragraph. Link context to the writer&rsquo;s
@@ -217,8 +217,8 @@ export default function OCRLitPaper1Page() {
                   </div>
                 </div>
 
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                  <h4 className="font-semibold text-gray-900">5. Track Development Across the Text</h4>
+                <div className="rounded-lg border border-border bg-muted p-5">
+                  <h4 className="font-semibold text-foreground">5. Track Development Across the Text</h4>
                   <p className="mt-2 text-sm">
                     Show how the theme or character develops from the beginning
                     to the end of the text. Use phrases like &ldquo;At the
@@ -228,8 +228,8 @@ export default function OCRLitPaper1Page() {
                   </p>
                 </div>
 
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                  <h4 className="font-semibold text-gray-900">6. Write a Strong Conclusion</h4>
+                <div className="rounded-lg border border-border bg-muted p-5">
+                  <h4 className="font-semibold text-foreground">6. Write a Strong Conclusion</h4>
                   <p className="mt-2 text-sm">
                     Your conclusion should offer a final, evaluative judgement
                     that answers the question directly. Consider the
@@ -242,20 +242,20 @@ export default function OCRLitPaper1Page() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Section B: Literary heritage ───────────────────── */}
         <section aria-labelledby="heritage-heading">
           <h2
             id="heritage-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Section B: 19th-Century Prose (Literary Heritage)
           </h2>
 
-          <div className="mt-6 space-y-6 text-gray-700 leading-relaxed">
+          <div className="mt-6 space-y-6 text-muted-foreground leading-relaxed">
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 Set Texts
               </h3>
               <p className="mt-2">
@@ -276,7 +276,7 @@ export default function OCRLitPaper1Page() {
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 Approaching 19th-Century Texts
               </h3>
               <p className="mt-2">
@@ -285,8 +285,8 @@ export default function OCRLitPaper1Page() {
               </p>
 
               <div className="mt-4 space-y-4">
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                  <h4 className="font-semibold text-gray-900">
+                <div className="rounded-lg border border-border bg-muted p-5">
+                  <h4 className="font-semibold text-foreground">
                     Understanding Victorian Context
                   </h4>
                   <p className="mt-2 text-sm">
@@ -333,8 +333,8 @@ export default function OCRLitPaper1Page() {
                   </ul>
                 </div>
 
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                  <h4 className="font-semibold text-gray-900">
+                <div className="rounded-lg border border-border bg-muted p-5">
+                  <h4 className="font-semibold text-foreground">
                     Dealing with Archaic Language
                   </h4>
                   <p className="mt-2 text-sm">
@@ -351,8 +351,8 @@ export default function OCRLitPaper1Page() {
                   </ul>
                 </div>
 
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                  <h4 className="font-semibold text-gray-900">
+                <div className="rounded-lg border border-border bg-muted p-5">
+                  <h4 className="font-semibold text-foreground">
                     19th-Century Narrative Techniques
                   </h4>
                   <p className="mt-2 text-sm">
@@ -392,7 +392,7 @@ export default function OCRLitPaper1Page() {
 
             {/* Essay structure */}
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 Essay Structure for Section B
               </h3>
               <p className="mt-2">
@@ -401,7 +401,7 @@ export default function OCRLitPaper1Page() {
               <div className="mt-4 space-y-3">
                 <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                   <p className="font-semibold text-primary">Introduction</p>
-                  <p className="mt-1 text-sm text-gray-700">
+                  <p className="mt-1 text-sm text-muted-foreground">
                     Address the question directly. State your interpretation
                     and mention the writer&rsquo;s purpose. Briefly reference
                     the context.
@@ -409,7 +409,7 @@ export default function OCRLitPaper1Page() {
                 </div>
                 <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                   <p className="font-semibold text-primary">Paragraph 1: Beginning of the text</p>
-                  <p className="mt-1 text-sm text-gray-700">
+                  <p className="mt-1 text-sm text-muted-foreground">
                     Analyse how the theme/character is established early in
                     the text. Close language analysis of a key quotation.
                     Embed context naturally.
@@ -417,7 +417,7 @@ export default function OCRLitPaper1Page() {
                 </div>
                 <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                   <p className="font-semibold text-primary">Paragraph 2: Development / middle</p>
-                  <p className="mt-1 text-sm text-gray-700">
+                  <p className="mt-1 text-sm text-muted-foreground">
                     Analyse how the theme/character develops or changes.
                     Consider a turning point or key event. Explore the
                     writer&rsquo;s methods.
@@ -425,7 +425,7 @@ export default function OCRLitPaper1Page() {
                 </div>
                 <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                   <p className="font-semibold text-primary">Paragraph 3: Climax / resolution</p>
-                  <p className="mt-1 text-sm text-gray-700">
+                  <p className="mt-1 text-sm text-muted-foreground">
                     Analyse how the theme/character is presented at a crucial
                     or culminating moment. Consider the writer&rsquo;s message
                     or resolution.
@@ -433,7 +433,7 @@ export default function OCRLitPaper1Page() {
                 </div>
                 <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                   <p className="font-semibold text-primary">Paragraph 4 (optional): Alternative interpretation</p>
-                  <p className="mt-1 text-sm text-gray-700">
+                  <p className="mt-1 text-sm text-muted-foreground">
                     Offer a different reading of the text. Consider how a
                     Victorian audience might have responded differently from a
                     modern reader.
@@ -441,7 +441,7 @@ export default function OCRLitPaper1Page() {
                 </div>
                 <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                   <p className="font-semibold text-primary">Conclusion</p>
-                  <p className="mt-1 text-sm text-gray-700">
+                  <p className="mt-1 text-sm text-muted-foreground">
                     Provide a final evaluative judgement. Consider the
                     writer&rsquo;s overall message and its continuing
                     relevance.
@@ -452,18 +452,18 @@ export default function OCRLitPaper1Page() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Common mistakes ────────────────────────────────── */}
         <section aria-labelledby="mistakes-heading">
           <h2
             id="mistakes-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Common Mistakes to Avoid
           </h2>
           <div className="mt-4">
-            <ul className="ml-6 list-disc space-y-3 text-gray-700 leading-relaxed">
+            <ul className="ml-6 list-disc space-y-3 text-muted-foreground leading-relaxed">
               <li>
                 <strong>Retelling the story</strong> &mdash; The examiner
                 knows the plot. Focus on analysis, not narration. Every

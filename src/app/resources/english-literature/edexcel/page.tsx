@@ -27,7 +27,7 @@ const PAPERS = [
     description:
       "19th-century novels including A Christmas Carol, Jekyll and Hyde, and Jane Eyre. Poetry anthology (Relationships and Conflict clusters) plus unseen poetry.",
     marks: "80 marks — 50% of GCSE",
-    colour: "bg-[#2E86C1]",
+    colour: "bg-primary",
   },
 ];
 
@@ -111,8 +111,8 @@ export default function EdexcelEnglishLiteraturePage() {
 
       {/* ── Exam overview ─────────────────────────────────────── */}
       <section className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
-        <h2 className="text-2xl font-bold text-gray-900">Exam Overview</h2>
-        <p className="mt-2 text-gray-600">
+        <h2 className="text-2xl font-bold text-foreground">Exam Overview</h2>
+        <p className="mt-2 text-muted-foreground">
           The Edexcel GCSE English Literature qualification (1ET0) is assessed
           through two externally examined papers, each worth 50% of the final
           grade. Both papers are closed-book — no texts are allowed in the exam
@@ -124,17 +124,17 @@ export default function EdexcelEnglishLiteraturePage() {
             <Link
               key={paper.href}
               href={paper.href}
-              className="group rounded-xl border border-gray-200 p-6 shadow-sm transition hover:shadow-md"
+              className="group rounded-xl border border-border p-6 shadow-md transition hover:shadow-md"
             >
               <div
                 className={`inline-block rounded-full ${paper.colour} px-3 py-1 text-xs font-semibold text-white`}
               >
                 {paper.marks}
               </div>
-              <h3 className="mt-3 text-lg font-bold text-gray-900 group-hover:text-[#2E86C1]">
+              <h3 className="mt-3 text-lg font-bold text-foreground group-hover:text-primary">
                 {paper.title}
               </h3>
-              <p className="mt-2 text-sm text-gray-600">
+              <p className="mt-2 text-sm text-muted-foreground">
                 {paper.description}
               </p>
             </Link>
@@ -143,12 +143,12 @@ export default function EdexcelEnglishLiteraturePage() {
       </section>
 
       {/* ── Text study guides ─────────────────────────────────── */}
-      <section className="bg-gray-50 px-4 py-12 sm:py-16">
+      <section className="bg-muted px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Full Study Guides
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             In-depth guides with plot summaries, character analysis, themes,
             20+ key quotes, context, and Edexcel-specific exam technique.
           </p>
@@ -158,12 +158,12 @@ export default function EdexcelEnglishLiteraturePage() {
               <Link
                 key={guide.href}
                 href={guide.href}
-                className="group rounded-lg border border-gray-200 bg-white p-5 shadow-sm transition hover:shadow-md"
+                className="group rounded-lg border border-border bg-card p-5 shadow-md transition hover:shadow-md"
               >
-                <p className="text-xs font-semibold uppercase tracking-wide text-[#2E86C1]">
+                <p className="text-xs font-semibold uppercase tracking-wide text-primary">
                   {guide.paper} — {guide.type}
                 </p>
-                <h3 className="mt-2 text-lg font-bold text-gray-900 group-hover:text-[#1A5276]">
+                <h3 className="mt-2 text-lg font-bold text-foreground group-hover:text-foreground">
                   {guide.title}
                 </h3>
               </Link>
@@ -174,12 +174,12 @@ export default function EdexcelEnglishLiteraturePage() {
 
       {/* ── Key differences from AQA ──────────────────────────── */}
       <section className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
-        <h2 className="text-2xl font-bold text-gray-900">
+        <h2 className="text-2xl font-bold text-foreground">
           How Edexcel Differs from AQA
         </h2>
-        <div className="mt-6 space-y-4 text-gray-700 leading-relaxed">
+        <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
           <div className="rounded-lg border-l-4 border-[#1A5276] bg-blue-50 p-4">
-            <h3 className="font-semibold text-[#1A5276]">Closed-book exam</h3>
+            <h3 className="font-semibold text-foreground">Closed-book exam</h3>
             <p className="mt-1 text-sm">
               Both Edexcel papers are fully closed-book. You must memorise
               quotations for every text. AQA provides an extract for Shakespeare
@@ -187,7 +187,7 @@ export default function EdexcelEnglishLiteraturePage() {
             </p>
           </div>
           <div className="rounded-lg border-l-4 border-[#1A5276] bg-blue-50 p-4">
-            <h3 className="font-semibold text-[#1A5276]">
+            <h3 className="font-semibold text-foreground">
               Different text options
             </h3>
             <p className="mt-1 text-sm">
@@ -197,7 +197,7 @@ export default function EdexcelEnglishLiteraturePage() {
             </p>
           </div>
           <div className="rounded-lg border-l-4 border-[#1A5276] bg-blue-50 p-4">
-            <h3 className="font-semibold text-[#1A5276]">
+            <h3 className="font-semibold text-foreground">
               Poetry anthology clusters
             </h3>
             <p className="mt-1 text-sm">
@@ -206,7 +206,7 @@ export default function EdexcelEnglishLiteraturePage() {
             </p>
           </div>
           <div className="rounded-lg border-l-4 border-[#1A5276] bg-blue-50 p-4">
-            <h3 className="font-semibold text-[#1A5276]">
+            <h3 className="font-semibold text-foreground">
               Question structure
             </h3>
             <p className="mt-1 text-sm">
@@ -220,12 +220,12 @@ export default function EdexcelEnglishLiteraturePage() {
       </section>
 
       {/* ── Assessment objectives ─────────────────────────────── */}
-      <section className="bg-gray-50 px-4 py-12 sm:py-16">
+      <section className="bg-muted px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Assessment Objectives
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             All responses are marked against these four AOs. Knowing how marks
             are weighted for each question helps you structure your answer.
           </p>
@@ -250,12 +250,12 @@ export default function EdexcelEnglishLiteraturePage() {
             ].map((obj) => (
               <div
                 key={obj.ao}
-                className="rounded-lg border border-gray-200 bg-white p-5"
+                className="rounded-lg border border-border bg-card p-5"
               >
                 <span className="inline-block rounded bg-[#1A5276] px-2 py-0.5 text-xs font-bold text-white">
                   {obj.ao}
                 </span>
-                <p className="mt-2 text-sm text-gray-700">{obj.desc}</p>
+                <p className="mt-2 text-sm text-muted-foreground">{obj.desc}</p>
               </div>
             ))}
           </div>

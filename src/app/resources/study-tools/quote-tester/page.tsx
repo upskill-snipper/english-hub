@@ -871,10 +871,10 @@ export default function QuoteTesterPage() {
     return (
       <>
         <div className="mb-8">
-          <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Quote Tester
           </h1>
-          <p className="mt-3 max-w-3xl text-lg leading-relaxed text-gray-600">
+          <p className="mt-3 max-w-3xl text-lg leading-relaxed text-muted-foreground">
             Test your knowledge of key GCSE Literature quotes. For each quote you will
             identify the speaker, its location in the text, the technique used, and the
             theme it links to. Track your progress and retry the ones you get wrong.
@@ -893,7 +893,7 @@ export default function QuoteTesterPage() {
             return (
               <div
                 key={text.slug}
-                className="group overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-all hover:shadow-md"
+                className="group overflow-hidden rounded-xl border border-border bg-card shadow-md transition-all hover:shadow-md"
               >
                 <div className={`bg-gradient-to-br ${text.colour} px-5 py-5 text-white`}>
                   <h3 className="text-xl font-bold">{text.title}</h3>
@@ -906,7 +906,7 @@ export default function QuoteTesterPage() {
                 <div className="px-5 py-4">
                   {/* Progress bar */}
                   <div className="mb-3">
-                    <div className="flex items-center justify-between text-xs text-gray-500">
+                    <div className="flex items-center justify-between text-xs text-muted-foreground">
                       <span>Progress</span>
                       <span>{pct}%</span>
                     </div>
@@ -928,7 +928,7 @@ export default function QuoteTesterPage() {
                     {wrongCount > 0 && (
                       <button
                         onClick={() => startSession(text.slug, true)}
-                        className="rounded-lg border-2 border-[#2E86C1] px-4 py-2.5 text-sm font-semibold text-[#2E86C1] transition-colors hover:bg-[#2E86C1]/10"
+                        className="rounded-lg border-2 border-[#2E86C1] px-4 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-primary/10"
                       >
                         Test Me Again ({wrongCount} wrong)
                       </button>
@@ -941,9 +941,9 @@ export default function QuoteTesterPage() {
         </div>
 
         {/* Overall stats */}
-        <div className="mt-10 rounded-xl border border-[#2E86C1]/20 bg-[#2E86C1]/5 p-6">
-          <h3 className="text-lg font-bold text-gray-900">How it works</h3>
-          <ul className="mt-3 space-y-2 text-sm text-gray-700">
+        <div className="mt-10 rounded-xl border border-[#2E86C1]/20 bg-primary/5 p-6">
+          <h3 className="text-lg font-bold text-foreground">How it works</h3>
+          <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
             <li className="flex items-start gap-2">
               <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#1A5276]" />
               <span>
@@ -1003,7 +1003,7 @@ export default function QuoteTesterPage() {
         <div className="mb-8">
           <button
             onClick={backToMenu}
-            className="mb-4 inline-flex items-center gap-1 text-sm font-medium text-[#2E86C1] transition-colors hover:text-[#1A5276]"
+            className="mb-4 inline-flex items-center gap-1 text-sm font-medium text-primary transition-colors hover:text-foreground"
           >
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
@@ -1011,18 +1011,18 @@ export default function QuoteTesterPage() {
             Back to texts
           </button>
 
-          <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Session Complete!
           </h1>
           {retryWrongMode && (
-            <p className="mt-1 text-sm font-medium text-[#2E86C1]">
+            <p className="mt-1 text-sm font-medium text-primary">
               Retry Mode -- focusing on previously wrong answers
             </p>
           )}
         </div>
 
         {/* Score card */}
-        <div className="mx-auto max-w-lg overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm">
+        <div className="mx-auto max-w-lg overflow-hidden rounded-2xl border border-border bg-card shadow-md">
           <div className={`bg-gradient-to-br ${activeText?.colour || "from-gray-700 to-gray-500"} p-8 text-center text-white`}>
             <p className="text-sm font-medium uppercase tracking-wider text-white/70">
               {activeText?.title}
@@ -1036,27 +1036,27 @@ export default function QuoteTesterPage() {
           <div className="p-6">
             <div className="grid grid-cols-3 gap-4 text-center">
               <div>
-                <div className="text-2xl font-bold text-[#1A5276]">{questionOrder.length}</div>
-                <div className="text-xs text-gray-500">Quotes tested</div>
+                <div className="text-2xl font-bold text-foreground">{questionOrder.length}</div>
+                <div className="text-xs text-muted-foreground">Quotes tested</div>
               </div>
               <div>
                 <div className="text-2xl font-bold text-emerald-600">{perfectQIds.length}</div>
-                <div className="text-xs text-gray-500">Fully correct</div>
+                <div className="text-xs text-muted-foreground">Fully correct</div>
               </div>
               <div>
                 <div className="text-2xl font-bold text-red-500">{wrongQIds.length}</div>
-                <div className="text-xs text-gray-500">Need practice</div>
+                <div className="text-xs text-muted-foreground">Need practice</div>
               </div>
             </div>
 
             {/* Performance badge */}
-            <div className="mt-6 rounded-lg border border-gray-100 bg-gray-50 p-4 text-center">
+            <div className="mt-6 rounded-lg border border-border bg-muted p-4 text-center">
               {pct >= 90 ? (
                 <p className="text-sm font-semibold text-emerald-700">
                   Outstanding! You know these quotes inside out.
                 </p>
               ) : pct >= 70 ? (
-                <p className="text-sm font-semibold text-[#2E86C1]">
+                <p className="text-sm font-semibold text-primary">
                   Great work! A few more to nail down -- try the retry mode.
                 </p>
               ) : pct >= 50 ? (
@@ -1080,14 +1080,14 @@ export default function QuoteTesterPage() {
               {wrongQIds.length > 0 && (
                 <button
                   onClick={() => startSession(activeSlug, true)}
-                  className="rounded-lg border-2 border-[#2E86C1] px-4 py-2.5 text-sm font-semibold text-[#2E86C1] transition-colors hover:bg-[#2E86C1]/10"
+                  className="rounded-lg border-2 border-[#2E86C1] px-4 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-primary/10"
                 >
                   Retry Wrong Answers ({wrongQIds.length})
                 </button>
               )}
               <button
                 onClick={backToMenu}
-                className="rounded-lg border border-gray-300 px-4 py-2.5 text-sm font-semibold text-gray-700 transition-colors hover:bg-gray-50"
+                className="rounded-lg border border-gray-300 px-4 py-2.5 text-sm font-semibold text-muted-foreground transition-colors hover:bg-muted"
               >
                 Choose Another Text
               </button>
@@ -1097,7 +1097,7 @@ export default function QuoteTesterPage() {
 
         {/* Detailed breakdown */}
         <div className="mx-auto mt-8 max-w-lg">
-          <h3 className="mb-4 text-lg font-bold text-gray-900">Breakdown by quote</h3>
+          <h3 className="mb-4 text-lg font-bold text-foreground">Breakdown by quote</h3>
           <div className="space-y-3">
             {questionOrder.map((q) => {
               const records = byQuestion[q.id] || [];
@@ -1112,7 +1112,7 @@ export default function QuoteTesterPage() {
                       : "border-red-200 bg-red-50/30"
                   }`}
                 >
-                  <p className="text-sm font-semibold italic text-gray-800">
+                  <p className="text-sm font-semibold italic text-foreground">
                     &ldquo;{q.quote.length > 60 ? q.quote.slice(0, 60) + "..." : q.quote}&rdquo;
                   </p>
                   <div className="mt-2 flex items-center gap-2">
@@ -1139,7 +1139,7 @@ export default function QuoteTesterPage() {
                         );
                       })}
                     </div>
-                    <span className="ml-auto text-xs text-gray-500">
+                    <span className="ml-auto text-xs text-muted-foreground">
                       {correctCount}/4
                     </span>
                   </div>
@@ -1172,7 +1172,7 @@ export default function QuoteTesterPage() {
       <div className="mb-6">
         <button
           onClick={backToMenu}
-          className="mb-3 inline-flex items-center gap-1 text-sm font-medium text-[#2E86C1] transition-colors hover:text-[#1A5276]"
+          className="mb-3 inline-flex items-center gap-1 text-sm font-medium text-primary transition-colors hover:text-foreground"
         >
           <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
@@ -1182,20 +1182,20 @@ export default function QuoteTesterPage() {
 
         <div className="flex items-center justify-between">
           <div>
-            <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+            <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
               {activeText?.title}
             </h1>
             {retryWrongMode && (
-              <span className="mt-1 inline-block rounded-full bg-[#2E86C1]/10 px-3 py-0.5 text-xs font-semibold text-[#2E86C1]">
+              <span className="mt-1 inline-block rounded-full bg-primary/10 px-3 py-0.5 text-xs font-semibold text-primary">
                 Retry Mode
               </span>
             )}
           </div>
           <div className="text-right">
-            <div className="text-sm font-semibold text-gray-700">
+            <div className="text-sm font-semibold text-muted-foreground">
               Score: {sessionCorrect}/{sessionTotal}
             </div>
-            <div className="text-xs text-gray-500">
+            <div className="text-xs text-muted-foreground">
               Quote {session.currentIndex + 1} of {questionOrder.length}
             </div>
           </div>
@@ -1229,7 +1229,7 @@ export default function QuoteTesterPage() {
                     ? "bg-red-100 text-red-700"
                     : isCurrent
                     ? "bg-[#1A5276] text-white"
-                    : "bg-gray-100 text-gray-400"
+                    : "bg-gray-100 text-muted-foreground"
                 }`}
               >
                 <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
@@ -1246,7 +1246,7 @@ export default function QuoteTesterPage() {
                 </span>
               </div>
               {idx < CATEGORIES.length - 1 && (
-                <div className={`h-0.5 w-3 ${isDone ? "bg-[#2E86C1]" : "bg-gray-200"}`} />
+                <div className={`h-0.5 w-3 ${isDone ? "bg-primary" : "bg-gray-200"}`} />
               )}
             </div>
           );
@@ -1256,7 +1256,7 @@ export default function QuoteTesterPage() {
       {/* Quote card */}
       {currentQuestion && currentCatInfo && (
         <div className="mx-auto max-w-2xl">
-          <div className={`overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm`}>
+          <div className={`overflow-hidden rounded-2xl border border-border bg-card shadow-md`}>
             {/* Quote display */}
             <div className={`bg-gradient-to-br ${activeText?.colour || "from-gray-700 to-gray-500"} px-6 py-8 text-white`}>
               <p className="text-center text-xs font-medium uppercase tracking-wider text-white/60">
@@ -1270,10 +1270,10 @@ export default function QuoteTesterPage() {
             {/* Question */}
             <div className="p-6">
               <div className="mb-5 flex items-center gap-2">
-                <svg className="h-5 w-5 text-[#1A5276]" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                <svg className="h-5 w-5 text-foreground" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d={currentCatInfo.icon} />
                 </svg>
-                <h2 className="text-lg font-bold text-gray-900">{currentCatInfo.label}</h2>
+                <h2 className="text-lg font-bold text-foreground">{currentCatInfo.label}</h2>
               </div>
 
               {/* Answer options */}
@@ -1294,11 +1294,11 @@ export default function QuoteTesterPage() {
                       btnClass +=
                         "border-red-400 bg-red-50 text-red-700 ring-2 ring-red-200";
                     } else {
-                      btnClass += "border-gray-200 bg-gray-50 text-gray-400";
+                      btnClass += "border-border bg-muted text-muted-foreground";
                     }
                   } else {
                     btnClass +=
-                      "border-gray-200 bg-white text-gray-700 hover:border-[#2E86C1] hover:bg-[#2E86C1]/5 cursor-pointer";
+                      "border-border bg-card text-muted-foreground hover:border-[#2E86C1] hover:bg-primary/5 cursor-pointer";
                   }
 
                   return (
@@ -1365,20 +1365,20 @@ export default function QuoteTesterPage() {
           </div>
 
           {/* Session stats bar */}
-          <div className="mt-4 flex items-center justify-between rounded-lg border border-gray-200 bg-white px-4 py-3 shadow-sm">
+          <div className="mt-4 flex items-center justify-between rounded-lg border border-border bg-card px-4 py-3 shadow-md">
             <div className="flex items-center gap-4 text-sm">
-              <span className="text-gray-500">
+              <span className="text-muted-foreground">
                 Correct:{" "}
                 <span className="font-bold text-emerald-600">{sessionCorrect}</span>
               </span>
-              <span className="text-gray-500">
+              <span className="text-muted-foreground">
                 Wrong:{" "}
                 <span className="font-bold text-red-500">
                   {sessionTotal - sessionCorrect}
                 </span>
               </span>
             </div>
-            <div className="text-sm text-gray-500">
+            <div className="text-sm text-muted-foreground">
               {sessionTotal > 0
                 ? `${Math.round((sessionCorrect / sessionTotal) * 100)}% accuracy`
                 : "No answers yet"}

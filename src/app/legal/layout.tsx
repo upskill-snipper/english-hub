@@ -20,8 +20,8 @@ const legalPages = [
 
 function ExamBoardDisclaimer() {
   return (
-    <div className="mt-12 border-t border-gray-200 pt-8 text-sm text-gray-500">
-      <p className="font-semibold text-gray-600 mb-2">Exam Board Disclaimer</p>
+    <div className="mt-12 border-t border-border pt-8 text-sm text-muted-foreground">
+      <p className="font-semibold text-muted-foreground mb-2">Exam Board Disclaimer</p>
       <p>
         The English Hub is an independent educational platform. We are not
         endorsed by, affiliated with, or formally connected to any examination
@@ -42,7 +42,7 @@ export default function LegalLayout({
   const pathname = usePathname();
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="bg-[#1A5276] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
@@ -63,7 +63,7 @@ export default function LegalLayout({
           {/* Sidebar */}
           <aside className="hidden lg:block">
             <nav className="sticky top-8">
-              <h2 className="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-3">
+              <h2 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
                 Legal &amp; Policies
               </h2>
               <ul className="space-y-1">
@@ -76,7 +76,7 @@ export default function LegalLayout({
                         className={`block px-3 py-2 rounded-md text-sm transition-colors ${
                           isActive
                             ? "bg-[#1A5276] text-white font-medium"
-                            : "text-gray-700 hover:bg-gray-100"
+                            : "text-muted-foreground hover:bg-muted"
                         }`}
                       >
                         {page.label}
@@ -86,13 +86,13 @@ export default function LegalLayout({
                 })}
               </ul>
 
-              <div className="mt-6 pt-4 border-t border-gray-200">
-                <p className="text-xs text-gray-400">
+              <div className="mt-6 pt-4 border-t border-border">
+                <p className="text-xs text-muted-foreground">
                   Last updated: 22 March 2026
                 </p>
                 <button
                   onClick={() => window.print()}
-                  className="mt-3 flex items-center gap-2 text-sm text-[#1A5276] hover:underline cursor-pointer"
+                  className="mt-3 flex items-center gap-2 text-sm text-foreground hover:underline cursor-pointer"
                 >
                   <svg
                     className="w-4 h-4"
@@ -116,10 +116,10 @@ export default function LegalLayout({
           {/* Mobile nav */}
           <div className="lg:hidden mb-6">
             <details className="group">
-              <summary className="flex items-center justify-between cursor-pointer bg-white rounded-lg px-4 py-3 shadow-sm border border-gray-200 text-sm font-medium text-gray-700">
+              <summary className="flex items-center justify-between cursor-pointer bg-card rounded-lg px-4 py-3 shadow-md border border-border text-sm font-medium text-muted-foreground">
                 Legal &amp; Policies Navigation
                 <svg
-                  className="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform"
+                  className="w-5 h-5 text-muted-foreground group-open:rotate-180 transition-transform"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -132,7 +132,7 @@ export default function LegalLayout({
                   />
                 </svg>
               </summary>
-              <ul className="mt-2 bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+              <ul className="mt-2 bg-card rounded-lg shadow-md border border-border overflow-hidden">
                 {legalPages.map((page) => {
                   const isActive = pathname === page.href;
                   return (
@@ -141,8 +141,8 @@ export default function LegalLayout({
                         href={page.href}
                         className={`block px-4 py-2.5 text-sm border-b border-gray-100 last:border-b-0 ${
                           isActive
-                            ? "bg-[#1A5276]/5 text-[#1A5276] font-medium"
-                            : "text-gray-700 hover:bg-gray-50"
+                            ? "bg-[#1A5276]/5 text-foreground font-medium"
+                            : "text-muted-foreground hover:bg-muted"
                         }`}
                       >
                         {page.label}
@@ -156,8 +156,8 @@ export default function LegalLayout({
 
           {/* Main content */}
           <main className="min-w-0">
-            <article className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 sm:p-8 lg:p-10">
-              <div className="prose prose-gray max-w-none prose-headings:text-[#1A5276] prose-a:text-[#1A5276] prose-a:underline">
+            <article className="bg-card rounded-lg shadow-md border border-border p-6 sm:p-8 lg:p-10">
+              <div className="prose prose-gray max-w-none prose-headings:text-foreground prose-a:text-foreground prose-a:underline">
                 {children}
               </div>
               <ExamBoardDisclaimer />

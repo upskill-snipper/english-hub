@@ -17,14 +17,14 @@ function Section({
 }) {
   const [open, setOpen] = useState(defaultOpen);
   return (
-    <div className="rounded-xl border border-gray-200 bg-white">
+    <div className="rounded-xl border border-border bg-card">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-bold text-gray-900 hover:bg-gray-50 transition-colors"
+        className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-bold text-foreground hover:bg-muted transition-colors"
       >
         <span className="text-lg">{title}</span>
         <svg
-          className={`h-5 w-5 shrink-0 text-gray-400 transition-transform ${open ? "rotate-180" : ""}`}
+          className={`h-5 w-5 shrink-0 text-muted-foreground transition-transform ${open ? "rotate-180" : ""}`}
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={2}
@@ -34,7 +34,7 @@ function Section({
         </svg>
       </button>
       {open && (
-        <div className="border-t border-gray-100 px-6 py-6 text-gray-700 leading-relaxed space-y-4">
+        <div className="border-t border-border px-6 py-6 text-muted-foreground leading-relaxed space-y-4">
           {children}
         </div>
       )}
@@ -115,18 +115,18 @@ export default function GradeBoundariesPage() {
 
       {/* Breadcrumb */}
       <nav className="mx-auto max-w-5xl px-4 pt-6" aria-label="Breadcrumb">
-        <ol className="flex flex-wrap items-center gap-2 text-sm text-gray-500">
+        <ol className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
           <li>
-            <Link href="/" className="hover:text-[#1A5276] transition-colors">Home</Link>
+            <Link href="/" className="hover:text-foreground transition-colors">Home</Link>
           </li>
           <li>/</li>
           <li>
-            <Link href="/resources/english-language/caie" className="hover:text-[#1A5276] transition-colors">
+            <Link href="/resources/english-language/caie" className="hover:text-foreground transition-colors">
               CAIE English Language
             </Link>
           </li>
           <li>/</li>
-          <li className="text-[#1A5276] font-medium">Grade Boundaries</li>
+          <li className="text-foreground font-medium">Grade Boundaries</li>
         </ol>
       </nav>
 
@@ -161,9 +161,9 @@ export default function GradeBoundariesPage() {
           </p>
 
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
-            <div className="rounded-lg border-2 border-[#2E86C1]/30 bg-[#2E86C1]/5 p-5">
-              <h3 className="text-lg font-bold text-[#1A5276]">Extended Tier</h3>
-              <p className="mt-1 text-sm font-medium text-gray-500">Paper 2 (Reading) + Paper 4 (Directed Writing &amp; Composition)</p>
+            <div className="rounded-lg border-2 border-[#2E86C1]/30 bg-primary/5 p-5">
+              <h3 className="text-lg font-bold text-foreground">Extended Tier</h3>
+              <p className="mt-1 text-sm font-medium text-muted-foreground">Paper 2 (Reading) + Paper 4 (Directed Writing &amp; Composition)</p>
               <ul className="mt-3 ml-5 list-disc space-y-1 text-sm">
                 <li>Grades available: <strong>A* &ndash; G</strong> (or 9&ndash;1 for 0990)</li>
                 <li>Maximum combined mark: <strong>160</strong></li>
@@ -172,9 +172,9 @@ export default function GradeBoundariesPage() {
                 <li>Most international schools enter students for Extended</li>
               </ul>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="text-lg font-bold text-gray-700">Core Tier</h3>
-              <p className="mt-1 text-sm font-medium text-gray-500">Paper 1 (Reading) + Paper 3 (Directed Writing &amp; Composition)</p>
+            <div className="rounded-lg border border-border bg-muted p-5">
+              <h3 className="text-lg font-bold text-muted-foreground">Core Tier</h3>
+              <p className="mt-1 text-sm font-medium text-muted-foreground">Paper 1 (Reading) + Paper 3 (Directed Writing &amp; Composition)</p>
               <ul className="mt-3 ml-5 list-disc space-y-1 text-sm">
                 <li>Grades available: <strong>C &ndash; G</strong> (or 4&ndash;1 for 0990)</li>
                 <li>Maximum combined mark: <strong>120</strong></li>
@@ -185,7 +185,7 @@ export default function GradeBoundariesPage() {
             </div>
           </div>
 
-          <p className="mt-4 text-sm text-gray-500">
+          <p className="mt-4 text-sm text-muted-foreground">
             If you are unsure which tier you are sitting, check with your
             teacher. The tier is decided before the exam, not after.
           </p>
@@ -203,9 +203,9 @@ export default function GradeBoundariesPage() {
           <div className="overflow-x-auto mt-4">
             <table className="w-full min-w-[700px] text-sm">
               <thead>
-                <tr className="border-b-2 border-[#1A5276]/20 text-left text-gray-500">
+                <tr className="border-b-2 border-[#1A5276]/20 text-left text-muted-foreground">
                   <th className="py-3 pr-3">Series</th>
-                  <th className="py-3 pr-3 text-center bg-[#2E86C1]/10 font-semibold text-[#1A5276]">A*</th>
+                  <th className="py-3 pr-3 text-center bg-primary/10 font-semibold text-foreground">A*</th>
                   <th className="py-3 pr-3 text-center">A</th>
                   <th className="py-3 pr-3 text-center">B</th>
                   <th className="py-3 pr-3 text-center">C</th>
@@ -219,7 +219,7 @@ export default function GradeBoundariesPage() {
                 {EXTENDED_BOUNDARIES.map((row) => (
                   <tr key={row.series}>
                     <td className="py-3 pr-3 font-medium">{row.series}</td>
-                    <td className="py-3 pr-3 text-center bg-[#2E86C1]/5 font-semibold text-[#2E86C1]">{row.astar}</td>
+                    <td className="py-3 pr-3 text-center bg-primary/5 font-semibold text-primary">{row.astar}</td>
                     <td className="py-3 pr-3 text-center">{row.a}</td>
                     <td className="py-3 pr-3 text-center">{row.b}</td>
                     <td className="py-3 pr-3 text-center">{row.c}</td>
@@ -233,7 +233,7 @@ export default function GradeBoundariesPage() {
             </table>
           </div>
 
-          <p className="mt-4 text-sm text-gray-500">
+          <p className="mt-4 text-sm text-muted-foreground">
             Marks shown are the minimum total marks required to achieve each
             grade. For example, in June 2024, a total of 135 out of 160 was
             needed for an A*.
@@ -242,28 +242,28 @@ export default function GradeBoundariesPage() {
           {/* Approximate percentages */}
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             <div className="rounded-lg border-2 border-[#2E86C1]/30 bg-gradient-to-br from-[#2E86C1]/10 to-[#2E86C1]/5 p-4 text-center">
-              <p className="text-3xl font-bold text-[#2E86C1]">84%+</p>
-              <p className="mt-1 text-sm font-semibold text-gray-900">A*</p>
-              <p className="mt-1 text-xs text-gray-600">Exceptional performance across all components</p>
+              <p className="text-3xl font-bold text-primary">84%+</p>
+              <p className="mt-1 text-sm font-semibold text-foreground">A*</p>
+              <p className="mt-1 text-xs text-muted-foreground">Exceptional performance across all components</p>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-white p-4 text-center">
-              <p className="text-3xl font-bold text-[#1A5276]">76%+</p>
-              <p className="mt-1 text-sm font-semibold text-gray-900">A</p>
-              <p className="mt-1 text-xs text-gray-600">Strong, confident responses with good analysis</p>
+            <div className="rounded-lg border border-border bg-card p-4 text-center">
+              <p className="text-3xl font-bold text-foreground">76%+</p>
+              <p className="mt-1 text-sm font-semibold text-foreground">A</p>
+              <p className="mt-1 text-xs text-muted-foreground">Strong, confident responses with good analysis</p>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-white p-4 text-center">
-              <p className="text-3xl font-bold text-[#1A5276]/80">68%+</p>
-              <p className="mt-1 text-sm font-semibold text-gray-900">B</p>
-              <p className="mt-1 text-xs text-gray-600">Good understanding with some strong analysis</p>
+            <div className="rounded-lg border border-border bg-card p-4 text-center">
+              <p className="text-3xl font-bold text-foreground/80">68%+</p>
+              <p className="mt-1 text-sm font-semibold text-foreground">B</p>
+              <p className="mt-1 text-xs text-muted-foreground">Good understanding with some strong analysis</p>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-white p-4 text-center">
-              <p className="text-3xl font-bold text-gray-500">60%+</p>
-              <p className="mt-1 text-sm font-semibold text-gray-900">C</p>
-              <p className="mt-1 text-xs text-gray-600">Sound understanding of the basics</p>
+            <div className="rounded-lg border border-border bg-card p-4 text-center">
+              <p className="text-3xl font-bold text-muted-foreground">60%+</p>
+              <p className="mt-1 text-sm font-semibold text-foreground">C</p>
+              <p className="mt-1 text-xs text-muted-foreground">Sound understanding of the basics</p>
             </div>
           </div>
 
-          <p className="mt-4 text-sm text-gray-500">
+          <p className="mt-4 text-sm text-muted-foreground">
             These are approximate ranges based on recent trends. The actual
             percentages vary depending on the difficulty of each paper and
             overall candidate performance.
@@ -282,9 +282,9 @@ export default function GradeBoundariesPage() {
           <div className="overflow-x-auto mt-4">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b-2 border-gray-300 text-left text-gray-500">
+                <tr className="border-b-2 border-gray-300 text-left text-muted-foreground">
                   <th className="py-3 pr-3">Series</th>
-                  <th className="py-3 pr-3 text-center font-semibold text-gray-700">C</th>
+                  <th className="py-3 pr-3 text-center font-semibold text-muted-foreground">C</th>
                   <th className="py-3 pr-3 text-center">D</th>
                   <th className="py-3 pr-3 text-center">E</th>
                   <th className="py-3 pr-3 text-center">F</th>
@@ -295,7 +295,7 @@ export default function GradeBoundariesPage() {
                 {CORE_BOUNDARIES.map((row) => (
                   <tr key={row.series}>
                     <td className="py-3 pr-3 font-medium">{row.series}</td>
-                    <td className="py-3 pr-3 text-center font-semibold text-gray-700">{row.c}</td>
+                    <td className="py-3 pr-3 text-center font-semibold text-muted-foreground">{row.c}</td>
                     <td className="py-3 pr-3 text-center">{row.d}</td>
                     <td className="py-3 pr-3 text-center">{row.e}</td>
                     <td className="py-3 pr-3 text-center">{row.f}</td>
@@ -306,7 +306,7 @@ export default function GradeBoundariesPage() {
             </table>
           </div>
 
-          <p className="mt-4 text-sm text-gray-500">
+          <p className="mt-4 text-sm text-muted-foreground">
             Core tier boundaries are generally lower in absolute terms, but
             remember the maximum mark is also lower (120 vs 160). In percentage
             terms, a Core C typically requires around <strong>58&ndash;60%</strong>.
@@ -326,29 +326,29 @@ export default function GradeBoundariesPage() {
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b-2 border-[#1A5276]/20 text-left">
-                  <th className="py-3 pr-4 font-semibold text-gray-900">9&ndash;1 Grade</th>
-                  <th className="py-3 pr-4 font-semibold text-gray-900">Equivalent A*&ndash;G Grade</th>
-                  <th className="py-3 font-semibold text-gray-900">Description</th>
+                  <th className="py-3 pr-4 font-semibold text-foreground">9&ndash;1 Grade</th>
+                  <th className="py-3 pr-4 font-semibold text-foreground">Equivalent A*&ndash;G Grade</th>
+                  <th className="py-3 font-semibold text-foreground">Description</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100 text-gray-700">
-                <tr className="bg-[#2E86C1]/5">
-                  <td className="py-3 pr-4 font-bold text-[#2E86C1]">9</td>
+              <tbody className="divide-y divide-gray-100 text-muted-foreground">
+                <tr className="bg-primary/5">
+                  <td className="py-3 pr-4 font-bold text-primary">9</td>
                   <td className="py-3 pr-4">High A*</td>
                   <td className="py-3">Exceptional &mdash; the very highest level of achievement</td>
                 </tr>
-                <tr className="bg-[#2E86C1]/5">
-                  <td className="py-3 pr-4 font-bold text-[#2E86C1]">8</td>
+                <tr className="bg-primary/5">
+                  <td className="py-3 pr-4 font-bold text-primary">8</td>
                   <td className="py-3 pr-4">Low A* / High A</td>
                   <td className="py-3">Outstanding performance with sophisticated analysis and writing</td>
                 </tr>
                 <tr>
-                  <td className="py-3 pr-4 font-bold text-[#1A5276]">7</td>
+                  <td className="py-3 pr-4 font-bold text-foreground">7</td>
                   <td className="py-3 pr-4">A</td>
                   <td className="py-3">Very strong performance across all components</td>
                 </tr>
                 <tr>
-                  <td className="py-3 pr-4 font-bold text-[#1A5276]">6</td>
+                  <td className="py-3 pr-4 font-bold text-foreground">6</td>
                   <td className="py-3 pr-4">High B</td>
                   <td className="py-3">Good performance with consistent quality</td>
                 </tr>
@@ -363,17 +363,17 @@ export default function GradeBoundariesPage() {
                   <td className="py-3">Standard pass &mdash; demonstrates basic competence</td>
                 </tr>
                 <tr>
-                  <td className="py-3 pr-4 font-bold text-gray-500">3</td>
+                  <td className="py-3 pr-4 font-bold text-muted-foreground">3</td>
                   <td className="py-3 pr-4">D / E</td>
                   <td className="py-3">Below average &mdash; some understanding but inconsistent</td>
                 </tr>
                 <tr>
-                  <td className="py-3 pr-4 font-bold text-gray-400">2</td>
+                  <td className="py-3 pr-4 font-bold text-muted-foreground">2</td>
                   <td className="py-3 pr-4">E / F</td>
                   <td className="py-3">Limited understanding and weak expression</td>
                 </tr>
                 <tr>
-                  <td className="py-3 pr-4 font-bold text-gray-400">1</td>
+                  <td className="py-3 pr-4 font-bold text-muted-foreground">1</td>
                   <td className="py-3 pr-4">G</td>
                   <td className="py-3">Minimal evidence of understanding</td>
                 </tr>
@@ -381,7 +381,7 @@ export default function GradeBoundariesPage() {
             </table>
           </div>
 
-          <p className="mt-4 text-sm text-gray-500">
+          <p className="mt-4 text-sm text-muted-foreground">
             Key equivalences to remember: Grade 9 = top A*, Grade 7 = A,
             Grade 4 = C (standard pass). The 0990 boundaries in raw marks are
             very similar to 0500 &mdash; they are simply mapped to the
@@ -398,8 +398,8 @@ export default function GradeBoundariesPage() {
           </p>
 
           <div className="mt-4 space-y-6">
-            <div className="rounded-lg border-l-4 border-[#2E86C1] bg-[#2E86C1]/5 p-5">
-              <h3 className="text-lg font-bold text-[#1A5276]">Grade A* (9) &mdash; Exceptional</h3>
+            <div className="rounded-lg border-l-4 border-[#2E86C1] bg-primary/5 p-5">
+              <h3 className="text-lg font-bold text-foreground">Grade A* (9) &mdash; Exceptional</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <p><strong>Reading (Paper 2 / Paper 1):</strong></p>
                 <ul className="ml-5 list-disc space-y-1">
@@ -422,7 +422,7 @@ export default function GradeBoundariesPage() {
             </div>
 
             <div className="rounded-lg border-l-4 border-[#1A5276] bg-[#1A5276]/5 p-5">
-              <h3 className="text-lg font-bold text-[#1A5276]">Grades A&ndash;B (7&ndash;8) &mdash; Strong</h3>
+              <h3 className="text-lg font-bold text-foreground">Grades A&ndash;B (7&ndash;8) &mdash; Strong</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <p><strong>Reading:</strong></p>
                 <ul className="ml-5 list-disc space-y-1">
@@ -442,8 +442,8 @@ export default function GradeBoundariesPage() {
               </div>
             </div>
 
-            <div className="rounded-lg border-l-4 border-[#2E86C1]/60 bg-[#2E86C1]/5 p-5">
-              <h3 className="text-lg font-bold text-[#1A5276]/80">Grades C&ndash;D (4&ndash;5) &mdash; Competent</h3>
+            <div className="rounded-lg border-l-4 border-[#2E86C1]/60 bg-primary/5 p-5">
+              <h3 className="text-lg font-bold text-foreground/80">Grades C&ndash;D (4&ndash;5) &mdash; Competent</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <p><strong>Reading:</strong></p>
                 <ul className="ml-5 list-disc space-y-1">
@@ -483,8 +483,8 @@ export default function GradeBoundariesPage() {
               </div>
             </div>
 
-            <div className="rounded-lg border-l-4 border-gray-300 bg-gray-50/50 p-5">
-              <h3 className="text-lg font-bold text-gray-500">Grade G (1) &mdash; Elementary</h3>
+            <div className="rounded-lg border-l-4 border-gray-300 bg-muted/50 p-5">
+              <h3 className="text-lg font-bold text-muted-foreground">Grade G (1) &mdash; Elementary</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <p><strong>Reading:</strong></p>
                 <ul className="ml-5 list-disc space-y-1">
@@ -507,11 +507,11 @@ export default function GradeBoundariesPage() {
         <Section title="Marks per component at a glance">
           <div className="space-y-6">
             <div>
-              <h3 className="font-bold text-[#1A5276]">Extended Tier (0500 / 0990)</h3>
+              <h3 className="font-bold text-foreground">Extended Tier (0500 / 0990)</h3>
               <div className="overflow-x-auto mt-3">
                 <table className="w-full text-sm">
                   <thead>
-                    <tr className="border-b border-gray-200 text-left text-gray-500">
+                    <tr className="border-b border-border text-left text-muted-foreground">
                       <th className="py-2 pr-4">Component</th>
                       <th className="py-2 pr-4">Content</th>
                       <th className="py-2 pr-4">Marks</th>
@@ -543,11 +543,11 @@ export default function GradeBoundariesPage() {
             </div>
 
             <div>
-              <h3 className="font-bold text-gray-700">Core Tier (0500 / 0990)</h3>
+              <h3 className="font-bold text-muted-foreground">Core Tier (0500 / 0990)</h3>
               <div className="overflow-x-auto mt-3">
                 <table className="w-full text-sm">
                   <thead>
-                    <tr className="border-b border-gray-200 text-left text-gray-500">
+                    <tr className="border-b border-border text-left text-muted-foreground">
                       <th className="py-2 pr-4">Component</th>
                       <th className="py-2 pr-4">Content</th>
                       <th className="py-2 pr-4">Marks</th>
@@ -578,7 +578,7 @@ export default function GradeBoundariesPage() {
               </div>
             </div>
 
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-muted-foreground">
               Notice that reading and writing carry equal weight (50% each).
               Students who focus only on reading and neglect their writing skills
               are leaving half their marks on the table &mdash; and vice versa.
@@ -595,8 +595,8 @@ export default function GradeBoundariesPage() {
           </p>
 
           <div className="mt-4 space-y-5">
-            <div className="rounded-lg border border-gray-200 p-5">
-              <h3 className="font-bold text-gray-600">Grade D &rarr; Grade C</h3>
+            <div className="rounded-lg border border-border p-5">
+              <h3 className="font-bold text-muted-foreground">Grade D &rarr; Grade C</h3>
               <ul className="mt-2 ml-5 list-disc space-y-2 text-sm">
                 <li>
                   <strong>Reading:</strong> Make sure you are answering the
@@ -625,8 +625,8 @@ export default function GradeBoundariesPage() {
               </ul>
             </div>
 
-            <div className="rounded-lg border border-gray-200 p-5">
-              <h3 className="font-bold text-[#1A5276]">Grade C &rarr; Grade B</h3>
+            <div className="rounded-lg border border-border p-5">
+              <h3 className="font-bold text-foreground">Grade C &rarr; Grade B</h3>
               <ul className="mt-2 ml-5 list-disc space-y-2 text-sm">
                 <li>
                   <strong>Reading:</strong> Start explaining the <em>effect</em>{" "}
@@ -655,8 +655,8 @@ export default function GradeBoundariesPage() {
               </ul>
             </div>
 
-            <div className="rounded-lg border border-gray-200 p-5">
-              <h3 className="font-bold text-[#1A5276]">Grade B &rarr; Grade A</h3>
+            <div className="rounded-lg border border-border p-5">
+              <h3 className="font-bold text-foreground">Grade B &rarr; Grade A</h3>
               <ul className="mt-2 ml-5 list-disc space-y-2 text-sm">
                 <li>
                   <strong>Reading:</strong> Analyse connotations of individual
@@ -685,8 +685,8 @@ export default function GradeBoundariesPage() {
               </ul>
             </div>
 
-            <div className="rounded-lg border-2 border-[#2E86C1]/30 bg-[#2E86C1]/5 p-5">
-              <h3 className="font-bold text-[#2E86C1]">Grade A &rarr; Grade A*</h3>
+            <div className="rounded-lg border-2 border-[#2E86C1]/30 bg-primary/5 p-5">
+              <h3 className="font-bold text-primary">Grade A &rarr; Grade A*</h3>
               <ul className="mt-2 ml-5 list-disc space-y-2 text-sm">
                 <li>
                   <strong>Reading:</strong> Offer perceptive, original
@@ -735,7 +735,7 @@ export default function GradeBoundariesPage() {
           <div className="mt-4 space-y-4">
             <div className="rounded-lg bg-red-50/50 border border-red-200/50 p-4">
               <h3 className="font-semibold text-red-800">Reading responses</h3>
-              <ul className="mt-2 ml-5 list-disc space-y-1 text-sm text-gray-700">
+              <ul className="mt-2 ml-5 list-disc space-y-1 text-sm text-muted-foreground">
                 <li><strong>Feature-spotting</strong> &mdash; naming a technique (e.g., &ldquo;The writer uses a metaphor&rdquo;) without explaining its effect. Always follow up with &ldquo;This suggests / creates / emphasises...&rdquo;</li>
                 <li><strong>Retelling the story</strong> &mdash; summarising what happens instead of analysing how the writer achieves their effect.</li>
                 <li><strong>Ignoring the question focus</strong> &mdash; writing a general response about the passage instead of addressing the specific angle the question asks about.</li>
@@ -745,7 +745,7 @@ export default function GradeBoundariesPage() {
 
             <div className="rounded-lg bg-red-50/50 border border-red-200/50 p-4">
               <h3 className="font-semibold text-red-800">Summary responses</h3>
-              <ul className="mt-2 ml-5 list-disc space-y-1 text-sm text-gray-700">
+              <ul className="mt-2 ml-5 list-disc space-y-1 text-sm text-muted-foreground">
                 <li><strong>Copying from the passage</strong> &mdash; lifting whole phrases instead of using your own words. Examiners specifically look for evidence of your own vocabulary.</li>
                 <li><strong>Including irrelevant content</strong> &mdash; adding points that are not relevant to the specific summary question.</li>
                 <li><strong>Writing too little</strong> &mdash; many students under-write their summary. Aim for a full, developed paragraph.</li>
@@ -754,7 +754,7 @@ export default function GradeBoundariesPage() {
 
             <div className="rounded-lg bg-red-50/50 border border-red-200/50 p-4">
               <h3 className="font-semibold text-red-800">Writing responses</h3>
-              <ul className="mt-2 ml-5 list-disc space-y-1 text-sm text-gray-700">
+              <ul className="mt-2 ml-5 list-disc space-y-1 text-sm text-muted-foreground">
                 <li><strong>Wrong format in directed writing</strong> &mdash; writing a letter when asked for a speech, or missing key features like addresses and sign-offs.</li>
                 <li><strong>Overloading with techniques</strong> &mdash; cramming in every device you know rather than using a few well-chosen ones for genuine effect.</li>
                 <li><strong>Weak endings</strong> &mdash; trailing off or rushing the conclusion. A strong ending can elevate the whole piece.</li>
@@ -773,31 +773,31 @@ export default function GradeBoundariesPage() {
           <div className="mt-4 grid gap-3 sm:grid-cols-2">
             <Link
               href="/resources/english-language/caie/paper-1"
-              className="rounded-lg border border-gray-200 p-4 transition-colors hover:border-[#2E86C1]/40 hover:bg-[#2E86C1]/5"
+              className="rounded-lg border border-border p-4 transition-colors hover:border-[#2E86C1]/40 hover:bg-primary/5"
             >
-              <p className="font-semibold text-[#1A5276]">Paper 1: Reading (Core)</p>
-              <p className="mt-1 text-xs text-gray-600">Comprehension, summary, and language analysis</p>
+              <p className="font-semibold text-foreground">Paper 1: Reading (Core)</p>
+              <p className="mt-1 text-xs text-muted-foreground">Comprehension, summary, and language analysis</p>
             </Link>
             <Link
               href="/resources/english-language/caie/paper-2"
-              className="rounded-lg border border-gray-200 p-4 transition-colors hover:border-[#2E86C1]/40 hover:bg-[#2E86C1]/5"
+              className="rounded-lg border border-border p-4 transition-colors hover:border-[#2E86C1]/40 hover:bg-primary/5"
             >
-              <p className="font-semibold text-[#1A5276]">Paper 2: Reading (Extended)</p>
-              <p className="mt-1 text-xs text-gray-600">Comprehension, summary, language analysis, and writer&rsquo;s effect</p>
+              <p className="font-semibold text-foreground">Paper 2: Reading (Extended)</p>
+              <p className="mt-1 text-xs text-muted-foreground">Comprehension, summary, language analysis, and writer&rsquo;s effect</p>
             </Link>
             <Link
               href="/resources/english-language/caie/techniques"
-              className="rounded-lg border border-gray-200 p-4 transition-colors hover:border-[#2E86C1]/40 hover:bg-[#2E86C1]/5"
+              className="rounded-lg border border-border p-4 transition-colors hover:border-[#2E86C1]/40 hover:bg-primary/5"
             >
-              <p className="font-semibold text-[#1A5276]">Language Techniques</p>
-              <p className="mt-1 text-xs text-gray-600">30+ techniques with examples and effects</p>
+              <p className="font-semibold text-foreground">Language Techniques</p>
+              <p className="mt-1 text-xs text-muted-foreground">30+ techniques with examples and effects</p>
             </Link>
             <Link
               href="/resources/english-language/caie/writing-skills"
-              className="rounded-lg border border-gray-200 p-4 transition-colors hover:border-[#2E86C1]/40 hover:bg-[#2E86C1]/5"
+              className="rounded-lg border border-border p-4 transition-colors hover:border-[#2E86C1]/40 hover:bg-primary/5"
             >
-              <p className="font-semibold text-[#1A5276]">Writing Skills</p>
-              <p className="mt-1 text-xs text-gray-600">All formats, summary technique, and composition</p>
+              <p className="font-semibold text-foreground">Writing Skills</p>
+              <p className="mt-1 text-xs text-muted-foreground">All formats, summary technique, and composition</p>
             </Link>
           </div>
         </Section>
@@ -806,7 +806,7 @@ export default function GradeBoundariesPage() {
         <div className="pt-4">
           <Link
             href="/resources/english-language/caie"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-[#2E86C1] hover:text-[#1A5276] transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-foreground transition-colors"
           >
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />

@@ -149,23 +149,23 @@ export default function OCRJekyllAndHydePage() {
         <section aria-labelledby="exam-format-heading">
           <h2
             id="exam-format-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             OCR Exam Format
           </h2>
           <div className="mt-4 space-y-3">
             <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
               <p className="font-semibold text-primary">Paper 2: Exploring Effects and Impact</p>
-              <p className="mt-1 text-sm text-gray-700">
+              <p className="mt-1 text-sm text-muted-foreground">
                 Section B &mdash; 19th Century and Modern Prose/Drama. You will
                 answer one question on Jekyll and Hyde. The question is an
                 essay question <strong>without an extract</strong> &mdash; you
                 must write from memory. You have approximately 45 minutes.
               </p>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-              <p className="font-semibold text-gray-900">Assessment Objectives</p>
-              <ul className="mt-2 space-y-1 text-sm text-gray-700">
+            <div className="rounded-lg border border-border bg-muted p-4">
+              <p className="font-semibold text-foreground">Assessment Objectives</p>
+              <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                 <li><strong>AO1:</strong> Read, understand and respond to texts. Use textual references, including quotations, to support and illustrate interpretations.</li>
                 <li><strong>AO2:</strong> Analyse the language, form and structure used by a writer to create meanings and effects, using relevant subject terminology.</li>
                 <li><strong>AO3:</strong> Show understanding of the relationships between texts and the contexts in which they were written.</li>
@@ -175,20 +175,20 @@ export default function OCRJekyllAndHydePage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* Plot summary */}
         <section aria-labelledby="plot-heading">
           <h2
             id="plot-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Plot Summary
           </h2>
-          <div className="mt-4 space-y-4 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <div className="space-y-3">
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                <p className="font-semibold text-gray-900">Chapters 1&ndash;2: The Door and the Search</p>
+              <div className="rounded-lg border border-border bg-muted p-4">
+                <p className="font-semibold text-foreground">Chapters 1&ndash;2: The Door and the Search</p>
                 <p className="mt-2 text-sm">
                   Mr Utterson and Mr Enfield are walking in London when Enfield
                   tells the story of a sinister man, Mr Hyde, who trampled a
@@ -199,8 +199,8 @@ export default function OCRJekyllAndHydePage() {
                   appearance, feeling an inexplicable sense of evil.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                <p className="font-semibold text-gray-900">Chapters 3&ndash;4: Jekyll&rsquo;s Dinner Party and the Carew Murder</p>
+              <div className="rounded-lg border border-border bg-muted p-4">
+                <p className="font-semibold text-foreground">Chapters 3&ndash;4: Jekyll&rsquo;s Dinner Party and the Carew Murder</p>
                 <p className="mt-2 text-sm">
                   Utterson raises his concerns with Jekyll, who dismisses them
                   and asks Utterson to respect his privacy. Nearly a year later,
@@ -212,8 +212,8 @@ export default function OCRJekyllAndHydePage() {
                   himself.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                <p className="font-semibold text-gray-900">Chapters 5&ndash;7: Jekyll&rsquo;s Withdrawal</p>
+              <div className="rounded-lg border border-border bg-muted p-4">
+                <p className="font-semibold text-foreground">Chapters 5&ndash;7: Jekyll&rsquo;s Withdrawal</p>
                 <p className="mt-2 text-sm">
                   Jekyll appears reformed and becomes sociable and charitable.
                   However, he suddenly withdraws from society. Dr Lanyon, a
@@ -224,8 +224,8 @@ export default function OCRJekyllAndHydePage() {
                   and he slams the window shut.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                <p className="font-semibold text-gray-900">Chapter 8: The Last Night</p>
+              <div className="rounded-lg border border-border bg-muted p-4">
+                <p className="font-semibold text-foreground">Chapter 8: The Last Night</p>
                 <p className="mt-2 text-sm">
                   Jekyll&rsquo;s servant Poole comes to Utterson in distress,
                   saying his master has locked himself in the laboratory and his
@@ -235,8 +235,8 @@ export default function OCRJekyllAndHydePage() {
                   Lanyon and Jekyll.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                <p className="font-semibold text-gray-900">Chapters 9&ndash;10: The Revelations</p>
+              <div className="rounded-lg border border-border bg-muted p-4">
+                <p className="font-semibold text-foreground">Chapters 9&ndash;10: The Revelations</p>
                 <p className="mt-2 text-sm">
                   Lanyon&rsquo;s letter reveals that he witnessed Hyde
                   transforming into Jekyll, and the shock destroyed his health.
@@ -252,22 +252,22 @@ export default function OCRJekyllAndHydePage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* Characters */}
         <section aria-labelledby="characters-heading">
           <h2
             id="characters-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Character Analysis
           </h2>
 
           <div className="mt-6 space-y-6">
             {/* Dr Jekyll */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="rounded-lg border border-border bg-card p-6 shadow-md">
               <h3 className="text-xl font-semibold text-primary">Dr Henry Jekyll</h3>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Jekyll is a wealthy, respected doctor and scientist who
                 represents the Victorian ideal of respectability. He is
                 described as &ldquo;a large, well-made, smooth-faced man,&rdquo;
@@ -275,7 +275,7 @@ export default function OCRJekyllAndHydePage() {
                 respectable exterior, Jekyll feels constrained by the demands of
                 Victorian morality.
               </p>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 His experiment to separate his dual nature is born from a desire
                 to indulge his darker impulses without damaging his reputation.
                 This makes him morally culpable &mdash; he does not stumble into
@@ -296,9 +296,9 @@ export default function OCRJekyllAndHydePage() {
             </div>
 
             {/* Mr Hyde */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="rounded-lg border border-border bg-card p-6 shadow-md">
               <h3 className="text-xl font-semibold text-primary">Mr Edward Hyde</h3>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Hyde is the physical embodiment of Jekyll&rsquo;s repressed evil.
                 He is described as small, deformed, and repulsive &mdash; every
                 character who meets him feels an instinctive revulsion. His
@@ -307,7 +307,7 @@ export default function OCRJekyllAndHydePage() {
                 represents the fact that Jekyll has suppressed his evil side for
                 years, so it is &ldquo;less exercised.&rdquo;
               </p>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Hyde is characterised by violence without conscience. He tramples
                 a child, murders Sir Danvers Carew with savage glee, and shows
                 no remorse. He grows stronger as Jekyll continues to use the
@@ -318,16 +318,16 @@ export default function OCRJekyllAndHydePage() {
             </div>
 
             {/* Mr Utterson */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="rounded-lg border border-border bg-card p-6 shadow-md">
               <h3 className="text-xl font-semibold text-primary">Mr Gabriel Utterson</h3>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Utterson is the novella&rsquo;s primary narrator and viewpoint
                 character. As a lawyer, he represents Victorian rationality,
                 respectability, and discretion. He is loyal to Jekyll, cautious
                 in his judgements, and determined to find the truth while
                 protecting his friend&rsquo;s reputation.
               </p>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 However, Utterson also embodies the Victorian culture of
                 repression and secrecy that enables Hyde to exist. He suppresses
                 his own pleasures (&ldquo;He was austere with himself&rdquo;),
@@ -339,9 +339,9 @@ export default function OCRJekyllAndHydePage() {
             </div>
 
             {/* Dr Lanyon */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="rounded-lg border border-border bg-card p-6 shadow-md">
               <h3 className="text-xl font-semibold text-primary">Dr Hastie Lanyon</h3>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Lanyon represents conventional, orthodox science. He dismissed
                 Jekyll&rsquo;s research as &ldquo;unscientific balderdash,&rdquo;
                 preferring traditional, rational approaches. His death after
@@ -349,7 +349,7 @@ export default function OCRJekyllAndHydePage() {
                 of the rational Victorian worldview when confronted with truths
                 it cannot accommodate.
               </p>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Lanyon&rsquo;s inability to survive the truth suggests that
                 Victorian society could not cope with the reality of human
                 duality. He represents those who would rather die than accept
@@ -360,9 +360,9 @@ export default function OCRJekyllAndHydePage() {
             </div>
 
             {/* Sir Danvers Carew */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="rounded-lg border border-border bg-card p-6 shadow-md">
               <h3 className="text-xl font-semibold text-primary">Sir Danvers Carew</h3>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Sir Danvers Carew is an elderly MP whose brutal murder by Hyde
                 marks the novella&rsquo;s turning point. Described as
                 &ldquo;beautiful&rdquo; and &ldquo;innocent,&rdquo; he represents
@@ -376,23 +376,23 @@ export default function OCRJekyllAndHydePage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* Themes */}
         <section aria-labelledby="themes-heading">
           <h2
             id="themes-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Key Themes
           </h2>
 
           <div className="mt-6 space-y-6">
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="text-lg font-semibold text-gray-900">
+            <div className="rounded-lg border border-border bg-muted p-5">
+              <h3 className="text-lg font-semibold text-foreground">
                 Duality of Human Nature
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 The novella&rsquo;s central theme. Stevenson argues that every
                 human being contains both good and evil, and that these forces
                 are &ldquo;commingled&rdquo; inseparably. Jekyll&rsquo;s
@@ -405,11 +405,11 @@ export default function OCRJekyllAndHydePage() {
               </p>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="text-lg font-semibold text-gray-900">
+            <div className="rounded-lg border border-border bg-muted p-5">
+              <h3 className="text-lg font-semibold text-foreground">
                 Repression and Victorian Hypocrisy
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Victorian society demanded strict moral respectability,
                 particularly from professional men like Jekyll. Stevenson
                 exposes the hypocrisy of this system: the more strictly
@@ -421,11 +421,11 @@ export default function OCRJekyllAndHydePage() {
               </p>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="text-lg font-semibold text-gray-900">
+            <div className="rounded-lg border border-border bg-muted p-5">
+              <h3 className="text-lg font-semibold text-foreground">
                 Science and Its Limits
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Jekyll&rsquo;s experiment represents science without moral
                 restraint. He pursues knowledge for personal gratification,
                 not for the benefit of humanity. The conflict between Jekyll
@@ -439,11 +439,11 @@ export default function OCRJekyllAndHydePage() {
               </p>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="text-lg font-semibold text-gray-900">
+            <div className="rounded-lg border border-border bg-muted p-5">
+              <h3 className="text-lg font-semibold text-foreground">
                 Secrecy and Silence
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 The novella is saturated with secrecy. Characters avoid asking
                 questions, keep letters sealed until death, and prioritise
                 reputation over truth. Enfield&rsquo;s reluctance to
@@ -455,11 +455,11 @@ export default function OCRJekyllAndHydePage() {
               </p>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="text-lg font-semibold text-gray-900">
+            <div className="rounded-lg border border-border bg-muted p-5">
+              <h3 className="text-lg font-semibold text-foreground">
                 Appearance vs Reality
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Nothing in the novella is as it seems. Jekyll&rsquo;s
                 respectable exterior conceals dark desires. The two entrances
                 to his house &mdash; the handsome front door and the sinister
@@ -471,11 +471,11 @@ export default function OCRJekyllAndHydePage() {
               </p>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="text-lg font-semibold text-gray-900">
+            <div className="rounded-lg border border-border bg-muted p-5">
+              <h3 className="text-lg font-semibold text-foreground">
                 Violence and Primitiveness
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Hyde is associated with animalistic imagery: he is
                 &ldquo;ape-like,&rdquo; moves with &ldquo;monkey-like
                 agility,&rdquo; and his violence is savage and instinctive.
@@ -488,11 +488,11 @@ export default function OCRJekyllAndHydePage() {
               </p>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="text-lg font-semibold text-gray-900">
+            <div className="rounded-lg border border-border bg-muted p-5">
+              <h3 className="text-lg font-semibold text-foreground">
                 The Gothic
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Stevenson employs Gothic conventions to create atmosphere and
                 convey meaning. London is shrouded in fog, lit by gaslight,
                 and filled with narrow, sinister streets. The setting mirrors
@@ -506,17 +506,17 @@ export default function OCRJekyllAndHydePage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* Key quotations */}
         <section aria-labelledby="quotations-heading">
           <h2
             id="quotations-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Key Quotations with Analysis
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             Learn these quotations for the closed-book exam. Each one can be
             applied to multiple themes and characters.
           </p>
@@ -525,15 +525,15 @@ export default function OCRJekyllAndHydePage() {
             {keyQuotations.map((q) => (
               <div
                 key={q.quote}
-                className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm"
+                className="rounded-lg border border-border bg-card p-5 shadow-md"
               >
-                <blockquote className="border-l-4 border-accent pl-4 text-lg font-medium italic text-gray-800">
+                <blockquote className="border-l-4 border-accent pl-4 text-lg font-medium italic text-foreground">
                   &ldquo;{q.quote}&rdquo;
                 </blockquote>
                 <p className="mt-2 text-sm font-medium text-primary">
                   {q.speaker}
                 </p>
-                <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   {q.analysis}
                 </p>
               </div>
@@ -541,24 +541,24 @@ export default function OCRJekyllAndHydePage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* Context */}
         <section aria-labelledby="context-heading">
           <h2
             id="context-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Historical and Social Context
           </h2>
-          <div className="mt-4 space-y-4 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>
               Understanding context is essential for AO3. Here are the key
               contextual areas to know for Jekyll and Hyde:
             </p>
             <div className="space-y-4">
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="font-semibold text-gray-900">Victorian Respectability</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="font-semibold text-foreground">Victorian Respectability</h3>
                 <p className="mt-2 text-sm">
                   Victorian society placed enormous importance on public
                   reputation, moral conduct, and social propriety, particularly
@@ -570,8 +570,8 @@ export default function OCRJekyllAndHydePage() {
                   satisfy desires that respectability forbids.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="font-semibold text-gray-900">Darwin and Evolution</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="font-semibold text-foreground">Darwin and Evolution</h3>
                 <p className="mt-2 text-sm">
                   Charles Darwin&rsquo;s <em>On the Origin of Species</em> (1859)
                   and <em>The Descent of Man</em> (1871) shocked Victorian
@@ -583,8 +583,8 @@ export default function OCRJekyllAndHydePage() {
                   could revert to a primitive state.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="font-semibold text-gray-900">Freud and the Unconscious Mind</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="font-semibold text-foreground">Freud and the Unconscious Mind</h3>
                 <p className="mt-2 text-sm">
                   Although Freud&rsquo;s major works were published after the
                   novella (1886), the idea of the unconscious was emerging.
@@ -597,8 +597,8 @@ export default function OCRJekyllAndHydePage() {
                   behaviour).
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="font-semibold text-gray-900">Victorian London</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="font-semibold text-foreground">Victorian London</h3>
                 <p className="mt-2 text-sm">
                   London in the 1880s was a city of stark contrasts. Wealthy,
                   respectable areas existed alongside slums filled with poverty,
@@ -610,8 +610,8 @@ export default function OCRJekyllAndHydePage() {
                   leading to a different street, mirroring his double life.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="font-semibold text-gray-900">Science and Religion</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="font-semibold text-foreground">Science and Religion</h3>
                 <p className="mt-2 text-sm">
                   The Victorian era saw increasing tension between scientific
                   progress and religious belief. Jekyll&rsquo;s experiment
@@ -622,8 +622,8 @@ export default function OCRJekyllAndHydePage() {
                   for pursuing knowledge beyond human limits.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="font-semibold text-gray-900">Robert Louis Stevenson</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="font-semibold text-foreground">Robert Louis Stevenson</h3>
                 <p className="mt-2 text-sm">
                   Stevenson grew up in Edinburgh, a city famous for its
                   dramatic division between the respectable New Town and the
@@ -638,17 +638,17 @@ export default function OCRJekyllAndHydePage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* Essay planning */}
         <section aria-labelledby="essay-heading">
           <h2
             id="essay-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Essay Planning for OCR
           </h2>
-          <div className="mt-4 space-y-4 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>
               The OCR Jekyll and Hyde question does <strong>not</strong> give
               you an extract. You must write entirely from memory. Here is a
@@ -657,7 +657,7 @@ export default function OCRJekyllAndHydePage() {
             <div className="space-y-3">
               <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                 <p className="font-semibold text-primary">Introduction (3&ndash;4 sentences)</p>
-                <p className="mt-1 text-sm text-gray-700">
+                <p className="mt-1 text-sm text-muted-foreground">
                   Address the question directly. State Stevenson&rsquo;s overall
                   message about the theme/character. Briefly reference the
                   Victorian context and the concept of duality.
@@ -665,7 +665,7 @@ export default function OCRJekyllAndHydePage() {
               </div>
               <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                 <p className="font-semibold text-primary">Paragraph 1: How the theme/character is introduced</p>
-                <p className="mt-1 text-sm text-gray-700">
+                <p className="mt-1 text-sm text-muted-foreground">
                   Analyse the early chapters. Use a memorised quotation and
                   explore language closely (AO2). Consider the narrative
                   perspective and what is withheld from the reader.
@@ -673,7 +673,7 @@ export default function OCRJekyllAndHydePage() {
               </div>
               <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                 <p className="font-semibold text-primary">Paragraph 2: Development through the middle chapters</p>
-                <p className="mt-1 text-sm text-gray-700">
+                <p className="mt-1 text-sm text-muted-foreground">
                   How does the theme/character develop? Consider the escalation
                   of violence, the deepening mystery, and the structural
                   technique of withholding information. Link to context.
@@ -681,7 +681,7 @@ export default function OCRJekyllAndHydePage() {
               </div>
               <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                 <p className="font-semibold text-primary">Paragraph 3: The revelations (Chapters 9&ndash;10)</p>
-                <p className="mt-1 text-sm text-gray-700">
+                <p className="mt-1 text-sm text-muted-foreground">
                   How is the theme/character illuminated by the final
                   revelations? Analyse Jekyll&rsquo;s confession and what it
                   reveals about Stevenson&rsquo;s message. Consider why
@@ -690,7 +690,7 @@ export default function OCRJekyllAndHydePage() {
               </div>
               <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                 <p className="font-semibold text-primary">Paragraph 4: Wider significance</p>
-                <p className="mt-1 text-sm text-gray-700">
+                <p className="mt-1 text-sm text-muted-foreground">
                   What is Stevenson&rsquo;s message about Victorian society?
                   Consider alternative interpretations. How does the novella
                   challenge the reader&rsquo;s assumptions about human nature?
@@ -698,7 +698,7 @@ export default function OCRJekyllAndHydePage() {
               </div>
               <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                 <p className="font-semibold text-primary">Conclusion</p>
-                <p className="mt-1 text-sm text-gray-700">
+                <p className="mt-1 text-sm text-muted-foreground">
                   Final evaluative judgement. What is Stevenson&rsquo;s
                   overall message? Why does the novella remain powerful today?
                   Link back to the question.
@@ -708,7 +708,7 @@ export default function OCRJekyllAndHydePage() {
 
             <div className="mt-6 rounded-lg border border-accent/20 bg-accent-50 p-5">
               <h3 className="font-semibold text-accent-700">OCR Exam Technique Tips</h3>
-              <ul className="mt-2 space-y-2 text-sm text-gray-700">
+              <ul className="mt-2 space-y-2 text-sm text-muted-foreground">
                 <li>&bull; <strong>No extract:</strong> You must memorise quotations. Aim to use 4&ndash;6 short quotations in your essay.</li>
                 <li>&bull; <strong>AO1:</strong> Make clear, sustained arguments that directly answer the question. Explore how meaning develops across the novella.</li>
                 <li>&bull; <strong>AO2:</strong> Analyse specific words, imagery, narrative structure, and Gothic conventions. Discuss Stevenson&rsquo;s use of multiple narrators, the epistolary form (letters), and the delayed revelation structure.</li>

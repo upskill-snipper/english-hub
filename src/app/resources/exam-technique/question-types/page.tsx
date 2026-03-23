@@ -187,7 +187,7 @@ export default function QuestionTypesPage() {
 
       {/* Breadcrumb */}
       <nav className="mx-auto max-w-5xl px-4 pt-6" aria-label="Breadcrumb">
-        <ol className="flex flex-wrap items-center gap-2 text-sm text-gray-500">
+        <ol className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
           <li>
             <Link href="/" className="hover:text-primary transition-colors">Home</Link>
           </li>
@@ -206,14 +206,14 @@ export default function QuestionTypesPage() {
 
       {/* Quick navigation */}
       <section className="mx-auto max-w-5xl px-4 py-10">
-        <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-          <h2 className="font-bold text-gray-900">Jump to a question type</h2>
+        <div className="rounded-xl border border-border bg-card p-6 shadow-md">
+          <h2 className="font-bold text-foreground">Jump to a question type</h2>
           <div className="mt-4 flex flex-wrap gap-2">
             {QUESTION_TYPES.map((qt) => (
               <a
                 key={qt.id}
                 href={`#${qt.id}`}
-                className="rounded-full border border-gray-200 bg-gray-50 px-4 py-2 text-sm font-medium text-gray-700 transition hover:bg-[#2E86C1]/10 hover:text-[#1A5276] hover:border-[#2E86C1]/30"
+                className="rounded-full border border-border bg-muted px-4 py-2 text-sm font-medium text-muted-foreground transition hover:bg-primary/10 hover:text-foreground hover:border-[#2E86C1]/30"
               >
                 {qt.title.replace(/"/g, "")}
               </a>
@@ -229,12 +229,12 @@ export default function QuestionTypesPage() {
             <article
               key={qt.id}
               id={qt.id}
-              className="scroll-mt-24 rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden"
+              className="scroll-mt-24 rounded-2xl border border-border bg-card shadow-md overflow-hidden"
             >
               {/* Header */}
               <div className="bg-gradient-to-r from-[#1A5276] to-[#2E86C1] px-6 py-5 sm:px-8">
                 <div className="flex items-center gap-3">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/20 text-sm font-bold text-white">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-card/20 text-sm font-bold text-white">
                     {idx + 1}
                   </span>
                   <h2 className="text-lg font-bold text-white sm:text-xl">
@@ -249,23 +249,23 @@ export default function QuestionTypesPage() {
               <div className="p-6 sm:p-8 space-y-8">
                 {/* What it's asking */}
                 <div>
-                  <h3 className="text-base font-bold text-gray-900">
+                  <h3 className="text-base font-bold text-foreground">
                     What it&apos;s asking
                   </h3>
-                  <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                     {qt.whatItAsks}
                   </p>
                 </div>
 
                 {/* How to structure your answer */}
                 <div>
-                  <h3 className="text-base font-bold text-gray-900">
+                  <h3 className="text-base font-bold text-foreground">
                     How to structure your answer
                   </h3>
                   <ol className="mt-3 space-y-2">
                     {qt.structure.map((step, i) => (
-                      <li key={i} className="flex gap-3 text-sm text-gray-700">
-                        <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#2E86C1]/10 text-xs font-bold text-[#1A5276]">
+                      <li key={i} className="flex gap-3 text-sm text-muted-foreground">
+                        <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-foreground">
                           {i + 1}
                         </span>
                         <span className="leading-relaxed">{step}</span>
@@ -276,14 +276,14 @@ export default function QuestionTypesPage() {
 
                 {/* Common mistakes */}
                 <div>
-                  <h3 className="text-base font-bold text-gray-900">
+                  <h3 className="text-base font-bold text-foreground">
                     Common mistakes
                   </h3>
                   <ul className="mt-3 space-y-2">
                     {qt.mistakes.map((mistake, i) => (
                       <li
                         key={i}
-                        className="flex gap-3 text-sm text-gray-700"
+                        className="flex gap-3 text-sm text-muted-foreground"
                       >
                         <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-red-100 text-xs text-red-600">
                           &times;
@@ -296,10 +296,10 @@ export default function QuestionTypesPage() {
 
                 {/* Example */}
                 <div>
-                  <h3 className="text-base font-bold text-gray-900">
+                  <h3 className="text-base font-bold text-foreground">
                     Example response snippet
                   </h3>
-                  <blockquote className="mt-3 rounded-lg border-l-4 border-[#2E86C1] bg-gray-50 px-5 py-4 text-sm italic leading-relaxed text-gray-700">
+                  <blockquote className="mt-3 rounded-lg border-l-4 border-[#2E86C1] bg-muted px-5 py-4 text-sm italic leading-relaxed text-muted-foreground">
                     {qt.example}
                   </blockquote>
                 </div>

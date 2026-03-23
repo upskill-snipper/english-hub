@@ -10,7 +10,7 @@ export default function AcceptableUsePolicyPage() {
   return (
     <>
       <h1 className="text-3xl font-bold mb-2">Acceptable Use Policy</h1>
-      <p className="text-gray-500 text-sm mb-6">
+      <p className="text-muted-foreground text-sm mb-6">
         <strong>The English Hub</strong> — operated by Upskill Energy Limited
         <br />
         Last updated: 22 March 2026
@@ -208,8 +208,8 @@ export default function AcceptableUsePolicyPage() {
           7. Consequences of Violation
         </h2>
         <div className="overflow-x-auto">
-          <table className="min-w-full text-sm border border-gray-200">
-            <thead className="bg-gray-50">
+          <table className="min-w-full text-sm border border-border">
+            <thead className="bg-muted">
               <tr>
                 <th className="text-left px-4 py-2 border-b font-semibold">
                   Step
@@ -313,7 +313,7 @@ export default function AcceptableUsePolicyPage() {
       {/* Contact */}
       <section className="mb-4">
         <h2 className="text-2xl font-bold mb-4">Contact Us</h2>
-        <div className="bg-gray-50 rounded-lg p-4 text-sm">
+        <div className="bg-muted rounded-lg p-4 text-sm">
           <p className="font-semibold">Upskill Energy Limited</p>
           <p>
             Website:{" "}
@@ -328,7 +328,7 @@ export default function AcceptableUsePolicyPage() {
         </div>
       </section>
 
-      <p className="text-sm text-gray-500 italic">
+      <p className="text-sm text-muted-foreground italic">
         This Acceptable Use Policy should be read alongside our{" "}
         <a href="/privacy-policy">Privacy Policy</a>,{" "}
         <a href="/terms">Terms and Conditions</a>, and{" "}

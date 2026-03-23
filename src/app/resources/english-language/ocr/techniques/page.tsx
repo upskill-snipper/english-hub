@@ -253,11 +253,11 @@ export default function OCRTechniquesPage() {
         <section aria-labelledby="intro-heading">
           <h2
             id="intro-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Why Techniques Matter
           </h2>
-          <div className="mt-4 space-y-4 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>
               In OCR English Language, identifying techniques alone will not
               earn high marks. You must explain <em>how</em> and <em>why</em>{" "}
@@ -280,17 +280,17 @@ export default function OCRTechniquesPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Language techniques ─────────────────────────────── */}
         <section aria-labelledby="language-heading">
           <h2
             id="language-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Language Techniques
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             These are techniques used at the word, phrase, and sentence level.
           </p>
 
@@ -298,18 +298,18 @@ export default function OCRTechniquesPage() {
             {languageTechniques.map((t) => (
               <div
                 key={t.name}
-                className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm"
+                className="rounded-lg border border-border bg-card p-5 shadow-md"
               >
                 <h3 className="text-lg font-semibold text-primary">
                   {t.name}
                 </h3>
-                <p className="mt-2 text-sm text-gray-700">
+                <p className="mt-2 text-sm text-muted-foreground">
                   <strong>Definition:</strong> {t.definition}
                 </p>
-                <p className="mt-2 text-sm italic text-gray-600">
+                <p className="mt-2 text-sm italic text-muted-foreground">
                   <strong className="not-italic">Example:</strong> {t.example}
                 </p>
-                <p className="mt-2 text-sm text-gray-700">
+                <p className="mt-2 text-sm text-muted-foreground">
                   <strong>Effect:</strong> {t.effect}
                 </p>
               </div>
@@ -317,17 +317,17 @@ export default function OCRTechniquesPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Structural techniques ──────────────────────────── */}
         <section aria-labelledby="structural-heading">
           <h2
             id="structural-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Structural Techniques
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             These are techniques used at the whole-text and paragraph level to
             organise, shape, and control the reader&rsquo;s experience.
           </p>
@@ -336,18 +336,18 @@ export default function OCRTechniquesPage() {
             {structuralTechniques.map((t) => (
               <div
                 key={t.name}
-                className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm"
+                className="rounded-lg border border-border bg-card p-5 shadow-md"
               >
                 <h3 className="text-lg font-semibold text-primary">
                   {t.name}
                 </h3>
-                <p className="mt-2 text-sm text-gray-700">
+                <p className="mt-2 text-sm text-muted-foreground">
                   <strong>Definition:</strong> {t.definition}
                 </p>
-                <p className="mt-2 text-sm italic text-gray-600">
+                <p className="mt-2 text-sm italic text-muted-foreground">
                   <strong className="not-italic">Example:</strong> {t.example}
                 </p>
-                <p className="mt-2 text-sm text-gray-700">
+                <p className="mt-2 text-sm text-muted-foreground">
                   <strong>Effect:</strong> {t.effect}
                 </p>
               </div>
@@ -355,18 +355,18 @@ export default function OCRTechniquesPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── How to use in your analysis ────────────────────── */}
         <section aria-labelledby="analysis-heading">
           <h2
             id="analysis-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Using Techniques in Your Analysis
           </h2>
-          <div className="mt-4 space-y-4 text-gray-700 leading-relaxed">
-            <h3 className="text-lg font-semibold text-gray-900">
+          <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
+            <h3 className="text-lg font-semibold text-foreground">
               The WHAT-HOW-WHY Framework
             </h3>
             <p>
@@ -375,28 +375,28 @@ export default function OCRTechniquesPage() {
             <div className="mt-3 grid gap-4 sm:grid-cols-3">
               <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                 <p className="font-semibold text-primary">WHAT</p>
-                <p className="mt-1 text-sm text-gray-700">
+                <p className="mt-1 text-sm text-muted-foreground">
                   What technique is the writer using? Identify it and provide
                   a precise quotation.
                 </p>
               </div>
               <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                 <p className="font-semibold text-primary">HOW</p>
-                <p className="mt-1 text-sm text-gray-700">
+                <p className="mt-1 text-sm text-muted-foreground">
                   How does it work? Analyse the specific words, their
                   connotations, and the way the technique creates meaning.
                 </p>
               </div>
               <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                 <p className="font-semibold text-primary">WHY</p>
-                <p className="mt-1 text-sm text-gray-700">
+                <p className="mt-1 text-sm text-muted-foreground">
                   Why has the writer used this technique? What effect does it
                   have on the reader? What is the writer&rsquo;s purpose?
                 </p>
               </div>
             </div>
 
-            <h3 className="mt-8 text-lg font-semibold text-gray-900">
+            <h3 className="mt-8 text-lg font-semibold text-foreground">
               Common Analysis Mistakes
             </h3>
             <ul className="ml-6 list-disc space-y-2">

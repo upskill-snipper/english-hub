@@ -258,8 +258,8 @@ export default function InspectorCallsPage() {
 
       <div className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
         {/* ── Quick nav ─────────────────────────────────────────── */}
-        <nav className="rounded-xl bg-gray-50 p-6">
-          <h2 className="text-lg font-bold text-gray-900">On this page</h2>
+        <nav className="rounded-xl bg-muted p-6">
+          <h2 className="text-lg font-bold text-foreground">On this page</h2>
           <ul className="mt-3 grid gap-2 text-sm sm:grid-cols-2 lg:grid-cols-3">
             {[
               ["#plot", "Plot Summary"],
@@ -270,7 +270,7 @@ export default function InspectorCallsPage() {
               ["#exam", "Edexcel Exam Technique"],
             ].map(([href, label]) => (
               <li key={href}>
-                <a href={href} className="text-[#2E86C1] hover:underline">
+                <a href={href} className="text-primary hover:underline">
                   {label}
                 </a>
               </li>
@@ -280,8 +280,8 @@ export default function InspectorCallsPage() {
 
         {/* ── Plot summary ──────────────────────────────────────── */}
         <section id="plot" className="mt-14 scroll-mt-20">
-          <h2 className="text-2xl font-bold text-gray-900">Plot Summary</h2>
-          <p className="mt-2 text-gray-600">
+          <h2 className="text-2xl font-bold text-foreground">Plot Summary</h2>
+          <p className="mt-2 text-muted-foreground">
             The entire play takes place in one evening, in the Birlings&apos;
             dining room. This unity of time, place, and action intensifies the
             dramatic tension.
@@ -290,17 +290,17 @@ export default function InspectorCallsPage() {
             {PLOT_SUMMARY.map((act) => (
               <div
                 key={act.act}
-                className="rounded-xl border border-gray-200 p-6 shadow-sm"
+                className="rounded-xl border border-border p-6 shadow-md"
               >
                 <div className="flex items-center gap-3">
                   <span className="rounded-full bg-[#1A5276] px-3 py-1 text-xs font-bold text-white">
                     {act.act}
                   </span>
-                  <h3 className="text-lg font-bold text-gray-900">
+                  <h3 className="text-lg font-bold text-foreground">
                     {act.title}
                   </h3>
                 </div>
-                <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   {act.summary}
                 </p>
               </div>
@@ -310,26 +310,26 @@ export default function InspectorCallsPage() {
 
         {/* ── Characters ────────────────────────────────────────── */}
         <section id="characters" className="mt-14 scroll-mt-20">
-          <h2 className="text-2xl font-bold text-gray-900">Character Analysis</h2>
+          <h2 className="text-2xl font-bold text-foreground">Character Analysis</h2>
           <div className="mt-6 space-y-6">
             {CHARACTERS.map((char) => (
               <div
                 key={char.name}
-                className="rounded-xl border border-gray-200 p-6 shadow-sm"
+                className="rounded-xl border border-border p-6 shadow-md"
               >
-                <h3 className="text-xl font-bold text-[#1A5276]">
+                <h3 className="text-xl font-bold text-foreground">
                   {char.name}
                 </h3>
-                <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   {char.description}
                 </p>
                 <div className="mt-4">
-                  <h4 className="text-xs font-semibold uppercase tracking-wide text-[#2E86C1]">
+                  <h4 className="text-xs font-semibold uppercase tracking-wide text-primary">
                     Key Quotes
                   </h4>
                   <ul className="mt-2 space-y-1">
                     {char.key_quotes.map((q) => (
-                      <li key={q} className="text-sm italic text-gray-600">
+                      <li key={q} className="text-sm italic text-muted-foreground">
                         {q}
                       </li>
                     ))}
@@ -342,26 +342,26 @@ export default function InspectorCallsPage() {
 
         {/* ── Themes ────────────────────────────────────────────── */}
         <section id="themes" className="mt-14 scroll-mt-20">
-          <h2 className="text-2xl font-bold text-gray-900">Key Themes</h2>
+          <h2 className="text-2xl font-bold text-foreground">Key Themes</h2>
           <div className="mt-6 space-y-6">
             {THEMES.map((t) => (
               <div
                 key={t.theme}
-                className="rounded-xl border-l-4 border-[#1A5276] bg-gray-50 p-6"
+                className="rounded-xl border-l-4 border-[#1A5276] bg-muted p-6"
               >
-                <h3 className="text-lg font-bold text-[#1A5276]">
+                <h3 className="text-lg font-bold text-foreground">
                   {t.theme}
                 </h3>
-                <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   {t.description}
                 </p>
                 <div className="mt-3">
-                  <h4 className="text-xs font-semibold uppercase tracking-wide text-[#2E86C1]">
+                  <h4 className="text-xs font-semibold uppercase tracking-wide text-primary">
                     Supporting Quotes
                   </h4>
                   <ul className="mt-2 space-y-1">
                     {t.quotes.map((q) => (
-                      <li key={q} className="text-sm italic text-gray-600">
+                      <li key={q} className="text-sm italic text-muted-foreground">
                         {q}
                       </li>
                     ))}
@@ -374,8 +374,8 @@ export default function InspectorCallsPage() {
 
         {/* ── Key quotes ────────────────────────────────────────── */}
         <section id="quotes" className="mt-14 scroll-mt-20">
-          <h2 className="text-2xl font-bold text-gray-900">Key Quotes (20+)</h2>
-          <p className="mt-2 text-gray-600">
+          <h2 className="text-2xl font-bold text-foreground">Key Quotes (20+)</h2>
+          <p className="mt-2 text-muted-foreground">
             The Edexcel exam is closed-book. Learn these quotes and practise
             embedding them into your paragraphs.
           </p>
@@ -383,15 +383,15 @@ export default function InspectorCallsPage() {
             {KEY_QUOTES.map((q, i) => (
               <div
                 key={i}
-                className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm"
+                className="rounded-lg border border-border bg-card p-4 shadow-md"
               >
-                <p className="text-sm font-semibold italic text-[#1A5276]">
+                <p className="text-sm font-semibold italic text-foreground">
                   {q.quote}
                 </p>
-                <p className="mt-1 text-xs font-medium text-[#2E86C1]">
+                <p className="mt-1 text-xs font-medium text-primary">
                   — {q.speaker}
                 </p>
-                <p className="mt-2 text-sm text-gray-700">{q.significance}</p>
+                <p className="mt-2 text-sm text-muted-foreground">{q.significance}</p>
               </div>
             ))}
           </div>
@@ -399,15 +399,15 @@ export default function InspectorCallsPage() {
 
         {/* ── Context ───────────────────────────────────────────── */}
         <section id="context" className="mt-14 scroll-mt-20">
-          <h2 className="text-2xl font-bold text-gray-900">Historical Context</h2>
+          <h2 className="text-2xl font-bold text-foreground">Historical Context</h2>
           <div className="mt-6 space-y-4">
             {CONTEXT_POINTS.map((c) => (
               <div
                 key={c.topic}
-                className="rounded-xl border border-gray-200 p-5 shadow-sm"
+                className="rounded-xl border border-border p-5 shadow-md"
               >
-                <h3 className="font-bold text-[#1A5276]">{c.topic}</h3>
-                <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+                <h3 className="font-bold text-foreground">{c.topic}</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   {c.detail}
                 </p>
               </div>
@@ -417,34 +417,34 @@ export default function InspectorCallsPage() {
 
         {/* ── Exam technique ────────────────────────────────────── */}
         <section id="exam" className="mt-14 scroll-mt-20">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Edexcel Exam Technique for An Inspector Calls
           </h2>
 
           <div className="mt-6 space-y-6">
-            <div className="rounded-xl bg-gray-50 p-6">
-              <h3 className="text-lg font-bold text-[#1A5276]">
+            <div className="rounded-xl bg-muted p-6">
+              <h3 className="text-lg font-bold text-foreground">
                 What Does an Edexcel Question Look Like?
               </h3>
-              <p className="mt-2 text-sm text-gray-700">
+              <p className="mt-2 text-sm text-muted-foreground">
                 You will typically have a choice of two questions. There is no
                 extract — you must recall your own evidence from the play.
               </p>
               <div className="mt-4 space-y-3">
-                <div className="rounded-lg border-2 border-dashed border-[#2E86C1] bg-white p-4">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-[#2E86C1]">
+                <div className="rounded-lg border-2 border-dashed border-[#2E86C1] bg-card p-4">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-primary">
                     Example Question 1
                   </p>
-                  <p className="mt-2 text-sm text-gray-900 font-medium">
+                  <p className="mt-2 text-sm text-foreground font-medium">
                     How does Priestley present the theme of social responsibility
                     in <em>An Inspector Calls</em>?
                   </p>
                 </div>
-                <div className="rounded-lg border-2 border-dashed border-[#2E86C1] bg-white p-4">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-[#2E86C1]">
+                <div className="rounded-lg border-2 border-dashed border-[#2E86C1] bg-card p-4">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-primary">
                     Example Question 2
                   </p>
-                  <p className="mt-2 text-sm text-gray-900 font-medium">
+                  <p className="mt-2 text-sm text-foreground font-medium">
                     How does Priestley use the character of Sheila to convey his
                     message in <em>An Inspector Calls</em>?
                   </p>
@@ -452,11 +452,11 @@ export default function InspectorCallsPage() {
               </div>
             </div>
 
-            <div className="rounded-xl bg-gray-50 p-6">
-              <h3 className="text-lg font-bold text-[#1A5276]">
+            <div className="rounded-xl bg-muted p-6">
+              <h3 className="text-lg font-bold text-foreground">
                 How to Structure Your Answer
               </h3>
-              <ol className="mt-4 space-y-3 text-sm text-gray-700">
+              <ol className="mt-4 space-y-3 text-sm text-muted-foreground">
                 <li className="flex gap-3">
                   <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">1</span>
                   <span>
@@ -491,28 +491,28 @@ export default function InspectorCallsPage() {
             </div>
 
             <div className="rounded-xl border-2 border-[#2E86C1] bg-blue-50 p-6">
-              <h3 className="text-lg font-bold text-[#1A5276]">
+              <h3 className="text-lg font-bold text-foreground">
                 Top Tips for Top Marks
               </h3>
-              <ul className="mt-4 space-y-2 text-sm text-gray-700">
+              <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#2E86C1]" />
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   Always use &quot;Priestley&quot; as the subject — &quot;Priestley presents/uses/suggests...&quot; This is an AO2 requirement.
                 </li>
                 <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#2E86C1]" />
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   Discuss the dual time setting — &quot;Written in 1945 but set in 1912, Priestley uses dramatic irony to...&quot;
                 </li>
                 <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#2E86C1]" />
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   Analyse stage directions — the lighting changes from &quot;pink and intimate&quot; to &quot;brighter and harder&quot; when the Inspector arrives.
                 </li>
                 <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#2E86C1]" />
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   Discuss the ending — the phone call creates a cyclic structure, suggesting the Birlings will be forced to confront their guilt again.
                 </li>
                 <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#2E86C1]" />
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   Note: No SPaG marks on Section B, but clear writing still matters for AO1.
                 </li>
               </ul>

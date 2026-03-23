@@ -226,7 +226,7 @@ export default function TimeManagementPage() {
 
       {/* Breadcrumb */}
       <nav className="mx-auto max-w-5xl px-4 pt-6" aria-label="Breadcrumb">
-        <ol className="flex flex-wrap items-center gap-2 text-sm text-gray-500">
+        <ol className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
           <li>
             <Link href="/" className="hover:text-primary transition-colors">
               Home
@@ -252,10 +252,10 @@ export default function TimeManagementPage() {
       {/* Golden rule */}
       <section className="mx-auto max-w-5xl px-4 py-10">
         <div className="rounded-xl border border-accent-100 bg-accent-50/50 p-6 sm:p-8">
-          <h2 className="text-xl font-bold text-gray-900">
+          <h2 className="text-xl font-bold text-foreground">
             The golden rule of exam timing
           </h2>
-          <p className="mt-3 text-gray-700 leading-relaxed">
+          <p className="mt-3 text-muted-foreground leading-relaxed">
             <strong>One mark = approximately one minute.</strong> This simple
             rule works across almost every English exam. A 30-mark question
             deserves about 30 minutes; an 8-mark question deserves about 8-10
@@ -282,7 +282,7 @@ export default function TimeManagementPage() {
             </span>
             <h2
               id={`${board.board.toLowerCase()}-heading`}
-              className="text-2xl font-bold text-gray-900"
+              className="text-2xl font-bold text-foreground"
             >
               {board.board}
             </h2>
@@ -292,11 +292,11 @@ export default function TimeManagementPage() {
             {board.papers.map((paper) => (
               <div
                 key={paper.name}
-                className="rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden"
+                className="rounded-xl border border-border bg-card shadow-md overflow-hidden"
               >
-                <div className="bg-gray-50 border-b border-gray-200 px-6 py-4">
-                  <h3 className="font-bold text-gray-900">{paper.name}</h3>
-                  <p className="mt-1 text-sm text-gray-500">
+                <div className="bg-muted border-b border-border px-6 py-4">
+                  <h3 className="font-bold text-foreground">{paper.name}</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">
                     {paper.duration} &middot; {paper.total} marks total
                   </p>
                 </div>
@@ -305,7 +305,7 @@ export default function TimeManagementPage() {
                 <div className="hidden sm:block overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead>
-                      <tr className="border-b border-gray-100 text-left text-xs font-semibold uppercase tracking-wider text-gray-400">
+                      <tr className="border-b border-border text-left text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                         <th className="px-6 py-3">Question</th>
                         <th className="px-6 py-3">Marks</th>
                         <th className="px-6 py-3">Suggested Time</th>
@@ -314,19 +314,19 @@ export default function TimeManagementPage() {
                     </thead>
                     <tbody className="divide-y divide-gray-100">
                       {paper.questions.map((q) => (
-                        <tr key={q.q} className="hover:bg-gray-50/50">
-                          <td className="px-6 py-3 font-medium text-gray-900">
+                        <tr key={q.q} className="hover:bg-muted/50">
+                          <td className="px-6 py-3 font-medium text-foreground">
                             {q.q}
                           </td>
-                          <td className="px-6 py-3 text-gray-600">
+                          <td className="px-6 py-3 text-muted-foreground">
                             {q.marks}
                           </td>
                           <td className="px-6 py-3">
-                            <span className="rounded-full bg-[#2E86C1]/10 px-3 py-1 text-xs font-semibold text-[#1A5276]">
+                            <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-foreground">
                               {q.time}
                             </span>
                           </td>
-                          <td className="px-6 py-3 text-gray-500">
+                          <td className="px-6 py-3 text-muted-foreground">
                             {q.notes}
                           </td>
                         </tr>
@@ -339,18 +339,18 @@ export default function TimeManagementPage() {
                 <div className="sm:hidden divide-y divide-gray-100">
                   {paper.questions.map((q) => (
                     <div key={q.q} className="px-4 py-4 space-y-2">
-                      <p className="font-medium text-gray-900 text-sm">
+                      <p className="font-medium text-foreground text-sm">
                         {q.q}
                       </p>
                       <div className="flex items-center gap-3">
-                        <span className="text-xs text-gray-500">
+                        <span className="text-xs text-muted-foreground">
                           {q.marks} marks
                         </span>
-                        <span className="rounded-full bg-[#2E86C1]/10 px-3 py-1 text-xs font-semibold text-[#1A5276]">
+                        <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-foreground">
                           {q.time}
                         </span>
                       </div>
-                      <p className="text-xs text-gray-500">{q.notes}</p>
+                      <p className="text-xs text-muted-foreground">{q.notes}</p>
                     </div>
                   ))}
                 </div>
@@ -361,49 +361,49 @@ export default function TimeManagementPage() {
       ))}
 
       {/* How to divide time */}
-      <section className="bg-gray-50 px-4 py-14">
+      <section className="bg-muted px-4 py-14">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             How to divide time per question
           </h2>
           <div className="mt-6 grid gap-6 sm:grid-cols-2">
-            <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-              <h3 className="font-bold text-gray-900">
+            <div className="rounded-xl border border-border bg-card p-6 shadow-md">
+              <h3 className="font-bold text-foreground">
                 Step 1: Calculate your rate
               </h3>
-              <p className="mt-2 text-sm text-gray-600 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Divide total exam time (in minutes) by total marks. For most
                 English papers, this gives you roughly 1 minute per mark.
                 Example: AQA Language Paper 1 is 105 minutes for 80 marks =
                 about 1.3 minutes per mark.
               </p>
             </div>
-            <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-              <h3 className="font-bold text-gray-900">
+            <div className="rounded-xl border border-border bg-card p-6 shadow-md">
+              <h3 className="font-bold text-foreground">
                 Step 2: Subtract reading time
               </h3>
-              <p className="mt-2 text-sm text-gray-600 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Allow 10-15 minutes at the start to read and annotate the
                 source texts carefully. This is not wasted time -- it makes
                 every answer faster and better. Deduct this from your total
                 before dividing.
               </p>
             </div>
-            <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-              <h3 className="font-bold text-gray-900">
+            <div className="rounded-xl border border-border bg-card p-6 shadow-md">
+              <h3 className="font-bold text-foreground">
                 Step 3: Add planning time for big questions
               </h3>
-              <p className="mt-2 text-sm text-gray-600 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 For any question worth 20+ marks, build in 3-5 minutes of
                 planning. A quick bullet-point plan keeps your essay focused
                 and prevents you from going off on tangents.
               </p>
             </div>
-            <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-              <h3 className="font-bold text-gray-900">
+            <div className="rounded-xl border border-border bg-card p-6 shadow-md">
+              <h3 className="font-bold text-foreground">
                 Step 4: Write target times on the paper
               </h3>
-              <p className="mt-2 text-sm text-gray-600 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 At the start of the exam, jot down the time you should finish
                 each question next to the question number. For example, if the
                 exam starts at 9:00 and Q1 should take 5 minutes, write
@@ -416,10 +416,10 @@ export default function TimeManagementPage() {
 
       {/* What to do if you run out of time */}
       <section className="mx-auto max-w-5xl px-4 py-14">
-        <h2 className="text-2xl font-bold text-gray-900">
+        <h2 className="text-2xl font-bold text-foreground">
           What to do if you run out of time
         </h2>
-        <p className="mt-3 text-gray-600 leading-relaxed">
+        <p className="mt-3 text-muted-foreground leading-relaxed">
           It happens. Here is how to salvage the situation and still pick up
           marks.
         </p>
@@ -459,14 +459,14 @@ export default function TimeManagementPage() {
           ].map((item, i) => (
             <div
               key={item.title}
-              className="flex gap-4 rounded-xl border border-gray-200 bg-white p-5 shadow-sm"
+              className="flex gap-4 rounded-xl border border-border bg-card p-5 shadow-md"
             >
               <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-sm font-bold text-white">
                 {i + 1}
               </span>
               <div>
-                <h3 className="font-bold text-gray-900">{item.title}</h3>
-                <p className="mt-1 text-sm text-gray-600 leading-relaxed">
+                <h3 className="font-bold text-foreground">{item.title}</h3>
+                <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   {item.detail}
                 </p>
               </div>
@@ -476,17 +476,17 @@ export default function TimeManagementPage() {
       </section>
 
       {/* Planning time allocation */}
-      <section className="bg-gray-50 px-4 py-14">
+      <section className="bg-muted px-4 py-14">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Planning your time allocation
           </h2>
-          <p className="mt-3 text-gray-600 leading-relaxed">
+          <p className="mt-3 text-muted-foreground leading-relaxed">
             Use this framework to create a personalised timing plan for any
             English exam paper.
           </p>
 
-          <div className="mt-8 overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
+          <div className="mt-8 overflow-hidden rounded-xl border border-border bg-card shadow-md">
             <div className="divide-y divide-gray-100">
               {[
                 {
@@ -520,12 +520,12 @@ export default function TimeManagementPage() {
                   className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-6 px-6 py-4"
                 >
                   <div className="sm:w-48 shrink-0">
-                    <span className="font-bold text-gray-900">{row.phase}</span>
-                    <span className="ml-2 sm:ml-0 sm:mt-1 sm:block text-xs font-semibold text-[#2E86C1]">
+                    <span className="font-bold text-foreground">{row.phase}</span>
+                    <span className="ml-2 sm:ml-0 sm:mt-1 sm:block text-xs font-semibold text-primary">
                       {row.duration}
                     </span>
                   </div>
-                  <p className="text-sm text-gray-600 leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     {row.desc}
                   </p>
                 </div>

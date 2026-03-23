@@ -35,7 +35,7 @@ export default function EssayStructurePage() {
 
       {/* Breadcrumb */}
       <nav className="mx-auto max-w-5xl px-4 pt-6" aria-label="Breadcrumb">
-        <ol className="flex flex-wrap items-center gap-2 text-sm text-gray-500">
+        <ol className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
           <li>
             <Link href="/" className="hover:text-primary transition-colors">Home</Link>
           </li>
@@ -54,10 +54,10 @@ export default function EssayStructurePage() {
 
       {/* Introduction techniques */}
       <section className="mx-auto max-w-5xl px-4 py-12">
-        <h2 className="text-2xl font-bold text-gray-900 sm:text-3xl">
+        <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
           Introduction techniques
         </h2>
-        <p className="mt-3 text-gray-600 leading-relaxed">
+        <p className="mt-3 text-muted-foreground leading-relaxed">
           Your introduction sets the tone and direction for your entire essay. It
           should be concise (3-5 sentences), address the question directly, and
           signal the line of argument you will take.
@@ -96,16 +96,16 @@ export default function EssayStructurePage() {
           ].map((tech) => (
             <div
               key={tech.title}
-              className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
+              className="rounded-xl border border-border bg-card p-6 shadow-md"
             >
-              <h3 className="font-bold text-gray-900">{tech.title}</h3>
-              <p className="mt-2 text-sm text-gray-600 leading-relaxed">
+              <h3 className="font-bold text-foreground">{tech.title}</h3>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 {tech.desc}
               </p>
-              <blockquote className="mt-4 rounded-lg border-l-4 border-[#2E86C1] bg-gray-50 px-4 py-3 text-sm italic text-gray-700 leading-relaxed">
+              <blockquote className="mt-4 rounded-lg border-l-4 border-[#2E86C1] bg-muted px-4 py-3 text-sm italic text-muted-foreground leading-relaxed">
                 {tech.example}
               </blockquote>
-              <p className="mt-3 text-xs font-semibold text-[#2E86C1]">
+              <p className="mt-3 text-xs font-semibold text-primary">
                 Best for: {tech.best}
               </p>
             </div>
@@ -114,12 +114,12 @@ export default function EssayStructurePage() {
       </section>
 
       {/* PEEL paragraph template */}
-      <section className="bg-gray-50 px-4 py-14">
+      <section className="bg-muted px-4 py-14">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-gray-900 sm:text-3xl">
+          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
             The PEEL paragraph template
           </h2>
-          <p className="mt-3 text-gray-600 leading-relaxed">
+          <p className="mt-3 text-muted-foreground leading-relaxed">
             PEEL is the most reliable paragraph structure for English essays. Every
             analytical paragraph should follow this pattern. It keeps your writing
             focused, evidence-based, and analytical.
@@ -138,7 +138,7 @@ export default function EssayStructurePage() {
               {
                 letter: "E",
                 label: "Evidence",
-                colour: "bg-[#2E86C1]",
+                colour: "bg-primary",
                 desc: "Support your point with a short, embedded quotation from the text. Choose precise, analysable words.",
                 example:
                   "She commands Macbeth to \"look like th' innocent flower, but be the serpent under't\", revealing her capacity for deception.",
@@ -146,7 +146,7 @@ export default function EssayStructurePage() {
               {
                 letter: "E",
                 label: "Explain",
-                colour: "bg-[#2E86C1]",
+                colour: "bg-primary",
                 desc: "Analyse the evidence. Explore what specific words suggest, the effects of techniques, and how meaning is created.",
                 example:
                   "The juxtaposition of \"innocent flower\" and \"serpent\" creates a stark contrast between appearance and reality. The biblical connotations of the serpent associate Lady Macbeth with temptation and original sin, positioning her as the catalyst for Macbeth's moral downfall.",
@@ -162,7 +162,7 @@ export default function EssayStructurePage() {
             ].map((step, i) => (
               <div
                 key={i}
-                className="flex gap-4 rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
+                className="flex gap-4 rounded-xl border border-border bg-card p-6 shadow-md"
               >
                 <span
                   className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-lg font-bold text-white ${step.colour}`}
@@ -170,11 +170,11 @@ export default function EssayStructurePage() {
                   {step.letter}
                 </span>
                 <div className="min-w-0">
-                  <h3 className="font-bold text-gray-900">{step.label}</h3>
-                  <p className="mt-1 text-sm text-gray-600 leading-relaxed">
+                  <h3 className="font-bold text-foreground">{step.label}</h3>
+                  <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                     {step.desc}
                   </p>
-                  <blockquote className="mt-3 rounded-lg border-l-4 border-[#2E86C1] bg-gray-50 px-4 py-3 text-sm italic text-gray-700 leading-relaxed">
+                  <blockquote className="mt-3 rounded-lg border-l-4 border-[#2E86C1] bg-muted px-4 py-3 text-sm italic text-muted-foreground leading-relaxed">
                     {step.example}
                   </blockquote>
                 </div>
@@ -186,17 +186,17 @@ export default function EssayStructurePage() {
 
       {/* Topic sentences */}
       <section className="mx-auto max-w-5xl px-4 py-14">
-        <h2 className="text-2xl font-bold text-gray-900 sm:text-3xl">
+        <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
           Topic sentences
         </h2>
-        <p className="mt-3 text-gray-600 leading-relaxed">
+        <p className="mt-3 text-muted-foreground leading-relaxed">
           A topic sentence is the first sentence of each paragraph. It tells the
           examiner exactly what the paragraph will be about and how it connects to
           the question. Strong topic sentences make your essay easy to follow and
           demonstrate a clear line of argument.
         </p>
 
-        <div className="mt-8 rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden">
+        <div className="mt-8 rounded-xl border border-border bg-card shadow-md overflow-hidden">
           <div className="divide-y divide-gray-100">
             {[
               {
@@ -226,16 +226,16 @@ export default function EssayStructurePage() {
                     <span className="text-xs font-bold text-red-600 uppercase tracking-wider">
                       Weak
                     </span>
-                    <p className="mt-1 text-sm text-gray-700">{row.bad}</p>
+                    <p className="mt-1 text-sm text-muted-foreground">{row.bad}</p>
                   </div>
                   <div className="flex-1 rounded-lg bg-green-50 p-3">
                     <span className="text-xs font-bold text-green-600 uppercase tracking-wider">
                       Strong
                     </span>
-                    <p className="mt-1 text-sm text-gray-700">{row.good}</p>
+                    <p className="mt-1 text-sm text-muted-foreground">{row.good}</p>
                   </div>
                 </div>
-                <p className="text-xs text-gray-500 leading-relaxed">
+                <p className="text-xs text-muted-foreground leading-relaxed">
                   <strong>Why:</strong> {row.why}
                 </p>
               </div>
@@ -245,12 +245,12 @@ export default function EssayStructurePage() {
       </section>
 
       {/* Linking paragraphs */}
-      <section className="bg-gray-50 px-4 py-14">
+      <section className="bg-muted px-4 py-14">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-gray-900 sm:text-3xl">
+          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
             Linking paragraphs
           </h2>
-          <p className="mt-3 text-gray-600 leading-relaxed">
+          <p className="mt-3 text-muted-foreground leading-relaxed">
             Your essay should flow logically from one paragraph to the next. Each
             paragraph should build on, contrast with, or develop the idea from the
             previous one. Here are the main linking strategies:
@@ -297,21 +297,21 @@ export default function EssayStructurePage() {
             ].map((link) => (
               <div
                 key={link.type}
-                className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
+                className="rounded-xl border border-border bg-card p-6 shadow-md"
               >
-                <h3 className="font-bold text-gray-900">{link.type}</h3>
-                <p className="mt-2 text-sm text-gray-600">{link.use}</p>
+                <h3 className="font-bold text-foreground">{link.type}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{link.use}</p>
                 <div className="mt-3 flex flex-wrap gap-2">
                   {link.connectives.map((c) => (
                     <span
                       key={c}
-                      className="rounded-full bg-[#2E86C1]/10 px-3 py-1 text-xs font-medium text-[#1A5276]"
+                      className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-foreground"
                     >
                       {c}
                     </span>
                   ))}
                 </div>
-                <blockquote className="mt-4 rounded-lg border-l-4 border-[#2E86C1] bg-gray-50 px-4 py-3 text-sm italic text-gray-700 leading-relaxed">
+                <blockquote className="mt-4 rounded-lg border-l-4 border-[#2E86C1] bg-muted px-4 py-3 text-sm italic text-muted-foreground leading-relaxed">
                   {link.example}
                 </blockquote>
               </div>
@@ -322,21 +322,21 @@ export default function EssayStructurePage() {
 
       {/* How many paragraphs */}
       <section className="mx-auto max-w-5xl px-4 py-14">
-        <h2 className="text-2xl font-bold text-gray-900 sm:text-3xl">
+        <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
           How many paragraphs for different mark allocations
         </h2>
-        <p className="mt-3 text-gray-600 leading-relaxed">
+        <p className="mt-3 text-muted-foreground leading-relaxed">
           The number of paragraphs you write should be proportional to the marks
           available. Here is a practical guide -- these are not rigid rules, but
           reliable targets.
         </p>
 
-        <div className="mt-8 overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
+        <div className="mt-8 overflow-hidden rounded-xl border border-border bg-card shadow-md">
           {/* Desktop table */}
           <div className="hidden sm:block">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-gray-100 text-left text-xs font-semibold uppercase tracking-wider text-gray-400">
+                <tr className="border-b border-border text-left text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                   <th className="px-6 py-3">Mark allocation</th>
                   <th className="px-6 py-3">Suggested paragraphs</th>
                   <th className="px-6 py-3">Structure</th>
@@ -370,15 +370,15 @@ export default function EssayStructurePage() {
                     examples: "AQA Literature (inc. SPaG), Edexcel Literature",
                   },
                 ].map((row) => (
-                  <tr key={row.marks} className="hover:bg-gray-50/50">
-                    <td className="px-6 py-4 font-bold text-[#1A5276]">
+                  <tr key={row.marks} className="hover:bg-muted/50">
+                    <td className="px-6 py-4 font-bold text-foreground">
                       {row.marks}
                     </td>
-                    <td className="px-6 py-4 font-semibold text-gray-900">
+                    <td className="px-6 py-4 font-semibold text-foreground">
                       {row.paras}
                     </td>
-                    <td className="px-6 py-4 text-gray-600">{row.structure}</td>
-                    <td className="px-6 py-4 text-gray-500">{row.examples}</td>
+                    <td className="px-6 py-4 text-muted-foreground">{row.structure}</td>
+                    <td className="px-6 py-4 text-muted-foreground">{row.examples}</td>
                   </tr>
                 ))}
               </tbody>
@@ -415,13 +415,13 @@ export default function EssayStructurePage() {
             ].map((row) => (
               <div key={row.marks} className="p-4 space-y-2">
                 <div className="flex items-center justify-between">
-                  <span className="font-bold text-[#1A5276]">{row.marks}</span>
-                  <span className="rounded-full bg-[#2E86C1]/10 px-3 py-1 text-xs font-semibold text-[#1A5276]">
+                  <span className="font-bold text-foreground">{row.marks}</span>
+                  <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-foreground">
                     {row.paras}
                   </span>
                 </div>
-                <p className="text-sm text-gray-600">{row.structure}</p>
-                <p className="text-xs text-gray-400">{row.examples}</p>
+                <p className="text-sm text-muted-foreground">{row.structure}</p>
+                <p className="text-xs text-muted-foreground">{row.examples}</p>
               </div>
             ))}
           </div>
@@ -429,12 +429,12 @@ export default function EssayStructurePage() {
       </section>
 
       {/* Conclusion techniques */}
-      <section className="bg-gray-50 px-4 py-14">
+      <section className="bg-muted px-4 py-14">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-gray-900 sm:text-3xl">
+          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
             Conclusion techniques
           </h2>
-          <p className="mt-3 text-gray-600 leading-relaxed">
+          <p className="mt-3 text-muted-foreground leading-relaxed">
             A strong conclusion does three things: it answers the question
             decisively, it pulls together the threads of your argument, and it
             leaves the examiner with a final insight. It should never introduce new
@@ -470,13 +470,13 @@ export default function EssayStructurePage() {
             ].map((tech) => (
               <div
                 key={tech.title}
-                className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
+                className="rounded-xl border border-border bg-card p-6 shadow-md"
               >
-                <h3 className="font-bold text-gray-900">{tech.title}</h3>
-                <p className="mt-2 text-sm text-gray-600 leading-relaxed">
+                <h3 className="font-bold text-foreground">{tech.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   {tech.desc}
                 </p>
-                <blockquote className="mt-4 rounded-lg border-l-4 border-[#2E86C1] bg-gray-50 px-4 py-3 text-sm italic text-gray-700 leading-relaxed">
+                <blockquote className="mt-4 rounded-lg border-l-4 border-[#2E86C1] bg-muted px-4 py-3 text-sm italic text-muted-foreground leading-relaxed">
                   {tech.example}
                 </blockquote>
               </div>

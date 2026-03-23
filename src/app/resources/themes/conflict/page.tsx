@@ -137,7 +137,7 @@ export default function ConflictThemePage() {
         <div className="mx-auto max-w-4xl text-center">
           <Link
             href="/resources/themes"
-            className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2E86C1]/80 hover:text-white transition-colors"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary/80 hover:text-white transition-colors"
           >
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
@@ -156,8 +156,8 @@ export default function ConflictThemePage() {
 
       {/* Texts */}
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-gray-900">Conflict across texts</h2>
-        <p className="mt-2 text-gray-600">
+        <h2 className="text-2xl font-bold text-foreground">Conflict across texts</h2>
+        <p className="mt-2 text-muted-foreground">
           From family feuds to global warfare to the darkness within --
           conflict takes many forms across the GCSE canon.
         </p>
@@ -166,14 +166,14 @@ export default function ConflictThemePage() {
           {TEXTS.map((text) => (
             <article
               key={text.title}
-              className={`rounded-2xl border-2 ${text.colour} bg-white p-6 shadow-sm sm:p-8`}
+              className={`rounded-2xl border-2 ${text.colour} bg-card p-6 shadow-md sm:p-8`}
             >
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900">
+                  <h3 className="text-xl font-bold text-foreground">
                     {text.title}
                   </h3>
-                  <p className="mt-1 text-sm text-gray-500">
+                  <p className="mt-1 text-sm text-muted-foreground">
                     {text.subtitle} &middot; {text.author}
                   </p>
                 </div>
@@ -184,8 +184,8 @@ export default function ConflictThemePage() {
 
               <ul className="mt-5 space-y-3">
                 {text.analysis.map((point, i) => (
-                  <li key={i} className="flex gap-3 text-sm leading-relaxed text-gray-700">
-                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#1A5276]/10 text-xs font-bold text-[#1A5276]">
+                  <li key={i} className="flex gap-3 text-sm leading-relaxed text-muted-foreground">
+                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#1A5276]/10 text-xs font-bold text-foreground">
                       {i + 1}
                     </span>
                     {point}
@@ -194,14 +194,14 @@ export default function ConflictThemePage() {
               </ul>
 
               <div className="mt-6">
-                <h4 className="text-sm font-bold uppercase tracking-wider text-gray-400">
+                <h4 className="text-sm font-bold uppercase tracking-wider text-muted-foreground">
                   Key Quotes
                 </h4>
                 <div className="mt-3 space-y-4">
                   {text.quotes.map((q, i) => (
-                    <div key={i} className="rounded-xl border border-gray-100 bg-gray-50 p-4">
-                      <p className="font-medium text-gray-900">{q.text}</p>
-                      <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                    <div key={i} className="rounded-xl border border-border bg-muted p-4">
+                      <p className="font-medium text-foreground">{q.text}</p>
+                      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                         {q.analysis}
                       </p>
                     </div>
@@ -214,21 +214,21 @@ export default function ConflictThemePage() {
       </section>
 
       {/* Comparison ideas */}
-      <section className="bg-gray-50 px-4 py-14 sm:px-6 lg:px-8">
+      <section className="bg-muted px-4 py-14 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-2xl font-bold text-gray-900">Comparison ideas</h2>
-          <p className="mt-2 text-gray-600">
+          <h2 className="text-2xl font-bold text-foreground">Comparison ideas</h2>
+          <p className="mt-2 text-muted-foreground">
             Use these as starting points for thematic comparison paragraphs on
             conflict.
           </p>
 
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
             {COMPARISON_IDEAS.map((point) => (
-              <div key={point.title} className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-                <h3 className="text-base font-bold text-gray-900">
+              <div key={point.title} className="rounded-xl border border-border bg-card p-6 shadow-md">
+                <h3 className="text-base font-bold text-foreground">
                   {point.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {point.description}
                 </p>
               </div>
@@ -239,7 +239,7 @@ export default function ConflictThemePage() {
 
       {/* Other themes */}
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-gray-900">Explore other themes</h2>
+        <h2 className="text-2xl font-bold text-foreground">Explore other themes</h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {[
             { label: "Power", href: "/resources/themes/power" },
@@ -250,12 +250,12 @@ export default function ConflictThemePage() {
             <Link
               key={link.href}
               href={link.href}
-              className="group rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition hover:shadow-md hover:border-[#2E86C1]/40"
+              className="group rounded-xl border border-border bg-card p-5 shadow-md transition hover:shadow-md hover:border-[#2E86C1]/40"
             >
-              <h3 className="font-bold text-gray-900 group-hover:text-[#1A5276] transition-colors">
+              <h3 className="font-bold text-foreground group-hover:text-foreground transition-colors">
                 {link.label}
               </h3>
-              <span className="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-[#2E86C1] group-hover:text-[#1A5276] transition-colors">
+              <span className="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:text-foreground transition-colors">
                 Explore <ArrowRight />
               </span>
             </Link>

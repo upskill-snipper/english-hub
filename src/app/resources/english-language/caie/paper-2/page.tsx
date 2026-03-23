@@ -55,20 +55,20 @@ export default function Paper2Page() {
 
         {/* Paper structure */}
         <section aria-labelledby="structure-heading">
-          <h2 id="structure-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="structure-heading" className="text-2xl font-bold text-foreground">
             Paper Structure
           </h2>
           <div className="mt-4 overflow-x-auto">
             <table className="w-full min-w-[500px] text-left text-sm">
               <thead>
                 <tr className="border-b-2 border-primary/20">
-                  <th className="py-3 pr-4 font-semibold text-gray-900">Section</th>
-                  <th className="py-3 pr-4 font-semibold text-gray-900">Task</th>
-                  <th className="py-3 pr-4 font-semibold text-gray-900">Marks</th>
-                  <th className="py-3 font-semibold text-gray-900">Suggested Time</th>
+                  <th className="py-3 pr-4 font-semibold text-foreground">Section</th>
+                  <th className="py-3 pr-4 font-semibold text-foreground">Task</th>
+                  <th className="py-3 pr-4 font-semibold text-foreground">Marks</th>
+                  <th className="py-3 font-semibold text-foreground">Suggested Time</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100 text-gray-700">
+              <tbody className="divide-y divide-gray-100 text-muted-foreground">
                 <tr>
                   <td className="py-3 pr-4 font-medium">Section 1</td>
                   <td className="py-3 pr-4">Directed Writing &mdash; write in a specified format using ideas from a passage and your own ideas</td>
@@ -84,45 +84,45 @@ export default function Paper2Page() {
               </tbody>
             </table>
           </div>
-          <p className="mt-3 text-sm text-gray-500">
+          <p className="mt-3 text-sm text-muted-foreground">
             Total: 80 marks in approximately 2 hours. Quality of written
             communication (grammar, spelling, punctuation, vocabulary) is
             assessed throughout both sections.
           </p>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Section 1: Directed Writing ─────────────────────── */}
         <section aria-labelledby="directed-heading">
-          <h2 id="directed-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="directed-heading" className="text-2xl font-bold text-foreground">
             Section 1: Directed Writing
           </h2>
-          <p className="mt-3 text-gray-700 leading-relaxed">
+          <p className="mt-3 text-muted-foreground leading-relaxed">
             You will be given a short reading passage and asked to write a
             response in a specific format (e.g. a letter, report, speech,
             article, or journal entry). You must use ideas from the passage
             <strong> and </strong> include your own ideas and opinions.
           </p>
 
-          <h3 className="mt-8 text-lg font-semibold text-gray-900">
+          <h3 className="mt-8 text-lg font-semibold text-foreground">
             Directed Writing Formats
           </h3>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-sm text-muted-foreground">
             Each format has its own conventions. Using the correct format and
             register is essential for top marks.
           </p>
 
           <div className="mt-6 space-y-6">
             {/* Formal letter */}
-            <div className="rounded-lg border border-gray-200 bg-white p-5">
+            <div className="rounded-lg border border-border bg-card p-5">
               <h4 className="font-semibold text-primary">Formal Letter</h4>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Used for writing to officials, companies, or people you do not
                 know well.
               </p>
-              <div className="mt-3 rounded bg-gray-50 p-4 text-sm text-gray-700">
-                <p className="font-semibold text-gray-900 mb-2">Format requirements:</p>
+              <div className="mt-3 rounded bg-muted p-4 text-sm text-muted-foreground">
+                <p className="font-semibold text-foreground mb-2">Format requirements:</p>
                 <ul className="space-y-1">
                   <li>&bull; Your address (top right)</li>
                   <li>&bull; Date below your address</li>
@@ -136,13 +136,13 @@ export default function Paper2Page() {
             </div>
 
             {/* Informal letter */}
-            <div className="rounded-lg border border-gray-200 bg-white p-5">
+            <div className="rounded-lg border border-border bg-card p-5">
               <h4 className="font-semibold text-primary">Informal Letter</h4>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Used for writing to friends, family, or people you know well.
               </p>
-              <div className="mt-3 rounded bg-gray-50 p-4 text-sm text-gray-700">
-                <p className="font-semibold text-gray-900 mb-2">Format requirements:</p>
+              <div className="mt-3 rounded bg-muted p-4 text-sm text-muted-foreground">
+                <p className="font-semibold text-foreground mb-2">Format requirements:</p>
                 <ul className="space-y-1">
                   <li>&bull; Your address (top right) &mdash; optional in exam conditions</li>
                   <li>&bull; Date</li>
@@ -155,14 +155,14 @@ export default function Paper2Page() {
             </div>
 
             {/* Report */}
-            <div className="rounded-lg border border-gray-200 bg-white p-5">
+            <div className="rounded-lg border border-border bg-card p-5">
               <h4 className="font-semibold text-primary">Report</h4>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Written for a specific audience (e.g. a headteacher, a council)
                 to present findings and make recommendations.
               </p>
-              <div className="mt-3 rounded bg-gray-50 p-4 text-sm text-gray-700">
-                <p className="font-semibold text-gray-900 mb-2">Format requirements:</p>
+              <div className="mt-3 rounded bg-muted p-4 text-sm text-muted-foreground">
+                <p className="font-semibold text-foreground mb-2">Format requirements:</p>
                 <ul className="space-y-1">
                   <li>&bull; Title: &ldquo;Report on [topic]&rdquo;</li>
                   <li>&bull; &ldquo;Prepared by: [your name/role]&rdquo; and &ldquo;Date: [date]&rdquo;</li>
@@ -175,14 +175,14 @@ export default function Paper2Page() {
             </div>
 
             {/* Article */}
-            <div className="rounded-lg border border-gray-200 bg-white p-5">
+            <div className="rounded-lg border border-border bg-card p-5">
               <h4 className="font-semibold text-primary">Newspaper / Magazine Article</h4>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Written for a general readership, typically for a school
                 magazine or local newspaper.
               </p>
-              <div className="mt-3 rounded bg-gray-50 p-4 text-sm text-gray-700">
-                <p className="font-semibold text-gray-900 mb-2">Format requirements:</p>
+              <div className="mt-3 rounded bg-muted p-4 text-sm text-muted-foreground">
+                <p className="font-semibold text-foreground mb-2">Format requirements:</p>
                 <ul className="space-y-1">
                   <li>&bull; Eye-catching headline</li>
                   <li>&bull; Optional subheading or strapline</li>
@@ -196,14 +196,14 @@ export default function Paper2Page() {
             </div>
 
             {/* Speech */}
-            <div className="rounded-lg border border-gray-200 bg-white p-5">
+            <div className="rounded-lg border border-border bg-card p-5">
               <h4 className="font-semibold text-primary">Speech</h4>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Written to be spoken aloud to a specific audience (e.g.
                 classmates, a school assembly, a community meeting).
               </p>
-              <div className="mt-3 rounded bg-gray-50 p-4 text-sm text-gray-700">
-                <p className="font-semibold text-gray-900 mb-2">Format requirements:</p>
+              <div className="mt-3 rounded bg-muted p-4 text-sm text-muted-foreground">
+                <p className="font-semibold text-foreground mb-2">Format requirements:</p>
                 <ul className="space-y-1">
                   <li>&bull; Address the audience directly: &ldquo;Good morning, everyone&rdquo; / &ldquo;Ladies and gentlemen&rdquo;</li>
                   <li>&bull; Rhetorical questions, tricolon (rule of three), repetition for emphasis</li>
@@ -217,14 +217,14 @@ export default function Paper2Page() {
             </div>
 
             {/* Journal / Diary */}
-            <div className="rounded-lg border border-gray-200 bg-white p-5">
+            <div className="rounded-lg border border-border bg-card p-5">
               <h4 className="font-semibold text-primary">Journal / Diary Entry</h4>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 A personal, reflective piece written from a specific character&rsquo;s
                 perspective.
               </p>
-              <div className="mt-3 rounded bg-gray-50 p-4 text-sm text-gray-700">
-                <p className="font-semibold text-gray-900 mb-2">Format requirements:</p>
+              <div className="mt-3 rounded bg-muted p-4 text-sm text-muted-foreground">
+                <p className="font-semibold text-foreground mb-2">Format requirements:</p>
                 <ul className="space-y-1">
                   <li>&bull; Date at the top</li>
                   <li>&bull; First person throughout</li>
@@ -242,23 +242,23 @@ export default function Paper2Page() {
             <h3 className="text-lg font-semibold text-primary">
               Directed Writing Mark Scheme
             </h3>
-            <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+            <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
               The 40 marks are split into two Assessment Objectives:
             </p>
             <div className="mt-4 grid gap-4 sm:grid-cols-2">
-              <div className="rounded bg-white p-4 shadow-sm">
+              <div className="rounded bg-card p-4 shadow-md">
                 <p className="text-2xl font-bold text-primary">25</p>
-                <p className="text-sm font-semibold text-gray-900">Reading (Content)</p>
-                <p className="mt-1 text-xs text-gray-600 leading-relaxed">
+                <p className="text-sm font-semibold text-foreground">Reading (Content)</p>
+                <p className="mt-1 text-xs text-muted-foreground leading-relaxed">
                   How well you use ideas from the passage and develop your own
                   relevant ideas. Top band: thorough and perceptive
                   understanding with ideas developed and supported.
                 </p>
               </div>
-              <div className="rounded bg-white p-4 shadow-sm">
+              <div className="rounded bg-card p-4 shadow-md">
                 <p className="text-2xl font-bold text-accent">15</p>
-                <p className="text-sm font-semibold text-gray-900">Writing (Language)</p>
-                <p className="mt-1 text-xs text-gray-600 leading-relaxed">
+                <p className="text-sm font-semibold text-foreground">Writing (Language)</p>
+                <p className="mt-1 text-xs text-muted-foreground leading-relaxed">
                   How effectively you write &mdash; format, register, tone,
                   vocabulary, sentence structures, accuracy of grammar and
                   spelling.
@@ -268,14 +268,14 @@ export default function Paper2Page() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Section 2: Composition ──────────────────────────── */}
         <section aria-labelledby="composition-heading">
-          <h2 id="composition-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="composition-heading" className="text-2xl font-bold text-foreground">
             Section 2: Composition
           </h2>
-          <p className="mt-3 text-gray-700 leading-relaxed">
+          <p className="mt-3 text-muted-foreground leading-relaxed">
             You choose <strong>one</strong> composition from a selection of
             titles. These are split into two categories: narrative (story
             writing) and descriptive. You must choose one from either category.
@@ -283,32 +283,32 @@ export default function Paper2Page() {
 
           {/* Narrative writing */}
           <div className="mt-8">
-            <h3 className="text-lg font-semibold text-gray-900">Narrative Writing</h3>
-            <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+            <h3 className="text-lg font-semibold text-foreground">Narrative Writing</h3>
+            <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
               Narrative writing tells a story. Cambridge examiners are looking
               for a well-structured story with engaging characters, a clear
               plot, and effective use of language.
             </p>
 
             <div className="mt-4 space-y-4">
-              <div className="rounded-lg border border-gray-200 p-5">
+              <div className="rounded-lg border border-border p-5">
                 <h4 className="font-semibold text-primary">Story Structure</h4>
                 <div className="mt-3 flex flex-wrap gap-2">
                   <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">Opening / Exposition</span>
-                  <span className="text-gray-400">&rarr;</span>
+                  <span className="text-muted-foreground">&rarr;</span>
                   <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">Rising Action</span>
-                  <span className="text-gray-400">&rarr;</span>
+                  <span className="text-muted-foreground">&rarr;</span>
                   <span className="rounded-full bg-accent/10 px-3 py-1 text-xs font-medium text-accent">Climax</span>
-                  <span className="text-gray-400">&rarr;</span>
+                  <span className="text-muted-foreground">&rarr;</span>
                   <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">Falling Action</span>
-                  <span className="text-gray-400">&rarr;</span>
+                  <span className="text-muted-foreground">&rarr;</span>
                   <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">Resolution</span>
                 </div>
               </div>
 
-              <div className="rounded-lg border border-gray-200 p-5">
+              <div className="rounded-lg border border-border p-5">
                 <h4 className="font-semibold text-primary">Top Tips for Narrative</h4>
-                <ul className="mt-3 space-y-2 text-sm text-gray-700">
+                <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                     <strong>Start in the middle of the action</strong> (in medias res) &mdash;
@@ -350,17 +350,17 @@ export default function Paper2Page() {
 
           {/* Descriptive writing */}
           <div className="mt-10">
-            <h3 className="text-lg font-semibold text-gray-900">Descriptive Writing</h3>
-            <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+            <h3 className="text-lg font-semibold text-foreground">Descriptive Writing</h3>
+            <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
               Descriptive writing creates a vivid picture using language. There
               is no plot &mdash; the focus is entirely on using your senses
               and language techniques to bring a scene to life.
             </p>
 
             <div className="mt-4 space-y-4">
-              <div className="rounded-lg border border-gray-200 p-5">
+              <div className="rounded-lg border border-border p-5">
                 <h4 className="font-semibold text-primary">The Five Senses Framework</h4>
-                <p className="mt-2 text-sm text-gray-700">
+                <p className="mt-2 text-sm text-muted-foreground">
                   Strong descriptive writing appeals to multiple senses, not
                   just sight:
                 </p>
@@ -368,34 +368,34 @@ export default function Paper2Page() {
                   <div className="rounded bg-primary/5 p-3 text-center">
                     <p className="text-lg">&#128065;</p>
                     <p className="text-xs font-semibold text-primary">Sight</p>
-                    <p className="mt-1 text-xs text-gray-600">Colours, shapes, light, movement</p>
+                    <p className="mt-1 text-xs text-muted-foreground">Colours, shapes, light, movement</p>
                   </div>
                   <div className="rounded bg-primary/5 p-3 text-center">
                     <p className="text-lg">&#128066;</p>
                     <p className="text-xs font-semibold text-primary">Sound</p>
-                    <p className="mt-1 text-xs text-gray-600">Volume, rhythm, silence, echoes</p>
+                    <p className="mt-1 text-xs text-muted-foreground">Volume, rhythm, silence, echoes</p>
                   </div>
                   <div className="rounded bg-primary/5 p-3 text-center">
                     <p className="text-lg">&#129345;</p>
                     <p className="text-xs font-semibold text-primary">Touch</p>
-                    <p className="mt-1 text-xs text-gray-600">Texture, temperature, pressure</p>
+                    <p className="mt-1 text-xs text-muted-foreground">Texture, temperature, pressure</p>
                   </div>
                   <div className="rounded bg-primary/5 p-3 text-center">
                     <p className="text-lg">&#128067;</p>
                     <p className="text-xs font-semibold text-primary">Smell</p>
-                    <p className="mt-1 text-xs text-gray-600">Aromas, odours, fragrances</p>
+                    <p className="mt-1 text-xs text-muted-foreground">Aromas, odours, fragrances</p>
                   </div>
                   <div className="rounded bg-primary/5 p-3 text-center">
                     <p className="text-lg">&#128069;</p>
                     <p className="text-xs font-semibold text-primary">Taste</p>
-                    <p className="mt-1 text-xs text-gray-600">Flavours, textures in the mouth</p>
+                    <p className="mt-1 text-xs text-muted-foreground">Flavours, textures in the mouth</p>
                   </div>
                 </div>
               </div>
 
-              <div className="rounded-lg border border-gray-200 p-5">
+              <div className="rounded-lg border border-border p-5">
                 <h4 className="font-semibold text-primary">Top Tips for Descriptive</h4>
-                <ul className="mt-3 space-y-2 text-sm text-gray-700">
+                <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                     <strong>Zoom in and out</strong> &mdash; start with a wide
@@ -431,14 +431,14 @@ export default function Paper2Page() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Full band descriptors ───────────────────────────── */}
         <section aria-labelledby="bands-heading">
-          <h2 id="bands-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="bands-heading" className="text-2xl font-bold text-foreground">
             Composition Band Descriptors
           </h2>
-          <p className="mt-3 text-gray-700 leading-relaxed">
+          <p className="mt-3 text-muted-foreground leading-relaxed">
             Understanding the band descriptors is essential. Here is what
             Cambridge examiners are looking for at each level. The composition
             is marked out of 40: up to 16 for content and structure, and up
@@ -451,22 +451,22 @@ export default function Paper2Page() {
               <div className="flex items-center gap-3">
                 <span className="flex h-8 w-8 items-center justify-center rounded-full bg-accent text-sm font-bold text-white">6</span>
                 <div>
-                  <p className="font-semibold text-gray-900">Outstanding (35&ndash;40 marks)</p>
+                  <p className="font-semibold text-foreground">Outstanding (35&ndash;40 marks)</p>
                   <p className="text-xs text-accent-600">A* / Grade 9 standard</p>
                 </div>
               </div>
               <div className="mt-3 grid gap-3 sm:grid-cols-2">
                 <div>
-                  <p className="text-xs font-semibold uppercase text-gray-500">Content &amp; Structure</p>
-                  <ul className="mt-1 space-y-1 text-sm text-gray-700">
+                  <p className="text-xs font-semibold uppercase text-muted-foreground">Content &amp; Structure</p>
+                  <ul className="mt-1 space-y-1 text-sm text-muted-foreground">
                     <li>&bull; Highly effective, engaging content with a confident personal voice</li>
                     <li>&bull; Complex ideas developed with sophistication</li>
                     <li>&bull; Structure is varied, purposeful, and wholly convincing</li>
                   </ul>
                 </div>
                 <div>
-                  <p className="text-xs font-semibold uppercase text-gray-500">Style &amp; Accuracy</p>
-                  <ul className="mt-1 space-y-1 text-sm text-gray-700">
+                  <p className="text-xs font-semibold uppercase text-muted-foreground">Style &amp; Accuracy</p>
+                  <ul className="mt-1 space-y-1 text-sm text-muted-foreground">
                     <li>&bull; Wide range of ambitious vocabulary, precisely used</li>
                     <li>&bull; Sentence structures are varied, controlled, and used for deliberate effect</li>
                     <li>&bull; Spelling, punctuation, and grammar are virtually flawless</li>
@@ -476,26 +476,26 @@ export default function Paper2Page() {
             </div>
 
             {/* Band 5 */}
-            <div className="rounded-lg border border-gray-200 bg-white p-5">
+            <div className="rounded-lg border border-border bg-card p-5">
               <div className="flex items-center gap-3">
                 <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">5</span>
                 <div>
-                  <p className="font-semibold text-gray-900">Very Good (29&ndash;34 marks)</p>
+                  <p className="font-semibold text-foreground">Very Good (29&ndash;34 marks)</p>
                   <p className="text-xs text-primary">A / Grade 7&ndash;8 standard</p>
                 </div>
               </div>
               <div className="mt-3 grid gap-3 sm:grid-cols-2">
                 <div>
-                  <p className="text-xs font-semibold uppercase text-gray-500">Content &amp; Structure</p>
-                  <ul className="mt-1 space-y-1 text-sm text-gray-700">
+                  <p className="text-xs font-semibold uppercase text-muted-foreground">Content &amp; Structure</p>
+                  <ul className="mt-1 space-y-1 text-sm text-muted-foreground">
                     <li>&bull; Effective content that is well-developed and sustained</li>
                     <li>&bull; Clear sense of purpose and audience awareness</li>
                     <li>&bull; Well-organised with effective structural choices</li>
                   </ul>
                 </div>
                 <div>
-                  <p className="text-xs font-semibold uppercase text-gray-500">Style &amp; Accuracy</p>
-                  <ul className="mt-1 space-y-1 text-sm text-gray-700">
+                  <p className="text-xs font-semibold uppercase text-muted-foreground">Style &amp; Accuracy</p>
+                  <ul className="mt-1 space-y-1 text-sm text-muted-foreground">
                     <li>&bull; Wide vocabulary used with some precision</li>
                     <li>&bull; Varied and effective sentence structures</li>
                     <li>&bull; Generally accurate with occasional minor errors</li>
@@ -505,26 +505,26 @@ export default function Paper2Page() {
             </div>
 
             {/* Band 4 */}
-            <div className="rounded-lg border border-gray-200 bg-white p-5">
+            <div className="rounded-lg border border-border bg-card p-5">
               <div className="flex items-center gap-3">
                 <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/80 text-sm font-bold text-white">4</span>
                 <div>
-                  <p className="font-semibold text-gray-900">Good (22&ndash;28 marks)</p>
-                  <p className="text-xs text-gray-500">B / Grade 5&ndash;6 standard</p>
+                  <p className="font-semibold text-foreground">Good (22&ndash;28 marks)</p>
+                  <p className="text-xs text-muted-foreground">B / Grade 5&ndash;6 standard</p>
                 </div>
               </div>
               <div className="mt-3 grid gap-3 sm:grid-cols-2">
                 <div>
-                  <p className="text-xs font-semibold uppercase text-gray-500">Content &amp; Structure</p>
-                  <ul className="mt-1 space-y-1 text-sm text-gray-700">
+                  <p className="text-xs font-semibold uppercase text-muted-foreground">Content &amp; Structure</p>
+                  <ul className="mt-1 space-y-1 text-sm text-muted-foreground">
                     <li>&bull; Relevant content that is developed with some detail</li>
                     <li>&bull; Awareness of purpose and audience</li>
                     <li>&bull; Structured with some variety &mdash; clear beginning, middle, and end</li>
                   </ul>
                 </div>
                 <div>
-                  <p className="text-xs font-semibold uppercase text-gray-500">Style &amp; Accuracy</p>
-                  <ul className="mt-1 space-y-1 text-sm text-gray-700">
+                  <p className="text-xs font-semibold uppercase text-muted-foreground">Style &amp; Accuracy</p>
+                  <ul className="mt-1 space-y-1 text-sm text-muted-foreground">
                     <li>&bull; Reasonable range of vocabulary, sometimes effective</li>
                     <li>&bull; Some variety in sentence structures</li>
                     <li>&bull; Mostly accurate &mdash; errors do not impede communication</li>
@@ -534,26 +534,26 @@ export default function Paper2Page() {
             </div>
 
             {/* Band 3 */}
-            <div className="rounded-lg border border-gray-200 bg-white p-5">
+            <div className="rounded-lg border border-border bg-card p-5">
               <div className="flex items-center gap-3">
                 <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-400 text-sm font-bold text-white">3</span>
                 <div>
-                  <p className="font-semibold text-gray-900">Adequate (15&ndash;21 marks)</p>
-                  <p className="text-xs text-gray-500">C / Grade 4 standard</p>
+                  <p className="font-semibold text-foreground">Adequate (15&ndash;21 marks)</p>
+                  <p className="text-xs text-muted-foreground">C / Grade 4 standard</p>
                 </div>
               </div>
               <div className="mt-3 grid gap-3 sm:grid-cols-2">
                 <div>
-                  <p className="text-xs font-semibold uppercase text-gray-500">Content &amp; Structure</p>
-                  <ul className="mt-1 space-y-1 text-sm text-gray-700">
+                  <p className="text-xs font-semibold uppercase text-muted-foreground">Content &amp; Structure</p>
+                  <ul className="mt-1 space-y-1 text-sm text-muted-foreground">
                     <li>&bull; Some relevant content but may lack development</li>
                     <li>&bull; Some awareness of purpose</li>
                     <li>&bull; Straightforward structure with limited variation</li>
                   </ul>
                 </div>
                 <div>
-                  <p className="text-xs font-semibold uppercase text-gray-500">Style &amp; Accuracy</p>
-                  <ul className="mt-1 space-y-1 text-sm text-gray-700">
+                  <p className="text-xs font-semibold uppercase text-muted-foreground">Style &amp; Accuracy</p>
+                  <ul className="mt-1 space-y-1 text-sm text-muted-foreground">
                     <li>&bull; Limited vocabulary &mdash; simple but functional</li>
                     <li>&bull; Mostly simple sentence structures</li>
                     <li>&bull; Errors are noticeable but meaning is still clear</li>
@@ -563,15 +563,15 @@ export default function Paper2Page() {
             </div>
 
             {/* Band 2 */}
-            <div className="rounded-lg border border-gray-200 bg-white p-5">
+            <div className="rounded-lg border border-border bg-card p-5">
               <div className="flex items-center gap-3">
                 <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-300 text-sm font-bold text-white">2</span>
                 <div>
-                  <p className="font-semibold text-gray-900">Limited (8&ndash;14 marks)</p>
-                  <p className="text-xs text-gray-500">D&ndash;E / Grade 2&ndash;3 standard</p>
+                  <p className="font-semibold text-foreground">Limited (8&ndash;14 marks)</p>
+                  <p className="text-xs text-muted-foreground">D&ndash;E / Grade 2&ndash;3 standard</p>
                 </div>
               </div>
-              <div className="mt-3 text-sm text-gray-700">
+              <div className="mt-3 text-sm text-muted-foreground">
                 <p>
                   Content is thin or partially relevant. Limited vocabulary and
                   simple structures dominate. Errors in grammar and spelling
@@ -581,15 +581,15 @@ export default function Paper2Page() {
             </div>
 
             {/* Band 1 */}
-            <div className="rounded-lg border border-gray-200 bg-white p-5">
+            <div className="rounded-lg border border-border bg-card p-5">
               <div className="flex items-center gap-3">
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-200 text-sm font-bold text-gray-600">1</span>
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-200 text-sm font-bold text-muted-foreground">1</span>
                 <div>
-                  <p className="font-semibold text-gray-900">Poor (1&ndash;7 marks)</p>
-                  <p className="text-xs text-gray-500">F&ndash;G / Grade 1 standard</p>
+                  <p className="font-semibold text-foreground">Poor (1&ndash;7 marks)</p>
+                  <p className="text-xs text-muted-foreground">F&ndash;G / Grade 1 standard</p>
                 </div>
               </div>
-              <div className="mt-3 text-sm text-gray-700">
+              <div className="mt-3 text-sm text-muted-foreground">
                 <p>
                   Content is largely irrelevant or very brief. Very limited
                   vocabulary. Persistent errors seriously impede communication.

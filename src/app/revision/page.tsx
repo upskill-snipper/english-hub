@@ -11,6 +11,7 @@ import {
   Layers,
   Search,
   ArrowLeft,
+  ArrowRight,
   Trophy,
   RefreshCw,
   Filter,
@@ -18,6 +19,9 @@ import {
   Clock,
   Calendar,
   TrendingUp,
+  Wrench,
+  BookA,
+  Sparkles,
 } from 'lucide-react'
 import Link from 'next/link'
 import { flashcardDecks, type FlashcardDeck } from '@/data/flashcard-data'
@@ -926,6 +930,69 @@ export default function RevisionPage() {
             </Card>
           )}
         </section>
+
+        {/* ── Study Resources Section ─────────────────────────────────── */}
+        {view === 'decks' && (
+          <section className="mt-16">
+            <h2 className="mb-4 flex items-center gap-2 text-xl font-bold text-foreground">
+              <BookOpen className="h-5 w-5 text-primary" />
+              Study Resources
+            </h2>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              {[
+                {
+                  href: '/resources/revision-notes',
+                  icon: BookOpen,
+                  title: 'Text Study Guides',
+                  description:
+                    'In-depth revision notes for all 22 GCSE/IGCSE set texts',
+                },
+                {
+                  href: '/resources/study-tools',
+                  icon: Wrench,
+                  title: 'Study Tools',
+                  description:
+                    'Planners, checklists, and quote testers to boost your revision',
+                },
+                {
+                  href: '/resources/vocabulary',
+                  icon: BookA,
+                  title: 'Vocabulary Builder',
+                  description:
+                    'Expand your analytical and descriptive vocabulary',
+                },
+                {
+                  href: '/resources/techniques',
+                  icon: Sparkles,
+                  title: 'Techniques Reference',
+                  description: 'Master language and structural devices',
+                },
+              ].map((resource) => (
+                <Link key={resource.href} href={resource.href}>
+                  <div className="bg-card rounded-xl border border-border p-5 hover:border-primary/40 transition-all group">
+                    <div className="flex items-start gap-4">
+                      <div className="rounded-lg bg-primary/10 p-2.5">
+                        <resource.icon className="h-5 w-5 text-primary" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center justify-between gap-2">
+                          <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">
+                            {resource.title}
+                          </h3>
+                          <ArrowRight className="h-4 w-4 text-muted-foreground opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                        </div>
+                        <p className="mt-1 text-sm text-muted-foreground">
+                          {resource.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
       </div>
     </main>
   )

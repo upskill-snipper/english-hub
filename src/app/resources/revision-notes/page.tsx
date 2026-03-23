@@ -581,10 +581,10 @@ export default function RevisionNotesHub() {
     <>
       {/* Hero */}
       <div className="mb-10">
-        <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           Revision Notes
         </h1>
-        <p className="mt-3 max-w-3xl text-lg leading-relaxed text-gray-600">
+        <p className="mt-3 max-w-3xl text-lg leading-relaxed text-muted-foreground">
           Comprehensive, exam-focused revision guides for every major GCSE
           English Literature set text. Each guide includes plot summaries,
           character analysis, key quotations with analysis, thematic
@@ -598,7 +598,7 @@ export default function RevisionNotesHub() {
         <div className="relative max-w-xl">
           <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
             <svg
-              className="h-5 w-5 text-gray-400"
+              className="h-5 w-5 text-muted-foreground"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -616,13 +616,13 @@ export default function RevisionNotesHub() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search texts, authors, or themes..."
-            className="w-full rounded-xl border border-gray-200 bg-white py-3 pl-11 pr-4 text-sm text-gray-900 shadow-sm placeholder:text-gray-400 focus:border-[#2E86C1] focus:outline-none focus:ring-2 focus:ring-[#2E86C1]/20"
+            className="w-full rounded-xl border border-border bg-card py-3 pl-11 pr-4 text-sm text-foreground shadow-md placeholder:text-muted-foreground focus:border-[#2E86C1] focus:outline-none focus:ring-2 focus:ring-primary/20"
           />
         </div>
 
         {/* Exam board filter */}
         <div className="flex flex-wrap items-center gap-2">
-          <span className="text-sm font-medium text-gray-500">
+          <span className="text-sm font-medium text-muted-foreground">
             Filter by exam board:
           </span>
           <button
@@ -630,7 +630,7 @@ export default function RevisionNotesHub() {
             className={`rounded-full px-3.5 py-1.5 text-xs font-semibold transition-colors ${
               activeBoard === null
                 ? "bg-[#1A5276] text-white"
-                : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                : "bg-gray-100 text-muted-foreground hover:bg-gray-200"
             }`}
           >
             All Boards
@@ -643,8 +643,8 @@ export default function RevisionNotesHub() {
               }
               className={`rounded-full px-3.5 py-1.5 text-xs font-semibold transition-colors ${
                 activeBoard === board
-                  ? "bg-[#2E86C1] text-white"
-                  : "bg-gray-100 text-gray-600 hover:bg-[#2E86C1]/10 hover:text-[#2E86C1]"
+                  ? "bg-primary text-white"
+                  : "bg-gray-100 text-muted-foreground hover:bg-primary/10 hover:text-primary"
               }`}
             >
               {board}
@@ -655,7 +655,7 @@ export default function RevisionNotesHub() {
 
       {/* No results */}
       {categoriesWithTexts.length === 0 && (
-        <div className="rounded-xl border border-gray-200 bg-white py-16 text-center">
+        <div className="rounded-xl border border-border bg-card py-16 text-center">
           <svg
             className="mx-auto h-12 w-12 text-gray-300"
             fill="none"
@@ -669,10 +669,10 @@ export default function RevisionNotesHub() {
               d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
             />
           </svg>
-          <h3 className="mt-4 text-lg font-semibold text-gray-900">
+          <h3 className="mt-4 text-lg font-semibold text-foreground">
             No texts found
           </h3>
-          <p className="mt-2 text-sm text-gray-500">
+          <p className="mt-2 text-sm text-muted-foreground">
             Try adjusting your search or clearing the exam board filter.
           </p>
           <button
@@ -680,7 +680,7 @@ export default function RevisionNotesHub() {
               setSearch("");
               setActiveBoard(null);
             }}
-            className="mt-4 rounded-lg bg-[#2E86C1] px-4 py-2 text-sm font-medium text-white transition hover:bg-[#1A5276]"
+            className="mt-4 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white transition hover:bg-[#1A5276]"
           >
             Clear filters
           </button>
@@ -691,8 +691,8 @@ export default function RevisionNotesHub() {
       {categoriesWithTexts.map((cat) => (
         <section key={cat.key} className="mb-12">
           <div className="mb-6">
-            <h2 className="text-2xl font-bold text-gray-900">{cat.label}</h2>
-            <p className="mt-1 text-sm text-gray-500">{cat.description}</p>
+            <h2 className="text-2xl font-bold text-foreground">{cat.label}</h2>
+            <p className="mt-1 text-sm text-muted-foreground">{cat.description}</p>
           </div>
 
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -706,7 +706,7 @@ export default function RevisionNotesHub() {
                       ? `/resources/poetry/${text.slug}`
                       : `/resources/revision-notes/${text.slug}`
                   }
-                  className="group relative flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-lg hover:border-[#2E86C1]/40"
+                  className="group relative flex flex-col overflow-hidden rounded-xl border border-border bg-card shadow-md transition hover:shadow-lg hover:border-[#2E86C1]/40"
                 >
                   {/* Gradient header */}
                   <div
@@ -743,7 +743,7 @@ export default function RevisionNotesHub() {
                       {text.themes.map((theme) => (
                         <span
                           key={theme}
-                          className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-600"
+                          className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-muted-foreground"
                         >
                           {theme}
                         </span>
@@ -757,8 +757,8 @@ export default function RevisionNotesHub() {
                           key={board}
                           className={`rounded px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider ${
                             activeBoard === board
-                              ? "bg-[#2E86C1] text-white"
-                              : "bg-[#2E86C1]/10 text-[#2E86C1]"
+                              ? "bg-primary text-white"
+                              : "bg-primary/10 text-primary"
                           }`}
                         >
                           {board}
@@ -768,7 +768,7 @@ export default function RevisionNotesHub() {
 
                     {/* CTA */}
                     <div className="mt-auto pt-4">
-                      <span className="inline-flex items-center gap-1 text-sm font-semibold text-[#2E86C1] transition-colors group-hover:text-[#1A5276]">
+                      <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors group-hover:text-foreground">
                         View revision notes
                         <svg
                           className="h-4 w-4 transition-transform group-hover:translate-x-1"
@@ -794,34 +794,34 @@ export default function RevisionNotesHub() {
       ))}
 
       {/* Study tip box */}
-      <div className="mt-4 rounded-xl border border-[#2E86C1]/20 bg-[#2E86C1]/5 p-6">
-        <h3 className="text-lg font-bold text-gray-900">
+      <div className="mt-4 rounded-xl border border-[#2E86C1]/20 bg-primary/5 p-6">
+        <h3 className="text-lg font-bold text-foreground">
           How to use these revision notes
         </h3>
-        <ul className="mt-3 space-y-2 text-sm text-gray-700">
+        <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
           <li className="flex items-start gap-2">
-            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#2E86C1]" />
+            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
             <span>
               <strong>Do not just read passively.</strong> Test yourself on
               quotes and themes after each section.
             </span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#2E86C1]" />
+            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
             <span>
               <strong>Link quotes to themes.</strong> Every quotation should
               connect to at least two themes for maximum marks.
             </span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#2E86C1]" />
+            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
             <span>
               <strong>Learn context actively.</strong> Do not just memorise
               facts -- explain how context shapes the writer&apos;s choices.
             </span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#2E86C1]" />
+            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
             <span>
               <strong>Practise timed essays.</strong> Use the essay planning
               templates in each guide to structure your responses.

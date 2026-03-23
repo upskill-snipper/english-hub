@@ -31,7 +31,7 @@ interface Category {
 const CATEGORIES: Category[] = [
   {
     name: "Society and Politics",
-    colour: "text-[#1A5276]",
+    colour: "text-foreground",
     borderColour: "border-[#1A5276]",
     bgColour: "bg-[#1A5276]/5",
     topics: [
@@ -129,9 +129,9 @@ const CATEGORIES: Category[] = [
   },
   {
     name: "Technology and the Digital World",
-    colour: "text-[#2E86C1]",
+    colour: "text-primary",
     borderColour: "border-[#2E86C1]",
-    bgColour: "bg-[#2E86C1]/5",
+    bgColour: "bg-primary/5",
     topics: [
       {
         title: "The impact of social media on mental health",
@@ -665,9 +665,9 @@ export default function SpokenLanguageTopicsPage() {
 
       {/* ── Breadcrumb ────────────────────────────────────────── */}
       <nav className="mx-auto max-w-5xl px-4 pt-6" aria-label="Breadcrumb">
-        <ol className="flex flex-wrap items-center gap-2 text-sm text-gray-500">
+        <ol className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
           <li>
-            <Link href="/" className="hover:text-[#1A5276] transition-colors">
+            <Link href="/" className="hover:text-foreground transition-colors">
               Home
             </Link>
           </li>
@@ -675,7 +675,7 @@ export default function SpokenLanguageTopicsPage() {
           <li>
             <Link
               href="/resources"
-              className="hover:text-[#1A5276] transition-colors"
+              className="hover:text-foreground transition-colors"
             >
               Resources
             </Link>
@@ -684,20 +684,20 @@ export default function SpokenLanguageTopicsPage() {
           <li>
             <Link
               href="/resources/spoken-language"
-              className="hover:text-[#1A5276] transition-colors"
+              className="hover:text-foreground transition-colors"
             >
               Spoken Language
             </Link>
           </li>
           <li>/</li>
-          <li className="font-medium text-gray-900">Topics</li>
+          <li className="font-medium text-foreground">Topics</li>
         </ol>
       </nav>
 
       {/* ── Quick navigation ──────────────────────────────────── */}
       <div className="mx-auto max-w-5xl px-4 pt-8">
-        <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-          <h2 className="text-sm font-semibold uppercase tracking-wider text-gray-500">
+        <div className="rounded-lg border border-border bg-muted p-5">
+          <h2 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
             Jump to Category
           </h2>
           <div className="mt-3 flex flex-wrap gap-2">
@@ -705,7 +705,7 @@ export default function SpokenLanguageTopicsPage() {
               <a
                 key={cat.name}
                 href={`#${cat.name.toLowerCase().replace(/[\s,&]+/g, "-")}`}
-                className={`rounded-full border px-4 py-1.5 text-sm font-medium transition hover:shadow-sm ${cat.borderColour} ${cat.bgColour} ${cat.colour}`}
+                className={`rounded-full border px-4 py-1.5 text-sm font-medium transition hover:shadow-md ${cat.borderColour} ${cat.bgColour} ${cat.colour}`}
               >
                 {cat.name}
               </a>
@@ -729,7 +729,7 @@ export default function SpokenLanguageTopicsPage() {
               >
                 {cat.name}
               </h2>
-              <p className="mt-1 text-sm text-gray-500">
+              <p className="mt-1 text-sm text-muted-foreground">
                 {cat.topics.length} topic{cat.topics.length !== 1 ? "s" : ""}
               </p>
 
@@ -737,12 +737,12 @@ export default function SpokenLanguageTopicsPage() {
                 {cat.topics.map((topic, i) => (
                   <div
                     key={i}
-                    className={`rounded-lg border-2 ${cat.borderColour}/30 bg-white p-6 shadow-sm`}
+                    className={`rounded-lg border-2 ${cat.borderColour}/30 bg-card p-6 shadow-md`}
                   >
-                    <h3 className="text-lg font-bold text-gray-900">
+                    <h3 className="text-lg font-bold text-foreground">
                       {topic.title}
                     </h3>
-                    <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                       {topic.outline}
                     </p>
 
@@ -752,7 +752,7 @@ export default function SpokenLanguageTopicsPage() {
                         <h4 className={`text-sm font-semibold uppercase tracking-wider ${cat.colour}`}>
                           Key Points to Cover
                         </h4>
-                        <ul className="ml-4 mt-2 list-disc space-y-1.5 text-sm text-gray-700">
+                        <ul className="ml-4 mt-2 list-disc space-y-1.5 text-sm text-muted-foreground">
                           {topic.keyPoints.map((point, j) => (
                             <li key={j}>{point}</li>
                           ))}
@@ -764,7 +764,7 @@ export default function SpokenLanguageTopicsPage() {
                         <h4 className={`text-sm font-semibold uppercase tracking-wider ${cat.colour}`}>
                           Potential Audience Questions
                         </h4>
-                        <ul className="ml-4 mt-2 list-disc space-y-1.5 text-sm text-gray-700">
+                        <ul className="ml-4 mt-2 list-disc space-y-1.5 text-sm text-muted-foreground">
                           {topic.questions.map((q, j) => (
                             <li key={j}>{q}</li>
                           ))}
@@ -779,11 +779,11 @@ export default function SpokenLanguageTopicsPage() {
         </div>
 
         {/* ── Choosing tips ────────────────────────────────────── */}
-        <div className="mt-16 rounded-lg border border-[#2E86C1]/20 bg-[#2E86C1]/5 p-6">
-          <h2 className="text-xl font-bold text-[#1A5276]">
+        <div className="mt-16 rounded-lg border border-[#2E86C1]/20 bg-primary/5 p-6">
+          <h2 className="text-xl font-bold text-foreground">
             How to Choose the Right Topic for You
           </h2>
-          <div className="mt-4 space-y-3 text-sm text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-3 text-sm text-muted-foreground leading-relaxed">
             <p>The best topic is one that ticks all of these boxes:</p>
             <ul className="ml-4 list-disc space-y-2">
               <li>
@@ -824,7 +824,7 @@ export default function SpokenLanguageTopicsPage() {
           </p>
           <Link
             href="/resources/spoken-language"
-            className="mt-6 inline-block rounded-lg bg-white px-8 py-3 text-sm font-semibold text-[#1A5276] shadow transition hover:bg-blue-50"
+            className="mt-6 inline-block rounded-lg bg-card px-8 py-3 text-sm font-semibold text-foreground shadow transition hover:bg-blue-50"
           >
             &larr; Back to the Full Guide
           </Link>

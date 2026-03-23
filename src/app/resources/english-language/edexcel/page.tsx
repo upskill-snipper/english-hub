@@ -107,7 +107,7 @@ export default function EdexcelEnglishLanguagePage() {
               <Link
                 key={pill.href}
                 href={pill.href}
-                className="rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-sm font-medium text-white backdrop-blur transition hover:bg-white/20"
+                className="rounded-full border border-white/30 bg-card/10 px-4 py-1.5 text-sm font-medium text-white backdrop-blur transition hover:bg-card/20"
               >
                 {pill.label}
               </Link>
@@ -117,9 +117,9 @@ export default function EdexcelEnglishLanguagePage() {
       </section>
 
       {/* ── Exam overview ─────────────────────────────────────────── */}
-      <section className="bg-gray-50 px-4 py-12">
+      <section className="bg-muted px-4 py-12">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-center text-2xl font-bold text-gray-900 sm:text-3xl">
+          <h2 className="text-center text-2xl font-bold text-foreground sm:text-3xl">
             Exam at a Glance
           </h2>
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -131,15 +131,15 @@ export default function EdexcelEnglishLanguagePage() {
             ].map((item) => (
               <div
                 key={item.label}
-                className="rounded-xl border border-gray-200 bg-white p-5 text-center shadow-sm"
+                className="rounded-xl border border-border bg-card p-5 text-center shadow-md"
               >
-                <p className="text-sm font-medium text-gray-500">{item.label}</p>
+                <p className="text-sm font-medium text-muted-foreground">{item.label}</p>
                 <p className="mt-1 text-lg font-bold text-primary">{item.value}</p>
               </div>
             ))}
           </div>
 
-          <div className="mt-8 overflow-x-auto rounded-xl border border-gray-200 bg-white shadow-sm">
+          <div className="mt-8 overflow-x-auto rounded-xl border border-border bg-card shadow-md">
             <table className="w-full text-left text-sm">
               <thead className="bg-primary text-white">
                 <tr>
@@ -150,23 +150,23 @@ export default function EdexcelEnglishLanguagePage() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
-                <tr className="hover:bg-gray-50">
-                  <td className="px-4 py-3 font-medium text-gray-900">Paper 1 &mdash; Fiction &amp; Imaginative Writing</td>
-                  <td className="px-4 py-3 text-gray-700">1 hr 45 min</td>
-                  <td className="px-4 py-3 text-gray-700">64</td>
-                  <td className="px-4 py-3 text-gray-700">40%</td>
+                <tr className="hover:bg-muted">
+                  <td className="px-4 py-3 font-medium text-foreground">Paper 1 &mdash; Fiction &amp; Imaginative Writing</td>
+                  <td className="px-4 py-3 text-muted-foreground">1 hr 45 min</td>
+                  <td className="px-4 py-3 text-muted-foreground">64</td>
+                  <td className="px-4 py-3 text-muted-foreground">40%</td>
                 </tr>
-                <tr className="hover:bg-gray-50">
-                  <td className="px-4 py-3 font-medium text-gray-900">Paper 2 &mdash; Non-Fiction &amp; Transactional Writing</td>
-                  <td className="px-4 py-3 text-gray-700">2 hr 5 min</td>
-                  <td className="px-4 py-3 text-gray-700">64</td>
-                  <td className="px-4 py-3 text-gray-700">60%</td>
+                <tr className="hover:bg-muted">
+                  <td className="px-4 py-3 font-medium text-foreground">Paper 2 &mdash; Non-Fiction &amp; Transactional Writing</td>
+                  <td className="px-4 py-3 text-muted-foreground">2 hr 5 min</td>
+                  <td className="px-4 py-3 text-muted-foreground">64</td>
+                  <td className="px-4 py-3 text-muted-foreground">60%</td>
                 </tr>
-                <tr className="hover:bg-gray-50">
-                  <td className="px-4 py-3 font-medium text-gray-900">Spoken Language Endorsement</td>
-                  <td className="px-4 py-3 text-gray-700">N/A</td>
-                  <td className="px-4 py-3 text-gray-700">Separate</td>
-                  <td className="px-4 py-3 text-gray-700">Reported separately</td>
+                <tr className="hover:bg-muted">
+                  <td className="px-4 py-3 font-medium text-foreground">Spoken Language Endorsement</td>
+                  <td className="px-4 py-3 text-muted-foreground">N/A</td>
+                  <td className="px-4 py-3 text-muted-foreground">Separate</td>
+                  <td className="px-4 py-3 text-muted-foreground">Reported separately</td>
                 </tr>
               </tbody>
             </table>
@@ -177,10 +177,10 @@ export default function EdexcelEnglishLanguagePage() {
       {/* ── Section cards ─────────────────────────────────────────── */}
       <section className="px-4 py-14 sm:py-20">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-center text-2xl font-bold text-gray-900 sm:text-3xl">
+          <h2 className="text-center text-2xl font-bold text-foreground sm:text-3xl">
             Explore Revision Materials
           </h2>
-          <p className="mx-auto mt-3 max-w-xl text-center text-gray-600">
+          <p className="mx-auto mt-3 max-w-xl text-center text-muted-foreground">
             Click any section below to access full study notes, mark schemes, example responses, and exam tips.
           </p>
 
@@ -189,17 +189,17 @@ export default function EdexcelEnglishLanguagePage() {
               <Link
                 key={s.href}
                 href={s.href}
-                className="group flex flex-col rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-md hover:-translate-y-0.5"
+                className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-md transition hover:shadow-md hover:-translate-y-0.5"
               >
                 <div
                   className={`flex h-12 w-12 items-center justify-center rounded-lg text-white ${s.colour}`}
                 >
                   {s.icon}
                 </div>
-                <h3 className="mt-4 text-lg font-bold text-gray-900 group-hover:text-primary">
+                <h3 className="mt-4 text-lg font-bold text-foreground group-hover:text-primary">
                   {s.title}
                 </h3>
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-gray-600">
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
                   {s.description}
                 </p>
                 <span className="mt-4 inline-flex items-center text-sm font-semibold text-accent group-hover:text-accent-600">
@@ -213,12 +213,12 @@ export default function EdexcelEnglishLanguagePage() {
       </section>
 
       {/* ── Assessment Objectives ─────────────────────────────────── */}
-      <section className="bg-gray-50 px-4 py-14">
+      <section className="bg-muted px-4 py-14">
         <div className="mx-auto max-w-4xl">
-          <h2 className="text-center text-2xl font-bold text-gray-900 sm:text-3xl">
+          <h2 className="text-center text-2xl font-bold text-foreground sm:text-3xl">
             Assessment Objectives (AOs)
           </h2>
-          <p className="mx-auto mt-3 max-w-xl text-center text-gray-600">
+          <p className="mx-auto mt-3 max-w-xl text-center text-muted-foreground">
             Every question targets specific AOs. Understanding them helps you know exactly what examiners want.
           </p>
 
@@ -263,14 +263,14 @@ export default function EdexcelEnglishLanguagePage() {
             ].map((obj) => (
               <div
                 key={obj.ao}
-                className="flex gap-4 rounded-xl border border-gray-200 bg-white p-5 shadow-sm"
+                className="flex gap-4 rounded-xl border border-border bg-card p-5 shadow-md"
               >
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary text-sm font-bold text-white">
                   {obj.ao}
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900">{obj.title}</h3>
-                  <p className="mt-1 text-sm text-gray-600">{obj.detail}</p>
+                  <h3 className="font-semibold text-foreground">{obj.title}</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">{obj.detail}</p>
                   <span className="mt-2 inline-block rounded-full bg-accent-50 px-2.5 py-0.5 text-xs font-medium text-accent-700">
                     {obj.weight}
                   </span>

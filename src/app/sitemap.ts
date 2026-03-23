@@ -106,12 +106,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
-      url: 'https://theenglishhub.app/subjects',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
       url: 'https://theenglishhub.app/privacy-policy',
       lastModified: new Date(),
       changeFrequency: 'monthly',

@@ -15,14 +15,14 @@ function Section({
 }) {
   const [open, setOpen] = useState(defaultOpen);
   return (
-    <div className="rounded-xl border border-gray-200 bg-white">
+    <div className="rounded-xl border border-border bg-card">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-bold text-gray-900 hover:bg-gray-50 transition-colors"
+        className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-bold text-foreground hover:bg-muted transition-colors"
       >
         <span className="text-lg">{title}</span>
         <svg
-          className={`h-5 w-5 shrink-0 text-gray-400 transition-transform ${open ? "rotate-180" : ""}`}
+          className={`h-5 w-5 shrink-0 text-muted-foreground transition-transform ${open ? "rotate-180" : ""}`}
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={2}
@@ -32,7 +32,7 @@ function Section({
         </svg>
       </button>
       {open && (
-        <div className="border-t border-gray-100 px-6 py-6 text-gray-700 leading-relaxed space-y-4">
+        <div className="border-t border-border px-6 py-6 text-muted-foreground leading-relaxed space-y-4">
           {children}
         </div>
       )}
@@ -63,7 +63,7 @@ export default function WritingSkillsPage() {
 
       {/* Breadcrumb */}
       <nav className="mx-auto max-w-5xl px-4 pt-6" aria-label="Breadcrumb">
-        <ol className="flex flex-wrap items-center gap-2 text-sm text-gray-500">
+        <ol className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
           <li>
             <Link href="/" className="hover:text-primary transition-colors">Home</Link>
           </li>
@@ -90,13 +90,13 @@ export default function WritingSkillsPage() {
           </p>
 
           <div className="mt-4 space-y-4">
-            <div className="rounded-lg border border-gray-200 p-4">
+            <div className="rounded-lg border border-border p-4">
               <h4 className="font-bold text-accent">Simple sentence</h4>
               <p className="mt-1 text-sm">
                 Contains one main clause (one subject + one verb). It expresses
                 a complete thought.
               </p>
-              <p className="mt-2 text-sm italic text-gray-600">
+              <p className="mt-2 text-sm italic text-muted-foreground">
                 &ldquo;The door slammed.&rdquo;
               </p>
               <p className="mt-2 text-sm">
@@ -107,13 +107,13 @@ export default function WritingSkillsPage() {
               </p>
             </div>
 
-            <div className="rounded-lg border border-gray-200 p-4">
+            <div className="rounded-lg border border-border p-4">
               <h4 className="font-bold text-accent">Compound sentence</h4>
               <p className="mt-1 text-sm">
                 Two or more main clauses joined by a coordinating conjunction
                 (FANBOYS: for, and, nor, but, or, yet, so).
               </p>
-              <p className="mt-2 text-sm italic text-gray-600">
+              <p className="mt-2 text-sm italic text-muted-foreground">
                 &ldquo;The sky darkened, and a cold wind began to blow.&rdquo;
               </p>
               <p className="mt-2 text-sm">
@@ -124,7 +124,7 @@ export default function WritingSkillsPage() {
               </p>
             </div>
 
-            <div className="rounded-lg border border-gray-200 p-4">
+            <div className="rounded-lg border border-border p-4">
               <h4 className="font-bold text-accent">Complex sentence</h4>
               <p className="mt-1 text-sm">
                 Contains a main clause and one or more subordinate clauses
@@ -132,7 +132,7 @@ export default function WritingSkillsPage() {
                 often begin with: although, because, when, if, while, as,
                 despite, whereas, until, after.
               </p>
-              <p className="mt-2 text-sm italic text-gray-600">
+              <p className="mt-2 text-sm italic text-muted-foreground">
                 &ldquo;Although the sun was shining, she felt a chill creep
                 through her bones.&rdquo;
               </p>
@@ -144,13 +144,13 @@ export default function WritingSkillsPage() {
               </p>
             </div>
 
-            <div className="rounded-lg border border-gray-200 p-4">
+            <div className="rounded-lg border border-border p-4">
               <h4 className="font-bold text-accent">Minor sentence / fragment</h4>
               <p className="mt-1 text-sm">
                 A grammatically incomplete sentence, often lacking a main verb.
                 Used deliberately for effect (not by accident).
               </p>
-              <p className="mt-2 text-sm italic text-gray-600">
+              <p className="mt-2 text-sm italic text-muted-foreground">
                 &ldquo;Silence. Total, suffocating silence.&rdquo;
               </p>
               <p className="mt-2 text-sm">
@@ -175,7 +175,7 @@ export default function WritingSkillsPage() {
           <div className="overflow-x-auto mt-3">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-gray-200 text-left text-gray-500">
+                <tr className="border-b border-border text-left text-muted-foreground">
                   <th className="py-2 pr-4">Opener type</th>
                   <th className="py-2 pr-4">Example</th>
                 </tr>
@@ -216,10 +216,10 @@ export default function WritingSkillsPage() {
             mood, or focus), but in analytical writing, it should directly
             address the question.
           </p>
-          <div className="mt-3 rounded-lg bg-gray-50 p-4 text-sm">
-            <p className="font-semibold text-gray-500">Weak topic sentence:</p>
+          <div className="mt-3 rounded-lg bg-muted p-4 text-sm">
+            <p className="font-semibold text-muted-foreground">Weak topic sentence:</p>
             <p className="italic">&ldquo;The writer also uses language.&rdquo;</p>
-            <p className="mt-2 font-semibold text-gray-500">Strong topic sentence:</p>
+            <p className="mt-2 font-semibold text-muted-foreground">Strong topic sentence:</p>
             <p className="italic">
               &ldquo;The writer creates a growing sense of unease through a
               sustained semantic field of entrapment.&rdquo;
@@ -265,15 +265,15 @@ export default function WritingSkillsPage() {
           </p>
 
           <div className="mt-4 space-y-4">
-            <div className="rounded-lg border border-gray-200 p-4">
-              <h4 className="font-bold text-gray-400">Tier 1: Basic / everyday</h4>
+            <div className="rounded-lg border border-border p-4">
+              <h4 className="font-bold text-muted-foreground">Tier 1: Basic / everyday</h4>
               <p className="mt-1 text-sm">
                 Words everyone knows: big, small, nice, good, bad, said, walked,
                 happy, sad. These are not wrong, but they lack precision and do
                 not impress examiners.
               </p>
             </div>
-            <div className="rounded-lg border border-gray-200 p-4">
+            <div className="rounded-lg border border-border p-4">
               <h4 className="font-bold text-yellow-600">Tier 2: Academic / cross-curricular</h4>
               <p className="mt-1 text-sm">
                 Words used across subjects and in formal writing: significant,
@@ -281,7 +281,7 @@ export default function WritingSkillsPage() {
                 acknowledged, undermined. These show competence and control.
               </p>
             </div>
-            <div className="rounded-lg border border-gray-200 p-4">
+            <div className="rounded-lg border border-border p-4">
               <h4 className="font-bold text-success-600">Tier 3: Subject-specific / ambitious</h4>
               <p className="mt-1 text-sm">
                 Precise, evocative words chosen for a specific effect:
@@ -298,7 +298,7 @@ export default function WritingSkillsPage() {
           <div className="overflow-x-auto mt-3">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-gray-200 text-left text-gray-500">
+                <tr className="border-b border-border text-left text-muted-foreground">
                   <th className="py-2 pr-4">Instead of...</th>
                   <th className="py-2 pr-4">Try...</th>
                   <th className="py-2 pr-4">Why it works</th>
@@ -339,39 +339,39 @@ export default function WritingSkillsPage() {
           </p>
 
           <div className="mt-4 space-y-4">
-            <div className="rounded-lg border border-gray-200 p-4">
+            <div className="rounded-lg border border-border p-4">
               <h4 className="font-bold text-accent">Full stop (.)</h4>
               <p className="mt-1 text-sm">Creates finality. Short sentences ending with full stops create a staccato rhythm: &ldquo;He stopped. Listened. Nothing.&rdquo;</p>
             </div>
-            <div className="rounded-lg border border-gray-200 p-4">
+            <div className="rounded-lg border border-border p-4">
               <h4 className="font-bold text-accent">Comma (,)</h4>
               <p className="mt-1 text-sm">Creates pauses, separates items in a list, sets off subordinate clauses. Avoid comma splicing (using a comma to join two main clauses without a conjunction &mdash; this is a common error).</p>
             </div>
-            <div className="rounded-lg border border-gray-200 p-4">
+            <div className="rounded-lg border border-border p-4">
               <h4 className="font-bold text-accent">Semicolon (;)</h4>
               <p className="mt-1 text-sm">Joins two closely related main clauses: &ldquo;The house was silent; not a single light burned in its windows.&rdquo; Shows a connection between ideas without the finality of a full stop. Using semicolons correctly demonstrates grammatical sophistication.</p>
             </div>
-            <div className="rounded-lg border border-gray-200 p-4">
+            <div className="rounded-lg border border-border p-4">
               <h4 className="font-bold text-accent">Colon (:)</h4>
               <p className="mt-1 text-sm">Introduces an explanation, a list, or a dramatic reveal: &ldquo;There was only one option left: run.&rdquo; The colon creates anticipation &mdash; the reader pauses before the revelation.</p>
             </div>
-            <div className="rounded-lg border border-gray-200 p-4">
+            <div className="rounded-lg border border-border p-4">
               <h4 className="font-bold text-accent">Dash (&mdash;)</h4>
               <p className="mt-1 text-sm">Creates a pause for emphasis, adds a parenthetical aside, or signals an interruption: &ldquo;She opened the door &mdash; and screamed.&rdquo; Dashes feel more informal and dramatic than commas or semicolons. A pair of dashes can enclose a parenthetical: &ldquo;The man &mdash; if you could call him that &mdash; loomed in the doorway.&rdquo;</p>
             </div>
-            <div className="rounded-lg border border-gray-200 p-4">
+            <div className="rounded-lg border border-border p-4">
               <h4 className="font-bold text-accent">Ellipsis (...)</h4>
               <p className="mt-1 text-sm">Suggests trailing off, uncertainty, the passage of time, or something left unsaid: &ldquo;She wanted to tell him, but...&rdquo; Creates suspense and implies what the reader can imagine for themselves. Do not overuse.</p>
             </div>
-            <div className="rounded-lg border border-gray-200 p-4">
+            <div className="rounded-lg border border-border p-4">
               <h4 className="font-bold text-accent">Exclamation mark (!)</h4>
               <p className="mt-1 text-sm">Shows shock, anger, urgency, or excitement. Use very sparingly in creative writing (once or twice maximum). More common in persuasive writing or dialogue. Multiple exclamation marks (!!!) should never be used in exam writing.</p>
             </div>
-            <div className="rounded-lg border border-gray-200 p-4">
+            <div className="rounded-lg border border-border p-4">
               <h4 className="font-bold text-accent">Question mark (?)</h4>
               <p className="mt-1 text-sm">In creative writing, internal questions show character thought: &ldquo;Where had everyone gone? Why was the house so quiet?&rdquo; In persuasive writing, rhetorical questions engage the reader: &ldquo;How can we stand by and do nothing?&rdquo;</p>
             </div>
-            <div className="rounded-lg border border-gray-200 p-4">
+            <div className="rounded-lg border border-border p-4">
               <h4 className="font-bold text-accent">Brackets / parentheses (())</h4>
               <p className="mt-1 text-sm">Add extra information or an aside without interrupting the main sentence. Can create an intimate, conversational tone: &ldquo;The village (if three houses and a post box constitute a village) sat at the bottom of the valley.&rdquo;</p>
             </div>
@@ -387,9 +387,9 @@ export default function WritingSkillsPage() {
           </p>
 
           <div className="mt-4 space-y-4">
-            <div className="rounded-lg border border-gray-200 p-4">
+            <div className="rounded-lg border border-border p-4">
               <h4 className="font-bold text-accent">1. In medias res (start in the middle)</h4>
-              <p className="mt-1 text-sm italic text-gray-600">
+              <p className="mt-1 text-sm italic text-muted-foreground">
                 &ldquo;The glass shattered before she even heard the sound.&rdquo;
               </p>
               <p className="mt-2 text-sm">
@@ -398,9 +398,9 @@ export default function WritingSkillsPage() {
                 before and what happens next.
               </p>
             </div>
-            <div className="rounded-lg border border-gray-200 p-4">
+            <div className="rounded-lg border border-border p-4">
               <h4 className="font-bold text-accent">2. Setting the scene (atmospheric description)</h4>
-              <p className="mt-1 text-sm italic text-gray-600">
+              <p className="mt-1 text-sm italic text-muted-foreground">
                 &ldquo;Dawn had not yet broken, but the market was already alive
                 &mdash; a symphony of clattering stalls, shouted prices, and the
                 rich, warm aroma of bread pulled fresh from the oven.&rdquo;
@@ -410,9 +410,9 @@ export default function WritingSkillsPage() {
                 plot. Best for descriptive writing. Use multiple senses.
               </p>
             </div>
-            <div className="rounded-lg border border-gray-200 p-4">
+            <div className="rounded-lg border border-border p-4">
               <h4 className="font-bold text-accent">3. Dialogue</h4>
-              <p className="mt-1 text-sm italic text-gray-600">
+              <p className="mt-1 text-sm italic text-muted-foreground">
                 &ldquo;&lsquo;Don&rsquo;t look back,&rsquo; she whispered. &lsquo;Whatever
                 you do, don&rsquo;t look back.&rsquo;&rdquo;
               </p>
@@ -422,9 +422,9 @@ export default function WritingSkillsPage() {
                 them forward.
               </p>
             </div>
-            <div className="rounded-lg border border-gray-200 p-4">
+            <div className="rounded-lg border border-border p-4">
               <h4 className="font-bold text-accent">4. A single-word or minor-sentence opening</h4>
-              <p className="mt-1 text-sm italic text-gray-600">
+              <p className="mt-1 text-sm italic text-muted-foreground">
                 &ldquo;Silence.&rdquo;
               </p>
               <p className="mt-2 text-sm">
@@ -433,9 +433,9 @@ export default function WritingSkillsPage() {
                 on the idea.
               </p>
             </div>
-            <div className="rounded-lg border border-gray-200 p-4">
+            <div className="rounded-lg border border-border p-4">
               <h4 className="font-bold text-accent">5. A question (narrative or rhetorical)</h4>
-              <p className="mt-1 text-sm italic text-gray-600">
+              <p className="mt-1 text-sm italic text-muted-foreground">
                 &ldquo;Have you ever stood at the edge of something and known
                 &mdash; absolutely known &mdash; that stepping forward would
                 change everything?&rdquo;
@@ -446,9 +446,9 @@ export default function WritingSkillsPage() {
                 writing.
               </p>
             </div>
-            <div className="rounded-lg border border-gray-200 p-4">
+            <div className="rounded-lg border border-border p-4">
               <h4 className="font-bold text-accent">6. A bold or provocative statement</h4>
-              <p className="mt-1 text-sm italic text-gray-600">
+              <p className="mt-1 text-sm italic text-muted-foreground">
                 &ldquo;Nobody tells you that grief smells like lavender and
                 antiseptic.&rdquo;
               </p>
@@ -470,60 +470,60 @@ export default function WritingSkillsPage() {
           </p>
 
           <div className="mt-4 space-y-4">
-            <div className="rounded-lg border border-gray-200 p-4">
+            <div className="rounded-lg border border-border p-4">
               <h4 className="font-bold text-accent">1. Circular structure</h4>
               <p className="mt-1 text-sm">
                 Return to an image, phrase, or idea from the opening, but with a
                 shift in meaning or perspective. This creates a satisfying sense
                 of completeness and shows structural sophistication.
               </p>
-              <p className="mt-2 text-sm italic text-gray-600">
+              <p className="mt-2 text-sm italic text-muted-foreground">
                 Opening: &ldquo;The clock on the mantelpiece ticked steadily, marking time that seemed to stretch forever.&rdquo;
                 <br />
                 Ending: &ldquo;The clock on the mantelpiece ticked on, but the silence it measured now felt entirely different.&rdquo;
               </p>
             </div>
-            <div className="rounded-lg border border-gray-200 p-4">
+            <div className="rounded-lg border border-border p-4">
               <h4 className="font-bold text-accent">2. Ambiguous / open ending</h4>
               <p className="mt-1 text-sm">
                 Leave the reader with a question or an unresolved image. This
                 invites interpretation and lingers in the mind.
               </p>
-              <p className="mt-2 text-sm italic text-gray-600">
+              <p className="mt-2 text-sm italic text-muted-foreground">
                 &ldquo;She turned the corner, and for a moment &mdash; just a
                 moment &mdash; she thought she saw a light in the window.&rdquo;
               </p>
             </div>
-            <div className="rounded-lg border border-gray-200 p-4">
+            <div className="rounded-lg border border-border p-4">
               <h4 className="font-bold text-accent">3. Emotional reflection</h4>
               <p className="mt-1 text-sm">
                 End with the character&rsquo;s internal thoughts or feelings,
                 reflecting on what has happened.
               </p>
-              <p className="mt-2 text-sm italic text-gray-600">
+              <p className="mt-2 text-sm italic text-muted-foreground">
                 &ldquo;And standing there, in the quiet aftermath, she
                 understood something she had never been able to articulate
                 before: that home was not a place at all.&rdquo;
               </p>
             </div>
-            <div className="rounded-lg border border-gray-200 p-4">
+            <div className="rounded-lg border border-border p-4">
               <h4 className="font-bold text-accent">4. A striking image</h4>
               <p className="mt-1 text-sm">
                 Close with a vivid, symbolic image that encapsulates the theme
                 or mood.
               </p>
-              <p className="mt-2 text-sm italic text-gray-600">
+              <p className="mt-2 text-sm italic text-muted-foreground">
                 &ldquo;The last petal fell from the rose on the windowsill, and
                 nobody noticed.&rdquo;
               </p>
             </div>
-            <div className="rounded-lg border border-gray-200 p-4">
+            <div className="rounded-lg border border-border p-4">
               <h4 className="font-bold text-accent">5. Short, final sentence</h4>
               <p className="mt-1 text-sm">
                 End with a short, punchy sentence that lands like a closing
                 note. The brevity creates impact.
               </p>
-              <p className="mt-2 text-sm italic text-gray-600">
+              <p className="mt-2 text-sm italic text-muted-foreground">
                 &ldquo;She did not look back.&rdquo;
               </p>
             </div>
@@ -553,7 +553,7 @@ export default function WritingSkillsPage() {
                 "I have avoided cliches ('it was a dark and stormy night', 'blood-red sky').",
               ].map((item, i) => (
                 <li key={i} className="flex gap-3">
-                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border border-gray-300 text-xs text-gray-400">
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border border-gray-300 text-xs text-muted-foreground">
                     {i + 1}
                   </span>
                   <span className="text-sm">{item}</span>
@@ -574,7 +574,7 @@ export default function WritingSkillsPage() {
                 "I have proofread my work for any errors.",
               ].map((item, i) => (
                 <li key={i} className="flex gap-3">
-                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border border-gray-300 text-xs text-gray-400">
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border border-gray-300 text-xs text-muted-foreground">
                     {i + 1}
                   </span>
                   <span className="text-sm">{item}</span>
@@ -606,7 +606,7 @@ export default function WritingSkillsPage() {
                 "I have maintained a consistent narrative perspective (first or third person) and have not accidentally switched.",
               ].map((item, i) => (
                 <li key={i} className="flex gap-3">
-                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border border-gray-300 text-xs text-gray-400">
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border border-gray-300 text-xs text-muted-foreground">
                     {i + 1}
                   </span>
                   <span className="text-sm">{item}</span>
@@ -615,7 +615,7 @@ export default function WritingSkillsPage() {
             </ul>
 
             <h3 className="mt-6 font-bold text-primary">Technical accuracy</h3>
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-muted-foreground">
               (Same as the descriptive writing checklist above &mdash;
               sentence variety, punctuation range, ambitious vocabulary,
               consistent tense, proofreading.)

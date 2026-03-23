@@ -223,10 +223,10 @@ export default function Grade9Page() {
 
       {/* What makes Grade 9 exceptional */}
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-gray-900">
+        <h2 className="text-2xl font-bold text-foreground">
           What makes Grade 9 exceptional?
         </h2>
-        <p className="mt-2 text-gray-600">
+        <p className="mt-2 text-muted-foreground">
           Grade 9 is not just &quot;Grade 7 but better.&quot; It represents a
           qualitative shift in how you think about and respond to texts. These
           are the four pillars of exceptional work.
@@ -236,13 +236,13 @@ export default function Grade9Page() {
           {WHAT_MAKES_EXCEPTIONAL.map((item) => (
             <div
               key={item.title}
-              className="rounded-xl border-2 border-[#8E44AD]/20 bg-white p-6 shadow-sm"
+              className="rounded-xl border-2 border-[#8E44AD]/20 bg-card p-6 shadow-md"
             >
               {item.icon}
-              <h3 className="mt-3 text-lg font-bold text-[#1A5276]">
+              <h3 className="mt-3 text-lg font-bold text-foreground">
                 {item.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-gray-600">
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 {item.description}
               </p>
             </div>
@@ -251,12 +251,12 @@ export default function Grade9Page() {
       </section>
 
       {/* Perceptive / Critical Analysis */}
-      <section className="bg-gray-50 px-4 py-12 sm:px-6 lg:px-8">
+      <section className="bg-muted px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Perceptive and critical analysis
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             These are the analytical moves that distinguish Grade 9 from Grade 7.
             They require you to think differently, not just more.
           </p>
@@ -265,19 +265,19 @@ export default function Grade9Page() {
             {PERCEPTIVE_ANALYSIS.map((item) => (
               <div
                 key={item.title}
-                className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
+                className="rounded-xl border border-border bg-card p-6 shadow-md"
               >
                 <h3 className="text-lg font-bold text-[#8E44AD]">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {item.description}
                 </p>
                 <div className="mt-4 rounded-lg border border-[#8E44AD]/10 bg-[#8E44AD]/5 p-4">
                   <p className="text-xs font-semibold uppercase tracking-wide text-[#8E44AD]">
                     Example
                   </p>
-                  <p className="mt-1 text-sm italic leading-relaxed text-gray-700">
+                  <p className="mt-1 text-sm italic leading-relaxed text-muted-foreground">
                     {item.example}
                   </p>
                 </div>
@@ -289,10 +289,10 @@ export default function Grade9Page() {
 
       {/* Originality and sophistication */}
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-gray-900">
+        <h2 className="text-2xl font-bold text-foreground">
           Originality and sophistication
         </h2>
-        <p className="mt-2 text-gray-600">
+        <p className="mt-2 text-muted-foreground">
           See how the same material can be approached at different levels.
           The difference is not knowledge -- it is thinking.
         </p>
@@ -301,17 +301,17 @@ export default function Grade9Page() {
           {ORIGINALITY_SOPHISTICATION.map((item) => (
             <div
               key={item.principle}
-              className="rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden"
+              className="rounded-xl border border-border bg-card shadow-md overflow-hidden"
             >
-              <div className="border-b border-gray-200 bg-gray-50 px-6 py-3">
-                <h3 className="font-bold text-[#1A5276]">{item.principle}</h3>
+              <div className="border-b border-border bg-muted px-6 py-3">
+                <h3 className="font-bold text-foreground">{item.principle}</h3>
               </div>
               <div className="grid sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-gray-200">
                 <div className="p-5">
-                  <span className="rounded-full bg-gray-200 px-2.5 py-0.5 text-xs font-semibold text-gray-600">
+                  <span className="rounded-full bg-gray-200 px-2.5 py-0.5 text-xs font-semibold text-muted-foreground">
                     Competent (5-7)
                   </span>
-                  <p className="mt-3 text-sm leading-relaxed text-gray-600">
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                     {item.weak}
                   </p>
                 </div>
@@ -319,7 +319,7 @@ export default function Grade9Page() {
                   <span className="rounded-full bg-[#8E44AD]/10 px-2.5 py-0.5 text-xs font-semibold text-[#8E44AD]">
                     Exceptional (9)
                   </span>
-                  <p className="mt-3 text-sm leading-relaxed text-gray-700">
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                     {item.strong}
                   </p>
                 </div>
@@ -332,10 +332,10 @@ export default function Grade9Page() {
       {/* Example responses */}
       <section className="bg-gradient-to-br from-[#8E44AD]/5 to-[#8E44AD]/10 px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Example Grade 9 Responses
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             These responses demonstrate the level of thinking, analysis, and
             writing quality that characterises Grade 9 work. Study them not to
             memorise, but to understand how exceptional candidates think.
@@ -345,31 +345,31 @@ export default function Grade9Page() {
             {EXAMPLE_RESPONSES.map((example) => (
               <div
                 key={example.type}
-                className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm"
+                className="overflow-hidden rounded-xl border border-border bg-card shadow-md"
               >
-                <div className="border-b border-gray-200 bg-gray-50 px-6 py-4">
+                <div className="border-b border-border bg-muted px-6 py-4">
                   <span className="rounded-full bg-[#8E44AD]/10 px-3 py-1 text-xs font-semibold text-[#8E44AD]">
                     {example.type}
                   </span>
-                  <p className="mt-2 font-semibold text-gray-900">
+                  <p className="mt-2 font-semibold text-foreground">
                     {example.question}
                   </p>
                   {example.extract && (
-                    <p className="mt-2 text-sm italic text-gray-500">
+                    <p className="mt-2 text-sm italic text-muted-foreground">
                       {example.extract}
                     </p>
                   )}
                 </div>
 
                 <div className="px-6 py-5">
-                  <h4 className="text-xs font-semibold uppercase tracking-wide text-gray-400">
+                  <h4 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
                     Student Response
                   </h4>
-                  <div className="mt-2 rounded-lg bg-gray-50 p-4">
+                  <div className="mt-2 rounded-lg bg-muted p-4">
                     {example.response.split("\n\n").map((para, i) => (
                       <p
                         key={i}
-                        className="mt-3 first:mt-0 text-sm leading-relaxed text-gray-700"
+                        className="mt-3 first:mt-0 text-sm leading-relaxed text-muted-foreground"
                       >
                         {para}
                       </p>
@@ -381,7 +381,7 @@ export default function Grade9Page() {
                   <h4 className="text-xs font-semibold uppercase tracking-wide text-[#8E44AD]">
                     Examiner Comment
                   </h4>
-                  <p className="mt-1 text-sm leading-relaxed text-gray-700">
+                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
                     {example.annotation}
                   </p>
                 </div>
@@ -393,8 +393,8 @@ export default function Grade9Page() {
 
       {/* Expert tips */}
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-gray-900">Expert Tips</h2>
-        <p className="mt-2 text-gray-600">
+        <h2 className="text-2xl font-bold text-foreground">Expert Tips</h2>
+        <p className="mt-2 text-muted-foreground">
           Advice from examiners and top-achieving students on how to reach the
           highest grade consistently.
         </p>
@@ -403,10 +403,10 @@ export default function Grade9Page() {
           {EXPERT_TIPS.map((item) => (
             <div
               key={item.tip}
-              className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm"
+              className="rounded-xl border border-border bg-card p-5 shadow-md"
             >
-              <h3 className="font-bold text-[#1A5276]">{item.tip}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-gray-600">
+              <h3 className="font-bold text-foreground">{item.tip}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 {item.detail}
               </p>
             </div>
@@ -417,7 +417,7 @@ export default function Grade9Page() {
         <div className="mt-12 flex flex-col items-center justify-between gap-4 sm:flex-row">
           <Link
             href="/resources/grade-targets/grade-7"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-[#2E86C1] hover:text-[#1A5276] transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-foreground transition-colors"
           >
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />

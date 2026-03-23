@@ -107,7 +107,7 @@ const papers = [
       },
     ],
     colour: "border-[#2E86C1]",
-    bgColour: "bg-[#2E86C1]",
+    bgColour: "bg-primary",
     href: "/resources/english-literature/aqa/paper-2",
   },
 ];
@@ -170,8 +170,8 @@ export default function AqaEnglishLiteraturePage() {
 
       {/* ── Exam overview ── */}
       <section className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
-        <h2 className="text-2xl font-bold text-gray-900">Exam Overview</h2>
-        <p className="mt-3 max-w-3xl text-gray-600 leading-relaxed">
+        <h2 className="text-2xl font-bold text-foreground">Exam Overview</h2>
+        <p className="mt-3 max-w-3xl text-muted-foreground leading-relaxed">
           AQA GCSE English Literature (8702) is assessed through{" "}
           <strong>two written exams</strong> with{" "}
           <strong>no coursework</strong>. Both papers are{" "}
@@ -200,18 +200,18 @@ export default function AqaEnglishLiteraturePage() {
                 </div>
                 <Link
                   href={paper.href}
-                  className="shrink-0 rounded-lg bg-white/20 px-3 py-1.5 text-xs font-semibold text-white hover:bg-white/30 transition"
+                  className="shrink-0 rounded-lg bg-card/20 px-3 py-1.5 text-xs font-semibold text-white hover:bg-card/30 transition"
                 >
                   Full guide &rarr;
                 </Link>
               </div>
 
               {/* Sections */}
-              <ul className="divide-y divide-gray-100 bg-white">
+              <ul className="divide-y divide-gray-100 bg-card">
                 {paper.sections.map((sec) => (
                   <li key={sec.name} className="px-6 py-4">
-                    <p className="font-semibold text-gray-900">{sec.name}</p>
-                    <p className="mt-1 text-sm text-gray-600 leading-relaxed">
+                    <p className="font-semibold text-foreground">{sec.name}</p>
+                    <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                       {sec.detail}
                     </p>
                   </li>
@@ -223,12 +223,12 @@ export default function AqaEnglishLiteraturePage() {
       </section>
 
       {/* ── Set text study guides ── */}
-      <section className="bg-gray-50 px-4 py-12 sm:py-16">
+      <section className="bg-muted px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Set Text Study Guides
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             Detailed revision resources for AQA set texts. Each guide covers
             plot, characters, themes, key quotations, context, and exam
             technique.
@@ -239,28 +239,28 @@ export default function AqaEnglishLiteraturePage() {
               <Link
                 key={guide.href}
                 href={guide.href}
-                className="group flex flex-col rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-md hover:border-[#2E86C1]"
+                className="group flex flex-col rounded-xl border border-border bg-card shadow-md transition hover:shadow-md hover:border-[#2E86C1]"
               >
                 {/* Coloured top strip */}
                 <div
-                  className={`h-1.5 rounded-t-xl ${guide.paper === 1 ? "bg-[#1A5276]" : "bg-[#2E86C1]"}`}
+                  className={`h-1.5 rounded-t-xl ${guide.paper === 1 ? "bg-[#1A5276]" : "bg-primary"}`}
                 />
                 <div className="flex flex-1 flex-col p-6">
                   <div className="flex items-center gap-2">
                     <span className="inline-block rounded-full bg-accent-100 px-3 py-1 text-xs font-semibold text-accent-700">
                       {guide.tag}
                     </span>
-                    <span className="text-xs text-gray-400">
+                    <span className="text-xs text-muted-foreground">
                       Paper {guide.paper}
                     </span>
                   </div>
-                  <h3 className="mt-3 text-lg font-bold text-gray-900 group-hover:text-[#2E86C1]">
+                  <h3 className="mt-3 text-lg font-bold text-foreground group-hover:text-primary">
                     {guide.title}
                   </h3>
-                  <p className="mt-2 flex-1 text-sm text-gray-600">
+                  <p className="mt-2 flex-1 text-sm text-muted-foreground">
                     {guide.description}
                   </p>
-                  <span className="mt-4 text-sm font-medium text-[#2E86C1] group-hover:underline">
+                  <span className="mt-4 text-sm font-medium text-primary group-hover:underline">
                     View study guide &rarr;
                   </span>
                 </div>
@@ -272,10 +272,10 @@ export default function AqaEnglishLiteraturePage() {
 
       {/* ── Paper format summaries ── */}
       <section className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
-        <h2 className="text-2xl font-bold text-gray-900">
+        <h2 className="text-2xl font-bold text-foreground">
           Paper Format at a Glance
         </h2>
-        <p className="mt-2 text-gray-600">
+        <p className="mt-2 text-muted-foreground">
           Quick reference for what each paper looks like on exam day.
         </p>
 
@@ -283,65 +283,65 @@ export default function AqaEnglishLiteraturePage() {
           <table className="w-full min-w-[600px] text-left text-sm">
             <thead>
               <tr className="border-b-2 border-[#1A5276]">
-                <th className="py-3 pr-4 font-semibold text-gray-900">
+                <th className="py-3 pr-4 font-semibold text-foreground">
                   &nbsp;
                 </th>
-                <th className="py-3 pr-4 font-semibold text-[#1A5276]">
+                <th className="py-3 pr-4 font-semibold text-foreground">
                   Paper 1
                 </th>
-                <th className="py-3 font-semibold text-[#2E86C1]">Paper 2</th>
+                <th className="py-3 font-semibold text-primary">Paper 2</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-100">
               <tr>
-                <td className="py-3 pr-4 font-medium text-gray-700">
+                <td className="py-3 pr-4 font-medium text-muted-foreground">
                   Duration
                 </td>
-                <td className="py-3 pr-4 text-gray-600">1 h 45 min</td>
-                <td className="py-3 text-gray-600">2 h 15 min</td>
+                <td className="py-3 pr-4 text-muted-foreground">1 h 45 min</td>
+                <td className="py-3 text-muted-foreground">2 h 15 min</td>
               </tr>
               <tr>
-                <td className="py-3 pr-4 font-medium text-gray-700">Marks</td>
-                <td className="py-3 pr-4 text-gray-600">64 (40%)</td>
-                <td className="py-3 text-gray-600">96 (60%)</td>
+                <td className="py-3 pr-4 font-medium text-muted-foreground">Marks</td>
+                <td className="py-3 pr-4 text-muted-foreground">64 (40%)</td>
+                <td className="py-3 text-muted-foreground">96 (60%)</td>
               </tr>
               <tr>
-                <td className="py-3 pr-4 font-medium text-gray-700">
+                <td className="py-3 pr-4 font-medium text-muted-foreground">
                   Section A
                 </td>
-                <td className="py-3 pr-4 text-gray-600">
+                <td className="py-3 pr-4 text-muted-foreground">
                   Shakespeare (extract + essay)
                 </td>
-                <td className="py-3 text-gray-600">
+                <td className="py-3 text-muted-foreground">
                   Modern text (essay, no extract)
                 </td>
               </tr>
               <tr>
-                <td className="py-3 pr-4 font-medium text-gray-700">
+                <td className="py-3 pr-4 font-medium text-muted-foreground">
                   Section B
                 </td>
-                <td className="py-3 pr-4 text-gray-600">
+                <td className="py-3 pr-4 text-muted-foreground">
                   19th-century novel (extract + essay)
                 </td>
-                <td className="py-3 text-gray-600">
+                <td className="py-3 text-muted-foreground">
                   Poetry anthology comparison
                 </td>
               </tr>
               <tr>
-                <td className="py-3 pr-4 font-medium text-gray-700">
+                <td className="py-3 pr-4 font-medium text-muted-foreground">
                   Section C
                 </td>
-                <td className="py-3 pr-4 text-gray-600">&mdash;</td>
-                <td className="py-3 text-gray-600">
+                <td className="py-3 pr-4 text-muted-foreground">&mdash;</td>
+                <td className="py-3 text-muted-foreground">
                   Unseen poetry (analysis + comparison)
                 </td>
               </tr>
               <tr>
-                <td className="py-3 pr-4 font-medium text-gray-700">
+                <td className="py-3 pr-4 font-medium text-muted-foreground">
                   Closed-book?
                 </td>
-                <td className="py-3 pr-4 text-gray-600">Yes</td>
-                <td className="py-3 text-gray-600">Yes</td>
+                <td className="py-3 pr-4 text-muted-foreground">Yes</td>
+                <td className="py-3 text-muted-foreground">Yes</td>
               </tr>
             </tbody>
           </table>
@@ -351,10 +351,10 @@ export default function AqaEnglishLiteraturePage() {
       {/* ── Assessment objectives ── */}
       <section className="bg-primary-50 px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Assessment Objectives (AO1&ndash;AO4)
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             Understanding how your work is marked is essential for maximising
             your grade. Every question targets specific AOs.
           </p>
@@ -363,18 +363,18 @@ export default function AqaEnglishLiteraturePage() {
             {assessmentObjectives.map((obj) => (
               <div
                 key={obj.ao}
-                className="rounded-lg bg-white p-5 shadow-sm border border-gray-200"
+                className="rounded-lg bg-card p-5 shadow-md border border-border"
               >
                 <div className="flex items-start gap-4">
                   <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-sm font-bold text-white">
                     {obj.ao}
                   </span>
                   <div>
-                    <p className="font-semibold text-gray-900">{obj.summary}</p>
-                    <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+                    <p className="font-semibold text-foreground">{obj.summary}</p>
+                    <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                       {obj.detail}
                     </p>
-                    <p className="mt-2 text-xs text-gray-500">{obj.weight}</p>
+                    <p className="mt-2 text-xs text-muted-foreground">{obj.weight}</p>
                   </div>
                 </div>
               </div>
@@ -385,7 +385,7 @@ export default function AqaEnglishLiteraturePage() {
 
       {/* ── Quick revision tips ── */}
       <section className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
-        <h2 className="text-2xl font-bold text-gray-900">
+        <h2 className="text-2xl font-bold text-foreground">
           Top Revision Tips
         </h2>
         <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -417,10 +417,10 @@ export default function AqaEnglishLiteraturePage() {
           ].map((tip) => (
             <div
               key={tip.title}
-              className="rounded-lg border border-gray-200 p-5"
+              className="rounded-lg border border-border p-5"
             >
-              <h3 className="font-semibold text-[#1A5276]">{tip.title}</h3>
-              <p className="mt-2 text-sm text-gray-600 leading-relaxed">
+              <h3 className="font-semibold text-foreground">{tip.title}</h3>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 {tip.text}
               </p>
             </div>
@@ -441,13 +441,13 @@ export default function AqaEnglishLiteraturePage() {
           <div className="mt-6 flex flex-wrap justify-center gap-4">
             <Link
               href="/resources/english-literature/aqa/macbeth"
-              className="rounded-lg bg-white px-5 py-2.5 text-sm font-semibold text-[#1A5276] shadow hover:bg-gray-100 transition"
+              className="rounded-lg bg-card px-5 py-2.5 text-sm font-semibold text-foreground shadow hover:bg-muted transition"
             >
               Start with Macbeth
             </Link>
             <Link
               href="/resources/english-literature/aqa/poetry"
-              className="rounded-lg border border-white/40 px-5 py-2.5 text-sm font-semibold text-white hover:bg-white/10 transition"
+              className="rounded-lg border border-white/40 px-5 py-2.5 text-sm font-semibold text-white hover:bg-card/10 transition"
             >
               Explore Poetry Anthology
             </Link>

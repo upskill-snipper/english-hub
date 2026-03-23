@@ -18,15 +18,15 @@ function Section({
 }) {
   const [open, setOpen] = useState(defaultOpen);
   return (
-    <section id={id} className="border border-gray-200 rounded-lg bg-white shadow-sm">
+    <section id={id} className="border border-border rounded-lg bg-card shadow-md">
       <button
         onClick={() => setOpen(!open)}
         className="flex w-full items-center justify-between px-5 py-4 text-left"
         aria-expanded={open}
       >
-        <h2 className="text-xl font-bold text-[#1A5276]">{title}</h2>
+        <h2 className="text-xl font-bold text-foreground">{title}</h2>
         <svg
-          className={`h-5 w-5 shrink-0 text-[#2E86C1] transition-transform ${open ? "rotate-180" : ""}`}
+          className={`h-5 w-5 shrink-0 text-primary transition-transform ${open ? "rotate-180" : ""}`}
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -35,7 +35,7 @@ function Section({
           <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
         </svg>
       </button>
-      {open && <div className="border-t border-gray-100 px-5 pb-5 pt-4">{children}</div>}
+      {open && <div className="border-t border-border px-5 pb-5 pt-4">{children}</div>}
     </section>
   );
 }
@@ -484,7 +484,7 @@ export default function LordOfTheFliesStudyGuide() {
             <a
               key={s}
               href={`#${s.toLowerCase().replace(/\s+/g, "-")}`}
-              className="rounded-full border border-[#2E86C1]/30 px-3 py-1 text-[#1A5276] transition hover:bg-[#2E86C1]/10"
+              className="rounded-full border border-[#2E86C1]/30 px-3 py-1 text-foreground transition hover:bg-primary/10"
             >
               {s}
             </a>
@@ -496,9 +496,9 @@ export default function LordOfTheFliesStudyGuide() {
       <Section id="chapter-summaries" title="Chapter-by-Chapter Summary" defaultOpen>
         <div className="space-y-4">
           {chapters.map((ch) => (
-            <div key={ch.chapter} className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-              <h3 className="font-semibold text-[#1A5276]">{ch.chapter}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-gray-700">{ch.summary}</p>
+            <div key={ch.chapter} className="rounded-lg border border-border bg-muted p-4">
+              <h3 className="font-semibold text-foreground">{ch.chapter}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{ch.summary}</p>
             </div>
           ))}
         </div>
@@ -508,9 +508,9 @@ export default function LordOfTheFliesStudyGuide() {
       <Section id="characters" title="Character Analysis">
         <div className="space-y-5">
           {characters.map((c) => (
-            <div key={c.name} className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-              <h3 className="text-lg font-semibold text-[#1A5276]">{c.name}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-gray-700">{c.analysis}</p>
+            <div key={c.name} className="rounded-lg border border-border bg-muted p-4">
+              <h3 className="text-lg font-semibold text-foreground">{c.name}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{c.analysis}</p>
             </div>
           ))}
         </div>
@@ -520,9 +520,9 @@ export default function LordOfTheFliesStudyGuide() {
       <Section id="themes" title="Key Themes">
         <div className="grid gap-4 sm:grid-cols-2">
           {themes.map((t) => (
-            <div key={t.name} className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-              <h3 className="font-semibold text-[#1A5276]">{t.name}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-gray-700">{t.detail}</p>
+            <div key={t.name} className="rounded-lg border border-border bg-muted p-4">
+              <h3 className="font-semibold text-foreground">{t.name}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t.detail}</p>
             </div>
           ))}
         </div>
@@ -530,19 +530,19 @@ export default function LordOfTheFliesStudyGuide() {
 
       {/* Key Quotes */}
       <Section id="key-quotes" title={`Key Quotations (${keyQuotes.length})`}>
-        <p className="mb-4 text-sm text-gray-600">
+        <p className="mb-4 text-sm text-muted-foreground">
           Each quotation includes context and detailed analysis suitable for GCSE responses.
         </p>
         <div className="space-y-4">
           {keyQuotes.map((q, i) => (
-            <div key={i} className="rounded-lg border-l-4 border-[#2E86C1] bg-gray-50 p-4">
-              <blockquote className="text-base font-medium italic text-gray-900">
+            <div key={i} className="rounded-lg border-l-4 border-[#2E86C1] bg-muted p-4">
+              <blockquote className="text-base font-medium italic text-foreground">
                 &ldquo;{q.quote}&rdquo;
               </blockquote>
-              <p className="mt-1 text-xs font-semibold text-[#2E86C1]">
+              <p className="mt-1 text-xs font-semibold text-primary">
                 {q.speaker ? `${q.speaker} — ` : ""}{q.chapter}
               </p>
-              <p className="mt-2 text-sm leading-relaxed text-gray-700">{q.analysis}</p>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{q.analysis}</p>
             </div>
           ))}
         </div>
@@ -552,9 +552,9 @@ export default function LordOfTheFliesStudyGuide() {
       <Section id="symbolism" title="Symbolism">
         <div className="space-y-4">
           {symbolism.map((s) => (
-            <div key={s.symbol} className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-              <h3 className="font-semibold text-[#1A5276]">{s.symbol}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-gray-700">{s.meaning}</p>
+            <div key={s.symbol} className="rounded-lg border border-border bg-muted p-4">
+              <h3 className="font-semibold text-foreground">{s.symbol}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.meaning}</p>
             </div>
           ))}
         </div>
@@ -564,9 +564,9 @@ export default function LordOfTheFliesStudyGuide() {
       <Section id="context" title="Historical & Literary Context">
         <div className="space-y-4">
           {contextSections.map((c) => (
-            <div key={c.title} className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-              <h3 className="font-semibold text-[#1A5276]">{c.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-gray-700">{c.content}</p>
+            <div key={c.title} className="rounded-lg border border-border bg-muted p-4">
+              <h3 className="font-semibold text-foreground">{c.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{c.content}</p>
             </div>
           ))}
         </div>
@@ -576,11 +576,11 @@ export default function LordOfTheFliesStudyGuide() {
       <Section id="essay-planning" title="Essay Planning for Common Questions">
         <div className="space-y-5">
           {essayQuestions.map((eq, i) => (
-            <div key={i} className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-              <p className="font-medium text-gray-900">{eq.question}</p>
-              <div className="mt-3 rounded bg-[#2E86C1]/5 p-3">
-                <p className="text-xs font-semibold text-[#1A5276]">Key points to cover:</p>
-                <ul className="mt-1 space-y-1 text-sm text-gray-700">
+            <div key={i} className="rounded-lg border border-border bg-muted p-4">
+              <p className="font-medium text-foreground">{eq.question}</p>
+              <div className="mt-3 rounded bg-primary/5 p-3">
+                <p className="text-xs font-semibold text-foreground">Key points to cover:</p>
+                <ul className="mt-1 space-y-1 text-sm text-muted-foreground">
                   {eq.points.map((p, j) => (
                     <li key={j}>&bull; {p}</li>
                   ))}
@@ -593,16 +593,16 @@ export default function LordOfTheFliesStudyGuide() {
 
       {/* ────────────────────────────────────────── PRACTICE QUESTIONS */}
       <Section id="practice-questions" title="Practice Questions">
-        <p className="text-sm text-gray-500 mb-6">
+        <p className="text-sm text-muted-foreground mb-6">
           Write your answer below each question and receive AI-powered feedback tailored to GCSE English Literature mark schemes.
           Aim for at least 150 words per response to get meaningful feedback.
         </p>
         <div className="space-y-8">
-          <div className="rounded-lg border border-gray-200 p-4">
-            <h3 className="font-bold text-gray-900 mb-1">Question 1</h3>
-            <p className="text-sm text-gray-700 mb-3">
+          <div className="rounded-lg border border-border p-4">
+            <h3 className="font-bold text-foreground mb-1">Question 1</h3>
+            <p className="text-sm text-muted-foreground mb-3">
               How does Golding present the conflict between civilisation and savagery in <em>Lord of the Flies</em>? Refer to the whole novel in your answer.
-              <span className="ml-2 text-xs font-semibold text-gray-500">[30 marks]</span>
+              <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
               placeholder="Write your essay response here..."
@@ -615,11 +615,11 @@ export default function LordOfTheFliesStudyGuide() {
             />
           </div>
 
-          <div className="rounded-lg border border-gray-200 p-4">
-            <h3 className="font-bold text-gray-900 mb-1">Question 2</h3>
-            <p className="text-sm text-gray-700 mb-3">
+          <div className="rounded-lg border border-border p-4">
+            <h3 className="font-bold text-foreground mb-1">Question 2</h3>
+            <p className="text-sm text-muted-foreground mb-3">
               How does Golding use the character of Jack to explore the theme of power and tyranny?
-              <span className="ml-2 text-xs font-semibold text-gray-500">[30 marks]</span>
+              <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
               placeholder="Write your essay response here..."
@@ -632,11 +632,11 @@ export default function LordOfTheFliesStudyGuide() {
             />
           </div>
 
-          <div className="rounded-lg border border-gray-200 p-4">
-            <h3 className="font-bold text-gray-900 mb-1">Question 3</h3>
-            <p className="text-sm text-gray-700 mb-3">
+          <div className="rounded-lg border border-border p-4">
+            <h3 className="font-bold text-foreground mb-1">Question 3</h3>
+            <p className="text-sm text-muted-foreground mb-3">
               How does Golding use symbolism in <em>Lord of the Flies</em>? You may wish to consider the conch, the beast, and Piggy&apos;s glasses in your answer.
-              <span className="ml-2 text-xs font-semibold text-gray-500">[30 marks]</span>
+              <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
               placeholder="Write your essay response here..."
@@ -649,11 +649,11 @@ export default function LordOfTheFliesStudyGuide() {
             />
           </div>
 
-          <div className="rounded-lg border border-gray-200 p-4">
-            <h3 className="font-bold text-gray-900 mb-1">Question 4</h3>
-            <p className="text-sm text-gray-700 mb-3">
+          <div className="rounded-lg border border-border p-4">
+            <h3 className="font-bold text-foreground mb-1">Question 4</h3>
+            <p className="text-sm text-muted-foreground mb-3">
               How does Golding present the character of Ralph and his development throughout the novel?
-              <span className="ml-2 text-xs font-semibold text-gray-500">[30 marks]</span>
+              <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
               placeholder="Write your essay response here..."
@@ -672,7 +672,7 @@ export default function LordOfTheFliesStudyGuide() {
       <div className="pt-4 text-sm">
         <a
           href="/resources/revision-notes"
-          className="font-medium text-[#1A5276] underline underline-offset-2 hover:text-[#2E86C1]"
+          className="font-medium text-foreground underline underline-offset-2 hover:text-primary"
         >
           &larr; Back to Revision Notes
         </a>

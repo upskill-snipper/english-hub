@@ -23,16 +23,16 @@ function Section({
 }) {
   const [open, setOpen] = useState(defaultOpen);
   return (
-    <div className="rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden">
+    <div className="rounded-xl border border-border bg-card shadow-md overflow-hidden">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="flex w-full items-center justify-between px-5 py-4 text-left transition-colors hover:bg-gray-50"
+        className="flex w-full items-center justify-between px-5 py-4 text-left transition-colors hover:bg-muted"
         aria-expanded={open}
         aria-controls={`section-${id}`}
       >
         <div className="flex items-center gap-3">
           <span className={`h-2.5 w-2.5 rounded-full ${colour}`} />
-          <h2 className="text-lg font-bold text-gray-900">{title}</h2>
+          <h2 className="text-lg font-bold text-foreground">{title}</h2>
           {badge && (
             <span className="rounded-full bg-accent-50 px-2.5 py-0.5 text-xs font-semibold text-accent-600">
               {badge}
@@ -40,14 +40,14 @@ function Section({
           )}
         </div>
         <svg
-          className={`h-5 w-5 text-gray-400 transition-transform ${open ? "rotate-180" : ""}`}
+          className={`h-5 w-5 text-muted-foreground transition-transform ${open ? "rotate-180" : ""}`}
           fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"
         >
           <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
         </svg>
       </button>
       {open && (
-        <div id={`section-${id}`} className="border-t border-gray-100 px-5 py-5">
+        <div id={`section-${id}`} className="border-t border-border px-5 py-5">
           {children}
         </div>
       )}
@@ -69,8 +69,8 @@ function ContextExample({
   return (
     <div className="rounded-lg border-l-4 border-accent bg-accent-50/40 p-4">
       <p className="text-xs font-bold uppercase tracking-wider text-accent-600">{text}</p>
-      <p className="mt-1 text-sm font-semibold text-gray-800">{point}</p>
-      <p className="mt-2 text-sm text-gray-700">{analysis}</p>
+      <p className="mt-1 text-sm font-semibold text-foreground">{point}</p>
+      <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
   );
 }
@@ -86,7 +86,7 @@ function TimelineEvent({ year, event }: { year: string; event: string }) {
         </span>
         <div className="mt-1 h-full w-px bg-purple-200" />
       </div>
-      <p className="pb-6 text-sm text-gray-700">{event}</p>
+      <p className="pb-6 text-sm text-muted-foreground">{event}</p>
     </div>
   );
 }
@@ -99,7 +99,7 @@ export default function ElizabethanJacobeanContextPage() {
 
       {/* Breadcrumb */}
       <nav className="mx-auto max-w-6xl px-4 pt-6 sm:px-6 lg:px-8" aria-label="Breadcrumb">
-        <ol className="flex flex-wrap items-center gap-1.5 text-sm text-gray-500">
+        <ol className="flex flex-wrap items-center gap-1.5 text-sm text-muted-foreground">
           {[
             { href: "/", label: "Home" },
             { href: "/resources", label: "Resources" },
@@ -107,7 +107,7 @@ export default function ElizabethanJacobeanContextPage() {
           ].map((crumb, i) => (
             <li key={crumb.href} className="flex items-center gap-1.5">
               {i > 0 && (
-                <svg className="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <svg className="h-4 w-4 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
               )}
@@ -115,7 +115,7 @@ export default function ElizabethanJacobeanContextPage() {
             </li>
           ))}
           <li className="flex items-center gap-1.5">
-            <svg className="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <svg className="h-4 w-4 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
             </svg>
             <span className="font-medium text-primary">Elizabethan &amp; Jacobean</span>
@@ -134,10 +134,10 @@ export default function ElizabethanJacobeanContextPage() {
             <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-semibold text-accent-600">Romeo &amp; Juliet</span>
             <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-semibold text-accent-600">The Tempest</span>
           </div>
-          <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Elizabethan &amp; Jacobean Context
           </h1>
-          <p className="mt-3 max-w-3xl text-lg text-gray-600 leading-relaxed">
+          <p className="mt-3 max-w-3xl text-lg text-muted-foreground leading-relaxed">
             Shakespeare wrote during two monarchies: Elizabeth I and James I. Understanding
             the beliefs, fears, and power structures of this period is essential for
             unlocking the deeper meanings of his plays.
@@ -169,7 +169,7 @@ export default function ElizabethanJacobeanContextPage() {
         <div className="mt-5 space-y-5">
           {/* Great Chain of Being */}
           <Section id="chain" title="The Great Chain of Being" colour="bg-purple-800">
-            <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 Elizabethans and Jacobeans believed in a <strong>divinely ordained hierarchy</strong> that
                 placed everything in the universe in a fixed order: God at the top, followed by
@@ -191,7 +191,7 @@ export default function ElizabethanJacobeanContextPage() {
 
           {/* Divine Right of Kings */}
           <Section id="divine-right" title="The Divine Right of Kings" colour="bg-yellow-700">
-            <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 The <strong>Divine Right of Kings</strong> was the belief that monarchs were chosen by
                 God and answerable only to God. Challenging or killing a king was therefore not
@@ -214,7 +214,7 @@ export default function ElizabethanJacobeanContextPage() {
 
           {/* Witchcraft */}
           <Section id="witchcraft" title="Attitudes to Witchcraft" colour="bg-gray-800">
-            <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 Belief in witchcraft was <strong>widespread and deadly serious</strong> in this period.
                 Thousands of people (mostly women) were accused, tried, and executed for witchcraft
@@ -238,7 +238,7 @@ export default function ElizabethanJacobeanContextPage() {
 
           {/* Theatre Conventions */}
           <Section id="theatre" title="Theatre Conventions" colour="bg-red-700">
-            <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 Shakespeare&apos;s theatre was radically different from modern performance. The
                 <strong> Globe Theatre</strong> was an open-air, roughly circular building. Performances
@@ -267,7 +267,7 @@ export default function ElizabethanJacobeanContextPage() {
 
           {/* Gender and Marriage */}
           <Section id="gender" title="Gender & Marriage" colour="bg-rose-700">
-            <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 Women in Elizabethan and Jacobean England had very limited legal rights. They were
                 considered the <strong>property</strong> of their father until marriage, at which point
@@ -297,7 +297,7 @@ export default function ElizabethanJacobeanContextPage() {
 
           {/* Religion */}
           <Section id="religion" title="Religion & the Reformation" colour="bg-blue-800">
-            <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 England underwent a seismic religious upheaval in the sixteenth century. Henry VIII
                 broke from the Catholic Church in 1534, establishing the <strong>Church of England</strong>.
@@ -335,9 +335,9 @@ export default function ElizabethanJacobeanContextPage() {
                 { name: "Guy Fawkes", detail: "The most famous of the Gunpowder Plotters (1605). The plot intensified anti-Catholic sentiment and fears of treason." },
                 { name: "Mary Queen of Scots", detail: "Catholic cousin of Elizabeth I. Executed in 1587 for plotting to overthrow Elizabeth. Her son became James I." },
               ].map((fig) => (
-                <div key={fig.name} className="rounded-lg bg-gray-50 p-4">
-                  <h3 className="text-sm font-bold text-gray-900">{fig.name}</h3>
-                  <p className="mt-1 text-sm text-gray-600">{fig.detail}</p>
+                <div key={fig.name} className="rounded-lg bg-muted p-4">
+                  <h3 className="text-sm font-bold text-foreground">{fig.name}</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">{fig.detail}</p>
                 </div>
               ))}
             </div>
@@ -345,13 +345,13 @@ export default function ElizabethanJacobeanContextPage() {
 
           {/* Linking Context to Texts */}
           <Section id="linking" title="How to Link Context to Your Texts" badge="Exam skill" colour="bg-accent">
-            <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 The best candidates <strong>embed context into their analysis</strong> rather than
                 writing separate &ldquo;context paragraphs.&rdquo; Here are model examples.
               </p>
 
-              <h3 className="text-base font-bold text-gray-900 pt-2">Macbeth</h3>
+              <h3 className="text-base font-bold text-foreground pt-2">Macbeth</h3>
               <div className="space-y-3">
                 <ContextExample
                   text="Macbeth"
@@ -365,7 +365,7 @@ export default function ElizabethanJacobeanContextPage() {
                 />
               </div>
 
-              <h3 className="text-base font-bold text-gray-900 pt-4">Romeo and Juliet</h3>
+              <h3 className="text-base font-bold text-foreground pt-4">Romeo and Juliet</h3>
               <div className="space-y-3">
                 <ContextExample
                   text="Romeo and Juliet"
@@ -374,7 +374,7 @@ export default function ElizabethanJacobeanContextPage() {
                 />
               </div>
 
-              <h3 className="text-base font-bold text-gray-900 pt-4">The Tempest</h3>
+              <h3 className="text-base font-bold text-foreground pt-4">The Tempest</h3>
               <div className="space-y-3">
                 <ContextExample
                   text="The Tempest"
@@ -384,8 +384,8 @@ export default function ElizabethanJacobeanContextPage() {
               </div>
 
               <div className="mt-6 rounded-xl border border-accent-100 bg-accent-50/50 p-5">
-                <h3 className="text-sm font-bold text-gray-900">Sentence starters for context</h3>
-                <ul className="mt-3 space-y-2 text-sm text-gray-700">
+                <h3 className="text-sm font-bold text-foreground">Sentence starters for context</h3>
+                <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                     <span>&ldquo;A Jacobean/Elizabethan audience would have understood this as...&rdquo;</span>
@@ -412,7 +412,7 @@ export default function ElizabethanJacobeanContextPage() {
         <div className="mt-10 flex flex-wrap gap-4">
           <Link
             href="/resources/context/victorian"
-            className="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-5 py-3 text-sm font-semibold text-gray-700 shadow-sm transition hover:bg-gray-50"
+            className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-5 py-3 text-sm font-semibold text-muted-foreground shadow-md transition hover:bg-muted"
           >
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
@@ -421,7 +421,7 @@ export default function ElizabethanJacobeanContextPage() {
           </Link>
           <Link
             href="/resources/context/twentieth-century"
-            className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-primary/90"
+            className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-primary/90"
           >
             Twentieth Century
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">

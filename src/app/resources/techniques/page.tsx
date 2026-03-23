@@ -99,7 +99,7 @@ const WHW_STEPS = [
   {
     letter: "H",
     label: "How",
-    colour: "bg-[#2E86C1]",
+    colour: "bg-primary",
     heading: "How does it work?",
     description:
       "Explain the mechanics. What does the technique do to the language? How does it change the sound, rhythm, imagery, or tone?",
@@ -164,7 +164,7 @@ function ArrowRight() {
 function SearchIcon() {
   return (
     <svg
-      className="h-5 w-5 text-gray-400"
+      className="h-5 w-5 text-muted-foreground"
       fill="none"
       viewBox="0 0 24 24"
       strokeWidth={1.5}
@@ -222,7 +222,7 @@ export default function TechniquesHubPage() {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Search techniques... e.g. metaphor, sibilance"
-                className="w-full rounded-xl border-0 bg-white/95 py-3.5 pl-11 pr-4 text-sm text-gray-900 shadow-lg placeholder:text-gray-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-white/50"
+                className="w-full rounded-xl border-0 bg-card/95 py-3.5 pl-11 pr-4 text-sm text-foreground shadow-lg placeholder:text-muted-foreground focus:bg-card focus:outline-none focus:ring-2 focus:ring-white/50"
               />
             </div>
           </div>
@@ -231,13 +231,13 @@ export default function TechniquesHubPage() {
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <Link
               href="/resources/techniques/language-devices"
-              className="rounded-lg bg-white px-6 py-3 text-sm font-semibold text-[#1A5276] shadow-lg transition hover:bg-white/90"
+              className="rounded-lg bg-card px-6 py-3 text-sm font-semibold text-foreground shadow-lg transition hover:bg-card/90"
             >
               Language Devices
             </Link>
             <Link
               href="/resources/techniques/structural-devices"
-              className="rounded-lg border-2 border-white/30 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white/20"
+              className="rounded-lg border-2 border-white/30 bg-card/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-card/20"
             >
               Structural Devices
             </Link>
@@ -247,10 +247,10 @@ export default function TechniquesHubPage() {
 
       {/* ── Main Category Cards ──────────────────────────────────── */}
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
-        <h2 className="text-center text-2xl font-bold text-gray-900 sm:text-3xl">
+        <h2 className="text-center text-2xl font-bold text-foreground sm:text-3xl">
           Browse by Category
         </h2>
-        <p className="mx-auto mt-3 max-w-2xl text-center text-gray-600">
+        <p className="mx-auto mt-3 max-w-2xl text-center text-muted-foreground">
           All techniques are organised into two main categories. Each entry
           includes a definition, example, effect analysis, and a sentence
           starter you can use in your exam.
@@ -261,31 +261,31 @@ export default function TechniquesHubPage() {
             <Link
               key={cat.href}
               href={cat.href}
-              className={`group flex flex-col rounded-2xl border-2 ${cat.colour} bg-gradient-to-br ${cat.bgGradient} p-8 shadow-sm transition hover:shadow-lg`}
+              className={`group flex flex-col rounded-2xl border-2 ${cat.colour} bg-gradient-to-br ${cat.bgGradient} p-8 shadow-md transition hover:shadow-lg`}
             >
               <div className="flex items-start justify-between">
                 <div className={cat.iconColour}>{cat.icon}</div>
-                <span className="rounded-full bg-[#1A5276]/10 px-3 py-1 text-xs font-bold text-[#1A5276]">
+                <span className="rounded-full bg-[#1A5276]/10 px-3 py-1 text-xs font-bold text-foreground">
                   {cat.count} techniques
                 </span>
               </div>
-              <h3 className="mt-5 text-xl font-bold text-gray-900 transition-colors group-hover:text-[#1A5276]">
+              <h3 className="mt-5 text-xl font-bold text-foreground transition-colors group-hover:text-foreground">
                 {cat.title}
               </h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-gray-600">
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
                 {cat.description}
               </p>
               <ul className="mt-5 flex flex-wrap gap-2">
                 {cat.topics.map((t) => (
                   <li
                     key={t}
-                    className="rounded-full bg-white/80 px-3 py-1 text-xs font-medium text-gray-600"
+                    className="rounded-full bg-card/80 px-3 py-1 text-xs font-medium text-muted-foreground"
                   >
                     {t}
                   </li>
                 ))}
               </ul>
-              <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[#2E86C1] transition-colors group-hover:text-[#1A5276]">
+              <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors group-hover:text-foreground">
                 Browse all {cat.title.toLowerCase()} <ArrowRight />
               </span>
             </Link>
@@ -294,12 +294,12 @@ export default function TechniquesHubPage() {
       </section>
 
       {/* ── Quick Reference Grid ─────────────────────────────────── */}
-      <section className="bg-gray-50 px-4 py-14 sm:px-6 lg:px-8">
+      <section className="bg-muted px-4 py-14 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-center text-2xl font-bold text-gray-900 sm:text-3xl">
+          <h2 className="text-center text-2xl font-bold text-foreground sm:text-3xl">
             Quick Reference
           </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-center text-gray-600">
+          <p className="mx-auto mt-3 max-w-2xl text-center text-muted-foreground">
             The most commonly tested techniques at a glance. Use the search bar
             above or filter by category to find what you need.
           </p>
@@ -317,7 +317,7 @@ export default function TechniquesHubPage() {
                 className={`rounded-full px-4 py-1.5 text-sm font-semibold transition-colors ${
                   categoryFilter === filter.key
                     ? "bg-[#1A5276] text-white"
-                    : "bg-white text-gray-600 hover:bg-[#1A5276]/10 hover:text-[#1A5276]"
+                    : "bg-card text-muted-foreground hover:bg-[#1A5276]/10 hover:text-foreground"
                 }`}
               >
                 {filter.label}
@@ -330,23 +330,23 @@ export default function TechniquesHubPage() {
             {filteredTechniques.map((tech) => (
               <div
                 key={tech.name}
-                className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition hover:shadow-md hover:border-[#2E86C1]/40"
+                className="rounded-xl border border-border bg-card p-5 shadow-md transition hover:shadow-md hover:border-[#2E86C1]/40"
               >
                 <div className="flex items-start justify-between gap-2">
-                  <h3 className="text-base font-bold text-gray-900">
+                  <h3 className="text-base font-bold text-foreground">
                     {tech.name}
                   </h3>
                   <span
                     className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider ${
                       tech.category === "language"
-                        ? "bg-[#2E86C1]/10 text-[#2E86C1]"
-                        : "bg-[#1A5276]/10 text-[#1A5276]"
+                        ? "bg-primary/10 text-primary"
+                        : "bg-[#1A5276]/10 text-foreground"
                     }`}
                   >
                     {tech.category === "language" ? "Lang" : "Struct"}
                   </span>
                 </div>
-                <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {tech.definition}
                 </p>
               </div>
@@ -354,14 +354,14 @@ export default function TechniquesHubPage() {
           </div>
 
           {filteredTechniques.length === 0 && (
-            <p className="mt-8 text-center text-sm text-gray-500">
+            <p className="mt-8 text-center text-sm text-muted-foreground">
               No techniques match your search. Try a different term or{" "}
               <button
                 onClick={() => {
                   setSearch("");
                   setCategoryFilter("all");
                 }}
-                className="font-semibold text-[#2E86C1] underline"
+                className="font-semibold text-primary underline"
               >
                 clear filters
               </button>
@@ -373,14 +373,14 @@ export default function TechniquesHubPage() {
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/resources/techniques/language-devices"
-              className="group inline-flex items-center gap-1.5 text-sm font-semibold text-[#2E86C1] transition-colors hover:text-[#1A5276]"
+              className="group inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors hover:text-foreground"
             >
               See all language devices <ArrowRight />
             </Link>
             <span className="text-gray-300">|</span>
             <Link
               href="/resources/techniques/structural-devices"
-              className="group inline-flex items-center gap-1.5 text-sm font-semibold text-[#2E86C1] transition-colors hover:text-[#1A5276]"
+              className="group inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors hover:text-foreground"
             >
               See all structural devices <ArrowRight />
             </Link>
@@ -390,10 +390,10 @@ export default function TechniquesHubPage() {
 
       {/* ── How to Analyse: What-How-Why ─────────────────────────── */}
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
-        <h2 className="text-center text-2xl font-bold text-gray-900 sm:text-3xl">
+        <h2 className="text-center text-2xl font-bold text-foreground sm:text-3xl">
           How to Analyse: The What-How-Why Method
         </h2>
-        <p className="mx-auto mt-3 max-w-2xl text-center text-gray-600">
+        <p className="mx-auto mt-3 max-w-2xl text-center text-muted-foreground">
           Identifying a technique is only step one. To reach the top bands, you
           need to explain <strong>what</strong> the technique is,{" "}
           <strong>how</strong> it works, and <strong>why</strong> the writer
@@ -404,7 +404,7 @@ export default function TechniquesHubPage() {
           {WHW_STEPS.map((step, i) => (
             <div
               key={step.label + i}
-              className="relative rounded-2xl border border-gray-200 bg-white p-6 shadow-sm"
+              className="relative rounded-2xl border border-border bg-card p-6 shadow-md"
             >
               {/* Step number circle */}
               <div
@@ -412,18 +412,18 @@ export default function TechniquesHubPage() {
               >
                 {i + 1}
               </div>
-              <h3 className="mt-4 text-lg font-bold text-gray-900">
+              <h3 className="mt-4 text-lg font-bold text-foreground">
                 {step.heading}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-gray-600">
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 {step.description}
               </p>
               {/* Example */}
-              <div className="mt-4 rounded-lg bg-gray-50 p-3">
-                <p className="text-xs font-semibold uppercase tracking-wider text-gray-400">
+              <div className="mt-4 rounded-lg bg-muted p-3">
+                <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                   Example
                 </p>
-                <p className="mt-1 text-sm italic leading-relaxed text-gray-700">
+                <p className="mt-1 text-sm italic leading-relaxed text-muted-foreground">
                   {step.example}
                 </p>
               </div>
@@ -432,25 +432,25 @@ export default function TechniquesHubPage() {
         </div>
 
         {/* Full worked example */}
-        <div className="mt-10 rounded-2xl border-2 border-[#2E86C1]/20 bg-[#2E86C1]/5 p-6 sm:p-8">
-          <h3 className="text-lg font-bold text-gray-900">
+        <div className="mt-10 rounded-2xl border-2 border-[#2E86C1]/20 bg-primary/5 p-6 sm:p-8">
+          <h3 className="text-lg font-bold text-foreground">
             Putting it all together
           </h3>
-          <div className="mt-4 rounded-xl bg-white p-5 shadow-sm">
-            <p className="text-sm leading-relaxed text-gray-700">
-              <span className="font-semibold text-[#1A5276]">[What]</span>{" "}
+          <div className="mt-4 rounded-xl bg-card p-5 shadow-md">
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              <span className="font-semibold text-foreground">[What]</span>{" "}
               Shakespeare uses <strong>sibilance</strong> in the phrase
               &quot;the serpent&apos;s subtle sting&quot;.{" "}
-              <span className="font-semibold text-[#2E86C1]">[How]</span> The
+              <span className="font-semibold text-primary">[How]</span> The
               repeated &apos;s&apos; sounds create a hissing quality that mimics
               the snake itself, making the language feel dangerous and unsettling.{" "}
-              <span className="font-semibold text-[#1A5276]">[Why]</span> This
+              <span className="font-semibold text-foreground">[Why]</span> This
               reinforces the theme of deception, suggesting hidden danger
               beneath a calm surface -- perhaps reflecting how characters mask
               their true intentions.
             </p>
           </div>
-          <p className="mt-4 text-sm text-gray-600">
+          <p className="mt-4 text-sm text-muted-foreground">
             Notice how each part builds on the last. The <strong>What</strong>{" "}
             identifies, the <strong>How</strong> explains the mechanics, and the{" "}
             <strong>Why</strong> connects to meaning. This structure works for
@@ -460,12 +460,12 @@ export default function TechniquesHubPage() {
       </section>
 
       {/* ── Exam Tips ────────────────────────────────────────────── */}
-      <section className="bg-gray-50 px-4 py-14 sm:px-6 lg:px-8">
+      <section className="bg-muted px-4 py-14 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-center text-2xl font-bold text-gray-900 sm:text-3xl">
+          <h2 className="text-center text-2xl font-bold text-foreground sm:text-3xl">
             Exam Tips for Writing About Techniques
           </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-center text-gray-600">
+          <p className="mx-auto mt-3 max-w-2xl text-center text-muted-foreground">
             Six principles that turn basic identification into top-band
             analysis. Apply these every time you write about a technique.
           </p>
@@ -474,15 +474,15 @@ export default function TechniquesHubPage() {
             {EXAM_TIPS.map((tip, i) => (
               <div
                 key={tip.heading}
-                className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
+                className="rounded-xl border border-border bg-card p-6 shadow-md"
               >
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#2E86C1] text-sm font-bold text-white">
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
                   {i + 1}
                 </span>
-                <h3 className="mt-4 text-base font-bold text-gray-900">
+                <h3 className="mt-4 text-base font-bold text-foreground">
                   {tip.heading}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {tip.body}
                 </p>
               </div>
@@ -493,7 +493,7 @@ export default function TechniquesHubPage() {
 
       {/* ── Continue Exploring ────────────────────────────────────── */}
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-gray-900">
+        <h2 className="text-2xl font-bold text-foreground">
           Continue exploring
         </h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-3">
@@ -517,12 +517,12 @@ export default function TechniquesHubPage() {
             <Link
               key={link.href}
               href={link.href}
-              className="group rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition hover:shadow-md hover:border-[#2E86C1]/40"
+              className="group rounded-xl border border-border bg-card p-5 shadow-md transition hover:shadow-md hover:border-[#2E86C1]/40"
             >
-              <h3 className="font-bold text-gray-900 transition-colors group-hover:text-[#1A5276]">
+              <h3 className="font-bold text-foreground transition-colors group-hover:text-foreground">
                 {link.label}
               </h3>
-              <p className="mt-1 text-sm text-gray-500">{link.desc}</p>
+              <p className="mt-1 text-sm text-muted-foreground">{link.desc}</p>
             </Link>
           ))}
         </div>

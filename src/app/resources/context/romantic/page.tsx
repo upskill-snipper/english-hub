@@ -23,16 +23,16 @@ function Section({
 }) {
   const [open, setOpen] = useState(defaultOpen);
   return (
-    <div className="rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden">
+    <div className="rounded-xl border border-border bg-card shadow-md overflow-hidden">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="flex w-full items-center justify-between px-5 py-4 text-left transition-colors hover:bg-gray-50"
+        className="flex w-full items-center justify-between px-5 py-4 text-left transition-colors hover:bg-muted"
         aria-expanded={open}
         aria-controls={`section-${id}`}
       >
         <div className="flex items-center gap-3">
           <span className={`h-2.5 w-2.5 rounded-full ${colour}`} />
-          <h2 className="text-lg font-bold text-gray-900">{title}</h2>
+          <h2 className="text-lg font-bold text-foreground">{title}</h2>
           {badge && (
             <span className="rounded-full bg-accent-50 px-2.5 py-0.5 text-xs font-semibold text-accent-600">
               {badge}
@@ -40,14 +40,14 @@ function Section({
           )}
         </div>
         <svg
-          className={`h-5 w-5 text-gray-400 transition-transform ${open ? "rotate-180" : ""}`}
+          className={`h-5 w-5 text-muted-foreground transition-transform ${open ? "rotate-180" : ""}`}
           fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"
         >
           <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
         </svg>
       </button>
       {open && (
-        <div id={`section-${id}`} className="border-t border-gray-100 px-5 py-5">
+        <div id={`section-${id}`} className="border-t border-border px-5 py-5">
           {children}
         </div>
       )}
@@ -63,7 +63,7 @@ export default function RomanticContextPage() {
 
       {/* Breadcrumb */}
       <nav className="mx-auto max-w-6xl px-4 pt-6 sm:px-6 lg:px-8" aria-label="Breadcrumb">
-        <ol className="flex flex-wrap items-center gap-1.5 text-sm text-gray-500">
+        <ol className="flex flex-wrap items-center gap-1.5 text-sm text-muted-foreground">
           {[
             { href: "/", label: "Home" },
             { href: "/resources", label: "Resources" },
@@ -71,7 +71,7 @@ export default function RomanticContextPage() {
           ].map((crumb, i) => (
             <li key={crumb.href} className="flex items-center gap-1.5">
               {i > 0 && (
-                <svg className="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <svg className="h-4 w-4 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
               )}
@@ -79,7 +79,7 @@ export default function RomanticContextPage() {
             </li>
           ))}
           <li className="flex items-center gap-1.5">
-            <svg className="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <svg className="h-4 w-4 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
             </svg>
             <span className="font-medium text-primary">Romantic Era</span>
@@ -96,10 +96,10 @@ export default function RomanticContextPage() {
             </span>
             <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-semibold text-accent-600">Poetry Anthology</span>
           </div>
-          <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Romantic Era Context
           </h1>
-          <p className="mt-3 max-w-3xl text-lg text-gray-600 leading-relaxed">
+          <p className="mt-3 max-w-3xl text-lg text-muted-foreground leading-relaxed">
             The Romantic movement was a passionate reaction against industrialisation,
             rationalism, and social conformity. Understanding Romantic ideals is key
             to analysing the poetry anthology, as many poems draw on Romantic
@@ -109,7 +109,7 @@ export default function RomanticContextPage() {
 
         {/* Industrial Revolution Response */}
         <Section id="industry" title="Response to the Industrial Revolution" defaultOpen colour="bg-gray-700">
-          <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+          <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
             <p>
               The Romantic movement arose in direct opposition to the <strong>Industrial Revolution</strong>.
               As factories replaced fields, cities swallowed villages, and machines replaced
@@ -135,7 +135,7 @@ export default function RomanticContextPage() {
         <div className="mt-5 space-y-5">
           {/* Key Romantic Ideals */}
           <Section id="ideals" title="Key Romantic Ideals" colour="bg-emerald-700">
-            <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <div className="grid gap-4 sm:grid-cols-2">
                 {[
                   {
@@ -164,8 +164,8 @@ export default function RomanticContextPage() {
                   },
                 ].map((item) => (
                   <div key={item.ideal} className="rounded-lg bg-emerald-50/50 border border-emerald-100 p-4">
-                    <h3 className="text-sm font-bold text-gray-900">{item.ideal}</h3>
-                    <p className="mt-2 text-sm text-gray-600">{item.detail}</p>
+                    <h3 className="text-sm font-bold text-foreground">{item.ideal}</h3>
+                    <p className="mt-2 text-sm text-muted-foreground">{item.detail}</p>
                   </div>
                 ))}
               </div>
@@ -174,7 +174,7 @@ export default function RomanticContextPage() {
 
           {/* Nature and the Sublime */}
           <Section id="nature" title="Nature & the Sublime" colour="bg-green-700">
-            <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 For the Romantics, <strong>nature</strong> was not merely a backdrop but an active,
                 living force. It was a source of <strong>consolation</strong> in times of grief,
@@ -205,7 +205,7 @@ export default function RomanticContextPage() {
 
           {/* Individual Freedom */}
           <Section id="freedom" title="Individual Freedom & Rebellion" colour="bg-red-700">
-            <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 The Romantics championed the <strong>rights of the individual</strong> against the
                 power of institutions -- the state, the church, social convention. They were
@@ -268,9 +268,9 @@ export default function RomanticContextPage() {
                   detail: "Pioneer of feminist thought. Wrote A Vindication of the Rights of Woman (1792), arguing women deserved equal education. Her ideas challenged Romantic-era gender norms.",
                 },
               ].map((poet) => (
-                <div key={poet.name} className="rounded-lg bg-gray-50 p-4">
-                  <h3 className="text-sm font-bold text-gray-900">{poet.name}</h3>
-                  <p className="mt-1 text-sm text-gray-600">{poet.detail}</p>
+                <div key={poet.name} className="rounded-lg bg-muted p-4">
+                  <h3 className="text-sm font-bold text-foreground">{poet.name}</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">{poet.detail}</p>
                 </div>
               ))}
             </div>
@@ -278,14 +278,14 @@ export default function RomanticContextPage() {
 
           {/* How to use in poetry essays */}
           <Section id="linking" title="How to Link Romantic Context to Poetry" badge="Exam skill" colour="bg-accent">
-            <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 When analysing poetry from the anthology, look for <strong>Romantic influences</strong>
                 and consider how the poet engages with or challenges Romantic traditions.
               </p>
 
-              <h3 className="text-base font-bold text-gray-900 pt-2">Key questions to ask</h3>
-              <ul className="space-y-2 text-sm text-gray-700">
+              <h3 className="text-base font-bold text-foreground pt-2">Key questions to ask</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                   <span>Does the poem use <strong>nature</strong> as a symbol, setting, or source of meaning?</span>
@@ -308,13 +308,13 @@ export default function RomanticContextPage() {
                 </li>
               </ul>
 
-              <h3 className="text-base font-bold text-gray-900 pt-4">Example: Ozymandias by Percy Bysshe Shelley</h3>
+              <h3 className="text-base font-bold text-foreground pt-4">Example: Ozymandias by Percy Bysshe Shelley</h3>
               <div className="rounded-lg border-l-4 border-accent bg-accent-50/40 p-4">
                 <p className="text-xs font-bold uppercase tracking-wider text-accent-600">Poetry Anthology</p>
-                <p className="mt-1 text-sm font-semibold text-gray-800">
+                <p className="mt-1 text-sm font-semibold text-foreground">
                   Shelley uses the ruined statue to embody Romantic anti-tyrannical ideals
                 </p>
-                <p className="mt-2 text-sm text-gray-700">
+                <p className="mt-2 text-sm text-muted-foreground">
                   As a Romantic radical who opposed all forms of tyranny, Shelley uses the crumbling
                   statue of Ozymandias to argue that power is inherently temporary. The &ldquo;lone
                   and level sands&rdquo; that surround the ruin represent nature&apos;s ultimate triumph
@@ -325,13 +325,13 @@ export default function RomanticContextPage() {
                 </p>
               </div>
 
-              <h3 className="text-base font-bold text-gray-900 pt-4">Example: The Prelude (Extract) by William Wordsworth</h3>
+              <h3 className="text-base font-bold text-foreground pt-4">Example: The Prelude (Extract) by William Wordsworth</h3>
               <div className="rounded-lg border-l-4 border-accent bg-accent-50/40 p-4">
                 <p className="text-xs font-bold uppercase tracking-wider text-accent-600">Poetry Anthology</p>
-                <p className="mt-1 text-sm font-semibold text-gray-800">
+                <p className="mt-1 text-sm font-semibold text-foreground">
                   Wordsworth presents nature as a sublime, transformative force
                 </p>
-                <p className="mt-2 text-sm text-gray-700">
+                <p className="mt-2 text-sm text-muted-foreground">
                   The extract from The Prelude dramatises a Romantic encounter with the sublime.
                   The &ldquo;huge peak, black and huge&rdquo; that seems to stride after the young
                   Wordsworth fills him with awe and terror -- the defining Romantic experience.
@@ -343,8 +343,8 @@ export default function RomanticContextPage() {
               </div>
 
               <div className="mt-6 rounded-xl border border-accent-100 bg-accent-50/50 p-5">
-                <h3 className="text-sm font-bold text-gray-900">Sentence starters for Romantic context</h3>
-                <ul className="mt-3 space-y-2 text-sm text-gray-700">
+                <h3 className="text-sm font-bold text-foreground">Sentence starters for Romantic context</h3>
+                <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                     <span>&ldquo;Writing in the Romantic tradition, [poet] uses nature to suggest...&rdquo;</span>
@@ -371,7 +371,7 @@ export default function RomanticContextPage() {
         <div className="mt-10 flex flex-wrap gap-4">
           <Link
             href="/resources/context/twentieth-century"
-            className="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-5 py-3 text-sm font-semibold text-gray-700 shadow-sm transition hover:bg-gray-50"
+            className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-5 py-3 text-sm font-semibold text-muted-foreground shadow-md transition hover:bg-muted"
           >
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
@@ -380,7 +380,7 @@ export default function RomanticContextPage() {
           </Link>
           <Link
             href="/resources/context"
-            className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-primary/90"
+            className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-primary/90"
           >
             All Eras
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">

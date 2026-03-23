@@ -274,8 +274,8 @@ export default function RomeoAndJulietPage() {
 
       <div className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
         {/* ── Quick nav ─────────────────────────────────────────── */}
-        <nav className="rounded-xl bg-gray-50 p-6">
-          <h2 className="text-lg font-bold text-gray-900">On this page</h2>
+        <nav className="rounded-xl bg-muted p-6">
+          <h2 className="text-lg font-bold text-foreground">On this page</h2>
           <ul className="mt-3 grid gap-2 text-sm sm:grid-cols-2 lg:grid-cols-3">
             {[
               ["#plot", "Plot Summary"],
@@ -288,7 +288,7 @@ export default function RomeoAndJulietPage() {
               <li key={href}>
                 <a
                   href={href}
-                  className="text-[#2E86C1] hover:underline"
+                  className="text-primary hover:underline"
                 >
                   {label}
                 </a>
@@ -300,32 +300,32 @@ export default function RomeoAndJulietPage() {
         {/* ── Paper 1 Section A overview ──────────────────────────── */}
         <section className="mt-14 scroll-mt-20">
           <div className="rounded-xl border-2 border-[#2E86C1] bg-blue-50 p-6">
-            <h2 className="text-lg font-bold text-[#1A5276]">
+            <h2 className="text-lg font-bold text-foreground">
               Edexcel Paper 1, Section A — Shakespeare (40 marks)
             </h2>
-            <ul className="mt-4 space-y-2 text-sm text-gray-700">
+            <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
               <li className="flex gap-2">
-                <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#2E86C1]" />
+                <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                 You will receive <strong>one question</strong> on Romeo and Juliet (no choice). The question asks about a character, theme, or relationship across the <strong>whole play</strong>.
               </li>
               <li className="flex gap-2">
-                <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#2E86C1]" />
+                <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                 There is <strong>no extract</strong> — you must recall your own quotations and evidence from memory.
               </li>
               <li className="flex gap-2">
-                <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#2E86C1]" />
+                <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                 <strong>40 marks total</strong>: 36 marks for content and analysis + 4 marks for spelling, punctuation, and grammar (SPaG).
               </li>
               <li className="flex gap-2">
-                <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#2E86C1]" />
+                <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                 Recommended time: approximately <strong>50-55 minutes</strong>.
               </li>
             </ul>
-            <div className="mt-4 rounded-lg bg-white p-4">
-              <p className="text-xs font-semibold uppercase tracking-wide text-[#2E86C1]">
+            <div className="mt-4 rounded-lg bg-card p-4">
+              <p className="text-xs font-semibold uppercase tracking-wide text-primary">
                 Assessment Objectives
               </p>
-              <ul className="mt-2 space-y-1 text-sm text-gray-700">
+              <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                 <li><strong>AO1</strong> — Read, respond, and use textual references (including quotations) to support interpretation. <em>(Up to 12 marks)</em></li>
                 <li><strong>AO2</strong> — Analyse the language, form, and structure used by a writer to create meanings and effects, using relevant subject terminology. <em>(Up to 12 marks)</em></li>
                 <li><strong>AO3</strong> — Show understanding of the relationships between texts and the contexts in which they were written. <em>(Up to 8 marks)</em></li>
@@ -337,22 +337,22 @@ export default function RomeoAndJulietPage() {
 
         {/* ── Plot summary ──────────────────────────────────────── */}
         <section id="plot" className="mt-14 scroll-mt-20">
-          <h2 className="text-2xl font-bold text-gray-900">Plot Summary</h2>
+          <h2 className="text-2xl font-bold text-foreground">Plot Summary</h2>
           <div className="mt-6 space-y-6">
             {PLOT_SUMMARY.map((act) => (
               <div
                 key={act.act}
-                className="rounded-xl border border-gray-200 p-6 shadow-sm"
+                className="rounded-xl border border-border p-6 shadow-md"
               >
                 <div className="flex items-center gap-3">
                   <span className="rounded-full bg-[#1A5276] px-3 py-1 text-xs font-bold text-white">
                     {act.act}
                   </span>
-                  <h3 className="text-lg font-bold text-gray-900">
+                  <h3 className="text-lg font-bold text-foreground">
                     {act.title}
                   </h3>
                 </div>
-                <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   {act.summary}
                 </p>
               </div>
@@ -362,30 +362,30 @@ export default function RomeoAndJulietPage() {
 
         {/* ── Characters ────────────────────────────────────────── */}
         <section id="characters" className="mt-14 scroll-mt-20">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Character Analysis
           </h2>
           <div className="mt-6 space-y-6">
             {CHARACTERS.map((char) => (
               <div
                 key={char.name}
-                className="rounded-xl border border-gray-200 p-6 shadow-sm"
+                className="rounded-xl border border-border p-6 shadow-md"
               >
-                <h3 className="text-xl font-bold text-[#1A5276]">
+                <h3 className="text-xl font-bold text-foreground">
                   {char.name}
                 </h3>
-                <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   {char.description}
                 </p>
                 <div className="mt-4">
-                  <h4 className="text-xs font-semibold uppercase tracking-wide text-[#2E86C1]">
+                  <h4 className="text-xs font-semibold uppercase tracking-wide text-primary">
                     Key Quotes
                   </h4>
                   <ul className="mt-2 space-y-1">
                     {char.key_quotes.map((q) => (
                       <li
                         key={q}
-                        className="text-sm italic text-gray-600"
+                        className="text-sm italic text-muted-foreground"
                       >
                         {q}
                       </li>
@@ -399,26 +399,26 @@ export default function RomeoAndJulietPage() {
 
         {/* ── Themes ────────────────────────────────────────────── */}
         <section id="themes" className="mt-14 scroll-mt-20">
-          <h2 className="text-2xl font-bold text-gray-900">Key Themes</h2>
+          <h2 className="text-2xl font-bold text-foreground">Key Themes</h2>
           <div className="mt-6 space-y-6">
             {THEMES.map((t) => (
               <div
                 key={t.theme}
-                className="rounded-xl border-l-4 border-[#1A5276] bg-gray-50 p-6"
+                className="rounded-xl border-l-4 border-[#1A5276] bg-muted p-6"
               >
-                <h3 className="text-lg font-bold text-[#1A5276]">
+                <h3 className="text-lg font-bold text-foreground">
                   {t.theme}
                 </h3>
-                <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   {t.description}
                 </p>
                 <div className="mt-3">
-                  <h4 className="text-xs font-semibold uppercase tracking-wide text-[#2E86C1]">
+                  <h4 className="text-xs font-semibold uppercase tracking-wide text-primary">
                     Supporting Quotes
                   </h4>
                   <ul className="mt-2 space-y-1">
                     {t.quotes.map((q) => (
-                      <li key={q} className="text-sm italic text-gray-600">
+                      <li key={q} className="text-sm italic text-muted-foreground">
                         {q}
                       </li>
                     ))}
@@ -431,10 +431,10 @@ export default function RomeoAndJulietPage() {
 
         {/* ── Key quotes ────────────────────────────────────────── */}
         <section id="quotes" className="mt-14 scroll-mt-20">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Key Quotes (20)
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             Memorise these quotes — the Edexcel exam is closed-book. Short
             quotes that you can embed naturally into sentences are best.
           </p>
@@ -442,15 +442,15 @@ export default function RomeoAndJulietPage() {
             {KEY_QUOTES.map((q, i) => (
               <div
                 key={i}
-                className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm"
+                className="rounded-lg border border-border bg-card p-4 shadow-md"
               >
-                <p className="text-sm font-semibold italic text-[#1A5276]">
+                <p className="text-sm font-semibold italic text-foreground">
                   {q.quote}
                 </p>
-                <p className="mt-1 text-xs font-medium text-[#2E86C1]">
+                <p className="mt-1 text-xs font-medium text-primary">
                   — {q.speaker}
                 </p>
-                <p className="mt-2 text-sm text-gray-700">
+                <p className="mt-2 text-sm text-muted-foreground">
                   {q.significance}
                 </p>
               </div>
@@ -460,10 +460,10 @@ export default function RomeoAndJulietPage() {
 
         {/* ── Context ───────────────────────────────────────────── */}
         <section id="context" className="mt-14 scroll-mt-20">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Historical Context
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             Context is assessed through AO3. The best responses weave context
             into analysis rather than treating it as a bolt-on paragraph.
           </p>
@@ -471,10 +471,10 @@ export default function RomeoAndJulietPage() {
             {CONTEXT_POINTS.map((c) => (
               <div
                 key={c.topic}
-                className="rounded-xl border border-gray-200 p-5 shadow-sm"
+                className="rounded-xl border border-border p-5 shadow-md"
               >
-                <h3 className="font-bold text-[#1A5276]">{c.topic}</h3>
-                <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+                <h3 className="font-bold text-foreground">{c.topic}</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   {c.detail}
                 </p>
               </div>
@@ -484,53 +484,53 @@ export default function RomeoAndJulietPage() {
 
         {/* ── Exam technique ────────────────────────────────────── */}
         <section id="exam" className="mt-14 scroll-mt-20">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Edexcel Exam Technique for Romeo and Juliet
           </h2>
 
           <div className="mt-6 space-y-6">
-            <div className="rounded-xl bg-gray-50 p-6">
-              <h3 className="text-lg font-bold text-[#1A5276]">
+            <div className="rounded-xl bg-muted p-6">
+              <h3 className="text-lg font-bold text-foreground">
                 What Does an Edexcel Romeo and Juliet Question Look Like?
               </h3>
-              <p className="mt-2 text-sm text-gray-700">
+              <p className="mt-2 text-sm text-muted-foreground">
                 You will be given one question (no choice) that asks about a
                 character, theme, or idea across the whole play. There is no
                 extract — you must recall your own evidence.
               </p>
-              <div className="mt-4 rounded-lg border-2 border-dashed border-[#2E86C1] bg-white p-4">
-                <p className="text-xs font-semibold uppercase tracking-wide text-[#2E86C1]">
+              <div className="mt-4 rounded-lg border-2 border-dashed border-[#2E86C1] bg-card p-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-primary">
                   Example Question
                 </p>
-                <p className="mt-2 text-sm text-gray-900 font-medium">
+                <p className="mt-2 text-sm text-foreground font-medium">
                   Explore how Shakespeare presents the theme of conflict in
                   <em> Romeo and Juliet</em>.
                 </p>
-                <p className="mt-1 text-xs text-gray-500">
+                <p className="mt-1 text-xs text-muted-foreground">
                   You must refer to the context of the play in your answer.
                   (40 marks, including 4 marks for SPaG)
                 </p>
               </div>
-              <div className="mt-3 rounded-lg border-2 border-dashed border-[#2E86C1] bg-white p-4">
-                <p className="text-xs font-semibold uppercase tracking-wide text-[#2E86C1]">
+              <div className="mt-3 rounded-lg border-2 border-dashed border-[#2E86C1] bg-card p-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-primary">
                   Example Question
                 </p>
-                <p className="mt-2 text-sm text-gray-900 font-medium">
+                <p className="mt-2 text-sm text-foreground font-medium">
                   Explore how Shakespeare presents Juliet as a strong character in
                   <em> Romeo and Juliet</em>.
                 </p>
-                <p className="mt-1 text-xs text-gray-500">
+                <p className="mt-1 text-xs text-muted-foreground">
                   You must refer to the context of the play in your answer.
                   (40 marks, including 4 marks for SPaG)
                 </p>
               </div>
             </div>
 
-            <div className="rounded-xl bg-gray-50 p-6">
-              <h3 className="text-lg font-bold text-[#1A5276]">
+            <div className="rounded-xl bg-muted p-6">
+              <h3 className="text-lg font-bold text-foreground">
                 How to Structure Your Answer
               </h3>
-              <ol className="mt-4 space-y-3 text-sm text-gray-700">
+              <ol className="mt-4 space-y-3 text-sm text-muted-foreground">
                 <li className="flex gap-3">
                   <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">1</span>
                   <span>
@@ -558,61 +558,61 @@ export default function RomeoAndJulietPage() {
               </ol>
             </div>
 
-            <div className="rounded-xl bg-gray-50 p-6">
-              <h3 className="text-lg font-bold text-[#1A5276]">
+            <div className="rounded-xl bg-muted p-6">
+              <h3 className="text-lg font-bold text-foreground">
                 Model Paragraph Structure (PEAL)
               </h3>
-              <div className="mt-4 space-y-3 text-sm text-gray-700">
-                <div className="rounded-lg border border-gray-200 bg-white p-4">
-                  <p><strong className="text-[#1A5276]">P</strong>oint — Shakespeare presents conflict as deeply destructive and self-perpetuating.</p>
+              <div className="mt-4 space-y-3 text-sm text-muted-foreground">
+                <div className="rounded-lg border border-border bg-card p-4">
+                  <p><strong className="text-foreground">P</strong>oint — Shakespeare presents conflict as deeply destructive and self-perpetuating.</p>
                 </div>
-                <div className="rounded-lg border border-gray-200 bg-white p-4">
-                  <p><strong className="text-[#1A5276]">E</strong>vidence — Mercutio&apos;s dying words, &quot;A plague o&apos; both your houses!&quot;, repeated three times, condemn the feud.</p>
+                <div className="rounded-lg border border-border bg-card p-4">
+                  <p><strong className="text-foreground">E</strong>vidence — Mercutio&apos;s dying words, &quot;A plague o&apos; both your houses!&quot;, repeated three times, condemn the feud.</p>
                 </div>
-                <div className="rounded-lg border border-gray-200 bg-white p-4">
-                  <p><strong className="text-[#1A5276]">A</strong>nalyse — The noun &quot;plague&quot; implies the feud is a disease infecting all of Verona, not just the two families. The triple repetition mirrors the escalating violence and gives Mercutio&apos;s curse a ritualistic, prophetic quality.</p>
+                <div className="rounded-lg border border-border bg-card p-4">
+                  <p><strong className="text-foreground">A</strong>nalyse — The noun &quot;plague&quot; implies the feud is a disease infecting all of Verona, not just the two families. The triple repetition mirrors the escalating violence and gives Mercutio&apos;s curse a ritualistic, prophetic quality.</p>
                 </div>
-                <div className="rounded-lg border border-gray-200 bg-white p-4">
-                  <p><strong className="text-[#1A5276]">L</strong>ink — Shakespeare uses Mercutio — a character outside the feud — to show that honour-based violence in Elizabethan society destroyed innocent bystanders. This would resonate with an audience familiar with the devastation of civil conflict.</p>
+                <div className="rounded-lg border border-border bg-card p-4">
+                  <p><strong className="text-foreground">L</strong>ink — Shakespeare uses Mercutio — a character outside the feud — to show that honour-based violence in Elizabethan society destroyed innocent bystanders. This would resonate with an audience familiar with the devastation of civil conflict.</p>
                 </div>
               </div>
             </div>
 
             <div className="rounded-xl border-2 border-[#2E86C1] bg-blue-50 p-6">
-              <h3 className="text-lg font-bold text-[#1A5276]">
+              <h3 className="text-lg font-bold text-foreground">
                 Top Tips for Top Marks
               </h3>
-              <ul className="mt-4 space-y-2 text-sm text-gray-700">
+              <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#2E86C1]" />
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   Use Shakespeare&apos;s name — &quot;Shakespeare presents...&quot; or &quot;Shakespeare uses... to suggest...&quot; shows awareness of authorial intent (AO1/AO2).
                 </li>
                 <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#2E86C1]" />
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   Analyse <strong>individual words</strong> within quotes — don&apos;t just identify techniques, explain their effect on the reader/audience.
                 </li>
                 <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#2E86C1]" />
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   <strong>Embed context into analysis</strong> (AO3): &quot;An Elizabethan audience would have understood Juliet&apos;s defiance as deeply transgressive, given that daughters were expected to obey their fathers without question.&quot;
                 </li>
                 <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#2E86C1]" />
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   Use literary terminology confidently: <strong>dramatic irony, foreshadowing, oxymoron, soliloquy, sonnet form, pathetic fallacy, extended metaphor, juxtaposition, Petrarchan conventions</strong>.
                 </li>
                 <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#2E86C1]" />
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   Consider <strong>alternative interpretations</strong>: &quot;While a traditional reading sees Romeo and Juliet as victims of fate, a more critical reading suggests their tragedy results from human failure — the feud, patriarchal control, and hasty decisions.&quot;
                 </li>
                 <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#2E86C1]" />
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   Note <strong>Shakespeare&apos;s use of form</strong>: the Prologue is a sonnet (the love poem form); Romeo and Juliet&apos;s first exchange is a shared sonnet — form mirrors content.
                 </li>
                 <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#2E86C1]" />
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   <strong>Short embedded quotes</strong> score better than long block quotes. Weave 2-4 word phrases into your sentences naturally.
                 </li>
                 <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#2E86C1]" />
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   Remember <strong>SPaG is worth 4 marks</strong> — write in clear paragraphs, use accurate spelling, and vary your sentence structures.
                 </li>
               </ul>

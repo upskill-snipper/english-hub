@@ -314,10 +314,10 @@ export default function ChecklistsPage() {
   return (
     <>
       <div className="mb-8">
-        <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           Revision Checklists
         </h1>
-        <p className="mt-3 max-w-3xl text-lg text-gray-600 leading-relaxed">
+        <p className="mt-3 max-w-3xl text-lg text-muted-foreground leading-relaxed">
           Comprehensive skill-by-skill checklists for every major exam board. Tick off each topic as you
           revise and track your progress. Everything saves automatically to your browser.
         </p>
@@ -336,13 +336,13 @@ export default function ChecklistsPage() {
               className={`rounded-lg px-4 py-2 text-sm font-semibold transition-colors ${
                 activeBoard === b.slug
                   ? "bg-primary text-white"
-                  : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                  : "bg-gray-100 text-muted-foreground hover:bg-gray-200"
               }`}
             >
               {b.label}
               {bChecked.size > 0 && (
                 <span className={`ml-2 rounded-full px-2 py-0.5 text-[10px] font-bold ${
-                  activeBoard === b.slug ? "bg-white/20 text-white" : "bg-accent-100 text-accent-700"
+                  activeBoard === b.slug ? "bg-card/20 text-white" : "bg-accent-100 text-accent-700"
                 }`}>
                   {bPct}%
                 </span>
@@ -353,11 +353,11 @@ export default function ChecklistsPage() {
       </div>
 
       {/* Progress bar */}
-      <div className="mb-6 rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+      <div className="mb-6 rounded-xl border border-border bg-card p-5 shadow-md">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-sm font-semibold text-gray-900">{board.label}</p>
-            <p className="text-xs text-gray-500">
+            <p className="text-sm font-semibold text-foreground">{board.label}</p>
+            <p className="text-xs text-muted-foreground">
               {checkedCount} of {totalItems} skills covered
             </p>
           </div>
@@ -366,13 +366,13 @@ export default function ChecklistsPage() {
             <div className="flex gap-1.5">
               <button
                 onClick={checkAll}
-                className="rounded-lg border border-gray-200 px-3 py-1.5 text-xs font-medium text-gray-600 transition hover:bg-gray-50"
+                className="rounded-lg border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground transition hover:bg-muted"
               >
                 Check all
               </button>
               <button
                 onClick={clearAll}
-                className="rounded-lg border border-gray-200 px-3 py-1.5 text-xs font-medium text-gray-600 transition hover:bg-gray-50"
+                className="rounded-lg border border-border px-3 py-1.5 text-xs font-medium text-muted-foreground transition hover:bg-muted"
               >
                 Clear all
               </button>
@@ -406,13 +406,13 @@ export default function ChecklistsPage() {
           return (
             <section
               key={section.title}
-              className={`overflow-hidden rounded-xl border-l-4 ${board.colour} border border-gray-200 bg-white shadow-sm`}
+              className={`overflow-hidden rounded-xl border-l-4 ${board.colour} border border-border bg-card shadow-md`}
             >
               {/* Section header */}
-              <div className="flex items-center justify-between border-b border-gray-100 px-5 py-4">
-                <h2 className="text-base font-bold text-gray-900">{section.title}</h2>
+              <div className="flex items-center justify-between border-b border-border px-5 py-4">
+                <h2 className="text-base font-bold text-foreground">{section.title}</h2>
                 <div className="flex items-center gap-2">
-                  <span className="text-xs text-gray-500">
+                  <span className="text-xs text-muted-foreground">
                     {sectionChecked}/{sectionTotal}
                   </span>
                   <div className="h-2 w-16 overflow-hidden rounded-full bg-gray-100">
@@ -430,7 +430,7 @@ export default function ChecklistsPage() {
                   const isChecked = boardChecked.has(item.id);
                   return (
                     <li key={item.id}>
-                      <label className="flex cursor-pointer items-start gap-3 px-5 py-3 transition-colors hover:bg-gray-50">
+                      <label className="flex cursor-pointer items-start gap-3 px-5 py-3 transition-colors hover:bg-muted">
                         <input
                           type="checkbox"
                           checked={isChecked}
@@ -440,13 +440,13 @@ export default function ChecklistsPage() {
                         <div className="flex-1">
                           <span
                             className={`text-sm leading-snug ${
-                              isChecked ? "text-gray-400 line-through" : "text-gray-800"
+                              isChecked ? "text-muted-foreground line-through" : "text-foreground"
                             }`}
                           >
                             {item.label}
                           </span>
                           {item.detail && (
-                            <p className={`mt-0.5 text-xs ${isChecked ? "text-gray-300" : "text-gray-500"}`}>
+                            <p className={`mt-0.5 text-xs ${isChecked ? "text-gray-300" : "text-muted-foreground"}`}>
                               {item.detail}
                             </p>
                           )}
@@ -468,8 +468,8 @@ export default function ChecklistsPage() {
 
       {/* Tip box */}
       <div className="mt-10 rounded-xl border border-accent-100 bg-accent-50/50 p-6">
-        <h3 className="text-lg font-bold text-gray-900">Using these checklists effectively</h3>
-        <ul className="mt-3 space-y-2 text-sm text-gray-700">
+        <h3 className="text-lg font-bold text-foreground">Using these checklists effectively</h3>
+        <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span><strong>Do not tick until you are confident.</strong> Only check a skill when you can explain it and demonstrate it in an exam answer.</span>

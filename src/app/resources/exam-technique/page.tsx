@@ -184,7 +184,7 @@ export default function ExamTechniquePage() {
 
       {/* Breadcrumb */}
       <nav className="mx-auto max-w-5xl px-4 pt-6" aria-label="Breadcrumb">
-        <ol className="flex items-center gap-2 text-sm text-gray-500">
+        <ol className="flex items-center gap-2 text-sm text-muted-foreground">
           <li>
             <Link href="/" className="hover:text-primary transition-colors">
               Home
@@ -207,10 +207,10 @@ export default function ExamTechniquePage() {
       {/* Why exam technique matters */}
       <section className="mx-auto max-w-5xl px-4 py-10">
         <div className="rounded-xl border border-accent-100 bg-accent-50/50 p-6 sm:p-8">
-          <h2 className="text-xl font-bold text-gray-900">
+          <h2 className="text-xl font-bold text-foreground">
             Why exam technique matters
           </h2>
-          <div className="mt-4 space-y-3 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-3 text-muted-foreground leading-relaxed">
             <p>
               Every year, thousands of students who know the content well still
               underperform because of poor exam technique. They run out of time,
@@ -234,11 +234,11 @@ export default function ExamTechniquePage() {
       >
         <h2
           id="sections-heading"
-          className="text-2xl font-bold text-gray-900 sm:text-3xl"
+          className="text-2xl font-bold text-foreground sm:text-3xl"
         >
           Explore by topic
         </h2>
-        <p className="mt-2 text-gray-500">
+        <p className="mt-2 text-muted-foreground">
           Each guide is designed to be practical, specific, and immediately
           useful in your revision.
         </p>
@@ -248,7 +248,7 @@ export default function ExamTechniquePage() {
             <Link
               key={s.href}
               href={s.href}
-              className={`group flex flex-col rounded-2xl border-2 ${s.colour} bg-white p-8 shadow-sm transition hover:shadow-lg`}
+              className={`group flex flex-col rounded-2xl border-2 ${s.colour} bg-card p-8 shadow-md transition hover:shadow-lg`}
             >
               <div className="flex items-start justify-between">
                 {s.icon}
@@ -256,17 +256,17 @@ export default function ExamTechniquePage() {
                   {s.badge}
                 </span>
               </div>
-              <h3 className="mt-5 text-xl font-bold text-gray-900 group-hover:text-primary transition-colors">
+              <h3 className="mt-5 text-xl font-bold text-foreground group-hover:text-primary transition-colors">
                 {s.title}
               </h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-gray-600">
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
                 {s.description}
               </p>
               <ul className="mt-5 flex flex-wrap gap-2">
                 {s.topics.map((t) => (
                   <li
                     key={t}
-                    className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600"
+                    className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-muted-foreground"
                   >
                     {t}
                   </li>
@@ -281,12 +281,12 @@ export default function ExamTechniquePage() {
       </section>
 
       {/* Quick wins */}
-      <section className="bg-gray-50 px-4 py-14 sm:px-6 lg:px-8">
+      <section className="bg-muted px-4 py-14 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-center text-2xl font-bold text-gray-900">
+          <h2 className="text-center text-2xl font-bold text-foreground">
             Five quick wins for any English exam
           </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-center text-gray-600">
+          <p className="mx-auto mt-3 max-w-2xl text-center text-muted-foreground">
             No matter your board or paper, these five habits will instantly
             improve your exam performance.
           </p>
@@ -316,15 +316,15 @@ export default function ExamTechniquePage() {
             ].map((tip, i) => (
               <div
                 key={tip.heading}
-                className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
+                className="rounded-xl border border-border bg-card p-6 shadow-md"
               >
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#2E86C1] text-sm font-bold text-white">
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
                   {i + 1}
                 </span>
-                <h3 className="mt-4 text-base font-bold text-gray-900">
+                <h3 className="mt-4 text-base font-bold text-foreground">
                   {tip.heading}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {tip.body}
                 </p>
               </div>
@@ -335,7 +335,7 @@ export default function ExamTechniquePage() {
 
       {/* Continue exploring */}
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-gray-900">
+        <h2 className="text-2xl font-bold text-foreground">
           Continue exploring
         </h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-3">
@@ -359,12 +359,12 @@ export default function ExamTechniquePage() {
             <Link
               key={link.href}
               href={link.href}
-              className="group rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition hover:shadow-md hover:border-accent/40"
+              className="group rounded-xl border border-border bg-card p-5 shadow-md transition hover:shadow-md hover:border-accent/40"
             >
-              <h3 className="font-bold text-gray-900 group-hover:text-primary transition-colors">
+              <h3 className="font-bold text-foreground group-hover:text-primary transition-colors">
                 {link.label}
               </h3>
-              <p className="mt-1 text-sm text-gray-500">{link.desc}</p>
+              <p className="mt-1 text-sm text-muted-foreground">{link.desc}</p>
             </Link>
           ))}
         </div>

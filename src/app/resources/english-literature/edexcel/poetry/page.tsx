@@ -466,52 +466,52 @@ const CONFLICT_POEMS: PoemAnalysis[] = [
 
 function PoemCard({ poem }: { poem: PoemAnalysis }) {
   return (
-    <div className="rounded-xl border border-gray-200 p-6 shadow-sm">
-      <h3 className="text-xl font-bold text-[#1A5276]">{poem.title}</h3>
-      <p className="text-sm font-medium text-[#2E86C1]">{poem.poet}</p>
+    <div className="rounded-xl border border-border p-6 shadow-md">
+      <h3 className="text-xl font-bold text-foreground">{poem.title}</h3>
+      <p className="text-sm font-medium text-primary">{poem.poet}</p>
 
-      <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+      <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
         {poem.summary}
       </p>
 
       <div className="mt-4 space-y-4">
         <div>
-          <h4 className="text-xs font-semibold uppercase tracking-wide text-[#2E86C1]">
+          <h4 className="text-xs font-semibold uppercase tracking-wide text-primary">
             Themes
           </h4>
-          <p className="mt-1 text-sm text-gray-600">{poem.themes}</p>
+          <p className="mt-1 text-sm text-muted-foreground">{poem.themes}</p>
         </div>
 
         <div>
-          <h4 className="text-xs font-semibold uppercase tracking-wide text-[#2E86C1]">
+          <h4 className="text-xs font-semibold uppercase tracking-wide text-primary">
             Language Analysis
           </h4>
-          <p className="mt-1 text-sm text-gray-600">{poem.language}</p>
+          <p className="mt-1 text-sm text-muted-foreground">{poem.language}</p>
         </div>
 
         <div>
-          <h4 className="text-xs font-semibold uppercase tracking-wide text-[#2E86C1]">
+          <h4 className="text-xs font-semibold uppercase tracking-wide text-primary">
             Structure &amp; Form
           </h4>
-          <p className="mt-1 text-sm text-gray-600">{poem.structure}</p>
+          <p className="mt-1 text-sm text-muted-foreground">{poem.structure}</p>
         </div>
 
         <div>
-          <h4 className="text-xs font-semibold uppercase tracking-wide text-[#2E86C1]">
+          <h4 className="text-xs font-semibold uppercase tracking-wide text-primary">
             Key Quotes
           </h4>
           <ul className="mt-1 space-y-1">
             {poem.keyQuotes.map((q) => (
-              <li key={q} className="text-sm italic text-gray-600">{q}</li>
+              <li key={q} className="text-sm italic text-muted-foreground">{q}</li>
             ))}
           </ul>
         </div>
 
         <div className="rounded-lg bg-blue-50 p-3">
-          <h4 className="text-xs font-semibold uppercase tracking-wide text-[#1A5276]">
+          <h4 className="text-xs font-semibold uppercase tracking-wide text-foreground">
             Comparison Ideas
           </h4>
-          <p className="mt-1 text-sm text-gray-600">{poem.comparisonLinks}</p>
+          <p className="mt-1 text-sm text-muted-foreground">{poem.comparisonLinks}</p>
         </div>
       </div>
     </div>
@@ -544,17 +544,17 @@ export default function PoetryPage() {
 
       <div className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
         {/* ── Quick nav ─────────────────────────────────────────── */}
-        <nav className="rounded-xl bg-gray-50 p-6">
-          <h2 className="text-lg font-bold text-gray-900">On this page</h2>
+        <nav className="rounded-xl bg-muted p-6">
+          <h2 className="text-lg font-bold text-foreground">On this page</h2>
           <div className="mt-3 grid gap-4 sm:grid-cols-2">
             <div>
-              <h3 className="text-sm font-semibold text-[#1A5276]">Relationships Cluster</h3>
+              <h3 className="text-sm font-semibold text-foreground">Relationships Cluster</h3>
               <ul className="mt-2 space-y-1 text-sm">
                 {RELATIONSHIPS_POEMS.map((p) => (
                   <li key={p.title}>
                     <a
                       href={`#rel-${p.title.toLowerCase().replace(/[^a-z0-9]/g, "-")}`}
-                      className="text-[#2E86C1] hover:underline"
+                      className="text-primary hover:underline"
                     >
                       {p.title} — {p.poet}
                     </a>
@@ -563,13 +563,13 @@ export default function PoetryPage() {
               </ul>
             </div>
             <div>
-              <h3 className="text-sm font-semibold text-[#1A5276]">Conflict Cluster</h3>
+              <h3 className="text-sm font-semibold text-foreground">Conflict Cluster</h3>
               <ul className="mt-2 space-y-1 text-sm">
                 {CONFLICT_POEMS.map((p) => (
                   <li key={p.title}>
                     <a
                       href={`#con-${p.title.toLowerCase().replace(/[^a-z0-9]/g, "-")}`}
-                      className="text-[#2E86C1] hover:underline"
+                      className="text-primary hover:underline"
                     >
                       {p.title} — {p.poet}
                     </a>
@@ -582,10 +582,10 @@ export default function PoetryPage() {
 
         {/* ── Exam overview ─────────────────────────────────────── */}
         <section className="mt-14">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             How the Poetry Anthology Works
           </h2>
-          <div className="mt-4 rounded-xl bg-gray-50 p-6 text-sm text-gray-700 leading-relaxed space-y-3">
+          <div className="mt-4 rounded-xl bg-muted p-6 text-sm text-muted-foreground leading-relaxed space-y-3">
             <p>
               Your school will have studied <strong>one cluster</strong> —
               either Relationships or Conflict. In the exam, one poem from your
@@ -608,10 +608,10 @@ export default function PoetryPage() {
 
         {/* ── Relationships cluster ─────────────────────────────── */}
         <section className="mt-14">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Relationships Cluster — Full Analysis
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             15 poems exploring different types of relationships: romantic love,
             family bonds, desire, loss, and the complexities of human
             connection.
@@ -632,10 +632,10 @@ export default function PoetryPage() {
 
         {/* ── Conflict cluster ──────────────────────────────────── */}
         <section className="mt-14">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Conflict Cluster — Full Analysis
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             15 poems exploring different types of conflict: war, political
             violence, personal battles, prejudice, inner turmoil, and the
             struggle for identity.
@@ -656,16 +656,16 @@ export default function PoetryPage() {
 
         {/* ── Comparison technique ──────────────────────────────── */}
         <section className="mt-14">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             How to Write a Poetry Comparison
           </h2>
 
           <div className="mt-6 space-y-6">
-            <div className="rounded-xl bg-gray-50 p-6">
-              <h3 className="text-lg font-bold text-[#1A5276]">
+            <div className="rounded-xl bg-muted p-6">
+              <h3 className="text-lg font-bold text-foreground">
                 Recommended Structure
               </h3>
-              <ol className="mt-4 space-y-3 text-sm text-gray-700">
+              <ol className="mt-4 space-y-3 text-sm text-muted-foreground">
                 <li className="flex gap-3">
                   <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">1</span>
                   <span>
@@ -700,12 +700,12 @@ export default function PoetryPage() {
             </div>
 
             <div className="rounded-xl border-2 border-[#2E86C1] bg-blue-50 p-6">
-              <h3 className="text-lg font-bold text-[#1A5276]">
+              <h3 className="text-lg font-bold text-foreground">
                 Useful Comparison Connectives
               </h3>
-              <div className="mt-3 grid gap-4 sm:grid-cols-2 text-sm text-gray-700">
+              <div className="mt-3 grid gap-4 sm:grid-cols-2 text-sm text-muted-foreground">
                 <div>
-                  <h4 className="font-semibold text-gray-900">Similarities</h4>
+                  <h4 className="font-semibold text-foreground">Similarities</h4>
                   <ul className="mt-2 space-y-1">
                     <li>Similarly, [poet] also...</li>
                     <li>Both poets present...</li>
@@ -715,7 +715,7 @@ export default function PoetryPage() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">Differences</h4>
+                  <h4 className="font-semibold text-foreground">Differences</h4>
                   <ul className="mt-2 space-y-1">
                     <li>In contrast, [poet]...</li>
                     <li>Whereas [poem A]..., [poem B]...</li>

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 function Annotation({ children, note }: { children: React.ReactNode; note: string }) {
   return (
     <span className="group relative">
-      <span className="rounded bg-[#2E86C1]/10 px-1 py-0.5 text-[#1A5276] border-b-2 border-dashed border-[#2E86C1]/40">
+      <span className="rounded bg-primary/10 px-1 py-0.5 text-foreground border-b-2 border-dashed border-[#2E86C1]/40">
         {children}
       </span>
       <span className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 w-56 -translate-x-1/2 rounded-lg bg-[#1A5276] px-3 py-2 text-xs leading-relaxed text-white opacity-0 shadow-lg transition-opacity group-hover:pointer-events-auto group-hover:opacity-100">
@@ -38,7 +38,7 @@ function Section({
 }) {
   return (
     <section id={id} className="scroll-mt-24">
-      <h2 className="mb-6 text-2xl font-bold text-[#1A5276] border-b-2 border-[#2E86C1]/20 pb-3">
+      <h2 className="mb-6 text-2xl font-bold text-foreground border-b-2 border-[#2E86C1]/20 pb-3">
         {title}
       </h2>
       {children}
@@ -60,13 +60,13 @@ function TechniqueCard({
   effect: string;
 }) {
   return (
-    <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-      <h4 className="font-bold text-[#1A5276]">{name}</h4>
-      <p className="mt-1 text-sm text-gray-600">{definition}</p>
-      <div className="mt-3 rounded-lg bg-gray-50 px-4 py-3">
-        <p className="text-sm italic text-gray-700">{example}</p>
+    <div className="rounded-xl border border-border bg-card p-5 shadow-md">
+      <h4 className="font-bold text-foreground">{name}</h4>
+      <p className="mt-1 text-sm text-muted-foreground">{definition}</p>
+      <div className="mt-3 rounded-lg bg-muted px-4 py-3">
+        <p className="text-sm italic text-muted-foreground">{example}</p>
       </div>
-      <p className="mt-2 text-sm text-[#2E86C1]">
+      <p className="mt-2 text-sm text-primary">
         <span className="font-semibold">Effect:</span> {effect}
       </p>
     </div>
@@ -89,20 +89,20 @@ function MistakeCard({
   exampleGood: string;
 }) {
   return (
-    <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+    <div className="rounded-xl border border-border bg-card p-5 shadow-md">
       <h4 className="font-bold text-red-600">{mistake}</h4>
-      <p className="mt-1 text-sm text-gray-600">{why}</p>
-      <p className="mt-2 text-sm text-[#1A5276]">
+      <p className="mt-1 text-sm text-muted-foreground">{why}</p>
+      <p className="mt-2 text-sm text-foreground">
         <span className="font-semibold">Fix:</span> {fix}
       </p>
       <div className="mt-3 grid gap-2 sm:grid-cols-2">
         <div className="rounded-lg bg-red-50 px-4 py-3">
           <p className="text-xs font-semibold text-red-500 mb-1">Before</p>
-          <p className="text-sm italic text-gray-700">{exampleBad}</p>
+          <p className="text-sm italic text-muted-foreground">{exampleBad}</p>
         </div>
         <div className="rounded-lg bg-green-50 px-4 py-3">
           <p className="text-xs font-semibold text-green-600 mb-1">After</p>
-          <p className="text-sm italic text-gray-700">{exampleGood}</p>
+          <p className="text-sm italic text-muted-foreground">{exampleGood}</p>
         </div>
       </div>
     </div>
@@ -118,7 +118,7 @@ export default function CreativeWritingPage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-[#1A5276] to-[#1A5276]/80 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-[#2E86C1]/80">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary/80">
             Writing Skills Masterclass
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -134,14 +134,14 @@ export default function CreativeWritingPage() {
 
       {/* Breadcrumb */}
       <nav className="mx-auto max-w-5xl px-4 pt-6" aria-label="Breadcrumb">
-        <ol className="flex flex-wrap items-center gap-2 text-sm text-gray-500">
-          <li><Link href="/" className="hover:text-[#1A5276] transition-colors">Home</Link></li>
+        <ol className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+          <li><Link href="/" className="hover:text-foreground transition-colors">Home</Link></li>
           <li>/</li>
-          <li><Link href="/resources" className="hover:text-[#1A5276] transition-colors">Resources</Link></li>
+          <li><Link href="/resources" className="hover:text-foreground transition-colors">Resources</Link></li>
           <li>/</li>
-          <li><Link href="/resources/writing-skills" className="hover:text-[#1A5276] transition-colors">Writing Skills</Link></li>
+          <li><Link href="/resources/writing-skills" className="hover:text-foreground transition-colors">Writing Skills</Link></li>
           <li>/</li>
-          <li className="font-medium text-[#1A5276]">Creative Writing</li>
+          <li className="font-medium text-foreground">Creative Writing</li>
         </ol>
       </nav>
 
@@ -152,7 +152,7 @@ export default function CreativeWritingPage() {
           {/* Sticky sidebar TOC */}
           <aside className="hidden lg:block">
             <nav className="sticky top-24 space-y-1 text-sm">
-              <p className="mb-2 font-bold text-[#1A5276] uppercase tracking-wider text-xs">Contents</p>
+              <p className="mb-2 font-bold text-foreground uppercase tracking-wider text-xs">Contents</p>
               {[
                 { id: "descriptive", label: "Descriptive Writing" },
                 { id: "narrative", label: "Narrative Writing" },
@@ -168,7 +168,7 @@ export default function CreativeWritingPage() {
                 <a
                   key={item.id}
                   href={`#${item.id}`}
-                  className="block rounded-lg px-3 py-1.5 text-gray-600 hover:bg-[#2E86C1]/10 hover:text-[#1A5276] transition-colors"
+                  className="block rounded-lg px-3 py-1.5 text-muted-foreground hover:bg-primary/10 hover:text-foreground transition-colors"
                 >
                   {item.label}
                 </a>
@@ -181,7 +181,7 @@ export default function CreativeWritingPage() {
 
             {/* ─── DESCRIPTIVE WRITING ─────────────────────────────── */}
             <Section id="descriptive" title="Descriptive Writing Techniques">
-              <p className="mb-6 text-gray-700 leading-relaxed">
+              <p className="mb-6 text-muted-foreground leading-relaxed">
                 Descriptive writing creates vivid images in the reader&apos;s mind. The best
                 descriptive writers do not simply list what they see -- they make the reader
                 <em> experience</em> the scene through carefully chosen language that appeals to
@@ -189,53 +189,53 @@ export default function CreativeWritingPage() {
               </p>
 
               {/* Five Senses Framework */}
-              <h3 className="mb-4 text-lg font-bold text-gray-900">The Five Senses Framework</h3>
-              <p className="mb-4 text-sm text-gray-600">
+              <h3 className="mb-4 text-lg font-bold text-foreground">The Five Senses Framework</h3>
+              <p className="mb-4 text-sm text-muted-foreground">
                 Weaker writing relies almost entirely on sight. Strong descriptive writing engages
                 all five senses to immerse the reader in the scene. Use this framework as a checklist
                 when planning any descriptive piece.
               </p>
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mb-8">
-                <div className="rounded-lg bg-[#2E86C1]/5 border border-[#2E86C1]/20 p-4">
-                  <p className="font-bold text-[#1A5276] text-sm">Sight (Visual)</p>
-                  <p className="mt-1 text-sm text-gray-600">Colour, shape, light, shadow, movement</p>
-                  <p className="mt-2 text-sm italic text-gray-700">&ldquo;The amber streetlight bled through the rain-slicked glass, casting long, trembling shadows across the ceiling.&rdquo;</p>
+                <div className="rounded-lg bg-primary/5 border border-[#2E86C1]/20 p-4">
+                  <p className="font-bold text-foreground text-sm">Sight (Visual)</p>
+                  <p className="mt-1 text-sm text-muted-foreground">Colour, shape, light, shadow, movement</p>
+                  <p className="mt-2 text-sm italic text-muted-foreground">&ldquo;The amber streetlight bled through the rain-slicked glass, casting long, trembling shadows across the ceiling.&rdquo;</p>
                 </div>
-                <div className="rounded-lg bg-[#2E86C1]/5 border border-[#2E86C1]/20 p-4">
-                  <p className="font-bold text-[#1A5276] text-sm">Sound (Auditory)</p>
-                  <p className="mt-1 text-sm text-gray-600">Volume, pitch, rhythm, silence</p>
-                  <p className="mt-2 text-sm italic text-gray-700">&ldquo;The only sound was the slow, rhythmic drip of water from the broken gutter, marking time like a metronome.&rdquo;</p>
+                <div className="rounded-lg bg-primary/5 border border-[#2E86C1]/20 p-4">
+                  <p className="font-bold text-foreground text-sm">Sound (Auditory)</p>
+                  <p className="mt-1 text-sm text-muted-foreground">Volume, pitch, rhythm, silence</p>
+                  <p className="mt-2 text-sm italic text-muted-foreground">&ldquo;The only sound was the slow, rhythmic drip of water from the broken gutter, marking time like a metronome.&rdquo;</p>
                 </div>
-                <div className="rounded-lg bg-[#2E86C1]/5 border border-[#2E86C1]/20 p-4">
-                  <p className="font-bold text-[#1A5276] text-sm">Touch (Tactile)</p>
-                  <p className="mt-1 text-sm text-gray-600">Texture, temperature, pressure, pain</p>
-                  <p className="mt-2 text-sm italic text-gray-700">&ldquo;The rough bark scraped against her palms as she climbed, each grip sending a jolt of cold through her fingers.&rdquo;</p>
+                <div className="rounded-lg bg-primary/5 border border-[#2E86C1]/20 p-4">
+                  <p className="font-bold text-foreground text-sm">Touch (Tactile)</p>
+                  <p className="mt-1 text-sm text-muted-foreground">Texture, temperature, pressure, pain</p>
+                  <p className="mt-2 text-sm italic text-muted-foreground">&ldquo;The rough bark scraped against her palms as she climbed, each grip sending a jolt of cold through her fingers.&rdquo;</p>
                 </div>
-                <div className="rounded-lg bg-[#2E86C1]/5 border border-[#2E86C1]/20 p-4">
-                  <p className="font-bold text-[#1A5276] text-sm">Smell (Olfactory)</p>
-                  <p className="mt-1 text-sm text-gray-600">Pleasant, acrid, subtle, overwhelming</p>
-                  <p className="mt-2 text-sm italic text-gray-700">&ldquo;The air was thick with the cloying sweetness of overripe fruit, undercut by something sharper -- decay.&rdquo;</p>
+                <div className="rounded-lg bg-primary/5 border border-[#2E86C1]/20 p-4">
+                  <p className="font-bold text-foreground text-sm">Smell (Olfactory)</p>
+                  <p className="mt-1 text-sm text-muted-foreground">Pleasant, acrid, subtle, overwhelming</p>
+                  <p className="mt-2 text-sm italic text-muted-foreground">&ldquo;The air was thick with the cloying sweetness of overripe fruit, undercut by something sharper -- decay.&rdquo;</p>
                 </div>
-                <div className="rounded-lg bg-[#2E86C1]/5 border border-[#2E86C1]/20 p-4">
-                  <p className="font-bold text-[#1A5276] text-sm">Taste (Gustatory)</p>
-                  <p className="mt-1 text-sm text-gray-600">Bitter, metallic, sweet, sour, salty</p>
-                  <p className="mt-2 text-sm italic text-gray-700">&ldquo;She bit her lip, tasting the copper tang of blood as the wind whipped the dust into her face.&rdquo;</p>
+                <div className="rounded-lg bg-primary/5 border border-[#2E86C1]/20 p-4">
+                  <p className="font-bold text-foreground text-sm">Taste (Gustatory)</p>
+                  <p className="mt-1 text-sm text-muted-foreground">Bitter, metallic, sweet, sour, salty</p>
+                  <p className="mt-2 text-sm italic text-muted-foreground">&ldquo;She bit her lip, tasting the copper tang of blood as the wind whipped the dust into her face.&rdquo;</p>
                 </div>
-                <div className="rounded-lg bg-[#2E86C1]/5 border border-[#2E86C1]/20 p-4">
-                  <p className="font-bold text-[#1A5276] text-sm">Bonus: Synaesthesia</p>
-                  <p className="mt-1 text-sm text-gray-600">Mixing senses for striking effect</p>
-                  <p className="mt-2 text-sm italic text-gray-700">&ldquo;The silence tasted of dust and old stone, heavy on the tongue like a word she could not quite remember.&rdquo;</p>
+                <div className="rounded-lg bg-primary/5 border border-[#2E86C1]/20 p-4">
+                  <p className="font-bold text-foreground text-sm">Bonus: Synaesthesia</p>
+                  <p className="mt-1 text-sm text-muted-foreground">Mixing senses for striking effect</p>
+                  <p className="mt-2 text-sm italic text-muted-foreground">&ldquo;The silence tasted of dust and old stone, heavy on the tongue like a word she could not quite remember.&rdquo;</p>
                 </div>
               </div>
 
               {/* Show Don't Tell -- 10 examples */}
-              <h3 className="mb-4 text-lg font-bold text-gray-900">Show, Don&apos;t Tell</h3>
-              <p className="mb-4 text-sm text-gray-600">
+              <h3 className="mb-4 text-lg font-bold text-foreground">Show, Don&apos;t Tell</h3>
+              <p className="mb-4 text-sm text-muted-foreground">
                 This is the single most important principle in creative writing. Instead of naming an
                 emotion or state directly, you <strong>demonstrate</strong> it through actions, sensory
                 detail, and body language. Here are 10 examples showing the transformation.
               </p>
-              <div className="mb-8 overflow-hidden rounded-xl border border-gray-200">
+              <div className="mb-8 overflow-hidden rounded-xl border border-border">
                 <div className="grid grid-cols-2 text-sm font-bold bg-[#1A5276] text-white">
                   <div className="px-4 py-3">Telling (Weak)</div>
                   <div className="px-4 py-3 border-l border-white/20">Showing (Strong)</div>
@@ -252,15 +252,15 @@ export default function CreativeWritingPage() {
                   { tell: "She was lonely.", show: "She set two places at the table, then quietly removed one. The fork clinked as she placed it back in the drawer." },
                   { tell: "It was beautiful.", show: "The valley opened beneath them, green and gold, and for a moment neither of them spoke. The river glittered in the distance like a thread of silver dropped carelessly across the land." },
                 ].map((row, i) => (
-                  <div key={i} className={`grid grid-cols-1 sm:grid-cols-2 text-sm ${i % 2 === 0 ? "bg-white" : "bg-gray-50"}`}>
-                    <div className="px-4 py-3 text-gray-500 line-through decoration-red-400">{row.tell}</div>
-                    <div className="px-4 py-3 text-gray-700 border-t sm:border-t-0 sm:border-l border-gray-200">{row.show}</div>
+                  <div key={i} className={`grid grid-cols-1 sm:grid-cols-2 text-sm ${i % 2 === 0 ? "bg-card" : "bg-muted"}`}>
+                    <div className="px-4 py-3 text-muted-foreground line-through decoration-red-400">{row.tell}</div>
+                    <div className="px-4 py-3 text-muted-foreground border-t sm:border-t-0 sm:border-l border-border">{row.show}</div>
                   </div>
                 ))}
               </div>
 
               {/* Figurative Language */}
-              <h3 className="mb-4 text-lg font-bold text-gray-900">Figurative Language</h3>
+              <h3 className="mb-4 text-lg font-bold text-foreground">Figurative Language</h3>
               <div className="grid gap-4 sm:grid-cols-2 mb-8">
                 <TechniqueCard
                   name="Simile"
@@ -313,121 +313,121 @@ export default function CreativeWritingPage() {
               </div>
 
               {/* Setting Description */}
-              <h3 className="mb-4 text-lg font-bold text-gray-900">Setting Description</h3>
-              <p className="mb-4 text-sm text-gray-600">
+              <h3 className="mb-4 text-lg font-bold text-foreground">Setting Description</h3>
+              <p className="mb-4 text-sm text-muted-foreground">
                 A well-described setting does more than paint a picture -- it establishes mood, hints at
                 theme, and can even reveal character. Follow these principles.
               </p>
               <div className="grid gap-4 sm:grid-cols-2 mb-8">
-                <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-                  <h4 className="font-bold text-[#1A5276]">Layer Your Senses</h4>
-                  <p className="mt-1 text-sm text-gray-600">Do not describe only what you see. Begin with sight, then add sound, then smell or touch. Each new sense deepens the reader&apos;s immersion.</p>
-                  <div className="mt-3 rounded-lg bg-gray-50 px-4 py-3">
-                    <p className="text-sm italic text-gray-700">&ldquo;The market square blazed with colour -- orange canopies, crimson peppers, bolts of turquoise fabric. Beneath it all, the air hummed with the chatter of vendors and the distant clang of a blacksmith&apos;s hammer, threaded through with the smell of cumin and charcoal smoke.&rdquo;</p>
+                <div className="rounded-xl border border-border bg-card p-5 shadow-md">
+                  <h4 className="font-bold text-foreground">Layer Your Senses</h4>
+                  <p className="mt-1 text-sm text-muted-foreground">Do not describe only what you see. Begin with sight, then add sound, then smell or touch. Each new sense deepens the reader&apos;s immersion.</p>
+                  <div className="mt-3 rounded-lg bg-muted px-4 py-3">
+                    <p className="text-sm italic text-muted-foreground">&ldquo;The market square blazed with colour -- orange canopies, crimson peppers, bolts of turquoise fabric. Beneath it all, the air hummed with the chatter of vendors and the distant clang of a blacksmith&apos;s hammer, threaded through with the smell of cumin and charcoal smoke.&rdquo;</p>
                   </div>
                 </div>
-                <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-                  <h4 className="font-bold text-[#1A5276]">Use the Setting to Reflect Mood</h4>
-                  <p className="mt-1 text-sm text-gray-600">The setting should not be neutral. A cheerful character sees the world differently from a grieving one. Filter the description through the character&apos;s emotional state.</p>
-                  <div className="mt-3 rounded-lg bg-gray-50 px-4 py-3">
-                    <p className="text-sm italic text-gray-700">&ldquo;Even the sunlight felt wrong that morning -- too bright, too insistent, flooding through the curtains as though it didn&apos;t know what had happened.&rdquo;</p>
+                <div className="rounded-xl border border-border bg-card p-5 shadow-md">
+                  <h4 className="font-bold text-foreground">Use the Setting to Reflect Mood</h4>
+                  <p className="mt-1 text-sm text-muted-foreground">The setting should not be neutral. A cheerful character sees the world differently from a grieving one. Filter the description through the character&apos;s emotional state.</p>
+                  <div className="mt-3 rounded-lg bg-muted px-4 py-3">
+                    <p className="text-sm italic text-muted-foreground">&ldquo;Even the sunlight felt wrong that morning -- too bright, too insistent, flooding through the curtains as though it didn&apos;t know what had happened.&rdquo;</p>
                   </div>
                 </div>
-                <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-                  <h4 className="font-bold text-[#1A5276]">Select Details Carefully</h4>
-                  <p className="mt-1 text-sm text-gray-600">You cannot describe everything. Choose three or four specific details that collectively create a dominant impression. Every detail should earn its place.</p>
-                  <div className="mt-3 rounded-lg bg-gray-50 px-4 py-3">
-                    <p className="text-sm italic text-gray-700">&ldquo;The kitchen was small: a crooked shelf, a chipped mug by the sink, a tea towel printed with flowers that had faded to ghosts. Everything in its place. Everything worn.&rdquo;</p>
+                <div className="rounded-xl border border-border bg-card p-5 shadow-md">
+                  <h4 className="font-bold text-foreground">Select Details Carefully</h4>
+                  <p className="mt-1 text-sm text-muted-foreground">You cannot describe everything. Choose three or four specific details that collectively create a dominant impression. Every detail should earn its place.</p>
+                  <div className="mt-3 rounded-lg bg-muted px-4 py-3">
+                    <p className="text-sm italic text-muted-foreground">&ldquo;The kitchen was small: a crooked shelf, a chipped mug by the sink, a tea towel printed with flowers that had faded to ghosts. Everything in its place. Everything worn.&rdquo;</p>
                   </div>
                 </div>
-                <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-                  <h4 className="font-bold text-[#1A5276]">Imply History Through Detail</h4>
-                  <p className="mt-1 text-sm text-gray-600">The best settings suggest a past without explaining it. A scratched floor, a child&apos;s height marks on a doorframe, a faded sign -- these imply stories the reader can imagine.</p>
-                  <div className="mt-3 rounded-lg bg-gray-50 px-4 py-3">
-                    <p className="text-sm italic text-gray-700">&ldquo;The bench bore the faded initials of lovers who had long since parted. The wood was smooth where hundreds of hands had gripped, rough where the weather had taken its toll.&rdquo;</p>
+                <div className="rounded-xl border border-border bg-card p-5 shadow-md">
+                  <h4 className="font-bold text-foreground">Imply History Through Detail</h4>
+                  <p className="mt-1 text-sm text-muted-foreground">The best settings suggest a past without explaining it. A scratched floor, a child&apos;s height marks on a doorframe, a faded sign -- these imply stories the reader can imagine.</p>
+                  <div className="mt-3 rounded-lg bg-muted px-4 py-3">
+                    <p className="text-sm italic text-muted-foreground">&ldquo;The bench bore the faded initials of lovers who had long since parted. The wood was smooth where hundreds of hands had gripped, rough where the weather had taken its toll.&rdquo;</p>
                   </div>
                 </div>
               </div>
 
               {/* Character Description */}
-              <h3 className="mb-4 text-lg font-bold text-gray-900">Character Description</h3>
-              <p className="mb-4 text-sm text-gray-600">
+              <h3 className="mb-4 text-lg font-bold text-foreground">Character Description</h3>
+              <p className="mb-4 text-sm text-muted-foreground">
                 Strong character description avoids listing physical features (&ldquo;She had blue eyes and brown hair&rdquo;).
                 Instead, it reveals personality through carefully chosen details, habits, and actions.
               </p>
               <div className="grid gap-4 sm:grid-cols-2 mb-8">
-                <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-                  <h4 className="font-bold text-[#1A5276]">Reveal Through Action</h4>
-                  <p className="mt-1 text-sm text-gray-600">Show who a character is through what they do, not a physical inventory.</p>
-                  <div className="mt-3 rounded-lg bg-gray-50 px-4 py-3">
-                    <p className="text-sm italic text-gray-700">&ldquo;She answered the phone on the first ring, the way she always did -- as though she had been waiting for bad news.&rdquo;</p>
+                <div className="rounded-xl border border-border bg-card p-5 shadow-md">
+                  <h4 className="font-bold text-foreground">Reveal Through Action</h4>
+                  <p className="mt-1 text-sm text-muted-foreground">Show who a character is through what they do, not a physical inventory.</p>
+                  <div className="mt-3 rounded-lg bg-muted px-4 py-3">
+                    <p className="text-sm italic text-muted-foreground">&ldquo;She answered the phone on the first ring, the way she always did -- as though she had been waiting for bad news.&rdquo;</p>
                   </div>
                 </div>
-                <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-                  <h4 className="font-bold text-[#1A5276]">Use Telling Details</h4>
-                  <p className="mt-1 text-sm text-gray-600">One carefully chosen detail says more than a full description. Focus on what is unusual or revealing.</p>
-                  <div className="mt-3 rounded-lg bg-gray-50 px-4 py-3">
-                    <p className="text-sm italic text-gray-700">&ldquo;His hands were enormous -- farmer&apos;s hands, cracked and calloused, with dirt permanently ground into the creases of his knuckles. He held the teacup as though it were made of eggshell.&rdquo;</p>
+                <div className="rounded-xl border border-border bg-card p-5 shadow-md">
+                  <h4 className="font-bold text-foreground">Use Telling Details</h4>
+                  <p className="mt-1 text-sm text-muted-foreground">One carefully chosen detail says more than a full description. Focus on what is unusual or revealing.</p>
+                  <div className="mt-3 rounded-lg bg-muted px-4 py-3">
+                    <p className="text-sm italic text-muted-foreground">&ldquo;His hands were enormous -- farmer&apos;s hands, cracked and calloused, with dirt permanently ground into the creases of his knuckles. He held the teacup as though it were made of eggshell.&rdquo;</p>
                   </div>
                 </div>
-                <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-                  <h4 className="font-bold text-[#1A5276]">Habits and Mannerisms</h4>
-                  <p className="mt-1 text-sm text-gray-600">Repeated actions or unconscious habits reveal character more authentically than direct description.</p>
-                  <div className="mt-3 rounded-lg bg-gray-50 px-4 py-3">
-                    <p className="text-sm italic text-gray-700">&ldquo;He had a habit of finishing other people&apos;s sentences, not to be rude -- he simply could not bear the silence of someone searching for a word.&rdquo;</p>
+                <div className="rounded-xl border border-border bg-card p-5 shadow-md">
+                  <h4 className="font-bold text-foreground">Habits and Mannerisms</h4>
+                  <p className="mt-1 text-sm text-muted-foreground">Repeated actions or unconscious habits reveal character more authentically than direct description.</p>
+                  <div className="mt-3 rounded-lg bg-muted px-4 py-3">
+                    <p className="text-sm italic text-muted-foreground">&ldquo;He had a habit of finishing other people&apos;s sentences, not to be rude -- he simply could not bear the silence of someone searching for a word.&rdquo;</p>
                   </div>
                 </div>
-                <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-                  <h4 className="font-bold text-[#1A5276]">Contrast and Contradiction</h4>
-                  <p className="mt-1 text-sm text-gray-600">The most interesting characters contain contradictions. Show the unexpected detail that complicates first impressions.</p>
-                  <div className="mt-3 rounded-lg bg-gray-50 px-4 py-3">
-                    <p className="text-sm italic text-gray-700">&ldquo;She was six foot two and built like a rower, but when she laughed -- really laughed -- she covered her mouth with both hands like a child caught stealing sweets.&rdquo;</p>
+                <div className="rounded-xl border border-border bg-card p-5 shadow-md">
+                  <h4 className="font-bold text-foreground">Contrast and Contradiction</h4>
+                  <p className="mt-1 text-sm text-muted-foreground">The most interesting characters contain contradictions. Show the unexpected detail that complicates first impressions.</p>
+                  <div className="mt-3 rounded-lg bg-muted px-4 py-3">
+                    <p className="text-sm italic text-muted-foreground">&ldquo;She was six foot two and built like a rower, but when she laughed -- really laughed -- she covered her mouth with both hands like a child caught stealing sweets.&rdquo;</p>
                   </div>
                 </div>
               </div>
 
               {/* Atmosphere */}
-              <h3 className="mb-4 text-lg font-bold text-gray-900">Creating Atmosphere</h3>
-              <p className="mb-4 text-sm text-gray-600">
+              <h3 className="mb-4 text-lg font-bold text-foreground">Creating Atmosphere</h3>
+              <p className="mb-4 text-sm text-muted-foreground">
                 Atmosphere is the overall feeling or mood of a piece. It is not created by a single technique
                 but by the <strong>accumulation</strong> of many techniques working together: word choice, sentence
                 rhythm, sensory detail, and pathetic fallacy. Below are strategies for building atmosphere.
               </p>
               <div className="space-y-4 mb-8">
-                <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-                  <h4 className="font-bold text-[#1A5276]">Word-Level: Semantic Fields</h4>
-                  <p className="mt-1 text-sm text-gray-600">
+                <div className="rounded-xl border border-border bg-card p-5 shadow-md">
+                  <h4 className="font-bold text-foreground">Word-Level: Semantic Fields</h4>
+                  <p className="mt-1 text-sm text-muted-foreground">
                     Choose words from the same &ldquo;family&rdquo; of meaning to reinforce atmosphere. For a threatening mood,
                     use words from the semantic field of danger: lurked, crept, shadow, edge, blade, sharpened. The reader absorbs the pattern subconsciously.
                   </p>
-                  <div className="mt-3 rounded-lg bg-gray-50 px-4 py-3">
-                    <p className="text-sm italic text-gray-700">&ldquo;The path <strong>narrowed</strong>. Trees <strong>pressed</strong> in from either side, their branches <strong>clawing</strong> at the fading light. The air <strong>thickened</strong>. Somewhere ahead, something <strong>waited</strong>.&rdquo;</p>
-                    <p className="mt-2 text-xs text-[#2E86C1]">Every bolded word belongs to the semantic field of confinement and threat.</p>
+                  <div className="mt-3 rounded-lg bg-muted px-4 py-3">
+                    <p className="text-sm italic text-muted-foreground">&ldquo;The path <strong>narrowed</strong>. Trees <strong>pressed</strong> in from either side, their branches <strong>clawing</strong> at the fading light. The air <strong>thickened</strong>. Somewhere ahead, something <strong>waited</strong>.&rdquo;</p>
+                    <p className="mt-2 text-xs text-primary">Every bolded word belongs to the semantic field of confinement and threat.</p>
                   </div>
                 </div>
-                <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-                  <h4 className="font-bold text-[#1A5276]">Sentence-Level: Rhythm and Length</h4>
-                  <p className="mt-1 text-sm text-gray-600">
+                <div className="rounded-xl border border-border bg-card p-5 shadow-md">
+                  <h4 className="font-bold text-foreground">Sentence-Level: Rhythm and Length</h4>
+                  <p className="mt-1 text-sm text-muted-foreground">
                     Long, flowing sentences create calm, reflection, or beauty. Short, clipped sentences create tension, urgency, or shock. Vary your sentence length deliberately to shape how the reader feels.
                   </p>
-                  <div className="mt-3 rounded-lg bg-gray-50 px-4 py-3">
-                    <p className="text-sm italic text-gray-700">&ldquo;The garden stretched out before her, a patchwork of green and gold, the kind of place where afternoons could stretch into evenings without anyone noticing or caring. [Long = calm] Then the gate slammed. She froze. [Short = tension]&rdquo;</p>
+                  <div className="mt-3 rounded-lg bg-muted px-4 py-3">
+                    <p className="text-sm italic text-muted-foreground">&ldquo;The garden stretched out before her, a patchwork of green and gold, the kind of place where afternoons could stretch into evenings without anyone noticing or caring. [Long = calm] Then the gate slammed. She froze. [Short = tension]&rdquo;</p>
                   </div>
                 </div>
-                <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-                  <h4 className="font-bold text-[#1A5276]">Pathetic Fallacy in Detail</h4>
-                  <p className="mt-1 text-sm text-gray-600">
+                <div className="rounded-xl border border-border bg-card p-5 shadow-md">
+                  <h4 className="font-bold text-foreground">Pathetic Fallacy in Detail</h4>
+                  <p className="mt-1 text-sm text-muted-foreground">
                     Go beyond &ldquo;it was raining because the character was sad.&rdquo; Use weather and nature to mirror, contrast, or foreshadow
                     emotional states. The best pathetic fallacy is subtle enough that the reader feels the mood without consciously noticing the technique.
                   </p>
                   <div className="mt-3 grid gap-3 sm:grid-cols-2">
                     <div className="rounded-lg bg-blue-50 px-4 py-3">
-                      <p className="text-xs font-semibold text-[#2E86C1] mb-1">Mirroring (mood matches weather)</p>
-                      <p className="text-sm italic text-gray-700">&ldquo;The sky sagged, grey and heavy, pressing down on the rooftops as though it, too, had given up.&rdquo;</p>
+                      <p className="text-xs font-semibold text-primary mb-1">Mirroring (mood matches weather)</p>
+                      <p className="text-sm italic text-muted-foreground">&ldquo;The sky sagged, grey and heavy, pressing down on the rooftops as though it, too, had given up.&rdquo;</p>
                     </div>
                     <div className="rounded-lg bg-blue-50 px-4 py-3">
-                      <p className="text-xs font-semibold text-[#2E86C1] mb-1">Contrasting (mood clashes with weather)</p>
-                      <p className="text-sm italic text-gray-700">&ldquo;Outside, the sun was obscenely bright. Birds sang. Children played. None of it matched the silence inside the house.&rdquo;</p>
+                      <p className="text-xs font-semibold text-primary mb-1">Contrasting (mood clashes with weather)</p>
+                      <p className="text-sm italic text-muted-foreground">&ldquo;Outside, the sun was obscenely bright. Birds sang. Children played. None of it matched the silence inside the house.&rdquo;</p>
                     </div>
                   </div>
                 </div>
@@ -436,7 +436,7 @@ export default function CreativeWritingPage() {
 
             {/* ─── NARRATIVE WRITING ──────────────────────────────── */}
             <Section id="narrative" title="Narrative Writing Techniques">
-              <p className="mb-6 text-gray-700 leading-relaxed">
+              <p className="mb-6 text-muted-foreground leading-relaxed">
                 Narrative writing tells a story. The best narratives are not just <em>what</em> happens, but
                 <em> how</em> it is told. The techniques below will help you control pace, create tension,
                 develop character, and craft a story that feels deliberate from its first word to its last.
@@ -494,8 +494,8 @@ export default function CreativeWritingPage() {
               </div>
 
               {/* Dialogue Punctuation Rules */}
-              <h3 className="mb-4 text-lg font-bold text-gray-900">Dialogue: Punctuation Rules</h3>
-              <p className="mb-4 text-sm text-gray-600">
+              <h3 className="mb-4 text-lg font-bold text-foreground">Dialogue: Punctuation Rules</h3>
+              <p className="mb-4 text-sm text-muted-foreground">
                 Dialogue is one of the most common areas where students lose marks. Learn these rules and
                 apply them consistently.
               </p>
@@ -532,53 +532,53 @@ export default function CreativeWritingPage() {
                     explanation: "The best dialogue carries subtext -- what the character means is not exactly what they say. The short, clipped responses here reveal frustration and resignation.",
                   },
                 ].map((item, i) => (
-                  <div key={i} className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-                    <h4 className="font-bold text-[#1A5276] text-sm">{item.rule}</h4>
-                    <div className="mt-2 rounded-lg bg-gray-50 px-4 py-3">
-                      <p className="text-sm italic text-gray-700 whitespace-pre-line">{item.example}</p>
+                  <div key={i} className="rounded-xl border border-border bg-card p-5 shadow-md">
+                    <h4 className="font-bold text-foreground text-sm">{item.rule}</h4>
+                    <div className="mt-2 rounded-lg bg-muted px-4 py-3">
+                      <p className="text-sm italic text-muted-foreground whitespace-pre-line">{item.example}</p>
                     </div>
-                    <p className="mt-2 text-sm text-gray-600">{item.explanation}</p>
+                    <p className="mt-2 text-sm text-muted-foreground">{item.explanation}</p>
                   </div>
                 ))}
               </div>
 
               {/* Suspense Building */}
-              <h3 className="mb-4 text-lg font-bold text-gray-900">Building Suspense</h3>
-              <p className="mb-4 text-sm text-gray-600">
+              <h3 className="mb-4 text-lg font-bold text-foreground">Building Suspense</h3>
+              <p className="mb-4 text-sm text-muted-foreground">
                 Suspense is the art of making the reader <em>need</em> to know what happens next. It is not just about scary stories --
                 any narrative benefits from tension. Here is a toolkit for building suspense.
               </p>
               <div className="grid gap-4 sm:grid-cols-2">
-                <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-                  <h4 className="font-bold text-[#1A5276]">Delay the Reveal</h4>
-                  <p className="mt-1 text-sm text-gray-600">When something important is about to happen, slow down. Describe the character&apos;s hand reaching for the handle. The creak of the floorboard. The way the light shifts. Make the reader wait.</p>
+                <div className="rounded-xl border border-border bg-card p-5 shadow-md">
+                  <h4 className="font-bold text-foreground">Delay the Reveal</h4>
+                  <p className="mt-1 text-sm text-muted-foreground">When something important is about to happen, slow down. Describe the character&apos;s hand reaching for the handle. The creak of the floorboard. The way the light shifts. Make the reader wait.</p>
                 </div>
-                <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-                  <h4 className="font-bold text-[#1A5276]">Use the Senses to Create Unease</h4>
-                  <p className="mt-1 text-sm text-gray-600">Unexplained sounds, strange smells, sudden temperature changes. Sensory anomalies signal to the reader that something is wrong before the character consciously realises it.</p>
+                <div className="rounded-xl border border-border bg-card p-5 shadow-md">
+                  <h4 className="font-bold text-foreground">Use the Senses to Create Unease</h4>
+                  <p className="mt-1 text-sm text-muted-foreground">Unexplained sounds, strange smells, sudden temperature changes. Sensory anomalies signal to the reader that something is wrong before the character consciously realises it.</p>
                 </div>
-                <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-                  <h4 className="font-bold text-[#1A5276]">Short Sentences and Fragments</h4>
-                  <p className="mt-1 text-sm text-gray-600">&ldquo;She listened. Nothing. Then -- there. Again.&rdquo; The fragmented rhythm creates a heartbeat-like pace that mirrors the character&apos;s rising anxiety.</p>
+                <div className="rounded-xl border border-border bg-card p-5 shadow-md">
+                  <h4 className="font-bold text-foreground">Short Sentences and Fragments</h4>
+                  <p className="mt-1 text-sm text-muted-foreground">&ldquo;She listened. Nothing. Then -- there. Again.&rdquo; The fragmented rhythm creates a heartbeat-like pace that mirrors the character&apos;s rising anxiety.</p>
                 </div>
-                <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-                  <h4 className="font-bold text-[#1A5276]">Contrast Calm with Threat</h4>
-                  <p className="mt-1 text-sm text-gray-600">The most effective suspense often comes from juxtaposing an ordinary, safe moment with a single disturbing detail. The normality makes the threat feel more real.</p>
+                <div className="rounded-xl border border-border bg-card p-5 shadow-md">
+                  <h4 className="font-bold text-foreground">Contrast Calm with Threat</h4>
+                  <p className="mt-1 text-sm text-muted-foreground">The most effective suspense often comes from juxtaposing an ordinary, safe moment with a single disturbing detail. The normality makes the threat feel more real.</p>
                 </div>
-                <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-                  <h4 className="font-bold text-[#1A5276]">The Rule of Three</h4>
-                  <p className="mt-1 text-sm text-gray-600">Build in three stages: first hint, second hint (stronger), then the reveal. The pattern creates expectation. &ldquo;A creak. A shadow. Then the door swung open.&rdquo;</p>
+                <div className="rounded-xl border border-border bg-card p-5 shadow-md">
+                  <h4 className="font-bold text-foreground">The Rule of Three</h4>
+                  <p className="mt-1 text-sm text-muted-foreground">Build in three stages: first hint, second hint (stronger), then the reveal. The pattern creates expectation. &ldquo;A creak. A shadow. Then the door swung open.&rdquo;</p>
                 </div>
-                <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-                  <h4 className="font-bold text-[#1A5276]">Limit the Character&apos;s Knowledge</h4>
-                  <p className="mt-1 text-sm text-gray-600">If the character does not understand what is happening, neither does the reader. Confusion, misinterpretation, and partial information all heighten tension.</p>
+                <div className="rounded-xl border border-border bg-card p-5 shadow-md">
+                  <h4 className="font-bold text-foreground">Limit the Character&apos;s Knowledge</h4>
+                  <p className="mt-1 text-sm text-muted-foreground">If the character does not understand what is happening, neither does the reader. Confusion, misinterpretation, and partial information all heighten tension.</p>
                 </div>
               </div>
             </Section>
 
             {/* ─── OPENING TECHNIQUES ────────────────────────────── */}
             <Section id="openings" title="Opening Techniques">
-              <p className="mb-6 text-gray-700 leading-relaxed">
+              <p className="mb-6 text-muted-foreground leading-relaxed">
                 Your opening is your first impression on the examiner. These are 12 proven opening
                 strategies that immediately signal confident, skilled writing.
               </p>
@@ -658,18 +658,18 @@ export default function CreativeWritingPage() {
                     why: "Refuses to tell the reader what happened, creating a gap that the reader desperately wants to fill.",
                   },
                 ].map((item) => (
-                  <div key={item.num} className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+                  <div key={item.num} className="rounded-xl border border-border bg-card p-5 shadow-md">
                     <div className="flex items-start gap-3">
                       <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-sm font-bold text-white">
                         {item.num}
                       </span>
                       <div>
-                        <h4 className="font-bold text-[#1A5276]">{item.name}</h4>
-                        <div className="mt-2 rounded-lg bg-gray-50 px-4 py-3">
-                          <p className="text-sm italic text-gray-700">{item.example}</p>
+                        <h4 className="font-bold text-foreground">{item.name}</h4>
+                        <div className="mt-2 rounded-lg bg-muted px-4 py-3">
+                          <p className="text-sm italic text-muted-foreground">{item.example}</p>
                         </div>
-                        <p className="mt-2 text-sm text-gray-600">
-                          <span className="font-semibold text-[#2E86C1]">Why it works:</span> {item.why}
+                        <p className="mt-2 text-sm text-muted-foreground">
+                          <span className="font-semibold text-primary">Why it works:</span> {item.why}
                         </p>
                       </div>
                     </div>
@@ -680,7 +680,7 @@ export default function CreativeWritingPage() {
 
             {/* ─── ENDING TECHNIQUES ─────────────────────────────── */}
             <Section id="endings" title="Ending Techniques">
-              <p className="mb-6 text-gray-700 leading-relaxed">
+              <p className="mb-6 text-muted-foreground leading-relaxed">
                 Your ending is the last thing the examiner reads. A strong ending elevates the entire
                 piece. Here are 10 ending strategies that leave a lasting impression.
               </p>
@@ -748,18 +748,18 @@ export default function CreativeWritingPage() {
                     why: "The object becomes a symbol -- here, letting go. The reader understands the deeper meaning without being told.",
                   },
                 ].map((item) => (
-                  <div key={item.num} className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+                  <div key={item.num} className="rounded-xl border border-border bg-card p-5 shadow-md">
                     <div className="flex items-start gap-3">
-                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#2E86C1] text-sm font-bold text-white">
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
                         {item.num}
                       </span>
                       <div>
-                        <h4 className="font-bold text-[#1A5276]">{item.name}</h4>
-                        <div className="mt-2 rounded-lg bg-gray-50 px-4 py-3">
-                          <p className="text-sm italic text-gray-700">{item.example}</p>
+                        <h4 className="font-bold text-foreground">{item.name}</h4>
+                        <div className="mt-2 rounded-lg bg-muted px-4 py-3">
+                          <p className="text-sm italic text-muted-foreground">{item.example}</p>
                         </div>
-                        <p className="mt-2 text-sm text-gray-600">
-                          <span className="font-semibold text-[#2E86C1]">Why it works:</span> {item.why}
+                        <p className="mt-2 text-sm text-muted-foreground">
+                          <span className="font-semibold text-primary">Why it works:</span> {item.why}
                         </p>
                       </div>
                     </div>
@@ -770,7 +770,7 @@ export default function CreativeWritingPage() {
 
             {/* ─── STRUCTURAL TECHNIQUES ─────────────────────────── */}
             <Section id="structure" title="Structural Techniques">
-              <p className="mb-6 text-gray-700 leading-relaxed">
+              <p className="mb-6 text-muted-foreground leading-relaxed">
                 Structure is not just about &ldquo;beginning, middle, end.&rdquo; It is about how you
                 organise ideas, shift focus, and control the reader&apos;s experience across the whole
                 piece. Examiners specifically reward deliberate structural choices.
@@ -836,23 +836,23 @@ export default function CreativeWritingPage() {
 
             {/* ─── VOCABULARY ENHANCEMENT ────────────────────────── */}
             <Section id="vocabulary" title="Vocabulary Enhancement">
-              <p className="mb-6 text-gray-700 leading-relaxed">
+              <p className="mb-6 text-muted-foreground leading-relaxed">
                 Using precise, ambitious vocabulary does not mean using long or obscure words. It means
                 choosing the <em>exact</em> word for the <em>exact</em> effect you want. The tables below
                 show how to replace common words with more precise alternatives.
               </p>
 
-              <h3 className="mb-4 text-lg font-bold text-gray-900">Tier 2 &amp; Tier 3 Words</h3>
-              <div className="mb-6 rounded-xl border border-gray-200 bg-white p-5">
-                <p className="text-sm text-gray-600 mb-3">
+              <h3 className="mb-4 text-lg font-bold text-foreground">Tier 2 &amp; Tier 3 Words</h3>
+              <div className="mb-6 rounded-xl border border-border bg-card p-5">
+                <p className="text-sm text-muted-foreground mb-3">
                   <strong>Tier 1 words</strong> are everyday words everyone knows (happy, big, nice).
                   <strong> Tier 2 words</strong> are more precise and academic -- these are the sweet spot for exams (elated, imposing, amiable).
                   <strong> Tier 3 words</strong> are subject-specific or rare -- use sparingly (sibilance, anagnorisis).
                 </p>
-                <p className="text-sm text-[#2E86C1] font-semibold">Aim to use Tier 2 words throughout your writing. They show precision without sounding forced.</p>
+                <p className="text-sm text-primary font-semibold">Aim to use Tier 2 words throughout your writing. They show precision without sounding forced.</p>
               </div>
 
-              <h3 className="mb-4 text-lg font-bold text-gray-900">Alternatives to Overused Words</h3>
+              <h3 className="mb-4 text-lg font-bold text-foreground">Alternatives to Overused Words</h3>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm border-collapse">
                   <thead>
@@ -880,18 +880,18 @@ export default function CreativeWritingPage() {
                       { common: "Quiet", alternatives: "hushed, muted, subdued, still, soundless, deathly silent, tranquil, serene, noiseless, muffled" },
                       { common: "Ran", alternatives: "sprinted, bolted, dashed, hurtled, scrambled, fled, charged, tore, raced, careered" },
                     ].map((row, i) => (
-                      <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                      <tr key={i} className={i % 2 === 0 ? "bg-card" : "bg-muted"}>
                         <td className="px-4 py-3 font-medium text-red-500 line-through">{row.common}</td>
-                        <td className="px-4 py-3 text-gray-700">{row.alternatives}</td>
+                        <td className="px-4 py-3 text-muted-foreground">{row.alternatives}</td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
 
-              <div className="mt-6 rounded-xl border-l-4 border-[#2E86C1] bg-[#2E86C1]/5 p-5">
-                <p className="text-sm font-bold text-[#1A5276]">Top Tip: Precision Over Complexity</p>
-                <p className="mt-1 text-sm text-gray-700">
+              <div className="mt-6 rounded-xl border-l-4 border-[#2E86C1] bg-primary/5 p-5">
+                <p className="text-sm font-bold text-foreground">Top Tip: Precision Over Complexity</p>
+                <p className="mt-1 text-sm text-muted-foreground">
                   &ldquo;Trudged&rdquo; is better than &ldquo;walked slowly&rdquo; not because it is a harder word,
                   but because it does more work in fewer words. It tells us the character is tired, reluctant,
                   or defeated. One word replaces three and adds emotional information. That is what examiners
@@ -902,19 +902,19 @@ export default function CreativeWritingPage() {
 
             {/* ─── MODEL DESCRIPTIVE RESPONSE ────────────────────── */}
             <Section id="model-descriptive" title="Model Response: Descriptive Writing">
-              <div className="mb-6 rounded-xl border border-[#2E86C1]/30 bg-[#2E86C1]/5 p-5">
-                <p className="font-bold text-[#1A5276]">Task</p>
-                <p className="mt-1 text-sm text-gray-700">
+              <div className="mb-6 rounded-xl border border-[#2E86C1]/30 bg-primary/5 p-5">
+                <p className="font-bold text-foreground">Task</p>
+                <p className="mt-1 text-sm text-muted-foreground">
                   Describe a place that feels abandoned. You could write about the setting, the
                   atmosphere, or how the place makes you feel.
                 </p>
               </div>
 
               <div className="mb-4 flex flex-wrap gap-2 text-xs">
-                <span className="rounded-full bg-[#2E86C1]/10 px-3 py-1 font-semibold text-[#2E86C1]">Hover over highlighted text for annotations</span>
+                <span className="rounded-full bg-primary/10 px-3 py-1 font-semibold text-primary">Hover over highlighted text for annotations</span>
               </div>
 
-              <div className="rounded-xl border border-gray-200 bg-white p-6 sm:p-8 shadow-sm space-y-5 text-[15px] leading-[1.9] text-gray-800">
+              <div className="rounded-xl border border-border bg-card p-6 sm:p-8 shadow-md space-y-5 text-[15px] leading-[1.9] text-foreground">
                 <p>
                   <Annotation note="Single-word opening: creates immediate atmosphere and arresting tone.">Stillness.</Annotation> That
                   was what struck me first -- not the dust, not the peeling walls, not the faint smell of damp
@@ -984,8 +984,8 @@ export default function CreativeWritingPage() {
               </div>
 
               <div className="mt-6 rounded-xl border-l-4 border-[#27AE60] bg-[#27AE60]/5 p-5">
-                <p className="font-bold text-[#1A5276]">Why This Response Works (Examiner Perspective)</p>
-                <ul className="mt-2 space-y-1 text-sm text-gray-700 list-disc list-inside">
+                <p className="font-bold text-foreground">Why This Response Works (Examiner Perspective)</p>
+                <ul className="mt-2 space-y-1 text-sm text-muted-foreground list-disc list-inside">
                   <li>Opens with a single-word sentence that immediately establishes atmosphere</li>
                   <li>Engages all five senses: sight (wallpaper, cracks), sound (pipe ticking), touch (cold glass), smell/taste (air of endings), implied sound (silence)</li>
                   <li>Sustained &ldquo;show, don&apos;t tell&rdquo; -- no emotions are named directly</li>
@@ -1000,19 +1000,19 @@ export default function CreativeWritingPage() {
 
             {/* ─── MODEL NARRATIVE RESPONSE ──────────────────────── */}
             <Section id="model-narrative" title="Model Response: Narrative Writing">
-              <div className="mb-6 rounded-xl border border-[#2E86C1]/30 bg-[#2E86C1]/5 p-5">
-                <p className="font-bold text-[#1A5276]">Task</p>
-                <p className="mt-1 text-sm text-gray-700">
+              <div className="mb-6 rounded-xl border border-[#2E86C1]/30 bg-primary/5 p-5">
+                <p className="font-bold text-foreground">Task</p>
+                <p className="mt-1 text-sm text-muted-foreground">
                   Write a story about a moment that changed everything. You may wish to consider a
                   turning point, a discovery, or a decision.
                 </p>
               </div>
 
               <div className="mb-4 flex flex-wrap gap-2 text-xs">
-                <span className="rounded-full bg-[#2E86C1]/10 px-3 py-1 font-semibold text-[#2E86C1]">Hover over highlighted text for annotations</span>
+                <span className="rounded-full bg-primary/10 px-3 py-1 font-semibold text-primary">Hover over highlighted text for annotations</span>
               </div>
 
-              <div className="rounded-xl border border-gray-200 bg-white p-6 sm:p-8 shadow-sm space-y-5 text-[15px] leading-[1.9] text-gray-800">
+              <div className="rounded-xl border border-border bg-card p-6 sm:p-8 shadow-md space-y-5 text-[15px] leading-[1.9] text-foreground">
                 <p>
                   <Annotation note="In medias res opening: drops straight into tension. The reader is immediately off-balance.">The
                   letter was already open when I found it.</Annotation> Not torn -- cut. A clean, deliberate
@@ -1094,8 +1094,8 @@ export default function CreativeWritingPage() {
               </div>
 
               <div className="mt-6 rounded-xl border-l-4 border-[#27AE60] bg-[#27AE60]/5 p-5">
-                <p className="font-bold text-[#1A5276]">Why This Response Works (Examiner Perspective)</p>
-                <ul className="mt-2 space-y-1 text-sm text-gray-700 list-disc list-inside">
+                <p className="font-bold text-foreground">Why This Response Works (Examiner Perspective)</p>
+                <ul className="mt-2 space-y-1 text-sm text-muted-foreground list-disc list-inside">
                   <li>Opens in medias res with immediate intrigue (the pre-opened letter)</li>
                   <li>Uses flashback structure: present &rarr; three days ago &rarr; present</li>
                   <li>Foreshadowing: hiding the envelope, the &ldquo;gravity&rdquo; metaphor</li>
@@ -1111,18 +1111,18 @@ export default function CreativeWritingPage() {
 
             {/* ─── PLANNING TEMPLATES ────────────────────────────── */}
             <Section id="planning" title="Planning Templates">
-              <p className="mb-6 text-gray-700 leading-relaxed">
+              <p className="mb-6 text-muted-foreground leading-relaxed">
                 Five minutes of planning before you write is the difference between a rambling piece and a
                 structured one. Use these templates to organise your ideas before putting pen to paper.
               </p>
 
               {/* Spider Diagram */}
-              <h3 className="mb-4 text-lg font-bold text-gray-900">Spider Diagram (Descriptive Writing)</h3>
-              <p className="mb-4 text-sm text-gray-600">
+              <h3 className="mb-4 text-lg font-bold text-foreground">Spider Diagram (Descriptive Writing)</h3>
+              <p className="mb-4 text-sm text-muted-foreground">
                 Place the topic or image in the centre. Branch out into the five senses, then add specific
                 details and language techniques for each. This ensures your description is varied and immersive.
               </p>
-              <div className="mb-8 rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+              <div className="mb-8 rounded-xl border border-border bg-card p-6 shadow-md">
                 <div className="flex flex-col items-center">
                   {/* Centre */}
                   <div className="rounded-full bg-[#1A5276] px-6 py-4 text-white font-bold text-center text-sm shadow-md">
@@ -1139,10 +1139,10 @@ export default function CreativeWritingPage() {
                       { sense: "Taste", details: "Dust on the tongue, metallic air", technique: "Metaphor" },
                       { sense: "Emotion / Atmosphere", details: "Eerie, melancholy, nostalgic, haunting", technique: "Pathetic fallacy, semantic field" },
                     ].map((branch, i) => (
-                      <div key={i} className="rounded-lg border border-[#2E86C1]/20 bg-[#2E86C1]/5 p-4">
-                        <p className="font-bold text-[#1A5276] text-sm">{branch.sense}</p>
-                        <p className="mt-1 text-sm text-gray-600">{branch.details}</p>
-                        <p className="mt-2 text-xs text-[#2E86C1]">
+                      <div key={i} className="rounded-lg border border-[#2E86C1]/20 bg-primary/5 p-4">
+                        <p className="font-bold text-foreground text-sm">{branch.sense}</p>
+                        <p className="mt-1 text-sm text-muted-foreground">{branch.details}</p>
+                        <p className="mt-2 text-xs text-primary">
                           <span className="font-semibold">Techniques:</span> {branch.technique}
                         </p>
                       </div>
@@ -1152,8 +1152,8 @@ export default function CreativeWritingPage() {
               </div>
 
               {/* 5-Part Structure */}
-              <h3 className="mb-4 text-lg font-bold text-gray-900">Five-Part Structure (Narrative Writing)</h3>
-              <p className="mb-4 text-sm text-gray-600">
+              <h3 className="mb-4 text-lg font-bold text-foreground">Five-Part Structure (Narrative Writing)</h3>
+              <p className="mb-4 text-sm text-muted-foreground">
                 Use this structure to plan a narrative with clear direction, rising tension, and a satisfying
                 resolution. Each section maps to roughly one or two paragraphs.
               </p>
@@ -1195,18 +1195,18 @@ export default function CreativeWritingPage() {
                     length: "1 short paragraph or single sentence",
                   },
                 ].map((part) => (
-                  <div key={part.num} className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+                  <div key={part.num} className="rounded-xl border border-border bg-card p-5 shadow-md">
                     <div className="flex items-start gap-3">
-                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#2E86C1] text-sm font-bold text-white">
+                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
                         {part.num}
                       </span>
                       <div className="flex-1">
-                        <h4 className="font-bold text-[#1A5276]">{part.title}</h4>
-                        <p className="mt-1 text-sm text-gray-600">{part.description}</p>
-                        <p className="mt-2 text-sm text-[#2E86C1]">
+                        <h4 className="font-bold text-foreground">{part.title}</h4>
+                        <p className="mt-1 text-sm text-muted-foreground">{part.description}</p>
+                        <p className="mt-2 text-sm text-primary">
                           <span className="font-semibold">Ask yourself:</span> {part.questions}
                         </p>
-                        <p className="mt-1 text-xs text-gray-400">Approximate length: {part.length}</p>
+                        <p className="mt-1 text-xs text-muted-foreground">Approximate length: {part.length}</p>
                       </div>
                     </div>
                   </div>
@@ -1214,10 +1214,10 @@ export default function CreativeWritingPage() {
               </div>
 
               {/* Quick Planning Checklist */}
-              <h3 className="mb-4 text-lg font-bold text-gray-900">Quick Planning Checklist</h3>
-              <div className="rounded-xl border-l-4 border-[#2E86C1] bg-[#2E86C1]/5 p-5">
-                <p className="text-sm text-gray-700 mb-3">Before you start writing, check these boxes:</p>
-                <ul className="space-y-2 text-sm text-gray-700">
+              <h3 className="mb-4 text-lg font-bold text-foreground">Quick Planning Checklist</h3>
+              <div className="rounded-xl border-l-4 border-[#2E86C1] bg-primary/5 p-5">
+                <p className="text-sm text-muted-foreground mb-3">Before you start writing, check these boxes:</p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
                   {[
                     "Do I know my opening technique? (Write the first sentence in your plan.)",
                     "Do I know my ending? (Even a rough idea. Plan backwards from the end.)",
@@ -1229,7 +1229,7 @@ export default function CreativeWritingPage() {
                     "Does my piece have a consistent mood or atmosphere?",
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-2">
-                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border border-[#2E86C1]/30 bg-white text-xs text-[#2E86C1]">
+                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border border-[#2E86C1]/30 bg-card text-xs text-primary">
                         {i + 1}
                       </span>
                       {item}
@@ -1241,7 +1241,7 @@ export default function CreativeWritingPage() {
 
             {/* ─── COMMON MISTAKES ───────────────────────────────── */}
             <Section id="mistakes" title="Common Mistakes &amp; How to Avoid Them">
-              <p className="mb-6 text-gray-700 leading-relaxed">
+              <p className="mb-6 text-muted-foreground leading-relaxed">
                 Even strong writers fall into these traps. Recognising these patterns in your own work
                 is the fastest way to improve. Each mistake below includes a concrete fix and a
                 before/after example.
@@ -1325,7 +1325,7 @@ export default function CreativeWritingPage() {
             <div className="flex justify-center pt-8">
               <Link
                 href="/resources/writing-skills"
-                className="rounded-lg bg-[#1A5276] px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-[#1A5276]/90"
+                className="rounded-lg bg-[#1A5276] px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-[#1A5276]/90"
               >
                 &larr; Back to Writing Skills Hub
               </Link>

@@ -822,13 +822,13 @@ export default function EdexcelAnthologyPage() {
             analysis, themes, and comparison guidance.
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-            <span className="rounded-full bg-white/20 px-4 py-1.5 text-sm font-medium">
+            <span className="rounded-full bg-card/20 px-4 py-1.5 text-sm font-medium">
               15 Poems
             </span>
-            <span className="rounded-full bg-white/20 px-4 py-1.5 text-sm font-medium">
+            <span className="rounded-full bg-card/20 px-4 py-1.5 text-sm font-medium">
               60+ Key Quotes
             </span>
-            <span className="rounded-full bg-white/20 px-4 py-1.5 text-sm font-medium">
+            <span className="rounded-full bg-card/20 px-4 py-1.5 text-sm font-medium">
               15 Comparison Pairs
             </span>
           </div>
@@ -839,14 +839,14 @@ export default function EdexcelAnthologyPage() {
       <section className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <h2 className="text-2xl font-bold text-gray-900">Poem Analysis</h2>
-            <p className="mt-1 text-sm text-gray-500">
+            <h2 className="text-2xl font-bold text-foreground">Poem Analysis</h2>
+            <p className="mt-1 text-sm text-muted-foreground">
               Click any poem to expand its full analysis.
             </p>
           </div>
           <button
             onClick={() => setExpandAll(!expandAll)}
-            className="inline-flex items-center gap-2 rounded-lg border border-[#2E86C1] px-4 py-2 text-sm font-medium text-[#2E86C1] transition-colors hover:bg-[#2E86C1] hover:text-white"
+            className="inline-flex items-center gap-2 rounded-lg border border-[#2E86C1] px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary hover:text-white"
           >
             {expandAll ? "Collapse All" : "Expand All"}
           </button>
@@ -864,12 +864,12 @@ export default function EdexcelAnthologyPage() {
       </section>
 
       {/* Comparison table */}
-      <section className="bg-gray-50 px-4 py-12 sm:px-6 lg:px-8">
+      <section className="bg-muted px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Comparison Pairs at a Glance
           </h2>
-          <p className="mt-2 max-w-3xl text-sm text-gray-600">
+          <p className="mt-2 max-w-3xl text-sm text-muted-foreground">
             Use this table to plan comparison essays. Each pair identifies a
             shared link and the key contrast between the two poems.
           </p>
@@ -879,12 +879,12 @@ export default function EdexcelAnthologyPage() {
             {COMPARISON_PAIRS.map((pair, i) => (
               <div
                 key={i}
-                className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm"
+                className="rounded-xl border border-border bg-card p-4 shadow-md"
               >
-                <div className="flex items-center gap-2 text-sm font-bold text-[#1A5276]">
+                <div className="flex items-center gap-2 text-sm font-bold text-foreground">
                   <span>{pair.poemA}</span>
                   <svg
-                    className="h-4 w-4 shrink-0 text-[#2E86C1]"
+                    className="h-4 w-4 shrink-0 text-primary"
                     fill="none"
                     viewBox="0 0 24 24"
                     strokeWidth={2}
@@ -898,20 +898,20 @@ export default function EdexcelAnthologyPage() {
                   </svg>
                   <span>{pair.poemB}</span>
                 </div>
-                <p className="mt-2 text-xs font-semibold uppercase tracking-wider text-[#2E86C1]">
+                <p className="mt-2 text-xs font-semibold uppercase tracking-wider text-primary">
                   Link
                 </p>
-                <p className="text-sm text-gray-700">{pair.link}</p>
-                <p className="mt-2 text-xs font-semibold uppercase tracking-wider text-[#2E86C1]">
+                <p className="text-sm text-muted-foreground">{pair.link}</p>
+                <p className="mt-2 text-xs font-semibold uppercase tracking-wider text-primary">
                   Contrast
                 </p>
-                <p className="text-sm text-gray-700">{pair.contrast}</p>
+                <p className="text-sm text-muted-foreground">{pair.contrast}</p>
               </div>
             ))}
           </div>
 
           {/* Desktop table */}
-          <div className="mt-6 hidden overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm lg:block">
+          <div className="mt-6 hidden overflow-hidden rounded-xl border border-border bg-card shadow-md lg:block">
             <table className="w-full text-left text-sm">
               <thead>
                 <tr className="bg-[#1A5276] text-white">
@@ -925,16 +925,16 @@ export default function EdexcelAnthologyPage() {
                 {COMPARISON_PAIRS.map((pair, i) => (
                   <tr
                     key={i}
-                    className="transition-colors hover:bg-gray-50"
+                    className="transition-colors hover:bg-muted"
                   >
-                    <td className="px-5 py-3 font-medium text-[#1A5276]">
+                    <td className="px-5 py-3 font-medium text-foreground">
                       {pair.poemA}
                     </td>
-                    <td className="px-5 py-3 font-medium text-[#1A5276]">
+                    <td className="px-5 py-3 font-medium text-foreground">
                       {pair.poemB}
                     </td>
-                    <td className="px-5 py-3 text-gray-700">{pair.link}</td>
-                    <td className="px-5 py-3 text-gray-700">{pair.contrast}</td>
+                    <td className="px-5 py-3 text-muted-foreground">{pair.link}</td>
+                    <td className="px-5 py-3 text-muted-foreground">{pair.contrast}</td>
                   </tr>
                 ))}
               </tbody>
@@ -945,7 +945,7 @@ export default function EdexcelAnthologyPage() {
 
       {/* Exam tips */}
       <section className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-gray-900">Exam Tips for Poetry Comparison</h2>
+        <h2 className="text-2xl font-bold text-foreground">Exam Tips for Poetry Comparison</h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           {[
             {
@@ -975,10 +975,10 @@ export default function EdexcelAnthologyPage() {
           ].map((tip) => (
             <div
               key={tip.title}
-              className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm"
+              className="rounded-xl border border-border bg-card p-5 shadow-md"
             >
-              <h3 className="font-semibold text-[#1A5276]">{tip.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-gray-600">
+              <h3 className="font-semibold text-foreground">{tip.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 {tip.text}
               </p>
             </div>
@@ -990,7 +990,7 @@ export default function EdexcelAnthologyPage() {
       <section className="mx-auto max-w-4xl px-4 pb-12 sm:px-6 lg:px-8">
         <Link
           href="/resources/poetry"
-          className="inline-flex items-center gap-2 text-sm font-medium text-[#2E86C1] transition-colors hover:text-[#1A5276]"
+          className="inline-flex items-center gap-2 text-sm font-medium text-primary transition-colors hover:text-foreground"
         >
           <svg
             className="h-4 w-4"
@@ -1028,22 +1028,22 @@ function PoemSectionControlled({
   const isOpen = forceOpen || manualOpen;
 
   return (
-    <div className="rounded-xl border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md">
+    <div className="rounded-xl border border-border bg-card shadow-md transition-shadow hover:shadow-md">
       <button
         onClick={() => setManualOpen(!manualOpen)}
         className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left sm:px-6 sm:py-5"
         aria-expanded={isOpen}
       >
         <div className="min-w-0">
-          <h3 className="text-lg font-bold text-[#1A5276] sm:text-xl">
+          <h3 className="text-lg font-bold text-foreground sm:text-xl">
             {poem.title}
           </h3>
-          <p className="mt-0.5 text-sm text-gray-500">
+          <p className="mt-0.5 text-sm text-muted-foreground">
             {poem.poet} ({poem.date})
           </p>
         </div>
         <svg
-          className={`h-5 w-5 shrink-0 text-[#2E86C1] transition-transform duration-200 ${
+          className={`h-5 w-5 shrink-0 text-primary transition-transform duration-200 ${
             isOpen ? "rotate-180" : ""
           }`}
           fill="none"
@@ -1060,55 +1060,55 @@ function PoemSectionControlled({
       </button>
 
       {isOpen && (
-        <div className="border-t border-gray-100 px-5 pb-6 pt-4 sm:px-6">
+        <div className="border-t border-border px-5 pb-6 pt-4 sm:px-6">
           {/* Context */}
           <div className="mb-5">
-            <h4 className="mb-1.5 text-sm font-semibold uppercase tracking-wider text-[#2E86C1]">
+            <h4 className="mb-1.5 text-sm font-semibold uppercase tracking-wider text-primary">
               Context
             </h4>
-            <p className="text-sm leading-relaxed text-gray-700">
+            <p className="text-sm leading-relaxed text-muted-foreground">
               {poem.context}
             </p>
           </div>
 
           {/* Summary */}
           <div className="mb-5">
-            <h4 className="mb-1.5 text-sm font-semibold uppercase tracking-wider text-[#2E86C1]">
+            <h4 className="mb-1.5 text-sm font-semibold uppercase tracking-wider text-primary">
               Summary
             </h4>
-            <p className="text-sm leading-relaxed text-gray-700">
+            <p className="text-sm leading-relaxed text-muted-foreground">
               {poem.summary}
             </p>
           </div>
 
           {/* Form and Structure */}
           <div className="mb-5">
-            <h4 className="mb-1.5 text-sm font-semibold uppercase tracking-wider text-[#2E86C1]">
+            <h4 className="mb-1.5 text-sm font-semibold uppercase tracking-wider text-primary">
               Form &amp; Structure
             </h4>
-            <p className="text-sm leading-relaxed text-gray-700">
+            <p className="text-sm leading-relaxed text-muted-foreground">
               {poem.formAndStructure}
             </p>
           </div>
 
           {/* Key Quotes */}
           <div className="mb-5">
-            <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-[#2E86C1]">
+            <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">
               Key Quotes &amp; Analysis
             </h4>
             <div className="space-y-4">
               {poem.quotes.map((q, i) => (
                 <div
                   key={i}
-                  className="rounded-lg border-l-4 border-[#2E86C1] bg-gray-50 p-4"
+                  className="rounded-lg border-l-4 border-[#2E86C1] bg-muted p-4"
                 >
-                  <p className="font-medium italic text-[#1A5276]">
+                  <p className="font-medium italic text-foreground">
                     &ldquo;{q.text}&rdquo;
                   </p>
-                  <p className="mt-1.5 text-xs font-semibold uppercase tracking-wider text-[#2E86C1]">
+                  <p className="mt-1.5 text-xs font-semibold uppercase tracking-wider text-primary">
                     {q.technique}
                   </p>
-                  <p className="mt-1.5 text-sm leading-relaxed text-gray-700">
+                  <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
                     {q.analysis}
                   </p>
                 </div>
@@ -1118,14 +1118,14 @@ function PoemSectionControlled({
 
           {/* Themes */}
           <div className="mb-5">
-            <h4 className="mb-2 text-sm font-semibold uppercase tracking-wider text-[#2E86C1]">
+            <h4 className="mb-2 text-sm font-semibold uppercase tracking-wider text-primary">
               Themes
             </h4>
             <div className="flex flex-wrap gap-2">
               {poem.themes.map((theme) => (
                 <span
                   key={theme}
-                  className="rounded-full bg-[#1A5276]/10 px-3 py-1 text-xs font-medium text-[#1A5276]"
+                  className="rounded-full bg-[#1A5276]/10 px-3 py-1 text-xs font-medium text-foreground"
                 >
                   {theme}
                 </span>
@@ -1135,17 +1135,17 @@ function PoemSectionControlled({
 
           {/* Comparison Pairs */}
           <div>
-            <h4 className="mb-2 text-sm font-semibold uppercase tracking-wider text-[#2E86C1]">
+            <h4 className="mb-2 text-sm font-semibold uppercase tracking-wider text-primary">
               Comparison Pairs
             </h4>
             <ul className="space-y-1.5">
               {poem.comparisons.map((comp, i) => (
                 <li
                   key={i}
-                  className="flex items-start gap-2 text-sm text-gray-700"
+                  className="flex items-start gap-2 text-sm text-muted-foreground"
                 >
                   <svg
-                    className="mt-0.5 h-4 w-4 shrink-0 text-[#2E86C1]"
+                    className="mt-0.5 h-4 w-4 shrink-0 text-primary"
                     fill="none"
                     viewBox="0 0 24 24"
                     strokeWidth={2}

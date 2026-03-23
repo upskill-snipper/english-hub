@@ -17,14 +17,14 @@ function Section({
 }) {
   const [open, setOpen] = useState(defaultOpen);
   return (
-    <div className="rounded-xl border border-gray-200 bg-white">
+    <div className="rounded-xl border border-border bg-card">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-bold text-gray-900 hover:bg-gray-50 transition-colors"
+        className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-bold text-foreground hover:bg-muted transition-colors"
       >
         <span className="text-lg">{title}</span>
         <svg
-          className={`h-5 w-5 shrink-0 text-gray-400 transition-transform ${open ? "rotate-180" : ""}`}
+          className={`h-5 w-5 shrink-0 text-muted-foreground transition-transform ${open ? "rotate-180" : ""}`}
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={2}
@@ -34,7 +34,7 @@ function Section({
         </svg>
       </button>
       {open && (
-        <div className="border-t border-gray-100 px-6 py-6 text-gray-700 leading-relaxed space-y-4">
+        <div className="border-t border-border px-6 py-6 text-muted-foreground leading-relaxed space-y-4">
           {children}
         </div>
       )}
@@ -72,7 +72,7 @@ export default function GradeBoundariesPage() {
 
       {/* ── Breadcrumb ────────────────────────────────────────────── */}
       <nav className="mx-auto max-w-5xl px-4 pt-6" aria-label="Breadcrumb">
-        <ol className="flex flex-wrap items-center gap-2 text-sm text-gray-500">
+        <ol className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
           <li>
             <Link href="/" className="hover:text-primary transition-colors">Home</Link>
           </li>
@@ -125,7 +125,7 @@ export default function GradeBoundariesPage() {
           <div className="overflow-x-auto mt-4">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-gray-200 text-left text-gray-500">
+                <tr className="border-b border-border text-left text-muted-foreground">
                   <th className="py-2 pr-4">Grade</th>
                   <th className="py-2 pr-4">June 2023</th>
                   <th className="py-2 pr-4">June 2024</th>
@@ -177,21 +177,21 @@ export default function GradeBoundariesPage() {
                   <td className="py-2 pr-4">~40%</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-bold text-gray-500">3</td>
+                  <td className="py-2 pr-4 font-bold text-muted-foreground">3</td>
                   <td className="py-2 pr-4">37</td>
                   <td className="py-2 pr-4">39</td>
                   <td className="py-2 pr-4">40</td>
                   <td className="py-2 pr-4">~30%</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-bold text-gray-500">2</td>
+                  <td className="py-2 pr-4 font-bold text-muted-foreground">2</td>
                   <td className="py-2 pr-4">25</td>
                   <td className="py-2 pr-4">26</td>
                   <td className="py-2 pr-4">27</td>
                   <td className="py-2 pr-4">~20%</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-bold text-gray-400">1</td>
+                  <td className="py-2 pr-4 font-bold text-muted-foreground">1</td>
                   <td className="py-2 pr-4">13</td>
                   <td className="py-2 pr-4">13</td>
                   <td className="py-2 pr-4">14</td>
@@ -201,7 +201,7 @@ export default function GradeBoundariesPage() {
             </table>
           </div>
 
-          <p className="mt-4 text-sm text-gray-500">
+          <p className="mt-4 text-sm text-muted-foreground">
             Note: These boundaries are approximate and based on publicly
             available Pearson Edexcel data. The &ldquo;Approx. %&rdquo; column shows
             roughly what percentage of the total 128 marks you need.
@@ -220,7 +220,7 @@ export default function GradeBoundariesPage() {
             <h3 className="font-bold text-primary mb-3">Paper 1: Fiction and Imaginative Writing</h3>
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-gray-200 text-left text-gray-500">
+                <tr className="border-b border-border text-left text-muted-foreground">
                   <th className="py-2 pr-4">Grade</th>
                   <th className="py-2 pr-4">June 2023</th>
                   <th className="py-2 pr-4">June 2024</th>
@@ -230,27 +230,27 @@ export default function GradeBoundariesPage() {
               <tbody className="divide-y divide-gray-100">
                 <tr>
                   <td className="py-2 pr-4 font-bold text-success-700">9</td>
-                  <td className="py-2 pr-4">53 <span className="text-xs text-gray-400">({pct(53, 64)})</span></td>
-                  <td className="py-2 pr-4">54 <span className="text-xs text-gray-400">({pct(54, 64)})</span></td>
-                  <td className="py-2 pr-4">55 <span className="text-xs text-gray-400">({pct(55, 64)})</span></td>
+                  <td className="py-2 pr-4">53 <span className="text-xs text-muted-foreground">({pct(53, 64)})</span></td>
+                  <td className="py-2 pr-4">54 <span className="text-xs text-muted-foreground">({pct(54, 64)})</span></td>
+                  <td className="py-2 pr-4">55 <span className="text-xs text-muted-foreground">({pct(55, 64)})</span></td>
                 </tr>
                 <tr>
                   <td className="py-2 pr-4 font-bold text-accent-700">7</td>
-                  <td className="py-2 pr-4">42 <span className="text-xs text-gray-400">({pct(42, 64)})</span></td>
-                  <td className="py-2 pr-4">43 <span className="text-xs text-gray-400">({pct(43, 64)})</span></td>
-                  <td className="py-2 pr-4">44 <span className="text-xs text-gray-400">({pct(44, 64)})</span></td>
+                  <td className="py-2 pr-4">42 <span className="text-xs text-muted-foreground">({pct(42, 64)})</span></td>
+                  <td className="py-2 pr-4">43 <span className="text-xs text-muted-foreground">({pct(43, 64)})</span></td>
+                  <td className="py-2 pr-4">44 <span className="text-xs text-muted-foreground">({pct(44, 64)})</span></td>
                 </tr>
                 <tr>
                   <td className="py-2 pr-4 font-bold text-primary">5</td>
-                  <td className="py-2 pr-4">30 <span className="text-xs text-gray-400">({pct(30, 64)})</span></td>
-                  <td className="py-2 pr-4">31 <span className="text-xs text-gray-400">({pct(31, 64)})</span></td>
-                  <td className="py-2 pr-4">32 <span className="text-xs text-gray-400">({pct(32, 64)})</span></td>
+                  <td className="py-2 pr-4">30 <span className="text-xs text-muted-foreground">({pct(30, 64)})</span></td>
+                  <td className="py-2 pr-4">31 <span className="text-xs text-muted-foreground">({pct(31, 64)})</span></td>
+                  <td className="py-2 pr-4">32 <span className="text-xs text-muted-foreground">({pct(32, 64)})</span></td>
                 </tr>
                 <tr>
                   <td className="py-2 pr-4 font-bold text-yellow-600">4</td>
-                  <td className="py-2 pr-4">25 <span className="text-xs text-gray-400">({pct(25, 64)})</span></td>
-                  <td className="py-2 pr-4">26 <span className="text-xs text-gray-400">({pct(26, 64)})</span></td>
-                  <td className="py-2 pr-4">27 <span className="text-xs text-gray-400">({pct(27, 64)})</span></td>
+                  <td className="py-2 pr-4">25 <span className="text-xs text-muted-foreground">({pct(25, 64)})</span></td>
+                  <td className="py-2 pr-4">26 <span className="text-xs text-muted-foreground">({pct(26, 64)})</span></td>
+                  <td className="py-2 pr-4">27 <span className="text-xs text-muted-foreground">({pct(27, 64)})</span></td>
                 </tr>
               </tbody>
             </table>
@@ -260,7 +260,7 @@ export default function GradeBoundariesPage() {
             <h3 className="font-bold text-accent mb-3">Paper 2: Non-Fiction and Transactional Writing</h3>
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-gray-200 text-left text-gray-500">
+                <tr className="border-b border-border text-left text-muted-foreground">
                   <th className="py-2 pr-4">Grade</th>
                   <th className="py-2 pr-4">June 2023</th>
                   <th className="py-2 pr-4">June 2024</th>
@@ -270,27 +270,27 @@ export default function GradeBoundariesPage() {
               <tbody className="divide-y divide-gray-100">
                 <tr>
                   <td className="py-2 pr-4 font-bold text-success-700">9</td>
-                  <td className="py-2 pr-4">52 <span className="text-xs text-gray-400">({pct(52, 64)})</span></td>
-                  <td className="py-2 pr-4">53 <span className="text-xs text-gray-400">({pct(53, 64)})</span></td>
-                  <td className="py-2 pr-4">54 <span className="text-xs text-gray-400">({pct(54, 64)})</span></td>
+                  <td className="py-2 pr-4">52 <span className="text-xs text-muted-foreground">({pct(52, 64)})</span></td>
+                  <td className="py-2 pr-4">53 <span className="text-xs text-muted-foreground">({pct(53, 64)})</span></td>
+                  <td className="py-2 pr-4">54 <span className="text-xs text-muted-foreground">({pct(54, 64)})</span></td>
                 </tr>
                 <tr>
                   <td className="py-2 pr-4 font-bold text-accent-700">7</td>
-                  <td className="py-2 pr-4">41 <span className="text-xs text-gray-400">({pct(41, 64)})</span></td>
-                  <td className="py-2 pr-4">42 <span className="text-xs text-gray-400">({pct(42, 64)})</span></td>
-                  <td className="py-2 pr-4">43 <span className="text-xs text-gray-400">({pct(43, 64)})</span></td>
+                  <td className="py-2 pr-4">41 <span className="text-xs text-muted-foreground">({pct(41, 64)})</span></td>
+                  <td className="py-2 pr-4">42 <span className="text-xs text-muted-foreground">({pct(42, 64)})</span></td>
+                  <td className="py-2 pr-4">43 <span className="text-xs text-muted-foreground">({pct(43, 64)})</span></td>
                 </tr>
                 <tr>
                   <td className="py-2 pr-4 font-bold text-primary">5</td>
-                  <td className="py-2 pr-4">31 <span className="text-xs text-gray-400">({pct(31, 64)})</span></td>
-                  <td className="py-2 pr-4">32 <span className="text-xs text-gray-400">({pct(32, 64)})</span></td>
-                  <td className="py-2 pr-4">33 <span className="text-xs text-gray-400">({pct(33, 64)})</span></td>
+                  <td className="py-2 pr-4">31 <span className="text-xs text-muted-foreground">({pct(31, 64)})</span></td>
+                  <td className="py-2 pr-4">32 <span className="text-xs text-muted-foreground">({pct(32, 64)})</span></td>
+                  <td className="py-2 pr-4">33 <span className="text-xs text-muted-foreground">({pct(33, 64)})</span></td>
                 </tr>
                 <tr>
                   <td className="py-2 pr-4 font-bold text-yellow-600">4</td>
-                  <td className="py-2 pr-4">25 <span className="text-xs text-gray-400">({pct(25, 64)})</span></td>
-                  <td className="py-2 pr-4">26 <span className="text-xs text-gray-400">({pct(26, 64)})</span></td>
-                  <td className="py-2 pr-4">27 <span className="text-xs text-gray-400">({pct(27, 64)})</span></td>
+                  <td className="py-2 pr-4">25 <span className="text-xs text-muted-foreground">({pct(25, 64)})</span></td>
+                  <td className="py-2 pr-4">26 <span className="text-xs text-muted-foreground">({pct(26, 64)})</span></td>
+                  <td className="py-2 pr-4">27 <span className="text-xs text-muted-foreground">({pct(27, 64)})</span></td>
                 </tr>
               </tbody>
             </table>
@@ -396,8 +396,8 @@ export default function GradeBoundariesPage() {
               </div>
             </div>
 
-            <div className="rounded-lg border-l-4 border-gray-300 bg-gray-50/50 p-5">
-              <h3 className="text-lg font-bold text-gray-500">Grades 1-3 &mdash; Below standard pass</h3>
+            <div className="rounded-lg border-l-4 border-gray-300 bg-muted/50 p-5">
+              <h3 className="text-lg font-bold text-muted-foreground">Grades 1-3 &mdash; Below standard pass</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <p><strong>Reading:</strong></p>
                 <ul className="ml-5 list-disc space-y-1">
@@ -426,7 +426,7 @@ export default function GradeBoundariesPage() {
           </p>
 
           <div className="mt-4 space-y-5">
-            <div className="rounded-lg border border-gray-200 p-5">
+            <div className="rounded-lg border border-border p-5">
               <h3 className="font-bold text-primary">Grade 4 &rarr; Grade 5</h3>
               <ul className="mt-2 ml-5 list-disc space-y-2 text-sm">
                 <li>
@@ -457,7 +457,7 @@ export default function GradeBoundariesPage() {
               </ul>
             </div>
 
-            <div className="rounded-lg border border-gray-200 p-5">
+            <div className="rounded-lg border border-border p-5">
               <h3 className="font-bold text-primary">Grade 5 &rarr; Grade 7</h3>
               <ul className="mt-2 ml-5 list-disc space-y-2 text-sm">
                 <li>
@@ -488,7 +488,7 @@ export default function GradeBoundariesPage() {
               </ul>
             </div>
 
-            <div className="rounded-lg border border-gray-200 p-5">
+            <div className="rounded-lg border border-border p-5">
               <h3 className="font-bold text-primary">Grade 7 &rarr; Grade 9</h3>
               <ul className="mt-2 ml-5 list-disc space-y-2 text-sm">
                 <li>
@@ -540,7 +540,7 @@ export default function GradeBoundariesPage() {
             <h3 className="font-bold text-primary mb-3">Paper 1: Fiction and Imaginative Writing (1h 45m)</h3>
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-gray-200 text-left text-gray-500">
+                <tr className="border-b border-border text-left text-muted-foreground">
                   <th className="py-2 pr-4">Question</th>
                   <th className="py-2 pr-4">Focus</th>
                   <th className="py-2 pr-4">Marks</th>
@@ -592,7 +592,7 @@ export default function GradeBoundariesPage() {
             <h3 className="font-bold text-accent mb-3">Paper 2: Non-Fiction and Transactional Writing (2h 05m)</h3>
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-gray-200 text-left text-gray-500">
+                <tr className="border-b border-border text-left text-muted-foreground">
                   <th className="py-2 pr-4">Question</th>
                   <th className="py-2 pr-4">Focus</th>
                   <th className="py-2 pr-4">Marks</th>
@@ -664,7 +664,7 @@ export default function GradeBoundariesPage() {
             </table>
           </div>
 
-          <p className="mt-4 text-sm text-gray-500">
+          <p className="mt-4 text-sm text-muted-foreground">
             Notice that the writing task on each paper is worth <strong>24 marks
             (37.5% of the paper)</strong>. The reading questions in Paper 2
             include many short-response questions worth 4 marks each &mdash;
@@ -678,9 +678,9 @@ export default function GradeBoundariesPage() {
         {/* ── Key takeaways ─────────────────────────────────────────── */}
         <Section title="Key takeaways and quick targets">
           <div className="grid gap-4 sm:grid-cols-2">
-            <div className="rounded-lg border border-gray-200 p-5">
+            <div className="rounded-lg border border-border p-5">
               <h3 className="font-bold text-primary">For a Grade 5 (Strong Pass)</h3>
-              <ul className="mt-3 space-y-2 text-sm text-gray-700">
+              <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                   You need roughly <strong>49-50%</strong> overall (~63/128)
@@ -695,9 +695,9 @@ export default function GradeBoundariesPage() {
                 </li>
               </ul>
             </div>
-            <div className="rounded-lg border border-gray-200 p-5">
+            <div className="rounded-lg border border-border p-5">
               <h3 className="font-bold text-accent">For a Grade 7+</h3>
-              <ul className="mt-3 space-y-2 text-sm text-gray-700">
+              <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                   You need roughly <strong>66-67%</strong> overall (~85/128)
@@ -712,9 +712,9 @@ export default function GradeBoundariesPage() {
                 </li>
               </ul>
             </div>
-            <div className="rounded-lg border border-gray-200 p-5">
+            <div className="rounded-lg border border-border p-5">
               <h3 className="font-bold text-success">For a Grade 9</h3>
-              <ul className="mt-3 space-y-2 text-sm text-gray-700">
+              <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-success" />
                   You need roughly <strong>83-84%</strong> overall (~107/128)
@@ -731,7 +731,7 @@ export default function GradeBoundariesPage() {
             </div>
             <div className="rounded-lg border border-warn-200 bg-warn-50 p-5">
               <h3 className="font-bold text-warn-700">Remember</h3>
-              <ul className="mt-3 space-y-2 text-sm text-gray-700">
+              <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-warn" />
                   Grade boundaries change every year &mdash; aim <strong>above</strong> the boundary to be safe

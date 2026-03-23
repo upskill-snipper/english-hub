@@ -15,14 +15,14 @@ function Section({
 }) {
   const [open, setOpen] = useState(defaultOpen);
   return (
-    <div className="rounded-xl border border-gray-200 bg-white">
+    <div className="rounded-xl border border-border bg-card">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-bold text-gray-900 hover:bg-gray-50 transition-colors"
+        className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-bold text-foreground hover:bg-muted transition-colors"
       >
         <span className="text-lg">{title}</span>
         <svg
-          className={`h-5 w-5 shrink-0 text-gray-400 transition-transform ${open ? "rotate-180" : ""}`}
+          className={`h-5 w-5 shrink-0 text-muted-foreground transition-transform ${open ? "rotate-180" : ""}`}
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={2}
@@ -32,7 +32,7 @@ function Section({
         </svg>
       </button>
       {open && (
-        <div className="border-t border-gray-100 px-6 py-6 text-gray-700 leading-relaxed space-y-4">
+        <div className="border-t border-border px-6 py-6 text-muted-foreground leading-relaxed space-y-4">
           {children}
         </div>
       )}
@@ -62,7 +62,7 @@ export default function GradeBoundariesPage() {
 
       {/* Breadcrumb */}
       <nav className="mx-auto max-w-5xl px-4 pt-6" aria-label="Breadcrumb">
-        <ol className="flex flex-wrap items-center gap-2 text-sm text-gray-500">
+        <ol className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
           <li>
             <Link href="/" className="hover:text-primary transition-colors">Home</Link>
           </li>
@@ -112,7 +112,7 @@ export default function GradeBoundariesPage() {
           <div className="overflow-x-auto mt-4">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-gray-200 text-left text-gray-500">
+                <tr className="border-b border-border text-left text-muted-foreground">
                   <th className="py-2 pr-4">Grade</th>
                   <th className="py-2 pr-4">June 2023</th>
                   <th className="py-2 pr-4">June 2024</th>
@@ -164,21 +164,21 @@ export default function GradeBoundariesPage() {
                   <td className="py-2 pr-4">~36%</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-bold text-gray-500">3</td>
+                  <td className="py-2 pr-4 font-bold text-muted-foreground">3</td>
                   <td className="py-2 pr-4">40</td>
                   <td className="py-2 pr-4">42</td>
                   <td className="py-2 pr-4">42</td>
                   <td className="py-2 pr-4">~26%</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-bold text-gray-500">2</td>
+                  <td className="py-2 pr-4 font-bold text-muted-foreground">2</td>
                   <td className="py-2 pr-4">26</td>
                   <td className="py-2 pr-4">27</td>
                   <td className="py-2 pr-4">28</td>
                   <td className="py-2 pr-4">~17%</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-bold text-gray-400">1</td>
+                  <td className="py-2 pr-4 font-bold text-muted-foreground">1</td>
                   <td className="py-2 pr-4">11</td>
                   <td className="py-2 pr-4">12</td>
                   <td className="py-2 pr-4">12</td>
@@ -188,7 +188,7 @@ export default function GradeBoundariesPage() {
             </table>
           </div>
 
-          <p className="mt-4 text-sm text-gray-500">
+          <p className="mt-4 text-sm text-muted-foreground">
             Note: These boundaries are approximate and based on publicly
             available OCR data. The &ldquo;Approx. %&rdquo; column shows
             roughly what percentage of the total 160 marks you need.
@@ -293,8 +293,8 @@ export default function GradeBoundariesPage() {
               </div>
             </div>
 
-            <div className="rounded-lg border-l-4 border-gray-300 bg-gray-50/50 p-5">
-              <h3 className="text-lg font-bold text-gray-500">Grades 1&ndash;3 &mdash; Below standard pass</h3>
+            <div className="rounded-lg border-l-4 border-gray-300 bg-muted/50 p-5">
+              <h3 className="text-lg font-bold text-muted-foreground">Grades 1&ndash;3 &mdash; Below standard pass</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <p><strong>Reading:</strong></p>
                 <ul className="ml-5 list-disc space-y-1">
@@ -323,7 +323,7 @@ export default function GradeBoundariesPage() {
           </p>
 
           <div className="mt-4 space-y-5">
-            <div className="rounded-lg border border-gray-200 p-5">
+            <div className="rounded-lg border border-border p-5">
               <h3 className="font-bold text-primary">Grade 4 &rarr; Grade 5</h3>
               <ul className="mt-2 ml-5 list-disc space-y-2 text-sm">
                 <li>
@@ -355,7 +355,7 @@ export default function GradeBoundariesPage() {
               </ul>
             </div>
 
-            <div className="rounded-lg border border-gray-200 p-5">
+            <div className="rounded-lg border border-border p-5">
               <h3 className="font-bold text-primary">Grade 5 &rarr; Grade 7</h3>
               <ul className="mt-2 ml-5 list-disc space-y-2 text-sm">
                 <li>
@@ -390,7 +390,7 @@ export default function GradeBoundariesPage() {
               </ul>
             </div>
 
-            <div className="rounded-lg border border-gray-200 p-5">
+            <div className="rounded-lg border border-border p-5">
               <h3 className="font-bold text-primary">Grade 7 &rarr; Grade 9</h3>
               <ul className="mt-2 ml-5 list-disc space-y-2 text-sm">
                 <li>
@@ -443,7 +443,7 @@ export default function GradeBoundariesPage() {
           <div className="overflow-x-auto mt-4">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-gray-200 text-left text-gray-500">
+                <tr className="border-b border-border text-left text-muted-foreground">
                   <th className="py-2 pr-4">Section</th>
                   <th className="py-2 pr-4">Question</th>
                   <th className="py-2 pr-4">Marks</th>
@@ -505,7 +505,7 @@ export default function GradeBoundariesPage() {
             </table>
           </div>
 
-          <p className="mt-4 text-sm text-gray-500">
+          <p className="mt-4 text-sm text-muted-foreground">
             The writing section (Q6 and Q7 combined) is worth <strong>48 out
             of 80 marks</strong> &mdash; 60% of this component. Strong
             transactional writing skills are essential for a high mark on
@@ -525,7 +525,7 @@ export default function GradeBoundariesPage() {
           <div className="overflow-x-auto mt-4">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-gray-200 text-left text-gray-500">
+                <tr className="border-b border-border text-left text-muted-foreground">
                   <th className="py-2 pr-4">Section</th>
                   <th className="py-2 pr-4">Question</th>
                   <th className="py-2 pr-4">Marks</th>
@@ -575,7 +575,7 @@ export default function GradeBoundariesPage() {
             </table>
           </div>
 
-          <p className="mt-4 text-sm text-gray-500">
+          <p className="mt-4 text-sm text-muted-foreground">
             Component 02 is split evenly between reading and writing.
             The creative writing task (Q5) alone is worth <strong>40 out
             of 80 marks</strong> &mdash; half the component. A well-prepared,

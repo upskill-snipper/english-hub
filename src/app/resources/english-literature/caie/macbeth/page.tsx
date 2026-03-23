@@ -296,7 +296,7 @@ export default function MacbethStudyGuide() {
               <a
                 key={s}
                 href={`#${s.toLowerCase().replace(/\s+/g, "-")}`}
-                className="rounded-full border border-[#2E86C1]/30 px-3 py-1 text-[#1A5276] transition hover:bg-[#2E86C1]/10"
+                className="rounded-full border border-[#2E86C1]/30 px-3 py-1 text-foreground transition hover:bg-primary/10"
               >
                 {s}
               </a>
@@ -306,70 +306,70 @@ export default function MacbethStudyGuide() {
 
         {/* ── Plot Summary ────────────────────────────────────────── */}
         <section id="plot-summary" aria-labelledby="plot-heading">
-          <h2 id="plot-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="plot-heading" className="text-2xl font-bold text-foreground">
             Plot Summary
           </h2>
           <div className="mt-6 space-y-4">
             {plotSummary.map((act) => (
               <div
                 key={act.act}
-                className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm"
+                className="rounded-lg border border-border bg-card p-5 shadow-md"
               >
-                <h3 className="font-semibold text-[#1A5276]">{act.act}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-700">{act.summary}</p>
+                <h3 className="font-semibold text-foreground">{act.act}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{act.summary}</p>
               </div>
             ))}
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Characters ──────────────────────────────────────────── */}
         <section id="characters" aria-labelledby="characters-heading">
-          <h2 id="characters-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="characters-heading" className="text-2xl font-bold text-foreground">
             Character Analysis
           </h2>
           <div className="mt-6 space-y-6">
             {characters.map((c) => (
               <div
                 key={c.name}
-                className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm"
+                className="rounded-lg border border-border bg-card p-5 shadow-md"
               >
-                <h3 className="text-lg font-semibold text-[#1A5276]">{c.name}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-700">{c.description}</p>
+                <h3 className="text-lg font-semibold text-foreground">{c.name}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{c.description}</p>
               </div>
             ))}
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Themes ──────────────────────────────────────────────── */}
         <section id="themes" aria-labelledby="themes-heading">
-          <h2 id="themes-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="themes-heading" className="text-2xl font-bold text-foreground">
             Key Themes
           </h2>
           <div className="mt-6 grid gap-5 sm:grid-cols-2">
             {themes.map((t) => (
               <div
                 key={t.name}
-                className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm"
+                className="rounded-lg border border-border bg-card p-5 shadow-md"
               >
-                <h3 className="font-semibold text-[#1A5276]">{t.name}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-700">{t.detail}</p>
+                <h3 className="font-semibold text-foreground">{t.name}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t.detail}</p>
               </div>
             ))}
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Key Quotes ──────────────────────────────────────────── */}
         <section id="key-quotes" aria-labelledby="quotes-heading">
-          <h2 id="quotes-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="quotes-heading" className="text-2xl font-bold text-foreground">
             Key Quotes ({keyQuotes.length})
           </h2>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-sm text-muted-foreground">
             Each quote includes the speaker, location, and detailed analysis suitable for
             Cambridge IGCSE responses.
           </p>
@@ -377,30 +377,30 @@ export default function MacbethStudyGuide() {
             {keyQuotes.map((q, i) => (
               <div
                 key={i}
-                className="rounded-lg border-l-4 border-[#2E86C1] bg-white p-5 shadow-sm"
+                className="rounded-lg border-l-4 border-[#2E86C1] bg-card p-5 shadow-md"
               >
-                <blockquote className="text-base font-medium italic text-gray-900">
+                <blockquote className="text-base font-medium italic text-foreground">
                   &ldquo;{q.quote}&rdquo;
                 </blockquote>
-                <p className="mt-1 text-xs font-semibold text-[#2E86C1]">
+                <p className="mt-1 text-xs font-semibold text-primary">
                   {q.speaker} &mdash; {q.act}
                 </p>
-                <p className="mt-3 text-sm leading-relaxed text-gray-700">{q.analysis}</p>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{q.analysis}</p>
               </div>
             ))}
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Context ─────────────────────────────────────────────── */}
         <section id="context" aria-labelledby="context-heading">
-          <h2 id="context-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="context-heading" className="text-2xl font-bold text-foreground">
             Historical &amp; Literary Context
           </h2>
-          <div className="mt-6 space-y-4 text-sm leading-relaxed text-gray-700">
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <h3 className="font-semibold text-[#1A5276]">The Gunpowder Plot (1605)</h3>
+          <div className="mt-6 space-y-4 text-sm leading-relaxed text-muted-foreground">
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <h3 className="font-semibold text-foreground">The Gunpowder Plot (1605)</h3>
               <p className="mt-2">
                 Macbeth was written in approximately 1606, shortly after the Gunpowder Plot, in
                 which Catholic conspirators attempted to assassinate King James I by blowing up
@@ -409,8 +409,8 @@ export default function MacbethStudyGuide() {
                 attempt to murder their king.
               </p>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <h3 className="font-semibold text-[#1A5276]">King James I and Witchcraft</h3>
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <h3 className="font-semibold text-foreground">King James I and Witchcraft</h3>
               <p className="mt-2">
                 James I was fascinated by witchcraft and published <em>Daemonologie</em> (1597),
                 a treatise arguing for the reality of witches. By including the Weird Sisters,
@@ -418,8 +418,8 @@ export default function MacbethStudyGuide() {
                 witches as malevolent and deceptive aligned with James&rsquo;s own beliefs.
               </p>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <h3 className="font-semibold text-[#1A5276]">The Divine Right of Kings</h3>
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <h3 className="font-semibold text-foreground">The Divine Right of Kings</h3>
               <p className="mt-2">
                 The Jacobean belief that monarchs were appointed by God meant that killing a king
                 was not merely murder but a sin against the divine order. This explains the
@@ -427,8 +427,8 @@ export default function MacbethStudyGuide() {
                 Duncan&rsquo;s death &mdash; nature itself recoils from the crime.
               </p>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <h3 className="font-semibold text-[#1A5276]">The Great Chain of Being</h3>
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <h3 className="font-semibold text-foreground">The Great Chain of Being</h3>
               <p className="mt-2">
                 Elizabethan and Jacobean society believed in a strict hierarchy: God &rarr;
                 angels &rarr; king &rarr; nobles &rarr; commoners &rarr; animals. When Macbeth
@@ -437,8 +437,8 @@ export default function MacbethStudyGuide() {
                 natural order.
               </p>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <h3 className="font-semibold text-[#1A5276]">Holinshed&rsquo;s Chronicles</h3>
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <h3 className="font-semibold text-foreground">Holinshed&rsquo;s Chronicles</h3>
               <p className="mt-2">
                 Shakespeare&rsquo;s main source was Raphael Holinshed&rsquo;s{" "}
                 <em>Chronicles of England, Scotland, and Ireland</em> (1577). He significantly
@@ -451,32 +451,32 @@ export default function MacbethStudyGuide() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Exam Questions ──────────────────────────────────────── */}
         <section id="exam-questions" aria-labelledby="exam-heading">
-          <h2 id="exam-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="exam-heading" className="text-2xl font-bold text-foreground">
             Cambridge-Style Exam Questions
           </h2>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-sm text-muted-foreground">
             Cambridge IGCSE Macbeth questions appear in Paper 2 (Drama). You will choose
             between a passage-based question and an essay question. Below are examples of
             both types with guidance on how to approach them.
           </p>
 
           <div className="mt-6 space-y-6">
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <span className="inline-block rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-[#1A5276]">
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <span className="inline-block rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                 Passage-Based
               </span>
-              <p className="mt-3 text-sm font-medium text-gray-900">
+              <p className="mt-3 text-sm font-medium text-foreground">
                 Re-read Act 1, Scene 7, from &ldquo;If it were done when &rsquo;tis done&rdquo;
                 to &ldquo;We will proceed no further in this business.&rdquo; How does
                 Shakespeare present Macbeth&rsquo;s inner conflict in this passage?
               </p>
-              <div className="mt-3 rounded bg-[#2E86C1]/5 p-3">
-                <p className="text-xs font-semibold text-[#1A5276]">How to approach:</p>
-                <ul className="mt-1 space-y-1 text-xs text-gray-700">
+              <div className="mt-3 rounded bg-primary/5 p-3">
+                <p className="text-xs font-semibold text-foreground">How to approach:</p>
+                <ul className="mt-1 space-y-1 text-xs text-muted-foreground">
                   <li>&bull; Work through the passage line by line, identifying key language choices</li>
                   <li>&bull; Analyse the conditional &ldquo;If&rdquo; &mdash; shows Macbeth is not yet committed</li>
                   <li>&bull; Discuss the soliloquy form: private speech reveals genuine thoughts</li>
@@ -486,16 +486,16 @@ export default function MacbethStudyGuide() {
               </div>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <span className="inline-block rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-[#1A5276]">
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <span className="inline-block rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                 Essay Question
               </span>
-              <p className="mt-3 text-sm font-medium text-gray-900">
+              <p className="mt-3 text-sm font-medium text-foreground">
                 How does Shakespeare present the theme of guilt in Macbeth?
               </p>
-              <div className="mt-3 rounded bg-[#2E86C1]/5 p-3">
-                <p className="text-xs font-semibold text-[#1A5276]">How to approach:</p>
-                <ul className="mt-1 space-y-1 text-xs text-gray-700">
+              <div className="mt-3 rounded bg-primary/5 p-3">
+                <p className="text-xs font-semibold text-foreground">How to approach:</p>
+                <ul className="mt-1 space-y-1 text-xs text-muted-foreground">
                   <li>&bull; Plan 3&ndash;4 key points with supporting quotations</li>
                   <li>&bull; Track guilt chronologically: Macbeth&rsquo;s dagger, &lsquo;Neptune&rsquo;s ocean&rsquo;, Banquo&rsquo;s ghost, Lady Macbeth&rsquo;s sleepwalking</li>
                   <li>&bull; Compare how Macbeth and Lady Macbeth experience guilt differently</li>
@@ -505,17 +505,17 @@ export default function MacbethStudyGuide() {
               </div>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <span className="inline-block rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-[#1A5276]">
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <span className="inline-block rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                 Essay Question
               </span>
-              <p className="mt-3 text-sm font-medium text-gray-900">
+              <p className="mt-3 text-sm font-medium text-foreground">
                 Explore how Shakespeare presents the relationship between Macbeth and Lady
                 Macbeth. How does it change during the course of the play?
               </p>
-              <div className="mt-3 rounded bg-[#2E86C1]/5 p-3">
-                <p className="text-xs font-semibold text-[#1A5276]">How to approach:</p>
-                <ul className="mt-1 space-y-1 text-xs text-gray-700">
+              <div className="mt-3 rounded bg-primary/5 p-3">
+                <p className="text-xs font-semibold text-foreground">How to approach:</p>
+                <ul className="mt-1 space-y-1 text-xs text-muted-foreground">
                   <li>&bull; Structure chronologically to show the arc of their relationship</li>
                   <li>&bull; Act 1: Lady Macbeth dominant, Macbeth deferential (&lsquo;my dearest partner of greatness&rsquo;)</li>
                   <li>&bull; Act 3: roles begin to reverse; Macbeth acts alone, keeps plans from her</li>
@@ -525,17 +525,17 @@ export default function MacbethStudyGuide() {
               </div>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <span className="inline-block rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-[#1A5276]">
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <span className="inline-block rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                 Passage-Based
               </span>
-              <p className="mt-3 text-sm font-medium text-gray-900">
+              <p className="mt-3 text-sm font-medium text-foreground">
                 Re-read Act 5, Scene 1 (Lady Macbeth&rsquo;s sleepwalking scene). How does
                 Shakespeare make this such a dramatic and significant moment in the play?
               </p>
-              <div className="mt-3 rounded bg-[#2E86C1]/5 p-3">
-                <p className="text-xs font-semibold text-[#1A5276]">How to approach:</p>
-                <ul className="mt-1 space-y-1 text-xs text-gray-700">
+              <div className="mt-3 rounded bg-primary/5 p-3">
+                <p className="text-xs font-semibold text-foreground">How to approach:</p>
+                <ul className="mt-1 space-y-1 text-xs text-muted-foreground">
                   <li>&bull; Note the shift to prose: Lady Macbeth no longer speaks in verse, reflecting her mental disintegration</li>
                   <li>&bull; Analyse the Doctor and Gentlewoman as onstage audience &mdash; their horror mirrors ours</li>
                   <li>&bull; Link back to earlier moments: &lsquo;a little water&rsquo; is now ironic; the &lsquo;spot&rsquo; cannot be removed</li>
@@ -551,7 +551,7 @@ export default function MacbethStudyGuide() {
         <div className="mt-12 flex items-center gap-2 text-sm">
           <Link
             href="/resources/english-literature/caie"
-            className="font-medium text-[#1A5276] underline underline-offset-2 hover:text-[#2E86C1]"
+            className="font-medium text-foreground underline underline-offset-2 hover:text-primary"
           >
             &larr; Back to Cambridge IGCSE English Literature
           </Link>

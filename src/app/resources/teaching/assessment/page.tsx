@@ -394,7 +394,7 @@ export default function AssessmentToolsPage() {
       </section>
 
       {/* Tabs */}
-      <div className="sticky top-0 z-20 border-b border-gray-200 bg-white shadow-sm print:hidden">
+      <div className="sticky top-0 z-20 border-b border-border bg-card shadow-md print:hidden">
         <div className="mx-auto flex max-w-6xl items-center gap-1 overflow-x-auto px-4 sm:px-6 lg:px-8">
           {([
             { key: "quiz" as const, label: "Quick Quiz" },
@@ -407,8 +407,8 @@ export default function AssessmentToolsPage() {
               onClick={() => setActiveTab(tab.key)}
               className={`whitespace-nowrap border-b-2 px-4 py-3.5 text-sm font-medium transition-colors ${
                 activeTab === tab.key
-                  ? "border-[#2E86C1] text-[#1A5276]"
-                  : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                  ? "border-[#2E86C1] text-foreground"
+                  : "border-transparent text-muted-foreground hover:border-gray-300 hover:text-muted-foreground"
               }`}
             >
               {tab.label}
@@ -423,8 +423,8 @@ export default function AssessmentToolsPage() {
         {/* ── Quick Quiz Tab ─────────────────────────────────────── */}
         {activeTab === "quiz" && (
           <div>
-            <h2 className="text-xl font-bold text-gray-900">Quick Quiz Generator</h2>
-            <p className="mt-2 text-gray-600">
+            <h2 className="text-xl font-bold text-foreground">Quick Quiz Generator</h2>
+            <p className="mt-2 text-muted-foreground">
               Select a text and run a 10-question multiple-choice quiz. Perfect for starters, plenaries, or revision sessions.
             </p>
 
@@ -442,7 +442,7 @@ export default function AssessmentToolsPage() {
                   className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
                     selectedQuizTopic === topic
                       ? "bg-[#1A5276] text-white"
-                      : "bg-gray-100 text-gray-700 hover:bg-[#2E86C1]/10 hover:text-[#2E86C1]"
+                      : "bg-gray-100 text-muted-foreground hover:bg-primary/10 hover:text-primary"
                   }`}
                 >
                   {topic}
@@ -451,14 +451,14 @@ export default function AssessmentToolsPage() {
             </div>
 
             {/* Quiz area */}
-            <div className="mt-8 rounded-xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8">
+            <div className="mt-8 rounded-xl border border-border bg-card p-6 shadow-md sm:p-8">
               {!quizStarted && !quizComplete && (
                 <div className="text-center py-8">
-                  <h3 className="text-lg font-bold text-gray-900">{selectedQuizTopic} Quiz</h3>
-                  <p className="mt-2 text-sm text-gray-500">{quizQuestions.length} multiple choice questions</p>
+                  <h3 className="text-lg font-bold text-foreground">{selectedQuizTopic} Quiz</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">{quizQuestions.length} multiple choice questions</p>
                   <button
                     onClick={startQuiz}
-                    className="mt-6 rounded-lg bg-[#2E86C1] px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-[#2E86C1]/90"
+                    className="mt-6 rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-primary/90"
                   >
                     Start Quiz
                   </button>
@@ -468,22 +468,22 @@ export default function AssessmentToolsPage() {
               {quizStarted && !quizComplete && currentQuestion && (
                 <div>
                   {/* Progress bar */}
-                  <div className="mb-6 flex items-center justify-between text-sm text-gray-500">
+                  <div className="mb-6 flex items-center justify-between text-sm text-muted-foreground">
                     <span>Question {currentQuestionIndex + 1} of {quizQuestions.length}</span>
                     <span>Score: {score}/{currentQuestionIndex + (showAnswer ? 1 : 0)}</span>
                   </div>
                   <div className="mb-6 h-2 rounded-full bg-gray-100">
                     <div
-                      className="h-2 rounded-full bg-[#2E86C1] transition-all"
+                      className="h-2 rounded-full bg-primary transition-all"
                       style={{ width: `${((currentQuestionIndex + 1) / quizQuestions.length) * 100}%` }}
                     />
                   </div>
 
-                  <h3 className="text-lg font-bold text-gray-900">{currentQuestion.question}</h3>
+                  <h3 className="text-lg font-bold text-foreground">{currentQuestion.question}</h3>
 
                   <div className="mt-4 space-y-2">
                     {currentQuestion.options.map((option, i) => {
-                      let optionClass = "border-gray-200 bg-white hover:border-[#2E86C1]/40";
+                      let optionClass = "border-border bg-card hover:border-[#2E86C1]/40";
                       if (showAnswer) {
                         if (i === currentQuestion.correctIndex) {
                           optionClass = "border-green-500 bg-green-50";
@@ -491,7 +491,7 @@ export default function AssessmentToolsPage() {
                           optionClass = "border-red-500 bg-red-50";
                         }
                       } else if (i === selectedAnswer) {
-                        optionClass = "border-[#2E86C1] bg-[#2E86C1]/5";
+                        optionClass = "border-[#2E86C1] bg-primary/5";
                       }
 
                       return (
@@ -522,7 +522,7 @@ export default function AssessmentToolsPage() {
                     ) : (
                       <button
                         onClick={nextQuestion}
-                        className="rounded-lg bg-[#2E86C1] px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-[#2E86C1]/90"
+                        className="rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-primary/90"
                       >
                         {currentQuestionIndex < quizQuestions.length - 1 ? "Next Question" : "See Results"}
                       </button>
@@ -533,11 +533,11 @@ export default function AssessmentToolsPage() {
 
               {quizComplete && (
                 <div className="text-center py-8">
-                  <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-[#2E86C1]/10">
-                    <span className="text-3xl font-bold text-[#1A5276]">{score}/{quizQuestions.length}</span>
+                  <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-primary/10">
+                    <span className="text-3xl font-bold text-foreground">{score}/{quizQuestions.length}</span>
                   </div>
-                  <h3 className="mt-4 text-lg font-bold text-gray-900">Quiz Complete!</h3>
-                  <p className="mt-2 text-sm text-gray-500">
+                  <h3 className="mt-4 text-lg font-bold text-foreground">Quiz Complete!</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">
                     {score === quizQuestions.length
                       ? "Perfect score! Excellent knowledge."
                       : score >= quizQuestions.length * 0.6
@@ -547,13 +547,13 @@ export default function AssessmentToolsPage() {
                   <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
                     <button
                       onClick={startQuiz}
-                      className="rounded-lg bg-[#2E86C1] px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-[#2E86C1]/90"
+                      className="rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-primary/90"
                     >
                       Retry Quiz
                     </button>
                     <button
                       onClick={() => setShowAllAnswers(!showAllAnswers)}
-                      className="rounded-lg border border-[#1A5276] px-6 py-2.5 text-sm font-semibold text-[#1A5276] transition hover:bg-[#1A5276]/5"
+                      className="rounded-lg border border-[#1A5276] px-6 py-2.5 text-sm font-semibold text-foreground transition hover:bg-[#1A5276]/5"
                     >
                       {showAllAnswers ? "Hide Answers" : "View All Answers"}
                     </button>
@@ -564,15 +564,15 @@ export default function AssessmentToolsPage() {
 
             {/* Expandable answers section */}
             {showAllAnswers && (
-              <div className="mt-6 rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden">
+              <div className="mt-6 rounded-xl border border-border bg-card shadow-md overflow-hidden">
                 <div className="bg-[#1A5276] px-5 py-3">
                   <h3 className="font-bold text-white">{selectedQuizTopic} — Answer Key</h3>
                 </div>
                 <div className="divide-y divide-gray-100">
                   {quizQuestions.map((q, i) => (
                     <div key={i} className="px-5 py-4">
-                      <p className="text-sm font-medium text-gray-900">
-                        <span className="mr-2 font-bold text-[#2E86C1]">Q{i + 1}.</span>
+                      <p className="text-sm font-medium text-foreground">
+                        <span className="mr-2 font-bold text-primary">Q{i + 1}.</span>
                         {q.question}
                       </p>
                       <p className="mt-1 text-sm text-green-700">
@@ -592,8 +592,8 @@ export default function AssessmentToolsPage() {
           <div>
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div>
-                <h2 className="text-xl font-bold text-gray-900">Essay Question Bank</h2>
-                <p className="mt-1 text-gray-600">
+                <h2 className="text-xl font-bold text-foreground">Essay Question Bank</h2>
+                <p className="mt-1 text-muted-foreground">
                   {ESSAY_QUESTIONS.length} exam-style essay questions organised by text and exam board.
                 </p>
               </div>
@@ -601,7 +601,7 @@ export default function AssessmentToolsPage() {
                 <select
                   value={essayTopicFilter}
                   onChange={(e) => setEssayTopicFilter(e.target.value)}
-                  className="rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-700 focus:border-[#2E86C1] focus:outline-none focus:ring-2 focus:ring-[#2E86C1]/20"
+                  className="rounded-lg border border-gray-300 bg-card px-3 py-2.5 text-sm text-muted-foreground focus:border-[#2E86C1] focus:outline-none focus:ring-2 focus:ring-primary/20"
                 >
                   <option value="">All Topics</option>
                   {essayTopics.map((t) => (
@@ -611,7 +611,7 @@ export default function AssessmentToolsPage() {
                 <select
                   value={essayBoardFilter}
                   onChange={(e) => setEssayBoardFilter(e.target.value)}
-                  className="rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-700 focus:border-[#2E86C1] focus:outline-none focus:ring-2 focus:ring-[#2E86C1]/20"
+                  className="rounded-lg border border-gray-300 bg-card px-3 py-2.5 text-sm text-muted-foreground focus:border-[#2E86C1] focus:outline-none focus:ring-2 focus:ring-primary/20"
                 >
                   <option value="">All Exam Boards</option>
                   {essayBoards.map((b) => (
@@ -621,7 +621,7 @@ export default function AssessmentToolsPage() {
               </div>
             </div>
 
-            <p className="mt-4 text-sm text-gray-500">
+            <p className="mt-4 text-sm text-muted-foreground">
               Showing {filteredEssays.length} of {ESSAY_QUESTIONS.length} questions
             </p>
 
@@ -629,24 +629,24 @@ export default function AssessmentToolsPage() {
               {filteredEssays.map((eq) => (
                 <div
                   key={eq.id}
-                  className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm"
+                  className="rounded-xl border border-border bg-card p-5 shadow-md"
                 >
                   <div className="flex flex-wrap items-center gap-2 mb-2">
-                    <span className="rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-[#1A5276]">
+                    <span className="rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                       {eq.subject}
                     </span>
-                    <span className="rounded-full bg-[#2E86C1]/10 px-2.5 py-0.5 text-xs font-semibold text-[#2E86C1]">
+                    <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary">
                       {eq.topic}
                     </span>
                     <span className="rounded-full bg-amber-50 px-2.5 py-0.5 text-xs font-semibold text-amber-700">
                       {eq.marks} marks
                     </span>
-                    <span className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-600">
+                    <span className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
                       {eq.examBoard}
                     </span>
                   </div>
-                  <p className="text-sm font-medium text-gray-900">{eq.text}</p>
-                  <p className="mt-2 text-xs text-gray-500">
+                  <p className="text-sm font-medium text-foreground">{eq.text}</p>
+                  <p className="mt-2 text-xs text-muted-foreground">
                     <span className="font-semibold">Mark scheme:</span> {eq.markSchemeRef}
                   </p>
                 </div>
@@ -660,8 +660,8 @@ export default function AssessmentToolsPage() {
           <div>
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div>
-                <h2 className="text-xl font-bold text-gray-900">Mark Scheme Templates</h2>
-                <p className="mt-2 text-gray-600">
+                <h2 className="text-xl font-bold text-foreground">Mark Scheme Templates</h2>
+                <p className="mt-2 text-muted-foreground">
                   Reference mark schemes for GCSE English assessments. Use these to standardise marking and provide targeted feedback.
                 </p>
               </div>
@@ -669,7 +669,7 @@ export default function AssessmentToolsPage() {
                 <select
                   value={markSchemeBoard}
                   onChange={(e) => setMarkSchemeBoard(e.target.value)}
-                  className="rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-700 focus:border-[#2E86C1] focus:outline-none focus:ring-2 focus:ring-[#2E86C1]/20"
+                  className="rounded-lg border border-gray-300 bg-card px-3 py-2.5 text-sm text-muted-foreground focus:border-[#2E86C1] focus:outline-none focus:ring-2 focus:ring-primary/20"
                 >
                   <option value="">All Boards</option>
                   <option value="AQA">AQA</option>
@@ -678,7 +678,7 @@ export default function AssessmentToolsPage() {
                 </select>
                 <button
                   onClick={handlePrint}
-                  className="inline-flex items-center gap-2 rounded-lg border border-[#1A5276] px-4 py-2.5 text-sm font-semibold text-[#1A5276] transition hover:bg-[#1A5276]/5 print:hidden"
+                  className="inline-flex items-center gap-2 rounded-lg border border-[#1A5276] px-4 py-2.5 text-sm font-semibold text-foreground transition hover:bg-[#1A5276]/5 print:hidden"
                 >
                   <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6.72 13.829c-.24.03-.48.062-.72.096m.72-.096a42.415 42.415 0 0 1 10.56 0m-10.56 0L6.34 18m10.94-4.171c.24.03.48.062.72.096m-.72-.096L17.66 18m0 0 .229 2.523a1.125 1.125 0 0 1-1.12 1.227H7.231c-.662 0-1.18-.568-1.12-1.227L6.34 18m11.318 0h1.091A2.25 2.25 0 0 0 21 15.75V9.456c0-1.081-.768-2.015-1.837-2.175a48.055 48.055 0 0 0-1.913-.247M6.34 18H5.25A2.25 2.25 0 0 1 3 15.75V9.456c0-1.081.768-2.015 1.837-2.175a48.041 48.041 0 0 1 1.913-.247m0 0a48.77 48.77 0 0 1 10.5 0m-10.5 0V6.169c0-1.244.757-2.373 1.916-2.793a48.032 48.032 0 0 1 6.168 0c1.159.42 1.916 1.549 1.916 2.793V8.034" />
@@ -690,14 +690,14 @@ export default function AssessmentToolsPage() {
 
             <div className="mt-6 space-y-6">
               {filteredMarkSchemes.map((template, idx) => (
-                <div key={template.title} className="rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden print:break-inside-avoid">
+                <div key={template.title} className="rounded-xl border border-border bg-card shadow-md overflow-hidden print:break-inside-avoid">
                   <button
                     onClick={() => toggleMarkScheme(idx)}
                     className="flex w-full items-center justify-between bg-[#1A5276] px-5 py-3 text-left print:pointer-events-none"
                   >
                     <div className="flex items-center gap-3">
                       <h3 className="font-bold text-white">{template.title}</h3>
-                      <span className="rounded-full bg-white/20 px-2 py-0.5 text-xs font-medium text-white">
+                      <span className="rounded-full bg-card/20 px-2 py-0.5 text-xs font-medium text-white">
                         {template.examBoard}
                       </span>
                     </div>
@@ -711,10 +711,10 @@ export default function AssessmentToolsPage() {
                   <div className={`divide-y divide-gray-100 ${expandedMarkSchemes.has(idx) ? "" : "hidden print:block"}`}>
                     {template.levels.map((level) => (
                       <div key={level.level} className="flex flex-col gap-1 px-5 py-3 sm:flex-row sm:gap-4">
-                        <span className="shrink-0 text-sm font-bold text-[#2E86C1] sm:w-52">
+                        <span className="shrink-0 text-sm font-bold text-primary sm:w-52">
                           {level.level}
                         </span>
-                        <p className="text-sm text-gray-600">{level.descriptor}</p>
+                        <p className="text-sm text-muted-foreground">{level.descriptor}</p>
                       </div>
                     ))}
                   </div>
@@ -729,14 +729,14 @@ export default function AssessmentToolsPage() {
           <div>
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div>
-                <h2 className="text-xl font-bold text-gray-900">Progress Tracker Templates</h2>
-                <p className="mt-2 text-gray-600">
+                <h2 className="text-xl font-bold text-foreground">Progress Tracker Templates</h2>
+                <p className="mt-2 text-muted-foreground">
                   Printable tracker templates and skills checklists for monitoring student progress.
                 </p>
               </div>
               <button
                 onClick={handlePrint}
-                className="inline-flex items-center gap-2 rounded-lg border border-[#1A5276] px-4 py-2.5 text-sm font-semibold text-[#1A5276] transition hover:bg-[#1A5276]/5 print:hidden"
+                className="inline-flex items-center gap-2 rounded-lg border border-[#1A5276] px-4 py-2.5 text-sm font-semibold text-foreground transition hover:bg-[#1A5276]/5 print:hidden"
               >
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6.72 13.829c-.24.03-.48.062-.72.096m.72-.096a42.415 42.415 0 0 1 10.56 0m-10.56 0L6.34 18m10.94-4.171c.24.03.48.062.72.096m-.72-.096L17.66 18m0 0 .229 2.523a1.125 1.125 0 0 1-1.12 1.227H7.231c-.662 0-1.18-.568-1.12-1.227L6.34 18m11.318 0h1.091A2.25 2.25 0 0 0 21 15.75V9.456c0-1.081-.768-2.015-1.837-2.175a48.055 48.055 0 0 0-1.913-.247M6.34 18H5.25A2.25 2.25 0 0 1 3 15.75V9.456c0-1.081.768-2.015 1.837-2.175a48.041 48.041 0 0 1 1.913-.247m0 0a48.77 48.77 0 0 1 10.5 0m-10.5 0V6.169c0-1.244.757-2.373 1.916-2.793a48.032 48.032 0 0 1 6.168 0c1.159.42 1.916 1.549 1.916 2.793V8.034" />
@@ -748,19 +748,19 @@ export default function AssessmentToolsPage() {
             {/* Progress grid templates */}
             <div className="mt-6 space-y-6">
               {PROGRESS_TRACKERS.map((tracker) => (
-                <div key={tracker.title} className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm print:break-inside-avoid">
-                  <h3 className="text-lg font-bold text-gray-900">{tracker.title}</h3>
-                  <p className="mt-1 text-sm text-gray-600">{tracker.description}</p>
+                <div key={tracker.title} className="rounded-xl border border-border bg-card p-6 shadow-md print:break-inside-avoid">
+                  <h3 className="text-lg font-bold text-foreground">{tracker.title}</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">{tracker.description}</p>
 
                   {/* Preview table */}
                   <div className="mt-4 overflow-x-auto">
                     <table className="w-full text-xs">
                       <thead>
-                        <tr className="bg-gray-50">
+                        <tr className="bg-muted">
                           {tracker.columns.map((col) => (
                             <th
                               key={col}
-                              className="whitespace-nowrap border border-gray-200 px-3 py-2 text-left font-semibold text-gray-700"
+                              className="whitespace-nowrap border border-border px-3 py-2 text-left font-semibold text-muted-foreground"
                             >
                               {col}
                             </th>
@@ -773,7 +773,7 @@ export default function AssessmentToolsPage() {
                             {tracker.columns.map((col, i) => (
                               <td
                                 key={col}
-                                className="border border-gray-200 px-3 py-2 text-gray-400"
+                                className="border border-border px-3 py-2 text-muted-foreground"
                               >
                                 {i === 0 ? `Student ${row + 1}` : ""}
                               </td>
@@ -785,7 +785,7 @@ export default function AssessmentToolsPage() {
                   </div>
 
                   <button
-                    className="mt-4 inline-flex items-center gap-2 rounded-lg bg-[#2E86C1] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#2E86C1]/90 print:hidden"
+                    className="mt-4 inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white transition hover:bg-primary/90 print:hidden"
                     onClick={() => {
                       const headers = tracker.columns.join(",");
                       const rows = Array.from({ length: 30 }, (_, i) => {
@@ -813,14 +813,14 @@ export default function AssessmentToolsPage() {
 
             {/* Skills Checklist */}
             <div className="mt-10">
-              <h2 className="text-xl font-bold text-gray-900">Skills Checklist</h2>
-              <p className="mt-2 text-gray-600">
+              <h2 className="text-xl font-bold text-foreground">Skills Checklist</h2>
+              <p className="mt-2 text-muted-foreground">
                 Printable skills checklist for tracking individual student competencies across Literature and Language.
               </p>
 
               <div className="mt-6 grid gap-6 lg:grid-cols-3">
                 {Object.entries(SKILLS_CHECKLIST).map(([category, skills]) => (
-                  <div key={category} className="rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden print:break-inside-avoid">
+                  <div key={category} className="rounded-xl border border-border bg-card shadow-md overflow-hidden print:break-inside-avoid">
                     <div className="bg-[#1A5276] px-5 py-3">
                       <h3 className="text-sm font-bold text-white">{category}</h3>
                     </div>
@@ -829,9 +829,9 @@ export default function AssessmentToolsPage() {
                         <label key={i} className="flex items-start gap-3 cursor-pointer group">
                           <input
                             type="checkbox"
-                            className="mt-0.5 h-4 w-4 shrink-0 rounded border-gray-300 text-[#2E86C1] focus:ring-[#2E86C1]/20"
+                            className="mt-0.5 h-4 w-4 shrink-0 rounded border-gray-300 text-primary focus:ring-primary/20"
                           />
-                          <span className="text-xs leading-relaxed text-gray-700 group-hover:text-gray-900 transition-colors">
+                          <span className="text-xs leading-relaxed text-muted-foreground group-hover:text-foreground transition-colors">
                             {skill}
                           </span>
                         </label>

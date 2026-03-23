@@ -125,11 +125,11 @@ export default function ContactPage() {
                     >
                       {contact.icon}
                     </div>
-                    <h3 className="font-semibold text-gray-900">
+                    <h3 className="font-semibold text-foreground">
                       {contact.label}
                     </h3>
                   </div>
-                  <p className="text-sm leading-relaxed text-gray-500">
+                  <p className="text-sm leading-relaxed text-muted-foreground">
                     {contact.description}
                   </p>
                   <a
@@ -161,35 +161,35 @@ export default function ContactPage() {
       </section>
 
       {/* Company info */}
-      <section className="bg-gray-50 px-4 py-12 sm:py-16" aria-labelledby="company-heading">
+      <section className="bg-muted px-4 py-12 sm:py-16" aria-labelledby="company-heading">
         <div className="mx-auto max-w-3xl">
           <h2
             id="company-heading"
-            className="text-center text-xl font-bold text-gray-900 sm:text-2xl"
+            className="text-center text-xl font-bold text-foreground sm:text-2xl"
           >
             About the Company
           </h2>
 
-          <div className="mt-8 rounded-xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8">
+          <div className="mt-8 rounded-xl border border-border bg-card p-6 shadow-md sm:p-8">
             <dl className="grid gap-4 sm:grid-cols-2">
               <div>
-                <dt className="text-xs font-semibold uppercase tracking-wider text-gray-400">
+                <dt className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                   Company Name
                 </dt>
-                <dd className="mt-1 text-sm font-medium text-gray-900">
+                <dd className="mt-1 text-sm font-medium text-foreground">
                   Upskill Energy Limited
                 </dd>
               </div>
               <div>
-                <dt className="text-xs font-semibold uppercase tracking-wider text-gray-400">
+                <dt className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                   Registered In
                 </dt>
-                <dd className="mt-1 text-sm font-medium text-gray-900">
+                <dd className="mt-1 text-sm font-medium text-foreground">
                   England and Wales
                 </dd>
               </div>
               <div>
-                <dt className="text-xs font-semibold uppercase tracking-wider text-gray-400">
+                <dt className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                   General Support
                 </dt>
                 <dd className="mt-1 text-sm">
@@ -202,7 +202,7 @@ export default function ContactPage() {
                 </dd>
               </div>
               <div>
-                <dt className="text-xs font-semibold uppercase tracking-wider text-gray-400">
+                <dt className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                   Data Protection
                 </dt>
                 <dd className="mt-1 text-sm">
@@ -224,36 +224,36 @@ export default function ContactPage() {
         <div className="mx-auto max-w-3xl">
           <div className="grid gap-6 sm:grid-cols-2">
             {/* Response times */}
-            <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-              <h3 className="font-semibold text-gray-900">
+            <div className="rounded-xl border border-border bg-card p-6 shadow-md">
+              <h3 className="font-semibold text-foreground">
                 When will I hear back?
               </h3>
-              <ul className="mt-3 space-y-2 text-sm text-gray-600">
+              <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 block h-1.5 w-1.5 shrink-0 rounded-full bg-success" aria-hidden="true" />
                   <span>
-                    <strong className="text-gray-900">General support:</strong>{" "}
+                    <strong className="text-foreground">General support:</strong>{" "}
                     within 1 working day
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 block h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
                   <span>
-                    <strong className="text-gray-900">Data requests:</strong>{" "}
+                    <strong className="text-foreground">Data requests:</strong>{" "}
                     within 30 days (usually much sooner)
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 block h-1.5 w-1.5 shrink-0 rounded-full bg-warn" aria-hidden="true" />
                   <span>
-                    <strong className="text-gray-900">Safeguarding:</strong>{" "}
+                    <strong className="text-foreground">Safeguarding:</strong>{" "}
                     prioritised -- we aim to respond within 24 hours
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 block h-1.5 w-1.5 shrink-0 rounded-full bg-gray-400" aria-hidden="true" />
                   <span>
-                    <strong className="text-gray-900">Complaints:</strong>{" "}
+                    <strong className="text-foreground">Complaints:</strong>{" "}
                     acknowledged within 2 working days, resolved within 20
                   </span>
                 </li>
@@ -261,11 +261,11 @@ export default function ContactPage() {
             </div>
 
             {/* ICO complaint */}
-            <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-              <h3 className="font-semibold text-gray-900">
+            <div className="rounded-xl border border-border bg-card p-6 shadow-md">
+              <h3 className="font-semibold text-foreground">
                 Not satisfied with our response?
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-gray-600">
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                 If you have raised a concern about your data and you are not
                 happy with how we have handled it, you have the right to
                 complain to the UK&apos;s data protection regulator, the

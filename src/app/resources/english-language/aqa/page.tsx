@@ -94,7 +94,7 @@ export default function AQAEnglishLanguagePage() {
 
       {/* Breadcrumb */}
       <nav className="mx-auto max-w-5xl px-4 pt-6" aria-label="Breadcrumb">
-        <ol className="flex items-center gap-2 text-sm text-gray-500">
+        <ol className="flex items-center gap-2 text-sm text-muted-foreground">
           <li>
             <Link href="/" className="hover:text-primary transition-colors">
               Home
@@ -117,28 +117,28 @@ export default function AQAEnglishLanguagePage() {
       {/* Overview */}
       <div className="mx-auto max-w-5xl px-4 py-10">
         <div className="rounded-xl border border-accent-100 bg-accent-50/50 p-6 sm:p-8">
-          <h2 className="text-xl font-bold text-gray-900">
+          <h2 className="text-xl font-bold text-foreground">
             About this qualification
           </h2>
-          <div className="mt-4 grid gap-4 text-gray-700 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-4 grid gap-4 text-muted-foreground sm:grid-cols-2 lg:grid-cols-4">
             <div>
-              <p className="text-sm font-semibold text-gray-500">Exam board</p>
+              <p className="text-sm font-semibold text-muted-foreground">Exam board</p>
               <p className="text-lg font-bold text-primary">AQA</p>
             </div>
             <div>
-              <p className="text-sm font-semibold text-gray-500">
+              <p className="text-sm font-semibold text-muted-foreground">
                 Specification code
               </p>
               <p className="text-lg font-bold text-primary">8700</p>
             </div>
             <div>
-              <p className="text-sm font-semibold text-gray-500">Assessment</p>
+              <p className="text-sm font-semibold text-muted-foreground">Assessment</p>
               <p className="text-lg font-bold text-primary">
                 2 exams + NEA (spoken language)
               </p>
             </div>
             <div>
-              <p className="text-sm font-semibold text-gray-500">
+              <p className="text-sm font-semibold text-muted-foreground">
                 Total marks
               </p>
               <p className="text-lg font-bold text-primary">
@@ -154,7 +154,7 @@ export default function AQAEnglishLanguagePage() {
             <Link
               key={s.href}
               href={s.href}
-              className="group flex flex-col rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-md hover:border-accent-300"
+              className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-md transition hover:shadow-md hover:border-accent-300"
             >
               <div className="flex items-center justify-between">
                 {s.icon}
@@ -162,10 +162,10 @@ export default function AQAEnglishLanguagePage() {
                   {s.tag}
                 </span>
               </div>
-              <h3 className="mt-4 text-lg font-bold text-gray-900 group-hover:text-primary transition-colors">
+              <h3 className="mt-4 text-lg font-bold text-foreground group-hover:text-primary transition-colors">
                 {s.title}
               </h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-gray-600">
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
                 {s.description}
               </p>
               <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-accent group-hover:text-primary transition-colors">
@@ -180,34 +180,34 @@ export default function AQAEnglishLanguagePage() {
 
         {/* Exam structure summary */}
         <div className="mt-10 rounded-xl border border-accent-200 bg-gradient-to-r from-accent-50 to-primary-50 p-6 sm:p-8">
-          <h2 className="text-xl font-bold text-gray-900">
+          <h2 className="text-xl font-bold text-foreground">
             How is the qualification structured?
           </h2>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
-            <div className="rounded-lg border border-white/80 bg-white/70 p-4">
+            <div className="rounded-lg border border-white/80 bg-card/70 p-4">
               <h3 className="font-bold text-primary">Paper 1 (50%)</h3>
-              <p className="mt-1 text-sm text-gray-600">
+              <p className="mt-1 text-sm text-muted-foreground">
                 Explorations in Creative Reading and Writing. One literature fiction text. 4 reading questions + 1 descriptive/narrative writing task. 1 hour 45 minutes.
               </p>
             </div>
-            <div className="rounded-lg border border-white/80 bg-white/70 p-4">
+            <div className="rounded-lg border border-white/80 bg-card/70 p-4">
               <h3 className="font-bold text-primary">Paper 2 (50%)</h3>
-              <p className="mt-1 text-sm text-gray-600">
+              <p className="mt-1 text-sm text-muted-foreground">
                 Writers' Viewpoints and Perspectives. One non-fiction and one literary non-fiction text. 4 reading questions + 1 writing to present a viewpoint task. 1 hour 45 minutes.
               </p>
             </div>
           </div>
-          <p className="mt-4 text-sm text-gray-500">
+          <p className="mt-4 text-sm text-muted-foreground">
             Plus a non-exam assessment (NEA) for Spoken Language, reported as a separate endorsement (Pass, Merit, or Distinction) on the certificate.
           </p>
         </div>
 
         {/* Quick tips */}
-        <div className="mt-10 rounded-xl border border-gray-200 bg-white p-6 sm:p-8">
-          <h2 className="text-xl font-bold text-gray-900">
+        <div className="mt-10 rounded-xl border border-border bg-card p-6 sm:p-8">
+          <h2 className="text-xl font-bold text-foreground">
             Quick revision tips for AQA English Language
           </h2>
-          <ul className="mt-4 space-y-3 text-gray-700">
+          <ul className="mt-4 space-y-3 text-muted-foreground">
             <li className="flex gap-3">
               <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent-100 text-xs font-bold text-accent-700">
                 1
@@ -277,25 +277,25 @@ export default function AQAEnglishLanguagePage() {
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Link
               href="/resources/english-language/aqa/paper-1"
-              className="rounded-lg bg-white px-6 py-3 text-sm font-bold text-primary shadow-sm transition hover:bg-accent-50"
+              className="rounded-lg bg-card px-6 py-3 text-sm font-bold text-primary shadow-md transition hover:bg-accent-50"
             >
               Paper 1
             </Link>
             <Link
               href="/resources/english-language/aqa/paper-2"
-              className="rounded-lg bg-white px-6 py-3 text-sm font-bold text-primary shadow-sm transition hover:bg-accent-50"
+              className="rounded-lg bg-card px-6 py-3 text-sm font-bold text-primary shadow-md transition hover:bg-accent-50"
             >
               Paper 2
             </Link>
             <Link
               href="/resources/english-language/aqa/techniques"
-              className="rounded-lg bg-white/20 px-6 py-3 text-sm font-bold text-white backdrop-blur-sm transition hover:bg-white/30"
+              className="rounded-lg bg-card/20 px-6 py-3 text-sm font-bold text-white backdrop-blur-sm transition hover:bg-card/30"
             >
               Techniques
             </Link>
             <Link
               href="/resources/english-language/aqa/writing-skills"
-              className="rounded-lg bg-white/20 px-6 py-3 text-sm font-bold text-white backdrop-blur-sm transition hover:bg-white/30"
+              className="rounded-lg bg-card/20 px-6 py-3 text-sm font-bold text-white backdrop-blur-sm transition hover:bg-card/30"
             >
               Writing Skills
             </Link>

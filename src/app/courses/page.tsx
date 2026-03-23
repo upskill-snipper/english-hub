@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef, useMemo, useCallback, memo } from 'react'
 import Link from 'next/link'
-import { BookOpen, Clock, GraduationCap, Play } from 'lucide-react'
+import { BookOpen, Clock, GraduationCap, Play, PenTool, Feather } from 'lucide-react'
 import { loadAllCourses } from '@/data/course-loader'
 import type { CourseData } from '@/data/courses'
 import { useBoardStore } from '@/store/board-store'
@@ -150,6 +150,59 @@ export default function CourseCataloguePage() {
             </TabsContent>
           ))}
         </Tabs>
+      </section>
+
+      {/* Supplement Your Learning */}
+      <section className="border-t border-border/40">
+        <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+          <h2 className="text-foreground">Supplement Your Learning</h2>
+          <p className="mt-3 max-w-2xl text-muted-foreground">
+            Explore these complementary resources to deepen your understanding and boost your exam preparation.
+          </p>
+
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                href: '/resources/revision-notes',
+                icon: BookOpen,
+                title: 'Text Study Guides',
+                description: 'Detailed revision notes for every set text',
+              },
+              {
+                href: '/resources/writing-skills',
+                icon: PenTool,
+                title: 'Writing Masterclass',
+                description: 'Creative, persuasive, and analytical writing guides',
+              },
+              {
+                href: '/resources/poetry',
+                icon: Feather,
+                title: 'Poetry Hub',
+                description: 'Anthology analysis and poetry techniques',
+              },
+              {
+                href: '/resources/english-literature',
+                icon: GraduationCap,
+                title: 'Literature Guides',
+                description: 'Board-specific literature exam preparation',
+              },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="bg-card rounded-xl border border-border p-5 hover:border-primary/40 transition-all group"
+              >
+                <item.icon className="h-6 w-6 text-primary mb-3 group-hover:scale-110 transition-transform" />
+                <h3 className="text-base font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">
+                  {item.title}
+                </h3>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  {item.description}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </div>
       </section>
     </main>
   )

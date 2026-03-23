@@ -18,7 +18,6 @@ import { Separator } from '@/components/ui/separator'
 import { Skeleton } from '@/components/ui/skeleton'
 
 const NAV_LINKS = [
-  { href: '/subjects', label: 'Subjects' },
   { href: '/courses', label: 'Courses' },
   { href: '/mock-exams', label: 'Mock Exams' },
   { href: '/games', label: 'Games' },

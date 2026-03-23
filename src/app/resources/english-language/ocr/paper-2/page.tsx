@@ -42,11 +42,11 @@ export default function OCRPaper2Page() {
         <section aria-labelledby="structure-heading">
           <h2
             id="structure-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Paper Structure
           </h2>
-          <div className="mt-4 space-y-4 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>
               OCR Component 02 focuses on fiction and literary texts for the
               reading section, and imaginative or creative writing for the
@@ -56,10 +56,10 @@ export default function OCRPaper2Page() {
               <table className="mt-2 w-full border-collapse text-sm">
                 <thead>
                   <tr className="border-b-2 border-primary/20 text-left">
-                    <th className="py-3 pr-4 font-semibold text-gray-900">Section</th>
-                    <th className="py-3 pr-4 font-semibold text-gray-900">Focus</th>
-                    <th className="py-3 pr-4 font-semibold text-gray-900">Marks</th>
-                    <th className="py-3 font-semibold text-gray-900">Time Guide</th>
+                    <th className="py-3 pr-4 font-semibold text-foreground">Section</th>
+                    <th className="py-3 pr-4 font-semibold text-foreground">Focus</th>
+                    <th className="py-3 pr-4 font-semibold text-foreground">Marks</th>
+                    <th className="py-3 font-semibold text-foreground">Time Guide</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-100">
@@ -81,20 +81,20 @@ export default function OCRPaper2Page() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── SECTION A: Reading Fiction ─────────────────────── */}
         <section aria-labelledby="reading-heading">
           <h2
             id="reading-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Section A: Reading Fiction and Literary Texts
           </h2>
 
-          <div className="mt-6 space-y-6 text-gray-700 leading-relaxed">
+          <div className="mt-6 space-y-6 text-muted-foreground leading-relaxed">
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 What Types of Text Will You Encounter?
               </h3>
               <p className="mt-2">
@@ -116,7 +116,7 @@ export default function OCRPaper2Page() {
 
             {/* Language analysis */}
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 Analysing Language in Fiction (AO2)
               </h3>
               <p className="mt-2">
@@ -126,8 +126,8 @@ export default function OCRPaper2Page() {
               </p>
 
               <div className="mt-4 space-y-4">
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                  <h4 className="font-semibold text-gray-900">Word-Level Analysis</h4>
+                <div className="rounded-lg border border-border bg-muted p-5">
+                  <h4 className="font-semibold text-foreground">Word-Level Analysis</h4>
                   <ul className="ml-4 mt-2 list-disc space-y-1 text-sm">
                     <li>
                       <strong>Connotations</strong> &mdash; What associations
@@ -160,8 +160,8 @@ export default function OCRPaper2Page() {
                   </ul>
                 </div>
 
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                  <h4 className="font-semibold text-gray-900">Sentence-Level Analysis</h4>
+                <div className="rounded-lg border border-border bg-muted p-5">
+                  <h4 className="font-semibold text-foreground">Sentence-Level Analysis</h4>
                   <ul className="ml-4 mt-2 list-disc space-y-1 text-sm">
                     <li>
                       <strong>Short sentences</strong> &mdash; Create tension,
@@ -193,7 +193,7 @@ export default function OCRPaper2Page() {
 
             {/* Structure analysis */}
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 Analysing Structure (AO2)
               </h3>
               <p className="mt-2">
@@ -243,7 +243,7 @@ export default function OCRPaper2Page() {
 
             {/* Evaluation */}
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 Evaluation Questions (AO4)
               </h3>
               <p className="mt-2">
@@ -266,15 +266,15 @@ export default function OCRPaper2Page() {
 
             {/* Model paragraph */}
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 Model Analysis Paragraph
               </h3>
               <p className="mt-2">
                 Here is a strong analytical paragraph for a fiction extract
                 where a character enters an abandoned building:
               </p>
-              <div className="mt-3 rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-                <p className="text-sm italic text-gray-700">
+              <div className="mt-3 rounded-lg border border-border bg-card p-5 shadow-md">
+                <p className="text-sm italic text-muted-foreground">
                   The writer creates an oppressive, unsettling atmosphere
                   through the use of pathetic fallacy and sensory detail. The
                   description of &ldquo;dust motes spiralling in the thin blade
@@ -294,20 +294,20 @@ export default function OCRPaper2Page() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── SECTION B: Creative Writing ────────────────────── */}
         <section aria-labelledby="creative-heading">
           <h2
             id="creative-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Section B: Imaginative and Creative Writing
           </h2>
 
-          <div className="mt-6 space-y-6 text-gray-700 leading-relaxed">
+          <div className="mt-6 space-y-6 text-muted-foreground leading-relaxed">
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 What Are You Asked to Write?
               </h3>
               <p className="mt-2">
@@ -326,7 +326,7 @@ export default function OCRPaper2Page() {
 
             {/* Narrative writing */}
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 Crafting a Strong Narrative
               </h3>
               <p className="mt-2">
@@ -336,8 +336,8 @@ export default function OCRPaper2Page() {
               </p>
 
               <div className="mt-4 space-y-4">
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                  <h4 className="font-semibold text-gray-900">Opening</h4>
+                <div className="rounded-lg border border-border bg-muted p-5">
+                  <h4 className="font-semibold text-foreground">Opening</h4>
                   <p className="mt-2 text-sm">
                     Grab the reader&rsquo;s attention immediately. Consider
                     starting with dialogue, a dramatic moment, a vivid
@@ -354,8 +354,8 @@ export default function OCRPaper2Page() {
                   </div>
                 </div>
 
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                  <h4 className="font-semibold text-gray-900">Character</h4>
+                <div className="rounded-lg border border-border bg-muted p-5">
+                  <h4 className="font-semibold text-foreground">Character</h4>
                   <p className="mt-2 text-sm">
                     Develop your main character through action, dialogue, and
                     internal thought rather than simply telling the reader
@@ -365,8 +365,8 @@ export default function OCRPaper2Page() {
                   </p>
                 </div>
 
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                  <h4 className="font-semibold text-gray-900">Setting</h4>
+                <div className="rounded-lg border border-border bg-muted p-5">
+                  <h4 className="font-semibold text-foreground">Setting</h4>
                   <p className="mt-2 text-sm">
                     Use sensory details to bring your setting alive. Engage all
                     five senses, not just sight. Setting can also reflect mood
@@ -374,8 +374,8 @@ export default function OCRPaper2Page() {
                   </p>
                 </div>
 
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                  <h4 className="font-semibold text-gray-900">Dialogue</h4>
+                <div className="rounded-lg border border-border bg-muted p-5">
+                  <h4 className="font-semibold text-foreground">Dialogue</h4>
                   <p className="mt-2 text-sm">
                     Use dialogue sparingly but effectively. It should reveal
                     character, advance the plot, or create tension. Punctuate
@@ -384,8 +384,8 @@ export default function OCRPaper2Page() {
                   </p>
                 </div>
 
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                  <h4 className="font-semibold text-gray-900">Ending</h4>
+                <div className="rounded-lg border border-border bg-muted p-5">
+                  <h4 className="font-semibold text-foreground">Ending</h4>
                   <p className="mt-2 text-sm">
                     Your ending should feel deliberate, not rushed. Consider a
                     circular structure (returning to the opening image), an
@@ -398,7 +398,7 @@ export default function OCRPaper2Page() {
 
             {/* Descriptive writing */}
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 Crafting Strong Descriptive Writing
               </h3>
               <p className="mt-2">
@@ -409,7 +409,7 @@ export default function OCRPaper2Page() {
               <div className="mt-4 space-y-3">
                 <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                   <p className="font-semibold text-primary">Use all five senses</p>
-                  <p className="mt-1 text-sm text-gray-700">
+                  <p className="mt-1 text-sm text-muted-foreground">
                     Don&rsquo;t rely solely on visual description. What can
                     your narrator hear, smell, touch, and taste? Sensory
                     details make writing tangible and immersive.
@@ -418,7 +418,7 @@ export default function OCRPaper2Page() {
 
                 <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                   <p className="font-semibold text-primary">Zoom in and out</p>
-                  <p className="mt-1 text-sm text-gray-700">
+                  <p className="mt-1 text-sm text-muted-foreground">
                     Alternate between wide-angle panoramic descriptions and
                     close-up, microscopic details. This creates variety and
                     keeps the reader engaged.
@@ -427,7 +427,7 @@ export default function OCRPaper2Page() {
 
                 <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                   <p className="font-semibold text-primary">Use figurative language purposefully</p>
-                  <p className="mt-1 text-sm text-gray-700">
+                  <p className="mt-1 text-sm text-muted-foreground">
                     A few well-chosen metaphors are more effective than a page
                     overloaded with similes. Quality over quantity.
                   </p>
@@ -435,7 +435,7 @@ export default function OCRPaper2Page() {
 
                 <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                   <p className="font-semibold text-primary">Vary your sentence structures</p>
-                  <p className="mt-1 text-sm text-gray-700">
+                  <p className="mt-1 text-sm text-muted-foreground">
                     Long, flowing sentences for calm or beauty. Short, sharp
                     sentences for tension or impact. Fragments for drama.
                     Variety is key.
@@ -444,7 +444,7 @@ export default function OCRPaper2Page() {
 
                 <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                   <p className="font-semibold text-primary">Create a clear structure</p>
-                  <p className="mt-1 text-sm text-gray-700">
+                  <p className="mt-1 text-sm text-muted-foreground">
                     Even descriptive writing needs structure. Move through
                     time, space, or emotion in a deliberate way. Consider
                     moving from exterior to interior, or from general to
@@ -456,12 +456,12 @@ export default function OCRPaper2Page() {
 
             {/* Assessment criteria summary */}
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 What the Examiner Is Looking For
               </h3>
               <div className="mt-3 grid gap-4 sm:grid-cols-2">
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                  <h4 className="font-semibold text-gray-900">AO5: Content and Organisation (24 marks)</h4>
+                <div className="rounded-lg border border-border bg-muted p-5">
+                  <h4 className="font-semibold text-foreground">AO5: Content and Organisation (24 marks)</h4>
                   <ul className="ml-4 mt-2 list-disc space-y-1 text-sm">
                     <li>Communication is convincing and compelling</li>
                     <li>Tone, style, and register match purpose and audience</li>
@@ -470,8 +470,8 @@ export default function OCRPaper2Page() {
                     <li>Compelling, well-connected ideas with fluent paragraphing</li>
                   </ul>
                 </div>
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                  <h4 className="font-semibold text-gray-900">AO6: Technical Accuracy (16 marks)</h4>
+                <div className="rounded-lg border border-border bg-muted p-5">
+                  <h4 className="font-semibold text-foreground">AO6: Technical Accuracy (16 marks)</h4>
                   <ul className="ml-4 mt-2 list-disc space-y-1 text-sm">
                     <li>Wide range of sentence forms for effect</li>
                     <li>Accurate and varied punctuation</li>

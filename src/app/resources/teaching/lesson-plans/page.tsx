@@ -155,7 +155,7 @@ const ALL_TEXTS = [...new Set(LESSON_PLANS.map((lp) => lp.text))];
 
 function SearchIcon() {
   return (
-    <svg className="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <svg className="h-5 w-5 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
       <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
     </svg>
   );
@@ -171,7 +171,7 @@ function ArrowRight() {
 
 function ClockIcon() {
   return (
-    <svg className="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+    <svg className="h-4 w-4 text-muted-foreground" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
       <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
     </svg>
   );
@@ -244,7 +244,7 @@ export default function LessonPlansPage() {
       </section>
 
       {/* Filters */}
-      <section className="border-b border-gray-200 bg-white px-4 py-6 shadow-sm">
+      <section className="border-b border-border bg-card px-4 py-6 shadow-md">
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {/* Search */}
@@ -257,7 +257,7 @@ export default function LessonPlansPage() {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Search lesson plans..."
-                className="w-full rounded-lg border border-gray-300 bg-white py-2.5 pl-10 pr-4 text-sm text-gray-900 placeholder:text-gray-400 focus:border-[#2E86C1] focus:outline-none focus:ring-2 focus:ring-[#2E86C1]/20"
+                className="w-full rounded-lg border border-gray-300 bg-card py-2.5 pl-10 pr-4 text-sm text-foreground placeholder:text-muted-foreground focus:border-[#2E86C1] focus:outline-none focus:ring-2 focus:ring-primary/20"
               />
             </div>
 
@@ -265,7 +265,7 @@ export default function LessonPlansPage() {
             <select
               value={topicFilter}
               onChange={(e) => setTopicFilter(e.target.value)}
-              className="rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-700 focus:border-[#2E86C1] focus:outline-none focus:ring-2 focus:ring-[#2E86C1]/20"
+              className="rounded-lg border border-gray-300 bg-card px-3 py-2.5 text-sm text-muted-foreground focus:border-[#2E86C1] focus:outline-none focus:ring-2 focus:ring-primary/20"
             >
               <option value="">All Topics</option>
               {ALL_TOPICS.map((t) => (
@@ -277,7 +277,7 @@ export default function LessonPlansPage() {
             <select
               value={yearGroupFilter}
               onChange={(e) => setYearGroupFilter(e.target.value)}
-              className="rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-700 focus:border-[#2E86C1] focus:outline-none focus:ring-2 focus:ring-[#2E86C1]/20"
+              className="rounded-lg border border-gray-300 bg-card px-3 py-2.5 text-sm text-muted-foreground focus:border-[#2E86C1] focus:outline-none focus:ring-2 focus:ring-primary/20"
             >
               <option value="">All Year Groups</option>
               {ALL_YEAR_GROUPS.map((y) => (
@@ -289,7 +289,7 @@ export default function LessonPlansPage() {
             <select
               value={textFilter}
               onChange={(e) => setTextFilter(e.target.value)}
-              className="rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-700 focus:border-[#2E86C1] focus:outline-none focus:ring-2 focus:ring-[#2E86C1]/20"
+              className="rounded-lg border border-gray-300 bg-card px-3 py-2.5 text-sm text-muted-foreground focus:border-[#2E86C1] focus:outline-none focus:ring-2 focus:ring-primary/20"
             >
               <option value="">All Texts</option>
               {ALL_TEXTS.map((t) => (
@@ -301,7 +301,7 @@ export default function LessonPlansPage() {
           {/* Active filter count */}
           {(search || topicFilter || yearGroupFilter || textFilter) && (
             <div className="mt-3 flex items-center gap-2">
-              <span className="text-sm text-gray-500">
+              <span className="text-sm text-muted-foreground">
                 {filtered.length} result{filtered.length !== 1 ? "s" : ""}
               </span>
               <button
@@ -311,7 +311,7 @@ export default function LessonPlansPage() {
                   setYearGroupFilter("");
                   setTextFilter("");
                 }}
-                className="text-sm font-medium text-[#2E86C1] hover:text-[#1A5276] transition-colors"
+                className="text-sm font-medium text-primary hover:text-foreground transition-colors"
               >
                 Clear all filters
               </button>
@@ -323,9 +323,9 @@ export default function LessonPlansPage() {
       {/* Cards */}
       <section className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
         {filtered.length === 0 ? (
-          <div className="rounded-xl border border-gray-200 bg-white p-12 text-center">
-            <p className="text-lg font-medium text-gray-600">No lesson plans match your filters.</p>
-            <p className="mt-2 text-sm text-gray-400">Try adjusting your search or filter criteria.</p>
+          <div className="rounded-xl border border-border bg-card p-12 text-center">
+            <p className="text-lg font-medium text-muted-foreground">No lesson plans match your filters.</p>
+            <p className="mt-2 text-sm text-muted-foreground">Try adjusting your search or filter criteria.</p>
           </div>
         ) : (
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -333,40 +333,40 @@ export default function LessonPlansPage() {
               <Link
                 key={lp.id}
                 href={`/resources/teaching/lesson-plans/${lp.id}`}
-                className="group flex flex-col rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-md hover:border-[#2E86C1]/40"
+                className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-md transition hover:shadow-md hover:border-[#2E86C1]/40"
               >
                 {/* Tags row */}
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-[#1A5276]">
+                  <span className="rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                     {lp.subject}
                   </span>
-                  <span className="rounded-full bg-[#2E86C1]/10 px-2.5 py-0.5 text-xs font-semibold text-[#2E86C1]">
+                  <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary">
                     {lp.examBoard}
                   </span>
                 </div>
 
                 {/* Title */}
-                <h3 className="mt-3 text-base font-bold text-gray-900 group-hover:text-[#1A5276] transition-colors">
+                <h3 className="mt-3 text-base font-bold text-foreground group-hover:text-foreground transition-colors">
                   {lp.title}
                 </h3>
 
                 {/* Meta */}
-                <div className="mt-2 flex flex-wrap items-center gap-3 text-xs text-gray-500">
+                <div className="mt-2 flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
                   <span className="inline-flex items-center gap-1">
                     <ClockIcon />
                     {lp.duration}
                   </span>
                   <span>{lp.yearGroup}</span>
-                  <span className="font-medium text-gray-600">{lp.text}</span>
+                  <span className="font-medium text-muted-foreground">{lp.text}</span>
                 </div>
 
                 {/* Overview */}
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-gray-600 line-clamp-3">
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground line-clamp-3">
                   {lp.overview}
                 </p>
 
                 {/* CTA */}
-                <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#2E86C1] group-hover:text-[#1A5276] transition-colors">
+                <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:text-foreground transition-colors">
                   View lesson plan <ArrowRight />
                 </span>
               </Link>

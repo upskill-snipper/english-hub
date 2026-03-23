@@ -17,17 +17,17 @@ function Section({
 }) {
   const [open, setOpen] = useState(defaultOpen);
   return (
-    <div className="mb-4 rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden">
+    <div className="mb-4 rounded-xl border border-border bg-card shadow-md overflow-hidden">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between px-5 py-4 text-left hover:bg-gray-50 transition-colors"
+        className="flex w-full items-center justify-between px-5 py-4 text-left hover:bg-muted transition-colors"
       >
         <span className="flex items-center gap-3">
           <span className="text-xl">{icon}</span>
-          <span className="text-lg font-bold text-gray-900">{title}</span>
+          <span className="text-lg font-bold text-foreground">{title}</span>
         </span>
         <svg
-          className={`h-5 w-5 text-gray-400 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+          className={`h-5 w-5 text-muted-foreground transition-transform duration-200 ${open ? "rotate-180" : ""}`}
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={2}
@@ -36,7 +36,7 @@ function Section({
           <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
         </svg>
       </button>
-      {open && <div className="border-t border-gray-100 px-5 py-5">{children}</div>}
+      {open && <div className="border-t border-border px-5 py-5">{children}</div>}
     </div>
   );
 }
@@ -46,16 +46,16 @@ function QuoteCard({ quote, speaker, analysis }: { quote: string; speaker?: stri
     <div className="rounded-lg border-l-4 border-rose-400 bg-rose-50/50 p-4 mb-3">
       <p className="text-sm font-semibold text-rose-900 italic">&ldquo;{quote}&rdquo;</p>
       {speaker && <p className="mt-1 text-xs font-medium text-rose-600">&mdash; {speaker}</p>}
-      <p className="mt-2 text-sm text-gray-700">{analysis}</p>
+      <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
   );
 }
 
 function CharacterCard({ name, description }: { name: string; description: string }) {
   return (
-    <div className="rounded-lg border border-gray-200 bg-gray-50 p-4 mb-3">
+    <div className="rounded-lg border border-border bg-muted p-4 mb-3">
       <h4 className="font-bold text-primary">{name}</h4>
-      <p className="mt-1 text-sm text-gray-700 leading-relaxed">{description}</p>
+      <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{description}</p>
     </div>
   );
 }
@@ -64,7 +64,7 @@ function ThemeCard({ title, description }: { title: string; description: string 
   return (
     <div className="rounded-lg border border-rose-200 bg-rose-50/30 p-4 mb-3">
       <h4 className="font-bold text-rose-800">{title}</h4>
-      <p className="mt-1 text-sm text-gray-700 leading-relaxed">{description}</p>
+      <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{description}</p>
     </div>
   );
 }
@@ -90,11 +90,11 @@ export default function PrideAndPrejudicePage() {
             OCR
           </span>
         </div>
-        <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           Pride and Prejudice
         </h1>
-        <p className="mt-1 text-lg text-gray-500">Jane Austen, 1813</p>
-        <p className="mt-3 max-w-3xl text-gray-600 leading-relaxed">
+        <p className="mt-1 text-lg text-muted-foreground">Jane Austen, 1813</p>
+        <p className="mt-3 max-w-3xl text-muted-foreground leading-relaxed">
           A witty and incisive novel of manners exploring love, marriage, and social class in
           Regency England. Through the spirited Elizabeth Bennet and the proud Mr Darcy, Austen
           examines how first impressions can be dangerously misleading, and how self-knowledge
@@ -107,8 +107,8 @@ export default function PrideAndPrejudicePage() {
       <Section title="Plot Summary by Key Events" icon="📖" defaultOpen>
         <div className="space-y-4">
           <div>
-            <h4 className="font-bold text-gray-900">The Arrival of Bingley (Chapters 1&ndash;12)</h4>
-            <p className="text-sm text-gray-700 leading-relaxed">
+            <h4 className="font-bold text-foreground">The Arrival of Bingley (Chapters 1&ndash;12)</h4>
+            <p className="text-sm text-muted-foreground leading-relaxed">
               Mr Bingley, a wealthy young bachelor, rents Netherfield Park near the Bennet family
               home of Longbourn. Mrs Bennet is desperate to marry one of her five daughters to him.
               At a public ball, Bingley dances with Jane Bennet and they are clearly attracted to
@@ -119,8 +119,8 @@ export default function PrideAndPrejudicePage() {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-gray-900">Wickham and Collins (Chapters 13&ndash;23)</h4>
-            <p className="text-sm text-gray-700 leading-relaxed">
+            <h4 className="font-bold text-foreground">Wickham and Collins (Chapters 13&ndash;23)</h4>
+            <p className="text-sm text-muted-foreground leading-relaxed">
               Mr Collins, a pompous clergyman who will inherit the Bennet estate through entailment,
               arrives to find a wife. He proposes to Elizabeth, who firmly refuses despite her mother&apos;s
               fury and the practical sense of accepting. Meanwhile, the charming officer George Wickham
@@ -131,8 +131,8 @@ export default function PrideAndPrejudicePage() {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-gray-900">Darcy&apos;s First Proposal (Chapters 24&ndash;36)</h4>
-            <p className="text-sm text-gray-700 leading-relaxed">
+            <h4 className="font-bold text-foreground">Darcy&apos;s First Proposal (Chapters 24&ndash;36)</h4>
+            <p className="text-sm text-muted-foreground leading-relaxed">
               Elizabeth visits Charlotte at Hunsford parsonage, near Rosings Park, the estate of
               Lady Catherine de Bourgh (Darcy&apos;s aunt). Darcy arrives and, to Elizabeth&apos;s
               astonishment, proposes. His proposal is insulting &mdash; he emphasises her inferior
@@ -145,8 +145,8 @@ export default function PrideAndPrejudicePage() {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-gray-900">Elizabeth&apos;s Transformation (Chapters 37&ndash;42)</h4>
-            <p className="text-sm text-gray-700 leading-relaxed">
+            <h4 className="font-bold text-foreground">Elizabeth&apos;s Transformation (Chapters 37&ndash;42)</h4>
+            <p className="text-sm text-muted-foreground leading-relaxed">
               Elizabeth reads Darcy&apos;s letter and is forced to acknowledge her own prejudice. She
               realises she judged Darcy harshly and Wickham favourably based on charm rather than
               evidence. &ldquo;Till this moment I never knew myself,&rdquo; she admits. This is the
@@ -156,8 +156,8 @@ export default function PrideAndPrejudicePage() {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-gray-900">Lydia&apos;s Elopement (Chapters 43&ndash;50)</h4>
-            <p className="text-sm text-gray-700 leading-relaxed">
+            <h4 className="font-bold text-foreground">Lydia&apos;s Elopement (Chapters 43&ndash;50)</h4>
+            <p className="text-sm text-muted-foreground leading-relaxed">
               Lydia, the youngest Bennet sister, elopes with Wickham &mdash; a scandal that threatens
               to ruin the entire family&apos;s reputation. If they are not married, all the Bennet
               sisters will be socially disgraced. Darcy secretly finds the couple, pays Wickham&apos;s
@@ -166,8 +166,8 @@ export default function PrideAndPrejudicePage() {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-gray-900">Resolution (Chapters 51&ndash;61)</h4>
-            <p className="text-sm text-gray-700 leading-relaxed">
+            <h4 className="font-bold text-foreground">Resolution (Chapters 51&ndash;61)</h4>
+            <p className="text-sm text-muted-foreground leading-relaxed">
               Bingley returns to Netherfield and proposes to Jane. Lady Catherine visits Elizabeth
               to demand she refuse Darcy; Elizabeth defiantly declines. Darcy proposes again, this
               time humbly, and Elizabeth accepts. Both acknowledge their faults: Darcy&apos;s pride
@@ -373,7 +373,7 @@ export default function PrideAndPrejudicePage() {
         <div className="space-y-4">
           <div className="rounded-lg bg-primary-50 p-4">
             <h4 className="font-bold text-primary-700">Regency Era (1811&ndash;1820)</h4>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               The Regency period, when the Prince of Wales ruled as regent for the incapacitated
               George III, was a time of social elegance, rigid etiquette, and sharp class distinctions.
               Austen&apos;s novels capture the world of the landed gentry &mdash; a class dependent on
@@ -385,7 +385,7 @@ export default function PrideAndPrejudicePage() {
           </div>
           <div className="rounded-lg bg-primary-50 p-4">
             <h4 className="font-bold text-primary-700">Women&apos;s Rights and Legal Status</h4>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               Women in Regency England had virtually no legal rights. They could not own property
               after marriage (everything transferred to the husband), could not vote, had limited
               access to education, and could not enter the professions. Marriage was the only
@@ -396,7 +396,7 @@ export default function PrideAndPrejudicePage() {
           </div>
           <div className="rounded-lg bg-primary-50 p-4">
             <h4 className="font-bold text-primary-700">Entailment</h4>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               The Bennet estate is &ldquo;entailed&rdquo; &mdash; legally restricted to pass only to
               male heirs. Since the Bennets have no sons, the estate will go to Mr Collins on Mr
               Bennet&apos;s death, leaving Mrs Bennet and her daughters homeless. This legal mechanism
@@ -407,7 +407,7 @@ export default function PrideAndPrejudicePage() {
           </div>
           <div className="rounded-lg bg-primary-50 p-4">
             <h4 className="font-bold text-primary-700">Class and Social Mobility</h4>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               Regency society had a clearly defined hierarchy: aristocracy, landed gentry, clergy,
               military, professional classes, tradespeople, and servants. Social mobility was possible
               but viewed with suspicion. Darcy&apos;s contempt for Elizabeth&apos;s &ldquo;connections&rdquo;
@@ -418,7 +418,7 @@ export default function PrideAndPrejudicePage() {
           </div>
           <div className="rounded-lg bg-primary-50 p-4">
             <h4 className="font-bold text-primary-700">The Marriage Market</h4>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               Balls, assemblies, and social calls functioned as a marriage market where young women
               were displayed and assessed. A woman&apos;s value was measured by her beauty, accomplishments
               (music, drawing, languages), family connections, and dowry. Austen satirises this system
@@ -432,8 +432,8 @@ export default function PrideAndPrejudicePage() {
 
       {/* Exam Tips */}
       <div className="mt-6 rounded-xl border border-accent-100 bg-accent-50/50 p-6">
-        <h3 className="text-lg font-bold text-gray-900">Exam Tips for Pride and Prejudice</h3>
-        <ul className="mt-3 space-y-2 text-sm text-gray-700">
+        <h3 className="text-lg font-bold text-foreground">Exam Tips for Pride and Prejudice</h3>
+        <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span><strong>Focus on Austen&apos;s irony.</strong> Almost every sentence operates on more than one level. Identify where Austen says one thing and means another.</span>

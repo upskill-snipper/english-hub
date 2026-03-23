@@ -436,13 +436,13 @@ export default function PoetryAnalysisPage() {
       <div className="mx-auto max-w-4xl px-4 py-12 sm:py-16 lg:py-20">
         {/* ── How Cambridge marks poetry ──────────────────────────── */}
         <section aria-labelledby="marking-heading">
-          <h2 id="marking-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="marking-heading" className="text-2xl font-bold text-foreground">
             How Cambridge Marks Poetry Responses
           </h2>
           <div className="mt-6 space-y-4">
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <h3 className="font-semibold text-[#1A5276]">Band 6 (Excellent) &mdash; 21&ndash;25 marks</h3>
-              <ul className="mt-2 space-y-1 text-sm text-gray-700">
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <h3 className="font-semibold text-foreground">Band 6 (Excellent) &mdash; 21&ndash;25 marks</h3>
+              <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                 <li>&bull; Demonstrates <strong>critical understanding</strong> and <strong>personal engagement</strong></li>
                 <li>&bull; Makes <strong>precise, well-integrated</strong> references to the text</li>
                 <li>&bull; Shows sophisticated analysis of <strong>how the writer achieves effects</strong></li>
@@ -450,9 +450,9 @@ export default function PoetryAnalysisPage() {
                 <li>&bull; Uses <strong>literary terminology accurately</strong> and purposefully</li>
               </ul>
             </div>
-            <div className="rounded-lg border border-[#2E86C1]/20 bg-[#2E86C1]/5 p-5">
-              <h3 className="font-semibold text-[#1A5276]">What examiners look for</h3>
-              <ul className="mt-2 space-y-1 text-sm text-gray-700">
+            <div className="rounded-lg border border-[#2E86C1]/20 bg-primary/5 p-5">
+              <h3 className="font-semibold text-foreground">What examiners look for</h3>
+              <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                 <li>&bull; <strong>Close reading:</strong> analysis of specific words and phrases, not just general themes</li>
                 <li>&bull; <strong>Writer&rsquo;s methods:</strong> how form, structure, and language create meaning</li>
                 <li>&bull; <strong>Personal response:</strong> genuine engagement, not formulaic analysis</li>
@@ -463,17 +463,17 @@ export default function PoetryAnalysisPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Comparison techniques ───────────────────────────────── */}
         <section aria-labelledby="comparison-heading">
-          <h2 id="comparison-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="comparison-heading" className="text-2xl font-bold text-foreground">
             Comparison Techniques
           </h2>
           <div className="mt-6 space-y-4">
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <h3 className="font-semibold text-[#1A5276]">Structuring a Comparison</h3>
-              <p className="mt-2 text-sm text-gray-700">
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <h3 className="font-semibold text-foreground">Structuring a Comparison</h3>
+              <p className="mt-2 text-sm text-muted-foreground">
                 Cambridge rewards <strong>integrated comparison</strong>. Rather than writing about
                 Poem A and then Poem B, weave your analysis together using connectives such as:
               </p>
@@ -490,16 +490,16 @@ export default function PoetryAnalysisPage() {
                 ].map((c) => (
                   <span
                     key={c}
-                    className="rounded-full bg-[#1A5276]/10 px-3 py-1 text-xs font-medium text-[#1A5276]"
+                    className="rounded-full bg-[#1A5276]/10 px-3 py-1 text-xs font-medium text-foreground"
                   >
                     {c}
                   </span>
                 ))}
               </div>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <h3 className="font-semibold text-[#1A5276]">What to Compare</h3>
-              <ul className="mt-2 space-y-1 text-sm text-gray-700">
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <h3 className="font-semibold text-foreground">What to Compare</h3>
+              <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                 <li>&bull; <strong>Theme:</strong> How does each poem explore the topic? What attitudes does each poet convey?</li>
                 <li>&bull; <strong>Tone and mood:</strong> Is the tone celebratory, elegiac, angry, reflective?</li>
                 <li>&bull; <strong>Form and structure:</strong> Sonnet vs. free verse? Regular stanzas vs. irregular? How does form support meaning?</li>
@@ -508,9 +508,9 @@ export default function PoetryAnalysisPage() {
                 <li>&bull; <strong>Ending:</strong> How does each poem resolve (or refuse to resolve)?</li>
               </ul>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <h3 className="font-semibold text-[#1A5276]">Example Comparison Pairings</h3>
-              <ul className="mt-2 space-y-2 text-sm text-gray-700">
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <h3 className="font-semibold text-foreground">Example Comparison Pairings</h3>
+              <ul className="mt-2 space-y-2 text-sm text-muted-foreground">
                 <li>
                   <strong>Time and transience:</strong> &ldquo;Ozymandias&rdquo; and &ldquo;Sonnet 18&rdquo;
                   &mdash; both explore what endures, but Shelley focuses on political power while
@@ -536,14 +536,14 @@ export default function PoetryAnalysisPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Poem analyses ──────────────────────────────────────── */}
         <section aria-labelledby="poems-heading">
-          <h2 id="poems-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="poems-heading" className="text-2xl font-bold text-foreground">
             Poem-by-Poem Analysis ({poems.length} Poems)
           </h2>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-sm text-muted-foreground">
             Each analysis covers form, themes, key quotes, and detailed commentary suitable for
             Cambridge IGCSE responses.
           </p>
@@ -552,19 +552,19 @@ export default function PoetryAnalysisPage() {
             {poems.map((poem, idx) => (
               <article
                 key={idx}
-                className="rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden"
+                className="rounded-xl border border-border bg-card shadow-md overflow-hidden"
               >
                 {/* Poem header */}
-                <div className="border-b border-gray-100 bg-gradient-to-r from-[#1A5276]/5 to-transparent px-5 py-4 sm:px-6">
-                  <h3 className="text-lg font-bold text-[#1A5276]">
+                <div className="border-b border-border bg-gradient-to-r from-[#1A5276]/5 to-transparent px-5 py-4 sm:px-6">
+                  <h3 className="text-lg font-bold text-foreground">
                     {poem.title}
                   </h3>
-                  <p className="mt-0.5 text-sm text-gray-600">by {poem.poet}</p>
+                  <p className="mt-0.5 text-sm text-muted-foreground">by {poem.poet}</p>
                   <div className="mt-2 flex flex-wrap gap-1.5">
                     {poem.themes.map((t) => (
                       <span
                         key={t}
-                        className="rounded-full bg-[#2E86C1]/10 px-2.5 py-0.5 text-xs font-medium text-[#2E86C1]"
+                        className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary"
                       >
                         {t}
                       </span>
@@ -575,24 +575,24 @@ export default function PoetryAnalysisPage() {
                 <div className="space-y-5 px-5 py-5 sm:px-6">
                   {/* Form */}
                   <div>
-                    <h4 className="text-sm font-semibold text-[#1A5276]">Form &amp; Structure</h4>
-                    <p className="mt-1 text-sm text-gray-700">{poem.form}</p>
+                    <h4 className="text-sm font-semibold text-foreground">Form &amp; Structure</h4>
+                    <p className="mt-1 text-sm text-muted-foreground">{poem.form}</p>
                   </div>
 
                   {/* Summary */}
                   <div>
-                    <h4 className="text-sm font-semibold text-[#1A5276]">Summary</h4>
-                    <p className="mt-1 text-sm text-gray-700">{poem.summary}</p>
+                    <h4 className="text-sm font-semibold text-foreground">Summary</h4>
+                    <p className="mt-1 text-sm text-muted-foreground">{poem.summary}</p>
                   </div>
 
                   {/* Detailed analysis */}
                   <div>
-                    <h4 className="text-sm font-semibold text-[#1A5276]">Detailed Analysis</h4>
+                    <h4 className="text-sm font-semibold text-foreground">Detailed Analysis</h4>
                     <div className="mt-2 space-y-3">
                       {poem.analysis.map((a, ai) => (
-                        <div key={ai} className="rounded-lg bg-gray-50 p-3">
-                          <p className="text-sm font-medium text-gray-900">{a.point}</p>
-                          <p className="mt-1 text-sm text-gray-700">{a.detail}</p>
+                        <div key={ai} className="rounded-lg bg-muted p-3">
+                          <p className="text-sm font-medium text-foreground">{a.point}</p>
+                          <p className="mt-1 text-sm text-muted-foreground">{a.detail}</p>
                         </div>
                       ))}
                     </div>
@@ -600,15 +600,15 @@ export default function PoetryAnalysisPage() {
 
                   {/* Key quotes */}
                   <div>
-                    <h4 className="text-sm font-semibold text-[#1A5276]">Key Quotes</h4>
+                    <h4 className="text-sm font-semibold text-foreground">Key Quotes</h4>
                     <ul className="mt-2 space-y-1.5">
                       {poem.keyQuotes.map((q, qi) => (
                         <li
                           key={qi}
                           className="flex items-start gap-2 text-sm"
                         >
-                          <span className="mt-1 block h-1.5 w-1.5 shrink-0 rounded-full bg-[#2E86C1]" />
-                          <span className="italic text-gray-700">&ldquo;{q}&rdquo;</span>
+                          <span className="mt-1 block h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                          <span className="italic text-muted-foreground">&ldquo;{q}&rdquo;</span>
                         </li>
                       ))}
                     </ul>
@@ -623,7 +623,7 @@ export default function PoetryAnalysisPage() {
         <div className="mt-12 flex items-center gap-2 text-sm">
           <Link
             href="/resources/english-literature/caie"
-            className="font-medium text-[#1A5276] underline underline-offset-2 hover:text-[#2E86C1]"
+            className="font-medium text-foreground underline underline-offset-2 hover:text-primary"
           >
             &larr; Back to Cambridge IGCSE English Literature
           </Link>

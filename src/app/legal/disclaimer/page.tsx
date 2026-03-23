@@ -52,7 +52,7 @@ export default function DisclaimerPage() {
   return (
     <>
       <h1>Full Disclaimer</h1>
-      <p className="text-sm text-gray-500">
+      <p className="text-sm text-muted-foreground">
         Last updated: 22 March 2026
       </p>
 
@@ -175,10 +175,10 @@ export default function DisclaimerPage() {
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-gray-300">
-                <th className="pb-2 pr-4 text-left font-semibold text-gray-900">
+                <th className="pb-2 pr-4 text-left font-semibold text-foreground">
                   Organisation
                 </th>
-                <th className="pb-2 text-left font-semibold text-gray-900">
+                <th className="pb-2 text-left font-semibold text-foreground">
                   Trademark Notice
                 </th>
               </tr>
@@ -189,10 +189,10 @@ export default function DisclaimerPage() {
                   key={board.name}
                   className="border-b border-gray-100"
                 >
-                  <td className="py-2 pr-4 font-medium text-gray-900 align-top whitespace-nowrap">
+                  <td className="py-2 pr-4 font-medium text-foreground align-top whitespace-nowrap">
                     {board.name}
                   </td>
-                  <td className="py-2 text-gray-600">
+                  <td className="py-2 text-muted-foreground">
                     {board.trademark}
                   </td>
                 </tr>

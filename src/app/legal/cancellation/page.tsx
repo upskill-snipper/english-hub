@@ -10,7 +10,7 @@ export default function CancellationPolicyPage() {
   return (
     <>
       <h1 className="text-3xl font-bold mb-2">Cancellation Policy</h1>
-      <p className="text-gray-500 text-sm mb-6">
+      <p className="text-muted-foreground text-sm mb-6">
         <strong>The English Hub</strong> — operated by Upskill Energy Limited
         <br />
         Last updated: 22 March 2026
@@ -79,8 +79,8 @@ export default function CancellationPolicyPage() {
           2. Refund Policy and Timeline
         </h2>
         <div className="overflow-x-auto">
-          <table className="min-w-full text-sm border border-gray-200">
-            <thead className="bg-gray-50">
+          <table className="min-w-full text-sm border border-border">
+            <thead className="bg-muted">
               <tr>
                 <th className="text-left px-4 py-2 border-b font-semibold">
                   Situation
@@ -137,7 +137,7 @@ export default function CancellationPolicyPage() {
             </tbody>
           </table>
         </div>
-        <div className="bg-gray-50 rounded-lg p-4 mt-4 text-sm">
+        <div className="bg-muted rounded-lg p-4 mt-4 text-sm">
           <p className="font-semibold mb-1">
             Example: Annual pro-rata refund
           </p>
@@ -289,7 +289,7 @@ export default function CancellationPolicyPage() {
       {/* Section 8 */}
       <section className="mb-10">
         <h2 className="text-2xl font-bold mb-4">8. Contact Us</h2>
-        <div className="bg-gray-50 rounded-lg p-4 text-sm">
+        <div className="bg-muted rounded-lg p-4 text-sm">
           <p>
             Email:{" "}
             <a href="mailto:support@theenglishhub.co.uk">
@@ -313,11 +313,11 @@ export default function CancellationPolicyPage() {
       {/* Model Cancellation Form */}
       <section className="mb-4">
         <h2 className="text-2xl font-bold mb-4">Model Cancellation Form</h2>
-        <p className="text-sm text-gray-500 mb-3">
+        <p className="text-sm text-muted-foreground mb-3">
           As required by the Consumer Contracts (Information, Cancellation and
           Additional Charges) Regulations 2013, Schedule 3
         </p>
-        <div className="bg-gray-50 rounded-lg p-6 text-sm border border-gray-200">
+        <div className="bg-muted rounded-lg p-6 text-sm border border-border">
           <p className="mb-4">
             <strong>To:</strong> Upskill Energy Limited, trading as The English
             Hub
@@ -349,7 +349,7 @@ export default function CancellationPolicyPage() {
               <strong>Date of this notice:</strong> ____________________
             </li>
           </ul>
-          <p className="mt-4 text-xs text-gray-500 italic">
+          <p className="mt-4 text-xs text-muted-foreground italic">
             You have the right to cancel within 14 days without giving any
             reason. To meet the deadline, send this form before the 14-day period
             expires.

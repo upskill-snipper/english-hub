@@ -17,14 +17,14 @@ function Section({
 }) {
   const [open, setOpen] = useState(defaultOpen);
   return (
-    <div className="rounded-xl border border-gray-200 bg-white">
+    <div className="rounded-xl border border-border bg-card">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-bold text-gray-900 hover:bg-gray-50 transition-colors"
+        className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-bold text-foreground hover:bg-muted transition-colors"
       >
         <span className="text-lg">{title}</span>
         <svg
-          className={`h-5 w-5 shrink-0 text-gray-400 transition-transform ${open ? "rotate-180" : ""}`}
+          className={`h-5 w-5 shrink-0 text-muted-foreground transition-transform ${open ? "rotate-180" : ""}`}
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={2}
@@ -34,7 +34,7 @@ function Section({
         </svg>
       </button>
       {open && (
-        <div className="border-t border-gray-100 px-6 py-6 text-gray-700 leading-relaxed space-y-4">
+        <div className="border-t border-border px-6 py-6 text-muted-foreground leading-relaxed space-y-4">
           {children}
         </div>
       )}
@@ -65,7 +65,7 @@ export default function Paper1Page() {
 
       {/* Breadcrumb */}
       <nav className="mx-auto max-w-5xl px-4 pt-6" aria-label="Breadcrumb">
-        <ol className="flex flex-wrap items-center gap-2 text-sm text-gray-500">
+        <ol className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
           <li>
             <Link href="/" className="hover:text-primary transition-colors">Home</Link>
           </li>
@@ -84,24 +84,24 @@ export default function Paper1Page() {
 
         {/* ── Overview ────────────────────────────────────────────── */}
         <div className="rounded-xl border border-accent-100 bg-accent-50/50 p-6 sm:p-8">
-          <h2 className="text-xl font-bold text-gray-900">Paper overview</h2>
-          <p className="mt-3 text-gray-700">
+          <h2 className="text-xl font-bold text-foreground">Paper overview</h2>
+          <p className="mt-3 text-muted-foreground">
             Paper 1 tests your ability to <strong>read and understand</strong> a
             literary fiction text (a novel or short story extract, published
             after 1900) and to <strong>write creatively</strong> (descriptive or
             narrative writing). The paper is split into two sections:
           </p>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
-            <div className="rounded-lg border border-accent-200 bg-white p-4">
+            <div className="rounded-lg border border-accent-200 bg-card p-4">
               <h3 className="font-bold text-primary">Section A: Reading</h3>
-              <p className="mt-1 text-sm text-gray-600">
+              <p className="mt-1 text-sm text-muted-foreground">
                 4 questions on one unseen fiction extract &middot; 40 marks &middot;
                 recommended 1 hour
               </p>
             </div>
-            <div className="rounded-lg border border-accent-200 bg-white p-4">
+            <div className="rounded-lg border border-accent-200 bg-card p-4">
               <h3 className="font-bold text-primary">Section B: Writing</h3>
-              <p className="mt-1 text-sm text-gray-600">
+              <p className="mt-1 text-sm text-muted-foreground">
                 1 question: descriptive or narrative writing &middot; 40 marks &middot;
                 recommended 45 minutes
               </p>
@@ -119,7 +119,7 @@ export default function Paper1Page() {
           <div className="overflow-x-auto">
             <table className="mt-3 w-full text-sm">
               <thead>
-                <tr className="border-b border-gray-200 text-left text-gray-500">
+                <tr className="border-b border-border text-left text-muted-foreground">
                   <th className="py-2 pr-4">Task</th>
                   <th className="py-2 pr-4">Marks</th>
                   <th className="py-2 pr-4">Time</th>
@@ -135,7 +135,7 @@ export default function Paper1Page() {
               </tbody>
             </table>
           </div>
-          <p className="mt-3 text-sm text-gray-500">
+          <p className="mt-3 text-sm text-muted-foreground">
             Many students run out of time on Question 5 because they spend too
             long on Question 4. Stick to the timings above and move on even if
             you feel you could write more on a reading question.
@@ -180,8 +180,8 @@ export default function Paper1Page() {
           </ul>
 
           <h3 className="mt-4 font-bold text-primary">Example</h3>
-          <div className="rounded-lg bg-gray-50 p-4 text-sm">
-            <p className="font-semibold text-gray-900">
+          <div className="rounded-lg bg-muted p-4 text-sm">
+            <p className="font-semibold text-foreground">
               Q: List four things you learn about the house from lines 1-7.
             </p>
             <ol className="mt-2 ml-5 list-decimal space-y-1">
@@ -209,7 +209,7 @@ export default function Paper1Page() {
           <div className="overflow-x-auto">
             <table className="mt-2 w-full text-sm">
               <thead>
-                <tr className="border-b border-gray-200 text-left text-gray-500">
+                <tr className="border-b border-border text-left text-muted-foreground">
                   <th className="py-2 pr-4">Level</th>
                   <th className="py-2 pr-4">Marks</th>
                   <th className="py-2 pr-4">Descriptor</th>
@@ -305,8 +305,8 @@ export default function Paper1Page() {
           </ul>
 
           <h3 className="mt-4 font-bold text-primary">Example response (Level 4)</h3>
-          <div className="rounded-lg bg-gray-50 p-4 text-sm space-y-2">
-            <p className="italic text-gray-600">
+          <div className="rounded-lg bg-muted p-4 text-sm space-y-2">
+            <p className="italic text-muted-foreground">
               Extract: &ldquo;The fog crept through the empty streets like a
               thief, swallowing every last trace of light.&rdquo;
             </p>
@@ -412,7 +412,7 @@ export default function Paper1Page() {
           <div className="overflow-x-auto">
             <table className="mt-2 w-full text-sm">
               <thead>
-                <tr className="border-b border-gray-200 text-left text-gray-500">
+                <tr className="border-b border-border text-left text-muted-foreground">
                   <th className="py-2 pr-4">Level</th>
                   <th className="py-2 pr-4">Marks</th>
                   <th className="py-2 pr-4">Descriptor</th>
@@ -463,7 +463,7 @@ export default function Paper1Page() {
           <div className="overflow-x-auto">
             <table className="mt-2 w-full text-sm">
               <thead>
-                <tr className="border-b border-gray-200 text-left text-gray-500">
+                <tr className="border-b border-border text-left text-muted-foreground">
                   <th className="py-2 pr-4">Level</th>
                   <th className="py-2 pr-4">Marks</th>
                   <th className="py-2 pr-4">Descriptor</th>
@@ -562,7 +562,7 @@ export default function Paper1Page() {
           <div className="overflow-x-auto">
             <table className="mt-2 w-full text-sm">
               <thead>
-                <tr className="border-b border-gray-200 text-left text-gray-500">
+                <tr className="border-b border-border text-left text-muted-foreground">
                   <th className="py-2 pr-4">Level</th>
                   <th className="py-2 pr-4">Marks</th>
                   <th className="py-2 pr-4">Descriptor</th>
@@ -597,7 +597,7 @@ export default function Paper1Page() {
           <div className="overflow-x-auto">
             <table className="mt-2 w-full text-sm">
               <thead>
-                <tr className="border-b border-gray-200 text-left text-gray-500">
+                <tr className="border-b border-border text-left text-muted-foreground">
                   <th className="py-2 pr-4">Level</th>
                   <th className="py-2 pr-4">Marks</th>
                   <th className="py-2 pr-4">Descriptor</th>
@@ -634,7 +634,7 @@ export default function Paper1Page() {
             and produces a better piece. Try one of these structures:
           </p>
           <div className="mt-3 grid gap-4 sm:grid-cols-2">
-            <div className="rounded-lg border border-gray-200 p-4">
+            <div className="rounded-lg border border-border p-4">
               <h4 className="font-bold text-accent">For descriptive writing</h4>
               <ul className="mt-2 ml-5 list-disc space-y-1 text-sm">
                 <li>Choose 4-5 &ldquo;zoom points&rdquo; &mdash; specific details you will describe in depth</li>
@@ -644,7 +644,7 @@ export default function Paper1Page() {
                 <li>Plan how you will open and close (circular structure often works well)</li>
               </ul>
             </div>
-            <div className="rounded-lg border border-gray-200 p-4">
+            <div className="rounded-lg border border-border p-4">
               <h4 className="font-bold text-accent">For narrative writing</h4>
               <ul className="mt-2 ml-5 list-disc space-y-1 text-sm">
                 <li>Keep the plot simple &mdash; one event, one setting, 1-2 characters</li>
@@ -693,19 +693,19 @@ export default function Paper1Page() {
 
           <h3 className="mt-4 font-bold text-primary">Example openings at different levels</h3>
           <div className="space-y-4 mt-3">
-            <div className="rounded-lg bg-gray-50 p-4 text-sm">
+            <div className="rounded-lg bg-muted p-4 text-sm">
               <p className="font-semibold text-warn-600">Level 1-2 (Grade 3-4):</p>
               <p className="mt-1 italic">
                 &ldquo;It was a dark and stormy night. The house was old and
                 scary. I walked up to the door and knocked on it. Nobody
                 answered so I went inside.&rdquo;
               </p>
-              <p className="mt-2 text-gray-500">
+              <p className="mt-2 text-muted-foreground">
                 Simple vocabulary, no imagery, basic sentence structures, no
                 atmosphere created.
               </p>
             </div>
-            <div className="rounded-lg bg-gray-50 p-4 text-sm">
+            <div className="rounded-lg bg-muted p-4 text-sm">
               <p className="font-semibold text-yellow-600">Level 3 (Grade 5-6):</p>
               <p className="mt-1 italic">
                 &ldquo;Rain hammered against the cracked windows of the
@@ -714,12 +714,12 @@ export default function Paper1Page() {
                 as if the building itself had given up trying to keep the world
                 out.&rdquo;
               </p>
-              <p className="mt-2 text-gray-500">
+              <p className="mt-2 text-muted-foreground">
                 Simile used effectively, personification of the house, some
                 atmosphere, varied sentence length.
               </p>
             </div>
-            <div className="rounded-lg bg-gray-50 p-4 text-sm">
+            <div className="rounded-lg bg-muted p-4 text-sm">
               <p className="font-semibold text-success-600">Level 4 (Grade 7-9):</p>
               <p className="mt-1 italic">
                 &ldquo;Silence. The kind that presses against your eardrums and
@@ -729,7 +729,7 @@ export default function Paper1Page() {
                 what my mind refused to accept: that crossing into the darkness
                 beyond that door meant leaving something behind.&rdquo;
               </p>
-              <p className="mt-2 text-gray-500">
+              <p className="mt-2 text-muted-foreground">
                 Minor sentence opening, second person to draw reader in,
                 physical detail, dash for parenthetical clause, metaphorical
                 resonance, varied structure, ambitious vocabulary.

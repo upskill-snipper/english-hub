@@ -41,11 +41,11 @@ export default function OCRSpokenLanguagePage() {
         <section aria-labelledby="overview-heading">
           <h2
             id="overview-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             What Is the Spoken Language Endorsement?
           </h2>
-          <div className="mt-4 space-y-4 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>
               The Spoken Language endorsement is a compulsory component of OCR
               GCSE English Language, but it is reported <strong>separately</strong>{" "}
@@ -66,20 +66,20 @@ export default function OCRSpokenLanguagePage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* Assessment objectives */}
         <section aria-labelledby="ao-heading">
           <h2
             id="ao-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Assessment Objectives
           </h2>
           <div className="mt-4 space-y-4">
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="font-semibold text-gray-900">AO7 &mdash; Presenting</h3>
-              <p className="mt-2 text-sm text-gray-700">
+            <div className="rounded-lg border border-border bg-muted p-5">
+              <h3 className="font-semibold text-foreground">AO7 &mdash; Presenting</h3>
+              <p className="mt-2 text-sm text-muted-foreground">
                 Demonstrate presentation skills in a formal setting. This
                 means you should speak clearly, maintain appropriate pace and
                 volume, use gestures and eye contact effectively, and
@@ -89,9 +89,9 @@ export default function OCRSpokenLanguagePage() {
               </p>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="font-semibold text-gray-900">AO8 &mdash; Listening and Responding</h3>
-              <p className="mt-2 text-sm text-gray-700">
+            <div className="rounded-lg border border-border bg-muted p-5">
+              <h3 className="font-semibold text-foreground">AO8 &mdash; Listening and Responding</h3>
+              <p className="mt-2 text-sm text-muted-foreground">
                 Listen and respond appropriately to spoken language, including
                 to questions and feedback on presentations. After your
                 presentation, you will be asked questions by your teacher
@@ -103,9 +103,9 @@ export default function OCRSpokenLanguagePage() {
               </p>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="font-semibold text-gray-900">AO9 &mdash; Using Standard English</h3>
-              <p className="mt-2 text-sm text-gray-700">
+            <div className="rounded-lg border border-border bg-muted p-5">
+              <h3 className="font-semibold text-foreground">AO9 &mdash; Using Standard English</h3>
+              <p className="mt-2 text-sm text-muted-foreground">
                 Use spoken Standard English effectively in speeches and
                 presentations. This means using formal grammar, avoiding
                 slang, and speaking in complete, well-formed sentences. You
@@ -116,17 +116,17 @@ export default function OCRSpokenLanguagePage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* Choosing a topic */}
         <section aria-labelledby="topic-heading">
           <h2
             id="topic-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Choosing Your Topic
           </h2>
-          <div className="mt-4 space-y-4 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>
               You can choose any topic for your presentation, but the best
               topics are ones that:
@@ -154,13 +154,13 @@ export default function OCRSpokenLanguagePage() {
               </li>
             </ul>
 
-            <h3 className="mt-6 text-lg font-semibold text-gray-900">
+            <h3 className="mt-6 text-lg font-semibold text-foreground">
               Example Topics
             </h3>
             <div className="mt-3 grid gap-3 sm:grid-cols-2">
               <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                 <p className="text-sm font-medium text-primary">Persuasive / Argumentative</p>
-                <ul className="ml-4 mt-2 list-disc space-y-1 text-sm text-gray-700">
+                <ul className="ml-4 mt-2 list-disc space-y-1 text-sm text-muted-foreground">
                   <li>Should school uniforms be abolished?</li>
                   <li>The impact of social media on mental health</li>
                   <li>Should the voting age be lowered to 16?</li>
@@ -170,7 +170,7 @@ export default function OCRSpokenLanguagePage() {
               </div>
               <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                 <p className="text-sm font-medium text-primary">Informative / Explanatory</p>
-                <ul className="ml-4 mt-2 list-disc space-y-1 text-sm text-gray-700">
+                <ul className="ml-4 mt-2 list-disc space-y-1 text-sm text-muted-foreground">
                   <li>How climate change affects the UK</li>
                   <li>The history and impact of a cultural movement</li>
                   <li>How AI is changing education</li>
@@ -182,18 +182,18 @@ export default function OCRSpokenLanguagePage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* Planning your presentation */}
         <section aria-labelledby="planning-heading">
           <h2
             id="planning-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Planning Your Presentation
           </h2>
-          <div className="mt-4 space-y-4 text-gray-700 leading-relaxed">
-            <h3 className="text-lg font-semibold text-gray-900">
+          <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
+            <h3 className="text-lg font-semibold text-foreground">
               Structure
             </h3>
             <p>
@@ -230,7 +230,7 @@ export default function OCRSpokenLanguagePage() {
               </li>
             </ol>
 
-            <h3 className="mt-6 text-lg font-semibold text-gray-900">
+            <h3 className="mt-6 text-lg font-semibold text-foreground">
               Notes and Prompts
             </h3>
             <p>
@@ -243,20 +243,20 @@ export default function OCRSpokenLanguagePage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* Delivery skills */}
         <section aria-labelledby="delivery-heading">
           <h2
             id="delivery-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Delivery Skills
           </h2>
-          <div className="mt-4 space-y-4 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="font-semibold text-gray-900">Eye Contact</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="font-semibold text-foreground">Eye Contact</h3>
                 <p className="mt-2 text-sm">
                   Look at your audience, not at the floor, ceiling, or your
                   notes. Scan different parts of the room to engage everyone.
@@ -264,8 +264,8 @@ export default function OCRSpokenLanguagePage() {
                 </p>
               </div>
 
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="font-semibold text-gray-900">Pace</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="font-semibold text-foreground">Pace</h3>
                 <p className="mt-2 text-sm">
                   Speak at a measured pace. Nerves often cause people to
                   rush &mdash; consciously slow down. Use pauses for emphasis
@@ -274,8 +274,8 @@ export default function OCRSpokenLanguagePage() {
                 </p>
               </div>
 
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="font-semibold text-gray-900">Volume and Projection</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="font-semibold text-foreground">Volume and Projection</h3>
                 <p className="mt-2 text-sm">
                   Ensure everyone in the room can hear you clearly. Project
                   your voice without shouting. Vary your volume for effect
@@ -283,8 +283,8 @@ export default function OCRSpokenLanguagePage() {
                 </p>
               </div>
 
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="font-semibold text-gray-900">Tone and Expression</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="font-semibold text-foreground">Tone and Expression</h3>
                 <p className="mt-2 text-sm">
                   Avoid speaking in a monotone. Vary your intonation to
                   express enthusiasm, concern, humour, or urgency. Your voice
@@ -292,8 +292,8 @@ export default function OCRSpokenLanguagePage() {
                 </p>
               </div>
 
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="font-semibold text-gray-900">Body Language</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="font-semibold text-foreground">Body Language</h3>
                 <p className="mt-2 text-sm">
                   Stand up straight and use open, confident body language.
                   Avoid fidgeting, crossing your arms, or swaying. Use hand
@@ -302,8 +302,8 @@ export default function OCRSpokenLanguagePage() {
                 </p>
               </div>
 
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="font-semibold text-gray-900">Rhetorical Techniques</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="font-semibold text-foreground">Rhetorical Techniques</h3>
                 <p className="mt-2 text-sm">
                   Use rhetorical questions, tricolon (rule of three), anaphora
                   (repetition), emotive language, and direct address to engage
@@ -315,17 +315,17 @@ export default function OCRSpokenLanguagePage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* Answering questions */}
         <section aria-labelledby="questions-heading">
           <h2
             id="questions-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Answering Questions
           </h2>
-          <div className="mt-4 space-y-4 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>
               After your presentation, you will face questions from your
               teacher and/or classmates. This tests AO8. Here are strategies
@@ -364,20 +364,20 @@ export default function OCRSpokenLanguagePage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* Grade descriptors */}
         <section aria-labelledby="grades-heading">
           <h2
             id="grades-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Grade Descriptors
           </h2>
           <div className="mt-4 space-y-4">
             <div className="rounded-lg border border-success/30 bg-success-50 p-5">
               <h3 className="font-semibold text-success-700">Distinction</h3>
-              <ul className="ml-4 mt-2 list-disc space-y-1 text-sm text-gray-700">
+              <ul className="ml-4 mt-2 list-disc space-y-1 text-sm text-muted-foreground">
                 <li>Presentation is confidently and skillfully delivered</li>
                 <li>Content is challenging, well-researched, and compelling</li>
                 <li>Uses a wide range of rhetorical and presentational techniques effectively</li>
@@ -388,7 +388,7 @@ export default function OCRSpokenLanguagePage() {
 
             <div className="rounded-lg border border-accent/30 bg-accent-50 p-5">
               <h3 className="font-semibold text-accent-700">Merit</h3>
-              <ul className="ml-4 mt-2 list-disc space-y-1 text-sm text-gray-700">
+              <ul className="ml-4 mt-2 list-disc space-y-1 text-sm text-muted-foreground">
                 <li>Presentation is clearly and competently delivered</li>
                 <li>Content is well-organised and engaging</li>
                 <li>Uses rhetorical and presentational techniques with some success</li>
@@ -397,9 +397,9 @@ export default function OCRSpokenLanguagePage() {
               </ul>
             </div>
 
-            <div className="rounded-lg border border-gray-300 bg-gray-50 p-5">
-              <h3 className="font-semibold text-gray-700">Pass</h3>
-              <ul className="ml-4 mt-2 list-disc space-y-1 text-sm text-gray-700">
+            <div className="rounded-lg border border-gray-300 bg-muted p-5">
+              <h3 className="font-semibold text-muted-foreground">Pass</h3>
+              <ul className="ml-4 mt-2 list-disc space-y-1 text-sm text-muted-foreground">
                 <li>Presentation is delivered with basic competence</li>
                 <li>Content is understandable and has some structure</li>
                 <li>Some attempt to use presentational techniques</li>
@@ -410,17 +410,17 @@ export default function OCRSpokenLanguagePage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* Practice checklist */}
         <section aria-labelledby="checklist-heading">
           <h2
             id="checklist-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Practice Checklist
           </h2>
-          <div className="mt-4 space-y-2 text-gray-700">
+          <div className="mt-4 space-y-2 text-muted-foreground">
             <p>Use this checklist to prepare for your spoken language assessment:</p>
             <ul className="ml-6 mt-3 list-disc space-y-2">
               <li>I have chosen a topic I am knowledgeable and passionate about</li>

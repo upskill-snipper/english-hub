@@ -160,21 +160,21 @@ export default function CaieEnglishLiteratureHub() {
 
       {/* ── Specification overview ──────────────────────────────── */}
       <section className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
-        <h2 className="text-2xl font-bold text-gray-900">Specification Overview</h2>
+        <h2 className="text-2xl font-bold text-foreground">Specification Overview</h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
-          <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-            <h3 className="font-semibold text-[#1A5276]">Paper 1: Poetry &amp; Prose</h3>
-            <p className="mt-1 text-sm text-gray-600">1 hour 30 minutes &middot; 50 marks</p>
-            <ul className="mt-3 space-y-1 text-sm text-gray-700">
+          <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+            <h3 className="font-semibold text-foreground">Paper 1: Poetry &amp; Prose</h3>
+            <p className="mt-1 text-sm text-muted-foreground">1 hour 30 minutes &middot; 50 marks</p>
+            <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
               <li>&bull; Section A &mdash; Set poetry (Songs of Ourselves)</li>
               <li>&bull; Section B &mdash; Set prose text</li>
               <li>&bull; Passage-based and essay questions</li>
             </ul>
           </div>
-          <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-            <h3 className="font-semibold text-[#1A5276]">Paper 2: Drama</h3>
-            <p className="mt-1 text-sm text-gray-600">1 hour 30 minutes &middot; 50 marks</p>
-            <ul className="mt-3 space-y-1 text-sm text-gray-700">
+          <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+            <h3 className="font-semibold text-foreground">Paper 2: Drama</h3>
+            <p className="mt-1 text-sm text-muted-foreground">1 hour 30 minutes &middot; 50 marks</p>
+            <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
               <li>&bull; Section A &mdash; Set Shakespeare play</li>
               <li>&bull; Section B &mdash; Other set drama text</li>
               <li>&bull; Focus on dramatic technique and stagecraft</li>
@@ -182,25 +182,25 @@ export default function CaieEnglishLiteratureHub() {
           </div>
         </div>
 
-        <div className="mt-6 rounded-lg border border-[#2E86C1]/20 bg-[#2E86C1]/5 p-5">
-          <h3 className="font-semibold text-[#1A5276]">Assessment Objectives</h3>
-          <ul className="mt-3 space-y-2 text-sm text-gray-700">
+        <div className="mt-6 rounded-lg border border-[#2E86C1]/20 bg-primary/5 p-5">
+          <h3 className="font-semibold text-foreground">Assessment Objectives</h3>
+          <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
             <li>
-              <strong className="text-[#1A5276]">AO1</strong> &mdash; Show detailed knowledge
+              <strong className="text-foreground">AO1</strong> &mdash; Show detailed knowledge
               of the content of literary texts, supported by reference to the text.
             </li>
             <li>
-              <strong className="text-[#1A5276]">AO2</strong> &mdash; Understand the meanings
+              <strong className="text-foreground">AO2</strong> &mdash; Understand the meanings
               of literary texts and their contexts, and explore texts beyond surface meanings to
               show deeper awareness of ideas and attitudes.
             </li>
             <li>
-              <strong className="text-[#1A5276]">AO3</strong> &mdash; Recognise and appreciate
+              <strong className="text-foreground">AO3</strong> &mdash; Recognise and appreciate
               ways in which writers use language, structure, and form to create and shape meanings
               and effects.
             </li>
             <li>
-              <strong className="text-[#1A5276]">AO4</strong> &mdash; Communicate a sensitive
+              <strong className="text-foreground">AO4</strong> &mdash; Communicate a sensitive
               and informed personal response to literary texts.
             </li>
           </ul>
@@ -208,36 +208,36 @@ export default function CaieEnglishLiteratureHub() {
       </section>
 
       {/* ── Resource cards ──────────────────────────────────────── */}
-      <section className="bg-gray-50 px-4 py-12 sm:py-16">
+      <section className="bg-muted px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-gray-900">Study Resources</h2>
-          <p className="mt-2 text-gray-600">
+          <h2 className="text-2xl font-bold text-foreground">Study Resources</h2>
+          <p className="mt-2 text-muted-foreground">
             Eight focused guides covering every part of the Cambridge IGCSE English Literature course.
           </p>
 
           {resourceGroups.map((group) => (
             <div key={group.heading} className="mt-10">
               <div className="mb-4 flex items-center gap-3">
-                <h3 className="text-lg font-bold text-[#1A5276]">{group.heading}</h3>
+                <h3 className="text-lg font-bold text-foreground">{group.heading}</h3>
                 <span className="h-px flex-1 bg-[#1A5276]/15" />
               </div>
-              <p className="mb-5 text-sm text-gray-500">{group.subtitle}</p>
+              <p className="mb-5 text-sm text-muted-foreground">{group.subtitle}</p>
 
               <div className="grid gap-5 sm:grid-cols-2">
                 {group.items.map((r) => (
                   <Link
                     key={r.href}
                     href={r.href}
-                    className="group flex flex-col rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition hover:border-[#2E86C1] hover:shadow-md"
+                    className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-md transition hover:border-[#2E86C1] hover:shadow-md"
                   >
-                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#1A5276]/10 text-[#1A5276] transition group-hover:bg-[#2E86C1]/10 group-hover:text-[#2E86C1]">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#1A5276]/10 text-foreground transition group-hover:bg-primary/10 group-hover:text-primary">
                       {r.icon}
                     </div>
-                    <h4 className="mt-4 text-lg font-semibold text-gray-900 group-hover:text-[#2E86C1]">
+                    <h4 className="mt-4 text-lg font-semibold text-foreground group-hover:text-primary">
                       {r.title}
                     </h4>
-                    <p className="mt-2 flex-1 text-sm text-gray-600">{r.description}</p>
-                    <span className="mt-4 inline-flex items-center text-sm font-medium text-[#1A5276] group-hover:text-[#2E86C1]">
+                    <p className="mt-2 flex-1 text-sm text-muted-foreground">{r.description}</p>
+                    <span className="mt-4 inline-flex items-center text-sm font-medium text-foreground group-hover:text-primary">
                       View resource
                       <svg xmlns="http://www.w3.org/2000/svg" className="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -253,7 +253,7 @@ export default function CaieEnglishLiteratureHub() {
 
       {/* ── Exam tips ───────────────────────────────────────────── */}
       <section className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
-        <h2 className="text-2xl font-bold text-gray-900">Quick Exam Tips</h2>
+        <h2 className="text-2xl font-bold text-foreground">Quick Exam Tips</h2>
         <div className="mt-6 space-y-4">
           {[
             {
@@ -279,14 +279,14 @@ export default function CaieEnglishLiteratureHub() {
           ].map((item) => (
             <div
               key={item.label}
-              className="flex items-start gap-3 rounded-lg border border-gray-200 bg-white p-4 shadow-sm"
+              className="flex items-start gap-3 rounded-lg border border-border bg-card p-4 shadow-md"
             >
-              <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#2E86C1]/10 text-xs font-bold text-[#2E86C1]">
+              <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
                 !
               </span>
               <div>
-                <p className="text-sm font-semibold text-[#1A5276]">{item.label}</p>
-                <p className="mt-1 text-sm text-gray-700">{item.tip}</p>
+                <p className="text-sm font-semibold text-foreground">{item.label}</p>
+                <p className="mt-1 text-sm text-muted-foreground">{item.tip}</p>
               </div>
             </div>
           ))}

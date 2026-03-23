@@ -22,16 +22,16 @@ function Section({
 }) {
   const [open, setOpen] = useState(defaultOpen);
   return (
-    <div className="rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden">
+    <div className="rounded-xl border border-border bg-card shadow-md overflow-hidden">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="flex w-full items-center justify-between px-5 py-4 text-left transition-colors hover:bg-gray-50"
+        className="flex w-full items-center justify-between px-5 py-4 text-left transition-colors hover:bg-muted"
         aria-expanded={open}
         aria-controls={`section-${id}`}
       >
         <div className="flex items-center gap-3">
           <span className={`h-2.5 w-2.5 rounded-full ${colour}`} />
-          <h2 className="text-lg font-bold text-gray-900">{title}</h2>
+          <h2 className="text-lg font-bold text-foreground">{title}</h2>
           {badge && (
             <span className="rounded-full bg-accent-50 px-2.5 py-0.5 text-xs font-semibold text-accent-600">
               {badge}
@@ -39,14 +39,14 @@ function Section({
           )}
         </div>
         <svg
-          className={`h-5 w-5 text-gray-400 transition-transform ${open ? "rotate-180" : ""}`}
+          className={`h-5 w-5 text-muted-foreground transition-transform ${open ? "rotate-180" : ""}`}
           fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"
         >
           <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
         </svg>
       </button>
       {open && (
-        <div id={`section-${id}`} className="border-t border-gray-100 px-5 py-5">
+        <div id={`section-${id}`} className="border-t border-border px-5 py-5">
           {children}
         </div>
       )}
@@ -67,23 +67,23 @@ function SubSection({
 }) {
   const [open, setOpen] = useState(defaultOpen);
   return (
-    <div className="rounded-lg border border-gray-100 bg-gray-50/50 overflow-hidden">
+    <div className="rounded-lg border border-border bg-muted/50 overflow-hidden">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="flex w-full items-center justify-between px-4 py-3 text-left transition-colors hover:bg-gray-100/60"
+        className="flex w-full items-center justify-between px-4 py-3 text-left transition-colors hover:bg-muted/60"
         aria-expanded={open}
         aria-controls={`sub-${id}`}
       >
-        <h3 className="text-base font-bold text-gray-900">{title}</h3>
+        <h3 className="text-base font-bold text-foreground">{title}</h3>
         <svg
-          className={`h-4 w-4 text-gray-400 transition-transform ${open ? "rotate-180" : ""}`}
+          className={`h-4 w-4 text-muted-foreground transition-transform ${open ? "rotate-180" : ""}`}
           fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"
         >
           <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
         </svg>
       </button>
       {open && (
-        <div id={`sub-${id}`} className="border-t border-gray-100 px-4 py-4">
+        <div id={`sub-${id}`} className="border-t border-border px-4 py-4">
           {children}
         </div>
       )}
@@ -94,9 +94,9 @@ function SubSection({
 function Quote({ text, speaker, act, analysis }: { text: string; speaker: string; act: string; analysis: string }) {
   return (
     <div className="rounded-lg border-l-4 border-accent bg-accent-50/40 p-4">
-      <p className="text-sm font-semibold italic text-gray-800">&ldquo;{text}&rdquo;</p>
-      <p className="mt-1 text-xs text-gray-500">{speaker} &mdash; {act}</p>
-      <p className="mt-2 text-sm text-gray-700">{analysis}</p>
+      <p className="text-sm font-semibold italic text-foreground">&ldquo;{text}&rdquo;</p>
+      <p className="mt-1 text-xs text-muted-foreground">{speaker} &mdash; {act}</p>
+      <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
   );
 }
@@ -104,14 +104,14 @@ function Quote({ text, speaker, act, analysis }: { text: string; speaker: string
 function QuoteCompact({ text, speaker, act, themes, analysis }: { text: string; speaker: string; act: string; themes: string[]; analysis: string }) {
   return (
     <div className="rounded-lg border-l-4 border-accent bg-accent-50/40 p-4">
-      <p className="text-sm font-semibold italic text-gray-800">&ldquo;{text}&rdquo;</p>
-      <p className="mt-1 text-xs text-gray-500">{speaker} &mdash; {act}</p>
+      <p className="text-sm font-semibold italic text-foreground">&ldquo;{text}&rdquo;</p>
+      <p className="mt-1 text-xs text-muted-foreground">{speaker} &mdash; {act}</p>
       <div className="mt-1.5 flex flex-wrap gap-1">
         {themes.map((t) => (
-          <span key={t} className="rounded-full bg-[#1A5276]/10 px-2 py-0.5 text-[10px] font-semibold text-[#1A5276]">{t}</span>
+          <span key={t} className="rounded-full bg-[#1A5276]/10 px-2 py-0.5 text-[10px] font-semibold text-foreground">{t}</span>
         ))}
       </div>
-      <p className="mt-2 text-sm text-gray-700">{analysis}</p>
+      <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
   );
 }
@@ -130,10 +130,10 @@ export default function MacbethRevisionPage() {
           <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-semibold text-accent-600">CAIE</span>
           <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-semibold text-accent-600">OCR</span>
         </div>
-        <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           Macbeth &mdash; The Definitive GCSE Revision Guide
         </h1>
-        <p className="mt-3 max-w-3xl text-lg text-gray-600">
+        <p className="mt-3 max-w-3xl text-lg text-muted-foreground">
           The most comprehensive Macbeth resource you will find. Act-by-act plot summaries, 10 character profiles with key quotes,
           8 themes with detailed analysis, 30+ quotations with full breakdowns, historical context, 5 essay planning templates,
           and exam board comparison. Everything you need for your GCSE English Literature exam.
@@ -141,8 +141,8 @@ export default function MacbethRevisionPage() {
       </div>
 
       {/* Quick nav */}
-      <div className="mb-8 rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
-        <p className="text-sm font-semibold text-gray-700 mb-3">Jump to section:</p>
+      <div className="mb-8 rounded-xl border border-border bg-card p-4 shadow-md">
+        <p className="text-sm font-semibold text-muted-foreground mb-3">Jump to section:</p>
         <div className="flex flex-wrap gap-2">
           {[
             { label: "Plot Summary", href: "plot-summary" },
@@ -156,7 +156,7 @@ export default function MacbethRevisionPage() {
             <a
               key={s.href}
               href={`#${s.href}`}
-              className="rounded-lg bg-gray-100 px-3 py-1.5 text-xs font-medium text-gray-600 hover:bg-accent-50 hover:text-accent-600 transition-colors"
+              className="rounded-lg bg-gray-100 px-3 py-1.5 text-xs font-medium text-muted-foreground hover:bg-accent-50 hover:text-accent-600 transition-colors"
             >
               {s.label}
             </a>
@@ -170,22 +170,22 @@ export default function MacbethRevisionPage() {
           <div className="space-y-6">
             {/* Act 1 */}
             <div>
-              <h3 className="font-bold text-gray-900 flex items-center gap-2">
+              <h3 className="font-bold text-foreground flex items-center gap-2">
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-100 text-xs font-bold text-red-700">1</span>
                 Act 1 &mdash; The Prophecy
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 The play opens amid thunder and lightning with three witches planning to meet Macbeth after a battle (&ldquo;When the hurlyburly&apos;s done, / When the battle&apos;s lost and won&rdquo;). Their chant &ldquo;Fair is foul, and foul is fair&rdquo; establishes the theme of moral inversion that pervades the entire play. Meanwhile, a wounded Captain reports to King Duncan that Macbeth has fought with extraordinary bravery against the rebels and the Norwegian invaders, earning the titles &ldquo;brave Macbeth&rdquo; and &ldquo;Bellona&apos;s bridegroom.&rdquo; Duncan orders the execution of the traitorous Thane of Cawdor and awards Cawdor&apos;s title to Macbeth.
               </p>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 On a &ldquo;blasted heath,&rdquo; Macbeth and Banquo encounter the Weird Sisters, who prophesy that Macbeth will become Thane of Cawdor and then King, while Banquo will be &ldquo;lesser than Macbeth, and greater&rdquo; and father to a line of kings. Almost immediately, Ross arrives to confirm Macbeth has indeed been made Thane of Cawdor. This partial fulfilment ignites Macbeth&apos;s ambition; in an aside, he imagines the murder (&ldquo;whose horrid image doth unfix my hair&rdquo;) but also considers that &ldquo;chance may crown me / Without my stir.&rdquo; Duncan names his eldest son Malcolm as Prince of Cumberland (heir), prompting Macbeth&apos;s aside: &ldquo;Stars, hide your fires; / Let not light see my black and deep desires.&rdquo;
               </p>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Macbeth writes to Lady Macbeth, who reads the letter and immediately resolves that Duncan must die. In her &ldquo;unsex me here&rdquo; soliloquy, she invokes evil spirits to strip her of feminine compassion. When Duncan arrives at their castle as an honoured guest, Lady Macbeth counsels Macbeth to &ldquo;look like the innocent flower, / But be the serpent under&apos;t.&rdquo; In his &ldquo;If it were done&rdquo; soliloquy (1.7), Macbeth lists every reason not to kill Duncan but acknowledges he has only &ldquo;vaulting ambition&rdquo; to drive him. He decides not to proceed &mdash; but Lady Macbeth attacks his manhood and outlines a practical plan (drug the guards, use their daggers), persuading him to commit the murder.
               </p>
-              <div className="mt-3 rounded-lg bg-gray-50 p-3">
-                <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Key Scenes</p>
-                <ul className="mt-2 space-y-1 text-sm text-gray-600">
+              <div className="mt-3 rounded-lg bg-muted p-3">
+                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Key Scenes</p>
+                <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                   <li>&bull; 1.1 &mdash; The witches&apos; opening scene: &ldquo;Fair is foul, and foul is fair&rdquo;</li>
                   <li>&bull; 1.2 &mdash; The Captain&apos;s report: Macbeth&apos;s battlefield heroism established</li>
                   <li>&bull; 1.3 &mdash; The witches&apos; three prophecies on the heath; Macbeth&apos;s first aside about murder</li>
@@ -198,19 +198,19 @@ export default function MacbethRevisionPage() {
 
             {/* Act 2 */}
             <div>
-              <h3 className="font-bold text-gray-900 flex items-center gap-2">
+              <h3 className="font-bold text-foreground flex items-center gap-2">
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-100 text-xs font-bold text-red-700">2</span>
                 Act 2 &mdash; The Murder of Duncan
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Banquo, unable to sleep, tells Macbeth he has dreamed of the Weird Sisters. Macbeth lies, claiming he does not think of them. Left alone, Macbeth hallucinates a dagger leading him towards Duncan&apos;s chamber (&ldquo;Is this a dagger which I see before me, / The handle toward my hand?&rdquo;). He murders Duncan offstage while his guards sleep, drugged by Lady Macbeth. Immediately wracked with guilt, he returns carrying the bloody daggers. He is horrified: he could not say &ldquo;Amen&rdquo; when the guards mumbled a prayer, and he believes he heard a voice cry &ldquo;Sleep no more! / Macbeth does murder sleep.&rdquo; He declares that &ldquo;all great Neptune&apos;s ocean&rdquo; cannot wash the blood from his hands.
               </p>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Lady Macbeth, composed and practical, takes the daggers back and smears the sleeping guards with Duncan&apos;s blood to frame them, dismissing Macbeth&apos;s terror with &ldquo;A little water clears us of this deed.&rdquo; The porter provides brief comic relief, stumbling drunkenly to answer the gate and joking about being the porter of hell-gate &mdash; a scene loaded with dramatic irony, as the castle has indeed become a kind of hell. Macduff and Lennox arrive. Macduff discovers Duncan&apos;s body and raises the alarm (&ldquo;O horror, horror, horror! / Tongue nor heart cannot conceive nor name thee!&rdquo;). Macbeth kills the guards, claiming it was done in fury at their apparent crime. Malcolm and Donalbain, fearing for their own lives, flee to England and Ireland respectively, inadvertently casting suspicion on themselves. Macbeth travels to Scone to be crowned King of Scotland. An Old Man and Ross discuss the unnatural events that accompanied the murder: an owl killed a falcon, Duncan&apos;s horses turned wild and ate each other, and darkness has blotted out the day.
               </p>
-              <div className="mt-3 rounded-lg bg-gray-50 p-3">
-                <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Key Scenes</p>
-                <ul className="mt-2 space-y-1 text-sm text-gray-600">
+              <div className="mt-3 rounded-lg bg-muted p-3">
+                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Key Scenes</p>
+                <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                   <li>&bull; 2.1 &mdash; The dagger soliloquy: &ldquo;Is this a dagger which I see before me?&rdquo;</li>
                   <li>&bull; 2.2 &mdash; The murder; &ldquo;Will all great Neptune&apos;s ocean wash this blood?&rdquo;; Lady Macbeth&apos;s composure</li>
                   <li>&bull; 2.3 &mdash; The porter scene (dramatic irony); discovery of Duncan&apos;s body by Macduff</li>
@@ -221,19 +221,19 @@ export default function MacbethRevisionPage() {
 
             {/* Act 3 */}
             <div>
-              <h3 className="font-bold text-gray-900 flex items-center gap-2">
+              <h3 className="font-bold text-foreground flex items-center gap-2">
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-100 text-xs font-bold text-red-700">3</span>
                 Act 3 &mdash; Banquo&apos;s Murder and the Banquet
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Now king, Macbeth is consumed by insecurity. In a soliloquy, he reveals that &ldquo;To be thus is nothing, / But to be safely thus&rdquo; &mdash; being king is worthless without security. He fears the witches&apos; prophecy that Banquo&apos;s descendants will be kings, meaning he has &ldquo;filed [defiled] my mind&rdquo; and &ldquo;mine eternal jewel / Given to the common enemy of man&rdquo; (sold his soul) for Banquo&apos;s children&apos;s benefit. Crucially, he no longer consults Lady Macbeth but hires murderers independently, manipulating them by questioning their manhood &mdash; mirroring Lady Macbeth&apos;s earlier tactic.
               </p>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Lady Macbeth, excluded from his plans, reveals her own growing despair: &ldquo;Nought&apos;s had, all&apos;s spent, / Where our desire is got without content.&rdquo; Macbeth tells her his mind is &ldquo;full of scorpions&rdquo; but hints at a coming deed without sharing details (&ldquo;Be innocent of the knowledge, dearest chuck&rdquo;). The murderers kill Banquo but Fleance escapes &mdash; a critical failure, as the prophecy about Banquo&apos;s royal line remains unfulfilled. At a grand state banquet, Macbeth sees Banquo&apos;s ghost sitting in his chair. He reacts with visible terror, nearly revealing his guilt to the assembled lords. Lady Macbeth desperately tries to control the situation, telling the thanes it is a familiar affliction and privately accusing Macbeth of cowardice. The ghost returns a second time before vanishing. Macbeth resolves to visit the witches again. Lennox and a lord discuss the state of Scotland, revealing that Macduff has gone to the English court to seek Malcolm&apos;s help in raising an army against Macbeth&apos;s tyranny.
               </p>
-              <div className="mt-3 rounded-lg bg-gray-50 p-3">
-                <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Key Scenes</p>
-                <ul className="mt-2 space-y-1 text-sm text-gray-600">
+              <div className="mt-3 rounded-lg bg-muted p-3">
+                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Key Scenes</p>
+                <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                   <li>&bull; 3.1 &mdash; Macbeth&apos;s soliloquy on Banquo; hiring the murderers</li>
                   <li>&bull; 3.2 &mdash; &ldquo;O, full of scorpions is my mind, dear wife!&rdquo; &mdash; growing estrangement</li>
                   <li>&bull; 3.3 &mdash; Banquo&apos;s murder; Fleance&apos;s escape</li>
@@ -245,22 +245,22 @@ export default function MacbethRevisionPage() {
 
             {/* Act 4 */}
             <div>
-              <h3 className="font-bold text-gray-900 flex items-center gap-2">
+              <h3 className="font-bold text-foreground flex items-center gap-2">
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-100 text-xs font-bold text-red-700">4</span>
                 Act 4 &mdash; The Apparitions and Macduff&apos;s Family
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Macbeth visits the witches and demands answers. They conjure three apparitions: an armed head warns &ldquo;Beware Macduff&rdquo;; a bloody child proclaims &ldquo;none of woman born / Shall harm Macbeth&rdquo;; and a crowned child holding a tree declares he will not be vanquished &ldquo;until / Great Birnam Wood to high Dunsinane Hill / Shall come against him.&rdquo; Macbeth feels invincible, dismissing the seemingly impossible conditions. But when he asks about Banquo&apos;s line, the witches show a procession of eight kings followed by Banquo&apos;s ghost &mdash; confirming that Banquo&apos;s descendants will rule. Significantly, the second witch remarks &ldquo;By the pricking of my thumbs, / Something wicked this way comes&rdquo; when Macbeth arrives &mdash; even the witches now consider him wicked.
               </p>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 When Macbeth learns Macduff has fled to England, he orders the murder of Lady Macduff and her children &mdash; an act of pure, purposeless cruelty with no strategic value. Scene 4.2 shows Lady Macduff&apos;s distress at her husband&apos;s departure, her witty and tender conversation with her son, and then the brutal murder of both. This is the play&apos;s most shocking moment and marks Macbeth&apos;s complete moral descent from reluctant murderer to conscienceless tyrant.
               </p>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 In England (4.3), Malcolm tests Macduff&apos;s loyalty by pretending to be unfit to rule, claiming he is lustful, greedy, and possesses none of the &ldquo;king-becoming graces.&rdquo; When Macduff despairs for Scotland (&ldquo;Bleed, bleed, poor country!&rdquo;), Malcolm reveals it was a test and confirms his virtue. Ross arrives with the devastating news of the Macduff family&apos;s slaughter. Macduff&apos;s raw grief (&ldquo;All my pretty ones? / Did you say all?&rdquo;) is one of the play&apos;s most emotionally powerful moments. When Malcolm tells him to &ldquo;dispute it like a man,&rdquo; Macduff replies, &ldquo;I shall do so; / But I must also feel it as a man&rdquo; &mdash; redefining masculinity as encompassing emotional depth. His grief is channelled into resolve: &ldquo;Front to front / Bring thou this fiend of Scotland and myself.&rdquo;
               </p>
-              <div className="mt-3 rounded-lg bg-gray-50 p-3">
-                <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Key Scenes</p>
-                <ul className="mt-2 space-y-1 text-sm text-gray-600">
+              <div className="mt-3 rounded-lg bg-muted p-3">
+                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Key Scenes</p>
+                <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                   <li>&bull; 4.1 &mdash; The three apparitions; the show of eight kings; &ldquo;Something wicked this way comes&rdquo;</li>
                   <li>&bull; 4.2 &mdash; The murder of Lady Macduff and her son &mdash; Macbeth&apos;s most monstrous act</li>
                   <li>&bull; 4.3 &mdash; Malcolm&apos;s testing of Macduff; Macduff&apos;s grief: &ldquo;He has no children&rdquo;; &ldquo;I must also feel it as a man&rdquo;</li>
@@ -270,22 +270,22 @@ export default function MacbethRevisionPage() {
 
             {/* Act 5 */}
             <div>
-              <h3 className="font-bold text-gray-900 flex items-center gap-2">
+              <h3 className="font-bold text-foreground flex items-center gap-2">
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-100 text-xs font-bold text-red-700">5</span>
                 Act 5 &mdash; Downfall and Death
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Lady Macbeth, consumed by guilt, sleepwalks through the castle, watched by a gentlewoman and a doctor. She obsessively tries to wash imaginary blood from her hands: &ldquo;Out, damned spot! out, I say!&rdquo; She speaks in fragmented prose (a stark shift from her earlier controlled verse), reliving the murders: &ldquo;Yet who would have thought the old man to have had so much blood in him?&rdquo; and &ldquo;All the perfumes of Arabia will not sweeten this little hand.&rdquo; The doctor declares &ldquo;More needs she the divine than the physician&rdquo; &mdash; her sickness is spiritual, not physical.
               </p>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Meanwhile, the Scottish lords Angus, Lennox, Menteith, and Caithness join Malcolm&apos;s forces. They describe Macbeth&apos;s rule as diseased: &ldquo;He cannot buckle his distemper&apos;d cause / Within the belt of rule.&rdquo; Macbeth, fortified at Dunsinane, oscillates between defiance and despair. Malcolm orders his soldiers to cut branches from Birnam Wood as camouflage, unwittingly fulfilling the third apparition&apos;s prophecy.
               </p>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Macbeth receives news of Lady Macbeth&apos;s death (almost certainly suicide) and delivers his most famous nihilistic soliloquy: &ldquo;Tomorrow, and tomorrow, and tomorrow, / Creeps in this petty pace from day to day, / To the last syllable of recorded time.&rdquo; Life is now &ldquo;a tale / Told by an idiot, full of sound and fury, / Signifying nothing.&rdquo; When a messenger reports that Birnam Wood appears to be moving, Macbeth&apos;s confidence cracks. In the final battle, Macbeth kills Young Siward but encounters Macduff. He boasts that no man born of woman can harm him, but Macduff reveals he was &ldquo;from his mother&apos;s womb / Untimely ripp&apos;d&rdquo; &mdash; born by Caesarean section, not naturally &ldquo;of woman born.&rdquo; Macbeth, realising the equivocating prophecies have betrayed him, briefly considers surrender but chooses to fight and die. Macduff kills him and presents his head to Malcolm, who is hailed as the new King of Scotland. Malcolm&apos;s final speech restores order: he promotes the thanes to earls and invites all to his coronation at Scone.
               </p>
-              <div className="mt-3 rounded-lg bg-gray-50 p-3">
-                <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Key Scenes</p>
-                <ul className="mt-2 space-y-1 text-sm text-gray-600">
+              <div className="mt-3 rounded-lg bg-muted p-3">
+                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Key Scenes</p>
+                <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                   <li>&bull; 5.1 &mdash; Lady Macbeth&apos;s sleepwalking scene: &ldquo;Out, damned spot!&rdquo;</li>
                   <li>&bull; 5.3 &mdash; Macbeth&apos;s defiance; &ldquo;I have liv&apos;d long enough&rdquo;</li>
                   <li>&bull; 5.5 &mdash; Lady Macbeth&apos;s death; &ldquo;Tomorrow, and tomorrow, and tomorrow&rdquo; soliloquy; Birnam Wood moves</li>
@@ -309,7 +309,7 @@ export default function MacbethRevisionPage() {
                     <span className="rounded-full bg-purple-100 px-2.5 py-0.5 text-xs font-semibold text-purple-700">Protagonist</span>
                     <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-semibold text-amber-700">Thane &rarr; King &rarr; Tyrant</span>
                   </div>
-                  <div className="text-sm text-gray-700 leading-relaxed space-y-2">
+                  <div className="text-sm text-muted-foreground leading-relaxed space-y-2">
                     <p><strong>Role:</strong> Thane of Glamis, then Thane of Cawdor, then King of Scotland. The play&apos;s tragic hero whose downfall is driven by ambition and moral weakness.</p>
                     <p><strong>Key traits:</strong> Brave, ambitious, imaginative, guilt-ridden, impressionable, increasingly ruthless, ultimately nihilistic.</p>
                     <p><strong>Character arc:</strong> Macbeth begins as a valiant, honoured warrior &mdash; &ldquo;brave Macbeth,&rdquo; &ldquo;Bellona&apos;s bridegroom&rdquo; &mdash; who is rewarded by a grateful king. The witches&apos; prophecy awakens a latent ambition that Lady Macbeth fans into action. He murders Duncan reluctantly, tormented by guilt (hallucinated dagger, inability to say &ldquo;Amen,&rdquo; voices crying &ldquo;Sleep no more&rdquo;). As king, he grows paranoid and orders Banquo&apos;s murder without consulting Lady Macbeth, marking his independence in evil. The ghost at the banquet shows his guilt is still active. By Act 4, he orders the pointless massacre of the Macduff family, demonstrating moral collapse. In Act 5, having lost his wife, his allies, and his will to live, he delivers the nihilistic &ldquo;Tomorrow&rdquo; soliloquy &mdash; ambition has led to utter meaninglessness. Yet he retains a tragic, residual courage, choosing to fight rather than surrender. He is not a simple villain: Shakespeare ensures we see his inner torment at every stage, making him a figure of both horror and pity.</p>
@@ -357,7 +357,7 @@ export default function MacbethRevisionPage() {
                     <span className="rounded-full bg-purple-100 px-2.5 py-0.5 text-xs font-semibold text-purple-700">Catalyst</span>
                     <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-semibold text-amber-700">Powerful &rarr; Broken</span>
                   </div>
-                  <div className="text-sm text-gray-700 leading-relaxed space-y-2">
+                  <div className="text-sm text-muted-foreground leading-relaxed space-y-2">
                     <p><strong>Role:</strong> Macbeth&apos;s wife and the driving force behind Duncan&apos;s murder. One of Shakespeare&apos;s most complex female characters.</p>
                     <p><strong>Key traits:</strong> Ambitious, manipulative, determined, intelligent, ultimately vulnerable, guilt-ridden.</p>
                     <p><strong>Character arc:</strong> When we first meet her, Lady Macbeth is ambitious, ruthless, and apparently stronger-willed than her husband. She calls on evil spirits to &ldquo;unsex&rdquo; her, rejecting femininity and compassion to pursue power. She manipulates Macbeth by questioning his manhood, plans Duncan&apos;s murder in practical detail, and remains calm when Macbeth panics afterwards (&ldquo;A little water clears us of this deed&rdquo;). However, her control cracks: she is notably absent from the planning of Banquo&apos;s murder (Macbeth acts alone, telling her &ldquo;Be innocent of the knowledge&rdquo;), and she admits &ldquo;Nought&apos;s had, all&apos;s spent, / Where our desire is got without content.&rdquo; By Act 5, she has been destroyed by guilt. Her sleepwalking scene &mdash; obsessively trying to wash imagined blood from her hands, speaking in fragmented prose rather than controlled verse &mdash; mirrors and devastatingly inverts her earlier dismissal of guilt. She almost certainly dies by suicide. The Macbeths&apos; guilt trajectories are inverse: he begins guilt-ridden and becomes hardened; she begins controlled and is ultimately overwhelmed.</p>
@@ -405,7 +405,7 @@ export default function MacbethRevisionPage() {
                     <span className="rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-semibold text-blue-700">Victim</span>
                     <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-semibold text-amber-700">Loyal &rarr; Murdered</span>
                   </div>
-                  <div className="text-sm text-gray-700 leading-relaxed space-y-2">
+                  <div className="text-sm text-muted-foreground leading-relaxed space-y-2">
                     <p><strong>Role:</strong> Macbeth&apos;s fellow general and friend. Father of Fleance. Ancestor of King James I&apos;s Stuart dynasty (a deliberate compliment to the king).</p>
                     <p><strong>Key traits:</strong> Brave, wise, morally cautious, loyal, perceptive &mdash; but arguably complicit through silence.</p>
                     <p><strong>Character arc:</strong> Banquo acts as a moral foil to Macbeth. He hears the same prophecies but does not act on them. He warns Macbeth that &ldquo;instruments of darkness tell us truths&rdquo; to betray us &mdash; showing moral wisdom Macbeth ignores. However, Banquo is not entirely innocent: he suspects Macbeth of foul play (&ldquo;Thou play&apos;dst most foully for&apos;t&rdquo;) but does not act, perhaps because the prophecy also benefits his own descendants. His murder in Act 3 removes the last moral check on Macbeth. As a ghost at the banquet, he represents Macbeth&apos;s guilt made visible and the impossibility of escaping consequences. Historically, Shakespeare presents Banquo as virtuous to flatter James I, whose claim to the English throne traced through Banquo&apos;s line.</p>
@@ -441,7 +441,7 @@ export default function MacbethRevisionPage() {
                     <span className="rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-semibold text-blue-700">Agent of Justice</span>
                     <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-semibold text-amber-700">Suspicious &rarr; Avenging</span>
                   </div>
-                  <div className="text-sm text-gray-700 leading-relaxed space-y-2">
+                  <div className="text-sm text-muted-foreground leading-relaxed space-y-2">
                     <p><strong>Role:</strong> Thane of Fife. Discovers Duncan&apos;s body. Ultimately kills Macbeth and restores the legitimate monarchy.</p>
                     <p><strong>Key traits:</strong> Principled, courageous, patriotic, emotionally honest, grief-stricken, morally upright.</p>
                     <p><strong>Character arc:</strong> Macduff is the play&apos;s agent of justice. He is the first to discover Duncan&apos;s murder and is immediately suspicious of Macbeth. Unlike the other thanes, he refuses to attend Macbeth&apos;s coronation at Scone and later flees to England to raise an army. His family pays the terrible price for his principled stance. When he learns of their murder, his raw grief (&ldquo;All my pretty ones? / Did you say all?&rdquo;) is devastating. His response to Malcolm&apos;s instruction to &ldquo;dispute it like a man&rdquo; &mdash; &ldquo;I shall do so; / But I must also feel it as a man&rdquo; &mdash; offers the play&apos;s most powerful redefinition of masculinity. His Caesarean birth fulfils the apparition&apos;s prophecy, allowing him to defeat Macbeth. He represents righteous vengeance, emotional honesty, and the restoration of legitimate order.</p>
@@ -477,7 +477,7 @@ export default function MacbethRevisionPage() {
                     <span className="rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-semibold text-red-700">Victim</span>
                     <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-semibold text-amber-700">Trusting &rarr; Murdered</span>
                   </div>
-                  <div className="text-sm text-gray-700 leading-relaxed space-y-2">
+                  <div className="text-sm text-muted-foreground leading-relaxed space-y-2">
                     <p><strong>Role:</strong> King of Scotland. His murder is the play&apos;s inciting crime, and his goodness makes the act more horrific.</p>
                     <p><strong>Key traits:</strong> Gracious, trusting, generous, dignified, naive, the embodiment of legitimate authority.</p>
                     <p><strong>Character arc:</strong> Duncan is presented as the ideal king: gracious, trusting, generous, and loved by his subjects. He rewards loyalty, speaks gently, and praises Macbeth&apos;s castle as having a &ldquo;pleasant seat.&rdquo; His very goodness makes his murder more horrific &mdash; he is a guest in Macbeth&apos;s home, making the crime a violation of hospitality (a sacred bond in medieval Scotland) as well as regicide and a sin against God&apos;s anointed ruler. However, he is somewhat naive &mdash; he trusted the original Thane of Cawdor too, admitting &ldquo;There&apos;s no art to find the mind&apos;s construction in the face&rdquo; just as Macbeth, the new Cawdor, enters plotting his murder. He embodies the divine right of kings and legitimate authority; his death disrupts the Great Chain of Being and throws nature into chaos.</p>
@@ -513,7 +513,7 @@ export default function MacbethRevisionPage() {
                     <span className="rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-semibold text-blue-700">Restorer of Order</span>
                     <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-semibold text-amber-700">Fugitive &rarr; King</span>
                   </div>
-                  <div className="text-sm text-gray-700 leading-relaxed space-y-2">
+                  <div className="text-sm text-muted-foreground leading-relaxed space-y-2">
                     <p><strong>Role:</strong> Duncan&apos;s eldest son and rightful heir. Flees to England, then returns to defeat Macbeth and restore legitimate rule.</p>
                     <p><strong>Key traits:</strong> Cautious, shrewd, politically astute, virtuous, patient &mdash; the opposite of his trusting father.</p>
                     <p><strong>Character arc:</strong> Malcolm flees to England after his father&apos;s murder &mdash; a wise survival strategy, though it makes him look guilty. In Act 4, he tests Macduff&apos;s loyalty by falsely claiming to be worse than Macbeth (lustful, greedy, without any &ldquo;king-becoming graces&rdquo;). When Macduff reacts with genuine despair, Malcolm reveals the truth. This scene shows Malcolm as shrewd and cautious &mdash; the opposite of his trusting father. He has learned from Duncan&apos;s mistakes. He represents legitimate kingship and order. His final speech, promoting the thanes to earls (a reference to James I&apos;s historical Anglicisation of Scotland) and inviting all to his coronation, signals Scotland&apos;s restoration.</p>
@@ -549,7 +549,7 @@ export default function MacbethRevisionPage() {
                     <span className="rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-semibold text-red-700">Catalysts</span>
                     <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-semibold text-amber-700">Ambiguous</span>
                   </div>
-                  <div className="text-sm text-gray-700 leading-relaxed space-y-2">
+                  <div className="text-sm text-muted-foreground leading-relaxed space-y-2">
                     <p><strong>Role:</strong> Three supernatural beings who prophesy Macbeth&apos;s rise and manipulate events through equivocation. They open and shape the play but never directly command Macbeth to act.</p>
                     <p><strong>Key traits:</strong> Ambiguous, sinister, equivocating, non-human, chaotic, morally subversive.</p>
                     <p><strong>Character arc:</strong> The witches are deliberately ambiguous. Shakespeare never confirms whether they create Macbeth&apos;s ambition or merely reveal what is already there. They speak in trochaic tetrameter (the reverse of normal iambic pentameter), rhyming couplets, and paradoxes (&ldquo;Fair is foul, and foul is fair&rdquo;), setting them apart from the human characters linguistically. They represent the supernatural, moral disorder, and the disruption of the natural world. For a Jacobean audience, witchcraft was a genuine fear &mdash; James I himself wrote <em>Daemonologie</em> and personally oversaw witch trials. In Act 4, their prophecies are technically true but deliberately misleading (equivocation), reflecting contemporary anxieties about the Gunpowder Plot conspirators. The witches raise the play&apos;s central question: fate versus free will. Banquo describes them as androgynous: &ldquo;You should be women, / And yet your beards forbid me to interpret / That you are so&rdquo; &mdash; they blur every boundary, including gender.</p>
@@ -590,7 +590,7 @@ export default function MacbethRevisionPage() {
                     <span className="rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-semibold text-green-700">Foil to Lady Macbeth</span>
                     <span className="rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-semibold text-red-700">Innocent Victim</span>
                   </div>
-                  <div className="text-sm text-gray-700 leading-relaxed space-y-2">
+                  <div className="text-sm text-muted-foreground leading-relaxed space-y-2">
                     <p><strong>Role:</strong> Macduff&apos;s wife. Her brief appearance and murder in Act 4 marks the moral nadir of Macbeth&apos;s tyranny.</p>
                     <p><strong>Key traits:</strong> Maternal, witty, loving, angry, vulnerable, natural &mdash; everything Lady Macbeth has suppressed.</p>
                     <p><strong>Character arc:</strong> Though her scene is brief (4.2), Lady Macduff is dramatically significant. She represents the domestic, maternal sphere that Lady Macbeth rejects when she calls on spirits to &ldquo;unsex&rdquo; her. Her anger at Macduff for leaving is natural and human. Her witty, tender conversation with her son contrasts sharply with the Macbeths&apos; childless, guilt-ridden marriage. Her murder, along with her children&apos;s, is the play&apos;s most shocking act of violence because it targets innocents for no military or strategic gain &mdash; it is pure tyranny. It marks Macbeth&apos;s complete moral descent and galvanises Macduff into action. She serves as a dramatic foil to Lady Macbeth: where Lady Macbeth invokes darkness and rejects motherhood, Lady Macduff embodies maternal love and domestic normality.</p>
@@ -625,7 +625,7 @@ export default function MacbethRevisionPage() {
                     <span className="rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-semibold text-blue-700">Messenger</span>
                     <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-semibold text-amber-700">Diplomat &amp; Survivor</span>
                   </div>
-                  <div className="text-sm text-gray-700 leading-relaxed space-y-2">
+                  <div className="text-sm text-muted-foreground leading-relaxed space-y-2">
                     <p><strong>Role:</strong> A Scottish nobleman and kinsman of Macduff. Acts as a messenger and go-between, delivering crucial news throughout the play. He is the play&apos;s most politically adaptable figure.</p>
                     <p><strong>Key traits:</strong> Diplomatic, cautious, politically shrewd, evasive, ultimately loyal to Scotland.</p>
                     <p><strong>Character arc:</strong> Ross appears more frequently than any minor character, functioning as the play&apos;s news-bearer and political barometer. In Act 1, he brings the good news of Macbeth&apos;s new title. In Act 2, he discusses the unnatural portents following Duncan&apos;s murder. In Act 4, he initially equivocates when speaking to Lady Macduff, then travels to England to deliver the devastating news of her family&apos;s slaughter to Macduff &mdash; one of the play&apos;s most emotionally charged moments. His hesitation before breaking the news (&ldquo;Your castle is surprised; your wife and babes / Savagely slaughter&apos;d&rdquo;) shows the weight of what he carries. Ross represents the ordinary nobility caught between tyranny and conscience: he survives by being careful with his words, but ultimately sides with the forces of justice. His journey mirrors Scotland&apos;s: from loyalty to Duncan, through the horror of Macbeth&apos;s reign, to the restoration under Malcolm.</p>
@@ -660,7 +660,7 @@ export default function MacbethRevisionPage() {
                     <span className="rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-semibold text-blue-700">Voice of Scotland</span>
                     <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-semibold text-amber-700">Cautious Dissenter</span>
                   </div>
-                  <div className="text-sm text-gray-700 leading-relaxed space-y-2">
+                  <div className="text-sm text-muted-foreground leading-relaxed space-y-2">
                     <p><strong>Role:</strong> A Scottish nobleman who gradually sees through Macbeth&apos;s pretence. His ironic speeches in Act 3, Scene 6 voice the growing opposition to Macbeth&apos;s rule.</p>
                     <p><strong>Key traits:</strong> Observant, politically careful, increasingly sceptical, ironic, courageous in dissent.</p>
                     <p><strong>Character arc:</strong> Lennox begins as a loyal thane attending Duncan. He accompanies Macduff to discover Duncan&apos;s body and describes the &ldquo;unruly night&rdquo; of terrible storms &mdash; connecting the regicide to cosmic disorder. His most important scene is 3.6, where he speaks with biting irony about Macbeth&apos;s convenient explanations: how &ldquo;noble&rdquo; it was for Macbeth to kill the guards in &ldquo;pious rage,&rdquo; how &ldquo;monstrous&rdquo; it would have been for Malcolm and Donalbain to kill their father. His sarcasm makes clear that Scotland&apos;s nobility sees through Macbeth but must speak in coded language to survive. By Act 5, he has openly joined Malcolm&apos;s forces. Lennox represents how tyranny forces even the honourable to use equivocation &mdash; ironically, the very practice the porter scene mocks. Shakespeare uses him to show the audience that Scotland is not deceived by Macbeth, only silenced by fear.</p>
@@ -697,11 +697,11 @@ export default function MacbethRevisionPage() {
             <div className="space-y-8">
               {/* Ambition */}
               <div>
-                <h3 className="text-lg font-bold text-gray-900 flex items-center gap-2">
+                <h3 className="text-lg font-bold text-foreground flex items-center gap-2">
                   <span className="h-3 w-3 rounded-full bg-red-500" />
                   Ambition
                 </h3>
-                <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   Ambition is the play&apos;s driving force and its central warning. Shakespeare presents ambition itself as neither good nor bad &mdash; Macbeth&apos;s bravery in battle is driven by ambition, and ambition for Scotland motivates Malcolm. It is <em>unchecked</em> ambition, &ldquo;vaulting ambition, which o&apos;erleaps itself,&rdquo; that is destructive. Macbeth knows murder is wrong (his soliloquies are full of moral reasoning) but chooses ambition over conscience. Lady Macbeth&apos;s ambition is arguably even fiercer &mdash; she drives the initial plan and recognises that Macbeth has ambition but lacks &ldquo;the illness should attend it.&rdquo; The play shows ambition destroying everything: Macbeth&apos;s honour, his marriage, his sanity, and ultimately his life. It functions as a cautionary tale for the Jacobean audience about the dangers of overreaching one&apos;s ordained place in the Great Chain of Being. Macbeth&apos;s trajectory &mdash; from honoured warrior to nihilistic tyrant whose life &ldquo;signif[ies] nothing&rdquo; &mdash; demonstrates that ambition without moral constraint leads not to fulfilment but to existential emptiness.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
@@ -722,11 +722,11 @@ export default function MacbethRevisionPage() {
 
               {/* Power */}
               <div>
-                <h3 className="text-lg font-bold text-gray-900 flex items-center gap-2">
+                <h3 className="text-lg font-bold text-foreground flex items-center gap-2">
                   <span className="h-3 w-3 rounded-full bg-amber-500" />
                   Power and Kingship
                 </h3>
-                <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   Shakespeare contrasts legitimate power (Duncan, Malcolm) with tyrannical power (Macbeth). Duncan&apos;s power is characterised by generosity, trust, and love &mdash; his subjects fight willingly for him. He embodies the &ldquo;king-becoming graces&rdquo; that Malcolm later lists: &ldquo;justice, verity, temperance, stableness, / Bounty, perseverance, mercy, lowliness.&rdquo; Macbeth&apos;s power, by contrast, is maintained through fear, secrecy, and violence. As king, he is suspicious, isolated, and unable to enjoy his position: &ldquo;To be thus is nothing, but to be safely thus.&rdquo; The play reflects Jacobean beliefs about the divine right of kings: a king appointed by God rules justly, while a usurper brings chaos to the entire natural order. The unnatural events (storms, horses eating each other, an owl killing a falcon) reflect the cosmic consequences of illegitimate power. Macbeth&apos;s reign is described as a disease: Caithness says Scotland &ldquo;bleeds&rdquo; under him, and Malcolm is the &ldquo;medicine&rdquo; to cure it. Power gained through violence must be maintained through violence, creating a cycle that ultimately consumes the tyrant.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
@@ -747,11 +747,11 @@ export default function MacbethRevisionPage() {
 
               {/* Guilt */}
               <div>
-                <h3 className="text-lg font-bold text-gray-900 flex items-center gap-2">
+                <h3 className="text-lg font-bold text-foreground flex items-center gap-2">
                   <span className="h-3 w-3 rounded-full bg-indigo-500" />
                   Guilt and Conscience
                 </h3>
-                <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   Guilt in <em>Macbeth</em> is presented as an inescapable, corrosive force that manifests physically and psychologically. It appears before, during, and after the act of murder. Before Duncan&apos;s death, Macbeth hallucinates a dagger; immediately after, he hears voices saying he has &ldquo;murder&apos;d sleep,&rdquo; cannot say &ldquo;Amen,&rdquo; and sees his hands as so bloody they would turn the ocean red. Later, Banquo&apos;s ghost appears only to him, guilt made visible at the worst possible moment. Lady Macbeth, who initially seems immune to guilt (&ldquo;A little water clears us of this deed&rdquo;), is eventually destroyed by it &mdash; her sleepwalking scene shows her subconscious torment, obsessively washing imagined blood from her hands in prose that has replaced her earlier controlled verse. Blood is the play&apos;s central symbol of guilt: permanent, spreading, impossible to wash away. Shakespeare suggests that guilt is the natural moral response to sin and that it cannot be suppressed, only displaced. The Macbeths&apos; guilt trajectories are inverse: he begins guilt-ridden and becomes hardened (&ldquo;I am in blood / Stepp&apos;d in so far&rdquo;); she begins controlled and is ultimately overwhelmed. The doctor&apos;s verdict that Lady Macbeth needs &ldquo;the divine&rdquo; rather than &ldquo;the physician&rdquo; frames guilt as a spiritual condition &mdash; it cannot be cured by medicine, only by confession and repentance, which is impossible given the magnitude of their crimes.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
@@ -772,11 +772,11 @@ export default function MacbethRevisionPage() {
 
               {/* Supernatural */}
               <div>
-                <h3 className="text-lg font-bold text-gray-900 flex items-center gap-2">
+                <h3 className="text-lg font-bold text-foreground flex items-center gap-2">
                   <span className="h-3 w-3 rounded-full bg-violet-500" />
                   The Supernatural
                 </h3>
-                <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   The supernatural pervades the play from its opening scene. The witches, the prophecies, the apparitions, Banquo&apos;s ghost, the floating dagger, Lady Macbeth&apos;s invocation of spirits, and the unnatural darkness all contribute to an atmosphere of evil and moral disorder. For a Jacobean audience, the supernatural was not fictional &mdash; witchcraft was punishable by death, and James I was personally fascinated by demonology. Shakespeare uses the supernatural to explore whether evil comes from external forces or from within. The witches never tell Macbeth to kill anyone &mdash; they present possibilities, and he chooses to act. Lady Macbeth&apos;s invocation (&ldquo;Come, you spirits / That tend on mortal thoughts&rdquo;) is a deliberate, voluntary act of summoning evil. The dagger and Banquo&apos;s ghost are left ambiguous: are they genuine supernatural manifestations, or psychological projections of guilt? This ambiguity is central to the play&apos;s exploration of moral responsibility. The witches speak in trochaic tetrameter (stressed-unstressed, reversing the normal iambic pattern), which aurally marks them as agents of inversion &mdash; everything they touch is backwards, reversed, subverted.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
@@ -797,11 +797,11 @@ export default function MacbethRevisionPage() {
 
               {/* Masculinity */}
               <div>
-                <h3 className="text-lg font-bold text-gray-900 flex items-center gap-2">
+                <h3 className="text-lg font-bold text-foreground flex items-center gap-2">
                   <span className="h-3 w-3 rounded-full bg-blue-500" />
                   Masculinity and Gender
                 </h3>
-                <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   The play interrogates what it means to be a man. Lady Macbeth manipulates Macbeth by equating manhood with violence and fearlessness: &ldquo;When you durst do it, then you were a man.&rdquo; She herself seeks to reject femininity (&ldquo;unsex me here&rdquo;) to be capable of cruelty, viewing compassion and nurturing as female weaknesses incompatible with power. Macbeth internalises this toxic definition, using the same tactic on the murderers: &ldquo;Are you so gospell&apos;d / To pray for this good man?&rdquo; The witches blur gender boundaries entirely &mdash; Banquo notes they &ldquo;should be women, / And yet your beards forbid me to interpret / That you are so.&rdquo; However, Shakespeare offers an alternative model through Macduff, who insists he &ldquo;must also feel it as a man&rdquo; &mdash; genuine masculinity includes emotional sensitivity, grief, and moral courage. The play suggests that the equation of manhood with violence is destructive and ultimately self-defeating: Lady Macbeth&apos;s attempt to suppress her femininity leads to her mental collapse; Macbeth&apos;s pursuit of &ldquo;manly&rdquo; violence leads to tyranny and death. Lady Macduff&apos;s maternal love and her son&apos;s innocence offer a contrasting domestic sphere that Macbeth&apos;s violence destroys but cannot erase.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
@@ -822,11 +822,11 @@ export default function MacbethRevisionPage() {
 
               {/* Loyalty / Betrayal */}
               <div>
-                <h3 className="text-lg font-bold text-gray-900 flex items-center gap-2">
+                <h3 className="text-lg font-bold text-foreground flex items-center gap-2">
                   <span className="h-3 w-3 rounded-full bg-teal-500" />
                   Loyalty and Betrayal
                 </h3>
-                <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   The play is structured around acts of betrayal that escalate in severity. The original Thane of Cawdor betrays Duncan; Macbeth then repeats this pattern on a grander scale. Macbeth betrays his king (regicide), his guest (violating the sacred bond of hospitality), his friend (Banquo&apos;s murder), and his country (tyranny). In Act 1, Scene 7, Macbeth himself catalogues the bonds he would violate: he is Duncan&apos;s &ldquo;kinsman,&rdquo; &ldquo;subject,&rdquo; and &ldquo;host&rdquo; &mdash; all relationships that should protect Duncan, not endanger him. In contrast, characters like Macduff and Malcolm demonstrate loyalty to Scotland even at enormous personal cost &mdash; Macduff loses his entire family. Banquo is loyal to his conscience but arguably disloyal to Duncan by keeping silent about his suspicions. The play shows that betrayal of natural bonds &mdash; between king and subject, host and guest, friend and friend &mdash; unleashes chaos throughout the natural and political order. Loyalty, when restored through Malcolm&apos;s accession, brings peace and order back to Scotland. Duncan&apos;s own reflection &mdash; &ldquo;He was a gentleman on whom I built / An absolute trust&rdquo; &mdash; is repeated ironically as Macbeth, the new Cawdor, enters plotting a greater betrayal.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
@@ -847,11 +847,11 @@ export default function MacbethRevisionPage() {
 
               {/* Fate vs Free Will */}
               <div>
-                <h3 className="text-lg font-bold text-gray-900 flex items-center gap-2">
+                <h3 className="text-lg font-bold text-foreground flex items-center gap-2">
                   <span className="h-3 w-3 rounded-full bg-pink-500" />
                   Fate vs Free Will
                 </h3>
-                <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   This is perhaps the play&apos;s most debated theme. The witches prophesy that Macbeth will be king, but they never say he must murder Duncan to achieve it. Banquo receives similar prophecies but does not commit murder &mdash; proving that the prophecy alone is not sufficient cause. This suggests free will: Macbeth <em>chooses</em> his path. He even acknowledges this initially: &ldquo;If chance will have me king, why, chance may crown me / Without my stir.&rdquo; Yet he abandons this rational position almost immediately. The prophecies all come true, and Macbeth echoes the witches&apos; language (&ldquo;So foul and fair a day&rdquo;) before even meeting them, suggesting a predestined connection. The Act 4 apparitions are technically truthful but deliberately misleading &mdash; this equivocation gives Macbeth false confidence while fulfilling the letter of prophecy. Shakespeare deliberately leaves the question unresolved, creating dramatic tension. The play can be read as an argument for free will (Macbeth makes choices at every stage and could have chosen differently) or as a tragedy of fate (the witches seem to know the future with certainty). Most productively, it explores the space between: Macbeth may be predisposed to ambition, but he still makes conscious decisions that he knows to be wrong.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
@@ -872,11 +872,11 @@ export default function MacbethRevisionPage() {
 
               {/* Appearance vs Reality */}
               <div>
-                <h3 className="text-lg font-bold text-gray-900 flex items-center gap-2">
-                  <span className="h-3 w-3 rounded-full bg-gray-500" />
+                <h3 className="text-lg font-bold text-foreground flex items-center gap-2">
+                  <span className="h-3 w-3 rounded-full bg-muted0" />
                   Appearance vs Reality
                 </h3>
-                <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   &ldquo;Fair is foul, and foul is fair&rdquo; &mdash; the play&apos;s opening line announces that nothing is what it seems. This theme operates at every level. Macbeth appears to be a loyal thane while planning murder; Lady Macbeth advises him to &ldquo;look like the innocent flower, / But be the serpent under&apos;t.&rdquo; Duncan cannot read the Thane of Cawdor&apos;s treachery in his face &mdash; nor can he read Macbeth&apos;s, despite the ironic repetition. The witches&apos; prophecies are technically true but deliberately misleading: Birnam Wood does &ldquo;come&rdquo; to Dunsinane as camouflage, and Macbeth is killed by a man &ldquo;not of woman born&rdquo; through Caesarean section. Lady Macbeth plays the gracious hostess while plotting regicide. Macbeth performs grief at Duncan&apos;s death while being the murderer. The porter&apos;s reference to &ldquo;equivocators&rdquo; links this theme to the Gunpowder Plot, where Catholic conspirators used equivocation (technically true but misleading statements). The play is full of dramatic irony, where the audience sees truths that characters cannot. Even self-knowledge is unreliable: Lady Macbeth believes she can handle guilt (&ldquo;a little water&rdquo;); Macbeth believes the prophecies make him invincible. The theme reinforces the idea that evil distorts reality and that surfaces cannot be trusted in a world where moral order has been disrupted.
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
@@ -901,14 +901,14 @@ export default function MacbethRevisionPage() {
         {/* ────────────────────────────────────────── KEY QUOTATIONS */}
         <div id="key-quotations">
           <Section id="quotations" title="Key Quotations Bank" badge="34 Quotes" colour="bg-amber-600">
-            <p className="text-sm text-gray-500 mb-4">
+            <p className="text-sm text-muted-foreground mb-4">
               Every quotation below is tagged by character and theme. Each one can be used in multiple essay types.
               These are the most important quotations to memorise for a closed-book exam.
             </p>
 
             {/* By Character */}
             <div className="space-y-6">
-              <h3 className="font-bold text-[#1A5276] text-base border-b border-gray-200 pb-2">Organised by Character</h3>
+              <h3 className="font-bold text-foreground text-base border-b border-border pb-2">Organised by Character</h3>
 
               <SubSection id="quotes-macbeth" title="Macbeth (10 quotes)" defaultOpen>
                 <div className="grid gap-3 sm:grid-cols-2">
@@ -1048,47 +1048,47 @@ export default function MacbethRevisionPage() {
               </SubSection>
 
               {/* By Theme cross-reference */}
-              <h3 className="font-bold text-[#1A5276] text-base border-b border-gray-200 pb-2 mt-8">Quick Theme Cross-Reference</h3>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4 overflow-x-auto">
-                <p className="text-sm text-gray-500 mb-3">Use this table to find quotations by theme for your essay planning.</p>
+              <h3 className="font-bold text-foreground text-base border-b border-border pb-2 mt-8">Quick Theme Cross-Reference</h3>
+              <div className="rounded-lg border border-border bg-muted p-4 overflow-x-auto">
+                <p className="text-sm text-muted-foreground mb-3">Use this table to find quotations by theme for your essay planning.</p>
                 <table className="w-full text-sm text-left">
                   <thead>
                     <tr className="border-b border-gray-300">
-                      <th className="py-2 pr-4 font-bold text-gray-800">Theme</th>
-                      <th className="py-2 font-bold text-gray-800">Key Quotations</th>
+                      <th className="py-2 pr-4 font-bold text-foreground">Theme</th>
+                      <th className="py-2 font-bold text-foreground">Key Quotations</th>
                     </tr>
                   </thead>
-                  <tbody className="text-gray-700">
-                    <tr className="border-b border-gray-200">
+                  <tbody className="text-muted-foreground">
+                    <tr className="border-b border-border">
                       <td className="py-2 pr-4 font-semibold text-red-700 whitespace-nowrap">Ambition</td>
                       <td className="py-2">&ldquo;Vaulting ambition, which o&apos;erleaps itself&rdquo; &bull; &ldquo;Stars, hide your fires&rdquo; &bull; &ldquo;Art not without ambition, but without the illness&rdquo; &bull; &ldquo;All hail, Macbeth, that shalt be king&rdquo; &bull; &ldquo;Tomorrow, and tomorrow&rdquo;</td>
                     </tr>
-                    <tr className="border-b border-gray-200">
+                    <tr className="border-b border-border">
                       <td className="py-2 pr-4 font-semibold text-amber-700 whitespace-nowrap">Power</td>
                       <td className="py-2">&ldquo;To be thus is nothing, but to be safely thus&rdquo; &bull; &ldquo;Full of scorpions is my mind&rdquo; &bull; &ldquo;I am in blood stepp&apos;d in so far&rdquo; &bull; &ldquo;Bleed, bleed, poor country&rdquo; &bull; &ldquo;Something wicked this way comes&rdquo;</td>
                     </tr>
-                    <tr className="border-b border-gray-200">
+                    <tr className="border-b border-border">
                       <td className="py-2 pr-4 font-semibold text-indigo-700 whitespace-nowrap">Guilt</td>
                       <td className="py-2">&ldquo;Will all great Neptune&apos;s ocean wash this blood?&rdquo; &bull; &ldquo;Macbeth does murder sleep&rdquo; &bull; &ldquo;Out, damned spot!&rdquo; &bull; &ldquo;All the perfumes of Arabia&rdquo; &bull; &ldquo;A little water clears us&rdquo; &bull; &ldquo;Had he not resembled my father&rdquo;</td>
                     </tr>
-                    <tr className="border-b border-gray-200">
+                    <tr className="border-b border-border">
                       <td className="py-2 pr-4 font-semibold text-violet-700 whitespace-nowrap">Supernatural</td>
                       <td className="py-2">&ldquo;Fair is foul, and foul is fair&rdquo; &bull; &ldquo;Is this a dagger?&rdquo; &bull; &ldquo;Come, you spirits, unsex me here&rdquo; &bull; &ldquo;Double, double toil and trouble&rdquo; &bull; &ldquo;So foul and fair a day&rdquo;</td>
                     </tr>
-                    <tr className="border-b border-gray-200">
+                    <tr className="border-b border-border">
                       <td className="py-2 pr-4 font-semibold text-blue-700 whitespace-nowrap">Gender</td>
                       <td className="py-2">&ldquo;When you durst do it, then you were a man&rdquo; &bull; &ldquo;Unsex me here&rdquo; &bull; &ldquo;Take my milk for gall&rdquo; &bull; &ldquo;I must also feel it as a man&rdquo; &bull; &ldquo;I dare do all that may become a man&rdquo;</td>
                     </tr>
-                    <tr className="border-b border-gray-200">
+                    <tr className="border-b border-border">
                       <td className="py-2 pr-4 font-semibold text-teal-700 whitespace-nowrap">Loyalty</td>
                       <td className="py-2">&ldquo;He&apos;s here in double trust&rdquo; &bull; &ldquo;Instruments of darkness tell us truths&rdquo; &bull; &ldquo;Thou play&apos;dst most foully&rdquo; &bull; &ldquo;An absolute trust&rdquo; &bull; &ldquo;O horror, horror, horror!&rdquo;</td>
                     </tr>
-                    <tr className="border-b border-gray-200">
+                    <tr className="border-b border-border">
                       <td className="py-2 pr-4 font-semibold text-pink-700 whitespace-nowrap">Fate vs Free Will</td>
                       <td className="py-2">&ldquo;If chance will have me king&rdquo; &bull; &ldquo;Come what come may&rdquo; &bull; &ldquo;All hail, Macbeth, that shalt be king&rdquo; &bull; &ldquo;When the battle&apos;s lost and won&rdquo; &bull; &ldquo;Restrain in me the cursed thoughts&rdquo;</td>
                     </tr>
                     <tr>
-                      <td className="py-2 pr-4 font-semibold text-gray-700 whitespace-nowrap">Appearance vs Reality</td>
+                      <td className="py-2 pr-4 font-semibold text-muted-foreground whitespace-nowrap">Appearance vs Reality</td>
                       <td className="py-2">&ldquo;Fair is foul&rdquo; &bull; &ldquo;Look like the innocent flower&rdquo; &bull; &ldquo;No art to find the mind&apos;s construction&rdquo; &bull; &ldquo;So foul and fair a day&rdquo; &bull; &ldquo;A little water clears us&rdquo; &bull; &ldquo;Stars, hide your fires&rdquo;</td>
                     </tr>
                   </tbody>
@@ -1103,43 +1103,43 @@ export default function MacbethRevisionPage() {
           <Section id="context" title="Historical Context" colour="bg-cyan-600">
             <div className="space-y-6">
               <div>
-                <h3 className="font-bold text-gray-900">King James I and the Union of Crowns</h3>
-                <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+                <h3 className="font-bold text-foreground">King James I and the Union of Crowns</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   <em>Macbeth</em> was written c.1606, shortly after James VI of Scotland became James I of England in 1603 (the Union of the Crowns). Shakespeare&apos;s company, the Lord Chamberlain&apos;s Men, was renamed the King&apos;s Men under James&apos;s patronage. The play is carefully designed to flatter the new king: Banquo, the ancestor of the Stuart line, is presented as noble and virtuous (unlike in Shakespeare&apos;s historical source, Holinshed&apos;s <em>Chronicles</em>, where Banquo was Macbeth&apos;s accomplice). The show of eight kings in Act 4 represents James&apos;s royal lineage stretching into the future. Setting the play in Scotland was itself a compliment to James&apos;s heritage. The play may have been first performed before James at Hampton Court in 1606.
                 </p>
               </div>
 
               <div>
-                <h3 className="font-bold text-gray-900">The Gunpowder Plot (1605)</h3>
-                <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+                <h3 className="font-bold text-foreground">The Gunpowder Plot (1605)</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   Just a year before <em>Macbeth</em> was written, Guy Fawkes and Catholic conspirators attempted to blow up Parliament and kill James I on 5 November 1605. The plot&apos;s discovery led to national anxiety about treason and regicide. <em>Macbeth</em> dramatises these fears: the murder of a righteous king by a trusted subject, the equivocation (double-meaning language) used by the conspirators (the porter scene explicitly references &ldquo;equivocators&rdquo;, a direct allusion to Father Henry Garnet, who was tried for his role in the plot and who defended the practice of equivocation), and the ultimate punishment of traitors. The play reinforced the message that regicide is the ultimate sin, punished by God and nature.
                 </p>
               </div>
 
               <div>
-                <h3 className="font-bold text-gray-900">The Divine Right of Kings</h3>
-                <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+                <h3 className="font-bold text-foreground">The Divine Right of Kings</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   James I strongly promoted the belief that kings were appointed by God and answerable only to God. He wrote <em>The True Law of Free Monarchies</em> (1598) to articulate this doctrine. Killing a king was therefore not just murder but a sin against God&apos;s will &mdash; an act of sacrilege. This is why Duncan&apos;s murder is presented as so catastrophic: it is an act against the divine order. Macbeth recognises this himself in 1.7: Duncan&apos;s virtues &ldquo;will plead like angels, trumpet-tongued, against / The deep damnation of his taking-off.&rdquo; The natural disturbances that follow (darkness, storms, animals behaving unnaturally) reflect the belief that regicide disrupts the entire cosmos. Macbeth&apos;s torment and downfall serve as proof that God will punish those who violate the divine right. Malcolm&apos;s restoration at the end represents God&apos;s order being re-established.
                 </p>
               </div>
 
               <div>
-                <h3 className="font-bold text-gray-900">The Great Chain of Being</h3>
-                <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+                <h3 className="font-bold text-foreground">The Great Chain of Being</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   Elizabethan and Jacobean society believed in a strict hierarchy ordained by God: God &rarr; Angels &rarr; King &rarr; Nobles &rarr; Commoners &rarr; Animals &rarr; Plants &rarr; Minerals. Every being had its fixed place, and disrupting this chain at any level caused chaos throughout. Macbeth&apos;s regicide breaks the chain at a fundamental level, which is why nature responds with chaos: horses eating each other (animals above acting like animals below), an owl killing a falcon (a lower bird killing a higher one &mdash; mirroring the thane killing the king), and unnatural darkness during the day. Lady Macbeth&apos;s attempt to &ldquo;unsex&rdquo; herself is also a violation of the chain &mdash; she tries to transcend her ordained gender role, which a Jacobean audience would see as an act of rebellion against divine order. The restoration of order under Malcolm represents the chain being repaired and the natural hierarchy re-established.
                 </p>
               </div>
 
               <div>
-                <h3 className="font-bold text-gray-900">Witchcraft and James I</h3>
-                <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+                <h3 className="font-bold text-foreground">Witchcraft and James I</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   James I wrote <em>Daemonologie</em> (1597), a treatise on witchcraft, and personally attended witch trials &mdash; most notably the North Berwick witch trials of 1590, where supposed witches were accused of attempting to murder James by raising storms at sea. The Witchcraft Act of 1604 made practising witchcraft punishable by death. Shakespeare&apos;s witches would have been genuinely terrifying to the original audience &mdash; not the Halloween figures we think of today, but real agents of Satan. The play validates James&apos;s beliefs by presenting witchcraft as real and dangerous, while also flattering the king&apos;s expertise on the subject. The ambiguity of the witches&apos; power (do they cause events or merely predict them?) reflects contemporary debates about the nature and extent of demonic influence. Their use of equivocation &mdash; technically true statements that mislead &mdash; connects them to the Catholic conspirators of the Gunpowder Plot.
                 </p>
               </div>
 
               <div>
-                <h3 className="font-bold text-gray-900">Attitudes to Gender in Jacobean England</h3>
-                <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+                <h3 className="font-bold text-foreground">Attitudes to Gender in Jacobean England</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   Women in Jacobean society were expected to be obedient, nurturing, and subordinate to men. The dominant view, rooted in both classical philosophy and Christian theology, held that women were naturally weaker in reason and more susceptible to temptation (a legacy of the Eve narrative). Lady Macbeth&apos;s rejection of these roles (&ldquo;unsex me here&rdquo;) would have been deeply shocking to the original audience. Her invocation of spirits aligns her with the witches and suggests that transgressing &ldquo;natural&rdquo; femininity requires supernatural assistance &mdash; it is, by implication, unnatural and diabolical. Her eventual mental collapse can be read as Shakespeare suggesting that such transgression leads to destruction &mdash; though modern audiences may read it more sympathetically, as the consequence of being forced into an impossible position in a patriarchal world. The witches, too, blur gender boundaries: Banquo notes they &ldquo;should be women, / And yet your beards forbid me to interpret / That you are so.&rdquo; Lady Macduff, by contrast, represents the maternal ideal; her murder therefore represents Macbeth&apos;s attack on natural womanhood itself.
                 </p>
               </div>
@@ -1150,28 +1150,28 @@ export default function MacbethRevisionPage() {
         {/* ────────────────────────────────────────── ESSAY PLANNING */}
         <div id="essay-planning">
           <Section id="essay-planning" title="Essay Planning Templates" badge="5 Questions" colour="bg-orange-600">
-            <p className="text-sm text-gray-500 mb-4">
+            <p className="text-sm text-muted-foreground mb-4">
               These templates show you how to structure responses to the most common exam questions. Adapt them to fit the specific question wording.
               Each template uses the structure: <strong>Point &rarr; Evidence (quotation) &rarr; Analysis (technique + effect) &rarr; Context (link to Jacobean period)</strong>.
             </p>
             <div className="space-y-6">
               {/* Q1 Ambition */}
               <SubSection id="essay-ambition" title="&ldquo;How does Shakespeare present ambition in Macbeth?&rdquo;">
-                <div className="space-y-3 text-sm text-gray-700">
-                  <div className="rounded bg-gray-50 p-3">
-                    <p className="font-semibold text-gray-800">Paragraph 1: Ambition as latent desire</p>
+                <div className="space-y-3 text-sm text-muted-foreground">
+                  <div className="rounded bg-muted p-3">
+                    <p className="font-semibold text-foreground">Paragraph 1: Ambition as latent desire</p>
                     <p>Macbeth&apos;s ambition exists before the witches &mdash; his aside &ldquo;Stars, hide your fires&rdquo; (1.4) reveals dark desires before Lady Macbeth&apos;s influence. The imperative verb &ldquo;hide&rdquo; shows concealment of something that already exists. Link to the witches as catalysts, not creators of ambition. Context: the witches represent a Jacobean fear that temptation lurks everywhere.</p>
                   </div>
-                  <div className="rounded bg-gray-50 p-3">
-                    <p className="font-semibold text-gray-800">Paragraph 2: Lady Macbeth as the driver</p>
+                  <div className="rounded bg-muted p-3">
+                    <p className="font-semibold text-foreground">Paragraph 2: Lady Macbeth as the driver</p>
                     <p>Lady Macbeth&apos;s ambition is arguably stronger &mdash; &ldquo;unsex me here&rdquo; (1.5) shows her willing to sacrifice her very nature for power. Her manipulation of Macbeth&apos;s masculinity (1.7) is the tactic that overcomes his moral objections. She identifies that he has ambition but lacks &ldquo;the illness should attend it&rdquo; &mdash; &ldquo;illness&rdquo; admits the moral cost.</p>
                   </div>
-                  <div className="rounded bg-gray-50 p-3">
-                    <p className="font-semibold text-gray-800">Paragraph 3: Ambition as self-destructive</p>
+                  <div className="rounded bg-muted p-3">
+                    <p className="font-semibold text-foreground">Paragraph 3: Ambition as self-destructive</p>
                     <p>&ldquo;Vaulting ambition, which o&apos;erleaps itself&rdquo; (1.7) &mdash; the horse-riding metaphor foreshadows the fall. By Act 3, ambition has trapped him: &ldquo;I am in blood / Stepp&apos;d in so far&rdquo; &mdash; the river of blood image suggests he is drowning in the consequences. Context: link to the Great Chain of Being and the dangers of overreaching one&apos;s ordained position.</p>
                   </div>
-                  <div className="rounded bg-gray-50 p-3">
-                    <p className="font-semibold text-gray-800">Paragraph 4: The consequences &mdash; nihilism</p>
+                  <div className="rounded bg-muted p-3">
+                    <p className="font-semibold text-foreground">Paragraph 4: The consequences &mdash; nihilism</p>
                     <p>&ldquo;Tomorrow, and tomorrow, and tomorrow&rdquo; (5.5) &mdash; ambition has led to meaninglessness, not fulfilment. Life &ldquo;signif[ies] nothing.&rdquo; The plodding monosyllables enact the tedium. Context: cautionary tale for a Jacobean audience about the self-defeating nature of unchecked ambition. Contrast with Malcolm, whose ambition for Scotland is legitimate and restorative.</p>
                   </div>
                 </div>
@@ -1179,21 +1179,21 @@ export default function MacbethRevisionPage() {
 
               {/* Q2 Guilt */}
               <SubSection id="essay-guilt" title="&ldquo;How does Shakespeare present guilt in Macbeth?&rdquo;">
-                <div className="space-y-3 text-sm text-gray-700">
-                  <div className="rounded bg-gray-50 p-3">
-                    <p className="font-semibold text-gray-800">Paragraph 1: Guilt before the act</p>
+                <div className="space-y-3 text-sm text-muted-foreground">
+                  <div className="rounded bg-muted p-3">
+                    <p className="font-semibold text-foreground">Paragraph 1: Guilt before the act</p>
                     <p>Even before the murder, Macbeth&apos;s guilt manifests in the hallucinated dagger (2.1): &ldquo;Is this a dagger which I see before me?&rdquo; His conscience warns him. Analyse: is the dagger supernatural or psychological? Either way, it shows his mind rejecting what his hand is about to do. Link to the supernatural theme and Jacobean beliefs about guilty visions.</p>
                   </div>
-                  <div className="rounded bg-gray-50 p-3">
-                    <p className="font-semibold text-gray-800">Paragraph 2: Immediate guilt &mdash; the blood imagery</p>
+                  <div className="rounded bg-muted p-3">
+                    <p className="font-semibold text-foreground">Paragraph 2: Immediate guilt &mdash; the blood imagery</p>
                     <p>&ldquo;Will all great Neptune&apos;s ocean wash this blood / Clean from my hand?&rdquo; (2.2). Guilt as permanent, oceanic, contaminating. The shift from Latinate diction (&ldquo;multitudinous seas incarnadine&rdquo;) to blunt monosyllables (&ldquo;making the green one red&rdquo;) mirrors his mind oscillating between intellectual distance and visceral horror. Contrast with Lady Macbeth&apos;s dismissive &ldquo;a little water.&rdquo;</p>
                   </div>
-                  <div className="rounded bg-gray-50 p-3">
-                    <p className="font-semibold text-gray-800">Paragraph 3: Guilt made visible &mdash; the ghost</p>
+                  <div className="rounded bg-muted p-3">
+                    <p className="font-semibold text-foreground">Paragraph 3: Guilt made visible &mdash; the ghost</p>
                     <p>Banquo&apos;s ghost (3.4) externalises Macbeth&apos;s guilt at the worst possible moment &mdash; during a public banquet. Only he can see it, suggesting it is psychological. The ghost disrupts the performance of kingship, threatening to expose his crimes. Lady Macbeth tries to control the situation but her power over him is fading.</p>
                   </div>
-                  <div className="rounded bg-gray-50 p-3">
-                    <p className="font-semibold text-gray-800">Paragraph 4: Lady Macbeth&apos;s delayed guilt</p>
+                  <div className="rounded bg-muted p-3">
+                    <p className="font-semibold text-foreground">Paragraph 4: Lady Macbeth&apos;s delayed guilt</p>
                     <p>The sleepwalking scene (5.1): &ldquo;Out, damned spot!&rdquo; Her guilt surfaces in her unconscious. Prose replaces verse &mdash; her controlled language has collapsed with her controlled mind. She relives multiple murders in fragments. The doctor says she needs &ldquo;the divine&rdquo; (a priest), not &ldquo;the physician&rdquo; &mdash; guilt is framed as spiritual sickness. Context: link to religious belief in damnation and the impossibility of forgiveness without repentance.</p>
                   </div>
                 </div>
@@ -1201,21 +1201,21 @@ export default function MacbethRevisionPage() {
 
               {/* Q3 Supernatural */}
               <SubSection id="essay-supernatural" title="&ldquo;How does Shakespeare present the supernatural in Macbeth?&rdquo;">
-                <div className="space-y-3 text-sm text-gray-700">
-                  <div className="rounded bg-gray-50 p-3">
-                    <p className="font-semibold text-gray-800">Paragraph 1: The witches as agents of chaos</p>
+                <div className="space-y-3 text-sm text-muted-foreground">
+                  <div className="rounded bg-muted p-3">
+                    <p className="font-semibold text-foreground">Paragraph 1: The witches as agents of chaos</p>
                     <p>&ldquo;Fair is foul&rdquo; (1.1) &mdash; they invert moral order from the opening line. Their trochaic tetrameter reverses the normal iambic rhythm, linguistically marking them as agents of inversion. The paradoxes and pathetic fallacy (&ldquo;thunder and lightning&rdquo;) create atmosphere. Context: James I&apos;s <em>Daemonologie</em>, genuine contemporary fear of witchcraft, and the Witchcraft Act of 1604.</p>
                   </div>
-                  <div className="rounded bg-gray-50 p-3">
-                    <p className="font-semibold text-gray-800">Paragraph 2: Lady Macbeth&apos;s invocation</p>
+                  <div className="rounded bg-muted p-3">
+                    <p className="font-semibold text-foreground">Paragraph 2: Lady Macbeth&apos;s invocation</p>
                     <p>&ldquo;Come, you spirits / That tend on mortal thoughts&rdquo; (1.5) &mdash; she deliberately summons supernatural evil. This is an act of will, not victimhood. The imperative &ldquo;Come&rdquo; shows agency. She allies herself with dark forces voluntarily, aligning herself with the witches. Context: link to Jacobean fears that humans could invite demonic possession through their own moral weakness.</p>
                   </div>
-                  <div className="rounded bg-gray-50 p-3">
-                    <p className="font-semibold text-gray-800">Paragraph 3: Hallucinations &mdash; supernatural or psychological?</p>
+                  <div className="rounded bg-muted p-3">
+                    <p className="font-semibold text-foreground">Paragraph 3: Hallucinations &mdash; supernatural or psychological?</p>
                     <p>The dagger (2.1) and Banquo&apos;s ghost (3.4) &mdash; Shakespeare deliberately leaves it ambiguous. Macbeth asks the dagger &ldquo;Art thou not, fatal vision, sensible to feeling as to sight?&rdquo; &mdash; he cannot determine its reality. Are these genuine supernatural events or projections of guilt? This ambiguity is the play&apos;s richest interpretive question and allows multiple readings.</p>
                   </div>
-                  <div className="rounded bg-gray-50 p-3">
-                    <p className="font-semibold text-gray-800">Paragraph 4: The apparitions and equivocation</p>
+                  <div className="rounded bg-muted p-3">
+                    <p className="font-semibold text-foreground">Paragraph 4: The apparitions and equivocation</p>
                     <p>Act 4&apos;s apparitions give literally true but misleading prophecies (&ldquo;none of woman born&rdquo; = Caesarean; Birnam Wood &ldquo;moves&rdquo; as camouflage). The supernatural does not lie but does not tell the whole truth &mdash; equivocation. Context: link this directly to the Gunpowder Plot, where Catholic conspirators used equivocation, and to the porter&apos;s reference to equivocators in 2.3.</p>
                   </div>
                 </div>
@@ -1223,21 +1223,21 @@ export default function MacbethRevisionPage() {
 
               {/* Q4 Masculinity */}
               <SubSection id="essay-masculinity" title="&ldquo;How does Shakespeare present masculinity in Macbeth?&rdquo;">
-                <div className="space-y-3 text-sm text-gray-700">
-                  <div className="rounded bg-gray-50 p-3">
-                    <p className="font-semibold text-gray-800">Paragraph 1: Masculinity as violence (Lady Macbeth&apos;s view)</p>
+                <div className="space-y-3 text-sm text-muted-foreground">
+                  <div className="rounded bg-muted p-3">
+                    <p className="font-semibold text-foreground">Paragraph 1: Masculinity as violence (Lady Macbeth&apos;s view)</p>
                     <p>&ldquo;When you durst do it, then you were a man&rdquo; (1.7). Lady Macbeth equates manhood with the courage to kill. Her &ldquo;unsex me here&rdquo; (1.5) implies femininity = weakness, masculinity = capacity for cruelty. She even claims she would &ldquo;dash&apos;d the brains out&rdquo; of her own nursing baby if she had sworn to do so. This toxic definition is the play&apos;s most destructive idea.</p>
                   </div>
-                  <div className="rounded bg-gray-50 p-3">
-                    <p className="font-semibold text-gray-800">Paragraph 2: Macbeth&apos;s rejected definition</p>
+                  <div className="rounded bg-muted p-3">
+                    <p className="font-semibold text-foreground">Paragraph 2: Macbeth&apos;s rejected definition</p>
                     <p>&ldquo;I dare do all that may become a man; / Who dares do more is none&rdquo; (1.7) &mdash; Macbeth briefly offers a healthier view: manhood means propriety, not excess. He is also echoing Lady Macbeth&apos;s tactic with the murderers in 3.1, showing how the toxic definition propagates. Context: link to Jacobean expectations of warrior masculinity and the martial culture that valued violence.</p>
                   </div>
-                  <div className="rounded bg-gray-50 p-3">
-                    <p className="font-semibold text-gray-800">Paragraph 3: Macduff&apos;s alternative masculinity</p>
+                  <div className="rounded bg-muted p-3">
+                    <p className="font-semibold text-foreground">Paragraph 3: Macduff&apos;s alternative masculinity</p>
                     <p>&ldquo;I must also feel it as a man&rdquo; (4.3) &mdash; Macduff offers a masculinity that includes emotional depth, vulnerability, and grief. He corrects Malcolm&apos;s &ldquo;Dispute it like a man&rdquo; by adding that feeling is part of being a man. He is still a warrior &mdash; he ultimately kills Macbeth &mdash; but he defines manhood through humanity, not just action. This is Shakespeare&apos;s positive model.</p>
                   </div>
-                  <div className="rounded bg-gray-50 p-3">
-                    <p className="font-semibold text-gray-800">Paragraph 4: The consequences of toxic masculinity</p>
+                  <div className="rounded bg-muted p-3">
+                    <p className="font-semibold text-foreground">Paragraph 4: The consequences of toxic masculinity</p>
                     <p>Lady Macbeth&apos;s rejection of femininity leads to her destruction (the sleepwalking scene). Macbeth&apos;s pursuit of &ldquo;manly&rdquo; violence leads to tyranny, isolation, and death. Lady Macduff&apos;s murder represents the destruction of the maternal, domestic sphere by toxic masculine violence. Shakespeare&apos;s message: equating masculinity exclusively with violence is self-destructive for individuals and society.</p>
                   </div>
                 </div>
@@ -1245,21 +1245,21 @@ export default function MacbethRevisionPage() {
 
               {/* Q5 Lady Macbeth character */}
               <SubSection id="essay-ladymacbeth" title="&ldquo;How does Shakespeare present Lady Macbeth as a powerful character?&rdquo;">
-                <div className="space-y-3 text-sm text-gray-700">
-                  <div className="rounded bg-gray-50 p-3">
-                    <p className="font-semibold text-gray-800">Paragraph 1: Power through language and will</p>
+                <div className="space-y-3 text-sm text-muted-foreground">
+                  <div className="rounded bg-muted p-3">
+                    <p className="font-semibold text-foreground">Paragraph 1: Power through language and will</p>
                     <p>Lady Macbeth commands spirits (&ldquo;Come, you spirits&rdquo;, 1.5), commands her husband (&ldquo;look like the innocent flower&rdquo;), and commands the situation after the murder. Her language is full of imperatives. She is the planner: Macbeth hesitates, she drives the action. Context: this would have been deeply transgressive for a Jacobean audience &mdash; a wife commanding and manipulating her husband inverts the expected gender hierarchy.</p>
                   </div>
-                  <div className="rounded bg-gray-50 p-3">
-                    <p className="font-semibold text-gray-800">Paragraph 2: Power through manipulation of masculinity</p>
+                  <div className="rounded bg-muted p-3">
+                    <p className="font-semibold text-foreground">Paragraph 2: Power through manipulation of masculinity</p>
                     <p>&ldquo;When you durst do it, then you were a man&rdquo; (1.7) &mdash; she understands that masculinity is Macbeth&apos;s psychological weak point and exploits it. She also uses shock tactics: claiming she would murder her own baby. She controls the situation after the murder when Macbeth panics, taking the daggers back and framing the guards. &ldquo;A little water clears us&rdquo; &mdash; she reduces murder to a practical problem.</p>
                   </div>
-                  <div className="rounded bg-gray-50 p-3">
-                    <p className="font-semibold text-gray-800">Paragraph 3: The loss of power</p>
+                  <div className="rounded bg-muted p-3">
+                    <p className="font-semibold text-foreground">Paragraph 3: The loss of power</p>
                     <p>By Act 3, Macbeth acts without consulting her (&ldquo;Be innocent of the knowledge, dearest chuck&rdquo;). She is sidelined, left in the dark. At the banquet, she tries to control Macbeth&apos;s reaction to the ghost but fails &mdash; her influence is waning. &ldquo;Nought&apos;s had, all&apos;s spent&rdquo; (3.2) &mdash; she recognises their power has brought no fulfilment. Her power was always dependent on Macbeth&apos;s compliance, and as he becomes more autonomous in evil, she becomes less relevant.</p>
                   </div>
-                  <div className="rounded bg-gray-50 p-3">
-                    <p className="font-semibold text-gray-800">Paragraph 4: Power destroyed by guilt</p>
+                  <div className="rounded bg-muted p-3">
+                    <p className="font-semibold text-foreground">Paragraph 4: Power destroyed by guilt</p>
                     <p>The sleepwalking scene (5.1) shows complete reversal: the woman who commanded spirits now cannot command her own mind. Prose replaces verse. &ldquo;Out, damned spot!&rdquo; &mdash; she cannot wash away what she once dismissed with &ldquo;a little water.&rdquo; She probably dies by suicide &mdash; the ultimate loss of control. Context: a Jacobean audience might see her destruction as divine punishment for transgressing her natural role; modern readers might see it as the inevitable cost of suppressing her humanity.</p>
                   </div>
                 </div>
@@ -1271,16 +1271,16 @@ export default function MacbethRevisionPage() {
         {/* ────────────────────────────────────────── EXAM BOARD TIPS */}
         <div id="exam-board-tips">
           <Section id="exam-boards" title="Exam Board Comparison" colour="bg-primary">
-            <p className="text-sm text-gray-500 mb-4">
+            <p className="text-sm text-muted-foreground mb-4">
               Different exam boards examine <em>Macbeth</em> in slightly different ways. Understanding your specific board&apos;s requirements can gain you marks.
             </p>
             <div className="space-y-6">
               <div className="rounded-lg border border-purple-200 bg-purple-50/50 p-4">
-                <h3 className="font-bold text-gray-900 flex items-center gap-2">
+                <h3 className="font-bold text-foreground flex items-center gap-2">
                   <span className="rounded bg-[#40197F] px-2 py-0.5 text-xs font-bold text-white">AQA</span>
                   AQA GCSE English Literature (8702) &mdash; Paper 1, Section A
                 </h3>
-                <ul className="mt-3 space-y-2 text-sm text-gray-700">
+                <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                   <li>&bull; <strong>Format:</strong> You receive a printed extract (roughly 20-30 lines) and a question asking how Shakespeare presents a given theme or character. You must write about the extract <em>and then</em> the wider play.</li>
                   <li>&bull; <strong>Marks:</strong> 30 marks + 4 for SPaG = 34 total. Recommended time: ~50-55 minutes.</li>
                   <li>&bull; <strong>AOs tested:</strong> AO1 (response and quotation), AO2 (language/structure/form analysis), AO3 (context).</li>
@@ -1291,11 +1291,11 @@ export default function MacbethRevisionPage() {
               </div>
 
               <div className="rounded-lg border border-red-200 bg-red-50/50 p-4">
-                <h3 className="font-bold text-gray-900 flex items-center gap-2">
+                <h3 className="font-bold text-foreground flex items-center gap-2">
                   <span className="rounded bg-[#E5231B] px-2 py-0.5 text-xs font-bold text-white">Edexcel</span>
                   Edexcel GCSE English Literature (1ET0) &mdash; Paper 1, Section A
                 </h3>
-                <ul className="mt-3 space-y-2 text-sm text-gray-700">
+                <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                   <li>&bull; <strong>Format:</strong> Extract-based question asking how Shakespeare presents a theme or character. You must refer to the extract and the play as a whole.</li>
                   <li>&bull; <strong>Marks:</strong> 40 marks total. Recommended time: ~55 minutes.</li>
                   <li>&bull; <strong>AOs tested:</strong> AO1 (ideas and quotation), AO2 (writer&apos;s methods), AO3 (context), AO4 (SPaG &mdash; integrated into the mark, not separate).</li>
@@ -1306,11 +1306,11 @@ export default function MacbethRevisionPage() {
               </div>
 
               <div className="rounded-lg border border-green-200 bg-green-50/50 p-4">
-                <h3 className="font-bold text-gray-900 flex items-center gap-2">
+                <h3 className="font-bold text-foreground flex items-center gap-2">
                   <span className="rounded bg-[#00A651] px-2 py-0.5 text-xs font-bold text-white">CAIE</span>
                   Cambridge IGCSE Literature (0475 / 0992) &mdash; Paper 1 (Drama)
                 </h3>
-                <ul className="mt-3 space-y-2 text-sm text-gray-700">
+                <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                   <li>&bull; <strong>Format:</strong> Two question options per text: (a) a passage-based question with a printed extract, OR (b) an essay question on the whole text. You choose <strong>one</strong>.</li>
                   <li>&bull; <strong>Marks:</strong> 25 marks per question. Total paper time: 1hr 30min for two texts.</li>
                   <li>&bull; <strong>Key difference:</strong> CAIE rewards <em>personal response</em> and close reading above all. There is no separate AO for context &mdash; you are assessed on your ability to respond to the text itself. Use context only where it genuinely enhances your reading.</li>
@@ -1321,11 +1321,11 @@ export default function MacbethRevisionPage() {
               </div>
 
               <div className="rounded-lg border border-blue-200 bg-blue-50/50 p-4">
-                <h3 className="font-bold text-gray-900 flex items-center gap-2">
+                <h3 className="font-bold text-foreground flex items-center gap-2">
                   <span className="rounded bg-[#2A7DE1] px-2 py-0.5 text-xs font-bold text-white">OCR</span>
                   OCR GCSE English Literature (J352) &mdash; Shakespeare Component
                 </h3>
-                <ul className="mt-3 space-y-2 text-sm text-gray-700">
+                <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                   <li>&bull; <strong>Format:</strong> Extract-based question on a theme, character, or dramatic moment. You explore the extract and connect it to the wider play.</li>
                   <li>&bull; <strong>Marks:</strong> 40 marks. Part of a larger paper.</li>
                   <li>&bull; <strong>AOs tested:</strong> AO1 (response), AO2 (analysis of methods), AO3 (context), AO4 (SPaG &mdash; integrated).</li>
@@ -1336,42 +1336,42 @@ export default function MacbethRevisionPage() {
               </div>
 
               {/* Comparison summary */}
-              <div className="rounded-lg border border-gray-200 bg-white p-4">
-                <h3 className="font-bold text-gray-900 mb-3">At a Glance: Key Differences</h3>
+              <div className="rounded-lg border border-border bg-card p-4">
+                <h3 className="font-bold text-foreground mb-3">At a Glance: Key Differences</h3>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm text-left">
                     <thead>
                       <tr className="border-b-2 border-gray-300">
-                        <th className="py-2 pr-3 font-bold text-gray-800"></th>
+                        <th className="py-2 pr-3 font-bold text-foreground"></th>
                         <th className="py-2 px-3 font-bold text-[#40197F]">AQA</th>
                         <th className="py-2 px-3 font-bold text-[#E5231B]">Edexcel</th>
                         <th className="py-2 px-3 font-bold text-[#00A651]">CAIE</th>
                         <th className="py-2 px-3 font-bold text-[#2A7DE1]">OCR</th>
                       </tr>
                     </thead>
-                    <tbody className="text-gray-700">
-                      <tr className="border-b border-gray-200">
+                    <tbody className="text-muted-foreground">
+                      <tr className="border-b border-border">
                         <td className="py-2 pr-3 font-semibold">Marks</td>
                         <td className="py-2 px-3">34 (30+4)</td>
                         <td className="py-2 px-3">40</td>
                         <td className="py-2 px-3">25</td>
                         <td className="py-2 px-3">40</td>
                       </tr>
-                      <tr className="border-b border-gray-200">
+                      <tr className="border-b border-border">
                         <td className="py-2 pr-3 font-semibold">Format</td>
                         <td className="py-2 px-3">Extract + wider play</td>
                         <td className="py-2 px-3">Extract + wider play</td>
                         <td className="py-2 px-3">Extract OR essay</td>
                         <td className="py-2 px-3">Extract + wider play</td>
                       </tr>
-                      <tr className="border-b border-gray-200">
+                      <tr className="border-b border-border">
                         <td className="py-2 pr-3 font-semibold">Open/Closed</td>
                         <td className="py-2 px-3">Closed</td>
                         <td className="py-2 px-3">Closed</td>
                         <td className="py-2 px-3">Varies</td>
                         <td className="py-2 px-3">Closed</td>
                       </tr>
-                      <tr className="border-b border-gray-200">
+                      <tr className="border-b border-border">
                         <td className="py-2 pr-3 font-semibold">SPaG</td>
                         <td className="py-2 px-3">Separate (4)</td>
                         <td className="py-2 px-3">Integrated</td>
@@ -1395,17 +1395,17 @@ export default function MacbethRevisionPage() {
 
         {/* ────────────────────────────────────────── PRACTICE QUESTIONS */}
         <div id="practice-questions">
-          <Section id="practice" title="Practice Questions" badge="4 Questions" colour="bg-[#2E86C1]">
-            <p className="text-sm text-gray-500 mb-6">
+          <Section id="practice" title="Practice Questions" badge="4 Questions" colour="bg-primary">
+            <p className="text-sm text-muted-foreground mb-6">
               Write your answer below each question and receive AI-powered feedback tailored to GCSE English Literature mark schemes.
               Aim for at least 150 words per response to get meaningful feedback.
             </p>
             <div className="space-y-8">
-              <div className="rounded-lg border border-gray-200 p-4">
-                <h3 className="font-bold text-gray-900 mb-1">Question 1</h3>
-                <p className="text-sm text-gray-700 mb-3">
+              <div className="rounded-lg border border-border p-4">
+                <h3 className="font-bold text-foreground mb-1">Question 1</h3>
+                <p className="text-sm text-muted-foreground mb-3">
                   How does Shakespeare present the theme of ambition in <em>Macbeth</em>? Refer to the whole play in your answer.
-                  <span className="ml-2 text-xs font-semibold text-gray-500">[30 marks]</span>
+                  <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
                 </p>
                 <AITextArea
                   placeholder="Write your essay response here..."
@@ -1418,11 +1418,11 @@ export default function MacbethRevisionPage() {
                 />
               </div>
 
-              <div className="rounded-lg border border-gray-200 p-4">
-                <h3 className="font-bold text-gray-900 mb-1">Question 2</h3>
-                <p className="text-sm text-gray-700 mb-3">
+              <div className="rounded-lg border border-border p-4">
+                <h3 className="font-bold text-foreground mb-1">Question 2</h3>
+                <p className="text-sm text-muted-foreground mb-3">
                   How does Shakespeare use the character of Lady Macbeth to explore the theme of guilt?
-                  <span className="ml-2 text-xs font-semibold text-gray-500">[30 marks]</span>
+                  <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
                 </p>
                 <AITextArea
                   placeholder="Write your essay response here..."
@@ -1435,11 +1435,11 @@ export default function MacbethRevisionPage() {
                 />
               </div>
 
-              <div className="rounded-lg border border-gray-200 p-4">
-                <h3 className="font-bold text-gray-900 mb-1">Question 3</h3>
-                <p className="text-sm text-gray-700 mb-3">
+              <div className="rounded-lg border border-border p-4">
+                <h3 className="font-bold text-foreground mb-1">Question 3</h3>
+                <p className="text-sm text-muted-foreground mb-3">
                   How does Shakespeare present the supernatural in <em>Macbeth</em>? Refer to the role of the witches and other supernatural elements in your answer.
-                  <span className="ml-2 text-xs font-semibold text-gray-500">[30 marks]</span>
+                  <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
                 </p>
                 <AITextArea
                   placeholder="Write your essay response here..."
@@ -1452,11 +1452,11 @@ export default function MacbethRevisionPage() {
                 />
               </div>
 
-              <div className="rounded-lg border border-gray-200 p-4">
-                <h3 className="font-bold text-gray-900 mb-1">Question 4</h3>
-                <p className="text-sm text-gray-700 mb-3">
+              <div className="rounded-lg border border-border p-4">
+                <h3 className="font-bold text-foreground mb-1">Question 4</h3>
+                <p className="text-sm text-muted-foreground mb-3">
                   How does Shakespeare present the relationship between Macbeth and Lady Macbeth throughout the play?
-                  <span className="ml-2 text-xs font-semibold text-gray-500">[30 marks]</span>
+                  <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
                 </p>
                 <AITextArea
                   placeholder="Write your essay response here..."

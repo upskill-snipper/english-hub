@@ -42,11 +42,11 @@ export default function OCRLitPaper2Page() {
         <section aria-labelledby="structure-heading">
           <h2
             id="structure-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Paper Structure
           </h2>
-          <div className="mt-4 space-y-4 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>
               Paper 2 covers Shakespeare and poetry. It is split into three
               sections:
@@ -55,10 +55,10 @@ export default function OCRLitPaper2Page() {
               <table className="mt-2 w-full border-collapse text-sm">
                 <thead>
                   <tr className="border-b-2 border-primary/20 text-left">
-                    <th className="py-3 pr-4 font-semibold text-gray-900">Section</th>
-                    <th className="py-3 pr-4 font-semibold text-gray-900">Focus</th>
-                    <th className="py-3 pr-4 font-semibold text-gray-900">Marks</th>
-                    <th className="py-3 font-semibold text-gray-900">Time Guide</th>
+                    <th className="py-3 pr-4 font-semibold text-foreground">Section</th>
+                    <th className="py-3 pr-4 font-semibold text-foreground">Focus</th>
+                    <th className="py-3 pr-4 font-semibold text-foreground">Marks</th>
+                    <th className="py-3 font-semibold text-foreground">Time Guide</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-100">
@@ -95,20 +95,20 @@ export default function OCRLitPaper2Page() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Section A: Shakespeare ─────────────────────────── */}
         <section aria-labelledby="shakespeare-heading">
           <h2
             id="shakespeare-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Section A: Shakespeare
           </h2>
 
-          <div className="mt-6 space-y-6 text-gray-700 leading-relaxed">
+          <div className="mt-6 space-y-6 text-muted-foreground leading-relaxed">
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 Set Plays
               </h3>
               <p className="mt-2">
@@ -126,7 +126,7 @@ export default function OCRLitPaper2Page() {
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 Question Format
               </h3>
               <p className="mt-2">
@@ -153,7 +153,7 @@ export default function OCRLitPaper2Page() {
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 Analysing Shakespeare&rsquo;s Language
               </h3>
               <p className="mt-2">
@@ -162,8 +162,8 @@ export default function OCRLitPaper2Page() {
               </p>
 
               <div className="mt-4 space-y-4">
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                  <h4 className="font-semibold text-gray-900">Imagery</h4>
+                <div className="rounded-lg border border-border bg-muted p-5">
+                  <h4 className="font-semibold text-foreground">Imagery</h4>
                   <p className="mt-2 text-sm">
                     Shakespeare uses vivid imagery — metaphors, similes, and
                     personification — to convey complex ideas. In
@@ -175,8 +175,8 @@ export default function OCRLitPaper2Page() {
                   </p>
                 </div>
 
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                  <h4 className="font-semibold text-gray-900">Verse and Prose</h4>
+                <div className="rounded-lg border border-border bg-muted p-5">
+                  <h4 className="font-semibold text-foreground">Verse and Prose</h4>
                   <p className="mt-2 text-sm">
                     Shakespeare deliberately switches between verse (poetry)
                     and prose (ordinary speech). Verse is typically used by
@@ -187,8 +187,8 @@ export default function OCRLitPaper2Page() {
                   </p>
                 </div>
 
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                  <h4 className="font-semibold text-gray-900">Iambic Pentameter</h4>
+                <div className="rounded-lg border border-border bg-muted p-5">
+                  <h4 className="font-semibold text-foreground">Iambic Pentameter</h4>
                   <p className="mt-2 text-sm">
                     Shakespeare&rsquo;s verse typically follows iambic
                     pentameter &mdash; ten syllables per line with alternating
@@ -199,8 +199,8 @@ export default function OCRLitPaper2Page() {
                   </p>
                 </div>
 
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                  <h4 className="font-semibold text-gray-900">Soliloquies and Asides</h4>
+                <div className="rounded-lg border border-border bg-muted p-5">
+                  <h4 className="font-semibold text-foreground">Soliloquies and Asides</h4>
                   <p className="mt-2 text-sm">
                     A <strong>soliloquy</strong> is a speech delivered alone on
                     stage, revealing a character&rsquo;s inner thoughts. An
@@ -211,8 +211,8 @@ export default function OCRLitPaper2Page() {
                   </p>
                 </div>
 
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                  <h4 className="font-semibold text-gray-900">Dramatic Irony</h4>
+                <div className="rounded-lg border border-border bg-muted p-5">
+                  <h4 className="font-semibold text-foreground">Dramatic Irony</h4>
                   <p className="mt-2 text-sm">
                     When the audience knows something that characters on stage
                     do not. This creates tension, suspense, and engagement.
@@ -240,20 +240,20 @@ export default function OCRLitPaper2Page() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Section B: Poetry anthology ────────────────────── */}
         <section aria-labelledby="anthology-heading">
           <h2
             id="anthology-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Section B: Poetry Anthology (Comparison)
           </h2>
 
-          <div className="mt-6 space-y-6 text-gray-700 leading-relaxed">
+          <div className="mt-6 space-y-6 text-muted-foreground leading-relaxed">
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 What You Need to Do
               </h3>
               <p className="mt-2">
@@ -271,13 +271,13 @@ export default function OCRLitPaper2Page() {
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 How to Compare Poems Effectively
               </h3>
 
               <div className="mt-4 space-y-4">
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                  <h4 className="font-semibold text-gray-900">
+                <div className="rounded-lg border border-border bg-muted p-5">
+                  <h4 className="font-semibold text-foreground">
                     1. Choose Your Comparison Poem Wisely
                   </h4>
                   <p className="mt-2 text-sm">
@@ -288,8 +288,8 @@ export default function OCRLitPaper2Page() {
                   </p>
                 </div>
 
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                  <h4 className="font-semibold text-gray-900">
+                <div className="rounded-lg border border-border bg-muted p-5">
+                  <h4 className="font-semibold text-foreground">
                     2. Integrate Comparison Throughout
                   </h4>
                   <p className="mt-2 text-sm">
@@ -301,8 +301,8 @@ export default function OCRLitPaper2Page() {
                   </p>
                 </div>
 
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                  <h4 className="font-semibold text-gray-900">
+                <div className="rounded-lg border border-border bg-muted p-5">
+                  <h4 className="font-semibold text-foreground">
                     3. Compare Methods, Not Just Themes
                   </h4>
                   <p className="mt-2 text-sm">
@@ -313,8 +313,8 @@ export default function OCRLitPaper2Page() {
                   </p>
                 </div>
 
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                  <h4 className="font-semibold text-gray-900">
+                <div className="rounded-lg border border-border bg-muted p-5">
+                  <h4 className="font-semibold text-foreground">
                     4. Analyse Language Closely
                   </h4>
                   <p className="mt-2 text-sm">
@@ -330,11 +330,11 @@ export default function OCRLitPaper2Page() {
 
             {/* Model comparison paragraph */}
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 Model Comparison Paragraph
               </h3>
-              <div className="mt-3 rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-                <p className="text-sm italic text-gray-700">
+              <div className="mt-3 rounded-lg border border-border bg-card p-5 shadow-md">
+                <p className="text-sm italic text-muted-foreground">
                   &ldquo;Both poets explore the destructive nature of conflict,
                   yet they do so through contrasting methods. In [Poem A], the
                   poet uses the extended metaphor of a storm to convey the
@@ -355,20 +355,20 @@ export default function OCRLitPaper2Page() {
 
             {/* Structure for comparison */}
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 Recommended Essay Structure
               </h3>
               <div className="mt-3 space-y-3">
                 <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                   <p className="font-semibold text-primary">Introduction</p>
-                  <p className="mt-1 text-sm text-gray-700">
+                  <p className="mt-1 text-sm text-muted-foreground">
                     Introduce both poems and state the key similarity and/or
                     difference in how they approach the theme.
                   </p>
                 </div>
                 <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                   <p className="font-semibold text-primary">Paragraph 1: First point of comparison</p>
-                  <p className="mt-1 text-sm text-gray-700">
+                  <p className="mt-1 text-sm text-muted-foreground">
                     Compare how both poets present the theme using a specific
                     method (e.g., imagery, tone). Close language analysis of
                     both poems.
@@ -376,21 +376,21 @@ export default function OCRLitPaper2Page() {
                 </div>
                 <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                   <p className="font-semibold text-primary">Paragraph 2: Second point of comparison</p>
-                  <p className="mt-1 text-sm text-gray-700">
+                  <p className="mt-1 text-sm text-muted-foreground">
                     Compare a different method (e.g., structure, form,
                     perspective). Continue to analyse specific language choices.
                   </p>
                 </div>
                 <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                   <p className="font-semibold text-primary">Paragraph 3: Third point of comparison</p>
-                  <p className="mt-1 text-sm text-gray-700">
+                  <p className="mt-1 text-sm text-muted-foreground">
                     Consider the overall effect or message of each poem. How do
                     they differ in their conclusions about the theme?
                   </p>
                 </div>
                 <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                   <p className="font-semibold text-primary">Conclusion</p>
-                  <p className="mt-1 text-sm text-gray-700">
+                  <p className="mt-1 text-sm text-muted-foreground">
                     Which poem do you find more effective and why? Offer a
                     final evaluative judgement.
                   </p>
@@ -400,20 +400,20 @@ export default function OCRLitPaper2Page() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Section C: Unseen poetry ───────────────────────── */}
         <section aria-labelledby="unseen-heading">
           <h2
             id="unseen-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Section C: Unseen Poetry
           </h2>
 
-          <div className="mt-6 space-y-6 text-gray-700 leading-relaxed">
+          <div className="mt-6 space-y-6 text-muted-foreground leading-relaxed">
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 What to Expect
               </h3>
               <p className="mt-2">
@@ -425,7 +425,7 @@ export default function OCRLitPaper2Page() {
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 Step-by-Step Approach to Unseen Poetry
               </h3>
               <ol className="ml-6 mt-3 list-decimal space-y-3">
@@ -464,66 +464,66 @@ export default function OCRLitPaper2Page() {
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 Key Poetic Terms to Know
               </h3>
               <div className="mt-3 grid gap-3 sm:grid-cols-2">
-                <div className="rounded border border-gray-200 bg-gray-50 p-3">
-                  <p className="text-sm font-semibold text-gray-900">Enjambment</p>
-                  <p className="mt-1 text-xs text-gray-600">
+                <div className="rounded border border-border bg-muted p-3">
+                  <p className="text-sm font-semibold text-foreground">Enjambment</p>
+                  <p className="mt-1 text-xs text-muted-foreground">
                     A sentence or phrase that runs over from one line to the
                     next without a pause. Creates flow, momentum, or a sense
                     of urgency.
                   </p>
                 </div>
-                <div className="rounded border border-gray-200 bg-gray-50 p-3">
-                  <p className="text-sm font-semibold text-gray-900">Caesura</p>
-                  <p className="mt-1 text-xs text-gray-600">
+                <div className="rounded border border-border bg-muted p-3">
+                  <p className="text-sm font-semibold text-foreground">Caesura</p>
+                  <p className="mt-1 text-xs text-muted-foreground">
                     A pause in the middle of a line, often created by
                     punctuation. Creates a dramatic break or shift in thought.
                   </p>
                 </div>
-                <div className="rounded border border-gray-200 bg-gray-50 p-3">
-                  <p className="text-sm font-semibold text-gray-900">Stanza</p>
-                  <p className="mt-1 text-xs text-gray-600">
+                <div className="rounded border border-border bg-muted p-3">
+                  <p className="text-sm font-semibold text-foreground">Stanza</p>
+                  <p className="mt-1 text-xs text-muted-foreground">
                     A group of lines forming a unit within a poem (the poetic
                     equivalent of a paragraph). Stanza breaks can signal
                     shifts in time, tone, or focus.
                   </p>
                 </div>
-                <div className="rounded border border-gray-200 bg-gray-50 p-3">
-                  <p className="text-sm font-semibold text-gray-900">Volta</p>
-                  <p className="mt-1 text-xs text-gray-600">
+                <div className="rounded border border-border bg-muted p-3">
+                  <p className="text-sm font-semibold text-foreground">Volta</p>
+                  <p className="mt-1 text-xs text-muted-foreground">
                     A turn or shift in a poem&rsquo;s argument, mood, or
                     subject. Common in sonnets (often at line 9 or the final
                     couplet).
                   </p>
                 </div>
-                <div className="rounded border border-gray-200 bg-gray-50 p-3">
-                  <p className="text-sm font-semibold text-gray-900">Free verse</p>
-                  <p className="mt-1 text-xs text-gray-600">
+                <div className="rounded border border-border bg-muted p-3">
+                  <p className="text-sm font-semibold text-foreground">Free verse</p>
+                  <p className="mt-1 text-xs text-muted-foreground">
                     Poetry without a regular rhyme scheme or metre. Can suggest
                     freedom, chaos, or a conversational tone.
                   </p>
                 </div>
-                <div className="rounded border border-gray-200 bg-gray-50 p-3">
-                  <p className="text-sm font-semibold text-gray-900">Rhyme scheme</p>
-                  <p className="mt-1 text-xs text-gray-600">
+                <div className="rounded border border-border bg-muted p-3">
+                  <p className="text-sm font-semibold text-foreground">Rhyme scheme</p>
+                  <p className="mt-1 text-xs text-muted-foreground">
                     The pattern of rhyming words at the end of lines (ABAB,
                     ABBA, etc.). Can create rhythm, connection, or tension
                     when broken.
                   </p>
                 </div>
-                <div className="rounded border border-gray-200 bg-gray-50 p-3">
-                  <p className="text-sm font-semibold text-gray-900">Persona</p>
-                  <p className="mt-1 text-xs text-gray-600">
+                <div className="rounded border border-border bg-muted p-3">
+                  <p className="text-sm font-semibold text-foreground">Persona</p>
+                  <p className="mt-1 text-xs text-muted-foreground">
                     The voice or character adopted by the poet. The speaker of
                     the poem is not necessarily the poet themselves.
                   </p>
                 </div>
-                <div className="rounded border border-gray-200 bg-gray-50 p-3">
-                  <p className="text-sm font-semibold text-gray-900">Tone</p>
-                  <p className="mt-1 text-xs text-gray-600">
+                <div className="rounded border border-border bg-muted p-3">
+                  <p className="text-sm font-semibold text-foreground">Tone</p>
+                  <p className="mt-1 text-xs text-muted-foreground">
                     The attitude or feeling conveyed by the poem (angry,
                     nostalgic, bitter, celebratory, mournful, etc.). Can shift
                     within a poem.

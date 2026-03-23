@@ -23,16 +23,16 @@ function Section({
 }) {
   const [open, setOpen] = useState(defaultOpen);
   return (
-    <div className="rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden">
+    <div className="rounded-xl border border-border bg-card shadow-md overflow-hidden">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="flex w-full items-center justify-between px-5 py-4 text-left transition-colors hover:bg-gray-50"
+        className="flex w-full items-center justify-between px-5 py-4 text-left transition-colors hover:bg-muted"
         aria-expanded={open}
         aria-controls={`section-${id}`}
       >
         <div className="flex items-center gap-3">
           <span className={`h-2.5 w-2.5 rounded-full ${colour}`} />
-          <h2 className="text-lg font-bold text-gray-900">{title}</h2>
+          <h2 className="text-lg font-bold text-foreground">{title}</h2>
           {badge && (
             <span className="rounded-full bg-accent-50 px-2.5 py-0.5 text-xs font-semibold text-accent-600">
               {badge}
@@ -40,14 +40,14 @@ function Section({
           )}
         </div>
         <svg
-          className={`h-5 w-5 text-gray-400 transition-transform ${open ? "rotate-180" : ""}`}
+          className={`h-5 w-5 text-muted-foreground transition-transform ${open ? "rotate-180" : ""}`}
           fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"
         >
           <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
         </svg>
       </button>
       {open && (
-        <div id={`section-${id}`} className="border-t border-gray-100 px-5 py-5">
+        <div id={`section-${id}`} className="border-t border-border px-5 py-5">
           {children}
         </div>
       )}
@@ -69,8 +69,8 @@ function ContextExample({
   return (
     <div className="rounded-lg border-l-4 border-accent bg-accent-50/40 p-4">
       <p className="text-xs font-bold uppercase tracking-wider text-accent-600">{text}</p>
-      <p className="mt-1 text-sm font-semibold text-gray-800">{point}</p>
-      <p className="mt-2 text-sm text-gray-700">{analysis}</p>
+      <p className="mt-1 text-sm font-semibold text-foreground">{point}</p>
+      <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
   );
 }
@@ -86,7 +86,7 @@ function TimelineEvent({ year, event }: { year: string; event: string }) {
         </span>
         <div className="mt-1 h-full w-px bg-amber-200" />
       </div>
-      <p className="pb-6 text-sm text-gray-700">{event}</p>
+      <p className="pb-6 text-sm text-muted-foreground">{event}</p>
     </div>
   );
 }
@@ -99,7 +99,7 @@ export default function VictorianContextPage() {
 
       {/* Breadcrumb */}
       <nav className="mx-auto max-w-6xl px-4 pt-6 sm:px-6 lg:px-8" aria-label="Breadcrumb">
-        <ol className="flex flex-wrap items-center gap-1.5 text-sm text-gray-500">
+        <ol className="flex flex-wrap items-center gap-1.5 text-sm text-muted-foreground">
           {[
             { href: "/", label: "Home" },
             { href: "/resources", label: "Resources" },
@@ -107,7 +107,7 @@ export default function VictorianContextPage() {
           ].map((crumb, i) => (
             <li key={crumb.href} className="flex items-center gap-1.5">
               {i > 0 && (
-                <svg className="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <svg className="h-4 w-4 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
               )}
@@ -115,7 +115,7 @@ export default function VictorianContextPage() {
             </li>
           ))}
           <li className="flex items-center gap-1.5">
-            <svg className="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <svg className="h-4 w-4 text-muted-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
             </svg>
             <span className="font-medium text-primary">Victorian Era</span>
@@ -133,10 +133,10 @@ export default function VictorianContextPage() {
             <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-semibold text-accent-600">A Christmas Carol</span>
             <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-semibold text-accent-600">Jekyll &amp; Hyde</span>
           </div>
-          <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Victorian Era Context
           </h1>
-          <p className="mt-3 max-w-3xl text-lg text-gray-600 leading-relaxed">
+          <p className="mt-3 max-w-3xl text-lg text-muted-foreground leading-relaxed">
             The Victorian period transformed Britain from a rural society into the
             world&apos;s first industrial superpower. Understanding these seismic
             social changes is essential for analysing Dickens and Stevenson.
@@ -168,7 +168,7 @@ export default function VictorianContextPage() {
         <div className="mt-5 space-y-5">
           {/* Social Class System */}
           <Section id="class" title="The Social Class System" colour="bg-amber-600">
-            <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 Victorian society was rigidly hierarchical. The <strong>upper class</strong> (aristocracy
                 and landed gentry) held political power and vast wealth. The growing <strong>middle class</strong> --
@@ -192,7 +192,7 @@ export default function VictorianContextPage() {
 
           {/* Industrial Revolution */}
           <Section id="industry" title="The Industrial Revolution" colour="bg-gray-700">
-            <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 Britain was the birthplace of the Industrial Revolution. By the mid-nineteenth
                 century, factories, railways, and mass production had transformed the landscape.
@@ -215,7 +215,7 @@ export default function VictorianContextPage() {
 
           {/* Poor Laws and Workhouses */}
           <Section id="poor-laws" title="Poor Laws & Workhouses" colour="bg-amber-800">
-            <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 The <strong>1834 Poor Law Amendment Act</strong> was designed to reduce the cost of
                 looking after the poor. It established <strong>workhouses</strong> -- deliberately grim
@@ -240,7 +240,7 @@ export default function VictorianContextPage() {
 
           {/* Religion and Science */}
           <Section id="religion-science" title="Religion vs Science" colour="bg-violet-700">
-            <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 The Victorian era saw an unprecedented clash between <strong>religious faith</strong> and
                 <strong> scientific discovery</strong>. For centuries, Christianity had provided a stable
@@ -264,7 +264,7 @@ export default function VictorianContextPage() {
 
           {/* Gender Roles */}
           <Section id="gender" title="Gender Roles" colour="bg-rose-700">
-            <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 Victorian society enforced strict gender roles. Women were expected to embody the
                 <strong> &ldquo;Angel in the House&rdquo;</strong> ideal -- pure, domestic, obedient, and morally
@@ -286,7 +286,7 @@ export default function VictorianContextPage() {
 
           {/* Crime and Punishment */}
           <Section id="crime" title="Crime & Punishment" colour="bg-red-800">
-            <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 Victorian cities were plagued by crime, much of it driven by poverty. Overcrowded
                 slums, lack of sanitation, and the gin trade created breeding grounds for
@@ -320,9 +320,9 @@ export default function VictorianContextPage() {
                 { name: "Jack the Ripper", detail: "Unidentified serial killer (1888). The murders exposed the squalor of London's East End." },
                 { name: "Robert Louis Stevenson", detail: "Published Jekyll and Hyde (1886). Explored duality, repression, and the dark side of respectability." },
               ].map((fig) => (
-                <div key={fig.name} className="rounded-lg bg-gray-50 p-4">
-                  <h3 className="text-sm font-bold text-gray-900">{fig.name}</h3>
-                  <p className="mt-1 text-sm text-gray-600">{fig.detail}</p>
+                <div key={fig.name} className="rounded-lg bg-muted p-4">
+                  <h3 className="text-sm font-bold text-foreground">{fig.name}</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">{fig.detail}</p>
                 </div>
               ))}
             </div>
@@ -330,13 +330,13 @@ export default function VictorianContextPage() {
 
           {/* Linking Context to Texts */}
           <Section id="linking" title="How to Link Context to Your Texts" badge="Exam skill" colour="bg-accent">
-            <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+            <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 The key to top marks is <strong>embedding context into your analysis</strong>, not
                 bolting it on as a separate paragraph. Here are model examples showing how to do this.
               </p>
 
-              <h3 className="text-base font-bold text-gray-900 pt-2">A Christmas Carol</h3>
+              <h3 className="text-base font-bold text-foreground pt-2">A Christmas Carol</h3>
               <div className="space-y-3">
                 <ContextExample
                   text="A Christmas Carol"
@@ -350,7 +350,7 @@ export default function VictorianContextPage() {
                 />
               </div>
 
-              <h3 className="text-base font-bold text-gray-900 pt-4">Jekyll and Hyde</h3>
+              <h3 className="text-base font-bold text-foreground pt-4">Jekyll and Hyde</h3>
               <div className="space-y-3">
                 <ContextExample
                   text="Jekyll and Hyde"
@@ -365,8 +365,8 @@ export default function VictorianContextPage() {
               </div>
 
               <div className="mt-6 rounded-xl border border-accent-100 bg-accent-50/50 p-5">
-                <h3 className="text-sm font-bold text-gray-900">Sentence starters for context</h3>
-                <ul className="mt-3 space-y-2 text-sm text-gray-700">
+                <h3 className="text-sm font-bold text-foreground">Sentence starters for context</h3>
+                <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                     <span>&ldquo;A Victorian reader would have understood this as...&rdquo;</span>
@@ -393,7 +393,7 @@ export default function VictorianContextPage() {
         <div className="mt-10 flex flex-wrap gap-4">
           <Link
             href="/resources/context"
-            className="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-5 py-3 text-sm font-semibold text-gray-700 shadow-sm transition hover:bg-gray-50"
+            className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-5 py-3 text-sm font-semibold text-muted-foreground shadow-md transition hover:bg-muted"
           >
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
@@ -402,7 +402,7 @@ export default function VictorianContextPage() {
           </Link>
           <Link
             href="/resources/context/elizabethan-jacobean"
-            className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-primary/90"
+            className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-primary/90"
           >
             Elizabethan &amp; Jacobean
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">

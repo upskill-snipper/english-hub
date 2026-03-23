@@ -18,17 +18,17 @@ function Section({
 }) {
   const [open, setOpen] = useState(defaultOpen);
   return (
-    <div className="mb-4 rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden">
+    <div className="mb-4 rounded-xl border border-border bg-card shadow-md overflow-hidden">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between px-5 py-4 text-left hover:bg-gray-50 transition-colors"
+        className="flex w-full items-center justify-between px-5 py-4 text-left hover:bg-muted transition-colors"
       >
         <span className="flex items-center gap-3">
           <span className="text-xl">{icon}</span>
-          <span className="text-lg font-bold text-gray-900">{title}</span>
+          <span className="text-lg font-bold text-foreground">{title}</span>
         </span>
         <svg
-          className={`h-5 w-5 text-gray-400 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+          className={`h-5 w-5 text-muted-foreground transition-transform duration-200 ${open ? "rotate-180" : ""}`}
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={2}
@@ -37,35 +37,35 @@ function Section({
           <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
         </svg>
       </button>
-      {open && <div className="border-t border-gray-100 px-5 py-5">{children}</div>}
+      {open && <div className="border-t border-border px-5 py-5">{children}</div>}
     </div>
   );
 }
 
 function QuoteCard({ quote, speaker, analysis }: { quote: string; speaker?: string; analysis: string }) {
   return (
-    <div className="rounded-lg border-l-4 border-slate-400 bg-slate-50/50 p-4 mb-3">
+    <div className="rounded-lg border-l-4 border-slate-400 bg-muted/50 p-4 mb-3">
       <p className="text-sm font-semibold text-slate-900 italic">&ldquo;{quote}&rdquo;</p>
-      {speaker && <p className="mt-1 text-xs font-medium text-slate-600">&mdash; {speaker}</p>}
-      <p className="mt-2 text-sm text-gray-700">{analysis}</p>
+      {speaker && <p className="mt-1 text-xs font-medium text-muted-foreground">&mdash; {speaker}</p>}
+      <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
   );
 }
 
 function CharacterCard({ name, description }: { name: string; description: string }) {
   return (
-    <div className="rounded-lg border border-gray-200 bg-gray-50 p-4 mb-3">
+    <div className="rounded-lg border border-border bg-muted p-4 mb-3">
       <h4 className="font-bold text-primary">{name}</h4>
-      <p className="mt-1 text-sm text-gray-700 leading-relaxed">{description}</p>
+      <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{description}</p>
     </div>
   );
 }
 
 function ThemeCard({ title, description }: { title: string; description: string }) {
   return (
-    <div className="rounded-lg border border-slate-200 bg-slate-50/30 p-4 mb-3">
+    <div className="rounded-lg border border-border bg-muted/30 p-4 mb-3">
       <h4 className="font-bold text-slate-800">{title}</h4>
-      <p className="mt-1 text-sm text-gray-700 leading-relaxed">{description}</p>
+      <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{description}</p>
     </div>
   );
 }
@@ -78,7 +78,7 @@ export default function FrankensteinPage() {
       {/* Hero */}
       <div className="mb-8">
         <div className="flex flex-wrap items-center gap-3 mb-2">
-          <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-700 uppercase tracking-wider">
+          <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-muted-foreground uppercase tracking-wider">
             19th-Century Prose
           </span>
           <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-bold text-accent-600 uppercase tracking-wider">
@@ -91,11 +91,11 @@ export default function FrankensteinPage() {
             OCR
           </span>
         </div>
-        <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           Frankenstein; or, The Modern Prometheus
         </h1>
-        <p className="mt-1 text-lg text-gray-500">Mary Shelley, 1818 (revised 1831)</p>
-        <p className="mt-3 max-w-3xl text-gray-600 leading-relaxed">
+        <p className="mt-1 text-lg text-muted-foreground">Mary Shelley, 1818 (revised 1831)</p>
+        <p className="mt-3 max-w-3xl text-muted-foreground leading-relaxed">
           A pioneering Gothic novel exploring the consequences of unchecked scientific ambition.
           Victor Frankenstein creates a living being from dead matter but abandons it in horror,
           setting in motion a chain of tragedy. Shelley interrogates what it means to be human,
@@ -107,8 +107,8 @@ export default function FrankensteinPage() {
       <Section title="Volume-by-Volume Summary" icon="📖" defaultOpen>
         <div className="space-y-5">
           <div>
-            <h4 className="font-bold text-gray-900 text-base mb-2">Walton&apos;s Letters (Frame Narrative)</h4>
-            <p className="text-sm text-gray-700 leading-relaxed">
+            <h4 className="font-bold text-foreground text-base mb-2">Walton&apos;s Letters (Frame Narrative)</h4>
+            <p className="text-sm text-muted-foreground leading-relaxed">
               Captain Robert Walton writes letters to his sister Margaret Saville from a ship heading
               to the North Pole. He is driven by ambition to discover new lands. His crew rescue a
               half-frozen stranger &mdash; Victor Frankenstein &mdash; who begins to tell his story as a
@@ -118,11 +118,11 @@ export default function FrankensteinPage() {
           </div>
 
           <div>
-            <h4 className="font-bold text-gray-900 text-base mb-2">Volume I (Chapters 1&ndash;7)</h4>
+            <h4 className="font-bold text-foreground text-base mb-2">Volume I (Chapters 1&ndash;7)</h4>
             <div className="space-y-3">
               <div>
-                <h5 className="font-semibold text-gray-800">Chapters 1&ndash;2: Victor&apos;s Childhood</h5>
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <h5 className="font-semibold text-foreground">Chapters 1&ndash;2: Victor&apos;s Childhood</h5>
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   Victor describes his idyllic childhood in Geneva with his devoted parents, his adopted
                   sister Elizabeth Lavenza, and his friend Henry Clerval. He becomes fascinated by the
                   works of alchemists (Cornelius Agrippa, Paracelsus, Albertus Magnus), seeking the
@@ -131,8 +131,8 @@ export default function FrankensteinPage() {
                 </p>
               </div>
               <div>
-                <h5 className="font-semibold text-gray-800">Chapters 3&ndash;4: University and Obsession</h5>
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <h5 className="font-semibold text-foreground">Chapters 3&ndash;4: University and Obsession</h5>
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   Victor attends the University of Ingolstadt, where Professor Waldman inspires him to
                   study modern science. His mother dies of scarlet fever before he leaves. At university,
                   Victor becomes obsessed with discovering the &ldquo;cause of generation and life.&rdquo;
@@ -141,8 +141,8 @@ export default function FrankensteinPage() {
                 </p>
               </div>
               <div>
-                <h5 className="font-semibold text-gray-800">Chapter 5: The Creation</h5>
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <h5 className="font-semibold text-foreground">Chapter 5: The Creation</h5>
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   On a &ldquo;dreary night of November,&rdquo; Victor brings the Creature to life. Instead
                   of the beauty he envisioned, he sees a horrifying being with yellow skin, watery eyes,
                   and black lips. Victor flees in horror and disgust, abandoning his creation immediately.
@@ -151,8 +151,8 @@ export default function FrankensteinPage() {
                 </p>
               </div>
               <div>
-                <h5 className="font-semibold text-gray-800">Chapters 6&ndash;7: William&apos;s Murder</h5>
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <h5 className="font-semibold text-foreground">Chapters 6&ndash;7: William&apos;s Murder</h5>
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   Victor receives a letter from his father: his youngest brother William has been murdered.
                   Returning to Geneva, Victor sees the Creature near the murder scene and instantly
                   suspects it. However, the family&apos;s servant Justine Moritz is accused after a
@@ -165,11 +165,11 @@ export default function FrankensteinPage() {
           </div>
 
           <div>
-            <h4 className="font-bold text-gray-900 text-base mb-2">Volume II (Chapters 8&ndash;16)</h4>
+            <h4 className="font-bold text-foreground text-base mb-2">Volume II (Chapters 8&ndash;16)</h4>
             <div className="space-y-3">
               <div>
-                <h5 className="font-semibold text-gray-800">Chapters 8&ndash;10: The Creature Speaks</h5>
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <h5 className="font-semibold text-foreground">Chapters 8&ndash;10: The Creature Speaks</h5>
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   Victor retreats to the Alps to find solace. On the Mer de Glace glacier, the Creature
                   confronts him and demands to be heard. Despite his revulsion, Victor agrees to listen.
                   The Creature&apos;s narrative begins &mdash; the novel&apos;s innermost frame. This is a
@@ -178,8 +178,8 @@ export default function FrankensteinPage() {
                 </p>
               </div>
               <div>
-                <h5 className="font-semibold text-gray-800">Chapters 11&ndash;12: The Creature&apos;s Early Life</h5>
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <h5 className="font-semibold text-foreground">Chapters 11&ndash;12: The Creature&apos;s Early Life</h5>
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   The Creature describes his first experiences: sensory confusion, hunger, cold, and
                   discovering fire. He finds shelter beside a cottage inhabited by the De Lacey family.
                   Through a gap in the wall, he observes them and learns about human relationships,
@@ -188,8 +188,8 @@ export default function FrankensteinPage() {
                 </p>
               </div>
               <div>
-                <h5 className="font-semibold text-gray-800">Chapters 13&ndash;14: Education and the De Laceys</h5>
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <h5 className="font-semibold text-foreground">Chapters 13&ndash;14: Education and the De Laceys</h5>
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   Safie, a Turkish woman, arrives at the cottage. As the De Laceys teach her French,
                   the Creature learns alongside her. He reads <em>Paradise Lost</em>, <em>Plutarch&apos;s
                   Lives</em>, and <em>The Sorrows of Young Werther</em>, which shape his understanding of
@@ -199,8 +199,8 @@ export default function FrankensteinPage() {
                 </p>
               </div>
               <div>
-                <h5 className="font-semibold text-gray-800">Chapters 15&ndash;16: Rejection and Revenge</h5>
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <h5 className="font-semibold text-foreground">Chapters 15&ndash;16: Rejection and Revenge</h5>
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   The Creature approaches the blind old De Lacey, who responds kindly. But when Felix,
                   Agatha, and Safie return, Felix attacks the Creature, who flees. The De Laceys
                   abandon the cottage. This rejection &mdash; by the people he loved most &mdash; is the
@@ -212,11 +212,11 @@ export default function FrankensteinPage() {
           </div>
 
           <div>
-            <h4 className="font-bold text-gray-900 text-base mb-2">Volume III (Chapters 17&ndash;24)</h4>
+            <h4 className="font-bold text-foreground text-base mb-2">Volume III (Chapters 17&ndash;24)</h4>
             <div className="space-y-3">
               <div>
-                <h5 className="font-semibold text-gray-800">Chapters 17&ndash;18: The Bargain</h5>
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <h5 className="font-semibold text-foreground">Chapters 17&ndash;18: The Bargain</h5>
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   The Creature demands that Victor create a female companion. He promises to disappear
                   to South America if Victor complies. Victor reluctantly agrees, recognising the justice
                   of the Creature&apos;s request. He delays the work, travelling to England and Scotland
@@ -224,8 +224,8 @@ export default function FrankensteinPage() {
                 </p>
               </div>
               <div>
-                <h5 className="font-semibold text-gray-800">Chapters 19&ndash;20: Destruction of the Female</h5>
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <h5 className="font-semibold text-foreground">Chapters 19&ndash;20: Destruction of the Female</h5>
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   On a remote Orkney island, Victor begins building the female creature but is overcome
                   by fear &mdash; what if they breed and create a race of monsters? He destroys the
                   unfinished female as the Creature watches through the window. The Creature vows
@@ -234,8 +234,8 @@ export default function FrankensteinPage() {
                 </p>
               </div>
               <div>
-                <h5 className="font-semibold text-gray-800">Chapters 21&ndash;22: Clerval&apos;s Death and Marriage</h5>
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <h5 className="font-semibold text-foreground">Chapters 21&ndash;22: Clerval&apos;s Death and Marriage</h5>
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   The murder victim is Henry Clerval, strangled by the Creature. Victor suffers another
                   breakdown and is eventually acquitted. He returns to Geneva and marries Elizabeth,
                   despite the Creature&apos;s threat. On their wedding night, Victor patrols the house
@@ -244,8 +244,8 @@ export default function FrankensteinPage() {
                 </p>
               </div>
               <div>
-                <h5 className="font-semibold text-gray-800">Chapters 23&ndash;24: The Pursuit</h5>
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <h5 className="font-semibold text-foreground">Chapters 23&ndash;24: The Pursuit</h5>
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   Victor vows to hunt the Creature to the ends of the earth. The pursuit takes him
                   across Europe and into the Arctic, where Walton&apos;s ship rescues him. Victor dies
                   aboard the ship. The Creature appears, mourning over Victor&apos;s body. He expresses
@@ -469,9 +469,9 @@ export default function FrankensteinPage() {
       {/* Narrative Structure */}
       <Section title="Narrative Structure" icon="🔗">
         <div className="space-y-4">
-          <div className="rounded-lg bg-gray-50 p-4">
-            <h4 className="font-bold text-gray-900">Frame Narrative (Chinese Box Structure)</h4>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+          <div className="rounded-lg bg-muted p-4">
+            <h4 className="font-bold text-foreground">Frame Narrative (Chinese Box Structure)</h4>
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               The novel uses three nested narratives: Walton&apos;s letters contain Victor&apos;s story,
               which contains the Creature&apos;s story. This structure mirrors Russian dolls or Chinese boxes.
               The Creature&apos;s tale is at the innermost layer &mdash; the heart of the novel &mdash;
@@ -479,9 +479,9 @@ export default function FrankensteinPage() {
               Each narrator filters the story through their own biases and limitations.
             </p>
           </div>
-          <div className="rounded-lg bg-gray-50 p-4">
-            <h4 className="font-bold text-gray-900">Unreliable Narrators</h4>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+          <div className="rounded-lg bg-muted p-4">
+            <h4 className="font-bold text-foreground">Unreliable Narrators</h4>
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               All three narrators are unreliable. Victor self-pities and self-justifies. The Creature
               may exaggerate his innocence to gain sympathy. Walton is dazzled by Victor and may
               idealise him. The reader must actively evaluate each account, which complicates moral
@@ -489,18 +489,18 @@ export default function FrankensteinPage() {
               reflecting the novel&apos;s ambiguity about who is the real &ldquo;monster.&rdquo;
             </p>
           </div>
-          <div className="rounded-lg bg-gray-50 p-4">
-            <h4 className="font-bold text-gray-900">Epistolary Elements</h4>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+          <div className="rounded-lg bg-muted p-4">
+            <h4 className="font-bold text-foreground">Epistolary Elements</h4>
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               Walton&apos;s letters to Margaret Saville ground the fantastic events in a seemingly
               real correspondence. Letters also appear within the narrative (from Elizabeth, Alphonse,
               and others), creating a web of communication and miscommunication. The epistolary form
               was popular in 18th-century fiction and gives the novel an air of documentary authenticity.
             </p>
           </div>
-          <div className="rounded-lg bg-gray-50 p-4">
-            <h4 className="font-bold text-gray-900">Parallelism and Doubling</h4>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+          <div className="rounded-lg bg-muted p-4">
+            <h4 className="font-bold text-foreground">Parallelism and Doubling</h4>
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               The novel is structured around parallels: Victor and the Creature mirror each other;
               Walton mirrors Victor; the Creature&apos;s education mirrors Victor&apos;s. Both Victor
               and the Creature lose everything; both end up in the Arctic. These doublings reinforce
@@ -514,9 +514,9 @@ export default function FrankensteinPage() {
       {/* Gothic Conventions */}
       <Section title="Gothic Conventions" icon="🏚️">
         <div className="space-y-4">
-          <div className="rounded-lg bg-gray-50 p-4">
-            <h4 className="font-bold text-gray-900">Sublime Landscapes</h4>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+          <div className="rounded-lg bg-muted p-4">
+            <h4 className="font-bold text-foreground">Sublime Landscapes</h4>
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               The Alps, the Arctic, and the Scottish Highlands provide sublime settings that overwhelm
               human characters with their scale and power. These landscapes reflect the characters&apos;
               emotional states &mdash; Victor finds temporary peace in mountain scenery but is ultimately
@@ -524,27 +524,27 @@ export default function FrankensteinPage() {
               Shelley draws on Romantic ideas of the sublime as both beautiful and terrifying.
             </p>
           </div>
-          <div className="rounded-lg bg-gray-50 p-4">
-            <h4 className="font-bold text-gray-900">The Transgressive Scientist</h4>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+          <div className="rounded-lg bg-muted p-4">
+            <h4 className="font-bold text-foreground">The Transgressive Scientist</h4>
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               Victor is the Gothic &ldquo;overreacher&rdquo; who transgresses natural and divine boundaries.
               Like Faust, Prometheus, and later Dr Moreau, he seeks forbidden knowledge and pays the
               ultimate price. The laboratory scene &mdash; the &ldquo;dreary night of November,&rdquo;
               the candle guttering &mdash; creates a classic Gothic atmosphere of dread.
             </p>
           </div>
-          <div className="rounded-lg bg-gray-50 p-4">
-            <h4 className="font-bold text-gray-900">The Monster and the Doppelganger</h4>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+          <div className="rounded-lg bg-muted p-4">
+            <h4 className="font-bold text-foreground">The Monster and the Doppelganger</h4>
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               The Creature is both a literal monster (physically grotesque) and Victor&apos;s psychological
               double. They haunt each other, and neither can exist peacefully while the other lives.
               The Creature may be read as Victor&apos;s repressed guilt and unconscious desires
               given physical form &mdash; a Gothic externalisation of inner conflict.
             </p>
           </div>
-          <div className="rounded-lg bg-gray-50 p-4">
-            <h4 className="font-bold text-gray-900">Death and Decay</h4>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+          <div className="rounded-lg bg-muted p-4">
+            <h4 className="font-bold text-foreground">Death and Decay</h4>
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               The novel is saturated with death: Victor&apos;s mother, William, Justine, Clerval,
               Elizabeth, Alphonse, and eventually Victor and the Creature. The creation scene
               involves &ldquo;charnel houses&rdquo; and body parts, blending scientific ambition
@@ -559,7 +559,7 @@ export default function FrankensteinPage() {
         <div className="space-y-4">
           <div className="rounded-lg bg-primary-50 p-4">
             <h4 className="font-bold text-primary-700">Mary Shelley&apos;s Life</h4>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               Mary Shelley (1797&ndash;1851) wrote <em>Frankenstein</em> when she was just 18, beginning
               it during the famous &ldquo;ghost story competition&rdquo; at Lake Geneva in 1816 with
               Percy Shelley, Lord Byron, and John Polidori. Her mother, the feminist Mary Wollstonecraft,
@@ -570,7 +570,7 @@ export default function FrankensteinPage() {
           </div>
           <div className="rounded-lg bg-primary-50 p-4">
             <h4 className="font-bold text-primary-700">Romanticism</h4>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               <em>Frankenstein</em> both embraces and critiques Romanticism. The novel celebrates
               nature&apos;s sublime power and individual emotional experience, but it warns against
               the Romantic elevation of the individual genius. Victor is a Romantic hero gone wrong &mdash;
@@ -581,7 +581,7 @@ export default function FrankensteinPage() {
           </div>
           <div className="rounded-lg bg-primary-50 p-4">
             <h4 className="font-bold text-primary-700">Galvanism and Science</h4>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               Luigi Galvani&apos;s experiments (1780s&ndash;90s) showed that electrical impulses could make
               dead frogs&apos; legs twitch, raising the possibility that electricity could reanimate
               the dead. His nephew Giovanni Aldini publicly applied electrical currents to executed
@@ -592,7 +592,7 @@ export default function FrankensteinPage() {
           </div>
           <div className="rounded-lg bg-primary-50 p-4">
             <h4 className="font-bold text-primary-700">Industrial Revolution</h4>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               The early 19th century saw rapid industrialisation, creating both wonder and anxiety.
               New technologies were transforming society, raising questions about the moral responsibility
               of inventors and scientists. The Creature can be read as a metaphor for the working class
@@ -602,7 +602,7 @@ export default function FrankensteinPage() {
           </div>
           <div className="rounded-lg bg-primary-50 p-4">
             <h4 className="font-bold text-primary-700">Paradise Lost Connections</h4>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               Milton&apos;s <em>Paradise Lost</em> (1667) is directly referenced throughout the novel.
               The Creature reads it and identifies with both Adam (the first created being) and Satan
               (the fallen angel who rebels against his creator). Victor parallels God &mdash; a creator
@@ -613,7 +613,7 @@ export default function FrankensteinPage() {
           </div>
           <div className="rounded-lg bg-primary-50 p-4">
             <h4 className="font-bold text-primary-700">Prometheus Myth</h4>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               The novel&apos;s subtitle, &ldquo;The Modern Prometheus,&rdquo; references the Greek
               Titan who stole fire from the gods and gave it to humanity, for which Zeus punished
               him eternally. Victor steals the &ldquo;spark&rdquo; of life and suffers endlessly.
@@ -628,9 +628,9 @@ export default function FrankensteinPage() {
       {/* Essay Planning */}
       <Section title="Essay Planning" icon="📝">
         <div className="space-y-5">
-          <div className="rounded-lg bg-gray-50 p-4">
-            <h4 className="font-bold text-gray-900">How to Structure a Frankenstein Essay</h4>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+          <div className="rounded-lg bg-muted p-4">
+            <h4 className="font-bold text-foreground">How to Structure a Frankenstein Essay</h4>
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               GCSE literature essays on <em>Frankenstein</em> typically require you to respond to an extract and then
               write about the wider novel. Use the <strong>PEEL</strong> structure (Point, Evidence, Explain, Link)
               or <strong>What-How-Why</strong> (What is Shelley saying? How does she convey it through language,
@@ -639,12 +639,12 @@ export default function FrankensteinPage() {
             </p>
           </div>
 
-          <div className="rounded-lg border border-gray-200 bg-white p-4">
-            <h4 className="font-bold text-[#1A5276]">Sample Question 1: Responsibility</h4>
-            <p className="mt-1 text-sm italic text-gray-600">
+          <div className="rounded-lg border border-border bg-card p-4">
+            <h4 className="font-bold text-foreground">Sample Question 1: Responsibility</h4>
+            <p className="mt-1 text-sm italic text-muted-foreground">
               &ldquo;How does Shelley present ideas about responsibility in Frankenstein?&rdquo;
             </p>
-            <div className="mt-3 space-y-2 text-sm text-gray-700">
+            <div className="mt-3 space-y-2 text-sm text-muted-foreground">
               <p><strong>Introduction:</strong> Define responsibility in context. Shelley explores parental, scientific, and moral responsibility. Thesis: Victor&apos;s failure of responsibility is the novel&apos;s driving tragedy.</p>
               <p><strong>Paragraph 1 &mdash; Victor as negligent creator:</strong> &ldquo;I had worked hard for nearly two years&rdquo; shows obsessive creation without thought for consequences. He abandons the Creature at birth. Link to Shelley&apos;s own experience of motherlessness and Wollstonecraft&apos;s ideas about parental duty.</p>
               <p><strong>Paragraph 2 &mdash; Silence over Justine:</strong> Victor knows the Creature killed William but allows Justine to be executed. His responsibility extends beyond creation to active moral cowardice. Connect to Shelley&apos;s critique of male passivity.</p>
@@ -654,12 +654,12 @@ export default function FrankensteinPage() {
             </div>
           </div>
 
-          <div className="rounded-lg border border-gray-200 bg-white p-4">
-            <h4 className="font-bold text-[#1A5276]">Sample Question 2: Monstrosity</h4>
-            <p className="mt-1 text-sm italic text-gray-600">
+          <div className="rounded-lg border border-border bg-card p-4">
+            <h4 className="font-bold text-foreground">Sample Question 2: Monstrosity</h4>
+            <p className="mt-1 text-sm italic text-muted-foreground">
               &ldquo;Who is the real monster in Frankenstein? How does Shelley present ideas about monstrosity?&rdquo;
             </p>
-            <div className="mt-3 space-y-2 text-sm text-gray-700">
+            <div className="mt-3 space-y-2 text-sm text-muted-foreground">
               <p><strong>Introduction:</strong> Challenge the assumption that the Creature is the monster. Shelley deliberately blurs the line between creator and creation, human and &ldquo;monster.&rdquo;</p>
               <p><strong>Paragraph 1 &mdash; The Creature&apos;s appearance:</strong> &ldquo;dull yellow eye&rdquo; &mdash; Victor judges entirely on looks. Discuss how the novel critiques prejudice. Only the blind De Lacey shows kindness. Link to contemporary debates about physiognomy.</p>
               <p><strong>Paragraph 2 &mdash; Victor&apos;s moral monstrosity:</strong> Victor abandons his creation, allows Justine to die, and destroys the female creature out of selfish fear. &ldquo;I compassionated him&rdquo; but revulsion overrides compassion &mdash; appearance defeats morality.</p>
@@ -669,12 +669,12 @@ export default function FrankensteinPage() {
             </div>
           </div>
 
-          <div className="rounded-lg border border-gray-200 bg-white p-4">
-            <h4 className="font-bold text-[#1A5276]">Sample Question 3: Isolation</h4>
-            <p className="mt-1 text-sm italic text-gray-600">
+          <div className="rounded-lg border border-border bg-card p-4">
+            <h4 className="font-bold text-foreground">Sample Question 3: Isolation</h4>
+            <p className="mt-1 text-sm italic text-muted-foreground">
               &ldquo;How does Shelley present isolation in Frankenstein?&rdquo;
             </p>
-            <div className="mt-3 space-y-2 text-sm text-gray-700">
+            <div className="mt-3 space-y-2 text-sm text-muted-foreground">
               <p><strong>Introduction:</strong> Isolation is both chosen and imposed. Shelley presents it as the root cause of tragedy for both Victor and the Creature.</p>
               <p><strong>Paragraph 1 &mdash; Victor&apos;s self-imposed isolation:</strong> He cuts himself off for two years during creation. &ldquo;I shunned my fellow creatures as if I had been guilty of a crime.&rdquo; His isolation mirrors the Creature&apos;s later exclusion. Link to Romantic ideas about solitary genius.</p>
               <p><strong>Paragraph 2 &mdash; The Creature&apos;s enforced isolation:</strong> &ldquo;Everywhere I see bliss, from which I alone am irrevocably excluded.&rdquo; He is isolated by his unique existence and by human prejudice. His loneliness drives him to demand a companion.</p>
@@ -684,11 +684,11 @@ export default function FrankensteinPage() {
             </div>
           </div>
 
-          <div className="rounded-lg bg-gray-50 p-4">
-            <h4 className="font-bold text-gray-900">Key Verbs for Discussing Shelley&apos;s Methods</h4>
+          <div className="rounded-lg bg-muted p-4">
+            <h4 className="font-bold text-foreground">Key Verbs for Discussing Shelley&apos;s Methods</h4>
             <div className="mt-2 flex flex-wrap gap-2">
               {["presents", "conveys", "suggests", "implies", "critiques", "challenges", "subverts", "reinforces", "foreshadows", "juxtaposes", "parallels", "symbolises", "reflects", "undermines", "exposes"].map((verb) => (
-                <span key={verb} className="rounded-full bg-[#1A5276]/10 px-3 py-1 text-xs font-semibold text-[#1A5276]">
+                <span key={verb} className="rounded-full bg-[#1A5276]/10 px-3 py-1 text-xs font-semibold text-foreground">
                   {verb}
                 </span>
               ))}
@@ -699,8 +699,8 @@ export default function FrankensteinPage() {
 
       {/* Exam Tips */}
       <div className="mt-6 rounded-xl border border-accent-100 bg-accent-50/50 p-6">
-        <h3 className="text-lg font-bold text-gray-900">Exam Tips for Frankenstein</h3>
-        <ul className="mt-3 space-y-2 text-sm text-gray-700">
+        <h3 className="text-lg font-bold text-foreground">Exam Tips for Frankenstein</h3>
+        <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span><strong>Consider whose perspective you trust.</strong> The frame narrative structure means every statement is filtered through a narrator. Discuss reliability.</span>
@@ -734,16 +734,16 @@ export default function FrankensteinPage() {
 
       {/* ────────────────────────────────────────── PRACTICE QUESTIONS */}
       <Section title="Practice Questions" icon="✍️">
-        <p className="text-sm text-gray-500 mb-6">
+        <p className="text-sm text-muted-foreground mb-6">
           Write your answer below each question and receive AI-powered feedback tailored to GCSE English Literature mark schemes.
           Aim for at least 150 words per response to get meaningful feedback.
         </p>
         <div className="space-y-8">
-          <div className="rounded-lg border border-gray-200 p-4">
-            <h3 className="font-bold text-gray-900 mb-1">Question 1</h3>
-            <p className="text-sm text-gray-700 mb-3">
+          <div className="rounded-lg border border-border p-4">
+            <h3 className="font-bold text-foreground mb-1">Question 1</h3>
+            <p className="text-sm text-muted-foreground mb-3">
               How does Shelley present the theme of ambition and its consequences in <em>Frankenstein</em>? Refer to the whole novel in your answer.
-              <span className="ml-2 text-xs font-semibold text-gray-500">[30 marks]</span>
+              <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
               placeholder="Write your essay response here..."
@@ -756,11 +756,11 @@ export default function FrankensteinPage() {
             />
           </div>
 
-          <div className="rounded-lg border border-gray-200 p-4">
-            <h3 className="font-bold text-gray-900 mb-1">Question 2</h3>
-            <p className="text-sm text-gray-700 mb-3">
+          <div className="rounded-lg border border-border p-4">
+            <h3 className="font-bold text-foreground mb-1">Question 2</h3>
+            <p className="text-sm text-muted-foreground mb-3">
               How does Shelley use the Creature to explore ideas about responsibility and rejection?
-              <span className="ml-2 text-xs font-semibold text-gray-500">[30 marks]</span>
+              <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
               placeholder="Write your essay response here..."
@@ -773,11 +773,11 @@ export default function FrankensteinPage() {
             />
           </div>
 
-          <div className="rounded-lg border border-gray-200 p-4">
-            <h3 className="font-bold text-gray-900 mb-1">Question 3</h3>
-            <p className="text-sm text-gray-700 mb-3">
+          <div className="rounded-lg border border-border p-4">
+            <h3 className="font-bold text-foreground mb-1">Question 3</h3>
+            <p className="text-sm text-muted-foreground mb-3">
               How does Shelley present the theme of isolation in <em>Frankenstein</em>? Consider both Victor and the Creature in your answer.
-              <span className="ml-2 text-xs font-semibold text-gray-500">[30 marks]</span>
+              <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
               placeholder="Write your essay response here..."
@@ -790,11 +790,11 @@ export default function FrankensteinPage() {
             />
           </div>
 
-          <div className="rounded-lg border border-gray-200 p-4">
-            <h3 className="font-bold text-gray-900 mb-1">Question 4</h3>
-            <p className="text-sm text-gray-700 mb-3">
+          <div className="rounded-lg border border-border p-4">
+            <h3 className="font-bold text-foreground mb-1">Question 4</h3>
+            <p className="text-sm text-muted-foreground mb-3">
               How does Shelley use Gothic conventions to explore what it means to be human in <em>Frankenstein</em>?
-              <span className="ml-2 text-xs font-semibold text-gray-500">[30 marks]</span>
+              <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
               placeholder="Write your essay response here..."

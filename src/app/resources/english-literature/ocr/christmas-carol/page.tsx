@@ -148,23 +148,23 @@ export default function OCRChristmasCarolPage() {
         <section aria-labelledby="exam-format-heading">
           <h2
             id="exam-format-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             OCR Exam Format
           </h2>
           <div className="mt-4 space-y-3">
             <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
               <p className="font-semibold text-primary">Paper 2: Exploring Effects and Impact</p>
-              <p className="mt-1 text-sm text-gray-700">
+              <p className="mt-1 text-sm text-muted-foreground">
                 Section B &mdash; 19th Century and Modern Prose/Drama. You will
                 answer one question on A Christmas Carol. The question is an
                 essay question <strong>without an extract</strong> &mdash; you
                 must write from memory. You have approximately 45 minutes.
               </p>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-              <p className="font-semibold text-gray-900">Assessment Objectives</p>
-              <ul className="mt-2 space-y-1 text-sm text-gray-700">
+            <div className="rounded-lg border border-border bg-muted p-4">
+              <p className="font-semibold text-foreground">Assessment Objectives</p>
+              <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                 <li><strong>AO1:</strong> Read, understand and respond to texts. Use textual references, including quotations, to support and illustrate interpretations.</li>
                 <li><strong>AO2:</strong> Analyse the language, form and structure used by a writer to create meanings and effects, using relevant subject terminology.</li>
                 <li><strong>AO3:</strong> Show understanding of the relationships between texts and the contexts in which they were written.</li>
@@ -174,20 +174,20 @@ export default function OCRChristmasCarolPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* Plot summary */}
         <section aria-labelledby="plot-heading">
           <h2
             id="plot-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Plot Summary
           </h2>
-          <div className="mt-4 space-y-4 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <div className="space-y-3">
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                <p className="font-semibold text-gray-900">Stave 1: Marley&rsquo;s Ghost</p>
+              <div className="rounded-lg border border-border bg-muted p-4">
+                <p className="font-semibold text-foreground">Stave 1: Marley&rsquo;s Ghost</p>
                 <p className="mt-2 text-sm">
                   On Christmas Eve, the miserly Ebenezer Scrooge refuses charity,
                   dismisses his nephew Fred&rsquo;s Christmas invitation, and
@@ -198,8 +198,8 @@ export default function OCRChristmasCarolPage() {
                   spirits will visit him to give him a chance to change.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                <p className="font-semibold text-gray-900">Stave 2: The Ghost of Christmas Past</p>
+              <div className="rounded-lg border border-border bg-muted p-4">
+                <p className="font-semibold text-foreground">Stave 2: The Ghost of Christmas Past</p>
                 <p className="mt-2 text-sm">
                   The first spirit takes Scrooge back through his memories: his
                   lonely childhood at boarding school, his kind employer
@@ -209,8 +209,8 @@ export default function OCRChristmasCarolPage() {
                   the spirit to take him home.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                <p className="font-semibold text-gray-900">Stave 3: The Ghost of Christmas Present</p>
+              <div className="rounded-lg border border-border bg-muted p-4">
+                <p className="font-semibold text-foreground">Stave 3: The Ghost of Christmas Present</p>
                 <p className="mt-2 text-sm">
                   The second spirit shows Scrooge how others celebrate Christmas.
                   He visits the Cratchit family, where he sees the disabled Tiny
@@ -221,8 +221,8 @@ export default function OCRChristmasCarolPage() {
                   his robe as a warning to society.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                <p className="font-semibold text-gray-900">Stave 4: The Ghost of Christmas Yet to Come</p>
+              <div className="rounded-lg border border-border bg-muted p-4">
+                <p className="font-semibold text-foreground">Stave 4: The Ghost of Christmas Yet to Come</p>
                 <p className="mt-2 text-sm">
                   The terrifying final spirit shows Scrooge a future in which he
                   has died alone and unmourned. His possessions are stolen and
@@ -232,8 +232,8 @@ export default function OCRChristmasCarolPage() {
                   heart.&rdquo;
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                <p className="font-semibold text-gray-900">Stave 5: The End of It</p>
+              <div className="rounded-lg border border-border bg-muted p-4">
+                <p className="font-semibold text-foreground">Stave 5: The End of It</p>
                 <p className="mt-2 text-sm">
                   Scrooge wakes on Christmas morning a transformed man. He buys
                   the biggest turkey for the Cratchits, donates generously to
@@ -247,29 +247,29 @@ export default function OCRChristmasCarolPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* Characters */}
         <section aria-labelledby="characters-heading">
           <h2
             id="characters-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Character Analysis
           </h2>
 
           <div className="mt-6 space-y-6">
             {/* Scrooge */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="rounded-lg border border-border bg-card p-6 shadow-md">
               <h3 className="text-xl font-semibold text-primary">Ebenezer Scrooge</h3>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Scrooge is Dickens&rsquo;s most famous creation &mdash; a miser
                 whose name has become synonymous with greed. At the start of the
                 novella, he is cold, isolated, and contemptuous of the poor. He
                 refuses charity, dismisses Christmas as &ldquo;humbug,&rdquo; and
                 treats his clerk Bob Cratchit with disdain.
               </p>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 However, Dickens is careful to show that Scrooge was not always
                 this way. His lonely childhood and the loss of Belle reveal that
                 his miserliness is a defence mechanism &mdash; a response to
@@ -290,16 +290,16 @@ export default function OCRChristmasCarolPage() {
             </div>
 
             {/* Bob Cratchit */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="rounded-lg border border-border bg-card p-6 shadow-md">
               <h3 className="text-xl font-semibold text-primary">Bob Cratchit</h3>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Bob Cratchit represents the honest, hardworking poor who are
                 exploited by the wealthy. Despite earning a pitiful wage from
                 Scrooge, he remains cheerful, devoted to his family, and generous
                 in spirit. He even toasts Scrooge at Christmas dinner, showing
                 remarkable forgiveness.
               </p>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Dickens uses Bob to show that poverty does not destroy goodness.
                 The Cratchit family&rsquo;s warmth and love stand in deliberate
                 contrast to Scrooge&rsquo;s wealth and loneliness. Bob is also a
@@ -310,16 +310,16 @@ export default function OCRChristmasCarolPage() {
             </div>
 
             {/* Tiny Tim */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="rounded-lg border border-border bg-card p-6 shadow-md">
               <h3 className="text-xl font-semibold text-primary">Tiny Tim</h3>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Tiny Tim is the emotional heart of the novella. His disability,
                 his cheerful resilience, and his potential death create powerful
                 emotional pressure on both Scrooge and the reader. He represents
                 the innocent victims of social inequality &mdash; children who
                 suffer because of their parents&rsquo; poverty.
               </p>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 His catchphrase &ldquo;God bless us, every one!&rdquo; embodies
                 the inclusive, generous spirit that Dickens advocates. His
                 potential death is the most powerful tool in Dickens&rsquo;s
@@ -329,16 +329,16 @@ export default function OCRChristmasCarolPage() {
             </div>
 
             {/* Jacob Marley */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="rounded-lg border border-border bg-card p-6 shadow-md">
               <h3 className="text-xl font-semibold text-primary">Jacob Marley</h3>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Marley is Scrooge&rsquo;s dead business partner who returns as a
                 ghost, dragging the chains he &ldquo;forged in life&rdquo;
                 through selfishness. He is a warning of what awaits Scrooge if he
                 does not change. His chains symbolise the burden of guilt and the
                 consequences of failing to help others.
               </p>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Marley&rsquo;s regret is genuine and agonising. His lament that
                 &ldquo;mankind was my business&rdquo; shows he has learned too
                 late what truly matters. Dickens uses Marley to establish the
@@ -348,9 +348,9 @@ export default function OCRChristmasCarolPage() {
             </div>
 
             {/* The Ghosts */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="rounded-lg border border-border bg-card p-6 shadow-md">
               <h3 className="text-xl font-semibold text-primary">The Three Ghosts</h3>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 The Ghost of Christmas Past is a flickering, ethereal figure who
                 shows Scrooge the emotional roots of his miserliness. The Ghost
                 of Christmas Present is a generous, jolly giant surrounded by
@@ -360,7 +360,7 @@ export default function OCRChristmasCarolPage() {
                 is the most terrifying: a silent, shrouded figure who shows
                 Scrooge his death and Tiny Tim&rsquo;s.
               </p>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Together, the three ghosts represent a journey of moral education.
                 The past provides understanding, the present provides awareness,
                 and the future provides motivation to change. Dickens structures
@@ -371,23 +371,23 @@ export default function OCRChristmasCarolPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* Themes */}
         <section aria-labelledby="themes-heading">
           <h2
             id="themes-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Key Themes
           </h2>
 
           <div className="mt-6 space-y-6">
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="text-lg font-semibold text-gray-900">
+            <div className="rounded-lg border border-border bg-muted p-5">
+              <h3 className="text-lg font-semibold text-foreground">
                 Social Responsibility and Poverty
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Dickens wrote A Christmas Carol to draw attention to the plight of
                 the poor in Victorian England. The novella argues that the wealthy
                 have a moral obligation to help those less fortunate. Scrooge&rsquo;s
@@ -398,11 +398,11 @@ export default function OCRChristmasCarolPage() {
               </p>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="text-lg font-semibold text-gray-900">
+            <div className="rounded-lg border border-border bg-muted p-5">
+              <h3 className="text-lg font-semibold text-foreground">
                 Redemption and Transformation
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 The novella&rsquo;s central message is that people can change.
                 Scrooge&rsquo;s redemption arc &mdash; from cold miser to joyful
                 philanthropist &mdash; is the story&rsquo;s emotional core.
@@ -413,11 +413,11 @@ export default function OCRChristmasCarolPage() {
               </p>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="text-lg font-semibold text-gray-900">
+            <div className="rounded-lg border border-border bg-muted p-5">
+              <h3 className="text-lg font-semibold text-foreground">
                 Christmas and Generosity
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Christmas functions as a symbol of everything Scrooge lacks:
                 warmth, generosity, family, and community. Dickens uses the
                 Cratchits&rsquo; modest but loving celebration and Fred&rsquo;s
@@ -429,11 +429,11 @@ export default function OCRChristmasCarolPage() {
               </p>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="text-lg font-semibold text-gray-900">
+            <div className="rounded-lg border border-border bg-muted p-5">
+              <h3 className="text-lg font-semibold text-foreground">
                 Isolation vs Community
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Scrooge&rsquo;s misery is inseparable from his isolation. He
                 lives alone, eats alone, and has no meaningful relationships.
                 The Cratchits, by contrast, are poor but rich in love and
@@ -445,11 +445,11 @@ export default function OCRChristmasCarolPage() {
               </p>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="text-lg font-semibold text-gray-900">
+            <div className="rounded-lg border border-border bg-muted p-5">
+              <h3 className="text-lg font-semibold text-foreground">
                 Greed and Money
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Dickens presents the love of money as spiritually and emotionally
                 destructive. Scrooge&rsquo;s wealth has made him cold, isolated,
                 and morally blind. Belle&rsquo;s metaphor of the &ldquo;golden
@@ -460,11 +460,11 @@ export default function OCRChristmasCarolPage() {
               </p>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="text-lg font-semibold text-gray-900">
+            <div className="rounded-lg border border-border bg-muted p-5">
+              <h3 className="text-lg font-semibold text-foreground">
                 Family
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Family is presented as a source of joy, resilience, and moral
                 strength. The Cratchits&rsquo; love for each other sustains them
                 through poverty. Fred&rsquo;s persistent affection for Scrooge
@@ -476,11 +476,11 @@ export default function OCRChristmasCarolPage() {
               </p>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="text-lg font-semibold text-gray-900">
+            <div className="rounded-lg border border-border bg-muted p-5">
+              <h3 className="text-lg font-semibold text-foreground">
                 The Supernatural
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 The supernatural elements serve a moral purpose. Marley&rsquo;s
                 ghost, the three spirits, and the time-travelling structure allow
                 Dickens to show Scrooge (and the reader) the consequences of
@@ -493,17 +493,17 @@ export default function OCRChristmasCarolPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* Key quotations */}
         <section aria-labelledby="quotations-heading">
           <h2
             id="quotations-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Key Quotations with Analysis
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             Learn these quotations for the closed-book exam. Each one can be
             applied to multiple themes and characters.
           </p>
@@ -512,15 +512,15 @@ export default function OCRChristmasCarolPage() {
             {keyQuotations.map((q) => (
               <div
                 key={q.quote}
-                className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm"
+                className="rounded-lg border border-border bg-card p-5 shadow-md"
               >
-                <blockquote className="border-l-4 border-accent pl-4 text-lg font-medium italic text-gray-800">
+                <blockquote className="border-l-4 border-accent pl-4 text-lg font-medium italic text-foreground">
                   &ldquo;{q.quote}&rdquo;
                 </blockquote>
                 <p className="mt-2 text-sm font-medium text-primary">
                   {q.speaker}
                 </p>
-                <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   {q.analysis}
                 </p>
               </div>
@@ -528,24 +528,24 @@ export default function OCRChristmasCarolPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* Context */}
         <section aria-labelledby="context-heading">
           <h2
             id="context-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Historical and Social Context
           </h2>
-          <div className="mt-4 space-y-4 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>
               Understanding context is essential for AO3. Here are the key
               contextual areas to know for A Christmas Carol:
             </p>
             <div className="space-y-4">
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="font-semibold text-gray-900">Victorian Poverty</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="font-semibold text-foreground">Victorian Poverty</h3>
                 <p className="mt-2 text-sm">
                   In 1843 when Dickens wrote the novella, poverty in Britain was
                   extreme. The Industrial Revolution had created vast wealth for
@@ -556,8 +556,8 @@ export default function OCRChristmasCarolPage() {
                   father was imprisoned for debt.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="font-semibold text-gray-900">The Poor Law Amendment Act (1834)</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="font-semibold text-foreground">The Poor Law Amendment Act (1834)</h3>
                 <p className="mt-2 text-sm">
                   This act established workhouses where the poor were forced to
                   live in terrible conditions as the &ldquo;price&rdquo; of
@@ -568,8 +568,8 @@ export default function OCRChristmasCarolPage() {
                   and that harsh institutions were sufficient response.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="font-semibold text-gray-900">Thomas Malthus and &ldquo;Surplus Population&rdquo;</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="font-semibold text-foreground">Thomas Malthus and &ldquo;Surplus Population&rdquo;</h3>
                 <p className="mt-2 text-sm">
                   Thomas Malthus argued that population growth would outstrip
                   food supply and that helping the poor only encouraged them to
@@ -580,8 +580,8 @@ export default function OCRChristmasCarolPage() {
                   reader) to see its cruelty.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="font-semibold text-gray-900">Christianity and Christmas</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="font-semibold text-foreground">Christianity and Christmas</h3>
                 <p className="mt-2 text-sm">
                   Dickens saw true Christianity as being about compassion,
                   generosity, and love for one&rsquo;s neighbour &mdash; not
@@ -592,8 +592,8 @@ export default function OCRChristmasCarolPage() {
                   modern Christmas traditions and values.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="font-semibold text-gray-900">Dickens as Social Reformer</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="font-semibold text-foreground">Dickens as Social Reformer</h3>
                 <p className="mt-2 text-sm">
                   Dickens used his writing as a tool for social change. He
                   visited a &ldquo;Ragged School&rdquo; (free school for
@@ -605,8 +605,8 @@ export default function OCRChristmasCarolPage() {
                   wrote.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="font-semibold text-gray-900">The Novella Form</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="font-semibold text-foreground">The Novella Form</h3>
                 <p className="mt-2 text-sm">
                   Dickens chose to write a novella rather than a full novel
                   because he wanted maximum impact in minimum time. The five-stave
@@ -621,17 +621,17 @@ export default function OCRChristmasCarolPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* Essay planning */}
         <section aria-labelledby="essay-heading">
           <h2
             id="essay-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Essay Planning for OCR
           </h2>
-          <div className="mt-4 space-y-4 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>
               The OCR A Christmas Carol question does <strong>not</strong> give
               you an extract. You must write entirely from memory. Here is a
@@ -640,7 +640,7 @@ export default function OCRChristmasCarolPage() {
             <div className="space-y-3">
               <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                 <p className="font-semibold text-primary">Introduction (3&ndash;4 sentences)</p>
-                <p className="mt-1 text-sm text-gray-700">
+                <p className="mt-1 text-sm text-muted-foreground">
                   Address the question directly. State Dickens&rsquo;s overall
                   purpose and how the theme/character relates to his message
                   about social responsibility. Briefly reference the Victorian
@@ -649,7 +649,7 @@ export default function OCRChristmasCarolPage() {
               </div>
               <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                 <p className="font-semibold text-primary">Paragraph 1: Beginning of the novella (Stave 1)</p>
-                <p className="mt-1 text-sm text-gray-700">
+                <p className="mt-1 text-sm text-muted-foreground">
                   How is the theme/character established? Use a memorised
                   quotation and analyse language closely. Link to Victorian
                   attitudes and context.
@@ -657,7 +657,7 @@ export default function OCRChristmasCarolPage() {
               </div>
               <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                 <p className="font-semibold text-primary">Paragraph 2: Middle of the novella (Staves 2&ndash;3)</p>
-                <p className="mt-1 text-sm text-gray-700">
+                <p className="mt-1 text-sm text-muted-foreground">
                   How does the theme/character develop through the ghostly
                   visitations? Consider the structural significance of the
                   stave in which key moments occur.
@@ -665,7 +665,7 @@ export default function OCRChristmasCarolPage() {
               </div>
               <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                 <p className="font-semibold text-primary">Paragraph 3: Climax (Stave 4)</p>
-                <p className="mt-1 text-sm text-gray-700">
+                <p className="mt-1 text-sm text-muted-foreground">
                   How does the Ghost of Christmas Yet to Come bring the theme to
                   a climax? Consider the emotional impact and the turning point
                   of Scrooge&rsquo;s transformation.
@@ -673,7 +673,7 @@ export default function OCRChristmasCarolPage() {
               </div>
               <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                 <p className="font-semibold text-primary">Paragraph 4: Resolution (Stave 5)</p>
-                <p className="mt-1 text-sm text-gray-700">
+                <p className="mt-1 text-sm text-muted-foreground">
                   How is the theme resolved? Consider Scrooge&rsquo;s
                   transformation and what Dickens wants his reader to learn.
                   Link to Dickens&rsquo;s purpose as a social reformer.
@@ -681,7 +681,7 @@ export default function OCRChristmasCarolPage() {
               </div>
               <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                 <p className="font-semibold text-primary">Conclusion</p>
-                <p className="mt-1 text-sm text-gray-700">
+                <p className="mt-1 text-sm text-muted-foreground">
                   Final evaluative judgement. What is Dickens&rsquo;s overall
                   message? Why did the novella have such a powerful impact on
                   Victorian society? Consider its relevance today.
@@ -691,7 +691,7 @@ export default function OCRChristmasCarolPage() {
 
             <div className="mt-6 rounded-lg border border-accent/20 bg-accent-50 p-5">
               <h3 className="font-semibold text-accent-700">OCR Exam Technique Tips</h3>
-              <ul className="mt-2 space-y-2 text-sm text-gray-700">
+              <ul className="mt-2 space-y-2 text-sm text-muted-foreground">
                 <li>&bull; <strong>No extract:</strong> You must memorise quotations. Aim to use 4&ndash;6 short quotations in your essay.</li>
                 <li>&bull; <strong>AO1:</strong> Make clear, sustained arguments that directly answer the question. Track change across the novella.</li>
                 <li>&bull; <strong>AO2:</strong> Analyse specific words, imagery, narrative voice, and structural techniques. Discuss Dickens&rsquo;s use of the novella form, the five-stave structure, allegory, and the omniscient narrator.</li>

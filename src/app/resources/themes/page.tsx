@@ -50,10 +50,10 @@ const THEMES = [
       "Writers who challenge their audience to consider their duty to society -- from Priestley's socialism to Dickens' critique of Victorian poverty.",
     texts: ["An Inspector Calls", "A Christmas Carol", "London (Blake)"],
     colour: "border-[#2E86C1]",
-    bgColour: "bg-[#2E86C1]/10",
-    textColour: "text-[#2E86C1]",
+    bgColour: "bg-primary/10",
+    textColour: "text-primary",
     icon: (
-      <svg className="h-10 w-10 text-[#2E86C1]" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+      <svg className="h-10 w-10 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
       </svg>
     ),
@@ -120,7 +120,7 @@ export default function ThemeExplorerPage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-[#1A5276] to-[#1A5276]/80 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-[#2E86C1]/80">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary/80">
             Resources
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -136,8 +136,8 @@ export default function ThemeExplorerPage() {
 
       {/* Theme grid */}
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-gray-900">Major GCSE Themes</h2>
-        <p className="mt-2 text-gray-600">
+        <h2 className="text-2xl font-bold text-foreground">Major GCSE Themes</h2>
+        <p className="mt-2 text-muted-foreground">
           Select a theme to see how it appears across your set texts, with key
           quotes and comparison essay ideas.
         </p>
@@ -147,7 +147,7 @@ export default function ThemeExplorerPage() {
             <Link
               key={theme.slug}
               href={`/resources/themes/${theme.slug}`}
-              className={`group flex flex-col rounded-2xl border-2 ${theme.colour} bg-white p-7 shadow-sm transition hover:shadow-lg`}
+              className={`group flex flex-col rounded-2xl border-2 ${theme.colour} bg-card p-7 shadow-md transition hover:shadow-lg`}
             >
               <div className="flex items-start justify-between">
                 {theme.icon}
@@ -158,10 +158,10 @@ export default function ThemeExplorerPage() {
                 </span>
               </div>
 
-              <h3 className="mt-5 text-xl font-bold text-gray-900 group-hover:text-[#1A5276] transition-colors">
+              <h3 className="mt-5 text-xl font-bold text-foreground group-hover:text-foreground transition-colors">
                 {theme.title}
               </h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-gray-600">
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
                 {theme.description}
               </p>
 
@@ -169,14 +169,14 @@ export default function ThemeExplorerPage() {
                 {theme.texts.map((text) => (
                   <li
                     key={text}
-                    className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600"
+                    className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-muted-foreground"
                   >
                     {text}
                   </li>
                 ))}
               </ul>
 
-              <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[#2E86C1] group-hover:text-[#1A5276] transition-colors">
+              <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:text-foreground transition-colors">
                 Explore theme <ArrowRight />
               </span>
             </Link>
@@ -185,12 +185,12 @@ export default function ThemeExplorerPage() {
       </section>
 
       {/* How to use themes in essays */}
-      <section className="bg-gray-50 px-4 py-14 sm:px-6 lg:px-8">
+      <section className="bg-muted px-4 py-14 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-center text-2xl font-bold text-gray-900">
+          <h2 className="text-center text-2xl font-bold text-foreground">
             Using themes in comparison essays
           </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-center text-gray-600">
+          <p className="mx-auto mt-3 max-w-2xl text-center text-muted-foreground">
             Cross-text comparison is one of the highest-value skills at GCSE.
             Follow these steps to structure a strong thematic comparison.
           </p>
@@ -220,15 +220,15 @@ export default function ThemeExplorerPage() {
             ].map((tip) => (
               <div
                 key={tip.step}
-                className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
+                className="rounded-xl border border-border bg-card p-6 shadow-md"
               >
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#2E86C1] text-sm font-bold text-white">
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
                   {tip.step}
                 </span>
-                <h3 className="mt-4 text-base font-bold text-gray-900">
+                <h3 className="mt-4 text-base font-bold text-foreground">
                   {tip.heading}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {tip.body}
                 </p>
               </div>
@@ -239,7 +239,7 @@ export default function ThemeExplorerPage() {
 
       {/* Quick links */}
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-gray-900">Continue exploring</h2>
+        <h2 className="text-2xl font-bold text-foreground">Continue exploring</h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-3">
           {[
             {
@@ -261,12 +261,12 @@ export default function ThemeExplorerPage() {
             <Link
               key={link.href}
               href={link.href}
-              className="group rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition hover:shadow-md hover:border-[#2E86C1]/40"
+              className="group rounded-xl border border-border bg-card p-5 shadow-md transition hover:shadow-md hover:border-[#2E86C1]/40"
             >
-              <h3 className="font-bold text-gray-900 group-hover:text-[#1A5276] transition-colors">
+              <h3 className="font-bold text-foreground group-hover:text-foreground transition-colors">
                 {link.label}
               </h3>
-              <p className="mt-1 text-sm text-gray-500">{link.desc}</p>
+              <p className="mt-1 text-sm text-muted-foreground">{link.desc}</p>
             </Link>
           ))}
         </div>

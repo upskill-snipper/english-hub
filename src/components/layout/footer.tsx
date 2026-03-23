@@ -15,9 +15,13 @@ const FOOTER_SECTIONS = [
   {
     title: 'Resources',
     links: [
-      { href: '/resources/revision-notes', label: 'Revision Notes' },
-      { href: '/resources/practice', label: 'Practice Questions' },
-      { href: '/resources/exam-guide', label: 'Exam Guides' },
+      { href: '/revision', label: 'Revision' },
+      { href: '/resources/revision-notes', label: 'Study Guides' },
+      { href: '/resources/writing-skills', label: 'Writing Skills' },
+      { href: '/resources/techniques', label: 'Techniques' },
+      { href: '/resources/poetry', label: 'Poetry' },
+      { href: '/resources/model-answers', label: 'Model Answers' },
+      { href: '/resources/vocabulary', label: 'Vocabulary' },
       { href: '/resources/study-tools', label: 'Study Tools' },
     ],
   },

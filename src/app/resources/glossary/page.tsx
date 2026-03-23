@@ -135,8 +135,8 @@ const CATEGORIES: GlossaryCategory[] = [
 ];
 
 const CATEGORY_COLOURS: Record<GlossaryCategory, { border: string; bg: string; text: string; pill: string }> = {
-  "Literary Devices": { border: "border-[#1A5276]", bg: "bg-[#1A5276]/5", text: "text-[#1A5276]", pill: "bg-[#1A5276]/10 text-[#1A5276]" },
-  "Poetic Terms": { border: "border-[#2E86C1]", bg: "bg-[#2E86C1]/5", text: "text-[#2E86C1]", pill: "bg-[#2E86C1]/10 text-[#2E86C1]" },
+  "Literary Devices": { border: "border-[#1A5276]", bg: "bg-[#1A5276]/5", text: "text-foreground", pill: "bg-[#1A5276]/10 text-foreground" },
+  "Poetic Terms": { border: "border-[#2E86C1]", bg: "bg-primary/5", text: "text-primary", pill: "bg-primary/10 text-primary" },
   "Dramatic Terms": { border: "border-[#8E44AD]", bg: "bg-[#8E44AD]/5", text: "text-[#8E44AD]", pill: "bg-[#8E44AD]/10 text-[#8E44AD]" },
   "Narrative Terms": { border: "border-[#27AE60]", bg: "bg-[#27AE60]/5", text: "text-[#27AE60]", pill: "bg-[#27AE60]/10 text-[#27AE60]" },
   "Language Analysis Terms": { border: "border-[#E67E22]", bg: "bg-[#E67E22]/5", text: "text-[#E67E22]", pill: "bg-[#E67E22]/10 text-[#E67E22]" },
@@ -201,8 +201,8 @@ function TermCard({
 
   return (
     <div
-      className={`rounded-xl border bg-white shadow-sm transition-all hover:shadow-md ${
-        isExpanded ? `border-2 ${colours.border}` : "border-gray-200 hover:border-[#2E86C1]/40"
+      className={`rounded-xl border bg-card shadow-md transition-all hover:shadow-md ${
+        isExpanded ? `border-2 ${colours.border}` : "border-border hover:border-[#2E86C1]/40"
       }`}
     >
       <button
@@ -212,17 +212,17 @@ function TermCard({
       >
         <div className="min-w-0">
           <div className="flex items-center gap-2">
-            <h3 className="text-base font-bold text-gray-900">{term.term}</h3>
+            <h3 className="text-base font-bold text-foreground">{term.term}</h3>
             <span className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-bold ${colours.pill}`}>
               {term.category.replace(" Terms", "")}
             </span>
           </div>
-          <p className="mt-1.5 text-sm leading-relaxed text-gray-600 line-clamp-2">
+          <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground line-clamp-2">
             {term.definition}
           </p>
         </div>
         <svg
-          className={`mt-1 h-5 w-5 flex-shrink-0 text-gray-400 transition-transform ${
+          className={`mt-1 h-5 w-5 flex-shrink-0 text-muted-foreground transition-transform ${
             isExpanded ? "rotate-180" : ""
           }`}
           fill="none"
@@ -235,15 +235,15 @@ function TermCard({
       </button>
 
       {isExpanded && (
-        <div className="border-t border-gray-100 px-4 pb-4 pt-3">
-          <p className="text-sm leading-relaxed text-gray-700">
+        <div className="border-t border-border px-4 pb-4 pt-3">
+          <p className="text-sm leading-relaxed text-muted-foreground">
             {term.definition}
           </p>
-          <div className="mt-3 rounded-lg bg-gray-50 p-3">
-            <p className="text-xs font-semibold uppercase tracking-wider text-gray-400">
+          <div className="mt-3 rounded-lg bg-muted p-3">
+            <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
               Example
             </p>
-            <p className="mt-1 text-sm italic leading-relaxed text-gray-700">
+            <p className="mt-1 text-sm italic leading-relaxed text-muted-foreground">
               {term.example}
             </p>
           </div>
@@ -312,7 +312,7 @@ export default function GlossaryPage() {
           <div className="mx-auto mt-8 max-w-lg">
             <div className="relative">
               <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
-                <svg className="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                <svg className="h-5 w-5 text-muted-foreground" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
                 </svg>
               </div>
@@ -321,7 +321,7 @@ export default function GlossaryPage() {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Search terms... e.g. metaphor, enjambment, noun"
-                className="w-full rounded-xl border-0 bg-white/95 py-3.5 pl-11 pr-4 text-sm text-gray-900 shadow-lg placeholder:text-gray-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-white/50"
+                className="w-full rounded-xl border-0 bg-card/95 py-3.5 pl-11 pr-4 text-sm text-foreground shadow-lg placeholder:text-muted-foreground focus:bg-card focus:outline-none focus:ring-2 focus:ring-white/50"
               />
             </div>
           </div>
@@ -338,14 +338,14 @@ export default function GlossaryPage() {
       </section>
 
       {/* ── Category Filter Pills ──────────────────────────────── */}
-      <section className="border-b border-gray-100 bg-white px-4 py-4 sm:px-6">
+      <section className="border-b border-border bg-card px-4 py-4 sm:px-6">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-2">
           <button
             onClick={() => setActiveCategory("all")}
             className={`rounded-full px-4 py-1.5 text-sm font-semibold transition-colors ${
               activeCategory === "all"
                 ? "bg-[#1A5276] text-white"
-                : "bg-gray-100 text-gray-600 hover:bg-[#1A5276]/10 hover:text-[#1A5276]"
+                : "bg-gray-100 text-muted-foreground hover:bg-[#1A5276]/10 hover:text-foreground"
             }`}
           >
             All ({GLOSSARY_TERMS.length})
@@ -357,7 +357,7 @@ export default function GlossaryPage() {
               className={`rounded-full px-4 py-1.5 text-sm font-semibold transition-colors ${
                 activeCategory === cat
                   ? "bg-[#1A5276] text-white"
-                  : "bg-gray-100 text-gray-600 hover:bg-[#1A5276]/10 hover:text-[#1A5276]"
+                  : "bg-gray-100 text-muted-foreground hover:bg-[#1A5276]/10 hover:text-foreground"
               }`}
             >
               {cat} ({categoryCounts[cat]})
@@ -369,10 +369,10 @@ export default function GlossaryPage() {
       {/* ── Category Overview Cards ────────────────────────────── */}
       {activeCategory === "all" && search.trim() === "" && (
         <section className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
-          <h2 className="text-center text-2xl font-bold text-gray-900">
+          <h2 className="text-center text-2xl font-bold text-foreground">
             Browse by Category
           </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-center text-gray-600">
+          <p className="mx-auto mt-3 max-w-2xl text-center text-muted-foreground">
             Click a category to filter the glossary, or scroll down to browse
             all terms alphabetically within each section.
           </p>
@@ -389,8 +389,8 @@ export default function GlossaryPage() {
                     {CATEGORY_ICONS[cat]}
                   </div>
                   <div>
-                    <h3 className="font-bold text-gray-900">{cat}</h3>
-                    <p className="mt-1 text-sm text-gray-500">
+                    <h3 className="font-bold text-foreground">{cat}</h3>
+                    <p className="mt-1 text-sm text-muted-foreground">
                       {categoryCounts[cat]} terms
                     </p>
                   </div>
@@ -405,13 +405,13 @@ export default function GlossaryPage() {
       )}
 
       {/* ── Glossary Terms ─────────────────────────────────────── */}
-      <section className="bg-gray-50 px-4 py-10 sm:px-6 lg:px-8">
+      <section className="bg-muted px-4 py-10 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
           {/* Results count */}
           <div className="mb-6 flex items-center justify-between">
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-muted-foreground">
               Showing{" "}
-              <span className="font-semibold text-gray-900">
+              <span className="font-semibold text-foreground">
                 {filteredTerms.length}
               </span>{" "}
               {filteredTerms.length === 1 ? "term" : "terms"}
@@ -421,7 +421,7 @@ export default function GlossaryPage() {
                     setActiveCategory("all");
                     setSearch("");
                   }}
-                  className="ml-2 text-xs font-medium text-[#2E86C1] hover:underline"
+                  className="ml-2 text-xs font-medium text-primary hover:underline"
                 >
                   Clear filters
                 </button>
@@ -442,8 +442,8 @@ export default function GlossaryPage() {
                       <div className={`flex h-8 w-8 items-center justify-center rounded-lg ${colours.pill}`}>
                         {CATEGORY_ICONS[cat]}
                       </div>
-                      <h2 className="text-lg font-bold text-gray-900">{cat}</h2>
-                      <span className="rounded-full bg-gray-200 px-2 py-0.5 text-xs font-medium text-gray-600">
+                      <h2 className="text-lg font-bold text-foreground">{cat}</h2>
+                      <span className="rounded-full bg-gray-200 px-2 py-0.5 text-xs font-medium text-muted-foreground">
                         {terms.length}
                       </span>
                     </div>
@@ -480,21 +480,21 @@ export default function GlossaryPage() {
 
           {/* No results */}
           {filteredTerms.length === 0 && (
-            <div className="flex flex-col items-center rounded-2xl border border-dashed border-gray-300 bg-white py-16 text-center">
+            <div className="flex flex-col items-center rounded-2xl border border-dashed border-gray-300 bg-card py-16 text-center">
               <svg className="h-12 w-12 text-gray-300" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
               </svg>
-              <p className="mt-4 text-sm font-medium text-gray-900">
+              <p className="mt-4 text-sm font-medium text-foreground">
                 No terms match your search
               </p>
-              <p className="mt-1 text-sm text-gray-500">
+              <p className="mt-1 text-sm text-muted-foreground">
                 Try a different search term or{" "}
                 <button
                   onClick={() => {
                     setSearch("");
                     setActiveCategory("all");
                   }}
-                  className="font-semibold text-[#2E86C1] underline"
+                  className="font-semibold text-primary underline"
                 >
                   clear filters
                 </button>
@@ -507,10 +507,10 @@ export default function GlossaryPage() {
 
       {/* ── How to Use This Glossary ───────────────────────────── */}
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
-        <h2 className="text-center text-2xl font-bold text-gray-900">
+        <h2 className="text-center text-2xl font-bold text-foreground">
           How to Use This Glossary in Your Exams
         </h2>
-        <p className="mx-auto mt-3 max-w-2xl text-center text-gray-600">
+        <p className="mx-auto mt-3 max-w-2xl text-center text-muted-foreground">
           Knowing the terms is step one. Here is how to turn that knowledge
           into marks.
         </p>
@@ -543,15 +543,15 @@ export default function GlossaryPage() {
           ].map((tip, i) => (
             <div
               key={tip.heading}
-              className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
+              className="rounded-xl border border-border bg-card p-6 shadow-md"
             >
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#2E86C1] text-sm font-bold text-white">
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
                 {i + 1}
               </span>
-              <h3 className="mt-4 text-base font-bold text-gray-900">
+              <h3 className="mt-4 text-base font-bold text-foreground">
                 {tip.heading}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-gray-600">
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 {tip.body}
               </p>
             </div>
@@ -560,9 +560,9 @@ export default function GlossaryPage() {
       </section>
 
       {/* ── Continue Exploring ─────────────────────────────────── */}
-      <section className="bg-gray-50 px-4 py-14 sm:px-6 lg:px-8">
+      <section className="bg-muted px-4 py-14 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Continue exploring
           </h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-3">
@@ -586,12 +586,12 @@ export default function GlossaryPage() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="group rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition hover:shadow-md hover:border-[#2E86C1]/40"
+                className="group rounded-xl border border-border bg-card p-5 shadow-md transition hover:shadow-md hover:border-[#2E86C1]/40"
               >
-                <h3 className="font-bold text-gray-900 transition-colors group-hover:text-[#1A5276]">
+                <h3 className="font-bold text-foreground transition-colors group-hover:text-foreground">
                   {link.label}
                 </h3>
-                <p className="mt-1 text-sm text-gray-500">{link.desc}</p>
+                <p className="mt-1 text-sm text-muted-foreground">{link.desc}</p>
               </Link>
             ))}
           </div>

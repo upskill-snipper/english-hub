@@ -145,16 +145,16 @@ function AccordionItem({ item }: { item: FaqItem }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="border-b border-gray-200 last:border-b-0">
+    <div className="border-b border-border last:border-b-0">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="flex w-full items-center justify-between gap-4 py-4 text-left text-sm font-medium text-gray-900 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-sm transition-colors sm:text-base"
+        className="flex w-full items-center justify-between gap-4 py-4 text-left text-sm font-medium text-foreground hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded-sm transition-colors sm:text-base"
         aria-expanded={open}
       >
         <span>{item.question}</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className={`h-5 w-5 shrink-0 text-gray-400 transition-transform duration-200 ${
+          className={`h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200 ${
             open ? "rotate-180" : ""
           }`}
           fill="none"
@@ -167,7 +167,7 @@ function AccordionItem({ item }: { item: FaqItem }) {
         </svg>
       </button>
       {open && (
-        <div className="pb-4 pr-8 text-sm leading-relaxed text-gray-600">
+        <div className="pb-4 pr-8 text-sm leading-relaxed text-muted-foreground">
           {item.answer}
         </div>
       )}
@@ -205,7 +205,7 @@ export default function FaqPage() {
         <div className="mx-auto max-w-3xl">
           {/* Jump links */}
           <nav aria-label="FAQ sections" className="mb-10">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-gray-400">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
               Jump to section
             </p>
             <div className="flex flex-wrap gap-2">
@@ -213,7 +213,7 @@ export default function FaqPage() {
                 <a
                   key={section.id}
                   href={`#${section.id}`}
-                  className="rounded-full border border-gray-200 bg-white px-3.5 py-1.5 text-xs font-medium text-gray-700 shadow-sm hover:border-primary/40 hover:text-primary transition-colors"
+                  className="rounded-full border border-border bg-card px-3.5 py-1.5 text-xs font-medium text-muted-foreground shadow-md hover:border-primary/40 hover:text-primary transition-colors"
                 >
                   {section.title}
                 </a>
@@ -227,7 +227,7 @@ export default function FaqPage() {
               <h2 className="mb-1 text-xl font-bold text-primary sm:text-2xl">
                 {section.title}
               </h2>
-              <div className="mt-2 rounded-xl border border-gray-200 bg-white shadow-sm">
+              <div className="mt-2 rounded-xl border border-border bg-card shadow-md">
                 <div className="divide-y divide-gray-200 px-5">
                   {section.items.map((item) => (
                     <AccordionItem key={item.question} item={item} />
@@ -238,11 +238,11 @@ export default function FaqPage() {
           ))}
 
           {/* Bottom CTA */}
-          <div className="mt-12 rounded-xl bg-gray-50 p-6 text-center sm:p-8">
-            <h3 className="text-lg font-semibold text-gray-900">
+          <div className="mt-12 rounded-xl bg-muted p-6 text-center sm:p-8">
+            <h3 className="text-lg font-semibold text-foreground">
               Didn&apos;t find your answer?
             </h3>
-            <p className="mx-auto mt-2 max-w-md text-sm text-gray-500">
+            <p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground">
               No worries -- our support team is friendly and usually replies
               within one working day.
             </p>

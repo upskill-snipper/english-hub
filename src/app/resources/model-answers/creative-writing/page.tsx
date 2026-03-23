@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 function Annotation({ children, note }: { children: React.ReactNode; note: string }) {
   return (
     <span className="group relative">
-      <span className="rounded bg-[#2E86C1]/10 px-1 py-0.5 text-[#1A5276] border-b-2 border-dashed border-[#2E86C1]/40 cursor-help">
+      <span className="rounded bg-primary/10 px-1 py-0.5 text-foreground border-b-2 border-dashed border-[#2E86C1]/40 cursor-help">
         {children}
       </span>
       <span className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 w-60 -translate-x-1/2 rounded-lg bg-[#1A5276] px-3 py-2 text-xs leading-relaxed text-white opacity-0 shadow-lg transition-opacity group-hover:pointer-events-auto group-hover:opacity-100">
@@ -39,11 +39,11 @@ function GradeBadge({ grade, color }: { grade: string; color: string }) {
 
 function ExaminerComment({ children }: { children: React.ReactNode }) {
   return (
-    <div className="mt-4 rounded-lg border-l-4 border-[#2E86C1] bg-[#2E86C1]/5 p-4">
-      <p className="mb-1 text-xs font-bold uppercase tracking-wider text-[#2E86C1]">
+    <div className="mt-4 rounded-lg border-l-4 border-[#2E86C1] bg-primary/5 p-4">
+      <p className="mb-1 text-xs font-bold uppercase tracking-wider text-primary">
         Examiner Commentary
       </p>
-      <div className="text-sm leading-relaxed text-gray-700">{children}</div>
+      <div className="text-sm leading-relaxed text-muted-foreground">{children}</div>
     </div>
   );
 }
@@ -53,7 +53,7 @@ function ExaminerComment({ children }: { children: React.ReactNode }) {
 function Section({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
   return (
     <section id={id} className="scroll-mt-24">
-      <h2 className="mb-6 text-2xl font-bold text-[#1A5276] border-b-2 border-[#2E86C1]/20 pb-3">
+      <h2 className="mb-6 text-2xl font-bold text-foreground border-b-2 border-[#2E86C1]/20 pb-3">
         {title}
       </h2>
       {children}
@@ -70,7 +70,7 @@ export default function CreativeWritingModelAnswersPage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-[#1A5276] to-[#1A5276]/80 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-[#2E86C1]/80">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary/80">
             Model Answers
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -85,14 +85,14 @@ export default function CreativeWritingModelAnswersPage() {
 
       {/* Breadcrumb */}
       <nav className="mx-auto max-w-5xl px-4 pt-6" aria-label="Breadcrumb">
-        <ol className="flex flex-wrap items-center gap-2 text-sm text-gray-500">
-          <li><Link href="/" className="hover:text-[#1A5276] transition-colors">Home</Link></li>
+        <ol className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+          <li><Link href="/" className="hover:text-foreground transition-colors">Home</Link></li>
           <li>/</li>
-          <li><Link href="/resources" className="hover:text-[#1A5276] transition-colors">Resources</Link></li>
+          <li><Link href="/resources" className="hover:text-foreground transition-colors">Resources</Link></li>
           <li>/</li>
-          <li><Link href="/resources/model-answers" className="hover:text-[#1A5276] transition-colors">Model Answers</Link></li>
+          <li><Link href="/resources/model-answers" className="hover:text-foreground transition-colors">Model Answers</Link></li>
           <li>/</li>
-          <li className="font-medium text-[#1A5276]">Creative Writing</li>
+          <li className="font-medium text-foreground">Creative Writing</li>
         </ol>
       </nav>
 
@@ -103,7 +103,7 @@ export default function CreativeWritingModelAnswersPage() {
           {/* Sidebar TOC */}
           <aside className="hidden lg:block">
             <nav className="sticky top-24 space-y-1 text-sm">
-              <p className="mb-2 font-bold text-[#1A5276] uppercase tracking-wider text-xs">Contents</p>
+              <p className="mb-2 font-bold text-foreground uppercase tracking-wider text-xs">Contents</p>
               {[
                 { id: "desc-5", label: "Descriptive: Grade 5" },
                 { id: "desc-9", label: "Descriptive: Grade 9" },
@@ -114,7 +114,7 @@ export default function CreativeWritingModelAnswersPage() {
                 <a
                   key={item.id}
                   href={`#${item.id}`}
-                  className="block rounded-lg px-3 py-1.5 text-gray-600 hover:bg-[#2E86C1]/10 hover:text-[#1A5276] transition-colors"
+                  className="block rounded-lg px-3 py-1.5 text-muted-foreground hover:bg-primary/10 hover:text-foreground transition-colors"
                 >
                   {item.label}
                 </a>
@@ -129,11 +129,11 @@ export default function CreativeWritingModelAnswersPage() {
             <Section id="desc-5" title="Descriptive Writing &mdash; Grade 5">
               <div className="mb-4 flex items-center gap-3">
                 <GradeBadge grade="Grade 5" color="bg-amber-500" />
-                <span className="text-sm text-gray-500">Task: Describe a busy market scene</span>
+                <span className="text-sm text-muted-foreground">Task: Describe a busy market scene</span>
               </div>
 
-              <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-                <div className="prose prose-sm max-w-none text-gray-700 leading-relaxed space-y-4">
+              <div className="rounded-xl border border-border bg-card p-6 shadow-md">
+                <div className="prose prose-sm max-w-none text-muted-foreground leading-relaxed space-y-4">
                   <p>
                     The market was <Annotation note="Adequate opening but lacks atmosphere. A stronger opening would use a sensory detail to immerse the reader immediately.">busy and noisy</Annotation>.
                     People pushed past each other trying to get to the different stalls.
@@ -173,11 +173,11 @@ export default function CreativeWritingModelAnswersPage() {
             <Section id="desc-9" title="Descriptive Writing &mdash; Grade 9">
               <div className="mb-4 flex items-center gap-3">
                 <GradeBadge grade="Grade 9" color="bg-[#1A5276]" />
-                <span className="text-sm text-gray-500">Task: Describe a busy market scene</span>
+                <span className="text-sm text-muted-foreground">Task: Describe a busy market scene</span>
               </div>
 
-              <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-                <div className="prose prose-sm max-w-none text-gray-700 leading-relaxed space-y-4">
+              <div className="rounded-xl border border-border bg-card p-6 shadow-md">
+                <div className="prose prose-sm max-w-none text-muted-foreground leading-relaxed space-y-4">
                   <p>
                     <Annotation note="Single-sentence paragraph creates immediate impact. The sensory opening (sound) immerses the reader before any visual description.">
                       It began with sound.
@@ -246,11 +246,11 @@ export default function CreativeWritingModelAnswersPage() {
             <Section id="narr-5" title="Narrative Writing &mdash; Grade 5">
               <div className="mb-4 flex items-center gap-3">
                 <GradeBadge grade="Grade 5" color="bg-amber-500" />
-                <span className="text-sm text-gray-500">Task: Write about a time when everything changed</span>
+                <span className="text-sm text-muted-foreground">Task: Write about a time when everything changed</span>
               </div>
 
-              <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-                <div className="prose prose-sm max-w-none text-gray-700 leading-relaxed space-y-4">
+              <div className="rounded-xl border border-border bg-card p-6 shadow-md">
+                <div className="prose prose-sm max-w-none text-muted-foreground leading-relaxed space-y-4">
                   <p>
                     <Annotation note="Chronological opening is clear but unengaging. A more effective approach would be to start in medias res or with a flash-forward.">
                       It all started on a normal Tuesday morning.
@@ -295,11 +295,11 @@ export default function CreativeWritingModelAnswersPage() {
             <Section id="narr-9" title="Narrative Writing &mdash; Grade 9">
               <div className="mb-4 flex items-center gap-3">
                 <GradeBadge grade="Grade 9" color="bg-[#1A5276]" />
-                <span className="text-sm text-gray-500">Task: Write about a time when everything changed</span>
+                <span className="text-sm text-muted-foreground">Task: Write about a time when everything changed</span>
               </div>
 
-              <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-                <div className="prose prose-sm max-w-none text-gray-700 leading-relaxed space-y-4">
+              <div className="rounded-xl border border-border bg-card p-6 shadow-md">
+                <div className="prose prose-sm max-w-none text-muted-foreground leading-relaxed space-y-4">
                   <p>
                     <Annotation note="In medias res opening drops the reader into the emotional heart of the story. The small, specific detail ('the wrong mug') makes the moment feel painfully real.">
                       She used the wrong mug. That was how I knew.
@@ -373,7 +373,7 @@ export default function CreativeWritingModelAnswersPage() {
 
             {/* ─── KEY TECHNIQUES ──────────────────────────────── */}
             <Section id="techniques" title="Key Techniques Annotated">
-              <p className="mb-6 text-gray-700 leading-relaxed">
+              <p className="mb-6 text-muted-foreground leading-relaxed">
                 These are the techniques that separate good creative writing from exceptional creative writing.
                 Study how they are used in the grade 9 examples above.
               </p>
@@ -411,11 +411,11 @@ export default function CreativeWritingModelAnswersPage() {
                     example: "Jake hands over the photograph 'without speaking' — the silence says everything.",
                   },
                 ].map((tech) => (
-                  <div key={tech.name} className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-                    <h4 className="font-bold text-[#1A5276]">{tech.name}</h4>
-                    <p className="mt-1 text-sm text-gray-600">{tech.desc}</p>
-                    <div className="mt-3 rounded-lg bg-gray-50 px-4 py-3">
-                      <p className="text-sm italic text-gray-700">{tech.example}</p>
+                  <div key={tech.name} className="rounded-xl border border-border bg-card p-5 shadow-md">
+                    <h4 className="font-bold text-foreground">{tech.name}</h4>
+                    <p className="mt-1 text-sm text-muted-foreground">{tech.desc}</p>
+                    <div className="mt-3 rounded-lg bg-muted px-4 py-3">
+                      <p className="text-sm italic text-muted-foreground">{tech.example}</p>
                     </div>
                   </div>
                 ))}

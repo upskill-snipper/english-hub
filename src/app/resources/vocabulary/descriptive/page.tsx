@@ -346,7 +346,7 @@ export default function DescriptiveVocabularyPage() {
 
       {/* Breadcrumb */}
       <nav className="mx-auto max-w-6xl px-4 pt-6" aria-label="Breadcrumb">
-        <ol className="flex flex-wrap items-center gap-2 text-sm text-gray-500">
+        <ol className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
           <li><Link href="/" className="hover:text-primary transition-colors">Home</Link></li>
           <li>/</li>
           <li><Link href="/resources" className="hover:text-primary transition-colors">Resources</Link></li>
@@ -361,7 +361,7 @@ export default function DescriptiveVocabularyPage() {
       <section className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
           <div className="relative flex-1">
-            <svg className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+            <svg className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
             </svg>
             <input
@@ -369,7 +369,7 @@ export default function DescriptiveVocabularyPage() {
               placeholder="Search descriptive words..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full rounded-xl border border-gray-300 bg-white py-3 pl-10 pr-4 text-sm shadow-sm transition focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
+              className="w-full rounded-xl border border-gray-300 bg-card py-3 pl-10 pr-4 text-sm shadow-md transition focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
             />
           </div>
           <div className="flex flex-wrap gap-2">
@@ -386,8 +386,8 @@ export default function DescriptiveVocabularyPage() {
                 onClick={() => setActiveCategory(f.id)}
                 className={`rounded-full px-4 py-2 text-sm font-medium transition ${
                   activeCategory === f.id
-                    ? "bg-primary text-white shadow-sm"
-                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                    ? "bg-primary text-white shadow-md"
+                    : "bg-gray-100 text-muted-foreground hover:bg-gray-200"
                 }`}
               >
                 {f.label}
@@ -408,21 +408,21 @@ export default function DescriptiveVocabularyPage() {
 
               {cat.subcategories.map((sc) => (
                 <div key={sc.name} className="mb-8">
-                  <h3 className="mb-4 text-lg font-bold text-gray-800 flex items-center gap-2">
+                  <h3 className="mb-4 text-lg font-bold text-foreground flex items-center gap-2">
                     <span className={`inline-block rounded-full px-3 py-0.5 text-xs font-semibold ${cat.tagColour}`}>
                       {sc.name}
                     </span>
-                    <span className="text-sm font-normal text-gray-400">
+                    <span className="text-sm font-normal text-muted-foreground">
                       ({sc.words.length} words)
                     </span>
                   </h3>
                   <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                     {sc.words.map((w) => (
-                      <div key={w.word} className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm hover:shadow-md transition">
-                        <h4 className="font-bold text-gray-900">{w.word}</h4>
-                        <p className="mt-1 text-sm text-gray-600">{w.definition}</p>
-                        <div className="mt-2 rounded-lg bg-gray-50 px-3 py-2">
-                          <p className="text-sm italic text-gray-700">
+                      <div key={w.word} className="rounded-xl border border-border bg-card p-4 shadow-md hover:shadow-md transition">
+                        <h4 className="font-bold text-foreground">{w.word}</h4>
+                        <p className="mt-1 text-sm text-muted-foreground">{w.definition}</p>
+                        <div className="mt-2 rounded-lg bg-muted px-3 py-2">
+                          <p className="text-sm italic text-muted-foreground">
                             &ldquo;{w.example}&rdquo;
                           </p>
                         </div>
@@ -435,7 +435,7 @@ export default function DescriptiveVocabularyPage() {
           ))}
 
           {filteredCategories.length === 0 && (
-            <p className="text-center text-sm text-gray-500">
+            <p className="text-center text-sm text-muted-foreground">
               No words match your search. Try a different term.
             </p>
           )}
@@ -443,18 +443,18 @@ export default function DescriptiveVocabularyPage() {
       </section>
 
       {/* Continue exploring */}
-      <section className="bg-gray-50 px-4 py-14 sm:px-6 lg:px-8">
+      <section className="bg-muted px-4 py-14 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-2xl font-bold text-gray-900">Continue exploring</h2>
+          <h2 className="text-2xl font-bold text-foreground">Continue exploring</h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-3">
             {[
               { label: "Academic Vocabulary", href: "/resources/vocabulary/academic", desc: "50+ words for essay writing." },
               { label: "Analytical Vocabulary", href: "/resources/vocabulary/analytical", desc: "Master the language of analysis." },
               { label: "All Vocabulary", href: "/resources/vocabulary", desc: "Browse all vocabulary categories." },
             ].map((link) => (
-              <Link key={link.href} href={link.href} className="group rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition hover:shadow-md hover:border-accent/40">
-                <h3 className="font-bold text-gray-900 group-hover:text-primary transition-colors">{link.label}</h3>
-                <p className="mt-1 text-sm text-gray-500">{link.desc}</p>
+              <Link key={link.href} href={link.href} className="group rounded-xl border border-border bg-card p-5 shadow-md transition hover:shadow-md hover:border-accent/40">
+                <h3 className="font-bold text-foreground group-hover:text-primary transition-colors">{link.label}</h3>
+                <p className="mt-1 text-sm text-muted-foreground">{link.desc}</p>
               </Link>
             ))}
           </div>

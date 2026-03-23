@@ -475,10 +475,10 @@ export default function FlashcardsPage() {
   return (
     <>
       <div className="mb-8">
-        <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           Quote Flashcards
         </h1>
-        <p className="mt-3 max-w-3xl text-lg text-gray-600 leading-relaxed">
+        <p className="mt-3 max-w-3xl text-lg text-muted-foreground leading-relaxed">
           Pre-made flashcard sets for key GCSE Literature texts. Click any card to reveal the analysis,
           and mark quotes as mastered to track your progress.
         </p>
@@ -496,7 +496,7 @@ export default function FlashcardsPage() {
             className={`rounded-lg px-4 py-2 text-sm font-semibold transition-colors ${
               activeSet === set.slug
                 ? "bg-primary text-white"
-                : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                : "bg-gray-100 text-muted-foreground hover:bg-gray-200"
             }`}
           >
             {set.title}
@@ -508,7 +508,7 @@ export default function FlashcardsPage() {
       <div className="mb-6 flex flex-wrap items-center gap-3">
         <button
           onClick={handleShuffle}
-          className="inline-flex items-center gap-1.5 rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-50"
+          className="inline-flex items-center gap-1.5 rounded-lg border border-gray-300 bg-card px-3 py-2 text-sm font-medium text-muted-foreground transition hover:bg-muted"
         >
           <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 00-3.7-3.7 48.678 48.678 0 00-7.324 0 4.006 4.006 0 00-3.7 3.7c-.017.22-.032.441-.046.662M19.5 12l3-3m-3 3l-3-3m-12 3c0 1.232.046 2.453.138 3.662a4.006 4.006 0 003.7 3.7 48.656 48.656 0 007.324 0 4.006 4.006 0 003.7-3.7c.017-.22.032-.441.046-.662M4.5 12l3 3m-3-3l-3 3" />
@@ -517,20 +517,20 @@ export default function FlashcardsPage() {
         </button>
         <button
           onClick={revealAll}
-          className="inline-flex items-center gap-1.5 rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-50"
+          className="inline-flex items-center gap-1.5 rounded-lg border border-gray-300 bg-card px-3 py-2 text-sm font-medium text-muted-foreground transition hover:bg-muted"
         >
           Reveal All
         </button>
         <button
           onClick={hideAll}
-          className="inline-flex items-center gap-1.5 rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-50"
+          className="inline-flex items-center gap-1.5 rounded-lg border border-gray-300 bg-card px-3 py-2 text-sm font-medium text-muted-foreground transition hover:bg-muted"
         >
           Hide All
         </button>
 
         <div className="h-5 w-px bg-gray-200" />
 
-        <label className="flex cursor-pointer items-center gap-2 text-sm text-gray-700">
+        <label className="flex cursor-pointer items-center gap-2 text-sm text-muted-foreground">
           <input
             type="checkbox"
             checked={testMode}
@@ -538,12 +538,12 @@ export default function FlashcardsPage() {
             className="h-4 w-4 rounded border-gray-300 text-accent focus:ring-accent/30"
           />
           <span id="test-mode" className="font-medium">Test mode</span>
-          <span className="text-gray-400">(hide mastered)</span>
+          <span className="text-muted-foreground">(hide mastered)</span>
         </label>
 
         {/* Progress */}
         <div className="ml-auto flex items-center gap-2">
-          <span className="text-sm text-gray-500">
+          <span className="text-sm text-muted-foreground">
             {masteredInSet} / {currentSet.cards.length} mastered
           </span>
           <div className="h-2 w-24 overflow-hidden rounded-full bg-gray-100">
@@ -557,12 +557,12 @@ export default function FlashcardsPage() {
 
       {/* Cards grid */}
       {displayCards.length === 0 ? (
-        <div className="rounded-xl border-2 border-dashed border-gray-200 bg-white p-12 text-center">
+        <div className="rounded-xl border-2 border-dashed border-border bg-card p-12 text-center">
           <svg className="mx-auto h-12 w-12 text-emerald-400" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
-          <p className="mt-3 text-lg font-semibold text-gray-900">All quotes mastered!</p>
-          <p className="mt-1 text-sm text-gray-500">
+          <p className="mt-3 text-lg font-semibold text-foreground">All quotes mastered!</p>
+          <p className="mt-1 text-sm text-muted-foreground">
             Turn off test mode or switch to another text to keep revising.
           </p>
         </div>
@@ -574,8 +574,8 @@ export default function FlashcardsPage() {
             return (
               <div
                 key={card.id}
-                className={`group relative overflow-hidden rounded-xl border bg-white shadow-sm transition-all ${
-                  isMastered ? "border-emerald-200 bg-emerald-50/30" : "border-gray-200 hover:shadow-md"
+                className={`group relative overflow-hidden rounded-xl border bg-card shadow-md transition-all ${
+                  isMastered ? "border-emerald-200 bg-emerald-50/30" : "border-border hover:shadow-md"
                 }`}
               >
                 {/* Quote (always visible) */}
@@ -600,8 +600,8 @@ export default function FlashcardsPage() {
 
                 {/* Analysis (revealed) */}
                 {isRevealed && (
-                  <div className="border-t border-gray-100 px-5 py-4">
-                    <p className="text-sm leading-relaxed text-gray-700">{card.analysis}</p>
+                  <div className="border-t border-border px-5 py-4">
+                    <p className="text-sm leading-relaxed text-muted-foreground">{card.analysis}</p>
                     <div className="mt-3 flex flex-wrap gap-1.5">
                       {card.themes.map((theme) => (
                         <span
@@ -616,13 +616,13 @@ export default function FlashcardsPage() {
                 )}
 
                 {/* Mastered toggle */}
-                <div className="border-t border-gray-100 px-5 py-2.5">
+                <div className="border-t border-border px-5 py-2.5">
                   <button
                     onClick={() => toggleMastered(card.id)}
                     className={`inline-flex items-center gap-1.5 text-xs font-semibold transition-colors ${
                       isMastered
                         ? "text-emerald-600 hover:text-emerald-700"
-                        : "text-gray-400 hover:text-accent"
+                        : "text-muted-foreground hover:text-accent"
                     }`}
                   >
                     <svg
@@ -645,8 +645,8 @@ export default function FlashcardsPage() {
 
       {/* Study tip */}
       <div className="mt-10 rounded-xl border border-accent-100 bg-accent-50/50 p-6">
-        <h3 className="text-lg font-bold text-gray-900">Flashcard revision tips</h3>
-        <ul className="mt-3 space-y-2 text-sm text-gray-700">
+        <h3 className="text-lg font-bold text-foreground">Flashcard revision tips</h3>
+        <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span><strong>Test, do not just read.</strong> Try to recall the analysis before clicking to reveal it.</span>

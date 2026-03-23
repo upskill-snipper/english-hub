@@ -782,14 +782,14 @@ function ExpandableSection({
   const [open, setOpen] = useState(defaultOpen);
 
   return (
-    <div className="rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden">
+    <div className="rounded-xl border border-border bg-card shadow-md overflow-hidden">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between px-5 py-4 text-left hover:bg-gray-50 transition-colors"
+        className="flex w-full items-center justify-between px-5 py-4 text-left hover:bg-muted transition-colors"
         aria-expanded={open}
       >
         <div className="flex items-center gap-3">
-          <h3 className="text-base font-bold text-gray-900">{title}</h3>
+          <h3 className="text-base font-bold text-foreground">{title}</h3>
           {badge && (
             <span className="rounded-full bg-accent/10 px-2.5 py-0.5 text-xs font-semibold text-accent">
               {badge}
@@ -797,7 +797,7 @@ function ExpandableSection({
           )}
         </div>
         <svg
-          className={`h-5 w-5 text-gray-400 transition-transform ${open ? "rotate-180" : ""}`}
+          className={`h-5 w-5 text-muted-foreground transition-transform ${open ? "rotate-180" : ""}`}
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={2}
@@ -806,7 +806,7 @@ function ExpandableSection({
           <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
         </svg>
       </button>
-      {open && <div className="border-t border-gray-100 px-5 py-5">{children}</div>}
+      {open && <div className="border-t border-border px-5 py-5">{children}</div>}
     </div>
   );
 }
@@ -818,7 +818,7 @@ function ExpandableSection({
 function SearchIcon() {
   return (
     <svg
-      className="h-5 w-5 text-gray-400"
+      className="h-5 w-5 text-muted-foreground"
       fill="none"
       viewBox="0 0 24 24"
       strokeWidth={1.5}
@@ -907,7 +907,7 @@ export default function PoetryTechniquesPage() {
       </section>
 
       {/* Search + Filter Bar */}
-      <section className="border-b border-gray-200 bg-white sticky top-0 z-20 shadow-sm">
+      <section className="border-b border-border bg-card sticky top-0 z-20 shadow-md">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-4">
           {/* Search input */}
           <div className="relative">
@@ -919,12 +919,12 @@ export default function PoetryTechniquesPage() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search techniques, poems, or definitions..."
-              className="w-full rounded-lg border border-gray-300 bg-white py-2.5 pl-10 pr-4 text-sm text-gray-900 placeholder:text-gray-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+              className="w-full rounded-lg border border-gray-300 bg-card py-2.5 pl-10 pr-4 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery("")}
-                className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400 hover:text-gray-600"
+                className="absolute inset-y-0 right-0 flex items-center pr-3 text-muted-foreground hover:text-muted-foreground"
               >
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
@@ -942,7 +942,7 @@ export default function PoetryTechniquesPage() {
                 className={`rounded-full px-3 py-1.5 text-xs font-semibold transition-colors ${
                   activeCategory === cat
                     ? "bg-primary text-white"
-                    : "bg-gray-100 text-gray-600 hover:bg-primary/10"
+                    : "bg-gray-100 text-muted-foreground hover:bg-primary/10"
                 }`}
               >
                 {cat}
@@ -952,7 +952,7 @@ export default function PoetryTechniquesPage() {
 
           {/* Results count */}
           {query && (
-            <p className="mt-2 text-xs text-gray-500">
+            <p className="mt-2 text-xs text-muted-foreground">
               {totalResults} result{totalResults !== 1 ? "s" : ""} found
               {activeCategory !== "All" ? ` in ${activeCategory}` : ""}
             </p>
@@ -993,8 +993,8 @@ export default function PoetryTechniquesPage() {
       {/* ── Form Types ─────────────────────────────────────────── */}
       {showForms && (
         <section id="form-types" className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-gray-900">Form Types</h2>
-          <p className="mt-2 max-w-3xl text-gray-600">
+          <h2 className="text-2xl font-bold text-foreground">Form Types</h2>
+          <p className="mt-2 max-w-3xl text-muted-foreground">
             Form is the type of poem. Identifying the form is essential for AO2 -- but you must explain <em>why</em> the poet chose this form and how it contributes to meaning.
           </p>
 
@@ -1002,13 +1002,13 @@ export default function PoetryTechniquesPage() {
             {filteredForms.map((form) => (
               <ExpandableSection key={form.name} title={form.name} badge="Form">
                 <div className="space-y-4">
-                  <p className="text-gray-700 leading-relaxed">{form.description}</p>
+                  <p className="text-muted-foreground leading-relaxed">{form.description}</p>
 
                   <div>
                     <h4 className="text-sm font-semibold text-primary mb-2">Key Features</h4>
                     <ul className="space-y-1.5">
                       {form.features.map((f, i) => (
-                        <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
+                        <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
                           <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                           {f}
                         </li>
@@ -1018,13 +1018,13 @@ export default function PoetryTechniquesPage() {
 
                   <div className="rounded-lg bg-accent-50 p-4">
                     <h4 className="text-sm font-semibold text-accent-700 mb-1">GCSE Example</h4>
-                    <p className="text-sm text-gray-700 leading-relaxed">{form.example}</p>
-                    <p className="mt-1 text-xs text-gray-500">From: {form.poem}</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{form.example}</p>
+                    <p className="mt-1 text-xs text-muted-foreground">From: {form.poem}</p>
                   </div>
 
                   <div className="rounded-lg bg-primary-50 p-4">
                     <h4 className="text-sm font-semibold text-primary mb-1">Exam Tip</h4>
-                    <p className="text-sm text-gray-700 leading-relaxed">{form.examTip}</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{form.examTip}</p>
                   </div>
                 </div>
               </ExpandableSection>
@@ -1048,7 +1048,7 @@ export default function PoetryTechniquesPage() {
 
           const bgClass =
             sectionCategory === "Sound Devices" || sectionCategory === "Tone & Mood"
-              ? "bg-gray-50"
+              ? "bg-muted"
               : "";
 
           return (
@@ -1058,8 +1058,8 @@ export default function PoetryTechniquesPage() {
               className={`${bgClass} px-4 py-12 sm:px-6 lg:px-8`}
             >
               <div className="mx-auto max-w-6xl">
-                <h2 className="text-2xl font-bold text-gray-900">{sectionCategory}</h2>
-                <p className="mt-2 max-w-3xl text-gray-600">
+                <h2 className="text-2xl font-bold text-foreground">{sectionCategory}</h2>
+                <p className="mt-2 max-w-3xl text-muted-foreground">
                   {sectionCategory === "Structural Devices" &&
                     "How the poem is organised: line breaks, stanza shapes, and the architecture that gives the poem its form."}
                   {sectionCategory === "Sound Devices" &&
@@ -1076,23 +1076,23 @@ export default function PoetryTechniquesPage() {
                       <div className="space-y-4">
                         <div>
                           <h4 className="text-sm font-semibold text-primary mb-1">Definition</h4>
-                          <p className="text-sm text-gray-700 leading-relaxed">{tech.definition}</p>
+                          <p className="text-sm text-muted-foreground leading-relaxed">{tech.definition}</p>
                         </div>
 
-                        <div className="rounded-lg bg-gray-50 p-4">
-                          <h4 className="text-sm font-semibold text-gray-900 mb-1">Example</h4>
-                          <p className="text-sm text-gray-700 italic">{tech.example}</p>
-                          <p className="mt-1 text-xs text-gray-500">From: {tech.poem}</p>
+                        <div className="rounded-lg bg-muted p-4">
+                          <h4 className="text-sm font-semibold text-foreground mb-1">Example</h4>
+                          <p className="text-sm text-muted-foreground italic">{tech.example}</p>
+                          <p className="mt-1 text-xs text-muted-foreground">From: {tech.poem}</p>
                         </div>
 
                         <div>
                           <h4 className="text-sm font-semibold text-accent-700 mb-1">Effect</h4>
-                          <p className="text-sm text-gray-700 leading-relaxed">{tech.effect}</p>
+                          <p className="text-sm text-muted-foreground leading-relaxed">{tech.effect}</p>
                         </div>
 
                         <div className="rounded-lg bg-accent-50 border border-accent-100 p-4">
                           <h4 className="text-sm font-semibold text-accent-700 mb-1">Sentence Starter for Exams</h4>
-                          <p className="text-sm text-gray-700 leading-relaxed italic">{tech.sentenceStarter}</p>
+                          <p className="text-sm text-muted-foreground leading-relaxed italic">{tech.sentenceStarter}</p>
                         </div>
                       </div>
                     </ExpandableSection>
@@ -1107,8 +1107,8 @@ export default function PoetryTechniquesPage() {
       {/* ── Tone & Mood Vocabulary ─────────────────────────────── */}
       {showToneVocab && (
         <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
-          <h3 className="text-xl font-bold text-gray-900">Tone and Mood Vocabulary</h3>
-          <p className="mt-2 max-w-3xl text-gray-600 text-sm">
+          <h3 className="text-xl font-bold text-foreground">Tone and Mood Vocabulary</h3>
+          <p className="mt-2 max-w-3xl text-muted-foreground text-sm">
             Use these precise adjectives in your exam instead of vague words like &quot;sad&quot;, &quot;happy&quot;, or &quot;angry&quot;. Examiners reward specificity.
           </p>
 
@@ -1116,10 +1116,10 @@ export default function PoetryTechniquesPage() {
             {filteredToneVocab.map((item) => (
               <div
                 key={item.word}
-                className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm"
+                className="rounded-lg border border-border bg-card p-4 shadow-md"
               >
                 <h4 className="font-bold text-primary">{item.word}</h4>
-                <p className="mt-1 text-sm text-gray-600 leading-relaxed">{item.meaning}</p>
+                <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{item.meaning}</p>
               </div>
             ))}
           </div>
@@ -1130,30 +1130,30 @@ export default function PoetryTechniquesPage() {
       {(activeCategory === "All" || activeCategory === "Form Types" || activeCategory === "Structural Devices") && !query && (
         <section id="form-structure-guide" className="bg-primary-50 px-4 py-12 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-6xl">
-            <h2 className="text-2xl font-bold text-gray-900">How to Write About Form and Structure</h2>
-            <p className="mt-2 max-w-3xl text-gray-600">
+            <h2 className="text-2xl font-bold text-foreground">How to Write About Form and Structure</h2>
+            <p className="mt-2 max-w-3xl text-muted-foreground">
               Many students struggle to write about form and structure because they stop at identification. These four principles will help you turn observation into analysis.
             </p>
 
             <div className="mt-8 space-y-6">
               {FORM_STRUCTURE_GUIDE.map((item, i) => (
-                <div key={item.heading} className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+                <div key={item.heading} className="rounded-xl border border-border bg-card p-6 shadow-md">
                   <div className="flex items-start gap-4">
                     <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
                       {i + 1}
                     </span>
                     <div className="flex-1">
-                      <h3 className="text-base font-bold text-gray-900">{item.heading}</h3>
-                      <p className="mt-1 text-sm text-gray-700 leading-relaxed">{item.description}</p>
+                      <h3 className="text-base font-bold text-foreground">{item.heading}</h3>
+                      <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{item.description}</p>
 
                       <div className="mt-3 grid gap-3 sm:grid-cols-2">
                         <div className="rounded-lg bg-green-50 border border-green-200 p-3">
                           <p className="text-xs font-semibold text-green-700 mb-1">Strong example</p>
-                          <p className="text-sm text-gray-700 italic leading-relaxed">{item.good}</p>
+                          <p className="text-sm text-muted-foreground italic leading-relaxed">{item.good}</p>
                         </div>
                         <div className="rounded-lg bg-red-50 border border-red-200 p-3">
                           <p className="text-xs font-semibold text-red-700 mb-1">Weak example</p>
-                          <p className="text-sm text-gray-700 italic leading-relaxed">{item.weak}</p>
+                          <p className="text-sm text-muted-foreground italic leading-relaxed">{item.weak}</p>
                         </div>
                       </div>
                     </div>
@@ -1168,13 +1168,13 @@ export default function PoetryTechniquesPage() {
       {/* ── How to Compare Poems ───────────────────────────────── */}
       {(activeCategory === "All") && !query && (
         <section id="comparing-poems" className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-gray-900">How to Compare Poems</h2>
-          <p className="mt-2 max-w-3xl text-gray-600">
+          <h2 className="text-2xl font-bold text-foreground">How to Compare Poems</h2>
+          <p className="mt-2 max-w-3xl text-muted-foreground">
             Comparison is a high-value skill tested in every GCSE Literature exam. The key is to integrate your comparison rather than writing about two poems separately.
           </p>
 
           {/* Structural Approaches */}
-          <h3 className="mt-10 text-xl font-bold text-gray-900">Structural Approaches</h3>
+          <h3 className="mt-10 text-xl font-bold text-foreground">Structural Approaches</h3>
           <div className="mt-4 space-y-4">
             {COMPARISON_APPROACHES.map((approach) => (
               <ExpandableSection
@@ -1183,13 +1183,13 @@ export default function PoetryTechniquesPage() {
                 defaultOpen={approach.name.includes("Alternating")}
               >
                 <div className="space-y-4">
-                  <p className="text-sm text-gray-700 leading-relaxed">{approach.description}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{approach.description}</p>
 
                   <div>
                     <h4 className="text-sm font-semibold text-primary mb-2">Structure</h4>
                     <ul className="space-y-1.5">
                       {approach.structure.map((s, i) => (
-                        <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
+                        <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
                           <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                           {s}
                         </li>
@@ -1206,18 +1206,18 @@ export default function PoetryTechniquesPage() {
           </div>
 
           {/* Connective Phrases */}
-          <h3 className="mt-10 text-xl font-bold text-gray-900">Connective Phrases for Comparison</h3>
-          <p className="mt-2 text-sm text-gray-600">
+          <h3 className="mt-10 text-xl font-bold text-foreground">Connective Phrases for Comparison</h3>
+          <p className="mt-2 text-sm text-muted-foreground">
             Use these phrases to create smooth, integrated comparisons. Vary your connectives to avoid repetition.
           </p>
 
           <div className="mt-6 grid gap-6 md:grid-cols-3">
             {/* Similarity */}
-            <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+            <div className="rounded-xl border border-border bg-card p-5 shadow-md">
               <h4 className="font-bold text-green-700 mb-3">Showing Similarity</h4>
               <ul className="space-y-2">
                 {COMPARISON_CONNECTIVES.similarity.map((phrase, i) => (
-                  <li key={i} className="text-sm text-gray-700 italic leading-relaxed">
+                  <li key={i} className="text-sm text-muted-foreground italic leading-relaxed">
                     {phrase}
                   </li>
                 ))}
@@ -1225,11 +1225,11 @@ export default function PoetryTechniquesPage() {
             </div>
 
             {/* Difference */}
-            <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+            <div className="rounded-xl border border-border bg-card p-5 shadow-md">
               <h4 className="font-bold text-red-700 mb-3">Showing Difference</h4>
               <ul className="space-y-2">
                 {COMPARISON_CONNECTIVES.difference.map((phrase, i) => (
-                  <li key={i} className="text-sm text-gray-700 italic leading-relaxed">
+                  <li key={i} className="text-sm text-muted-foreground italic leading-relaxed">
                     {phrase}
                   </li>
                 ))}
@@ -1237,11 +1237,11 @@ export default function PoetryTechniquesPage() {
             </div>
 
             {/* Development */}
-            <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+            <div className="rounded-xl border border-border bg-card p-5 shadow-md">
               <h4 className="font-bold text-primary mb-3">Developing Ideas</h4>
               <ul className="space-y-2">
                 {COMPARISON_CONNECTIVES.development.map((phrase, i) => (
-                  <li key={i} className="text-sm text-gray-700 italic leading-relaxed">
+                  <li key={i} className="text-sm text-muted-foreground italic leading-relaxed">
                     {phrase}
                   </li>
                 ))}
@@ -1253,27 +1253,27 @@ export default function PoetryTechniquesPage() {
 
       {/* ── PEEL Paragraph Structure ───────────────────────────── */}
       {(activeCategory === "All") && !query && (
-        <section id="peel-paragraphs" className="bg-gray-50 px-4 py-12 sm:px-6 lg:px-8">
+        <section id="peel-paragraphs" className="bg-muted px-4 py-12 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-6xl">
-            <h2 className="text-2xl font-bold text-gray-900">PEEL Paragraph Structure for Poetry</h2>
-            <p className="mt-2 max-w-3xl text-gray-600">
+            <h2 className="text-2xl font-bold text-foreground">PEEL Paragraph Structure for Poetry</h2>
+            <p className="mt-2 max-w-3xl text-muted-foreground">
               The PEEL structure gives your poetry analysis clarity and depth. Every analytical paragraph should follow this pattern to hit all the assessment objectives.
             </p>
 
             <div className="mt-8 space-y-6">
               {PEEL_STEPS.map((step) => (
-                <div key={step.letter + step.label} className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+                <div key={step.letter + step.label} className="rounded-xl border border-border bg-card p-6 shadow-md">
                   <div className="flex items-start gap-4">
                     <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary text-lg font-bold text-white">
                       {step.letter}
                     </span>
                     <div className="flex-1">
-                      <h3 className="text-lg font-bold text-gray-900">{step.label}</h3>
-                      <p className="mt-1 text-sm text-gray-700 leading-relaxed">{step.description}</p>
+                      <h3 className="text-lg font-bold text-foreground">{step.label}</h3>
+                      <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{step.description}</p>
 
                       <div className="mt-3 rounded-lg bg-accent-50 p-4">
                         <p className="text-sm font-semibold text-accent-700 mb-1">Example</p>
-                        <p className="text-sm text-gray-700 italic leading-relaxed">{step.example}</p>
+                        <p className="text-sm text-muted-foreground italic leading-relaxed">{step.example}</p>
                       </div>
 
                       <div className="mt-3 rounded-lg bg-primary-50 p-3">
@@ -1286,9 +1286,9 @@ export default function PoetryTechniquesPage() {
             </div>
 
             {/* Full model paragraph */}
-            <div className="mt-10 rounded-xl border-2 border-accent bg-white p-6 shadow-sm">
-              <h3 className="text-lg font-bold text-gray-900 mb-3">Complete Model PEEL Paragraph</h3>
-              <div className="prose prose-sm max-w-none text-gray-700 leading-relaxed">
+            <div className="mt-10 rounded-xl border-2 border-accent bg-card p-6 shadow-md">
+              <h3 className="text-lg font-bold text-foreground mb-3">Complete Model PEEL Paragraph</h3>
+              <div className="prose prose-sm max-w-none text-muted-foreground leading-relaxed">
                 <p>
                   <strong className="text-primary">[Point]</strong> Shelley presents power as inherently transient and self-defeating in &lsquo;Ozymandias&rsquo;.{" "}
                   <strong className="text-primary">[Evidence]</strong> This is conveyed through the &lsquo;shattered visage&rsquo; that &lsquo;lies&rsquo; half-buried in the desert, surrounded by a landscape where &lsquo;nothing beside remains&rsquo;.{" "}
@@ -1305,7 +1305,7 @@ export default function PoetryTechniquesPage() {
       {(activeCategory === "All") && !query && (
         <section id="exam-tips" className="bg-primary-50 px-4 py-12 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-6xl">
-            <h2 className="text-2xl font-bold text-gray-900">Exam Tips for Poetry Analysis</h2>
+            <h2 className="text-2xl font-bold text-foreground">Exam Tips for Poetry Analysis</h2>
             <div className="mt-8 grid gap-6 sm:grid-cols-2">
               {[
                 {
@@ -1333,9 +1333,9 @@ export default function PoetryTechniquesPage() {
                   text: "Many effects -- rhythm, assonance, sibilance, onomatopoeia -- only become apparent when you hear the poem. Silently 'hear' the sounds as you read.",
                 },
               ].map((tip) => (
-                <div key={tip.title} className="rounded-xl bg-white border border-gray-200 p-5 shadow-sm">
+                <div key={tip.title} className="rounded-xl bg-card border border-border p-5 shadow-md">
                   <h3 className="font-semibold text-primary">{tip.title}</h3>
-                  <p className="mt-2 text-sm text-gray-600 leading-relaxed">{tip.text}</p>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{tip.text}</p>
                 </div>
               ))}
             </div>
@@ -1346,7 +1346,7 @@ export default function PoetryTechniquesPage() {
       {/* ── No results ─────────────────────────────────────────── */}
       {query && totalResults === 0 && (
         <section className="mx-auto max-w-6xl px-4 py-20 text-center sm:px-6 lg:px-8">
-          <p className="text-gray-400 text-lg">No techniques found for &quot;{searchQuery}&quot;</p>
+          <p className="text-muted-foreground text-lg">No techniques found for &quot;{searchQuery}&quot;</p>
           <button
             onClick={() => {
               setSearchQuery("");

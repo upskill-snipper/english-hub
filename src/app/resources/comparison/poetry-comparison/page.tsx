@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 function Annotation({ children, note }: { children: React.ReactNode; note: string }) {
   return (
     <span className="group relative">
-      <span className="rounded bg-[#2E86C1]/10 px-1 py-0.5 text-[#1A5276] border-b-2 border-dashed border-[#2E86C1]/40">
+      <span className="rounded bg-primary/10 px-1 py-0.5 text-foreground border-b-2 border-dashed border-[#2E86C1]/40">
         {children}
       </span>
       <span className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 w-56 -translate-x-1/2 rounded-lg bg-[#1A5276] px-3 py-2 text-xs leading-relaxed text-white opacity-0 shadow-lg transition-opacity group-hover:pointer-events-auto group-hover:opacity-100">
@@ -30,7 +30,7 @@ function Annotation({ children, note }: { children: React.ReactNode; note: strin
 function Section({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
   return (
     <section id={id} className="scroll-mt-24">
-      <h2 className="mb-6 text-2xl font-bold text-[#1A5276] border-b-2 border-[#2E86C1]/20 pb-3">
+      <h2 className="mb-6 text-2xl font-bold text-foreground border-b-2 border-[#2E86C1]/20 pb-3">
         {title}
       </h2>
       {children}
@@ -93,7 +93,7 @@ const CONNECTIVE_GROUPS = [
   },
   {
     heading: "Developing a Point",
-    colour: "bg-[#2E86C1]/10 border-[#2E86C1]/30",
+    colour: "bg-primary/10 border-[#2E86C1]/30",
     phrases: [
       "Furthermore,",
       "Moreover,",
@@ -139,7 +139,7 @@ export default function PoetryComparisonPage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-[#1A5276] to-[#1A5276]/80 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-[#2E86C1]/80">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary/80">
             Comparison Skills
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -154,14 +154,14 @@ export default function PoetryComparisonPage() {
 
       {/* Breadcrumb */}
       <nav className="mx-auto max-w-5xl px-4 pt-6" aria-label="Breadcrumb">
-        <ol className="flex flex-wrap items-center gap-2 text-sm text-gray-500">
-          <li><Link href="/" className="hover:text-[#1A5276] transition-colors">Home</Link></li>
+        <ol className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+          <li><Link href="/" className="hover:text-foreground transition-colors">Home</Link></li>
           <li>/</li>
-          <li><Link href="/resources" className="hover:text-[#1A5276] transition-colors">Resources</Link></li>
+          <li><Link href="/resources" className="hover:text-foreground transition-colors">Resources</Link></li>
           <li>/</li>
-          <li><Link href="/resources/comparison" className="hover:text-[#1A5276] transition-colors">Comparison Skills</Link></li>
+          <li><Link href="/resources/comparison" className="hover:text-foreground transition-colors">Comparison Skills</Link></li>
           <li>/</li>
-          <li className="font-medium text-[#1A5276]">Poetry Comparison</li>
+          <li className="font-medium text-foreground">Poetry Comparison</li>
         </ol>
       </nav>
 
@@ -172,14 +172,14 @@ export default function PoetryComparisonPage() {
           {/* Sticky sidebar TOC */}
           <aside className="hidden lg:block">
             <nav className="sticky top-24 space-y-1">
-              <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-gray-400">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
                 On this page
               </p>
               {TOC.map((item) => (
                 <a
                   key={item.id}
                   href={`#${item.id}`}
-                  className="block rounded-md px-3 py-1.5 text-sm text-gray-600 hover:bg-[#2E86C1]/10 hover:text-[#1A5276] transition-colors"
+                  className="block rounded-md px-3 py-1.5 text-sm text-muted-foreground hover:bg-primary/10 hover:text-foreground transition-colors"
                 >
                   {item.label}
                 </a>
@@ -192,7 +192,7 @@ export default function PoetryComparisonPage() {
 
             {/* ── Step-by-Step Method ──────────────────────────── */}
             <Section id="step-by-step" title="Step-by-Step Method for Comparing Poems">
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed">
                 Follow this proven five-step method every time you approach a poetry comparison question. It works for any exam board and any pair of poems.
               </p>
 
@@ -224,13 +224,13 @@ export default function PoetryComparisonPage() {
                     detail: "Use connectives like 'similarly', 'in contrast', 'whereas', and 'however' to signal to the examiner that you are comparing, not just describing. Aim for at least two connectives per paragraph.",
                   },
                 ].map((s) => (
-                  <div key={s.step} className="flex gap-4 rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+                  <div key={s.step} className="flex gap-4 rounded-xl border border-border bg-card p-5 shadow-md">
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-sm font-bold text-white">
                       {s.step}
                     </div>
                     <div>
-                      <h3 className="font-bold text-gray-900">{s.title}</h3>
-                      <p className="mt-1 text-sm leading-relaxed text-gray-600">{s.detail}</p>
+                      <h3 className="font-bold text-foreground">{s.title}</h3>
+                      <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{s.detail}</p>
                     </div>
                   </div>
                 ))}
@@ -239,29 +239,29 @@ export default function PoetryComparisonPage() {
 
             {/* ── Structural Approaches ───────────────────────── */}
             <Section id="structures" title="Structural Approaches">
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed">
                 There are two main ways to structure a poetry comparison essay. Both can achieve top marks -- choose the one that suits you best.
               </p>
 
               <div className="mt-6 grid gap-6 sm:grid-cols-2">
                 {/* Alternating */}
-                <div className="rounded-xl border-2 border-[#2E86C1] bg-[#2E86C1]/5 p-6">
-                  <h3 className="text-lg font-bold text-[#1A5276]">Alternating (Recommended)</h3>
-                  <p className="mt-2 text-sm text-gray-600 leading-relaxed">
+                <div className="rounded-xl border-2 border-[#2E86C1] bg-primary/5 p-6">
+                  <h3 className="text-lg font-bold text-foreground">Alternating (Recommended)</h3>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                     Each paragraph discusses both poems, moving between them to make direct comparisons. This approach makes your comparison feel integrated and sophisticated.
                   </p>
                   <div className="mt-4 space-y-2">
-                    <div className="rounded-lg bg-white p-3 text-sm">
-                      <span className="font-semibold text-[#1A5276]">Para 1:</span> Point about Poem A + comparison to Poem B
+                    <div className="rounded-lg bg-card p-3 text-sm">
+                      <span className="font-semibold text-foreground">Para 1:</span> Point about Poem A + comparison to Poem B
                     </div>
-                    <div className="rounded-lg bg-white p-3 text-sm">
-                      <span className="font-semibold text-[#1A5276]">Para 2:</span> New point about Poem B + comparison back to Poem A
+                    <div className="rounded-lg bg-card p-3 text-sm">
+                      <span className="font-semibold text-foreground">Para 2:</span> New point about Poem B + comparison back to Poem A
                     </div>
-                    <div className="rounded-lg bg-white p-3 text-sm">
-                      <span className="font-semibold text-[#1A5276]">Para 3:</span> Deeper point about Poem A + link to Poem B
+                    <div className="rounded-lg bg-card p-3 text-sm">
+                      <span className="font-semibold text-foreground">Para 3:</span> Deeper point about Poem A + link to Poem B
                     </div>
-                    <div className="rounded-lg bg-white p-3 text-sm">
-                      <span className="font-semibold text-[#1A5276]">Conclusion:</span> Evaluate both -- which is more effective and why?
+                    <div className="rounded-lg bg-card p-3 text-sm">
+                      <span className="font-semibold text-foreground">Conclusion:</span> Evaluate both -- which is more effective and why?
                     </div>
                   </div>
                   <div className="mt-4 rounded-lg bg-[#27AE60]/10 px-4 py-3">
@@ -271,18 +271,18 @@ export default function PoetryComparisonPage() {
 
                 {/* Block */}
                 <div className="rounded-xl border-2 border-[#E67E22] bg-[#E67E22]/5 p-6">
-                  <h3 className="text-lg font-bold text-[#1A5276]">Block</h3>
-                  <p className="mt-2 text-sm text-gray-600 leading-relaxed">
+                  <h3 className="text-lg font-bold text-foreground">Block</h3>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                     Write about Poem A in the first half, then Poem B in the second half, making links back to Poem A as you go. Simpler to plan but harder to make comparative.
                   </p>
                   <div className="mt-4 space-y-2">
-                    <div className="rounded-lg bg-white p-3 text-sm">
+                    <div className="rounded-lg bg-card p-3 text-sm">
                       <span className="font-semibold text-[#E67E22]">Section 1:</span> Analyse Poem A in full (3-4 paragraphs)
                     </div>
-                    <div className="rounded-lg bg-white p-3 text-sm">
+                    <div className="rounded-lg bg-card p-3 text-sm">
                       <span className="font-semibold text-[#E67E22]">Section 2:</span> Analyse Poem B, linking back to Poem A throughout
                     </div>
-                    <div className="rounded-lg bg-white p-3 text-sm">
+                    <div className="rounded-lg bg-card p-3 text-sm">
                       <span className="font-semibold text-[#E67E22]">Conclusion:</span> Draw together the key similarities and differences
                     </div>
                   </div>
@@ -295,19 +295,19 @@ export default function PoetryComparisonPage() {
 
             {/* ── Comparative Connectives ─────────────────────── */}
             <Section id="connectives" title="Comparative Connectives (50+ Phrases)">
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed">
                 These phrases signal to the examiner that you are actively comparing, not just describing two poems separately. Aim to use a variety throughout your essay.
               </p>
 
               <div className="mt-6 space-y-6">
                 {CONNECTIVE_GROUPS.map((group) => (
                   <div key={group.heading}>
-                    <h3 className="mb-3 text-lg font-bold text-[#1A5276]">{group.heading}</h3>
+                    <h3 className="mb-3 text-lg font-bold text-foreground">{group.heading}</h3>
                     <div className="flex flex-wrap gap-2">
                       {group.phrases.map((phrase) => (
                         <span
                           key={phrase}
-                          className={`rounded-lg border px-3 py-1.5 text-sm font-medium text-gray-700 ${group.colour}`}
+                          className={`rounded-lg border px-3 py-1.5 text-sm font-medium text-muted-foreground ${group.colour}`}
                         >
                           {phrase}
                         </span>
@@ -320,17 +320,17 @@ export default function PoetryComparisonPage() {
 
             {/* ── Example 1: Ozymandias vs MLD ────────────────── */}
             <Section id="example-ozymandias" title="Example Comparison: Ozymandias vs My Last Duchess">
-              <div className="rounded-xl border border-gray-200 bg-gray-50 p-4 mb-6">
-                <p className="text-sm font-semibold text-[#1A5276]">Question:</p>
-                <p className="mt-1 text-sm italic text-gray-700">
+              <div className="rounded-xl border border-border bg-muted p-4 mb-6">
+                <p className="text-sm font-semibold text-foreground">Question:</p>
+                <p className="mt-1 text-sm italic text-muted-foreground">
                   Compare how poets present the theme of power in &lsquo;Ozymandias&rsquo; by Percy Bysshe Shelley and &lsquo;My Last Duchess&rsquo; by Robert Browning.
                 </p>
               </div>
 
-              <div className="rounded-xl border-2 border-[#2E86C1]/30 bg-white p-6 sm:p-8">
-                <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-[#2E86C1]">Full Model Essay</p>
+              <div className="rounded-xl border-2 border-[#2E86C1]/30 bg-card p-6 sm:p-8">
+                <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-primary">Full Model Essay</p>
 
-                <div className="space-y-4 text-sm leading-relaxed text-gray-700">
+                <div className="space-y-4 text-sm leading-relaxed text-muted-foreground">
                   <p>
                     <Annotation note="Opens with a clear comparative argument linking both poems to the question focus.">Both Shelley in &lsquo;Ozymandias&rsquo; and Browning in &lsquo;My Last Duchess&rsquo; explore the corrupting nature of power, yet they do so through strikingly different lenses.</Annotation>{" "}
                     Shelley presents power as ultimately transient and futile, using the ruined statue as a symbol of how even the mightiest rulers are humbled by time. Browning, however, depicts power as something deeply personal and controlling, revealing a Duke whose authority extends even beyond his wife&rsquo;s death.
@@ -359,8 +359,8 @@ export default function PoetryComparisonPage() {
               </div>
 
               <div className="mt-4 rounded-xl bg-[#1A5276]/5 p-5">
-                <h4 className="font-bold text-[#1A5276]">Why This Works</h4>
-                <ul className="mt-2 space-y-1 text-sm text-gray-700">
+                <h4 className="font-bold text-foreground">Why This Works</h4>
+                <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                   <li>- Every paragraph compares both poems (alternating structure)</li>
                   <li>- Comparative connectives used throughout (&ldquo;Similarly&rdquo;, &ldquo;In contrast&rdquo;, &ldquo;Whereas&rdquo;, &ldquo;However&rdquo;)</li>
                   <li>- Short, embedded quotations analysed for language and effect</li>
@@ -373,17 +373,17 @@ export default function PoetryComparisonPage() {
 
             {/* ── Example 2: Remains vs Exposure ──────────────── */}
             <Section id="example-remains" title="Example Comparison: Remains vs Exposure">
-              <div className="rounded-xl border border-gray-200 bg-gray-50 p-4 mb-6">
-                <p className="text-sm font-semibold text-[#1A5276]">Question:</p>
-                <p className="mt-1 text-sm italic text-gray-700">
+              <div className="rounded-xl border border-border bg-muted p-4 mb-6">
+                <p className="text-sm font-semibold text-foreground">Question:</p>
+                <p className="mt-1 text-sm italic text-muted-foreground">
                   Compare how poets present the effects of conflict in &lsquo;Remains&rsquo; by Simon Armitage and &lsquo;Exposure&rsquo; by Wilfred Owen.
                 </p>
               </div>
 
-              <div className="rounded-xl border-2 border-[#2E86C1]/30 bg-white p-6 sm:p-8">
-                <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-[#2E86C1]">Full Model Essay</p>
+              <div className="rounded-xl border-2 border-[#2E86C1]/30 bg-card p-6 sm:p-8">
+                <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-primary">Full Model Essay</p>
 
-                <div className="space-y-4 text-sm leading-relaxed text-gray-700">
+                <div className="space-y-4 text-sm leading-relaxed text-muted-foreground">
                   <p>
                     <Annotation note="Clear comparative thesis from the very first sentence.">Both Armitage in &lsquo;Remains&rsquo; and Owen in &lsquo;Exposure&rsquo; present conflict as psychologically devastating, yet they focus on different aspects of its impact.</Annotation>{" "}
                     Armitage explores the lasting guilt and trauma experienced by a modern soldier who has killed a looter, while Owen portrays the slow, grinding suffering of soldiers in World War I who are destroyed not by enemy fire but by the relentless cold. Together, these poems reveal that the true enemy in conflict is often not the opposing force, but the lasting damage war inflicts on the human mind.
@@ -466,14 +466,14 @@ export default function PoetryComparisonPage() {
                     levelColour: "bg-[#8E44AD] text-white",
                   },
                 ].map((item) => (
-                  <div key={item.label} className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+                  <div key={item.label} className="rounded-xl border border-border bg-card p-5 shadow-md">
                     <div className="flex items-center gap-2">
                       <span className={`rounded-full px-2.5 py-0.5 text-xs font-bold ${item.levelColour}`}>
                         {item.level}
                       </span>
-                      <h4 className="font-bold text-gray-900">{item.label}</h4>
+                      <h4 className="font-bold text-foreground">{item.label}</h4>
                     </div>
-                    <p className="mt-2 text-sm text-gray-600">{item.detail}</p>
+                    <p className="mt-2 text-sm text-muted-foreground">{item.detail}</p>
                   </div>
                 ))}
               </div>
@@ -516,7 +516,7 @@ export default function PoetryComparisonPage() {
                     fix: "Write an evaluative conclusion that weighs up both poems and gives a personal judgement.",
                   },
                 ].map((item, i) => (
-                  <div key={i} className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+                  <div key={i} className="rounded-xl border border-border bg-card p-5 shadow-md">
                     <div className="flex flex-col sm:flex-row sm:gap-6">
                       <div className="flex-1">
                         <p className="text-sm font-bold text-[#E74C3C]">

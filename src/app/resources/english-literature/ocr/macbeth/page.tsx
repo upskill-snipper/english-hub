@@ -94,14 +94,14 @@ export default function OCRMacbethPage() {
         <section aria-labelledby="plot-heading">
           <h2
             id="plot-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Plot Summary
           </h2>
-          <div className="mt-4 space-y-4 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <div className="space-y-3">
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                <p className="font-semibold text-gray-900">Act 1: The Prophecy and Temptation</p>
+              <div className="rounded-lg border border-border bg-muted p-4">
+                <p className="font-semibold text-foreground">Act 1: The Prophecy and Temptation</p>
                 <p className="mt-2 text-sm">
                   Three witches prophecy that Macbeth will become Thane of
                   Cawdor and King of Scotland. When the first prophecy comes
@@ -110,8 +110,8 @@ export default function OCRMacbethPage() {
                   but Lady Macbeth questions his manhood and persuades him.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                <p className="font-semibold text-gray-900">Act 2: The Murder</p>
+              <div className="rounded-lg border border-border bg-muted p-4">
+                <p className="font-semibold text-foreground">Act 2: The Murder</p>
                 <p className="mt-2 text-sm">
                   Macbeth murders Duncan in his sleep and is immediately
                   consumed by guilt. Lady Macbeth takes charge, planting the
@@ -120,8 +120,8 @@ export default function OCRMacbethPage() {
                   guilty. Macbeth is crowned King.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                <p className="font-semibold text-gray-900">Act 3: Paranoia and Tyranny</p>
+              <div className="rounded-lg border border-border bg-muted p-4">
+                <p className="font-semibold text-foreground">Act 3: Paranoia and Tyranny</p>
                 <p className="mt-2 text-sm">
                   Macbeth, now King, is paranoid about Banquo, whose
                   descendants the witches said would be kings. He hires
@@ -131,8 +131,8 @@ export default function OCRMacbethPage() {
                   terrified reaction.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                <p className="font-semibold text-gray-900">Act 4: False Security</p>
+              <div className="rounded-lg border border-border bg-muted p-4">
+                <p className="font-semibold text-foreground">Act 4: False Security</p>
                 <p className="mt-2 text-sm">
                   Macbeth returns to the witches, who give him three new
                   prophecies: beware Macduff; no man &ldquo;of woman born&rdquo;
@@ -142,8 +142,8 @@ export default function OCRMacbethPage() {
                   to reclaim Scotland with English support.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                <p className="font-semibold text-gray-900">Act 5: Downfall</p>
+              <div className="rounded-lg border border-border bg-muted p-4">
+                <p className="font-semibold text-foreground">Act 5: Downfall</p>
                 <p className="mt-2 text-sm">
                   Lady Macbeth, tormented by guilt, sleepwalks and eventually
                   dies (implied suicide). Malcolm&rsquo;s army camouflages
@@ -158,22 +158,22 @@ export default function OCRMacbethPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* Characters */}
         <section aria-labelledby="characters-heading">
           <h2
             id="characters-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Character Analysis
           </h2>
 
           <div className="mt-6 space-y-6">
             {/* Macbeth */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="rounded-lg border border-border bg-card p-6 shadow-md">
               <h3 className="text-xl font-semibold text-primary">Macbeth</h3>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Macbeth is Shakespeare&rsquo;s tragic hero &mdash; a brave and
                 loyal warrior who is corrupted by ambition and supernatural
                 influence. At the start of the play, he is celebrated as
@@ -183,7 +183,7 @@ export default function OCRMacbethPage() {
                 that, combined with Lady Macbeth&rsquo;s manipulation, drives
                 him to regicide.
               </p>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 What makes Macbeth a tragic figure is his awareness of his own
                 moral deterioration. His soliloquies reveal intense inner
                 conflict &mdash; he knows murder is wrong, yet he cannot resist
@@ -205,9 +205,9 @@ export default function OCRMacbethPage() {
             </div>
 
             {/* Lady Macbeth */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="rounded-lg border border-border bg-card p-6 shadow-md">
               <h3 className="text-xl font-semibold text-primary">Lady Macbeth</h3>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Lady Macbeth is one of Shakespeare&rsquo;s most complex female
                 characters. She is ambitious, ruthless, and manipulative,
                 challenging Jacobean gender roles by taking on what would be
@@ -215,7 +215,7 @@ export default function OCRMacbethPage() {
                 me here&rdquo; reveals her desire to shed feminine weakness
                 and become capable of violence.
               </p>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 She is the driving force behind Duncan&rsquo;s murder,
                 questioning Macbeth&rsquo;s manhood (&ldquo;When you durst do
                 it, then you were a man&rdquo;) and taking practical charge of
@@ -237,9 +237,9 @@ export default function OCRMacbethPage() {
             </div>
 
             {/* The Witches */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="rounded-lg border border-border bg-card p-6 shadow-md">
               <h3 className="text-xl font-semibold text-primary">The Witches</h3>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 The three witches (or &ldquo;Weird Sisters&rdquo;) are agents
                 of chaos and moral disruption. They open the play with their
                 paradoxical chant and return to give Macbeth the prophecies
@@ -248,7 +248,7 @@ export default function OCRMacbethPage() {
                 or do they merely reveal desires that already exist within
                 Macbeth?
               </p>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 For a Jacobean audience, the witches would have been genuinely
                 terrifying. King James I had a personal interest in witchcraft
                 and had written <em>Daemonologie</em> (1597), a treatise on
@@ -261,9 +261,9 @@ export default function OCRMacbethPage() {
             </div>
 
             {/* Banquo */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="rounded-lg border border-border bg-card p-6 shadow-md">
               <h3 className="text-xl font-semibold text-primary">Banquo</h3>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Banquo serves as a moral foil to Macbeth. Both hear the
                 witches&rsquo; prophecies, but while Macbeth acts on them,
                 Banquo remains cautious and loyal. He warns that &ldquo;the
@@ -276,9 +276,9 @@ export default function OCRMacbethPage() {
             </div>
 
             {/* Macduff */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="rounded-lg border border-border bg-card p-6 shadow-md">
               <h3 className="text-xl font-semibold text-primary">Macduff</h3>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Macduff represents loyalty, honour, and righteous vengeance.
                 He is the first to suspect Macbeth (&ldquo;O horror, horror,
                 horror!&rdquo;) and refuses to attend his coronation. His
@@ -292,23 +292,23 @@ export default function OCRMacbethPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* Themes */}
         <section aria-labelledby="themes-heading">
           <h2
             id="themes-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Key Themes
           </h2>
 
           <div className="mt-6 space-y-6">
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="text-lg font-semibold text-gray-900">
+            <div className="rounded-lg border border-border bg-muted p-5">
+              <h3 className="text-lg font-semibold text-foreground">
                 Ambition
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Ambition is the play&rsquo;s central driving force. Shakespeare
                 presents ambition as inherently dangerous when it becomes
                 unchecked and is separated from morality. Macbeth&rsquo;s
@@ -321,11 +321,11 @@ export default function OCRMacbethPage() {
               </p>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="text-lg font-semibold text-gray-900">
+            <div className="rounded-lg border border-border bg-muted p-5">
+              <h3 className="text-lg font-semibold text-foreground">
                 Guilt and Conscience
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Guilt permeates the play through imagery of blood,
                 sleeplessness, and madness. Macbeth&rsquo;s guilt manifests
                 immediately after Duncan&rsquo;s murder (&ldquo;Will all
@@ -337,11 +337,11 @@ export default function OCRMacbethPage() {
               </p>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="text-lg font-semibold text-gray-900">
+            <div className="rounded-lg border border-border bg-muted p-5">
+              <h3 className="text-lg font-semibold text-foreground">
                 The Supernatural
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 The supernatural pervades the play through the witches, the
                 floating dagger, Banquo&rsquo;s ghost, and the prophecies.
                 Shakespeare uses the supernatural to explore the boundaries
@@ -352,11 +352,11 @@ export default function OCRMacbethPage() {
               </p>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="text-lg font-semibold text-gray-900">
+            <div className="rounded-lg border border-border bg-muted p-5">
+              <h3 className="text-lg font-semibold text-foreground">
                 Kingship and Power
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Shakespeare contrasts legitimate kingship (Duncan, Malcolm)
                 with tyranny (Macbeth). Duncan is described as a gracious,
                 generous king whose murder disrupts the natural order. Macbeth
@@ -368,11 +368,11 @@ export default function OCRMacbethPage() {
               </p>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="text-lg font-semibold text-gray-900">
+            <div className="rounded-lg border border-border bg-muted p-5">
+              <h3 className="text-lg font-semibold text-foreground">
                 Appearance vs Reality
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 The play is saturated with deception and duplicity. The witches
                 declare &ldquo;fair is foul, and foul is fair.&rdquo; Lady
                 Macbeth instructs her husband to &ldquo;look like the innocent
@@ -384,11 +384,11 @@ export default function OCRMacbethPage() {
               </p>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="text-lg font-semibold text-gray-900">
+            <div className="rounded-lg border border-border bg-muted p-5">
+              <h3 className="text-lg font-semibold text-foreground">
                 Gender and Masculinity
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Lady Macbeth challenges gender norms by associating masculinity
                 with violence and ruthlessness (&ldquo;unsex me here&rdquo;).
                 She manipulates Macbeth by questioning his manhood. Macbeth
@@ -400,11 +400,11 @@ export default function OCRMacbethPage() {
               </p>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="text-lg font-semibold text-gray-900">
+            <div className="rounded-lg border border-border bg-muted p-5">
+              <h3 className="text-lg font-semibold text-foreground">
                 Order and Chaos
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 The murder of Duncan disturbs the natural order. Shakespeare
                 uses pathetic fallacy to reflect this: &ldquo;The night has
                 been unruly&rdquo;, storms rage, and an owl kills a falcon
@@ -417,17 +417,17 @@ export default function OCRMacbethPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* Key quotations */}
         <section aria-labelledby="quotations-heading">
           <h2
             id="quotations-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Key Quotations with Analysis
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             Learn these quotations for the closed-book exam. Each one can be
             applied to multiple themes and characters.
           </p>
@@ -436,15 +436,15 @@ export default function OCRMacbethPage() {
             {keyQuotations.map((q) => (
               <div
                 key={q.quote}
-                className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm"
+                className="rounded-lg border border-border bg-card p-5 shadow-md"
               >
-                <blockquote className="border-l-4 border-accent pl-4 text-lg font-medium italic text-gray-800">
+                <blockquote className="border-l-4 border-accent pl-4 text-lg font-medium italic text-foreground">
                   &ldquo;{q.quote}&rdquo;
                 </blockquote>
                 <p className="mt-2 text-sm font-medium text-primary">
                   {q.speaker}
                 </p>
-                <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   {q.analysis}
                 </p>
               </div>
@@ -452,24 +452,24 @@ export default function OCRMacbethPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* Context */}
         <section aria-labelledby="context-heading">
           <h2
             id="context-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Historical and Social Context
           </h2>
-          <div className="mt-4 space-y-4 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>
               Understanding context is essential for AO3. Here are the key
               contextual areas to know for Macbeth:
             </p>
             <div className="space-y-4">
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="font-semibold text-gray-900">King James I</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="font-semibold text-foreground">King James I</h3>
                 <p className="mt-2 text-sm">
                   Shakespeare wrote Macbeth around 1606, shortly after James I
                   became King of England and Scotland. James was fascinated by
@@ -480,8 +480,8 @@ export default function OCRMacbethPage() {
                   the Divine Right of Kings.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="font-semibold text-gray-900">The Gunpowder Plot (1605)</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="font-semibold text-foreground">The Gunpowder Plot (1605)</h3>
                 <p className="mt-2 text-sm">
                   The failed Catholic conspiracy to blow up Parliament and
                   kill James I. Macbeth can be read as a warning against
@@ -490,8 +490,8 @@ export default function OCRMacbethPage() {
                   destruction.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="font-semibold text-gray-900">The Divine Right of Kings</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="font-semibold text-foreground">The Divine Right of Kings</h3>
                 <p className="mt-2 text-sm">
                   The Jacobean belief that monarchs were chosen by God and
                   that challenging their authority was a sin. Duncan is
@@ -502,8 +502,8 @@ export default function OCRMacbethPage() {
                   universe.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="font-semibold text-gray-900">Jacobean Attitudes to Witchcraft</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="font-semibold text-foreground">Jacobean Attitudes to Witchcraft</h3>
                 <p className="mt-2 text-sm">
                   In early 17th-century England and Scotland, witchcraft was
                   widely believed to be real and was a capital offence. The
@@ -513,8 +513,8 @@ export default function OCRMacbethPage() {
                   figures.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="font-semibold text-gray-900">Gender Roles</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="font-semibold text-foreground">Gender Roles</h3>
                 <p className="mt-2 text-sm">
                   Women in Jacobean society were expected to be passive,
                   obedient, and nurturing. Lady Macbeth&rsquo;s ambition,
@@ -528,17 +528,17 @@ export default function OCRMacbethPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* Essay planning */}
         <section aria-labelledby="essay-heading">
           <h2
             id="essay-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Essay Planning for OCR
           </h2>
-          <div className="mt-4 space-y-4 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>
               Remember that the OCR Shakespeare question gives you an extract.
               You must analyse the extract <strong>and</strong> explore the
@@ -547,7 +547,7 @@ export default function OCRMacbethPage() {
             <div className="space-y-3">
               <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                 <p className="font-semibold text-primary">Introduction (3&ndash;4 sentences)</p>
-                <p className="mt-1 text-sm text-gray-700">
+                <p className="mt-1 text-sm text-muted-foreground">
                   Address the question directly. State how Shakespeare
                   presents the theme/character in the extract and across the
                   play. Mention relevant context briefly.
@@ -555,7 +555,7 @@ export default function OCRMacbethPage() {
               </div>
               <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                 <p className="font-semibold text-primary">Paragraph 1: Extract analysis</p>
-                <p className="mt-1 text-sm text-gray-700">
+                <p className="mt-1 text-sm text-muted-foreground">
                   Close analysis of language in the extract. Quote specific
                   words and phrases. Explore connotations and effects. Use
                   subject terminology. Link to context where relevant.
@@ -563,7 +563,7 @@ export default function OCRMacbethPage() {
               </div>
               <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                 <p className="font-semibold text-primary">Paragraph 2: Extract analysis (continued)</p>
-                <p className="mt-1 text-sm text-gray-700">
+                <p className="mt-1 text-sm text-muted-foreground">
                   Second key point from the extract. Consider structural
                   features, dramatic techniques, or a different aspect of the
                   language.
@@ -571,7 +571,7 @@ export default function OCRMacbethPage() {
               </div>
               <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                 <p className="font-semibold text-primary">Paragraph 3: Wider play (earlier in the text)</p>
-                <p className="mt-1 text-sm text-gray-700">
+                <p className="mt-1 text-sm text-muted-foreground">
                   Explore how the same theme/character is presented earlier in
                   the play. Use a memorised quotation. Compare with the
                   extract.
@@ -579,7 +579,7 @@ export default function OCRMacbethPage() {
               </div>
               <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                 <p className="font-semibold text-primary">Paragraph 4: Wider play (later in the text)</p>
-                <p className="mt-1 text-sm text-gray-700">
+                <p className="mt-1 text-sm text-muted-foreground">
                   Explore how the theme/character develops or changes later.
                   Track the character&rsquo;s arc or the theme&rsquo;s
                   progression. Link to Shakespeare&rsquo;s message.
@@ -587,7 +587,7 @@ export default function OCRMacbethPage() {
               </div>
               <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                 <p className="font-semibold text-primary">Conclusion</p>
-                <p className="mt-1 text-sm text-gray-700">
+                <p className="mt-1 text-sm text-muted-foreground">
                   Final evaluative judgement. What is Shakespeare&rsquo;s
                   overall message about this theme/character? Why does it
                   matter? Consider the effect on the audience.

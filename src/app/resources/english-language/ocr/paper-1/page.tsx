@@ -42,11 +42,11 @@ export default function OCRPaper1Page() {
         <section aria-labelledby="structure-heading">
           <h2
             id="structure-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Paper Structure
           </h2>
-          <div className="mt-4 space-y-4 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>
               OCR Component 01 tests your ability to read and understand
               non-fiction and literary non-fiction texts, and to write
@@ -57,10 +57,10 @@ export default function OCRPaper1Page() {
               <table className="mt-2 w-full border-collapse text-sm">
                 <thead>
                   <tr className="border-b-2 border-primary/20 text-left">
-                    <th className="py-3 pr-4 font-semibold text-gray-900">Section</th>
-                    <th className="py-3 pr-4 font-semibold text-gray-900">Focus</th>
-                    <th className="py-3 pr-4 font-semibold text-gray-900">Marks</th>
-                    <th className="py-3 font-semibold text-gray-900">Time Guide</th>
+                    <th className="py-3 pr-4 font-semibold text-foreground">Section</th>
+                    <th className="py-3 pr-4 font-semibold text-foreground">Focus</th>
+                    <th className="py-3 pr-4 font-semibold text-foreground">Marks</th>
+                    <th className="py-3 font-semibold text-foreground">Time Guide</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-100">
@@ -82,21 +82,21 @@ export default function OCRPaper1Page() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── SECTION A: Reading ─────────────────────────────── */}
         <section aria-labelledby="reading-heading">
           <h2
             id="reading-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Section A: Reading Non-Fiction and Literary Non-Fiction
           </h2>
 
-          <div className="mt-6 space-y-6 text-gray-700 leading-relaxed">
+          <div className="mt-6 space-y-6 text-muted-foreground leading-relaxed">
             {/* Types of text */}
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 What Types of Text Will You Encounter?
               </h3>
               <p className="mt-2">
@@ -122,7 +122,7 @@ export default function OCRPaper1Page() {
 
             {/* Question types */}
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 Understanding the Question Types
               </h3>
               <p className="mt-2">
@@ -131,8 +131,8 @@ export default function OCRPaper1Page() {
               </p>
 
               <div className="mt-4 space-y-4">
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                  <h4 className="font-semibold text-gray-900">
+                <div className="rounded-lg border border-border bg-muted p-5">
+                  <h4 className="font-semibold text-foreground">
                     Retrieval and Inference (AO1)
                   </h4>
                   <p className="mt-2 text-sm">
@@ -153,8 +153,8 @@ export default function OCRPaper1Page() {
                   </div>
                 </div>
 
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                  <h4 className="font-semibold text-gray-900">
+                <div className="rounded-lg border border-border bg-muted p-5">
+                  <h4 className="font-semibold text-foreground">
                     Language and Structure Analysis (AO2)
                   </h4>
                   <p className="mt-2 text-sm">
@@ -175,8 +175,8 @@ export default function OCRPaper1Page() {
                   </div>
                 </div>
 
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                  <h4 className="font-semibold text-gray-900">
+                <div className="rounded-lg border border-border bg-muted p-5">
+                  <h4 className="font-semibold text-foreground">
                     Comparison (AO3)
                   </h4>
                   <p className="mt-2 text-sm">
@@ -198,8 +198,8 @@ export default function OCRPaper1Page() {
                   </div>
                 </div>
 
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                  <h4 className="font-semibold text-gray-900">
+                <div className="rounded-lg border border-border bg-muted p-5">
+                  <h4 className="font-semibold text-foreground">
                     Evaluation (AO4)
                   </h4>
                   <p className="mt-2 text-sm">
@@ -223,7 +223,7 @@ export default function OCRPaper1Page() {
 
             {/* Reading strategies */}
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 Effective Reading Strategies
               </h3>
               <ol className="ml-6 mt-2 list-decimal space-y-2">
@@ -255,15 +255,15 @@ export default function OCRPaper1Page() {
 
             {/* Model paragraph */}
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 Model Analysis Paragraph
               </h3>
               <p className="mt-2">
                 Here is an example of a strong analytical paragraph responding
                 to an AO2 question about a travel writing extract:
               </p>
-              <div className="mt-3 rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-                <p className="text-sm italic text-gray-700">
+              <div className="mt-3 rounded-lg border border-border bg-card p-5 shadow-md">
+                <p className="text-sm italic text-muted-foreground">
                   The writer uses the simile &ldquo;the mountains loomed like
                   ancient sentinels guarding the valley&rdquo; to personify the
                   landscape and create a sense of awe and reverence. The verb
@@ -278,7 +278,7 @@ export default function OCRPaper1Page() {
                   human traveller seem small and transient by comparison.
                 </p>
               </div>
-              <p className="mt-3 text-sm text-gray-600">
+              <p className="mt-3 text-sm text-muted-foreground">
                 Notice how this paragraph: identifies a technique; quotes
                 precisely; explains the effect of individual words; explores
                 multiple interpretations; and links back to the writer&rsquo;s
@@ -288,20 +288,20 @@ export default function OCRPaper1Page() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── SECTION B: Writing ─────────────────────────────── */}
         <section aria-labelledby="writing-heading">
           <h2
             id="writing-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Section B: Writing to Present Information and Ideas
           </h2>
 
-          <div className="mt-6 space-y-6 text-gray-700 leading-relaxed">
+          <div className="mt-6 space-y-6 text-muted-foreground leading-relaxed">
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 What Are You Asked to Write?
               </h3>
               <p className="mt-2">
@@ -327,7 +327,7 @@ export default function OCRPaper1Page() {
 
             {/* PAF */}
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 Purpose, Audience, and Form (PAF)
               </h3>
               <p className="mt-2">
@@ -360,13 +360,13 @@ export default function OCRPaper1Page() {
 
             {/* Form conventions */}
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 Form Conventions You Must Know
               </h3>
 
               <div className="mt-4 space-y-4">
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                  <h4 className="font-semibold text-gray-900">Formal Letter</h4>
+                <div className="rounded-lg border border-border bg-muted p-5">
+                  <h4 className="font-semibold text-foreground">Formal Letter</h4>
                   <ul className="ml-4 mt-2 list-disc space-y-1 text-sm">
                     <li>Your address (top right), their address (left), date</li>
                     <li>&ldquo;Dear Sir/Madam&rdquo; or &ldquo;Dear Mr/Mrs [Name]&rdquo;</li>
@@ -376,8 +376,8 @@ export default function OCRPaper1Page() {
                   </ul>
                 </div>
 
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                  <h4 className="font-semibold text-gray-900">Article</h4>
+                <div className="rounded-lg border border-border bg-muted p-5">
+                  <h4 className="font-semibold text-foreground">Article</h4>
                   <ul className="ml-4 mt-2 list-disc space-y-1 text-sm">
                     <li>Engaging headline</li>
                     <li>Optional subheading or strapline</li>
@@ -387,8 +387,8 @@ export default function OCRPaper1Page() {
                   </ul>
                 </div>
 
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                  <h4 className="font-semibold text-gray-900">Speech</h4>
+                <div className="rounded-lg border border-border bg-muted p-5">
+                  <h4 className="font-semibold text-foreground">Speech</h4>
                   <ul className="ml-4 mt-2 list-disc space-y-1 text-sm">
                     <li>Address the audience directly (&ldquo;Ladies and gentlemen&rdquo;)</li>
                     <li>Rhetorical devices: tricolon, anaphora, rhetorical questions</li>
@@ -398,8 +398,8 @@ export default function OCRPaper1Page() {
                   </ul>
                 </div>
 
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                  <h4 className="font-semibold text-gray-900">Review</h4>
+                <div className="rounded-lg border border-border bg-muted p-5">
+                  <h4 className="font-semibold text-foreground">Review</h4>
                   <ul className="ml-4 mt-2 list-disc space-y-1 text-sm">
                     <li>Clear subject of the review stated early</li>
                     <li>Balanced opinions (both positive and negative points)</li>
@@ -413,7 +413,7 @@ export default function OCRPaper1Page() {
 
             {/* Persuasive techniques */}
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 Key Persuasive and Rhetorical Techniques
               </h3>
               <p className="mt-2">
@@ -424,9 +424,9 @@ export default function OCRPaper1Page() {
                 <table className="w-full border-collapse text-sm">
                   <thead>
                     <tr className="border-b-2 border-primary/20 text-left">
-                      <th className="py-3 pr-4 font-semibold text-gray-900">Technique</th>
-                      <th className="py-3 pr-4 font-semibold text-gray-900">Definition</th>
-                      <th className="py-3 font-semibold text-gray-900">Example</th>
+                      <th className="py-3 pr-4 font-semibold text-foreground">Technique</th>
+                      <th className="py-3 pr-4 font-semibold text-foreground">Definition</th>
+                      <th className="py-3 font-semibold text-foreground">Example</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-100">
@@ -472,7 +472,7 @@ export default function OCRPaper1Page() {
 
             {/* SPaG */}
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 Spelling, Punctuation, and Grammar (AO6)
               </h3>
               <p className="mt-2">
@@ -511,15 +511,15 @@ export default function OCRPaper1Page() {
 
             {/* Timing */}
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 Recommended Timing
               </h3>
               <div className="mt-3 overflow-x-auto">
                 <table className="w-full border-collapse text-sm">
                   <thead>
                     <tr className="border-b-2 border-primary/20 text-left">
-                      <th className="py-3 pr-4 font-semibold text-gray-900">Task</th>
-                      <th className="py-3 font-semibold text-gray-900">Suggested Time</th>
+                      <th className="py-3 pr-4 font-semibold text-foreground">Task</th>
+                      <th className="py-3 font-semibold text-foreground">Suggested Time</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-100">
@@ -550,7 +550,7 @@ export default function OCRPaper1Page() {
 
             {/* Common mistakes */}
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 Common Mistakes to Avoid
               </h3>
               <ul className="ml-6 mt-2 list-disc space-y-2">

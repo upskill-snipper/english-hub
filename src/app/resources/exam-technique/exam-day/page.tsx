@@ -35,7 +35,7 @@ export default function ExamDayPage() {
 
       {/* Breadcrumb */}
       <nav className="mx-auto max-w-5xl px-4 pt-6" aria-label="Breadcrumb">
-        <ol className="flex flex-wrap items-center gap-2 text-sm text-gray-500">
+        <ol className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
           <li>
             <Link href="/" className="hover:text-primary transition-colors">Home</Link>
           </li>
@@ -54,15 +54,15 @@ export default function ExamDayPage() {
 
       {/* What to bring */}
       <section className="mx-auto max-w-5xl px-4 py-12">
-        <h2 className="text-2xl font-bold text-gray-900 sm:text-3xl">
+        <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
           What to bring
         </h2>
-        <p className="mt-3 text-gray-600 leading-relaxed">
+        <p className="mt-3 text-muted-foreground leading-relaxed">
           Pack everything the night before. Do not leave this to the morning.
         </p>
 
         <div className="mt-8 grid gap-6 sm:grid-cols-2">
-          <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+          <div className="rounded-xl border border-border bg-card p-6 shadow-md">
             <h3 className="font-bold text-green-700">Essentials</h3>
             <ul className="mt-4 space-y-3">
               {[
@@ -73,7 +73,7 @@ export default function ExamDayPage() {
                 "Water bottle (clear, with the label removed)",
                 "Any required ID or exam card",
               ].map((item) => (
-                <li key={item} className="flex gap-3 text-sm text-gray-700">
+                <li key={item} className="flex gap-3 text-sm text-muted-foreground">
                   <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-green-100 text-xs text-green-600">
                     &#10003;
                   </span>
@@ -83,8 +83,8 @@ export default function ExamDayPage() {
             </ul>
           </div>
 
-          <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-            <h3 className="font-bold text-[#2E86C1]">Useful extras</h3>
+          <div className="rounded-xl border border-border bg-card p-6 shadow-md">
+            <h3 className="font-bold text-primary">Useful extras</h3>
             <ul className="mt-4 space-y-3">
               {[
                 "Pencil and eraser (for annotations and planning)",
@@ -94,8 +94,8 @@ export default function ExamDayPage() {
                 "A light snack for between papers (nothing noisy or messy)",
                 "Tissues (just in case)",
               ].map((item) => (
-                <li key={item} className="flex gap-3 text-sm text-gray-700">
-                  <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#2E86C1]" />
+                <li key={item} className="flex gap-3 text-sm text-muted-foreground">
+                  <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                   <span className="leading-relaxed">{item}</span>
                 </li>
               ))}
@@ -105,12 +105,12 @@ export default function ExamDayPage() {
       </section>
 
       {/* How to read the paper */}
-      <section className="bg-gray-50 px-4 py-14">
+      <section className="bg-muted px-4 py-14">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-gray-900 sm:text-3xl">
+          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
             How to read the paper
           </h2>
-          <p className="mt-3 text-gray-600 leading-relaxed">
+          <p className="mt-3 text-muted-foreground leading-relaxed">
             The first 10-15 minutes of your exam should be spent reading, not
             writing. This is an investment that pays off in every answer you
             write.
@@ -151,14 +151,14 @@ export default function ExamDayPage() {
             ].map((item) => (
               <div
                 key={item.step}
-                className="flex gap-4 rounded-xl border border-gray-200 bg-white p-5 shadow-sm"
+                className="flex gap-4 rounded-xl border border-border bg-card p-5 shadow-md"
               >
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-sm font-bold text-white">
                   {item.step}
                 </span>
                 <div>
-                  <h3 className="font-bold text-gray-900">{item.title}</h3>
-                  <p className="mt-1 text-sm text-gray-600 leading-relaxed">
+                  <h3 className="font-bold text-foreground">{item.title}</h3>
+                  <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                     {item.detail}
                   </p>
                 </div>
@@ -170,49 +170,49 @@ export default function ExamDayPage() {
 
       {/* How to plan answers */}
       <section className="mx-auto max-w-5xl px-4 py-14">
-        <h2 className="text-2xl font-bold text-gray-900 sm:text-3xl">
+        <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
           How to plan answers
         </h2>
-        <p className="mt-3 text-gray-600 leading-relaxed">
+        <p className="mt-3 text-muted-foreground leading-relaxed">
           A planned answer is always better than an unplanned one. Planning takes
           3-5 minutes but saves you from waffle, repetition, and running out of
           ideas mid-paragraph.
         </p>
 
         <div className="mt-8 grid gap-6 sm:grid-cols-2">
-          <div className="rounded-xl border-2 border-[#2E86C1] bg-white p-6 shadow-sm">
-            <h3 className="font-bold text-[#1A5276]">
+          <div className="rounded-xl border-2 border-[#2E86C1] bg-card p-6 shadow-md">
+            <h3 className="font-bold text-foreground">
               For analytical/essay questions
             </h3>
-            <ol className="mt-4 space-y-3 text-sm text-gray-700">
+            <ol className="mt-4 space-y-3 text-sm text-muted-foreground">
               <li className="flex gap-3">
-                <span className="font-bold text-[#2E86C1]">1.</span>
+                <span className="font-bold text-primary">1.</span>
                 <span>Write your thesis (your overall argument) in one sentence at the top.</span>
               </li>
               <li className="flex gap-3">
-                <span className="font-bold text-[#2E86C1]">2.</span>
+                <span className="font-bold text-primary">2.</span>
                 <span>List 3-4 key points as bullet points underneath.</span>
               </li>
               <li className="flex gap-3">
-                <span className="font-bold text-[#2E86C1]">3.</span>
+                <span className="font-bold text-primary">3.</span>
                 <span>Next to each point, jot down the quotation you will use.</span>
               </li>
               <li className="flex gap-3">
-                <span className="font-bold text-[#2E86C1]">4.</span>
+                <span className="font-bold text-primary">4.</span>
                 <span>Note any key techniques to mention (metaphor, contrast, etc.).</span>
               </li>
               <li className="flex gap-3">
-                <span className="font-bold text-[#2E86C1]">5.</span>
+                <span className="font-bold text-primary">5.</span>
                 <span>Write a one-line conclusion idea so you know where you are heading.</span>
               </li>
             </ol>
           </div>
 
-          <div className="rounded-xl border-2 border-accent bg-white p-6 shadow-sm">
-            <h3 className="font-bold text-[#1A5276]">
+          <div className="rounded-xl border-2 border-accent bg-card p-6 shadow-md">
+            <h3 className="font-bold text-foreground">
               For creative writing tasks
             </h3>
-            <ol className="mt-4 space-y-3 text-sm text-gray-700">
+            <ol className="mt-4 space-y-3 text-sm text-muted-foreground">
               <li className="flex gap-3">
                 <span className="font-bold text-accent">1.</span>
                 <span>Decide on your setting, main character, and mood/atmosphere.</span>
@@ -238,7 +238,7 @@ export default function ExamDayPage() {
         </div>
 
         <div className="mt-8 rounded-xl border border-accent-100 bg-accent-50/50 p-6">
-          <p className="text-sm text-gray-700 leading-relaxed">
+          <p className="text-sm text-muted-foreground leading-relaxed">
             <strong>Pro tip:</strong> Cross out your plan with a single line
             when you are done. The examiner will not mark it, but if you run out
             of time, they can see what you intended to write -- and it shows
@@ -248,12 +248,12 @@ export default function ExamDayPage() {
       </section>
 
       {/* How to stay calm */}
-      <section className="bg-gray-50 px-4 py-14">
+      <section className="bg-muted px-4 py-14">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-gray-900 sm:text-3xl">
+          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
             How to stay calm
           </h2>
-          <p className="mt-3 text-gray-600 leading-relaxed">
+          <p className="mt-3 text-muted-foreground leading-relaxed">
             Exam anxiety is completely normal. The students who perform best are
             not the ones who feel no nerves -- they are the ones who manage their
             nerves effectively.
@@ -294,16 +294,16 @@ export default function ExamDayPage() {
             ].map((section) => (
               <div
                 key={section.title}
-                className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
+                className="rounded-xl border border-border bg-card p-6 shadow-md"
               >
-                <h3 className="font-bold text-[#1A5276]">{section.title}</h3>
+                <h3 className="font-bold text-foreground">{section.title}</h3>
                 <ul className="mt-4 space-y-3">
                   {section.tips.map((tip) => (
                     <li
                       key={tip}
-                      className="flex gap-3 text-sm text-gray-700"
+                      className="flex gap-3 text-sm text-muted-foreground"
                     >
-                      <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#2E86C1]" />
+                      <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                       <span className="leading-relaxed">{tip}</span>
                     </li>
                   ))}
@@ -316,10 +316,10 @@ export default function ExamDayPage() {
 
       {/* The last 5 minutes */}
       <section className="mx-auto max-w-5xl px-4 py-14">
-        <h2 className="text-2xl font-bold text-gray-900 sm:text-3xl">
+        <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
           What to do in the last 5 minutes
         </h2>
-        <p className="mt-3 text-gray-600 leading-relaxed">
+        <p className="mt-3 text-muted-foreground leading-relaxed">
           The last five minutes of an exam are some of the most valuable. Use them
           wisely and you can pick up several extra marks.
         </p>
@@ -359,14 +359,14 @@ export default function ExamDayPage() {
           ].map((item, i) => (
             <div
               key={item.title}
-              className="flex gap-4 rounded-xl border border-gray-200 bg-white p-5 shadow-sm"
+              className="flex gap-4 rounded-xl border border-border bg-card p-5 shadow-md"
             >
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#2E86C1] text-sm font-bold text-white">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
                 {i + 1}
               </span>
               <div>
-                <h3 className="font-bold text-gray-900">{item.title}</h3>
-                <p className="mt-1 text-sm text-gray-600 leading-relaxed">
+                <h3 className="font-bold text-foreground">{item.title}</h3>
+                <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   {item.detail}
                 </p>
               </div>
@@ -376,12 +376,12 @@ export default function ExamDayPage() {
       </section>
 
       {/* Final message */}
-      <section className="bg-gray-50 px-4 py-14">
+      <section className="bg-muted px-4 py-14">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             You have got this
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-gray-600 leading-relaxed">
+          <p className="mx-auto mt-4 max-w-2xl text-muted-foreground leading-relaxed">
             The fact that you are reading this page means you care about doing
             well -- and that already puts you ahead. Trust your preparation,
             follow these strategies, and give every question your best effort.
@@ -396,7 +396,7 @@ export default function ExamDayPage() {
             </Link>
             <Link
               href="/resources/exam-technique/question-types"
-              className="rounded-lg border-2 border-[#2E86C1] px-6 py-3 text-sm font-semibold text-[#1A5276] transition hover:bg-[#2E86C1]/10"
+              className="rounded-lg border-2 border-[#2E86C1] px-6 py-3 text-sm font-semibold text-foreground transition hover:bg-primary/10"
             >
               Review question types
             </Link>

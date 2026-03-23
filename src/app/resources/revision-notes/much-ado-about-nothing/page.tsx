@@ -20,7 +20,7 @@ function Section({
     <section id={id} aria-labelledby={`${id}-heading`} className="scroll-mt-20">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between rounded-lg bg-gradient-to-r from-[#1A5276] to-[#2E86C1] px-5 py-3.5 text-left text-lg font-bold text-white shadow-sm transition hover:opacity-90"
+        className="flex w-full items-center justify-between rounded-lg bg-gradient-to-r from-[#1A5276] to-[#2E86C1] px-5 py-3.5 text-left text-lg font-bold text-white shadow-md transition hover:opacity-90"
         aria-expanded={open}
       >
         <span id={`${id}-heading`}>{title}</span>
@@ -41,8 +41,8 @@ function Section({
 
 function Card({ title, children }: { title?: string; children: React.ReactNode }) {
   return (
-    <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-      {title && <h3 className="font-semibold text-[#1A5276]">{title}</h3>}
+    <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+      {title && <h3 className="font-semibold text-foreground">{title}</h3>}
       <div className={title ? "mt-2" : ""}>{children}</div>
     </div>
   );
@@ -60,14 +60,14 @@ function QuoteCard({
   analysis: string;
 }) {
   return (
-    <div className="rounded-lg border-l-4 border-[#2E86C1] bg-white p-5 shadow-sm">
-      <blockquote className="text-base font-medium italic text-gray-900">
+    <div className="rounded-lg border-l-4 border-[#2E86C1] bg-card p-5 shadow-md">
+      <blockquote className="text-base font-medium italic text-foreground">
         &ldquo;{quote}&rdquo;
       </blockquote>
-      <p className="mt-1 text-xs font-semibold text-[#2E86C1]">
+      <p className="mt-1 text-xs font-semibold text-primary">
         {speaker} &mdash; {act}
       </p>
-      <p className="mt-3 text-sm leading-relaxed text-gray-700">{analysis}</p>
+      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{analysis}</p>
     </div>
   );
 }
@@ -475,7 +475,7 @@ export default function MuchAdoStudyGuide() {
             <a
               key={s}
               href={`#${s.toLowerCase().replace(/\s+/g, "-")}`}
-              className="rounded-full border border-[#2E86C1]/30 px-3 py-1 text-[#1A5276] transition hover:bg-[#2E86C1]/10"
+              className="rounded-full border border-[#2E86C1]/30 px-3 py-1 text-foreground transition hover:bg-primary/10"
             >
               {s}
             </a>
@@ -488,7 +488,7 @@ export default function MuchAdoStudyGuide() {
         <Section title="Scene-by-Scene Summary" id="scene-summary" defaultOpen>
           {sceneSummary.map((s) => (
             <Card key={s.scene} title={s.scene}>
-              <p className="text-sm leading-relaxed text-gray-700">{s.summary}</p>
+              <p className="text-sm leading-relaxed text-muted-foreground">{s.summary}</p>
             </Card>
           ))}
         </Section>
@@ -498,7 +498,7 @@ export default function MuchAdoStudyGuide() {
           <div className="grid gap-4 sm:grid-cols-2">
             {characters.map((c) => (
               <Card key={c.name} title={c.name}>
-                <p className="text-sm leading-relaxed text-gray-700">{c.description}</p>
+                <p className="text-sm leading-relaxed text-muted-foreground">{c.description}</p>
               </Card>
             ))}
           </div>
@@ -509,7 +509,7 @@ export default function MuchAdoStudyGuide() {
           <div className="grid gap-4 sm:grid-cols-2">
             {themes.map((t) => (
               <Card key={t.name} title={t.name}>
-                <p className="text-sm leading-relaxed text-gray-700">{t.detail}</p>
+                <p className="text-sm leading-relaxed text-muted-foreground">{t.detail}</p>
               </Card>
             ))}
           </div>
@@ -517,7 +517,7 @@ export default function MuchAdoStudyGuide() {
 
         {/* ── Key Quotes ────────────────────────────────────────── */}
         <Section title={`Key Quotations (${keyQuotes.length})`} id="key-quotes">
-          <p className="text-sm text-gray-600">
+          <p className="text-sm text-muted-foreground">
             Each quotation includes speaker, location, and detailed analysis suitable for GCSE
             responses across all exam boards.
           </p>
@@ -530,25 +530,25 @@ export default function MuchAdoStudyGuide() {
         <Section title="Historical and Literary Context" id="context">
           {contextTopics.map((c) => (
             <Card key={c.title} title={c.title}>
-              <p className="text-sm leading-relaxed text-gray-700">{c.content}</p>
+              <p className="text-sm leading-relaxed text-muted-foreground">{c.content}</p>
             </Card>
           ))}
         </Section>
 
         {/* ── Essay Planning ────────────────────────────────────── */}
         <Section title="Essay Planning" id="essay-planning">
-          <p className="text-sm text-gray-600">
+          <p className="text-sm text-muted-foreground">
             Common exam questions with guidance on how to plan and structure your response.
           </p>
           {examQuestions.map((eq, i) => (
-            <div key={i} className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <span className="inline-block rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-[#1A5276]">
+            <div key={i} className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <span className="inline-block rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                 {eq.type}
               </span>
-              <p className="mt-3 text-sm font-medium text-gray-900">{eq.question}</p>
-              <div className="mt-3 rounded bg-[#2E86C1]/5 p-3">
-                <p className="text-xs font-semibold text-[#1A5276]">How to approach:</p>
-                <ul className="mt-1 space-y-1 text-xs text-gray-700">
+              <p className="mt-3 text-sm font-medium text-foreground">{eq.question}</p>
+              <div className="mt-3 rounded bg-primary/5 p-3">
+                <p className="text-xs font-semibold text-foreground">How to approach:</p>
+                <ul className="mt-1 space-y-1 text-xs text-muted-foreground">
                   {eq.guidance.map((g, j) => (
                     <li key={j}>&bull; {g}</li>
                   ))}

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 function Annotation({ children, note }: { children: React.ReactNode; note: string }) {
   return (
     <span className="group relative">
-      <span className="rounded bg-[#2E86C1]/10 px-1 py-0.5 text-[#1A5276] border-b-2 border-dashed border-[#2E86C1]/40 cursor-help">
+      <span className="rounded bg-primary/10 px-1 py-0.5 text-foreground border-b-2 border-dashed border-[#2E86C1]/40 cursor-help">
         {children}
       </span>
       <span className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 w-60 -translate-x-1/2 rounded-lg bg-[#1A5276] px-3 py-2 text-xs leading-relaxed text-white opacity-0 shadow-lg transition-opacity group-hover:pointer-events-auto group-hover:opacity-100">
@@ -39,11 +39,11 @@ function GradeBadge({ grade, color }: { grade: string; color: string }) {
 
 function ExaminerComment({ children }: { children: React.ReactNode }) {
   return (
-    <div className="mt-4 rounded-lg border-l-4 border-[#2E86C1] bg-[#2E86C1]/5 p-4">
-      <p className="mb-1 text-xs font-bold uppercase tracking-wider text-[#2E86C1]">
+    <div className="mt-4 rounded-lg border-l-4 border-[#2E86C1] bg-primary/5 p-4">
+      <p className="mb-1 text-xs font-bold uppercase tracking-wider text-primary">
         Examiner Commentary
       </p>
-      <div className="text-sm leading-relaxed text-gray-700">{children}</div>
+      <div className="text-sm leading-relaxed text-muted-foreground">{children}</div>
     </div>
   );
 }
@@ -53,7 +53,7 @@ function ExaminerComment({ children }: { children: React.ReactNode }) {
 function Section({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
   return (
     <section id={id} className="scroll-mt-24">
-      <h2 className="mb-6 text-2xl font-bold text-[#1A5276] border-b-2 border-[#2E86C1]/20 pb-3">
+      <h2 className="mb-6 text-2xl font-bold text-foreground border-b-2 border-[#2E86C1]/20 pb-3">
         {title}
       </h2>
       {children}
@@ -70,7 +70,7 @@ export default function LiteratureEssayPage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-[#1A5276] to-[#1A5276]/80 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-[#2E86C1]/80">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary/80">
             Model Answers
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -85,14 +85,14 @@ export default function LiteratureEssayPage() {
 
       {/* Breadcrumb */}
       <nav className="mx-auto max-w-5xl px-4 pt-6" aria-label="Breadcrumb">
-        <ol className="flex flex-wrap items-center gap-2 text-sm text-gray-500">
-          <li><Link href="/" className="hover:text-[#1A5276] transition-colors">Home</Link></li>
+        <ol className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+          <li><Link href="/" className="hover:text-foreground transition-colors">Home</Link></li>
           <li>/</li>
-          <li><Link href="/resources" className="hover:text-[#1A5276] transition-colors">Resources</Link></li>
+          <li><Link href="/resources" className="hover:text-foreground transition-colors">Resources</Link></li>
           <li>/</li>
-          <li><Link href="/resources/model-answers" className="hover:text-[#1A5276] transition-colors">Model Answers</Link></li>
+          <li><Link href="/resources/model-answers" className="hover:text-foreground transition-colors">Model Answers</Link></li>
           <li>/</li>
-          <li className="font-medium text-[#1A5276]">Literature Essays</li>
+          <li className="font-medium text-foreground">Literature Essays</li>
         </ol>
       </nav>
 
@@ -103,7 +103,7 @@ export default function LiteratureEssayPage() {
           {/* Sidebar TOC */}
           <aside className="hidden lg:block">
             <nav className="sticky top-24 space-y-1 text-sm">
-              <p className="mb-2 font-bold text-[#1A5276] uppercase tracking-wider text-xs">Contents</p>
+              <p className="mb-2 font-bold text-foreground uppercase tracking-wider text-xs">Contents</p>
               {[
                 { id: "macbeth", label: "Macbeth (Grade 9)" },
                 { id: "christmas-carol", label: "A Christmas Carol" },
@@ -114,7 +114,7 @@ export default function LiteratureEssayPage() {
                 <a
                   key={item.id}
                   href={`#${item.id}`}
-                  className="block rounded-lg px-3 py-1.5 text-gray-600 hover:bg-[#2E86C1]/10 hover:text-[#1A5276] transition-colors"
+                  className="block rounded-lg px-3 py-1.5 text-muted-foreground hover:bg-primary/10 hover:text-foreground transition-colors"
                 >
                   {item.label}
                 </a>
@@ -129,19 +129,19 @@ export default function LiteratureEssayPage() {
             <Section id="macbeth" title="Macbeth &mdash; Grade 9">
               <div className="mb-4 flex items-center gap-3">
                 <GradeBadge grade="Grade 9" color="bg-[#1A5276]" />
-                <span className="text-sm text-gray-500">AQA Literature Paper 1</span>
+                <span className="text-sm text-muted-foreground">AQA Literature Paper 1</span>
               </div>
 
-              <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm mb-4">
-                <p className="text-xs font-bold uppercase tracking-wider text-[#2E86C1] mb-2">Question</p>
-                <p className="text-gray-800 font-medium">
+              <div className="rounded-xl border border-border bg-card p-6 shadow-md mb-4">
+                <p className="text-xs font-bold uppercase tracking-wider text-primary mb-2">Question</p>
+                <p className="text-foreground font-medium">
                   Starting with this extract, how does Shakespeare present the theme of ambition in <em>Macbeth</em>?
                 </p>
-                <p className="mt-1 text-sm text-gray-500">Write about the extract and the play as a whole. [34 marks]</p>
+                <p className="mt-1 text-sm text-muted-foreground">Write about the extract and the play as a whole. [34 marks]</p>
               </div>
 
-              <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-                <div className="prose prose-sm max-w-none text-gray-700 leading-relaxed space-y-4">
+              <div className="rounded-xl border border-border bg-card p-6 shadow-md">
+                <div className="prose prose-sm max-w-none text-muted-foreground leading-relaxed space-y-4">
                   <p>
                     <Annotation note="Conceptualised opening: immediately establishes an argument about ambition as a destructive force, not just a character trait.">
                       Shakespeare presents ambition not as a noble aspiration but as a corrosive, self-consuming force
@@ -216,18 +216,18 @@ export default function LiteratureEssayPage() {
             {/* ─── A CHRISTMAS CAROL ──────────────────────────── */}
             <Section id="christmas-carol" title="A Christmas Carol &mdash; Grade 7 vs Grade 9">
               <div className="mb-4">
-                <p className="text-sm text-gray-500 mb-2">Question: How does Dickens present Scrooge&apos;s transformation?</p>
+                <p className="text-sm text-muted-foreground mb-2">Question: How does Dickens present Scrooge&apos;s transformation?</p>
               </div>
 
               {/* Grade 7 */}
               <div className="mb-8">
                 <div className="mb-3 flex items-center gap-3">
                   <GradeBadge grade="Grade 7" color="bg-green-600" />
-                  <span className="text-sm text-gray-500">Extract from response</span>
+                  <span className="text-sm text-muted-foreground">Extract from response</span>
                 </div>
 
-                <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-                  <div className="prose prose-sm max-w-none text-gray-700 leading-relaxed space-y-4">
+                <div className="rounded-xl border border-border bg-card p-6 shadow-md">
+                  <div className="prose prose-sm max-w-none text-muted-foreground leading-relaxed space-y-4">
                     <p>
                       Dickens presents Scrooge&apos;s transformation through the visits of the three spirits. At the
                       start, Scrooge is described as &ldquo;<Annotation note="Good quotation selection but the analysis that follows is descriptive rather than evaluative.">a squeezing, wrenching, grasping, scraping, clutching, covetous old sinner</Annotation>.&rdquo;
@@ -250,11 +250,11 @@ export default function LiteratureEssayPage() {
               <div>
                 <div className="mb-3 flex items-center gap-3">
                   <GradeBadge grade="Grade 9" color="bg-[#1A5276]" />
-                  <span className="text-sm text-gray-500">Extract from response</span>
+                  <span className="text-sm text-muted-foreground">Extract from response</span>
                 </div>
 
-                <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-                  <div className="prose prose-sm max-w-none text-gray-700 leading-relaxed space-y-4">
+                <div className="rounded-xl border border-border bg-card p-6 shadow-md">
+                  <div className="prose prose-sm max-w-none text-muted-foreground leading-relaxed space-y-4">
                     <p>
                       <Annotation note="Opens with an argument, not a description. The student frames the transformation in terms of Dickens's didactic purpose.">
                         Dickens constructs Scrooge&apos;s transformation as a moral parable designed to agitate
@@ -308,18 +308,18 @@ export default function LiteratureEssayPage() {
             <Section id="inspector-calls" title="An Inspector Calls &mdash; Grade 9">
               <div className="mb-4 flex items-center gap-3">
                 <GradeBadge grade="Grade 9" color="bg-[#1A5276]" />
-                <span className="text-sm text-gray-500">AQA Literature Paper 2</span>
+                <span className="text-sm text-muted-foreground">AQA Literature Paper 2</span>
               </div>
 
-              <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm mb-4">
-                <p className="text-xs font-bold uppercase tracking-wider text-[#2E86C1] mb-2">Question</p>
-                <p className="text-gray-800 font-medium">
+              <div className="rounded-xl border border-border bg-card p-6 shadow-md mb-4">
+                <p className="text-xs font-bold uppercase tracking-wider text-primary mb-2">Question</p>
+                <p className="text-foreground font-medium">
                   How does Priestley present ideas about responsibility in <em>An Inspector Calls</em>?
                 </p>
               </div>
 
-              <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-                <div className="prose prose-sm max-w-none text-gray-700 leading-relaxed space-y-4">
+              <div className="rounded-xl border border-border bg-card p-6 shadow-md">
+                <div className="prose prose-sm max-w-none text-muted-foreground leading-relaxed space-y-4">
                   <p>
                     <Annotation note="Thesis-driven opening. The student does not begin with 'Priestley presents responsibility as...' but offers an original argument about the play's structure.">
                       Priestley weaponises the detective genre to dismantle the Birlings&apos; moral complacency,
@@ -386,20 +386,20 @@ export default function LiteratureEssayPage() {
             <Section id="poetry" title="Poetry Comparison &mdash; Grade 9">
               <div className="mb-4 flex items-center gap-3">
                 <GradeBadge grade="Grade 9" color="bg-[#1A5276]" />
-                <span className="text-sm text-gray-500">AQA Literature Paper 2 &mdash; Power and Conflict</span>
+                <span className="text-sm text-muted-foreground">AQA Literature Paper 2 &mdash; Power and Conflict</span>
               </div>
 
-              <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm mb-4">
-                <p className="text-xs font-bold uppercase tracking-wider text-[#2E86C1] mb-2">Question</p>
-                <p className="text-gray-800 font-medium">
+              <div className="rounded-xl border border-border bg-card p-6 shadow-md mb-4">
+                <p className="text-xs font-bold uppercase tracking-wider text-primary mb-2">Question</p>
+                <p className="text-foreground font-medium">
                   Compare how the poets present the power of nature in &lsquo;Storm on the Island&rsquo; (Heaney)
                   and one other poem from the anthology.
                 </p>
-                <p className="mt-1 text-sm text-gray-500">Comparison poem chosen: &lsquo;Exposure&rsquo; (Owen)</p>
+                <p className="mt-1 text-sm text-muted-foreground">Comparison poem chosen: &lsquo;Exposure&rsquo; (Owen)</p>
               </div>
 
-              <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-                <div className="prose prose-sm max-w-none text-gray-700 leading-relaxed space-y-4">
+              <div className="rounded-xl border border-border bg-card p-6 shadow-md">
+                <div className="prose prose-sm max-w-none text-muted-foreground leading-relaxed space-y-4">
                   <p>
                     <Annotation note="Comparative thesis from the outset. Both poems are introduced within a single conceptualised argument.">
                       Both Heaney and Owen present nature as an adversary that exposes human vulnerability,
@@ -459,7 +459,7 @@ export default function LiteratureEssayPage() {
 
             {/* ─── WHAT EXAMINERS WANT ────────────────────────── */}
             <Section id="grade-criteria" title="What Examiners Want at Each Grade">
-              <p className="mb-6 text-gray-700 leading-relaxed">
+              <p className="mb-6 text-muted-foreground leading-relaxed">
                 Understanding the assessment objectives is crucial. Here is what examiners are looking for
                 at each grade boundary for literature essays:
               </p>
@@ -493,7 +493,7 @@ export default function LiteratureEssayPage() {
                   {
                     grade: "Grade 9",
                     color: "border-[#1A5276] bg-[#1A5276]/5",
-                    titleColor: "text-[#1A5276]",
+                    titleColor: "text-foreground",
                     points: [
                       "Critical, exploratory, conceptualised response",
                       "Precise, fluently embedded quotations with single-word analysis",
@@ -508,7 +508,7 @@ export default function LiteratureEssayPage() {
                     <h3 className={`text-lg font-bold ${level.titleColor}`}>{level.grade}</h3>
                     <ul className="mt-3 space-y-2">
                       {level.points.map((point, i) => (
-                        <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
+                        <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
                           <span className="mt-0.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-gray-400" />
                           {point}
                         </li>

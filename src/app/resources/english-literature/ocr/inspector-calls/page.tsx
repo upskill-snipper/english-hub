@@ -148,23 +148,23 @@ export default function OCRInspectorCallsPage() {
         <section aria-labelledby="exam-format-heading">
           <h2
             id="exam-format-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             OCR Exam Format
           </h2>
           <div className="mt-4 space-y-3">
             <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
               <p className="font-semibold text-primary">Paper 2: Exploring Effects and Impact</p>
-              <p className="mt-1 text-sm text-gray-700">
+              <p className="mt-1 text-sm text-muted-foreground">
                 Section B &mdash; 19th Century and Modern Prose/Drama. You will
                 answer one question on An Inspector Calls. The question is an
                 essay question <strong>without an extract</strong> &mdash; you
                 must write from memory. You have approximately 45 minutes.
               </p>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-              <p className="font-semibold text-gray-900">Assessment Objectives</p>
-              <ul className="mt-2 space-y-1 text-sm text-gray-700">
+            <div className="rounded-lg border border-border bg-muted p-4">
+              <p className="font-semibold text-foreground">Assessment Objectives</p>
+              <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                 <li><strong>AO1:</strong> Read, understand and respond to texts. Use textual references, including quotations, to support and illustrate interpretations.</li>
                 <li><strong>AO2:</strong> Analyse the language, form and structure used by a writer to create meanings and effects, using relevant subject terminology.</li>
                 <li><strong>AO3:</strong> Show understanding of the relationships between texts and the contexts in which they were written.</li>
@@ -174,20 +174,20 @@ export default function OCRInspectorCallsPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* Plot summary */}
         <section aria-labelledby="plot-heading">
           <h2
             id="plot-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Plot Summary
           </h2>
-          <div className="mt-4 space-y-4 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <div className="space-y-3">
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                <p className="font-semibold text-gray-900">Act 1: The Engagement and the Inspector&rsquo;s Arrival</p>
+              <div className="rounded-lg border border-border bg-muted p-4">
+                <p className="font-semibold text-foreground">Act 1: The Engagement and the Inspector&rsquo;s Arrival</p>
                 <p className="mt-2 text-sm">
                   The Birling family are celebrating Sheila&rsquo;s engagement to
                   Gerald Croft. Mr Birling lectures about self-reliance and
@@ -199,8 +199,8 @@ export default function OCRInspectorCallsPage() {
                   Milwards out of jealousy.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                <p className="font-semibold text-gray-900">Act 2: Gerald and Mrs Birling Exposed</p>
+              <div className="rounded-lg border border-border bg-muted p-4">
+                <p className="font-semibold text-foreground">Act 2: Gerald and Mrs Birling Exposed</p>
                 <p className="mt-2 text-sm">
                   Gerald admits he had an affair with the girl (now using the name
                   Daisy Renton), keeping her as his mistress before ending the
@@ -211,8 +211,8 @@ export default function OCRInspectorCallsPage() {
                   father is her own son Eric.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                <p className="font-semibold text-gray-900">Act 3: Eric&rsquo;s Confession and the Aftermath</p>
+              <div className="rounded-lg border border-border bg-muted p-4">
+                <p className="font-semibold text-foreground">Act 3: Eric&rsquo;s Confession and the Aftermath</p>
                 <p className="mt-2 text-sm">
                   Eric confesses he got Eva pregnant, stole money from his
                   father&rsquo;s firm to support her, and she refused it when she
@@ -230,22 +230,22 @@ export default function OCRInspectorCallsPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* Characters */}
         <section aria-labelledby="characters-heading">
           <h2
             id="characters-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Character Analysis
           </h2>
 
           <div className="mt-6 space-y-6">
             {/* Inspector Goole */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="rounded-lg border border-border bg-card p-6 shadow-md">
               <h3 className="text-xl font-semibold text-primary">Inspector Goole</h3>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 The Inspector is Priestley&rsquo;s mouthpiece &mdash; a dramatic
                 device rather than a realistic character. His name,
                 &ldquo;Goole,&rdquo; is a homophone of &ldquo;ghoul,&rdquo;
@@ -254,7 +254,7 @@ export default function OCRInspectorCallsPage() {
                 characters see the photograph simultaneously, which raises
                 questions about whether they are all connected to the same girl.
               </p>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 He speaks with moral authority, cutting through the
                 Birlings&rsquo; self-justification with blunt, powerful language.
                 His final speech is the climax of Priestley&rsquo;s message: that
@@ -273,9 +273,9 @@ export default function OCRInspectorCallsPage() {
             </div>
 
             {/* Mr Birling */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="rounded-lg border border-border bg-card p-6 shadow-md">
               <h3 className="text-xl font-semibold text-primary">Mr Birling</h3>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Arthur Birling is a wealthy industrialist and local magistrate who
                 represents the capitalist ruling class. He is pompous,
                 self-important, and obsessed with social status and profit. His
@@ -283,7 +283,7 @@ export default function OCRInspectorCallsPage() {
                 impossibility of war immediately undermine his credibility with
                 the audience.
               </p>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 He sacked Eva Smith for asking for a modest pay rise, viewing
                 workers purely as a cost. Throughout the play, his primary concern
                 is protecting his reputation and his knighthood, not the death of
@@ -301,15 +301,15 @@ export default function OCRInspectorCallsPage() {
             </div>
 
             {/* Mrs Birling */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="rounded-lg border border-border bg-card p-6 shadow-md">
               <h3 className="text-xl font-semibold text-primary">Mrs Birling</h3>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Sybil Birling is the most socially conscious member of the family,
                 acutely aware of class boundaries and determined to maintain them.
                 She is cold, unsympathetic, and deeply snobbish, unable to accept
                 that a working-class girl could have genuine moral principles.
               </p>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Her refusal to help Eva at the charity committee is perhaps the
                 most damning act in the play &mdash; she turned away a desperate,
                 pregnant woman because she found her &ldquo;impertinent.&rdquo;
@@ -321,16 +321,16 @@ export default function OCRInspectorCallsPage() {
             </div>
 
             {/* Sheila Birling */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="rounded-lg border border-border bg-card p-6 shadow-md">
               <h3 className="text-xl font-semibold text-primary">Sheila Birling</h3>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Sheila represents the hope of the younger generation. She begins
                 the play as a spoiled, privileged young woman but undergoes a
                 profound moral transformation. She is the first to accept her
                 guilt and shows genuine remorse for having Eva dismissed from
                 Milwards.
               </p>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 As the play progresses, Sheila becomes increasingly perceptive,
                 almost taking on the Inspector&rsquo;s role by challenging her
                 parents and Gerald. She refuses Gerald&rsquo;s ring at the end,
@@ -350,9 +350,9 @@ export default function OCRInspectorCallsPage() {
             </div>
 
             {/* Eric Birling */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="rounded-lg border border-border bg-card p-6 shadow-md">
               <h3 className="text-xl font-semibold text-primary">Eric Birling</h3>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Eric is presented as troubled, immature, and a heavy drinker. His
                 behaviour towards Eva &mdash; forcing himself on her when drunk,
                 getting her pregnant, then stealing money &mdash; represents the
@@ -360,7 +360,7 @@ export default function OCRInspectorCallsPage() {
                 Sheila, he accepts responsibility and is changed by the
                 Inspector&rsquo;s visit.
               </p>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 His accusation that his father is not the kind of man &ldquo;a
                 chap could go to when he&rsquo;s in trouble&rdquo; exposes the
                 emotional emptiness of the Birling household. Eric aligns with
@@ -371,16 +371,16 @@ export default function OCRInspectorCallsPage() {
             </div>
 
             {/* Gerald Croft */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="rounded-lg border border-border bg-card p-6 shadow-md">
               <h3 className="text-xl font-semibold text-primary">Gerald Croft</h3>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Gerald occupies a middle ground. He is from a higher social class
                 than the Birlings and shows some genuine feeling for Eva/Daisy,
                 but ultimately he exploited her vulnerability for his own pleasure
                 and then discarded her. His relationship with Eva was unequal
                 from the start &mdash; he had all the power.
               </p>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Crucially, Gerald aligns himself with Mr and Mrs Birling in the
                 final act. He is the one who discovers the Inspector may not have
                 been real and eagerly grasps at this to avoid responsibility. His
@@ -391,16 +391,16 @@ export default function OCRInspectorCallsPage() {
             </div>
 
             {/* Eva Smith */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="rounded-lg border border-border bg-card p-6 shadow-md">
               <h3 className="text-xl font-semibold text-primary">Eva Smith / Daisy Renton</h3>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Eva never appears on stage, yet she is the play&rsquo;s most
                 important character. Her multiple names suggest she is not one
                 person but a representative of all exploited working-class people.
                 &ldquo;Eva&rdquo; echoes Eve (the first woman, representing all
                 women), and &ldquo;Smith&rdquo; is the most common English surname.
               </p>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Each member of the Birling family exploits her in a different way
                 &mdash; economically, socially, sexually, and through the denial
                 of charity. Her death by swallowing disinfectant is horrific and
@@ -412,23 +412,23 @@ export default function OCRInspectorCallsPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* Themes */}
         <section aria-labelledby="themes-heading">
           <h2
             id="themes-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Key Themes
           </h2>
 
           <div className="mt-6 space-y-6">
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="text-lg font-semibold text-gray-900">
+            <div className="rounded-lg border border-border bg-muted p-5">
+              <h3 className="text-lg font-semibold text-foreground">
                 Social Responsibility
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 The play&rsquo;s central theme. Priestley argues that we are all
                 connected and have a duty to care for one another. The
                 Inspector&rsquo;s message &mdash; &ldquo;We are members of one
@@ -441,11 +441,11 @@ export default function OCRInspectorCallsPage() {
               </p>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="text-lg font-semibold text-gray-900">
+            <div className="rounded-lg border border-border bg-muted p-5">
+              <h3 className="text-lg font-semibold text-foreground">
                 Class and Social Inequality
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Priestley exposes how the class system allows the wealthy to
                 exploit the poor without consequence. The Birlings treat
                 working-class people as disposable. Mrs Birling cannot accept
@@ -456,11 +456,11 @@ export default function OCRInspectorCallsPage() {
               </p>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="text-lg font-semibold text-gray-900">
+            <div className="rounded-lg border border-border bg-muted p-5">
+              <h3 className="text-lg font-semibold text-foreground">
                 Generational Divide
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 The younger generation (Sheila and Eric) accept responsibility
                 and are changed by the Inspector&rsquo;s visit, while the older
                 generation (Mr and Mrs Birling) refuse to learn. Priestley uses
@@ -471,11 +471,11 @@ export default function OCRInspectorCallsPage() {
               </p>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="text-lg font-semibold text-gray-900">
+            <div className="rounded-lg border border-border bg-muted p-5">
+              <h3 className="text-lg font-semibold text-foreground">
                 Gender and Exploitation
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Eva is exploited by men at every turn. Gerald keeps her as a
                 mistress; Eric forces himself on her when drunk. The play exposes
                 how patriarchal society leaves women vulnerable, particularly
@@ -486,11 +486,11 @@ export default function OCRInspectorCallsPage() {
               </p>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="text-lg font-semibold text-gray-900">
+            <div className="rounded-lg border border-border bg-muted p-5">
+              <h3 className="text-lg font-semibold text-foreground">
                 Capitalism vs Socialism
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Mr Birling embodies capitalism: profit over people, self-interest
                 over community. The Inspector embodies socialism: collective
                 responsibility, empathy, and equality. Priestley, a committed
@@ -501,11 +501,11 @@ export default function OCRInspectorCallsPage() {
               </p>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="text-lg font-semibold text-gray-900">
+            <div className="rounded-lg border border-border bg-muted p-5">
+              <h3 className="text-lg font-semibold text-foreground">
                 Morality and Conscience
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 The Inspector acts as each character&rsquo;s conscience, forcing
                 them to confront their actions. Some characters (Sheila, Eric)
                 develop a genuine moral awareness; others (Mr Birling, Mrs
@@ -517,17 +517,17 @@ export default function OCRInspectorCallsPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* Key quotations */}
         <section aria-labelledby="quotations-heading">
           <h2
             id="quotations-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Key Quotations with Analysis
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             Learn these quotations for the closed-book exam. Each one can be
             applied to multiple themes and characters.
           </p>
@@ -536,15 +536,15 @@ export default function OCRInspectorCallsPage() {
             {keyQuotations.map((q) => (
               <div
                 key={q.quote}
-                className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm"
+                className="rounded-lg border border-border bg-card p-5 shadow-md"
               >
-                <blockquote className="border-l-4 border-accent pl-4 text-lg font-medium italic text-gray-800">
+                <blockquote className="border-l-4 border-accent pl-4 text-lg font-medium italic text-foreground">
                   &ldquo;{q.quote}&rdquo;
                 </blockquote>
                 <p className="mt-2 text-sm font-medium text-primary">
                   {q.speaker}
                 </p>
-                <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   {q.analysis}
                 </p>
               </div>
@@ -552,24 +552,24 @@ export default function OCRInspectorCallsPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* Context */}
         <section aria-labelledby="context-heading">
           <h2
             id="context-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Historical and Social Context
           </h2>
-          <div className="mt-4 space-y-4 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>
               Understanding context is essential for AO3. Here are the key
               contextual areas to know for An Inspector Calls:
             </p>
             <div className="space-y-4">
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="font-semibold text-gray-900">Written in 1945, Set in 1912</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="font-semibold text-foreground">Written in 1945, Set in 1912</h3>
                 <p className="mt-2 text-sm">
                   This dual time frame is crucial. Priestley wrote the play just
                   as World War Two was ending, but set it in 1912, before World
@@ -580,8 +580,8 @@ export default function OCRInspectorCallsPage() {
                   society of inequality and selfishness.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="font-semibold text-gray-900">The Welfare State and Post-War Britain</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="font-semibold text-foreground">The Welfare State and Post-War Britain</h3>
                 <p className="mt-2 text-sm">
                   The play was first performed in 1945, the year Labour won a
                   landslide election and began building the welfare state &mdash;
@@ -591,8 +591,8 @@ export default function OCRInspectorCallsPage() {
                   for why Britain needed a welfare state.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="font-semibold text-gray-900">Edwardian Class System (1912 setting)</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="font-semibold text-foreground">Edwardian Class System (1912 setting)</h3>
                 <p className="mt-2 text-sm">
                   In 1912, Britain had rigid class divisions. The wealthy
                   industrialist class (like the Birlings) had enormous power over
@@ -602,8 +602,8 @@ export default function OCRInspectorCallsPage() {
                   benefit, and charity was controlled by the upper classes.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="font-semibold text-gray-900">Priestley&rsquo;s Socialism</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="font-semibold text-foreground">Priestley&rsquo;s Socialism</h3>
                 <p className="mt-2 text-sm">
                   J.B. Priestley was a committed socialist who believed in
                   collective responsibility, workers&rsquo; rights, and social
@@ -614,8 +614,8 @@ export default function OCRInspectorCallsPage() {
                   expression of his political convictions.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="font-semibold text-gray-900">The Titanic and Dramatic Irony</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="font-semibold text-foreground">The Titanic and Dramatic Irony</h3>
                 <p className="mt-2 text-sm">
                   Birling&rsquo;s claim that the Titanic is &ldquo;unsinkable&rdquo;
                   is the play&rsquo;s most obvious dramatic irony. The Titanic
@@ -626,8 +626,8 @@ export default function OCRInspectorCallsPage() {
                   his capitalist philosophy.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="font-semibold text-gray-900">Women&rsquo;s Rights</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="font-semibold text-foreground">Women&rsquo;s Rights</h3>
                 <p className="mt-2 text-sm">
                   In 1912, women could not vote and had limited legal rights.
                   Working-class women like Eva were especially powerless. The
@@ -642,17 +642,17 @@ export default function OCRInspectorCallsPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* Essay planning */}
         <section aria-labelledby="essay-heading">
           <h2
             id="essay-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Essay Planning for OCR
           </h2>
-          <div className="mt-4 space-y-4 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>
               The OCR An Inspector Calls question does <strong>not</strong> give
               you an extract. You must write entirely from memory. Here is a
@@ -661,7 +661,7 @@ export default function OCRInspectorCallsPage() {
             <div className="space-y-3">
               <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                 <p className="font-semibold text-primary">Introduction (3&ndash;4 sentences)</p>
-                <p className="mt-1 text-sm text-gray-700">
+                <p className="mt-1 text-sm text-muted-foreground">
                   Address the question directly. State Priestley&rsquo;s overall
                   message about the theme/character. Briefly mention the 1945/1912
                   time frame and why it matters.
@@ -669,7 +669,7 @@ export default function OCRInspectorCallsPage() {
               </div>
               <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                 <p className="font-semibold text-primary">Paragraph 1: Beginning of the play</p>
-                <p className="mt-1 text-sm text-gray-700">
+                <p className="mt-1 text-sm text-muted-foreground">
                   How is the theme/character established at the start? Use a
                   memorised quotation. Analyse language closely (AO2). Link to
                   context (AO3).
@@ -677,7 +677,7 @@ export default function OCRInspectorCallsPage() {
               </div>
               <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                 <p className="font-semibold text-primary">Paragraph 2: Middle of the play</p>
-                <p className="mt-1 text-sm text-gray-700">
+                <p className="mt-1 text-sm text-muted-foreground">
                   How does the theme/character develop as the Inspector&rsquo;s
                   investigation unfolds? Use another quotation. Consider dramatic
                   techniques and structure.
@@ -685,7 +685,7 @@ export default function OCRInspectorCallsPage() {
               </div>
               <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                 <p className="font-semibold text-primary">Paragraph 3: End of the play</p>
-                <p className="mt-1 text-sm text-gray-700">
+                <p className="mt-1 text-sm text-muted-foreground">
                   How is the theme/character presented at the climax? Use the
                   Inspector&rsquo;s final speech or the phone call ending. Consider
                   Priestley&rsquo;s purpose and message.
@@ -693,7 +693,7 @@ export default function OCRInspectorCallsPage() {
               </div>
               <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                 <p className="font-semibold text-primary">Paragraph 4: Alternative interpretation or wider significance</p>
-                <p className="mt-1 text-sm text-gray-700">
+                <p className="mt-1 text-sm text-muted-foreground">
                   Offer a different reading or consider how the audience in 1945
                   would have responded differently to a modern audience. This
                   shows evaluative thinking and gains higher marks.
@@ -701,7 +701,7 @@ export default function OCRInspectorCallsPage() {
               </div>
               <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                 <p className="font-semibold text-primary">Conclusion</p>
-                <p className="mt-1 text-sm text-gray-700">
+                <p className="mt-1 text-sm text-muted-foreground">
                   Final evaluative judgement. What is Priestley&rsquo;s overall
                   message? Why does the play remain relevant today? Link back to
                   the question.
@@ -711,7 +711,7 @@ export default function OCRInspectorCallsPage() {
 
             <div className="mt-6 rounded-lg border border-accent/20 bg-accent-50 p-5">
               <h3 className="font-semibold text-accent-700">OCR Exam Technique Tips</h3>
-              <ul className="mt-2 space-y-2 text-sm text-gray-700">
+              <ul className="mt-2 space-y-2 text-sm text-muted-foreground">
                 <li>&bull; <strong>No extract:</strong> You must memorise quotations. Aim to use 4&ndash;6 short quotations in your essay.</li>
                 <li>&bull; <strong>AO1:</strong> Make clear, sustained arguments that directly answer the question throughout.</li>
                 <li>&bull; <strong>AO2:</strong> Analyse specific words, dramatic devices, and structural techniques. Use terminology like dramatic irony, stage directions, the well-made play structure, and the unity of time/place.</li>

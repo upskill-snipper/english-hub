@@ -22,7 +22,7 @@ function Section({
 }) {
   return (
     <section id={id} className="scroll-mt-24">
-      <h2 className="mb-6 text-2xl font-bold text-[#1A5276] border-b-2 border-[#2E86C1]/20 pb-3">
+      <h2 className="mb-6 text-2xl font-bold text-foreground border-b-2 border-[#2E86C1]/20 pb-3">
         {title}
       </h2>
       {children}
@@ -34,9 +34,9 @@ function Section({
 
 function Tip({ children }: { children: React.ReactNode }) {
   return (
-    <div className="my-4 rounded-xl border-l-4 border-[#2E86C1] bg-[#2E86C1]/5 px-5 py-4">
-      <p className="text-sm font-semibold text-[#1A5276] mb-1">Exam Tip</p>
-      <div className="text-sm text-gray-700 leading-relaxed">{children}</div>
+    <div className="my-4 rounded-xl border-l-4 border-[#2E86C1] bg-primary/5 px-5 py-4">
+      <p className="text-sm font-semibold text-foreground mb-1">Exam Tip</p>
+      <div className="text-sm text-muted-foreground leading-relaxed">{children}</div>
     </div>
   );
 }
@@ -47,7 +47,7 @@ function Warning({ children }: { children: React.ReactNode }) {
   return (
     <div className="my-4 rounded-xl border-l-4 border-amber-500 bg-amber-50 px-5 py-4">
       <p className="text-sm font-semibold text-amber-800 mb-1">Common Mistake</p>
-      <div className="text-sm text-gray-700 leading-relaxed">{children}</div>
+      <div className="text-sm text-muted-foreground leading-relaxed">{children}</div>
     </div>
   );
 }
@@ -64,10 +64,10 @@ function PoemBlock({
   lines: string[];
 }) {
   return (
-    <div className="my-6 rounded-xl border border-gray-200 bg-gray-50 p-6">
-      <p className="font-bold text-[#1A5276] text-lg">{title}</p>
-      <p className="text-sm text-gray-500 mb-4">by {author}</p>
-      <div className="space-y-1 font-serif text-gray-800 leading-relaxed">
+    <div className="my-6 rounded-xl border border-border bg-muted p-6">
+      <p className="font-bold text-foreground text-lg">{title}</p>
+      <p className="text-sm text-muted-foreground mb-4">by {author}</p>
+      <div className="space-y-1 font-serif text-foreground leading-relaxed">
         {lines.map((line, i) => (
           <p key={i} className={line === "" ? "h-4" : ""}>
             {line || "\u00A0"}
@@ -88,11 +88,11 @@ function ModelResponse({
   children: React.ReactNode;
 }) {
   return (
-    <div className="my-6 rounded-xl border-2 border-[#2E86C1]/30 bg-white p-6">
-      <p className="text-xs font-bold uppercase tracking-wider text-[#2E86C1] mb-3">
+    <div className="my-6 rounded-xl border-2 border-[#2E86C1]/30 bg-card p-6">
+      <p className="text-xs font-bold uppercase tracking-wider text-primary mb-3">
         {label}
       </p>
-      <div className="text-sm text-gray-700 leading-relaxed space-y-3">
+      <div className="text-sm text-muted-foreground leading-relaxed space-y-3">
         {children}
       </div>
     </div>
@@ -104,10 +104,10 @@ function ModelResponse({
 function ExaminerCommentary({ children }: { children: React.ReactNode }) {
   return (
     <div className="my-4 rounded-xl bg-[#1A5276]/5 border border-[#1A5276]/10 px-5 py-4">
-      <p className="text-xs font-bold uppercase tracking-wider text-[#1A5276] mb-2">
+      <p className="text-xs font-bold uppercase tracking-wider text-foreground mb-2">
         Examiner Commentary
       </p>
-      <div className="text-sm text-gray-700 leading-relaxed">{children}</div>
+      <div className="text-sm text-muted-foreground leading-relaxed">{children}</div>
     </div>
   );
 }
@@ -121,7 +121,7 @@ export default function UnseenPoetryPage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-[#1A5276] to-[#1A5276]/80 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-[#2E86C1]/80">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary/80">
             Poetry Skills
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -137,9 +137,9 @@ export default function UnseenPoetryPage() {
 
       {/* Breadcrumb */}
       <nav className="mx-auto max-w-5xl px-4 pt-6" aria-label="Breadcrumb">
-        <ol className="flex flex-wrap items-center gap-2 text-sm text-gray-500">
+        <ol className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
           <li>
-            <Link href="/" className="hover:text-[#1A5276] transition-colors">
+            <Link href="/" className="hover:text-foreground transition-colors">
               Home
             </Link>
           </li>
@@ -147,7 +147,7 @@ export default function UnseenPoetryPage() {
           <li>
             <Link
               href="/resources"
-              className="hover:text-[#1A5276] transition-colors"
+              className="hover:text-foreground transition-colors"
             >
               Resources
             </Link>
@@ -156,13 +156,13 @@ export default function UnseenPoetryPage() {
           <li>
             <Link
               href="/resources/poetry"
-              className="hover:text-[#1A5276] transition-colors"
+              className="hover:text-foreground transition-colors"
             >
               Poetry
             </Link>
           </li>
           <li>/</li>
-          <li className="font-medium text-[#1A5276]">Unseen Poetry</li>
+          <li className="font-medium text-foreground">Unseen Poetry</li>
         </ol>
       </nav>
 
@@ -172,7 +172,7 @@ export default function UnseenPoetryPage() {
           {/* Sticky sidebar TOC */}
           <aside className="hidden lg:block">
             <nav className="sticky top-24 space-y-1 text-sm">
-              <p className="mb-2 font-bold text-[#1A5276] uppercase tracking-wider text-xs">
+              <p className="mb-2 font-bold text-foreground uppercase tracking-wider text-xs">
                 Contents
               </p>
               {[
@@ -191,7 +191,7 @@ export default function UnseenPoetryPage() {
                 <a
                   key={item.id}
                   href={`#${item.id}`}
-                  className="block rounded-lg px-3 py-1.5 text-gray-600 hover:bg-[#2E86C1]/10 hover:text-[#1A5276] transition-colors"
+                  className="block rounded-lg px-3 py-1.5 text-muted-foreground hover:bg-primary/10 hover:text-foreground transition-colors"
                 >
                   {item.label}
                 </a>
@@ -203,7 +203,7 @@ export default function UnseenPoetryPage() {
           <div className="space-y-16">
             {/* ─── 1. THE READ METHOD ─────────────────────────────── */}
             <Section id="read-method" title="1. The READ Method">
-              <p className="mb-6 text-gray-700 leading-relaxed">
+              <p className="mb-6 text-muted-foreground leading-relaxed">
                 Unseen poetry can feel intimidating because you have never encountered the
                 poem before. The READ method gives you a repeatable, systematic approach
                 that works for <em>any</em> poem, every time.
@@ -211,14 +211,14 @@ export default function UnseenPoetryPage() {
 
               <div className="grid gap-5 sm:grid-cols-2">
                 {/* R */}
-                <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+                <div className="rounded-xl border border-border bg-card p-5 shadow-md">
                   <div className="flex items-center gap-3 mb-3">
                     <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1A5276] text-white font-bold text-lg">
                       R
                     </span>
-                    <h3 className="font-bold text-[#1A5276] text-lg">Read</h3>
+                    <h3 className="font-bold text-foreground text-lg">Read</h3>
                   </div>
-                  <p className="text-sm text-gray-700 leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     Read the poem <strong>at least twice</strong>. On the first read, absorb
                     the overall mood and subject. On the second read, underline striking
                     words and images. Read the title carefully -- it often provides the
@@ -232,14 +232,14 @@ export default function UnseenPoetryPage() {
                 </div>
 
                 {/* E */}
-                <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+                <div className="rounded-xl border border-border bg-card p-5 shadow-md">
                   <div className="flex items-center gap-3 mb-3">
                     <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1A5276] text-white font-bold text-lg">
                       E
                     </span>
-                    <h3 className="font-bold text-[#1A5276] text-lg">Examine</h3>
+                    <h3 className="font-bold text-foreground text-lg">Examine</h3>
                   </div>
-                  <p className="text-sm text-gray-700 leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     Examine the <strong>form, structure, and language</strong>. How is the poem
                     organised? What kind of stanzas does it use? Where does the tone shift?
                     What imagery, metaphors, or sound devices stand out?
@@ -252,14 +252,14 @@ export default function UnseenPoetryPage() {
                 </div>
 
                 {/* A */}
-                <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+                <div className="rounded-xl border border-border bg-card p-5 shadow-md">
                   <div className="flex items-center gap-3 mb-3">
                     <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1A5276] text-white font-bold text-lg">
                       A
                     </span>
-                    <h3 className="font-bold text-[#1A5276] text-lg">Analyse</h3>
+                    <h3 className="font-bold text-foreground text-lg">Analyse</h3>
                   </div>
-                  <p className="text-sm text-gray-700 leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     Analyse <strong>how</strong> the poet&apos;s choices create meaning and
                     effect. Do not just identify techniques -- explain <em>why</em> the poet
                     has used them and <em>what</em> impact they have on the reader.
@@ -272,14 +272,14 @@ export default function UnseenPoetryPage() {
                 </div>
 
                 {/* D */}
-                <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+                <div className="rounded-xl border border-border bg-card p-5 shadow-md">
                   <div className="flex items-center gap-3 mb-3">
                     <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1A5276] text-white font-bold text-lg">
                       D
                     </span>
-                    <h3 className="font-bold text-[#1A5276] text-lg">Develop</h3>
+                    <h3 className="font-bold text-foreground text-lg">Develop</h3>
                   </div>
-                  <p className="text-sm text-gray-700 leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     Develop your ideas by exploring <strong>alternative interpretations</strong>,
                     considering the poet&apos;s intentions, and linking your points to the
                     poem&apos;s wider themes. This is where you push from a good answer into
@@ -296,7 +296,7 @@ export default function UnseenPoetryPage() {
 
             {/* ─── 2. WHAT TO LOOK FOR ────────────────────────────── */}
             <Section id="what-to-look-for" title="2. What to Look For">
-              <p className="mb-6 text-gray-700 leading-relaxed">
+              <p className="mb-6 text-muted-foreground leading-relaxed">
                 When you examine an unseen poem, work through these seven areas
                 systematically. You do not need to write about all of them -- choose the
                 three or four that are most significant in the poem.
@@ -349,11 +349,11 @@ export default function UnseenPoetryPage() {
                 ].map((item) => (
                   <div
                     key={item.area}
-                    className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm"
+                    className="rounded-xl border border-border bg-card p-5 shadow-md"
                   >
-                    <h3 className="font-bold text-[#1A5276]">{item.area}</h3>
-                    <p className="mt-1 text-sm text-gray-700">{item.what}</p>
-                    <p className="mt-2 text-sm text-[#2E86C1]">
+                    <h3 className="font-bold text-foreground">{item.area}</h3>
+                    <p className="mt-1 text-sm text-muted-foreground">{item.what}</p>
+                    <p className="mt-2 text-sm text-primary">
                       <span className="font-semibold">Key questions: </span>
                       {item.questions}
                     </p>
@@ -364,7 +364,7 @@ export default function UnseenPoetryPage() {
 
             {/* ─── 3. PEEL PARAGRAPHS ─────────────────────────────── */}
             <Section id="peel-paragraphs" title="3. How to Write About Unseen Poetry (PEEL)">
-              <p className="mb-6 text-gray-700 leading-relaxed">
+              <p className="mb-6 text-muted-foreground leading-relaxed">
                 Every analytical paragraph should follow the PEEL structure. This ensures
                 you are always explaining <em>how</em> the poet creates meaning, not just
                 describing what happens.
@@ -385,14 +385,14 @@ export default function UnseenPoetryPage() {
                     lines -- a key phrase or even a single word is often more effective.
                   </p>
                 </div>
-                <div className="rounded-xl bg-[#2E86C1] p-5 text-white">
+                <div className="rounded-xl bg-primary p-5 text-white">
                   <p className="text-xl font-bold mb-1">E -- Explain</p>
                   <p className="text-sm text-white/90">
                     Explain <em>how</em> the language or technique works. Zoom in on
                     individual words, connotations, sound effects, and imagery.
                   </p>
                 </div>
-                <div className="rounded-xl bg-[#2E86C1]/80 p-5 text-white">
+                <div className="rounded-xl bg-primary/80 p-5 text-white">
                   <p className="text-xl font-bold mb-1">L -- Link</p>
                   <p className="text-sm text-white/90">
                     Link back to the question, the poem&apos;s wider themes, or offer an
@@ -401,23 +401,23 @@ export default function UnseenPoetryPage() {
                 </div>
               </div>
 
-              <h3 className="mt-8 mb-4 text-lg font-bold text-gray-900">
+              <h3 className="mt-8 mb-4 text-lg font-bold text-foreground">
                 Example PEEL Paragraph
               </h3>
-              <div className="rounded-xl border border-gray-200 bg-white p-5">
-                <p className="text-sm text-gray-700 leading-relaxed">
-                  <span className="font-bold text-[#1A5276]">[P]</span> The poet
+              <div className="rounded-xl border border-border bg-card p-5">
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  <span className="font-bold text-foreground">[P]</span> The poet
                   presents nature as a powerful, uncontrollable force.{" "}
-                  <span className="font-bold text-[#1A5276]">[E]</span> This is
+                  <span className="font-bold text-foreground">[E]</span> This is
                   conveyed through the metaphor &ldquo;the sea&apos;s jaws clamped
                   shut on the harbour wall&rdquo;.{" "}
-                  <span className="font-bold text-[#2E86C1]">[E]</span> The verb
+                  <span className="font-bold text-primary">[E]</span> The verb
                   &ldquo;clamped&rdquo; suggests relentless, mechanical force, while
                   the personification of &ldquo;jaws&rdquo; implies the sea is a
                   predator, consuming the man-made structures around it. The plosive
                   sounds in &ldquo;clamped&rdquo; and &ldquo;shut&rdquo; reinforce
                   the violence of the action.{" "}
-                  <span className="font-bold text-[#2E86C1]/80">[L]</span>{" "}
+                  <span className="font-bold text-primary/80">[L]</span>{" "}
                   Alternatively, the image of &ldquo;jaws&rdquo; could suggest
                   entrapment, implying that those who live by the sea are held captive
                   by its unpredictability. This reinforces the poem&apos;s wider theme
@@ -435,7 +435,7 @@ export default function UnseenPoetryPage() {
 
             {/* ─── 4. QUESTION TYPES ──────────────────────────────── */}
             <Section id="question-types" title="4. Common Question Types">
-              <p className="mb-6 text-gray-700 leading-relaxed">
+              <p className="mb-6 text-muted-foreground leading-relaxed">
                 Unseen poetry questions typically fall into predictable categories. Here
                 is how to approach each one.
               </p>
@@ -473,13 +473,13 @@ export default function UnseenPoetryPage() {
                 ].map((item) => (
                   <div
                     key={item.type}
-                    className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm"
+                    className="rounded-xl border border-border bg-card p-5 shadow-md"
                   >
-                    <h3 className="font-bold text-[#1A5276] text-sm">
+                    <h3 className="font-bold text-foreground text-sm">
                       &ldquo;{item.type}&rdquo;
                     </h3>
-                    <p className="mt-2 text-sm text-gray-700">{item.approach}</p>
-                    <p className="mt-2 text-sm italic text-gray-500">
+                    <p className="mt-2 text-sm text-muted-foreground">{item.approach}</p>
+                    <p className="mt-2 text-sm italic text-muted-foreground">
                       {item.example}
                     </p>
                   </div>
@@ -489,22 +489,22 @@ export default function UnseenPoetryPage() {
 
             {/* ─── 5. COMPARISON TECHNIQUE ────────────────────────── */}
             <Section id="comparison" title="5. Comparison Technique">
-              <p className="mb-6 text-gray-700 leading-relaxed">
+              <p className="mb-6 text-muted-foreground leading-relaxed">
                 The second unseen poetry question typically asks you to compare the poem
                 you have already analysed with a second, shorter poem. This is usually
                 worth fewer marks and requires a more concise approach.
               </p>
 
-              <h3 className="mb-4 text-lg font-bold text-gray-900">
+              <h3 className="mb-4 text-lg font-bold text-foreground">
                 The Key Principle: Compare, Don&apos;t Contrast Separately
               </h3>
-              <p className="mb-4 text-sm text-gray-700">
+              <p className="mb-4 text-sm text-muted-foreground">
                 The most common mistake is writing about Poem A, then writing about Poem
                 B. Instead, you must <strong>integrate</strong> your comparison
                 throughout.
               </p>
 
-              <div className="mb-6 overflow-hidden rounded-xl border border-gray-200">
+              <div className="mb-6 overflow-hidden rounded-xl border border-border">
                 <div className="grid grid-cols-2 text-sm font-bold bg-[#1A5276] text-white">
                   <div className="px-4 py-3">Weak (Separate)</div>
                   <div className="px-4 py-3 border-l border-white/20">
@@ -512,11 +512,11 @@ export default function UnseenPoetryPage() {
                   </div>
                 </div>
                 <div className="grid grid-cols-2 text-sm">
-                  <div className="px-4 py-3 border-t border-gray-200 text-gray-700">
+                  <div className="px-4 py-3 border-t border-border text-muted-foreground">
                     &ldquo;In Poem A, the poet uses metaphor to show anger. In Poem B,
                     the poet uses simile to show sadness.&rdquo;
                   </div>
-                  <div className="px-4 py-3 border-t border-l border-gray-200 text-gray-700">
+                  <div className="px-4 py-3 border-t border-l border-border text-muted-foreground">
                     &ldquo;Both poets use figurative language to convey intense emotion;
                     however, while Poem A&apos;s extended metaphor of fire suggests
                     destructive rage, Poem B&apos;s simile &lsquo;like water through
@@ -525,7 +525,7 @@ export default function UnseenPoetryPage() {
                 </div>
               </div>
 
-              <h3 className="mb-4 text-lg font-bold text-gray-900">
+              <h3 className="mb-4 text-lg font-bold text-foreground">
                 Comparison Structure
               </h3>
               <div className="space-y-3">
@@ -556,39 +556,39 @@ export default function UnseenPoetryPage() {
                   },
                 ].map((item) => (
                   <div key={item.step} className="flex gap-4 items-start">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#2E86C1] text-white text-sm font-bold">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-white text-sm font-bold">
                       {item.step}
                     </span>
                     <div>
-                      <p className="font-bold text-[#1A5276] text-sm">
+                      <p className="font-bold text-foreground text-sm">
                         {item.title}
                       </p>
-                      <p className="text-sm text-gray-700">{item.detail}</p>
+                      <p className="text-sm text-muted-foreground">{item.detail}</p>
                     </div>
                   </div>
                 ))}
               </div>
 
-              <h3 className="mt-8 mb-4 text-lg font-bold text-gray-900">
+              <h3 className="mt-8 mb-4 text-lg font-bold text-foreground">
                 Useful Comparison Connectives
               </h3>
               <div className="grid gap-3 sm:grid-cols-2">
-                <div className="rounded-lg bg-[#2E86C1]/5 border border-[#2E86C1]/20 p-4">
-                  <p className="font-bold text-[#1A5276] text-sm mb-2">
+                <div className="rounded-lg bg-primary/5 border border-[#2E86C1]/20 p-4">
+                  <p className="font-bold text-foreground text-sm mb-2">
                     Showing Similarity
                   </p>
-                  <ul className="text-sm text-gray-700 space-y-1">
+                  <ul className="text-sm text-muted-foreground space-y-1">
                     <li>Similarly, both poets...</li>
                     <li>In the same way, Poem B also...</li>
                     <li>This idea is echoed in Poem B, where...</li>
                     <li>Like Poem A, the second poem presents...</li>
                   </ul>
                 </div>
-                <div className="rounded-lg bg-[#2E86C1]/5 border border-[#2E86C1]/20 p-4">
-                  <p className="font-bold text-[#1A5276] text-sm mb-2">
+                <div className="rounded-lg bg-primary/5 border border-[#2E86C1]/20 p-4">
+                  <p className="font-bold text-foreground text-sm mb-2">
                     Showing Difference
                   </p>
-                  <ul className="text-sm text-gray-700 space-y-1">
+                  <ul className="text-sm text-muted-foreground space-y-1">
                     <li>In contrast, Poem B...</li>
                     <li>Whereas Poem A presents... , Poem B suggests...</li>
                     <li>However, the second poet takes a different approach by...</li>
@@ -626,44 +626,44 @@ export default function UnseenPoetryPage() {
                 ]}
               />
 
-              <p className="mb-4 text-sm font-semibold text-[#1A5276]">
+              <p className="mb-4 text-sm font-semibold text-foreground">
                 Question: How does the poet present the power of nature in this poem?
               </p>
 
               <ModelResponse label="Model Response (Grade 8/9)">
                 <p>
-                  <span className="font-bold text-[#1A5276]">[P]</span> Heaney
+                  <span className="font-bold text-foreground">[P]</span> Heaney
                   initially presents the islanders as confident in their ability to
                   withstand nature&apos;s power.{" "}
-                  <span className="font-bold text-[#1A5276]">[E]</span> The
+                  <span className="font-bold text-foreground">[E]</span> The
                   declarative opening, &ldquo;We are prepared&rdquo;, establishes a
                   tone of collective assurance, reinforced by the practical, monosyllabic
                   language of &ldquo;squat&rdquo;, &ldquo;rock&rdquo;, and
                   &ldquo;slate&rdquo;.{" "}
-                  <span className="font-bold text-[#2E86C1]">[E]</span> The heavy,
+                  <span className="font-bold text-primary">[E]</span> The heavy,
                   grounded consonants mirror the solidity of the buildings, suggesting a
                   community that has shaped itself around the threat. The verb
                   &ldquo;sink&rdquo; implies permanence, as though the walls are
                   embedded in the landscape itself.{" "}
-                  <span className="font-bold text-[#2E86C1]/80">[L]</span> However,
+                  <span className="font-bold text-primary/80">[L]</span> However,
                   this confidence is gradually undermined, suggesting that Heaney is
                   questioning whether human preparation can ever truly match the scale of
                   natural force.
                 </p>
                 <p>
-                  <span className="font-bold text-[#1A5276]">[P]</span> The poem&apos;s
+                  <span className="font-bold text-foreground">[P]</span> The poem&apos;s
                   conclusion reveals that the true power of nature lies not in physical
                   destruction but in psychological fear.{" "}
-                  <span className="font-bold text-[#1A5276]">[E]</span> The repetition
+                  <span className="font-bold text-foreground">[E]</span> The repetition
                   of &ldquo;nothing&rdquo; in the final lines -- &ldquo;a huge
                   nothing / That we fear&rdquo; -- creates a paradox that is deeply
                   unsettling.{" "}
-                  <span className="font-bold text-[#2E86C1]">[E]</span> The oxymoron
+                  <span className="font-bold text-primary">[E]</span> The oxymoron
                   &ldquo;huge nothing&rdquo; defies logic: how can emptiness be vast?
                   This reflects the irrational nature of fear itself. The caesura after
                   &ldquo;But no:&rdquo; enacts the moment of psychological rupture, the
                   point at which the islanders&apos; confidence fractures.{" "}
-                  <span className="font-bold text-[#2E86C1]/80">[L]</span>{" "}
+                  <span className="font-bold text-primary/80">[L]</span>{" "}
                   Alternatively, the &ldquo;huge nothing&rdquo; could be read as a
                   political metaphor, with Heaney -- writing in the context of the
                   Northern Irish Troubles -- exploring how communities live in fear of
@@ -711,45 +711,45 @@ export default function UnseenPoetryPage() {
                 ]}
               />
 
-              <p className="mb-4 text-sm font-semibold text-[#1A5276]">
+              <p className="mb-4 text-sm font-semibold text-foreground">
                 Question: How does the poet present the feelings of a parent in this
                 poem?
               </p>
 
               <ModelResponse label="Model Response (Grade 8/9)">
                 <p>
-                  <span className="font-bold text-[#1A5276]">[P]</span> Scannell
+                  <span className="font-bold text-foreground">[P]</span> Scannell
                   presents parenthood as a battle the parent can never ultimately win.{" "}
-                  <span className="font-bold text-[#1A5276]">[E]</span> The sustained
+                  <span className="font-bold text-foreground">[E]</span> The sustained
                   military metaphor -- &ldquo;green spears&rdquo;, &ldquo;regiment of
                   spite&rdquo;, &ldquo;fierce parade&rdquo;, &ldquo;tall recruits&rdquo;
                   -- transforms the domestic scene of a child falling into nettles into a
                   battlefield.{" "}
-                  <span className="font-bold text-[#2E86C1]">[E]</span> The word
+                  <span className="font-bold text-primary">[E]</span> The word
                   &ldquo;regiment&rdquo; implies the threats are organised, disciplined,
                   and numerous -- far beyond what a single parent can defeat. The
                   personification of the nettles as soldiers elevates the father&apos;s
                   protective instinct from an everyday reaction to something heroic, yet
                   simultaneously futile.{" "}
-                  <span className="font-bold text-[#2E86C1]/80">[L]</span> This may
+                  <span className="font-bold text-primary/80">[L]</span> This may
                   reflect Scannell&apos;s own experience as a war veteran, where the
                   language of combat becomes the only vocabulary adequate to express the
                   intensity of parental love and protectiveness.
                 </p>
                 <p>
-                  <span className="font-bold text-[#1A5276]">[P]</span> The poem&apos;s
+                  <span className="font-bold text-foreground">[P]</span> The poem&apos;s
                   final line conveys a devastating sense of parental helplessness.{" "}
-                  <span className="font-bold text-[#1A5276]">[E]</span> The statement
+                  <span className="font-bold text-foreground">[E]</span> The statement
                   &ldquo;My son would often come with fresh wounds again&rdquo; uses the
                   conditional &ldquo;would&rdquo; to suggest an ongoing, inescapable
                   cycle.{" "}
-                  <span className="font-bold text-[#2E86C1]">[E]</span> The adjective
+                  <span className="font-bold text-primary">[E]</span> The adjective
                   &ldquo;fresh&rdquo; is particularly poignant -- it implies both new
                   pain and renewed suffering, as though the child&apos;s hurt is
                   perpetually raw. The finality of the end-stopped line, standing alone
                   as a single-line conclusion, mirrors the parent&apos;s resigned
                   acceptance that he cannot protect his child forever.{" "}
-                  <span className="font-bold text-[#2E86C1]/80">[L]</span> On a deeper
+                  <span className="font-bold text-primary/80">[L]</span> On a deeper
                   level, the &ldquo;nettles&rdquo; may symbolise all the pain that life
                   will inevitably inflict upon a child -- a parent&apos;s love is fierce,
                   but it cannot shield a child from the world permanently.
@@ -792,48 +792,48 @@ export default function UnseenPoetryPage() {
                 ]}
               />
 
-              <p className="mb-4 text-sm font-semibold text-[#1A5276]">
+              <p className="mb-4 text-sm font-semibold text-foreground">
                 Question: How does the poet present the speaker&apos;s relationship
                 with their homeland?
               </p>
 
               <ModelResponse label="Model Response (Grade 8/9)">
                 <p>
-                  <span className="font-bold text-[#1A5276]">[P]</span> Rumens
+                  <span className="font-bold text-foreground">[P]</span> Rumens
                   presents the speaker&apos;s homeland as an idealised, almost mythical
                   place that exists more powerfully in memory than in reality.{" "}
-                  <span className="font-bold text-[#1A5276]">[E]</span> The compound
+                  <span className="font-bold text-foreground">[E]</span> The compound
                   adjective &ldquo;sunlight-clear&rdquo; describes the speaker&apos;s
                   memory, while the semantic field of light -- &ldquo;paperwhite&rdquo;,
                   &ldquo;luminous&rdquo;, &ldquo;shines like a coin&rdquo; -- suffuses
                   the homeland in radiance.{" "}
-                  <span className="font-bold text-[#2E86C1]">[E]</span> The simile
+                  <span className="font-bold text-primary">[E]</span> The simile
                   &ldquo;shines like a coin&rdquo; is carefully chosen: a coin is small,
                   tangible, and precious -- something to be treasured and held close.
                   Yet coins are also common, suggesting that this idealised homeland may
                   be a universal experience shared by all emigrants, not just this
                   speaker.{" "}
-                  <span className="font-bold text-[#2E86C1]/80">[L]</span> The
+                  <span className="font-bold text-primary/80">[L]</span> The
                   pervasive imagery of light may also function as a defence mechanism:
                   by refusing to see the homeland &ldquo;in bad light&rdquo;, the speaker
                   preserves a version of it that can never be damaged by political reality.
                 </p>
                 <p>
-                  <span className="font-bold text-[#1A5276]">[P]</span> The poem
+                  <span className="font-bold text-foreground">[P]</span> The poem
                   suggests that the relationship between the speaker and their homeland
                   transcends physical separation.{" "}
-                  <span className="font-bold text-[#1A5276]">[E]</span> The
+                  <span className="font-bold text-foreground">[E]</span> The
                   personification of the city -- &ldquo;It lies down in front of me,
                   docile as paper; / I stroke it&rdquo; -- presents the homeland as a
                   living, intimate companion.{" "}
-                  <span className="font-bold text-[#2E86C1]">[E]</span> The verb
+                  <span className="font-bold text-primary">[E]</span> The verb
                   &ldquo;stroke&rdquo; implies tenderness and gentleness, as though the
                   speaker is soothing a beloved animal or child. The simile &ldquo;docile
                   as paper&rdquo; carries a dual meaning: paper is gentle and
                   submissive, but it is also fragile and easily destroyed. This hints
                   that the speaker&apos;s cherished memory is more vulnerable than it
                   appears.{" "}
-                  <span className="font-bold text-[#2E86C1]/80">[L]</span> The
+                  <span className="font-bold text-primary/80">[L]</span> The
                   repeated refrain, &ldquo;My city takes me dancing&rdquo;, positions
                   the homeland as an active, joyful presence rather than a passive loss,
                   suggesting that for the emigree, identity and belonging are carried
@@ -910,13 +910,13 @@ export default function UnseenPoetryPage() {
 
             {/* ─── 8. TIME MANAGEMENT ─────────────────────────────── */}
             <Section id="time-management" title="8. Time Management">
-              <p className="mb-6 text-gray-700 leading-relaxed">
+              <p className="mb-6 text-muted-foreground leading-relaxed">
                 Time pressure is one of the biggest challenges in the unseen poetry
                 section. Here is a recommended breakdown based on a typical exam
                 allocation of 45 minutes for the unseen poetry section.
               </p>
 
-              <div className="overflow-hidden rounded-xl border border-gray-200">
+              <div className="overflow-hidden rounded-xl border border-border">
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="bg-[#1A5276] text-white text-left">
@@ -966,15 +966,15 @@ export default function UnseenPoetryPage() {
                     ].map((row) => (
                       <tr
                         key={row.phase}
-                        className="border-t border-gray-200 even:bg-gray-50"
+                        className="border-t border-border even:bg-muted"
                       >
-                        <td className="px-4 py-3 font-semibold text-[#1A5276]">
+                        <td className="px-4 py-3 font-semibold text-foreground">
                           {row.phase}
                         </td>
-                        <td className="px-4 py-3 font-bold text-[#2E86C1]">
+                        <td className="px-4 py-3 font-bold text-primary">
                           {row.time}
                         </td>
-                        <td className="px-4 py-3 text-gray-700">{row.detail}</td>
+                        <td className="px-4 py-3 text-muted-foreground">{row.detail}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -991,16 +991,16 @@ export default function UnseenPoetryPage() {
 
             {/* ─── 9. VOCABULARY FOR DISCUSSING POETRY ────────────── */}
             <Section id="vocabulary" title="9. Vocabulary for Discussing Poetry">
-              <p className="mb-6 text-gray-700 leading-relaxed">
+              <p className="mb-6 text-muted-foreground leading-relaxed">
                 Using precise, academic vocabulary signals to the examiner that you are a
                 confident, skilled analyst. Here are the key phrases and terms you should
                 have in your repertoire.
               </p>
 
-              <h3 className="mb-4 text-lg font-bold text-gray-900">
+              <h3 className="mb-4 text-lg font-bold text-foreground">
                 Tentative Language (for exploring interpretations)
               </h3>
-              <p className="mb-4 text-sm text-gray-600">
+              <p className="mb-4 text-sm text-muted-foreground">
                 Top-band responses avoid stating interpretations as absolute facts. Use
                 tentative language to show you are exploring possibilities.
               </p>
@@ -1018,17 +1018,17 @@ export default function UnseenPoetryPage() {
                 ].map((phrase) => (
                   <div
                     key={phrase}
-                    className="rounded-lg bg-[#2E86C1]/5 border border-[#2E86C1]/20 px-4 py-3 text-sm text-gray-700 italic"
+                    className="rounded-lg bg-primary/5 border border-[#2E86C1]/20 px-4 py-3 text-sm text-muted-foreground italic"
                   >
                     {phrase}
                   </div>
                 ))}
               </div>
 
-              <h3 className="mb-4 text-lg font-bold text-gray-900">
+              <h3 className="mb-4 text-lg font-bold text-foreground">
                 Evaluative Phrases (for analysing effects)
               </h3>
-              <p className="mb-4 text-sm text-gray-600">
+              <p className="mb-4 text-sm text-muted-foreground">
                 These phrases help you articulate the <em>impact</em> of the poet&apos;s
                 choices on the reader.
               </p>
@@ -1045,14 +1045,14 @@ export default function UnseenPoetryPage() {
                 ].map((phrase) => (
                   <div
                     key={phrase}
-                    className="rounded-lg bg-[#1A5276]/5 border border-[#1A5276]/10 px-4 py-3 text-sm text-gray-700 italic"
+                    className="rounded-lg bg-[#1A5276]/5 border border-[#1A5276]/10 px-4 py-3 text-sm text-muted-foreground italic"
                   >
                     {phrase}
                   </div>
                 ))}
               </div>
 
-              <h3 className="mb-4 text-lg font-bold text-gray-900">
+              <h3 className="mb-4 text-lg font-bold text-foreground">
                 Key Technical Terms
               </h3>
               <div className="grid gap-3 sm:grid-cols-2">
@@ -1100,20 +1100,20 @@ export default function UnseenPoetryPage() {
                 ].map((item) => (
                   <div
                     key={item.term}
-                    className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm"
+                    className="rounded-xl border border-border bg-card p-4 shadow-md"
                   >
-                    <p className="font-bold text-[#1A5276] text-sm">{item.term}</p>
-                    <p className="mt-1 text-sm text-gray-700">{item.def}</p>
+                    <p className="font-bold text-foreground text-sm">{item.term}</p>
+                    <p className="mt-1 text-sm text-muted-foreground">{item.def}</p>
                   </div>
                 ))}
               </div>
             </Section>
 
             {/* ─── Back link ──────────────────────────────────────── */}
-            <div className="pt-8 border-t border-gray-200">
+            <div className="pt-8 border-t border-border">
               <Link
                 href="/resources/poetry"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-[#2E86C1] hover:text-[#1A5276] transition-colors"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-foreground transition-colors"
               >
                 <span aria-hidden="true">&larr;</span> Back to Poetry Resources
               </Link>

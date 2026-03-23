@@ -356,7 +356,7 @@ export default function ChristmasCarolStudyGuide() {
             <a
               key={s}
               href={`#${s.toLowerCase().replace(/\s+/g, "-").replace(/'/g, "")}`}
-              className="rounded-full border border-[#2E86C1]/30 px-3 py-1 text-[#1A5276] transition hover:bg-[#2E86C1]/10"
+              className="rounded-full border border-[#2E86C1]/30 px-3 py-1 text-foreground transition hover:bg-primary/10"
             >
               {s}
             </a>
@@ -365,10 +365,10 @@ export default function ChristmasCarolStudyGuide() {
 
         {/* ── Stave Summary ─────────────────────────────────────────── */}
         <section id="stave-summary" aria-labelledby="stave-heading">
-          <h2 id="stave-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="stave-heading" className="text-2xl font-bold text-foreground">
             Stave Summary
           </h2>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-sm text-muted-foreground">
             Dickens deliberately called the chapters &lsquo;staves&rsquo; (the
             sections of a song or carol), reinforcing the musical title and the
             idea that the novella is a harmonious, uplifting composition.
@@ -377,10 +377,10 @@ export default function ChristmasCarolStudyGuide() {
             {staveSummary.map((s) => (
               <div
                 key={s.stave}
-                className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm"
+                className="rounded-lg border border-border bg-card p-5 shadow-md"
               >
-                <h3 className="font-semibold text-[#1A5276]">{s.stave}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-700">
+                <h3 className="font-semibold text-foreground">{s.stave}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {s.summary}
                 </p>
               </div>
@@ -388,23 +388,23 @@ export default function ChristmasCarolStudyGuide() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Characters ──────────────────────────────────────────── */}
         <section id="characters" aria-labelledby="characters-heading">
-          <h2 id="characters-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="characters-heading" className="text-2xl font-bold text-foreground">
             Character Analysis
           </h2>
           <div className="mt-6 space-y-6">
             {characters.map((c) => (
               <div
                 key={c.name}
-                className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm"
+                className="rounded-lg border border-border bg-card p-5 shadow-md"
               >
-                <h3 className="text-lg font-semibold text-[#1A5276]">
+                <h3 className="text-lg font-semibold text-foreground">
                   {c.name}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-700">
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {c.description}
                 </p>
               </div>
@@ -412,21 +412,21 @@ export default function ChristmasCarolStudyGuide() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Themes ──────────────────────────────────────────────── */}
         <section id="themes" aria-labelledby="themes-heading">
-          <h2 id="themes-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="themes-heading" className="text-2xl font-bold text-foreground">
             Key Themes
           </h2>
           <div className="mt-6 grid gap-5 sm:grid-cols-2">
             {themes.map((t) => (
               <div
                 key={t.name}
-                className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm"
+                className="rounded-lg border border-border bg-card p-5 shadow-md"
               >
-                <h3 className="font-semibold text-[#1A5276]">{t.name}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-700">
+                <h3 className="font-semibold text-foreground">{t.name}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {t.detail}
                 </p>
               </div>
@@ -434,14 +434,14 @@ export default function ChristmasCarolStudyGuide() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Scrooge's Transformation ──────────────────────────── */}
         <section id="scrooges-transformation" aria-labelledby="transformation-heading">
-          <h2 id="transformation-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="transformation-heading" className="text-2xl font-bold text-foreground">
             Scrooge&rsquo;s Transformation
           </h2>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-sm text-muted-foreground">
             Scrooge&rsquo;s moral arc is the backbone of the novella and the most
             frequently examined topic. Track how Dickens presents his change
             across the five staves.
@@ -450,10 +450,10 @@ export default function ChristmasCarolStudyGuide() {
             {scroogeTransformation.map((s, i) => (
               <div
                 key={i}
-                className="rounded-lg border-l-4 border-[#2E86C1] bg-white p-5 shadow-sm"
+                className="rounded-lg border-l-4 border-[#2E86C1] bg-card p-5 shadow-md"
               >
-                <h3 className="font-semibold text-[#1A5276]">{s.stage}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-700">
+                <h3 className="font-semibold text-foreground">{s.stage}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {s.detail}
                 </p>
               </div>
@@ -461,14 +461,14 @@ export default function ChristmasCarolStudyGuide() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Key Quotes ──────────────────────────────────────────── */}
         <section id="key-quotes" aria-labelledby="quotes-heading">
-          <h2 id="quotes-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="quotes-heading" className="text-2xl font-bold text-foreground">
             Key Quotes ({keyQuotes.length})
           </h2>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-sm text-muted-foreground">
             Each quote includes the speaker, location, and detailed analysis
             suitable for Cambridge IGCSE responses.
           </p>
@@ -476,15 +476,15 @@ export default function ChristmasCarolStudyGuide() {
             {keyQuotes.map((q, i) => (
               <div
                 key={i}
-                className="rounded-lg border-l-4 border-[#2E86C1] bg-white p-5 shadow-sm"
+                className="rounded-lg border-l-4 border-[#2E86C1] bg-card p-5 shadow-md"
               >
-                <blockquote className="text-base font-medium italic text-gray-900">
+                <blockquote className="text-base font-medium italic text-foreground">
                   &ldquo;{q.quote}&rdquo;
                 </blockquote>
-                <p className="mt-1 text-xs font-semibold text-[#2E86C1]">
+                <p className="mt-1 text-xs font-semibold text-primary">
                   {q.speaker} &mdash; {q.location}
                 </p>
-                <p className="mt-3 text-sm leading-relaxed text-gray-700">
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                   {q.analysis}
                 </p>
               </div>
@@ -492,16 +492,16 @@ export default function ChristmasCarolStudyGuide() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Context ─────────────────────────────────────────────── */}
         <section id="context" aria-labelledby="context-heading">
-          <h2 id="context-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="context-heading" className="text-2xl font-bold text-foreground">
             Victorian &amp; Literary Context
           </h2>
-          <div className="mt-6 space-y-4 text-sm leading-relaxed text-gray-700">
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <h3 className="font-semibold text-[#1A5276]">
+          <div className="mt-6 space-y-4 text-sm leading-relaxed text-muted-foreground">
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <h3 className="font-semibold text-foreground">
                 The Industrial Revolution &amp; Urban Poverty
               </h3>
               <p className="mt-2">
@@ -514,8 +514,8 @@ export default function ChristmasCarolStudyGuide() {
                 responsibility toward the poor.
               </p>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <h3 className="font-semibold text-[#1A5276]">
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <h3 className="font-semibold text-foreground">
                 The Poor Law Amendment Act (1834)
               </h3>
               <p className="mt-2">
@@ -528,8 +528,8 @@ export default function ChristmasCarolStudyGuide() {
                 Dickens had already attacked workhouses in Oliver Twist (1837&ndash;39).
               </p>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <h3 className="font-semibold text-[#1A5276]">
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <h3 className="font-semibold text-foreground">
                 Thomas Malthus and &lsquo;Surplus Population&rsquo;
               </h3>
               <p className="mt-2">
@@ -542,8 +542,8 @@ export default function ChristmasCarolStudyGuide() {
                 Present throws the phrase back at him.
               </p>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <h3 className="font-semibold text-[#1A5276]">
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <h3 className="font-semibold text-foreground">
                 Dickens&rsquo;s Personal Experience
               </h3>
               <p className="mt-2">
@@ -556,8 +556,8 @@ export default function ChristmasCarolStudyGuide() {
                 understood poverty not as an abstraction but as a lived reality.
               </p>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <h3 className="font-semibold text-[#1A5276]">
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <h3 className="font-semibold text-foreground">
                 The Christmas Tradition
               </h3>
               <p className="mt-2">
@@ -569,8 +569,8 @@ export default function ChristmasCarolStudyGuide() {
                 been out of print.
               </p>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <h3 className="font-semibold text-[#1A5276]">
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <h3 className="font-semibold text-foreground">
                 The Novella Form &amp; Structure
               </h3>
               <p className="mt-2">
@@ -586,14 +586,14 @@ export default function ChristmasCarolStudyGuide() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Assessment Objectives ───────────────────────────────── */}
         <section id="assessment-objectives" aria-labelledby="ao-heading">
-          <h2 id="ao-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="ao-heading" className="text-2xl font-bold text-foreground">
             Cambridge Assessment Objectives
           </h2>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-sm text-muted-foreground">
             Cambridge IGCSE English Literature (0475/0992) assesses four
             objectives. Understanding what the examiner is looking for will
             help you structure stronger responses.
@@ -602,15 +602,15 @@ export default function ChristmasCarolStudyGuide() {
             {assessmentObjectives.map((ao) => (
               <div
                 key={ao.code}
-                className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm"
+                className="rounded-lg border border-border bg-card p-5 shadow-md"
               >
-                <span className="inline-block rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-bold text-[#1A5276]">
+                <span className="inline-block rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-bold text-foreground">
                   {ao.code}
                 </span>
-                <h3 className="mt-2 font-semibold text-[#1A5276]">
+                <h3 className="mt-2 font-semibold text-foreground">
                   {ao.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-700">
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {ao.detail}
                 </p>
               </div>
@@ -618,14 +618,14 @@ export default function ChristmasCarolStudyGuide() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Exam Questions ──────────────────────────────────────── */}
         <section id="exam-questions" aria-labelledby="exam-heading">
-          <h2 id="exam-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="exam-heading" className="text-2xl font-bold text-foreground">
             Cambridge-Style Exam Questions
           </h2>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-sm text-muted-foreground">
             A Christmas Carol appears in <strong>Paper 1 (Prose)</strong> for
             Cambridge IGCSE English Literature. You will choose between a{" "}
             <strong>passage-based question</strong> and an{" "}
@@ -635,21 +635,21 @@ export default function ChristmasCarolStudyGuide() {
 
           <div className="mt-6 space-y-6">
             {/* Passage-based 1 */}
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <span className="inline-block rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-[#1A5276]">
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <span className="inline-block rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                 Passage-Based
               </span>
-              <p className="mt-3 text-sm font-medium text-gray-900">
+              <p className="mt-3 text-sm font-medium text-foreground">
                 Re-read the passage in Stave One from &ldquo;Oh! But he was a
                 tight-fisted hand at the grindstone&rdquo; to &ldquo;No wind
                 that blew was bitterer than he.&rdquo; How does Dickens present
                 Scrooge&rsquo;s character in this passage?
               </p>
-              <div className="mt-3 rounded bg-[#2E86C1]/5 p-3">
-                <p className="text-xs font-semibold text-[#1A5276]">
+              <div className="mt-3 rounded bg-primary/5 p-3">
+                <p className="text-xs font-semibold text-foreground">
                   How to approach:
                 </p>
-                <ul className="mt-1 space-y-1 text-xs text-gray-700">
+                <ul className="mt-1 space-y-1 text-xs text-muted-foreground">
                   <li>
                     &bull; Work through the passage systematically, selecting key
                     language features (similes, listing, pathetic fallacy)
@@ -678,19 +678,19 @@ export default function ChristmasCarolStudyGuide() {
             </div>
 
             {/* Essay 1 */}
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <span className="inline-block rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-[#1A5276]">
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <span className="inline-block rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                 Essay Question
               </span>
-              <p className="mt-3 text-sm font-medium text-gray-900">
+              <p className="mt-3 text-sm font-medium text-foreground">
                 How does Dickens use the character of Scrooge to present ideas
                 about social responsibility?
               </p>
-              <div className="mt-3 rounded bg-[#2E86C1]/5 p-3">
-                <p className="text-xs font-semibold text-[#1A5276]">
+              <div className="mt-3 rounded bg-primary/5 p-3">
+                <p className="text-xs font-semibold text-foreground">
                   How to approach:
                 </p>
-                <ul className="mt-1 space-y-1 text-xs text-gray-700">
+                <ul className="mt-1 space-y-1 text-xs text-muted-foreground">
                   <li>
                     &bull; Plan 3&ndash;4 key points: Scrooge&rsquo;s dismissal
                     of the poor (Stave One), Marley&rsquo;s warning, the
@@ -720,21 +720,21 @@ export default function ChristmasCarolStudyGuide() {
             </div>
 
             {/* Passage-based 2 */}
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <span className="inline-block rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-[#1A5276]">
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <span className="inline-block rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                 Passage-Based
               </span>
-              <p className="mt-3 text-sm font-medium text-gray-900">
+              <p className="mt-3 text-sm font-medium text-foreground">
                 Re-read the passage in Stave Three from &ldquo;There was nothing
                 of high mark in this&rdquo; to &ldquo;God bless us, every
                 one!&rdquo; How does Dickens make this such a moving and
                 significant moment in the novella?
               </p>
-              <div className="mt-3 rounded bg-[#2E86C1]/5 p-3">
-                <p className="text-xs font-semibold text-[#1A5276]">
+              <div className="mt-3 rounded bg-primary/5 p-3">
+                <p className="text-xs font-semibold text-foreground">
                   How to approach:
                 </p>
-                <ul className="mt-1 space-y-1 text-xs text-gray-700">
+                <ul className="mt-1 space-y-1 text-xs text-muted-foreground">
                   <li>
                     &bull; Analyse the contrast between the Cratchits&rsquo;
                     poverty and their emotional richness
@@ -761,19 +761,19 @@ export default function ChristmasCarolStudyGuide() {
             </div>
 
             {/* Essay 2 */}
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <span className="inline-block rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-[#1A5276]">
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <span className="inline-block rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                 Essay Question
               </span>
-              <p className="mt-3 text-sm font-medium text-gray-900">
+              <p className="mt-3 text-sm font-medium text-foreground">
                 Explore how Dickens uses the three spirits to bring about
                 Scrooge&rsquo;s transformation.
               </p>
-              <div className="mt-3 rounded bg-[#2E86C1]/5 p-3">
-                <p className="text-xs font-semibold text-[#1A5276]">
+              <div className="mt-3 rounded bg-primary/5 p-3">
+                <p className="text-xs font-semibold text-foreground">
                   How to approach:
                 </p>
-                <ul className="mt-1 space-y-1 text-xs text-gray-700">
+                <ul className="mt-1 space-y-1 text-xs text-muted-foreground">
                   <li>
                     &bull; Structure around the three spirits, showing how each
                     contributes a different stage of transformation
@@ -800,11 +800,11 @@ export default function ChristmasCarolStudyGuide() {
             </div>
 
             {/* Exam technique box */}
-            <div className="rounded-lg border-2 border-[#2E86C1]/30 bg-[#2E86C1]/5 p-5">
-              <h3 className="font-semibold text-[#1A5276]">
+            <div className="rounded-lg border-2 border-[#2E86C1]/30 bg-primary/5 p-5">
+              <h3 className="font-semibold text-foreground">
                 Cambridge IGCSE Exam Technique: A Christmas Carol
               </h3>
-              <ul className="mt-3 space-y-2 text-sm text-gray-700">
+              <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li>
                   <strong>Passage-based questions:</strong> Stay anchored in the
                   given extract. Work through it closely, analysing specific
@@ -854,7 +854,7 @@ export default function ChristmasCarolStudyGuide() {
         <div className="mt-12 flex items-center gap-2 text-sm">
           <Link
             href="/resources/english-literature/caie"
-            className="font-medium text-[#1A5276] underline underline-offset-2 hover:text-[#2E86C1]"
+            className="font-medium text-foreground underline underline-offset-2 hover:text-primary"
           >
             &larr; Back to Cambridge IGCSE English Literature
           </Link>

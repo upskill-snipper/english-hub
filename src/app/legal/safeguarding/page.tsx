@@ -10,7 +10,7 @@ export default function SafeguardingPolicyPage() {
   return (
     <>
       <h1 className="text-3xl font-bold mb-2">Safeguarding Policy</h1>
-      <p className="text-gray-500 text-sm mb-6">
+      <p className="text-muted-foreground text-sm mb-6">
         <strong>The English Hub</strong> — operated by Upskill Energy Limited
         <br />
         Effective Date: 22 March 2026 | Review Date: 22 March 2027 | Version 1.0
@@ -128,8 +128,8 @@ export default function SafeguardingPolicyPage() {
           18 must undergo appropriate DBS checks:
         </p>
         <div className="overflow-x-auto">
-          <table className="min-w-full text-sm border border-gray-200">
-            <thead className="bg-gray-50">
+          <table className="min-w-full text-sm border border-border">
+            <thead className="bg-muted">
               <tr>
                 <th className="text-left px-4 py-2 border-b font-semibold">
                   Role Category
@@ -326,7 +326,7 @@ export default function SafeguardingPolicyPage() {
         <h2 className="text-2xl font-bold mb-4">
           10. External Support Services
         </h2>
-        <div className="bg-gray-50 rounded-lg p-4 text-sm">
+        <div className="bg-muted rounded-lg p-4 text-sm">
           <ul className="space-y-2">
             <li>
               <strong>Childline:</strong> 0800 1111 |{" "}
@@ -399,7 +399,7 @@ export default function SafeguardingPolicyPage() {
         </p>
       </section>
 
-      <p className="text-sm text-gray-500 italic">
+      <p className="text-sm text-muted-foreground italic">
         This policy is a controlled document. The master copy is maintained by the
         Designated Safeguarding Lead.
       </p>

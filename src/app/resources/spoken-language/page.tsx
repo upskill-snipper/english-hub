@@ -94,13 +94,13 @@ export default function SpokenLanguagePage() {
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
               href="/resources/spoken-language/topics"
-              className="rounded-lg bg-white px-6 py-3 text-sm font-semibold text-[#1A5276] shadow-md transition hover:bg-blue-50"
+              className="rounded-lg bg-card px-6 py-3 text-sm font-semibold text-foreground shadow-md transition hover:bg-blue-50"
             >
               Browse 30+ Topic Ideas
             </Link>
             <a
               href="#planning"
-              className="rounded-lg border border-white/30 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+              className="rounded-lg border border-white/30 px-6 py-3 text-sm font-semibold text-white transition hover:bg-card/10"
             >
               How to Plan
             </a>
@@ -110,9 +110,9 @@ export default function SpokenLanguagePage() {
 
       {/* ── Breadcrumb ────────────────────────────────────────── */}
       <nav className="mx-auto max-w-5xl px-4 pt-6" aria-label="Breadcrumb">
-        <ol className="flex items-center gap-2 text-sm text-gray-500">
+        <ol className="flex items-center gap-2 text-sm text-muted-foreground">
           <li>
-            <Link href="/" className="hover:text-[#1A5276] transition-colors">
+            <Link href="/" className="hover:text-foreground transition-colors">
               Home
             </Link>
           </li>
@@ -120,13 +120,13 @@ export default function SpokenLanguagePage() {
           <li>
             <Link
               href="/resources"
-              className="hover:text-[#1A5276] transition-colors"
+              className="hover:text-foreground transition-colors"
             >
               Resources
             </Link>
           </li>
           <li>/</li>
-          <li className="font-medium text-gray-900">Spoken Language</li>
+          <li className="font-medium text-foreground">Spoken Language</li>
         </ol>
       </nav>
 
@@ -137,11 +137,11 @@ export default function SpokenLanguagePage() {
         <section aria-labelledby="what-heading">
           <h2
             id="what-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             1. What Is the Spoken Language Endorsement?
           </h2>
-          <div className="mt-4 space-y-4 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>
               The Spoken Language endorsement is a <strong>compulsory component</strong> of
               GCSE English Language. Every student must complete it, but it is
@@ -157,9 +157,9 @@ export default function SpokenLanguagePage() {
               to communicate effectively in a formal spoken context &mdash; a
               skill valued by employers, colleges, and universities.
             </p>
-            <div className="rounded-lg border border-[#2E86C1]/20 bg-[#2E86C1]/5 p-5">
-              <p className="text-sm font-semibold text-[#1A5276]">Key facts</p>
-              <ul className="ml-4 mt-2 list-disc space-y-1 text-sm text-gray-700">
+            <div className="rounded-lg border border-[#2E86C1]/20 bg-primary/5 p-5">
+              <p className="text-sm font-semibold text-foreground">Key facts</p>
+              <ul className="ml-4 mt-2 list-disc space-y-1 text-sm text-muted-foreground">
                 <li>Required for all GCSE English Language students (AQA, Edexcel, OCR)</li>
                 <li>Reported separately &mdash; does <strong>not</strong> count towards your 9&ndash;1 grade</li>
                 <li>Assessed by your teacher, moderated by the exam board</li>
@@ -170,17 +170,17 @@ export default function SpokenLanguagePage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* 2. How it's assessed */}
         <section aria-labelledby="assessment-heading">
           <h2
             id="assessment-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             2. How Is It Assessed?
           </h2>
-          <div className="mt-4 space-y-4 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>
               Your teacher assesses your spoken language performance against
               three assessment strands. The result is graded as one of
@@ -189,29 +189,29 @@ export default function SpokenLanguagePage() {
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               <div className="rounded-lg border-2 border-emerald-500 bg-emerald-50 p-4 text-center">
                 <p className="text-lg font-bold text-emerald-700">Distinction</p>
-                <p className="mt-1 text-xs text-gray-600">Outstanding performance across all three strands</p>
+                <p className="mt-1 text-xs text-muted-foreground">Outstanding performance across all three strands</p>
               </div>
               <div className="rounded-lg border-2 border-[#2E86C1] bg-blue-50 p-4 text-center">
-                <p className="text-lg font-bold text-[#2E86C1]">Merit</p>
-                <p className="mt-1 text-xs text-gray-600">Competent and clear across all strands</p>
+                <p className="text-lg font-bold text-primary">Merit</p>
+                <p className="mt-1 text-xs text-muted-foreground">Competent and clear across all strands</p>
               </div>
               <div className="rounded-lg border-2 border-amber-500 bg-amber-50 p-4 text-center">
                 <p className="text-lg font-bold text-amber-700">Pass</p>
-                <p className="mt-1 text-xs text-gray-600">Basic competence demonstrated</p>
+                <p className="mt-1 text-xs text-muted-foreground">Basic competence demonstrated</p>
               </div>
-              <div className="rounded-lg border-2 border-gray-400 bg-gray-50 p-4 text-center">
-                <p className="text-lg font-bold text-gray-600">Not Classified</p>
-                <p className="mt-1 text-xs text-gray-600">Requirements not met</p>
+              <div className="rounded-lg border-2 border-gray-400 bg-muted p-4 text-center">
+                <p className="text-lg font-bold text-muted-foreground">Not Classified</p>
+                <p className="mt-1 text-xs text-muted-foreground">Requirements not met</p>
               </div>
             </div>
 
-            <h3 className="mt-6 text-lg font-semibold text-gray-900">
+            <h3 className="mt-6 text-lg font-semibold text-foreground">
               The Three Assessment Strands
             </h3>
             <div className="space-y-4">
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h4 className="font-semibold text-gray-900">Strand 1 &mdash; Presenting</h4>
-                <p className="mt-2 text-sm text-gray-700">
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h4 className="font-semibold text-foreground">Strand 1 &mdash; Presenting</h4>
+                <p className="mt-2 text-sm text-muted-foreground">
                   Demonstrate presentation skills in a formal setting. Speak
                   clearly, maintain appropriate pace and volume, use gestures and
                   eye contact effectively, and structure your talk logically. You
@@ -219,18 +219,18 @@ export default function SpokenLanguagePage() {
                   full script.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h4 className="font-semibold text-gray-900">Strand 2 &mdash; Listening and Responding</h4>
-                <p className="mt-2 text-sm text-gray-700">
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h4 className="font-semibold text-foreground">Strand 2 &mdash; Listening and Responding</h4>
+                <p className="mt-2 text-sm text-muted-foreground">
                   After your presentation, you will answer questions from your
                   teacher and/or classmates. You must listen carefully, understand
                   each question, and respond thoughtfully and in full. This
                   demonstrates your ability to engage in formal spoken exchange.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h4 className="font-semibold text-gray-900">Strand 3 &mdash; Using Standard English</h4>
-                <p className="mt-2 text-sm text-gray-700">
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h4 className="font-semibold text-foreground">Strand 3 &mdash; Using Standard English</h4>
+                <p className="mt-2 text-sm text-muted-foreground">
                   Use spoken Standard English effectively throughout your
                   presentation and when answering questions. This means formal
                   grammar, avoiding slang, and speaking in complete, well-formed
@@ -241,17 +241,17 @@ export default function SpokenLanguagePage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* 3. Presentation topic suggestions */}
         <section aria-labelledby="topics-heading">
           <h2
             id="topics-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             3. Presentation Topic Ideas
           </h2>
-          <div className="mt-4 space-y-4 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>
               Choose a topic you are genuinely interested in. The best
               presentations come from speakers who are passionate about their
@@ -261,7 +261,7 @@ export default function SpokenLanguagePage() {
               {TOPIC_IDEAS.map((topic, i) => (
                 <div
                   key={i}
-                  className="flex items-start gap-3 rounded-lg border border-gray-200 bg-gray-50 p-3"
+                  className="flex items-start gap-3 rounded-lg border border-border bg-muted p-3"
                 >
                   <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">
                     {i + 1}
@@ -270,13 +270,13 @@ export default function SpokenLanguagePage() {
                 </div>
               ))}
             </div>
-            <div className="mt-4 rounded-lg border border-[#2E86C1]/20 bg-[#2E86C1]/5 p-5">
-              <p className="text-sm text-gray-700">
+            <div className="mt-4 rounded-lg border border-[#2E86C1]/20 bg-primary/5 p-5">
+              <p className="text-sm text-muted-foreground">
                 <strong>Want more ideas?</strong> We have 30+ topics with full
                 outlines, key points, and potential questions.{" "}
                 <Link
                   href="/resources/spoken-language/topics"
-                  className="font-semibold text-[#2E86C1] underline hover:text-[#1A5276]"
+                  className="font-semibold text-primary underline hover:text-foreground"
                 >
                   Browse all topic ideas &rarr;
                 </Link>
@@ -285,18 +285,18 @@ export default function SpokenLanguagePage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* 4. How to plan a presentation */}
         <section id="planning" aria-labelledby="planning-heading">
           <h2
             id="planning-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             4. How to Plan Your Presentation
           </h2>
-          <div className="mt-4 space-y-4 text-gray-700 leading-relaxed">
-            <h3 className="text-lg font-semibold text-gray-900">
+          <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
+            <h3 className="text-lg font-semibold text-foreground">
               Step-by-Step Planning Process
             </h3>
             <ol className="ml-6 list-decimal space-y-4">
@@ -336,12 +336,12 @@ export default function SpokenLanguagePage() {
               </li>
             </ol>
 
-            <h3 className="mt-8 text-lg font-semibold text-gray-900">
+            <h3 className="mt-8 text-lg font-semibold text-foreground">
               Recommended Structure
             </h3>
             <div className="mt-3 space-y-3">
-              <div className="rounded-lg border-l-4 border-[#1A5276] bg-gray-50 p-4">
-                <p className="font-semibold text-[#1A5276]">Introduction (30&ndash;45 seconds)</p>
+              <div className="rounded-lg border-l-4 border-[#1A5276] bg-muted p-4">
+                <p className="font-semibold text-foreground">Introduction (30&ndash;45 seconds)</p>
                 <p className="mt-1 text-sm">
                   Hook your audience with a compelling opening: a rhetorical
                   question, a surprising statistic, a powerful quotation, or a
@@ -349,8 +349,8 @@ export default function SpokenLanguagePage() {
                   position clearly.
                 </p>
               </div>
-              <div className="rounded-lg border-l-4 border-[#2E86C1] bg-gray-50 p-4">
-                <p className="font-semibold text-[#2E86C1]">Main Points (2&ndash;3 minutes)</p>
+              <div className="rounded-lg border-l-4 border-[#2E86C1] bg-muted p-4">
+                <p className="font-semibold text-primary">Main Points (2&ndash;3 minutes)</p>
                 <p className="mt-1 text-sm">
                   Present 3&ndash;4 well-developed points, each supported with
                   evidence, examples, or statistics. Use clear signposting:
@@ -358,7 +358,7 @@ export default function SpokenLanguagePage() {
                   &ldquo;Most importantly&hellip;&rdquo;
                 </p>
               </div>
-              <div className="rounded-lg border-l-4 border-amber-500 bg-gray-50 p-4">
+              <div className="rounded-lg border-l-4 border-amber-500 bg-muted p-4">
                 <p className="font-semibold text-amber-700">Counter-Argument (30&ndash;45 seconds)</p>
                 <p className="mt-1 text-sm">
                   Acknowledge the opposing viewpoint and explain why your
@@ -366,7 +366,7 @@ export default function SpokenLanguagePage() {
                   thinking: &ldquo;Some may argue that&hellip; however&hellip;&rdquo;
                 </p>
               </div>
-              <div className="rounded-lg border-l-4 border-emerald-500 bg-gray-50 p-4">
+              <div className="rounded-lg border-l-4 border-emerald-500 bg-muted p-4">
                 <p className="font-semibold text-emerald-700">Conclusion (30&ndash;45 seconds)</p>
                 <p className="mt-1 text-sm">
                   Summarise your key points, restate your argument, and end with
@@ -376,7 +376,7 @@ export default function SpokenLanguagePage() {
               </div>
             </div>
 
-            <h3 className="mt-8 text-lg font-semibold text-gray-900">
+            <h3 className="mt-8 text-lg font-semibold text-foreground">
               Notes and Cue Cards
             </h3>
             <p>
@@ -393,17 +393,17 @@ export default function SpokenLanguagePage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* 5. How to deliver effectively */}
         <section aria-labelledby="delivery-heading">
           <h2
             id="delivery-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             5. How to Deliver Effectively
           </h2>
-          <div className="mt-4 space-y-4 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>
               Delivery is just as important as content. A well-researched
               presentation can fall flat with poor delivery, while confident
@@ -411,7 +411,7 @@ export default function SpokenLanguagePage() {
               six areas:
             </p>
             <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
+              <div className="rounded-lg border border-border bg-muted p-5">
                 <div className="flex items-center gap-3">
                   <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#1A5276] text-white">
                     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
@@ -419,7 +419,7 @@ export default function SpokenLanguagePage() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                     </svg>
                   </span>
-                  <h3 className="font-semibold text-gray-900">Eye Contact</h3>
+                  <h3 className="font-semibold text-foreground">Eye Contact</h3>
                 </div>
                 <p className="mt-3 text-sm">
                   Look at your audience, not at the floor, ceiling, or your
@@ -429,14 +429,14 @@ export default function SpokenLanguagePage() {
                 </p>
               </div>
 
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
+              <div className="rounded-lg border border-border bg-muted p-5">
                 <div className="flex items-center gap-3">
                   <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#1A5276] text-white">
                     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                     </svg>
                   </span>
-                  <h3 className="font-semibold text-gray-900">Pace</h3>
+                  <h3 className="font-semibold text-foreground">Pace</h3>
                 </div>
                 <p className="mt-3 text-sm">
                   Speak at a measured pace. Nerves often cause people to
@@ -446,14 +446,14 @@ export default function SpokenLanguagePage() {
                 </p>
               </div>
 
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
+              <div className="rounded-lg border border-border bg-muted p-5">
                 <div className="flex items-center gap-3">
                   <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#1A5276] text-white">
                     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
                     </svg>
                   </span>
-                  <h3 className="font-semibold text-gray-900">Volume and Clarity</h3>
+                  <h3 className="font-semibold text-foreground">Volume and Clarity</h3>
                 </div>
                 <p className="mt-3 text-sm">
                   Ensure everyone in the room can hear you clearly. Project
@@ -463,14 +463,14 @@ export default function SpokenLanguagePage() {
                 </p>
               </div>
 
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
+              <div className="rounded-lg border border-border bg-muted p-5">
                 <div className="flex items-center gap-3">
                   <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#1A5276] text-white">
                     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 0 0-2.455 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
                     </svg>
                   </span>
-                  <h3 className="font-semibold text-gray-900">Tone and Expression</h3>
+                  <h3 className="font-semibold text-foreground">Tone and Expression</h3>
                 </div>
                 <p className="mt-3 text-sm">
                   Avoid speaking in a monotone. Vary your intonation to express
@@ -480,14 +480,14 @@ export default function SpokenLanguagePage() {
                 </p>
               </div>
 
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
+              <div className="rounded-lg border border-border bg-muted p-5">
                 <div className="flex items-center gap-3">
                   <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#1A5276] text-white">
                     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
                     </svg>
                   </span>
-                  <h3 className="font-semibold text-gray-900">Body Language</h3>
+                  <h3 className="font-semibold text-foreground">Body Language</h3>
                 </div>
                 <p className="mt-3 text-sm">
                   Stand up straight with feet shoulder-width apart. Use open,
@@ -497,14 +497,14 @@ export default function SpokenLanguagePage() {
                 </p>
               </div>
 
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
+              <div className="rounded-lg border border-border bg-muted p-5">
                 <div className="flex items-center gap-3">
                   <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#1A5276] text-white">
                     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
                     </svg>
                   </span>
-                  <h3 className="font-semibold text-gray-900">Rhetorical Techniques</h3>
+                  <h3 className="font-semibold text-foreground">Rhetorical Techniques</h3>
                 </div>
                 <p className="mt-3 text-sm">
                   Use rhetorical questions, tricolon (rule of three), anaphora
@@ -517,17 +517,17 @@ export default function SpokenLanguagePage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* 6. Responding to questions */}
         <section aria-labelledby="questions-heading">
           <h2
             id="questions-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             6. Responding to Questions
           </h2>
-          <div className="mt-4 space-y-4 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>
               After your presentation, you will face questions from your teacher
               and/or classmates. This is a critical part of the assessment and
@@ -575,9 +575,9 @@ export default function SpokenLanguagePage() {
               </li>
             </ul>
 
-            <div className="rounded-lg border border-[#2E86C1]/20 bg-[#2E86C1]/5 p-5">
-              <p className="text-sm font-semibold text-[#1A5276]">Top tip</p>
-              <p className="mt-1 text-sm text-gray-700">
+            <div className="rounded-lg border border-[#2E86C1]/20 bg-primary/5 p-5">
+              <p className="text-sm font-semibold text-foreground">Top tip</p>
+              <p className="mt-1 text-sm text-muted-foreground">
                 When preparing your presentation, write down 5&ndash;10
                 questions your audience might ask and practise answering them
                 aloud. This is the single most effective way to prepare for the
@@ -587,17 +587,17 @@ export default function SpokenLanguagePage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* 7. Using Standard English */}
         <section aria-labelledby="standard-english-heading">
           <h2
             id="standard-english-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             7. Using Standard English
           </h2>
-          <div className="mt-4 space-y-4 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>
               Standard English is the formal variety of English used in
               professional and academic contexts. For the Spoken Language
@@ -605,15 +605,15 @@ export default function SpokenLanguagePage() {
               English consistently throughout your presentation and when
               answering questions.
             </p>
-            <h3 className="text-lg font-semibold text-gray-900">
+            <h3 className="text-lg font-semibold text-foreground">
               What Standard English Means in Practice
             </h3>
             <div className="overflow-x-auto">
               <table className="mt-3 w-full text-sm">
                 <thead>
                   <tr className="border-b-2 border-[#1A5276]">
-                    <th className="px-4 py-3 text-left font-semibold text-[#1A5276]">Avoid (Non-Standard)</th>
-                    <th className="px-4 py-3 text-left font-semibold text-[#1A5276]">Use Instead (Standard English)</th>
+                    <th className="px-4 py-3 text-left font-semibold text-foreground">Avoid (Non-Standard)</th>
+                    <th className="px-4 py-3 text-left font-semibold text-foreground">Use Instead (Standard English)</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200">
@@ -658,13 +658,13 @@ export default function SpokenLanguagePage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* 8. Common mistakes */}
         <section aria-labelledby="mistakes-heading">
           <h2
             id="mistakes-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             8. Common Mistakes to Avoid
           </h2>
@@ -672,15 +672,15 @@ export default function SpokenLanguagePage() {
             {COMMON_MISTAKES.map((item, i) => (
               <div
                 key={i}
-                className="rounded-lg border border-gray-200 bg-gray-50 p-5"
+                className="rounded-lg border border-border bg-muted p-5"
               >
                 <div className="flex items-start gap-3">
                   <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-red-100 text-xs font-bold text-red-600">
                     {i + 1}
                   </span>
                   <div>
-                    <p className="font-semibold text-gray-900">{item.mistake}</p>
-                    <p className="mt-1 text-sm text-gray-700">{item.fix}</p>
+                    <p className="font-semibold text-foreground">{item.mistake}</p>
+                    <p className="mt-1 text-sm text-muted-foreground">{item.fix}</p>
                   </div>
                 </div>
               </div>
@@ -688,26 +688,26 @@ export default function SpokenLanguagePage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* 9. Example presentation plans */}
         <section aria-labelledby="examples-heading">
           <h2
             id="examples-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             9. Example Presentation Plans
           </h2>
-          <div className="mt-4 space-y-6 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-6 text-muted-foreground leading-relaxed">
 
             {/* Example 1 */}
-            <div className="rounded-lg border-2 border-[#1A5276]/20 bg-white p-6 shadow-sm">
-              <h3 className="text-lg font-bold text-[#1A5276]">
+            <div className="rounded-lg border-2 border-[#1A5276]/20 bg-card p-6 shadow-md">
+              <h3 className="text-lg font-bold text-foreground">
                 Example 1: &ldquo;Should the Voting Age Be Lowered to 16?&rdquo;
               </h3>
               <div className="mt-4 space-y-3">
-                <div className="rounded border-l-4 border-[#1A5276] bg-gray-50 p-3">
-                  <p className="text-sm font-semibold text-[#1A5276]">Introduction</p>
+                <div className="rounded border-l-4 border-[#1A5276] bg-muted p-3">
+                  <p className="text-sm font-semibold text-foreground">Introduction</p>
                   <p className="mt-1 text-sm">
                     Hook: &ldquo;In 2014, 75% of 16 and 17-year-olds voted in
                     the Scottish independence referendum. They proved they were
@@ -715,31 +715,31 @@ export default function SpokenLanguagePage() {
                     argument: voting age should be lowered to 16.
                   </p>
                 </div>
-                <div className="rounded border-l-4 border-[#2E86C1] bg-gray-50 p-3">
-                  <p className="text-sm font-semibold text-[#2E86C1]">Point 1: Taxation and representation</p>
+                <div className="rounded border-l-4 border-[#2E86C1] bg-muted p-3">
+                  <p className="text-sm font-semibold text-primary">Point 1: Taxation and representation</p>
                   <p className="mt-1 text-sm">
                     16-year-olds can work and pay tax. The principle of &ldquo;no
                     taxation without representation&rdquo; demands they should
                     have a vote.
                   </p>
                 </div>
-                <div className="rounded border-l-4 border-[#2E86C1] bg-gray-50 p-3">
-                  <p className="text-sm font-semibold text-[#2E86C1]">Point 2: Legal responsibilities</p>
+                <div className="rounded border-l-4 border-[#2E86C1] bg-muted p-3">
+                  <p className="text-sm font-semibold text-primary">Point 2: Legal responsibilities</p>
                   <p className="mt-1 text-sm">
                     At 16, you can join the army, get married, and leave school.
                     If you can make these life-changing decisions, you should be
                     trusted to vote.
                   </p>
                 </div>
-                <div className="rounded border-l-4 border-[#2E86C1] bg-gray-50 p-3">
-                  <p className="text-sm font-semibold text-[#2E86C1]">Point 3: Engagement and habit-forming</p>
+                <div className="rounded border-l-4 border-[#2E86C1] bg-muted p-3">
+                  <p className="text-sm font-semibold text-primary">Point 3: Engagement and habit-forming</p>
                   <p className="mt-1 text-sm">
                     Research shows that voting early creates lifelong habits of
                     civic participation. Lowering the voting age could help
                     combat declining voter turnout.
                   </p>
                 </div>
-                <div className="rounded border-l-4 border-amber-500 bg-gray-50 p-3">
+                <div className="rounded border-l-4 border-amber-500 bg-muted p-3">
                   <p className="text-sm font-semibold text-amber-700">Counter-argument</p>
                   <p className="mt-1 text-sm">
                     &ldquo;Some argue that 16-year-olds lack the maturity and
@@ -748,7 +748,7 @@ export default function SpokenLanguagePage() {
                     barrier to informed voting.&rdquo;
                   </p>
                 </div>
-                <div className="rounded border-l-4 border-emerald-500 bg-gray-50 p-3">
+                <div className="rounded border-l-4 border-emerald-500 bg-muted p-3">
                   <p className="text-sm font-semibold text-emerald-700">Conclusion</p>
                   <p className="mt-1 text-sm">
                     Summarise key points. Circular ending: &ldquo;If 75% of
@@ -761,13 +761,13 @@ export default function SpokenLanguagePage() {
             </div>
 
             {/* Example 2 */}
-            <div className="rounded-lg border-2 border-[#1A5276]/20 bg-white p-6 shadow-sm">
-              <h3 className="text-lg font-bold text-[#1A5276]">
+            <div className="rounded-lg border-2 border-[#1A5276]/20 bg-card p-6 shadow-md">
+              <h3 className="text-lg font-bold text-foreground">
                 Example 2: &ldquo;The Impact of Social Media on Mental Health&rdquo;
               </h3>
               <div className="mt-4 space-y-3">
-                <div className="rounded border-l-4 border-[#1A5276] bg-gray-50 p-3">
-                  <p className="text-sm font-semibold text-[#1A5276]">Introduction</p>
+                <div className="rounded border-l-4 border-[#1A5276] bg-muted p-3">
+                  <p className="text-sm font-semibold text-foreground">Introduction</p>
                   <p className="mt-1 text-sm">
                     Hook: &ldquo;The average teenager spends over seven hours a
                     day on screens. But what is that doing to their
@@ -775,31 +775,31 @@ export default function SpokenLanguagePage() {
                     social media on young people&rsquo;s mental health.
                   </p>
                 </div>
-                <div className="rounded border-l-4 border-[#2E86C1] bg-gray-50 p-3">
-                  <p className="text-sm font-semibold text-[#2E86C1]">Point 1: Comparison culture and self-esteem</p>
+                <div className="rounded border-l-4 border-[#2E86C1] bg-muted p-3">
+                  <p className="text-sm font-semibold text-primary">Point 1: Comparison culture and self-esteem</p>
                   <p className="mt-1 text-sm">
                     Filtered images and curated lives lead to unhealthy
                     comparisons. Studies link heavy social media use to lower
                     self-esteem, particularly among teenage girls.
                   </p>
                 </div>
-                <div className="rounded border-l-4 border-[#2E86C1] bg-gray-50 p-3">
-                  <p className="text-sm font-semibold text-[#2E86C1]">Point 2: Cyberbullying</p>
+                <div className="rounded border-l-4 border-[#2E86C1] bg-muted p-3">
+                  <p className="text-sm font-semibold text-primary">Point 2: Cyberbullying</p>
                   <p className="mt-1 text-sm">
                     Social media provides a platform for anonymous harassment.
                     1 in 5 young people report experiencing cyberbullying, with
                     lasting psychological effects.
                   </p>
                 </div>
-                <div className="rounded border-l-4 border-[#2E86C1] bg-gray-50 p-3">
-                  <p className="text-sm font-semibold text-[#2E86C1]">Point 3: Sleep disruption and anxiety</p>
+                <div className="rounded border-l-4 border-[#2E86C1] bg-muted p-3">
+                  <p className="text-sm font-semibold text-primary">Point 3: Sleep disruption and anxiety</p>
                   <p className="mt-1 text-sm">
                     Blue light and notification cycles disrupt sleep patterns.
                     The &ldquo;fear of missing out&rdquo; (FOMO) creates
                     persistent anxiety and compulsive checking behaviour.
                   </p>
                 </div>
-                <div className="rounded border-l-4 border-amber-500 bg-gray-50 p-3">
+                <div className="rounded border-l-4 border-amber-500 bg-muted p-3">
                   <p className="text-sm font-semibold text-amber-700">Counter-argument</p>
                   <p className="mt-1 text-sm">
                     &ldquo;Some argue that social media can be positive &mdash;
@@ -808,7 +808,7 @@ export default function SpokenLanguagePage() {
                     negate the overwhelming evidence of harm.&rdquo;
                   </p>
                 </div>
-                <div className="rounded border-l-4 border-emerald-500 bg-gray-50 p-3">
+                <div className="rounded border-l-4 border-emerald-500 bg-muted p-3">
                   <p className="text-sm font-semibold text-emerald-700">Conclusion</p>
                   <p className="mt-1 text-sm">
                     Call to action: &ldquo;We need better regulation, better
@@ -822,17 +822,17 @@ export default function SpokenLanguagePage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* 10. Teacher assessment criteria */}
         <section aria-labelledby="criteria-heading">
           <h2
             id="criteria-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             10. Teacher Assessment Criteria
           </h2>
-          <div className="mt-4 space-y-4 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>
               Your teacher will assess your performance against the following
               criteria for each grade. Understanding what your teacher is looking
@@ -843,7 +843,7 @@ export default function SpokenLanguagePage() {
               {/* Distinction */}
               <div className="rounded-lg border-2 border-emerald-500 bg-emerald-50 p-5">
                 <h3 className="text-lg font-bold text-emerald-700">Distinction</h3>
-                <ul className="ml-4 mt-3 list-disc space-y-2 text-sm text-gray-700">
+                <ul className="ml-4 mt-3 list-disc space-y-2 text-sm text-muted-foreground">
                   <li><strong>Presenting:</strong> The presentation is confidently, skilfully, and engagingly delivered with a commanding presence. Content is challenging, well-researched, and compelling. A wide range of rhetorical and presentational techniques is used effectively and deliberately.</li>
                   <li><strong>Listening &amp; Responding:</strong> Responds to questions and feedback perceptively, with authority and in considerable detail. Demonstrates sophisticated critical thinking and the ability to develop and extend ideas spontaneously.</li>
                   <li><strong>Standard English:</strong> Standard English is used fluently, consistently, and with precision throughout both the presentation and the Q&amp;A. Vocabulary is ambitious, varied, and appropriate to the formal context.</li>
@@ -852,8 +852,8 @@ export default function SpokenLanguagePage() {
 
               {/* Merit */}
               <div className="rounded-lg border-2 border-[#2E86C1] bg-blue-50 p-5">
-                <h3 className="text-lg font-bold text-[#2E86C1]">Merit</h3>
-                <ul className="ml-4 mt-3 list-disc space-y-2 text-sm text-gray-700">
+                <h3 className="text-lg font-bold text-primary">Merit</h3>
+                <ul className="ml-4 mt-3 list-disc space-y-2 text-sm text-muted-foreground">
                   <li><strong>Presenting:</strong> The presentation is clearly and competently delivered with good audience engagement. Content is well-organised, relevant, and supported with evidence. Rhetorical and presentational techniques are used with success.</li>
                   <li><strong>Listening &amp; Responding:</strong> Responds to questions clearly, with some detail and development. Shows the ability to engage with ideas and offer reasoned responses.</li>
                   <li><strong>Standard English:</strong> Standard English is used securely and consistently, with only occasional minor errors. Vocabulary is appropriate and sometimes ambitious.</li>
@@ -863,7 +863,7 @@ export default function SpokenLanguagePage() {
               {/* Pass */}
               <div className="rounded-lg border-2 border-amber-500 bg-amber-50 p-5">
                 <h3 className="text-lg font-bold text-amber-700">Pass</h3>
-                <ul className="ml-4 mt-3 list-disc space-y-2 text-sm text-gray-700">
+                <ul className="ml-4 mt-3 list-disc space-y-2 text-sm text-muted-foreground">
                   <li><strong>Presenting:</strong> The presentation is delivered with basic competence. Content is understandable and has some structure, though it may lack depth or sustained development. Some attempt is made to use presentational techniques.</li>
                   <li><strong>Listening &amp; Responding:</strong> Responds to questions with simple, relevant answers but may lack development or detail.</li>
                   <li><strong>Standard English:</strong> Standard English is used with some consistency, though there may be noticeable lapses into non-standard forms.</li>
@@ -871,9 +871,9 @@ export default function SpokenLanguagePage() {
               </div>
 
               {/* Not Classified */}
-              <div className="rounded-lg border-2 border-gray-400 bg-gray-50 p-5">
-                <h3 className="text-lg font-bold text-gray-600">Not Classified</h3>
-                <p className="mt-2 text-sm text-gray-700">
+              <div className="rounded-lg border-2 border-gray-400 bg-muted p-5">
+                <h3 className="text-lg font-bold text-muted-foreground">Not Classified</h3>
+                <p className="mt-2 text-sm text-muted-foreground">
                   The student has not met the minimum requirements for a Pass.
                   The presentation may be incomplete, incoherent, or delivered
                   without any formal structure. Standard English is not
@@ -885,17 +885,17 @@ export default function SpokenLanguagePage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* Practice checklist */}
         <section aria-labelledby="checklist-heading">
           <h2
             id="checklist-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Your Preparation Checklist
           </h2>
-          <div className="mt-4 space-y-2 text-gray-700">
+          <div className="mt-4 space-y-2 text-muted-foreground">
             <p>Use this checklist to make sure you are fully prepared:</p>
             <div className="mt-4 grid gap-2 sm:grid-cols-2">
               {[
@@ -914,7 +914,7 @@ export default function SpokenLanguagePage() {
               ].map((item, i) => (
                 <div
                   key={i}
-                  className="flex items-start gap-3 rounded-lg border border-gray-200 bg-gray-50 p-3"
+                  className="flex items-start gap-3 rounded-lg border border-border bg-muted p-3"
                 >
                   <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border-2 border-[#1A5276]/40 text-xs text-transparent">
                     &#10003;
@@ -935,7 +935,7 @@ export default function SpokenLanguagePage() {
           </p>
           <Link
             href="/resources/spoken-language/topics"
-            className="mt-6 inline-block rounded-lg bg-white px-8 py-3 text-sm font-semibold text-[#1A5276] shadow transition hover:bg-blue-50"
+            className="mt-6 inline-block rounded-lg bg-card px-8 py-3 text-sm font-semibold text-foreground shadow transition hover:bg-blue-50"
           >
             Browse All Topics &rarr;
           </Link>

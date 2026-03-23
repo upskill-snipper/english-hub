@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 function Annotation({ children, note }: { children: React.ReactNode; note: string }) {
   return (
     <span className="group relative">
-      <span className="rounded bg-[#2E86C1]/10 px-1 py-0.5 text-[#1A5276] border-b-2 border-dashed border-[#2E86C1]/40 cursor-help">
+      <span className="rounded bg-primary/10 px-1 py-0.5 text-foreground border-b-2 border-dashed border-[#2E86C1]/40 cursor-help">
         {children}
       </span>
       <span className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 w-60 -translate-x-1/2 rounded-lg bg-[#1A5276] px-3 py-2 text-xs leading-relaxed text-white opacity-0 shadow-lg transition-opacity group-hover:pointer-events-auto group-hover:opacity-100">
@@ -29,11 +29,11 @@ function Annotation({ children, note }: { children: React.ReactNode; note: strin
 
 function ExaminerComment({ children }: { children: React.ReactNode }) {
   return (
-    <div className="mt-4 rounded-lg border-l-4 border-[#2E86C1] bg-[#2E86C1]/5 p-4">
-      <p className="mb-1 text-xs font-bold uppercase tracking-wider text-[#2E86C1]">
+    <div className="mt-4 rounded-lg border-l-4 border-[#2E86C1] bg-primary/5 p-4">
+      <p className="mb-1 text-xs font-bold uppercase tracking-wider text-primary">
         Examiner Commentary
       </p>
-      <div className="text-sm leading-relaxed text-gray-700">{children}</div>
+      <div className="text-sm leading-relaxed text-muted-foreground">{children}</div>
     </div>
   );
 }
@@ -43,7 +43,7 @@ function ExaminerComment({ children }: { children: React.ReactNode }) {
 function Section({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
   return (
     <section id={id} className="scroll-mt-24">
-      <h2 className="mb-6 text-2xl font-bold text-[#1A5276] border-b-2 border-[#2E86C1]/20 pb-3">
+      <h2 className="mb-6 text-2xl font-bold text-foreground border-b-2 border-[#2E86C1]/20 pb-3">
         {title}
       </h2>
       {children}
@@ -60,7 +60,7 @@ export default function PersuasiveWritingPage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-[#1A5276] to-[#1A5276]/80 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-[#2E86C1]/80">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary/80">
             Model Answers
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -75,14 +75,14 @@ export default function PersuasiveWritingPage() {
 
       {/* Breadcrumb */}
       <nav className="mx-auto max-w-5xl px-4 pt-6" aria-label="Breadcrumb">
-        <ol className="flex flex-wrap items-center gap-2 text-sm text-gray-500">
-          <li><Link href="/" className="hover:text-[#1A5276] transition-colors">Home</Link></li>
+        <ol className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+          <li><Link href="/" className="hover:text-foreground transition-colors">Home</Link></li>
           <li>/</li>
-          <li><Link href="/resources" className="hover:text-[#1A5276] transition-colors">Resources</Link></li>
+          <li><Link href="/resources" className="hover:text-foreground transition-colors">Resources</Link></li>
           <li>/</li>
-          <li><Link href="/resources/model-answers" className="hover:text-[#1A5276] transition-colors">Model Answers</Link></li>
+          <li><Link href="/resources/model-answers" className="hover:text-foreground transition-colors">Model Answers</Link></li>
           <li>/</li>
-          <li className="font-medium text-[#1A5276]">Persuasive Writing</li>
+          <li className="font-medium text-foreground">Persuasive Writing</li>
         </ol>
       </nav>
 
@@ -93,7 +93,7 @@ export default function PersuasiveWritingPage() {
           {/* Sidebar TOC */}
           <aside className="hidden lg:block">
             <nav className="sticky top-24 space-y-1 text-sm">
-              <p className="mb-2 font-bold text-[#1A5276] uppercase tracking-wider text-xs">Contents</p>
+              <p className="mb-2 font-bold text-foreground uppercase tracking-wider text-xs">Contents</p>
               {[
                 { id: "article", label: "Article" },
                 { id: "speech", label: "Speech" },
@@ -103,7 +103,7 @@ export default function PersuasiveWritingPage() {
                 <a
                   key={item.id}
                   href={`#${item.id}`}
-                  className="block rounded-lg px-3 py-1.5 text-gray-600 hover:bg-[#2E86C1]/10 hover:text-[#1A5276] transition-colors"
+                  className="block rounded-lg px-3 py-1.5 text-muted-foreground hover:bg-primary/10 hover:text-foreground transition-colors"
                 >
                   {item.label}
                 </a>
@@ -116,22 +116,22 @@ export default function PersuasiveWritingPage() {
 
             {/* ─── ARTICLE ─────────────────────────────────────── */}
             <Section id="article" title="Model Article">
-              <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm mb-4">
-                <p className="text-xs font-bold uppercase tracking-wider text-[#2E86C1] mb-2">Task</p>
-                <p className="text-gray-800 font-medium">
+              <div className="rounded-xl border border-border bg-card p-6 shadow-md mb-4">
+                <p className="text-xs font-bold uppercase tracking-wider text-primary mb-2">Task</p>
+                <p className="text-foreground font-medium">
                   &lsquo;Young people spend too much time on their phones.&rsquo;
                   Write an article for a broadsheet newspaper in which you argue for or against this view.
                 </p>
               </div>
 
-              <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-                <div className="prose prose-sm max-w-none text-gray-700 leading-relaxed space-y-4">
-                  <h3 className="text-lg font-bold text-[#1A5276] mt-0">
+              <div className="rounded-xl border border-border bg-card p-6 shadow-md">
+                <div className="prose prose-sm max-w-none text-muted-foreground leading-relaxed space-y-4">
+                  <h3 className="text-lg font-bold text-foreground mt-0">
                     <Annotation note="Headline uses a rhetorical question and wordplay ('disconnected' has a double meaning). This immediately engages the reader and signals the article's argument.">
                       Are We Really the Disconnected Generation?
                     </Annotation>
                   </h3>
-                  <p className="text-sm italic text-gray-500">
+                  <p className="text-sm italic text-muted-foreground">
                     <Annotation note="Subheading establishes the article's stance clearly. This is a key convention of broadsheet journalism.">
                       Far from destroying communication, smartphones have transformed it &mdash; and it is time we stopped
                       blaming young people for adapting.
@@ -203,16 +203,16 @@ export default function PersuasiveWritingPage() {
 
             {/* ─── SPEECH ──────────────────────────────────────── */}
             <Section id="speech" title="Model Speech">
-              <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm mb-4">
-                <p className="text-xs font-bold uppercase tracking-wider text-[#2E86C1] mb-2">Task</p>
-                <p className="text-gray-800 font-medium">
+              <div className="rounded-xl border border-border bg-card p-6 shadow-md mb-4">
+                <p className="text-xs font-bold uppercase tracking-wider text-primary mb-2">Task</p>
+                <p className="text-foreground font-medium">
                   Write a speech to deliver to your year group persuading them that volunteering should be
                   a compulsory part of the school curriculum.
                 </p>
               </div>
 
-              <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-                <div className="prose prose-sm max-w-none text-gray-700 leading-relaxed space-y-4">
+              <div className="rounded-xl border border-border bg-card p-6 shadow-md">
+                <div className="prose prose-sm max-w-none text-muted-foreground leading-relaxed space-y-4">
                   <p>
                     <Annotation note="Direct address to the audience. Using their shared identity ('we') establishes rapport and positions the speaker as one of them, not above them.">
                       We have all sat through assemblies where someone tells us to &ldquo;give back to the community.&rdquo;
@@ -288,16 +288,16 @@ export default function PersuasiveWritingPage() {
 
             {/* ─── LETTER ──────────────────────────────────────── */}
             <Section id="letter" title="Model Letter">
-              <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm mb-4">
-                <p className="text-xs font-bold uppercase tracking-wider text-[#2E86C1] mb-2">Task</p>
-                <p className="text-gray-800 font-medium">
+              <div className="rounded-xl border border-border bg-card p-6 shadow-md mb-4">
+                <p className="text-xs font-bold uppercase tracking-wider text-primary mb-2">Task</p>
+                <p className="text-foreground font-medium">
                   Write a letter to your local council arguing that more green spaces should be created in your area.
                 </p>
               </div>
 
-              <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-                <div className="prose prose-sm max-w-none text-gray-700 leading-relaxed space-y-4">
-                  <p className="text-sm text-gray-500">
+              <div className="rounded-xl border border-border bg-card p-6 shadow-md">
+                <div className="prose prose-sm max-w-none text-muted-foreground leading-relaxed space-y-4">
+                  <p className="text-sm text-muted-foreground">
                     <Annotation note="Formal letter conventions: address and date. These are easy marks that students often forget. Always include them.">
                       14 Oakfield Road<br />
                       Prestbury<br />
@@ -388,7 +388,7 @@ export default function PersuasiveWritingPage() {
 
             {/* ─── KEY TECHNIQUES ──────────────────────────────── */}
             <Section id="techniques" title="Key Persuasive Techniques">
-              <p className="mb-6 text-gray-700 leading-relaxed">
+              <p className="mb-6 text-muted-foreground leading-relaxed">
                 Master these techniques to elevate your transactional writing from competent to compelling.
               </p>
 
@@ -408,15 +408,15 @@ export default function PersuasiveWritingPage() {
                     ],
                   },
                 ].map((group) => (
-                  <div key={group.name} className="col-span-full rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-                    <h4 className="font-bold text-[#1A5276] text-lg mb-4">{group.name}</h4>
+                  <div key={group.name} className="col-span-full rounded-xl border border-border bg-card p-6 shadow-md">
+                    <h4 className="font-bold text-foreground text-lg mb-4">{group.name}</h4>
                     <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                       {group.items.map((item) => (
-                        <div key={item.label} className="flex items-start gap-3 rounded-lg bg-gray-50 p-3">
+                        <div key={item.label} className="flex items-start gap-3 rounded-lg bg-muted p-3">
                           <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-sm font-bold text-white">
                             {item.label}
                           </span>
-                          <span className="text-sm text-gray-700 pt-1">{item.desc}</span>
+                          <span className="text-sm text-muted-foreground pt-1">{item.desc}</span>
                         </div>
                       ))}
                     </div>
@@ -443,9 +443,9 @@ export default function PersuasiveWritingPage() {
                     desc: "Open with impact, build with evidence, close with a call to action. Your strongest point should be either first (for immediate impact) or last (for lasting impression).",
                   },
                 ].map((tech) => (
-                  <div key={tech.name} className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-                    <h4 className="font-bold text-[#1A5276]">{tech.name}</h4>
-                    <p className="mt-2 text-sm text-gray-600 leading-relaxed">{tech.desc}</p>
+                  <div key={tech.name} className="rounded-xl border border-border bg-card p-5 shadow-md">
+                    <h4 className="font-bold text-foreground">{tech.name}</h4>
+                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{tech.desc}</p>
                   </div>
                 ))}
               </div>

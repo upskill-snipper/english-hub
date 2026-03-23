@@ -655,7 +655,7 @@ export default function RomeoAndJulietPage() {
       </section>
 
       {/* Quick navigation */}
-      <nav className="sticky top-0 z-30 bg-white/95 backdrop-blur border-b border-gray-200 px-4 py-3 overflow-x-auto">
+      <nav className="sticky top-0 z-30 bg-card/95 backdrop-blur border-b border-border px-4 py-3 overflow-x-auto">
         <div className="mx-auto flex max-w-5xl gap-2 text-xs font-medium sm:text-sm sm:gap-4 whitespace-nowrap">
           {[
             ["#exam-format", "Exam Format"],
@@ -670,7 +670,7 @@ export default function RomeoAndJulietPage() {
             <a
               key={href}
               href={href}
-              className="rounded-full border border-gray-300 px-3 py-1 text-gray-700 transition hover:bg-primary hover:text-white hover:border-primary"
+              className="rounded-full border border-gray-300 px-3 py-1 text-muted-foreground transition hover:bg-primary hover:text-white hover:border-primary"
             >
               {label}
             </a>
@@ -683,23 +683,23 @@ export default function RomeoAndJulietPage() {
         id="exam-format"
         className="mx-auto max-w-5xl px-4 py-12 sm:py-16"
       >
-        <h2 className="text-2xl font-bold text-gray-900">
+        <h2 className="text-2xl font-bold text-foreground">
           AQA Exam Format: What to Expect
         </h2>
-        <p className="mt-2 text-gray-600">
+        <p className="mt-2 text-muted-foreground">
           Understanding the exam structure is essential for maximising your marks.
           Romeo and Juliet appears in{" "}
           <strong>{aqaExamFormat.paper}</strong>,{" "}
           <strong>{aqaExamFormat.section}</strong>.
         </p>
 
-        <div className="mt-6 rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+        <div className="mt-6 rounded-xl border border-border bg-card p-6 shadow-md">
           <div className="grid gap-4 sm:grid-cols-2">
             <div>
               <p className="text-xs font-semibold uppercase tracking-wider text-accent">
                 Marks Available
               </p>
-              <p className="mt-1 text-lg font-bold text-gray-900">
+              <p className="mt-1 text-lg font-bold text-foreground">
                 {aqaExamFormat.marks}
               </p>
             </div>
@@ -707,7 +707,7 @@ export default function RomeoAndJulietPage() {
               <p className="text-xs font-semibold uppercase tracking-wider text-accent">
                 Recommended Time
               </p>
-              <p className="mt-1 text-lg font-bold text-gray-900">
+              <p className="mt-1 text-lg font-bold text-foreground">
                 {aqaExamFormat.time}
               </p>
             </div>
@@ -716,30 +716,30 @@ export default function RomeoAndJulietPage() {
             <p className="text-xs font-semibold uppercase tracking-wider text-accent">
               Question Format
             </p>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               {aqaExamFormat.format}
             </p>
           </div>
         </div>
 
-        <h3 className="mt-8 text-lg font-bold text-gray-900">
+        <h3 className="mt-8 text-lg font-bold text-foreground">
           Assessment Objectives Breakdown
         </h3>
         <div className="mt-4 grid gap-4 sm:grid-cols-2">
           {aqaExamFormat.assessmentObjectives.map((ao) => (
             <div
               key={ao.code}
-              className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm"
+              className="rounded-xl border border-border bg-card p-5 shadow-md"
             >
               <div className="flex items-baseline gap-3">
                 <span className="rounded-full bg-primary px-3 py-1 text-xs font-bold text-white">
                   {ao.code}
                 </span>
-                <span className="text-sm font-semibold text-gray-900">
+                <span className="text-sm font-semibold text-foreground">
                   {ao.marks}
                 </span>
               </div>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 {ao.description}
               </p>
               <p className="mt-2 text-sm text-accent font-medium leading-relaxed">
@@ -751,12 +751,12 @@ export default function RomeoAndJulietPage() {
       </section>
 
       {/* ── Plot Summary ─────────────────────────────────────────── */}
-      <section id="plot" className="bg-gray-50 px-4 py-12 sm:py-16">
+      <section id="plot" className="bg-muted px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Plot Summary: Act by Act
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             The action of Romeo and Juliet takes place over just five days,
             creating a breathless pace that mirrors the intensity of the
             lovers&apos; passion.
@@ -772,14 +772,14 @@ export default function RomeoAndJulietPage() {
                   {act.scenes.map((scene) => (
                     <div
                       key={scene.scene}
-                      className="rounded-lg border border-gray-200 bg-white p-4"
+                      className="rounded-lg border border-border bg-card p-4"
                     >
                       <p className="text-xs font-semibold text-accent uppercase tracking-wider">
                         {scene.scene.includes("Prologue")
                           ? scene.scene
                           : `Scene ${scene.scene}`}
                       </p>
-                      <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+                      <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                         {scene.summary}
                       </p>
                     </div>
@@ -793,10 +793,10 @@ export default function RomeoAndJulietPage() {
 
       {/* ── Characters ───────────────────────────────────────────── */}
       <section id="characters" className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
-        <h2 className="text-2xl font-bold text-gray-900">
+        <h2 className="text-2xl font-bold text-foreground">
           Character Analysis
         </h2>
-        <p className="mt-2 text-gray-600">
+        <p className="mt-2 text-muted-foreground">
           Understanding characters as constructs &mdash; Shakespeare made
           deliberate choices about how to present each character to convey
           meaning.
@@ -806,24 +806,24 @@ export default function RomeoAndJulietPage() {
           {characters.map((char) => (
             <div
               key={char.name}
-              className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
+              className="rounded-xl border border-border bg-card p-6 shadow-md"
             >
               <div className="flex flex-wrap items-baseline gap-3">
-                <h3 className="text-xl font-bold text-gray-900">
+                <h3 className="text-xl font-bold text-foreground">
                   {char.name}
                 </h3>
                 <span className="text-sm text-accent font-medium">
                   {char.role}
                 </span>
               </div>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 {char.description}
               </p>
               <div className="mt-4">
-                <h4 className="text-sm font-semibold text-gray-800">
+                <h4 className="text-sm font-semibold text-foreground">
                   Key Points for Analysis
                 </h4>
-                <ul className="mt-2 space-y-1.5 text-sm text-gray-600">
+                <ul className="mt-2 space-y-1.5 text-sm text-muted-foreground">
                   {char.keyPoints.map((point) => (
                     <li key={point} className="flex items-start gap-2">
                       <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
@@ -833,7 +833,7 @@ export default function RomeoAndJulietPage() {
                 </ul>
               </div>
               <div className="mt-4">
-                <h4 className="text-sm font-semibold text-gray-800">
+                <h4 className="text-sm font-semibold text-foreground">
                   Key Quotations
                 </h4>
                 <div className="mt-2 space-y-1">
@@ -853,12 +853,12 @@ export default function RomeoAndJulietPage() {
       </section>
 
       {/* ── Themes ───────────────────────────────────────────────── */}
-      <section id="themes" className="bg-gray-50 px-4 py-12 sm:py-16">
+      <section id="themes" className="bg-muted px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Key Themes &mdash; AQA Focus
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             Themes are the big ideas Shakespeare explores through the plot,
             characters, and language of the play.
           </p>
@@ -869,17 +869,17 @@ export default function RomeoAndJulietPage() {
                 key={theme.title}
                 className={`rounded-xl border p-6 ${theme.colour}`}
               >
-                <h3 className="text-xl font-bold text-gray-900">
+                <h3 className="text-xl font-bold text-foreground">
                   {theme.title}
                 </h3>
-                <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   {theme.analysis}
                 </p>
                 <div className="mt-4">
-                  <h4 className="text-sm font-semibold text-gray-800">
+                  <h4 className="text-sm font-semibold text-foreground">
                     Key Points
                   </h4>
-                  <ul className="mt-2 space-y-1.5 text-sm text-gray-600">
+                  <ul className="mt-2 space-y-1.5 text-sm text-muted-foreground">
                     {theme.keyPoints.map((point) => (
                       <li key={point} className="flex items-start gap-2">
                         <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
@@ -889,14 +889,14 @@ export default function RomeoAndJulietPage() {
                   </ul>
                 </div>
                 <div className="mt-4">
-                  <h4 className="text-sm font-semibold text-gray-800">
+                  <h4 className="text-sm font-semibold text-foreground">
                     Key Quotations
                   </h4>
                   <div className="mt-2 space-y-1">
                     {theme.keyQuotes.map((q) => (
                       <p
                         key={q}
-                        className="text-sm italic text-gray-700 bg-white/60 rounded px-3 py-1.5"
+                        className="text-sm italic text-muted-foreground bg-card/60 rounded px-3 py-1.5"
                       >
                         {q}
                       </p>
@@ -912,10 +912,10 @@ export default function RomeoAndJulietPage() {
       {/* ── Key Quotations ───────────────────────────────────────── */}
       <section id="quotations" className="bg-primary-50 px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Key Quotations with Analysis
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             Learn these quotations and their analysis. In the exam, embed short
             phrases rather than copying entire quotes. AQA rewards analysis of
             individual words and techniques (AO2).
@@ -925,7 +925,7 @@ export default function RomeoAndJulietPage() {
             {keyQuotations.map((q, i) => (
               <div
                 key={i}
-                className="rounded-xl bg-white p-5 shadow-sm border border-gray-200"
+                className="rounded-xl bg-card p-5 shadow-md border border-border"
               >
                 <p className="text-base font-semibold italic text-primary">
                   &ldquo;{q.quote}&rdquo;
@@ -933,7 +933,7 @@ export default function RomeoAndJulietPage() {
                 <p className="mt-1 text-xs text-accent font-medium">
                   {q.speaker}
                 </p>
-                <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   {q.analysis}
                 </p>
               </div>
@@ -944,10 +944,10 @@ export default function RomeoAndJulietPage() {
 
       {/* ── Context ──────────────────────────────────────────────── */}
       <section id="context" className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
-        <h2 className="text-2xl font-bold text-gray-900">
+        <h2 className="text-2xl font-bold text-foreground">
           Historical and Social Context
         </h2>
-        <p className="mt-2 text-gray-600">
+        <p className="mt-2 text-muted-foreground">
           Context (AO3) is worth 6 marks. Integrate it into your analysis rather
           than writing separate &quot;context paragraphs.&quot;
         </p>
@@ -956,10 +956,10 @@ export default function RomeoAndJulietPage() {
           {contextPoints.map((ctx) => (
             <div
               key={ctx.title}
-              className="rounded-xl border border-gray-200 p-5"
+              className="rounded-xl border border-border p-5"
             >
               <h3 className="font-bold text-primary">{ctx.title}</h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 {ctx.detail}
               </p>
             </div>
@@ -970,13 +970,13 @@ export default function RomeoAndJulietPage() {
       {/* ── AQA Command Words ──────────────────────────────────── */}
       <section
         id="command-words"
-        className="bg-gray-50 px-4 py-12 sm:py-16"
+        className="bg-muted px-4 py-12 sm:py-16"
       >
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             AQA Command Words &mdash; What They Really Mean
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             Understanding the question wording is crucial. Here are the key
             phrases AQA uses and what they require from you.
           </p>
@@ -985,12 +985,12 @@ export default function RomeoAndJulietPage() {
             {commandWords.map((cw) => (
               <div
                 key={cw.word}
-                className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm"
+                className="rounded-xl border border-border bg-card p-5 shadow-md"
               >
                 <p className="font-bold text-primary italic">
                   &ldquo;{cw.word}&rdquo;
                 </p>
-                <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   {cw.meaning}
                 </p>
               </div>
@@ -1001,10 +1001,10 @@ export default function RomeoAndJulietPage() {
 
       {/* ── Essay Planning ───────────────────────────────────────── */}
       <section id="essays" className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
-        <h2 className="text-2xl font-bold text-gray-900">
+        <h2 className="text-2xl font-bold text-foreground">
           Essay Planning: Sample AQA Questions
         </h2>
-        <p className="mt-2 text-gray-600">
+        <p className="mt-2 text-muted-foreground">
           Practise planning essays in 5 minutes. These reflect the style of AQA
           Paper 1 Section A questions. Remember: start with the extract, then
           move to the wider play.
@@ -1014,14 +1014,14 @@ export default function RomeoAndJulietPage() {
           {essayQuestions.map((eq, i) => (
             <div
               key={i}
-              className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
+              className="rounded-xl border border-border bg-card p-6 shadow-md"
             >
-              <h3 className="font-bold text-gray-900">Q: {eq.question}</h3>
+              <h3 className="font-bold text-foreground">Q: {eq.question}</h3>
               <div className="mt-4">
                 <p className="text-xs font-semibold uppercase tracking-wider text-accent">
                   Suggested Paragraph Plan
                 </p>
-                <ol className="mt-3 space-y-2 text-sm text-gray-700 list-decimal pl-5">
+                <ol className="mt-3 space-y-2 text-sm text-muted-foreground list-decimal pl-5">
                   {eq.plan.map((p, j) => (
                     <li key={j} className="leading-relaxed">
                       {p}

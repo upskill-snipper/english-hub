@@ -479,7 +479,7 @@ export default function ChristmasCarolPage() {
       </section>
 
       {/* Quick navigation */}
-      <nav className="sticky top-0 z-30 bg-white/95 backdrop-blur border-b border-gray-200 px-4 py-3 overflow-x-auto">
+      <nav className="sticky top-0 z-30 bg-card/95 backdrop-blur border-b border-border px-4 py-3 overflow-x-auto">
         <div className="mx-auto flex max-w-5xl gap-2 text-xs font-medium sm:text-sm sm:gap-4 whitespace-nowrap">
           {[
             ["#plot", "Plot"],
@@ -492,7 +492,7 @@ export default function ChristmasCarolPage() {
             <a
               key={href}
               href={href}
-              className="rounded-full border border-gray-300 px-3 py-1 text-gray-700 transition hover:bg-primary hover:text-white hover:border-primary"
+              className="rounded-full border border-gray-300 px-3 py-1 text-muted-foreground transition hover:bg-primary hover:text-white hover:border-primary"
             >
               {label}
             </a>
@@ -502,10 +502,10 @@ export default function ChristmasCarolPage() {
 
       {/* ── Plot Summary ─────────────────────────────────────────── */}
       <section id="plot" className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
-        <h2 className="text-2xl font-bold text-gray-900">
+        <h2 className="text-2xl font-bold text-foreground">
           Plot Summary: Stave by Stave
         </h2>
-        <p className="mt-2 text-gray-600">
+        <p className="mt-2 text-muted-foreground">
           Dickens called the five chapters &quot;staves&quot; (musical term for sections
           of a song), reinforcing the idea of Christmas carol and harmony.
         </p>
@@ -520,7 +520,7 @@ export default function ChristmasCarolPage() {
                 {stave.summary.map((para, i) => (
                   <p
                     key={i}
-                    className="text-sm text-gray-700 leading-relaxed"
+                    className="text-sm text-muted-foreground leading-relaxed"
                   >
                     {para}
                   </p>
@@ -536,12 +536,12 @@ export default function ChristmasCarolPage() {
       </section>
 
       {/* ── Characters ───────────────────────────────────────────── */}
-      <section id="characters" className="bg-gray-50 px-4 py-12 sm:py-16">
+      <section id="characters" className="bg-muted px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Character Analysis
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             Remember: characters are constructs. Discuss what Dickens is trying
             to show through each character, not what they &quot;feel.&quot;
           </p>
@@ -550,24 +550,24 @@ export default function ChristmasCarolPage() {
             {characters.map((char) => (
               <div
                 key={char.name}
-                className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
+                className="rounded-xl border border-border bg-card p-6 shadow-md"
               >
                 <div className="flex flex-wrap items-baseline gap-3">
-                  <h3 className="text-xl font-bold text-gray-900">
+                  <h3 className="text-xl font-bold text-foreground">
                     {char.name}
                   </h3>
                   <span className="text-sm text-accent font-medium">
                     {char.role}
                   </span>
                 </div>
-                <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   {char.description}
                 </p>
                 <div className="mt-4">
-                  <h4 className="text-sm font-semibold text-gray-800">
+                  <h4 className="text-sm font-semibold text-foreground">
                     Key Points for Analysis
                   </h4>
-                  <ul className="mt-2 space-y-1.5 text-sm text-gray-600">
+                  <ul className="mt-2 space-y-1.5 text-sm text-muted-foreground">
                     {char.keyPoints.map((point) => (
                       <li key={point} className="flex items-start gap-2">
                         <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
@@ -577,7 +577,7 @@ export default function ChristmasCarolPage() {
                   </ul>
                 </div>
                 <div className="mt-4">
-                  <h4 className="text-sm font-semibold text-gray-800">
+                  <h4 className="text-sm font-semibold text-foreground">
                     Key Quotations
                   </h4>
                   <div className="mt-2 space-y-1">
@@ -599,7 +599,7 @@ export default function ChristmasCarolPage() {
 
       {/* ── Themes ───────────────────────────────────────────────── */}
       <section id="themes" className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
-        <h2 className="text-2xl font-bold text-gray-900">Key Themes</h2>
+        <h2 className="text-2xl font-bold text-foreground">Key Themes</h2>
 
         <div className="mt-8 space-y-8">
           {themes.map((theme) => (
@@ -607,17 +607,17 @@ export default function ChristmasCarolPage() {
               key={theme.title}
               className={`rounded-xl border p-6 ${theme.colour}`}
             >
-              <h3 className="text-xl font-bold text-gray-900">
+              <h3 className="text-xl font-bold text-foreground">
                 {theme.title}
               </h3>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 {theme.analysis}
               </p>
               <div className="mt-4">
-                <h4 className="text-sm font-semibold text-gray-800">
+                <h4 className="text-sm font-semibold text-foreground">
                   Key Points
                 </h4>
-                <ul className="mt-2 space-y-1.5 text-sm text-gray-600">
+                <ul className="mt-2 space-y-1.5 text-sm text-muted-foreground">
                   {theme.keyPoints.map((point) => (
                     <li key={point} className="flex items-start gap-2">
                       <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
@@ -627,14 +627,14 @@ export default function ChristmasCarolPage() {
                 </ul>
               </div>
               <div className="mt-4">
-                <h4 className="text-sm font-semibold text-gray-800">
+                <h4 className="text-sm font-semibold text-foreground">
                   Key Quotations
                 </h4>
                 <div className="mt-2 space-y-1">
                   {theme.keyQuotes.map((q) => (
                     <p
                       key={q}
-                      className="text-sm italic text-gray-700 bg-white/60 rounded px-3 py-1.5"
+                      className="text-sm italic text-muted-foreground bg-card/60 rounded px-3 py-1.5"
                     >
                       {q}
                     </p>
@@ -649,7 +649,7 @@ export default function ChristmasCarolPage() {
       {/* ── Key Quotations ───────────────────────────────────────── */}
       <section id="quotations" className="bg-primary-50 px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Key Quotations with Analysis
           </h2>
 
@@ -657,7 +657,7 @@ export default function ChristmasCarolPage() {
             {keyQuotations.map((q, i) => (
               <div
                 key={i}
-                className="rounded-xl bg-white p-5 shadow-sm border border-gray-200"
+                className="rounded-xl bg-card p-5 shadow-md border border-border"
               >
                 <p className="text-base font-semibold italic text-primary">
                   &ldquo;{q.quote}&rdquo;
@@ -665,7 +665,7 @@ export default function ChristmasCarolPage() {
                 <p className="mt-1 text-xs text-accent font-medium">
                   {q.speaker}
                 </p>
-                <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   {q.analysis}
                 </p>
               </div>
@@ -676,7 +676,7 @@ export default function ChristmasCarolPage() {
 
       {/* ── Context ──────────────────────────────────────────────── */}
       <section id="context" className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
-        <h2 className="text-2xl font-bold text-gray-900">
+        <h2 className="text-2xl font-bold text-foreground">
           Historical and Social Context
         </h2>
 
@@ -684,10 +684,10 @@ export default function ChristmasCarolPage() {
           {contextPoints.map((ctx) => (
             <div
               key={ctx.title}
-              className="rounded-xl border border-gray-200 p-5"
+              className="rounded-xl border border-border p-5"
             >
               <h3 className="font-bold text-primary">{ctx.title}</h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 {ctx.detail}
               </p>
             </div>
@@ -696,9 +696,9 @@ export default function ChristmasCarolPage() {
       </section>
 
       {/* ── Essay Planning ───────────────────────────────────────── */}
-      <section id="essays" className="bg-gray-50 px-4 py-12 sm:py-16">
+      <section id="essays" className="bg-muted px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Essay Planning: Common Questions
           </h2>
 
@@ -706,16 +706,16 @@ export default function ChristmasCarolPage() {
             {essayQuestions.map((eq, i) => (
               <div
                 key={i}
-                className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
+                className="rounded-xl border border-border bg-card p-6 shadow-md"
               >
-                <h3 className="font-bold text-gray-900">
+                <h3 className="font-bold text-foreground">
                   Q: {eq.question}
                 </h3>
                 <div className="mt-4">
                   <p className="text-xs font-semibold uppercase tracking-wider text-accent">
                     Suggested Paragraph Plan
                   </p>
-                  <ol className="mt-3 space-y-2 text-sm text-gray-700 list-decimal pl-5">
+                  <ol className="mt-3 space-y-2 text-sm text-muted-foreground list-decimal pl-5">
                     {eq.plan.map((p, j) => (
                       <li key={j} className="leading-relaxed">
                         {p}

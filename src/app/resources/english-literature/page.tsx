@@ -18,7 +18,7 @@ const BOARDS = [
       "Paper 2: Modern Texts & Poetry",
     ],
     color: "border-[#2E86C1]",
-    bgColor: "bg-[#2E86C1]",
+    bgColor: "bg-primary",
     students: "~300,000",
     highlight: "Most popular board in England",
   },
@@ -250,7 +250,7 @@ function ArrowRight({ className = "h-4 w-4" }: { className?: string }) {
 function CheckIcon() {
   return (
     <svg
-      className="mt-0.5 h-4 w-4 shrink-0 text-[#2E86C1]"
+      className="mt-0.5 h-4 w-4 shrink-0 text-primary"
       fill="none"
       viewBox="0 0 24 24"
       strokeWidth={2}
@@ -280,7 +280,7 @@ function TickCell() {
 function CrossCell() {
   return (
     <td className="px-3 py-2.5 text-center">
-      <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-gray-100 text-gray-400">
+      <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-gray-100 text-muted-foreground">
         <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
         </svg>
@@ -332,12 +332,12 @@ export default function EnglishLiteraturePage() {
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section className="relative overflow-hidden bg-gradient-to-br from-[#1A5276] via-[#1A5276]/95 to-[#2E86C1]/80 px-4 py-16 text-white sm:py-20">
         <div className="absolute inset-0 opacity-10" aria-hidden="true">
-          <div className="absolute -right-24 -top-24 h-96 w-96 rounded-full bg-white/20 blur-3xl" />
-          <div className="absolute -bottom-32 -left-32 h-[30rem] w-[30rem] rounded-full bg-[#2E86C1]/30 blur-3xl" />
+          <div className="absolute -right-24 -top-24 h-96 w-96 rounded-full bg-card/20 blur-3xl" />
+          <div className="absolute -bottom-32 -left-32 h-[30rem] w-[30rem] rounded-full bg-primary/30 blur-3xl" />
         </div>
 
         <div className="relative mx-auto max-w-5xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-[#2E86C1]/70">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary/70">
             GCSE &amp; IGCSE
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
@@ -354,7 +354,7 @@ export default function EnglishLiteraturePage() {
             {HERO_STATS.map((stat) => (
               <div
                 key={stat.label}
-                className="rounded-xl bg-white/10 px-4 py-4 backdrop-blur-sm"
+                className="rounded-xl bg-card/10 px-4 py-4 backdrop-blur-sm"
               >
                 <p className="text-2xl font-extrabold sm:text-3xl">
                   {stat.value}
@@ -370,11 +370,11 @@ export default function EnglishLiteraturePage() {
 
       {/* ── What English Literature covers ───────────────────── */}
       <section className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
-        <div className="rounded-xl border border-[#2E86C1]/20 bg-[#2E86C1]/5 p-6 sm:p-8">
-          <h2 className="text-xl font-bold text-gray-900">
+        <div className="rounded-xl border border-[#2E86C1]/20 bg-primary/5 p-6 sm:p-8">
+          <h2 className="text-xl font-bold text-foreground">
             What does English Literature cover?
           </h2>
-          <p className="mt-3 leading-relaxed text-gray-700">
+          <p className="mt-3 leading-relaxed text-muted-foreground">
             GCSE English Literature requires you to read and respond to a range
             of literary texts from different periods and genres. You will develop
             skills in close reading, critical analysis, comparison, and essay
@@ -385,7 +385,7 @@ export default function EnglishLiteraturePage() {
             {OVERVIEW_TOPICS.map((topic) => (
               <li
                 key={topic}
-                className="flex items-start gap-2 text-sm text-gray-700"
+                className="flex items-start gap-2 text-sm text-muted-foreground"
               >
                 <CheckIcon />
                 {topic}
@@ -397,10 +397,10 @@ export default function EnglishLiteraturePage() {
 
       {/* ── Board Selection Cards ────────────────────────────── */}
       <section className="mx-auto max-w-5xl px-4 pb-12 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-gray-900">
+        <h2 className="text-2xl font-bold text-foreground">
           Select your exam board
         </h2>
-        <p className="mt-2 text-gray-600">
+        <p className="mt-2 text-muted-foreground">
           Choose your exam board below to access board-specific study guides,
           text analysis, and exam preparation materials.
         </p>
@@ -410,24 +410,24 @@ export default function EnglishLiteraturePage() {
             <Link
               key={board.slug}
               href={`/resources/english-literature/${board.slug}`}
-              className={`group flex flex-col rounded-xl border-2 ${board.color} bg-white p-6 shadow-sm transition hover:shadow-lg hover:-translate-y-0.5`}
+              className={`group flex flex-col rounded-xl border-2 ${board.color} bg-card p-6 shadow-md transition hover:shadow-lg hover:-translate-y-0.5`}
             >
               <div className="flex items-center justify-between">
-                <h3 className="text-lg font-bold text-gray-900 transition-colors group-hover:text-[#1A5276]">
+                <h3 className="text-lg font-bold text-foreground transition-colors group-hover:text-foreground">
                   {board.name}
                 </h3>
-                <span className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-semibold text-gray-500">
+                <span className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-semibold text-muted-foreground">
                   {board.spec}
                 </span>
               </div>
 
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-gray-600">
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
                 {board.description}
               </p>
 
               <div className="mt-3">
                 <span
-                  className={`inline-block rounded-full ${board.bgColor}/10 px-2.5 py-0.5 text-xs font-medium text-gray-700`}
+                  className={`inline-block rounded-full ${board.bgColor}/10 px-2.5 py-0.5 text-xs font-medium text-muted-foreground`}
                 >
                   {board.highlight}
                 </span>
@@ -435,17 +435,17 @@ export default function EnglishLiteraturePage() {
 
               <div className="mt-3 space-y-1">
                 {board.papers.map((paper) => (
-                  <p key={paper} className="text-xs text-gray-500">
+                  <p key={paper} className="text-xs text-muted-foreground">
                     {paper}
                   </p>
                 ))}
               </div>
 
               <div className="mt-3 flex items-center justify-between">
-                <span className="text-xs text-gray-400">
+                <span className="text-xs text-muted-foreground">
                   ~{board.students} students/year
                 </span>
-                <span className="inline-flex items-center gap-1 text-sm font-semibold text-[#2E86C1] transition-colors group-hover:text-[#1A5276]">
+                <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors group-hover:text-foreground">
                   View resources <ArrowRight />
                 </span>
               </div>
@@ -455,24 +455,24 @@ export default function EnglishLiteraturePage() {
       </section>
 
       {/* ── Which Board Am I Studying? ───────────────────────── */}
-      <section className="bg-gray-50 px-4 py-12 sm:px-6 lg:px-8">
+      <section className="bg-muted px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
-          <h2 className="text-center text-2xl font-bold text-gray-900">
+          <h2 className="text-center text-2xl font-bold text-foreground">
             Which board am I studying?
           </h2>
-          <p className="mt-2 text-center text-gray-600">
+          <p className="mt-2 text-center text-muted-foreground">
             Not sure which exam board your school uses? Answer a few quick
             questions to find out.
           </p>
 
-          <div className="mt-8 rounded-xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8">
+          <div className="mt-8 rounded-xl border border-border bg-card p-6 shadow-md sm:p-8">
             {finderResult === null ? (
               <>
-                <p className="text-sm font-medium uppercase tracking-wide text-[#2E86C1]">
+                <p className="text-sm font-medium uppercase tracking-wide text-primary">
                   Question {finderStep + 1} of{" "}
                   {BOARD_FINDER_QUESTIONS.length}
                 </p>
-                <p className="mt-3 text-lg font-semibold text-gray-900">
+                <p className="mt-3 text-lg font-semibold text-foreground">
                   {BOARD_FINDER_QUESTIONS[finderStep].question}
                 </p>
                 <div className="mt-6 flex gap-4">
@@ -484,7 +484,7 @@ export default function EnglishLiteraturePage() {
                   </button>
                   <button
                     onClick={() => handleFinderAnswer("no")}
-                    className="rounded-lg border border-gray-300 bg-white px-6 py-2.5 text-sm font-semibold text-gray-700 shadow-sm transition hover:bg-gray-50"
+                    className="rounded-lg border border-gray-300 bg-card px-6 py-2.5 text-sm font-semibold text-muted-foreground shadow-md transition hover:bg-muted"
                   >
                     No
                   </button>
@@ -492,16 +492,16 @@ export default function EnglishLiteraturePage() {
               </>
             ) : finderResult === "unknown" ? (
               <div className="text-center">
-                <p className="text-lg font-semibold text-gray-900">
+                <p className="text-lg font-semibold text-foreground">
                   We could not determine your board automatically.
                 </p>
-                <p className="mt-2 text-sm text-gray-600">
+                <p className="mt-2 text-sm text-muted-foreground">
                   Check the front of your textbook, ask your teacher, or look at
                   your school&apos;s exam entry letter for the specification code.
                 </p>
                 <button
                   onClick={resetFinder}
-                  className="mt-4 rounded-lg bg-[#2E86C1] px-5 py-2 text-sm font-semibold text-white transition hover:bg-[#2E86C1]/90"
+                  className="mt-4 rounded-lg bg-primary px-5 py-2 text-sm font-semibold text-white transition hover:bg-primary/90"
                 >
                   Try again
                 </button>
@@ -511,7 +511,7 @@ export default function EnglishLiteraturePage() {
                 <p className="text-sm font-medium uppercase tracking-wide text-green-600">
                   Result
                 </p>
-                <p className="mt-2 text-xl font-bold text-gray-900">
+                <p className="mt-2 text-xl font-bold text-foreground">
                   {
                     BOARD_FINDER_QUESTIONS.find((q) => q.yes === finderResult)
                       ?.yesLabel
@@ -528,7 +528,7 @@ export default function EnglishLiteraturePage() {
                   </Link>
                   <button
                     onClick={resetFinder}
-                    className="rounded-lg border border-gray-300 bg-white px-5 py-2.5 text-sm font-semibold text-gray-700 shadow-sm transition hover:bg-gray-50"
+                    className="rounded-lg border border-gray-300 bg-card px-5 py-2.5 text-sm font-semibold text-muted-foreground shadow-md transition hover:bg-muted"
                   >
                     Start over
                   </button>
@@ -537,7 +537,7 @@ export default function EnglishLiteraturePage() {
             )}
           </div>
 
-          <p className="mt-4 text-center text-xs text-gray-400">
+          <p className="mt-4 text-center text-xs text-muted-foreground">
             Tip: Your specification code is usually printed on your textbook
             cover or exam entry paperwork.
           </p>
@@ -546,15 +546,15 @@ export default function EnglishLiteraturePage() {
 
       {/* ── Set Texts Comparison Table ────────────────────────── */}
       <section className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-gray-900">
+        <h2 className="text-2xl font-bold text-foreground">
           Set texts across exam boards
         </h2>
-        <p className="mt-2 text-gray-600">
+        <p className="mt-2 text-muted-foreground">
           See at a glance which popular set texts appear on each board. Tap a
           text name to jump to its revision notes.
         </p>
 
-        <div className="mt-6 overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+        <div className="mt-6 overflow-x-auto rounded-xl border border-border shadow-md">
           <table className="w-full min-w-[600px] text-sm">
             <thead>
               <tr className="bg-[#1A5276] text-white">
@@ -575,11 +575,11 @@ export default function EnglishLiteraturePage() {
               {SET_TEXTS_COMPARISON.map((text, i) => (
                 <tr
                   key={text.title}
-                  className={`border-t border-gray-100 ${
-                    i % 2 === 0 ? "bg-white" : "bg-gray-50/50"
+                  className={`border-t border-border ${
+                    i % 2 === 0 ? "bg-card" : "bg-muted/50"
                   }`}
                 >
-                  <td className="px-4 py-2.5 font-medium text-[#1A5276]">
+                  <td className="px-4 py-2.5 font-medium text-foreground">
                     <Link
                       href={`/resources/english-literature/aqa/${text.link}`}
                       className="hover:underline"
@@ -587,7 +587,7 @@ export default function EnglishLiteraturePage() {
                       {text.title}
                     </Link>
                   </td>
-                  <td className="px-3 py-2.5 text-xs text-gray-500">
+                  <td className="px-3 py-2.5 text-xs text-muted-foreground">
                     {text.type}
                   </td>
                   {text.boards.aqa ? <TickCell /> : <CrossCell />}
@@ -600,19 +600,19 @@ export default function EnglishLiteraturePage() {
             </tbody>
           </table>
         </div>
-        <p className="mt-3 text-xs text-gray-400">
+        <p className="mt-3 text-xs text-muted-foreground">
           Table shows the most commonly studied texts. Each board offers
           additional options &mdash; check your board page for the full list.
         </p>
       </section>
 
       {/* ── Quick Links to Key Text Revision Notes ───────────── */}
-      <section className="bg-gray-50 px-4 py-12 sm:px-6 lg:px-8">
+      <section className="bg-muted px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Quick links: popular revision notes
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             Jump straight into revision for the most popular GCSE set texts.
           </p>
 
@@ -621,16 +621,16 @@ export default function EnglishLiteraturePage() {
               <Link
                 key={text.title}
                 href={text.href}
-                className="group flex items-start gap-3 rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition hover:shadow-md hover:border-[#2E86C1]/40"
+                className="group flex items-start gap-3 rounded-xl border border-border bg-card p-4 shadow-md transition hover:shadow-md hover:border-[#2E86C1]/40"
               >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#1A5276]/10 text-[#1A5276]">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#1A5276]/10 text-foreground">
                   <BookIcon />
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900 group-hover:text-[#1A5276] transition-colors">
+                  <p className="font-semibold text-foreground group-hover:text-foreground transition-colors">
                     {text.title}
                   </p>
-                  <p className="text-xs text-gray-500">{text.subtitle}</p>
+                  <p className="text-xs text-muted-foreground">{text.subtitle}</p>
                 </div>
               </Link>
             ))}
@@ -641,11 +641,11 @@ export default function EnglishLiteraturePage() {
       {/* ── AI Feedback Callout ──────────────────────────────── */}
       <section className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-[#1A5276] to-[#2E86C1] p-8 text-white shadow-lg sm:p-10">
-          <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-white/10 blur-2xl" />
-          <div className="absolute -bottom-16 -left-16 h-56 w-56 rounded-full bg-white/5 blur-3xl" />
+          <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-card/10 blur-2xl" />
+          <div className="absolute -bottom-16 -left-16 h-56 w-56 rounded-full bg-card/5 blur-3xl" />
 
           <div className="relative flex flex-col items-start gap-6 sm:flex-row sm:items-center">
-            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-white/20 backdrop-blur-sm">
+            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-card/20 backdrop-blur-sm">
               <SparklesIcon />
             </div>
             <div className="flex-1">
@@ -661,7 +661,7 @@ export default function EnglishLiteraturePage() {
             </div>
             <Link
               href="/feedback"
-              className="shrink-0 rounded-lg bg-white px-6 py-3 text-sm font-bold text-[#1A5276] shadow transition hover:bg-white/90"
+              className="shrink-0 rounded-lg bg-card px-6 py-3 text-sm font-bold text-foreground shadow transition hover:bg-card/90"
             >
               Try it free
             </Link>
@@ -670,12 +670,12 @@ export default function EnglishLiteraturePage() {
       </section>
 
       {/* ── Poetry, Themes & Comparison Sections ─────────────── */}
-      <section className="bg-gray-50 px-4 py-12 sm:px-6 lg:px-8">
+      <section className="bg-muted px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Explore by skill area
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             Strengthen specific skills that examiners reward most highly.
           </p>
 
@@ -684,7 +684,7 @@ export default function EnglishLiteraturePage() {
               <Link
                 key={section.title}
                 href={section.href}
-                className="group relative overflow-hidden rounded-xl shadow-sm transition hover:shadow-lg hover:-translate-y-0.5"
+                className="group relative overflow-hidden rounded-xl shadow-md transition hover:shadow-lg hover:-translate-y-0.5"
               >
                 <div
                   className={`bg-gradient-to-br ${section.color} px-5 py-8 text-white`}
@@ -705,8 +705,8 @@ export default function EnglishLiteraturePage() {
 
       {/* ── Exam Tips Banner ─────────────────────────────────── */}
       <section className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="rounded-xl border border-[#2E86C1]/20 bg-[#2E86C1]/5 p-6 sm:p-8">
-          <h2 className="text-xl font-bold text-gray-900">
+        <div className="rounded-xl border border-[#2E86C1]/20 bg-primary/5 p-6 sm:p-8">
+          <h2 className="text-xl font-bold text-foreground">
             Top 5 literature exam tips
           </h2>
           <ol className="mt-4 space-y-3">
@@ -719,7 +719,7 @@ export default function EnglishLiteraturePage() {
             ].map((tip, i) => (
               <li
                 key={i}
-                className="flex items-start gap-3 text-sm text-gray-700"
+                className="flex items-start gap-3 text-sm text-muted-foreground"
               >
                 <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">
                   {i + 1}

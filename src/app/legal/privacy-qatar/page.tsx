@@ -12,7 +12,7 @@ export default function QatarPrivacyNoticePage() {
       <h1 className="text-3xl font-bold mb-2">
         Privacy Notice — State of Qatar
       </h1>
-      <p className="text-gray-500 text-sm mb-6">
+      <p className="text-muted-foreground text-sm mb-6">
         Effective Date: 22 March 2026
         <br />
         Applicable Law: Qatar Personal Data Privacy Protection Law (Law No. 13 of
@@ -129,8 +129,8 @@ export default function QatarPrivacyNoticePage() {
           5. Purpose of Data Processing
         </h2>
         <div className="overflow-x-auto">
-          <table className="min-w-full text-sm border border-gray-200">
-            <thead className="bg-gray-50">
+          <table className="min-w-full text-sm border border-border">
+            <thead className="bg-muted">
               <tr>
                 <th className="text-left px-4 py-2 border-b font-semibold">
                   Purpose
@@ -245,8 +245,8 @@ export default function QatarPrivacyNoticePage() {
       <section className="mb-10">
         <h2 className="text-2xl font-bold mb-4">7. Data Retention Periods</h2>
         <div className="overflow-x-auto">
-          <table className="min-w-full text-sm border border-gray-200">
-            <thead className="bg-gray-50">
+          <table className="min-w-full text-sm border border-border">
+            <thead className="bg-muted">
               <tr>
                 <th className="text-left px-4 py-2 border-b font-semibold">
                   Data Category
@@ -353,7 +353,7 @@ export default function QatarPrivacyNoticePage() {
               className="border-l-4 border-[#1A5276] pl-4"
             >
               <h3 className="font-semibold text-sm">{item.right}</h3>
-              <p className="text-sm text-gray-600">{item.desc}</p>
+              <p className="text-sm text-muted-foreground">{item.desc}</p>
             </div>
           ))}
         </div>
@@ -418,8 +418,8 @@ export default function QatarPrivacyNoticePage() {
           11. AI Processing Transparency
         </h2>
         <div className="overflow-x-auto mb-4">
-          <table className="min-w-full text-sm border border-gray-200">
-            <thead className="bg-gray-50">
+          <table className="min-w-full text-sm border border-border">
+            <thead className="bg-muted">
               <tr>
                 <th className="text-left px-4 py-2 border-b font-semibold">
                   AI Feature
@@ -500,7 +500,7 @@ export default function QatarPrivacyNoticePage() {
         <h2 className="text-2xl font-bold mb-4">
           13. How to Exercise Your Rights or Complain
         </h2>
-        <div className="bg-gray-50 rounded-lg p-4 text-sm mb-4">
+        <div className="bg-muted rounded-lg p-4 text-sm mb-4">
           <p className="mb-2">
             To exercise your data protection rights, use the &quot;Privacy &amp;
             Data&quot; section within your account settings, or contact our Qatar
@@ -514,7 +514,7 @@ export default function QatarPrivacyNoticePage() {
         <p className="mb-3">
           If you are not satisfied, you may lodge a complaint with:
         </p>
-        <div className="bg-gray-50 rounded-lg p-4 text-sm">
+        <div className="bg-muted rounded-lg p-4 text-sm">
           <p className="font-semibold">
             National Cyber Governance and Assurance Authority (NCGAA)
           </p>
@@ -549,7 +549,7 @@ export default function QatarPrivacyNoticePage() {
         </p>
       </section>
 
-      <p className="text-sm text-gray-500 italic mt-8">
+      <p className="text-sm text-muted-foreground italic mt-8">
         This privacy notice is provided in English. An Arabic translation will be
         made available in accordance with Qatari legal requirements. In the event
         of any discrepancy, the Arabic version shall prevail.

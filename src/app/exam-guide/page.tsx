@@ -14,15 +14,19 @@ import {
   ChevronDown,
   ChevronRight,
   Clock,
+  FileCheck,
   FileText,
   GraduationCap,
   Info,
   Layers,
   Lightbulb,
+  PenTool,
   ScrollText,
   Sparkles,
   Star,
   Target,
+  Timer,
+  Trophy,
   ArrowRight,
   Search,
   BookMarked,
@@ -571,6 +575,76 @@ export default function ExamGuidePage() {
                 </div>
               </Collapsible>
             ))}
+          </div>
+        </section>
+
+        {/* ════════════════════════════════════════════════════════════════════
+            MORE EXAM RESOURCES
+           ════════════════════════════════════════════════════════════════════ */}
+        <section>
+          <div className="mb-5 flex items-center gap-3">
+            <Lightbulb className="h-6 w-6 text-primary" />
+            <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
+              More Exam Resources
+            </h2>
+          </div>
+          <p className="mb-6 text-muted-foreground">
+            Sharpen every aspect of your exam performance with these focused guides.
+          </p>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            {[
+              {
+                href: '/resources/exam-technique',
+                icon: Timer,
+                title: 'Exam Technique',
+                description:
+                  'Strategies for timing, planning, and maximising marks',
+              },
+              {
+                href: '/resources/grade-targets',
+                icon: Trophy,
+                title: 'Grade Targets',
+                description:
+                  "Understand what's needed for each grade boundary",
+              },
+              {
+                href: '/resources/model-answers',
+                icon: FileCheck,
+                title: 'Model Answers',
+                description:
+                  'See expert responses at Grade 5, 7, and 9',
+              },
+              {
+                href: '/resources/writing-skills',
+                icon: PenTool,
+                title: 'Writing Skills',
+                description:
+                  'Master creative, persuasive, and analytical writing',
+              },
+            ].map((resource) => {
+              const ResourceIcon = resource.icon
+              return (
+                <Link
+                  key={resource.href}
+                  href={resource.href}
+                  className="bg-card rounded-xl border border-border p-5 hover:border-primary/40 transition-all group flex items-start gap-4"
+                >
+                  <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                    <ResourceIcon className="h-5 w-5 text-primary" />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <h3 className="text-sm font-bold text-foreground group-hover:text-primary transition-colors">
+                      {resource.title}
+                    </h3>
+                    <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                      {resource.description}
+                    </p>
+                  </div>
+                  <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100 group-hover:text-primary" />
+                </Link>
+              )
+            })}
           </div>
         </section>
 

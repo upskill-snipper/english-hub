@@ -351,7 +351,7 @@ export default function TechniquesPage() {
       </section>
 
       {/* ── Quick nav ───────────────────────────────────────────── */}
-      <nav className="border-b border-gray-200 bg-white px-4 py-3 sticky top-0 z-10">
+      <nav className="border-b border-border bg-card px-4 py-3 sticky top-0 z-10">
         <div className="mx-auto flex max-w-4xl flex-wrap gap-2">
           {CATEGORY_ORDER.map((cat) => (
             <a
@@ -368,40 +368,40 @@ export default function TechniquesPage() {
       {/* ── How to analyse ──────────────────────────────────────── */}
       <div className="mx-auto max-w-4xl px-4 py-12 sm:py-16">
         <section aria-labelledby="how-to-heading">
-          <h2 id="how-to-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="how-to-heading" className="text-2xl font-bold text-foreground">
             How to Analyse a Technique
           </h2>
-          <p className="mt-3 text-gray-700 leading-relaxed">
+          <p className="mt-3 text-muted-foreground leading-relaxed">
             Identifying a technique is only the first step. To score highly,
             you must explain <strong>why</strong> the writer used it and
             <strong> what effect</strong> it has on the reader. Follow this
             three-step approach:
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-3">
-            <div className="rounded-lg border border-gray-200 bg-white p-4 text-center">
+            <div className="rounded-lg border border-border bg-card p-4 text-center">
               <p className="text-2xl font-bold text-primary">1</p>
-              <p className="mt-1 text-sm font-semibold text-gray-900">Identify</p>
-              <p className="mt-1 text-xs text-gray-600">
+              <p className="mt-1 text-sm font-semibold text-foreground">Identify</p>
+              <p className="mt-1 text-xs text-muted-foreground">
                 Quote the word/phrase and name the technique used.
               </p>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-white p-4 text-center">
+            <div className="rounded-lg border border-border bg-card p-4 text-center">
               <p className="text-2xl font-bold text-primary">2</p>
-              <p className="mt-1 text-sm font-semibold text-gray-900">Explain</p>
-              <p className="mt-1 text-xs text-gray-600">
+              <p className="mt-1 text-sm font-semibold text-foreground">Explain</p>
+              <p className="mt-1 text-xs text-muted-foreground">
                 What does it mean? What does it suggest, imply, or connote?
               </p>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-white p-4 text-center">
+            <div className="rounded-lg border border-border bg-card p-4 text-center">
               <p className="text-2xl font-bold text-primary">3</p>
-              <p className="mt-1 text-sm font-semibold text-gray-900">Effect</p>
-              <p className="mt-1 text-xs text-gray-600">
+              <p className="mt-1 text-sm font-semibold text-foreground">Effect</p>
+              <p className="mt-1 text-xs text-muted-foreground">
                 How does it make the reader feel? Why is it effective?
               </p>
             </div>
           </div>
           <div className="mt-6 rounded-lg border border-accent/20 bg-accent/5 p-4">
-            <p className="text-sm text-gray-700 leading-relaxed">
+            <p className="text-sm text-muted-foreground leading-relaxed">
               <strong>Example:</strong> The writer uses the <em>simile</em>{" "}
               &ldquo;her eyes were <strong>like two dark pools</strong>&rdquo;,
               comparing the character&rsquo;s eyes to pools of water. The word
@@ -413,17 +413,17 @@ export default function TechniquesPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Techniques by category ────────────────────────────── */}
         {CATEGORY_ORDER.map((cat) => {
           const items = TECHNIQUES.filter((t) => t.category === cat);
           return (
             <section key={cat} id={cat} className="mb-12 scroll-mt-16" aria-labelledby={`${cat}-heading`}>
-              <h2 id={`${cat}-heading`} className="text-2xl font-bold text-gray-900">
+              <h2 id={`${cat}-heading`} className="text-2xl font-bold text-foreground">
                 {CATEGORY_DISPLAY[cat]}
               </h2>
-              <p className="mt-1 text-sm text-gray-500">
+              <p className="mt-1 text-sm text-muted-foreground">
                 {items.length} technique{items.length !== 1 ? "s" : ""}
               </p>
 
@@ -431,7 +431,7 @@ export default function TechniquesPage() {
                 {items.map((t) => (
                   <div
                     key={t.name}
-                    className="rounded-lg border border-gray-200 bg-white p-5 transition-shadow hover:shadow-sm"
+                    className="rounded-lg border border-border bg-card p-5 transition-shadow hover:shadow-md"
                   >
                     <h3 className="text-lg font-semibold text-primary">
                       {t.name}
@@ -439,28 +439,28 @@ export default function TechniquesPage() {
 
                     <div className="mt-3 space-y-3">
                       <div>
-                        <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">
+                        <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
                           Definition
                         </p>
-                        <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+                        <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                           {t.definition}
                         </p>
                       </div>
 
                       <div>
-                        <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">
+                        <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
                           Example
                         </p>
-                        <p className="mt-1 text-sm italic text-gray-700">
+                        <p className="mt-1 text-sm italic text-muted-foreground">
                           {t.example}
                         </p>
                       </div>
 
                       <div>
-                        <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">
+                        <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
                           Effect on the Reader
                         </p>
-                        <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+                        <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                           {t.effect}
                         </p>
                       </div>

@@ -294,10 +294,10 @@ export default function RevisionPlannerPage() {
   return (
     <>
       <div className="mb-8">
-        <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           Revision Planner
         </h1>
-        <p className="mt-3 max-w-3xl text-lg text-gray-600 leading-relaxed">
+        <p className="mt-3 max-w-3xl text-lg text-muted-foreground leading-relaxed">
           Set your exam dates, build a revision schedule, and track your topics.
           Everything saves automatically to your browser.
         </p>
@@ -307,9 +307,9 @@ export default function RevisionPlannerPage() {
         {/* ── Left column: exams + calendar ───────────────────────── */}
         <div className="lg:col-span-2 space-y-8">
           {/* Add exam */}
-          <section className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-            <h2 className="text-lg font-bold text-gray-900">Your Exams</h2>
-            <p className="mt-1 text-sm text-gray-500">
+          <section className="rounded-xl border border-border bg-card p-6 shadow-md">
+            <h2 className="text-lg font-bold text-foreground">Your Exams</h2>
+            <p className="mt-1 text-sm text-muted-foreground">
               Add your exam dates to generate a countdown and suggested schedule.
             </p>
 
@@ -347,19 +347,19 @@ export default function RevisionPlannerPage() {
                       key={exam.id}
                       className={`flex items-center justify-between rounded-lg border px-4 py-3 ${
                         isPast
-                          ? "border-gray-200 bg-gray-50 opacity-60"
+                          ? "border-border bg-muted opacity-60"
                           : "border-accent-100 bg-accent-50/40"
                       }`}
                     >
                       <div>
-                        <p className="text-sm font-semibold text-gray-900">{exam.label}</p>
-                        <p className="text-xs text-gray-500">{formatDate(exam.date)}</p>
+                        <p className="text-sm font-semibold text-foreground">{exam.label}</p>
+                        <p className="text-xs text-muted-foreground">{formatDate(exam.date)}</p>
                       </div>
                       <div className="flex items-center gap-3">
                         <span
                           className={`rounded-full px-3 py-1 text-xs font-bold ${
                             isPast
-                              ? "bg-gray-200 text-gray-500"
+                              ? "bg-gray-200 text-muted-foreground"
                               : days <= 7
                                 ? "bg-red-100 text-red-700"
                                 : days <= 28
@@ -371,7 +371,7 @@ export default function RevisionPlannerPage() {
                         </span>
                         <button
                           onClick={() => removeExam(exam.id)}
-                          className="rounded p-1 text-gray-400 hover:bg-gray-100 hover:text-red-500 transition-colors"
+                          className="rounded p-1 text-muted-foreground hover:bg-muted hover:text-red-500 transition-colors"
                           aria-label={`Remove ${exam.label}`}
                         >
                           <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
@@ -387,25 +387,25 @@ export default function RevisionPlannerPage() {
           </section>
 
           {/* Calendar */}
-          <section className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+          <section className="rounded-xl border border-border bg-card p-6 shadow-md">
             <div className="flex items-center justify-between">
-              <h2 className="text-lg font-bold text-gray-900">Calendar</h2>
+              <h2 className="text-lg font-bold text-foreground">Calendar</h2>
               <div className="flex items-center gap-2">
                 <button
                   onClick={prevMonth}
-                  className="rounded-lg p-1.5 text-gray-500 hover:bg-gray-100 transition-colors"
+                  className="rounded-lg p-1.5 text-muted-foreground hover:bg-muted transition-colors"
                   aria-label="Previous month"
                 >
                   <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
                   </svg>
                 </button>
-                <span className="min-w-[140px] text-center text-sm font-semibold text-gray-700">
+                <span className="min-w-[140px] text-center text-sm font-semibold text-muted-foreground">
                   {monthLabel(calMonth.year, calMonth.month)}
                 </span>
                 <button
                   onClick={nextMonth}
-                  className="rounded-lg p-1.5 text-gray-500 hover:bg-gray-100 transition-colors"
+                  className="rounded-lg p-1.5 text-muted-foreground hover:bg-muted transition-colors"
                   aria-label="Next month"
                 >
                   <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
@@ -416,7 +416,7 @@ export default function RevisionPlannerPage() {
             </div>
 
             {/* Day headers */}
-            <div className="mt-4 grid grid-cols-7 text-center text-xs font-semibold text-gray-400">
+            <div className="mt-4 grid grid-cols-7 text-center text-xs font-semibold text-muted-foreground">
               {["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].map((d) => (
                 <div key={d} className="py-2">{d}</div>
               ))}
@@ -446,7 +446,7 @@ export default function RevisionPlannerPage() {
                         ? "bg-red-100 font-bold text-red-700 ring-2 ring-red-300"
                         : isToday
                           ? "bg-accent-100 font-semibold text-accent-700"
-                          : "text-gray-700 hover:bg-gray-50"
+                          : "text-muted-foreground hover:bg-muted"
                     }`}
                     title={isExamDay ? exams.filter((e) => e.date === dateStr).map((e) => e.label).join(", ") : undefined}
                   >
@@ -456,7 +456,7 @@ export default function RevisionPlannerPage() {
               })}
             </div>
 
-            <div className="mt-3 flex items-center gap-4 text-xs text-gray-500">
+            <div className="mt-3 flex items-center gap-4 text-xs text-muted-foreground">
               <span className="flex items-center gap-1.5">
                 <span className="h-3 w-3 rounded bg-accent-100 ring-1 ring-accent-300" /> Today
               </span>
@@ -467,9 +467,9 @@ export default function RevisionPlannerPage() {
           </section>
 
           {/* Study tips */}
-          <section className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-            <h2 className="text-lg font-bold text-gray-900">Study Tips by Phase</h2>
-            <p className="mt-1 text-sm text-gray-500">
+          <section className="rounded-xl border border-border bg-card p-6 shadow-md">
+            <h2 className="text-lg font-bold text-foreground">Study Tips by Phase</h2>
+            <p className="mt-1 text-sm text-muted-foreground">
               {nearestExam
                 ? `Based on your nearest exam (${daysUntil(nearestExam.date)} days away), you are in the ${PHASE_TIPS[currentPhase].title.toLowerCase()} phase.`
                 : "Add an exam date above to get personalised phase-based advice."}
@@ -484,10 +484,10 @@ export default function RevisionPlannerPage() {
                     className={`rounded-lg border p-4 transition-colors ${
                       isActive
                         ? "border-accent-300 bg-accent-50/60"
-                        : "border-gray-100 bg-gray-50/50"
+                        : "border-border bg-muted/50"
                     }`}
                   >
-                    <h3 className={`text-sm font-bold ${isActive ? "text-accent-700" : "text-gray-700"}`}>
+                    <h3 className={`text-sm font-bold ${isActive ? "text-accent-700" : "text-muted-foreground"}`}>
                       {isActive && (
                         <span className="mr-2 inline-block rounded bg-accent px-2 py-0.5 text-[10px] font-bold uppercase text-white">
                           Current
@@ -497,7 +497,7 @@ export default function RevisionPlannerPage() {
                     </h3>
                     <ul className="mt-2 space-y-1.5">
                       {PHASE_TIPS[phase].tips.map((tip, i) => (
-                        <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
+                        <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
                           <span className={`mt-1 h-1.5 w-1.5 shrink-0 rounded-full ${isActive ? "bg-accent" : "bg-gray-300"}`} />
                           {tip}
                         </li>
@@ -513,9 +513,9 @@ export default function RevisionPlannerPage() {
         {/* ── Right column: topic checklist ───────────────────────── */}
         <div className="space-y-6">
           {/* Board selector */}
-          <section className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-            <h2 className="text-lg font-bold text-gray-900">Topic Checklist</h2>
-            <p className="mt-1 text-sm text-gray-500">
+          <section className="rounded-xl border border-border bg-card p-6 shadow-md">
+            <h2 className="text-lg font-bold text-foreground">Topic Checklist</h2>
+            <p className="mt-1 text-sm text-muted-foreground">
               Select your exam board and tick off topics as you revise.
             </p>
 
@@ -533,7 +533,7 @@ export default function RevisionPlannerPage() {
 
             {/* Progress bar */}
             <div className="mt-4">
-              <div className="flex items-center justify-between text-xs text-gray-500">
+              <div className="flex items-center justify-between text-xs text-muted-foreground">
                 <span>{completedCount} / {boardTopics.length} topics</span>
                 <span className="font-semibold text-accent">{progressPct}%</span>
               </div>
@@ -549,14 +549,14 @@ export default function RevisionPlannerPage() {
             <ul className="mt-5 space-y-2">
               {boardTopics.map((topic) => (
                 <li key={topic.id}>
-                  <label className="flex cursor-pointer items-start gap-3 rounded-lg px-2 py-1.5 transition-colors hover:bg-gray-50">
+                  <label className="flex cursor-pointer items-start gap-3 rounded-lg px-2 py-1.5 transition-colors hover:bg-muted">
                     <input
                       type="checkbox"
                       checked={topic.done}
                       onChange={() => toggleTopic(topic.id)}
                       className="mt-0.5 h-4 w-4 shrink-0 rounded border-gray-300 text-accent focus:ring-accent/30"
                     />
-                    <span className={`text-sm leading-snug ${topic.done ? "text-gray-400 line-through" : "text-gray-700"}`}>
+                    <span className={`text-sm leading-snug ${topic.done ? "text-muted-foreground line-through" : "text-muted-foreground"}`}>
                       {topic.label}
                     </span>
                   </label>
@@ -567,18 +567,18 @@ export default function RevisionPlannerPage() {
 
           {/* Quick countdown card */}
           {nearestExam && daysUntil(nearestExam.date) >= 0 && (
-            <section className="rounded-xl border-2 border-accent-200 bg-gradient-to-br from-accent-50 to-white p-6 text-center shadow-sm">
+            <section className="rounded-xl border-2 border-accent-200 bg-gradient-to-br from-accent-50 to-white p-6 text-center shadow-md">
               <p className="text-xs font-semibold uppercase tracking-wider text-accent-600">
                 Next Exam
               </p>
               <p className="mt-2 text-4xl font-extrabold text-primary">
                 {daysUntil(nearestExam.date)}
               </p>
-              <p className="text-sm font-medium text-gray-600">
+              <p className="text-sm font-medium text-muted-foreground">
                 day{daysUntil(nearestExam.date) !== 1 ? "s" : ""} until
               </p>
-              <p className="mt-1 text-sm font-bold text-gray-900">{nearestExam.label}</p>
-              <p className="mt-0.5 text-xs text-gray-500">{formatDate(nearestExam.date)}</p>
+              <p className="mt-1 text-sm font-bold text-foreground">{nearestExam.label}</p>
+              <p className="mt-0.5 text-xs text-muted-foreground">{formatDate(nearestExam.date)}</p>
             </section>
           )}
         </div>

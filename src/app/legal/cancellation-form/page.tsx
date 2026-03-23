@@ -174,7 +174,7 @@ export default function CancellationFormPage() {
         <h1 className="text-2xl sm:text-3xl font-bold text-primary mb-2">
           Cancellation Form
         </h1>
-        <p className="text-gray-600 text-sm mb-6">
+        <p className="text-muted-foreground text-sm mb-6">
           Cancel your subscription in accordance with the Consumer Contracts
           (Information, Cancellation and Additional Charges) Regulations 2013.
         </p>
@@ -182,7 +182,7 @@ export default function CancellationFormPage() {
         {/* Tab controls */}
         <div
           data-tab-controls=""
-          className="flex border-b border-gray-200 mb-8"
+          className="flex border-b border-border mb-8"
           role="tablist"
           aria-label="Cancellation form options"
         >
@@ -195,7 +195,7 @@ export default function CancellationFormPage() {
             className={`px-4 py-3 text-sm font-medium border-b-2 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${
               activeTab === "online"
                 ? "border-primary text-primary"
-                : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
+                : "border-transparent text-muted-foreground hover:text-muted-foreground hover:border-gray-300"
             }`}
           >
             Online Cancellation
@@ -209,7 +209,7 @@ export default function CancellationFormPage() {
             className={`px-4 py-3 text-sm font-medium border-b-2 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${
               activeTab === "printable"
                 ? "border-primary text-primary"
-                : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
+                : "border-transparent text-muted-foreground hover:text-muted-foreground hover:border-gray-300"
             }`}
           >
             Printable Model Form
@@ -242,7 +242,7 @@ export default function CancellationFormPage() {
               <div>
                 <label
                   htmlFor="fullName"
-                  className="block text-sm font-medium text-gray-700 mb-1"
+                  className="block text-sm font-medium text-muted-foreground mb-1"
                 >
                   Full name <span className="text-warn">*</span>
                 </label>
@@ -252,7 +252,7 @@ export default function CancellationFormPage() {
                   required
                   value={formData.fullName}
                   onChange={(e) => updateField("fullName", e.target.value)}
-                  className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
+                  className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
                   placeholder="Your full name"
                 />
               </div>
@@ -261,7 +261,7 @@ export default function CancellationFormPage() {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-gray-700 mb-1"
+                  className="block text-sm font-medium text-muted-foreground mb-1"
                 >
                   Email address <span className="text-warn">*</span>
                 </label>
@@ -271,7 +271,7 @@ export default function CancellationFormPage() {
                   required
                   value={formData.email}
                   onChange={(e) => updateField("email", e.target.value)}
-                  className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
+                  className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
                   placeholder="you@example.com"
                 />
               </div>
@@ -280,17 +280,17 @@ export default function CancellationFormPage() {
               <div>
                 <label
                   htmlFor="address"
-                  className="block text-sm font-medium text-gray-700 mb-1"
+                  className="block text-sm font-medium text-muted-foreground mb-1"
                 >
                   Address{" "}
-                  <span className="text-gray-400 font-normal">(optional)</span>
+                  <span className="text-muted-foreground font-normal">(optional)</span>
                 </label>
                 <textarea
                   id="address"
                   rows={3}
                   value={formData.address}
                   onChange={(e) => updateField("address", e.target.value)}
-                  className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors resize-none"
+                  className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors resize-none"
                   placeholder="Your address"
                 />
               </div>
@@ -299,7 +299,7 @@ export default function CancellationFormPage() {
               <div>
                 <label
                   htmlFor="subscriptionPlan"
-                  className="block text-sm font-medium text-gray-700 mb-1"
+                  className="block text-sm font-medium text-muted-foreground mb-1"
                 >
                   Subscription plan <span className="text-warn">*</span>
                 </label>
@@ -310,7 +310,7 @@ export default function CancellationFormPage() {
                   onChange={(e) =>
                     updateField("subscriptionPlan", e.target.value)
                   }
-                  className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors bg-white"
+                  className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors bg-card"
                 >
                   {SUBSCRIPTION_PLANS.map((plan) => (
                     <option key={plan.value} value={plan.value}>
@@ -324,7 +324,7 @@ export default function CancellationFormPage() {
               <div>
                 <label
                   htmlFor="startDate"
-                  className="block text-sm font-medium text-gray-700 mb-1"
+                  className="block text-sm font-medium text-muted-foreground mb-1"
                 >
                   Subscription start date <span className="text-warn">*</span>
                 </label>
@@ -334,7 +334,7 @@ export default function CancellationFormPage() {
                   required
                   value={formData.startDate}
                   onChange={(e) => updateField("startDate", e.target.value)}
-                  className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
+                  className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
                 />
               </div>
 
@@ -342,16 +342,16 @@ export default function CancellationFormPage() {
               <div>
                 <label
                   htmlFor="reason"
-                  className="block text-sm font-medium text-gray-700 mb-1"
+                  className="block text-sm font-medium text-muted-foreground mb-1"
                 >
                   Reason for cancellation{" "}
-                  <span className="text-gray-400 font-normal">(optional)</span>
+                  <span className="text-muted-foreground font-normal">(optional)</span>
                 </label>
                 <select
                   id="reason"
                   value={formData.reason}
                   onChange={(e) => updateField("reason", e.target.value)}
-                  className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors bg-white"
+                  className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors bg-card"
                 >
                   {CANCELLATION_REASONS.map((r) => (
                     <option key={r.value} value={r.value}>
@@ -362,7 +362,7 @@ export default function CancellationFormPage() {
               </div>
 
               {/* Confirmation checkbox */}
-              <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+              <div className="bg-muted rounded-lg p-4 border border-border">
                 <label className="flex items-start gap-3 cursor-pointer">
                   <input
                     type="checkbox"
@@ -371,7 +371,7 @@ export default function CancellationFormPage() {
                     className="mt-0.5 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
                     required
                   />
-                  <span className="text-sm text-gray-700">
+                  <span className="text-sm text-muted-foreground">
                     I wish to cancel my subscription. I understand that this
                     action will end my access to The English Hub services at the
                     end of my current billing period.{" "}
@@ -385,7 +385,7 @@ export default function CancellationFormPage() {
                 <button
                   type="submit"
                   disabled={!isFormValid || isSubmitting}
-                  className="inline-flex items-center justify-center px-6 py-2.5 rounded-lg bg-warn text-white font-medium text-sm shadow-sm hover:bg-warn-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-warn focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                  className="inline-flex items-center justify-center px-6 py-2.5 rounded-lg bg-warn text-white font-medium text-sm shadow-md hover:bg-warn-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-warn focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 >
                   {isSubmitting ? (
                     <>
@@ -416,7 +416,7 @@ export default function CancellationFormPage() {
                 </button>
                 <a
                   href="/dashboard"
-                  className="inline-flex items-center justify-center px-6 py-2.5 rounded-lg border border-gray-300 text-gray-700 font-medium text-sm hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors"
+                  className="inline-flex items-center justify-center px-6 py-2.5 rounded-lg border border-gray-300 text-muted-foreground font-medium text-sm hover:bg-muted focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors"
                 >
                   Keep my subscription
                 </a>
@@ -436,7 +436,7 @@ export default function CancellationFormPage() {
           <div className="mb-6 flex items-center gap-4 no-print">
             <button
               onClick={handlePrint}
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-primary text-white font-medium text-sm shadow-sm hover:bg-primary-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-primary text-white font-medium text-sm shadow-md hover:bg-primary-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors"
             >
               <svg
                 className="w-4 h-4"
@@ -453,24 +453,24 @@ export default function CancellationFormPage() {
               </svg>
               Print this form
             </button>
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-muted-foreground">
               Print and complete by hand, then post or email to us.
             </p>
           </div>
 
           {/* The legally prescribed model form */}
-          <div className="border border-gray-300 rounded-lg p-6 sm:p-8 bg-white space-y-6">
-            <div className="text-center border-b border-gray-200 pb-6">
-              <h2 className="text-xl font-bold text-gray-900">
+          <div className="border border-gray-300 rounded-lg p-6 sm:p-8 bg-card space-y-6">
+            <div className="text-center border-b border-border pb-6">
+              <h2 className="text-xl font-bold text-foreground">
                 Model Cancellation Form
               </h2>
-              <p className="text-sm text-gray-600 mt-2 italic">
+              <p className="text-sm text-muted-foreground mt-2 italic">
                 (Complete and return this form only if you wish to withdraw from
                 the contract)
               </p>
             </div>
 
-            <div className="space-y-4 text-sm text-gray-800 leading-relaxed">
+            <div className="space-y-4 text-sm text-foreground leading-relaxed">
               {/* Addressee */}
               <div>
                 <p className="font-medium">To:</p>
@@ -488,7 +488,7 @@ export default function CancellationFormPage() {
               </div>
 
               {/* Notice statement */}
-              <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+              <div className="bg-muted rounded-lg p-4 border border-border">
                 <p>
                   I/We (*) hereby give notice that I/We (*) cancel my/our (*)
                   contract for the provision of the following service:
@@ -547,12 +547,12 @@ export default function CancellationFormPage() {
               </div>
 
               {/* Signature */}
-              <div className="pt-6 space-y-5 border-t border-gray-200">
+              <div className="pt-6 space-y-5 border-t border-border">
                 <div className="flex flex-col sm:flex-row sm:items-end gap-1 sm:gap-2">
                   <span className="font-medium whitespace-nowrap">
                     Signature of consumer(s)
                     <br />
-                    <span className="text-xs text-gray-500 font-normal">
+                    <span className="text-xs text-muted-foreground font-normal">
                       (only if this form is sent on paper)
                     </span>
                     :
@@ -571,8 +571,8 @@ export default function CancellationFormPage() {
               </div>
 
               {/* Delete as appropriate */}
-              <div className="pt-4 border-t border-gray-200">
-                <p className="text-xs text-gray-500 italic">
+              <div className="pt-4 border-t border-border">
+                <p className="text-xs text-muted-foreground italic">
                   (*) Delete as appropriate
                 </p>
               </div>
@@ -584,7 +584,7 @@ export default function CancellationFormPage() {
             <h3 className="text-sm font-semibold text-primary mb-2">
               How to submit this form
             </h3>
-            <ul className="text-sm text-gray-600 space-y-1.5">
+            <ul className="text-sm text-muted-foreground space-y-1.5">
               <li className="flex items-start gap-2">
                 <span className="text-primary mt-0.5">1.</span>
                 <span>Print this page using the button above</span>
@@ -641,22 +641,22 @@ function SuccessMessage({ refNumber }: { refNumber: string }) {
       </div>
 
       <div>
-        <h2 className="text-xl font-bold text-gray-900">
+        <h2 className="text-xl font-bold text-foreground">
           Cancellation request submitted
         </h2>
-        <p className="text-gray-600 mt-2">
+        <p className="text-muted-foreground mt-2">
           Your cancellation has been received and is being processed.
         </p>
       </div>
 
-      <div className="bg-gray-50 rounded-lg p-4 border border-gray-200 inline-block">
-        <p className="text-sm text-gray-500">Reference number</p>
+      <div className="bg-muted rounded-lg p-4 border border-border inline-block">
+        <p className="text-sm text-muted-foreground">Reference number</p>
         <p className="text-lg font-mono font-bold text-primary mt-1">
           {refNumber}
         </p>
       </div>
 
-      <div className="text-sm text-gray-600 max-w-md mx-auto space-y-2">
+      <div className="text-sm text-muted-foreground max-w-md mx-auto space-y-2">
         <p>
           A confirmation email has been sent to your email address. Please keep
           your reference number for your records.
@@ -670,13 +670,13 @@ function SuccessMessage({ refNumber }: { refNumber: string }) {
       <div className="pt-4 flex flex-col sm:flex-row gap-3 justify-center">
         <a
           href="/dashboard"
-          className="inline-flex items-center justify-center px-6 py-2.5 rounded-lg bg-primary text-white font-medium text-sm shadow-sm hover:bg-primary-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors"
+          className="inline-flex items-center justify-center px-6 py-2.5 rounded-lg bg-primary text-white font-medium text-sm shadow-md hover:bg-primary-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors"
         >
           Return to Dashboard
         </a>
         <a
           href="/legal/cancellation"
-          className="inline-flex items-center justify-center px-6 py-2.5 rounded-lg border border-gray-300 text-gray-700 font-medium text-sm hover:bg-gray-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors"
+          className="inline-flex items-center justify-center px-6 py-2.5 rounded-lg border border-gray-300 text-muted-foreground font-medium text-sm hover:bg-muted focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors"
         >
           View Cancellation Policy
         </a>

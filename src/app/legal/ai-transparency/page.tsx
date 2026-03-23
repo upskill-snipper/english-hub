@@ -12,7 +12,7 @@ export default function AITransparencyPage() {
       <h1 className="text-3xl font-bold mb-2">
         How Our AI Works
       </h1>
-      <p className="text-gray-500 text-sm mb-6">Last updated: 22 March 2026</p>
+      <p className="text-muted-foreground text-sm mb-6">Last updated: 22 March 2026</p>
 
       <p className="mb-8">
         We use artificial intelligence (AI) to help you improve your English
@@ -196,7 +196,7 @@ export default function AITransparencyPage() {
             </strong>
           </li>
         </ol>
-        <div className="bg-gray-50 rounded-lg p-4 text-sm">
+        <div className="bg-muted rounded-lg p-4 text-sm">
           <p className="font-semibold mb-2">What happens next:</p>
           <ul className="list-disc pl-6 space-y-1">
             <li>
@@ -316,7 +316,7 @@ export default function AITransparencyPage() {
       {/* Contact */}
       <section className="mb-4">
         <h2 className="text-2xl font-bold mb-4">Questions?</h2>
-        <div className="bg-gray-50 rounded-lg p-4 text-sm">
+        <div className="bg-muted rounded-lg p-4 text-sm">
           <p className="mb-2">
             If anything on this page is unclear, or if you have questions about
             how the AI works, contact us:
@@ -332,7 +332,7 @@ export default function AITransparencyPage() {
         </div>
       </section>
 
-      <p className="text-sm text-gray-500 italic">
+      <p className="text-sm text-muted-foreground italic">
         This page is reviewed and updated at least every 6 months.
       </p>
     </>

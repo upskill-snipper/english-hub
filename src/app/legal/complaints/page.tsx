@@ -10,7 +10,7 @@ export default function ComplaintsProcedurePage() {
   return (
     <>
       <h1 className="text-3xl font-bold mb-2">Complaints Procedure</h1>
-      <p className="text-gray-500 text-sm mb-6">
+      <p className="text-muted-foreground text-sm mb-6">
         <strong>The English Hub</strong> — operated by Upskill Energy Limited
         <br />
         Effective Date: 22 March 2026 | Version 1.0
@@ -111,10 +111,10 @@ export default function ComplaintsProcedurePage() {
           ].map((category) => (
             <div
               key={category.title}
-              className="bg-gray-50 rounded-lg p-3 text-sm"
+              className="bg-muted rounded-lg p-3 text-sm"
             >
               <p className="font-semibold">{category.title}</p>
-              <p className="text-gray-600">{category.desc}</p>
+              <p className="text-muted-foreground">{category.desc}</p>
             </div>
           ))}
         </div>
@@ -209,8 +209,8 @@ export default function ComplaintsProcedurePage() {
         </div>
 
         <div className="overflow-x-auto mt-6">
-          <table className="min-w-full text-sm border border-gray-200">
-            <thead className="bg-gray-50">
+          <table className="min-w-full text-sm border border-border">
+            <thead className="bg-muted">
               <tr>
                 <th className="text-left px-4 py-2 border-b font-semibold">
                   Stage
@@ -250,11 +250,11 @@ export default function ComplaintsProcedurePage() {
           5. External Escalation Options
         </h2>
         <div className="space-y-4">
-          <div className="bg-gray-50 rounded-lg p-4 text-sm">
+          <div className="bg-muted rounded-lg p-4 text-sm">
             <p className="font-semibold">
               Information Commissioner&apos;s Office (ICO)
             </p>
-            <p className="text-gray-600">
+            <p className="text-muted-foreground">
               For data protection and privacy complaints
             </p>
             <p>
@@ -268,11 +268,11 @@ export default function ComplaintsProcedurePage() {
               | 0303 123 1113
             </p>
           </div>
-          <div className="bg-gray-50 rounded-lg p-4 text-sm">
+          <div className="bg-muted rounded-lg p-4 text-sm">
             <p className="font-semibold">
               Advertising Standards Authority (ASA)
             </p>
-            <p className="text-gray-600">
+            <p className="text-muted-foreground">
               For complaints about advertising or marketing
             </p>
             <p>
@@ -285,26 +285,26 @@ export default function ComplaintsProcedurePage() {
               </a>
             </p>
           </div>
-          <div className="bg-gray-50 rounded-lg p-4 text-sm">
+          <div className="bg-muted rounded-lg p-4 text-sm">
             <p className="font-semibold">
               Competition and Markets Authority (CMA)
             </p>
-            <p className="text-gray-600">
+            <p className="text-muted-foreground">
               For consumer rights, unfair terms, or anti-competitive practices
             </p>
           </div>
-          <div className="bg-gray-50 rounded-lg p-4 text-sm">
+          <div className="bg-muted rounded-lg p-4 text-sm">
             <p className="font-semibold">Trading Standards</p>
-            <p className="text-gray-600">
+            <p className="text-muted-foreground">
               For unfair trading practices, pricing, or consumer rights
             </p>
             <p>Citizens Advice Consumer Service: 0808 223 1133</p>
           </div>
-          <div className="bg-gray-50 rounded-lg p-4 text-sm">
+          <div className="bg-muted rounded-lg p-4 text-sm">
             <p className="font-semibold">
               Qatar National Cyber Security Agency (NCSA)
             </p>
-            <p className="text-gray-600">
+            <p className="text-muted-foreground">
               For data protection complaints under Qatari jurisdiction
             </p>
             <p>
@@ -365,8 +365,8 @@ export default function ComplaintsProcedurePage() {
           analysis. Where complaints reveal issues, we take concrete action:
         </p>
         <div className="overflow-x-auto">
-          <table className="min-w-full text-sm border border-gray-200">
-            <thead className="bg-gray-50">
+          <table className="min-w-full text-sm border border-border">
+            <thead className="bg-muted">
               <tr>
                 <th className="text-left px-4 py-2 border-b font-semibold">
                   Action Type
@@ -407,7 +407,7 @@ export default function ComplaintsProcedurePage() {
         </div>
       </section>
 
-      <p className="text-sm text-gray-500 italic mt-8">
+      <p className="text-sm text-muted-foreground italic mt-8">
         If you have any questions about this complaints procedure, contact us at{" "}
         <a href="mailto:complaints@theenglishhub.co.uk">
           complaints@theenglishhub.co.uk

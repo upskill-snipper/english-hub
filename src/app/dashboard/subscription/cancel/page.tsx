@@ -187,7 +187,7 @@ export default function CancelSubscriptionPage() {
                     value={reason}
                     checked={selectedReason === reason}
                     onChange={(e) => setSelectedReason(e.target.value)}
-                    className="h-4 w-4 text-[#1A5276] focus:ring-[#1A5276] border-gray-300"
+                    className="h-4 w-4 text-foreground focus:ring-[#1A5276] border-gray-300"
                   />
                   <span className="text-gray-700">{reason}</span>
                 </label>
@@ -364,7 +364,7 @@ export default function CancelSubscriptionPage() {
               your{" "}
               <Link
                 href="/dashboard/settings"
-                className="text-[#1A5276] underline"
+                className="text-foreground underline"
               >
                 account settings
               </Link>

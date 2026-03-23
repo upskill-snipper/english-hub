@@ -27,12 +27,12 @@ const COMPARISON_AREAS = [
       "Common mistakes",
     ],
     icon: (
-      <svg className="h-10 w-10 text-[#2E86C1]" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+      <svg className="h-10 w-10 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
       </svg>
     ),
     colour: "border-[#2E86C1]",
-    bg: "bg-[#2E86C1]/5",
+    bg: "bg-primary/5",
   },
   {
     title: "Text Comparison (Prose & Drama)",
@@ -124,7 +124,7 @@ export default function ComparisonHubPage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-[#1A5276] to-[#1A5276]/80 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-[#2E86C1]/80">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary/80">
             Comparison Skills
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -140,23 +140,23 @@ export default function ComparisonHubPage() {
 
       {/* Breadcrumb */}
       <nav className="mx-auto max-w-6xl px-4 pt-6" aria-label="Breadcrumb">
-        <ol className="flex items-center gap-2 text-sm text-gray-500">
+        <ol className="flex items-center gap-2 text-sm text-muted-foreground">
           <li>
-            <Link href="/" className="hover:text-[#1A5276] transition-colors">Home</Link>
+            <Link href="/" className="hover:text-foreground transition-colors">Home</Link>
           </li>
           <li>/</li>
           <li>
-            <Link href="/resources" className="hover:text-[#1A5276] transition-colors">Resources</Link>
+            <Link href="/resources" className="hover:text-foreground transition-colors">Resources</Link>
           </li>
           <li>/</li>
-          <li className="font-medium text-[#1A5276]">Comparison Skills</li>
+          <li className="font-medium text-foreground">Comparison Skills</li>
         </ol>
       </nav>
 
       {/* Comparison area cards */}
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-gray-900">Choose a Comparison Guide</h2>
-        <p className="mt-2 text-gray-600">
+        <h2 className="text-2xl font-bold text-foreground">Choose a Comparison Guide</h2>
+        <p className="mt-2 text-muted-foreground">
           Each guide is a complete masterclass with methods, model responses, and examiner insights.
         </p>
 
@@ -165,15 +165,15 @@ export default function ComparisonHubPage() {
             <Link
               key={area.href}
               href={area.href}
-              className={`group flex flex-col rounded-xl border-2 ${area.colour} ${area.bg} p-6 shadow-sm transition hover:shadow-lg`}
+              className={`group flex flex-col rounded-xl border-2 ${area.colour} ${area.bg} p-6 shadow-md transition hover:shadow-lg`}
             >
               <div className="flex items-start gap-4">
                 {area.icon}
                 <div className="flex-1">
-                  <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#1A5276] transition-colors">
+                  <h3 className="text-lg font-bold text-foreground group-hover:text-foreground transition-colors">
                     {area.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                     {area.description}
                   </p>
                 </div>
@@ -183,14 +183,14 @@ export default function ComparisonHubPage() {
                 {area.topics.map((topic) => (
                   <span
                     key={topic}
-                    className="rounded-full bg-white px-2.5 py-0.5 text-xs font-medium text-gray-600 shadow-sm"
+                    className="rounded-full bg-card px-2.5 py-0.5 text-xs font-medium text-muted-foreground shadow-md"
                   >
                     {topic}
                   </span>
                 ))}
               </div>
 
-              <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#2E86C1] group-hover:text-[#1A5276] transition-colors">
+              <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:text-foreground transition-colors">
                 Start learning <ArrowRight />
               </span>
             </Link>
@@ -199,10 +199,10 @@ export default function ComparisonHubPage() {
       </section>
 
       {/* Quick tips */}
-      <section className="bg-white px-4 py-12 sm:px-6 lg:px-8">
+      <section className="bg-card px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-2xl font-bold text-gray-900">Quick Tips for Every Comparison</h2>
-          <p className="mt-2 text-gray-600">
+          <h2 className="text-2xl font-bold text-foreground">Quick Tips for Every Comparison</h2>
+          <p className="mt-2 text-muted-foreground">
             Six principles that will improve your comparative writing in any exam, on any board.
           </p>
 
@@ -210,10 +210,10 @@ export default function ComparisonHubPage() {
             {QUICK_TIPS.map((item, i) => (
               <div
                 key={i}
-                className="rounded-xl border border-gray-200 bg-gray-50 p-5"
+                className="rounded-xl border border-border bg-muted p-5"
               >
-                <p className="text-sm font-bold text-[#1A5276]">{item.tip}</p>
-                <p className="mt-2 text-sm italic text-gray-600">{item.example}</p>
+                <p className="text-sm font-bold text-foreground">{item.tip}</p>
+                <p className="mt-2 text-sm italic text-muted-foreground">{item.example}</p>
               </div>
             ))}
           </div>
@@ -222,42 +222,42 @@ export default function ComparisonHubPage() {
 
       {/* Why comparison matters */}
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-gray-900">Why Comparison Skills Matter</h2>
+        <h2 className="text-2xl font-bold text-foreground">Why Comparison Skills Matter</h2>
         <div className="mt-8 grid gap-6 sm:grid-cols-3">
-          <div className="rounded-xl border border-gray-200 bg-white p-6">
+          <div className="rounded-xl border border-border bg-card p-6">
             <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#1A5276]/10">
-              <svg className="h-6 w-6 text-[#1A5276]" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+              <svg className="h-6 w-6 text-foreground" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />
               </svg>
             </div>
-            <h3 className="mt-4 font-bold text-gray-900">High-Mark Questions</h3>
-            <p className="mt-2 text-sm text-gray-600">
+            <h3 className="mt-4 font-bold text-foreground">High-Mark Questions</h3>
+            <p className="mt-2 text-sm text-muted-foreground">
               Comparison questions often carry the highest marks on the paper.
               Mastering this skill can make a significant difference to your overall grade.
             </p>
           </div>
 
-          <div className="rounded-xl border border-gray-200 bg-white p-6">
-            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#2E86C1]/10">
-              <svg className="h-6 w-6 text-[#2E86C1]" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+          <div className="rounded-xl border border-border bg-card p-6">
+            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+              <svg className="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 21 3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
               </svg>
             </div>
-            <h3 className="mt-4 font-bold text-gray-900">Transferable Skill</h3>
-            <p className="mt-2 text-sm text-gray-600">
+            <h3 className="mt-4 font-bold text-foreground">Transferable Skill</h3>
+            <p className="mt-2 text-sm text-muted-foreground">
               Comparison is a skill that transfers across all your English papers --
               poetry, prose, drama, and non-fiction. Learn it once, use it everywhere.
             </p>
           </div>
 
-          <div className="rounded-xl border border-gray-200 bg-white p-6">
+          <div className="rounded-xl border border-border bg-card p-6">
             <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#27AE60]/10">
               <svg className="h-6 w-6 text-[#27AE60]" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.745 3.745 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
               </svg>
             </div>
-            <h3 className="mt-4 font-bold text-gray-900">Full Model Responses</h3>
-            <p className="mt-2 text-sm text-gray-600">
+            <h3 className="mt-4 font-bold text-foreground">Full Model Responses</h3>
+            <p className="mt-2 text-sm text-muted-foreground">
               Every guide includes complete annotated model comparisons so you can
               see exactly how top-grade comparative writing looks.
             </p>

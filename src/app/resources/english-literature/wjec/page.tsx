@@ -27,7 +27,7 @@ const COMPONENTS = [
       "Section A: Post-1914 prose or drama (extract-based and essay). Section B: 19th-century prose (extract-based and essay). Section C: Unseen poetry — one analysis and one comparison.",
     marks: "80 marks — 60% of GCSE",
     duration: "2 hours 30 minutes",
-    colour: "bg-[#2E86C1]",
+    colour: "bg-primary",
   },
 ];
 
@@ -89,8 +89,8 @@ export default function WJECEnglishLiteraturePage() {
 
       {/* ── Exam overview ─────────────────────────────────────── */}
       <section className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
-        <h2 className="text-2xl font-bold text-gray-900">Exam Overview</h2>
-        <p className="mt-2 text-gray-600">
+        <h2 className="text-2xl font-bold text-foreground">Exam Overview</h2>
+        <p className="mt-2 text-muted-foreground">
           The WJEC Eduqas GCSE English Literature qualification is assessed through
           two externally examined components. Component 1 is worth 40% and Component 2
           is worth 60% of the final grade. Both components are closed-book &mdash; no
@@ -101,7 +101,7 @@ export default function WJECEnglishLiteraturePage() {
           {COMPONENTS.map((comp) => (
             <div
               key={comp.title}
-              className="group rounded-xl border border-gray-200 p-6 shadow-sm transition hover:shadow-md"
+              className="group rounded-xl border border-border p-6 shadow-md transition hover:shadow-md"
             >
               <div className="flex items-center gap-3">
                 <div
@@ -109,12 +109,12 @@ export default function WJECEnglishLiteraturePage() {
                 >
                   {comp.marks}
                 </div>
-                <span className="text-xs font-medium text-gray-500">{comp.duration}</span>
+                <span className="text-xs font-medium text-muted-foreground">{comp.duration}</span>
               </div>
-              <h3 className="mt-3 text-lg font-bold text-gray-900 group-hover:text-[#2E86C1]">
+              <h3 className="mt-3 text-lg font-bold text-foreground group-hover:text-primary">
                 {comp.title}
               </h3>
-              <p className="mt-2 text-sm text-gray-600">
+              <p className="mt-2 text-sm text-muted-foreground">
                 {comp.description}
               </p>
             </div>
@@ -123,17 +123,17 @@ export default function WJECEnglishLiteraturePage() {
       </section>
 
       {/* ── Component 1 detail ────────────────────────────────── */}
-      <section className="bg-gray-50 px-4 py-12 sm:py-16">
+      <section className="bg-muted px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Component 1: Shakespeare and Poetry
           </h2>
-          <p className="mt-2 text-sm text-gray-600">2 hours &bull; 80 marks &bull; 40% of GCSE</p>
+          <p className="mt-2 text-sm text-muted-foreground">2 hours &bull; 80 marks &bull; 40% of GCSE</p>
 
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
-            <div className="rounded-lg border border-gray-200 bg-white p-5">
-              <h3 className="font-semibold text-[#1A5276]">Section A: Shakespeare (40 marks)</h3>
-              <ul className="mt-3 space-y-1.5 text-sm text-gray-700">
+            <div className="rounded-lg border border-border bg-card p-5">
+              <h3 className="font-semibold text-foreground">Section A: Shakespeare (40 marks)</h3>
+              <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
                 <li>&bull; One Shakespeare play studied in full</li>
                 <li>&bull; An extract is printed on the exam paper</li>
                 <li>&bull; One two-part question: part (i) on the extract, part (ii) on the play as a whole</li>
@@ -141,9 +141,9 @@ export default function WJECEnglishLiteraturePage() {
                 <li>&bull; No choice of question &mdash; one compulsory question on your set text</li>
               </ul>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-white p-5">
-              <h3 className="font-semibold text-[#1A5276]">Section B: Poetry (40 marks)</h3>
-              <ul className="mt-3 space-y-1.5 text-sm text-gray-700">
+            <div className="rounded-lg border border-border bg-card p-5">
+              <h3 className="font-semibold text-foreground">Section B: Poetry (40 marks)</h3>
+              <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
                 <li>&bull; Two poems from the WJEC Eduqas poetry anthology</li>
                 <li>&bull; Both poems are printed on the paper</li>
                 <li>&bull; One essay comparing the two poems</li>
@@ -158,33 +158,33 @@ export default function WJECEnglishLiteraturePage() {
       {/* ── Component 2 detail ────────────────────────────────── */}
       <section className="px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Component 2: Post-1914 Prose/Drama, 19th Century Prose &amp; Unseen Poetry
           </h2>
-          <p className="mt-2 text-sm text-gray-600">2 hours 30 minutes &bull; 80 marks &bull; 60% of GCSE</p>
+          <p className="mt-2 text-sm text-muted-foreground">2 hours 30 minutes &bull; 80 marks &bull; 60% of GCSE</p>
 
           <div className="mt-6 grid gap-4 sm:grid-cols-3">
-            <div className="rounded-lg border border-gray-200 bg-white p-5">
-              <h3 className="font-semibold text-[#1A5276]">Section A: Post-1914 Prose/Drama (20 marks)</h3>
-              <ul className="mt-3 space-y-1.5 text-sm text-gray-700">
+            <div className="rounded-lg border border-border bg-card p-5">
+              <h3 className="font-semibold text-foreground">Section A: Post-1914 Prose/Drama (20 marks)</h3>
+              <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
                 <li>&bull; One post-1914 prose or drama text</li>
                 <li>&bull; An extract is printed on the paper</li>
                 <li>&bull; One question requiring analysis of the extract and the wider text</li>
                 <li>&bull; Covers themes, characters, language, and context</li>
               </ul>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-white p-5">
-              <h3 className="font-semibold text-[#1A5276]">Section B: 19th Century Prose (20 marks)</h3>
-              <ul className="mt-3 space-y-1.5 text-sm text-gray-700">
+            <div className="rounded-lg border border-border bg-card p-5">
+              <h3 className="font-semibold text-foreground">Section B: 19th Century Prose (20 marks)</h3>
+              <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
                 <li>&bull; One 19th-century prose text</li>
                 <li>&bull; An extract is printed on the paper</li>
                 <li>&bull; One question on the extract and the wider novel</li>
                 <li>&bull; Must address language, themes, and contextual factors</li>
               </ul>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-white p-5">
-              <h3 className="font-semibold text-[#1A5276]">Section C: Unseen Poetry (40 marks)</h3>
-              <ul className="mt-3 space-y-1.5 text-sm text-gray-700">
+            <div className="rounded-lg border border-border bg-card p-5">
+              <h3 className="font-semibold text-foreground">Section C: Unseen Poetry (40 marks)</h3>
+              <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
                 <li>&bull; Two previously unseen poems</li>
                 <li>&bull; Part (i): Analysis of one poem (20 marks)</li>
                 <li>&bull; Part (ii): Comparison of both poems (20 marks)</li>
@@ -196,24 +196,24 @@ export default function WJECEnglishLiteraturePage() {
       </section>
 
       {/* ── Set texts ─────────────────────────────────────────── */}
-      <section className="bg-gray-50 px-4 py-12 sm:py-16">
+      <section className="bg-muted px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Set Texts List
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             Your school will choose one text from each category below. Check with
             your teacher which texts you are studying.
           </p>
 
           <div className="mt-8 grid gap-6 sm:grid-cols-3">
             {/* Shakespeare */}
-            <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-              <h3 className="font-bold text-[#1A5276]">Shakespeare (Component 1)</h3>
-              <ul className="mt-3 space-y-1.5 text-sm text-gray-700">
+            <div className="rounded-xl border border-border bg-card p-5 shadow-md">
+              <h3 className="font-bold text-foreground">Shakespeare (Component 1)</h3>
+              <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
                 {SET_TEXTS.shakespeare.map((text) => (
                   <li key={text} className="flex items-start gap-2">
-                    <span className="mt-1 block h-1.5 w-1.5 shrink-0 rounded-full bg-[#2E86C1]" />
+                    <span className="mt-1 block h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                     {text}
                   </li>
                 ))}
@@ -221,12 +221,12 @@ export default function WJECEnglishLiteraturePage() {
             </div>
 
             {/* Post-1914 */}
-            <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-              <h3 className="font-bold text-[#1A5276]">Post-1914 Prose/Drama (Component 2)</h3>
-              <ul className="mt-3 space-y-1.5 text-sm text-gray-700">
+            <div className="rounded-xl border border-border bg-card p-5 shadow-md">
+              <h3 className="font-bold text-foreground">Post-1914 Prose/Drama (Component 2)</h3>
+              <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
                 {SET_TEXTS.post1914.map((text) => (
                   <li key={text} className="flex items-start gap-2">
-                    <span className="mt-1 block h-1.5 w-1.5 shrink-0 rounded-full bg-[#2E86C1]" />
+                    <span className="mt-1 block h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                     {text}
                   </li>
                 ))}
@@ -234,12 +234,12 @@ export default function WJECEnglishLiteraturePage() {
             </div>
 
             {/* 19th Century */}
-            <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-              <h3 className="font-bold text-[#1A5276]">19th Century Prose (Component 2)</h3>
-              <ul className="mt-3 space-y-1.5 text-sm text-gray-700">
+            <div className="rounded-xl border border-border bg-card p-5 shadow-md">
+              <h3 className="font-bold text-foreground">19th Century Prose (Component 2)</h3>
+              <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
                 {SET_TEXTS.nineteenth.map((text) => (
                   <li key={text} className="flex items-start gap-2">
-                    <span className="mt-1 block h-1.5 w-1.5 shrink-0 rounded-full bg-[#2E86C1]" />
+                    <span className="mt-1 block h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                     {text}
                   </li>
                 ))}
@@ -252,10 +252,10 @@ export default function WJECEnglishLiteraturePage() {
       {/* ── Assessment objectives ─────────────────────────────── */}
       <section className="px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Assessment Objectives
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             All responses are marked against these four AOs. Knowing how marks
             are weighted for each question helps you structure your answer.
           </p>
@@ -280,12 +280,12 @@ export default function WJECEnglishLiteraturePage() {
             ].map((obj) => (
               <div
                 key={obj.ao}
-                className="rounded-lg border border-gray-200 bg-white p-5"
+                className="rounded-lg border border-border bg-card p-5"
               >
                 <span className="inline-block rounded bg-[#1A5276] px-2 py-0.5 text-xs font-bold text-white">
                   {obj.ao}
                 </span>
-                <p className="mt-2 text-sm text-gray-700">{obj.desc}</p>
+                <p className="mt-2 text-sm text-muted-foreground">{obj.desc}</p>
               </div>
             ))}
           </div>
@@ -293,14 +293,14 @@ export default function WJECEnglishLiteraturePage() {
       </section>
 
       {/* ── Key differences from AQA/Edexcel ──────────────────── */}
-      <section className="bg-gray-50 px-4 py-12 sm:py-16">
+      <section className="bg-muted px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-4xl">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             How WJEC Eduqas Differs from AQA &amp; Edexcel
           </h2>
-          <div className="mt-6 space-y-4 text-gray-700 leading-relaxed">
+          <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
             <div className="rounded-lg border-l-4 border-[#1A5276] bg-blue-50 p-4">
-              <h3 className="font-semibold text-[#1A5276]">Poetry anthology is compared, not contrasted with unseen</h3>
+              <h3 className="font-semibold text-foreground">Poetry anthology is compared, not contrasted with unseen</h3>
               <p className="mt-1 text-sm">
                 WJEC Eduqas prints both anthology poems on the paper and asks you to
                 compare them in a single essay. AQA names one poem and asks you to choose
@@ -310,7 +310,7 @@ export default function WJECEnglishLiteraturePage() {
               </p>
             </div>
             <div className="rounded-lg border-l-4 border-[#1A5276] bg-blue-50 p-4">
-              <h3 className="font-semibold text-[#1A5276]">
+              <h3 className="font-semibold text-foreground">
                 Unseen poetry carries heavy weight
               </h3>
               <p className="mt-1 text-sm">
@@ -320,7 +320,7 @@ export default function WJECEnglishLiteraturePage() {
               </p>
             </div>
             <div className="rounded-lg border-l-4 border-[#1A5276] bg-blue-50 p-4">
-              <h3 className="font-semibold text-[#1A5276]">
+              <h3 className="font-semibold text-foreground">
                 Extract provided for Shakespeare
               </h3>
               <p className="mt-1 text-sm">
@@ -330,7 +330,7 @@ export default function WJECEnglishLiteraturePage() {
               </p>
             </div>
             <div className="rounded-lg border-l-4 border-[#1A5276] bg-blue-50 p-4">
-              <h3 className="font-semibold text-[#1A5276]">
+              <h3 className="font-semibold text-foreground">
                 40/60 weighting between components
               </h3>
               <p className="mt-1 text-sm">
@@ -340,7 +340,7 @@ export default function WJECEnglishLiteraturePage() {
               </p>
             </div>
             <div className="rounded-lg border-l-4 border-[#1A5276] bg-blue-50 p-4">
-              <h3 className="font-semibold text-[#1A5276]">
+              <h3 className="font-semibold text-foreground">
                 Different text options
               </h3>
               <p className="mt-1 text-sm">

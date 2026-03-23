@@ -91,10 +91,10 @@ export default function StudyToolsHub() {
     <>
       {/* Hero */}
       <div className="mb-10">
-        <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           Study Tools
         </h1>
-        <p className="mt-3 max-w-3xl text-lg text-gray-600 leading-relaxed">
+        <p className="mt-3 max-w-3xl text-lg text-muted-foreground leading-relaxed">
           Interactive revision tools designed to help you prepare for your GCSE and IGCSE English exams.
           Plan your revision, test yourself on key quotes, and track your progress across every topic.
         </p>
@@ -106,7 +106,7 @@ export default function StudyToolsHub() {
           <Link
             key={tool.href}
             href={tool.href}
-            className="group relative flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-lg hover:border-accent-300"
+            className="group relative flex flex-col overflow-hidden rounded-xl border border-border bg-card shadow-md transition hover:shadow-lg hover:border-accent-300"
           >
             {/* Gradient header */}
             <div className={`bg-gradient-to-br ${tool.colour} px-6 py-6 text-white`}>
@@ -118,14 +118,14 @@ export default function StudyToolsHub() {
 
             {/* Body */}
             <div className="flex flex-1 flex-col p-6">
-              <p className="text-sm leading-relaxed text-gray-600">
+              <p className="text-sm leading-relaxed text-muted-foreground">
                 {tool.description}
               </p>
 
               {/* Feature list */}
               <ul className="mt-4 space-y-1.5">
                 {tool.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-2 text-sm text-gray-700">
+                  <li key={feature} className="flex items-start gap-2 text-sm text-muted-foreground">
                     <svg className="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
@@ -150,8 +150,8 @@ export default function StudyToolsHub() {
 
       {/* Tip box */}
       <div className="mt-10 rounded-xl border border-accent-100 bg-accent-50/50 p-6">
-        <h3 className="text-lg font-bold text-gray-900">Getting the most from these tools</h3>
-        <ul className="mt-3 space-y-2 text-sm text-gray-700">
+        <h3 className="text-lg font-bold text-foreground">Getting the most from these tools</h3>
+        <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
           <li className="flex items-start gap-2">
             <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
             <span><strong>Start with the revision planner.</strong> Set your exam dates and build a schedule before diving into individual topics.</span>

@@ -182,7 +182,7 @@ export default function AnalyticalVocabularyPage() {
 
       {/* Breadcrumb */}
       <nav className="mx-auto max-w-6xl px-4 pt-6" aria-label="Breadcrumb">
-        <ol className="flex flex-wrap items-center gap-2 text-sm text-gray-500">
+        <ol className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
           <li><Link href="/" className="hover:text-primary transition-colors">Home</Link></li>
           <li>/</li>
           <li><Link href="/resources" className="hover:text-primary transition-colors">Resources</Link></li>
@@ -197,7 +197,7 @@ export default function AnalyticalVocabularyPage() {
       <section className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
           <div className="relative flex-1">
-            <svg className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+            <svg className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-muted-foreground" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
             </svg>
             <input
@@ -205,7 +205,7 @@ export default function AnalyticalVocabularyPage() {
               placeholder="Search analytical words and phrases..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full rounded-xl border border-gray-300 bg-white py-3 pl-10 pr-4 text-sm shadow-sm transition focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
+              className="w-full rounded-xl border border-gray-300 bg-card py-3 pl-10 pr-4 text-sm shadow-md transition focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
             />
           </div>
           <div className="flex flex-wrap gap-2">
@@ -221,8 +221,8 @@ export default function AnalyticalVocabularyPage() {
                 onClick={() => setActiveSection(f.id)}
                 className={`rounded-full px-4 py-2 text-sm font-medium transition ${
                   activeSection === f.id
-                    ? "bg-primary text-white shadow-sm"
-                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                    ? "bg-primary text-white shadow-md"
+                    : "bg-gray-100 text-muted-foreground hover:bg-gray-200"
                 }`}
               >
                 {f.label}
@@ -239,24 +239,24 @@ export default function AnalyticalVocabularyPage() {
             <div key={sec.id} id={sec.id}>
               <h2 className={`mb-2 text-2xl font-bold text-primary border-b-2 ${sec.colour} pb-3`}>
                 {sec.title}
-                <span className="ml-3 text-base font-normal text-gray-400">
+                <span className="ml-3 text-base font-normal text-muted-foreground">
                   ({sec.words.length} words)
                 </span>
               </h2>
-              <p className="mb-6 text-sm text-gray-600">{sec.description}</p>
+              <p className="mb-6 text-sm text-muted-foreground">{sec.description}</p>
 
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {sec.words.map((w) => (
-                  <div key={w.word} className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm hover:shadow-md transition">
+                  <div key={w.word} className="rounded-xl border border-border bg-card p-5 shadow-md hover:shadow-md transition">
                     <div className="flex items-start justify-between">
-                      <h3 className="text-lg font-bold text-gray-900">{w.word}</h3>
+                      <h3 className="text-lg font-bold text-foreground">{w.word}</h3>
                       <span className={`shrink-0 rounded-full px-2.5 py-0.5 text-xs font-semibold ${sec.tagColour}`}>
                         {sec.title.split(" ")[0]}
                       </span>
                     </div>
-                    <p className="mt-1 text-sm text-gray-600">{w.definition}</p>
-                    <div className="mt-3 rounded-lg bg-gray-50 px-4 py-3">
-                      <p className="text-sm italic text-gray-700">
+                    <p className="mt-1 text-sm text-muted-foreground">{w.definition}</p>
+                    <div className="mt-3 rounded-lg bg-muted px-4 py-3">
+                      <p className="text-sm italic text-muted-foreground">
                         &ldquo;{w.example}&rdquo;
                       </p>
                     </div>
@@ -267,7 +267,7 @@ export default function AnalyticalVocabularyPage() {
           ))}
 
           {filteredSections.length === 0 && (
-            <p className="text-center text-sm text-gray-500">
+            <p className="text-center text-sm text-muted-foreground">
               No words match your search. Try a different term.
             </p>
           )}
@@ -275,12 +275,12 @@ export default function AnalyticalVocabularyPage() {
       </section>
 
       {/* Tips for using analytical language */}
-      <section className="bg-gray-50 px-4 py-14 sm:px-6 lg:px-8">
+      <section className="bg-muted px-4 py-14 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-center text-2xl font-bold text-gray-900">
+          <h2 className="text-center text-2xl font-bold text-foreground">
             How to Use Analytical Language in Your Essays
           </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-center text-gray-600">
+          <p className="mx-auto mt-3 max-w-2xl text-center text-muted-foreground">
             Knowing the words is only half the battle. These four principles will
             help you deploy analytical vocabulary naturally and effectively.
           </p>
@@ -304,12 +304,12 @@ export default function AnalyticalVocabularyPage() {
                 body: "Say 'Shakespeare crafts...' or 'Dickens employs...', not 'the text shows...'. This keeps the writer's intention at the centre.",
               },
             ].map((tip, i) => (
-              <div key={tip.heading} className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+              <div key={tip.heading} className="rounded-xl border border-border bg-card p-6 shadow-md">
                 <span className="flex h-9 w-9 items-center justify-center rounded-full bg-accent text-sm font-bold text-white">
                   {i + 1}
                 </span>
-                <h3 className="mt-4 text-base font-bold text-gray-900">{tip.heading}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-600">{tip.body}</p>
+                <h3 className="mt-4 text-base font-bold text-foreground">{tip.heading}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{tip.body}</p>
               </div>
             ))}
           </div>
@@ -318,16 +318,16 @@ export default function AnalyticalVocabularyPage() {
 
       {/* Continue exploring */}
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-gray-900">Continue exploring</h2>
+        <h2 className="text-2xl font-bold text-foreground">Continue exploring</h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-3">
           {[
             { label: "Academic Vocabulary", href: "/resources/vocabulary/academic", desc: "50+ words for essay writing." },
             { label: "Descriptive Vocabulary", href: "/resources/vocabulary/descriptive", desc: "200+ words for creative writing." },
             { label: "All Vocabulary", href: "/resources/vocabulary", desc: "Browse all vocabulary categories." },
           ].map((link) => (
-            <Link key={link.href} href={link.href} className="group rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition hover:shadow-md hover:border-accent/40">
-              <h3 className="font-bold text-gray-900 group-hover:text-primary transition-colors">{link.label}</h3>
-              <p className="mt-1 text-sm text-gray-500">{link.desc}</p>
+            <Link key={link.href} href={link.href} className="group rounded-xl border border-border bg-card p-5 shadow-md transition hover:shadow-md hover:border-accent/40">
+              <h3 className="font-bold text-foreground group-hover:text-primary transition-colors">{link.label}</h3>
+              <p className="mt-1 text-sm text-muted-foreground">{link.desc}</p>
             </Link>
           ))}
         </div>

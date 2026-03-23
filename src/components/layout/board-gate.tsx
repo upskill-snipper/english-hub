@@ -61,7 +61,7 @@ export function BoardGate() {
   if (selectedBoard !== null) return null
 
   // Only skip auth-related pages (users must be able to log in/register without a board)
-  const skipPaths = ['/auth', '/verify', '/for-teachers', '/for-parents', '/for-schools', '/subjects', '/account', '/admin', '/affiliates', '/creators', '/school', '/resources', '/help', '/legal', '/dashboard', '/safeguarding']
+  const skipPaths = ['/auth', '/verify', '/for-teachers', '/for-parents', '/for-schools', '/account', '/admin', '/affiliates', '/creators', '/school', '/resources', '/help', '/legal', '/dashboard', '/safeguarding']
   if (skipPaths.some((p) => pathname.startsWith(p))) {
     return null
   }

@@ -37,7 +37,7 @@ const BOARDS: Board[] = [
     duration: "1h 45m per paper",
     uniqueFeature: "Spoken language endorsement (Pass/Merit/Distinction)",
     color: "border-[#2E86C1]",
-    accent: "bg-[#2E86C1]",
+    accent: "bg-primary",
     icon: "A",
   },
   {
@@ -207,7 +207,7 @@ function ArrowRight({ className }: { className?: string }) {
 function CheckIcon() {
   return (
     <svg
-      className="mt-0.5 h-4 w-4 shrink-0 text-[#2E86C1]"
+      className="mt-0.5 h-4 w-4 shrink-0 text-primary"
       fill="none"
       viewBox="0 0 24 24"
       strokeWidth={2}
@@ -239,7 +239,7 @@ function SparklesIcon() {
 function AcademicCapIcon() {
   return (
     <svg
-      className="h-5 w-5 text-[#1A5276]"
+      className="h-5 w-5 text-foreground"
       fill="none"
       viewBox="0 0 24 24"
       strokeWidth={1.5}
@@ -270,7 +270,7 @@ function SkillIcon({ icon }: { icon: string }) {
 
   return (
     <svg
-      className="h-6 w-6 text-[#2E86C1]"
+      className="h-6 w-6 text-primary"
       fill="none"
       viewBox="0 0 24 24"
       strokeWidth={1.5}
@@ -304,12 +304,12 @@ export default function EnglishLanguagePage() {
       <section className="relative overflow-hidden bg-gradient-to-br from-[#1A5276] via-[#1A5276]/95 to-[#2E86C1]/80 px-4 py-16 text-white sm:py-20">
         {/* Background decoration */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-[#2E86C1]/20 blur-3xl" />
+          <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-primary/20 blur-3xl" />
           <div className="absolute -bottom-32 -left-20 h-96 w-96 rounded-full bg-[#1A5276]/30 blur-3xl" />
         </div>
 
         <div className="relative mx-auto max-w-5xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-[#2E86C1]/70">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary/70">
             GCSE &amp; IGCSE
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -326,7 +326,7 @@ export default function EnglishLanguagePage() {
             {HERO_STATS.map((stat) => (
               <div
                 key={stat.label}
-                className="rounded-xl border border-white/15 bg-white/10 px-4 py-4 backdrop-blur-sm"
+                className="rounded-xl border border-white/15 bg-card/10 px-4 py-4 backdrop-blur-sm"
               >
                 <p className="text-2xl font-bold sm:text-3xl">{stat.value}</p>
                 <p className="mt-1 text-sm font-semibold text-white/90">{stat.label}</p>
@@ -339,13 +339,13 @@ export default function EnglishLanguagePage() {
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <a
               href="#boards"
-              className="rounded-lg bg-white px-5 py-2.5 text-sm font-semibold text-[#1A5276] shadow-lg transition hover:bg-white/90 hover:shadow-xl"
+              className="rounded-lg bg-card px-5 py-2.5 text-sm font-semibold text-foreground shadow-lg transition hover:bg-card/90 hover:shadow-xl"
             >
               Choose your board
             </a>
             <a
               href="#comparison"
-              className="rounded-lg border border-white/30 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-white/50 hover:bg-white/10"
+              className="rounded-lg border border-white/30 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-white/50 hover:bg-card/10"
             >
               Compare all boards
             </a>
@@ -355,18 +355,18 @@ export default function EnglishLanguagePage() {
 
       {/* ─── What English Language Covers ─────────────────────── */}
       <section className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
-        <div className="rounded-xl border border-[#2E86C1]/20 bg-[#2E86C1]/5 p-6 sm:p-8">
-          <h2 className="text-xl font-bold text-gray-900">
+        <div className="rounded-xl border border-[#2E86C1]/20 bg-primary/5 p-6 sm:p-8">
+          <h2 className="text-xl font-bold text-foreground">
             What does English Language cover?
           </h2>
-          <p className="mt-3 leading-relaxed text-gray-700">
+          <p className="mt-3 leading-relaxed text-muted-foreground">
             GCSE English Language develops your ability to read critically, analyse how writers use
             language and structure, and produce your own high-quality writing across a range of forms
             and purposes. It is a core qualification required by most employers and further education
             providers, and a grade 4 or above is typically needed for sixth form, college, and
             apprenticeship entry.
           </p>
-          <p className="mt-3 leading-relaxed text-gray-700">
+          <p className="mt-3 leading-relaxed text-muted-foreground">
             The course is assessed through written examinations (and a spoken language component in
             most boards). You will study a mix of fiction and non-fiction texts and develop both
             analytical and creative writing skills that are transferable to A Level and beyond.
@@ -380,7 +380,7 @@ export default function EnglishLanguagePage() {
               "Comparing writers' perspectives",
               "Spoken language endorsement",
             ].map((topic) => (
-              <li key={topic} className="flex items-start gap-2 text-sm text-gray-700">
+              <li key={topic} className="flex items-start gap-2 text-sm text-muted-foreground">
                 <CheckIcon />
                 {topic}
               </li>
@@ -391,11 +391,11 @@ export default function EnglishLanguagePage() {
 
       {/* ─── Board Selection Cards ────────────────────────────── */}
       <section id="boards" className="mx-auto max-w-5xl px-4 pb-12 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-gray-900">Select your exam board</h2>
-        <p className="mt-2 text-gray-600">
+        <h2 className="text-2xl font-bold text-foreground">Select your exam board</h2>
+        <p className="mt-2 text-muted-foreground">
           Choose your exam board below to access board-specific revision resources, mark schemes,
           and exam tips. Not sure which board you study? Use our{" "}
-          <a href="#board-finder" className="font-medium text-[#2E86C1] underline underline-offset-2 hover:text-[#1A5276]">
+          <a href="#board-finder" className="font-medium text-primary underline underline-offset-2 hover:text-foreground">
             board finder
           </a>{" "}
           below.
@@ -406,7 +406,7 @@ export default function EnglishLanguagePage() {
             <Link
               key={board.slug}
               href={`/resources/english-language/${board.slug}`}
-              className={`group flex flex-col rounded-xl border-2 ${board.color} bg-white p-6 shadow-sm transition hover:shadow-lg hover:-translate-y-0.5`}
+              className={`group flex flex-col rounded-xl border-2 ${board.color} bg-card p-6 shadow-md transition hover:shadow-lg hover:-translate-y-0.5`}
             >
               {/* Board badge */}
               <div className="flex items-center justify-between">
@@ -417,29 +417,29 @@ export default function EnglishLanguagePage() {
                     {board.icon}
                   </span>
                   <div>
-                    <h3 className="text-lg font-bold text-gray-900 transition-colors group-hover:text-[#1A5276]">
+                    <h3 className="text-lg font-bold text-foreground transition-colors group-hover:text-foreground">
                       {board.name}
                     </h3>
-                    <span className="text-xs font-medium text-gray-400">{board.spec}</span>
+                    <span className="text-xs font-medium text-muted-foreground">{board.spec}</span>
                   </div>
                 </div>
               </div>
 
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-gray-600">
+              <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
                 {board.description}
               </p>
 
-              <div className="mt-4 space-y-1 border-t border-gray-100 pt-3">
+              <div className="mt-4 space-y-1 border-t border-border pt-3">
                 {board.papers.map((paper) => (
-                  <p key={paper} className="text-xs text-gray-500">
+                  <p key={paper} className="text-xs text-muted-foreground">
                     {paper}
                   </p>
                 ))}
               </div>
 
               <div className="mt-3 flex items-center justify-between">
-                <span className="text-xs text-gray-400">{board.totalMarks} marks total</span>
-                <span className="inline-flex items-center gap-1 text-sm font-semibold text-[#2E86C1] transition-colors group-hover:text-[#1A5276]">
+                <span className="text-xs text-muted-foreground">{board.totalMarks} marks total</span>
+                <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors group-hover:text-foreground">
                   View resources <ArrowRight />
                 </span>
               </div>
@@ -449,20 +449,20 @@ export default function EnglishLanguagePage() {
       </section>
 
       {/* ─── Board Finder Helper ──────────────────────────────── */}
-      <section id="board-finder" className="bg-gray-50 px-4 py-12">
+      <section id="board-finder" className="bg-muted px-4 py-12">
         <div className="mx-auto max-w-3xl">
           <div className="flex items-center gap-3">
             <AcademicCapIcon />
-            <h2 className="text-2xl font-bold text-gray-900">Which board am I studying?</h2>
+            <h2 className="text-2xl font-bold text-foreground">Which board am I studying?</h2>
           </div>
-          <p className="mt-3 text-gray-600">
+          <p className="mt-3 text-muted-foreground">
             Not sure which exam board your school uses? Here are some quick ways to find out, plus a
             simple helper to narrow it down.
           </p>
 
           {/* Tips */}
-          <div className="mt-6 rounded-xl border border-gray-200 bg-white p-6">
-            <h3 className="font-semibold text-gray-900">How to check your exam board</h3>
+          <div className="mt-6 rounded-xl border border-border bg-card p-6">
+            <h3 className="font-semibold text-foreground">How to check your exam board</h3>
             <ul className="mt-3 space-y-2">
               {[
                 "Check the front cover of your English Language textbook or workbook for the board name and logo.",
@@ -471,8 +471,8 @@ export default function EnglishLanguagePage() {
                 "Check your school's website under curriculum or exam information.",
                 "Log in to your school's exam entries portal if available.",
               ].map((tip, i) => (
-                <li key={i} className="flex items-start gap-2 text-sm text-gray-700">
-                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#2E86C1]/10 text-xs font-bold text-[#2E86C1]">
+                <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
                     {i + 1}
                   </span>
                   {tip}
@@ -482,15 +482,15 @@ export default function EnglishLanguagePage() {
           </div>
 
           {/* Interactive finder */}
-          <div className="mt-6 rounded-xl border border-[#2E86C1]/30 bg-[#2E86C1]/5 p-6">
-            <h3 className="font-semibold text-gray-900">Quick board finder</h3>
-            <p className="mt-1 text-sm text-gray-600">
+          <div className="mt-6 rounded-xl border border-[#2E86C1]/30 bg-primary/5 p-6">
+            <h3 className="font-semibold text-foreground">Quick board finder</h3>
+            <p className="mt-1 text-sm text-muted-foreground">
               Answer the question below to narrow down your likely exam board.
             </p>
 
             {finderStep === null && (
               <div className="mt-4">
-                <p className="text-sm font-medium text-gray-800">
+                <p className="text-sm font-medium text-foreground">
                   {BOARD_FINDER_QUESTIONS[0].question}
                 </p>
                 <div className="mt-3 flex flex-wrap gap-2">
@@ -498,7 +498,7 @@ export default function EnglishLanguagePage() {
                     <button
                       key={option.label}
                       onClick={() => handleFinderOption(option.boards)}
-                      className="rounded-lg border border-[#2E86C1]/30 bg-white px-4 py-2 text-sm font-medium text-[#1A5276] transition hover:border-[#2E86C1] hover:bg-[#2E86C1]/10"
+                      className="rounded-lg border border-[#2E86C1]/30 bg-card px-4 py-2 text-sm font-medium text-foreground transition hover:border-[#2E86C1] hover:bg-primary/10"
                     >
                       {option.label}
                     </button>
@@ -509,7 +509,7 @@ export default function EnglishLanguagePage() {
 
             {finderResult && (
               <div className="mt-4">
-                <p className="text-sm font-medium text-gray-800">
+                <p className="text-sm font-medium text-foreground">
                   You are most likely studying one of these boards:
                 </p>
                 <div className="mt-3 flex flex-wrap gap-2">
@@ -517,7 +517,7 @@ export default function EnglishLanguagePage() {
                     <Link
                       key={board.slug}
                       href={`/resources/english-language/${board.slug}`}
-                      className={`inline-flex items-center gap-2 rounded-lg border-2 ${board.color} bg-white px-4 py-2 text-sm font-semibold text-gray-900 transition hover:shadow-md`}
+                      className={`inline-flex items-center gap-2 rounded-lg border-2 ${board.color} bg-card px-4 py-2 text-sm font-semibold text-foreground transition hover:shadow-md`}
                     >
                       <span
                         className={`flex h-6 w-6 items-center justify-center rounded ${board.accent} text-xs font-bold text-white`}
@@ -530,7 +530,7 @@ export default function EnglishLanguagePage() {
                 </div>
                 <button
                   onClick={resetFinder}
-                  className="mt-3 text-sm font-medium text-[#2E86C1] underline underline-offset-2 hover:text-[#1A5276]"
+                  className="mt-3 text-sm font-medium text-primary underline underline-offset-2 hover:text-foreground"
                 >
                   Start again
                 </button>
@@ -542,57 +542,57 @@ export default function EnglishLanguagePage() {
 
       {/* ─── Comparison Table ─────────────────────────────────── */}
       <section id="comparison" className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-gray-900">Board comparison at a glance</h2>
-        <p className="mt-2 text-gray-600">
+        <h2 className="text-2xl font-bold text-foreground">Board comparison at a glance</h2>
+        <p className="mt-2 text-muted-foreground">
           Compare key features across all five exam boards to understand the differences.
         </p>
 
-        <div className="mt-6 overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+        <div className="mt-6 overflow-x-auto rounded-xl border border-border shadow-md">
           <table className="w-full min-w-[640px] text-left text-sm">
             <thead>
-              <tr className="border-b border-gray-200 bg-gray-50">
-                <th className="px-4 py-3 font-semibold text-gray-900">Board</th>
-                <th className="px-4 py-3 font-semibold text-gray-900">Spec Code</th>
-                <th className="px-4 py-3 font-semibold text-gray-900">Papers</th>
-                <th className="px-4 py-3 font-semibold text-gray-900">Total Marks</th>
-                <th className="px-4 py-3 font-semibold text-gray-900">Duration</th>
-                <th className="px-4 py-3 font-semibold text-gray-900">Unique Feature</th>
+              <tr className="border-b border-border bg-muted">
+                <th className="px-4 py-3 font-semibold text-foreground">Board</th>
+                <th className="px-4 py-3 font-semibold text-foreground">Spec Code</th>
+                <th className="px-4 py-3 font-semibold text-foreground">Papers</th>
+                <th className="px-4 py-3 font-semibold text-foreground">Total Marks</th>
+                <th className="px-4 py-3 font-semibold text-foreground">Duration</th>
+                <th className="px-4 py-3 font-semibold text-foreground">Unique Feature</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-100">
               {BOARDS.map((board) => (
-                <tr key={board.slug} className="transition hover:bg-gray-50/80">
+                <tr key={board.slug} className="transition hover:bg-muted/80">
                   <td className="px-4 py-3">
                     <Link
                       href={`/resources/english-language/${board.slug}`}
-                      className="font-semibold text-[#1A5276] hover:underline"
+                      className="font-semibold text-foreground hover:underline"
                     >
                       {board.name}
                     </Link>
                   </td>
-                  <td className="px-4 py-3 text-gray-500">{board.spec}</td>
-                  <td className="px-4 py-3 text-gray-700">{board.papers.length}</td>
-                  <td className="px-4 py-3 text-gray-700">{board.totalMarks}</td>
-                  <td className="px-4 py-3 text-gray-700">{board.duration}</td>
-                  <td className="px-4 py-3 text-gray-600">{board.uniqueFeature}</td>
+                  <td className="px-4 py-3 text-muted-foreground">{board.spec}</td>
+                  <td className="px-4 py-3 text-muted-foreground">{board.papers.length}</td>
+                  <td className="px-4 py-3 text-muted-foreground">{board.totalMarks}</td>
+                  <td className="px-4 py-3 text-muted-foreground">{board.duration}</td>
+                  <td className="px-4 py-3 text-muted-foreground">{board.uniqueFeature}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
 
-        <p className="mt-3 text-xs text-gray-400">
+        <p className="mt-3 text-xs text-muted-foreground">
           Marks and durations shown are approximate and based on the latest published specifications. Always check the official exam board website for the most current information.
         </p>
       </section>
 
       {/* ─── Common Skills Across All Boards ─────────────────── */}
-      <section className="bg-gray-50 px-4 py-12">
+      <section className="bg-muted px-4 py-12">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Core skills across all boards
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             Regardless of which exam board you study, these six key skill areas form the backbone of
             every GCSE English Language course.
           </p>
@@ -601,15 +601,15 @@ export default function EnglishLanguagePage() {
             {CORE_SKILLS.map((skill) => (
               <div
                 key={skill.title}
-                className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm"
+                className="rounded-xl border border-border bg-card p-5 shadow-md"
               >
                 <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#2E86C1]/10">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
                     <SkillIcon icon={skill.icon} />
                   </div>
-                  <h3 className="font-semibold text-gray-900">{skill.title}</h3>
+                  <h3 className="font-semibold text-foreground">{skill.title}</h3>
                 </div>
-                <p className="mt-3 text-sm leading-relaxed text-gray-600">{skill.description}</p>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{skill.description}</p>
               </div>
             ))}
           </div>
@@ -618,16 +618,16 @@ export default function EnglishLanguagePage() {
 
       {/* ─── AI Feedback Callout ──────────────────────────────── */}
       <section className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="overflow-hidden rounded-2xl border border-amber-200 bg-gradient-to-r from-amber-50 to-orange-50 shadow-sm">
+        <div className="overflow-hidden rounded-2xl border border-amber-200 bg-gradient-to-r from-amber-50 to-orange-50 shadow-md">
           <div className="flex flex-col items-start gap-6 p-6 sm:flex-row sm:items-center sm:p-8">
             <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-amber-100">
               <SparklesIcon />
             </div>
             <div className="flex-1">
-              <h2 className="text-xl font-bold text-gray-900">
+              <h2 className="text-xl font-bold text-foreground">
                 Get instant AI feedback on your answers
               </h2>
-              <p className="mt-2 leading-relaxed text-gray-700">
+              <p className="mt-2 leading-relaxed text-muted-foreground">
                 Practice exam-style questions and receive detailed, mark-scheme-aligned feedback
                 powered by AI. Our system analyses your response against the assessment objectives
                 for your specific exam board and provides targeted improvement suggestions.
@@ -642,7 +642,7 @@ export default function EnglishLanguagePage() {
                 </Link>
                 <Link
                   href="/resources/practice"
-                  className="inline-flex items-center gap-2 rounded-lg border border-[#1A5276]/30 px-5 py-2.5 text-sm font-semibold text-[#1A5276] transition hover:bg-[#1A5276]/5"
+                  className="inline-flex items-center gap-2 rounded-lg border border-[#1A5276]/30 px-5 py-2.5 text-sm font-semibold text-foreground transition hover:bg-[#1A5276]/5"
                 >
                   See how it works
                 </Link>
@@ -653,10 +653,10 @@ export default function EnglishLanguagePage() {
       </section>
 
       {/* ─── Resource Links ───────────────────────────────────── */}
-      <section className="bg-gray-50 px-4 py-12">
+      <section className="bg-muted px-4 py-12">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-gray-900">Explore more resources</h2>
-          <p className="mt-2 text-gray-600">
+          <h2 className="text-2xl font-bold text-foreground">Explore more resources</h2>
+          <p className="mt-2 text-muted-foreground">
             Strengthen your English Language skills with these additional study areas.
           </p>
 
@@ -665,15 +665,15 @@ export default function EnglishLanguagePage() {
               <Link
                 key={link.title}
                 href={link.href}
-                className="group overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition hover:shadow-lg hover:-translate-y-0.5"
+                className="group overflow-hidden rounded-xl border border-border bg-card shadow-md transition hover:shadow-lg hover:-translate-y-0.5"
               >
                 <div className={`h-2 bg-gradient-to-r ${link.color}`} />
                 <div className="p-5">
-                  <h3 className="font-semibold text-gray-900 transition-colors group-hover:text-[#1A5276]">
+                  <h3 className="font-semibold text-foreground transition-colors group-hover:text-foreground">
                     {link.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-gray-600">{link.description}</p>
-                  <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#2E86C1] transition-colors group-hover:text-[#1A5276]">
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{link.description}</p>
+                  <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors group-hover:text-foreground">
                     Explore <ArrowRight />
                   </span>
                 </div>
@@ -684,9 +684,9 @@ export default function EnglishLanguagePage() {
       </section>
 
       {/* ─── Quick Board Links Bar ────────────────────────────── */}
-      <section className="border-t border-gray-200 bg-white px-4 py-8">
+      <section className="border-t border-border bg-card px-4 py-8">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-center text-lg font-bold text-gray-900">
+          <h2 className="text-center text-lg font-bold text-foreground">
             Jump to your board
           </h2>
           <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
@@ -694,7 +694,7 @@ export default function EnglishLanguagePage() {
               <Link
                 key={board.slug}
                 href={`/resources/english-language/${board.slug}`}
-                className={`inline-flex items-center gap-2 rounded-lg border-2 ${board.color} bg-white px-4 py-2 text-sm font-semibold text-gray-800 transition hover:shadow-md hover:-translate-y-0.5`}
+                className={`inline-flex items-center gap-2 rounded-lg border-2 ${board.color} bg-card px-4 py-2 text-sm font-semibold text-foreground transition hover:shadow-md hover:-translate-y-0.5`}
               >
                 <span
                   className={`flex h-6 w-6 items-center justify-center rounded ${board.accent} text-xs font-bold text-white`}

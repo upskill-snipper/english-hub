@@ -19,13 +19,13 @@ function Section({
 }) {
   return (
     <details
-      className="rounded-xl border border-gray-200 bg-white group"
+      className="rounded-xl border border-border bg-card group"
       {...(defaultOpen ? { open: true } : {})}
     >
-      <summary className="flex w-full cursor-pointer items-center justify-between gap-4 px-6 py-5 text-left font-bold text-gray-900 hover:bg-gray-50 transition-colors list-none [&::-webkit-details-marker]:hidden">
+      <summary className="flex w-full cursor-pointer items-center justify-between gap-4 px-6 py-5 text-left font-bold text-foreground hover:bg-muted transition-colors list-none [&::-webkit-details-marker]:hidden">
         <span className="text-lg">{title}</span>
         <svg
-          className="h-5 w-5 shrink-0 text-gray-400 transition-transform group-open:rotate-180"
+          className="h-5 w-5 shrink-0 text-muted-foreground transition-transform group-open:rotate-180"
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={2}
@@ -34,7 +34,7 @@ function Section({
           <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
         </svg>
       </summary>
-      <div className="border-t border-gray-100 px-6 py-6 text-gray-700 leading-relaxed space-y-4">
+      <div className="border-t border-border px-6 py-6 text-muted-foreground leading-relaxed space-y-4">
         {children}
       </div>
     </details>
@@ -66,18 +66,18 @@ export default function GradeBoundariesPage() {
 
       {/* Breadcrumb */}
       <nav className="mx-auto max-w-5xl px-4 pt-6" aria-label="Breadcrumb">
-        <ol className="flex flex-wrap items-center gap-2 text-sm text-gray-500">
+        <ol className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
           <li>
-            <Link href="/" className="hover:text-[#1A5276] transition-colors">Home</Link>
+            <Link href="/" className="hover:text-foreground transition-colors">Home</Link>
           </li>
           <li>/</li>
           <li>
-            <Link href="/resources/english-literature/aqa" className="hover:text-[#1A5276] transition-colors">
+            <Link href="/resources/english-literature/aqa" className="hover:text-foreground transition-colors">
               AQA English Literature
             </Link>
           </li>
           <li>/</li>
-          <li className="text-[#1A5276] font-medium">Grade Boundaries</li>
+          <li className="text-foreground font-medium">Grade Boundaries</li>
         </ol>
       </nav>
 
@@ -118,7 +118,7 @@ export default function GradeBoundariesPage() {
           <div className="overflow-x-auto mt-4">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-gray-200 text-left text-gray-500">
+                <tr className="border-b border-border text-left text-muted-foreground">
                   <th className="py-2 pr-4">Grade</th>
                   <th className="py-2 pr-4">Approx. mark (/160)</th>
                   <th className="py-2 pr-4">Approx. %</th>
@@ -136,17 +136,17 @@ export default function GradeBoundariesPage() {
                   <td className="py-2 pr-4">~75%</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-bold text-[#2E86C1]">7</td>
+                  <td className="py-2 pr-4 font-bold text-primary">7</td>
                   <td className="py-2 pr-4">~104</td>
                   <td className="py-2 pr-4">~65%</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-bold text-[#2E86C1]">6</td>
+                  <td className="py-2 pr-4 font-bold text-primary">6</td>
                   <td className="py-2 pr-4">~89</td>
                   <td className="py-2 pr-4">~56%</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-bold text-[#1A5276]">5</td>
+                  <td className="py-2 pr-4 font-bold text-foreground">5</td>
                   <td className="py-2 pr-4">~74</td>
                   <td className="py-2 pr-4">~46%</td>
                 </tr>
@@ -156,17 +156,17 @@ export default function GradeBoundariesPage() {
                   <td className="py-2 pr-4">~36%</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-bold text-gray-500">3</td>
+                  <td className="py-2 pr-4 font-bold text-muted-foreground">3</td>
                   <td className="py-2 pr-4">~42</td>
                   <td className="py-2 pr-4">~26%</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-bold text-gray-500">2</td>
+                  <td className="py-2 pr-4 font-bold text-muted-foreground">2</td>
                   <td className="py-2 pr-4">~26</td>
                   <td className="py-2 pr-4">~16%</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-bold text-gray-400">1</td>
+                  <td className="py-2 pr-4 font-bold text-muted-foreground">1</td>
                   <td className="py-2 pr-4">~12</td>
                   <td className="py-2 pr-4">~8%</td>
                 </tr>
@@ -174,7 +174,7 @@ export default function GradeBoundariesPage() {
             </table>
           </div>
 
-          <p className="mt-4 text-sm text-gray-500">
+          <p className="mt-4 text-sm text-muted-foreground">
             Note: These boundaries are approximate and based on publicly
             available AQA data. The &ldquo;Approx. %&rdquo; column shows
             roughly what percentage of the total 160 marks you need.
@@ -206,7 +206,7 @@ export default function GradeBoundariesPage() {
             </div>
 
             <div className="rounded-lg border-l-4 border-[#2E86C1] bg-blue-50/30 p-5">
-              <h3 className="text-lg font-bold text-[#2E86C1]">Grades 7-8 &mdash; Strong</h3>
+              <h3 className="text-lg font-bold text-primary">Grades 7-8 &mdash; Strong</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <ul className="ml-5 list-disc space-y-1">
                   <li>Thoughtful, developed response to texts with a clear personal voice.</li>
@@ -221,7 +221,7 @@ export default function GradeBoundariesPage() {
             </div>
 
             <div className="rounded-lg border-l-4 border-[#1A5276] bg-blue-50/20 p-5">
-              <h3 className="text-lg font-bold text-[#1A5276]">Grades 5-6 &mdash; Secure</h3>
+              <h3 className="text-lg font-bold text-foreground">Grades 5-6 &mdash; Secure</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <ul className="ml-5 list-disc space-y-1">
                   <li>Clear, explained response to texts with relevant ideas.</li>
@@ -250,8 +250,8 @@ export default function GradeBoundariesPage() {
               </div>
             </div>
 
-            <div className="rounded-lg border-l-4 border-gray-300 bg-gray-50/50 p-5">
-              <h3 className="text-lg font-bold text-gray-500">Grades 1-3 &mdash; Below standard pass</h3>
+            <div className="rounded-lg border-l-4 border-gray-300 bg-muted/50 p-5">
+              <h3 className="text-lg font-bold text-muted-foreground">Grades 1-3 &mdash; Below standard pass</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <ul className="ml-5 list-disc space-y-1">
                   <li>Simple, limited comments on texts with little development.</li>
@@ -275,8 +275,8 @@ export default function GradeBoundariesPage() {
           </p>
 
           <div className="mt-4 space-y-5">
-            <div className="rounded-lg border border-gray-200 p-5">
-              <h3 className="font-bold text-[#1A5276]">Grade 4 &rarr; Grade 5</h3>
+            <div className="rounded-lg border border-border p-5">
+              <h3 className="font-bold text-foreground">Grade 4 &rarr; Grade 5</h3>
               <ul className="mt-2 ml-5 list-disc space-y-2 text-sm">
                 <li>
                   <strong>Quotations:</strong> Move beyond retelling the story.
@@ -298,8 +298,8 @@ export default function GradeBoundariesPage() {
               </ul>
             </div>
 
-            <div className="rounded-lg border border-gray-200 p-5">
-              <h3 className="font-bold text-[#1A5276]">Grade 5 &rarr; Grade 7</h3>
+            <div className="rounded-lg border border-border p-5">
+              <h3 className="font-bold text-foreground">Grade 5 &rarr; Grade 7</h3>
               <ul className="mt-2 ml-5 list-disc space-y-2 text-sm">
                 <li>
                   <strong>Analysis depth:</strong> Move from explaining what a
@@ -328,8 +328,8 @@ export default function GradeBoundariesPage() {
               </ul>
             </div>
 
-            <div className="rounded-lg border border-gray-200 p-5">
-              <h3 className="font-bold text-[#1A5276]">Grade 7 &rarr; Grade 9</h3>
+            <div className="rounded-lg border border-border p-5">
+              <h3 className="font-bold text-foreground">Grade 7 &rarr; Grade 9</h3>
               <ul className="mt-2 ml-5 list-disc space-y-2 text-sm">
                 <li>
                   <strong>Conceptualised response:</strong> Frame your essay
@@ -369,12 +369,12 @@ export default function GradeBoundariesPage() {
             Paper 2 (Modern texts, Poetry anthology, and Unseen poetry) is worth 60%.
           </p>
 
-          <h3 className="font-bold text-[#1A5276] mb-2">Paper 1 &mdash; Shakespeare and the 19th-century novel (40%)</h3>
-          <p className="text-sm text-gray-500 mb-3">1 hour 45 minutes &bull; 64 marks</p>
+          <h3 className="font-bold text-foreground mb-2">Paper 1 &mdash; Shakespeare and the 19th-century novel (40%)</h3>
+          <p className="text-sm text-muted-foreground mb-3">1 hour 45 minutes &bull; 64 marks</p>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-gray-200 text-left text-gray-500">
+                <tr className="border-b border-border text-left text-muted-foreground">
                   <th className="py-2 pr-4">Section</th>
                   <th className="py-2 pr-4">Question</th>
                   <th className="py-2 pr-4">Marks</th>
@@ -403,12 +403,12 @@ export default function GradeBoundariesPage() {
             </table>
           </div>
 
-          <h3 className="font-bold text-[#1A5276] mt-6 mb-2">Paper 2 &mdash; Modern texts, Poetry anthology and Unseen poetry (60%)</h3>
-          <p className="text-sm text-gray-500 mb-3">2 hours 15 minutes &bull; 96 marks</p>
+          <h3 className="font-bold text-foreground mt-6 mb-2">Paper 2 &mdash; Modern texts, Poetry anthology and Unseen poetry (60%)</h3>
+          <p className="text-sm text-muted-foreground mb-3">2 hours 15 minutes &bull; 96 marks</p>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-gray-200 text-left text-gray-500">
+                <tr className="border-b border-border text-left text-muted-foreground">
                   <th className="py-2 pr-4">Section</th>
                   <th className="py-2 pr-4">Question</th>
                   <th className="py-2 pr-4">Marks</th>
@@ -448,7 +448,7 @@ export default function GradeBoundariesPage() {
             </table>
           </div>
 
-          <p className="mt-4 text-sm text-gray-500">
+          <p className="mt-4 text-sm text-muted-foreground">
             Paper 2 carries more weight and includes both the poetry anthology
             and unseen poetry sections. Knowing your anthology poems inside out
             and practising unseen poetry under timed conditions are two of the
@@ -460,7 +460,7 @@ export default function GradeBoundariesPage() {
         <div className="pt-4">
           <Link
             href="/resources/english-literature/aqa"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-[#2E86C1] hover:text-[#1A5276] transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-foreground transition-colors"
           >
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />

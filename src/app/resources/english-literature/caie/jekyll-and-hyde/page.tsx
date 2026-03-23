@@ -320,7 +320,7 @@ export default function JekyllAndHydeStudyGuide() {
             <a
               key={s}
               href={`#${s.toLowerCase().replace(/\s+/g, "-")}`}
-              className="rounded-full border border-[#2E86C1]/30 px-3 py-1 text-[#1A5276] transition hover:bg-[#2E86C1]/10"
+              className="rounded-full border border-[#2E86C1]/30 px-3 py-1 text-foreground transition hover:bg-primary/10"
             >
               {s}
             </a>
@@ -329,17 +329,17 @@ export default function JekyllAndHydeStudyGuide() {
 
         {/* ── Plot Summary ────────────────────────────────────────── */}
         <section id="plot-summary" aria-labelledby="plot-heading">
-          <h2 id="plot-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="plot-heading" className="text-2xl font-bold text-foreground">
             Plot Summary
           </h2>
           <div className="mt-6 space-y-4">
             {plotSummary.map((ch) => (
               <div
                 key={ch.chapter}
-                className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm"
+                className="rounded-lg border border-border bg-card p-5 shadow-md"
               >
-                <h3 className="font-semibold text-[#1A5276]">{ch.chapter}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-700">
+                <h3 className="font-semibold text-foreground">{ch.chapter}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {ch.summary}
                 </p>
               </div>
@@ -347,13 +347,13 @@ export default function JekyllAndHydeStudyGuide() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Characters ──────────────────────────────────────────── */}
         <section id="characters" aria-labelledby="characters-heading">
           <h2
             id="characters-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Character Analysis
           </h2>
@@ -361,12 +361,12 @@ export default function JekyllAndHydeStudyGuide() {
             {characters.map((c) => (
               <div
                 key={c.name}
-                className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm"
+                className="rounded-lg border border-border bg-card p-5 shadow-md"
               >
-                <h3 className="text-lg font-semibold text-[#1A5276]">
+                <h3 className="text-lg font-semibold text-foreground">
                   {c.name}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-700">
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {c.description}
                 </p>
               </div>
@@ -374,13 +374,13 @@ export default function JekyllAndHydeStudyGuide() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Themes ──────────────────────────────────────────────── */}
         <section id="themes" aria-labelledby="themes-heading">
           <h2
             id="themes-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Key Themes
           </h2>
@@ -388,10 +388,10 @@ export default function JekyllAndHydeStudyGuide() {
             {themes.map((t) => (
               <div
                 key={t.name}
-                className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm"
+                className="rounded-lg border border-border bg-card p-5 shadow-md"
               >
-                <h3 className="font-semibold text-[#1A5276]">{t.name}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-700">
+                <h3 className="font-semibold text-foreground">{t.name}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {t.detail}
                 </p>
               </div>
@@ -399,17 +399,17 @@ export default function JekyllAndHydeStudyGuide() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Key Quotes ──────────────────────────────────────────── */}
         <section id="key-quotes" aria-labelledby="quotes-heading">
           <h2
             id="quotes-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Key Quotes ({keyQuotes.length})
           </h2>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-sm text-muted-foreground">
             Each quote includes the speaker, chapter location, and detailed
             analysis suitable for Cambridge IGCSE Paper 1 responses.
           </p>
@@ -417,15 +417,15 @@ export default function JekyllAndHydeStudyGuide() {
             {keyQuotes.map((q, i) => (
               <div
                 key={i}
-                className="rounded-lg border-l-4 border-[#2E86C1] bg-white p-5 shadow-sm"
+                className="rounded-lg border-l-4 border-[#2E86C1] bg-card p-5 shadow-md"
               >
-                <blockquote className="text-base font-medium italic text-gray-900">
+                <blockquote className="text-base font-medium italic text-foreground">
                   &ldquo;{q.quote}&rdquo;
                 </blockquote>
-                <p className="mt-1 text-xs font-semibold text-[#2E86C1]">
+                <p className="mt-1 text-xs font-semibold text-primary">
                   {q.speaker} &mdash; {q.location}
                 </p>
-                <p className="mt-3 text-sm leading-relaxed text-gray-700">
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                   {q.analysis}
                 </p>
               </div>
@@ -433,19 +433,19 @@ export default function JekyllAndHydeStudyGuide() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Context ─────────────────────────────────────────────── */}
         <section id="context" aria-labelledby="context-heading">
           <h2
             id="context-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Historical &amp; Literary Context
           </h2>
-          <div className="mt-6 space-y-4 text-sm leading-relaxed text-gray-700">
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <h3 className="font-semibold text-[#1A5276]">
+          <div className="mt-6 space-y-4 text-sm leading-relaxed text-muted-foreground">
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <h3 className="font-semibold text-foreground">
                 Victorian Respectability and the Double Life
               </h3>
               <p className="mt-2">
@@ -459,8 +459,8 @@ export default function JekyllAndHydeStudyGuide() {
                 respectable members do in private.
               </p>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <h3 className="font-semibold text-[#1A5276]">
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <h3 className="font-semibold text-foreground">
                 Darwin and the Theory of Evolution
               </h3>
               <p className="mt-2">
@@ -474,8 +474,8 @@ export default function JekyllAndHydeStudyGuide() {
                 this evolutionary regression.
               </p>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <h3 className="font-semibold text-[#1A5276]">
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <h3 className="font-semibold text-foreground">
                 The Gothic Tradition
               </h3>
               <p className="mt-2">
@@ -492,8 +492,8 @@ export default function JekyllAndHydeStudyGuide() {
                 heart of respectable London.
               </p>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <h3 className="font-semibold text-[#1A5276]">
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <h3 className="font-semibold text-foreground">
                 Victorian London and Urbanisation
               </h3>
               <p className="mt-2">
@@ -506,8 +506,8 @@ export default function JekyllAndHydeStudyGuide() {
                 transforming the familiar city into a Gothic landscape.
               </p>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <h3 className="font-semibold text-[#1A5276]">
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <h3 className="font-semibold text-foreground">
                 Science, Progress, and Anxiety
               </h3>
               <p className="mt-2">
@@ -522,8 +522,8 @@ export default function JekyllAndHydeStudyGuide() {
                 pursue.
               </p>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <h3 className="font-semibold text-[#1A5276]">
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <h3 className="font-semibold text-foreground">
                 Stevenson&rsquo;s Narrative Method
               </h3>
               <p className="mt-2">
@@ -541,17 +541,17 @@ export default function JekyllAndHydeStudyGuide() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Assessment Objectives ───────────────────────────────── */}
         <section
           id="assessment-objectives"
           aria-labelledby="ao-heading"
         >
-          <h2 id="ao-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="ao-heading" className="text-2xl font-bold text-foreground">
             Cambridge Assessment Objectives
           </h2>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-sm text-muted-foreground">
             Understanding how Cambridge marks your work helps you target your
             revision. Paper 1 (Prose) questions are marked holistically, but
             these objectives indicate what examiners are looking for.
@@ -560,15 +560,15 @@ export default function JekyllAndHydeStudyGuide() {
             {assessmentObjectives.map((ao) => (
               <div
                 key={ao.code}
-                className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm"
+                className="rounded-lg border border-border bg-card p-5 shadow-md"
               >
-                <span className="inline-block rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-bold text-[#1A5276]">
+                <span className="inline-block rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-bold text-foreground">
                   {ao.code}
                 </span>
-                <h3 className="mt-2 font-semibold text-[#1A5276]">
+                <h3 className="mt-2 font-semibold text-foreground">
                   {ao.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-700">
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {ao.detail}
                 </p>
               </div>
@@ -576,17 +576,17 @@ export default function JekyllAndHydeStudyGuide() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Exam Questions ──────────────────────────────────────── */}
         <section id="exam-questions" aria-labelledby="exam-heading">
           <h2
             id="exam-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Cambridge-Style Exam Questions
           </h2>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-sm text-muted-foreground">
             Cambridge IGCSE Jekyll and Hyde questions appear in{" "}
             <strong>Paper 1 (Prose)</strong>. You will choose between a
             passage-based question and an essay question. Below are examples of
@@ -595,22 +595,22 @@ export default function JekyllAndHydeStudyGuide() {
 
           <div className="mt-6 space-y-6">
             {/* Passage-based 1 */}
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <span className="inline-block rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-[#1A5276]">
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <span className="inline-block rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                 Passage-Based
               </span>
-              <p className="mt-3 text-sm font-medium text-gray-900">
+              <p className="mt-3 text-sm font-medium text-foreground">
                 Re-read the passage in Chapter 10 from &ldquo;I was the first
                 that could plod in the public eye&rdquo; to &ldquo;I was the
                 first that ever did so for his pleasures.&rdquo; How does
                 Stevenson present Jekyll&rsquo;s attitude to his double life in
                 this passage?
               </p>
-              <div className="mt-3 rounded bg-[#2E86C1]/5 p-3">
-                <p className="text-xs font-semibold text-[#1A5276]">
+              <div className="mt-3 rounded bg-primary/5 p-3">
+                <p className="text-xs font-semibold text-foreground">
                   How to approach:
                 </p>
-                <ul className="mt-1 space-y-1 text-xs text-gray-700">
+                <ul className="mt-1 space-y-1 text-xs text-muted-foreground">
                   <li>
                     &bull; Work through the passage systematically, selecting key
                     words and phrases for close analysis
@@ -636,19 +636,19 @@ export default function JekyllAndHydeStudyGuide() {
             </div>
 
             {/* Essay 1 */}
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <span className="inline-block rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-[#1A5276]">
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <span className="inline-block rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                 Essay Question
               </span>
-              <p className="mt-3 text-sm font-medium text-gray-900">
+              <p className="mt-3 text-sm font-medium text-foreground">
                 How does Stevenson present the theme of duality in{" "}
                 <em>The Strange Case of Dr Jekyll and Mr Hyde</em>?
               </p>
-              <div className="mt-3 rounded bg-[#2E86C1]/5 p-3">
-                <p className="text-xs font-semibold text-[#1A5276]">
+              <div className="mt-3 rounded bg-primary/5 p-3">
+                <p className="text-xs font-semibold text-foreground">
                   How to approach:
                 </p>
-                <ul className="mt-1 space-y-1 text-xs text-gray-700">
+                <ul className="mt-1 space-y-1 text-xs text-muted-foreground">
                   <li>
                     &bull; Plan 3&ndash;4 key points with supporting quotations
                     from across the novella
@@ -676,22 +676,22 @@ export default function JekyllAndHydeStudyGuide() {
             </div>
 
             {/* Passage-based 2 */}
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <span className="inline-block rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-[#1A5276]">
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <span className="inline-block rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                 Passage-Based
               </span>
-              <p className="mt-3 text-sm font-medium text-gray-900">
+              <p className="mt-3 text-sm font-medium text-foreground">
                 Re-read the passage in Chapter 4 describing the murder of Sir
                 Danvers Carew, from &ldquo;And then all of a sudden he broke
                 out in a great flame of anger&rdquo; to &ldquo;the bones were
                 audibly shattered.&rdquo; How does Stevenson make this such a
                 shocking and significant moment?
               </p>
-              <div className="mt-3 rounded bg-[#2E86C1]/5 p-3">
-                <p className="text-xs font-semibold text-[#1A5276]">
+              <div className="mt-3 rounded bg-primary/5 p-3">
+                <p className="text-xs font-semibold text-foreground">
                   How to approach:
                 </p>
-                <ul className="mt-1 space-y-1 text-xs text-gray-700">
+                <ul className="mt-1 space-y-1 text-xs text-muted-foreground">
                   <li>
                     &bull; Analyse the contrast between the peaceful moonlit
                     setting and the sudden eruption of violence
@@ -718,19 +718,19 @@ export default function JekyllAndHydeStudyGuide() {
             </div>
 
             {/* Essay 2 */}
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <span className="inline-block rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-[#1A5276]">
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <span className="inline-block rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                 Essay Question
               </span>
-              <p className="mt-3 text-sm font-medium text-gray-900">
+              <p className="mt-3 text-sm font-medium text-foreground">
                 Explore how Stevenson uses setting to create atmosphere in the
                 novella.
               </p>
-              <div className="mt-3 rounded bg-[#2E86C1]/5 p-3">
-                <p className="text-xs font-semibold text-[#1A5276]">
+              <div className="mt-3 rounded bg-primary/5 p-3">
+                <p className="text-xs font-semibold text-foreground">
                   How to approach:
                 </p>
-                <ul className="mt-1 space-y-1 text-xs text-gray-700">
+                <ul className="mt-1 space-y-1 text-xs text-muted-foreground">
                   <li>
                     &bull; Discuss the symbolism of the door and Jekyll&rsquo;s
                     house: dual entrances reflecting dual nature
@@ -758,19 +758,19 @@ export default function JekyllAndHydeStudyGuide() {
             </div>
 
             {/* Essay 3 */}
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <span className="inline-block rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-[#1A5276]">
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <span className="inline-block rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                 Essay Question
               </span>
-              <p className="mt-3 text-sm font-medium text-gray-900">
+              <p className="mt-3 text-sm font-medium text-foreground">
                 How far do you agree that Hyde is the real Jekyll? Discuss with
                 reference to the novella as a whole.
               </p>
-              <div className="mt-3 rounded bg-[#2E86C1]/5 p-3">
-                <p className="text-xs font-semibold text-[#1A5276]">
+              <div className="mt-3 rounded bg-primary/5 p-3">
+                <p className="text-xs font-semibold text-foreground">
                   How to approach:
                 </p>
-                <ul className="mt-1 space-y-1 text-xs text-gray-700">
+                <ul className="mt-1 space-y-1 text-xs text-muted-foreground">
                   <li>
                     &bull; This is a &lsquo;how far do you agree&rsquo;
                     question: present arguments for and against, then offer a
@@ -802,13 +802,13 @@ export default function JekyllAndHydeStudyGuide() {
           </div>
 
           {/* ── Exam Technique Box ──────────────────────────────────── */}
-          <div className="mt-8 rounded-lg border-2 border-[#2E86C1]/30 bg-[#2E86C1]/5 p-5">
-            <h3 className="font-bold text-[#1A5276]">
+          <div className="mt-8 rounded-lg border-2 border-[#2E86C1]/30 bg-primary/5 p-5">
+            <h3 className="font-bold text-foreground">
               Cambridge Paper 1 Exam Technique
             </h3>
-            <ul className="mt-3 space-y-2 text-sm text-gray-700">
+            <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
               <li>
-                <strong className="text-[#1A5276]">
+                <strong className="text-foreground">
                   Passage-based questions:
                 </strong>{" "}
                 Work through the extract line by line. Begin with the passage
@@ -817,7 +817,7 @@ export default function JekyllAndHydeStudyGuide() {
                 sentence structure, and their effects on the reader.
               </li>
               <li>
-                <strong className="text-[#1A5276]">Essay questions:</strong>{" "}
+                <strong className="text-foreground">Essay questions:</strong>{" "}
                 Plan before writing. Structure your response around 3&ndash;4
                 key points, each supported by quotations. Cover different parts
                 of the novella rather than focusing on a single chapter. Always
@@ -825,7 +825,7 @@ export default function JekyllAndHydeStudyGuide() {
                 <em>what</em> happens.
               </li>
               <li>
-                <strong className="text-[#1A5276]">
+                <strong className="text-foreground">
                   Use of terminology:
                 </strong>{" "}
                 Cambridge rewards precise literary terminology used naturally:
@@ -834,7 +834,7 @@ export default function JekyllAndHydeStudyGuide() {
                 juxtaposition, dramatic irony.
               </li>
               <li>
-                <strong className="text-[#1A5276]">
+                <strong className="text-foreground">
                   Integrating context:
                 </strong>{" "}
                 Weave contextual references into your analysis rather than
@@ -845,7 +845,7 @@ export default function JekyllAndHydeStudyGuide() {
                 far removed from animals as they believed.&rdquo;
               </li>
               <li>
-                <strong className="text-[#1A5276]">Time management:</strong>{" "}
+                <strong className="text-foreground">Time management:</strong>{" "}
                 You have approximately 45 minutes per question. Spend 5 minutes
                 planning, 35 minutes writing, and 5 minutes checking. A
                 well-structured response with fewer points analysed in depth
@@ -860,7 +860,7 @@ export default function JekyllAndHydeStudyGuide() {
         <div className="mt-12 flex items-center gap-2 text-sm">
           <Link
             href="/resources/english-literature/caie"
-            className="font-medium text-[#1A5276] underline underline-offset-2 hover:text-[#2E86C1]"
+            className="font-medium text-foreground underline underline-offset-2 hover:text-primary"
           >
             &larr; Back to Cambridge IGCSE English Literature
           </Link>

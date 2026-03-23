@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 function Annotation({ children, note }: { children: React.ReactNode; note: string }) {
   return (
     <span className="group relative">
-      <span className="rounded bg-[#2E86C1]/10 px-1 py-0.5 text-[#1A5276] border-b-2 border-dashed border-[#2E86C1]/40">
+      <span className="rounded bg-primary/10 px-1 py-0.5 text-foreground border-b-2 border-dashed border-[#2E86C1]/40">
         {children}
       </span>
       <span className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 w-56 -translate-x-1/2 rounded-lg bg-[#1A5276] px-3 py-2 text-xs leading-relaxed text-white opacity-0 shadow-lg transition-opacity group-hover:pointer-events-auto group-hover:opacity-100">
@@ -30,7 +30,7 @@ function Annotation({ children, note }: { children: React.ReactNode; note: strin
 function Section({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
   return (
     <section id={id} className="scroll-mt-24">
-      <h2 className="mb-6 text-2xl font-bold text-[#1A5276] border-b-2 border-[#2E86C1]/20 pb-3">
+      <h2 className="mb-6 text-2xl font-bold text-foreground border-b-2 border-[#2E86C1]/20 pb-3">
         {title}
       </h2>
       {children}
@@ -56,7 +56,7 @@ export default function TextComparisonPage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-[#1A5276] to-[#1A5276]/80 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-[#2E86C1]/80">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary/80">
             Comparison Skills
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -71,14 +71,14 @@ export default function TextComparisonPage() {
 
       {/* Breadcrumb */}
       <nav className="mx-auto max-w-5xl px-4 pt-6" aria-label="Breadcrumb">
-        <ol className="flex flex-wrap items-center gap-2 text-sm text-gray-500">
-          <li><Link href="/" className="hover:text-[#1A5276] transition-colors">Home</Link></li>
+        <ol className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+          <li><Link href="/" className="hover:text-foreground transition-colors">Home</Link></li>
           <li>/</li>
-          <li><Link href="/resources" className="hover:text-[#1A5276] transition-colors">Resources</Link></li>
+          <li><Link href="/resources" className="hover:text-foreground transition-colors">Resources</Link></li>
           <li>/</li>
-          <li><Link href="/resources/comparison" className="hover:text-[#1A5276] transition-colors">Comparison Skills</Link></li>
+          <li><Link href="/resources/comparison" className="hover:text-foreground transition-colors">Comparison Skills</Link></li>
           <li>/</li>
-          <li className="font-medium text-[#1A5276]">Text Comparison</li>
+          <li className="font-medium text-foreground">Text Comparison</li>
         </ol>
       </nav>
 
@@ -89,14 +89,14 @@ export default function TextComparisonPage() {
           {/* Sticky sidebar TOC */}
           <aside className="hidden lg:block">
             <nav className="sticky top-24 space-y-1">
-              <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-gray-400">
+              <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
                 On this page
               </p>
               {TOC.map((item) => (
                 <a
                   key={item.id}
                   href={`#${item.id}`}
-                  className="block rounded-md px-3 py-1.5 text-sm text-gray-600 hover:bg-[#2E86C1]/10 hover:text-[#1A5276] transition-colors"
+                  className="block rounded-md px-3 py-1.5 text-sm text-muted-foreground hover:bg-primary/10 hover:text-foreground transition-colors"
                 >
                   {item.label}
                 </a>
@@ -109,48 +109,48 @@ export default function TextComparisonPage() {
 
             {/* ── When & Why ──────────────────────────────────── */}
             <Section id="when-why" title="When and Why You Compare Texts">
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed">
                 In literature exams, comparison is not always a separate question -- it is often embedded into character and theme questions. Understanding when and why to compare will help you unlock the highest marks.
               </p>
 
               <div className="mt-6 space-y-4">
-                <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-                  <h3 className="font-bold text-[#1A5276]">Within a Single Text</h3>
-                  <p className="mt-2 text-sm text-gray-600 leading-relaxed">
+                <div className="rounded-xl border border-border bg-card p-5 shadow-md">
+                  <h3 className="font-bold text-foreground">Within a Single Text</h3>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                     Many questions implicitly ask you to compare characters or themes within the same text. For example, comparing Macbeth and Lady Macbeth&rsquo;s guilt, or comparing how a character changes from the beginning to the end of the play. Even if the question does not use the word &ldquo;compare,&rdquo; drawing comparisons shows sophisticated understanding.
                   </p>
-                  <div className="mt-3 rounded-lg bg-[#2E86C1]/5 p-3">
-                    <p className="text-sm text-[#1A5276]">
+                  <div className="mt-3 rounded-lg bg-primary/5 p-3">
+                    <p className="text-sm text-foreground">
                       <span className="font-semibold">Example questions:</span> &ldquo;How does Shakespeare present guilt in Macbeth?&rdquo; -- you should compare Macbeth and Lady Macbeth&rsquo;s different experiences of guilt.
                     </p>
                   </div>
                 </div>
 
-                <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-                  <h3 className="font-bold text-[#1A5276]">Across Two Texts</h3>
-                  <p className="mt-2 text-sm text-gray-600 leading-relaxed">
+                <div className="rounded-xl border border-border bg-card p-5 shadow-md">
+                  <h3 className="font-bold text-foreground">Across Two Texts</h3>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                     Some exam boards (notably AQA Literature Paper 2) explicitly require you to compare two texts. For instance, comparing how power is presented in &lsquo;An Inspector Calls&rsquo; and &lsquo;A Christmas Carol&rsquo;. Here, you need to write about both texts in an integrated way, not as two separate essays.
                   </p>
-                  <div className="mt-3 rounded-lg bg-[#2E86C1]/5 p-3">
-                    <p className="text-sm text-[#1A5276]">
+                  <div className="mt-3 rounded-lg bg-primary/5 p-3">
+                    <p className="text-sm text-foreground">
                       <span className="font-semibold">Example questions:</span> &ldquo;Compare how Priestley and Dickens present social responsibility.&rdquo;
                     </p>
                   </div>
                 </div>
 
-                <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-                  <h3 className="font-bold text-[#1A5276]">Why Examiners Value Comparison</h3>
-                  <ul className="mt-2 space-y-2 text-sm text-gray-600">
+                <div className="rounded-xl border border-border bg-card p-5 shadow-md">
+                  <h3 className="font-bold text-foreground">Why Examiners Value Comparison</h3>
+                  <ul className="mt-2 space-y-2 text-sm text-muted-foreground">
                     <li className="flex gap-2">
-                      <span className="mt-0.5 shrink-0 text-[#2E86C1]">&#9679;</span>
+                      <span className="mt-0.5 shrink-0 text-primary">&#9679;</span>
                       It demonstrates deeper understanding -- you see patterns and connections, not just surface-level ideas.
                     </li>
                     <li className="flex gap-2">
-                      <span className="mt-0.5 shrink-0 text-[#2E86C1]">&#9679;</span>
+                      <span className="mt-0.5 shrink-0 text-primary">&#9679;</span>
                       It shows analytical sophistication -- comparing methods (not just themes) proves you understand how writers create meaning.
                     </li>
                     <li className="flex gap-2">
-                      <span className="mt-0.5 shrink-0 text-[#2E86C1]">&#9679;</span>
+                      <span className="mt-0.5 shrink-0 text-primary">&#9679;</span>
                       It enables evaluative judgement -- weighing up two perspectives is a higher-order skill that pushes you into the top mark bands.
                     </li>
                   </ul>
@@ -160,7 +160,7 @@ export default function TextComparisonPage() {
 
             {/* ── Cross-Text Technique ────────────────────────── */}
             <Section id="technique" title="Cross-Text Comparison Technique">
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed">
                 Use this framework for every cross-text comparison paragraph. It ensures you analyse methods, make connections, and stay focused on the question.
               </p>
 
@@ -178,14 +178,14 @@ export default function TextComparisonPage() {
                     label: "Evidence (Text A)",
                     detail: "Provide a short, embedded quotation from the first text/character. Choose a quotation rich in techniques.",
                     example: "Macbeth's hallucination of the \"dagger\" before Duncan's murder shows his guilt manifesting as paranoid visions.",
-                    colour: "bg-[#2E86C1]",
+                    colour: "bg-primary",
                   },
                   {
                     step: "A",
                     label: "Analyse (Text A)",
                     detail: "Analyse the language, structure, or dramatic technique. Name the device and explain its effect.",
                     example: "The hallucination externalises Macbeth's inner turmoil, and the interrogative \"Is this a dagger which I see before me?\" reveals his psychological fragmentation.",
-                    colour: "bg-[#2E86C1]",
+                    colour: "bg-primary",
                   },
                   {
                     step: "C",
@@ -209,15 +209,15 @@ export default function TextComparisonPage() {
                     colour: "bg-[#8E44AD]",
                   },
                 ].map((item) => (
-                  <div key={item.step + item.label} className="flex gap-4 rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+                  <div key={item.step + item.label} className="flex gap-4 rounded-xl border border-border bg-card p-5 shadow-md">
                     <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full ${item.colour} text-sm font-bold text-white`}>
                       {item.step}
                     </div>
                     <div>
-                      <h3 className="font-bold text-gray-900">{item.label}</h3>
-                      <p className="mt-1 text-sm leading-relaxed text-gray-600">{item.detail}</p>
-                      <div className="mt-2 rounded-lg bg-gray-50 px-4 py-3">
-                        <p className="text-sm italic text-gray-700">{item.example}</p>
+                      <h3 className="font-bold text-foreground">{item.label}</h3>
+                      <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{item.detail}</p>
+                      <div className="mt-2 rounded-lg bg-muted px-4 py-3">
+                        <p className="text-sm italic text-muted-foreground">{item.example}</p>
                       </div>
                     </div>
                   </div>
@@ -227,17 +227,17 @@ export default function TextComparisonPage() {
 
             {/* ── Example: Macbeth ────────────────────────────── */}
             <Section id="example-macbeth" title="Example: Comparing Macbeth and Lady Macbeth's Guilt">
-              <div className="rounded-xl border border-gray-200 bg-gray-50 p-4 mb-6">
-                <p className="text-sm font-semibold text-[#1A5276]">Question:</p>
-                <p className="mt-1 text-sm italic text-gray-700">
+              <div className="rounded-xl border border-border bg-muted p-4 mb-6">
+                <p className="text-sm font-semibold text-foreground">Question:</p>
+                <p className="mt-1 text-sm italic text-muted-foreground">
                   How does Shakespeare present guilt in &lsquo;Macbeth&rsquo;?
                 </p>
               </div>
 
-              <div className="rounded-xl border-2 border-[#2E86C1]/30 bg-white p-6 sm:p-8">
-                <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-[#2E86C1]">Model Comparative Response</p>
+              <div className="rounded-xl border-2 border-[#2E86C1]/30 bg-card p-6 sm:p-8">
+                <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-primary">Model Comparative Response</p>
 
-                <div className="space-y-4 text-sm leading-relaxed text-gray-700">
+                <div className="space-y-4 text-sm leading-relaxed text-muted-foreground">
                   <p>
                     <Annotation note="Comparative thesis immediately addressing the question.">Shakespeare presents guilt as an inescapable psychological force that manifests differently in Macbeth and Lady Macbeth, ultimately destroying both.</Annotation>{" "}
                     While Macbeth&rsquo;s guilt is immediate and visceral, consuming him from the moment of Duncan&rsquo;s murder, Lady Macbeth&rsquo;s guilt is suppressed and delayed, erupting catastrophically in the play&rsquo;s final act. Through this contrast, Shakespeare suggests that guilt cannot be controlled or escaped, regardless of one&rsquo;s temperament.
@@ -269,17 +269,17 @@ export default function TextComparisonPage() {
 
             {/* ── Example: Inspector Goole vs Birling ─────────── */}
             <Section id="example-inspector" title="Example: Comparing Inspector Goole and Arthur Birling">
-              <div className="rounded-xl border border-gray-200 bg-gray-50 p-4 mb-6">
-                <p className="text-sm font-semibold text-[#1A5276]">Question:</p>
-                <p className="mt-1 text-sm italic text-gray-700">
+              <div className="rounded-xl border border-border bg-muted p-4 mb-6">
+                <p className="text-sm font-semibold text-foreground">Question:</p>
+                <p className="mt-1 text-sm italic text-muted-foreground">
                   How does Priestley use the characters of Inspector Goole and Arthur Birling to present ideas about responsibility in &lsquo;An Inspector Calls&rsquo;?
                 </p>
               </div>
 
-              <div className="rounded-xl border-2 border-[#2E86C1]/30 bg-white p-6 sm:p-8">
-                <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-[#2E86C1]">Model Comparative Response</p>
+              <div className="rounded-xl border-2 border-[#2E86C1]/30 bg-card p-6 sm:p-8">
+                <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-primary">Model Comparative Response</p>
 
-                <div className="space-y-4 text-sm leading-relaxed text-gray-700">
+                <div className="space-y-4 text-sm leading-relaxed text-muted-foreground">
                   <p>
                     <Annotation note="Comparative thesis linking both characters to the question focus.">Priestley presents Inspector Goole and Arthur Birling as ideological opposites, using their contrasting views on responsibility to dramatise the central conflict of the play.</Annotation>{" "}
                     Birling represents capitalist individualism and the refusal to accept social responsibility, while the Inspector embodies Priestley&rsquo;s own socialist conviction that &ldquo;we are members of one body.&rdquo; Through their confrontation, Priestley asks the audience to choose which vision of society they wish to endorse.

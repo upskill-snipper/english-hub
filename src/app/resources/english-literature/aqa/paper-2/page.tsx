@@ -168,48 +168,48 @@ export default function Paper2Page() {
 
       {/* Paper structure */}
       <section className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
-        <h2 className="text-2xl font-bold text-gray-900">Paper Structure</h2>
+        <h2 className="text-2xl font-bold text-foreground">Paper Structure</h2>
         <div className="mt-6 grid gap-6 sm:grid-cols-3">
-          <div className="rounded-xl border border-gray-200 p-6">
+          <div className="rounded-xl border border-border p-6">
             <h3 className="text-lg font-bold text-primary">
               Section A: Modern Texts (34 marks)
             </h3>
-            <ul className="mt-3 space-y-2 text-xs text-gray-600">
+            <ul className="mt-3 space-y-2 text-xs text-muted-foreground">
               <li>Answer on your studied modern prose or drama text</li>
               <li>One essay question from a choice of two</li>
               <li>No extract provided - write from memory</li>
               <li>
-                <span className="font-medium text-gray-800">Time:</span> ~45
+                <span className="font-medium text-foreground">Time:</span> ~45
                 minutes
               </li>
               <li>AO1 (12), AO2 (12), AO3 (6), AO4 (4 SPaG)</li>
             </ul>
           </div>
-          <div className="rounded-xl border border-gray-200 p-6">
+          <div className="rounded-xl border border-border p-6">
             <h3 className="text-lg font-bold text-primary">
               Section B: Poetry Anthology (30 marks)
             </h3>
-            <ul className="mt-3 space-y-2 text-xs text-gray-600">
+            <ul className="mt-3 space-y-2 text-xs text-muted-foreground">
               <li>One poem printed for you from the anthology</li>
               <li>Compare it with another poem of your choice</li>
               <li>Must be from the same cluster (Power and Conflict)</li>
               <li>
-                <span className="font-medium text-gray-800">Time:</span> ~45
+                <span className="font-medium text-foreground">Time:</span> ~45
                 minutes
               </li>
               <li>AO1 (12), AO2 (12), AO3 (6)</li>
             </ul>
           </div>
-          <div className="rounded-xl border border-gray-200 p-6">
+          <div className="rounded-xl border border-border p-6">
             <h3 className="text-lg font-bold text-primary">
               Section C: Unseen Poetry (32 marks)
             </h3>
-            <ul className="mt-3 space-y-2 text-xs text-gray-600">
+            <ul className="mt-3 space-y-2 text-xs text-muted-foreground">
               <li>Part 1: Analyse one unseen poem (24 marks)</li>
               <li>Part 2: Compare with a second unseen poem (8 marks)</li>
               <li>No prior knowledge needed - just analytical skills</li>
               <li>
-                <span className="font-medium text-gray-800">Time:</span> ~45
+                <span className="font-medium text-foreground">Time:</span> ~45
                 minutes (30 + 15)
               </li>
               <li>AO1 (12), AO2 (12) for Part 1; AO2 (8) for Part 2</li>
@@ -219,12 +219,12 @@ export default function Paper2Page() {
       </section>
 
       {/* Modern texts */}
-      <section className="bg-gray-50 px-4 py-12 sm:py-16">
+      <section className="bg-muted px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Section A: Modern Texts
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             You study one modern prose or drama text. This is a closed-book
             essay with no extract - you must use memorised quotations.
           </p>
@@ -233,10 +233,10 @@ export default function Paper2Page() {
             {modernTexts.map((text) => (
               <div
                 key={text.title}
-                className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
+                className="rounded-xl border border-border bg-card p-6 shadow-md"
               >
                 <div className="flex flex-wrap items-center gap-3">
-                  <h3 className="text-lg font-bold text-gray-900">
+                  <h3 className="text-lg font-bold text-foreground">
                     {text.href.startsWith("/") ? (
                       <Link
                         href={text.href}
@@ -252,8 +252,8 @@ export default function Paper2Page() {
                     {text.popularity}
                   </span>
                 </div>
-                <p className="text-xs text-gray-500 mt-1">{text.author}</p>
-                <p className="mt-2 text-sm text-gray-600 leading-relaxed">
+                <p className="text-xs text-muted-foreground mt-1">{text.author}</p>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   {text.summary}
                 </p>
                 <div className="mt-3 flex flex-wrap gap-2">
@@ -278,10 +278,10 @@ export default function Paper2Page() {
 
       {/* Poetry anthology */}
       <section className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
-        <h2 className="text-2xl font-bold text-gray-900">
+        <h2 className="text-2xl font-bold text-foreground">
           Section B: Power and Conflict Poetry Anthology
         </h2>
-        <p className="mt-2 text-gray-600">
+        <p className="mt-2 text-muted-foreground">
           You must know all 15 poems. One will be printed in the exam; you
           choose a second to compare it with.
         </p>
@@ -289,7 +289,7 @@ export default function Paper2Page() {
         <div className="mt-6">
           <Link
             href="/resources/english-literature/aqa/poetry"
-            className="inline-flex items-center rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-accent-600"
+            className="inline-flex items-center rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-white shadow-md transition hover:bg-accent-600"
           >
             View Full Poetry Analysis Guide
             <svg
@@ -312,16 +312,16 @@ export default function Paper2Page() {
           {poems.map((poem, i) => (
             <div
               key={poem.title}
-              className="flex items-center gap-3 rounded-lg border border-gray-200 p-4"
+              className="flex items-center gap-3 rounded-lg border border-border p-4"
             >
               <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
                 {i + 1}
               </span>
               <div>
-                <p className="text-sm font-semibold text-gray-900">
+                <p className="text-sm font-semibold text-foreground">
                   {poem.title}
                 </p>
-                <p className="text-xs text-gray-500">{poem.author}</p>
+                <p className="text-xs text-muted-foreground">{poem.author}</p>
               </div>
             </div>
           ))}
@@ -329,10 +329,10 @@ export default function Paper2Page() {
 
         {/* Comparison pairs */}
         <div className="mt-10">
-          <h3 className="text-lg font-bold text-gray-900">
+          <h3 className="text-lg font-bold text-foreground">
             Key Comparison Pairs
           </h3>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-sm text-muted-foreground">
             Having pre-prepared comparison pairs saves time in the exam. Here
             are reliable pairings by theme:
           </p>
@@ -380,12 +380,12 @@ export default function Paper2Page() {
             ].map((pair) => (
               <div
                 key={pair.theme}
-                className="rounded-lg border border-gray-200 p-4"
+                className="rounded-lg border border-border p-4"
               >
                 <p className="text-sm font-semibold text-primary">
                   {pair.theme}
                 </p>
-                <ul className="mt-2 space-y-1 text-xs text-gray-600">
+                <ul className="mt-2 space-y-1 text-xs text-muted-foreground">
                   {pair.poems.map((p) => (
                     <li key={p}>{p}</li>
                   ))}
@@ -399,21 +399,21 @@ export default function Paper2Page() {
       {/* Unseen poetry technique */}
       <section className="bg-primary-50 px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Section C: Unseen Poetry Technique
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             You will see two poems you have never read before. Part 1 asks you
             to analyse one poem (24 marks, ~30 minutes). Part 2 asks you to
             compare it with a second poem (8 marks, ~15 minutes).
           </p>
 
           <div className="mt-8 grid gap-6 lg:grid-cols-2">
-            <div className="rounded-xl bg-white p-6 shadow-sm border border-gray-200">
+            <div className="rounded-xl bg-card p-6 shadow-md border border-border">
               <h3 className="text-lg font-bold text-primary">
                 Part 1: Analysing a Single Unseen Poem (24 marks)
               </h3>
-              <ol className="mt-4 space-y-3 text-sm text-gray-700 list-decimal pl-5">
+              <ol className="mt-4 space-y-3 text-sm text-muted-foreground list-decimal pl-5">
                 <li>
                   <span className="font-semibold">Read the poem three times.</span>{" "}
                   First for the overall gist, second to identify the speaker
@@ -449,11 +449,11 @@ export default function Paper2Page() {
               </ol>
             </div>
 
-            <div className="rounded-xl bg-white p-6 shadow-sm border border-gray-200">
+            <div className="rounded-xl bg-card p-6 shadow-md border border-border">
               <h3 className="text-lg font-bold text-primary">
                 Part 2: Comparing Two Unseen Poems (8 marks)
               </h3>
-              <div className="mt-4 space-y-3 text-sm text-gray-700">
+              <div className="mt-4 space-y-3 text-sm text-muted-foreground">
                 <p>
                   This is worth only 8 marks, so keep it concise. Write 2-3
                   comparative paragraphs in about 15 minutes.
@@ -489,7 +489,7 @@ export default function Paper2Page() {
                   <h4 className="font-semibold text-accent-700 text-xs uppercase tracking-wider">
                     Useful comparison sentence starters
                   </h4>
-                  <ul className="mt-2 space-y-1 text-xs text-gray-700 italic">
+                  <ul className="mt-2 space-y-1 text-xs text-muted-foreground italic">
                     <li>
                       &quot;Both poems explore [theme], yet they differ in...&quot;
                     </li>
@@ -512,7 +512,7 @@ export default function Paper2Page() {
           </div>
 
           {/* Technique checklist */}
-          <div className="mt-8 rounded-xl bg-white p-6 shadow-sm border border-gray-200">
+          <div className="mt-8 rounded-xl bg-card p-6 shadow-md border border-border">
             <h3 className="text-lg font-bold text-primary">
               Techniques to Look For in Unseen Poetry
             </h3>
@@ -562,7 +562,7 @@ export default function Paper2Page() {
                   <p className="text-sm font-semibold text-primary">
                     {group.category}
                   </p>
-                  <ul className="mt-2 space-y-1 text-xs text-gray-600">
+                  <ul className="mt-2 space-y-1 text-xs text-muted-foreground">
                     {group.techniques.map((t) => (
                       <li key={t} className="flex items-center gap-1.5">
                         <span className="h-1 w-1 rounded-full bg-accent" />

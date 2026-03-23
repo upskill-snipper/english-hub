@@ -154,14 +154,14 @@ export default function OCRRomeoAndJulietPage() {
         <section aria-labelledby="format-heading">
           <h2
             id="format-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             OCR Exam Format
           </h2>
           <div className="mt-4 space-y-3">
             <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
               <p className="font-semibold text-primary">Component 01: Exploring Modern and Literary Heritage Texts</p>
-              <p className="mt-1 text-sm text-gray-700">
+              <p className="mt-1 text-sm text-muted-foreground">
                 Section A &mdash; Shakespeare. You will be given an extract
                 from Romeo and Juliet and asked a question about a theme or
                 character. You must analyse the extract <strong>and</strong>{" "}
@@ -173,20 +173,20 @@ export default function OCRRomeoAndJulietPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* Plot summary */}
         <section aria-labelledby="plot-heading">
           <h2
             id="plot-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Plot Summary
           </h2>
-          <div className="mt-4 space-y-4 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <div className="space-y-3">
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                <p className="font-semibold text-gray-900">Act 1: The Feud and the Meeting</p>
+              <div className="rounded-lg border border-border bg-muted p-4">
+                <p className="font-semibold text-foreground">Act 1: The Feud and the Meeting</p>
                 <p className="mt-2 text-sm">
                   The Prologue reveals that two feuding families in Verona
                   &mdash; the Montagues and Capulets &mdash; will lose their
@@ -200,8 +200,8 @@ export default function OCRRomeoAndJulietPage() {
                   belong to rival families.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                <p className="font-semibold text-gray-900">Act 2: The Secret Marriage</p>
+              <div className="rounded-lg border border-border bg-muted p-4">
+                <p className="font-semibold text-foreground">Act 2: The Secret Marriage</p>
                 <p className="mt-2 text-sm">
                   Romeo sneaks into the Capulet orchard and overhears Juliet on
                   her balcony declaring her love for him. They exchange vows of
@@ -214,8 +214,8 @@ export default function OCRRomeoAndJulietPage() {
                   pace.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                <p className="font-semibold text-gray-900">Act 3: The Turning Point</p>
+              <div className="rounded-lg border border-border bg-muted p-4">
+                <p className="font-semibold text-foreground">Act 3: The Turning Point</p>
                 <p className="mt-2 text-sm">
                   Tybalt challenges Romeo to a duel. Romeo, now secretly
                   Tybalt&rsquo;s kinsman by marriage, refuses to fight.
@@ -228,8 +228,8 @@ export default function OCRRomeoAndJulietPage() {
                   refuses, he threatens to disown her.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                <p className="font-semibold text-gray-900">Act 4: The Desperate Plan</p>
+              <div className="rounded-lg border border-border bg-muted p-4">
+                <p className="font-semibold text-foreground">Act 4: The Desperate Plan</p>
                 <p className="mt-2 text-sm">
                   Desperate and abandoned by the Nurse (who advises her to marry
                   Paris), Juliet turns to Friar Lawrence. He gives her a potion
@@ -240,8 +240,8 @@ export default function OCRRomeoAndJulietPage() {
                   The Capulet household is plunged into grief.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                <p className="font-semibold text-gray-900">Act 5: The Tragedy</p>
+              <div className="rounded-lg border border-border bg-muted p-4">
+                <p className="font-semibold text-foreground">Act 5: The Tragedy</p>
                 <p className="mt-2 text-sm">
                   The Friar&rsquo;s letter explaining the plan fails to reach
                   Romeo in Mantua. Instead, Romeo hears that Juliet is dead. He
@@ -258,22 +258,22 @@ export default function OCRRomeoAndJulietPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* Characters */}
         <section aria-labelledby="characters-heading">
           <h2
             id="characters-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Character Analysis
           </h2>
 
           <div className="mt-6 space-y-6">
             {/* Romeo */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="rounded-lg border border-border bg-card p-6 shadow-md">
               <h3 className="text-xl font-semibold text-primary">Romeo</h3>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Romeo Montague is the play&rsquo;s tragic hero &mdash; a
                 passionate, impulsive young man whose capacity for intense love
                 is matched by his tendency towards rash action. When we first
@@ -284,7 +284,7 @@ export default function OCRRomeoAndJulietPage() {
                 the depth of his feelings, yet his language transforms from
                 clich&eacute;d to transcendent when he meets her.
               </p>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Romeo&rsquo;s fatal flaw is his impulsiveness. He rushes into
                 love, rushes into marriage, kills Tybalt in a moment of rage,
                 and kills himself without pausing to verify Juliet&rsquo;s
@@ -305,9 +305,9 @@ export default function OCRRomeoAndJulietPage() {
             </div>
 
             {/* Juliet */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="rounded-lg border border-border bg-card p-6 shadow-md">
               <h3 className="text-xl font-semibold text-primary">Juliet</h3>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Juliet Capulet is only thirteen years old, yet she emerges as
                 the play&rsquo;s most mature and articulate character.
                 Initially presented as an obedient daughter (&ldquo;I&rsquo;ll
@@ -317,7 +317,7 @@ export default function OCRRomeoAndJulietPage() {
                 demonstrates philosophical sophistication as she questions the
                 arbitrary power of names and family allegiances.
               </p>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Unlike Romeo, Juliet is pragmatic as well as passionate. She
                 insists on marriage rather than mere declarations of love, and
                 she is more aware of the dangers they face. When abandoned by
@@ -340,9 +340,9 @@ export default function OCRRomeoAndJulietPage() {
             </div>
 
             {/* Friar Lawrence */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="rounded-lg border border-border bg-card p-6 shadow-md">
               <h3 className="text-xl font-semibold text-primary">Friar Lawrence</h3>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Friar Lawrence is a complex figure who functions as both a
                 mentor and a catalyst for tragedy. His knowledge of herbs and
                 potions (&ldquo;Within the infant rind of this small
@@ -352,7 +352,7 @@ export default function OCRRomeoAndJulietPage() {
                 hoping to end the feud, showing good intentions but flawed
                 judgement.
               </p>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 The Friar repeatedly warns against haste (&ldquo;Wisely and
                 slow. They stumble that run fast&rdquo;), yet ironically
                 devises the most reckless plan of all &mdash; the sleeping
@@ -365,9 +365,9 @@ export default function OCRRomeoAndJulietPage() {
             </div>
 
             {/* Mercutio */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="rounded-lg border border-border bg-card p-6 shadow-md">
               <h3 className="text-xl font-semibold text-primary">Mercutio</h3>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Mercutio is Romeo&rsquo;s closest friend and the play&rsquo;s
                 most charismatic character &mdash; witty, irreverent, and
                 scornful of romantic love. His Queen Mab speech (Act 1, Scene
@@ -377,7 +377,7 @@ export default function OCRRomeoAndJulietPage() {
                 bawdy physicality, offering a counterpoint to Romeo&rsquo;s
                 idealism.
               </p>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Mercutio is neither Montague nor Capulet, which makes his death
                 at Tybalt&rsquo;s hands particularly tragic &mdash; he is an
                 innocent casualty of a feud that is not his own. His dying
@@ -389,9 +389,9 @@ export default function OCRRomeoAndJulietPage() {
             </div>
 
             {/* Tybalt */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="rounded-lg border border-border bg-card p-6 shadow-md">
               <h3 className="text-xl font-semibold text-primary">Tybalt</h3>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Tybalt is the embodiment of the feud &mdash; aggressive,
                 honour-driven, and defined entirely by his hatred of the
                 Montagues. Known as the &ldquo;Prince of Cats&rdquo; for his
@@ -401,7 +401,7 @@ export default function OCRRomeoAndJulietPage() {
                 should be a Montague. / Fetch me my rapier, boy&rdquo;) shows
                 how the feud makes enemies of strangers.
               </p>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Tybalt&rsquo;s death is the play&rsquo;s pivotal moment. His
                 killing of Mercutio provokes Romeo&rsquo;s revenge, which
                 leads to Romeo&rsquo;s banishment and ultimately to the
@@ -413,9 +413,9 @@ export default function OCRRomeoAndJulietPage() {
             </div>
 
             {/* The Nurse */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="rounded-lg border border-border bg-card p-6 shadow-md">
               <h3 className="text-xl font-semibold text-primary">The Nurse</h3>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 The Nurse is Juliet&rsquo;s closest confidante and surrogate
                 mother, providing comic relief with her bawdy humour and
                 rambling speeches. She has raised Juliet since infancy and
@@ -424,7 +424,7 @@ export default function OCRRomeoAndJulietPage() {
                 marriage and acts as a go-between, showing loyalty to
                 Juliet&rsquo;s happiness over her parents&rsquo; wishes.
               </p>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 However, the Nurse&rsquo;s betrayal in Act 3, Scene 5 &mdash;
                 advising Juliet to forget Romeo and marry Paris (&ldquo;I
                 think it best you married with the County&rdquo;) &mdash; is a
@@ -437,9 +437,9 @@ export default function OCRRomeoAndJulietPage() {
             </div>
 
             {/* Lord Capulet */}
-            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="rounded-lg border border-border bg-card p-6 shadow-md">
               <h3 className="text-xl font-semibold text-primary">Lord Capulet</h3>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 Lord Capulet is initially presented as a reasonable father who
                 tells Paris that Juliet is too young for marriage and that her
                 consent matters (&ldquo;My will to her consent is but a
@@ -448,7 +448,7 @@ export default function OCRRomeoAndJulietPage() {
                 knowledge and erupting in violent fury when she refuses
                 (&ldquo;Hang thee, young baggage! Disobedient wretch!&rdquo;).
               </p>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                 His transformation reveals the patriarchal power structures of
                 Elizabethan society, where daughters were essentially their
                 fathers&rsquo; property. Shakespeare uses Capulet to show how
@@ -460,23 +460,23 @@ export default function OCRRomeoAndJulietPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* Themes */}
         <section aria-labelledby="themes-heading">
           <h2
             id="themes-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Key Themes
           </h2>
 
           <div className="mt-6 space-y-6">
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="text-lg font-semibold text-gray-900">
+            <div className="rounded-lg border border-border bg-muted p-5">
+              <h3 className="text-lg font-semibold text-foreground">
                 Love
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Shakespeare explores multiple forms of love: the shallow,
                 Petrarchan love Romeo feels for Rosaline; the transcendent,
                 transformative love between Romeo and Juliet; the bawdy,
@@ -489,7 +489,7 @@ export default function OCRRomeoAndJulietPage() {
                 and Shakespeare suggests that such extreme passion can only
                 exist briefly before it is destroyed.
               </p>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 <strong>Key quote:</strong> &ldquo;My bounty is as boundless
                 as the sea, / My love as deep; the more I give to thee, / The
                 more I have, for both are infinite&rdquo; &mdash; Juliet
@@ -498,11 +498,11 @@ export default function OCRRomeoAndJulietPage() {
               </p>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="text-lg font-semibold text-gray-900">
+            <div className="rounded-lg border border-border bg-muted p-5">
+              <h3 className="text-lg font-semibold text-foreground">
                 Fate and Free Will
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 The Prologue introduces Romeo and Juliet as &ldquo;star-cross&rsquo;d
                 lovers,&rdquo; suggesting their fate is written in the stars.
                 Throughout the play, references to fate, fortune, and destiny
@@ -515,18 +515,18 @@ export default function OCRRomeoAndJulietPage() {
                 whether the lovers are truly fated, or whether their tragedy
                 is the consequence of a society poisoned by hatred.
               </p>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 <strong>Key quote:</strong> &ldquo;Then I defy you, stars!&rdquo;
                 &mdash; Romeo&rsquo;s attempt to defy fate ironically fulfils
                 it.
               </p>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="text-lg font-semibold text-gray-900">
+            <div className="rounded-lg border border-border bg-muted p-5">
+              <h3 className="text-lg font-semibold text-foreground">
                 Conflict and Violence
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 The feud between the Montagues and Capulets is the engine of
                 the tragedy. Shakespeare presents the conflict as senseless
                 and self-perpetuating &mdash; an &ldquo;ancient grudge&rdquo;
@@ -539,18 +539,18 @@ export default function OCRRomeoAndJulietPage() {
                 futile &mdash; the feud achieves nothing except the
                 destruction of the families&rsquo; own children.
               </p>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 <strong>Key quote:</strong> &ldquo;A plague o&rsquo; both your
                 houses!&rdquo; &mdash; Mercutio&rsquo;s dying curse condemns
                 the senselessness of the feud.
               </p>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="text-lg font-semibold text-gray-900">
+            <div className="rounded-lg border border-border bg-muted p-5">
+              <h3 className="text-lg font-semibold text-foreground">
                 Light and Dark
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Light and dark imagery permeates the play. Romeo repeatedly
                 associates Juliet with light (&ldquo;Juliet is the
                 sun,&rdquo; &ldquo;she doth teach the torches to burn
@@ -563,18 +563,18 @@ export default function OCRRomeoAndJulietPage() {
                 both lovers die in the darkness of the Capulet tomb, where
                 their &ldquo;light&rdquo; is extinguished.
               </p>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 <strong>Key quote:</strong> &ldquo;It is the East, and Juliet
                 is the sun&rdquo; &mdash; Romeo elevates Juliet to a cosmic
                 force, yet the sun must always set.
               </p>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="text-lg font-semibold text-gray-900">
+            <div className="rounded-lg border border-border bg-muted p-5">
+              <h3 className="text-lg font-semibold text-foreground">
                 Youth vs Age
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 The play dramatises a generational divide. The young lovers
                 represent hope, passion, and the possibility of change, while
                 the older generation &mdash; Lord Capulet, Lord Montague, and
@@ -588,18 +588,18 @@ export default function OCRRomeoAndJulietPage() {
                 perpetuate the feud and fail to understand the intensity of
                 youthful love.
               </p>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 <strong>Key quote:</strong> &ldquo;These violent delights have
                 violent ends&rdquo; &mdash; the Friar understands the danger
                 but cannot prevent it.
               </p>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="text-lg font-semibold text-gray-900">
+            <div className="rounded-lg border border-border bg-muted p-5">
+              <h3 className="text-lg font-semibold text-foreground">
                 Death and Time
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Death haunts the play from the Prologue&rsquo;s revelation of
                 the &ldquo;death-mark&rsquo;d&rdquo; love. Shakespeare
                 repeatedly personifies Death as Juliet&rsquo;s rival lover
@@ -612,18 +612,18 @@ export default function OCRRomeoAndJulietPage() {
                 of the tragedy &mdash; if Romeo had waited even moments
                 longer, Juliet would have woken.
               </p>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 <strong>Key quote:</strong> &ldquo;Wisely and slow. They
                 stumble that run fast&rdquo; &mdash; the Friar&rsquo;s
                 warning about the danger of haste proves tragically prophetic.
               </p>
             </div>
 
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="text-lg font-semibold text-gray-900">
+            <div className="rounded-lg border border-border bg-muted p-5">
+              <h3 className="text-lg font-semibold text-foreground">
                 Gender and Patriarchy
               </h3>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Juliet exists within a patriarchal society where women are
                 expected to obey their fathers and husbands. Lord Capulet
                 treats her as property to be given in marriage (&ldquo;An you
@@ -638,7 +638,7 @@ export default function OCRRomeoAndJulietPage() {
                 with honour and violence is also critiqued as a form of toxic
                 masculinity that destroys everything it claims to protect.
               </p>
-              <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 <strong>Key quote:</strong> &ldquo;O happy dagger, / This is
                 thy sheath&rdquo; &mdash; Juliet&rsquo;s final act is one of
                 agency and self-determination.
@@ -647,17 +647,17 @@ export default function OCRRomeoAndJulietPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* Key quotations */}
         <section aria-labelledby="quotations-heading">
           <h2
             id="quotations-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Key Quotations with Analysis
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             Learn these quotations for the closed-book exam. Each one can be
             applied to multiple themes and characters.
           </p>
@@ -666,15 +666,15 @@ export default function OCRRomeoAndJulietPage() {
             {keyQuotations.map((q) => (
               <div
                 key={q.quote}
-                className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm"
+                className="rounded-lg border border-border bg-card p-5 shadow-md"
               >
-                <blockquote className="border-l-4 border-accent pl-4 text-lg font-medium italic text-gray-800">
+                <blockquote className="border-l-4 border-accent pl-4 text-lg font-medium italic text-foreground">
                   &ldquo;{q.quote}&rdquo;
                 </blockquote>
                 <p className="mt-2 text-sm font-medium text-primary">
                   {q.speaker}
                 </p>
-                <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   {q.analysis}
                 </p>
               </div>
@@ -682,24 +682,24 @@ export default function OCRRomeoAndJulietPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* Context */}
         <section aria-labelledby="context-heading">
           <h2
             id="context-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Elizabethan Context
           </h2>
-          <div className="mt-4 space-y-4 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>
               Understanding context is essential for AO3. Here are the key
               contextual areas to know for Romeo and Juliet:
             </p>
             <div className="space-y-4">
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="font-semibold text-gray-900">Elizabethan Marriage and Patriarchy</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="font-semibold text-foreground">Elizabethan Marriage and Patriarchy</h3>
                 <p className="mt-2 text-sm">
                   In Elizabethan England, marriages were typically arranged by
                   parents, especially among the wealthy. Women were legally the
@@ -711,8 +711,8 @@ export default function OCRRomeoAndJulietPage() {
                   to question the justice of patriarchal authority.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="font-semibold text-gray-900">Honour and the Code of Vengeance</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="font-semibold text-foreground">Honour and the Code of Vengeance</h3>
                 <p className="mt-2 text-sm">
                   Italian and Elizabethan societies placed enormous value on
                   family honour. An insult to one family member demanded a
@@ -724,8 +724,8 @@ export default function OCRRomeoAndJulietPage() {
                   conflicts into fatal violence.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="font-semibold text-gray-900">The Role of the Church</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="font-semibold text-foreground">The Role of the Church</h3>
                 <p className="mt-2 text-sm">
                   The Church was central to Elizabethan life, and Friar
                   Lawrence represents its authority. Marriage was a sacrament
@@ -737,8 +737,8 @@ export default function OCRRomeoAndJulietPage() {
                   deception, even if his intentions are good.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="font-semibold text-gray-900">Petrarchan Love Poetry</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="font-semibold text-foreground">Petrarchan Love Poetry</h3>
                 <p className="mt-2 text-sm">
                   Romeo&rsquo;s early language draws on the conventions of
                   Petrarchan love poetry &mdash; a tradition where the male
@@ -752,8 +752,8 @@ export default function OCRRomeoAndJulietPage() {
                   tradition.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="font-semibold text-gray-900">Fate and Fortune in Elizabethan Thought</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="font-semibold text-foreground">Fate and Fortune in Elizabethan Thought</h3>
                 <p className="mt-2 text-sm">
                   Elizabethans believed in the influence of the stars and
                   fortune on human affairs. The concept of the &ldquo;wheel of
@@ -766,8 +766,8 @@ export default function OCRRomeoAndJulietPage() {
                   about whether the tragedy is fated or self-inflicted.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="font-semibold text-gray-900">Italian Setting and Civil Disorder</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="font-semibold text-foreground">Italian Setting and Civil Disorder</h3>
                 <p className="mt-2 text-sm">
                   Shakespeare set the play in Verona, Italy, drawing on Arthur
                   Brooke&rsquo;s poem <em>The Tragicall Historye of Romeus and
@@ -785,17 +785,17 @@ export default function OCRRomeoAndJulietPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* Essay planning */}
         <section aria-labelledby="essay-heading">
           <h2
             id="essay-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             OCR Exam Technique
           </h2>
-          <div className="mt-4 space-y-4 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>
               Remember that the OCR Shakespeare question gives you an extract.
               You must analyse the extract <strong>and</strong> explore the
@@ -804,7 +804,7 @@ export default function OCRRomeoAndJulietPage() {
             <div className="space-y-3">
               <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                 <p className="font-semibold text-primary">Introduction (3&ndash;4 sentences)</p>
-                <p className="mt-1 text-sm text-gray-700">
+                <p className="mt-1 text-sm text-muted-foreground">
                   Address the question directly. State how Shakespeare
                   presents the theme/character in the extract and across the
                   play. Mention relevant context briefly.
@@ -812,7 +812,7 @@ export default function OCRRomeoAndJulietPage() {
               </div>
               <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                 <p className="font-semibold text-primary">Paragraph 1: Extract analysis</p>
-                <p className="mt-1 text-sm text-gray-700">
+                <p className="mt-1 text-sm text-muted-foreground">
                   Close analysis of language in the extract. Quote specific
                   words and phrases. Explore connotations and effects. Use
                   subject terminology. Link to context where relevant.
@@ -820,7 +820,7 @@ export default function OCRRomeoAndJulietPage() {
               </div>
               <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                 <p className="font-semibold text-primary">Paragraph 2: Extract analysis (continued)</p>
-                <p className="mt-1 text-sm text-gray-700">
+                <p className="mt-1 text-sm text-muted-foreground">
                   Second key point from the extract. Consider structural
                   features, dramatic techniques, or a different aspect of the
                   language.
@@ -828,7 +828,7 @@ export default function OCRRomeoAndJulietPage() {
               </div>
               <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                 <p className="font-semibold text-primary">Paragraph 3: Wider play (earlier in the text)</p>
-                <p className="mt-1 text-sm text-gray-700">
+                <p className="mt-1 text-sm text-muted-foreground">
                   Explore how the same theme/character is presented earlier in
                   the play. Use a memorised quotation. Compare with the
                   extract.
@@ -836,7 +836,7 @@ export default function OCRRomeoAndJulietPage() {
               </div>
               <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                 <p className="font-semibold text-primary">Paragraph 4: Wider play (later in the text)</p>
-                <p className="mt-1 text-sm text-gray-700">
+                <p className="mt-1 text-sm text-muted-foreground">
                   Explore how the theme/character develops or changes later.
                   Track the character&rsquo;s arc or the theme&rsquo;s
                   progression. Link to Shakespeare&rsquo;s message.
@@ -844,7 +844,7 @@ export default function OCRRomeoAndJulietPage() {
               </div>
               <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                 <p className="font-semibold text-primary">Conclusion</p>
-                <p className="mt-1 text-sm text-gray-700">
+                <p className="mt-1 text-sm text-muted-foreground">
                   Final evaluative judgement. What is Shakespeare&rsquo;s
                   overall message about this theme/character? Why does it
                   matter? Consider the effect on the audience.
@@ -853,37 +853,37 @@ export default function OCRRomeoAndJulietPage() {
             </div>
 
             <div className="mt-8">
-              <h3 className="text-lg font-semibold text-gray-900">
+              <h3 className="text-lg font-semibold text-foreground">
                 Example OCR-Style Questions
               </h3>
               <div className="mt-4 space-y-3">
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                  <p className="text-sm font-medium text-gray-900">
+                <div className="rounded-lg border border-border bg-muted p-4">
+                  <p className="text-sm font-medium text-foreground">
                     1. Explore how Shakespeare presents the theme of love in this extract and elsewhere in the play.
                   </p>
                 </div>
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                  <p className="text-sm font-medium text-gray-900">
+                <div className="rounded-lg border border-border bg-muted p-4">
+                  <p className="text-sm font-medium text-foreground">
                     2. How does Shakespeare present conflict in this extract and elsewhere in the play?
                   </p>
                 </div>
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                  <p className="text-sm font-medium text-gray-900">
+                <div className="rounded-lg border border-border bg-muted p-4">
+                  <p className="text-sm font-medium text-foreground">
                     3. Explore how Shakespeare presents the character of Juliet in this extract and elsewhere in the play.
                   </p>
                 </div>
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                  <p className="text-sm font-medium text-gray-900">
+                <div className="rounded-lg border border-border bg-muted p-4">
+                  <p className="text-sm font-medium text-foreground">
                     4. How does Shakespeare present ideas about fate in this extract and elsewhere in the play?
                   </p>
                 </div>
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                  <p className="text-sm font-medium text-gray-900">
+                <div className="rounded-lg border border-border bg-muted p-4">
+                  <p className="text-sm font-medium text-foreground">
                     5. Explore how Shakespeare presents the relationship between parents and children in this extract and elsewhere in the play.
                   </p>
                 </div>
-                <div className="rounded-lg border border-gray-200 bg-gray-50 p-4">
-                  <p className="text-sm font-medium text-gray-900">
+                <div className="rounded-lg border border-border bg-muted p-4">
+                  <p className="text-sm font-medium text-foreground">
                     6. How does Shakespeare use the character of Romeo to explore ideas about masculinity in this extract and elsewhere in the play?
                   </p>
                 </div>

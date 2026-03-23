@@ -124,7 +124,7 @@ function ArrowRight() {
 
 function PoemIcon() {
   return (
-    <svg className="h-5 w-5 text-[#2E86C1]" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+    <svg className="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
       <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
     </svg>
   );
@@ -132,7 +132,7 @@ function PoemIcon() {
 
 function TechniquesIcon() {
   return (
-    <svg className="h-7 w-7 text-[#2E86C1]" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+    <svg className="h-7 w-7 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
       <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
     </svg>
   );
@@ -140,7 +140,7 @@ function TechniquesIcon() {
 
 function UnseenIcon() {
   return (
-    <svg className="h-7 w-7 text-[#2E86C1]" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+    <svg className="h-7 w-7 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
       <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
       <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
     </svg>
@@ -149,7 +149,7 @@ function UnseenIcon() {
 
 function CompareIcon() {
   return (
-    <svg className="h-7 w-7 text-[#2E86C1]" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+    <svg className="h-7 w-7 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
       <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 21 3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
     </svg>
   );
@@ -192,7 +192,7 @@ export function PoetryHubClient() {
       {/* ── Hero ─────────────────────────────────────────────────── */}
       <section className="bg-gradient-to-br from-[#1A5276] to-[#1A5276]/80 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-[#2E86C1]/70">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary/70">
             GCSE English Literature
           </p>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -215,8 +215,8 @@ export function PoetryHubClient() {
                 onClick={() => setActiveBoard(board)}
                 className={`rounded-full px-4 py-2 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white ${
                   activeBoard === board
-                    ? "bg-white text-[#1A5276] shadow-md"
-                    : "bg-white/15 text-white hover:bg-white/25 backdrop-blur-sm"
+                    ? "bg-card text-foreground shadow-md"
+                    : "bg-card/15 text-white hover:bg-card/25 backdrop-blur-sm"
                 }`}
               >
                 {board === "All" ? "All Boards" : board}
@@ -228,10 +228,10 @@ export function PoetryHubClient() {
 
       {/* ── Anthology sections ───────────────────────────────────── */}
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-gray-900">
+        <h2 className="text-2xl font-bold text-foreground">
           Anthology Analysis
         </h2>
-        <p className="mt-2 max-w-3xl text-gray-600">
+        <p className="mt-2 max-w-3xl text-muted-foreground">
           In-depth analysis of every poem in your exam board anthology.
           Stanza-by-stanza breakdowns, key quotations with technique
           identification, themes, context, and comparison links.
@@ -239,7 +239,7 @@ export function PoetryHubClient() {
 
         <div className="mt-8 grid gap-6 lg:grid-cols-3">
           {filteredAnthologies.length === 0 && (
-            <p className="col-span-full text-sm text-gray-500">
+            <p className="col-span-full text-sm text-muted-foreground">
               No anthology sections match the selected board. Try selecting
               &ldquo;All Boards&rdquo;.
             </p>
@@ -248,24 +248,24 @@ export function PoetryHubClient() {
             <Link
               key={section.href}
               href={section.href}
-              className={`group flex flex-col rounded-xl border-2 ${section.colour} bg-white p-6 shadow-sm transition hover:shadow-md`}
+              className={`group flex flex-col rounded-xl border-2 ${section.colour} bg-card p-6 shadow-md transition hover:shadow-md`}
             >
               <div className="flex items-center justify-between">
-                <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#1A5276]">
+                <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-foreground">
                   <PoemIcon />
                   {section.poems} poems
                 </span>
-                <span className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-600">
+                <span className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
                   {section.board}
                 </span>
               </div>
-              <h3 className="mt-3 text-lg font-bold text-gray-900 transition-colors group-hover:text-[#2E86C1]">
+              <h3 className="mt-3 text-lg font-bold text-foreground transition-colors group-hover:text-primary">
                 {section.title}
               </h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-gray-600">
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
                 {section.description}
               </p>
-              <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#2E86C1] transition-colors group-hover:text-[#1A5276]">
+              <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors group-hover:text-foreground">
                 View analysis <ArrowRight />
               </span>
             </Link>
@@ -274,10 +274,10 @@ export function PoetryHubClient() {
       </section>
 
       {/* ── Skills guides ────────────────────────────────────────── */}
-      <section className="bg-white px-4 py-12 sm:px-6 lg:px-8">
+      <section className="bg-card px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-2xl font-bold text-gray-900">Poetry Skills</h2>
-          <p className="mt-2 text-gray-600">
+          <h2 className="text-2xl font-bold text-foreground">Poetry Skills</h2>
+          <p className="mt-2 text-muted-foreground">
             Build the analytical skills you need for both anthology and unseen
             poetry questions.
           </p>
@@ -287,21 +287,21 @@ export function PoetryHubClient() {
               <Link
                 key={guide.href}
                 href={guide.href}
-                className="group flex flex-col rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition hover:border-[#2E86C1]/40 hover:shadow-md"
+                className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-md transition hover:border-[#2E86C1]/40 hover:shadow-md"
               >
                 <div className="flex items-center justify-between">
                   {getSkillIcon(guide.icon)}
-                  <span className="rounded-full bg-[#2E86C1]/10 px-3 py-1 text-xs font-semibold text-[#2E86C1]">
+                  <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
                     {guide.tag}
                   </span>
                 </div>
-                <h3 className="mt-4 text-lg font-bold text-gray-900 transition-colors group-hover:text-[#2E86C1]">
+                <h3 className="mt-4 text-lg font-bold text-foreground transition-colors group-hover:text-primary">
                   {guide.title}
                 </h3>
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-gray-600">
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
                   {guide.description}
                 </p>
-                <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#2E86C1] transition-colors group-hover:text-[#1A5276]">
+                <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors group-hover:text-foreground">
                   Start learning <ArrowRight />
                 </span>
               </Link>
@@ -312,17 +312,17 @@ export function PoetryHubClient() {
 
       {/* ── Top 10 most tested poems ─────────────────────────────── */}
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-gray-900">
+        <h2 className="text-2xl font-bold text-foreground">
           10 Most Commonly Tested Poems
         </h2>
-        <p className="mt-2 text-gray-600">
+        <p className="mt-2 text-muted-foreground">
           Quick access to the poems that appear most frequently in GCSE exams.
           Start your revision here.
         </p>
 
         <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
           {filteredTopTen.length === 0 && (
-            <p className="col-span-full text-sm text-gray-500">
+            <p className="col-span-full text-sm text-muted-foreground">
               No poems match the selected board.
             </p>
           )}
@@ -330,19 +330,19 @@ export function PoetryHubClient() {
             <Link
               key={poem.href}
               href={poem.href}
-              className="group flex items-start gap-3 rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition hover:border-[#2E86C1]/40 hover:shadow-md"
+              className="group flex items-start gap-3 rounded-lg border border-border bg-card p-4 shadow-md transition hover:border-[#2E86C1]/40 hover:shadow-md"
             >
               <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">
                 {i + 1}
               </span>
               <div className="min-w-0">
-                <h3 className="truncate text-sm font-bold text-gray-900 transition-colors group-hover:text-[#2E86C1]">
+                <h3 className="truncate text-sm font-bold text-foreground transition-colors group-hover:text-primary">
                   {poem.title}
                 </h3>
-                <p className="mt-0.5 truncate text-xs text-gray-500">
+                <p className="mt-0.5 truncate text-xs text-muted-foreground">
                   {poem.poet}
                 </p>
-                <span className="mt-1 inline-block rounded-full bg-gray-100 px-2 py-0.5 text-[10px] font-medium text-gray-500">
+                <span className="mt-1 inline-block rounded-full bg-gray-100 px-2 py-0.5 text-[10px] font-medium text-muted-foreground">
                   {poem.board}
                 </span>
               </div>
@@ -352,12 +352,12 @@ export function PoetryHubClient() {
       </section>
 
       {/* ── Quick tips ───────────────────────────────────────────── */}
-      <section className="bg-white px-4 py-12 sm:px-6 lg:px-8">
+      <section className="bg-card px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Top Poetry Exam Tips
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             Essential strategies to maximise your marks in the poetry section.
           </p>
 
@@ -365,10 +365,10 @@ export function PoetryHubClient() {
             {QUICK_TIPS.map((tip) => (
               <div
                 key={tip.title}
-                className="rounded-xl border border-gray-200 bg-gray-50 p-5 shadow-sm"
+                className="rounded-xl border border-border bg-muted p-5 shadow-md"
               >
-                <h3 className="font-semibold text-[#1A5276]">{tip.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                <h3 className="font-semibold text-foreground">{tip.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {tip.text}
                 </p>
               </div>
@@ -380,10 +380,10 @@ export function PoetryHubClient() {
       {/* ── How poetry is assessed ───────────────────────────────── */}
       <section className="bg-[#1A5276]/5 px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             How Poetry Is Assessed
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             Understanding the assessment objectives helps you target your
             revision and write answers that hit every mark.
           </p>
@@ -411,17 +411,17 @@ export function PoetryHubClient() {
             ].map((obj) => (
               <div
                 key={obj.ao}
-                className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm"
+                className="rounded-lg border border-border bg-card p-5 shadow-md"
               >
                 <div className="flex items-start gap-4">
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-sm font-bold text-white">
                     {obj.ao}
                   </span>
                   <div>
-                    <p className="leading-relaxed text-gray-800">
+                    <p className="leading-relaxed text-foreground">
                       {obj.detail}
                     </p>
-                    <p className="mt-2 text-sm font-medium text-[#2E86C1]">
+                    <p className="mt-2 text-sm font-medium text-primary">
                       Tip: {obj.tip}
                     </p>
                   </div>

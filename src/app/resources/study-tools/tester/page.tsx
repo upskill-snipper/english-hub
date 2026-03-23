@@ -529,18 +529,18 @@ export default function QuoteTesterPage() {
     return (
       <>
         <div className="mb-8">
-          <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Quiz Complete!
           </h1>
         </div>
 
         {/* Score card */}
-        <div className="mx-auto max-w-lg rounded-2xl border border-gray-200 bg-white p-8 text-center shadow-sm">
-          <div className="text-6xl font-black text-[#1A5276]">{percentage}%</div>
-          <div className="mt-2 text-xl font-bold text-[#2E86C1]">{gradeFromPercentage(percentage)}</div>
-          <p className="mt-3 text-gray-600">
-            You got <span className="font-semibold text-gray-900">{correctCount}</span> out of{" "}
-            <span className="font-semibold text-gray-900">{results.length}</span> correct.
+        <div className="mx-auto max-w-lg rounded-2xl border border-border bg-card p-8 text-center shadow-md">
+          <div className="text-6xl font-black text-foreground">{percentage}%</div>
+          <div className="mt-2 text-xl font-bold text-primary">{gradeFromPercentage(percentage)}</div>
+          <p className="mt-3 text-muted-foreground">
+            You got <span className="font-semibold text-foreground">{correctCount}</span> out of{" "}
+            <span className="font-semibold text-foreground">{results.length}</span> correct.
           </p>
 
           {/* Progress bar */}
@@ -555,7 +555,7 @@ export default function QuoteTesterPage() {
           </div>
 
           {/* Feedback */}
-          <p className="mt-4 text-sm text-gray-500">
+          <p className="mt-4 text-sm text-muted-foreground">
             {percentage >= 90
               ? "Outstanding! You really know your quotes."
               : percentage >= 70
@@ -575,14 +575,14 @@ export default function QuoteTesterPage() {
             </button>
             <button
               onClick={handleNewQuiz}
-              className="rounded-lg border border-gray-300 bg-white px-5 py-2.5 text-sm font-semibold text-gray-700 transition hover:bg-gray-50"
+              className="rounded-lg border border-gray-300 bg-card px-5 py-2.5 text-sm font-semibold text-muted-foreground transition hover:bg-muted"
             >
               New Quiz
             </button>
             {wrongResults.length > 0 && (
               <button
                 onClick={() => setShowReview(true)}
-                className="rounded-lg border border-[#2E86C1] bg-white px-5 py-2.5 text-sm font-semibold text-[#2E86C1] transition hover:bg-[#2E86C1]/5"
+                className="rounded-lg border border-[#2E86C1] bg-card px-5 py-2.5 text-sm font-semibold text-primary transition hover:bg-primary/5"
               >
                 Review Wrong Answers ({wrongResults.length})
               </button>
@@ -593,22 +593,22 @@ export default function QuoteTesterPage() {
         {/* Lifetime stats */}
         <div className="mx-auto mt-8 max-w-lg">
           <div className="grid grid-cols-3 gap-4 text-center">
-            <div className="rounded-xl border border-gray-200 bg-white p-4">
-              <div className="text-2xl font-bold text-[#1A5276]">{saved.totalQuizzes}</div>
-              <div className="text-xs text-gray-500">Quizzes Taken</div>
+            <div className="rounded-xl border border-border bg-card p-4">
+              <div className="text-2xl font-bold text-foreground">{saved.totalQuizzes}</div>
+              <div className="text-xs text-muted-foreground">Quizzes Taken</div>
             </div>
-            <div className="rounded-xl border border-gray-200 bg-white p-4">
-              <div className="text-2xl font-bold text-[#1A5276]">{saved.totalCorrect}</div>
-              <div className="text-xs text-gray-500">Total Correct</div>
+            <div className="rounded-xl border border-border bg-card p-4">
+              <div className="text-2xl font-bold text-foreground">{saved.totalCorrect}</div>
+              <div className="text-xs text-muted-foreground">Total Correct</div>
             </div>
-            <div className="rounded-xl border border-gray-200 bg-white p-4">
-              <div className="text-2xl font-bold text-[#1A5276]">
+            <div className="rounded-xl border border-border bg-card p-4">
+              <div className="text-2xl font-bold text-foreground">
                 {saved.totalAnswered > 0
                   ? Math.round((saved.totalCorrect / saved.totalAnswered) * 100)
                   : 0}
                 %
               </div>
-              <div className="text-xs text-gray-500">Overall Accuracy</div>
+              <div className="text-xs text-muted-foreground">Overall Accuracy</div>
             </div>
           </div>
         </div>
@@ -622,10 +622,10 @@ export default function QuoteTesterPage() {
     return (
       <>
         <div className="mb-6">
-          <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Review Wrong Answers
           </h1>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             You got {wrongResults.length} question{wrongResults.length !== 1 ? "s" : ""} wrong.
             Study the explanations below.
           </p>
@@ -635,7 +635,7 @@ export default function QuoteTesterPage() {
           {wrongResults.map((result, idx) => (
             <div
               key={result.question.id}
-              className="overflow-hidden rounded-xl border border-red-200 bg-white shadow-sm"
+              className="overflow-hidden rounded-xl border border-red-200 bg-card shadow-md"
             >
               <div className="border-b border-red-100 bg-red-50 px-5 py-3">
                 <div className="flex items-center gap-2">
@@ -652,22 +652,22 @@ export default function QuoteTesterPage() {
                   <span className="mt-0.5 shrink-0 text-red-500">
                     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
                   </span>
-                  <span className="text-sm text-gray-700">
+                  <span className="text-sm text-muted-foreground">
                     <span className="font-medium">Your answer:</span>{" "}
-                    {result.chosenAnswer ?? <em className="text-gray-400">Time expired -- no answer</em>}
+                    {result.chosenAnswer ?? <em className="text-muted-foreground">Time expired -- no answer</em>}
                   </span>
                 </div>
                 <div className="flex items-start gap-2">
                   <span className="mt-0.5 shrink-0 text-emerald-500">
                     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
                   </span>
-                  <span className="text-sm text-gray-700">
+                  <span className="text-sm text-muted-foreground">
                     <span className="font-medium">Correct answer:</span>{" "}
                     {result.question.correctAnswer}
                   </span>
                 </div>
                 <div className="mt-3 rounded-lg bg-blue-50 border border-blue-100 px-4 py-3">
-                  <p className="text-sm text-gray-700 leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed">
                     {result.question.explanation}
                   </p>
                 </div>
@@ -685,13 +685,13 @@ export default function QuoteTesterPage() {
           </button>
           <button
             onClick={handleNewQuiz}
-            className="rounded-lg border border-gray-300 bg-white px-5 py-2.5 text-sm font-semibold text-gray-700 transition hover:bg-gray-50"
+            className="rounded-lg border border-gray-300 bg-card px-5 py-2.5 text-sm font-semibold text-muted-foreground transition hover:bg-muted"
           >
             New Quiz
           </button>
           <button
             onClick={() => setShowReview(false)}
-            className="rounded-lg border border-gray-300 bg-white px-5 py-2.5 text-sm font-semibold text-gray-700 transition hover:bg-gray-50"
+            className="rounded-lg border border-gray-300 bg-card px-5 py-2.5 text-sm font-semibold text-muted-foreground transition hover:bg-muted"
           >
             Back to Score
           </button>
@@ -707,16 +707,16 @@ export default function QuoteTesterPage() {
         {/* Top bar */}
         <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
           <div>
-            <span className="text-sm font-semibold text-[#2E86C1]">
+            <span className="text-sm font-semibold text-primary">
               {MODE_LABELS[selectedMode]}
             </span>
-            <h2 className="text-xl font-bold text-gray-900">
+            <h2 className="text-xl font-bold text-foreground">
               Question {currentIdx + 1} of {questions.length}
             </h2>
           </div>
           <div className="flex items-center gap-4">
             {/* Score so far */}
-            <span className="text-sm font-medium text-gray-500">
+            <span className="text-sm font-medium text-muted-foreground">
               Score: {results.filter((r) => r.correct).length} / {results.length}
             </span>
             {/* Timer */}
@@ -725,7 +725,7 @@ export default function QuoteTesterPage() {
                 className={`inline-flex items-center gap-1 rounded-full px-3 py-1 text-sm font-bold ${
                   timeLeft <= 10
                     ? "bg-red-100 text-red-700"
-                    : "bg-gray-100 text-gray-700"
+                    : "bg-gray-100 text-muted-foreground"
                 }`}
               >
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
@@ -746,14 +746,14 @@ export default function QuoteTesterPage() {
         </div>
 
         {/* Question */}
-        <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8">
-          <p className="text-lg font-semibold text-gray-900 leading-relaxed">
+        <div className="rounded-2xl border border-border bg-card p-6 shadow-md sm:p-8">
+          <p className="text-lg font-semibold text-foreground leading-relaxed">
             {currentQuestion.prompt}
           </p>
 
           {/* Source text badge */}
           {selectedMode !== "which-text" && (
-            <span className="mt-2 inline-block rounded-full bg-gray-100 px-3 py-0.5 text-xs font-medium text-gray-500">
+            <span className="mt-2 inline-block rounded-full bg-gray-100 px-3 py-0.5 text-xs font-medium text-muted-foreground">
               {currentQuestion.sourceText}
             </span>
           )}
@@ -772,13 +772,13 @@ export default function QuoteTesterPage() {
                 } else if (isSelected && !isCorrect) {
                   classes += "border-red-400 bg-red-50 text-red-700";
                 } else {
-                  classes += "border-gray-200 bg-gray-50 text-gray-400";
+                  classes += "border-border bg-muted text-muted-foreground";
                 }
               } else if (isSelected) {
-                classes += "border-[#2E86C1] bg-[#2E86C1]/5 text-[#1A5276] ring-2 ring-[#2E86C1]/20";
+                classes += "border-[#2E86C1] bg-primary/5 text-foreground ring-2 ring-primary/20";
               } else {
                 classes +=
-                  "border-gray-200 bg-white text-gray-700 hover:border-[#2E86C1]/40 hover:bg-[#2E86C1]/5 cursor-pointer";
+                  "border-border bg-card text-muted-foreground hover:border-[#2E86C1]/40 hover:bg-primary/5 cursor-pointer";
               }
 
               return (
@@ -809,7 +809,7 @@ export default function QuoteTesterPage() {
           {/* Explanation after answer */}
           {answerLocked && (
             <div className="mt-5 rounded-lg border border-blue-100 bg-blue-50 px-4 py-3">
-              <p className="text-sm leading-relaxed text-gray-700">
+              <p className="text-sm leading-relaxed text-muted-foreground">
                 {currentQuestion.explanation}
               </p>
             </div>
@@ -819,7 +819,7 @@ export default function QuoteTesterPage() {
           <div className="mt-6 flex items-center justify-between">
             <button
               onClick={handleNewQuiz}
-              className="text-sm font-medium text-gray-400 hover:text-gray-600 transition"
+              className="text-sm font-medium text-muted-foreground hover:text-muted-foreground transition"
             >
               Quit Quiz
             </button>
@@ -834,7 +834,7 @@ export default function QuoteTesterPage() {
             ) : (
               <button
                 onClick={handleNext}
-                className="rounded-lg bg-[#2E86C1] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#2E86C1]/90"
+                className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-primary/90"
               >
                 {currentIdx + 1 >= questions.length ? "See Results" : "Next Question"}
               </button>
@@ -849,10 +849,10 @@ export default function QuoteTesterPage() {
   return (
     <>
       <div className="mb-8">
-        <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           Quote Tester
         </h1>
-        <p className="mt-3 max-w-3xl text-lg text-gray-600 leading-relaxed">
+        <p className="mt-3 max-w-3xl text-lg text-muted-foreground leading-relaxed">
           Test your knowledge of key GCSE Literature quotes. Choose your texts, pick a quiz mode,
           and see how well you really know your quotations.
         </p>
@@ -862,9 +862,9 @@ export default function QuoteTesterPage() {
         {/* Left: configuration */}
         <div className="space-y-6">
           {/* Text selection */}
-          <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-            <h2 className="text-lg font-bold text-gray-900">Choose Your Texts</h2>
-            <p className="mt-1 text-sm text-gray-500">Select one or more texts to be tested on.</p>
+          <div className="rounded-xl border border-border bg-card p-5 shadow-md">
+            <h2 className="text-lg font-bold text-foreground">Choose Your Texts</h2>
+            <p className="mt-1 text-sm text-muted-foreground">Select one or more texts to be tested on.</p>
             <div className="mt-4 space-y-2">
               {TEXT_SETS.map((set) => {
                 const isActive = selectedTexts.includes(set.slug);
@@ -874,14 +874,14 @@ export default function QuoteTesterPage() {
                     onClick={() => toggleText(set.slug)}
                     className={`flex w-full items-center gap-3 rounded-lg border-2 px-4 py-3 text-left transition ${
                       isActive
-                        ? "border-[#2E86C1] bg-[#2E86C1]/5"
-                        : "border-gray-200 hover:border-gray-300"
+                        ? "border-[#2E86C1] bg-primary/5"
+                        : "border-border hover:border-gray-300"
                     }`}
                   >
                     <div
                       className={`flex h-5 w-5 shrink-0 items-center justify-center rounded border-2 transition ${
                         isActive
-                          ? "border-[#2E86C1] bg-[#2E86C1]"
+                          ? "border-[#2E86C1] bg-primary"
                           : "border-gray-300"
                       }`}
                     >
@@ -892,10 +892,10 @@ export default function QuoteTesterPage() {
                       )}
                     </div>
                     <div>
-                      <div className="text-sm font-semibold text-gray-900">{set.title}</div>
-                      <div className="text-xs text-gray-500">{set.author}</div>
+                      <div className="text-sm font-semibold text-foreground">{set.title}</div>
+                      <div className="text-xs text-muted-foreground">{set.author}</div>
                     </div>
-                    <span className="ml-auto text-xs text-gray-400">
+                    <span className="ml-auto text-xs text-muted-foreground">
                       {set.cards.length} quotes
                     </span>
                   </button>
@@ -905,8 +905,8 @@ export default function QuoteTesterPage() {
           </div>
 
           {/* Mode selection */}
-          <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-            <h2 className="text-lg font-bold text-gray-900">Quiz Mode</h2>
+          <div className="rounded-xl border border-border bg-card p-5 shadow-md">
+            <h2 className="text-lg font-bold text-foreground">Quiz Mode</h2>
             <div className="mt-4 space-y-2">
               {(Object.keys(MODE_LABELS) as QuizMode[]).map((mode) => (
                 <button
@@ -914,26 +914,26 @@ export default function QuoteTesterPage() {
                   onClick={() => setSelectedMode(mode)}
                   className={`flex w-full items-center gap-3 rounded-lg border-2 px-4 py-3 text-left transition ${
                     selectedMode === mode
-                      ? "border-[#2E86C1] bg-[#2E86C1]/5"
-                      : "border-gray-200 hover:border-gray-300"
+                      ? "border-[#2E86C1] bg-primary/5"
+                      : "border-border hover:border-gray-300"
                   }`}
                 >
                   <div
                     className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 transition ${
                       selectedMode === mode
-                        ? "border-[#2E86C1] bg-[#2E86C1]"
+                        ? "border-[#2E86C1] bg-primary"
                         : "border-gray-300"
                     }`}
                   >
                     {selectedMode === mode && (
-                      <div className="h-2 w-2 rounded-full bg-white" />
+                      <div className="h-2 w-2 rounded-full bg-card" />
                     )}
                   </div>
                   <div>
-                    <div className="text-sm font-semibold text-gray-900">
+                    <div className="text-sm font-semibold text-foreground">
                       {MODE_LABELS[mode]}
                     </div>
-                    <div className="text-xs text-gray-500">{MODE_DESCRIPTIONS[mode]}</div>
+                    <div className="text-xs text-muted-foreground">{MODE_DESCRIPTIONS[mode]}</div>
                   </div>
                 </button>
               ))}
@@ -941,20 +941,20 @@ export default function QuoteTesterPage() {
           </div>
 
           {/* Timer toggle */}
-          <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+          <div className="rounded-xl border border-border bg-card p-5 shadow-md">
             <label className="flex cursor-pointer items-center justify-between">
               <div>
-                <h2 className="text-lg font-bold text-gray-900">Timer</h2>
-                <p className="text-sm text-gray-500">{TIMER_SECONDS} seconds per question</p>
+                <h2 className="text-lg font-bold text-foreground">Timer</h2>
+                <p className="text-sm text-muted-foreground">{TIMER_SECONDS} seconds per question</p>
               </div>
               <div
                 className={`relative inline-flex h-6 w-11 items-center rounded-full transition ${
-                  timerEnabled ? "bg-[#2E86C1]" : "bg-gray-300"
+                  timerEnabled ? "bg-primary" : "bg-gray-300"
                 }`}
                 onClick={() => setTimerEnabled((v) => !v)}
               >
                 <span
-                  className={`inline-block h-4 w-4 rounded-full bg-white transition-transform ${
+                  className={`inline-block h-4 w-4 rounded-full bg-card transition-transform ${
                     timerEnabled ? "translate-x-6" : "translate-x-1"
                   }`}
                 />
@@ -965,7 +965,7 @@ export default function QuoteTesterPage() {
           {/* Start button */}
           <button
             onClick={startQuiz}
-            className="w-full rounded-xl bg-gradient-to-r from-[#1A5276] to-[#2E86C1] px-6 py-3.5 text-base font-bold text-white shadow-sm transition hover:shadow-md hover:brightness-110"
+            className="w-full rounded-xl bg-gradient-to-r from-[#1A5276] to-[#2E86C1] px-6 py-3.5 text-base font-bold text-white shadow-md transition hover:shadow-md hover:brightness-110"
           >
             Start Quiz ({QUESTION_COUNT} Questions)
           </button>
@@ -974,59 +974,59 @@ export default function QuoteTesterPage() {
         {/* Right: stats + tips */}
         <div className="space-y-6">
           {/* Stats */}
-          <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-            <h2 className="text-lg font-bold text-gray-900">Your Stats</h2>
+          <div className="rounded-xl border border-border bg-card p-5 shadow-md">
+            <h2 className="text-lg font-bold text-foreground">Your Stats</h2>
             <div className="mt-4 grid grid-cols-3 gap-4 text-center">
               <div>
-                <div className="text-2xl font-bold text-[#1A5276]">{saved.totalQuizzes}</div>
-                <div className="text-xs text-gray-500">Quizzes</div>
+                <div className="text-2xl font-bold text-foreground">{saved.totalQuizzes}</div>
+                <div className="text-xs text-muted-foreground">Quizzes</div>
               </div>
               <div>
-                <div className="text-2xl font-bold text-[#1A5276]">{saved.totalCorrect}</div>
-                <div className="text-xs text-gray-500">Correct</div>
+                <div className="text-2xl font-bold text-foreground">{saved.totalCorrect}</div>
+                <div className="text-xs text-muted-foreground">Correct</div>
               </div>
               <div>
-                <div className="text-2xl font-bold text-[#1A5276]">
+                <div className="text-2xl font-bold text-foreground">
                   {saved.totalAnswered > 0
                     ? Math.round((saved.totalCorrect / saved.totalAnswered) * 100)
                     : 0}
                   %
                 </div>
-                <div className="text-xs text-gray-500">Accuracy</div>
+                <div className="text-xs text-muted-foreground">Accuracy</div>
               </div>
             </div>
           </div>
 
           {/* Tips */}
-          <div className="rounded-xl border border-[#2E86C1]/20 bg-[#2E86C1]/5 p-6">
-            <h3 className="text-lg font-bold text-gray-900">Quiz Tips</h3>
-            <ul className="mt-3 space-y-2 text-sm text-gray-700">
+          <div className="rounded-xl border border-[#2E86C1]/20 bg-primary/5 p-6">
+            <h3 className="text-lg font-bold text-foreground">Quiz Tips</h3>
+            <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
               <li className="flex items-start gap-2">
-                <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#2E86C1]" />
+                <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                 <span>
                   <strong>Start with one text</strong> and work through all three modes
                   before mixing texts together.
                 </span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#2E86C1]" />
+                <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                 <span>
                   <strong>Use the timer</strong> to simulate exam pressure. In the real
                   exam, you need to recall quotes quickly.
                 </span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#2E86C1]" />
+                <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                 <span>
                   <strong>Review wrong answers carefully.</strong> Read the explanations and
                   then try the quiz again.
                 </span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#2E86C1]" />
+                <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                 <span>
                   <strong>Combine with flashcards.</strong> Use the{" "}
-                  <a href="/resources/study-tools/flashcards" className="font-semibold text-[#2E86C1] underline underline-offset-2 hover:text-[#1A5276]">
+                  <a href="/resources/study-tools/flashcards" className="font-semibold text-primary underline underline-offset-2 hover:text-foreground">
                     Quote Flashcards
                   </a>{" "}
                   tool to learn quotes before testing yourself here.
@@ -1036,26 +1036,26 @@ export default function QuoteTesterPage() {
           </div>
 
           {/* Mode info */}
-          <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-            <h2 className="text-lg font-bold text-gray-900">About the Modes</h2>
+          <div className="rounded-xl border border-border bg-card p-5 shadow-md">
+            <h2 className="text-lg font-bold text-foreground">About the Modes</h2>
             <dl className="mt-3 space-y-3">
               <div>
-                <dt className="text-sm font-semibold text-[#1A5276]">Who Said It?</dt>
-                <dd className="text-sm text-gray-600">
+                <dt className="text-sm font-semibold text-foreground">Who Said It?</dt>
+                <dd className="text-sm text-muted-foreground">
                   You see a quote and must identify the character who speaks it. Tests your
                   knowledge of which characters are associated with key ideas.
                 </dd>
               </div>
               <div>
-                <dt className="text-sm font-semibold text-[#1A5276]">Complete the Quote</dt>
-                <dd className="text-sm text-gray-600">
+                <dt className="text-sm font-semibold text-foreground">Complete the Quote</dt>
+                <dd className="text-sm text-muted-foreground">
                   A section of the quote is blanked out and you must select the correct missing
                   words. Tests precise recall of quotation wording.
                 </dd>
               </div>
               <div>
-                <dt className="text-sm font-semibold text-[#1A5276]">Which Text?</dt>
-                <dd className="text-sm text-gray-600">
+                <dt className="text-sm font-semibold text-foreground">Which Text?</dt>
+                <dd className="text-sm text-muted-foreground">
                   You see a quote and must identify which GCSE text it comes from. Best attempted
                   with multiple texts selected.
                 </dd>

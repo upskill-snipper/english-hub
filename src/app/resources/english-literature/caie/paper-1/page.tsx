@@ -127,24 +127,24 @@ export default function Paper1Page() {
       <div className="mx-auto max-w-4xl px-4 py-12 sm:py-16 lg:py-20">
         {/* ── Paper structure ─────────────────────────────────────── */}
         <section aria-labelledby="structure-heading">
-          <h2 id="structure-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="structure-heading" className="text-2xl font-bold text-foreground">
             Paper Structure
           </h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <h3 className="font-semibold text-[#1A5276]">Section A &mdash; Poetry</h3>
-              <p className="mt-1 text-sm text-gray-600">25 marks</p>
-              <ul className="mt-3 space-y-1 text-sm text-gray-700">
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <h3 className="font-semibold text-foreground">Section A &mdash; Poetry</h3>
+              <p className="mt-1 text-sm text-muted-foreground">25 marks</p>
+              <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
                 <li>&bull; Answer <strong>one</strong> question on a poem from Songs of Ourselves</li>
                 <li>&bull; Choice between a passage-based question (poem printed) and an essay question</li>
                 <li>&bull; The passage-based question usually asks &ldquo;How does the poet...&rdquo;</li>
                 <li>&bull; The essay question often asks you to explore a theme or compare the poet&rsquo;s methods</li>
               </ul>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <h3 className="font-semibold text-[#1A5276]">Section B &mdash; Prose</h3>
-              <p className="mt-1 text-sm text-gray-600">25 marks</p>
-              <ul className="mt-3 space-y-1 text-sm text-gray-700">
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <h3 className="font-semibold text-foreground">Section B &mdash; Prose</h3>
+              <p className="mt-1 text-sm text-muted-foreground">25 marks</p>
+              <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
                 <li>&bull; Answer <strong>one</strong> question on your set prose text</li>
                 <li>&bull; Choice between passage-based and essay question</li>
                 <li>&bull; Passage-based: an extract is printed; analyse it closely and connect to the wider text</li>
@@ -154,20 +154,20 @@ export default function Paper1Page() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Songs of Ourselves ──────────────────────────────────── */}
         <section aria-labelledby="poetry-heading">
-          <h2 id="poetry-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="poetry-heading" className="text-2xl font-bold text-foreground">
             Songs of Ourselves &mdash; Selected Poems
           </h2>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-sm text-muted-foreground">
             The Cambridge anthology contains a wide selection of poems. Below are poems
             commonly studied for the IGCSE examination, with their key themes. For full
             analysis of each poem, visit our{" "}
             <Link
               href="/resources/english-literature/caie/poetry"
-              className="font-medium text-[#1A5276] underline underline-offset-2 hover:text-[#2E86C1]"
+              className="font-medium text-foreground underline underline-offset-2 hover:text-primary"
             >
               Poetry Analysis page
             </Link>
@@ -178,24 +178,24 @@ export default function Paper1Page() {
             {selectedPoems.map((p) => (
               <div
                 key={p.title}
-                className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm"
+                className="rounded-lg border border-border bg-card p-4 shadow-md"
               >
                 <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-                  <h3 className="font-semibold text-[#1A5276]">
+                  <h3 className="font-semibold text-foreground">
                     &ldquo;{p.title}&rdquo;
-                    <span className="ml-1 font-normal text-gray-500">&mdash; {p.poet}</span>
+                    <span className="ml-1 font-normal text-muted-foreground">&mdash; {p.poet}</span>
                   </h3>
                 </div>
-                <p className="mt-1 text-sm text-gray-700">
-                  <span className="font-medium text-gray-900">Themes:</span> {p.themes}
+                <p className="mt-1 text-sm text-muted-foreground">
+                  <span className="font-medium text-foreground">Themes:</span> {p.themes}
                 </p>
               </div>
             ))}
           </div>
 
-          <div className="mt-6 rounded-lg border border-[#2E86C1]/20 bg-[#2E86C1]/5 p-5">
-            <h3 className="font-semibold text-[#1A5276]">Approaching a Poetry Question</h3>
-            <ol className="mt-3 space-y-2 text-sm text-gray-700">
+          <div className="mt-6 rounded-lg border border-[#2E86C1]/20 bg-primary/5 p-5">
+            <h3 className="font-semibold text-foreground">Approaching a Poetry Question</h3>
+            <ol className="mt-3 space-y-2 text-sm text-muted-foreground">
               <li>
                 <strong>1. Read the question carefully.</strong> Underline the key words.
                 If it says &ldquo;How does the poet present...&rdquo;, you must focus on methods,
@@ -225,14 +225,14 @@ export default function Paper1Page() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Set prose texts ─────────────────────────────────────── */}
         <section aria-labelledby="prose-heading">
-          <h2 id="prose-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="prose-heading" className="text-2xl font-bold text-foreground">
             Set Prose Texts
           </h2>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-sm text-muted-foreground">
             Cambridge offers a choice of prose texts. Your school will have chosen one.
             Below is an overview of commonly studied texts with guidance on what Cambridge
             looks for.
@@ -242,33 +242,33 @@ export default function Paper1Page() {
             {proseTexts.map((t) => (
               <div
                 key={t.title}
-                className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm"
+                className="rounded-lg border border-border bg-card p-5 shadow-md"
               >
-                <h3 className="font-semibold text-[#1A5276]">
+                <h3 className="font-semibold text-foreground">
                   {t.title}
                   {"author" in t && (
-                    <span className="ml-1 font-normal text-gray-500">
+                    <span className="ml-1 font-normal text-muted-foreground">
                       &mdash; {t.author}
                     </span>
                   )}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-700">{t.detail}</p>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{t.detail}</p>
               </div>
             ))}
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Exam technique ──────────────────────────────────────── */}
         <section aria-labelledby="technique-heading">
-          <h2 id="technique-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="technique-heading" className="text-2xl font-bold text-foreground">
             Exam Technique: Passage-Based vs Essay Questions
           </h2>
           <div className="mt-6 grid gap-5 sm:grid-cols-2">
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <h3 className="font-semibold text-[#1A5276]">Passage-Based Questions</h3>
-              <ul className="mt-3 space-y-2 text-sm text-gray-700">
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <h3 className="font-semibold text-foreground">Passage-Based Questions</h3>
+              <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li>
                   <strong>Advantages:</strong> The text is in front of you. You can analyse
                   specific language closely. Good if you find it hard to memorise quotes.
@@ -289,9 +289,9 @@ export default function Paper1Page() {
                 </li>
               </ul>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <h3 className="font-semibold text-[#1A5276]">Essay Questions</h3>
-              <ul className="mt-3 space-y-2 text-sm text-gray-700">
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <h3 className="font-semibold text-foreground">Essay Questions</h3>
+              <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li>
                   <strong>Advantages:</strong> You can choose which parts of the text to
                   discuss. Good if you know the text very well and have strong personal
@@ -315,24 +315,24 @@ export default function Paper1Page() {
             </div>
           </div>
 
-          <div className="mt-6 rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-            <h3 className="font-semibold text-[#1A5276]">Model Paragraph Structure (PEAL)</h3>
-            <div className="mt-3 space-y-2 text-sm text-gray-700">
+          <div className="mt-6 rounded-lg border border-border bg-card p-5 shadow-md">
+            <h3 className="font-semibold text-foreground">Model Paragraph Structure (PEAL)</h3>
+            <div className="mt-3 space-y-2 text-sm text-muted-foreground">
               <p>
-                <strong className="text-[#2E86C1]">P</strong>oint &mdash; Make a clear
+                <strong className="text-primary">P</strong>oint &mdash; Make a clear
                 analytical point that directly addresses the question.
               </p>
               <p>
-                <strong className="text-[#2E86C1]">E</strong>vidence &mdash; Support with a
+                <strong className="text-primary">E</strong>vidence &mdash; Support with a
                 short, embedded quotation from the text.
               </p>
               <p>
-                <strong className="text-[#2E86C1]">A</strong>nalysis &mdash; Analyse the
+                <strong className="text-primary">A</strong>nalysis &mdash; Analyse the
                 language: what specific words suggest, what techniques the writer uses, what
                 effects are created.
               </p>
               <p>
-                <strong className="text-[#2E86C1]">L</strong>ink &mdash; Link back to the
+                <strong className="text-primary">L</strong>ink &mdash; Link back to the
                 question and, where possible, to wider themes, context, or the writer&rsquo;s
                 overall purpose.
               </p>
@@ -344,7 +344,7 @@ export default function Paper1Page() {
         <div className="mt-12 flex items-center gap-2 text-sm">
           <Link
             href="/resources/english-literature/caie"
-            className="font-medium text-[#1A5276] underline underline-offset-2 hover:text-[#2E86C1]"
+            className="font-medium text-foreground underline underline-offset-2 hover:text-primary"
           >
             &larr; Back to Cambridge IGCSE English Literature
           </Link>

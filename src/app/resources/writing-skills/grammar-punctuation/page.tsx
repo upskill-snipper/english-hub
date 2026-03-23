@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 function Section({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
   return (
     <section id={id} className="scroll-mt-24">
-      <h2 className="mb-6 text-2xl font-bold text-[#1A5276] border-b-2 border-[#2E86C1]/20 pb-3">
+      <h2 className="mb-6 text-2xl font-bold text-foreground border-b-2 border-[#2E86C1]/20 pb-3">
         {title}
       </h2>
       {children}
@@ -26,9 +26,9 @@ function Section({ id, title, children }: { id: string; title: string; children:
 
 function RuleCard({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-      <h4 className="font-bold text-[#1A5276] text-lg">{title}</h4>
-      <div className="mt-3 text-sm text-gray-700 leading-relaxed space-y-2">
+    <div className="rounded-xl border border-border bg-card p-5 shadow-md">
+      <h4 className="font-bold text-foreground text-lg">{title}</h4>
+      <div className="mt-3 text-sm text-muted-foreground leading-relaxed space-y-2">
         {children}
       </div>
     </div>
@@ -37,8 +37,8 @@ function RuleCard({ title, children }: { title: string; children: React.ReactNod
 
 function ExampleBox({ children }: { children: React.ReactNode }) {
   return (
-    <div className="rounded-lg bg-gray-50 px-4 py-3 mt-3">
-      <p className="text-sm italic text-gray-700">{children}</p>
+    <div className="rounded-lg bg-muted px-4 py-3 mt-3">
+      <p className="text-sm italic text-muted-foreground">{children}</p>
     </div>
   );
 }
@@ -60,8 +60,8 @@ function CorrectIncorrect({ correct, incorrect }: { correct: string; incorrect: 
 
 function TipBox({ children }: { children: React.ReactNode }) {
   return (
-    <div className="mt-4 rounded-lg bg-[#2E86C1]/5 border border-[#2E86C1]/20 px-4 py-3">
-      <p className="text-sm text-[#1A5276]">
+    <div className="mt-4 rounded-lg bg-primary/5 border border-[#2E86C1]/20 px-4 py-3">
+      <p className="text-sm text-foreground">
         <span className="font-semibold">Top Tip:</span> {children}
       </p>
     </div>
@@ -77,7 +77,7 @@ export default function GrammarPunctuationPage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-[#1A5276] to-[#1A5276]/80 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-[#2E86C1]/80">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary/80">
             Writing Skills Masterclass
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -92,14 +92,14 @@ export default function GrammarPunctuationPage() {
 
       {/* Breadcrumb */}
       <nav className="mx-auto max-w-5xl px-4 pt-6" aria-label="Breadcrumb">
-        <ol className="flex flex-wrap items-center gap-2 text-sm text-gray-500">
-          <li><Link href="/" className="hover:text-[#1A5276] transition-colors">Home</Link></li>
+        <ol className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+          <li><Link href="/" className="hover:text-foreground transition-colors">Home</Link></li>
           <li>/</li>
-          <li><Link href="/resources" className="hover:text-[#1A5276] transition-colors">Resources</Link></li>
+          <li><Link href="/resources" className="hover:text-foreground transition-colors">Resources</Link></li>
           <li>/</li>
-          <li><Link href="/resources/writing-skills" className="hover:text-[#1A5276] transition-colors">Writing Skills</Link></li>
+          <li><Link href="/resources/writing-skills" className="hover:text-foreground transition-colors">Writing Skills</Link></li>
           <li>/</li>
-          <li className="font-medium text-[#1A5276]">Grammar &amp; Punctuation</li>
+          <li className="font-medium text-foreground">Grammar &amp; Punctuation</li>
         </ol>
       </nav>
 
@@ -110,7 +110,7 @@ export default function GrammarPunctuationPage() {
           {/* Sidebar TOC */}
           <aside className="hidden lg:block">
             <nav className="sticky top-24 space-y-1 text-sm">
-              <p className="mb-2 font-bold text-[#1A5276] uppercase tracking-wider text-xs">Contents</p>
+              <p className="mb-2 font-bold text-foreground uppercase tracking-wider text-xs">Contents</p>
               {[
                 { id: "sentence-types", label: "Sentence Types" },
                 { id: "punctuation-for-effect", label: "Punctuation for Effect" },
@@ -124,7 +124,7 @@ export default function GrammarPunctuationPage() {
                 { id: "misspelled-words", label: "Commonly Misspelled Words" },
                 { id: "ao6-assessment", label: "AO6 Assessment" },
               ].map((item) => (
-                <a key={item.id} href={`#${item.id}`} className="block rounded-lg px-3 py-1.5 text-gray-600 hover:bg-[#2E86C1]/10 hover:text-[#1A5276] transition-colors">
+                <a key={item.id} href={`#${item.id}`} className="block rounded-lg px-3 py-1.5 text-muted-foreground hover:bg-primary/10 hover:text-foreground transition-colors">
                   {item.label}
                 </a>
               ))}
@@ -136,7 +136,7 @@ export default function GrammarPunctuationPage() {
 
             {/* ─── 1. Sentence Types ──────────────────────────────── */}
             <Section id="sentence-types" title="1. Sentence Types">
-              <p className="mb-6 text-gray-700 leading-relaxed">
+              <p className="mb-6 text-muted-foreground leading-relaxed">
                 Varying your sentence types is one of the most powerful ways to control pace, rhythm, and tone
                 in your writing. Examiners actively look for deliberate variety -- it shows craft, not accident.
               </p>
@@ -205,7 +205,7 @@ export default function GrammarPunctuationPage() {
 
             {/* ─── 2. Punctuation for Effect ──────────────────────── */}
             <Section id="punctuation-for-effect" title="2. Punctuation for Effect">
-              <p className="mb-6 text-gray-700 leading-relaxed">
+              <p className="mb-6 text-muted-foreground leading-relaxed">
                 Punctuation is not just about &quot;getting it right&quot; -- it is a tool for controlling
                 how your reader experiences your writing. Every mark changes the pace, tone, or emphasis.
               </p>
@@ -304,7 +304,7 @@ export default function GrammarPunctuationPage() {
 
             {/* ─── 3. Paragraph Techniques ────────────────────────── */}
             <Section id="paragraph-techniques" title="3. Paragraph Techniques">
-              <p className="mb-6 text-gray-700 leading-relaxed">
+              <p className="mb-6 text-muted-foreground leading-relaxed">
                 Paragraphs are not just blocks of text -- they are structural tools that shape your argument
                 and control the reader&apos;s experience.
               </p>
@@ -328,21 +328,21 @@ export default function GrammarPunctuationPage() {
                     the relationship between ideas.
                   </p>
                   <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <div className="rounded-lg bg-gray-50 px-4 py-3">
-                      <p className="text-xs font-semibold text-[#1A5276] uppercase tracking-wider mb-2">Adding</p>
-                      <p className="text-sm text-gray-700">Furthermore, Moreover, In addition, Similarly, Equally</p>
+                    <div className="rounded-lg bg-muted px-4 py-3">
+                      <p className="text-xs font-semibold text-foreground uppercase tracking-wider mb-2">Adding</p>
+                      <p className="text-sm text-muted-foreground">Furthermore, Moreover, In addition, Similarly, Equally</p>
                     </div>
-                    <div className="rounded-lg bg-gray-50 px-4 py-3">
-                      <p className="text-xs font-semibold text-[#1A5276] uppercase tracking-wider mb-2">Contrasting</p>
-                      <p className="text-sm text-gray-700">However, Nevertheless, On the other hand, Conversely, Yet</p>
+                    <div className="rounded-lg bg-muted px-4 py-3">
+                      <p className="text-xs font-semibold text-foreground uppercase tracking-wider mb-2">Contrasting</p>
+                      <p className="text-sm text-muted-foreground">However, Nevertheless, On the other hand, Conversely, Yet</p>
                     </div>
-                    <div className="rounded-lg bg-gray-50 px-4 py-3">
-                      <p className="text-xs font-semibold text-[#1A5276] uppercase tracking-wider mb-2">Cause / Effect</p>
-                      <p className="text-sm text-gray-700">Therefore, Consequently, As a result, Thus, Hence</p>
+                    <div className="rounded-lg bg-muted px-4 py-3">
+                      <p className="text-xs font-semibold text-foreground uppercase tracking-wider mb-2">Cause / Effect</p>
+                      <p className="text-sm text-muted-foreground">Therefore, Consequently, As a result, Thus, Hence</p>
                     </div>
-                    <div className="rounded-lg bg-gray-50 px-4 py-3">
-                      <p className="text-xs font-semibold text-[#1A5276] uppercase tracking-wider mb-2">Concluding</p>
-                      <p className="text-sm text-gray-700">Ultimately, In conclusion, To summarise, Above all, Fundamentally</p>
+                    <div className="rounded-lg bg-muted px-4 py-3">
+                      <p className="text-xs font-semibold text-foreground uppercase tracking-wider mb-2">Concluding</p>
+                      <p className="text-sm text-muted-foreground">Ultimately, In conclusion, To summarise, Above all, Fundamentally</p>
                     </div>
                   </div>
                   <TipBox>
@@ -357,16 +357,16 @@ export default function GrammarPunctuationPage() {
                     A single-sentence paragraph stands out visually and creates <strong>dramatic emphasis,
                     a pause, or a shift in tone</strong>.
                   </p>
-                  <div className="mt-3 rounded-lg bg-gray-50 px-4 py-3 space-y-3">
-                    <p className="text-sm text-gray-700 italic">
+                  <div className="mt-3 rounded-lg bg-muted px-4 py-3 space-y-3">
+                    <p className="text-sm text-muted-foreground italic">
                       The corridor stretched ahead, dimly lit and seemingly endless. Doors lined each side,
                       all closed, all identical. The floorboards groaned with every step she took, and somewhere
                       in the distance, a tap dripped.
                     </p>
-                    <p className="text-sm text-gray-700 italic font-semibold">
+                    <p className="text-sm text-muted-foreground italic font-semibold">
                       Then she heard it.
                     </p>
-                    <p className="text-sm text-gray-700 italic">
+                    <p className="text-sm text-muted-foreground italic">
                       A sound so faint it might have been imagined -- a whisper, barely there, curling through
                       the air like smoke.
                     </p>
@@ -382,7 +382,7 @@ export default function GrammarPunctuationPage() {
 
             {/* ─── 4. Common SPaG Errors ──────────────────────────── */}
             <Section id="common-spag-errors" title="4. Common SPaG Errors">
-              <p className="mb-6 text-gray-700 leading-relaxed">
+              <p className="mb-6 text-muted-foreground leading-relaxed">
                 These are the errors that cost students marks every single year. Learn them, memorise them,
                 and eliminate them from your writing.
               </p>
@@ -479,7 +479,7 @@ export default function GrammarPunctuationPage() {
 
             {/* ─── 5. Active vs Passive Voice ─────────────────────── */}
             <Section id="active-passive" title="5. Active vs Passive Voice">
-              <p className="mb-6 text-gray-700 leading-relaxed">
+              <p className="mb-6 text-muted-foreground leading-relaxed">
                 Understanding the difference between active and passive voice -- and knowing when to use each --
                 is a sign of sophisticated, controlled writing.
               </p>
@@ -514,18 +514,18 @@ export default function GrammarPunctuationPage() {
 
                 <RuleCard title="When to Use Each">
                   <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <div className="rounded-lg bg-gray-50 px-4 py-3">
-                      <p className="text-xs font-semibold text-[#1A5276] uppercase tracking-wider mb-2">Use Active For</p>
-                      <ul className="text-sm text-gray-700 space-y-1 list-disc list-inside">
+                    <div className="rounded-lg bg-muted px-4 py-3">
+                      <p className="text-xs font-semibold text-foreground uppercase tracking-wider mb-2">Use Active For</p>
+                      <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
                         <li>Clear, direct persuasive writing</li>
                         <li>Assigning blame or responsibility</li>
                         <li>Fast-paced narrative writing</li>
                         <li>Making arguments feel confident</li>
                       </ul>
                     </div>
-                    <div className="rounded-lg bg-gray-50 px-4 py-3">
-                      <p className="text-xs font-semibold text-[#1A5276] uppercase tracking-wider mb-2">Use Passive For</p>
-                      <ul className="text-sm text-gray-700 space-y-1 list-disc list-inside">
+                    <div className="rounded-lg bg-muted px-4 py-3">
+                      <p className="text-xs font-semibold text-foreground uppercase tracking-wider mb-2">Use Passive For</p>
+                      <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
                         <li>Emphasising the victim or result</li>
                         <li>Formal or scientific tone</li>
                         <li>Deliberately concealing responsibility</li>
@@ -545,7 +545,7 @@ export default function GrammarPunctuationPage() {
 
             {/* ─── 6. Tense Consistency ───────────────────────────── */}
             <Section id="tense-consistency" title="6. Tense Consistency">
-              <p className="mb-6 text-gray-700 leading-relaxed">
+              <p className="mb-6 text-muted-foreground leading-relaxed">
                 Shifting tense accidentally is one of the most common errors in GCSE creative writing. Choose
                 your tense and stick to it -- unless you have a deliberate reason to shift.
               </p>
@@ -600,7 +600,7 @@ export default function GrammarPunctuationPage() {
 
             {/* ─── 7. Subject-Verb Agreement ──────────────────────── */}
             <Section id="subject-verb-agreement" title="7. Subject-Verb Agreement">
-              <p className="mb-6 text-gray-700 leading-relaxed">
+              <p className="mb-6 text-muted-foreground leading-relaxed">
                 The verb must agree with its subject in number: singular subjects take singular verbs;
                 plural subjects take plural verbs. This sounds simple, but certain constructions trip students up.
               </p>
@@ -620,19 +620,19 @@ export default function GrammarPunctuationPage() {
                 <RuleCard title="Tricky Cases">
                   <div className="mt-2 space-y-3">
                     <div>
-                      <p className="font-semibold text-[#1A5276] text-sm">Collective nouns (team, class, government):</p>
+                      <p className="font-semibold text-foreground text-sm">Collective nouns (team, class, government):</p>
                       <p className="text-sm mt-1">Usually singular in British English: &quot;The team <strong>is</strong> playing well.&quot;</p>
                     </div>
                     <div>
-                      <p className="font-semibold text-[#1A5276] text-sm">Indefinite pronouns (everyone, nobody, each, either):</p>
+                      <p className="font-semibold text-foreground text-sm">Indefinite pronouns (everyone, nobody, each, either):</p>
                       <p className="text-sm mt-1">Always singular: &quot;Each of the students <strong>has</strong> a textbook.&quot;</p>
                     </div>
                     <div>
-                      <p className="font-semibold text-[#1A5276] text-sm">Compound subjects with &quot;or&quot; / &quot;nor&quot;:</p>
+                      <p className="font-semibold text-foreground text-sm">Compound subjects with &quot;or&quot; / &quot;nor&quot;:</p>
                       <p className="text-sm mt-1">Verb agrees with the nearest subject: &quot;Neither the teacher nor the students <strong>were</strong> ready.&quot;</p>
                     </div>
                     <div>
-                      <p className="font-semibold text-[#1A5276] text-sm">Phrases between subject and verb:</p>
+                      <p className="font-semibold text-foreground text-sm">Phrases between subject and verb:</p>
                       <p className="text-sm mt-1">Ignore the phrase: &quot;The box of chocolates <strong>was</strong> on the table.&quot; (Not &quot;were&quot;.)</p>
                     </div>
                   </div>
@@ -642,7 +642,7 @@ export default function GrammarPunctuationPage() {
 
             {/* ─── 8. Apostrophes ─────────────────────────────────── */}
             <Section id="apostrophes" title="8. Apostrophes">
-              <p className="mb-6 text-gray-700 leading-relaxed">
+              <p className="mb-6 text-muted-foreground leading-relaxed">
                 Apostrophes have exactly two uses: showing <strong>possession</strong> and indicating <strong>contraction</strong> (omission).
                 They are never used to make plurals.
               </p>
@@ -661,9 +661,9 @@ export default function GrammarPunctuationPage() {
                       ["we will", "we'll"],
                       ["she would", "she'd"],
                     ].map(([full, short]) => (
-                      <div key={short} className="rounded bg-gray-50 px-3 py-2 text-center text-sm">
-                        <span className="text-gray-500">{full}</span>{" "}
-                        <span className="font-semibold text-[#1A5276]">&rarr; {short}</span>
+                      <div key={short} className="rounded bg-muted px-3 py-2 text-center text-sm">
+                        <span className="text-muted-foreground">{full}</span>{" "}
+                        <span className="font-semibold text-foreground">&rarr; {short}</span>
                       </div>
                     ))}
                   </div>
@@ -672,19 +672,19 @@ export default function GrammarPunctuationPage() {
                 <RuleCard title="Apostrophes for Possession">
                   <div className="space-y-3 mt-2">
                     <div>
-                      <p className="font-semibold text-[#1A5276] text-sm">Singular possession:</p>
+                      <p className="font-semibold text-foreground text-sm">Singular possession:</p>
                       <p className="text-sm">Add <strong>&apos;s</strong> -- &quot;the dog&apos;s bone&quot; (one dog, one bone)</p>
                     </div>
                     <div>
-                      <p className="font-semibold text-[#1A5276] text-sm">Plural possession (regular plural):</p>
+                      <p className="font-semibold text-foreground text-sm">Plural possession (regular plural):</p>
                       <p className="text-sm">Add <strong>s&apos;</strong> -- &quot;the dogs&apos; bones&quot; (multiple dogs, their bones)</p>
                     </div>
                     <div>
-                      <p className="font-semibold text-[#1A5276] text-sm">Plural possession (irregular plural):</p>
+                      <p className="font-semibold text-foreground text-sm">Plural possession (irregular plural):</p>
                       <p className="text-sm">Add <strong>&apos;s</strong> -- &quot;the children&apos;s toys&quot; (because &quot;children&quot; is already plural)</p>
                     </div>
                     <div>
-                      <p className="font-semibold text-[#1A5276] text-sm">Names ending in S:</p>
+                      <p className="font-semibold text-foreground text-sm">Names ending in S:</p>
                       <p className="text-sm">Both &quot;James&apos;s book&quot; and &quot;James&apos; book&quot; are acceptable. Be consistent.</p>
                     </div>
                   </div>
@@ -704,7 +704,7 @@ export default function GrammarPunctuationPage() {
 
             {/* ─── 9. Direct Speech ───────────────────────────────── */}
             <Section id="direct-speech" title="9. Direct Speech Punctuation">
-              <p className="mb-6 text-gray-700 leading-relaxed">
+              <p className="mb-6 text-muted-foreground leading-relaxed">
                 If you include dialogue in your creative writing, you must punctuate it correctly. Poorly
                 punctuated speech is one of the quickest ways to lose SPaG marks.
               </p>
@@ -713,37 +713,37 @@ export default function GrammarPunctuationPage() {
                 <RuleCard title="The Rules">
                   <div className="space-y-3 mt-2">
                     <div className="flex items-start gap-3">
-                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#2E86C1] text-xs font-bold text-white">1</span>
+                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">1</span>
                       <p className="text-sm">Speech marks go around the <strong>exact words spoken</strong>: &quot;I need to leave,&quot; she said.</p>
                     </div>
                     <div className="flex items-start gap-3">
-                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#2E86C1] text-xs font-bold text-white">2</span>
+                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">2</span>
                       <p className="text-sm">Punctuation goes <strong>inside</strong> the speech marks: &quot;Where are you going<strong>?</strong>&quot;</p>
                     </div>
                     <div className="flex items-start gap-3">
-                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#2E86C1] text-xs font-bold text-white">3</span>
+                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">3</span>
                       <p className="text-sm">Use a <strong>comma</strong> before the reporting clause: &quot;I&apos;m fine<strong>,</strong>&quot; he whispered.</p>
                     </div>
                     <div className="flex items-start gap-3">
-                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#2E86C1] text-xs font-bold text-white">4</span>
+                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">4</span>
                       <p className="text-sm">Start a <strong>new line</strong> for each new speaker.</p>
                     </div>
                     <div className="flex items-start gap-3">
-                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#2E86C1] text-xs font-bold text-white">5</span>
+                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">5</span>
                       <p className="text-sm">If speech comes <strong>after</strong> the reporting clause, use a comma before opening: She said<strong>,</strong> &quot;We need to talk.&quot;</p>
                     </div>
                     <div className="flex items-start gap-3">
-                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#2E86C1] text-xs font-bold text-white">6</span>
+                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">6</span>
                       <p className="text-sm">If speech ends with ? or !, do <strong>not</strong> add a comma: &quot;Stop!&quot; he shouted. (Not: &quot;Stop!,&quot; he shouted.)</p>
                     </div>
                   </div>
                 </RuleCard>
 
                 <RuleCard title="Correctly Punctuated Example">
-                  <div className="mt-3 rounded-lg bg-gray-50 px-4 py-4 space-y-2">
-                    <p className="text-sm text-gray-700 italic">&quot;Where have you been?&quot; her mother asked, folding her arms.</p>
-                    <p className="text-sm text-gray-700 italic">&quot;Nowhere,&quot; she muttered, avoiding her gaze.</p>
-                    <p className="text-sm text-gray-700 italic">&quot;That&apos;s not an answer.&quot; Her mother&apos;s voice was steady, dangerously calm. &quot;I&apos;ll ask you one more time.&quot;</p>
+                  <div className="mt-3 rounded-lg bg-muted px-4 py-4 space-y-2">
+                    <p className="text-sm text-muted-foreground italic">&quot;Where have you been?&quot; her mother asked, folding her arms.</p>
+                    <p className="text-sm text-muted-foreground italic">&quot;Nowhere,&quot; she muttered, avoiding her gaze.</p>
+                    <p className="text-sm text-muted-foreground italic">&quot;That&apos;s not an answer.&quot; Her mother&apos;s voice was steady, dangerously calm. &quot;I&apos;ll ask you one more time.&quot;</p>
                   </div>
                   <TipBox>
                     In GCSE creative writing, you do not need lots of dialogue. A few lines of well-punctuated,
@@ -756,7 +756,7 @@ export default function GrammarPunctuationPage() {
 
             {/* ─── 10. Commonly Misspelled Words ──────────────────── */}
             <Section id="misspelled-words" title="10. Commonly Misspelled Words">
-              <p className="mb-6 text-gray-700 leading-relaxed">
+              <p className="mb-6 text-muted-foreground leading-relaxed">
                 These 20 words are among the most frequently misspelled in GCSE English exams.
                 Learn them and you will avoid easy-to-prevent mark losses.
               </p>
@@ -784,9 +784,9 @@ export default function GrammarPunctuationPage() {
                   { word: "Sincerely", trick: "SINCERE + LY" },
                   { word: "Unconscious", trick: "UN + CON + SCIOUS" },
                 ].map((item) => (
-                  <div key={item.word} className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
-                    <p className="font-bold text-[#1A5276] text-lg">{item.word}</p>
-                    <p className="mt-1 text-xs text-[#2E86C1]">{item.trick}</p>
+                  <div key={item.word} className="rounded-xl border border-border bg-card p-4 shadow-md">
+                    <p className="font-bold text-foreground text-lg">{item.word}</p>
+                    <p className="mt-1 text-xs text-primary">{item.trick}</p>
                   </div>
                 ))}
               </div>
@@ -794,7 +794,7 @@ export default function GrammarPunctuationPage() {
 
             {/* ─── 11. AO6 Assessment ─────────────────────────────── */}
             <Section id="ao6-assessment" title="11. How SPaG is Assessed (AO6)">
-              <p className="mb-6 text-gray-700 leading-relaxed">
+              <p className="mb-6 text-muted-foreground leading-relaxed">
                 AO6 tests your &quot;technical accuracy&quot; -- your ability to use vocabulary, sentence structures,
                 spelling, and punctuation accurately and effectively. It is worth <strong>up to 16 marks</strong> on
                 AQA English Language, and significant marks on all exam boards.
@@ -878,9 +878,9 @@ export default function GrammarPunctuationPage() {
                       "Homophones correct (their/there, its/it's)",
                       "Speech punctuated correctly (if used)",
                     ].map((item) => (
-                      <div key={item} className="flex items-start gap-2 rounded-lg bg-gray-50 px-3 py-2">
-                        <span className="mt-0.5 text-[#2E86C1]">&#9744;</span>
-                        <p className="text-sm text-gray-700">{item}</p>
+                      <div key={item} className="flex items-start gap-2 rounded-lg bg-muted px-3 py-2">
+                        <span className="mt-0.5 text-primary">&#9744;</span>
+                        <p className="text-sm text-muted-foreground">{item}</p>
                       </div>
                     ))}
                   </div>

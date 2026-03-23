@@ -249,7 +249,7 @@ export default function SubscriptionPage() {
               <button
                 onClick={handleChangePlan}
                 disabled={changingPlan}
-                className="px-4 py-2 text-sm font-medium rounded-lg border border-[#1A5276] text-[#1A5276] hover:bg-[#1A5276] hover:text-white transition-colors disabled:opacity-50"
+                className="px-4 py-2 text-sm font-medium rounded-lg border border-[#1A5276] text-foreground hover:bg-[#1A5276] hover:text-white transition-colors disabled:opacity-50"
               >
                 {changingPlan
                   ? "Changing..."

@@ -348,7 +348,7 @@ export default function TechniquesPage() {
       </section>
 
       {/* ── Quick nav ─────────────────────────────────────────────── */}
-      <section className="border-b border-gray-200 bg-white px-4 py-4 sticky top-0 z-10 shadow-sm">
+      <section className="border-b border-border bg-card px-4 py-4 sticky top-0 z-10 shadow-md">
         <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-center gap-3">
           <a href="#language" className="rounded-full bg-accent-100 px-4 py-1.5 text-sm font-semibold text-accent-700 hover:bg-accent-200 transition-colors">
             Language ({languageTechniques.length})
@@ -359,7 +359,7 @@ export default function TechniquesPage() {
           <a href="#both" className="rounded-full bg-success-100 px-4 py-1.5 text-sm font-semibold text-success-700 hover:bg-success-200 transition-colors">
             Both ({bothTechniques.length})
           </a>
-          <a href="#using-techniques" className="rounded-full bg-gray-100 px-4 py-1.5 text-sm font-semibold text-gray-700 hover:bg-gray-200 transition-colors">
+          <a href="#using-techniques" className="rounded-full bg-gray-100 px-4 py-1.5 text-sm font-semibold text-muted-foreground hover:bg-gray-200 transition-colors">
             How to Use in Exams
           </a>
         </div>
@@ -368,24 +368,24 @@ export default function TechniquesPage() {
       {/* ── Language techniques ───────────────────────────────────── */}
       <section id="language" className="px-4 py-12">
         <div className="mx-auto max-w-4xl">
-          <h2 className="text-2xl font-bold text-gray-900 sm:text-3xl">Language Techniques</h2>
-          <p className="mt-2 text-gray-600">Techniques relating to word choice, phrasing, and figurative language.</p>
+          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">Language Techniques</h2>
+          <p className="mt-2 text-muted-foreground">Techniques relating to word choice, phrasing, and figurative language.</p>
           <div className="mt-8 space-y-6">
             {languageTechniques.map((t) => (
-              <div key={t.name} className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+              <div key={t.name} className="rounded-xl border border-border bg-card p-6 shadow-md">
                 <div className="flex flex-wrap items-center gap-3">
-                  <h3 className="text-lg font-bold text-gray-900">{t.name}</h3>
+                  <h3 className="text-lg font-bold text-foreground">{t.name}</h3>
                   <TypeBadge type={t.type} />
                 </div>
-                <p className="mt-2 text-sm text-gray-700">{t.definition}</p>
-                <div className="mt-3 rounded-lg bg-gray-50 p-4">
-                  <p className="text-sm font-medium text-gray-500">Example:</p>
-                  <p className="mt-1 text-sm italic text-gray-800">{t.example}</p>
-                  <p className="mt-1 text-xs text-gray-400">&mdash; {t.source}</p>
+                <p className="mt-2 text-sm text-muted-foreground">{t.definition}</p>
+                <div className="mt-3 rounded-lg bg-muted p-4">
+                  <p className="text-sm font-medium text-muted-foreground">Example:</p>
+                  <p className="mt-1 text-sm italic text-foreground">{t.example}</p>
+                  <p className="mt-1 text-xs text-muted-foreground">&mdash; {t.source}</p>
                 </div>
                 <div className="mt-3 rounded-lg bg-accent-50 p-4">
                   <p className="text-sm font-medium text-accent-700">Effect on the reader:</p>
-                  <p className="mt-1 text-sm text-gray-700">{t.effect}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">{t.effect}</p>
                 </div>
               </div>
             ))}
@@ -394,26 +394,26 @@ export default function TechniquesPage() {
       </section>
 
       {/* ── Structural techniques ────────────────────────────────── */}
-      <section id="structure" className="bg-gray-50 px-4 py-12">
+      <section id="structure" className="bg-muted px-4 py-12">
         <div className="mx-auto max-w-4xl">
-          <h2 className="text-2xl font-bold text-gray-900 sm:text-3xl">Structural Techniques</h2>
-          <p className="mt-2 text-gray-600">Techniques relating to how a text is organised, shaped, and sequenced.</p>
+          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">Structural Techniques</h2>
+          <p className="mt-2 text-muted-foreground">Techniques relating to how a text is organised, shaped, and sequenced.</p>
           <div className="mt-8 space-y-6">
             {structureTechniques.map((t) => (
-              <div key={t.name} className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+              <div key={t.name} className="rounded-xl border border-border bg-card p-6 shadow-md">
                 <div className="flex flex-wrap items-center gap-3">
-                  <h3 className="text-lg font-bold text-gray-900">{t.name}</h3>
+                  <h3 className="text-lg font-bold text-foreground">{t.name}</h3>
                   <TypeBadge type={t.type} />
                 </div>
-                <p className="mt-2 text-sm text-gray-700">{t.definition}</p>
-                <div className="mt-3 rounded-lg bg-gray-50 p-4">
-                  <p className="text-sm font-medium text-gray-500">Example:</p>
-                  <p className="mt-1 text-sm italic text-gray-800">{t.example}</p>
-                  <p className="mt-1 text-xs text-gray-400">&mdash; {t.source}</p>
+                <p className="mt-2 text-sm text-muted-foreground">{t.definition}</p>
+                <div className="mt-3 rounded-lg bg-muted p-4">
+                  <p className="text-sm font-medium text-muted-foreground">Example:</p>
+                  <p className="mt-1 text-sm italic text-foreground">{t.example}</p>
+                  <p className="mt-1 text-xs text-muted-foreground">&mdash; {t.source}</p>
                 </div>
                 <div className="mt-3 rounded-lg bg-primary-50 p-4">
                   <p className="text-sm font-medium text-primary-700">Effect on the reader:</p>
-                  <p className="mt-1 text-sm text-gray-700">{t.effect}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">{t.effect}</p>
                 </div>
               </div>
             ))}
@@ -424,24 +424,24 @@ export default function TechniquesPage() {
       {/* ── Both ─────────────────────────────────────────────────── */}
       <section id="both" className="px-4 py-12">
         <div className="mx-auto max-w-4xl">
-          <h2 className="text-2xl font-bold text-gray-900 sm:text-3xl">Language &amp; Structure</h2>
-          <p className="mt-2 text-gray-600">Techniques that function as both language and structural devices.</p>
+          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">Language &amp; Structure</h2>
+          <p className="mt-2 text-muted-foreground">Techniques that function as both language and structural devices.</p>
           <div className="mt-8 space-y-6">
             {bothTechniques.map((t) => (
-              <div key={t.name} className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+              <div key={t.name} className="rounded-xl border border-border bg-card p-6 shadow-md">
                 <div className="flex flex-wrap items-center gap-3">
-                  <h3 className="text-lg font-bold text-gray-900">{t.name}</h3>
+                  <h3 className="text-lg font-bold text-foreground">{t.name}</h3>
                   <TypeBadge type={t.type} />
                 </div>
-                <p className="mt-2 text-sm text-gray-700">{t.definition}</p>
-                <div className="mt-3 rounded-lg bg-gray-50 p-4">
-                  <p className="text-sm font-medium text-gray-500">Example:</p>
-                  <p className="mt-1 text-sm italic text-gray-800">{t.example}</p>
-                  <p className="mt-1 text-xs text-gray-400">&mdash; {t.source}</p>
+                <p className="mt-2 text-sm text-muted-foreground">{t.definition}</p>
+                <div className="mt-3 rounded-lg bg-muted p-4">
+                  <p className="text-sm font-medium text-muted-foreground">Example:</p>
+                  <p className="mt-1 text-sm italic text-foreground">{t.example}</p>
+                  <p className="mt-1 text-xs text-muted-foreground">&mdash; {t.source}</p>
                 </div>
                 <div className="mt-3 rounded-lg bg-success-50 p-4">
                   <p className="text-sm font-medium text-success-700">Effect on the reader:</p>
-                  <p className="mt-1 text-sm text-gray-700">{t.effect}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">{t.effect}</p>
                 </div>
               </div>
             ))}
@@ -450,36 +450,36 @@ export default function TechniquesPage() {
       </section>
 
       {/* ── How to use techniques in exams ────────────────────────── */}
-      <section id="using-techniques" className="bg-gray-50 px-4 py-12">
+      <section id="using-techniques" className="bg-muted px-4 py-12">
         <div className="mx-auto max-w-4xl">
-          <h2 className="text-2xl font-bold text-gray-900 sm:text-3xl">How to Use Techniques in Exams</h2>
+          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">How to Use Techniques in Exams</h2>
 
           <div className="mt-8 space-y-6">
-            <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-              <h3 className="text-lg font-bold text-gray-900">The What-How-Why Method</h3>
-              <p className="mt-2 text-sm text-gray-700">
+            <div className="rounded-xl border border-border bg-card p-6 shadow-md">
+              <h3 className="text-lg font-bold text-foreground">The What-How-Why Method</h3>
+              <p className="mt-2 text-sm text-muted-foreground">
                 Every analytical point should follow this structure for maximum marks:
               </p>
               <div className="mt-4 grid gap-4 sm:grid-cols-3">
                 <div className="rounded-lg bg-accent-50 p-4 text-center">
                   <p className="text-lg font-bold text-accent-700">WHAT</p>
-                  <p className="mt-1 text-sm text-gray-700">Identify the technique and embed a quotation</p>
+                  <p className="mt-1 text-sm text-muted-foreground">Identify the technique and embed a quotation</p>
                 </div>
                 <div className="rounded-lg bg-primary-50 p-4 text-center">
                   <p className="text-lg font-bold text-primary-700">HOW</p>
-                  <p className="mt-1 text-sm text-gray-700">Name the technique using subject terminology</p>
+                  <p className="mt-1 text-sm text-muted-foreground">Name the technique using subject terminology</p>
                 </div>
                 <div className="rounded-lg bg-success-50 p-4 text-center">
                   <p className="text-lg font-bold text-success-700">WHY</p>
-                  <p className="mt-1 text-sm text-gray-700">Explain the effect on the reader</p>
+                  <p className="mt-1 text-sm text-muted-foreground">Explain the effect on the reader</p>
                 </div>
               </div>
             </div>
 
-            <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-              <h3 className="text-lg font-bold text-gray-900">Example Analytical Paragraph</h3>
+            <div className="rounded-xl border border-border bg-card p-6 shadow-md">
+              <h3 className="text-lg font-bold text-foreground">Example Analytical Paragraph</h3>
               <div className="mt-3 rounded-lg border-l-4 border-accent bg-accent-50 p-4">
-                <p className="text-sm text-gray-800 leading-relaxed">
+                <p className="text-sm text-foreground leading-relaxed">
                   The writer uses the <span className="font-semibold text-primary">[HOW]</span> metaphor
                   <span className="font-semibold text-accent"> [WHAT]</span> &ldquo;the darkness swallowed him whole&rdquo;
                   to present the darkness as a predatory force.
@@ -492,7 +492,7 @@ export default function TechniquesPage() {
 
             <div className="rounded-xl border border-warn-200 bg-warn-50 p-6">
               <h3 className="font-bold text-warn-700">Common Mistakes</h3>
-              <ul className="mt-3 space-y-2 text-sm text-gray-700">
+              <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-warn" />
                   <strong>Feature-spotting:</strong> Naming a technique without explaining its effect. &ldquo;The writer uses a simile&rdquo; alone is worth almost nothing.

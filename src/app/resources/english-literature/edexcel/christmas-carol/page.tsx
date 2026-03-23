@@ -261,8 +261,8 @@ export default function ChristmasCarolPage() {
 
       <div className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
         {/* ── Quick nav ─────────────────────────────────────────── */}
-        <nav className="rounded-xl bg-gray-50 p-6">
-          <h2 className="text-lg font-bold text-gray-900">On this page</h2>
+        <nav className="rounded-xl bg-muted p-6">
+          <h2 className="text-lg font-bold text-foreground">On this page</h2>
           <ul className="mt-3 grid gap-2 text-sm sm:grid-cols-2 lg:grid-cols-3">
             {[
               ["#plot", "Plot Summary"],
@@ -273,7 +273,7 @@ export default function ChristmasCarolPage() {
               ["#exam", "Edexcel Exam Technique"],
             ].map(([href, label]) => (
               <li key={href}>
-                <a href={href} className="text-[#2E86C1] hover:underline">
+                <a href={href} className="text-primary hover:underline">
                   {label}
                 </a>
               </li>
@@ -283,8 +283,8 @@ export default function ChristmasCarolPage() {
 
         {/* ── Plot summary ──────────────────────────────────────── */}
         <section id="plot" className="mt-14 scroll-mt-20">
-          <h2 className="text-2xl font-bold text-gray-900">Plot Summary</h2>
-          <p className="mt-2 text-gray-600">
+          <h2 className="text-2xl font-bold text-foreground">Plot Summary</h2>
+          <p className="mt-2 text-muted-foreground">
             A Christmas Carol is structured as five &quot;staves&quot; (a
             musical term meaning sections of a song — appropriate for a
             &quot;carol&quot;). This structure reinforces the idea that the
@@ -294,15 +294,15 @@ export default function ChristmasCarolPage() {
             {PLOT_SUMMARY.map((s) => (
               <div
                 key={s.stave}
-                className="rounded-xl border border-gray-200 p-6 shadow-sm"
+                className="rounded-xl border border-border p-6 shadow-md"
               >
                 <div className="flex items-center gap-3">
                   <span className="rounded-full bg-[#1A5276] px-3 py-1 text-xs font-bold text-white">
                     {s.stave}
                   </span>
-                  <h3 className="text-lg font-bold text-gray-900">{s.title}</h3>
+                  <h3 className="text-lg font-bold text-foreground">{s.title}</h3>
                 </div>
-                <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   {s.summary}
                 </p>
               </div>
@@ -312,26 +312,26 @@ export default function ChristmasCarolPage() {
 
         {/* ── Characters ────────────────────────────────────────── */}
         <section id="characters" className="mt-14 scroll-mt-20">
-          <h2 className="text-2xl font-bold text-gray-900">Character Analysis</h2>
+          <h2 className="text-2xl font-bold text-foreground">Character Analysis</h2>
           <div className="mt-6 space-y-6">
             {CHARACTERS.map((char) => (
               <div
                 key={char.name}
-                className="rounded-xl border border-gray-200 p-6 shadow-sm"
+                className="rounded-xl border border-border p-6 shadow-md"
               >
-                <h3 className="text-xl font-bold text-[#1A5276]">
+                <h3 className="text-xl font-bold text-foreground">
                   {char.name}
                 </h3>
-                <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   {char.description}
                 </p>
                 <div className="mt-4">
-                  <h4 className="text-xs font-semibold uppercase tracking-wide text-[#2E86C1]">
+                  <h4 className="text-xs font-semibold uppercase tracking-wide text-primary">
                     Key Quotes
                   </h4>
                   <ul className="mt-2 space-y-1">
                     {char.key_quotes.map((q) => (
-                      <li key={q} className="text-sm italic text-gray-600">
+                      <li key={q} className="text-sm italic text-muted-foreground">
                         {q}
                       </li>
                     ))}
@@ -344,26 +344,26 @@ export default function ChristmasCarolPage() {
 
         {/* ── Themes ────────────────────────────────────────────── */}
         <section id="themes" className="mt-14 scroll-mt-20">
-          <h2 className="text-2xl font-bold text-gray-900">Key Themes</h2>
+          <h2 className="text-2xl font-bold text-foreground">Key Themes</h2>
           <div className="mt-6 space-y-6">
             {THEMES.map((t) => (
               <div
                 key={t.theme}
-                className="rounded-xl border-l-4 border-[#1A5276] bg-gray-50 p-6"
+                className="rounded-xl border-l-4 border-[#1A5276] bg-muted p-6"
               >
-                <h3 className="text-lg font-bold text-[#1A5276]">
+                <h3 className="text-lg font-bold text-foreground">
                   {t.theme}
                 </h3>
-                <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   {t.description}
                 </p>
                 <div className="mt-3">
-                  <h4 className="text-xs font-semibold uppercase tracking-wide text-[#2E86C1]">
+                  <h4 className="text-xs font-semibold uppercase tracking-wide text-primary">
                     Supporting Quotes
                   </h4>
                   <ul className="mt-2 space-y-1">
                     {t.quotes.map((q) => (
-                      <li key={q} className="text-sm italic text-gray-600">
+                      <li key={q} className="text-sm italic text-muted-foreground">
                         {q}
                       </li>
                     ))}
@@ -376,8 +376,8 @@ export default function ChristmasCarolPage() {
 
         {/* ── Key quotes ────────────────────────────────────────── */}
         <section id="quotes" className="mt-14 scroll-mt-20">
-          <h2 className="text-2xl font-bold text-gray-900">Key Quotes (20+)</h2>
-          <p className="mt-2 text-gray-600">
+          <h2 className="text-2xl font-bold text-foreground">Key Quotes (20+)</h2>
+          <p className="mt-2 text-muted-foreground">
             The Edexcel exam is closed-book. Learn these quotes and practise
             using them in timed paragraphs.
           </p>
@@ -385,15 +385,15 @@ export default function ChristmasCarolPage() {
             {KEY_QUOTES.map((q, i) => (
               <div
                 key={i}
-                className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm"
+                className="rounded-lg border border-border bg-card p-4 shadow-md"
               >
-                <p className="text-sm font-semibold italic text-[#1A5276]">
+                <p className="text-sm font-semibold italic text-foreground">
                   {q.quote}
                 </p>
-                <p className="mt-1 text-xs font-medium text-[#2E86C1]">
+                <p className="mt-1 text-xs font-medium text-primary">
                   — {q.speaker}
                 </p>
-                <p className="mt-2 text-sm text-gray-700">{q.significance}</p>
+                <p className="mt-2 text-sm text-muted-foreground">{q.significance}</p>
               </div>
             ))}
           </div>
@@ -401,15 +401,15 @@ export default function ChristmasCarolPage() {
 
         {/* ── Context ───────────────────────────────────────────── */}
         <section id="context" className="mt-14 scroll-mt-20">
-          <h2 className="text-2xl font-bold text-gray-900">Historical Context</h2>
+          <h2 className="text-2xl font-bold text-foreground">Historical Context</h2>
           <div className="mt-6 space-y-4">
             {CONTEXT_POINTS.map((c) => (
               <div
                 key={c.topic}
-                className="rounded-xl border border-gray-200 p-5 shadow-sm"
+                className="rounded-xl border border-border p-5 shadow-md"
               >
-                <h3 className="font-bold text-[#1A5276]">{c.topic}</h3>
-                <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+                <h3 className="font-bold text-foreground">{c.topic}</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   {c.detail}
                 </p>
               </div>
@@ -419,38 +419,38 @@ export default function ChristmasCarolPage() {
 
         {/* ── Exam technique ────────────────────────────────────── */}
         <section id="exam" className="mt-14 scroll-mt-20">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Edexcel Exam Technique for A Christmas Carol
           </h2>
 
           <div className="mt-6 space-y-6">
-            <div className="rounded-xl bg-gray-50 p-6">
-              <h3 className="text-lg font-bold text-[#1A5276]">
+            <div className="rounded-xl bg-muted p-6">
+              <h3 className="text-lg font-bold text-foreground">
                 What Does an Edexcel Question Look Like?
               </h3>
-              <p className="mt-2 text-sm text-gray-700">
+              <p className="mt-2 text-sm text-muted-foreground">
                 You will typically have a choice of two essay questions. There
                 is no extract — you must recall your own evidence.
               </p>
               <div className="mt-4 space-y-3">
-                <div className="rounded-lg border-2 border-dashed border-[#2E86C1] bg-white p-4">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-[#2E86C1]">
+                <div className="rounded-lg border-2 border-dashed border-[#2E86C1] bg-card p-4">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-primary">
                     Example Question 1
                   </p>
-                  <p className="mt-2 text-sm text-gray-900 font-medium">
+                  <p className="mt-2 text-sm text-foreground font-medium">
                     Explore how Dickens presents the theme of redemption in
                     <em> A Christmas Carol</em>.
                   </p>
-                  <p className="mt-1 text-xs text-gray-500">
+                  <p className="mt-1 text-xs text-muted-foreground">
                     You must consider the context of the novella in your answer.
                     (40 marks, including 4 marks for SPaG)
                   </p>
                 </div>
-                <div className="rounded-lg border-2 border-dashed border-[#2E86C1] bg-white p-4">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-[#2E86C1]">
+                <div className="rounded-lg border-2 border-dashed border-[#2E86C1] bg-card p-4">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-primary">
                     Example Question 2
                   </p>
-                  <p className="mt-2 text-sm text-gray-900 font-medium">
+                  <p className="mt-2 text-sm text-foreground font-medium">
                     How does Dickens use the character of Scrooge to present
                     ideas about social responsibility?
                   </p>
@@ -458,11 +458,11 @@ export default function ChristmasCarolPage() {
               </div>
             </div>
 
-            <div className="rounded-xl bg-gray-50 p-6">
-              <h3 className="text-lg font-bold text-[#1A5276]">
+            <div className="rounded-xl bg-muted p-6">
+              <h3 className="text-lg font-bold text-foreground">
                 How to Structure Your Answer
               </h3>
-              <ol className="mt-4 space-y-3 text-sm text-gray-700">
+              <ol className="mt-4 space-y-3 text-sm text-muted-foreground">
                 <li className="flex gap-3">
                   <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">1</span>
                   <span>
@@ -497,28 +497,28 @@ export default function ChristmasCarolPage() {
             </div>
 
             <div className="rounded-xl border-2 border-[#2E86C1] bg-blue-50 p-6">
-              <h3 className="text-lg font-bold text-[#1A5276]">
+              <h3 className="text-lg font-bold text-foreground">
                 Top Tips for Top Marks
               </h3>
-              <ul className="mt-4 space-y-2 text-sm text-gray-700">
+              <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#2E86C1]" />
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   Use &quot;Dickens presents/suggests/conveys/uses...&quot; to show awareness of the writer&apos;s craft (AO2).
                 </li>
                 <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#2E86C1]" />
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   Discuss the novella&apos;s form — why did Dickens choose the novella format? (Accessible, affordable, designed to reach a wide audience and inspire change.)
                 </li>
                 <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#2E86C1]" />
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   Analyse the narrative voice — Dickens&apos; narrator is intrusive and opinionated, guiding the reader&apos;s moral responses.
                 </li>
                 <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#2E86C1]" />
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   Use the &quot;stave&quot; terminology rather than &quot;chapter&quot; — it shows you understand the text&apos;s structure.
                 </li>
                 <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#2E86C1]" />
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   SPaG is worth 4 marks on this section — write clearly and use paragraphs.
                 </li>
               </ul>

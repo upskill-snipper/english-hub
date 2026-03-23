@@ -15,14 +15,14 @@ function Section({
 }) {
   const [open, setOpen] = useState(defaultOpen);
   return (
-    <div className="rounded-xl border border-gray-200 bg-white">
+    <div className="rounded-xl border border-border bg-card">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-bold text-gray-900 hover:bg-gray-50 transition-colors"
+        className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-bold text-foreground hover:bg-muted transition-colors"
       >
         <span className="text-lg">{title}</span>
         <svg
-          className={`h-5 w-5 shrink-0 text-gray-400 transition-transform ${open ? "rotate-180" : ""}`}
+          className={`h-5 w-5 shrink-0 text-muted-foreground transition-transform ${open ? "rotate-180" : ""}`}
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={2}
@@ -32,7 +32,7 @@ function Section({
         </svg>
       </button>
       {open && (
-        <div className="border-t border-gray-100 px-6 py-6 text-gray-700 leading-relaxed space-y-4">
+        <div className="border-t border-border px-6 py-6 text-muted-foreground leading-relaxed space-y-4">
           {children}
         </div>
       )}
@@ -61,7 +61,7 @@ export default function Paper2Page() {
 
       {/* Breadcrumb */}
       <nav className="mx-auto max-w-5xl px-4 pt-6" aria-label="Breadcrumb">
-        <ol className="flex flex-wrap items-center gap-2 text-sm text-gray-500">
+        <ol className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
           <li>
             <Link href="/" className="hover:text-primary transition-colors">Home</Link>
           </li>
@@ -80,8 +80,8 @@ export default function Paper2Page() {
 
         {/* Overview */}
         <div className="rounded-xl border border-accent-100 bg-accent-50/50 p-6 sm:p-8">
-          <h2 className="text-xl font-bold text-gray-900">Paper overview</h2>
-          <p className="mt-3 text-gray-700">
+          <h2 className="text-xl font-bold text-foreground">Paper overview</h2>
+          <p className="mt-3 text-muted-foreground">
             Paper 2 tests your ability to <strong>read and compare</strong> two
             non-fiction texts (one from the 19th century and one from the 21st
             century, or one from the 20th century and one from the 21st century)
@@ -89,16 +89,16 @@ export default function Paper2Page() {
             The texts will be linked by theme.
           </p>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
-            <div className="rounded-lg border border-accent-200 bg-white p-4">
+            <div className="rounded-lg border border-accent-200 bg-card p-4">
               <h3 className="font-bold text-primary">Section A: Reading</h3>
-              <p className="mt-1 text-sm text-gray-600">
+              <p className="mt-1 text-sm text-muted-foreground">
                 4 questions on two linked non-fiction texts &middot; 40 marks &middot;
                 recommended 1 hour
               </p>
             </div>
-            <div className="rounded-lg border border-accent-200 bg-white p-4">
+            <div className="rounded-lg border border-accent-200 bg-card p-4">
               <h3 className="font-bold text-primary">Section B: Writing</h3>
-              <p className="mt-1 text-sm text-gray-600">
+              <p className="mt-1 text-sm text-muted-foreground">
                 1 question: persuasive / argumentative writing &middot; 40 marks &middot;
                 recommended 45 minutes
               </p>
@@ -111,7 +111,7 @@ export default function Paper2Page() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-gray-200 text-left text-gray-500">
+                <tr className="border-b border-border text-left text-muted-foreground">
                   <th className="py-2 pr-4">Task</th>
                   <th className="py-2 pr-4">Marks</th>
                   <th className="py-2 pr-4">Time</th>
@@ -174,7 +174,7 @@ export default function Paper2Page() {
           <div className="overflow-x-auto">
             <table className="mt-2 w-full text-sm">
               <thead>
-                <tr className="border-b border-gray-200 text-left text-gray-500">
+                <tr className="border-b border-border text-left text-muted-foreground">
                   <th className="py-2 pr-4">Level</th>
                   <th className="py-2 pr-4">Marks</th>
                   <th className="py-2 pr-4">Descriptor</th>
@@ -214,7 +214,7 @@ export default function Paper2Page() {
           </ul>
 
           <h3 className="mt-4 font-bold text-primary">Example paragraph</h3>
-          <div className="rounded-lg bg-gray-50 p-4 text-sm">
+          <div className="rounded-lg bg-muted p-4 text-sm">
             <p>
               Both writers present differing attitudes to city life. In Source A,
               the writer describes London as &ldquo;suffocating&rdquo; and
@@ -249,7 +249,7 @@ export default function Paper2Page() {
           <div className="overflow-x-auto">
             <table className="mt-2 w-full text-sm">
               <thead>
-                <tr className="border-b border-gray-200 text-left text-gray-500">
+                <tr className="border-b border-border text-left text-muted-foreground">
                   <th className="py-2 pr-4">Level</th>
                   <th className="py-2 pr-4">Marks</th>
                   <th className="py-2 pr-4">Descriptor</th>
@@ -313,7 +313,7 @@ export default function Paper2Page() {
           <div className="overflow-x-auto">
             <table className="mt-2 w-full text-sm">
               <thead>
-                <tr className="border-b border-gray-200 text-left text-gray-500">
+                <tr className="border-b border-border text-left text-muted-foreground">
                   <th className="py-2 pr-4">Level</th>
                   <th className="py-2 pr-4">Marks</th>
                   <th className="py-2 pr-4">Descriptor</th>
@@ -335,7 +335,7 @@ export default function Paper2Page() {
             (comparing within each paragraph) is generally more effective:
           </p>
 
-          <div className="mt-3 rounded-lg border border-gray-200 p-4">
+          <div className="mt-3 rounded-lg border border-border p-4">
             <h4 className="font-bold text-accent">Alternating structure (recommended)</h4>
             <p className="mt-2 text-sm">
               Each paragraph discusses a shared point of comparison, referring
@@ -349,11 +349,11 @@ export default function Paper2Page() {
           <h3 className="mt-4 font-bold text-primary">Comparison connectives</h3>
           <div className="grid gap-4 mt-2 sm:grid-cols-2">
             <div>
-              <p className="font-semibold text-sm text-gray-500">For similarities:</p>
+              <p className="font-semibold text-sm text-muted-foreground">For similarities:</p>
               <p className="mt-1 text-sm">Similarly, Likewise, In the same way, Both writers, Equally, This is echoed by</p>
             </div>
             <div>
-              <p className="font-semibold text-sm text-gray-500">For differences:</p>
+              <p className="font-semibold text-sm text-muted-foreground">For differences:</p>
               <p className="mt-1 text-sm">In contrast, However, Whereas, On the other hand, Conversely, Unlike Source A</p>
             </div>
           </div>
@@ -394,7 +394,7 @@ export default function Paper2Page() {
 
           <h3 className="mt-4 font-bold text-primary">Understanding different forms</h3>
           <div className="space-y-3 mt-2">
-            <div className="rounded-lg border border-gray-200 p-4">
+            <div className="rounded-lg border border-border p-4">
               <h4 className="font-bold text-accent">Article (newspaper/magazine)</h4>
               <ul className="mt-2 ml-5 list-disc space-y-1 text-sm">
                 <li>Include a headline (can be witty, provocative, or informative)</li>
@@ -405,7 +405,7 @@ export default function Paper2Page() {
                 <li>May address the reader directly</li>
               </ul>
             </div>
-            <div className="rounded-lg border border-gray-200 p-4">
+            <div className="rounded-lg border border-border p-4">
               <h4 className="font-bold text-accent">Letter (formal)</h4>
               <ul className="mt-2 ml-5 list-disc space-y-1 text-sm">
                 <li>Include addresses (top right: yours; below left: recipient&rsquo;s) and date</li>
@@ -415,7 +415,7 @@ export default function Paper2Page() {
                 <li>State the purpose of your letter in the opening paragraph</li>
               </ul>
             </div>
-            <div className="rounded-lg border border-gray-200 p-4">
+            <div className="rounded-lg border border-border p-4">
               <h4 className="font-bold text-accent">Speech</h4>
               <ul className="mt-2 ml-5 list-disc space-y-1 text-sm">
                 <li>Address the audience directly: &ldquo;Ladies and gentlemen,&rdquo; or &ldquo;Fellow students,&rdquo;</li>
@@ -424,7 +424,7 @@ export default function Paper2Page() {
                 <li>End with a call to action or a memorable final statement</li>
               </ul>
             </div>
-            <div className="rounded-lg border border-gray-200 p-4">
+            <div className="rounded-lg border border-border p-4">
               <h4 className="font-bold text-accent">Essay</h4>
               <ul className="mt-2 ml-5 list-disc space-y-1 text-sm">
                 <li>Formal, measured tone</li>
@@ -467,8 +467,8 @@ export default function Paper2Page() {
           </ol>
 
           <h3 className="mt-4 font-bold text-primary">Example opening (article, Grade 8-9)</h3>
-          <div className="rounded-lg bg-gray-50 p-4 text-sm">
-            <p className="font-bold text-gray-900">
+          <div className="rounded-lg bg-muted p-4 text-sm">
+            <p className="font-bold text-foreground">
               Screen time is rotting our children&rsquo;s brains &mdash; and we are
               handing them the device
             </p>
@@ -500,7 +500,7 @@ export default function Paper2Page() {
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-gray-200 text-left text-gray-500">
+                <tr className="border-b border-border text-left text-muted-foreground">
                   <th className="py-2 pr-4">Feature</th>
                   <th className="py-2 pr-4">Paper 1</th>
                   <th className="py-2 pr-4">Paper 2</th>

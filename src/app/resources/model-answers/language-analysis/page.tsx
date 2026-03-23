@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 function Annotation({ children, note }: { children: React.ReactNode; note: string }) {
   return (
     <span className="group relative">
-      <span className="rounded bg-[#2E86C1]/10 px-1 py-0.5 text-[#1A5276] border-b-2 border-dashed border-[#2E86C1]/40 cursor-help">
+      <span className="rounded bg-primary/10 px-1 py-0.5 text-foreground border-b-2 border-dashed border-[#2E86C1]/40 cursor-help">
         {children}
       </span>
       <span className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 w-60 -translate-x-1/2 rounded-lg bg-[#1A5276] px-3 py-2 text-xs leading-relaxed text-white opacity-0 shadow-lg transition-opacity group-hover:pointer-events-auto group-hover:opacity-100">
@@ -39,11 +39,11 @@ function GradeBadge({ grade, color }: { grade: string; color: string }) {
 
 function ExaminerComment({ children }: { children: React.ReactNode }) {
   return (
-    <div className="mt-4 rounded-lg border-l-4 border-[#2E86C1] bg-[#2E86C1]/5 p-4">
-      <p className="mb-1 text-xs font-bold uppercase tracking-wider text-[#2E86C1]">
+    <div className="mt-4 rounded-lg border-l-4 border-[#2E86C1] bg-primary/5 p-4">
+      <p className="mb-1 text-xs font-bold uppercase tracking-wider text-primary">
         Examiner Commentary
       </p>
-      <p className="text-sm leading-relaxed text-gray-700">{children}</p>
+      <p className="text-sm leading-relaxed text-muted-foreground">{children}</p>
     </div>
   );
 }
@@ -53,7 +53,7 @@ function ExaminerComment({ children }: { children: React.ReactNode }) {
 function Section({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
   return (
     <section id={id} className="scroll-mt-24">
-      <h2 className="mb-6 text-2xl font-bold text-[#1A5276] border-b-2 border-[#2E86C1]/20 pb-3">
+      <h2 className="mb-6 text-2xl font-bold text-foreground border-b-2 border-[#2E86C1]/20 pb-3">
         {title}
       </h2>
       {children}
@@ -70,7 +70,7 @@ export default function LanguageAnalysisPage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-[#1A5276] to-[#1A5276]/80 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-[#2E86C1]/80">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary/80">
             Model Answers
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -85,14 +85,14 @@ export default function LanguageAnalysisPage() {
 
       {/* Breadcrumb */}
       <nav className="mx-auto max-w-5xl px-4 pt-6" aria-label="Breadcrumb">
-        <ol className="flex flex-wrap items-center gap-2 text-sm text-gray-500">
-          <li><Link href="/" className="hover:text-[#1A5276] transition-colors">Home</Link></li>
+        <ol className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+          <li><Link href="/" className="hover:text-foreground transition-colors">Home</Link></li>
           <li>/</li>
-          <li><Link href="/resources" className="hover:text-[#1A5276] transition-colors">Resources</Link></li>
+          <li><Link href="/resources" className="hover:text-foreground transition-colors">Resources</Link></li>
           <li>/</li>
-          <li><Link href="/resources/model-answers" className="hover:text-[#1A5276] transition-colors">Model Answers</Link></li>
+          <li><Link href="/resources/model-answers" className="hover:text-foreground transition-colors">Model Answers</Link></li>
           <li>/</li>
-          <li className="font-medium text-[#1A5276]">Language Analysis</li>
+          <li className="font-medium text-foreground">Language Analysis</li>
         </ol>
       </nav>
 
@@ -103,7 +103,7 @@ export default function LanguageAnalysisPage() {
           {/* Sidebar TOC */}
           <aside className="hidden lg:block">
             <nav className="sticky top-24 space-y-1 text-sm">
-              <p className="mb-2 font-bold text-[#1A5276] uppercase tracking-wider text-xs">Contents</p>
+              <p className="mb-2 font-bold text-foreground uppercase tracking-wider text-xs">Contents</p>
               {[
                 { id: "question", label: "The Question" },
                 { id: "grade-5", label: "Grade 5 Response" },
@@ -114,7 +114,7 @@ export default function LanguageAnalysisPage() {
                 <a
                   key={item.id}
                   href={`#${item.id}`}
-                  className="block rounded-lg px-3 py-1.5 text-gray-600 hover:bg-[#2E86C1]/10 hover:text-[#1A5276] transition-colors"
+                  className="block rounded-lg px-3 py-1.5 text-muted-foreground hover:bg-primary/10 hover:text-foreground transition-colors"
                 >
                   {item.label}
                 </a>
@@ -127,19 +127,19 @@ export default function LanguageAnalysisPage() {
 
             {/* ─── THE QUESTION ─────────────────────────────────── */}
             <Section id="question" title="The Question">
-              <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-                <p className="text-xs font-bold uppercase tracking-wider text-[#2E86C1] mb-2">
+              <div className="rounded-xl border border-border bg-card p-6 shadow-md">
+                <p className="text-xs font-bold uppercase tracking-wider text-primary mb-2">
                   AQA English Language Paper 1, Question 2
                 </p>
-                <p className="text-gray-800 leading-relaxed font-medium">
+                <p className="text-foreground leading-relaxed font-medium">
                   How does the writer use language to describe the setting of the storm?
                 </p>
-                <p className="mt-2 text-sm text-gray-500">
+                <p className="mt-2 text-sm text-muted-foreground">
                   You could include the writer&apos;s choice of words and phrases, language features and techniques, and sentence forms.
                 </p>
-                <div className="mt-4 rounded-lg bg-gray-50 p-4">
-                  <p className="text-xs font-bold uppercase tracking-wider text-gray-500 mb-2">Source Text (Extract)</p>
-                  <p className="text-sm leading-relaxed text-gray-700 italic">
+                <div className="mt-4 rounded-lg bg-muted p-4">
+                  <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-2">Source Text (Extract)</p>
+                  <p className="text-sm leading-relaxed text-muted-foreground italic">
                     &ldquo;The sky had turned the colour of a bruise, deep purples bleeding into blacks that swallowed the last
                     traces of daylight. Wind tore through the narrow streets like a living thing, rattling shutters,
                     upending bins, sending newspapers spiralling into the air like startled birds. Rain came not in drops
@@ -156,11 +156,11 @@ export default function LanguageAnalysisPage() {
             <Section id="grade-5" title="Grade 5 Response">
               <div className="mb-4 flex items-center gap-3">
                 <GradeBadge grade="Grade 5" color="bg-amber-500" />
-                <span className="text-sm text-gray-500">Estimated marks: 5&ndash;6 / 8</span>
+                <span className="text-sm text-muted-foreground">Estimated marks: 5&ndash;6 / 8</span>
               </div>
 
-              <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-                <div className="prose prose-sm max-w-none text-gray-700 leading-relaxed">
+              <div className="rounded-xl border border-border bg-card p-6 shadow-md">
+                <div className="prose prose-sm max-w-none text-muted-foreground leading-relaxed">
                   <p>
                     The writer uses language to describe the storm as scary and powerful. The sky is described as
                     &ldquo;<Annotation note="Identifies the metaphor but does not fully explore its connotations.">the colour of a bruise</Annotation>&rdquo;
@@ -196,11 +196,11 @@ export default function LanguageAnalysisPage() {
             <Section id="grade-7" title="Grade 7 Response">
               <div className="mb-4 flex items-center gap-3">
                 <GradeBadge grade="Grade 7" color="bg-green-600" />
-                <span className="text-sm text-gray-500">Estimated marks: 6&ndash;7 / 8</span>
+                <span className="text-sm text-muted-foreground">Estimated marks: 6&ndash;7 / 8</span>
               </div>
 
-              <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-                <div className="prose prose-sm max-w-none text-gray-700 leading-relaxed">
+              <div className="rounded-xl border border-border bg-card p-6 shadow-md">
+                <div className="prose prose-sm max-w-none text-muted-foreground leading-relaxed">
                   <p>
                     The writer presents the storm as an overwhelming, almost violent force through carefully
                     chosen language. The opening metaphor &ldquo;the colour of a bruise&rdquo; is striking because it
@@ -247,11 +247,11 @@ export default function LanguageAnalysisPage() {
             <Section id="grade-9" title="Grade 9 Response">
               <div className="mb-4 flex items-center gap-3">
                 <GradeBadge grade="Grade 9" color="bg-[#1A5276]" />
-                <span className="text-sm text-gray-500">Estimated marks: 8 / 8</span>
+                <span className="text-sm text-muted-foreground">Estimated marks: 8 / 8</span>
               </div>
 
-              <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-                <div className="prose prose-sm max-w-none text-gray-700 leading-relaxed">
+              <div className="rounded-xl border border-border bg-card p-6 shadow-md">
+                <div className="prose prose-sm max-w-none text-muted-foreground leading-relaxed">
                   <p>
                     <Annotation note="Conceptualised opening: immediately frames an overarching interpretation rather than diving into technique-spotting.">
                       The writer constructs the storm not merely as a weather event but as an elemental antagonist,
@@ -314,7 +314,7 @@ export default function LanguageAnalysisPage() {
 
             {/* ─── COMPARISON ──────────────────────────────────── */}
             <Section id="comparison" title="What Makes the Difference?">
-              <p className="mb-6 text-gray-700 leading-relaxed">
+              <p className="mb-6 text-muted-foreground leading-relaxed">
                 Understanding what separates each grade boundary is the key to improvement. Here is a
                 side-by-side breakdown of how the three responses differ:
               </p>
@@ -323,42 +323,42 @@ export default function LanguageAnalysisPage() {
                 <table className="w-full text-sm border-collapse">
                   <thead>
                     <tr>
-                      <th className="border border-gray-200 bg-gray-50 p-3 text-left font-bold text-[#1A5276]">Skill</th>
-                      <th className="border border-gray-200 bg-amber-50 p-3 text-left font-bold text-amber-700">Grade 5</th>
-                      <th className="border border-gray-200 bg-green-50 p-3 text-left font-bold text-green-700">Grade 7</th>
-                      <th className="border border-gray-200 bg-[#1A5276]/5 p-3 text-left font-bold text-[#1A5276]">Grade 9</th>
+                      <th className="border border-border bg-muted p-3 text-left font-bold text-foreground">Skill</th>
+                      <th className="border border-border bg-amber-50 p-3 text-left font-bold text-amber-700">Grade 5</th>
+                      <th className="border border-border bg-green-50 p-3 text-left font-bold text-green-700">Grade 7</th>
+                      <th className="border border-border bg-[#1A5276]/5 p-3 text-left font-bold text-foreground">Grade 9</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td className="border border-gray-200 p-3 font-medium text-gray-800">Technique Identification</td>
-                      <td className="border border-gray-200 p-3 text-gray-600">Names techniques correctly</td>
-                      <td className="border border-gray-200 p-3 text-gray-600">Identifies and links related techniques</td>
-                      <td className="border border-gray-200 p-3 text-gray-600">Embeds identification within analysis; does not &ldquo;spot&rdquo;</td>
+                      <td className="border border-border p-3 font-medium text-foreground">Technique Identification</td>
+                      <td className="border border-border p-3 text-muted-foreground">Names techniques correctly</td>
+                      <td className="border border-border p-3 text-muted-foreground">Identifies and links related techniques</td>
+                      <td className="border border-border p-3 text-muted-foreground">Embeds identification within analysis; does not &ldquo;spot&rdquo;</td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-200 p-3 font-medium text-gray-800">Analysis of Effect</td>
-                      <td className="border border-gray-200 p-3 text-gray-600">&ldquo;This makes the reader feel...&rdquo;</td>
-                      <td className="border border-gray-200 p-3 text-gray-600">Explores specific connotations with some depth</td>
-                      <td className="border border-gray-200 p-3 text-gray-600">Precise, evaluative analysis of how and why effects are created</td>
+                      <td className="border border-border p-3 font-medium text-foreground">Analysis of Effect</td>
+                      <td className="border border-border p-3 text-muted-foreground">&ldquo;This makes the reader feel...&rdquo;</td>
+                      <td className="border border-border p-3 text-muted-foreground">Explores specific connotations with some depth</td>
+                      <td className="border border-border p-3 text-muted-foreground">Precise, evaluative analysis of how and why effects are created</td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-200 p-3 font-medium text-gray-800">Use of Terminology</td>
-                      <td className="border border-gray-200 p-3 text-gray-600">Basic but accurate (&ldquo;metaphor,&rdquo; &ldquo;simile&rdquo;)</td>
-                      <td className="border border-gray-200 p-3 text-gray-600">Wider range (&ldquo;semantic field,&rdquo; &ldquo;plosive&rdquo;)</td>
-                      <td className="border border-gray-200 p-3 text-gray-600">Integrated and precise (&ldquo;asyndetic,&rdquo; &ldquo;dissonance,&rdquo; &ldquo;register&rdquo;)</td>
+                      <td className="border border-border p-3 font-medium text-foreground">Use of Terminology</td>
+                      <td className="border border-border p-3 text-muted-foreground">Basic but accurate (&ldquo;metaphor,&rdquo; &ldquo;simile&rdquo;)</td>
+                      <td className="border border-border p-3 text-muted-foreground">Wider range (&ldquo;semantic field,&rdquo; &ldquo;plosive&rdquo;)</td>
+                      <td className="border border-border p-3 text-muted-foreground">Integrated and precise (&ldquo;asyndetic,&rdquo; &ldquo;dissonance,&rdquo; &ldquo;register&rdquo;)</td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-200 p-3 font-medium text-gray-800">Conceptualised Response</td>
-                      <td className="border border-gray-200 p-3 text-gray-600">Limited &mdash; point-by-point</td>
-                      <td className="border border-gray-200 p-3 text-gray-600">Emerging &mdash; some linking between points</td>
-                      <td className="border border-gray-200 p-3 text-gray-600">Clear overarching interpretation from the start</td>
+                      <td className="border border-border p-3 font-medium text-foreground">Conceptualised Response</td>
+                      <td className="border border-border p-3 text-muted-foreground">Limited &mdash; point-by-point</td>
+                      <td className="border border-border p-3 text-muted-foreground">Emerging &mdash; some linking between points</td>
+                      <td className="border border-border p-3 text-muted-foreground">Clear overarching interpretation from the start</td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-200 p-3 font-medium text-gray-800">Quotation Use</td>
-                      <td className="border border-gray-200 p-3 text-gray-600">Longer quotations, sometimes under-analysed</td>
-                      <td className="border border-gray-200 p-3 text-gray-600">Shorter, well-chosen quotations</td>
-                      <td className="border border-gray-200 p-3 text-gray-600">Single words and phrases embedded fluently within sentences</td>
+                      <td className="border border-border p-3 font-medium text-foreground">Quotation Use</td>
+                      <td className="border border-border p-3 text-muted-foreground">Longer quotations, sometimes under-analysed</td>
+                      <td className="border border-border p-3 text-muted-foreground">Shorter, well-chosen quotations</td>
+                      <td className="border border-border p-3 text-muted-foreground">Single words and phrases embedded fluently within sentences</td>
                     </tr>
                   </tbody>
                 </table>
@@ -368,7 +368,7 @@ export default function LanguageAnalysisPage() {
               <div className="mt-8 grid gap-4 sm:grid-cols-3">
                 <div className="rounded-xl border-2 border-amber-300 bg-amber-50 p-5">
                   <h3 className="font-bold text-amber-700">Grade 5 &rarr; 7</h3>
-                  <ul className="mt-2 space-y-1 text-sm text-gray-700">
+                  <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>&bull; Move from identifying to exploring</li>
                     <li>&bull; Use shorter, more precise quotations</li>
                     <li>&bull; Link techniques to the semantic field</li>
@@ -377,16 +377,16 @@ export default function LanguageAnalysisPage() {
                 </div>
                 <div className="rounded-xl border-2 border-green-300 bg-green-50 p-5">
                   <h3 className="font-bold text-green-700">Grade 7 &rarr; 9</h3>
-                  <ul className="mt-2 space-y-1 text-sm text-gray-700">
+                  <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>&bull; Open with a conceptualised interpretation</li>
                     <li>&bull; Analyse grammar and sentence structure</li>
                     <li>&bull; Track shifts across the whole extract</li>
                     <li>&bull; Show how techniques work together</li>
                   </ul>
                 </div>
-                <div className="rounded-xl border-2 border-[#2E86C1] bg-[#2E86C1]/5 p-5">
-                  <h3 className="font-bold text-[#1A5276]">Top Tips</h3>
-                  <ul className="mt-2 space-y-1 text-sm text-gray-700">
+                <div className="rounded-xl border-2 border-[#2E86C1] bg-primary/5 p-5">
+                  <h3 className="font-bold text-foreground">Top Tips</h3>
+                  <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>&bull; Quality over quantity &mdash; fewer points, deeper analysis</li>
                     <li>&bull; Use the word &ldquo;perhaps&rdquo; to explore alternative interpretations</li>
                     <li>&bull; Always return to the question focus</li>

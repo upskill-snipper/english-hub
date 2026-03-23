@@ -253,10 +253,10 @@ export default function Grade5Page() {
 
       {/* What examiners expect */}
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-gray-900">
+        <h2 className="text-2xl font-bold text-foreground">
           What examiners expect at Grade 5
         </h2>
-        <p className="mt-2 text-gray-600">
+        <p className="mt-2 text-muted-foreground">
           The key word at Grade 5 is <strong>clear</strong>. Examiners want to
           see clear understanding, clear explanations, and clear communication.
           You don&apos;t need to be brilliant -- you need to be consistently competent.
@@ -266,14 +266,14 @@ export default function Grade5Page() {
           {EXAMINER_EXPECTATIONS.map((section) => (
             <div
               key={section.area}
-              className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm"
+              className="rounded-xl border border-border bg-card p-6 shadow-md"
             >
-              <h3 className="text-lg font-bold text-[#1A5276]">
+              <h3 className="text-lg font-bold text-foreground">
                 {section.area}
               </h3>
               <ul className="mt-4 space-y-3">
                 {section.expectations.map((exp) => (
-                  <li key={exp} className="flex items-start gap-2 text-sm text-gray-600">
+                  <li key={exp} className="flex items-start gap-2 text-sm text-muted-foreground">
                     <CheckIcon />
                     <span>{exp}</span>
                   </li>
@@ -285,12 +285,12 @@ export default function Grade5Page() {
       </section>
 
       {/* Skills checklist */}
-      <section className="bg-gray-50 px-4 py-12 sm:px-6 lg:px-8">
+      <section className="bg-muted px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Grade 5 Skills Checklist
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             Tick off the skills you are confident with. Any gaps? Those are your
             revision priorities.
           </p>
@@ -305,13 +305,13 @@ export default function Grade5Page() {
                   (item) => (
                     <label
                       key={item.skill}
-                      className="flex cursor-pointer items-center gap-3 rounded-lg border border-gray-200 bg-white p-3 transition hover:border-[#27AE60]/40"
+                      className="flex cursor-pointer items-center gap-3 rounded-lg border border-border bg-card p-3 transition hover:border-[#27AE60]/40"
                     >
                       <input
                         type="checkbox"
                         className="h-4 w-4 rounded border-gray-300 text-[#27AE60] focus:ring-[#27AE60]"
                       />
-                      <span className="text-sm text-gray-700">{item.skill}</span>
+                      <span className="text-sm text-muted-foreground">{item.skill}</span>
                     </label>
                   )
                 )}
@@ -323,10 +323,10 @@ export default function Grade5Page() {
 
       {/* Common weaknesses */}
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-gray-900">
+        <h2 className="text-2xl font-bold text-foreground">
           Common weaknesses at this level
         </h2>
-        <p className="mt-2 text-gray-600">
+        <p className="mt-2 text-muted-foreground">
           These are the mistakes that keep students at Grade 4 when they could be
           reaching a 5. Recognise any?
         </p>
@@ -335,13 +335,13 @@ export default function Grade5Page() {
           {COMMON_WEAKNESSES.map((item) => (
             <div
               key={item.weakness}
-              className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm"
+              className="rounded-xl border border-border bg-card p-5 shadow-md"
             >
               <div className="flex items-start gap-3">
                 <WarningIcon />
                 <div>
-                  <h3 className="font-semibold text-gray-900">{item.weakness}</h3>
-                  <p className="mt-1 text-sm leading-relaxed text-gray-600">
+                  <h3 className="font-semibold text-foreground">{item.weakness}</h3>
+                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
                     <span className="font-medium text-[#27AE60]">Fix: </span>
                     {item.fix}
                   </p>
@@ -355,10 +355,10 @@ export default function Grade5Page() {
       {/* How to improve from 4 to 5 */}
       <section className="bg-gradient-to-br from-[#27AE60]/5 to-[#27AE60]/10 px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             How to move from Grade 4 to Grade 5
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             Six concrete steps to close the gap. Focus on one at a time.
           </p>
 
@@ -366,13 +366,13 @@ export default function Grade5Page() {
             {IMPROVEMENT_STEPS.map((item) => (
               <div
                 key={item.step}
-                className="rounded-xl border border-[#27AE60]/20 bg-white p-6 shadow-sm"
+                className="rounded-xl border border-[#27AE60]/20 bg-card p-6 shadow-md"
               >
                 <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#27AE60] text-sm font-bold text-white">
                   {item.step}
                 </span>
-                <h3 className="mt-3 font-bold text-gray-900">{item.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                <h3 className="mt-3 font-bold text-foreground">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {item.description}
                 </p>
               </div>
@@ -383,10 +383,10 @@ export default function Grade5Page() {
 
       {/* Example responses */}
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-gray-900">
+        <h2 className="text-2xl font-bold text-foreground">
           Example Grade 5 Responses
         </h2>
-        <p className="mt-2 text-gray-600">
+        <p className="mt-2 text-muted-foreground">
           See what Grade 5 work actually looks like, with annotations explaining
           what works and how to improve.
         </p>
@@ -395,31 +395,31 @@ export default function Grade5Page() {
           {EXAMPLE_RESPONSES.map((example) => (
             <div
               key={example.type}
-              className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm"
+              className="overflow-hidden rounded-xl border border-border bg-card shadow-md"
             >
-              <div className="border-b border-gray-200 bg-gray-50 px-6 py-4">
+              <div className="border-b border-border bg-muted px-6 py-4">
                 <span className="rounded-full bg-[#27AE60]/10 px-3 py-1 text-xs font-semibold text-[#27AE60]">
                   {example.type}
                 </span>
-                <p className="mt-2 font-semibold text-gray-900">
+                <p className="mt-2 font-semibold text-foreground">
                   {example.question}
                 </p>
                 {example.extract && (
-                  <p className="mt-2 text-sm italic text-gray-500">
+                  <p className="mt-2 text-sm italic text-muted-foreground">
                     {example.extract}
                   </p>
                 )}
               </div>
 
               <div className="px-6 py-5">
-                <h4 className="text-xs font-semibold uppercase tracking-wide text-gray-400">
+                <h4 className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
                   Student Response
                 </h4>
-                <div className="mt-2 rounded-lg bg-gray-50 p-4">
+                <div className="mt-2 rounded-lg bg-muted p-4">
                   {example.response.split("\n\n").map((para, i) => (
                     <p
                       key={i}
-                      className="mt-2 first:mt-0 text-sm leading-relaxed text-gray-700"
+                      className="mt-2 first:mt-0 text-sm leading-relaxed text-muted-foreground"
                     >
                       {para}
                     </p>
@@ -431,7 +431,7 @@ export default function Grade5Page() {
                 <h4 className="text-xs font-semibold uppercase tracking-wide text-[#27AE60]">
                   Examiner Comment
                 </h4>
-                <p className="mt-1 text-sm leading-relaxed text-gray-700">
+                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
                   {example.annotation}
                 </p>
               </div>
@@ -441,12 +441,12 @@ export default function Grade5Page() {
       </section>
 
       {/* Specific tips */}
-      <section className="bg-gray-50 px-4 py-12 sm:px-6 lg:px-8">
+      <section className="bg-muted px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Grade 5 Tips
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             Quick, actionable advice you can apply immediately.
           </p>
 
@@ -454,10 +454,10 @@ export default function Grade5Page() {
             {SPECIFIC_TIPS.map((item) => (
               <div
                 key={item.tip}
-                className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm"
+                className="rounded-xl border border-border bg-card p-5 shadow-md"
               >
-                <h3 className="font-bold text-[#1A5276]">{item.tip}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                <h3 className="font-bold text-foreground">{item.tip}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {item.detail}
                 </p>
               </div>
@@ -468,7 +468,7 @@ export default function Grade5Page() {
           <div className="mt-12 flex flex-col items-center justify-between gap-4 sm:flex-row">
             <Link
               href="/resources/grade-targets"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-[#2E86C1] hover:text-[#1A5276] transition-colors"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-foreground transition-colors"
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
@@ -477,7 +477,7 @@ export default function Grade5Page() {
             </Link>
             <Link
               href="/resources/grade-targets/grade-7"
-              className="group inline-flex items-center gap-2 rounded-lg bg-[#2E86C1] px-5 py-2.5 text-sm font-semibold text-white shadow transition hover:bg-[#1A5276]"
+              className="group inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow transition hover:bg-[#1A5276]"
             >
               Ready for Grade 7? <ArrowRight />
             </Link>

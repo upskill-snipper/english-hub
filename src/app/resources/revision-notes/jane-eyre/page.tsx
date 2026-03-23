@@ -18,17 +18,17 @@ function Section({
 }) {
   const [open, setOpen] = useState(defaultOpen);
   return (
-    <div className="mb-4 rounded-xl border border-gray-200 bg-white shadow-sm overflow-hidden">
+    <div className="mb-4 rounded-xl border border-border bg-card shadow-md overflow-hidden">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between px-5 py-4 text-left hover:bg-gray-50 transition-colors"
+        className="flex w-full items-center justify-between px-5 py-4 text-left hover:bg-muted transition-colors"
       >
         <span className="flex items-center gap-3">
           <span className="text-xl">{icon}</span>
-          <span className="text-lg font-bold text-gray-900">{title}</span>
+          <span className="text-lg font-bold text-foreground">{title}</span>
         </span>
         <svg
-          className={`h-5 w-5 text-gray-400 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+          className={`h-5 w-5 text-muted-foreground transition-transform duration-200 ${open ? "rotate-180" : ""}`}
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={2}
@@ -37,35 +37,35 @@ function Section({
           <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
         </svg>
       </button>
-      {open && <div className="border-t border-gray-100 px-5 py-5">{children}</div>}
+      {open && <div className="border-t border-border px-5 py-5">{children}</div>}
     </div>
   );
 }
 
 function QuoteCard({ quote, speaker, analysis }: { quote: string; speaker?: string; analysis: string }) {
   return (
-    <div className="rounded-lg border-l-4 border-slate-400 bg-slate-50/50 p-4 mb-3">
+    <div className="rounded-lg border-l-4 border-slate-400 bg-muted/50 p-4 mb-3">
       <p className="text-sm font-semibold text-slate-900 italic">&ldquo;{quote}&rdquo;</p>
-      {speaker && <p className="mt-1 text-xs font-medium text-slate-600">&mdash; {speaker}</p>}
-      <p className="mt-2 text-sm text-gray-700">{analysis}</p>
+      {speaker && <p className="mt-1 text-xs font-medium text-muted-foreground">&mdash; {speaker}</p>}
+      <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
   );
 }
 
 function CharacterCard({ name, description }: { name: string; description: string }) {
   return (
-    <div className="rounded-lg border border-gray-200 bg-gray-50 p-4 mb-3">
+    <div className="rounded-lg border border-border bg-muted p-4 mb-3">
       <h4 className="font-bold text-primary">{name}</h4>
-      <p className="mt-1 text-sm text-gray-700 leading-relaxed">{description}</p>
+      <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{description}</p>
     </div>
   );
 }
 
 function ThemeCard({ title, description }: { title: string; description: string }) {
   return (
-    <div className="rounded-lg border border-slate-200 bg-slate-50/30 p-4 mb-3">
+    <div className="rounded-lg border border-border bg-muted/30 p-4 mb-3">
       <h4 className="font-bold text-slate-800">{title}</h4>
-      <p className="mt-1 text-sm text-gray-700 leading-relaxed">{description}</p>
+      <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{description}</p>
     </div>
   );
 }
@@ -78,7 +78,7 @@ export default function JaneEyrePage() {
       {/* Hero */}
       <div className="mb-8">
         <div className="flex flex-wrap items-center gap-3 mb-2">
-          <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-700 uppercase tracking-wider">
+          <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-muted-foreground uppercase tracking-wider">
             19th-Century Prose
           </span>
           <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-bold text-accent-600 uppercase tracking-wider">
@@ -91,11 +91,11 @@ export default function JaneEyrePage() {
             OCR
           </span>
         </div>
-        <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           Jane Eyre
         </h1>
-        <p className="mt-1 text-lg text-gray-500">Charlotte Bront&euml;, 1847</p>
-        <p className="mt-3 max-w-3xl text-gray-600 leading-relaxed">
+        <p className="mt-1 text-lg text-muted-foreground">Charlotte Bront&euml;, 1847</p>
+        <p className="mt-3 max-w-3xl text-muted-foreground leading-relaxed">
           A groundbreaking Bildungsroman tracing the moral and spiritual development of its orphaned
           heroine from childhood abuse to independent womanhood. Jane Eyre challenged Victorian
           conventions of gender, class, and religion, giving voice to a plain, poor, and passionate
@@ -108,11 +108,11 @@ export default function JaneEyrePage() {
       <Section title="Chapter Summary by Location" icon="📖" defaultOpen>
         <div className="space-y-5">
           <div>
-            <h4 className="font-bold text-gray-900 text-base mb-2">Gateshead (Chapters 1&ndash;4)</h4>
+            <h4 className="font-bold text-foreground text-base mb-2">Gateshead (Chapters 1&ndash;4)</h4>
             <div className="space-y-3">
               <div>
-                <h5 className="font-semibold text-gray-800">Chapter 1: The Red Room Prelude</h5>
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <h5 className="font-semibold text-foreground">Chapter 1: The Red Room Prelude</h5>
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   Ten-year-old orphan Jane lives with her cruel aunt, Mrs Reed, and three cousins at
                   Gateshead Hall. John Reed bullies Jane, throwing a book at her head. Jane fights back
                   for the first time, declaring the injustice of her treatment. She is punished by being
@@ -120,8 +120,8 @@ export default function JaneEyrePage() {
                 </p>
               </div>
               <div>
-                <h5 className="font-semibold text-gray-800">Chapter 2: The Red Room</h5>
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <h5 className="font-semibold text-foreground">Chapter 2: The Red Room</h5>
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   Imprisoned in the red room, Jane sees what she believes is her uncle&apos;s ghost.
                   She screams in terror and is ignored by the servants. The red room symbolises Jane&apos;s
                   entrapment, powerlessness, and the suppression of her passionate nature. She faints from
@@ -130,8 +130,8 @@ export default function JaneEyrePage() {
                 </p>
               </div>
               <div>
-                <h5 className="font-semibold text-gray-800">Chapters 3&ndash;4: Escape from Gateshead</h5>
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <h5 className="font-semibold text-foreground">Chapters 3&ndash;4: Escape from Gateshead</h5>
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   The apothecary Mr Lloyd suggests Jane be sent to school. Jane confronts Mrs Reed in a
                   powerful speech: &ldquo;You think I have no feelings&hellip; I shall remember how you
                   thrust me back.&rdquo; Mr Brocklehurst, the hypocritical head of Lowood School, visits
@@ -143,11 +143,11 @@ export default function JaneEyrePage() {
           </div>
 
           <div>
-            <h4 className="font-bold text-gray-900 text-base mb-2">Lowood Institution (Chapters 5&ndash;10)</h4>
+            <h4 className="font-bold text-foreground text-base mb-2">Lowood Institution (Chapters 5&ndash;10)</h4>
             <div className="space-y-3">
               <div>
-                <h5 className="font-semibold text-gray-800">Chapters 5&ndash;6: Arrival and Helen Burns</h5>
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <h5 className="font-semibold text-foreground">Chapters 5&ndash;6: Arrival and Helen Burns</h5>
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   Jane arrives at Lowood, a charity school for orphans. Conditions are harsh: burnt
                   porridge, freezing dormitories, and cruel discipline. She meets Helen Burns, a deeply
                   religious girl who endures punishment with patience and forgiveness. Helen introduces
@@ -156,8 +156,8 @@ export default function JaneEyrePage() {
                 </p>
               </div>
               <div>
-                <h5 className="font-semibold text-gray-800">Chapters 7&ndash;8: Public Humiliation</h5>
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <h5 className="font-semibold text-foreground">Chapters 7&ndash;8: Public Humiliation</h5>
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   Brocklehurst visits Lowood and publicly brands Jane a liar, making her stand on a stool
                   before the school. Helen passes and gives Jane a subtle smile of support. Miss Temple
                   investigates and clears Jane&apos;s name by writing to Mr Lloyd. Brocklehurst&apos;s
@@ -166,8 +166,8 @@ export default function JaneEyrePage() {
                 </p>
               </div>
               <div>
-                <h5 className="font-semibold text-gray-800">Chapter 9: The Typhus Epidemic and Helen&apos;s Death</h5>
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <h5 className="font-semibold text-foreground">Chapter 9: The Typhus Epidemic and Helen&apos;s Death</h5>
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   A typhus epidemic sweeps Lowood, killing many pupils due to the school&apos;s neglect.
                   Helen Burns dies of consumption (tuberculosis) in Jane&apos;s arms, speaking of her
                   faith in heaven. Her death profoundly shapes Jane&apos;s character &mdash; she absorbs
@@ -176,8 +176,8 @@ export default function JaneEyrePage() {
                 </p>
               </div>
               <div>
-                <h5 className="font-semibold text-gray-800">Chapter 10: Leaving Lowood</h5>
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <h5 className="font-semibold text-foreground">Chapter 10: Leaving Lowood</h5>
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   Jane spends eight years at Lowood &mdash; six as a pupil, two as a teacher. After
                   Miss Temple marries and leaves, Jane feels restless and yearns for freedom. She
                   advertises for a position as a governess and receives a reply from Thornfield Hall.
@@ -189,11 +189,11 @@ export default function JaneEyrePage() {
           </div>
 
           <div>
-            <h4 className="font-bold text-gray-900 text-base mb-2">Thornfield Hall (Chapters 11&ndash;27)</h4>
+            <h4 className="font-bold text-foreground text-base mb-2">Thornfield Hall (Chapters 11&ndash;27)</h4>
             <div className="space-y-3">
               <div>
-                <h5 className="font-semibold text-gray-800">Chapters 11&ndash;12: Arrival and Restlessness</h5>
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <h5 className="font-semibold text-foreground">Chapters 11&ndash;12: Arrival and Restlessness</h5>
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   Jane arrives at Thornfield and meets Mrs Fairfax, the housekeeper, and Ad&egrave;le Varens,
                   her young pupil (Rochester&apos;s ward). The house is grand but mysterious. Jane hears
                   strange laughter from the third storey, attributed to the servant Grace Poole. Jane
@@ -202,8 +202,8 @@ export default function JaneEyrePage() {
                 </p>
               </div>
               <div>
-                <h5 className="font-semibold text-gray-800">Chapters 13&ndash;15: Meeting Rochester</h5>
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <h5 className="font-semibold text-foreground">Chapters 13&ndash;15: Meeting Rochester</h5>
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   Jane meets Edward Rochester when his horse slips on ice and she helps him. He is
                   brusque, unconventional, and intrigued by Jane&apos;s directness. Their conversations
                   are intellectual sparring matches between equals. Rochester confides in Jane about
@@ -213,8 +213,8 @@ export default function JaneEyrePage() {
                 </p>
               </div>
               <div>
-                <h5 className="font-semibold text-gray-800">Chapters 16&ndash;18: Blanche Ingram and Jealousy</h5>
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <h5 className="font-semibold text-foreground">Chapters 16&ndash;18: Blanche Ingram and Jealousy</h5>
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   Rochester leaves and returns with a party of fashionable guests, including the beautiful
                   Blanche Ingram. Jane is tormented by jealousy but forces herself to draw portraits
                   comparing her plain face with Blanche&apos;s beauty. Blanche is revealed as shallow,
@@ -224,8 +224,8 @@ export default function JaneEyrePage() {
                 </p>
               </div>
               <div>
-                <h5 className="font-semibold text-gray-800">Chapters 19&ndash;20: The Gypsy and Mason&apos;s Attack</h5>
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <h5 className="font-semibold text-foreground">Chapters 19&ndash;20: The Gypsy and Mason&apos;s Attack</h5>
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   Rochester disguises himself as a gypsy fortune-teller to probe Jane&apos;s feelings.
                   Jane is not deceived and is angry at the deception. That night, Mason is attacked and
                   bitten on the third storey. Rochester secretly tends to him and sends him away before
@@ -234,8 +234,8 @@ export default function JaneEyrePage() {
                 </p>
               </div>
               <div>
-                <h5 className="font-semibold text-gray-800">Chapters 21&ndash;22: Return to Gateshead</h5>
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <h5 className="font-semibold text-foreground">Chapters 21&ndash;22: Return to Gateshead</h5>
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   Jane returns to Gateshead where Mrs Reed lies dying. Mrs Reed confesses that she told
                   Jane&apos;s uncle John Eyre that Jane was dead, depriving Jane of a potential inheritance.
                   Jane forgives her aunt, but Mrs Reed dies unrepentant. Jane returns to Thornfield,
@@ -244,8 +244,8 @@ export default function JaneEyrePage() {
                 </p>
               </div>
               <div>
-                <h5 className="font-semibold text-gray-800">Chapter 23: The Proposal</h5>
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <h5 className="font-semibold text-foreground">Chapter 23: The Proposal</h5>
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   In the orchard on Midsummer Eve, Rochester asks Jane to marry him. Jane initially
                   believes he is mocking her, as she expects him to marry Blanche. When she realises
                   his sincerity, she accepts. Jane delivers her famous speech: &ldquo;Do you think,
@@ -255,8 +255,8 @@ export default function JaneEyrePage() {
                 </p>
               </div>
               <div>
-                <h5 className="font-semibold text-gray-800">Chapters 24&ndash;25: Wedding Preparations and Omens</h5>
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <h5 className="font-semibold text-foreground">Chapters 24&ndash;25: Wedding Preparations and Omens</h5>
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   Rochester showers Jane with gifts and tries to dress her in finery; Jane resists,
                   uncomfortable with being made into a doll or possession. She insists on maintaining
                   her independence by continuing as Ad&egrave;le&apos;s governess. The night before the
@@ -266,8 +266,8 @@ export default function JaneEyrePage() {
                 </p>
               </div>
               <div>
-                <h5 className="font-semibold text-gray-800">Chapters 26&ndash;27: The Impediment and Departure</h5>
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <h5 className="font-semibold text-foreground">Chapters 26&ndash;27: The Impediment and Departure</h5>
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   At the altar, a solicitor halts the wedding: Rochester is already married to Bertha
                   Mason, a Creole woman from Jamaica, now confined to Thornfield&apos;s third storey as
                   a violent lunatic. Rochester shows the wedding party Bertha, who attacks him. He argues
@@ -281,11 +281,11 @@ export default function JaneEyrePage() {
           </div>
 
           <div>
-            <h4 className="font-bold text-gray-900 text-base mb-2">Moor House / Morton (Chapters 28&ndash;35)</h4>
+            <h4 className="font-bold text-foreground text-base mb-2">Moor House / Morton (Chapters 28&ndash;35)</h4>
             <div className="space-y-3">
               <div>
-                <h5 className="font-semibold text-gray-800">Chapters 28&ndash;29: Destitution and Rescue</h5>
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <h5 className="font-semibold text-foreground">Chapters 28&ndash;29: Destitution and Rescue</h5>
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   Jane wanders the moors, starving and sleeping outdoors. She begs for food and is
                   refused. On the point of death, she collapses on the doorstep of Moor House (Marsh
                   End), home of St John, Diana, and Mary Rivers. St John reluctantly takes her in.
@@ -295,8 +295,8 @@ export default function JaneEyrePage() {
                 </p>
               </div>
               <div>
-                <h5 className="font-semibold text-gray-800">Chapters 30&ndash;32: Recovery and the Village School</h5>
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <h5 className="font-semibold text-foreground">Chapters 30&ndash;32: Recovery and the Village School</h5>
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   Jane recovers and finds companionship with Diana and Mary Rivers. St John secures
                   her a position as teacher of the village school at Morton. Jane finds the work
                   humble but fulfilling. She befriends Rosamond Oliver, a local heiress whom St John
@@ -305,8 +305,8 @@ export default function JaneEyrePage() {
                 </p>
               </div>
               <div>
-                <h5 className="font-semibold text-gray-800">Chapters 33&ndash;34: The Inheritance and St John&apos;s Proposal</h5>
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <h5 className="font-semibold text-foreground">Chapters 33&ndash;34: The Inheritance and St John&apos;s Proposal</h5>
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   St John discovers Jane&apos;s true identity and reveals that their uncle, John Eyre,
                   has died and left Jane twenty thousand pounds. Jane is overjoyed to discover that the
                   Rivers siblings are her cousins. She insists on dividing the inheritance equally four
@@ -316,8 +316,8 @@ export default function JaneEyrePage() {
                 </p>
               </div>
               <div>
-                <h5 className="font-semibold text-gray-800">Chapter 35: &ldquo;Jane! Jane! Jane!&rdquo;</h5>
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <h5 className="font-semibold text-foreground">Chapter 35: &ldquo;Jane! Jane! Jane!&rdquo;</h5>
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   St John intensifies his pressure on Jane to accept his proposal, using religion as
                   emotional manipulation. Jane nearly succumbs, but at the crucial moment she hears
                   Rochester&apos;s voice calling her name across the moors: &ldquo;Jane! Jane!
@@ -329,11 +329,11 @@ export default function JaneEyrePage() {
           </div>
 
           <div>
-            <h4 className="font-bold text-gray-900 text-base mb-2">Ferndean (Chapters 36&ndash;38)</h4>
+            <h4 className="font-bold text-foreground text-base mb-2">Ferndean (Chapters 36&ndash;38)</h4>
             <div className="space-y-3">
               <div>
-                <h5 className="font-semibold text-gray-800">Chapter 36: Return to Rochester</h5>
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <h5 className="font-semibold text-foreground">Chapter 36: Return to Rochester</h5>
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   Jane returns to find Thornfield Hall a burned ruin. She learns that Bertha Mason set
                   the fire and leapt from the roof to her death. Rochester tried to save the servants
                   and Bertha, losing his sight and his left hand in the blaze. Jane finds Rochester at
@@ -342,8 +342,8 @@ export default function JaneEyrePage() {
                 </p>
               </div>
               <div>
-                <h5 className="font-semibold text-gray-800">Chapters 37&ndash;38: Reunion and Marriage</h5>
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <h5 className="font-semibold text-foreground">Chapters 37&ndash;38: Reunion and Marriage</h5>
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   Jane and Rochester are reunited. The power dynamic has shifted &mdash; Jane is now
                   financially independent and Rochester is dependent on her. They marry as equals.
                   Rochester confesses that he called out Jane&apos;s name in despair, and she heard him
@@ -553,9 +553,9 @@ export default function JaneEyrePage() {
       {/* Historical and Literary Context */}
       <Section title="Historical and Literary Context" icon="🏛️">
         <div className="space-y-4">
-          <div className="rounded-lg bg-gray-50 p-4">
-            <h4 className="font-bold text-gray-900">Victorian Women and the &ldquo;Angel in the House&rdquo;</h4>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+          <div className="rounded-lg bg-muted p-4">
+            <h4 className="font-bold text-foreground">Victorian Women and the &ldquo;Angel in the House&rdquo;</h4>
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               Victorian ideology confined middle-class women to the domestic sphere. Coventry Patmore&apos;s
               poem &ldquo;The Angel in the House&rdquo; (1854) idealised women as pure, passive, and
               selflessly devoted to husband and children. Women could not vote, own property after
@@ -565,9 +565,9 @@ export default function JaneEyrePage() {
               &ldquo;coarse&rdquo; for its depiction of female desire and rebellion.
             </p>
           </div>
-          <div className="rounded-lg bg-gray-50 p-4">
-            <h4 className="font-bold text-gray-900">The Governess</h4>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+          <div className="rounded-lg bg-muted p-4">
+            <h4 className="font-bold text-foreground">The Governess</h4>
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               The governess occupied an uncomfortable position in the Victorian class system: educated
               and genteel but forced to earn a living, she was neither family nor servant. She was expected
               to be invisible, compliant, and grateful. Charlotte Bront&euml; herself worked as a governess
@@ -577,9 +577,9 @@ export default function JaneEyrePage() {
               became a significant Victorian subgenre, exploring class anxiety and female agency.
             </p>
           </div>
-          <div className="rounded-lg bg-gray-50 p-4">
-            <h4 className="font-bold text-gray-900">Colonialism and Empire</h4>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+          <div className="rounded-lg bg-muted p-4">
+            <h4 className="font-bold text-foreground">Colonialism and Empire</h4>
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               The novel engages with the British Empire in several ways. Rochester&apos;s wealth comes from
               his first marriage to Bertha Mason, a Creole heiress from Jamaica &mdash; wealth built on
               the slave trade (abolished in 1833, but its economic legacy persisted). Bertha&apos;s
@@ -590,9 +590,9 @@ export default function JaneEyrePage() {
               Bertha&apos;s story, revealing the violence of colonial marriage and identity.
             </p>
           </div>
-          <div className="rounded-lg bg-gray-50 p-4">
-            <h4 className="font-bold text-gray-900">The Bront&euml; Sisters</h4>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+          <div className="rounded-lg bg-muted p-4">
+            <h4 className="font-bold text-foreground">The Bront&euml; Sisters</h4>
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               Charlotte, Emily, and Anne Bront&euml; published under male pseudonyms (Currer, Ellis, and
               Acton Bell) to avoid the prejudice faced by female authors. <em>Jane Eyre</em> was published
               in 1847 as &ldquo;by Currer Bell,&rdquo; the same year as Emily&apos;s <em>Wuthering
@@ -603,9 +603,9 @@ export default function JaneEyrePage() {
               possibly unrequited feelings for her Brussels teacher, Constantin H&eacute;ger.
             </p>
           </div>
-          <div className="rounded-lg bg-gray-50 p-4">
-            <h4 className="font-bold text-gray-900">Religion in Victorian England</h4>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+          <div className="rounded-lg bg-muted p-4">
+            <h4 className="font-bold text-foreground">Religion in Victorian England</h4>
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               The novel engages critically with several strands of Victorian Christianity. Brocklehurst
               represents Evangelical hypocrisy &mdash; using religion to justify cruelty towards the
               poor. Helen Burns represents a sincere but overly passive Christianity. St John embodies
@@ -615,9 +615,9 @@ export default function JaneEyrePage() {
               dangerously unorthodox by some Victorian readers, who expected women to submit to clerical authority.
             </p>
           </div>
-          <div className="rounded-lg bg-gray-50 p-4">
-            <h4 className="font-bold text-gray-900">The Bildungsroman Tradition</h4>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+          <div className="rounded-lg bg-muted p-4">
+            <h4 className="font-bold text-foreground">The Bildungsroman Tradition</h4>
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               <em>Jane Eyre</em> is a Bildungsroman (novel of formation), tracing the protagonist&apos;s
               growth from childhood to maturity. Each location represents a stage of Jane&apos;s moral
               and psychological development: Gateshead (oppression and rebellion), Lowood (education
@@ -634,58 +634,58 @@ export default function JaneEyrePage() {
       {/* Essay Planning */}
       <Section title="Essay Planning" icon="✍️">
         <div className="space-y-5">
-          <div className="rounded-lg bg-gray-50 p-4">
-            <h4 className="font-bold text-gray-900">How does Bront&euml; present the theme of independence in <em>Jane Eyre</em>?</h4>
-            <div className="mt-2 space-y-2 text-sm text-gray-700 leading-relaxed">
-              <p className="font-semibold text-gray-800">Paragraph 1: Independence as rebellion (Gateshead)</p>
+          <div className="rounded-lg bg-muted p-4">
+            <h4 className="font-bold text-foreground">How does Bront&euml; present the theme of independence in <em>Jane Eyre</em>?</h4>
+            <div className="mt-2 space-y-2 text-sm text-muted-foreground leading-relaxed">
+              <p className="font-semibold text-foreground">Paragraph 1: Independence as rebellion (Gateshead)</p>
               <p>Jane&apos;s confrontation with Mrs Reed: &ldquo;You think I have no feelings.&rdquo; Independence begins as fierce resistance to injustice. Link to Bront&euml;&apos;s critique of class and the dependant&apos;s position.</p>
-              <p className="font-semibold text-gray-800">Paragraph 2: Moral independence (leaving Rochester)</p>
+              <p className="font-semibold text-foreground">Paragraph 2: Moral independence (leaving Rochester)</p>
               <p>&ldquo;I care for myself&hellip; the more I will respect myself.&rdquo; Jane chooses self-respect over love. Laws and principles &ldquo;are for such moments as this.&rdquo; Link to Victorian morality and women&apos;s lack of legal protection.</p>
-              <p className="font-semibold text-gray-800">Paragraph 3: Spiritual independence (rejecting St John)</p>
+              <p className="font-semibold text-foreground">Paragraph 3: Spiritual independence (rejecting St John)</p>
               <p>&ldquo;If I join St John, I abandon half myself.&rdquo; Jane refuses religious coercion. Her faith is personal, not institutional. Contrast St John&apos;s cold duty with Jane&apos;s warm conviction.</p>
-              <p className="font-semibold text-gray-800">Paragraph 4: Financial independence (the inheritance)</p>
+              <p className="font-semibold text-foreground">Paragraph 4: Financial independence (the inheritance)</p>
               <p>The inheritance transforms Jane from dependant to equal. She divides it equally &mdash; generosity, not accumulation. She returns to Rochester as a free agent: &ldquo;Reader, I married him&rdquo; &mdash; she is the subject, not the object.</p>
             </div>
           </div>
 
-          <div className="rounded-lg bg-gray-50 p-4">
-            <h4 className="font-bold text-gray-900">How does Bront&euml; use Gothic elements in <em>Jane Eyre</em>?</h4>
-            <div className="mt-2 space-y-2 text-sm text-gray-700 leading-relaxed">
-              <p className="font-semibold text-gray-800">Paragraph 1: The red room</p>
+          <div className="rounded-lg bg-muted p-4">
+            <h4 className="font-bold text-foreground">How does Bront&euml; use Gothic elements in <em>Jane Eyre</em>?</h4>
+            <div className="mt-2 space-y-2 text-sm text-muted-foreground leading-relaxed">
+              <p className="font-semibold text-foreground">Paragraph 1: The red room</p>
               <p>Gothic imprisonment and psychological terror. The ghost, the mirrors, the red and white colour symbolism. Jane&apos;s confinement mirrors her social position. Link to Gothic tradition of trapped heroines.</p>
-              <p className="font-semibold text-gray-800">Paragraph 2: Bertha Mason and the madwoman in the attic</p>
+              <p className="font-semibold text-foreground">Paragraph 2: Bertha Mason and the madwoman in the attic</p>
               <p>Strange laughter, nocturnal attacks, the ripped veil. Bertha as Gothic double for Jane (uncontrolled passion vs. disciplined self-control). Explore postcolonial readings of Bertha&apos;s confinement.</p>
-              <p className="font-semibold text-gray-800">Paragraph 3: Pathetic fallacy and symbolism</p>
+              <p className="font-semibold text-foreground">Paragraph 3: Pathetic fallacy and symbolism</p>
               <p>The split chestnut tree, storms during emotional crises, the fire that destroys Thornfield. Nature reflects and foreshadows the characters&apos; fates. Link to Romantic and Gothic traditions.</p>
-              <p className="font-semibold text-gray-800">Paragraph 4: Subversion of Gothic conventions</p>
+              <p className="font-semibold text-foreground">Paragraph 4: Subversion of Gothic conventions</p>
               <p>Jane is not a passive Gothic victim but an active moral agent. She investigates the mystery, confronts Rochester, and leaves of her own will. Bront&euml; uses Gothic conventions but gives her heroine agency within them.</p>
             </div>
           </div>
 
-          <div className="rounded-lg bg-gray-50 p-4">
-            <h4 className="font-bold text-gray-900">How does Bront&euml; present the relationship between Jane and Rochester?</h4>
-            <div className="mt-2 space-y-2 text-sm text-gray-700 leading-relaxed">
-              <p className="font-semibold text-gray-800">Paragraph 1: Unconventional beginnings</p>
+          <div className="rounded-lg bg-muted p-4">
+            <h4 className="font-bold text-foreground">How does Bront&euml; present the relationship between Jane and Rochester?</h4>
+            <div className="mt-2 space-y-2 text-sm text-muted-foreground leading-relaxed">
+              <p className="font-semibold text-foreground">Paragraph 1: Unconventional beginnings</p>
               <p>Their first meeting subverts romance conventions: Rochester falls from his horse, and Jane helps him. He is not handsome; she is not beautiful. Their attraction is based on intellectual equality, not physical appearance.</p>
-              <p className="font-semibold text-gray-800">Paragraph 2: Equality of spirit</p>
+              <p className="font-semibold text-foreground">Paragraph 2: Equality of spirit</p>
               <p>&ldquo;It is my spirit that addresses your spirit&hellip; equal &mdash; as we are!&rdquo; Jane insists on equality despite the gulf of class, wealth, and gender. Rochester values Jane&apos;s honesty and directness &mdash; qualities absent in Blanche.</p>
-              <p className="font-semibold text-gray-800">Paragraph 3: Power and deception</p>
+              <p className="font-semibold text-foreground">Paragraph 3: Power and deception</p>
               <p>Rochester&apos;s concealment of Bertha represents a fundamental imbalance of power. His gypsy disguise and use of Blanche to provoke jealousy are manipulative. Jane must leave to preserve her moral autonomy.</p>
-              <p className="font-semibold text-gray-800">Paragraph 4: Restored equality</p>
+              <p className="font-semibold text-foreground">Paragraph 4: Restored equality</p>
               <p>The fire redistributes power: Rochester is blind and dependent; Jane is wealthy and free. Their final marriage is genuinely equal. &ldquo;Reader, I married him&rdquo; &mdash; Jane is the agent of her own destiny.</p>
             </div>
           </div>
 
-          <div className="rounded-lg bg-gray-50 p-4">
-            <h4 className="font-bold text-gray-900">How does Bront&euml; explore the theme of religion in <em>Jane Eyre</em>?</h4>
-            <div className="mt-2 space-y-2 text-sm text-gray-700 leading-relaxed">
-              <p className="font-semibold text-gray-800">Paragraph 1: Brocklehurst &mdash; Evangelical hypocrisy</p>
+          <div className="rounded-lg bg-muted p-4">
+            <h4 className="font-bold text-foreground">How does Bront&euml; explore the theme of religion in <em>Jane Eyre</em>?</h4>
+            <div className="mt-2 space-y-2 text-sm text-muted-foreground leading-relaxed">
+              <p className="font-semibold text-foreground">Paragraph 1: Brocklehurst &mdash; Evangelical hypocrisy</p>
               <p>Uses religion to control and punish. Preaches austerity for orphans while his family wears silks. Bront&euml; satirises the use of Christianity to justify class oppression. Link to Dickens&apos;s similar critiques.</p>
-              <p className="font-semibold text-gray-800">Paragraph 2: Helen Burns &mdash; Christian endurance</p>
+              <p className="font-semibold text-foreground">Paragraph 2: Helen Burns &mdash; Christian endurance</p>
               <p>Genuine faith that offers comfort but accepts suffering too passively. &ldquo;If all the world hated you&hellip; you would not be without friends.&rdquo; Jane learns from Helen but cannot adopt her complete submission to injustice.</p>
-              <p className="font-semibold text-gray-800">Paragraph 3: St John Rivers &mdash; Calvinist rigour</p>
+              <p className="font-semibold text-foreground">Paragraph 3: St John Rivers &mdash; Calvinist rigour</p>
               <p>Duty without love. His proposal is religious coercion: he uses God&apos;s will as an argument Jane cannot easily refuse. His missionary zeal connects to imperialism. Jane recognises that his religion lacks warmth and humanity.</p>
-              <p className="font-semibold text-gray-800">Paragraph 4: Jane&apos;s personal faith</p>
+              <p className="font-semibold text-foreground">Paragraph 4: Jane&apos;s personal faith</p>
               <p>Jane develops a moral code rooted in conscience, not doctrine. She prays but trusts her own sense of right and wrong. Her morality is internal, not institutional. This was radical and controversial in Victorian England.</p>
             </div>
           </div>
@@ -695,9 +695,9 @@ export default function JaneEyrePage() {
       {/* Exam Tips */}
       <Section title="Exam Tips" icon="🎯">
         <div className="space-y-4">
-          <div className="rounded-lg bg-gray-50 p-4">
-            <h4 className="font-bold text-gray-900">Use the Correct Terminology</h4>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+          <div className="rounded-lg bg-muted p-4">
+            <h4 className="font-bold text-foreground">Use the Correct Terminology</h4>
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               Refer to the novel as a <strong>Bildungsroman</strong> (novel of formation/growth).
               Call Bront&euml; the <strong>author</strong> and Jane the <strong>narrator</strong> &mdash;
               do not confuse the two. Use terms like <strong>first-person narration</strong>,
@@ -706,9 +706,9 @@ export default function JaneEyrePage() {
               Refer to <strong>postcolonial</strong> or <strong>feminist</strong> readings when appropriate.
             </p>
           </div>
-          <div className="rounded-lg bg-gray-50 p-4">
-            <h4 className="font-bold text-gray-900">Structure Your Essay Around the Author&apos;s Intentions</h4>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+          <div className="rounded-lg bg-muted p-4">
+            <h4 className="font-bold text-foreground">Structure Your Essay Around the Author&apos;s Intentions</h4>
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               Always frame your analysis as &ldquo;Bront&euml; presents/explores/challenges&hellip;&rdquo;
               rather than &ldquo;Jane feels&hellip;&rdquo; The examiner wants to see that you understand
               the novel is a constructed text with authorial purpose. Ask: why does Bront&euml; include
@@ -716,9 +716,9 @@ export default function JaneEyrePage() {
               Victorian society and attitudes?
             </p>
           </div>
-          <div className="rounded-lg bg-gray-50 p-4">
-            <h4 className="font-bold text-gray-900">Connect Themes to Context</h4>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+          <div className="rounded-lg bg-muted p-4">
+            <h4 className="font-bold text-foreground">Connect Themes to Context</h4>
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               Every theme links to Victorian social issues. Independence &rarr; women&apos;s legal
               status and the &ldquo;Angel in the House&rdquo; ideology. Class &rarr; the governess&apos;s
               ambiguous position. Religion &rarr; Evangelical hypocrisy and Calvinist rigour.
@@ -727,9 +727,9 @@ export default function JaneEyrePage() {
               Context should be woven into your analysis, not bolted on as a separate paragraph.
             </p>
           </div>
-          <div className="rounded-lg bg-gray-50 p-4">
-            <h4 className="font-bold text-gray-900">Compare Characters as Foils</h4>
-            <p className="mt-1 text-sm text-gray-700 leading-relaxed">
+          <div className="rounded-lg bg-muted p-4">
+            <h4 className="font-bold text-foreground">Compare Characters as Foils</h4>
+            <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               Examiners love to see you compare characters. Jane vs. Bertha (controlled vs. uncontrolled
               passion). Rochester vs. St John (all passion vs. all repression). Jane vs. Helen Burns
               (resistance vs. acceptance). Jane vs. Blanche (inner worth vs. outward beauty). These
@@ -742,16 +742,16 @@ export default function JaneEyrePage() {
 
       {/* ────────────────────────────────────────── PRACTICE QUESTIONS */}
       <Section title="Practice Questions" icon="✏️">
-        <p className="text-sm text-gray-500 mb-6">
+        <p className="text-sm text-muted-foreground mb-6">
           Write your answer below each question and receive AI-powered feedback tailored to GCSE English Literature mark schemes.
           Aim for at least 150 words per response to get meaningful feedback.
         </p>
         <div className="space-y-8">
-          <div className="rounded-lg border border-gray-200 p-4">
-            <h4 className="font-bold text-gray-900 mb-1">Question 1</h4>
-            <p className="text-sm text-gray-700 mb-3">
+          <div className="rounded-lg border border-border p-4">
+            <h4 className="font-bold text-foreground mb-1">Question 1</h4>
+            <p className="text-sm text-muted-foreground mb-3">
               How does Bront&euml; present Jane as a strong, independent female character? Refer to the novel as a whole.
-              <span className="ml-2 text-xs font-semibold text-gray-500">[30 marks]</span>
+              <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
               placeholder="Write your essay response here..."
@@ -764,11 +764,11 @@ export default function JaneEyrePage() {
             />
           </div>
 
-          <div className="rounded-lg border border-gray-200 p-4">
-            <h4 className="font-bold text-gray-900 mb-1">Question 2</h4>
-            <p className="text-sm text-gray-700 mb-3">
+          <div className="rounded-lg border border-border p-4">
+            <h4 className="font-bold text-foreground mb-1">Question 2</h4>
+            <p className="text-sm text-muted-foreground mb-3">
               How does Bront&euml; use Gothic elements to explore themes of confinement and freedom in <em>Jane Eyre</em>?
-              <span className="ml-2 text-xs font-semibold text-gray-500">[30 marks]</span>
+              <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
               placeholder="Write your essay response here..."
@@ -781,11 +781,11 @@ export default function JaneEyrePage() {
             />
           </div>
 
-          <div className="rounded-lg border border-gray-200 p-4">
-            <h4 className="font-bold text-gray-900 mb-1">Question 3</h4>
-            <p className="text-sm text-gray-700 mb-3">
+          <div className="rounded-lg border border-border p-4">
+            <h4 className="font-bold text-foreground mb-1">Question 3</h4>
+            <p className="text-sm text-muted-foreground mb-3">
               How does Bront&euml; present the theme of social class and inequality in <em>Jane Eyre</em>?
-              <span className="ml-2 text-xs font-semibold text-gray-500">[30 marks]</span>
+              <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
               placeholder="Write your essay response here..."
@@ -798,11 +798,11 @@ export default function JaneEyrePage() {
             />
           </div>
 
-          <div className="rounded-lg border border-gray-200 p-4">
-            <h4 className="font-bold text-gray-900 mb-1">Question 4</h4>
-            <p className="text-sm text-gray-700 mb-3">
+          <div className="rounded-lg border border-border p-4">
+            <h4 className="font-bold text-foreground mb-1">Question 4</h4>
+            <p className="text-sm text-muted-foreground mb-3">
               How does Bront&euml; present the relationship between Jane and Rochester? Consider how it develops throughout the novel.
-              <span className="ml-2 text-xs font-semibold text-gray-500">[30 marks]</span>
+              <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
             </p>
             <AITextArea
               placeholder="Write your essay response here..."

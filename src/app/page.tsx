@@ -1141,8 +1141,8 @@ export default function Home() {
                 Start Free Trial
               </Button>
               <p className="mt-8 text-sm text-muted-foreground">
-                <Link href="/subjects" className="text-primary hover:underline font-medium">
-                  View all subjects &rarr;
+                <Link href="/courses" className="text-primary hover:underline font-medium">
+                  View all courses &rarr;
                 </Link>
               </p>
             </div>
@@ -1171,7 +1171,6 @@ export default function Home() {
             {/* Links */}
             <div className="flex flex-wrap gap-x-6 gap-y-1 text-sm">
               {[
-                { label: 'Subjects', href: '/subjects' },
                 { label: 'Courses', href: '/courses' },
                 { label: 'Practice', href: '/practice' },
                 { label: 'Revision', href: '/revision' },

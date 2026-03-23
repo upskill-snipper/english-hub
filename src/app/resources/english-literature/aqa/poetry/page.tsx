@@ -217,19 +217,19 @@ function PoemRow({
   return (
     <Link
       href={`${clusterPath}/${poem.slug}`}
-      className="group flex flex-col gap-2 rounded-xl border border-gray-200 p-5 shadow-sm transition hover:border-[#2E86C1] hover:shadow-md sm:flex-row sm:items-center sm:justify-between"
+      className="group flex flex-col gap-2 rounded-xl border border-border p-5 shadow-md transition hover:border-[#2E86C1] hover:shadow-md sm:flex-row sm:items-center sm:justify-between"
     >
       <div>
-        <h3 className="text-lg font-bold text-[#1A5276] group-hover:text-[#2E86C1]">
+        <h3 className="text-lg font-bold text-foreground group-hover:text-primary">
           {poem.title}
         </h3>
-        <p className="text-sm text-gray-500">{poem.poet}</p>
+        <p className="text-sm text-muted-foreground">{poem.poet}</p>
       </div>
       <div className="flex flex-wrap gap-1.5">
         {poem.themes.map((t) => (
           <span
             key={t}
-            className="rounded-full bg-blue-50 px-2.5 py-0.5 text-xs font-medium text-[#1A5276]"
+            className="rounded-full bg-blue-50 px-2.5 py-0.5 text-xs font-medium text-foreground"
           >
             {t}
           </span>
@@ -265,11 +265,11 @@ export default function AqaPoetryPage() {
 
       <div className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
         {/* ── Quick nav ─────────────────────────────────────────── */}
-        <nav className="rounded-xl bg-gray-50 p-6">
-          <h2 className="text-lg font-bold text-gray-900">On this page</h2>
+        <nav className="rounded-xl bg-muted p-6">
+          <h2 className="text-lg font-bold text-foreground">On this page</h2>
           <div className="mt-3 grid gap-4 sm:grid-cols-2">
             <div>
-              <h3 className="text-sm font-semibold text-[#1A5276]">
+              <h3 className="text-sm font-semibold text-foreground">
                 Power and Conflict
               </h3>
               <ul className="mt-2 space-y-1 text-sm">
@@ -277,7 +277,7 @@ export default function AqaPoetryPage() {
                   <li key={p.title}>
                     <a
                       href={`#pac-${p.slug}`}
-                      className="text-[#2E86C1] hover:underline"
+                      className="text-primary hover:underline"
                     >
                       {p.title} — {p.poet}
                     </a>
@@ -286,7 +286,7 @@ export default function AqaPoetryPage() {
               </ul>
             </div>
             <div>
-              <h3 className="text-sm font-semibold text-[#1A5276]">
+              <h3 className="text-sm font-semibold text-foreground">
                 Love and Relationships
               </h3>
               <ul className="mt-2 space-y-1 text-sm">
@@ -294,7 +294,7 @@ export default function AqaPoetryPage() {
                   <li key={p.title}>
                     <a
                       href={`#lar-${p.slug}`}
-                      className="text-[#2E86C1] hover:underline"
+                      className="text-primary hover:underline"
                     >
                       {p.title} — {p.poet}
                     </a>
@@ -307,10 +307,10 @@ export default function AqaPoetryPage() {
 
         {/* ── Exam overview ─────────────────────────────────────── */}
         <section className="mt-14">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             How the AQA Poetry Exam Works
           </h2>
-          <div className="mt-4 rounded-xl bg-gray-50 p-6 text-sm text-gray-700 leading-relaxed space-y-3">
+          <div className="mt-4 rounded-xl bg-muted p-6 text-sm text-muted-foreground leading-relaxed space-y-3">
             <p>
               Your school will have studied <strong>one cluster</strong> —
               either Power and Conflict or Love and Relationships. In the exam
@@ -328,7 +328,7 @@ export default function AqaPoetryPage() {
             <p>
               AQA&apos;s comparison question typically follows this format:
             </p>
-            <div className="mt-2 rounded-lg border border-[#2E86C1] bg-white p-4 italic text-gray-600">
+            <div className="mt-2 rounded-lg border border-[#2E86C1] bg-card p-4 italic text-muted-foreground">
               &ldquo;Compare how poets present [theme/idea] in
               &lsquo;[named poem]&rsquo; and in one other poem from your
               anthology.&rdquo;
@@ -338,57 +338,57 @@ export default function AqaPoetryPage() {
 
         {/* ── AO breakdown ────────────────────────────────────── */}
         <section className="mt-14">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Assessment Objectives — What the Examiner Wants
           </h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-3">
-            <div className="rounded-xl border border-gray-200 p-5 shadow-sm">
+            <div className="rounded-xl border border-border p-5 shadow-md">
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1A5276] text-sm font-bold text-white">
                 AO1
               </div>
-              <h3 className="mt-3 font-bold text-gray-900">
+              <h3 className="mt-3 font-bold text-foreground">
                 Response &amp; Comparison (12 marks)
               </h3>
-              <p className="mt-2 text-sm text-gray-600">
+              <p className="mt-2 text-sm text-muted-foreground">
                 Read, understand, and respond to texts. Use textual references
                 (including quotations) to support and illustrate
                 interpretations. Make <strong>critical comparisons</strong>{" "}
                 across texts.
               </p>
-              <p className="mt-2 text-xs font-medium text-[#2E86C1]">
+              <p className="mt-2 text-xs font-medium text-primary">
                 Tip: Use comparative connectives throughout. Embed short
                 quotations. Every paragraph should discuss both poems.
               </p>
             </div>
-            <div className="rounded-xl border border-gray-200 p-5 shadow-sm">
+            <div className="rounded-xl border border-border p-5 shadow-md">
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1A5276] text-sm font-bold text-white">
                 AO2
               </div>
-              <h3 className="mt-3 font-bold text-gray-900">
+              <h3 className="mt-3 font-bold text-foreground">
                 Methods &amp; Effects (12 marks)
               </h3>
-              <p className="mt-2 text-sm text-gray-600">
+              <p className="mt-2 text-sm text-muted-foreground">
                 Analyse the language, form, and structure used by the writer to
                 create meanings and effects. Use relevant subject terminology.
               </p>
-              <p className="mt-2 text-xs font-medium text-[#2E86C1]">
+              <p className="mt-2 text-xs font-medium text-primary">
                 Tip: Don&apos;t just identify techniques — explain the effect on
                 the reader. Compare how both poets use different methods to
                 achieve similar or contrasting effects.
               </p>
             </div>
-            <div className="rounded-xl border border-gray-200 p-5 shadow-sm">
+            <div className="rounded-xl border border-border p-5 shadow-md">
               <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1A5276] text-sm font-bold text-white">
                 AO3
               </div>
-              <h3 className="mt-3 font-bold text-gray-900">
+              <h3 className="mt-3 font-bold text-foreground">
                 Context (6 marks)
               </h3>
-              <p className="mt-2 text-sm text-gray-600">
+              <p className="mt-2 text-sm text-muted-foreground">
                 Show understanding of the relationships between texts and the
                 contexts in which they were written.
               </p>
-              <p className="mt-2 text-xs font-medium text-[#2E86C1]">
+              <p className="mt-2 text-xs font-medium text-primary">
                 Tip: Weave context into your analysis naturally. Explain how the
                 poet&apos;s background or historical period shapes the poem&apos;s
                 meaning — don&apos;t bolt on a paragraph of biography.
@@ -399,36 +399,36 @@ export default function AqaPoetryPage() {
 
         {/* ── Timing advice ───────────────────────────────────── */}
         <section className="mt-14">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Timing &amp; Exam Strategy
           </h2>
-          <div className="mt-4 rounded-xl border-2 border-[#2E86C1] bg-blue-50 p-6 text-sm text-gray-700 leading-relaxed space-y-3">
+          <div className="mt-4 rounded-xl border-2 border-[#2E86C1] bg-blue-50 p-6 text-sm text-muted-foreground leading-relaxed space-y-3">
             <div className="grid gap-4 sm:grid-cols-2">
               <div>
-                <h3 className="font-bold text-[#1A5276]">
+                <h3 className="font-bold text-foreground">
                   Suggested Time Split (45 mins)
                 </h3>
                 <ul className="mt-2 space-y-1.5">
                   <li className="flex gap-2">
-                    <span className="font-semibold text-[#1A5276]">5 mins</span>
+                    <span className="font-semibold text-foreground">5 mins</span>
                     <span>Read the printed poem carefully. Annotate it. Choose your comparison poem.</span>
                   </li>
                   <li className="flex gap-2">
-                    <span className="font-semibold text-[#1A5276]">5 mins</span>
+                    <span className="font-semibold text-foreground">5 mins</span>
                     <span>Plan your response — identify 3-4 comparison points (themes, methods, context).</span>
                   </li>
                   <li className="flex gap-2">
-                    <span className="font-semibold text-[#1A5276]">30 mins</span>
+                    <span className="font-semibold text-foreground">30 mins</span>
                     <span>Write your comparative essay (aim for 3-4 developed paragraphs).</span>
                   </li>
                   <li className="flex gap-2">
-                    <span className="font-semibold text-[#1A5276]">5 mins</span>
+                    <span className="font-semibold text-foreground">5 mins</span>
                     <span>Check your spelling, punctuation, and that you have compared throughout.</span>
                   </li>
                 </ul>
               </div>
               <div>
-                <h3 className="font-bold text-[#1A5276]">Key Strategies</h3>
+                <h3 className="font-bold text-foreground">Key Strategies</h3>
                 <ul className="mt-2 space-y-1.5">
                   <li>
                     Prepare <strong>2-3 comparison partners</strong> for every
@@ -455,10 +455,10 @@ export default function AqaPoetryPage() {
 
         {/* ── Power and Conflict cluster ──────────────────────── */}
         <section className="mt-14">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Power and Conflict — All 15 Poems
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             15 poems exploring the abuse and loss of power, the reality of
             conflict, the power of nature, and the struggle for identity.
             Click any poem to read the full detailed analysis.
@@ -482,10 +482,10 @@ export default function AqaPoetryPage() {
 
         {/* ── Love and Relationships cluster ──────────────────── */}
         <section className="mt-14">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Love and Relationships — All 15 Poems
           </h2>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             15 poems exploring romantic love, family bonds, desire, memory,
             loss, and the complexities of human relationships across time.
             Click any poem to read the full detailed analysis.
@@ -509,16 +509,16 @@ export default function AqaPoetryPage() {
 
         {/* ── Comparison technique ──────────────────────────────── */}
         <section className="mt-14">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             How to Write an AQA Poetry Comparison
           </h2>
 
           <div className="mt-6 space-y-6">
-            <div className="rounded-xl bg-gray-50 p-6">
-              <h3 className="text-lg font-bold text-[#1A5276]">
+            <div className="rounded-xl bg-muted p-6">
+              <h3 className="text-lg font-bold text-foreground">
                 Recommended Paragraph Structure
               </h3>
-              <ol className="mt-4 space-y-3 text-sm text-gray-700">
+              <ol className="mt-4 space-y-3 text-sm text-muted-foreground">
                 <li className="flex gap-3">
                   <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">
                     1
@@ -579,12 +579,12 @@ export default function AqaPoetryPage() {
             </div>
 
             <div className="rounded-xl border-2 border-[#2E86C1] bg-blue-50 p-6">
-              <h3 className="text-lg font-bold text-[#1A5276]">
+              <h3 className="text-lg font-bold text-foreground">
                 Useful Comparison Connectives
               </h3>
-              <div className="mt-3 grid gap-4 text-sm text-gray-700 sm:grid-cols-2">
+              <div className="mt-3 grid gap-4 text-sm text-muted-foreground sm:grid-cols-2">
                 <div>
-                  <h4 className="font-semibold text-gray-900">Similarities</h4>
+                  <h4 className="font-semibold text-foreground">Similarities</h4>
                   <ul className="mt-2 space-y-1">
                     <li>Similarly, [poet] also...</li>
                     <li>Both poets present...</li>
@@ -594,7 +594,7 @@ export default function AqaPoetryPage() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900">Differences</h4>
+                  <h4 className="font-semibold text-foreground">Differences</h4>
                   <ul className="mt-2 space-y-1">
                     <li>In contrast, [poet]...</li>
                     <li>Whereas &lsquo;[poem A]&rsquo;..., &lsquo;[poem B]&rsquo;...</li>
@@ -607,16 +607,16 @@ export default function AqaPoetryPage() {
             </div>
 
             {/* ── Common comparison pairings ─────────────────── */}
-            <div className="rounded-xl bg-gray-50 p-6">
-              <h3 className="text-lg font-bold text-[#1A5276]">
+            <div className="rounded-xl bg-muted p-6">
+              <h3 className="text-lg font-bold text-foreground">
                 Strong Comparison Pairings
               </h3>
               <div className="mt-4 grid gap-6 sm:grid-cols-2">
                 <div>
-                  <h4 className="text-sm font-semibold text-[#1A5276]">
+                  <h4 className="text-sm font-semibold text-foreground">
                     Power and Conflict
                   </h4>
-                  <ul className="mt-2 space-y-1.5 text-sm text-gray-600">
+                  <ul className="mt-2 space-y-1.5 text-sm text-muted-foreground">
                     <li>
                       <strong>Ozymandias</strong> + <strong>My Last Duchess</strong> — abuse of power, arrogance
                     </li>
@@ -641,10 +641,10 @@ export default function AqaPoetryPage() {
                   </ul>
                 </div>
                 <div>
-                  <h4 className="text-sm font-semibold text-[#1A5276]">
+                  <h4 className="text-sm font-semibold text-foreground">
                     Love and Relationships
                   </h4>
-                  <ul className="mt-2 space-y-1.5 text-sm text-gray-600">
+                  <ul className="mt-2 space-y-1.5 text-sm text-muted-foreground">
                     <li>
                       <strong>When We Two Parted</strong> + <strong>Neutral Tones</strong> — end of love, bitterness
                     </li>

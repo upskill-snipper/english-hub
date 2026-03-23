@@ -281,8 +281,8 @@ export default function LordOfTheFliesPage() {
 
       <div className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
         {/* ── Quick nav ─────────────────────────────────────────── */}
-        <nav className="rounded-xl bg-gray-50 p-6">
-          <h2 className="text-lg font-bold text-gray-900">On this page</h2>
+        <nav className="rounded-xl bg-muted p-6">
+          <h2 className="text-lg font-bold text-foreground">On this page</h2>
           <ul className="mt-3 grid gap-2 text-sm sm:grid-cols-2 lg:grid-cols-3">
             {[
               ["#plot", "Plot Summary"],
@@ -294,7 +294,7 @@ export default function LordOfTheFliesPage() {
               ["#exam", "Edexcel Exam Technique"],
             ].map(([href, label]) => (
               <li key={href}>
-                <a href={href} className="text-[#2E86C1] hover:underline">
+                <a href={href} className="text-primary hover:underline">
                   {label}
                 </a>
               </li>
@@ -304,8 +304,8 @@ export default function LordOfTheFliesPage() {
 
         {/* ── Plot summary ──────────────────────────────────────── */}
         <section id="plot" className="mt-14 scroll-mt-20">
-          <h2 className="text-2xl font-bold text-gray-900">Plot Summary</h2>
-          <p className="mt-2 text-gray-600">
+          <h2 className="text-2xl font-bold text-foreground">Plot Summary</h2>
+          <p className="mt-2 text-muted-foreground">
             The novel follows a group of British schoolboys stranded on an
             uninhabited island after a plane crash during a nuclear war. Their
             attempt to govern themselves descends into savagery and murder.
@@ -314,17 +314,17 @@ export default function LordOfTheFliesPage() {
             {PLOT_SUMMARY.map((section) => (
               <div
                 key={section.chapter}
-                className="rounded-xl border border-gray-200 p-6 shadow-sm"
+                className="rounded-xl border border-border p-6 shadow-md"
               >
                 <div className="flex items-center gap-3">
                   <span className="rounded-full bg-[#1A5276] px-3 py-1 text-xs font-bold text-white">
                     {section.chapter}
                   </span>
-                  <h3 className="text-lg font-bold text-gray-900">
+                  <h3 className="text-lg font-bold text-foreground">
                     {section.title}
                   </h3>
                 </div>
-                <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   {section.summary}
                 </p>
               </div>
@@ -334,26 +334,26 @@ export default function LordOfTheFliesPage() {
 
         {/* ── Characters ────────────────────────────────────────── */}
         <section id="characters" className="mt-14 scroll-mt-20">
-          <h2 className="text-2xl font-bold text-gray-900">Character Analysis</h2>
+          <h2 className="text-2xl font-bold text-foreground">Character Analysis</h2>
           <div className="mt-6 space-y-6">
             {CHARACTERS.map((char) => (
               <div
                 key={char.name}
-                className="rounded-xl border border-gray-200 p-6 shadow-sm"
+                className="rounded-xl border border-border p-6 shadow-md"
               >
-                <h3 className="text-xl font-bold text-[#1A5276]">
+                <h3 className="text-xl font-bold text-foreground">
                   {char.name}
                 </h3>
-                <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   {char.description}
                 </p>
                 <div className="mt-4">
-                  <h4 className="text-xs font-semibold uppercase tracking-wide text-[#2E86C1]">
+                  <h4 className="text-xs font-semibold uppercase tracking-wide text-primary">
                     Key Quotes
                   </h4>
                   <ul className="mt-2 space-y-1">
                     {char.key_quotes.map((q) => (
-                      <li key={q} className="text-sm italic text-gray-600">
+                      <li key={q} className="text-sm italic text-muted-foreground">
                         {q}
                       </li>
                     ))}
@@ -366,26 +366,26 @@ export default function LordOfTheFliesPage() {
 
         {/* ── Themes ────────────────────────────────────────────── */}
         <section id="themes" className="mt-14 scroll-mt-20">
-          <h2 className="text-2xl font-bold text-gray-900">Key Themes</h2>
+          <h2 className="text-2xl font-bold text-foreground">Key Themes</h2>
           <div className="mt-6 space-y-6">
             {THEMES.map((t) => (
               <div
                 key={t.theme}
-                className="rounded-xl border-l-4 border-[#1A5276] bg-gray-50 p-6"
+                className="rounded-xl border-l-4 border-[#1A5276] bg-muted p-6"
               >
-                <h3 className="text-lg font-bold text-[#1A5276]">
+                <h3 className="text-lg font-bold text-foreground">
                   {t.theme}
                 </h3>
-                <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   {t.description}
                 </p>
                 <div className="mt-3">
-                  <h4 className="text-xs font-semibold uppercase tracking-wide text-[#2E86C1]">
+                  <h4 className="text-xs font-semibold uppercase tracking-wide text-primary">
                     Supporting Quotes
                   </h4>
                   <ul className="mt-2 space-y-1">
                     {t.quotes.map((q) => (
-                      <li key={q} className="text-sm italic text-gray-600">
+                      <li key={q} className="text-sm italic text-muted-foreground">
                         {q}
                       </li>
                     ))}
@@ -398,8 +398,8 @@ export default function LordOfTheFliesPage() {
 
         {/* ── Symbolism ───────────────────────────────────────── */}
         <section id="symbolism" className="mt-14 scroll-mt-20">
-          <h2 className="text-2xl font-bold text-gray-900">Symbolism</h2>
-          <p className="mt-2 text-gray-600">
+          <h2 className="text-2xl font-bold text-foreground">Symbolism</h2>
+          <p className="mt-2 text-muted-foreground">
             Golding uses symbolism extensively. Understanding these symbols is
             essential for achieving top marks on the Edexcel exam.
           </p>
@@ -407,10 +407,10 @@ export default function LordOfTheFliesPage() {
             {SYMBOLISM.map((s) => (
               <div
                 key={s.symbol}
-                className="rounded-xl border border-gray-200 p-5 shadow-sm"
+                className="rounded-xl border border-border p-5 shadow-md"
               >
-                <h3 className="font-bold text-[#1A5276]">{s.symbol}</h3>
-                <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+                <h3 className="font-bold text-foreground">{s.symbol}</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   {s.meaning}
                 </p>
               </div>
@@ -420,8 +420,8 @@ export default function LordOfTheFliesPage() {
 
         {/* ── Key quotes ────────────────────────────────────────── */}
         <section id="quotes" className="mt-14 scroll-mt-20">
-          <h2 className="text-2xl font-bold text-gray-900">Key Quotes (15+)</h2>
-          <p className="mt-2 text-gray-600">
+          <h2 className="text-2xl font-bold text-foreground">Key Quotes (15+)</h2>
+          <p className="mt-2 text-muted-foreground">
             The Edexcel exam provides an extract, but you will also need to
             reference the wider novel. Learn these quotes and practise embedding
             them into analytical paragraphs.
@@ -430,15 +430,15 @@ export default function LordOfTheFliesPage() {
             {KEY_QUOTES.map((q, i) => (
               <div
                 key={i}
-                className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm"
+                className="rounded-lg border border-border bg-card p-4 shadow-md"
               >
-                <p className="text-sm font-semibold italic text-[#1A5276]">
+                <p className="text-sm font-semibold italic text-foreground">
                   {q.quote}
                 </p>
-                <p className="mt-1 text-xs font-medium text-[#2E86C1]">
+                <p className="mt-1 text-xs font-medium text-primary">
                   — {q.speaker}
                 </p>
-                <p className="mt-2 text-sm text-gray-700">{q.significance}</p>
+                <p className="mt-2 text-sm text-muted-foreground">{q.significance}</p>
               </div>
             ))}
           </div>
@@ -446,15 +446,15 @@ export default function LordOfTheFliesPage() {
 
         {/* ── Context ───────────────────────────────────────────── */}
         <section id="context" className="mt-14 scroll-mt-20">
-          <h2 className="text-2xl font-bold text-gray-900">Historical Context</h2>
+          <h2 className="text-2xl font-bold text-foreground">Historical Context</h2>
           <div className="mt-6 space-y-4">
             {CONTEXT_POINTS.map((c) => (
               <div
                 key={c.topic}
-                className="rounded-xl border border-gray-200 p-5 shadow-sm"
+                className="rounded-xl border border-border p-5 shadow-md"
               >
-                <h3 className="font-bold text-[#1A5276]">{c.topic}</h3>
-                <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+                <h3 className="font-bold text-foreground">{c.topic}</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   {c.detail}
                 </p>
               </div>
@@ -464,16 +464,16 @@ export default function LordOfTheFliesPage() {
 
         {/* ── Exam technique ────────────────────────────────────── */}
         <section id="exam" className="mt-14 scroll-mt-20">
-          <h2 className="text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl font-bold text-foreground">
             Edexcel Exam Technique for Lord of the Flies
           </h2>
 
           <div className="mt-6 space-y-6">
-            <div className="rounded-xl bg-gray-50 p-6">
-              <h3 className="text-lg font-bold text-[#1A5276]">
+            <div className="rounded-xl bg-muted p-6">
+              <h3 className="text-lg font-bold text-foreground">
                 What Does the Edexcel Question Look Like?
               </h3>
-              <p className="mt-2 text-sm text-gray-700">
+              <p className="mt-2 text-sm text-muted-foreground">
                 Paper 1, Section B is worth <strong>40 marks</strong>. You are
                 given an <strong>extract</strong> from the novel and asked a
                 question about a theme or character. You must analyse the extract
@@ -481,20 +481,20 @@ export default function LordOfTheFliesPage() {
                 <strong>wider novel</strong>. This is an extract + essay format.
               </p>
               <div className="mt-4 space-y-3">
-                <div className="rounded-lg border-2 border-dashed border-[#2E86C1] bg-white p-4">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-[#2E86C1]">
+                <div className="rounded-lg border-2 border-dashed border-[#2E86C1] bg-card p-4">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-primary">
                     Example Question 1
                   </p>
-                  <p className="mt-2 text-sm text-gray-900 font-medium">
+                  <p className="mt-2 text-sm text-foreground font-medium">
                     Explore how Golding presents the conflict between civilisation
                     and savagery in this extract and in the novel as a whole.
                   </p>
                 </div>
-                <div className="rounded-lg border-2 border-dashed border-[#2E86C1] bg-white p-4">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-[#2E86C1]">
+                <div className="rounded-lg border-2 border-dashed border-[#2E86C1] bg-card p-4">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-primary">
                     Example Question 2
                   </p>
-                  <p className="mt-2 text-sm text-gray-900 font-medium">
+                  <p className="mt-2 text-sm text-foreground font-medium">
                     How does Golding present the importance of power in this
                     extract and in the novel as a whole?
                   </p>
@@ -502,11 +502,11 @@ export default function LordOfTheFliesPage() {
               </div>
             </div>
 
-            <div className="rounded-xl bg-gray-50 p-6">
-              <h3 className="text-lg font-bold text-[#1A5276]">
+            <div className="rounded-xl bg-muted p-6">
+              <h3 className="text-lg font-bold text-foreground">
                 How to Structure Your Answer (40 marks)
               </h3>
-              <ol className="mt-4 space-y-3 text-sm text-gray-700">
+              <ol className="mt-4 space-y-3 text-sm text-muted-foreground">
                 <li className="flex gap-3">
                   <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">1</span>
                   <span>
@@ -547,32 +547,32 @@ export default function LordOfTheFliesPage() {
             </div>
 
             <div className="rounded-xl border-2 border-[#2E86C1] bg-blue-50 p-6">
-              <h3 className="text-lg font-bold text-[#1A5276]">
+              <h3 className="text-lg font-bold text-foreground">
                 Top Tips for Top Marks
               </h3>
-              <ul className="mt-4 space-y-2 text-sm text-gray-700">
+              <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#2E86C1]" />
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   Always use &quot;Golding&quot; as the subject — &quot;Golding presents/suggests/uses...&quot; This demonstrates awareness of the writer&apos;s craft (AO2).
                 </li>
                 <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#2E86C1]" />
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   Discuss symbolism in depth — the conch, the beast, the fire, the glasses, and the Lord of the Flies are central to Golding&apos;s method and can be applied to almost any question.
                 </li>
                 <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#2E86C1]" />
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   Track change across the novel — show how characters or themes develop. For example: Roger&apos;s progression from throwing stones near Henry to killing Piggy with &quot;delirious abandonment.&quot;
                 </li>
                 <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#2E86C1]" />
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   Use the extract as a springboard — analyse it closely first, then widen your argument to the whole novel. Do not ignore the extract.
                 </li>
                 <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#2E86C1]" />
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   Connect to the allegorical reading — the island as a microcosm of society, the boys as representatives of different aspects of human nature, the ending as a comment on civilisation&apos;s failure.
                 </li>
                 <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#2E86C1]" />
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                   Remember the mark scheme: AO1 (response to text, use of quotes), AO2 (analysis of writer&apos;s methods — language, form, structure), AO3 (context), AO4 (SPaG — 4 marks are available for spelling, punctuation, and grammar in Section B).
                 </li>
               </ul>

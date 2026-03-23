@@ -206,24 +206,24 @@ export default function Paper2Page() {
       <div className="mx-auto max-w-4xl px-4 py-12 sm:py-16 lg:py-20">
         {/* ── Paper structure ─────────────────────────────────────── */}
         <section aria-labelledby="structure-heading">
-          <h2 id="structure-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="structure-heading" className="text-2xl font-bold text-foreground">
             Paper Structure
           </h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <h3 className="font-semibold text-[#1A5276]">Section A &mdash; Shakespeare</h3>
-              <p className="mt-1 text-sm text-gray-600">25 marks</p>
-              <ul className="mt-3 space-y-1 text-sm text-gray-700">
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <h3 className="font-semibold text-foreground">Section A &mdash; Shakespeare</h3>
+              <p className="mt-1 text-sm text-muted-foreground">25 marks</p>
+              <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
                 <li>&bull; Answer <strong>one</strong> question on your set Shakespeare play</li>
                 <li>&bull; Choice of passage-based or essay question</li>
                 <li>&bull; Passage-based: an extract is printed for close analysis</li>
                 <li>&bull; Essay: broader question on themes, characters, or techniques</li>
               </ul>
             </div>
-            <div className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <h3 className="font-semibold text-[#1A5276]">Section B &mdash; Other Drama</h3>
-              <p className="mt-1 text-sm text-gray-600">25 marks</p>
-              <ul className="mt-3 space-y-1 text-sm text-gray-700">
+            <div className="rounded-lg border border-border bg-card p-5 shadow-md">
+              <h3 className="font-semibold text-foreground">Section B &mdash; Other Drama</h3>
+              <p className="mt-1 text-sm text-muted-foreground">25 marks</p>
+              <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
                 <li>&bull; Answer <strong>one</strong> question on your other set drama text</li>
                 <li>&bull; Same choice: passage-based or essay</li>
                 <li>&bull; Must demonstrate awareness of the text as a piece of drama, not just a story</li>
@@ -233,14 +233,14 @@ export default function Paper2Page() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Shakespeare plays ───────────────────────────────────── */}
         <section aria-labelledby="shakespeare-heading">
-          <h2 id="shakespeare-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="shakespeare-heading" className="text-2xl font-bold text-foreground">
             Set Shakespeare Plays
           </h2>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-sm text-muted-foreground">
             Your school will study one Shakespeare play. Below are the commonly set texts
             with a summary of key themes and typical Cambridge exam focuses.
           </p>
@@ -249,27 +249,27 @@ export default function Paper2Page() {
             {shakespearePlays.map((p) => (
               <div
                 key={p.title}
-                className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm"
+                className="rounded-lg border border-border bg-card p-5 shadow-md"
               >
-                <h3 className="text-lg font-semibold text-[#1A5276]">
+                <h3 className="text-lg font-semibold text-foreground">
                   {p.title}
                   {"link" in p && (
                     <Link
                       href={p.link!}
-                      className="ml-2 text-sm font-medium text-[#2E86C1] underline underline-offset-2 hover:text-[#1A5276]"
+                      className="ml-2 text-sm font-medium text-primary underline underline-offset-2 hover:text-foreground"
                     >
                       Full study guide &rarr;
                     </Link>
                   )}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-700">{p.summary}</p>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.summary}</p>
                 <div className="mt-3">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-[#1A5276]">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-foreground">
                     Typical exam focuses:
                   </p>
                   <ul className="mt-1 space-y-1">
                     {p.examFocus.map((f, i) => (
-                      <li key={i} className="text-sm text-gray-700">
+                      <li key={i} className="text-sm text-muted-foreground">
                         &bull; {f}
                       </li>
                     ))}
@@ -280,14 +280,14 @@ export default function Paper2Page() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── Other drama ─────────────────────────────────────────── */}
         <section aria-labelledby="other-drama-heading">
-          <h2 id="other-drama-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="other-drama-heading" className="text-2xl font-bold text-foreground">
             Other Drama Texts
           </h2>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-sm text-muted-foreground">
             Section B of Paper 2 covers a non-Shakespeare drama text. Below are commonly
             set texts with key dramatic techniques to discuss.
           </p>
@@ -296,20 +296,20 @@ export default function Paper2Page() {
             {otherDrama.map((d) => (
               <div
                 key={d.title}
-                className="rounded-lg border border-gray-200 bg-white p-5 shadow-sm"
+                className="rounded-lg border border-border bg-card p-5 shadow-md"
               >
-                <h3 className="text-lg font-semibold text-[#1A5276]">
+                <h3 className="text-lg font-semibold text-foreground">
                   {d.title}
-                  <span className="ml-1 font-normal text-gray-500">&mdash; {d.author}</span>
+                  <span className="ml-1 font-normal text-muted-foreground">&mdash; {d.author}</span>
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-gray-700">{d.summary}</p>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{d.summary}</p>
                 <div className="mt-3">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-[#1A5276]">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-foreground">
                     Key dramatic techniques:
                   </p>
                   <ul className="mt-1 space-y-1">
                     {d.techniques.map((t, i) => (
-                      <li key={i} className="text-sm text-gray-700">
+                      <li key={i} className="text-sm text-muted-foreground">
                         &bull; {t}
                       </li>
                     ))}
@@ -320,14 +320,14 @@ export default function Paper2Page() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* ── How to write about dramatic technique ───────────────── */}
         <section aria-labelledby="techniques-heading">
-          <h2 id="techniques-heading" className="text-2xl font-bold text-gray-900">
+          <h2 id="techniques-heading" className="text-2xl font-bold text-foreground">
             How to Write About Dramatic Technique
           </h2>
-          <p className="mt-2 text-sm text-gray-600">
+          <p className="mt-2 text-sm text-muted-foreground">
             Cambridge examiners reward responses that treat the text as drama, not just
             as a story. Below are key dramatic techniques with definitions, examples, and
             advice on how to write about them effectively.
@@ -337,28 +337,28 @@ export default function Paper2Page() {
             {dramaticTechniques.map((dt) => (
               <div
                 key={dt.technique}
-                className="rounded-lg border-l-4 border-[#2E86C1] bg-white p-5 shadow-sm"
+                className="rounded-lg border-l-4 border-[#2E86C1] bg-card p-5 shadow-md"
               >
-                <h3 className="font-semibold text-[#1A5276]">{dt.technique}</h3>
-                <p className="mt-1 text-sm text-gray-700">
+                <h3 className="font-semibold text-foreground">{dt.technique}</h3>
+                <p className="mt-1 text-sm text-muted-foreground">
                   <strong>Definition:</strong> {dt.definition}
                 </p>
-                <p className="mt-1 text-sm text-gray-700">
+                <p className="mt-1 text-sm text-muted-foreground">
                   <strong>Example:</strong> {dt.example}
                 </p>
-                <div className="mt-2 rounded bg-[#2E86C1]/5 p-3">
-                  <p className="text-xs font-semibold text-[#1A5276]">How to write about it:</p>
-                  <p className="mt-1 text-sm text-gray-700">{dt.howToWrite}</p>
+                <div className="mt-2 rounded bg-primary/5 p-3">
+                  <p className="text-xs font-semibold text-foreground">How to write about it:</p>
+                  <p className="mt-1 text-sm text-muted-foreground">{dt.howToWrite}</p>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="mt-8 rounded-lg border border-[#2E86C1]/20 bg-[#2E86C1]/5 p-5">
-            <h3 className="font-semibold text-[#1A5276]">
+          <div className="mt-8 rounded-lg border border-[#2E86C1]/20 bg-primary/5 p-5">
+            <h3 className="font-semibold text-foreground">
               Key Phrases for Writing About Drama
             </h3>
-            <p className="mt-2 text-sm text-gray-700">
+            <p className="mt-2 text-sm text-muted-foreground">
               Use these phrases in your responses to show you are thinking about the text
               as a piece of theatre, not just a novel:
             </p>
@@ -377,7 +377,7 @@ export default function Paper2Page() {
               ].map((phrase) => (
                 <span
                   key={phrase}
-                  className="rounded-full bg-white px-3 py-1 text-xs font-medium text-[#1A5276] shadow-sm"
+                  className="rounded-full bg-card px-3 py-1 text-xs font-medium text-foreground shadow-md"
                 >
                   {phrase}
                 </span>
@@ -390,7 +390,7 @@ export default function Paper2Page() {
         <div className="mt-12 flex items-center gap-2 text-sm">
           <Link
             href="/resources/english-literature/caie"
-            className="font-medium text-[#1A5276] underline underline-offset-2 hover:text-[#2E86C1]"
+            className="font-medium text-foreground underline underline-offset-2 hover:text-primary"
           >
             &larr; Back to Cambridge IGCSE English Literature
           </Link>

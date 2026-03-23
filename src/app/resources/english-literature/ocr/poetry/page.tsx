@@ -41,11 +41,11 @@ export default function OCRPoetryPage() {
         <section aria-labelledby="overview-heading">
           <h2
             id="overview-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             The OCR Poetry Anthology
           </h2>
-          <div className="mt-4 space-y-4 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>
               The OCR GCSE English Literature poetry anthology is organised
               into thematic clusters. Your school will study one cluster. In
@@ -70,25 +70,25 @@ export default function OCRPoetryPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* How to analyse a poem */}
         <section aria-labelledby="analysis-heading">
           <h2
             id="analysis-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             How to Analyse a Poem
           </h2>
-          <div className="mt-4 space-y-6 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-6 text-muted-foreground leading-relaxed">
             <p>
               When approaching any poem from the anthology, work through
               these layers of analysis:
             </p>
 
             {/* Layer 1: Meaning */}
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="font-semibold text-gray-900">
+            <div className="rounded-lg border border-border bg-muted p-5">
+              <h3 className="font-semibold text-foreground">
                 1. Subject and Meaning
               </h3>
               <p className="mt-2 text-sm">
@@ -105,8 +105,8 @@ export default function OCRPoetryPage() {
             </div>
 
             {/* Layer 2: Voice and Tone */}
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="font-semibold text-gray-900">
+            <div className="rounded-lg border border-border bg-muted p-5">
+              <h3 className="font-semibold text-foreground">
                 2. Voice and Tone
               </h3>
               <p className="mt-2 text-sm">
@@ -123,8 +123,8 @@ export default function OCRPoetryPage() {
             </div>
 
             {/* Layer 3: Language */}
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="font-semibold text-gray-900">
+            <div className="rounded-lg border border-border bg-muted p-5">
+              <h3 className="font-semibold text-foreground">
                 3. Language and Imagery
               </h3>
               <p className="mt-2 text-sm">
@@ -165,8 +165,8 @@ export default function OCRPoetryPage() {
             </div>
 
             {/* Layer 4: Form and Structure */}
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="font-semibold text-gray-900">
+            <div className="rounded-lg border border-border bg-muted p-5">
+              <h3 className="font-semibold text-foreground">
                 4. Form and Structure
               </h3>
               <p className="mt-2 text-sm">
@@ -219,8 +219,8 @@ export default function OCRPoetryPage() {
             </div>
 
             {/* Layer 5: Context */}
-            <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-              <h3 className="font-semibold text-gray-900">
+            <div className="rounded-lg border border-border bg-muted p-5">
+              <h3 className="font-semibold text-foreground">
                 5. Context
               </h3>
               <p className="mt-2 text-sm">
@@ -238,17 +238,17 @@ export default function OCRPoetryPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* Comparison strategies */}
         <section aria-labelledby="comparison-heading">
           <h2
             id="comparison-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Comparison Strategies
           </h2>
-          <div className="mt-4 space-y-6 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-6 text-muted-foreground leading-relaxed">
             <p>
               The OCR poetry comparison question is worth 24 marks. You must
               compare the printed poem with one of your choice from the same
@@ -257,7 +257,7 @@ export default function OCRPoetryPage() {
 
             {/* Choosing the comparison */}
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 Choosing Your Comparison Poem
               </h3>
               <p className="mt-2">
@@ -285,7 +285,7 @@ export default function OCRPoetryPage() {
 
             {/* What to compare */}
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 What to Compare
               </h3>
               <p className="mt-2">
@@ -294,21 +294,21 @@ export default function OCRPoetryPage() {
               <div className="mt-3 grid gap-3 sm:grid-cols-2">
                 <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                   <p className="font-semibold text-primary">Themes and Ideas</p>
-                  <p className="mt-1 text-sm text-gray-700">
+                  <p className="mt-1 text-sm text-muted-foreground">
                     How do both poets explore the same theme? Do they agree or
                     disagree? Do they focus on different aspects?
                   </p>
                 </div>
                 <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                   <p className="font-semibold text-primary">Language and Imagery</p>
-                  <p className="mt-1 text-sm text-gray-700">
+                  <p className="mt-1 text-sm text-muted-foreground">
                     What types of imagery do the poets use? Are there
                     contrasting semantic fields? Different tones?
                   </p>
                 </div>
                 <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                   <p className="font-semibold text-primary">Form and Structure</p>
-                  <p className="mt-1 text-sm text-gray-700">
+                  <p className="mt-1 text-sm text-muted-foreground">
                     How do the poets structure their poems? Regular vs
                     irregular form? Different use of enjambment, stanzas, or
                     line length?
@@ -316,7 +316,7 @@ export default function OCRPoetryPage() {
                 </div>
                 <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                   <p className="font-semibold text-primary">Voice and Perspective</p>
-                  <p className="mt-1 text-sm text-gray-700">
+                  <p className="mt-1 text-sm text-muted-foreground">
                     Who is speaking in each poem? First person vs third
                     person? Personal vs universal? How does perspective shape
                     meaning?
@@ -324,14 +324,14 @@ export default function OCRPoetryPage() {
                 </div>
                 <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                   <p className="font-semibold text-primary">Tone and Mood</p>
-                  <p className="mt-1 text-sm text-gray-700">
+                  <p className="mt-1 text-sm text-muted-foreground">
                     What is the emotional atmosphere of each poem? Where do
                     the tones differ? How does tone relate to meaning?
                   </p>
                 </div>
                 <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
                   <p className="font-semibold text-primary">Context</p>
-                  <p className="mt-1 text-sm text-gray-700">
+                  <p className="mt-1 text-sm text-muted-foreground">
                     How does the historical or personal context of each poet
                     shape their treatment of the theme?
                   </p>
@@ -341,7 +341,7 @@ export default function OCRPoetryPage() {
 
             {/* Comparative language */}
             <div>
-              <h3 className="text-xl font-semibold text-gray-900">
+              <h3 className="text-xl font-semibold text-foreground">
                 Comparative Language to Use
               </h3>
               <p className="mt-2">
@@ -349,8 +349,8 @@ export default function OCRPoetryPage() {
                 response:
               </p>
               <div className="mt-3 grid gap-3 sm:grid-cols-2">
-                <div className="rounded border border-gray-200 bg-gray-50 p-3">
-                  <p className="text-xs font-semibold uppercase text-gray-500">Similarity</p>
+                <div className="rounded border border-border bg-muted p-3">
+                  <p className="text-xs font-semibold uppercase text-muted-foreground">Similarity</p>
                   <ul className="mt-1 space-y-1 text-sm">
                     <li>&ldquo;Similarly, [poet] also&hellip;&rdquo;</li>
                     <li>&ldquo;Both poets present&hellip;&rdquo;</li>
@@ -359,8 +359,8 @@ export default function OCRPoetryPage() {
                     <li>&ldquo;This mirrors the way [poet]&hellip;&rdquo;</li>
                   </ul>
                 </div>
-                <div className="rounded border border-gray-200 bg-gray-50 p-3">
-                  <p className="text-xs font-semibold uppercase text-gray-500">Difference</p>
+                <div className="rounded border border-border bg-muted p-3">
+                  <p className="text-xs font-semibold uppercase text-muted-foreground">Difference</p>
                   <ul className="mt-1 space-y-1 text-sm">
                     <li>&ldquo;In contrast, [poet]&hellip;&rdquo;</li>
                     <li>&ldquo;Whereas [poet] presents&hellip;, [poet]&hellip;&rdquo;</li>
@@ -374,17 +374,17 @@ export default function OCRPoetryPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* Thematic links */}
         <section aria-labelledby="themes-heading">
           <h2
             id="themes-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Common Themes Across the Anthology
           </h2>
-          <div className="mt-4 space-y-4 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>
               Regardless of which cluster you study, these broad themes
               frequently appear. Mapping poems to themes helps you prepare
@@ -392,8 +392,8 @@ export default function OCRPoetryPage() {
             </p>
 
             <div className="space-y-4">
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="text-lg font-semibold text-gray-900">Power and Powerlessness</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="text-lg font-semibold text-foreground">Power and Powerlessness</h3>
                 <p className="mt-2 text-sm">
                   Who holds power in the poem? Is it political, personal,
                   natural, or emotional power? How is powerlessness conveyed?
@@ -403,8 +403,8 @@ export default function OCRPoetryPage() {
                 </p>
               </div>
 
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="text-lg font-semibold text-gray-900">Loss and Memory</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="text-lg font-semibold text-foreground">Loss and Memory</h3>
                 <p className="mt-2 text-sm">
                   Many poems explore the pain of loss &mdash; of a person, a
                   place, innocence, or identity. How does the poet use memory
@@ -414,8 +414,8 @@ export default function OCRPoetryPage() {
                 </p>
               </div>
 
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="text-lg font-semibold text-gray-900">Identity and Belonging</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="text-lg font-semibold text-foreground">Identity and Belonging</h3>
                 <p className="mt-2 text-sm">
                   How does the speaker define themselves? Is their identity
                   stable or in crisis? Do they feel they belong, or are they
@@ -424,8 +424,8 @@ export default function OCRPoetryPage() {
                 </p>
               </div>
 
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="text-lg font-semibold text-gray-900">Nature and the Environment</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="text-lg font-semibold text-foreground">Nature and the Environment</h3>
                 <p className="mt-2 text-sm">
                   Is nature presented as beautiful, destructive, indifferent,
                   or spiritual? Is it used literally or symbolically? How
@@ -435,8 +435,8 @@ export default function OCRPoetryPage() {
                 </p>
               </div>
 
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="text-lg font-semibold text-gray-900">Conflict and Violence</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="text-lg font-semibold text-foreground">Conflict and Violence</h3>
                 <p className="mt-2 text-sm">
                   Is the conflict physical (war, violence) or emotional
                   (internal struggle, relationship conflict)? How does the
@@ -446,8 +446,8 @@ export default function OCRPoetryPage() {
                 </p>
               </div>
 
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="text-lg font-semibold text-gray-900">Time and Change</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="text-lg font-semibold text-foreground">Time and Change</h3>
                 <p className="mt-2 text-sm">
                   How does the poet represent the passage of time? Is time
                   comforting or threatening? Does the poem look back at the
@@ -460,46 +460,46 @@ export default function OCRPoetryPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* Analytical frameworks */}
         <section aria-labelledby="frameworks-heading">
           <h2
             id="frameworks-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Analytical Paragraph Framework
           </h2>
-          <div className="mt-4 space-y-4 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <p>
               Each paragraph in your comparison essay should follow this
               structure:
             </p>
             <div className="mt-3 space-y-3">
-              <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm">
+              <div className="rounded-lg border border-border bg-card p-4 shadow-md">
                 <p className="font-semibold text-primary">1. Comparative topic sentence</p>
-                <p className="mt-1 text-sm text-gray-700">
+                <p className="mt-1 text-sm text-muted-foreground">
                   State the point of comparison: &ldquo;Both poets present
                   conflict as destructive, but through contrasting methods.&rdquo;
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm">
+              <div className="rounded-lg border border-border bg-card p-4 shadow-md">
                 <p className="font-semibold text-primary">2. Analyse the printed poem</p>
-                <p className="mt-1 text-sm text-gray-700">
+                <p className="mt-1 text-sm text-muted-foreground">
                   Quote directly from the poem on the paper. Analyse specific
                   word choices, techniques, and their effects.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm">
+              <div className="rounded-lg border border-border bg-card p-4 shadow-md">
                 <p className="font-semibold text-primary">3. Compare with your chosen poem</p>
-                <p className="mt-1 text-sm text-gray-700">
+                <p className="mt-1 text-sm text-muted-foreground">
                   Use a comparative connective. Quote from memory (even short
                   phrases). Analyse the language and explain the comparison.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm">
+              <div className="rounded-lg border border-border bg-card p-4 shadow-md">
                 <p className="font-semibold text-primary">4. Evaluate the effect</p>
-                <p className="mt-1 text-sm text-gray-700">
+                <p className="mt-1 text-sm text-muted-foreground">
                   What does this comparison reveal? Which approach is more
                   effective and why? Consider the reader&rsquo;s response.
                 </p>
@@ -507,11 +507,11 @@ export default function OCRPoetryPage() {
             </div>
 
             {/* Model paragraph */}
-            <h3 className="mt-8 text-xl font-semibold text-gray-900">
+            <h3 className="mt-8 text-xl font-semibold text-foreground">
               Model Comparison Paragraph
             </h3>
-            <div className="mt-3 rounded-lg border border-gray-200 bg-white p-5 shadow-sm">
-              <p className="text-sm italic text-gray-700">
+            <div className="mt-3 rounded-lg border border-border bg-card p-5 shadow-md">
+              <p className="text-sm italic text-muted-foreground">
                 &ldquo;Both poets explore the theme of lost love, yet their
                 tones are markedly different. In [Poem A], the poet uses the
                 metaphor of &lsquo;embers dying in the grate&rsquo; to
@@ -531,28 +531,28 @@ export default function OCRPoetryPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* Revision strategies */}
         <section aria-labelledby="revision-heading">
           <h2
             id="revision-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Revision Strategies for Poetry
           </h2>
-          <div className="mt-4 space-y-4 text-gray-700 leading-relaxed">
+          <div className="mt-4 space-y-4 text-muted-foreground leading-relaxed">
             <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="font-semibold text-gray-900">Create Comparison Grids</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="font-semibold text-foreground">Create Comparison Grids</h3>
                 <p className="mt-2 text-sm">
                   Make a grid with themes along the top and poems down the
                   side. Tick which poems relate to which themes. This helps
                   you see at a glance which poems pair well together.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="font-semibold text-gray-900">Memorise Key Quotations</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="font-semibold text-foreground">Memorise Key Quotations</h3>
                 <p className="mt-2 text-sm">
                   For each poem, learn 3&ndash;5 short quotations (2&ndash;4
                   words each). Short quotations are easier to remember and
@@ -560,8 +560,8 @@ export default function OCRPoetryPage() {
                   yourself daily.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="font-semibold text-gray-900">Practise Timed Comparisons</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="font-semibold text-foreground">Practise Timed Comparisons</h3>
                 <p className="mt-2 text-sm">
                   Give yourself 40 minutes (the exam allocation) to write a
                   comparison. Practise with different poem pairings and
@@ -569,8 +569,8 @@ export default function OCRPoetryPage() {
                   more confident you become.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="font-semibold text-gray-900">Annotate Every Poem</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="font-semibold text-foreground">Annotate Every Poem</h3>
                 <p className="mt-2 text-sm">
                   Create detailed annotations for every poem in your cluster.
                   Note key techniques, word-level analysis, structural
@@ -578,16 +578,16 @@ export default function OCRPoetryPage() {
                   revision notes.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="font-semibold text-gray-900">Know the Poems Inside Out</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="font-semibold text-foreground">Know the Poems Inside Out</h3>
                 <p className="mt-2 text-sm">
                   You need to write about your chosen poem from memory. Read
                   each poem so many times that you can summarise its content,
                   structure, and key techniques without looking at the text.
                 </p>
               </div>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 p-5">
-                <h3 className="font-semibold text-gray-900">Prepare Flexible Pairings</h3>
+              <div className="rounded-lg border border-border bg-muted p-5">
+                <h3 className="font-semibold text-foreground">Prepare Flexible Pairings</h3>
                 <p className="mt-2 text-sm">
                   Prepare comparison notes for multiple pairings. Any poem
                   could appear in the exam, so you need to be able to compare
@@ -598,18 +598,18 @@ export default function OCRPoetryPage() {
           </div>
         </section>
 
-        <hr className="my-10 border-gray-200" />
+        <hr className="my-10 border-border" />
 
         {/* Common mistakes */}
         <section aria-labelledby="mistakes-heading">
           <h2
             id="mistakes-heading"
-            className="text-2xl font-bold text-gray-900"
+            className="text-2xl font-bold text-foreground"
           >
             Common Mistakes to Avoid
           </h2>
           <div className="mt-4">
-            <ul className="ml-6 list-disc space-y-3 text-gray-700 leading-relaxed">
+            <ul className="ml-6 list-disc space-y-3 text-muted-foreground leading-relaxed">
               <li>
                 <strong>Writing about each poem separately</strong> &mdash;
                 This is the most common mistake. You must compare
