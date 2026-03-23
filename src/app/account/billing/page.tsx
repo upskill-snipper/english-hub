@@ -69,7 +69,7 @@ export default function BillingPage() {
     ? new Date(profile.subscription_end_date)
     : null
 
-  async function handleCheckout(plan: 'monthly' | 'annual') {
+  async function handleCheckout(plan: 'monthly') {
     setCheckoutLoading(plan)
     setError(null)
 
@@ -239,7 +239,7 @@ export default function BillingPage() {
                 {/* Monthly */}
                 <div className="border border-border rounded-xl p-5 hover:border-primary/50 transition-colors">
                   <h3 className="text-lg font-semibold text-foreground mb-1">
-                    Pro Monthly
+                    Pro
                   </h3>
                   <p className="text-2xl font-bold text-primary mb-1">
                     {PRICING.CURRENCY}{PRICING.MONTHLY}
@@ -247,6 +247,7 @@ export default function BillingPage() {
                       /month
                     </span>
                   </p>
+                  <p className="text-sm text-emerald-500 font-semibold mb-2">{PRICING.TRIAL_TEXT}</p>
                   <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                     <li className="flex items-center gap-1.5">
                       <CheckCircle className="w-3.5 h-3.5 text-primary" />
@@ -273,45 +274,6 @@ export default function BillingPage() {
                   </button>
                 </div>
 
-                {/* Annual */}
-                <div className="border border-primary/40 rounded-xl p-5 relative">
-                  <span className="absolute -top-3 left-4 bg-primary text-white text-xs font-bold px-2 py-0.5 rounded-full">
-                    Save {PRICING.ANNUAL_SAVE_PERCENT}%
-                  </span>
-                  <h3 className="text-lg font-semibold text-foreground mb-1">
-                    Pro Annual
-                  </h3>
-                  <p className="text-2xl font-bold text-primary mb-1">
-                    {PRICING.CURRENCY}{PRICING.ANNUAL}
-                    <span className="text-sm font-normal text-muted-foreground">
-                      /year
-                    </span>
-                  </p>
-                  <ul className="text-sm text-muted-foreground space-y-1 mb-4">
-                    <li className="flex items-center gap-1.5">
-                      <CheckCircle className="w-3.5 h-3.5 text-primary" />
-                      All courses included
-                    </li>
-                    <li className="flex items-center gap-1.5">
-                      <CheckCircle className="w-3.5 h-3.5 text-primary" />
-                      Best value
-                    </li>
-                  </ul>
-                  <button
-                    onClick={() => handleCheckout('annual')}
-                    disabled={checkoutLoading !== null}
-                    className="btn-primary w-full text-sm"
-                  >
-                    {checkoutLoading === 'annual' ? (
-                      <>
-                        <Loader2 className="w-4 h-4 animate-spin mr-2" />
-                        Loading...
-                      </>
-                    ) : (
-                      'Upgrade Annual'
-                    )}
-                  </button>
-                </div>
               </div>
             </div>
           )}

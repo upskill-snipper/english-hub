@@ -132,10 +132,7 @@ export default function IGCSELandingPage() {
           {!user && (
             <div className="mt-8 flex flex-col items-center gap-1">
               <p className="text-xl sm:text-2xl font-bold text-primary">
-                First month FREE! Then {PRICING_DISPLAY.monthly}
-              </p>
-              <p className="text-sm text-muted-foreground">
-                Annual subscription also available.
+                {PRICING.TRIAL_TEXT}! Then {PRICING_DISPLAY.monthly}
               </p>
             </div>
           )}
@@ -167,11 +164,8 @@ export default function IGCSELandingPage() {
                     Get full access to all IGCSE courses, practice questions, and model answers.
                   </p>
                   <p className="mt-1 text-muted-foreground">
-                    <span className="font-semibold text-primary">First month FREE!</span>
+                    <span className="font-semibold text-primary">{PRICING.TRIAL_TEXT}!</span>
                     {' '}Then {PRICING_DISPLAY.monthly} on a rolling monthly contract. Cancel anytime.
-                  </p>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    Annual subscription also available &mdash; save {PRICING.ANNUAL_SAVE_PERCENT}%.
                   </p>
                 </div>
                 <Link
@@ -503,10 +497,7 @@ export default function IGCSELandingPage() {
               {!user && (
                 <div className="mb-8 flex flex-col items-center gap-1">
                   <p className="text-xl sm:text-2xl font-bold text-primary">
-                    First month FREE! Then {PRICING_DISPLAY.monthly}
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    Annual subscription also available.
+                    {PRICING.TRIAL_TEXT}! Then {PRICING_DISPLAY.monthly}
                   </p>
                 </div>
               )}

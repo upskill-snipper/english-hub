@@ -363,10 +363,6 @@ const SubscriptionCard = memo(function SubscriptionCard({
             </div>
           </>
         )}
-
-        <p className="mt-3 text-center text-xs text-muted-foreground">
-          Annual subscription also available — {PRICING.CURRENCY}{PRICING.ANNUAL}/year (save {PRICING.ANNUAL_SAVE_PERCENT}%)
-        </p>
       </div>
 
       <div className="border-t border-border px-6 py-4">

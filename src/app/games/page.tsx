@@ -532,9 +532,9 @@ function WeeklyLeaderboard() {
       </CardHeader>
       <CardContent className="pt-2 pb-4">
         <Tabs defaultValue="word-scramble">
-          <TabsList className="w-full mb-3">
+          <TabsList className="w-full mb-3 bg-transparent gap-1.5 p-0">
             {gameIds.map((id) => (
-              <TabsTrigger key={id} value={id} className={cn('text-xs flex-1', GAME_TAB_META[id].activeColor)}>
+              <TabsTrigger key={id} value={id} className={cn('text-xs flex-1 rounded-full bg-card border border-border text-muted-foreground data-active:bg-primary data-active:text-primary-foreground data-active:border-primary hover:border-primary/40', GAME_TAB_META[id].activeColor)}>
                 {GAME_TAB_META[id].label}
               </TabsTrigger>
             ))}
@@ -1272,7 +1272,7 @@ const GameCard = memo(function GameCard({ game, isActive, onPlay }: { game: Game
 
       <CardHeader className="relative z-[1]">
         <div className="flex items-start justify-between">
-          <div className={cn('p-2 rounded-xl bg-muted/80', game.color)}>
+          <div className={cn('p-2 rounded-xl bg-card border border-border/60', game.color)}>
             {game.icon}
           </div>
           <Badge variant="outline" className={cn('text-[10px]', difficultyColor)}>
@@ -1334,7 +1334,7 @@ export default function GamesPage() {
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 py-12 sm:py-16 text-center">
-          <div className="inline-flex items-center gap-2 bg-muted/60 border border-border/60 rounded-full px-4 py-1.5 mb-6">
+          <div className="inline-flex items-center gap-2 bg-card border border-border rounded-full px-4 py-1.5 mb-6">
             <Gamepad2 className="size-4 text-primary" />
             <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Learn through play</span>
           </div>

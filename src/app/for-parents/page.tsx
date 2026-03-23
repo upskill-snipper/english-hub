@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import type { Metadata } from 'next'
-import { PRICING, PRICING_DISPLAY } from '@/constants/pricing'
+import { PRICING } from '@/constants/pricing'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -31,50 +31,6 @@ import {
   Zap,
 } from 'lucide-react'
 
-/* ───────────────────── Pricing toggle ───────────────────── */
-
-function PricingToggle({
-  annual,
-  setAnnual,
-}: {
-  annual: boolean
-  setAnnual: (v: boolean) => void
-}) {
-  return (
-    <div className="flex items-center justify-center gap-4 mb-8">
-      <span
-        className={cn('text-sm font-semibold transition-colors', !annual ? 'text-foreground' : 'text-muted-foreground')}
-      >
-        Monthly
-      </span>
-      <button
-        onClick={() => setAnnual(!annual)}
-        role="switch"
-        aria-checked={annual}
-        className={cn(
-          'relative w-14 h-7 rounded-full transition-colors duration-300',
-          annual ? 'bg-primary' : 'bg-border'
-        )}
-        aria-label="Toggle annual pricing"
-      >
-        <span
-          className={cn(
-            'absolute top-0.5 left-0.5 w-6 h-6 rounded-full bg-white shadow-md transition-transform duration-300',
-            annual ? 'translate-x-7' : ''
-          )}
-        />
-      </button>
-      <span
-        className={cn('text-sm font-semibold transition-colors', annual ? 'text-foreground' : 'text-muted-foreground')}
-      >
-        Annual
-        <span className="ml-1.5 text-xs text-primary font-bold">
-          Save {PRICING.ANNUAL_SAVE_PERCENT}%
-        </span>
-      </span>
-    </div>
-  )
-}
 
 /* ───────────────────── FAQ Accordion ───────────────────── */
 
@@ -162,7 +118,7 @@ const testimonials = [
 /* ───────────────────── Main Page ───────────────────── */
 
 export default function ForParentsPage() {
-  const [annual, setAnnual] = useState(true)
+
 
   return (
     <main className="min-h-screen bg-background">
@@ -405,8 +361,6 @@ export default function ForParentsPage() {
             </p>
           </div>
 
-          <PricingToggle annual={annual} setAnnual={setAnnual} />
-
           <Card className="max-w-md mx-auto border-primary/30 bg-card/50 overflow-hidden">
             <div className="bg-primary/[0.04] px-6 py-4 border-b border-border/40">
               <div className="flex items-center justify-between">
@@ -424,15 +378,13 @@ export default function ForParentsPage() {
               <div className="mb-6">
                 <div className="flex items-baseline gap-1">
                   <span className="text-4xl font-bold tracking-tight text-foreground">
-                    {PRICING.CURRENCY}{annual ? PRICING.ANNUAL_MONTHLY : PRICING.MONTHLY}
+                    {PRICING.CURRENCY}{PRICING.MONTHLY}
                   </span>
                   <span className="text-muted-foreground">/month</span>
                 </div>
-                {annual && (
-                  <p className="text-sm text-muted-foreground mt-1">
-                    Billed as {PRICING.CURRENCY}{PRICING.ANNUAL}/year
-                  </p>
-                )}
+                <p className="text-sm text-emerald-400 font-semibold mt-1">
+                  {PRICING.TRIAL_TEXT}
+                </p>
               </div>
 
               <ul className="space-y-3 mb-8">

@@ -420,19 +420,17 @@ export default function DashboardPage() {
           {/* ── Quick Actions ──────────────────────────────────────────── */}
           <div className="mb-6 flex gap-2 overflow-x-auto pb-2 sm:flex-wrap sm:overflow-x-visible sm:pb-0 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {quickActions.map((action) => (
-              <Button
+              <Link
                 key={action.href}
-                variant="outline"
-                size="default"
-                className="group gap-2 shrink-0"
-                render={<Link href={action.href} />}
+                href={action.href}
+                className="group flex items-center gap-2 shrink-0 rounded-lg bg-card border border-border px-3 py-2 text-sm font-medium text-foreground transition-all hover:border-primary/40 hover:shadow-card-hover"
               >
                 <span className={cn('flex h-6 w-6 items-center justify-center rounded-md', action.bg)}>
                   <action.icon className={cn('h-3.5 w-3.5', action.color)} />
                 </span>
                 {action.label}
                 <ArrowRight className="h-3.5 w-3.5 text-muted-foreground transition-transform group-hover:translate-x-0.5" />
-              </Button>
+              </Link>
             ))}
           </div>
 

@@ -6,7 +6,7 @@ import Link from "next/link";
 // ─── Types ──────────────────────────────────────────────────────────────
 
 interface SubscriptionData {
-  plan: "MONTHLY" | "ANNUAL";
+  plan: "MONTHLY";
   status: "ACTIVE" | "CANCELLED" | "PAST_DUE" | "TRIALING";
   currentPeriodEnd: string;
   currentPeriodStart: string;
@@ -23,7 +23,6 @@ export default function SubscriptionPage() {
   );
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [changingPlan, setChangingPlan] = useState(false);
 
   useEffect(() => {
     fetchSubscription();
@@ -48,33 +47,6 @@ export default function SubscriptionPage() {
       );
     } finally {
       setLoading(false);
-    }
-  }
-
-  async function handleChangePlan() {
-    if (!subscription) return;
-    setChangingPlan(true);
-
-    const newPlan = subscription.plan === "MONTHLY" ? "annual" : "monthly";
-
-    try {
-      const response = await fetch("/api/stripe/change-plan", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ newPlanKey: newPlan }),
-      });
-
-      if (!response.ok) {
-        const data = await response.json();
-        throw new Error(data.error || "Failed to change plan");
-      }
-
-      // Refresh subscription data
-      await fetchSubscription();
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "Failed to change plan");
-    } finally {
-      setChangingPlan(false);
     }
   }
 
@@ -119,10 +91,8 @@ export default function SubscriptionPage() {
   const isPastDue = subscription.status === "PAST_DUE";
 
   const monthlyPrice = 9.99;
-  const annualPrice = 79.99;
-  const currentPrice =
-    subscription.plan === "MONTHLY" ? monthlyPrice : annualPrice;
-  const billingCycle = subscription.plan === "MONTHLY" ? "month" : "year";
+  const currentPrice = monthlyPrice;
+  const billingCycle = "month";
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -166,9 +136,7 @@ export default function SubscriptionPage() {
           <div className="flex items-start justify-between mb-6">
             <div>
               <h2 className="text-lg font-semibold text-gray-900">
-                {subscription.plan === "MONTHLY"
-                  ? "Monthly Plan"
-                  : "Annual Plan"}
+                Monthly Plan
               </h2>
               <p className="text-sm text-gray-500 mt-1">
                 {isTrialing
@@ -235,28 +203,6 @@ export default function SubscriptionPage() {
 
         {/* Actions */}
         <div className="space-y-4">
-          {/* Change plan */}
-          {!isCancelled && (
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6">
-              <h3 className="text-base font-semibold text-gray-900 mb-2">
-                Change Plan
-              </h3>
-              <p className="text-sm text-gray-600 mb-4">
-                {subscription.plan === "MONTHLY"
-                  ? `Switch to the Annual Plan and save. You'll pay £${annualPrice.toFixed(2)}/year instead of £${(monthlyPrice * 12).toFixed(2)}.`
-                  : `Switch to the Monthly Plan at £${monthlyPrice.toFixed(2)}/month. Changes take effect at the end of your current billing period.`}
-              </p>
-              <button
-                onClick={handleChangePlan}
-                disabled={changingPlan}
-                className="px-4 py-2 text-sm font-medium rounded-lg border border-[#1A5276] text-foreground hover:bg-[#1A5276] hover:text-white transition-colors disabled:opacity-50"
-              >
-                {changingPlan
-                  ? "Changing..."
-                  : `Switch to ${subscription.plan === "MONTHLY" ? "Annual" : "Monthly"} Plan`}
-              </button>
-            </div>
-          )}
 
           {/* Cancel subscription */}
           {!isCancelled && (

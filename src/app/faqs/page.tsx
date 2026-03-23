@@ -74,7 +74,7 @@ const FAQ_SECTIONS: FaqSection[] = [
       {
         question: 'How much does The English Hub cost?',
         answer:
-          'We offer two subscription plans: Monthly at £8.99/month, or Annual at £79/year (equivalent to £6.58/month — a 27% saving). Both plans give you full, unrestricted access to every feature on the platform.',
+          'We offer one simple plan at £9.99/month, first month free. The plan gives you full, unrestricted access to every feature on the platform. Cancel anytime.',
       },
       {
         question: 'Is there a free trial?',
@@ -90,11 +90,6 @@ const FAQ_SECTIONS: FaqSection[] = [
         question: 'Can I cancel my subscription?',
         answer:
           'Yes, you can cancel your subscription at any time from your account settings. There are no cancellation fees. When you cancel, you keep access to all features until the end of your current billing period.',
-      },
-      {
-        question: 'Can I switch between monthly and annual plans?',
-        answer:
-          'Yes. You can switch plans at any time from Account Settings > Billing. If you switch from monthly to annual, you\'ll receive credit for any unused time on your current monthly billing cycle.',
       },
       {
         question: 'What payment methods do you accept?',

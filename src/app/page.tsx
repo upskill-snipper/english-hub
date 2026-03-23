@@ -33,52 +33,16 @@ import {
   Eye,
   ListChecks,
   Timer,
+  Users,
+  BarChart3,
+  ClipboardCheck,
+  TrendingUp,
+  Printer,
+  FolderOpen,
+  Brain,
+  Layout,
+  MessageSquare,
 } from 'lucide-react'
-
-/* ───────────────────── Pricing toggle state ───────────────────── */
-
-function PricingToggle({
-  annual,
-  setAnnual,
-}: {
-  annual: boolean
-  setAnnual: (v: boolean) => void
-}) {
-  return (
-    <div className="flex items-center justify-center gap-4 mb-12">
-      <span
-        className={cn('text-sm font-semibold transition-colors', !annual ? 'text-foreground' : 'text-muted-foreground')}
-      >
-        Monthly
-      </span>
-      <button
-        onClick={() => setAnnual(!annual)}
-        role="switch"
-        aria-checked={annual}
-        className={cn(
-          'relative w-14 h-7 rounded-full transition-colors duration-300',
-          annual ? 'bg-primary' : 'bg-border'
-        )}
-        aria-label="Toggle annual pricing"
-      >
-        <span
-          className={cn(
-            'absolute top-0.5 left-0.5 w-6 h-6 rounded-full bg-white shadow-md transition-transform duration-300',
-            annual ? 'translate-x-7' : ''
-          )}
-        />
-      </button>
-      <span
-        className={cn('text-sm font-semibold transition-colors', annual ? 'text-foreground' : 'text-muted-foreground')}
-      >
-        Annual
-        <span className="ml-1.5 text-xs text-primary font-bold">
-          Save {PRICING.ANNUAL_SAVE_PERCENT}%
-        </span>
-      </span>
-    </div>
-  )
-}
 
 /* ───────────────────── FAQ Accordion ───────────────────── */
 
@@ -101,11 +65,15 @@ const faqs = [
   },
   {
     q: 'Is there a free trial?',
-    a: 'Yes! Your first month is completely free on any plan. You get full access to all courses, practice questions, flashcards, and revision tools for 30 days. Cancel anytime during the trial and you won\u2019t be charged a penny.',
+    a: 'Yes! Your first month is completely free. You get full access to all courses, practice questions, flashcards, and revision tools for 30 days. Cancel anytime during the trial and you won\u2019t be charged a penny.',
   },
   {
     q: 'How is this different from YouTube?',
     a: 'YouTube offers scattered videos with no structure or feedback. The English Hub provides sequenced lessons written by examiners, exam-style practice with model answers, progress tracking, and certificates.',
+  },
+  {
+    q: 'Is there a version for teachers?',
+    a: 'Yes! Teachers get access to a lesson builder with 300+ templates, student analytics dashboards, AI essay marking for whole classes, and class management tools. Visit our For Teachers page to learn more.',
   },
 ]
 
@@ -189,7 +157,6 @@ function QuickTipsBanner({ selectedBoard }: { selectedBoard: string | null }) {
   const tips = (selectedBoard && examTips[selectedBoard]) || defaultTips
 
   useEffect(() => {
-    // Respect prefers-reduced-motion: skip auto-rotation for users who prefer reduced motion
     const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
     if (motionQuery.matches) return
 
@@ -223,17 +190,90 @@ function QuickTipsBanner({ selectedBoard }: { selectedBoard: string | null }) {
   )
 }
 
+/* ───────────────────── Student / Teacher Benefits Data ───────────────────── */
+
+const studentBenefits = [
+  {
+    icon: Sparkles,
+    color: 'text-cyan-400 bg-cyan-500/10',
+    title: 'AI-Powered Essay Feedback',
+    desc: 'Submit your essay and get instant, detailed feedback with grade estimates, strengths, and paragraph-by-paragraph annotation.',
+  },
+  {
+    icon: Target,
+    color: 'text-primary bg-primary/10',
+    title: 'Board-Specific Revision Materials',
+    desc: 'Tailored content for AQA, Edexcel, OCR, and WJEC — study only what your specification demands.',
+  },
+  {
+    icon: FileQuestion,
+    color: 'text-blue-400 bg-blue-500/10',
+    title: 'Practice Questions with Model Answers',
+    desc: 'Exam-style questions modelled on real papers, complete with mark schemes and model answers at every grade band.',
+  },
+  {
+    icon: Timer,
+    color: 'text-orange-400 bg-orange-500/10',
+    title: 'Mock Exams with Timing',
+    desc: '120+ full-length timed mock exams in real exam format. Practise under pressure and build exam stamina.',
+  },
+  {
+    icon: BarChart3,
+    color: 'text-emerald-400 bg-emerald-500/10',
+    title: 'Progress Tracking',
+    desc: 'Track your progress through every course with visual dashboards, completion badges, and revision streaks.',
+  },
+]
+
+const teacherBenefits = [
+  {
+    icon: Layout,
+    color: 'text-primary bg-primary/10',
+    title: 'Lesson Builder with 300+ Templates',
+    desc: 'Create polished lessons in minutes with ready-made templates covering every GCSE English topic.',
+  },
+  {
+    icon: BarChart3,
+    color: 'text-cyan-400 bg-cyan-500/10',
+    title: 'Student Analytics Dashboard',
+    desc: 'See how every student is progressing at a glance — completion rates, grades, strengths, and gaps.',
+  },
+  {
+    icon: ClipboardCheck,
+    color: 'text-emerald-400 bg-emerald-500/10',
+    title: 'AI Essay Marking for Whole Classes',
+    desc: 'Mark an entire class set of essays in seconds. AI-powered feedback aligned to GCSE mark schemes.',
+  },
+  {
+    icon: TrendingUp,
+    color: 'text-amber-400 bg-amber-500/10',
+    title: 'Predicted Grades & Targeted Recommendations',
+    desc: 'Data-driven grade predictions and personalised recommendations to help every student reach their target.',
+  },
+  {
+    icon: Users,
+    color: 'text-blue-400 bg-blue-500/10',
+    title: 'Class Management & Homework Setting',
+    desc: 'Create classes, set assignments, track submissions, and manage homework — all in one place.',
+  },
+  {
+    icon: Printer,
+    color: 'text-orange-400 bg-orange-500/10',
+    title: 'Printable Worksheets & Resources',
+    desc: 'Download and print worksheets, model answers, and revision materials for use in lessons.',
+  },
+]
+
 /* ───────────────────── Main Page ───────────────────── */
 
 export default function Home() {
-  const [annual, setAnnual] = useState(false)
+  const [audienceTab, setAudienceTab] = useState<'students' | 'teachers'>('students')
   const selectedBoard = useBoardStore((s) => s.selectedBoard)
 
   return (
     <main className="min-h-screen bg-background">
       {/* ━━━ HERO ━━━ */}
       <section className="relative overflow-hidden pt-24 pb-28 sm:pt-32 sm:pb-36">
-        {/* Glow effects — subtle, layered */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-primary/[0.06] rounded-full blur-[160px] pointer-events-none" />
         <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-blue-500/[0.03] rounded-full blur-[120px] pointer-events-none" />
 
@@ -258,15 +298,7 @@ export default function Home() {
           </h1>
 
           <p className="mt-7 text-body-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            {selectedBoard === 'KS3'
-              ? 'Expert-written courses for Key Stage 3 English. Build your reading, writing, and grammar foundations \u2014 from struggling to confident.'
-              : selectedBoard === 'OCR'
-              ? 'Expert-written courses for KS3 and OCR GCSE English. Practice questions, revision tools, and more.'
-              : selectedBoard === 'WJEC'
-              ? 'Expert-written courses for KS3 and WJEC Eduqas GCSE English. Practice questions, revision tools, and more.'
-              : selectedBoard === 'AQA'
-              ? 'Expert-written courses for KS3 and AQA GCSE English. From struggling to confident \u2014 we\u2019ll get you there.'
-              : 'Expert-written courses for KS3, GCSE, and IGCSE English. From struggling to confident \u2014 we\u2019ll get you there.'}
+            Board-specific courses, AI-powered essay feedback, and exam preparation tools built for students and teachers. Covering AQA, Edexcel, OCR, WJEC, and KS3 — everything you need in one place.
           </p>
 
           <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -313,15 +345,89 @@ export default function Home() {
       {/* ━━━ QUICK TIPS BANNER ━━━ */}
       <QuickTipsBanner selectedBoard={selectedBoard} />
 
-      {/* ━━━ WHAT'S INSIDE ━━━ */}
+      {/* ━━━ FOR STUDENTS / FOR TEACHERS TOGGLE ━━━ */}
       <section className="py-24 sm:py-32">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-foreground">
+              Built for Everyone
+            </h2>
+            <p className="mt-4 text-muted-foreground max-w-xl mx-auto text-body-lg">
+              Whether you&rsquo;re revising for exams or running a classroom, we&rsquo;ve got you covered.
+            </p>
+          </div>
+
+          {/* Toggle buttons */}
+          <div className="flex items-center justify-center gap-2 mb-14">
+            <button
+              onClick={() => setAudienceTab('students')}
+              className={cn(
+                'px-6 py-3 rounded-xl text-sm font-bold transition-all duration-300',
+                audienceTab === 'students'
+                  ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/25'
+                  : 'bg-card border border-border/40 text-muted-foreground hover:text-foreground hover:border-border/70'
+              )}
+            >
+              <GraduationCap className="w-4 h-4 inline-block mr-2 -mt-0.5" />
+              For Students
+            </button>
+            <button
+              onClick={() => setAudienceTab('teachers')}
+              className={cn(
+                'px-6 py-3 rounded-xl text-sm font-bold transition-all duration-300',
+                audienceTab === 'teachers'
+                  ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/25'
+                  : 'bg-card border border-border/40 text-muted-foreground hover:text-foreground hover:border-border/70'
+              )}
+            >
+              <Users className="w-4 h-4 inline-block mr-2 -mt-0.5" />
+              For Teachers
+            </button>
+          </div>
+
+          {/* Benefit cards */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {(audienceTab === 'students' ? studentBenefits : teacherBenefits).map((benefit) => (
+              <Card key={benefit.title} className="p-6 flex flex-col border-border/40 hover:border-border/70 transition-colors duration-300">
+                <div className={cn('w-11 h-11 rounded-xl flex items-center justify-center mb-5', benefit.color)}>
+                  <benefit.icon className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-bold tracking-tight text-foreground mb-2">
+                  {benefit.title}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {benefit.desc}
+                </p>
+              </Card>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <div className="text-center mt-12">
+            {audienceTab === 'students' ? (
+              <Button variant="default" size="lg" className="text-base px-10 h-12 shadow-lg shadow-primary/20" render={<Link href="/auth/register" />}>
+                Start Free Trial
+              </Button>
+            ) : (
+              <Button variant="default" size="lg" className="text-base px-10 h-12 shadow-lg shadow-primary/20" render={<Link href="/for-teachers" />}>
+                Start Teaching
+              </Button>
+            )}
+          </div>
+        </div>
+      </section>
+
+      <Separator className="opacity-40" />
+
+      {/* ━━━ WHAT'S INSIDE ━━━ */}
+      <section className="py-24 sm:py-32 bg-card/20">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-foreground">
               What&rsquo;s Inside
             </h2>
             <p className="mt-4 text-muted-foreground max-w-xl mx-auto text-body-lg">
-              A preview of the content waiting for you behind the sign-up wall.
+              A comprehensive look at the tools and content waiting for you.
             </p>
           </div>
 
@@ -383,6 +489,34 @@ export default function Home() {
                 desc: 'Submit your essay and get instant, detailed feedback from our AI examiner. Grade band estimates, strengths, improvements, and paragraph-by-paragraph annotation.',
                 preview: 'Powered by AI trained on GCSE mark schemes. Supports AQA, Edexcel, OCR & WJEC papers...',
               },
+              {
+                icon: Brain,
+                color: 'text-pink-400 bg-pink-500/10',
+                title: 'Board-Specific Content',
+                desc: 'Every course, question, and resource is mapped to your exam board specification. No wasted time on irrelevant content.',
+                preview: 'Supported boards: AQA, Edexcel, Edexcel IGCSE, OCR, WJEC/Eduqas...',
+              },
+              {
+                icon: Layout,
+                color: 'text-indigo-400 bg-indigo-500/10',
+                title: 'Teacher Lesson Builder',
+                desc: 'Teachers get access to 300+ lesson templates, class management tools, and AI marking for whole classes.',
+                preview: 'Features: Drag-and-drop builder, homework setting, printable resources, analytics dashboard...',
+              },
+              {
+                icon: MessageSquare,
+                color: 'text-teal-400 bg-teal-500/10',
+                title: 'Model Answers at Every Grade',
+                desc: 'See what a Grade 4-5, 6-7, and 8-9 answer looks like for every question. Learn what examiners reward.',
+                preview: 'Annotated model answers with examiner commentary showing exactly where marks are gained...',
+              },
+              {
+                icon: FolderOpen,
+                color: 'text-violet-400 bg-violet-500/10',
+                title: 'Revision Toolkit',
+                desc: 'Flashcards, terminology glossaries, quote banks, and exam command word guides — all in one revision hub.',
+                preview: 'Includes: Spaced repetition, bookmarking, search, and filter by topic or exam board...',
+              },
             ].map((item) => (
               <Card key={item.title} className="p-6 flex flex-col border-border/40 hover:border-border/70 transition-colors duration-300">
                 <div
@@ -408,7 +542,7 @@ export default function Home() {
       <Separator className="opacity-40" />
 
       {/* ━━━ MOCK EXAMS & AI FEEDBACK ━━━ */}
-      <section className="py-24 sm:py-32 bg-card/20">
+      <section className="py-24 sm:py-32">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <Badge variant="outline" className="border-orange-500/20 bg-orange-500/[0.06] text-orange-400 text-sm font-semibold mb-6 gap-2 px-4 py-1.5">
@@ -485,7 +619,7 @@ export default function Home() {
       <Separator className="opacity-40" />
 
       {/* ━━━ HOW IT WORKS ━━━ */}
-      <section className="py-24 sm:py-32">
+      <section className="py-24 sm:py-32 bg-card/20">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-foreground">
@@ -580,14 +714,14 @@ export default function Home() {
                 icon: BookMarked,
                 color: 'text-blue-400 bg-blue-500/10',
                 title: 'KS3 Reading',
-                subtitle: 'Years 7–9',
+                subtitle: 'Years 7\u20139',
                 desc: 'Build your foundation with core reading comprehension and analysis skills.',
               },
               {
                 icon: PenTool,
                 color: 'text-emerald-400 bg-emerald-500/10',
                 title: 'KS3 Writing',
-                subtitle: 'Years 7–9',
+                subtitle: 'Years 7\u20139',
                 desc: 'Develop creative and transactional writing skills with structured lessons.',
               },
               ...(selectedBoard !== 'KS3'
@@ -597,37 +731,7 @@ export default function Home() {
                       color: 'text-primary bg-primary/10',
                       title: 'GCSE Language',
                       subtitle: selectedBoard ?? 'All Boards',
-                      desc: selectedBoard === 'AQA'
-                        ? 'Master Paper 1 explorations in creative reading & writing and Paper 2 writers\u2019 viewpoints & perspectives.'
-                        : selectedBoard === 'OCR'
-                        ? 'Master Component 01 non-fiction reading and Component 02 fiction analysis for OCR GCSE.'
-                        : selectedBoard === 'WJEC'
-                        ? 'Master Component 1 20th-century fiction and Component 2 non-fiction reading for WJEC Eduqas.'
-                        : 'Master reading comprehension and creative & transactional writing for Edexcel GCSE.',
-                    },
-                    {
-                      icon: BookOpen,
-                      color: 'text-purple-400 bg-purple-500/10',
-                      title: 'GCSE Literature',
-                      subtitle: `${selectedBoard ?? 'All'} Set Texts`,
-                      desc: selectedBoard === 'AQA'
-                        ? 'Poetry, prose, and drama \u2014 AQA set texts with model answers and essay plans.'
-                        : selectedBoard === 'OCR'
-                        ? 'Poetry, prose, and drama \u2014 OCR set texts with model answers and essay plans.'
-                        : selectedBoard === 'WJEC'
-                        ? 'Poetry, prose, and drama \u2014 WJEC Eduqas set texts with model answers and essay plans.'
-                        : 'Poetry, prose, and drama \u2014 Edexcel set texts with model answers and essay plans.',
-                    },
-                  ]
-                : []),
-              ...(selectedBoard === 'Edexcel'
-                ? [
-                    {
-                      icon: GraduationCap,
-                      color: 'text-emerald-400 bg-emerald-500/10',
-                      title: 'IGCSE',
-                      subtitle: 'Edexcel iGCSE',
-                      desc: 'International GCSE English Language A & B — tailored to the Edexcel specification.',
+                      desc: 'Master reading analysis and writing techniques for your Language papers.',
                     },
                   ]
                 : []),
@@ -937,8 +1041,8 @@ export default function Home() {
 
       {/* ━━━ PRICING ━━━ */}
       <section className="py-24 sm:py-32">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="text-center mb-6">
+        <div className="max-w-2xl mx-auto px-6">
+          <div className="text-center mb-12">
             <Badge variant="outline" className="bg-emerald-500/10 border-emerald-500/25 text-emerald-400 text-base font-bold mb-8 gap-2 px-5 py-2">
               <Sparkles className="w-5 h-5" />
               First Month FREE!
@@ -951,93 +1055,45 @@ export default function Home() {
             </p>
           </div>
 
-          <PricingToggle annual={annual} setAnnual={setAnnual} />
-
-          <div className="grid md:grid-cols-2 gap-5 max-w-3xl mx-auto">
-            {/* Monthly */}
-            <Card className="p-8 flex flex-col border-border/40">
-              <h3 className="text-lg font-bold tracking-tight text-foreground">Monthly</h3>
-              <p className="text-sm text-muted-foreground mt-1 mb-6">
-                Rolling monthly — cancel anytime.
-              </p>
-              <div className="mb-2">
-                <span className="text-4xl font-extrabold tracking-tight text-foreground">
-                  {PRICING.CURRENCY}{PRICING.MONTHLY}
-                </span>
-                <span className="text-muted-foreground text-sm ml-1">/month</span>
-              </div>
-              <p className="text-sm text-emerald-400 font-semibold mb-6">
-                First month completely free
-              </p>
-              <ul className="space-y-3 mb-8 flex-1">
-                {[
-                  'First month FREE — no payment due today',
-                  'All 13 courses included',
-                  'All 120+ mock exam papers',
-                  'AI essay feedback (10/day)',
-                  '295 flashcards & 52 terminology entries',
-                  'Certificates on completion',
-                  'Progress tracking & analytics',
-                  'Cancel anytime — no contracts',
-                ].map((f) => (
-                  <li key={f} className="flex items-start gap-2.5 text-sm text-muted-foreground">
-                    <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                    {f}
-                  </li>
-                ))}
-              </ul>
-              <Button variant="secondary" className="w-full" render={<Link href="/auth/register" />}>
-                Start Free Trial
-              </Button>
-            </Card>
-
-            {/* Annual — Best Value */}
-            <Card className="p-8 flex flex-col border-primary/30 relative">
-              <Badge className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-bold px-4 py-1 shadow-lg shadow-primary/25">
-                Best Value
-              </Badge>
-              <h3 className="text-lg font-bold tracking-tight text-foreground">Annual</h3>
-              <p className="text-sm text-muted-foreground mt-1 mb-6">
-                Pay yearly and save {PRICING.ANNUAL_SAVE_PERCENT}%.
-              </p>
-              <div className="mb-2">
-                <span className="text-4xl font-extrabold tracking-tight text-foreground">
-                  {PRICING.CURRENCY}{PRICING.ANNUAL}
-                </span>
-                <span className="text-muted-foreground text-sm ml-1">/year</span>
-                <span className="ml-2 text-xs text-primary font-bold">
-                  Save {PRICING.ANNUAL_SAVE_PERCENT}%
-                </span>
-              </div>
-              <p className="text-sm text-muted-foreground mb-1">
-                Just <span className="text-foreground font-bold">{PRICING.CURRENCY}{PRICING.ANNUAL_MONTHLY}/month</span> — billed annually
-              </p>
-              <p className="text-sm text-emerald-400 font-semibold mb-6">
-                First month completely free
-              </p>
-              <ul className="space-y-3 mb-8 flex-1">
-                {[
-                  'First month FREE — no payment due today',
-                  'All 13 courses included',
-                  'All 120+ mock exam papers',
-                  'AI essay feedback (10/day)',
-                  '295 flashcards & 52 terminology entries',
-                  'Certificates on completion',
-                  'Progress tracking & analytics',
-                  'Priority support',
-                  'Save £28.88 vs monthly',
-                ].map((f) => (
-                  <li key={f} className="flex items-start gap-2.5 text-sm text-muted-foreground">
-                    <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                    {f}
-                  </li>
-                ))}
-              </ul>
-              <Button variant="default" className="w-full shadow-lg shadow-primary/20" render={<Link href="/auth/register" />}>
-                Start Free Trial
-              </Button>
-            </Card>
-          </div>
+          <Card className="p-8 flex flex-col border-primary/30 relative">
+            <Badge className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-bold px-4 py-1 shadow-lg shadow-primary/25">
+              Full Access
+            </Badge>
+            <h3 className="text-lg font-bold tracking-tight text-foreground">Everything Included</h3>
+            <p className="text-sm text-muted-foreground mt-1 mb-6">
+              One plan, full access — cancel anytime.
+            </p>
+            <div className="mb-2">
+              <span className="text-4xl font-extrabold tracking-tight text-foreground">
+                {PRICING.CURRENCY}{PRICING.MONTHLY}
+              </span>
+              <span className="text-muted-foreground text-sm ml-1">/month</span>
+            </div>
+            <p className="text-sm text-emerald-400 font-semibold mb-6">
+              First month completely free
+            </p>
+            <ul className="space-y-3 mb-8 flex-1">
+              {[
+                'First month FREE — no payment due today',
+                'All 13 courses included',
+                'All 120+ mock exam papers',
+                'AI essay feedback (10/day)',
+                '295 flashcards & 52 terminology entries',
+                'Board-specific content for AQA, Edexcel, OCR & WJEC',
+                'Certificates on completion',
+                'Progress tracking & analytics',
+                'Cancel anytime — no contracts',
+              ].map((f) => (
+                <li key={f} className="flex items-start gap-2.5 text-sm text-muted-foreground">
+                  <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                  {f}
+                </li>
+              ))}
+            </ul>
+            <Button variant="default" className="w-full shadow-lg shadow-primary/20" render={<Link href="/auth/register" />}>
+              Start Free Trial
+            </Button>
+          </Card>
 
           <p className="text-center text-sm text-muted-foreground mt-10 max-w-lg mx-auto">
             Your free trial lasts 30 days. You won&rsquo;t be charged until the trial ends.
@@ -1175,6 +1231,7 @@ export default function Home() {
                 { label: 'Practice', href: '/practice' },
                 { label: 'Revision', href: '/revision' },
                 { label: 'Exam Guide', href: '/exam-guide' },
+                { label: 'For Teachers', href: '/for-teachers' },
                 { label: 'For Schools', href: '/for-schools' },
                 { label: 'Dashboard', href: '/dashboard' },
                 { label: 'Log in', href: '/auth/login' },
@@ -1192,6 +1249,7 @@ export default function Home() {
           </div>
 
           <Separator className="mt-10 mb-6 opacity-40" />
+
           <div className="text-center text-xs text-muted-foreground/70">
             &copy; {new Date().getFullYear()} The English Hub. All rights reserved.
           </div>

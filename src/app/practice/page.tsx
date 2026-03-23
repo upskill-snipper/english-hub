@@ -14,6 +14,7 @@ import {
   CheckCircle2,
   Lightbulb,
   Save,
+  Send,
   Loader2,
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
@@ -84,6 +85,7 @@ export default function PracticePage() {
   const [currentQuestion, setCurrentQuestion] = useState<PracticeQuestion | null>(null)
   const [answer, setAnswer] = useState('')
   const [showModel, setShowModel] = useState(false)
+  const [submitted, setSubmitted] = useState(false)
   const [activeGradeTab, setActiveGradeTab] = useState<string>('Grade 6-7')
   const [rating, setRating] = useState(0)
   const [hoverRating, setHoverRating] = useState(0)
@@ -140,6 +142,7 @@ export default function PracticePage() {
     setCurrentQuestion(filtered[idx])
     setAnswer('')
     setShowModel(false)
+    setSubmitted(false)
     setRating(0)
     setHoverRating(0)
     setElapsed(0)
@@ -159,21 +162,21 @@ export default function PracticePage() {
   // Handle timer toggle
   useEffect(() => {
     if (timerRef.current) clearInterval(timerRef.current)
-    if (timedMode && currentQuestion && !showModel) {
+    if (timedMode && currentQuestion && !submitted) {
       timerRef.current = setInterval(() => setElapsed((p) => p + 1), 1000)
     }
     return () => {
       if (timerRef.current) clearInterval(timerRef.current)
     }
-  }, [timedMode, currentQuestion, showModel])
+  }, [timedMode, currentQuestion, submitted])
 
-  // Stop timer when model answer shown
+  // Stop timer when answer submitted
   useEffect(() => {
-    if (showModel && timerRef.current) {
+    if (submitted && timerRef.current) {
       clearInterval(timerRef.current)
       timerRef.current = null
     }
-  }, [showModel])
+  }, [submitted])
 
   // ── Save session ───────────────────────────────────────────────────────
 
@@ -236,11 +239,8 @@ export default function PracticePage() {
                     Unlock 40+ exam-style practice questions with detailed model answers and examiner tips
                   </p>
                   <p className="mt-1 text-muted-foreground">
-                    <span className="font-semibold text-primary">First month FREE!</span>
+                    <span className="font-semibold text-primary">{PRICING.TRIAL_TEXT}!</span>
                     {' '}Then {PRICING_DISPLAY.monthly} on a rolling monthly contract. Cancel anytime.
-                  </p>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    Annual subscription also available &mdash; save {PRICING.ANNUAL_SAVE_PERCENT}%.
                   </p>
                 </div>
                 <Button render={<Link href="/auth/register" />} size="lg" className="shrink-0 px-6 py-3">
@@ -425,36 +425,45 @@ export default function PracticePage() {
                 onChange={(e) => setAnswer(e.target.value)}
                 placeholder="Write your answer here..."
                 rows={10}
+                disabled={submitted}
                 className="resize-y text-base leading-relaxed"
               />
             </div>
 
-            {/* AI Essay Feedback (inline) */}
-            {user && currentQuestion && (
-              <EssayFeedbackInline
-                board={currentQuestion.board}
-                paper={currentQuestion.paper != null ? `Paper ${currentQuestion.paper}` : 'Paper 1'}
-                questionType={currentQuestion.questionType || currentQuestion.type || 'General'}
-                questionText={currentQuestion.question}
-                existingAnswer={answer}
-              />
-            )}
-
-            {/* Show Model Answer button */}
-            {!showModel && (
-              <Button onClick={() => setShowModel(true)}>
-                <Eye className="h-4 w-4" />
-                Show Model Answer
+            {/* Submit Answer button — only before submission */}
+            {!submitted && (
+              <Button
+                className="bg-primary text-primary-foreground hover:bg-primary/90"
+                onClick={() => setSubmitted(true)}
+                disabled={!answer.trim()}
+              >
+                <Send className="h-4 w-4" />
+                Submit Answer
               </Button>
             )}
 
-            {/* ── Model Answers ────────────────────────────────────────── */}
-            {showModel && (
+            {/* ── Post-submission: AI Feedback + Model Answers ──────── */}
+            {submitted && (
               <div className="space-y-6">
-                {/* Grade tabs */}
+                {/* AI Essay Feedback (inline) */}
+                {user && currentQuestion && (
+                  <EssayFeedbackInline
+                    board={currentQuestion.board}
+                    paper={currentQuestion.paper != null ? `Paper ${currentQuestion.paper}` : 'Paper 1'}
+                    questionType={currentQuestion.questionType || currentQuestion.type || 'General'}
+                    questionText={currentQuestion.question}
+                    existingAnswer={answer}
+                  />
+                )}
+
+                {/* Model Answers — Grade tabs */}
                 <Card>
                   <Tabs value={activeGradeTab} onValueChange={setActiveGradeTab}>
                     <CardHeader className="border-b pb-0">
+                      <CardTitle className="mb-2 flex items-center gap-2 text-sm">
+                        <Eye className="h-4 w-4 text-primary" />
+                        Model Answers
+                      </CardTitle>
                       <TabsList className="w-full">
                         {GRADE_TABS.map((tab) => (
                           <TabsTrigger key={tab} value={tab}>
@@ -561,7 +570,7 @@ export default function PracticePage() {
                   </CardContent>
                 </Card>
 
-                {/* Save & Next */}
+                {/* Save & Try Another */}
                 <div className="flex flex-wrap items-center gap-3">
                   {user && (
                     <Button
@@ -579,8 +588,11 @@ export default function PracticePage() {
                       {saved ? 'Saved' : saving ? 'Saving...' : 'Save Session'}
                     </Button>
                   )}
-                  <Button onClick={handleNext}>
-                    Next Question
+                  <Button
+                    className="bg-primary text-primary-foreground hover:bg-primary/90"
+                    onClick={handleNext}
+                  >
+                    Try Another Question
                     <ChevronRight className="h-4 w-4" />
                   </Button>
                 </div>

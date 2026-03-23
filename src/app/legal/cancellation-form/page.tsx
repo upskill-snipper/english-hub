@@ -17,7 +17,6 @@ interface FormData {
 const SUBSCRIPTION_PLANS = [
   { value: "", label: "Select your plan" },
   { value: "monthly", label: "Monthly Plan" },
-  { value: "annual", label: "Annual Plan" },
   { value: "family", label: "Family Plan" },
   { value: "student", label: "Student Plan" },
 ];

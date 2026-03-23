@@ -123,17 +123,6 @@ export default function CancellationPolicyPage() {
                 </td>
                 <td className="px-4 py-2 border-b">N/A</td>
               </tr>
-              <tr>
-                <td className="px-4 py-2 border-b">
-                  Cancel annual subscription after 14 days
-                </td>
-                <td className="px-4 py-2 border-b">
-                  Pro-rata refund for unused full months
-                </td>
-                <td className="px-4 py-2 border-b">
-                  Within 14 days of cancellation
-                </td>
-              </tr>
             </tbody>
           </table>
         </div>

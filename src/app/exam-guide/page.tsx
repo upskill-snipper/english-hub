@@ -30,19 +30,57 @@ import {
   ArrowRight,
   Search,
   BookMarked,
+  Settings,
 } from 'lucide-react'
 import { useBoardStore } from '@/store/board-store'
 import { useAuthStore } from '@/store/auth-store'
 import {
   getGuideByBoard,
   getAllGuides,
-  genericOverview,
   terminologyList,
   grade9Strategy,
   contextPeriods,
 } from '@/data/exam-guides'
 
-// ─── Board Card Config ─────────────────────────────────────────────────────────
+// ─── Board style lookup ──────────────────────────────────────────────────────
+
+const BOARD_STYLES: Record<
+  string,
+  { accent: string; dot: string; badge: string; border: string }
+> = {
+  AQA: {
+    accent: 'text-blue-400',
+    dot: 'bg-blue-500',
+    badge: 'bg-blue-500/15 text-blue-400',
+    border: 'border-blue-500/40',
+  },
+  Edexcel: {
+    accent: 'text-violet-400',
+    dot: 'bg-violet-500',
+    badge: 'bg-violet-500/15 text-violet-400',
+    border: 'border-violet-500/40',
+  },
+  OCR: {
+    accent: 'text-orange-400',
+    dot: 'bg-orange-500',
+    badge: 'bg-orange-500/15 text-orange-400',
+    border: 'border-orange-500/40',
+  },
+  WJEC: {
+    accent: 'text-red-400',
+    dot: 'bg-red-500',
+    badge: 'bg-red-500/15 text-red-400',
+    border: 'border-red-500/40',
+  },
+  IGCSE: {
+    accent: 'text-purple-400',
+    dot: 'bg-purple-500',
+    badge: 'bg-purple-500/15 text-purple-400',
+    border: 'border-purple-500/40',
+  },
+}
+
+// ─── Board Card Config (for no-board-selected state) ─────────────────────────
 
 const BOARD_CARDS = [
   {
@@ -50,7 +88,6 @@ const BOARD_CARDS = [
     slug: 'aqa',
     color: 'border-blue-500/50',
     hoverColor: 'hover:border-blue-500/80 hover:bg-blue-500/10',
-    activeRing: 'ring-2 ring-blue-500 ring-offset-2 ring-offset-background',
     accent: 'text-blue-400',
     dot: 'bg-blue-500',
     badge: 'bg-blue-500/15 text-blue-400',
@@ -62,7 +99,6 @@ const BOARD_CARDS = [
     slug: 'edexcel',
     color: 'border-violet-500/50',
     hoverColor: 'hover:border-violet-500/80 hover:bg-violet-500/10',
-    activeRing: 'ring-2 ring-violet-500 ring-offset-2 ring-offset-background',
     accent: 'text-violet-400',
     dot: 'bg-violet-500',
     badge: 'bg-violet-500/15 text-violet-400',
@@ -74,7 +110,6 @@ const BOARD_CARDS = [
     slug: 'ocr',
     color: 'border-orange-500/50',
     hoverColor: 'hover:border-orange-500/80 hover:bg-orange-500/10',
-    activeRing: 'ring-2 ring-orange-500 ring-offset-2 ring-offset-background',
     accent: 'text-orange-400',
     dot: 'bg-orange-500',
     badge: 'bg-orange-500/15 text-orange-400',
@@ -86,7 +121,6 @@ const BOARD_CARDS = [
     slug: 'wjec',
     color: 'border-red-500/50',
     hoverColor: 'hover:border-red-500/80 hover:bg-red-500/10',
-    activeRing: 'ring-2 ring-red-500 ring-offset-2 ring-offset-background',
     accent: 'text-red-400',
     dot: 'bg-red-500',
     badge: 'bg-red-500/15 text-red-400',
@@ -98,7 +132,6 @@ const BOARD_CARDS = [
     slug: 'igcse',
     color: 'border-purple-500/50',
     hoverColor: 'hover:border-purple-500/80 hover:bg-purple-500/10',
-    activeRing: 'ring-2 ring-purple-500 ring-offset-2 ring-offset-background',
     accent: 'text-purple-400',
     dot: 'bg-purple-500',
     badge: 'bg-purple-500/15 text-purple-400',
@@ -107,7 +140,7 @@ const BOARD_CARDS = [
   },
 ]
 
-// ─── Terminology Tab Config ────────────────────────────────────────────────────
+// ─── Terminology Tab Config ──────────────────────────────────────────────────
 
 const TERM_TABS = [
   { key: 'figurative', label: 'Figurative', icon: Sparkles },
@@ -117,7 +150,7 @@ const TERM_TABS = [
   { key: 'poetry', label: 'Poetry', icon: BookOpen },
 ] as const
 
-// ─── Collapsible Panel ─────────────────────────────────────────────────────────
+// ─── Collapsible Panel ───────────────────────────────────────────────────────
 
 function Collapsible({
   title,
@@ -160,7 +193,7 @@ function Collapsible({
   )
 }
 
-// ─── Page Component ────────────────────────────────────────────────────────────
+// ─── Page Component ──────────────────────────────────────────────────────────
 
 export default function ExamGuidePage() {
   const { selectedBoard } = useBoardStore()
@@ -168,11 +201,13 @@ export default function ExamGuidePage() {
   const [activeTermTab, setActiveTermTab] = useState<string>('figurative')
   const [termSearch, setTermSearch] = useState('')
 
-  const allGuides = getAllGuides()
   const isGCSEBoard =
     selectedBoard != null &&
     selectedBoard !== 'KS3' &&
-    ['AQA', 'Edexcel', 'OCR', 'WJEC'].includes(selectedBoard)
+    ['AQA', 'Edexcel', 'OCR', 'WJEC', 'IGCSE'].includes(selectedBoard)
+
+  const guide = isGCSEBoard ? getGuideByBoard(selectedBoard!) : null
+  const style = isGCSEBoard ? BOARD_STYLES[selectedBoard!] : null
 
   // Filter terminology by active tab and search
   const filteredTerms = terminologyList.filter((t) => {
@@ -207,29 +242,29 @@ export default function ExamGuidePage() {
         <div className="relative mx-auto max-w-5xl px-4 py-12 sm:px-6 sm:py-16">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
             <GraduationCap className="h-4 w-4" />
-            Complete GCSE Exam Guide
+            {isGCSEBoard ? `${selectedBoard} Exam Guide` : 'Complete GCSE Exam Guide'}
           </div>
 
           <h1 className="text-3xl font-extrabold leading-tight tracking-tight text-foreground sm:text-4xl md:text-5xl">
-            Exam Guide
+            {isGCSEBoard ? `${selectedBoard} Exam Guide` : 'Exam Guide'}
           </h1>
 
           <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-            Comprehensive exam board guides, assessment objectives, mark schemes,
-            grade boundaries, and proven strategies for achieving top grades.
-            Pick your board for a tailored breakdown, or explore the universal
-            sections below.
+            {isGCSEBoard
+              ? `Everything you need for your ${selectedBoard} GCSE English exams: papers breakdown, timing, mark schemes, grade boundaries, and examiner tips.`
+              : 'Comprehensive exam board guides, assessment objectives, mark schemes, grade boundaries, and proven strategies for achieving top grades.'}
           </p>
 
-          {isGCSEBoard && (
-            <div className="mt-8">
-              <Link
-                href={`/exam-guide/${selectedBoard!.toLowerCase()}`}
-                className="btn-primary inline-flex items-center gap-2 px-8 py-3.5 text-base"
-              >
-                View {selectedBoard} Guide
-                <ArrowRight className="h-4 w-4" />
-              </Link>
+          {isGCSEBoard && guide && (
+            <div className="mt-6 flex flex-wrap gap-2">
+              {guide.specCodes.map((spec) => (
+                <span
+                  key={spec.code}
+                  className={`rounded-full px-3 py-1 text-sm font-medium ${style!.badge}`}
+                >
+                  {spec.subject}: {spec.code}
+                </span>
+              ))}
             </div>
           )}
         </div>
@@ -244,289 +279,526 @@ export default function ExamGuidePage() {
             <Info className="mt-0.5 h-5 w-5 shrink-0 text-amber-400" />
             <div>
               <p className="font-semibold text-foreground">
-                You have KS3 selected as your current level
+                Select a GCSE exam board to see exam-specific guidance
               </p>
-              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                The board-specific guides below are tailored for GCSE exam boards
-                (AQA, Edexcel, OCR, WJEC). However, the{' '}
-                <strong className="text-foreground">Generic Overview</strong>,{' '}
-                <strong className="text-foreground">Grade 9 Strategy</strong>{' '}
-                sections, and{' '}
-                <strong className="text-foreground">
-                  Terminology Reference
-                </strong>{' '}
-                are useful at any level and will help you build a strong
-                foundation. Feel free to browse them to get ahead.
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                You currently have KS3 selected. The terminology reference and
+                historical context sections below are useful at any level, but
+                the detailed exam board breakdowns require a GCSE board.
               </p>
+              <Link
+                href="/settings"
+                className="mt-3 inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary/90"
+              >
+                <Settings className="h-4 w-4" />
+                Change your board
+              </Link>
             </div>
           </div>
         )}
 
         {/* ════════════════════════════════════════════════════════════════════
-            BOARD NAVIGATION CARDS
+            NO BOARD SELECTED — Show board picker
            ════════════════════════════════════════════════════════════════════ */}
-        <section>
-          <h2 className="mb-2 text-2xl font-bold text-foreground sm:text-3xl">
-            Choose Your Exam Board
-          </h2>
-          <p className="mb-6 text-muted-foreground">
-            Each guide covers the full specification, papers, mark schemes, grade
-            boundaries, and examiner tips.
-          </p>
+        {!isGCSEBoard && selectedBoard !== 'KS3' && (
+          <section>
+            <h2 className="mb-2 text-2xl font-bold text-foreground sm:text-3xl">
+              Choose Your Exam Board
+            </h2>
+            <p className="mb-6 text-muted-foreground">
+              Each guide covers the full specification, papers, mark schemes,
+              grade boundaries, and examiner tips.
+            </p>
 
-          <div className="grid gap-4 sm:grid-cols-2">
-            {BOARD_CARDS.map((board) => {
-              const guide = getGuideByBoard(board.id)
-              const isSelected = selectedBoard === (board.id as string) && selectedBoard !== 'KS3'
-
-              return (
-                <Link
-                  key={board.id}
-                  href={`/exam-guide/${board.slug}`}
-                  className={`group flex flex-col rounded-xl border p-5 transition-all duration-300 hover:-translate-y-0.5 ${board.color} ${board.hoverColor} ${
-                    isSelected ? board.activeRing : ''
-                  }`}
-                >
-                  <div className="flex items-start justify-between gap-3">
+            <div className="grid gap-4 sm:grid-cols-2">
+              {BOARD_CARDS.map((board) => {
+                const boardGuide = getGuideByBoard(board.id)
+                return (
+                  <Link
+                    key={board.id}
+                    href={`/exam-guide/${board.slug}`}
+                    className={`group flex flex-col rounded-xl border p-5 transition-all duration-300 hover:-translate-y-0.5 ${board.color} ${board.hoverColor}`}
+                  >
                     <div className="flex items-center gap-3">
                       <span className={`h-3 w-3 shrink-0 rounded-full ${board.dot}`} />
-                      <h3 className={`text-lg font-bold ${board.accent} transition-colors group-hover:underline`}>
+                      <h3
+                        className={`text-lg font-bold ${board.accent} transition-colors group-hover:underline`}
+                      >
                         {board.id}
                       </h3>
                     </div>
-                    {isSelected && (
-                      <span className="shrink-0 rounded-full bg-primary/20 px-2.5 py-0.5 text-xs font-semibold text-primary">
-                        Your board
-                      </span>
-                    )}
-                  </div>
 
-                  {guide && guide.specCodes.length > 0 && (
-                    <div className="mt-2.5 flex flex-wrap gap-1.5">
-                      {guide.specCodes.map((spec) => (
-                        <span
-                          key={spec.code}
-                          className={`rounded-full px-2 py-0.5 text-xs font-medium ${board.badge}`}
+                    {boardGuide && boardGuide.specCodes.length > 0 && (
+                      <div className="mt-2.5 flex flex-wrap gap-1.5">
+                        {boardGuide.specCodes.map((spec) => (
+                          <span
+                            key={spec.code}
+                            className={`rounded-full px-2 py-0.5 text-xs font-medium ${board.badge}`}
+                          >
+                            {spec.subject}: {spec.code}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+
+                    <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
+                      {board.description}
+                    </p>
+
+                    <p className="mt-3 flex items-center gap-1 text-xs font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
+                      View full guide
+                      <ChevronRight className="h-3 w-3" />
+                    </p>
+                  </Link>
+                )
+              })}
+            </div>
+          </section>
+        )}
+
+        {/* ════════════════════════════════════════════════════════════════════
+            BOARD-SPECIFIC GUIDE CONTENT (when a GCSE board is selected)
+           ════════════════════════════════════════════════════════════════════ */}
+        {isGCSEBoard && guide && style && (
+          <>
+            {/* ── Overview ──────────────────────────────────────────────── */}
+            <section>
+              <Collapsible title="Specification Overview" icon={BookOpen} defaultOpen>
+                <div
+                  className="prose-brand max-w-none text-sm leading-relaxed text-muted-foreground [&_em]:text-primary/80 [&_li]:ml-4 [&_li]:text-muted-foreground [&_ol]:my-3 [&_ol]:list-decimal [&_ol]:space-y-1.5 [&_p+p]:mt-3 [&_p]:text-muted-foreground [&_strong]:text-foreground [&_ul]:my-3 [&_ul]:list-disc [&_ul]:space-y-1.5"
+                  dangerouslySetInnerHTML={{ __html: sanitize(guide.overview) }}
+                />
+
+                {guide.uniqueFeatures.length > 0 && (
+                  <div className="mt-6 rounded-lg border border-primary/20 bg-primary/5 p-4">
+                    <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-primary">
+                      What makes {selectedBoard} unique
+                    </p>
+                    <ul className="space-y-2">
+                      {guide.uniqueFeatures.map((feat, i) => (
+                        <li key={i} className="flex gap-2 text-sm text-muted-foreground">
+                          <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                          {feat}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </Collapsible>
+            </section>
+
+            {/* ── Assessment Objectives ─────────────────────────────────── */}
+            <section>
+              <Collapsible title="Assessment Objectives" icon={Target} defaultOpen>
+                {guide.languageAOs.length > 0 && (
+                  <>
+                    <h4 className="mb-3 flex items-center gap-2 text-sm font-bold text-foreground">
+                      <ScrollText className="h-4 w-4 text-primary" />
+                      English Language AOs
+                    </h4>
+                    <div className="mb-6 space-y-2">
+                      {guide.languageAOs.map((ao) => (
+                        <div
+                          key={ao.code}
+                          className="flex items-start gap-4 rounded-lg border border-border bg-background/50 p-3"
                         >
-                          {spec.subject}: {spec.code}
-                        </span>
+                          <span className="inline-flex h-7 w-14 shrink-0 items-center justify-center rounded-md bg-primary/10 text-xs font-bold text-primary">
+                            {ao.code}
+                          </span>
+                          <div className="min-w-0 flex-1">
+                            <p className="text-sm leading-relaxed text-foreground">
+                              {ao.description}
+                            </p>
+                            <p className="mt-1 text-xs text-muted-foreground">
+                              Weighting: {ao.weighting}
+                            </p>
+                          </div>
+                        </div>
                       ))}
                     </div>
-                  )}
+                  </>
+                )}
 
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
-                    {board.description}
-                  </p>
-
-                  <p className="mt-3 flex items-center gap-1 text-xs font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
-                    View full guide
-                    <ChevronRight className="h-3 w-3" />
-                  </p>
-                </Link>
-              )
-            })}
-          </div>
-        </section>
-
-        {/* ════════════════════════════════════════════════════════════════════
-            GENERIC OVERVIEW — The English GCSE Landscape
-           ════════════════════════════════════════════════════════════════════ */}
-        <Collapsible
-          title={genericOverview.landscape.title}
-          icon={BookOpen}
-          defaultOpen
-        >
-          <div
-            className="prose-brand max-w-none text-sm leading-relaxed text-muted-foreground [&_em]:text-primary/80 [&_li]:ml-4 [&_li]:text-muted-foreground [&_ol]:my-3 [&_ol]:list-decimal [&_ol]:space-y-1.5 [&_p+p]:mt-3 [&_p]:text-muted-foreground [&_strong]:text-foreground [&_ul]:my-3 [&_ul]:list-disc [&_ul]:space-y-1.5"
-            dangerouslySetInnerHTML={{
-              __html: sanitize(genericOverview.landscape.content),
-            }}
-          />
-
-          {/* ── Universal Assessment Objectives ────────────────────────────── */}
-          <div className="mt-8 border-t border-border pt-6">
-            <h3 className="mb-1 text-lg font-bold text-foreground">
-              Universal Assessment Objectives
-            </h3>
-            <p className="mb-5 text-sm font-medium text-primary">
-              {genericOverview.universalAOs.keyPrinciple}
-            </p>
-
-            {/* Language AOs */}
-            <h4 className="mb-3 flex items-center gap-2 text-sm font-bold text-foreground">
-              <ScrollText className="h-4 w-4 text-primary" />
-              English Language AOs
-            </h4>
-            <div className="mb-6 space-y-2">
-              {genericOverview.universalAOs.language.map((ao) => (
-                <div
-                  key={ao.code}
-                  className="flex items-start gap-4 rounded-lg border border-border bg-background/50 p-3"
-                >
-                  <span className="inline-flex h-7 w-14 shrink-0 items-center justify-center rounded-md bg-primary/10 text-xs font-bold text-primary">
-                    {ao.code}
-                  </span>
-                  <div className="min-w-0 flex-1">
-                    <p className="text-sm leading-relaxed text-foreground">
-                      {ao.description}
-                    </p>
-                    <p className="mt-1 text-xs text-muted-foreground">
-                      Weighting: {ao.weighting}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Literature AOs */}
-            <h4 className="mb-3 flex items-center gap-2 text-sm font-bold text-foreground">
-              <BookMarked className="h-4 w-4 text-violet-400" />
-              English Literature AOs
-            </h4>
-            <div className="space-y-2">
-              {genericOverview.universalAOs.literature.map((ao) => (
-                <div
-                  key={ao.code}
-                  className="flex items-start gap-4 rounded-lg border border-border bg-background/50 p-3"
-                >
-                  <span className="inline-flex h-7 w-14 shrink-0 items-center justify-center rounded-md bg-violet-500/10 text-xs font-bold text-violet-400">
-                    {ao.code}
-                  </span>
-                  <div className="min-w-0 flex-1">
-                    <p className="text-sm leading-relaxed text-foreground">
-                      {ao.description}
-                    </p>
-                    <p className="mt-1 text-xs text-muted-foreground">
-                      Weighting: {ao.weighting}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* ── Mark Scheme Explainer ───────────────────────────────────────── */}
-          <div className="mt-8 border-t border-border pt-6">
-            <h3 className="mb-3 text-lg font-bold text-foreground">
-              {genericOverview.markSchemeExplainer.title}
-            </h3>
-            <div
-              className="prose-brand max-w-none text-sm leading-relaxed text-muted-foreground [&_em]:text-primary/80 [&_li]:ml-4 [&_li]:text-muted-foreground [&_ol]:my-3 [&_ol]:list-decimal [&_ol]:space-y-1.5 [&_p+p]:mt-3 [&_p]:text-muted-foreground [&_strong]:text-foreground [&_ul]:my-3 [&_ul]:list-disc [&_ul]:space-y-1.5"
-              dangerouslySetInnerHTML={{
-                __html: sanitize(genericOverview.markSchemeExplainer.content),
-              }}
-            />
-          </div>
-
-          {/* ── Level 3 to Level 4/5 Comparisons ───────────────────────────── */}
-          <div className="mt-8 border-t border-border pt-6">
-            <h3 className="mb-1 text-lg font-bold text-foreground">
-              {genericOverview.level3ToLevel4.title}
-            </h3>
-            <p className="mb-4 text-sm text-muted-foreground">
-              {genericOverview.level3ToLevel4.subtitle}
-            </p>
-            <div className="space-y-4">
-              {genericOverview.level3ToLevel4.comparisons.map((comp, i) => (
-                <div
-                  key={i}
-                  className="overflow-hidden rounded-xl border border-border"
-                >
-                  <div className="border-b border-border bg-card/60 p-4">
-                    <div className="mb-2 flex items-center gap-2">
-                      <span className="rounded-full bg-amber-500/20 px-2 py-0.5 text-xs font-semibold text-amber-400">
-                        Level 3
-                      </span>
-                      <span className="text-xs text-muted-foreground">Grade 5-6</span>
+                {guide.literatureAOs.length > 0 && (
+                  <>
+                    <h4 className="mb-3 flex items-center gap-2 text-sm font-bold text-foreground">
+                      <BookMarked className="h-4 w-4 text-violet-400" />
+                      English Literature AOs
+                    </h4>
+                    <div className="space-y-2">
+                      {guide.literatureAOs.map((ao) => (
+                        <div
+                          key={ao.code}
+                          className="flex items-start gap-4 rounded-lg border border-border bg-background/50 p-3"
+                        >
+                          <span className="inline-flex h-7 w-14 shrink-0 items-center justify-center rounded-md bg-violet-500/10 text-xs font-bold text-violet-400">
+                            {ao.code}
+                          </span>
+                          <div className="min-w-0 flex-1">
+                            <p className="text-sm leading-relaxed text-foreground">
+                              {ao.description}
+                            </p>
+                            <p className="mt-1 text-xs text-muted-foreground">
+                              Weighting: {ao.weighting}
+                            </p>
+                          </div>
+                        </div>
+                      ))}
                     </div>
-                    <p className="text-sm italic text-muted-foreground">
-                      &ldquo;{comp.level3}&rdquo;
-                    </p>
-                  </div>
-                  <div className="p-4">
-                    <div className="mb-2 flex items-center gap-2">
-                      <span className="rounded-full bg-primary/20 px-2 py-0.5 text-xs font-semibold text-primary">
-                        Level 4/5
-                      </span>
-                      <span className="text-xs text-muted-foreground">Grade 8-9</span>
-                    </div>
-                    <p
-                      className="text-sm leading-relaxed text-foreground [&_em]:text-primary/80"
-                      dangerouslySetInnerHTML={{
-                        __html: sanitize(`&ldquo;${comp.level45}&rdquo;`),
-                      }}
-                    />
-                  </div>
+                  </>
+                )}
+              </Collapsible>
+            </section>
+
+            {/* ── Language Papers Breakdown ─────────────────────────────── */}
+            {guide.languagePapers.length > 0 && (
+              <section>
+                <div className="mb-5 flex items-center gap-3">
+                  <FileText className="h-6 w-6 text-primary" />
+                  <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
+                    Language Papers
+                  </h2>
                 </div>
-              ))}
-            </div>
-          </div>
-
-          {/* ── Grade Boundary Summary Table ────────────────────────────────── */}
-          <div className="mt-8 border-t border-border pt-6">
-            <h3 className="mb-1 text-lg font-bold text-foreground">
-              {genericOverview.gradeBoundarySummary.title}
-            </h3>
-            <p className="mb-4 text-sm font-medium text-primary">
-              {genericOverview.gradeBoundarySummary.insight}
-            </p>
-
-            <div className="overflow-x-auto">
-              <table className="w-full border-collapse text-sm">
-                <thead>
-                  <tr className="border-b border-border">
-                    <th className="px-3 py-3 text-left text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                      Board
-                    </th>
-                    <th className="px-3 py-3 text-left text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                      Subject
-                    </th>
-                    <th className="px-3 py-3 text-center text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                      Max
-                    </th>
-                    <th className="px-3 py-3 text-center text-xs font-semibold uppercase tracking-wider text-primary">
-                      Grade 9
-                    </th>
-                    <th className="px-3 py-3 text-center text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                      Grade 7
-                    </th>
-                    <th className="px-3 py-3 text-center text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                      Grade 4
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {genericOverview.gradeBoundarySummary.boards.map((row) => (
-                    <tr
-                      key={`${row.board}-${row.subject}`}
-                      className="border-b border-border/50 transition-colors hover:bg-card/40"
+                <div className="space-y-4">
+                  {guide.languagePapers.map((paper) => (
+                    <Collapsible
+                      key={paper.code}
+                      title={`${paper.title} (${paper.code})`}
+                      icon={FileText}
+                      defaultOpen
                     >
-                      <td className="px-3 py-3 font-medium text-foreground">
-                        {row.board}
-                      </td>
-                      <td className="px-3 py-3 text-muted-foreground">{row.subject}</td>
-                      <td className="px-3 py-3 text-center text-muted-foreground">
-                        {row.max}
-                      </td>
-                      <td className="px-3 py-3 text-center font-semibold text-primary">
-                        {row.grade9}
-                      </td>
-                      <td className="px-3 py-3 text-center text-foreground">
-                        {row.grade7}
-                      </td>
-                      <td className="px-3 py-3 text-center text-muted-foreground">
-                        {row.grade4}
-                      </td>
-                    </tr>
+                      <div className="mb-4 flex flex-wrap gap-3">
+                        <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+                          <Timer className="h-3 w-3" />
+                          {paper.time}
+                        </span>
+                        <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+                          <Target className="h-3 w-3" />
+                          {paper.marks} marks
+                        </span>
+                        <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+                          {paper.weighting} of total
+                        </span>
+                        <span className="rounded-full bg-border px-3 py-1 text-xs text-muted-foreground">
+                          {paper.textType}
+                        </span>
+                      </div>
+
+                      {paper.sections.map((section) => (
+                        <div key={section.title} className="mb-5">
+                          <h4 className="mb-3 text-sm font-bold text-foreground">
+                            {section.title}{' '}
+                            <span className="font-normal text-muted-foreground">
+                              ({section.marks} marks)
+                            </span>
+                          </h4>
+                          <div className="space-y-2">
+                            {section.questions.map((q, qi) => (
+                              <div
+                                key={qi}
+                                className="rounded-lg border border-border bg-background/50 p-3"
+                              >
+                                <div className="flex items-start justify-between gap-2">
+                                  <p className="text-sm font-medium text-foreground">
+                                    {q.question}
+                                  </p>
+                                  <span className="shrink-0 rounded-full bg-primary/10 px-2 py-0.5 text-xs font-semibold text-primary">
+                                    {q.marks}m
+                                  </span>
+                                </div>
+                                <div className="mt-2 flex flex-wrap gap-2 text-xs text-muted-foreground">
+                                  <span className="rounded bg-border/50 px-1.5 py-0.5">
+                                    {q.ao}
+                                  </span>
+                                  <span className="rounded bg-border/50 px-1.5 py-0.5">
+                                    {q.skill}
+                                  </span>
+                                  <span className="rounded bg-border/50 px-1.5 py-0.5">
+                                    {q.time}
+                                  </span>
+                                </div>
+                                <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                                  {q.advice}
+                                </p>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </Collapsible>
                   ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </Collapsible>
+                </div>
+              </section>
+            )}
+
+            {/* ── Literature Papers Breakdown ──────────────────────────── */}
+            {guide.literaturePapers.length > 0 && (
+              <section>
+                <div className="mb-5 flex items-center gap-3">
+                  <BookMarked className="h-6 w-6 text-violet-400" />
+                  <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
+                    Literature Papers
+                  </h2>
+                </div>
+                <div className="space-y-4">
+                  {guide.literaturePapers.map((paper) => (
+                    <Collapsible
+                      key={paper.code}
+                      title={`${paper.title} (${paper.code})`}
+                      icon={BookMarked}
+                      defaultOpen
+                    >
+                      <div className="mb-4 flex flex-wrap gap-3">
+                        <span className="inline-flex items-center gap-1.5 rounded-full bg-violet-500/10 px-3 py-1 text-xs font-medium text-violet-400">
+                          <Timer className="h-3 w-3" />
+                          {paper.time}
+                        </span>
+                        <span className="inline-flex items-center gap-1.5 rounded-full bg-violet-500/10 px-3 py-1 text-xs font-medium text-violet-400">
+                          <Target className="h-3 w-3" />
+                          {paper.marks} marks
+                        </span>
+                        <span className="inline-flex items-center gap-1.5 rounded-full bg-violet-500/10 px-3 py-1 text-xs font-medium text-violet-400">
+                          {paper.weighting} of total
+                        </span>
+                        <span className="rounded-full bg-border px-3 py-1 text-xs text-muted-foreground">
+                          {paper.textType}
+                        </span>
+                      </div>
+
+                      {paper.sections.map((section) => (
+                        <div key={section.title} className="mb-5">
+                          <h4 className="mb-3 text-sm font-bold text-foreground">
+                            {section.title}{' '}
+                            <span className="font-normal text-muted-foreground">
+                              ({section.marks} marks)
+                            </span>
+                          </h4>
+                          <div className="space-y-2">
+                            {section.questions.map((q, qi) => (
+                              <div
+                                key={qi}
+                                className="rounded-lg border border-border bg-background/50 p-3"
+                              >
+                                <div className="flex items-start justify-between gap-2">
+                                  <p className="text-sm font-medium text-foreground">
+                                    {q.question}
+                                  </p>
+                                  <span className="shrink-0 rounded-full bg-violet-500/10 px-2 py-0.5 text-xs font-semibold text-violet-400">
+                                    {q.marks}m
+                                  </span>
+                                </div>
+                                <div className="mt-2 flex flex-wrap gap-2 text-xs text-muted-foreground">
+                                  <span className="rounded bg-border/50 px-1.5 py-0.5">
+                                    {q.ao}
+                                  </span>
+                                  <span className="rounded bg-border/50 px-1.5 py-0.5">
+                                    {q.skill}
+                                  </span>
+                                  <span className="rounded bg-border/50 px-1.5 py-0.5">
+                                    {q.time}
+                                  </span>
+                                </div>
+                                <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                                  {q.advice}
+                                </p>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </Collapsible>
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {/* ── Mark Scheme Bands ─────────────────────────────────────── */}
+            {guide.markBands.length > 0 && (
+              <section>
+                <div className="mb-5 flex items-center gap-3">
+                  <Layers className="h-6 w-6 text-primary" />
+                  <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
+                    Mark Scheme Bands
+                  </h2>
+                </div>
+                <p className="mb-5 text-sm text-muted-foreground">
+                  How your responses are assessed across the marking levels.
+                  Aim for the top bands by demonstrating perceptive analysis and
+                  sophisticated expression.
+                </p>
+                <div className="space-y-3">
+                  {guide.markBands.map((band) => (
+                    <div
+                      key={band.level}
+                      className="rounded-xl border border-border bg-card/40 p-4"
+                    >
+                      <div className="mb-2 flex items-center gap-3">
+                        <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-sm font-bold text-primary">
+                          L{band.level}
+                        </span>
+                        <p className="text-sm font-semibold text-foreground">
+                          {band.descriptor}
+                        </p>
+                      </div>
+                      <div className="grid gap-2 text-xs sm:grid-cols-2 lg:grid-cols-3">
+                        <div className="rounded-lg bg-background/50 p-2.5">
+                          <span className="font-semibold text-primary">AO1:</span>{' '}
+                          <span className="text-muted-foreground">{band.ao1}</span>
+                        </div>
+                        <div className="rounded-lg bg-background/50 p-2.5">
+                          <span className="font-semibold text-violet-400">AO2:</span>{' '}
+                          <span className="text-muted-foreground">{band.ao2}</span>
+                        </div>
+                        {band.ao3 && (
+                          <div className="rounded-lg bg-background/50 p-2.5">
+                            <span className="font-semibold text-orange-400">AO3:</span>{' '}
+                            <span className="text-muted-foreground">{band.ao3}</span>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {/* ── Grade Boundaries ──────────────────────────────────────── */}
+            {guide.gradeBoundaries.length > 0 && (
+              <section>
+                <div className="mb-5 flex items-center gap-3">
+                  <Trophy className="h-6 w-6 text-amber-400" />
+                  <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
+                    Grade Boundaries
+                  </h2>
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full border-collapse text-sm">
+                    <thead>
+                      <tr className="border-b border-border">
+                        <th className="px-3 py-3 text-left text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                          Year
+                        </th>
+                        <th className="px-3 py-3 text-center text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                          Max
+                        </th>
+                        <th className="px-3 py-3 text-center text-xs font-semibold uppercase tracking-wider text-primary">
+                          Grade 9
+                        </th>
+                        <th className="px-3 py-3 text-center text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                          Grade 8
+                        </th>
+                        <th className="px-3 py-3 text-center text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                          Grade 7
+                        </th>
+                        <th className="px-3 py-3 text-center text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                          Grade 6
+                        </th>
+                        <th className="px-3 py-3 text-center text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                          Grade 5
+                        </th>
+                        <th className="px-3 py-3 text-center text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                          Grade 4
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {guide.gradeBoundaries.map((row) => (
+                        <tr
+                          key={row.year}
+                          className="border-b border-border/50 transition-colors hover:bg-card/40"
+                        >
+                          <td className="px-3 py-3 font-medium text-foreground">
+                            {row.year}
+                          </td>
+                          <td className="px-3 py-3 text-center text-muted-foreground">
+                            {row.max}
+                          </td>
+                          <td className="px-3 py-3 text-center font-semibold text-primary">
+                            {row.grade9}
+                          </td>
+                          <td className="px-3 py-3 text-center text-foreground">
+                            {row.grade8}
+                          </td>
+                          <td className="px-3 py-3 text-center text-foreground">
+                            {row.grade7}
+                          </td>
+                          <td className="px-3 py-3 text-center text-muted-foreground">
+                            {row.grade6}
+                          </td>
+                          <td className="px-3 py-3 text-center text-muted-foreground">
+                            {row.grade5}
+                          </td>
+                          <td className="px-3 py-3 text-center text-muted-foreground">
+                            {row.grade4}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+            )}
+
+            {/* ── Examiner Tips ─────────────────────────────────────────── */}
+            {guide.examinerTips.length > 0 && (
+              <section>
+                <div className="mb-5 flex items-center gap-3">
+                  <Lightbulb className="h-6 w-6 text-amber-400" />
+                  <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
+                    Examiner Tips
+                  </h2>
+                </div>
+                <p className="mb-5 text-sm text-muted-foreground">
+                  Advice drawn directly from examiner reports for your exam board.
+                  These are the things that examiners consistently flag.
+                </p>
+                <div className="space-y-4">
+                  {guide.examinerTips.map((tip, i) => (
+                    <Collapsible
+                      key={i}
+                      title={tip.question}
+                      icon={Lightbulb}
+                      defaultOpen={i === 0}
+                    >
+                      <ul className="space-y-2">
+                        {tip.tips.map((t, j) => (
+                          <li key={j} className="flex gap-2 text-sm text-muted-foreground">
+                            <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-400/60" />
+                            {t}
+                          </li>
+                        ))}
+                      </ul>
+                    </Collapsible>
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {/* ── Key Changes ──────────────────────────────────────────── */}
+            {guide.keyChanges && guide.keyChanges.length > 0 && (
+              <section>
+                <Collapsible title="Recent Specification Changes" icon={Info}>
+                  <div className="space-y-3">
+                    {guide.keyChanges.map((change, i) => (
+                      <div
+                        key={i}
+                        className="flex gap-3 rounded-lg border border-border bg-background/50 p-3"
+                      >
+                        <span className="shrink-0 rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary">
+                          {change.year}
+                        </span>
+                        <p className="text-sm text-muted-foreground">{change.change}</p>
+                      </div>
+                    ))}
+                  </div>
+                </Collapsible>
+              </section>
+            )}
+          </>
+        )}
 
         {/* ════════════════════════════════════════════════════════════════════
-            GRADE 9 STRATEGY
+            GRADE 9 STRATEGY (universal)
            ════════════════════════════════════════════════════════════════════ */}
         <section>
           <div className="mb-5 flex items-center gap-3">
@@ -649,7 +921,7 @@ export default function ExamGuidePage() {
         </section>
 
         {/* ════════════════════════════════════════════════════════════════════
-            TERMINOLOGY QUICK REFERENCE
+            TERMINOLOGY QUICK REFERENCE (universal)
            ════════════════════════════════════════════════════════════════════ */}
         <section>
           <div className="mb-5 flex items-center gap-3">
@@ -746,7 +1018,7 @@ export default function ExamGuidePage() {
         </section>
 
         {/* ════════════════════════════════════════════════════════════════════
-            HISTORICAL CONTEXT TIMELINE
+            HISTORICAL CONTEXT TIMELINE (universal)
            ════════════════════════════════════════════════════════════════════ */}
         <section>
           <div className="mb-2 flex items-center gap-3">
@@ -788,7 +1060,7 @@ export default function ExamGuidePage() {
                     {' '}Then {PRICING_DISPLAY.monthly} on a rolling monthly contract.
                   </p>
                   <p className="mt-1 text-sm text-muted-foreground">
-                    Annual subscription also available &mdash; save {PRICING.ANNUAL_SAVE_PERCENT}%.
+                    Start your free trial today — first month free.
                   </p>
                 </div>
                 <Link
@@ -801,42 +1073,12 @@ export default function ExamGuidePage() {
             </div>
           </section>
         )}
-
-        {/* ════════════════════════════════════════════════════════════════════
-            BOTTOM CTA
-           ════════════════════════════════════════════════════════════════════ */}
-        <section className="pt-4">
-          <div className="relative overflow-hidden rounded-2xl border border-border bg-card p-10 text-center sm:p-14">
-            <div className="pointer-events-none absolute left-1/2 top-0 h-[250px] w-[400px] -translate-x-1/2 rounded-full bg-primary/10 blur-[100px]" />
-            <div className="relative">
-              <h2 className="mb-3 text-2xl font-bold text-foreground sm:text-3xl">
-                Ready to dive deeper?
-              </h2>
-              <p className="mx-auto mb-8 max-w-md text-muted-foreground">
-                Choose your exam board for a full specification breakdown with
-                papers, mark schemes, grade boundaries, and examiner tips.
-              </p>
-              <div className="flex flex-wrap items-center justify-center gap-3">
-                {BOARD_CARDS.map((board) => (
-                  <Link
-                    key={board.id}
-                    href={`/exam-guide/${board.slug}`}
-                    className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-medium text-foreground transition-all hover:border-primary/40 hover:text-primary"
-                  >
-                    <span className={`h-2 w-2 rounded-full ${board.dot}`} />
-                    {board.id}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
       </div>
     </main>
   )
 }
 
-// ─── Timeline Period Component ─────────────────────────────────────────────────
+// ─── Timeline Period Component ───────────────────────────────────────────────
 
 function TimelinePeriod({
   period,

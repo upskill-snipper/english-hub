@@ -79,10 +79,7 @@ export default function TermsPage() {
           </p>
           <ul className="mt-2 list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
             <li>
-              <strong>Monthly Plan:</strong> £8.99 per month, billed monthly on a recurring basis.
-            </li>
-            <li>
-              <strong>Annual Plan:</strong> £79.00 per year, billed annually on a recurring basis.
+              <strong>Monthly Plan:</strong> £9.99 per month, billed monthly on a recurring basis. First month free.
             </li>
           </ul>
           <p className="mt-2 text-muted-foreground leading-relaxed">

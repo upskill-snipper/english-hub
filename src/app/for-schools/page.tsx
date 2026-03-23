@@ -2,7 +2,6 @@
 
 import { useState, type FormEvent } from 'react'
 import Link from 'next/link'
-import type { Metadata } from 'next'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -31,109 +30,96 @@ import {
   Clock,
   UserPlus,
   Quote,
+  LineChart,
+  Brain,
+  FileText,
+  FolderOpen,
+  TrendingUp,
+  Layout,
+  Target,
+  Presentation,
 } from 'lucide-react'
 
-/* ───────────────────── School Pricing Tiers ───────────────────── */
+/* ───────────────────── Feature Showcase ───────────────────── */
 
-const SCHOOL_TIERS = [
-  {
-    name: 'Department',
-    seats: 'Up to 50 students',
-    price: '£500',
-    period: '/year',
-    perStudent: '£10/student',
-    icon: Users,
-    color: 'text-blue-400 bg-blue-500/10 border-blue-500/20',
-    features: [
-      'Full access for up to 50 students',
-      'Teacher dashboard & analytics',
-      'Bulk student onboarding',
-      'Priority email support',
-    ],
-  },
-  {
-    name: 'School',
-    seats: 'Up to 200 students',
-    price: '£1,500',
-    period: '/year',
-    perStudent: '£7.50/student',
-    icon: School,
-    color: 'text-primary bg-primary/10 border-primary/20',
-    popular: true,
-    features: [
-      'Full access for up to 200 students',
-      'Teacher dashboard & analytics',
-      'Bulk student onboarding',
-      'Progress reports for parents',
-      'Dedicated account manager',
-    ],
-  },
-  {
-    name: 'Multi-Academy Trust',
-    seats: 'Unlimited students',
-    price: '£2,000',
-    period: '/year per school',
-    perStudent: 'Best value',
-    icon: Building2,
-    color: 'text-purple-400 bg-purple-500/10 border-purple-500/20',
-    features: [
-      'Unlimited students per school',
-      'Trust-wide analytics dashboard',
-      'Bulk student onboarding',
-      'Centralised billing',
-      'Dedicated account manager',
-      'Custom onboarding session',
-    ],
-  },
-]
-
-/* ───────────────────── Features for Schools ───────────────────── */
-
-const SCHOOL_FEATURES = [
-  {
-    icon: BookOpen,
-    color: 'text-primary bg-primary/10',
-    title: 'Board-Specific Content',
-    desc: 'Courses mapped to AQA, Edexcel, OCR, WJEC, and IGCSE specifications. Students only study what their exam board requires.',
-  },
+const PLATFORM_FEATURES = [
   {
     icon: BarChart3,
     color: 'text-blue-400 bg-blue-500/10',
-    title: 'Teacher Dashboard',
-    desc: 'Track class progress in real time. Identify weak areas, monitor completion rates, and see which students need extra support.',
+    title: 'Department-Wide Analytics Dashboard',
+    desc: 'Track every student across year groups in real time. Monitor progress, identify gaps, and compare performance across classes with a single overview.',
+  },
+  {
+    icon: BookOpen,
+    color: 'text-primary bg-primary/10',
+    title: 'Lesson Builder & Resource Library',
+    desc: 'Access 300+ ready-made lesson plans, printable worksheets, and teaching resources mapped to every major exam board specification.',
+  },
+  {
+    icon: Brain,
+    color: 'text-purple-400 bg-purple-500/10',
+    title: 'Predicted Grades & Targeted Learning',
+    desc: 'AI-powered recommendations for each student based on their performance data. Surface at-risk learners early and deliver targeted interventions.',
   },
   {
     icon: ClipboardList,
     color: 'text-emerald-400 bg-emerald-500/10',
-    title: 'Homework Ready',
-    desc: 'Assign specific modules, practice questions, or revision sets as homework. Track completion and results automatically.',
+    title: 'Homework & Assignment Management',
+    desc: 'Set assignments in seconds, track completion rates automatically, and let the platform auto-mark practice questions so you can focus on teaching.',
   },
   {
-    icon: GraduationCap,
+    icon: FileText,
     color: 'text-amber-400 bg-amber-500/10',
-    title: 'Exam Season Support',
-    desc: 'Mock exams, revision flashcards, exam guides, and practice questions with triple-graded model answers to boost results.',
+    title: 'Progress Reports',
+    desc: 'Generate automated parent reports and Ofsted-ready data exports at the click of a button. Always audit-ready, always up to date.',
   },
   {
-    icon: UserPlus,
-    color: 'text-purple-400 bg-purple-500/10',
-    title: 'No Setup Required',
-    desc: 'Students sign up with a simple school code. No complex IT integration, no software to install, no training needed.',
-  },
-  {
-    icon: Shield,
+    icon: Presentation,
     color: 'text-red-400 bg-red-500/10',
-    title: 'Safe & Compliant',
-    desc: 'GDPR-compliant platform with no ads, no third-party tracking, and no social features. Just focused learning.',
+    title: 'Staff Training & Onboarding',
+    desc: 'Built-in CPD materials and guided onboarding walkthroughs ensure every member of your department can hit the ground running.',
   },
 ]
 
-/* ───────────────────── Stats ───────────────────── */
+/* ───────────────────── Dashboard Preview Cards ───────────────────── */
+
+const DASHBOARD_PREVIEWS = [
+  {
+    title: 'Student Progress Overview',
+    desc: 'At-a-glance view of individual student journeys, completion rates, and areas requiring attention across all modules.',
+    icon: TrendingUp,
+    color: 'text-primary bg-primary/10 border-primary/20',
+    metrics: ['Completion Rate', 'Time on Task', 'Streak Data', 'Module Scores'],
+  },
+  {
+    title: 'Class Analytics',
+    desc: 'Compare class performance side by side. Drill down into topic-level data to see exactly where your students are excelling or struggling.',
+    icon: BarChart3,
+    color: 'text-blue-400 bg-blue-500/10 border-blue-500/20',
+    metrics: ['Class Averages', 'Topic Breakdown', 'Year-on-Year Trends', 'Cohort Comparison'],
+  },
+  {
+    title: 'Lesson Planner',
+    desc: 'Plan your week with drag-and-drop simplicity. Pull from 300+ resources, attach assignments, and share plans with your team.',
+    icon: Layout,
+    color: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20',
+    metrics: ['Weekly View', 'Resource Linking', 'Team Sharing', 'Curriculum Mapping'],
+  },
+  {
+    title: 'Grade Predictions',
+    desc: 'AI-generated predicted grades based on current performance trends, with actionable recommendations to close the gap.',
+    icon: Target,
+    color: 'text-amber-400 bg-amber-500/10 border-amber-500/20',
+    metrics: ['Current vs Target', 'Confidence Score', 'Risk Indicators', 'Intervention Suggestions'],
+  },
+]
+
+/* ───────────────────── Social Proof Stats ───────────────────── */
 
 const STATS = [
   { value: '2,400+', label: 'Students Learning', icon: Users, color: 'text-primary bg-primary/10' },
   { value: '6', label: 'Exam Boards Covered', icon: Award, color: 'text-blue-400 bg-blue-500/10' },
-  { value: '17', label: 'Structured Courses', icon: BookOpen, color: 'text-emerald-400 bg-emerald-500/10' },
+  { value: '300+', label: 'Lesson Plans', icon: BookOpen, color: 'text-emerald-400 bg-emerald-500/10' },
   { value: '40+', label: 'Practice Questions', icon: FileQuestion, color: 'text-amber-400 bg-amber-500/10' },
 ]
 
@@ -146,7 +132,7 @@ const SCHOOL_FAQS = [
   },
   {
     q: 'Can we trial the platform before committing?',
-    a: 'Absolutely. We offer a free 30-day pilot for up to 30 students. No payment details required. Just fill in the form below and we\'ll set everything up for you.',
+    a: 'Absolutely. We offer a free 30-day pilot for your department. No payment details required. Just fill in the form below and we\'ll set everything up for you.',
   },
   {
     q: 'What exam boards do you cover?',
@@ -157,8 +143,8 @@ const SCHOOL_FAQS = [
     a: 'Yes. The teacher dashboard shows completion rates, quiz scores, time spent, and weak areas for every student. You can filter by class, year group, or individual student.',
   },
   {
-    q: 'How does billing work for schools?',
-    a: 'We invoice annually. Payment can be made via bank transfer, purchase order, or card. Multi-Academy Trusts receive centralised billing across all schools.',
+    q: 'How does pricing work?',
+    a: 'We offer tailored pricing based on the size of your school or trust. Get in touch via the form below and we\'ll put together a package that works for your budget.',
   },
   {
     q: 'Is the platform GDPR compliant?',
@@ -167,10 +153,6 @@ const SCHOOL_FAQS = [
   {
     q: 'Can we use this alongside our existing curriculum?',
     a: 'The English Hub is designed to complement your teaching, not replace it. Teachers can assign specific modules as homework, revision, or independent study to reinforce classroom learning.',
-  },
-  {
-    q: 'What happens if we need more seats mid-year?',
-    a: 'You can upgrade your plan at any time. We\'ll pro-rata the cost for the remainder of the year. Just contact your account manager or email us.',
   },
 ]
 
@@ -219,10 +201,9 @@ function ContactForm() {
     const formData = new FormData(e.currentTarget)
     const data = {
       school_name: formData.get('school_name') as string,
-      teacher_name: formData.get('teacher_name') as string,
+      contact_name: formData.get('contact_name') as string,
       email: formData.get('email') as string,
       role: formData.get('role') as string,
-      num_students: formData.get('num_students') as string,
       message: formData.get('message') as string,
     }
 
@@ -274,10 +255,10 @@ function ContactForm() {
           />
         </div>
         <div className="space-y-2">
-          <Label htmlFor="teacher_name">Your Name *</Label>
+          <Label htmlFor="contact_name">Contact Name *</Label>
           <Input
-            id="teacher_name"
-            name="teacher_name"
+            id="contact_name"
+            name="contact_name"
             placeholder="e.g. Mrs J. Smith"
             required
             minLength={2}
@@ -319,29 +300,11 @@ function ContactForm() {
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="num_students">Approximate Number of Students *</Label>
-        <select
-          id="num_students"
-          name="num_students"
-          required
-          className="h-10 w-full rounded-lg border border-input bg-transparent px-3.5 py-2 text-sm transition-all duration-200 outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/25 dark:bg-input/20"
-        >
-          <option value="" disabled>Select range</option>
-          <option value="1-30">1 – 30 students</option>
-          <option value="31-50">31 – 50 students</option>
-          <option value="51-100">51 – 100 students</option>
-          <option value="101-200">101 – 200 students</option>
-          <option value="201-500">201 – 500 students</option>
-          <option value="500+">500+ students (Multi-Academy Trust)</option>
-        </select>
-      </div>
-
-      <div className="space-y-2">
         <Label htmlFor="message">Message (optional)</Label>
         <Textarea
           id="message"
           name="message"
-          placeholder="Tell us about your school's needs, any questions, or preferred demo time..."
+          placeholder="Tell us about your school's needs, number of students, any questions, or preferred demo time..."
           rows={4}
           maxLength={1000}
         />
@@ -394,22 +357,21 @@ export default function ForSchoolsPage() {
           </Badge>
 
           <h1 className="text-foreground">
-            Boost Your English
+            Transform English Teaching
             <br />
-            <span className="text-primary">Department&rsquo;s Results</span>
+            <span className="text-primary">Across Your School</span>
           </h1>
 
           <p className="mt-7 text-body-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Give every student access to board-specific revision, practice questions with model answers, and exam guides — for less than {' '}
-            <span className="text-foreground font-semibold">£10 per student per year</span>.
+            A whole-school English platform that empowers every teacher and student with board-specific content, real-time analytics, and AI-powered insights — tailored to your department&rsquo;s needs.
           </p>
 
           <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button variant="default" size="lg" className="text-base px-8 h-12 shadow-lg shadow-primary/20" render={<a href="#contact" />}>
-              Request a Demo
+              Get in Touch
             </Button>
-            <Button variant="secondary" size="lg" className="text-base px-8 h-12" render={<a href="#pricing" />}>
-              View Pricing
+            <Button variant="secondary" size="lg" className="text-base px-8 h-12" render={<a href="#features" />}>
+              Explore Features
             </Button>
           </div>
         </div>
@@ -419,9 +381,7 @@ export default function ForSchoolsPage() {
       <section className="border-y border-border/40 bg-card/30">
         <div className="max-w-5xl mx-auto px-6 py-10">
           <p className="text-center text-muted-foreground text-sm font-medium mb-7">
-            Trusted by{' '}
-            <span className="text-foreground font-bold">2,400+</span>{' '}
-            students across the UK
+            Trusted by schools across the UK
           </p>
           <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12">
             {STATS.map((stat, i) => (
@@ -442,20 +402,20 @@ export default function ForSchoolsPage() {
         </div>
       </section>
 
-      {/* ━━━ FEATURES FOR SCHOOLS ━━━ */}
-      <section className="py-24 sm:py-32">
+      {/* ━━━ FEATURE SHOWCASE ━━━ */}
+      <section id="features" className="py-24 sm:py-32 scroll-mt-16">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-foreground">
-              Built for English Departments
+              Everything Your Department Needs
             </h2>
             <p className="mt-4 text-muted-foreground max-w-xl mx-auto text-body-lg">
-              Everything your department needs to raise attainment and save planning time.
+              A comprehensive platform built to raise attainment, reduce workload, and give your leadership team full visibility.
             </p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {SCHOOL_FEATURES.map((item) => (
+            {PLATFORM_FEATURES.map((item) => (
               <Card key={item.title} className="p-6 flex flex-col border-border/40 hover:border-border/70 transition-colors duration-300">
                 <div className={cn('w-11 h-11 rounded-xl flex items-center justify-center mb-5', item.color)}>
                   <item.icon className="w-5 h-5" />
@@ -474,77 +434,61 @@ export default function ForSchoolsPage() {
 
       <Separator className="opacity-40" />
 
-      {/* ━━━ PRICING ━━━ */}
-      <section id="pricing" className="py-24 sm:py-32 scroll-mt-16">
+      {/* ━━━ SEE IT IN ACTION ━━━ */}
+      <section className="py-24 sm:py-32 bg-card/20">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-foreground">
-              Simple, Transparent Pricing
+              See It In Action
             </h2>
             <p className="mt-4 text-muted-foreground max-w-xl mx-auto text-body-lg">
-              One annual fee. Full access. No hidden costs. All plans include every course, practice question, and revision tool.
+              A glimpse at the dashboards and tools your team will use every day.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-5">
-            {SCHOOL_TIERS.map((tier) => (
-              <Card
-                key={tier.name}
-                className={cn(
-                  'p-6 flex flex-col border-border/40 relative',
-                  tier.popular && 'border-primary/40 shadow-lg shadow-primary/5'
-                )}
-              >
-                {tier.popular && (
-                  <Badge className="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs px-3 py-0.5">
-                    Most Popular
-                  </Badge>
-                )}
-
-                <div className={cn('w-11 h-11 rounded-xl flex items-center justify-center mb-5', tier.color)}>
-                  <tier.icon className="w-5 h-5" />
+          <div className="grid sm:grid-cols-2 gap-5">
+            {DASHBOARD_PREVIEWS.map((preview) => (
+              <Card key={preview.title} className={cn('p-6 border-border/40 hover:border-border/70 transition-colors duration-300')}>
+                <div className="flex items-start gap-4 mb-5">
+                  <div className={cn('w-11 h-11 rounded-xl flex items-center justify-center shrink-0', preview.color)}>
+                    <preview.icon className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold tracking-tight text-foreground">
+                      {preview.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed mt-1">
+                      {preview.desc}
+                    </p>
+                  </div>
                 </div>
-
-                <h3 className="text-xl font-bold tracking-tight text-foreground">{tier.name}</h3>
-                <p className="text-sm text-muted-foreground mt-1 mb-5">{tier.seats}</p>
-
-                <div className="mb-5">
-                  <span className="text-3xl font-bold tracking-tight text-foreground">{tier.price}</span>
-                  <span className="text-sm text-muted-foreground">{tier.period}</span>
-                  <p className="text-sm text-primary font-semibold mt-1">{tier.perStudent}</p>
-                </div>
-
-                <ul className="space-y-3 mb-8 flex-1">
-                  {tier.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-2.5 text-sm text-muted-foreground">
-                      <CheckCircle className="w-4 h-4 text-primary mt-0.5 shrink-0" />
-                      <span>{feature}</span>
-                    </li>
+                <div className="grid grid-cols-2 gap-2">
+                  {preview.metrics.map((metric) => (
+                    <div
+                      key={metric}
+                      className="flex items-center gap-2 text-xs text-muted-foreground bg-accent/30 rounded-lg px-3 py-2"
+                    >
+                      <CheckCircle className="w-3.5 h-3.5 text-primary shrink-0" />
+                      <span>{metric}</span>
+                    </div>
                   ))}
-                </ul>
-
-                <Button
-                  variant={tier.popular ? 'default' : 'secondary'}
-                  className="w-full"
-                  render={<a href="#contact" />}
-                >
-                  Request a Demo
-                </Button>
+                </div>
               </Card>
             ))}
           </div>
 
-          <p className="text-center text-sm text-muted-foreground mt-8">
-            All plans are invoiced annually. Need a custom plan?{' '}
-            <a href="#contact" className="text-primary hover:underline">Get in touch</a>.
-          </p>
+          <div className="text-center mt-12">
+            <Button variant="default" size="lg" className="text-base px-8 h-12 shadow-lg shadow-primary/20" render={<a href="#contact" />}>
+              Request a Live Demo
+            </Button>
+          </div>
         </div>
       </section>
 
       <Separator className="opacity-40" />
 
-      {/* ━━━ TESTIMONIALS PLACEHOLDER ━━━ */}
-      <section className="py-24 sm:py-32 bg-card/20">
+      {/* ━━━ TESTIMONIALS ━━━ */}
+      <section className="py-24 sm:py-32">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-foreground">
@@ -586,7 +530,7 @@ export default function ForSchoolsPage() {
       <Separator className="opacity-40" />
 
       {/* ━━━ FAQ ━━━ */}
-      <section className="py-24 sm:py-32">
+      <section className="py-24 sm:py-32 bg-card/20">
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-foreground">
@@ -608,17 +552,17 @@ export default function ForSchoolsPage() {
       <Separator className="opacity-40" />
 
       {/* ━━━ CONTACT / DEMO REQUEST FORM ━━━ */}
-      <section id="contact" className="py-24 sm:py-32 bg-card/20 scroll-mt-16">
+      <section id="contact" className="py-24 sm:py-32 scroll-mt-16">
         <div className="max-w-2xl mx-auto px-6">
           <div className="text-center mb-12">
             <div className="inline-flex w-14 h-14 rounded-2xl bg-primary/10 items-center justify-center mb-6">
               <Send className="w-7 h-7 text-primary" />
             </div>
             <h2 className="text-foreground">
-              Request a Demo
+              Get in Touch
             </h2>
             <p className="mt-4 text-muted-foreground max-w-lg mx-auto text-body-lg">
-              Fill in the form below and we&rsquo;ll arrange a free demo and a 30-day pilot for your department.
+              Tell us about your school and we&rsquo;ll arrange a free demo, a 30-day pilot, and tailored pricing for your department or trust.
             </p>
           </div>
 

@@ -52,7 +52,7 @@ function SidebarSkeleton() {
 }
 
 /** Routes where the BoardSidebar is hidden (they have their own navigation). */
-const HIDDEN_PREFIXES = ['/resources', '/dashboard', '/help', '/legal']
+const HIDDEN_PREFIXES = ['/dashboard', '/help', '/legal']
 
 export function BoardSidebar() {
   const pathname = usePathname()

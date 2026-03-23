@@ -13,8 +13,6 @@ import { PRICING, PRICING_DISPLAY } from '@/constants/pricing'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
-import { Separator } from '@/components/ui/separator'
 import { cn } from '@/lib/utils'
 
 const TIERS = ['All', 'KS3', 'GCSE', 'IGCSE'] as const
@@ -96,11 +94,8 @@ export default function CourseCataloguePage() {
                     Subscribe to unlock all courses
                   </p>
                   <p className="mt-1 text-muted-foreground">
-                    <span className="font-bold text-primary">First month FREE!</span>
-                    {' '}Then just {PRICING_DISPLAY.monthly} on a rolling monthly contract.
-                  </p>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    Annual subscription also available &mdash; save {PRICING.ANNUAL_SAVE_PERCENT}%.
+                    <span className="font-bold text-primary">{PRICING.TRIAL_TEXT}!</span>
+                    {' '}Then just {PRICING_DISPLAY.monthly} on a rolling monthly contract. Cancel anytime.
                   </p>
                 </div>
                 <Button variant="default" size="lg" className="shadow-lg shadow-primary/20" render={<Link href="/auth/register" />}>
@@ -123,33 +118,37 @@ export default function CourseCataloguePage() {
           </div>
         )}
 
-        {/* Tabs */}
-        <Tabs value={activeTier} onValueChange={handleTierChange} className="mb-8">
-          <TabsList>
+        {/* Tier filter pills */}
+        <div className="mb-8">
+          <div className="flex flex-wrap gap-2 mb-6">
             {TIERS.map((tier) => (
-              <TabsTrigger key={tier} value={tier}>
+              <button
+                key={tier}
+                onClick={() => handleTierChange(tier)}
+                className={cn(
+                  'inline-flex items-center rounded-full px-4 py-1.5 text-sm font-medium transition-all duration-200',
+                  activeTier === tier
+                    ? 'bg-primary text-primary-foreground shadow-sm'
+                    : 'bg-card border border-border text-muted-foreground hover:border-primary/40'
+                )}
+              >
                 {tier}
-              </TabsTrigger>
+              </button>
             ))}
-          </TabsList>
+          </div>
 
-          {/* We render a single TabsContent for each tier, all sharing the same grid */}
-          {TIERS.map((tier) => (
-            <TabsContent key={tier} value={tier} className="mt-6">
-              {filtered.length === 0 ? (
-                <p className="py-20 text-center text-muted-foreground">
-                  No courses found for this level.
-                </p>
-              ) : (
-                <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-                  {filtered.map((course) => (
-                    <CourseCard key={course.id} course={course} />
-                  ))}
-                </div>
-              )}
-            </TabsContent>
-          ))}
-        </Tabs>
+          {filtered.length === 0 ? (
+            <p className="py-20 text-center text-muted-foreground">
+              No courses found for this level.
+            </p>
+          ) : (
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {filtered.map((course) => (
+                <CourseCard key={course.id} course={course} />
+              ))}
+            </div>
+          )}
+        </div>
       </section>
 
       {/* Supplement Your Learning */}

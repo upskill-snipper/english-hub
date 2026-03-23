@@ -7,7 +7,7 @@ import { rateLimit, getClientIp } from '@/lib/rate-limit'
 
 interface CheckoutRequestBody {
   priceId?: string
-  plan?: 'monthly' | 'annual'
+  plan?: 'monthly'
   courseId?: string
   mode: 'subscription' | 'payment'
   rewardful_referral?: string | null
@@ -38,8 +38,6 @@ export async function POST(request: NextRequest) {
     if (!priceId && body.plan) {
       if (body.plan === 'monthly') {
         priceId = process.env.STRIPE_PRICE_PRO_MONTHLY
-      } else if (body.plan === 'annual') {
-        priceId = process.env.STRIPE_PRICE_PRO_ANNUAL
       }
     }
 
