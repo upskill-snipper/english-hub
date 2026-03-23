@@ -25,111 +25,166 @@ type ResourceGroup = {
   items: Resource[];
 };
 
+/* ─── SVG icon helpers ────────────────────────────────────── */
+
+const dramaIcon = (
+  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" />
+  </svg>
+);
+
+const proseIcon = (
+  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+  </svg>
+);
+
+const poetryIcon = (
+  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+  </svg>
+);
+
+const examIcon = (
+  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.438 60.438 0 00-.491 6.347A48.62 48.62 0 0112 20.904a48.62 48.62 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.636 50.636 0 00-2.658-.813A59.906 59.906 0 0112 3.493a59.903 59.903 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+  </svg>
+);
+
 const resourceGroups: ResourceGroup[] = [
   {
-    heading: "Exam Papers",
-    subtitle: "Understand the structure, question types, and technique for each paper.",
+    heading: "Drama",
+    subtitle: "Study guides for each set drama text, with summaries, themes, characters, and key quotes.",
     items: [
       {
-        title: "Paper 1: Poetry & Prose",
-        href: "/resources/english-literature/caie/paper-1",
+        title: "A Midsummer Night's Dream",
+        href: "/resources/english-literature/caie/a-midsummer-nights-dream",
         description:
-          "Songs of Ourselves anthology, set prose texts, passage-based and essay question technique.",
-        icon: (
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-          </svg>
-        ),
+          "Shakespeare's enchanting comedy: plot summary, character analysis, themes of love and illusion, key quotes, and exam guidance.",
+        icon: dramaIcon,
       },
       {
-        title: "Paper 2: Drama",
-        href: "/resources/english-literature/caie/paper-2",
+        title: "A Streetcar Named Desire",
+        href: "/resources/english-literature/caie/a-streetcar-named-desire",
         description:
-          "Shakespeare set texts, modern drama, writing about dramatic technique and stagecraft.",
-        icon: (
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" />
-          </svg>
-        ),
+          "Tennessee Williams' classic: scene-by-scene summary, character study, themes of desire and decay, key quotes, and exam practice.",
+        icon: dramaIcon,
       },
-    ],
-  },
-  {
-    heading: "Set Text Guides",
-    subtitle: "In-depth study guides for each set text, with summaries, themes, characters, and key quotes.",
-    items: [
+      {
+        title: "A Taste of Honey",
+        href: "/resources/english-literature/caie/a-taste-of-honey",
+        description:
+          "Shelagh Delaney's kitchen-sink drama: plot summary, character analysis, themes of class and identity, key quotes, and exam guidance.",
+        icon: dramaIcon,
+      },
       {
         title: "Macbeth",
         href: "/resources/english-literature/caie/macbeth",
         description:
           "Full plot summary, character analysis, themes, 20+ key quotes, historical context, and Cambridge exam questions.",
-        icon: (
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z" />
-            <path strokeLinecap="round" strokeLinejoin="round" d="M6 6h.008v.008H6V6z" />
-          </svg>
-        ),
-      },
-      {
-        title: "An Inspector Calls",
-        href: "/resources/english-literature/caie/inspector-calls",
-        description:
-          "J.B. Priestley's classic: plot summary, character analysis, themes of social responsibility, key quotes, and exam-style questions.",
-        icon: (
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21" />
-          </svg>
-        ),
-      },
-      {
-        title: "A Christmas Carol",
-        href: "/resources/english-literature/caie/christmas-carol",
-        description:
-          "Dickens' festive novella: stave-by-stave summary, character transformations, themes of redemption, key quotations, and exam practice.",
-        icon: (
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-        ),
-      },
-      {
-        title: "Jekyll and Hyde",
-        href: "/resources/english-literature/caie/jekyll-and-hyde",
-        description:
-          "Stevenson's gothic novella: chapter summaries, duality and repression themes, character analysis, key quotes, and Cambridge exam guidance.",
-        icon: (
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
-          </svg>
-        ),
+        icon: dramaIcon,
       },
     ],
   },
   {
-    heading: "Skills & Techniques",
-    subtitle: "Build the analytical skills you need across poetry analysis and unseen texts.",
+    heading: "Prose",
+    subtitle: "In-depth study guides for each set prose text, covering plot, characters, themes, and exam technique.",
     items: [
       {
-        title: "Poetry Analysis",
-        href: "/resources/english-literature/caie/poetry",
+        title: "Great Expectations",
+        href: "/resources/english-literature/caie/great-expectations",
         description:
-          "10+ poems from Songs of Ourselves with full analysis, comparison techniques, and marking guidance.",
-        icon: (
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
-          </svg>
-        ),
+          "Dickens' bildungsroman: chapter summaries, character analysis, themes of ambition and social class, key quotes, and exam guidance.",
+        icon: proseIcon,
       },
       {
-        title: "Unseen Analysis",
-        href: "/resources/english-literature/caie/unseen",
+        title: "To Kill a Mockingbird",
+        href: "/resources/english-literature/caie/to-kill-a-mockingbird",
         description:
-          "Step-by-step techniques for unseen prose and poetry analysis, with worked examples and examiner tips.",
-        icon: (
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-          </svg>
-        ),
+          "Harper Lee's classic: plot summary, character study, themes of justice and prejudice, key quotes, and Cambridge exam practice.",
+        icon: proseIcon,
+      },
+      {
+        title: "Things Fall Apart",
+        href: "/resources/english-literature/caie/things-fall-apart",
+        description:
+          "Chinua Achebe's landmark novel: plot summary, character analysis, themes of colonialism and cultural identity, key quotes, and exam guidance.",
+        icon: proseIcon,
+      },
+      {
+        title: "Rebecca",
+        href: "/resources/english-literature/caie/rebecca",
+        description:
+          "Daphne du Maurier's gothic romance: plot summary, character analysis, themes of identity and obsession, key quotes, and exam practice.",
+        icon: proseIcon,
+      },
+      {
+        title: "The War of the Worlds",
+        href: "/resources/english-literature/caie/war-of-the-worlds",
+        description:
+          "H.G. Wells' sci-fi classic: plot summary, character analysis, themes of imperialism and survival, key quotes, and exam guidance.",
+        icon: proseIcon,
+      },
+      {
+        title: "Fire on the Mountain",
+        href: "/resources/english-literature/caie/fire-on-the-mountain",
+        description:
+          "Anita Desai's evocative novella: plot summary, character analysis, themes of isolation and disillusionment, key quotes, and exam practice.",
+        icon: proseIcon,
+      },
+      {
+        title: "Picnic at Hanging Rock",
+        href: "/resources/english-literature/caie/picnic-at-hanging-rock",
+        description:
+          "Joan Lindsay's mystery: plot summary, character analysis, themes of the uncanny and nature, key quotes, and Cambridge exam guidance.",
+        icon: proseIcon,
+      },
+    ],
+  },
+  {
+    heading: "Poetry",
+    subtitle: "Comprehensive poetry guides with full analysis, comparison techniques, and marking guidance.",
+    items: [
+      {
+        title: "Songs of Ourselves Volume 1",
+        href: "/resources/english-literature/caie/songs-of-ourselves-v1",
+        description:
+          "Full analysis of set poems from Volume 1, with themes, language techniques, comparison pairs, and exam-ready notes.",
+        icon: poetryIcon,
+      },
+      {
+        title: "Songs of Ourselves Volume 2",
+        href: "/resources/english-literature/caie/songs-of-ourselves-v2",
+        description:
+          "Full analysis of set poems from Volume 2, with themes, language techniques, comparison pairs, and exam-ready notes.",
+        icon: poetryIcon,
+      },
+      {
+        title: "Unseen Poetry",
+        href: "/resources/english-literature/caie/unseen-poetry",
+        description:
+          "Step-by-step techniques for unseen poetry analysis, with worked examples, annotated responses, and examiner tips.",
+        icon: poetryIcon,
+      },
+    ],
+  },
+  {
+    heading: "Exam Skills",
+    subtitle: "Build the exam technique and knowledge you need to maximise your marks.",
+    items: [
+      {
+        title: "Exam Technique",
+        href: "/resources/english-literature/caie/exam-technique",
+        description:
+          "Time management, essay structure, quoting strategies, and examiner-approved approaches for Papers 1 and 2.",
+        icon: examIcon,
+      },
+      {
+        title: "Grade Boundaries",
+        href: "/resources/english-literature/caie/grade-boundaries",
+        description:
+          "Historical grade boundaries for Cambridge IGCSE English Literature, with analysis of trends and what you need to aim for.",
+        icon: examIcon,
       },
     ],
   },
@@ -212,7 +267,7 @@ export default function CaieEnglishLiteratureHub() {
         <div className="mx-auto max-w-5xl">
           <h2 className="text-2xl font-bold text-foreground">Study Resources</h2>
           <p className="mt-2 text-muted-foreground">
-            Eight focused guides covering every part of the Cambridge IGCSE English Literature course.
+            Focused guides covering every part of the Cambridge IGCSE English Literature course &mdash; drama, prose, poetry, and exam skills.
           </p>
 
           {resourceGroups.map((group) => (

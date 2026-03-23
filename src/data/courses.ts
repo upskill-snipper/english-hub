@@ -53,6 +53,12 @@ import { lordOfFliesCourse } from './lord-of-flies-course';
 import { animalFarmCourse } from './animal-farm-course';
 import { christmasCarolCourse } from './christmas-carol-course';
 import { inspectorCallsCourse } from './inspector-calls-course';
+import { caieLitCourses } from './caie-lit-courses';
+import { igcsePoetry1Courses } from './edexcel-igcse-lit-poetry-courses';
+import { igcsePoetry2Courses } from './edexcel-igcse-lit-poetry-courses-2';
+import { igcseProseCourses } from './edexcel-igcse-lit-prose-courses';
+import { igcseDramaCourses } from './edexcel-igcse-lit-drama-courses';
+import { igcseClassicsCourses } from './edexcel-igcse-lit-classics-courses';
 
 // ─── Master Course List ──────────────────────────────────────────────────────
 
@@ -73,6 +79,12 @@ export const allCourses: CourseData[] = [
   animalFarmCourse,
   christmasCarolCourse,
   inspectorCallsCourse,
+  ...caieLitCourses,
+  ...igcsePoetry1Courses,
+  ...igcsePoetry2Courses,
+  ...igcseProseCourses,
+  ...igcseDramaCourses,
+  ...igcseClassicsCourses,
 ];
 
 export default allCourses;

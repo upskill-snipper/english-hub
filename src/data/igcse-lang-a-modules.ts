@@ -481,14 +481,14 @@ export const igcseLangAModules: CourseModule[] = [
 <div class="model-answer"><strong>Model Paragraph (Structure Focus):</strong> Conan Doyle structures the extract as a journey from normality into devastation, mirroring the physical approach to the trenches with an escalating emotional journey for the reader. The opening evokes an idyllic English morning — "a brisk walk across the downs and a cheerful luncheon" — before the blunt pivot "But we were not in England" jolts the reader into the reality of war. The structural progression from "slight" damage in paragraph two to "absolute and terrible" silence in paragraph three creates a carefully graduated build of horror, each paragraph intensifying the destruction. The final line, isolated in its own paragraph — "And then we reached the trenches" — is devastating in its brevity. By withholding any description of the trenches themselves, Conan Doyle forces the reader to imagine the worst, making the structural silence of the ending more powerful than any explicit description could be.</div>
 
 <h3>Combining Language and Structure in One Response</h3>
-<p>Q3 asks about <strong>both</strong> language and structure. The best responses weave the two together rather than treating them separately. For example, you might analyse how the <strong>structural shift</strong> from paragraph 2 to paragraph 3 is reinforced by a <strong>shift in language</strong> — from partial images ("half gone," "ghost of cultivation") to total destruction ("shattered," "cratered," "absolute").</p>
+<p>Q4 asks about <strong>both</strong> language and structure. The best responses weave the two together rather than treating them separately. For example, you might analyse how the <strong>structural shift</strong> from paragraph 2 to paragraph 3 is reinforced by a <strong>shift in language</strong> — from partial images ("half gone," "ghost of cultivation") to total destruction ("shattered," "cratered," "absolute").</p>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> A common approach is to work through the text chronologically — beginning, middle, end — commenting on both language and structure at each stage. This prevents you from getting stuck on language alone and ensures you cover the whole text. Think of the text as a journey and track how the reader's experience changes at each stage.</div>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Writing about structure in vague, generic terms: "The writer uses short sentences for effect." This is too imprecise. <em>Where</em> are the short sentences? What is the specific effect in this context? "The three consecutive short sentences 'No birds sang. No cattle moved. The silence was absolute' strip away signs of life one by one, building an oppressive sense of emptiness" — that is specific structural analysis.</div>
 
 <h3>Structural Features Checklist</h3>
-<p>Use this checklist when preparing your Q3 response:</p>
+<p>Use this checklist when preparing your Q4 response:</p>
 <ol>
   <li>How does the text <strong>open</strong>? What is the reader's first impression?</li>
   <li>What <strong>shifts</strong> occur? (In focus, tone, pace, perspective, or setting)</li>
@@ -539,7 +539,7 @@ export const igcseLangAModules: CourseModule[] = [
       },
       {
         id: 'igcse-a-m4-q4',
-        question: 'How should you best organise a Q3 response that covers both language and structure?',
+        question: 'How should you best organise a Q4 response that covers both language and structure?',
         options: [
           'Write about all language features first, then all structural features separately',
           'Work through the text chronologically, commenting on both language and structure at each stage',
@@ -569,7 +569,7 @@ export const igcseLangAModules: CourseModule[] = [
   // ──────────────────────────────────────────────
   {
     id: 'igcse-a-m5',
-    title: 'Reading Non-Fiction: Evaluation & Critical Response',
+    title: 'Reading Non-Fiction: Comparing Writers\' Ideas & Perspectives',
     duration: '55 min',
     content: `
 <h2>Paper 1, Question 5 — Comparison of Writers' Ideas and Perspectives</h2>
@@ -584,130 +584,136 @@ export const igcseLangAModules: CourseModule[] = [
 
 <p>You are expected to:</p>
 <ol>
-  <li>Take a <strong>clear position</strong> — agree, disagree, or (most commonly) partially agree.</li>
-  <li>Support your position with <strong>specific evidence</strong> from the text.</li>
-  <li>Analyse <strong>how</strong> the writer achieves (or fails to achieve) the stated effect.</li>
-  <li>Offer a <strong>personal, critical response</strong> that goes beyond simply restating the statement.</li>
+  <li>Identify <strong>similarities and differences</strong> in the writers' ideas and perspectives on the given topic.</li>
+  <li>Compare the <strong>methods</strong> each writer uses — their language, tone, structure, and rhetorical approach.</li>
+  <li>Support every point with <strong>specific evidence</strong> from <strong>both</strong> texts.</li>
+  <li>Write a <strong>sustained comparative response</strong> that integrates references to both texts within each paragraph, rather than writing about each text separately.</li>
 </ol>
 
-<h3>Practice Extract</h3>
-<p>Read the following extract from Charles Dickens' <em>American Notes</em> (1842), in which he describes conditions in a New York prison:</p>
+<h3>Practice Extracts</h3>
+<p><strong>Text 1:</strong> Read the following extract from Charles Dickens' <em>American Notes</em> (1842), in which he describes conditions in a New York prison:</p>
 
 <blockquote>
 <p>He is a man of sixty years of age, and has been shut up in this narrow cell for eleven long years. He has a Bible, a slate, and a few worn books. He has no window, no lamp; the feeble light that creeps in through a chink above the door is all he has to read by. He is a helpless, crushed, broken man. And this is his home; and this his world; and here he must stay until he dies.</p>
 <p>I found him sitting in the dark corner of his cell, his face turned to the wall. He did not move when the door was opened. He did not raise his head. He scarcely seemed to breathe. They told me he had been a fine, strong man when first brought here, full of vigour and resolution. He was now a grey shadow of what he had once been.</p>
 </blockquote>
 
-<p><strong>Evaluation question:</strong> "A reader said: 'Dickens makes the reader feel overwhelming pity for the prisoner.' To what extent do you agree?"</p>
+<p><strong>Text 2:</strong> Read the following extract from Oscar Wilde's <em>The Soul of Man under Socialism</em> (1891), in which he discusses the treatment of prisoners:</p>
 
-<h3>Step-by-Step Evaluation Approach</h3>
+<blockquote>
+<p>The prison system is one which the public has allowed to grow up in silence. It is a system that dehumanises not only those it punishes but those who administer the punishment. The prisoner is treated as something less than a man; he is a number, a case, a problem to be managed. His individuality is taken from him as surely as his liberty. He wears what he is told, eats what he is given, and speaks only when permitted. The cruelty of this is not that it causes suffering — though it does — but that it renders the sufferer invisible.</p>
+</blockquote>
 
-<p><strong>Step 1: Establish your position clearly.</strong> Do not sit on the fence. State whether you agree, disagree, or partially agree, and signal this at the start of your response.</p>
+<p><strong>Comparison question:</strong> "Compare how the writers of Text 1 and Text 2 present their ideas and perspectives on the treatment of prisoners."</p>
 
-<p><strong>Step 2: Select evidence that supports your position.</strong> For an "agree" response, find the most compelling evidence of the stated effect. For a "partially agree" response, find evidence both for and against.</p>
+<h3>Step-by-Step Comparison Approach</h3>
 
-<p><strong>Step 3: Analyse how the evidence creates the effect.</strong> This is where your language and structure skills from Q2 and Q3 come in — but now you are using them in service of an evaluative argument.</p>
+<p><strong>Step 1: Identify each writer's perspective.</strong> What does each writer think and feel about the topic? Dickens is horrified by the individual suffering of one prisoner. Wilde takes a broader, more political view of the prison system itself.</p>
 
-<p><strong>Step 4: Use evaluative language.</strong> Phrases like "Dickens effectively conveys..." or "this is particularly powerful because..." or "arguably, the most compelling moment is..." show you are evaluating, not just analysing.</p>
+<p><strong>Step 2: Find points of comparison.</strong> Look for similarities and differences in ideas, attitudes, methods, and effects. Both writers are critical of imprisonment, but their approaches differ: Dickens uses specific, emotional description of one man; Wilde uses abstract, intellectual argument about the system.</p>
 
-<div class="model-answer"><strong>Model Response (Opening):</strong> I strongly agree that Dickens generates overwhelming pity for the prisoner. From the very first sentence, the accumulation of deprivation — "no window, no lamp" — strips the man of basic human comforts, while the relentless repetition of "he has" and "he is" reduces him to a list of absences. The phrase "eleven long years" is carefully constructed: the adjective "long" is not merely descriptive but evaluative, encoding Dickens' own emotional response and inviting the reader to feel the crushing weight of that duration. Particularly devastating is the tricolon "And this is his home; and this his world; and here he must stay until he dies," where the repeated conjunction "and" creates an oppressive rhythm that mirrors the prisoner's entrapment — each clause is a door closing, a possibility eliminated, until the finality of "until he dies" seals the man's fate entirely.</div>
+<p><strong>Step 3: Compare the writers' methods.</strong> This is where your language and structure skills from Q4 come in — but now you are using them to show how different methods serve different purposes. How does each writer's choice of language, tone, and structure reflect their perspective?</p>
 
-<div class="model-answer"><strong>Model Response (Development):</strong> The second paragraph deepens this pity through physical detail. The prisoner is "sitting in the dark corner of his cell, his face turned to the wall" — a posture of total defeat and withdrawal. The three short sentences "He did not move... He did not raise his head... He scarcely seemed to breathe" form a structural triplet that progressively removes signs of life, culminating in the near-extinction of breathing itself. The juxtaposition of his former self — "a fine, strong man... full of vigour and resolution" — with his current state as "a grey shadow" is arguably the most pitiful moment. The contrast forces the reader to imagine the process of destruction that transformed one into the other, which is more emotionally devastating than either image alone.</div>
+<p><strong>Step 4: Use comparative connectives.</strong> Phrases like "Similarly," "In contrast," "While Dickens...," "Wilde, on the other hand," and "Both writers... however..." signal that you are comparing, not just analysing each text in isolation.</p>
 
-<h3>Evaluative Vocabulary and Phrases</h3>
-<p>Upgrade your evaluation with these phrases:</p>
+<div class="model-answer"><strong>Model Response (Opening):</strong> Both Dickens and Wilde present the treatment of prisoners as deeply inhumane, but they adopt strikingly different methods to convey their perspectives. Dickens takes a personal, emotional approach, focusing on one individual prisoner to generate overwhelming pity. The accumulation of deprivation — "no window, no lamp" — strips the man of basic human comforts, while the relentless repetition of "he has" and "he is" reduces him to a list of absences. Wilde, in contrast, takes a political and intellectual approach, attacking the prison system as a whole rather than describing one person's suffering. His language is abstract and argumentative — "dehumanises," "renders the sufferer invisible" — where Dickens' is concrete and visceral.</div>
+
+<div class="model-answer"><strong>Model Response (Development):</strong> While both writers highlight how imprisonment strips away individuality, they convey this through contrasting techniques. Dickens uses physical description to show the prisoner's loss of identity: "sitting in the dark corner of his cell, his face turned to the wall" creates a vivid image of a man who has literally turned away from life. The juxtaposition of his former self — "a fine, strong man... full of vigour and resolution" — with "a grey shadow" makes the destruction personal and emotionally devastating. Wilde, however, conveys the same idea through a list of abstract deprivations: "He wears what he is told, eats what he is given, and speaks only when permitted." The tricolon reduces the prisoner to a series of passive verbs — he does not act but is acted upon. Where Dickens makes the reader feel pity for one man, Wilde makes the reader feel anger at a system; both are effective, but they target different emotional responses.</div>
+
+<h3>Comparative Vocabulary and Phrases</h3>
+<p>Use these phrases to signal comparison throughout your response:</p>
 <ul>
-  <li>"The writer <strong>successfully creates</strong> a sense of..." / "The writer <strong>is less effective</strong> when..."</li>
-  <li>"This is <strong>particularly powerful</strong> because..."</li>
-  <li>"<strong>Arguably</strong>, the most compelling evidence of this is..."</li>
-  <li>"The reader <strong>cannot help but feel</strong>..."</li>
-  <li>"<strong>To some extent</strong> the statement is accurate, however..."</li>
-  <li>"The effect is <strong>heightened further by</strong>..."</li>
-  <li>"While the writer <strong>convincingly establishes</strong>..., they <strong>are less successful in</strong>..."</li>
+  <li>"<strong>Both writers</strong> present [topic] as..." / "<strong>Both writers share</strong> the perspective that..."</li>
+  <li>"<strong>While</strong> Writer 1..., Writer 2 <strong>takes a different approach</strong> by..."</li>
+  <li>"<strong>In contrast to</strong> Writer 1's use of..., Writer 2 employs..."</li>
+  <li>"<strong>Similarly</strong>, Writer 2 also..." / "<strong>Like</strong> Writer 1, Writer 2..."</li>
+  <li>"Writer 1 is <strong>more [emotional/personal/direct]</strong>, whereas Writer 2 is <strong>more [intellectual/detached/political]</strong>"</li>
+  <li>"The <strong>effect</strong> of Writer 1's approach is..., <strong>while</strong> Writer 2's method creates..."</li>
+  <li>"A <strong>key difference</strong> between the two writers is..."</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The best evaluation responses do not merely agree or disagree — they explore <em>how far</em> the statement is true and <em>what nuances</em> the statement misses. For example, you might argue that Dickens creates pity but also anger at the system that allows this cruelty. This shows sophisticated, independent thinking that examiners reward highly.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> The best Q5 responses do not write about Text 1 and then write about Text 2 separately. They integrate both texts within each paragraph, making direct comparisons point by point. Each paragraph should reference both writers. This integrated approach demonstrates genuine comparative analysis and is what examiners reward with the highest marks.</div>
 
-<h3>The Difference Between Analysis and Evaluation</h3>
+<h3>The Difference Between Analysis and Comparison</h3>
 <p>Understanding this distinction is crucial:</p>
 <ul>
-  <li><strong>Analysis (Q2/Q3):</strong> "Dickens uses the tricolon 'And this is his home; and this his world; and here he must stay' to create an oppressive rhythm." — This explains <em>how</em> language works.</li>
-  <li><strong>Evaluation (Q4):</strong> "Dickens' tricolon is devastatingly effective in generating pity because each clause closes off another avenue of hope for the prisoner." — This judges <em>how well</em> it works and what impact it has.</li>
+  <li><strong>Analysis (Q4):</strong> "Dickens uses the tricolon 'And this is his home; and this his world; and here he must stay' to create an oppressive rhythm." — This explains <em>how</em> language works in one text.</li>
+  <li><strong>Comparison (Q5):</strong> "While Dickens uses the tricolon to create emotional intensity through a single prisoner's suffering, Wilde uses a similar tricolon structure to make a political argument about the system — both are effective, but they target fundamentally different reader responses." — This compares <em>how both writers</em> use methods to achieve different effects.</li>
 </ul>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Simply retelling or summarising the text instead of evaluating it. "Dickens describes a man who has been in prison for eleven years and has no light" is summary. "Dickens powerfully conveys the man's suffering by stripping away every comfort — the absence of 'window' and 'lamp' is not merely factual but symbolic of a life from which all light, both literal and metaphorical, has been removed" is evaluation. Always move beyond what happens to how effectively the writer presents it.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Writing about each text separately without making connections. "Dickens describes a man in prison. He uses emotive language. [New paragraph] Wilde writes about the prison system. He uses formal language." This is two mini-analyses, not a comparison. You must explicitly compare — state how the writers are similar and different, and explore why those differences matter.</div>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Agreeing with the statement without ever questioning it. Even if you fundamentally agree, you should acknowledge complexity. The strongest responses show the examiner that you have <em>thought critically</em> about the statement, not just accepted it at face value.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Only identifying differences between the writers. The strongest responses also identify similarities — and then explore the nuances within those similarities. For example, both writers criticise imprisonment, but they criticise it for different reasons and in different ways. Exploring this complexity demonstrates sophisticated comparative thinking.</div>
 
-<h3>Structuring Your Q4 Response</h3>
+<h3>Structuring Your Q5 Response</h3>
 <ol>
-  <li><strong>Opening:</strong> State your position clearly (1–2 sentences).</li>
-  <li><strong>Paragraph 2:</strong> Your strongest piece of evidence, fully analysed and evaluated.</li>
-  <li><strong>Paragraph 3:</strong> A second piece of evidence, perhaps addressing a different aspect of the statement.</li>
-  <li><strong>Paragraph 4:</strong> A counterpoint or nuance (e.g. "However, the writer also..." or "The statement is not entirely accurate because...").</li>
-  <li><strong>Closing:</strong> A brief concluding statement that reinforces your overall judgement (1–2 sentences).</li>
+  <li><strong>Opening:</strong> Establish the key similarity or difference in the writers' perspectives (1–2 sentences).</li>
+  <li><strong>Paragraph 2:</strong> Compare how both writers present one aspect of the topic, with evidence from both texts.</li>
+  <li><strong>Paragraph 3:</strong> Compare a second aspect — perhaps a key difference in method, tone, or perspective.</li>
+  <li><strong>Paragraph 4:</strong> Explore a deeper similarity or difference, perhaps in the effect on the reader or the writers' underlying attitudes.</li>
+  <li><strong>Closing:</strong> A brief concluding statement that summarises the overall comparison (1–2 sentences).</li>
 </ol>
 `,
     quiz: [
       {
         id: 'igcse-a-m5-q1',
-        question: 'What is the key difference between analysis and evaluation?',
+        question: 'What is the key difference between analysis (Q4) and comparison (Q5)?',
         options: [
-          'Analysis uses quotations; evaluation does not',
-          'Analysis explains how language works; evaluation judges how effectively it works',
-          'Analysis is for fiction; evaluation is for non-fiction',
-          'Analysis is objective; evaluation requires no evidence',
+          'Analysis uses quotations; comparison does not',
+          'Analysis examines how language works in one text; comparison examines how two writers\' methods and perspectives relate to each other',
+          'Analysis is for fiction; comparison is for non-fiction',
+          'Analysis is longer; comparison is shorter',
         ],
         correct: 1,
-        explanation: 'Analysis explains the mechanics of how language and structure create meaning. Evaluation goes further by judging how successfully the writer achieves their intended effect. Evaluation builds on analysis but adds a critical judgement supported by evidence.',
+        explanation: 'Analysis (Q4) examines how a single writer uses language and structure to create effects. Comparison (Q5) requires you to examine both texts together, identifying similarities and differences in the writers\' ideas, perspectives, and methods, and integrating references to both texts within each paragraph.',
       },
       {
         id: 'igcse-a-m5-q2',
-        question: 'In the Dickens extract, what is the effect of the tricolon "And this is his home; and this his world; and here he must stay until he dies"?',
+        question: 'What is the most important structural principle of a Q5 comparison response?',
         options: [
-          'It creates a sense of freedom and possibility',
-          'It creates an oppressive rhythm where each clause eliminates another possibility',
-          'It shows the prisoner is content with his situation',
-          'It builds excitement about what will happen next',
+          'Write about Text 1 first, then write about Text 2 separately',
+          'Only discuss differences between the writers, not similarities',
+          'Integrate references to both texts within each paragraph, making direct comparisons point by point',
+          'Focus entirely on the language of each text without discussing perspectives',
         ],
-        correct: 1,
-        explanation: 'The tricolon (three parallel clauses joined by "and") creates an oppressive, inescapable rhythm. Each clause narrows the prisoner\'s world further — from "home" to "world" to the finality of death — mirroring the way imprisonment progressively closes off all possibilities.',
+        correct: 2,
+        explanation: 'The best Q5 responses integrate both texts within each paragraph rather than writing about each text separately. Each paragraph should reference both writers and make direct comparisons. This integrated approach demonstrates genuine comparative analysis and earns the highest marks.',
       },
       {
         id: 'igcse-a-m5-q3',
-        question: 'What position is generally most effective to take in a Q4 evaluation response?',
+        question: 'In the practice extracts, how do Dickens and Wilde differ in their approach to writing about prisoners?',
         options: [
-          'Complete disagreement with the given statement',
-          'Complete agreement without any nuance',
-          'A nuanced response that mostly agrees but acknowledges complexity',
-          'Refusing to take any position at all',
+          'Dickens supports the prison system while Wilde opposes it',
+          'Dickens uses personal, emotional description of one individual while Wilde uses political, intellectual argument about the system',
+          'Dickens writes in third person while Wilde writes in first person',
+          'Dickens uses formal language while Wilde uses informal language',
         ],
-        correct: 2,
-        explanation: 'A nuanced response that largely agrees with the statement but acknowledges complexity or counter-arguments tends to score highest. It demonstrates sophisticated, independent critical thinking — the examiner wants to see that you have engaged thoughtfully with the statement rather than simply accepting or rejecting it.',
+        correct: 1,
+        explanation: 'Dickens focuses on one specific prisoner, using vivid physical detail and emotive language to generate pity. Wilde takes a broader, more abstract approach, attacking the prison system itself through intellectual argument. Both are critical of imprisonment, but their methods and effects differ significantly.',
       },
       {
         id: 'igcse-a-m5-q4',
-        question: 'Which of the following is an example of evaluative language?',
+        question: 'Which of the following is an example of effective comparative language?',
         options: [
           '"The writer uses a metaphor in line 3"',
           '"The text is about a prisoner in New York"',
-          '"This is particularly powerful because the contrast forces the reader to imagine the process of destruction"',
+          '"While Dickens creates emotional intensity through a single prisoner\'s suffering, Wilde targets a different response by attacking the system as a whole"',
           '"The writer mentions a Bible and a slate"',
         ],
         correct: 2,
-        explanation: 'Evaluative language makes a judgement about effectiveness — words like "particularly powerful," "compelling," "devastatingly effective," and "convincingly establishes" signal that you are evaluating rather than merely identifying or summarising.',
+        explanation: 'Effective comparative language explicitly connects the two texts — phrases like "While Writer 1..., Writer 2...," "In contrast," "Similarly," and "Both writers... however..." signal that you are comparing rather than analysing each text in isolation.',
       },
       {
         id: 'igcse-a-m5-q5',
-        question: 'What is the biggest mistake students make in Q4 responses?',
+        question: 'What is the biggest mistake students make in Q5 comparison responses?',
         options: [
-          'Using too many quotations',
-          'Writing too much about structure',
-          'Retelling or summarising the text instead of evaluating it',
-          'Disagreeing with the given statement',
+          'Using too many quotations from both texts',
+          'Writing too much about the writers\' methods',
+          'Writing about each text separately without making explicit connections or comparisons between them',
+          'Spending too long on the question',
         ],
         correct: 2,
-        explanation: 'The most common error is summarising what happens in the text rather than evaluating how effectively the writer presents it. Q4 requires critical judgement — you must assess the writer\'s craft and its impact on the reader, not simply describe the content.',
+        explanation: 'The most common error is writing two separate mini-analyses — one about Text 1 and one about Text 2 — without ever making explicit comparisons. Q5 requires you to compare: state how the writers are similar and different, and explore why those similarities and differences matter.',
       },
     ],
   },
@@ -1048,7 +1054,7 @@ export const igcseLangAModules: CourseModule[] = [
 <ul>
   <li><strong>"How does the writer use language to..."</strong> → Focus on word choices, imagery, rhetorical techniques. Use terminology.</li>
   <li><strong>"How does the writer use language and structure to..."</strong> → You must address both. Do not neglect structure.</li>
-  <li><strong>"To what extent do you agree..."</strong> → This is an evaluation question. Take a position. Use evaluative language.</li>
+  <li><strong>"Compare how the writers present..."</strong> → This is a comparison question (Q5). Integrate both texts, identify similarities and differences, and use comparative connectives.</li>
   <li><strong>"What do you learn about..."</strong> → This is a retrieval question. Be factual and precise.</li>
 </ul>
 
