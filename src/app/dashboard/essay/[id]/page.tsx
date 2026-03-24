@@ -146,7 +146,6 @@ export default function EssayFeedbackPage() {
 
   function handleDelete() {
     // TODO: Replace with real API call
-    console.log("Deleting essay:", essay.id);
     window.location.href = "/dashboard/essays";
   }
 

@@ -34,21 +34,7 @@ export async function POST(request: NextRequest) {
 
     // ── Run cleanup ──────────────────────────────────────────────────
 
-    console.log("[data-retention] Starting scheduled cleanup...");
-
     const summary = await cleanupExpiredData();
-
-    console.log(
-      `[data-retention] Cleanup completed. ` +
-        `Hard-deleted: ${summary.hardDeletedAccounts.length}, ` +
-        `Warnings sent: ${summary.inactiveWarningsSent.length}, ` +
-        `Inactive soft-deleted: ${summary.inactiveSoftDeleted.length}, ` +
-        `Usage anonymised: ${summary.usageDataAnonymised}, ` +
-        `Support archived: ${summary.supportTicketsArchived}, ` +
-        `Marketing purged: ${summary.expiredMarketingConsents}, ` +
-        `Children priority: ${summary.childrenPriorityCleanups}, ` +
-        `Errors: ${summary.errors.length}`
-    );
 
     // ── Return summary ──────────────────────────────────────────────
 

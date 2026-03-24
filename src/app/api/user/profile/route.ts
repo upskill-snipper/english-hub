@@ -188,12 +188,6 @@ export async function PATCH(request: NextRequest) {
       ...(data.school !== undefined && { school: data.school }),
     };
 
-    console.log("[Profile PATCH] Updated (stub):", {
-      userId,
-      fieldsUpdated: Object.keys(data),
-      ip,
-    });
-
     return NextResponse.json({
       message: "Profile updated successfully",
       user: {

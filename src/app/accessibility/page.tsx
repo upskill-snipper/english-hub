@@ -13,6 +13,8 @@ export default function AccessibilityPage() {
         Accessibility Statement
       </h1>
       <p className="mt-2 text-sm text-muted-foreground">
+        Operated by Upskill Energy Limited, trading as The English Hub
+        <br />
         Last updated: March 2026
       </p>
 

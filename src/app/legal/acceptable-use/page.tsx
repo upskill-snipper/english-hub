@@ -318,11 +318,11 @@ export default function AcceptableUsePolicyPage() {
           <p>
             Website:{" "}
             <a
-              href="https://www.theenglishhub.co.uk"
+              href="https://www.theenglishhub.app"
               target="_blank"
               rel="noopener noreferrer"
             >
-              theenglishhub.co.uk
+              theenglishhub.app
             </a>
           </p>
         </div>

@@ -96,10 +96,10 @@ export function Footer() {
             </p>
             <p className="mt-4 text-sm text-gray-300/80">
               <a
-                href="mailto:support@theenglishhub.co.uk"
+                href="mailto:support@theenglishhub.app"
                 className="font-medium text-white underline underline-offset-2 hover:text-[#2E86C1] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 rounded-sm"
               >
-                support@theenglishhub.co.uk
+                support@theenglishhub.app
               </a>
             </p>
           </div>

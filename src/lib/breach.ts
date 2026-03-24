@@ -185,10 +185,6 @@ export function createBreachRecord(params: CreateBreachParams): BreachRecord {
 
   breachLog.push(record);
 
-  console.log(
-    `[BREACH] ${record.referenceNumber} | Risk=${record.riskLevel} | ICO Required=${record.icoNotificationRequired} | Deadline=${record.deadlineICO}`
-  );
-
   return record;
 }
 
@@ -250,7 +246,7 @@ ICO DATA BREACH NOTIFICATION
 =============================
 Reference: ${breach.referenceNumber}
 Organisation: The English Hub
-Data Protection Officer Contact: dpo@theenglishhub.co.uk
+Data Protection Officer Contact: dpo@theenglishhub.app
 
 1. DESCRIPTION OF THE BREACH
 -----------------------------
@@ -292,7 +288,7 @@ Individual notification required: ${breach.individualNotificationRequired ? "YES
 6. DPO DETAILS
 ---------------
 Name: Data Protection Officer
-Email: dpo@theenglishhub.co.uk
+Email: dpo@theenglishhub.app
 Phone: [Contact number]
 `.trim();
 }
@@ -337,7 +333,7 @@ CONTACT
 -------
 Data Protection Officer
 The English Hub
-Email: dpo@theenglishhub.co.uk
+Email: dpo@theenglishhub.app
 `.trim();
 }
 
@@ -374,7 +370,7 @@ ${breach.involvesChildrensData ? "- If you are a parent or guardian, please disc
 
 CONTACT US
 If you have any questions or concerns, please contact our Data Protection Officer:
-Email: dpo@theenglishhub.co.uk
+Email: dpo@theenglishhub.app
 
 You also have the right to lodge a complaint with the Information Commissioner's Office (ICO):
 Website: https://ico.org.uk/make-a-complaint/

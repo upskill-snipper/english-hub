@@ -85,11 +85,6 @@ export async function logAction(params: LogActionParams): Promise<AuditEntry> {
   // Append-only: entries are never modified or removed
   auditLog.push(entry);
 
-  // Also write to server log for durable storage
-  console.log(
-    `[AUDIT] ${entry.timestamp} | ${entry.action} | user=${entry.userId ?? "anonymous"} | resource=${entry.resource}${entry.resourceId ? `/${entry.resourceId}` : ""} | ip=${entry.ipAddress ?? "unknown"}`
-  );
-
   return entry;
 }
 

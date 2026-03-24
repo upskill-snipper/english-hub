@@ -99,7 +99,7 @@ export async function compileUserData(
     exportedAt: new Date().toISOString(),
     dataController: {
       name: "The English Hub",
-      contact: "dpo@theenglishhub.co.uk",
+      contact: "dpo@theenglishhub.app",
     },
     legalBasis:
       "This data is provided under UK GDPR Article 15 (Right of Access) and/or Article 20 (Right to Data Portability).",
@@ -320,8 +320,8 @@ export function buildAcknowledgementEmail(
         </div>
         <p>Under UK GDPR, we are required to respond to your request within <strong>one calendar month</strong>. We aim to complete your request by:</p>
         <p style="font-weight: 600; color: #1A5276;">${deadline.toLocaleDateString("en-GB", { weekday: "long", year: "numeric", month: "long", day: "numeric" })}</p>
-        <p>You can track the status of your request at any time by visiting your <a href="https://theenglishhub.co.uk/dashboard/data-requests" style="color: #2E86C1;">Data Requests</a> page.</p>
-        <p>If you have any questions, contact our Data Protection Officer at <a href="mailto:dpo@theenglishhub.co.uk" style="color: #2E86C1;">dpo@theenglishhub.co.uk</a>.</p>
+        <p>You can track the status of your request at any time by visiting your <a href="https://theenglishhub.app/dashboard/data-requests" style="color: #2E86C1;">Data Requests</a> page.</p>
+        <p>If you have any questions, contact our Data Protection Officer at <a href="mailto:dpo@theenglishhub.app" style="color: #2E86C1;">dpo@theenglishhub.app</a>.</p>
         <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 24px 0;" />
         <p style="font-size: 12px; color: #9ca3af;">
           This email was sent in response to your data subject access request.

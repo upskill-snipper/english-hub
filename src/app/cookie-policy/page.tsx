@@ -12,7 +12,11 @@ export default function CookiePolicyPage() {
       <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
         Cookie Policy
       </h1>
-      <p className="mt-2 text-sm text-muted-foreground">Last updated: March 2026</p>
+      <p className="mt-2 text-sm text-muted-foreground">
+        Operated by Upskill Energy Limited, trading as The English Hub
+        <br />
+        Last updated: March 2026
+      </p>
 
       <div className="mt-8 space-y-8">
         {/* What are cookies */}

@@ -940,19 +940,19 @@ function buildInactivityWarningEmail(
       <div style="padding: 24px; border: 1px solid #e5e7eb; border-top: none; border-radius: 0 0 12px 12px;">
         <p>Dear ${firstName},</p>
         <p>We noticed that you have not logged in to your English Hub account for over two years.</p>
-        <p>In line with our <a href="https://theenglishhub.co.uk/legal/privacy" style="color: #2E86C1;">data retention policy</a>,
+        <p>In line with our <a href="https://theenglishhub.app/legal/privacy" style="color: #2E86C1;">data retention policy</a>,
            we will automatically delete your account and all associated data on:</p>
         <p style="font-weight: 600; color: #1A5276; font-size: 18px;">${deletionDate}</p>
-        <p>To keep your account, simply <a href="https://theenglishhub.co.uk/auth/login" style="color: #2E86C1;">log in</a>
+        <p>To keep your account, simply <a href="https://theenglishhub.app/auth/login" style="color: #2E86C1;">log in</a>
            before this date.</p>
         <p>If you would like to download your data before deletion, you can do so from your
-           <a href="https://theenglishhub.co.uk/dashboard/privacy" style="color: #2E86C1;">privacy settings</a>.</p>
+           <a href="https://theenglishhub.app/dashboard/privacy" style="color: #2E86C1;">privacy settings</a>.</p>
         <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 24px 0;" />
         <p style="font-size: 12px; color: #9ca3af;">
           This email was sent in accordance with our data retention policy under the
           UK General Data Protection Regulation (UK GDPR). If you believe you have received
           this email in error, please contact us at
-          <a href="mailto:dpo@theenglishhub.co.uk" style="color: #2E86C1;">dpo@theenglishhub.co.uk</a>.
+          <a href="mailto:dpo@theenglishhub.app" style="color: #2E86C1;">dpo@theenglishhub.app</a>.
         </p>
       </div>
     </div>

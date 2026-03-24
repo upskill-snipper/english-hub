@@ -81,12 +81,12 @@ const FAQ_SECTIONS: FaqSection[] = [
       {
         question: "How can I download my data?",
         answer:
-          "You have the right to download all the personal data we hold about you. Just head to your account settings and look for the \"Download my data\" option, or email our Data Protection Officer at dpo@theenglishhub.co.uk and we will sort it out within 30 days.",
+          "You have the right to download all the personal data we hold about you. Just head to your account settings and look for the \"Download my data\" option, or email our Data Protection Officer at dpo@theenglishhub.app and we will sort it out within 30 days.",
       },
       {
         question: "How can I delete my data?",
         answer:
-          "You can request deletion of your account and all associated data at any time. Go to your account settings or email dpo@theenglishhub.co.uk. Once you confirm, we will delete your personal data within 30 days. Some data may be kept a little longer where required by law (for example, payment records).",
+          "You can request deletion of your account and all associated data at any time. Go to your account settings or email dpo@theenglishhub.app. Once you confirm, we will delete your personal data within 30 days. Some data may be kept a little longer where required by law (for example, payment records).",
       },
       {
         question: "Who can see my essays?",

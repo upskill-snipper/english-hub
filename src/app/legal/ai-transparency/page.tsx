@@ -12,7 +12,11 @@ export default function AITransparencyPage() {
       <h1 className="text-3xl font-bold mb-2">
         How Our AI Works
       </h1>
-      <p className="text-muted-foreground text-sm mb-6">Last updated: 22 March 2026</p>
+      <p className="text-muted-foreground text-sm mb-6">
+        <strong>The English Hub</strong> — operated by Upskill Energy Limited
+        <br />
+        Last updated: 22 March 2026
+      </p>
 
       <p className="mb-8">
         We use artificial intelligence (AI) to help you improve your English

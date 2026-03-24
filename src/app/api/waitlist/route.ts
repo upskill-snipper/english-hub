@@ -68,8 +68,7 @@ export async function POST(req: NextRequest) {
     if (error) {
       // If the table doesn't exist yet, fall back gracefully
       if (error.code === '42P01') {
-        console.warn('[waitlist] Table does not exist yet. Logging to console instead.')
-        console.log(`[waitlist] ${email} → ${subject}`)
+        console.warn('[waitlist] Table does not exist yet.')
         return NextResponse.json({
           message: `You're on the ${subjectConfig.name} waitlist! We'll email you when it launches.`,
         })

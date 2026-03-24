@@ -105,8 +105,6 @@ export async function GET(request: NextRequest) {
       }
     }
 
-    console.log(`Affiliate commission confirmation: ${confirmed} confirmed, ${voided} voided, ${errors.length} errors out of ${pendingReferrals.length} processed`)
-
     return NextResponse.json({ confirmed, voided, errors: errors.length, total: pendingReferrals.length })
   } catch (error) {
     console.error('Affiliate confirm cron unexpected error:', error)

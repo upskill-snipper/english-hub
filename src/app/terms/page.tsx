@@ -19,7 +19,7 @@ export default function TermsPage() {
           <h2 className="text-xl font-semibold text-foreground">1. Introduction</h2>
           <p className="mt-2 text-muted-foreground leading-relaxed">
             These Terms of Service (&quot;Terms&quot;) govern your access to and use of The English
-            Hub (accessible at theenglishhub.app), operated by The English Hub Ltd, a company
+            Hub (accessible at theenglishhub.app), operated by Upskill Energy Limited, trading as The English Hub, a company
             registered in England and Wales (&quot;we&quot;, &quot;us&quot;, &quot;our&quot;). By
             creating an account or using any part of our platform, you agree to be bound by these
             Terms. If you do not agree, you must not use the Service.
@@ -202,7 +202,7 @@ export default function TermsPage() {
           <p className="mt-2 text-muted-foreground leading-relaxed">
             All content on The English Hub, including but not limited to courses, lessons, practice
             questions, mock exam papers, videos, graphics, software, and the design and layout of
-            the platform, is owned by The English Hub Ltd or its licensors and is protected by
+            the platform, is owned by Upskill Energy Limited or its licensors and is protected by
             copyright, trademark, and other intellectual property laws of England and Wales and
             international treaties. You may not reproduce, modify, distribute, or create derivative
             works from any platform content without our express written permission.
@@ -254,7 +254,7 @@ export default function TermsPage() {
         <section>
           <h2 className="text-xl font-semibold text-foreground">11. Limitation of Liability</h2>
           <p className="mt-2 text-muted-foreground leading-relaxed">
-            To the fullest extent permitted by law, The English Hub Ltd shall not be liable for any
+            To the fullest extent permitted by law, Upskill Energy Limited shall not be liable for any
             indirect, incidental, special, consequential, or punitive damages arising out of or in
             connection with your use of the Service, including but not limited to loss of data, loss
             of academic opportunity, or reliance on AI-generated feedback.
@@ -332,7 +332,7 @@ export default function TermsPage() {
             If you have any questions about these Terms of Service, please contact us at:
           </p>
           <p className="mt-2 text-muted-foreground leading-relaxed">
-            The English Hub Ltd
+            Upskill Energy Limited, trading as The English Hub
             <br />
             Email: support@theenglishhub.app
           </p>

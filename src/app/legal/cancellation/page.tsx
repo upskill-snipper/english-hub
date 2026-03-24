@@ -192,8 +192,8 @@ export default function CancellationPolicyPage() {
         </h3>
         <p className="mb-3">
           Send an email to{" "}
-          <a href="mailto:support@theenglishhub.co.uk">
-            support@theenglishhub.co.uk
+          <a href="mailto:support@theenglishhub.app">
+            support@theenglishhub.app
           </a>{" "}
           with your full name, account email, and &quot;I want to cancel my
           subscription.&quot; We will confirm within 2 working days.
@@ -252,8 +252,8 @@ export default function CancellationPolicyPage() {
           <li>
             You can request a copy of your data at any time before deletion by
             emailing{" "}
-            <a href="mailto:support@theenglishhub.co.uk">
-              support@theenglishhub.co.uk
+            <a href="mailto:support@theenglishhub.app">
+              support@theenglishhub.app
             </a>
             .
           </li>
@@ -268,8 +268,8 @@ export default function CancellationPolicyPage() {
           using any of the methods above. If you are aged 14 to 17 and manage
           your own account, you have exactly the same cancellation rights. If you
           are unsure about anything, email{" "}
-          <a href="mailto:support@theenglishhub.co.uk">
-            support@theenglishhub.co.uk
+          <a href="mailto:support@theenglishhub.app">
+            support@theenglishhub.app
           </a>{" "}
           and we will help you.
         </p>
@@ -281,8 +281,8 @@ export default function CancellationPolicyPage() {
         <div className="bg-muted rounded-lg p-4 text-sm">
           <p>
             Email:{" "}
-            <a href="mailto:support@theenglishhub.co.uk">
-              support@theenglishhub.co.uk
+            <a href="mailto:support@theenglishhub.app">
+              support@theenglishhub.app
             </a>
           </p>
           <p>Operated by: Upskill Energy Limited</p>
@@ -312,8 +312,8 @@ export default function CancellationPolicyPage() {
             Hub
             <br />
             <strong>Email:</strong>{" "}
-            <a href="mailto:support@theenglishhub.co.uk">
-              support@theenglishhub.co.uk
+            <a href="mailto:support@theenglishhub.app">
+              support@theenglishhub.app
             </a>
           </p>
           <p className="mb-4">

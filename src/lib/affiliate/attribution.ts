@@ -30,7 +30,6 @@ export async function attributeAffiliateReferral({
     .single()
 
   if (existingReferral) {
-    console.log(`Affiliate referral ${rewardfulReferralId} already attributed — skipping`)
     return
   }
 
@@ -78,7 +77,6 @@ export async function attributeAffiliateReferral({
 
   // Only subscription plans earn affiliate commission
   if (!isCommissionEligible(planType)) {
-    console.log(`Plan type '${planType}' not eligible for affiliate commission`)
     return
   }
 
@@ -129,9 +127,5 @@ export async function attributeAffiliateReferral({
 
   if (insertError) {
     console.error('Failed to insert affiliate referral:', insertError)
-  } else {
-    console.log(
-      `Attributed referral to affiliate ${affiliate.id}: £${commissionAmount} commission (${planType})`
-    )
   }
 }

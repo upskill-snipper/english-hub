@@ -273,10 +273,10 @@ export default function CancelSubscriptionPage() {
                 rights, you may be entitled to a full refund under consumer
                 protection regulations. Contact us at{" "}
                 <a
-                  href="mailto:support@theenglishhub.co.uk"
+                  href="mailto:support@theenglishhub.app"
                   className="underline"
                 >
-                  support@theenglishhub.co.uk
+                  support@theenglishhub.app
                 </a>{" "}
                 for refund requests.
               </p>

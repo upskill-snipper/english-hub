@@ -140,11 +140,6 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    console.log('[api/contact] Submission received', {
-      subject: body.subject,
-      timestamp: new Date().toISOString(),
-    })
-
     return NextResponse.json({ success: true })
   } catch (error) {
     console.error('[api/contact] Unexpected error:', error)

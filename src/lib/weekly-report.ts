@@ -2,7 +2,7 @@ import { sendEmail } from "@/lib/email";
 
 // ─── Configuration ────────────────────────────────────────────────────
 
-const BASE_URL = process.env.NEXTAUTH_URL || "https://theenglishhub.com";
+const BASE_URL = process.env.NEXTAUTH_URL || "https://theenglishhub.app";
 const BRAND_COLOR = "#1A5276";
 const BRAND_ACCENT = "#2E86C1";
 const BRAND_LIGHT = "#D6EAF8";
@@ -74,10 +74,6 @@ export async function generateWeeklyReport(
     const weekEnd = new Date(weekStart);
     weekEnd.setDate(weekStart.getDate() + 6); // Sunday
 
-    console.log(
-      `[weekly-report] Generating report for parent=${parentId}, student=${studentId}`
-    );
-
     // TODO: Remove mock data once database is connected
     const report: WeeklyReportData = {
       parentName: "Parent",
@@ -125,10 +121,6 @@ export async function sendWeeklyReport(
     //   include: { student: true },
     // });
 
-    console.log(
-      `[weekly-report] Sending weekly reports for parent=${parentId}`
-    );
-
     // For each linked student, generate a report and send
     // TODO: Replace with real student IDs from database
     const mockStudentIds = ["student_1"];
@@ -150,9 +142,6 @@ export async function sendWeeklyReport(
 
       if (result.success) {
         sent++;
-        console.log(
-          `[weekly-report] Sent report for student=${studentId} to ${report.parentEmail}`
-        );
       } else {
         failed++;
         console.error(

@@ -114,8 +114,6 @@ export async function POST(request: NextRequest) {
     //   // });
     // });
 
-    console.log("[Password POST] Password changed (stub):", { userId, ip });
-
     return NextResponse.json({
       message: "Password changed successfully.",
     });

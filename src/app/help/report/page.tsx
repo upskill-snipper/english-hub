@@ -123,7 +123,7 @@ export default function ReportIssuePage() {
                 type="url"
                 value={pageUrl}
                 onChange={(e) => setPageUrl(e.target.value)}
-                placeholder="https://theenglishhub.co.uk/resources/..."
+                placeholder="https://theenglishhub.app/resources/..."
                 className="w-full px-4 py-2.5 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-[#2E86C1]"
               />
             </div>

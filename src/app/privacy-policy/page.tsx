@@ -21,19 +21,22 @@ export default function PrivacyPolicyPage() {
             1. Introduction and Data Controller
           </h2>
           <p className="text-muted-foreground leading-relaxed">
-            The English Hub (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) operates the
-            website and learning platform at{' '}
+            Upskill Energy Limited, trading as The English Hub (&quot;we&quot;, &quot;us&quot;, or
+            &quot;our&quot;), operates the website and learning platform at{' '}
             <a href="https://theenglishhub.app" className="underline text-foreground">
               theenglishhub.app
             </a>
-            . We are committed to protecting the privacy and personal data of all our users,
-            including students aged 14&ndash;16 who use our GCSE English revision and learning
-            tools.
+            . We are registered with the Information Commissioner&apos;s Office (ICO) under
+            registration number{' '}
+            <strong className="text-foreground">ZC016690</strong>. We are committed to protecting
+            the privacy and personal data of all our users, including students aged 14&ndash;16 who
+            use our GCSE English revision and learning tools.
           </p>
           <p className="text-muted-foreground leading-relaxed mt-3">
             For the purposes of the UK General Data Protection Regulation (UK GDPR) and the Data
-            Protection Act 2018, the data controller is The English Hub. If you have any questions
-            about this policy or how we handle your data, please contact us at{' '}
+            Protection Act 2018, the data controller is Upskill Energy Limited, trading as The
+            English Hub. If you have any questions about this policy or how we handle your data,
+            please contact us at{' '}
             <a href="mailto:privacy@theenglishhub.app" className="underline text-foreground">
               privacy@theenglishhub.app
             </a>

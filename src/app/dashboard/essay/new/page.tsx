@@ -67,7 +67,6 @@ export default function NewEssayPage() {
     // TODO: Replace with real API call
     try {
       const payload = { title, subject, examBoard, topic, content };
-      console.log("Submitting essay:", payload);
 
       // Simulate API delay
       await new Promise((resolve) => setTimeout(resolve, 1500));

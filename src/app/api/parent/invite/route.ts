@@ -56,7 +56,7 @@ export async function POST(request: NextRequest) {
     // ── Create invite ──────────────────────────────────────────────────
     const invite = await createInvite(user.id);
 
-    const baseUrl = process.env.NEXTAUTH_URL || "https://theenglishhub.co.uk";
+    const baseUrl = process.env.NEXTAUTH_URL || "https://theenglishhub.app";
     const inviteUrl = `${baseUrl}/invite/${invite.code}`;
 
     return NextResponse.json(
@@ -121,7 +121,7 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ invite: null });
     }
 
-    const baseUrl = process.env.NEXTAUTH_URL || "https://theenglishhub.co.uk";
+    const baseUrl = process.env.NEXTAUTH_URL || "https://theenglishhub.app";
 
     return NextResponse.json({
       invite: {

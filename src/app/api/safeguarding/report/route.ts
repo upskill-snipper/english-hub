@@ -7,7 +7,7 @@ const prisma = new PrismaClient();
 
 // ─── Environment ────────────────────────────────────────────────────────
 
-const DSL_EMAIL = process.env.DSL_EMAIL || "safeguarding@theenglishhub.co.uk";
+const DSL_EMAIL = process.env.DSL_EMAIL || "safeguarding@theenglishhub.app";
 
 // ─── Request validation ─────────────────────────────────────────────────
 

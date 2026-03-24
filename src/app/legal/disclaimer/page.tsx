@@ -53,6 +53,8 @@ export default function DisclaimerPage() {
     <>
       <h1>Full Disclaimer</h1>
       <p className="text-sm text-muted-foreground">
+        <strong>The English Hub</strong> — operated by Upskill Energy Limited
+        <br />
         Last updated: 22 March 2026
       </p>
 
@@ -209,8 +211,8 @@ export default function DisclaimerPage() {
           If you have questions about any of these disclaimers, or if you
           believe any content on The English Hub infringes on your intellectual
           property, please contact us at{" "}
-          <a href="mailto:support@theenglishhub.co.uk">
-            support@theenglishhub.co.uk
+          <a href="mailto:support@theenglishhub.app">
+            support@theenglishhub.app
           </a>
           .
         </p>

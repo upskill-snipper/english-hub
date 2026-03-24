@@ -39,8 +39,8 @@ export default function ComplaintsProcedurePage() {
             <h3 className="font-semibold">By Email</h3>
             <p className="text-sm">
               Send an email to{" "}
-              <a href="mailto:complaints@theenglishhub.co.uk">
-                complaints@theenglishhub.co.uk
+              <a href="mailto:complaints@theenglishhub.app">
+                complaints@theenglishhub.app
               </a>
             </p>
           </div>
@@ -129,8 +129,8 @@ export default function ComplaintsProcedurePage() {
           <ul className="list-disc pl-6 space-y-1">
             <li>
               Email:{" "}
-              <a href="mailto:safeguarding@theenglishhub.co.uk">
-                safeguarding@theenglishhub.co.uk
+              <a href="mailto:safeguarding@theenglishhub.app">
+                safeguarding@theenglishhub.app
               </a>
             </li>
             <li>
@@ -409,8 +409,8 @@ export default function ComplaintsProcedurePage() {
 
       <p className="text-sm text-muted-foreground italic mt-8">
         If you have any questions about this complaints procedure, contact us at{" "}
-        <a href="mailto:complaints@theenglishhub.co.uk">
-          complaints@theenglishhub.co.uk
+        <a href="mailto:complaints@theenglishhub.app">
+          complaints@theenglishhub.app
         </a>
         .
       </p>

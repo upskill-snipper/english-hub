@@ -128,13 +128,6 @@ export async function POST(request: NextRequest) {
       isMinor: age < 18,
     };
 
-    console.log("[Register] User created (stub):", {
-      ...userStub,
-      consentRecords: consentRecords.map((c) => `${c.type}:${c.granted}`),
-      privacySettings,
-      ip,
-    });
-
     // ── Response ──────────────────────────────────────────────────────
     const response = NextResponse.json(
       {

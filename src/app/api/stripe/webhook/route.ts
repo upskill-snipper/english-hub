@@ -122,17 +122,6 @@ export async function POST(request: NextRequest) {
           .eq('stripe_customer_id', customerId)
           .single()
 
-        console.log(
-          JSON.stringify({
-            event: 'invoice.paid',
-            invoiceId: invoice.id,
-            customerId,
-            userId: paidProfile?.id ?? null,
-            amountPaid: invoice.amount_paid,
-            currency: invoice.currency,
-          })
-        )
-
         // If this is a subscription invoice, ensure status is 'pro'
         // (handles edge case where payment succeeds after past_due)
         if (paidProfile && (invoice as any).subscription) {
@@ -158,17 +147,6 @@ export async function POST(request: NextRequest) {
       }
 
       case 'charge.succeeded': {
-        const charge = event.data.object as Stripe.Charge
-
-        console.log(
-          JSON.stringify({
-            event: 'charge.succeeded',
-            chargeId: charge.id,
-            customerId: charge.customer as string | null,
-            amount: charge.amount,
-            currency: charge.currency,
-          })
-        )
         break
       }
 
@@ -404,7 +382,5 @@ async function handleSubscriptionDeleted(
 
   if (voidError) {
     console.error(`[stripe/webhook] Failed to void affiliate commissions for subscription ${subscription.id}:`, voidError)
-  } else if (voidedCount && voidedCount > 0) {
-    console.log(`Voided ${voidedCount} affiliate commission(s) for subscription ${subscription.id} (cancelled)`)
   }
 }

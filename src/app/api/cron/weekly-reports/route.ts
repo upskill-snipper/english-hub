@@ -59,10 +59,6 @@ export async function POST(request: NextRequest) {
     // Mock: No parents in database yet
     const parentIds: string[] = [];
 
-    console.log(
-      `[weekly-reports] Processing ${parentIds.length} parent(s) for weekly reports`
-    );
-
     let totalSent = 0;
     let totalFailed = 0;
 
@@ -71,10 +67,6 @@ export async function POST(request: NextRequest) {
       totalSent += result.sent;
       totalFailed += result.failed;
     }
-
-    console.log(
-      `[weekly-reports] Complete. Sent: ${totalSent}, Failed: ${totalFailed}`
-    );
 
     return NextResponse.json({
       success: true,

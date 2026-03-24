@@ -59,10 +59,6 @@ async function generateAIFeedback(
 
 async function logToAuditTrail(entry: AuditLogEntry): Promise<void> {
   // TODO: Replace with actual audit logging (database, logging service, etc.)
-  // For now, log to console in development
-  if (process.env.NODE_ENV === "development") {
-    console.log("[AUDIT] Essay feedback filter:", JSON.stringify(entry));
-  }
 
   // Production implementation example:
   // await db.auditLog.create({ data: entry });

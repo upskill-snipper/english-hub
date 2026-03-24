@@ -216,7 +216,7 @@ export default function ConsentPage() {
                 Data is stored securely and retained only while your child is enrolled at the school.
                 Upon leaving, all personal data will be deleted within 30 days unless otherwise required
                 by law. For questions, contact your school administrator or email{' '}
-                <span className="text-foreground font-medium">support@theenglishhub.co.uk</span>.
+                <span className="text-foreground font-medium">support@theenglishhub.app</span>.
               </p>
             </div>
           </CardContent>

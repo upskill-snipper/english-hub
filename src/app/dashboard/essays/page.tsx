@@ -116,7 +116,6 @@ export default function AllEssaysPage() {
 
   function handleDelete(id: string) {
     // TODO: Replace with real API call
-    console.log("Deleting essay:", id);
     setDeletingId(null);
   }
 

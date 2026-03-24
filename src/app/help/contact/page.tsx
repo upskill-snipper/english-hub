@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 const CONTACTS = [
   {
     label: "General Support",
-    email: "support@theenglishhub.co.uk",
+    email: "support@theenglishhub.app",
     description:
       "Questions about your account, essays, feedback, or anything else? This is the best place to start.",
     icon: (
@@ -26,7 +26,7 @@ const CONTACTS = [
   },
   {
     label: "Data Protection Officer",
-    email: "dpo@theenglishhub.co.uk",
+    email: "dpo@theenglishhub.app",
     description:
       "Want to download, correct, or delete your personal data? Our DPO handles all data rights requests.",
     icon: (
@@ -38,7 +38,7 @@ const CONTACTS = [
   },
   {
     label: "Safeguarding",
-    email: "safeguarding@theenglishhub.co.uk",
+    email: "safeguarding@theenglishhub.app",
     description:
       "If you feel unsafe, or if you are worried about yourself or another young person, please reach out here. We take this seriously.",
     icon: (
@@ -50,7 +50,7 @@ const CONTACTS = [
   },
   {
     label: "Complaints",
-    email: "complaints@theenglishhub.co.uk",
+    email: "complaints@theenglishhub.app",
     description:
       "Not happy with how something was handled? We want to hear about it so we can put it right.",
     icon: (
@@ -194,10 +194,10 @@ export default function ContactPage() {
                 </dt>
                 <dd className="mt-1 text-sm">
                   <a
-                    href="mailto:support@theenglishhub.co.uk"
+                    href="mailto:support@theenglishhub.app"
                     className="font-medium text-primary hover:underline underline-offset-2"
                   >
-                    support@theenglishhub.co.uk
+                    support@theenglishhub.app
                   </a>
                 </dd>
               </div>
@@ -207,10 +207,10 @@ export default function ContactPage() {
                 </dt>
                 <dd className="mt-1 text-sm">
                   <a
-                    href="mailto:dpo@theenglishhub.co.uk"
+                    href="mailto:dpo@theenglishhub.app"
                     className="font-medium text-primary hover:underline underline-offset-2"
                   >
-                    dpo@theenglishhub.co.uk
+                    dpo@theenglishhub.app
                   </a>
                 </dd>
               </div>

@@ -33,9 +33,6 @@ export async function checkAndSendReminders(): Promise<ReminderResult> {
     console.error("[renewal-reminders] Fatal error:", err);
   }
 
-  console.log(
-    `[renewal-reminders] Complete: ${result.sent} sent, ${result.failed} failed`
-  );
   return result;
 }
 

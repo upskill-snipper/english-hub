@@ -2,7 +2,7 @@
 // All templates are DMCC Act, UK GDPR and consumer-rights compliant.
 // Language is kept clear and plain for a 14-18 year-old audience.
 
-const BASE_URL = process.env.NEXTAUTH_URL || "https://theenglishhub.co.uk";
+const BASE_URL = process.env.NEXTAUTH_URL || "https://theenglishhub.app";
 const BRAND_COLOR = "#1A5276";
 const BRAND_LIGHT = "#D6EAF8";
 const CANCEL_URL = `${BASE_URL}/account/cancel`;

@@ -13,7 +13,7 @@ const transporter = nodemailer.createTransport({
 });
 
 const FROM_ADDRESS =
-  process.env.FROM_EMAIL || "noreply@theenglishhub.co.uk";
+  process.env.FROM_EMAIL || "noreply@theenglishhub.app";
 const FROM_NAME = "The English Hub";
 const FROM = `${FROM_NAME} <${FROM_ADDRESS}>`;
 
@@ -46,7 +46,6 @@ export async function sendEmail(
 export async function verifyEmailConnection(): Promise<boolean> {
   try {
     await transporter.verify();
-    console.log("[email] SMTP connection verified");
     return true;
   } catch (err) {
     console.error("[email] SMTP verification failed:", err);

@@ -53,7 +53,7 @@ const faqs = [
   },
   {
     q: 'Is there a school or department pricing option?',
-    a: 'Yes. If you need licences for multiple teachers, please contact us at schools@theenglishhub.co.uk for volume pricing. Discounts are available for departments of 3 or more teachers.',
+    a: 'Yes. If you need licences for multiple teachers, please contact us at schools@theenglishhub.app for volume pricing. Discounts are available for departments of 3 or more teachers.',
   },
 ]
 
