@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { PrismaClient } from "@prisma/client";
 import { z } from "zod";
 import { calculateDeadline, daysUntilDeadline } from "@/lib/dsar";
+import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 const prisma = new PrismaClient();
 
@@ -21,14 +22,12 @@ export async function GET(
   try {
     const { id } = await params;
 
-    // TODO: Replace with actual session/auth check
-    const sessionUserId = request.headers.get("x-user-id");
-    if (!sessionUserId) {
-      return NextResponse.json(
-        { error: "Authentication required" },
-        { status: 401 }
-      );
+    const supabase = createServerSupabaseClient();
+    const { data: { user: authUser }, error: authError } = await supabase.auth.getUser();
+    if (authError || !authUser) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
+    const sessionUserId = authUser.id;
 
     const dsar = await prisma.dataAccessRequest.findUnique({
       where: { id },
@@ -89,14 +88,12 @@ export async function PATCH(
   try {
     const { id } = await params;
 
-    // TODO: Replace with actual session/auth check
-    const sessionUserId = request.headers.get("x-user-id");
-    if (!sessionUserId) {
-      return NextResponse.json(
-        { error: "Authentication required" },
-        { status: 401 }
-      );
+    const supabase = createServerSupabaseClient();
+    const { data: { user: authUser }, error: authError } = await supabase.auth.getUser();
+    if (authError || !authUser) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
+    const sessionUserId = authUser.id;
 
     // Admin-only check
     const user = await prisma.user.findUnique({

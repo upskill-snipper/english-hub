@@ -1,17 +1,17 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getConsentHistory } from "@/lib/consent";
+import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 // ─── GET /api/consent/history ───────────────────────────────────────────
 
 export async function GET(request: NextRequest) {
   try {
-    const userId = request.headers.get("x-user-id");
-    if (!userId) {
-      return NextResponse.json(
-        { error: "Authentication required" },
-        { status: 401 }
-      );
+    const supabase = createServerSupabaseClient();
+    const { data: { user }, error: authError } = await supabase.auth.getUser();
+    if (authError || !user) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
+    const userId = user.id;
 
     const history = await getConsentHistory(userId);
 

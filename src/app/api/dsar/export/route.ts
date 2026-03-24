@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { PrismaClient } from "@prisma/client";
 import { compileUserData } from "@/lib/dsar";
+import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 const prisma = new PrismaClient();
 
@@ -8,14 +9,12 @@ const prisma = new PrismaClient();
 
 export async function GET(request: NextRequest) {
   try {
-    // TODO: Replace with actual session/auth check
-    const sessionUserId = request.headers.get("x-user-id");
-    if (!sessionUserId) {
-      return NextResponse.json(
-        { error: "Authentication required" },
-        { status: 401 }
-      );
+    const supabase = createServerSupabaseClient();
+    const { data: { user: authUser }, error: authError } = await supabase.auth.getUser();
+    if (authError || !authUser) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
+    const sessionUserId = authUser.id;
 
     const format = request.nextUrl.searchParams.get("format") ?? "json";
     const dsarId = request.nextUrl.searchParams.get("dsarId");

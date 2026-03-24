@@ -29,6 +29,15 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    // Require explicit confirmation text to prevent accidental or automated deletion
+    const body = await request.json().catch(() => ({}))
+    if (body?.confirmText !== 'DELETE MY ACCOUNT') {
+      return NextResponse.json(
+        { error: 'You must provide confirmText set to "DELETE MY ACCOUNT" to proceed.' },
+        { status: 400 }
+      )
+    }
+
     // Verify the user is authenticated
     const supabase = createServerSupabaseClient()
     const {

@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { PrismaClient, Prisma } from "@prisma/client";
 import { sendEmail } from "@/lib/email";
+import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 const prisma = new PrismaClient();
 
@@ -113,7 +114,9 @@ export async function POST(request: NextRequest) {
       parsed.data;
 
     // Check for logged-in user (optional - reports can be anonymous)
-    const sessionUserId = request.headers.get("x-user-id");
+    const supabase = createServerSupabaseClient();
+    const { data: { user: authUser } } = await supabase.auth.getUser();
+    const sessionUserId = authUser?.id ?? null;
 
     const referenceNumber = generateReferenceNumber();
 
@@ -199,13 +202,12 @@ export async function POST(request: NextRequest) {
 export async function GET(request: NextRequest) {
   try {
     // Auth check: must be ADMIN
-    const sessionUserId = request.headers.get("x-user-id");
-    if (!sessionUserId) {
-      return NextResponse.json(
-        { error: "Authentication required" },
-        { status: 401 }
-      );
+    const supabase = createServerSupabaseClient();
+    const { data: { user: authUser }, error: authError } = await supabase.auth.getUser();
+    if (authError || !authUser) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
+    const sessionUserId = authUser.id;
 
     const user = await prisma.user.findUnique({
       where: { id: sessionUserId },
