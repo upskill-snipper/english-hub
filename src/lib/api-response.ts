@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 
 /**
  * Standardized API response helpers for consistent error handling.
@@ -52,4 +52,15 @@ export function serviceUnavailableResponse(message = 'Service temporarily unavai
 
 export function serverErrorResponse(message = 'Internal server error') {
   return errorResponse(message, 500)
+}
+
+export function requireJsonContentType(request: NextRequest): NextResponse | null {
+  const ct = request.headers.get('content-type');
+  if (!ct || !ct.includes('application/json')) {
+    return NextResponse.json(
+      { error: 'Content-Type must be application/json' },
+      { status: 415 }
+    );
+  }
+  return null;
 }

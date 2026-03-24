@@ -200,13 +200,16 @@ export const loginSchema = z.object({
 // ─── Age helpers ────────────────────────────────────────────────────────
 
 export function calculateAge(year: number, month: number, day: number): number {
-  const today = new Date();
-  const birthDate = new Date(year, month - 1, day);
-  let age = today.getFullYear() - birthDate.getFullYear();
-  const monthDiff = today.getMonth() - birthDate.getMonth();
+  const now = new Date();
+  const todayUTC = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
+  const birthUTC = Date.UTC(year, month - 1, day);
+  const todayDate = new Date(todayUTC);
+  const birthDate = new Date(birthUTC);
+  let age = todayDate.getUTCFullYear() - birthDate.getUTCFullYear();
+  const monthDiff = todayDate.getUTCMonth() - birthDate.getUTCMonth();
   if (
     monthDiff < 0 ||
-    (monthDiff === 0 && today.getDate() < birthDate.getDate())
+    (monthDiff === 0 && todayDate.getUTCDate() <= birthDate.getUTCDate())
   ) {
     age--;
   }

@@ -14,6 +14,9 @@ import {
   ArrowLeft,
   CheckCircle,
   ExternalLink,
+  BookOpen,
+  HelpCircle,
+  LayoutDashboard,
 } from 'lucide-react'
 
 export default function CertificatePage() {
@@ -252,6 +255,39 @@ export default function CertificatePage() {
                 Verify at {verifyUrl}
               </Link>
             </div>
+          </div>
+        </div>
+
+        {/* What's Next? section */}
+        <div className="print:hidden mt-12">
+          <h2 className="text-2xl font-bold text-foreground text-center mb-6">
+            What&apos;s Next?
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <Link
+              href="/courses"
+              className="flex flex-col items-center gap-3 rounded-xl border border-border bg-card p-6 text-center hover:border-primary/50 hover:shadow-md transition-all"
+            >
+              <BookOpen className="w-8 h-8 text-primary" />
+              <span className="font-semibold text-foreground">Browse More Courses</span>
+              <span className="text-sm text-muted-foreground">Continue your learning journey</span>
+            </Link>
+            <Link
+              href="/practice"
+              className="flex flex-col items-center gap-3 rounded-xl border border-border bg-card p-6 text-center hover:border-primary/50 hover:shadow-md transition-all"
+            >
+              <HelpCircle className="w-8 h-8 text-primary" />
+              <span className="font-semibold text-foreground">Practice Questions</span>
+              <span className="text-sm text-muted-foreground">Test your knowledge further</span>
+            </Link>
+            <Link
+              href="/dashboard"
+              className="flex flex-col items-center gap-3 rounded-xl border border-border bg-card p-6 text-center hover:border-primary/50 hover:shadow-md transition-all"
+            >
+              <LayoutDashboard className="w-8 h-8 text-primary" />
+              <span className="font-semibold text-foreground">Return to Dashboard</span>
+              <span className="text-sm text-muted-foreground">View your progress and stats</span>
+            </Link>
           </div>
         </div>
       </div>

@@ -28,6 +28,9 @@ export default function GlobalError({ error, reset }: { error: Error; reset: () 
               Go home
             </a>
           </div>
+          <a href="/help/contact" className="block text-sm text-muted-foreground hover:text-foreground underline transition-colors">
+            Contact Support
+          </a>
         </div>
       </body>
     </html>

@@ -50,35 +50,36 @@ export default function RegisterPage() {
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirm, setShowConfirm] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({})
   const [success, setSuccess] = useState(false)
   const [loading, setLoading] = useState(false)
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     setError(null)
+    setFieldErrors({})
 
-    if (!fullName || !email || !password || !confirmPassword || !dobDay || !dobMonth || !dobYear) {
-      setError('Please fill in all required fields.')
-      return
-    }
+    const errors: Record<string, string> = {}
+
+    if (!fullName) errors.fullName = 'Full name is required.'
+    if (!dobDay || !dobMonth || !dobYear) errors.dob = 'Date of birth is required.'
+    if (!email) errors.email = 'Email address is required.'
+    if (!password) errors.password = 'Password is required.'
+    else if (password.length < 8) errors.password = 'Password must be at least 8 characters.'
+    if (!confirmPassword) errors.confirmPassword = 'Please confirm your password.'
+    else if (password !== confirmPassword) errors.confirmPassword = 'Passwords do not match.'
 
     if (isUnder13) {
-      setError('You must be at least 13 years old to create an account.')
-      return
+      errors.dob = 'You must be at least 13 years old to create an account.'
     }
 
     if (isUnder16 && !parentGuardianEmail) {
-      setError('Parent/Guardian email is required for users under 16.')
-      return
+      errors.parentGuardianEmail = 'Parent/Guardian email is required for users under 16.'
     }
 
-    if (password.length < 8) {
-      setError('Password must be at least 8 characters.')
-      return
-    }
-
-    if (password !== confirmPassword) {
-      setError('Passwords do not match.')
+    if (Object.keys(errors).length > 0) {
+      setFieldErrors(errors)
+      setError('Please fix the errors below.')
       return
     }
 
@@ -196,14 +197,19 @@ export default function RegisterPage() {
                     className="pl-11"
                     required
                     autoComplete="name"
+                    aria-invalid={!!fieldErrors.fullName}
+                    aria-describedby={fieldErrors.fullName ? 'fullName-error' : undefined}
                   />
                 </div>
+                {fieldErrors.fullName && (
+                  <p id="fullName-error" className="text-sm text-destructive mt-1">{fieldErrors.fullName}</p>
+                )}
               </div>
 
-              <div className="space-y-1.5">
-                <Label>
-                  Date of birth <span className="text-destructive">*</span>
-                </Label>
+              <fieldset className="space-y-1.5" aria-describedby={fieldErrors.dob ? 'dob-error' : undefined}>
+                <legend className="text-sm font-medium leading-none">
+                  Date of Birth <span className="text-destructive">*</span>
+                </legend>
                 <div className="relative">
                   <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/50" />
                   <div className="flex gap-2 pl-11">
@@ -213,6 +219,8 @@ export default function RegisterPage() {
                       onChange={(e) => setDobDay(e.target.value)}
                       className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm appearance-none"
                       required
+                      aria-label="Day"
+                      aria-invalid={!!fieldErrors.dob}
                     >
                       <option value="">Day</option>
                       {Array.from({ length: 31 }, (_, i) => i + 1).map((d) => (
@@ -227,6 +235,8 @@ export default function RegisterPage() {
                       onChange={(e) => setDobMonth(e.target.value)}
                       className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm appearance-none"
                       required
+                      aria-label="Month"
+                      aria-invalid={!!fieldErrors.dob}
                     >
                       <option value="">Month</option>
                       {[
@@ -244,6 +254,8 @@ export default function RegisterPage() {
                       onChange={(e) => setDobYear(e.target.value)}
                       className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm appearance-none"
                       required
+                      aria-label="Year"
+                      aria-invalid={!!fieldErrors.dob}
                     >
                       <option value="">Year</option>
                       {Array.from({ length: 100 }, (_, i) => new Date().getFullYear() - i).map((y) => (
@@ -254,12 +266,12 @@ export default function RegisterPage() {
                     </select>
                   </div>
                 </div>
-                {isUnder13 && (
-                  <p className="text-sm text-destructive font-medium mt-1">
-                    You must be at least 13 years old to create an account.
+                {fieldErrors.dob && (
+                  <p id="dob-error" className="text-sm text-destructive mt-1">
+                    {fieldErrors.dob}
                   </p>
                 )}
-              </div>
+              </fieldset>
 
               <div className="space-y-1.5">
                 <Label htmlFor="email">
@@ -276,8 +288,13 @@ export default function RegisterPage() {
                     className="pl-11"
                     required
                     autoComplete="email"
+                    aria-invalid={!!fieldErrors.email}
+                    aria-describedby={fieldErrors.email ? 'email-error' : undefined}
                   />
                 </div>
+                {fieldErrors.email && (
+                  <p id="email-error" className="text-sm text-destructive mt-1">{fieldErrors.email}</p>
+                )}
               </div>
 
               <div className="space-y-1.5">
@@ -296,6 +313,8 @@ export default function RegisterPage() {
                     required
                     minLength={8}
                     autoComplete="new-password"
+                    aria-invalid={!!fieldErrors.password}
+                    aria-describedby={fieldErrors.password ? 'password-error' : undefined}
                   />
                   <button
                     type="button"
@@ -306,6 +325,9 @@ export default function RegisterPage() {
                     {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                   </button>
                 </div>
+                {fieldErrors.password && (
+                  <p id="password-error" className="text-sm text-destructive mt-1">{fieldErrors.password}</p>
+                )}
               </div>
 
               <div className="space-y-1.5">
@@ -324,6 +346,8 @@ export default function RegisterPage() {
                     required
                     minLength={8}
                     autoComplete="new-password"
+                    aria-invalid={!!fieldErrors.confirmPassword}
+                    aria-describedby={fieldErrors.confirmPassword ? 'confirmPassword-error' : undefined}
                   />
                   <button
                     type="button"
@@ -334,6 +358,9 @@ export default function RegisterPage() {
                     {showConfirm ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                   </button>
                 </div>
+                {fieldErrors.confirmPassword && (
+                  <p id="confirmPassword-error" className="text-sm text-destructive mt-1">{fieldErrors.confirmPassword}</p>
+                )}
               </div>
 
               {isUnder16 && (
@@ -352,8 +379,13 @@ export default function RegisterPage() {
                       className="pl-11"
                       required
                       autoComplete="email"
+                      aria-invalid={!!fieldErrors.parentGuardianEmail}
+                      aria-describedby={fieldErrors.parentGuardianEmail ? 'parentGuardianEmail-error' : undefined}
                     />
                   </div>
+                  {fieldErrors.parentGuardianEmail && (
+                    <p id="parentGuardianEmail-error" className="text-sm text-destructive mt-1">{fieldErrors.parentGuardianEmail}</p>
+                  )}
                   <p className="text-sm text-muted-foreground">
                     As you are under 16, a parent or guardian must provide consent. We will email them a consent form.
                   </p>

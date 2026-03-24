@@ -22,6 +22,9 @@ export default function Error({ error, reset }: { error: Error; reset: () => voi
         <button onClick={reset} className="inline-flex items-center justify-center px-6 py-2.5 bg-primary hover:bg-primary/90 text-primary-foreground font-medium rounded-lg transition-colors">
           Try Again
         </button>
+        <a href="/help/contact" className="block text-sm text-muted-foreground hover:text-foreground underline transition-colors">
+          Contact Support
+        </a>
       </div>
     </div>
   )
