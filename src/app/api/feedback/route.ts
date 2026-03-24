@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { verifyAdmin } from "@/lib/admin-auth";
 
 /* ─── Types ──────────────────────────────────────────────────── */
 
@@ -100,9 +101,17 @@ export async function POST(request: NextRequest) {
   }
 }
 
-/* ─── GET — admin list (add auth check in production) ────────── */
+/* ─── GET — admin list ────────────────────────────────────────── */
 
 export async function GET(request: NextRequest) {
+  const { user, error } = await verifyAdmin();
+  if (error === "Unauthorized" || !user) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+  if (error === "Forbidden") {
+    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+  }
+
   const { searchParams } = new URL(request.url);
   const type = searchParams.get("type");
   const status = searchParams.get("status");

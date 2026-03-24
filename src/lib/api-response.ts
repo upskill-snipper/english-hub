@@ -11,9 +11,10 @@ export function successResponse<T>(data: T, status = 200) {
 export function errorResponse(
   error: string,
   status: number,
-  headers?: Record<string, string>
+  headers?: Record<string, string>,
+  details?: Record<string, unknown>
 ) {
-  return NextResponse.json({ error }, { status, headers })
+  return NextResponse.json({ error, ...details }, { status, headers })
 }
 
 export function unauthorizedResponse(message = 'Unauthorized') {
@@ -39,6 +40,14 @@ export function rateLimitResponse(resetAt: number) {
     429,
     { 'Retry-After': String(retryAfter) }
   )
+}
+
+export function unsupportedMediaTypeResponse(message = 'Content-Type must be application/json') {
+  return errorResponse(message, 415)
+}
+
+export function serviceUnavailableResponse(message = 'Service temporarily unavailable') {
+  return errorResponse(message, 503)
 }
 
 export function serverErrorResponse(message = 'Internal server error') {

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { cookies } from "next/headers";
 import { z } from "zod";
+import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 // NOTE: Uncomment once Prisma is wired up:
 // import { prisma } from "@/lib/prisma";
@@ -21,20 +21,6 @@ const updateProfileSchema = z.object({
   school: z.string().max(200, "School name is too long").nullable().optional(),
 });
 
-// ─── Stub helpers (replace with real session lookup) ───────────────────
-
-async function getSessionUserId(
-  _cookieStore: Awaited<ReturnType<typeof cookies>>
-): Promise<string | null> {
-  // TODO: Replace with real session validation
-  // const token = cookieStore.get("session_token")?.value;
-  // if (!token) return null;
-  // const session = await prisma.session.findUnique({ where: { token } });
-  // if (!session || session.expiresAt < new Date()) return null;
-  // return session.userId;
-  return "stub-user-id";
-}
-
 // ─── Stub user data (replace with DB queries) ─────────────────────────
 
 const STUB_USER = {
@@ -53,15 +39,15 @@ const STUB_USER = {
 
 export async function GET(request: NextRequest) {
   try {
-    const cookieStore = await cookies();
-    const userId = await getSessionUserId(cookieStore);
-
-    if (!userId) {
+    const supabase = createServerSupabaseClient();
+    const { data: { user }, error: authError } = await supabase.auth.getUser();
+    if (authError || !user) {
       return NextResponse.json(
-        { message: "Not authenticated" },
+        { error: "Unauthorized" },
         { status: 401 }
       );
     }
+    const userId = user.id;
 
     // TODO: Replace with real DB query:
     // const user = await prisma.user.findUnique({
@@ -82,10 +68,10 @@ export async function GET(request: NextRequest) {
     //   return NextResponse.json({ message: "User not found" }, { status: 404 });
     // }
 
-    const user = STUB_USER;
+    const profile = STUB_USER;
 
     const today = new Date();
-    const birthDate = new Date(user.dateOfBirth);
+    const birthDate = new Date(profile.dateOfBirth);
     let age = today.getFullYear() - birthDate.getFullYear();
     const monthDiff = today.getMonth() - birthDate.getMonth();
     if (
@@ -97,14 +83,14 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json({
       id: user.id,
-      email: user.email,
-      firstName: user.firstName,
-      lastName: user.lastName,
+      email: user.email ?? profile.email,
+      firstName: profile.firstName,
+      lastName: profile.lastName,
       age,
-      isMinor: user.isMinor,
-      school: user.school,
-      country: user.country,
-      createdAt: user.createdAt.toISOString(),
+      isMinor: profile.isMinor,
+      school: profile.school,
+      country: profile.country,
+      createdAt: profile.createdAt.toISOString(),
     });
   } catch (error) {
     console.error("[Profile GET] Error:", error);
@@ -119,15 +105,15 @@ export async function GET(request: NextRequest) {
 
 export async function PATCH(request: NextRequest) {
   try {
-    const cookieStore = await cookies();
-    const userId = await getSessionUserId(cookieStore);
-
-    if (!userId) {
+    const supabase = createServerSupabaseClient();
+    const { data: { user }, error: authError } = await supabase.auth.getUser();
+    if (authError || !user) {
       return NextResponse.json(
-        { message: "Not authenticated" },
+        { error: "Unauthorized" },
         { status: 401 }
       );
     }
+    const userId = user.id;
 
     const body = await request.json();
     const data = updateProfileSchema.parse(body);

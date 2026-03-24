@@ -8,6 +8,7 @@ import {
   type DSARType,
 } from "@/lib/dsar";
 import { sendEmail } from "@/lib/email";
+import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 const prisma = new PrismaClient();
 
@@ -22,14 +23,15 @@ const createDSARSchema = z.object({
 
 export async function POST(request: NextRequest) {
   try {
-    // TODO: Replace with actual session/auth check
-    const sessionUserId = request.headers.get("x-user-id");
-    if (!sessionUserId) {
+    const supabase = createServerSupabaseClient();
+    const { data: { user }, error: authError } = await supabase.auth.getUser();
+    if (authError || !user) {
       return NextResponse.json(
-        { error: "Authentication required" },
+        { error: "Unauthorized" },
         { status: 401 }
       );
     }
+    const sessionUserId = user.id;
 
     const body = await request.json();
     const parsed = createDSARSchema.safeParse(body);
@@ -43,13 +45,13 @@ export async function POST(request: NextRequest) {
 
     const { type, details } = parsed.data;
 
-    // Look up user
-    const user = await prisma.user.findUnique({
+    // Look up user profile
+    const profile = await prisma.user.findUnique({
       where: { id: sessionUserId },
       select: { id: true, email: true, firstName: true, accountStatus: true },
     });
 
-    if (!user) {
+    if (!profile) {
       return NextResponse.json(
         { error: "User not found" },
         { status: 404 }
@@ -110,13 +112,13 @@ export async function POST(request: NextRequest) {
 
     // Send acknowledgement email
     const emailContent = buildAcknowledgementEmail(
-      user.firstName,
+      profile.firstName,
       referenceNumber,
       type as DSARType,
       deadline
     );
 
-    await sendEmail(user.email, emailContent.subject, emailContent.html);
+    await sendEmail(profile.email, emailContent.subject, emailContent.html);
 
     return NextResponse.json(
       {
@@ -148,14 +150,15 @@ export async function POST(request: NextRequest) {
 
 export async function GET(request: NextRequest) {
   try {
-    // TODO: Replace with actual session/auth check
-    const sessionUserId = request.headers.get("x-user-id");
-    if (!sessionUserId) {
+    const supabase = createServerSupabaseClient();
+    const { data: { user }, error: authError } = await supabase.auth.getUser();
+    if (authError || !user) {
       return NextResponse.json(
-        { error: "Authentication required" },
+        { error: "Unauthorized" },
         { status: 401 }
       );
     }
+    const sessionUserId = user.id;
 
     const dsars = await prisma.dataAccessRequest.findMany({
       where: { userId: sessionUserId },

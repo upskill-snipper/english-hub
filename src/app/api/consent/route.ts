@@ -8,6 +8,7 @@ import {
   CONSENT_TYPES,
   ESSENTIAL_CONSENT_TYPES,
 } from "@/lib/consent";
+import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 // ─── Validation schemas ─────────────────────────────────────────────────
 
@@ -37,21 +38,19 @@ function getClientIp(request: NextRequest): string {
   );
 }
 
-function getUserId(request: NextRequest): string | null {
-  return request.headers.get("x-user-id");
-}
-
 // ─── GET /api/consent ───────────────────────────────────────────────────
 
 export async function GET(request: NextRequest) {
   try {
-    const userId = getUserId(request);
-    if (!userId) {
+    const supabase = createServerSupabaseClient();
+    const { data: { user }, error: authError } = await supabase.auth.getUser();
+    if (authError || !user) {
       return NextResponse.json(
-        { error: "Authentication required" },
+        { error: "Unauthorized" },
         { status: 401 }
       );
     }
+    const userId = user.id;
 
     const consents = await getConsents(userId);
 
@@ -80,13 +79,15 @@ export async function GET(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   try {
-    const userId = getUserId(request);
-    if (!userId) {
+    const supabase = createServerSupabaseClient();
+    const { data: { user }, error: authError } = await supabase.auth.getUser();
+    if (authError || !user) {
       return NextResponse.json(
-        { error: "Authentication required" },
+        { error: "Unauthorized" },
         { status: 401 }
       );
     }
+    const userId = user.id;
 
     const body = await request.json();
     const parsed = recordConsentSchema.safeParse(body);
@@ -124,13 +125,15 @@ export async function POST(request: NextRequest) {
 
 export async function DELETE(request: NextRequest) {
   try {
-    const userId = getUserId(request);
-    if (!userId) {
+    const supabase = createServerSupabaseClient();
+    const { data: { user }, error: authError } = await supabase.auth.getUser();
+    if (authError || !user) {
       return NextResponse.json(
-        { error: "Authentication required" },
+        { error: "Unauthorized" },
         { status: 401 }
       );
     }
+    const userId = user.id;
 
     const body = await request.json();
     const parsed = withdrawConsentSchema.safeParse(body);

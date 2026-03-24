@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import { cookies } from "next/headers";
 import { z } from "zod";
 import { hashPassword, verifyPassword } from "@/lib/auth";
+import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 // NOTE: Uncomment once Prisma is wired up:
 // import { prisma } from "@/lib/prisma";
@@ -28,15 +28,6 @@ const changePasswordSchema = z
     path: ["newPassword"],
   });
 
-// ─── Stub helpers (replace with real session lookup) ───────────────────
-
-async function getSessionUserId(
-  _cookieStore: Awaited<ReturnType<typeof cookies>>
-): Promise<string | null> {
-  // TODO: Replace with real session validation
-  return "stub-user-id";
-}
-
 // Stub password hash for "Password1" — replace with DB lookup
 const STUB_PASSWORD_HASH =
   "$2a$12$LJ3m4ys.USx/lQr5YP4Yz.vGxGHhPjKMKs8GHm9jGlR1FD7rXTi6";
@@ -45,15 +36,15 @@ const STUB_PASSWORD_HASH =
 
 export async function POST(request: NextRequest) {
   try {
-    const cookieStore = await cookies();
-    const userId = await getSessionUserId(cookieStore);
-
-    if (!userId) {
+    const supabase = createServerSupabaseClient();
+    const { data: { user }, error: authError } = await supabase.auth.getUser();
+    if (authError || !user) {
       return NextResponse.json(
-        { message: "Not authenticated" },
+        { error: "Unauthorized" },
         { status: 401 }
       );
     }
+    const userId = user.id;
 
     const body = await request.json();
     const data = changePasswordSchema.parse(body);

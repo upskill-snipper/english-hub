@@ -6,6 +6,14 @@
 import { NextRequest, NextResponse } from "next/server";
 import { filterAIResponse, type UserCountry } from "@/lib/content-filter";
 import { getDisclaimer } from "@/lib/ai-disclaimer";
+import { createServerSupabaseClient } from "@/lib/supabase/server";
+import {
+  unauthorizedResponse,
+  badRequestResponse,
+  unsupportedMediaTypeResponse,
+  serviceUnavailableResponse,
+  serverErrorResponse,
+} from "@/lib/api-response";
 
 // ─── Types ──────────────────────────────────────────────────────────────
 
@@ -130,34 +138,68 @@ function validateRequest(
 
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json();
+    // 0. Content-Type validation
+    const contentType = request.headers.get("content-type");
+    if (!contentType || !contentType.includes("application/json")) {
+      return unsupportedMediaTypeResponse();
+    }
+
+    // 1. Authenticate
+    const supabase = createServerSupabaseClient();
+    const { data: { user }, error: authError } = await supabase.auth.getUser();
+    if (authError || !user) {
+      return unauthorizedResponse();
+    }
+
+    // 2. Parse & validate body
+    let body: unknown;
+    try {
+      body = await request.json();
+    } catch {
+      return badRequestResponse("Invalid JSON in request body.");
+    }
+
     const validation = validateRequest(body);
 
     if (!validation.valid) {
-      return NextResponse.json(
-        { error: validation.error },
-        { status: 400 }
-      );
+      return badRequestResponse(validation.error);
     }
 
-    const { essayText, examBoard, topic, userCountry, userId } =
+    const { essayText, examBoard, topic, userCountry } =
       validation.data;
+    const userId = user.id;
 
-    // Generate AI feedback
+    // 3. Generate AI feedback
     let rawFeedback: string;
     try {
       rawFeedback = await generateAIFeedback(essayText, examBoard, topic);
-    } catch {
-      return NextResponse.json(
-        {
-          error:
-            "AI feedback service is currently unavailable. Please try again later.",
-        },
-        { status: 503 }
+    } catch (aiError: unknown) {
+      const err = aiError as { message?: string; status?: number; error?: { type?: string } };
+
+      // Timeout from AI provider
+      if (
+        err.message?.includes("timeout") ||
+        err.message?.includes("ETIMEDOUT") ||
+        err.error?.type === "timeout_error"
+      ) {
+        return serviceUnavailableResponse(
+          "AI feedback service timed out. Please try again."
+        );
+      }
+
+      // Upstream rate limit from AI provider
+      if (err.status === 429) {
+        return serviceUnavailableResponse(
+          "AI feedback service is temporarily overloaded. Please try again in a moment."
+        );
+      }
+
+      return serviceUnavailableResponse(
+        "AI feedback service is currently unavailable. Please try again later."
       );
     }
 
-    // Run through content filter
+    // 4. Run through content filter
     const filterResult = filterAIResponse(rawFeedback, userCountry, topic);
 
     // Build response
@@ -209,9 +251,6 @@ export async function POST(request: NextRequest) {
     });
   } catch {
     console.error("[Essay Feedback API] Unexpected error");
-    return NextResponse.json(
-      { error: "An unexpected error occurred. Please try again." },
-      { status: 500 }
-    );
+    return serverErrorResponse("An unexpected error occurred. Please try again.");
   }
 }

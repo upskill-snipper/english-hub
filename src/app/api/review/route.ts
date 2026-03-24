@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { reviews, ReviewRecord } from "./store";
+import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -30,6 +31,12 @@ const VALID_REASONS = [
 
 export async function POST(request: NextRequest) {
   try {
+    const supabase = createServerSupabaseClient();
+    const { data: { user }, error: authError } = await supabase.auth.getUser();
+    if (authError || !user) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+
     const body = await request.json();
     const { essayId, reason, detail, selfAssessment } = body;
 
@@ -70,8 +77,7 @@ export async function POST(request: NextRequest) {
     }
 
     // --- Build record ---
-    // TODO: replace with real user ID from session/auth
-    const userId = "current-user";
+    const userId = user.id;
 
     const referenceNumber = generateReferenceNumber();
     const now = new Date().toISOString();
@@ -131,8 +137,13 @@ export async function POST(request: NextRequest) {
 // ---------------------------------------------------------------------------
 
 export async function GET() {
-  // TODO: filter by authenticated user
-  const userId = "current-user";
+  const supabase = createServerSupabaseClient();
+  const { data: { user }, error: authError } = await supabase.auth.getUser();
+  if (authError || !user) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  const userId = user.id;
 
   const userReviews = reviews
     .filter((r) => r.userId === userId)

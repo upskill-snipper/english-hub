@@ -21,7 +21,7 @@ export async function GET(request: NextRequest) {
       request.headers.get("x-real-ip") ??
       "unknown";
 
-    const rl = await rateLimit(`invite-validate:${ip}`, { limit: 20, windowSeconds: 3600 }); // 20 per hour per IP
+    const rl = await rateLimit(`invite-validate:${ip}`, { limit: 5, windowSeconds: 3600 }); // 5 per hour per IP
     if (!rl.success) {
       return NextResponse.json(
         { message: "Too many requests. Please try again later." },
@@ -42,9 +42,10 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    // Return limited info only (first name + school, no sensitive data)
+    // Return limited info only (first initial only, school, no sensitive data)
+    const studentDisplayName = `${result.student.firstName.charAt(0)}.`;
     return NextResponse.json({
-      studentFirstName: result.student.firstName,
+      studentName: studentDisplayName,
       school: result.student.school,
       expiresAt: result.invite.expiresAt.toISOString(),
     });

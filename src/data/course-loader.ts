@@ -74,8 +74,8 @@ function getBoardForCourse(courseId: string): string {
   return 'gcse' // default for gcse-lang-*, gcse-lit-*, etc.
 }
 
-// Cache loaded boards
-const boardCache = new Map<string, CourseData[]>()
+// Promise-based cache prevents duplicate concurrent imports
+const boardCache = new Map<string, Promise<CourseData[]>>()
 
 // Poetry courses are split across two files with the same ID prefix
 const POETRY_FALLBACK = ['igcse-poetry-1', 'igcse-poetry-2'] as const
@@ -86,17 +86,7 @@ const POETRY_FALLBACK = ['igcse-poetry-1', 'igcse-poetry-2'] as const
 export async function loadCourseById(courseId: string): Promise<CourseData | undefined> {
   const board = getBoardForCourse(courseId)
 
-  if (boardCache.has(board)) {
-    const found = boardCache.get(board)!.find(c => c.id === courseId)
-    if (found) return found
-  }
-
-  const loader = BOARD_LOADERS[board]
-  if (!loader) return undefined
-
-  const mod = await loader()
-  const courses = extractCourses(mod)
-  boardCache.set(board, courses)
+  const courses = await loadCoursesByBoard(board)
   const found = courses.find(c => c.id === courseId)
   if (found) return found
 
@@ -122,20 +112,36 @@ export async function loadCoursesByBoard(board: string): Promise<CourseData[]> {
   const loader = BOARD_LOADERS[board]
   if (!loader) return []
 
-  const mod = await loader()
-  const courses = extractCourses(mod)
-  boardCache.set(board, courses)
-  return courses
+  const promise = (async () => {
+    try {
+      const mod = await loader()
+      return extractCourses(mod)
+    } catch (err) {
+      console.error(`Failed to load course data for board ${board}:`, err)
+      return []
+    }
+  })()
+
+  boardCache.set(board, promise)
+  return promise
 }
 
 /**
  * Load ALL courses (all boards). Prefer `loadCourseById` or `loadCoursesByBoard`
  * when you only need a subset.
  */
+let allCoursesCache: Promise<CourseData[]> | null = null
+
 export async function loadAllCourses(): Promise<CourseData[]> {
-  const boards = Object.keys(BOARD_LOADERS)
-  const results = await Promise.all(boards.map(b => loadCoursesByBoard(b)))
-  return results.flat()
+  if (allCoursesCache) return allCoursesCache
+
+  allCoursesCache = (async () => {
+    const boards = Object.keys(BOARD_LOADERS)
+    const results = await Promise.all(boards.map(b => loadCoursesByBoard(b)))
+    return results.flat()
+  })()
+
+  return allCoursesCache
 }
 
 function extractCourses(mod: Record<string, unknown>): CourseData[] {

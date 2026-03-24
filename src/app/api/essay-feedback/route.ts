@@ -5,6 +5,14 @@ import { rateLimit } from '@/lib/rate-limit'
 import { formatMarkSchemeForPrompt } from '@/data/mark-schemes'
 import { validateRequest } from '@/lib/validate-request'
 import { contentSafetyCheck } from '@/lib/content-safety'
+import {
+  unauthorizedResponse,
+  badRequestResponse,
+  rateLimitResponse,
+  unsupportedMediaTypeResponse,
+  serviceUnavailableResponse,
+  serverErrorResponse,
+} from '@/lib/api-response'
 
 export const maxDuration = 60
 
@@ -105,15 +113,18 @@ IMPORTANT: You MUST respond with ONLY a valid JSON object (no markdown, no code 
 
 export async function POST(request: NextRequest) {
   try {
+    // 0. Content-Type validation
+    const contentType = request.headers.get('content-type')
+    if (!contentType || !contentType.includes('application/json')) {
+      return unsupportedMediaTypeResponse()
+    }
+
     // 1. Authenticate
     const supabase = createServerSupabaseClient()
     const { data: { user }, error: authError } = await supabase.auth.getUser()
 
     if (authError || !user) {
-      return NextResponse.json(
-        { error: 'You must be signed in to use essay feedback.' },
-        { status: 401 }
-      )
+      return unauthorizedResponse('You must be signed in to use essay feedback.')
     }
 
     // 2. Rate limit: 10 essays per day per user
@@ -123,14 +134,7 @@ export async function POST(request: NextRequest) {
     })
 
     if (!rl.success) {
-      const hoursLeft = Math.ceil((rl.resetAt - Date.now()) / 3_600_000)
-      return NextResponse.json(
-        {
-          error: `You've reached the limit of 10 essay reviews per day. Try again in ${hoursLeft} hour${hoursLeft === 1 ? '' : 's'}.`,
-          remaining: 0,
-        },
-        { status: 429 }
-      )
+      return rateLimitResponse(rl.resetAt)
     }
 
     // 3. Parse & validate body
@@ -138,28 +142,25 @@ export async function POST(request: NextRequest) {
     try {
       body = await request.json()
     } catch {
-      return NextResponse.json({ error: 'Invalid request body.' }, { status: 400 })
+      return badRequestResponse('Invalid JSON in request body.')
     }
 
     const validationError = validateRequest(body)
     if (validationError) {
-      return NextResponse.json({ error: validationError }, { status: 400 })
+      return badRequestResponse(validationError)
     }
 
     // 4. Content safety check (pre-AI)
     const safetyError = contentSafetyCheck(body)
     if (safetyError) {
-      return NextResponse.json({ error: safetyError }, { status: 400 })
+      return badRequestResponse(safetyError)
     }
 
     // 5. Check for Anthropic API key
     const apiKey = process.env.ANTHROPIC_API_KEY
     if (!apiKey) {
       console.error('ANTHROPIC_API_KEY not configured')
-      return NextResponse.json(
-        { error: 'Essay feedback is temporarily unavailable. Please try again later.' },
-        { status: 503 }
-      )
+      return serviceUnavailableResponse('Essay feedback is temporarily unavailable. Please try again later.')
     }
 
     // 6. Call Claude API
@@ -172,14 +173,39 @@ export async function POST(request: NextRequest) {
     const safeEssay = body.essay.slice(0, 30_000)
     const userMessage = `QUESTION: ${safeQuestion}\n\nSTUDENT'S ESSAY:\n${safeEssay}`
 
-    const message = await anthropic.messages.create({
-      model: 'claude-sonnet-4-20250514',
-      max_tokens: 4096,
-      system: systemPrompt,
-      messages: [
-        { role: 'user', content: userMessage },
-      ],
-    }, { timeout: 50000 })
+    let message
+    try {
+      message = await anthropic.messages.create({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 4096,
+        system: systemPrompt,
+        messages: [
+          { role: 'user', content: userMessage },
+        ],
+      }, { timeout: 50000 })
+    } catch (aiError: unknown) {
+      const err = aiError as { status?: number; message?: string; error?: { type?: string } }
+
+      // Anthropic API timeout
+      if (
+        err.message?.includes('timeout') ||
+        err.message?.includes('ETIMEDOUT') ||
+        err.error?.type === 'timeout_error'
+      ) {
+        console.error('[api/essay-feedback] Anthropic API timeout')
+        return serviceUnavailableResponse('The AI service timed out. Please try again.')
+      }
+
+      // Anthropic rate limit (upstream)
+      if (err.status === 429) {
+        console.error('[api/essay-feedback] Anthropic rate limit hit')
+        return serviceUnavailableResponse('The AI service is temporarily overloaded. Please try again in a moment.')
+      }
+
+      // Other Anthropic errors are service errors
+      console.error('[api/essay-feedback] Anthropic API error:', aiError)
+      return serviceUnavailableResponse('The AI feedback service is currently unavailable. Please try again later.')
+    }
 
     // 7. Parse Claude's response
     const responseText = message.content
@@ -201,16 +227,10 @@ export async function POST(request: NextRequest) {
 
       // Check if Claude flagged the submission as invalid
       if (parsed.error === 'INVALID_SUBMISSION') {
-        return NextResponse.json(
-          { error: 'Your submission does not appear to be an essay. Please paste your own written work for feedback.' },
-          { status: 400 }
-        )
+        return badRequestResponse('Your submission does not appear to be an essay. Please paste your own written work for feedback.')
       }
       if (parsed.error === 'OFF_TOPIC') {
-        return NextResponse.json(
-          { error: 'This tool only provides feedback on GCSE English essays. Please submit English Language or Literature work.' },
-          { status: 400 }
-        )
+        return badRequestResponse('This tool only provides feedback on GCSE English essays. Please submit English Language or Literature work.')
       }
 
       // Validate required fields are present and correct types
@@ -224,27 +244,18 @@ export async function POST(request: NextRequest) {
         typeof parsed.annotatedFeedback !== 'string'
       ) {
         console.error('AI response missing required fields:', Object.keys(parsed))
-        return NextResponse.json(
-          { error: 'The AI returned an incomplete response. Please try again.' },
-          { status: 500 }
-        )
+        return serverErrorResponse('The AI returned an incomplete response. Please try again.')
       }
 
       if (!VALID_GRADE_BANDS.includes(parsed.gradeBand)) {
         console.error('AI returned invalid grade band:', parsed.gradeBand)
-        return NextResponse.json(
-          { error: 'The AI returned an invalid grade band. Please try again.' },
-          { status: 500 }
-        )
+        return serverErrorResponse('The AI returned an invalid grade band. Please try again.')
       }
 
       feedback = parsed
     } catch (parseError) {
       console.error('Failed to parse Claude response:', parseError, responseText.slice(0, 500))
-      return NextResponse.json(
-        { error: 'Failed to process feedback. Please try again.' },
-        { status: 500 }
-      )
+      return serverErrorResponse('Failed to process feedback. Please try again.')
     }
 
     // 8. Post-AI safety: truncate any overly long suggestions to prevent full rewrites
@@ -264,9 +275,6 @@ export async function POST(request: NextRequest) {
     })
   } catch (err) {
     console.error('[api/essay-feedback] Unexpected error:', err)
-    return NextResponse.json(
-      { error: 'Something went wrong. Please try again later.' },
-      { status: 500 }
-    )
+    return serverErrorResponse('Something went wrong. Please try again later.')
   }
 }
