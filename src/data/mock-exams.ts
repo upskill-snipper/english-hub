@@ -35,10 +35,10 @@ export interface MockExamQuestion {
   /** Optional stimulus extract shown above the question */
   extract?: string
   extractSource?: string
-  /** Model answer keyed by grade band */
-  modelAnswers?: Record<string, string>
+  /** Model answer keyed by grade band (or fullMark/partialMarks structure) */
+  modelAnswers?: Record<string, string | string[]>
   /** Mark scheme bullet points */
-  markScheme: string[]
+  markScheme?: string[]
 }
 
 export interface MockExamSection {

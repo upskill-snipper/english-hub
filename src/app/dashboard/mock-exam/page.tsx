@@ -1048,7 +1048,7 @@ function ExamResults() {
                           </p>
 
                           {/* Mark scheme */}
-                          {question.markScheme.length > 0 && (
+                          {question.markScheme && question.markScheme.length > 0 && (
                             <div className="mt-3 border-t border-green-500/10 pt-3">
                               <div className="mb-1 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                                 Mark Scheme

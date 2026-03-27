@@ -174,14 +174,14 @@ const InlinePaperPreview = memo(function InlinePaperPreview({ paper }: { paper: 
                         <div key={grade}>
                           <Badge className="mb-2 bg-emerald-500/15 text-emerald-300 border-emerald-500/30 text-xs">{grade}</Badge>
                           <p className="text-sm text-foreground/80 leading-relaxed">
-                            {answer.length > 400 ? answer.slice(0, 400) + '...' : answer}
+                            {String(answer).length > 400 ? String(answer).slice(0, 400) + '...' : String(answer)}
                           </p>
                         </div>
                       ))}
                     </div>
 
                     {/* Mark Scheme */}
-                    {question.markScheme.length > 0 && (
+                    {question.markScheme && question.markScheme.length > 0 && (
                       <div className="mt-3 rounded-lg bg-blue-500/5 border border-blue-500/20 p-4">
                         <p className="text-xs font-medium text-blue-400 mb-2 uppercase tracking-wider">Mark Scheme</p>
                         <ul className="space-y-1">
