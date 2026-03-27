@@ -228,7 +228,7 @@ export function FeedbackWidget() {
         aria-label={isOpen ? "Close feedback form" : "Send feedback or report an issue"}
         aria-expanded={isOpen}
         aria-haspopup="dialog"
-        className="fixed bottom-4 right-4 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-accent text-white shadow-lg hover:bg-accent-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-all hover:scale-110"
+        className="fixed bottom-4 right-4 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-white shadow-lg hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-all hover:scale-110"
       >
         {isOpen ? (
           /* X icon */
@@ -306,7 +306,7 @@ export function FeedbackWidget() {
               </div>
               <button
                 onClick={close}
-                className="mt-2 rounded-lg bg-accent px-5 py-2 text-sm font-medium text-white hover:bg-accent-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                className="mt-2 rounded-lg bg-primary px-5 py-2 text-sm font-medium text-white hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
               >
                 Close
               </button>
@@ -463,7 +463,7 @@ export function FeedbackWidget() {
                     <button
                       onClick={handleSubmit}
                       disabled={!canSubmitSuggestion || submitting}
-                      className="w-full rounded-lg bg-accent px-4 py-2.5 text-sm font-medium text-white hover:bg-accent-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 transition-colors"
+                      className="w-full rounded-lg bg-primary px-4 py-2.5 text-sm font-medium text-white hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 transition-colors"
                     >
                       {submitting ? "Submitting..." : "Submit Suggestion"}
                     </button>
@@ -579,7 +579,7 @@ export function FeedbackWidget() {
                     <button
                       onClick={handleSubmit}
                       disabled={!canSubmitIssue || submitting}
-                      className="w-full rounded-lg bg-accent px-4 py-2.5 text-sm font-medium text-white hover:bg-accent-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 transition-colors"
+                      className="w-full rounded-lg bg-primary px-4 py-2.5 text-sm font-medium text-white hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 transition-colors"
                     >
                       {submitting ? "Submitting..." : "Report Issue"}
                     </button>

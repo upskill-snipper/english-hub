@@ -30,7 +30,7 @@ export function SafeguardingBanner() {
               &mdash; Childline:{" "}
               <a
                 href="tel:08001111"
-                className="font-semibold text-accent hover:text-accent-600 underline"
+                className="font-semibold text-primary hover:text-primary/80 underline"
               >
                 0800 1111
               </a>
@@ -41,13 +41,13 @@ export function SafeguardingBanner() {
         <div className="flex items-center gap-3">
           <a
             href="tel:08001111"
-            className="text-xs font-semibold text-accent hover:text-accent-600 underline sm:hidden"
+            className="text-xs font-semibold text-primary hover:text-primary/80 underline sm:hidden"
           >
             Childline: 0800 1111
           </a>
           <Link
             href="/legal/safeguarding"
-            className="inline-flex items-center gap-1.5 rounded-md bg-primary px-3 py-1.5 text-xs font-medium text-white transition-colors hover:bg-primary-600 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+            className="inline-flex items-center gap-1.5 rounded-md bg-primary px-3 py-1.5 text-xs font-medium text-white transition-colors hover:bg-primary/90 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
           >
             Report a concern
             <svg

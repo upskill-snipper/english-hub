@@ -174,7 +174,7 @@ function ScoreBadge({ score }: { score: number | null }) {
     score >= 7
       ? 'bg-success-50 text-success-600 border-success-300'
       : score >= 4
-        ? 'bg-accent-50 text-accent-600 border-accent-200'
+        ? 'bg-primary/10 text-primary border-primary/20'
         : 'bg-warn-50 text-warn-600 border-warn-200';
 
   return (
@@ -377,7 +377,7 @@ function AITextArea({
           {/* Right: buttons */}
           <div className="flex items-center gap-2">
             {/* AI badge */}
-            <span className="hidden items-center gap-1 text-[10px] font-medium text-accent sm:inline-flex">
+            <span className="hidden items-center gap-1 text-[10px] font-medium text-primary sm:inline-flex">
               <svg
                 className="h-3 w-3"
                 viewBox="0 0 24 24"
@@ -402,9 +402,9 @@ function AITextArea({
               disabled={!canGetFeedback || disabled}
               className={[
                 'inline-flex items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-medium transition-all',
-                'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2',
+                'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2',
                 canGetFeedback && !disabled
-                  ? 'bg-accent text-white shadow-sm hover:bg-accent-600 active:bg-accent-700'
+                  ? 'bg-primary text-white shadow-sm hover:bg-primary/90 active:bg-primary/80'
                   : 'cursor-not-allowed bg-muted text-muted-foreground',
               ].join(' ')}
               aria-label="Get AI feedback on your answer"
@@ -464,7 +464,7 @@ function AITextArea({
                   'inline-flex items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-medium transition-all',
                   'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2',
                   wordCount >= minWords && !disabled
-                    ? 'bg-primary text-white shadow-sm hover:bg-primary-600 active:bg-primary-700'
+                    ? 'bg-primary text-white shadow-sm hover:bg-primary/90 active:bg-primary/80'
                     : 'cursor-not-allowed bg-muted text-muted-foreground',
                 ].join(' ')}
               >
@@ -498,7 +498,7 @@ function AITextArea({
         <div
           ref={feedbackRef}
           className={[
-            'mt-3 overflow-hidden rounded-xl border border-accent-200 bg-gradient-to-b from-accent-50/50 to-white shadow-sm',
+            'mt-3 overflow-hidden rounded-xl border border-primary/20 bg-gradient-to-b from-primary/5 to-card shadow-sm',
             'transform transition-all duration-300 ease-out',
             feedbackVisible
               ? 'translate-y-0 opacity-100'
@@ -553,7 +553,7 @@ function AITextArea({
 
             {/* Areas to Improve */}
             <div className="mt-4">
-              <h5 className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-accent-600">
+              <h5 className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-primary">
                 <svg
                   className="h-3.5 w-3.5"
                   viewBox="0 0 20 20"
@@ -574,7 +574,7 @@ function AITextArea({
                     key={i}
                     className="flex items-start gap-2 text-sm text-foreground"
                   >
-                    <span className="mt-1.5 block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
+                    <span className="mt-1.5 block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
                     {imp}
                   </li>
                 ))}
@@ -586,7 +586,7 @@ function AITextArea({
               <button
                 type="button"
                 onClick={() => setShowDetailed(!showDetailed)}
-                className="flex w-full items-center justify-between text-xs font-medium text-primary transition-colors hover:text-primary-600"
+                className="flex w-full items-center justify-between text-xs font-medium text-primary transition-colors hover:text-primary/80"
                 aria-expanded={showDetailed}
               >
                 <span>See detailed feedback</span>

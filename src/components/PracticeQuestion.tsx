@@ -163,14 +163,14 @@ function PracticeQuestion({
           <div className="flex flex-shrink-0 items-center gap-2">
             {/* Exam board badge */}
             {examBoard && (
-              <span className="inline-flex items-center rounded-full bg-primary-50 px-2.5 py-0.5 text-xs font-medium text-primary">
+              <span className="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
                 {examBoard}
               </span>
             )}
 
             {/* Mark allocation */}
             {marks !== undefined && (
-              <span className="inline-flex items-center rounded-full bg-accent-50 px-2.5 py-0.5 text-xs font-medium text-accent-700">
+              <span className="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
                 {marks} {marks === 1 ? 'mark' : 'marks'}
               </span>
             )}
@@ -223,7 +223,7 @@ function PracticeQuestion({
         {/* Start screen for timed practice */}
         {timed && !started && (
           <div className="flex flex-col items-center py-8 text-center">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-accent-50 text-accent">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
               <svg
                 className="h-8 w-8"
                 viewBox="0 0 20 20"
@@ -246,7 +246,7 @@ function PracticeQuestion({
             <button
               type="button"
               onClick={handleStart}
-              className="mt-6 inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-2.5 text-sm font-medium text-white shadow-sm transition-colors hover:bg-accent-600"
+              className="mt-6 inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-2.5 text-sm font-medium text-white shadow-sm transition-colors hover:bg-primary/90"
             >
               <svg
                 className="h-4 w-4"

@@ -30,9 +30,9 @@ interface ResourceCardProps {
 
 const TYPE_STYLES: Record<ResourceTypeBadge, { bg: string; text: string; ring: string }> = {
   'Study Guide': {
-    bg: 'bg-accent-50',
-    text: 'text-accent-700',
-    ring: 'ring-accent-200',
+    bg: 'bg-primary/10',
+    text: 'text-primary',
+    ring: 'ring-primary/20',
   },
   Practice: {
     bg: 'bg-success-50',
@@ -47,7 +47,7 @@ const TYPE_STYLES: Record<ResourceTypeBadge, { bg: string; text: string; ring: s
 };
 
 const BOARD_COLORS: Record<ExamBoardLabel, string> = {
-  AQA: 'bg-accent-50 text-accent-700',
+  AQA: 'bg-primary/10 text-primary',
   Edexcel: 'bg-success-50 text-success-700',
   Cambridge: 'bg-warn-50 text-warn-700',
   OCR: 'bg-purple-50 text-purple-700',
@@ -112,8 +112,8 @@ function ResourceCard({ resource, className = '' }: ResourceCardProps) {
       className={[
         'group relative flex flex-col rounded-2xl border border-border bg-card p-5 shadow-sm',
         'transition-all duration-300 ease-out',
-        'hover:shadow-md hover:border-primary-200 hover:-translate-y-0.5',
-        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 focus-visible:ring-offset-2',
+        'hover:shadow-md hover:border-primary/30 hover:-translate-y-0.5',
+        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2',
         className,
       ]
         .filter(Boolean)
@@ -135,7 +135,7 @@ function ResourceCard({ resource, className = '' }: ResourceCardProps) {
 
       {/* Tag ribbon */}
       {resource.tag && (
-        <span className="mt-3 inline-flex self-start items-center rounded-md bg-primary-500/10 px-2 py-0.5 text-xs font-semibold text-primary-700">
+        <span className="mt-3 inline-flex self-start items-center rounded-md bg-primary/10 px-2 py-0.5 text-xs font-semibold text-primary">
           {resource.tag}
         </span>
       )}

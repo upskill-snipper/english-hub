@@ -168,7 +168,7 @@ function Pill({
         'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2',
         sizeClasses,
         selected
-          ? 'bg-primary-500 text-white shadow-sm'
+          ? 'bg-primary text-white shadow-sm'
           : 'border border-border bg-card text-primary hover:border-primary/30 hover:bg-primary/10',
       ]
         .filter(Boolean)
@@ -500,7 +500,7 @@ function ResourceFilter({ filters, onChange, className = '' }: ResourceFilterPro
           <FilterIcon className="h-4 w-4" />
           Filters
           {activeCount > 0 && (
-            <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-primary-500 text-xs font-semibold text-white">
+            <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-primary text-xs font-semibold text-white">
               {activeCount}
             </span>
           )}
@@ -556,7 +556,7 @@ function ResourceFilter({ filters, onChange, className = '' }: ResourceFilterPro
               <button
                 type="button"
                 onClick={() => setMobileOpen(false)}
-                className="flex-1 rounded-xl bg-primary-500 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-primary-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                className="flex-1 rounded-xl bg-primary px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
               >
                 Apply Filters
               </button>
