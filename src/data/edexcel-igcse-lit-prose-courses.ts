@@ -1705,8 +1705,6 @@ const jlcModules: CourseModule[] = [
 <p>The novel moves between <strong>humour, grief, anger and tenderness</strong>. The mothers' stories often contain devastating revelations delivered in matter-of-fact tones — a stylistic choice that reflects both cultural reserve and the way trauma flattens emotional expression. The daughters' stories tend to be more self-consciously analytical, reflecting their American education and cultural position.</p>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> Tan's differentiation of voice between mothers and daughters is a key AO2 point. Discuss how the mothers' Chinese-inflected English and the daughters' standard American English reflect their different cultural positions and create a sense of the linguistic gap between generations.</div>
-`,
-    
 
 <h3>Motif Analysis: Numbers &amp; Numerical Symbolism</h3>
 <p>Tan uses numbers symbolically throughout the novel: the <strong>four mothers and four daughters</strong> create a perfect symmetry that the narrative insists is ultimately insufficient for communication. The <strong>sixteen stories</strong> (four per narrator) suggest fragmentation and multiplicity. More subtly, Tan frequently uses the numbers <strong>two and three</strong> — pairs and trios that suggest both connection and division. Suyuan's lost twin daughters haunt the narrative; the generations are separated by one crucial generation (the mothers' time in China versus the daughters' American birth).</p>
@@ -1731,8 +1729,8 @@ const jlcModules: CourseModule[] = [
 <div class="model-response">
 <p>Tan's rendering of Chinese idioms in English is a crucial stylistic technique that embodies the novel's central theme of cultural translation and the gaps between languages. When An-mei speaks about learning "to desire nothing, to swallow other people's misery, to eat my own bitterness," Tan uses a direct, literal translation of Chinese emotional expressions into English. The phrase "eat my own bitterness" — from the Chinese idiom "chi ku" — sounds strange and almost metaphorical to English readers, but for Chinese speakers it carries deep cultural resonance. This stylistic choice accomplishes several things simultaneously. First, it dramatises the linguistic gap between the mothers' native language and their adopted English — the mothers' emotional vocabulary does not fully translate. Second, it forces English-speaking readers to experience the interpretive difficulty that the daughters face: you must work to understand what the mothers mean, you must interpret across a cultural gulf. Third, it asserts the <strong>validity of Chinese linguistic and emotional registers</strong> — Tan does not translate or explain but demands readers meet the language on its own terms. This refusal to subordinate Chinese to English is itself a political act in a literature dominated by English monolingualism. In the context of Chinese-American identity, this technique insists that the mothers' Chinese selfhood cannot be fully absorbed into English or American identity; something always remains untranslatable, irreducible, and uniquely theirs.</p>
 </div>
-
-quiz: [
+`,
+      quiz: [
       {
         id: 'jlc-m5-q1',
         question: 'How does Tan differentiate the mothers\' and daughters\' narrative voices?',
