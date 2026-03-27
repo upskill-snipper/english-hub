@@ -176,7 +176,7 @@ export default function VocabularyHubPage() {
             >
               <div className="flex items-start justify-between">
                 <span className={c.iconColour}>{c.icon}</span>
-                <span className="rounded-full bg-primary-50 px-3 py-1 text-xs font-bold text-primary">
+                <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary">
                   {c.count} words
                 </span>
               </div>
@@ -223,7 +223,7 @@ export default function VocabularyHubPage() {
                 placeholder="Search for a word to upgrade..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full rounded-xl border border-gray-300 bg-card py-3 pl-10 pr-4 text-sm shadow-md transition focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
+                className="w-full rounded-xl border border-border bg-card py-3 pl-10 pr-4 text-sm shadow-md transition focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30"
               />
             </div>
           </div>
@@ -233,7 +233,7 @@ export default function VocabularyHubPage() {
             {filteredUpgrades.map((w) => (
               <div key={w.weak} className="rounded-xl border border-border bg-card p-5 shadow-md">
                 <div className="flex items-center gap-2">
-                  <span className="rounded-full bg-red-100 px-3 py-1 text-xs font-bold text-red-600 line-through">
+                  <span className="rounded-full bg-red-500/10 px-3 py-1 text-xs font-bold text-red-400 line-through">
                     {w.weak}
                   </span>
                   <svg className="h-4 w-4 text-muted-foreground" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">

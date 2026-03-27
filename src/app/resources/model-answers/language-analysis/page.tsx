@@ -15,12 +15,12 @@ export const metadata: Metadata = {
 function Annotation({ children, note }: { children: React.ReactNode; note: string }) {
   return (
     <span className="group relative">
-      <span className="rounded bg-primary/10 px-1 py-0.5 text-foreground border-b-2 border-dashed border-[#2E86C1]/40 cursor-help">
+      <span className="rounded bg-primary/10 px-1 py-0.5 text-foreground border-b-2 border-dashed border-primary/40 cursor-help">
         {children}
       </span>
-      <span className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 w-60 -translate-x-1/2 rounded-lg bg-[#1A5276] px-3 py-2 text-xs leading-relaxed text-white opacity-0 shadow-lg transition-opacity group-hover:pointer-events-auto group-hover:opacity-100">
+      <span className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 w-60 -translate-x-1/2 rounded-lg bg-primary px-3 py-2 text-xs leading-relaxed text-white opacity-0 shadow-lg transition-opacity group-hover:pointer-events-auto group-hover:opacity-100">
         {note}
-        <span className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-[#1A5276]" />
+        <span className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-primary" />
       </span>
     </span>
   );
@@ -40,7 +40,7 @@ function GradeBadge({ grade, color }: { grade: string; color: string }) {
 
 function ExaminerComment({ children }: { children: React.ReactNode }) {
   return (
-    <div className="mt-4 rounded-lg border-l-4 border-[#2E86C1] bg-primary/5 p-4">
+    <div className="mt-4 rounded-lg border-l-4 border-primary bg-primary/5 p-4">
       <p className="mb-1 text-xs font-bold uppercase tracking-wider text-primary">
         Examiner Commentary
       </p>
@@ -54,7 +54,7 @@ function ExaminerComment({ children }: { children: React.ReactNode }) {
 function Section({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
   return (
     <section id={id} className="scroll-mt-24">
-      <h2 className="mb-6 text-2xl font-bold text-foreground border-b-2 border-[#2E86C1]/20 pb-3">
+      <h2 className="mb-6 text-2xl font-bold text-foreground border-b-2 border-primary/20 pb-3">
         {title}
       </h2>
       {children}
@@ -69,7 +69,7 @@ export default function LanguageAnalysisPage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#1A5276]/80 px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary/80 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary/80">
             Model Answers
@@ -115,7 +115,7 @@ export default function LanguageAnalysisPage() {
                 <a
                   key={item.id}
                   href={`#${item.id}`}
-                  className="block rounded-lg px-3 py-1.5 text-muted-foreground hover:bg-primary/10 hover:text-foreground transition-colors"
+                  className="block rounded-lg px-3 py-1.5 text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
                 >
                   {item.label}
                 </a>
@@ -247,7 +247,7 @@ export default function LanguageAnalysisPage() {
             {/* ─── GRADE 9 ─────────────────────────────────────── */}
             <Section id="grade-9" title="Grade 9 Response">
               <div className="mb-4 flex items-center gap-3">
-                <GradeBadge grade="Grade 9" color="bg-[#1A5276]" />
+                <GradeBadge grade="Grade 9" color="bg-primary" />
                 <span className="text-sm text-muted-foreground">Estimated marks: 8 / 8</span>
               </div>
 
@@ -325,9 +325,9 @@ export default function LanguageAnalysisPage() {
                   <thead>
                     <tr>
                       <th className="border border-border bg-muted p-3 text-left font-bold text-foreground">Skill</th>
-                      <th className="border border-border bg-amber-50 p-3 text-left font-bold text-amber-700">Grade 5</th>
-                      <th className="border border-border bg-green-50 p-3 text-left font-bold text-green-700">Grade 7</th>
-                      <th className="border border-border bg-[#1A5276]/5 p-3 text-left font-bold text-foreground">Grade 9</th>
+                      <th className="border border-border bg-card p-3 text-left font-bold text-amber-600">Grade 5</th>
+                      <th className="border border-border bg-card p-3 text-left font-bold text-green-600">Grade 7</th>
+                      <th className="border border-border bg-card p-3 text-left font-bold text-foreground">Grade 9</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -367,8 +367,8 @@ export default function LanguageAnalysisPage() {
 
               {/* Key takeaways */}
               <div className="mt-8 grid gap-4 sm:grid-cols-3">
-                <div className="rounded-xl border-2 border-amber-300 bg-amber-50 p-5">
-                  <h3 className="font-bold text-amber-700">Grade 5 &rarr; 7</h3>
+                <div className="rounded-xl border-2 border-border bg-card p-5">
+                  <h3 className="font-bold text-amber-600">Grade 5 &rarr; 7</h3>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>&bull; Move from identifying to exploring</li>
                     <li>&bull; Use shorter, more precise quotations</li>
@@ -376,8 +376,8 @@ export default function LanguageAnalysisPage() {
                     <li>&bull; Avoid generic phrases like &ldquo;makes the reader feel&rdquo;</li>
                   </ul>
                 </div>
-                <div className="rounded-xl border-2 border-green-300 bg-green-50 p-5">
-                  <h3 className="font-bold text-green-700">Grade 7 &rarr; 9</h3>
+                <div className="rounded-xl border-2 border-border bg-card p-5">
+                  <h3 className="font-bold text-green-600">Grade 7 &rarr; 9</h3>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>&bull; Open with a conceptualised interpretation</li>
                     <li>&bull; Analyse grammar and sentence structure</li>
@@ -385,7 +385,7 @@ export default function LanguageAnalysisPage() {
                     <li>&bull; Show how techniques work together</li>
                   </ul>
                 </div>
-                <div className="rounded-xl border-2 border-[#2E86C1] bg-primary/5 p-5">
+                <div className="rounded-xl border-2 border-border bg-card p-5">
                   <h3 className="font-bold text-foreground">Top Tips</h3>
                   <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                     <li>&bull; Quality over quantity &mdash; fewer points, deeper analysis</li>

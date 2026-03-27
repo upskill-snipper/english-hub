@@ -85,7 +85,7 @@ export default function ModelAnswersPage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#1A5276]/80 px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary/80 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary/80">
             Learn from the Best
@@ -126,8 +126,8 @@ export default function ModelAnswersPage() {
                   key={board.id}
                   className={`rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
                     board.id === "all"
-                      ? "bg-[#1A5276] text-white"
-                      : "bg-gray-100 text-muted-foreground hover:bg-primary/10 hover:text-foreground"
+                      ? "bg-primary text-white"
+                      : "bg-muted text-muted-foreground hover:bg-primary/10 hover:text-foreground"
                   }`}
                 >
                   {board.label}
@@ -147,8 +147,8 @@ export default function ModelAnswersPage() {
                   key={grade.id}
                   className={`rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
                     grade.id === "all"
-                      ? "bg-[#1A5276] text-white"
-                      : "bg-gray-100 text-muted-foreground hover:bg-primary/10 hover:text-foreground"
+                      ? "bg-primary text-white"
+                      : "bg-muted text-muted-foreground hover:bg-primary/10 hover:text-foreground"
                   }`}
                 >
                   {grade.label}
@@ -166,7 +166,7 @@ export default function ModelAnswersPage() {
             <Link
               key={type.slug}
               href={`/resources/model-answers/${type.slug}`}
-              className="group rounded-xl border border-border bg-card p-6 shadow-md transition-all hover:border-[#2E86C1]/40 hover:shadow-md"
+              className="group rounded-xl border border-border bg-card p-6 shadow-md transition-all hover:border-primary/40 hover:shadow-md"
             >
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0 rounded-lg bg-primary/10 p-3">
@@ -196,13 +196,13 @@ export default function ModelAnswersPage() {
         </div>
 
         {/* How to Use section */}
-        <div className="mt-12 rounded-xl border border-[#2E86C1]/20 bg-primary/5 p-6 sm:p-8">
+        <div className="mt-12 rounded-xl border border-primary/20 bg-primary/5 p-6 sm:p-8">
           <h2 className="text-xl font-bold text-foreground">
             How to Use These Model Answers
           </h2>
           <div className="mt-4 grid gap-4 sm:grid-cols-3">
             <div className="flex items-start gap-3">
-              <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-sm font-bold text-white">
+              <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
                 1
               </span>
               <div>
@@ -213,7 +213,7 @@ export default function ModelAnswersPage() {
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-sm font-bold text-white">
+              <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
                 2
               </span>
               <div>
@@ -224,7 +224,7 @@ export default function ModelAnswersPage() {
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-sm font-bold text-white">
+              <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
                 3
               </span>
               <div>

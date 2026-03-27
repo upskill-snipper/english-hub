@@ -910,7 +910,7 @@ export default function QuoteTesterPage() {
                       <span>Progress</span>
                       <span>{pct}%</span>
                     </div>
-                    <div className="mt-1 h-2 w-full overflow-hidden rounded-full bg-gray-100">
+                    <div className="mt-1 h-2 w-full overflow-hidden rounded-full bg-muted">
                       <div
                         className="h-full rounded-full bg-gradient-to-r from-[#1A5276] to-[#2E86C1] transition-all duration-500"
                         style={{ width: `${pct}%` }}
@@ -1060,11 +1060,11 @@ export default function QuoteTesterPage() {
                   Great work! A few more to nail down -- try the retry mode.
                 </p>
               ) : pct >= 50 ? (
-                <p className="text-sm font-semibold text-amber-700">
+                <p className="text-sm font-semibold text-amber-500">
                   Good effort! Keep practising to strengthen your recall.
                 </p>
               ) : (
-                <p className="text-sm font-semibold text-red-600">
+                <p className="text-sm font-semibold text-red-500">
                   Keep going! Use the retry mode to focus on your weak spots.
                 </p>
               )}
@@ -1087,7 +1087,7 @@ export default function QuoteTesterPage() {
               )}
               <button
                 onClick={backToMenu}
-                className="rounded-lg border border-gray-300 px-4 py-2.5 text-sm font-semibold text-muted-foreground transition-colors hover:bg-muted"
+                className="rounded-lg border border-border px-4 py-2.5 text-sm font-semibold text-muted-foreground transition-colors hover:bg-muted"
               >
                 Choose Another Text
               </button>
@@ -1125,7 +1125,7 @@ export default function QuoteTesterPage() {
                             className={`inline-flex items-center rounded px-2 py-0.5 text-[10px] font-semibold ${
                               rec?.correct
                                 ? "bg-emerald-100 text-emerald-700"
-                                : "bg-red-100 text-red-700"
+                                : "bg-red-500/10 text-red-500"
                             }`}
                           >
                             {cat.key === "speaker"
@@ -1202,7 +1202,7 @@ export default function QuoteTesterPage() {
         </div>
 
         {/* Progress bar */}
-        <div className="mt-3 h-2 w-full overflow-hidden rounded-full bg-gray-100">
+        <div className="mt-3 h-2 w-full overflow-hidden rounded-full bg-muted">
           <div
             className="h-full rounded-full bg-gradient-to-r from-[#1A5276] to-[#2E86C1] transition-all duration-500"
             style={{ width: `${progressPct}%` }}
@@ -1226,10 +1226,10 @@ export default function QuoteTesterPage() {
                   isDone && answer?.correct
                     ? "bg-emerald-100 text-emerald-700"
                     : isDone && !answer?.correct
-                    ? "bg-red-100 text-red-700"
+                    ? "bg-red-500/10 text-red-500"
                     : isCurrent
                     ? "bg-[#1A5276] text-white"
-                    : "bg-gray-100 text-muted-foreground"
+                    : "bg-muted text-muted-foreground"
                 }`}
               >
                 <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
@@ -1246,7 +1246,7 @@ export default function QuoteTesterPage() {
                 </span>
               </div>
               {idx < CATEGORIES.length - 1 && (
-                <div className={`h-0.5 w-3 ${isDone ? "bg-primary" : "bg-gray-200"}`} />
+                <div className={`h-0.5 w-3 ${isDone ? "bg-primary" : "bg-muted"}`} />
               )}
             </div>
           );
@@ -1292,7 +1292,7 @@ export default function QuoteTesterPage() {
                         "border-emerald-500 bg-emerald-50 text-emerald-800 ring-2 ring-emerald-200";
                     } else if (isSelected && !isCorrectOption) {
                       btnClass +=
-                        "border-red-400 bg-red-50 text-red-700 ring-2 ring-red-200";
+                        "border-red-400 bg-red-50 text-red-500 ring-2 ring-red-200";
                     } else {
                       btnClass += "border-border bg-muted text-muted-foreground";
                     }

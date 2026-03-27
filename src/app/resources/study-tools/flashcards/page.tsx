@@ -496,7 +496,7 @@ export default function FlashcardsPage() {
             className={`rounded-lg px-4 py-2 text-sm font-semibold transition-colors ${
               activeSet === set.slug
                 ? "bg-primary text-white"
-                : "bg-gray-100 text-muted-foreground hover:bg-gray-200"
+                : "bg-card text-muted-foreground hover:bg-muted border border-border"
             }`}
           >
             {set.title}
@@ -508,7 +508,7 @@ export default function FlashcardsPage() {
       <div className="mb-6 flex flex-wrap items-center gap-3">
         <button
           onClick={handleShuffle}
-          className="inline-flex items-center gap-1.5 rounded-lg border border-gray-300 bg-card px-3 py-2 text-sm font-medium text-muted-foreground transition hover:bg-muted"
+          className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-card px-3 py-2 text-sm font-medium text-muted-foreground transition hover:bg-muted"
         >
           <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 00-3.7-3.7 48.678 48.678 0 00-7.324 0 4.006 4.006 0 00-3.7 3.7c-.017.22-.032.441-.046.662M19.5 12l3-3m-3 3l-3-3m-12 3c0 1.232.046 2.453.138 3.662a4.006 4.006 0 003.7 3.7 48.656 48.656 0 007.324 0 4.006 4.006 0 003.7-3.7c.017-.22.032-.441.046-.662M4.5 12l3 3m-3-3l-3 3" />
@@ -517,25 +517,25 @@ export default function FlashcardsPage() {
         </button>
         <button
           onClick={revealAll}
-          className="inline-flex items-center gap-1.5 rounded-lg border border-gray-300 bg-card px-3 py-2 text-sm font-medium text-muted-foreground transition hover:bg-muted"
+          className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-card px-3 py-2 text-sm font-medium text-muted-foreground transition hover:bg-muted"
         >
           Reveal All
         </button>
         <button
           onClick={hideAll}
-          className="inline-flex items-center gap-1.5 rounded-lg border border-gray-300 bg-card px-3 py-2 text-sm font-medium text-muted-foreground transition hover:bg-muted"
+          className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-card px-3 py-2 text-sm font-medium text-muted-foreground transition hover:bg-muted"
         >
           Hide All
         </button>
 
-        <div className="h-5 w-px bg-gray-200" />
+        <div className="h-5 w-px bg-border" />
 
         <label className="flex cursor-pointer items-center gap-2 text-sm text-muted-foreground">
           <input
             type="checkbox"
             checked={testMode}
             onChange={(e) => setTestMode(e.target.checked)}
-            className="h-4 w-4 rounded border-gray-300 text-accent focus:ring-accent/30"
+            className="h-4 w-4 rounded border-border text-primary focus:ring-primary/30"
           />
           <span id="test-mode" className="font-medium">Test mode</span>
           <span className="text-muted-foreground">(hide mastered)</span>
@@ -546,9 +546,9 @@ export default function FlashcardsPage() {
           <span className="text-sm text-muted-foreground">
             {masteredInSet} / {currentSet.cards.length} mastered
           </span>
-          <div className="h-2 w-24 overflow-hidden rounded-full bg-gray-100">
+          <div className="h-2 w-24 overflow-hidden rounded-full bg-muted">
             <div
-              className="h-full rounded-full bg-gradient-to-r from-accent to-accent-400 transition-all duration-500"
+              className="h-full rounded-full bg-gradient-to-r from-primary to-emerald-400 transition-all duration-500"
               style={{ width: `${progressPct}%` }}
             />
           </div>
@@ -575,7 +575,7 @@ export default function FlashcardsPage() {
               <div
                 key={card.id}
                 className={`group relative overflow-hidden rounded-xl border bg-card shadow-md transition-all ${
-                  isMastered ? "border-emerald-200 bg-emerald-50/30" : "border-border hover:shadow-md"
+                  isMastered ? "border-emerald-500/30 bg-emerald-500/10" : "border-border hover:shadow-md"
                 }`}
               >
                 {/* Quote (always visible) */}
@@ -606,7 +606,7 @@ export default function FlashcardsPage() {
                       {card.themes.map((theme) => (
                         <span
                           key={theme}
-                          className="rounded-full bg-accent-50 px-2.5 py-0.5 text-xs font-medium text-accent-700"
+                          className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary"
                         >
                           {theme}
                         </span>
@@ -622,7 +622,7 @@ export default function FlashcardsPage() {
                     className={`inline-flex items-center gap-1.5 text-xs font-semibold transition-colors ${
                       isMastered
                         ? "text-emerald-600 hover:text-emerald-700"
-                        : "text-muted-foreground hover:text-accent"
+                        : "text-muted-foreground hover:text-primary"
                     }`}
                   >
                     <svg
@@ -644,23 +644,23 @@ export default function FlashcardsPage() {
       )}
 
       {/* Study tip */}
-      <div className="mt-10 rounded-xl border border-accent-100 bg-accent-50/50 p-6">
+      <div className="mt-10 rounded-xl border border-primary/20 bg-primary/[0.04] p-6">
         <h3 className="text-lg font-bold text-foreground">Flashcard revision tips</h3>
         <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
           <li className="flex items-start gap-2">
-            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
             <span><strong>Test, do not just read.</strong> Try to recall the analysis before clicking to reveal it.</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
             <span><strong>Link quotes to themes.</strong> For each quote, practise explaining how it connects to at least two themes.</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
             <span><strong>Use the shuffle feature.</strong> Randomising the order prevents you from relying on sequential memory.</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
             <span><strong>Revisit mastered quotes.</strong> Turn off test mode periodically to make sure you still remember everything.</span>
           </li>
         </ul>

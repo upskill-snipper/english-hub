@@ -306,7 +306,7 @@ export default function ChecklistsPage() {
   if (!mounted) {
     return (
       <div className="flex min-h-[400px] items-center justify-center">
-        <div className="h-8 w-8 animate-spin rounded-full border-4 border-accent border-t-transparent" />
+        <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
       </div>
     );
   }
@@ -336,13 +336,13 @@ export default function ChecklistsPage() {
               className={`rounded-lg px-4 py-2 text-sm font-semibold transition-colors ${
                 activeBoard === b.slug
                   ? "bg-primary text-white"
-                  : "bg-gray-100 text-muted-foreground hover:bg-gray-200"
+                  : "bg-muted text-muted-foreground hover:bg-muted/80"
               }`}
             >
               {b.label}
               {bChecked.size > 0 && (
                 <span className={`ml-2 rounded-full px-2 py-0.5 text-[10px] font-bold ${
-                  activeBoard === b.slug ? "bg-card/20 text-white" : "bg-accent-100 text-accent-700"
+                  activeBoard === b.slug ? "bg-card/20 text-white" : "bg-primary/10 text-primary"
                 }`}>
                   {bPct}%
                 </span>
@@ -379,18 +379,18 @@ export default function ChecklistsPage() {
             </div>
           </div>
         </div>
-        <div className="mt-3 h-3 w-full overflow-hidden rounded-full bg-gray-100">
+        <div className="mt-3 h-3 w-full overflow-hidden rounded-full bg-muted">
           <div
             className={`h-full rounded-full transition-all duration-700 ${
               progressPct === 100
                 ? "bg-gradient-to-r from-emerald-500 to-emerald-400"
-                : "bg-gradient-to-r from-accent to-accent-400"
+                : "bg-gradient-to-r from-primary to-primary/60"
             }`}
             style={{ width: `${progressPct}%` }}
           />
         </div>
         {progressPct === 100 && (
-          <p className="mt-2 text-sm font-semibold text-emerald-600">
+          <p className="mt-2 text-sm font-semibold text-emerald-500">
             All topics covered! Make sure to revisit weak areas before the exam.
           </p>
         )}
@@ -415,9 +415,9 @@ export default function ChecklistsPage() {
                   <span className="text-xs text-muted-foreground">
                     {sectionChecked}/{sectionTotal}
                   </span>
-                  <div className="h-2 w-16 overflow-hidden rounded-full bg-gray-100">
+                  <div className="h-2 w-16 overflow-hidden rounded-full bg-muted">
                     <div
-                      className="h-full rounded-full bg-accent transition-all duration-500"
+                      className="h-full rounded-full bg-primary transition-all duration-500"
                       style={{ width: `${sectionPct}%` }}
                     />
                   </div>
@@ -425,7 +425,7 @@ export default function ChecklistsPage() {
               </div>
 
               {/* Items */}
-              <ul className="divide-y divide-gray-50">
+              <ul className="divide-y divide-border">
                 {section.items.map((item) => {
                   const isChecked = boardChecked.has(item.id);
                   return (
@@ -435,7 +435,7 @@ export default function ChecklistsPage() {
                           type="checkbox"
                           checked={isChecked}
                           onChange={() => toggleItem(item.id)}
-                          className="mt-0.5 h-4 w-4 shrink-0 rounded border-gray-300 text-accent focus:ring-accent/30"
+                          className="mt-0.5 h-4 w-4 shrink-0 rounded border-border text-primary focus:ring-primary/30"
                         />
                         <div className="flex-1">
                           <span
@@ -446,7 +446,7 @@ export default function ChecklistsPage() {
                             {item.label}
                           </span>
                           {item.detail && (
-                            <p className={`mt-0.5 text-xs ${isChecked ? "text-gray-300" : "text-muted-foreground"}`}>
+                            <p className={`mt-0.5 text-xs ${isChecked ? "text-muted-foreground/50" : "text-muted-foreground"}`}>
                               {item.detail}
                             </p>
                           )}
@@ -467,23 +467,23 @@ export default function ChecklistsPage() {
       </div>
 
       {/* Tip box */}
-      <div className="mt-10 rounded-xl border border-accent-100 bg-accent-50/50 p-6">
+      <div className="mt-10 rounded-xl border border-primary/20 bg-primary/[0.04] p-6">
         <h3 className="text-lg font-bold text-foreground">Using these checklists effectively</h3>
         <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
           <li className="flex items-start gap-2">
-            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
             <span><strong>Do not tick until you are confident.</strong> Only check a skill when you can explain it and demonstrate it in an exam answer.</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
             <span><strong>Prioritise unchecked items.</strong> Focus your remaining revision time on the skills you have not yet covered.</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
             <span><strong>Revisit periodically.</strong> Come back weekly to uncheck anything you feel less confident about.</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
             <span><strong>Your progress is saved locally.</strong> It persists in your browser so you can return any time. Clearing browser data will reset it.</span>
           </li>
         </ul>

@@ -107,7 +107,7 @@ export default function StudyToolsHub() {
           <Link
             key={tool.href}
             href={tool.href}
-            className="group relative flex flex-col overflow-hidden rounded-xl border border-border bg-card shadow-md transition hover:shadow-lg hover:border-accent-300"
+            className="group relative flex flex-col overflow-hidden rounded-xl border border-border bg-card shadow-md transition hover:shadow-lg hover:border-primary/30"
           >
             {/* Gradient header */}
             <div className={`bg-gradient-to-br ${tool.colour} px-6 py-6 text-white`}>
@@ -127,7 +127,7 @@ export default function StudyToolsHub() {
               <ul className="mt-4 space-y-1.5">
                 {tool.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-2 text-sm text-muted-foreground">
-                    <svg className="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                    <svg className="mt-0.5 h-4 w-4 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
                     {feature}
@@ -137,7 +137,7 @@ export default function StudyToolsHub() {
 
               {/* CTA */}
               <div className="mt-auto pt-5">
-                <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent group-hover:text-primary transition-colors">
+                <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:text-primary transition-colors">
                   Open tool
                   <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -150,19 +150,19 @@ export default function StudyToolsHub() {
       </div>
 
       {/* Tip box */}
-      <div className="mt-10 rounded-xl border border-accent-100 bg-accent-50/50 p-6">
+      <div className="mt-10 rounded-xl border border-primary/20 bg-primary/[0.04] p-6">
         <h3 className="text-lg font-bold text-foreground">Getting the most from these tools</h3>
         <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
           <li className="flex items-start gap-2">
-            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
             <span><strong>Start with the revision planner.</strong> Set your exam dates and build a schedule before diving into individual topics.</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
             <span><strong>Use flashcards daily.</strong> Short, regular sessions are far more effective than marathon cramming.</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
             <span><strong>Track your progress.</strong> Use the checklists to identify weak areas and focus your remaining revision time.</span>
           </li>
         </ul>

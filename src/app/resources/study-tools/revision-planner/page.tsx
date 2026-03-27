@@ -286,7 +286,7 @@ export default function RevisionPlannerPage() {
   if (!mounted) {
     return (
       <div className="flex min-h-[400px] items-center justify-center">
-        <div className="h-8 w-8 animate-spin rounded-full border-4 border-accent border-t-transparent" />
+        <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
       </div>
     );
   }
@@ -319,18 +319,18 @@ export default function RevisionPlannerPage() {
                 placeholder="e.g. AQA English Language Paper 1"
                 value={newLabel}
                 onChange={(e) => setNewLabel(e.target.value)}
-                className="flex-1 rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+                className="flex-1 rounded-lg border border-border px-3 py-2 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30"
               />
               <input
                 type="date"
                 value={newDate}
                 onChange={(e) => setNewDate(e.target.value)}
-                className="rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+                className="rounded-lg border border-border px-3 py-2 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30"
               />
               <button
                 onClick={addExam}
                 disabled={!newLabel.trim() || !newDate}
-                className="rounded-lg bg-accent px-5 py-2 text-sm font-semibold text-white transition hover:bg-accent-600 disabled:opacity-40 disabled:cursor-not-allowed"
+                className="rounded-lg bg-primary px-5 py-2 text-sm font-semibold text-white transition hover:bg-primary/90 disabled:opacity-40 disabled:cursor-not-allowed"
               >
                 Add
               </button>
@@ -348,7 +348,7 @@ export default function RevisionPlannerPage() {
                       className={`flex items-center justify-between rounded-lg border px-4 py-3 ${
                         isPast
                           ? "border-border bg-muted opacity-60"
-                          : "border-accent-100 bg-accent-50/40"
+                          : "border-primary/20 bg-primary/[0.04]"
                       }`}
                     >
                       <div>
@@ -359,12 +359,12 @@ export default function RevisionPlannerPage() {
                         <span
                           className={`rounded-full px-3 py-1 text-xs font-bold ${
                             isPast
-                              ? "bg-gray-200 text-muted-foreground"
+                              ? "bg-muted text-muted-foreground"
                               : days <= 7
-                                ? "bg-red-100 text-red-700"
+                                ? "bg-red-500/10 text-red-500"
                                 : days <= 28
-                                  ? "bg-amber-100 text-amber-700"
-                                  : "bg-emerald-100 text-emerald-700"
+                                  ? "bg-amber-500/10 text-amber-500"
+                                  : "bg-emerald-500/10 text-emerald-500"
                           }`}
                         >
                           {isPast ? "Done" : days === 0 ? "Today!" : `${days} day${days !== 1 ? "s" : ""}`}
@@ -443,9 +443,9 @@ export default function RevisionPlannerPage() {
                     key={day}
                     className={`flex h-10 items-center justify-center rounded-lg text-sm transition-colors ${
                       isExamDay
-                        ? "bg-red-100 font-bold text-red-700 ring-2 ring-red-300"
+                        ? "bg-red-500/10 font-bold text-red-500 ring-2 ring-red-500/30"
                         : isToday
-                          ? "bg-accent-100 font-semibold text-accent-700"
+                          ? "bg-primary/10 font-semibold text-primary"
                           : "text-muted-foreground hover:bg-muted"
                     }`}
                     title={isExamDay ? exams.filter((e) => e.date === dateStr).map((e) => e.label).join(", ") : undefined}
@@ -458,10 +458,10 @@ export default function RevisionPlannerPage() {
 
             <div className="mt-3 flex items-center gap-4 text-xs text-muted-foreground">
               <span className="flex items-center gap-1.5">
-                <span className="h-3 w-3 rounded bg-accent-100 ring-1 ring-accent-300" /> Today
+                <span className="h-3 w-3 rounded bg-primary/20 ring-1 ring-primary/40" /> Today
               </span>
               <span className="flex items-center gap-1.5">
-                <span className="h-3 w-3 rounded bg-red-100 ring-1 ring-red-300" /> Exam day
+                <span className="h-3 w-3 rounded bg-red-500/20 ring-1 ring-red-500/40" /> Exam day
               </span>
             </div>
           </section>
@@ -483,13 +483,13 @@ export default function RevisionPlannerPage() {
                     key={phase}
                     className={`rounded-lg border p-4 transition-colors ${
                       isActive
-                        ? "border-accent-300 bg-accent-50/60"
+                        ? "border-primary/30 bg-primary/[0.08]"
                         : "border-border bg-muted/50"
                     }`}
                   >
-                    <h3 className={`text-sm font-bold ${isActive ? "text-accent-700" : "text-muted-foreground"}`}>
+                    <h3 className={`text-sm font-bold ${isActive ? "text-primary" : "text-muted-foreground"}`}>
                       {isActive && (
-                        <span className="mr-2 inline-block rounded bg-accent px-2 py-0.5 text-[10px] font-bold uppercase text-white">
+                        <span className="mr-2 inline-block rounded bg-primary px-2 py-0.5 text-[10px] font-bold uppercase text-white">
                           Current
                         </span>
                       )}
@@ -498,7 +498,7 @@ export default function RevisionPlannerPage() {
                     <ul className="mt-2 space-y-1.5">
                       {PHASE_TIPS[phase].tips.map((tip, i) => (
                         <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
-                          <span className={`mt-1 h-1.5 w-1.5 shrink-0 rounded-full ${isActive ? "bg-accent" : "bg-gray-300"}`} />
+                          <span className={`mt-1 h-1.5 w-1.5 shrink-0 rounded-full ${isActive ? "bg-primary" : "bg-muted-foreground/30"}`} />
                           {tip}
                         </li>
                       ))}
@@ -522,7 +522,7 @@ export default function RevisionPlannerPage() {
             <select
               value={selectedBoard}
               onChange={(e) => setSelectedBoard(e.target.value)}
-              className="mt-4 w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+              className="mt-4 w-full rounded-lg border border-border px-3 py-2 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30"
             >
               {Object.keys(BOARD_TOPICS).map((board) => (
                 <option key={board} value={board}>
@@ -535,11 +535,11 @@ export default function RevisionPlannerPage() {
             <div className="mt-4">
               <div className="flex items-center justify-between text-xs text-muted-foreground">
                 <span>{completedCount} / {boardTopics.length} topics</span>
-                <span className="font-semibold text-accent">{progressPct}%</span>
+                <span className="font-semibold text-primary">{progressPct}%</span>
               </div>
-              <div className="mt-1.5 h-2.5 w-full overflow-hidden rounded-full bg-gray-100">
+              <div className="mt-1.5 h-2.5 w-full overflow-hidden rounded-full bg-muted">
                 <div
-                  className="h-full rounded-full bg-gradient-to-r from-accent to-accent-400 transition-all duration-500"
+                  className="h-full rounded-full bg-gradient-to-r from-primary to-primary/60 transition-all duration-500"
                   style={{ width: `${progressPct}%` }}
                 />
               </div>
@@ -554,7 +554,7 @@ export default function RevisionPlannerPage() {
                       type="checkbox"
                       checked={topic.done}
                       onChange={() => toggleTopic(topic.id)}
-                      className="mt-0.5 h-4 w-4 shrink-0 rounded border-gray-300 text-accent focus:ring-accent/30"
+                      className="mt-0.5 h-4 w-4 shrink-0 rounded border-border text-primary focus:ring-primary/30"
                     />
                     <span className={`text-sm leading-snug ${topic.done ? "text-muted-foreground line-through" : "text-muted-foreground"}`}>
                       {topic.label}
@@ -567,8 +567,8 @@ export default function RevisionPlannerPage() {
 
           {/* Quick countdown card */}
           {nearestExam && daysUntil(nearestExam.date) >= 0 && (
-            <section className="rounded-xl border-2 border-accent-200 bg-gradient-to-br from-accent-50 to-white p-6 text-center shadow-md">
-              <p className="text-xs font-semibold uppercase tracking-wider text-accent-600">
+            <section className="rounded-xl border-2 border-primary/30 bg-gradient-to-br from-primary/10 to-card p-6 text-center shadow-md">
+              <p className="text-xs font-semibold uppercase tracking-wider text-primary/70">
                 Next Exam
               </p>
               <p className="mt-2 text-4xl font-extrabold text-primary">

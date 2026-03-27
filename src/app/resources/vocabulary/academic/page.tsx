@@ -273,7 +273,7 @@ export default function AcademicVocabularyPage() {
               placeholder="Search words, definitions, or synonyms..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full rounded-xl border border-gray-300 bg-card py-3 pl-10 pr-4 text-sm shadow-md transition focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20"
+              className="w-full rounded-xl border border-border bg-card py-3 pl-10 pr-4 text-sm shadow-md transition focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30"
             />
           </div>
           <div className="flex flex-wrap gap-2">
@@ -284,7 +284,7 @@ export default function AcademicVocabularyPage() {
                 className={`rounded-full px-4 py-2 text-sm font-medium transition ${
                   activeCategory === f.id
                     ? "bg-primary text-white shadow-md"
-                    : "bg-gray-100 text-muted-foreground hover:bg-gray-200"
+                    : "bg-muted text-muted-foreground hover:bg-muted/80"
                 }`}
               >
                 {f.label}
@@ -383,13 +383,13 @@ export default function AcademicVocabularyPage() {
           {WORDS_TO_REPLACE.map((item) => (
             <div key={item.overused} className="rounded-xl border border-border bg-card p-5 shadow-md">
               <div className="flex items-center gap-2 mb-4">
-                <span className="rounded-full bg-red-100 px-3 py-1 text-sm font-bold text-red-600 line-through">
+                <span className="rounded-full bg-red-500/10 px-3 py-1 text-sm font-bold text-red-400 line-through">
                   {item.overused}
                 </span>
                 <svg className="h-4 w-4 text-muted-foreground" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                 </svg>
-                <span className="text-xs font-medium text-green-600">Try instead:</span>
+                <span className="text-xs font-medium text-emerald-400">Try instead:</span>
               </div>
               <ul className="space-y-2">
                 {item.alternatives.map((alt) => (

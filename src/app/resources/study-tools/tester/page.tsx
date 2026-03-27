@@ -544,7 +544,7 @@ export default function QuoteTesterPage() {
           </p>
 
           {/* Progress bar */}
-          <div className="mx-auto mt-5 h-3 w-full max-w-xs overflow-hidden rounded-full bg-gray-100">
+          <div className="mx-auto mt-5 h-3 w-full max-w-xs overflow-hidden rounded-full bg-muted">
             <div
               className="h-full rounded-full transition-all duration-700"
               style={{
@@ -575,7 +575,7 @@ export default function QuoteTesterPage() {
             </button>
             <button
               onClick={handleNewQuiz}
-              className="rounded-lg border border-gray-300 bg-card px-5 py-2.5 text-sm font-semibold text-muted-foreground transition hover:bg-muted"
+              className="rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-muted-foreground transition hover:bg-muted"
             >
               New Quiz
             </button>
@@ -639,7 +639,7 @@ export default function QuoteTesterPage() {
             >
               <div className="border-b border-red-100 bg-red-50 px-5 py-3">
                 <div className="flex items-center gap-2">
-                  <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-red-100 text-xs font-bold text-red-600">
+                  <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-red-500/10 text-xs font-bold text-red-500">
                     {idx + 1}
                   </span>
                   <span className="text-sm font-semibold text-red-800">
@@ -685,13 +685,13 @@ export default function QuoteTesterPage() {
           </button>
           <button
             onClick={handleNewQuiz}
-            className="rounded-lg border border-gray-300 bg-card px-5 py-2.5 text-sm font-semibold text-muted-foreground transition hover:bg-muted"
+            className="rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-muted-foreground transition hover:bg-muted"
           >
             New Quiz
           </button>
           <button
             onClick={() => setShowReview(false)}
-            className="rounded-lg border border-gray-300 bg-card px-5 py-2.5 text-sm font-semibold text-muted-foreground transition hover:bg-muted"
+            className="rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-muted-foreground transition hover:bg-muted"
           >
             Back to Score
           </button>
@@ -724,8 +724,8 @@ export default function QuoteTesterPage() {
               <span
                 className={`inline-flex items-center gap-1 rounded-full px-3 py-1 text-sm font-bold ${
                   timeLeft <= 10
-                    ? "bg-red-100 text-red-700"
-                    : "bg-gray-100 text-muted-foreground"
+                    ? "bg-red-500/10 text-red-500"
+                    : "bg-muted text-muted-foreground"
                 }`}
               >
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
@@ -738,7 +738,7 @@ export default function QuoteTesterPage() {
         </div>
 
         {/* Progress bar */}
-        <div className="mb-6 h-2 w-full overflow-hidden rounded-full bg-gray-100">
+        <div className="mb-6 h-2 w-full overflow-hidden rounded-full bg-muted">
           <div
             className="h-full rounded-full bg-gradient-to-r from-[#1A5276] to-[#2E86C1] transition-all duration-300"
             style={{ width: `${((currentIdx + 1) / questions.length) * 100}%` }}
@@ -753,7 +753,7 @@ export default function QuoteTesterPage() {
 
           {/* Source text badge */}
           {selectedMode !== "which-text" && (
-            <span className="mt-2 inline-block rounded-full bg-gray-100 px-3 py-0.5 text-xs font-medium text-muted-foreground">
+            <span className="mt-2 inline-block rounded-full bg-muted px-3 py-0.5 text-xs font-medium text-muted-foreground">
               {currentQuestion.sourceText}
             </span>
           )}
@@ -770,7 +770,7 @@ export default function QuoteTesterPage() {
                 if (isCorrect) {
                   classes += "border-emerald-500 bg-emerald-50 text-emerald-800";
                 } else if (isSelected && !isCorrect) {
-                  classes += "border-red-400 bg-red-50 text-red-700";
+                  classes += "border-red-400 bg-red-50 text-red-500";
                 } else {
                   classes += "border-border bg-muted text-muted-foreground";
                 }
@@ -875,14 +875,14 @@ export default function QuoteTesterPage() {
                     className={`flex w-full items-center gap-3 rounded-lg border-2 px-4 py-3 text-left transition ${
                       isActive
                         ? "border-[#2E86C1] bg-primary/5"
-                        : "border-border hover:border-gray-300"
+                        : "border-border hover:border-border"
                     }`}
                   >
                     <div
                       className={`flex h-5 w-5 shrink-0 items-center justify-center rounded border-2 transition ${
                         isActive
                           ? "border-[#2E86C1] bg-primary"
-                          : "border-gray-300"
+                          : "border-border"
                       }`}
                     >
                       {isActive && (
@@ -915,14 +915,14 @@ export default function QuoteTesterPage() {
                   className={`flex w-full items-center gap-3 rounded-lg border-2 px-4 py-3 text-left transition ${
                     selectedMode === mode
                       ? "border-[#2E86C1] bg-primary/5"
-                      : "border-border hover:border-gray-300"
+                      : "border-border hover:border-border"
                   }`}
                 >
                   <div
                     className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 transition ${
                       selectedMode === mode
                         ? "border-[#2E86C1] bg-primary"
-                        : "border-gray-300"
+                        : "border-border"
                     }`}
                   >
                     {selectedMode === mode && (
@@ -949,7 +949,7 @@ export default function QuoteTesterPage() {
               </div>
               <div
                 className={`relative inline-flex h-6 w-11 items-center rounded-full transition ${
-                  timerEnabled ? "bg-primary" : "bg-gray-300"
+                  timerEnabled ? "bg-primary" : "bg-muted-foreground/30"
                 }`}
                 onClick={() => setTimerEnabled((v) => !v)}
               >

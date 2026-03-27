@@ -15,12 +15,12 @@ export const metadata: Metadata = {
 function Annotation({ children, note }: { children: React.ReactNode; note: string }) {
   return (
     <span className="group relative">
-      <span className="rounded bg-primary/10 px-1 py-0.5 text-foreground border-b-2 border-dashed border-[#2E86C1]/40 cursor-help">
+      <span className="rounded bg-primary/10 px-1 py-0.5 text-foreground border-b-2 border-dashed border-primary/40 cursor-help">
         {children}
       </span>
-      <span className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 w-60 -translate-x-1/2 rounded-lg bg-[#1A5276] px-3 py-2 text-xs leading-relaxed text-white opacity-0 shadow-lg transition-opacity group-hover:pointer-events-auto group-hover:opacity-100">
+      <span className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 w-60 -translate-x-1/2 rounded-lg bg-primary px-3 py-2 text-xs leading-relaxed text-white opacity-0 shadow-lg transition-opacity group-hover:pointer-events-auto group-hover:opacity-100">
         {note}
-        <span className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-[#1A5276]" />
+        <span className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-primary" />
       </span>
     </span>
   );
@@ -40,7 +40,7 @@ function GradeBadge({ grade, color }: { grade: string; color: string }) {
 
 function ExaminerComment({ children }: { children: React.ReactNode }) {
   return (
-    <div className="mt-4 rounded-lg border-l-4 border-[#2E86C1] bg-primary/5 p-4">
+    <div className="mt-4 rounded-lg border-l-4 border-primary bg-primary/5 p-4">
       <p className="mb-1 text-xs font-bold uppercase tracking-wider text-primary">
         Examiner Commentary
       </p>
@@ -54,7 +54,7 @@ function ExaminerComment({ children }: { children: React.ReactNode }) {
 function Section({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
   return (
     <section id={id} className="scroll-mt-24">
-      <h2 className="mb-6 text-2xl font-bold text-foreground border-b-2 border-[#2E86C1]/20 pb-3">
+      <h2 className="mb-6 text-2xl font-bold text-foreground border-b-2 border-primary/20 pb-3">
         {title}
       </h2>
       {children}
@@ -69,7 +69,7 @@ export default function CreativeWritingModelAnswersPage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#1A5276]/80 px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary/80 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary/80">
             Model Answers
@@ -115,7 +115,7 @@ export default function CreativeWritingModelAnswersPage() {
                 <a
                   key={item.id}
                   href={`#${item.id}`}
-                  className="block rounded-lg px-3 py-1.5 text-muted-foreground hover:bg-primary/10 hover:text-foreground transition-colors"
+                  className="block rounded-lg px-3 py-1.5 text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
                 >
                   {item.label}
                 </a>
@@ -173,7 +173,7 @@ export default function CreativeWritingModelAnswersPage() {
             {/* ─── DESCRIPTIVE GRADE 9 ─────────────────────────── */}
             <Section id="desc-9" title="Descriptive Writing &mdash; Grade 9">
               <div className="mb-4 flex items-center gap-3">
-                <GradeBadge grade="Grade 9" color="bg-[#1A5276]" />
+                <GradeBadge grade="Grade 9" color="bg-primary" />
                 <span className="text-sm text-muted-foreground">Task: Describe a busy market scene</span>
               </div>
 
@@ -295,7 +295,7 @@ export default function CreativeWritingModelAnswersPage() {
             {/* ─── NARRATIVE GRADE 9 ───────────────────────────── */}
             <Section id="narr-9" title="Narrative Writing &mdash; Grade 9">
               <div className="mb-4 flex items-center gap-3">
-                <GradeBadge grade="Grade 9" color="bg-[#1A5276]" />
+                <GradeBadge grade="Grade 9" color="bg-primary" />
                 <span className="text-sm text-muted-foreground">Task: Write about a time when everything changed</span>
               </div>
 
@@ -415,7 +415,7 @@ export default function CreativeWritingModelAnswersPage() {
                   <div key={tech.name} className="rounded-xl border border-border bg-card p-5 shadow-md">
                     <h4 className="font-bold text-foreground">{tech.name}</h4>
                     <p className="mt-1 text-sm text-muted-foreground">{tech.desc}</p>
-                    <div className="mt-3 rounded-lg bg-muted px-4 py-3">
+                    <div className="mt-3 rounded-lg bg-card border border-border px-4 py-3">
                       <p className="text-sm italic text-muted-foreground">{tech.example}</p>
                     </div>
                   </div>
