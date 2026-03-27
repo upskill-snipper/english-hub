@@ -185,7 +185,7 @@ const InlinePaperPreview = memo(function InlinePaperPreview({ paper }: { paper: 
                       <div className="mt-3 rounded-lg bg-blue-500/5 border border-blue-500/20 p-4">
                         <p className="text-xs font-medium text-blue-400 mb-2 uppercase tracking-wider">Mark Scheme</p>
                         <ul className="space-y-1">
-                          {(Array.isArray(question.markScheme) ? question.markScheme : Object.entries(question.markScheme).flatMap(([cat, points]) => [`${cat}:`, ...points])).slice(0, 4).map((point, i) => (
+                          {(Array.isArray(question.markScheme) ? question.markScheme : Object.entries(question.markScheme as Record<string, string[]>).flatMap(([cat, points]) => [`${cat}:`, ...points])).slice(0, 4).map((point, i) => (
                             <li key={i} className="text-sm text-foreground/70 flex items-start gap-2">
                               <CheckCircle2 className="h-3.5 w-3.5 mt-0.5 text-blue-400 shrink-0" />
                               {point}

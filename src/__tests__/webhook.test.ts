@@ -233,7 +233,7 @@ describe('Stripe Webhook POST handler', () => {
     const res = await POST(buildRequest('{}', 'sig_ok'))
     expect(res.status).toBe(400)
     const body = await res.json()
-    expect(body.error).toContain('missing userId')
+    expect(body.error).toContain('Missing required metadata')
   })
 
   it('returns 400 when payment checkout is missing courseId', async () => {
@@ -248,7 +248,7 @@ describe('Stripe Webhook POST handler', () => {
     const res = await POST(buildRequest('{}', 'sig_ok'))
     expect(res.status).toBe(400)
     const body = await res.json()
-    expect(body.error).toContain('missing courseId')
+    expect(body.error).toContain('Missing required metadata')
   })
 
   // ── customer.subscription.updated ──────────────────────────────────────

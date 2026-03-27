@@ -494,7 +494,7 @@ export default function PracticePage() {
                           Mark Scheme Points
                         </div>
                         <ul className="space-y-2">
-                          {(Array.isArray(currentQuestion.markScheme) ? currentQuestion.markScheme : Object.entries(currentQuestion.markScheme).flatMap(([cat, points]) => [`${cat}:`, ...points])).map((point, i) => (
+                          {(Array.isArray(currentQuestion.markScheme) ? currentQuestion.markScheme : Object.entries(currentQuestion.markScheme as Record<string, string[]>).flatMap(([cat, points]) => [`${cat}:`, ...points])).map((point, i) => (
                             <li
                               key={i}
                               className="flex items-start gap-2 text-sm text-muted-foreground"

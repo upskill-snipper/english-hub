@@ -1054,7 +1054,7 @@ function ExamResults() {
                                 Mark Scheme
                               </div>
                               <ul className="space-y-0.5">
-                                {(Array.isArray(question.markScheme) ? question.markScheme : Object.entries(question.markScheme).flatMap(([cat, points]) => [`${cat}:`, ...points])).map((point, i) => (
+                                {(Array.isArray(question.markScheme) ? question.markScheme : Object.entries(question.markScheme as Record<string, string[]>).flatMap(([cat, points]) => [`${cat}:`, ...points])).map((point, i) => (
                                   <li key={i} className="flex gap-1.5 text-xs text-muted-foreground">
                                     <span className="text-primary">-</span>
                                     {point}
