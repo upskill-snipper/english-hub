@@ -60,6 +60,16 @@ export interface MockExamPaper {
   totalTimeMinutes: number
   totalMarks: number
   sections: MockExamSection[]
+  /** Extra properties used by some exam data files */
+  qualification?: string
+  subject?: string
+  description?: string
+  duration?: number | string
+  paper?: string
+  component?: string
+  spec?: string
+  sourceText?: string
+  tasks?: unknown[]
 }
 
 // ─── Source Extracts ─────────────────────────────────────────────────────────
