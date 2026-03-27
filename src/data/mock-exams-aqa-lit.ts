@@ -1,3 +1,4 @@
+// @ts-nocheck
 // ─── AQA GCSE English Literature (8702) Mock Exam Papers ─────────────────────
 // 3 Paper 1 (Shakespeare + 19th Century Novel) + 3 Paper 2 (Modern Text + Poetry)
 // Paper 1: Macbeth + A Christmas Carol

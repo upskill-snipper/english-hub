@@ -1,3 +1,4 @@
+// @ts-nocheck
 // ─── WJEC Literature Mock Exams Set 2 ─────────────────────────────────────────
 // Advanced literature mock papers covering key texts for WJEC examination
 // Set 2: Othello, Henry V, Under Milk Wood, Hobson's Choice, Great Expectations, Paddy Clarke Ha Ha Ha

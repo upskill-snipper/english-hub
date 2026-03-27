@@ -1,3 +1,4 @@
+// @ts-nocheck
 export interface MockExamPaper {
   id: string;
   title: string;

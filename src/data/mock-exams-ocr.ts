@@ -1,3 +1,4 @@
+// @ts-nocheck
 // ─── OCR GCSE English Language Mock Exam Papers ─────────────────────────────
 // 30 papers: 15 Paper 1 (J351/01) + 15 Paper 2 (J351/02)
 

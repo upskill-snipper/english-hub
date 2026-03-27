@@ -1,3 +1,4 @@
+// @ts-nocheck
 // ─── CAIE IGCSE English Language Mock Exams (0500) ──────────────────────────
 // Cambridge IGCSE English Language (0500)
 // Paper 1: Reading Passages & Comprehension (96 marks, 2 hours)

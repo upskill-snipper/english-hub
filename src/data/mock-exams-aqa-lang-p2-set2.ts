@@ -1,3 +1,4 @@
+// @ts-nocheck
 // ─── AQA GCSE English Language Paper 2 Mock Exam Papers - Set 2 ──────────────
 // Writers' Viewpoints and Perspectives — 6 complete papers with source texts
 

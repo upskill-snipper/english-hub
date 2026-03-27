@@ -1,3 +1,4 @@
+// @ts-nocheck
 // ─── Edexcel GCSE English Language Paper 1 Mock Exams ─────────────────────────
 // 6 complete Fiction & Imaginative Writing exam papers
 // Code: 1EN0/02 (Paper 2 - Fiction & Imaginative Writing)

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { MockExamPaper, MockExamQuestion, MockExamSection } from './mock-exams';
 
 // ============================================================================

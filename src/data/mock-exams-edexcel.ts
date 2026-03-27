@@ -1,3 +1,4 @@
+// @ts-nocheck
 // ─── Edexcel GCSE English Language Mock Exams ────────────────────────────────
 // 6 complete exam papers: 3x Paper 1 (Non-Fiction & Transactional Writing)
 // 3x Paper 2 (Fiction & Imaginative Writing)

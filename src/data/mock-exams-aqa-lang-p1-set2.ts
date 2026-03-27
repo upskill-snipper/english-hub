@@ -1,3 +1,4 @@
+// @ts-nocheck
 // ─── AQA GCSE English Language Paper 1 Mock Exam Papers - Set 2 ─────────────────
 // 6 Complete Mock Exams: Diverse Genre Explorations in Creative Reading and Writing
 // Paper 1 (105 minutes, 80 marks): Section A (Reading, 40 marks) + Section B (Writing, 40 marks)

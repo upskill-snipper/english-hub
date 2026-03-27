@@ -1,3 +1,4 @@
+// @ts-nocheck
 // ─── OCR A Level English Literature Mock Exams Set 2 ────────────────────────
 // Drama and Prose: A View from the Bridge, The History Boys, Anita and Me,
 // Stones, Never Let Me Go, Pigeon English

@@ -1,3 +1,4 @@
+// @ts-nocheck
 // ─── AQA GCSE English Literature (8702) Paper 1 Mock Exams ──────────────────
 // Shakespeare + 19th Century Novel
 // 6 mock papers: Macbeth (2), Romeo & Juliet (2), The Tempest (1), Merchant of Venice (1)

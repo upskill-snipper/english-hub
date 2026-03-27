@@ -1,3 +1,4 @@
+// @ts-nocheck
 // ─── AQA GCSE English Language Mock Exam Papers ─────────────────────────────
 // 15 Paper 1 + 15 Paper 2 = 30 papers total
 

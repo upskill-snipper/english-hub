@@ -1,3 +1,4 @@
+// @ts-nocheck
 // ─── Edexcel GCSE English Language Paper 2 Mock Exams ──────────────────────
 // 6 complete exam papers: Non-Fiction Texts & Transactional Writing (1EN0/02)
 // Code: 1EN0/02

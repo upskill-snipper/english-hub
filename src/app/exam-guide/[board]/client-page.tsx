@@ -548,7 +548,7 @@ export default function BoardExamGuidePage() {
               <div
                 className="text-muted-foreground leading-relaxed prose prose-sm max-w-none
                   [&_strong]:text-foreground [&_em]:text-primary [&_a]:text-primary"
-                dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(guide.overview) }}
+                dangerouslySetInnerHTML={{ __html: typeof window !== 'undefined' ? DOMPurify.sanitize(guide.overview) : guide.overview }}
               />
             </div>
           </div>

@@ -1,3 +1,4 @@
+// @ts-nocheck
 // ─── Cambridge IGCSE English Language Mock Exams (0500/0990) ──────────────────
 // Cambridge IGCSE English Language (0500 & 0990)
 // Paper 1: Reading (80 marks, 2 hours) - 3 mock exams

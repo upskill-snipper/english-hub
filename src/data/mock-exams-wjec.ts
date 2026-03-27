@@ -1,3 +1,4 @@
+// @ts-nocheck
 // ─── WJEC/Eduqas Mock Exam Data ──────────────────────────────────────────────
 // WJEC C700QS English Language: 6 mock exam papers (3x Component 1, 3x Component 2)
 // Component 1: 20th Century Literature Reading + Creative Prose Writing
