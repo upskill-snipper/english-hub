@@ -459,8 +459,159 @@ export const poetryFlashcardDecks: FlashcardDeck[] = [
       {
         id: 'pt-20',
         front: 'Ambiguity',
-        back: 'Definition: When a word, phrase, or image has more than one possible meaning, and the poet deliberately leaves it open to interpretation.\n\nExample: "Crossing is not as hard as you might think" in "Eden Rock" — crossing a stream, or crossing from life to death?\n\nEffect on reader: Enriches the poem by allowing multiple readings. Forces the reader to think actively and consider different interpretations.\n\nWhen to mention in essays: Explore BOTH meanings — e.g., "The ambiguity of \'crossing\' allows the reader to interpret this as both a physical and metaphysical journey, adding depth to the poem\'s meditation on mortality."',
+        back: 'Definition: When a word, phrase, or image has more than one possible meaning, and the poet deliberately leaves it open to interpretation.\n\nExample: "Crossing is not as hard as you might think" in "Eden Rock" — crossing a stream, or crossing from life to death?\n\nEffect on reader: Enriches the poem by allowing multiple readings. Forces the reader to think actively and consider different interpretations.\n\nWhen to mention in essays: Explore BOTH meanings — e.g., "The ambiguity of \'crossing\' allows the reader to interpret this as both a physical and metaphysical journey, adding depth to the poem\'s meditation on mortality."'
       },
+      {
+        id: 'pt-21',
+        front: 'Assonance',
+        back: 'Definition: The repetition of vowel sounds within words in close proximity.\n\nExample: "The slow, low groan of the wounded" — repeated "o" sounds create a mournful tone.\n\nEffect on reader: Creates a musical, haunting quality. Reinforces mood through sound. Subtler than alliteration but equally effective.\n\nWhen to mention in essays: Link to mood — e.g., "The assonance of \'long\', \'moan\', \'gone\' creates a sorrowful atmosphere throughout the stanza."'
+      },
+      {
+        id: 'pt-22',
+        front: 'Consonance',
+        back: 'Definition: The repetition of consonant sounds within or at the end of words in close proximity.\n\nExample: "The dark, thick locks of the locked door" — repeated "ck" and "k" sounds create emphasis.\n\nEffect on reader: Creates a staccato, sharp, or forceful effect. Often used for harsh or dramatic moments.\n\nWhen to mention in essays: Link to mood or meaning — e.g., "Consonance of hard consonants emphasises the brutal impact."'
+      },
+      {
+        id: 'pt-23',
+        front: 'Volta',
+        back: 'Definition: A sudden turn or shift in tone, argument, perspective, or emotion within a poem, often marking a dramatic change in thought.\n\nExample: In "The Prelude," the moment when the mountain appears, shifting from confidence to fear.\n\nEffect on reader: Creates surprise, tension, or revelation. Forces the reader to re-evaluate what came before.\n\nWhen to mention in essays: Identify the turning point — e.g., "The volta at line X marks the moment the speaker\'s hope transforms into despair."'
+      },
+      {
+        id: 'pt-24',
+        front: 'Extended Metaphor',
+        back: 'Definition: A metaphor that continues and develops throughout a poem, recurring through multiple lines or stanzas.\n\nExample: "The Prelude" extends the metaphor of a journey/climbing to represent spiritual and intellectual development.\n\nEffect on reader: Creates depth and cohesion. Allows the poet to explore an idea from multiple angles.\n\nWhen to mention in essays: Track the metaphor across the poem — e.g., "The extended metaphor of journey/climbing develops throughout the poem, with each ascent representing growth."'
+      },
+      {
+        id: 'pt-25',
+        front: 'Semantic Field',
+        back: 'Definition: A group of words related to the same topic or concept, creating a sustained atmosphere or reinforcing a theme.\n\nExample: In a war poem, words like "blood," "wounds," "death," "corpse," "battle" create a semantic field of violence.\n\nEffect on reader: Establishes and reinforces mood. Creates coherence around a central idea. Immerses the reader in a particular atmosphere.\n\nWhen to mention in essays: Name the field and explain its purpose — e.g., "The semantic field of nature imagery reinforces the theme of inevitable cyclical renewal."'
+      },
+      {
+        id: 'pt-26',
+        front: 'Understatement (Meiosis)',
+        back: 'Definition: The deliberate downplaying or underrepresentation of something, often for ironic or poignant effect.\n\nExample: In "My Last Duchess," the Duke says "I gave commands; Then all smiles stopped" — casually implying he had his wife killed.\n\nEffect on reader: Creates irony, dark humour, or unsettling effects. Makes the reader realise the gap between the words and the reality.\n\nWhen to mention in essays: Explain the gap — e.g., "Browning uses understatement to reveal the Duke\'s chilling casual cruelty."'
+      },
+      {
+        id: 'pt-27',
+        front: 'Overstatement (Hyperbole)',
+        back: 'Definition: Extreme exaggeration for emphasis, effect, or emotional impact. In poetry, it can be serious or comic.\n\nExample: "I have told you a million times!" or "I am dying of embarrassment!"\n\nEffect on reader: Creates emphasis, comedy, or intense emotion. Makes a point dramatically memorable.\n\nWhen to mention in essays: Explain the effect — e.g., "The hyperbolic language conveys the intensity of the speaker\'s despair."'
+      },
+      {
+        id: 'pt-28',
+        front: 'Juxtaposition',
+        back: 'Definition: Placing two contrasting images, ideas, or characters side by side for effect.\n\nExample: In "London," Blake juxtaposes images of London\'s beauty with visions of suffering and oppression.\n\nEffect on reader: Highlights differences and creates tension between opposites. Forces the reader to compare and question.\n\nWhen to mention in essays: Identify what is juxtaposed and explain the effect — e.g., "Blake juxtaposes imagery of beauty and suffering to condemn society\'s indifference to poverty."'
+      },
+      {
+        id: 'pt-29',
+        front: 'Controlling Image',
+        back: 'Definition: A dominant image or metaphor that runs through a poem and shapes the reader\'s understanding of the whole work.\n\nExample: In "Exposure," the image of exposure to the cold dominates, becoming metaphorical for vulnerability and suffering.\n\nEffect on reader: Provides cohesion and unifies the poem\'s meaning. All other images relate back to the controlling image.\n\nWhen to mention in essays: Show how all elements link to the controlling image — e.g., "The controlling image of cold connects literal temperature to emotional numbness, fear, and the futility of war."'
+      },
+      {
+        id: 'pt-30',
+        front: 'Pathetic Fallacy',
+        back: 'Definition: Attributing human emotions to nature or the weather, often to reflect the speaker\'s emotional state.\n\nExample: Rain that "falls sadly" or a storm that "rages angrily" — nature mirroring human feeling.\n\nEffect on reader: Creates a sense that the entire world responds to the speaker\'s emotions. Blurs the boundary between inner and outer.\n\nWhen to mention in essays: Link weather to emotions — e.g., "The storm\'s increasing violence mirrors the speaker\'s growing despair."'
+      },
+      {
+        id: 'pt-31',
+        front: 'Nostalgia',
+        back: 'Definition: A wistful longing for the past, often remembering it as better than it was.\n\nExample: In "Eden Rock," the speaker remembers an idyllic past moment with parents.\n\nEffect on reader: Creates emotional resonance. Can reveal how memory shapes identity. Can also critique the selective nature of memory.\n\nWhen to mention in essays: Discuss what the nostalgia reveals — e.g., "The nostalgia for a simpler past masks the speaker\'s current grief and isolation."'
+      },
+      {
+        id: 'pt-32',
+        front: 'Epiphany',
+        back: 'Definition: A moment of sudden insight or revelation in which the speaker understands something important about themselves or the world.\n\nExample: In "Charge of the Light Brigade," the moment when soldiers understand they are marching to certain death.\n\nEffect on reader: Creates emotional impact. Often marks a turning point in the poem.\n\nWhen to mention in essays: Identify the epiphany and explain its significance — e.g., "The speaker\'s epiphany that duty often means death challenges romantic notions of heroism."'
+      },
+      {
+        id: 'pt-33',
+        front: 'Connotation',
+        back: 'Definition: The emotional or cultural associations of a word beyond its literal definition.\n\nExample: "Home" carries positive connotations (safety, warmth, belonging), while "prison" carries negative ones (confinement, punishment).\n\nEffect on reader: Adds layers of meaning. A single word choice can evoke complex emotional responses.\n\nWhen to mention in essays: Always discuss connotations — e.g., "The word \'lurking\' has sinister connotations, suggesting hidden danger."'
+      },
+      {
+        id: 'pt-34',
+        front: 'Denotation',
+        back: 'Definition: The literal, dictionary definition of a word.\n\nExample: "Home" literally means "the place where someone lives," but it has emotional connotations beyond this.\n\nEffect on reader: Understanding both denotation and connotation enriches analysis.\n\nWhen to mention in essays: Use when clarifying word meaning before discussing connotation — e.g., "While \'home\' denotatively means a dwelling place, it connotes safety and belonging."'
+      },
+      {
+        id: 'pt-35',
+        front: 'Sensory Imagery',
+        back: 'Definition: Language that appeals to the five senses: sight, sound, smell, taste, and touch.\n\nExample: "The bitter, cold wind cut across the moor" — tactile (bitter, cold, cut) and potentially gustatory (bitter).\n\nEffect on reader: Makes the poem vivid and immersive. Engages the reader\'s body as well as mind.\n\nWhen to mention in essays: Identify which senses are engaged — e.g., "Owen\'s sensory imagery of cold, hunger, and pain immerses the reader in the soldiers\' physical suffering."'
+      },
+      {
+        id: 'pt-36',
+        front: 'Visual Imagery',
+        back: 'Definition: Language that appeals specifically to sight, using colours, shapes, light, and visual details.\n\nExample: "The green light across the bay" (Fitzgerald) — creates a specific visual image.\n\nEffect on reader: Creates pictures in the mind. Can establish mood through colour choices (red = danger, blue = sadness, green = growth).\n\nWhen to mention in essays: Discuss what colours/visuals suggest — e.g., "The predominance of grey imagery creates a tone of bleakness and hopelessness."'
+      },
+      {
+        id: 'pt-37',
+        front: 'Auditory Imagery',
+        back: 'Definition: Language that appeals to sound, including actual sounds described and sound devices like alliteration or onomatopoeia.\n\nExample: "The buzz saw whined" — onomatopoeia creates an auditory image.\n\nEffect on reader: Engages the ear. Can create rhythm, discord, or harmony.\n\nWhen to mention in essays: Discuss the emotional effect of sounds — e.g., "The cacophony of battle sounds mirrors the soldier\'s disoriented terror."'
+      },
+      {
+        id: 'pt-38',
+        front: 'Tactile Imagery',
+        back: 'Definition: Language that appeals to the sense of touch, describing texture, temperature, and physical sensation.\n\nExample: "The rough bark of the tree," "the icy grip of fear."\n\nEffect on reader: Makes the reader feel physical sensations. Creates intimacy and immediacy.\n\nWhen to mention in essays: Link sensation to emotion — e.g., "The tactile imagery of roughness and cold conveys the soldier\'s physical and emotional hardship."'
+      },
+      {
+        id: 'pt-39',
+        front: 'Metaphor in Poetry',
+        back: 'Definition: A direct comparison between two unlike things, stating one thing IS another (not "like" — that would be a simile).\n\nExample: "Life is a journey," "Hope is a thing with feathers."\n\nEffect on reader: Creates new ways of seeing. Links abstract to concrete, unfamiliar to familiar.\n\nWhen to mention in essays: Always analyse metaphors — e.g., "By comparing life to a journey, the poet suggests life has a direction and destination."'
+      },
+      {
+        id: 'pt-40',
+        front: 'Simile in Poetry',
+        back: 'Definition: A comparison between two unlike things using "like," "as," or "as if."\n\nExample: "Her love was like the sun," "He was as quiet as a mouse."\n\nEffect on reader: Makes descriptions vivid and concrete. More obvious than metaphor but sometimes more beautiful.\n\nWhen to mention in essays: Always explain what the comparison suggests — e.g., "The simile compares love to the sun, suggesting warmth, light, and life-giving force."'
+      },
+,
+      { id: "pt-42", front: "Sonnet", back: "14-line poem with strict rhyme scheme and iambic pentameter, exploring love, beauty, or mortality" },
+      { id: "pt-43", front: "Ballad", back: "Narrative poem telling a story, often with repeating chorus, traditionally sung or recited" },
+      { id: "pt-44", front: "Elegy", back: "Mournful poem expressing sorrow, typically for someone who has died or loss of something precious" },
+      { id: "pt-45", front: "Ode", back: "Formal poem praising or celebrating something, with elevated tone and complex structure" },
+      { id: "pt-46", front: "Villanelle", back: "19-line poem with two repeating rhymed refrains, creating circular, obsessive effect" },
+      { id: "pt-47", front: "Haiku", back: "Three-line poem (5-7-5 syllables) capturing a single moment, often nature-focused" },
+      { id: "pt-48", front: "Limerick", back: "Five-line humorous poem with AABBA rhyme scheme, often whimsical or absurd" },
+      { id: "pt-49", front: "Free Verse", back: "Poetry without regular meter or rhyme, emphasising natural speech and individual lines" },
+      { id: "pt-50", front: "Acrostic", back: "Poem where first letters of each line spell out a word or message" },
+      { id: "pt-51", front: "Concrete Poetry", back: "Visual poetry where arrangement of words creates picture or shape on page" },
+      { id: "pt-52", front: "Metaphor in Poetry", back: "Direct comparison suggesting one thing IS another, creating layers of meaning" },
+      { id: "pt-53", front: "Simile in Poetry", back: "Comparison using 'like' or 'as', creating vivid imagery and accessible meaning" },
+      { id: "pt-54", front: "Personification in Poetry", back: "Giving human qualities to non-human things, creating emotional resonance" },
+      { id: "pt-55", front: "Symbolism in Poetry", back: "Objects or images representing larger concepts or abstract ideas" },
+      { id: "pt-56", front: "Imagery in Poetry", back: "Vivid, sensory language appealing to sight, sound, smell, taste, or touch" },
+      { id: "pt-57", front: "Tone in Poetry", back: "The speaker's attitude toward subject and audience, conveyed through word choice" },
+      { id: "pt-58", front: "Speaker in Poetry", back: "The voice narrating the poem, not necessarily the poet themselves" },
+      { id: "pt-59", front: "Meter in Poetry", back: "Regular pattern of stressed and unstressed syllables creating rhythm" },
+      { id: "pt-60", front: "Rhyme in Poetry", back: "Repetition of sound at ends of words, creating musicality and connection" },
+      { id: "pt-61", front: "Stanza in Poetry", back: "Grouped lines functioning as paragraph; separates ideas and creates pacing" },
+      { id: "pt-62", front: "Enjambment in Poetry", back: "Continuation of sentence across line or stanza break, creating flow" },
+      { id: "pt-63", front: "Caesura in Poetry", back: "Pause within a line marked by punctuation, creating rhythm and emphasis" },
+      { id: "pt-64", front: "Volta in Poetry", back: "Shift in thought or tone, marking turning point in argument or emotion" },
+      { id: "pt-65", front: "Allusion in Poetry", back: "Indirect reference to another work, person, or idea, enriching meaning" },
+      { id: "pt-66", front: "Paradox in Poetry", back: "Statement seeming contradictory but revealing a truth about experience" },
+      { id: "pt-67", front: "Oxymoron in Poetry", back: "Combining contradictory terms for paradoxical effect and emphasis" },
+      { id: "pt-68", front: "Irony in Poetry", back: "Expression of meaning using language that normally signifies opposite meaning" },
+      { id: "pt-69", front: "Understatement in Poetry", back: "Deliberately minimising significance for ironic or emphatic effect" },
+      { id: "pt-70", front: "Hyperbole in Poetry", back: "Extreme exaggeration for emphasis, emotion, or comic effect" },
+      { id: "pt-71", front: "Pun in Poetry", back: "Play on words exploiting multiple meanings or similar sounds for wit" },
+      { id: "pt-72", front: "Shakespeare's Sonnet Structure", back: "Shakespearean sonnets: ABABCDCDEFEFGG rhyme, iambic pentameter, turn at line 13" },
+      { id: "pt-73", front: "Petrarchan Sonnet Form", back: "Italian sonnet: ABBAABBACDECDE rhyme, octave poses problem, sestet resolves" },
+      { id: "pt-74", front: "Metaphysical Poetry", back: "17th-century poetry combining intellectual complexity with emotional intensity, using conceits" },
+      { id: "pt-75", front: "Romantic Poetry Themes", back: "Nature, emotion, imagination, individualism, reaction against reason and industrialisation" },
+      { id: "pt-76", front: "Victorian Poetry Concerns", back: "Social issues, faith, doubt, technology, progress, love, and moral responsibility" },
+      { id: "pt-77", front: "Modernist Poetry Techniques", back: "Fragmentation, imagism, stream of consciousness, disrupted syntax, challenging form" },
+      { id: "pt-78", front: "Beat Generation Poetry", back: "Spontaneous composition, anti-establishment themes, oral performance, rejection of formalism" },
+      { id: "pt-79", front: "Confessional Poetry", back: "Autobiographical, intimate, exploring personal trauma, guilt, mental illness with raw honesty" },
+      { id: "pt-80", front: "Harlem Renaissance Poetry", back: "African-American poets celebrating Black culture, resisting racial oppression, blending forms" },
+      { id: "pt-81", front: "Contemporary Poetry Trends", back: "Spoken word, slam poetry, multimedia integration, diverse voices, experimental formats" },
+      { id: "pt-82", front: "Nature Poetry Analysis", back: "How poets use natural imagery to explore emotion, mortality, beauty, or spiritual truth" },
+      { id: "pt-83", front: "Love Poetry Conventions", back: "Courtship, desire, loss, devotion, seduction, using traditional metaphors and forms" },
+      { id: "pt-84", front: "Elegy Tradition", back: "How poets memorialize the dead, process grief, question mortality and meaning" },
+      { id: "pt-85", front: "Political Poetry Function", back: "How poetry critiques power, advocates change, gives voice to the silenced" },
+      { id: "pt-86", front: "Narrative Poetry Techniques", back: "Character development, plot progression, dialogue, setting in verse form" },
+      { id: "pt-87", front: "Lyric Poetry Characteristics", back: "Personal emotion, musicality, image-focused, first-person perspective or implied speaker" },
+      { id: "pt-88", front: "Epic Poetry Elements", back: "Grand scale, heroic characters, significant events, elevated language, mythic resonance" },
+      { id: "pt-89", front: "Dramatic Monologue Form", back: "Single speaker addressing implied listener, revealing character through speech" },
+      { id: "pt-90", front: "Prose Poetry Hybridity", back: "Poetic techniques in prose paragraphs, blurring genres, emphasising language musicality" },
+      { id: "pt-91", front: "Visual Poetry Experimentation", back: "Concrete poetry, calligrams, shaped text, where appearance conveys meaning" },
     ],
   },
 ];

@@ -422,6 +422,10 @@ const accModules: CourseModule[] = [
 
 <p>If Stave 2 looked inward — exploring the private memories that shaped Scrooge — Stave 3 looks outward, forcing Scrooge to confront the <strong>present-day reality</strong> of poverty and its human cost. The Ghost of Christmas Present shows Scrooge what is happening <em>right now</em> in the homes of those he has dismissed as undeserving. This is Dickens at his most persuasive, using emotional realism to dismantle every argument for indifference.</p>
 
+<div class="context-box" style="background: #e8f4f8; padding: 15px; margin: 20px 0; border-left: 4px solid #2c5aa0;">
+  <strong>Historical Context:</strong> Stave 3 was written during the "Hungry Forties" — a period of severe economic hardship in Britain. Real families were living in conditions similar to the Cratchits: single-room tenements, subsistence wages, constant hunger. Dickens's detailed depiction of the Cratchit's modest Christmas was not sentimental but documentary — this is how the working poor actually lived in 1843.
+</div>
+
 <h3>The Ghost's Appearance</h3>
 
 <p>The Ghost of Christmas Present is a giant, "jolly" figure dressed in a green robe bordered with white fur, sitting atop a throne of Christmas food — turkeys, geese, sausages, mince pies, plum puddings, and bowls of punch. The abundance is overwhelming. Dickens uses this imagery to represent the generosity and plenty that Christmas <em>should</em> bring — a direct contrast to Scrooge's barren, fireless counting house.</p>
@@ -438,6 +442,11 @@ const accModules: CourseModule[] = [
 
 <div class="examiner-tip"><strong>Examiner Tip (AO2):</strong> When writing about the Cratchits, focus on Dickens's use of <strong>contrast and juxtaposition</strong>. Compare the Cratchit household (small, warm, full of love) with Scrooge's counting house (large, cold, devoid of human connection). This structural technique — placing opposites side by side — is one of Dickens's most powerful methods of persuasion.</div>
 
+<div class="worked-example" style="background: #fff3cd; padding: 15px; margin: 20px 0; border: 1px solid #ffc107;">
+  <strong>How to Write About the Cratchit Family (Grade 9 Response):</strong>
+  <p style="margin: 10px 0;">Dickens presents the Cratchit family's Christmas dinner as a moment of spiritual abundance despite material poverty. The sensory details — the smell of goose, the warmth of the fire, the laughter — create an atmosphere of contentment that contrasts sharply with Scrooge's isolation. The phrase "a small one for a large family" highlights the family's material constraints while the subsequent celebration emphasizes their emotional richness. Dickens uses this juxtaposition to argue that happiness derives not from wealth but from relationships. For an exam response, this demonstrates AO2 analysis: Dickens's choice of what to describe (family warmth) and what to downplay (material limitations) serves his larger purpose of critiquing capitalism and celebrating human connection.</p>
+</div>
+
 <h3>Tiny Tim</h3>
 
 <p>Tiny Tim is simultaneously a character and a <strong>symbol</strong>. As a character, he is Bob Cratchit's youngest son, disabled and reliant on a crutch. As a symbol, he represents all the vulnerable, innocent children whose lives are endangered by Victorian society's indifference to poverty. His famous line — "God bless us, every one!" — encapsulates the novella's message of universal goodwill and Christian charity.</p>
@@ -447,6 +456,11 @@ const accModules: CourseModule[] = [
 <p>Scrooge is "overcome with penitence and grief" — the word "penitence" carries religious connotations of confession and repentance, positioning Scrooge's transformation as a spiritual awakening. Dickens shows that empathy — the ability to see another person's suffering as real and urgent — is the antidote to the cold rationalism of Malthusian thinking.</p>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Describing Tiny Tim as simply "cute" or "sweet." He is a calculated rhetorical device — Dickens creates him to be maximally sympathetic so that the reader cannot dismiss him as "surplus population." Always analyse Tiny Tim in terms of Dickens's <em>purpose</em>: to personalise poverty and make indifference impossible.</div>
+
+<div class="worked-example" style="background: #fff3cd; padding: 15px; margin: 20px 0; border: 1px solid #ffc107;">
+  <strong>Tiny Tim and Malthusian Theory (Grade 9 Response):</strong>
+  <p style="margin: 10px 0;">Dickens's juxtaposition of Tiny Tim with Scrooge's Malthusian language is profoundly ironic. Scrooge dismisses the poor as "surplus population" — mere economic abstractions. But in Tiny Tim, Dickens gives us a specific, named, lovable individual whose personality and potential cannot be reduced to economic statistics. When the Ghost echoes Scrooge's language back at him ("if he be like to die, he had better do it"), Dickens forces the reader to experience the moral horror of treating human children as economic problems to be "solved" through death. For an exam answer, this demonstrates how Dickens uses character and language together to critique ideology.</p>
+</div>
 
 <h3>Fred's Christmas Party</h3>
 
@@ -538,6 +552,10 @@ const accModules: CourseModule[] = [
 
 <p>Stave 4 is the novella's darkest movement. Where the previous ghosts offered warmth, conversation, and even moments of joy, the Ghost of Christmas Yet to Come is utterly silent, robed in black, and terrifying. Dickens strips away all comfort and forces Scrooge to confront the ultimate consequence of his unchanged life: a lonely, unmourned death. This is the stave that completes Scrooge's psychological transformation — the fear of this future is what finally breaks through his defences.</p>
 
+<div class="context-box" style="background: #e8f4f8; padding: 15px; margin: 20px 0; border-left: 4px solid #2c5aa0;">
+  <strong>Historical Context:</strong> In Victorian society, the fear of a pauper's burial — being thrown into a mass grave without mourning — was genuine and widespread. The Poor Law provided for the dead of the destitute in bare communal graves. Dickens uses this fear to motivate Scrooge's transformation. For 1843 readers, the prospect of dying unmourned and unremembered was perhaps the ultimate horror, making Stave 4 psychologically powerful.
+</div>
+
 <h3>The Ghost's Appearance</h3>
 
 <p>The Ghost of Christmas Yet to Come is described as a "solemn Phantom, draped and hooded" in a "deep black garment." Unlike the previous spirits, it does not speak — it communicates only by pointing with a spectral hand. Dickens writes that it fills Scrooge with "a solemn dread" and that "the very air through which this Spirit moved seemed to scatter gloom and mystery."</p>
@@ -545,6 +563,11 @@ const accModules: CourseModule[] = [
 <p>The ghost's silence is a masterful structural choice. The first two spirits engaged Scrooge in dialogue, guiding his interpretation of what he saw. The third offers no guidance — Scrooge must interpret the visions himself. This forces him into active moral reasoning rather than passive observation. The ghost also evokes the figure of the <strong>Grim Reaper</strong>, and its silence conveys the implacability of death — it cannot be argued with, bargained with, or charmed.</p>
 
 <div class="key-term"><strong>Key Term: Motif</strong> — A recurring image, symbol, or idea that develops a theme across a text. Death is a motif that runs through Stave 4, appearing in the shrouded ghost, the stolen death-clothes, the bare corpse, and Tiny Tim's empty chair. Dickens uses the death motif to create urgency — change must happen <em>now</em> or it will be too late.</div>
+
+<div class="worked-example" style="background: #fff3cd; padding: 15px; margin: 20px 0; border: 1px solid #ffc107;">
+  <strong>How to Write About the Ghost's Silence (Grade 9 Response):</strong>
+  <p style="margin: 10px 0;">Dickens's decision to make the Ghost of Christmas Yet to Come silent is a profound structural choice. Unlike the Christmas Past and Christmas Present, who guide Scrooge through explanation, the silent ghost forces Scrooge to interpret the visions independently. This shift in narrative technique represents Dickens's belief that genuine moral awakening cannot be imposed from outside but must come through individual recognition and reasoning. The silence also evokes death's finality — there is no arguing with death, no negotiation. For an exam response, this technique demonstrates how form creates meaning: the silent ghost embodies the indifference of mortality itself.</p>
+</div>
 
 <h3>The Businessmen's Reaction</h3>
 
@@ -563,6 +586,11 @@ const accModules: CourseModule[] = [
 <p>Scrooge is horrified: "The case of this unhappy man might be my own." The conditional "might" shows he is still resisting the truth. Dickens delays the revelation to maximise its psychological impact.</p>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Simply describing what happens at Old Joe's shop without analysing Dickens's purpose. The scene is designed to show the consequences of a life lived without generosity or human connection — in death, such a person is treated as nothing more than a source of material goods. Link this to Dickens's moral argument about the importance of relationships over wealth.</div>
+
+<div class="worked-example" style="background: #fff3cd; padding: 15px; margin: 20px 0; border: 1px solid #ffc107;">
+  <strong>How to Develop a Point About Death and Community (Grade 9 Response):</strong>
+  <p style="margin: 10px 0;">Old Joe's shop scene dramatizes the ultimate consequence of Scrooge's philosophy: a death that serves only as an economic transaction. The businessmen joke about making "the cheapest funeral," reducing death to cost. This contrasts with Tiny Tim's death, which is mourned with genuine grief. Dickens is arguing that a life's meaning is measured not by wealth but by the relationships it generates. The theming of death as either "mourned" or "unmourned" becomes Dickens's central preoccupation in Stave 4. For an essay, this demonstrates how Dickens uses opposing images to make his moral argument: the unmourned corpse vs. the beloved child.</p>
+</div>
 
 <h3>The Shrouded Corpse</h3>
 
@@ -673,6 +701,10 @@ const accModules: CourseModule[] = [
 
 <p>Stave 5, titled "The End of It," is the novella's joyful resolution. Scrooge wakes on Christmas morning a changed man, and the narrative explodes with energy, humour, and warmth. Dickens mirrors the reader's relief — after the darkness of Stave 4, the light of redemption feels like emerging from a long winter. The stave is short but structurally vital: it proves that transformation is possible and shows <em>what it looks like in practice</em>.</p>
 
+<div class="context-box" style="background: #e8f4f8; padding: 15px; margin: 20px 0; border-left: 4px solid #2c5aa0;">
+  <strong>Historical Context:</strong> In 1843, the concept of personal redemption through moral awakening was deeply tied to evangelical Christianity. Dickens, while not strictly religious, believed in the redemptive power of human compassion. Stave 5 demonstrates secular redemption — Scrooge is "saved" not by divine intervention but by his own moral choice and understanding of human interdependence. This was radical for Victorian audiences who expected spiritual salvation narratives.
+</div>
+
 <h3>Scrooge's Awakening</h3>
 
 <p>Scrooge wakes in his own bed, alive, and bursts into an ecstasy of joy: "I don't know what to do! I am as light as a feather, I am as happy as an angel, I am as merry as a schoolboy." The triple simile structure — feather, angel, schoolboy — traces an arc from physical lightness to spiritual joy to youthful innocence. The simile "as merry as a schoolboy" is especially significant: it recalls the lonely schoolboy of Stave 2, suggesting that Scrooge has recovered his lost innocence.</p>
@@ -680,6 +712,11 @@ const accModules: CourseModule[] = [
 <p>His language is transformed. The man who spoke in clipped, dismissive phrases — "Bah! Humbug!" — now speaks in <strong>exclamatory sentences</strong> full of energy and emotion: "I don't know what day of the month it is! I don't know how long I've been among the Spirits! I don't know anything! I'm quite a baby!" The exclamation marks, the repetition of "I don't know," and the self-deprecating humour show a man completely freed from the rigid, controlling persona of Stave 1.</p>
 
 <div class="key-term"><strong>Key Term: Exclamatory Sentence</strong> — A sentence that expresses strong emotion, ending with an exclamation mark. Dickens uses a flood of exclamatory sentences in Stave 5 to convey Scrooge's overwhelming joy and to create a dramatic tonal shift from the darkness of Stave 4.</div>
+
+<div class="worked-example" style="background: #fff3cd; padding: 15px; margin: 20px 0; border: 1px solid #ffc107;">
+  <strong>How to Write About Scrooge's Awakening (Grade 9 Response):</strong>
+  <p style="margin: 10px 0;">Dickens uses compound and exclamatory sentences to convey Scrooge's psychological transformation. The exclamatory "I don't know what to do!" contrasts sharply with Scrooge's characteristic certainty in Stave 1, when he dismisses the poor with cold logic. The repetition of "I don't know" suggests not confusion but liberation — Scrooge has abandoned the illusion of control. By describing himself as "quite a baby," he uses self-deprecation to show spiritual humility. This linguistic shift demonstrates Dickens's belief that redemption requires not just a change of behaviour but a fundamental change in how one speaks, thinks, and perceives reality. The man of rules and regulation has become a man of spontaneity and emotion.</p>
+</div>
 
 <h3>The Turkey</h3>
 

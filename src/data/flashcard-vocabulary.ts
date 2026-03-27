@@ -567,6 +567,602 @@ export const vocabularyDecks: FlashcardDeck[] = [
         front: 'Indispensable',
         back: 'Definition: Absolutely necessary; too important to be without.\n\nExample sentence: "Context is indispensable when analysing Victorian literature — without it, the writer\'s intentions remain invisible."\n\nSynonyms: essential, vital, crucial, necessary.\n\nHow to use in Paper 2 Q5: Use for strong emphasis — "Libraries are indispensable to communities, offering far more than just books."'
       },
+      {
+        id: 't2-31',
+        front: 'Scrutinise',
+        back: 'Definition: To examine something very carefully and thoroughly.\n\nExample sentence: "We must scrutinise the methods used to ensure they align with ethical standards."\n\nSynonyms: examine, inspect, analyse, investigate.\n\nHow to use in Paper 2 Q5: Use when discussing careful analysis — "If we scrutinise the evidence, we find that the claims lack foundation."'
+      },
+      {
+        id: 't2-32',
+        front: 'Ambiguous',
+        back: 'Definition: Open to more than one interpretation; unclear or uncertain in meaning.\n\nExample sentence: "The Inspector\'s final status remains ambiguous — is he real or supernatural? Priestley never tells us."\n\nSynonyms: unclear, uncertain, equivocal, indefinite.\n\nHow to use in Paper 2 Q5: Use when discussing textual uncertainty — "The ending is deliberately ambiguous, allowing different audiences to draw different conclusions."'
+      },
+      {
+        id: 't2-33',
+        front: 'Obsolete',
+        back: 'Definition: No longer in use or no longer useful; outdated.\n\nExample sentence: "Victorian attitudes about class have not become completely obsolete — they persist in modern society."\n\nSynonyms: outdated, outmoded, old-fashioned, discredited.\n\nHow to use in Paper 2 Q5: Use to argue something should be abandoned — "The belief that girls are unsuitable for science is obsolete but still affects educational choices."'
+      },
+      {
+        id: 't2-34',
+        front: 'Manifest',
+        back: 'Definition: (verb) To display or show openly. (adj.) Clearly visible or obvious.\n\nExample sentence: "Lady Macbeth\'s guilt manifests in her sleepwalking scene, where she compulsively washes her hands."\n\nSynonyms: display, reveal, demonstrate, show.\n\nHow to use in Paper 2 Q5: Use when discussing how something is shown — "Their anxiety manifests in increasingly aggressive behaviour."'
+      },
+      {
+        id: 't2-35',
+        front: 'Covert',
+        back: 'Definition: Hidden or concealed; secret.\n\nExample sentence: "Jekyll\'s covert visits to Soho reveal the hypocrisy at the heart of Victorian respectability."\n\nSynonyms: secret, hidden, concealed, clandestine.\n\nHow to use in Paper 2 Q5: Use when discussing hidden actions — "The covert discrimination in hiring practices is just as damaging as open prejudice."'
+      },
+      {
+        id: 't2-36',
+        front: 'Overt',
+        back: 'Definition: Done or shown openly; not hidden.\n\nExample sentence: "Scrooge\'s cruelty is overt — he openly refuses to help the poor and mocks charity."\n\nSynonyms: open, obvious, apparent, explicit.\n\nHow to use in Paper 2 Q5: Use to contrast with hidden action — "While some discrimination is overt, much of it is subtle and harder to challenge."'
+      },
+      {
+        id: 't2-37',
+        front: 'Arbitrary',
+        back: 'Definition: Based on random choice or on personal whim, rather than on reason or system.\n\nExample sentence: "The distinction between Jekyll and Hyde is not arbitrary — it represents a fundamental split in human nature."\n\nSynonyms: random, capricious, whimsical, baseless.\n\nHow to use in Paper 2 Q5: Use to question rules — "Many school rules seem arbitrary, serving no educational purpose."'
+      },
+      {
+        id: 't2-38',
+        front: 'Sagacity',
+        back: 'Definition: The quality of having good judgment; wisdom.\n\nExample sentence: "The Inspector displays remarkable sagacity in his questioning, exposing uncomfortable truths with apparent effortlessness."\n\nSynonyms: wisdom, insight, judgment, discernment.\n\nHow to use in Paper 2 Q5: Use to praise intelligent action — "The government\'s sagacity in investing in renewable energy will be appreciated by future generations."'
+      },
+      {
+        id: 't2-39',
+        front: 'Capricious',
+        back: 'Definition: Characterised by sudden, unexpected changes of mood or behaviour.\n\nExample sentence: "Macbeth becomes increasingly capricious as ambition consumes him — his decisions grow rash and unpredictable."\n\nSynonyms: impulsive, unpredictable, whimsical, erratic.\n\nHow to use in Paper 2 Q5: Use to describe unpredictable behaviour — "Social media algorithms are capricious, making content discovery unpredictable."'
+      },
+      {
+        id: 't2-40',
+        front: 'Ephemeral',
+        back: 'Definition: Lasting for a very short time; transitory.\n\nExample sentence: "The joy on Tiny Tim\'s face when given gifts is ephemeral, but Dickens uses it to show that happiness transcends poverty."\n\nSynonyms: fleeting, temporary, transitory, short-lived.\n\nHow to use in Paper 2 Q5: Use to emphasise fragility — "Childhood friendships, though often ephemeral, can leave lasting impressions."'
+      },
+      {
+        id: 't2-41',
+        front: 'Tenacious',
+        back: 'Definition: Holding firmly to something; persistent and determined.\n\nExample sentence: "The Cratchits\'s tenacious optimism in the face of poverty is what makes them morally superior to the wealthy Scrooge."\n\nSynonyms: persistent, determined, steadfast, unwavering.\n\nHow to use in Paper 2 Q5: Use to praise persistence — "Her tenacious refusal to accept defeat finally paid off."'
+      },
+      {
+        id: 't2-42',
+        front: 'Cogent',
+        back: 'Definition: (Of an argument or case) clear, logical, and convincing.\n\nExample sentence: "Priestley presents a cogent argument for collective responsibility through the experiences of Eva Smith."\n\nSynonyms: convincing, compelling, persuasive, logical.\n\nHow to use in Paper 2 Q5: Use when discussing strong arguments — "The evidence for climate change is cogent and overwhelming."'
+      },
+      {
+        id: 't2-43',
+        front: 'Innocuous',
+        back: 'Definition: Not harmful, dangerous, or offensive; harmless.\n\nExample sentence: "The Inspector\'s opening remarks seem innocuous, but they gradually build to a devastating moral critique."\n\nSynonyms: harmless, innocent, benign, safe.\n\nHow to use in Paper 2 Q5: Use to show something that seems safe but is not — "What looks like innocuous fun can have serious consequences."'
+      },
+      {
+        id: 't2-44',
+        front: 'Pernicious',
+        back: 'Definition: Having a harmful effect in a gradual or subtle way.\n\nExample sentence: "The pernicious influence of unchecked ambition destroys Macbeth\'s moral compass."\n\nSynonyms: harmful, damaging, insidious, destructive.\n\nHow to use in Paper 2 Q5: Use to describe hidden harm — "Cyber-bullying is pernicious because it operates behind a screen, away from adult supervision."'
+      },
+      {
+        id: 't2-45',
+        front: 'Destitute',
+        back: 'Definition: Extremely poor; without the money to afford basic necessities.\n\nExample sentence: "Dickens shows us the truly destitute through characters like the thieves who steal from Scrooge\'s corpse."\n\nSynonyms: impoverished, poor, penniless, broke.\n\nHow to use in Paper 2 Q5: Use when discussing poverty — "Children in the slums were destitute, often without shelter or food."'
+      },
+      {
+        id: 't2-46',
+        front: 'Squalid',
+        back: 'Definition: Involving extremely dirty or unpleasant conditions; morally unsavoury.\n\nExample sentence: "Dickens details the squalid conditions of London\'s poorest neighbourhoods to awaken his readers\' conscience."\n\nSynonyms: filthy, dirty, miserable, degrading.\n\nHow to use in Paper 2 Q5: Use to convey unpleasant conditions — "They lived in squalid apartments with multiple families sharing a single room."'
+      },
+      {
+        id: 't2-47',
+        front: 'Opulence',
+        back: 'Definition: Wealth displayed in a rich and splendid way; luxury and magnificence.\n\nExample sentence: "The contrast between Scrooge\'s opulent chambers and Bob Cratchit\'s modest home highlights Victorian inequality."\n\nSynonyms: luxury, wealth, splendor, magnificence.\n\nHow to use in Paper 2 Q5: Use to describe wealth — "The opulence of the royal palace stood in stark contrast to the poverty outside its walls."'
+      },
+      {
+        id: 't2-48',
+        front: 'Austere',
+        back: 'Definition: Severe and strict in manner; simple and without decoration.\n\nExample sentence: "Scrooge\'s austere office reflects his joyless, colourless personality."\n\nSynonyms: severe, stern, strict, bare, simple.\n\nHow to use in Paper 2 Q5: Use to describe simplicity or strictness — "The austere minimalism of the school uniform was meant to promote equality."'
+      },
+      {
+        id: 't2-49',
+        front: 'Melancholy',
+        back: 'Definition: A feeling of pensive sadness; often tinged with dignity or beauty.\n\nExample sentence: "There is a haunting melancholy in the ghost stories Dickens tells, a sadness about roads not taken."\n\nSynonyms: sadness, sorrow, gloom, pensiveness.\n\nHow to use in Paper 2 Q5: Use to describe sad atmosphere — "The melancholy ending reveals the cost of their choices."'
+      },
+      {
+        id: 't2-50',
+        front: 'Revulsion',
+        back: 'Definition: A strong feeling of disgust and aversion.\n\nExample sentence: "Scrooge experiences revulsion when confronted with Ignorance and Want, finally understanding what he has denied."\n\nSynonyms: disgust, abhorrence, repugnance, repulsion.\n\nHow to use in Paper 2 Q5: Use to describe strong negative emotion — "His revulsion at the injustice drove him to act."'
+      },
+      {
+        id: 't2-51',
+        front: 'Benevolent',
+        back: 'Definition: Kind and generous; showing goodwill and concern for others.\n\nExample sentence: "Fezziwig\'s benevolent treatment of his workers proves that wealth and kindness can coexist."\n\nSynonyms: kind, generous, charitable, humane.\n\nHow to use in Paper 2 Q5: Use to praise generosity — "A benevolent employer invests in staff wellbeing, knowing it benefits everyone."'
+      },
+      {
+        id: 't2-52',
+        front: 'Malevolent',
+        back: 'Definition: Characterised by evil intent or malice; wishing harm on others.\n\nExample sentence: "The Ghost of Christmas Yet to Come is not malevolent but neutral, showing Scrooge the consequences of his choices."\n\nSynonyms: evil, wicked, malicious, sinister.\n\nHow to use in Paper 2 Q5: Use to describe evil intent — "The villain\'s malevolent scheme destroys everyone around them."'
+      },
+      {
+        id: 't2-53',
+        front: 'Magnanimity',
+        back: 'Definition: The quality of being generous and noble in spirit; greatness of soul.\n\nExample sentence: "Scrooge\'s magnanimity in his final acts of generosity is all the more powerful because it comes from his hardened heart."\n\nSynonyms: generosity, nobility, kindness, honour.\n\nHow to use in Paper 2 Q5: Use to praise noble character — "Her magnanimity in forgiving those who had wronged her inspired others."'
+      },
+      {
+        id: 't2-54',
+        front: 'Pusillanimous',
+        back: 'Definition: Lacking courage; cowardly.\n\nExample sentence: "The Birlings\' attempts to hide their role in Eva\'s death show their pusillanimous nature — they care only about their reputation."\n\nSynonyms: cowardly, faint-hearted, timid, weak.\n\nHow to use in Paper 2 Q5: Use to criticise cowardice — "His pusillanimous refusal to speak up allowed injustice to continue."'
+      },
+      {
+        id: 't2-55',
+        front: 'Prodigal',
+        back: 'Definition: Spending money or resources freely and excessively. (Biblical: a person who has wasted their life but returns repentant.)\n\nExample sentence: "Scrooge has been prodigal with his power, using it to hurt rather than help, but his redemption follows the prodigal son archetype."\n\nSynonyms: wasteful, extravagant, profligate.\n\nHow to use in Paper 2 Q5: Use to describe excessive spending — "Prodigal spending on luxury goods while people starve is morally indefensible."'
+      },
+      {
+        id: 't2-56',
+        front: 'Ascetic',
+        back: 'Definition: Practicing strict self-discipline and avoiding comforts; living a simple, austere life.\n\nExample sentence: "Bob Cratchit\'s ascetic lifestyle — forced by poverty rather than chosen — contrasts with Scrooge\'s self-imposed isolation."\n\nSynonyms: abstemious, austere, frugal, self-denying.\n\nHow to use in Paper 2 Q5: Use to describe restraint — "The ascetic approach to education prioritises knowledge over luxury."'
+      },
+      {
+        id: 't2-57',
+        front: 'Licentiousness',
+        back: 'Definition: The quality of being promiscuous, unrestrained, or disregarding accepted rules of conduct.\n\nExample sentence: "Hyde represents the licentiousness that Jekyll secretly desires but cannot indulge as a respectable Victorian gentleman."\n\nSynonyms: promiscuity, excess, abandon, debauchery.\n\nHow to use in Paper 2 Q5: Use to describe moral excess — "The licentiousness of their behaviour shocked the conservative community."'
+      },
+      {
+        id: 't2-58',
+        front: 'Pallid',
+        back: 'Definition: Pale; lacking colour or vitality.\n\nExample sentence: "Scrooge\'s pallid complexion and weak voice mirror his emotional and spiritual poverty."\n\nSynonyms: pale, wan, ashen, colourless.\n\nHow to use in Paper 2 Q5: Use to describe pale appearance — "The pallid walls of the institution reflected its joyless atmosphere."'
+      },
+      {
+        id: 't2-59',
+        front: 'Vivacity',
+        back: 'Definition: Liveliness and high spirits; enthusiasm and energy.\n\nExample sentence: "Tiny Tim\'s vivacity in the face of suffering shows moral strength that age and wealth alone cannot provide."\n\nSynonyms: liveliness, energy, enthusiasm, exuberance.\n\nHow to use in Paper 2 Q5: Use to praise energy — "Her vivacity and optimism were contagious, lifting everyone around her."'
+      },
+      {
+        id: 't2-60',
+        front: 'Venal',
+        back: 'Definition: Willing to do dishonest things for money; corrupt.\n\nExample sentence: "Mr Birling\'s venal nature is exposed by the Inspector — he cares only about profit, not about the welfare of workers."\n\nSynonyms: corrupt, mercenary, unscrupulous, greedy.\n\nHow to use in Paper 2 Q5: Use to criticise corruption — "The venal politicians sold their principles for campaign donations."'
+      },
+      {
+        id: 't2-61',
+        front: 'Enervate',
+        back: 'Definition: To make someone weak or lacking in energy.\n\nExample sentence: "The repetitive cycle of poverty enervates whole communities, draining them of hope and vitality."\n\nSynonyms: weaken, exhaust, drain, sap.\n\nHow to use in Paper 2 Q5: Use to describe draining effect — "Constant stress enervates the body and mind."'
+      },
+      {
+        id: 't2-62',
+        front: 'Inimical',
+        back: 'Definition: Harmful; injurious; tending to obstruct or hinder.\n\nExample sentence: "Greed is inimical to community and compassion — it prevents genuine human connection."\n\nSynonyms: harmful, unfavourable, detrimental, hostile.\n\nHow to use in Paper 2 Q5: Use to describe hostility — "Policies that cut funding for public services are inimical to the common good."'
+      },
+      {
+        id: 't2-63',
+        front: 'Salutary',
+        back: 'Definition: Producing a beneficial effect; health-giving or useful.\n\nExample sentence: "The Inspector\'s harsh truths have a salutary effect on the Birlings, forcing them to confront their complicity."\n\nSynonyms: beneficial, helpful, wholesome, good.\n\nHow to use in Paper 2 Q5: Use to describe beneficial effects — "A salutary lesson in the consequences of reckless behaviour."'
+      },
+      {
+        id: 't2-64',
+        front: 'Felicitous',
+        back: 'Definition: Well-suited to the circumstances; bringing good luck; happy.\n\nExample sentence: "The felicitous ending, where Scrooge is redeemed on Christmas morning, provides emotional satisfaction while reinforcing the novella\'s message."\n\nSynonyms: well-suited, appropriate, fortunate, happy.\n\nHow to use in Paper 2 Q5: Use to praise good timing — "The felicitous discovery of the documents proved crucial to solving the case."'
+      },
+      {
+        id: 't2-65',
+        front: 'Sedulous',
+        back: 'Definition: Diligent and careful; thorough and assiduous.\n\nExample sentence: "Dickens\'s sedulous attention to detail brings the streets of London vividly to life."\n\nSynonyms: diligent, careful, thorough, meticulous.\n\nHow to use in Paper 2 Q5: Use to praise careful work — "Her sedulous research uncovered evidence that had been overlooked for decades."'
+      },
+      {
+        id: 't2-66',
+        front: 'Pellucid',
+        back: 'Definition: Translucently clear in style or meaning; easy to understand.\n\nExample sentence: "The Inspector\'s pellucid moral argument cuts through the Birlings\' self-deception."\n\nSynonyms: clear, transparent, lucid, plain.\n\nHow to use in Paper 2 Q5: Use to praise clarity — "His pellucid explanation made complex ideas accessible to everyone."'
+      },
+      {
+        id: 't2-67',
+        front: 'Perspicacious',
+        back: 'Definition: Having keen insight; mentally sharp and discerning.\n\nExample sentence: "The Inspector is perspicacious, recognising the smallest inconsistencies and pressing them to reveal truth."\n\nSynonyms: keen, sharp, insightful, discerning.\n\nHow to use in Paper 2 Q5: Use to praise intelligent observation — "His perspicacious reading of the situation revealed hidden motivations."'
+      },
+      {
+        id: 't2-68',
+        front: 'Mendacious',
+        back: 'Definition: Deliberately dishonest; lying or false.\n\nExample sentence: "The Birlings\' mendacious denial of responsibility extends even to blaming the victim."\n\nSynonyms: dishonest, false, deceptive, lying.\n\nHow to use in Paper 2 Q5: Use to criticise lying — "The mendacious claims in the advertisement misled consumers."'
+      },
+      {
+        id: 't2-69',
+        front: 'Veracity',
+        back: 'Definition: Habitual truthfulness; accuracy and honesty.\n\nExample sentence: "Despite his supernatural appearance, the Inspector\'s veracity cannot be questioned — every revelation he makes proves true."\n\nSynonyms: truthfulness, honesty, accuracy, integrity.\n\nHow to use in Paper 2 Q5: Use to praise honesty — "The journalist\'s veracity in reporting makes her a trusted source."'
+      },
+      {
+        id: 't2-70',
+        front: 'Circumlocution',
+        back: 'Definition: The use of many words to say something that could be said more briefly; beating around the bush.\n\nExample sentence: "The Inspector refuses circumlocution; he speaks directly and forces others to face uncomfortable truths."\n\nSynonyms: wordiness, verbosity, evasion, beating around the bush.\n\nHow to use in Paper 2 Q5: Use to criticise evasion — "His constant circumlocution annoyed the interviewer, who demanded straight answers."'
+      },
+      {
+        id: 't2-71',
+        front: 'Brevity',
+        back: 'Definition: The quality of using few words; conciseness.\n\nExample sentence: "The brevity of the Inspector\'s final speech contrasts with its moral weight and longevity in audiences\' minds."\n\nSynonyms: conciseness, shortness, breveness, concision.\n\nHow to use in Paper 2 Q5: Use to praise efficiency — "The brevity of his argument did not diminish its force."'
+      },
+      {
+        id: 't2-72',
+        front: 'Prolixity',
+        back: 'Definition: Using or containing too many words; wordiness.\n\nExample sentence: "Mr Birling\'s prolixity — his endless bragging about business — makes him an unsympathetic character."\n\nSynonyms: wordiness, verbosity, long-windedness, prolixness.\n\nHow to use in Paper 2 Q5: Use to criticise long-windedness — "The prolixity of the report obscured its key findings."'
+      },
+      {
+        id: 't2-73',
+        front: 'Disconcert',
+        back: 'Definition: To disturb the composure of; to cause to feel confused or embarrassed.\n\nExample sentence: "The Inspector\'s probing questions disconcert the Birlings, breaking down their comfortable pretence."\n\nSynonyms: disturb, unsettle, embarrass, confuse.\n\nHow to use in Paper 2 Q5: Use to describe unsettling effect — "The unexpected revelation disconcerted the audience."'
+      },
+      {
+        id: 't2-74',
+        front: 'Blandishment',
+        back: 'Definition: A flattering or coaxing remark intended to persuade.\n\nExample sentence: "Sheila eventually recognises that her initial blandishment of the Inspector\'s authority masks her fear of truth."\n\nSynonyms: flattery, coaxing, persuasion, charm.\n\nHow to use in Paper 2 Q5: Use to describe persuasive flattery — "His blandishment worked; she agreed before fully considering the proposal."'
+      },
+      {
+        id: 't2-75',
+        front: 'Contumacy',
+        back: 'Definition: Stubborn resistance to authority; insubordination.\n\nExample sentence: "The older Birlings\' contumacy in refusing to accept blame is what makes their final destruction so inevitable."\n\nSynonyms: defiance, insubordination, stubbornness, rebellion.\n\nHow to use in Paper 2 Q5: Use to criticise refusal to cooperate — "His contumacy in the face of clear evidence frustrated the committee."'
+      },
+      {
+        id: 't2-76',
+        front: 'Obstreperous',
+        back: 'Definition: Noisy, rowdy, and hard to control; loudly defiant.\n\nExample sentence: "Eric\'s obstreperous outburst during the Inspector\'s questioning reveals the guilt and panic underlying his guilt."\n\nSynonyms: noisy, rowdy, loud, boisterous.\n\nHow to use in Paper 2 Q5: Use to describe disruptive behaviour — "The obstreperous crowd drowned out the speaker\'s message."'
+      },
+      {
+        id: 't2-77',
+        front: 'Sanguine',
+        back: 'Definition: Optimistic or positive in outlook, especially in an unjustified way.\n\nExample sentence: "Mr Birling\'s sanguine predictions about the Titanic and world peace expose his complacent self-delusion."\n\nSynonyms: optimistic, hopeful, positive, confident.\n\nHow to use in Paper 2 Q5: Use to describe unjustified optimism — "His sanguine belief that the problem would solve itself proved foolish."'
+      },
+      {
+        id: 't2-78',
+        front: 'Murky',
+        back: 'Definition: Dark, gloomy, and obscure; morally questionable or shady.\n\nExample sentence: "Hyde\'s murky existence in the shadowy streets of Soho contrasts with Jekyll\'s respectable daytime life."\n\nSynonyms: dark, gloomy, dim, questionable.\n\nHow to use in Paper 2 Q5: Use to describe shadiness — "His murky financial dealings raised questions about his integrity."'
+      },
+      {
+        id: 't2-79',
+        front: 'Pellucidity',
+        back: 'Definition: The quality of being clear and easy to understand.\n\nExample sentence: "The pellucidity of Dickens\'s moral message — that compassion matters more than wealth — resonates across centuries."\n\nSynonyms: clarity, transparency, lucidity, plainness.\n\nHow to use in Paper 2 Q5: Use to praise clarity — "The pellucidity of her argument made it impossible to disagree."'
+      },
+      {
+        id: 't2-80',
+        front: 'Egregious',
+        back: 'Definition: Outstandingly bad or reprehensible; shockingly obvious.\n\nExample sentence: "Scrooge\'s refusal to help the poor is egregious — even by Victorian standards, his coldness is shocking."\n\nSynonyms: outrageous, shocking, bad, flagrant.\n\nHow to use in Paper 2 Q5: Use to emphasise severity — "The egregious errors in the report called for a complete revision."'
+      },
+      {
+        id: 't2-81',
+        front: 'Palliate',
+        back: 'Definition: To make something seem less serious or grave; to lessen the severity.\n\nExample sentence: "Nothing can palliate Scrooge\'s years of cruelty, but his final actions show genuine remorse and change."\n\nSynonyms: ease, alleviate, mitigate, soften.\n\nHow to use in Paper 2 Q5: Use when discussing whether something reduces blame — "His apology did not palliate the harm he had caused."'
+      },
+      {
+        id: 't2-82',
+        front: 'Fulsome',
+        back: 'Definition: Complimentary in a way that is excessive or insincere.\n\nExample sentence: "The Birlings\'s fulsome praise of the Inspector early in the play masks their desperation to escape blame."\n\nSynonyms: excessive, overdone, insincere, flattering.\n\nHow to use in Paper 2 Q5: Use to criticise false praise — "The fulsome tributes rang hollow given his actual behaviour."'
+      },
+      {
+        id: 't2-83',
+        front: 'Perspicacious',
+        back: 'Definition: Having keen insight or shrewd judgment; showing acute mental perception.\n\nExample sentence: "Sheila\'s perspicacious observation about the Inspector reveals her capacity for moral growth unlike her parents."\n\nSynonyms: insightful, shrewd, discerning, perceptive.\n\nHow to use: Use to praise careful analysis — "Her perspicacious reading of the text identified layers others missed."'
+      },
+      {
+        id: 't2-84',
+        front: 'Mendacious',
+        back: 'Definition: Given to or characterized by deception or falsehood; lying.\n\nExample sentence: "The Birlings\' mendacious denials during the Inspector\'s questioning crumble under evidence of their guilt."\n\nSynonyms: dishonest, false, deceptive, lying.\n\nHow to use: Use to describe dishonesty — "His mendacious account contradicted the witness testimony."'
+      },
+      {
+        id: 't2-85',
+        front: 'Veracity',
+        back: 'Definition: Truthfulness and accuracy; the quality of being true or accurate.\n\nExample sentence: "Priestley values veracity above all — his play insists on facing moral truth without evasion."\n\nSynonyms: honesty, truthfulness, accuracy, authenticity.\n\nHow to use: Use when discussing truthfulness — "The veracity of the account was confirmed by multiple sources."'
+      },
+      {
+        id: 't2-86',
+        front: 'Circumlocution',
+        back: 'Definition: The use of many words to express something that could be said more simply; roundabout speech.\n\nExample sentence: "Rather than admit guilt directly, Mr Birling uses circumlocution to describe Eva\'s employment at his factory."\n\nSynonyms: verbosity, wordiness, roundabout speech, periphrasis.\n\nHow to use: Use to criticise indirect language — "His circumlocution when asked a direct question made his evasiveness obvious."'
+      },
+      {
+        id: 't2-87',
+        front: 'Brevity',
+        back: 'Definition: Conciseness in speaking or writing; shortness of duration.\n\nExample sentence: "The Inspector\'s brevity of speech contrasts sharply with the Birlings\' defensive rambling."\n\nSynonyms: conciseness, terseness, shortness, succinctness.\n\nHow to use: Use to praise conciseness — "The brevity of her answer showed clear thinking."'
+      },
+      {
+        id: 't2-88',
+        front: 'Prolixity',
+        back: 'Definition: The quality of being lengthy or wordy; tedious length.\n\nExample sentence: "Some characters hide truth through prolixity, while the Inspector cuts through with direct questions."\n\nSynonyms: wordiness, verbosity, long-windedness, tediousness.\n\nHow to use: Use to criticise excessive length — "The prolixity of the argument obscured rather than clarified the point."'
+      },
+      {
+        id: 't2-89',
+        front: 'Inimical',
+        back: 'Definition: Harmful, unfavourable, or hostile; tending to hinder or oppose.\n\nExample sentence: "Social responsibility is inimical to Mr Birling\'s worldview of individual self-interest."\n\nSynonyms: harmful, hostile, opposed, unfavourable.\n\nHow to use: Use to show conflict — "Such practices are inimical to the company\'s stated values."'
+      },
+      {
+        id: 't2-90',
+        front: 'Salutary',
+        back: 'Definition: Producing a beneficial effect; promoting well-being or improvement.\n\nExample sentence: "The Inspector\'s intervention has a salutary effect on Sheila and Eric, forcing moral reckoning on them."\n\nSynonyms: beneficial, helpful, healthy, improving.\n\nHow to use: Use to praise positive effects — "The salutary impact of the reform was evident immediately."'
+      },
+      {
+        id: 't2-91',
+        front: 'Felicitous',
+        back: 'Definition: Well-suited or appropriate; producing a happy or beneficial result.\n\nExample sentence: "Priestley\'s felicitous choice to use a mysterious Inspector creates dramatic tension and moral uncertainty."\n\nSynonyms: appropriate, fitting, suitable, well-chosen.\n\nHow to use: Use to praise good choices — "Her felicitous phrasing made the complex idea accessible."'
+      },
+      {
+        id: 't2-92',
+        front: 'Sedulous',
+        back: 'Definition: Showing careful attention to detail; diligent and thorough.\n\nExample sentence: "The Inspector\'s sedulous investigation leaves no stone unturned in uncovering the family\'s complicity."\n\nSynonyms: diligent, thorough, careful, meticulous.\n\nHow to use: Use to praise effort — "His sedulous work on the project ensured no details were overlooked."'
+      },
+      {
+        id: 't2-93',
+        front: 'Pellucid',
+        back: 'Definition: Translucently clear; easy to understand.\n\nExample sentence: "Dickens presents a pellucid moral argument — charity and compassion matter more than wealth."\n\nSynonyms: clear, lucid, transparent, understandable.\n\nHow to use: Use to praise clarity — "Her pellucid explanation made the difficult concept understandable."'
+      },
+      {
+        id: 't2-94',
+        front: 'Perspicacity',
+        back: 'Definition: Keen insight and judgment; the ability to discern things clearly.\n\nExample sentence: "Sheila demonstrates perspicacity in recognizing the moral implications of her actions toward Eva."\n\nSynonyms: insight, discernment, acuity, perception.\n\nHow to use: Use to praise understanding — "His perspicacity allowed him to spot the flaw in the argument."'
+      },
+      {
+        id: 't2-95',
+        front: 'Enervate',
+        back: 'Definition: To deprive of vigor or vitality; to weaken.\n\nExample sentence: "The Birlings\' complacency and self-delusion enervate their moral strength, leaving them vulnerable."\n\nSynonyms: weaken, tire, fatigue, sap.\n\nHow to use: Use to describe weakening — "The long struggle began to enervate his resolve."'
+      },
+      {
+        id: 't2-96',
+        front: 'Truculent',
+        back: 'Definition: Eager or quick to argue or fight; aggressively confrontational.\n\nExample sentence: "The older Birlings become increasingly truculent as the Inspector presses them with evidence."\n\nSynonyms: belligerent, aggressive, confrontational, quarrelsome.\n\nHow to use: Use to describe aggressiveness — "His truculent response to criticism alienated his colleagues."'
+      },
+      {
+        id: 't2-97',
+        front: 'Urbane',
+        back: 'Definition: Smoothly sophisticated and refined in manner; showing good taste and polish.\n\nExample sentence: "The Inspector maintains an urbane composure throughout the interrogation, never losing control."\n\nSynonyms: sophisticated, refined, suave, polished.\n\nHow to use: Use to praise polish — "His urbane manner made him popular in social circles."'
+      },
+      {
+        id: 't2-98',
+        front: 'Effete',
+        back: 'Definition: Lacking vigor or effectiveness; exhausted or depleted of strength.\n\nExample sentence: "Mr Birling\'s effete resistance to moral responsibility shows how privilege can weaken ethical judgment."\n\nSynonyms: exhausted, weak, feeble, depleted.\n\nHow to use: Use to criticise weakness — "The once-powerful movement had become effete and ineffectual."'
+      },
+      {
+        id: 't2-99',
+        front: 'Perspicuity',
+        back: 'Definition: The quality of being clear and easy to understand; lucidity.\n\nExample sentence: "The perspicuity of Priestley\'s social message — we are responsible for each other — cuts through all dramatic ambiguity."\n\nSynonyms: clarity, lucidity, transparency, plainness.\n\nHow to use: Use to praise clarity — "The perspicuity of her argument made it compelling."'
+      },
+      {
+        id: 't2-100',
+        front: 'Sycophant',
+        back: 'Definition: A person who seeks favor by flattering and behaving obsequiously.\n\nExample sentence: "A true sycophant, Mr Birling flatters the Inspector while seeking to minimize his family\'s responsibility."\n\nSynonyms: flatterer, yes-man, toady, bootlicker.\n\nHow to use: Use to describe flattery — "His obvious sycophancy alienated those who valued honesty."'
+      },
+      {
+        id: 't2-101',
+        front: 'Diffident',
+        back: 'Definition: Lacking confidence in one\'s own abilities; shy or modest.\n\nExample sentence: "Unlike her diffident brother at the start, Sheila quickly overcomes her hesitation about truth."\n\nSynonyms: shy, modest, insecure, lacking confidence.\n\nHow to use: Use to describe lacking confidence — "Her diffident approach to presenting her ideas cost her credibility."'
+      },
+      {
+        id: 't2-102',
+        front: 'Peremptory',
+        back: 'Definition: Admitting no discussion or disagreement; final and absolute.\n\nExample sentence: "The Inspector\'s peremptory dismissal of their excuses forces the family to confront uncomfortable truths."\n\nSynonyms: absolute, final, commanding, authoritative.\n\nHow to use: Use to describe commanding tone — "His peremptory tone left no room for negotiation."'
+      },
+      {
+        id: 't2-103',
+        front: 'Implacable',
+        back: 'Definition: Unable to be appeased or pacified; relentless.\n\nExample sentence: "The Inspector\'s implacable pursuit of truth demonstrates the impossibility of escaping moral responsibility."\n\nSynonyms: relentless, unyielding, unforgiving, inflexible.\n\nHow to use: Use to describe someone unstoppable — "Her implacable determination to succeed inspired everyone."'
+      },
+      {
+        id: 't2-104',
+        front: 'Magnanimous',
+        back: 'Definition: Generous and forgiving, especially toward a rival or less powerful person.\n\nExample sentence: "Dickens presents Scrooge\'s magnanimous transformation as redemptive — he becomes generous in spirit as well as wealth."\n\nSynonyms: generous, noble, forgiving, kind.\n\nHow to use: Use to praise generosity — "His magnanimous treatment of those who betrayed him was admirable."'
+      },
+      {
+        id: 't2-105',
+        front: 'Vituperative',
+        back: 'Definition: Bitter, abusive language; harshly critical.\n\nExample sentence: "The Inspector avoids vituperative condemnation; instead, he lets facts and consequences speak for themselves."\n\nSynonyms: abusive, harsh, bitter, scathing.\n\nHow to use: Use to describe harsh criticism — "His vituperative attack on her character was uncalled for."'
+      },
+      {
+        id: 't2-106',
+        front: 'Propitiate',
+        back: 'Definition: To win over or gain favor from; to appease.\n\nExample sentence: "The Birlings attempt to propitiate the Inspector with civility, but their guilt cannot be hidden."\n\nSynonyms: appease, placate, pacify, win over.\n\nHow to use: Use to describe appeasing — "His gifts were an attempt to propitiate her anger."'
+      },
+      {
+        id: 't2-107',
+        front: 'Plausible',
+        back: 'Definition: Seeming reasonable or probable; capable of being believed.\n\nExample sentence: "The Birlings\'s excuses initially sound plausible, but the Inspector\'s evidence makes their denials impossible."\n\nSynonyms: believable, reasonable, probable, credible.\n\nHow to use: Use to describe something believable — "His explanation was plausible but not entirely convincing."'
+      },
+      {
+        id: 't2-108',
+        front: 'Flagrant',
+        back: 'Definition: Obviously offensive or contrary to accepted standards; glaringly wrong.\n\nExample sentence: "The Birlings\'s flagrant disregard for Eva\'s humanity becomes obvious through the Inspector\'s questioning."\n\nSynonyms: blatant, obvious, glaring, outrageous.\n\nHow to use: Use to emphasise obviousness of wrongdoing — "The flagrant violation of protocol could not be ignored."'
+      },
+      {
+        id: 't2-109',
+        front: 'Incongruity',
+        back: 'Definition: A lack of harmony or compatibility; the state of being inconsistent.\n\nExample sentence: "The incongruity between the Birlings\' comfortable wealth and their casual cruelty drives the play\'s moral message."\n\nSynonyms: inconsistency, contradiction, mismatch, conflict.\n\nHow to use: Use to describe contradiction — "The incongruity between his words and actions was undeniable."'
+      },
+      {
+        id: 't2-110',
+        front: 'Facetious',
+        back: 'Definition: Joking or humorous in an inappropriate or annoying way.\n\nExample sentence: "Mr Birling\'s facetious remarks about the Titanic\'s safety reveal his inability to take serious matters seriously."\n\nSynonyms: joking, flippant, light-hearted, humorous.\n\nHow to use: Use to criticise inappropriate jokes — "His facetious comments at the funeral were disrespectful."'
+      },
+      {
+        id: 't2-111',
+        front: 'Propitious',
+        back: 'Definition: Favorable; auspicious and promising success.\n\nExample sentence: "The timing of the Inspector\'s arrival is not propitious for the Birlings\' comfortable lies."\n\nSynonyms: favorable, auspicious, promising, fortunate.\n\nHow to use: Use to describe favorable conditions — "The propitious moment had arrived for change."'
+      },
+      {
+        id: 't2-112',
+        front: 'Capricious',
+        back: 'Definition: Given to sudden and unaccountable changes of mood or behavior; unpredictable.\n\nExample sentence: "The Inspector\'s capricious behavior keeps the family off-balance, unable to predict his next move."\n\nSynonyms: unpredictable, erratic, whimsical, fickle.\n\nHow to use: Use to describe unpredictability — "Her capricious decisions made it impossible to plan ahead."'
+      },
+      {
+        id: 't2-113',
+        front: 'Pellucidly',
+        back: 'Definition: In a clear, easily understood manner; transparently.\n\nExample sentence: "Priestley pellucidly demonstrates that individual moral choices have social consequences."\n\nSynonyms: clearly, transparently, lucidly, plainly.\n\nHow to use: Use when describing clear expression — "She pellucidly explained her position."'
+      },
+      {
+        id: 't2-114',
+        front: 'Recalcitrant',
+        back: 'Definition: Stubbornly resistant to authority; refusing to obey.\n\nExample sentence: "Mr Birling becomes increasingly recalcitrant as the Inspector threatens his social status and reputation."\n\nSynonyms: stubborn, defiant, resistant, disobedient.\n\nHow to use: Use to describe resistance — "The recalcitrant witness refused to answer questions."'
+      },
+      {
+        id: 't2-115',
+        front: 'Loquacious',
+        back: 'Definition: Fond of talking; talkative and verbose.\n\nExample sentence: "Mr Birling\'s loquacious nature leads him to over-explain and contradict himself under pressure."\n\nSynonyms: talkative, verbose, garrulous, chatty.\n\nHow to use: Use to describe talkative nature — "His loquacious personality dominated the conversation."'
+      },
+      {
+        id: 't2-116',
+        front: 'Taciturn',
+        back: 'Definition: Habitually silent; reserved in speech.\n\nExample sentence: "The Inspector\'s taciturn responses force others to fill the silence, revealing their guilt."\n\nSynonyms: quiet, reserved, silent, uncommunicative.\n\nHow to use: Use to describe quietness — "His taciturn nature made him seem mysterious."'
+      },
+      {
+        id: 't2-117',
+        front: 'Vacuous',
+        back: 'Definition: Lacking intelligence or content; empty-headed or hollow.\n\nExample sentence: "The vacuous materialism of the Birling household masks deeper moral bankruptcy."\n\nSynonyms: empty, vacant, hollow, foolish.\n\nHow to use: Use to criticise lack of substance — "The vacuous argument failed to address the real issue."'
+      },
+      {
+        id: 't2-118',
+        front: 'Unctuous',
+        back: 'Definition: Smearing oneself with unguent; insincere and excessively flattering.\n\nExample sentence: "Mr Birling\'s unctuous flattery of the Inspector reveals his desperation to escape blame."\n\nSynonyms: insincere, flattering, oily, hypocritical.\n\nHow to use: Use to criticise false sincerity — "His unctuous apology rang false."'
+      },
+      {
+        id: 't2-119',
+        front: 'Propensity',
+        back: 'Definition: A natural tendency or inclination.\n\nExample sentence: "The Birlings\' propensity for self-deception becomes clear through their inability to accept responsibility."\n\nSynonyms: tendency, inclination, leaning, disposition.\n\nHow to use: Use to describe tendency — "Her propensity for honesty made her trustworthy."'
+      },
+      {
+        id: 't2-120',
+        front: 'Sordid',
+        back: 'Definition: Involving immoral or dishonest behavior; morally repulsive.\n\nExample sentence: "The sordid details of each family member\'s involvement with Eva emerge gradually under the Inspector\'s questioning."\n\nSynonyms: immoral, dishonest, disreputable, squalid.\n\nHow to use: Use to describe morally repulsive behavior — "The sordid truth about his past finally emerged."'
+      },
+      {
+        id: 't2-121',
+        front: 'Ebullient',
+        back: 'Definition: Cheerful and enthusiastic; bubbling over with excitement.\n\nExample sentence: "Mr Birling\'s ebullient optimism about future prosperity masks his moral blindness."\n\nSynonyms: enthusiastic, cheerful, exuberant, animated.\n\nHow to use: Use to describe enthusiasm — "His ebullient personality made him beloved by friends."'
+      },
+      {
+        id: 't2-122',
+        front: 'Dolorous',
+        back: 'Definition: Expressing sorrow or mournfulness; sorrowful and gloomy.\n\nExample sentence: "Sheila\'s dolorous reflection on Eva\'s fate shows her genuine remorse and moral awakening."\n\nSynonyms: sorrowful, mournful, sad, gloomy.\n\nHow to use: Use to describe sadness — "His dolorous expression revealed his deep regret."'
+      },
+      {
+        id: 't2-123',
+        front: 'Incisive',
+        back: 'Definition: Clear, direct, and penetrating; keen and sharp.\n\nExample sentence: "The Inspector\'s incisive questions cut through the family\'s defenses, forcing brutal honesty."\n\nSynonyms: keen, sharp, perceptive, acute.\n\nHow to use: Use to praise sharp thinking — "Her incisive analysis exposed the flaw in his logic."'
+      },
+      {
+        id: 't2-124',
+        front: 'Obfuscate',
+        back: 'Definition: To render obscure or unclear; to confuse or perplex.\n\nExample sentence: "Mr Birling attempts to obfuscate his responsibility through evasion and circular reasoning."\n\nSynonyms: obscure, confuse, muddy, cloud.\n\nHow to use: Use to criticise unclear communication — "His tendency to obfuscate the issue annoyed everyone."'
+      },
+      {
+        id: 't2-125',
+        front: 'Pallid',
+        back: 'Definition: Pale in appearance; lacking liveliness or vigor.\n\nExample sentence: "Gerald\'s pallid face reveals his shock at being implicated in Eva\'s downfall."\n\nSynonyms: pale, wan, ashen, colorless.\n\nHow to use: Use to describe pale appearance — "His pallid complexion suggested he was unwell."'
+      },
+      {
+        id: 't2-126',
+        front: 'Vivacity',
+        back: 'Definition: Liveliness and animation; spirited and energetic quality.\n\nExample sentence: "Sheila\'s vivacity early in the play contrasts sharply with her somber reflection by the end."\n\nSynonyms: liveliness, animation, energy, spirit.\n\nHow to use: Use to describe liveliness — "Her vivacity and charm made her the life of the party."'
+      },
+      {
+        id: 't2-127',
+        front: 'Venal',
+        back: 'Definition: Willing to compromise principles for money or advantage; corruptible.\n\nExample sentence: "The play suggests that society\'s venal pursuit of profit leaves no room for genuine morality."\n\nSynonyms: corrupt, mercenary, unprincipled, corrupt.\n\nHow to use: Use to criticise corruption — "His venal acceptance of bribes cost him his reputation."'
+      },
+      {
+        id: 't2-128',
+        front: 'Exonerate',
+        back: 'Definition: To free from blame or responsibility; to prove innocent.\n\nExample sentence: "As more truth emerges, no one can exonerate themselves from blame in Eva\'s tragedy."\n\nSynonyms: clear, acquit, absolve, vindicate.\n\nHow to use: Use when discussing blame — "The evidence exonerated him from the accusations."'
+      },
+      {
+        id: 't2-129',
+        front: 'Culpable',
+        back: 'Definition: Deserving blame; responsible and at fault.\n\nExample sentence: "Every member of the Birling family is equally culpable in Eva\'s destruction."\n\nSynonyms: blameworthy, guilty, responsible, at fault.\n\nHow to use: Use to assign blame — "He was culpable in the scheme, even though he claimed ignorance."'
+      },
+,
+      {
+        id: 't2-131',
+        front: 'Abscond',
+        back: 'Definition: To leave secretly and suddenly, typically to avoid detection or punishment.\n\nExample sentence: "The character attempts to abscond with the evidence, revealing their guilt."\n\nContext: Academic vocabulary for GCSE essays\n\nHow to use: Include in formal analytical writing to demonstrate sophistication.'
+      },
+      {
+        id: 't2-132',
+        front: 'Aberrant',
+        back: 'Definition: Deviating from the normal or expected course; abnormal or deviant.\n\nExample sentence: "The character\'s aberrant behavior signals psychological disturbance beneath the surface."\n\nContext: Academic vocabulary\n\nHow to use: Use to describe unusual or abnormal character actions or traits.'
+      },
+      {
+        id: 't2-133',
+        front: 'Abjure',
+        back: 'Definition: To renounce or reject solemnly; to abstain from.\n\nExample sentence: "The character abjures their former beliefs, embracing a new moral framework."\n\nContext: Academic vocabulary for formal writing\n\nHow to use: Use to describe deliberate rejection of previous values or commitments.'
+      },
+      {
+        id: 't2-134',
+        front: 'Abrogate',
+        back: 'Definition: To repeal or do away with a law, right, or formal agreement.\n\nExample sentence: "The new regime abrogates the traditional customs that governed society."\n\nContext: Academic vocabulary for discussing power and institutional change\n\nHow to use: Use when discussing authority, law, or the breaking of established rules.'
+      },
+      {
+        id: 't2-135',
+        front: 'Absolve',
+        back: 'Definition: To free someone from blame or responsibility for wrongdoing.\n\nExample sentence: "The confession absolves the innocent party of suspicion."\n\nContext: Academic vocabulary\n\nHow to use: Use when discussing forgiveness, clearing of guilt, or removal of responsibility.'
+      },
+      {
+        id: 't2-136',
+        front: 'Abstain',
+        back: 'Definition: To deliberately refrain from engaging in something.\n\nExample sentence: "The character abstains from participation, suggesting moral disapproval."\n\nContext: Academic vocabulary\n\nHow to use: Use to show deliberate avoidance or refusal, often with moral implications.'
+      },
+      {
+        id: 't2-137',
+        front: 'Accede',
+        back: 'Definition: To agree or give consent to something.\n\nExample sentence: "She finally accedes to his request, despite her earlier resistance."\n\nContext: Academic vocabulary\n\nHow to use: Use to show agreement or acceptance after initial hesitation or disagreement.'
+      },
+      {
+        id: 't2-138',
+        front: 'Acerbic',
+        back: 'Definition: Sharp and forthright in manner or language; biting, cutting, or sarcastic.\n\nExample sentence: "His acerbic wit masks underlying insecurity and pain."\n\nContext: Academic vocabulary for characterisation\n\nHow to use: Use to describe sharp or harsh speech, often with undertones of criticism.'
+      },
+      {
+        id: 't2-139',
+        front: 'Acidulous',
+        back: 'Definition: Slightly sour or sharp in taste or tone; mildly acerbic.\n\nExample sentence: "The narrator\'s acidulous commentary reveals disapproval of the character."\n\nContext: Academic vocabulary\n\nHow to use: Use to describe sharp but not harsh tone, subtle criticism or bitterness.'
+      },
+      {
+        id: 't2-140',
+        front: 'Acquiesce',
+        back: 'Definition: To accept something reluctantly but without protest; to agree passively.\n\nExample sentence: "The character acquiesces to pressure, surrendering personal values."\n\nContext: Academic vocabulary\n\nHow to use: Use to show passive acceptance or compliance, often suggesting weakness or capitulation.'
+      },
+      {
+        id: 't2-141',
+        front: 'Acuity',
+        back: 'Definition: Sharpness or keenness of judgment, understanding, or perception.\n\nExample sentence: "The detective\'s mental acuity allows him to perceive hidden truths."\n\nContext: Academic vocabulary for characterisation\n\nHow to use: Use to praise sharp intellect, keen perception, or psychological insight.'
+      },
+      {
+        id: 't2-142',
+        front: 'Admonish',
+        back: 'Definition: To scold or express disapproval to someone; to warn.\n\nExample sentence: "The father admonishes his son for irresponsible behavior."\n\nContext: Academic vocabulary\n\nHow to use: Use when describing criticism, warnings, or expressions of disapproval.'
+      },
+      {
+        id: 't2-143',
+        front: 'Adorn',
+        back: 'Definition: To decorate or embellish something with ornamental additions.\n\nExample sentence: "The wealthy family adorns their mansion with expensive furnishings."\n\nContext: Academic vocabulary for descriptive writing\n\nHow to use: Use to describe decoration or embellishment, often with implications of vanity or ostentation.'
+      },
+      {
+        id: 't2-144',
+        front: 'Adulterate',
+        back: 'Definition: To make impure by adding inferior or harmful substances; to corrupt.\n\nExample sentence: "The morally bankrupt society adulterates its own principles for profit."\n\nContext: Academic vocabulary for discussing corruption or degradation\n\nHow to use: Use metaphorically to describe corruption of principles, or literally for mixing substances.'
+      },
+      {
+        id: 't2-145',
+        front: 'Advent',
+        back: 'Definition: The arrival or beginning of something, especially something significant.\n\nExample sentence: "The advent of industrialisation transformed Victorian society fundamentally."\n\nContext: Academic vocabulary for discussing historical change\n\nHow to use: Use when discussing the arrival or beginning of significant events or eras.'
+      },
+      {
+        id: 't2-146',
+        front: 'Adversity',
+        back: 'Definition: Difficult or unfortunate circumstances; hardship or struggle.\n\nExample sentence: "The character\'s response to adversity reveals their true moral character."\n\nContext: Academic vocabulary\n\nHow to use: Use when discussing hardship, struggle, or challenges faced by characters or society.'
+      },
+      {
+        id: 't2-147',
+        front: 'Advert',
+        back: 'Definition: To refer to or mention something; to call attention to.\n\nExample sentence: "The narrator adverts to the character\'s hidden past without explicitly stating it."\n\nContext: Academic vocabulary\n\nHow to use: Use when discussing references, allusions, or indirect mentions in texts.'
+      },
+      {
+        id: 't2-148',
+        front: 'Advocate',
+        back: 'Definition: To publicly support or recommend something; a person who argues for a cause.\n\nExample sentence: "Dickens advocates for social responsibility toward the poor."\n\nContext: Academic vocabulary\n\nHow to use: Use when discussing authorial purpose, character beliefs, or support for causes.'
+      },
+      {
+        id: 't2-149',
+        front: 'Affable',
+        back: 'Definition: Friendly, pleasant, and easy to talk to in manner.\n\nExample sentence: "His affable demeanor masks his true greedy nature."\n\nContext: Academic vocabulary for characterisation\n\nHow to use: Use to describe pleasant, approachable demeanor, often in contrast to hidden traits.'
+      },
+      {
+        id: 't2-150',
+        front: 'Affected',
+        back: 'Definition: Artificial, assumed, or pretended, often in a way that is ostentatious.\n\nExample sentence: "The character\'s affected politeness reveals insecurity beneath the surface."\n\nContext: Academic vocabulary for characterisation\n\nHow to use: Use to describe artificial or false behavior, often suggesting inauthenticity.'
+      },
     ],
   },
 ];

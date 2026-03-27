@@ -662,6 +662,10 @@ export const inspectorCallsCourse: CourseData = {
 
 <p>Arthur Birling is Priestley's embodiment of <strong>capitalist complacency</strong>. He represents everything Priestley believed was wrong with Edwardian society: selfishness, greed, social climbing, the exploitation of workers, and an absolute refusal to accept responsibility for others. Understanding Birling is essential for your AQA exam because he functions as the <strong>ideological antagonist</strong> — the character whose worldview the play exists to challenge and discredit.</p>
 
+<div class="context-box" style="background: #e8f4f8; padding: 15px; margin: 20px 0; border-left: 4px solid #2c5aa0;">
+  <strong>Historical/Political Context:</strong> Priestley wrote <em>An Inspector Calls</em> in 1945, just after WWII, when Britain was debating its postwar settlement. The play is set in 1912 but speaks to 1945 audiences: will society learn from the war's lessons about collective responsibility, or will we return to pre-war selfishness? Birling represents the pre-war mindset that Priestley hopes audiences will reject. His dramatic irony — being wrong about everything — makes him a figure of political failure.
+</div>
+
 <div class="key-term"><strong>Key Term: Ideological Antagonist</strong> — A character who embodies the values or beliefs that the text is arguing against. Birling is not a villain in the conventional sense — he is a representative of an entire system of thought (capitalism, individualism) that Priestley wants the audience to reject.</div>
 
 <h3>Birling as a Social Climber</h3>
@@ -673,6 +677,11 @@ export const inspectorCallsCourse: CourseData = {
 <p>His social insecurity also makes him morally cowardly. When the Inspector arrives, Birling's first instinct is to protect his reputation, not to help Eva. He mentions his connections — he was Lord Mayor, he plays golf with the Chief Constable, he is expecting a knighthood. This name-dropping is Priestley's way of showing how the ruling class uses social networks to shield themselves from accountability.</p>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> In an AQA essay on Birling, always connect his character to Priestley's wider purpose. Birling is not simply an unpleasant individual — he represents a class and a philosophy. When you write about his refusal to accept responsibility, frame it as Priestley's critique of capitalist ideology, not just of one man's selfishness.</div>
+
+<div class="worked-example" style="background: #fff3cd; padding: 15px; margin: 20px 0; border: 1px solid #ffc107;">
+  <strong>How to Develop an Argument About Birling (Grade 9 Response):</strong>
+  <p style="margin: 10px 0;">Priestley uses Birling to embody the capitalist ideology that prioritizes profit over people. The character's name — Birling — suggests both "whirling" (frivolous motion) and "bird-like" (predatory). Birling's philosophy of individualism — "a man has to mind his own business" — is presented not as wisdom but as moral blindness. When the Inspector arrives, Birling is forced to confront how his philosophy enables exploitation and suffering. For an exam response, this demonstrates AO1: you are showing understanding of how Priestley constructs ideology through character. Birling is not a person; he is a walking argument against capitalism.</p>
+</div>
 
 <h3>Birling's Philosophy</h3>
 
@@ -693,6 +702,11 @@ export const inspectorCallsCourse: CourseData = {
 <p>This is a sophisticated argumentative technique. Rather than simply telling the audience that capitalism is wrong, Priestley <strong>demonstrates</strong> it by attaching capitalist philosophy to a character who is demonstrably foolish. The audience is invited to reason: Birling's worldview produced these terrible predictions; therefore, his worldview itself must be flawed.</p>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Simply listing Birling's wrong predictions without explaining Priestley's purpose. The dramatic irony is not just for comedy — it is a deliberate strategy to discredit Birling's philosophy. Always explain the "so what?" — why does Priestley do this, and what does it make the audience think?</div>
+
+<div class="worked-example" style="background: #fff3cd; padding: 15px; margin: 20px 0; border: 1px solid #ffc107;">
+  <strong>Using Dramatic Irony in Essays (Grade 9 Response):</strong>
+  <p style="margin: 10px 0;">Birling's confident assertion that the Titanic is "unsinkable" creates dramatic irony that the 1945 audience would immediately recognize — they know the Titanic sank in 1912, just months after this play is set. This irony is not accidental; Priestley uses it strategically. If Birling is catastrophically wrong about factual matters, why should the audience trust his moral philosophy? By attaching Birling's capitalist ideology to a character who is demonstrably foolish, Priestley implicitly argues that capitalism itself is a bankrupt system. For an exam, this demonstrates sophisticated AO2 analysis: you are showing how Priestley uses dramatic structure (irony) to undermine ideology.</p>
+</div>
 
 <h3>Birling's Relationship with Eva Smith</h3>
 
@@ -804,6 +818,10 @@ export const inspectorCallsCourse: CourseData = {
 
 <p>Sheila Birling undergoes the most significant character transformation in the play. She begins as a spoiled, materialistic young woman and ends as a morally independent figure who rejects her parents' values and insists on personal accountability. For Priestley, Sheila represents <strong>hope</strong> — the possibility that the younger generation can learn from the mistakes of the old and build a better society.</p>
 
+<div class="context-box" style="background: #e8f4f8; padding: 15px; margin: 20px 0; border-left: 4px solid #2c5aa0;">
+  <strong>Social Context:</strong> In 1945, British women had recently demonstrated their capabilities during WWII — working in factories, armed services, and civil defense. Priestley's portrayal of Sheila's development from decorative fiancée to morally independent woman reflected postwar audiences' expectations: women should have agency, voice, and the right to make independent moral judgments. Sheila's rejection of her engagement ring was radical for 1912; in 1945, it symbolized a new kind of womanhood.
+</div>
+
 <h3>Sheila at the Start of the Play</h3>
 
 <p>In Act 1, Sheila is presented as a typical upper-middle-class Edwardian daughter. She is described as "a pretty girl in her early twenties, very pleased with life and rather excited." She is celebrating her engagement to Gerald and is delighted with her ring — <strong>"Oh — it's wonderful!"</strong> — showing a materialistic focus on the object rather than the commitment it represents.</p>
@@ -824,6 +842,11 @@ export const inspectorCallsCourse: CourseData = {
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> Sheila's crime is often seen as "minor" compared to Eric's or Mrs Birling's. In your essay, challenge this assumption. Argue that Priestley presents Sheila's act as representative of how class privilege operates in everyday life — the powerful can destroy the powerless through casual, thoughtless actions, and this is precisely the systemic injustice Priestley wants to expose.</div>
 
+<div class="worked-example" style="background: #fff3cd; padding: 15px; margin: 20px 0; border: 1px solid #ffc107;">
+  <strong>How to Develop an Essay on Sheila's Act (Grade 9 Response):</strong>
+  <p style="margin: 10px 0;">Sheila's complaint to the Milwards manager — seemingly trivial — reveals how class privilege enables casual cruelty. A working girl's job is worth nothing compared to the goodwill of the Birling family. This is systemic: the powerful can destroy the powerless through minor actions with no consequences to themselves. Priestley uses Sheila to show that privilege is not just about wealth but about power — the ability to ruin someone's life on a whim. What makes Sheila's transformation powerful is that she recognizes this. Unlike her parents, she accepts responsibility for her casual cruelty. For an exam, this demonstrates how Priestley uses individual characters to expose social systems.</p>
+</div>
+
 <h3>Sheila's Transformation</h3>
 
 <p>Sheila's transformation across the play can be tracked through several key moments:</p>
@@ -843,6 +866,11 @@ export const inspectorCallsCourse: CourseData = {
 <p>In this role, Sheila becomes almost an extension of the Inspector himself. She has absorbed his message so completely that she can now advocate for it independently. When the Inspector leaves, Sheila does not need him — she has internalised his values. This is Priestley's most optimistic statement: the lesson has been learned, at least by the young.</p>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Describing Sheila's transformation without analysing Priestley's methods. Remember AO2 — you must discuss how Priestley creates the transformation. Analyse the shift in her language (from childish "mummy" and "daddy" to assertive challenges), her structural role (from passive fiancée to chorus figure), and what this represents thematically.</div>
+
+<div class="worked-example" style="background: #fff3cd; padding: 15px; margin: 20px 0; border: 1px solid #ffc107;">
+  <strong>How to Analyse Sheila's Role Shift (Grade 9 Response):</strong>
+  <p style="margin: 10px 0;">Priestley tracks Sheila's transformation through her changing language and function in the play. Initially, she uses childish terms and defers to her parents. By Act 2, she is using adult language to warn Gerald and her family: "He's giving us the rope — so that we'll hang ourselves." By Act 3, she explicitly challenges her parents: "you don't seem to have learnt anything." This linguistic progression demonstrates how genuine moral understanding produces assertiveness and independence. Structurally, Sheila becomes a chorus figure — commenting on and interpreting the action for the audience. Priestley makes her our moral guide, suggesting that the 1945 audience should align with the young, not the old. This is brilliant dramatic craft: character development and structural function work together to carry meaning.</p>
+</div>
 
 <h3>Sheila &amp; Gender</h3>
 
@@ -954,6 +982,10 @@ export const inspectorCallsCourse: CourseData = {
 
 <p>Inspector Goole is the most enigmatic character in <em>An Inspector Calls</em>. He is simultaneously a detective, a moral judge, a prophet, and Priestley's <strong>mouthpiece</strong>. His identity is deliberately ambiguous — he may be a real police inspector, a ghost, a time-traveller, or an embodiment of collective conscience. What is certain is that he functions as the play's <strong>moral centre</strong>, articulating Priestley's socialist vision of a just society.</p>
 
+<div class="context-box" style="background: #e8f4f8; padding: 15px; margin: 20px 0; border-left: 4px solid #2c5aa0;">
+  <strong>Dramatic Purpose:</strong> The Inspector's ambiguous status — is he real or a manifestation of guilt? — creates dramatic tension but also serves Priestley's purpose. Whether "real" or not, he embodies an unavoidable moral truth: individual actions have social consequences, and society will eventually demand accountability. For 1945 audiences who had just lived through fascism's moral horrors, the Inspector represents conscience that cannot be denied or bargained away.
+</div>
+
 <div class="key-term"><strong>Key Term: Mouthpiece</strong> — A character who directly voices the playwright's own views. Inspector Goole is Priestley's mouthpiece: his speeches articulate Priestley's belief in socialism, collective responsibility, and the need for social change. When the Inspector speaks, Priestley is speaking through him.</div>
 
 <h3>The Inspector's Name</h3>
@@ -963,6 +995,11 @@ export const inspectorCallsCourse: CourseData = {
 <p>There is also a real town called <strong>Goole</strong> in the East Riding of Yorkshire — a port town associated with working-class industry. This grounds the Inspector in the working-class world that Eva Smith inhabited, making him a representative of the people the Birlings exploit.</p>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> Discussing the significance of the Inspector's name is a quick and effective way to demonstrate AO2 analysis in your essay. It shows you understand that Priestley makes deliberate choices — even the character's name carries meaning.</div>
+
+<div class="worked-example" style="background: #fff3cd; padding: 15px; margin: 20px 0; border: 1px solid #ffc107;">
+  <strong>How to Analyse Symbolic Names (Grade 9 Response):</strong>
+  <p style="margin: 10px 0;">The Inspector's name "Goole" operates on multiple levels. As a homophone of "ghoul," it hints at supernatural qualities — the Inspector is not quite human, not quite of this world. As a reference to the real town of Goole in Yorkshire, it grounds the Inspector in the working-class industrial world that Eva Smith inhabits. The name "Goole" also suggests something gloomy, murky, misty — an atmosphere of moral confusion that the Inspector penetrates. This demonstrates how Priestley constructs meaning through language: a single name encodes the Inspector's function, origins, and supernatural nature. For an exam, this shows sophisticated AO2 analysis: you are treating dramatic language as deliberately crafted.</p>
+</div>
 
 <h3>The Inspector's Entrance &amp; Physical Presence</h3>
 
@@ -979,6 +1016,11 @@ export const inspectorCallsCourse: CourseData = {
 <p>The Inspector also uses <strong>silence</strong> as a weapon. His habit of pausing before speaking creates tension and makes the characters uncomfortable. He does not rush to fill silences — he lets guilt do the work. This is a powerful dramatic technique that works particularly well on stage, where silence creates palpable tension for the audience.</p>
 
 <div class="key-term"><strong>Key Term: Omniscience</strong> — The quality of knowing everything. The Inspector appears to be omniscient — he knows details about the characters' lives that a normal police officer could not know. This supernatural quality suggests he is more than a detective; he is a moral force, perhaps an embodiment of conscience itself.</div>
+
+<div class="worked-example" style="background: #fff3cd; padding: 15px; margin: 20px 0; border: 1px solid #ffc107;">
+  <strong>How to Analyse the Inspector's Method (Grade 9 Response):</strong>
+  <p style="margin: 10px 0;">Priestley's choice to have the Inspector question characters one at a time creates structural and dramatic effects. First, it prevents the characters from colluding or supporting each other — each must face the truth alone. Second, it builds tension: each character knows the Inspector already has information from the previous person, so they cannot hide. Third, it allows Priestley to stage a gradually escalating moral confrontation: each layer of truth adds pressure. Structurally, the Inspector controls the rhythm and pace of the play. He is not just a character; he is the mechanism that drives revelation. For an exam response, this demonstrates how Priestley uses technical dramatic choices (staging, pacing, character positioning) to reinforce thematic content about unavoidable moral accountability.</p>
+</div>
 
 <h3>The Inspector as a Socialist Voice</h3>
 

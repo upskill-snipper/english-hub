@@ -30,7 +30,7 @@ export interface MockExamSection {
 
 export interface MockExamPaper {
   id: string
-  board: 'AQA' | 'Edexcel' | 'OCR' | 'WJEC'
+  board: 'AQA' | 'Edexcel' | 'OCR' | 'WJEC' | 'CAIE'
   paperNumber: 1 | 2
   title: string
   subtitle: string
@@ -1198,15 +1198,23 @@ export const mockExamPapers: MockExamPaper[] = [
 
 // ─── Import Expanded Exam Bank ─────────────────────────────────────────────────
 
+
+// ─── Import Expanded Exam Bank ─────────────────────────────────────────────────
+
 import { wjecMockExams } from "./mock-exams-wjec"
+import { caieMockExams } from "./mock-exams-caie"
 import { edexcelMockExams } from "./mock-exams-edexcel"
 import { expandedMockExams } from './mock-exams/index'
+import { aqaLitMockExams } from "./mock-exams-aqa-lit"
 
-/** All mock exam papers — original 8 + 6 Edexcel + 120 expanded = 134 total */
+/** All mock exam papers — original 8 + 6 AQA Lit + 6 WJEC + 6 Edexcel + 6 CAIE + 120 expanded = 152 total */
+
 export const allMockExamPapers: MockExamPaper[] = [
   ...mockExamPapers,
+  ...aqaLitMockExams,
   ...wjecMockExams,
   ...edexcelMockExams,
+  ...caieMockExams,
   ...expandedMockExams,
 ]
 
