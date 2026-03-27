@@ -29,7 +29,7 @@ const features = [
   },
   {
     icon: BookOpen,
-    title: '13 Full Courses',
+    title: '68 Full Courses',
     desc: 'From KS3 Reading to GCSE Literature — comprehensive courses for every stage of your English journey.',
   },
   {

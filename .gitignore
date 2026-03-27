@@ -15,3 +15,7 @@ docs/Biz Files/
 *.xlsx
 *.pdf
 ~$*
+
+# Backup and temp files
+*.bak
+POETRY_ANTHOLOGY_SUMMARY.txt

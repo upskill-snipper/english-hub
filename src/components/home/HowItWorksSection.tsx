@@ -41,7 +41,7 @@ const steps = [
     step: 5,
     icon: Zap,
     title: 'Revise with flashcards & guides',
-    desc: 'Lock in your knowledge with 295 flashcards, terminology glossaries, and board-specific exam guides.',
+    desc: 'Lock in your knowledge with 2,000+ flashcards, terminology glossaries, and board-specific exam guides.',
   },
   {
     step: 6,

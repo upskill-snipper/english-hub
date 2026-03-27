@@ -22,7 +22,7 @@ const items = [
     icon: BookOpen,
     color: 'text-primary bg-primary/10',
     title: 'Structured Courses',
-    desc: 'From KS3 foundations to GCSE mastery — 13 expert-written courses covering Reading, Writing, Grammar, Language, and Literature.',
+    desc: 'From KS3 foundations to GCSE mastery — 68 expert-written courses covering Reading, Writing, Grammar, Language, and Literature.',
     preview: 'Sample topics: Inference & Deduction, Narrative Writing, Poetry Analysis, Transactional Writing, Shakespeare...',
   },
   {
@@ -35,7 +35,7 @@ const items = [
   {
     icon: Layers,
     color: 'text-purple-400 bg-purple-500/10',
-    title: '295 Flashcards',
+    title: '2,000+ Flashcards',
     desc: 'Revise key quotes, terminology, and techniques with spaced-repetition flashcards.',
     preview: 'Topics: Literary devices, key quotations, grammar rules, essay vocabulary, exam command words...',
   },
@@ -63,7 +63,7 @@ const items = [
   {
     icon: Timer,
     color: 'text-orange-400 bg-orange-500/10',
-    title: '120+ Mock Exam Papers',
+    title: '96 Mock Exam Papers',
     desc: 'Full-length timed mock exams for AQA, Edexcel, OCR & WJEC. Real exam format with model answers at every grade band.',
     preview: 'Includes: Timed exam mode, section navigation, Grade 4-5 / 6-7 / 8-9 model answers, mark schemes...',
   },

@@ -33,7 +33,7 @@ export default function MockExamsSection() {
             <div className="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center mb-6">
               <FileText className="w-6 h-6 text-orange-400" />
             </div>
-            <h3 className="text-xl font-bold tracking-tight text-foreground mb-3">120+ Mock Exam Papers</h3>
+            <h3 className="text-xl font-bold tracking-tight text-foreground mb-3">96 Mock Exam Papers</h3>
             <p className="text-muted-foreground leading-relaxed mb-6">
               Full-length timed exams matching the real GCSE format. Every paper includes detailed model answers at three grade bands and official mark schemes.
             </p>

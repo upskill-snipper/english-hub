@@ -34,6 +34,14 @@ import { Separator } from '@/components/ui/separator'
 
 // ─── Board Config ────────────────────────────────────────────────────────────
 
+const DEFAULT_BOARD_CONFIG = {
+  color: 'text-slate-400',
+  bg: 'bg-slate-500/10',
+  gradient: 'from-slate-500/20 to-slate-600/5',
+  border: 'border-slate-500/30',
+  badge: 'bg-slate-500/15 text-slate-300 border-slate-500/30',
+}
+
 const BOARD_CONFIG: Record<string, {
   color: string
   bg: string
@@ -69,12 +77,33 @@ const BOARD_CONFIG: Record<string, {
     border: 'border-red-500/30',
     badge: 'bg-red-500/15 text-red-300 border-red-500/30',
   },
+  IGCSE: {
+    color: 'text-teal-400',
+    bg: 'bg-teal-500/10',
+    gradient: 'from-teal-500/20 to-teal-600/5',
+    border: 'border-teal-500/30',
+    badge: 'bg-teal-500/15 text-teal-300 border-teal-500/30',
+  },
+  CAIE: {
+    color: 'text-emerald-400',
+    bg: 'bg-emerald-500/10',
+    gradient: 'from-emerald-500/20 to-emerald-600/5',
+    border: 'border-emerald-500/30',
+    badge: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30',
+  },
+  All: {
+    color: 'text-cyan-400',
+    bg: 'bg-cyan-500/10',
+    gradient: 'from-cyan-500/20 to-cyan-600/5',
+    border: 'border-cyan-500/30',
+    badge: 'bg-cyan-500/15 text-cyan-300 border-cyan-500/30',
+  },
 }
 
 // ─── Inline Paper Preview ────────────────────────────────────────────────────
 
 const InlinePaperPreview = memo(function InlinePaperPreview({ paper }: { paper: MockExamPaper }) {
-  const config = BOARD_CONFIG[paper.board]
+  const config = BOARD_CONFIG[paper.board] ?? DEFAULT_BOARD_CONFIG
   const FREE_QUESTION_LIMIT = 2
 
   return (
@@ -230,7 +259,7 @@ const InlinePaperPreview = memo(function InlinePaperPreview({ paper }: { paper: 
 // ─── Board Section with Expandable Preview ──────────────────────────────────
 
 function BoardSection({ board }: { board: string }) {
-  const config = BOARD_CONFIG[board]
+  const config = BOARD_CONFIG[board] ?? DEFAULT_BOARD_CONFIG
   const papers = getMockExamsByBoard(board)
   const freePaper = papers[0]
   const [expanded, setExpanded] = useState(false)
@@ -324,7 +353,7 @@ export default function MockExamsPage() {
 
           <div className="flex flex-wrap justify-center gap-3 mb-10">
             {allBoards.map((board) => {
-              const config = BOARD_CONFIG[board]
+              const config = BOARD_CONFIG[board] ?? DEFAULT_BOARD_CONFIG
               const count = getMockExamsByBoard(board).length
               const isActive = selectedBoard === board
               return (
