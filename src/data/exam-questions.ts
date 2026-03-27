@@ -661,6 +661,125 @@ export const examQuestions: ExamQuestion[] = [
   { id: 'caie-ext-2', text: 'Discuss how effectively the writer uses narrative techniques to create an unreliable narrator and maintain reader engagement.', board: 'CAIE', paper: 'Extended', questionType: 'Extended Response' },
 ]
 
+  // ============================================================
+  // LITERATURE EXTRACT QUESTIONS - MAJOR TEXTS
+  // ============================================================
+
+  // --- INSPECTOR CALLS (Priestley) ---
+  { id: 'inspector-calls-1', text: 'How does Priestley use the Inspector\'s arrival to create dramatic tension in Act 1? Consider what the family are doing before his arrival and how their behaviour changes.', board: 'AQA', paper: 'Paper 1', questionType: 'Literature Extract' },
+  { id: 'inspector-calls-2', text: 'Analyse how Priestley uses dramatic irony when Mr Birling discusses the future in Act 1. What are your thoughts on what he says about war and the Titanic?', board: 'AQA', paper: 'Paper 1', questionType: 'Literature Extract' },
+  { id: 'inspector-calls-3', text: 'How does Priestley present the relationship between Mr and Mrs Birling? Use evidence from their interactions during the interrogation.', board: 'AQA', paper: 'Paper 1', questionType: 'Literature Extract' },
+  { id: 'inspector-calls-4', text: 'What is the significance of Eva Smith\'s suicide in the play? How does Priestley use her death to explore themes of social responsibility?', board: 'AQA', paper: 'Paper 1', questionType: 'Literature Extract' },
+  { id: 'inspector-calls-5', text: 'Examine the use of dramatic tension in the final moments of the play. How effective do you find the ending?', board: 'AQA', paper: 'Paper 1', questionType: 'Literature Extract' },
+
+  // --- A CHRISTMAS CAROL (Dickens) ---
+  { id: 'christmas-carol-1', text: 'How does Dickens present Marley\'s ghost in the opening of Stave 2? Analyse how this encounter changes Scrooge\'s character and perspective.', board: 'AQA', paper: 'Paper 1', questionType: 'Literature Extract' },
+  { id: 'christmas-carol-2', text: 'Analyse Dickens\'s use of setting in the scenes visited by the Ghost of Christmas Present. How do these settings emphasise Dickens\'s social message?', board: 'AQA', paper: 'Paper 1', questionType: 'Literature Extract' },
+  { id: 'christmas-carol-3', text: 'How does Dickens use vivid description to convey the poverty of the Cratchit family? Examine the language and imagery he employs.', board: 'AQA', paper: 'Paper 1', questionType: 'Literature Extract' },
+  { id: 'christmas-carol-4', text: 'Analyse the significance of Tiny Tim in the novel. How does Dickens use this character to explore themes of mortality and redemption?', board: 'AQA', paper: 'Paper 1', questionType: 'Literature Extract' },
+  { id: 'christmas-carol-5', text: 'Compare Scrooge\'s character at the beginning of the novel with his character at the end. How convincing do you find his transformation?', board: 'AQA', paper: 'Paper 1', questionType: 'Literature Extract' },
+
+  // --- MACBETH (Shakespeare) ---
+  { id: 'macbeth-1', text: 'Analyse how Shakespeare uses the witches and supernatural elements in Act 1 to establish a sense of unease and foreshadow the tragedy to come.', board: 'AQA', paper: 'Paper 1', questionType: 'Literature Extract' },
+  { id: 'macbeth-2', text: 'How does Shakespeare present the relationship between Macbeth and Lady Macbeth? Focus particularly on the murder of Duncan and its aftermath.', board: 'AQA', paper: 'Paper 1', questionType: 'Literature Extract' },
+  { id: 'macbeth-3', text: 'Examine Lady Macbeth\'s "unsex me" soliloquy (Act 1, Scene 5). What is she asking for and why? What does this reveal about her character?', board: 'AQA', paper: 'Paper 1', questionType: 'Literature Extract' },
+  { id: 'macbeth-4', text: 'Analyse how Shakespeare uses blood imagery throughout the play. What does this imagery suggest about Macbeth\'s guilt?', board: 'AQA', paper: 'Paper 1', questionType: 'Literature Extract' },
+  { id: 'macbeth-5', text: 'How does Shakespeare present madness in the play? Consider both Lady Macbeth\'s madness and Macbeth\'s psychological state during the play.', board: 'AQA', paper: 'Paper 1', questionType: 'Literature Extract' },
+
+  // --- ROMEO AND JULIET (Shakespeare) ---
+  { id: 'romeo-juliet-1', text: 'Analyse the language and imagery Shakespeare uses in the balcony scene (Act 2, Scene 2). How does he create a sense of romance and danger?', board: 'AQA', paper: 'Paper 1', questionType: 'Literature Extract' },
+  { id: 'romeo-juliet-2', text: 'How does Shakespeare present the feud between the Montagues and Capulets? What is its significance to the tragedy?', board: 'AQA', paper: 'Paper 1', questionType: 'Literature Extract' },
+  { id: 'romeo-juliet-3', text: 'Examine the role of fate and chance in the play. To what extent are Romeo and Juliet\'s deaths inevitable?', board: 'AQA', paper: 'Paper 1', questionType: 'Literature Extract' },
+  { id: 'romeo-juliet-4', text: 'Analyse Shakespeare\'s use of light and darkness imagery in the play. What does this imagery suggest about the lovers\' relationship?', board: 'AQA', paper: 'Paper 1', questionType: 'Literature Extract' },
+  { id: 'romeo-juliet-5', text: 'How does Shakespeare use the character of the Nurse to explore themes of loyalty and change? Focus on her relationship with Juliet.', board: 'AQA', paper: 'Paper 1', questionType: 'Literature Extract' },
+
+  // --- DR JEKYLL AND MR HYDE (Stevenson) ---
+  { id: 'jekyll-hyde-1', text: 'How does Stevenson present the concept of dual nature in the novel? Analyse how Jekyll and Hyde embody different aspects of human personality.', board: 'AQA', paper: 'Paper 1', questionType: 'Literature Extract' },
+  { id: 'jekyll-hyde-2', text: 'Examine Stevenson\'s use of setting in the novel. How does the description of London reflect the novel\'s themes?', board: 'AQA', paper: 'Paper 1', questionType: 'Literature Extract' },
+  { id: 'jekyll-hyde-3', text: 'Analyse Jekyll\'s final confession. What does his account reveal about his understanding of his own nature?', board: 'AQA', paper: 'Paper 1', questionType: 'Literature Extract' },
+  { id: 'jekyll-hyde-4', text: 'How does Stevenson create a sense of horror and revulsion at Hyde\'s character? Analyse the language and imagery he uses.', board: 'AQA', paper: 'Paper 1', questionType: 'Literature Extract' },
+  { id: 'jekyll-hyde-5', text: 'What is the significance of the letters and documents in the novel? How do they shape our understanding of events?', board: 'AQA', paper: 'Paper 1', questionType: 'Literature Extract' },
+
+  // ============================================================
+  // LANGUAGE ANALYSIS WITH SOURCE TEXTS
+  // ============================================================
+
+  { id: 'lang-analysis-1', text: 'Analyse the language and tone in this political campaign email. How does the writer try to persuade readers to support their candidate? Consider sentence structure, word choice, and rhetorical techniques.', board: 'AQA', paper: 'Paper 1', questionType: 'Language Analysis' },
+  { id: 'lang-analysis-2', text: 'Compare how these two charity advertisements use language to persuade readers to donate. What language techniques does each use? Which do you find more persuasive?', board: 'AQA', paper: 'Paper 1', questionType: 'Language Analysis' },
+  { id: 'lang-analysis-3', text: 'Analyse the use of language in this product review. How does the reviewer\'s choice of words reveal their attitude toward the product?', board: 'AQA', paper: 'Paper 1', questionType: 'Language Analysis' },
+  { id: 'lang-analysis-4', text: 'How does the writer of this travel blog use descriptive language to engage the reader? Analyse specific word choices and techniques.', board: 'AQA', paper: 'Paper 1', questionType: 'Language Analysis' },
+  { id: 'lang-analysis-5', text: 'Examine the language used in this newspaper article about a environmental issue. How does the writer\'s word choice reveal their perspective on the issue?', board: 'AQA', paper: 'Paper 1', questionType: 'Language Analysis' },
+
+  // ============================================================
+  // COMPARISON QUESTIONS
+  // ============================================================
+
+  { id: 'comparison-1', text: 'Compare how the two writers present their experiences of poverty. What language and techniques does each use? Whose account do you find more powerful?', board: 'AQA', paper: 'Paper 1', questionType: 'Comparison' },
+  { id: 'comparison-2', text: 'Compare the attitudes toward nature expressed in these two texts. How do the writers\' different word choices reflect their different perspectives?', board: 'AQA', paper: 'Paper 1', questionType: 'Comparison' },
+  { id: 'comparison-3', text: 'Compare the two writers\' use of humour. What purposes does humour serve in each text?', board: 'AQA', paper: 'Paper 1', questionType: 'Comparison' },
+  { id: 'comparison-4', text: 'Compare how the two writers describe technological change. What are the key differences in their perspectives and the language they use to express these?', board: 'AQA', paper: 'Paper 1', questionType: 'Comparison' },
+  { id: 'comparison-5', text: 'Compare the two writers\' treatment of memory and nostalgia. How do they use language to evoke the past?', board: 'AQA', paper: 'Paper 1', questionType: 'Comparison' },
+
+  // ============================================================
+  // UNSEEN POETRY QUESTIONS
+  // ============================================================
+
+  { id: 'unseen-poetry-1', text: 'Read this poem carefully. How does the poet use imagery to create atmosphere? What is the emotional effect on the reader?', board: 'AQA', paper: 'Paper 2', questionType: 'Unseen Poetry' },
+  { id: 'unseen-poetry-2', text: 'Analyse this poem\'s structure. How do the form, rhyme scheme, and line length contribute to meaning?', board: 'AQA', paper: 'Paper 2', questionType: 'Unseen Poetry' },
+  { id: 'unseen-poetry-3', text: 'What is the poem\'s central theme? How does the poet develop this theme through word choice and literary devices?', board: 'AQA', paper: 'Paper 2', questionType: 'Unseen Poetry' },
+  { id: 'unseen-poetry-4', text: 'How does the poet use metaphor in this poem? Analyse specific metaphors and their significance.', board: 'AQA', paper: 'Paper 2', questionType: 'Unseen Poetry' },
+  { id: 'unseen-poetry-5', text: 'Analyse the poem\'s tone and voice. How does the poet\'s use of language create a particular voice or perspective?', board: 'AQA', paper: 'Paper 2', questionType: 'Unseen Poetry' },
+
+  // ============================================================
+  // EXTENDED RESPONSE QUESTIONS
+  // ============================================================
+
+  { id: 'extended-1', text: 'How does the writer use narrative structure to engage the reader? Consider the beginning, middle, and ending of the text.', board: 'AQA', paper: 'Extended', questionType: 'Extended Response' },
+  { id: 'extended-2', text: 'To what extent does the writer successfully create a sense of place? Evaluate their use of descriptive language and specific details.', board: 'AQA', paper: 'Extended', questionType: 'Extended Response' },
+  { id: 'extended-3', text: 'Analyse the writer\'s use of dialogue. What purpose does dialogue serve in the text? How effectively does the writer use it to reveal character?', board: 'AQA', paper: 'Extended', questionType: 'Extended Response' },
+  { id: 'extended-4', text: 'How does the writer\'s choice of narrator or perspective affect the reader\'s engagement with the text?', board: 'AQA', paper: 'Extended', questionType: 'Extended Response' },
+  { id: 'extended-5', text: 'Evaluate the writer\'s use of time and pace in the narrative. How do shifts in pace affect the reader\'s experience?', board: 'AQA', paper: 'Extended', questionType: 'Extended Response' },
+
+  // ============================================================
+  // EDEXCEL SPECIFIC QUESTIONS
+  // ============================================================
+
+  { id: 'edexcel-1', text: 'How does the writer use structural techniques to build tension in this extract? Consider sentence length, paragraph breaks, and pacing.', board: 'Edexcel', paper: 'Paper 1', questionType: 'Language Analysis' },
+  { id: 'edexcel-2', text: 'Analyse the effectiveness of the opening paragraph. How does it engage the reader and establish the tone?', board: 'Edexcel', paper: 'Paper 1', questionType: 'Language Analysis' },
+  { id: 'edexcel-3', text: 'How does the writer\'s use of present tense create immediacy in this narrative? Analyse specific examples.', board: 'Edexcel', paper: 'Paper 1', questionType: 'Language Analysis' },
+  { id: 'edexcel-4', text: 'Evaluate how well the writer has conveyed their emotions and thoughts in this piece of writing. Analyse the language used.', board: 'Edexcel', paper: 'Paper 2', questionType: 'Evaluation' },
+  { id: 'edexcel-5', text: 'Write a response to the article you have read. Present your own point of view and support it with evidence.', board: 'Edexcel', paper: 'Paper 2', questionType: 'Writing Response' },
+
+  // ============================================================
+  // OCR SPECIFIC QUESTIONS
+  // ============================================================
+
+  { id: 'ocr-1', text: 'How effectively does the writer use setting to reflect or enhance the themes of this text? Analyse specific examples.', board: 'OCR', paper: 'Paper 1', questionType: 'Literature Analysis' },
+  { id: 'ocr-2', text: 'Analyse how characterisation in this extract reveals the writer\'s attitude toward their subject matter.', board: 'OCR', paper: 'Paper 1', questionType: 'Literature Analysis' },
+  { id: 'ocr-3', text: 'How does the writer\'s use of voice and tone establish credibility and persuade the reader?', board: 'OCR', paper: 'Paper 2', questionType: 'Language Analysis' },
+  { id: 'ocr-4', text: 'Evaluate the effectiveness of the writer\'s argument. Consider the evidence presented and the strength of the claims made.', board: 'OCR', paper: 'Paper 2', questionType: 'Evaluation' },
+  { id: 'ocr-5', text: 'Write a formal letter responding to an issue raised in the text. Maintain an appropriate tone and structure.', board: 'OCR', paper: 'Paper 2', questionType: 'Writing' },
+
+  // ============================================================
+  // WJEC SPECIFIC QUESTIONS
+  // ============================================================
+
+  { id: 'wjec-1', text: 'How does the writer\'s use of imagery create emotional impact? Analyse the patterns of imagery throughout the text.', board: 'WJEC', paper: 'Paper 1', questionType: 'Close Reading' },
+  { id: 'wjec-2', text: 'Analyse how the writer has used language to convey the speaker\'s emotional state. Consider word choice, syntax, and punctuation.', board: 'WJEC', paper: 'Paper 1', questionType: 'Language Analysis' },
+  { id: 'wjec-3', text: 'How does the writer\'s use of contrast create meaning in this text? Analyse specific examples.', board: 'WJEC', paper: 'Paper 2', questionType: 'Analysis' },
+  { id: 'wjec-4', text: 'Evaluate the writer\'s choice of form for this piece. How does the form enhance the message or meaning?', board: 'WJEC', paper: 'Paper 2', questionType: 'Evaluation' },
+  { id: 'wjec-5', text: 'Write a response to the themes explored in the text. You should express your own perspective and support it with textual evidence.', board: 'WJEC', paper: 'Paper 2', questionType: 'Creative Response' },
+
+  // ============================================================
+  // CAIE SPECIFIC QUESTIONS
+  // ============================================================
+
+  { id: 'caie-1', text: 'Analyse the extract, paying close attention to the writer\'s use of language, tone, and imagery.', board: 'CAIE', paper: 'Literature', questionType: 'Detailed Analysis' },
+  { id: 'caie-2', text: 'How does this extract illustrate the key themes of the work as a whole? Analyse with reference to the text.', board: 'CAIE', paper: 'Literature', questionType: 'Thematic Analysis' },
+  { id: 'caie-3', text: 'Evaluate the effectiveness of the writer\'s characterisation in creating a memorable character. Use specific textual references.', board: 'CAIE', paper: 'Literature', questionType: 'Character Analysis' },
+  { id: 'caie-4', text: 'Write an analysis of the poem, discussing the poet\'s use of language, form, and structure to convey meaning.', board: 'CAIE', paper: 'Poetry', questionType: 'Poem Analysis' },
+  { id: 'caie-5', text: 'Write a critical essay discussing how the writer has explored a significant theme in the text you have studied.', board: 'CAIE', paper: 'Literature', questionType: 'Critical Essay' },
+];
 export function getQuestionsForType(board: string, paper: string, questionType: string): ExamQuestion[] {
   return examQuestions.filter(q => q.board === board && q.paper === paper && q.questionType === questionType)
 }

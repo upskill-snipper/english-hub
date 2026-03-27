@@ -546,6 +546,121 @@ export const romeoJulietCourse: CourseData = {
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> Capulet's rage in Act 3, Scene 5 is essential for any essay about patriarchal authority, the theme of family, or Juliet's character. Note how his language shifts from affection (earlier calling Juliet the "hopeful lady of my earth") to brutal dehumanisation. This contrast reveals that paternal "love" in the play is conditional on obedience.</div>
 
+<div class="historical-context"><strong>Elizabethan Honour Culture &amp; Duelling</strong> — Act 3, Scene 1 reflects the intense code of honour that governed Elizabethan society, particularly among the aristocracy. In both Italy and Elizabethan England, a man's <strong>reputation was his most valuable possession</strong>. An insult to honour could only be answered through physical combat. The duel was not merely a personal conflict but a legal and social mechanism for settling disputes. Tybalt's challenge to Romeo, therefore, is not an act of aggression but a formal and necessary response to Romeo's presence at the Capulet ball. Romeo's refusal to fight (motivated by his secret marriage to Juliet) would normally be seen as shameful cowardice. Mercutio's intervention is thus not reckless but what any honourable friend would do — defend Romeo's honour when Romeo cannot. The tragedy is that this code of honour, designed to settle disputes justly, instead kills two young men and sets in motion the events that destroy the lovers.</div>
+
+<div class="grade9-insight"><strong>Grade 9 Insight: Honour as Trap &amp; Tragedy</strong> — Act 3 demonstrates that honour culture is a <strong>self-defeating system</strong>. Each act of violence is motivated by honour, yet each act generates the need for retaliation, creating a cycle that destroys everything. Romeo's refusal to fight Tybalt is actually the <em>most</em> honourable choice (honouring his new bond to Juliet), yet it is interpreted as dishonourable. When Romeo then kills Tybalt to avenge Mercutio, he is acting within the honour code — but this act seals his banishment and triggers the events leading to the lovers' deaths. The play suggests that true honour would be to <em>break</em> the code, to choose love or peace over reputation. Benvolio, who survives by reporting rather than fighting, models this alternative — but Romeo has not yet learned that honour can be a trap, not a guide.</div>
+
+<h3>Character Study: Mercutio's Death &amp; Its Implications</h3>
+
+<p>Mercutio is the play's most vibrant character — witty, affectionate, energetic, and immune to the romantic obsession that has infected Romeo. His Queen Mab speech (Act 1) establishes him as a skeptic and a realist. In Act 3, Scene 1, he reveals his code of values: <strong>friendship and honour matter more than life itself</strong>. His decision to fight Tybalt in Romeo's place is not foolish but consistent with his character — he would rather die defending a friend's reputation than live with the shame of standing aside.</p>
+
+<p>Mercutio's death is the turning point precisely because he is <strong>morally innocent</strong> of the lovers' conflict. He has no quarrel with Tybalt; he fights to defend Romeo. His innocence makes his death unbearably tragic. Moreover, his death marks a tonal shift in the play: after Mercutio dies, the play's comic energy evaporates. There are no more witty wordplay, no more jokes, no more laughter. The play becomes relentlessly tragic.</p>
+
+<p>His dying curse is not merely vengeful but philosophical: <strong>"A plague o' both your houses!"</strong> Repeated three times, this curse treats the feud as a <strong>disease</strong> — not a disagreement that can be negotiated but an infection that poisons everyone it touches. The repetition makes the curse incantatory, almost magical, as if Mercutio's dying words have the power to bring about the catastrophe that follows. Whether the curse is literally magical or merely a prophecy, it encapsulates the play's central message: the feud, once begun, cannot be contained.</p>
+
+<h3>Quotation Bank: Act 3 with Model Analysis</h3>
+
+<div class="quotation-analysis">
+<strong>1. "I do protest I never injured thee, / But love thee better than thou canst devise." (Act 3, Scene 1 — Romeo to Tybalt)</strong><br/>
+<strong>Technique:</strong> Protestation; antithesis (injured vs. love); hyperbole ("better than thou canst devise").<br/>
+<strong>Effect:</strong> Romeo's language is formal, almost liturgical — he speaks as if swearing an oath. The antithesis between injury and love emphasises the contrast between what Tybalt expects (a fight) and what Romeo offers (affection).<br/>
+<strong>Grade 9 Reading:</strong> This line is tragically ironic because the audience knows what Tybalt does not — that Romeo and Juliet are now married, making Tybalt technically Romeo's kinsman. Romeo's love is both genuine and impossible to explain. His vague language ("better than thou canst devise") frustrates Tybalt and leads Tybalt to suspect Romeo of cowardice or dishonour. This demonstrates how <em>secrecy</em> and <em>miscommunication</em> drive the tragedy. If Tybalt knew the truth, he would understand Romeo's refusal to fight. Instead, Romeo's words precipitate the very violence he is trying to prevent.
+</div>
+
+<div class="quotation-analysis">
+<strong>2. "A plague o' both your houses!" (Act 3, Scene 1 — Mercutio, dying, repeated three times)</strong><br/>
+<strong>Technique:</strong> Curse; anaphora (repetition); collective noun ("houses" rather than individual names).<br/>
+<strong>Effect:</strong> The repetition makes the curse incantatory and magical. By addressing "both your houses" rather than blaming individuals, Mercutio extends culpability to the entire system of feudal honour.<br/>
+<strong>Grade 9 Reading:</strong> This is perhaps the most important line for themes of conflict and fate. The curse operates on multiple levels: literal (as a dying man's words), theatrical (as an invocation of doom), and thematic (as a judgment on the entire feud). The fact that Mercutio is innocent — he has no quarrel with either family — makes his indictment of "both your houses" especially powerful. He is saying: your feud has destroyed an innocent person; therefore, both of you deserve to suffer equally. By uttering this curse, Mercutio seals his legacy as a truth-teller and moralist, even in death.
+</div>
+
+<div class="quotation-analysis">
+<strong>3. "O, I am fortune's fool!" (Act 3, Scene 1 — Romeo, after Mercutio dies)</strong><br/>
+<strong>Technique:</strong> Exclamation; alliteration ("fortune's fool"); metaphor of puppetry.<br/>
+<strong>Effect:</strong> The alliteration creates a memorable, almost proverbial quality. The phrase positions Romeo as an object acted upon by fate rather than as an agent with free will.<br/>
+<strong>Grade 9 Reading:</strong> This line encapsulates Romeo's tragic flaw: he sees himself as a helpless puppet of destiny rather than taking responsibility for his choices. The word "fool" carries multiple meanings — fool as in jester (a puppet entertainer), fool as in foolish person, fool as in victim. Romeo is correct that he is trapped by circumstances (the feud, his secret marriage), but he takes no responsibility for his decision to fight Tybalt. A more mature Romeo would recognise that while circumstances are beyond his control, his response to them — choosing violence over flight — is within his control. This line thus reveals Romeo's immaturity and his tendency to blame external forces for his own actions.
+</div>
+
+<div class="quotation-analysis">
+<strong>4. "There is no world without Verona walls, / But purgatory, torture, hell itself." (Act 3, Scene 2-3 — Romeo in the Friar's cell, banished)</strong><br/>
+<strong>Technique:</strong> Hyperbole; negative imaging (purgatory, torture, hell); tricolon (three-part escalation).<br/>
+<strong>Effect:</strong> The escalation from purgatory to torture to hell emphasises the intensity of Romeo's despair. His language transforms banishment into a kind of damnation.<br/>
+<strong>Grade 9 Reading:</strong> Romeo's hyperbolic response to banishment reveals his immaturity. For Romeo, separation from Juliet is worse than death — indeed, he views banishment as a death-in-life. The Friar's response ("Thy wild acts denote / The unreasonable fury of a beast") suggests that Romeo's language is adolescent excess. The contrast between Romeo's hysteria and the Friar's calm reason is important: it shows that Romeo is driven by passion rather than wisdom. Later, when the Friar devises the sleeping-potion plan, Romeo will seize on it without questioning whether it is sound, revealing that his desperation — not his judgment — governs his decisions.
+</div>
+
+<div class="quotation-analysis">
+<strong>5. "Methinks I see thee, now thou art so low, / As one dead in the bottom of a tomb." (Act 3, Scene 5 — Juliet, as Romeo leaves her window)</strong><br/>
+<strong>Technique:</strong> Pathetic fallacy (her fear projected onto Romeo); foreshadowing; vivid imagery of death.<br/>
+<strong>Effect:</strong> The image of Romeo dead in a tomb is a direct prophecy of Act 5. For the audience, this line is chilling because we know it will come true.<br/>
+<strong>Grade 9 Reading:</strong> This line demonstrates that Juliet possesses an intuitive knowledge of the future that Romeo lacks. While Romeo acts blindly, driven by emotion, Juliet seems to see the tragedy approaching. The image of the "bottom of a tomb" recalls her fear in Act 4, Scene 3, that she will wake in the tomb surrounded by corpses and cannot fully escape the associations between love and death that have permeated the play from the beginning.
+</div>
+
+<div class="quotation-analysis">
+<strong>6. "Hang thee, young baggage, disobedient wretch!" (Act 3, Scene 5 — Lord Capulet, when Juliet refuses to marry Paris)</strong><br/>
+<strong>Technique:</strong> Violent imperatives (hang); dehumanising nouns (baggage, wretch); loss of control indicated by exclamation marks.<br/>
+<strong>Effect:</strong> Capulet's language shifts from affectionate to brutal, revealing that his paternal love is conditional on obedience.<br/>
+<strong>Grade 9 Reading:</strong> This moment is crucial for essays about patriarchy, gender, or family. Capulet's initial characterisation as a doting father ("the hopeful lady of my earth") is revealed as superficial. His love for Juliet is ownership, not affection. When Juliet asserts her will, he responds with threats of violence and disinheritance. The language "baggage" and "wretch" dehumanises Juliet — she is not a daughter but a defective possession. This demonstrates that in Elizabethan patriarchy, daughters have no genuine agency or rights. Juliet's refusal to obey is an act of extraordinary courage in a society where defying a father could result in actual homelessness and destitution.
+</div>
+
+<h3>Visual Aid: The Network of Conflict in Act 3</h3>
+
+<p><svg width="100%" height="350" viewBox="0 0 800 350" style="border: 1px solid #ccc; margin: 20px 0;">
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" font-weight="bold" font-size="14">The Cascade of Violence: Act 3, Scene 1</text>
+  
+  <!-- Characters -->
+  <circle cx="150" cy="120" r="40" fill="#ff6b6b" stroke="black" stroke-width="2"/>
+  <text x="150" y="125" text-anchor="middle" font-weight="bold">Tybalt</text>
+  
+  <circle cx="400" cy="80" r="40" fill="#4ecdc4" stroke="black" stroke-width="2"/>
+  <text x="400" y="85" text-anchor="middle" font-weight="bold">Romeo</text>
+  
+  <circle cx="650" cy="120" r="40" fill="#95e1d3" stroke="black" stroke-width="2"/>
+  <text x="650" y="125" text-anchor="middle" font-weight="bold">Mercutio</text>
+  
+  <!-- Arrows showing conflict -->
+  <!-- Tybalt challenges Romeo (honour code) -->
+  <line x1="190" y1="125" x2="360" y2="100" stroke="red" stroke-width="2" marker-end="url(#arrowred)"/>
+  <text x="270" y="110" font-size="11" fill="red">Challenges for<br/>honour</text>
+  
+  <!-- Romeo refuses to fight -->
+  <line x1="400" y1="80" x2="400" y2="140" stroke="gray" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="420" y="115" font-size="11" fill="gray">Refuses to fight<br/>(loves Tybalt)</text>
+  
+  <!-- Mercutio steps in -->
+  <line x1="610" y1="120" x2="490" y2="100" stroke="blue" stroke-width="2" marker-end="url(#arrowblue)"/>
+  <text x="540" y="90" font-size="11" fill="blue">Defends Romeo's<br/>honour</text>
+  
+  <!-- Tybalt kills Mercutio (intentional) -->
+  <line x1="190" y1="160" x2="590" y2="160" stroke="darkred" stroke-width="3"/>
+  <text x="390" y="180" font-size="12" font-weight="bold" fill="darkred">Tybalt stabs Mercutio under Romeo's arm</text>
+  
+  <!-- Romeo kills Tybalt (revenge) -->
+  <circle cx="150" cy="250" r="35" fill="#ff6b6b" opacity="0.3" stroke="black" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="150" y="255" text-anchor="middle" font-size="10">Tybalt DEAD</text>
+  
+  <!-- Consequences -->
+  <text x="100" y="320" font-size="12" fill="darkred" font-weight="bold">Consequences: Mercutio dead (innocent victim)</text>
+  <text x="100" y="340" font-size="12" fill="darkred">Romeo banished from Verona</text>
+</svg></p>
+
+<div style="background: #fff3cd; padding: 15px; border-left: 4px solid #ffc107; margin: 20px 0;">
+<strong>Key Observation:</strong> Act 3, Scene 1 demonstrates that in a system based on honour and violence, good intentions and attempts at peace actually accelerate tragedy. Romeo's refusal to fight in order to honour his secret bond to Juliet is the most morally correct choice — but it leads directly to Mercutio's death and Romeo's own downfall. This is the heart of the play's tragedy: the characters are trapped in a system that rewards violence and punishes mercy.
+</div>
+
+<h3>Gender &amp; Power in Act 3, Scene 5</h3>
+
+<p>The final scene of Act 3 reveals the precarious position of women in Elizabethan society. Juliet is subject to the authority of three male figures:</p>
+
+<ul>
+<li><strong>Lord Capulet:</strong> Patriarch who decides who she will marry. His authority is absolute — he can disinherit her for disobedience.</li>
+<li><strong>The Nurse:</strong> Though female and motherly, the Nurse ultimately serves patriarchal authority. When she advises Juliet to marry Paris, she reinforces the system that denies Juliet choice.</li>
+<li><strong>Romeo (absent):</strong> Though they are married, Romeo is banished. Juliet cannot follow him or claim his protection — instead, she must obey her father's command to marry another man.</li>
+</ul>
+
+<p>Juliet's response to this impossible situation — solitude and resolve — makes her one of literature's greatest heroines. She determines that she will either be reunited with Romeo or die trying. She will not passively accept the marriage to Paris. In Act 4, she will actively seek the Friar's help to escape her predicament. This agency, first glimpsed in Act 3, Scene 5, makes Juliet far more admirable than Romeo, who collapses into despair.</p>
+
+
 <p>The <strong>Nurse's</strong> betrayal comes at the scene's end. She advises Juliet to forget Romeo and marry Paris: <strong>"I think it best you married with the County."</strong> For Juliet, this is devastating — the Nurse was her closest confidante and the facilitator of her marriage to Romeo. Juliet's aside reveals her sense of isolation: <strong>"Thou and my bosom henceforth shall be twain."</strong> She will never confide in the Nurse again.</p>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Students often describe the Nurse as simply "disloyal." A more nuanced reading recognises that the Nurse is being <em>pragmatic</em> — in the world of the play, marrying Paris is the safe, sensible option. The Nurse cannot understand Juliet's depth of feeling because the Nurse's view of love is fundamentally physical and practical, not spiritual.</div>
@@ -651,6 +766,89 @@ export const romeoJulietCourse: CourseData = {
 <p>The plan is elaborate and fragile — it depends on perfect timing, reliable messengers, and no unforeseen complications. An Elizabethan audience, steeped in <strong>providential thinking</strong> (the belief that God controls events), might interpret its failure as divine punishment for the deception involved. A modern audience is more likely to see it as tragic <strong>bad luck</strong> — but Shakespeare deliberately leaves both readings open.</p>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> The Friar's plan is a key moment for discussing <strong>fate versus free will</strong>. The Friar makes a <em>choice</em> to use deception rather than confronting the families directly. His plan fails not because of fate alone, but because of a combination of human error and bad timing. This ambiguity is what makes the theme of fate so rich in the play.</div>
+
+<div class="historical-context"><strong>Elizabethan Context: Marriage &amp; Parental Authority</strong> — Juliet's decision to defy her parents reflects a genuine social transgression. In Elizabethan England, the law of <strong>primogeniture</strong> and strict patriarchal control meant that daughters were their father's property until marriage, at which point they became their husband's. Lord Capulet's ultimatum — "speak not, reply not, do not answer me" — represents absolute paternal authority backed by law and custom. Juliet's choice to drink the potion is therefore not merely romantic but profoundly political: she asserts her right to choose her own husband and, implicitly, ownership of her own body. For Shakespeare's audience, this would have been thrilling but also deeply disturbing — a daughter rejecting the natural order that kept society stable.</div>
+
+<div class="grade9-insight"><strong>Grade 9 Insight: The Friar as Tragic Enabler</strong> — While students often blame "fate" for the tragedy, Friar Lawrence is actually a tragic figure whose good intentions enable catastrophe. He is well-meaning but philosophically flawed: he believes that deception (lying to Juliet's family, administering drugs without consent) can solve a moral crisis. This reflects his broader theology — he has already married the lovers in secret, violating both the law and parental authority. By Acts 4–5, he is so committed to his plan that he cannot see its risks or consider alternatives (such as reuniting the families directly, or delaying the marriage). His attempt to "be both physician and priest" to Romeo and Juliet makes him complicit in their deaths. The finest essays recognize that the tragedy results from <em>multiple failures</em>: patriarchal oppression (Capulet's cruelty), the Friar's overconfidence in his plan, Balthasar's speed, the plague quarantine — but also Romeo's recklessness in not waiting for the letter or seeking confirmation from the Friar before buying poison.</div>
+
+<h3>Character Development: Juliet's Agency in Acts 4-5</h3>
+
+<p>Too often, students dismiss Juliet in these final acts as passive or victimised. The opposite is true. In Act 4, Scene 3, Juliet enacts a profound act of will:</p>
+
+<ul>
+<li><strong>Act 4, Scene 1:</strong> Juliet <em>threatens</em> suicide to the Friar, forcing him to devise a plan. She is not begging for help — she is presenting a stark choice: "either thou must help me, or by some means I will myself." This is active, demanding, and assertive.</li>
+
+<li><strong>Act 4, Scene 3:</strong> Alone, Juliet faces her terror and <em>chooses</em> to drink the potion. The soliloquy rehearses real dangers — suffocation, madness, waking among corpses — and she overcomes them through sheer will. She addresses Romeo directly: "Romeo, Romeo, Romeo! Here's drink — I drink to thee." The triple invocation is like a spell or prayer — she is calling Romeo to her across the barrier of apparent death.</li>
+
+<li><strong>Act 5, Scene 3:</strong> Finding Romeo dead, Juliet immediately assesses the situation (he is still warm, he has drunk poison, there may be poison on his lips) and acts decisively. She finds Romeo's dagger and kills herself. She does not collapse in grief; she executes a decision. Her final act is one of absolute choice and absolute love.</li>
+</ul>
+
+<p>Juliet's agency contrasts sharply with the male characters who are trapped by codes of honour. Romeo's "defiance" of fate is actually capitulation to despair. Tybalt, Mercutio, and Paris are all bound by notions of masculine honour that compel them toward violence. Juliet alone transcends these constraints through an act of pure will.</p>
+
+<h3>Quotation Bank: Acts 4-5 with Model Analysis</h3>
+
+<div class="quotation-analysis">
+<strong>1. "If all else fail, myself have power to die." (Act 3, ending, planning for Act 4)</strong><br/>
+<strong>Technique:</strong> Short, declarative sentence; monosyllabic diction ("power," "die").<br/>
+<strong>Effect:</strong> Establishes Juliet's resolve. The possessive "myself" emphasises her agency and autonomy — her body and fate belong to her, not her parents.<br/>
+<strong>Grade 9 Reading:</strong> This is not a threat but a statement of fact. Juliet is calmly asserting that she controls her own life and death. For an Elizabethan audience, this is shocking because daughters had no such autonomy. By the time she speaks this line, Juliet has already moved beyond desperation into a kind of tragic clarity.
+</div>
+
+<div class="quotation-analysis">
+<strong>2. "Shall I not then be stifled in the vault, / To whose foul mouth no healthsome air breathes in, / And there die strangled ere my Romeo comes?" (Act 4, Scene 3)</strong><br/>
+<strong>Technique:</strong> Interrogative rhetoric; visceral imagery (stifled, foul, strangled); personification of the vault as a mouth; iambic pentameter with spondaic substitutions for stress.<br/>
+<strong>Effect:</strong> Transforms the tomb from a romantic setting into a claustrophobic nightmare. Juliet's fears are concrete and physical, not abstract.<br/>
+<strong>Grade 9 Reading:</strong> Juliet does not shy away from the horrifying reality she faces — death by asphyxiation in a tomb surrounded by corpses. Her willingness to articulate these fears and then overcome them through action (drinking the potion) demonstrates extraordinary courage. The contrast between the romantic ideal (reuniting with Romeo) and the physical horror (being buried alive) is what makes her choice so powerful. She is not a passive heroine waiting for Romeo; she is actively choosing to endure the worst to be with him.
+</div>
+
+<div class="quotation-analysis">
+<strong>3. "Romeo, Romeo, Romeo! Here's drink — I drink to thee." (Act 4, Scene 3)</strong><br/>
+<strong>Technique:</strong> Anaphora (repetition of "Romeo"); exclamatory tone; direct address; verb of action ("drink").<br/>
+<strong>Effect:</strong> The triple repetition is like an incantation or prayer. Romeo is invoked as if present, as if his name alone can sustain her through what follows. The shift to action ("Here's drink") shows determination.<br/>
+<strong>Grade 9 Reading:</strong> This line has often been read sentimentally, but it is actually fiercely determined. Juliet is not passively accepting death but actively choosing it as a path to Romeo. She transforms the poison (which the Friar gave her as a tool of escape) into a sacrament, a ritual act of union with Romeo. The casual aside — "Here's drink" — suggests calm acceptance of fate on her own terms.
+</div>
+
+<div class="quotation-analysis">
+<strong>4. "Then I defy you, stars!" (Act 5, Scene 1 — Romeo)</strong><br/>
+<strong>Technique:</strong> Exclamation; personification of stars as agents of fate; monosyllabic verbs; volta (turning point).<br/>
+<strong>Effect:</strong> Positions Romeo against cosmic forces. The verb "defy" suggests active resistance, but his actions (buying poison and riding to the tomb) actually fulfil the fate he is trying to escape.<br/>
+<strong>Grade 9 Reading:</strong> This is tragic irony at its most devastating. Romeo believes he is asserting free will, but he is actually enslaved to his emotions and to fate. His "defiance" is the very thing that ensures his doom. Compare this to Juliet, who acts with clear-eyed awareness of what she is doing. Romeo acts in darkness — he does not wait for the Friar's letter, does not verify the news, does not consider alternatives. His defiance is adolescent impulsiveness mistaken for courage.
+</div>
+
+<div class="quotation-analysis">
+<strong>5. "Thy lips are warm." (Act 5, Scene 3 — Juliet, discovering Romeo's body)</strong><br/>
+<strong>Technique:</strong> Four monosyllabic words; simple, direct address; present tense verb; stark understatement.<br/>
+<strong>Effect:</strong> The simplicity is devastating. These words tell us Romeo has only just died — a matter of seconds. The tragedy feels avoidable because it <em>was</em> avoidable.<br/>
+<strong>Grade 9 Reading:</strong> "Thy lips are warm" is perhaps the most powerful line in the play because of what it does <em>not</em> say. Juliet recognises immediately that Romeo has just died, and in that recognition lies the full horror of the tragedy. If the Friar had arrived five minutes earlier, if the letter had reached Romeo, if Balthasar had moved more slowly — all of these would have changed everything. This single line, with its ordinary language, encapsulates the tragedy's cruelty: it was so close to being prevented. The warmth of his lips becomes a measure of time lost.
+</div>
+
+<div class="quotation-analysis">
+<strong>6. "O happy dagger, / This is thy sheath; there rust, and let me die." (Act 5, Scene 3 — Juliet)</strong><br/>
+<strong>Technique:</strong> Apostrophe (direct address to the dagger); oxymoron ("happy dagger" — happiness with death); sexual metaphor (sheath/dagger); commanding verbs (rust, let).<br/>
+<strong>Effect:</strong> Transforms suicide into an act of consummation. The dagger is "happy" because it will reunite her with Romeo. The sexual metaphor (sheath for the dagger) suggests that death with Romeo is the ultimate union.<br/>
+<strong>Grade 9 Reading:</strong> This is not an expression of despair but of determination. Juliet addresses the dagger as a lover or a friend — it will enable her to join Romeo. The oxymoron ("happy dagger") shows that she finds meaning and even joy in this final act. She is not a victim of fate but an agent of her own destiny. Her suicide is not tragic in the sense of being helpless or forced; it is tragic because it is freely chosen and absolutely final.
+</div>
+
+<h3>Exam-Style Extract Question with Model Answer</h3>
+
+<div class="exam-practice">
+<strong>Sample Question:</strong> "Analyse how Shakespeare presents the theme of fate versus free will in Acts 4–5. Starting with this extract (Act 5, Scene 3, from "Thy lips are warm" to "happy dagger"), explore how the ending of the play deepens your understanding of this theme."<br/><br/>
+<strong>Model Paragraph (Grade 9):</strong><br/>
+"In this extract, Juliet's discovery of Romeo's body and her subsequent suicide crystallise the play's central ambiguity about fate and free will. The line 'Thy lips are warm' reveals that Romeo has only just died, suggesting that the tragedy was avoidable — a matter of timing rather than destiny. Yet this apparent avoidability coexists with a sense of inevitability: the lovers were destined to die, and each action taken to prevent this (the Friar's plan, Romeo's flight to the tomb) has instead accelerated it. Juliet's response demonstrates that while external events are beyond her control, her own response to them is entirely within her power. She chooses to die, transforming what could be read as victimisation into an act of agency and defiance. The sexual metaphor of the dagger as a sheath suggests that her suicide is not despair but consummation — a reunion with Romeo achieved through her own will. Throughout the play, Shakespeare suggests that characters are neither wholly free nor wholly fated: they are free to make choices, but those choices are shaped by circumstances beyond their control (the feud, the Friar's plan, the plague), and the consequences of those choices are often ironic and tragic. Juliet's final act is both chosen and inevitable — a perfect expression of the play's meditation on how human will operates within the constraints of circumstance and fate."
+</div>
+
+<h3>Cross-Text Theme Comparison: Love, Death &amp; Sacrifice</h3>
+
+<p>Acts 4–5 invite comparison with other tragic love stories:</p>
+
+<ul>
+<li><strong>vs. Othello:</strong> In Othello, the final tragic killing is driven by male jealousy and military honour. In Romeo and Juliet, the final deaths are driven by love and the desire to be reunited. Romeo and Juliet's deaths are tragic because they are based on a beautiful emotion; Othello's tragedy is that he is trapped by paranoia and masculine pride.</li>
+
+<li><strong>vs. Antony and Cleopatra:</strong> Both plays end with lovers choosing death to be together. Both feature lovers separated by political conflict (the feud in Romeo and Juliet, the Roman-Egyptian political tensions in Antony and Cleopatra). Both deaths are presented as noble, even beautiful — a final assertion of love against the world. However, Antony and Cleopatra are powerful rulers making a deliberate political choice; Romeo and Juliet are teenagers making a choice born of desperation.</li>
+
+<li><strong>vs. A Midsummer Night's Dream:</strong> This comedy, written around the same time as Romeo and Juliet, also features young lovers defying parental authority. But in the comedy, their love is blessed and the parents relent; in Romeo and Juliet, their love is met with violence and death. The difference is genre — comedy allows for reconciliation and growth; tragedy demands loss and suffering.</li>
+</ul>
+
 
 <h3>Act 4, Scene 3: Juliet's Soliloquy</h3>
 
@@ -976,6 +1174,98 @@ export const romeoJulietCourse: CourseData = {
 <p>The word <strong>"happy"</strong> is a bitter oxymoron — the dagger brings not happiness but an end to unbearable pain. The metaphor of the body as a <strong>"sheath"</strong> for the dagger unites love and death in a final, devastating image. Juliet dies as she lived — with agency, determination, and an absolute commitment to love.</p>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Avoid describing Romeo and Juliet's deaths as "the same." Their deaths are structurally and thematically different. Romeo's death is based on a <em>misunderstanding</em> (he thinks Juliet is dead); Juliet's is based on <em>knowledge</em> (she knows Romeo is dead). Romeo's could have been prevented by better information; Juliet's is a conscious, fully-informed choice.</div>
+
+
+<div class="historical-context"><strong>Elizabethan Girlhood &amp; Marriage Law</strong> — Juliet's age (thirteen) was not unusual for marriage in early modern England, though consummation typically occurred later. What is shocking is that the play shows Juliet actively choosing her marriage partner — a radical act. In law, Juliet is her father's property, and he has the absolute right to arrange her marriage. Her secret marriage to Romeo violates both paternal authority and canon law (which required parental consent or a priest's permission). When she later refuses Paris, she is not merely rejecting a suitor but asserting a fundamental right that Elizabethan society did not grant women: the right to bodily autonomy and self-determination. The play's tragedy is inseparable from the legal and social cage in which Juliet is trapped.</div>
+
+<div class="grade9-insight"><strong>Grade 9 Insight: Juliet as the Play's True Protagonist</strong> — While the title grants equal prominence to Romeo, a careful reading reveals Juliet as the primary protagonist whose development is more complete and more profound. Romeo begins and ends as an adolescent governed by emotion — love, despair, rage follow each other without reflection. Juliet, by contrast, begins as a dutiful girl and matures into a woman of tragic grandeur. She is the character who <em>learns</em> — about love, about herself, about the constraints placed upon her. She is also the character who <em>acts</em> — demanding marriage, refusing Paris, drinking the potion, killing herself. Romeo is largely <em>passive</em>, acted upon by events: he falls in love at the ball, is forced into hiding, is told of Juliet's death, buys poison and kills himself. Juliet's arc — from obedience to defiance to tragic agency — is the play's true narrative. The finest essays recognise this and argue that Juliet, not Romeo, is the play's tragic hero.</div>
+
+<h3>Quotation Bank: Juliet's Development with Model Analysis</h3>
+
+<div class="quotation-analysis">
+<strong>1. "I'll look to like, if looking liking move." (Act 1, Scene 3 — Juliet's first significant speech)</strong><br/>
+<strong>Technique:</strong> Alliteration (look/liking/like); conditional phrasing; precise, formal diction; trisyllabic pattern.<br/>
+<strong>Effect:</strong> The alliteration creates a sing-song quality that might seem submissive, yet the conditional clause ("if...move") signals Juliet's refusal of unconditional obedience.<br/>
+<strong>Grade 9 Reading:</strong> This line is often read as evidence of Juliet's obedience, but closer analysis reveals subtle resistance. She promises to "look" (examine), and "like" (develop affection) "if" (conditional on) the marriage "moves" (affects) her. She is not promising to love Paris, only to give him a fair chance. The formality of her language marks her as dutiful but thinking, not blindly obedient. This baseline of obedience makes her later defiance (Act 3, Scene 5) dramatically powerful — she has been a good daughter, yet her parents still threaten and abandon her.
+</div>
+
+<div class="quotation-analysis">
+<strong>2. "What's in a name? That which we call a rose / By any other name would smell as sweet." (Act 2, Scene 2 — the balcony scene)</strong><br/>
+<strong>Technique:</strong> Rhetorical question; metaphor; reference to classical rhetoric; clear logical progression.<br/>
+<strong>Effect:</strong> Juliet reduces language to its arbitrary nature — names are merely labels with no inherent connection to essence.<br/>
+<strong>Grade 9 Reading:</strong> This is one of the play's most famous lines, but its philosophical depth is often missed. Juliet is not simply saying "I love you despite your name." She is making a sophisticated argument about <em>the nature of language itself</em>. She argues that the feud, which is fundamentally about family names (Montague vs. Capulet), is based on linguistic convention, not essential truth. If the Montague name carries no essential "Montague-ness," then the feud is arbitrary and potentially solvable. This reveals Juliet as a thinker, not merely a lover — she understands the constructed nature of social hierarchies. Romeo, by contrast, speaks in cosmic metaphors and never questions the feud's legitimacy.
+</div>
+
+<div class="quotation-analysis">
+<strong>3. "O, swear not by the moon, the inconstant moon, / That monthly changes in her circled orb." (Act 2, Scene 2)</strong><br/>
+<strong>Technique:</strong> Apostrophe and warning; reference to classical mythology; practical wisdom; fear expressed through natural imagery.<br/>
+<strong>Effect:</strong> Juliet warns Romeo against making vows by the moon, which is changeable. She reveals anxiety about love's fragility.<br/>
+<strong>Grade 9 Reading:</strong> While Romeo has just sworn "by the moon," Juliet immediately questions this oath. She is more cautious, more aware of danger, more cognisant of love's potential impermanence. Where Romeo speaks in absolutes ("I would tear the word love from language"), Juliet worries about constancy. This makes her the realist of the pair. By the play's end, her realism has matured into tragic resignation — she has learned that love, in this world, cannot endure.
+</div>
+
+<div class="quotation-analysis">
+<strong>4. "Not proud you have, but thankful that you have." (Act 3, Scene 5 — refusing Paris)</strong><br/>
+<strong>Technique:</strong> Antithesis (proud/thankful); carefully balanced syntax; formal register despite emotional crisis.<br/>
+<strong>Effect:</strong> Juliet distinguishes between gratitude for her father's intentions and refusal to pretend love for Paris.<br/>
+<strong>Grade 9 Reading:</strong> This line demonstrates Juliet's rhetorical skill under pressure. While Romeo would likely respond emotionally, Juliet articulates a careful argument: she is grateful for her father's concern but cannot fabricate emotions she does not feel. The use of "cannot" rather than "will not" frames her refusal as an inability rather than a rebellion, yet the effect is the same — she will not marry Paris. Her measured language contrasts sharply with her father's violent outbursts, making her position seem more reasonable and her parents' position more tyrannical.
+</div>
+
+<div class="quotation-analysis">
+<strong>5. "O, God! O, nurse, how shall this be prevented?" (Act 3, Scene 5 — after parents demand Paris marriage)</strong><br/>
+<strong>Technique:</strong> Exclamation; apostrophe to God; desperate, fragmented syntax; question expressing helplessness.<br/>
+<strong>Effect:</strong> Juliet's carefully controlled rhetoric collapses into desperation when the Nurse fails her.<br/>
+<strong>Grade 9 Reading:</strong> This moment marks Juliet's transition from controlled resistance to desperate action. She has exhausted rational means of avoiding the marriage. Her plea to God and the Nurse reveals that she is not pretending helplessness — she is genuinely trapped. This moment of despair directly precipitates her decision to seek the Friar's help and ultimately to drink the potion. Desperation, not romantic excess, drives her to extreme measures.
+</div>
+
+<div class="quotation-analysis">
+<strong>6. "If, in thy wisdom, thou canst give me counsel / To do it safely, else I am resolv'd / To do something like it myself." (Act 4, Scene 1 — to the Friar)</strong><br/>
+<strong>Technique:</strong> Conditional structure; escalating ultimatum; clear statement of agency.<br/>
+<strong>Effect:</strong> Juliet presents the Friar with a choice: help her or she will kill herself.<br/>
+<strong>Grade 9 Reading:</strong> This line is crucial for understanding Juliet's agency. She does not beg the Friar; she threatens. She has already resolved to die rather than marry Paris — she is simply giving him an opportunity to help her live instead. This is the moment where Juliet moves from passive victim to active agent. She is no longer asking for permission or guidance; she is demanding assistance in a plan she has already decided upon. The Friar's potion plan works because Juliet — not Romeo — has forced him to devise it.
+</div>
+
+<div class="quotation-analysis">
+<strong>7. "Thy lips are warm." (Act 5, Scene 3 — discovering Romeo dead)</strong><br/>
+<strong>Technique:</strong> Four monosyllables; simple present tense; physical immediacy; contrast with surrounding elaborate language.<br/>
+<strong>Effect:</strong> Juliet's grief is expressed not in poetry but in stark reality — Romeo has only just died.<br/>
+<strong>Grade 9 Reading:</strong> In her final moments, Juliet's language is the opposite of Romeo's. While Romeo delivers a long, elaborate speech over Juliet's body, using metaphor and cosmic imagery, Juliet responds to Romeo's actual death with blunt, physical language. "Thy lips are warm" tells us Romeo died seconds ago, that a moment's difference would have saved them both. This line encapsulates the play's tragedy: not grand fate or cosmic doom, but the cruelty of timing and circumstance. Juliet's brevity is more powerful than Romeo's eloquence.
+</div>
+
+<h3>Juliet's Maturation: A Three-Act Trajectory</h3>
+
+<table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+<tr style="background-color: #f0f0f0;">
+<td style="padding: 10px; border: 1px solid #999;"><strong>Act 1-2: Obedience &amp; Awakening</strong></td>
+<td style="padding: 10px; border: 1px solid #999;"><strong>Act 3: Defiance &amp; Isolation</strong></td>
+<td style="padding: 10px; border: 1px solid #999;"><strong>Act 4-5: Agency &amp; Tragedy</strong></td>
+</tr>
+<tr>
+<td style="padding: 10px; border: 1px solid #999;">Dutiful daughter, obeys parents, promises to consider Paris</td>
+<td style="padding: 10px; border: 1px solid #999;">Refuses Paris, defies father, abandoned by parents and Nurse</td>
+<td style="padding: 10px; border: 1px solid #999;">Takes control of her fate, drinks potion, kills herself</td>
+</tr>
+<tr>
+<td style="padding: 10px; border: 1px solid #999;">Language: formal, obedient, conditional</td>
+<td style="padding: 10px; border: 1px solid #999;">Language: emotionally intense, defiant</td>
+<td style="padding: 10px; border: 1px solid #999;">Language: simple, direct, action-oriented</td>
+</tr>
+<tr>
+<td style="padding: 10px; border: 1px solid #999;">Dependent on Nurse, parents, Romeo</td>
+<td style="padding: 10px; border: 1px solid #999;">Severing all bonds, becoming self-reliant</td>
+<td style="padding: 10px; border: 1px solid #999;">Utterly alone, making autonomous decisions</td>
+</tr>
+<tr>
+<td style="padding: 10px; border: 1px solid #999;">Power: Limited (she is a girl with no legal rights)</td>
+<td style="padding: 10px; border: 1px solid #999;">Power: Emerging (she asserts her will despite opposition)</td>
+<td style="padding: 10px; border: 1px solid #999;">Power: Absolute (she controls the one thing she possesses — her death)</td>
+</tr>
+</table>
+
+<h3>Juliet &amp; Feminist Criticism</h3>
+
+<p>Modern feminist readings of Romeo and Juliet often centre on Juliet as a figure whose autonomy is systematically denied by patriarchal structures. Her defiance of her father, her refusal of the Nurse's pragmatism, and her final choice of death can be read as acts of resistance against a system designed to deny women agency. By choosing to die on her own terms rather than submit to her father's will, Juliet asserts a final, ultimate form of autonomy: the right to determine her own fate, even if that fate is death.</p>
+
+<p>This reading does not diminish the play's tragedy but deepens it: Juliet's maturity, intelligence, and courage are genuine — but they develop in response to impossible circumstances created by a society that values family honour above women's lives and happiness. The play becomes, in this reading, a critique not only of the feud but of the patriarchal structures that make Juliet's defiance tragic rather than triumphant.</p>
 
 <h3>Juliet Compared to Other Female Characters</h3>
 

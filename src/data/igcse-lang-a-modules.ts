@@ -499,6 +499,109 @@ export const igcseLangAModules: CourseModule[] = [
 </ol>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> The word "structure" does not mean "paragraphs." Structure is about how the writer controls the reader's journey through the text. Think about what the reader knows and feels at the start, in the middle, and at the end — and how the writer engineers those changes.</div>
+
+<h3>Worked Example: Analysing Text Structure — Question 4 Response</h3>
+
+<p><strong>Text Extract:</strong> A 1950s article about the invention of the transistor (shortened for illustration)</p>
+
+<p><strong>Question 4: Analyse how the writer uses language and structure to convey the significance of the transistor's invention.</strong> (12 marks)</p>
+
+<h4>Grade 9 Response:</h4>
+
+<blockquote>
+<p>The writer controls the reader's sense of historical significance through carefully orchestrated structural escalation. The opening situates the transistor modestly within ordinary commerce — "A small team at Bell Laboratories announced an invention" — using understated language ("small," "announced") that intentionally undercuts the reader's expectations. This false modesty functions strategically: the writer builds credibility through apparent restraint before dramatically elevating the transistor's importance.</p>
+
+<p>The structural progression moves from modest origin to world-historical impact. The second paragraph introduces technical detail, which slows the pace and creates an impression of rigorous documentation. Then the pace accelerates: a sequence of short sentences builds momentum — "This changes everything. Radios will shrink. Computers will be born. The world will be transformed." The shift from slow, technical exposition to rapid-fire declarative statements creates a climactic effect, mimicking the gathering force of technological revolution.</p>
+
+<p>Structurally, the final paragraph circles back to the humble opening image — "That small team's invention" — but now charged with retrospective significance. The circular structure creates a sense of inevitability: what seemed modest in hindsight was world-changing. The writer's structural choices engineer a profound shift in the reader's understanding of the text's subject matter.</p>
+</blockquote>
+
+<div class="examiner-commentary">
+<strong>Examiner Commentary (Grade 9):</strong>
+<ul>
+<li><strong>Integrated Analysis:</strong> The student analyses both language ("understated language," "rapid-fire declarative statements") and structure (false modesty strategy, pace variation, circular structure) and explains how they work together to create effect.</li>
+<li><strong>Purpose-Driven Analysis:</strong> The student doesn't just describe the structure — they explain WHY the writer made these choices and WHAT EFFECT they achieve. This is the hallmark of exceptional analysis.</li>
+<li><strong>Sophisticated Terminology:</strong> Words like "orchestrated structural escalation," "false modesty functions strategically," and "engineer the reader's understanding" demonstrate secure command of analytical language.</li>
+<li><strong>Supporting Detail:</strong> Quotations are brief, embedded, and serve specific analytical purposes. The student doesn't quote to show what the text says — they quote to support an analytical claim.</li>
+</ul>
+</div>
+
+<h4>Grade 5 Response to the Same Question:</h4>
+
+<blockquote>
+<p>The writer uses language and structure to show that the transistor is important. The opening sentence is quite short and talks about a "small team," which shows the transistor was invented by a small group of people. Then the writer goes into more detail about what the transistor does. The writer uses short sentences at the end like "This changes everything" to create emphasis and make it seem important. The final paragraph goes back to mentioning the small team again, which makes the text come full circle. Overall, the writer uses these techniques to convey significance.</p>
+</blockquote>
+
+<div class="examiner-commentary">
+<strong>Examiner Commentary (Grade 5):</strong>
+<ul>
+<li><strong>Identification Without Analysis:</strong> The student correctly identifies several structural features (short opening sentence, detail in the middle, short sentences at the end, circular structure) but does not explain how these features create meaning or effect.</li>
+<li><strong>Vague Language:</strong> Phrases like "makes it seem important" and "convey significance" are too general. The student should explain specifically HOW each technique contributes to the reader's understanding of significance.</li>
+<li><strong>Missing Integration:</strong> Language and structure are discussed separately rather than shown working together. The student says "short sentences...create emphasis" without explaining what emotional or intellectual effect this emphasis creates in the reader.</li>
+<li><strong>Superficial Understanding:</strong> The student misses the irony of the false modesty — the strategic underselling of the transistor in the opening, which is then revealed to be world-changing. This is a sophisticated structural move that a higher-grade response would explore.</li>
+</ul>
+</div>
+
+<h3>Structural Patterns to Recognise in Non-Fiction Texts</h3>
+
+<p><strong>1. Chronological Structure</strong> — Events are presented in time order. The writer may use this to show cause-and-effect or to build suspense about how an outcome was reached.</p>
+
+<p><strong>2. Circular Structure</strong> — The text returns to an image, idea, or situation from the opening. This creates a sense of closure or allows the reader to see the beginning with new understanding.</p>
+
+<p><strong>3. Climactic Structure</strong> — Building tension or intensity towards a peak moment. Often uses escalating sentence length, more vivid language, or shifting perspective as the climax approaches.</p>
+
+<p><strong>4. Problem-Solution Structure</strong> — Presents a problem then offers resolution(s). Persuasive texts often use this structure to justify why the proposed solution is necessary.</p>
+
+<p><strong>5. Spatial Structure</strong> — Moves through physical space (left to right, top to bottom, outside to inside). Creates a sense of guided exploration or discovery.</p>
+
+<p><strong>6. Contrast Structure</strong> — Juxtaposes opposing ideas, experiences, or perspectives. Emphasises the magnitude of difference.</p>
+
+<p><strong>7. Embedded Stories or Anecdotes</strong> — Personal examples or case studies are woven into the text. These make abstract concepts concrete and emotionally resonant.</p>
+
+<h3>How to Spot a Structural Shift</h3>
+
+<p>Structural shifts are moments where the text changes direction, tone, pace, or focus. These are valuable opportunities for analysis. Ask yourself:</p>
+
+<ul>
+<li><strong>What triggers the shift?</strong> (A new paragraph? A new idea? A change in perspective?)</li>
+<li><strong>What changes?</strong> (Topic, tone, pace, narrative perspective, sentence structure?)</li>
+<li><strong>Why might the writer make this choice?</strong> (To surprise the reader? To deepen argument? To shift emotional tone?)</li>
+<li><strong>What effect does this shift have on the reader?</strong> (Does it create surprise, relief, tension, reflection?)</li>
+</ul>
+
+<p><strong>Example:</strong> A text about climate change opens with scientific data (measured, objective tone; long, complex sentences). Then it shifts to a personal anecdote about a family experiencing environmental disaster (emotional, intimate tone; shorter, more fragmented sentences). This shift makes the abstract data feel personally relevant and emotionally urgent. The structure itself persuades the reader.</p>
+
+<h3>Building a Structural Analysis Paragraph: Step-by-Step</h3>
+
+<ol>
+<li><strong>Topic sentence naming the structural feature:</strong> "The writer employs a climactic structure, building towards a pivotal moment that encapsulates the text's central argument."</li>
+<li><strong>Description of how the structure works:</strong> "The opening paragraphs establish the problem methodically, using long, complex sentences and measured vocabulary. As the argument develops, sentences become progressively shorter and more emphatic."</li>
+<li><strong>Embedded quotation demonstrating the feature:</strong> "By the text's penultimate paragraph, this accelerates into staccato declarations: 'Change now. Act decisively. Demand accountability.'"</li>
+<li><strong>Analysis of effect:</strong> "This shift from measured exposition to urgent exhortation mirrors the escalating crisis the writer describes. The very structure of the text enacts its message: complacency must give way to action."</li>
+<li><strong>Connection to overall purpose:</strong> "This structural choice is essential to the writer's purpose — not merely to inform the reader about the problem but to motivate them to respond."</li>
+</ol>
+
+<div class="examiner-tip"><strong>Powerful Words for Structural Analysis:</strong> accelerate, decelerate, escalate, oscillate, juxtapose, undercut, invert, mirror, echo, foreshadow, climax, resolve, undermine, reinforce, tension, release</div>
+
+<h3>Common Mistakes in Structural Analysis</h3>
+
+<p><strong>Mistake 1: Confusing structure with summarising.</strong></p>
+
+<div class="wrong-example"><strong>Incorrect:</strong> "The writer talks about the problem in the first paragraph, then discusses solutions in the second paragraph."</div>
+
+<p>This describes content, not structure.</p>
+
+<div class="correct-example"><strong>Correct:</strong> "The writer employs a problem-solution structure. By presenting the problem in detail before offering solutions, the writer establishes the urgency of the situation. The reader is immersed in the problem before being offered hope — this ordering makes the solution feel like a necessary response rather than an abstract proposal."</div>
+
+<p><strong>Mistake 2: Ignoring pace and rhythm.</strong></p>
+
+<p>Pace is a structural feature. When sentence length varies, when paragraphs shift from long to short, when punctuation changes — these are structural choices that create effect. Always comment on pace variation in structural analysis.</p>
+
+<p><strong>Mistake 3: Not explaining the EFFECT of structural choices.</strong></p>
+
+<p>Simply identifying a structure is insufficient. Always ask: What does this structural choice make the reader think or feel? How does it advance the writer's purpose?</p>
+
+
 `,
     quiz: [
       {
@@ -807,6 +910,164 @@ export const igcseLangAModules: CourseModule[] = [
   <li><strong>Paragraphing</strong> — each new point or topic should begin a new paragraph</li>
   <li><strong>Grammatical accuracy</strong> — subject-verb agreement, consistent tense, correct pronoun usage</li>
 </ul>
+
+<h3>Worked Example 1: Letter Task (Formal) — Grade 9 Student Response</h3>
+
+<p><strong>Task:</strong> Write a letter to your local MP arguing for increased funding for school mental health services.</p>
+
+<p><strong>Opening 3 Paragraphs:</strong></p>
+
+<blockquote>
+<p>Dear [MP Name],</p>
+<p>I am writing on behalf of my school to urge you to prioritise increased funding for school-based mental health services. The current state of provision is insufficient and directly contributing to a mental health crisis among young people. With exam stress, social media pressures, and post-pandemic anxiety creating unprecedented demand, schools require significantly more resource to support vulnerable students effectively.</p>
+<p>The evidence is unambiguous. According to the Office for National Statistics, one in four teenagers now experience diagnosable mental health conditions — yet many schools have only a single counsellor for 1,000+ students. The waiting times are unconscionable: in my school, students wait 6-8 weeks for an appointment. In that timeframe, a crisis can escalate into a tragedy. We cannot accept a system where young people are forced to wait for help.</p>
+<p>This is not an abstract issue. Three of my classmates have attempted suicide in the past two years. Countless others are struggling silently, their potential unfulfilled because their mental health needs are unmet. These are preventable outcomes. Investing in school mental health provision is not a luxury — it is an urgent moral imperative.</p>
+</blockquote>
+
+<div class="examiner-commentary">
+<strong>Examiner Commentary (Grade 9):</strong>
+<ul>
+<li><strong>Form &amp; Conventions:</strong> The letter uses all required conventions — formal greeting, appropriate sign-off, clear paragraphing. The register is formal throughout, using professional language ("provision," "prioritise," "insufficient") appropriate to addressing an MP.</li>
+<li><strong>AO4 (Effective Communication):</strong> The response demonstrates exceptional persuasive technique. Evidence is integrated seamlessly (statistics from ONS, concrete school example). Rhetorical techniques are used strategically — "the evidence is unambiguous" establishes authority; the repetition of "one in four" creates impact; the anaphora "This is not..." intensifies emotional appeal. Personal testimony ("Three of my classmates...") is powerful and specific, grounding argument in human reality.</li>
+<li><strong>Persuasive Strategies:</strong> Multiple layers of persuasion: logical argument (statistics), emotional appeal (personal examples), and moral appeal ("urgent moral imperative"). The juxtaposition of waiting times against crisis severity ("In that timeframe, a crisis can escalate into a tragedy") is particularly effective.</li>
+<li><strong>Vocabulary &amp; Syntax:</strong> Sophisticated vocabulary ("unambiguous," "unconscionable," "diagnosable") and varied sentence structures. Complex sentences with subordinating clauses ("With exam stress, social media pressures...") and rhetorical questions create rhythm and emphasis.</li>
+</ul>
+</div>
+
+<h3>Worked Example 2: Grade 5 Response to the Same Task</h3>
+
+<blockquote>
+<p>Dear [MP Name],</p>
+<p>I am writing to you because I think schools should have more money for mental health. Many students are depressed and sad, and they need help. The government should give schools more funding so that they can help students who are suffering.</p>
+<p>Mental health is very important. A lot of teenagers are unhappy and don't feel good. If we had more counsellors in schools, then more students could get help. This would be good for students and for the country.</p>
+</blockquote>
+
+<div class="examiner-commentary">
+<strong>Examiner Commentary (Grade 5):</strong>
+<ul>
+<li><strong>Form &amp; Conventions:</strong> Correct formal conventions (greeting, sign-off, paragraphing) are in place.</li>
+<li><strong>AO4 Limitations:</strong> The response identifies the issue and takes a clear position, which is positive. However, persuasive technique is limited. The writing is mostly assertion without supporting evidence. Phrases like "many students are depressed" are vague and unsubstantiated. There are no statistics, no concrete examples, no specific justification for claims. The argument is repetitive — the same point (students need help; more counsellors would help) is restated in slightly different words. Vocabulary is basic ("depressed," "sad," "unhappy," "good") and sentence structures are simple. The register is broadly appropriate but lacks sophistication.</li>
+<li><strong>Missing Elements:</strong> No evidence. No rhetorical devices. No counterargument acknowledgement. No emotional or moral appeal beyond bland statements. The argument is rational but thin — baseline competence, not distinguished performance.</li>
+</ul>
+</div>
+
+<h3>IGCSE Grade Boundary Comparison for Directed Writing (out of 45 marks)</h3>
+
+<table border="1" cellpadding="10" style="width: 100%; border-collapse: collapse;">
+<tr style="background-color: #f0f0f0;">
+<th style="padding: 10px; text-align: left;">Grade</th>
+<th style="padding: 10px; text-align: left;">Mark Range</th>
+<th style="padding: 10px; text-align: left;">AO4 (27 marks)</th>
+<th style="padding: 10px; text-align: left;">AO5 (18 marks)</th>
+<th style="padding: 10px; text-align: left;">Distinguishing Characteristics</th>
+</tr>
+<tr>
+<td style="padding: 10px;"><strong>Grade 9</strong></td>
+<td style="padding: 10px;">39-45</td>
+<td style="padding: 10px;">25-27</td>
+<td style="padding: 10px;">17-18</td>
+<td style="padding: 10px;">Multiple integrated persuasive techniques; sophisticated vocabulary; evidence-based argument throughout; flawless technical accuracy; compelling, assured tone; form conventions expertly deployed</td>
+</tr>
+<tr style="background-color: #f9f9f9;">
+<td style="padding: 10px;"><strong>Grade 7</strong></td>
+<td style="padding: 10px;">32-38</td>
+<td style="padding: 10px;">21-24</td>
+<td style="padding: 10px;">15-16</td>
+<td style="padding: 10px;">Clear persuasive techniques with some integration; appropriate vocabulary; evidence present but not always seamlessly integrated; mostly accurate with minor lapses; assured tone; form conventions followed correctly</td>
+</tr>
+<tr>
+<td style="padding: 10px;"><strong>Grade 5</strong></td>
+<td style="padding: 10px;">25-31</td>
+<td style="padding: 10px;">16-20</td>
+<td style="padding: 10px;">13-14</td>
+<td style="padding: 10px;">Simple persuasive approach; limited evidence; basic vocabulary; generally accurate with some errors; follows form conventions but without sophisticated styling; repetition of ideas</td>
+</tr>
+<tr style="background-color: #f9f9f9;">
+<td style="padding: 10px;"><strong>Grade 3</strong></td>
+<td style="padding: 10px;">18-24</td>
+<td style="padding: 10px;">11-15</td>
+<td style="padding: 10px;">10-12</td>
+<td style="padding: 10px;">Minimal persuasive technique; assertions without support; simple vocabulary and structures; multiple technical errors; recognisable form but poorly executed; unclear argument structure</td>
+</tr>
+</table>
+
+<h3>Common Mistakes in Transactional Writing and How to Avoid Them</h3>
+
+<p><strong>Mistake 1: Writing an essay instead of the specified form.</strong></p>
+
+<div class="wrong-example"><strong>Incorrect:</strong> "Increased school funding for mental health services is essential. In conclusion, the government must prioritise this issue."</div>
+
+<p>This reads like a generic persuasive essay, not a letter — it lacks letter conventions.</p>
+
+<div class="correct-example"><strong>Correct:</strong> "Dear [MP Name], I am writing on behalf of my school to urge you to prioritise increased funding for school mental health services..." ending with "Yours faithfully, [Your Name]"</div>
+
+<p><strong>Solution:</strong> Before writing, identify the form and its conventions. For a letter: greeting, formal register, sign-off. For an article: headline, byline, engaging voice. For a speech: direct address and rhetorical devices. Check your final draft against these conventions before submitting.</p>
+
+<p><strong>Mistake 2: Making assertions without evidence.</strong></p>
+
+<div class="wrong-example"><strong>Weak:</strong> "School is stressful for students and many are suffering from mental health problems."</div>
+
+<div class="correct-example"><strong>Strong:</strong> "According to research from the Centre for Mental Health, one in four teenagers now experience diagnosable mental health conditions — yet the average school has only one counsellor for every 1,000 students. This means students can wait 6-8 weeks for an appointment, a timeframe in which a crisis can escalate into tragedy."</div>
+
+<p><strong>Solution:</strong> Incorporate at least two pieces of evidence per major claim. These can be statistics, expert quotes, specific examples, or logical reasoning. Embed evidence seamlessly in your argument rather than presenting it as a separate paragraph.</p>
+
+<p><strong>Mistake 3: Flat, generic vocabulary.</strong></p>
+
+<div class="wrong-example"><strong>Weak:</strong> "School funding is a big problem. The government should give more money to schools because it would be really good for students."</div>
+
+<p><strong>Solution:</strong> Replace bland words with precise, sophisticated alternatives:
+<ul>
+<li>Instead of "big": "significant," "pressing," "critical," "endemic"</li>
+<li>Instead of "good": "beneficial," "advantageous," "transformative," "imperative"</li>
+<li>Instead of "give money": "allocate resources," "prioritise funding," "invest in," "ringfence budget allocation"</li>
+<li>Instead of "problem": "crisis," "deficiency," "systemic failure," "resource scarcity"</li>
+</ul>
+</p>
+
+<p><strong>Mistake 4: Simple sentence structures that weaken argument.</strong></p>
+
+<div class="wrong-example"><strong>Simple sentences:</strong> "Mental health is important. Students are stressed. Schools need help. Funding would fix this."</div>
+
+<p><strong>Solution:</strong> Vary your sentences:
+<ul>
+<li><strong>Complex sentence:</strong> "Because mental health conditions are now affecting one in four teenagers, schools require significantly more funding to provide adequate support."</li>
+<li><strong>Compound sentence:</strong> "Schools have the expertise to help, yet they lack the resources; consequently, students remain unsupported."</li>
+<li><strong>Mixed structures:</strong> Alternate between longer, evidence-laden sentences and shorter, emphatic ones for rhythm and impact.</li>
+</ul>
+</p>
+
+<p><strong>Mistake 5: Forgetting the specified audience and register.</strong></p>
+
+<div class="wrong-example"><strong>Wrong register (to an MP):</strong> "Yo, governments gotta help mental health cos it's super important, innit."</div>
+
+<p><strong>Solution:</strong> Identify your audience and adjust accordingly:
+<ul>
+<li><strong>To a headteacher:</strong> Formal but respectful, acknowledging existing efforts</li>
+<li><strong>To fellow students:</strong> Accessible language, relatable examples, semi-formal register</li>
+<li><strong>To a newspaper editor:</strong> Engaging, clear, with rhetorical devices for general readership</li>
+<li><strong>To government/council officials:</strong> Formal, evidence-based, professional, objective tone</li>
+</ul>
+</p>
+
+<h3>Step-by-Step Technique: Crafting a Persuasive Opening</h3>
+
+<p>The first paragraph sets the tone and establishes credibility. Follow this structure:</p>
+
+<ol>
+<li><strong>Identify yourself and your purpose (1–2 sentences):</strong> "I am writing as a sixth-form student to urge increased investment in school mental health services."</li>
+<li><strong>Present the core claim (1 sentence):</strong> "The mental health crisis affecting our young people demands immediate government action."</li>
+<li><strong>Provide initial evidence or context (1–2 sentences):</strong> "One in four teenagers now experience diagnosable mental health conditions — a statistic that reflects a systemic failure of support."</li>
+<li><strong>Signal your argument structure (optional):</strong> "This letter argues three key points: the insufficiency of current provision, the measurable benefits of investment, and the cost of inaction."</li>
+</ol>
+
+<p><strong>Model opening:</strong></p>
+<blockquote>
+<p>Dear [MP Name], I am writing as a constituent and a student to urge you to advocate for increased government funding for school mental health services. The mental health crisis affecting young people has reached critical proportions: one in four teenagers now experience diagnosable conditions, yet most schools have only a single counsellor for 1,000+ students. This letter argues three key points: first, the current provision is demonstrably inadequate; second, investment in school-based services produces measurable benefits; and third, the cost of inaction far exceeds the cost of intervention.</p>
+</blockquote>
+
+<div class="examiner-tip"><strong>Why This Works:</strong> The opening immediately identifies the writer, the reader, and the purpose. It presents evidence (the one-in-four statistic) in the opening paragraph, establishing credibility. It signals the structure, allowing the reader to follow the argument easily. The register is formal and respectful. The vocabulary is sophisticated. And crucially, it demonstrates careful thought — the writer knows what they want to say and has structured their argument logically.</div>
+
+
 `,
     quiz: [
       {
@@ -1100,6 +1361,107 @@ export const igcseLangAModules: CourseModule[] = [
 </ul>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Only practising individual questions in isolation and never completing a full paper. The challenge of Paper 1 is not just the difficulty of individual questions — it is maintaining quality across 135 minutes. If you have never written under full timed conditions, you will be unprepared for the fatigue and pressure of the real exam.</div>
+
+<h3>Worked Example: Question 5 (Comparison) — Grade 9 vs Grade 5 Responses</h3>
+
+<p><strong>Source Texts:</strong> Both texts discuss the impact of technology on modern life. Text A is from a 2023 article warning about digital addiction; Text B is from a 2022 essay celebrating technological innovation.</p>
+
+<p><strong>Question 5: Compare how both writers present their views on the impact of technology on modern life.</strong> (22 marks)</p>
+
+<h4>Grade 9 Response (Extract):</h4>
+
+<blockquote>
+<p>While both writers acknowledge technology's ubiquity in modern life, they fundamentally diverge in their assessment of its impact. Writer A constructs a cautionary narrative, using emotive language to position technology as a threat ("digital addiction," "enslaved by screens"), whereas Writer B adopts an optimistic stance, celebrating innovation through elevated diction ("revolutionary," "transformative potential"). This contrast reveals two competing ideologies: technology as a destabilising force versus technology as a liberating tool.</p>
+<p>The structural choices reinforce these opposing viewpoints. Writer A employs a problem-solution architecture, building evidence of technological harms throughout before proposing digital literacy initiatives. This structure positions the reader as passive victim requiring intervention. Conversely, Writer B uses a chronological framework, tracing technological advancement from the printing press to AI, which positions humanity as active agents driving progress. The very structure of each text encodes a philosophical stance on human agency.</p>
+<p>Most tellingly, where Writer A uses personal anecdotes ("A teenager I interviewed...") to create emotional resonance and individual case studies, Writer B cites statistical evidence ("3.6 billion people now benefit from internet access") to establish universal benefit. This methodological divergence — personal narrative versus quantitative data — shapes how each writer constructs their argument's credibility and emotional weight.</p>
+</blockquote>
+
+<div class="examiner-commentary">
+<strong>Examiner Commentary (Grade 9):</strong>
+<ul>
+<li><strong>Sustained Comparison (AO3 — 22 marks):</strong> This response integrates both texts throughout, moving beyond simple alternation between them. The student identifies not just different views but the underlying philosophical tensions (threat vs. liberation, victimhood vs. agency, emotion vs. reason). Each paragraph explicitly compares a specific aspect across both texts.</li>
+<li><strong>Analysis Depth:</strong> The student analyses not just what each writer says but how the choice of language, structure, and evidence shapes meaning. The observation about structural choice encoding ideology is sophisticated — it recognises that form and content are inseparable in persuasion.</li>
+<li><strong>Use of Evidence:</strong> Quotations are embedded seamlessly and serve specific analytical purposes. The comparative connectives ("While," "Conversely," "Most tellingly") create coherence and guide the reader through the argument.</li>
+<li><strong>Subject Terminology:</strong> Sophisticated use of terminology ("emotive language," "elevated diction," "problem-solution architecture," "chronological framework," "methodological divergence") demonstrates secure command of analytical vocabulary.</li>
+</ul>
+</div>
+
+<h4>Grade 5 Response (Extract) to the Same Question:</h4>
+
+<blockquote>
+<p>Writer A and Writer B have different opinions about technology. Writer A thinks technology is bad and Writer B thinks it is good. Writer A uses negative words like "addiction" and "enslaved" which show he doesn't like technology. Writer B uses positive words like "revolutionary" and "transformative" which show he likes technology. This shows they have opposite views.</p>
+<p>Writer A also talks about problems with technology and Writer B talks about good things about technology. Writer A mentions a teenager that he interviewed and Writer B mentions statistics. Both writers use evidence but in different ways. Writer A tries to make the reader feel sad about technology but Writer B tries to make the reader feel happy about it.</p>
+</blockquote>
+
+<div class="examiner-commentary">
+<strong>Examiner Commentary (Grade 5):</strong>
+<ul>
+<li><strong>Comparison Present but Limited:</strong> The student identifies that the writers have different views and makes some attempt at comparison. However, the comparison is surface-level — identifying that one writer uses negative words and the other uses positive words is an observation of obvious contrast, not sophisticated analysis.</li>
+<li><strong>Analysis Weakness:</strong> The response describes what the writers say ("Writer A thinks technology is bad") without explaining how language and structural choices create meaning. There is no discussion of why the writers choose these techniques or what effects they achieve. The analysis remains at the level of identifying features rather than explaining their function.</li>
+<li><strong>Limited Integration:</strong> The two texts are treated separately — alternating between them rather than being woven together. The student says "Writer A uses X, Writer B uses Y" rather than integrating both texts into a single analytical point.</li>
+<li><strong>Repetition:</strong> The final sentence of each paragraph essentially restates the opening. The point "Writer A doesn't like technology, Writer B likes technology" is repeated across multiple sentences without adding new insight.</li>
+<li><strong>Terminology:</strong> Basic vocabulary ("negative words," "positive words," "evidence") without the sophisticated terminology that characterises higher-grade responses.</li>
+</ul>
+</div>
+
+<h3>Grade-Level Comparison: Question 4 (Language &amp; Structure Analysis) Responses</h3>
+
+<p><strong>Question 4 Task: Analyse how the writer uses language and structure to create a sense of urgency in the following passage about climate change.</strong> (12 marks)</p>
+
+<h4>Grade 9 Response:</h4>
+
+<blockquote>
+<p>The writer constructs urgency through a deliberate escalation of linguistic intensity and temporal compression. The opening employs measured, formal register ("As glaciers recede..."), which establishes credibility before escalating through vivid, visceral imagery ("the planet is gasping for breath") and finally reaches a crescendo in a single-sentence paragraph: "Act now." This ascending structure from restraint to passion creates a trajectory of increasing alarm that mirrors the escalating crisis itself.</p>
+<p>Syntactically, the writer fragments increasingly longer sentences as the passage progresses. Early sentences are periodic constructions ("Although scientists predicted... the rate of change has far exceeded..."), which create a measured tone. But later, the syntax collapses into imperative clauses ("Stop. Act. Demand change.") — the brevity of these fragments mirrors the writer's contention that time is running out. The very shape of the sentences on the page enacts the message of urgency.</p>
+</blockquote>
+
+<h4>Grade 5 Response:</h4>
+
+<blockquote>
+<p>The writer uses urgent language to show that climate change is serious. Words like "gasping for breath" and "act now" show that the writer wants the reader to do something. The writer also uses short sentences at the end ("Stop. Act. Demand change.") which makes it more urgent because short sentences are punchy. The writer uses formal language at the start and then uses more emotional language later, which helps create urgency.</p>
+</blockquote>
+
+<div class="examiner-tip"><strong>Key Differences at a Glance:</strong>
+<ul>
+<li><strong>Grade 9:</strong> Discusses the FUNCTION of techniques (how escalation creates a trajectory of alarm). Integrates form and content (syntax mirrors message). Uses sophisticated terminology ("periodic constructions," "imperative clauses"). Shows how language choices work together to create effect.</li>
+<li><strong>Grade 5:</strong> Identifies techniques and states their effect ("short sentences are punchy") but doesn't explain WHY or HOW. Vocabulary is basic. Analysis stays at surface level — the student sees the techniques but doesn't understand their deeper function.</li>
+</ul>
+</div>
+
+<h3>Annotation Strategy: How to Mark Up a Text During the Exam</h3>
+
+<p>During the reading phase (first 5–10 minutes), annotate the text strategically:</p>
+
+<ol>
+<li><strong>Underline or circle key phrases</strong> that seem thematically important or linguistically striking. Example: emotional language, powerful verbs, striking metaphors.</li>
+<li><strong>Marginal notes for shifts:</strong> Use arrows or brief notes in the margin to mark where tone shifts, where the argument changes direction, or where structural breaks occur.</li>
+<li><strong>Question marks for ambiguity:</strong> If a phrase could be interpreted in multiple ways or seems deliberately ambiguous, mark it with a "?" to remind yourself to analyse it.</li>
+<li><strong>Number your key points:</strong> If you're planning Q5 (comparison), number the main ideas in each text so you can quickly locate them when writing.</li>
+<li><strong>Brackets around evidence:</strong> If you spot a particularly strong quote you might use, put brackets around it so it's easy to find quickly when writing.</li>
+</ol>
+
+<p><strong>Example of annotated text:</strong></p>
+
+<blockquote>
+<p>The morning arrived [TONE SHIFT: from darkness to light] like an accusation. (METAPHOR—unusual comparison) The sun, that familiar friend, suddenly felt hostile. Windows glinted like eyes watching, judging. [PERSONIFICATION: sun as judge] Within minutes, the entire city seemed transformed into an interrogation chamber. [HYPERBOLE: exaggeration to show psychological state]</p>
+</blockquote>
+
+<p>These annotations take 30 seconds but save minutes during writing — you don't have to hunt for quotations or reread entire passages.</p>
+
+<h3>Managing Exam Fatigue: The Final 20 Minutes</h3>
+
+<p>Most students' performance drops significantly in the final 20 minutes of Paper 1. Here's how to maintain quality:</p>
+
+<ul>
+<li><strong>Do NOT start a new major section.</strong> If you're on Q4 and have 20 minutes left, do not abandon it to start Q5. Complete Q4, even if your Q5 response is brief. Incomplete responses score zero marks.</li>
+<li><strong>Quality &gt; Quantity:</strong> Write three strong PEEL paragraphs rather than five weak ones. Examiners reward depth over breadth.</li>
+<li><strong>Stick to your plan:</strong> If fatigue makes you second-guess your planning, resist. Trust your pre-written plan — it was made when you were fresh and thinking clearly.</li>
+<li><strong>Hydration and posture:</strong> Even a 30-second stretch can combat fatigue. Sit up straight — slouching reduces oxygen flow to the brain.</li>
+</ul>
+
+<div class="examiner-tip"><strong>Pro Tip:</strong> If you are falling behind on time, the strategic move is to abandon the lowest-tariff question entirely and dedicate all remaining time to the highest-tariff questions. For example, if you are behind on time, finish Q4 and Q5 completely, even if it means only spending 1–2 minutes on Q1 or Q2. A zero on a 2-mark question is less damaging than incomplete responses on 22-mark and 45-mark questions.</div>
+
+
 `,
     quiz: [
       {
@@ -1252,6 +1614,100 @@ export const igcseLangAModules: CourseModule[] = [
   <li>Practise writing personal experience narratives, titled stories, and image-prompted stories under timed conditions.</li>
   <li>Build your vocabulary — the richer your word bank, the more effective both your analysis and your writing will be.</li>
 </ul>
+
+<h3>Understanding Writer's Effect: How to Analyse Literary Texts Effectively</h3>
+
+<p>In Paper 2 Section A, you will be asked to analyse how writers use techniques to create effects on the reader. This requires you to move beyond identifying techniques to understanding their PURPOSE and IMPACT. Here's the difference:</p>
+
+<p><strong>Weak analysis:</strong> "The writer uses metaphor when describing the sea."</p>
+
+<p><strong>Strong analysis:</strong> "The writer constructs the sea as a metaphor for the protagonist's emotional turmoil — vast, uncontrollable, and inescapable. This metaphor intensifies the reader's empathy for the character's psychological state and suggests that inner conflict is as overwhelming as natural forces."</p>
+
+<p>In the weak version, the student identifies a technique. In the strong version, the student explains WHY the writer chose this technique and WHAT EFFECT it achieves. That's the difference between grade 5 and grade 9.</p>
+
+<h3>Guided Questions for Analysing Writer's Effect</h3>
+
+<p>When you encounter a striking image, metaphor, or structural choice in the anthology text, ask yourself:</p>
+
+<ol>
+<li><strong>What is being described or presented?</strong> (Literal meaning)</li>
+<li><strong>What technique is the writer using?</strong> (Metaphor, simile, personification, alliteration, etc.)</li>
+<li><strong>What does this technique make the reader notice or feel?</strong> (Emotional/sensory impact)</li>
+<li><strong>What is the writer suggesting about this subject?</strong> (Deeper meaning or theme)</li>
+<li><strong>How does this choice fit into the text's overall purpose?</strong> (Function within the whole piece)</li>
+</ol>
+
+<p><strong>Worked Example from a Poem:</strong></p>
+
+<p><em>"The caged bird sings with a fearful trill"</em></p>
+
+<ol>
+<li><strong>Literal meaning:</strong> A bird in a cage sings with fear in its voice.</li>
+<li><strong>Technique:</strong> The bird is a metaphor for a person who is oppressed or constrained.</li>
+<li><strong>Reader's response:</strong> The image of the "fearful trill" creates a sense of pathos — we feel the bird's (the person's) desperation and suffering.</li>
+<li><strong>Deeper meaning:</strong> The writer is suggesting that oppression silences authentic expression — even in its singing, the caged bird cannot achieve freedom.</li>
+<li><strong>Overall function:</strong> This line encapsulates the text's central theme: the human spirit's struggle against constraint.</li>
+</ol>
+
+<h3>Summary Writing &amp; Synthesis Skills for Literary Analysis</h3>
+
+<p>While not explicitly tested in Paper 2, the ability to summarise and synthesise complex literary passages is essential for understanding what you're analysing. Here's how to summarise effectively:</p>
+
+<p><strong>The 5-Step Summarisation Process:</strong></p>
+
+<ol>
+<li><strong>Read the passage carefully and identify the main idea.</strong> (Usually in the opening or closing lines.)</li>
+<li><strong>Identify supporting points.</strong> (The key details that develop the main idea — typically 2–4 points.)</li>
+<li><strong>Eliminate repetition and irrelevant detail.</strong> (Cut lines that restate previous images or examples that don't serve the central idea.)</li>
+<li><strong>Condense key points into your own words.</strong> (Paraphrase rather than quote, showing you understand the material.)</li>
+<li><strong>Synthesise into a coherent summary (1/3 to 1/2 the length of the original).</strong></li>
+</ol>
+
+<p><strong>How This Applies to Paper 2:</strong> When you encounter a complex stanza or passage in the anthology text, summarise it mentally before analysing it. Understanding the content first — what the passage is saying — makes the analysis of how it is said far more effective. You cannot analyse technique in a vacuum; you must understand the content being conveyed.</p>
+
+<h3>Common Mistakes in Literary Analysis and How to Avoid Them</h3>
+
+<p><strong>Mistake 1: Identifying techniques without explaining their effect.</strong></p>
+
+<div class="wrong-example"><strong>Weak:</strong> "The writer uses personification when she describes the wind as 'weeping.' This is personification because wind cannot weep."</div>
+
+<p><strong>Solution:</strong> After identifying the technique, always explain its effect: "The writer uses personification when she describes the wind as 'weeping,' transforming a natural phenomenon into an emotional presence. This personification makes the landscape reflect the character's grief, blurring the boundary between external setting and internal emotion. The reader cannot separate the character's sadness from the storm — they become inseparable."</p>
+
+<p><strong>Mistake 2: Discussing content without form.</strong></p>
+
+<div class="wrong-example"><strong>Weak:</strong> "The poem is about a woman who loses her home. She feels very sad about this."</div>
+
+<p><strong>Solution:</strong> Discuss BOTH what the poem is about AND how the writer crafts this meaning through form: "The poem traces a woman's loss of home, but the writer conveys this loss through structural fragmentation — short, broken lines that mirror the speaker's fractured emotional state. The poem's form — choppy, incomplete sentences and enjambment that cuts words mid-thought — enacts the disorientation of displacement."</p>
+
+<p><strong>Mistake 3: Neglecting structure and form in literary analysis.</strong></p>
+
+<p>Many students focus exclusively on language (imagery, word choice, rhetorical devices) and overlook structure and form. For poetry, always consider: stanza form, line length, enjambment, rhythm, and rhyme scheme. For prose, consider: chapter breaks, shifts in perspective, pace variations, and narrative structure.</p>
+
+<h3>Grade-Level Responses: Section A Literary Analysis</h3>
+
+<p><strong>Task: Analyse how the writer uses language and structure to create mood in the opening paragraph of the text.</strong></p>
+
+<h4>Grade 9 Response:</h4>
+
+<blockquote>
+<p>The writer constructs a mood of foreboding restraint through syntactic control and tonal oscillation. The opening establishes an almost clinical precision — "The house stood, as it had for seventy years, unaltered" — employing a measured, declarative tone that suggests both permanence and stagnation. Yet immediately, the writer introduces unsettling imagery: "dust accumulated in corners like memories no one wished to recall." The juxtaposition of clinical description with organic, emotive metaphor creates a tension between surface order and underlying decay. Structurally, the paragraph moves from external description (the house's physical state) to internal association (what dust suggests psychologically) — this inward movement mirrors the reader's growing unease, drawing us from objective observation into subjective dread.</p>
+</blockquote>
+
+<h4>Grade 5 Response:</h4>
+
+<blockquote>
+<p>The writer uses language to create a dark mood. The opening sentence is long, which makes it sound formal and serious. The writer uses a metaphor when she says "dust accumulated in corners like memories no one wished to recall." This metaphor shows that the house has unhappy memories. The writer also uses the word "unaltered" which shows the house never changes. Overall, the language creates a dark and sad mood about the house.</p>
+</blockquote>
+
+<div class="examiner-comparison">
+<strong>Key Differences:</strong>
+<ul>
+<li><strong>Grade 9:</strong> Uses sophisticated terminology ("syntactic control," "tonal oscillation," "juxtaposition"). Explains how techniques work together to create effect. Traces the structural progression and its psychological impact ("inward movement mirrors growing unease").</li>
+<li><strong>Grade 5:</strong> Identifies some techniques correctly ("metaphor," "long sentences") but explains their effect only vaguely. Does not explore how language choices are interconnected or how they guide the reader through emotional states. Descriptive vocabulary is basic.</li>
+</ul>
+</div>
+
+
 `,
     quiz: [
       {

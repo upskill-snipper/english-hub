@@ -582,6 +582,115 @@ const gcseLangReading: CourseData = {
 
 <h3>Time Management</h3>
 <p>At 20 marks, Q4 should take approximately <strong>20-25 minutes</strong>. Aim for 4-5 developed paragraphs. Quality of analysis always beats quantity of points.</p>
+
+<h3>Grade Boundary Breakdown: What Each Level Looks Like</h3>
+
+<div class="grade-5-technique"><strong>Grade 5 Response:</strong> Agree or disagree with the statement. Identify 2-3 methods the writer uses (e.g., "uses personification," "includes short sentences"). Make simple comments about their effect. Example: "The personification of the doors as having mouths shows the setting is unfriendly. This creates fear because unfriendly places are scary. Therefore the writer does make the reader sympathetic."</div>
+
+<div class="grade-7-technique"><strong>Grade 7 Response:</strong> Take a clear position and support it throughout. Analyse 3-4 language methods with specific quotations. Explain the effect with reference to the reader's response. Include evaluative language like "effectively," "powerfully," "successfully." Example: "The writer effectively creates sympathy by using physical detail. The word 'shallow' emphasises Marcus's anxiety — it is not just that he cannot breathe deeply, but the word itself is thin and restricted, which mirrors his constrained state. This makes the reader feel his vulnerability because we experience his bodily distress alongside him."</div>
+
+<div class="grade-9-technique"><strong>Grade 9 Response (What You're Aiming For):</strong> Develop a nuanced evaluation that acknowledges complexity. Analyse multiple methods (language, structure, tone) with specific, precise quotations. Weigh up different effects and judge how effectively they work together. Use sophisticated evaluative language. Show understanding of intended audience and writer's purpose. Example: "While the writer undoubtedly creates sympathy through visceral physical detail — 'breath shallow and uneven' immediately aligns the reader's bodily response with Marcus's panic — the inclusion of the absurdist detail 'absurdly loud' reveals a more complex intention. This tonal shift suggests the writer is not asking for simple pity, but for a more sophisticated understanding of fear as something that coexists with mundane, even comic elements. The reader's sympathy therefore develops from this nuance: we recognise Marcus's fear as authentic precisely because it is not theatricalised. The writer judges the reader capable of this complexity, which in itself is a sign of respect toward the character and reader alike."</div>
+
+<h3>Grade 5 vs Grade 9: Comparative Examples</h3>
+
+<p><strong>Sample Statement:</strong> "The writer successfully creates a sense of isolation throughout this passage."</p>
+
+<p><strong>Grade 5 Answer:</strong></p>
+<p>"I agree with this statement. The writer creates isolation in several ways. First, Marcus is alone in the corridor. Second, 'each door a closed mouth refusing to speak' shows that the doors will not help him. This makes the reader feel he is isolated. Third, the passage mentions darkness, which is isolating because you cannot see other people in the dark. The writer uses these techniques to show isolation."</p>
+
+<p><strong>Why this scores Grade 5:</strong> Clear agreement, some textual reference, basic explanation. However, the analysis is surface-level. It describes what happens without truly evaluating how effectively the writer creates isolation or engaging deeply with the methods.</p>
+
+<p><strong>Grade 9 Answer:</strong></p>
+<p>"I agree that the writer successfully constructs isolation, though the passage is more sophisticated than a simple portrayal of loneliness. The spatial isolation is immediate: Marcus 'pressed his back against the wall,' a physical position that emphasises his defensiveness and confinement. Yet the more powerful isolation is psychological, conveyed through the personification of the environment: 'each door a closed mouth refusing to speak.' The verb 'refusing' is crucial — it transforms the doors from merely closed into actively hostile, which transforms Marcus from simply alone into actively rejected. The reader's isolation mirrors his own: we are given only Marcus's perspective, locked into his sensory experience ('he counted his heartbeats') without external context or reassurance. The final image of his shadow in a 'frantic, stuttering dance' externalises his internal isolation, showing that even his own shadow has become an alien, uncontrollable presence. The passage therefore does not merely describe isolation — it makes the reader experience it, which is far more powerful and effective."</p>
+
+<p><strong>Why this scores Grade 9:</strong> Sophisticated evaluation of effectiveness. Precise analysis of word choices and their effects. Recognition of how methods combine to create the overall impression. Use of evaluative language ("crucial," "more powerful," "far more effective"). Awareness of the relationship between method and reader response.</p>
+
+<h3>The Five Common Mistakes to Avoid (And How to Fix Them)</h3>
+
+<div class="common-mistake"><strong>Mistake 1: Feature Spotting Without Evaluation</strong><br>
+<strong>Wrong:</strong> "The writer uses metaphor. The writer uses short sentences. The writer uses personification."<br>
+<strong>Right:</strong> "The writer uses metaphor — 'each door a closed mouth' — to suggest the environment is not neutral but actively withholding. This is more effective than simply describing the doors as closed, because it positions them as intentionally refusing to help, which deepens the reader's sense of Marcus's isolation."</div>
+
+<div class="common-mistake"><strong>Mistake 2: Retelling the Story Instead of Evaluating</strong><br>
+<strong>Wrong:</strong> "Marcus is in a corridor. He is scared. There is darkness. He walks forward. These things show he is isolated."<br>
+<strong>Right:</strong> "Through a series of physical details, the writer constructs isolation as a bodily experience. The 'shallow and uneven' breath positions anxiety in Marcus's body from the opening, making the reader acutely aware of his physiological distress. This is more successful than narrative summary because it forces the reader to inhabit Marcus's vulnerability rather than observe it from a distance."</div>
+
+<div class="common-mistake"><strong>Mistake 3: Over-Agreeing Without Nuance</strong><br>
+<strong>Wrong:</strong> "Yes, completely, 100% the writer creates isolation. Everything creates isolation. Every word creates isolation."<br>
+<strong>Right:</strong> "The writer largely succeeds in creating isolation, though the passage contains moments of subtle complexity. While the darkness and the corridor clearly isolate Marcus, the absurdist detail — shoes that squeak 'absurdly loud' — momentarily ruptures the isolation by introducing an element of the mundane and even comic. This is not a failure but a deliberate sophistication: it prevents the isolation from becoming melodramatic."</div>
+
+<div class="common-mistake"><strong>Mistake 4: Using Vague Evaluative Language</strong><br>
+<strong>Wrong:</strong> "This is good. This is very powerful. This really works."<br>
+<strong>Right:</strong> "This imagery is particularly effective because it transforms Marcus's external confinement into internal distress, making the reader understand isolation not as physical fact but as psychological reality."</div>
+
+<div class="common-mistake"><strong>Mistake 5: Ignoring the Audience</strong><br>
+<strong>Wrong:</strong> "The writer uses isolation. Isolation is bad. People do not like isolation."<br>
+<strong>Right:</strong> "The writer constructs isolation to provoke reader empathy. By positioning us inside Marcus's sensory experience — his shallow breath, his counting of heartbeats — the writer assumes we are capable of inhabiting fear, which creates identification between reader and character. The effectiveness of this technique depends on the reader's willingness to be made uncomfortable."</div>
+
+<h3>Worked Example 2: Full-Length Grade 8-9 Response</h3>
+
+<p><strong>Statement:</strong> "The writer creates a strong sense of psychological fear in this passage."</p>
+
+<p><strong>Full Model Answer (Grade 8-9):</strong></p>
+
+<p>"I substantially agree that the writer creates powerful psychological fear, achieved through a deliberate emphasis on internal, bodily sensations rather than external threat. The passage opens with Marcus's physical state — 'breath shallow and uneven' — which immediately establishes fear not as abstract concept but as embodied experience. This is a more effective technique than describing an external danger, because the reader experiences fear through bodily identification: we recognise the sensation of shallow breathing as a marker of panic, and this recognition creates immediate empathy.</p>
+
+<p>The writer extends this bodily focus through the detail of Marcus 'counted his heartbeats — one, two, three,' a technique that forces both character and reader into hyperfocus on physical sensation. Counting heartbeats is a real anxiety response, which grounds the passage in psychological authenticity rather than melodrama. The repetition of the numbers emphasises the obsessive quality of fear: Marcus cannot stop monitoring his own body.</p>
+
+<p>However, the most sophisticated element is how the writer then shifts from internal to external representation of fear. The 'shadow in a frantic, stuttering dance' externalises Marcus's internal panic — the shadow becomes a physical manifestation of his psychological state. The verb 'stuttering' is particularly revealing, as it usually describes human speech disrupted by anxiety. By applying it to the shadow, the writer suggests that Marcus's fear is so overwhelming it has infected the entire environment, leaving nothing untouched by his psychological distress.</p>
+
+<p>The writer's strategy is ultimately to collapse the boundary between inner and outer experience, making the reader understand that psychological fear reshapes reality itself. This is effective because it explains why Marcus responds with such intensity to relatively mundane details — a squeaking shoe becomes 'absurdly loud' not because it objectively is, but because fear has heightened his sensory perception beyond normal thresholds. We therefore understand his fear as legitimate, not as overreaction."</p>
+
+<h3>Two Practice Passages with Guided Questions</h3>
+
+<p><strong>Practice Passage 1:</strong></p>
+<div class="text-extract">The room had not changed in twenty years. The same faded armchair sat in the corner, its fabric worn to velvet in patches where generations of bodies had rested. The mirror above the mantelpiece reflected her older face, each line a map of time she had not asked for. Outside, traffic sounds drifted up from the street — car horns, the rumble of buses — but they seemed to belong to a different world, one she was no longer part of. She picked up the photograph from the table. It showed a younger version of herself, someone who still believed the future held promises. She set it down again, gently, as if it were made of something breakable that she had already broken.<div class="source">Original passage in the style of AQA fiction extracts</div></div>
+
+<p><strong>Statement:</strong> "The writer creates a powerful sense of lost time and regret in this passage."</p>
+
+<p><strong>Guided Question (Tier 1 — Grade 5-6):</strong></p>
+<ol>
+<li>Do you agree with the statement? State your position clearly.</li>
+<li>Identify three details that suggest the passage is about lost time. (e.g., "The room had not changed in twenty years")</li>
+<li>Explain briefly how each detail creates the feeling of loss or regret in the reader.</li>
+</ol>
+
+<p><strong>Guided Question (Tier 2 — Grade 7-8):</strong></p>
+<ol>
+<li>To what extent do you agree with the statement? (You might consider: Does she feel regret? Or acceptance? Or both?)</li>
+<li>Analyse the writer's use of physical detail (the mirror, the armchair, the photograph). How do these objects create the sense of lost time?</li>
+<li>Evaluate the effectiveness of the final sentence: "She set it down again, gently, as if it were made of something breakable that she had already broken." What is the writer trying to convey about time and regret here?</li>
+</ol>
+
+<p><strong>Guided Question (Tier 3 — Grade 9):</strong></p>
+<ol>
+<li>The statement claims the writer creates "powerful sense of lost time and regret." Evaluate this claim, considering whether the passage's emotional register supports this or something more complex.</li>
+<li>Analyse how the writer constructs the relationship between internal time (the character's emotional experience) and external time (the passage of decades). Consider: "the room had not changed" vs. "each line a map of time she had not asked for." What does this contrast reveal?</li>
+<li>The passage includes a moment of spatial disconnection: "traffic sounds drifted up from the street — but they seemed to belong to a different world, one she was no longer part of." How does the writer use this alienation to develop the emotional impact? Is this regret, or something else?</li>
+<li>Evaluate the final image. The metaphor suggests the photograph (or her younger self, or her choices) is "breakable" and has been "broken." Is this an effective way to convey the nature of lost time? What does it suggest about responsibility?</li>
+</ol>
+
+<p><strong>Practice Passage 2:</strong></p>
+<div class="text-extract">The market was chaos. Voices overlapped into a single roar — vendors calling their wares, customers bargaining, children crying. Colours exploded everywhere: pyramids of oranges, bolts of fabric in acid yellows and electric blues, a wall of hanging fish that caught the light and threw it back in silver fragments. The smell was overwhelming, a thick mixture of spices, salt, decay, and something sweet he could not identify. He stood still in the centre of it all, trying to make sense of the sensory assault. A woman bumped into him without apologising, a child tugged at his sleeve, a vendor grabbed his arm and pulled him toward a stall. Everyone moved with purpose. Everyone belonged here except him.<div class="source">Original passage in the style of AQA fiction extracts</div></div>
+
+<p><strong>Statement:</strong> "The writer uses sensory detail to make the reader feel as alienated as the character."</p>
+
+<p><strong>Suggested Approach:</strong> Choose Tier 2 or 3 above and apply it to this passage. Focus on: (1) What sensory details are included and how they accumulate? (2) How does the structure of the passage reinforce alienation? (3) Is the technique effective, and what would be an alternative approach? (4) Does the final sentence change or complicate the sense of alienation?</p>
+
+<h3>Examiner Commentary: What Top Answers Do Differently</h3>
+
+<p>After marking thousands of Q4 responses, examiners consistently report that Grade 9 answers share four features:</p>
+
+<ol>
+<li><strong>Precision Over Generality:</strong> A Grade 9 response does not say "the writer uses language to create effect." It says "the verb 'stuttering,' usually reserved for human speech patterns disrupted by anxiety, is transferred to the shadow, suggesting that fear has become so total it has infected the environment itself." Specificity signals close reading.</li>
+
+<li><strong>Recognition of Complexity:</strong> The best responses rarely say "the writer does X and this creates effect Y, full stop." Instead, they acknowledge: "While the passage clearly establishes isolation through spatial detail, it simultaneously introduces complexity through the absurdist detail of the squeaking shoe, which suggests the writer is offering a more nuanced view of fear than simple terror." This shows sophistication.</li>
+
+<li><strong>Connection to Reader:</strong> Examiners reward explicit reference to the reader's response: "This makes the reader experience isolation from within, which is more powerful than being told Marcus is isolated, because we inhabit his consciousness rather than observing him from outside."</li>
+
+<li><strong>Sustained Argument:</strong> Grade 9 responses do not list separate points. Each paragraph builds on the previous one, developing a cumulative argument. The opening states a thesis; subsequent paragraphs develop and complicate it; the conclusion returns to the original claim but with deepened understanding.</li>
+</ol>
+
 `,
       quiz: [
         {
@@ -1123,6 +1232,92 @@ const gcseLangReading: CourseData = {
   <li><strong>Hyperbole</strong> — exaggeration for emphasis or persuasion.</li>
   <li><strong>Tone shifts</strong> — moving from humour to seriousness, or calm to anger.</li>
 </ul>
+
+<h3>Grade Boundary Breakdown for Q4</h3>
+
+<div class="grade-5-technique"><strong>Grade 5 Response:</strong> Identify two different viewpoints and state them clearly. Choose 2-3 language techniques from each source and explain the effect. Use basic comparison words: "Source A says social media is good, but Source B thinks it is bad." Example: "Source A uses the word 'purest' to show they think social media is the best form of democracy. Source B uses the word 'cacophony' to show they think it is noisy and bad."</div>
+
+<div class="grade-7-technique"><strong>Grade 7 Response:</strong> Clearly articulate each writer's viewpoint and show how it differs. Analyse 4-5 specific techniques from both sources. Integrate comparison throughout, not just at the end. Show awareness of tone and register. Example: "Source A adopts an optimistic, inclusive tone to position social media as liberating, using the superlative 'purest' to elevate youth expression to an idealistic level. In contrast, Source B's weary, cautionary tone — established through phrases like 'I fear' — positions the writer as a concerned elder. This tonal difference reflects their fundamentally opposed viewpoints: Source A celebrates democratisation; Source B mourns the debasement of discourse."</div>
+
+<div class="grade-9-technique"><strong>Grade 9 Response:</strong> Develop a sophisticated analysis of how each writer's methods reinforce their viewpoint. Analyse tone, register, rhetorical structure, and vocabulary choices in relation to the viewpoints. Show understanding of why the writers might hold these views (historical context, audience, purpose). Acknowledge nuance and complexity. Example: "While both writers address the same phenomenon — youth digital expression — their contrasting viewpoints are encoded in their rhetorical strategies. Source A's celebration relies on the architectural metaphor of a 'gate' (implicit in "gatekeeping") that has been opened, using language of liberation and equality. Source B's pessimism is constructed through metaphors of disease ('debased'), discord ('cacophony'), and intoxication ('intoxicated by the novelty'), which position the youth voice as a kind of social poison. The writers' tones reveal their assumptions about audience: Source A assumes the reader is ready to celebrate progress; Source B assumes the reader is sufficiently educated to recognise decline. These tonal choices are not neutral — they are ideological positions."</div>
+
+<h3>Grade 5 vs Grade 9: Annotated Comparison</h3>
+
+<p><strong>Sample Sources:</strong></p>
+<div class="text-extract"><strong>Source A:</strong> Artificial intelligence will revolutionise medicine. AI systems can now detect cancers earlier than human radiologists and process vast datasets that would take humans years to analyse. The future of healthcare is not doctors versus AI, but doctors augmented by AI, working as partners to save lives.<div class="source">Modern technology opinion piece</div></div>
+
+<div class="text-extract"><strong>Source B:</strong> We surrender our humanity at our peril. Every algorithm that replaces human judgment, every algorithm that replaces human connection, represents a step toward a world where we become mere data points. The question is not what AI can do, but what we lose when we let it. Medicine requires the human touch — empathy, intuition, the wisdom that cannot be reduced to code.<div class="source">Contemporary philosophy essay</div></div>
+
+<p><strong>Grade 5 Answer:</strong></p>
+<p>"Source A thinks AI is good for medicine because it can detect cancers early. Source B thinks AI is bad because we lose our humanity. Source A uses positive words like 'revolutionise' and 'augmented.' Source B uses negative words like 'surrender' and 'peril.' The viewpoints are opposite — one positive, one negative."</p>
+
+<p><strong>Why this is Grade 5:</strong> Correctly identifies the opposing viewpoints and finds some textual evidence. However, it merely describes rather than evaluates. It does not explore how the language choices reveal the writers' reasoning or assumptions about the reader.</p>
+
+<p><strong>Grade 9 Answer:</strong></p>
+<p>"The two writers hold fundamentally opposing visions of AI's role in medicine, rooted in different assumptions about what medicine fundamentally is. Source A frames medicine as a problem to be solved through efficiency and scale: AI's power lies in its capacity to 'process vast datasets that would take humans years to analyse,' positioning healthcare as primarily a technical challenge. The assertion that the future is 'doctors augmented by AI, working as partners' employs the language of collaboration to naturalise technological integration — the writer assumes readers will accept this partnership as mutually beneficial and inevitable.</p>
+
+<p>Source B, by contrast, constructs medicine as fundamentally a human endeavour, and positions AI as a threat to human values. The opening assertion — 'We surrender our humanity at our peril' — employs first-person plural to create shared responsibility and warning. The connotations of 'surrender' suggest capitulation and loss of agency, which contrasts sharply with Source A's language of progress and partnership. Crucially, Source B does not deny AI's technical capabilities. Rather, it argues that technical capability is irrelevant to medicine's true purpose: 'empathy, intuition, the wisdom that cannot be reduced to code.' By emphasising wisdom as transcendent — 'cannot be reduced to code' — the writer positions human judgment as fundamentally incommensurable with algorithmic processing.</p>
+
+<p>The writers' rhetorical strategies reveal competing philosophies of human value. Source A trusts systems and frames medicine as a domain where human judgment is supplemented; Source B distrusts the logic of reduction and frames medicine as a domain where human judgment is irreplaceable. These are not disagreements about AI's capabilities but about what kind of knowledge and care matter in medicine."</p>
+
+<p><strong>Why this is Grade 9:</strong> Analyzes how specific language choices (vocabulary, metaphor, register) embody and reinforce the writers' underlying viewpoints. Shows how the writers' rhetoric reveals assumptions about readers, technology, and human value. Recognises that disagreement runs deeper than surface opinion — the writers disagree about fundamental categories (what is medicine? what is value?). Integrates comparison throughout rather than listing separate points.</p>
+
+<h3>The Common Pitfalls to Avoid</h3>
+
+<div class="common-mistake"><strong>Pitfall 1: Separated Analysis</strong><br>
+<strong>Wrong:</strong> "Source A says social media is good. It uses the word 'purest' and says 'democracy.' Then Source B says social media is bad. It uses the word 'cacophony' and says discourse is 'debased.' These are opposite viewpoints."<br>
+<strong>Right:</strong> "While Source A celebrates social media as 'democracy in its purest, most accessible form,' Source B frames it as having 'debased' discourse — a fundamental disagreement not just about whether social media is good, but about whether mass speech elevates or diminishes public discourse. Source A's optimism assumes that access to voice is inherently democratic; Source B's pessimism assumes that without filters and expertise, voice becomes noise."</div>
+
+<div class="common-mistake"><strong>Pitfall 2: Identifying Viewpoint Without Analysing Method</strong><br>
+<strong>Wrong:</strong> "Source A thinks social media is good and democratic. Source B thinks it is bad and causes noise."<br>
+<strong>Right:</strong> "Source A constructs optimism through the superlative 'purest,' which positions social media as achieving a philosophical ideal. Source B constructs pessimism through the metaphor of intoxication — 'intoxicated by the novelty of being heard' — which casts young users as reckless and deluded. The methods are not just stylistic; they reveal each writer's view of causation: Source A believes access causes empowerment; Source B believes access causes delusion."</div>
+
+<div class="common-mistake"><strong>Pitfall 3: Focusing Only on Language, Not Tone or Register</strong><br>
+<strong>Wrong:</strong> "Both writers use metaphors. Source A uses 'purest' and Source B uses 'cacophony.' Metaphors create effect."<br>
+<strong>Right:</strong> "The register of each source reflects a different relationship to authority. Source A adopts an explanatory, almost pedagogical tone — 'Where previous generations waited for permission, today's teenagers can broadcast' — which positions the writer as a neutral guide through progress. Source B adopts a cautionary, almost paternalistic tone — 'I fear that this generation mistakes volume for value' — positioning the writer as a protective elder. These registers are rhetorical positions: Source A claims impartiality; Source B claims wisdom. The different tones encode competing claims to authority."</div>
+
+<h3>Two Practice Passages with Guided Questions</h3>
+
+<p><strong>Practice Passage 1:</strong></p>
+<div class="text-extract"><strong>Source A:</strong> Remote work is the liberation of the modern workforce. No more commuting through traffic, no more interruptions in open-plan offices, no more presenteeism masquerading as productivity. People work better when they have autonomy and control over their environment. Companies that embrace remote work will attract the best talent because they trust their employees. Trust creates loyalty, and loyalty creates excellence.<div class="source">Contemporary business culture piece</div></div>
+
+<div class="text-extract"><strong>Source B:</strong> This obsession with remote work ignores a fundamental human need: connection. The office was never just a space to produce output — it was a space where ideas collided, where mentorship happened, where communities formed. When we reduce work to tasks completed and data transmitted, we lose something essential. We lose the friction that generates innovation, and we lose the bonds that sustain us through difficulty. A generation will graduate having never experienced the reality of human work.<div class="source">Contemporary social commentary</div></div>
+
+<p><strong>Statement:</strong> "Compare the writers' viewpoints on remote work and the methods they use to convey their positions."</p>
+
+<p><strong>Guided Questions (Tier 2-3):</strong></p>
+<ol>
+<li>What is each writer's core viewpoint on remote work? (Try to express it in one sentence for each.)</li>
+<li>How does Source A use the language of freedom and autonomy to construct its argument? Identify specific word choices and explain their rhetorical effect.</li>
+<li>How does Source B use the language of loss and human connection to construct its counter-argument? What metaphors or images does it employ?</li>
+<li>Compare the writers' assumptions about what work fundamentally is. How do these assumptions shape their positions on remote work?</li>
+<li>Which writer's methods do you find more persuasive, and why? (This is reflective; there is no single correct answer — justify your choice.)</li>
+</ol>
+
+<p><strong>Practice Passage 2:</strong></p>
+<div class="text-extract"><strong>Source A:</strong> Teenagers deserve the right to shape their own educational journey. Why should a sixteen-year-old be forced to study subjects they have no interest in? When students choose what they learn, they engage more deeply, think more critically, and develop genuine expertise rather than surface knowledge. Education should liberate young people, not confine them to a predetermined curriculum.<div class="source">Progressive education advocacy</div></div>
+
+<div class="text-extract"><strong>Source B:</strong> This myth of "choice" at sixteen ignores the reality: most teenagers lack the knowledge and judgment to choose wisely. They choose what is easy or what their friends choose, not what will serve them. A broad education introduces them to disciplines they never knew existed and opens doors they could not have opened themselves. The educator's job is to expand horizons, not to validate existing preferences. Self-determination comes later, only after exposure to the full range of human knowledge.<div class="source">Classical education philosophy</div></div>
+
+<p><strong>Suggested Approach:</strong> Apply the Tier 2-3 questions above to these sources. Additionally, consider: (1) How does Source A use the language of rights and freedom? (2) How does Source B construct authority and wisdom about young people? (3) What is at stake in this disagreement — is it really about education, or about something deeper (autonomy, the purpose of learning, the role of adults)?</p>
+
+<h3>Advanced Technique: Identifying Hidden Assumptions</h3>
+
+<p>Grade 9 responses often succeed because they uncover the unstated assumptions beneath each writer's viewpoint. Here is how:</p>
+
+<p><strong>Surface Disagreement:</strong> Writer A thinks X is good; Writer B thinks X is bad.</p>
+
+<p><strong>Deeper Disagreement:</strong> The writers disagree about what X fundamentally is, or what values matter most.</p>
+
+<p><strong>Example from the youth voice passage:</strong></p>
+<ul>
+<li><strong>Surface:</strong> Source A celebrates social media; Source B criticises it.</li>
+<li><strong>Deeper:</strong> Source A assumes democratisation is inherently valuable; Source B assumes expertise and gatekeeping serve a purpose. They disagree about whether "voice" without "substance" matters.</li>
+<li><strong>Method Analysis:</strong> Source A uses "purest" (ideological language); Source B uses "intoxicated" (language implying poor judgment). These word choices reveal competing views of young people and knowledge itself.</li>
+</ul>
+
+<div class="examiner-tip"><strong>Examiner Tip:</strong> When comparing viewpoints, ask yourself: "If these writers were in a room together, what would they actually be disagreeing about?" The answer is rarely as simple as "one likes it, one dislikes it." Usually, it is about fundamentally different values or assumptions. That deeper disagreement is what makes Grade 9 analysis powerful.</div>
+
 `,
       quiz: [
         {
@@ -1570,7 +1765,95 @@ const gcseLangWriting: CourseData = {
 <li><strong>Circular structure</strong> — End with the same image you opened with, but changed.</li>
 </ul>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Turning a descriptive piece into a narrative. If the prompt says "Describe…", do not add a plot with dialogue and a climax. Focus on capturing the scene, not telling a story. You can have a subtle sense of movement, but the emphasis must be on atmosphere and detail.</div>`,
+<div class="common-mistake"><strong>Common Mistake:</strong> Turning a descriptive piece into a narrative. If the prompt says "Describe…", do not add a plot with dialogue and a climax. Focus on capturing the scene, not telling a story. You can have a subtle sense of movement, but the emphasis must be on atmosphere and detail.</div>
+
+<h3>Grade 5 vs Grade 9: Descriptive Writing Compared</h3>
+
+<p><strong>Prompt:</strong> Describe a place where you felt completely alone.</p>
+
+<p><strong>Grade 5 Response (Excerpt):</strong></p>
+<p>"The library was very quiet. There were no other people there. I sat at a table by the window. The books were all around me. I could hear the clock ticking. Outside, the street was empty. I felt alone. The room was big and empty. The silence was complete. I was completely alone in the library."</p>
+
+<p><strong>Why this is Grade 5:</strong> The writing is clear and addresses the prompt. However, it relies on telling rather than showing: "I felt alone" is stated directly. There is minimal sensory detail and no figurative language. Vocabulary is simple ("very quiet," "big and empty"). Sentences are short and repetitive without building atmosphere. No structural technique is evident.</p>
+
+<p><strong>Grade 9 Response (Excerpt):</strong></p>
+<p>"The library air was so still it seemed solid — not truly silent, but thick with the absence of sound. The ticking clock divided the silence into discrete moments, each one a small stone I had to carry. My breath formed the only movement: I could trace its path in the dust-motes that hung suspended in the window light. Around me, the books pressed inward, their spines creating a wall that, paradoxically, had no depth. I was surrounded by thousands of carefully catalogued words, yet enclosed in a silence so complete that even my thoughts seemed to echo back at me as though I were listening to someone else think."</p>
+
+<p><strong>Why this is Grade 9:</strong> Uses sensory detail to convey aloneness — visual (dust-motes), auditory (clock, absence of sound), tactile (the "solid" air). Figurative language is controlled and purposeful: the clock ticking as "stones to carry" makes the measurement of time feel like a burden. The paradox of "books create a wall with no depth" suggests psychological isolation despite physical surroundings. The final image — thoughts echoing as though from someone else — transforms solitude into a kind of doubling. No word is wasted. Every detail serves the central emotional impression.</p>
+
+<h3>Grade Boundaries Explained</h3>
+
+<div class="grade-5-technique"><strong>Grade 5:</strong> Clear, readable descriptive writing. Uses some sensory detail (mostly sight). Basic sentence variety. Some attempts at figurative language, though they may be clichéd. Vocabulary is appropriate but not ambitious. The piece addresses the prompt.</div>
+
+<div class="grade-7-technique"><strong>Grade 7:</strong> Vivid, sustained description using multiple senses. Precise, ambitious vocabulary. Confident use of figurative language (metaphor, simile, personification) that is purposeful, not forced. Clear structural approach (e.g., zoom in/out, circular structure). Vocabulary choices enhance atmosphere. Clear sense of control over language.</div>
+
+<div class="grade-9-technique"><strong>Grade 9:</strong> Sophisticated, immersive description that makes the reader inhabit the scene. Seamless integration of all five senses. Figurative language is subtle, original, and thematically resonant. Vocabulary is precisely chosen, sometimes surprising. Structural technique is sophisticated and enhances meaning. The writing demonstrates awareness of sound, rhythm, and the musicality of language. Atmosphere is conveyed not through description alone but through the cumulative effect of language choices.</div>
+
+<h3>Five Techniques to Elevate Your Descriptive Writing</h3>
+
+<p><strong>Technique 1: Use Specific, Precise Adjectives Instead of General Ones</strong></p>
+<p><strong>Weak:</strong> "The room was cold and dark."<br>
+<strong>Strong:</strong> "The room held a damp cold that seemed to emanate from the stone itself — not the clean cold of a winter morning, but the thick, clinging cold of a place where the sun never reached."</p>
+
+<p><strong>Technique 2: Employ Surprising Figurative Language</strong></p>
+<p><strong>Weak:</strong> "The stars were like diamonds in the night sky."<br>
+<strong>Strong:</strong> "The stars were indifferent. They hung above like distant memories I could see but not reach — familiar but essentially inaccessible."</p>
+
+<p><strong>Technique 3: Appeal to Unexpected Senses</strong></p>
+<p><strong>Weak:</strong> "The garden was beautiful. There were many flowers."<br>
+<strong>Strong:</strong> "The garden pressed in: the thick, almost medicinal sweetness of roses competing with the faint rot of fallen fruit, the damp earth-smell that clung to every surface, the barely-audible hum of insects creating a sonic texture as layered as the visual one."</p>
+
+<p><strong>Technique 4: Use Sound and Rhythm to Enhance Atmosphere</strong></p>
+<p><strong>Weak:</strong> "The wind was strong and it made noise."<br>
+<strong>Strong:</strong> "The wind scraped, shrieked, howled — a sustained assault of sound that seemed to come from everywhere and nowhere, as though the building itself had learned to scream."</p>
+
+<p><strong>Technique 5: Create Paradox to Suggest Psychological Complexity</strong></p>
+<p><strong>Weak:</strong> "The place was both beautiful and sad."<br>
+<strong>Strong:</strong> "The beauty was almost aggressive — a kind of perfection that felt accusatory, as though the landscape were judging my sadness for not measuring up to its splendour. The more beautiful the view, the more alone I felt."</p>
+
+<h3>Two Full Practice Prompts with Annotated Model Answers</h3>
+
+<p><strong>Practice Prompt 1:</strong> Describe a place that fills you with unease.</p>
+
+<p><strong>Grade 8-9 Model Answer:</strong></p>
+<p>"The house at the corner of Blackwall Street exhaled a sense of refusal. Not hostile, exactly — that would have been clearer, easier to name — but a kind of studied indifference, as though the building had turned its back on the street. The paint, which might once have been cream, had faded to the colour of old teeth. The windows were curtained not with fabric but with grime so accumulated it had become its own material. Standing before it, I felt the sensation of being looked at by something that was not looking at me — a reversal so subtle it took a moment to register.</p>
+
+<p>The air around the building was colder than the surrounding street. Not measurably so, but perceptibly — the kind of cold that lives in a place rather than a temperature. It emanated from the mortar between the bricks, the moss that clung to the stone foundation, the way shadows pooled at the edges of the doorway and never quite retreated. The smell, too, was wrong: not decay exactly, but the absence of life. No sound came from inside. The birds that sang everywhere else on the street seemed to avoid the space directly above the roof.</p>
+
+<p>What unsettled me most was the architecture of the thing — the way the building seemed to take up more space than its physical dimensions suggested. It was not large, but it dominated. The proportions were slightly off in a way I could not articulate: the windows were too small, or the door was too narrow, or the roof sat at an angle that suggested the building was not quite parallel to the earth. Looking at it, I felt the cognitive dissonance of something that was architecturally sound yet fundamentally wrong — as though the wrongness lived not in the materials but in the space the building occupied."</p>
+
+<p><strong>Annotation:</strong> This response uses multiple techniques effectively: personification ("exhaled," "turned its back," "the building was not quite parallel"), metaphor ("eyes that weren't looking"), precise sensory detail (the specific colour of paint, the texture of the grime-covered windows), control of atmosphere (the cold, the absence of sound and bird-song), and structural coherence (moving from external appearance to atmosphere to psychological effect). The writing avoids cliché by focusing on the uncanny rather than the simply scary.</p>
+
+<p><strong>Practice Prompt 2:</strong> Describe a moment of perfect peace.</p>
+
+<p><strong>Grade 8-9 Model Answer:</strong></p>
+<p>"In the moment before the rain, the world held its breath. Not silence — there was the distant traffic hum, the particular quality of afternoon light filtering through oak leaves, the almost inaudible sound of the temperature dropping — but a kind of pause, as though the earth itself had decided to pause and simply exist for a moment without changing.</p>
+
+<p>The smell was green, wet before the rain had fallen, the plant-life releasing some anticipatory sweetness into the air. Everything around me — the bench, the grass, my own skin — seemed to be waiting in the same way, not tensely but with a kind of acceptance. The light was soft but clear, gilding the edges of everything: a leaf turned gold, the spider's web between the fence posts studded with light like tiny beads on invisible thread, even my own hand resting on the bench glowing from within.</p>
+
+<p>What made it peace rather than mere calm was the sense of something about to happen that I did not need to prevent or hurry or prepare for. The rain would come, and it would be good. My breathing had slowed. My shoulders, which I did not remember raising, had lowered. For the first time in months, I was not thinking about the next thing. I was neither happy nor sad but something deeper and more sustaining: I was present. The world was itself, and I was myself, and the two existed in a kind of temporary agreement that did not require explanation."</p>
+
+<p><strong>Annotation:</strong> This response uses all five senses (smell, sight, touch, sound, and even taste in the metaphor of "acceptance"). The structural technique is a movement inward from external detail (the rain, the light) to internal peace (breathing, consciousness). Figurative language is restrained but effective ("waiting," "studying the temperature," "light like beads"). The vocabulary is precise ("gilding," "studded," "sustaining"). The writing demonstrates control of rhythm — longer sentences slow the pace and induce a contemplative mood. The final sentence is powerful because it is abstract but grounded in the sensory experience that precedes it.</p>
+
+<h3>Examiner Guidance: What Top Markers Look For in Descriptive Writing</h3>
+
+<p>When examiners mark descriptive writing, they look for:</p>
+
+<ol>
+<li><strong>Immersion:</strong> Can the reader see, hear, smell, taste, and feel what you are describing? A Grade 9 response makes the reader genuinely present in the scene.</li>
+
+<li><strong>Precision:</strong> Is every word chosen deliberately? Phrases like "the room was nice" or "it was beautiful" waste marks. Grade 9 writing contains no filler.</li>
+
+<li><strong>Atmosphere Without Exposition:</strong> Do you tell the reader the mood ("it was scary"), or do you create it through detail? Grade 9 writers show the mood, never tell it.</li>
+
+<li><strong>Originality:</strong> Clichés — "the storm raged," "time stood still," "the sun set peacefully" — actively harm your mark. Examiners see these hundreds of times per year. Original comparisons and observations earn rewards.</li>
+
+<li><strong>Control:</strong> Are your sentences varied? Do shorter sentences create emphasis? Do longer sentences create immersion? Grade 9 writers use syntax deliberately, not accidentally.</li>
+
+<li><strong>Vocabulary Ambition Without Affectation:</strong> Using a thesaurus to find "big words" makes writing sound forced. Grade 9 vocabulary is ambitious but natural — words are chosen because they are precisely right, not because they are long.</li>
+</ol>
+
+`,
       quiz: [
         { id: 'gcse-lw-m2-q1', question: 'What does "show, don\'t tell" mean in descriptive writing?', options: ['Use illustrations alongside your writing', 'Reveal emotions through physical details rather than stating them directly', 'Show your plan to the examiner', 'Write in the present tense'], correct: 1, explanation: '"Show, don\'t tell" means conveying emotions, atmosphere, or character through concrete physical details and actions rather than simply labelling them. "Her hands trembled" is more powerful than "She was nervous."' },
         { id: 'gcse-lw-m2-q2', question: 'How many senses should a top-band descriptive piece engage?', options: ['Only sight', 'Sight and sound', 'At least three to five senses', 'Exactly two'], correct: 2, explanation: 'Top-band responses aim to engage multiple senses — ideally all five. This creates an immersive, textured experience for the reader and demonstrates sophisticated descriptive skill.' },
@@ -1685,7 +1968,106 @@ const gcseLangWriting: CourseData = {
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> Always include a counter-argument. Examiners specifically look for this because it demonstrates mature, balanced thinking. You do not have to agree with the opposing view — just acknowledge it and explain why your position is stronger.</div>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Forgetting the form. If the question asks for a letter, you must include addresses and a sign-off. If it asks for a speech, you must address the audience directly. Ignoring the form costs marks even if the writing itself is strong.</div>`,
+<div class="common-mistake"><strong>Common Mistake:</strong> Forgetting the form. If the question asks for a letter, you must include addresses and a sign-off. If it asks for a speech, you must address the audience directly. Ignoring the form costs marks even if the writing itself is strong.</div>
+
+<h3>Grade 5 vs Grade 9: Viewpoint Writing Compared</h3>
+
+<p><strong>Prompt:</strong> Write a speech arguing that social media should have stricter age restrictions.</p>
+
+<p><strong>Grade 5 Response (Excerpt):</strong></p>
+<p>"Good morning everyone. Today I want to talk about social media. Social media is bad for young people. Young people spend too much time on social media. This is not good. They get addicted. They cyberbully each other. Mental health is affected. I think social media should have age restrictions. Older people can handle it better. Young people cannot. If we make age restrictions, young people will be safer. Therefore, I think age restrictions are good."</p>
+
+<p><strong>Why this is Grade 5:</strong> The piece addresses the prompt and states a clear position. However, the form conventions are barely present — there is no real direct address to the audience or rhetorical energy. Vocabulary is simple and repetitive ("social media," "good," "bad"). There are no persuasive techniques beyond assertion. The argument is thin and underdeveloped. Sentence structure is repetitive: short, simple sentences without variation. No counter-argument is attempted.</p>
+
+<p><strong>Grade 9 Response (Excerpt):</strong></p>
+<p>"Good morning. I want you to think of something: when did you last have a conversation with your teenage daughter, your young son, or a teenager you care about without their phone interrupting? I suspect you cannot remember. And that is not their fault — it is by design. Platforms that serve no purpose other than to keep users scrolling for as long as possible have been given access to developing brains with no restrictions whatsoever. This has to change. Today I am arguing for something straightforward: age restrictions on social media platforms until seventeen. This is not about banning fun. This is about child protection, and frankly, we have moved too slowly on this already.</p>
+
+<p>The statistics are impossible to ignore. A quarter of thirteen-year-olds report symptoms of clinical anxiety linked to social media use. Rates of body dysmorphia and eating disorders among teenage girls have doubled in the past five years. These are not moral panics or exaggerations — these are the conclusions of paediatricians and psychologists. And yet we allow companies whose entire business model depends on user engagement to target children directly. That is not parental freedom. That is negligence.</p>
+
+<p>Now, you might say: 'Teenagers are already using these platforms illegally. Age restrictions will not stop them.' You are right. Age restrictions alone will not fix this. But legal restrictions combined with platform responsibility — requiring real age verification, limiting algorithmic recommendation, preventing targeted advertising to minors — would make a material difference. More importantly, they would signal that child safety matters more than corporate profit. That is a statement worth making."</p>
+
+<p><strong>Why this is Grade 9:</strong> The speech directly addresses the audience ("I want you to think...," "you might say"). It opens with a rhetorical question that engages listeners emotionally. It uses statistics to support the argument ("A quarter of thirteen-year-olds..."). The vocabulary is ambitious and precise ("negligence," "clinical anxiety," "algorithm"). The counter-argument is acknowledged ("Age restrictions alone will not fix this") and then rebutted effectively. The final three sentences employ the rule of three ("child safety matters... corporate profit... statement worth making"). Sentence structures vary: rhetorical questions, short emphatic statements, longer complex sentences that build argument. The tone shifts from conversational to serious, maintaining engagement throughout. The piece has a clear structure and persuasive momentum.</p>
+
+<h3>Grade Boundaries for Viewpoint Writing</h3>
+
+<div class="grade-5-technique"><strong>Grade 5:</strong> Clear position stated. Some persuasive techniques attempted (facts, opinions, basic emotive language). Argument is present but thin. Basic vocabulary. Minimal attention to form conventions. Sentences are mostly simple or compound, without deliberate variety. Some organisational structure (introduction, body, conclusion) but loose or unclear.</div>
+
+<div class="grade-7-technique"><strong>Grade 7:</strong> Clear, sustained argument with appropriate emphasis. Uses 4-5 AFOREST techniques effectively and deliberately. Vocabulary is ambitious and mostly well-chosen. Form conventions are followed confidently. Paragraph structure is clear and supports the argument. Sentence variety is evident and purposeful. Counter-argument is acknowledged and addressed. Register is consistent and appropriate to form and audience.</div>
+
+<div class="grade-9-technique"><strong>Grade 9:</strong> Sophisticated, multi-layered argument that anticipates reader objections. Mastery of AFOREST techniques — they are seamlessly integrated, not tacked on. Vocabulary is precise, ambitious, and original; word choices reveal understanding of connotation and register. Form conventions are followed with confidence and flair. Paragraph structure is sophisticated — ideas build cumulatively. Sentence variety is controlled and enhances meaning; rhythm and pace are manipulated for effect. Counter-argument is not just acknowledged but engaged with seriously before being rebutted. Register is sophisticated and appropriate; tone shifts are controlled. The writing demonstrates command of persuasive rhetoric.</div>
+
+<h3>The Seven Most Powerful Persuasive Techniques (With Examples)</h3>
+
+<p><strong>1. Rule of Three (Tricolon):</strong> Lists of three elements create rhythm and emphasis.<br>
+<strong>Weak:</strong> "Social media is addictive, harmful, and pointless."<br>
+<strong>Strong:</strong> "Social media companies have engineered their platforms to be addictive, deploy algorithms to amplify outrage, and deliberately exclude content moderation in pursuit of profit. That is not a business model — it is a threat."</p>
+
+<p><strong>2. Anecdote (Personal Story):</strong> Makes abstract arguments concrete and relatable.<br>
+<strong>Weak:</strong> "Teenagers are affected by social media."<br>
+<strong>Strong:</strong> "My fourteen-year-old niece, who used to be bright and outspoken, now spends three hours a day on social media comparing her face to carefully edited photos. She has developed acne from stress and anxiety from the constant comparison. She is not addicted to connection — she is addicted to validation from strangers. And she is not unique."</p>
+
+<p><strong>3. Rhetorical Question:</strong> Forces the reader to engage and consider your point.<br>
+<strong>Weak:</strong> "We should think about whether age restrictions work."<br>
+<strong>Strong:</strong> "If we would not give a loaded gun to a thirteen-year-old, why do we hand them a device specifically engineered to be psychologically addictive? If we regulate who can see films rated 15, why do we allow companies to target children with algorithms we do not even fully understand?"</p>
+
+<p><strong>4. Emotive Language:</strong> Appeals to the reader's feelings, not just logic.<br>
+<strong>Weak:</strong> "Social media affects teenagers' mental health."<br>
+<strong>Strong:</strong> "Every day, teenagers are bombarded with images of people who are thinner, prettier, richer, and happier than they are. Every day, their worth is reduced to a number of likes. Every day, they are told they are not enough. That is not progress. That is cruelty, and we are permitting it."</p>
+
+<p><strong>5. Statistics and Facts:</strong> Ground your argument in evidence, making it harder to dismiss.<br>
+<strong>Weak:</strong> "A lot of teenagers have mental health problems because of social media."<br>
+<strong>Strong:</strong> "Research published by the American Psychological Association in 2023 found that teens who spend more than 3 hours per day on social media are 35% more likely to report symptoms of depression. The number of teenage girls attempting self-harm has increased by 57% since the rise of Instagram and TikTok."</p>
+
+<p><strong>6. Direct Address:</strong> Involves the reader and makes the argument personal to them.<br>
+<strong>Weak:</strong> "Parents should monitor their children."<br>
+<strong>Strong:</strong> "You might not know what your child is seeing on social media. You probably do not understand TikTok's algorithm. You cannot protect them from something you cannot see. That is not a failure of parenting — it is the intended design of these platforms."</p>
+
+<p><strong>7. Counter-Argument and Rebuttal:</strong> Shows maturity and strengthens your position.<br>
+<strong>Weak:</strong> "Some people say age restrictions will not work because teenagers will use fake accounts. But we should have age restrictions anyway."<br>
+<strong>Strong:</strong> "Yes, determined teenagers will create fake accounts. Yes, the responsibility for monitoring usage ultimately lies with parents and guardians. But these facts do not argue against age restrictions — they argue for them. If only determined, tech-savvy teenagers can access platforms designed for adults, then the platforms have at least created a friction point. More importantly, legal restrictions signal cultural values. They say, 'Child protection matters more than corporate profit.' That is a signal we need to send."</p>
+
+<h3>Two Full Practice Prompts with Model Answers</h3>
+
+<p><strong>Practice Prompt 1:</strong> Write an article for a school magazine arguing that school should start later in the morning.</p>
+
+<p><strong>Model Answer (Grade 8-9 Excerpt):</strong></p>
+<p><strong>HEADLINE: Why Your School Day Should Start at 9:30 AM, Not 8:30 AM</strong><br>
+<strong>SUBHEADING: A case for later school starts backed by science — and your own brain</strong></p>
+
+<p>"Eight-fifteen in the morning. That is when our school opens its doors, expecting teenagers to be ready to learn. There is one small problem: teenage brains are not awake at 8:15 AM. They are not primed for learning, they are not at peak cognitive performance, and according to sleep scientists, they are operating on a sleep deficit that would be considered negligent if imposed on office workers or athletes.</p>
+
+<p>This is not opinion. It is biology. Teenage circadian rhythms shift naturally — what sleep researchers call 'sleep phase delay.' Between puberty and the early twenties, the body's internal clock naturally tells teenagers to feel tired later and wake later. Forcing them into an 8:15 AM school day is not discipline-building. It is working against their biology. And the consequences are real: students who are sleep-deprived perform worse academically, are more likely to suffer depression and anxiety, and are statistically more likely to be involved in car accidents.</p>
+
+<p>Other schools have already made the change. When Marple Newtown High School in Pennsylvania shifted its start time to 9:15 AM, attendance increased by 3%, tardiness fell by 26%, and average GPA rose by 0.4 points. These are not trivial improvements. These are the measurable results of aligning school timing with human biology.</p>
+
+<p>Now, we have all heard the objections. 'Buses would be more crowded.' 'After-school activities would end later.' 'Working parents rely on 8:30 AM drop-offs.' These are real logistical challenges. But they are not insurmountable. In fact, they are the administrative tail wagging the educational dog. We have allowed scheduling convenience to override educational science. That is backwards. A 9:30 AM start is not radical. It is simply allowing teenagers to learn when their brains are ready to learn. And if we truly care about student achievement — if we truly believe that school is about education and not just childcare — then the evidence demands we make the change."</p>
+
+<p><strong>Annotation:</strong> This uses multiple persuasive techniques: direct engagement ("There is one small problem..."), explanation of scientific basis (avoiding jargon while remaining sophisticated), specific evidence (the Pennsylvania example with data), acknowledgment of counter-arguments with rebuttal, and a powerful final statement. The vocabulary is precise ("circadian rhythms," "sleep phase delay," "negligent") without being inaccessible. Sentence structures vary to control pace and emphasis. The argument is logically structured and builds toward the conclusion.</p>
+
+<p><strong>Practice Prompt 2:</strong> Write a letter to your MP arguing for something you believe in strongly.</p>
+
+<p><strong>Suggested Structure:</strong> Address (your address and the date), recipient's address, formal greeting ("Dear [Name]"), three to four body paragraphs (each making a distinct argument), a counter-argument paragraph, a powerful conclusion with a call to action, and a formal sign-off.</p>
+
+<h3>The Most Common Mistakes in Viewpoint Writing (And How to Avoid Them)</h3>
+
+<div class="common-mistake"><strong>Mistake 1: Ignoring the Form</strong><br>
+If the task says "write a speech," your piece should have direct address to the audience, rhetorical devices, and a call to action — not a formal article. Check the form requirement and honour it.</div>
+
+<div class="common-mistake"><strong>Mistake 2: Argument Without Evidence</strong><br>
+<strong>Wrong:</strong> "Social media is bad because everyone says so."<br>
+<strong>Right:</strong> "Research from the Royal College of Psychiatrists found that 62% of teenagers report increased anxiety linked to social media use, particularly from Instagram and TikTok."</div>
+
+<div class="common-mistake"><strong>Mistake 3: Counter-Argument Without Rebuttal</strong><br>
+Acknowledging the other side is good. But you must then explain why you still believe your position is correct. A counter-argument without rebuttal looks like you have lost confidence in your own argument.</div>
+
+<div class="common-mistake"><strong>Mistake 4: Mistaking Repetition for Emphasis</strong><br>
+<strong>Wrong:</strong> "Social media is bad. Social media is really bad. Social media is very, very bad."<br>
+<strong>Right:</strong> Use varied sentence structures, rhetorical questions, and evidence to create emphasis, not repetition.</div>
+
+<div class="common-mistake"><strong>Mistake 5: Overloading with Persuasive Techniques</strong><br>
+One rule of three per argument is powerful. Three rules of three in one paragraph is exhausting. Use techniques deliberately and sparingly for maximum impact.</div>
+
+`,
       quiz: [
         { id: 'gcse-lw-m4-q1', question: 'What does the acronym AFOREST stand for?', options: ['Adjectives, Facts, Onomatopoeia, Repetition, Endings, Similes, Tension', 'Alliteration, Facts, Opinions, Rhetorical questions, Emotive language, Statistics, Three (rule of three)', 'Audience, Form, Organisation, Register, Evidence, Structure, Tone', 'Argument, Formal language, Opening, Rebuttal, Example, Summary, Theme'], correct: 1, explanation: 'AFOREST stands for Alliteration, Facts, Opinions, Rhetorical questions, Emotive language, Statistics, and Three (rule of three). These are the core persuasive techniques you should use in viewpoint writing.' },
         { id: 'gcse-lw-m4-q2', question: 'Why should you include a counter-argument in viewpoint writing?', options: ['To show you cannot make up your mind', 'To fill up space', 'To demonstrate mature, balanced thinking and then strengthen your own position', 'Because the mark scheme requires exactly four paragraphs'], correct: 2, explanation: 'Including a counter-argument shows the examiner that you can consider multiple perspectives — a higher-level skill. The key is to acknowledge the opposing view and then rebut it, which actually strengthens your argument.' },

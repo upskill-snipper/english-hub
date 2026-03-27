@@ -354,7 +354,7 @@ const paper1Modules: CourseModule[] = [
   {
     id: 'edx-lp1-m3',
     title: 'Reading 19th-Century Non-Fiction: Language Analysis',
-    duration: '55 min',
+    duration: '95 min',
     content: `
 <h2>Paper 1 Question 3 — Language &amp; Structure Analysis (6 marks, AO2)</h2>
 
@@ -393,13 +393,129 @@ const paper1Modules: CourseModule[] = [
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> At Level 2 (4–6 marks), examiners want to see you move beyond feature-spotting. Always explain the <em>effect</em> of a technique on the reader, not just identify it. A single well-analysed quotation is worth more than three labelled devices with no exploration.</div>
 
+<h3>Key Techniques at a Glance</h3>
+
+<table>
+  <tr><th>Technique</th><th>Definition</th><th>Example from Extract</th><th>Effect</th></tr>
+  <tr><td><strong>Simile</strong></td><td>Comparison using "like" or "as"</td><td>"pressed upon the skull like a heated iron"</td><td>Creates vivid sensory comparison; suggests industrial punishment</td></tr>
+  <tr><td><strong>Personification</strong></td><td>Giving human qualities to non-human things</td><td>"The water itself seemed to thicken…reluctant to carry us"</td><td>Makes nature hostile and defiant; adds agency to the environment</td></tr>
+  <tr><td><strong>Oxymoron</strong></td><td>Combining contradictory words</td><td>"silence born not of contentment, but of endurance"</td><td>Creates paradox; shows suffering masked as stoicism</td></tr>
+  <tr><td><strong>Litotes</strong></td><td>Understated negation for emphasis</td><td>"It was not fear, precisely"</td><td>Formal, measured tone; invites reader to think deeper about the emotion</td></tr>
+  <tr><td><strong>Alliteration</strong></td><td>Repetition of initial consonant sounds</td><td>"barren and pitiless"</td><td>Creates rhythm and emphasis; harsh sounds mirror harsh landscape</td></tr>
+</table>
+
+<h3>Annotated Example Answer (Grade 9)</h3>
+
+<p><em>"The writer uses the simile 'pressed upon the skull like a heated iron' to convey the extreme physical discomfort of the journey. The verb 'pressed' suggests an inescapable, oppressive force, while the image of a 'heated iron' connotes both industrial punishment and branding — implying that the landscape is actively hostile and marking the travellers. This sensory detail shifts the reader's perception of the setting from mere inconvenience to genuine threat, reinforcing the structural movement from calm observation to personal unease."</em></p>
+
+<div class="examiner-commentary">
+<strong>Examiner Comment (Grade 9):</strong> This response demonstrates sophisticated analysis. The student has:
+<ul>
+  <li>Identified the specific technique (simile) with precision</li>
+  <li>Embedded the quotation seamlessly</li>
+  <li>Analysed the connotations of individual words ("pressed" = oppressive)</li>
+  <li>Explored multiple layers of meaning ("branding" suggests permanent damage)</li>
+  <li>Connected the technique to the text's structural movement and purpose</li>
+</ul>
+This is clear evidence of Level 2 performance (5–6 marks).
+</div>
+
+<h3>Comparison: Grade 5 vs Grade 9 Responses</h3>
+
+<div class="grade-comparison">
+<h4>Grade 5 Response (3–4 marks)</h4>
+<p><em>"The writer uses a simile with 'like a heated iron' to show the sun was very hot. It makes the reader think the sun was uncomfortable. The water is also described as reluctant which shows it didn't want to go further."</em></p>
+
+<div class="examiner-commentary">
+<strong>What's weak here:</strong>
+<ul>
+  <li>Identifies the technique but focuses on what it describes, not how it works</li>
+  <li>Effect is vague ("uncomfortable")</li>
+  <li>Doesn't explain WHY the writer chose these words</li>
+  <li>Second sentence (on water) is unexplained and disconnected</li>
+  <li>No sophisticated terminology or layered analysis</li>
+</ul>
+<strong>Verdict:</strong> Basic comprehension, but lacks the analytical depth for higher marks.
+</div>
+
+<h4>Grade 9 Response (5–6 marks)</h4>
+<p><em>"The writer's extended simile 'pressed upon the skull like a heated iron' transforms the sun from a natural phenomenon into an active agent of violence. The verb 'pressed' and the noun 'skull' create visceral, intimate discomfort, while the image of a 'heated iron' evokes both torture and industry — suggesting the landscape has industrialised cruelty. This technique is reinforced by personification ('the water…reluctant'), which cumulatively constructs nature as not merely hostile, but actively resistant to human progress. The transition from objective description to subjective apprehension mirrors this linguistic escalation, embedding the traveller's growing psychological crisis within the very texture of the prose."</em></p>
+
+<div class="examiner-commentary">
+<strong>What's strong here:</strong>
+<ul>
+  <li>Identifies and names the technique precisely ("extended simile")</li>
+  <li>Analyses individual word choices with depth ("skull" = intimacy and violation)</li>
+  <li>Explores connotations layered within the image ("torture and industry")</li>
+  <li>Links techniques together (simile + personification = cumulative effect)</li>
+  <li>Connects to the text's broader purpose and thematic arc</li>
+  <li>Uses sophisticated subject terminology ("extended," "visceral," "embedded")</li>
+</ul>
+<strong>Verdict:</strong> Sustained analytical insight across multiple dimensions = Grade 9.
+</div>
+</div>
+
 <h3>Mark Scheme Level Descriptors</h3>
 <ul>
-  <li><strong>Level 1 (1–3 marks):</strong> Simple awareness of language or structure; may identify features but with limited or no explanation of effect. Comments tend to be general or descriptive.</li>
-  <li><strong>Level 2 (4–6 marks):</strong> Clear, explained analysis of language and/or structure. Relevant use of subject terminology. Comments on the effect of the writer's choices on the reader, supported by appropriate textual references.</li>
+  <li><strong>Level 1 (1–3 marks):</strong> Simple awareness of language or structure; may identify features but with limited or no explanation of effect. Comments tend to be general or descriptive. Example: "The writer uses words to describe the setting."</li>
+  <li><strong>Level 2 (4–6 marks):</strong> Clear, explained analysis of language and/or structure. Relevant use of subject terminology. Comments on the effect of the writer's choices on the reader, supported by appropriate textual references. Example: "The simile conveys discomfort by comparing the sun's heat to an iron, suggesting violence."</li>
 </ul>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Writing about what happens in the extract rather than how it is written. Saying "The sun was very hot and the men were quiet" is summary, not analysis. Always ask yourself: <em>what technique is being used, and what does it make the reader think or feel?</em></div>
+<h3>Common Mistakes to Avoid</h3>
+
+<div class="common-mistake"><strong>Mistake 1 — Summary, Not Analysis:</strong> "The sun was very hot and the men were quiet" — this describes what happened, not HOW it's written. Instead: "The heat is presented as an active force through the verb 'pressed' and the image of 'heated iron', suggesting the landscape weaponizes the sun against the travellers."</div>
+
+<div class="common-mistake"><strong>Mistake 2 — Feature-Spotting Without Explanation:</strong> "There is alliteration in 'barren and pitiless'." — naming a technique without explaining its effect. Instead: "The repeated 'p' sound in 'barren and pitiless' creates a harsh, percussive rhythm that mirrors the sharp, unforgiving landscape."</div>
+
+<div class="common-mistake"><strong>Mistake 3 — Over-Quoting:</strong> Using an entire sentence as a quotation when a short phrase suffices. Q3 rewards tight, embedded analysis. Instead of quoting "The water itself seemed to thicken — sluggish, brown, reluctant to carry us further into that desolate interior," use "reluctant to carry us" — shorter and equally powerful.</div>
+
+<div class="common-mistake"><strong>Mistake 4 — Forgetting Structure:</strong> Q3 asks for "language AND structure." Don't ignore structural shifts like sentence length variation, paragraph breaks, or tonal changes. Example: "The opening uses longer sentences to establish a measured tone, but fragments in the final sentence ('Nature…cared nothing') create a moment of sharp realisation."</div>
+
+<h3>Practice Passage with Guided Questions</h3>
+
+<div class="text-extract">
+<p>The factory stands at the edge of the town like a great grey monument to progress. Its chimneys rise black and skeletal into the perpetual haze, belching forth plumes of smoke that hang above the rooftops like a curse. The air itself is thick with particles — coal dust, steam, the smell of molten metal — so that breathing becomes a conscious act, an effort of will against the very atmosphere that surrounds us. Inside, the clatter of machinery is deafening, a relentless percussion that seems to penetrate not just the ear but the very bones of those condemned to labour within its walls.</p>
+<div class="source">From an 19th-century industrial critique</div>
+</div>
+
+<h4>Guided Question A: Identify Two Techniques</h4>
+<p><strong>Task:</strong> Find two language techniques in this extract and name them. (Hint: look at the comparisons and how the factory is described as alive.)</p>
+<p><strong>Possible answers:</strong> (1) Simile — "like a great grey monument to progress" and "like a curse"; (2) Personification — "chimneys…belching," "breathing becomes a conscious act," "air itself is thick"; (3) Pathetic fallacy — smoke hangs "like a curse"</p>
+
+<h4>Guided Question B: Analyse the Effect of One Technique</h4>
+<p><strong>Task:</strong> Choose the simile "like a curse" and explain its effect on the reader. Consider: What does "curse" mean? What is being compared? How does this language shape our view of the factory?</p>
+<p><strong>Model answer:</strong> "The simile 'like a curse' presents the factory's smoke not as a byproduct of industry, but as a supernatural affliction. A curse is unchosen, inescapable, and morally troubling — the word choice transforms industrial pollution into something evil and inevitable. This shapes the reader's perception from neutral acceptance of progress to moral condemnation."</p>
+
+<h4>Guided Question C: Analyse Structure and Language Together</h4>
+<p><strong>Task:</strong> The final sentence is much longer and more complex than the opening. What effect does this structural choice have alongside the language used?</p>
+<p><strong>Model answer:</strong> "The short, declarative opening ('The factory stands…') presents the building as a stark, undeniable fact. By contrast, the final sentence is long, dense, and rhythmically relentless — its structure mirrors the 'relentless percussion' it describes. The reader experiences the suffocating, inescapable quality of factory labour through the sentence structure itself, not just its content. This integration of form and meaning creates immersive reader engagement."</p>
+
+<h3>Step-by-Step Guide to Achieving Level 2</h3>
+
+<ol>
+  <li><strong>Annotate the extract (2 min):</strong> Underline techniques (similes, personification, rhetorical questions, etc.) and mark structural shifts (long sentences, short sentences, paragraph breaks).</li>
+  <li><strong>Choose your two strongest techniques (1 min):</strong> Pick ones you can explain confidently. Don't choose obscure techniques just to sound clever.</li>
+  <li><strong>Write your first PEEL paragraph (5 min):</strong> Point (1 sentence identifying technique) → Evidence (embed a short quotation) → Explain (2–3 sentences on effect) → Link (1 sentence connecting to purpose).</li>
+  <li><strong>Write your second PEEL paragraph (5 min):</strong> Repeat the same structure with your second technique.</li>
+  <li><strong>Proofread (2 min):</strong> Check that each explanation includes "the reader" or shows effect clearly. Remove any summary.</li>
+</ol>
+
+<h3>Subject Terminology Checklist</h3>
+
+<p>Using correct terminology is essential for AO2 marks. Familiarise yourself with these terms:</p>
+
+<ul>
+  <li><strong>Imagery:</strong> Mental pictures created through language; covers similes, metaphors, personification</li>
+  <li><strong>Rhetorical device:</strong> Language technique used to persuade or create an effect (e.g., rhetorical question, tricolon, antithesis)</li>
+  <li><strong>Connotation:</strong> The emotional or cultural association a word carries beyond its literal meaning</li>
+  <li><strong>Tone:</strong> The writer's attitude towards their subject</li>
+  <li><strong>Register:</strong> The level of formality in the writing</li>
+  <li><strong>Syntax:</strong> The arrangement of words in sentences; variations in sentence length create rhythm and pace</li>
+  <li><strong>Paradox:</strong> A statement that seems contradictory but may be true (oxymoron is a type of paradox)</li>
+  <li><strong>Pathetic fallacy:</strong> Nature reflects human emotions or states (e.g., "angry storm," "cheerful sunshine")</li>
+</ul>
+
+<div class="examiner-tip"><strong>Examiner Tip:</strong> At Level 2 (4–6 marks), examiners want to see you move beyond feature-spotting. Always explain the <em>effect</em> of a technique on the reader, not just identify it. A single well-analysed quotation is worth more than three labelled devices with no exploration.</div>
 
 <p>Remember: two tight PEEL paragraphs with precise terminology and embedded quotation will comfortably reach Level 2. Quality of analysis, not quantity, is what earns the marks.</p>
 `,
@@ -707,7 +823,7 @@ const paper1Modules: CourseModule[] = [
   {
     id: 'edx-lp1-m6',
     title: 'Transactional Writing: Planning & Structure',
-    duration: '55 min',
+    duration: '90 min',
     content: `
 <h2>Transactional Writing — Planning &amp; Structure</h2>
 
@@ -761,6 +877,151 @@ const paper1Modules: CourseModule[] = [
 </ul>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Jumping straight into writing without a plan. Unplanned responses lose coherence after the second paragraph and repeat points. Even strong writers rarely exceed Level 3 without planning.</div>
+
+<h3>Grade 5 vs Grade 9 Writing Samples</h3>
+
+<h4>Task: "Write an article for a broadsheet newspaper arguing that fast fashion has a negative impact on young people."</h4>
+
+<div class="grade-comparison">
+<h4>Grade 5 Response (11–15 marks for AO5)</h4>
+
+<div class="sample-response">
+<p><strong>Fast Fashion and Young People</strong></p>
+<p>Fast fashion is bad for young people. Many teens buy clothes from brands like Shein and Boohoo because they are cheap. This is a problem because fast fashion damages the environment. The clothes fall apart quickly so people have to buy more. Young people waste money buying cheap clothes.</p>
+<p>Fast fashion also affects how young people think about their bodies. Brands show thin models in their adverts and this makes teenagers feel bad about themselves. Many young people have eating disorders because of social media and fashion companies. This is very serious.</p>
+<p>In conclusion, fast fashion is harmful to young people and we should stop buying from these companies. Young people should buy sustainable clothes instead.</p>
+</div>
+
+<div class="examiner-commentary">
+<strong>What's weak:</strong>
+<ul>
+  <li>Ideas are listed rather than developed (statement + one supporting reason = underdeveloped paragraph)</li>
+  <li>Structure is formulaic (intro → point 1 → point 2 → conclusion) with minimal persuasive technique</li>
+  <li>Tone is informal for a broadsheet ("This is very serious" is vague and emotional rather than substantive)</li>
+  <li>No counter-argument or acknowledgment of alternative perspectives</li>
+  <li>Paragraph transitions are weak or missing ("also affects", "In conclusion" are mechanical connectives)</li>
+  <li>No embedded evidence, statistics, or anecdotes</li>
+</ul>
+<strong>Verdict:</strong> This hits Level 3 (11–15 marks) because it has clear structure and some appropriate register, but it lacks persuasive depth and reader engagement.
+</div>
+
+<h4>Grade 9 Response (21–24 marks for AO5)</h4>
+
+<div class="sample-response">
+<p><strong>The Fast Fashion Trap: Why Young People Are Paying the Real Price</strong></p>
+
+<p>Every week, young people spend an average of £17 on clothing they will wear fewer than five times. This statistic, reported in a 2022 Age UK survey, reveals a troubling paradox at the heart of youth culture: the most sustainability-conscious generation are paradoxically fuelling the world's most wasteful industry. The question is not whether fast fashion affects teenagers — it demonstrably does — but whether young people truly understand the scale of the damage they are causing, and to whom.</p>
+
+<p>The economic trap is obvious on the surface. Shein offers a dress for £4; Boohoo a jacket for £8. But this accessibility conceals a psychological mechanism: the fashion industry has successfully positioned consumption as identity. Teenagers no longer buy clothes; they buy versions of themselves. When Zara releases 2,000 new designs annually (compared to 300 at traditional retailers), it creates artificial scarcity and perpetual obsolescence. The result? A 25-year-old today owns twice as many clothes as her mother did, yet reports lower satisfaction. The mathematical inevitability is clear: the more we buy, the less we value each purchase.</p>
+
+<p>Yet the critique extends far beyond personal finance. While young consumers enjoy budget pricing, factory workers in Bangladesh, India, and Vietnam — predominantly women aged 18–25, not dissimilar to the customers buying their products — labour 14-hour days for wages below the living threshold. The environmental cost is equally brutal: the fashion industry produces 92 million tonnes of textile waste annually, equivalent to the weight of the entire UK population dumped in landfill each year. Fast fashion is not merely an individual choice; it is a systemic injustice that redistributes suffering geographically, from Western consumers to Global South producers.</p>
+
+<p>Some argue that fast fashion democratises style, that it empowers young people on limited budgets. This argument, whilst superficially appealing, collapses under scrutiny. True empowerment lies not in choice, but in informed choice. A teenager selecting between 500 designs by fast-fashion brands is not empowered; she is imprisoned within a system engineered to exploit her aspirations. Real fashion democratisation would mean affordable quality and durability, not disposable clothing and manufactured trends.</p>
+
+<p>The path forward is neither abstinence nor guilt. Young people should demand responsibility from corporations — sustainable materials, ethical wages, transparency in supply chains. Until then, every purchase remains complicit in a system designed to profit from both their insecurity and others' precarity.</p>
+</div>
+
+<div class="examiner-commentary">
+<strong>What's strong:</strong>
+<ul>
+  <li><strong>Compelling opening:</strong> Immediately hooks the reader with a statistic and a rhetorical question that frames the argument</li>
+  <li><strong>Developed arguments:</strong> Each paragraph explores a single idea in depth (economics → psychology → global justice → counter-argument → solution)</li>
+  <li><strong>Embedded evidence:</strong> Statistics ("92 million tonnes," "2,000 new designs annually"), quotes, and specific references (Age UK survey, Zara, Bangladesh)</li>
+  <li><strong>Sophisticated register:</strong> Formal but accessible; uses rhetorical techniques ("the question is not whether…but whether") without sounding forced</li>
+  <li><strong>Counter-argument:</strong> Acknowledges the alternative view ("democratises style") but systematically refutes it</li>
+  <li><strong>Cohesion:</strong> Discourse markers ("Yet," "Some argue," "Until then") signal shifts in thought rather than merely connecting ideas</li>
+  <li><strong>Audience awareness:</strong> Directly addresses the readership (young people) without patronising; positions them as intelligent agents capable of change</li>
+  <li><strong>Powerful conclusion:</strong> Circular return to the opening theme whilst offering a forward-looking solution</li>
+</ul>
+<strong>Verdict:</strong> This is a clear Level 5 (21–24 marks) because it demonstrates sophisticated, structurally inventive writing with sustained reader impact. The writer controls tone, develops ideas rigorously, and balances persuasion with intellectual honesty.
+</div>
+</div>
+
+<h3>Common Mistakes in Transactional Writing</h3>
+
+<div class="common-mistake"><strong>Mistake 1 — No Counter-Argument:</strong> Grade 5 writers state their position and repeat it. Grade 9 writers anticipate objections, address them fairly, and refute them. Example: "Some might say…, but this overlooks…"</div>
+
+<div class="common-mistake"><strong>Mistake 2 — Generic Register:</strong> Writing for a "broadsheet newspaper" but sounding like a student essay. Use the register of the form: newspapers feature headlines, subheadings, shorter paragraphs, rhetorical questions, and direct address to readers.</div>
+
+<div class="common-mistake"><strong>Mistake 3 — No Evidence:</strong> Assertions without statistics, quotations, or examples. "Young people waste money" is vague. "A 2022 survey found teenagers spend £17 per week on clothing worn fewer than 5 times" is concrete.</div>
+
+<div class="common-mistake"><strong>Mistake 4 — Weak Transitions:</strong> Jumping between ideas without signposting. Use discourse markers that SHOW the relationship: "Furthermore" (adding), "Conversely" (contrasting), "As a result" (cause/effect), "Admittedly" (conceding a point).</div>
+
+<div class="common-mistake"><strong>Mistake 5 — Forgetting Audience:</strong> Writing to yourself (what YOU think) rather than to your intended reader. Always ask: What does THIS audience care about? What language, tone, and evidence will convince them?</div>
+
+<h3>Form-Specific Techniques</h3>
+
+<p>Different transactional forms require different approaches:</p>
+
+<table>
+  <tr><th>Form</th><th>Key Techniques</th><th>Common Opening</th><th>Grade 9 Hallmark</th></tr>
+  <tr><td><strong>Article</strong></td><td>Headline, subheading, short paragraphs, rhetorical questions</td><td>Bold statistic or question</td><td>Byline and sophisticated register; engages through narrative as well as argument</td></tr>
+  <tr><td><strong>Speech</strong></td><td>Direct address ("you"), rhetorical devices (tricolon, anaphora), short sentences for impact</td><td>Rhetorical question or striking image</td><td>Shifts in pace and tone; sounds like it could be performed; builds emotional resonance</td></tr>
+  <tr><td><strong>Letter</strong></td><td>Formal salutation/closing, clear problem-solution structure, evidence-based argument</td><td>"Dear Sir/Madam,"</td><td>Respectful but authoritative tone; anticipates reader objections; proposes specific solutions</td></tr>
+  <tr><td><strong>Review</strong></td><td>Clear opinion, specific detail, balanced praise/criticism, personal voice</td><td>Judgement statement ("Worth your time?" / "Disappointing.")</td><td>Engages critically with the subject; uses precise language to justify opinions</td></tr>
+  <tr><td><strong>Guide/Leaflet</strong></td><td>Subheadings, bullet points, direct address ("you"), short sentences, helpful tone</td><td>"Introduction" section with clear purpose statement</td><td>Anticipates reader questions; provides concrete steps; uses formatting strategically</td></tr>
+</table>
+
+<h3>AO5 Mark Scheme Detailed Breakdown</h3>
+
+<div class="grade-boundary">
+<h4>Level 5: 21–24 marks — "Sophisticated &amp; Inventive"</h4>
+<ul>
+  <li>Writing is compelling and sustained throughout</li>
+  <li>Complex ideas developed with care and nuance</li>
+  <li>Structural choices (paragraph length, pacing, ordering) enhance persuasion</li>
+  <li>Register is consistently controlled and appropriate to form and audience</li>
+  <li>Reader impact is primary consideration: writer has shaped every word for effect</li>
+</ul>
+</div>
+
+<div class="grade-boundary">
+<h4>Level 4: 16–20 marks — "Compelling &amp; Convincing"</h4>
+<ul>
+  <li>Writing engages the reader throughout; ideas are well-developed</li>
+  <li>Persuasive techniques used effectively (evidence, counter-argument, rhetorical devices)</li>
+  <li>Register is appropriate with only minor lapses</li>
+  <li>Paragraphs are well-crafted with clear focus and logical sequencing</li>
+</ul>
+</div>
+
+<div class="grade-boundary">
+<h4>Level 3: 11–15 marks — "Clear &amp; Consistent"</h4>
+<ul>
+  <li>Writing is organized with clear paragraphing</li>
+  <li>Ideas are stated clearly and supported with some detail</li>
+  <li>Audience and purpose are generally maintained</li>
+  <li>Register is mostly appropriate, but may lack sophistication</li>
+</ul>
+</div>
+
+<h3>Practice Task with Detailed Planning Guide</h3>
+
+<p><strong>Task:</strong> "Write a speech to your school council arguing that the school day should start at 9:30 AM instead of 8:45 AM to support student mental health."</p>
+
+<p><strong>Audience:</strong> School council (adults with budget authority and duty-of-care responsibility)</p>
+<p><strong>Purpose:</strong> Persuade/argue</p>
+<p><strong>Form:</strong> Speech</p>
+
+<h4>Detailed 5-Minute Plan</h4>
+
+<ol>
+  <li><strong>Hook (Opening):</strong> "How many of you were awake at 6 AM this morning? How many felt alert? Adolescent brains don't fully activate until 9 AM — forcing school at 8:45 is asking students to concentrate before their brains are online."</li>
+  <li><strong>Credibility establishment:</strong> "Research from Oxford University shows a 30-minute later start correlates with improved GCSE grades and reduced anxiety diagnoses."</li>
+  <li><strong>Problem 1 — Academic impact:</strong> Early starts reduce REM sleep, damaging memory consolidation. Students study same content but retain less. Later starts = better grades = better university prospects.</li>
+  <li><strong>Problem 2 — Mental health impact:</strong> Sleep deprivation is linked to depression, anxiety, and self-harm in teenagers. A simple schedule change is low-cost prevention.</li>
+  <li><strong>Counter-argument + refutation:</strong> "You might worry about disrupting teacher contracts or transport schedules. But many schools (list examples) have shifted to 9:30 with no staffing impact, and buses can be rescheduled for a marginal cost."</li>
+  <li><strong>Call to action + closing:</strong> "I'm asking you to pilot a 9:30 start next term. Measure attendance, grades, and student wellbeing surveys. The evidence will speak for itself."</li>
+</ol>
+
+<h4>Key Structural Signals for a Speech</h4>
+<ul>
+  <li><strong>Opening:</strong> Rhetorical question, surprising statistic, or anecdote (NOT "In this speech I will…")</li>
+  <li><strong>Body:</strong> Clear topic sentences for each point; use signposting: "First, let's consider academic impact…" "Second, the mental health evidence is compelling…"</li>
+  <li><strong>Counter-argument:</strong> "You might argue that…, but…" — shows you've considered the other side</li>
+  <li><strong>Closing:</strong> Circular return to the opening idea + specific call to action</li>
+</ul>
+
 `,
     quiz: [
       {
@@ -2194,7 +2455,7 @@ She walked quickly, her trainers slapping the wet pavement. At number forty-seve
   {
     id: 'edx-lp2-m3',
     title: 'Reading Fiction: Language & Structure Analysis',
-    duration: '55 min',
+    duration: '90 min',
     content: `
 <h2>AO2 in Fiction — Language &amp; Structure Combined</h2>
 
@@ -2247,6 +2508,102 @@ She walked quickly, her trainers slapping the wet pavement. At number forty-seve
 <p><em>"The writer opens with 'The house had not changed', establishing stagnation. This echoes in the final line — 'but she had' — creating cyclical structure that reinforces entrapment. The simile 'like a creature waiting to be fed' transforms the house into a predator; 'fed' draws on connotations of consumption, suggesting the house is alive and hungry."</em></p>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Listing techniques without analysis — e.g. "The writer uses a metaphor and a simile." This is <em>feature-spotting</em>. Always explain <strong>how</strong> the technique works and <strong>why</strong> it was chosen.</div>
+
+<h3>Grade 5 vs Grade 9 Comparative Analysis</h3>
+
+<h4>Same Extract, Two Responses:</h4>
+
+<div class="grade-comparison">
+<h4>Grade 5 Response (3–4 marks)</h4>
+<p><em>"The writer uses a metaphor to compare the house to a creature. The simile 'like a creature waiting to be fed' shows the house is dangerous. The writer also uses short paragraphs which makes the reader feel tense. The sensory language about 'beeswax and lavender' describes the memories."</em></p>
+
+<div class="examiner-commentary">
+<strong>What's weak:</strong>
+<ul>
+  <li>Identifies techniques but doesn't explain them deeply</li>
+  <li>Effect is stated bluntly without analysis ("tense," "dangerous") rather than explored</li>
+  <li>Misses the cyclical structure (opening and closing echo)</li>
+  <li>No integration between language and structure observations</li>
+  <li>Doesn't explain WHY these choices matter to meaning</li>
+</ul>
+<strong>Verdict:</strong> Basic awareness, but lacks depth of analysis. Level 1.
+</div>
+
+<h4>Grade 9 Response (5–6 marks)</h4>
+<p><em>"The writer frames the house through the metaphor of a predator: it doesn't merely 'exist', it 'crouches' and 'watches', verbs that imply agency and malevolence. The sensory specificity — 'beeswax and lavender' — contrasts with the later 'dark bloom of damp', structurally mirroring the character's shift from childhood wonder to adult disillusionment. The cyclical frame ('The house had not changed…but she had') positions the house as temporally static while the speaker has aged, creating psychological claustrophobia. This integration of metaphorical transformation with structural return creates an argument about how returning to childhood places can be uncanny precisely because they remain unchanged whilst we inevitably do."</em></p>
+
+<div class="examiner-commentary">
+<strong>What's strong:</strong>
+<ul>
+  <li>Analyses the metaphor by unpacking specific verbs ("crouches," "watches") and their connotations</li>
+  <li>Explicitly connects language (sensory fields) to structure (mirroring)</li>
+  <li>Recognises the cyclical structure and explains its psychological effect</li>
+  <li>Synthesises techniques into an interpretation about the text's deeper meaning</li>
+  <li>Uses sophisticated terminology ("temporally static," "psychological claustrophobia," "uncanny")</li>
+  <li>Shows that the formal choices serve a thematic purpose</li>
+</ul>
+<strong>Verdict:</strong> Sophisticated, sustained analysis showing clear integration of skills. Level 2 (5–6 marks).
+</div>
+</div>
+
+<h3>Detailed Technique Breakdown for Fiction</h3>
+
+<table>
+  <tr><th>Language Technique</th><th>Definition</th><th>Example</th><th>What It Does</th></tr>
+  <tr><td><strong>Metaphor</strong></td><td>One thing IS transformed into another (no "like" or "as")</td><td>"The house crouched…"</td><td>Creates immediacy; gives new properties to the original thing</td></tr>
+  <tr><td><strong>Extended metaphor</strong></td><td>A metaphor sustained across multiple images</td><td>"crouches…watches…waiting to be fed"</td><td>Builds a consistent worldview; deepens the effect</td></tr>
+  <tr><td><strong>Semantic field</strong></td><td>Words from one topic area clustered together</td><td>"peeling paper," "dark bloom of damp," "groaned"</td><td>Creates atmosphere and reinforces a mood; cohesive</td></tr>
+  <tr><td><strong>Connotation</strong></td><td>The emotional/cultural baggage a word carries</td><td>"crouched" connotes threat and submission</td><td>Adds layers of meaning without explicit statement</td></tr>
+</table>
+
+<h3>Structural Techniques and Their Effects</h3>
+
+<table>
+  <tr><th>Structural Technique</th><th>How It Works</th><th>Example from Extract</th><th>Effect on Reader</th></tr>
+  <tr><td><strong>Cyclical structure</strong></td><td>Text ends where it began (with variation)</td><td>"The house had not changed…but she had"</td><td>Creates inevitability; suggests inescapability or completed journey</td></tr>
+  <tr><td><strong>Shifts in time/perspective</strong></td><td>Jump between past and present; change of narrator or focus</td><td>"She remembered…" followed by "Now they groaned"</td><td>Highlights contrast; forces reader to navigate temporal disorientation</td></tr>
+  <tr><td><strong>Paragraph length variation</strong></td><td>Alternating short and long paragraphs</td><td>"Now they groaned." (one sentence) vs. longer paragraphs</td><td>Short paragraphs = pace/shock; long paragraphs = immersion/atmosphere</td></tr>
+  <tr><td><strong>Foreshadowing</strong></td><td>Early hints of later events or themes</td><td>"watching with hollow patience" hints at threat</td><td>Creates suspense; invites rereading</td></tr>
+</table>
+
+<h3>Common Errors in Literary Terminology</h3>
+
+<div class="common-mistake"><strong>Error 1 — Confusing Metaphor and Simile:</strong> A simile uses "like" or "as" ("like a creature"). A metaphor doesn't ("crouched"). Learn to distinguish them — examiners mark you down for mislabelling techniques.</div>
+
+<div class="common-mistake"><strong>Error 2 — Calling All Word Groupings "Semantic Fields":</strong> A semantic field must be words from the SAME domain that build a consistent image. "Dark," "peeling," "bloom," and "damp" are a semantic field because they all suggest decay. But "house" and "crouched" are not a semantic field just because they appear together.</div>
+
+<div class="common-mistake"><strong>Error 3 — Ignoring the Narrator's Perspective:</strong> HOW something is described depends on WHO is describing it. If the house is seen through a character's fearful mind, the same details become sinister. This is essential context for language analysis.</div>
+
+<h3>Practice Passage with Guided Analysis</h3>
+
+<div class="text-extract">
+<p>The rain fell like accusations. Each drop hit the window with a small, deliberate sound — tap, tap, tap — as if something outside was trying to gain entry. Marcus sat in the dark, counting the intervals. In the daylight, this room had been merely dusty, neglected; now it held its breath, waiting. The house was listening. After three years away, he had forgotten how the silence here had a texture, how it clung to your skin like cobwebs. He moved towards the door, but the floorboard betrayed him — a single creak that seemed to ask a question he could not answer.</p>
+<div class="source">Original passage in the style of contemporary fiction</div>
+</div>
+
+<h4>Guided Question A: Identify Language Techniques</h4>
+<p><strong>Find three language techniques in this passage and name them:</strong></p>
+<p><strong>Possible answers:</strong> (1) Simile — "like accusations"; (2) Onomatopoeia — "tap, tap, tap"; (3) Personification — "the house was listening"; (4) Metaphor — "the silence here had a texture"; (5) Simile — "like cobwebs"</p>
+
+<h4>Guided Question B: Analyse Structure and Pacing</h4>
+<p><strong>How does the writer use sentence length to create effect?</strong></p>
+<p><strong>Model answer:</strong> "The opening sentence is a short, simple metaphor ('The rain fell like accusations'), establishing immediate unease. This is followed by longer, more complex sentences that build atmosphere through detail and repetition ('tap, tap, tap'). The shift to a very short sentence — 'The house was listening' — creates a moment of shock, as if the character has just realised something frightening. Later, the long final sentence moves through multiple clauses and ends with 'a question he could not answer' — a syntactical form that mirrors the character's psychological state: suspended, unable to resolve. Structure mirrors consciousness."</p>
+
+<h4>Guided Question C: Integration Challenge</h4>
+<p><strong>Explain how the language technique of personification (used multiple times) is supported by the structural choice of cyclical phrasing.</strong></p>
+<p><strong>Model answer:</strong> "The personification ('the house was listening,' 'the floorboard betrayed him,' 'seemed to ask a question') accumulates throughout the passage, building a sense that the house is a living, sentient presence. This is structurally reinforced by the opening description of the rain trying to gain entry and the closing image of the floorboard asking a question — a circular frame that positions the house as active and responsive. By repeating personification whilst cycling back to the theme of external pressure (rain trying to enter; floorboard questioning), the writer creates a unified, claustrophobic effect."</p>
+
+<h3>Step-by-Step Analysis Framework</h3>
+
+<ol>
+  <li><strong>Locate and label (1 min):</strong> Identify specific techniques and mark them in the text. Use colour coding if helpful.</li>
+  <li><strong>Extract and embed (2 min):</strong> Select the shortest relevant quotation. Embed it naturally in a sentence.</li>
+  <li><strong>Name the technique (30 sec):</strong> State precisely what technique is being used (don't be vague).</li>
+  <li><strong>Explain HOW (3 min):</strong> What does this technique do at word/sentence level? What makes it work?</li>
+  <li><strong>Explain WHY (3 min):</strong> What effect does it create? What does it suggest about character, mood, or theme?</li>
+  <li><strong>Link (1 min):</strong> Connect this observation to structure, narrator, or the wider text.</li>
+</ol>
+
 `,
     quiz: [
       {
@@ -2314,7 +2671,7 @@ She walked quickly, her trainers slapping the wet pavement. At number forty-seve
   {
     id: 'edx-lp2-m4',
     title: 'Reading Literary Non-Fiction: Analysis & Comparison',
-    duration: '55 min',
+    duration: '90 min',
     content: `
 <h2>Literary Non-Fiction — Beyond the Factual</h2>
 
@@ -2368,6 +2725,146 @@ She walked quickly, her trainers slapping the wet pavement. At number forty-seve
 <p><em>"Both writers present nature as powerful, yet their perspectives diverge. Writer A uses the simile 'like a wound in the earth', positioning nature as violent and indifferent. Conversely, Writer B describes the countryside as 'a gentle quilt draped across the hills', rendering nature safe and comforting. Where Writer A's landscape is hostile, Writer B's is tamed — reflecting the difference between genuine wilderness and the curated rural ideal."</em></p>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Writing about each text separately. "Text A says X. Text B says Y." is not comparison — explicitly connect them: "While Text A presents nature as threatening, Text B offers a contrasting view…"</div>
+
+<h3>Grade 5 vs Grade 9 Comparison Responses</h3>
+
+<h4>Task: Compare how the two writers present their experiences of nature</h4>
+
+<p><strong>Text A (Travel Writing):</strong> "The valley opened before us like a wound in the earth, raw and red where the soil had been stripped by rain. Below, the river — swollen, furious — threw itself against the rocks with a sound like applause."</p>
+
+<p><strong>Text B (Memoir):</strong> "The morning brought a gentle mist that clung to the meadow like a caress. The birds sang with the kind of optimism I had lost. Here, time moved differently; here, I remembered who I had been before the city taught me to be afraid."</p>
+
+<div class="grade-comparison">
+<h4>Grade 5 Response (4–6 marks)</h4>
+<p><em>"Text A describes nature as violent. The simile 'like a wound in the earth' suggests the valley is damaged. The river is described as 'furious' which shows it is angry. Text B describes nature differently. It uses 'gentle mist' and 'caress' which are soft words. The writer likes nature because it helps them remember who they were. Both texts are about nature but Text A shows nature being destroyed and Text B shows nature being peaceful."</em></p>
+
+<div class="examiner-commentary">
+<strong>What's weak:</strong>
+<ul>
+  <li>Identifies contrasts but doesn't explain the significance of those contrasts</li>
+  <li>Treats texts separately rather than weaving comparison throughout ("Text A…Text B…" structure)</li>
+  <li>Lacks sophisticated terminology (says "soft words" instead of analysing semantic fields or connotation)</li>
+  <li>No analysis of what these perspectives reveal about the writers' worldviews or experiences</li>
+  <li>No embedded quotations or precise evidence</li>
+</ul>
+<strong>Verdict:</strong> Basic awareness of difference, but lacks sustained analytical comparison. Grade 5 (4–6 marks).
+</div>
+
+<h4>Grade 9 Response (10–12 marks)</h4>
+<p><em>"Where Text A presents nature as raw and overwhelming, employing violent verbs ('threw,' 'swollen, furious') and visceral similes ('like a wound'), Text B renders it restorative, described through tactile gentleness ('caress') and temporal slowing. The difference reveals distinct purposes: Text A's writer adopts the stance of a traveller confronting the sublime — a nature that is indifferent to human presence. Text B's writer positions nature as a therapeutic refuge, explicitly linking it to psychological restoration ('I remembered who I had been'). Text A's landscape is objective, observed; Text B's is subjective, internalized. Yet both writers assert nature's power to transform — one through overwhelm, the other through solace. This suggests a shared conviction that encounters with nature catalyse self-knowledge, but through fundamentally opposed emotional registers. The semantic fields diverge precisely because the writers' stakes in their natural descriptions are opposed: one seeks witness to external sublimity, the other seeks internal healing."</em></p>
+
+<div class="examiner-commentary">
+<strong>What's strong:</strong>
+<ul>
+  <li>Integrated comparison: each observation addresses both texts in one flowing analysis</li>
+  <li>Precise terminology: uses "semantic fields," "sublime," "objective/subjective," "register" appropriately</li>
+  <li>Explores not just WHAT the writers describe, but WHY those descriptions matter and what they reveal about authorial purpose</li>
+  <li>Identifies underlying similarities (both texts show nature's transformative power) whilst acknowledging surface differences</li>
+  <li>Uses comparative connectives strategically ("Where…," "Yet," "precisely because")</li>
+  <li>Embeds quotations seamlessly without over-quoting</li>
+  <li>Moves beyond simple contrast to philosophical interpretation</li>
+</ul>
+<strong>Verdict:</strong> Sustained, sophisticated comparison showing intellectual depth. Grade 9 (10–12 marks).
+</div>
+</div>
+
+<h3>Detailed Framework for Literary Non-Fiction Analysis</h3>
+
+<h4>What to Look For in Literary Non-Fiction</h4>
+
+<table>
+  <tr><th>Dimension</th><th>What to Analyse</th><th>Key Questions</th></tr>
+  <tr><td><strong>Perspective/Voice</strong></td><td>First-person speaker, tone, attitude toward subject</td><td>Who is telling the story? What is their relationship to the subject? Are they reliable or biased?</td></tr>
+  <tr><td><strong>Purpose</strong></td><td>Why did the writer write this? What do they want to persuade, reveal, or achieve?</td><td>Is this confessional? Argumentative? Observational? Politically motivated?</td></tr>
+  <tr><td><strong>Language as Rhetoric</strong></td><td>Word choice, imagery, and figurative language designed to create effect</td><td>What emotional response does the writer seek? How does language choices guide that response?</td></tr>
+  <tr><td><strong>Structure/Form</strong></td><td>Paragraph organisation, narrative sequencing, beginning and ending choices</td><td>Why start here? Why end there? How does the structure shape meaning?</td></tr>
+  <tr><td><strong>Evidence & Authority</strong></td><td>How does the writer justify claims? Through anecdote, observation, research, or testimony?</td><td>Does the writer position themselves as credible? Experientially or intellectually?</td></tr>
+</table>
+
+<h3>Comparative Connectives — A Comprehensive List</h3>
+
+<div class="grade-boundary">
+<h4>SIMILARITY Connectives (Use These to Link Parallel Ideas)</h4>
+<ul>
+  <li>Similarly | Likewise | In the same way | Equally | Both writers | Just as… so too</li>
+  <li>Example: "Similarly, Writer B also adopts a first-person perspective, positioning themselves as witness to…"</li>
+</ul>
+
+<h4>CONTRAST Connectives (Use These to Highlight Differences)</h4>
+<ul>
+  <li>In contrast | Conversely | However | Yet | Whereas | Unlike | On the other hand | While… differs in</li>
+  <li>Example: "Whereas Writer A emphasizes visual spectacle, Writer B privileges emotional introspection."</li>
+</ul>
+
+<h4>SEQUENTIAL/COMPARATIVE Connectives (Use These to Build Complex Comparisons)</h4>
+<ul>
+  <li>Although… | Despite… | Rather than… | Despite superficial similarities… | Notably, both texts share… yet fundamentally differ in</li>
+  <li>Example: "Although both writers employ nature imagery, they do so for opposed purposes: one to overwhelm, the other to console."</li>
+</ul>
+</div>
+
+<h3>Common Mistakes in AO3 Comparison</h3>
+
+<div class="common-mistake"><strong>Mistake 1 — The "Ping-Pong" Comparison:</strong> "Text A says… Text B says…" Alternating between texts without integration. Instead, use embedded comparison: "Where Text A emphasises X, Text B prioritises Y, revealing…"</div>
+
+<div class="common-mistake"><strong>Mistake 2 — Surface-Level Contrast:</strong> Noticing that texts differ without explaining WHY those differences matter. "Text A is sad, Text B is happy" — but so what? Analyse what these emotional registers reveal about the writers' worldviews or experiences.</div>
+
+<div class="common-mistake"><strong>Mistake 3 — Over-Quoting One Text:</strong> Using long quotations from Text A because you understand it better, then barely quoting Text B. This creates imbalance. Quote both texts equally and briefly.</div>
+
+<div class="common-mistake"><strong>Mistake 4 — Forgetting Perspective Shapes Description:</strong> Treating descriptions as objective fact rather than subjective interpretation. A peaceful meadow in memoir is not the same as a raging river in travel writing — both are filtered through the writer's consciousness and purpose.</div>
+
+<h3>Practice Comparison Task with Scaffolding</h3>
+
+<p><strong>Compare how the two writers present danger and risk:</strong></p>
+
+<p><strong>Text A (Adventure Memoir):</strong> "We climbed without rope, without gear, driven by a reckless certainty that we would succeed. Looking back, I see that certainty was stupidity. But at nineteen, with everything to prove, the risk felt like freedom — the only moment when consequences seemed negotiable."</p>
+
+<p><strong>Text B (Environmental Essay):</strong> "The glacier retreats at a metre per week, a measurable fact converted into data on a spreadsheet. Yet data cannot capture the vertigo of watching permanence dissolve. The real danger lies not in climbing mountains, but in a world indifferent to their disappearance."</p>
+
+<h4>Scaffolding: Three Comparison Points</h4>
+
+<p><strong>Point 1: Locus of Risk</strong></p>
+<ul>
+  <li>Text A: Risk is personal, internal, tied to individual choice ("reckless certainty")</li>
+  <li>Text B: Risk is systemic, external, tied to environmental change ("data on a spreadsheet")</li>
+  <li>Integration: "Where Text A personalises risk as a matter of youthful judgment, Text B abstracts it as a planetary phenomenon, suggesting contrasting views of danger's source: individual agency versus ecological inevitability."</li>
+</ul>
+
+<p><strong>Point 2: Emotional Registers</strong></p>
+<ul>
+  <li>Text A: Nostalgia, self-criticism, ambivalence ("I see that certainty was stupidity…but felt like freedom")</li>
+  <li>Text B: Anxiety, detachment, moral urgency ("vertigo," "indifference," "disappearance")</li>
+  <li>Integration: "Text A's emotional complexity — love and regret mingled — contrasts with Text B's more unified dread, reflecting their different stakes: personal memory versus global consequence."</li>
+</ul>
+
+<p><strong>Point 3: Implicit Audience and Purpose</strong></p>
+<ul>
+  <li>Text A: Appeals to those who recognise youthful risk-taking; confessional tone suggests redemption through honesty</li>
+  <li>Text B: Appeals to environmentally conscious readers; polemic tone seeks to mobilise action</li>
+  <li>Integration: "Both writers use personal voice to convey authority, but Text A asks us to understand fallible youth, while Text B positions us as witnesses to planetary failure — an exhortation rather than a confession."</li>
+</ul>
+
+<h3>The AO3 Mark Scheme at a Glance</h3>
+
+<div class="grade-boundary">
+<h4>Level 2 (10–12 marks) — "Critical, exploratory, judicious"</h4>
+<ul>
+  <li>Sustained comparison of ideas and perspectives</li>
+  <li>Integrated analysis (not separate blocks)</li>
+  <li>Explores how language/structure convey those ideas</li>
+  <li>Considers nuance: acknowledges similarities alongside differences</li>
+  <li>Sophisticated use of subject terminology and comparative connectives</li>
+</ul>
+
+<h4>Level 1 (4–6 marks) — "Simple, surface-level"</h4>
+<ul>
+  <li>Identifies contrasts but doesn't explain significance</li>
+  <li>Treats texts separately ("Text A…Text B…")</li>
+  <li>Limited analysis of how perspectives are conveyed</li>
+  <li>Lacks integrated comparison</li>
+</ul>
+</div>
+
 `,
     quiz: [
       {
