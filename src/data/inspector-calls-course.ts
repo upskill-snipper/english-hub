@@ -182,7 +182,7 @@ export const inspectorCallsCourse: CourseData = {
       id: 'aic-m2',
       title: 'Act 1: The Birling Household',
       duration: '60 min',
-      content: `
+content: `
 <h2>Act 1 — The Birling Household</h2>
 
 <p>Act 1 establishes the Birling family at the height of their complacency. They are celebrating Sheila's engagement to Gerald Croft over dinner. The mood is one of wealth, self-satisfaction, and confidence — all of which Priestley will systematically dismantle once the Inspector arrives.</p>
@@ -197,35 +197,71 @@ export const inspectorCallsCourse: CourseData = {
 
 <p>The stage directions also describe the characters' behaviour. Arthur is described as "heavy-looking, rather portentous," suggesting someone who takes himself far too seriously. Sheila and Gerald are "pleased with life," while Mrs Birling is described as her husband's "social superior" — immediately establishing the class tensions within the family itself.</p>
 
-<h3>Arthur Birling's Speeches</h3>
+<div class="grade-9-box" style="background: #f0f8ff; padding: 15px; margin: 15px 0; border-left: 4px solid #4169e1;">
+<strong>Grade 9 Insight:</strong> The stage directions create a visual and emotional world before any dialogue. The "good solid furniture" that is not "cosy and homelike" symbolises the Birlings themselves — respectable on the surface but emotionally cold underneath. The pink lighting is comfort built on illusion. For your exam essay, analyse how Priestley uses every technical choice — lighting, set design, stage direction language — to communicate his ideas about capitalism and hypocrisy. This demonstrates sophisticated AO2 analysis.
+</div>
+
+<h3>1912 vs 1945: Historical Context & Dramatic Irony</h3>
+
+<p>The play's dual time-frame is essential to understanding Priestley's purpose. He wrote in 1945 — just after WWII — but set the play in 1912. This gap allows him to use dramatic irony as a weapon against capitalism itself.</p>
+
+<p><strong>1912 was a world of:</strong></p>
+<ul>
+  <li>Extreme class rigidity — the Birlings can never become truly "upper class" no matter how successful, while working-class people like Eva have no legal protections or dignity.</li>
+  <li>Unregulated capitalism — no minimum wage, no welfare state, no unemployment benefit. Factory owners like Birling could sack workers at will.</li>
+  <li>Imperial confidence — Britain believed in its permanent dominance and superiority. The Titanic was "absolutely unsinkable"; war was impossible.</li>
+  <li>Gender inequality — women could not vote (they didn't get the vote until 1918/1928). Working-class women like Eva had no legal protections against exploitation or sexual violence.</li>
+  <li>A rigid patriarchal system — women existed in relation to men. Sheila is valuable because she is a pretty fiancée; Eva has no value once she ceases to be useful.</li>
+</ul>
+
+<p><strong>1945 audiences knew:</strong></p>
+<ul>
+  <li>The Titanic sank in April 1912 — less than two months after Birling's speech.</li>
+  <li>World War I (1914–1918) killed over 17 million people, including millions of working-class men sent to die by the ruling class.</li>
+  <li>The Great Depression (1929) proved capitalism was not "steadily increasing prosperity."</li>
+  <li>World War II (1939–1945) had just ended after six years of total war, rationing, and the Blitz.</li>
+  <li>Women had just proven their capability in factories and armed services during the war.</li>
+  <li>Britain had just voted for a Labour government to create the welfare state and NHS — explicitly rejecting the pre-war capitalist system.</li>
+</ul>
+
+<p>Priestley uses dramatic irony to turn the Birlings' 1912 confidence into a condemnation of their worldview. Every confident prediction is proven catastrophically wrong. This is not accident — it is deliberate dramatic strategy. If Birling is wrong about everything factual, why should the audience trust his moral philosophy?</p>
+
+<div class="examiner-tip"><strong>Examiner Tip for AQA:</strong> Never simply list the historical facts. Instead, embed them into your analysis: "Priestley has Birling confidently declare the Titanic 'unsinkable' — a statement the 1945 audience knew to be false. This dramatic irony discredits not just Birling the man but Birling as a representative of capitalist ideology. If capitalism produced such catastrophic errors in judgment about basic facts, how can we trust it with society's welfare?"</div>
+
+<h3>Arthur Birling's Speeches & Key Quotations Bank</h3>
 
 <p>Arthur Birling dominates the first part of Act 1 with a series of pompous speeches designed to impress Gerald (and, through Gerald, the Croft family). These speeches serve a crucial dramatic purpose: they establish Birling as a mouthpiece for capitalism, and then systematically destroy his credibility through dramatic irony.</p>
 
-<p>Birling declares confidently:</p>
-<ul>
-  <li><strong>"the Titanic... unsinkable, absolutely unsinkable"</strong> — the Titanic sank on 15 April 1912 with the loss of over 1,500 lives.</li>
-  <li><strong>"I say there isn't a chance of war"</strong> — World War I began in 1914, killing over 17 million people.</li>
-  <li><strong>"the Germans don't want war"</strong> — Germany was already engaged in a massive naval arms race with Britain.</li>
-  <li><strong>"we're in for a time of steadily increasing prosperity"</strong> — the Great Depression struck in 1929.</li>
-</ul>
+<p><strong>Key Quotations to Memorise:</strong></p>
+<ol>
+  <li><strong>"pink and intimate... brighter and harder"</strong> — stage directions, the lighting shift when the Inspector arrives.</li>
+  <li><strong>"unsinkable, absolutely unsinkable"</strong> — Birling on the Titanic; dramatic irony for 1945 audience.</li>
+  <li><strong>"I say there isn't a chance of war"</strong> — Birling's failed prediction about WWI.</li>
+  <li><strong>"a man has to mind his own business and look after himself and his own"</strong> — Birling's capitalist philosophy, the core statement the play refutes.</li>
+  <li><strong>"If we were all responsible for everything... it would be very awkward"</strong> — Birling's moral blindness revealed.</li>
+  <li><strong>"I was quite justified"</strong> — Birling showing no remorse for sacking Eva.</li>
+  <li><strong>"I'll never, never do it again to anybody"</strong> — Sheila's immediate repentance, contrasting with her father.</li>
+  <li><strong>"an impression of massiveness, solidity and purposefulness"</strong> — stage direction for the Inspector's entrance.</li>
+  <li><strong>"pitiful"</strong> — Birling's dismissive word for the workers' strike.</li>
+  <li><strong>"a rotten shame"</strong> — Sheila's empathy, showing she can change.</li>
+</ol>
 
-<p>Every single prediction is catastrophically wrong. Priestley stacks these failures deliberately: if Birling is wrong about everything else, why should the audience trust his philosophy? And his philosophy is the core of the play's argument:</p>
+<div class="worked-example" style="background: #fff3cd; padding: 15px; margin: 20px 0; border: 1px solid #ffc107;">
+<strong>How to Use Birling's Speeches in Essays:</strong>
+<p>Birling's assertion that "a man has to mind his own business" is immediately undermined by the Inspector's arrival, which forces each character to confront how their individual "business" decisions destroyed Eva Smith. The dramatic irony is layered: Birling is wrong about the Titanic, wrong about war, and wrong about society. Priestley uses this escalating pattern of failure to argue that capitalist individualism itself is bankrupt — not just as economic theory but as a moral system. The audience is invited to make the logical leap: if Birling's worldview produced such catastrophic failures in judgment, we should reject it entirely. This demonstrates AO2 analysis: you are showing how Priestley uses dramatic structure and irony to argue against capitalism.</p>
+</div>
 
-<p><strong>"a man has to mind his own business and look after himself and his own"</strong></p>
-
-<p>This is pure individualistic capitalism — the belief that you have no responsibility to anyone beyond your immediate family. The Inspector arrives almost immediately after this speech, as if summoned by its selfishness. Priestley structures the play so that the Inspector's arrival is a direct dramatic rebuttal of Birling's philosophy.</p>
-
-<div class="examiner-tip"><strong>Examiner Tip:</strong> When writing about Birling's speeches, always connect the dramatic irony to Priestley's wider purpose. The point is not just that Birling is wrong — it is that Priestley uses Birling's failures to discredit capitalism itself. Every wrong prediction is an argument for why the audience should reject Birling's worldview.</div>
-
-<h3>The Engagement &amp; Social Climbing</h3>
+<h3>The Engagement & Social Climbing</h3>
 
 <p>The engagement between Sheila and Gerald is not presented as a love match but as a <strong>business merger</strong>. Birling tells Gerald: "your father and I have been friendly rivals in business... and now you've brought us together." He is more excited about the business advantages than his daughter's happiness.</p>
 
 <p>Birling also reveals his desperation for social advancement. He tells Gerald (in confidence) that he is expecting a <strong>knighthood</strong> in the next Honours List. He warns Gerald that a "scandal" could damage his chances. This is important because it shows that Birling's primary concern throughout the play is not morality but reputation — not doing the right thing but avoiding public embarrassment.</p>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Describing the engagement as a genuine love story. While Sheila and Gerald do have feelings for each other, Priestley presents the engagement primarily as a social and economic arrangement — typical of the class-conscious, materialistic values of 1912.</div>
+<div class="context-box" style="background: #e8f4f8; padding: 15px; margin: 15px 0; border-left: 4px solid #2c5aa0;">
+<strong>1912 vs 1945: Marriage & Class:</strong> In 1912, marriage was a transaction between families, not a union based on love. The Crofts are old money; the Birlings are new money. Despite his success, Birling will never be the Crofts' equal. The engagement is a way for the Birlings to climb socially and for the Crofts to benefit financially. For 1945 audiences, who had experienced the communal solidarity of the war and were about to create a welfare state based on collective responsibility, this view of human relationships as economic transactions would have seemed obscene. Priestley is showing how capitalism corrupts even family bonds.
+</div>
 
-<h3>The Inspector Arrives</h3>
+<h3>The Inspector Arrives & Stage Direction Analysis</h3>
 
 <p>The Inspector's entrance is one of the most carefully staged moments in the play. He arrives just as Birling is delivering his speech about self-reliance — "a man has to mind his own business" — creating the impression that he has come specifically to challenge this philosophy.</p>
 
@@ -233,53 +269,74 @@ export const inspectorCallsCourse: CourseData = {
 
 <p>The Inspector announces that a young woman — <strong>Eva Smith</strong> — has died in the infirmary after swallowing disinfectant. He shows a photograph to Birling (but crucially, he only shows it to one person at a time — a detail that becomes significant later).</p>
 
-<div class="key-term"><strong>Key Term: Dramatic Entrance</strong> — The Inspector's arrival is timed to interrupt Birling's capitalist speech. This structural choice turns the Inspector into a symbolic force — not just a police officer but an embodiment of conscience arriving to challenge the Birlings' entire way of life.</div>
+<div class="stage-direction-analysis" style="background: #fff8dc; padding: 15px; margin: 15px 0; border-left: 4px solid #ff8c00;">
+<strong>Stage Direction Deep-Dive:</strong> The Inspector's entrance is carefully choreographed. His "massiveness" and "purposefulness" contrast with the Birlings' comfortable domesticity. He doesn't knock politely — he arrives as if summoned by moral necessity. The stage direction "disconcerting habit of looking hard" creates physical tension: he sees through pretence. The one-way showing of the photograph creates ambiguity that will undermine the Birlings' attempt to deny responsibility later. For AQA essays, discuss how Priestley uses stage direction and blocking to communicate meaning about power, authority, and moral judgment. The Inspector literally changes the space the moment he enters.
+</div>
 
-<h3>Birling's Involvement with Eva Smith</h3>
+<h3>Birling's Involvement with Eva Smith & Character Study</h3>
 
-<p>The Inspector reveals that Eva Smith worked at <strong>Birling &amp; Company</strong> — Arthur's factory. In September 1910, Eva and a group of workers went on <strong>strike</strong>, asking for a pay rise from twenty-two shillings and sixpence to twenty-five shillings a week. Birling <strong>refused</strong> and <strong>sacked the ringleaders</strong>, including Eva.</p>
+<p>The Inspector reveals that Eva Smith worked at <strong>Birling & Company</strong> — Arthur's factory. In September 1910, Eva and a group of workers went on <strong>strike</strong>, asking for a pay rise from twenty-two shillings and sixpence to twenty-five shillings a week. Birling <strong>refused</strong> and <strong>sacked the ringleaders</strong>, including Eva.</p>
 
 <p>Birling sees nothing wrong with this. He calls the strike "pitiful" and insists that he paid standard wages. He cannot understand why he should feel any responsibility: "If we were all responsible for everything that happened to everybody... it would be very awkward." This line crystallises Birling's entire worldview — responsibility is an inconvenience, not a moral obligation.</p>
 
 <p>Sheila, however, begins to react differently. She says the sacking was "a rotten shame" — an early sign that she, unlike her father, is capable of empathy and moral growth.</p>
 
-<h3>Sheila's Role in Act 1</h3>
+<div class="analysis-deep-dive" style="background: #f5f5f5; padding: 15px; margin: 15px 0; border-left: 4px solid #333;">
+<strong>Character Study Deep-Dive: Birling's Moral Blindness</strong>
+<p>The word "awkward" in Birling's response reveals his fundamental moral blindness. He cannot conceptualise responsibility in moral or human terms — only as a practical inconvenience. For Birling, the question is not "did I do the right thing?" but "do I have to do anything about it?" This shows how capitalism distorts moral thinking. When profit is the only value, responsibility to workers becomes "awkward" rather than fundamental. The contrast with Sheila's immediate "rotten shame" shows that moral sensitivity exists independently of class — it is not something you learn through education but something you either possess or lack. Priestley argues that capitalism actively destroys the moral sensitivity that Sheila still possesses.</p>
+</div>
+
+<h3>Sheila's Role in Act 1 & Generational Divide</h3>
 
 <p>Sheila's involvement is revealed next. After being sacked by Birling, Eva found work at <strong>Milwards</strong>, an upmarket department store. Sheila went shopping there and, in a moment of jealous spite, complained about Eva, getting her <strong>sacked</strong>. Sheila admits she was angry because Eva had held up a dress against herself and it had suited Eva better — a moment of petty jealousy with devastating consequences.</p>
 
 <p>Unlike her father, Sheila is immediately <strong>horrified</strong> by what she has done. She says: <strong>"I'll never, never do it again to anybody."</strong> This marks the beginning of Sheila's moral transformation — the most significant character arc in the play. Priestley presents her as a representative of the <strong>younger generation</strong>, capable of learning and changing, in contrast to the older generation who refuse to accept responsibility.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Act 1 is primarily about establishing the Birlings' world and then beginning to crack it open. In an essay, you might argue that Act 1 functions as a microcosm of Priestley's entire message: it shows the selfish philosophy, introduces the consequences, and divides the characters into those who can change (Sheila) and those who cannot (Birling).</div>
+<div class="theme-analysis" style="background: #e6f2ff; padding: 15px; margin: 15px 0; border-left: 4px solid #0047ab;">
+<strong>Theme: Age & Responsibility</strong>
+<p>Act 1 immediately establishes that age determines capacity for moral change. Birling, in his 50s, cannot change — he is trapped in capitalist ideology. Sheila, in her early 20s, changes instantly. This is not coincidence but Priestley's argument about social progress. The older generation, formed by 50 years of capitalist success, cannot reform. Only the young, not yet fully indoctrinated into the system, can learn. For 1945 audiences who had just voted out the Conservative government, this would have felt prophetic — the future belongs to the young who will build the welfare state, not to the old who would preserve pre-war capitalism.</p>
+</div>
 
-<h3>Dramatic Structure of Act 1</h3>
+<h3>Dramatic Structure & Socialism vs Capitalism</h3>
 
-<p>Priestley builds Act 1 around a clear pattern of <strong>revelation and reaction</strong>:</p>
+<p>Priestley builds Act 1 around a clear pattern of <strong>revelation and reaction</strong> that methodically builds his argument:</p>
 
 <ol>
-  <li>The Birlings celebrate in comfortable ignorance.</li>
+  <li>The Birlings celebrate in comfortable ignorance — the world of capitalist complacency.</li>
   <li>Birling delivers his capitalist philosophy, loaded with dramatic irony.</li>
   <li>The Inspector arrives and shatters the mood — literally changing the lighting.</li>
-  <li>Birling is questioned and shows no remorse.</li>
-  <li>Sheila is questioned and shows immediate guilt.</li>
+  <li>Birling is questioned and shows no remorse — capitalism cannot change.</li>
+  <li>Sheila is questioned and shows immediate guilt — the young can change.</li>
   <li>Gerald's discomfort hints that he, too, is connected to Eva — a cliffhanger for Act 2.</li>
 </ol>
 
-<p>This structure keeps the audience engaged while methodically building Priestley's argument: each character's involvement adds another layer to the collective guilt, showing that Eva's death was not caused by one person but by an entire social system.</p>
+<div class="socialism-vs-capitalism" style="background: #ffe6e6; padding: 15px; margin: 15px 0; border-left: 4px solid #cc0000;">
+<strong>Priestley's Socialism vs Capitalism:</strong>
+<p>Act 1 presents two competing philosophies explicitly. Birling represents capitalism: "a man has to mind his own business and look after himself and his own." The Inspector (who hasn't yet revealed his philosophy) arrives to challenge this. By the end of the play, the Inspector articulates socialism: "We are members of one body. We are responsible for each other." Act 1 introduces the thesis; Acts 2-3 argue for the antithesis (socialism). Priestley's political position is not subtle — he wants audiences to choose sides.</p>
+</div>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Retelling the plot in your essay without analysing Priestley's methods. AQA rewards analysis of the writer's craft (AO2). Instead of "Birling sacked Eva Smith," write: "Priestley has Birling dismiss the strike as 'pitiful,' a dismissive adjective that reveals his inability to see working-class suffering as legitimate — thus exposing the moral bankruptcy of unregulated capitalism."</div>
+<h3>Exam-Style Questions with Model Answers</h3>
 
-<h3>Key Quotations from Act 1</h3>
+<div class="exam-question" style="background: #f9f9f9; padding: 15px; margin: 15px 0; border: 2px solid #333;">
+<strong>Question 1: How does Priestley use dramatic irony in Act 1 to undermine Birling's authority?</strong>
 
-<p>Memorise these short quotations for your closed-book exam:</p>
-<ol>
-  <li><strong>"pink and intimate... brighter and harder"</strong> — stage directions, the lighting shift when the Inspector arrives.</li>
-  <li><strong>"unsinkable, absolutely unsinkable"</strong> — Birling on the Titanic; dramatic irony.</li>
-  <li><strong>"a man has to mind his own business and look after himself"</strong> — Birling's capitalist philosophy.</li>
-  <li><strong>"I was quite justified"</strong> — Birling showing no remorse for sacking Eva.</li>
-  <li><strong>"I'll never, never do it again"</strong> — Sheila's immediate repentance.</li>
-  <li><strong>"an impression of massiveness, solidity and purposefulness"</strong> — the Inspector's entrance.</li>
-</ol>
-`,
+<p><strong>Model Answer (Grade 9):</strong></p>
+
+<p>Priestley systematically undermines Birling's authority through a pattern of dramatic irony that functions as a structural argument against capitalism itself. Birling's confident assertion that the Titanic is "unsinkable, absolutely unsinkable" is the play's most immediate irony — the 1945 audience knows the ship sank in April 1912, just weeks after this scene is set. This makes Birling look foolish and arrogant. But Priestley amplifies this through repetition: Birling is also wrong about the impossibility of war ("I say there isn't a chance of war"), about German intentions, and about "steadily increasing prosperity." Each prediction proves disastrously false.</p>
+
+<p>This escalating pattern of failure is deliberate. Priestley wants the audience to make a logical inference: if Birling is catastrophically wrong about basic factual matters, why should we trust his moral philosophy? By attaching capitalist ideology ("a man has to mind his own business") to a character demonstrated to be fundamentally foolish, Priestley implicitly argues that capitalism itself is a bankrupt system. The dramatic irony is not just for comedy — it is a sophisticated argumentative strategy. Birling becomes a walking refutation of his own worldview.</p>
+</div>
+
+<div class="exam-question" style="background: #f9f9f9; padding: 15px; margin: 15px 0; border: 2px solid #333;">
+<strong>Question 2: What is the significance of the generational divide presented in Act 1?</strong>
+
+<p><strong>Model Answer (Grade 9):</strong></p>
+
+<p>Act 1 introduces what becomes the play's central structural argument: the generational divide between those capable of change and those trapped in their privilege. Birling, in his 50s, refuses responsibility. He calls the workers' strike "pitiful," dismisses collective responsibility as "nonsense," and sees moral obligation as merely "awkward." He cannot imagine that his actions have human consequences.</p>
+
+<p>Sheila, barely 20, reacts with immediate moral horror. When she learns she caused Eva's dismissal, she doesn't minimise, excuse, or deny — she says "I'll never, never do it again." The repetition emphasises the sincerity and intensity of her response. For Priestley, writing in 1945, this contrast carried enormous political weight. Britain had just voted for a Labour government committed to building a welfare state — a rejection of pre-war capitalism. Sheila represents the generation that will build this new society; Birling represents the past they are rejecting. By structuring Act 1 to show Birling's obduracy and Sheila's capacity for growth, Priestley makes a prophecy disguised as character development.</p>
+</div>
+
       quiz: [
         {
           id: 'aic-m2-q1',

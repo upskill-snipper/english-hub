@@ -429,12 +429,18 @@ export const aqaLoveRelationshipsCourse: CourseData = {
     {
       id: 'aqa-lr-m4',
       title: 'Sonnet 29 — Elizabeth Barrett Browning',
-      duration: '40 min',
+      duration: '90 min',
       content: `
 <h2>Sonnet 29 — "I think of thee!" (Elizabeth Barrett Browning)</h2>
 
-<h3>Context</h3>
-<p>This is poem 29 from <em>Sonnets from the Portuguese</em> (1850), a sequence of 44 love sonnets written by Elizabeth Barrett Browning to her husband, <strong>Robert Browning</strong>. Their relationship was conducted largely through letters because Elizabeth's domineering father forbade his children to marry. The couple eventually eloped to Italy. The poem reflects the tension between <strong>imagined love</strong> (through letters) and <strong>physical presence</strong> — Elizabeth wants the real person, not just thoughts of him.</p>
+<h3>Detailed Poet Context</h3>
+<p><strong>Elizabeth Barrett Browning (1806–1861)</strong> was one of the most celebrated poets of the Victorian era, yet her personal life was heavily constrained. Born into an aristocratic family, she suffered a spinal injury that left her partially paralysed and dependent on laudanum (opium). Her father, Edward Moulton-Barrett, was tyrannically controlling, forbidding all his children from marrying. Elizabeth's literary reputation grew internationally, but she remained confined at her family home in Wimpole Street, London.</p>
+
+<p>In 1845, poet <strong>Robert Browning</strong> wrote to her expressing admiration. Their relationship began through letters, conducted in secret from her father. For 18 months, they exchanged passionate correspondence, falling in love without ever meeting in person. When Elizabeth's father discovered the courtship, he was furious and threatened to disinherit her. In September 1846, at age 40, Elizabeth and Robert eloped to Italy, where they lived together and eventually married, away from her father's tyranny.</p>
+
+<p><em>Sonnets from the Portuguese</em> (1850) is a sequence of 44 love sonnets disguising their autobiographical courtship. Even after publication, Barrett Browning claimed they were "translations from the Portuguese" — even a bold, published poet felt the need to mask female passion. Sonnet 29 captures the specific agony of their separation during the letter-writing phase.</p>
+
+<div class="key-term"><strong>Victorian Context:</strong> Women in the 1840s were expected to be passive and modest. Female sexual and romantic desire was scandalous. A woman openly declaring passion was transgressive.</div>
 
 <h3>Form &amp; Structure</h3>
 <ul>
@@ -443,6 +449,39 @@ export const aqaLoveRelationshipsCourse: CourseData = {
   <li><strong>Exclamatory tone:</strong> Frequent exclamation marks ("I think of thee!", "Renew thy presence!") convey urgency and passion.</li>
   <li><strong>Enjambment</strong> throughout suggests thoughts spilling over uncontrollably — the speaker cannot contain her feelings within neat lines.</li>
 </ul>
+
+<h3>Structural Analysis</h3>
+<p><strong>The Octave (Lines 1–8): Obsession and Entrapment</strong></p>
+<p>The octave presents the speaker trapped in endless thought about the beloved. The rhyme scheme (ABBAABBA) creates a closed feeling — like thoughts spiralling within a tight structure. The volta at lines 7-8 marks when the speaker demands a shift.</p>
+
+<p><strong>The Sestet (Lines 9–14): Release and Presence</strong></p>
+<p>The sestet shifts from abstract thought to physical presence. The final paradox shows that resolution is impossible: thought persists even when presence should eliminate it.</p>
+
+<h3>Line-by-Line Analysis</h3>
+<p><strong>Lines 1–2:</strong> The exclamation establishes emotional intensity. <strong>"Subdued"</strong> suggests uncontrollable thoughts. They exist in a half-real state ("shadow-like").</p>
+
+<p><strong>Line 3:</strong> The beloved's face invades her imagination uninvited. She is not in control of her own mind.</p>
+
+<p><strong>Lines 4–5:</strong> Love is personified as a <strong>"thief"</strong> — it steals into the speaker without consent. <strong>"Noiseless"</strong> contrasts with the violation of having one's mind invaded.</p>
+
+<p><strong>Lines 6–8:</strong> Thoughts circle endlessly without progress. The beloved is a <strong>tree</strong> (solid, rooted, real), while the speaker's thoughts are <strong>wild vines</strong> (growing, tangling, obscuring). This extended metaphor reveals the speaker's fear: her thinking prevents her from seeing the real man.</p>
+
+<p><strong>Lines 9–10 (volta):</strong> The speaker questions the nature of her thoughts. She realizes that what she calls "thoughts" are not intellectual but emotional — <strong>"sighs"</strong> represent longing, desire, breath.</p>
+
+<p><strong>Lines 11–12:</strong> The speaker asks whether she loves "too much" — full of anxiety. <strong>"Too warm"</strong> suggests her passion is excessive (a Victorian concern). She has planted him deep in her heart like a tree rooted in soil.</p>
+
+<p><strong>Lines 13–14 (conclusion):</strong> This final paradox captures her impossible position. She cannot love him less (it would be wrong), yet loving him more is dangerous. She is trapped between two impossibilities.</p>
+
+<h3>Technique Identification &amp; Effect Analysis</h3>
+<table border="1">
+<tr><th>Technique</th><th>Example</th><th>Effect</th></tr>
+<tr><td><strong>Exclamation</strong></td><td>"I think of thee!"</td><td>Establishes urgency and passion. The speaker cannot contain her feelings.</td></tr>
+<tr><td><strong>Extended Metaphor</strong></td><td>"Wild vines, about a tree"</td><td>Shows how thoughts obscure the real beloved. Beautiful but suffocating.</td></tr>
+<tr><td><strong>Personification</strong></td><td>"Thy sweetness steals as noiseless as a thief"</td><td>Love is an invasion — something that enters without permission.</td></tr>
+<tr><td><strong>Paradox</strong></td><td>"too near, too far"</td><td>Captures the contradiction of long-distance love.</td></tr>
+<tr><td><strong>Volta (Petrarchan)</strong></td><td>Lines 7-8 shift</td><td>Marks turn from passive longing to active demand for presence.</td></tr>
+<tr><td><strong>Enjambment</strong></td><td>Lines running across breaks</td><td>Thoughts spill uncontrollably. Form enacts meaning.</td></tr>
+</table>
 
 <h3>Key Themes</h3>
 <ul>
@@ -477,6 +516,31 @@ export const aqaLoveRelationshipsCourse: CourseData = {
 
 <div class="text-extract">"strong tree"<div class="source">Line 12</div></div>
 <p>The beloved as <strong>"strong tree"</strong> conveys stability, reliability and rootedness. Barrett Browning reverses typical Victorian gender roles — the man is the passive, grounding presence while the woman is the active, desiring voice.</p>
+
+<h3>Grade 9 Model Paragraphs</h3>
+
+<p><strong>Model Paragraph 1: Technique &amp; Effect</strong></p>
+<p>"Barrett Browning uses the extended metaphor of wild vines growing around a tree to convey how the speaker's obsessive thoughts actually obscure the real beloved. The vines begin positively ('twine and bud'), suggesting something beautiful and organic. However, by line 3, they become problematic: they are 'wild' and 'about a tree,' implying that the speaker's thoughts entangle and hide the beloved rather than helping her know him. This metaphor captures a psychological reality: when we think too much about someone, our mental image becomes distorted and divorced from reality. The vines represent the gap between imagined love and physical presence, which is the poem's central tension. The technique is effective because it shows rather than tells — the reader understands the speaker's frustration through the metaphor itself."</p>
+
+<p><strong>Model Paragraph 2: Context &amp; Interpretation</strong></p>
+<p>"Understanding Barrett Browning's autobiographical context greatly enriches the poem's meaning. She and Robert Browning conducted their entire courtship through letters because her father forbade marriage. Sonnet 29 is not an abstract meditation but a desperate cry from a woman separated from her beloved by circumstances beyond her control. The 'shadow-like' thoughts and wild vines express real anguish. The volta, where the speaker demands 'Renew thy presence,' is not merely a formal turn but an emotional plea for the physical reality of their relationship. Knowing that the couple eventually eloped to Italy makes the final paradox ('It were also much to love thee more') painfully real — she cannot intensify her love beyond what it is, yet they cannot escape their separation without dramatic action. The poem is therefore not just about longing but about the transgressive nature of female desire in the Victorian period."</p>
+
+<p><strong>Model Paragraph 3: Form &amp; Meaning</strong></p>
+<p>"The Petrarchan sonnet form shapes the poem's meaning. The octave's tight rhyme scheme (ABBAABBA) creates an enclosed feeling that mirrors the speaker's mental entrapment. She circles within the octave's structure, her thoughts returning again and again like the rhyme scheme's returns. The volta at lines 7-8 marks a formal and emotional shift. The sestet's different rhyme pattern (CDECDE) opens out slightly, suggesting movement towards resolution. Yet the final paradox shows that resolution is impossible. The form enacts meaning: the speaker remains trapped even as the sestet attempts escape. This makes Barrett Browning's refusal of resolution more powerful. This is not a love story with an ending but an ongoing condition."</p>
+
+<h3>Key Quotation Bank for Essays</h3>
+<ul>
+  <li>"I think of thee!" — Opening passion and urgency</li>
+  <li>"my thoughts do twine and bud" — Thoughts as living, organic things</li>
+  <li>"wild vines, about a tree" — Central metaphor of thoughts obscuring reality</li>
+  <li>"Thy sweetness steals as noiseless as a thief" — Love as invasion</li>
+  <li>"What are the thoughts? — they are not thoughts, but sighs" — Volta: thoughts are emotional, not intellectual</li>
+  <li>"I do not think of thee" — Paradox: presence eliminates thought</li>
+  <li>"It were a grave offence to love thee less; / Yet it were also much to love thee more" — Final paradox</li>
+  <li>"Renew thy presence" — Active demand for physical presence (marks volta)</li>
+  <li>"too near, too far" — Paradox of long-distance love</li>
+  <li>"Anchor. Kite." — (from sonnet sequence) metaphor for relationship dynamics</li>
+</ul>
 
 <h3>Comparison Links</h3>
 <ul>
@@ -680,12 +744,18 @@ export const aqaLoveRelationshipsCourse: CourseData = {
     {
       id: 'aqa-lr-m6',
       title: 'Letters from Yorkshire — Maura Dooley',
-      duration: '40 min',
+      duration: '90 min',
       content: `
 <h2>Letters from Yorkshire — Maura Dooley</h2>
 
-<h3>Context</h3>
-<p>Maura Dooley is a contemporary poet (born 1957) who has lived in both rural and urban settings. The poem explores the relationship between two people living <strong>very different lives</strong> — one in rural Yorkshire, one in urban England — who maintain a connection through letters. The nature of their relationship is deliberately <strong>ambiguous</strong>: they could be lovers, friends, or relatives. Dooley raises questions about what constitutes a meaningful connection and whether <strong>physical proximity</strong> is necessary for closeness.</p>
+<h3>Detailed Poet Context</h3>
+<p><strong>Maura Dooley (born 1957)</strong> is a British poet, editor, and creative writing teacher known for writing in accessible, contemporary language about everyday moments that reveal deeper emotional truths. Dooley has lived in both rural and urban environments, giving her intimate understanding of the contrasts these different lifestyles create.</p>
+
+<p>Dooley's poetry is characterized by <strong>restraint and subtlety</strong>. She does not announce emotions directly but allows them to emerge through precise, sensory details and careful observation. Her style has been influenced by modernist poets who believed in presenting "no ideas but in things" — letting concrete images carry emotional weight.</p>
+
+<p>In "Letters from Yorkshire," Dooley explores the dynamics of a long-distance relationship conducted through correspondence. By leaving the relationship unlabeled, the poem speaks to the broader human need for connection across distance. What binds people together when they live completely different lives?</p>
+
+<div class="key-term"><strong>Contemporary Poetry:</strong> 20th and 21st-century poetry written in response to modern life. Values precision and emotional restraint over overt sentiment.</div>
 
 <h3>Form &amp; Structure</h3>
 <ul>
@@ -694,6 +764,40 @@ export const aqaLoveRelationshipsCourse: CourseData = {
   <li><strong>Present tense</strong> makes the man's actions feel immediate and vivid, even though the speaker is reading about them from a distance.</li>
   <li>The poem moves from <strong>his world</strong> (outdoors, physical) to <strong>her world</strong> (indoors, intellectual) and then brings them together through communication.</li>
 </ul>
+
+<h3>Structural Analysis</h3>
+<p><strong>Opening Section (Stanzas 1–3): His World</strong></p>
+<p>The poem begins with concrete, sensory images of the man's rural life. "Digging his garden," "knuckles singing," "earth warmed through." The present tense creates immediacy. Dooley grounds us in physical, tactile experience establishing his life as embodied, real, connected to natural cycles.</p>
+
+<p><strong>Middle Section (Stanzas 4–5): Her Question</strong></p>
+<p>The central turning point: "Is his life more real because he digs?" A genuine moment of self-doubt. The speaker questions the validity of her own life. This section is introspective, moving inward.</p>
+
+<p><strong>Final Section (Stanzas 6–7): Connection Through Letters</strong></p>
+<p>The poem resolves through communication. Letters become the bridge between their worlds. The phrase "our souls tap out messages" elevates the epistolary connection from practical to spiritual.</p>
+
+<h3>Line-by-Line Analysis</h3>
+<p><strong>Line 1:</strong> The opening establishes season and action. <strong>"February"</strong> — a month of cold and dormancy, yet the man is digging, preparing for growth.</p>
+
+<p><strong>Lines 2–3:</strong> The earth is warmed by work, not sunshine. Human effort creates warmth, life, and transformation. The labour is presented almost spiritually.</p>
+
+<p><strong>Line 4:</strong> Synaesthesia: touch (knuckles) described through sound (singing). This elevates manual labour to something joyful and musical.</p>
+
+<p><strong>Lines 9–10:</strong> The central question: "Is his life more real because he digs?" Anxious in tone. <strong>"More real"</strong> suggests her life seems less authentic, less connected to something essential.</p>
+
+<p><strong>Lines 11–13:</strong> The speaker acknowledges her life is different but equal in emotional depth. <strong>"Nibbled at the edges"</strong> suggests her understanding of love is incomplete, yet it is hers. She defends emotional interiority.</p>
+
+<p><strong>Lines 16–17:</strong> <strong>"Souls tap out messages"</strong> elevates communication to something spiritual and essential. <strong>"Tap out"</strong> evokes Morse code — urgent, essential messages.</p>
+
+<h3>Technique Identification &amp; Effect Analysis</h3>
+<table border="1">
+<tr><th>Technique</th><th>Example</th><th>Effect</th></tr>
+<tr><td><strong>Synaesthesia</strong></td><td>"his knuckles singing"</td><td>Mixes senses. Touch becomes music, suggesting joy in physical work.</td></tr>
+<tr><td><strong>Contrast</strong></td><td>Library vs. garden; reading vs. digging</td><td>Highlights vast differences, making connection more poignant.</td></tr>
+<tr><td><strong>Rhetorical Question</strong></td><td>"Is his life more real because he digs?"</td><td>Creates vulnerability and self-doubt. Engages reader in philosophical inquiry.</td></tr>
+<tr><td><strong>Metaphor (Letters as Presence)</strong></td><td>"pouring air and light into an envelope"</td><td>Letters carry the essence of his world. Words become vessels for experience.</td></tr>
+<tr><td><strong>Shared Sky Imagery</strong></td><td>"the sky over York"</td><td>Symbol of connection despite separation. Nature provides shared experience.</td></tr>
+<tr><td><strong>Free Verse</strong></td><td>No regular rhyme or meter</td><td>Mimics natural speech patterns. Conversational rather than formal.</td></tr>
+</table>
 
 <h3>Key Themes</h3>
 <ul>
@@ -728,6 +832,27 @@ export const aqaLoveRelationshipsCourse: CourseData = {
 
 <div class="text-extract">"Watching the same news"<div class="source">Stanza 7</div></div>
 <p>A mundane, modern detail that contrasts with the rural imagery. Even shared media consumption becomes a form of connection — they experience the same world simultaneously.</p>
+
+<h3>Grade 9 Model Paragraphs</h3>
+
+<p><strong>Model Paragraph 1: Ambiguity &amp; Interpretation</strong></p>
+<p>"Dooley deliberately never specifies the nature of the relationship. They could be lovers, friends, family members, or even strangers who have become intimate through letters. This ambiguity is a strength. By leaving the relationship unlabeled, Dooley invites us to consider what the poem is really about: not romantic love specifically, but the deeper human need for connection across distance. The poem asks whether all meaningful relationships depend on understanding and valuing another person's lived experience, even when that experience is radically different from our own. The speaker's anxiety about whether her 'library' life is as 'real' as his 'garden' life reveals deeper questions about whether different ways of living can be equally valid, equally human."</p>
+
+<p><strong>Model Paragraph 2: Technique &amp; Meaning</strong></p>
+<p>"Dooley's synaesthesia in 'his knuckles singing' elevates manual labour from mere physical work to something musical, expressive, and joyful. By describing touch through sound, the poem captures the speaker's complex relationship with his rural life: she admires it, envies it, recognizes its authenticity. Yet synaesthesia also suggests that she experiences his life only through language and imagination — she reads about his 'singing knuckles,' she doesn't feel them. She can access his world only through letters, through a translation of his physical experience into language. Words become the bridge between them, but words are never the same as direct experience. This makes the final assertion 'but I have read' so powerful — reading is her form of presence, her way of touching his world."</p>
+
+<h3>Key Quotation Bank for Essays</h3>
+<ul>
+  <li>"In February, digging his garden" — Opening establishing his world</li>
+  <li>"the earth warmed through / by his labour" — Human work as life-giving</li>
+  <li>"his knuckles singing" — Synaesthesia elevating physical work</li>
+  <li>"Is his life more real because he digs?" — Central self-questioning</li>
+  <li>"How are these different, / the muscle and the imagination?" — Defense of intellectual life</li>
+  <li>"our souls tap out messages" — Spiritual dimension of communication</li>
+  <li>"the sky over York" — Shared natural world</li>
+  <li>"pouring air and light into an envelope" — Letters as vessels of experience</li>
+  <li>"but I have read" — Final assertion of connection through language</li>
+</ul>
 
 <h3>Comparison Links</h3>
 <ul>
@@ -1318,12 +1443,16 @@ export const aqaLoveRelationshipsCourse: CourseData = {
     {
       id: 'aqa-lr-m11',
       title: 'Mother, any distance — Simon Armitage',
-      duration: '40 min',
+      duration: '90 min',
       content: `
 <h2>Mother, any distance — Simon Armitage</h2>
 
-<h3>Context</h3>
-<p><strong>Simon Armitage</strong> (born 1963) is the current Poet Laureate. He writes in an accessible, conversational style about everyday experiences. This poem describes the speaker and his mother <strong>measuring rooms</strong> in a new house — a practical domestic task that becomes a metaphor for the <strong>emotional separation</strong> between parent and child. Armitage grew up in Marsden, West Yorkshire, and his poetry often draws on Northern English life and speech.</p>
+<h3>Detailed Poet Context</h3>
+<p><strong>Simon Armitage (born 1963)</strong> is the current Poet Laureate. He writes in an accessible, conversational style about everyday experiences. This poem describes the speaker and his mother measuring rooms in a new house — a practical domestic task that becomes a metaphor for emotional separation. Armitage grew up in Marsden, West Yorkshire, and his poetry often draws on Northern English life and speech.</p>
+
+<p>The poem's power lies in its use of everyday domestic activity to explore complex emotional terrain. By using a measuring tape as an extended metaphor, Armitage transforms a mundane task into a meditation on love, independence, and the painful process of growing away from those who love us.</p>
+
+<div class="key-term"><strong>Extended Metaphor in Poetry:</strong> A comparison between two things that runs throughout an entire poem, developing richer meaning as it progresses.</div>
 
 <h3>Form &amp; Structure</h3>
 <ul>
@@ -1332,6 +1461,37 @@ export const aqaLoveRelationshipsCourse: CourseData = {
   <li><strong>Enjambment</strong> spills across lines and stanzas, mirroring the tape unreeling and the gradual stretching of the bond.</li>
   <li>The poem moves <strong>upward</strong> — from ground floor to loft to open window to sky — symbolising the child's growing independence and the increasing distance.</li>
 </ul>
+
+<h3>Structural Analysis</h3>
+<p><strong>Movement Upward:</strong> The poem moves from ground floor to loft to open window to sky, symbolizing the child's growing independence and increasing distance from the parent.</p>
+
+<p><strong>The Measuring Tape as Extended Metaphor:</strong> The tape is the physical and emotional connection between mother and child. As it unreels, the distance increases. "Anchor. Kite." captures the entire relationship in two words: she grounds him; he soars.</p>
+
+<p><strong>Final Image:</strong> "to fall or fly" presents independence as a binary gamble. The speaker does not know which it will be.</p>
+
+<h3>Line-by-Line Analysis</h3>
+<p><strong>Lines 1–2:</strong> "Mother, any distance" establishes the poem's central concern: separation. "Requires a second pair of hands" — metaphorically, the speaker still needs his mother's help as he navigates adulthood.</p>
+
+<p><strong>Line 4:</strong> "you at the zero-end" — The mother stands at zero, the fixed starting point, the origin. She is the constant from which all measurement is calculated.</p>
+
+<p><strong>Line 6:</strong> "the line still feeding out" evokes an umbilical cord or safety rope. The connection is still active, still nourishing, but being stretched.</p>
+
+<p><strong>Line 7:</strong> "unreeling years between us" — The tape becomes time itself. "Unreeling" suggests the passage of years is continuous and unstoppable.</p>
+
+<p><strong>Line 8:</strong> "Anchor. Kite." — Two single-word sentences encapsulating the entire relationship. The full stops create dramatic pause.</p>
+
+<p><strong>Line 10:</strong> "to the loft, to the hatch that opens on an endless sky" — The upward movement climaxes. The "endless sky" represents unlimited possibility and freedom, but also terrifying openness of adulthood.</p>
+
+<h3>Technique Identification &amp; Effect Analysis</h3>
+<table border="1">
+<tr><th>Technique</th><th>Example</th><th>Effect</th></tr>
+<tr><td><strong>Extended Metaphor (Measuring Tape)</strong></td><td>Tape = emotional connection</td><td>Shows the gradual stretching and separation between parent and child.</td></tr>
+<tr><td><strong>Enjambment</strong></td><td>Lines spilling across stanzas</td><td>Mirrors the tape unreeling and the gradual stretching of the bond.</td></tr>
+<tr><td><strong>Concrete Image</strong></td><td>"Anchor. Kite."</td><td>Encapsulates relationship dynamics in two vivid words. Dramatic pause.</td></tr>
+<tr><td><strong>Upward Movement</strong></td><td>Ground floor → loft → sky</td><td>Symbolizes growing independence and increasing distance.</td></tr>
+<tr><td><strong>Imperative Voice</strong></td><td>"Span," "hold"</td><td>Directly addresses the mother, creating intimacy and immediacy.</td></tr>
+<tr><td><strong>Paradox</strong></td><td>"Anchor. Kite."</td><td>Captures the paradox of parental love: grounding yet liberating.</td></tr>
+</table>
 
 <h3>Key Themes</h3>
 <ul>
@@ -1366,6 +1526,27 @@ export const aqaLoveRelationshipsCourse: CourseData = {
 
 <div class="text-extract">"to fall or fly"<div class="source">Line 14</div></div>
 <p>The poem's final words present independence as a <strong>binary gamble</strong>. The rhyme of <strong>"fall"</strong> and <strong>"fly"</strong> compresses risk and reward into a single breath. The speaker does not know which it will be.</p>
+
+<h3>Grade 9 Model Paragraphs</h3>
+
+<p><strong>Model Paragraph 1: Form &amp; Meaning</strong></p>
+<p>"Armitage subverts the traditional love sonnet by applying it to maternal love, suggesting that the bond between parent and child is as intense and complex as romantic love. The poem's extended metaphor of the measuring tape runs throughout, with the tape representing the umbilical cord of connection that must eventually be broken. The upward movement from ground floor to loft to open sky symbolizes the child's growing independence. Yet the final paradox 'to fall or fly' presents independence as a binary gamble — the speaker does not know which it will be. The form enacts the poem's meaning: the sonnet's traditional closure is subverted by genuine uncertainty about the outcome."</p>
+
+<p><strong>Model Paragraph 2: Technique &amp; Effect</strong></p>
+<p>"The single-word lines 'Anchor. Kite.' encapsulate the entire parent-child relationship with stunning efficiency. By using these two vivid, contrasting images, Armitage shows the mother as grounding (anchor) and the speaker as airborne (kite), yet still connected by the measuring tape. The full stops after each word create dramatic pause, giving the reader time to absorb the significance. The technique is powerful because it forces us to visualize the relationship dynamically — not static but in tension, constantly balanced between holding on and letting go. This image is more effective than a lengthy explanation because it creates an emotional understanding through concrete imagery."</p>
+
+<h3>Key Quotation Bank for Essays</h3>
+<ul>
+  <li>"Mother, any distance" — Opening establishing central concern</li>
+  <li>"requires a second pair of hands" — Metaphorical dependence on mother</li>
+  <li>"you at the zero-end" — Mother as fixed starting point</li>
+  <li>"the line still feeding out" — Connection as umbilical cord</li>
+  <li>"unreeling years between us" — Time as distance</li>
+  <li>"Anchor. Kite." — Relationship dynamics encapsulated</li>
+  <li>"to the loft, to the hatch that opens on an endless sky" — Upward movement toward independence</li>
+  <li>"to fall or fly" — Final paradox of independence</li>
+  <li>"I span the distance that will separate / blood from blood" — Inevitable separation</li>
+</ul>
 
 <h3>Comparison Links</h3>
 <ul>
@@ -1442,12 +1623,16 @@ export const aqaLoveRelationshipsCourse: CourseData = {
     {
       id: 'aqa-lr-m12',
       title: 'Before You Were Mine — Carol Ann Duffy',
-      duration: '40 min',
+      duration: '90 min',
       content: `
 <h2>Before You Were Mine — Carol Ann Duffy</h2>
 
-<h3>Context</h3>
-<p><strong>Carol Ann Duffy</strong> (born 1955) was the first woman and first openly LGBTQ+ person to be appointed Poet Laureate. This poem imagines her mother's life <strong>before the speaker was born</strong> — a time of youth, glamour and freedom in 1950s Glasgow. The title's possessive <strong>"Mine"</strong> is deliberately provocative: the child claims ownership of the mother, reversing the usual parent-child dynamic. Duffy explores how <strong>motherhood transformed</strong> her mother's identity.</p>
+<h3>Detailed Poet Context</h3>
+<p><strong>Carol Ann Duffy (born 1955)</strong> was the first woman and first openly LGBTQ+ person to be appointed Poet Laureate. This poem imagines her mother's life before the speaker was born — a time of youth, glamour and freedom in 1950s Glasgow. The title's possessive "Mine" is deliberately provocative: the child claims ownership of the mother, reversing the usual parent-child dynamic. Duffy explores how motherhood transformed her mother's identity.</p>
+
+<p>Duffy's work frequently reconstructs and reimagines the lives of others — particularly women whose experiences have been overlooked or undervalued. "Before You Were Mine" uses vivid sensory language to resurrect a version of her mother that the speaker never knew, creating a complex emotional landscape where admiration, envy, loss, and love intertwine.</p>
+
+<div class="key-term"><strong>Possession and Identity:</strong> The poem explores how relationships define us and how becoming a mother changed the speaker's mother's sense of self.</div>
 
 <h3>Form &amp; Structure</h3>
 <ul>
@@ -1456,6 +1641,35 @@ export const aqaLoveRelationshipsCourse: CourseData = {
   <li><strong>Direct address</strong> throughout — "you" — creates intimacy, as if the speaker is talking directly to her mother (or to a photograph).</li>
   <li>The <strong>present tense</strong> is used for past events, making the mother's youth feel vivid and alive rather than distant.</li>
 </ul>
+
+<h3>Structural Analysis</h3>
+<p><strong>Three Time Periods:</strong> The poem moves between the mother's youth (before birth), early childhood memories, and the present, showing how the speaker reconstructs her mother's past.</p>
+
+<p><strong>Countdown Structure:</strong> "I'm ten years away from the corner you turn" — the speaker counts down to her own birth. She is a presence approaching from the future, about to change her mother's life forever.</p>
+
+<p><strong>Present Tense for Past Events:</strong> Using present tense for past events makes the mother's youth feel vivid and alive rather than distant history.</p>
+
+<h3>Line-by-Line Analysis</h3>
+<p><strong>Stanza 1, Lines 1–2:</strong> "I'm ten years away from the corner you turn" — The speaker counts down to her own birth. "The corner you turn" suggests fate and inevitability. The child is a presence approaching from the future.</p>
+
+<p><strong>Stanza 1, Line 3:</strong> "your polka-dot dress blows round your legs" — A vivid, cinematic image evoking Marilyn Monroe and 1950s glamour. Suggests freedom, beauty, and sensuality.</p>
+
+<p><strong>Stanza 2, Line 2:</strong> "the decade ahead of my loud, possessive yell" — The baby's first cry is a <strong>"possessive yell"</strong>. From the moment of birth, the child claims the mother. <strong>"Loud"</strong> and <strong>"possessive"</strong> acknowledge the child's arrival as an intrusion.</p>
+
+<p><strong>Stanza 3, Line 3:</strong> "you reckon it's worth it" — Colloquial language. The mother calculates whether motherhood was "worth it." The speaker is not certain of the answer.</p>
+
+<p><strong>Stanza 4, Line 1:</strong> "stamping stars from the pavement" — A magical, celebratory image. The mother's dancing creates stars — she is a figure of light and energy.</p>
+
+<h3>Technique Identification &amp; Effect Analysis</h3>
+<table border="1">
+<tr><th>Technique</th><th>Example</th><th>Effect</th></tr>
+<tr><td><strong>Possessive Language (Title &amp; Throughout)</strong></td><td>"Before You Were Mine"</td><td>Inverts parent-child dynamics. The child claims ownership, reversing usual relations.</td></tr>
+<tr><td><strong>Vivid Sensory Imagery</strong></td><td>"polka-dot dress blows"</td><td>Resurrects the mother as a vivid, tangible presence. Makes the past alive.</td></tr>
+<tr><td><strong>Direct Address ("you")</strong></td><td>"your polka-dot dress"</td><td>Creates intimacy, as if the speaker is talking directly to her mother (or a photograph).</td></tr>
+<tr><td><strong>Cultural Reference</strong></td><td>"Marilyn"</td><td>Links mother to glamour and fame. Also carries sadness — Monroe's life ended tragically.</td></tr>
+<tr><td><strong>Present Tense for Past</strong></td><td>"stamping stars"</td><td>Makes the mother's youth feel immediate and present rather than safely distant.</td></tr>
+<tr><td><strong>Free Verse with Colloquialism</strong></td><td>"you reckon it's worth it"</td><td>Conversational tone makes the poem feel like genuine reflection rather than formal composition.</td></tr>
+</table>
 
 <h3>Key Themes</h3>
 <ul>
@@ -1490,6 +1704,27 @@ export const aqaLoveRelationshipsCourse: CourseData = {
 
 <div class="text-extract">"Even then I wanted the bold girl"<div class="source">Stanza 4</div></div>
 <p>The speaker projects desire backwards in time — she wanted this glamorous version of her mother even before she existed. <strong>"Bold"</strong> suggests confidence and daring, qualities the speaker admires and perhaps feels motherhood suppressed.</p>
+
+<h3>Grade 9 Model Paragraphs</h3>
+
+<p><strong>Model Paragraph 1: Reconstruction &amp; Loss</strong></p>
+<p>"Duffy reconstructs her mother as a vivid, glamorous young woman, yet the poem is fundamentally about loss. The speaker imagines a version of her mother she never knew — the "bold girl" dancing in Glasgow before motherhood. The title's possessive 'Mine' is painfully ironic: by claiming ownership of her mother, the speaker acknowledges that the mother existed as a full person before the speaker's existence. The vivid imagery — "polka-dot dress," "stamping stars from the pavement" — resurrects the mother with such vividness that we almost believe the speaker witnessed these moments, even though she couldn't have. This creates a poignant gap between the speaker's longing for a past she never experienced and the mother she actually knows."</p>
+
+<p><strong>Model Paragraph 2: Possession &amp; Reversal</strong></p>
+<p>"The poem's central conceit is that the speaker 'possesses' her mother in the past tense — 'Before You Were Mine.' This deliberately reverses normal parent-child relationships. Rather than the mother claiming the child as hers, the child claims the mother as hers, but only in retrospect, in imagination. The "decade ahead of my loud, possessive yell" shows the child's birth as an invasion, an interruption of the mother's freedom. Yet the speaker's tone is not accusatory but sympathetic and admiring. She recognizes that by being born, she transformed her mother's life irreversibly. The poem explores the complicated guilt and gratitude inherent in parent-child relationships, where love is entangled with the loss of freedom."</p>
+
+<h3>Key Quotation Bank for Essays</h3>
+<ul>
+  <li>"I'm ten years away from the corner you turn" — Countdown to own birth</li>
+  <li>"your polka-dot dress blows round your legs" — Marilyn Monroe-esque glamour</li>
+  <li>"the decade ahead of my loud, possessive yell" — Birth as intrusion</li>
+  <li>"you reckon it's worth it" — Mother's uncertain calculation of motherhood</li>
+  <li>"stamping stars from the pavement" — Mother's vibrancy and joy</li>
+  <li>"Even then I wanted the bold girl" — Speaker's projection and longing</li>
+  <li>"Before You Were Mine" — Title's possessive reversal</li>
+  <li>"I'm in the gap between your yesterdays / and you" — Speaker's impossible position</li>
+  <li>"Marilyn" — Reference to glamour and tragedy</li>
+</ul>
 
 <h3>Comparison Links</h3>
 <ul>

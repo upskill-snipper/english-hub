@@ -160,9 +160,9 @@ const dramaProseModules: CourseModule[] = [
   {
     id: 'iglit-dp-m2',
     title: 'Extract-Based Essay Technique',
-    duration: '55 min',
+    duration: '2 hours',
     content: `
-<h2>Mastering the Extract-Based Essay</h2>
+<h2>Mastering the Extract-Based Essay: Complete Guide</h2>
 
 <p>Many questions on the Edexcel IGCSE Literature paper are <strong>extract-based</strong>. You are given a printed passage from your set text and asked to use it as a starting point for your response. This format requires a specific set of skills that differ from a purely discursive essay. Mastering extract-based technique is one of the fastest ways to improve your Literature grade.</p>
 
@@ -258,20 +258,109 @@ const dramaProseModules: CourseModule[] = [
 <p>This timing ensures you have enough time to develop your points fully without rushing the conclusion or skipping the proofreading stage, which is essential for AO4 marks.</p>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> Proofreading is not optional. AO4 marks for spelling, punctuation and grammar are available on every response. Two minutes of careful checking can gain you several marks that cost nothing in terms of analytical skill.</div>
+
+<h3>Worked Example: Extract-Based Response (An Inspector Calls)</h3>
+
+<div class="example-box">
+<strong>Question: How does Priestley use this extract to explore the theme of responsibility? Use the extract and your understanding of the play as a whole.</strong>
+
+<p><strong>Extract (Inspector's final speech):</strong> "We are all responsible for each other... each of you helped to kill her. And I tell you that the time will soon come when, if men will not learn that lesson, then they will be taught it in fire and blood and anguish..."</p>
+
+<p><strong>Candidate Response (Opening Paragraph):</strong></p>
+
+<p>Priestley positions the Inspector as a moral catalyst who forces his audience — both on stage and in the theatre — to confront uncomfortable truths about collective responsibility. This final speech encapsulates the play's central thesis: that individual actions have social consequences, and that modern society's tendency to compartmentalise guilt into "not my problem" is both morally bankrupt and politically dangerous. Through the Inspector's increasingly aggressive rhetoric and apocalyptic warnings, Priestley suggests that responsibility is not optional — it is a binding human imperative.</p>
+
+<p><strong>Extract Analysis Paragraph:</strong></p>
+
+<p>The repetition of "we are all responsible" operates as a hammer blow, rejecting the Birlings' attempts to individualise guilt. The use of the universal pronoun "we" is crucial: it moves from the specific (the Birlings' responsibility for Eva) to the collective (society's responsibility for its vulnerable members). The phrase appears twice in quick succession, creating rhetorical insistence. Priestley then escalates the emotional register dramatically with the conditional clause: "if men will not learn that lesson, then they will be taught it in fire and blood and anguish." The vivid, brutal imagery of "fire and blood and anguish" functions as a warning — this is not gentle moral persuasion but a dire prophecy. In 1945, when the play was written, audiences would have heard this as an allusion to the devastation of World War II, making Priestley's argument urgent and historically grounded.</p>
+
+<p><strong>Wider Text Link:</strong></p>
+
+<p>This speech gains power from what precedes it. Throughout the play, Priestley has shown the Birlings and Gerald evading responsibility. Sheila and Eric, however, accept their guilt early, with Sheila's line "I know I'm one of the guilty ones" demonstrating a moral sensitivity that the older generation lacks. The contrast between the young and old suggests that Priestley believes responsibility must be learned, not inherited. The Inspector's final warning thus represents a last-ditch attempt to educate those beyond education — a sobering note on which to end.</p>
+</div>
+
+<h3>Grade 9 Insight: What Examiners Reward in Extract-Based Writing</h3>
+
+<div class="grade9-box">
+<strong>Top-band responses typically feature:</strong>
+<ul>
+<li><strong>Embedded quotations:</strong> Rather than quoting whole sentences, top candidates embed single powerful words or short phrases into flowing sentences. "The Inspector's insistence that 'we are all responsible' operates as..." is stronger than quoting 15 words in isolation.</li>
+<li><strong>Layered analysis:</strong> Moving beyond identifying a technique to exploring <em>why</em> the writer chose it. "The repetition forces us to abandon the comfortable fiction of individual guilt" shows understanding of authorial intent and reader effect.</li>
+<li><strong>Seamless transitions:</strong> Top essays do not section off the extract from wider text — they use the extract as a launching point. "This moment encapsulates a pattern established earlier when..." shows integration.</li>
+<li><strong>Precision of terminology:</strong> Using precise terms like "dramatic monologue," "epistrophasis," or "tragic irony" when appropriate, but never as decoration. Terms must be earned through context and serve the analysis.</li>
+<li><strong>Conceptual throughline:</strong> Every paragraph connects to the central argument. If the question is about "responsibility," every point should illuminate what Priestley means by responsibility.</li>
+</ul>
+</div>
+
+<h3>Quotation Bank for Extract-Based Analysis</h3>
+
+<div class="quotation-bank">
+<strong>Useful phrases for introducing extract analysis:</strong>
+<ul>
+<li>"The extract crystallises the play's central concern with..."</li>
+<li>"This moment exemplifies Priestley's technique of using..."</li>
+<li>"The language here is particularly revealing, as..."</li>
+<li>"The phrasing shifts from ... to ..., signalling a change in..."</li>
+</ul>
+
+<strong>Useful phrases for making wider text links:</strong>
+<ul>
+<li>"This echoes an earlier moment in Act [X] where..."</li>
+<li>"By contrast, in the play's opening, we see..."</li>
+<li>"This statement stands in sharp contrast to ... 's earlier assertion that..."</li>
+<li>"The Inspector develops this argument progressively throughout the play..."</li>
+</ul>
+</div>
+
+<h3>Exam Technique: Annotation in Action</h3>
+
+<p>When you receive an extract in the exam, you should annotate it within the first 5 minutes. Here is what annotation looks like for an actual Macbeth extract:</p>
+
+<div class="annotation-example">
+<p><strong>Original text:</strong> "Life's but a walking shadow, a poor player that struts and frets his hour upon the stage and then is heard no more."</p>
+
+<p><strong>Annotated version:</strong></p>
+<ul>
+<li><strong>Circled:</strong> "walking shadow" — metaphor suggesting insubstantiality, loss of identity</li>
+<li><strong>Underlined:</strong> "struts and frets" — alliteration, suggests agitation and performance</li>
+<li><strong>Margin note:</strong> "Theatre imagery = life is performance, artifice? Macbeth sees himself as acting a role?"</li>
+<li><strong>Marked:</strong> "is heard no more" — silence, oblivion, death</li>
+</ul>
+</div>
+
+<h3>Model Answer Structure</h3>
+
+<p>A strong extract-based answer follows this structure:</p>
+<table>
+<tr><td><strong>Opening (3-4 sentences)</strong></td><td>Establish thesis, situate extract, signal argument</td></tr>
+<tr><td><strong>Extract analysis 1 (4-5 sentences)</strong></td><td>Focus on 1-2 techniques, analyse effects</td></tr>
+<tr><td><strong>Extract analysis 2 + wider link (5-6 sentences)</strong></td><td>Another technique, connect to different scene</td></tr>
+<tr><td><strong>Wider text point (5-6 sentences)</strong></td><td>Develop theme using evidence from elsewhere</td></tr>
+<tr><td><strong>Conclusion (2-3 sentences)</strong></td><td>Synthesise argument, final evaluative comment</td></tr>
+</table>
+
+<h3>Common Errors and How to Avoid Them</h3>
+
+<table>
+<tr><td><strong>Narrative retelling</strong></td><td>"The Inspector arrives and exposes the truth"</td><td>Always explain <em>why</em> and <em>how</em>, not just <em>what</em></td></tr>
+<tr><td><strong>Vague language</strong></td><td>"This shows the character is guilty"</td><td>Name the specific technique: "The hesitant phrasing reveals..."</td></tr>
+<tr><td><strong>Abandoned extract</strong></td><td>Extract analysis in first paragraph only</td><td>Return to extract multiple times throughout</td></tr>
+<tr><td><strong>Feature-spotting without effect</strong></td><td>"There is personification here"</td><td>"The personification suggests..."</td></tr>
+</table>
+
+<h3>Practice Task</h3>
+
+<p>Take a set text you are studying. Choose any extract (2-3 paragraphs or 10-15 lines). Write a 300-word response to the prompt: "How does the writer present [theme] in this extract and in the text as a whole?" Time yourself: 25 minutes. Aim to:
+<ul>
+<li>Annotate in 5 minutes</li>
+<li>Plan in 3 minutes</li>
+<li>Write in 15 minutes</li>
+<li>Proofread in 2 minutes</li>
+</ul>
+</p>
 `,
     quiz: [
-      {
-        id: 'iglit-dp-m2-q1',
-        question: 'What is the key two-part demand in most extract-based questions?',
-        options: [
-          'Analyse the extract and compare it to another text',
-          'Summarise the extract and then give your opinion',
-          'Analyse the extract and discuss the wider text',
-          'Identify literary devices and list contextual facts',
-        ],
-        correct: 2,
-        explanation: 'Extract-based questions typically ask you to analyse the given passage AND discuss the theme/character in the wider text. Both parts must be addressed to access the highest mark bands.',
-      },
+
       {
         id: 'iglit-dp-m2-q2',
         question: 'Why should you avoid working through an extract line by line from top to bottom?',
@@ -317,100 +406,180 @@ const dramaProseModules: CourseModule[] = [
   {
     id: 'iglit-dp-m3',
     title: 'Character Analysis Skills',
-    duration: '55 min',
+    duration: '2 hours',
     content: `
-<h2>Analysing Characters in Set Texts</h2>
+<h2>Mastering Character Analysis for IGCSE Literature</h2>
 
-<p>Character questions are among the most common on the IGCSE Literature paper. However, the exam does not want you to describe characters as though they were real people — it wants you to analyse them as <strong>constructs</strong> created by the writer for specific purposes. This distinction is crucial and is the single biggest factor separating mid-range responses from top-band answers.</p>
+<p>Character analysis is one of the most frequently tested skills in IGCSE Literature. Whether you are asked directly about a character ("Analyse how Macbeth's character develops") or must analyse character as part of a broader theme question, you must be able to dissect motivation, methods, and change with precision.</p>
 
-<div class="key-term"><strong>Key Term: Character as Construct</strong> — The idea that characters are deliberately created by writers to serve particular purposes — to embody themes, to create dramatic tension, to represent social groups or ideas. They are not real people but artistic tools.</div>
+<div class="key-term"><strong>Key Term: Dynamic Character</strong> — A character who undergoes significant internal change over the course of a text, revealing new dimensions or shifting their beliefs, values, or understanding.</div>
 
-<h3>The Writer's Craft: Why Characters Exist</h3>
-<p>Every character in a set text exists because the writer put them there for a reason. When you analyse a character, you should always be asking: <strong>What is the writer using this character to explore, challenge, or communicate?</strong></p>
+<h3>What Examiners Want to See in Character Analysis</h3>
 
-<p>Consider these different functions that characters can serve:</p>
+<p>Character analysis is <strong>not</strong> character description. Do not spend time recounting what a character does or what their background is. Instead, examiners reward:</p>
+
 <ul>
-  <li><strong>Embodying a theme:</strong> Lady Macbeth embodies the destructive nature of unchecked ambition and the subversion of gender roles.</li>
-  <li><strong>Creating dramatic tension:</strong> The Inspector in <em>An Inspector Calls</em> generates tension through his methodical questioning, which gradually dismantles the Birlings' complacency.</li>
-  <li><strong>Representing a social group or ideology:</strong> Mr Birling represents capitalist self-interest; Sheila represents the potential for social conscience in the younger generation.</li>
-  <li><strong>Acting as a foil:</strong> Banquo serves as a foil to Macbeth — both hear the witches' prophecy, but Banquo resists temptation while Macbeth succumbs.</li>
-  <li><strong>Providing a moral compass:</strong> Characters like Macduff or the Inspector function as moral benchmarks against which other characters are measured.</li>
+  <li><strong>Analysis of motivation:</strong> Why does the character act as they do? What drives them?</li>
+  <li><strong>Exploration of contradiction:</strong> Characters are complex. Show how they contain contradictions and how the writer reveals this.</li>
+  <li><strong>Evidence of development:</strong> How does the character change? Cite specific moments of transformation.</li>
+  <li><strong>Understanding of dramatic purpose:</strong> What does this character represent? What dramatic function do they serve in the wider text?</li>
+  <li><strong>Analysis of how the writer constructs character:</strong> Through dialogue, action, description, relationships with other characters.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Always refer to the writer by name. Write "Shakespeare presents Macbeth as..." or "Priestley uses the Inspector to..." rather than "Macbeth is..." or "The Inspector does...". This keeps your focus on the writer's craft and signals to the examiner that you understand characters are constructs.</div>
+<h3>Building a Character Profile for Study</h3>
 
-<h3>Tracking Character Development</h3>
-<p>Many characters change over the course of a text — this is called a <strong>character arc</strong>. Tracking how a character develops is essential for exam responses that discuss the "wider text".</p>
+<p>For each character you study, create a profile that goes beyond plot summary:</p>
 
-<p>For each major character, consider:</p>
+<table>
+<tr><td><strong>First Impression</strong></td><td>What is our initial sense of this character? What is Priestley's dramatic intention?</td></tr>
+<tr><td><strong>Core Values</strong></td><td>What does the character believe? What principles (or lack thereof) guide their actions?</td></tr>
+<tr><td><strong>Key Relationships</strong></td><td>Which relationships reveal most about the character? How do they treat different people?</td></tr>
+<tr><td><strong>Contradiction/Complexity</strong></td><td>Where does the character surprise us? Where do their actions contradict their stated values?</td></tr>
+<tr><td><strong>Turning Points</strong></td><td>What moments transform or reveal the character?</td></tr>
+<tr><td><strong>Final State</strong></td><td>How has the character changed by the end? What have they learned or failed to learn?</td></tr>
+<tr><td><strong>Dramatic Significance</strong></td><td>What larger themes or arguments does this character embody or challenge?</td></tr>
+</table>
+
+<h3>Techniques for Character Construction</h3>
+
+<p>Writers construct character through multiple layers. Analyse all of them:</p>
+
+<h4>1. Dialogue and Speech Patterns</h4>
+<p>How a character speaks reveals much. Consider:</p>
 <ul>
-  <li><strong>Introduction:</strong> How does the writer first present this character? What is our initial impression?</li>
-  <li><strong>Development:</strong> How does the character change in response to events? What causes these changes?</li>
-  <li><strong>Climax:</strong> What is the character's most significant moment? Where do they face their greatest challenge or make their most revealing choice?</li>
-  <li><strong>Resolution:</strong> Where does the character end up? Has the writer's purpose been fulfilled?</li>
+  <li><strong>Vocabulary choice:</strong> Does the character use formal or colloquial language? Does this change in different contexts?</li>
+  <li><strong>Sentence length:</strong> Short sentences can suggest anxiety or control. Long sentences can suggest eloquence or evasion.</li>
+  <li><strong>Repetition:</strong> What words or phrases does the character return to? This often reveals obsession or anxiety.</li>
+  <li><strong>Interruption patterns:</strong> In drama, who speaks first? Who gets interrupted? This reveals power dynamics.</li>
+  <li><strong>Silence:</strong> What does the character refuse to say?</li>
 </ul>
 
-<h3>Methods of Characterisation</h3>
-<p>Writers reveal character through a range of techniques. You need to be able to identify and analyse these in your essays:</p>
+<p><strong>Example:</strong> In <em>An Inspector Calls</em>, Mr. Birling's blustering, self-assured sentences ("A man has to look after himself and his own") stand in stark contrast to Sheila's increasingly hesitant, short responses as she feels guilt. The shift in language reveals moral awakening.</p>
 
-<h4>1. Dialogue</h4>
-<p>What a character says — and how they say it — reveals their personality, social status, emotional state, and relationships. Pay attention to:</p>
+<h4>2. Action and Behaviour</h4>
+<p>What a character <strong>does</strong> often reveals more than what they say.</p>
 <ul>
-  <li><strong>Register and vocabulary:</strong> Does the character use formal or informal language? Sophisticated or simple words?</li>
-  <li><strong>Speech patterns:</strong> Short, clipped sentences may suggest tension or authority. Long, flowing speeches may suggest confidence or emotional overflow.</li>
-  <li><strong>What is left unsaid:</strong> Pauses, interruptions, and silences can be as revealing as words.</li>
+  <li>Do their actions match their words?</li>
+  <li>How do they respond to pressure or crisis?</li>
+  <li>What choices do they make when no one is watching?</li>
 </ul>
 
-<h4>2. Action</h4>
-<p>What a character does tells us who they are. A character's choices — especially under pressure — reveal their true nature. Macbeth's decision to kill Duncan tells us more about his character than any soliloquy.</p>
-
-<h4>3. Stage Directions and Narration</h4>
-<p>In plays, stage directions control how we see characters. In novels, the narrator's descriptions shape our perception. These authorial interventions are deliberate and analysable.</p>
-
-<h4>4. Other Characters' Reactions</h4>
-<p>How other characters respond to an individual shapes our view of them. Duncan's praise of Macbeth as "noble" and "valiant" establishes his reputation before we see him succumb to ambition, making the fall more dramatic.</p>
-
-<h4>5. Symbolism and Imagery</h4>
-<p>Writers often associate characters with recurring images or symbols. Lady Macbeth's association with blood and darkness, for example, links her to guilt and moral corruption throughout the play.</p>
-
-<div class="key-term"><strong>Key Term: Foil</strong> — A character who contrasts with another character, highlighting particular qualities. Banquo is a foil to Macbeth: both are brave soldiers who hear the witches' prophecy, but their contrasting responses highlight Macbeth's moral weakness.</div>
-
-<h3>Writing About Characters in the Exam</h3>
-<p>When writing about a character, structure your paragraphs around <strong>what the writer is doing</strong>, not around retelling what the character does:</p>
-
-<p><strong>Weak:</strong> "Macbeth kills Duncan because he is ambitious and his wife persuades him. He then becomes king but feels guilty about it."</p>
-
-<p><strong>Strong:</strong> "Shakespeare presents Macbeth's ambition as a destructive force that corrodes his moral integrity. The metaphor of 'vaulting ambition, which o'erleaps itself' suggests an energy that exceeds all rational bounds — the verb 'o'erleaps' connoting a reckless, uncontrolled momentum that foreshadows Macbeth's inevitable fall. By framing ambition as something that acts upon Macbeth rather than something he consciously chooses, Shakespeare raises the provocative question of whether Macbeth is agent or victim of his own desires."</p>
-
-<p>Notice how the strong response names the writer, identifies a technique (metaphor), analyses specific words ("o'erleaps"), and explores the effect on the audience's understanding.</p>
-
-<h3>Character Analysis Checklist</h3>
-<p>Before submitting a character-focused essay, check that you have:</p>
+<h4>3. Relationships and Interactions</h4>
+<p>Characters reveal themselves through how they treat others:</p>
 <ul>
-  <li>Referred to the writer by name throughout</li>
-  <li>Analysed <em>how</em> the character is presented, not just <em>what</em> they do</li>
-  <li>Discussed the character's function or purpose in the text</li>
-  <li>Tracked development across the text (not just one scene)</li>
-  <li>Included close analysis of specific language choices</li>
-  <li>Considered the character in relation to other characters (foils, contrasts)</li>
-  <li>Integrated relevant context where it illuminates meaning</li>
+  <li>Are they the same person with everyone, or do they change?</li>
+  <li>Who do they respect or fear?</li>
+  <li>What does their treatment of vulnerable characters tell us?</li>
 </ul>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Treating characters as real people and making psychological speculations ("Macbeth probably felt anxious because of his childhood"). Characters are constructs — discuss what the writer intended and what effects are created, not what the character "probably felt".</div>
+<h4>4. Narrative Comment and Description</h4>
+<p>In novels, the narrator or stage directions offer guidance on character:</p>
+<ul>
+  <li>What does the narrator directly tell us about a character's motivation?</li>
+  <li>What do stage directions reveal about physical movement, gestures, or appearance?</li>
+</ul>
+
+<h3>Worked Example: Analysing Macbeth's Character Development</h3>
+
+<div class="example-box">
+<strong>Question: How does Shakespeare present Macbeth's character development throughout the play?</strong>
+
+<p><strong>Opening Paragraph (Establishing Thesis):</strong></p>
+
+<p>Shakespeare constructs Macbeth as a fundamentally decent soldier corrupted by ambition, and the play charts his descent from "noble" warrior to paranoid tyrant. This is not a character who becomes evil overnight; rather, Shakespeare shows how moral compromise, once begun, becomes impossible to stop. Each murder hardens Macbeth, making the next act of violence easier — until he reaches a point of numbness where even news of his wife's death provokes only philosophical resignation. The tragedy lies not in Macbeth's evil, but in his awareness of his own destruction.</p>
+
+<p><strong>Paragraph 1: The Soldier vs. The Ambitious Man</strong></p>
+
+<p>In Act 1, Macbeth is described by the Captain as one who "carved out his passage" — a warrior defined by martial prowess, not political intrigue. The witches' prophecy does not create his ambition; rather, it activates latent desire. Critically, Shakespeare shows Macbeth's initial resistance: "I have no spur to prick the sides of my intent, but only vaulting ambition." This famous phrase reveals crucial self-awareness. Macbeth <em>knows</em> he is about to do wrong. He is not a naive tool of fate. Lady Macbeth must manipulate him, questioning his manhood ("Are you a man?") to push him toward murder. This suggests that Macbeth's fundamental nature is good — he must be psychologically coerced into evil.</p>
+
+<p><strong>Paragraph 2: The Corrupted Will</strong></p>
+
+<p>After the murder of Duncan, Macbeth's language shifts. He speaks of his "terrible dreams" and "tortured mind." Yet significantly, he does not stop. Instead of repenting, he commits further murders — Banquo, Macduff's family. With each act, his language becomes shorter, more staccato, more desensitised. By Act 5, he delivers the nihilistic "Tomorrow, and tomorrow, and tomorrow" soliloquy. This is not the same man who felt genuine horror at his first crime. Shakespeare reveals how repetition of evil breeds apathy. The rhythm of "Tomorrow, and tomorrow, and tomorrow" — the repetition itself — mirrors the relentless, meaningless momentum of his tyranny. He has become the very monster he feared.</p>
+
+<p><strong>Paragraph 3: The Isolation of Guilt</strong></p>
+
+<p>Lady Macbeth gradually disappears from the play after Act 3, leaving Macbeth increasingly isolated. He confides in no one, trusts no one. The witches' security ("None of woman born shall harm Macbeth") offers false comfort, not genuine counsel. By the final acts, Macbeth is friendless. This isolation is both punishment and consequence of his crimes. Shakespeare suggests that guilt isolates; it cuts us off from human connection. When Macbeth hears of Lady Macbeth's death, his response is chillingly empty: "She should have died hereafter." Not sorrow — indifference. This is Macbeth at the nadir of moral corruption.</p>
+
+<p><strong>Conclusion:</strong></p>
+
+<p>Macbeth's character arc is a tragedy of corruption, not of inherent evil. Shakespeare's genius lies in showing us a good man, a soldier, a husband, step by step sacrificing his humanity to ambition. We understand why he acts, even as we judge his actions. By the end, he recognises his damnation: "I am in blood stepped in so far..." He cannot go back. This is the profound tragedy of Shakespeare's vision.</p>
+</div>
+
+<h3>Grade 9 Insight: Advanced Character Analysis</h3>
+
+<div class="grade9-box">
+<strong>Top-band responses to character questions typically include:</strong>
+
+<ul>
+<li><strong>Analysis of paradox:</strong> Best candidates show how characters contain contradictions. "Macbeth is simultaneously the victim of ambition and its architect — Shakespeare presents him as neither wholly responsible nor wholly innocent."</li>
+
+<li><strong>Attention to dramatic irony:</strong> Characters often lack self-awareness. "Macbeth believes himself secure because of the witches' prophecy, but this very belief blinds him to Macduff's significance." Show how the audience understands more than the character.</li>
+
+<li><strong>Precision about methods:</strong> "Shakespeare constructs Macbeth's descent through..." rather than "Macbeth's character develops." Naming the technique is essential.</li>
+
+<li><strong>Comparative frameworks:</strong> Compare characters to understand them better. Macbeth's descent is more tragic precisely because Lady Macbeth's guilt breaks her mentally. The contrast illuminates both.</li>
+
+<li><strong>Synthesis with themes:</strong> Character analysis serves larger arguments. Don't analyse Macbeth in isolation — show how his development embodies Shakespeare's exploration of ambition, conscience, or power.</li>
+</ul>
+</div>
+
+<h3>Character Quotation Bank</h3>
+
+<div class="quotation-bank">
+<strong>Useful analytical phrases for character writing:</strong>
+
+<ul>
+<li>"The character's transformation is evident in the shift from ... to ..."</li>
+<li>"This moment crystallises the character's fundamental contradiction between..."</li>
+<li>"The writer constructs the character as both sympathetic and culpable through..."</li>
+<li>"The character's self-awareness (or lack thereof) is revealed through..."</li>
+<li>"This choice isolates the character from ... and reveals..."</li>
+<li>"The contrast with another character's actions exposes..."</li>
+</ul>
+
+<strong>Useful character-related quotations to memorise (text-specific):</strong>
+
+For <em>An Inspector Calls</em>:
+<ul>
+<li>"I tell you that the time will soon come when, if men will not learn that lesson..." (Inspector on collective responsibility)</li>
+<li>"I'm not very pleased about it" (Sheila on learning of Eva's death — shows moral sensitivity)</li>
+<li>"A man has to look after himself and his own" (Mr. Birling on individualism)</li>
+</ul>
+</div>
+
+<h3>Character Analysis Practice: The Three-Layer Approach</h3>
+
+<p>To deeply analyse a character, work through three layers:</p>
+
+<table>
+<tr><td><strong>Layer 1: What They Say</strong></td><td>Analyse their dialogue. What can we infer from their word choice, tone, what they refuse to say?</td></tr>
+<tr><td><strong>Layer 2: What They Do</strong></td><td>Analyse their actions and choices. Do they match their words? What do their actions reveal about true values?</td></tr>
+<tr><td><strong>Layer 3: What Others Say About Them</strong></td><td>Analyse how other characters and narrators describe them. Is this reliable? Do we trust this perspective?</td></tr>
+</table>
+
+<h3>Avoiding Character Analysis Pitfalls</h3>
+
+<div class="common-mistake"><strong>Common Mistake:</strong> "Macbeth is ambitious and evil." This is description, not analysis. Instead: "Shakespeare constructs Macbeth's ambition as a destructive force that corrupts his initially noble character, suggesting that unchecked desire inevitably leads to moral collapse."</div>
+
+<div class="common-mistake"><strong>Common Mistake:</strong> Treating character in isolation. Always connect character to theme. If analysing Macbeth, connect to the play's exploration of power, ambition, fate, or conscience.</div>
+
+<div class="common-mistake"><strong>Common Mistake:</strong> Over-psychologising. You are not writing psychology essays — analyse what the text shows, not what you imagine might be true of a character's mental state.</div>
+
+<h3>Model Essay Structure for Character Questions</h3>
+
+<table>
+<tr><td><strong>Opening</strong></td><td>Thesis statement about the character's essence and arc</td></tr>
+<tr><td><strong>Paragraph 1</strong></td><td>The character's initial state and motivations</td></tr>
+<tr><td><strong>Paragraph 2</strong></td><td>A significant turning point or contradiction</td></tr>
+<tr><td><strong>Paragraph 3</strong></td><td>How other characters reveal them or contrast with them</td></tr>
+<tr><td><strong>Paragraph 4</strong></td><td>The character's final state or lesson</td></tr>
+<tr><td><strong>Conclusion</strong></td><td>Synthesise their arc; explain dramatic/thematic significance</td></tr>
+</table>
 `,
     quiz: [
-      {
-        id: 'iglit-dp-m3-q1',
-        question: 'What does it mean to treat a character as a "construct"?',
-        options: [
-          'To describe their personality as if they were a real person',
-          'To recognise they are deliberately created by the writer to serve specific purposes',
-          'To focus only on their physical appearance',
-          'To compare them with real historical figures',
-        ],
-        correct: 1,
-        explanation: 'Treating a character as a construct means recognising that the writer created them deliberately to embody themes, generate tension, represent ideas, or serve other artistic purposes. This approach keeps analysis focused on the writer\'s craft.',
-      },
+    quiz: [
+
+    quiz: [
       {
         id: 'iglit-dp-m3-q2',
         question: 'What is a "foil" character?',
@@ -456,103 +625,169 @@ const dramaProseModules: CourseModule[] = [
   {
     id: 'iglit-dp-m4',
     title: 'Theme Analysis',
-    duration: '50 min',
+    duration: '2 hours',
     content: `
-<h2>Analysing Themes Across Set Texts</h2>
+<h2>Mastering Theme Analysis for IGCSE Literature</h2>
 
-<p>A <strong>theme</strong> is a central idea, message, or concern that runs through a literary text. Themes are not stated explicitly by the writer — they emerge through the interplay of characters, events, language, and structure. Learning to identify, track, and analyse themes is one of the most important skills for IGCSE Literature, because theme-based questions appear on virtually every paper.</p>
+<p>Themes are the central ideas that a text explores — not plot points, not settings, but the fundamental human questions the writer is asking. Whether it is guilt, ambition, responsibility, power, or morality, your ability to identify, trace, and analyse themes is essential to achieving high marks.</p>
 
-<div class="key-term"><strong>Key Term: Theme</strong> — A recurring idea or message that the writer explores through the text. Themes are abstract concepts — such as power, guilt, responsibility, love, justice — that gain meaning through the specific way the writer handles them.</div>
+<div class="key-term"><strong>Key Term: Theme</strong> — An idea or concern that recurs throughout a text, developed through character, plot, language, and structure. A theme is abstract; a symbol is concrete. "Death" is a theme; "the ghost of Hamlet's father" is a symbol that embodies that theme.</div>
 
-<h3>Themes vs Topics</h3>
-<p>Students often confuse themes with topics. A <strong>topic</strong> is a subject area (e.g., "war", "family"). A <strong>theme</strong> is what the writer <em>says</em> about that subject — their message or exploration.</p>
+<h3>Identifying and Defining Themes</h3>
+
+<p>A theme must be abstract enough to be universal, but specific enough to be meaningful. Compare:</p>
+
 <ul>
-  <li><strong>Topic:</strong> Ambition</li>
-  <li><strong>Theme:</strong> Shakespeare presents ambition as a destructive force that, when unchecked by moral conscience, leads to psychological disintegration and political chaos.</li>
+  <li><strong>Too vague:</strong> "Good vs. evil" — this is too broad. Nearly every text involves this.</li>
+  <li><strong>Too specific:</strong> "Macbeth murders people" — this is plot, not theme.</li>
+  <li><strong>Just right:</strong> "Unchecked ambition corrupts the moral conscience and leads to self-destruction" — this is specific to <em>Macbeth</em> and captures a genuine thematic concern.</li>
 </ul>
-<p>Notice how the theme is an <strong>argument</strong> about the topic. The exam rewards you for articulating what the writer is communicating about a subject, not just for identifying that the subject exists in the text.</p>
+
+<h3>The Writer's Argument About a Theme</h3>
+
+<p>Every text takes a position on its themes. Your job is to identify that argument and analyse how the writer persuades us of it.</p>
+
+<p><strong>Example:</strong> Both <em>Macbeth</em> and <em>An Inspector Calls</em> explore ambition, but they present different arguments:</p>
+
+<ul>
+  <li><em>Macbeth:</em> "Personal ambition, if it overrides moral conscience, destroys the individual from within."</li>
+  <li><em>An Inspector Calls:</em> "Social irresponsibility — the failure to consider how our actions affect others — perpetuates injustice."</li>
+</ul>
+
+<p>These are related but distinct arguments. A strong theme analysis identifies the specific argument the writer makes.</p>
 
 <h3>How Writers Develop Themes</h3>
-<p>Themes are developed through every element of a text. When analysing a theme, consider how it is communicated through:</p>
 
-<h4>1. Character</h4>
-<p>Characters often embody or explore themes. Macbeth embodies destructive ambition; the Inspector embodies social responsibility. Track how the theme is revealed through what characters say, do, and experience.</p>
+<p>Themes are not abstract ideas floating in space — they are built through concrete literary choices:</p>
 
-<h4>2. Plot and Structure</h4>
-<p>The sequence of events develops themes. The fact that Macbeth's power grows while his mental stability collapses communicates the theme that power gained through immoral means is self-destructive. Structural choices — such as the Inspector's exit and the final phone call in <em>An Inspector Calls</em> — reinforce thematic messages.</p>
+<h4>1. Through Character and Their Choices</h4>
+<p>Characters embody themes. Macbeth's descent embodies the theme of ambition's corruption. Sheila Birling's moral awakening embodies responsibility.</p>
 
-<h4>3. Language and Imagery</h4>
-<p>Recurring images, metaphors, and motifs carry thematic weight. Blood imagery in <em>Macbeth</em> develops the theme of guilt; light and dark imagery develops the theme of moral corruption. When you spot a pattern of imagery, you have found a <strong>motif</strong> that the writer is using to communicate a theme.</p>
+<h4>2. Through Imagery and Symbolism</h4>
+<p>Recurring images carry thematic weight. In <em>Macbeth</em>, blood imagery develops the theme of guilt — blood cannot be washed away, just as guilt cannot be erased.</p>
 
-<div class="key-term"><strong>Key Term: Motif</strong> — A recurring image, symbol, or idea that appears throughout a text and contributes to its themes. Blood is a motif in <em>Macbeth</em>; the telephone is a motif in <em>An Inspector Calls</em>.</div>
+<h4>3. Through Dramatic Structure</h4>
+<p>How a writer structures events carries meaning. Priestley structures <em>An Inspector Calls</em> as a single evening, creating pressure and inevitability. The compressed timeframe suggests that moral accountability is inescapable.</p>
 
-<h4>4. Setting and Atmosphere</h4>
-<p>Settings often reflect or contrast with themes. The claustrophobic Birling dining room in <em>An Inspector Calls</em> mirrors the family's insular worldview. The storm and darkness that accompany Duncan's murder in <em>Macbeth</em> reflect the disruption of natural order.</p>
+<h4>4. Through Dialogue and Language</h4>
+<p>What characters say and how they say it reveal thematic concerns. Mr. Birling's confident assertions about the future are undercut by dramatic irony, suggesting the theme that individual confidence in controlling destiny is false.</p>
 
-<h4>5. Context</h4>
-<p>Historical and social context can illuminate why a writer chose to explore particular themes. Priestley's socialism shapes his exploration of responsibility; Shakespeare's Jacobean context shapes his treatment of kingship and the supernatural.</p>
+<h4>5. Through Juxtaposition</h4>
+<p>Placing contrasting characters or scenes next to each other develops themes. Sheila and Mr. Birling's contrasting responses to the Inspector reveal the play's argument about responsibility.</p>
 
-<h3>Structuring a Theme-Based Essay</h3>
-<p>Theme questions require you to trace an idea across the whole text, not just analyse one scene. A strong approach is to organise your essay around <strong>how the theme develops</strong>:</p>
+<h3>Worked Example: Theme Analysis (An Inspector Calls)</h3>
 
-<ol>
-  <li><strong>Introduction:</strong> State your conceptualised argument about what the writer communicates through this theme.</li>
-  <li><strong>Early in the text:</strong> How is the theme introduced? What is the starting point?</li>
-  <li><strong>Development:</strong> How does the theme deepen or complicate as events unfold?</li>
-  <li><strong>Climax:</strong> Where does the theme reach its most intense or significant expression?</li>
-  <li><strong>Resolution:</strong> How is the theme resolved — or deliberately left unresolved — by the end?</li>
-  <li><strong>Conclusion:</strong> Synthesise your argument. What is the writer's overall message about this theme?</li>
-</ol>
+<div class="example-box">
+<strong>Question: Analyse how Priestley develops the theme of social responsibility throughout An Inspector Calls.</strong>
 
-<p>This chronological approach works well because it naturally demonstrates your knowledge of the whole text and shows how the writer develops ideas over time.</p>
+<p><strong>Thesis Paragraph:</strong></p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> The strongest responses go beyond describing <em>what</em> themes are present and explore <em>how</em> the writer uses them to communicate a message to the audience. Always ask: "What is the writer saying about this theme, and why does it matter?"</div>
+<p>Priestley develops the theme of social responsibility as his play's ideological core, using the Inspector as a physical manifestation of collective conscience. Through structural choices, dialogue, and character development, he argues that modern society's fragmentation into isolated individual concerns is morally catastrophic. Each member of the Birling household is complicit in Eva Smith's death, not because each directly caused it, but because society systematically fails its most vulnerable members. The play becomes a moral argument disguised as a murder mystery.</p>
 
-<h3>Connecting Themes</h3>
-<p>Themes do not exist in isolation — they intersect and overlap. The ability to connect themes demonstrates sophisticated understanding and can elevate your response to the highest mark bands. For example:</p>
+<p><strong>Paragraph 1: Structure as Argument</strong></p>
+
+<p>The one-act, single-evening structure itself carries thematic weight. Unlike traditional plays with multiple acts and time jumps, Priestley traps his characters (and audience) in an unbroken sequence of revelations. This compressed timeframe mirrors the Inspector's own method — he forces accountability to occur in real time, allowing no escape or evasion. The structure suggests that responsibility cannot be postponed or compartmentalised; it demands immediate confrontation. The very form of the play argues for Priestley's moral philosophy.</p>
+
+<p><strong>Paragraph 2: The Inspector as Moral Authority</strong></p>
+
+<p>The Inspector functions as a symbol of collective conscience. His entrance disrupts comfortable middle-class complacency. He does not accuse individuals; he reveals how individual actions accumulate into social harm. The famous speech — "We are all responsible for each other" — is the thematic statement of the play. Note that Priestley does not present this as one character's opinion; the Inspector's status is ambiguous (is he a real policeman? A ghost? A vision?), suggesting that responsibility is an objective moral truth, not a subjective opinion. The Inspector's otherworldly quality reinforces the theme: moral responsibility transcends individual personality or circumstance.</p>
+
+<p><strong>Paragraph 3: The Young vs. The Old</strong></p>
+
+<p>Sheila and Eric accept responsibility immediately ("I'm one of the guilty ones"), while Mr. and Mrs. Birling evade it. Priestley suggests that the younger generation understands responsibility intuitively, while the older generation — defined by individualism and self-interest — rejects it. This generational divide reinforces the theme: responsibility is a moral imperative that transcends class or personal benefit. Those who learn it (Sheila, Eric) achieve a kind of spiritual redemption; those who reject it (the parents, Gerald) remain trapped in moral blindness.</p>
+
+<p><strong>Paragraph 4: Eva Smith as Symbol</strong></p>
+
+<p>Eva Smith is barely a character — she is already dead before the play begins. Yet she is the play's moral centre. Priestley uses her absence to emphasise a thematic point: society ignores those it should protect. Eva's invisibility (she is not present, barely described) represents how society renders its most vulnerable members invisible. By making Eva the object of collective guilt, Priestley argues that responsibility extends to those society systematically marginalises. We are responsible for those we cannot see as much as for those we can.</p>
+
+<p><strong>Conclusion:</strong></p>
+
+<p>Through structure, characterisation, symbolism, and the Inspector's moral authority, Priestley constructs responsibility not as individual conscience but as social obligation. The play argues that modern society's fragmentation into private concerns is a moral failure with catastrophic consequences. Eva Smith's death is not a tragedy of individual malice but of collective indifference — a scathing critique of the world the play's original 1945 audience inhabited.</p>
+</div>
+
+<h3>Grade 9 Insight: Thematic Precision in Top-Band Answers</h3>
+
+<div class="grade9-box">
+<strong>High-achieving responses distinguish themselves by:</strong>
+
 <ul>
-  <li>In <em>Macbeth</em>: Ambition connects to power, which connects to guilt, which connects to the supernatural, which connects to fate vs free will.</li>
-  <li>In <em>An Inspector Calls</em>: Responsibility connects to class, which connects to gender, which connects to generational conflict.</li>
+<li><strong>Naming the theme precisely:</strong> Rather than "responsibility," top candidates articulate: "collective social responsibility as distinct from individual morality." Precision matters.</li>
+
+<li><strong>Identifying the writer's argument:</strong> "Shakespeare suggests that ambition, once unleashed, follows its own logic independent of the ambitious individual's will." This is more sophisticated than "ambition is bad."</li>
+
+<li><strong>Showing how multiple elements work together:</strong> "Priestley uses characterisation, structure, and dialogue to develop the theme — the compressed timeframe reflects the Inspector's moral pressure, while the generational divide in character response reinforces the message about responsibility."</li>
+
+<li><strong>Recognising thematic tension:</strong> The best analyses acknowledge that texts often complicate their own themes. "While the play argues for collective responsibility, the audience's individual judgment of the characters suggests that personal conscience cannot be entirely erased." This nuance shows sophisticated thinking.</li>
+
+<li><strong>Connecting theme to authorial context:</strong> Understanding that Priestley wrote in 1945, at a moment of post-war moral reckoning, helps explain why responsibility is his central concern. But this context enhances analysis; it doesn't replace it.</li>
+</ul>
+</div>
+
+<h3>Thematic Quotation Bank</h3>
+
+<div class="quotation-bank">
+<strong>Essential phrases for introducing thematic analysis:</strong>
+
+<ul>
+<li>"The play develops the theme of ... through..."</li>
+<li>"This moment encapsulates Priestley's argument that..."</li>
+<li>"The recurrence of [image/symbol] reinforces the theme that..."</li>
+<li>"The contrast between [character A] and [character B] illustrates the play's exploration of..."</li>
+<li>"Priestley uses [technique] to suggest that..."</li>
+<li>"The structural choice to [frame/compress/divide the action] develops the theme of..."</li>
 </ul>
 
-<p>When you make these connections explicit in your essay, you demonstrate that you understand the text as a complex, interconnected whole rather than a collection of separate ideas.</p>
+<strong>Text-specific thematic quotations:</strong>
 
-<h3>Using Quotations for Theme Analysis</h3>
-<p>When analysing themes, your quotations should be chosen for their thematic resonance, not just their relevance to character or plot. The best thematic quotations contain <strong>language that directly embodies the theme</strong>:</p>
-
-<p><strong>Theme: Guilt in Macbeth</strong></p>
-<div class="text-extract">"Will all great Neptune's ocean wash this blood / Clean from my hand?"<div class="source">Act 2, Scene 2</div></div>
-<p>This quotation is ideal for theme analysis because the imagery of blood and water directly embodies guilt as an indelible stain. The hyperbolic reference to "all great Neptune's ocean" suggests guilt on a cosmic scale that no earthly act can remedy.</p>
-
-<p><strong>Theme: Responsibility in An Inspector Calls</strong></p>
-<div class="text-extract">"We are members of one body. We are responsible for each other."<div class="source">Act 3</div></div>
-<p>This quotation articulates the play's central theme directly. The metaphor of "one body" fuses individual and collective identity, making the rejection of responsibility equivalent to self-harm.</p>
-
-<div class="common-mistake"><strong>Common Mistake:</strong> Listing themes without analysing them. Writing "The themes of Macbeth include ambition, guilt, power, and the supernatural" is a list, not analysis. For each theme, you must explain how the writer presents it and what message they communicate.</div>
-
-<h3>Practice: Theme-Tracking Table</h3>
-<p>For each set text, create a theme-tracking table with four columns:</p>
+From <em>An Inspector Calls</em>:
 <ul>
-  <li><strong>Theme</strong> — Name the theme.</li>
-  <li><strong>Key moments</strong> — List 3–4 scenes or passages where the theme is prominent.</li>
-  <li><strong>Key quotations</strong> — One short quotation per moment.</li>
-  <li><strong>Writer's message</strong> — What is the writer saying about this theme?</li>
+<li>"We are all responsible for each other" (Inspector — the play's thematic core)</li>
+<li>"A man has to look after himself and his own" (Mr. Birling — rejected philosophy)</li>
+<li>"I'm one of the guilty ones" (Sheila — moral accountability)</li>
 </ul>
-<p>This table becomes an invaluable revision tool and ensures you have material ready for any theme-based question.</p>
+
+From <em>Macbeth</em>:
+<ul>
+<li>"I have no spur to prick the sides of my intent, but only vaulting ambition" (self-awareness of moral danger)</li>
+<li>"Out, damned spot! Out, I say!" (guilt as indelible stain)</li>
+<li>"Tomorrow, and tomorrow, and tomorrow" (meaninglessness and moral emptiness)</li>
+</ul>
+</div>
+
+<h3>Tracing Themes Across a Text</h3>
+
+<p>To analyse a theme comprehensively, trace how it develops and transforms:</p>
+
+<table>
+<tr><td><strong>Early Appearance</strong></td><td>How is the theme introduced? What is the initial perspective?</td></tr>
+<tr><td><strong>Development</strong></td><td>How is the theme complicated or deepened by plot developments?</td></tr>
+<tr><td><strong>Climax</strong></td><td>What is the thematic turning point? Where is the theme tested or challenged most severely?</td></tr>
+<tr><td><strong>Resolution</strong></td><td>How does the text resolve or refuse to resolve the thematic question?</td></tr>
+</table>
+
+<h3>Common Theme Analysis Mistakes</h3>
+
+<div class="common-mistake"><strong>Common Mistake:</strong> Confusing theme with plot. "In the play, the Inspector investigates Eva's death" — this is plot. Theme would be: "The play explores how individual actions ripple outward with unforeseen social consequences."</div>
+
+<div class="common-mistake"><strong>Common Mistake:</strong> Treating themes as simple morals. "The play teaches us that we should be kind" is reductive. Instead: "The play argues that social structures, not individual charity, determine vulnerability and culpability."</div>
+
+<div class="common-mistake"><strong>Common Mistake:</strong> Listing themes without analysis. "The play has themes of responsibility, morality, and guilt" tells us nothing. Analyse how each theme is developed and what argument the play makes about it.</div>
+
+<h3>Practice: Comparative Theme Analysis</h3>
+
+<p>Take two texts you are studying. Choose a theme they both explore (e.g., ambition, guilt, power). Write 400 words showing:
+<ul>
+<li>How each text develops the theme</li>
+<li>The different arguments each text makes about it</li>
+<li>Which treatment is more effective and why</li>
+</ul>
+This practice sharpens thematic thinking and prepares you for comparative paper questions.
+</p>
 `,
     quiz: [
       {
-        id: 'iglit-dp-m4-q1',
-        question: 'What is the difference between a "topic" and a "theme"?',
-        options: [
-          'A topic is for novels and a theme is for plays',
-          'A topic is a subject area; a theme is what the writer says or argues about that subject',
-          'A topic is broad and a theme is narrow — they are essentially the same',
-          'A topic appears once while a theme recurs throughout the text',
-        ],
-        correct: 1,
-        explanation: 'A topic is a subject (e.g., "ambition") while a theme is the writer\'s argument or message about that subject (e.g., "unchecked ambition leads to psychological disintegration"). The exam rewards you for articulating what the writer communicates, not just identifying a subject.',
-      },
+
+      {
       {
         id: 'iglit-dp-m4-q2',
         question: 'What is a "motif"?',
@@ -610,107 +845,160 @@ const dramaProseModules: CourseModule[] = [
   {
     id: 'iglit-dp-m5',
     title: 'Context Integration',
-    duration: '45 min',
+    duration: '2 hours',
     content: `
-<h2>Integrating Context into Literary Analysis (AO3)</h2>
+<h2>Mastering Context Integration for IGCSE Literature</h2>
 
-<p>Context is one of the most misunderstood elements of IGCSE Literature. Many students treat it as a separate task — a paragraph of historical facts dropped into an otherwise analytical essay. This approach rarely scores well. Examiners want to see context <strong>integrated</strong> into your analysis, so that it illuminates the meaning of the text rather than sitting alongside it as disconnected information.</p>
+<p>Context — the historical, social, and literary circumstances in which a text was written — is one of the Assessment Objectives (AO3) and can be the difference between a Grade 8 and a Grade 9. However, many students misunderstand context, treating it as a separate paragraph of historical facts rather than as a lens through which to deepen literary analysis.</p>
 
-<div class="key-term"><strong>Key Term: Context (AO3)</strong> — The historical, social, cultural, and literary circumstances surrounding a text's creation and reception. Context includes when and where the text was written, the writer's background and beliefs, and how audiences have responded to the text over time.</div>
+<div class="key-term"><strong>Key Term: Integrated Context</strong> — Using knowledge of a text's context to illuminate its meanings, rather than providing context as background information separate from analysis. Context should answer "why would the writer make this choice at this moment in history?"</div>
 
-<h3>Types of Context</h3>
-<p>There are several types of context you can draw on in your essays:</p>
+<h3>What Context Means</h3>
+
+<p>Context encompasses three dimensions:</p>
 
 <h4>1. Historical Context</h4>
-<p>Events and conditions of the time when the text was written. For <em>Macbeth</em>, this includes the Jacobean period, the Gunpowder Plot, and the reign of James I. For <em>An Inspector Calls</em>, this includes the text being set in 1912 but written in 1945 — after two World Wars had transformed British society.</p>
+<p>The events, political situation, and social changes of the time the text was written. For <em>An Inspector Calls</em> (written 1945), post-war Britain's moral reckoning is essential. For <em>Macbeth</em> (written 1606), the recent Gunpowder Plot and King James I's views on tyranny and regicide matter.</p>
 
 <h4>2. Social Context</h4>
-<p>The social structures, norms, and attitudes of the period. Class hierarchy in Edwardian England for Priestley; patriarchal gender roles in Jacobean society for Shakespeare. Social context helps explain why characters behave as they do and why the writer is challenging or reinforcing particular norms.</p>
+<p>Class, gender, race, and economic structures of the period. In <em>An Inspector Calls</em>, Edwardian class hierarchies and attitudes toward working-class women are central. Understanding that Eva would have had virtually no legal recourse helps explain why Priestley's argument about responsibility is so pointed.</p>
 
 <h4>3. Literary Context</h4>
-<p>The conventions, genres, and literary traditions that the writer is working within or against. Shakespeare writes within the conventions of Jacobean tragedy; Priestley draws on the "well-made play" tradition and the morality play genre.</p>
+<p>The traditions, genres, and conventions the writer is working within (or against). <em>Macbeth</em> is a tragedy in the Shakespearean tradition, and understanding tragic conventions helps us see how Shakespeare both follows and subverts them.</p>
 
-<h4>4. Authorial Context</h4>
-<p>The writer's own beliefs, experiences, and intentions. Priestley was a committed socialist who wanted to use theatre as a vehicle for social change. Shakespeare wrote for commercial audiences at the Globe Theatre and for royal patronage under James I.</p>
+<h3>Why Examiners Value Context Integration</h3>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> You do not need to cover every type of context in every essay. Choose the contextual points that are most relevant to the specific question you are answering. One well-integrated contextual reference is worth more than five disconnected ones.</div>
+<p>Context answers the question: <strong>Why would a writer make these specific choices?</strong> When you integrate context, you show that you understand:</p>
 
-<h3>The Difference Between Bolted-On and Integrated Context</h3>
-<p>This is the single most important distinction for AO3. Study these examples carefully:</p>
-
-<p><strong>Bolted-on (weak):</strong></p>
-<p>"In 1912, there were big differences between the upper and lower classes. The Birlings are upper class. Eva Smith is working class."</p>
-
-<p><strong>Integrated (strong):</strong></p>
-<p>"Priestley's decision to set the play in 1912 — before the upheavals of two World Wars — allows him to expose the complacency of the Edwardian upper class. Mr Birling's confident prediction that war is impossible becomes bitterly ironic for the 1945 audience, who know the devastation that followed. By making Birling so spectacularly wrong about the future, Priestley undermines his authority on every other subject, including his dismissal of social responsibility."</p>
-
-<p>Notice how the strong version:</p>
 <ul>
-  <li>Names the writer and explains their <strong>purpose</strong></li>
-  <li>Connects context to a <strong>specific textual moment</strong></li>
-  <li>Explains the <strong>effect</strong> on the audience</li>
-  <li>Links context to the text's <strong>themes and arguments</strong></li>
+  <li>The writer is responding to their own world</li>
+  <li>Choices of language, form, and content are not random — they are shaped by what the writer could say and what mattered to say</li>
+  <li>We can understand the text more fully by understanding the world that produced it</li>
 </ul>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Opening a paragraph with "In [time period], people believed/did [historical fact]" with no connection to the text. This reads as a history essay, not a literature essay. Always start with the text and bring in context to deepen your analysis.</div>
+<h3>How to Integrate Context (Not Just Add It)</h3>
 
-<h3>Strategies for Embedding Context</h3>
-<p>Use these techniques to weave context naturally into your analysis:</p>
+<p>The key word is <strong>integrate</strong>. Do not write a paragraph of context and then move on. Instead, weave context into your analysis:</p>
 
-<h4>Strategy 1: The "Audience Response" Frame</h4>
-<p>Explain how a contemporary audience would have responded to a moment, and why:</p>
-<p>"A Jacobean audience, steeped in belief in the Divine Right of Kings, would have experienced Duncan's murder as not merely a political crime but a cosmic violation — which is precisely why Shakespeare has nature itself respond with storms and unnatural darkness."</p>
+<p><strong>Weak (bolted-on context):</strong> "In Victorian times, women had few rights. In the play, Eva has no recourse to justice. Therefore Priestley is critical of society."</p>
 
-<h4>Strategy 2: The "Writer's Purpose" Frame</h4>
-<p>Explain what the writer was trying to achieve, using context to illuminate their choices:</p>
-<p>"Priestley, writing in 1945 as Britain contemplated its post-war future, uses the Inspector as a mouthpiece for the socialist values he believed should shape the new society — the message that 'we are responsible for each other' is directed as much at the audience as at the Birlings."</p>
+<p><strong>Strong (integrated context):</strong> "Priestley wrote in 1945, when women's rights were still severely limited. Eva's complete vulnerability — she cannot appeal to law, family, or employment — reflects this historical reality. By making her vulnerability central to the play, Priestley uses a specific historical injustice to argue for a universal moral principle: that we are responsible for those society renders powerless."</p>
 
-<h4>Strategy 3: The "Challenge" Frame</h4>
-<p>Explain how the writer is challenging the norms or assumptions of their time:</p>
-<p>"Shakespeare's portrayal of Lady Macbeth challenges Jacobean gender expectations by presenting a woman who is more decisive, ruthless, and politically astute than her husband — yet the play ultimately punishes her transgression with madness and death, suggesting that the patriarchal order, however flawed, cannot be defied without consequence."</p>
+<p>The integrated version shows how historical context illuminates thematic choice. The writer didn't add facts about women; the writer used context to deepen analysis.</p>
 
-<h4>Strategy 4: The "Contrast" Frame</h4>
-<p>For texts set in a different period from when they were written (like <em>An Inspector Calls</em>), use the gap between the two periods:</p>
-<p>"The dramatic irony created by Priestley's dual time-frame — setting the play in 1912 while writing for a 1945 audience — transforms Birling's optimistic speeches into devastating satire. The audience knows everything Birling does not: the Titanic will sink, the war will come, and the class system he defends will be shaken to its foundations."</p>
+<h3>Worked Example: Context Integration (An Inspector Calls)</h3>
 
-<h3>Context for Key IGCSE Texts</h3>
-<p>Here are the most important contextual points for the two most commonly studied texts:</p>
+<div class="example-box">
+<strong>Question: How does Priestley's context shape his dramatic choices in An Inspector Calls?</strong>
 
-<h4>Macbeth</h4>
+<p><strong>Opening Paragraph:</strong></p>
+
+<p>Priestley wrote <em>An Inspector Calls</em> in 1945, at the very moment when post-war Britain was grappling with moral and political reconstruction. The Second World War had devastated the nation; the old certainties of the pre-war world had collapsed. Priestley's deliberate choice to set the play in Edwardian England — the world that had, in his view, led to war through moral indifference — is not arbitrary. By presenting 1912 through 1945 eyes, he argues that the failures of that era enabled the catastrophe of the war. The play thus becomes a meditation on whether post-war society could learn from these failures. Historical context shapes every choice Priestley makes.</p>
+
+<p><strong>Paragraph 1: The Edwardian Confidence as Target</strong></p>
+
+<p>The pre-war Edwardian era was one of confidence in progress, capitalism, and social hierarchy. Mr. Birling embodies this confidence perfectly: "There isn't a chance of war" and "Prices will rise steadily." Priestley, writing after the war had revealed how catastrophically wrong such confidence was, uses Mr. Birling to satirise pre-war complacency. The dramatic irony is not merely comedic — it is historically pointed. Priestley is saying: "This is the kind of thinking that made war inevitable." Understanding the historical context of 1945 makes Mr. Birling not just a comic figure but a representative of the moral blindness that enabled historical tragedy.</p>
+
+<p><strong>Paragraph 2: Social Class and Historical Change</strong></p>
+
+<p>The Edwardian class system was rigid and unchallenged. Eva Smith, as a working-class woman, would have had virtually no power against the actions of middle-class men. By 1945, however, the war had shattered class certainties. Women had worked in factories; working-class soldiers had become heroes. Priestley wrote in a moment when class hierarchies seemed (at least temporarily) less absolute. By making Eva's vulnerability central, Priestley suggests that the old class system was not only unjust — it was historically obsolete. The play argues that the post-war world must build on different principles. Context illuminates why Priestley chose to make class and gender vulnerability his thematic focus.</p>
+
+<p><strong>Paragraph 3: The Inspector as Symbol of Change</strong></p>
+
+<p>The Inspector is ambiguous — is he real? A ghost? A figment? In historical context, this ambiguity represents Priestley's uncertainty about whether post-war Britain would genuinely change. The Inspector succeeds in the play (Sheila and Eric learn), but the older generation resists, and the ending is ironically ambiguous — a real policeman is coming, perhaps to expose the truth, perhaps to deny it. Priestley, writing in 1945, cannot guarantee that Britain will learn from history. The Inspector's ambiguity reflects the historical moment's uncertainty about the future.</p>
+
+<p><strong>Conclusion:</strong></p>
+
+<p>Every choice Priestley makes in <em>An Inspector Calls</em> is shaped by his historical position: writing in 1945, looking back at 1912, trying to persuade his audience to learn from disaster. Context is not decoration — it is the foundation of the play's meaning.</p>
+</div>
+
+<h3>Grade 9 Insight: Context as Analytical Tool</h3>
+
+<div class="grade9-box">
+<strong>Sophisticated context integration includes:</strong>
+
 <ul>
-  <li>Written c. 1606 during the reign of James I</li>
-  <li>James I's interest in witchcraft (<em>Daemonologie</em>, 1597)</li>
-  <li>The Gunpowder Plot (1605) and fears about treason</li>
-  <li>The Divine Right of Kings and the Great Chain of Being</li>
-  <li>Patriarchal gender roles in Jacobean society</li>
-  <li>The Globe Theatre and conventions of Jacobean tragedy</li>
+<li><strong>Identifying what the writer <em>could</em> and <em>could not</em> say:</strong> In 1945, Priestley could write a critique of capitalism only because post-war socialism seemed ascendant. Understanding historical possibility illuminates authorial choice. "Priestley could articulate this critique of capitalism because the post-war Labour government was in power..." shows how context enabled expression.</li>
+
+<li><strong>Understanding how context shapes form:</strong> Why did Priestley choose the enclosed, pressurised structure of a single evening? Because post-1945 audiences had lived through the collapse of a seemingly stable world. The claustrophobic structure mirrors historical experience. Top answers connect form to context.</li>
+
+<li><strong>Recognising what the text reveals about its time:</strong> Texts are documents of their era. What assumptions does Priestley reveal? (That class divisions exist, that working-class women are vulnerable, that moral education is possible.) These revealed assumptions tell us about 1945 as much as about the play.</li>
+
+<li><strong>Avoiding anachronism:</strong> Top candidates never judge a historical text by modern standards. The goal is to understand why the writer made choices that made sense in their moment, not to declare them dated.</li>
+
+<li><strong>Balancing context with text:</strong> Context enhances analysis; it doesn't replace it. Even the best context integration essay spends most of its time analysing the text itself. Context is sauce, not the main dish.</li>
+</ul>
+</div>
+
+<h3>Context Quotation Bank</h3>
+
+<div class="quotation-bank">
+<strong>Phrases for integrating context into analysis:</strong>
+
+<ul>
+<li>"In the context of [year/historical moment], Priestley's choice to [technique] is particularly significant because..."</li>
+<li>"The post-[war/industrial/colonial] world that Priestley wrote in shapes his argument that..."</li>
+<li>"Because [historical fact], the audience would have understood [technique] as..."</li>
+<li>"Priestley writes at a moment when [social change] is possible, allowing him to argue..."</li>
+<li>"The historical context of [date] means that [character/situation] would have carried particular resonance for the original audience."</li>
 </ul>
 
-<h4>An Inspector Calls</h4>
+<strong>Key contextual facts to memorise:</strong>
+
+For <em>An Inspector Calls</em>:
 <ul>
-  <li>Set in 1912 (pre-WWI Edwardian England) but written in 1945 (post-WWII)</li>
-  <li>Priestley's socialism and belief in collective responsibility</li>
-  <li>The welfare state debate of the 1940s</li>
-  <li>Class hierarchy in Edwardian England — rigid social stratification</li>
-  <li>The suffragette movement and the status of women</li>
-  <li>Dramatic irony created by the dual time-frame</li>
+<li>Written in 1945 (post-WWII)</li>
+<li>Set in 1912 (Edwardian era, pre-WWI)</li>
+<li>References to war and social change encoded throughout</li>
+<li>British class system and women's limited rights in Edwardian era essential context</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> You only need 2–3 contextual references per essay, but they must be well integrated. Quality over quantity is the rule for AO3. A single contextual point that genuinely illuminates the text is worth more than a paragraph of historical facts.</div>
+For <em>Macbeth</em>:
+<ul>
+<li>Written 1606, for King James I</li>
+<li>Recently written after Gunpowder Plot (1605) — fear of regicide and tyranny urgent</li>
+<li>Early modern beliefs in witchcraft and the supernatural</li>
+<li>Divine Right of Kings doctrine central to understanding the regicide theme</li>
+</ul>
+</div>
+
+<h3>Historical Context Template</h3>
+
+<p>For each text, research and memorise this information:</p>
+
+<table>
+<tr><td><strong>When written (year)</strong></td><td>What major events shaped this moment?</td></tr>
+<tr><td><strong>When set (if different)</strong></td><td>What historical period does it represent?</td></tr>
+<tr><td><strong>Author's biography</strong></td><td>What experiences shaped their worldview?</td></tr>
+<tr><td><strong>Key historical events referenced</strong></td><td>War, social movements, political changes</td></tr>
+<tr><td><strong>Social attitudes of the era</strong></td><td>Class, gender, race, religion, politics</td></tr>
+<tr><td><strong>Literary conventions of the time</strong></td><td>What genre expectations was the writer working with?</td></tr>
+</table>
+
+<h3>Context Integration Practice</h3>
+
+<p>Choose a scene from your set text. Write a 300-word analysis that:
+<ul>
+<li>Explains what happens in the scene</li>
+<li>Analyses how the writer presents a theme or character through language/form</li>
+<li>Integrates context to explain why the writer made these choices and how the audience would have understood them at the time</li>
+</ul>
+
+Aim for at least one sentence of integrated context (not separate context, but woven into analysis) per paragraph.
+</p>
+
+<h3>Common Context Mistakes</h3>
+
+<div class="common-mistake"><strong>Common Mistake:</strong> Writing separate "context paragraph." "In 1945, Britain was recovering from war. In 1912, society had strict class divisions. The play is set in 1912..." This is context bolted on, not integrated. Every mention of context should deepen your analysis of the text.</div>
+
+<div class="common-mistake"><strong>Common Mistake:</strong> Over-contextualising. Your essay is about the text, not history. Spend 70-80% of your analysis on the text itself; use context to illuminate, not to replace, textual analysis.</div>
+
+<div class="common-mistake"><strong>Common Mistake:</strong> Assuming examiners expect modern moral judgments. "The Birlings were selfish" is weaker than "In the Edwardian context where individual enterprise was valorised, the Birlings' self-interest was culturally normalised — Priestley's critique was radical."</div>
 `,
     quiz: [
-      {
-        id: 'iglit-dp-m5-q1',
-        question: 'What is "bolted-on" context?',
-        options: [
-          'Context that is too detailed for the exam',
-          'A detached statement of historical fact with no connection to the text or its meaning',
-          'Context that appears in the conclusion rather than the introduction',
-          'Context that refers to the writer\'s personal life',
-        ],
-        correct: 1,
-        explanation: 'Bolted-on context is a disconnected historical fact that does not link to the text\'s meaning. It reads as a history essay rather than a literature essay. Context must be integrated into your analysis to illuminate the text.',
-      },
+
+
+
       {
         id: 'iglit-dp-m5-q2',
         question: 'Why is the dual time-frame of An Inspector Calls significant?',

@@ -353,10 +353,39 @@ const ks3CoursesCore: CourseData[] = [
 <h3>Two Quick Planning Methods</h3>
 <p><strong>1. Spider Diagram</strong> — Write your topic in the centre. Branch out with your main ideas. Add details, examples, or techniques to each branch. This works well for descriptive and persuasive writing.</p>
 
+<div class="example-box">
+<strong>Spider Diagram Example — Topic: "A Moment I'll Never Forget"</strong>
+<ul>
+<li>Centre: The moment</li>
+<li>Branch 1: What happened (action, people involved, setting)</li>
+<li>Branch 2: How I felt (emotions, physical reactions)</li>
+<li>Branch 3: Why it mattered (consequences, lessons learned)</li>
+<li>Branch 4: Sensory details (what I saw, heard, smelled, felt)</li>
+</ul>
+</div>
+
 <p><strong>2. Linear Plan</strong> — Number your paragraphs. Write one sentence for each paragraph summarising what it will contain. This works well for narrative writing and arguments.</p>
+
+<div class="example-box">
+<strong>Linear Plan Example — "Should School Uniforms Be Banned?"</strong>
+<ol>
+<li>Introduction: State your position clearly and give a brief reason.</li>
+<li>Point 1: Uniforms reduce bullying based on clothing. Evidence: Students focus on school, not fashion.</li>
+<li>Point 2: Uniforms are restrictive and prevent self-expression. Evidence: Teenagers need to develop identity.</li>
+<li>Counterargument: Uniforms save time and money. Acknowledge this is valid but outweighed by disadvantages.</li>
+<li>Conclusion: Summarize your strongest point and restate your position.</li>
+</ol>
+</div>
 
 <h3>How Long to Plan</h3>
 <p>For a 45-minute writing task, spend <strong>5 minutes planning</strong>. That leaves 35 minutes for writing and 5 for checking. Five minutes of planning is worth more than five minutes of extra writing.</p>
+
+<p><strong>Time breakdown:</strong></p>
+<ul>
+<li>0-5 mins: Plan your structure and main ideas</li>
+<li>5-40 mins: Write your response in full</li>
+<li>40-45 mins: Check for spelling, punctuation, sense</li>
+</ul>
 
 <div class="key-term"><strong>Key Term: Paragraph plan</strong> — A brief outline showing what each paragraph will cover. Even just one word per paragraph helps keep your writing focused and organised.</div>
 
@@ -371,7 +400,98 @@ const ks3CoursesCore: CourseData[] = [
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> Plan your ENDING before you start writing. The best writers know where they are going. A planned ending is almost always stronger than one you make up in the last minute.</div>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Not planning at all because "there isn't time." Students who plan actually finish faster because they do not waste time figuring out what to say next. Five minutes planning saves ten minutes of rewriting.</div>`,
+<h3>Worked Example: From Plan to Writing</h3>
+<p><strong>Task:</strong> Write a description of a spooky forest. (250 words)</p>
+
+<p><strong>Plan (takes 3 minutes):</strong></p>
+<ul>
+<li><strong>Opening:</strong> Hook the reader with a single image or sensation (darkness, sound, smell)</li>
+<li><strong>Paragraph 1:</strong> Visual description — trees, shadows, lighting</li>
+<li><strong>Paragraph 2:</strong> Sounds and atmosphere — what creates the sense of fear?</li>
+<li><strong>Paragraph 3:</strong> What might be hiding? Use imagination and mystery</li>
+<li><strong>Paragraph 4:</strong> How does the character feel? Create emotional connection</li>
+<li><strong>Closing:</strong> Powerful final image or sense of danger</li>
+<li><strong>Techniques to use:</strong> Metaphor, personification, sensory details, short sentences for impact</li>
+</ul>
+
+<p><strong>Result:</strong> A structured, vivid piece of writing that doesn't ramble or repeat.</p>
+
+<h3>Planning for Different Writing Types</h3>
+
+<p><strong>Descriptive Writing Plan:</strong></p>
+<ul>
+<li>Opening sensory detail (sight, sound, smell, touch, taste)</li>
+<li>Spatial description (left to right, top to bottom, or near to far)</li>
+<li>Atmosphere and mood (what emotions does this place create?)</li>
+<li>Specific, vivid details (not generic descriptions)</li>
+</ul>
+
+<p><strong>Narrative Writing Plan:</strong></p>
+<ul>
+<li>Setting and character introduction</li>
+<li>Inciting incident (what goes wrong or changes?)</li>
+<li>Rising action (complications and challenges)</li>
+<li>Climax (the moment of highest tension)</li>
+<li>Resolution (how does it end?)</li>
+</ul>
+
+<p><strong>Persuasive Writing Plan:</strong></p>
+<ul>
+<li>Strong opening that hooks the reader emotionally</li>
+<li>Main argument with evidence (fact, statistic, or example)</li>
+<li>Second argument with evidence</li>
+<li>Acknowledge opposing view, then refute it</li>
+<li>Powerful conclusion that reinforces your position</li>
+</ul>
+
+<h3>Reading Comprehension Strategy: Identifying a Writer's Plan</h3>
+<p>When you read, notice the writer's structure:</p>
+<ul>
+<li>Does it start with action or description?</li>
+<li>Are ideas built logically or does it jump around?</li>
+<li>What effect does the ending have? Does it feel planned or rushed?</li>
+<li>What techniques does the writer use? Are they scattered or deliberate?</li>
+</ul>
+
+<p>Good writers almost always have a visible plan. You can spot it in their structure.</p>
+
+<h3>Creative Writing Technique: The Promise-Proof-Payoff Model</h3>
+<p><strong>Promise (opening):</strong> Hook the reader with an intriguing idea or question.</p>
+<p><strong>Proof (middle):</strong> Develop the idea with evidence, examples, or details.</p>
+<p><strong>Payoff (ending):</strong> Deliver a satisfying conclusion that rewards the reader's attention.</p>
+
+<p><strong>Example:</strong></p>
+<ul>
+<li>Promise: "The letter changed everything."</li>
+<li>Proof: Describe what the letter said and how the character reacted.</li>
+<li>Payoff: Show the consequence of the letter — how their life is now different.</li>
+</ul>
+
+<h3>Vocabulary Building: Planning Terms</h3>
+<ul>
+<li><strong>Brainstorm:</strong> Generate ideas quickly without judging them.</li>
+<li><strong>Outline:</strong> A skeleton of your writing showing main points in order.</li>
+<li><strong>Thesis:</strong> The main argument or point you're making.</li>
+<li><strong>Evidence:</strong> Facts, examples, or quotations that support your argument.</li>
+<li><strong>Counterargument:</strong> An opposing view that you acknowledge and refute.</li>
+</ul>
+
+<h3>Practice: Write Your Own Plans</h3>
+
+<p><strong>Task 1 — Descriptive Writing:</strong></p>
+<p>Write a spider diagram plan for: "Describe your ideal room."</p>
+
+<p><strong>Task 2 — Persuasive Writing:</strong></p>
+<p>Write a linear plan for: "Should students have more say in school decisions?" (5 paragraphs)</p>
+
+<p><strong>Task 3 — Narrative Writing:</strong></p>
+<p>Create a 5-point plan for a story starting with: "I opened the door and everything changed."</p>
+
+<div class="challenge-box">
+<strong>LEVEL UP Challenge:</strong> Take a well-written passage from a novel or article. Work backwards and create a plan that shows what the writer must have planned. Now compare it to what actually appears. Did they follow their plan exactly? Did they add or change things? How does planning help writers maintain focus while still being creative?
+</div>
+
+<div class="common-mistake"><strong>Common Mistake:</strong> Planning takes time away from writing. Wrong! Five minutes of planning saves ten minutes of rambling, repeating, or getting stuck. The best writers always plan. Professionals in every field plan before they create.</div>`,
         quiz: [
           { id: 'ks3w-m2-q1', question: 'How long should you spend planning a 45-minute writing task?', options: ['0 minutes', '5 minutes', '15 minutes', '20 minutes'], correct: 1, explanation: '5 minutes of planning leaves 35 for writing and 5 for checking. This is the ideal split.' },
           { id: 'ks3w-m2-q2', question: 'What should you plan BEFORE you start writing the opening?', options: ['The title', 'The ending', 'The font', 'The word count'], correct: 1, explanation: 'Knowing your ending before you begin gives your writing direction and purpose. A planned ending is always stronger.' },
@@ -626,10 +746,68 @@ const ks3CoursesCore: CourseData[] = [
 <p><strong>Adverbs</strong> — Modify verbs, adjectives, or other adverbs. "She ran <strong>quickly</strong>." "It was <strong>extremely</strong> cold."</p>
 <p><strong>Conjunctions</strong> — Join words or clauses. Coordinating: and, but, or. Subordinating: because, although, when.</p>
 <p><strong>Prepositions</strong> — Show position or relationship: in, on, under, between, through.</p>
+<p><strong>Determiners</strong> — Point to or identify nouns: the, a, an, this, that, these, those.</p>
+<p><strong>Pronouns</strong> — Replace nouns to avoid repetition: he, she, it, they, who, which.</p>
 
 <div class="key-term"><strong>Key Term: Subject terminology</strong> — Using the correct grammatical names for things. Saying "the adjective 'cold'" is more precise than "the describing word 'cold'" and earns more marks.</div>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> When analysing language, always name the word class. "The verb 'crept' suggests..." is much stronger than "The word 'crept' suggests..." It shows you understand grammar.</div>`,
+<div class="examiner-tip"><strong>Examiner Tip:</strong> When analysing language, always name the word class. "The verb 'crept' suggests..." is much stronger than "The word 'crept' suggests..." It shows you understand grammar.</div>
+
+<h3>Worked Example: Identifying Word Classes</h3>
+<p><strong>Sentence:</strong> "The old castle stood silently on the misty mountain."</p>
+
+<div class="model-answer">
+<strong>Word class analysis:</strong>
+<ul>
+<li>"The" — <em>Determiner</em> — identifies which noun</li>
+<li>"old" — <em>Adjective</em> — describes the castle</li>
+<li>"castle" — <em>Common noun</em> — a thing</li>
+<li>"stood" — <em>Dynamic verb</em> — action word</li>
+<li>"silently" — <em>Adverb</em> — modifies the verb "stood"</li>
+<li>"on" — <em>Preposition</em> — shows position</li>
+<li>"the" — <em>Determiner</em></li>
+<li>"misty" — <em>Adjective</em> — describes the mountain</li>
+<li>"mountain" — <em>Common noun</em> — a thing</li>
+</ul>
+</div>
+
+<h3>Why Word Classes Matter for Analysis</h3>
+<p>When you identify a verb, you can discuss its connotations. When you spot an adjective, you can explore what it suggests. For example:</p>
+
+<p><strong>Weak analysis:</strong> "The word 'ancient' is good."</p>
+
+<p><strong>Strong analysis:</strong> "The adjective 'ancient' suggests the castle is not only old but also historic and possibly sacred."</p>
+
+<h3>Vocabulary Building: Precise Verbs</h3>
+<p>Replace weak verbs with stronger, more precise alternatives:</p>
+<ul>
+<li>"said" → whispered, shouted, muttered, declared, announced</li>
+<li>"walked" → trudged, strolled, strode, shuffled, wandered</li>
+<li>"happy" → delighted, content, joyful, ecstatic, cheerful</li>
+<li>"sad" → melancholy, sorrowful, dejected, miserable, forlorn</li>
+<li>"big" → enormous, vast, colossal, immense, substantial</li>
+</ul>
+
+<h3>Practice: Word Class Identification</h3>
+<p><strong>Identify the word class of each bolded word:</strong></p>
+<ol>
+<li>"She <strong>whispered</strong> the secret <strong>nervously</strong>." (verb, adverb)</li>
+<li>"The <strong>fierce</strong> dog guarded the <strong>gate</strong>." (adjective, noun)</li>
+<li>"He left <strong>because</strong> he was tired." (conjunction)</li>
+<li>"The student sat <strong>near</strong> the window." (preposition)</li>
+<li>"They wanted <strong>nothing</strong> more than peace." (pronoun/determiner)</li>
+</ol>
+
+<div class="challenge-box">
+<strong>LEVEL UP Challenge:</strong> Find a paragraph in any book or article. Identify every word's word class. Can you spot patterns? Do longer sentences use more adjectives? Do exciting scenes use more dynamic verbs? Awareness of word classes is the first step to writing better.
+</div>
+
+<h3>Common Mistakes to Avoid</h3>
+<ul>
+<li><strong>Confusing adjectives and adverbs:</strong> "He was real tired" (wrong — should be "really tired"). Adverbs modify verbs and adjectives; adjectives describe nouns.</li>
+<li><strong>Missing prepositions:</strong> "The book on the table" — "on" is the preposition. Never skip it.</li>
+<li><strong>Pronoun confusion:</strong> "John and me went to the store" is wrong. Use "I" in the subject position. "John and I went to the store."</li>
+</ul>`,
         quiz: [
           { id: 'ks3g-m1-q1', question: '"Justice" is an example of what type of noun?', options: ['Proper noun', 'Common noun', 'Abstract noun', 'Collective noun'], correct: 2, explanation: '"Justice" is something you cannot physically touch — it is an idea, making it an abstract noun.' },
           { id: 'ks3g-m1-q2', question: 'What does an adverb modify?', options: ['Only nouns', 'Verbs, adjectives, or other adverbs', 'Only sentences', 'Only proper nouns'], correct: 1, explanation: 'Adverbs modify verbs (ran quickly), adjectives (extremely cold), or other adverbs (very slowly).' },
@@ -648,10 +826,14 @@ const ks3CoursesCore: CourseData[] = [
 <p>One main clause (subject + verb). "The dog barked." "She sat down."</p>
 <p><strong>Effect:</strong> Direct, clear, punchy. Perfect for impact and emphasis.</p>
 
+<div class="example-box"><strong>Example:</strong> "The door slammed." This simple sentence creates sudden, dramatic impact.</div>
+
 <h3>2. Compound Sentence</h3>
 <p>Two main clauses joined by a coordinating conjunction (and, but, or, so, yet).</p>
 <p>"The sun rose <strong>and</strong> the birds began to sing."</p>
 <p><strong>Effect:</strong> Shows connection between two equal ideas.</p>
+
+<div class="example-box"><strong>Example:</strong> "She wanted to leave, but her brother insisted on staying." The "but" shows contrast between two equal desires.</div>
 
 <h3>3. Complex Sentence</h3>
 <p>A main clause + one or more subordinate clauses.</p>
@@ -659,13 +841,70 @@ const ks3CoursesCore: CourseData[] = [
 <p>The subordinate clause ("although it was raining") cannot stand alone as a sentence.</p>
 <p><strong>Effect:</strong> Shows the relationship between ideas. Demonstrates sophistication.</p>
 
+<div class="example-box"><strong>Example:</strong> "While the crowd cheered, the runner crossed the finish line." The main clause (runner crossed the line) is the key action; the subordinate clause (crowd cheering) provides context.</div>
+
 <h3>4. Compound-Complex Sentence</h3>
 <p>Two or more main clauses + at least one subordinate clause.</p>
 <p>"<strong>When the bell rang</strong>, the students stood up <strong>and</strong> they filed out of the room."</p>
 
+<div class="example-box"><strong>Example:</strong> "Since she had practiced all week, she felt confident and she performed brilliantly." Two main clauses (felt confident / performed brilliantly) joined by "and," plus a subordinate clause (since she had practiced).</div>
+
 <div class="key-term"><strong>Key Term: Clause</strong> — A group of words containing a subject and a verb. A main clause can stand alone. A subordinate clause cannot.</div>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> In your own writing, use simple sentences for impact and complex sentences for sophistication. The contrast between them creates rhythm and keeps the reader engaged.</div>
+
+<h3>Worked Example: Analyzing Sentence Types</h3>
+<p><strong>Passage:</strong> "The wolf crept through the forest. Although the hunters were nearby, it moved silently. They heard nothing, and the wolf disappeared into the darkness."</p>
+
+<div class="model-answer">
+<strong>Sentence analysis:</strong>
+<ul>
+<li>Sentence 1: "The wolf crept through the forest." = <strong>Simple</strong> — one main clause, creates direct impact</li>
+<li>Sentence 2: "Although the hunters were nearby, it moved silently." = <strong>Complex</strong> — shows contrast between two ideas</li>
+<li>Sentence 3: "They heard nothing, and the wolf disappeared into the darkness." = <strong>Compound</strong> — two equal actions linked by "and"</li>
+</ul>
+<strong>Effect:</strong> The mix of sentence types creates suspense. The simple sentence is punchy; the complex sentence adds tension; the compound sentence provides a dramatic conclusion.
+</div>
+
+<h3>Reading Comprehension Strategy: Spotting Sentence Types</h3>
+<p>When reading, notice how sentence type affects pace and emotion:</p>
+<ul>
+<li><strong>Simple sentences = speed.</strong> "He ran. He jumped. He flew." This staccato rhythm builds excitement.</li>
+<li><strong>Complex sentences = detail.</strong> "As the storm gathered strength, the boats rocked on the swelling sea." This develops atmosphere.</li>
+<li><strong>Long compound sentences = connection.</strong> They link ideas together and develop arguments.</li>
+</ul>
+
+<h3>Writing Technique: Varying Sentence Length</h3>
+<p>Use sentence types deliberately in your writing:</p>
+<p><strong>Example:</strong> "The castle loomed before them. Through the mist, it seemed menacing. Although they were afraid, they pressed forward, determined to discover the truth."</p>
+<p>Notice: Short simple sentence (impact) → Medium complex sentence (detail) → Long compound-complex sentence (sophistication and resolution).</p>
+
+<h3>Grammar Reinforcement: Common Sentence Errors</h3>
+<ul>
+<li><strong>Sentence fragment:</strong> "Although it was raining." (incomplete thought). Fix: "Although it was raining, they went out."</li>
+<li><strong>Run-on sentence:</strong> "The dog barked the cat hissed." (two sentences joined without punctuation). Fix: "The dog barked, and the cat hissed."</li>
+<li><strong>Comma splice:</strong> "She was tired, she went to bed." (two main clauses with only a comma). Fix: "She was tired, so she went to bed."</li>
+</ul>
+
+<h3>Practice: Identify and Write Sentence Types</h3>
+<p><strong>1. Identify the type:</strong></p>
+<ol>
+<li>"The phone rang loudly." (simple / compound / complex?)</li>
+<li>"She opened the door and found her friend waiting." (simple / compound / complex?)</li>
+<li>"Before he could speak, she interrupted him." (simple / compound / complex?)</li>
+<li>"The storm raged, yet we continued walking." (simple / compound / complex?)</li>
+</ol>
+
+<p><strong>2. Write your own:</strong></p>
+<ul>
+<li>Write a simple sentence that creates impact.</li>
+<li>Write a complex sentence showing a relationship between ideas.</li>
+<li>Write a compound sentence linking two equal ideas.</li>
+</ul>
+
+<div class="challenge-box">
+<strong>LEVEL UP Challenge:</strong> Take a passage from a book you're reading. Identify every sentence type. Why did the author choose those types? How do they affect the pacing and mood? Rewrite one paragraph, changing all sentences to simple sentences. How does this change the effect? This awareness of craft is what separates good writers from great ones.
+</div>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Writing only in simple sentences makes your work sound childish. Writing only in complex sentences makes it hard to follow. The best writing mixes all types deliberately.</div>`,
         quiz: [
@@ -685,6 +924,8 @@ const ks3CoursesCore: CourseData[] = [
 <h3>The Essential Marks</h3>
 <p><strong>Full stops (.)</strong> — End a sentence. Every sentence needs one (unless it ends with ? or !).</p>
 
+<div class="example-box"><strong>Example:</strong> "She left the room. The door closed behind her." Two full stops create two distinct thoughts, giving them equal weight.</div>
+
 <p><strong>Commas (,)</strong> — The most misused mark. Use for:</p>
 <ul>
 <li>Lists: "apples, oranges, and bananas"</li>
@@ -693,11 +934,15 @@ const ks3CoursesCore: CourseData[] = [
 <li>Before coordinating conjunctions in compound sentences: "It rained, but we went out."</li>
 </ul>
 
+<div class="example-box"><strong>Example of comma rules:</strong> "On Monday, she decided to change her life, accept the challenge, and move forward." Commas separate the list and come after the introductory phrase.</div>
+
 <p><strong>Apostrophes (')</strong> — Two uses:</p>
 <ul>
 <li>Possession: the cat's tail (one cat), the cats' tails (multiple cats)</li>
 <li>Contraction: can't, don't, it's (it is)</li>
 </ul>
+
+<div class="example-box"><strong>Possession examples:</strong> "The dog's bone" (one dog) vs. "The dogs' bones" (multiple dogs). The apostrophe shows ownership.</div>
 
 <p><strong>Semicolons (;)</strong> — Join two related complete sentences: "The rain stopped; the sun emerged."</p>
 
@@ -705,11 +950,91 @@ const ks3CoursesCore: CourseData[] = [
 
 <p><strong>Dashes (—)</strong> — Add extra information or create a dramatic pause: "The answer was obvious — or so she thought."</p>
 
+<div class="example-box"><strong>Example:</strong> "He had one choice — admit the truth or lose everything." The dash creates suspense and emphasis.</div>
+
 <p><strong>Speech marks (" ")</strong> — Surround spoken words: "I'm leaving," she said.</p>
+
+<div class="example-box"><strong>Example:</strong> "Stop right there!" he shouted. The exclamation mark goes inside the speech marks because it's part of what he said.</div>
 
 <div class="key-term"><strong>Key Term: Its vs It's</strong> — "It's" = "it is" (contraction). "Its" = belonging to it (possession). This is the most common mistake in English and examiners specifically look for it.</div>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Using a comma to join two complete sentences without a conjunction. "She ran home, she was tired" is a comma splice. Fix it with a semicolon, full stop, or conjunction: "She ran home; she was tired" or "She ran home because she was tired."</div>`,
+<h3>Worked Example: Punctuation in Context</h3>
+<p><strong>Passage:</strong> "The old house, which had been empty for years, finally had a new owner. She looked at the broken windows, the overgrown garden, and the cracked walls; she could barely believe it was hers. 'This will take forever,' she whispered."</p>
+
+<div class="model-answer">
+<strong>Punctuation analysis:</strong>
+<ul>
+<li>Comma + clause: "which had been empty for years" provides extra detail about the house</li>
+<li>Commas in list: "windows, garden, and walls" separates three items</li>
+<li>Semicolon: links the observation to her reaction — they're related thoughts</li>
+<li>Speech marks + comma: show she's speaking, then continue the sentence</li>
+</ul>
+<strong>Effect:</strong> The punctuation creates a sense of discovery and emotional response. The comma provides background; the semicolon shows cause-and-effect; the dialogue reveals her feelings.
+</div>
+
+<h3>Reading Comprehension Strategy: Punctuation Signals Meaning</h3>
+<p>When reading closely, notice how punctuation affects meaning:</p>
+<ul>
+<li><strong>Full stops create separation:</strong> Each sentence is a distinct thought.</li>
+<li><strong>Semicolons show connection:</strong> The ideas are linked but independent.</li>
+<li><strong>Commas show subordination:</strong> Some information is less important than the main clause.</li>
+<li><strong>Dashes create emphasis or surprise:</strong> They pause the reader and highlight what comes next.</li>
+<li><strong>Speech marks reveal character:</strong> Dialogue shows how people think and feel.</li>
+</ul>
+
+<h3>Creative Writing Technique: Using Punctuation for Effect</h3>
+<p><strong>Example 1 - Building tension with short sentences:</strong></p>
+<p>"She heard a noise. Then another. And another. Her heart pounded. Something was coming."</p>
+<p>The short, punchy sentences (full stops) create anxiety.</p>
+
+<p><strong>Example 2 - Creating flowery description with commas:</strong></p>
+<p>"The garden, wild with roses, tangled vines, and forgotten statues, seemed frozen in time."</p>
+<p>The commas slow the pace and pile up details.</p>
+
+<p><strong>Example 3 - Dramatic revelation with dashes:</strong></p>
+<p>"The winner of the prize was — Sarah. Not who anyone expected."</p>
+<p>The dash creates surprise and emphasizes the revelation.</p>
+
+<h3>Grammar Reinforcement: Common Punctuation Errors</h3>
+<ul>
+<li><strong>Comma splice:</strong> "She ran home, it was already dark." (WRONG) → "She ran home; it was already dark." (CORRECT)</li>
+<li><strong>Apostrophe in plurals:</strong> "The dog's are happy." (WRONG) → "The dogs are happy." (CORRECT — no apostrophe for plurals!)</li>
+<li><strong>Missing comma before "and" in lists:</strong> "We need bread, milk and eggs." (inconsistent) → "We need bread, milk, and eggs." (CORRECT — Oxford comma)</li>
+<li><strong>Speech punctuation:</strong> "Hello, she said" (WRONG) → '"Hello," she said' (CORRECT — comma inside speech marks)</li>
+</ul>
+
+<h3>Vocabulary: Punctuation Terms</h3>
+<ul>
+<li><strong>Parenthesis:</strong> Information set off by commas, dashes, or brackets that could be removed without changing the main meaning.</li>
+<li><strong>Clause:</strong> A group of words containing a subject and verb.</li>
+<li><strong>Conjunction:</strong> A word that joins clauses or words (and, but, because, although).</li>
+<li><strong>Contraction:</strong> A shortened form where an apostrophe replaces missing letters (can't = cannot).</li>
+</ul>
+
+<h3>Practice: Punctuation Correction</h3>
+<p><strong>Correct these sentences:</strong></p>
+<ol>
+<li>"Shes going to the store" — Fix: _______________</li>
+<li>"The dog wagged its tail, it was happy" — Fix: _______________</li>
+<li>"We need apples oranges and bananas" — Fix: _______________</li>
+<li>"Stop she screamed" — Fix: _______________</li>
+<li>"The cats bowl was empty it needed food" — Fix: _______________</li>
+</ol>
+
+<p><strong>Answers:</strong></p>
+<ol>
+<li>"She's going to the store" (it's = it is; she's = she is)</li>
+<li>"The dog wagged its tail; it was happy." (semicolon or period; its = possession)</li>
+<li>"We need apples, oranges, and bananas" (commas in lists)</li>
+<li>'"Stop!" she screamed' (exclamation inside speech marks, then dialogue tag)</li>
+<li>"The cat's bowl was empty; it needed food." (apostrophe for possession, semicolon to link related ideas)</li>
+</ol>
+
+<div class="challenge-box">
+<strong>LEVEL UP Challenge:</strong> Take a paragraph you've written. Count your punctuation marks. Do you use full stops, semicolons, dashes, or just commas and full stops? Rewrite the paragraph using a wider range of punctuation. How does this change the rhythm and impact? Skilled writers use punctuation like musicians use instruments — each mark serves a purpose.
+</div>
+
+<div class="common-mistake"><strong>Common Mistake:</strong> Overusing commas. "The girl, who was called Sarah, wanted to know, if she could go, to the party." (Too many!) Only use commas when they change the meaning or follow a specific rule.</div>`,
         quiz: [
           { id: 'ks3g-m3-q1', question: 'Which sentence uses the apostrophe correctly?', options: ['"The dog wagged it\'s tail."', '"The dog wagged its tail."', '"The dogs wagged it\'s tail."', '"The dog\'s wagged its tails."'], correct: 1, explanation: '"Its" (no apostrophe) means belonging to it. "It\'s" means "it is." The dog\'s tail belongs to the dog, so "its" is correct here.' },
           { id: 'ks3g-m3-q2', question: 'What is a comma splice?', options: ['Using too many commas', 'Joining two complete sentences with only a comma', 'Forgetting a comma', 'Using a comma before "and"'], correct: 1, explanation: 'A comma splice incorrectly joins two sentences with just a comma. Fix with a semicolon, conjunction, or full stop.' },

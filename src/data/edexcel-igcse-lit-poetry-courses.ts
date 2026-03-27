@@ -613,6 +613,49 @@ const prayerBeforeBirthModules: CourseModule[] = [
   <li><strong>"Half-past Two"</strong> — Both use a child's perspective to comment on the adult world.</li>
   <li><strong>"Blessing"</strong> — Both explore vulnerability and basic human needs.</li>
 </ul>
+
+<h3>Key Quotation Bank</h3>
+<p>Essential quotations for essay writing:</p>
+<ul>
+  <li><strong>"I am not yet born"</strong> — The repeated anaphoric opening; emphasises the speaker's fundamental vulnerability and not-yet-existence.</li>
+  <li><strong>"O hear me, / O fill me with strength"</strong> — Addresses an unknown listener; uses imperative form to convey urgent pleading.</li>
+  <li><strong>"bloodsucking bat", "club-footed ghoul"</strong> — Gothic imagery representing primal fears; metaphors for real human evils.</li>
+  <li><strong>"water to dandle me, grass to grow for me, trees to talk to me, sky to sing to me"</strong> — Nature personified; represents innocence, beauty, and spiritual nourishment.</li>
+  <li><strong>"I will not let them make me a slave"</strong> — Declaration of the child's desire for freedom and individuality.</li>
+  <li><strong>"a cog in a machine"</strong> — Dehumanising metaphor; represents the fear of becoming a replaceable component in a totalitarian system.</li>
+  <li><strong>"the sins in me the world shall commit"</strong> — Paradoxical: the child will bear guilt for atrocities committed by others.</li>
+  <li><strong>"Let not the man who is beast or who thinks he is God come near me"</strong> — Rejects both the dehumanised and the totalitarian.</li>
+  <li><strong>"Otherwise kill me"</strong> — The devastating final line; non-existence is preferable to dehumanisation.</li>
+</ul>
+
+<h3 style="background-color: #e8f4f8; padding: 10px; border-left: 4px solid #0066cc;"><strong>Grade 9 Insight: The Rhetoric of Desperation</strong></h3>
+<p style="background-color: #e8f4f8; padding: 10px;">Grade 9 responses often focus on the poem's historical context (WWII) or its themes (dehumanisation) but miss the urgency of its rhetoric. The litany form is not merely decorative — it creates a rhetorical effect of desperation. The repeated "I am not yet born" is not a statement but a plea, a cry for attention. The accumulative lists ("the sins in me / the world shall commit") do not simply catalogue fears; they create a sense of overwhelming abundance, as if the child is racing to articulate everything before it is too late. High-achieving responses analyse how MacNeice's formal choices (free verse with ritualistic repetition, accumulative listing, stanza expansion) create an emotional and rhetorical intensity that mirrors the child's psychological state.</p>
+
+<h3 style="background-color: #fff3cd; padding: 10px; border-left: 4px solid #ff9800;"><strong>Context Box: WWII and the Crisis of Humanism</strong></h3>
+<p style="background-color: #fff3cd; padding: 10px;">When MacNeice wrote "Prayer Before Birth" in 1944, the world had just witnessed the Holocaust, Hiroshima and Nagasaki, and the systematic dehumanisation of totalitarian regimes. The poem emerged from a moment when faith in human progress had been shattered. The phrase "a cog in a machine" was not merely a metaphor but a lived reality: millions of people had been treated as expendable components in vast systems of death. MacNeice's choice to speak through an unborn child's voice gave him a way to express a deeply felt horror that direct statement could not convey. The unborn child represents the most vulnerable of all human beings, and its fears, though expressed as nightmares, are grounded in real historical atrocities.</p>
+
+<h3>Technique Analysis: Structural Escalation and Accumulation</h3>
+<p>MacNeice uses several interconnected techniques to build emotional intensity:</p>
+<ul>
+  <li><strong>Anaphora:</strong> The repeated "I am not yet born" creates a rhythmic pulse and constantly reminds the reader of the speaker's vulnerability.</li>
+  <li><strong>Accumulation:</strong> Within each stanza, MacNeice lists multiple fears, needs, or threats. The effect is overwhelming — there are so many dangers that the child can barely articulate them all.</li>
+  <li><strong>Stanza Expansion:</strong> The stanzas grow progressively longer as the poem develops, reflecting the accumulation and intensification of threats. Early stanzas are focused and concise; later stanzas sprawl across the page.</li>
+  <li><strong>Escalation:</strong> The threats escalate from personal and supernatural (bats, ghouls) to social (betrayal) to political (dehumanisation) to existential (the ultimatum: "kill me").</li>
+  <li><strong>Final Compression:</strong> After stanzas that expand dramatically, the final line "Otherwise kill me" is shockingly brief. This structural contrast concentrates all the poem's anguish into three words.</li>
+</ul>
+
+<h3>Model Exam Answer: "How does MacNeice use the voice of an unborn child to explore human vulnerability?"</h3>
+<div class="text-extract">
+<p><em>MacNeice's choice to speak through the voice of an unborn child is brilliantly strategic. The unborn child is the most vulnerable of all human beings — not yet existing, wholly dependent, unable to defend itself. By giving voice to this ultimate vulnerability, MacNeice creates a speaker whose fears cannot be dismissed as irrational anxiety but must be understood as profound truths about human existence in a dangerous world.</em></p>
+
+<p><em>The structural and linguistic choices of the poem reinforce this vulnerability. The repeated opening "I am not yet born" functions as both a statement of fact and a desperate plea. The anaphora creates a rhythmic pulse, a kind of psychological heartbeat, that drives the poem forward with obsessive intensity. Each repetition reminds the reader: this is a being that does not yet exist, that has no defence against the world's evils. The child's pleas become increasingly urgent as the poem progresses, reflected in the growing length of the stanzas. What begins as a request for supernatural protection ("bloodsucking bat", "club-footed ghoul") escalates into a cry for protection from human evil ("Let not the man who is beast or who thinks he is God come near me").</em></p>
+
+<p><em>The threats the child enumerates are presented as an overwhelming abundance. The lists accumulate: "the sinews of my ears / the chambers of my heart, / the white plains of my bones / shall not be broken by the machinery, / shall not be broken by the laws, / shall not be broken by the lives / of the world that I shall come to." The repetitive structure ("shall not be broken") creates a kind of desperate incantation, as if the child is using language as a magical protection against real forces. This technique is crucial to understanding MacNeice's presentation of vulnerability: the unborn child cannot defend itself physically, so it attempts to defend itself through language, through prayer, through ritual. Yet the poem suggests that language may be insufficient protection against the world's machinery.</em></p>
+
+<p><em>The escalation from supernatural to human to political threats is particularly significant. The early gothic imagery — "bloodsucking bat", "club-footed ghoul" — might seem like childish nightmares, but MacNeice uses these supernatural fears as metaphors for real human evils. The turning point comes with the image "a cog in a machine" — a metaphor that, written in 1944, invokes the systematic dehumanisation of totalitarianism. The child's fear is not of monsters but of being turned into a machine, of having its individuality stripped away. This is the poem's deepest claim about vulnerability: the human beings pose a greater threat than any supernatural evil.</em></p>
+
+<p><em>The devastation conclusion — "Otherwise kill me" — reveals the stakes of MacNeice's argument. The unborn child would rather not exist than be born into a world that will destroy what makes it human. This is not suicidal despair but a logical position: if the world cannot offer protection for individuality, innocence, and humanity, then non-existence is preferable. The brevity of this final line, after stanzas that expand across the page, creates a structural contrast that emphasises the child's ultimate powerlessness. Having catalogued its fears and made its pleas, the child has nothing left to say except this blunt ultimatum. The poem ends not with hope or resolution but with the recognition that human vulnerability may be absolute and irremediable.</em></p>
+</div>
 `,
     quiz: [
       {
@@ -1591,6 +1634,46 @@ const halfPastTwoModules: CourseModule[] = [
   <li><strong>"Hide and Seek"</strong> — Both recreate childhood experience with a shift in perspective at the end.</li>
   <li><strong>"Search For My Tongue"</strong> — Both explore how language shapes perception and understanding.</li>
 </ul>
+
+<h3>Key Quotation Bank</h3>
+<p>Essential quotations for essay writing:</p>
+<ul>
+  <li><strong>"Something Very Wrong"</strong> — Demonstrates the child's inflated sense of their misdeed through capitalisation.</li>
+  <li><strong>"gettinguptime, timeyouwereofftime, taborgotime"</strong> — Shows the child's intuitive, experiential understanding of time through neologisms.</li>
+  <li><strong>"he was in the clockless land forever"</strong> — The poem's central transcendent image; represents escape from measured time.</li>
+  <li><strong>"she slotted him back into schooltime"</strong> — Metaphor for how authority reimpose adult structures; "slotted" suggests mechanical dehumanisation.</li>
+  <li><strong>"But he never forgot how once by not knowing time, he escaped into the clockless land for ever"</strong> — The final isolated line; shows lasting significance and retrospective recognition.</li>
+  <li><strong>"the little eyes and two long legs"</strong> — Defamiliarisation of the clock through sensory perception; the child sees the clock as a creature.</li>
+  <li><strong>"Stay in till Half-past Two"</strong> — The teacher's instruction; meaningful to adults but meaningless to the child who cannot read time.</li>
+</ul>
+
+<h3 style="background-color: #e8f4f8; padding: 10px; border-left: 4px solid #0066cc;"><strong>Grade 9 Insight: Why This Poem Challenges Binary Thinking</strong></h3>
+<p style="background-color: #e8f4f8; padding: 10px;">The poem resists easy categorisation. It is not simply "pro-childhood" or "critical of education" — it is more nuanced. Fanthorpe celebrates the child's intuitive understanding while gently satirising the teacher's assumptions. High-achieving responses recognise this complexity: the poem both valorises childhood perception AND mocks the rigid systems adults impose. The child's "failure" to understand clock time becomes, paradoxically, a form of success — he experiences something transcendent that the clock-bound adult cannot access. This is not sentimentality but a sophisticated claim about different modes of being.</p>
+
+<h3 style="background-color: #fff3cd; padding: 10px; border-left: 4px solid #ff9800;"><strong>Context Box: Fanthorpe and Education</strong></h3>
+<p style="background-color: #fff3cd; padding: 10px;">U A Fanthorpe worked as a schoolteacher and later as a hospital receptionist. Her experience in institutional settings deeply shaped her poetry. "Half-past Two" reflects her intimate understanding of the power dynamics between authority figures and those subject to them. However, her perspective is not straightforwardly critical — she understood why systems exist, even as she questioned their assumptions. This balance of sympathy and critique marks all her best work.</p>
+
+<h3>Technique Analysis: Defamiliarisation</h3>
+<p>One of Fanthorpe's key techniques is <strong>defamiliarisation</strong> — making the ordinary world seem strange and new. Examples:</p>
+<ul>
+  <li>The clock described as having "little eyes and two long legs" — we see it through the child's eyes, not as a measuring instrument but as a creature.</li>
+  <li>Time known through "gettinguptime, timeyouwereofftime" — the familiar routines of daily life become the child's natural time-markers.</li>
+  <li>The teacher's action described as "slotting" the child back — a mechanical verb that makes institutional control visible and strange.</li>
+</ul>
+<p>This technique invites readers to question their own assumptions — why do we privileged clock time over the child's sensory, embodied experience?</p>
+
+<h3>Model Exam Answer: "How does Fanthorpe present the nature of childhood in 'Half-past Two'?"</h3>
+<div class="text-extract">
+<p><em>Fanthorpe presents childhood as a fundamentally different way of being — not inferior to adulthood, but richer in certain respects. The child's inability to tell the time, which could be presented as a limitation, becomes the gateway to a transcendent experience. Fanthorpe creates a sophisticated argument that childhood perception is not merely innocent but profoundly meaningful.</em></p>
+
+<p><em>The compound time-words are crucial to understanding Fanthorpe's presentation. "Gettinguptime, timeyouwereofftime, taborgotime" — these neologisms show that the child understands time not as abstract numbers on a clock, but as sensory, emotional landmarks rooted in daily experience. Each compound word anchors time to a felt experience: the sensation of getting up, the ritual of leaving for school, the sound of tabor music. This is not a deficient understanding of time but a different understanding — embodied rather than abstract, intuitive rather than rational. The lack of spaces within the words mirrors the child's undifferentiated, continuous experience of time as a flow rather than discrete units.</em></p>
+
+<p><em>The central image — "he was in the clockless land forever" — reveals Fanthorpe's deepest claim about childhood. The word "land" is significant: it is a real place, not merely a psychological state. "Forever" captures the child's sense of infinite, boundless time. This experience is transcendent, almost spiritual — a moment when the child touches something beyond the ordinary, rational world. The fact that this transcendence is triggered by a failure to understand adult systems suggests that institutional time (clock time, school time) actually diminishes human experience rather than enriching it.</em></p>
+
+<p><em>However, Fanthorpe is not simply idealising childhood. The tone is gently satirical. The teacher's assumptions are mocked — she assumes the child understands her instruction because it is obvious to her. The phrase "slotted him back into schooltime" reveals the mechanical way institutions slot children into predetermined slots, draining them of their own rhythms. Yet there is warmth in Fanthorpe's depiction of the child's confusion and wonder. The poem celebrates childhood perception not as a permanent ideal but as a real, temporary state of being that has its own profound validity.</em></p>
+
+<p><em>The final isolated line — "But he never forgot how once by not knowing time, he escaped into the clockless land for ever" — shifts to retrospection. The adult narrator looks back and recognises that this childhood moment permanently altered him. This suggests that Fanthorpe sees childhood not as something to recover or return to, but as a foundational experience whose effects persist into adulthood. The word "escaped" frames the clockless land as a liberation, and the repetition of "forever" (now written as two words rather than one) emphasises that some experiences transcend the passage of time itself.</em></p>
+</div>
 `,
     quiz: [
       {
@@ -1912,6 +1995,47 @@ const pianoModules: CourseModule[] = [
   <li><strong>"Hide and Seek"</strong> — Both involve a shift from childhood joy to adult awareness.</li>
   <li><strong>"Sonnet 116"</strong> — Both explore enduring emotional connections, though in very different forms.</li>
 </ul>
+
+<h3>Key Quotation Bank</h3>
+<p>Essential quotations for essay writing:</p>
+<ul>
+  <li><strong>"A woman is singing to me"</strong> — Opens the poem by establishing the present-day trigger for memory.</li>
+  <li><strong>"the insidious mastery of song"</strong> — The poem's key phrase; "insidious" implies deception, "mastery" implies total control.</li>
+  <li><strong>"In spite of myself, the insidious mastery of song / Betrays me back"</strong> — Shows the speaker's resistance being overwhelmed; "betrays" personifies the song as treacherous.</li>
+  <li><strong>"a child sitting under the piano, in the boom of the tingling strings"</strong> — Childhood memory; sensory immersion in sound; "boom" and "tingling" create intensity.</li>
+  <li><strong>"pressing the small, poised feet of a mother"</strong> — Intimate tactile detail; "poised" and "small" create tenderness and vulnerability.</li>
+  <li><strong>"the cosy parlour, the tinkling piano our guide"</strong> — Domestic security; "cosy" and "tinkling" suggest warmth; "our guide" personalises the piano as a protective presence.</li>
+  <li><strong>"weeping like a child for the past"</strong> — Final image; simile captures the irony of an adult reverting to childlike helplessness.</li>
+  <li><strong>"the great black piano appassionato"</strong> — Present-day performance; "appassionato" (with intense passion) is ironic — the present is passionate but empty.</li>
+  <li><strong>"vain"</strong> — The present-day song is described as futile, meaningless, overshadowed by the past.</li>
+</ul>
+
+<h3 style="background-color: #e8f4f8; padding: 10px; border-left: 4px solid #0066cc;"><strong>Grade 9 Insight: The Gendered Vulnerability of the Speaker</strong></h3>
+<p style="background-color: #e8f4f8; padding: 10px;">Grade 9 responses often overlook the gendered dimension of "Piano". The speaker's resistance to emotion, his shame at weeping, and his use of words like "betrays" to describe emotional surrender reflect early 20th-century masculine ideals that stigmatised male emotional expression. Lawrence was writing in an era when men were expected to maintain emotional restraint and control — precisely what this speaker fails to do. The poem is not just about nostalgia but about the collapse of masculine composure. The speaker weeps "like a child" — a comparison that suggests he has lost his adult, male authority. High-achieving responses integrate this gendered reading into their analysis of Lawrence's language and the poem's historical context.</p>
+
+<h3 style="background-color: #fff3cd; padding: 10px; border-left: 4px solid #ff9800;"><strong>Context Box: D H Lawrence and His Mother</strong></h3>
+<p style="background-color: #fff3cd; padding: 10px;">D H Lawrence's relationship with his mother, Lydia, was the defining emotional relationship of his early life. She died in 1910, and her loss haunted his writing throughout his career. "Piano" was published in 1918, eight years after her death, yet the poem's intensity suggests unhealed grief. The poem can be read as Lawrence's attempt to recover, through sensory memory, the lost presence of his mother. The childhood image of sitting under the piano while his mother played is not merely sentimental recall but an act of psychological restoration — a desperate attempt to reconnect with a lost love. This biographical context helps explain the poem's emotional extremity: it is not just about nostalgia but about profound loss that cannot be recovered.</p>
+
+<h3>Technique Analysis: Irony and Paradox</h3>
+<p>Lawrence's language creates multiple layers of irony:</p>
+<ul>
+  <li><strong>The Irony of "Insidious":</strong> The reader might initially expect "insidious" to be negative, but it describes something the speaker actually desires — to be carried back to his childhood. The word's treacherous connotations reveal the speaker's conflicted relationship with nostalgia: he wants it and resists it simultaneously.</li>
+  <li><strong>The Paradox of the Child:</strong> The speaker weeps "like a child" — helplessly, without restraint. But he is weeping FOR his childhood, which means he has grown beyond it. The act of remembering childhood dissolves the boundary between adult and child selves.</li>
+  <li><strong>The Vain Present vs. the Vivid Past:</strong> The present-day performance, described as "appassionato" (with intense passion), is dismissed as "vain" (futile). The word "appassionato" is a musical term that should describe a genuine emotional intensity, yet it is ironically contrasted with the simple, domestic music of the past, which is far more emotionally powerful.</li>
+</ul>
+
+<h3>Model Exam Answer: "Explore how Lawrence uses language to convey the power of involuntary memory"</h3>
+<div class="text-extract">
+<p><em>Lawrence presents involuntary memory as a force that operates independently of conscious will and rational choice. The poem dramatises a moment when a sensory stimulus — a woman singing — triggers a flood of childhood memory that overwhelms the speaker's defences. Lawrence's language reveals both the power and the violence of this experience.</em></p>
+
+<p><em>The phrase "the insidious mastery of song" is central to understanding Lawrence's presentation of involuntary memory. "Insidious" typically means something harmful that proceeds secretly and gradually — like a disease. Applied to the song, it suggests that the music works against the speaker's conscious will, infiltrating his mind deceptively. The word "mastery" implies total dominance and control. Together, these words present memory not as a gentle, pleasant reminiscence but as an overwhelming force that takes control of the speaker against his better judgment. The verb "Betrays" reinforces this sense of violation — something that should be enjoyable has instead undermined the speaker's emotional composure. The direction "back" is also significant: the speaker is not choosing to remember but being dragged backwards through time, as if he is swimming against a powerful current.</em></p>
+
+<p><em>The sensory details of the childhood memory reveal why this past experience exerts such powerful control. The image of sitting "under the piano, in the boom of the tingling strings" creates a sense of total sensory immersion. "Boom" and "tingling" are onomatopoetic words that evoke sound and sensation; they make the reader almost physically feel the intensity of the child's experience. The tactile detail of "pressing the small, poised feet of a mother" is particularly intimate — the child is touching his mother, feeling her physical presence. These sensory details are crucial: involuntary memory is not triggered by intellectual thought but by sensory experience — the sound of music, the remembered feeling of a touch. The poverty of the present-day experience becomes apparent by contrast: the woman singing in the present is described barely at all; the poem gives her no sensory reality.</em></p>
+
+<p><em>Lawrence's portrayal of the speaker's emotional breakdown reveals the power of involuntary memory to obliterate rational self-control. Despite his resistance — "In spite of myself" — the speaker cannot prevent the flood of memory. By the poem's end, he is "weeping like a child for the past". The simile is loaded with irony: he is weeping FOR his childhood while simultaneously reverting TO a childlike state of helpless emotion. The act of remembering has temporarily dissolved the boundary between his adult and child selves. The word "past" is deceptively simple: it does not specify what he mourns — not a particular loss but the entire irrecoverable past, the world of childhood security that has been permanently lost.</em></p>
+
+<p><em>The poem's final image dismisses the present entirely. The woman's song, which is described as performed "appassionato" (with intense passion), is now "vain" — futile, meaningless. This is a devastating conclusion: the present moment, however passionate or beautiful, cannot compete with the power of involuntary memory. What Lawrence reveals is that the past, once triggered in the mind, becomes more real than the present — more vivid, more emotionally significant, more true. Involuntary memory does not simply remind us of the past; it brings the past into the present with such intensity that the present is temporarily obliterated. This is why the memory has such power: it is not a pale shadow of lived experience but a living, breathing force that can still make an adult man weep like a child.</em></p>
+</div>
 `,
     quiz: [
       {

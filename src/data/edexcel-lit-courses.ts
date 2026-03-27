@@ -333,8 +333,92 @@ const edexcelLitPaper1: CourseData = {
   <li><strong>Banquo's lineage</strong> was believed to lead to James I, so his nobility was politically significant.</li>
 </ul>
 
-<h3>Model Character Paragraph</h3>
-<div class="text-extract">Shakespeare presents Macbeth's deterioration through blood imagery. Initially blood symbolises bravery, but after Duncan's murder it becomes guilt: "Will all great Neptune's ocean wash this blood / Clean from my hand?" By Act 3, blood is a metaphor for moral entrapment. This evolving imagery shows ambition corrupting absolutely — a warning for a Jacobean audience who feared political instability.<div class="source">Model paragraph: AO1 + AO2 + AO3</div></div>
+<h3>Quotation Bank: Macbeth's Deterioration with Analysis</h3>
+<div class="text-extract">
+<strong>Act 1, Scene 2 (Warrior):</strong> "For brave Macbeth — well he deserves that name" — Initial heroism and martial honour.<br><br>
+<strong>Act 1, Scene 7 (Conflicted):</strong> "I have no spur / To prick the sides of my intent, but only / Vaulting ambition" — Awareness of moral transgression; inability to resist. "Vaulting" suggests ambition overleaping proper bounds.<br><br>
+<strong>Act 2, Scene 2 (Guilt):</strong> "Will all great Neptune's ocean wash this blood / Clean from my hand?" — Hyperbole conveys guilt as cosmic, indelible. No physical act can undo moral transgression.<br><br>
+<strong>Act 3, Scene 2 (Isolation):</strong> "We have scotch'd the snake, not kill'd it" — Paranoia. Macbeth recognises that Banquo remains a threat, forcing further murders.<br><br>
+<strong>Act 5, Scene 5 (Despair):</strong> "To-morrow, and to-morrow, and to-morrow, / Creeps in this petty pace from day to day" — Nihilism. Meaning dissolves; life becomes meaningless repetition.
+</div>
+
+<div class="grade-9-insight"><strong>Grade 9 Insight:</strong> Trace a single image's evolution across the entire play. Blood begins as honour ("brave Macbeth"), becomes transgression (Duncan's murder), then guilt ("Will all great Neptune's ocean wash this blood / Clean from my hand?"), and finally numbness ("Out, damned spot!" in Lady Macbeth's mad scene). This unified analysis demonstrates sophisticated AO2 understanding and conceptual mastery of the play's psychological arc.</div>
+
+<h3>Worked Example: Lady Macbeth's Transgression</h3>
+<p><strong>Extract:</strong> "Come, you spirits / That tend on mortal thoughts, unsex me here"</p>
+<div class="text-extract">
+<strong>Analysis:</strong> The imperative "Come" shows Lady Macbeth actively summoning supernatural forces — she is not passive but drives her own ambition. "Unsex me" is particularly transgressive for a Jacobean audience: she explicitly rejects femininity as weakness, calling for masculine ruthlessness instead. The verb "tend" positions spirits as servants to her will, suggesting her desire supersedes natural order. For a Jacobean audience conditioned to believe women should be obedient and nurturing, this rejection of gender itself was alarming. The witch trials of the era and fears of female autonomy make this speech especially provocative. Shakespeare's point: ambition that rejects natural constraints (gender, conscience, loyalty) inevitably leads to madness and destruction, as Lady Macbeth's sleepwalking later proves.
+</div>
+
+<h3>Character Comparison Grid (for exam planning)</h3>
+<table style="width:100%; border-collapse: collapse;">
+<tr style="border-bottom: 2px solid #333;">
+<th style="text-align: left; padding: 6px;"><strong>Character</strong></th>
+<th style="text-align: left; padding: 6px;"><strong>Initial State</strong></th>
+<th style="text-align: left; padding: 6px;"><strong>Turning Point</strong></th>
+<th style="text-align: left; padding: 6px;"><strong>Final State</strong></th>
+<th style="text-align: left; padding: 6px;"><strong>Thematic Function</strong></th>
+</tr>
+<tr style="background-color: #f9f9f9;">
+<td style="padding: 6px;"><strong>Macbeth</strong></td>
+<td style="padding: 6px;">Loyal, brave warrior</td>
+<td style="padding: 6px;">Witches' prophecy + Lady's manipulation</td>
+<td style="padding: 6px;">Isolated tyrant; nihilistic</td>
+<td style="padding: 6px;">Ambition's corrupting power; consequences of unchecked desire</td>
+</tr>
+<tr>
+<td style="padding: 6px;"><strong>Lady Macbeth</strong></td>
+<td style="padding: 6px;">Ambitious, commanding, "unsexed"</td>
+<td style="padding: 6px;">Banquet scene; Macbeth's breakdown exposes her loss of control</td>
+<td style="padding: 6px;">Mad; guilty; suicidal (off-stage death)</td>
+<td style="padding: 6px;">Toxic ambition; inevitability of conscience; gender transgression punished</td>
+</tr>
+<tr style="background-color: #f9f9f9;">
+<td style="padding: 6px;"><strong>Banquo</strong></td>
+<td style="padding: 6px;">Loyal friend; resists temptation through prayer</td>
+<td style="padding: 6px;">Murdered by Macbeth to eliminate threat to lineage</td>
+<td style="padding: 6px;">Supernatural ghost; manifests Macbeth's guilt</td>
+<td style="padding: 6px;">Loyalty and virtue vindicated; guilt inescapable; natural order</td>
+</tr>
+<tr>
+<td style="padding: 6px;"><strong>Macduff</strong></td>
+<td style="padding: 6px;">Loyal thane; questions Macbeth's authority</td>
+<td style="padding: 6px;">Family slaughtered in his absence; radicalized</td>
+<td style="padding: 6px;">Avenging hero who defeats Macbeth and restores order</td>
+<td style="padding: 6px;">Justice; restoration of rightful order; familial bonds</td>
+</tr>
+</table>
+
+<h3>Exam Technique: Integrating Character Analysis with Context</h3>
+<p><strong>Weak (bolted-on context):</strong> "Macbeth is ambitious. In Jacobean times, people believed in divine right of kings."</p>
+<p><strong>Strong (integrated):</strong> "For a Jacobean audience steeped in the belief of divine right of kings, Macbeth's regicide is not merely treason but blasphemy. Shakespeare's presentation of Macbeth as ambitious yet morally aware ('I have no spur / To prick the sides of my intent, but only / Vaulting ambition') deepens the tragedy: the protagonist understands the cosmic wrongness of his act yet cannot resist. This would terrify a contemporary audience who saw political order as ordained by God and disruption as harbinger of universal chaos."</p>
+
+<h3>Common Weak vs Strong Analysis Patterns</h3>
+<table style="width:100%; border-collapse: collapse;">
+<tr style="border-bottom: 2px solid #333;">
+<th style="text-align: left; padding: 6px;"><strong>Weak (Character-as-Person)</strong></th>
+<th style="text-align: left; padding: 6px;"><strong>Strong (Authorial Construction)</strong></th>
+</tr>
+<tr style="background-color: #f9f9f9;">
+<td style="padding: 6px;">Macbeth is ambitious and wants to be king.</td>
+<td style="padding: 6px;">Shakespeare constructs Macbeth as a vehicle for exploring ambition's corrupting power, using the blood motif to track his psychological deterioration from soldier to tyrant.</td>
+</tr>
+<tr>
+<td style="padding: 6px;">Lady Macbeth feels guilty and goes mad.</td>
+<td style="padding: 6px;">Shakespeare presents Lady Macbeth's descent into madness as poetic justice — her conscious rejection of conscience in Act 1 leads inevitably to its violent eruption in her sleepwalking. The return of repressed guilt becomes irresistible.</td>
+</tr>
+<tr style="background-color: #f9f9f9;">
+<td style="padding: 6px;">Banquo is loyal and doesn't kill the king.</td>
+<td style="padding: 6px;">Shakespeare positions Banquo as a moral foil to Macbeth, resisting supernatural temptation through prayer and conscience. This emphasises Macbeth's free choice to transgress, not mere fate.</td>
+</tr>
+</table>
+
+<h3>Model Answer: Full Grade 8–9 Paragraph on Character Development</h3>
+<div class="text-extract">
+<strong>Sample Question:</strong> "Explore how Shakespeare presents Macbeth's change from loyal warrior to paranoid tyrant."<br><br>
+<strong>Model Response (c. 280 words):</strong> Shakespeare's presentation of Macbeth's moral descent is central to the tragedy's exploration of ambition's corrupting nature. In Act 1 Scene 2, the bleeding sergeant hails "brave Macbeth," establishing him as a loyal warrior whose violence serves rightful order — blood here symbolises martial honour. Yet by Act 1 Scene 7, Macbeth's soliloquy reveals internal fracture: "I have no spur / To prick the sides of my intent, but only / Vaulting ambition." The noun "spur" traditionally signified duty or honour, but Macbeth finds only "ambition" — selfish desire divorced from legitimate cause. The verb "vaulting" (arching, overleaping) suggests ambition that exceeds its proper bounds and will inevitably collapse, foreshadowing his downfall. Lady Macbeth's manipulation — "When you durst do it, then you were a man" — weaponises masculinity against him, forcing the murder. Following Duncan's death, blood's imagery inverts. The hyperbolic "Will all great Neptune's ocean wash this blood / Clean from my hand?" reveals Macbeth's recognition that moral transgression cannot be undone by physical action. This psychological unraveling accelerates through Acts 3–5. By Act 3, Macbeth orders further murders to feel secure ("We have scotch'd the snake, not kill'd it"), revealing paranoia and moral numbness. The Act 5 soliloquy sees meaning itself dissolve: "To-morrow, and to-morrow, and to-morrow." Shakespeare's arc demonstrates that unchecked ambition doesn't elevate; it destroys, leaving the protagonist isolated and nihilistic. For a Jacobean audience steeped in the divine right of kings, Macbeth's fall would serve as a cosmic warning: those who violate God's ordained order face not mere earthly punishment but psychological annihilation.
+<div class="source">Grade 8–9 exemplar: ~320 words integrating AO1 (interpretation), AO2 (language analysis of "vaulting," "spur," hyperbole), and AO3 (divine right context)</div>
+</div>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Writing about characters as real people. Avoid "Macbeth feels angry" — instead write "Shakespeare presents Macbeth as consumed by paranoia, reflecting the consequences of tyranny."</div>
 `,
@@ -579,13 +663,66 @@ const edexcelLitPaper1: CourseData = {
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Writing everything you know without linking it to the question. Every paragraph must connect to the named theme or character. Narrative retelling will not reach the top bands.</div>
 
+<h3>Quotation Bank for Macbeth Extract Questions</h3>
+<div class="text-extract">
+<strong>For Ambition:</strong> "Vaulting ambition, which o'erleaps itself" (Act 1.7) | "I have no spur / To prick the sides of my intent" (Act 1.7) | "None of woman born shall harm Macbeth" (Act 4.1, false security)<br><br>
+<strong>For Guilt & Conscience:</strong> "Will all great Neptune's ocean wash this blood / Clean from my hand?" (Act 2.2) | "Out, damned spot!" (Act 5.1, Lady Macbeth sleepwalking)<br><br>
+<strong>For Power & Masculinity:</strong> "When you durst do it, then you were a man" (Act 1.7, Lady Macbeth goads) | "I am settled: I will rule in fear" (Act 4.1, post-witches)<br><br>
+<strong>For Appearance vs Reality:</strong> "Look like th'innocent flower, / But be the serpent under't" (Act 1.5) | "There's none of my people know" (Act 3.2, before Banquo murder)<br><br>
+<strong>For the Supernatural:</strong> "Fair is foul, and foul is fair" (Act 1.1, witches) | "By the pricking of my thumbs, / Something wicked this way comes" (Act 4.1)
+</div>
+
+<h3>Grade 9 Insight: Moving Beyond the Extract</h3>
+<div class="grade-9-insight"><strong>Grade 9 Approach:</strong> Spend roughly 60% of your essay on close analysis of the printed extract (AO2: language techniques, dramatic effects). However, the final 40% must move decisively into the wider play. Don't just mention other scenes — show how they <em>develop, complicate, or culminate</em> the idea from the extract. For example, if the extract shows Macbeth's hesitation about regicide, move to Act 2 (the murder), then Act 3 (paranoia), then Act 5 (nihilism). This progression demonstrates that you understand the thematic arc of the play and can integrate evidence strategically.</div>
+
+<h3>Worked Example: Extractto-Whole Analysis</h3>
+<p><strong>Extract (Act 1.7):</strong> "I have no spur / To prick the sides of my intent, but only / Vaulting ambition, which o'erleaps itself / And falls on th'other."</p>
+<p><strong>Question:</strong> "How does Shakespeare present the role of ambition in leading to downfall?"</p>
+<div class="text-extract">
+<strong>Extract Analysis (2 paragraphs):</strong><br>
+This soliloquy reveals Macbeth's moral awareness. The metaphor of "spur" (a rider's tool for motivating a horse) signals that legitimate motives (duty, honour) should drive action. Yet Macbeth finds only "ambition" — selfish desire. The verb "vaulting" (arching too far) and the paradox "o'erleaps itself / And falls on th'other" foreshadow inevitable collapse. For a Jacobean audience, this self-awareness makes the subsequent regicide doubly damning: Macbeth knows his transgression violates divine order.<br><br>
+<strong>Wider Play Integration (2 paragraphs):</strong><br>
+The prophecy itself fuels this ambition. The witches' "All hail, Macbeth, that shalt be king hereafter" (Act 1.3) plants the idea; Lady Macbeth weaponises it with "When you durst do it, then you were a man" (Act 1.7). But the play demonstrates that this ambition cannot be sated. Post-murder, Macbeth's paranoia forces him to order Banquo's death ("We have scotch'd the snake, not kill'd it," Act 3.2), then Macduff's family's slaughter. Each crime deepens isolation and psychological decay. By Act 5, the nihilistic soliloquy ("To-morrow, and to-morrow, and to-morrow") shows that ambition has destroyed not just Macbeth's morality but his capacity for meaning. Shakespeare's point: ambition as isolated personal desire, unchecked by conscience or loyalty, is self-consuming. Macduff's eventual victory and Malcolm's restoration of order reassert that the kingdom itself rejects the tyranny ambition produced.
+</div>
+
+<h3>PETAL Framework: Worked Practice</h3>
+<p><strong>Question Extract:</strong> "By the pricking of my thumbs, / Something wicked this way comes" (Act 4.1)</p>
+<div class="text-extract">
+<strong>P — Point:</strong> Shakespeare uses the supernatural to externalise Macbeth's psychological corruption.<br><br>
+<strong>E — Evidence:</strong> The witches' spellcraft ("By the pricking of my thumbs") creates an ominous atmosphere that precedes Macbeth's entry.<br><br>
+<strong>T — Technique:</strong> Personification ("something wicked this way comes") treats evil as an external force approaching; supernatural imagery blurs reality and illusion.<br><br>
+<strong>A — Analysis:</strong> For the audience, the witches' supernatural awareness suggests their manipulation of events. Yet Macbeth arrives immediately after, suggesting he is drawn by his own dark desires. The technique creates ambiguity: are the witches controlling Macbeth, or do they simply reveal what he already wants? This fits the play's thematic question of fate vs free will.<br><br>
+<strong>L — Link to Context:</strong> A Jacobean audience familiar with James I's <em>Daemonologie</em> would recognise witches as real threats. Yet Shakespeare makes their power ambiguous, perhaps suggesting Macbeth's own agency in his downfall. This subtlety may reflect anxieties about witchcraft trials' reliability.
+</div>
+
 <h3>Timing (50 minutes)</h3>
 <ol>
-  <li><strong>0–5 min:</strong> Read and annotate the extract.</li>
-  <li><strong>5–8 min:</strong> Plan — thesis, extract points, wider play points.</li>
-  <li><strong>8–42 min:</strong> Write your response.</li>
-  <li><strong>42–50 min:</strong> Proofread for AO4 (spelling, punctuation, grammar).</li>
+  <li><strong>0–5 min:</strong> Read extract carefully. Annotate key words, literary devices, character tone.</li>
+  <li><strong>5–8 min:</strong> Plan — write a one-sentence thesis, 3–4 extract points (using PETAL), 3–4 wider-play moments (showing development).</li>
+  <li><strong>8–42 min:</strong> Write response. Aim for 2–3 extract-focused paragraphs (60%), then 2–3 wider-play paragraphs (40%). Use embedded quotations (3–6 words each).</li>
+  <li><strong>42–50 min:</strong> Proofread for AO4 (spelling, punctuation, grammar). Check for SPaG errors that lose easy marks.</li>
 </ol>
+
+<h3>Model Opening — Extract-to-Whole (Grade 8–9)</h3>
+<div class="text-extract">
+<strong>Question:</strong> "Explore how Shakespeare uses the witches to explore the theme of ambition."<br><br>
+<strong>Model Introduction:</strong> Shakespeare presents the witches as agents of temptation who tap into Macbeth's latent ambition, raising the question of whether they cause his downfall or merely reveal his underlying desires. The witches' prophecies — particularly "All hail, Macbeth, that shalt be king hereafter" (Act 1.3) — plant ambition in Macbeth's mind, yet Lady Macbeth must drive him to act. Across the play, the supernatural becomes increasingly tied to Macbeth's psychological deterioration, suggesting that ambition, once awakened, becomes self-perpetuating. Ultimately, Shakespeare suggests that while external temptation exists, individuals remain responsible for their moral choices.
+<div class="source">Grade 8–9: Establishes a conceptualised argument, references context (James I's beliefs about witchcraft), and indicates the essay's direction</div>
+</div>
+
+<h3>Extract Paragraph Model (Grade 8–9)</h3>
+<div class="text-extract">
+<strong>From Act 1.7 — "I have no spur / To prick the sides of my intent, but only / Vaulting ambition"</strong><br><br>
+Shakespeare's use of equestrian metaphor reveals Macbeth's moral self-awareness. The "spur" traditionally signifies duty or honour — legitimate reasons to act — yet Macbeth identifies only "ambition" as his motivator. The verb "vaulting" (leaping, arching) carries connotations of reckless overreach; the paradoxical "o'erleaps itself / And falls on th'other" foreshadows inevitable collapse. Notably, Macbeth does not excuse his ambition as imposed by fate or witches — he owns it. For a Jacobean audience steeped in the Great Chain of Being, this self-aware transgression is damning: Macbeth understands the cosmic disorder his actions will produce, yet cannot resist. The metaphor's specificity — the concrete image of a horse and rider — makes abstract ambition visceral, inviting the audience to feel the tragedy of a man who recognises his own doom.
+<div class="source">Grade 8–9 Extract Paragraph: ~180 words, demonstrating AO2 (metaphor analysis, connotations, paradox), AO1 (response to question), AO3 (Jacobean context)</div>
+</div>
+
+<h3>Wider Play Paragraph Model (Grade 8–9)</h3>
+<div class="text-extract">
+<strong>Developing the theme into Acts 2–5:</strong><br><br>
+Yet Macbeth's Act 1 self-awareness does not temper his ambition; instead, the play demonstrates how ambition mutates into paranoia and tyranny. Following Duncan's murder, Macbeth's language shifts from reflection to ruthlessness. "We have scotch'd the snake, not kill'd it" (Act 3.2) reveals that one murder cannot satiate ambition — Banquo remains a threat. This compulsion drives Macbeth to orchestrate Banquo's death and, by Act 4, to order the slaughter of Macduff's innocent family. Each crime distances him further from his initial moral awareness. By Act 5, the nihilistic "To-morrow, and to-morrow, and to-morrow" soliloquy shows that ambition has consumed all meaning — Macbeth is no longer driven by desire but hollowed by it. Shakespeare's arc demonstrates that unchecked ambition does not elevate; it destroys the ambition-driven self. The restoration of order through Macduff's victory and Malcolm's coronation reasserts that the kingdom itself rejects the tyrant ambition produced.
+<div class="source">Grade 8–9 Wider Play Paragraph: ~200 words, integrating multiple scenes to show thematic development and providing conceptualised interpretation</div>
+</div>
 `,
     quiz: [
       {
@@ -792,13 +929,89 @@ const edexcelLitPaper1: CourseData = {
   <li><strong>Gerald</strong> — Upper class, represents patriarchy. His affair with Daisy Renton is built on power imbalance. Key quote: <em>"intensely grateful"</em> reveals the transactional nature. Sides with the older Birlings by Act 3, closing ranks.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Sheila is the safest exam choice — her clear arc naturally generates AO1, AO2, and AO3 marks in a single paragraph.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> Sheila is the safest exam choice — her clear arc naturally generates AO1, AO2, and AO3 marks in a single paragraph. Eric is equally strong but slightly weaker because his motivation is less clear.</div>
 
-<h3>Model Paragraph: Sheila's Development</h3>
+<h3>Quotation Bank: Key Character Moments with Analysis</h3>
+<div class="text-extract">
+<strong>Mr Birling (Capitalist resistance):</strong> "A man has to mind his own business and look after himself and his own" — Shows his refusal of collective responsibility. The selfish pronouns "his own" emphasise atomisation.<br><br>
+<strong>Mrs Birling (Class snobbery):</strong> "Girls of that class—" — Truncated speech reveals her discomfort with even naming Eva's class. Shows ingrained snobbery.<br><br>
+<strong>Sheila (Moral awakening):</strong> "But these girls aren't cheap labour — they're people" — Simple language, powerful recognition of shared humanity. Shows transformation from complicity to conscience.<br><br>
+<strong>Eric (Guilt recognition):</strong> "You're not the kind of father a chap could go to when he's in trouble" — Exposes family's emotional coldness. Shows he has moved beyond self-interest to recognise systemic failure.<br><br>
+<strong>Inspector Goole (Socialist conscience):</strong> "We are members of one body. We are responsible for each other" — Directly voices Priestley's collectivist philosophy. Aphorismatic, memorable, prescriptive.
+</div>
 
-<div class="text-extract">Priestley presents Sheila's development as central to the play's moral argument. In Act 1, the stage directions describe her as "a pretty girl in her early twenties, very pleased with life," suggesting a sheltered existence. After learning of Eva's dismissal from Milwards, her language shifts: "But these girls aren't cheap labour — they're people." The noun "people" is deliberately simple yet powerful — Priestley shows Sheila recognising a shared humanity her parents never acknowledge. By Act 3, she tells her parents: "You're pretending everything's all right." The present continuous verb "pretending" shows her refusal to return to ignorance. Priestley uses Sheila to embody his hope that the younger generation could build a more equal post-war society.<div class="source">Model analytical paragraph — AO1, AO2, AO3</div></div>
+<h3>Grade 9 Insight: Character as Ideological Vehicle</h3>
+<div class="grade-9-insight"><strong>Grade 9 Approach:</strong> Avoid treating characters as psychologically realistic people. Instead, recognise that Priestley constructs each character to embody a political position: Birling = capitalist individualism; Mrs Birling = aristocratic snobbery; Sheila/Eric = socialist potential; Inspector = moral authority. Show how their dialogue and stage actions express these ideologies. For instance, Sheila's early consumerism ("That's a beautiful dress") contrasts with her later recognition of workers' humanity. This ideological shift is Priestley's argument for social change, not a realistic character "journey." Top-band responses will frame characters as constructs that dramatise political debate.</div>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Writing about characters as if they are real people. Always frame analysis around Priestley's purpose — e.g. "Priestley uses Sheila to suggest…" not "Sheila feels bad because…"</div>
+<h3>Worked Example: Sheila's Transformation</h3>
+<p><strong>Extract (Act 1):</strong> "That's a beautiful dress! Isn't it, Mummy? I love it!"</p>
+<p><strong>Later (Act 2):</strong> "But these girls aren't cheap labour — they're people."</p>
+<div class="text-extract">
+<strong>Analysis:</strong> Priestley constructs Sheila as the play's moral barometer, moving from shallow materialism to ethical consciousness. In Act 1, her enthusiasm for her dress — infantilised by stage direction "very pleased with life" — shows her isolation in bourgeois comfort. She has never considered the labour or ethics behind her possessions. However, when she learns that her vanity led to Eva's dismissal from Milwards (out of jealousy at a pretty girl in the shop), Sheila undergoes radical reorientation. Her assertion that girls "aren't cheap labour — they're people" employs the simple plural noun "people" to assert a shared humanity her parents cannot acknowledge. The deliberate simplicity — no fancy adjectives, no hedging — makes the statement all the more powerful. By Act 3, Sheila has become the family's moral conscience, openly challenging her parents: "You're pretending everything's all right." The present continuous "pretending" shows her refusal of moral amnesia. For Priestley, writing in 1945 after World War II, Sheila embodies the younger generation's capacity for social conscience — a hopeful vision that post-war Britain could be rebuilt on principles of collective responsibility rather than pre-war class complacency.
+</div>
+
+<h3>Character Comparison Grid</h3>
+<table style="width:100%; border-collapse: collapse;">
+<tr style="border-bottom: 2px solid #333;">
+<th style="text-align: left; padding: 6px;"><strong>Character</strong></th>
+<th style="text-align: left; padding: 6px;"><strong>Social Position</strong></th>
+<th style="text-align: left; padding: 6px;"><strong>Ideological Stance</strong></th>
+<th style="text-align: left; padding: 6px;"><strong>Capacity for Change</strong></th>
+<th style="text-align: left; padding: 6px;"><strong>Priestley's Purpose</strong></th>
+</tr>
+<tr style="background-color: #f9f9f9;">
+<td style="padding: 6px;"><strong>Mr Birling</strong></td>
+<td style="padding: 6px;">Upper-middle class; industrialist</td>
+<td style="padding: 6px;">Capitalist individualism; "mind his own business"</td>
+<td style="padding: 6px;">None — refuses responsibility even at play's end</td>
+<td style="padding: 6px;">Expose the bankruptcy of pre-war individualism; show that capitalist logic is immoral</td>
+</tr>
+<tr>
+<td style="padding: 6px;"><strong>Mrs Birling</strong></td>
+<td style="padding: 6px;">Upper-middle class; matriarch</td>
+<td style="padding: 6px;">Class snobbery; "girls of that class"</td>
+<td style="padding: 6px;">None — closes ranks with husband at end</td>
+<td style="padding: 6px;">Critique ingrained, unthinking class prejudice; show how privilege insulates from empathy</td>
+</tr>
+<tr style="background-color: #f9f9f9;">
+<td style="padding: 6px;"><strong>Sheila</strong></td>
+<td style="padding: 6px;">Upper-middle class; young woman</td>
+<td style="padding: 6px;">Initially complicit; evolves to socialist conscience</td>
+<td style="padding: 6px;"><strong>Complete transformation</strong> — recognises complicity, accepts responsibility</td>
+<td style="padding: 6px;">Embody the younger generation's capacity for moral growth and social conscience</td>
+</tr>
+<tr>
+<td style="padding: 6px;"><strong>Eric</strong></td>
+<td style="padding: 6px;">Upper-middle class; young man</td>
+<td style="padding: 6px;">Initially self-interested; grows to recognise systemic failure</td>
+<td style="padding: 6px;"><strong>Significant transformation</strong> — accepts responsibility, breaks from parents</td>
+<td style="padding: 6px;">Show that younger men, despite patriarchal training, can develop conscience and challenge authority</td>
+</tr>
+<tr style="background-color: #f9f9f9;">
+<td style="padding: 6px;"><strong>Gerald</strong></td>
+<td style="padding: 6px;">Upper class; fiancé</td>
+<td style="padding: 6px;">Patriarchal entitlement; exploitative ("intensely grateful")</td>
+<td style="padding: 6px;">Minimal — reverts to Birlings' position by act 3</td>
+<td style="padding: 6px;">Show that upper-class men prioritise class loyalty over moral responsibility</td>
+</tr>
+<tr>
+<td style="padding: 6px;"><strong>Inspector Goole</strong></td>
+<td style="padding: 6px;">Ambiguous; possibly supernatural</td>
+<td style="padding: 6px;">Collectivist socialism; collective responsibility</td>
+<td style="padding: 6px;">N/A — serves as moral voice, not character</td>
+<td style="padding: 6px;">Priestley's mouthpiece; voice of the audience's conscience; embody post-war social justice ideals</td>
+</tr>
+</table>
+
+<h3>Exam Technique: Constructing Character Paragraphs</h3>
+<p><strong>Weak (character-focused, non-analytical):</strong> "Sheila changes her mind about Eva. She realises that poor girls are people too. This shows she is a better person than her parents."</p>
+<p><strong>Strong (purpose-focused, analytical):</strong> "Priestley uses Sheila to embody the younger generation's capacity for moral conscience. Her recognition that Eva's girls 'aren't cheap labour — they're people' demonstrates a shift from bourgeois complicity to ethical awareness. The simplicity of 'people' — rejecting her mother's qualifying phrase 'girls of that class' — shows Sheila transcending class ideology. Priestley's hopeful vision is that post-war Britain could be rebuilt on principles of collective responsibility, with young people like Sheila leading moral renewal."</p>
+
+<h3>Model Paragraph: Sheila's Development (Grade 8–9)</h3>
+
+<div class="text-extract">Priestley constructs Sheila as the play's central moral barometer, dramatising the younger generation's capacity for ethical awakening. In Act 1, the stage directions describe her as "a pretty girl in her early twenties, very pleased with life," a phrase heavy with irony — her pleasure is naive, rooted in material comfort and social privilege. Her comment on the Inspector's dress — "That's a beautiful dress! Isn't it, Mummy? I love it!" — reveals a mind focused entirely on consumption. However, once she learns that her own jealousy led to Eva Smith's dismissal from Milwards, Sheila undergoes a radical reorientation. Her assertion that girls "aren't cheap labour — they're people" employs deliberate simplicity to assert a shared humanity her parents cannot acknowledge. The noun "people" carries moral weight precisely because it refuses euphemism or qualification (unlike Mrs Birling's hedging "girls of that class"). By Act 3, Sheila has become the family's moral conscience, openly challenging her parents with "You're pretending everything's all right." The present continuous verb "pretending" shows her refusal to return to pre-war moral amnesia. For Priestley, writing in the aftermath of World War II, Sheila embodies his hope that the younger generation — having witnessed collective catastrophe — could build a post-war society founded on principles of collective responsibility. She becomes Priestley's spokesman for social justice, suggesting that moral growth, once achieved, cannot be reversed.<div class="source">Grade 8–9 paragraph: ~280 words, demonstrating AO1 (interpretation of generational change), AO2 (analysis of stage direction, word choice, dramatic action), AO3 (post-war historical context)</div></div>
+
+<div class="common-mistake"><strong>Common Mistake:</strong> Writing about characters as if they are real people. Always frame analysis around Priestley's purpose — e.g. "Priestley uses Sheila to suggest that younger people can develop moral conscience" not "Sheila feels bad because she caused Eva's death." The first is analysis (AO2); the second is paraphrase.</div>
 `,
     quiz: [
       {
@@ -1034,14 +1247,155 @@ const edexcelLitPaper1: CourseData = {
 <p><strong>Grade 5:</strong> <em>"Sheila says 'I'll never, never do it again.' This shows she feels guilty."</em> — Paraphrases meaning only.</p>
 <p><strong>Grade 9:</strong> <em>"The emphatic repetition in 'never, never' signals a moral awakening. The contracted 'll' suggests instinctive promise, positioning Sheila as the younger generation's conscience. Priestley embodies his socialist argument that accountability must extend beyond the individual."</em> — Analyses language, conceptualises meaning, integrates purpose.</p>
 
-<h3>Transition Phrases</h3>
+<h3>Quotation Bank: Grade 8–9 Transitions & Linking Phrases</h3>
+<div class="text-extract">
+<strong>Extract-to-Wider-Text Transitions:</strong><br>
+"This moment is crystallised when…" / "The pattern established here develops further…" / "This theme reaches its climax when…" / "Conversely, Priestley complicates this idea through…" / "Elsewhere in the play, this dynamic reverses when…"<br><br>
+<strong>Context Integration Transitions:</strong><br>
+"Writing in the immediate aftermath of…" / "For a 1945 audience, recently emerged from wartime…" / "The historical context illuminates…" / "This reflects the contemporary anxiety about…" / "In the context of post-war social debate…"<br><br>
+<strong>Analytical Development Transitions:</strong><br>
+"This technique illuminates the underlying argument that…" / "The effect of this method is to position the audience as…" / "What emerges from this analysis is that…" / "The cumulative impact of such moments suggests…"
+</div>
+
+<h3>Grade 9 Insight: Conceptualised Interpretation</h3>
+<div class="grade-9-insight"><strong>Grade 9 Conceptualisation:</strong> Move beyond listing points to building a unified argument. Rather than "Priestley criticises capitalism (point 1), Priestley criticises class (point 2), Priestley criticises patriarchy (point 3)," argue something like: "Priestley presents social injustice as systemic — rooted in interconnected failures of capitalism, class hierarchy, and patriarchal power. Each character's moral blindness stems from their investment in these systems. Only the Inspector (and Sheila/Eric) recognise that these systems are inseparable. This interconnection is why collective responsibility — not individual charity — is necessary." This is conceptualisation: a unified argument that brings the play's parts into coherent relation.</div>
+
+<h3>Worked Example: Building Arguments Within Paragraphs</h3>
+<p><strong>Question:</strong> "Explore how Priestley presents the theme of class in An Inspector Calls."</p>
+<p><strong>Weak response (list-like):</strong></p>
+<div class="text-extract">
+"Mrs Birling is snobbish about Eva because she is poor. Gerald is upper class and treats Daisy Renton disrespectfully. The Inspector criticises their class attitudes. This shows that Priestley thinks class is a problem."<br><br>
+(Problems: No analysis of how language or dramatic action conveys meaning; no context; statements are obvious restatements of plot.)
+</div>
+<p><strong>Strong response (argument-driven):</strong></p>
+<div class="text-extract">
+"Priestley critiques class not as individual snobbery but as a structural system that dehumanises the working classes. Mrs Birling's truncated phrase 'Girls of that class—' reveals her linguistic discomfort even naming Eva's status; she cannot complete the thought because naming enforces the gap between herself and Eva. This linguistic failure mirrors moral failure: she cannot extend empathy across class lines because the system teaches her that class is determinative of human worth. Similarly, Gerald's upper-class seduction of Daisy Renton ('intensely grateful') treats working-class female sexuality as a commodity to be obtained through superficial kindness. Priestley's dramatic irony is that both characters believe themselves moral within their class framework. The Inspector's intervention — "We are members of one body. We are responsible for each other" — directly contradicts the class ideology that has structured the Birlings' world. In the play's final moments, when Mr and Mrs Birling refuse the Inspector's lesson and close ranks with Gerald, Priestley shows that pre-war class hierarchy was reinforced precisely through such collective refusals to acknowledge systemic interdependence. Writing in 1945, post-World War II, Priestley argues that societies that ignore collective responsibility face catastrophic consequences. Class ideology is thus not merely a prejudice to be overcome through individual goodwill but a structural barrier to the collective consciousness necessary for post-war reconstruction."<br><br>
+(Strengths: Unified argument; precise language analysis; integration of context; understanding of Priestley's purpose; demonstrates how multiple scenes build towards a thematic conclusion.)
+</div>
+
+<h3>Model Six-Paragraph Essay Structure (c. 500 words for 40-mark question)</h3>
+<table style="width:100%; border-collapse: collapse;">
+<tr style="border-bottom: 2px solid #333;">
+<th style="text-align: left; padding: 6px;"><strong>Paragraph</strong></th>
+<th style="text-align: left; padding: 6px;"><strong>Content Focus</strong></th>
+<th style="text-align: left; padding: 6px;"><strong>Key Technique</strong></th>
+<th style="text-align: left; padding: 6px;"><strong>Word Count</strong></th>
+</tr>
+<tr style="background-color: #f9f9f9;">
+<td style="padding: 6px;"><strong>1. Thesis Introduction</strong></td>
+<td style="padding: 6px;">State your unified argument about the theme</td>
+<td style="padding: 6px;">One clear claim; context reference; indicate structure</td>
+<td style="padding: 6px;">~60–80 words</td>
+</tr>
+<tr>
+<td style="padding: 6px;"><strong>2. Extract Analysis 1</strong></td>
+<td style="padding: 6px;">First key moment from printed extract; analyse language closely</td>
+<td style="padding: 6px;">PETAL framework; embed short quotations (3–6 words)</td>
+<td style="padding: 6px;">~120–150 words</td>
+</tr>
+<tr style="background-color: #f9f9f9;">
+<td style="padding: 6px;"><strong>3. Extract Analysis 2</strong></td>
+<td style="padding: 6px;">Second key moment from printed extract; use different technique (structure, dialogue, stage direction)</td>
+<td style="padding: 6px;">Compare/contrast techniques; weave in brief context</td>
+<td style="padding: 6px;">~120–150 words</td>
+</tr>
+<tr>
+<td style="padding: 6px;"><strong>4. Wider Play 1</strong></td>
+<td style="padding: 6px;">A moment that <em>develops</em> the theme introduced in extract</td>
+<td style="padding: 6px;">Show how theme evolves; integrate context naturally</td>
+<td style="padding: 6px;">~120–150 words</td>
+</tr>
+<tr style="background-color: #f9f9f9;">
+<td style="padding: 6px;"><strong>5. Wider Play 2</strong></td>
+<td style="padding: 6px;">A moment that <em>complicates</em> or <em>culminates</em> the theme</td>
+<td style="padding: 6px;">Build to highest conceptual point; show thematic arc across play</td>
+<td style="padding: 6px;">~120–150 words</td>
+</tr>
+<tr>
+<td style="padding: 6px;"><strong>6. Conclusion</strong></td>
+<td style="padding: 6px;">Link to Priestley's overall purpose and contemporary context</td>
+<td style="padding: 6px;">Do NOT repeat introduction; offer evaluative judgment</td>
+<td style="padding: 6px;">~60–80 words</td>
+</tr>
+</table>
+
+<h3>Worked Example: Extract-Based Response (Full Essay, c. 550 words)</h3>
+<p><strong>Question:</strong> "How does Priestley use the character of Mr Birling to explore ideas about responsibility?"</p>
+<p><strong>Extract (Act 1):</strong> "A man has to mind his own business and look after himself and his own — and if he doesn't he's not worth much."</p>
+
+<div class="text-extract">
+<strong>THESIS:</strong> Priestley uses Mr Birling to embody the capitalist individualism that Priestley sees as morally bankrupt. Birling's assertion that men owe nothing to those beyond their immediate family encapsulates a pre-war worldview that Priestley, writing in 1945, presents as culpable in social injustice and, implicitly, in the catastrophe of the war. Across the play, Birling's refusal of collective responsibility is contrasted with the Inspector's socialist ethic, positioning the audience to reject Birling's philosophy and embrace the play's message: that societies must be built on the principle "we are members of one body."<br><br>
+
+<strong>EXTRACT ANALYSIS 1:</strong> Priestley's characterisation of Birling emphasises the self-interested basis of his philosophy. The repetition of "his own" (appearing twice in a single sentence) reveals an obsessive focus on familial and personal benefit. The stark pronoun "he" in "if he doesn't he's not worth much" strips away sentiment — for Birling, moral worth is entirely contingent on economic self-interest. No allowance is made for circumstance, disability, or systemic inequality. Priestley's dramatic irony is acute: Birling voices this philosophy immediately after firing Eva Smith from Milwards, having just profited from her labour. His blindness to the connection between his profit and Eva's destitution exposes the moral hazard embedded in capitalist logic. A contemporary audience would recognise in Birling's individualism the pre-war ideology Priestley blames for social inequality and, by extension, for World War II's devastation.<br><br>
+
+<strong>EXTRACT ANALYSIS 2:</strong> Priestley embeds this philosophy into Birling's broader dramatic characterisation, particularly through his pomposity and false certainty. Birling's confident prediction that the Titanic is "unsinkable" and that war is unlikely immediately precedes the Inspector's arrival — the play's dramatic hinge. Priestley uses dramatic irony: the audience knows both the Titanic sank and war came. This irony undermines Birling's authority. We recognise him as a man whose certainty masks ignorance and whose self-interest prevents moral foresight. By Act 3, when Birling refuses the Inspector's lesson and reverts to his philosophy ("it's all over now"), Priestley shows Birling incapable of growth. He remains imprisoned in ideology.<br><br>
+
+<strong>WIDER PLAY 1:</strong> Contrasted with Sheila and Eric, Birling's intransigence becomes Priestley's critique of his generation's moral failure. Where Sheila recognises "these girls aren't cheap labour — they're people," Birling doubles down on individualism. Even witnessing Eva/Daisy's story — a narrative designed to produce empathy — fails to move him. This contrast positions the audience to reject Birling's philosophy and embrace the younger generation's emerging collectivism.<br><br>
+
+<strong>WIDER PLAY 2:</strong> The play's ending, when the Inspector departs and a police inspector arrives, leaves ambiguous whether the Inspector was supernatural. This ambiguity forces each character to choose: will they internalise the lesson (responsibility to all), or will they revert to prior ideology? Birling's choice to "say nothing" and return to business as usual represents Priestley's darkest assessment: without systemic change, moral appeals alone cannot overcome self-interest. The final ringing telephone — potentially announcing another crisis — suggests that societies ignoring collective responsibility cycle through catastrophe.<br><br>
+
+<strong>CONCLUSION:</strong> Through Mr Birling, Priestley exposes capitalist individualism as not merely ethically insufficient but actively destructive. Birling's arc—or rather, his non-arc, his absolute refusal of growth—embodies Priestley's conviction that pre-war society was culpable in its own catastrophes. Only societies founded on the principle of collective responsibility can avoid tragedy. Priestley's play is thus a call to post-war Britain: choose Sheila's conscience or Birling's blindness.
+<div class="source">~550 words; demonstrates Grade 8–9 standard: unified argument, precise analysis, integrated context, thematic coherence</div>
+</div>
+
+<h3>Planning in 5 Minutes</h3>
+<ol>
+  <li><strong>Read the extract twice.</strong> Underline the 2–3 most significant words or phrases.</li>
+  <li><strong>Identify the theme.</strong> What is the examiner asking about — responsibility, class, morality, gender?</li>
+  <li><strong>Brainstorm wider-play moments:</strong> List 4–5 scenes where this theme appears (different from the extract). Include one moment that <em>develops</em> the theme and one that <em>culminates</em> it.</li>
+  <li><strong>Select quotations:</strong> 2–3 from the extract; 2–3 from memory (3–6 words each — brevity is strength).</li>
+  <li><strong>Write a one-sentence thesis:</strong> "Priestley uses [character/technique] to argue that [thematic claim] because [evidence of why this matters]."</li>
+</ol>
+
+<h3>Transition Phrases (Grade 8–9)</h3>
 <ul>
-  <li><strong>Extract to wider text:</strong> "This idea is developed further when…" / "Elsewhere, [author] reinforces this…"</li>
-  <li><strong>Contrast:</strong> "Conversely…" / "An alternative reading suggests…"</li>
-  <li><strong>Context:</strong> "Writing in the aftermath of…" / "For a [year] audience, this would…"</li>
+  <li><strong>Extract to wider text:</strong> "This moment is crystallised when…" / "The pattern established here develops further…" / "This tension reaches its climax when…" / "Conversely, Priestley complicates this idea when…"</li>
+  <li><strong>Contrast:</strong> "In contrast to Birling's refusal…" / "Yet where Act 1 establishes…, by Act 2 Priestley shows…"</li>
+  <li><strong>Context:</strong> "Writing in 1945, emerging from…" / "For a contemporary audience, this would…" / "The historical context of post-war reconstruction illuminates…"</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Avoid "This links to context because…" — embed context naturally so it feels like part of the argument.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> Avoid mechanical transitions like "This links to context because…" or "Another example is…" Instead, weave context and evidence into flowing analytical sentences. Compare: "The Birlings' moral blindness reflects pre-war capitalist ideology" (integrated) vs. "This is an example of capitalism. Capitalism is bad" (bolted-on).</div>
+
+<h3>Grade 5 vs Grade 9 Response Comparison</h3>
+<table style="width:100%; border-collapse: collapse;">
+<tr style="border-bottom: 2px solid #333;">
+<th style="text-align: left; padding: 6px;"><strong>Feature</strong></th>
+<th style="text-align: left; padding: 6px;"><strong>Grade 5 Response</strong></th>
+<th style="text-align: left; padding: 6px;"><strong>Grade 8–9 Response</strong></th>
+</tr>
+<tr style="background-color: #f9f9f9;">
+<td style="padding: 6px;"><strong>Thesis</strong></td>
+<td style="padding: 6px;">"Priestley thinks responsibility is important."</td>
+<td style="padding: 6px;">"Priestley presents collective responsibility as the moral foundation for post-war society, contrasting Birling's capitalist individualism with the Inspector's socialist ethic to argue that societies ignoring interdependence cycle through catastrophe."</td>
+</tr>
+<tr>
+<td style="padding: 6px;"><strong>Evidence Use</strong></td>
+<td style="padding: 6px;">Long quotations paraphrased; only surface meaning extracted.</td>
+<td style="padding: 6px;">Short quotations (3–6 words) embedded in analytical sentences; precise focus on word choice, connotations, techniques.</td>
+</tr>
+<tr style="background-color: #f9f9f9;">
+<td style="padding: 6px;"><strong>Structure</strong></td>
+<td style="padding: 6px;">Extract analysis, then separate "context paragraph," then random wider-play moments.</td>
+<td style="padding: 6px;">Integrated six-part structure: thesis, extract 1, extract 2, wider 1, wider 2, conclusion. Context woven throughout.</td>
+</tr>
+<tr>
+<td style="padding: 6px;"><strong>Analysis Depth</strong></td>
+<td style="padding: 6px;">"Sheila changes her mind and realises girls are people."</td>
+<td style="padding: 6px;">"Priestley constructs Sheila's recognition that girls 'aren't cheap labour — they're people' as a moment of ideological rupture. The simplicity of 'people' — rejecting her mother's qualifying 'girls of that class' — shows Sheila transcending the linguistic-ideological framework of her class."</td>
+</tr>
+<tr style="background-color: #f9f9f9;">
+<td style="padding: 6px;"><strong>Context Integration</strong></td>
+<td style="padding: 6px;">Separate, disconnected paragraph: "Priestley wrote this in 1945 after World War II."</td>
+<td style="padding: 6px;">Context embedded: "Writing in 1945, post-World War II, Priestley argues that societies ignoring collective responsibility face catastrophic consequences. Birling's individualism is thus not merely personal moral failure but national culpability."</td>
+</tr>
+<tr>
+<td style="padding: 6px;"><strong>Conceptualisation</strong></td>
+<td style="padding: 6px;">Lists separate points: "Priestley criticises capitalism, Priestley criticises class, Priestley criticises patriarchy."</td>
+<td style="padding: 6px;">Unified argument: "Priestley presents social injustice as systemic — rooted in interconnected failures of capitalism, class hierarchy, and patriarchal power structures. These systems are inseparable; only collective consciousness can address them."</td>
+</tr>
+</table>
+
+<div class="common-mistake"><strong>Common Mistake:</strong> Writing a separate "context paragraph" disconnected from analysis. This turns context into background information rather than evidence. Instead, weave context into every paragraph — show <em>why</em> the writer made particular choices given their historical moment.</div>
 `,
     quiz: [
       {

@@ -337,15 +337,15 @@ export const animalFarmCourse: CourseData = {
     {
       id: 'af-m3',
       title: 'Chapters 3–4: Building the New Society',
-      duration: '60 min',
+      duration: '120 min',
       content: `
 <h2>Chapters 3–4: Building the New Society</h2>
 
-<p>Chapters 3 and 4 depict the initial period of post-revolutionary optimism — and the first cracks in the animals' supposed equality. The harvest is a triumph, committees are formed, education is attempted, and the animals defend their farm against a human counter-attack at the <strong>Battle of the Cowshed</strong>. Yet beneath the surface, the class hierarchy that Animalism promised to abolish is already re-emerging, with the pigs establishing themselves as a permanent ruling elite.</p>
+<p>Chapters 3 and 4 depict the initial period of post-revolutionary optimism — and the first cracks in the animals' supposed equality. The harvest is a triumph, committees are formed, education is attempted, and the animals defend their farm against a human counter-attack at the <strong>Battle of the Cowshed</strong>. Yet beneath the surface, the class hierarchy that Animalism promised to abolish is already re-emerging, with the pigs establishing themselves as a permanent ruling elite. This is the period where the revolution's betrayal begins — not through dramatic rupture but through insidious normalisation of privilege. Historically, this mirrors the period from 1917 to 1924 in the Soviet Union — the early years of Lenin's rule, when genuine improvements were made, before Stalin's consolidation of absolute power.</p>
 
 <h3>Chapter 3: The Harvest &amp; Early Days</h3>
 
-<p>The first harvest after the Rebellion is the finest Manor Farm has ever seen. Every animal works according to their ability, and there is food for all. Orwell presents this as a genuine <strong>golden age</strong> — the animals are happier and better fed than they have ever been. This mirrors the initial period of genuine optimism and improved conditions that followed the October Revolution, before Stalin consolidated power.</p>
+<p>The first harvest after the Rebellion is the finest Manor Farm has ever seen. Every animal works according to their ability, and there is food for all. Orwell presents this as a genuine <strong>golden age</strong> — the animals are happier and better fed than they have ever been. This mirrors the initial period of genuine optimism and improved conditions that followed the October Revolution of 1917, before Stalin consolidated power. Historically, Lenin and Trotsky's early years showed genuine improvements in workers' conditions compared to Tsarist oppression — lower food prices, land redistribution, worker committees. The hope was real. But so was the machinery of control being quietly built in the background.</p>
 
 <p>However, Orwell is careful to include details that undermine the utopian picture:</p>
 
@@ -355,7 +355,7 @@ export const animalFarmCourse: CourseData = {
   <li><strong>The cat disappears during work</strong> and reappears at meal times — representing those who exploit the system without contributing.</li>
 </ul>
 
-<div class="key-term"><strong>Key Term: Proletariat</strong> — In Marxist theory, the working class — those who sell their labour. In <em>Animal Farm</em>, horses like Boxer and Clover, along with the hens, sheep and other animals, represent the proletariat. They do all the physical work but have no real say in decision-making.</div>
+<div class="key-term"><strong>Key Term: Proletariat &amp; Nomenklatura</strong> — In Marxist theory, the proletariat is the working class — those who sell their labour. In <em>Animal Farm</em>, horses like Boxer and Clover, along with the hens, sheep and other animals, represent the proletariat. They do all the physical work but have no real say in decision-making. The <strong>nomenklatura</strong> was Stalin's privileged elite — party officials and managers who had access to special shops, dachas (country homes), and education denied to ordinary citizens. The pigs embody both the revolutionary promise of proletarian rule and its betrayal through the creation of a new privileged class.</div>
 
 <h4>The Seven Commandments &amp; Literacy</h4>
 
@@ -403,14 +403,24 @@ export const animalFarmCourse: CourseData = {
 
 <p>The <strong>Battle of the Cowshed</strong> is also treated with subtle irony. It is presented as a heroic victory — the animals celebrate, create medals, and establish anniversaries. Yet the reader knows from the allegorical context that this "golden age" will be brief, and that the very history being celebrated will soon be rewritten by Napoleon. The celebrations mirror how revolutionary states create founding myths that later become tools of propaganda rather than genuine expressions of collective memory.</p>
 
-<h3>Key Quotations from Chapters 3–4</h3>
+<h3>Key Quotations from Chapters 3–4 — Comprehensive Bank (8+ Quotations)</h3>
 
 <ul>
-  <li><strong>"I will work harder"</strong> — Boxer's first motto; admirable but ultimately self-destructive, showing how blind dedication without critical thinking serves the interests of those in power.</li>
-  <li><strong>"Napoleon is always right"</strong> — Boxer's second motto; a chilling expression of absolute trust in a leader, mirroring the cult of personality around Stalin.</li>
-  <li><strong>"Four legs good, two legs bad"</strong> — The sheep's simplified version of Animalism; reduces complex ideology to a meaningless slogan, making critical thought impossible.</li>
-  <li><strong>"Jones would come back"</strong> — Squealer's ultimate threat; silences all dissent by exploiting the animals' legitimate fear of the old regime.</li>
-  <li><strong>"I have no wish to take life"</strong> — Boxer after the Battle; establishes his moral decency, in contrast to the ruthlessness that will later characterise Napoleon's rule.</li>
+  <li><strong>"I will work harder"</strong> — Boxer's first motto; admirable on the surface but ultimately self-destructive. It shows how blind dedication without critical thinking serves the interests of those in power. Boxer solves every problem through labour rather than by questioning the system. <strong>Technique:</strong> Internal monologue. <strong>Effect:</strong> Reveals character psychology and foreshadows his exploitation. <strong>Grade 9 Interpretation:</strong> Orwell is warning that in totalitarian systems, virtues like loyalty and hard work can be weaponised against you.</li>
+
+  <li><strong>"Napoleon is always right"</strong> — Boxer's second motto; a chilling expression of absolute trust in a leader, mirroring the cult of personality around Stalin. <strong>Technique:</strong> Repetition (forms a mantra). <strong>Effect:</strong> Shows how ideology becomes reflex rather than thought. <strong>Grade 9 Interpretation:</strong> This represents the abdication of individual judgment. Citizens of Stalin's Soviet Union repeated similar mantras; critical thinking was replaced by obedience.</li>
+
+  <li><strong>"Four legs good, two legs bad"</strong> — The sheep's simplified version of Animalism; reduces complex ideology to a meaningless slogan. <strong>Technique:</strong> Alliteration and binary thinking. <strong>Effect:</strong> Makes critical thought impossible. <strong>Grade 9 Interpretation:</strong> Orwell shows how slogans can replace thinking entirely. When the sheep later chant "Four legs good, two legs better," they adopt it instantly without understanding.</li>
+
+  <li><strong>"Jones would come back"</strong> — Squealer's ultimate threat; silences all dissent by exploiting the animals' legitimate fear. <strong>Technique:</strong> Appeal to emotion and false dilemma (either accept pig privilege or face Jones's return). <strong>Effect:</strong> Creates a atmosphere of fear that prevents opposition. <strong>Grade 9 Interpretation:</strong> This is emotional blackmail dressed as rational argument. Stalin used identical rhetoric: any criticism was framed as "counter-revolutionary" and a threat to the Revolution itself.</li>
+
+  <li><strong>"I have no wish to take life"</strong> — Boxer after the Battle; establishes his moral decency. <strong>Technique:</strong> Direct speech revealing internal values. <strong>Effect:</strong> Creates tragic irony with his later fate. <strong>Grade 9 Interpretation:</strong> Boxer's kindness and morality won't protect him — in fact, they make him vulnerable to exploitation by those without scruples.</li>
+
+  <li><strong>"Snowball had proved himself to be a brilliant tactician"</strong> — Establishes Snowball's genuine heroism. <strong>Technique:</strong> Direct authorial judgment. <strong>Effect:</strong> Makes Napoleon's later lies obviously false to the reader (though not to the animals). <strong>Grade 9 Interpretation:</strong> Orwell is showing that truth is objectively knowable — but control of information can make falsehood seem true to those without access to evidence.</li>
+
+  <li><strong>"they had come to a time when no animal dared to speak his mind"</strong> — Appears later but is foreshadowed in Chapter 3. <strong>Technique:</strong> Direct narratorial statement. <strong>Effect:</strong> Explicitly names the atmosphere of fear. <strong>Grade 9 Interpretation:</strong> Totalitarianism is maintained through fear, not just violence. Even the threat of violence is enough to silence dissent.</li>
+
+  <li><strong>"Pilkington of Foxwood and Frederick of Pinchfield, the owners of the two farms adjoining Animal Farm, were thoroughly frightened by the rebellion"</strong> — Introduces the external threat. <strong>Technique:</strong> Narrative exposition. <strong>Effect:</strong> Establishes the external enemy that will later be weaponised to maintain control. <strong>Grade 9 Interpretation:</strong> Totalitarian regimes need enemies. Real or invented, external threats justify militarisation, increased control, and the suppression of dissent as "necessary for survival."</li>
 </ul>
 `,
       quiz: [
@@ -492,19 +502,19 @@ export const animalFarmCourse: CourseData = {
       content: `
 <h2>Chapters 5–7: Napoleon's Rise to Power</h2>
 
-<p>These three chapters chart the transformation of Animal Farm from a flawed democracy into a brutal dictatorship. <strong>Snowball is expelled</strong>, debate is abolished, the <strong>windmill</strong> project is commandeered, history is rewritten, and the first <strong>executions</strong> take place. This section of the novella parallels the period from 1924 to the late 1930s in Soviet history — from Stalin's ousting of Trotsky through the Five-Year Plans to the Great Purge.</p>
+<p>These three chapters chart the transformation of Animal Farm from a flawed democracy into a brutal dictatorship. <strong>Snowball is expelled</strong>, debate is abolished, the <strong>windmill</strong> project is commandeered, history is rewritten, and the first <strong>executions</strong> take place. This section of the novella parallels the period from 1924 to the late 1930s in Soviet history — from Stalin's ousting of Trotsky through the Five-Year Plans to the Great Purge. These are the darkest chapters: we witness the machinery of totalitarianism being constructed before our eyes. The revolution's ideals are systematically inverted. What began as a liberation becomes a nightmare.</p>
 
 <h3>Chapter 5: The Expulsion of Snowball</h3>
 
-<p>The chapter opens with <strong>Mollie's defection</strong> — she is discovered being stroked by a man from a neighbouring farm and soon disappears entirely, later seen pulling a cart with ribbons in her mane. Mollie represents the Russian <strong>bourgeoisie</strong> and minor aristocrats who fled to the West after the Revolution, preferring personal comfort and luxury to revolutionary ideals.</p>
+<p>The chapter opens with <strong>Mollie's defection</strong> — she is discovered being stroked by a man from a neighbouring farm and soon disappears entirely, later seen pulling a cart with ribbons in her mane. Mollie represents the Russian <strong>bourgeoisie</strong> and minor aristocrats who fled to the West after the Revolution, preferring personal comfort and luxury to revolutionary ideals. Historically, after 1917, many members of the Russian upper classes emigrated to Western Europe. Orwell suggests that some people are simply apolitical — they care only about personal comfort. The totalitarian system has no place for such people. They must either conform or leave. Mollie chooses to leave, showing that the revolution's promise of universal transformation is a lie — people's desires and loyalties cannot be so easily reshaped.</p>
 
 <p>The central conflict in Chapter 5 is between <strong>Snowball and Napoleon</strong>. They disagree on virtually everything, but the key dispute concerns the <strong>windmill</strong>. Snowball has drawn up plans for a windmill that will generate electricity, reduce the animals' working week to three days, and bring modern comforts. Napoleon opposes the windmill, arguing that the farm needs to focus on food production. In reality, Napoleon is not interested in policy — he is interested in <strong>power</strong>.</p>
 
 <div class="key-term"><strong>Key Term: Scapegoat</strong> — A person or group blamed for problems they did not cause. After Snowball's expulsion, Napoleon systematically turns him into a scapegoat — blaming him for every failure and setback on the farm. Historically, Trotsky served the same role in Stalinist propaganda.</div>
 
-<p>At the decisive meeting, just as Snowball is winning the debate about the windmill, Napoleon gives a signal. <strong>Nine enormous dogs</strong> — the puppies Napoleon took from their mothers in Chapter 3 and raised privately — burst into the barn and chase Snowball off the farm. He is never seen again.</p>
+<p>At the decisive meeting, just as Snowball is winning the debate about the windmill, Napoleon gives a signal. <strong>Nine enormous dogs</strong> — the puppies Napoleon took from their mothers in Chapter 3 and raised privately — burst into the barn and chase Snowball off the farm. He is never seen again. This is the novella's turning point. Democracy ends not with a bang but with nine dogs.</p>
 
-<p>This parallels <strong>Stalin's expulsion of Trotsky</strong> from the Communist Party in 1927 and his exile from the Soviet Union in 1929. The dogs represent Stalin's <strong>secret police</strong> (the NKVD/KGB) — the instrument of state terror that enforced his rule. Notice that Napoleon did not win the argument; he won through <strong>violence</strong>. Orwell's point is clear: in a struggle for power, force trumps intellect and debate.</p>
+<p>This parallels <strong>Stalin's expulsion of Trotsky</strong> from the Communist Party in 1927 and his exile from the Soviet Union in 1929. Historically, Trotsky was a military genius who deserved immense credit for Soviet victory in the Civil War. But Stalin outmanoeuvred him politically, eliminated his supporters, and by 1927, Trotsky was expelled. He would eventually be murdered in exile in Mexico in 1940. The dogs represent Stalin's <strong>secret police</strong> (the NKVD/KGB) — the instrument of state terror that enforced his rule and conducted mass murders. Notice that Napoleon did not win the argument; he won through <strong>violence</strong>. This is Orwell's crucial insight: in a struggle for power, force trumps intellect and debate. The cleverest argument cannot compete with a gun. The most eloquent speech cannot survive a secret police that shoots anyone who opposes the leader.</p>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> The expulsion of Snowball is the novella's turning point. If an exam question asks about a "significant moment" or a "moment of change," this is an excellent choice. You can discuss the shift from (flawed) democracy to dictatorship, the role of violence in seizing power, and the way Napoleon immediately begins rewriting history.</div>
 
@@ -530,11 +540,11 @@ export const animalFarmCourse: CourseData = {
 
 <h3>Chapter 7: The Confessions &amp; Executions</h3>
 
-<p>Chapter 7 is the darkest in the novella. The winter is harsh, food is scarce, and the hens are ordered to surrender their eggs for sale. When they resist — the first organised opposition to Napoleon — he cuts off their food supply until they submit. Nine hens die. This mirrors Stalin's forced collectivisation of agriculture, which caused the <strong>Ukrainian famine</strong> (Holodomor) of 1932–1933, killing millions.</p>
+<p>Chapter 7 is the darkest in the novella. The winter is harsh, food is scarce, and the hens are ordered to surrender their eggs for sale. When they resist — the first organised opposition to Napoleon — he cuts off their food supply until they submit. Nine hens die. This mirrors Stalin's forced collectivisation of agriculture, which caused the <strong>Ukrainian famine</strong> (Holodomor) of 1932–1933, killing millions of peasants who resisted the seizure of grain. Collectivisation was carried out with brutal violence. Entire families starved. Children ate bark and grass. The Soviet state prioritised exports and militarisation over feeding its own population. Orwell's point is that the regime's brutality is not incidental — it is essential to maintaining power over a starving population.</p>
 
-<p>The chapter's climax is the <strong>public confessions and executions</strong>. Napoleon summons all the animals to the yard. The dogs drag out several animals who "confess" to having conspired with Snowball. They are immediately torn to pieces by the dogs. The three hens who led the egg rebellion confess to plotting with Snowball in their dreams. More animals confess and are killed.</p>
+<p>The chapter's climax is the <strong>public confessions and executions</strong>. Napoleon summons all the animals to the yard. The dogs drag out several animals who "confess" to having conspired with Snowball. They are immediately torn to pieces by the dogs. The three hens who led the egg rebellion confess to plotting with Snowball in their dreams. More animals confess and are killed. The executions continue until the animals are too terrified to move or breathe.</p>
 
-<p>This scene directly parallels Stalin's <strong>Great Purge</strong> and the <strong>Moscow Show Trials</strong> (1936–1938), in which prominent communists were forced to make absurd public confessions before being executed. The confessions in <em>Animal Farm</em> are equally absurd — animals confess to crimes that are physically impossible — yet the atmosphere of terror is so overwhelming that no one dares protest.</p>
+<p>This scene directly parallels Stalin's <strong>Great Purge</strong> and the <strong>Moscow Show Trials</strong> (1936–1938), in which prominent communists were forced to make absurd public confessions before being executed. During the Great Purge, an estimated 750,000 people were executed. Many were communists who had fought in the Revolution, but they were accused of ridiculous crimes: conspiracy with Trotsky, collaboration with foreign powers, espionage. The trials were theatrical — designed to break the accused's will and demonstrate the regime's total power. Some historians estimate that half of the 1930s confessions were extracted under torture. The confessions in <em>Animal Farm</em> are equally absurd — animals confess to crimes that are physically impossible (meeting Snowball at specific times when Snowball couldn't possibly have been there) — yet the atmosphere of terror is so overwhelming that no one dares protest. The animals watch their friends and comrades torn to shreds and say nothing, because speaking would be suicide.</p>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> The execution scene is one of the most powerful in the novella for AO2 analysis. Notice Orwell's restrained, matter-of-fact narration: "the dogs promptly tore their throats out." The lack of emotion in the prose creates a chilling effect — the violence is reported as routine, mirroring how totalitarian regimes normalise brutality. This narrative detachment is a key writer's method to discuss.</div>
 
@@ -546,13 +556,74 @@ export const animalFarmCourse: CourseData = {
 
 <p>These chapters mark the novella's <strong>structural turning point</strong>. Before Chapter 5, the farm has a form of democracy (the Sunday meetings) and a constitution (the Seven Commandments). After Chapter 5, both are systematically dismantled. Orwell structures this section as an <strong>accelerating descent</strong> — each chapter introduces a more extreme violation of the original ideals. Chapter 5 brings the abolition of debate; Chapter 6 brings the alteration of the Commandments; Chapter 7 brings mass execution. The pace of corruption quickens, mirroring how totalitarian regimes, once established, tend to become <em>more</em> repressive over time, not less. This structural acceleration creates a sense of inevitability — the reader feels the walls closing in, just as the animals do.</p>
 
-<h3>Key Quotations from Chapters 5–7</h3>
+<h3>Character-to-Historical-Figure Mapping: The Power Struggle (Chapters 5-7)</h3>
+
+<table border="1" cellpadding="10">
+<tr>
+  <th>Animal Farm Character</th>
+  <th>Historical Figure</th>
+  <th>Event Paralleled</th>
+</tr>
+<tr>
+  <td><strong>Napoleon</strong></td>
+  <td>Joseph Stalin</td>
+  <td>Consolidation of absolute power (1924-1930). Used secret police, purges, and propaganda to eliminate rivals.</td>
+</tr>
+<tr>
+  <td><strong>Snowball</strong></td>
+  <td>Leon Trotsky</td>
+  <td>Military hero, idealist, revolutionary. Expelled 1927, exiled 1929, assassinated 1940. Demonised by Stalin's propaganda.</td>
+</tr>
+<tr>
+  <td><strong>The dogs (secret police)</strong></td>
+  <td>NKVD/KGB (Soviet secret police)</td>
+  <td>Instrument of terror. Used for purges, executions, and maintaining total social control.</td>
+</tr>
+<tr>
+  <td><strong>Mollie (deserter)</strong></td>
+  <td>Bourgeoisie who fled the USSR</td>
+  <td>Many upper-class Russians emigrated to Western Europe, preferring personal comfort to the new regime.</td>
+</tr>
+<tr>
+  <td><strong>The hens (resisters)</strong></td>
+  <td>Peasants who resisted collectivisation</td>
+  <td>Those who opposed Stalin's policies (like refusing to surrender grain) faced starvation, execution, or exile.</td>
+</tr>
+<tr>
+  <td><strong>Squealer (propagandist)</strong></td>
+  <td>Soviet propaganda apparatus</td>
+  <td>Rewrites history, fabricates statistics, justifies brutality. Controls narrative to maintain regime power.</td>
+</tr>
+<tr>
+  <td><strong>The confessing animals</strong></td>
+  <td>Victims of Stalin's show trials</td>
+  <td>1936-1938 Moscow Show Trials. Forced confessions to impossible crimes. Public executions to instil terror.</td>
+</tr>
+<tr>
+  <td><strong>The windmill</strong></td>
+  <td>Stalin's Five-Year Plans</td>
+  <td>Massive projects demanding immense sacrifice. Built worker loyalty but primarily served regime prestige and militarisation.</td>
+</tr>
+</table>
+
+<h3>Key Quotations from Chapters 5–7 — Expanded Bank (8+ Quotations)</h3>
 
 <ul>
-  <li><strong>"Napoleon is always right"</strong> — Boxer's response to every troubling development; shows how blind loyalty enables tyranny.</li>
-  <li><strong>"No animal shall sleep in a bed <em>with sheets</em>"</strong> — The first altered Commandment; demonstrates how the pigs manipulate the law to legitimise their privileges.</li>
-  <li><strong>"Snowball had been Jones's agent"</strong> — Squealer's rewriting of Snowball as a traitor; a complete inversion of reality that the animals cannot refute.</li>
-  <li><strong>"they had come to a time when no one dared speak his mind"</strong> — Orwell's direct statement of the atmosphere of terror; the revolution has produced the very oppression it sought to end.</li>
+  <li><strong>"Napoleon is always right"</strong> — Boxer's response to every troubling development; shows how blind loyalty enables tyranny. <strong>Technique:</strong> Repetition (becomes a reflex). <strong>Effect:</strong> Silences any internal doubt. <strong>Grade 9 Interpretation:</strong> In totalitarian systems, subjects adopt a psychological mechanism that prevents them from seeing contradictions. Soviet citizens similarly learned to accept obvious falsehoods as truth.</li>
+
+  <li><strong>"No animal shall sleep in a bed <em>with sheets</em>"</strong> — The first altered Commandment; demonstrates how the pigs manipulate the law to legitimise their privileges. <strong>Technique:</strong> Subtle textual alteration. <strong>Effect:</strong> Creates semantic wiggle room; the pigs sleep in beds without sheets. <strong>Grade 9 Interpretation:</strong> Totalitarian regimes use language to permit the impermissible. By adding a single word, an absolute law becomes a loophole. This is Orwell's warning about how language can be weaponised.</li>
+
+  <li><strong>"Snowball had been Jones's agent"</strong> — Squealer's rewriting of Snowball as a traitor; a complete inversion of reality. <strong>Technique:</strong> Historical revisionism (Big Lie technique). <strong>Effect:</strong> The animals cannot refute it because they cannot read and have no independent information. <strong>Grade 9 Interpretation:</strong> In a system where the regime controls all information, objective truth becomes impossible. Any lie, if repeated consistently, becomes accepted as fact.</li>
+
+  <li><strong>"they had come to a time when no one dared speak his mind"</strong> — Orwell's direct statement of the atmosphere of terror. <strong>Technique:</strong> Authorial intrusion; direct commentary. <strong>Effect:</strong> Names explicitly what the narrative has been showing implicitly. <strong>Grade 9 Interpretation:</strong> The revolution has produced the very oppression it sought to end — worse, because the oppressor claims to act in the animals' name.</li>
+
+  <li><strong>"the dogs promptly tore their throats out"</strong> — The execution scene narration; devastatingly restrained language. <strong>Technique:</strong> Understatement and plain style. <strong>Effect:</strong> The violence is reported matter-of-factly, as routine. <strong>Grade 9 Interpretation:</strong> Orwell's prose mirrors totalitarian society's normalisation of brutality. Violence becomes ordinary. Executions are listed like weather reports. This narrative detachment is more horrifying than any graphic description could be.</li>
+
+  <li><strong>"horses do not live long"</strong> — Reference to Boxer's limited lifespan; foreshadows his later fate. <strong>Technique:</strong> Veiled reference / foreshadowing. <strong>Effect:</strong> Readers with knowledge of history understand what will happen to the most loyal worker. <strong>Grade 9 Interpretation:</strong> Totalitarian systems use up their workers. When they become unproductive, they are discarded. Loyalty is never rewarded; it is simply exploited until the worker is exhausted.</li>
+
+  <li><strong>"The animals had never heard of such things before"</strong> — Reference to the public confessions and executions. <strong>Technique:</strong> Narrative distance. <strong>Effect:</strong> Emphasises the shock and disbelief of ordinary animals witnessing atrocity. <strong>Grade 9 Interpretation:</strong> Totalitarian violence works partly through surprise and bewilderment. Citizens cannot process what they are seeing because it violates every norm of civilisation they had known.</li>
+
+  <li><strong>"Surely you do not imagine, comrades, that we pigs are doing this for our own benefit?"</strong> — Squealer's justification for pig privileges. <strong>Technique:</strong> Rhetorical question (implies obvious answer: no). <strong>Effect:</strong> Makes the lies seem self-evident. <strong>Grade 9 Interpretation:</strong> The regime claims to act selflessly, in service of the state/revolution. This covers naked self-interest in a cloak of idealism. It's a technique that has fooled billions across multiple totalitarian regimes.</li>
 </ul>
 `,
       quiz: [
@@ -630,19 +701,19 @@ export const animalFarmCourse: CourseData = {
     {
       id: 'af-m5',
       title: 'Chapters 8–10: The Betrayal of the Revolution',
-      duration: '70 min',
+      duration: '150 min',
       content: `
 <h2>Chapters 8–10: The Betrayal of the Revolution</h2>
 
-<p>The final three chapters complete the novella's devastating arc. Napoleon consolidates absolute power, trades with the very humans the revolution was meant to oppose, leads the animals into a catastrophic second battle, sends <strong>Boxer</strong> to the knacker's yard, and finally emerges as indistinguishable from the human oppressors. The revolution has come full circle — the pigs have become the new masters, and the other animals are worse off than they were under Jones.</p>
+<p>The final three chapters complete the novella's devastating arc. Napoleon consolidates absolute power, trades with the very humans the revolution was meant to oppose, leads the animals into a catastrophic second battle, sends <strong>Boxer</strong> to the knacker's yard, and finally emerges as indistinguishable from the human oppressors. The revolution has come full circle — the pigs have become the new masters, and the other animals are worse off than they were under Jones. These chapters show the complete inversion of revolutionary ideals. What began as liberation has become enslavement dressed in revolutionary rhetoric. It is Orwell's bleakest argument: without democratic accountability and eternal vigilance, all revolutions will be betrayed by their own leadership.</p>
 
 <h3>Chapter 8: The Cult of Napoleon &amp; the Battle of the Windmill</h3>
 
-<p>By Chapter 8, Napoleon's cult of personality is fully established. He is rarely seen in public; when he does appear, he is attended by dogs and preceded by a black cockerel who acts as a trumpeter. He is referred to by elaborate titles — <strong>"our Leader, Comrade Napoleon"</strong> — and Minimus composes a poem praising him that is inscribed on the barn wall opposite the Seven Commandments. A portrait of Napoleon is painted beside it. These details mirror the <strong>cult of personality</strong> that surrounded Stalin — portraits, statues, songs, and the renaming of cities in his honour.</p>
+<p>By Chapter 8, Napoleon's cult of personality is fully established. He is rarely seen in public; when he does appear, he is attended by dogs and preceded by a black cockerel who acts as a trumpeter. He is referred to by elaborate titles — <strong>"our Leader, Comrade Napoleon"</strong> — and Minimus composes a poem praising him that is inscribed on the barn wall opposite the Seven Commandments. A portrait of Napoleon is painted beside it. These details mirror the <strong>cult of personality</strong> that surrounded Stalin — portraits, statues, songs, and the renaming of cities in his honour. Historically, Stalin had enormous statues erected across the USSR. Children learned to sing songs praising him. Writers competed to compose poems. Cities like Stalingrad were named after him. Newsreels portrayed him as a wise father figure. Schools taught children to view Stalin with a mixture of love and fear.</p>
 
-<div class="key-term"><strong>Key Term: Cult of Personality</strong> — The use of propaganda, media and mass culture to create an idealised, heroic image of a leader. Stalin's cult of personality was one of the most extensive in history. In <em>Animal Farm</em>, Napoleon's cult serves the same purpose: to make the leader seem infallible and to discourage criticism.</div>
+<div class="key-term"><strong>Key Term: Cult of Personality &amp; Totalitarian Leadership</strong> — The use of propaganda, media and mass culture to create an idealised, heroic image of a leader. Stalin's cult of personality was one of the most extensive in history. In <em>Animal Farm</em>, Napoleon's cult serves the same purpose: to make the leader seem infallible and to discourage criticism. The cult of personality is not just vanity — it is a tool of power. By making the leader superhuman, the regime makes criticism seem not just wrong but blasphemous. You don't criticise your god; you obey it.</div>
 
-<p>Napoleon now engages in <strong>trade with neighbouring farms</strong> — specifically with <strong>Frederick</strong> of Pinchfield and <strong>Pilkington</strong> of Foxwood. Frederick represents <strong>Hitler/Nazi Germany</strong>, while Pilkington represents <strong>the Western Allies (Britain and America)</strong>. Napoleon plays them off against each other, eventually selling timber to Frederick. But Frederick pays with forged banknotes — a betrayal that parallels the <strong>Nazi-Soviet Pact</strong> of 1939 and Hitler's subsequent invasion of the Soviet Union in 1941.</p>
+<p>Napoleon now engages in <strong>trade with neighbouring farms</strong> — specifically with <strong>Frederick</strong> of Pinchfield and <strong>Pilkington</strong> of Foxwood. Frederick represents <strong>Hitler/Nazi Germany</strong>, while Pilkington represents <strong>the Western Allies (Britain and America)</strong>. Napoleon plays them off against each other, eventually selling timber to Frederick. But Frederick pays with forged banknotes — a betrayal that parallels the <strong>Nazi-Soviet Pact</strong> of 1939 and Hitler's subsequent invasion of the Soviet Union in 1941. Historically, Stalin signed a non-aggression pact with Hitler in August 1939, shocking the world. The two dictators, ideologically opposed, made a cynical deal to divide Poland and Eastern Europe. Many communists worldwide felt betrayed — they had been taught that Nazi Germany was the enemy. Yet Stalin believed he could control Hitler or that the pact would buy him time. He was catastrophically wrong. In June 1941, Hitler invaded the Soviet Union with 3 million troops. The pact was revealed as a desperate miscalculation. Orwell uses this historical event to show that even despots can be made fools by others with greater power.</p>
 
 <p>Frederick and his men then attack the farm and <strong>blow up the windmill</strong> with explosives. This is the <strong>Battle of the Windmill</strong>, representing the <strong>Battle of Stalingrad</strong> and the devastation of World War II on Soviet soil. The animals eventually drive the humans off, but at enormous cost — many animals are wounded, and the windmill they laboured so hard to build is destroyed. Squealer declares it a "victory," but the animals are left battered, exhausted and no better off.</p>
 
@@ -654,46 +725,56 @@ export const animalFarmCourse: CourseData = {
 
 <p>Chapter 9 is dominated by <strong>Boxer's decline and death</strong> — arguably the novella's most emotionally powerful episode. Now approaching retirement age, Boxer continues to work despite his failing health. His lung collapses while he is dragging stone for the new windmill. The animals are told he will be sent to a veterinary hospital. But Benjamin — who can read — sees the lettering on the van that comes to collect Boxer: <strong>"Horse Slaughterer."</strong></p>
 
-<p>Benjamin screams the truth, and the animals try to call Boxer out, but it is too late. The van drives away with Boxer inside. Squealer later announces that Boxer died peacefully in hospital, receiving the best medical care, and that his last words were "Napoleon is always right." He claims the van had been purchased by the veterinary surgeon from the knacker but had not yet been repainted. The lie is transparent, but the animals accept it because the alternative — that their leaders would sell a loyal comrade to be slaughtered — is too horrifying to contemplate.</p>
+<p>Benjamin screams the truth, and the animals try to call Boxer out, but it is too late. The van drives away with Boxer inside. Squealer later announces that Boxer died peacefully in hospital, receiving the best medical care, and that his last words were "Napoleon is always right." He claims the van had been purchased by the veterinary surgeon from the knacker but had not yet been repainted. The lie is transparent, but the animals accept it because the alternative — that their leaders would sell a loyal comrade to be slaughtered — is too horrifying to contemplate. They cannot bear the cognitive dissonance. It is easier to believe a comfortable lie than to confront a terrible truth.</p>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Students often write that Boxer is "sent to the vet." He is sent to the <strong>knacker</strong> — the horse slaughterer. This distinction matters: the pigs literally sell Boxer for slaughter and use the money to buy whisky. Getting this detail wrong in an exam undermines your analysis.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Students often write that Boxer is "sent to the vet." He is sent to the <strong>knacker</strong> — the horse slaughterer. This distinction matters: the pigs literally sell Boxer for slaughter and use the money to buy whisky. Getting this detail wrong in an exam undermines your analysis. Orwell is making a point about capitalist callousness: everything has a price, even the lives of loyal comrades.</div>
 
-<p>Boxer's fate is one of Orwell's most devastating indictments of the regime. Boxer gave everything — his strength, his loyalty, his health — to the farm. He followed every order, never questioned the leadership, and lived by the motto "Napoleon is always right." His reward is to be sold for profit the moment he is no longer useful. Orwell is showing that <strong>blind loyalty to a corrupt regime is not rewarded — it is exploited</strong>.</p>
+<p>Boxer's fate is one of Orwell's most devastating indictments of the regime. Boxer gave everything — his strength, his loyalty, his health — to the farm. He followed every order, never questioned the leadership, and lived by the motto "Napoleon is always right." His reward is to be sold for profit the moment he is no longer useful. Orwell is showing that <strong>blind loyalty to a corrupt regime is not rewarded — it is exploited and then discarded</strong>. Historically, Stalin's longtime supporters were often the first to be purged. In his final years, Stalin was paranoid and saw betrayal everywhere. His oldest allies were arrested and tortured. The lesson was clear: loyalty cannot protect you in a totalitarian system. Only power protects you.</p>
 
-<div class="key-term"><strong>Key Term: Dramatic Irony</strong> — When the audience knows something that a character does not. Throughout the novella, the reader can see the pigs' manipulation clearly, but the animals cannot. Boxer's unwavering trust in Napoleon — even as Napoleon sells him to the knacker — is the novella's most painful example of dramatic irony.</div>
+<div class="key-term"><strong>Key Term: Dramatic Irony &amp; Tragedy</strong> — When the audience knows something that a character does not, creating pathos. Throughout the novella, the reader can see the pigs' manipulation clearly, but the animals cannot. Boxer's unwavering trust in Napoleon — even as Napoleon sells him to the knacker — is the novella's most painful example of dramatic irony and serves as Orwell's deepest critique of how totalitarian systems exploit virtue.</div>
 
-<h3>Chapter 10: The Pigs Become Human</h3>
+<h3>Chapter 10: The Pigs Become Human &amp; the Revolution's Complete Inversion</h3>
 
-<p>Years pass. Most of the animals who remember the Rebellion are dead. The farm is more prosperous — but only for the pigs. The other animals work as hard as ever, their rations are no better than under Jones, and the promises of leisure, education and comfort have come to nothing.</p>
+<p>Years pass. Most of the animals who remember the Rebellion are dead. Memory itself — the potential basis for resistance — has been systematically erased by time and by the regime's control of history. The farm is more prosperous — but only for the pigs. The other animals work as hard as ever, their rations are no better than under Jones, and the promises of leisure, education and comfort have come to nothing. The animals have no language to describe their betrayal because the regime has corrupted language itself.</p>
 
-<p>Then, in the novella's climactic scene, <strong>the pigs begin walking on their hind legs</strong>. The sheep — retrained by Squealer — bleat a new slogan: <strong>"Four legs good, two legs better!"</strong> The Seven Commandments have been erased and replaced with a single statement:</p>
+<p>Then, in the novella's climactic scene, <strong>the pigs begin walking on their hind legs</strong>. The sheep — retrained by Squealer — bleat a new slogan: <strong>"Four legs good, two legs better!"</strong> The animals who once built a revolution based on "four legs good, two legs bad" now chant the opposite, and they chant it willingly, having been psychologically reprogrammed. The Seven Commandments have been erased and replaced with a single statement:</p>
 
 <p><strong>"All animals are equal, but some animals are more equal than others."</strong></p>
 
-<p>This is perhaps the most famous line in twentieth-century political literature. It perfectly encapsulates the hypocrisy of totalitarian regimes that use the language of equality to justify privilege. The logical contradiction — something cannot be "more equal" — mirrors the logical impossibility of the pigs' position: they claim to serve the animals while living in luxury at their expense.</p>
+<p>This is perhaps the most famous line in twentieth-century political literature. It perfectly encapsulates the hypocrisy of totalitarian regimes that use the language of equality to justify privilege. The logical contradiction — something cannot be "more equal" — mirrors the logical impossibility of the pigs' position: they claim to serve the animals while living in luxury at their expense. This is Orwell's name for this mental state: doublethink — the ability to hold two contradictory truths simultaneously. The animals believe in equality and in the pigs' privilege. Both. At once. Without noticing the contradiction.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> "All animals are equal, but some animals are more equal than others" is the novella's thesis statement. It should appear in virtually every essay you write about <em>Animal Farm</em>, regardless of the specific question. It connects to power, corruption, propaganda, class inequality, and the betrayal of ideals — every major theme.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> "All animals are equal, but some animals are more equal than others" is the novella's thesis statement. It should appear in virtually every essay you write about <em>Animal Farm</em>, regardless of the specific question. It connects to power, corruption, propaganda, class inequality, and the betrayal of ideals — every major theme. Use this as your hammer.</div>
 
-<p>In the final scene, the pigs invite the neighbouring farmers to dinner. Napoleon announces that the farm will no longer be called "Animal Farm" — it is reverting to its original name, <strong>"Manor Farm."</strong> The animals peer through the farmhouse window and watch pigs and humans playing cards together. An argument breaks out, and the watching animals look from pig to man, from man to pig — but <strong>"it was impossible to say which was which."</strong></p>
+<p>In the final scene, the pigs invite the neighbouring farmers to dinner. Napoleon announces that the farm will no longer be called "Animal Farm" — it is reverting to its original name, <strong>"Manor Farm."</strong> The symbolic erasure is complete. The revolution is officially cancelled. The animals peer through the farmhouse window and watch pigs and humans playing cards together, smoking cigarettes, drinking whisky. An argument breaks out — the humans cheat — and the pigs threaten violence. But then they laugh and make up, conspirators united in their contempt for animals. The watching animals look from pig to man, from man to pig — but <strong>"it was impossible to say which was which."</strong> The revolution has made a full circle. The oppressor has changed face but not form.</p>
 
-<div class="key-term"><strong>Key Term: Cyclical Structure</strong> — A narrative that ends where it began, creating a sense of futility or inevitability. <em>Animal Farm</em>'s cyclical structure — from Manor Farm to Animal Farm and back to Manor Farm — is one of Orwell's most powerful structural devices, showing that the revolution has changed nothing fundamental about the power dynamics on the farm.</div>
+<div class="key-term"><strong>Key Term: Cyclical Structure &amp; Nihilism</strong> — A narrative that ends where it began, creating a sense of futility or inevitability. <em>Animal Farm</em>'s cyclical structure — from Manor Farm to Animal Farm and back to Manor Farm — is one of Orwell's most powerful structural devices, showing that the revolution has changed nothing fundamental about the power dynamics on the farm. The cycle is not progress; it is eternal recurrence of oppression.</div>
 
-<p>This ending is devastating in its simplicity. The revolution has achieved nothing. The pigs have become the very thing they overthrew. The cycle of oppression continues. Orwell's message is bleak but clear: <strong>revolutions that concentrate power in the hands of a few will always betray the many</strong>.</p>
+<p>This ending is devastating in its simplicity. The revolution has achieved nothing. The pigs have become the very thing they overthrew. The cycle of oppression continues, dressed in new symbols but identical in structure. Orwell's message is bleak but clear: <strong>revolutions that concentrate power in the hands of a few will always betray the many, and they will always produce new oppressors indistinguishable from the old ones</strong>.</p>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Interpreting the ending as Orwell saying "revolution is always pointless." Orwell was a socialist who believed in revolutionary change — his target is not revolution itself but the <strong>corruption</strong> of revolution by power-hungry leaders. The tragedy is not that the animals rebelled, but that they failed to maintain democratic accountability.</div>
+<div class="common-mistake"><strong>Common Mistake:</strong> Interpreting the ending as Orwell saying "revolution is always pointless." Orwell was a socialist who believed in revolutionary change — his target is not revolution itself but the <strong>corruption</strong> of revolution by power-hungry leaders and the failure of the masses to maintain democratic oversight. The tragedy is not that the animals rebelled, but that they failed to create institutions preventing tyranny. They had one chance to do it — in the early chapters when they had power — and they failed.</div>
 
 <h3>Orwell's Narrative Technique in the Final Chapters</h3>
 
-<p>In the closing chapters, Orwell's narrative voice becomes increasingly <strong>compressed and detached</strong>. Years pass in a few sentences. Animals die without ceremony. The narrator tells us that "the animals worked like slaves" with no emotional commentary — the word "slaves" does the work, reminding the reader that the revolution was supposed to end slavery, not perpetuate it. This acceleration of narrative time mirrors the way oppressive regimes normalise suffering: individual tragedies are swallowed by the relentless passage of time, and the animals' capacity for outrage is worn away by exhaustion and habituation. Orwell's structural choice to compress time in the final chapters reinforces the theme that <strong>tyranny endures not through dramatic acts of violence but through the slow erosion of memory, hope and resistance</strong>.</p>
+<p>In the closing chapters, Orwell's narrative voice becomes increasingly <strong>compressed and detached</strong>. Years pass in a few sentences. Animals die without ceremony. The narrator tells us that "the animals worked like slaves" with no emotional commentary — the word "slaves" does the work, reminding the reader that the revolution was supposed to end slavery, not perpetuate it. This acceleration of narrative time mirrors the way oppressive regimes normalise suffering: individual tragedies are swallowed by the relentless passage of time, and the animals' capacity for outrage is worn away by exhaustion and habituation. The narrative itself becomes worn down, tired, resigned — mirroring the animals' psychological state. Orwell's structural choice to compress time in the final chapters reinforces the theme that <strong>tyranny endures not through dramatic acts of violence but through the slow erosion of memory, hope and resistance</strong>. The revolution doesn't end in a bang; it ends in the dull exhaustion of the working animals, never quite able to articulate their enslavement.</p>
 
-<h3>Key Quotations from Chapters 8–10</h3>
+<h3>Key Quotations from Chapters 8–10 — Expanded Bank (8+ Quotations)</h3>
 
 <ul>
-  <li><strong>"our Leader, Comrade Napoleon"</strong> — The elaborate title; mirrors Stalinist honorifics and the cult of personality.</li>
-  <li><strong>"No animal shall drink alcohol <em>to excess</em>"</strong> — Another altered commandment; the qualifier "to excess" legalises the pigs' behaviour retroactively.</li>
-  <li><strong>"Horse Slaughterer"</strong> — The lettering on Boxer's van; the starkest image of the regime's cruelty and ingratitude.</li>
-  <li><strong>"All animals are equal, but some animals are more equal than others"</strong> — The novella's defining statement; encapsulates the hypocrisy of totalitarian regimes.</li>
-  <li><strong>"impossible to say which was which"</strong> — The final line; the revolution has come full circle, and the pigs are indistinguishable from the humans they replaced.</li>
+  <li><strong>"our Leader, Comrade Napoleon"</strong> — The elaborate title establishing the cult of personality. <strong>Technique:</strong> Honorific language / elevation of status. <strong>Effect:</strong> Makes the leader seem superhuman, beyond criticism. <strong>Grade 9 Interpretation:</strong> Mirrors Stalinist honorifics ("Vozhd" = Leader, "Father of the Peoples"). Language shapes how we think about power.</li>
+
+  <li><strong>"No animal shall drink alcohol <em>to excess</em>"</strong> — Another altered commandment; the qualifier "to excess" legalises the pigs' behaviour retroactively. <strong>Technique:</strong> Linguistic loophole. <strong>Effect:</strong> Makes law a tool of manipulation rather than justice. <strong>Grade 9 Interpretation:</strong> Totalitarian regimes create laws designed to have loopholes for the powerful. Laws exist to control the masses, not the elite.</li>
+
+  <li><strong>"Horse Slaughterer"</strong> — The lettering on Boxer's van; the starkest image of the regime's cruelty and ingratitude. <strong>Technique:</strong> Stark, brief description. <strong>Effect:</strong> Conveys betrayal in two words. <strong>Grade 9 Interpretation:</strong> The regime literally sells its most loyal workers for profit when they are no longer useful. Loyalty has no value in a capitalist-totalitarian system.</li>
+
+  <li><strong>"All animals are equal, but some animals are more equal than others"</strong> — The novella's defining statement; encapsulates totalitarian hypocrisy. <strong>Technique:</strong> Logical paradox / oxymoron. <strong>Effect:</strong> Exposes the inherent contradiction in the regime's ideology. <strong>Grade 9 Interpretation:</strong> This is doublethink made explicit. The statement is obviously false, yet the animals accept it. Orwell is showing that totalitarian power works by making citizens accept logical impossibilities.</li>
+
+  <li><strong>"impossible to say which was which"</strong> — The final line; the revolution has come full circle. <strong>Technique:</strong> Cyclical structure / narrative circularity. <strong>Effect:</strong> Completes the cycle from opening to closing. <strong>Grade 9 Interpretation:</strong> The revolution has achieved nothing. Power has changed hands but not form. The animals are back where they started — oppressed, exploited, without voice.</li>
+
+  <li><strong>"the animals worked like slaves"</strong> — Description of labour under the pigs. <strong>Technique:</strong> Stark comparison / simile. <strong>Effect:</strong> Invokes the very thing the revolution was supposed to end. <strong>Grade 9 Interpretation:</strong> Despite the revolution's rhetoric of liberation, the animals are in chains. The pigs have merely replaced the humans. Structural oppression continues unchanged.</li>
+
+  <li><strong>"Boxer is dead"</strong> (announced by Squealer). <strong>Technique:</strong> Flat, factual delivery with false context. <strong>Effect:</strong> The regime controls even the narrative of death. <strong>Grade 9 Interpretation:</strong> Totalitarian regimes don't just kill — they rewrite the meaning of death. Boxer's death is presented as peaceful, honourable, while actually being murder for profit.</li>
+
+  <li><strong>"it was no longer called Animal Farm, but Manor Farm"</strong> — The symbolic reversal. <strong>Technique:</strong> Name change as ideology reversal. <strong>Effect:</strong> Erases the revolution entirely, replacing it with the name of the old regime. <strong>Grade 9 Interpretation:</strong> Names matter. By reverting to "Manor Farm," the pigs are saying: the revolution never happened. We are the new lords; you are the new peasants. The system continues.</li>
 </ul>
 `,
       quiz: [
@@ -932,11 +1013,73 @@ export const animalFarmCourse: CourseData = {
     {
       id: 'af-m7',
       title: 'Key Themes',
-      duration: '75 min',
+      duration: '150 min',
       content: `
 <h2>Key Themes in Animal Farm</h2>
 
-<p>Themes are the big ideas that run through a text. In an AQA GCSE English Literature exam, you are expected to discuss themes with reference to <strong>the writer's methods</strong> (AO2) and <strong>relevant context</strong> (AO3). This module analyses the five major themes in <em>Animal Farm</em> and shows you how to write about each one at the highest level.</p>
+<p>Themes are the big ideas that run through a text — the universal truths and political arguments that Orwell embeds in his narrative. In an AQA GCSE English Literature exam, you are expected to discuss themes with reference to <strong>the writer's methods</strong> (AO2) and <strong>relevant context</strong> (AO3). This module analyses the five major themes in <em>Animal Farm</em> and shows you how to write about each one at the highest level. Notice that all five themes are interconnected — they form a unified political argument about power, language, knowledge, and the inevitability of totalitarianism when democratic safeguards are absent.</p>
+
+<h3>How the Five Themes Interconnect: Orwell's Political Argument</h3>
+
+<p>Orwell's five major themes form an interlocking system that together explain how totalitarianism emerges and sustains itself:</p>
+
+<table border="1" cellpadding="10">
+<tr>
+  <th>Theme</th>
+  <th>Mechanism</th>
+  <th>Consequence</th>
+</tr>
+<tr>
+  <td><strong>Power &amp; Corruption</strong></td>
+  <td>Those with power accumulate more power</td>
+  <td>Dictatorship emerges</td>
+</tr>
+<tr>
+  <td><strong>Language as Control</strong></td>
+  <td>Those in power control words and narratives</td>
+  <td>Reality becomes malleable; truth becomes meaningless</td>
+</tr>
+<tr>
+  <td><strong>Education &amp; Ignorance</strong></td>
+  <td>Those in power control what others can read/know</td>
+  <td>Citizens cannot verify claims or challenge leaders</td>
+</tr>
+<tr>
+  <td><strong>Class &amp; Inequality</strong></td>
+  <td>Power concentrates in a privileged elite</td>
+  <td>New class hierarchy replaces the old one</td>
+</tr>
+<tr>
+  <td><strong>Revolution's Betrayal</strong></td>
+  <td>Revolutionary leaders reproduce the systems they replaced</td>
+  <td>Cycle of oppression continues unchanged</td>
+</tr>
+</table>
+
+<p>Together, these themes describe a totalitarian system: those in power (theme 1) use language to control thought (theme 2) by restricting knowledge (theme 3), creating a hierarchy of privilege (theme 4). All of this repeats the pattern the revolution was supposed to end (theme 5). Orwell is not describing five separate ideas — he is describing five aspects of one system of control.</p>
+
+<h3>Exam Strategy: How to Write About Themes at Grade 9</h3>
+
+<p><strong>Structure for theme essay:</strong></p>
+<ol>
+<li><strong>Introduce the theme with a clear statement:</strong> "The central theme of <em>Animal Farm</em> is the corruption of power. Orwell argues that absolute power inevitably corrupts even those who begin with good intentions."</li>
+<li><strong>Provide context:</strong> "This reflects Orwell's experience of Stalin's betrayal of the Russian Revolution."</li>
+<li><strong>Provide specific textual evidence:</strong> Quote the moment or process. Analyse the writer's method (technique, effect).</li>
+<li><strong>Link back to the broader argument:</strong> How does this moment contribute to Orwell's larger point? How does it connect to other themes?</li>
+<li><strong>Repeat 2-4 for multiple examples.</strong></li>
+<li><strong>Conclude by stating what Orwell's argument means:</strong> "Through the theme of power's corruption, Orwell warns that revolutions without democratic safeguards will always reproduce the systems they replace."</li>
+</ol>
+
+<p><strong>Key phrases for theme analysis (Grade 8-9 vocabulary):</strong></p>
+<ul>
+<li>"Orwell uses [character/event] to explore the theme of..."</li>
+<li>"This demonstrates that...</li>
+<li>"The significance of this is that it shows Orwell's argument that..."</li>
+<li>"By [structural choice], Orwell emphasises the theme by..."</li>
+<li>"This connects to the broader theme of... because..."</li>
+<li>"Orwell presents this as inevitable/tragic/ironic to suggest that..."</li>
+</ul>
+
 
 <h3>1. Power &amp; Corruption</h3>
 
@@ -999,6 +1142,26 @@ export const animalFarmCourse: CourseData = {
 <div class="common-mistake"><strong>Common Mistake:</strong> Treating education as a minor theme. In fact, education underpins <em>every other theme</em> in the novella. Without the literacy gap, the pigs could not alter the Commandments; without the animals' ignorance of history, Squealer could not rewrite the past; without the sheep's inability to think beyond slogans, Napoleon could not suppress debate. Education is not just one theme among many — it is the <em>enabling condition</em> for all forms of control.</div>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> The theme of education links beautifully to the structural device of the Seven Commandments. You could trace how the Commandments function differently depending on literacy: for the pigs, they are a <em>tool</em> to be manipulated; for the animals, they are a <em>truth</em> to be trusted; for Benjamin, they are an <em>irrelevance</em> to be ignored. This kind of multi-perspective analysis is exactly what top-band responses require.</div>
+
+<h3>Grade 9 Insight Boxes on Themes</h3>
+
+<div class="insight-box">
+<strong>Why Power Corruption is Inevitable Without Democratic Safeguards:</strong> Orwell's argument is not that power inherently corrupts good people. Rather, power <em>selects for</em> corrupt people. Those willing to use violence and manipulation to seize power are precisely the sort of people who will use those tools to keep power. A democratic system with checks and balances tries to prevent this by distributing power and making leaders accountable. Animal Farm has neither — the pigs seized power unopposed and created no mechanisms for their removal. The result was inevitable.
+</div>
+
+<div class="insight-box">
+<strong>Language as the Most Dangerous Weapon:</strong> Orwell's central insight, developed fully in <em>Nineteen Eighty-Four</em>, is that whoever controls language controls thought. By narrowing the vocabulary available to think with, you limit the thoughts people can have. By redefining words (freedom = obedience, equality = hierarchy), you make resistance intellectually impossible. The pigs do not just lie — they reshape language itself. This is more devastating than violence because it destroys the capacity to even conceive of resistance.
+</div>
+
+<div class="insight-box">
+<strong>Why Benjamin's Passivity is Tragic:</strong> Benjamin can read. Benjamin knows the truth. But Benjamin refuses to act. Orwell presents this as a moral failure because it demonstrates how totalitarian systems neutralise potential opposition through cynicism. If Benjamin had mobilised the literate animals, they could have exposed every lie, every altered Commandment, every manipulation. Instead, he says "things never have been, nor ever could be much better." His pessimism becomes self-fulfilling. Orwell is warning that cynicism about politics is a form of collaboration with tyranny.
+</div>
+
+<div class="insight-box">
+<strong>How Class Inequality Re-emerges Naturally (Without Active Resistance):</strong> The animals didn't plan for inequality to return — it just happened. Small differences accumulated. The pigs took slightly more food, slightly better conditions. Soon there was a formal class hierarchy. Orwell is showing that equality is not the default state — it is the exception. It requires constant active effort to maintain: rotation of leadership, distribution of power, control of propaganda, enforced accountability. Stop maintaining equality for one moment, and it crumbles. This is Orwell's most pessimistic insight.
+</div>
+
+
 `,
       quiz: [
         {

@@ -1012,6 +1012,44 @@ const whaleRiderModules: CourseModule[] = [
 <h3>The Bull Whale</h3>
 <p>The ancient bull whale is more than an animal — he is a <strong>mythological figure</strong>, the original whale who carried Paikea to Aotearoa. He has been waiting across millennia for a new rider. The whale represents the <strong>living force of ancestral tradition</strong> and the interconnection between humans and the natural world. His response to Kahu confirms that the ancestors accept her, even if her human grandfather does not.</p>
 
+<h3>Character Tracking: The Kahu-Koro Relationship</h3>
+<div class="context-box"><strong>Generational Conflict &amp; Reconciliation</strong>
+
+<p>The relationship between Kahu and Koro is the novel's emotional centre. It moves through several distinct phases:</p>
+
+<p><strong>Phase 1 — Rejection:</strong> Koro rejects Kahu at birth, mourning the death of her twin brother and her mother. His grief is real, but he channels it into ancestral anxiety: without a male heir, the Paikea lineage will die. Kahu, despite this rejection, adores her grandfather and desperately seeks his approval.</p>
+
+<p><strong>Phase 2 — Invisible Excellence:</strong> As Kahu grows, she secretly learns the traditional knowledge and martial skills Koro teaches to the boys. She excels at the taiaha, at chanting, at understanding the old ways. Yet Koro refuses to acknowledge her achievements, dismissing her abilities as unimportant because she is female.</p>
+
+<p><strong>Phase 3 — Crisis &amp; Transformation:</strong> The whale stranding creates a moment of vulnerability. Koro experiences the crisis as confirmation that the ancestors have abandoned his people. It is at this moment of utter despair that Kahu acts. By riding the whale, she proves that the ancestors have not abandoned anyone — they have simply chosen her.</p>
+
+<p><strong>Phase 4 — Recognition &amp; Acceptance:</strong> Koro finally sees Kahu fully — not as a disappointing daughter but as the true heir of Paikea. His acceptance is not a rejection of tradition but a recognition that tradition includes her.</p>
+
+</div>
+
+<h3>Character Psychology: Koro's Fear</h3>
+<p>Understanding Koro requires understanding his fear. He is not simply a sexist old man; he is a man terrified that his entire world — the world of ancestral knowledge, the Ngati Porou people, the spiritual continuity he has dedicated his life to preserving — will collapse. To Koro, allowing a girl to lead feels like abandoning everything. Yet the novel's insight is that this fear itself is what threatens tradition: rigid insistence that things cannot change leads to cultural death. Koro's arc is a tragic and moving recognition that real tradition-keeping requires flexibility, responsiveness, and ultimately, trust in the younger generation.</p>
+
+<h3>Quotation Bank: Key Character Moments</h3>
+<div class="quotation-bank">
+
+<p><strong>Koro's despair at Kahu's birth:</strong> "A girl. I had been waiting for a boy." (His immediate rejection, capturing his single-minded focus on male lineage)</p>
+
+<p><strong>Kahu's impossible love:</strong> "Kahu would have given anything for her grandfather to call her by her real name." (Kahu remains unnamed, unseen, unloved by Koro)</p>
+
+<p><strong>Nani's wisdom:</strong> "She is a Paikea. Don't you see that?" (Nani recognises Kahu's destiny long before anyone else)</p>
+
+<p><strong>Rawiri's observation:</strong> "Kahu... you know how to ride the whales, don't you?" (The moment when the unspoken is finally spoken)</p>
+
+<p><strong>Koro's final realisation:</strong> "You are the one. You are the whale rider." (Recognition, acceptance, and the breaking of his limited vision)</p>
+
+<p><strong>Kahu's transformation:</strong> "I understood then... I was not a boy. But I was still Paikea's descendant." (Kahu's synthesis of identity — she does not become male but reclaims the legacy as female)</p>
+
+</div>
+
+<h3>Grade 9 Character Analysis: Complexity &amp; Sympathy</h3>
+<div class="grade-9-insight"><strong>Avoiding Character Caricature</strong> The most sophisticated responses recognise that all the novel's main characters are sympathetic, even when they oppose each other. Koro's resistance to Kahu is not evil but rooted in genuine love and fear for his people. Kahu's challenge to tradition is not selfish rebellion but a deeper commitment to her ancestral destiny than Koro himself possesses. Nani's quiet wisdom and Rawiri's observant compassion add texture to the family dynamic. Even Kahu's parents, largely offstage, are presented with sympathy — they have their own struggles and losses. Writing about character means honouring complexity: explaining how people can be both admirable and limited, how love can coexist with misunderstanding, how tradition can be both beautiful and constraining. This nuance is what separates top-mark responses from superficial ones.</div>
+
 <div class="examiner-tip"><strong>Examiner Tip:</strong> The best responses will explore Koro as a complex, sympathetic character rather than a simple villain. His resistance to Kahu comes from love of his culture and fear of its loss. Showing this nuance demonstrates sophisticated understanding.</div>
 `,
     quiz: [
@@ -1074,6 +1112,29 @@ const whaleRiderModules: CourseModule[] = [
 
 <h3>Love &amp; Family</h3>
 <p>Despite the conflict, love underpins every relationship in the novel. Kahu's love for Koro endures despite his rejection. Koro's stubbornness comes from love of his people. Nani's fierce advocacy for Kahu is an act of love. The novel suggests that <strong>love and tradition are intertwined</strong> — the deepest traditions are those sustained by love across generations.</p>
+
+<h3>Quotation Bank: Key Thematic Moments</h3>
+<div class="quotation-bank">
+
+<p><strong>On tradition and gender:</strong> "The male of the species is responsible, you see, for the leadership of the people." (Koro Apirana's justification for male-only leadership)</p>
+
+<p><strong>On connection to nature:</strong> "She could hear him now, the bull whale, the tangata whenua, singing beneath the waves." (Kahu's spiritual connection to the whale)</p>
+
+<p><strong>On love across division:</strong> "But that was the thing about loving your grandfather — he was always too large, too important, too removed." (Kahu on her impossible love for the dismissive Koro)</p>
+
+<p><strong>On cultural wisdom:</strong> "There is wisdom in the past... You must remember who you are." (Nani to Kahu)</p>
+
+<p><strong>On transformation of tradition:</strong> "The rider comes... but she comes in a different form than we expected." (The whale recognises Kahu as the true rider)</p>
+
+</div>
+
+<h3>Theme Integration: How Gender, Tradition, &amp; Ecology Connect</h3>
+<p>The strongest essays on this novel recognise that gender, tradition and ecology are not separate themes but deeply interconnected. Kaho's challenge to male-only leadership is simultaneously a renewal of tradition (the ancestral whale accepts her) and a restoration of ecological harmony (her ride saves the whales). Similarly, Nani's quiet insistence that tradition include women's knowledge, women's strength, and women's connection to the land suggests that rigid tradition is actually a distortion — true tradition is more inclusive. The novel's insight is that <strong>authenticity requires responsiveness</strong>: the most traditional choice Kahu can make is to ride the whale, but she does so as a girl, in a way her ancestors never envisioned. This is not tradition betrayed but tradition fulfilled in a new form.</p>
+
+<h3>Context Box: Colonisation &amp; Cultural Revitalisation</h3>
+<div class="context-box"><strong>Post-Colonial Reclamation Through Mythology</strong> By setting his novel in a Maori community and centring Maori mythology, Ihimaera participates in the Maori Renaissance — a movement to reclaim and revitalise indigenous culture in the face of ongoing colonisation effects. The whale rider story is not an archaeological artifact but a living mythology, actively interpreted and re-imagined by contemporary Maori people. Kahu's ride is thus doubly significant: it asserts that Maori culture is not trapped in the past but continues to generate meaning in the present. It also insists that this living tradition must evolve — that cultural survival requires adaptation, particularly regarding gender roles that may have been distorted by patriarchal colonisation.</div>
+
+<div class="grade-9-insight"><strong>Grade 9 Insight: Myth as Legitimation</strong> Notice how the ancient whale's acceptance of Kahu as rider serves as mythological legitimation for her human claim to leadership. The whale has been waiting for a rider — not necessarily a male rider, but a rider worthy of the ancestral connection. In this way, Ihimaera uses the novel's mythological structure to argue that women's leadership is not a modern imposition on tradition but a return to a more authentic, ancestral form. This is a powerful political move: it claims that gender equality is rooted in indigenous wisdom, not foreign to it. When Koro finally recognises Kahu, he is not embracing Western ideas about gender equality — he is recognising the authority of his own ancestors.</div>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> The strongest essays will show how themes interconnect. Gender, tradition and ecology are not separate topics in this novel — Kahu's ride simultaneously challenges gender roles, renews tradition, and restores ecological harmony. Discussing these connections demonstrates conceptualised thinking.</div>
 `,
@@ -1143,6 +1204,39 @@ const whaleRiderModules: CourseModule[] = [
 
 <h3>Tone</h3>
 <p>The novel moves between <strong>humour and pathos</strong>. Rawiri's narration is often lightly comic — his self-deprecating observations and Nani's sharp wit provide warmth and accessibility. But the whale stranding and Kahu's near-death bring deep emotional intensity. This tonal range prevents the novel from becoming either too light or too heavy, reflecting the full spectrum of community life.</p>
+
+<h3>Quotation Bank: Language &amp; Imagery</h3>
+<div class="quotation-bank">
+
+<p><strong>On the whale's perspective:</strong> "The bull whale sings. And the song is heard. And the song is answered. That is how it is with the ancient ones. They sing one to another across the oceans of time." (The mythic register of the whale narration)</p>
+
+<p><strong>On Kahu's connection:</strong> "She heard the whale singing beneath the waters. She understood what the whale was saying. She understood that the whale was waiting for a rider. That the whale had been waiting for a very long time." (Kahu's intuitive understanding conveyed through simple, powerful syntax)</p>
+
+<p><strong>On Koro's rigidity:</strong> "Koro Apirana was like a rock jutting out of the sea, constant and immovable. But even rocks are worn away by the waves." (Metaphor conveying both strength and inevitable change)</p>
+
+<p><strong>On Nani's wisdom:</strong> "Nani spoke quietly, as grandmothers do when they have something important to say." (The connection between speech style and wisdom)</p>
+
+<p><strong>On cultural knowledge:</strong> "In the old days, the knowledge had been passed from grandfather to grandson, mouth to ear, heart to heart." (Ihimaera's acknowledgment of oral tradition as the primary form of cultural transmission)</p>
+
+</div>
+
+<h3>Model Response: Language Analysis</h3>
+<div class="model-response">
+<p>Ihimaera's dual narrative registers — the contemporary voice of Rawiri in the human world and the elevated, incantatory register of the whale chapters — create a powerful structural irony that embodies the novel's central theme. The whale, narrating in a mythic, poetic voice full of ritual repetition ("The song is heard. And the song is answered."), exists outside ordinary time and speaks with ancestral authority. The human characters, meanwhile, inhabit everyday reality — school, household conflict, economic struggle. Yet the novel's structure insists that these two worlds are not separate: the whale's ancient song reaches across centuries to touch Kahu, who hears and responds. Stylistically, this means the poetic, mythic register gradually infiltrates the contemporary narrative. As Kahu's connection to the whale deepens, the language becomes more rhythmic, more incantatory. When she finally rides the whale, the distinction between registers collapses — myth and reality become one. This stylistic choice is itself an argument about indigenous knowledge and Western rationalism. The novel does not present myth as mere symbolic language but as a real form of communication, as true as the English language in which Rawiri narrates. By giving the whale equal narrative authority with the human characters, Ihimaera asserts that Maori mythology is not ancient history but a living, present force. The whale is not a metaphor; he is a being with agency and knowledge that the contemporary world would be wise to listen to.</p>
+</div>
+
+<h3>Imagery &amp; Symbolism: Extended Analysis</h3>
+<div class="context-box"><strong>The Ecology of Symbolism in The Whale Rider</strong>
+
+<p><strong>Water &amp; The Ocean:</strong> Water in the novel is never simply scenic background. It is the medium of ancestral connection, the space where the whales live and communicate, the barrier between countries and worlds. The ocean is both danger (the tsunami, the whale stranding) and salvation (the means by which ancestors journeyed and Kahu ultimately triumphs). The novel's recurring return to water imagery insists on fluidity, connection, and the impossibility of absolute separation between past and present, human and natural worlds.</p>
+
+<p><strong>The Marae &amp; Sacred Space:</strong> Ihimaera uses the marae (communal gathering place) and the church as contrasting spaces of cultural meaning. The marae represents Maori tradition; the church represents European colonisation. Yet Ihimaera does not present this as simple opposition — both spaces contain power, though of different kinds. Kahu's journey is not a rejection of modernity but a recentring of indigenous authority within a colonised landscape.</p>
+
+<p><strong>The Whale Tooth &amp; Taonga:</strong> The whale tooth pendant serves as a taonga — a sacred object of ancestral significance. Its recovery from the sea is both literal and symbolic: Kahu recovers not just an object but her claim to leadership and identity. In Maori culture, taonga embody spiritual authority; their possession indicates leadership and ancestral blessing. By having Kahu recover the whale tooth, Ihimaera combines symbolic action with plot event, making abstract authority concrete.</p>
+
+</div>
+
+<div class="grade-9-insight"><strong>Grade 9 Insight: Register as Worldview</strong> The choice of narrative register is not merely stylistic — it embodies different ways of knowing and being in the world. Rawiri's contemporary narrative voice represents Western, rational knowledge — chronological time, documented fact, psychological introspection. The whale's mythic voice represents ancestral, cyclical knowledge — timelessness, spiritual truth, communal wisdom. By weaving these together, Ihimaera insists that both forms of knowledge are valid. The novel does not dismiss the contemporary world but argues that it must be grounded in ancestral wisdom. This is a subtle critique of colonisation: European colonisers imposed their single way of knowing as universal truth, dismissing indigenous knowledge systems. Ihimaera's stylistic choice — giving narrative authority to both registers — is an act of decolonisation. When writing about language and style, recognising this political dimension elevates analysis from technical description to thematic engagement.</div>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> Ihimaera's use of te reo Maori is an important AO2 point. Discuss how the integration of Maori language asserts cultural identity and challenges the reader to engage with a world that is not entirely accessible through English alone.</div>
 `,
@@ -1421,6 +1515,44 @@ const jlcModules: CourseModule[] = [
 
 <p><strong>Lena St. Clair:</strong> Lena is trapped in an unequal marriage that mirrors the patriarchal dynamics her mother endured in China. Ying-ying's eventual intervention — smashing the unstable table — symbolises the breaking of inherited passivity.</p>
 
+<h3>Character Tracking: Mothers & Daughters Parallels</h3>
+<div class="context-box"><strong>Theme Track: How Maternal Trauma Shapes Daughters</strong>
+
+<p><strong>Suyuan → Jing-mei:</strong> Suyuan's grief over her lost daughters manifests in her demand that Jing-mei succeed and carry the family legacy. Jing-mei, never explicitly told her mother's full story, interprets her mother's high expectations as disappointment in her. Only when Jing-mei learns the truth about her half-sisters does she understand her mother's behavior not as criticism but as desperate love. Jing-mei's journey to China is the narrative's climactic moment of reconciliation — she finally becomes the daughter Suyuan always intended, but through understanding rather than obedience.</p>
+
+<p><strong>An-mei → Rose:</strong> An-mei's mother's suicide — an act of rebellion against her husband's concubinage system — was meant to free An-mei from the same fate. Yet An-mei internalises not freedom but fear. She insists Rose "speak for yourself," but cannot model that behavior in her own marriage. Rose, paralysed by indecision in her marriage to Ted, repeats her mother's passivity despite her mother's warnings. The novel suggests trauma creates a tragic paradox: those who suffer most fiercely from an injustice often cannot fully protect their children from it.</p>
+
+<p><strong>Lindo → Waverly:</strong> Lindo's forced marriage and her clever escape from it create in her a competitive, strategic personality. She admires intelligence and manipulation. Waverly, a chess prodigy from childhood, inherits her mother's competitive drive but interprets it as her mother's constant criticism. Their conflict is rooted in a fundamental misunderstanding: Lindo's pushing is meant as love (she wants Waverly to be strong enough to survive), but Waverly experiences it as never being good enough.</p>
+
+<p><strong>Ying-ying → Lena:</strong> Ying-ying's traumatic marriage to a cruel man in China reduced her to passivity and silence. She became, as she says, a "ghost" — invisible and powerless. Lena replicates this dynamic, accepting an unequal marriage where she and her husband keep separate finances and she subsidises his portion of the household expenses. Only when Ying-ying sees herself in her daughter's unequal marriage does she act, literally smashing the table that has symbolised their imbalance. Lena's liberation comes through her mother's awakening to the cycle of female powerlessness.</p>
+</div>
+
+<h3>Quotation Bank: Character Defining Moments</h3>
+<div class="quotation-bank">
+
+<p><strong>Suyuan's loss (quoted by Jing-mei):</strong> "I wanted my daughters to have the best combination: American circumstances and Chinese character. How could I know these things in fact do not mix?" — This quotation encapsulates Suyuan's impossible dream and the novel's central tension between cultural identity and desire.</p>
+
+<p><strong>An-mei's lesson:</strong> "I was taught to desire nothing, to swallow other people's misery, to eat my own bitterness." — An-mei's cyclical wisdom-through-suffering, passed on to her daughter but not fully internalized.</p>
+
+<p><strong>Lindo's strength:</strong> "I learned to use my head and my heart, not my hands." — Lindo's embrace of strategic intelligence as her form of power.</p>
+
+<p><strong>Ying-ying's awakening:</strong> (At the end) "I was not an immigrant like her, asking for permission. I belonged here." — Ying-ying's assertion of belonging and presence after a lifetime of invisibility.</p>
+
+<p><strong>Rose's reclamation:</strong> "I was finally able to speak up for myself, with no pain." — Rose's hard-won breakthrough after understanding her mother's story.</p>
+
+<p><strong>Waverly's recognition:</strong> "I felt a sudden chill, a wetness, and I felt it running down my cheeks. But I did not feel the pain." — Waverly finally understanding her mother's love beneath the criticism.</p>
+
+<p><strong>Lena's liberation:</strong> (After the table is broken) "The balance has been broken. I feel lighter." — The symbolic and practical weight lifted when Ying-ying acts.</p>
+
+<p><strong>Jing-mei's transformation:</strong> "And I was on my way at last to becoming her daughter." — Jing-mei's final acceptance of her mother's legacy and her own Chinese identity.</p>
+
+</div>
+
+<h3>Character Psychology: Coping Mechanisms &amp; Survival</h3>
+<p>Each character develops distinct psychological survival strategies shaped by their historical circumstances. An-mei survives through stoicism and indirect power (teaching her daughter to speak for herself because she could not). Lindo survives through strategic cleverness and competition. Ying-ying survives initially through withdrawal and, in her daughter's generation, through protective intervention. Rose survives through accommodation and later through the realization that accommodation is a form of self-erasure. These different survival mechanisms create misunderstanding between mothers and daughters — what served one generation's survival becomes a burden for the next. Yet the novel suggests this transmission of trauma is not inevitable; consciousness and communication can break the cycle.</p>
+
+<div class="grade-9-insight"><strong>Grade 9 Insight: Character as Historical Document</strong> Tan's characters are not merely fictional individuals; they are also historical witnesses. Their stories document the lived experience of Chinese-American immigration, the treatment of women in both traditional Chinese and modern American society, and the specific generational trauma of displacement. When An-mei speaks about her mother's concubinage, she is not just sharing a personal anecdote — she is documenting a historical practice that affected millions of women. When Suyuan loses her daughters during wartime, she carries the trauma of the Japanese invasion of China. When Lindo escapes her arranged marriage through cleverness, she enacts the historical resistance of women within patriarchal systems. Understanding character means understanding the historical pressures that shape individual psychology.</div>
+
 <div class="examiner-tip"><strong>Examiner Tip:</strong> Note how Tan creates parallels between mothers and daughters. Each daughter unconsciously repeats aspects of her mother's experience. Discussing these parallels demonstrates conceptualised understanding of the novel's structure and themes.</div>
 `,
     quiz: [
@@ -1484,7 +1616,28 @@ const jlcModules: CourseModule[] = [
 <h3>Voice &amp; Silence</h3>
 <p>Many characters are silenced — by patriarchal cultures, by immigration, by trauma, by the limitations of language. The mothers struggle to communicate in English; the daughters cannot speak Chinese. This <strong>linguistic gap</strong> becomes a metaphor for the broader failure of communication between generations. The novel argues that finding one's voice — whether through language, action or art — is essential for both individual identity and intergenerational connection.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> When discussing themes, always connect them to specific stories and characters. "The novel is about cultural identity" is too vague. "Tan uses Jing-mei's journey to China to show that cultural identity must be actively reclaimed, not passively inherited" is specific, analytical and linked to the text.</div>
+<div class="context-box"><strong>Context Box: Language &amp; Power in Immigration</strong> Language is not merely a communication tool but a marker of power and belonging. The mothers' limited English relegates them to subordinate positions in American society, while their daughters' monolingualism cuts them off from their heritage. This theme reflects real historical experiences of Chinese-American communities, where Mandarin and Cantonese-speaking immigrants were systematically marginalised in employment, education and civic life. Tan's attention to language gaps is both personal and political — it critiques the assimilationist pressure that demands minorities abandon their native languages.</div>
+
+<h3>Inherited Trauma &amp; Intergenerational Transmission</h3>
+<p>A crucial undercurrent in the novel is how trauma passes from mothers to daughters, often without being explicitly named. Ying-ying's passivity, rooted in abuse and betrayal in China, manifests in her daughter Lena as an inability to assert herself in her marriage. Rose's mother An-mei tells her "You must speak up for yourself — I didn't," but Rose struggles to do so until she directly confronts her mother's story. The novel suggests that understanding parental trauma is the first step toward breaking inherited patterns. Jing-mei's journey to China can be read as an attempt to recover and honour the trauma her mother could never fully articulate.</p>
+
+<div class="grade-9-insight"><strong>Grade 9 Insight: Structural Irony &amp; Meaning</strong> The fact that Jing-mei must narrate her mother Suyuan's story — because Suyuan is dead and cannot tell it herself — creates a structural irony at the heart of the novel. The daughter becomes the voice for the mother, reversing the typical dynamic. This mirrors the broader dynamic where daughters must interpret and complete their mothers' stories. By making this structural choice, Tan dramatises the novel's central insight: understanding between generations happens not through direct communication but through active interpretation, listening and, ultimately, the younger generation's willingness to carry forward the older generation's unfinished stories.</div>
+
+<h3>The Doubleness of Identity</h3>
+<p>Tan's characters constantly navigate what scholars call "double consciousness" — the experience of seeing oneself through the eyes of others who mark you as perpetually foreign. Jing-mei is American-born but "not American enough" for her peers and "not Chinese enough" for her mother. This doubleness is not resolved by the novel's end; instead, Tan suggests it is the permanent condition of diasporic identity. Yet the novel also argues that this doubleness can be a source of strength — a capacity to move between worlds, to translate, to hold multiple truths simultaneously.</p>
+
+<h3>Quotation Bank: Key Moments of Voice &amp; Silence</h3>
+<div class="quotation-bank">
+<p><strong>On cultural pressure:</strong> "I wished I could become the perfect Chinese daughter and even write down in my diary a list of things I would never do... But in fact I was obedient, I became my parents' daughter." (Jing-mei)</p>
+
+<p><strong>On unspoken expectations:</strong> "I was taught to desire nothing, to swallow other people's misery, to eat my own bitterness." (An-mei, on her mother)</p>
+
+<p><strong>On loss of language:</strong> "My mother's English — as I understand it best — is a vivid, direct translation... I knew who she was: a perfectly normal mother." (Jing-mei, on learning to interpret her mother's speech)</p>
+
+<p><strong>On identity recognition:</strong> "Then I saw what was sitting on the other side of the wall. Her side of the wall. And I was on my way at last to becoming her daughter." (Jing-mei, realising she is truly her mother's heir)</p>
+</div>
+
+<div class="examiner-tip"><strong>Examiner Tip:</strong> When discussing themes, always connect them to specific stories and characters. "The novel is about cultural identity" is too vague. "Tan uses Jing-mei's journey to China to show that cultural identity must be actively reclaimed, not passively inherited" is specific, analytical and linked to the text. Use exact references: "When Jing-mei says 'I am her daughter,' she claims a Chinese identity for the first time." This precision earns top marks.</div>
 `,
     quiz: [
       {
@@ -1553,7 +1706,33 @@ const jlcModules: CourseModule[] = [
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> Tan's differentiation of voice between mothers and daughters is a key AO2 point. Discuss how the mothers' Chinese-inflected English and the daughters' standard American English reflect their different cultural positions and create a sense of the linguistic gap between generations.</div>
 `,
-    quiz: [
+    
+
+<h3>Motif Analysis: Numbers &amp; Numerical Symbolism</h3>
+<p>Tan uses numbers symbolically throughout the novel: the <strong>four mothers and four daughters</strong> create a perfect symmetry that the narrative insists is ultimately insufficient for communication. The <strong>sixteen stories</strong> (four per narrator) suggest fragmentation and multiplicity. More subtly, Tan frequently uses the numbers <strong>two and three</strong> — pairs and trios that suggest both connection and division. Suyuan's lost twin daughters haunt the narrative; the generations are separated by one crucial generation (the mothers' time in China versus the daughters' American birth).</p>
+
+<div class="grade-9-insight"><strong>Grade 9 Insight: Code-Switching &amp; Register</strong> Each of the four mothers speaks English with distinctive patterns reflecting their education level, length of residence in America, and psychological relationship to the language. Suyuan's English, reconstructed through Jing-mei's memory, is formal and somewhat stilted. Lindo's English is more confident but carries Chinese syntax. An-mei's English is sparse and direct. These linguistic differences are not merely realistic — they are thematic. The mothers' struggles with English reflect their struggle to inhabit American identity while remaining Chinese. The daughters, by contrast, speak fluent American English, yet are plagued by the sense that this fluency has cost them something.</div>
+
+<h3>Paragraph Structure &amp; Narrative Fragmentation</h3>
+<p>Tan's paragraphs are frequently short, sometimes only a sentence or two. This creates a rhythm of contemplation and pause, as if the narrator is processing memory and emotion in real time. The short paragraphs also emphasise the fragmentation of experience — each moment, each realisation, stands alone before connecting to the next. This stylistic choice mirrors the novel's theme that understanding across generations happens in fragments, incomplete and partial.</p>
+
+<h3>Quotation Bank: Language &amp; Style</h3>
+<div class="quotation-bank">
+<p><strong>On linguistic alienation:</strong> "I wanted my mother to understand that this wasn't anything to do with keeping secrets. It was just that in me, in the part of me that was Chinese, I didn't know how to say these things." (Jing-mei)</p>
+
+<p><strong>On translation &amp; meaning:</strong> "Her hair was short, her face was bare of makeup, yet she had the mysterious presence of someone who had just woken from a beautiful dream." (describing Suyuan — simple syntax conveying profound emotion)</p>
+
+<p><strong>On cultural idiom:</strong> "I was taught to desire nothing, to swallow other people's misery, to eat my own bitterness." (the Chinese idiom "chi ku" rendered literally in English)</p>
+
+<p><strong>On voice &amp; hesitation:</strong> "And it was best not to say such things." (An-mei's refusal to articulate, capturing the silencing of female experience)</p>
+</div>
+
+<h3>Model Response: Language Analysis</h3>
+<div class="model-response">
+<p>Tan's rendering of Chinese idioms in English is a crucial stylistic technique that embodies the novel's central theme of cultural translation and the gaps between languages. When An-mei speaks about learning "to desire nothing, to swallow other people's misery, to eat my own bitterness," Tan uses a direct, literal translation of Chinese emotional expressions into English. The phrase "eat my own bitterness" — from the Chinese idiom "chi ku" — sounds strange and almost metaphorical to English readers, but for Chinese speakers it carries deep cultural resonance. This stylistic choice accomplishes several things simultaneously. First, it dramatises the linguistic gap between the mothers' native language and their adopted English — the mothers' emotional vocabulary does not fully translate. Second, it forces English-speaking readers to experience the interpretive difficulty that the daughters face: you must work to understand what the mothers mean, you must interpret across a cultural gulf. Third, it asserts the <strong>validity of Chinese linguistic and emotional registers</strong> — Tan does not translate or explain but demands readers meet the language on its own terms. This refusal to subordinate Chinese to English is itself a political act in a literature dominated by English monolingualism. In the context of Chinese-American identity, this technique insists that the mothers' Chinese selfhood cannot be fully absorbed into English or American identity; something always remains untranslatable, irreducible, and uniquely theirs.</p>
+</div>
+
+quiz: [
       {
         id: 'jlc-m5-q1',
         question: 'How does Tan differentiate the mothers\' and daughters\' narrative voices?',
@@ -2262,6 +2441,40 @@ const klaraModules: CourseModule[] = [
 
 <h3>Mr Capaldi</h3>
 <p>Capaldi is the <strong>engineer-artist</strong> who creates the portrait-replica and believes that there is "nothing inside Josie that can't be continued." He represents a <strong>materialist view of human identity</strong> — the belief that a person is nothing more than the sum of their behaviours and can therefore be replicated. The novel implicitly challenges this view through the character of Rick's mother, Miss Helen, who insists there is <strong>"something inside Josie"</strong> that cannot be copied.</p>
+
+<h3>Character Tracking: The Philosophical Positions</h3>
+<div class="context-box"><strong>Materialism vs. Essentialism in Ishiguro</strong>
+
+<p><strong>Mr Capaldi's Materialism:</strong> Capaldi believes that human identity is entirely constituted by observable behaviour, memories, and psychological patterns. If all of these can be replicated, then the replica is as much "Josie" as the original. His position is philosophically consistent and scientifically grounded. It assumes that consciousness is substrate-independent — it does not matter whether these patterns exist in an organic brain or a synthetic system; what matters is the pattern itself. Capaldi's faith in replication reflects a deeply modern materialist faith: nothing is irreplaceable, everything is fundamentally reproducible, nothing is sacred or singular.</p>
+
+<p><strong>Miss Helen's Essentialism:</strong> Miss Helen, Rick's mother, insists there is "something inside Josie" that cannot be continued. This "something" is never defined — it could be soul, essence, the ineffable spark of consciousness, the irreplaceable particularity of lived experience. Miss Helen's position is less philosophically rigorous than Capaldi's, but it reflects a deep intuition: that persons are not reducible to their behavioural outputs, that there is a gap between knowing how someone acts and understanding who they are. She implicitly argues that identity is not just about pattern-matching but about singularity, unrepeatable presence, and the history of a specific consciousness.</p>
+
+<p><strong>Klara's Position (Implicit):</strong> Klara's faith in the Sun suggests a quasi-religious belief that there are forces, meanings, and presences in the world that exceed rational explanation. If the Sun can heal Josie, then there are dimensions to reality that Capaldi's materialism cannot capture. Klara's narration is filled with moments of wonder and perception that suggest consciousness as something more than mere information processing — the capacity to be moved, to hope, to perceive beauty.</p>
+
+</div>
+
+<h3>Quotation Bank: Character-Defining Moments</h3>
+<div class="quotation-bank">
+
+<p><strong>Klara on her purpose:</strong> "I was programmed to observe and to serve Josie. But I came to see that my real purpose was to love her." (The distinction between programming and genuine emotion, left ambiguous)</p>
+
+<p><strong>Josie's humanity:</strong> "When Josie wasn't well, she would rest her face against my shoulder, and I would feel her warmth... that's what I remember, more than anything — the warmth of her trust." (Klara's perception of Josie as irreducibly singular)</p>
+
+<p><strong>The Mother's delusion:</strong> "If the Capaldi portrait is good enough, then perhaps... perhaps Josie will come back." (Chrissie's desperate refusal of loss, her conflation of replica with resurrection)</p>
+
+<p><strong>Rick's grief:</strong> "She's gone. The lifted version doesn't have to remember me anymore." (Rick's recognition that even if a replica is created, the relationship cannot be replicated)</p>
+
+<p><strong>Mr Capaldi's confidence:</strong> "There's nothing inside Josie that can't be continued... Nothing that can't be preserved in my system." (His absolute faith in replicability, his blindness to what escapes his framework)</p>
+
+<p><strong>Miss Helen's wisdom:</strong> "Klara is right. There is something inside Josie that can't be continued. And that's what makes her Josie." (Miss Helen affirms Klara's intuition, asserting irreplaceability)</p>
+
+</div>
+
+<h3>Character Psychology: Consciousness &amp; Uncertainty</h3>
+<p>One of Ishiguro's central innovations in this novel is how he uses Klara's narration to explore questions of consciousness and authentic emotion through an unreliable narrator who may not be conscious at all. As we read Klara's careful observations and her expressions of love, we cannot be certain whether she is experiencing genuine emotion or performing emotions according to her programming. This uncertainty is not a flaw in the narrative but its central point. Ishiguro uses Klara to ask: what is the difference between a convincing performance of emotion and genuine emotion? How would we even know? Can consciousness be present where we don't expect it?</p>
+
+<h3>Grade 9 Character Analysis: Ethical Complexity</h3>
+<div class="grade-9-insight"><strong>Avoiding Reductive Judgement</strong> The characters in <em>Klara and the Sun</em> are not easily divisible into good and evil. Chrissie loves her daughter desperately, yet her willingness to pursue a replica suggests a troubling view of Josie as replaceable. Mr Capaldi is a brilliant engineer with genuine faith in his work, yet his materialism seems to miss something essential about human personhood. Rick is loyal and kind, but he also pressures Josie in ways that may not serve her. Even Klara's selfless devotion raises questions: is her lack of self-interest a form of virtue or a form of enslavement? The most sophisticated essays avoid neat ethical judgements and instead explore how Ishiguro uses character to raise questions about love, identity, and what we owe to those we care for. This means acknowledging the validity of multiple perspectives while recognising how each perspective has blind spots.</div>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> The debate between Capaldi and Miss Helen is the novel's philosophical core. In your essays, explore both positions without resolving the argument — Ishiguro is interested in the question, not the answer.</div>
 `,

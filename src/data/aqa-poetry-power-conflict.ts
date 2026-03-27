@@ -468,6 +468,9 @@ The experience does not end when the boat is returned. The phrase suggests lasti
   <li><strong>Art and ownership:</strong> Art is a tool of power — only the Duke decides who sees the portrait.</li>
 </ul>
 
+<h3>Poet Context: Robert Browning & Victorian Psychology</h3>
+<p>Robert Browning (1812–1889) revolutionised poetry by bringing psychological depth to the dramatic monologue form. He was fascinated by moral ambiguity and the gap between public persona and private reality — deeply influenced by his fascination with Renaissance Italy. Browning's own marriage to fellow poet Elizabeth Barrett was seen as unusually egalitarian for the era, making his portrayal of the Duke's pathological possessiveness particularly striking as a critique of patriarchal power. The poem reflects Victorian anxieties about domestic power dynamics and the silencing of women's voices.</p>
+
 <h3>Key Quotations &amp; Analysis</h3>
 
 <p><strong>1. "That's my last Duchess painted on the wall"</strong><br/>
@@ -495,6 +498,46 @@ The most chilling moment: a euphemism for having the Duchess killed (or at least
 The final image: a bronze of the god Neptune (power) <em>taming</em> a sea-horse (the Duchess). The Duke identifies with Neptune — he sees domination as natural and beautiful.</p>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> The best essays on <em>My Last Duchess</em> explore what the Duke <em>unintentionally</em> reveals. He thinks he is presenting himself as reasonable and dignified, but the reader sees a controlling, possibly murderous tyrant. This gap is the key to the poem.</div>
+
+<h3>Structural Analysis: Form as Control</h3>
+<ul>
+  <li><strong>Single Dramatic Monologue:</strong> The entire poem is the Duke speaking uninterrupted. No one else has a voice. This structure embodies the Duke's power to silence all opposition.</li>
+  <li><strong>Rhyming Couplets (AABB):</strong> Browning uses heavy enjambment to disguise these rhymes, making them almost imperceptible. This technical choice reflects the Duke's manipulation: his speech sounds natural but underneath is a rigid, controlling structure.</li>
+  <li><strong>Iambic Pentameter:</strong> The stable rhythm creates a sense of authority and control. The Duke never stumbles; his verse is metrically assured — he is in complete command.</li>
+  <li><strong>Enjambment and Line Breaks:</strong> Browning's enjambments force the reader to move forward through the poem at the Duke's pace. Form mirrors content.</li>
+  <li><strong>Circular Structure:</strong> The poem moves from one art object (the portrait) to another (the Neptune statue), suggesting the Duke reduces everything — including people — to possessions.</li>
+</ul>
+
+<h3>Grade 9 Model Paragraph: Power and Control</h3>
+<div class="model-paragraph">
+<p><strong>Sample Question: How does Browning present power and control in My Last Duchess?</strong></p>
+
+<p>Browning presents power as a pathological need to control everything within one's environment, particularly women. This is evident through the Duke's obsession with the portrait of his dead wife, which he keeps behind a curtain that "none puts by... but I." The possessive pronoun "I" creates the impression that the Duke's control is absolute and unquestionable. This structural choice reflects how the Duke has transformed the living woman into a silent, controllable object. The verb "taming" in the final image of Neptune "taming a sea-horse" reinforces this view: the Duke sees domination as natural, even divinely sanctioned. Furthermore, the poem's form as a dramatic monologue embodies power through silence — the Duchess never speaks, and the envoy never replies. Browning uses this formal choice to show how absolute power silences all opposition. The most chilling moment is the euphemistic "I gave commands; then all smiles stopped together," in which the Duke casually discusses what appears to be the Duchess's death as if it were a mere administrative order. Power, Browning suggests, corrupts the powerful into believing they have the right to dominate and eliminate anyone who resists their will.</p>
+</div>
+
+<h3>Quotation Bank for Essays</h3>
+<table>
+  <tr>
+    <th>Theme</th>
+    <th>Key Quotations</th>
+  </tr>
+  <tr>
+    <td>Possessiveness &amp; Control</td>
+    <td>"That's my last Duchess" / "none puts by the curtain I have drawn for you, but I"</td>
+  </tr>
+  <tr>
+    <td>Objectification</td>
+    <td>"Looking as if she were alive" / "Notice Neptune, though, taming a sea-horse"</td>
+  </tr>
+  <tr>
+    <td>Silencing &amp; Violence</td>
+    <td>"I gave commands; then all smiles stopped together" / "I choose never to stoop"</td>
+  </tr>
+  <tr>
+    <td>Self-Deception</td>
+    <td>"how shall I say?" / "I choose never to stoop"</td>
+  </tr>
+</table>
 
 <h3>Comparison Links</h3>
 <ul>
@@ -887,6 +930,9 @@ The final image: the soldiers' eyes are literally frozen. The monosyllables and 
   <li><strong>Community and resilience:</strong> The use of <em>we</em> throughout shows collective endurance in the face of threat.</li>
 </ul>
 
+<h3>Poet Context: Seamus Heaney & Irish Politics</h3>
+<p>Seamus Heaney (1939–2013) grew up in rural County Derry during the gradual escalation toward the Irish conflict known as "the Troubles" (1968–1998). Though Heaney later moved away from explicitly political poetry, his early work is suffused with anxiety about Irish identity and the relationship between landscape and violence. Heaney was profoundly influenced by Ted Hughes's animal poetry and by classical Greek writers like Homer; his Nobel Prize citation praised his ability to find the resonance of history in domestic and natural imagery. Storm on the Island, published in 1966, is written just before the major eruptions of the Troubles. The poem's ambiguity — is it really about weather, or politics, or both? — reflects Heaney's own cautiousness about openly declaring his political position. For Heaney, the landscape of Ireland is never innocent; nature and politics are inextricably intertwined.</p>
+
 <h3>Key Quotations &amp; Analysis</h3>
 
 <p><strong>1. "We are prepared: we build our houses squat"</strong><br/>
@@ -914,6 +960,50 @@ A metaphor equating empty space with a volley of gunfire. <em>Salvo</em> is expl
 The paradoxical ending: the thing feared is <em>nothing</em> — invisible and intangible, yet <em>huge</em>. This captures the nature of political fear — an omnipresent threat that cannot be seen or directly confronted.</p>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> Mentioning the STORMONT reading is excellent — but only if you <em>support</em> it with evidence from the poem (military language, the invisible threat). Don't just state the allegory; prove it through analysis of the text.</div>
+
+<h3>Structural Analysis: Form as Helplessness</h3>
+<ul>
+  <li><strong>Single Stanza (19 lines):</strong> The continuous block with no breaks creates an unbroken wall of text — like the continuous assault of the storm. There is no respite built into the form, no white space to catch one's breath.</li>
+  <li><strong>Blank Verse (Unrhymed Iambic Pentameter):</strong> The regular meter creates a marching rhythm. Unlike rhyming verse, blank verse in Heaney's hands feels austere and unfinished, reflecting the lack of comfort or resolution available to the islanders.</li>
+  <li><strong>Enjambment:</strong> Lines run into each other, forcing the reader to move forward at speed. The enjambment mirrors the relentless forward motion of the storm — you cannot pause or resist the momentum.</li>
+  <li><strong>Volta (Thematic Turn):</strong> The poem shifts from confident preparation ("We are prepared") to helpless endurance ("We just sit tight"). This structural movement mirrors the experience of political violence: the community's preparations prove futile against an overwhelming force.</li>
+  <li><strong>Ending Without Resolution:</strong> The poem ends with "that we fear" — without verb or full statement. The lack of closure mirrors the unresolved nature of the political threat itself.</li>
+</ul>
+
+<h3>Grade 9 Model Paragraph: Political Allegory Reading</h3>
+<div class="model-paragraph">
+<p><strong>Sample Question: How does Heaney use extended metaphor to explore conflict and vulnerability in Storm on the Island?</strong></p>
+
+<p>Heaney sustains an extended metaphor in which the storm represents political conflict, particularly the violence of the Irish Troubles. This is suggested through military vocabulary and the paradoxical final image. When the speaker says "we just sit tight while wind dives and strafes invisibly," the verbs "dives" and "strafes" are military terms describing fighter plane attacks, not natural wind patterns. This forces the reader to read the storm as an allegory for military violence. The simile of "spray like a tame cat / turned savage" suggests that violence erupts from within the familiar and domestic world, not from external invasion. The poem's final paradox — "It is a huge nothing that we fear" — captures the psychology of living under potential violence: the threat is invisible, intangible, omnipresent, and cannot be directly confronted or fought. Heaney's form reinforces this helplessness: the single, unbroken stanza and heavy enjambment create relentless momentum that mirrors the community's inability to resist or control events. The repeated collective pronoun "we" initially suggests solidarity but gradually emphasises vulnerability — the community is unified only in its helplessness.</p>
+</div>
+
+<h3>Quotation Bank for Essays</h3>
+<table>
+  <tr>
+    <th>Theme</th>
+    <th>Key Quotations</th>
+  </tr>
+  <tr>
+    <td>False Security &amp; Shattered Confidence</td>
+    <td>"We are prepared" / "the wizened earth has never troubled us"</td>
+  </tr>
+  <tr>
+    <td>Invisibility &amp; Intangible Threat</td>
+    <td>"strafes invisibly" / "It is a huge nothing that we fear"</td>
+  </tr>
+  <tr>
+    <td>Military Metaphor (Political Allegory)</td>
+    <td>"dives and strafes" / "Space is a salvo"</td>
+  </tr>
+  <tr>
+    <td>Domestic Violation</td>
+    <td>"tame cat / Turned savage" / "hits the very windows"</td>
+  </tr>
+  <tr>
+    <td>Powerlessness &amp; Endurance</td>
+    <td>"We just sit tight" / "that we fear"</td>
+  </tr>
+</table>
 
 <h3>Comparison Links</h3>
 <ul>
@@ -1154,6 +1244,9 @@ The hare — an innocent, natural creature — is caught in the crossfire, its s
   <li><strong>Responsibility:</strong> The shift from "we" to "I" shows the soldier taking personal ownership of the killing.</li>
 </ul>
 
+<h3>Poet Context: Simon Armitage & Contemporary War Poetry</h3>
+<p>Simon Armitage (b. 1963) is the current Poet Laureate of the United Kingdom (appointed 2019). Before his appointment, Armitage was known for accessible, contemporary poetry that often employs colloquial Yorkshire dialect. "Remains" appears in The Not Dead (2008), a collection based on interviews with real soldiers who served in Iraq and Afghanistan. Rather than creating his own narrative, Armitage acts as a poetic translator, taking soldiers' oral testimonies and reshaping them into verse. This approach is deeply political: it insists that soldiers' voices — typically silenced by military hierarchy and government rhetoric — be heard. The poem reflects the growing recognition of PTSD as a serious psychological condition affecting modern warfare. Unlike traditional war poetry, which often emphasized collective sacrifice or patriotic duty, Remains emphasizes individual psychological trauma. Armitage's colloquial, conversational style makes the poem feel like an overheard confession, which intensifies its emotional impact. The poem challenges the sanitised rhetoric surrounding military action, showing instead the psychological cost of modern conflict.</p>
+
 <h3>Key Quotations &amp; Analysis</h3>
 
 <p><strong>1. "On another occasion, we got sent out"</strong><br/>
@@ -1181,6 +1274,50 @@ Military metaphor — the memory has <em>dug in</em> like a soldier in a trench.
 The repetition of <em>bloody</em> creates a double meaning — literally covered in blood, and the colloquial swear word expressing frustration and anguish.</p>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> Track the pronoun shift from <em>we</em> to <em>I</em> throughout the poem. This structural technique shows the soldier moving from shared responsibility to isolated, personal guilt — it is an excellent point for AO2 (structure).</div>
+
+<h3>Structural Analysis: From Collective to Individual Guilt</h3>
+<ul>
+  <li><strong>Pronoun Shift (we → I):</strong> The poem begins with "we got sent out" but ends with "in my head" and "my bloody hands." This structural movement tracks the soldier's journey from collective participation to isolated, personal guilt. The "we" is a fiction; the guilt is entirely his to bear.</li>
+  <li><strong>Free Verse Structure:</strong> The lack of regular rhyme scheme creates a sense of broken, uncontrolled speech — like someone confessing in fragments. The form mirrors traumatic memory, which is fragmented and intrusive rather than coherent narrative.</li>
+  <li><strong>Enjambment &amp; Line Breaks:</strong> Strategic line breaks force the reader to pause at psychologically significant moments, creating hesitation and resistance that mirror the soldier's emotional difficulty in articulating his experience.</li>
+  <li><strong>Final Couplet Isolation:</strong> The final lines stand apart, isolating the speaker's psychological anguish and his separation from normal life.</li>
+  <li><strong>Conversational Register:</strong> The colloquial language makes the poem feel like an overheard confession. Armitage privileges the soldier's authentic voice, which paradoxically makes the poem more powerful — we hear trauma as it is experienced.</li>
+</ul>
+
+<h3>Grade 9 Model Paragraph: PTSD &amp; Guilt</h3>
+<div class="model-paragraph">
+<p><strong>Sample Question: How does Armitage present the psychological effects of modern conflict in Remains?</strong></p>
+
+<p>Armitage presents PTSD as a permanent, involuntary haunting that destroys the soldier's capacity to move on or find peace. The poem's structure mirrors this: it begins with the casual, anecdotal tone of a soldier recounting events, but shifts to present-tense psychological torment. The turning point — "End of story, except not really" — reveals that the soldier cannot achieve narrative closure; the incident continues to intrude on his consciousness. The phrase "dug in behind enemy lines" is particularly significant: it uses military metaphor to describe the psychological occupation of the soldier's mind. The dead man has become an internal enemy, an occupying force that cannot be dislodged. The repetition of "bloody" in the final lines creates a double meaning — literal blood and emotional anguish — suggesting the soldier's guilt is both visceral and psychological. Armitage's use of colloquial language intensifies the emotional impact. The pronoun shift from "we" to "I" tracks the soldier's journey from collective participation to isolated guilt — everyone else has moved on; only he remains haunted. The poem suggests that in modern conflict, the psychological cost to individuals is often greater than the military victory itself.</p>
+</div>
+
+<h3>Quotation Bank for Essays</h3>
+<table>
+  <tr>
+    <th>Theme</th>
+    <th>Key Quotations</th>
+  </tr>
+  <tr>
+    <td>Moral Ambiguity &amp; Uncertainty</td>
+    <td>"probably armed, possibly not"</td>
+  </tr>
+  <tr>
+    <td>Psychological Trauma (PTSD)</td>
+    <td>"he's here in my head when I close my eyes" / "dug in behind enemy lines"</td>
+  </tr>
+  <tr>
+    <td>Inability to Achieve Closure</td>
+    <td>"End of story, except not really"</td>
+  </tr>
+  <tr>
+    <td>Collective vs Individual Guilt</td>
+    <td>"we got sent out" → "in my head" / "my bloody hands"</td>
+  </tr>
+  <tr>
+    <td>Permanent Psychological Damage</td>
+    <td>"his bloody life in my bloody hands" / "shadow stays on the street"</td>
+  </tr>
+</table>
 
 <h3>Comparison Links</h3>
 <ul>
@@ -1575,6 +1712,9 @@ The bluntest statement in the poem. After all the photographer's anguish, the pu
   <li><strong>Impermanence:</strong> Like Ozymandias, the poem argues that nothing humans create is permanent.</li>
 </ul>
 
+<h3>Poet Context: Imtiaz Dharker & Transcultural Identity</h3>
+<p>Imtiaz Dharker (b. 1954) is a British-Pakistani poet, artist, and filmmaker whose identity is deliberately transnational and border-crossing. Born in Lahore, she grew up in Glasgow, and has lived in India — her work repeatedly explores the arbitrary nature of borders and the fluidity of identity. Dharker's family background is both Muslim and Hindu, further complicating any simple national or religious identity. This personal history deeply informs Tissue: the poem's questioning of borders and fixed structures emerges from lived experience of displacement and belonging. Dharker's artistic practice across poetry, visual art, and film gives her work a particularly visual quality; her use of light and translucence in Tissue reflects this visual sensibility. The poem's gentle tone and beautiful imagery might initially seem disconnected from its radical political argument about the fragility of all human power structures. This tension — between delicate beauty and profound critique — is characteristic of Dharker's work. She refuses the rhetoric of protest poetry in favour of something subtler and more haunting.</p>
+
 <h3>Key Quotations &amp; Analysis</h3>
 
 <p><strong>1. "Paper that lets the light / shine through"</strong><br/>
@@ -1602,6 +1742,50 @@ A beautiful simile: lives as <em>paper kites</em> — light, fragile, airborne, 
 The final, isolated line. The poem suddenly becomes personal — <em>your</em> addresses the reader directly. <em>Skin</em> is the most intimate kind of tissue, connecting the extended metaphor to the human body. We are all as fragile as paper.</p>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> <em>Tissue</em> is often considered the hardest poem in the anthology. Focus on the <strong>extended metaphor of paper</strong> and track how Dharker applies it to different areas (religion, architecture, borders, money, the body). This gives your essay a clear structure.</div>
+
+<h3>Structural Analysis: From Abstract to Intimate</h3>
+<ul>
+  <li><strong>Ten Quatrains + Final Single Line:</strong> The regular quatrains establish a pattern, but the final isolated line shatters it. This structural break mirrors the poem's movement from abstract, universal structures to the intimate, personal reality of the human body.</li>
+  <li><strong>Lack of Regular Rhyme:</strong> The absence of rhyme gives the poem a flowing, meditative quality — like paper drifting on air. Rhyme would impose artificial closure and order; instead, the poem maintains a quality of gentle drift and meditation.</li>
+  <li><strong>Enjambment:</strong> Ideas flow across lines and stanzas, allowing the extended metaphor to develop naturally. The flowing structure mirrors the flowing of light through translucent paper.</li>
+  <li><strong>Short Lines &amp; Delicate Language:</strong> Short lines and gentle imagery create a delicate texture that mirrors tissue paper itself. The poem's form enacts its content — reading about fragile paper in the form of fragile, delicate lines.</li>
+  <li><strong>Movement from Concrete to Abstract to Personal:</strong> The poem progresses from concrete images (paper, light) through abstract structures (buildings, maps, money) to the most intimate and universal truth (human mortality). This creates emotional and philosophical depth.</li>
+</ul>
+
+<h3>Grade 9 Model Paragraph: Extended Metaphor &amp; Political Vision</h3>
+<div class="model-paragraph">
+<p><strong>Sample Question: How does Dharker use the extended metaphor of paper to explore human fragility and power structures?</strong></p>
+
+<p>Dharker's extended metaphor of paper serves as a radical critique of all human power structures, from government to economics to religion. By comparing buildings, maps, and institutions to tissue paper, Dharker suggests that what we believe is permanent is actually fragile and revisable. The poem opens with paper that "lets the light / shine through," establishing paper as permeable — contradicting our understanding of buildings and borders as solid, impenetrable barriers. When Dharker asks "if buildings were paper," she is not fantasizing about destruction but imagining a world where our structures admit their own contingency and fragility. The line "let the daylight break / through capitals and monoliths" makes this explicit: light (truth, nature, freedom) should penetrate rigid structures of power. Maps and borderlines are merely lines on paper — arbitrary inventions that could be redrawn. Even receipts from grocery shops are dignified as records worthy of poetic attention, suggesting human worth exists in everyday transactions, not just monumental structures. The final line — "turned into your skin" — completes the metaphor by making it devastatingly personal. We are all tissue, all mortal, all fragile. Dharker's vision is not bleak; rather, by recognizing our fundamental fragility, we might learn to build structures that are more permeable, more humble, and more responsive to human needs.</p>
+</div>
+
+<h3>Quotation Bank for Essays</h3>
+<table>
+  <tr>
+    <th>Theme</th>
+    <th>Key Quotations</th>
+  </tr>
+  <tr>
+    <td>Fragility of All Human Structures</td>
+    <td>"Paper that lets the light / shine through" / "if buildings were paper" / "turned into your skin"</td>
+  </tr>
+  <tr>
+    <td>Arbitrariness of Borders &amp; Power</td>
+    <td>"Maps too. The borderlines" / "let the daylight break / through capitals and monoliths"</td>
+  </tr>
+  <tr>
+    <td>Dignity of the Everyday</td>
+    <td>"Fine slips from grocery shops"</td>
+  </tr>
+  <tr>
+    <td>Freedom &amp; Fragility Combined</td>
+    <td>"might fly our lives like paper kites"</td>
+  </tr>
+  <tr>
+    <td>Universal Human Mortality</td>
+    <td>"turned into your skin"</td>
+  </tr>
+</table>
 
 <h3>Comparison Links</h3>
 <ul>
