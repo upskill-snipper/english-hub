@@ -75,6 +75,22 @@ Then I went to grammar school, and the world rushed in. Suddenly I was encounter
 
 Now, living in an age of unlimited information, of instant communication, of constant connectivity, I observe something curious: I do not see this hunger in young people. They have access to everything, and yet they seem satisfied with nothing, endlessly scrolling, endlessly consuming, but never quite sated. Perhaps it is the nature of unlimited access to diminish appetite.`
 
+
+const EDEXCEL_P2_SET_C_SOURCE_1 = `The house had been empty for three years. Not abandoned — Emma's father had paid the property taxes, arranged for the gutters to be cleaned, ensured it did not fall into official neglect. But no one had lived there. No light had burned in the windows. No voice had carried through the hallways. The silence had accumulated like dust.
+
+Now, standing in the doorway, Emma felt the weight of it. Not of the house itself — the physical structure was neither heavy nor light, merely there — but of what it contained. In the kitchen, her mother's recipe books sat on the shelf above the stove, their spines faded from decades of sunlight. In the study, her father's reading glasses rested on the desk beside a half-read novel, bookmarked three years ago at a page he had never returned to.
+
+The house was a museum of interruption. It preserved a life mid-pause, assuming that resumption was still possible. But Emma knew, standing in that hallway, that nothing could resume. The pause had become permanent.`
+
+const EDEXCEL_P2_SET_C_SOURCE_1_REF = 'Original literary fiction composition'
+
+const EDEXCEL_P2_SET_C_SOURCE_2 = `I understand now why my grandmother kept the letters. For fifty years, she maintained a box beneath her bed containing correspondence with her sister, who emigrated to Australia in 1952. They wrote monthly, sometimes more frequently during periods of crisis or celebration. The letters were neither literary nor formally beautiful. They were accounts: of weather, of children\'s achievements, of small grievances and larger joys.
+
+When my grandmother died, I was asked to sort through her papers. I found the letters — hundreds of them — arranged chronologically, each envelope carefully preserved, the stamps from different eras cataloguing decades of postal history. I could have recycled them. They held no market value, no particular artistic merit.
+
+Instead, I began to read. And as I read, I encountered something I had not anticipated: the lived texture of a relationship that spanned the entire second half of the twentieth century. The letters revealed a sister bond that persisted across continents, that survived separations and deaths and changing circumstances. They were not great literature, but they were testimony to the ordinary extraordinary labour of maintaining love across distance and time.`
+
+const EDEXCEL_P2_SET_C_SOURCE_2_REF = 'Adapted from contemporary memoir, 2024'
 const EDEXCEL_P2_SET_B_SOURCE_2_REF = 'From collected essays by William Davies, 2022'
 
 // ═══════════════════════════════════════════════════════════════════════════
@@ -766,29 +782,12 @@ export const edexcelMockExams: MockExamPaper[] = [
       },
     ],
   },
-]
-  // ═══════════════════════════════════════════════════════════════════════════
   // EDEXCEL PAPER 2: SET C - Additional extracts needed
   // ═══════════════════════════════════════════════════════════════════════════
 
   // NOTE: For production, Paper 2 Set C requires two additional literary extracts.
   // Placeholder structure below. Replace EXTRACT_TEXT with actual fiction sources.
 
-const EDEXCEL_P2_SET_C_SOURCE_1 = `The house had been empty for three years. Not abandoned — Emma's father had paid the property taxes, arranged for the gutters to be cleaned, ensured it did not fall into official neglect. But no one had lived there. No light had burned in the windows. No voice had carried through the hallways. The silence had accumulated like dust.
-
-Now, standing in the doorway, Emma felt the weight of it. Not of the house itself — the physical structure was neither heavy nor light, merely there — but of what it contained. In the kitchen, her mother's recipe books sat on the shelf above the stove, their spines faded from decades of sunlight. In the study, her father's reading glasses rested on the desk beside a half-read novel, bookmarked three years ago at a page he had never returned to.
-
-The house was a museum of interruption. It preserved a life mid-pause, assuming that resumption was still possible. But Emma knew, standing in that hallway, that nothing could resume. The pause had become permanent.`
-
-const EDEXCEL_P2_SET_C_SOURCE_1_REF = 'Original literary fiction composition'
-
-const EDEXCEL_P2_SET_C_SOURCE_2 = `I understand now why my grandmother kept the letters. For fifty years, she maintained a box beneath her bed containing correspondence with her sister, who emigrated to Australia in 1952. They wrote monthly, sometimes more frequently during periods of crisis or celebration. The letters were neither literary nor formally beautiful. They were accounts: of weather, of children\'s achievements, of small grievances and larger joys.
-
-When my grandmother died, I was asked to sort through her papers. I found the letters — hundreds of them — arranged chronologically, each envelope carefully preserved, the stamps from different eras cataloguing decades of postal history. I could have recycled them. They held no market value, no particular artistic merit.
-
-Instead, I began to read. And as I read, I encountered something I had not anticipated: the lived texture of a relationship that spanned the entire second half of the twentieth century. The letters revealed a sister bond that persisted across continents, that survived separations and deaths and changing circumstances. They were not great literature, but they were testimony to the ordinary extraordinary labour of maintaining love across distance and time.`
-
-const EDEXCEL_P2_SET_C_SOURCE_2_REF = 'Adapted from contemporary memoir, 2024'
 
   {
     id: 'edexcel-lang-p2-set-c',

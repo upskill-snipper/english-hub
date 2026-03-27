@@ -659,7 +659,6 @@ export const examQuestions: ExamQuestion[] = [
   // --- CAIE Extended Questions ---
   { id: 'caie-ext-1', text: 'Analyse how the text you have studied has shaped or challenged your own perspectives on a significant human issue.', board: 'CAIE', paper: 'Extended', questionType: 'Extended Response' },
   { id: 'caie-ext-2', text: 'Discuss how effectively the writer uses narrative techniques to create an unreliable narrator and maintain reader engagement.', board: 'CAIE', paper: 'Extended', questionType: 'Extended Response' },
-]
 
   // ============================================================
   // LITERATURE EXTRACT QUESTIONS - MAJOR TEXTS

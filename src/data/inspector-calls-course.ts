@@ -336,7 +336,7 @@ content: `
 
 <p>Sheila, barely 20, reacts with immediate moral horror. When she learns she caused Eva's dismissal, she doesn't minimise, excuse, or deny — she says "I'll never, never do it again." The repetition emphasises the sincerity and intensity of her response. For Priestley, writing in 1945, this contrast carried enormous political weight. Britain had just voted for a Labour government committed to building a welfare state — a rejection of pre-war capitalism. Sheila represents the generation that will build this new society; Birling represents the past they are rejecting. By structuring Act 1 to show Birling's obduracy and Sheila's capacity for growth, Priestley makes a prophecy disguised as character development.</p>
 </div>
-
+`,
       quiz: [
         {
           id: 'aic-m2-q1',

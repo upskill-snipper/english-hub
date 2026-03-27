@@ -448,7 +448,9 @@ export const plenaryActivities: PlenaryActivity[] = [
     instructions: 'Create a bingo card with 9–12 key vocabulary words from today\'s lesson. As you review the lesson, mention each word. Students mark it off. First to get three in a row wins (or full house). More engaging than a regular quiz.',
     variations: [
       'Students create their own bingo cards with words they predict you\'ll mention.',
-
+    ],
+    differentiationNotes: 'Vocabulary retention through active engagement. Low-pressure competitive fun.\nLower ability: Provide pre-made cards with simpler words (e.g., parts of speech, key terms).\nHigher ability: Create more complex cards; require them to explain why each word is important.',
+  },
   // ──────────────────────────────────────────────
   // ASSESSMENT FOR LEARNING PLENARIES (10)
   // ──────────────────────────────────────────────

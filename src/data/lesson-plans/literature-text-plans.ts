@@ -1902,7 +1902,7 @@ const inspectorBirlingCapitalism: LiteratureLesson = {
   plenary: {
     title: 'Individual vs Collective Responsibility',
     duration: '4 minutes',
-    instructions: 'Key message: "Priestly argues that we are interconnected. Birling\'s individualism — 'every man for himself' — causes Eva Smith\'s death. The play demands collective social responsibility." Link to post-WWII audience expectations.',
+    instructions: `Key message: "Priestly argues that we are interconnected. Birling's individualism — 'every man for himself' — causes Eva Smith's death. The play demands collective social responsibility." Link to post-WWII audience expectations.`,
     differentiation: {
       support: 'Display key message.',
       core: 'Understand contrast between Birling and Inspector.',

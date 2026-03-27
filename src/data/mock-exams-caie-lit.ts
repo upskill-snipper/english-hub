@@ -6,14 +6,14 @@ export interface MockExamPaper {
   tier?: string;
   duration: number;
   totalMarks: number;
-  sections: MockExamSection[
+  sections: MockExamSection[];
 }
 
 export interface MockExamSection {
   id: string;
   title: string;
   instructions: string;
-  questions: MockExamQuestion[
+  questions: MockExamQuestion[];
 }
 
 export interface MockExamQuestion {
@@ -22,7 +22,7 @@ export interface MockExamQuestion {
   marks: number;
   questionText: string;
   extract?: string;
-  bulletPoints?: string[
+  bulletPoints?: string[];
   markScheme: string;
   modelAnswer?: string;
 }
@@ -637,51 +637,7 @@ The contrast suggests that generic form embodies historical consciousness: reali
     ]
   }
 
-
-          {
-            id: 'q4-coursework-synthesis',
-            questionNumber: 4,
-            marks: 15,
-            questionText: 'Drawing on your coursework study, evaluate how different literary texts address the relationship between individual and society. What patterns or differences emerge across your reading, and what conclusions might you draw about literature\'s engagement with this enduring concern?',
-            bulletPoints: [
-              'Reference multiple texts studied across your coursework',
-              'Identify recurring approaches to individual-society relationships',
-              'Note significant differences in how texts conceive this relationship',
-              'Consider how historical period influences approach',
-              'Develop a synthesizing conclusion about literary representation'
-            ],
-            markScheme: `ASSESSMENT CRITERIA:
-
-Level 4 (14-15 marks): Sophisticated synthesis across multiple texts. Perceptive identification of patterns and differences. Original conclusions about literature\'s engagement with the theme. Excellent contextual understanding. Compelling argument. Shows sophisticated synthesizing ability.
-
-Level 3 (12-13 marks): Clear synthesis of multiple texts with well-developed analysis. Sound identification of patterns and differences. Supported conclusions. Good contextualization. Shows secure synthesis.
-
-Level 2 (10-11 marks): Some synthesis with emerging patterns identified. References to multiple texts; differences noted. May lack depth or originality in conclusions. Shows developing synthesis.
-
-Level 1 (8-9 marks): Limited synthesis; few texts referenced. Basic pattern identification. Conclusions present but underdeveloped. May lack sophistication.
-
-Below Level 1 (0-7 marks): Insufficient synthesis or textual engagement.`,
-            modelAnswer: `Across my coursework reading—including "Pride and Prejudice," "An Inspector Calls," "Invisible Man," "Hamlet," and contemporary novels including "The Handmaid's Tale"—a recurrent preoccupation emerges: literature persistently explores whether authentic individual agency can exist within social constraint, and whether individual desire or collective responsibility should ultimately prevail in human societies.
-
-Austen's "Pride and Prejudice" suggests that individual agency operates within patriarchal constraints that circumscribe choices, particularly for women. Elizabeth Bennet's celebrated independence proves possible only within specific social circumstances; her choices, while more autonomous than her peers', remain fundamentally limited by economic necessity and marriage market realities. Austen presents individual agency as possible but circumscribed, suggesting that personal triumph requires working within rather than against social constraint.
-
-Priestley's "An Inspector Calls," written during World War II, emphasizes collective responsibility over individual interest. The play suggests that capitalist societies permit individuals to evade moral accountability for systemic injustice through rationalization and denial. Sheila's moral growth represents an exception; most characters resist collective responsibility, preferring individual exoneration. Priestley's message—that such evasion inevitably produces catastrophe—reflects mid-twentieth-century moral reckoning regarding complicity and social obligation.
-
-Ellison's "Invisible Man," written in the context of Cold War African-American experience, complicates both Austen's and Priestley's positions. The protagonist discovers that neither individualist self-creation nor collective identification enables authentic agency. Ellison suggests that genuine agency requires conscious navigation between individual identity and social forces.
-
-Shakespeare's "Hamlet" suggests that individual will cannot transcend social position and familial obligation. Hamlet's famous procrastination regarding revenge emerges partially from psychological complexity but also from his position within social structures that constrain action. The play suggests tragedy results when individual consciousness confronts obligations imposed by social position.
-
-Margaret Atwood's "The Handmaid's Tale," responding to 1980s feminist concerns, explores how totalitarian society systematically eradicates individual agency. Unlike previous texts, which assume society permits negotiation between individual and collective, Atwood depicts systems designed to eliminate individual will itself. Yet even here, Offred's narrative act—the telling of her story—constitutes a form of individual agency that resists systematic erasure.
-
-The pattern suggests that literature's engagement with individual-society relationships has evolved historically. Earlier texts (Austen, nineteenth-century realism) negotiated between individual desire and social constraint. Twentieth-century texts increasingly emphasize how society constrains or determines individual consciousness itself. Contemporary literature explores whether any authentic agency persists within increasingly comprehensive systems of control.
-
-Yet a deeper pattern emerges: literature consistently insists on individual consciousness's complexity and particularity even within constraint. Literature's characteristic movement—toward deeper recognition of individual consciousness, even consciousness of limitation—suggests that literary form itself embodies resistance to social reductionism. The act of representing individual consciousness in all its complexity becomes literature's implicit claim that such consciousness remains irreducible to social determination.`
-          }
-        ]
-      }
-    ]
-  }
-
+/* 
 GRADING GUIDANCE FOR CAIE MOCK EXAM PAPERS:
 
 All mark schemes employ four-level assessment framework (Level 4-1) aligned with Cambridge IGCSE grade descriptors. Level 4 represents Grade 9 work (90-100%), Level 3 represents Grade 7-8 work (80-89%), Level 2 represents Grade 5-6 work (70-79%), and Level 1 represents Grade 4 work (60-69%). Below Level 1 indicates work below Grade 4 standard.
@@ -701,5 +657,5 @@ Total assessment marks: 200 marks
 
 Students should complete each paper within the specified duration to develop examination technique and time management skills. These papers provide comprehensive coverage of all assessment objectives: reading and interpreting literature, understanding how writers create meaning through language and form, and making informed judgments about literary merit and significance.
 
-Feedback should emphasize: (1) quality of textual engagement with precise evidence, (2) sophistication of analytical language demonstrating subject knowledge, (3) integration of evidence into developing argument rather than isolated quotation, (4) recognition of textual complexity and ambiguity, (5) awareness of alternative interpretations and critical perspectives.
+Feedback should emphasize: (1) quality of textual engagement with precise evidence, (2) sophistication of analytical language demonstrating subject knowledge, (3) integration of evidence into developing argument rather than isolated quotation, (4) recognition of textual complexity and ambiguity, (5) awareness of alternative interpretations and critical perspectives.*/
 ];

@@ -3014,6 +3014,7 @@ The final stanza consummates the poem\'s argument with an image that retrospecti
   // ============================================================
 
   // Creative Writing with Image Descriptions
+export const creativeWritingPrompts = [
   {
     id: 'aqa-p1-q5-cw-1',
     board: 'AQA',

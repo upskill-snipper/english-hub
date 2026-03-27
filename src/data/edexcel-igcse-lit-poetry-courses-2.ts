@@ -1063,7 +1063,7 @@ The juxtaposition of tears with the comfortable domestic routine — "bath and p
 <div class="common-mistake"><strong>Common Mistake:</strong> Writing that the poem is about the horrors of war. It is not — it is about the <em>response</em> to war, specifically the gap between those who witness suffering and those who consume images of it. Keep your argument focused on this distinction. Similarly, avoid suggesting the photographer is complicit; he is presented sympathetically. The critique is directed at the readers and the culture that trains them.</div>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> Track the shift from the photographer's perspective to the readers' perspective. This is a structural argument: Duffy moves us from depth to surface, from sacred to profane. Show how this shift is enacted through language, tone, and imagery. Essays that identify and analyse this structural shift score highly because they demonstrate sensitivity to how meaning is created through form.</div>
-`,`,,
+`,
     quiz: [
       {
         id: 'igp2-warpho-m4-q1',
@@ -1476,7 +1476,7 @@ The final stanza repeats the first almost exactly, but with one crucial change: 
 <div class="common-mistake"><strong>Common Mistake:</strong> Treating the poem as simply being "about a tiger." The tiger is a symbol — for primal energy, for the violent side of creation, for the forces (revolutionary, natural, divine) that cannot be tamed. Your essay must engage with what the tiger represents, not describe the animal. Similarly, avoid saying the poem "celebrates" or "condemns" the tiger — Blake's stance is more complex: he awe-struck, troubled, questioning.</div>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> Spend time on the comparison with "The Lamb." Examiners are looking for essays that recognise both poems and use them to illuminate each other. Show how Blake uses two contrasting poems to explore the paradox of divine creation. This demonstrates sophisticated contextual understanding and elevates your response above those that treat "The Tyger" in isolation.</div>
-`,`,,
+`,
     quiz: [
       {
         id: 'igp2-tyger-m4-q1',
@@ -2903,7 +2903,7 @@ The poem's central statement presents two balanced alternatives: forget/smile vs
 <div class="common-mistake"><strong>Common Mistake:</strong> Saying the poem is simply about a woman who wants to be remembered. The poem is about the <em>reversal</em> of that desire — the speaker moves from wanting remembrance to choosing the beloved's happiness. The volta is the poem's meaning. Similarly, avoid reading it as merely sad; the sestet is peaceful and accepting, not tragic.</div>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> The volta is worth spending 40% of your essay time on. Identify it, trace how the grammatical mood changes (imperative → conditional), note how the tone shifts (desperate → accepting), and explain what this shift reveals about the speaker's understanding of love. This is the heart of the poem and the basis of a top-level response.</div>
-`,`,,
+`,
     quiz: [
       {
         id: 'igp2-remember-m4-q1',

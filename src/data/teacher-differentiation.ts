@@ -367,9 +367,7 @@ export const differentiationResources: DifferentiationResource[] = [
         rationale: 'Graduated progression builds confidence and independence. Breaks prevent fatigue. Audio support removes decoding barrier without compromising assessment.'
       }
     ]
-  }
-];
-
+  },
   // Resource 4: EAL - Vocabulary Scaffolding
   {
     id: 'eal-vocab-scaffold-001',
@@ -691,9 +689,7 @@ export const differentiationResources: DifferentiationResource[] = [
         rationale: 'Explicit process prevents overwhelm. Visual supports reduce cognitive load. Collaborative completion before independent use builds understanding. Supports explicit reasoning skill development.'
       }
     ]
-  }
-];
-
+  },
   // Resource 7: Higher Ability - Critical Analysis Extension
   {
     id: 'higher-critical-analysis-001',
@@ -1023,9 +1019,7 @@ export const differentiationResources: DifferentiationResource[] = [
         rationale: 'Externalizes structure reduces cognitive load. Outlining before writing supports sustained argument. Transitions support readability. Rubric clarifies quality standards. Common pitfalls prevent predictable errors.'
       }
     ]
-  }
-];
-
+  },
   // Resource 10: Pupil Premium - Engagement & Aspiration
   {
     id: 'pupil-premium-engagement-001',

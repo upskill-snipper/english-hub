@@ -530,6 +530,8 @@ export const revisionGuides: RevisionGuide[] = [
   }
 ];
 
+
+export const literatureRevisionGuides = [
   {
     id: "aqa-lit-p1",
     title: "AQA Literature Paper 1 Revision Guide",
@@ -783,6 +785,7 @@ export const revisionGuides: RevisionGuide[] = [
   }
 ];
 
+export const LiteratureRevisionGuides1 = [
   {
     id: "aqa-lit-p2",
     title: "AQA Literature Paper 2 Revision Guide",
@@ -1035,6 +1038,7 @@ export const revisionGuides: RevisionGuide[] = [
   }
 ];
 
+export const LanguageRevisionGuides2 = [
   {
     id: "edexcel-lang",
     title: "Edexcel Language Revision Guide",
@@ -1335,6 +1339,7 @@ export const revisionGuides: RevisionGuide[] = [
   }
 ];
 
+export const LanguageRevisionGuides3 = [
   {
     id: "ocr-lang",
     title: "OCR Language Revision Guide",

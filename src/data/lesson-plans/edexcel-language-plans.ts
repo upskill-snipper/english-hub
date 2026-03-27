@@ -1570,7 +1570,7 @@ const edexcelLang17: LessonPlan = {
     {
       title: 'Bridging the Levels',
       duration: '15 minutes',
-      instructions: 'Focus on common level gaps. For Q2 (analysis): What's the difference between Level 2 (basic analysis with some effect explanation) and Level 3 (sustained analysis, detailed effect explanation)? For Q5 (writing): What's the difference between Level 3 (clear communication, some technique use) and Level 4 (sustained communication, confident technique use)? Provide concrete examples from mark schemes. Discuss: How do you deliberately aim for Level 3 or 4?',
+      instructions: `Focus on common level gaps. For Q2 (analysis): What's the difference between Level 2 (basic analysis with some effect explanation) and Level 3 (sustained analysis, detailed effect explanation)? For Q5 (writing): What's the difference between Level 3 (clear communication, some technique use) and Level 4 (sustained communication, confident technique use)? Provide concrete examples from mark schemes. Discuss: How do you deliberately aim for Level 3 or 4?`,
       differentiation: {
         support: 'Focus on one question type and one level gap.',
         core: 'Study multiple level gaps across different questions.',
@@ -1683,7 +1683,7 @@ const edexcelLang18: LessonPlan = {
   teacherNotes: [
     'Learning from common mistakes is highly efficient. Address the most frequent errors in your cohort.',
     'Some mistakes are conceptual (e.g., confusing analysis with summary). Others are procedural (e.g., running out of time).',
-    'Use real student work (anonymised) to illustrate mistakes. It's more powerful than invented examples.',
+    `Use real student work (anonymised) to illustrate mistakes. It's more powerful than invented examples.`,
     'Track common mistakes across your classes to identify patterns.'
   ],
   targetedSkills: ['error awareness', 'problem prevention', 'self-reflection', 'continuous improvement']

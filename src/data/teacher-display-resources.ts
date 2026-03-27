@@ -157,4 +157,3 @@ export const displayResources: DisplayResource[] = [
 
   // Additional Exam Technique cards would go here, but file size is optimized
   // To add: exam-technique-writing-arguments, exam-technique-timing-pressure, exam-technique-unseen-texts, checklist-transactional-writing
-];

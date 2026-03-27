@@ -577,9 +577,6 @@ For <em>An Inspector Calls</em>:
 </table>
 `,
     quiz: [
-    quiz: [
-
-    quiz: [
       {
         id: 'iglit-dp-m3-q2',
         question: 'What is a "foil" character?',
@@ -785,9 +782,6 @@ This practice sharpens thematic thinking and prepares you for comparative paper 
 </p>
 `,
     quiz: [
-      {
-
-      {
       {
         id: 'iglit-dp-m4-q2',
         question: 'What is a "motif"?',

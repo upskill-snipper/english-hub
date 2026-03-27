@@ -547,7 +547,7 @@ export const igcseLessonPlans: LessonPlan[] = [
         description: "Provide two paired texts on a related topic (400-500 words each) from a past IGCSE paper. Students work in pairs to: 1) Read both texts and create a planning grid (themes in Text A, themes in Text B, overlapping themes), 2) Identify which ideas are most important for addressing the task focus, 3) Write a synthesis summary (target: 200-250 words) that integrates both sources. Provide the task/focus question (e.g., 'Write a summary of the key points made by both writers about the importance of environmental protection'). Emphasize that the summary should be organized by theme/idea rather than by text. Circulate to provide feedback on planning and help with synthesis integration. After drafting, students self-assess and peer review.",
         differentiation: "Lower ability: Provide a planning grid template partially completed. Use shorter texts (250-300 words each). Higher ability: Use longer, more complex texts (600 words each) or texts with more subtle connections. Challenge students to identify the 'angle' or perspective each writer brings. EAL support: Highlight key sentences in each text; help with synthesis sentence construction."
       }
-    },
+    ],
     plenaryActivity: {
       title: "Sharing Successes and Addressing Challenges",
       duration: "10 minutes",
@@ -559,7 +559,7 @@ export const igcseLessonPlans: LessonPlan[] = [
       "Formative: Listen to peer reviews; assess ability to evaluate summary/synthesis quality",
       "Summative: Collect both the single-text summary and paired-text synthesis; mark using full CAIE criteria",
       "Formative: Note which students need additional support and which can move to independent practice"
-    },
+    ],
     homeworkSuggestion: "Students revise both their summary and synthesis based on feedback and self-assessment, ensuring all skills are applied effectively. Alternatively, provide a different past paper Question 4 task and ask students to complete it independently as homework, applying all skills from the previous three lessons. This homework can be marked using the full CAIE mark scheme for exam preparation.",
     teacherNotes: "This workshop consolidates learning from the previous two summary and synthesis lessons through intensive practice with realistic IGCSE tasks. It serves as a bridge between skill-building lessons and independent exam preparation. The mixed-ability approach (single-text practice followed by paired-text synthesis) ensures all students experience success while being challenged appropriately. This lesson reveals which students are confident in summary/synthesis and which need further support before moving on. Use observations to differentiate future lessons and revision sessions. Common issues that may emerge: difficulty paraphrasing (provide more models and practice), struggling to identify main ideas (work with students on distinguishing hierarchy of information), or poor synthesis integration (provide more sentence frames and model sentences that combine ideas from both texts). By the end of this lesson, students should feel increasingly confident about Paper 1 Question 4. Those who struggled should receive targeted support in subsequent lessons. Consider recording successful student summaries (anonymously) for use in future year's lessons as additional models. Remind students that Question 4 is worth 8 marks and is a high-stakes task on the Paper 1 exam—the skills they've practiced in these three lessons are directly transferable to the exam."
   },

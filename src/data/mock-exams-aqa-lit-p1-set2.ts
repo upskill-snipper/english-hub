@@ -356,7 +356,7 @@ const FRANKENSTEIN_EXTRACT_02 = `I cannot describe to you the agony that these r
 
 When I looked upon him, I could not consider him as my creator, but as an enemy, against whom I pledged myself to wage unrelenting war. He had denied me light and joy; is it strange that he who made me should be the object upon which I should pour out the overflowings of my anguish? Begone! Relieve me from the sight of your detested form.'
 
-'Thus I relieve thee, my creator,' he said, and placed his hated hands before my eyes, which I flung from me with violence; 'thus I take from thee a sight which you abhor. Still thou canst listen to me, and grant me thy compassion. By the virtues that I bear, I swear to quit your lands, but only on one condition.`
+'Thus I relieve thee, my creator,' he said, and placed his hated hands before my eyes, which I flung from me with violence; 'thus I take from thee a sight which you abhor. Still thou canst listen to me, and grant me thy compassion. By the virtues that I bear, I swear to quit your lands, but only on one condition.
 
 The hateful words were spoken; I paused, listening; the words were these—
 

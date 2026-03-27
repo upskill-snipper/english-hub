@@ -1468,7 +1468,7 @@ export const ks3LessonPlans: KS3LessonPlan[] = [
           'Focus on synonyms and precise meaning initially. Provide synonym cards with intensity spectrum shown visually. Use very common words (good, bad, big, happy). Work in small group with teacher. Provide upgraded sentence options to choose from.',
         stretch:
           'Explore word roots and etymology deeply. Create comprehensive word family webs. Discuss subtle meaning differences between synonyms. Evaluate which word choice is most effective in published texts for specific purpose and effect.'
-      ]
+      }
     },
     plenary: {
       description:

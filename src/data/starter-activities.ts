@@ -1149,9 +1149,9 @@ export const starterActivities: StarterActivity[] = [
     text: 'general',
     examBoard: ['AQA', 'Edexcel', 'OCR'],
     yearGroup: ['Year 9', 'Year 10'],
-    content: 'Incorrect quotation integration:\n"The author states, ''Shakespeare was a genius'' in the preface."\n\nCorrect it.',
+    content: `Incorrect quotation integration:\n"The author states, ''Shakespeare was a genius'' in the preface."\n\nCorrect it.`,
     instructions: '1) Identify punctuation errors. 2) Rewrite correctly. 3) Discuss: What is the rule for integrating quotations?',
-    answers: 'Error: Quotation marks (uses single quotes; doubles are preferred). Missing context.\nCorrect: "The author states in the preface, \'Shakespeare was a genius.\'" or "In the preface, the author argues that \'Shakespeare was a genius.\'"\nRule: Quote must integrate smoothly into sentence grammar; introduce with context; punctuate correctly (comma/colon before, period inside quotes in British style).',
+    answers: `Error: Quotation marks (uses single quotes; doubles are preferred). Missing context.\nCorrect: "The author states in the preface, 'Shakespeare was a genius.'" or "In the preface, the author argues that 'Shakespeare was a genius.'"\nRule: Quote must integrate smoothly into sentence grammar; introduce with context; punctuate correctly (comma/colon before, period inside quotes in British style).`,
     duration: 4,
     skills: ['Grammar', 'Quotation', 'Academic Writing'],
   },
@@ -1704,6 +1704,4 @@ export const starterActivities: StarterActivity[] = [
     duration: 5,
     skills: ['Writing', 'Analysis', 'Literary Interpretation', 'Evidence Use'],
   },
-]
-
 ]

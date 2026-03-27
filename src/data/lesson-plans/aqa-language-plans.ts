@@ -863,7 +863,7 @@ export const aqaLanguageLessonPlans: AQALessonPlan[] = [
           'Highlight the specific feedback area in your papers: "You struggled with technique identification in Q2. Today, aim to find TWO clear techniques." Provide a checklist to tick off as you complete each question. Allow extra time (120 mins total) if needed. Seat near teacher for non-verbal encouragement.',
         stretch:
           'Challenge: "From Exam 1, you scored 18/20 on Q4. Today, can you reach 19 or 20? What would push your evaluation to the next level?" Or: "Your Q5 narrative scored 28/40. Today, focus on more precise vocabulary and more varied sentence structures to reach 32+." Set a specific grade target and work towards it.'
-      ]
+      }
     },
     plenary: {
       description:
@@ -1084,7 +1084,7 @@ export const aqaLanguageLessonPlans: AQALessonPlan[] = [
       differentiation: {
         support: 'Provide detailed form templates with sentence starters. Provide partially completed form with headings/sections ready to fill. Allow choice of simpler form (Letter or Article, not Speech).',
         stretch: 'Challenge: Write same topic in TWO different forms. Compare how form changes language, structure, persuasive approach. Or: Write speech designed to be delivered. Record or present to class.'
-      ]
+      }
     },
     plenary: {
       description: 'Form Recognition: Distribute different writing excerpts (article, letter, speech transcript). Students identify form and explain what clues told them. Discuss how form affects reader/listener experience.',

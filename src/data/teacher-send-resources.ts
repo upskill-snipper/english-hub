@@ -322,7 +322,6 @@ export const sendResources: SENDResource[] = [
       'One invigilator or familiar adult',
     ],
   },
-];
   {
     id: 'visual-impairment-support',
     title: 'Visual Impairment Support Pack',

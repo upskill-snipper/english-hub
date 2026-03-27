@@ -442,44 +442,6 @@ export const lordOfFliesCourse: CourseData = {
 <div class="common-mistake"><strong>Common Mistake:</strong> Treating the beast as a simple plot device. The beast is one of the novel's most complex symbols — it evolves from a childish fear to a supposed sea creature to a tangible figure on the mountain to (in Simon's understanding) an internal reality. Tracking this evolution shows sophisticated understanding of Golding's methods.</div>
 `,
 
-<div class="historical-context"><strong>War, Hunting &amp; Civilisation's Mask</strong> — In Chapters 4-6, the boys' hunting expeditions become increasingly formalised and ritualistic. Golding's depiction of hunting reflects real military practice: the hunters wear "masks" (camouflage), develop strategies, and practice psychological domination of their prey. The hunting sequences echo World War II military operations, particularly the dehumanisation required to kill another living being. Golding, who served in combat in WWII, understood that soldiers are trained to remove the psychological barriers to killing. The boys' invention of hunting chants and rituals mirrors military conditioning techniques designed to make killing automatic and unquestioned. This context deepens the horror: the boys are unconsciously recreating the conditions that enable atrocities.</div>
-
-<div class="grade9-insight"><strong>Grade 9 Insight: Hunting as Descent into Savagery</strong> — Chapters 4-6 trace Jack's psychological and moral descent through the medium of hunting. By Chapter 4, Jack's hunters have killed their first pig, and Jack experiences a profound shift. He tastes violence and power, and it transforms him. The moment he tastes blood (literally and metaphorically), his commitment to civilised restraints collapses. Golding makes clear that this is not inevitable — Simon and Piggy continue to reject violence, even as Jack and Roger embrace it. Jack's descent is a choice, albeit one shaped by the island's conditions and his personality. The most sophisticated essays recognise that Golding presents both the social conditions (the island, the absence of adult authority) and individual psychology (Jack's personality, his humiliation at losing the election) as jointly responsible for the boys' descent into savagery.</div>
-
-<h3>Jack's Hunting Mask &amp; Psychological Transformation</h3>
-
-<p>In Chapter 4, when Jack's hunters kill their first pig, Jack is exhilarated. But his first act after the kill is to paint his face black and white, creating a "mask." Golding emphasises that this mask is psychologically liberating: "He looked at his reflection in the pool and began to laugh" — Jack barely recognises himself, and this psychological distance from his former identity enables him to commit acts that civilised Jack could not. The mask is not merely camouflage for hunting; it is a psychological mechanism that allows Jack to disassociate from his own identity and the moral codes that identity carried.</p>
-
-<p>This is Golding's most important insight about atrocity: it often requires the creation of a psychological mask or new identity. Soldiers wear uniforms not just for identification but to create psychological distance from civilian morality. Nazi perpetrators often spoke of their crimes as being performed by a different self — a dangerous split in identity that enabled systematic dehumanisation. Jack's mask shows how easily this split can form: once Jack no longer sees himself as "Jack Merridew, schoolboy," he becomes capable of violence he could not previously commit.</p>
-
-<h3>Quotation Bank: Chapters 4-6 with Deep Analysis</h3>
-
-<div class="quotation-analysis">
-<strong>1. "He looked at his reflection in the pool and began to laugh." (Chapter 4 — Jack seeing his mask)</strong><br/>
-<strong>Technique:</strong> Revelation through a reflective surface; laughter as sign of psychological release; simple observation yielding profound meaning.<br/>
-<strong>Effect:</strong> The moment Jack's psychological distance from his civilian identity is established.<br/>
-<strong>Grade 9 Reading:</strong> This single sentence encapsulates the mechanism of moral transformation. Jack is laughing at his own appearance because he no longer recognises himself — and this failure to recognise his own identity is liberating. The mask does not change who Jack is, but it changes how Jack relates to himself. He can now claim that his actions are performed by the masked hunter, not by Jack Merridew. This psychological splitting is the prerequisite for atrocity. Golding suggests that evil does not spring from monsters but from ordinary people who create psychological distance from their own actions through costume, ritual, and ideology.
-</div>
-
-<div class="quotation-analysis">
-<strong>2. "The desire to squeeze and hurt was an expression on Jack's face." (Chapter 3)</strong><br/>
-<strong>Technique:</strong> Personification of desire; violent verbs; suggestion that desire is written on the face, visible to others.<br/>
-<strong>Effect:</strong> Violence becomes Jack's identity, readable on his physical being.<br/>
-<strong>Grade 9 Reading:</strong> Golding presents Jack's violent impulses as already present within him, waiting only for the absence of civilised constraint to express themselves. This raises a philosophical question that the novel never fully answers: is Jack naturally violent, or has the island's conditions awakened violent impulses that are latent in all humans? Golding seems to suggest both.
-</div>
-
-<h3>Character Study: Roger &amp; the Emergence of Sadism</h3>
-
-<p>While Jack's violence is driven by the desire for power and status, Roger's is driven by sadism — the pleasure in inflicting pain for its own sake. In Chapters 4-6, Roger is initially restrained by the presence of authority figures. Golding writes: "Roger moved away from them [the adult world's inhibitions]. He found a lodge in the angle of the rock behind which he could be secure from observation, and he began to throw stones at Henry, aiming to miss, but evoking shrieks from the littlun." Roger is testing whether he can harm others without punishment. As the novel progresses and adult constraints disappear entirely, Roger's sadism becomes unchecked — he eventually becomes Jack's chief lieutenant and instrument of terror.</p>
-
-<p>The distinction between Jack (driven by power) and Roger (driven by sadism) is important for understanding different types of evil. Jack will eventually claim that his killing serves community purposes (protection against the beast); Roger killing serves only himself. This distinction becomes crucial in the novel's final chapters, where Roger becomes the agent of pure oppression.</p>
-
-<h3>The First Successful Hunt &amp; Moral Intoxication</h3>
-
-<p>When Jack's hunters successfully kill their first pig in Chapter 4, the event is described with ritualistic intensity. The boys chant, dance, and re-enact the kill. Golding emphasises that the boys are not merely hungry — they are intoxicated by the experience of hunting and killing. This intoxication will eventually override all rational considerations. Jack will neglect the signal fire (his responsibility to rescue) to participate in hunts. He will become willing to defy Ralph's authority to continue hunting. The pleasure of killing becomes addictive, overriding civilised values.</p>
-
-<p>The re-enactment of the hunt is particularly significant. It is a ritual that strengthens group cohesion and reinforces the boys' identification with Jack as their leader. Through ritual, Jack transforms a practical activity (hunting for food) into a spiritual/psychological experience that bonds the group to him and his values.</p>
-
       quiz: [
         {
           id: 'lotf-m3-q1',
@@ -618,52 +580,6 @@ export const lordOfFliesCourse: CourseData = {
 
 <div class="key-term"><strong>Key Term: Pathetic Fallacy</strong> — A literary device in which nature reflects or mirrors human emotions or events. In Chapter 9, the gathering storm parallels the boys' escalating violence, and the violent weather during Simon's murder creates an atmosphere of cosmic turmoil — as if nature itself is convulsing in response to the act.</div>
 `,
-
-<div class="historical-context"><strong>The Beast as Projection of Inner Darkness</strong> — As the novel progresses through Chapters 7-9, the boys' belief in a physical beast grows increasingly powerful even as the beast remains undefined. Golding's depiction of how irrational fear spreads through a group mirrors propaganda, rumour-mongering, and mass hysteria in wartime. In WWII, false reports of enemy atrocities often spread faster than truth, driving populations toward irrational responses. The boys' increasing belief in the beast despite zero physical evidence parallels how propaganda can create an enemy that exists primarily in the imagination but is no less powerful in driving behaviour. Jack eventually exploits the fear of the beast deliberately, manufacturing hunting expeditions that are really exercises in tribal bonding and the assertion of power over the littluns.</div>
-
-<div class="grade9-insight"><strong>Grade 9 Insight: The Beast as Internalised Evil</strong> — The most sophisticated reading of Chapters 7-9 recognises that the "beast" is not a creature the boys need to find and defeat, but an external projection of internal darkness. Simon is the only character who approaches this understanding: he tells Piggy that "maybe it's only us" — meaning that the evil the boys fear is not external but internal, already present within the group. The boys, frightened of acknowledging their own capacity for violence and cruelty, project these impulses onto an imaginary external enemy. Jack exploits this dynamic: by positioning himself as the protector against the beast and the hunter of pigs, he becomes a saviour figure in the boys' minds. This psychological mechanism — externalising internal evil and then positioning oneself as the defender against it — is a fundamental pattern of tyranny. The boys' increasing reliance on Jack is not irrational; it is a psychologically logical response to fear, even though the fear is illusory.</div>
-
-<h3>The Breakdown of Democratic Institutions</h3>
-
-<p>By Chapter 7, Ralph's democratic system is visibly breaking down. Attendance at assemblies drops, boys wander off to join Jack's hunters, and the conch's power over discourse weakens. Several factors contribute:</p>
-
-<ul>
-<li><strong>The Failure of Rescue:</strong> The signal fire, the central symbol of Ralph's commitment to civilisation and rescue, repeatedly goes out. The boys become convinced that rescue is impossible, which undermines the entire rationale for maintaining order and discipline.</li>
-
-<li><strong>Jack's Alternative Vision:</strong> Jack offers the boys something Ralph cannot: excitement, status (through hunting), and protection against the beast through ritual and strength. Jack's leadership is based on action and spectacle, while Ralph's is based on abstract principles (rules, order, rescue).</li>
-
-<li><strong>The Appeal of Hunting:</strong> Killing pigs provides immediate gratification and psychological release. Building shelters and maintaining fires are labour without obvious reward. The human mind is naturally drawn to immediate gratification over delayed benefit.</li>
-
-<li><strong>The Littluns' Fear:</strong> As the littluns become increasingly fearful of the beast, they look to Jack for protection. Jack uses this fear to strengthen his power — he offers to protect them if they join his tribe and obey his rules.</li>
-</ul>
-
-<h3>Simon's Spiritual Resistance &amp; Prophetic Voice</h3>
-
-<p>Through Chapters 7-9, Simon remains apart from both Ralph's failed democracy and Jack's emerging tyranny. He goes alone into the jungle, he speaks truths the others do not want to hear, and he maintains a spiritual connection to the island's natural beauty. In Chapter 8, when the other boys are caught up in hunting fervor, Simon sits in his secret place, a flower-filled glade where he observes the natural world with wonder rather than predation. This juxtaposition — Simon's reverence for life contrasted with Jack's obsession with killing — establishes Simon as the moral centre of the novel.</p>
-
-<p>Yet Simon's goodness offers no protection. He is increasingly isolated, dismissed as "queer," and seen as an outsider to the group's collective identity. In Chapter 8, when Simon suggests that "maybe it's only us" — that the beast is not external but internal — the boys laugh him off. His spiritual insight, which could save the group from hysteria, is rejected. Golding suggests that in societies descending into savagery, moral wisdom becomes not only unwelcome but dangerous — a threat to the group's collective will.</p>
-
-<h3>Jack's Tribe &amp; the Cult of Fear</h3>
-
-<p>By Chapter 7-8, Jack has abandoned any pretence of democratic governance. He establishes a rival tribe based explicitly on his personal authority and their shared protection against the beast. The tribe has rituals (hunting dances, the pig's head ceremony), initiations (you must kill to be fully part of the tribe), and enforcement (fear of Jack and Roger's power). Jack's leadership is based on satisfying psychological needs (protection, belonging, shared ritual) rather than rational objectives (rescue, survival). The boys join Jack not because he makes logical arguments but because he makes them feel safe, part of something larger than themselves.</p>
-
-<p>This transformation mirrors the appeal of fascist movements: they offer individuals the dissolution of personal responsibility into group identity, the satisfaction of belonging, the excitement of ritual and spectacle, and simple enemies (the beast) to unite against. Golding shows that the boys' shift toward authoritarianism is not forced upon them but rationally chosen — Jack's tribe genuinely offers satisfactions that Ralph's democratic society does not.</p>
-
-<h3>Quotation Bank: Chapters 7-9 with Deep Analysis</h3>
-
-<div class="quotation-analysis">
-<strong>1. "Maybe it's only us." (Simon, Chapter 8 — suggesting the beast is internal)</strong><br/>
-<strong>Technique:</strong> Tentative statement (maybe); singular pronoun (us); explosive suggestion of shared responsibility.<br/>
-<strong>Effect:</strong> Simon voices the truth that could save the group — but the group is not ready to hear it.<br/>
-<strong>Grade 9 Reading:</strong> This line is the novel's spiritual centre. Simon alone understands that the evil the boys fear is not external but stems from their own violence and cruelty. If the boys could accept this truth, they could begin to address the actual sources of conflict (Jack's hunger for power, Roger's sadism, their collective descent into tribalism). But Simon's statement is immediately dismissed or reinterpreted. Piggy claims Simon is suggesting they should "look out" for a beast they created; the boys laugh as if Simon has told a joke. Simon's truth-telling will eventually cost him his life — not because he is wrong, but because the group cannot tolerate the moral responsibility his words demand.
-</div>
-
-<div class="quotation-analysis">
-<strong>2. "We hunt to live and provide food for ourselves that's what we do." (Jack, defending hunting against Ralph's criticism)</strong><br/>
-<strong>Technique:</strong> Repetitive structure (hunt...food); simple declarative tone; claim of necessity and natural order.<br/>
-<strong>Effect:</strong> Jack frames hunting as survival necessity, not as violence or pleasure.<br/>
-<strong>Grade 9 Reading:</strong> This statement is technically false — the island has fruit and other food sources, and the boys' hunting is driven by pleasure and status, not pure survival. Yet Jack's lie is psychologically effective because it dignifies the boys' violent impulses as part of a natural, necessary social function. By claiming that hunting is "what we do," Jack is claiming it is essential to identity and survival. This pattern — dressing up violent desires in the language of necessity and social function — is fundamental to how societies justify violence and oppression.
-</div>
 
       quiz: [
         {
