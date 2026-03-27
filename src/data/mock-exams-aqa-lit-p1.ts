@@ -201,8 +201,8 @@ const createPaper1Exam = (
           },
           {
             id: `aqa-lit-p1-${nn}-q1-unseen`,
-            questionNumber: '1 (assessment objective 4)',
-            questionText: 'How does Shakespeare use this passage to develop key character traits or themes? (4 marks)',
+            questionNumber: 1,
+            questionText: 'How does Shakespeare use this passage to develop key character traits or themes? (AO4: 4 marks)',
             marks: 4,
             suggestedTimeMinutes: 7,
             questionType: 'short-answer',
@@ -287,76 +287,9 @@ const createPaper1Exam = (
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// EXPORT ALL PAPERS
+// EXPORT ALL PAPERS (Complete version below)
 // ─────────────────────────────────────────────────────────────────────────────
 
-export const aqaLitP1Mocks: MockExamPaper[] = [
-  // Paper 1: Macbeth + A Christmas Carol
-  createPaper1Exam(
-    1,
-    'Macbeth',
-    MACBETH_EXTRACT_1,
-    MACBETH_EXTRACT_1_SOURCE,
-    'A Christmas Carol',
-    CAROL_EXTRACT_1,
-    CAROL_EXTRACT_1_SOURCE,
-  ),
-
-  // Paper 2: Macbeth + A Christmas Carol (different extracts)
-  createPaper1Exam(
-    2,
-    'Macbeth',
-    MACBETH_EXTRACT_2,
-    MACBETH_EXTRACT_2_SOURCE,
-    'A Christmas Carol',
-    CAROL_EXTRACT_2,
-    CAROL_EXTRACT_2_SOURCE,
-  ),
-
-  // Paper 3: Romeo and Juliet + Jane Eyre
-  createPaper1Exam(
-    3,
-    'Romeo and Juliet',
-    ROMEO_JULIET_EXTRACT_1,
-    ROMEO_JULIET_EXTRACT_1_SOURCE,
-    'Jane Eyre',
-    JANE_EYRE_EXTRACT_1,
-    JANE_EYRE_EXTRACT_1_SOURCE,
-  ),
-
-  // Paper 4: Romeo and Juliet + Jane Eyre (different extracts)
-  createPaper1Exam(
-    4,
-    'Romeo and Juliet',
-    ROMEO_JULIET_EXTRACT_2,
-    ROMEO_JULIET_EXTRACT_2_SOURCE,
-    'Jane Eyre',
-    JANE_EYRE_EXTRACT_2,
-    JANE_EYRE_EXTRACT_2_SOURCE,
-  ),
-
-  // Paper 5: The Tempest + Great Expectations
-  createPaper1Exam(
-    5,
-    'The Tempest',
-    TEMPEST_EXTRACT_1,
-    TEMPEST_EXTRACT_1_SOURCE,
-    'Great Expectations',
-    GREAT_EXPECTATIONS_EXTRACT_1,
-    GREAT_EXPECTATIONS_EXTRACT_1_SOURCE,
-  ),
-
-  // Paper 6: The Merchant of Venice + Great Expectations
-  createPaper1Exam(
-    6,
-    'The Merchant of Venice',
-    MERCHANT_EXTRACT_1,
-    MERCHANT_EXTRACT_1_SOURCE,
-    'Great Expectations',
-    GREAT_EXPECTATIONS_EXTRACT_2,
-    GREAT_EXPECTATIONS_EXTRACT_2_SOURCE,
-  ),
-]
 
 // ─────────────────────────────────────────────────────────────────────────────
 // EXPANDED ASSESSMENT GUIDANCE & GRADING COMMENTS

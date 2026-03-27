@@ -1062,7 +1062,6 @@ export const vocabularyDecks: FlashcardDeck[] = [
         front: 'Culpable',
         back: 'Definition: Deserving blame; responsible and at fault.\n\nExample sentence: "Every member of the Birling family is equally culpable in Eva\'s destruction."\n\nSynonyms: blameworthy, guilty, responsible, at fault.\n\nHow to use: Use to assign blame — "He was culpable in the scheme, even though he claimed ignorance."'
       },
-,
       {
         id: 't2-131',
         front: 'Abscond',

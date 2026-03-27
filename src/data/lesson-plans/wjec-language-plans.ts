@@ -322,6 +322,21 @@ export const wjecLanguageLessonPlans: WJECLessonPlan[] = [
     mainActivity: {
       description: 'Conduct a full mock exam simulating authentic WJEC C700QS conditions: (1) Students complete Component 1 (1 hour: creative + transactional writing) under timed conditions. (2) Students complete Component 2 (1 hour: reading analysis + language study) under timed conditions. Provide: Full paper with all questions, detailed mark schemes, time management reminders (warnings at 15, 5 mins before end of each section). After exam: Students self-assess each section against detailed mark schemes. Create self-assessment sheet identifying: (A) Strengths (what went well, what felt confident), (B) Challenges (what felt rushed, what wasn\'t clear), (C) Personal development priorities (which skill or task type needs more practice). Whole-class debrief: General questions (How did you manage the timing? Which section was most challenging?). Individual consultation: Teacher reviews each student\'s mock exam and self-assessment, providing personalized feedback and prioritized next steps.',
       duration: '110 mins (5 min briefing + 60 min Component 1 + 45 min debrief & self-assessment)',
+      steps: [
+        'Distribute full mock exam paper with all instructions and mark schemes',
+        'Conduct 5-minute pre-exam briefing: review timing, layout, question types',
+        'Students complete Component 1 (creative and transactional writing) in 60 minutes',
+        'Announce 15-minute and 5-minute warnings',
+        'Students complete Component 2 (reading and language) in 45 minutes with same warnings',
+        'Collect papers; provide self-assessment sheet',
+        'Students self-assess against mark schemes (15 mins)',
+        'Whole-class debrief on timing and challenge areas (10 mins)',
+        'One-to-one teacher consultation on mock exam performance'
+      ],
+      differentiation: {
+        support: 'Provide word lists for transactional writing; pre-reading annotations highlighting key vocabulary; simplified mark scheme; extended time (1.5x) if applicable',
+        stretch: 'Challenge to write multiple creative opening variations; analyze examiner feedback on strengths; identify complex language patterns in reading passages; create own mark scheme'
+      }
     },
     plenary: {
       description: 'Development Planning: Each student writes a personal exam development plan for final weeks: (1) What will I focus on before the real exam? (2) What specific skill (creative opening, transactional register consistency, inference analysis, technique identification) needs practice? (3) What resources or support do I need? (4) What\'s one thing I did well that I want to repeat in the real exam? Students share one focus area with a partner. Teacher collects all development plans to inform targeted revision support.',
@@ -506,7 +521,21 @@ export const wjecLanguageLessonPlans: WJECLessonPlan[] = [
     },
     mainActivity: {
       description: 'Deliver individualized targeted skill-building: (1) Students spend 45 minutes on ONE skill area requiring improvement (identified from mock exam). (2) Teacher provides focused instruction and practice for that area. (3) Students complete multiple short practice activities (rather than one long task) to build fluency. E.g., if weakness is creative openings, students complete: (A) Quick analysis of 5 strong openings (identify specificity, sensory detail, intrigue — 5 mins), (B) Quick write: 5 different opening sentences for same scene (5 mins), (C) Revision: improve their own opening sentence (5 mins), (D) Peer feedback on opening specificity (5 mins), (E) Timed opening task mimicking exam (15 mins). Debrief after task: Did this focused practice help? Are you feeling more confident? What\'s still unclear? Complete the practice activity once with scaffolding, then potentially attempt once more for fluency building. Goal: By end of session, student should feel noticeably more confident and capable in targeted skill.',
-      duration: '40 mins'
+      duration: '40 mins',
+      steps: [
+        'Identify specific skill weakness from mock exam feedback',
+        'Teacher provides brief instruction on weak skill area (5 mins)',
+        'Students analyze examples of strong performance in that skill (5 mins)',
+        'Students complete first practice activity with scaffolding (10 mins)',
+        'Students attempt second practice activity with less support (10 mins)',
+        'Students complete exam-style task under timed conditions (10 mins)',
+        'Peer/teacher feedback on practice task (5 mins)',
+        'Student debrief on confidence and remaining concerns'
+      ],
+      differentiation: {
+        support: 'Provide model answer; use sentence stems/word banks; break task into smaller chunks; allow extra time; reduce number of practice attempts; provide checklist for quality checking',
+        stretch: 'Complete multiple skill areas; create own practice task for peer; analyze own performance against mark scheme; design strategy for avoiding similar errors in real exam'
+      }
     },
     plenary: {
       description: 'Confidence Reflection: Students reflect: (1) Did focused practice on this skill help? (2) Are you more confident now? (3) What would you still like to practice before the real exam? (4) What\'s one thing you learned or improved today? Whole-class discussion: Share successes. Discuss how targeted practice builds skill and confidence. Remind: Final weeks before exam should focus on your weakest areas, not reviewing strengths.',

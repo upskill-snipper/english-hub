@@ -1,7 +1,29 @@
 // ─── Mock Exam Data ──────────────────────────────────────────────────────────
 // Structured exam papers for mock exam mode, matching real GCSE paper formats.
 
-export type QuestionType = 'multiple-choice' | 'short-answer' | 'analysis' | 'evaluation' | 'creative-writing' | 'transactional-writing' | 'summary' | 'comparison'
+export type QuestionType =
+  | 'multiple-choice'
+  | 'short-answer'
+  | 'analysis'
+  | 'evaluation'
+  | 'creative-writing'
+  | 'transactional-writing'
+  | 'summary'
+  | 'comparison'
+  | 'reading-detail'
+  | 'reading-analysis'
+  | 'reading-analysis-detailed'
+  | 'reading-inference'
+  | 'reading-evaluation'
+  | 'reading-comparison'
+  | 'extended-writing'
+  | 'extended-response'
+  | 'persuasive-writing'
+  | 'directed-writing'
+  | 'composition'
+  | 'personal-narrative'
+  | 'retrieval'
+  | 'comparative-analysis'
 
 export interface MockExamQuestion {
   id: string
@@ -30,7 +52,7 @@ export interface MockExamSection {
 
 export interface MockExamPaper {
   id: string
-  board: 'AQA' | 'Edexcel' | 'OCR' | 'WJEC' | 'CAIE'
+  board: 'AQA' | 'Edexcel' | 'OCR' | 'WJEC' | 'CAIE' | 'IGCSE'
   paperNumber: 1 | 2
   title: string
   subtitle: string

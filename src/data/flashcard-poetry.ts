@@ -561,7 +561,6 @@ export const poetryFlashcardDecks: FlashcardDeck[] = [
         front: 'Simile in Poetry',
         back: 'Definition: A comparison between two unlike things using "like," "as," or "as if."\n\nExample: "Her love was like the sun," "He was as quiet as a mouse."\n\nEffect on reader: Makes descriptions vivid and concrete. More obvious than metaphor but sometimes more beautiful.\n\nWhen to mention in essays: Always explain what the comparison suggests — e.g., "The simile compares love to the sun, suggesting warmth, light, and life-giving force."'
       },
-,
       { id: "pt-42", front: "Sonnet", back: "14-line poem with strict rhyme scheme and iambic pentameter, exploring love, beauty, or mortality" },
       { id: "pt-43", front: "Ballad", back: "Narrative poem telling a story, often with repeating chorus, traditionally sung or recited" },
       { id: "pt-44", front: "Elegy", back: "Mournful poem expressing sorrow, typically for someone who has died or loss of something precious" },

@@ -559,25 +559,8 @@ const edexcelRelationshipsLesson5: PoetryLesson = {
 };
 
 // ════════════════════════════════════════════════════════════════════════════
-// EXPORT ANTHOLOGY PLANS
+// EXPORT ANTHOLOGY PLANS (Complete version below)
 // ════════════════════════════════════════════════════════════════════════════
-
-export const poetryAnthologyPlans = [
-  // AQA Power & Conflict
-  aqaPowerConflictLesson1,
-  aqaPowerConflictLesson2,
-  aqaPowerConflictLesson3,
-  aqaPowerConflictLesson4,
-  aqaPowerConflictLesson5,
-  // Placeholder for remaining 5 AQA lessons (to be added)
-  // Edexcel Relationships
-  edexcelRelationshipsLesson1,
-  edexcelRelationshipsLesson2,
-  edexcelRelationshipsLesson3,
-  edexcelRelationshipsLesson4,
-  edexcelRelationshipsLesson5,
-  // Placeholder for remaining 5 Edexcel lessons (to be added)
-];
 
 // ════════════════════════════════════════════════════════════════════════════
 // AQA POWER & CONFLICT — REMAINING LESSONS (continued from above)

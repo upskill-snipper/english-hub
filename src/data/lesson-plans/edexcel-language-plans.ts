@@ -211,11 +211,6 @@ const edexcelLang2: LessonPlan = {
 
 // Continuing with remaining lessons in next chunks...
 
-export const edexcelLanguageLessonPlans: LessonPlan[] = [
-  edexcelLang1,
-  edexcelLang2,
-];
-
 // ── Lesson 3: Questions 2 & 3 (Analysis) – Language and Structure ──
 
 const edexcelLang3: LessonPlan = {
