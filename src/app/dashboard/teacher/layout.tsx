@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
+import { useAuthProfile, useAuthLoading } from "@/store/auth-store";
 
 // ─── Navigation items ───────────────────────────────────────────────────
 
@@ -62,22 +63,47 @@ export default function TeacherLayout({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
+  const router = useRouter();
+  const profile = useAuthProfile();
+  const isLoading = useAuthLoading();
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  // TODO: Replace with real auth check — verify user has TEACHER role
-  // const session = await getSession();
-  // if (session?.user?.role !== "TEACHER") redirect("/dashboard");
-  const isTeacher = true; // Placeholder — wire to real auth
+  const isTeacher = profile?.role === 'teacher' || profile?.role === 'admin';
+
+  useEffect(() => {
+    if (!isLoading && profile && !isTeacher) {
+      router.push('/dashboard');
+    }
+  }, [isLoading, profile, isTeacher, router]);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="text-center">
+          <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+          <p className="text-gray-500 text-sm">Loading teacher dashboard...</p>
+        </div>
+      </div>
+    );
+  }
 
   if (!isTeacher) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-2">Access Denied</h1>
-          <p className="text-gray-600">You need a teacher account to view this page.</p>
-          <Link href="/dashboard" className="mt-4 inline-block text-primary hover:underline">
-            Return to dashboard
-          </Link>
+          <p className="text-gray-600 mb-4">You need a teacher account to view this page.</p>
+          <p className="text-sm text-gray-500 mb-4">
+            If you are a teacher, please register with a teacher account.
+          </p>
+          <div className="flex gap-3 justify-center">
+            <Link href="/dashboard" className="inline-block text-primary hover:underline font-medium">
+              Go to student dashboard
+            </Link>
+            <Link href="/auth/register" className="inline-block text-primary hover:underline font-medium">
+              Register as teacher
+            </Link>
+          </div>
         </div>
       </div>
     );

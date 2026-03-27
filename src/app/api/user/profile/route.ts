@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
+import { rateLimit, getClientIp } from "@/lib/rate-limit";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 // NOTE: Uncomment once Prisma is wired up:
@@ -39,6 +40,19 @@ const STUB_USER = {
 
 export async function GET(request: NextRequest) {
   try {
+    // ── Rate limit: 60 requests per minute per IP ──────────────────────
+    const ip = getClientIp(request.headers);
+    const rl = await rateLimit(`profile:${ip}`, {
+      limit: 60,
+      windowSeconds: 60,
+    });
+    if (!rl.success) {
+      return NextResponse.json(
+        { error: "Too many requests. Please try again later." },
+        { status: 429, headers: { "Retry-After": String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+      );
+    }
+
     const supabase = createServerSupabaseClient();
     const { data: { user }, error: authError } = await supabase.auth.getUser();
     if (authError || !user) {
@@ -65,7 +79,7 @@ export async function GET(request: NextRequest) {
     //   },
     // });
     // if (!user) {
-    //   return NextResponse.json({ message: "User not found" }, { status: 404 });
+    //   return NextResponse.json({ error: "User not found" }, { status: 404 });
     // }
 
     const profile = STUB_USER;
@@ -95,7 +109,7 @@ export async function GET(request: NextRequest) {
   } catch (error) {
     console.error("[Profile GET] Error:", error);
     return NextResponse.json(
-      { message: "An unexpected error occurred." },
+      { error: "An unexpected error occurred." },
       { status: 500 }
     );
   }
@@ -121,7 +135,7 @@ export async function PATCH(request: NextRequest) {
     // Must provide at least one field to update
     if (Object.keys(data).length === 0) {
       return NextResponse.json(
-        { message: "No fields provided to update." },
+        { error: "No fields provided to update." },
         { status: 400 }
       );
     }
@@ -195,14 +209,14 @@ export async function PATCH(request: NextRequest) {
         fieldErrors[key].push(issue.message);
       }
       return NextResponse.json(
-        { message: "Validation failed", errors: fieldErrors },
+        { error: "Validation failed", errors: fieldErrors },
         { status: 400 }
       );
     }
 
     console.error("[Profile PATCH] Error:", error);
     return NextResponse.json(
-      { message: "An unexpected error occurred." },
+      { error: "An unexpected error occurred." },
       { status: 500 }
     );
   }

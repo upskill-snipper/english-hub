@@ -1,8 +1,15 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Terms of Service — The English Hub',
-  description: 'Terms and conditions for using The English Hub platform.',
+  title: 'Terms of Service',
+  description:
+    'Terms and conditions for using The English Hub platform. Rules governing access to courses, subscriptions, content usage, and user responsibilities.',
+  alternates: { canonical: 'https://theenglishhub.app/terms' },
+  openGraph: {
+    title: 'Terms of Service — The English Hub',
+    description:
+      'Terms and conditions for using The English Hub platform. Rules governing access to courses, subscriptions, content usage, and user responsibilities.',
+  },
 }
 
 export default function TermsPage() {

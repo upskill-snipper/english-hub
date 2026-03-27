@@ -5,6 +5,7 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/english-language/edexcel/techniques' },
   title: "Language & Structural Techniques Guide",
   description:
     "Over 30 language and structural techniques for Edexcel English Language GCSE. Definitions, literary examples, and analysis of effects on the reader.",

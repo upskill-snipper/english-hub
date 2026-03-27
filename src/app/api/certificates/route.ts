@@ -45,9 +45,16 @@ export async function POST(request: NextRequest) {
     const body = await request.json()
     const { assessment_attempt_id, course_id } = body
 
-    if (!assessment_attempt_id || !course_id) {
+    if (!assessment_attempt_id || typeof assessment_attempt_id !== 'string' || assessment_attempt_id.length > 100) {
       return NextResponse.json(
-        { error: 'Missing assessment_attempt_id or course_id' },
+        { error: 'Valid assessment_attempt_id is required' },
+        { status: 400 }
+      )
+    }
+
+    if (!course_id || typeof course_id !== 'string' || course_id.length > 100) {
+      return NextResponse.json(
+        { error: 'Valid course_id is required' },
         { status: 400 }
       )
     }

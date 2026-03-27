@@ -22,9 +22,15 @@ const monaSans = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://theenglishhub.app'),
-  title: 'The English Hub — Master English. Ace Your Exams.',
+  title: {
+    default: 'The English Hub — Master English. Ace Your Exams.',
+    template: '%s — The English Hub',
+  },
   description:
     'Professional KS3, GCSE, and IGCSE English tutoring platform. Structured courses, exam-style practice, and revision tools to help you achieve top grades.',
+  alternates: {
+    canonical: 'https://theenglishhub.app',
+  },
   openGraph: {
     title: 'The English Hub — Master English. Ace Your Exams.',
     description: 'Expert GCSE, IGCSE & KS3 English courses, practice questions, and revision tools. AQA, Edexcel, OCR & WJEC Eduqas exam boards.',

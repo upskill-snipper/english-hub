@@ -7,12 +7,15 @@ import { validateRequest } from '@/lib/validate-request'
 import { contentSafetyCheck } from '@/lib/content-safety'
 import {
   unauthorizedResponse,
+  forbiddenResponse,
   badRequestResponse,
   rateLimitResponse,
   unsupportedMediaTypeResponse,
   serviceUnavailableResponse,
   serverErrorResponse,
 } from '@/lib/api-response'
+import { checkMinorAIConsent } from '@/lib/consent-check'
+import { hasActiveSubscription } from '@/lib/course-access'
 
 export const maxDuration = 60
 
@@ -127,7 +130,19 @@ export async function POST(request: NextRequest) {
       return unauthorizedResponse('You must be signed in to use essay feedback.')
     }
 
-    // 2. Rate limit: 10 essays per day per user
+    // 1b. Subscription check — essay feedback is a Pro feature
+    const isPro = await hasActiveSubscription(supabase, user.id)
+    if (!isPro) {
+      return forbiddenResponse('Essay feedback is a Pro feature. Please upgrade your subscription to access AI-powered feedback.')
+    }
+
+    // 2. Parental consent check for minor users
+    const consentCheck = await checkMinorAIConsent(user.id)
+    if (!consentCheck.allowed) {
+      return forbiddenResponse(consentCheck.reason ?? 'Consent is required to use this feature.')
+    }
+
+    // 3. Rate limit: 10 essays per day per user
     const rl = await rateLimit(`essay-feedback:${user.id}`, {
       limit: 10,
       windowSeconds: 86_400,
@@ -137,7 +152,7 @@ export async function POST(request: NextRequest) {
       return rateLimitResponse(rl.resetAt)
     }
 
-    // 3. Parse & validate body
+    // 4. Parse & validate body
     let body: EssayFeedbackRequest
     try {
       body = await request.json()
@@ -150,20 +165,20 @@ export async function POST(request: NextRequest) {
       return badRequestResponse(validationError)
     }
 
-    // 4. Content safety check (pre-AI)
+    // 5. Content safety check (pre-AI)
     const safetyError = contentSafetyCheck(body)
     if (safetyError) {
       return badRequestResponse(safetyError)
     }
 
-    // 5. Check for Anthropic API key
+    // 6. Check for Anthropic API key
     const apiKey = process.env.ANTHROPIC_API_KEY
     if (!apiKey) {
       console.error('ANTHROPIC_API_KEY not configured')
       return serviceUnavailableResponse('Essay feedback is temporarily unavailable. Please try again later.')
     }
 
-    // 6. Call Claude API
+    // 7. Call Claude API
     const anthropic = new Anthropic({ apiKey })
 
     const systemPrompt = buildSystemPrompt(body.board, body.paper, body.questionType)
@@ -207,7 +222,7 @@ export async function POST(request: NextRequest) {
       return serviceUnavailableResponse('The AI feedback service is currently unavailable. Please try again later.')
     }
 
-    // 7. Parse Claude's response
+    // 8. Parse Claude's response
     const responseText = message.content
       .filter((block) => block.type === 'text')
       .map((block) => {
@@ -258,7 +273,7 @@ export async function POST(request: NextRequest) {
       return serverErrorResponse('Failed to process feedback. Please try again.')
     }
 
-    // 8. Post-AI safety: truncate any overly long suggestions to prevent full rewrites
+    // 9. Post-AI safety: truncate any overly long suggestions to prevent full rewrites
     if (feedback.improvements) {
       feedback.improvements = feedback.improvements.map((imp) => ({
         ...imp,
@@ -268,7 +283,7 @@ export async function POST(request: NextRequest) {
       }))
     }
 
-    // 9. Return structured feedback
+    // 10. Return structured feedback
     return NextResponse.json({
       feedback,
       remaining: rl.remaining,

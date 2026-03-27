@@ -128,7 +128,7 @@ export default function ForTeachersPage() {
               variant="default"
               size="lg"
               className="text-base px-8 h-12 shadow-lg shadow-primary/20"
-              render={<Link href="/auth/register" />}
+              render={<Link href="/auth/register?type=teacher" />}
             >
               Get Started &mdash; &pound;9.99/month
             </Button>
@@ -431,7 +431,7 @@ export default function ForTeachersPage() {
               variant="default"
               size="lg"
               className="text-base px-10 h-12 shadow-lg shadow-primary/20 w-full sm:w-auto"
-              render={<Link href="/auth/register" />}
+              render={<Link href="/auth/register?type=teacher" />}
             >
               Subscribe Now
             </Button>
@@ -477,7 +477,7 @@ export default function ForTeachersPage() {
             variant="default"
             size="lg"
             className="text-base px-10 h-12 shadow-lg shadow-primary/20"
-            render={<Link href="/auth/register" />}
+            render={<Link href="/auth/register?type=teacher" />}
           >
             Subscribe Now
           </Button>

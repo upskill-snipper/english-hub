@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { hashPassword, verifyPassword } from "@/lib/auth";
+import { rateLimit, getClientIp } from "@/lib/rate-limit";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 // NOTE: Uncomment once Prisma is wired up:
@@ -36,6 +37,19 @@ const STUB_PASSWORD_HASH =
 
 export async function POST(request: NextRequest) {
   try {
+    // ── Rate limit: 5 attempts per 15 minutes per IP ───────────────────
+    const ip = getClientIp(request.headers);
+    const rl = await rateLimit(`password-change:${ip}`, {
+      limit: 5,
+      windowSeconds: 900,
+    });
+    if (!rl.success) {
+      return NextResponse.json(
+        { error: "Too many password change attempts. Please try again later." },
+        { status: 429, headers: { "Retry-After": String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+      );
+    }
+
     const supabase = createServerSupabaseClient();
     const { data: { user }, error: authError } = await supabase.auth.getUser();
     if (authError || !user) {
@@ -49,10 +63,7 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const data = changePasswordSchema.parse(body);
 
-    const ip =
-      request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ??
-      request.headers.get("x-real-ip") ??
-      "unknown";
+    // ip already declared above for rate limiting
 
     // TODO: Replace with real DB query:
     // const user = await prisma.user.findUnique({
@@ -60,7 +71,7 @@ export async function POST(request: NextRequest) {
     //   select: { id: true, passwordHash: true },
     // });
     // if (!user) {
-    //   return NextResponse.json({ message: "User not found" }, { status: 404 });
+    //   return NextResponse.json({ error: "User not found" }, { status: 404 });
     // }
     // const currentHash = user.passwordHash;
     const currentHash = STUB_PASSWORD_HASH;
@@ -72,7 +83,7 @@ export async function POST(request: NextRequest) {
     );
     if (!isCurrentValid) {
       return NextResponse.json(
-        { message: "Current password is incorrect." },
+        { error: "Current password is incorrect." },
         { status: 403 }
       );
     }
@@ -117,14 +128,14 @@ export async function POST(request: NextRequest) {
         fieldErrors[key].push(issue.message);
       }
       return NextResponse.json(
-        { message: "Validation failed", errors: fieldErrors },
+        { error: "Validation failed", errors: fieldErrors },
         { status: 400 }
       );
     }
 
     console.error("[Password POST] Error:", error);
     return NextResponse.json(
-      { message: "An unexpected error occurred." },
+      { error: "An unexpected error occurred." },
       { status: 500 }
     );
   }

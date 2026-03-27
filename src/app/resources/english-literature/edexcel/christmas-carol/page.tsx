@@ -5,6 +5,7 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/edexcel/christmas-carol' },
   title: "A Christmas Carol Study Guide — Edexcel GCSE English Literature",
   description:
     "Complete A Christmas Carol revision guide for Edexcel GCSE English Literature. Plot, characters, themes, 20+ key quotes, Victorian context, and Edexcel exam technique.",

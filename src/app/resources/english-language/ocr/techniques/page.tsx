@@ -5,6 +5,7 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/english-language/ocr/techniques' },
   title: "OCR English Language Techniques Guide | The English Hub",
   description:
     "Comprehensive guide to language and structural techniques for OCR GCSE English Language. Definitions, effects, and examples for every technique you need.",

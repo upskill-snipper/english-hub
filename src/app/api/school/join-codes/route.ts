@@ -95,7 +95,16 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Invalid request body' }, { status: 400 })
     }
 
-    const { class_id, max_uses = 200, expires_days = 30 } = body
+    let { class_id, max_uses = 200, expires_days = 30 } = body
+
+    // Validate numeric parameters
+    if (typeof max_uses !== 'number' || !Number.isInteger(max_uses) || max_uses < 0 || max_uses > 10000) {
+      return NextResponse.json({ error: 'max_uses must be an integer between 0 and 10000' }, { status: 422 })
+    }
+
+    if (typeof expires_days !== 'number' || !Number.isInteger(expires_days) || expires_days < 1 || expires_days > 365) {
+      return NextResponse.json({ error: 'expires_days must be an integer between 1 and 365' }, { status: 422 })
+    }
 
     const admin = createServiceRoleClient()
 

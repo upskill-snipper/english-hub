@@ -5,6 +5,7 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/edexcel/inspector-calls' },
   title: "An Inspector Calls Study Guide — Edexcel GCSE English Literature",
   description:
     "Complete An Inspector Calls revision guide for Edexcel GCSE English Literature. Plot, characters, themes, 20+ key quotes, context, and Edexcel exam technique.",

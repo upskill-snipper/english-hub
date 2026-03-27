@@ -5,6 +5,7 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/english-language/edexcel/paper-2' },
   title: "Edexcel Paper 2: Non-Fiction & Transactional Writing",
   description:
     "Complete revision guide for Edexcel English Language Paper 2 (1EN0/02). Two linked non-fiction texts, transactional writing, mark schemes, AOs, and example responses.",

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { reviews, ReviewRecord } from "./store";
+import { rateLimit } from "@/lib/rate-limit";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 // ---------------------------------------------------------------------------
@@ -35,6 +36,18 @@ export async function POST(request: NextRequest) {
     const { data: { user }, error: authError } = await supabase.auth.getUser();
     if (authError || !user) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+
+    // ── Rate limit: 10 review requests per hour per user ───────────────
+    const rl = await rateLimit(`review:${user.id}`, {
+      limit: 10,
+      windowSeconds: 3600,
+    });
+    if (!rl.success) {
+      return NextResponse.json(
+        { error: "Too many review requests. Please try again later." },
+        { status: 429, headers: { "Retry-After": String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+      );
     }
 
     const body = await request.json();

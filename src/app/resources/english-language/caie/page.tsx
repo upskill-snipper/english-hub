@@ -5,6 +5,7 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/english-language/caie' },
   title: "Cambridge IGCSE English Language (0500/0990)",
   description:
     "Comprehensive revision hub for Cambridge IGCSE English Language (0500/0990). Reading, directed writing, composition, language techniques, and grade boundaries for international students.",

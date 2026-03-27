@@ -5,6 +5,7 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/wjec' },
   title: "WJEC Eduqas GCSE English Literature Revision",
   description:
     "Comprehensive revision resources for WJEC Eduqas GCSE English Literature. Component 1: Shakespeare and Poetry. Component 2: Post-1914 Prose/Drama, 19th Century Prose, and Unseen Poetry.",

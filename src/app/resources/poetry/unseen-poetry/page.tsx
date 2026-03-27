@@ -4,6 +4,7 @@ import Link from "next/link";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/poetry/unseen-poetry' },
   title: "Unseen Poetry Guide | The English Hub",
   description:
     "Complete GCSE unseen poetry guide. The READ method, PEEL paragraphs, comparison technique, three full practice poems with model responses, and examiner commentary.",

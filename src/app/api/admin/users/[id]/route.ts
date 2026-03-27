@@ -48,8 +48,13 @@ export async function PATCH(
     const admin = await requireAdmin();
     const { id } = await params;
 
-    const body = await request.json();
-    const { action, reason } = body;
+    let body: Record<string, unknown>;
+    try {
+      body = await request.json();
+    } catch {
+      return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
+    }
+    const { action, reason } = body as { action?: string; reason?: string };
 
     const ip =
       request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ??
@@ -60,6 +65,12 @@ export async function PATCH(
       if (!reason || typeof reason !== "string" || reason.trim().length === 0) {
         return NextResponse.json(
           { error: "A reason is required for suspension" },
+          { status: 400 }
+        );
+      }
+      if (reason.length > 2000) {
+        return NextResponse.json(
+          { error: "Reason must be 2000 characters or fewer" },
           { status: 400 }
         );
       }
@@ -88,9 +99,6 @@ export async function PATCH(
         { error: error.message },
         { status: error.statusCode }
       );
-    }
-    if (error instanceof Error) {
-      return NextResponse.json({ error: error.message }, { status: 400 });
     }
     console.error("PATCH /api/admin/users/[id] error:", error);
     return NextResponse.json(
@@ -128,9 +136,6 @@ export async function DELETE(
         { error: error.message },
         { status: error.statusCode }
       );
-    }
-    if (error instanceof Error) {
-      return NextResponse.json({ error: error.message }, { status: 400 });
     }
     console.error("DELETE /api/admin/users/[id] error:", error);
     return NextResponse.json(

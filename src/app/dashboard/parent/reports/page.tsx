@@ -258,9 +258,9 @@ export default function ReportsPage() {
       {/* ── Reports list ─────────────────────────────────────── */}
       {reports.length === 0 ? (
         <div className="card text-center py-12">
-          <CalendarIcon className="mx-auto h-10 w-10 text-gray-300" />
+          <CalendarIcon className="mx-auto h-10 w-10 text-gray-400" />
           <p className="mt-4 text-gray-500">No reports available yet.</p>
-          <p className="mt-1 text-sm text-gray-400">
+          <p className="mt-1 text-sm text-gray-500">
             Weekly reports are generated automatically every week.
           </p>
         </div>
@@ -296,9 +296,9 @@ export default function ReportsPage() {
                     </div>
                   </div>
                   {isExpanded ? (
-                    <ChevronUpIcon className="h-5 w-5 shrink-0 text-gray-400" />
+                    <ChevronUpIcon className="h-5 w-5 shrink-0 text-gray-500" />
                   ) : (
-                    <ChevronDownIcon className="h-5 w-5 shrink-0 text-gray-400" />
+                    <ChevronDownIcon className="h-5 w-5 shrink-0 text-gray-500" />
                   )}
                 </button>
 

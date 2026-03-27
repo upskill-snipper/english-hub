@@ -279,7 +279,7 @@ export default function AllEssaysPage() {
                             <button
                               type="button"
                               onClick={() => setDeletingId(null)}
-                              className="text-xs text-gray-400 hover:text-gray-600"
+                              className="text-xs text-gray-500 hover:text-gray-600"
                             >
                               Cancel
                             </button>
@@ -295,7 +295,7 @@ export default function AllEssaysPage() {
                             <button
                               type="button"
                               onClick={() => setDeletingId(essay.id)}
-                              className="text-xs text-gray-400 hover:text-warn"
+                              className="text-xs text-gray-500 hover:text-warn"
                             >
                               Delete
                             </button>
@@ -324,7 +324,7 @@ export default function AllEssaysPage() {
                     <p className="mt-0.5 text-xs text-gray-500">
                       {essay.subject} &middot; {essay.examBoard}
                     </p>
-                    <p className="mt-0.5 text-xs text-gray-400">
+                    <p className="mt-0.5 text-xs text-gray-500">
                       {new Date(essay.createdAt).toLocaleDateString("en-GB", {
                         day: "numeric",
                         month: "short",
@@ -360,7 +360,7 @@ export default function AllEssaysPage() {
                       <button
                         type="button"
                         onClick={() => setDeletingId(null)}
-                        className="text-xs text-gray-400 hover:text-gray-600"
+                        className="text-xs text-gray-500 hover:text-gray-600"
                       >
                         Cancel
                       </button>
@@ -369,7 +369,7 @@ export default function AllEssaysPage() {
                     <button
                       type="button"
                       onClick={() => setDeletingId(essay.id)}
-                      className="text-xs text-gray-400 hover:text-warn"
+                      className="text-xs text-gray-500 hover:text-warn"
                     >
                       Delete
                     </button>

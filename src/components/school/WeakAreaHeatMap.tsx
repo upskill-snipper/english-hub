@@ -278,7 +278,7 @@ const GridHeatMap = memo(function GridHeatMap({
                           <span
                             className={cn(
                               'text-xs font-medium',
-                              dimmed ? 'text-muted-foreground/30' : scoreToTextColor(score),
+                              dimmed ? 'text-muted-foreground/70' : scoreToTextColor(score),
                             )}
                           >
                             {Math.round(score)}

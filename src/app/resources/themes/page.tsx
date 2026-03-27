@@ -5,6 +5,7 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/themes' },
   title: "Theme Explorer | GCSE English Literature",
   description:
     "Explore major GCSE English Literature themes across texts. Compare how power, guilt, love, conflict, and social responsibility appear in set texts for AQA, Edexcel, OCR, and Cambridge IGCSE.",

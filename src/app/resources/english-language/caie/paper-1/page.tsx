@@ -5,6 +5,7 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/english-language/caie/paper-1' },
   title: "Paper 1: Reading | Cambridge IGCSE English Language",
   description:
     "Complete guide to Cambridge IGCSE English Language Paper 1 (Reading). Covers comprehension question types, summary writing, note-making, and passage analysis with examiner tips.",

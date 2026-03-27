@@ -2,9 +2,10 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { useSearchParams } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import { useBoardStore } from '@/store/board-store'
-import { Mail, Lock, User, GraduationCap, BookOpen, Loader2, ArrowLeft, CheckCircle, Eye, EyeOff, Calendar } from 'lucide-react'
+import { Mail, Lock, User, GraduationCap, BookOpen, Loader2, ArrowLeft, CheckCircle, Eye, EyeOff, Calendar, School } from 'lucide-react'
 import { PRICING_DISPLAY } from '@/constants/pricing'
 import { YEAR_GROUPS, EXAM_BOARDS } from '@/lib/utils'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card'
@@ -14,7 +15,11 @@ import { Label } from '@/components/ui/label'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 
 export default function RegisterPage() {
+  const searchParams = useSearchParams()
   const selectedBoard = useBoardStore((s) => s.selectedBoard)
+  const [accountType, setAccountType] = useState<'student' | 'teacher'>(
+    searchParams.get('type') === 'teacher' ? 'teacher' : 'student'
+  )
   const [fullName, setFullName] = useState('')
   const [dobDay, setDobDay] = useState('')
   const [dobMonth, setDobMonth] = useState('')
@@ -25,6 +30,7 @@ export default function RegisterPage() {
   const [confirmPassword, setConfirmPassword] = useState('')
   const [yearGroup, setYearGroup] = useState('')
   const [examBoard, setExamBoard] = useState('')
+  const [schoolName, setSchoolName] = useState('')
 
   const calculateAge = (day: string, month: string, year: string): number | null => {
     if (!day || !month || !year) return null
@@ -62,19 +68,20 @@ export default function RegisterPage() {
     const errors: Record<string, string> = {}
 
     if (!fullName) errors.fullName = 'Full name is required.'
-    if (!dobDay || !dobMonth || !dobYear) errors.dob = 'Date of birth is required.'
     if (!email) errors.email = 'Email address is required.'
     if (!password) errors.password = 'Password is required.'
     else if (password.length < 8) errors.password = 'Password must be at least 8 characters.'
     if (!confirmPassword) errors.confirmPassword = 'Please confirm your password.'
     else if (password !== confirmPassword) errors.confirmPassword = 'Passwords do not match.'
 
-    if (isUnder13) {
-      errors.dob = 'You must be at least 13 years old to create an account.'
-    }
-
-    if (isUnder16 && !parentGuardianEmail) {
-      errors.parentGuardianEmail = 'Parent/Guardian email is required for users under 16.'
+    if (accountType === 'student') {
+      if (!dobDay || !dobMonth || !dobYear) errors.dob = 'Date of birth is required.'
+      if (isUnder13) {
+        errors.dob = 'You must be at least 13 years old to create an account.'
+      }
+      if (isUnder16 && !parentGuardianEmail) {
+        errors.parentGuardianEmail = 'Parent/Guardian email is required for users under 16.'
+      }
     }
 
     if (Object.keys(errors).length > 0) {
@@ -112,10 +119,12 @@ export default function RegisterPage() {
         id: data.user.id,
         email,
         full_name: fullName,
-        year_group: yearGroup || null,
+        role: accountType,
+        year_group: accountType === 'student' ? (yearGroup || null) : null,
         exam_board: examBoard || null,
-        date_of_birth: dateOfBirth,
-        parent_guardian_email: parentGuardianEmail || null,
+        school_name: accountType === 'teacher' ? (schoolName || null) : null,
+        date_of_birth: accountType === 'student' ? dateOfBirth : null,
+        parent_guardian_email: accountType === 'student' ? (parentGuardianEmail || null) : null,
       })
 
       if (profileError) {
@@ -141,8 +150,13 @@ export default function RegisterPage() {
               <p className="text-muted-foreground mb-6">
                 We&apos;ve sent a confirmation link to{' '}
                 <span className="text-foreground font-medium">{email}</span>.
-                Please click the link to verify your account before signing in.
+                Please click the link to verify your {accountType === 'teacher' ? 'teacher' : ''} account before signing in.
               </p>
+              {accountType === 'teacher' && (
+                <p className="text-sm text-muted-foreground mb-4">
+                  Once verified, you&apos;ll have access to the Teacher Dashboard with lesson planning, student analytics, and assessment tools.
+                </p>
+              )}
               <Button render={<Link href="/auth/login" />}>
                 Back to login
               </Button>
@@ -168,9 +182,13 @@ export default function RegisterPage() {
 
         <Card>
           <CardHeader className="text-center">
-            <CardTitle className="text-2xl">Start Your Free Trial</CardTitle>
+            <CardTitle className="text-2xl">
+              {accountType === 'teacher' ? 'Create Teacher Account' : 'Start Your Free Trial'}
+            </CardTitle>
             <CardDescription>
-              {PRICING_DISPLAY.trialText}. Cancel anytime.
+              {accountType === 'teacher'
+                ? 'Access lesson planning, analytics, and AI marking tools.'
+                : `${PRICING_DISPLAY.trialText}. Cancel anytime.`}
             </CardDescription>
           </CardHeader>
 
@@ -182,12 +200,43 @@ export default function RegisterPage() {
             )}
 
             <form onSubmit={handleSubmit} className="space-y-5">
+              {/* Account type toggle */}
+              <div className="space-y-1.5">
+                <Label>I am a</Label>
+                <div className="grid grid-cols-2 gap-2">
+                  <button
+                    type="button"
+                    onClick={() => setAccountType('student')}
+                    className={`flex items-center justify-center gap-2 rounded-lg border-2 px-4 py-3 text-sm font-medium transition-all ${
+                      accountType === 'student'
+                        ? 'border-primary bg-primary/5 text-primary'
+                        : 'border-border text-muted-foreground hover:border-primary/40'
+                    }`}
+                  >
+                    <GraduationCap className="w-5 h-5" />
+                    Student
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setAccountType('teacher')}
+                    className={`flex items-center justify-center gap-2 rounded-lg border-2 px-4 py-3 text-sm font-medium transition-all ${
+                      accountType === 'teacher'
+                        ? 'border-primary bg-primary/5 text-primary'
+                        : 'border-border text-muted-foreground hover:border-primary/40'
+                    }`}
+                  >
+                    <School className="w-5 h-5" />
+                    Teacher
+                  </button>
+                </div>
+              </div>
+
               <div className="space-y-1.5">
                 <Label htmlFor="fullName">
                   Full name <span className="text-destructive">*</span>
                 </Label>
                 <div className="relative">
-                  <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/50" />
+                  <User className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
                   <Input
                     id="fullName"
                     type="text"
@@ -206,12 +255,13 @@ export default function RegisterPage() {
                 )}
               </div>
 
+              {accountType === 'student' && (
               <fieldset className="space-y-1.5" aria-describedby={fieldErrors.dob ? 'dob-error' : undefined}>
                 <legend className="text-sm font-medium leading-none">
                   Date of Birth <span className="text-destructive">*</span>
                 </legend>
                 <div className="relative">
-                  <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/50" />
+                  <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
                   <div className="flex gap-2 pl-11">
                     <select
                       id="dobDay"
@@ -272,13 +322,32 @@ export default function RegisterPage() {
                   </p>
                 )}
               </fieldset>
+              )}
+
+              {accountType === 'teacher' && (
+                <div className="space-y-1.5">
+                  <Label htmlFor="schoolName">School name</Label>
+                  <div className="relative">
+                    <School className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
+                    <Input
+                      id="schoolName"
+                      type="text"
+                      value={schoolName}
+                      onChange={(e) => setSchoolName(e.target.value)}
+                      placeholder="e.g. Oakwood Academy"
+                      className="pl-11"
+                      autoComplete="organization"
+                    />
+                  </div>
+                </div>
+              )}
 
               <div className="space-y-1.5">
                 <Label htmlFor="email">
                   Email address <span className="text-destructive">*</span>
                 </Label>
                 <div className="relative">
-                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/50" />
+                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
                   <Input
                     id="email"
                     type="email"
@@ -302,7 +371,7 @@ export default function RegisterPage() {
                   Password <span className="text-destructive">*</span>
                 </Label>
                 <div className="relative">
-                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/50" />
+                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
                   <Input
                     id="password"
                     type={showPassword ? 'text' : 'password'}
@@ -319,7 +388,7 @@ export default function RegisterPage() {
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground/50 hover:text-muted-foreground transition-colors"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground/70 hover:text-muted-foreground transition-colors"
                     aria-label={showPassword ? 'Hide password' : 'Show password'}
                   >
                     {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
@@ -335,7 +404,7 @@ export default function RegisterPage() {
                   Confirm password <span className="text-destructive">*</span>
                 </Label>
                 <div className="relative">
-                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/50" />
+                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
                   <Input
                     id="confirmPassword"
                     type={showConfirm ? 'text' : 'password'}
@@ -352,7 +421,7 @@ export default function RegisterPage() {
                   <button
                     type="button"
                     onClick={() => setShowConfirm(!showConfirm)}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground/50 hover:text-muted-foreground transition-colors"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground/70 hover:text-muted-foreground transition-colors"
                     aria-label={showConfirm ? 'Hide password' : 'Show password'}
                   >
                     {showConfirm ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
@@ -363,13 +432,13 @@ export default function RegisterPage() {
                 )}
               </div>
 
-              {isUnder16 && (
+              {accountType === 'student' && isUnder16 && (
                 <div className="space-y-1.5">
                   <Label htmlFor="parentGuardianEmail">
                     Parent/Guardian email <span className="text-destructive">*</span>
                   </Label>
                   <div className="relative">
-                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/50" />
+                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
                     <Input
                       id="parentGuardianEmail"
                       type="email"
@@ -392,10 +461,11 @@ export default function RegisterPage() {
                 </div>
               )}
 
+              {accountType === 'student' && (
               <div className="space-y-1.5">
                 <Label htmlFor="yearGroup">Year group</Label>
                 <div className="relative">
-                  <GraduationCap className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/50" />
+                  <GraduationCap className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
                   <select
                     id="yearGroup"
                     value={yearGroup}
@@ -411,11 +481,12 @@ export default function RegisterPage() {
                   </select>
                 </div>
               </div>
+              )}
 
               <div className="space-y-1.5">
                 <Label htmlFor="examBoard">Exam board</Label>
                 <div className="relative">
-                  <BookOpen className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/50" />
+                  <BookOpen className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
                   <select
                     id="examBoard"
                     value={examBoard}
@@ -434,7 +505,7 @@ export default function RegisterPage() {
 
               <Button
                 type="submit"
-                disabled={loading || isUnder13}
+                disabled={loading || (accountType === 'student' && isUnder13)}
                 className="w-full"
                 size="lg"
               >
@@ -443,6 +514,8 @@ export default function RegisterPage() {
                     <Loader2 className="w-5 h-5 animate-spin mr-2" />
                     Creating account...
                   </>
+                ) : accountType === 'teacher' ? (
+                  'Create teacher account'
                 ) : (
                   'Create account'
                 )}

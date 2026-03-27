@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { PrismaClient, Prisma } from "@prisma/client";
 import { sendEmail } from "@/lib/email";
+import { rateLimit, getClientIp } from "@/lib/rate-limit";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 const prisma = new PrismaClient();
@@ -100,6 +101,20 @@ function buildAlertEmail(
 
 export async function POST(request: NextRequest) {
   try {
+    // ── Rate limit: 10 reports per hour per IP ─────────────────────────
+    // Intentionally generous to avoid blocking genuine safeguarding reports
+    const ip = getClientIp(request.headers);
+    const rl = await rateLimit(`safeguarding-report:${ip}`, {
+      limit: 10,
+      windowSeconds: 3600,
+    });
+    if (!rl.success) {
+      return NextResponse.json(
+        { error: "Too many requests. If this is urgent, please call Childline on 0800 1111." },
+        { status: 429, headers: { "Retry-After": String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+      );
+    }
+
     const body = await request.json();
     const parsed = reportSchema.safeParse(body);
 

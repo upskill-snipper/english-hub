@@ -5,6 +5,7 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/edexcel/lord-of-the-flies' },
   title: "Lord of the Flies Study Guide — Edexcel GCSE English Literature",
   description:
     "Complete Lord of the Flies revision guide for Edexcel GCSE English Literature. Plot, characters, themes, 15+ key quotes, symbolism, context, and Edexcel exam technique.",

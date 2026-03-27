@@ -3,6 +3,7 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/aqa/grade-boundaries' },
   title: "AQA GCSE English Literature (8702) Grade Boundaries",
   description:
     "Approximate grade boundaries for AQA GCSE English Literature (8702), what each grade looks like, and how to push your marks higher.",

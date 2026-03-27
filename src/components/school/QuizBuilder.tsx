@@ -526,7 +526,7 @@ function QuestionEditor({
               >
                 <ChevronUp className="size-3.5" />
               </button>
-              <GripVertical className="size-4 text-muted-foreground/50" />
+              <GripVertical className="size-4 text-muted-foreground/70" />
               <button
                 type="button"
                 onClick={(e) => {

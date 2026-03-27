@@ -5,6 +5,7 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/ocr' },
   title: "OCR GCSE English Literature (J352) | The English Hub",
   description:
     "Complete revision hub for OCR GCSE English Literature (J352). Study guides for Paper 1, Paper 2, Macbeth, An Inspector Calls, A Christmas Carol, Jekyll and Hyde, and the OCR poetry anthology.",

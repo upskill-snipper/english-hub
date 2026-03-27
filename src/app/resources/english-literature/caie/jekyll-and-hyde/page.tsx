@@ -5,6 +5,7 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/caie/jekyll-and-hyde' },
   title:
     "Jekyll and Hyde Study Guide - Cambridge IGCSE English Literature",
   description:

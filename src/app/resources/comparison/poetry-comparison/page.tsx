@@ -4,6 +4,7 @@ import Link from "next/link";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/comparison/poetry-comparison' },
   title: "Poetry Comparison Guide | The English Hub",
   description:
     "Master poetry comparison for GCSE and IGCSE English. Step-by-step method, alternating and block structures, 50+ comparative connectives, full example comparisons, and examiner insights.",

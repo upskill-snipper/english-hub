@@ -1,9 +1,13 @@
+export type UserRole = 'student' | 'teacher' | 'parent' | 'admin'
+
 export interface Profile {
   id: string
   email: string
   full_name: string | null
+  role: UserRole
   year_group: string | null
   exam_board: string | null
+  school_name: string | null
   subscription_status: 'free' | 'pro' | 'cancelled' | 'past_due' | 'unpaid' | 'incomplete' | 'paused'
   subscription_end_date: string | null
   stripe_customer_id: string | null

@@ -1222,7 +1222,7 @@ export default function RevisionPage() {
                           )}
                         </div>
 
-                        <p className="absolute bottom-4 left-0 right-0 text-center text-xs text-muted-foreground/50">
+                        <p className="absolute bottom-4 left-0 right-0 text-center text-xs text-muted-foreground">
                           {flipped
                             ? 'Rate your recall below'
                             : 'Click to flip \u00b7 Arrow keys or swipe to navigate'}
@@ -1477,7 +1477,7 @@ const TechniqueCard = memo(function TechniqueCard({
           </div>
         )}
 
-        <p className="mt-3 text-xs text-muted-foreground/50">
+        <p className="mt-3 text-xs text-muted-foreground">
           {expanded ? 'Click to collapse' : 'Click to expand'}
         </p>
       </CardContent>

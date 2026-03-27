@@ -4,6 +4,7 @@ import Link from "next/link";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/model-answers' },
   title: "Model Answers | The English Hub",
   description:
     "Browse expert model answers for GCSE and IGCSE English Language and Literature. Grade 5, 7, and 9 examples with examiner commentary, technique annotations, and grade-boundary breakdowns for AQA, Edexcel, Cambridge IGCSE, and OCR.",

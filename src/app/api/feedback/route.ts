@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { verifyAdmin } from "@/lib/admin-auth";
+import { rateLimit, getClientIp } from "@/lib/rate-limit";
 
 /* ─── Types ──────────────────────────────────────────────────── */
 
@@ -31,6 +32,16 @@ const feedbackStore: FeedbackEntry[] = [];
 
 export async function POST(request: NextRequest) {
   try {
+    // Rate limit: 10 submissions per IP per hour
+    const ip = getClientIp(request.headers);
+    const rl = await rateLimit(`feedback:${ip}`, { limit: 10, windowSeconds: 3600 });
+    if (!rl.success) {
+      return NextResponse.json(
+        { error: "Too many requests. Please try again later." },
+        { status: 429 }
+      );
+    }
+
     const body = await request.json();
     const { type, pageUrl, email } = body;
 
@@ -41,6 +52,23 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Validate and sanitize string fields with length limits
+    if (typeof pageUrl !== "string" || pageUrl.trim().length > 2000) {
+      return NextResponse.json(
+        { error: "pageUrl must be a string of 2000 characters or fewer" },
+        { status: 400 }
+      );
+    }
+
+    if (email !== undefined && email !== null) {
+      if (typeof email !== "string" || email.length > 320) {
+        return NextResponse.json(
+          { error: "Invalid email" },
+          { status: 400 }
+        );
+      }
+    }
+
     if (type === "suggestion") {
       if (!body.subject?.trim() || !body.message?.trim()) {
         return NextResponse.json(
@@ -48,10 +76,46 @@ export async function POST(request: NextRequest) {
           { status: 400 }
         );
       }
+      if (typeof body.subject !== "string" || body.subject.trim().length > 200) {
+        return NextResponse.json(
+          { error: "Subject must be 200 characters or fewer" },
+          { status: 400 }
+        );
+      }
+      if (typeof body.message !== "string" || body.message.trim().length > 5000) {
+        return NextResponse.json(
+          { error: "Message must be 5000 characters or fewer" },
+          { status: 400 }
+        );
+      }
+      if (body.category && (typeof body.category !== "string" || body.category.length > 100)) {
+        return NextResponse.json(
+          { error: "Invalid category" },
+          { status: 400 }
+        );
+      }
     } else if (type === "issue") {
       if (!body.description?.trim()) {
         return NextResponse.json(
           { error: "Description is required for issue reports" },
+          { status: 400 }
+        );
+      }
+      if (typeof body.description !== "string" || body.description.trim().length > 5000) {
+        return NextResponse.json(
+          { error: "Description must be 5000 characters or fewer" },
+          { status: 400 }
+        );
+      }
+      if (body.issueType && (typeof body.issueType !== "string" || body.issueType.length > 100)) {
+        return NextResponse.json(
+          { error: "Invalid issue type" },
+          { status: 400 }
+        );
+      }
+      if (body.severity && (typeof body.severity !== "string" || !["Minor", "Major", "Critical"].includes(body.severity))) {
+        return NextResponse.json(
+          { error: 'Severity must be "Minor", "Major", or "Critical"' },
           { status: 400 }
         );
       }
@@ -67,22 +131,22 @@ export async function POST(request: NextRequest) {
       type,
       status: "new",
       createdAt: new Date().toISOString(),
-      pageUrl,
-      email: email || undefined,
+      pageUrl: pageUrl.trim(),
+      email: email?.trim() || undefined,
       // TODO: extract userId from session/auth when available
       userId: undefined,
 
       // Suggestion-specific
       ...(type === "suggestion" && {
-        subject: body.subject,
-        message: body.message,
-        category: body.category || "Other",
+        subject: body.subject.trim(),
+        message: body.message.trim(),
+        category: body.category?.trim() || "Other",
       }),
 
       // Issue-specific
       ...(type === "issue" && {
-        issueType: body.issueType || "Other",
-        description: body.description,
+        issueType: body.issueType?.trim() || "Other",
+        description: body.description.trim(),
         severity: body.severity || "Minor",
       }),
     };
@@ -150,6 +214,15 @@ export async function GET(request: NextRequest) {
 /* ─── PATCH — update status ──────────────────────────────────── */
 
 export async function PATCH(request: NextRequest) {
+  // Only admins can update feedback status
+  const { user, error: authErr } = await verifyAdmin();
+  if (authErr === "Unauthorized" || !user) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+  if (authErr === "Forbidden") {
+    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+  }
+
   try {
     const body = await request.json();
     const { id, status } = body;

@@ -491,7 +491,7 @@ export default function ParentSettingsPage() {
                 <button
                   type="button"
                   onClick={() => handleRemoveStudent(student.id)}
-                  className="rounded-lg p-1.5 text-gray-400 hover:bg-warn-50 hover:text-warn transition-colors"
+                  className="rounded-lg p-1.5 text-gray-500 hover:bg-warn-50 hover:text-warn transition-colors"
                   title="Unlink student"
                 >
                   <TrashIcon className="h-4 w-4" />
@@ -559,9 +559,9 @@ export default function ParentSettingsPage() {
 
           {students.length === 0 && (
             <div className="text-center py-8">
-              <UserIcon className="mx-auto h-10 w-10 text-gray-300" />
+              <UserIcon className="mx-auto h-10 w-10 text-gray-400" />
               <p className="mt-4 text-gray-500">No students linked yet.</p>
-              <p className="mt-1 text-sm text-gray-400">
+              <p className="mt-1 text-sm text-gray-500">
                 Click &quot;Add Student&quot; to link your child&apos;s account.
               </p>
             </div>

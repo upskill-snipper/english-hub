@@ -187,7 +187,7 @@ export default function NewEssayPage() {
         <div>
           <label htmlFor="topic" className="block text-sm font-medium text-gray-700">
             Topic / Prompt{" "}
-            <span className="text-xs font-normal text-gray-400">(optional)</span>
+            <span className="text-xs font-normal text-gray-500">(optional)</span>
           </label>
           <input
             id="topic"
@@ -213,7 +213,7 @@ export default function NewEssayPage() {
             onChange={(e) => setContent(e.target.value)}
             required
           />
-          <div className="mt-1.5 flex items-center justify-between text-xs text-gray-400">
+          <div className="mt-1.5 flex items-center justify-between text-xs text-gray-500">
             <span>
               {wordCount} {wordCount === 1 ? "word" : "words"}
               {wordCount > 0 && wordCount < 50 && (

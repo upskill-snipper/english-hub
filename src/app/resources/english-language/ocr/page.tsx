@@ -5,6 +5,7 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/english-language/ocr' },
   title: "OCR GCSE English Language (J351) | The English Hub",
   description:
     "Complete revision hub for OCR GCSE English Language (J351). Access study guides for Paper 1, Paper 2, Spoken Language, techniques, and writing skills.",

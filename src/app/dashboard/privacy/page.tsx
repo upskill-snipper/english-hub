@@ -308,7 +308,7 @@ function SettingsTab({
                   }`}
                 >
                   {opt.label}
-                  <span className="block text-[10px] font-normal text-gray-400 mt-0.5">{opt.desc}</span>
+                  <span className="block text-[10px] font-normal text-gray-500 mt-0.5">{opt.desc}</span>
                 </button>
               ))}
             </div>
@@ -386,7 +386,7 @@ function DataTab({ summary }: { summary: DataSummary | null }) {
             </div>
             <p className="text-xs font-medium text-gray-500 uppercase tracking-wide">{card.label}</p>
             <p className="text-xl font-bold text-gray-900 mt-1">{card.value}</p>
-            <p className="text-xs text-gray-400 mt-0.5">{card.sub}</p>
+            <p className="text-xs text-gray-500 mt-0.5">{card.sub}</p>
           </div>
         ))}
       </div>
@@ -476,7 +476,7 @@ function DownloadTab({ onToast }: { onToast: (msg: string) => void }) {
               }`}
             >
               {f === "JSON" ? "\u{1F4C4}" : "\u{1F4D1}"} {f}
-              <span className="block text-[10px] font-normal text-gray-400 mt-0.5">
+              <span className="block text-[10px] font-normal text-gray-500 mt-0.5">
                 {f === "JSON" ? "Machine-readable" : "Human-readable"}
               </span>
             </button>
@@ -581,7 +581,7 @@ function DeleteTab({
         <h3 className="text-sm font-semibold text-gray-900 mb-3">{"\u{1F4DD}"} Delete Individual Essays</h3>
         {essays.length === 0 ? (
           <div className="rounded-xl border border-dashed border-gray-300 p-6 text-center">
-            <p className="text-sm text-gray-400">No essays to show.</p>
+            <p className="text-sm text-gray-500">No essays to show.</p>
           </div>
         ) : (
           <div className="space-y-2 max-h-64 overflow-y-auto">
@@ -592,7 +592,7 @@ function DeleteTab({
               >
                 <div className="min-w-0 flex-1">
                   <p className="text-sm font-medium text-gray-900 truncate">{essay.title}</p>
-                  <p className="text-xs text-gray-400">
+                  <p className="text-xs text-gray-500">
                     {essay.subject} &middot;{" "}
                     {new Date(essay.createdAt).toLocaleDateString("en-GB", {
                       day: "numeric",

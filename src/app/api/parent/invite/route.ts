@@ -12,7 +12,7 @@ export async function POST(request: NextRequest) {
     const session = await getServerSession();
     if (!session?.user?.email) {
       return NextResponse.json(
-        { message: "Authentication required." },
+        { error: "Authentication required." },
         { status: 401 }
       );
     }
@@ -29,7 +29,7 @@ export async function POST(request: NextRequest) {
 
     if (!dbUser || dbUser.accountStatus !== "ACTIVE") {
       return NextResponse.json(
-        { message: "Session expired. Please log in again." },
+        { error: "Session expired. Please log in again." },
         { status: 401 }
       );
     }
@@ -39,7 +39,7 @@ export async function POST(request: NextRequest) {
     // Only students can create parent invites
     if (user.role !== "STUDENT") {
       return NextResponse.json(
-        { message: "Only students can generate parent invite codes." },
+        { error: "Only students can generate parent invite codes." },
         { status: 403 }
       );
     }
@@ -48,7 +48,7 @@ export async function POST(request: NextRequest) {
     const rl = await rateLimit(`parent-invite:${user.id}`, { limit: 5, windowSeconds: 3600 }); // 5 per hour
     if (!rl.success) {
       return NextResponse.json(
-        { message: "Too many requests. Please try again later." },
+        { error: "Too many requests. Please try again later." },
         { status: 429, headers: { "Retry-After": String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
       );
     }
@@ -71,7 +71,7 @@ export async function POST(request: NextRequest) {
   } catch (err) {
     console.error("[parent/invite] Error:", err);
     return NextResponse.json(
-      { message: "Something went wrong. Please try again." },
+      { error: "Something went wrong. Please try again." },
       { status: 500 }
     );
   }
@@ -85,7 +85,7 @@ export async function GET(request: NextRequest) {
     const session = await getServerSession();
     if (!session?.user?.email) {
       return NextResponse.json(
-        { message: "Authentication required." },
+        { error: "Authentication required." },
         { status: 401 }
       );
     }
@@ -101,7 +101,7 @@ export async function GET(request: NextRequest) {
 
     if (!dbUser || dbUser.accountStatus !== "ACTIVE") {
       return NextResponse.json(
-        { message: "Session expired. Please log in again." },
+        { error: "Session expired. Please log in again." },
         { status: 401 }
       );
     }
@@ -110,7 +110,7 @@ export async function GET(request: NextRequest) {
 
     if (user.role !== "STUDENT") {
       return NextResponse.json(
-        { message: "Only students can view their parent invite codes." },
+        { error: "Only students can view their parent invite codes." },
         { status: 403 }
       );
     }
@@ -134,7 +134,7 @@ export async function GET(request: NextRequest) {
   } catch (err) {
     console.error("[parent/invite] GET Error:", err);
     return NextResponse.json(
-      { message: "Something went wrong. Please try again." },
+      { error: "Something went wrong. Please try again." },
       { status: 500 }
     );
   }

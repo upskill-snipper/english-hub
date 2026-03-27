@@ -5,6 +5,7 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/edexcel' },
   title: "Edexcel English Literature GCSE Revision",
   description:
     "Comprehensive revision resources for Edexcel (Pearson) GCSE English Literature. Study guides for Shakespeare, Post-1914 texts, 19th-century novels, and poetry anthology.",

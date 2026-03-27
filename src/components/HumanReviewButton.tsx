@@ -62,7 +62,7 @@ export function HumanReviewButton({ essayId }: HumanReviewButtonProps) {
             <button
               type="button"
               onClick={() => setDismissed(true)}
-              className="text-xs text-gray-400 hover:text-gray-600 transition-colors"
+              className="text-xs text-gray-500 hover:text-gray-600 transition-colors"
             >
               Dismiss
             </button>

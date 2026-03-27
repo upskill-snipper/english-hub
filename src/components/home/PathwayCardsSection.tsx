@@ -1,0 +1,91 @@
+'use client'
+
+import Link from 'next/link'
+import { Card } from '@/components/ui/card'
+import { cn } from '@/lib/utils'
+import { useBoardStore } from '@/store/board-store'
+import {
+  BookMarked,
+  PenTool,
+  RotateCcw,
+} from 'lucide-react'
+
+export default function PathwayCardsSection() {
+  const selectedBoard = useBoardStore((s) => s.selectedBoard)
+
+  return (
+    <section className="py-24 sm:py-32">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-foreground">
+            Choose Your Path
+          </h2>
+          <p className="mt-4 text-muted-foreground max-w-xl mx-auto text-body-lg">
+            Structured learning pathways designed for every stage of your
+            English journey.
+          </p>
+        </div>
+
+        <div className={cn('grid sm:grid-cols-2 gap-5', selectedBoard === 'KS3' ? 'lg:grid-cols-3' : 'lg:grid-cols-4')}>
+          {[
+            {
+              icon: BookMarked,
+              color: 'text-blue-400 bg-blue-500/10',
+              title: 'KS3 Reading',
+              subtitle: 'Years 7\u20139',
+              desc: 'Build your foundation with core reading comprehension and analysis skills.',
+            },
+            {
+              icon: PenTool,
+              color: 'text-emerald-400 bg-emerald-500/10',
+              title: 'KS3 Writing',
+              subtitle: 'Years 7\u20139',
+              desc: 'Develop creative and transactional writing skills with structured lessons.',
+            },
+            ...(selectedBoard !== 'KS3'
+              ? [
+                  {
+                    icon: PenTool,
+                    color: 'text-primary bg-primary/10',
+                    title: 'GCSE Language',
+                    subtitle: selectedBoard ?? 'All Boards',
+                    desc: 'Master reading analysis and writing techniques for your Language papers.',
+                  },
+                ]
+              : []),
+            {
+              icon: RotateCcw,
+              color: 'text-amber-400 bg-amber-500/10',
+              title: 'Revision',
+              subtitle: 'Exam-Ready',
+              desc: selectedBoard === 'KS3'
+                ? 'Flashcards and revision tools to consolidate your Key Stage 3 knowledge.'
+                : 'Intensive revision courses to boost your grade in weeks, not months.',
+            },
+          ].map((card) => (
+            <Link key={card.title} href="/courses" className="block group">
+            <Card
+              className="p-6 border-border/40 hover:border-primary/25 hover:shadow-card-hover transition-all duration-300 hover:-translate-y-0.5"
+            >
+              <div
+                className={cn('w-11 h-11 rounded-xl flex items-center justify-center mb-4', card.color)}
+              >
+                <card.icon className="w-5 h-5" />
+              </div>
+              <h3 className="text-lg font-bold tracking-tight text-foreground group-hover:text-primary transition-colors duration-200">
+                {card.title}
+              </h3>
+              <p className="text-xs text-muted-foreground font-medium mt-1 mb-2">
+                {card.subtitle}
+              </p>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {card.desc}
+              </p>
+            </Card>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}

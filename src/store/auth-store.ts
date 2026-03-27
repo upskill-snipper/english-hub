@@ -49,6 +49,12 @@ export const useAuthAll = () =>
     useShallow((s) => ({ user: s.user, profile: s.profile, isLoading: s.isLoading }))
   )
 
+/** Select only the user's role */
+export const useAuthRole = () => useAuthStore((s) => s.profile?.role ?? 'student')
+
+/** Check if user is a teacher */
+export const useIsTeacher = () => useAuthStore((s) => s.profile?.role === 'teacher' || s.profile?.role === 'admin')
+
 /** Select only the action functions (stable references, never cause re-renders) */
 export const useAuthActions = () =>
   useAuthStore(

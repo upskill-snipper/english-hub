@@ -170,7 +170,7 @@ export default function DataRequestsPage() {
       <div className="mb-2">
         <Link
           href="/dashboard"
-          className="text-sm text-gray-400 hover:text-primary transition-colors"
+          className="text-sm text-gray-500 hover:text-primary transition-colors"
         >
           &larr; Back to Dashboard
         </Link>
@@ -371,7 +371,7 @@ export default function DataRequestsPage() {
         </p>
 
         {loading ? (
-          <div className="mt-4 text-center text-sm text-gray-400">
+          <div className="mt-4 text-center text-sm text-gray-500">
             Loading your requests...
           </div>
         ) : requests.length === 0 ? (
@@ -429,7 +429,7 @@ export default function DataRequestsPage() {
                           : "Overdue"}
                       </p>
                     )}
-                    <p className="text-xs text-gray-400">
+                    <p className="text-xs text-gray-500">
                       Deadline:{" "}
                       {new Date(req.deadline).toLocaleDateString("en-GB", {
                         day: "numeric",

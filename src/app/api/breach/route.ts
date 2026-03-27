@@ -6,6 +6,8 @@ import {
   type BreachNature,
   type RiskLevel,
 } from "@/lib/breach";
+import { rateLimit, getClientIp } from "@/lib/rate-limit";
+import { verifyAdmin } from "@/lib/admin-auth";
 
 // ─── Validation helpers ─────────────────────────────────────────────────
 
@@ -32,6 +34,10 @@ function validateBreachPayload(
     return "reportedBy is required.";
   }
 
+  if ((body.reportedBy as string).length > 200) {
+    return "reportedBy must be 200 characters or fewer.";
+  }
+
   if (
     !Array.isArray(body.nature) ||
     body.nature.length === 0 ||
@@ -44,6 +50,10 @@ function validateBreachPayload(
 
   if (!body.description || typeof body.description !== "string") {
     return "description is required.";
+  }
+
+  if ((body.description as string).length > 5000) {
+    return "description must be 5000 characters or fewer.";
   }
 
   if (
@@ -71,8 +81,16 @@ function validateBreachPayload(
     return "likelyConsequences is required.";
   }
 
+  if ((body.likelyConsequences as string).length > 5000) {
+    return "likelyConsequences must be 5000 characters or fewer.";
+  }
+
   if (!body.measuresTaken || typeof body.measuresTaken !== "string") {
     return "measuresTaken is required.";
+  }
+
+  if ((body.measuresTaken as string).length > 5000) {
+    return "measuresTaken must be 5000 characters or fewer.";
   }
 
   if (
@@ -88,6 +106,28 @@ function validateBreachPayload(
 // ─── POST /api/breach — create a new breach record ─────────────────────
 
 export async function POST(request: NextRequest) {
+  // ── Rate limit: 10 breach reports per hour per IP ────────────────────
+  const ip = getClientIp(request.headers);
+  const rl = await rateLimit(`breach:${ip}`, {
+    limit: 10,
+    windowSeconds: 3600,
+  });
+  if (!rl.success) {
+    return NextResponse.json(
+      { error: "Too many requests. Please try again later." },
+      { status: 429, headers: { "Retry-After": String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+    );
+  }
+
+  // Only admins can create breach records
+  const { user: admin, error: authError } = await verifyAdmin();
+  if (authError === "Unauthorized" || !admin) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+  if (authError === "Forbidden") {
+    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+  }
+
   try {
     const body = await request.json();
 
@@ -145,6 +185,15 @@ export async function POST(request: NextRequest) {
 // ─── GET /api/breach — list all breach records ──────────────────────────
 
 export async function GET() {
+  // Only admins can list breach records
+  const { user: adminUser, error: authErr } = await verifyAdmin();
+  if (authErr === "Unauthorized" || !adminUser) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+  if (authErr === "Forbidden") {
+    return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+  }
+
   const breaches = getAllBreaches();
 
   return NextResponse.json({

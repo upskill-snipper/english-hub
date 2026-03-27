@@ -4,6 +4,7 @@ import Link from "next/link";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/grade-targets/grade-9' },
   title: "Getting a Grade 9 | Grade Targets | The English Hub",
   description:
     "What makes a Grade 9 exceptional in GCSE English. Perceptive and critical analysis, originality, sophistication, example Grade 9 responses, and expert tips for achieving the highest grade.",

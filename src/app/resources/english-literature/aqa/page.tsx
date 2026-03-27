@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/aqa' },
   title: "AQA English Literature GCSE Revision",
   description:
     "Comprehensive AQA English Literature GCSE revision materials. Study guides for Macbeth, Romeo and Juliet, A Christmas Carol, An Inspector Calls, Jekyll and Hyde, Power and Conflict poetry, and more.",

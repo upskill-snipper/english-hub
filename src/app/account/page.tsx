@@ -256,7 +256,7 @@ export default function AccountPage() {
                 Year Group
               </label>
               <div className="relative">
-                <GraduationCap className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/50" />
+                <GraduationCap className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
                 <select
                   id="yearGroup"
                   value={yearGroup}
@@ -278,7 +278,7 @@ export default function AccountPage() {
                 Exam Board
               </label>
               <div className="relative">
-                <BookOpen className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/50" />
+                <BookOpen className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
                 <select
                   id="examBoard"
                   value={examBoard}

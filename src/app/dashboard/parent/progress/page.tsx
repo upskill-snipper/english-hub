@@ -152,7 +152,7 @@ function LineChart({
       <h3 className="text-sm font-semibold text-gray-900 mb-4">{label}</h3>
       <div className="relative h-48">
         {/* Y-axis labels */}
-        <div className="absolute left-0 top-0 bottom-6 flex flex-col justify-between text-xs text-gray-400 w-8">
+        <div className="absolute left-0 top-0 bottom-6 flex flex-col justify-between text-xs text-gray-500 w-8">
           <span>{formatValue ? formatValue(max) : max}</span>
           <span>{formatValue ? formatValue(Math.round((max + min) / 2)) : Math.round((max + min) / 2)}</span>
           <span>{formatValue ? formatValue(min) : min}</span>
@@ -176,7 +176,7 @@ function LineChart({
                     minHeight: "4px",
                   }}
                 />
-                <span className="text-[10px] text-gray-400 whitespace-nowrap">{d.week}</span>
+                <span className="text-[10px] text-gray-500 whitespace-nowrap">{d.week}</span>
               </div>
             );
           })}

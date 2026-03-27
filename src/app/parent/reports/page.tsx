@@ -332,7 +332,7 @@ export default function ParentReportsPage() {
       {reports.length === 0 && (
         <Card>
           <CardContent className="flex flex-col items-center justify-center py-12 text-center">
-            <FileText className="h-10 w-10 text-muted-foreground/40" />
+            <FileText className="h-10 w-10 text-muted-foreground/70" />
             <p className="mt-3 text-sm font-medium text-muted-foreground">No reports yet</p>
             <p className="mt-1 text-xs text-muted-foreground/70">
               Reports from teachers will appear here when available

@@ -34,6 +34,14 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'year and month are required' }, { status: 400 })
     }
 
+    if (typeof year !== 'number' || !Number.isInteger(year) || year < 2020 || year > 2100) {
+      return NextResponse.json({ error: 'year must be an integer between 2020 and 2100' }, { status: 400 })
+    }
+
+    if (typeof month !== 'number' || !Number.isInteger(month) || month < 1 || month > 12) {
+      return NextResponse.json({ error: 'month must be an integer between 1 and 12' }, { status: 400 })
+    }
+
     const periodStart = `${year}-${String(month).padStart(2, '0')}-01`
     const nextMonth = month === 12 ? 1 : month + 1
     const nextYear = month === 12 ? year + 1 : year
@@ -114,8 +122,16 @@ export async function POST(request: NextRequest) {
   if (body.action === 'update_status') {
     const { payoutId, status, disclosure_check_passed, notes } = body
 
-    if (!payoutId || !status) {
-      return NextResponse.json({ error: 'payoutId and status are required' }, { status: 400 })
+    if (!payoutId || typeof payoutId !== 'string' || payoutId.length > 100) {
+      return NextResponse.json({ error: 'Valid payoutId is required' }, { status: 400 })
+    }
+
+    if (!status || typeof status !== 'string') {
+      return NextResponse.json({ error: 'status is required' }, { status: 400 })
+    }
+
+    if (notes !== undefined && typeof notes === 'string' && notes.length > 2000) {
+      return NextResponse.json({ error: 'notes must be 2000 characters or fewer' }, { status: 400 })
     }
 
     const validTransitions: Record<string, string[]> = {

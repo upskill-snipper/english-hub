@@ -5,6 +5,7 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/exam-technique/time-management' },
   title: "Time Management in English Exams",
   description:
     "Paper-by-paper timing breakdowns for AQA, Edexcel, CAIE, and OCR English exams. Learn how to divide time per question, plan your time allocation, and what to do if you run out of time.",

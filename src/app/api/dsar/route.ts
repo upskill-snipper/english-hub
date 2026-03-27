@@ -8,6 +8,7 @@ import {
   type DSARType,
 } from "@/lib/dsar";
 import { sendEmail } from "@/lib/email";
+import { rateLimit, getClientIp } from "@/lib/rate-limit";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 const prisma = new PrismaClient();
@@ -23,6 +24,19 @@ const createDSARSchema = z.object({
 
 export async function POST(request: NextRequest) {
   try {
+    // ── Rate limit: 10 DSAR submissions per hour per IP ────────────────
+    const ip = getClientIp(request.headers);
+    const rl = await rateLimit(`dsar-create:${ip}`, {
+      limit: 10,
+      windowSeconds: 3600,
+    });
+    if (!rl.success) {
+      return NextResponse.json(
+        { error: "Too many requests. Please try again later." },
+        { status: 429, headers: { "Retry-After": String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+      );
+    }
+
     const supabase = createServerSupabaseClient();
     const { data: { user }, error: authError } = await supabase.auth.getUser();
     if (authError || !user) {

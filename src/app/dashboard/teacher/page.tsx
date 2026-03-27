@@ -237,7 +237,7 @@ export default function TeacherDashboardPage() {
                     <p className="mt-0.5 text-xs text-gray-500 truncate">
                       {sub.essayTitle} &middot; {sub.subject}
                     </p>
-                    <p className="mt-0.5 text-xs text-gray-400">
+                    <p className="mt-0.5 text-xs text-gray-500">
                       {new Date(sub.submittedAt).toLocaleDateString("en-GB", {
                         day: "numeric",
                         month: "short",

@@ -2,121 +2,73 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
 import { useBoardStore } from '@/store/board-store'
-import { PRICING, PRICING_DISPLAY } from '@/constants/pricing'
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { cn } from '@/lib/utils'
 import {
   BookOpen,
-  GraduationCap,
-  Award,
-  Smartphone,
-  Shield,
-  Star,
-  ChevronDown,
-  CheckCircle,
-  FileQuestion,
-  FileText,
-  Clock,
   Sparkles,
-  PenTool,
-  BookMarked,
-  RotateCcw,
-  Quote,
-  Lightbulb,
+  FileText,
   Layers,
-  Target,
-  Zap,
-  Eye,
-  ListChecks,
-  Timer,
-  Users,
-  BarChart3,
-  ClipboardCheck,
-  TrendingUp,
-  Printer,
-  FolderOpen,
-  Brain,
-  Layout,
-  MessageSquare,
+  Award,
+  Lightbulb,
 } from 'lucide-react'
+import SectionSkeleton from '@/components/home/SectionSkeleton'
 
-/* ───────────────────── FAQ Accordion ───────────────────── */
+/* ───────────────────── Dynamic imports for below-the-fold sections ───────────────────── */
 
-const faqs = [
-  {
-    q: 'Can I access on my phone?',
-    a: 'Absolutely. The English Hub is fully responsive and works perfectly on smartphones, tablets, and desktops. Study wherever suits you best.',
-  },
-  {
-    q: 'What exam boards do you cover?',
-    a: 'We cover AQA GCSE, Edexcel GCSE, Edexcel International GCSE (IGCSE), OCR, and WJEC/Eduqas. Each course is mapped to the relevant specification so you only study what you need.',
-  },
-  {
-    q: 'Can I cancel my subscription?',
-    a: "Yes — cancel anytime from your account settings. There are no contracts or hidden fees. You'll keep access until the end of your billing period.",
-  },
-  {
-    q: 'Do I get a certificate?',
-    a: 'Yes. Every completed course awards a verifiable digital certificate you can share with schools, tutors, or on your profile.',
-  },
-  {
-    q: 'Is there a free trial?',
-    a: 'Yes! Your first month is completely free. You get full access to all courses, practice questions, flashcards, and revision tools for 30 days. Cancel anytime during the trial and you won\u2019t be charged a penny.',
-  },
-  {
-    q: 'How is this different from YouTube?',
-    a: 'YouTube offers scattered videos with no structure or feedback. The English Hub provides sequenced lessons written by examiners, exam-style practice with model answers, progress tracking, and certificates.',
-  },
-  {
-    q: 'Is there a version for teachers?',
-    a: 'Yes! Teachers get access to a lesson builder with 300+ templates, student analytics dashboards, AI essay marking for whole classes, and class management tools. Visit our For Teachers page to learn more.',
-  },
-]
+const AudienceSection = dynamic(() => import('@/components/home/AudienceSection'), {
+  loading: () => <SectionSkeleton />,
+})
 
-function FAQItem({ q, a }: { q: string; a: string }) {
-  const [open, setOpen] = useState(false)
-  const id = q.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
-  const triggerId = `faq-trigger-${id}`
-  const panelId = `faq-panel-${id}`
-  return (
-    <Card className="overflow-hidden border-border/40">
-      <button
-        id={triggerId}
-        onClick={() => setOpen(!open)}
-        aria-expanded={open}
-        aria-controls={panelId}
-        className="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-accent/30 transition-colors duration-200"
-      >
-        <span className="font-semibold text-foreground pr-4">{q}</span>
-        <ChevronDown
-          className={cn(
-            'w-5 h-5 text-muted-foreground shrink-0 transition-transform duration-300',
-            open ? 'rotate-180' : ''
-          )}
-        />
-      </button>
-      <div
-        id={panelId}
-        role="region"
-        aria-labelledby={triggerId}
-        className={cn(
-          'grid transition-all duration-300',
-          open ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
-        )}
-      >
-        <div className="overflow-hidden">
-          <p className="px-6 pb-5 text-muted-foreground leading-relaxed">{a}</p>
-        </div>
-      </div>
-    </Card>
-  )
-}
+const WhatsInsideSection = dynamic(() => import('@/components/home/WhatsInsideSection'), {
+  loading: () => <SectionSkeleton />,
+})
 
-/* ───────────────────── Quick Tips Banner ───────────────────── */
+const MockExamsSection = dynamic(() => import('@/components/home/MockExamsSection'), {
+  loading: () => <SectionSkeleton />,
+})
+
+const HowItWorksSection = dynamic(() => import('@/components/home/HowItWorksSection'), {
+  loading: () => <SectionSkeleton />,
+})
+
+const PathwayCardsSection = dynamic(() => import('@/components/home/PathwayCardsSection'), {
+  loading: () => <SectionSkeleton />,
+})
+
+const FeatureHighlightsSection = dynamic(() => import('@/components/home/FeatureHighlightsSection'), {
+  loading: () => <SectionSkeleton />,
+})
+
+const CourseGridSection = dynamic(() => import('@/components/home/CourseGridSection'), {
+  loading: () => <SectionSkeleton />,
+})
+
+const ExamGuideSection = dynamic(() => import('@/components/home/ExamGuideSection'), {
+  loading: () => <SectionSkeleton />,
+})
+
+const PricingSection = dynamic(() => import('@/components/home/PricingSection'), {
+  loading: () => <SectionSkeleton />,
+})
+
+const TestimonialsSection = dynamic(() => import('@/components/home/TestimonialsSection'), {
+  loading: () => <SectionSkeleton />,
+})
+
+const FAQSection = dynamic(() => import('@/components/home/FAQSection'), {
+  loading: () => <SectionSkeleton />,
+})
+
+const CTABannerSection = dynamic(() => import('@/components/home/CTABannerSection'), {
+  loading: () => <SectionSkeleton />,
+})
+
+/* ───────────────────── Quick Tips Banner (above the fold) ───────────────────── */
 
 const examTips: Record<string, string[]> = {
   AQA: [
@@ -190,89 +142,14 @@ function QuickTipsBanner({ selectedBoard }: { selectedBoard: string | null }) {
   )
 }
 
-/* ───────────────────── Student / Teacher Benefits Data ───────────────────── */
-
-const studentBenefits = [
-  {
-    icon: Sparkles,
-    color: 'text-cyan-400 bg-cyan-500/10',
-    title: 'AI-Powered Essay Feedback',
-    desc: 'Submit your essay and get instant, detailed feedback with grade estimates, strengths, and paragraph-by-paragraph annotation.',
-  },
-  {
-    icon: Target,
-    color: 'text-primary bg-primary/10',
-    title: 'Board-Specific Revision Materials',
-    desc: 'Tailored content for AQA, Edexcel, OCR, and WJEC — study only what your specification demands.',
-  },
-  {
-    icon: FileQuestion,
-    color: 'text-blue-400 bg-blue-500/10',
-    title: 'Practice Questions with Model Answers',
-    desc: 'Exam-style questions modelled on real papers, complete with mark schemes and model answers at every grade band.',
-  },
-  {
-    icon: Timer,
-    color: 'text-orange-400 bg-orange-500/10',
-    title: 'Mock Exams with Timing',
-    desc: '120+ full-length timed mock exams in real exam format. Practise under pressure and build exam stamina.',
-  },
-  {
-    icon: BarChart3,
-    color: 'text-emerald-400 bg-emerald-500/10',
-    title: 'Progress Tracking',
-    desc: 'Track your progress through every course with visual dashboards, completion badges, and revision streaks.',
-  },
-]
-
-const teacherBenefits = [
-  {
-    icon: Layout,
-    color: 'text-primary bg-primary/10',
-    title: 'Lesson Builder with 300+ Templates',
-    desc: 'Create polished lessons in minutes with ready-made templates covering every GCSE English topic.',
-  },
-  {
-    icon: BarChart3,
-    color: 'text-cyan-400 bg-cyan-500/10',
-    title: 'Student Analytics Dashboard',
-    desc: 'See how every student is progressing at a glance — completion rates, grades, strengths, and gaps.',
-  },
-  {
-    icon: ClipboardCheck,
-    color: 'text-emerald-400 bg-emerald-500/10',
-    title: 'AI Essay Marking for Whole Classes',
-    desc: 'Mark an entire class set of essays in seconds. AI-powered feedback aligned to GCSE mark schemes.',
-  },
-  {
-    icon: TrendingUp,
-    color: 'text-amber-400 bg-amber-500/10',
-    title: 'Predicted Grades & Targeted Recommendations',
-    desc: 'Data-driven grade predictions and personalised recommendations to help every student reach their target.',
-  },
-  {
-    icon: Users,
-    color: 'text-blue-400 bg-blue-500/10',
-    title: 'Class Management & Homework Setting',
-    desc: 'Create classes, set assignments, track submissions, and manage homework — all in one place.',
-  },
-  {
-    icon: Printer,
-    color: 'text-orange-400 bg-orange-500/10',
-    title: 'Printable Worksheets & Resources',
-    desc: 'Download and print worksheets, model answers, and revision materials for use in lessons.',
-  },
-]
-
 /* ───────────────────── Main Page ───────────────────── */
 
 export default function Home() {
-  const [audienceTab, setAudienceTab] = useState<'students' | 'teachers'>('students')
   const selectedBoard = useBoardStore((s) => s.selectedBoard)
 
   return (
     <main className="min-h-screen bg-background">
-      {/* ━━━ HERO ━━━ */}
+      {/* ━━━ HERO (static — critical for LCP) ━━━ */}
       <section className="relative overflow-hidden pt-24 pb-28 sm:pt-32 sm:pb-36">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-primary/[0.06] rounded-full blur-[160px] pointer-events-none" />
         <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-blue-500/[0.03] rounded-full blur-[120px] pointer-events-none" />
@@ -312,7 +189,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ━━━ SOCIAL PROOF BAR ━━━ */}
+      {/* ━━━ SOCIAL PROOF BAR (static — above the fold) ━━━ */}
       <section className="border-y border-border/40 bg-card/30">
         <div className="max-w-5xl mx-auto px-6 py-10">
           <p className="text-center text-muted-foreground text-sm font-medium mb-7">
@@ -342,871 +219,58 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ━━━ QUICK TIPS BANNER ━━━ */}
+      {/* ━━━ QUICK TIPS BANNER (static — near fold) ━━━ */}
       <QuickTipsBanner selectedBoard={selectedBoard} />
 
-      {/* ━━━ FOR STUDENTS / FOR TEACHERS TOGGLE ━━━ */}
-      <section className="py-24 sm:py-32">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-foreground">
-              Built for Everyone
-            </h2>
-            <p className="mt-4 text-muted-foreground max-w-xl mx-auto text-body-lg">
-              Whether you&rsquo;re revising for exams or running a classroom, we&rsquo;ve got you covered.
-            </p>
-          </div>
+      {/* ━━━ Below-the-fold sections (dynamically imported) ━━━ */}
 
-          {/* Toggle buttons */}
-          <div className="flex items-center justify-center gap-2 mb-14">
-            <button
-              onClick={() => setAudienceTab('students')}
-              className={cn(
-                'px-6 py-3 rounded-xl text-sm font-bold transition-all duration-300',
-                audienceTab === 'students'
-                  ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/25'
-                  : 'bg-card border border-border/40 text-muted-foreground hover:text-foreground hover:border-border/70'
-              )}
-            >
-              <GraduationCap className="w-4 h-4 inline-block mr-2 -mt-0.5" />
-              For Students
-            </button>
-            <button
-              onClick={() => setAudienceTab('teachers')}
-              className={cn(
-                'px-6 py-3 rounded-xl text-sm font-bold transition-all duration-300',
-                audienceTab === 'teachers'
-                  ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/25'
-                  : 'bg-card border border-border/40 text-muted-foreground hover:text-foreground hover:border-border/70'
-              )}
-            >
-              <Users className="w-4 h-4 inline-block mr-2 -mt-0.5" />
-              For Teachers
-            </button>
-          </div>
-
-          {/* Benefit cards */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {(audienceTab === 'students' ? studentBenefits : teacherBenefits).map((benefit) => (
-              <Card key={benefit.title} className="p-6 flex flex-col border-border/40 hover:border-border/70 transition-colors duration-300">
-                <div className={cn('w-11 h-11 rounded-xl flex items-center justify-center mb-5', benefit.color)}>
-                  <benefit.icon className="w-5 h-5" />
-                </div>
-                <h3 className="text-lg font-bold tracking-tight text-foreground mb-2">
-                  {benefit.title}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {benefit.desc}
-                </p>
-              </Card>
-            ))}
-          </div>
-
-          {/* CTA */}
-          <div className="text-center mt-12">
-            {audienceTab === 'students' ? (
-              <Button variant="default" size="lg" className="text-base px-10 h-12 shadow-lg shadow-primary/20" render={<Link href="/auth/register" />}>
-                Start Free Trial
-              </Button>
-            ) : (
-              <Button variant="default" size="lg" className="text-base px-10 h-12 shadow-lg shadow-primary/20" render={<Link href="/for-teachers" />}>
-                Start Teaching
-              </Button>
-            )}
-          </div>
-        </div>
-      </section>
+      <AudienceSection />
 
       <Separator className="opacity-40" />
 
-      {/* ━━━ WHAT'S INSIDE ━━━ */}
-      <section className="py-24 sm:py-32 bg-card/20">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-foreground">
-              What&rsquo;s Inside
-            </h2>
-            <p className="mt-4 text-muted-foreground max-w-xl mx-auto text-body-lg">
-              A comprehensive look at the tools and content waiting for you.
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {[
-              {
-                icon: BookOpen,
-                color: 'text-primary bg-primary/10',
-                title: 'Structured Courses',
-                desc: 'From KS3 foundations to GCSE mastery — 13 expert-written courses covering Reading, Writing, Grammar, Language, and Literature.',
-                preview: 'Sample topics: Inference & Deduction, Narrative Writing, Poetry Analysis, Transactional Writing, Shakespeare...',
-              },
-              {
-                icon: FileQuestion,
-                color: 'text-blue-400 bg-blue-500/10',
-                title: 'Exam-Style Practice Questions',
-                desc: '40+ questions modelled on real exam papers, complete with mark schemes and model answers.',
-                preview: 'Question types: Extract analysis, comparison, creative writing, essay response, unseen poetry...',
-              },
-              {
-                icon: Layers,
-                color: 'text-purple-400 bg-purple-500/10',
-                title: '295 Flashcards',
-                desc: 'Revise key quotes, terminology, and techniques with spaced-repetition flashcards.',
-                preview: 'Topics: Literary devices, key quotations, grammar rules, essay vocabulary, exam command words...',
-              },
-              {
-                icon: GraduationCap,
-                color: 'text-amber-400 bg-amber-500/10',
-                title: 'Comprehensive Exam Guides',
-                desc: 'Detailed breakdowns for AQA, Edexcel, OCR & WJEC — paper structure, mark schemes, and examiner tips.',
-                preview: 'Covers: Paper timings, assessment objectives, grade boundaries, common pitfalls to avoid...',
-              },
-              {
-                icon: Target,
-                color: 'text-emerald-400 bg-emerald-500/10',
-                title: '52 Terminology Entries',
-                desc: 'A searchable glossary of every literary and linguistic term you need for GCSE English.',
-                preview: 'Includes: Metaphor, Sibilance, Pathetic Fallacy, Semantic Field, Volta, Enjambment...',
-              },
-              {
-                icon: Award,
-                color: 'text-red-400 bg-red-500/10',
-                title: 'Certificates & Progress',
-                desc: 'Track your progress through every course and earn verifiable digital certificates on completion.',
-                preview: 'Features: Progress bars, completion badges, shareable certificates, revision streaks...',
-              },
-              {
-                icon: Timer,
-                color: 'text-orange-400 bg-orange-500/10',
-                title: '120+ Mock Exam Papers',
-                desc: 'Full-length timed mock exams for AQA, Edexcel, OCR & WJEC. Real exam format with model answers at every grade band.',
-                preview: 'Includes: Timed exam mode, section navigation, Grade 4-5 / 6-7 / 8-9 model answers, mark schemes...',
-              },
-              {
-                icon: Sparkles,
-                color: 'text-cyan-400 bg-cyan-500/10',
-                title: 'AI Essay Feedback',
-                desc: 'Submit your essay and get instant, detailed feedback from our AI examiner. Grade band estimates, strengths, improvements, and paragraph-by-paragraph annotation.',
-                preview: 'Powered by AI trained on GCSE mark schemes. Supports AQA, Edexcel, OCR & WJEC papers...',
-              },
-              {
-                icon: Brain,
-                color: 'text-pink-400 bg-pink-500/10',
-                title: 'Board-Specific Content',
-                desc: 'Every course, question, and resource is mapped to your exam board specification. No wasted time on irrelevant content.',
-                preview: 'Supported boards: AQA, Edexcel, Edexcel IGCSE, OCR, WJEC/Eduqas...',
-              },
-              {
-                icon: Layout,
-                color: 'text-indigo-400 bg-indigo-500/10',
-                title: 'Teacher Lesson Builder',
-                desc: 'Teachers get access to 300+ lesson templates, class management tools, and AI marking for whole classes.',
-                preview: 'Features: Drag-and-drop builder, homework setting, printable resources, analytics dashboard...',
-              },
-              {
-                icon: MessageSquare,
-                color: 'text-teal-400 bg-teal-500/10',
-                title: 'Model Answers at Every Grade',
-                desc: 'See what a Grade 4-5, 6-7, and 8-9 answer looks like for every question. Learn what examiners reward.',
-                preview: 'Annotated model answers with examiner commentary showing exactly where marks are gained...',
-              },
-              {
-                icon: FolderOpen,
-                color: 'text-violet-400 bg-violet-500/10',
-                title: 'Revision Toolkit',
-                desc: 'Flashcards, terminology glossaries, quote banks, and exam command word guides — all in one revision hub.',
-                preview: 'Includes: Spaced repetition, bookmarking, search, and filter by topic or exam board...',
-              },
-            ].map((item) => (
-              <Card key={item.title} className="p-6 flex flex-col border-border/40 hover:border-border/70 transition-colors duration-300">
-                <div
-                  className={cn('w-11 h-11 rounded-xl flex items-center justify-center mb-5', item.color)}
-                >
-                  <item.icon className="w-5 h-5" />
-                </div>
-                <h3 className="text-lg font-bold tracking-tight text-foreground mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-                  {item.desc}
-                </p>
-                <p className="text-xs text-primary/60 italic leading-relaxed mt-auto">
-                  {item.preview}
-                </p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      <WhatsInsideSection />
 
       <Separator className="opacity-40" />
 
-      {/* ━━━ MOCK EXAMS & AI FEEDBACK ━━━ */}
-      <section className="py-24 sm:py-32">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <Badge variant="outline" className="border-orange-500/20 bg-orange-500/[0.06] text-orange-400 text-sm font-semibold mb-6 gap-2 px-4 py-1.5">
-              <FileText className="w-4 h-4" />
-              New Feature
-            </Badge>
-            <h2 className="text-foreground">
-              Full Mock Exams & AI Feedback
-            </h2>
-            <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-body-lg">
-              The most comprehensive exam preparation tools available. Practice under real exam conditions and get instant AI-powered feedback on your writing.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {/* Mock Exams Card */}
-            <Card className="p-8 border-border/40 hover:border-orange-500/30 transition-colors">
-              <div className="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center mb-6">
-                <FileText className="w-6 h-6 text-orange-400" />
-              </div>
-              <h3 className="text-xl font-bold tracking-tight text-foreground mb-3">120+ Mock Exam Papers</h3>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Full-length timed exams matching the real GCSE format. Every paper includes detailed model answers at three grade bands and official mark schemes.
-              </p>
-              <div className="grid grid-cols-2 gap-3 mb-6">
-                {[
-                  { label: 'AQA Papers', value: '30+' },
-                  { label: 'Edexcel Papers', value: '30+' },
-                  { label: 'OCR Papers', value: '30+' },
-                  { label: 'WJEC Papers', value: '30+' },
-                ].map((s) => (
-                  <div key={s.label} className="text-center p-3 rounded-lg bg-card border border-border/40">
-                    <p className="text-lg font-bold text-foreground">{s.value}</p>
-                    <p className="text-xs text-muted-foreground">{s.label}</p>
-                  </div>
-                ))}
-              </div>
-              <Button variant="secondary" className="w-full" render={<Link href="/mock-exams" />}>
-                Try a Free Mock Exam →
-              </Button>
-            </Card>
-
-            {/* AI Essay Feedback Card */}
-            <Card className="p-8 border-border/40 hover:border-cyan-500/30 transition-colors">
-              <div className="w-12 h-12 rounded-2xl bg-cyan-500/10 flex items-center justify-center mb-6">
-                <Sparkles className="w-6 h-6 text-cyan-400" />
-              </div>
-              <h3 className="text-xl font-bold tracking-tight text-foreground mb-3">AI Essay Feedback</h3>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Submit your essay and get instant, expert-level feedback. Our AI examiner analyses your work against real GCSE mark schemes.
-              </p>
-              <div className="space-y-3 mb-6">
-                {[
-                  'Estimated grade band (4-5, 6-7, or 8-9)',
-                  'Assessment objective scores with comments',
-                  'Specific strengths with direct quotes',
-                  'Actionable improvement suggestions',
-                  'Paragraph-by-paragraph annotation',
-                ].map((f) => (
-                  <div key={f} className="flex items-start gap-2.5">
-                    <CheckCircle className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                    <span className="text-sm text-muted-foreground">{f}</span>
-                  </div>
-                ))}
-              </div>
-              <Button variant="secondary" className="w-full" render={<Link href="/auth/register" />}>
-                Start Free Trial for AI Feedback →
-              </Button>
-            </Card>
-          </div>
-        </div>
-      </section>
+      <MockExamsSection />
 
       <Separator className="opacity-40" />
 
-      {/* ━━━ HOW IT WORKS ━━━ */}
-      <section className="py-24 sm:py-32 bg-card/20">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-foreground">
-              How It Works
-            </h2>
-            <p className="mt-4 text-muted-foreground max-w-xl mx-auto text-body-lg">
-              Six simple steps from sign-up to exam success.
-            </p>
-          </div>
-
-          <div className="space-y-4">
-            {[
-              {
-                step: 1,
-                icon: ListChecks,
-                title: 'Choose your exam board',
-                desc: 'Select AQA, Edexcel, OCR, or WJEC and we tailor everything to your specification.',
-              },
-              {
-                step: 2,
-                icon: BookOpen,
-                title: 'Follow structured courses',
-                desc: 'Work through expert-written lessons in a logical sequence — no guessing what to study next.',
-              },
-              {
-                step: 3,
-                icon: Eye,
-                title: 'Practice with real exam questions',
-                desc: 'Tackle exam-style questions with detailed mark schemes and model answers.',
-              },
-              {
-                step: 4,
-                icon: Sparkles,
-                title: 'Get AI feedback on your essays',
-                desc: 'Submit your writing and receive instant, detailed feedback with grade estimates from our AI examiner.',
-              },
-              {
-                step: 5,
-                icon: Zap,
-                title: 'Revise with flashcards & guides',
-                desc: 'Lock in your knowledge with 295 flashcards, terminology glossaries, and board-specific exam guides.',
-              },
-              {
-                step: 6,
-                icon: Award,
-                title: 'Ace your exams',
-                desc: 'Walk into your exam with confidence, backed by structured preparation and proven techniques.',
-              },
-            ].map((item) => (
-              <Card key={item.step} className="flex items-start gap-5 p-6 border-border/40">
-                <div className="flex-shrink-0 w-11 h-11 rounded-full bg-primary/10 flex items-center justify-center">
-                  <span className="text-base font-bold text-primary">{item.step}</span>
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold tracking-tight text-foreground mb-1">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {item.desc}
-                  </p>
-                </div>
-              </Card>
-            ))}
-          </div>
-
-          <div className="text-center mt-14">
-            <Button variant="default" size="lg" className="text-base px-10 h-12 shadow-lg shadow-primary/20" render={<Link href="/auth/register" />}>
-              Start Free Trial
-            </Button>
-          </div>
-        </div>
-      </section>
+      <HowItWorksSection />
 
       <Separator className="opacity-40" />
 
-      {/* ━━━ PATHWAY CARDS ━━━ */}
-      <section className="py-24 sm:py-32">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-foreground">
-              Choose Your Path
-            </h2>
-            <p className="mt-4 text-muted-foreground max-w-xl mx-auto text-body-lg">
-              Structured learning pathways designed for every stage of your
-              English journey.
-            </p>
-          </div>
-
-          <div className={cn('grid sm:grid-cols-2 gap-5', selectedBoard === 'KS3' ? 'lg:grid-cols-3' : 'lg:grid-cols-4')}>
-            {[
-              {
-                icon: BookMarked,
-                color: 'text-blue-400 bg-blue-500/10',
-                title: 'KS3 Reading',
-                subtitle: 'Years 7\u20139',
-                desc: 'Build your foundation with core reading comprehension and analysis skills.',
-              },
-              {
-                icon: PenTool,
-                color: 'text-emerald-400 bg-emerald-500/10',
-                title: 'KS3 Writing',
-                subtitle: 'Years 7\u20139',
-                desc: 'Develop creative and transactional writing skills with structured lessons.',
-              },
-              ...(selectedBoard !== 'KS3'
-                ? [
-                    {
-                      icon: PenTool,
-                      color: 'text-primary bg-primary/10',
-                      title: 'GCSE Language',
-                      subtitle: selectedBoard ?? 'All Boards',
-                      desc: 'Master reading analysis and writing techniques for your Language papers.',
-                    },
-                  ]
-                : []),
-              {
-                icon: RotateCcw,
-                color: 'text-amber-400 bg-amber-500/10',
-                title: 'Revision',
-                subtitle: 'Exam-Ready',
-                desc: selectedBoard === 'KS3'
-                  ? 'Flashcards and revision tools to consolidate your Key Stage 3 knowledge.'
-                  : 'Intensive revision courses to boost your grade in weeks, not months.',
-              },
-            ].map((card) => (
-              <Link key={card.title} href="/courses" className="block group">
-              <Card
-                className="p-6 border-border/40 hover:border-primary/25 hover:shadow-card-hover transition-all duration-300 hover:-translate-y-0.5"
-              >
-                <div
-                  className={cn('w-11 h-11 rounded-xl flex items-center justify-center mb-4', card.color)}
-                >
-                  <card.icon className="w-5 h-5" />
-                </div>
-                <h3 className="text-lg font-bold tracking-tight text-foreground group-hover:text-primary transition-colors duration-200">
-                  {card.title}
-                </h3>
-                <p className="text-xs text-muted-foreground font-medium mt-1 mb-2">
-                  {card.subtitle}
-                </p>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {card.desc}
-                </p>
-              </Card>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+      <PathwayCardsSection />
 
       <Separator className="opacity-40" />
 
-      {/* ━━━ FEATURE HIGHLIGHTS ━━━ */}
-      <section className="py-24 sm:py-32 bg-card/20">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-foreground">
-              Why Students Love Us
-            </h2>
-            <p className="mt-4 text-muted-foreground max-w-xl mx-auto text-body-lg">
-              Everything you need to go from uncertain to unstoppable.
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
-            {[
-              {
-                icon: GraduationCap,
-                title: 'Expert-Written Content',
-                desc: 'Written by experienced English teachers and examiners who know exactly what the mark scheme demands.',
-              },
-              {
-                icon: Award,
-                title: 'Certificate on Completion',
-                desc: 'Earn a verifiable digital certificate for every course you complete. Share it with pride.',
-              },
-              {
-                icon: Smartphone,
-                title: 'Works on Any Device',
-                desc: 'Desktop, tablet, or mobile — your courses sync seamlessly so you can study anywhere.',
-              },
-              {
-                icon: Shield,
-                title: 'Cancel Anytime',
-                desc: 'No lock-in contracts. Your first month is free, and you can cancel anytime — no questions asked.',
-              },
-            ].map((f) => (
-              <div key={f.title} className="text-center sm:text-left">
-                <div className="inline-flex w-12 h-12 rounded-2xl bg-primary/10 items-center justify-center mb-5">
-                  <f.icon className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-lg font-bold tracking-tight text-foreground mb-2">
-                  {f.title}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {f.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FeatureHighlightsSection />
 
       <Separator className="opacity-40" />
 
-      {/* ━━━ COURSE GRID ━━━ */}
-      <section className="py-24 sm:py-32">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-foreground">
-              Featured Courses
-            </h2>
-            <p className="mt-4 text-muted-foreground max-w-xl mx-auto text-body-lg">
-              All courses included with your subscription. First {PRICING.TRIAL_DAYS}-day month free!
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-            {([
-              {
-                title: 'KS3 Reading',
-                level: 'KS3',
-                levelColor: 'bg-blue-500/20 text-blue-400',
-                duration: '6 weeks',
-                desc: 'Core reading skills — inference, analysis, and comparison for Years 7-9.',
-                boards: ['all'],
-              },
-              {
-                title: 'KS3 Writing',
-                level: 'KS3',
-                levelColor: 'bg-blue-500/20 text-blue-400',
-                duration: '6 weeks',
-                desc: 'Creative and transactional writing foundations for Years 7-9.',
-                boards: ['all'],
-              },
-              {
-                title: 'KS3 Grammar',
-                level: 'KS3',
-                levelColor: 'bg-blue-500/20 text-blue-400',
-                duration: '6 weeks',
-                desc: 'Master sentence structure, punctuation, and grammar essentials.',
-                boards: ['all'],
-              },
-              {
-                title: 'AQA Language Paper 1',
-                level: 'GCSE',
-                levelColor: 'bg-primary/20 text-primary',
-                duration: '8 weeks',
-                desc: 'Explorations in creative reading and writing — fiction extracts and descriptive/narrative tasks.',
-                boards: ['AQA'],
-              },
-              {
-                title: 'AQA Language Paper 2',
-                level: 'GCSE',
-                levelColor: 'bg-primary/20 text-primary',
-                duration: '8 weeks',
-                desc: 'Writers\u2019 viewpoints and perspectives — non-fiction reading and transactional writing for AQA.',
-                boards: ['AQA'],
-              },
-              {
-                title: 'AQA Literature Poetry',
-                level: 'GCSE',
-                levelColor: 'bg-purple-500/20 text-purple-400',
-                duration: '7 weeks',
-                desc: 'Power & Conflict, Love & Relationships, and unseen poetry mastery for AQA.',
-                boards: ['AQA'],
-              },
-              {
-                title: 'Edexcel Language Paper 1',
-                level: 'GCSE',
-                levelColor: 'bg-primary/20 text-primary',
-                duration: '8 weeks',
-                desc: 'Master 19th-century non-fiction analysis and transactional writing for Edexcel 1EN2.',
-                boards: ['Edexcel'],
-              },
-              {
-                title: 'Edexcel Literature Paper 1',
-                level: 'GCSE',
-                levelColor: 'bg-purple-500/20 text-purple-400',
-                duration: '8 weeks',
-                desc: 'Shakespeare and Post-1914 Literature with extract-based response techniques.',
-                boards: ['Edexcel'],
-              },
-              {
-                title: 'IGCSE Language A',
-                level: 'IGCSE',
-                levelColor: 'bg-emerald-500/20 text-emerald-400',
-                duration: '10 weeks',
-                desc: 'Edexcel IGCSE English Language Spec A (4EA1) — non-fiction and transactional writing.',
-                boards: ['Edexcel'],
-              },
-              {
-                title: 'OCR Language Practice',
-                level: 'GCSE',
-                levelColor: 'bg-orange-500/20 text-orange-400',
-                duration: '8 weeks',
-                desc: 'Component 01 & 02 practice — non-fiction synthesis, evaluation, fiction analysis, and creative writing for OCR.',
-                boards: ['OCR'],
-              },
-              {
-                title: 'WJEC Eduqas Language',
-                level: 'GCSE',
-                levelColor: 'bg-red-500/20 text-red-400',
-                duration: '8 weeks',
-                desc: 'Component 1 & 2 practice — 20th-century fiction, non-fiction reading, and writing tasks for WJEC Eduqas.',
-                boards: ['WJEC'],
-              },
-              {
-                title: 'GCSE Revision Blitz',
-                level: 'Revision',
-                levelColor: 'bg-amber-500/20 text-amber-400',
-                duration: '4 weeks',
-                desc: 'Intensive exam prep: timed practice, model answers, and grade boosters.',
-                boards: ['AQA', 'Edexcel', 'OCR', 'WJEC'],
-              },
-            ] as const).filter((course) => (course.boards as readonly string[]).includes('all') || (selectedBoard && (course.boards as readonly string[]).includes(selectedBoard))).map((course) => (
-              <Link key={course.title} href="/courses" className="block group">
-              <Card
-                className="overflow-hidden border-border/40 hover:border-primary/25 hover:shadow-card-hover transition-all duration-300 hover:-translate-y-0.5 flex flex-col"
-              >
-                {/* Card header with gradient */}
-                <div className="h-28 bg-gradient-to-br from-primary/[0.06] via-card to-background flex items-center justify-center">
-                  <BookOpen className="w-9 h-9 text-primary/30 group-hover:text-primary/50 transition-colors duration-300" />
-                </div>
-
-                <CardContent className="p-5 flex flex-col flex-1">
-                  <div className="flex items-center gap-2 mb-3">
-                    <Badge variant="secondary" className={course.levelColor}>
-                      {course.level}
-                    </Badge>
-                    <span className="text-xs text-muted-foreground flex items-center gap-1">
-                      <Clock className="w-3 h-3" />
-                      {course.duration}
-                    </span>
-                  </div>
-
-                  <h3 className="font-bold tracking-tight text-foreground mb-2 group-hover:text-primary transition-colors duration-200">
-                    {course.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed flex-1">
-                    {course.desc}
-                  </p>
-
-                  <div className="flex items-center justify-between mt-4 pt-4 border-t border-border/40">
-                    <span className="text-xs text-muted-foreground">
-                      Included with subscription
-                    </span>
-                    <span className="text-sm text-primary font-semibold group-hover:underline">
-                      View Course &rarr;
-                    </span>
-                  </div>
-                </CardContent>
-              </Card>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+      <CourseGridSection />
 
       <Separator className="opacity-40" />
 
-      {/* ━━━ EXAM GUIDE ━━━ */}
-      <section className="py-24 sm:py-32 bg-card/20">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-foreground">
-              Your Board&rsquo;s Exam Guide
-            </h2>
-            <p className="mt-4 text-muted-foreground max-w-xl mx-auto text-body-lg">
-              {selectedBoard === 'KS3'
-                ? 'Preparing for GCSEs? Explore the exam guides to get ahead.'
-                : 'Paper structure, mark schemes, and examiner tips — tailored to your board.'}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
-            {([
-              { board: 'AQA', color: 'border-blue-500/30 hover:border-blue-500/60', accent: 'text-blue-400', bg: 'bg-blue-500/10', desc: 'Paper structure, mark schemes, and examiner tips.' },
-              { board: 'Edexcel', color: 'border-violet-500/30 hover:border-violet-500/60', accent: 'text-violet-400', bg: 'bg-violet-500/10', desc: 'Paper structure, mark schemes, and examiner tips.' },
-              { board: 'OCR', color: 'border-orange-500/30 hover:border-orange-500/60', accent: 'text-orange-400', bg: 'bg-orange-500/10', desc: 'Paper structure, mark schemes, and examiner tips.' },
-              { board: 'WJEC', color: 'border-red-500/30 hover:border-red-500/60', accent: 'text-red-400', bg: 'bg-red-500/10', desc: 'Paper structure, mark schemes, and examiner tips.' },
-            ] as const).map((item) => (
-              <Link key={item.board} href={`/exam-guide/${item.board.toLowerCase()}`} className="block group">
-              <Card
-                className={cn(
-                  'p-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-card-hover',
-                  item.color,
-                  selectedBoard === item.board && `ring-2 ring-offset-2 ring-offset-background ring-current ${item.accent}`
-                )}
-              >
-                <div className={cn('w-11 h-11 rounded-xl flex items-center justify-center mb-4', item.bg)}>
-                  <GraduationCap className={cn('w-5 h-5', item.accent)} />
-                </div>
-                <h3 className={cn('text-lg font-bold tracking-tight mb-1', item.accent)}>
-                  {item.board}
-                </h3>
-                {selectedBoard === item.board && (
-                  <Badge className="bg-primary/20 text-primary mb-2">
-                    Your board
-                  </Badge>
-                )}
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {item.desc}
-                </p>
-              </Card>
-              </Link>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <Button variant="link" className="text-primary font-semibold" render={<Link href="/exam-guide" />}>
-              View Full Guide &rarr;
-            </Button>
-          </div>
-        </div>
-      </section>
+      <ExamGuideSection />
 
       <Separator className="opacity-40" />
 
-      {/* ━━━ PRICING ━━━ */}
-      <section className="py-24 sm:py-32">
-        <div className="max-w-2xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <Badge variant="outline" className="bg-emerald-500/10 border-emerald-500/25 text-emerald-400 text-base font-bold mb-8 gap-2 px-5 py-2">
-              <Sparkles className="w-5 h-5" />
-              First Month FREE!
-            </Badge>
-            <h2 className="text-foreground">
-              Simple, Honest Pricing
-            </h2>
-            <p className="mt-4 text-muted-foreground max-w-xl mx-auto text-body-lg">
-              Try everything free for 30 days. No commitment, cancel anytime.
-            </p>
-          </div>
-
-          <Card className="p-8 flex flex-col border-primary/30 relative">
-            <Badge className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-bold px-4 py-1 shadow-lg shadow-primary/25">
-              Full Access
-            </Badge>
-            <h3 className="text-lg font-bold tracking-tight text-foreground">Everything Included</h3>
-            <p className="text-sm text-muted-foreground mt-1 mb-6">
-              One plan, full access — cancel anytime.
-            </p>
-            <div className="mb-2">
-              <span className="text-4xl font-extrabold tracking-tight text-foreground">
-                {PRICING.CURRENCY}{PRICING.MONTHLY}
-              </span>
-              <span className="text-muted-foreground text-sm ml-1">/month</span>
-            </div>
-            <p className="text-sm text-emerald-400 font-semibold mb-6">
-              First month completely free
-            </p>
-            <ul className="space-y-3 mb-8 flex-1">
-              {[
-                'First month FREE — no payment due today',
-                'All 13 courses included',
-                'All 120+ mock exam papers',
-                'AI essay feedback (10/day)',
-                '295 flashcards & 52 terminology entries',
-                'Board-specific content for AQA, Edexcel, OCR & WJEC',
-                'Certificates on completion',
-                'Progress tracking & analytics',
-                'Cancel anytime — no contracts',
-              ].map((f) => (
-                <li key={f} className="flex items-start gap-2.5 text-sm text-muted-foreground">
-                  <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                  {f}
-                </li>
-              ))}
-            </ul>
-            <Button variant="default" className="w-full shadow-lg shadow-primary/20" render={<Link href="/auth/register" />}>
-              Start Free Trial
-            </Button>
-          </Card>
-
-          <p className="text-center text-sm text-muted-foreground mt-10 max-w-lg mx-auto">
-            Your free trial lasts 30 days. You won&rsquo;t be charged until the trial ends.
-            Cancel anytime from your account settings — no questions asked.
-          </p>
-        </div>
-      </section>
+      <PricingSection />
 
       <Separator className="opacity-40" />
 
-      {/* ━━━ TESTIMONIALS ━━━ */}
-      <section className="py-24 sm:py-32">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-foreground">
-              What Our Students Say
-            </h2>
-          </div>
-
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
-            {[
-              {
-                quote:
-                  'I went from a Grade 4 to a 7 in six months. The model answers are brilliant.',
-                name: 'Sophie',
-                role: 'Year 11',
-              },
-              {
-                quote:
-                  "My daughter's confidence has completely changed. She actually wants to revise now.",
-                name: 'Mark',
-                role: 'Parent',
-              },
-              {
-                quote:
-                  'The exam technique sections are worth the subscription alone.',
-                name: 'James',
-                role: 'GCSE Student',
-              },
-            ].map((t) => (
-              <Card key={t.name} className="p-8 flex flex-col border-border/40">
-                <Quote className="w-7 h-7 text-primary/25 mb-4" />
-                <p className="text-foreground leading-relaxed flex-1">
-                  &ldquo;{t.quote}&rdquo;
-                </p>
-                <div className="flex items-center gap-1.5 mt-6 mb-1">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star
-                      key={i}
-                      className="w-4 h-4 text-amber-400 fill-amber-400"
-                    />
-                  ))}
-                </div>
-                <p className="text-sm font-bold tracking-tight text-foreground">
-                  {t.name}
-                </p>
-                <p className="text-xs text-muted-foreground">{t.role}</p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TestimonialsSection />
 
       <Separator className="opacity-40" />
 
-      {/* ━━━ FAQ ━━━ */}
-      <section className="py-24 sm:py-32 bg-card/20">
-        <div className="max-w-3xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-foreground">
-              Frequently Asked Questions
-            </h2>
-          </div>
-
-          <div className="space-y-3">
-            {faqs.map((faq) => (
-              <FAQItem key={faq.q} q={faq.q} a={faq.a} />
-            ))}
-          </div>
-        </div>
-      </section>
+      <FAQSection />
 
       <Separator className="opacity-40" />
 
-      {/* ━━━ CTA BANNER ━━━ */}
-      <section className="py-24 sm:py-32">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <Card className="relative p-14 sm:p-18 overflow-hidden border-border/40">
-            {/* Glow */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-primary/[0.06] rounded-full blur-[120px] pointer-events-none" />
+      <CTABannerSection />
 
-            <div className="relative">
-              <h2 className="text-foreground mb-5">
-                Ready to Raise Your Grade?
-              </h2>
-              <p className="text-muted-foreground max-w-lg mx-auto mb-10 text-body-lg">
-                Join 2,400+ students who are building confidence and smashing
-                their targets with The English Hub.
-              </p>
-              <Button variant="default" size="lg" className="text-base px-10 h-12 shadow-lg shadow-primary/20" render={<Link href="/auth/register" />}>
-                Start Free Trial
-              </Button>
-              <p className="mt-8 text-sm text-muted-foreground">
-                <Link href="/courses" className="text-primary hover:underline font-medium">
-                  View all courses &rarr;
-                </Link>
-              </p>
-            </div>
-          </Card>
-        </div>
-      </section>
-
-      {/* ━━━ FOOTER ━━━ */}
+      {/* ━━━ FOOTER (static — always needed) ━━━ */}
       <footer className="border-t border-border/40 bg-card/20">
         <div className="max-w-6xl mx-auto px-6 py-14">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">

@@ -1,11 +1,25 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { prisma } from "@/lib/prisma";
+import { rateLimit, getClientIp } from "@/lib/rate-limit";
 
 // POST /api/privacy/export
 // Creates a data access / portability request and logs to audit trail
 export async function POST(request: NextRequest) {
   try {
+    // ── Rate limit: 5 exports per hour per IP ──────────────────────────
+    const ip = getClientIp(request.headers);
+    const rl = await rateLimit(`privacy-export:${ip}`, {
+      limit: 5,
+      windowSeconds: 3600,
+    });
+    if (!rl.success) {
+      return NextResponse.json(
+        { error: "Too many requests. Please try again later." },
+        { status: 429, headers: { "Retry-After": String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+      );
+    }
+
     const session = await getServerSession();
     if (!session?.user?.email) {
       return NextResponse.json({ error: "Unauthorised" }, { status: 401 });
@@ -49,12 +63,7 @@ export async function POST(request: NextRequest) {
       },
     });
 
-    // Audit log
-    const ip =
-      request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ??
-      request.headers.get("x-real-ip") ??
-      "unknown";
-
+    // Audit log (ip already declared above for rate limiting)
     await prisma.auditLog.create({
       data: {
         userId: user.id,

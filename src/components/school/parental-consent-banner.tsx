@@ -175,7 +175,7 @@ export function ParentalConsentBanner({ schoolId }: ParentalConsentBannerProps) 
                   Parent/Guardian email address
                 </Label>
                 <div className="relative">
-                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground/50" />
+                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground/70" />
                   <Input
                     id="parentEmail"
                     type="email"

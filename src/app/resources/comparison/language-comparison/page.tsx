@@ -4,6 +4,7 @@ import Link from "next/link";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/comparison/language-comparison' },
   title: "Language Paper 2 Comparison Guide | The English Hub",
   description:
     "Master Language Paper 2 comparison skills for GCSE and IGCSE English. How to compare writers' methods across two non-fiction texts with annotated example responses and key comparison phrases.",

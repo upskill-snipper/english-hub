@@ -5,6 +5,7 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/themes/social-responsibility' },
   title: "Social Responsibility Theme Across Texts | GCSE English Literature",
   description:
     "Explore the theme of social responsibility across GCSE set texts: An Inspector Calls, A Christmas Carol, and London by William Blake. Key quotes, analysis, and comparison ideas.",

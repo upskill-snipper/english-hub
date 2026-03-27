@@ -1,9 +1,15 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'About — The English Hub',
+  title: 'About',
   description:
-    'Learn about The English Hub, our mission, and how we help students master GCSE English.',
+    'Learn about The English Hub, our mission to close the attainment gap, and how we help students master GCSE and IGCSE English with expert resources.',
+  alternates: { canonical: 'https://theenglishhub.app/about' },
+  openGraph: {
+    title: 'About — The English Hub',
+    description:
+      'Learn about The English Hub, our mission to close the attainment gap, and how we help students master GCSE and IGCSE English with expert resources.',
+  },
 }
 
 export default function AboutPage() {

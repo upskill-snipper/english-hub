@@ -113,7 +113,7 @@ function FooterDisclaimer({ className, selectedBoard }: { className?: string; se
       role="contentinfo"
       aria-label="Exam board disclaimer"
     >
-      <p className="text-xs leading-relaxed text-gray-400">
+      <p className="text-xs leading-relaxed text-gray-300">
         {text}
       </p>
     </div>

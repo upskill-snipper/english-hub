@@ -105,7 +105,7 @@ export default function GuidesListPage() {
       {/* ── Guide Cards ─────────────────────────────────────────────────── */}
       {filteredGuides.length === 0 ? (
         <div className="flex flex-col items-center justify-center rounded-2xl border border-dashed py-16 text-center">
-          <BookOpen className="h-10 w-10 text-muted-foreground/40 mb-3" />
+          <BookOpen className="h-10 w-10 text-muted-foreground/70 mb-3" />
           <p className="text-muted-foreground font-medium">No guides match your search</p>
           <p className="text-sm text-muted-foreground/70 mt-1">
             Try adjusting your search term or clearing the category filter

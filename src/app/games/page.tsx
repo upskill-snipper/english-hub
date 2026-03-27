@@ -847,7 +847,7 @@ function WordScrambleGame({ onExit }: { onExit: () => void }) {
               onChange={(e) => setGuess(e.target.value.toUpperCase())}
               onKeyDown={(e) => { if (e.key === 'Enter') handleSubmit() }}
               placeholder="Type your answer..."
-              className="flex-1 h-11 rounded-xl border border-border bg-background px-4 text-foreground font-medium placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-emerald-500/40 focus:border-emerald-500/60 transition-all"
+              className="flex-1 h-11 rounded-xl border border-border bg-background px-4 text-foreground font-medium placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-emerald-500/40 focus:border-emerald-500/60 transition-all"
               autoComplete="off"
               spellCheck={false}
             />

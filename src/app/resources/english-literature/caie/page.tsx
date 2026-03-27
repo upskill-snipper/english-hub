@@ -5,6 +5,7 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/caie' },
   title: "Cambridge IGCSE English Literature (0475/0992)",
   description:
     "Comprehensive study resources for Cambridge IGCSE English Literature. Poetry analysis, drama guides, Macbeth study notes, unseen techniques, and exam preparation for Papers 1 and 2.",

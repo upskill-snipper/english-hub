@@ -321,7 +321,7 @@ export function FeedbackWidget() {
                 <button
                   onClick={close}
                   aria-label="Close feedback form"
-                  className="rounded-lg p-1 text-gray-400 hover:bg-gray-200 hover:text-gray-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                  className="rounded-lg p-1 text-gray-500 hover:bg-gray-200 hover:text-gray-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -446,7 +446,7 @@ export function FeedbackWidget() {
                     <div>
                       <label htmlFor="fb-email-suggestion" className={labelClass}>
                         Email{" "}
-                        <span className="text-gray-400 font-normal">(optional)</span>
+                        <span className="text-gray-500 font-normal">(optional)</span>
                       </label>
                       <input
                         id="fb-email-suggestion"
@@ -538,7 +538,7 @@ export function FeedbackWidget() {
                     <div>
                       <label htmlFor="fb-screenshot" className={labelClass}>
                         Screenshot{" "}
-                        <span className="text-gray-400 font-normal">(optional)</span>
+                        <span className="text-gray-500 font-normal">(optional)</span>
                       </label>
                       <input
                         id="fb-screenshot"
@@ -558,7 +558,7 @@ export function FeedbackWidget() {
                     <div>
                       <label htmlFor="fb-email-issue" className={labelClass}>
                         Email{" "}
-                        <span className="text-gray-400 font-normal">(optional)</span>
+                        <span className="text-gray-500 font-normal">(optional)</span>
                       </label>
                       <input
                         id="fb-email-issue"

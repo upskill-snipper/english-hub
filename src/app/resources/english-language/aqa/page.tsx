@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/english-language/aqa' },
   title: "AQA English Language GCSE Revision",
   description:
     "Comprehensive AQA English Language GCSE revision resources. Paper 1, Paper 2, language techniques, writing skills, and grade boundaries.",

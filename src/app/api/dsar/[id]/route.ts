@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { PrismaClient } from "@prisma/client";
 import { z } from "zod";
 import { calculateDeadline, daysUntilDeadline } from "@/lib/dsar";
+import { rateLimit, getClientIp } from "@/lib/rate-limit";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 const prisma = new PrismaClient();
@@ -20,6 +21,19 @@ export async function GET(
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    // ── Rate limit: 30 requests per minute per IP ──────────────────────
+    const ip = getClientIp(request.headers);
+    const rl = await rateLimit(`dsar-detail:${ip}`, {
+      limit: 30,
+      windowSeconds: 60,
+    });
+    if (!rl.success) {
+      return NextResponse.json(
+        { error: "Too many requests. Please try again later." },
+        { status: 429, headers: { "Retry-After": String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+      );
+    }
+
     const { id } = await params;
 
     const supabase = createServerSupabaseClient();

@@ -4,6 +4,7 @@ import Link from "next/link";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/grade-targets/grade-7' },
   title: "Getting a Grade 7 | Grade Targets | The English Hub",
   description:
     "What separates a Grade 7 from a 5 or 6 in GCSE English. Advanced skills, example responses, and detailed advice for pushing from Grade 6 to Grade 7 in English Language and Literature.",

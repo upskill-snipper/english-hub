@@ -14,6 +14,7 @@ interface Resource {
   type: "lesson-plan" | "assessment" | "exam-board" | "worksheet";
   examBoard?: string;
   downloadUrl?: string;
+  detailUrl?: string;
 }
 
 const LESSON_PLANS: Resource[] = [
@@ -22,12 +23,14 @@ const LESSON_PLANS: Resource[] = [
     title: "An Inspector Calls: 5-Lesson Scheme",
     description: "Complete scheme of work covering themes, characters, and exam-style questions. Includes starter activities and plenaries.",
     type: "lesson-plan",
+    detailUrl: "/dashboard/teacher/resources/lesson-plans",
   },
   {
     id: "lp2",
     title: "Creative Writing Masterclass (3 Lessons)",
     description: "Structured lesson plans for teaching descriptive and narrative writing. Focus on sensory language and varied sentence structures.",
     type: "lesson-plan",
+    detailUrl: "/dashboard/teacher/resources/creative-writing",
   },
   {
     id: "lp3",
@@ -50,6 +53,7 @@ const ASSESSMENT_GUIDES: Resource[] = [
     description: "Simplified mark scheme breakdown for AO1-AO4. Includes student-friendly assessment criteria and example annotations.",
     type: "assessment",
     examBoard: "AQA",
+    detailUrl: "/dashboard/teacher/resources/mark-scheme",
   },
   {
     id: "ag2",
@@ -60,9 +64,10 @@ const ASSESSMENT_GUIDES: Resource[] = [
   },
   {
     id: "ag3",
-    title: "Peer Assessment Framework",
-    description: "Structured peer marking sheets aligned to exam board criteria. Includes sentence starters for constructive feedback.",
+    title: "Differentiation Guide for English",
+    description: "Practical strategies for PP, SEND, and EAL students. Includes differentiated tasks, questioning frameworks, and Ofsted-aligned approaches.",
     type: "assessment",
+    detailUrl: "/dashboard/teacher/resources/differentiation",
   },
   {
     id: "ag4",
@@ -109,7 +114,7 @@ const WORKSHEETS: Resource[] = [
     title: "Quote Analysis Grid (Literature)",
     description: "Printable grid for students to record key quotes with analysis columns: technique, effect, and link to theme.",
     type: "worksheet",
-    downloadUrl: "#",
+    detailUrl: "/dashboard/teacher/resources/worksheets",
   },
   {
     id: "ws2",
@@ -189,15 +194,20 @@ function ResourceCard({ resource }: { resource: Resource }) {
         </p>
         <div className="mt-2">
           {resource.downloadUrl ? (
-            // TODO: Replace "#" with real download URLs
             <Link
               href={resource.downloadUrl}
               className="text-xs font-medium text-accent hover:text-accent-600"
             >
               Download PDF
             </Link>
+          ) : resource.detailUrl ? (
+            <Link
+              href={resource.detailUrl}
+              className="text-xs font-medium text-accent hover:text-accent-600"
+            >
+              View Details
+            </Link>
           ) : (
-            // TODO: Link to resource detail page
             <span className="text-xs font-medium text-accent hover:text-accent-600 cursor-pointer">
               View Details
             </span>

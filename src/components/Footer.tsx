@@ -51,7 +51,7 @@ function FooterColumn({
           <li key={link.href}>
             <Link
               href={link.href}
-              className="text-sm text-gray-300/80 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 rounded-sm"
+              className="text-sm text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 rounded-sm"
             >
               {link.label}
             </Link>
@@ -90,11 +90,11 @@ export function Footer() {
               </span>
               The English Hub
             </Link>
-            <p className="mt-3 text-sm leading-relaxed text-gray-300/80">
+            <p className="mt-3 text-sm leading-relaxed text-gray-300">
               AI-powered GCSE and IGCSE English revision for students aged
               14&ndash;18.
             </p>
-            <p className="mt-4 text-sm text-gray-300/80">
+            <p className="mt-4 text-sm text-gray-300">
               <a
                 href="mailto:support@theenglishhub.app"
                 className="font-medium text-white underline underline-offset-2 hover:text-[#2E86C1] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 rounded-sm"
@@ -116,7 +116,7 @@ export function Footer() {
 
         {/* ── Bottom bar: company + copyright ──────────────── */}
         <div className="mt-6 border-t border-white/10 pt-6">
-          <div className="flex flex-col gap-2 text-xs text-gray-400 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-col gap-2 text-xs text-gray-300 sm:flex-row sm:items-center sm:justify-between">
             <div className="space-y-1">
               <p>
                 Upskill Energy Limited &mdash; Registered in England and Wales

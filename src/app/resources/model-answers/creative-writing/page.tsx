@@ -4,6 +4,7 @@ import Link from "next/link";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/model-answers/creative-writing' },
   title: "Model Creative Writing Answers | The English Hub",
   description:
     "Grade 5 and grade 9 model creative writing responses for GCSE English. Descriptive and narrative writing with examiner commentary and technique annotations.",

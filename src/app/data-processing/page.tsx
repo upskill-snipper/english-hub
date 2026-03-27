@@ -1,9 +1,15 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Data Processing — The English Hub',
+  title: 'Data Processing',
   description:
-    'Information about how The English Hub processes personal data for schools and institutions.',
+    'How The English Hub processes personal data for schools and institutions. UK GDPR compliant data processing agreements and transparent practices.',
+  alternates: { canonical: 'https://theenglishhub.app/data-processing' },
+  openGraph: {
+    title: 'Data Processing — The English Hub',
+    description:
+      'How The English Hub processes personal data for schools and institutions. UK GDPR compliant data processing agreements and transparent practices.',
+  },
 }
 
 export default function DataProcessingPage() {

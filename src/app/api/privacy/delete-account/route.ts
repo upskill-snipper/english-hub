@@ -1,11 +1,25 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { prisma } from "@/lib/prisma";
+import { rateLimit, getClientIp } from "@/lib/rate-limit";
 
 // POST /api/privacy/delete-account
 // Soft-deletes the user account with a 30-day grace period
 export async function POST(request: NextRequest) {
   try {
+    // ── Rate limit: 3 attempts per 15 minutes per IP ───────────────────
+    const ip = getClientIp(request.headers);
+    const rl = await rateLimit(`privacy-delete-account:${ip}`, {
+      limit: 3,
+      windowSeconds: 900,
+    });
+    if (!rl.success) {
+      return NextResponse.json(
+        { error: "Too many requests. Please try again later." },
+        { status: 429, headers: { "Retry-After": String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+      );
+    }
+
     const session = await getServerSession();
     if (!session?.user?.email) {
       return NextResponse.json({ error: "Unauthorised" }, { status: 401 });
@@ -64,12 +78,7 @@ export async function POST(request: NextRequest) {
       },
     });
 
-    // Audit log
-    const ip =
-      request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ??
-      request.headers.get("x-real-ip") ??
-      "unknown";
-
+    // Audit log (ip already declared above for rate limiting)
     await prisma.auditLog.create({
       data: {
         userId: user.id,

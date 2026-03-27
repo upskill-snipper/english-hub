@@ -5,6 +5,7 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/themes/conflict' },
   title: "Conflict Theme Across Texts | GCSE English Literature",
   description:
     "Explore the theme of conflict across GCSE set texts: Romeo and Juliet, Power and Conflict poetry, and Lord of the Flies. Key quotes, analysis, and comparison ideas.",

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/study-tools' },
   title: "Study Tools - GCSE English Revision",
   description:
     "Interactive study tools for GCSE and IGCSE English revision. Revision planner, quote flashcards, quote tester, and progress checklists to help you prepare for your exams.",

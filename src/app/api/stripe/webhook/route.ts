@@ -203,7 +203,7 @@ export async function POST(request: NextRequest) {
     if (error instanceof WebhookMetadataError) {
       console.error(`Missing metadata in ${event.type}: ${error.message}`)
       return NextResponse.json(
-        { error: error.message },
+        { error: 'Missing required metadata in webhook event' },
         { status: 400 }
       )
     }

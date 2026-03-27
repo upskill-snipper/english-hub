@@ -5,6 +5,7 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/exam-technique' },
   title: "Exam Technique",
   description:
     "Master the exam techniques that turn knowledge into top grades. Time management, question types, essay structure, and exam-day advice for GCSE and IGCSE English -- AQA, Edexcel, CAIE, and OCR.",

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/aqa/inspector-calls' },
   title: "An Inspector Calls Study Guide - AQA English Literature GCSE",
   description:
     "Complete An Inspector Calls revision guide for AQA GCSE English Literature. Plot summary, character analysis, themes, 20+ key quotations, Edwardian and post-war context, and essay planning.",

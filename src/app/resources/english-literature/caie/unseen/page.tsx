@@ -5,6 +5,7 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/caie/unseen' },
   title: "Unseen Analysis - Cambridge IGCSE English Literature",
   description:
     "Step-by-step techniques for unseen prose and poetry analysis in Cambridge IGCSE English Literature. Worked examples, frameworks, and examiner tips.",

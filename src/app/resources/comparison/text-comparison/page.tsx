@@ -4,6 +4,7 @@ import Link from "next/link";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/comparison/text-comparison' },
   title: "Text Comparison: Prose & Drama | The English Hub",
   description:
     "Learn how to compare prose and drama texts for GCSE and IGCSE English. Cross-text comparison techniques with example comparisons including Macbeth vs Lady Macbeth and Inspector Goole vs Arthur Birling.",

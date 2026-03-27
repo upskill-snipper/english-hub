@@ -32,7 +32,7 @@ export async function POST(request: NextRequest) {
     const session = await getServerSession();
     if (!session?.user?.email) {
       return NextResponse.json(
-        { message: "Authentication required." },
+        { error: "Authentication required." },
         { status: 401 }
       );
     }
@@ -50,7 +50,7 @@ export async function POST(request: NextRequest) {
 
     if (!dbUser || dbUser.accountStatus !== "ACTIVE") {
       return NextResponse.json(
-        { message: "Session expired. Please log in again." },
+        { error: "Session expired. Please log in again." },
         { status: 401 }
       );
     }
@@ -60,7 +60,7 @@ export async function POST(request: NextRequest) {
     // Only parents can link to students
     if (user.role !== "PARENT") {
       return NextResponse.json(
-        { message: "Only parent accounts can link to students." },
+        { error: "Only parent accounts can link to students." },
         { status: 403 }
       );
     }
@@ -69,7 +69,7 @@ export async function POST(request: NextRequest) {
     const rl = await rateLimit(`parent-link:${user.id}`, { limit: 10, windowSeconds: 3600 }); // 10 per hour
     if (!rl.success) {
       return NextResponse.json(
-        { message: "Too many requests. Please try again later." },
+        { error: "Too many requests. Please try again later." },
         { status: 429, headers: { "Retry-After": String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
       );
     }
@@ -86,7 +86,7 @@ export async function POST(request: NextRequest) {
         errors[key].push(issue.message);
       }
       return NextResponse.json(
-        { message: "Validation failed.", errors },
+        { error: "Validation failed.", errors },
         { status: 400 }
       );
     }
@@ -99,7 +99,7 @@ export async function POST(request: NextRequest) {
     if (!result) {
       return NextResponse.json(
         {
-          message:
+          error:
             "Invalid or expired invite code. Please ask your child to generate a new one.",
         },
         { status: 400 }
@@ -116,7 +116,7 @@ export async function POST(request: NextRequest) {
     if (!hasSubscription) {
       return NextResponse.json(
         {
-          message:
+          error:
             "This student does not currently have an active subscription. Parent linking requires an active student subscription.",
         },
         { status: 400 }
@@ -131,14 +131,14 @@ export async function POST(request: NextRequest) {
 
       if (message === "ALREADY_LINKED") {
         return NextResponse.json(
-          { message: "You are already linked to this student." },
+          { error: "You are already linked to this student." },
           { status: 409 }
         );
       }
       if (message === "STUDENT_HAS_PARENT") {
         return NextResponse.json(
           {
-            message:
+            error:
               "This student is already linked to another parent account. Only one parent can be linked at a time.",
           },
           { status: 409 }
@@ -189,7 +189,7 @@ export async function POST(request: NextRequest) {
   } catch (err) {
     console.error("[parent/link] Error:", err);
     return NextResponse.json(
-      { message: "Something went wrong. Please try again." },
+      { error: "Something went wrong. Please try again." },
       { status: 500 }
     );
   }
@@ -203,7 +203,7 @@ export async function DELETE(request: NextRequest) {
     const sessionDel = await getServerSession();
     if (!sessionDel?.user?.email) {
       return NextResponse.json(
-        { message: "Authentication required." },
+        { error: "Authentication required." },
         { status: 401 }
       );
     }
@@ -219,7 +219,7 @@ export async function DELETE(request: NextRequest) {
 
     if (!dbUserDel || dbUserDel.accountStatus !== "ACTIVE") {
       return NextResponse.json(
-        { message: "Session expired. Please log in again." },
+        { error: "Session expired. Please log in again." },
         { status: 401 }
       );
     }
@@ -232,7 +232,7 @@ export async function DELETE(request: NextRequest) {
 
     if (!parsed.success) {
       return NextResponse.json(
-        { message: "Student ID is required." },
+        { error: "Student ID is required." },
         { status: 400 }
       );
     }
@@ -252,7 +252,7 @@ export async function DELETE(request: NextRequest) {
       });
       if (!student?.parentId) {
         return NextResponse.json(
-          { message: "No parent is linked to your account." },
+          { error: "No parent is linked to your account." },
           { status: 400 }
         );
       }
@@ -261,7 +261,7 @@ export async function DELETE(request: NextRequest) {
       parsed.data.studentId = user.id;
     } else {
       return NextResponse.json(
-        { message: "Only parents and students can manage parent links." },
+        { error: "Only parents and students can manage parent links." },
         { status: 403 }
       );
     }
@@ -273,7 +273,7 @@ export async function DELETE(request: NextRequest) {
       const message = err instanceof Error ? err.message : "";
       if (message === "NOT_LINKED") {
         return NextResponse.json(
-          { message: "This parent-student link does not exist." },
+          { error: "This parent-student link does not exist." },
           { status: 400 }
         );
       }
@@ -286,7 +286,7 @@ export async function DELETE(request: NextRequest) {
   } catch (err) {
     console.error("[parent/link] DELETE Error:", err);
     return NextResponse.json(
-      { message: "Something went wrong. Please try again." },
+      { error: "Something went wrong. Please try again." },
       { status: 500 }
     );
   }
@@ -300,7 +300,7 @@ export async function GET(request: NextRequest) {
     const sessionGet = await getServerSession();
     if (!sessionGet?.user?.email) {
       return NextResponse.json(
-        { message: "Authentication required." },
+        { error: "Authentication required." },
         { status: 401 }
       );
     }
@@ -316,7 +316,7 @@ export async function GET(request: NextRequest) {
 
     if (!dbUserGet || dbUserGet.accountStatus !== "ACTIVE") {
       return NextResponse.json(
-        { message: "Session expired. Please log in again." },
+        { error: "Session expired. Please log in again." },
         { status: 401 }
       );
     }
@@ -334,13 +334,13 @@ export async function GET(request: NextRequest) {
     }
 
     return NextResponse.json(
-      { message: "Only parents and students can view parent links." },
+      { error: "Only parents and students can view parent links." },
       { status: 403 }
     );
   } catch (err) {
     console.error("[parent/link] GET Error:", err);
     return NextResponse.json(
-      { message: "Something went wrong. Please try again." },
+      { error: "Something went wrong. Please try again." },
       { status: 500 }
     );
   }

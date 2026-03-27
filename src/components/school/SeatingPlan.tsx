@@ -272,7 +272,7 @@ export function SeatingPlan({
                     </span>
                   </>
                 ) : (
-                  <span className="text-[0.6rem] text-muted-foreground/50">Empty</span>
+                  <span className="text-[0.6rem] text-muted-foreground/70">Empty</span>
                 )}
               </div>
             )

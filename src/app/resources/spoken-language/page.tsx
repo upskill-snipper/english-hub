@@ -4,6 +4,7 @@ import Link from "next/link";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/spoken-language' },
   title: "Spoken Language Endorsement Guide | The English Hub",
   description:
     "Complete guide to the GCSE English Language Spoken Language endorsement. Presentation planning, delivery techniques, responding to questions, Standard English, assessment criteria, and 20+ topic ideas.",

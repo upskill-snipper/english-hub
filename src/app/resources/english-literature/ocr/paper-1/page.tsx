@@ -5,6 +5,7 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/ocr/paper-1' },
   title:
     "OCR Paper 1: Exploring Modern and Literary Heritage Texts | The English Hub",
   description:

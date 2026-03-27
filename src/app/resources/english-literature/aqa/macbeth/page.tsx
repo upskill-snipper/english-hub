@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/aqa/macbeth' },
   title: "Macbeth Study Guide - AQA English Literature GCSE",
   description:
     "Complete Macbeth revision guide for AQA GCSE English Literature. Act-by-act plot summary, character analysis, themes, 20+ key quotations with analysis, Jacobean context, and essay planning.",

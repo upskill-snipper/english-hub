@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { PrismaClient } from "@prisma/client";
 import { compileUserData } from "@/lib/dsar";
+import { rateLimit, getClientIp } from "@/lib/rate-limit";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 const prisma = new PrismaClient();
@@ -9,6 +10,19 @@ const prisma = new PrismaClient();
 
 export async function GET(request: NextRequest) {
   try {
+    // ── Rate limit: 5 exports per hour per IP ──────────────────────────
+    const ip = getClientIp(request.headers);
+    const rl = await rateLimit(`dsar-export:${ip}`, {
+      limit: 5,
+      windowSeconds: 3600,
+    });
+    if (!rl.success) {
+      return NextResponse.json(
+        { error: "Too many requests. Please try again later." },
+        { status: 429, headers: { "Retry-After": String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+      );
+    }
+
     const supabase = createServerSupabaseClient();
     const { data: { user: authUser }, error: authError } = await supabase.auth.getUser();
     if (authError || !authUser) {

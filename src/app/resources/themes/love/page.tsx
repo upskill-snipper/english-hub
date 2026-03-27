@@ -5,6 +5,7 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/themes/love' },
   title: "Love Theme Across Texts | GCSE English Literature",
   description:
     "Explore the theme of love across GCSE set texts: Romeo and Juliet, Love and Relationships poetry, and Pride and Prejudice. Key quotes, analysis, and comparison ideas.",

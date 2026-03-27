@@ -5,6 +5,7 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/english-language/caie/techniques' },
   title: "Language Techniques | Cambridge IGCSE English Language",
   description:
     "Comprehensive glossary of 30+ language and literary techniques for Cambridge IGCSE English Language. Definitions, examples, and effect analysis for each technique.",

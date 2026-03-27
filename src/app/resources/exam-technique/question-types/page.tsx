@@ -5,6 +5,7 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/exam-technique/question-types' },
   title: "How to Approach Different Question Types",
   description:
     "Learn how to approach every question type in GCSE and IGCSE English exams. \"How does the writer...\", comparison questions, extract-based questions, essay questions, creative writing tasks, and more.",

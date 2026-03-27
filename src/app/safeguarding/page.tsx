@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Safeguarding Policy | The English Hub",
+  title: "Safeguarding Policy",
   description:
-    "Our safeguarding policy sets out how The English Hub protects children and young people aged 14–18 using our online education platform. UK-compliant and reviewed annually.",
+    "Our safeguarding policy sets out how The English Hub protects children and young people aged 14-18 using our online education platform. UK-compliant and reviewed annually.",
+  alternates: { canonical: "https://theenglishhub.app/safeguarding" },
   openGraph: {
-    title: "Safeguarding Policy | The English Hub",
+    title: "Safeguarding Policy — The English Hub",
     description:
-      "How The English Hub protects children and young people using our platform.",
+      "How The English Hub protects children and young people aged 14-18 using our online education platform. UK-compliant and reviewed annually.",
   },
 };
 

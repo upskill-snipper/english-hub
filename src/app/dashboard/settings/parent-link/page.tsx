@@ -89,7 +89,7 @@ function StudentView() {
       const data = await res.json();
 
       if (!res.ok) {
-        toast("error", data.message || "Failed to generate invite.");
+        toast("error", data.error || "Failed to generate invite.");
         return;
       }
 
@@ -142,7 +142,7 @@ function StudentView() {
       const data = await res.json();
 
       if (!res.ok) {
-        toast("error", data.message || "Failed to remove parent link.");
+        toast("error", data.error || "Failed to remove parent link.");
         return;
       }
 
@@ -230,7 +230,7 @@ function StudentView() {
                   </Button>
                 </div>
 
-                <p className="text-xs text-gray-400">
+                <p className="text-xs text-gray-500">
                   Generating a new code will invalidate the current one.
                 </p>
               </div>
@@ -266,7 +266,7 @@ function StudentView() {
                       {parent.firstName} {parent.lastName}
                     </p>
                     <p className="text-xs text-gray-500">{parent.email}</p>
-                    <p className="text-xs text-gray-400">
+                    <p className="text-xs text-gray-500">
                       Linked{" "}
                       {new Date(parent.linkedAt).toLocaleDateString("en-GB", {
                         day: "numeric",
@@ -344,7 +344,7 @@ function ParentView() {
       const data = await res.json();
 
       if (!res.ok) {
-        setError(data.message || "Failed to link to student.");
+        setError(data.error || "Failed to link to student.");
         return;
       }
 
@@ -373,7 +373,7 @@ function ParentView() {
       const data = await res.json();
 
       if (!res.ok) {
-        toast("error", data.message || "Failed to remove link.");
+        toast("error", data.error || "Failed to remove link.");
         return;
       }
 
@@ -439,7 +439,7 @@ function ParentView() {
               </Button>
             </form>
 
-            <p className="text-xs text-gray-400">
+            <p className="text-xs text-gray-500">
               Don&apos;t have a code? Ask your child to generate one from their account
               settings.
             </p>
@@ -483,7 +483,7 @@ function ParentView() {
                     {student.school && (
                       <p className="text-xs text-gray-500">{student.school}</p>
                     )}
-                    <p className="text-xs text-gray-400">
+                    <p className="text-xs text-gray-500">
                       Linked{" "}
                       {new Date(student.linkedAt).toLocaleDateString("en-GB", {
                         day: "numeric",

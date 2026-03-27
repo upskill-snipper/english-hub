@@ -5,6 +5,7 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/edexcel/animal-farm' },
   title: "Animal Farm Study Guide — Edexcel GCSE English Literature",
   description:
     "Complete Animal Farm revision guide for Edexcel GCSE English Literature. Plot, characters, themes, 15+ key quotes, Russian Revolution context, allegory analysis, and Edexcel exam technique.",

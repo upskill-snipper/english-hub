@@ -5,6 +5,7 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/english-language/edexcel' },
   title: "Edexcel English Language GCSE Revision",
   description:
     "Complete Edexcel English Language GCSE revision hub. Paper 1 Fiction & Imaginative Writing, Paper 2 Non-Fiction & Transactional Writing, techniques, writing skills, and grade boundaries.",

@@ -28,10 +28,43 @@ function LoginForm() {
   })
   const [loading, setLoading] = useState(false)
   const [showPassword, setShowPassword] = useState(false)
+  const [showEmailNotConfirmed, setShowEmailNotConfirmed] = useState(false)
+  const [resendLoading, setResendLoading] = useState(false)
+  const [resendSuccess, setResendSuccess] = useState(false)
+
+  async function handleResendVerification() {
+    if (!email) {
+      setError('Please enter your email address above first.')
+      return
+    }
+
+    setResendLoading(true)
+    setResendSuccess(false)
+
+    const supabase = createClient()
+    const { error: resendError } = await supabase.auth.resend({
+      type: 'signup',
+      email,
+      options: {
+        emailRedirectTo: `${window.location.origin}/auth/callback`,
+      },
+    })
+
+    if (resendError) {
+      setError(resendError.message)
+    } else {
+      setResendSuccess(true)
+      setError(null)
+    }
+
+    setResendLoading(false)
+  }
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     setError(null)
+    setShowEmailNotConfirmed(false)
+    setResendSuccess(false)
 
     if (!email || !password) {
       setError('Please fill in all fields.')
@@ -47,9 +80,33 @@ function LoginForm() {
     })
 
     if (authError) {
-      setError(authError.message)
+      // Detect unverified email error and show resend option
+      if (authError.message.toLowerCase().includes('email not confirmed')) {
+        setShowEmailNotConfirmed(true)
+        setError('Your email address has not been verified yet. Please check your inbox for the verification link.')
+      } else {
+        setError(authError.message)
+      }
       setLoading(false)
       return
+    }
+
+    // If no explicit redirect, check if user is a teacher and redirect accordingly
+    if (redirectTo === '/dashboard') {
+      const { data: { user } } = await supabase.auth.getUser()
+      if (user) {
+        const { data: profile } = await supabase
+          .from('profiles')
+          .select('role')
+          .eq('id', user.id)
+          .single()
+
+        if (profile?.role === 'teacher' || profile?.role === 'admin') {
+          router.push('/dashboard/teacher')
+          router.refresh()
+          return
+        }
+      }
     }
 
     router.push(redirectTo)
@@ -78,9 +135,31 @@ function LoginForm() {
           </CardHeader>
 
           <CardContent>
+            {resendSuccess && (
+              <Alert className="mb-6">
+                <AlertDescription>
+                  Verification email sent! Please check your inbox and click the link to verify your account.
+                </AlertDescription>
+              </Alert>
+            )}
+
             {error && (
               <Alert variant="destructive" className="mb-6">
-                <AlertDescription>{error}</AlertDescription>
+                <AlertDescription>
+                  {error}
+                  {showEmailNotConfirmed && (
+                    <Button
+                      type="button"
+                      variant="link"
+                      size="sm"
+                      className="h-auto p-0 ml-1 font-medium text-destructive underline"
+                      disabled={resendLoading}
+                      onClick={handleResendVerification}
+                    >
+                      {resendLoading ? 'Sending...' : 'Resend verification email'}
+                    </Button>
+                  )}
+                </AlertDescription>
               </Alert>
             )}
 
@@ -88,7 +167,7 @@ function LoginForm() {
               <div className="space-y-1.5">
                 <Label htmlFor="email">Email address</Label>
                 <div className="relative">
-                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/50" />
+                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
                   <Input
                     id="email"
                     type="email"
@@ -115,7 +194,7 @@ function LoginForm() {
                   </Button>
                 </div>
                 <div className="relative">
-                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/50" />
+                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground/70" />
                   <Input
                     id="password"
                     type={showPassword ? "text" : "password"}
@@ -129,7 +208,7 @@ function LoginForm() {
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground/50 hover:text-muted-foreground transition-colors"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground/70 hover:text-muted-foreground transition-colors"
                     aria-label={showPassword ? "Hide password" : "Show password"}
                   >
                     {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}

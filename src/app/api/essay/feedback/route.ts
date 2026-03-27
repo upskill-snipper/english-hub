@@ -6,14 +6,19 @@
 import { NextRequest, NextResponse } from "next/server";
 import { filterAIResponse, type UserCountry } from "@/lib/content-filter";
 import { getDisclaimer } from "@/lib/ai-disclaimer";
+import { rateLimit } from "@/lib/rate-limit";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 import {
   unauthorizedResponse,
+  forbiddenResponse,
   badRequestResponse,
+  rateLimitResponse,
   unsupportedMediaTypeResponse,
   serviceUnavailableResponse,
   serverErrorResponse,
 } from "@/lib/api-response";
+import { checkMinorAIConsent } from "@/lib/consent-check";
+import { hasActiveSubscription } from "@/lib/course-access";
 
 // ─── Types ──────────────────────────────────────────────────────────────
 
@@ -151,7 +156,30 @@ export async function POST(request: NextRequest) {
       return unauthorizedResponse();
     }
 
-    // 2. Parse & validate body
+    // 1b. Subscription check — essay feedback is a Pro feature
+    const isPro = await hasActiveSubscription(supabase, user.id);
+    if (!isPro) {
+      return forbiddenResponse(
+        "Essay feedback is a Pro feature. Please upgrade your subscription to access AI-powered feedback."
+      );
+    }
+
+    // 2. Rate limit: 20 essays per hour per user
+    const rl = await rateLimit(`essay-feedback-v2:${user.id}`, {
+      limit: 20,
+      windowSeconds: 3600,
+    });
+    if (!rl.success) {
+      return rateLimitResponse(rl.resetAt);
+    }
+
+    // 3. Parental consent check for minor users
+    const consentCheck = await checkMinorAIConsent(user.id);
+    if (!consentCheck.allowed) {
+      return forbiddenResponse(consentCheck.reason ?? "Consent is required to use this feature.");
+    }
+
+    // 4. Parse & validate body
     let body: unknown;
     try {
       body = await request.json();
@@ -169,7 +197,7 @@ export async function POST(request: NextRequest) {
       validation.data;
     const userId = user.id;
 
-    // 3. Generate AI feedback
+    // 4. Generate AI feedback
     let rawFeedback: string;
     try {
       rawFeedback = await generateAIFeedback(essayText, examBoard, topic);
@@ -199,7 +227,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // 4. Run through content filter
+    // 5. Run through content filter
     const filterResult = filterAIResponse(rawFeedback, userCountry, topic);
 
     // Build response

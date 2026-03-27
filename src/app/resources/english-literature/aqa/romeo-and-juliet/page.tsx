@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/aqa/romeo-and-juliet' },
   title: "Romeo and Juliet Study Guide - AQA English Literature GCSE",
   description:
     "Complete Romeo and Juliet revision guide for AQA GCSE English Literature. Act-by-act plot summary, character analysis, themes, 20+ key quotations with analysis, Elizabethan context, AQA exam format, and essay planning.",

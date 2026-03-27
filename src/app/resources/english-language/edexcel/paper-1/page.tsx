@@ -5,6 +5,7 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/english-language/edexcel/paper-1' },
   title: "Edexcel Paper 1: Fiction & Imaginative Writing",
   description:
     "Complete revision guide for Edexcel English Language Paper 1 (1EN0/01). 19th-century fiction reading, imaginative writing, mark schemes, AOs, and example responses.",

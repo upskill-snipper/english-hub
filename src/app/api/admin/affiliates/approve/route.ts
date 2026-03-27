@@ -26,8 +26,16 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Invalid request body' }, { status: 400 })
   }
 
-  if (!body.affiliateId || !body.action) {
-    return NextResponse.json({ error: 'Missing affiliateId or action' }, { status: 400 })
+  if (!body.affiliateId || typeof body.affiliateId !== 'string' || body.affiliateId.length > 100) {
+    return NextResponse.json({ error: 'Valid affiliateId is required' }, { status: 400 })
+  }
+
+  if (!body.action || (body.action !== 'approve' && body.action !== 'reject')) {
+    return NextResponse.json({ error: 'action must be "approve" or "reject"' }, { status: 400 })
+  }
+
+  if (body.rejectionReason && (typeof body.rejectionReason !== 'string' || body.rejectionReason.length > 1000)) {
+    return NextResponse.json({ error: 'rejectionReason must be 1000 characters or fewer' }, { status: 400 })
   }
 
   const supabaseAdmin = createServiceRoleClient()

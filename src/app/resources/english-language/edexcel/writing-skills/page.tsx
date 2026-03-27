@@ -5,6 +5,7 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/english-language/edexcel/writing-skills' },
   title: "Transactional Writing Masterclass",
   description:
     "Complete guide to transactional writing for Edexcel English Language Paper 2. Article, letter, speech, review, and essay writing conventions, formats, and techniques.",

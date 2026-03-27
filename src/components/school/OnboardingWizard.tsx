@@ -830,7 +830,7 @@ export function OnboardingWizard() {
                     'h-4 w-4',
                     item.done
                       ? 'text-green-600 dark:text-green-400'
-                      : 'text-muted-foreground/40'
+                      : 'text-muted-foreground/70'
                   )}
                 />
                 <span className="text-sm font-medium">{item.label}</span>
@@ -917,7 +917,7 @@ export function OnboardingWizard() {
                   ? 'text-primary font-semibold'
                   : isCompleted
                     ? 'text-primary/60 cursor-pointer hover:text-primary'
-                    : 'text-muted-foreground/50 cursor-pointer hover:text-muted-foreground'
+                    : 'text-muted-foreground/70 cursor-pointer hover:text-muted-foreground'
               )}
               aria-label={`Go to step: ${step.label}`}
             >

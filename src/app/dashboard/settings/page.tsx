@@ -226,7 +226,7 @@ function ProfileTab({
           }
           setErrors(flat);
         } else {
-          toast("error", data.message || "Failed to save profile.");
+          toast("error", data.error || "Failed to save profile.");
         }
         return;
       }
@@ -278,7 +278,7 @@ function ProfileTab({
         <div>
           <p className="text-sm font-medium text-gray-700">Email</p>
           <p className="mt-1 text-sm text-gray-500">{profile.email}</p>
-          <p className="text-xs text-gray-400 mt-0.5">
+          <p className="text-xs text-gray-500 mt-0.5">
             Contact support to change your email address.
           </p>
         </div>
@@ -367,7 +367,7 @@ function PasswordTab() {
           }
           setErrors(flat);
         } else {
-          toast("error", data.message || "Failed to change password.");
+          toast("error", data.error || "Failed to change password.");
         }
         return;
       }
@@ -411,7 +411,7 @@ function PasswordTab() {
               <li
                 key={check.label}
                 className={`flex items-center gap-2 text-xs ${
-                  check.met ? "text-success-600" : "text-gray-400"
+                  check.met ? "text-success-600" : "text-gray-500"
                 }`}
               >
                 {check.met ? (
@@ -914,7 +914,7 @@ function DataPrivacyTab() {
 function ChevronRightIcon() {
   return (
     <svg
-      className="h-4 w-4 text-gray-400"
+      className="h-4 w-4 text-gray-500"
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"

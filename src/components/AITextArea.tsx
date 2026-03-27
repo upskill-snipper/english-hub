@@ -314,7 +314,7 @@ function AITextArea({
     ? 'text-warn-500'
     : wordCount >= minWords
       ? 'text-success-600'
-      : 'text-gray-400';
+      : 'text-gray-500';
 
   // ── Render ─────────────────────────────────────────────────────────
   return (
@@ -337,7 +337,7 @@ function AITextArea({
           rows={rows}
           className={[
             'block w-full resize-none rounded-xl border-0 bg-transparent px-4 py-3 text-sm leading-relaxed text-gray-900',
-            'placeholder:text-gray-400',
+            'placeholder:text-gray-500',
             'focus:outline-none focus:ring-0',
             'disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500',
             isOverLimit ? 'text-warn-600' : '',
@@ -355,7 +355,7 @@ function AITextArea({
               {wordCount}
               {maxWords ? ` / ${maxWords}` : ''} words
               {wordCount < minWords && (
-                <span className="ml-1 text-gray-400">(min {minWords})</span>
+                <span className="ml-1 text-gray-500">(min {minWords})</span>
               )}
             </span>
             {text.length > 0 && (
@@ -367,7 +367,7 @@ function AITextArea({
                   setRawFeedback(null);
                   setError(null);
                 }}
-                className="text-xs text-gray-400 transition-colors hover:text-gray-600"
+                className="text-xs text-gray-500 transition-colors hover:text-gray-600"
               >
                 Clear
               </button>
@@ -405,7 +405,7 @@ function AITextArea({
                 'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2',
                 canGetFeedback && !disabled
                   ? 'bg-accent text-white shadow-sm hover:bg-accent-600 active:bg-accent-700'
-                  : 'cursor-not-allowed bg-gray-100 text-gray-400',
+                  : 'cursor-not-allowed bg-gray-100 text-gray-500',
               ].join(' ')}
               aria-label="Get AI feedback on your answer"
             >
@@ -465,7 +465,7 @@ function AITextArea({
                   'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2',
                   wordCount >= minWords && !disabled
                     ? 'bg-primary text-white shadow-sm hover:bg-primary-600 active:bg-primary-700'
-                    : 'cursor-not-allowed bg-gray-100 text-gray-400',
+                    : 'cursor-not-allowed bg-gray-100 text-gray-500',
                 ].join(' ')}
               >
                 Submit Answer
@@ -622,7 +622,7 @@ function AITextArea({
               )}
 
             {/* Disclaimer */}
-            <p className="mt-3 text-[10px] leading-snug text-gray-400">
+            <p className="mt-3 text-[10px] leading-snug text-gray-500">
               AI feedback is for practice only. It does not replace teacher
               assessment or official marking. Always check with your teacher for
               exam preparation guidance.

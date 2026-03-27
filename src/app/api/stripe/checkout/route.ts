@@ -55,6 +55,14 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    // Sanitize optional metadata fields
+    if (courseId && (typeof courseId !== 'string' || courseId.length > 100)) {
+      return NextResponse.json({ error: 'Invalid courseId' }, { status: 400 })
+    }
+    if (rewardful_referral && (typeof rewardful_referral !== 'string' || rewardful_referral.length > 200)) {
+      return NextResponse.json({ error: 'Invalid referral code' }, { status: 400 })
+    }
+
     // Validate priceId against known price IDs (filter out undefined/empty values)
     const validPriceIds = new Set(
       [

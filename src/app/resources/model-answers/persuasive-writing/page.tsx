@@ -4,6 +4,7 @@ import Link from "next/link";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/model-answers/persuasive-writing' },
   title: "Model Persuasive & Transactional Writing | The English Hub",
   description:
     "Model articles, speeches, and letters for GCSE English Language with annotations highlighting rhetorical devices, structural choices, and persuasive techniques.",

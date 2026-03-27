@@ -196,7 +196,7 @@ export default function ConsentManagementPage() {
       <div className="mb-2">
         <Link
           href="/dashboard"
-          className="text-sm text-gray-400 hover:text-primary transition-colors"
+          className="text-sm text-gray-500 hover:text-primary transition-colors"
         >
           &larr; Back to Dashboard
         </Link>
@@ -263,7 +263,7 @@ export default function ConsentManagementPage() {
                     <p className="mt-1 text-sm text-gray-500">
                       {getDescription(consent.consentType)}
                     </p>
-                    <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-gray-400">
+                    <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-gray-500">
                       <span>
                         Granted: {formatDate(consent.grantedAt)}
                       </span>
@@ -286,7 +286,7 @@ export default function ConsentManagementPage() {
                 </div>
 
                 {consent.isEssential && (
-                  <p className="mt-2 text-xs text-gray-400 italic">
+                  <p className="mt-2 text-xs text-gray-500 italic">
                     This consent is required for the service to function. To
                     withdraw it, you must{" "}
                     <Link

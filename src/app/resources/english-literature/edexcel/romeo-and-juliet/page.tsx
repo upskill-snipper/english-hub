@@ -5,6 +5,7 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/edexcel/romeo-and-juliet' },
   title: "Romeo and Juliet Study Guide — Edexcel GCSE English Literature",
   description:
     "Complete Romeo and Juliet revision guide for Edexcel GCSE English Literature. Plot summary, character analysis, themes, 15+ key quotes, historical context, and exam technique.",

@@ -330,7 +330,7 @@ function ResourceFilter({ filters, onChange, className = '' }: ResourceFilterPro
       {/* Subject */}
       <div className={mobile ? '' : 'flex items-center gap-2'}>
         {mobile && (
-          <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-gray-400">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-gray-500">
             Subject
           </p>
         )}
@@ -352,7 +352,7 @@ function ResourceFilter({ filters, onChange, className = '' }: ResourceFilterPro
       {/* Exam board */}
       <div className={mobile ? 'mt-5' : 'flex items-center gap-2'}>
         {mobile && (
-          <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-gray-400">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-gray-500">
             Exam Board
           </p>
         )}
@@ -374,7 +374,7 @@ function ResourceFilter({ filters, onChange, className = '' }: ResourceFilterPro
       {/* Topic */}
       <div className={mobile ? 'mt-5' : 'flex items-center gap-2'}>
         {mobile && (
-          <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-gray-400">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-gray-500">
             Topic
           </p>
         )}
@@ -389,7 +389,7 @@ function ResourceFilter({ filters, onChange, className = '' }: ResourceFilterPro
       {/* Resource type */}
       <div className={mobile ? 'mt-5' : 'flex items-center gap-2'}>
         {mobile && (
-          <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-gray-400">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-gray-500">
             Resource Type
           </p>
         )}
@@ -411,7 +411,7 @@ function ResourceFilter({ filters, onChange, className = '' }: ResourceFilterPro
       {/* Difficulty */}
       <div className={mobile ? 'mt-5' : 'flex items-center gap-2'}>
         {mobile && (
-          <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-gray-400">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-gray-500">
             Difficulty
           </p>
         )}
@@ -443,14 +443,14 @@ function ResourceFilter({ filters, onChange, className = '' }: ResourceFilterPro
           <div className="flex items-center gap-3">
             <div className="relative flex-1 max-w-xs">
               <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                <SearchIcon className="h-4 w-4 text-gray-400" />
+                <SearchIcon className="h-4 w-4 text-gray-500" />
               </div>
               <input
                 type="search"
                 placeholder="Search resources..."
                 value={filters.search}
                 onChange={(e) => updateFilter('search', e.target.value)}
-                className="w-full rounded-lg border border-gray-200 bg-white py-2 pl-9 pr-3 text-sm text-gray-900 placeholder:text-gray-400 transition-colors focus:border-primary-300 focus:outline-none focus:ring-2 focus:ring-primary-100"
+                className="w-full rounded-lg border border-gray-200 bg-white py-2 pl-9 pr-3 text-sm text-gray-900 placeholder:text-gray-500 transition-colors focus:border-primary-300 focus:outline-none focus:ring-2 focus:ring-primary-100"
               />
             </div>
 
@@ -458,7 +458,7 @@ function ResourceFilter({ filters, onChange, className = '' }: ResourceFilterPro
               <button
                 type="button"
                 onClick={clearAll}
-                className="ml-auto inline-flex items-center gap-1 text-sm font-medium text-gray-400 transition-colors hover:text-warn-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 focus-visible:ring-offset-2"
+                className="ml-auto inline-flex items-center gap-1 text-sm font-medium text-gray-500 transition-colors hover:text-warn-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 focus-visible:ring-offset-2"
               >
                 <CloseIcon className="h-3.5 w-3.5" />
                 Clear filters
@@ -481,14 +481,14 @@ function ResourceFilter({ filters, onChange, className = '' }: ResourceFilterPro
         {/* Search bar always visible */}
         <div className="relative">
           <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-            <SearchIcon className="h-4 w-4 text-gray-400" />
+            <SearchIcon className="h-4 w-4 text-gray-500" />
           </div>
           <input
             type="search"
             placeholder="Search resources..."
             value={filters.search}
             onChange={(e) => updateFilter('search', e.target.value)}
-            className="w-full rounded-xl border border-gray-200 bg-white py-2.5 pl-9 pr-3 text-sm text-gray-900 placeholder:text-gray-400 transition-colors focus:border-primary-300 focus:outline-none focus:ring-2 focus:ring-primary-100"
+            className="w-full rounded-xl border border-gray-200 bg-white py-2.5 pl-9 pr-3 text-sm text-gray-900 placeholder:text-gray-500 transition-colors focus:border-primary-300 focus:outline-none focus:ring-2 focus:ring-primary-100"
           />
         </div>
 
@@ -531,7 +531,7 @@ function ResourceFilter({ filters, onChange, className = '' }: ResourceFilterPro
               <button
                 type="button"
                 onClick={() => setMobileOpen(false)}
-                className="rounded-full p-1.5 text-gray-400 hover:bg-gray-100 hover:text-gray-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300"
+                className="rounded-full p-1.5 text-gray-500 hover:bg-gray-100 hover:text-gray-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300"
                 aria-label="Close filters"
               >
                 <CloseIcon className="h-5 w-5" />

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/aqa/paper-1' },
   title: "Paper 1: Shakespeare and the 19th-Century Novel - AQA English Literature",
   description:
     "AQA GCSE English Literature Paper 1 revision. Shakespeare plays (Macbeth, Romeo and Juliet) and 19th-century novels (A Christmas Carol, Jekyll and Hyde). Exam technique and essay structure.",

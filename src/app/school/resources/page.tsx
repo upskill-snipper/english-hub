@@ -802,7 +802,7 @@ export default function ResourceLibraryPage() {
         </div>
       ) : (
         <div className="flex flex-col items-center justify-center py-16 text-center">
-          <Search className="h-10 w-10 text-muted-foreground/40 mb-3" />
+          <Search className="h-10 w-10 text-muted-foreground/70 mb-3" />
           <p className="text-sm font-medium text-foreground">
             No resources found
           </p>

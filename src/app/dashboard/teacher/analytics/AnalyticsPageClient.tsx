@@ -136,7 +136,7 @@ export default function AnalyticsPageClient() {
               </div>
             ))}
           </div>
-          <p className="mt-4 text-xs text-gray-400 text-center">
+          <p className="mt-4 text-xs text-gray-500 text-center">
             Class average score by week. Trend is upward (+10% over 8 weeks).
           </p>
         </div>
@@ -164,7 +164,7 @@ export default function AnalyticsPageClient() {
               </div>
             </div>
           ))}
-          <p className="text-xs text-gray-400 pt-2">
+          <p className="text-xs text-gray-500 pt-2">
             Weakest area: Exam Technique (61%). Consider targeted revision sessions.
           </p>
         </div>

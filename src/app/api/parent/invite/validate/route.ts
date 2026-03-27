@@ -10,7 +10,7 @@ export async function GET(request: NextRequest) {
 
     if (!code || code.length < 1 || code.length > 20) {
       return NextResponse.json(
-        { message: "Invalid invite code." },
+        { error: "Invalid invite code." },
         { status: 400 }
       );
     }
@@ -24,7 +24,7 @@ export async function GET(request: NextRequest) {
     const rl = await rateLimit(`invite-validate:${ip}`, { limit: 5, windowSeconds: 3600 }); // 5 per hour per IP
     if (!rl.success) {
       return NextResponse.json(
-        { message: "Too many requests. Please try again later." },
+        { error: "Too many requests. Please try again later." },
         { status: 429, headers: { "Retry-After": String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
       );
     }
@@ -37,7 +37,7 @@ export async function GET(request: NextRequest) {
       // We intentionally don't distinguish between invalid and expired
       // for the general case, but the invite page needs to know
       return NextResponse.json(
-        { message: "This invite code is invalid or has expired." },
+        { error: "This invite code is invalid or has expired." },
         { status: 410 }
       );
     }
@@ -52,7 +52,7 @@ export async function GET(request: NextRequest) {
   } catch (err) {
     console.error("[parent/invite/validate] Error:", err);
     return NextResponse.json(
-      { message: "Something went wrong. Please try again." },
+      { error: "Something went wrong. Please try again." },
       { status: 500 }
     );
   }

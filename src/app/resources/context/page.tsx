@@ -6,6 +6,7 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/context' },
   title: "Historical Context - GCSE English Literature",
   description:
     "Essential historical and social context for GCSE English Literature. Understand the Victorian era, Elizabethan and Jacobean periods, the Romantic movement, and twentieth-century Britain to unlock top marks in your exam essays.",

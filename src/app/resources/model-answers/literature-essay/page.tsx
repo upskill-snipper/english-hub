@@ -4,6 +4,7 @@ import Link from "next/link";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/model-answers/literature-essay' },
   title: "Model Literature Essays | The English Hub",
   description:
     "Grade 7 and grade 9 model literature essays on Macbeth, A Christmas Carol, An Inspector Calls, and poetry comparison. Annotations show how to structure arguments and embed quotations.",

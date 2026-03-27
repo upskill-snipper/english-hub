@@ -5,6 +5,7 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/exam-technique/essay-structure' },
   title: "Essay Structure Templates",
   description:
     "Proven essay structure templates for GCSE and IGCSE English exams. Introduction techniques, PEEL paragraphs, conclusion strategies, topic sentences, and paragraph count guidance for different mark allocations.",

@@ -5,6 +5,7 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/themes/guilt' },
   title: "Guilt Theme Across Texts | GCSE English Literature",
   description:
     "Explore the theme of guilt across GCSE set texts: Macbeth, An Inspector Calls, Remains, and A Christmas Carol. Key quotes, analysis, and comparison essay ideas.",

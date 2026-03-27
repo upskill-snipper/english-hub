@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/aqa/jekyll-and-hyde' },
   title: "Jekyll and Hyde Study Guide - AQA English Literature GCSE",
   description:
     "Complete Jekyll and Hyde revision guide for AQA GCSE English Literature Paper 1 Section B. Key themes, 15+ quotations with analysis, Victorian context (AO3), character analysis, and sample essay plans.",

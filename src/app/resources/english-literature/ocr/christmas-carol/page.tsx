@@ -5,6 +5,7 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/ocr/christmas-carol' },
   title: "A Christmas Carol Study Guide for OCR | The English Hub",
   description:
     "Comprehensive A Christmas Carol study guide for OCR GCSE English Literature. Characters, themes, key quotations, context, and essay planning.",

@@ -92,7 +92,7 @@ function ScoreGauge({ score }: { score: number }) {
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
         <span className={`text-3xl font-bold ${colour}`}>{score}%</span>
-        <span className="text-xs text-gray-400">Overall</span>
+        <span className="text-xs text-gray-500">Overall</span>
       </div>
     </div>
   );
@@ -246,7 +246,7 @@ export default function EssayFeedbackPage() {
         {/* ── Essay text (left / top) ───────────────────────── */}
         <div className="lg:col-span-3">
           <div className="card">
-            <h2 className="mb-4 text-sm font-semibold uppercase tracking-wider text-gray-400">
+            <h2 className="mb-4 text-sm font-semibold uppercase tracking-wider text-gray-500">
               Your Essay
             </h2>
             <div className="prose prose-sm max-w-none text-gray-700 leading-relaxed">
@@ -254,7 +254,7 @@ export default function EssayFeedbackPage() {
                 <p key={i}>{paragraph}</p>
               ))}
             </div>
-            <p className="mt-4 text-xs text-gray-400">
+            <p className="mt-4 text-xs text-gray-500">
               {essay.content.trim().split(/\s+/).length} words
             </p>
           </div>
@@ -264,7 +264,7 @@ export default function EssayFeedbackPage() {
         <div className="space-y-6 lg:col-span-2">
           {/* Overall score */}
           <div className="card text-center">
-            <h2 className="mb-4 text-sm font-semibold uppercase tracking-wider text-gray-400">
+            <h2 className="mb-4 text-sm font-semibold uppercase tracking-wider text-gray-500">
               Overall Score
             </h2>
             <ScoreGauge score={feedback.overallScore} />
@@ -272,7 +272,7 @@ export default function EssayFeedbackPage() {
 
           {/* Category scores */}
           <div className="card">
-            <h2 className="mb-4 text-sm font-semibold uppercase tracking-wider text-gray-400">
+            <h2 className="mb-4 text-sm font-semibold uppercase tracking-wider text-gray-500">
               Category Scores
             </h2>
             <div className="space-y-4">
@@ -289,7 +289,7 @@ export default function EssayFeedbackPage() {
 
           {/* Detailed feedback */}
           <div className="card">
-            <h2 className="mb-4 text-sm font-semibold uppercase tracking-wider text-gray-400">
+            <h2 className="mb-4 text-sm font-semibold uppercase tracking-wider text-gray-500">
               Detailed Feedback
             </h2>
             <div className="prose prose-sm max-w-none text-gray-700 leading-relaxed">
@@ -313,7 +313,7 @@ export default function EssayFeedbackPage() {
 
           {/* Improvement suggestions */}
           <div className="card">
-            <h2 className="mb-4 text-sm font-semibold uppercase tracking-wider text-gray-400">
+            <h2 className="mb-4 text-sm font-semibold uppercase tracking-wider text-gray-500">
               Improvement Suggestions
             </h2>
             <ul className="space-y-3" role="list">

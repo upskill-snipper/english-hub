@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/aqa/christmas-carol' },
   title: "A Christmas Carol Study Guide - AQA English Literature GCSE",
   description:
     "Complete A Christmas Carol revision guide for AQA GCSE English Literature. Stave-by-stave summary, character analysis, themes, 20+ key quotations, Victorian context, and essay planning.",

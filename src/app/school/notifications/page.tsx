@@ -287,7 +287,7 @@ export default function NotificationsPage() {
       <div className="space-y-2">
         {filteredNotifications.length === 0 ? (
           <div className="flex flex-col items-center justify-center rounded-lg border border-dashed border-border py-16 text-center">
-            <Bell className="mb-3 h-8 w-8 text-muted-foreground/40" />
+            <Bell className="mb-3 h-8 w-8 text-muted-foreground/70" />
             <p className="text-sm font-medium text-muted-foreground">
               No notifications match your filters
             </p>

@@ -8,6 +8,7 @@ import {
   CONSENT_TYPES,
   ESSENTIAL_CONSENT_TYPES,
 } from "@/lib/consent";
+import { rateLimit } from "@/lib/rate-limit";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 // ─── Validation schemas ─────────────────────────────────────────────────
@@ -89,6 +90,18 @@ export async function POST(request: NextRequest) {
     }
     const userId = user.id;
 
+    // ── Rate limit: 30 consent operations per minute per user ──────────
+    const rl = await rateLimit(`consent:${userId}`, {
+      limit: 30,
+      windowSeconds: 60,
+    });
+    if (!rl.success) {
+      return NextResponse.json(
+        { error: "Too many requests. Please try again later." },
+        { status: 429, headers: { "Retry-After": String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+      );
+    }
+
     const body = await request.json();
     const parsed = recordConsentSchema.safeParse(body);
 
@@ -135,6 +148,19 @@ export async function DELETE(request: NextRequest) {
     }
     const userId = user.id;
 
+    // ── Rate limit: 30 consent operations per minute per user ──────────
+    // Shares the same key as POST to prevent combined abuse
+    const rl = await rateLimit(`consent:${userId}`, {
+      limit: 30,
+      windowSeconds: 60,
+    });
+    if (!rl.success) {
+      return NextResponse.json(
+        { error: "Too many requests. Please try again later." },
+        { status: 429, headers: { "Retry-After": String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+      );
+    }
+
     const body = await request.json();
     const parsed = withdrawConsentSchema.safeParse(body);
 
@@ -157,7 +183,7 @@ export async function DELETE(request: NextRequest) {
   } catch (error) {
     if (error instanceof Error && error.message.includes("Cannot withdraw essential consent")) {
       return NextResponse.json(
-        { error: error.message },
+        { error: "Cannot withdraw essential consent. This consent is required for the service to function." },
         { status: 403 }
       );
     }

@@ -5,6 +5,7 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/exam-technique/exam-day' },
   title: "Exam Day Advice",
   description:
     "Practical exam day advice for GCSE and IGCSE English. What to bring, how to read the paper, how to plan answers, how to stay calm under pressure, and what to do in the last 5 minutes.",

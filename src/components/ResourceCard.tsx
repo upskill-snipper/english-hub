@@ -93,7 +93,7 @@ function DifficultyIndicator({ level }: { level: DifficultyLevel }) {
           aria-hidden="true"
         />
       ))}
-      <span className="ml-1 text-xs text-gray-400" aria-hidden="true">
+      <span className="ml-1 text-xs text-gray-500" aria-hidden="true">
         {labels[level - 1]}
       </span>
     </div>
@@ -160,7 +160,7 @@ function ResourceCard({ resource, className = '' }: ResourceCardProps) {
       {/* Bottom row: subject, difficulty, CTA */}
       <div className="mt-4 flex flex-col gap-3">
         <div className="flex items-center justify-between">
-          <span className="text-xs font-medium text-gray-400">{resource.subject}</span>
+          <span className="text-xs font-medium text-gray-500">{resource.subject}</span>
           <DifficultyIndicator level={resource.difficulty} />
         </div>
 

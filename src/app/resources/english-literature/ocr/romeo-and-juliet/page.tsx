@@ -5,6 +5,7 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/ocr/romeo-and-juliet' },
   title: "Romeo and Juliet Study Guide for OCR | The English Hub",
   description:
     "Comprehensive Romeo and Juliet study guide for OCR GCSE English Literature. Characters, themes, key quotations, context, and essay planning.",

@@ -1,9 +1,15 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy — The English Hub',
+  title: 'Privacy Policy',
   description:
-    'How The English Hub collects, uses, and protects your personal data under UK GDPR.',
+    'How The English Hub collects, uses, and protects your personal data under UK GDPR. Transparent data practices for students, parents, and schools.',
+  alternates: { canonical: 'https://theenglishhub.app/privacy-policy' },
+  openGraph: {
+    title: 'Privacy Policy — The English Hub',
+    description:
+      'How The English Hub collects, uses, and protects your personal data under UK GDPR. Transparent data practices for students, parents, and schools.',
+  },
 }
 
 export default function PrivacyPolicyPage() {

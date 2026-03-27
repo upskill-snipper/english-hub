@@ -5,6 +5,7 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/english-language/ocr/spoken-language' },
   title: "OCR Spoken Language Endorsement | The English Hub",
   description:
     "Complete guide to the OCR GCSE English Language Spoken Language endorsement. Presentation skills, audience interaction, and Standard English guidance.",

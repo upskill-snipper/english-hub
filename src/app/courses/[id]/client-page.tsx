@@ -212,7 +212,7 @@ export default function CourseDetailPage({ course }: CourseDetailPageProps) {
 
                       {/* Icon */}
                       {locked ? (
-                        <Lock className="h-4 w-4 shrink-0 text-muted-foreground/50" />
+                        <Lock className="h-4 w-4 shrink-0 text-muted-foreground/70" />
                       ) : (
                         <Play className="h-4 w-4 shrink-0 text-primary opacity-0 transition-opacity group-hover:opacity-100" />
                       )}

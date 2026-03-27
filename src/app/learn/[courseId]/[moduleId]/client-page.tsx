@@ -264,7 +264,7 @@ function Sidebar({
                         className={
                           isCurrent
                             ? 'text-primary'
-                            : 'text-muted-foreground/40'
+                            : 'text-muted-foreground/70'
                         }
                       />
                     )}
@@ -316,7 +316,7 @@ function Sidebar({
               className={
                 completedCount === course.moduleList.length
                   ? 'text-primary'
-                  : 'text-muted-foreground/40'
+                  : 'text-muted-foreground/70'
               }
             />
             <span

@@ -5,6 +5,7 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/writing-skills' },
   title: "Writing Skills Masterclass | The English Hub",
   description:
     "Master every type of writing for your English exams. Comprehensive, board-agnostic guides covering creative writing, persuasive writing, analytical writing, and grammar & punctuation.",

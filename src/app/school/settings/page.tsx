@@ -146,7 +146,7 @@ export default function SchoolSettingsPage() {
     return (
       <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
         <div className="rounded-lg border border-dashed border-border py-16 text-center">
-          <School className="mx-auto mb-3 h-10 w-10 text-muted-foreground/50" />
+          <School className="mx-auto mb-3 h-10 w-10 text-muted-foreground/70" />
           <h2 className="text-lg font-semibold text-foreground">No School Found</h2>
           <p className="mt-1 text-sm text-muted-foreground">
             You are not a member of any school. Ask your school admin for an invite.
@@ -372,7 +372,7 @@ function SchoolProfileSection({
                       className="h-full w-full rounded-lg object-contain"
                     />
                   ) : (
-                    <Image className="h-8 w-8 text-muted-foreground/40" />
+                    <Image className="h-8 w-8 text-muted-foreground/70" />
                   )}
                 </div>
                 <div className="space-y-1">
@@ -693,7 +693,7 @@ function MembersManagementSection({
 
           {members.length === 0 && (
             <div className="rounded-lg border border-dashed border-border py-8 text-center">
-              <UserPlus className="mx-auto mb-2 h-8 w-8 text-muted-foreground/50" />
+              <UserPlus className="mx-auto mb-2 h-8 w-8 text-muted-foreground/70" />
               <p className="text-sm text-muted-foreground">No members yet.</p>
             </div>
           )}
@@ -1020,7 +1020,7 @@ function ClassesManagementSection({
             </div>
           ) : (
             <div className="rounded-lg border border-dashed border-border py-8 text-center">
-              <BookOpen className="mx-auto mb-2 h-8 w-8 text-muted-foreground/50" />
+              <BookOpen className="mx-auto mb-2 h-8 w-8 text-muted-foreground/70" />
               <p className="text-sm text-muted-foreground">No active classes.</p>
             </div>
           )}
@@ -1370,7 +1370,7 @@ function JoinCodesSection({
             </div>
           ) : (
             <div className="rounded-lg border border-dashed border-border py-8 text-center">
-              <KeyRound className="mx-auto mb-2 h-8 w-8 text-muted-foreground/50" />
+              <KeyRound className="mx-auto mb-2 h-8 w-8 text-muted-foreground/70" />
               <p className="text-sm text-muted-foreground">
                 No active join codes. Generate one below.
               </p>

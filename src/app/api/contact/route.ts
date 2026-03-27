@@ -2,6 +2,16 @@ import { NextRequest, NextResponse } from 'next/server'
 import { rateLimit, getClientIp } from '@/lib/rate-limit'
 import { createServiceRoleClient } from '@/lib/supabase/server'
 
+/** Escape user input for safe inclusion in HTML email templates. */
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;')
+}
+
 const VALID_SUBJECTS = [
   'General Enquiry',
   'Technical Support',
@@ -102,11 +112,11 @@ export async function POST(request: NextRequest) {
             subject: `[Contact Form] ${body.subject} – from ${body.name.trim()}`,
             html: [
               `<h2>New Contact Form Submission</h2>`,
-              `<p><strong>Name:</strong> ${body.name.trim()}</p>`,
-              `<p><strong>Email:</strong> ${body.email.trim()}</p>`,
-              `<p><strong>Subject:</strong> ${body.subject}</p>`,
+              `<p><strong>Name:</strong> ${escapeHtml(body.name.trim())}</p>`,
+              `<p><strong>Email:</strong> ${escapeHtml(body.email.trim())}</p>`,
+              `<p><strong>Subject:</strong> ${escapeHtml(body.subject)}</p>`,
               `<hr />`,
-              `<p>${body.message.trim().replace(/\n/g, '<br />')}</p>`,
+              `<p>${escapeHtml(body.message.trim()).replace(/\n/g, '<br />')}</p>`,
             ].join('\n'),
           }),
         }),
@@ -122,8 +132,8 @@ export async function POST(request: NextRequest) {
             to: body.email.trim(),
             subject: 'We received your message – The English Hub',
             html: [
-              `<h2>Thank you for contacting us, ${body.name.trim()}!</h2>`,
-              `<p>We've received your message regarding <strong>${body.subject}</strong> and will get back to you as soon as possible.</p>`,
+              `<h2>Thank you for contacting us, ${escapeHtml(body.name.trim())}!</h2>`,
+              `<p>We've received your message regarding <strong>${escapeHtml(body.subject)}</strong> and will get back to you as soon as possible.</p>`,
               `<p>If your enquiry is urgent, please allow up to 24 hours for a response.</p>`,
               `<br />`,
               `<p>Best regards,<br />The English Hub Team</p>`,

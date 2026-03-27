@@ -5,6 +5,7 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/english-language/caie/writing-skills' },
   title: "Writing Skills | Cambridge IGCSE English Language",
   description:
     "Master every writing format for Cambridge IGCSE English Language. Directed writing formats (letters, reports, speeches, articles, journals, interviews), summary writing technique, and narrative/descriptive composition guidance.",

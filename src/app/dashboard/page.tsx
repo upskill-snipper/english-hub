@@ -339,6 +339,24 @@ export default function DashboardPage() {
             </div>
           </div>
 
+          {/* ── Teacher Banner ────────────────────────────────────────── */}
+          {profile?.role === 'teacher' && (
+            <div className="mb-6 rounded-lg border border-primary/20 bg-primary/5 p-4 flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <School className="h-5 w-5 text-primary" />
+                <div>
+                  <p className="font-medium text-foreground">Teacher Account</p>
+                  <p className="text-sm text-muted-foreground">
+                    Access your teaching tools, student analytics, and lesson resources.
+                  </p>
+                </div>
+              </div>
+              <Button size="sm" render={<Link href="/dashboard/teacher" />}>
+                Open Teacher Hub
+              </Button>
+            </div>
+          )}
+
           {/* ── Error Banner ─────────────────────────────────────────── */}
           {error && (
             <Alert variant="destructive" className="mb-6">

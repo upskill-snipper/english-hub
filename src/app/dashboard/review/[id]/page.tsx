@@ -144,7 +144,7 @@ export default function ReviewStatusPage() {
       <div className="mb-2">
         <Link
           href="/dashboard"
-          className="text-sm text-gray-400 hover:text-primary transition-colors"
+          className="text-sm text-gray-500 hover:text-primary transition-colors"
         >
           &larr; Back to Dashboard
         </Link>
@@ -191,13 +191,13 @@ export default function ReviewStatusPage() {
                     className={`text-sm font-medium ${
                       stageIndex(review.status) >= idx
                         ? "text-gray-900"
-                        : "text-gray-400"
+                        : "text-gray-500"
                     }`}
                   >
                     {stageLabels[stage]}
                   </p>
                   {event?.timestamp && (
-                    <p className="mt-0.5 text-xs text-gray-400">
+                    <p className="mt-0.5 text-xs text-gray-500">
                       {new Date(event.timestamp).toLocaleDateString("en-GB", {
                         day: "numeric",
                         month: "long",
@@ -238,29 +238,29 @@ export default function ReviewStatusPage() {
         </h2>
         <dl className="space-y-3 text-sm">
           <div>
-            <dt className="text-gray-400">Essay</dt>
+            <dt className="text-gray-500">Essay</dt>
             <dd className="mt-0.5 text-gray-800">{review.essayTitle}</dd>
           </div>
           <div>
-            <dt className="text-gray-400">Reason</dt>
+            <dt className="text-gray-500">Reason</dt>
             <dd className="mt-0.5 text-gray-800">{review.reason}</dd>
           </div>
           <div>
-            <dt className="text-gray-400">Details</dt>
+            <dt className="text-gray-500">Details</dt>
             <dd className="mt-0.5 text-gray-800 whitespace-pre-wrap">
               {review.detail}
             </dd>
           </div>
           {review.selfAssessment && (
             <div>
-              <dt className="text-gray-400">Your self-assessment</dt>
+              <dt className="text-gray-500">Your self-assessment</dt>
               <dd className="mt-0.5 text-gray-800 whitespace-pre-wrap">
                 {review.selfAssessment}
               </dd>
             </div>
           )}
           <div>
-            <dt className="text-gray-400">Submitted</dt>
+            <dt className="text-gray-500">Submitted</dt>
             <dd className="mt-0.5 text-gray-800">
               {new Date(review.createdAt).toLocaleDateString("en-GB", {
                 day: "numeric",
@@ -289,7 +289,7 @@ export default function ReviewStatusPage() {
             )
             .map((event, idx) => (
               <li key={idx} className="flex gap-3 text-sm">
-                <span className="shrink-0 text-xs text-gray-400 w-32">
+                <span className="shrink-0 text-xs text-gray-500 w-32">
                   {new Date(event.timestamp!).toLocaleDateString("en-GB", {
                     day: "numeric",
                     month: "short",
@@ -300,7 +300,7 @@ export default function ReviewStatusPage() {
                 <span className="text-gray-700">
                   {event.label}
                   {event.description && (
-                    <span className="text-gray-400">
+                    <span className="text-gray-500">
                       {" "}
                       — {event.description}
                     </span>

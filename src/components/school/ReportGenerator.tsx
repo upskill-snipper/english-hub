@@ -688,7 +688,7 @@ export function ReportGenerator({
         ) : canGenerate ? null : (
           <Card>
             <CardContent className="flex flex-col items-center justify-center py-16 text-center">
-              <FileText className="h-12 w-12 text-muted-foreground/30 mb-4" />
+              <FileText className="h-12 w-12 text-muted-foreground/70 mb-4" />
               <p className="text-sm font-medium text-muted-foreground">
                 Configure the options above to generate a report
               </p>

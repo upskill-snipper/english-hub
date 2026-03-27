@@ -2,8 +2,15 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Refund Policy — The English Hub',
-  description: 'Our refund and cancellation policy for subscriptions and course purchases.',
+  title: 'Refund Policy',
+  description:
+    'Our refund and cancellation policy for The English Hub subscriptions and course purchases. Clear terms for students, parents, and institutions.',
+  alternates: { canonical: 'https://theenglishhub.app/refund-policy' },
+  openGraph: {
+    title: 'Refund Policy — The English Hub',
+    description:
+      'Our refund and cancellation policy for The English Hub subscriptions and course purchases. Clear terms for students, parents, and institutions.',
+  },
 }
 
 export default function RefundPolicyPage() {

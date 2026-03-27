@@ -48,6 +48,17 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    // Length limits
+    if (typeof fullName !== 'string' || fullName.trim().length > 200) {
+      return NextResponse.json({ error: 'fullName must be 200 characters or fewer' }, { status: 400 })
+    }
+    if (typeof email !== 'string' || email.trim().length > 320) {
+      return NextResponse.json({ error: 'Invalid email' }, { status: 400 })
+    }
+    if (reason && (typeof reason !== 'string' || reason.length > 2000)) {
+      return NextResponse.json({ error: 'reason must be 2000 characters or fewer' }, { status: 400 })
+    }
+
     // Validate subscription plan
     const validPlans = ['monthly', 'annual', 'family', 'student']
     if (!validPlans.includes(subscriptionPlan)) {

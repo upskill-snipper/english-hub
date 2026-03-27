@@ -5,6 +5,7 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/english-language/wjec' },
   title: "WJEC Eduqas GCSE English Language Revision",
   description:
     "Complete WJEC Eduqas GCSE English Language revision hub. Component 1: 20th Century Literature Reading & Creative Prose Writing. Component 2: 19th & 21st Century Non-Fiction Reading & Transactional/Persuasive Writing.",

@@ -5,6 +5,7 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/edexcel/macbeth' },
   title: "Macbeth Study Guide — Edexcel GCSE English Literature",
   description:
     "Complete Macbeth revision guide for Edexcel GCSE English Literature. Plot summary, character analysis, themes, 20+ key quotes, historical context, and exam technique.",

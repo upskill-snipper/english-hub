@@ -5,6 +5,7 @@ import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 /* ─── Metadata ───────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'https://theenglishhub.app/resources/english-literature/caie/christmas-carol' },
   title: "A Christmas Carol Study Guide - Cambridge IGCSE English Literature",
   description:
     "Complete A Christmas Carol study guide for Cambridge IGCSE English Literature. Stave summaries, character analysis, themes, 18 key quotes with analysis, Victorian context, Scrooge's transformation, and Cambridge-specific exam technique.",

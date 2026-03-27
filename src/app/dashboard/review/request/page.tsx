@@ -170,7 +170,7 @@ export default function ReviewRequestPage() {
       <div className="mb-2">
         <Link
           href="/dashboard"
-          className="text-sm text-gray-400 hover:text-primary transition-colors"
+          className="text-sm text-gray-500 hover:text-primary transition-colors"
         >
           &larr; Back to Dashboard
         </Link>
@@ -251,7 +251,7 @@ export default function ReviewRequestPage() {
           <label htmlFor="detail" className="block text-sm font-medium text-gray-700">
             Tell us more <span className="text-red-500">*</span>
           </label>
-          <p className="mt-0.5 text-xs text-gray-400">
+          <p className="mt-0.5 text-xs text-gray-500">
             What specifically would you like a human to look at?
           </p>
           <textarea
@@ -267,7 +267,7 @@ export default function ReviewRequestPage() {
           />
           <p
             className={`mt-1 text-right text-xs ${
-              detail.length >= DETAIL_MAX ? "text-red-500 font-medium" : "text-gray-400"
+              detail.length >= DETAIL_MAX ? "text-red-500 font-medium" : "text-gray-500"
             }`}
           >
             {detail.length}/{DETAIL_MAX}
@@ -281,9 +281,9 @@ export default function ReviewRequestPage() {
             className="block text-sm font-medium text-gray-700"
           >
             Your own thoughts on your essay{" "}
-            <span className="text-gray-400 font-normal">(optional)</span>
+            <span className="text-gray-500 font-normal">(optional)</span>
           </label>
-          <p className="mt-0.5 text-xs text-gray-400">
+          <p className="mt-0.5 text-xs text-gray-500">
             If you&apos;d like, share what you think you did well or what you
             were trying to achieve. This helps the reviewer understand your
             perspective.
@@ -302,7 +302,7 @@ export default function ReviewRequestPage() {
             className={`mt-1 text-right text-xs ${
               selfAssessment.length >= SELF_ASSESSMENT_MAX
                 ? "text-red-500 font-medium"
-                : "text-gray-400"
+                : "text-gray-500"
             }`}
           >
             {selfAssessment.length}/{SELF_ASSESSMENT_MAX}

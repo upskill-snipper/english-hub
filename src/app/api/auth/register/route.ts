@@ -8,6 +8,7 @@ import {
   buildConsentRecords,
   getDefaultPrivacySettings,
 } from "@/lib/auth";
+import { rateLimit, getClientIp } from "@/lib/rate-limit";
 import { ZodError } from "zod";
 
 // NOTE: Prisma client import — uncomment once Prisma is set up:
@@ -15,6 +16,19 @@ import { ZodError } from "zod";
 
 export async function POST(request: NextRequest) {
   try {
+    // ── Rate limit: 10 attempts per 15 minutes per IP ──────────────────
+    const ip = getClientIp(request.headers);
+    const rl = await rateLimit(`register:${ip}`, {
+      limit: 10,
+      windowSeconds: 900,
+    });
+    if (!rl.success) {
+      return NextResponse.json(
+        { error: "Too many registration attempts. Please try again later." },
+        { status: 429, headers: { "Retry-After": String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+      );
+    }
+
     const body = await request.json();
 
     // ── Validate input ────────────────────────────────────────────────
@@ -24,7 +38,7 @@ export async function POST(request: NextRequest) {
     const age = calculateAge(data.dobYear, data.dobMonth, data.dobDay);
     if (age < 14) {
       return NextResponse.json(
-        { message: "You must be 14 or older to register." },
+        { error: "You must be 14 or older to register." },
         { status: 403 }
       );
     }
@@ -40,11 +54,7 @@ export async function POST(request: NextRequest) {
     const sessionToken = generateSessionToken();
     const sessionExpiry = getSessionExpiry();
 
-    // ── Client IP for audit ───────────────────────────────────────────
-    const ip =
-      request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ??
-      request.headers.get("x-real-ip") ??
-      "unknown";
+    // ── Client IP for audit (reuse ip from rate limiter above) ────────
 
     // ── Database operations ───────────────────────────────────────────
     // TODO: Replace with actual Prisma transaction once schema is migrated.
@@ -162,7 +172,7 @@ export async function POST(request: NextRequest) {
         fieldErrors[key].push(issue.message);
       }
       return NextResponse.json(
-        { message: "Validation failed", errors: fieldErrors },
+        { error: "Validation failed", errors: fieldErrors },
         { status: 400 }
       );
     }
@@ -170,7 +180,7 @@ export async function POST(request: NextRequest) {
     // ── Known errors ──────────────────────────────────────────────────
     if (error instanceof Error && error.message === "EMAIL_EXISTS") {
       return NextResponse.json(
-        { message: "An account with this email already exists." },
+        { error: "An account with this email already exists." },
         { status: 409 }
       );
     }
@@ -178,7 +188,7 @@ export async function POST(request: NextRequest) {
     // ── Unknown errors ────────────────────────────────────────────────
     console.error("[Register] Unexpected error:", error);
     return NextResponse.json(
-      { message: "An unexpected error occurred. Please try again." },
+      { error: "An unexpected error occurred. Please try again." },
       { status: 500 }
     );
   }

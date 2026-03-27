@@ -1,11 +1,25 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getConsentHistory } from "@/lib/consent";
+import { rateLimit, getClientIp } from "@/lib/rate-limit";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 // ─── GET /api/consent/history ───────────────────────────────────────────
 
 export async function GET(request: NextRequest) {
   try {
+    // ── Rate limit: 30 requests per minute per IP ──────────────────────
+    const ip = getClientIp(request.headers);
+    const rl = await rateLimit(`consent-history:${ip}`, {
+      limit: 30,
+      windowSeconds: 60,
+    });
+    if (!rl.success) {
+      return NextResponse.json(
+        { error: "Too many requests. Please try again later." },
+        { status: 429, headers: { "Retry-After": String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+      );
+    }
+
     const supabase = createServerSupabaseClient();
     const { data: { user }, error: authError } = await supabase.auth.getUser();
     if (authError || !user) {
