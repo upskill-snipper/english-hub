@@ -1041,9 +1041,9 @@ function ExamResults() {
                             Model Answer ({selectedGrade})
                           </div>
                           <p className="text-sm text-foreground/90 whitespace-pre-line">
-                            {question.modelAnswers[selectedGrade]
-                              ?? question.modelAnswers['Grade 6-7']
-                              ?? question.modelAnswers['Grade 4-5']
+                            {question.modelAnswers?.[selectedGrade]
+                              ?? question.modelAnswers?.['Grade 6-7']
+                              ?? question.modelAnswers?.['Grade 4-5']
                               ?? 'Model answer not available for this grade band.'}
                           </p>
 

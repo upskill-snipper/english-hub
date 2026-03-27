@@ -170,7 +170,7 @@ const InlinePaperPreview = memo(function InlinePaperPreview({ paper }: { paper: 
                       <p className="text-xs font-medium text-emerald-400 mb-2 uppercase tracking-wider flex items-center gap-1.5">
                         <Eye className="h-3.5 w-3.5" /> Model Answer (Top Grade)
                       </p>
-                      {Object.entries(question.modelAnswers).slice(0, 1).map(([grade, answer]) => (
+                      {Object.entries(question.modelAnswers ?? {}).slice(0, 1).map(([grade, answer]) => (
                         <div key={grade}>
                           <Badge className="mb-2 bg-emerald-500/15 text-emerald-300 border-emerald-500/30 text-xs">{grade}</Badge>
                           <p className="text-sm text-foreground/80 leading-relaxed">

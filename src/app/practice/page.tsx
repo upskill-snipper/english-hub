@@ -475,7 +475,7 @@ export default function PracticePage() {
                       <TabsContent key={tab} value={tab}>
                         <CardContent>
                           <div className="whitespace-pre-line text-[0.95rem] leading-relaxed text-muted-foreground">
-                            {currentQuestion.modelAnswers[tab] ||
+                            {currentQuestion.modelAnswers?.[tab] ||
                               'No model answer available for this grade.'}
                           </div>
                         </CardContent>

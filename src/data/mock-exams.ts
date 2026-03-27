@@ -36,7 +36,7 @@ export interface MockExamQuestion {
   extract?: string
   extractSource?: string
   /** Model answer keyed by grade band */
-  modelAnswers: Record<string, string>
+  modelAnswers?: Record<string, string>
   /** Mark scheme bullet points */
   markScheme: string[]
 }
