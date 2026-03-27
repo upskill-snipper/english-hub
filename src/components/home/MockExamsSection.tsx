@@ -33,16 +33,16 @@ export default function MockExamsSection() {
             <div className="w-12 h-12 rounded-2xl bg-orange-500/10 flex items-center justify-center mb-6">
               <FileText className="w-6 h-6 text-orange-400" />
             </div>
-            <h3 className="text-xl font-bold tracking-tight text-foreground mb-3">96 Mock Exam Papers</h3>
+            <h3 className="text-xl font-bold tracking-tight text-foreground mb-3">130+ Mock Exam Papers</h3>
             <p className="text-muted-foreground leading-relaxed mb-6">
               Full-length timed exams matching the real GCSE format. Every paper includes detailed model answers at three grade bands and official mark schemes.
             </p>
             <div className="grid grid-cols-2 gap-3 mb-6">
               {[
-                { label: 'AQA Papers', value: '30+' },
-                { label: 'Edexcel Papers', value: '30+' },
-                { label: 'OCR Papers', value: '30+' },
-                { label: 'WJEC Papers', value: '30+' },
+                { label: 'AQA Papers', value: '26' },
+                { label: 'Edexcel Papers', value: '24' },
+                { label: 'OCR Papers', value: '15' },
+                { label: 'WJEC Papers', value: '22' },
               ].map((s) => (
                 <div key={s.label} className="text-center p-3 rounded-lg bg-card border border-border/40">
                   <p className="text-lg font-bold text-foreground">{s.value}</p>

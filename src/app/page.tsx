@@ -199,11 +199,11 @@ export default function Home() {
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8">
             {[
-              { icon: FileText, color: 'text-orange-400 bg-orange-500/10', value: '120+', label: 'Mock Exam Papers' },
+              { icon: FileText, color: 'text-orange-400 bg-orange-500/10', value: '130+', label: 'Mock Exam Papers' },
               { icon: Sparkles, color: 'text-cyan-400 bg-cyan-500/10', value: 'AI', label: 'Essay Feedback' },
-              { icon: BookOpen, color: 'text-primary bg-primary/10', value: '13', label: 'Structured Courses' },
-              { icon: Layers, color: 'text-purple-400 bg-purple-500/10', value: '295', label: 'Flashcards' },
-              { icon: Award, color: 'text-amber-400 bg-amber-500/10', value: '5', label: '4 GCSE Boards + KS3' },
+              { icon: BookOpen, color: 'text-primary bg-primary/10', value: '470+', label: 'Structured Courses' },
+              { icon: Layers, color: 'text-purple-400 bg-purple-500/10', value: '2,000+', label: 'Flashcards' },
+              { icon: Award, color: 'text-amber-400 bg-amber-500/10', value: '5', label: 'Exam Boards' },
             ].map((stat) => (
               <div key={stat.label} className="flex items-center gap-3">
                 <div className={cn('w-10 h-10 rounded-xl flex items-center justify-center shrink-0', stat.color)}>

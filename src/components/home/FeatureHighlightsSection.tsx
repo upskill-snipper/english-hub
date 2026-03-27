@@ -29,8 +29,8 @@ const features = [
   },
   {
     icon: BookOpen,
-    title: '68 Full Courses',
-    desc: 'From KS3 Reading to GCSE Literature — comprehensive courses for every stage of your English journey.',
+    title: '470+ Full Courses',
+    desc: 'From KS3 Reading to GCSE and IGCSE Literature — comprehensive courses for every stage of your English journey.',
   },
   {
     icon: Sparkles,

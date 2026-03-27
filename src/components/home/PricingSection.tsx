@@ -47,11 +47,11 @@ export default function PricingSection() {
           <ul className="space-y-3 mb-8 flex-1">
             {[
               'First month FREE — no payment due today',
-              'All 68 courses included',
-              'All 96 mock exam papers',
+              'All 470+ courses included',
+              'All 130+ mock exam papers',
               'AI essay feedback (10/day)',
               '2,000+ flashcards & 52 terminology entries',
-              'Board-specific content for AQA, Edexcel, OCR & WJEC',
+              'Board-specific content for AQA, Edexcel, OCR, WJEC & IGCSE',
               'Certificates on completion',
               'Progress tracking & analytics',
               'Cancel anytime — no contracts',

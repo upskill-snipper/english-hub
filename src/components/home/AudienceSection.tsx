@@ -42,7 +42,7 @@ const studentBenefits = [
     icon: Timer,
     color: 'text-orange-400 bg-orange-500/10',
     title: 'Mock Exams with Timing',
-    desc: '96 full-length timed mock exams in real exam format. Practise under pressure and build exam stamina.',
+    desc: '130+ full-length timed mock exams in real exam format. Practise under pressure and build exam stamina.',
   },
   {
     icon: BarChart3,
