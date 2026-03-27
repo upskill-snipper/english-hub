@@ -680,7 +680,11 @@ export const flashcardDecks: FlashcardDeck[] = [
 
   // ===== NARRATIVE TECHNIQUES DECK (50 cards) =====
   {
+    id: 'narrative-techniques',
     title: 'Narrative Techniques & Literary Methods',
+    description: 'Essential narrative techniques for literary analysis',
+    category: 'Techniques',
+    board: 'All',
     cards: [
       { id: 'nt-1', front: 'Foreshadowing', back: `Definition: Hints or clues that suggest future events in the narrative.\n\nHow Writers Use It:\n• Dickens: The door knocker shows Marley\'s face before the ghost appears\n• Shakespeare: The witches\' prophecies foreshadow Macbeth\'s fate\n\nEffect on Reader:\n• Creates suspense and anticipation\n• Makes endings feel inevitable rather than random\n• Rewards careful readers who spot the clues` },
       { id: 'nt-2', front: 'Flashback (Analepsis)', back: `Definition: The story moves backward in time to show events that happened before the main timeline.\n\nHow Writers Use It:\n• Dickens: Ghost of Christmas Past shows Scrooge\'s childhood\n• Crime novels: Detective discovers suspect\'s secret past\n\nEffect on Reader:\n• Provides context and explanation for present behaviour\n• Builds empathy by showing character origins\n• Allows comparison: how has the character changed?` },
@@ -736,7 +740,11 @@ export const flashcardDecks: FlashcardDeck[] = [
   },
     // ===== LANGUAGE DEVICES & STYLISTIC FEATURES DECK (100 cards) =====
   {
+    id: 'language-devices',
     title: 'Language Devices & Stylistic Features',
+    description: 'Language devices and stylistic features for analysis',
+    category: 'Devices',
+    board: 'All',
     cards: [
       { id: 'ld-1', front: 'Rhetoric (Art of Persuasion)', back: `Definition: The art of using language effectively to persuade, inform, or move an audience.\n\nRhetorical Devices:\n• Ethos: Appeals to credibility or character\n• Pathos: Appeals to emotion\n• Logos: Appeals to logic or reason\n• Rhetorical questions: Questions asked for effect, not answer\n\nAnalyse: What persuasive techniques does writer use? How does language aim to persuade?` },
       { id: 'ld-2', front: 'Antithesis', back: `Definition: The juxtaposition of contrasting ideas in parallel structure.\n\nExample: "Ask not what your country can do for you; ask what you can do for your country"\n\nEffect: Creates emphasis through contrast; makes ideas memorable; suggests complexity\n\nAnalyse: Where is antithesis used? What contrasts are emphasised? How does it strengthen meaning?` },
@@ -802,7 +810,11 @@ export const flashcardDecks: FlashcardDeck[] = [
   },
     // ===== CRITICAL APPROACHES & ANALYTICAL FRAMEWORKS DECK (120 cards) =====
   {
+    id: 'critical-approaches',
     title: 'Critical Approaches & Analytical Frameworks',
+    description: 'Critical approaches for literary analysis',
+    category: 'Criticism',
+    board: 'All',
     cards: [
       { id: 'ca-1', front: 'Marxist Literary Criticism', back: `Definition: Analyses literature through the lens of economic systems, class struggle, power, and social inequality.\n\nKey Ideas:\n• Literature reflects economic conditions of its time\n• Class struggle is central to understanding texts\n• Authors and characters are products of their social class\n• Capitalist systems exploit the working class\n\nExample: In An Inspector Calls, Marxist analysis examines how capitalism enables the Birlings\' exploitation of Eva.\n\nHow to Apply: Discuss class conflict, labour, economic power, social hierarchy, exploitation.` },
       { id: 'ca-2', front: 'Feminist Literary Criticism', back: `Definition: Analyses literature to understand how gender is represented, how patriarchy operates, and how women are positioned.\n\nKey Ideas:\n• Literature often reflects male-dominated society\n• Female characters may be marginalised or stereotyped\n• Language itself can be gendered (masculine as universal, feminine as "other")\n• Women writers have different experiences and perspectives\n\nExample: Analysis of how Eva is treated in An Inspector Calls reveals how women\' powerlessness in patriarchal society.\n\nHow to Apply: Discuss female characterisation, gender roles, power dynamics, representation of women\'s agency.` },
@@ -828,7 +840,11 @@ export const flashcardDecks: FlashcardDeck[] = [
   },
     // ===== ESSAY WRITING & ACADEMIC RESPONSE DECK (200+ cards) =====
   {
+    id: 'essay-writing',
     title: 'Essay Structure & Academic Response Techniques',
+    description: 'Essay structure and academic response techniques',
+    category: 'Writing',
+    board: 'All',
     cards: [
       { id: 'aw-1', front: 'The Five-Paragraph Essay Structure', back: `Basic Structure:\n1. Introduction (5-8 sentences)\n2. Body Paragraph 1 (8-10 sentences)\n3. Body Paragraph 2 (8-10 sentences)\n4. Body Paragraph 3 (8-10 sentences)\n5. Conclusion (5-8 sentences)\n\nWhen to Use: Simple topics, timed exams, introductory essays\n\nWhy It Works: Clear, logical, easy to follow\n\nLimitations: Can feel formulaic; may not suit complex arguments` },
       { id: 'aw-2', front: 'The PEE Paragraph Model', back: `PEE = Point, Evidence, Explanation\n\nPoint: Topic sentence stating your argument (1 sentence)\nEvidence: Quote or textual reference (1-2 sentences)\nExplanation: How evidence supports your point (3-4 sentences)\n\nExample:\n"Scrooge\'s isolation is presented as a choice. The narrator states he is "solitary as an oyster," suggesting that emotional distance is his preference. This metaphor compares him to shellfish that retreat into protective shells, implying his withdrawn nature is self-imposed defense mechanism."\n\nKey: Explanation should discuss effect, technique, and relevance.` },
