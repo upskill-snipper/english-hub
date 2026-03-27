@@ -245,7 +245,127 @@ Emma had not returned to her hometown in twelve years. The station platform look
 <div class="key-term"><strong>Key Term: Explicit Information</strong> — Details that are directly and clearly stated in the text. The reader does not need to interpret or infer meaning — the facts are presented openly.</div>
 
 <div class="key-term"><strong>Key Term: Implicit Information</strong> — Meaning that is suggested or hinted at rather than directly stated. The reader must combine textual clues with their own understanding to arrive at a conclusion.</div>
-`,
+
+<h3>Extended Practice: Full A1 Question Set with Annotated Student Responses</h3>
+
+<h4>Practice Passage 1: "The Arrival"</h4>
+<div class="text-extract">
+Eleanor had not set foot in the village for thirty years. The station was unrecognizable — the old wooden waiting room had been demolished, replaced by a gleaming glass shelter. The tea rooms where she and her mother had waited for the evening train were gone, their space now occupied by a mobile phone shop. Yet as she walked out onto the high street, something familiar caught her: the smell of fresh bread from the bakery, unchanged, insistent. The corner where Mr. Patterson's ironmonger had stood is now an estate agent's office. She paused outside the window, studying photographs of properties for sale. One caught her eye — a Victorian terraced house with a blue door, its windows bright with curtains she recognized. It was her childhood home.
+<div class="source">20th-century fiction (adapted)</div>
+</div>
+
+<h4>A1 Question Set (5 marks)</h4>
+<ol>
+<li><strong>(1 mark)</strong> How long has Eleanor been away from the village?</li>
+<li><strong>(1 mark)</strong> What building has replaced the wooden waiting room?</li>
+<li><strong>(1 mark)</strong> Which of the following has NOT changed? (a) The tea rooms. (b) The ironmonger's shop. (c) The smell of fresh bread. (d) The railway station.</li>
+<li><strong>(2 marks - Inference)</strong> What does Eleanor's pausing outside the estate agent's window suggest about her feelings?</li>
+<li><strong>(1 mark)</strong> True or False: Eleanor recognizes the curtains in the house window because they belonged to her childhood home.</li>
+</ol>
+
+<h4>Examiner Commentary Box — Sample Student Response 1</h4>
+<div style="border: 2px solid #e74c3c; padding: 15px; margin: 15px 0; background-color: #fadbd8;">
+<strong>Grade 5-6 Response (Acceptable):</strong>
+<blockquote>
+1. 30 years<br>2. A glass shelter / glass waiting room<br>3. (c) The smell of fresh bread<br>4. She is sad because everything has changed.<br>5. True
+</blockquote>
+<strong>Examiner Comment:</strong> Answers 1, 2, 3, and 5 are all correct. Answer 4 shows basic understanding but lacks developed inference. The student identified emotion (sadness) but did not explain textual evidence. Full marks requires reference to "pausing" as hesitation and the house as significant. <strong>Mark: 4/5</strong>
+</div>
+
+<h4>Examiner Commentary Box — Sample Student Response 2</h4>
+<div style="border: 2px solid #27ae60; padding: 15px; margin: 15px 0; background-color: #d5f4e6;">
+<strong>Grade 8-9 Response (Excellent):</strong>
+<blockquote>
+1. Thirty years.<br>2. A gleaming glass shelter.<br>3. (c) The smell of fresh bread.<br>4. Eleanor's pausing suggests conflicted emotion. While most of the village has changed, she is drawn to this property because it holds personal significance. The fact that it is "her childhood home" reveals loss and nostalgia.<br>5. True—the text states: "its windows bright with curtains she recognized."
+</blockquote>
+<strong>Examiner Comment:</strong> Fully developed, sophisticated inference exploring emotional complexity and textual evidence grounding. <strong>Mark: 5/5</strong>
+</div>
+
+<h3>Grade Boundary Breakdown for A1 (WJEC-Specific)</h3>
+<table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+<tr style="background-color: #ecf0f1;"><th style="border: 1px solid #bdc3c7; padding: 10px;"><strong>Grade</strong></th><th style="border: 1px solid #bdc3c7; padding: 10px;"><strong>Marks (/5)</strong></th><th style="border: 1px solid #bdc3c7; padding: 10px;"><strong>Characteristics</strong></th></tr>
+<tr><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>9</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">5</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Precise answers. All explicit information identified. Basic inferences accurate with justification.</td></tr>
+<tr style="background-color: #ecf0f1;"><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>8</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">5</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Accurate retrieval. Inferences justified with textual reference. Minor imprecision acceptable.</td></tr>
+<tr><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>7</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">4-5</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Most explicit information correct. Inferences accurate but may lack full development.</td></tr>
+<tr style="background-color: #ecf0f1;"><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>5-6</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">3-4</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Majority of explicit information correct. Some inference questions incomplete.</td></tr>
+<tr><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>4</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">2-3</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Some retrieval gaps. Inferences vague or unsupported.</td></tr>
+<tr style="background-color: #ecf0f1;"><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>1-3</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">0-2</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Limited accuracy. Vague or contradictory answers.</td></tr>
+</table>
+
+<h3>Common A1 Mistakes and Corrections</h3>
+
+<h4>Mistake 1: Over-Interpretation</h4>
+<div style="border-left: 4px solid #e74c3c; padding-left: 15px; margin: 20px 0;">
+<strong>Poor Answer:</strong> Eleanor left because she felt trapped and wanted a career in the city. She had a difficult relationship with her parents.
+<br><strong>Issue:</strong> The passage never states this. Over-interpretation invents details.
+<br><strong>Better Answer:</strong> The passage does not state why Eleanor left. A1 tests retrieval, not creation of new narratives.
+<br><strong>WJEC Tip:</strong> A1 answers come directly from the text. If you're creating a backstory, stop and re-read.
+</div>
+
+<h4>Mistake 2: Partial Answers</h4>
+<div style="border-left: 4px solid #e74c3c; padding-left: 15px; margin: 20px 0;">
+<strong>Poor Answer:</strong> (for "list two changes") The station has changed.
+<br><strong>Issue:</strong> Only one change given when two requested. Incomplete = lost marks.
+<br><strong>Better Answer:</strong> The wooden waiting room replaced by glass shelter. Tea rooms replaced by mobile phone shop.
+<br><strong>WJEC Tip:</strong> If asked for two, three, or a list—give exactly that many complete answers.
+</div>
+
+<h4>Mistake 3: Vague Language</h4>
+<div style="border-left: 4px solid #e74c3c; padding-left: 15px; margin: 20px 0;">
+<strong>Poor Answer:</strong> Something nice from one of the shops.
+<br><strong>Issue:</strong> "Nice" is vague and doesn't show text understanding.
+<br><strong>Better Answer:</strong> Fresh bread from the bakery.
+<br><strong>WJEC Tip:</strong> Precise language from the text shows careful reading.
+</div>
+
+<h4>Mistake 4: Inaccurate Quotation</h4>
+<div style="border-left: 4px solid #e74c3c; padding-left: 15px; margin: 20px 0;">
+<strong>Poor Answer:</strong> "The waiting room was bright and shiny."
+<br><strong>Issue:</strong> Actual text: "gleaming glass shelter"—misquoted.
+<br><strong>Better Answer:</strong> "A gleaming glass shelter."
+<br><strong>WJEC Tip:</strong> Quote exactly or paraphrase accurately. Never misquote.
+</div>
+
+<h3>Practice Passage 2: Full A1 Set with Marking Guidance</h3>
+
+<h4>Passage: "The Discovery"</h4>
+<div class="text-extract">
+The letter had arrived on a Tuesday, addressed in handwriting she had not seen in forty years. Sarah opened it with trembling fingers. Inside was a single photograph — a group of children standing outside a church, all smiling at the camera. She recognized herself immediately: the dark pigtails, the gap-toothed grin, the white cotton dress with the lace collar. But it was the boy in the back row, standing slightly apart from the others, who made her breath catch. He had his head tilted toward her, even in that long-ago moment. She turned the photograph over. On the back, in faded ink: "St. Cuthbert's Church Outing, July 1962. Don't forget."
+<div class="source">Contemporary fiction</div>
+</div>
+
+<h4>A1 Questions & Model Answers (5 marks)</h4>
+<p><strong>Q1 (1 mark):</strong> On what day did Sarah receive the letter?<br>
+<strong>Answer:</strong> Tuesday. (Direct retrieval)</p>
+
+<p><strong>Q2 (1 mark):</strong> What was inside the envelope?<br>
+<strong>Answer:</strong> A photograph / A single photograph. (Text specifies "a single photograph")</p>
+
+<p><strong>Q3 (1 mark):</strong> Which does Sarah recognize about herself? (a) Widest smile. (b) White dress with lace collar. (c) Standing apart. (d) Straight hair.<br>
+<strong>Answer:</strong> (b) Explicitly stated: "white cotton dress with the lace collar."</p>
+
+<p><strong>Q4 (2 marks):</strong> What do the boy's position and pose suggest about his feelings?<br>
+<strong>Grade 8-9 Answer:</strong> The boy stands slightly apart with his head tilted toward Sarah, suggesting he focused on her rather than the camera. This implies special interest or affection in childhood.<br>
+<strong>Grade 5-6 Answer:</strong> He was looking at Sarah, so he must have liked her.</p>
+
+<p><strong>Q5 (1 mark):</strong> What is written on the back?<br>
+<strong>Answer:</strong> "St. Cuthbert's Church Outing, July 1962. Don't forget." (Direct quote or accurate paraphrase)</p>
+
+<div class="examiner-tip"><strong>WJEC A1 Marking Rule:</strong> For retrieval (1 mark): close paraphrase or quotation both earn marks. For inference (2 marks): one mark for identifying the inference, one for textual support.</div>
+
+<h3>Step-by-Step A1 Technique Guide</h3>
+<ol style="font-size: 1.05em; line-height: 1.8;">
+<li><strong>Read the extract once carefully.</strong> Absorb content and context—do not annotate yet.</li>
+<li><strong>Read the extract a second time.</strong> Underline: names, dates, places, emotions, key events.</li>
+<li><strong>Read the A1 questions.</strong> Note if they direct you to specific lines (e.g., "lines 1-20").</li>
+<li><strong>Answer each question in order.</strong> Spend approximately one minute per mark.</li>
+<li><strong>For retrieval:</strong> Return to text, find relevant section, extract or paraphrase directly.</li>
+<li><strong>For inference (2 marks):</strong> Identify what the text suggests, provide brief textual evidence.</li>
+<li><strong>Check your answers</strong> against the passage for accuracy.</li>
+<li><strong>Move to A2.</strong> Spend no more than 5-6 minutes total on A1.</li>
+</ol>
+
+    `,
     quiz: [
       {
         id: 'wjec-c1-m2-q1',
@@ -677,6 +797,149 @@ It was exactly the same. Every tile, every crack in the render, every twist of t
 </ul>
 
 <div class="key-term"><strong>Key Term: Pathetic Fallacy</strong> — A literary device in which the weather or environment mirrors or reflects a character's emotions. For example, rain during a funeral, or bright sunshine accompanying a moment of joy. Used well, it deepens atmosphere without stating emotions directly.</div>
+
+<h3>Worked Example: Full Narrative with Annotated Analysis</h3>
+
+<h4>Sample Student Narrative (Grade 8)</h4>
+<div style="border: 2px solid #3498db; padding: 15px; margin: 20px 0; background-color: #eaf2f8;">
+<strong>Title: "The Return"</strong>
+
+The letter arrived on a Tuesday, unsealed and urgent. James's hands shook as he read his mother's words: <em>Come home. Your father is asking for you.</em> He hadn't seen home in five years—hadn't intended to ever return.
+
+The train platform was crowded, commuters jostling with their suitcases. James stood motionless, watching the countryside dissolve behind the train windows. With each passing minute, his chest tightened. Outside, the landscape shifted from urban sprawl to farmland, from the present he'd built to the past he'd buried.
+
+The station was smaller than he remembered. The old ticket office had been renovated, its character stripped away. But the platform itself remained unchanged—the same cracked tiling, the same bench where he'd sat waiting for the London train five years ago, desperate to escape.
+
+His mother was waiting outside the station, her hair greyer than he'd anticipated. She embraced him without speaking, and in that silence, James felt years of distance collapse into a single breath. Nothing had prepared him for how much that simple embrace would hurt.
+
+The drive to the house took fifteen minutes. Fifteen minutes across roads he'd memorized as a teenager, past landmarks that triggered memories he'd tried to suppress. The old sweetshop where his father had bought him sweets. The church where his parents had married. The field where he'd played as a child.
+
+When they arrived, his father was sitting in the garden, a figure diminished by illness. James approached slowly, afraid that any sudden movement might shatter the fragile truce between them. His father looked up, eyes widening with recognition.
+
+"You came," his father whispered.
+
+James nodded, unable to speak. He sat beside him, and for the first time in five years, they sat in companionable silence, watching the sun descend toward the horizon.
+</div>
+
+<h4>Examiner Commentary: Grade 8 Analysis (AO5: 20/24 marks)</h4>
+<div style="border-left: 4px solid #27ae60; padding-left: 15px; margin: 20px 0; background-color: #f0fdf4;">
+<strong>Strengths:</strong>
+<ul>
+<li><strong>Narrative Structure:</strong> Clear emotional and physical journey. Opens with urgency, builds tension through journey home, culminates in pivotal moment. Cyclical quality (return to garden mirrors opening).</li>
+<li><strong>Character Development:</strong> James shown through action and emotion. Internal conflict (resistance vs. obligation) shown implicitly without heavy-handed explanation.</li>
+<li><strong>Varied Sentence Length:</strong> Short sentences create urgency ("The letter arrived on a Tuesday."); longer sentences develop reflection ("The drive to the house..."). Repetition of "five years" reinforces time and emotional weight.</li>
+<li><strong>Sensory Detail:</strong> Specific details anchor narrative: cracked tiling, grey hair, the embrace. Selective and purposeful—not overdone.</li>
+<li><strong>Tone Control:</strong> Tone shifts appropriately from anxiety to recognition to quiet emotion. Control maintained throughout.</li>
+</ul>
+
+<strong>For Higher Marks (22-24):</strong> Dialogue could be more distinctive/individual. Ending is emotionally effective but somewhat predictable. Greater syntactical ambition and more unexpected narrative turns would elevate work. More sophisticated vocabulary in places.
+</div>
+
+<h3>Narrative Technique Guide: Essential Devices for B1</h3>
+
+<h4>1. The Hook: Opening Lines</h4>
+<p><strong>Weak:</strong> "My name is James and I am going home. I hadn't seen my family for five years."</p>
+<p><strong>Strong:</strong> "The letter arrived on a Tuesday, unsealed and urgent."</p>
+<p><strong>Why It Works:</strong> Creates immediate mystery and tension. Specific detail (Tuesday, unsealed) makes it vivid. Readers want to know: what letter? Why urgent?</p>
+
+<div class="examiner-tip"><strong>WJEC Tip:</strong> Avoid opening with "I" statements or biographical summary. Drop readers into a moment, action, or detail. Make them curious.</div>
+
+<h4>2. Dialogue: Character Voice and Tension</h4>
+<p><strong>Weak:</strong> <em>"Hello," said James. "How are you?" asked his mother.</em></p>
+<p><strong>Strong:</strong> <em>"You came," his father whispered.</em></p>
+<p><strong>Why It Works:</strong> Reveals character and emotion simultaneously. The verb "whispered" conveys weakness and emotion. Simple statement carries immense weight.</p>
+
+<h4>3. Pacing Through Paragraph Variation</h4>
+<p><strong>Short Paragraphs:</strong> Create urgency, tension, emotional impact.</p>
+<p><strong>Long Paragraphs:</strong> Allow reflection, detailed description, internal thought.</p>
+<p><strong>Strategy:</strong> Alternate between short and long paragraphs. A single short paragraph after longer ones creates emphasis and shock.</p>
+
+<h4>4. Sensory Detail Over Description</h4>
+<p><strong>Weak:</strong> "The station was old and looked sad."</p>
+<p><strong>Strong:</strong> "The platform itself remained unchanged — the same cracked tiling, the same bench where he'd sat waiting for the London train five years ago."</p>
+<p><strong>Why It Works:</strong> Specific, concrete details (cracked tiling, the bench) trigger emotional resonance. We see and feel time's passage.</p>
+
+<h3>Grade Boundary Breakdown: B1 Narrative (WJEC)</h3>
+<table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+<tr style="background-color: #ecf0f1;"><th style="border: 1px solid #bdc3c7; padding: 10px;"><strong>Grade</strong></th><th style="border: 1px solid #bdc3c7; padding: 10px;"><strong>AO5 (/24)</strong></th><th style="border: 1px solid #bdc3c7; padding: 10px;"><strong>Key Characteristics</strong></th></tr>
+<tr><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>9</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">22-24</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Compelling, expertly crafted narrative. Ambitious vocabulary and syntax. Inventive structure. Sustained linguistic devices. Highly engaging with sophisticated tone.</td></tr>
+<tr style="background-color: #ecf0f1;"><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>8</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">18-21</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Effective, engaging narrative. Good vocabulary and varied syntax. Clear structure. Effective technique use. Clear sense of purpose.</td></tr>
+<tr><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>7</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">15-17</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Clearly structured narrative. Appropriate vocabulary. Some linguistic variety. Clear sense of purpose and audience.</td></tr>
+<tr style="background-color: #ecf0f1;"><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>5-6</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">11-14</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Basic narrative structure. Simple vocabulary. Limited linguistic variety. Some audience awareness.</td></tr>
+<tr><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>4</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">8-10</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Simple narrative. Basic vocabulary. Limited device use. Basic coherence.</td></tr>
+</table>
+
+<h3>Common Narrative Mistakes and Fixes</h3>
+
+<h4>Mistake 1: Scene-Setting Before Action</h4>
+<div style="border-left: 4px solid #e74c3c; padding-left: 15px; margin: 20px 0;">
+<strong>Weak:</strong> "It was a cold morning in December. The sky was grey. Sarah looked out of the window. She was waiting for something important."
+<br><strong>Issue:</strong> Too much exposition. Readers lose interest before story begins.
+<br><strong>Better:</strong> "Sarah's hands trembled as she clutched the phone. She'd been waiting for this call for six months."
+<br><strong>Fix:</strong> Start with character emotion or action, not weather or time.
+</div>
+
+<h4>Mistake 2: Telling Instead of Showing</h4>
+<div style="border-left: 4px solid #e74c3c; padding-left: 15px; margin: 20px 0;">
+<strong>Weak:</strong> "James was very nervous about seeing his father. He felt anxious and scared."
+<br><strong>Issue:</strong> Emotion stated rather than shown through action and detail.
+<br><strong>Better:</strong> "James's hands shook as he climbed the garden path. His breath came in shallow gasps."
+<br><strong>Fix:</strong> Show emotion through physical action, dialogue, or internal reflection.
+</div>
+
+<h4>Mistake 3: Over-Description (Purple Prose)</h4>
+<div style="border-left: 4px solid #e74c3c; padding-left: 15px; margin: 20px 0;">
+<strong>Weak:</strong> "The resplendent aurora of the nascent morning illuminated the verdant landscape in hues of amber and rose."
+<br><strong>Issue:</strong> Overly ornate language distracts from the story.
+<br><strong>Better:</strong> "Sunlight broke across the fields, turning them gold."
+<br><strong>Fix:</strong> Use precise, vivid language—not flowery language. Simple sentences can be more powerful.
+</div>
+
+<h4>Mistake 4: Unnatural Dialogue</h4>
+<div style="border-left: 4px solid #e74c3c; padding-left: 15px; margin: 20px 0;">
+<strong>Weak:</strong> "My father said, 'James, I have been thinking about you and our past relationship, and I would like to apologize for all the hurt I have caused you.'"
+<br><strong>Issue:</strong> Formal, stilted dialogue breaks immersion.
+<br><strong>Better:</strong> "My father looked at me. 'I'm sorry, James. For everything.'"
+<br><strong>Fix:</strong> Write dialogue as people actually speak. Short, often incomplete sentences. Natural pauses. Real emotion.
+</div>
+
+<h3>Step-by-Step Narrative Writing Guide (Exam Conditions)</h3>
+<ol style="font-size: 1.05em; line-height: 1.8;">
+<li><strong>Plan your story (5 min):</strong> One pivotal moment. One or two characters. Clear emotional arc.</li>
+<li><strong>Write a hook opening:</strong> Start with action, dialogue, or striking detail—not scene-setting.</li>
+<li><strong>Establish character and conflict:</strong> What does the protagonist want? What obstacle blocks them?</li>
+<li><strong>Use varied sentence length:</strong> Short sentences create pace/tension. Longer sentences allow reflection.</li>
+<li><strong>Include sensory detail:</strong> What does the character see, hear, feel, smell? Make it specific and purposeful.</li>
+<li><strong>Use dialogue sparingly but effectively:</strong> Every line should reveal character or advance the plot.</li>
+<li><strong>Control pacing with paragraph variation:</strong> Vary paragraph structure to control reader movement through the story.</li>
+<li><strong>Aim for emotional resonance in the ending:</strong> A quiet moment of recognition often works better than shock.</li>
+<li><strong>Leave 5 minutes for proofreading:</strong> Check SPaG errors, particularly dialogue punctuation.</li>
+</ol>
+
+<h3>Grade 5 vs. Grade 9: Side-by-Side Comparison</h3>
+
+<h4>The Same Scenario — Two Versions</h4>
+<p><strong>Scenario:</strong> A character returns to their childhood home after many years away.</p>
+
+<h4>Grade 5-6 Version (Acceptable)</h4>
+<div style="border: 2px solid #f39c12; padding: 15px; margin: 15px 0; background-color: #fef5e7;">
+I walked up to the front door of my childhood home after ten years away. The house looked old and smaller than I remembered. The paint was peeling off the walls and the garden was overgrown. My mother answered the door and smiled at me. We hugged and she said it was good to have me home. I felt happy and sad at the same time.
+</div>
+
+<h4>Grade 8-9 Version (Excellent)</h4>
+<div style="border: 2px solid #27ae60; padding: 15px; margin: 15px 0; background-color: #d5f4e6;">
+The front door was smaller than I remembered, the paint peeling in long strips that curled like dead skin. I stood on the path for a full minute, unable to move. My mother appeared in the doorway—when had she become so small?—and her smile faltered slightly when she saw me. We hugged, but it was tentative, careful, as though we were afraid of breaking something fragile. Neither of us spoke. The silence was heavy with ten years of absence, of birthdays missed, of phone calls that never quite connected. Inside, the house smelled the same—furniture polish and tea—and that sameness made me want to cry.
+</div>
+
+<p><strong>Key Differences:</strong></p>
+<ul>
+<li><strong>Detail:</strong> Grade 8-9 uses specific, evocative detail (paint "curled like dead skin") while Grade 5-6 states generalizations.</li>
+<li><strong>Showing vs. Telling:</strong> Grade 8-9 shows emotion through hesitation and physical action; Grade 5-6 tells the reader they felt "happy and sad."</li>
+<li><strong>Sentence Variety:</strong> Grade 8-9 varies dramatically (one-word sentence: "Nothing." Long, complex sentences). Grade 5-6 uses mostly simple, similar-length sentences.</li>
+<li><strong>Figurative Language:</strong> Grade 8-9 uses metaphor naturally ("paint...curled like dead skin"). Grade 5-6 has no figurative language.</li>
+<li><strong>Sensory Immersion:</strong> Grade 8-9 engages multiple senses. Grade 5-6 relies mostly on sight.</li>
+</ul>
+
 `,
     quiz: [
       {
@@ -1579,6 +1842,133 @@ Both texts address community, but from opposing perspectives. The 19th-century w
 Together, the texts reveal a fundamental shift in how society values work. The 19th-century text presents work as <em>identity</em> — it defines who you are and your social position. The 21st-century text treats work as <em>one part of life</em> — important, yes, but not consuming. The change suggests increasing emphasis on individual autonomy and psychological wellbeing, but potentially less sense of collective purpose or social obligation through labour.
 </div>
 
+<h3>Grade Boundary Breakdown: A1 Non-Fiction (WJEC Component 2)</h3>
+<table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+<tr style="background-color: #ecf0f1;"><th style="border: 1px solid #bdc3c7; padding: 10px;"><strong>Grade</strong></th><th style="border: 1px solid #bdc3c7; padding: 10px;"><strong>Marks (/5)</strong></th><th style="border: 1px solid #bdc3c7; padding: 10px;"><strong>Characteristics</strong></th></tr>
+<tr><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>9-8</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">5</td><td style="border: 1px solid #bdc3c7; padding: 10px;">All answers accurate and clearly expressed. Both explicit and implicit information identified correctly. Evidence from text integrated smoothly.</td></tr>
+<tr style="background-color: #ecf0f1;"><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>7-6</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">4-5</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Most answers accurate. Good understanding of explicit information. Some inference drawn correctly. Clear expression.</td></tr>
+<tr><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>5</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">3-4</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Majority of retrieval accurate. Some gaps or imprecision. Implicit information may be partially identified.</td></tr>
+<tr style="background-color: #ecf0f1;"><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>4</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">2-3</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Some accurate retrieval but with gaps. Limited accuracy with implicit information.</td></tr>
+<tr><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>1-3</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">0-2</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Limited or inaccurate retrieval. Answers often vague or off-topic.</td></tr>
+</table>
+
+<h3>Worked Example: Full A1 Question and Response</h3>
+
+<h4>Passage A (21st Century)</h4>
+<div class="text-extract">
+The pandemic accelerated a trend that was already underway: the rise of remote work. By 2023, 28% of the UK workforce had adopted some form of flexible working arrangement. For many, this represented liberation from the commute. For employers, it meant reduced office costs. Yet the data also reveals hidden costs: 56% of remote workers report blurred boundaries between work and home life, and mental health services reported a 15% increase in calls related to work-related stress since 2020. The dream of working in your pyjamas has become, for many, a nightmare of never leaving work at all.
+<div class="source">BBC News, 2024</div>
+</div>
+
+<h4>A1 Questions with Model Answers</h4>
+<p><strong>Q1 (1 mark):</strong> According to the passage, what percentage of the UK workforce had adopted flexible working by 2023?</p>
+<p><strong>Answer:</strong> 28%. (Direct retrieval from text)</p>
+
+<p><strong>Q2 (1 mark):</strong> Name two groups mentioned in the passage who benefit from remote work.</p>
+<p><strong>Answer:</strong> Workers (who avoid the commute) and employers (who reduce office costs). Or: Employees and employers. (Direct retrieval, combining two points)</p>
+
+<p><strong>Q3 (1 mark):</strong> What phrase is used to describe the effect of blurred work-home boundaries?</p>
+<p><strong>Answer:</strong> "a nightmare of never leaving work at all" / nightmare. (Direct quote or close paraphrase)</p>
+
+<p><strong>Q4 (2 marks - Inference):</strong> What does the writer suggest about the reality of remote work compared to expectations?</p>
+<p><strong>Grade 8-9 Answer:</strong> The writer contrasts the positive expectation ("the dream of working in your pyjamas") with the negative reality ("a nightmare"). While remote work promised freedom from commuting, it has created new stresses: blurred boundaries between work and home, and increased mental health problems. The "dream" has become a "nightmare," suggesting that what was sold as liberation has actually resulted in greater stress for many workers.</p>
+<p><strong>Grade 5-6 Answer:</strong> The writer says remote work was supposed to be good (a dream) but it has turned out bad (a nightmare) because people work too much.</p>
+
+<p><strong>Q5 (1 mark):</strong> True or False: Mental health services have seen a decrease in work-related stress calls since 2020.</p>
+<p><strong>Answer:</strong> False. The passage states they reported "a 15% increase." (Direct retrieval with negation)</p>
+
+<h3>Distinguishing 19th-Century and 21st-Century Non-Fiction</h3>
+
+<h4>19th-Century Non-Fiction: Language and Tone Features</h4>
+<ul>
+<li><strong>Formal register:</strong> "I beg to inform you," "your obedient servant," "the undersigned"</li>
+<li><strong>Complex sentences:</strong> Multiple clauses linked by semicolons and subordination</li>
+<li><strong>Archaic vocabulary:</strong> "thence," "hitherto," "forthwith," "countenance," "perforce"</li>
+<li><strong>Rhetorical devices:</strong> Elaborate metaphors, parallelism, rhetorical questions</li>
+<li><strong>Class and social references:</strong> Explicit mentions of rank, duty, station</li>
+</ul>
+
+<h4>21st-Century Non-Fiction: Language and Tone Features</h4>
+<ul>
+<li><strong>Conversational tone:</strong> "Look," "Here's the thing," direct address to reader</li>
+<li><strong>Shorter sentences:</strong> Mix of short, punchy sentences with longer ones for variety</li>
+<li><strong>Contemporary vocabulary:</strong> "algorithm," "authentic," "influencer," "disrupt," "synergy"</li>
+<li><strong>Data and statistics:</strong> Frequent citation of surveys, studies, percentages</li>
+<li><strong>Informal punctuation:</strong> Dashes, ellipses, parenthetical asides for emphasis</li>
+</ul>
+
+<h3>Common A1 Mistakes and Fixes</h3>
+
+<h4>Mistake 1: Providing Too Much Context</h4>
+<div style="border-left: 4px solid #e74c3c; padding-left: 15px; margin: 20px 0;">
+<strong>Question:</strong> What percentage of workers have flexible arrangements?
+<br><strong>Weak Answer:</strong> "The passage discusses how the pandemic changed work. During COVID, many people started working from home. Now, 28% of workers have flexible arrangements, which is an increase from before."
+<br><strong>Issue:</strong> Over-explanation. A1 tests retrieval, not analysis.
+<br><strong>Better Answer:</strong> "28%."
+<br><strong>WJEC Tip:</strong> A1 answers should be concise. One sentence is usually enough.
+</div>
+
+<h4>Mistake 2: Failing to Identify Implicit Information</h4>
+<div style="border-left: 4px solid #e74c3c; padding-left: 15px; margin: 20px 0;">
+<strong>Implicit Inference Question:</strong> What does the use of the word "nightmare" suggest about the writer's attitude to remote work?
+<br><strong>Weak Answer:</strong> "The writer uses the word nightmare."
+<br><strong>Issue:</strong> Just repeating the text. No inference made.
+<br><strong>Better Answer:</strong> "The writer is critical of remote work. By calling it a 'nightmare,' they suggest it has negative consequences despite initially seeming beneficial."
+<br><strong>WJEC Tip:</strong> For inference questions (usually worth 2 marks), explain what the word choice reveals about the writer's view.
+</div>
+
+<h4>Mistake 3: Confusing the Two Texts</h4>
+<div style="border-left: 4px solid #e74c3c; padding-left: 15px; margin: 20px 0;">
+<strong>Weak Answer:</strong> (When asked about Text A, 21st century) "In Victorian times, work was seen as duty..."
+<br><strong>Issue:</strong> Mixing up the texts. Confusing 19th-century ideas with 21st-century ones.
+<br><strong>Better Answer:</strong> Check which text you're answering about. Keep them separate in your mind. Annotate A and B.
+<br><strong>WJEC Tip:</strong> When you receive the exam paper, immediately label the texts A and B. This prevents confusion.
+</div>
+
+<h4>Mistake 4: Misunderstanding Archaic Language</h4>
+<div style="border-left: 4px solid #e74c3c; padding-left: 15px; margin: 20px 0;">
+<strong>Question:</strong> What does the writer say about "the countenance of the lady"?
+<br><strong>Weak Answer:</strong> "I don't know what countenance means."
+<br><strong>Better Approach:</strong> Look at context. "Her countenance darkened" — likely refers to facial expression. "He observed her countenance" — how she looked. Use surrounding words.
+<br><strong>WJEC Tip:</strong> In an exam, you won't have a dictionary. Use context clues. The surrounding sentence usually reveals the meaning.
+</div>
+
+<h3>Step-by-Step A1 Reading Strategy</h3>
+<ol style="font-size: 1.05em; line-height: 1.8;">
+<li><strong>Read the source information:</strong> Date, author if given, and text type. This contextualizes what you're about to read.</li>
+<li><strong>Read the passage once completely,</strong> without stopping to analyze. Get a sense of the overall meaning and tone.</li>
+<li><strong>Read the A1 questions.</strong> Note which text you're answering on and which lines, if specified.</li>
+<li><strong>For each question, return to the text.</strong> Don't rely on memory. Find the relevant section.</li>
+<li><strong>For retrieval questions (1 mark):</strong> Extract the answer directly or paraphrase very closely.</li>
+<li><strong>For inference questions (2 marks):</strong> Identify the relevant detail, then explain what it suggests or reveals.</li>
+<li><strong>Check your answer:</strong> Reread the relevant section to confirm accuracy.</li>
+<li><strong>Move to A2.</strong> Do not spend more than 5-7 minutes on A1.</li>
+</ol>
+
+<h3>Practice Passage: Full A1 Set</h3>
+
+<h4>21st-Century Text: "The Digital Divide"</h4>
+<div class="text-extract">
+The digital divide isn't just about access to technology—it's about access to opportunity. A 2025 report by the Institute for Digital Policy found that 12% of UK households still lack reliable broadband. In rural areas, the figure climbs to 31%. Without internet access, students cannot submit homework, jobseekers cannot apply online, and elderly people cannot access banking or health services. The cost of closing this gap is estimated at £2.3 billion. Yet while governments debate budget constraints, those without digital access fall further behind. The promise of the digital age has become, for millions, a locked door.
+<div class="source">Policy brief, 2025</div>
+</div>
+
+<h4>A1 Questions (5 marks)</h4>
+<p><strong>1 (1 mark):</strong> What percentage of UK households lack reliable broadband?</p>
+<p><strong>Answer:</strong> 12%.</p>
+
+<p><strong>2 (1 mark):</strong> In what type of area is the lack of broadband access most severe?</p>
+<p><strong>Answer:</strong> Rural areas (31% lack access).</p>
+
+<p><strong>3 (1 mark):</strong> Name two services that people cannot access without internet.</p>
+<p><strong>Answer:</strong> Banking and health services / Submitting homework and applying for jobs. (Any two from: submit homework, apply for jobs, access banking, access health services)</p>
+
+<p><strong>4 (2 marks - Inference):</strong> What does the writer mean by calling the digital opportunity "a locked door" for millions?</p>
+<p><strong>Model Answer:</strong> The writer suggests that while the digital age promises access and opportunity, those without broadband are excluded from it. The "locked door" metaphor implies they cannot access the benefits—education, employment, essential services—that the digitally connected take for granted. The promise remains inaccessible to them.</p>
+
+<p><strong>5 (1 mark):</strong> True or False: Governments have unlimited budgets to close the digital divide.</p>
+<p><strong>Answer:</strong> False. The text mentions governments "debate budget constraints."</p>
+
 `,
     quiz: [
       {
@@ -2203,6 +2593,188 @@ The city centre has changed dramatically over the past decade. Where there once 
 <div class="common-mistake"><strong>Common Mistake:</strong> Ignoring the specified form. If the task asks for an article and you write a letter, you will lose marks for AO5 regardless of how well you write. Always check: <strong>What form?</strong> (letter, article, speech, etc.) <strong>What purpose?</strong> (persuade, inform, advise, argue) <strong>What audience?</strong> (headteacher, peers, council, public)</div>
 
 <div class="key-term"><strong>Key Term: Register</strong> — The level of formality in language, adapted to suit the audience and purpose. A formal letter to a headteacher requires different vocabulary, tone, and sentence structure than a magazine article for teenagers. Matching your register to the task demonstrates writing skill and audience awareness.</div>
+
+<h3>Worked Example: Full Transactional Task with Annotated Response</h3>
+
+<h4>Task: Formal Letter (B1 - 16 marks)</h4>
+<p><strong>Scenario:</strong> Write a formal letter to your local council arguing for better public transport in your area. Your purpose is to persuade. Your audience is a local councillor. Your form is a formal letter.</p>
+
+<h4>Model Response (Grade 8)</h4>
+<div style="border: 2px solid #3498db; padding: 15px; margin: 20px 0; background-color: #eaf2f8;">
+<p style="text-align: right;">
+123 Oak Street<br>
+Manchester<br>
+M1 1AA<br>
+15 March 2026
+</p>
+
+<p>Councillor James Patterson<br>
+Manchester City Council<br>
+Town Hall<br>
+Manchester<br>
+M3 1AA</p>
+
+<p>Dear Councillor Patterson,</p>
+
+<p>I am writing to urge the council to invest in improving public transport in our area. Currently, bus services run only hourly after 6 p.m., making it impossible for students, shift workers, and elderly residents to travel safely and reliably in the evenings. This is not merely an inconvenience — it is a barrier to social participation and economic opportunity.</p>
+
+<p>The data speaks for itself. According to a recent survey by Transport Focus, 73% of residents in our postcode feel that current services are inadequate. Neighbouring areas with more frequent buses have seen a 15% increase in evening footfall to local businesses. Investment in transport yields tangible returns: improved access to employment, reduced car dependency, and stronger community cohesion.</p>
+
+<p>I understand that budgets are constrained, but I would argue that improved public transport is not a luxury but a necessity. Young people without cars cannot access evening activities or part-time work. Elderly residents cannot attend social events or medical appointments. These are not edge cases — they represent a significant portion of our population.</p>
+
+<p>I urge you to prioritise this issue in the next budget cycle. The cost of investment is far outweighed by the social and economic benefits. I would welcome the opportunity to discuss this further with you.</p>
+
+<p>Yours sincerely,</p>
+
+<p>Alex Johnson</p>
+</div>
+
+<h4>Examiner Commentary: Grade 8 Analysis (AO5: 18/24 marks)</h4>
+<div style="border-left: 4px solid #27ae60; padding-left: 15px; margin: 20px 0; background-color: #f0fdf4;">
+<strong>Strengths:</strong>
+<ul>
+<li><strong>Form:</strong> Correct letter conventions (address, date, formal salutation, closing). Shows clear awareness of form.</li>
+<li><strong>Purpose (Persuasion):</strong> Clear argument supported by evidence (statistics, counterargument). Moves reader from problem → evidence → solution.</li>
+<li><strong>Audience Awareness:</strong> Formal register throughout. Addresses the councillor respectfully. Uses "I understand that budgets are constrained" — shows awareness of audience concerns.</li>
+<li><strong>Structure:</strong> Clear paragraphing. Each paragraph develops one point: (1) Problem statement, (2) Evidence, (3) Counterargument, (4) Call to action.</li>
+<li><strong>Persuasive Techniques:</strong> Data (73%, 15%), rhetorical question, repetition ("cannot access," "cannot attend"), direct appeal to values (community, opportunity).</li>
+</ul>
+
+<strong>For Higher Marks (22-24):</strong> Could use more varied persuasive techniques (anecdote, emotive language). The conclusion could be more powerful. More sophisticated vocabulary in places.
+</div>
+
+<h3>Grade Boundary Breakdown: Transactional Writing (B1, WJEC Component 2)</h3>
+<table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+<tr style="background-color: #ecf0f1;"><th style="border: 1px solid #bdc3c7; padding: 10px;"><strong>Grade</strong></th><th style="border: 1px solid #bdc3c7; padding: 10px;"><strong>AO5 (/24)</strong></th><th style="border: 1px solid #bdc3c7; padding: 10px;"><strong>Key Characteristics</strong></th></tr>
+<tr><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>9</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">22-24</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Expertly adapted to form, purpose, audience. Compelling writing. Ambitious vocabulary. Sustained persuasive/transactional techniques. Clear sense of purpose.</td></tr>
+<tr style="background-color: #ecf0f1;"><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>8</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">18-21</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Well-adapted to form, purpose, audience. Effective writing. Good vocabulary. Range of techniques. Clear purpose maintained.</td></tr>
+<tr><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>7</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">15-17</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Mostly appropriate to form, purpose, audience. Clear writing. Adequate vocabulary. Some techniques used. Mostly clear purpose.</td></tr>
+<tr style="background-color: #ecf0f1;"><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>5-6</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">11-14</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Basic form awareness. Simple, clear writing. Limited vocabulary. Limited technique use. Basic purpose awareness.</td></tr>
+<tr><td style="border: 1px solid #bdc3c7; padding: 10px;"><strong>4</strong></td><td style="border: 1px solid #bdc3c7; padding: 10px;">8-10</td><td style="border: 1px solid #bdc3c7; padding: 10px;">Minimal form awareness. Basic writing. Simple vocabulary. Few techniques. Purpose sometimes unclear.</td></tr>
+</table>
+
+<h3>Persuasive Techniques for Transactional Writing</h3>
+
+<h4>1. Evidence-Based Persuasion</h4>
+<p><strong>Weak:</strong> "Public transport is bad and the council should improve it."</p>
+<p><strong>Strong:</strong> "According to a 2025 survey by Transport Focus, 73% of residents in our area report that current services are inadequate. Investment in transport has yielded a 15% increase in evening footfall to local businesses in neighbouring areas."</p>
+<p><strong>Why It Works:</strong> Specific data (real percentages, real surveys) is persuasive. Comparative evidence (neighbouring areas) strengthens the argument.</p>
+
+<h4>2. Rhetorical Questions</h4>
+<p><strong>Example:</strong> "How can young people without cars access evening employment? How can elderly residents attend social events or medical appointments?"</p>
+<p><strong>Why It Works:</strong> Rhetorical questions engage the reader and force them to consider the problem from your perspective. They create a sense of shared understanding.</p>
+
+<h4>3. Counterargument and Concession</h4>
+<p><strong>Example:</strong> "I understand that budgets are constrained, but improved public transport is not a luxury — it is a necessity."</p>
+<p><strong>Why It Works:</strong> Acknowledging the audience's concerns (budget constraints) before refuting them makes your argument more credible and respectful. It shows you understand their position.</p>
+
+<h4>4. Anecdote and Personal Example</h4>
+<p><strong>Example:</strong> "My sister, who works evening shifts at the hospital, has missed social events and even medical appointments because buses stop running at 9 p.m. Her experience is not unique."</p>
+<p><strong>Why It Works:</strong> Personal stories make abstract problems concrete and emotional. They help readers connect to the issue.</p>
+
+<h4>5. Call to Action</h4>
+<p><strong>Example:</strong> "I urge the council to prioritize improved public transport in the next budget cycle. I would welcome the opportunity to discuss this further."</p>
+<p><strong>Why It Works:</strong> A clear call to action moves the reader from agreement to commitment. It suggests what you want them to do next.</p>
+
+<h3>Common Transactional Writing Mistakes</h3>
+
+<h4>Mistake 1: Forgetting Form Conventions</h4>
+<div style="border-left: 4px solid #e74c3c; padding-left: 15px; margin: 20px 0;">
+<strong>Weak:</strong> Writing a formal letter but using "Hi!" as a greeting and forgetting the signature line.
+<br><strong>Issue:</strong> Breaks the form. Examiners reward form awareness.
+<br><strong>Better:</strong> Use "Dear Sir/Madam" or "Dear Mr./Ms. [Name]" and close with "Yours sincerely" or "Yours faithfully."
+<br><strong>WJEC Tip:</strong> Spend 30 seconds checking: Does my writing match the required form?
+</div>
+
+<h4>Mistake 2: Mismatching Tone to Audience</h4>
+<div style="border-left: 4px solid #e74c3c; padding-left: 15px; margin: 20px 0;">
+<strong>Weak:</strong> Writing to a headteacher in casual, slang-filled language.
+<br><strong>Issue:</strong> Shows lack of audience awareness.
+<br><strong>Better:</strong> Formal register, respectful tone, complete sentences.
+<br><strong>WJEC Tip:</strong> Always ask: Who am I writing to? What tone is appropriate?
+</div>
+
+<h4>Mistake 3: Weak or No Evidence</h4>
+<div style="border-left: 4px solid #e74c3c; padding-left: 15px; margin: 20px 0;">
+<strong>Weak:</strong> "We should improve public transport because it is important."
+<br><strong>Issue:</strong> No evidence. No persuasion.
+<br><strong>Better:</strong> "According to a 2024 survey, 73% of residents feel public transport is inadequate. Investment yields concrete returns: increased business footfall, reduced car dependency, and improved social inclusion."
+<br><strong>WJEC Tip:</strong> In exam conditions, you can invent realistic-sounding data. Make it specific (percentages, named surveys) but plausible.
+</div>
+
+<h4>Mistake 4: No Clear Purpose or Call to Action</h4>
+<div style="border-left: 4px solid #e74c3c; padding-left: 15px; margin: 20px 0;">
+<strong>Weak:</strong> Ending a persuasive letter with "I hope you read this letter." No clear request.
+<br><strong>Issue:</strong> Fails to persuade. No direction for the reader.
+<br><strong>Better:</strong> "I urge the council to prioritize improved public transport in the next budget cycle. I would welcome the opportunity to discuss this further."
+<br><strong>WJEC Tip:</strong> Every transactional task has a purpose. Make sure it's clear what you want the reader to do.
+</div>
+
+<h3>Step-by-Step Transactional Writing Guide (Exam Conditions)</h3>
+
+<ol style="font-size: 1.05em; line-height: 1.8;">
+<li><strong>Identify the task requirements (1 min):</strong> Form? Purpose? Audience? Write these down.</li>
+<li><strong>Plan your response (3-4 min):</strong> Key points in order. Evidence or examples. Persuasive techniques.</li>
+<li><strong>Write in the correct form.</strong> Begin with any necessary form conventions (date, address, salutation).</li>
+<li><strong>Match your register to the audience.</strong> Formal for authority figures, semi-formal for peers, journalistic for newspapers.</li>
+<li><strong>Develop your purpose throughout.</strong> If persuading, use evidence, rhetorical questions, counterargument. If informing, be clear and well-organized.</li>
+<li><strong>Include a strong opening.</strong> Hook the reader. Establish your main point or question.</li>
+<li><strong>Use varied sentence length.</strong> Short sentences create impact. Longer sentences develop ideas.</li>
+<li><strong>Conclude with a call to action or summary.</strong> What do you want the reader to do or understand?</li>
+<li><strong>Proofread for SPaG (5 min).</strong> Check form conventions, punctuation (especially in letters and speeches), and spelling.</li>
+</ol>
+
+<h3>Grade 5 vs. Grade 9: Side-by-Side Comparison</h3>
+
+<h4>Same Task — Two Responses</h4>
+<p><strong>Task:</strong> Write a formal letter to your school's headteacher arguing for a later start time to the school day.</p>
+
+<h4>Grade 5 Response (Acceptable)</h4>
+<div style="border: 2px solid #f39c12; padding: 15px; margin: 15px 0; background-color: #fef5e7;">
+<p>Dear Headteacher,</p>
+<p>I am writing to ask you to consider starting school later. Many students are tired in the morning and a later start would help. Students would be more focused in lessons. It would also help with mental health. Other schools have done this and it works. I think you should seriously consider this proposal.</p>
+<p>Yours sincerely,<br>
+A Student</p>
+</div>
+
+<h4>Grade 8-9 Response (Excellent)</h4>
+<div style="border: 2px solid #27ae60; padding: 15px; margin: 15px 0; background-color: #d5f4e6;">
+<p>123 High Street<br>
+Manchester<br>
+M1 1AA<br>
+15 March 2026</p>
+
+<p>Mr/Ms [Name]<br>
+[School Name]<br>
+Manchester<br>
+M2 1AA</p>
+
+<p>Dear Mr/Ms [Name],</p>
+
+<p>I am writing to propose a shift in our school's start time from 8:30 a.m. to 9:00 a.m. This change, supported by extensive research, would significantly improve student wellbeing and academic performance.</p>
+
+<p>Adolescent sleep science is clear: teenage circadian rhythms naturally shift later during puberty, a phenomenon known as "sleep phase delay." The American Academy of Pediatrics recommends an 8:30 a.m. or later start for secondary schools specifically to accommodate this biological reality. Currently, our students are fighting against their own biology, arriving at school sleep-deprived. A 30-minute shift would allow students the extra rest they require for cognitive function, emotional regulation, and physical health.</p>
+
+<p>The evidence is compelling. Schools that have implemented later start times report: improved attendance (average 2% increase), higher academic achievement (particularly in younger years), and measurably better mental health outcomes (25% reduction in depression-related absences, according to a 2023 study by the Royal College of Psychiatrists). Our local authority's 2024 review of school start times supports this data.</p>
+
+<p>I recognise the potential concerns: transport logistics, staff schedules, and extracurricular activities. However, many schools have navigated these challenges successfully. I would welcome the opportunity to discuss this proposal further and to help identify solutions to any implementation concerns.</p>
+
+<p>I urge you to consider this evidence-based proposal. The cost of implementation is minimal compared to the demonstrable benefits for student wellbeing and achievement.</p>
+
+<p>Yours sincerely,<br>
+[Student Name]</p>
+</div>
+
+<p><strong>Key Differences:</strong></p>
+<ul>
+<li><strong>Form:</strong> Grade 9 includes full letter conventions (address, date). Grade 5 uses minimal form.</li>
+<li><strong>Evidence:</strong> Grade 9 cites specific research (sleep phase delay, American Academy of Pediatrics, percentages). Grade 5 makes vague claims ("other schools have done this").</li>
+<li><strong>Sophistication:</strong> Grade 9 uses technical language appropriately ("circadian rhythms," "sleep phase delay"). Grade 5 uses simple language.</li>
+<li><strong>Structure:</strong> Grade 9 develops multiple points (science, evidence, counterargument, call to action). Grade 5 lists points without development.</li>
+<li><strong>Counterargument:</strong> Grade 9 acknowledges potential concerns before refuting them. Grade 5 makes no acknowledgment of audience concerns.</li>
+<li><strong>Persuasiveness:</strong> Grade 9 is compelling because it combines evidence, science, empathy, and practical awareness. Grade 5 relies on assertion.</li>
+</ul>
+
 `,
     quiz: [
       {

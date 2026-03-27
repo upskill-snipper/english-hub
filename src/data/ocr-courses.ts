@@ -1953,6 +1953,57 @@ Priya's reluctance to engage with the formal elements of the offer — she reads
 
 <p>Her response to the phone call is particularly revealing. The verb "flinched" implies the call startles her, but also that she associates the caller with something painful or unwanted. Her deliberate decision to let it ring, read the name, and place it "face-down on the counter" suggests avoidance — she knows who is calling and consciously refuses to engage. The physical detail of her jaw tightening conveys suppressed emotion: anger, determination, or the effort of holding back tears. The final sentence — "She turned back to the window" — returns her to her original position, creating a sense of circularity that implies she is trapped in her emotional state, unable to move forward.</p></div>
 
+<h3>Practice Passage 1: Grade 5 Student Response (Weak Inference)</h3>
+<div class="text-extract">Marcus stood at the door for a long time. He was holding a letter in his hand. His wife had left a note on the table. Marcus put the letter down and walked to the window. He looked out at the garden. The plants were dead. He sat down on the sofa. The television was on but he wasn't watching it. He stood up again.<div class="source">From a student attempt</div></div>
+
+<p><strong>Sample Question:</strong> What do we learn about Marcus's emotional state?</p>
+
+<div class="examiner-commentary"><strong style="color: #c41e3a;">Grade 5 Response:</strong> <em>"Marcus is upset because his wife has left him. He is sad because the plants are dead. He is restless because he keeps standing up and sitting down."</em>
+
+<strong style="color: #c41e3a;">Examiner Comment:</strong> This response tells us facts ("Marcus is upset") but doesn't explain how the text conveys this. There's no analysis of technique or deeper inference. The student also misinterprets the relationship between the wife's note and the letter Marcus is holding — are they the same thing, or different? The response lacks precision. The detail about the dead plants is noticed but not analysed for its possible symbolic meaning (the garden's neglect mirroring emotional neglect, or Marcus's inability to nurture anything, including his marriage). The observation about restlessness is valid but unsupported — why does repeated action and inaction suggest restlessness rather than, say, shock or numbness? A Grade 5 response names emotions without proving them.</div></div>
+
+<h3>Practice Passage 2: Grade 9 Student Response (Strong Inference)</h3>
+
+<div class="examiner-commentary"><strong style="color: #006400;">Grade 9 Response:</strong> <em>"Marcus's behaviour suggests a man in the grip of shock and denial. The fact that he 'stood at the door for a long time' is a moment of paralysis — he cannot move forward, both literally and metaphorically. The repeated cycle of 'sat down...stood up again' mirrors the physical restlessness of someone whose mind is in turmoil. He cannot settle because his emotional ground has shifted.</em>
+
+<em>The letter and the wife's note are clearly sources of devastating news. Rather than reading them again (which we might expect of someone processing difficult information), Marcus displaces his focus onto the dead plants. This is a psychological displacement — he cannot yet face the contents of the letters, so he deflects onto something external. The pathetic fallacy of the dead garden suggests the emotional deadness spreading from his personal crisis into his perception of the world around him. The television 'on but not watched' reinforces this: he is going through the motions of normal life while internally collapsed."</em>
+
+<strong style="color: #006400;">Examiner Comment:</strong> This response demonstrates sophisticated inference. The student moves beyond 'Marcus is upset' to explain the psychological mechanisms of his response — paralysis, displacement, pathetic fallacy. The repetition of standing and sitting is analysed as a reflection of mental turmoil, not merely as restlessness. The student recognises that the letter and the wife's note are connected to his state, and infers the relationship intelligently. The observation about the television is particularly sophisticated: 'going through the motions' demonstrates an understanding of dissociation and emotional shutdown that goes well beyond the text's surface. Grade 9 inferences are grounded in textual detail but also show understanding of human psychology.</strong></div></div>
+
+<h3>Grade Boundary Breakdown: Fiction Inference</h3>
+
+<div style="border-left: 4px solid #006400; padding: 15px; margin: 15px 0; background-color: #f0f5f0;">
+<strong>Grade 9 (Top Mark Band):</strong> Student makes complex, multi-layered inferences supported by specific textual evidence. Recognises subtle emotional states and psychological mechanisms. Distinguishes between explicit detail and implied meaning. Identifies and discusses symbolic or thematic significance of details (dead garden = emotional deadness). Shows awareness of narrative perspective and reliability.
+</div>
+
+<div style="border-left: 4px solid #0066cc; padding: 15px; margin: 15px 0; background-color: #f0f5f0;">
+<strong>Grade 7 (Good):</strong> Makes clear, justified inferences about character feeling and motive. Uses the five methods of characterisation (action, speech, thought, appearance, reactions). Supports inferences with specific textual reference. Occasional attempt to explain the link between detail and inference. Generally secure understanding of character.
+</div>
+
+<div style="border-left: 4px solid #ff9900; padding: 15px; margin: 15px 0; background-color: #fffbf0;">
+<strong>Grade 5 (Mid):</strong> Makes simple, obvious inferences that are sometimes stated as fact. Shows limited use of evidence. Describes character feeling (sad, angry) without explaining how we know this. May confuse inference with summary. Limited exploration of subtle emotional states.
+</div>
+
+<h3>Common Mistakes in Fiction Inference</h3>
+
+<ul>
+  <li><strong>Confusing inference with guessing:</strong> "Marcus must have won the lottery" is unsupported guessing. Inference must be grounded in textual evidence. Stick to what the text allows.</li>
+  <li><strong>Ignoring what characters DON'T do:</strong> In the practice extract, Ellis doesn't answer the phone, doesn't drink her tea, doesn't move — these absences are highly informative.</li>
+  <li><strong>Treating all inferences as equally valid:</strong> Some inferences are supported by stronger evidence than others. "The text suggests Ellis is avoiding someone" is more strongly supported than "Ellis is guilty of something."</li>
+  <li><strong>Not connecting inference to technique:</strong> An inference answer should explain HOW the writer conveys the emotional state, not just WHAT state it is.</li>
+  <li><strong>Making inferences that contradict the text:</strong> If the text shows a character smiling and joking, you cannot infer they are sad unless there's evidence of irony or performance.</li>
+</ul>
+
+<h3>Step-by-Step Guide: Inferring Character from Text</h3>
+
+<ol>
+  <li><strong>Identify a specific action or detail.</strong> <em>"Ellis placed the phone face-down on the counter."</em></li>
+  <li><strong>Explain what this tells us.</strong> <em>"This action suggests she knows who is calling and is deliberately avoiding them."</em></li>
+  <li><strong>Connect to a larger emotional or psychological state.</strong> <em>"This indicates a state of conflict or avoidance — she wants nothing to do with the caller."</em></li>
+  <li><strong>Consider what she's NOT doing.</strong> <em>"She doesn't answer. She doesn't call back later. Her jaw tightens. This suggests not just avoidance but active suppression of emotion."</em></li>
+  <li><strong>Build a composite picture.</strong> <em>"Taken together, these details suggest Ellis is in a state of emotional distress, caused by this particular person, and is actively preventing herself from engaging."</em></li>
+</ol>
+
 <h3>The Five Methods of Characterisation</h3>
 <p>When inferring character, look for these five channels:</p>
 <ol>
@@ -2094,6 +2145,78 @@ Priya's reluctance to engage with the formal elements of the offer — she reads
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Confusing language analysis with structure analysis. Language analysis focuses on <em>word-level</em> and <em>phrase-level</em> choices — the writer's diction, imagery, and figurative language. Structure analysis (covered in the next module) focuses on how the text is <em>organised</em> — paragraph order, shifts in focus, pacing, and narrative sequence. OCR tests these as separate questions, so you must keep them distinct.</div>
 
+<h3>Worked Example: Annotated Student Responses</h3>
+
+<h4>Grade 5 Response (Weak Language Analysis)</h4>
+
+<div style="border: 2px solid #ff6b6b; padding: 15px; margin: 15px 0; background-color: #fff5f5;">
+<p><strong>Extract:</strong> <em>"The corridor stretched ahead of her, longer than it had any right to be."</em></p>
+
+<p><strong>Student Answer:</strong> "The writer uses personification by saying the corridor has rights. This makes it seem alive and scary. The word 'stretched' suggests the corridor is long. This creates an atmosphere of fear."</p>
+
+<p><strong style="color: #c41e3a;">Examiner Comment:</strong> The student has identified the correct technique (personification) but the analysis is superficial. Saying something "seems alive and scary" doesn't explain HOW or WHY the personification creates this effect. Why do corridors having "rights" make them scary? What rights? The student has also included vague language: "this creates an atmosphere of fear" is a claim without evidence of mechanism. The response demonstrates technique spotting rather than analysis.</p>
+</div>
+
+<h4>Grade 9 Response (Strong Language Analysis)</h4>
+
+<div style="border: 2px solid #2ecc71; padding: 15px; margin: 15px 0; background-color: #f0fff5;">
+<p><strong>Extract:</strong> <em>"The corridor stretched ahead of her, longer than it had any right to be."</em></p>
+
+<p><strong>Student Answer:</strong> "The personification of the corridor — 'longer than it had any right to be' — is unsettling because it suggests the building is behaving unnaturally, actively defying expectation. By granting the corridor 'rights' (implying agency and intentionality), the writer transforms a neutral space into something with malevolent consciousness. The phrase 'any right' also carries a colloquial, almost injured tone — as if the narrator is indignant that the corridor dares to defy her expectations. This compounds the unease: not only is the space expanding impossibly, but there's a sense that it is doing so deliberately, against the protagonist's will. The effect is to create profound disorientation — the familiar world (a corridor) has become hostile and sentient."</p>
+
+<p><strong style="color: #006400;">Examiner Comment:</strong> This response goes far beyond technique identification. The student explains the precise mechanism by which personification creates unease: by granting agency, it makes something familiar become hostile. The observation about the colloquial tone ('any right') is sophisticated — showing that the student has understood the phrase's connotations beyond its literal meaning. The final statement about disorientation is a strong concluding interpretation that synthesises the analysis. Grade 9 analysis explains WHAT a technique does, HOW it works, and WHY it creates the specific emotional or atmospheric effect.</p>
+</div>
+
+<h3>Grade Boundary Breakdown: Language Analysis in Fiction</h3>
+
+<div style="border-left: 4px solid #006400; padding: 15px; margin: 15px 0; background-color: #f0f5f0;">
+<strong>Grade 9 (7-8 marks):</strong> Identifies and analyses sophisticated language techniques with precision. Explains the mechanism of each technique — how it works and why it creates the specified effect. Considers multiple layers of meaning (literal, connotative, emotional). Uses precise subject terminology. Makes sophisticated links between technique and reader experience. Shows that techniques work together to create cumulative effects.
+</div>
+
+<div style="border-left: 4px solid #0066cc; padding: 15px; margin: 15px 0; background-color: #f0f5f0;">
+<strong>Grade 7 (6 marks):</strong> Identifies several relevant language techniques. Explains what each technique does and how it contributes to atmosphere or effect. Uses appropriate terminology. Attempts to explain the connection between technique and reader response. Generally clear understanding of language analysis.
+</div>
+
+<div style="border-left: 4px solid #ff9900; padding: 15px; margin: 15px 0; background-color: #fffbf0;">
+<strong>Grade 5 (4-5 marks):</strong> Identifies some techniques (often with inaccuracy: "metaphor" for simile). Describes what a technique is or does, but analysis is limited. May list techniques without explaining their effect. Limited use of terminology. Weak link between technique and reader experience.
+</div>
+
+<h3>Practice Passage with Annotation Guide</h3>
+
+<div class="text-extract"><em>The rain fell in fat, indifferent drops that splattered against the window like tiny fists punching for attention. Sarah watched each drop race against its neighbours, some winning, some losing, and she thought: this is how I feel. The glass was cold against her forehead, and in its reflection she could see the room behind her — her mother's room, full of yesterday's light and the furniture's tired geometry. She turned away.</em></div>
+
+<h4>How to Analyse This Passage:</h4>
+
+<p><strong>1. Identify the first technique:</strong> Personification ("drops...like tiny fists punching for attention")</p>
+
+<p><strong>2. Explain what it is:</strong> The rain is given human qualities (fists, punching, seeking attention).</p>
+
+<p><strong>3. Explain how it works:</strong> By comparing rain to human aggression, the writer makes a meteorological phenomenon feel intentional and aggressive. The word "indifferent" in the first phrase complicates this — the drops are aggressive but don't care about their aggression. They're punching but emotionally detached.</p>
+
+<p><strong>4. Connect to reader experience and character emotion:</strong> The simile mirrors Sarah's emotional state — she feels emotionally overwhelmed and insignificant, like rain buffeting a window. The personification also reveals her psychological projection: she is reading human emotion (frustration, desperation) into a natural process, suggesting her own emotional intensity is so high that she sees the world through the lens of her inner turmoil.</p>
+
+<p><strong>5. Consider cumulative effects:</strong> The pathetic fallacy (weather reflecting emotion), the personification, and the explicit statement "this is how I feel" work together to blur the boundary between Sarah's internal state and external reality. A less skilled writer might say "Sarah felt sad" — instead, this writer shows us sadness through the prism of rainfall, creating a far more vivid and psychologically complex representation.</p>
+
+<h3>Worked Examples: Multiple Techniques in One Sentence</h3>
+
+<div style="background-color: #f9f9f9; padding: 15px; margin: 15px 0; border-radius: 5px;">
+<p><strong>Sentence:</strong> <em>"The memory sat in her chest like a stone."</em></p>
+
+<p><strong>Techniques present:</strong> Simile, metaphor (memory as object), personification (memory can sit)</p>
+
+<p><strong>Analysis:</strong> The simile "like a stone" conveys weight and immobility — the memory is burdensome and cannot be shaken. The implicit metaphor of the memory as a physical object suggests it has material presence in her body. The choice of "chest" (rather than mind, heart, or head) is significant: the chest is the location of the heart, suggesting the memory is emotionally charged rather than merely intellectual. The verb "sat" implies the memory is inert, settled, and permanent — not something fleeting but something lodged deep within her. The cumulative effect is claustrophobic: the character is carrying something heavy inside herself.</p>
+</div>
+
+<h3>Common Mistakes in Language Analysis</h3>
+
+<ul>
+  <li><strong>Technique spotting without analysis:</strong> "This is personification" stops short of analysis. You must explain HOW and WHY it creates effect.</li>
+  <li><strong>Misidentifying techniques:</strong> A simile uses "like" or "as"; a metaphor doesn't. A metonymy substitutes one thing for another. Know your terminology accurately.</li>
+  <li><strong>Over-explaining the technique:</strong> You don't need to explain what personification is in the exam. Assume the examiner knows. Focus on the specific instance.</li>
+  <li><strong>Disconnecting technique from reader experience:</strong> Always connect analysis back to how the reader feels, understands, or perceives.</li>
+  <li><strong>Analysing language in isolation:</strong> The best answers show how multiple techniques work together. "Personification + simile + pathetic fallacy combine to suggest..."</li>
+</ul>
+
 <h3>Building an Analytical Vocabulary for Fiction</h3>
 <p>These verbs and phrases strengthen fiction language analysis:</p>
 <ul>
@@ -2104,6 +2227,8 @@ Priya's reluctance to engage with the formal elements of the offer — she reads
   <li><em>The personification imbues the setting with...</em></li>
   <li><em>The writer's use of [technique] unsettles the reader by...</em></li>
   <li><em>The shift in tone from... to... mirrors the character's...</em></li>
+  <li><em>Through [technique], the writer constructs a world in which...</em></li>
+  <li><em>The specific word choice of [word] rather than [alternative] suggests...</em></li>
 </ul>
 
 <div class="key-term"><strong>Key Term: Semantic Field</strong> — A group of words within a text that are related in meaning and contribute to a dominant theme or atmosphere. For example, words like "pulse," "breath," "alive," and "heartbeat" form a semantic field of life/vitality, which, when applied to an inanimate building, creates an unsettling effect.</div>
@@ -2253,6 +2378,112 @@ She answered it. Listened. The park was still bright, still impossibly still, bu
 <div class="examiner-tip"><strong>Examiner Tip:</strong> A one-sentence paragraph is ALWAYS a structural choice worth commenting on. Writers isolate sentences to give them emphasis, mark a turning point, or create dramatic pause. If you see a single-sentence paragraph in your exam extract, analyse why it has been separated from the rest of the text.</div>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Retelling the story instead of analysing structure. "First, Anna walks through the park. Then, her phone rings. Then, she is sad" is plot summary, not structural analysis. Instead, discuss <em>why</em> the writer arranges events in this order and what effect it has: "The writer establishes tranquillity before the disruption to maximise the emotional impact of the shift."</div>
+
+<h3>Grade 5 vs Grade 9: Structure Analysis Comparison</h3>
+
+<h4>Grade 5 Response (Plot Summary Disguised as Analysis)</h4>
+
+<div style="border: 2px solid #ff6b6b; padding: 15px; margin: 15px 0; background-color: #fff5f5;">
+<p><strong>Question:</strong> How does the writer's use of structure create an emotional impact in the passage?</p>
+
+<p><strong>Student Answer:</strong> "The writer starts with Anna in the park. This part is peaceful. Then her phone rings. This is a turning point. After the phone call, she feels sad. The structure shows how she goes from happy to sad. The isolated sentence 'Then her phone rang' is used for effect. This makes the reader understand that the phone call is important."</p>
+
+<p><strong style="color: #c41e3a;">Examiner Comment:</strong> This response is plot summary, not structural analysis. The student describes what happens (Anna is happy, then a call comes, then she's sad) rather than explaining WHY the writer structures it this way or what effect the arrangement creates. The observation about the isolated sentence is valid but underdeveloped — the student doesn't explain why isolation creates effect or what specific effect it achieves. The response lacks sophisticated understanding of how structure manipulates reader response.</p>
+</div>
+
+<h4>Grade 9 Response (Sophisticated Structural Analysis)</h4>
+
+<div style="border: 2px solid #2ecc71; padding: 15px; margin: 15px 0; background-color: #f0fff5;">
+<p><strong>Question:</strong> How does the writer's use of structure create an emotional impact in the passage?</p>
+
+<p><strong>Student Answer:</strong> "The writer uses a deliberate before-and-after structural framework, with the phone call as the fulcrum. By establishing an extended opening of tranquillity — Anna's leisurely walk, the peaceful park, her memories of her children — the writer invests the reader emotionally in this world of safety and contentment. The structural significance of the single-sentence paragraph, 'Then her phone rang,' lies in its abruptness and isolation. The brevity of the sentence mimics the suddenness of the disruption; the isolation gives it weight and finality. This is not merely a narrative event but a structural marker of transformation.</p>
+
+<p>After the phone call, the writer employs a structural technique of repetition-with-variation. The imagery of the park — 'still bright, still impossibly still,' 'The ducks still glided. The child still laughed' — is repeated, but filtered through Anna's changed consciousness. Structurally, this repetition creates profound irony: the external world is unchanged, but Anna's inner world has been shattered. The effect on the reader is devastating because the unchanged setting becomes a mirror of Anna's isolation — the world continues indifferently while she has been devastated.</p>
+
+<p>The final image — 'the way you lower something precious that has broken beyond repair' — structurally parallels the slow, careful pacing of the opening, creating a cyclical symmetry. However, where the opening's slowness signified peace, the ending's slowness signifies loss. This structural mirroring of pacing deepens the emotional resonance: the reader recognises the echo of earlier contentment and feels its absence all the more acutely."</p>
+
+<p><strong style="color: #006400;">Examiner Comment:</strong> This response demonstrates masterful structural analysis. The student explains the FUNCTION of structure (creating emotional investment before disruption), not just identifies it. The analysis of the single-sentence paragraph goes deep: explaining both HOW it works (brevity mimics suddenness) and WHY it matters (creates finality and weight). The concept of repetition-with-variation is sophisticated, and the student explains the structural irony it creates. The observation about cyclical pacing and its emotional effect shows understanding of how structure creates meaning. This is top-band structural analysis.</p>
+</div>
+
+<h3>Grade Boundary Breakdown: Structural Analysis in Fiction</h3>
+
+<div style="border-left: 4px solid #006400; padding: 15px; margin: 15px 0; background-color: #f0f5f0;">
+<strong>Grade 9 (7-8 marks):</strong> Identifies sophisticated structural techniques (shifts in focus, pacing changes, cyclical patterns, repetition, juxtaposition, delayed reveals). Explains HOW each technique works and WHY it creates specific effects. Discusses how structural choices manipulate reader response. Avoids plot summary entirely. Uses structural terminology accurately. Shows understanding of cumulative structural effects.
+</div>
+
+<div style="border-left: 4px solid #0066cc; padding: 15px; margin: 15px 0; background-color: #f0f5f0;">
+<strong>Grade 7 (6 marks):</strong> Identifies some relevant structural techniques. Explains the relationship between structure and reader effect. Some awareness of why writers make structural choices. Generally clear analysis, though may lack sophistication in terminology or depth of insight.
+</div>
+
+<div style="border-left: 4px solid #ff9900; padding: 15px; margin: 15px 0; background-color: #fffbf0;">
+<strong>Grade 5 (4-5 marks):</strong> Identifies some structural features (usually very obvious ones like isolated sentences). Often reverts to plot summary. Limited explanation of WHY structure matters. May confuse structural and language analysis. Weak understanding of how structure creates effect.
+</div>
+
+<h3>Practical Technique Guide: Structural Analysis Toolkit</h3>
+
+<h4>Technique 1: Pacing Through Sentence Length</h4>
+
+<div style="background-color: #f9f9f9; padding: 15px; margin: 15px 0; border-radius: 5px;">
+<p><strong>Short Sentences (Fast Pacing):</strong> "She ran. The door. Locked. She slammed her shoulder against it. Again. Again. The wood cracked."</p>
+
+<p><strong>How to analyse:</strong> "The writer uses rapid, fragmented sentences to accelerate the pace. The absence of connectives forces the reader's eye to move quickly down the page, creating a sense of urgency and crisis. The effect is to implicate the reader in the character's panic — we experience the action as a breathless sequence rather than a reflective narrative."</p>
+
+<p><strong>Long Sentences (Slow Pacing):</strong> "The corridor stretched ahead of her, its walls narrowing almost imperceptibly, as though the building itself were drawing a slow, deliberate breath before releasing whatever waited at its end."</p>
+
+<p><strong>How to analyse:</strong> "The complex sentence structure, with multiple subordinate clauses, slows the pace and creates a sense of mounting dread. The reader is forced to move through the sentence carefully, experiencing the same mounting tension as the character. The structural choice of a single, elaborate sentence (rather than multiple short ones) mirrors the character's inability to escape the moment — there is no pause, no respite, until the sentence completes."</p>
+</div>
+
+<h4>Technique 2: Repetition with Variation</h4>
+
+<div style="background-color: #f9f9f9; padding: 15px; margin: 15px 0; border-radius: 5px;">
+<p><strong>Example:</strong> A passage describes a room as "immaculate" and "perfect" early on. Later, the same room is described with the same spatial layout but with details of dust, decay, and neglect added.</p>
+
+<p><strong>How to analyse:</strong> "The structural technique of repetition-with-variation reveals the character's changing perception. The room hasn't changed; the character's consciousness has. Structurally, this creates dramatic irony — the reader recognises the echo of the earlier description and feels the full weight of decline. The technique moves beyond narrative to create a commentary on perception and memory."</p>
+</div>
+
+<h4>Technique 3: Delayed Revelation</h4>
+
+<div style="background-color: #f9f9f9; padding: 15px; margin: 15px 0; border-radius: 5px;">
+<p><strong>Example:</strong> A passage describes a wedding celebration in detail — the decorations, the guests, the music — before finally revealing that the bride has left the groom at the altar.</p>
+
+<p><strong>How to analyse:</strong> "The writer withholds the crucial fact (the absent bride) until the final revelation. Structurally, this creates suspense and irony. The reader has been led to assume normalcy, so the belated revelation is shocking. The structural choice to describe the wedding in detail before revealing its failure forces the reader to experience the same dissonance as the wedding guests — we expected celebration and received catastrophe."</p>
+</div>
+
+<h4>Technique 4: Cyclical Structure (Circular Narrative)</h4>
+
+<div style="background-color: #f9f9f9; padding: 15px; margin: 15px 0; border-radius: 5px;">
+<p><strong>Example:</strong> A passage opens with a character sitting on a bench in a park. It ends with the same character on the same bench, but the character (or reader's understanding of the character) has been fundamentally changed.</p>
+
+<p><strong>How to analyse:</strong> "The cyclical structure creates ironic resonance. The physical return to the opening location suggests return and resolution, yet the character's inner transformation denies simple closure. Structurally, this technique generates poignancy — the world has returned to its starting point, but the character cannot. The cyclical form emphasises the irreversibility of change."</p>
+</div>
+
+<h3>Common Structural Analysis Mistakes</h3>
+
+<ul>
+  <li><strong>Confusing structure with plot:</strong> Structure is HOW the story is told. Plot is WHAT happens. "Anna receives a phone call" is plot. "The phone call is structurally isolated in a single-sentence paragraph" is structure.</li>
+  <li><strong>Analysing language as structure:</strong> The word choice "horribly white" is language analysis. The placement of a description at the opening vs closing is structure analysis. Keep them distinct.</li>
+  <li><strong>Assuming obvious = unimportant:</strong> Even obvious structural choices (like starting in the middle of action) warrant analysis. Explain why the writer chose obviousness and what effect it achieves.</li>
+  <li><strong>Not explaining the EFFECT:</strong> "The passage is split into short paragraphs" identifies structure but doesn't analyse it. Why are they short? What effect does this create?</li>
+  <li><strong>Overcomplicating structure:</strong> Not every text has complex structure. Sometimes a straightforward chronological approach is the structural choice, and you should analyse what that achieves.</li>
+</ul>
+
+<h3>Structural Terminology Reference</h3>
+
+<p><strong>Essential terms for structure analysis:</strong></p>
+
+<ul>
+  <li><strong>In medias res</strong> — Beginning in the middle of action</li>
+  <li><strong>Cyclical/circular structure</strong> — Returning to the opening scenario</li>
+  <li><strong>Foreshadowing</strong> — Planting clues about future events</li>
+  <li><strong>Delayed revelation</strong> — Withholding information to build suspense</li>
+  <li><strong>Juxtaposition</strong> — Placing contrasting sections side by side</li>
+  <li><strong>Pacing</strong> — The speed at which events unfold (controlled by sentence length, paragraph length, density of information)</li>
+  <li><strong>Shifts in focus/perspective</strong> — Moving between different characters, time periods, or locations</li>
+  <li><strong>Frame narrative</strong> — A story told within another story</li>
+  <li><strong>Climax</strong> — The point of greatest intensity or turning point</li>
+  <li><strong>Denouement</strong> — The resolution after the climax</li>
+  <li><strong>Bathos</strong> — An abrupt shift from serious to trivial (often for comic effect)</li>
+</ul>
 
 <div class="key-term"><strong>Key Term: In Medias Res</strong> — A Latin term meaning "in the middle of things." A narrative technique where the story begins in the middle of the action, without exposition or background. This immediately engages the reader by plunging them into a moment of conflict or tension.</div>
 `,
@@ -2621,6 +2852,118 @@ She answered it. Listened. The park was still bright, still impossibly still, bu
 </ul>
 
 <div class="key-term"><strong>Key Term: Extended Metaphor</strong> — A metaphor that is developed and sustained across multiple sentences, a paragraph, or even an entire text. For example, describing a city as an organism — its streets as arteries, its traffic as blood flow, its buildings as bones — creates a unified and powerful comparison.</div>
+
+<h3>Worked Example: Grade 5 vs Grade 9 Descriptive Writing</h3>
+
+<h4>Grade 5 Response (Weak Descriptive Writing)</h4>
+
+<div style="border: 2px solid #ff6b6b; padding: 15px; margin: 15px 0; background-color: #fff5f5;">
+<p><strong>Prompt:</strong> Describe a place that feels abandoned and neglected.</p>
+
+<p><strong>Grade 5 Student Response:</strong></p>
+
+<p><em>"The house was very old and empty. It had broken windows and the paint was peeling. The garden was full of dead plants and weeds. Everything was dirty and dark. The doors were locked and you couldn't get in. It was a spooky place. I didn't like it. The walls were grey and sad. There was no one there, which made it feel lonely and scary."</em></p>
+
+<p><strong style="color: #c41e3a;">Examiner Comment:</strong> This response relies on telling rather than showing. The student states emotions directly ("spooky," "scary," "lonely") rather than creating them through sensory detail. The description is generic — "old house with broken windows" could describe any derelict building. There's no engagement with the five senses beyond vague visual reference. Sentence structures are simple and repetitive. The simile "sad" applied to walls is ineffective (walls aren't sad; we need description that makes them feel that way). The personal opinions ("I didn't like it") are inappropriate in descriptive writing. Grade 5 descriptive writing tells the reader what to feel rather than creating the conditions for that feeling.</p>
+</div>
+
+<h4>Grade 9 Response (Strong Descriptive Writing)</h4>
+
+<div style="border: 2px solid #2ecc71; padding: 15px; margin: 15px 0; background-color: #f0fff5;">
+<p><strong>Prompt:</strong> Describe a place that feels abandoned and neglected.</p>
+
+<p><strong>Grade 9 Student Response:</strong></p>
+
+<p><em>"The house exhaled silence. The front door, once navy, was now the colour of stagnant water — not quite blue, not quite grey, but the sickly in-between that suggests decay. The brass letterbox, green with verdigris, hadn't opened in years. The windows were sealed with plywood, but where the wood had warped, splinters of the outside world bled through: a slice of overgrown garden, a thread of dying light.</em></p>
+
+<p><em>Inside, the air was thick — not with presence but with absence. The smell was a palimpsest: old wood, a phantom sweetness (flowers, perhaps, long since reduced to dust), and the mineral-iron tang of rust. The carpets, where visible beneath the debris, held the faded pattern of decades — a geometric design that now suggested only entropy.</em></p>
+
+<p><em>The kitchen table sat at an angle, as if the house itself had tilted in grief, and on it lay the archaeology of abandonment: a cup, the dregs of tea rendered to rust-coloured rings; a newspaper, its headlines abstract now, the words bled into illegibility. The calendar on the wall had stopped in March. Which March? The ambiguity created a vertigo of time — this abandonment might be five years old or fifty.</em></p>
+
+<p><em>Outside, the garden had reclaimed its territory. Where roses once grew, nettles thrusted upward, indifferent to human order. The swing set — that monument to vanished children — rusted in the tall grass, its chains locked, immobile. If you listened carefully, you could almost hear the place exhaling, slowly releasing its decades of memory into the overgrown air."</em></p>
+
+<p><strong style="color: #006400;">Examiner Comment:</strong> This response demonstrates sophisticated descriptive technique. The opening personification ("exhaled silence") establishes an atmosphere immediately and sets the tone. The description of the door colour uses specific detail and simile to create visceral unease — the colour suggests decay without stating it. The engagement with multiple senses is sophisticated: sight ("stagnant water," "splinters of light"), smell (a "palimpsest" of scents), touch (implied through texture), and even temporal senses (the verdigris suggesting age). The student moves through the space systematically, and each detail contributes to the atmosphere of loss and time's passage. The metaphor of archaeology is sustained and meaningful. The ambiguity of "which March" adds intellectual depth — the reader is made to feel the disorientation of time decay. The final return to the opening personification creates circular structure. Grade 9 descriptive writing creates immersion through precise, multi-sensory detail and sustained figurative language.</p>
+</div>
+
+<h3>Grade Boundary Breakdown: Descriptive Writing</h3>
+
+<div style="border-left: 4px solid #006400; padding: 15px; margin: 15px 0; background-color: #f0f5f0;">
+<strong>Grade 9 (22-24 marks for AO5):</strong> Creates vivid, immersive description using multiple senses and sustained figurative language. Shows sophisticated control of vocabulary and varied sentence structures. Uses structural techniques deliberately. Demonstrates originality and depth of imagination. Writing is compelling and engages the reader fully.
+</div>
+
+<div style="border-left: 4px solid #0066cc; padding: 15px; margin: 15px 0; background-color: #f0f5f0;">
+<strong>Grade 7 (18-20 marks for AO5):</strong> Creates clear, vivid description using some figurative language. Engages multiple senses. Varied sentence structures. Shows some originality. Description is generally well-controlled and engaging, though may lack the depth or originality of top-band responses.
+</div>
+
+<div style="border-left: 4px solid #ff9900; padding: 15px; margin: 15px 0; background-color: #fffbf0;">
+<strong>Grade 5 (14-16 marks for AO5):</strong> Uses description but may rely heavily on telling rather than showing. Limited sensory engagement (usually sight only). Simple vocabulary and sentence structures. May include personal opinion. Limited originality — descriptions feel generic or clichéd.
+</div>
+
+<h3>Practice Passages: Guided Annotation</h3>
+
+<h4>Practice Passage 1: Sensory-Rich Description</h4>
+
+<div style="background-color: #f9f9f9; padding: 15px; margin: 15px 0; border-radius: 5px;">
+<p><em>"The market assaulted your senses before your eyes focused. The smell came first — a chaos of competing aromas. Cardamom and turmeric, sharp and ancient. Rotting fruit buried under baskets of bright abundance. A man frying something in oil, the scent of hot salt and garlic wrapping around you like a living thing. Your eyes, adjusting, landed on towers of color — saffron yellows, pomegranate reds, the improbable green of limes.</em></p>
+
+<p><em>The sound was a living organism. Vendors calling their wares in rapid-fire sequences. The crack of a merchant's whip against bundles of dried chilies. Haggling voices overlapping until they formed a single, indecipherable roar. And beneath it, a rhythm — the slap of feet on wet stone, the clink of coins, the creak of wooden stalls adjusting their weight."</em></p>
+
+<p><strong>What makes this Grade 9:</strong></p>
+<ul>
+  <li>Smell comes FIRST, before sight — refusing the habitual dominance of vision</li>
+  <li>"Cardamom and turmeric, sharp and ancient" combines specific naming with sensory language (sharp) and emotional resonance (ancient)</li>
+  <li>The metaphor "like a living thing" for garlic scent is unusual and creates immersion</li>
+  <li>Sensory specificity: "rotting fruit," "frying," "salt" — not just "it smelled bad"</li>
+  <li>Sound is described as "a living organism," personified and made active</li>
+  <li>The layering of sounds creates texture: calls, cracks, haggling, then beneath-sounds (slap, clink, creak)</li>
+  <li>Variety in sentence length mirrors the chaos of the market</li>
+</ul>
+</div>
+
+<h4>Practice Passage 2: Creating Atmosphere Through Contrast</h4>
+
+<div style="background-color: #f9f9f9; padding: 15px; margin: 15px 0; border-radius: 5px;">
+<p><em>"The library breathed silence. Not the absence of sound but the presence of quiet — thick, accumulated, profound. The books on the shelves were like sleeping giants, their spines holding centuries of whispered secrets. Dust motes moved through the air like the thoughts of the building itself, slow and deliberate.</em></p>
+
+<p><em>Then a child dropped a pencil.</em></p>
+
+<p><em>The sound cracked the silence like a pebble through ice. The child froze. An elderly librarian looked up, not with anger but with something worse — the expression of someone who had been guarding a sacred peace and had just watched it shatter."</em></p>
+
+<p><strong>What makes this Grade 9:</strong></p>
+<ul>
+  <li>Opening personification ("library breathed") establishes atmosphere immediately</li>
+  <li>The paradox of "presence of quiet" creates intellectual depth</li>
+  <li>Extended metaphor of books as "sleeping giants" holding "secrets"</li>
+  <li>Dust motes as "thoughts of the building" is a sophisticated and unusual image</li>
+  <li>Contrast between established atmosphere and disruption: the pencil drop</li>
+  <li>The simile "like a pebble through ice" creates vivid disruption</li>
+  <li>The final observation about the librarian's expression goes beyond physical description to convey emotion through behavior</li>
+</ul>
+</div>
+
+<h3>Step-by-Step Technique: Building Descriptive Writing</h3>
+
+<ol>
+  <li><strong>Choose your focus.</strong> What place or moment will you describe? (A kitchen, a street, a moment of grief, an atmosphere rather than a specific place)</li>
+  <li><strong>Decide on your structure.</strong> How will you guide the reader through the space? (Spatial movement, temporal movement, zoom lens, contrast, emotional progression)</li>
+  <li><strong>Identify your opening image.</strong> What single, striking image will draw the reader in? (Personification, unexpected comparison, unusual sensory detail)</li>
+  <li><strong>Plan sensory engagement.</strong> Which senses will you prioritize? (Not all five equally; choose based on your subject. A market needs sound and smell; a museum needs silence and sight.)</li>
+  <li><strong>Use figurative language purposefully.</strong> Don't include a metaphor just to have one. Each comparison should reveal something about the subject or create a specific emotional response.</li>
+  <li><strong>Vary your sentence structures.</strong> Long sentences for immersion and calm; short sentences for shock or disruption. Match form to content.</li>
+  <li><strong>Create an ending that resonates.</strong> Circular return to the opening? A striking final image? A question left hanging? Make it intentional.</li>
+</ol>
+
+<h3>Common Mistakes in Descriptive Writing</h3>
+
+<ul>
+  <li><strong>Adjective overload:</strong> "The dark, gloomy, sinister, terrifying, damp corridor" overwhelms. Two precise adjectives are stronger than five vague ones.</li>
+  <li><strong>Generic descriptions:</strong> Every abandoned house is "dark and creepy" in weak writing. Find the specific details that make THIS place unique.</li>
+  <li><strong>Relying on clichés:</strong> "Blood-red roses," "azure skies," "emerald eyes" — these comparisons have lost power. Find original comparisons.</li>
+  <li><strong>Telling rather than showing:</strong> "I felt peaceful" vs "The air was still, the water unrippled, the silence unbroken." Show the conditions that create peace.</li>
+  <li><strong>Losing structure:</strong> Descriptive writing can become a random list of observations. Plan your movement through the space.</li>
+  <li><strong>Overwriting:</strong> Every paragraph doesn't need three metaphors. Restraint can be more powerful than profusion.</li>
+  <li><strong>Personal opinion in the description:</strong> "The room was beautiful" tells us your preference. "Sunlight caught the glass and threw colours across the wall" shows beauty and lets the reader decide.</li>
+</ul>
 `,
     quiz: [
       {

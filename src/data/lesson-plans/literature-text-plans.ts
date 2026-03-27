@@ -1471,40 +1471,1041 @@ const romeoJulietLesson6: LiteratureLesson = {
 // EXPORT
 // ════════════════════════════════════════════════════════════════════════════
 
+
+// ════════════════════════════════════════════════════════════════════════════
+// MACBETH — 4 ADDITIONAL SPECIALIZED LESSONS (ACTS 1, 2, 3, 5)
+// ════════════════════════════════════════════════════════════════════════════
+
+const macbethActOneAmbition: LiteratureLesson = {
+  id: 'macbeth-lit-07',
+  title: 'Macbeth Act 1: Ambition Awakened & The Seeds of Tragedy',
+  text: 'Macbeth',
+  examBoard: 'AQA',
+  yearGroup: '10-11',
+  duration: '1 hour',
+  learningObjectives: [
+    'Analyse the role of ambition as a tragic flaw in Act 1',
+    'Examine how the witches and Lady Macbeth activate Macbeth\'s latent ambition',
+    'Explore the concept of fate versus free will through Act 1 events',
+    'Evaluate Shakespeare\'s use of the supernatural to foreshadow tragedy',
+    'Link Act 1 characterisation to later psychological breakdown',
+  ],
+  starterActivity: {
+    title: 'Ambition: Virtue or Vice?',
+    duration: '7 minutes',
+    instructions: 'Students rank motivations: family, honour, wealth, power, fame. Discuss: which drive Macbeth in Act 1? Show image of ambitious people (politicians, CEOs). Is ambition inherently dangerous or does context matter? Link to Jacobean beliefs about unchecked ambition threatening divine order.',
+    resources: ['Ambition ranking cards', 'Modern examples images'],
+  },
+  mainActivity: {
+    title: 'The Witches\' Prophecy & Macbeth\'s Internal Conflict',
+    duration: '47 minutes',
+    instructions: 'PART 1 (15 min): Read Act 1.3 (encounter with witches). Annotate: (1) Physical reactions ("start" "pall"), (2) The three prophecies, (3) The crucial aside "If chance will have me king, why, yet it may come without my stir". Identify Shakespeare\'s presentation of Macbeth as neither puppet nor free agent. PART 2 (15 min): Read Act 1.7 ("We will proceed no further"). Annotate Lady Macbeth\'s manipulation tactics: rhetorical questions, accusations of cowardice, appeals to masculinity. Track how she unravels Macbeth\'s rational objections. PART 3 (17 min): Students complete a "Reasons for Murder" chart: What does the witches\' prophecy do? What does Lady Macbeth do? What does Macbeth\'s ambition do? Write extended response: "Which force — supernatural, spousal influence, or personal ambition — is most responsible for Macbeth\'s decision to murder Duncan? Use Act 1 evidence."',
+    differentiation: {
+      support: 'Pre-annotated key extracts with devices labeled. Reasons chart template with sentence starters.',
+      core: 'Independent annotation and response with clear textual integration.',
+      stretch: 'Evaluate Shakespeare\'s intentional ambiguity: does he want audiences to judge Macbeth harshly or sympathetically given the forces arrayed against him?',
+    },
+    resources: ['Act 1.3 witches extract', 'Act 1.7 Lady Macbeth extract', 'Reasons chart template', 'Response frame', 'Context notes on Jacobean fatalism'],
+  },
+  plenary: {
+    title: 'The Tragic Flaw Emerges',
+    duration: '3 minutes',
+    instructions: 'Define hamartia. Conclude: "Macbeth\'s ambition is triggered by the witches but shaped by Lady Macbeth and enabled by his own desire for power. All three must work together for tragedy to unfold." Students exit with this idea in mind for future lessons.',
+    differentiation: {
+      support: 'Display definition of hamartia on board.',
+      core: 'Understand how ambition becomes tragic flaw.',
+      stretch: 'Consider: is ambition the flaw, or is it Macbeth\'s susceptibility to influence?',
+    },
+  },
+  homework: 'Write a 400-word analytical essay: "How does Shakespeare present the competing forces of fate, influence, and free will in Act 1 of Macbeth?" Include at least three quotations.',
+  resourcesNeeded: ['Act 1.3 and 1.7 extracts', 'Reasons chart', 'Context slides on Jacobean fatalism', 'Hamartia definition card'],
+  assessmentOpportunities: ['Annotation precision', 'Chart accuracy', 'Essay analysis', 'Understanding of tragic flaw concept', 'Quotation selection'],
+  keyVocabulary: ['ambition', 'hamartia', 'tragic flaw', 'prophecy', 'manipulation', 'free will', 'fate', 'supernatural', 'aside'],
+  sendAdaptations: 'Heavily annotated extracts with line numbers. Pre-filled reasons chart. Essay frame with paragraph headings. Audio recording of key scenes. Simplified explanation of hamartia with modern examples.',
+};
+
+const macbethActTwoGuilt: LiteratureLesson = {
+  id: 'macbeth-lit-08',
+  title: 'Macbeth Act 2: Guilt, Conscience & The Point of No Return',
+  text: 'Macbeth',
+  examBoard: 'AQA',
+  yearGroup: '10-11',
+  duration: '1 hour',
+  learningObjectives: [
+    'Analyse how Shakespeare presents guilt through soliloquy and imagery',
+    'Examine the dagger hallucination as manifestation of conscience',
+    'Explore the murder of Duncan and its immediate psychological aftermath',
+    'Evaluate the contrast between Lady Macbeth\'s resolve and Macbeth\'s breakdown',
+    'Link Act 2 to the themes of ambition and moral corruption',
+  ],
+  starterActivity: {
+    title: 'Before & After Murder',
+    duration: '6 minutes',
+    instructions: 'Show film stills of a heist movie before and after the crime. Discuss: how do characters\' emotions and thoughts change after crossing a moral line? Introduce: Act 2 shows Macbeth\'s conscience erupting before he even commits the murder.',
+    resources: ['Film stills (heist/crime drama)', 'Discussion prompt'],
+  },
+  mainActivity: {
+    title: 'The Dagger Soliloquy & Psychological Disintegration',
+    duration: '46 minutes',
+    instructions: 'PART 1 (18 min): Read Act 2.1.33-61 (dagger soliloquy). Students annotate for: (1) Personification ("dagger that I see before me"), (2) Metaphor comparing blood to nature ("gout" of blood), (3) Sensory imagery (visual but not tactile), (4) Shift from wondering if the dagger is real to understanding it\'s a vision created by his mind. Create a "What the Dagger Represents" chart: rational interpretation vs psychological interpretation. PART 2 (18 min): Read Act 2.2.60-72 ("A little water clears us of this deed"). Juxtapose with Act 5.1\'s sleepwalking obsession. Discuss: how is this ironic? What does Lady Macbeth not understand about guilt? PART 3 (10 min): Students write analytical paragraph: "Analyse how the dagger soliloquy reveals Macbeth\'s state of mind before the murder and foreshadows his later psychological deterioration."',
+    differentiation: {
+      support: 'Pre-highlighted dagger soliloquy devices. Chart template. Paragraph frame with sentence starters.',
+      core: 'Independent annotation and response with developed analysis.',
+      stretch: 'Write second paragraph comparing the dagger to the ghost of Banquo in Act 3, discussing how both reveal Macbeth\'s internal state.',
+    },
+    resources: ['Act 2.1 soliloquy extract', 'Act 2.2 extract', 'Chart template', 'Paragraph frame', 'Device identification guide'],
+  },
+  plenary: {
+    title: 'The Crime is Committed: What Now?',
+    duration: '5 minutes',
+    instructions: 'Brief discussion: Macbeth has killed Duncan and become king. Seems like ambition is satisfied. But why does he seem miserable? Introduce idea of Act 3: becoming king does not bring peace; it brings paranoia and further violence.',
+    differentiation: {
+      support: 'Provide clear summary of Act 2\'s ending.',
+      core: 'Predict what Macbeth might do next and why.',
+      stretch: 'Discuss: does guilt serve as a natural brake on further crime, or will Macbeth commit more violence to protect his position?',
+    },
+  },
+  homework: 'Memorise six lines from the dagger soliloquy and write detailed analysis of one device\'s use. Aim for 8-10 sentences showing sophisticated analysis of Shakespeare\'s methods.',
+  resourcesNeeded: ['Act 2.1.33-61 soliloquy', 'Act 2.2 extract', 'Chart template', 'Analysis frame', 'Device guide'],
+  assessmentOpportunities: ['Soliloquy annotation', 'Chart completion', 'Irony identification', 'Analytical paragraph quality', 'Quotation memorisation and analysis'],
+  keyVocabulary: ['soliloquy', 'personification', 'metaphor', 'hallucination', 'conscience', 'guilt', 'psychological breakdown', 'irony', 'foreshadowing'],
+  sendAdaptations: 'Simplified soliloquy with modern English translation. Pre-annotated version for comparison. Chart template with examples. Paragraph frame with all sentence starters provided. Visual diagram of Macbeth\'s emotional state.',
+};
+
+const macbethActThreeTyranny: LiteratureLesson = {
+  id: 'macbeth-lit-09',
+  title: 'Macbeth Act 3: Tyranny, Paranoia & The Spiral of Violence',
+  text: 'Macbeth',
+  examBoard: 'AQA',
+  yearGroup: '10-11',
+  duration: '1 hour',
+  learningObjectives: [
+    'Analyse how Macbeth transforms from guilt-ridden murderer to tyrant',
+    'Examine the nature of tyranny through Macbeth\'s actions and paranoia',
+    'Explore the ghost of Banquo as representation of Macbeth\'s guilt',
+    'Evaluate how ambition leads to escalating violence',
+    'Link Act 3 to Shakespearean and Jacobean concepts of kingship',
+  ],
+  starterActivity: {
+    title: 'Ambition to Power: What\'s the Difference?',
+    duration: '6 minutes',
+    instructions: 'Define: Ambition (desire to achieve), Power (ability to control). Discuss: Does gaining power satisfy ambition or create new anxieties? Show image of secure vs insecure ruler. Introduce: Macbeth has achieved his ambition but now fears losing his power.',
+    resources: ['Definitions slide', 'Ruler images (confident vs paranoid)'],
+  },
+  mainActivity: {
+    title: 'From King to Tyrant: Macbeth\'s Descent into Paranoia',
+    duration: '46 minutes',
+    instructions: 'PART 1 (15 min): Read Act 3.1.48-72 (Macbeth\'s soliloquy about Banquo). Annotate for: (1) His fear that the prophecy is for Banquo\'s children ("They hailed him father to a line of kings"), (2) His awareness that achieving the crown hasn\'t brought peace ("to be thus is nothing"), (3) His decision to hire murderers. Track: Macbeth is now planning murder not to achieve ambition but to secure power. PART 2 (16 min): Read Act 3.4 (the banquet scene and Banquo\'s ghost). Annotate for: (1) How the ghost appears twice, (2) Macbeth\'s visible terror, (3) His attempt to hide his reaction from nobles, (4) The revelation of his isolated paranoia. PART 3 (15 min): Students create a "Spiral of Violence" diagram: Duncan\'s murder → Macbeth fears Banquo → Macbeth murders Banquo → Macbeth fears Macduff → (next lesson). Write analytical paragraph: "How does Shakespeare show that tyranny and violence spiral out of control once ambition turns to paranoia?"',
+    differentiation: {
+      support: 'Pre-annotated soliloquy and banquet scene. Spiral diagram template with prompts.',
+      core: 'Independent annotation and diagram with analytical writing.',
+      stretch: 'Evaluate: does Macbeth have legitimate political concerns about Banquo\'s heirs, or is his paranoia entirely irrational? Use context of Renaissance political theory.',
+    },
+    resources: ['Act 3.1.48-72 soliloquy', 'Act 3.4 banquet scene extract', 'Spiral diagram template', 'Paragraph frame', 'Context on Renaissance kingship'],
+  },
+  plenary: {
+    title: 'The Tyrant\'s Isolation',
+    duration: '5 minutes',
+    instructions: 'Conclude: "Macbeth\'s tyranny stems from paranoia. The more he tries to secure power through violence, the more isolated and fearful he becomes." Link to kingship theme: a true king should rule through legitimacy and virtue, not fear. This sets up Act 4\'s witches\' prophecies and Act 5\'s inevitable downfall.',
+    differentiation: {
+      support: 'Provide summary statement.',
+      core: 'Understand connection between paranoia and tyranny.',
+      stretch: 'Discuss Shakespeare\'s political message about legitimacy vs usurped power.',
+    },
+  },
+  homework: 'Write extended response (500 words): "Analyse the transition from Macbeth as murderer to Macbeth as tyrant in Act 3. How has his character and motivation changed?" Include at least three quotations.',
+  resourcesNeeded: ['Act 3.1 soliloquy', 'Act 3.4 banquet scene', 'Spiral diagram template', 'Context on Renaissance kingship'],
+  assessmentOpportunities: ['Annotation accuracy', 'Diagram completion', 'Understanding of escalation', 'Analytical writing quality', 'Quotation integration'],
+  keyVocabulary: ['tyrant', 'paranoia', 'usurpation', 'legitimacy', 'kingship', 'escalation', 'isolation', 'fear', 'guilt', 'violence'],
+  sendAdaptations: 'Simplified extracts with key phrases highlighted. Pre-filled spiral diagram. Response frame with section headings. Audio recordings of scenes. Visual timeline of Act 3 events.',
+};
+
+const macbethActFiveDownfall: LiteratureLesson = {
+  id: 'macbeth-lit-10',
+  title: 'Macbeth Act 5: Downfall, Justice & Tragic Resolution',
+  text: 'Macbeth',
+  examBoard: 'AQA',
+  yearGroup: '10-11',
+  duration: '1 hour',
+  learningObjectives: [
+    'Analyse the final battle and Macbeth\'s confrontation with Macduff',
+    'Examine how the witches\' prophecies are fulfilled through ambiguous language',
+    'Explore themes of justice, fate, and moral restoration',
+    'Evaluate Shakespeare\'s tragic resolution and thematic conclusion',
+    'Link Act 5 to the complete arc from ambition to destruction',
+  ],
+  starterActivity: {
+    title: 'Prophecies & Deception',
+    duration: '6 minutes',
+    instructions: 'Quick logic puzzle: "You will be safe from all men born of woman." What\'s the trick? (Macduff was "from his mother\'s womb untimely ripped.") Introduce: the witches\' prophecies use truth deceptively, setting up Macbeth\'s tragic end.',
+    resources: ['Logic puzzle', 'Prophecy slides'],
+  },
+  mainActivity: {
+    title: 'Equivocation, Irony & Tragic Justice',
+    duration: '46 minutes',
+    instructions: 'PART 1 (16 min): Read Act 4.1 (witches\' prophecies). Create three-column table: Prophecy | How Macbeth Interprets It | True Meaning. Focus on: "none of woman born", "until Birnam Wood moves to Dunsinane", "no man of woman born shall harm Macbeth". Annotate for equivocation (technically true but deceptive). PART 2 (18 min): Read Act 5.6-7 (final battle). Track: Birnam soldiers use camouflage (moving wood), Macduff reveals "untimely ripped" birth, Macbeth is killed. Discuss: are the prophecies truly fulfilled, or did Macbeth misunderstand them? PART 3 (12 min): Students write analytical response: "How does Shakespeare use the witches\' equivocal prophecies to present tragic fate? Is Macbeth a victim of deception or his own misinterpretation?" Consider both perspectives.',
+    differentiation: {
+      support: 'Provided prophecy table with one example completed. Response frame.',
+      core: 'Independent table and analytical response.',
+      stretch: 'Write second response debating whether Macbeth is ultimately responsible for his downfall despite the witches\' deception.',
+    },
+    resources: ['Act 4.1 prophecies', 'Act 5.6-7 battle scene', 'Prophecy table template', 'Response frame', 'Equivocation definition'],
+  },
+  plenary: {
+    title: 'Order Restored: The Complete Arc',
+    duration: '5 minutes',
+    instructions: 'Read Malcolm\'s final speech briefly. Discuss: how does the restoration of order mirror the opening? Macbeth\'s unchecked ambition has destroyed Scotland; his death restores the natural hierarchy. Link to Jacobean political philosophy: legitimate kingship vs tyranny. Conclude the complete arc: Act 1 ambition → Act 2 guilt → Act 3 tyranny → Act 5 justice.',
+    differentiation: {
+      support: 'Provide Malcolm\'s key quotations.',
+      core: 'Understand tragic resolution.',
+      stretch: 'Evaluate whether Malcolm\'s restoration fully repairs Scotland or if permanent damage persists.',
+    },
+  },
+  homework: 'Revise Acts 1-5. Write practice exam response (timed 30 min): "How does Shakespeare use the witches to explore ideas about fate and responsibility in Macbeth?"',
+  resourcesNeeded: ['Act 4.1 prophecies', 'Act 5.6-7 battle scene', 'Malcolm\'s final speech', 'Prophecy table'],
+  assessmentOpportunities: ['Prophecy interpretation', 'Table accuracy', 'Understanding of equivocation', 'Analytical response quality', 'Thematic comprehension'],
+  keyVocabulary: ['equivocation', 'prophecy', 'irony', 'fate', 'ambiguity', 'tragic justice', 'restoration', 'legitimacy', 'kingship'],
+  sendAdaptations: 'Simplified battle scene. Pre-completed prophecy examples. Response frame with sentence starters. Visual timeline of entire play. Glossary of key concepts.',
+};
+
+// ════════════════════════════════════════════════════════════════════════════
+// JEKYLL & HYDE — 4 ADDITIONAL SPECIALIZED LESSONS
+// ════════════════════════════════════════════════════════════════════════════
+
+const jekyllHydeDuality: LiteratureLesson = {
+  id: 'jekyll-hyde-lit-07',
+  title: 'Jekyll & Hyde: Duality & The Divided Self',
+  text: 'The Strange Case of Dr Jekyll and Mr Hyde',
+  examBoard: 'AQA',
+  yearGroup: '10-11',
+  duration: '1 hour',
+  learningObjectives: [
+    'Analyse how Stevenson presents the concept of duality in human nature',
+    'Examine Dr Jekyll\'s attempt to separate good and evil',
+    'Explore the symbolic meaning of the transformation',
+    'Evaluate Stevenson\'s critique of Victorian morality',
+    'Link duality to Victorian repression and hidden desires',
+  ],
+  starterActivity: {
+    title: 'Good vs Evil Within',
+    duration: '6 minutes',
+    instructions: 'Discussion: Can one person contain both good and evil? Or are they separate? Show images of Jekyll vs Hyde. Introduce: Victorian society believed humans could separate their "respectable" and "hidden" selves. Stevenson challenges this.',
+    resources: ['Jekyll and Hyde images', 'Discussion prompt'],
+  },
+  mainActivity: {
+    title: 'The Divided Self: Analysis of Duality',
+    duration: '47 minutes',
+    instructions: 'PART 1 (18 min): Read key passages showing Jekyll and Hyde\'s contrasts. Annotate for physical descriptions, behavioural differences, speech patterns. Create a comparison chart: Jekyll\'s Characteristics | Hyde\'s Characteristics. Note: Hyde appears younger, more vital, more expressive — suggesting repressed vitality. PART 2 (18 min): Read Jekyll\'s confession where he describes the attraction of the potion: "the drug had no action on the physical nature...it was on the spiritual side...that led me to this choice." Annotate for: what desires does Jekyll want to suppress? What does the potion allow him to do? PART 3 (11 min): Students write analytical paragraph: "How does Stevenson use the characters of Jekyll and Hyde to present the idea that human nature cannot be divided? Use textual evidence to show that suppressing evil does not eliminate it."',
+    differentiation: {
+      support: 'Provided comparison chart with examples. Paragraph frame.',
+      core: 'Independent chart and response.',
+      stretch: 'Add evaluation column to chart: "What does each character\'s behaviour reveal about human nature?"',
+    },
+    resources: ['Jekyll descriptions', 'Hyde descriptions', 'Confession extract', 'Comparison chart', 'Paragraph frame'],
+  },
+  plenary: {
+    title: 'One Self or Two?',
+    duration: '4 minutes',
+    instructions: 'Conclude: "Jekyll attempts to create two separate selves but discovers they are fundamentally one. The potion does not create evil; it releases what is already within." Link to Victorian hypocrisy: respectable surface hiding darker desires.',
+    differentiation: {
+      support: 'Provide statement to copy.',
+      core: 'Understand the key idea of unified self.',
+      stretch: 'Consider modern parallels: social media personas, public vs private behaviour.',
+    },
+  },
+  homework: 'Write 400-word response: "Evaluate whether Stevenson suggests that good and evil are separate forces or two aspects of one nature." Use at least three quotations.',
+  resourcesNeeded: ['Jekyll and Hyde descriptions', 'Confession extract', 'Comparison chart', 'Paragraph frame'],
+  assessmentOpportunities: ['Chart accuracy', 'Textual annotation', 'Analytical paragraph', 'Understanding of duality theme', 'Quotation selection'],
+  keyVocabulary: ['duality', 'divided self', 'repression', 'transformation', 'moral ambiguity', 'hypocrisy', 'human nature', 'Dr. Jekyll', 'Mr. Hyde'],
+  sendAdaptations: 'Visual comparison chart with images. Pre-highlighted confession extract. Paragraph frame with sentence starters. Audio recording of confession scene. Simplified vocabulary.',
+};
+
+const jekyllHydeVictorianRepression: LiteratureLesson = {
+  id: 'jekyll-hyde-lit-08',
+  title: 'Jekyll & Hyde: Victorian Repression & Hidden Desires',
+  text: 'The Strange Case of Dr Jekyll and Mr Hyde',
+  examBoard: 'AQA',
+  yearGroup: '10-11',
+  duration: '1 hour',
+  learningObjectives: [
+    'Understand Victorian morality and social repression',
+    'Analyse how the novella critiques Victorian hypocrisy',
+    'Examine how respectable characters hide darker desires',
+    'Explore the symbolism of the locked door and secret laboratory',
+    'Evaluate Stevenson\'s social message about repression and its consequences',
+  ],
+  starterActivity: {
+    title: 'Victorian Morality & Respectability',
+    duration: '7 minutes',
+    instructions: 'Display images of Victorian London: formal dress, rigid social codes, social hierarchy. Discuss: what could you not do in Victorian society? (Drink, gamble, visit inappropriate places openly, express emotions, explore sexuality.) What happens when desires are suppressed? Introduce: Stevenson\'s novella is a critique of repression.',
+    resources: ['Victorian social images', 'Code of conduct slides'],
+  },
+  mainActivity: {
+    title: 'Respectable Facades & Hidden Desires',
+    duration: '46 minutes',
+    instructions: 'PART 1 (18 min): Examine Jekyll\'s position in society: respected physician, church elder, man of science. Read passages describing his public life. Annotate for: signs of constraint, hints of unfulfilled desires, the facade of respectability. PART 2 (18 min): Read about Jekyll\'s admission of "undignified pleasures" and his desire to "escape." Annotate for: what specific desires does he mention? What does he fear if they become known? Why does respectable society force such repression? PART 3 (10 min): Students create a chart comparing Jekyll\'s Public Image vs Private Desires. Then write analytical response: "How does Stevenson use the character of Dr Jekyll to critique Victorian repression and hypocrisy? What is he arguing about the dangers of suppressing human desires?"',
+    differentiation: {
+      support: 'Guided annotations. Chart template with prompts.',
+      core: 'Independent analysis and chart completion.',
+      stretch: 'Research Victorian attitudes toward medicine, science, sexuality. Evaluate how relevant Stevenson\'s critique was to his contemporaries.',
+    },
+    resources: ['Jekyll\'s public life passages', 'Confession extract on desires', 'Public vs Private chart', 'Response frame', 'Victorian context slides'],
+  },
+  plenary: {
+    title: 'The Cost of Repression',
+    duration: '4 minutes',
+    instructions: 'Key message: "Stevenson suggests that Victorian repression is dangerous. Suppressed desires do not disappear; they transform into something monstrous." Link to tragic ending: Jekyll\'s attempt to deny his darker nature leads to his destruction.',
+    differentiation: {
+      support: 'Provide key message statement.',
+      core: 'Understand the cautionary message.',
+      stretch: 'Discuss: is Stevenson sympathetic to Jekyll or does he judge him? Evidence?',
+    },
+  },
+  homework: 'Write analytical essay (400-500 words): "Analyse how Stevenson uses the figure of Jekyll to critique Victorian society\'s repression of human desires and hypocrisy."',
+  resourcesNeeded: ['Jekyll\'s public and private passages', 'Confession extract', 'Context slides on Victorian morality', 'Chart template'],
+  assessmentOpportunities: ['Understanding of Victorian context', 'Annotation precision', 'Chart completion', 'Analytical essay quality', 'Thematic comprehension'],
+  keyVocabulary: ['repression', 'Victorian morality', 'hypocrisy', 'respectability', 'facade', 'undignified pleasures', 'desire', 'social constraint', 'liberation'],
+  sendAdaptations: 'Visual comparison of Victorian respectability vs hidden life. Pre-annotated confession extract. Chart template with examples. Essay frame with paragraph headings. Historical context slides.',
+};
+
+const jekyllHydeTransformation: LiteratureLesson = {
+  id: 'jekyll-hyde-lit-09',
+  title: 'Jekyll & Hyde: The Transformation & Loss of Control',
+  text: 'The Strange Case of Dr Jekyll and Mr Hyde',
+  examBoard: 'AQA',
+  yearGroup: '10-11',
+  duration: '1 hour',
+  learningObjectives: [
+    'Analyse the symbolic and physical nature of the transformation',
+    'Examine how Jekyll loses control of the transformation process',
+    'Explore the horror of involuntary metamorphosis',
+    'Evaluate the breakdown of Jekyll\'s rational scientific control',
+    'Link the transformation to themes of addiction and loss of agency',
+  ],
+  starterActivity: {
+    title: 'Addiction & Loss of Control',
+    duration: '6 minutes',
+    instructions: 'Discussion: what happens when something that initially feels like freedom (drinking, drugs, risky behaviour) becomes compulsive? Show brief scene of transformation. Introduce: Jekyll\'s potion mirrors addiction — initially voluntary, eventually compulsive.',
+    resources: ['Transformation scene (film clip or description)', 'Addiction discussion prompt'],
+  },
+  mainActivity: {
+    title: 'The Potion\'s Power: Voluntary to Involuntary',
+    duration: '47 minutes',
+    instructions: 'PART 1 (15 min): Read passages describing Jekyll\'s early transformations. Annotate for: his control, his excitement, the thrill of liberation. Track how he uses language of freedom and relief: "I felt younger... lighter in body; within I was conscious of a heady recklessness." PART 2 (18 min): Read later passages where Jekyll transforms involuntarily (at night, without the potion). Annotate for: fear, loss of control, horror at his own nature. Track the shift from "I will take the potion" to "the potion is taking me." PART 3 (14 min): Students create a timeline showing the progression: Control → Partial Control → Loss of Control → Complete Inversion (Hyde\'s control over Jekyll). Write analytical paragraph: "How does Stevenson present the gradual erosion of Jekyll\'s agency and control? What does this suggest about the nature of human desire?"',
+    differentiation: {
+      support: 'Pre-highlighted control passages. Timeline template with prompts.',
+      core: 'Independent identification and timeline creation.',
+      stretch: 'Add evaluation: why does Jekyll lose control? Is it the potion\'s failure or the nature of desire itself?',
+    },
+    resources: ['Early transformation passages', 'Later involuntary transformation passages', 'Timeline template', 'Paragraph frame'],
+  },
+  plenary: {
+    title: 'Science Gone Wrong',
+    duration: '4 minutes',
+    instructions: 'Conclude: "Jekyll believed science could separate and control human nature. The involuntary transformation proves him wrong. His attempt at rational control backfires into complete loss of control." Link to Victorian anxieties about science and progress.',
+    differentiation: {
+      support: 'Provide key conclusion.',
+      core: 'Understand the irony of failed scientific control.',
+      stretch: 'Discuss Stevenson\'s critique of Victorian faith in science and reason.',
+    },
+  },
+  homework: 'Write extended analysis (450 words): "Examine how Stevenson uses the transformation to present themes of addiction, loss of control, and the failure of reason." Include specific textual references.',
+  resourcesNeeded: ['Early transformation passages', 'Late transformation passages', 'Timeline template', 'Paragraph frame'],
+  assessmentOpportunities: ['Annotation accuracy', 'Timeline precision', 'Understanding of progression', 'Analytical paragraph quality', 'Thematic comprehension'],
+  keyVocabulary: ['transformation', 'involuntary', 'agency', 'loss of control', 'addiction', 'compulsion', 'science', 'reason', 'failure'],
+  sendAdaptations: 'Visual timeline showing transformation stages. Pre-annotated passages highlighting control language. Paragraph frame with sentence starters. Audio recording of transformation descriptions.',
+};
+
+const jekyllHydeFinalChapter: LiteratureLesson = {
+  id: 'jekyll-hyde-lit-10',
+  title: 'Jekyll & Hyde: The Final Chapter & Tragic Resolution',
+  text: 'The Strange Case of Dr Jekyll and Mr Hyde',
+  examBoard: 'AQA',
+  yearGroup: '10-11',
+  duration: '1 hour',
+  learningObjectives: [
+    'Analyse Jekyll\'s final confession and self-awareness',
+    'Examine the tragic resolution and its moral implications',
+    'Explore themes of damnation and redemption through confession',
+    'Evaluate Stevenson\'s message about human nature and morality',
+    'Link the ending to Victorian anxieties about respectability and hidden secrets',
+  ],
+  starterActivity: {
+    title: 'Confession & Redemption',
+    duration: '6 minutes',
+    instructions: 'Discussion: does confession redeem someone? Or is it too late if the damage is done? Show image of final scene. Introduce: Jekyll\'s full confession is the novella\'s climax — he finally tells the truth.',
+    resources: ['Discussion prompt', 'Final scene images'],
+  },
+  mainActivity: {
+    title: 'Jekyll\'s Confession: Truth, Regret & Damnation',
+    duration: '47 minutes',
+    instructions: 'PART 1 (15 min): Read the "Henry Jekyll\'s Full Statement" chapter. Annotate for: Jekyll\'s self-awareness, his regret, his understanding that he cannot reverse the transformation. Track language of damnation: "I am now at my last hour", "I cannot say I am innocent", "I have long since lost the self-respect of virtue." PART 2 (18 min): Examine Jekyll\'s explanation of how Hyde grew stronger. Annotate for: the irony that attempting to suppress evil made it more powerful, the moment when he realizes he is truly trapped. PART 3 (14 min): Students create a chart showing Jekyll\'s Evolution of Understanding: Initial Optimism | Growing Doubt | Horror | Final Acceptance. Write analytical response: "How does Jekyll\'s confession reveal his gradual understanding that his attempt to separate good and evil was doomed? What is Stevenson\'s final message about human nature?"',
+    differentiation: {
+      support: 'Provided confession with key passages highlighted. Chart template.',
+      core: 'Independent reading and chart completion.',
+      stretch: 'Evaluate whether Jekyll\'s confession is truthful or self-serving. Does he blame Hyde or accept responsibility?',
+    },
+    resources: ['Jekyll\'s confession chapter', 'Chart template', 'Response frame', 'Damnation/redemption vocabulary'],
+  },
+  plenary: {
+    title: 'No Escape: The Novella\'s Message',
+    duration: '4 minutes',
+    instructions: 'Conclude: "Stevenson\'s ending offers no redemption. Jekyll\'s confession comes too late. His attempt to separate and control human nature leads not to liberation but to damnation. The novella suggests: accept your whole self or be destroyed by denial." Link to Victorian anxieties about respectability.',
+    differentiation: {
+      support: 'Provide conclusion statement.',
+      core: 'Understand tragic resolution.',
+      stretch: 'Discuss: is this a pessimistic message? Or a realistic one about denying human nature?',
+    },
+  },
+  homework: 'Write final analytical essay (500-600 words): "Analyse how the final chapter of Jekyll and Hyde completes Stevenson\'s exploration of duality and human nature. What is his ultimate message?" Include at least four quotations.',
+  resourcesNeeded: ['Jekyll\'s confession chapter', 'Chart template', 'Response frame', 'Vocabulary slides'],
+  assessmentOpportunities: ['Understanding of confession', 'Chart accuracy', 'Analytical response quality', 'Essay writing', 'Thematic comprehension'],
+  keyVocabulary: ['confession', 'damnation', 'redemption', 'self-awareness', 'irony', 'tragic resolution', 'duality', 'acceptance', 'denial'],
+  sendAdaptations: 'Pre-highlighted confession with key emotional turns marked. Chart template with examples. Response frame with paragraph headings. Audio recording of confession. Glossary of difficult vocabulary.',
+};
+
+// ════════════════════════════════════════════════════════════════════════════
+// AN INSPECTOR CALLS — 4 ADDITIONAL SPECIALIZED LESSONS
+// ════════════════════════════════════════════════════════════════════════════
+
+const inspectorBirlingCapitalism: LiteratureLesson = {
+  id: 'inspector-lit-07',
+  title: 'An Inspector Calls: Birling\'s Capitalism & Social Responsibility',
+  text: 'An Inspector Calls',
+  examBoard: 'AQA',
+  yearGroup: '10-11',
+  duration: '1 hour',
+  learningObjectives: [
+    'Analyse Birling\'s character and his capitalist philosophy',
+    'Examine his justifications for refusing to help Eva Smith',
+    'Explore the conflict between individual profit and social responsibility',
+    'Evaluate Priestly\'s critique of capitalist indifference',
+    'Link Birling\'s views to 1912 and 1945 political contexts',
+  ],
+  starterActivity: {
+    title: 'Profit vs People',
+    duration: '6 minutes',
+    instructions: 'Debate: If a business is losing money paying fair wages, should the owner cut wages to save the company? Two sides. Discuss: does profit justify any action? Introduce: this is the core of Birling\'s philosophy in the play.',
+    resources: ['Debate prompt', 'Wage discussion slides'],
+  },
+  mainActivity: {
+    title: 'Birling\'s Defense & Priestly\'s Critique',
+    duration: '47 minutes',
+    instructions: 'PART 1 (16 min): Read Act 1 where Birling discusses the wage cut for Eva Smith. Annotate for: his justifications ("cheap labour keeps prices down"), his dismissal of responsibility ("every man for himself"), his confidence in capitalist progress. PART 2 (18 min): Read his speech about war and capitalism ("The Titanic will never sink") and future prosperity. Annotate for: his confidence in progress, his blindness to consequences, his self-interest. PART 3 (13 min): Students create a two-column chart: Birling\'s Argument for Cutting Wages | Counter-argument from Social Responsibility. Write analytical paragraph: "How does Priestly use Birling\'s character to critique capitalist indifference to workers? What alternative does Priestly suggest?"',
+    differentiation: {
+      support: 'Annotated extracts. Chart template with prompts.',
+      core: 'Independent annotation and response.',
+      stretch: 'Research 1945 context: how would 1945 audiences (post-WWII, facing socialism) view Birling\'s 1912 capitalism?',
+    },
+    resources: ['Act 1 wage discussion', 'Birling\'s speeches', 'Chart template', 'Paragraph frame', '1945 context slides'],
+  },
+  plenary: {
+    title: 'Individual vs Collective Responsibility',
+    duration: '4 minutes',
+    instructions: 'Key message: "Priestly argues that we are interconnected. Birling\'s individualism — 'every man for himself' — causes Eva Smith\'s death. The play demands collective social responsibility." Link to post-WWII audience expectations.',
+    differentiation: {
+      support: 'Display key message.',
+      core: 'Understand contrast between Birling and Inspector.',
+      stretch: 'Consider: was Priestly right? Is individual profit or collective welfare more important?',
+    },
+  },
+  homework: 'Write 400-word analytical response: "Analyse how Priestly uses Birling\'s character to critique capitalist values and demand social responsibility."',
+  resourcesNeeded: ['Act 1 extracts', 'Birling\'s speeches', 'Chart template', '1945 context slides'],
+  assessmentOpportunities: ['Annotation precision', 'Chart completion', 'Analytical paragraph', 'Understanding of social message', 'Contextual awareness'],
+  keyVocabulary: ['capitalism', 'profit', 'social responsibility', 'exploitation', 'individualism', 'collective', 'conscience', 'indifference', 'greed'],
+  sendAdaptations: 'Pre-annotated extracts highlighting key arguments. Chart template with examples. Paragraph frame with sentence starters. Context summary cards. Visual comparison of Birling vs Inspector values.',
+};
+
+const inspectorSheilaTransformation: LiteratureLesson = {
+  id: 'inspector-lit-08',
+  title: 'An Inspector Calls: Sheila\'s Transformation & Redemption',
+  text: 'An Inspector Calls',
+  examBoard: 'AQA',
+  yearGroup: '10-11',
+  duration: '1 hour',
+  learningObjectives: [
+    'Analyse Sheila\'s character development from beginning to end',
+    'Examine her role in Eva Smith\'s downfall',
+    'Explore her capacity for moral awareness and change',
+    'Evaluate the difference between genuine redemption and mere guilt',
+    'Link Sheila\'s journey to Priestly\'s moral message',
+  ],
+  starterActivity: {
+    title: 'Judgment & Redemption',
+    duration: '6 minutes',
+    instructions: 'Discussion: if you hurt someone without meaning to, does being sorry change anything? Should it change how you\'re punished? Introduce: Sheila harms Eva Smith out of vanity but later shows genuine remorse.',
+    resources: ['Discussion prompt'],
+  },
+  mainActivity: {
+    title: 'From Selfishness to Moral Awareness',
+    duration: '47 minutes',
+    instructions: 'PART 1 (15 min): Read Act 1-2 where Sheila gets Eva Smith fired from Milwards. Annotate for: her vanity, her thoughtlessness, her initial lack of guilt. Track how she views the situation: "Just because I happened to laugh when some girl made a face at a customer." Examine her tone: casual, dismissive. PART 2 (18 min): Read Act 2-3 where Sheila realizes the consequences and becomes deeply upset. Annotate for: "That\'s the second time I\'ve had it thrown in my face. It doesn\'t matter now, does it, what happened to her?... I wish you\'d stop telling me to sit down." Examine: genuine shame, horror, understanding of her role. PART 3 (14 min): Students create a character arc showing Sheila\'s emotional and moral journey. Write analytical paragraph: "How does Priestly present Sheila\'s capacity for moral change? What makes her redemption credible or incomplete?"',
+    differentiation: {
+      support: 'Pre-highlighted extracts showing tone shift. Arc template.',
+      core: 'Independent annotation and arc creation.',
+      stretch: 'Evaluate: has Sheila truly changed or just learned to feel guilt? Will she act differently after the play?',
+    },
+    resources: ['Act 1-2 Sheila excerpt', 'Act 2-3 Sheila excerpt', 'Arc template', 'Paragraph frame', 'Tone analysis guide'],
+  },
+  plenary: {
+    title: 'Hope for Change',
+    duration: '4 minutes',
+    instructions: 'Conclude: "Sheila represents hope for moral change. Unlike her parents who remain defensive, she accepts responsibility and shows genuine remorse. Priestly suggests that younger generation can build better society." Link to 1945 post-war audience.',
+    differentiation: {
+      support: 'Provide conclusion.',
+      core: 'Understand Sheila as symbol of change.',
+      stretch: 'Compare: is Sheila\'s change realistic or idealistic?',
+    },
+  },
+  homework: 'Write analytical essay (450 words): "Analyse how Priestly presents Sheila\'s moral development as more genuine than her parents\' responses. What does this suggest about society\'s capacity for change?"',
+  resourcesNeeded: ['Act 1-2 Sheila lines', 'Act 2-3 Sheila lines', 'Arc template', 'Paragraph frame'],
+  assessmentOpportunities: ['Tone analysis', 'Arc accuracy', 'Analytical paragraph quality', 'Essay writing', 'Character understanding'],
+  keyVocabulary: ['moral awareness', 'redemption', 'remorse', 'change', 'shame', 'responsibility', 'transformation', 'conscience', 'generational difference'],
+  sendAdaptations: 'Visual character arc with emotional markers. Pre-annotated extracts with tone shifts highlighted. Paragraph frame with sentence starters. Audio recording of Sheila\'s lines showing emotional change. Comparison chart.',
+};
+
+const inspectorGeraldSecrets: LiteratureLesson = {
+  id: 'inspector-lit-09',
+  title: 'An Inspector Calls: Gerald\'s Secrets & Middle-Class Hypocrisy',
+  text: 'An Inspector Calls',
+  examBoard: 'AQA',
+  yearGroup: '10-11',
+  duration: '1 hour',
+  learningObjectives: [
+    'Analyse Gerald\'s relationship with Eva Smith',
+    'Examine how his actions reveal class and gender hypocrisy',
+    'Explore the irony of his attempted deception at the play\'s end',
+    'Evaluate Priestly\'s critique of middle-class respectability',
+    'Link Gerald\'s character to broader themes of responsibility and accountability',
+  ],
+  starterActivity: {
+    title: 'Seduction & Responsibility',
+    duration: '6 minutes',
+    instructions: 'Discussion: if someone helps another person (giving money, shelter, attention) but for selfish reasons, are they still responsible for consequences? Introduce: Gerald gives Eva Smith money and a place to stay but uses her.',
+    resources: ['Discussion prompt'],
+  },
+  mainActivity: {
+    title: 'Gerald\'s "Kindness" & Hidden Motives',
+    duration: '47 minutes',
+    instructions: 'PART 1 (16 min): Read Act 2 where Gerald describes helping Eva Smith (giving her money, taking her away from streets). Annotate for: language that sounds generous ("I helped her... gave her some money"), details about how he met her at the Palace music hall, the implication that he was taking her to an accessible place. Track: is this help or exploitation? PART 2 (16 min): Read the revelation of their affair and his eventual abandonment of her. Annotate for: how he justifies his actions ("I didn\'t love her"), how he escapes consequences (unlike her suicide), how his class and gender protect him. PART 3 (15 min): Students create two-column analysis: What Gerald Says He Did | What He Actually Did. Write analytical response: "How does Priestly reveal the hypocrisy of Gerald\'s actions? What does his character suggest about class privilege and accountability?"',
+    differentiation: {
+      support: 'Annotated extracts. Analysis template with prompts.',
+      core: 'Independent annotation and response.',
+      stretch: 'Research gender and class dynamics of 1912: how would contemporary audiences judge Gerald vs Eva?',
+    },
+    resources: ['Act 2 Gerald extracts', 'Affair revelation passage', 'Analysis template', 'Response frame', '1912 context slides'],
+  },
+  plenary: {
+    title: 'Privilege & Evasion',
+    duration: '4 minutes',
+    instructions: 'Conclude: "Gerald\'s class and gender allow him to escape consequence. He helps Eva while exploiting her. Priestly suggests that middle-class respectability masks exploitation and injustice." Link to themes of social inequality.',
+    differentiation: {
+      support: 'Provide conclusion.',
+      core: 'Understand Gerald\'s hypocrisy.',
+      stretch: 'Consider: does the play offer hope that Gerald will change, unlike the Birlings?',
+    },
+  },
+  homework: 'Write 450-word analytical response: "How does Priestly use Gerald\'s character to expose the hypocrisy of middle-class respectability and the exploitation of working-class women?"',
+  resourcesNeeded: ['Gerald extracts', 'Affair revelation', 'Analysis template', '1912 context slides'],
+  assessmentOpportunities: ['Annotation precision', 'Analysis accuracy', 'Understanding of hypocrisy', 'Response quality', 'Contextual awareness'],
+  keyVocabulary: ['hypocrisy', 'exploitation', 'privilege', 'class', 'respectability', 'evasion', 'accountability', 'seduction', 'consequence'],
+  sendAdaptations: 'Pre-highlighted passages showing contradiction. Two-column chart with examples. Response frame with sentence starters. Context summary on class and gender dynamics. Visual comparison of Gerald\'s narrative vs reality.',
+};
+
+const inspectorInspectorRole: LiteratureLesson = {
+  id: 'inspector-lit-10',
+  title: 'An Inspector Calls: The Inspector\'s Role & Priestly\'s Message',
+  text: 'An Inspector Calls',
+  examBoard: 'AQA',
+  yearGroup: '10-11',
+  duration: '1 hour',
+  learningObjectives: [
+    'Analyse the Inspector\'s character and role as moral arbiter',
+    'Examine his speeches and their rhetorical power',
+    'Explore the ambiguity of his identity and methods',
+    'Evaluate Priestly\'s use of the Inspector to deliver moral message',
+    'Link the Inspector to post-WWII audience and social responsibility',
+  ],
+  starterActivity: {
+    title: 'Who is the Inspector?',
+    duration: '6 minutes',
+    instructions: 'Discussion: is the Inspector real or a ghost/spirit? Does it matter? Introduce: Priestly\'s ambiguity about the Inspector\'s identity serves his moral purpose.',
+    resources: ['Discussion prompt', 'End-of-play evidence slides'],
+  },
+  mainActivity: {
+    title: 'The Inspector as Moral Voice & Social Conscience',
+    duration: '47 minutes',
+    instructions: 'PART 1 (16 min): Read key Inspector speeches: "If you prefer to call her Miss Smith, that is of course your privilege. In fact, her own name was Eva Smith." (Asserting her humanity), "One Eva Smith is dead. Three of you knew her. Two of you treated her badly." (Establishing moral culpability), His final speech about collective responsibility. Annotate for: direct address, moral judgment, refusal to accept excuses. PART 2 (16 min): Analyse his investigative method: he forces each person to confront their role in Eva\'s death. Annotate for: how he uses the photograph (or does he?), how he separates people, how he gradually reveals consequences. PART 3 (15 min): Students create annotation of the final Inspector speech identifying rhetorical techniques: repetition, direct address, metaphor ("millions of Eva Smiths"), call to action. Write analytical paragraph: "How does Priestly use the Inspector to present his moral vision of social responsibility? What makes the Inspector\'s voice persuasive?"',
+    differentiation: {
+      support: 'Pre-highlighted speeches. Rhetorical devices list.',
+      core: 'Independent annotation and response.',
+      stretch: 'Evaluate: is the Inspector effective? Do the Birlings learn? Would 1945 audiences find him convincing?',
+    },
+    resources: ['Inspector speeches', 'Final speech', 'Rhetorical devices guide', 'Paragraph frame'],
+  },
+  plenary: {
+    title: 'The Play\'s Message',
+    duration: '4 minutes',
+    instructions: 'Conclude: "The Inspector articulates Priestly\'s social vision: we are all connected; our actions have consequences; we must accept collective responsibility. Whether he is real is less important than his message." Link to 1945 election and post-war social change.',
+    differentiation: {
+      support: 'Provide key message.',
+      core: 'Understand Inspector\'s moral function.',
+      stretch: 'Discuss: how has British society changed since 1945? Is Priestly\'s vision realized?',
+    },
+  },
+  homework: 'Write final analytical essay (500-600 words): "Analyse how Priestly uses the Inspector to convey his message about social responsibility and interconnectedness. Is the play ultimately optimistic or pessimistic about social change?"',
+  resourcesNeeded: ['Inspector speeches', 'Final speech', 'Rhetorical analysis guide', '1945 context slides'],
+  assessmentOpportunities: ['Speech analysis', 'Rhetorical devices identification', 'Analytical paragraph quality', 'Essay writing', 'Message comprehension'],
+  keyVocabulary: ['moral arbiter', 'social responsibility', 'rhetorical', 'collective', 'conscience', 'accountability', 'interconnected', 'hypocrisy', 'social message'],
+  sendAdaptations: 'Pre-highlighted key speeches with rhetorical devices marked. Final speech annotation guide. Paragraph frame with sentence starters. Context summary on 1945 post-war Britain. Audio recording of Inspector speeches.',
+};
+
+// ════════════════════════════════════════════════════════════════════════════
+// A CHRISTMAS CAROL — 4 ADDITIONAL SPECIALIZED LESSONS
+// ════════════════════════════════════════════════════════════════════════════
+
+const christmasCarolScroogeIsolation: LiteratureLesson = {
+  id: 'carol-lit-07',
+  title: 'A Christmas Carol: Scrooge\'s Isolation & Moral Blindness',
+  text: 'A Christmas Carol',
+  examBoard: 'AQA',
+  yearGroup: '10-11',
+  duration: '1 hour',
+  learningObjectives: [
+    'Analyse Scrooge\'s isolation as both physical and moral',
+    'Examine how his greed creates emotional distance from others',
+    'Explore the symbolism of his cold, dark chambers',
+    'Evaluate Dickens\' presentation of isolation as self-imposed',
+    'Link isolation to Victorian social structures and poverty',
+  ],
+  starterActivity: {
+    title: 'Alone vs Isolated',
+    duration: '6 minutes',
+    instructions: 'Discussion: what\'s the difference between being alone and being isolated? Can you be surrounded by people and still isolated? Introduce: Scrooge is wealthy but utterly isolated by his own choices.',
+    resources: ['Discussion prompt', 'Scrooge\'s London image'],
+  },
+  mainActivity: {
+    title: 'Scrooge\'s Chambers & Disconnection',
+    duration: '47 minutes',
+    instructions: 'PART 1 (15 min): Read descriptions of Scrooge\'s home, office, and physical appearance. Annotate for: cold imagery ("colder than a frosty wind"), references to being untouched ("as if the cold had gotten into his blood"), the locked doors, the darkness. Track: how physical coldness mirrors emotional isolation. PART 2 (18 min): Examine his interactions with others: dismissal of the charity collectors, coldness to Bob Cratchit, contempt for the poor. Annotate for: his inability or unwillingness to connect, his judgment, his refusal of human compassion. PART 3 (14 min): Students create a visual map showing Scrooge\'s Isolation with four branches: Physical Space | Emotional State | Relationships | Moral Blindness. Write analytical paragraph: "How does Dickens present Scrooge\'s isolation as self-imposed? What does his character suggest about the consequences of prioritising wealth over human connection?"',
+    differentiation: {
+      support: 'Provided isolation descriptions. Map template.',
+      core: 'Independent annotation and map creation.',
+      stretch: 'Research Victorian attitudes toward workhouses and poor laws: how does Scrooge\'s isolation reflect wider societal indifference?',
+    },
+    resources: ['Scrooge\'s chamber descriptions', 'Interaction passages', 'Isolation map template', 'Paragraph frame'],
+  },
+  plenary: {
+    title: 'The Cost of Greed',
+    duration: '4 minutes',
+    instructions: 'Conclude: "Scrooge\'s wealth has bought him isolation and moral blindness. Dickens suggests that greed does not create happiness; it creates disconnection and loss of humanity." Link to social message about community and compassion.',
+    differentiation: {
+      support: 'Provide conclusion.',
+      core: 'Understand isolation as consequence of greed.',
+      stretch: 'Consider: can Scrooge\'s redemption undo years of isolation? Is true connection possible after?',
+    },
+  },
+  homework: 'Write analytical response (400 words): "How does Dickens use imagery and characterisation to present Scrooge\'s isolation as a moral and emotional consequence of his greed?"',
+  resourcesNeeded: ['Chamber descriptions', 'Interaction passages', 'Isolation map', 'Paragraph frame'],
+  assessmentOpportunities: ['Annotation accuracy', 'Map completion', 'Understanding of symbolism', 'Analytical response quality', 'Thematic comprehension'],
+  keyVocabulary: ['isolation', 'moral blindness', 'greed', 'disconnection', 'coldness', 'self-imposed', 'consequence', 'humanity', 'compassion'],
+  sendAdaptations: 'Visual map with images showing isolation. Pre-highlighted descriptive passages. Paragraph frame with sentence starters. Contrast images: Scrooge alone vs Cratchit family. Audio recording of isolation descriptions.',
+};
+
+const christmasCarolFezziwigScrooge: LiteratureLesson = {
+  id: 'carol-lit-08',
+  title: 'A Christmas Carol: Fezziwig vs Scrooge — The Cost of Ambition',
+  text: 'A Christmas Carol',
+  examBoard: 'AQA',
+  yearGroup: '10-11',
+  duration: '1 hour',
+  learningObjectives: [
+    'Analyse the contrast between Fezziwig and Scrooge\'s management styles',
+    'Examine how both men value profit but differently',
+    'Explore Scrooge\'s abandonment of Fezziwig\'s compassionate values',
+    'Evaluate Dickens\' critique of ambition and capitalism',
+    'Link the past to Scrooge\'s present moral blindness',
+  ],
+  starterActivity: {
+    title: 'Two Types of Employers',
+    duration: '6 minutes',
+    instructions: 'Display contrasting management styles: generous/people-focused vs profit-focused/people-as-cost. Discuss: which is better for workers? Which is more profitable? Introduce: Scrooge worked for Fezziwig and learned different values, but abandoned them.',
+    resources: ['Management styles comparison', 'Discussion prompt'],
+  },
+  mainActivity: {
+    title: 'Fezziwig\'s Humanity vs Scrooge\'s Greed',
+    duration: '47 minutes',
+    instructions: 'PART 1 (16 min): Read the Fezziwig Christmas celebration scene. Annotate for: the generosity to workers, the warmth and Christmas spirit, Fezziwig\'s character ("if he wished to work his will upon us, he can do much"), the implication that kindness to workers costs little in the long run ("to have a kind master/mistress"). PART 2 (16 min): Contrast with present-day Scrooge: his treatment of Bob Cratchit, his view of wages as cost to be minimized, his refusal of human connection. Annotate for: how far he has moved from Fezziwig\'s values, the irony that ambition has made him cruel. PART 3 (15 min): Students create a comparison chart: Fezziwig\'s Values | Scrooge\'s Present Values | The Cost to Each. Write analytical paragraph: "How does Dickens use the contrast between Fezziwig and Scrooge to critique unbridled ambition and capitalism? What does Scrooge lose in pursuit of wealth?"',
+    differentiation: {
+      support: 'Annotated Fezziwig passage. Chart template.',
+      core: 'Independent annotation and chart.',
+      stretch: 'Research 19th-century attitudes toward paternalistic employers: was Fezziwig realistic or idealized?',
+    },
+    resources: ['Fezziwig scene', 'Present Scrooge passages', 'Comparison chart', 'Paragraph frame'],
+  },
+  plenary: {
+    title: 'The Path Not Taken',
+    duration: '4 minutes',
+    instructions: 'Conclude: "Scrooge chose profit over Fezziwig\'s compassion. The Spirit of Christmas Past shows him what he sacrificed: a humanity and kindness that might have brought genuine happiness." Link to themes of redemption and choice.',
+    differentiation: {
+      support: 'Provide conclusion.',
+      core: 'Understand Scrooge\'s moral choice.',
+      stretch: 'Discuss: was Scrooge\'s choice inevitable or could he have remained compassionate while successful?',
+    },
+  },
+  homework: 'Write analytical essay (450 words): "How does Dickens use the contrast between Fezziwig and Scrooge to present a critique of ambition and capitalism? What alternative does the novella suggest?"',
+  resourcesNeeded: ['Fezziwig scene', 'Present Scrooge passages', 'Comparison chart', 'Paragraph frame'],
+  assessmentOpportunities: ['Contrast identification', 'Chart accuracy', 'Analytical essay quality', 'Understanding of values', 'Thematic comprehension'],
+  keyVocabulary: ['ambition', 'capitalism', 'greed', 'compassion', 'paternalistic', 'sacrifice', 'humanity', 'choice', 'redemption'],
+  sendAdaptations: 'Visual comparison chart with images. Pre-highlighted contrasting passages. Paragraph frame with sentence starters. Timeline showing Scrooge\'s moral journey. Audio recording of Fezziwig scene.',
+};
+
+const christmasCarolIgnoranceWant: LiteratureLesson = {
+  id: 'carol-lit-09',
+  title: 'A Christmas Carol: Ignorance & Want — Social Critique & Responsibility',
+  text: 'A Christmas Carol',
+  examBoard: 'AQA',
+  yearGroup: '10-11',
+  duration: '1 hour',
+  learningObjectives: [
+    'Analyse Dickens\' presentation of Ignorance and Want as personified social problems',
+    'Examine the famous "surplus population" line and its irony',
+    'Explore how poverty is connected to lack of education and opportunity',
+    'Evaluate Dickens\' argument for collective social responsibility',
+    'Link the spirits to specific social issues of Victorian England',
+  ],
+  starterActivity: {
+    title: 'The Hidden Underclass',
+    duration: '6 minutes',
+    instructions: 'Show images of Victorian London: wealthy areas vs slums. Discuss: are poor people invisible to the wealthy? Why might Scrooge not know how people live below his station? Introduce: the Spirit of Christmas Present reveals hidden suffering.',
+    resources: ['Victorian London images (contrast)', 'Discussion prompt'],
+  },
+  mainActivity: {
+    title: 'Ignorance & Want: Dickens\' Social Message',
+    duration: '47 minutes',
+    instructions: 'PART 1 (16 min): Read the scene where the Spirit reveals Ignorance and Want beneath their robes. Annotate for: physical descriptions (ragged clothes, hollow eyes), the names themselves (not hunger but ignorance), the Spirit\'s statement that both "cling to the skirts of me." Track: Dickens presents ignorance and poverty as interconnected social problems. PART 2 (16 min): Find and read the "surplus population" passage where Scrooge earlier said the poor should be dealt with by workhouses or prisons. Annotate for: the terrible cynicism, the dehumanization (calling people "surplus"), the moral horror. Show irony: the Spirit later asks "if these shadows remain unaltered by the future, will the child live or die?" suggesting that society itself must change. PART 3 (15 min): Students create a chart: Scrooge\'s View of Poverty | Dickens\' View of Poverty | What Needs to Change. Write analytical response: "How does Dickens use Ignorance and Want to challenge Victorian attitudes toward poverty? What is his argument about social responsibility?"',
+    differentiation: {
+      support: 'Highlighted passages. Chart template.',
+      core: 'Independent annotation and response.',
+      stretch: 'Research Victorian poor laws and workhouses: how radical was Dickens\' critique in 1843?',
+    },
+    resources: ['Ignorance & Want passage', '"Surplus population" passage', 'Chart template', 'Response frame', 'Victorian context slides'],
+  },
+  plenary: {
+    title: 'Society\'s Responsibility',
+    duration: '4 minutes',
+    instructions: 'Conclude: "Dickens argues that poverty is not inevitable or deserved; it results from ignorance (lack of education, opportunity) and social indifference. Society must change or children will suffer." Link to post-WWII welfare state expectations.',
+    differentiation: {
+      support: 'Provide conclusion.',
+      core: 'Understand Dickens\' social critique.',
+      stretch: 'Discuss: has modern society adequately addressed Dickens\' concerns about ignorance and poverty?',
+    },
+  },
+  homework: 'Write analytical essay (500 words): "How does Dickens present Ignorance and Want to deliver a powerful critique of Victorian society and demand for social responsibility? How does this connect to Scrooge\'s redemption?"',
+  resourcesNeeded: ['Ignorance & Want passage', '"Surplus population" passage', 'Chart template', 'Victorian context slides'],
+  assessmentOpportunities: ['Annotation precision', 'Chart accuracy', 'Understanding of social critique', 'Essay quality', 'Contextual awareness'],
+  keyVocabulary: ['ignorance', 'poverty', 'surplus population', 'social responsibility', 'welfare', 'education', 'opportunity', 'critique', 'workhouse'],
+  sendAdaptations: 'Visual description of Ignorance and Want with annotations. Pre-highlighted "surplus population" passage with moral horror noted. Chart template with examples. Context summary on Victorian poor laws. Audio recording of key passages.',
+};
+
+const christmasCarolRedemption: LiteratureLesson = {
+  id: 'carol-lit-10',
+  title: 'A Christmas Carol: Redemption & The Power of Change',
+  text: 'A Christmas Carol',
+  examBoard: 'AQA',
+  yearGroup: '10-11',
+  duration: '1 hour',
+  learningObjectives: [
+    'Analyse the nature of Scrooge\'s redemption and its moral significance',
+    'Examine the final chapter\'s transformation of behaviour and values',
+    'Explore how Dickens presents possibility of change in people and society',
+    'Evaluate the completeness and sustainability of redemption',
+    'Link redemption to Christian themes and Victorian morality',
+  ],
+  starterActivity: {
+    title: 'Can People Change?',
+    duration: '6 minutes',
+    instructions: 'Debate: can someone fundamentally change their nature and values? Or do they just pretend? Introduce: the novella argues for genuine transformation, but is it realistic?',
+    resources: ['Discussion prompt'],
+  },
+  mainActivity: {
+    title: 'Scrooge\'s Transformation: Genuine or Temporary?',
+    duration: '47 minutes',
+    instructions: 'PART 1 (15 min): Read the final chapter describing Scrooge\'s actions Christmas morning: raising Bob\'s wages, buying the turkey, giving money to the Poor Law charity, becoming like a second father to Tiny Tim. Annotate for: concrete actions (not just remorse), the specific amounts of generosity, the breadth of his change (business, charity, personal relationships). PART 2 (18 min): Examine his emotional state: the language of joy, freedom, lightness. Annotate for: how different he is, phrases like "he became as good a friend... as good a master... as good a man." Track: this is transformation in values, not just behavior. PART 3 (14 min): Students create a before/after analysis chart: Scrooge\'s Values Before | Scrooge\'s Values After | Evidence. Write analytical paragraph: "Evaluate Dickens\' presentation of Scrooge\'s redemption. Is the transformation complete and sustainable? What message does it send about human nature and moral change?"',
+    differentiation: {
+      support: 'Pre-highlighted transformation passages. Chart template.',
+      core: 'Independent annotation and response.',
+      stretch: 'Critical evaluation: does one night of supernatural intervention realistically change a lifetime of values? Is the ending optimistic or too idealistic?',
+    },
+    resources: ['Final chapter extracts', 'Before/after chart', 'Paragraph frame'],
+  },
+  plenary: {
+    title: 'Hope for Humanity',
+    duration: '4 minutes',
+    instructions: 'Conclude: "Dickens\' novella is fundamentally hopeful. It argues that redemption is possible, that people can change radically, and that individual change can inspire social change." Link to Christmas themes of renewal and second chances.',
+    differentiation: {
+      support: 'Provide conclusion.',
+      core: 'Understand redemption as novella\'s central message.',
+      stretch: 'Discuss: why is A Christmas Carol so popular during Christmas season? What does it offer readers spiritually and morally?',
+    },
+  },
+  homework: 'Write final analytical essay (550 words): "Analyse how Dickens presents the possibility of redemption in Scrooge\'s transformation. How convincing is the change? What does the novella ultimately argue about human nature and moral responsibility?"',
+  resourcesNeeded: ['Final chapter extracts', 'Before/after chart', 'Paragraph frame'],
+  assessmentOpportunities: ['Transformation analysis', 'Chart accuracy', 'Critical evaluation', 'Essay quality', 'Thematic comprehension'],
+  keyVocabulary: ['redemption', 'transformation', 'moral change', 'renewal', 'second chance', 'hope', 'generosity', 'social responsibility', 'human nature'],
+  sendAdaptations: 'Visual before/after character analysis with images. Pre-highlighted transformation passages. Chart template with examples. Paragraph frame with sentence starters. Summary of entire novella\'s arc.',
+};
+
+// ════════════════════════════════════════════════════════════════════════════
+// BLOOD BROTHERS — 4 ADDITIONAL SPECIALIZED LESSONS
+// ════════════════════════════════════════════════════════════════════════════
+
+const bloodBrothersNatureNurture: LiteratureLesson = {
+  id: 'blood-bro-lit-07',
+  title: 'Blood Brothers: Nature vs Nurture & Identity',
+  text: 'Blood Brothers',
+  examBoard: 'AQA',
+  yearGroup: '10-11',
+  duration: '1 hour',
+  learningObjectives: [
+    'Analyse Russell\'s exploration of nature versus nurture through the twin brothers',
+    'Examine how environment shapes personality and opportunity',
+    'Explore the significance of blood kinship versus social identity',
+    'Evaluate the extent to which Mickey and Edward are the same or different',
+    'Link the nature/nurture debate to 1980s social context',
+  ],
+  starterActivity: {
+    title: 'Twin Experiment: Would Identical Twins Be Identical?',
+    duration: '6 minutes',
+    instructions: 'Discussion: if identical twins were raised in completely different circumstances, would they be the same person? Show images of Mickey and Edward at different ages. Introduce: Russell uses the twins to explore whether our nature or circumstances define us.',
+    resources: ['Twin discussion prompt', 'Mickey/Edward comparison images'],
+  },
+  mainActivity: {
+    title: 'The Same Blood, Different Lives',
+    duration: '47 minutes',
+    instructions: 'PART 1 (16 min): Examine early scenes showing baby Mickey and Edward. Annotate for: any differences in personality (are they present from birth?), the moment of separation, the narrator\'s commentary suggesting fate/superstition. Track: Russell hints at essential similarity (blood) and growing divergence (environment). PART 2 (18 min): Read scenes showing adolescent Mickey (struggling, poor, delinquent) and Edward (educated, privileged, naive). Annotate for: how environment has shaped their paths, their speech patterns, their aspirations, their self-confidence. Track specific differences: Mickey\'s swearing, Edward\'s formality; Mickey\'s limited opportunities, Edward\'s possibilities. PART 3 (13 min): Students create a comparison table with three columns for each age: Birth | Age 7-8 (reunion) | Age 17 (near end). For each column, note Similarities and Differences. Write analytical paragraph: "How does Russell present nature and nurture as forces shaping Mickey and Edward? To what extent are they the same person divided by circumstance?"',
+    differentiation: {
+      support: 'Provided scenes. Comparison table template.',
+      core: 'Independent selection of scenes and analysis.',
+      stretch: 'Evaluate: does Russell believe in fate or social determinism? Does the tragic ending support one view over the other?',
+    },
+    resources: ['Early scenes with Mickey/Edward', 'Adolescent scenes', 'Comparison table', 'Paragraph frame'],
+  },
+  plenary: {
+    title: 'The Question Russell Asks',
+    duration: '4 minutes',
+    instructions: 'Conclude: "Russell\'s play suggests that while the twins share blood, nurture profoundly shapes who they become. Yet the tragic ending suggests that even identical twins cannot escape the social structures that divide them." Link to social inequality themes.',
+    differentiation: {
+      support: 'Provide conclusion.',
+      core: 'Understand the nature/nurture dilemma Russell presents.',
+      stretch: 'Consider: can social systems be changed to give all children opportunities, or are class differences inevitable?',
+    },
+  },
+  homework: 'Write analytical response (400 words): "How does Russell use the twin brothers to explore the question of nature versus nurture? What does the play suggest about the power of environment to shape human destiny?"',
+  resourcesNeeded: ['Early Mickey/Edward scenes', 'Adolescent scenes', 'Comparison table', 'Paragraph frame'],
+  assessmentOpportunities: ['Scene selection', 'Table accuracy', 'Comparison precision', 'Analytical response quality', 'Thematic understanding'],
+  keyVocabulary: ['nature', 'nurture', 'identity', 'fate', 'social determinism', 'environment', 'opportunity', 'class', 'destiny'],
+  sendAdaptations: 'Visual timeline showing Mickey and Edward\'s development. Pre-selected key scenes with annotations. Comparison table with examples. Paragraph frame with sentence starters. Summary of nature/nurture debate.',
+};
+
+const bloodBrothersClassDivide: LiteratureLesson = {
+  id: 'blood-bro-lit-08',
+  title: 'Blood Brothers: Class Divide & Social Inequality',
+  text: 'Blood Brothers',
+  examBoard: 'AQA',
+  yearGroup: '10-11',
+  duration: '1 hour',
+  learningObjectives: [
+    'Analyse Russell\'s presentation of class division in 1980s Britain',
+    'Examine how poverty limits Mickey\'s life choices and opportunities',
+    'Explore the contrast between the Lyons family wealth and the Johnstone family poverty',
+    'Evaluate Russell\'s critique of social inequality',
+    'Link class themes to the tragic ending and social commentary',
+  ],
+  starterActivity: {
+    title: 'What Money Buys',
+    duration: '6 minutes',
+    instructions: 'Discussion: how does family wealth affect opportunities? (Education, housing, career, confidence, expectations.) Show contrast images: wealthy vs poor neighbourhoods. Introduce: Russell uses the families to show how class determines destiny in 1980s Britain.',
+    resources: ['Wealth discussion prompt', 'Class comparison images'],
+  },
+  mainActivity: {
+    title: 'Poverty vs Privilege: The Structural Trap',
+    duration: '47 minutes',
+    instructions: 'PART 1 (15 min): Read scenes showing the Johnstone family: crowded housing, financial stress, job insecurity, Mrs Johnstone\'s desperation, the poverty that forces her into giving away Mickey. Annotate for: language showing poverty\'s weight, the lack of choice, the exhaustion. Track: poverty is structural, not individual failing. PART 2 (18 min): Contrast with the Lyons family: comfortable home, money for education, professional stability, plans for Edward\'s future. Annotate for: ease, options, casual mention of money, lack of anxiety. PART 3 (14 min): Students create a Venn diagram: Johnstone Family Only | Both Families | Lyons Family Only. Add words/phrases showing resources, opportunities, language, values. Write analytical paragraph: "How does Russell use the two families to present class as a determining force in life outcomes? What critique of 1980s social inequality is he offering?"',
+    differentiation: {
+      support: 'Selected family scenes. Venn diagram template.',
+      core: 'Independent scene selection and analysis.',
+      stretch: 'Research 1980s Britain: Thatcher\'s policies, unemployment, social inequality. How does Russell respond to these issues in his play?',
+    },
+    resources: ['Johnstone family scenes', 'Lyons family scenes', 'Venn diagram template', 'Paragraph frame', '1980s context slides'],
+  },
+  plenary: {
+    title: 'Systems of Inequality',
+    duration: '4 minutes',
+    instructions: 'Conclude: "Russell shows that class is not about individual merit; it is about systems that give opportunities to some while trapping others in poverty. The tragic ending is inevitable given the structural inequality."',
+    differentiation: {
+      support: 'Provide conclusion.',
+      core: 'Understand class as structural, not individual.',
+      stretch: 'Discuss: can individual goodness (Mickey, Edward, even Mrs Johnstone) overcome structural inequality?',
+    },
+  },
+  homework: 'Write analytical essay (450 words): "How does Russell use the contrast between the Johnstone and Lyons families to critique class inequality in 1980s Britain? What does the tragic ending suggest about social mobility?"',
+  resourcesNeeded: ['Johnstone family scenes', 'Lyons family scenes', 'Venn diagram', 'Paragraph frame', 'Context slides'],
+  assessmentOpportunities: ['Scene analysis', 'Diagram accuracy', 'Contrast identification', 'Essay quality', 'Contextual awareness'],
+  keyVocabulary: ['class', 'inequality', 'poverty', 'privilege', 'opportunity', 'social mobility', 'systemic', 'structural', 'destiny'],
+  sendAdaptations: 'Visual Venn diagram with images. Pre-highlighted family scenes showing contrasts. Paragraph frame with sentence starters. Context summary on 1980s inequality. Timeline of families\' diverging paths.',
+};
+
+const bloodBrothersSuperstition: LiteratureLesson = {
+  id: 'blood-bro-lit-09',
+  title: 'Blood Brothers: Superstition, Fate & The Narrator',
+  text: 'Blood Brothers',
+  examBoard: 'AQA',
+  yearGroup: '10-11',
+  duration: '1 hour',
+  learningObjectives: [
+    'Analyse Russell\'s use of superstition and fate as dramatic devices',
+    'Examine the role of the Narrator as omniscient presence',
+    'Explore the gunshot omen and its symbolic meaning',
+    'Evaluate whether the tragedy is fated or socially determined',
+    'Link superstition to the play\'s deeper message about inevitability',
+  ],
+  starterActivity: {
+    title: 'Fate or Coincidence?',
+    duration: '6 minutes',
+    instructions: 'Discussion: is the tragedy inevitable or could different choices prevent it? Play opening lines of the play (Narrator\'s prediction). Introduce: Russell uses superstition and the Narrator to create a sense of inevitability.',
+    resources: ['Opening lines', 'Discussion prompt'],
+  },
+  mainActivity: {
+    title: 'The Narrator\'s Warning & The Structure of Inevitability',
+    duration: '47 minutes',
+    instructions: 'PART 1 (15 min): Read the Narrator\'s opening speech predicting the tragic ending. Annotate for: the certainty of language ("will be"), the reference to superstition and fate, the creation of dramatic irony (audience knows ending before characters). PART 2 (18 min): Track moments of superstition throughout: the blood brothers oath, references to breaking the pact, the fear that their friendship is doomed. Annotate for: how superstition expresses underlying social anxiety, how it mirrors social inevitability. PART 3 (14 min): Read the final gunshot and death scene. Annotate for: how it feels inevitable given everything before, the role of circumstance vs character choice, whether Russell presents fate as real or as metaphor for social determinism. Students write analytical paragraph: "How does Russell use the Narrator, superstition, and fate to create a sense of tragic inevitability? Is the ending predetermined by social forces or actual supernatural fate?"',
+    differentiation: {
+      support: 'Provided Narrator speech and key superstition moments. Paragraph frame.',
+      core: 'Independent identification and analysis.',
+      stretch: 'Evaluate: what is Russell\'s real message—that fate is real, or that social inequality is so powerful it seems like fate?',
+    },
+    resources: ['Narrator\'s opening speech', 'Superstition moments', 'Final scene', 'Paragraph frame'],
+  },
+  plenary: {
+    title: 'The Illusion of Choice',
+    duration: '4 minutes',
+    instructions: 'Conclude: "Russell uses superstition and the Narrator to suggest that the tragedy is inevitable. Whether literally fated or socially determined, the brothers cannot escape their destinies. The play asks: how much control do we have over our lives?"',
+    differentiation: {
+      support: 'Provide conclusion.',
+      core: 'Understand role of fate/inevitability.',
+      stretch: 'Discuss: does belief in fate remove responsibility from characters or society?',
+    },
+  },
+  homework: 'Write analytical response (400 words): "How does Russell use the Narrator and superstition to create a sense of tragic inevitability? What is his commentary on human agency and social determination?"',
+  resourcesNeeded: ['Narrator\'s speech', 'Superstition moments', 'Final scene', 'Paragraph frame'],
+  assessmentOpportunities: ['Speech analysis', 'Superstition identification', 'Dramatic technique understanding', 'Response quality', 'Thematic comprehension'],
+  keyVocabulary: ['fate', 'superstition', 'inevitability', 'dramatic irony', 'omens', 'destiny', 'agency', 'determinism', 'prophecy'],
+  sendAdaptations: 'Pre-highlighted Narrator\'s speech. Timeline showing fate-related moments. Paragraph frame with sentence starters. Visual summary of omens. Audio recording of opening speech.',
+};
+
+const bloodBrothersEnding: LiteratureLesson = {
+  id: 'blood-bro-lit-10',
+  title: 'Blood Brothers: The Ending & Social Tragedy',
+  text: 'Blood Brothers',
+  examBoard: 'AQA',
+  yearGroup: '10-11',
+  duration: '1 hour',
+  learningObjectives: [
+    'Analyse the final confrontation and deaths of the brothers',
+    'Examine Russell\'s presentation of the police officer shooting Mickey',
+    'Explore how the ending comments on social injustice',
+    'Evaluate the emotional and political impact of the tragedy',
+    'Link the ending to the play\'s broader themes of class, fate, and inevitability',
+  ],
+  starterActivity: {
+    title: 'Justice & Circumstance',
+    duration: '6 minutes',
+    instructions: 'Discussion: if someone breaks the law under desperation, are they equally guilty as someone who breaks it from malice? Introduce: Mickey\'s death raises questions about justice and the circumstances that drive people to desperate acts.',
+    resources: ['Justice discussion prompt'],
+  },
+  mainActivity: {
+    title: 'The Final Scene: Tragedy & Social Critique',
+    duration: '47 minutes',
+    instructions: 'PART 1 (15 min): Read the confrontation between Mickey, Edward, and the police officer(s). Annotate for: Mickey\'s desperation, the moment of shooting, Edward\'s death, Mickey\'s response. Track the pace: how quickly does the tragedy unfold? How does Russell manage the shocking violence? PART 2 (18 min): Examine the final moment: Mrs Johnstone\'s reaction, the revelation of truth (that they are brothers), and the immediate aftermath. Annotate for: the emotional devastation, the pointlessness of the violence, how knowledge of their shared blood transforms the tragedy. PART 3 (14 min): Students analyse the social critique: Mickey is driven to crime by poverty and desperation; Edward tries to help but is trapped by class boundaries; the police officer shoots without understanding context. Write analytical paragraph: "How does Russell use the ending to present a social critique of inequality and injustice? What is the significance of the brothers\' deaths?"',
+    differentiation: {
+      support: 'Provided key scenes. Paragraph frame.',
+      core: 'Independent scene analysis.',
+      stretch: 'Evaluate: is the play\'s ending pessimistic or a powerful statement about social failure? Does it inspire change or despair?',
+    },
+    resources: ['Confrontation scene', 'Final moment/revelation', 'Mrs Johnstone reaction', 'Paragraph frame'],
+  },
+  plenary: {
+    title: 'The Play\'s Final Message',
+    duration: '4 minutes',
+    instructions: 'Conclude: "Blood Brothers\' tragic ending is not just personal tragedy; it is social tragedy. Two identical brothers, separated by class, destroyed by a system that divides them. Russell argues: if we allow such inequality, this is the result." Link to social responsibility and systemic change.',
+    differentiation: {
+      support: 'Provide conclusion.',
+      core: 'Understand tragedy as social statement.',
+      stretch: 'Discuss: nearly 40 years after writing, is Russell\'s critique still relevant to British society?',
+    },
+  },
+  homework: 'Write final analytical essay (550 words): "Analyse the significance of the ending of Blood Brothers. How does Russell use the deaths of Mickey and Edward to deliver a powerful social message about class inequality and the failure of society?"',
+  resourcesNeeded: ['Confrontation and final scenes', 'Paragraph frame'],
+  assessmentOpportunities: ['Scene analysis', 'Understanding of social critique', 'Emotional response analysis', 'Essay quality', 'Thematic comprehension'],
+  keyVocabulary: ['tragedy', 'justice', 'desperation', 'class', 'inevitability', 'social critique', 'guilt', 'brotherhood', 'injustice'],
+  sendAdaptations: 'Visual timeline of final scenes. Pre-highlighted confrontation passage. Paragraph frame with sentence starters. Summary of social messages throughout play. Audio recording of final revelation.',
+};
 export const literatureTextPlans: LiteratureLesson[] = [
-  // Macbeth
+  // Macbeth (Original 6 + 4 new)
   macbethLesson1,
   macbethLesson2,
   macbethLesson3,
   macbethLesson4,
   macbethLesson5,
   macbethLesson6,
-  // A Christmas Carol
+  macbethActOneAmbition,
+  macbethActTwoGuilt,
+  macbethActThreeTyranny,
+  macbethActFiveDownfall,
+  // A Christmas Carol (Original 6 + 4 new)
   christmasCarolLesson1,
   christmasCarolLesson2,
   christmasCarolLesson3,
   christmasCarolLesson4,
   christmasCarolLesson5,
   christmasCarolLesson6,
-  // An Inspector Calls
+  christmasCarolScroogeIsolation,
+  christmasCarolFezziwigScrooge,
+  christmasCarolIgnoranceWant,
+  christmasCarolRedemption,
+  // An Inspector Calls (Original 6 + 4 new)
   inspectorLesson1,
   inspectorLesson2,
   inspectorLesson3,
   inspectorLesson4,
   inspectorLesson5,
   inspectorLesson6,
-  // Jekyll & Hyde
+  inspectorBirlingCapitalism,
+  inspectorSheilaTransformation,
+  inspectorGeraldSecrets,
+  inspectorInspectorRole,
+  // Jekyll & Hyde (Original 6 + 4 new)
   jekyllHydeLesson1,
   jekyllHydeLesson2,
   jekyllHydeLesson3,
   jekyllHydeLesson4,
   jekyllHydeLesson5,
   jekyllHydeLesson6,
-  // Romeo & Juliet
+  jekyllHydeDuality,
+  jekyllHydeVictorianRepression,
+  jekyllHydeTransformation,
+  jekyllHydeFinalChapter,
+  // Romeo & Juliet (Original 6)
   romeoJulietLesson1,
   romeoJulietLesson2,
   romeoJulietLesson3,
   romeoJulietLesson4,
   romeoJulietLesson5,
   romeoJulietLesson6,
+  // Blood Brothers (New 4)
+  bloodBrothersNatureNurture,
+  bloodBrothersClassDivide,
+  bloodBrothersSuperstition,
+  bloodBrothersEnding,
 ]
