@@ -26,7 +26,7 @@ function DefaultIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="h-10 w-10 text-gray-400"
+      className="h-10 w-10 text-muted-foreground"
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
@@ -53,19 +53,19 @@ export function EmptyState({
 }: EmptyStateProps) {
   return (
     <div
-      className={`flex flex-col items-center justify-center rounded-xl border-2 border-dashed border-gray-200 bg-gray-50 px-6 py-12 text-center ${className}`}
+      className={`flex flex-col items-center justify-center rounded-xl border-2 border-dashed border-border bg-background px-6 py-12 text-center ${className}`}
     >
       {/* Icon */}
-      <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gray-100">
+      <div className="flex h-14 w-14 items-center justify-center rounded-full bg-muted">
         {icon ?? <DefaultIcon />}
       </div>
 
       {/* Title */}
-      <h3 className="mt-4 text-base font-semibold text-gray-900">{title}</h3>
+      <h3 className="mt-4 text-base font-semibold text-foreground">{title}</h3>
 
       {/* Description */}
       {description && (
-        <p className="mt-2 max-w-sm text-sm leading-relaxed text-gray-500">
+        <p className="mt-2 max-w-sm text-sm leading-relaxed text-muted-foreground">
           {description}
         </p>
       )}
@@ -74,7 +74,7 @@ export function EmptyState({
       {action && (
         <Link
           href={action.href}
-          className="mt-6 inline-flex items-center justify-center rounded-lg bg-[#1A5276] px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#1A5276]/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1A5276] focus-visible:ring-offset-2 transition-colors"
+          className="mt-6 inline-flex items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors"
         >
           {action.label}
         </Link>

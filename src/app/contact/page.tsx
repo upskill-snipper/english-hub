@@ -110,7 +110,7 @@ export default function ContactPage() {
         <div className="rounded-lg border border-border bg-card p-5 text-center">
           <MessageCircleQuestion className="mx-auto mb-2 h-5 w-5 text-primary" />
           <p className="text-sm font-medium text-foreground">Quick Answers</p>
-          <Link href="/faq" className="mt-1 block text-sm text-primary hover:underline">
+          <Link href="/help/faq" className="mt-1 block text-sm text-primary hover:underline">
             Browse our FAQ
           </Link>
         </div>

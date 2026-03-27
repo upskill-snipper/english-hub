@@ -88,12 +88,12 @@ function DifficultyIndicator({ level }: { level: DifficultyLevel }) {
         <span
           key={dot}
           className={`inline-block h-1.5 w-1.5 rounded-full transition-colors ${
-            dot <= level ? 'bg-primary-500' : 'bg-gray-200'
+            dot <= level ? 'bg-primary' : 'bg-muted'
           }`}
           aria-hidden="true"
         />
       ))}
-      <span className="ml-1 text-xs text-gray-500" aria-hidden="true">
+      <span className="ml-1 text-xs text-muted-foreground" aria-hidden="true">
         {labels[level - 1]}
       </span>
     </div>
@@ -110,7 +110,7 @@ function ResourceCard({ resource, className = '' }: ResourceCardProps) {
     <Link
       href={resource.href}
       className={[
-        'group relative flex flex-col rounded-2xl border border-gray-100 bg-white p-5 shadow-sm',
+        'group relative flex flex-col rounded-2xl border border-border bg-card p-5 shadow-sm',
         'transition-all duration-300 ease-out',
         'hover:shadow-md hover:border-primary-200 hover:-translate-y-0.5',
         'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 focus-visible:ring-offset-2',
@@ -142,14 +142,14 @@ function ResourceCard({ resource, className = '' }: ResourceCardProps) {
 
       {/* Title */}
       <h3
-        className={`${resource.tag ? 'mt-2' : 'mt-4'} text-base font-bold leading-snug text-gray-900 transition-colors duration-200 group-hover:text-primary-600`}
+        className={`${resource.tag ? 'mt-2' : 'mt-4'} text-base font-bold leading-snug text-foreground transition-colors duration-200 group-hover:text-primary`}
       >
         {resource.title}
       </h3>
 
       {/* Description */}
       {resource.description && (
-        <p className="mt-1.5 line-clamp-2 text-sm leading-relaxed text-gray-500">
+        <p className="mt-1.5 line-clamp-2 text-sm leading-relaxed text-muted-foreground">
           {resource.description}
         </p>
       )}
@@ -160,11 +160,11 @@ function ResourceCard({ resource, className = '' }: ResourceCardProps) {
       {/* Bottom row: subject, difficulty, CTA */}
       <div className="mt-4 flex flex-col gap-3">
         <div className="flex items-center justify-between">
-          <span className="text-xs font-medium text-gray-500">{resource.subject}</span>
+          <span className="text-xs font-medium text-muted-foreground">{resource.subject}</span>
           <DifficultyIndicator level={resource.difficulty} />
         </div>
 
-        <span className="inline-flex items-center gap-1 text-sm font-semibold text-accent-500 transition-colors duration-200 group-hover:text-primary-600">
+        <span className="inline-flex items-center gap-1 text-sm font-semibold text-accent transition-colors duration-200 group-hover:text-primary">
           Start revising <ArrowRight />
         </span>
       </div>

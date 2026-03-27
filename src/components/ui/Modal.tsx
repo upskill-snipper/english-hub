@@ -55,22 +55,22 @@ export function Modal({ open, onClose, title, actions, children }: ModalProps) {
       {/* Panel */}
       <div
         ref={panelRef}
-        className="relative z-10 w-full max-w-md rounded-xl bg-white shadow-2xl ring-1 ring-gray-200 animate-in zoom-in-95 slide-in-from-bottom-2 duration-200"
+        className="relative z-10 w-full max-w-md rounded-xl bg-card shadow-2xl ring-1 ring-border animate-in zoom-in-95 slide-in-from-bottom-2 duration-200"
       >
         {/* Header */}
         {title && (
-          <div className="flex items-center justify-between border-b border-gray-100 px-6 py-4">
+          <div className="flex items-center justify-between border-b border-border px-6 py-4">
             <h2
               id="modal-title"
               className="text-lg font-semibold"
-              style={{ color: "#1A5276" }}
+              style={{ color: "inherit" }}
             >
               {title}
             </h2>
             <button
               type="button"
               onClick={onClose}
-              className="rounded-lg p-1.5 text-gray-500 hover:bg-gray-100 hover:text-gray-600 transition-colors"
+              className="rounded-lg p-1.5 text-muted-foreground hover:bg-muted hover:text-muted-foreground transition-colors"
               aria-label="Close"
             >
               <svg
@@ -95,7 +95,7 @@ export function Modal({ open, onClose, title, actions, children }: ModalProps) {
 
         {/* Footer / Actions */}
         {actions && (
-          <div className="flex items-center justify-end gap-3 border-t border-gray-100 px-6 py-4">
+          <div className="flex items-center justify-end gap-3 border-t border-border px-6 py-4">
             {actions}
           </div>
         )}

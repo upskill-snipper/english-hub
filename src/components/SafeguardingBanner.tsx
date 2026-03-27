@@ -8,7 +8,7 @@ export function SafeguardingBanner() {
   return (
     <div className="w-full border-t border-primary/10 bg-primary/5">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 py-2.5 sm:flex-row sm:gap-4">
-        <div className="flex items-center gap-2 text-sm text-gray-700">
+        <div className="flex items-center gap-2 text-sm text-foreground">
           {/* Shield icon */}
           <svg
             xmlns="http://www.w3.org/2000/svg"

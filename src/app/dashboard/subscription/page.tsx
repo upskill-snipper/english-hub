@@ -74,7 +74,7 @@ export default function SubscriptionPage() {
               get access to AI-powered essay feedback and exam preparation tools.
             </p>
             <Link
-              href="/pricing"
+              href="/account/billing"
               className="inline-block bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors"
             >
               View Plans
@@ -233,7 +233,7 @@ export default function SubscriptionPage() {
                 You can resubscribe at any time to regain full access.
               </p>
               <Link
-                href="/pricing"
+                href="/account/billing"
                 className="inline-block px-6 py-2 text-sm font-medium rounded-lg bg-primary text-white hover:bg-primary/90 transition-colors"
               >
                 View Plans

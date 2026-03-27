@@ -109,11 +109,11 @@ function FooterDisclaimer({ className, selectedBoard }: { className?: string; se
 
   return (
     <div
-      className={`border-t border-[#1A5276]/20 pt-4 ${className ?? ""}`}
+      className={`border-t border-primary/20 pt-4 ${className ?? ""}`}
       role="contentinfo"
       aria-label="Exam board disclaimer"
     >
-      <p className="text-xs leading-relaxed text-gray-300">
+      <p className="text-xs leading-relaxed text-muted-foreground">
         {text}
       </p>
     </div>
@@ -127,16 +127,16 @@ function ContentDisclaimer({ className, selectedBoard }: { className?: string; s
 
   return (
     <div
-      className={`flex items-start gap-2 rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 ${className ?? ""}`}
+      className={`flex items-start gap-2 rounded-lg border border-border bg-background px-3 py-2 ${className ?? ""}`}
       role="note"
       aria-label="Exam board disclaimer"
     >
-      <InfoIcon className="mt-0.5 h-4 w-4 shrink-0 text-[#1A5276]" />
-      <p className="text-xs leading-relaxed text-gray-600">
+      <InfoIcon className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+      <p className="text-xs leading-relaxed text-muted-foreground">
         {text}{" "}
         <Link
           href="/legal/terms"
-          className="font-medium text-[#1A5276] underline underline-offset-2 hover:text-[#1A5276]/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1A5276] focus-visible:ring-offset-1 rounded-sm"
+          className="font-medium text-primary underline underline-offset-2 hover:text-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 rounded-sm"
         >
           Full disclaimer
         </Link>
@@ -167,7 +167,7 @@ function AiFeedbackDisclaimer({ className, selectedBoard }: { className?: string
 function MarketingDisclaimer({ className }: { className?: string }) {
   return (
     <p
-      className={`text-xs text-gray-500 ${className ?? ""}`}
+      className={`text-xs text-muted-foreground ${className ?? ""}`}
       role="note"
       aria-label="Exam board disclaimer"
     >

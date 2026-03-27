@@ -31,25 +31,25 @@ export function Toggle({
         className={`
           relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full
           transition-colors duration-200 ease-in-out
-          focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2E86C1] focus-visible:ring-offset-2
+          focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2
           disabled:cursor-not-allowed disabled:opacity-50
-          ${checked ? "bg-[#1A5276]" : "bg-gray-200"}
+          ${checked ? "bg-primary" : "bg-muted"}
         `}
       >
         <span
           aria-hidden="true"
           className={`
             pointer-events-none inline-block h-5 w-5 transform rounded-full
-            bg-white shadow-sm ring-0 transition-transform duration-200 ease-in-out
+            bg-card shadow-sm ring-0 transition-transform duration-200 ease-in-out
             ${checked ? "translate-x-5" : "translate-x-0.5"}
             mt-0.5
           `}
         />
       </button>
       <label htmlFor={id} className="cursor-pointer select-none">
-        <p className="text-sm font-medium text-gray-700">{label}</p>
+        <p className="text-sm font-medium text-foreground">{label}</p>
         {description && (
-          <p className="text-xs text-gray-500">{description}</p>
+          <p className="text-xs text-muted-foreground">{description}</p>
         )}
       </label>
     </div>

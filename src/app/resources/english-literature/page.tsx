@@ -660,7 +660,7 @@ export default function EnglishLiteraturePage() {
               </p>
             </div>
             <Link
-              href="/feedback"
+              href="/contact"
               className="shrink-0 rounded-lg bg-card px-6 py-3 text-sm font-bold text-foreground shadow transition hover:bg-card/90"
             >
               Try it free

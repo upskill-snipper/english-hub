@@ -149,13 +149,13 @@ function PracticeQuestion({
 
   return (
     <div
-      className={`rounded-2xl border border-gray-200 bg-white shadow-sm ${className}`}
+      className={`rounded-2xl border border-border bg-card shadow-sm ${className}`}
     >
       {/* ── Header ─────────────────────────────────────────────────── */}
-      <div className="border-b border-gray-100 px-5 py-4 sm:px-6">
+      <div className="border-b border-border px-5 py-4 sm:px-6">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div className="flex-1">
-            <h3 className="text-base font-semibold leading-snug text-gray-900 sm:text-lg">
+            <h3 className="text-base font-semibold leading-snug text-foreground sm:text-lg">
               {question}
             </h3>
           </div>
@@ -200,7 +200,7 @@ function PracticeQuestion({
 
             {/* Progress bar */}
             <div className="flex-1">
-              <div className="h-1.5 w-full overflow-hidden rounded-full bg-gray-100">
+              <div className="h-1.5 w-full overflow-hidden rounded-full bg-muted">
                 <div
                   className={[
                     'h-full rounded-full transition-all duration-1000',
@@ -237,10 +237,10 @@ function PracticeQuestion({
                 />
               </svg>
             </div>
-            <h4 className="mt-4 text-lg font-semibold text-gray-900">
+            <h4 className="mt-4 text-lg font-semibold text-foreground">
               Timed Practice
             </h4>
-            <p className="mt-1 text-sm text-gray-500">
+            <p className="mt-1 text-sm text-muted-foreground">
               You will have {timeLimitMinutes} minutes to complete your answer.
             </p>
             <button
@@ -278,7 +278,7 @@ function PracticeQuestion({
 
         {/* Time expired notice */}
         {timer.isExpired && !submitted && started && (
-          <div className="mt-4 rounded-lg border border-warn-200 bg-warn-50 px-4 py-3 text-sm text-warn-700">
+          <div className="mt-4 rounded-lg border border-warn-200 bg-warn-50 px-4 py-3 text-sm text-warn-600">
             <p className="font-medium">Time is up!</p>
             <p className="mt-0.5 text-warn-600">
               You can still submit your answer or get AI feedback on what you
@@ -289,11 +289,11 @@ function PracticeQuestion({
 
         {/* ── Model Answer (revealed after submission) ──────────── */}
         {modelAnswer && submitted && (
-          <div className="mt-6 border-t border-gray-100 pt-5">
+          <div className="mt-6 border-t border-border pt-5">
             <button
               type="button"
               onClick={() => setShowModelAnswer(!showModelAnswer)}
-              className="flex w-full items-center justify-between rounded-lg bg-primary-50 px-4 py-3 text-sm font-medium text-primary transition-colors hover:bg-primary-100"
+              className="flex w-full items-center justify-between rounded-lg bg-primary/10 px-4 py-3 text-sm font-medium text-primary transition-colors hover:bg-primary/20"
               aria-expanded={showModelAnswer}
             >
               <span className="flex items-center gap-2">
@@ -327,11 +327,11 @@ function PracticeQuestion({
             </button>
 
             {showModelAnswer && (
-              <div className="mt-3 rounded-lg border border-primary-100 bg-primary-50/50 p-4">
-                <p className="mb-2 text-xs font-medium uppercase tracking-wide text-primary-400">
+              <div className="mt-3 rounded-lg border border-primary/20 bg-primary/5 p-4">
+                <p className="mb-2 text-xs font-medium uppercase tracking-wide text-primary">
                   Model Answer
                 </p>
-                <div className="whitespace-pre-wrap text-sm leading-relaxed text-gray-700">
+                <div className="whitespace-pre-wrap text-sm leading-relaxed text-foreground">
                   {modelAnswer}
                 </div>
               </div>

@@ -210,11 +210,11 @@ export function FeedbackWidget() {
 
   /* ── Shared form styles ──────────────────────────────────── */
 
-  const labelClass = "block text-sm font-medium text-gray-700 mb-1";
+  const labelClass = "block text-sm font-medium text-foreground mb-1";
   const inputClass =
-    "w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent";
+    "w-full rounded-lg border border-border px-3 py-2 text-sm text-foreground placeholder-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary";
   const selectClass =
-    "w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-gray-900 bg-white focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent";
+    "w-full rounded-lg border border-border px-3 py-2 text-sm text-foreground bg-card focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary";
 
   return (
     <>
@@ -228,7 +228,7 @@ export function FeedbackWidget() {
         aria-label={isOpen ? "Close feedback form" : "Send feedback or report an issue"}
         aria-expanded={isOpen}
         aria-haspopup="dialog"
-        className="fixed bottom-4 right-4 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-accent text-white shadow-lg hover:bg-accent-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 transition-all hover:scale-110"
+        className="fixed bottom-4 right-4 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-accent text-white shadow-lg hover:bg-accent-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-all hover:scale-110"
       >
         {isOpen ? (
           /* X icon */
@@ -274,7 +274,7 @@ export function FeedbackWidget() {
           role="dialog"
           aria-modal="true"
           aria-label="Feedback form"
-          className="fixed bottom-20 right-4 z-40 w-[calc(100vw-2rem)] max-w-md rounded-xl bg-white shadow-2xl border border-gray-200 overflow-hidden sm:w-96"
+          className="fixed bottom-20 right-4 z-40 w-[calc(100vw-2rem)] max-w-md rounded-xl bg-card shadow-2xl border border-border overflow-hidden sm:w-96"
         >
           {/* ── Success state ──────────────────────────────── */}
           {submitted ? (
@@ -297,16 +297,16 @@ export function FeedbackWidget() {
                 </svg>
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-gray-900">
+                <h3 className="text-lg font-semibold text-foreground">
                   Thank you for your feedback!
                 </h3>
-                <p className="mt-1 text-sm text-gray-600">
+                <p className="mt-1 text-sm text-muted-foreground">
                   We appreciate you taking the time to help us improve.
                 </p>
               </div>
               <button
                 onClick={close}
-                className="mt-2 rounded-lg bg-accent px-5 py-2 text-sm font-medium text-white hover:bg-accent-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+                className="mt-2 rounded-lg bg-accent px-5 py-2 text-sm font-medium text-white hover:bg-accent-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
               >
                 Close
               </button>
@@ -314,14 +314,14 @@ export function FeedbackWidget() {
           ) : (
             <>
               {/* ── Header ─────────────────────────────────── */}
-              <div className="flex items-center justify-between border-b border-gray-200 bg-gray-50 px-4 py-3">
-                <h2 className="text-sm font-semibold text-gray-900">
+              <div className="flex items-center justify-between border-b border-border bg-background px-4 py-3">
+                <h2 className="text-sm font-semibold text-foreground">
                   Share Your Feedback
                 </h2>
                 <button
                   onClick={close}
                   aria-label="Close feedback form"
-                  className="rounded-lg p-1 text-gray-500 hover:bg-gray-200 hover:text-gray-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                  className="rounded-lg p-1 text-muted-foreground hover:bg-muted hover:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -342,17 +342,17 @@ export function FeedbackWidget() {
               </div>
 
               {/* ── Tab toggle ─────────────────────────────── */}
-              <div className="flex border-b border-gray-200" role="tablist" aria-label="Feedback type">
+              <div className="flex border-b border-border" role="tablist" aria-label="Feedback type">
                 <button
                   role="tab"
                   aria-selected={activeTab === "suggestion"}
                   aria-controls="panel-suggestion"
                   id="tab-suggestion"
                   onClick={() => setActiveTab("suggestion")}
-                  className={`flex-1 py-2.5 text-sm font-medium transition-colors relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent ${
+                  className={`flex-1 py-2.5 text-sm font-medium transition-colors relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary ${
                     activeTab === "suggestion"
                       ? "text-accent"
-                      : "text-gray-500 hover:text-gray-700"
+                      : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
                   Suggestion
@@ -366,10 +366,10 @@ export function FeedbackWidget() {
                   aria-controls="panel-issue"
                   id="tab-issue"
                   onClick={() => setActiveTab("issue")}
-                  className={`flex-1 py-2.5 text-sm font-medium transition-colors relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent ${
+                  className={`flex-1 py-2.5 text-sm font-medium transition-colors relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary ${
                     activeTab === "issue"
                       ? "text-accent"
-                      : "text-gray-500 hover:text-gray-700"
+                      : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
                   Report Issue
@@ -446,7 +446,7 @@ export function FeedbackWidget() {
                     <div>
                       <label htmlFor="fb-email-suggestion" className={labelClass}>
                         Email{" "}
-                        <span className="text-gray-500 font-normal">(optional)</span>
+                        <span className="text-muted-foreground font-normal">(optional)</span>
                       </label>
                       <input
                         id="fb-email-suggestion"
@@ -463,7 +463,7 @@ export function FeedbackWidget() {
                     <button
                       onClick={handleSubmit}
                       disabled={!canSubmitSuggestion || submitting}
-                      className="w-full rounded-lg bg-accent px-4 py-2.5 text-sm font-medium text-white hover:bg-accent-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 transition-colors"
+                      className="w-full rounded-lg bg-accent px-4 py-2.5 text-sm font-medium text-white hover:bg-accent-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 transition-colors"
                     >
                       {submitting ? "Submitting..." : "Submit Suggestion"}
                     </button>
@@ -538,7 +538,7 @@ export function FeedbackWidget() {
                     <div>
                       <label htmlFor="fb-screenshot" className={labelClass}>
                         Screenshot{" "}
-                        <span className="text-gray-500 font-normal">(optional)</span>
+                        <span className="text-muted-foreground font-normal">(optional)</span>
                       </label>
                       <input
                         id="fb-screenshot"
@@ -551,14 +551,14 @@ export function FeedbackWidget() {
                             screenshot: e.target.files?.[0] ?? null,
                           }))
                         }
-                        className="w-full text-sm text-gray-500 file:mr-3 file:rounded-lg file:border-0 file:bg-accent-50 file:px-3 file:py-1.5 file:text-sm file:font-medium file:text-accent-700 hover:file:bg-accent-100 focus-visible:outline-none"
+                        className="w-full text-sm text-muted-foreground file:mr-3 file:rounded-lg file:border-0 file:bg-primary/10 file:px-3 file:py-1.5 file:text-sm file:font-medium file:text-primary hover:file:bg-primary/20 focus-visible:outline-none"
                       />
                     </div>
 
                     <div>
                       <label htmlFor="fb-email-issue" className={labelClass}>
                         Email{" "}
-                        <span className="text-gray-500 font-normal">(optional)</span>
+                        <span className="text-muted-foreground font-normal">(optional)</span>
                       </label>
                       <input
                         id="fb-email-issue"
@@ -572,14 +572,14 @@ export function FeedbackWidget() {
                       />
                     </div>
 
-                    <div className="rounded-lg bg-gray-50 px-3 py-2 text-xs text-gray-500">
+                    <div className="rounded-lg bg-background px-3 py-2 text-xs text-muted-foreground">
                       Current page URL will be included automatically.
                     </div>
 
                     <button
                       onClick={handleSubmit}
                       disabled={!canSubmitIssue || submitting}
-                      className="w-full rounded-lg bg-accent px-4 py-2.5 text-sm font-medium text-white hover:bg-accent-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 transition-colors"
+                      className="w-full rounded-lg bg-accent px-4 py-2.5 text-sm font-medium text-white hover:bg-accent-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 transition-colors"
                     >
                       {submitting ? "Submitting..." : "Report Issue"}
                     </button>

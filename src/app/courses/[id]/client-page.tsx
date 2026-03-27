@@ -75,7 +75,8 @@ export default function CourseDetailPage({ course }: CourseDetailPageProps) {
   }
 
   const hasAccess = isEnrolled || isPro
-  const firstModuleHref = `/learn/${course.id}/${course.moduleList[0]?.id}`
+  const firstModule = course.moduleList[0]
+  const firstModuleHref = firstModule ? `/learn/${course.id}/${firstModule.id}` : `/courses`
   const ctaLabel = hasAccess ? 'Start Learning' : 'Subscribe Now'
   const ctaHref = hasAccess ? firstModuleHref : firstModuleHref
 

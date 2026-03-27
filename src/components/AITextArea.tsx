@@ -148,18 +148,18 @@ function FeedbackSkeleton() {
   return (
     <div className="animate-pulse space-y-3 p-4" aria-label="Loading feedback">
       <div className="flex items-center gap-3">
-        <div className="h-10 w-10 rounded-full bg-gray-200" />
-        <div className="h-4 w-32 rounded bg-gray-200" />
+        <div className="h-10 w-10 rounded-full bg-muted" />
+        <div className="h-4 w-32 rounded bg-muted" />
       </div>
       <div className="space-y-2">
-        <div className="h-3 w-24 rounded bg-gray-200" />
-        <div className="h-3 w-full rounded bg-gray-100" />
-        <div className="h-3 w-5/6 rounded bg-gray-100" />
+        <div className="h-3 w-24 rounded bg-muted" />
+        <div className="h-3 w-full rounded bg-muted" />
+        <div className="h-3 w-5/6 rounded bg-muted" />
       </div>
       <div className="space-y-2">
-        <div className="h-3 w-28 rounded bg-gray-200" />
-        <div className="h-3 w-full rounded bg-gray-100" />
-        <div className="h-3 w-4/6 rounded bg-gray-100" />
+        <div className="h-3 w-28 rounded bg-muted" />
+        <div className="h-3 w-full rounded bg-muted" />
+        <div className="h-3 w-4/6 rounded bg-muted" />
       </div>
     </div>
   );
@@ -314,20 +314,20 @@ function AITextArea({
     ? 'text-warn-500'
     : wordCount >= minWords
       ? 'text-success-600'
-      : 'text-gray-500';
+      : 'text-muted-foreground';
 
   // ── Render ─────────────────────────────────────────────────────────
   return (
     <div className={`w-full ${className}`}>
       {/* Label */}
       {label && (
-        <label className="mb-1.5 block text-sm font-medium text-gray-700">
+        <label className="mb-1.5 block text-sm font-medium text-foreground">
           {label}
         </label>
       )}
 
       {/* Textarea wrapper */}
-      <div className="relative rounded-xl border-2 border-gray-200 bg-white transition-colors focus-within:border-accent focus-within:ring-4 focus-within:ring-accent/10">
+      <div className="relative rounded-xl border-2 border-border bg-card transition-colors focus-within:border-primary focus-within:ring-4 focus-within:ring-primary/10">
         <textarea
           ref={textareaRef}
           value={text}
@@ -336,10 +336,10 @@ function AITextArea({
           disabled={disabled || loading}
           rows={rows}
           className={[
-            'block w-full resize-none rounded-xl border-0 bg-transparent px-4 py-3 text-sm leading-relaxed text-gray-900',
-            'placeholder:text-gray-500',
+            'block w-full resize-none rounded-xl border-0 bg-transparent px-4 py-3 text-sm leading-relaxed text-foreground',
+            'placeholder:text-muted-foreground',
             'focus:outline-none focus:ring-0',
-            'disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500',
+            'disabled:cursor-not-allowed disabled:bg-muted disabled:text-muted-foreground',
             isOverLimit ? 'text-warn-600' : '',
           ]
             .filter(Boolean)
@@ -348,14 +348,14 @@ function AITextArea({
         />
 
         {/* Bottom bar inside textarea */}
-        <div className="flex flex-wrap items-center justify-between gap-2 border-t border-gray-100 px-4 py-2">
+        <div className="flex flex-wrap items-center justify-between gap-2 border-t border-border px-4 py-2">
           {/* Left: word count + clear */}
           <div className="flex items-center gap-3">
             <span className={`text-xs font-medium tabular-nums ${wordCountColor}`}>
               {wordCount}
               {maxWords ? ` / ${maxWords}` : ''} words
               {wordCount < minWords && (
-                <span className="ml-1 text-gray-500">(min {minWords})</span>
+                <span className="ml-1 text-muted-foreground">(min {minWords})</span>
               )}
             </span>
             {text.length > 0 && (
@@ -367,7 +367,7 @@ function AITextArea({
                   setRawFeedback(null);
                   setError(null);
                 }}
-                className="text-xs text-gray-500 transition-colors hover:text-gray-600"
+                className="text-xs text-muted-foreground transition-colors hover:text-foreground"
               >
                 Clear
               </button>
@@ -405,7 +405,7 @@ function AITextArea({
                 'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/50 focus-visible:ring-offset-2',
                 canGetFeedback && !disabled
                   ? 'bg-accent text-white shadow-sm hover:bg-accent-600 active:bg-accent-700'
-                  : 'cursor-not-allowed bg-gray-100 text-gray-500',
+                  : 'cursor-not-allowed bg-muted text-muted-foreground',
               ].join(' ')}
               aria-label="Get AI feedback on your answer"
             >
@@ -465,7 +465,7 @@ function AITextArea({
                   'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2',
                   wordCount >= minWords && !disabled
                     ? 'bg-primary text-white shadow-sm hover:bg-primary-600 active:bg-primary-700'
-                    : 'cursor-not-allowed bg-gray-100 text-gray-500',
+                    : 'cursor-not-allowed bg-muted text-muted-foreground',
                 ].join(' ')}
               >
                 Submit Answer
@@ -488,7 +488,7 @@ function AITextArea({
 
       {/* Loading skeleton */}
       {loading && (
-        <div className="mt-3 rounded-xl border border-gray-200 bg-white shadow-sm">
+        <div className="mt-3 rounded-xl border border-border bg-card shadow-sm">
           <FeedbackSkeleton />
         </div>
       )}
@@ -515,7 +515,7 @@ function AITextArea({
                 <h4 className="text-sm font-semibold text-primary">
                   AI Feedback
                 </h4>
-                <p className="text-xs text-gray-500">
+                <p className="text-xs text-muted-foreground">
                   Based on {examBoard} marking criteria
                 </p>
               </div>
@@ -542,7 +542,7 @@ function AITextArea({
                 {feedback.strengths.map((s, i) => (
                   <li
                     key={i}
-                    className="flex items-start gap-2 text-sm text-gray-700"
+                    className="flex items-start gap-2 text-sm text-foreground"
                   >
                     <span className="mt-1.5 block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-success" />
                     {s}
@@ -572,7 +572,7 @@ function AITextArea({
                 {feedback.improvements.map((imp, i) => (
                   <li
                     key={i}
-                    className="flex items-start gap-2 text-sm text-gray-700"
+                    className="flex items-start gap-2 text-sm text-foreground"
                   >
                     <span className="mt-1.5 block h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
                     {imp}
@@ -582,7 +582,7 @@ function AITextArea({
             </div>
 
             {/* Expandable detailed feedback */}
-            <div className="mt-4 border-t border-gray-100 pt-3">
+            <div className="mt-4 border-t border-border pt-3">
               <button
                 type="button"
                 onClick={() => setShowDetailed(!showDetailed)}
@@ -605,7 +605,7 @@ function AITextArea({
               </button>
 
               {showDetailed && (
-                <div className="mt-3 rounded-lg bg-gray-50 p-3 text-sm leading-relaxed text-gray-700 whitespace-pre-wrap">
+                <div className="mt-3 rounded-lg bg-background p-3 text-sm leading-relaxed text-foreground whitespace-pre-wrap">
                   {feedback.detailed}
                 </div>
               )}
@@ -622,7 +622,7 @@ function AITextArea({
               )}
 
             {/* Disclaimer */}
-            <p className="mt-3 text-[10px] leading-snug text-gray-500">
+            <p className="mt-3 text-[10px] leading-snug text-muted-foreground">
               AI feedback is for practice only. It does not replace teacher
               assessment or official marking. Always check with your teacher for
               exam preparation guidance.

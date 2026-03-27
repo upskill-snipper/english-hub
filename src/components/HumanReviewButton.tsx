@@ -39,11 +39,11 @@ export function HumanReviewButton({ essayId }: HumanReviewButtonProps) {
         </div>
 
         <div className="flex-1">
-          <p className="text-sm font-medium text-gray-800">
+          <p className="text-sm font-medium text-foreground">
             Not sure about the AI feedback? You can ask a real person to review
             it.
           </p>
-          <p className="mt-1 text-xs text-gray-500">
+          <p className="mt-1 text-xs text-muted-foreground">
             This is your right under UK data protection law — it&apos;s not a
             complaint, and there&apos;s no wrong reason to ask.
           </p>
@@ -62,7 +62,7 @@ export function HumanReviewButton({ essayId }: HumanReviewButtonProps) {
             <button
               type="button"
               onClick={() => setDismissed(true)}
-              className="text-xs text-gray-500 hover:text-gray-600 transition-colors"
+              className="text-xs text-muted-foreground hover:text-foreground transition-colors"
             >
               Dismiss
             </button>

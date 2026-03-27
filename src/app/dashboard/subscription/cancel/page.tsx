@@ -379,7 +379,7 @@ export default function CancelSubscriptionPage() {
                 Return to Dashboard
               </Link>
               <Link
-                href="/pricing"
+                href="/account/billing"
                 className="py-3 px-6 rounded-lg font-medium border border-border text-foreground hover:bg-muted transition-colors"
               >
                 Resubscribe

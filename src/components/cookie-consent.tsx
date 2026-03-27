@@ -163,7 +163,7 @@ export function CookieConsent() {
                   }`}
                 >
                   <span
-                    className={`pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow-sm transition-transform ${
+                    className={`pointer-events-none inline-block h-5 w-5 rounded-full bg-foreground shadow-sm transition-transform ${
                       analyticsEnabled ? 'translate-x-5' : 'translate-x-0'
                     }`}
                   />

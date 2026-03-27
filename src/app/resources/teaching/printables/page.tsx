@@ -227,7 +227,7 @@ export default function PrintableResourcesPage() {
             </p>
             <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               <Link
-                href="/pricing"
+                href="/account/billing"
                 className="inline-block rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-primary/90"
               >
                 View Teacher Plans

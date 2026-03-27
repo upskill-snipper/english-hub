@@ -51,7 +51,7 @@ function FooterColumn({
           <li key={link.href}>
             <Link
               href={link.href}
-              className="text-sm text-gray-300 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 rounded-sm"
+              className="text-sm text-muted-foreground hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 rounded-sm"
             >
               {link.label}
             </Link>
@@ -69,7 +69,7 @@ export function Footer() {
 
   return (
     <footer
-      className="border-t border-[#1A5276] bg-[#1A5276] text-gray-300"
+      className="border-t border-primary bg-primary text-muted-foreground"
       role="contentinfo"
     >
       <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
@@ -90,14 +90,14 @@ export function Footer() {
               </span>
               The English Hub
             </Link>
-            <p className="mt-3 text-sm leading-relaxed text-gray-300">
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
               AI-powered GCSE and IGCSE English revision for students aged
               14&ndash;18.
             </p>
-            <p className="mt-4 text-sm text-gray-300">
+            <p className="mt-4 text-sm text-muted-foreground">
               <a
                 href="mailto:support@theenglishhub.app"
-                className="font-medium text-white underline underline-offset-2 hover:text-[#2E86C1] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 rounded-sm"
+                className="font-medium text-white underline underline-offset-2 hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 rounded-sm"
               >
                 support@theenglishhub.app
               </a>
@@ -116,7 +116,7 @@ export function Footer() {
 
         {/* ── Bottom bar: company + copyright ──────────────── */}
         <div className="mt-6 border-t border-white/10 pt-6">
-          <div className="flex flex-col gap-2 text-xs text-gray-300 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-col gap-2 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
             <div className="space-y-1">
               <p>
                 Upskill Energy Limited &mdash; Registered in England and Wales

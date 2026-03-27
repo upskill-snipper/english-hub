@@ -165,11 +165,11 @@ function Pill({
       onClick={onClick}
       className={[
         'inline-flex items-center rounded-full font-medium transition-all duration-200',
-        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 focus-visible:ring-offset-2',
+        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2',
         sizeClasses,
         selected
           ? 'bg-primary-500 text-white shadow-sm'
-          : 'border border-gray-200 bg-white text-primary-600 hover:border-primary-300 hover:bg-primary-50',
+          : 'border border-border bg-card text-primary hover:border-primary/30 hover:bg-primary/10',
       ]
         .filter(Boolean)
         .join(' ')}
@@ -214,10 +214,10 @@ function TopicDropdown({
         onClick={() => setOpen((o) => !o)}
         className={[
           'inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 text-sm font-medium transition-all duration-200',
-          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 focus-visible:ring-offset-2',
+          'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2',
           value
-            ? 'border-primary-300 bg-primary-50 text-primary-700'
-            : 'border-gray-200 bg-white text-gray-600 hover:border-primary-300 hover:bg-primary-50',
+            ? 'border-primary/30 bg-primary/10 text-primary'
+            : 'border-border bg-card text-muted-foreground hover:border-primary/30 hover:bg-primary/10',
         ].join(' ')}
         aria-expanded={open}
         aria-haspopup="listbox"
@@ -230,7 +230,7 @@ function TopicDropdown({
 
       {open && (
         <div
-          className="absolute left-0 top-full z-50 mt-2 w-56 rounded-xl border border-gray-200 bg-white py-1 shadow-lg"
+          className="absolute left-0 top-full z-50 mt-2 w-56 rounded-xl border border-border bg-card py-1 shadow-lg"
           role="listbox"
         >
           <button
@@ -240,7 +240,7 @@ function TopicDropdown({
               setOpen(false);
             }}
             className={`w-full px-4 py-2 text-left text-sm transition-colors ${
-              !value ? 'bg-primary-50 font-medium text-primary-700' : 'text-gray-600 hover:bg-gray-50'
+              !value ? 'bg-primary/10 font-medium text-primary' : 'text-muted-foreground hover:bg-muted'
             }`}
             role="option"
             aria-selected={!value}
@@ -257,8 +257,8 @@ function TopicDropdown({
               }}
               className={`w-full px-4 py-2 text-left text-sm transition-colors ${
                 value === topic
-                  ? 'bg-primary-50 font-medium text-primary-700'
-                  : 'text-gray-600 hover:bg-gray-50'
+                  ? 'bg-primary/10 font-medium text-primary'
+                  : 'text-muted-foreground hover:bg-muted'
               }`}
               role="option"
               aria-selected={value === topic}
@@ -330,7 +330,7 @@ function ResourceFilter({ filters, onChange, className = '' }: ResourceFilterPro
       {/* Subject */}
       <div className={mobile ? '' : 'flex items-center gap-2'}>
         {mobile && (
-          <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-gray-500">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
             Subject
           </p>
         )}
@@ -352,11 +352,11 @@ function ResourceFilter({ filters, onChange, className = '' }: ResourceFilterPro
       {/* Exam board */}
       <div className={mobile ? 'mt-5' : 'flex items-center gap-2'}>
         {mobile && (
-          <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-gray-500">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
             Exam Board
           </p>
         )}
-        {!mobile && <div className="h-6 w-px bg-gray-200" aria-hidden="true" />}
+        {!mobile && <div className="h-6 w-px bg-muted" aria-hidden="true" />}
         <div className="flex flex-wrap gap-2">
           {EXAM_BOARDS.map((b) => (
             <Pill
@@ -374,11 +374,11 @@ function ResourceFilter({ filters, onChange, className = '' }: ResourceFilterPro
       {/* Topic */}
       <div className={mobile ? 'mt-5' : 'flex items-center gap-2'}>
         {mobile && (
-          <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-gray-500">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
             Topic
           </p>
         )}
-        {!mobile && <div className="h-6 w-px bg-gray-200" aria-hidden="true" />}
+        {!mobile && <div className="h-6 w-px bg-muted" aria-hidden="true" />}
         <TopicDropdown
           subject={filters.subject}
           value={filters.topic}
@@ -389,11 +389,11 @@ function ResourceFilter({ filters, onChange, className = '' }: ResourceFilterPro
       {/* Resource type */}
       <div className={mobile ? 'mt-5' : 'flex items-center gap-2'}>
         {mobile && (
-          <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-gray-500">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
             Resource Type
           </p>
         )}
-        {!mobile && <div className="h-6 w-px bg-gray-200" aria-hidden="true" />}
+        {!mobile && <div className="h-6 w-px bg-muted" aria-hidden="true" />}
         <div className="flex flex-wrap gap-2">
           {RESOURCE_TYPES.map((t) => (
             <Pill
@@ -411,11 +411,11 @@ function ResourceFilter({ filters, onChange, className = '' }: ResourceFilterPro
       {/* Difficulty */}
       <div className={mobile ? 'mt-5' : 'flex items-center gap-2'}>
         {mobile && (
-          <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-gray-500">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
             Difficulty
           </p>
         )}
-        {!mobile && <div className="h-6 w-px bg-gray-200" aria-hidden="true" />}
+        {!mobile && <div className="h-6 w-px bg-muted" aria-hidden="true" />}
         <div className="flex gap-2">
           {(['foundation', 'higher'] as const).map((d) => (
             <Pill
@@ -438,19 +438,19 @@ function ResourceFilter({ filters, onChange, className = '' }: ResourceFilterPro
     <div className={className}>
       {/* ── Desktop filter bar ────────────────────────────────────── */}
       <div className="hidden md:block">
-        <div className="rounded-2xl border border-gray-100 bg-white p-4 shadow-sm">
+        <div className="rounded-2xl border border-border bg-card p-4 shadow-sm">
           {/* Search row */}
           <div className="flex items-center gap-3">
             <div className="relative flex-1 max-w-xs">
               <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                <SearchIcon className="h-4 w-4 text-gray-500" />
+                <SearchIcon className="h-4 w-4 text-muted-foreground" />
               </div>
               <input
                 type="search"
                 placeholder="Search resources..."
                 value={filters.search}
                 onChange={(e) => updateFilter('search', e.target.value)}
-                className="w-full rounded-lg border border-gray-200 bg-white py-2 pl-9 pr-3 text-sm text-gray-900 placeholder:text-gray-500 transition-colors focus:border-primary-300 focus:outline-none focus:ring-2 focus:ring-primary-100"
+                className="w-full rounded-lg border border-border bg-card py-2 pl-9 pr-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
               />
             </div>
 
@@ -458,11 +458,11 @@ function ResourceFilter({ filters, onChange, className = '' }: ResourceFilterPro
               <button
                 type="button"
                 onClick={clearAll}
-                className="ml-auto inline-flex items-center gap-1 text-sm font-medium text-gray-500 transition-colors hover:text-warn-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 focus-visible:ring-offset-2"
+                className="ml-auto inline-flex items-center gap-1 text-sm font-medium text-muted-foreground transition-colors hover:text-red-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
               >
                 <CloseIcon className="h-3.5 w-3.5" />
                 Clear filters
-                <span className="ml-0.5 inline-flex h-5 w-5 items-center justify-center rounded-full bg-primary-100 text-xs font-semibold text-primary-700">
+                <span className="ml-0.5 inline-flex h-5 w-5 items-center justify-center rounded-full bg-primary/10 text-xs font-semibold text-primary">
                   {activeCount}
                 </span>
               </button>
@@ -481,21 +481,21 @@ function ResourceFilter({ filters, onChange, className = '' }: ResourceFilterPro
         {/* Search bar always visible */}
         <div className="relative">
           <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-            <SearchIcon className="h-4 w-4 text-gray-500" />
+            <SearchIcon className="h-4 w-4 text-muted-foreground" />
           </div>
           <input
             type="search"
             placeholder="Search resources..."
             value={filters.search}
             onChange={(e) => updateFilter('search', e.target.value)}
-            className="w-full rounded-xl border border-gray-200 bg-white py-2.5 pl-9 pr-3 text-sm text-gray-900 placeholder:text-gray-500 transition-colors focus:border-primary-300 focus:outline-none focus:ring-2 focus:ring-primary-100"
+            className="w-full rounded-xl border border-border bg-card py-2.5 pl-9 pr-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
           />
         </div>
 
         <button
           type="button"
           onClick={() => setMobileOpen(true)}
-          className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white px-4 py-2.5 text-sm font-medium text-gray-700 transition-colors hover:bg-primary-50 hover:border-primary-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 focus-visible:ring-offset-2"
+          className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-xl border border-border bg-card px-4 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-primary/10 hover:border-primary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
         >
           <FilterIcon className="h-4 w-4" />
           Filters
@@ -521,17 +521,17 @@ function ResourceFilter({ filters, onChange, className = '' }: ResourceFilterPro
           <div
             ref={panelRef}
             style={{ animation: 'slideUp 0.3s ease-out' }}
-            className="absolute inset-x-0 bottom-0 max-h-[85vh] overflow-y-auto rounded-t-2xl bg-white shadow-2xl"
+            className="absolute inset-x-0 bottom-0 max-h-[85vh] overflow-y-auto rounded-t-2xl bg-card shadow-2xl"
             role="dialog"
             aria-label="Filter options"
           >
             {/* Handle */}
-            <div className="sticky top-0 z-10 flex items-center justify-between border-b border-gray-100 bg-white px-5 py-4">
-              <h2 className="text-lg font-bold text-gray-900">Filters</h2>
+            <div className="sticky top-0 z-10 flex items-center justify-between border-b border-border bg-card px-5 py-4">
+              <h2 className="text-lg font-bold text-foreground">Filters</h2>
               <button
                 type="button"
                 onClick={() => setMobileOpen(false)}
-                className="rounded-full p-1.5 text-gray-500 hover:bg-gray-100 hover:text-gray-600 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300"
+                className="rounded-full p-1.5 text-muted-foreground hover:bg-muted hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                 aria-label="Close filters"
               >
                 <CloseIcon className="h-5 w-5" />
@@ -542,21 +542,21 @@ function ResourceFilter({ filters, onChange, className = '' }: ResourceFilterPro
             <div className="px-5 py-5">{filterControls(true)}</div>
 
             {/* Bottom actions */}
-            <div className="sticky bottom-0 flex items-center gap-3 border-t border-gray-100 bg-white px-5 py-4">
+            <div className="sticky bottom-0 flex items-center gap-3 border-t border-border bg-card px-5 py-4">
               <button
                 type="button"
                 onClick={() => {
                   clearAll();
                   setMobileOpen(false);
                 }}
-                className="flex-1 rounded-xl border border-gray-200 px-4 py-2.5 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 focus-visible:ring-offset-2"
+                className="flex-1 rounded-xl border border-border px-4 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
               >
                 Clear All
               </button>
               <button
                 type="button"
                 onClick={() => setMobileOpen(false)}
-                className="flex-1 rounded-xl bg-primary-500 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-primary-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300 focus-visible:ring-offset-2"
+                className="flex-1 rounded-xl bg-primary-500 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-primary-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
               >
                 Apply Filters
               </button>

@@ -127,11 +127,11 @@ function UserIcon() {
 
 function SafeguardingBanner() {
   return (
-    <div className="bg-[#1A5276] px-4 py-1.5 text-center text-xs text-white sm:text-sm">
+    <div className="bg-primary px-4 py-1.5 text-center text-xs text-white sm:text-sm">
       <span className="mr-1">Need help?</span>
       <Link
         href="/legal/safeguarding"
-        className="font-medium underline underline-offset-2 hover:text-gray-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 rounded-sm"
+        className="font-medium underline underline-offset-2 hover:text-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 rounded-sm"
       >
         Safeguarding &amp; support resources
       </Link>
@@ -143,7 +143,7 @@ function SafeguardingBanner() {
 
 function ExamBoardBadge({ examBoard }: { examBoard: string }) {
   return (
-    <span className="inline-flex items-center rounded-full bg-[#2E86C1]/15 px-2.5 py-0.5 text-xs font-semibold text-[#1A5276]">
+    <span className="inline-flex items-center rounded-full bg-primary/15 px-2.5 py-0.5 text-xs font-semibold text-primary">
       {examBoard}
     </span>
   );
@@ -187,7 +187,7 @@ export function Header({ user, onLogout }: HeaderProps) {
       <SafeguardingBanner />
 
       <nav
-        className="border-b border-[#1A5276]/10 bg-white"
+        className="border-b border-primary/10 bg-card"
         aria-label="Main navigation"
       >
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
@@ -195,11 +195,11 @@ export function Header({ user, onLogout }: HeaderProps) {
           <div className="flex items-center gap-3">
             <Link
               href="/"
-              className="flex items-center gap-2 text-lg font-bold text-[#1A5276] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1A5276] rounded-sm"
+              className="flex items-center gap-2 text-lg font-bold text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm"
               aria-label="The English Hub - Home"
             >
               <span
-                className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#1A5276] text-sm font-bold text-white"
+                className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-sm font-bold text-white"
                 aria-hidden="true"
               >
                 EH
@@ -218,10 +218,10 @@ export function Header({ user, onLogout }: HeaderProps) {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`rounded-lg px-3 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1A5276] ${
+                className={`rounded-lg px-3 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
                   isActive(link.href)
-                    ? "bg-[#2E86C1]/10 text-[#1A5276] font-semibold"
-                    : "text-[#1A5276]/70 hover:bg-[#2E86C1]/5 hover:text-[#1A5276]"
+                    ? "bg-primary/10 text-primary font-semibold"
+                    : "text-primary/70 hover:bg-primary/5 hover:text-primary"
                 }`}
                 aria-current={isActive(link.href) ? "page" : undefined}
               >
@@ -236,7 +236,7 @@ export function Header({ user, onLogout }: HeaderProps) {
               <div className="relative" ref={userMenuRef}>
                 <button
                   onClick={() => setUserMenuOpen((o) => !o)}
-                  className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-[#1A5276]/70 hover:bg-[#2E86C1]/5 hover:text-[#1A5276] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1A5276]"
+                  className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-primary/70 hover:bg-primary/5 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                   aria-expanded={userMenuOpen}
                   aria-haspopup="true"
                   aria-label="User menu"
@@ -250,7 +250,7 @@ export function Header({ user, onLogout }: HeaderProps) {
                 {/* Dropdown */}
                 {userMenuOpen && (
                   <div
-                    className="absolute right-0 z-40 mt-1 w-48 rounded-lg border border-[#1A5276]/10 bg-white py-1 shadow-lg"
+                    className="absolute right-0 z-40 mt-1 w-48 rounded-lg border border-primary/10 bg-card py-1 shadow-lg"
                     role="menu"
                     aria-label="User menu"
                   >
@@ -258,16 +258,16 @@ export function Header({ user, onLogout }: HeaderProps) {
                       <Link
                         key={link.href}
                         href={link.href}
-                        className="block px-4 py-2 text-sm text-[#1A5276]/80 hover:bg-[#2E86C1]/5 hover:text-[#1A5276] focus-visible:outline-none focus-visible:bg-[#2E86C1]/5"
+                        className="block px-4 py-2 text-sm text-primary/80 hover:bg-primary/5 hover:text-primary focus-visible:outline-none focus-visible:bg-primary/5"
                         role="menuitem"
                       >
                         {link.label}
                       </Link>
                     ))}
-                    <div className="my-1 border-t border-[#1A5276]/10" />
+                    <div className="my-1 border-t border-primary/10" />
                     <button
                       onClick={onLogout}
-                      className="block w-full px-4 py-2 text-left text-sm text-[#1A5276]/80 hover:bg-[#2E86C1]/5 hover:text-[#1A5276] focus-visible:outline-none focus-visible:bg-[#2E86C1]/5"
+                      className="block w-full px-4 py-2 text-left text-sm text-primary/80 hover:bg-primary/5 hover:text-primary focus-visible:outline-none focus-visible:bg-primary/5"
                       role="menuitem"
                     >
                       Logout
@@ -278,7 +278,7 @@ export function Header({ user, onLogout }: HeaderProps) {
             ) : (
               <Link
                 href="/auth/login"
-                className="rounded-lg bg-[#1A5276] px-4 py-2 text-sm font-medium text-white hover:bg-[#2E86C1] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1A5276] focus-visible:ring-offset-2"
+                className="rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
               >
                 Sign In
               </Link>
@@ -287,7 +287,7 @@ export function Header({ user, onLogout }: HeaderProps) {
             {/* ── Mobile menu toggle ──────────────────────── */}
             <button
               onClick={() => setMobileMenuOpen((o) => !o)}
-              className="rounded-lg p-2 text-[#1A5276]/70 hover:bg-[#2E86C1]/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1A5276] md:hidden"
+              className="rounded-lg p-2 text-primary/70 hover:bg-primary/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary md:hidden"
               aria-expanded={mobileMenuOpen}
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             >
@@ -298,7 +298,7 @@ export function Header({ user, onLogout }: HeaderProps) {
 
         {/* ── Mobile nav ──────────────────────────────────── */}
         {mobileMenuOpen && (
-          <div className="border-t border-[#1A5276]/10 bg-white px-4 pb-4 pt-2 md:hidden">
+          <div className="border-t border-primary/10 bg-card px-4 pb-4 pt-2 md:hidden">
             {/* Exam board badge in mobile */}
             {user?.examBoard && (
               <div className="mb-2 px-3 py-1">
@@ -311,10 +311,10 @@ export function Header({ user, onLogout }: HeaderProps) {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className={`block rounded-lg px-3 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1A5276] ${
+                    className={`block rounded-lg px-3 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
                       isActive(link.href)
-                        ? "bg-[#2E86C1]/10 text-[#1A5276] font-semibold"
-                        : "text-[#1A5276]/70 hover:bg-[#2E86C1]/5 hover:text-[#1A5276]"
+                        ? "bg-primary/10 text-primary font-semibold"
+                        : "text-primary/70 hover:bg-primary/5 hover:text-primary"
                     }`}
                     aria-current={isActive(link.href) ? "page" : undefined}
                   >
@@ -327,13 +327,13 @@ export function Header({ user, onLogout }: HeaderProps) {
             {/* Mobile user links (logged in only) */}
             {user && (
               <>
-                <div className="my-2 border-t border-[#1A5276]/10" />
+                <div className="my-2 border-t border-primary/10" />
                 <ul className="space-y-1" role="list">
                   {USER_MENU_LINKS.map((link) => (
                     <li key={link.href}>
                       <Link
                         href={link.href}
-                        className="block rounded-lg px-3 py-2 text-sm text-[#1A5276]/70 hover:bg-[#2E86C1]/5 hover:text-[#1A5276] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1A5276]"
+                        className="block rounded-lg px-3 py-2 text-sm text-primary/70 hover:bg-primary/5 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                       >
                         {link.label}
                       </Link>
@@ -342,7 +342,7 @@ export function Header({ user, onLogout }: HeaderProps) {
                   <li>
                     <button
                       onClick={onLogout}
-                      className="block w-full rounded-lg px-3 py-2 text-left text-sm text-[#1A5276]/70 hover:bg-[#2E86C1]/5 hover:text-[#1A5276] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1A5276]"
+                      className="block w-full rounded-lg px-3 py-2 text-left text-sm text-primary/70 hover:bg-primary/5 hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                     >
                       Logout
                     </button>

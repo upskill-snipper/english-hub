@@ -306,7 +306,7 @@ export default function HelpCentrePage() {
         <p className="mt-4 text-lg text-muted-foreground">
           Find answers to your questions about The English Hub. Can&apos;t find
           what you&apos;re looking for?{' '}
-          <Link href="/faqs" className="text-primary underline hover:text-primary/80">
+          <Link href="/help/faq" className="text-primary underline hover:text-primary/80">
             Check our FAQs
           </Link>{' '}
           or{' '}

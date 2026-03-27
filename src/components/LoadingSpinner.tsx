@@ -33,11 +33,11 @@ export function LoadingSpinner({
       aria-live="polite"
     >
       <div
-        className={`animate-spin rounded-full border-[#1A5276] border-t-transparent ${SIZE_CLASSES[size]}`}
+        className={`animate-spin rounded-full border-primary border-t-transparent ${SIZE_CLASSES[size]}`}
         aria-hidden="true"
       />
       {label ? (
-        <p className="text-sm text-gray-500">{label}</p>
+        <p className="text-sm text-muted-foreground">{label}</p>
       ) : (
         <span className="sr-only">Loading...</span>
       )}
