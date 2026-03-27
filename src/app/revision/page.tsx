@@ -171,15 +171,36 @@ const POETRY_CARDS = [
   {
     title: 'Power and Conflict',
     slug: 'power-and-conflict',
-    description: 'AQA anthology covering war, power, identity, and nature',
+    description: 'AQA anthology covering war, power, identity, and nature — 15 poems from Ozymandias to Kamikaze',
     board: 'AQA',
     icon: FileText,
   },
   {
     title: 'Love and Relationships',
     slug: 'love-and-relationships',
-    description: 'AQA anthology exploring love, memory, family, and distance',
+    description: 'AQA anthology exploring love, memory, family, and distance — 15 poems from Sonnet 29 to Climbing My Grandfather',
     board: 'AQA',
+    icon: FileText,
+  },
+  {
+    title: 'Edexcel Poetry Anthology',
+    slug: 'edexcel-anthology',
+    description: 'Complete Edexcel IGCSE anthology — 45+ poems covering Relationships, Conflict, Time and Place',
+    board: 'Edexcel',
+    icon: FileText,
+  },
+  {
+    title: 'Unseen Poetry',
+    slug: 'unseen-poetry',
+    description: 'Techniques and strategies for tackling unseen poetry questions across all exam boards',
+    board: 'All',
+    icon: FileText,
+  },
+  {
+    title: 'Poetry Techniques',
+    slug: 'techniques',
+    description: 'Essential poetic devices and terminology — metaphor, enjambment, caesura, volta and more',
+    board: 'All',
     icon: FileText,
   },
 ]

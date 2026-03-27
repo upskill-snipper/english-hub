@@ -76,7 +76,7 @@ export default function CourseDetailPage({ course }: CourseDetailPageProps) {
 
   const hasAccess = isEnrolled || isPro
   const firstModuleHref = `/learn/${course.id}/${course.moduleList[0]?.id}`
-  const ctaLabel = hasAccess ? 'Start Learning' : 'Preview Free Module'
+  const ctaLabel = hasAccess ? 'Start Learning' : 'Subscribe Now'
   const ctaHref = hasAccess ? firstModuleHref : firstModuleHref
 
   return (
@@ -137,18 +137,7 @@ export default function CourseDetailPage({ course }: CourseDetailPageProps) {
               </div>
             </div>
 
-            {/* Desktop sidebar subscription card */}
-            <div className="hidden lg:block">
-              <SubscriptionCard
-                ctaLabel={ctaLabel}
-                ctaHref={ctaHref}
-                hasAccess={hasAccess}
-                loading={loading}
-                moduleCount={course.moduleList.length}
-                duration={course.duration}
-                level={course.level}
-              />
-            </div>
+            {/* Desktop sidebar subscription card removed — single CTA in sticky aside below */}
           </div>
         </div>
       </section>

@@ -146,7 +146,7 @@ const InlinePaperPreview = memo(function InlinePaperPreview({ paper }: { paper: 
                     <div className="flex items-start justify-between mb-3">
                       <div className="flex items-center gap-2">
                         <span className={cn('font-bold', config.color)}>Q{question.questionNumber}.</span>
-                        <Badge variant="outline" className="text-xs">{question.questionType}</Badge>
+                        <Badge variant="outline" className="text-xs">{question.questionType.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}</Badge>
                       </div>
                       <Badge variant="outline">{question.marks} marks</Badge>
                     </div>
@@ -154,9 +154,11 @@ const InlinePaperPreview = memo(function InlinePaperPreview({ paper }: { paper: 
                     {question.extract && (
                       <div className="mb-4 rounded-lg bg-muted/50 p-4 border border-border/50">
                         <p className="text-xs font-medium text-muted-foreground mb-2 uppercase tracking-wider">Extract</p>
-                        <p className="text-sm text-foreground/90 leading-relaxed whitespace-pre-line">
-                          {question.extract.length > 500 ? question.extract.slice(0, 500) + '...' : question.extract}
-                        </p>
+                        <div className="text-[0.95rem] text-foreground/90 leading-relaxed whitespace-pre-line max-h-96 overflow-y-auto">
+                          {question.extract.split('\n').map((para, i) => (
+                            <p key={i} className={i > 0 ? 'mt-3' : ''}>{para}</p>
+                          ))}
+                        </div>
                         {question.extractSource && (
                           <p className="text-xs text-muted-foreground mt-2 italic">{question.extractSource}</p>
                         )}
@@ -170,14 +172,20 @@ const InlinePaperPreview = memo(function InlinePaperPreview({ paper }: { paper: 
                       <p className="text-xs font-medium text-emerald-400 mb-2 uppercase tracking-wider flex items-center gap-1.5">
                         <Eye className="h-3.5 w-3.5" /> Model Answer (Top Grade)
                       </p>
-                      {Object.entries(question.modelAnswers ?? {}).slice(0, 1).map(([grade, answer]) => (
-                        <div key={grade}>
-                          <Badge className="mb-2 bg-emerald-500/15 text-emerald-300 border-emerald-500/30 text-xs">{grade}</Badge>
-                          <p className="text-sm text-foreground/80 leading-relaxed">
-                            {String(answer).length > 400 ? String(answer).slice(0, 400) + '...' : String(answer)}
-                          </p>
-                        </div>
-                      ))}
+                      {(() => {
+                        const entries = Object.entries(question.modelAnswers ?? {})
+                        const topEntry = entries.find(([g]) => /9|8|top|full/i.test(g)) || entries[entries.length - 1]
+                        if (!topEntry) return null
+                        const [grade, answer] = topEntry
+                        return (
+                          <div>
+                            <Badge className="mb-2 bg-emerald-500/15 text-emerald-300 border-emerald-500/30 text-xs">{grade}</Badge>
+                            <p className="text-sm text-foreground/80 leading-relaxed">
+                              {String(answer).length > 600 ? String(answer).slice(0, 600) + '...' : String(answer)}
+                            </p>
+                          </div>
+                        )
+                      })()}
                     </div>
 
                     {/* Mark Scheme */}
