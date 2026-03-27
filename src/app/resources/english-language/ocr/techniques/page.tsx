@@ -271,7 +271,7 @@ export default function OCRTechniquesPage() {
               <p className="text-sm font-medium text-primary">
                 The golden rule of analysis
               </p>
-              <p className="mt-1 text-sm text-accent-800">
+              <p className="mt-1 text-sm text-primary">
                 Identify the technique &rarr; Quote precisely &rarr; Explain
                 the connotations of key words &rarr; Analyse the effect on the
                 reader &rarr; Link to the writer&rsquo;s purpose. This is what

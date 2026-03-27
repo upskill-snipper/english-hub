@@ -155,7 +155,7 @@ export default function AQAEnglishLanguagePage() {
             <Link
               key={s.href}
               href={s.href}
-              className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-md transition hover:shadow-md hover:border-accent-300"
+              className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-md transition hover:shadow-md hover:border-primary/30"
             >
               <div className="flex items-center justify-between">
                 {s.icon}

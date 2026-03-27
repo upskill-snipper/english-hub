@@ -282,7 +282,7 @@ export default function OCRChristmasCarolPage() {
               </p>
               <div className="mt-4 rounded border border-accent/20 bg-primary/10 p-3">
                 <p className="text-sm font-medium text-primary">Key character arc</p>
-                <p className="mt-1 text-sm text-accent-800">
+                <p className="mt-1 text-sm text-primary">
                   Cold and miserly &rarr; Confronted by Marley &rarr; Emotionally
                   stirred by the past &rarr; Moved by the Cratchits &rarr;
                   Terrified by his future &rarr; Joyful transformation

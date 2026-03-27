@@ -145,7 +145,7 @@ export default function OCRPaper1Page() {
                   </p>
                   <div className="mt-3 rounded border border-accent/20 bg-primary/10 p-3">
                     <p className="text-sm font-medium text-primary">Top tip</p>
-                    <p className="mt-1 text-sm text-accent-800">
+                    <p className="mt-1 text-sm text-primary">
                       When making inferences, always support your point with a
                       short, embedded quotation from the text. Use the
                       Point-Evidence-Explain (PEE) structure to keep your
@@ -167,7 +167,7 @@ export default function OCRPaper1Page() {
                   </p>
                   <div className="mt-3 rounded border border-accent/20 bg-primary/10 p-3">
                     <p className="text-sm font-medium text-primary">Top tip</p>
-                    <p className="mt-1 text-sm text-accent-800">
+                    <p className="mt-1 text-sm text-primary">
                       Don&rsquo;t just spot techniques &mdash; explain
                       <em> why</em> the writer used them and what effect they
                       have on the reader. Always link back to the
@@ -189,7 +189,7 @@ export default function OCRPaper1Page() {
                   </p>
                   <div className="mt-3 rounded border border-accent/20 bg-primary/10 p-3">
                     <p className="text-sm font-medium text-primary">Top tip</p>
-                    <p className="mt-1 text-sm text-accent-800">
+                    <p className="mt-1 text-sm text-primary">
                       Use comparative connectives: &ldquo;Similarly&rdquo;,
                       &ldquo;In contrast&rdquo;, &ldquo;Whereas&rdquo;,
                       &ldquo;On the other hand&rdquo;. Integrate comparison
@@ -211,7 +211,7 @@ export default function OCRPaper1Page() {
                   </p>
                   <div className="mt-3 rounded border border-accent/20 bg-primary/10 p-3">
                     <p className="text-sm font-medium text-primary">Top tip</p>
-                    <p className="mt-1 text-sm text-accent-800">
+                    <p className="mt-1 text-sm text-primary">
                       Show a nuanced response. Consider multiple
                       interpretations and weigh up evidence for and against the
                       statement. Top-band answers demonstrate critical

@@ -86,7 +86,7 @@ export default function OCRLitPaper2Page() {
             </div>
             <div className="rounded border border-accent/20 bg-primary/10 p-4">
               <p className="text-sm font-medium text-primary">Key information</p>
-              <p className="mt-1 text-sm text-accent-800">
+              <p className="mt-1 text-sm text-primary">
                 Section A (Shakespeare) is a <strong>closed-book</strong>{" "}
                 exam, but you will be given a short extract to respond to.
                 Section B provides a printed poem from the anthology.
@@ -231,7 +231,7 @@ export default function OCRLitPaper2Page() {
               <p className="text-sm font-medium text-primary">
                 AO4 is assessed in this section
               </p>
-              <p className="mt-1 text-sm text-accent-800">
+              <p className="mt-1 text-sm text-primary">
                 Section A is the only part of the English Literature exam where
                 your spelling, punctuation, and grammar (SPaG) are formally
                 assessed. Write clearly, accurately, and with varied vocabulary

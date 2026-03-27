@@ -75,7 +75,7 @@ function ScoreGauge({ score }: { score: number }) {
           fill="none"
           stroke="currentColor"
           strokeWidth="8"
-          className="text-gray-100"
+          className="text-foreground"
         />
         <circle
           cx="60"

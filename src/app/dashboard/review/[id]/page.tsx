@@ -72,7 +72,7 @@ function StageIcon({
   // Pending
   return (
     <div className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-border bg-card">
-      <div className="h-2 w-2 rounded-full bg-gray-300" />
+      <div className="h-2 w-2 rounded-full bg-muted" />
     </div>
   );
 }

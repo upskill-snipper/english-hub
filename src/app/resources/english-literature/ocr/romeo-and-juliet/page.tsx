@@ -297,7 +297,7 @@ export default function OCRRomeoAndJulietPage() {
               </p>
               <div className="mt-4 rounded border border-accent/20 bg-primary/10 p-3">
                 <p className="text-sm font-medium text-primary">Key character arc</p>
-                <p className="mt-1 text-sm text-accent-800">
+                <p className="mt-1 text-sm text-primary">
                   Lovesick Petrarchan lover &rarr; Genuinely transformed by
                   love &rarr; Impulsive avenger &rarr; Desperate exile &rarr;
                   Tragic, defiant death
@@ -332,7 +332,7 @@ export default function OCRRomeoAndJulietPage() {
               </p>
               <div className="mt-4 rounded border border-accent/20 bg-primary/10 p-3">
                 <p className="text-sm font-medium text-primary">Key character arc</p>
-                <p className="mt-1 text-sm text-accent-800">
+                <p className="mt-1 text-sm text-primary">
                   Obedient, sheltered daughter &rarr; Passionate lover &rarr;
                   Secret wife &rarr; Isolated and desperate &rarr; Courageous,
                   autonomous death

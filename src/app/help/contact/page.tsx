@@ -257,7 +257,7 @@ export default function ContactPage() {
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="mt-1 block h-1.5 w-1.5 shrink-0 rounded-full bg-gray-400" aria-hidden="true" />
+                  <span className="mt-1 block h-1.5 w-1.5 shrink-0 rounded-full bg-muted-foreground" aria-hidden="true" />
                   <span>
                     <strong className="text-foreground">Complaints:</strong>{" "}
                     acknowledged within 2 working days, resolved within 20

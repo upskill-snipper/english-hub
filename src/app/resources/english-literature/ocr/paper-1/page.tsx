@@ -81,7 +81,7 @@ export default function OCRLitPaper1Page() {
             </div>
             <div className="rounded border border-accent/20 bg-primary/10 p-4">
               <p className="text-sm font-medium text-primary">Important</p>
-              <p className="mt-1 text-sm text-accent-800">
+              <p className="mt-1 text-sm text-primary">
                 This is a <strong>closed-book</strong> exam. You will not have
                 the texts in front of you. You must learn key quotations and
                 know the texts thoroughly.
@@ -178,7 +178,7 @@ export default function OCRLitPaper1Page() {
                   </p>
                   <div className="mt-3 rounded border border-accent/20 bg-primary/10 p-3">
                     <p className="text-sm font-medium text-primary">Model analysis</p>
-                    <p className="mt-1 text-sm italic text-accent-800">
+                    <p className="mt-1 text-sm italic text-primary">
                       &ldquo;Priestley uses the stage direction
                       &lsquo;massively&rsquo; to describe the Inspector&rsquo;s
                       entrance, suggesting an overwhelming, immovable presence.

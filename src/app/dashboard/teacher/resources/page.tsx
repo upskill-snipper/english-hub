@@ -208,7 +208,7 @@ function ResourceCard({ resource }: { resource: Resource }) {
               View Details
             </Link>
           ) : (
-            <span className="text-xs font-medium text-accent hover:text-accent-600 cursor-pointer">
+            <span className="text-xs font-medium text-accent hover:text-primary/90 cursor-pointer">
               View Details
             </span>
           )}

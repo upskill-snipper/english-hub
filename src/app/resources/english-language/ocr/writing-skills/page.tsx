@@ -308,7 +308,7 @@ export default function OCRWritingSkillsPage() {
               </ol>
               <div className="mt-3 rounded border border-accent/20 bg-primary/10 p-4">
                 <p className="text-sm font-medium text-primary">Example counter-argument paragraph</p>
-                <p className="mt-2 text-sm italic text-accent-800">
+                <p className="mt-2 text-sm italic text-primary">
                   &ldquo;Of course, some would argue that technology has
                   enhanced communication, allowing us to stay connected with
                   loved ones across the globe. There is undeniable truth in
@@ -442,7 +442,7 @@ export default function OCRWritingSkillsPage() {
               </div>
               <div className="mt-4 rounded border border-accent/20 bg-primary/10 p-4">
                 <p className="text-sm font-medium text-primary">Important note</p>
-                <p className="mt-1 text-sm text-accent-800">
+                <p className="mt-1 text-sm text-primary">
                   Ambitious vocabulary must be used accurately. Using a
                   complex word incorrectly is worse than using a simple word
                   correctly. Only use words you are confident about.

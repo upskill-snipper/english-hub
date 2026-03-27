@@ -351,10 +351,10 @@ export default function TechniquesPage() {
       {/* ── Quick nav ─────────────────────────────────────────────── */}
       <section className="border-b border-border bg-card px-4 py-4 sticky top-0 z-10 shadow-md">
         <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-center gap-3">
-          <a href="#language" className="rounded-full bg-primary/15 px-4 py-1.5 text-sm font-semibold text-primary hover:bg-accent-200 transition-colors">
+          <a href="#language" className="rounded-full bg-primary/15 px-4 py-1.5 text-sm font-semibold text-primary hover:bg-primary/20 transition-colors">
             Language ({languageTechniques.length})
           </a>
-          <a href="#structure" className="rounded-full bg-primary/15 px-4 py-1.5 text-sm font-semibold text-primary hover:bg-primary-200 transition-colors">
+          <a href="#structure" className="rounded-full bg-primary/15 px-4 py-1.5 text-sm font-semibold text-primary hover:bg-primary/20 transition-colors">
             Structure ({structureTechniques.length})
           </a>
           <a href="#both" className="rounded-full bg-success-100 px-4 py-1.5 text-sm font-semibold text-success-700 hover:bg-success-200 transition-colors">

@@ -18,7 +18,7 @@ export default function WritingSkillsPage() {
     <>
 
       {/* ── Hero ──────────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-accent-600 to-primary px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <Link
             href="/resources/english-language/edexcel"

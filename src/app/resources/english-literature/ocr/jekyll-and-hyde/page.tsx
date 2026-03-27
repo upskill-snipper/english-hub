@@ -288,7 +288,7 @@ export default function OCRJekyllAndHydePage() {
               </p>
               <div className="mt-4 rounded border border-accent/20 bg-primary/10 p-3">
                 <p className="text-sm font-medium text-primary">Key character arc</p>
-                <p className="mt-1 text-sm text-accent-800">
+                <p className="mt-1 text-sm text-primary">
                   Respectable but repressed &rarr; Creates Hyde to indulge
                   desires &rarr; Enjoys the freedom &rarr; Loses control &rarr;
                   Trapped by his own creation &rarr; Self-destruction

@@ -1429,7 +1429,7 @@ export default function LoveAndRelationshipsPage() {
 
           <button
             onClick={() => setShowTable((o) => !o)}
-            className="mt-4 inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-accent-600"
+            className="mt-4 inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary/90"
           >
             {showTable ? "Hide" : "Show"} Comparison Table
             <svg

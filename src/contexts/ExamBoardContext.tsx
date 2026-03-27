@@ -168,7 +168,7 @@ export function BoardSelector({ forceShow = false, className = '' }: BoardSelect
   return (
     <div
       className={[
-        'mx-auto max-w-md rounded-xl border border-gray-200 bg-white p-6 shadow-sm',
+        'mx-auto max-w-md rounded-xl border border-border bg-card p-6 shadow-sm',
         className,
       ]
         .filter(Boolean)
@@ -177,13 +177,13 @@ export function BoardSelector({ forceShow = false, className = '' }: BoardSelect
       <h2 className="text-lg font-semibold text-[#1A5276] mb-1">
         Choose your exam board
       </h2>
-      <p className="text-sm text-gray-500 mb-5">
+      <p className="text-sm text-muted-foreground mb-5">
         Content will be tailored to your board&apos;s mark scheme.
       </p>
 
       {/* ── Subject pills ─────────────────────────────────────────── */}
       <fieldset className="mb-5">
-        <legend className="text-sm font-medium text-gray-700 mb-2">
+        <legend className="text-sm font-medium text-foreground mb-2">
           Subject
         </legend>
         <div className="flex gap-2">
@@ -196,7 +196,7 @@ export function BoardSelector({ forceShow = false, className = '' }: BoardSelect
                 'rounded-full px-4 py-1.5 text-sm font-medium transition-colors',
                 subject === s.value
                   ? 'bg-[#2E86C1] text-white shadow-sm'
-                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200',
+                  : 'bg-muted text-muted-foreground hover:bg-muted',
               ].join(' ')}
               aria-pressed={subject === s.value}
             >
@@ -208,7 +208,7 @@ export function BoardSelector({ forceShow = false, className = '' }: BoardSelect
 
       {/* ── Board selection ───────────────────────────────────────── */}
       <fieldset>
-        <legend className="text-sm font-medium text-gray-700 mb-2">
+        <legend className="text-sm font-medium text-foreground mb-2">
           Exam board
         </legend>
         <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
@@ -221,7 +221,7 @@ export function BoardSelector({ forceShow = false, className = '' }: BoardSelect
                 'rounded-lg border px-4 py-2.5 text-sm font-medium transition-all',
                 selectedBoard === b.value
                   ? 'border-[#2E86C1] bg-[#2E86C1]/10 text-[#1A5276] ring-1 ring-[#2E86C1]'
-                  : 'border-gray-200 text-gray-700 hover:border-[#2E86C1]/50 hover:bg-[#2E86C1]/5',
+                  : 'border-border text-foreground hover:border-[#2E86C1]/50 hover:bg-[#2E86C1]/5',
               ].join(' ')}
               aria-pressed={selectedBoard === b.value}
             >

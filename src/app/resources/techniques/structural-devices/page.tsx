@@ -1516,14 +1516,14 @@ const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 /* ─── Category colours ───────────────────────────────────────── */
 
 const CATEGORY_COLOURS: Record<string, string> = {
-  "Sentence Types": "bg-primary/10 text-primary border-primary-200",
+  "Sentence Types": "bg-primary/10 text-primary border-primary/20",
   "Paragraph Techniques": "bg-primary/10 text-primary border-primary/20",
   "Narrative Structures": "bg-success-50 text-success-700 border-success-200",
-  "Text Structures": "bg-primary/15 text-primary-800 border-primary-300",
-  "Poetry Form": "bg-primary/15 text-accent-800 border-accent-300",
+  "Text Structures": "bg-primary/15 text-primary border-primary/30",
+  "Poetry Form": "bg-primary/15 text-primary border-primary/30",
   "Dramatic Structure": "bg-warn-50 text-warn-700 border-warn-200",
   "Opening Techniques": "bg-success-100 text-success-800 border-success-300",
-  "Ending Techniques": "bg-primary/10 text-primary border-primary-200",
+  "Ending Techniques": "bg-primary/10 text-primary border-primary/20",
   "Additional Structural Techniques": "bg-muted text-muted-foreground border-border",
 };
 

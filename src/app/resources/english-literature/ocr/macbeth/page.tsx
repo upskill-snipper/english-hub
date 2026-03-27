@@ -197,7 +197,7 @@ export default function OCRMacbethPage() {
               </p>
               <div className="mt-4 rounded border border-accent/20 bg-primary/10 p-3">
                 <p className="text-sm font-medium text-primary">Key character arc</p>
-                <p className="mt-1 text-sm text-accent-800">
+                <p className="mt-1 text-sm text-primary">
                   Honourable warrior &rarr; Tempted by ambition &rarr;
                   Reluctant murderer &rarr; Tyrannical king &rarr; Nihilistic
                   despair &rarr; Defiant death
@@ -229,7 +229,7 @@ export default function OCRMacbethPage() {
               </p>
               <div className="mt-4 rounded border border-accent/20 bg-primary/10 p-3">
                 <p className="text-sm font-medium text-primary">Key character arc</p>
-                <p className="mt-1 text-sm text-accent-800">
+                <p className="mt-1 text-sm text-primary">
                   Ambitious and controlling &rarr; Orchestrates the murder
                   &rarr; Begins to lose control &rarr; Consumed by guilt
                   &rarr; Madness and death

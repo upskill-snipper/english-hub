@@ -255,7 +255,7 @@ export default function OCRPaper2Page() {
               </p>
               <div className="mt-3 rounded border border-accent/20 bg-primary/10 p-4">
                 <p className="text-sm font-medium text-primary">How to structure an evaluation response</p>
-                <ol className="ml-4 mt-2 list-decimal space-y-1 text-sm text-accent-800">
+                <ol className="ml-4 mt-2 list-decimal space-y-1 text-sm text-primary">
                   <li>State your position clearly (agree, disagree, or partially agree)</li>
                   <li>Select evidence from the text that supports your view</li>
                   <li>Analyse the language and/or structural choices in your evidence</li>
@@ -348,7 +348,7 @@ export default function OCRPaper2Page() {
                   </p>
                   <div className="mt-2 rounded border border-accent/20 bg-primary/10 p-3">
                     <p className="text-sm font-medium text-primary">Strong opening example</p>
-                    <p className="mt-1 text-sm italic text-accent-800">
+                    <p className="mt-1 text-sm italic text-primary">
                       &ldquo;The letter had been sitting on the kitchen table
                       for three days. Nobody wanted to open it.&rdquo;
                     </p>

@@ -265,7 +265,7 @@ export default function OCRInspectorCallsPage() {
               </p>
               <div className="mt-4 rounded border border-accent/20 bg-primary/10 p-3">
                 <p className="text-sm font-medium text-primary">Key role</p>
-                <p className="mt-1 text-sm text-accent-800">
+                <p className="mt-1 text-sm text-primary">
                   Priestley&rsquo;s moral voice &rarr; Challenges each character
                   &rarr; Delivers the socialist message &rarr; Prophetic warning
                   &rarr; Disappears mysteriously
@@ -293,7 +293,7 @@ export default function OCRInspectorCallsPage() {
               </p>
               <div className="mt-4 rounded border border-accent/20 bg-primary/10 p-3">
                 <p className="text-sm font-medium text-primary">Key character arc</p>
-                <p className="mt-1 text-sm text-accent-800">
+                <p className="mt-1 text-sm text-primary">
                   Confident and complacent &rarr; Defensive under questioning
                   &rarr; Anxious about scandal &rarr; Relieved when threat passes
                   &rarr; Learns nothing
@@ -342,7 +342,7 @@ export default function OCRInspectorCallsPage() {
               </p>
               <div className="mt-4 rounded border border-accent/20 bg-primary/10 p-3">
                 <p className="text-sm font-medium text-primary">Key character arc</p>
-                <p className="mt-1 text-sm text-accent-800">
+                <p className="mt-1 text-sm text-primary">
                   Shallow and playful &rarr; Shocked by her own cruelty &rarr;
                   Genuinely remorseful &rarr; Takes on the Inspector&rsquo;s role
                   &rarr; Refuses to return to ignorance
