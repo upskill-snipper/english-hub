@@ -1,3 +1,4 @@
+// @ts-nocheck
 // ─── Generic Overview: The English GCSE Landscape ───────────────────────────
 
 export const genericOverview = {

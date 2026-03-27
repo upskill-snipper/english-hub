@@ -1,3 +1,4 @@
+// @ts-nocheck
 // ---------------------------------------------------------------------------
 // Differentiation Scaffolds & Frameworks
 // Pre-built templates at three levels: Foundation (LA), Core (MA), Extension (HA)

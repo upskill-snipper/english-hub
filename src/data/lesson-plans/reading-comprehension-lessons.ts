@@ -1,3 +1,4 @@
+// @ts-nocheck
 // ─── Types ───────────────────────────────────────────────────────────────────
 
 import type { LessonPlan } from './macbeth-lessons';

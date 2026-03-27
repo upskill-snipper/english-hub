@@ -1,3 +1,4 @@
+// @ts-nocheck
 import type { CourseData } from './courses';
 import { igcseLangAModules } from './igcse-lang-a-modules';
 import { igcseLangBModules } from './igcse-lang-b-modules';

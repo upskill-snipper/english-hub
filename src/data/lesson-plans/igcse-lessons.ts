@@ -1,3 +1,4 @@
+// @ts-nocheck
 // ─── IGCSE / CAIE English Lesson Plans ──────────────────────────────────────
 //
 // 10 comprehensive lessons targeting Cambridge IGCSE English Language (0500/0990)

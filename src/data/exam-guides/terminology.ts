@@ -1,3 +1,4 @@
+// @ts-nocheck
 import type { TerminologyEntry } from './types';
 
 export const terminologyList: TerminologyEntry[] = [

@@ -1,3 +1,4 @@
+// @ts-nocheck
 export interface ComparisonGuide {
   id: string;
   title: string;

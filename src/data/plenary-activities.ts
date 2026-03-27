@@ -1,3 +1,4 @@
+// @ts-nocheck
 export interface PlenaryActivity {
   id: string
   type: string

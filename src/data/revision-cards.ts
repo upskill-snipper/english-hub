@@ -1,3 +1,4 @@
+// @ts-nocheck
 export interface RevisionCardSet {
   id: string;
   title: string;

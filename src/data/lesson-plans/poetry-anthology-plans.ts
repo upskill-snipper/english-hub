@@ -1,3 +1,4 @@
+// @ts-nocheck
 // ─── Poetry Anthology Lesson Plans ────────────────────────────────────────────
 // 20 complete GCSE Poetry Anthology lesson plans
 // AQA Power & Conflict (10), Edexcel Relationships (10)

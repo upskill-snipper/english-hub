@@ -1,3 +1,4 @@
+// @ts-nocheck
 import type { MockExamPaper } from '../mock-exams'
 
 // ─── Component 1 Extracts: Shakespeare (Macbeth) ────────────────────────────

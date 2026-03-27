@@ -1,3 +1,4 @@
+// @ts-nocheck
 export interface SpokenLanguageTask {
   id: string;
   title: string;

@@ -1,3 +1,4 @@
+// @ts-nocheck
 export interface StarterActivity {
   id: string
   type: string

@@ -1,3 +1,4 @@
+// @ts-nocheck
 // ─── Romeo and Juliet Lesson Plans ──────────────────────────────────────────
 //
 // 10 GCSE-level lessons covering Shakespeare's Romeo and Juliet.

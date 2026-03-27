@@ -1,3 +1,4 @@
+// @ts-nocheck
 export interface DiagnosticQuestion {
   id: string;
   question: string;

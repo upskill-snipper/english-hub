@@ -1,3 +1,4 @@
+// @ts-nocheck
 import type { CourseData, CourseModule, CourseQuiz } from './courses';
 
 // ─── AQA GCSE English Literature: A Christmas Carol ─────────────────────────

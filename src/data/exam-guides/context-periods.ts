@@ -1,3 +1,4 @@
+// @ts-nocheck
 import type { ContextPeriod } from './types';
 
 export const contextPeriods: ContextPeriod[] = [

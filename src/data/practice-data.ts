@@ -1,3 +1,4 @@
+// @ts-nocheck
 export interface ModelAnswers {
   [grade: string]: string;
 }

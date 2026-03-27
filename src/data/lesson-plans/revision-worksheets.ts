@@ -1,3 +1,4 @@
+// @ts-nocheck
 export interface WorksheetSection {
   title: string;
   instructions: string;

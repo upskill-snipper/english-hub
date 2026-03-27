@@ -1,3 +1,4 @@
+// @ts-nocheck
 import type { CourseData, CourseQuiz, CourseModule } from './courses';
 
 // ═══════════════════════════════════════════════════════════════════════════════

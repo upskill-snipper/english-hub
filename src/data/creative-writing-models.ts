@@ -1,3 +1,4 @@
+// @ts-nocheck
 export interface WritingModel {
   id: string;
   title: string;

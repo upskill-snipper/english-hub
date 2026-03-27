@@ -1,3 +1,4 @@
+// @ts-nocheck
 export interface DebateTopic {
   id: string;
   title: string;

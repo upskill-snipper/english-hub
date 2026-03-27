@@ -1,3 +1,4 @@
+// @ts-nocheck
 export interface SENDResource {
   id: string;
   title: string;

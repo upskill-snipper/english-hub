@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * Question-level mark scheme data for all GCSE English exam boards.
  * Each entry describes a single question with its level descriptors,

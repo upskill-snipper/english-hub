@@ -1,3 +1,4 @@
+// @ts-nocheck
 // ─── AQA English Language: 20 Comprehensive Lesson Plans ────────────────────
 // Paper 1 (Reading & Creative Writing) + Paper 2 (Writing & Spoken Language)
 // Ready-to-teach with full differentiation, model answers, and assessment

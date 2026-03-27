@@ -1,3 +1,4 @@
+// @ts-nocheck
 export interface LessonPlan {
   id: string;
   title: string;

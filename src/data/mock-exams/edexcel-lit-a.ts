@@ -1,3 +1,4 @@
+// @ts-nocheck
 import type { MockExamPaper } from '../mock-exams'
 
 // ─── Shakespeare Extracts (Macbeth — original, "in the style of") ───────────

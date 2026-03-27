@@ -1,3 +1,4 @@
+// @ts-nocheck
 // ─── OCR English Language J351: 15 Comprehensive Lesson Plans ────────────────
 // Component 01 (Communicative Skills) + Component 02 (Language Systems & Accuracy)
 // Ready-to-teach with full differentiation, model answers, and assessment

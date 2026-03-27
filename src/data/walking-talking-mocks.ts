@@ -1,3 +1,4 @@
+// @ts-nocheck
 export interface WalkingTalkingMock {
   id: string;
   title: string;

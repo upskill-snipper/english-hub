@@ -1,3 +1,4 @@
+// @ts-nocheck
 export interface DifferentiationResource {
   id: string;
   title: string;

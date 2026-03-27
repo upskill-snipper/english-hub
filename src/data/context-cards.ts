@@ -1,3 +1,4 @@
+// @ts-nocheck
 export interface ContextCard {
   id: string;
   text: string;

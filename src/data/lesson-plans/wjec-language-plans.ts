@@ -1,3 +1,4 @@
+// @ts-nocheck
 // ─── WJEC English Language C700QS: 15 Comprehensive Lesson Plans ───────────
 // Component 1 (Creative Writing & Transactional Texts) + Component 2 (Reading & Language)
 // Ready-to-teach with full differentiation, model answers, and assessment

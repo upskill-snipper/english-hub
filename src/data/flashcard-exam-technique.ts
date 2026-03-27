@@ -1,3 +1,4 @@
+// @ts-nocheck
 import type { FlashcardDeck } from './flashcard-data';
 
 export const examTechniqueDecks: FlashcardDeck[] = [

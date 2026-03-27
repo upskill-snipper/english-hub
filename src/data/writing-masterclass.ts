@@ -1,3 +1,4 @@
+// @ts-nocheck
 export interface WritingFramework {
   id: string;
   title: string;

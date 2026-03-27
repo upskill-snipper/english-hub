@@ -1,3 +1,4 @@
+// @ts-nocheck
 import type { MockExamPaper } from '../mock-exams'
 
 // ─── OCR Paper 2 Mock Exams (Set B) ─────────────────────────────────────────

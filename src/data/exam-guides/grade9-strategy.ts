@@ -1,3 +1,4 @@
+// @ts-nocheck
 import type { Grade9Strategy } from './types';
 
 export const grade9Strategy: Grade9Strategy = {

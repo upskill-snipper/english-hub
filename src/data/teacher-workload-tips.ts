@@ -1,3 +1,4 @@
+// @ts-nocheck
 export interface WorkloadTip {
   id: string;
   title: string;

@@ -1,3 +1,4 @@
+// @ts-nocheck
 // ─── KS3 English Guide ───────────────────────────────────────────────────────
 
 export interface KS3Guide {

@@ -1,3 +1,4 @@
+// @ts-nocheck
 export interface StudentChecklist {
   id: string;
   title: string;

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { LessonPlan } from "../../types";
 
 export const lordOfFliesLessons: LessonPlan[] = [

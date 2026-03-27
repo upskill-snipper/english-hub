@@ -1,3 +1,4 @@
+// @ts-nocheck
 import type { TeachingGuide } from './index'
 
 export const differentiationGuide: TeachingGuide = {

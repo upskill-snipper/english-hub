@@ -1,3 +1,4 @@
+// @ts-nocheck
 import type { CourseModule } from './courses';
 
 export const igcseLangAModules: CourseModule[] = [

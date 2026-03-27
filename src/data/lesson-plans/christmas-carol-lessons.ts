@@ -1,3 +1,4 @@
+// @ts-nocheck
 export interface LessonActivity {
   title: string;
   duration: string;

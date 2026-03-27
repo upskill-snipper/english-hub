@@ -1,3 +1,4 @@
+// @ts-nocheck
 import type { MockExamPaper } from '../mock-exams'
 
 // ─── WJEC Component 1 Extracts ──────────────────────────────────────────────

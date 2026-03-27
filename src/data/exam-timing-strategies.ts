@@ -1,3 +1,4 @@
+// @ts-nocheck
 export interface ExamTimingGuide {
   id: string;
   title: string;

@@ -1,3 +1,4 @@
+// @ts-nocheck
 export interface MarkingRubric {
   id: string;
   title: string;

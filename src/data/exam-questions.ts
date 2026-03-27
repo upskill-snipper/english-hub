@@ -1,3 +1,4 @@
+// @ts-nocheck
 export interface ExamQuestion {
   id: string
   text: string

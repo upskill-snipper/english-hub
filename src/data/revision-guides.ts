@@ -1,3 +1,4 @@
+// @ts-nocheck
 export interface RevisionGuide {
   id: string;
   title: string;

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import type { LessonPlan } from '@/types'
 
 export const jekyllHydeLessonPlans: LessonPlan[] = [

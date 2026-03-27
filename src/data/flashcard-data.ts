@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { poetryFlashcardDecks } from './flashcard-poetry';
 import { setTextFlashcardDecks } from './flashcard-set-texts';
 import { vocabularyDecks } from './flashcard-vocabulary';

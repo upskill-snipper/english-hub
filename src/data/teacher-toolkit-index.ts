@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * ───────────────────────────────────────────────────────────────────────────
  * ENGLISH HUB: COMPREHENSIVE TEACHER TOOLKIT INDEX

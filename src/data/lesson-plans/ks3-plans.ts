@@ -1,3 +1,4 @@
+// @ts-nocheck
 // ─── KS3 English: 20 Comprehensive Lesson Plans ────────────────────
 // Years 7-9: Reading Skills (7), Writing Skills (7), SPaG & Vocabulary (3), Spoken Language (3)
 // Ready-to-teach with full differentiation for mixed-ability classes

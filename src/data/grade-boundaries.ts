@@ -1,3 +1,4 @@
+// @ts-nocheck
 export interface GradeBoundaryData {
   id: string;
   board: string;

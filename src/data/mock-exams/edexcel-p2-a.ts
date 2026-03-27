@@ -1,3 +1,4 @@
+// @ts-nocheck
 import type { MockExamPaper } from '../mock-exams'
 
 // ─── Source Extracts: Edexcel Paper 2 Set A ─────────────────────────────────

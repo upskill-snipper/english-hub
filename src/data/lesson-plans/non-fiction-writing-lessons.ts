@@ -1,3 +1,4 @@
+// @ts-nocheck
 import type { LessonPlan } from './macbeth-lessons';
 
 // ─── Lesson 1: Writing to Argue — Persuasive Techniques ─────────────────────

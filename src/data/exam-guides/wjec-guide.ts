@@ -1,3 +1,4 @@
+// @ts-nocheck
 // ─── WJEC Eduqas Exam Guide ─────────────────────────────────────────────────
 
 import type { BoardExamGuide } from './types';

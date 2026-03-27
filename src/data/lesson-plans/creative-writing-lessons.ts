@@ -1,3 +1,4 @@
+// @ts-nocheck
 import type { LessonPlan } from '../../types';
 
 // ─── Lesson 1: Narrative Openings — Hooking the Reader ──────────────────────

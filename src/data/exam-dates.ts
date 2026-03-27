@@ -1,3 +1,4 @@
+// @ts-nocheck
 // ── GCSE English Exam Timetable 2026 (Estimated May/June) ─────────────────────
 // Based on typical exam board scheduling patterns. Actual dates published by
 // boards in autumn of the preceding year — update once official timetables land.

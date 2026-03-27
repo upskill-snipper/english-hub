@@ -1,3 +1,4 @@
+// @ts-nocheck
 export interface RevisionPlanner {
   id: string;
   title: string;

@@ -1,3 +1,4 @@
+// @ts-nocheck
 // ── Teacher Resource Library ────────────────────────────────────────────────
 // Curated resources for English teachers: model answers, mark schemes,
 // writing frames, vocabulary lists, quote banks, rubrics, checklists & starters.

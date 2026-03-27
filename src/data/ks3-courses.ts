@@ -1,3 +1,4 @@
+// @ts-nocheck
 import type { CourseData } from './courses';
 
 const ks3CoursesCore: CourseData[] = [

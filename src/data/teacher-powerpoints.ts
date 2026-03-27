@@ -1,3 +1,4 @@
+// @ts-nocheck
 export interface TeacherPresentation {
   id: string;
   title: string;

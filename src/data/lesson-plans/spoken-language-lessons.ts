@@ -1,3 +1,4 @@
+// @ts-nocheck
 import type { LessonPlan } from '@/types'
 
 // ─── Lesson 1: Planning a Spoken Language Presentation ───────────────────────

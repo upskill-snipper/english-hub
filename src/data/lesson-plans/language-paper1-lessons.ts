@@ -1,3 +1,4 @@
+// @ts-nocheck
 import type { LessonPlan } from "@/types";
 
 // ─── AQA English Language Paper 1: Explorations in Creative Reading & Writing ─

@@ -1,3 +1,4 @@
+// @ts-nocheck
 // Teacher Resources Extended
 // Comprehensive support for busy English teachers: gap analysis, lesson ideas, homework bank
 

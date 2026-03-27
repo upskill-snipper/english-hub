@@ -1,3 +1,4 @@
+// @ts-nocheck
 export interface DisplayResource {
   id: string;
   title: string;

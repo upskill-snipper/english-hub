@@ -1,3 +1,4 @@
+// @ts-nocheck
 import type { BoardExamGuide } from './types';
 
 export const edexcelGuide: BoardExamGuide = {

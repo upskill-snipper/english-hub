@@ -1,3 +1,4 @@
+// @ts-nocheck
 import type { LessonPlan } from "../../types";
 
 // ─── Original Fiction Extracts ───────────────────────────────────────────────

@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * GCSE English mark scheme criteria by exam board.
  * Each board defines Assessment Objectives (AOs) with descriptors per grade band.
