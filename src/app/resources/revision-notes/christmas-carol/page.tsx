@@ -33,7 +33,7 @@ function Section({
           <span className={`h-2.5 w-2.5 rounded-full ${colour}`} />
           <h2 className="text-lg font-bold text-foreground">{title}</h2>
           {badge && (
-            <span className="rounded-full bg-accent-50 px-2.5 py-0.5 text-xs font-semibold text-accent-600">
+            <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary">
               {badge}
             </span>
           )}
@@ -56,7 +56,7 @@ function Section({
 
 function Quote({ text, speaker, act, analysis }: { text: string; speaker: string; act: string; analysis: string }) {
   return (
-    <div className="rounded-lg border-l-4 border-accent bg-accent-50/40 p-4">
+    <div className="rounded-lg border-l-4 border-accent bg-primary/10 p-4">
       <p className="text-sm font-semibold italic text-foreground">&ldquo;{text}&rdquo;</p>
       <p className="mt-1 text-xs text-muted-foreground">{speaker} &mdash; {act}</p>
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
@@ -73,11 +73,11 @@ export default function ChristmasCarolRevisionPage() {
       <div className="mb-8">
         <div className="flex flex-wrap items-center gap-3 mb-2">
           <span className="rounded-full bg-green-100 px-3 py-1 text-xs font-bold text-green-700 uppercase tracking-wider">Victorian Novella</span>
-          <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-semibold text-accent-600">AQA</span>
-          <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-semibold text-accent-600">Edexcel</span>
-          <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-semibold text-accent-600">CAIE</span>
-          <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-semibold text-accent-600">OCR</span>
-          <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-semibold text-accent-600">WJEC</span>
+          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">AQA</span>
+          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">Edexcel</span>
+          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">CAIE</span>
+          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">OCR</span>
+          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">WJEC</span>
         </div>
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           A Christmas Carol &mdash; Complete Revision Guide
@@ -97,7 +97,7 @@ export default function ChristmasCarolRevisionPage() {
             <a
               key={s}
               href={`#${s.toLowerCase().replace(/\s+/g, "-")}`}
-              className="rounded-lg bg-muted px-3 py-1.5 text-xs font-medium text-muted-foreground hover:bg-accent-50 hover:text-accent-600 transition-colors"
+              className="rounded-lg bg-muted px-3 py-1.5 text-xs font-medium text-muted-foreground hover:bg-primary/10 hover:text-primary transition-colors"
             >
               {s}
             </a>

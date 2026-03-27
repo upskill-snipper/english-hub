@@ -309,8 +309,8 @@ const techniques: Technique[] = [
 
 function TypeBadge({ type }: { type: Technique["type"] }) {
   const colours: Record<string, string> = {
-    Language: "bg-accent-100 text-accent-700",
-    Structure: "bg-primary-100 text-primary-700",
+    Language: "bg-primary/15 text-primary",
+    Structure: "bg-primary/15 text-primary",
     Both: "bg-success-100 text-success-700",
   };
   return (
@@ -329,7 +329,7 @@ export default function TechniquesPage() {
     <>
 
       {/* ── Hero ──────────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-primary-700 to-primary px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <Link
             href="/resources/english-language/edexcel"
@@ -351,10 +351,10 @@ export default function TechniquesPage() {
       {/* ── Quick nav ─────────────────────────────────────────────── */}
       <section className="border-b border-border bg-card px-4 py-4 sticky top-0 z-10 shadow-md">
         <div className="mx-auto flex max-w-4xl flex-wrap items-center justify-center gap-3">
-          <a href="#language" className="rounded-full bg-accent-100 px-4 py-1.5 text-sm font-semibold text-accent-700 hover:bg-accent-200 transition-colors">
+          <a href="#language" className="rounded-full bg-primary/15 px-4 py-1.5 text-sm font-semibold text-primary hover:bg-accent-200 transition-colors">
             Language ({languageTechniques.length})
           </a>
-          <a href="#structure" className="rounded-full bg-primary-100 px-4 py-1.5 text-sm font-semibold text-primary-700 hover:bg-primary-200 transition-colors">
+          <a href="#structure" className="rounded-full bg-primary/15 px-4 py-1.5 text-sm font-semibold text-primary hover:bg-primary-200 transition-colors">
             Structure ({structureTechniques.length})
           </a>
           <a href="#both" className="rounded-full bg-success-100 px-4 py-1.5 text-sm font-semibold text-success-700 hover:bg-success-200 transition-colors">
@@ -384,8 +384,8 @@ export default function TechniquesPage() {
                   <p className="mt-1 text-sm italic text-foreground">{t.example}</p>
                   <p className="mt-1 text-xs text-muted-foreground">&mdash; {t.source}</p>
                 </div>
-                <div className="mt-3 rounded-lg bg-accent-50 p-4">
-                  <p className="text-sm font-medium text-accent-700">Effect on the reader:</p>
+                <div className="mt-3 rounded-lg bg-primary/10 p-4">
+                  <p className="text-sm font-medium text-primary">Effect on the reader:</p>
                   <p className="mt-1 text-sm text-muted-foreground">{t.effect}</p>
                 </div>
               </div>
@@ -412,8 +412,8 @@ export default function TechniquesPage() {
                   <p className="mt-1 text-sm italic text-foreground">{t.example}</p>
                   <p className="mt-1 text-xs text-muted-foreground">&mdash; {t.source}</p>
                 </div>
-                <div className="mt-3 rounded-lg bg-primary-50 p-4">
-                  <p className="text-sm font-medium text-primary-700">Effect on the reader:</p>
+                <div className="mt-3 rounded-lg bg-primary/10 p-4">
+                  <p className="text-sm font-medium text-primary">Effect on the reader:</p>
                   <p className="mt-1 text-sm text-muted-foreground">{t.effect}</p>
                 </div>
               </div>
@@ -462,12 +462,12 @@ export default function TechniquesPage() {
                 Every analytical point should follow this structure for maximum marks:
               </p>
               <div className="mt-4 grid gap-4 sm:grid-cols-3">
-                <div className="rounded-lg bg-accent-50 p-4 text-center">
-                  <p className="text-lg font-bold text-accent-700">WHAT</p>
+                <div className="rounded-lg bg-primary/10 p-4 text-center">
+                  <p className="text-lg font-bold text-primary">WHAT</p>
                   <p className="mt-1 text-sm text-muted-foreground">Identify the technique and embed a quotation</p>
                 </div>
-                <div className="rounded-lg bg-primary-50 p-4 text-center">
-                  <p className="text-lg font-bold text-primary-700">HOW</p>
+                <div className="rounded-lg bg-primary/10 p-4 text-center">
+                  <p className="text-lg font-bold text-primary">HOW</p>
                   <p className="mt-1 text-sm text-muted-foreground">Name the technique using subject terminology</p>
                 </div>
                 <div className="rounded-lg bg-success-50 p-4 text-center">
@@ -479,7 +479,7 @@ export default function TechniquesPage() {
 
             <div className="rounded-xl border border-border bg-card p-6 shadow-md">
               <h3 className="text-lg font-bold text-foreground">Example Analytical Paragraph</h3>
-              <div className="mt-3 rounded-lg border-l-4 border-accent bg-accent-50 p-4">
+              <div className="mt-3 rounded-lg border-l-4 border-accent bg-primary/10 p-4">
                 <p className="text-sm text-foreground leading-relaxed">
                   The writer uses the <span className="font-semibold text-primary">[HOW]</span> metaphor
                   <span className="font-semibold text-accent"> [WHAT]</span> &ldquo;the darkness swallowed him whole&rdquo;

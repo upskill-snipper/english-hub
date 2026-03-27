@@ -125,7 +125,7 @@ export default function OCRJekyllAndHydePage() {
     <>
 
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-primary to-primary-600 px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary/90 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-3xl text-center">
           <Link
             href="/resources/english-literature/ocr"
@@ -155,7 +155,7 @@ export default function OCRJekyllAndHydePage() {
             OCR Exam Format
           </h2>
           <div className="mt-4 space-y-3">
-            <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+            <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
               <p className="font-semibold text-primary">Paper 2: Exploring Effects and Impact</p>
               <p className="mt-1 text-sm text-muted-foreground">
                 Section B &mdash; 19th Century and Modern Prose/Drama. You will
@@ -286,8 +286,8 @@ export default function OCRJekyllAndHydePage() {
                 that he created a monster he could not control, and his death is
                 the ultimate consequence of his hubris.
               </p>
-              <div className="mt-4 rounded border border-accent/20 bg-accent-50 p-3">
-                <p className="text-sm font-medium text-accent-700">Key character arc</p>
+              <div className="mt-4 rounded border border-accent/20 bg-primary/10 p-3">
+                <p className="text-sm font-medium text-primary">Key character arc</p>
                 <p className="mt-1 text-sm text-accent-800">
                   Respectable but repressed &rarr; Creates Hyde to indulge
                   desires &rarr; Enjoys the freedom &rarr; Loses control &rarr;
@@ -656,7 +656,7 @@ export default function OCRJekyllAndHydePage() {
               recommended structure:
             </p>
             <div className="space-y-3">
-              <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+              <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                 <p className="font-semibold text-primary">Introduction (3&ndash;4 sentences)</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Address the question directly. State Stevenson&rsquo;s overall
@@ -664,7 +664,7 @@ export default function OCRJekyllAndHydePage() {
                   Victorian context and the concept of duality.
                 </p>
               </div>
-              <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+              <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                 <p className="font-semibold text-primary">Paragraph 1: How the theme/character is introduced</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Analyse the early chapters. Use a memorised quotation and
@@ -672,7 +672,7 @@ export default function OCRJekyllAndHydePage() {
                   perspective and what is withheld from the reader.
                 </p>
               </div>
-              <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+              <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                 <p className="font-semibold text-primary">Paragraph 2: Development through the middle chapters</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   How does the theme/character develop? Consider the escalation
@@ -680,7 +680,7 @@ export default function OCRJekyllAndHydePage() {
                   technique of withholding information. Link to context.
                 </p>
               </div>
-              <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+              <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                 <p className="font-semibold text-primary">Paragraph 3: The revelations (Chapters 9&ndash;10)</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   How is the theme/character illuminated by the final
@@ -689,7 +689,7 @@ export default function OCRJekyllAndHydePage() {
                   Stevenson saves the truth until the end.
                 </p>
               </div>
-              <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+              <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                 <p className="font-semibold text-primary">Paragraph 4: Wider significance</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   What is Stevenson&rsquo;s message about Victorian society?
@@ -697,7 +697,7 @@ export default function OCRJekyllAndHydePage() {
                   challenge the reader&rsquo;s assumptions about human nature?
                 </p>
               </div>
-              <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+              <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                 <p className="font-semibold text-primary">Conclusion</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Final evaluative judgement. What is Stevenson&rsquo;s
@@ -707,8 +707,8 @@ export default function OCRJekyllAndHydePage() {
               </div>
             </div>
 
-            <div className="mt-6 rounded-lg border border-accent/20 bg-accent-50 p-5">
-              <h3 className="font-semibold text-accent-700">OCR Exam Technique Tips</h3>
+            <div className="mt-6 rounded-lg border border-accent/20 bg-primary/10 p-5">
+              <h3 className="font-semibold text-primary">OCR Exam Technique Tips</h3>
               <ul className="mt-2 space-y-2 text-sm text-muted-foreground">
                 <li>&bull; <strong>No extract:</strong> You must memorise quotations. Aim to use 4&ndash;6 short quotations in your essay.</li>
                 <li>&bull; <strong>AO1:</strong> Make clear, sustained arguments that directly answer the question. Explore how meaning develops across the novella.</li>

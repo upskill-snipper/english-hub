@@ -18,7 +18,7 @@ export default function OCRPoetryPage() {
     <>
 
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-primary to-primary-600 px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary/90 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-3xl text-center">
           <Link
             href="/resources/english-literature/ocr"
@@ -293,21 +293,21 @@ export default function OCRPoetryPage() {
                 Compare across multiple layers &mdash; not just theme:
               </p>
               <div className="mt-3 grid gap-3 sm:grid-cols-2">
-                <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+                <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                   <p className="font-semibold text-primary">Themes and Ideas</p>
                   <p className="mt-1 text-sm text-muted-foreground">
                     How do both poets explore the same theme? Do they agree or
                     disagree? Do they focus on different aspects?
                   </p>
                 </div>
-                <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+                <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                   <p className="font-semibold text-primary">Language and Imagery</p>
                   <p className="mt-1 text-sm text-muted-foreground">
                     What types of imagery do the poets use? Are there
                     contrasting semantic fields? Different tones?
                   </p>
                 </div>
-                <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+                <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                   <p className="font-semibold text-primary">Form and Structure</p>
                   <p className="mt-1 text-sm text-muted-foreground">
                     How do the poets structure their poems? Regular vs
@@ -315,7 +315,7 @@ export default function OCRPoetryPage() {
                     line length?
                   </p>
                 </div>
-                <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+                <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                   <p className="font-semibold text-primary">Voice and Perspective</p>
                   <p className="mt-1 text-sm text-muted-foreground">
                     Who is speaking in each poem? First person vs third
@@ -323,14 +323,14 @@ export default function OCRPoetryPage() {
                     meaning?
                   </p>
                 </div>
-                <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+                <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                   <p className="font-semibold text-primary">Tone and Mood</p>
                   <p className="mt-1 text-sm text-muted-foreground">
                     What is the emotional atmosphere of each poem? Where do
                     the tones differ? How does tone relate to meaning?
                   </p>
                 </div>
-                <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+                <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                   <p className="font-semibold text-primary">Context</p>
                   <p className="mt-1 text-sm text-muted-foreground">
                     How does the historical or personal context of each poet

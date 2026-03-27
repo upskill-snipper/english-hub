@@ -45,9 +45,9 @@ export default function GradeBoundariesPage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary to-primary-600 px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary/90 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-accent-200">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary/20">
             AQA GCSE English Language (8700)
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -136,14 +136,14 @@ export default function GradeBoundariesPage() {
                   <td className="py-2 pr-4">~69%</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-bold text-accent-700">7</td>
+                  <td className="py-2 pr-4 font-bold text-primary">7</td>
                   <td className="py-2 pr-4">97</td>
                   <td className="py-2 pr-4">99</td>
                   <td className="py-2 pr-4">100</td>
                   <td className="py-2 pr-4">~62%</td>
                 </tr>
                 <tr>
-                  <td className="py-2 pr-4 font-bold text-accent-700">6</td>
+                  <td className="py-2 pr-4 font-bold text-primary">6</td>
                   <td className="py-2 pr-4">84</td>
                   <td className="py-2 pr-4">86</td>
                   <td className="py-2 pr-4">87</td>
@@ -227,8 +227,8 @@ export default function GradeBoundariesPage() {
               </div>
             </div>
 
-            <div className="rounded-lg border-l-4 border-accent-500 bg-accent-50/30 p-5">
-              <h3 className="text-lg font-bold text-accent-700">Grades 7-8 &mdash; Strong</h3>
+            <div className="rounded-lg border-l-4 border-accent-500 bg-primary/10/30 p-5">
+              <h3 className="text-lg font-bold text-primary">Grades 7-8 &mdash; Strong</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <p><strong>Reading:</strong></p>
                 <ul className="ml-5 list-disc space-y-1">
@@ -249,7 +249,7 @@ export default function GradeBoundariesPage() {
               </div>
             </div>
 
-            <div className="rounded-lg border-l-4 border-primary bg-primary-50/30 p-5">
+            <div className="rounded-lg border-l-4 border-primary bg-primary/10/30 p-5">
               <h3 className="text-lg font-bold text-primary">Grades 5-6 &mdash; Secure</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <p><strong>Reading:</strong></p>
@@ -443,7 +443,7 @@ export default function GradeBoundariesPage() {
                   <td className="py-2 pr-4">16 marks (comparison)</td>
                   <td className="py-2 pr-4">P1: AO4 / P2: AO3</td>
                 </tr>
-                <tr className="bg-accent-50/50">
+                <tr className="bg-primary/10/50">
                   <td className="py-2 pr-4 font-semibold">Q5</td>
                   <td className="py-2 pr-4">40 marks (creative writing)</td>
                   <td className="py-2 pr-4">40 marks (transactional writing)</td>

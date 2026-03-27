@@ -49,8 +49,8 @@ const GRADE_CARDS = [
     grade: "9",
     label: "Exceptional",
     href: "/resources/grade-targets/grade-9",
-    colour: "border-[#8E44AD]",
-    bg: "bg-[#8E44AD]",
+    colour: "border-primary",
+    bg: "bg-primary",
     tagline: "Critical insight, originality, sophistication",
     description:
       "A Grade 9 places you in the top 2% of candidates. It requires conceptualised responses, original thinking, and writing that is genuinely compelling. See what makes the very best stand out.",
@@ -298,7 +298,7 @@ export default function GradeTargetsPage() {
                               ? "bg-[#27AE60]"
                               : level.grade === "7"
                               ? "bg-primary"
-                              : "bg-[#8E44AD]"
+                              : "bg-primary"
                           }`}
                         >
                           Grade {level.grade}
@@ -357,7 +357,7 @@ export default function GradeTargetsPage() {
                             ? "bg-[#27AE60]/10 text-[#27AE60]"
                             : option.level.includes("6-7")
                             ? "bg-primary/10 text-primary"
-                            : "bg-[#8E44AD]/10 text-[#8E44AD]"
+                            : "bg-primary/10 text-primary"
                         }`}
                       >
                         {option.level}

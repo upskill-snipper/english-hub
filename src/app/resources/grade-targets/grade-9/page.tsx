@@ -18,7 +18,7 @@ const WHAT_MAKES_EXCEPTIONAL = [
     description:
       "A Grade 9 response is not a series of good points -- it is a sustained, coherent argument built around a central concept or thesis. Every paragraph connects to and develops this overarching idea. The examiner should be able to summarise your entire essay in one sentence, and that sentence should be interesting.",
     icon: (
-      <svg className="h-8 w-8 text-[#8E44AD]" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+      <svg className="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
       </svg>
     ),
@@ -28,7 +28,7 @@ const WHAT_MAKES_EXCEPTIONAL = [
     description:
       "Grade 9 candidates do not simply accept texts at face value. They question, challenge, and probe. They consider how texts construct meaning, how readers are positioned, and how interpretations change depending on context. They treat literature as an ongoing conversation, not a fixed set of answers.",
     icon: (
-      <svg className="h-8 w-8 text-[#8E44AD]" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+      <svg className="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
         <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
       </svg>
@@ -39,7 +39,7 @@ const WHAT_MAKES_EXCEPTIONAL = [
     description:
       "The best Grade 9 responses say something the examiner has not read before. This does not mean being controversial for the sake of it -- it means finding a fresh angle, a surprising connection, or an interpretation that demonstrates genuine independent thinking rather than rehearsed points.",
     icon: (
-      <svg className="h-8 w-8 text-[#8E44AD]" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+      <svg className="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 0 0-2.455 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
       </svg>
     ),
@@ -49,7 +49,7 @@ const WHAT_MAKES_EXCEPTIONAL = [
     description:
       "Grade 9 is not just about analysis -- it is about the quality of the writing itself. The essay should read fluently, with varied and controlled sentence structures, precise vocabulary, and elegant transitions. The writing should be a pleasure to read, not just technically accurate.",
     icon: (
-      <svg className="h-8 w-8 text-[#8E44AD]" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+      <svg className="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
       </svg>
     ),
@@ -190,7 +190,7 @@ export default function Grade9Page() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary to-[#8E44AD]/80 px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary/80 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <Link
             href="/resources/grade-targets"
@@ -202,7 +202,7 @@ export default function Grade9Page() {
             Grade Targets
           </Link>
           <div className="mt-4 flex items-center justify-center gap-3">
-            <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#8E44AD] text-2xl font-bold text-white shadow-lg">
+            <span className="flex h-14 w-14 items-center justify-center rounded-full bg-primary text-2xl font-bold text-white shadow-lg">
               9
             </span>
             <div className="text-left">
@@ -237,7 +237,7 @@ export default function Grade9Page() {
           {WHAT_MAKES_EXCEPTIONAL.map((item) => (
             <div
               key={item.title}
-              className="rounded-xl border-2 border-[#8E44AD]/20 bg-card p-6 shadow-md"
+              className="rounded-xl border-2 border-primary/20 bg-card p-6 shadow-md"
             >
               {item.icon}
               <h3 className="mt-3 text-lg font-bold text-foreground">
@@ -268,14 +268,14 @@ export default function Grade9Page() {
                 key={item.title}
                 className="rounded-xl border border-border bg-card p-6 shadow-md"
               >
-                <h3 className="text-lg font-bold text-[#8E44AD]">
+                <h3 className="text-lg font-bold text-primary">
                   {item.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {item.description}
                 </p>
-                <div className="mt-4 rounded-lg border border-[#8E44AD]/10 bg-[#8E44AD]/5 p-4">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-[#8E44AD]">
+                <div className="mt-4 rounded-lg border border-primary/10 bg-primary/5 p-4">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-primary">
                     Example
                   </p>
                   <p className="mt-1 text-sm italic leading-relaxed text-muted-foreground">
@@ -316,8 +316,8 @@ export default function Grade9Page() {
                     {item.weak}
                   </p>
                 </div>
-                <div className="p-5 bg-[#8E44AD]/5">
-                  <span className="rounded-full bg-[#8E44AD]/10 px-2.5 py-0.5 text-xs font-semibold text-[#8E44AD]">
+                <div className="p-5 bg-primary/5">
+                  <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary">
                     Exceptional (9)
                   </span>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
@@ -331,7 +331,7 @@ export default function Grade9Page() {
       </section>
 
       {/* Example responses */}
-      <section className="bg-gradient-to-br from-[#8E44AD]/5 to-[#8E44AD]/10 px-4 py-12 sm:px-6 lg:px-8">
+      <section className="bg-gradient-to-br from-primary/5 to-primary/10 px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
           <h2 className="text-2xl font-bold text-foreground">
             Example Grade 9 Responses
@@ -349,7 +349,7 @@ export default function Grade9Page() {
                 className="overflow-hidden rounded-xl border border-border bg-card shadow-md"
               >
                 <div className="border-b border-border bg-muted px-6 py-4">
-                  <span className="rounded-full bg-[#8E44AD]/10 px-3 py-1 text-xs font-semibold text-[#8E44AD]">
+                  <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
                     {example.type}
                   </span>
                   <p className="mt-2 font-semibold text-foreground">
@@ -378,8 +378,8 @@ export default function Grade9Page() {
                   </div>
                 </div>
 
-                <div className="border-t border-[#8E44AD]/20 bg-[#8E44AD]/5 px-6 py-4">
-                  <h4 className="text-xs font-semibold uppercase tracking-wide text-[#8E44AD]">
+                <div className="border-t border-primary/20 bg-primary/5 px-6 py-4">
+                  <h4 className="text-xs font-semibold uppercase tracking-wide text-primary">
                     Examiner Comment
                   </h4>
                   <p className="mt-1 text-sm leading-relaxed text-muted-foreground">

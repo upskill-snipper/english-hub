@@ -465,9 +465,9 @@ export default function ChristmasCarolPage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary to-primary-600 px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary/90 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-accent-200">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary/20">
             AQA English Literature &middot; Paper 1
           </p>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -527,7 +527,7 @@ export default function ChristmasCarolPage() {
                   </p>
                 ))}
               </div>
-              <p className="mt-3 text-sm text-primary-700 bg-primary-50 rounded-lg p-3">
+              <p className="mt-3 text-sm text-primary bg-primary/10 rounded-lg p-3">
                 <span className="font-semibold">Key moments:</span>{" "}
                 {stave.keyMoments}
               </p>
@@ -585,7 +585,7 @@ export default function ChristmasCarolPage() {
                     {char.keyQuotes.map((q) => (
                       <p
                         key={q}
-                        className="text-sm italic text-primary-700 bg-primary-50 rounded px-3 py-1.5"
+                        className="text-sm italic text-primary bg-primary/10 rounded px-3 py-1.5"
                       >
                         {q}
                       </p>
@@ -648,7 +648,7 @@ export default function ChristmasCarolPage() {
       </section>
 
       {/* ── Key Quotations ───────────────────────────────────────── */}
-      <section id="quotations" className="bg-primary-50 px-4 py-12 sm:py-16">
+      <section id="quotations" className="bg-primary/10 px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-2xl font-bold text-foreground">
             Key Quotations with Analysis
@@ -734,7 +734,7 @@ export default function ChristmasCarolPage() {
       <section className="mx-auto max-w-5xl px-4 py-8">
         <Link
           href="/resources/english-literature/aqa"
-          className="text-sm font-medium text-accent hover:text-accent-600 transition"
+          className="text-sm font-medium text-accent hover:text-primary transition"
         >
           &larr; Back to AQA English Literature
         </Link>

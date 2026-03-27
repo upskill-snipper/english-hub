@@ -35,11 +35,11 @@ const THEMES = [
     description:
       "Guilt as a destructive force -- from Lady Macbeth's madness to the collective shame in An Inspector Calls and the PTSD of Remains.",
     texts: ["Macbeth", "An Inspector Calls", "Remains", "A Christmas Carol"],
-    colour: "border-[#8E44AD]",
-    bgColour: "bg-[#8E44AD]/10",
-    textColour: "text-[#8E44AD]",
+    colour: "border-primary",
+    bgColour: "bg-primary/10",
+    textColour: "text-primary",
     icon: (
-      <svg className="h-10 w-10 text-[#8E44AD]" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+      <svg className="h-10 w-10 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
       </svg>
     ),

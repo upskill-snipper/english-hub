@@ -921,10 +921,10 @@ export default function LessonPlanDetailPage() {
           </div>
 
           {/* Plenary */}
-          <div className="mt-4 rounded-xl border-l-4 border-[#8E44AD] bg-[#8E44AD]/5 p-5">
+          <div className="mt-4 rounded-xl border-l-4 border-primary bg-primary/5 p-5">
             <div className="flex items-center justify-between">
-              <h3 className="font-bold text-[#8E44AD]">Plenary: {plan.plenary.title}</h3>
-              <span className="rounded-full bg-[#8E44AD]/10 px-2.5 py-0.5 text-xs font-semibold text-[#8E44AD]">
+              <h3 className="font-bold text-primary">Plenary: {plan.plenary.title}</h3>
+              <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary">
                 {plan.plenary.duration}
               </span>
             </div>

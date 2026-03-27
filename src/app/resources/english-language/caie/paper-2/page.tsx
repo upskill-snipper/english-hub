@@ -453,7 +453,7 @@ export default function Paper2Page() {
                 <span className="flex h-8 w-8 items-center justify-center rounded-full bg-accent text-sm font-bold text-white">6</span>
                 <div>
                   <p className="font-semibold text-foreground">Outstanding (35&ndash;40 marks)</p>
-                  <p className="text-xs text-accent-600">A* / Grade 9 standard</p>
+                  <p className="text-xs text-primary">A* / Grade 9 standard</p>
                 </div>
               </div>
               <div className="mt-3 grid gap-3 sm:grid-cols-2">

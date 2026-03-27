@@ -390,7 +390,7 @@ export default function Grade7Page() {
             </Link>
             <Link
               href="/resources/grade-targets/grade-9"
-              className="group inline-flex items-center gap-2 rounded-lg bg-[#8E44AD] px-5 py-2.5 text-sm font-semibold text-white shadow transition hover:bg-[#6C3483]"
+              className="group inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow transition hover:bg-primary/80"
             >
               Aiming for Grade 9? <ArrowRight />
             </Link>

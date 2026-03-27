@@ -20,7 +20,7 @@ export default function ExamDayPage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-accent-200">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary/20">
             Exam Technique
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -238,7 +238,7 @@ export default function ExamDayPage() {
           </div>
         </div>
 
-        <div className="mt-8 rounded-xl border border-accent-100 bg-accent-50/50 p-6">
+        <div className="mt-8 rounded-xl border border-primary/20 bg-primary/10/50 p-6">
           <p className="text-sm text-muted-foreground leading-relaxed">
             <strong>Pro tip:</strong> Cross out your plan with a single line
             when you are done. The examiner will not mark it, but if you run out

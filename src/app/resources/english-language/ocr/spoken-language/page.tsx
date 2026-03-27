@@ -18,7 +18,7 @@ export default function OCRSpokenLanguagePage() {
     <>
 
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-primary to-primary-600 px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary/90 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-3xl text-center">
           <Link
             href="/resources/english-language/ocr"
@@ -159,7 +159,7 @@ export default function OCRSpokenLanguagePage() {
               Example Topics
             </h3>
             <div className="mt-3 grid gap-3 sm:grid-cols-2">
-              <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+              <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                 <p className="text-sm font-medium text-primary">Persuasive / Argumentative</p>
                 <ul className="ml-4 mt-2 list-disc space-y-1 text-sm text-muted-foreground">
                   <li>Should school uniforms be abolished?</li>
@@ -169,7 +169,7 @@ export default function OCRSpokenLanguagePage() {
                   <li>Should animals be used in scientific research?</li>
                 </ul>
               </div>
-              <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+              <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                 <p className="text-sm font-medium text-primary">Informative / Explanatory</p>
                 <ul className="ml-4 mt-2 list-disc space-y-1 text-sm text-muted-foreground">
                   <li>How climate change affects the UK</li>
@@ -387,8 +387,8 @@ export default function OCRSpokenLanguagePage() {
               </ul>
             </div>
 
-            <div className="rounded-lg border border-accent/30 bg-accent-50 p-5">
-              <h3 className="font-semibold text-accent-700">Merit</h3>
+            <div className="rounded-lg border border-accent/30 bg-primary/10 p-5">
+              <h3 className="font-semibold text-primary">Merit</h3>
               <ul className="ml-4 mt-2 list-disc space-y-1 text-sm text-muted-foreground">
                 <li>Presentation is clearly and competently delivered</li>
                 <li>Content is well-organised and engaging</li>

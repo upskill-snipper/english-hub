@@ -1516,14 +1516,14 @@ const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 /* ─── Category colours ───────────────────────────────────────── */
 
 const CATEGORY_COLOURS: Record<string, string> = {
-  "Sentence Types": "bg-primary-50 text-primary-700 border-primary-200",
-  "Paragraph Techniques": "bg-accent-50 text-accent-700 border-accent-200",
+  "Sentence Types": "bg-primary/10 text-primary border-primary-200",
+  "Paragraph Techniques": "bg-primary/10 text-primary border-primary/20",
   "Narrative Structures": "bg-success-50 text-success-700 border-success-200",
-  "Text Structures": "bg-primary-100 text-primary-800 border-primary-300",
-  "Poetry Form": "bg-accent-100 text-accent-800 border-accent-300",
+  "Text Structures": "bg-primary/15 text-primary-800 border-primary-300",
+  "Poetry Form": "bg-primary/15 text-accent-800 border-accent-300",
   "Dramatic Structure": "bg-warn-50 text-warn-700 border-warn-200",
   "Opening Techniques": "bg-success-100 text-success-800 border-success-300",
-  "Ending Techniques": "bg-primary-50 text-primary-700 border-primary-200",
+  "Ending Techniques": "bg-primary/10 text-primary border-primary-200",
   "Additional Structural Techniques": "bg-muted text-muted-foreground border-border",
 };
 
@@ -1605,8 +1605,8 @@ function TechniqueCard({ t }: { t: Technique }) {
         <div className="border-t border-border px-5 pb-6 pt-4 sm:px-6">
           <div className="grid gap-5 sm:grid-cols-2">
             {/* Example */}
-            <div className="rounded-lg bg-accent-50 p-4">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-accent-700">
+            <div className="rounded-lg bg-primary/10 p-4">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-primary">
                 Example
               </h4>
               <p className="mt-2 text-sm italic leading-relaxed text-foreground">
@@ -1620,8 +1620,8 @@ function TechniqueCard({ t }: { t: Technique }) {
             </div>
 
             {/* Effect on reader */}
-            <div className="rounded-lg bg-primary-50 p-4">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-primary-700">
+            <div className="rounded-lg bg-primary/10 p-4">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-primary">
                 Effect on the reader
               </h4>
               <p className="mt-2 text-sm leading-relaxed text-foreground">
@@ -1715,7 +1715,7 @@ export default function StructuralDevicesPage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary to-primary-600 px-4 py-14 text-white sm:py-18">
+      <section className="bg-gradient-to-br from-primary to-primary/90 px-4 py-14 text-white sm:py-18">
         <div className="mx-auto max-w-4xl text-center">
           <nav className="text-sm text-white/70">
             <Link href="/resources/techniques" className="hover:text-white transition-colors">
@@ -1853,7 +1853,7 @@ export default function StructuralDevicesPage() {
         </div>
 
         {/* Cross-link */}
-        <div className="mt-12 rounded-xl border-2 border-accent/20 bg-accent-50 p-6 text-center sm:p-8">
+        <div className="mt-12 rounded-xl border-2 border-accent/20 bg-primary/10 p-6 text-center sm:p-8">
           <h2 className="text-lg font-bold text-foreground">
             Looking for language devices?
           </h2>

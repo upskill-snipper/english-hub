@@ -920,7 +920,7 @@ export default function JekyllAndHydePage() {
       </div>
 
       {/* Exam Tips */}
-      <div className="mt-6 rounded-xl border border-accent-100 bg-accent-50/50 p-6">
+      <div className="mt-6 rounded-xl border border-primary/20 bg-primary/10/50 p-6">
         <h3 className="text-lg font-bold text-foreground">Exam Tips for Jekyll and Hyde</h3>
         <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
           <li className="flex items-start gap-2">

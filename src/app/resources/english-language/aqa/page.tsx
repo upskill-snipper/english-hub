@@ -77,9 +77,9 @@ export default function AQAEnglishLanguagePage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary via-primary-600 to-accent-700 px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary via-primary/90 to-primary px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-accent-200">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary/20">
             AQA GCSE (8700)
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -117,7 +117,7 @@ export default function AQAEnglishLanguagePage() {
 
       {/* Overview */}
       <div className="mx-auto max-w-5xl px-4 py-10">
-        <div className="rounded-xl border border-accent-100 bg-accent-50/50 p-6 sm:p-8">
+        <div className="rounded-xl border border-primary/20 bg-primary/10/50 p-6 sm:p-8">
           <h2 className="text-xl font-bold text-foreground">
             About this qualification
           </h2>
@@ -159,7 +159,7 @@ export default function AQAEnglishLanguagePage() {
             >
               <div className="flex items-center justify-between">
                 {s.icon}
-                <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-semibold text-accent-600">
+                <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
                   {s.tag}
                 </span>
               </div>
@@ -180,7 +180,7 @@ export default function AQAEnglishLanguagePage() {
         </div>
 
         {/* Exam structure summary */}
-        <div className="mt-10 rounded-xl border border-accent-200 bg-gradient-to-r from-accent-50 to-primary-50 p-6 sm:p-8">
+        <div className="mt-10 rounded-xl border border-primary/20 bg-gradient-to-r from-primary/10 to-primary/10 p-6 sm:p-8">
           <h2 className="text-xl font-bold text-foreground">
             How is the qualification structured?
           </h2>
@@ -210,7 +210,7 @@ export default function AQAEnglishLanguagePage() {
           </h2>
           <ul className="mt-4 space-y-3 text-muted-foreground">
             <li className="flex gap-3">
-              <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent-100 text-xs font-bold text-accent-700">
+              <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/15 text-xs font-bold text-primary">
                 1
               </span>
               <span>
@@ -221,7 +221,7 @@ export default function AQAEnglishLanguagePage() {
               </span>
             </li>
             <li className="flex gap-3">
-              <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent-100 text-xs font-bold text-accent-700">
+              <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/15 text-xs font-bold text-primary">
                 2
               </span>
               <span>
@@ -231,7 +231,7 @@ export default function AQAEnglishLanguagePage() {
               </span>
             </li>
             <li className="flex gap-3">
-              <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent-100 text-xs font-bold text-accent-700">
+              <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/15 text-xs font-bold text-primary">
                 3
               </span>
               <span>
@@ -241,7 +241,7 @@ export default function AQAEnglishLanguagePage() {
               </span>
             </li>
             <li className="flex gap-3">
-              <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent-100 text-xs font-bold text-accent-700">
+              <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/15 text-xs font-bold text-primary">
                 4
               </span>
               <span>
@@ -251,7 +251,7 @@ export default function AQAEnglishLanguagePage() {
               </span>
             </li>
             <li className="flex gap-3">
-              <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent-100 text-xs font-bold text-accent-700">
+              <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/15 text-xs font-bold text-primary">
                 5
               </span>
               <span>
@@ -278,13 +278,13 @@ export default function AQAEnglishLanguagePage() {
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Link
               href="/resources/english-language/aqa/paper-1"
-              className="rounded-lg bg-card px-6 py-3 text-sm font-bold text-primary shadow-md transition hover:bg-accent-50"
+              className="rounded-lg bg-card px-6 py-3 text-sm font-bold text-primary shadow-md transition hover:bg-primary/10"
             >
               Paper 1
             </Link>
             <Link
               href="/resources/english-language/aqa/paper-2"
-              className="rounded-lg bg-card px-6 py-3 text-sm font-bold text-primary shadow-md transition hover:bg-accent-50"
+              className="rounded-lg bg-card px-6 py-3 text-sm font-bold text-primary shadow-md transition hover:bg-primary/10"
             >
               Paper 2
             </Link>

@@ -435,7 +435,7 @@ export default function CancellationFormPage() {
           <div className="mb-6 flex items-center gap-4 no-print">
             <button
               onClick={handlePrint}
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-primary text-white font-medium text-sm shadow-md hover:bg-primary-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-primary text-white font-medium text-sm shadow-md hover:bg-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors"
             >
               <svg
                 className="w-4 h-4"
@@ -669,7 +669,7 @@ function SuccessMessage({ refNumber }: { refNumber: string }) {
       <div className="pt-4 flex flex-col sm:flex-row gap-3 justify-center">
         <a
           href="/dashboard"
-          className="inline-flex items-center justify-center px-6 py-2.5 rounded-lg bg-primary text-white font-medium text-sm shadow-md hover:bg-primary-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors"
+          className="inline-flex items-center justify-center px-6 py-2.5 rounded-lg bg-primary text-white font-medium text-sm shadow-md hover:bg-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors"
         >
           Return to Dashboard
         </a>

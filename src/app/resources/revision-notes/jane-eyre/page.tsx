@@ -81,13 +81,13 @@ export default function JaneEyrePage() {
           <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-muted-foreground uppercase tracking-wider">
             19th-Century Prose
           </span>
-          <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-bold text-accent-600 uppercase tracking-wider">
+          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary uppercase tracking-wider">
             AQA
           </span>
-          <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-bold text-accent-600 uppercase tracking-wider">
+          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary uppercase tracking-wider">
             Edexcel
           </span>
-          <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-bold text-accent-600 uppercase tracking-wider">
+          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary uppercase tracking-wider">
             OCR
           </span>
         </div>

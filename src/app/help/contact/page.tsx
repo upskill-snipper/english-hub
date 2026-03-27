@@ -97,7 +97,7 @@ export default function ContactPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary via-primary-600 to-accent px-4 py-14 text-white sm:py-18">
+      <section className="bg-gradient-to-br from-primary via-primary/90 to-accent px-4 py-14 text-white sm:py-18">
         <div className="mx-auto max-w-3xl text-center">
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
             Get in Touch

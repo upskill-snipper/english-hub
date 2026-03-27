@@ -49,9 +49,9 @@ export default function Paper1Page() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary to-primary-600 px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary/90 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-accent-200">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary/20">
             AQA GCSE English Language &middot; 8700/1
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -83,7 +83,7 @@ export default function Paper1Page() {
       <div className="mx-auto max-w-5xl px-4 py-10 space-y-6">
 
         {/* ── Overview ────────────────────────────────────────────── */}
-        <div className="rounded-xl border border-accent-100 bg-accent-50/50 p-6 sm:p-8">
+        <div className="rounded-xl border border-primary/20 bg-primary/10/50 p-6 sm:p-8">
           <h2 className="text-xl font-bold text-foreground">Paper overview</h2>
           <p className="mt-3 text-muted-foreground">
             Paper 1 tests your ability to <strong>read and understand</strong> a
@@ -92,14 +92,14 @@ export default function Paper1Page() {
             narrative writing). The paper is split into two sections:
           </p>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
-            <div className="rounded-lg border border-accent-200 bg-card p-4">
+            <div className="rounded-lg border border-primary/20 bg-card p-4">
               <h3 className="font-bold text-primary">Section A: Reading</h3>
               <p className="mt-1 text-sm text-muted-foreground">
                 4 questions on one unseen fiction extract &middot; 40 marks &middot;
                 recommended 1 hour
               </p>
             </div>
-            <div className="rounded-lg border border-accent-200 bg-card p-4">
+            <div className="rounded-lg border border-primary/20 bg-card p-4">
               <h3 className="font-bold text-primary">Section B: Writing</h3>
               <p className="mt-1 text-sm text-muted-foreground">
                 1 question: descriptive or narrative writing &middot; 40 marks &middot;

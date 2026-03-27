@@ -155,7 +155,7 @@ export default function AqaEnglishLiteraturePage() {
       {/* ── Hero ── */}
       <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-accent-200">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary/20">
             GCSE Revision
           </p>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -248,7 +248,7 @@ export default function AqaEnglishLiteraturePage() {
                 />
                 <div className="flex flex-1 flex-col p-6">
                   <div className="flex items-center gap-2">
-                    <span className="inline-block rounded-full bg-accent-100 px-3 py-1 text-xs font-semibold text-accent-700">
+                    <span className="inline-block rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold text-primary">
                       {guide.tag}
                     </span>
                     <span className="text-xs text-muted-foreground">
@@ -350,7 +350,7 @@ export default function AqaEnglishLiteraturePage() {
       </section>
 
       {/* ── Assessment objectives ── */}
-      <section className="bg-primary-50 px-4 py-12 sm:py-16">
+      <section className="bg-primary/10 px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-2xl font-bold text-foreground">
             Assessment Objectives (AO1&ndash;AO4)

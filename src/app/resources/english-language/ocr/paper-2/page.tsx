@@ -19,7 +19,7 @@ export default function OCRPaper2Page() {
     <>
 
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-primary to-primary-600 px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary/90 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-3xl text-center">
           <Link
             href="/resources/english-language/ocr"
@@ -253,8 +253,8 @@ export default function OCRPaper2Page() {
                 writer makes the reader feel sympathy for the main
                 character.&rsquo; To what extent do you agree?&rdquo;
               </p>
-              <div className="mt-3 rounded border border-accent/20 bg-accent-50 p-4">
-                <p className="text-sm font-medium text-accent-700">How to structure an evaluation response</p>
+              <div className="mt-3 rounded border border-accent/20 bg-primary/10 p-4">
+                <p className="text-sm font-medium text-primary">How to structure an evaluation response</p>
                 <ol className="ml-4 mt-2 list-decimal space-y-1 text-sm text-accent-800">
                   <li>State your position clearly (agree, disagree, or partially agree)</li>
                   <li>Select evidence from the text that supports your view</li>
@@ -346,8 +346,8 @@ export default function OCRPaper2Page() {
                     openings like &ldquo;I woke up and&hellip;&rdquo; or
                     &ldquo;It was a dark and stormy night.&rdquo;
                   </p>
-                  <div className="mt-2 rounded border border-accent/20 bg-accent-50 p-3">
-                    <p className="text-sm font-medium text-accent-700">Strong opening example</p>
+                  <div className="mt-2 rounded border border-accent/20 bg-primary/10 p-3">
+                    <p className="text-sm font-medium text-primary">Strong opening example</p>
                     <p className="mt-1 text-sm italic text-accent-800">
                       &ldquo;The letter had been sitting on the kitchen table
                       for three days. Nobody wanted to open it.&rdquo;
@@ -408,7 +408,7 @@ export default function OCRPaper2Page() {
               </p>
 
               <div className="mt-4 space-y-3">
-                <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+                <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                   <p className="font-semibold text-primary">Use all five senses</p>
                   <p className="mt-1 text-sm text-muted-foreground">
                     Don&rsquo;t rely solely on visual description. What can
@@ -417,7 +417,7 @@ export default function OCRPaper2Page() {
                   </p>
                 </div>
 
-                <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+                <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                   <p className="font-semibold text-primary">Zoom in and out</p>
                   <p className="mt-1 text-sm text-muted-foreground">
                     Alternate between wide-angle panoramic descriptions and
@@ -426,7 +426,7 @@ export default function OCRPaper2Page() {
                   </p>
                 </div>
 
-                <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+                <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                   <p className="font-semibold text-primary">Use figurative language purposefully</p>
                   <p className="mt-1 text-sm text-muted-foreground">
                     A few well-chosen metaphors are more effective than a page
@@ -434,7 +434,7 @@ export default function OCRPaper2Page() {
                   </p>
                 </div>
 
-                <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+                <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                   <p className="font-semibold text-primary">Vary your sentence structures</p>
                   <p className="mt-1 text-sm text-muted-foreground">
                     Long, flowing sentences for calm or beauty. Short, sharp
@@ -443,7 +443,7 @@ export default function OCRPaper2Page() {
                   </p>
                 </div>
 
-                <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+                <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                   <p className="font-semibold text-primary">Create a clear structure</p>
                   <p className="mt-1 text-sm text-muted-foreground">
                     Even descriptive writing needs structure. Move through

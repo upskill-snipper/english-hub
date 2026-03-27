@@ -230,7 +230,7 @@ export default function OCRTechniquesPage() {
     <>
 
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-primary to-primary-600 px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary/90 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-3xl text-center">
           <Link
             href="/resources/english-language/ocr"
@@ -267,8 +267,8 @@ export default function OCRTechniquesPage() {
               writer&rsquo;s purpose, the text&rsquo;s context, and the
               reader&rsquo;s response.
             </p>
-            <div className="rounded border border-accent/20 bg-accent-50 p-4">
-              <p className="text-sm font-medium text-accent-700">
+            <div className="rounded border border-accent/20 bg-primary/10 p-4">
+              <p className="text-sm font-medium text-primary">
                 The golden rule of analysis
               </p>
               <p className="mt-1 text-sm text-accent-800">
@@ -374,21 +374,21 @@ export default function OCRTechniquesPage() {
               Use this simple framework to structure every analytical point:
             </p>
             <div className="mt-3 grid gap-4 sm:grid-cols-3">
-              <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+              <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                 <p className="font-semibold text-primary">WHAT</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   What technique is the writer using? Identify it and provide
                   a precise quotation.
                 </p>
               </div>
-              <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+              <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                 <p className="font-semibold text-primary">HOW</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   How does it work? Analyse the specific words, their
                   connotations, and the way the technique creates meaning.
                 </p>
               </div>
-              <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+              <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                 <p className="font-semibold text-primary">WHY</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Why has the writer used this technique? What effect does it

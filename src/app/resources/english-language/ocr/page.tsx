@@ -89,7 +89,7 @@ export default function OCREnglishLanguagePage() {
     <>
 
       {/* ── Hero banner ─────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-primary to-primary-600 px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary/90 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-semibold uppercase tracking-wider text-white/80">
             OCR GCSE (J351)
@@ -173,7 +173,7 @@ export default function OCREnglishLanguagePage() {
                 href={s.href}
                 className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-md transition hover:border-accent/40 hover:shadow-md"
               >
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-accent-50 text-accent transition group-hover:bg-accent-100">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-accent transition group-hover:bg-primary/15">
                   {s.icon}
                 </div>
                 <h3 className="text-lg font-semibold text-foreground group-hover:text-accent">

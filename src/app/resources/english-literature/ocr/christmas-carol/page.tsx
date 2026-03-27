@@ -125,7 +125,7 @@ export default function OCRChristmasCarolPage() {
     <>
 
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-primary to-primary-600 px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary/90 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-3xl text-center">
           <Link
             href="/resources/english-literature/ocr"
@@ -154,7 +154,7 @@ export default function OCRChristmasCarolPage() {
             OCR Exam Format
           </h2>
           <div className="mt-4 space-y-3">
-            <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+            <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
               <p className="font-semibold text-primary">Paper 2: Exploring Effects and Impact</p>
               <p className="mt-1 text-sm text-muted-foreground">
                 Section B &mdash; 19th Century and Modern Prose/Drama. You will
@@ -280,8 +280,8 @@ export default function OCRChristmasCarolPage() {
                 essence of true Christianity. His transformation is Dickens&rsquo;s
                 argument that anyone can change.
               </p>
-              <div className="mt-4 rounded border border-accent/20 bg-accent-50 p-3">
-                <p className="text-sm font-medium text-accent-700">Key character arc</p>
+              <div className="mt-4 rounded border border-accent/20 bg-primary/10 p-3">
+                <p className="text-sm font-medium text-primary">Key character arc</p>
                 <p className="mt-1 text-sm text-accent-800">
                   Cold and miserly &rarr; Confronted by Marley &rarr; Emotionally
                   stirred by the past &rarr; Moved by the Cratchits &rarr;
@@ -639,7 +639,7 @@ export default function OCRChristmasCarolPage() {
               recommended structure:
             </p>
             <div className="space-y-3">
-              <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+              <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                 <p className="font-semibold text-primary">Introduction (3&ndash;4 sentences)</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Address the question directly. State Dickens&rsquo;s overall
@@ -648,7 +648,7 @@ export default function OCRChristmasCarolPage() {
                   context.
                 </p>
               </div>
-              <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+              <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                 <p className="font-semibold text-primary">Paragraph 1: Beginning of the novella (Stave 1)</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   How is the theme/character established? Use a memorised
@@ -656,7 +656,7 @@ export default function OCRChristmasCarolPage() {
                   attitudes and context.
                 </p>
               </div>
-              <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+              <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                 <p className="font-semibold text-primary">Paragraph 2: Middle of the novella (Staves 2&ndash;3)</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   How does the theme/character develop through the ghostly
@@ -664,7 +664,7 @@ export default function OCRChristmasCarolPage() {
                   stave in which key moments occur.
                 </p>
               </div>
-              <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+              <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                 <p className="font-semibold text-primary">Paragraph 3: Climax (Stave 4)</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   How does the Ghost of Christmas Yet to Come bring the theme to
@@ -672,7 +672,7 @@ export default function OCRChristmasCarolPage() {
                   of Scrooge&rsquo;s transformation.
                 </p>
               </div>
-              <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+              <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                 <p className="font-semibold text-primary">Paragraph 4: Resolution (Stave 5)</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   How is the theme resolved? Consider Scrooge&rsquo;s
@@ -680,7 +680,7 @@ export default function OCRChristmasCarolPage() {
                   Link to Dickens&rsquo;s purpose as a social reformer.
                 </p>
               </div>
-              <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+              <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                 <p className="font-semibold text-primary">Conclusion</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Final evaluative judgement. What is Dickens&rsquo;s overall
@@ -690,8 +690,8 @@ export default function OCRChristmasCarolPage() {
               </div>
             </div>
 
-            <div className="mt-6 rounded-lg border border-accent/20 bg-accent-50 p-5">
-              <h3 className="font-semibold text-accent-700">OCR Exam Technique Tips</h3>
+            <div className="mt-6 rounded-lg border border-accent/20 bg-primary/10 p-5">
+              <h3 className="font-semibold text-primary">OCR Exam Technique Tips</h3>
               <ul className="mt-2 space-y-2 text-sm text-muted-foreground">
                 <li>&bull; <strong>No extract:</strong> You must memorise quotations. Aim to use 4&ndash;6 short quotations in your essay.</li>
                 <li>&bull; <strong>AO1:</strong> Make clear, sustained arguments that directly answer the question. Track change across the novella.</li>

@@ -125,7 +125,7 @@ export default function OCRInspectorCallsPage() {
     <>
 
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-primary to-primary-600 px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary/90 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-3xl text-center">
           <Link
             href="/resources/english-literature/ocr"
@@ -154,7 +154,7 @@ export default function OCRInspectorCallsPage() {
             OCR Exam Format
           </h2>
           <div className="mt-4 space-y-3">
-            <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+            <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
               <p className="font-semibold text-primary">Paper 2: Exploring Effects and Impact</p>
               <p className="mt-1 text-sm text-muted-foreground">
                 Section B &mdash; 19th Century and Modern Prose/Drama. You will
@@ -263,8 +263,8 @@ export default function OCRInspectorCallsPage() {
                 mysterious nature &mdash; he is not a real police inspector
                 &mdash; gives his words a prophetic, almost divine quality.
               </p>
-              <div className="mt-4 rounded border border-accent/20 bg-accent-50 p-3">
-                <p className="text-sm font-medium text-accent-700">Key role</p>
+              <div className="mt-4 rounded border border-accent/20 bg-primary/10 p-3">
+                <p className="text-sm font-medium text-primary">Key role</p>
                 <p className="mt-1 text-sm text-accent-800">
                   Priestley&rsquo;s moral voice &rarr; Challenges each character
                   &rarr; Delivers the socialist message &rarr; Prophetic warning
@@ -291,8 +291,8 @@ export default function OCRInspectorCallsPage() {
                 a young woman. He learns nothing from the Inspector&rsquo;s visit,
                 representing the older generation&rsquo;s refusal to change.
               </p>
-              <div className="mt-4 rounded border border-accent/20 bg-accent-50 p-3">
-                <p className="text-sm font-medium text-accent-700">Key character arc</p>
+              <div className="mt-4 rounded border border-accent/20 bg-primary/10 p-3">
+                <p className="text-sm font-medium text-primary">Key character arc</p>
                 <p className="mt-1 text-sm text-accent-800">
                   Confident and complacent &rarr; Defensive under questioning
                   &rarr; Anxious about scandal &rarr; Relieved when threat passes
@@ -340,8 +340,8 @@ export default function OCRInspectorCallsPage() {
                 whether the Inspector was real. She represents Priestley&rsquo;s
                 hope that the younger generation will build a fairer society.
               </p>
-              <div className="mt-4 rounded border border-accent/20 bg-accent-50 p-3">
-                <p className="text-sm font-medium text-accent-700">Key character arc</p>
+              <div className="mt-4 rounded border border-accent/20 bg-primary/10 p-3">
+                <p className="text-sm font-medium text-primary">Key character arc</p>
                 <p className="mt-1 text-sm text-accent-800">
                   Shallow and playful &rarr; Shocked by her own cruelty &rarr;
                   Genuinely remorseful &rarr; Takes on the Inspector&rsquo;s role
@@ -660,7 +660,7 @@ export default function OCRInspectorCallsPage() {
               recommended structure:
             </p>
             <div className="space-y-3">
-              <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+              <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                 <p className="font-semibold text-primary">Introduction (3&ndash;4 sentences)</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Address the question directly. State Priestley&rsquo;s overall
@@ -668,7 +668,7 @@ export default function OCRInspectorCallsPage() {
                   time frame and why it matters.
                 </p>
               </div>
-              <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+              <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                 <p className="font-semibold text-primary">Paragraph 1: Beginning of the play</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   How is the theme/character established at the start? Use a
@@ -676,7 +676,7 @@ export default function OCRInspectorCallsPage() {
                   context (AO3).
                 </p>
               </div>
-              <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+              <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                 <p className="font-semibold text-primary">Paragraph 2: Middle of the play</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   How does the theme/character develop as the Inspector&rsquo;s
@@ -684,7 +684,7 @@ export default function OCRInspectorCallsPage() {
                   techniques and structure.
                 </p>
               </div>
-              <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+              <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                 <p className="font-semibold text-primary">Paragraph 3: End of the play</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   How is the theme/character presented at the climax? Use the
@@ -692,7 +692,7 @@ export default function OCRInspectorCallsPage() {
                   Priestley&rsquo;s purpose and message.
                 </p>
               </div>
-              <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+              <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                 <p className="font-semibold text-primary">Paragraph 4: Alternative interpretation or wider significance</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Offer a different reading or consider how the audience in 1945
@@ -700,7 +700,7 @@ export default function OCRInspectorCallsPage() {
                   shows evaluative thinking and gains higher marks.
                 </p>
               </div>
-              <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+              <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                 <p className="font-semibold text-primary">Conclusion</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Final evaluative judgement. What is Priestley&rsquo;s overall
@@ -710,8 +710,8 @@ export default function OCRInspectorCallsPage() {
               </div>
             </div>
 
-            <div className="mt-6 rounded-lg border border-accent/20 bg-accent-50 p-5">
-              <h3 className="font-semibold text-accent-700">OCR Exam Technique Tips</h3>
+            <div className="mt-6 rounded-lg border border-accent/20 bg-primary/10 p-5">
+              <h3 className="font-semibold text-primary">OCR Exam Technique Tips</h3>
               <ul className="mt-2 space-y-2 text-sm text-muted-foreground">
                 <li>&bull; <strong>No extract:</strong> You must memorise quotations. Aim to use 4&ndash;6 short quotations in your essay.</li>
                 <li>&bull; <strong>AO1:</strong> Make clear, sustained arguments that directly answer the question throughout.</li>

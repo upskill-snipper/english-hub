@@ -19,7 +19,7 @@ export default function OCRLitPaper1Page() {
     <>
 
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-primary to-primary-600 px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary/90 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-3xl text-center">
           <Link
             href="/resources/english-literature/ocr"
@@ -79,8 +79,8 @@ export default function OCRLitPaper1Page() {
                 </tbody>
               </table>
             </div>
-            <div className="rounded border border-accent/20 bg-accent-50 p-4">
-              <p className="text-sm font-medium text-accent-700">Important</p>
+            <div className="rounded border border-accent/20 bg-primary/10 p-4">
+              <p className="text-sm font-medium text-primary">Important</p>
               <p className="mt-1 text-sm text-accent-800">
                 This is a <strong>closed-book</strong> exam. You will not have
                 the texts in front of you. You must learn key quotations and
@@ -176,8 +176,8 @@ export default function OCRLitPaper1Page() {
                     techniques &mdash; explore the connotations of individual
                     words and explain their effect on the reader.
                   </p>
-                  <div className="mt-3 rounded border border-accent/20 bg-accent-50 p-3">
-                    <p className="text-sm font-medium text-accent-700">Model analysis</p>
+                  <div className="mt-3 rounded border border-accent/20 bg-primary/10 p-3">
+                    <p className="text-sm font-medium text-primary">Model analysis</p>
                     <p className="mt-1 text-sm italic text-accent-800">
                       &ldquo;Priestley uses the stage direction
                       &lsquo;massively&rsquo; to describe the Inspector&rsquo;s
@@ -400,7 +400,7 @@ export default function OCRLitPaper1Page() {
                 Follow this structure for a well-organised essay:
               </p>
               <div className="mt-4 space-y-3">
-                <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+                <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                   <p className="font-semibold text-primary">Introduction</p>
                   <p className="mt-1 text-sm text-muted-foreground">
                     Address the question directly. State your interpretation
@@ -408,7 +408,7 @@ export default function OCRLitPaper1Page() {
                     the context.
                   </p>
                 </div>
-                <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+                <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                   <p className="font-semibold text-primary">Paragraph 1: Beginning of the text</p>
                   <p className="mt-1 text-sm text-muted-foreground">
                     Analyse how the theme/character is established early in
@@ -416,7 +416,7 @@ export default function OCRLitPaper1Page() {
                     Embed context naturally.
                   </p>
                 </div>
-                <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+                <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                   <p className="font-semibold text-primary">Paragraph 2: Development / middle</p>
                   <p className="mt-1 text-sm text-muted-foreground">
                     Analyse how the theme/character develops or changes.
@@ -424,7 +424,7 @@ export default function OCRLitPaper1Page() {
                     writer&rsquo;s methods.
                   </p>
                 </div>
-                <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+                <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                   <p className="font-semibold text-primary">Paragraph 3: Climax / resolution</p>
                   <p className="mt-1 text-sm text-muted-foreground">
                     Analyse how the theme/character is presented at a crucial
@@ -432,7 +432,7 @@ export default function OCRLitPaper1Page() {
                     or resolution.
                   </p>
                 </div>
-                <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+                <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                   <p className="font-semibold text-primary">Paragraph 4 (optional): Alternative interpretation</p>
                   <p className="mt-1 text-sm text-muted-foreground">
                     Offer a different reading of the text. Consider how a
@@ -440,7 +440,7 @@ export default function OCRLitPaper1Page() {
                     modern reader.
                   </p>
                 </div>
-                <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+                <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                   <p className="font-semibold text-primary">Conclusion</p>
                   <p className="mt-1 text-sm text-muted-foreground">
                     Provide a final evaluative judgement. Consider the

@@ -83,9 +83,9 @@ export default function EdexcelEnglishLanguagePage() {
     <>
 
       {/* ── Hero ──────────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-primary via-primary-600 to-accent px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary via-primary/90 to-accent px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-accent-200">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary/20">
             Edexcel GCSE (1EN0)
           </p>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -203,7 +203,7 @@ export default function EdexcelEnglishLanguagePage() {
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
                   {s.description}
                 </p>
-                <span className="mt-4 inline-flex items-center text-sm font-semibold text-accent group-hover:text-accent-600">
+                <span className="mt-4 inline-flex items-center text-sm font-semibold text-accent group-hover:text-primary">
                   View guide
                   <svg className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
                 </span>
@@ -272,7 +272,7 @@ export default function EdexcelEnglishLanguagePage() {
                 <div>
                   <h3 className="font-semibold text-foreground">{obj.title}</h3>
                   <p className="mt-1 text-sm text-muted-foreground">{obj.detail}</p>
-                  <span className="mt-2 inline-block rounded-full bg-accent-50 px-2.5 py-0.5 text-xs font-medium text-accent-700">
+                  <span className="mt-2 inline-block rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
                     {obj.weight}
                   </span>
                 </div>

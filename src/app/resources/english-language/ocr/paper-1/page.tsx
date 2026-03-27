@@ -19,7 +19,7 @@ export default function OCRPaper1Page() {
     <>
 
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-primary to-primary-600 px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary/90 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-3xl text-center">
           <Link
             href="/resources/english-language/ocr"
@@ -143,8 +143,8 @@ export default function OCRPaper1Page() {
                     &ldquo;implicit&rdquo; means information that is suggested
                     or implied.
                   </p>
-                  <div className="mt-3 rounded border border-accent/20 bg-accent-50 p-3">
-                    <p className="text-sm font-medium text-accent-700">Top tip</p>
+                  <div className="mt-3 rounded border border-accent/20 bg-primary/10 p-3">
+                    <p className="text-sm font-medium text-primary">Top tip</p>
                     <p className="mt-1 text-sm text-accent-800">
                       When making inferences, always support your point with a
                       short, embedded quotation from the text. Use the
@@ -165,8 +165,8 @@ export default function OCRPaper1Page() {
                     the reader. Subject terminology (e.g., metaphor, hyperbole,
                     anaphora) should be used where relevant.
                   </p>
-                  <div className="mt-3 rounded border border-accent/20 bg-accent-50 p-3">
-                    <p className="text-sm font-medium text-accent-700">Top tip</p>
+                  <div className="mt-3 rounded border border-accent/20 bg-primary/10 p-3">
+                    <p className="text-sm font-medium text-primary">Top tip</p>
                     <p className="mt-1 text-sm text-accent-800">
                       Don&rsquo;t just spot techniques &mdash; explain
                       <em> why</em> the writer used them and what effect they
@@ -187,8 +187,8 @@ export default function OCRPaper1Page() {
                     compare <strong>both</strong> what the writers say and
                     <strong> how</strong> they say it.
                   </p>
-                  <div className="mt-3 rounded border border-accent/20 bg-accent-50 p-3">
-                    <p className="text-sm font-medium text-accent-700">Top tip</p>
+                  <div className="mt-3 rounded border border-accent/20 bg-primary/10 p-3">
+                    <p className="text-sm font-medium text-primary">Top tip</p>
                     <p className="mt-1 text-sm text-accent-800">
                       Use comparative connectives: &ldquo;Similarly&rdquo;,
                       &ldquo;In contrast&rdquo;, &ldquo;Whereas&rdquo;,
@@ -209,8 +209,8 @@ export default function OCRPaper1Page() {
                     the text and decide how far you agree with a given
                     interpretation, supporting your answer with evidence.
                   </p>
-                  <div className="mt-3 rounded border border-accent/20 bg-accent-50 p-3">
-                    <p className="text-sm font-medium text-accent-700">Top tip</p>
+                  <div className="mt-3 rounded border border-accent/20 bg-primary/10 p-3">
+                    <p className="text-sm font-medium text-primary">Top tip</p>
                     <p className="mt-1 text-sm text-accent-800">
                       Show a nuanced response. Consider multiple
                       interpretations and weigh up evidence for and against the
@@ -335,21 +335,21 @@ export default function OCRPaper1Page() {
                 Before you begin writing, identify the PAF from the question:
               </p>
               <div className="mt-3 grid gap-4 sm:grid-cols-3">
-                <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+                <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                   <p className="font-semibold text-primary">Purpose</p>
                   <p className="mt-1 text-sm">
                     Why are you writing? To argue, persuade, inform, advise,
                     explain, or review?
                   </p>
                 </div>
-                <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+                <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                   <p className="font-semibold text-primary">Audience</p>
                   <p className="mt-1 text-sm">
                     Who are you writing for? Teenagers, adults, a headteacher,
                     a local council, a general readership?
                   </p>
                 </div>
-                <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+                <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                   <p className="font-semibold text-primary">Form</p>
                   <p className="mt-1 text-sm">
                     What format? A letter, article, speech, leaflet, report, or

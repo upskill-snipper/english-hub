@@ -19,7 +19,7 @@ export default function OCRLitPaper2Page() {
     <>
 
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-primary to-primary-600 px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary/90 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-3xl text-center">
           <Link
             href="/resources/english-literature/ocr"
@@ -84,8 +84,8 @@ export default function OCRLitPaper2Page() {
                 </tbody>
               </table>
             </div>
-            <div className="rounded border border-accent/20 bg-accent-50 p-4">
-              <p className="text-sm font-medium text-accent-700">Key information</p>
+            <div className="rounded border border-accent/20 bg-primary/10 p-4">
+              <p className="text-sm font-medium text-primary">Key information</p>
               <p className="mt-1 text-sm text-accent-800">
                 Section A (Shakespeare) is a <strong>closed-book</strong>{" "}
                 exam, but you will be given a short extract to respond to.
@@ -227,8 +227,8 @@ export default function OCRLitPaper2Page() {
             </div>
 
             {/* AO4 reminder */}
-            <div className="rounded border border-accent/20 bg-accent-50 p-4">
-              <p className="text-sm font-medium text-accent-700">
+            <div className="rounded border border-accent/20 bg-primary/10 p-4">
+              <p className="text-sm font-medium text-primary">
                 AO4 is assessed in this section
               </p>
               <p className="mt-1 text-sm text-accent-800">
@@ -360,14 +360,14 @@ export default function OCRLitPaper2Page() {
                 Recommended Essay Structure
               </h3>
               <div className="mt-3 space-y-3">
-                <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+                <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                   <p className="font-semibold text-primary">Introduction</p>
                   <p className="mt-1 text-sm text-muted-foreground">
                     Introduce both poems and state the key similarity and/or
                     difference in how they approach the theme.
                   </p>
                 </div>
-                <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+                <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                   <p className="font-semibold text-primary">Paragraph 1: First point of comparison</p>
                   <p className="mt-1 text-sm text-muted-foreground">
                     Compare how both poets present the theme using a specific
@@ -375,21 +375,21 @@ export default function OCRLitPaper2Page() {
                     both poems.
                   </p>
                 </div>
-                <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+                <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                   <p className="font-semibold text-primary">Paragraph 2: Second point of comparison</p>
                   <p className="mt-1 text-sm text-muted-foreground">
                     Compare a different method (e.g., structure, form,
                     perspective). Continue to analyse specific language choices.
                   </p>
                 </div>
-                <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+                <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                   <p className="font-semibold text-primary">Paragraph 3: Third point of comparison</p>
                   <p className="mt-1 text-sm text-muted-foreground">
                     Consider the overall effect or message of each poem. How do
                     they differ in their conclusions about the theme?
                   </p>
                 </div>
-                <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+                <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                   <p className="font-semibold text-primary">Conclusion</p>
                   <p className="mt-1 text-sm text-muted-foreground">
                     Which poem do you find more effective and why? Offer a

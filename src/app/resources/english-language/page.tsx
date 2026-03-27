@@ -87,8 +87,8 @@ const BOARDS: Board[] = [
     totalMarks: 160,
     duration: "2h + 2h",
     uniqueFeature: "Strong emphasis on comparing multiple texts",
-    color: "border-[#8E44AD]",
-    accent: "bg-[#8E44AD]",
+    color: "border-primary",
+    accent: "bg-primary",
     icon: "O",
   },
   {
@@ -184,7 +184,7 @@ const RESOURCE_LINKS = [
     title: "Practice Questions",
     description: "Board-specific practice questions with model answers and AI-powered feedback.",
     href: "/practice",
-    color: "from-[#8E44AD] to-[#9B59B6]",
+    color: "from-primary to-primary/80",
   },
 ];
 

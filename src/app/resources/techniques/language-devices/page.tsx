@@ -1132,8 +1132,8 @@ function TechniqueCard({ t }: { t: Technique }) {
         <div className="border-t border-border px-5 pb-6 pt-4 sm:px-6">
           <div className="grid gap-5 sm:grid-cols-2">
             {/* Example */}
-            <div className="rounded-lg bg-accent-50 p-4">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-accent-700">
+            <div className="rounded-lg bg-primary/10 p-4">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-primary">
                 Example
               </h4>
               <p className="mt-2 text-sm italic leading-relaxed text-foreground">
@@ -1147,8 +1147,8 @@ function TechniqueCard({ t }: { t: Technique }) {
             </div>
 
             {/* Effect on reader */}
-            <div className="rounded-lg bg-primary-50 p-4">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-primary-700">
+            <div className="rounded-lg bg-primary/10 p-4">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-primary">
                 Effect on the reader
               </h4>
               <p className="mt-2 text-sm leading-relaxed text-foreground">
@@ -1243,7 +1243,7 @@ export default function LanguageDevicesPage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary to-primary-600 px-4 py-14 text-white sm:py-18">
+      <section className="bg-gradient-to-br from-primary to-primary/90 px-4 py-14 text-white sm:py-18">
         <div className="mx-auto max-w-4xl text-center">
           <nav className="text-sm text-white/70">
             <Link href="/resources/techniques" className="hover:text-white transition-colors">

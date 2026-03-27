@@ -65,7 +65,7 @@ const CATEGORIES: VocabCategory[] = [
   {
     id: "comparison",
     title: "Comparison Words",
-    colour: "border-[#8E44AD]",
+    colour: "border-primary",
     words: [
       { word: "Conversely", definition: "Introducing a statement that contrasts with a previous one", example: "Conversely, Mr Birling represents the failure of individual responsibility.", synonyms: ["on the other hand", "in contrast", "alternatively"] },
       { word: "Correspondingly", definition: "In a way that matches or is equivalent", example: "As the tension builds, the language correspondingly becomes more fragmented.", synonyms: ["similarly", "equivalently", "in parallel"] },
@@ -232,7 +232,7 @@ export default function AcademicVocabularyPage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary to-primary-600 px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary/90 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary/20">
             Vocabulary Builder

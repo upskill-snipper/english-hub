@@ -81,13 +81,13 @@ export default function FrankensteinPage() {
           <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-muted-foreground uppercase tracking-wider">
             19th-Century Prose
           </span>
-          <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-bold text-accent-600 uppercase tracking-wider">
+          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary uppercase tracking-wider">
             AQA
           </span>
-          <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-bold text-accent-600 uppercase tracking-wider">
+          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary uppercase tracking-wider">
             Edexcel
           </span>
-          <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-bold text-accent-600 uppercase tracking-wider">
+          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary uppercase tracking-wider">
             OCR
           </span>
         </div>
@@ -557,8 +557,8 @@ export default function FrankensteinPage() {
       {/* Context */}
       <Section title="Historical and Social Context" icon="🏛️">
         <div className="space-y-4">
-          <div className="rounded-lg bg-primary-50 p-4">
-            <h4 className="font-bold text-primary-700">Mary Shelley&apos;s Life</h4>
+          <div className="rounded-lg bg-primary/10 p-4">
+            <h4 className="font-bold text-primary">Mary Shelley&apos;s Life</h4>
             <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               Mary Shelley (1797&ndash;1851) wrote <em>Frankenstein</em> when she was just 18, beginning
               it during the famous &ldquo;ghost story competition&rdquo; at Lake Geneva in 1816 with
@@ -568,8 +568,8 @@ export default function FrankensteinPage() {
               dreamed of warming it back to life by the fire, an image eerily echoed in the novel.
             </p>
           </div>
-          <div className="rounded-lg bg-primary-50 p-4">
-            <h4 className="font-bold text-primary-700">Romanticism</h4>
+          <div className="rounded-lg bg-primary/10 p-4">
+            <h4 className="font-bold text-primary">Romanticism</h4>
             <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               <em>Frankenstein</em> both embraces and critiques Romanticism. The novel celebrates
               nature&apos;s sublime power and individual emotional experience, but it warns against
@@ -579,8 +579,8 @@ export default function FrankensteinPage() {
               the movement&apos;s appeal but also its dangers.
             </p>
           </div>
-          <div className="rounded-lg bg-primary-50 p-4">
-            <h4 className="font-bold text-primary-700">Galvanism and Science</h4>
+          <div className="rounded-lg bg-primary/10 p-4">
+            <h4 className="font-bold text-primary">Galvanism and Science</h4>
             <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               Luigi Galvani&apos;s experiments (1780s&ndash;90s) showed that electrical impulses could make
               dead frogs&apos; legs twitch, raising the possibility that electricity could reanimate
@@ -590,8 +590,8 @@ export default function FrankensteinPage() {
               readers would have associated it with galvanism.
             </p>
           </div>
-          <div className="rounded-lg bg-primary-50 p-4">
-            <h4 className="font-bold text-primary-700">Industrial Revolution</h4>
+          <div className="rounded-lg bg-primary/10 p-4">
+            <h4 className="font-bold text-primary">Industrial Revolution</h4>
             <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               The early 19th century saw rapid industrialisation, creating both wonder and anxiety.
               New technologies were transforming society, raising questions about the moral responsibility
@@ -600,8 +600,8 @@ export default function FrankensteinPage() {
               when no longer convenient.
             </p>
           </div>
-          <div className="rounded-lg bg-primary-50 p-4">
-            <h4 className="font-bold text-primary-700">Paradise Lost Connections</h4>
+          <div className="rounded-lg bg-primary/10 p-4">
+            <h4 className="font-bold text-primary">Paradise Lost Connections</h4>
             <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               Milton&apos;s <em>Paradise Lost</em> (1667) is directly referenced throughout the novel.
               The Creature reads it and identifies with both Adam (the first created being) and Satan
@@ -611,8 +611,8 @@ export default function FrankensteinPage() {
               and determinism, and the nature of evil.
             </p>
           </div>
-          <div className="rounded-lg bg-primary-50 p-4">
-            <h4 className="font-bold text-primary-700">Prometheus Myth</h4>
+          <div className="rounded-lg bg-primary/10 p-4">
+            <h4 className="font-bold text-primary">Prometheus Myth</h4>
             <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               The novel&apos;s subtitle, &ldquo;The Modern Prometheus,&rdquo; references the Greek
               Titan who stole fire from the gods and gave it to humanity, for which Zeus punished
@@ -698,7 +698,7 @@ export default function FrankensteinPage() {
       </Section>
 
       {/* Exam Tips */}
-      <div className="mt-6 rounded-xl border border-accent-100 bg-accent-50/50 p-6">
+      <div className="mt-6 rounded-xl border border-primary/20 bg-primary/10 p-6">
         <h3 className="text-lg font-bold text-foreground">Exam Tips for Frankenstein</h3>
         <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
           <li className="flex items-start gap-2">

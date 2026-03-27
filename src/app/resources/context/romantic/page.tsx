@@ -34,7 +34,7 @@ function Section({
           <span className={`h-2.5 w-2.5 rounded-full ${colour}`} />
           <h2 className="text-lg font-bold text-foreground">{title}</h2>
           {badge && (
-            <span className="rounded-full bg-accent-50 px-2.5 py-0.5 text-xs font-semibold text-accent-600">
+            <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary">
               {badge}
             </span>
           )}
@@ -94,7 +94,7 @@ export default function RomanticContextPage() {
             <span className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-bold text-emerald-800 uppercase tracking-wider">
               1780 -- 1850
             </span>
-            <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-semibold text-accent-600">Poetry Anthology</span>
+            <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">Poetry Anthology</span>
           </div>
           <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Romantic Era Context
@@ -309,8 +309,8 @@ export default function RomanticContextPage() {
               </ul>
 
               <h3 className="text-base font-bold text-foreground pt-4">Example: Ozymandias by Percy Bysshe Shelley</h3>
-              <div className="rounded-lg border-l-4 border-accent bg-accent-50/40 p-4">
-                <p className="text-xs font-bold uppercase tracking-wider text-accent-600">Poetry Anthology</p>
+              <div className="rounded-lg border-l-4 border-accent bg-primary/10/40 p-4">
+                <p className="text-xs font-bold uppercase tracking-wider text-primary">Poetry Anthology</p>
                 <p className="mt-1 text-sm font-semibold text-foreground">
                   Shelley uses the ruined statue to embody Romantic anti-tyrannical ideals
                 </p>
@@ -326,8 +326,8 @@ export default function RomanticContextPage() {
               </div>
 
               <h3 className="text-base font-bold text-foreground pt-4">Example: The Prelude (Extract) by William Wordsworth</h3>
-              <div className="rounded-lg border-l-4 border-accent bg-accent-50/40 p-4">
-                <p className="text-xs font-bold uppercase tracking-wider text-accent-600">Poetry Anthology</p>
+              <div className="rounded-lg border-l-4 border-accent bg-primary/10/40 p-4">
+                <p className="text-xs font-bold uppercase tracking-wider text-primary">Poetry Anthology</p>
                 <p className="mt-1 text-sm font-semibold text-foreground">
                   Wordsworth presents nature as a sublime, transformative force
                 </p>
@@ -342,7 +342,7 @@ export default function RomanticContextPage() {
                 </p>
               </div>
 
-              <div className="mt-6 rounded-xl border border-accent-100 bg-accent-50/50 p-5">
+              <div className="mt-6 rounded-xl border border-primary/20 bg-primary/10/50 p-5">
                 <h3 className="text-sm font-bold text-foreground">Sentence starters for Romantic context</h3>
                 <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">

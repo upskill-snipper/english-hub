@@ -55,7 +55,7 @@ function Section({
 
 function Quote({ text, speaker, act, analysis }: { text: string; speaker: string; act: string; analysis: string }) {
   return (
-    <div className="rounded-lg border-l-4 border-accent bg-accent-50/40 p-4">
+    <div className="rounded-lg border-l-4 border-accent bg-primary/10/40 p-4">
       <p className="text-sm font-semibold italic text-foreground">&ldquo;{text}&rdquo;</p>
       <p className="mt-1 text-xs text-muted-foreground">{speaker} &mdash; {act}</p>
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>

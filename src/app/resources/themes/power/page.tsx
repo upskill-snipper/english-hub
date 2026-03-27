@@ -122,8 +122,8 @@ const TEXTS = [
     title: "My Last Duchess",
     subtitle: "Power and Control",
     author: "Robert Browning",
-    colour: "border-[#8E44AD]",
-    tagColour: "bg-[#8E44AD]/10 text-[#8E44AD]",
+    colour: "border-primary",
+    tagColour: "bg-primary/10 text-primary",
     analysis: [
       "The Duke's dramatic monologue reveals his obsessive need to control -- he could not tolerate his wife's democratic affection for others.",
       "Browning uses enjambment to suggest the Duke's speech is barely controlled, hinting at the violent reality beneath his polished exterior.",

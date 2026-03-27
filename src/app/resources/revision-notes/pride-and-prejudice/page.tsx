@@ -80,13 +80,13 @@ export default function PrideAndPrejudicePage() {
           <span className="rounded-full bg-rose-100 px-3 py-1 text-xs font-bold text-rose-700 uppercase tracking-wider">
             19th-Century Prose
           </span>
-          <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-bold text-accent-600 uppercase tracking-wider">
+          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary uppercase tracking-wider">
             AQA
           </span>
-          <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-bold text-accent-600 uppercase tracking-wider">
+          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary uppercase tracking-wider">
             Edexcel
           </span>
-          <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-bold text-accent-600 uppercase tracking-wider">
+          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary uppercase tracking-wider">
             OCR
           </span>
         </div>
@@ -371,8 +371,8 @@ export default function PrideAndPrejudicePage() {
       {/* Context */}
       <Section title="Historical and Social Context" icon="🏛️">
         <div className="space-y-4">
-          <div className="rounded-lg bg-primary-50 p-4">
-            <h4 className="font-bold text-primary-700">Regency Era (1811&ndash;1820)</h4>
+          <div className="rounded-lg bg-primary/10 p-4">
+            <h4 className="font-bold text-primary">Regency Era (1811&ndash;1820)</h4>
             <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               The Regency period, when the Prince of Wales ruled as regent for the incapacitated
               George III, was a time of social elegance, rigid etiquette, and sharp class distinctions.
@@ -383,8 +383,8 @@ export default function PrideAndPrejudicePage() {
               (including Wickham) are a direct consequence of the war effort.
             </p>
           </div>
-          <div className="rounded-lg bg-primary-50 p-4">
-            <h4 className="font-bold text-primary-700">Women&apos;s Rights and Legal Status</h4>
+          <div className="rounded-lg bg-primary/10 p-4">
+            <h4 className="font-bold text-primary">Women&apos;s Rights and Legal Status</h4>
             <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               Women in Regency England had virtually no legal rights. They could not own property
               after marriage (everything transferred to the husband), could not vote, had limited
@@ -394,8 +394,8 @@ export default function PrideAndPrejudicePage() {
               courageous.
             </p>
           </div>
-          <div className="rounded-lg bg-primary-50 p-4">
-            <h4 className="font-bold text-primary-700">Entailment</h4>
+          <div className="rounded-lg bg-primary/10 p-4">
+            <h4 className="font-bold text-primary">Entailment</h4>
             <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               The Bennet estate is &ldquo;entailed&rdquo; &mdash; legally restricted to pass only to
               male heirs. Since the Bennets have no sons, the estate will go to Mr Collins on Mr
@@ -405,8 +405,8 @@ export default function PrideAndPrejudicePage() {
               designed to keep estates intact across generations, but it systematically disadvantaged women.
             </p>
           </div>
-          <div className="rounded-lg bg-primary-50 p-4">
-            <h4 className="font-bold text-primary-700">Class and Social Mobility</h4>
+          <div className="rounded-lg bg-primary/10 p-4">
+            <h4 className="font-bold text-primary">Class and Social Mobility</h4>
             <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               Regency society had a clearly defined hierarchy: aristocracy, landed gentry, clergy,
               military, professional classes, tradespeople, and servants. Social mobility was possible
@@ -416,8 +416,8 @@ export default function PrideAndPrejudicePage() {
               distinctions are often arbitrary and that moral worth bears no relation to social rank.
             </p>
           </div>
-          <div className="rounded-lg bg-primary-50 p-4">
-            <h4 className="font-bold text-primary-700">The Marriage Market</h4>
+          <div className="rounded-lg bg-primary/10 p-4">
+            <h4 className="font-bold text-primary">The Marriage Market</h4>
             <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               Balls, assemblies, and social calls functioned as a marriage market where young women
               were displayed and assessed. A woman&apos;s value was measured by her beauty, accomplishments
@@ -431,7 +431,7 @@ export default function PrideAndPrejudicePage() {
       </Section>
 
       {/* Exam Tips */}
-      <div className="mt-6 rounded-xl border border-accent-100 bg-accent-50/50 p-6">
+      <div className="mt-6 rounded-xl border border-primary/20 bg-primary/10 p-6">
         <h3 className="text-lg font-bold text-foreground">Exam Tips for Pride and Prejudice</h3>
         <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
           <li className="flex items-start gap-2">

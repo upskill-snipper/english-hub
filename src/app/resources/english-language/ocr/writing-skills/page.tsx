@@ -18,7 +18,7 @@ export default function OCRWritingSkillsPage() {
     <>
 
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-primary to-primary-600 px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary/90 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-3xl text-center">
           <Link
             href="/resources/english-language/ocr"
@@ -306,8 +306,8 @@ export default function OCRWritingSkillsPage() {
                   &ldquo;However, this fails to account for&hellip;&rdquo;
                 </li>
               </ol>
-              <div className="mt-3 rounded border border-accent/20 bg-accent-50 p-4">
-                <p className="text-sm font-medium text-accent-700">Example counter-argument paragraph</p>
+              <div className="mt-3 rounded border border-accent/20 bg-primary/10 p-4">
+                <p className="text-sm font-medium text-primary">Example counter-argument paragraph</p>
                 <p className="mt-2 text-sm italic text-accent-800">
                   &ldquo;Of course, some would argue that technology has
                   enhanced communication, allowing us to stay connected with
@@ -440,8 +440,8 @@ export default function OCRWritingSkillsPage() {
                   </tbody>
                 </table>
               </div>
-              <div className="mt-4 rounded border border-accent/20 bg-accent-50 p-4">
-                <p className="text-sm font-medium text-accent-700">Important note</p>
+              <div className="mt-4 rounded border border-accent/20 bg-primary/10 p-4">
+                <p className="text-sm font-medium text-primary">Important note</p>
                 <p className="mt-1 text-sm text-accent-800">
                   Ambitious vocabulary must be used accurately. Using a
                   complex word incorrectly is worse than using a simple word

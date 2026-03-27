@@ -93,7 +93,7 @@ const SPEC_LINKS = [
       { label: "English Language (J351)", url: "https://www.ocr.org.uk/qualifications/gcse/english-language-j351-from-2015/" },
       { label: "English Literature (J352)", url: "https://www.ocr.org.uk/qualifications/gcse/english-literature-j352-from-2015/" },
     ],
-    color: "border-[#8E44AD]",
+    color: "border-primary",
   },
   {
     board: "Cambridge IGCSE",

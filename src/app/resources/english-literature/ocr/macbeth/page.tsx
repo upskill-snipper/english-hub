@@ -71,7 +71,7 @@ export default function OCRMacbethPage() {
     <>
 
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-primary to-primary-600 px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary/90 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-3xl text-center">
           <Link
             href="/resources/english-literature/ocr"
@@ -195,8 +195,8 @@ export default function OCRMacbethPage() {
                 honour, his humanity &mdash; and is reduced to nihilistic
                 despair.
               </p>
-              <div className="mt-4 rounded border border-accent/20 bg-accent-50 p-3">
-                <p className="text-sm font-medium text-accent-700">Key character arc</p>
+              <div className="mt-4 rounded border border-accent/20 bg-primary/10 p-3">
+                <p className="text-sm font-medium text-primary">Key character arc</p>
                 <p className="mt-1 text-sm text-accent-800">
                   Honourable warrior &rarr; Tempted by ambition &rarr;
                   Reluctant murderer &rarr; Tyrannical king &rarr; Nihilistic
@@ -227,8 +227,8 @@ export default function OCRMacbethPage() {
                 earlier guilt. Her death (implied suicide) represents the
                 ultimate consequence of suppressing conscience.
               </p>
-              <div className="mt-4 rounded border border-accent/20 bg-accent-50 p-3">
-                <p className="text-sm font-medium text-accent-700">Key character arc</p>
+              <div className="mt-4 rounded border border-accent/20 bg-primary/10 p-3">
+                <p className="text-sm font-medium text-primary">Key character arc</p>
                 <p className="mt-1 text-sm text-accent-800">
                   Ambitious and controlling &rarr; Orchestrates the murder
                   &rarr; Begins to lose control &rarr; Consumed by guilt
@@ -546,7 +546,7 @@ export default function OCRMacbethPage() {
               wider play. Here is a recommended structure:
             </p>
             <div className="space-y-3">
-              <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+              <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                 <p className="font-semibold text-primary">Introduction (3&ndash;4 sentences)</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Address the question directly. State how Shakespeare
@@ -554,7 +554,7 @@ export default function OCRMacbethPage() {
                   play. Mention relevant context briefly.
                 </p>
               </div>
-              <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+              <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                 <p className="font-semibold text-primary">Paragraph 1: Extract analysis</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Close analysis of language in the extract. Quote specific
@@ -562,7 +562,7 @@ export default function OCRMacbethPage() {
                   subject terminology. Link to context where relevant.
                 </p>
               </div>
-              <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+              <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                 <p className="font-semibold text-primary">Paragraph 2: Extract analysis (continued)</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Second key point from the extract. Consider structural
@@ -570,7 +570,7 @@ export default function OCRMacbethPage() {
                   language.
                 </p>
               </div>
-              <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+              <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                 <p className="font-semibold text-primary">Paragraph 3: Wider play (earlier in the text)</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Explore how the same theme/character is presented earlier in
@@ -578,7 +578,7 @@ export default function OCRMacbethPage() {
                   extract.
                 </p>
               </div>
-              <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+              <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                 <p className="font-semibold text-primary">Paragraph 4: Wider play (later in the text)</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Explore how the theme/character develops or changes later.
@@ -586,7 +586,7 @@ export default function OCRMacbethPage() {
                   progression. Link to Shakespeare&rsquo;s message.
                 </p>
               </div>
-              <div className="rounded-lg border border-primary/20 bg-primary-50 p-4">
+              <div className="rounded-lg border border-primary/20 bg-primary/10 p-4">
                 <p className="font-semibold text-primary">Conclusion</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Final evaluative judgement. What is Shakespeare&rsquo;s

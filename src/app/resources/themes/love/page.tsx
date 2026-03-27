@@ -44,8 +44,8 @@ const TEXTS = [
     title: "Love and Relationships Poetry",
     subtitle: "Diverse Perspectives on Love",
     author: "Various poets",
-    colour: "border-[#8E44AD]",
-    tagColour: "bg-[#8E44AD]/10 text-[#8E44AD]",
+    colour: "border-primary",
+    tagColour: "bg-primary/10 text-primary",
     analysis: [
       "The anthology explores love in all its complexity: romantic (Sonnet 29), familial (Mother Any Distance, Before You Were Mine), obsessive (Porphyria's Lover), and enduring (When We Two Parted).",
       "Many poems examine how love changes over time -- Eden Rock presents love as a bridge between life and death, while Winter Swans uses nature to show a relationship's fragile reconciliation.",

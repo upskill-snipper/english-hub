@@ -196,9 +196,9 @@ export default function Paper1Page() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary to-primary-600 px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary/90 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-accent-200">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary/20">
             AQA English Literature
           </p>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -290,7 +290,7 @@ export default function Paper1Page() {
                       play.title
                     )}
                   </h3>
-                  <span className="rounded-full bg-accent-100 px-2.5 py-0.5 text-xs font-medium text-accent-700">
+                  <span className="rounded-full bg-primary/15 px-2.5 py-0.5 text-xs font-medium text-primary">
                     {play.popularity}
                   </span>
                 </div>
@@ -301,13 +301,13 @@ export default function Paper1Page() {
                   {play.keyThemes.map((t) => (
                     <span
                       key={t}
-                      className="rounded-full bg-primary-50 px-2.5 py-0.5 text-xs text-primary-700"
+                      className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs text-primary"
                     >
                       {t}
                     </span>
                   ))}
                 </div>
-                <p className="mt-3 text-sm text-primary-700 bg-primary-50 rounded-lg p-3">
+                <p className="mt-3 text-sm text-primary bg-primary/10 rounded-lg p-3">
                   <span className="font-semibold">Exam tip:</span>{" "}
                   {play.examTip}
                 </p>
@@ -347,7 +347,7 @@ export default function Paper1Page() {
                   )}
                 </h3>
                 {novel.popularity && (
-                  <span className="rounded-full bg-accent-100 px-2.5 py-0.5 text-xs font-medium text-accent-700">
+                  <span className="rounded-full bg-primary/15 px-2.5 py-0.5 text-xs font-medium text-primary">
                     {novel.popularity}
                   </span>
                 )}
@@ -360,13 +360,13 @@ export default function Paper1Page() {
                 {novel.keyThemes.map((t) => (
                   <span
                     key={t}
-                    className="rounded-full bg-primary-50 px-2.5 py-0.5 text-xs text-primary-700"
+                    className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs text-primary"
                   >
                     {t}
                   </span>
                 ))}
               </div>
-              <p className="mt-3 text-sm text-primary-700 bg-primary-50 rounded-lg p-3">
+              <p className="mt-3 text-sm text-primary bg-primary/10 rounded-lg p-3">
                 <span className="font-semibold">Exam tip:</span>{" "}
                 {novel.examTip}
               </p>
@@ -376,7 +376,7 @@ export default function Paper1Page() {
       </section>
 
       {/* Exam technique */}
-      <section className="bg-primary-50 px-4 py-12 sm:py-16">
+      <section className="bg-primary/10 px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-2xl font-bold text-foreground">
             Paper 1 Exam Technique
@@ -479,7 +479,7 @@ export default function Paper1Page() {
                   ].map((step) => (
                     <div
                       key={step.letter}
-                      className="rounded-lg bg-primary-50 p-4 text-center"
+                      className="rounded-lg bg-primary/10 p-4 text-center"
                     >
                       <span className="text-2xl font-bold text-primary">
                         {step.letter}
@@ -494,8 +494,8 @@ export default function Paper1Page() {
                   ))}
                 </div>
 
-                <div className="mt-6 rounded-lg bg-accent-50 border border-accent-200 p-4">
-                  <h4 className="font-semibold text-accent-700">
+                <div className="mt-6 rounded-lg bg-primary/10 border border-primary/20 p-4">
+                  <h4 className="font-semibold text-primary">
                     Example paragraph opening (Macbeth):
                   </h4>
                   <p className="mt-2 text-muted-foreground italic">

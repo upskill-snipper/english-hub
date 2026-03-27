@@ -113,8 +113,8 @@ export default function Paper2Page() {
               <p className="mt-2 text-sm text-muted-foreground">
                 <strong>AO1</strong> &mdash; Retrieve one piece of explicit information from the 19th-century text.
               </p>
-              <div className="mt-3 rounded-lg bg-accent-50 p-4">
-                <p className="text-sm font-medium text-accent-700">Top tip:</p>
+              <div className="mt-3 rounded-lg bg-primary/10 p-4">
+                <p className="text-sm font-medium text-primary">Top tip:</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Same as Paper 1 Q1. Copy the exact phrase. 1 minute maximum. Do not waste time.
                 </p>
@@ -130,8 +130,8 @@ export default function Paper2Page() {
               <p className="mt-2 text-sm text-muted-foreground">
                 <strong>AO1</strong> &mdash; Identify two things from the 21st-century text.
               </p>
-              <div className="mt-3 rounded-lg bg-accent-50 p-4">
-                <p className="text-sm font-medium text-accent-700">Top tip:</p>
+              <div className="mt-3 rounded-lg bg-primary/10 p-4">
+                <p className="text-sm font-medium text-primary">Top tip:</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Two clear, separate points. Keep it concise &mdash; no analysis needed.
                 </p>
@@ -153,7 +153,7 @@ export default function Paper2Page() {
                   &ldquo;In lines 8-18 of Text 1, how does the writer use language to convey their feelings about city life?&rdquo;
                 </p>
               </div>
-              <div className="mt-4 rounded-lg border border-primary-100 bg-primary-50 p-4">
+              <div className="mt-4 rounded-lg border border-primary/20 bg-primary/10 p-4">
                 <p className="text-sm font-semibold text-primary">Mark scheme levels:</p>
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                   <li><strong>Level 1 (1-2):</strong> Simple comments on language. Limited or no terminology.</li>
@@ -172,8 +172,8 @@ export default function Paper2Page() {
               <p className="mt-2 text-sm text-muted-foreground">
                 <strong>AO2</strong> &mdash; Analyse how the 21st-century writer uses language in a specified section.
               </p>
-              <div className="mt-3 rounded-lg bg-accent-50 p-4">
-                <p className="text-sm font-medium text-accent-700">Key difference from Q3:</p>
+              <div className="mt-3 rounded-lg bg-primary/10 p-4">
+                <p className="text-sm font-medium text-primary">Key difference from Q3:</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   The 21st-century text may use more informal or modern language features: rhetorical questions, direct address,
                   humour, colloquialisms, or statistics. Identify how these choices shape the reader&rsquo;s response.
@@ -197,7 +197,7 @@ export default function Paper2Page() {
                   To what extent do you agree? You should comment on the writer&rsquo;s use of language and structure.&rdquo;
                 </p>
               </div>
-              <div className="mt-4 rounded-lg border border-primary-100 bg-primary-50 p-4">
+              <div className="mt-4 rounded-lg border border-primary/20 bg-primary/10 p-4">
                 <p className="text-sm font-semibold text-primary">Mark scheme levels:</p>
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                   <li><strong>Level 1 (1-3):</strong> Limited evaluation with little reference to text.</li>
@@ -225,8 +225,8 @@ export default function Paper2Page() {
                   &ldquo;Compare how the writers of Text 1 and Text 2 present their ideas and perspectives about education.&rdquo;
                 </p>
               </div>
-              <div className="mt-3 rounded-lg bg-accent-50 p-4">
-                <p className="text-sm font-medium text-accent-700">How to structure your comparison:</p>
+              <div className="mt-3 rounded-lg bg-primary/10 p-4">
+                <p className="text-sm font-medium text-primary">How to structure your comparison:</p>
                 <ol className="mt-2 space-y-2 text-sm text-muted-foreground list-decimal list-inside">
                   <li>Identify each writer&rsquo;s viewpoint clearly (&ldquo;Writer 1 believes... whereas Writer 2 argues...&rdquo;)</li>
                   <li>Compare using connectives: &ldquo;Similarly,&rdquo; &ldquo;In contrast,&rdquo; &ldquo;However,&rdquo; &ldquo;Conversely&rdquo;</li>
@@ -235,7 +235,7 @@ export default function Paper2Page() {
                   <li>Consider the historical context &mdash; a 19th-century perspective vs a modern one</li>
                 </ol>
               </div>
-              <div className="mt-4 rounded-lg border border-primary-100 bg-primary-50 p-4">
+              <div className="mt-4 rounded-lg border border-primary/20 bg-primary/10 p-4">
                 <p className="text-sm font-semibold text-primary">Mark scheme levels:</p>
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                   <li><strong>Level 1 (1-2):</strong> Simple, limited cross-reference. May only discuss one text.</li>
@@ -336,8 +336,8 @@ export default function Paper2Page() {
                 &ldquo;Compare how the writers of Text 1 and Text 2 present their ideas about the importance of travel.&rdquo;
               </p>
             </div>
-            <div className="mt-4 rounded-lg border-l-4 border-accent bg-accent-50 p-4">
-              <p className="text-sm font-semibold text-accent-700">Example paragraph:</p>
+            <div className="mt-4 rounded-lg border-l-4 border-accent bg-primary/10 p-4">
+              <p className="text-sm font-semibold text-primary">Example paragraph:</p>
               <div className="mt-2 text-sm text-foreground leading-relaxed">
                 <p>
                   Both writers share an enthusiasm for travel, yet their perspectives differ significantly due to their
@@ -357,7 +357,7 @@ export default function Paper2Page() {
                 </p>
               </div>
             </div>
-            <div className="mt-3 rounded-lg bg-primary-50 p-4">
+            <div className="mt-3 rounded-lg bg-primary/10 p-4">
               <p className="text-sm font-medium text-primary">Why this works:</p>
               <ul className="mt-1 space-y-1 text-sm text-muted-foreground">
                 <li>&bull; Directly compares both texts throughout (never just discusses one in isolation)</li>
@@ -379,8 +379,8 @@ export default function Paper2Page() {
                 assembly arguing against this decision.&rdquo;
               </p>
             </div>
-            <div className="mt-4 rounded-lg border-l-4 border-accent bg-accent-50 p-4">
-              <p className="text-sm font-semibold text-accent-700">Example opening:</p>
+            <div className="mt-4 rounded-lg border-l-4 border-accent bg-primary/10 p-4">
+              <p className="text-sm font-semibold text-primary">Example opening:</p>
               <div className="mt-2 text-sm text-foreground leading-relaxed">
                 <p>
                   Good morning, everyone. I want you to imagine something for me. Imagine walking through these corridors
@@ -399,7 +399,7 @@ export default function Paper2Page() {
                 </p>
               </div>
             </div>
-            <div className="mt-3 rounded-lg bg-primary-50 p-4">
+            <div className="mt-3 rounded-lg bg-primary/10 p-4">
               <p className="text-sm font-medium text-primary">Techniques demonstrated:</p>
               <ul className="mt-1 space-y-1 text-sm text-muted-foreground">
                 <li>&bull; <strong>Direct address:</strong> &ldquo;I want you to imagine&rdquo;</li>

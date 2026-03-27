@@ -449,8 +449,8 @@ export default function Paper1ReadingPage() {
             writer uses language to create specific effects on the reader.
           </p>
 
-          <div className="mt-6 rounded-lg border border-accent-200 bg-accent-50 p-5">
-            <h3 className="font-semibold text-accent-700">The KEY Formula</h3>
+          <div className="mt-6 rounded-lg border border-primary/20 bg-primary/10 p-5">
+            <h3 className="font-semibold text-primary">The KEY Formula</h3>
             <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
               Use this framework for every analytical point you make:
             </p>

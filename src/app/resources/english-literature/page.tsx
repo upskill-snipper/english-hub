@@ -59,8 +59,8 @@ const BOARDS = [
       "Component 01: Exploring Modern & Literary Heritage Texts",
       "Component 02: Poetry Across Time",
     ],
-    color: "border-[#8E44AD]",
-    bgColor: "bg-[#8E44AD]",
+    color: "border-primary",
+    bgColor: "bg-primary",
     students: "~50,000",
     highlight: "Cambridge Assessment group",
   },
@@ -216,7 +216,7 @@ const EXPLORE_SECTIONS = [
     description:
       "Historical, social, and cultural context for every set text. Understand how context shapes meaning.",
     href: "/resources/english-literature/aqa/paper-1",
-    color: "from-[#8E44AD] to-[#A569BD]",
+    color: "from-primary to-primary/80",
   },
   {
     title: "Comparison Skills",

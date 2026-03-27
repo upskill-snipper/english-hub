@@ -114,7 +114,7 @@ export default function WritingSkillsPage() {
             </div>
 
             <div className="mt-4 rounded bg-accent/5 border border-accent/20 p-4">
-              <p className="text-sm font-semibold text-accent-700">Key points to remember:</p>
+              <p className="text-sm font-semibold text-primary">Key points to remember:</p>
               <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                 <li>&bull; Use &ldquo;Yours sincerely&rdquo; when you know the name; &ldquo;Yours faithfully&rdquo; when you wrote &ldquo;Dear Sir/Madam&rdquo;</li>
                 <li>&bull; Formal register throughout &mdash; no slang, no contractions (&ldquo;don&rsquo;t&rdquo; &rarr; &ldquo;do not&rdquo;)</li>
@@ -145,7 +145,7 @@ export default function WritingSkillsPage() {
             </div>
 
             <div className="mt-4 rounded bg-accent/5 border border-accent/20 p-4">
-              <p className="text-sm font-semibold text-accent-700">Key points to remember:</p>
+              <p className="text-sm font-semibold text-primary">Key points to remember:</p>
               <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                 <li>&bull; Warm, friendly tone &mdash; contractions, rhetorical questions, and exclamation marks are fine</li>
                 <li>&bull; Personal anecdotes make it feel authentic</li>
@@ -181,7 +181,7 @@ export default function WritingSkillsPage() {
             </div>
 
             <div className="mt-4 rounded bg-accent/5 border border-accent/20 p-4">
-              <p className="text-sm font-semibold text-accent-700">Key points to remember:</p>
+              <p className="text-sm font-semibold text-primary">Key points to remember:</p>
               <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                 <li>&bull; Formal, impersonal tone &mdash; third person preferred (&ldquo;It was found that&hellip;&rdquo;)</li>
                 <li>&bull; Use subheadings to organise &mdash; this is expected in report format</li>
@@ -213,7 +213,7 @@ export default function WritingSkillsPage() {
             </div>
 
             <div className="mt-4 rounded bg-accent/5 border border-accent/20 p-4">
-              <p className="text-sm font-semibold text-accent-700">Key points to remember:</p>
+              <p className="text-sm font-semibold text-primary">Key points to remember:</p>
               <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                 <li>&bull; Headline should be short, punchy, and engaging (alliteration, puns, or wordplay can work well)</li>
                 <li>&bull; Engage the reader from the first sentence &mdash; a question, statistic, or surprising statement</li>
@@ -244,7 +244,7 @@ export default function WritingSkillsPage() {
             </div>
 
             <div className="mt-4 rounded bg-accent/5 border border-accent/20 p-4">
-              <p className="text-sm font-semibold text-accent-700">Key rhetorical devices for speeches:</p>
+              <p className="text-sm font-semibold text-primary">Key rhetorical devices for speeches:</p>
               <div className="mt-2 grid grid-cols-2 gap-2 sm:grid-cols-3">
                 <span className="rounded bg-card px-2 py-1 text-xs text-muted-foreground shadow-md">Rhetorical questions</span>
                 <span className="rounded bg-card px-2 py-1 text-xs text-muted-foreground shadow-md">Rule of three (tricolon)</span>
@@ -278,7 +278,7 @@ export default function WritingSkillsPage() {
             </div>
 
             <div className="mt-4 rounded bg-accent/5 border border-accent/20 p-4">
-              <p className="text-sm font-semibold text-accent-700">Key points to remember:</p>
+              <p className="text-sm font-semibold text-primary">Key points to remember:</p>
               <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                 <li>&bull; First person throughout &mdash; &ldquo;I&rdquo;, &ldquo;my&rdquo;, &ldquo;me&rdquo;</li>
                 <li>&bull; Deeply reflective &mdash; share honest thoughts and feelings</li>
@@ -311,7 +311,7 @@ export default function WritingSkillsPage() {
             </div>
 
             <div className="mt-4 rounded bg-accent/5 border border-accent/20 p-4">
-              <p className="text-sm font-semibold text-accent-700">Key points to remember:</p>
+              <p className="text-sm font-semibold text-primary">Key points to remember:</p>
               <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                 <li>&bull; Questions should be varied &mdash; open-ended, probing, and relevant</li>
                 <li>&bull; Answers should reveal personality and include specific details</li>
@@ -412,7 +412,7 @@ export default function WritingSkillsPage() {
                     ].map((word) => (
                       <span
                         key={word}
-                        className="rounded-full bg-accent/10 px-3 py-1 text-xs font-medium text-accent-700"
+                        className="rounded-full bg-accent/10 px-3 py-1 text-xs font-medium text-primary"
                       >
                         {word}
                       </span>

@@ -153,9 +153,9 @@ export default function Paper2Page() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary to-primary-600 px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary/90 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-accent-200">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary/20">
             AQA English Literature
           </p>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -249,7 +249,7 @@ export default function Paper2Page() {
                       text.title
                     )}
                   </h3>
-                  <span className="rounded-full bg-accent-100 px-2.5 py-0.5 text-xs font-medium text-accent-700">
+                  <span className="rounded-full bg-primary/15 px-2.5 py-0.5 text-xs font-medium text-primary">
                     {text.popularity}
                   </span>
                 </div>
@@ -261,13 +261,13 @@ export default function Paper2Page() {
                   {text.keyThemes.map((t) => (
                     <span
                       key={t}
-                      className="rounded-full bg-primary-50 px-2.5 py-0.5 text-xs text-primary-700"
+                      className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs text-primary"
                     >
                       {t}
                     </span>
                   ))}
                 </div>
-                <p className="mt-3 text-sm text-primary-700 bg-primary-50 rounded-lg p-3">
+                <p className="mt-3 text-sm text-primary bg-primary/10 rounded-lg p-3">
                   <span className="font-semibold">Exam tip:</span>{" "}
                   {text.examTip}
                 </p>
@@ -290,7 +290,7 @@ export default function Paper2Page() {
         <div className="mt-6">
           <Link
             href="/resources/english-literature/aqa/poetry"
-            className="inline-flex items-center rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-white shadow-md transition hover:bg-accent-600"
+            className="inline-flex items-center rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-white shadow-md transition hover:bg-accent"
           >
             View Full Poetry Analysis Guide
             <svg
@@ -398,7 +398,7 @@ export default function Paper2Page() {
       </section>
 
       {/* Unseen poetry technique */}
-      <section className="bg-primary-50 px-4 py-12 sm:py-16">
+      <section className="bg-primary/10 px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-2xl font-bold text-foreground">
             Section C: Unseen Poetry Technique
@@ -486,8 +486,8 @@ export default function Paper2Page() {
                   </li>
                 </ul>
 
-                <div className="rounded-lg bg-accent-50 border border-accent-200 p-4 mt-4">
-                  <h4 className="font-semibold text-accent-700 text-xs uppercase tracking-wider">
+                <div className="rounded-lg bg-primary/10 border border-primary/20 p-4 mt-4">
+                  <h4 className="font-semibold text-primary text-xs uppercase tracking-wider">
                     Useful comparison sentence starters
                   </h4>
                   <ul className="mt-2 space-y-1 text-xs text-muted-foreground italic">

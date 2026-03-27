@@ -18,7 +18,7 @@ export default function Paper1Page() {
     <>
 
       {/* ── Hero ──────────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-primary to-primary-600 px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary/90 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <Link
             href="/resources/english-language/edexcel"
@@ -113,8 +113,8 @@ export default function Paper1Page() {
                   &ldquo;From lines 1-5, identify the phrase that tells us the weather was unpleasant.&rdquo;
                 </p>
               </div>
-              <div className="mt-3 rounded-lg bg-accent-50 p-4">
-                <p className="text-sm font-medium text-accent-700">Top tip:</p>
+              <div className="mt-3 rounded-lg bg-primary/10 p-4">
+                <p className="text-sm font-medium text-primary">Top tip:</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Copy the exact phrase from the text. Do not waste time explaining &mdash; this is a simple retrieval question. Spend no more than 1 minute here.
                 </p>
@@ -136,8 +136,8 @@ export default function Paper1Page() {
                   &ldquo;From lines 6-14, give two reasons why the narrator felt uncomfortable.&rdquo;
                 </p>
               </div>
-              <div className="mt-3 rounded-lg bg-accent-50 p-4">
-                <p className="text-sm font-medium text-accent-700">Top tip:</p>
+              <div className="mt-3 rounded-lg bg-primary/10 p-4">
+                <p className="text-sm font-medium text-primary">Top tip:</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Write two clear, separate points. Quote briefly or paraphrase. Do not over-explain. Spend 2-3 minutes maximum.
                 </p>
@@ -159,13 +159,13 @@ export default function Paper1Page() {
                   &ldquo;In lines 15-25, how does the writer use language to describe the setting?&rdquo;
                 </p>
               </div>
-              <div className="mt-3 rounded-lg bg-accent-50 p-4">
-                <p className="text-sm font-medium text-accent-700">Top tip:</p>
+              <div className="mt-3 rounded-lg bg-primary/10 p-4">
+                <p className="text-sm font-medium text-primary">Top tip:</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Use the <strong>What-How-Why</strong> method: identify a technique (what), name it using subject terminology (how), and explain the effect on the reader (why). Aim for 2-3 developed analytical points. Spend about 8-10 minutes.
                 </p>
               </div>
-              <div className="mt-4 rounded-lg border border-primary-100 bg-primary-50 p-4">
+              <div className="mt-4 rounded-lg border border-primary/20 bg-primary/10 p-4">
                 <p className="text-sm font-semibold text-primary">Mark scheme &mdash; Level descriptors:</p>
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                   <li><strong>Level 1 (1-2 marks):</strong> Simple awareness of language, limited use of terminology.</li>
@@ -190,8 +190,8 @@ export default function Paper1Page() {
                   &ldquo;In lines 26-39, how does the writer make the reader feel sympathy for the character?&rdquo;
                 </p>
               </div>
-              <div className="mt-3 rounded-lg bg-accent-50 p-4">
-                <p className="text-sm font-medium text-accent-700">Top tip:</p>
+              <div className="mt-3 rounded-lg bg-primary/10 p-4">
+                <p className="text-sm font-medium text-primary">Top tip:</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Think about both language <em>and</em> structure here. Consider sentence lengths, paragraph structure, focus shifts, narrative perspective, and use of dialogue alongside language devices. Spend about 8-10 minutes.
                 </p>
@@ -213,13 +213,13 @@ export default function Paper1Page() {
                   &ldquo;A student said: &lsquo;This extract creates a strong sense of danger throughout.&rsquo; To what extent do you agree? You should refer to the writer&rsquo;s use of language and structure to support your answer.&rdquo;
                 </p>
               </div>
-              <div className="mt-3 rounded-lg bg-accent-50 p-4">
-                <p className="text-sm font-medium text-accent-700">Top tip:</p>
+              <div className="mt-3 rounded-lg bg-primary/10 p-4">
+                <p className="text-sm font-medium text-primary">Top tip:</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   This is the highest-tariff reading question. Structure your response as a mini-essay. Address the statement directly, use multiple quotations from across the whole text, analyse language and structure, and offer a balanced evaluation. Spend 20-25 minutes. Aim for 3-4 paragraphs.
                 </p>
               </div>
-              <div className="mt-4 rounded-lg border border-primary-100 bg-primary-50 p-4">
+              <div className="mt-4 rounded-lg border border-primary/20 bg-primary/10 p-4">
                 <p className="text-sm font-semibold text-primary">Mark scheme &mdash; Level descriptors:</p>
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                   <li><strong>Level 1 (1-3 marks):</strong> Limited evaluation with little textual reference. Simple, unsupported comments.</li>
@@ -245,8 +245,8 @@ export default function Paper1Page() {
           </p>
 
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
-            <div className="rounded-xl border border-accent-200 bg-accent-50 p-6">
-              <h3 className="font-bold text-accent-700">AO5: Content &amp; Organisation (24 marks)</h3>
+            <div className="rounded-xl border border-primary/20 bg-primary/10 p-6">
+              <h3 className="font-bold text-primary">AO5: Content &amp; Organisation (24 marks)</h3>
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
@@ -266,8 +266,8 @@ export default function Paper1Page() {
                 </li>
               </ul>
             </div>
-            <div className="rounded-xl border border-primary-200 bg-primary-50 p-6">
-              <h3 className="font-bold text-primary-700">AO6: Technical Accuracy (16 marks)</h3>
+            <div className="rounded-xl border border-primary-200 bg-primary/10 p-6">
+              <h3 className="font-bold text-primary">AO6: Technical Accuracy (16 marks)</h3>
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
@@ -356,8 +356,8 @@ export default function Paper1Page() {
                 his courage.&rdquo;
               </p>
             </div>
-            <div className="mt-4 rounded-lg border-l-4 border-accent bg-accent-50 p-4">
-              <p className="text-sm font-semibold text-accent-700">Example response:</p>
+            <div className="mt-4 rounded-lg border-l-4 border-accent bg-primary/10 p-4">
+              <p className="text-sm font-semibold text-primary">Example response:</p>
               <div className="mt-2 space-y-3 text-sm text-foreground leading-relaxed">
                 <p>
                   The writer uses personification in &ldquo;the darkness swallowed him whole&rdquo; to present the darkness
@@ -377,7 +377,7 @@ export default function Paper1Page() {
                 </p>
               </div>
             </div>
-            <div className="mt-3 rounded-lg bg-primary-50 p-4">
+            <div className="mt-3 rounded-lg bg-primary/10 p-4">
               <p className="text-sm font-medium text-primary">Examiner commentary:</p>
               <p className="mt-1 text-sm text-muted-foreground">
                 This response achieves Level 3 because it makes perceptive comments about the effects of language, uses precise
@@ -397,8 +397,8 @@ export default function Paper1Page() {
                 To what extent do you agree?&rdquo;
               </p>
             </div>
-            <div className="mt-4 rounded-lg border-l-4 border-accent bg-accent-50 p-4">
-              <p className="text-sm font-semibold text-accent-700">Example opening paragraph:</p>
+            <div className="mt-4 rounded-lg border-l-4 border-accent bg-primary/10 p-4">
+              <p className="text-sm font-semibold text-primary">Example opening paragraph:</p>
               <div className="mt-2 text-sm text-foreground leading-relaxed">
                 <p>
                   I largely agree with this statement. The writer establishes the protagonist as admirable from the outset
@@ -412,7 +412,7 @@ export default function Paper1Page() {
                 </p>
               </div>
             </div>
-            <div className="mt-3 rounded-lg bg-primary-50 p-4">
+            <div className="mt-3 rounded-lg bg-primary/10 p-4">
               <p className="text-sm font-medium text-primary">Why this works:</p>
               <ul className="mt-1 space-y-1 text-sm text-muted-foreground">
                 <li>&bull; Directly addresses the statement (&ldquo;I largely agree&rdquo;)</li>
@@ -433,8 +433,8 @@ export default function Paper1Page() {
                 &ldquo;Write a description suggested by this image: a lone figure standing at the edge of a cliff at sunset.&rdquo;
               </p>
             </div>
-            <div className="mt-4 rounded-lg border-l-4 border-accent bg-accent-50 p-4">
-              <p className="text-sm font-semibold text-accent-700">Example opening:</p>
+            <div className="mt-4 rounded-lg border-l-4 border-accent bg-primary/10 p-4">
+              <p className="text-sm font-semibold text-primary">Example opening:</p>
               <div className="mt-2 text-sm text-foreground leading-relaxed">
                 <p>
                   The world burned. Not with flames, but with colour &mdash; great swathes of amber and crimson bleeding
@@ -453,7 +453,7 @@ export default function Paper1Page() {
                 </p>
               </div>
             </div>
-            <div className="mt-3 rounded-lg bg-primary-50 p-4">
+            <div className="mt-3 rounded-lg bg-primary/10 p-4">
               <p className="text-sm font-medium text-primary">Techniques demonstrated:</p>
               <ul className="mt-1 space-y-1 text-sm text-muted-foreground">
                 <li>&bull; <strong>One-line paragraph opener</strong> for impact</li>

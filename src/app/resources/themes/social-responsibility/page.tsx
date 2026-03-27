@@ -70,8 +70,8 @@ const TEXTS = [
     title: "London",
     subtitle: "Social Responsibility and Systemic Oppression",
     author: "William Blake",
-    colour: "border-[#8E44AD]",
-    tagColour: "bg-[#8E44AD]/10 text-[#8E44AD]",
+    colour: "border-primary",
+    tagColour: "bg-primary/10 text-primary",
     analysis: [
       "Blake presents London as a city where institutions -- the Church, the monarchy, and the state -- have systematically failed their social responsibilities.",
       "The poem's relentless repetition of 'every' and 'marks' creates a sense of universal suffering, implying that no one in this society escapes the consequences of institutional neglect.",
