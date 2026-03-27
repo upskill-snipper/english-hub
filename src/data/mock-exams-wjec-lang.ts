@@ -628,7 +628,7 @@ const WJEC_C2_P1: MockExamPaper = {
           questionText: 'Write a formal letter to your local council proposing a community initiative to revitalize your town center and encourage people to visit local shops and gather spaces.',
           marks: 40,
           suggestedTimeMinutes: 45,
-          questionType: \'transactional-writing\',
+          questionType: 'transactional-writing',
           markScheme: [],
           section: 'Writing'
         }
@@ -792,7 +792,7 @@ const WJEC_C2_P3: MockExamPaper = {
           questionText: 'Write a proposal to your school leadership suggesting ways to help students achieve better balance between academic work and personal wellbeing. Present your case persuasively.',
           marks: 40,
           suggestedTimeMinutes: 45,
-          questionType: \'transactional-writing\',
+          questionType: 'transactional-writing',
           markScheme: [],
           section: 'Writing'
         }
