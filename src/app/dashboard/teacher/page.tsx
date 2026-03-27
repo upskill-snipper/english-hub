@@ -88,7 +88,7 @@ function heatmapColor(level: number): string {
     case 1:
       return "bg-accent-100";
     default:
-      return "bg-gray-100";
+      return "bg-muted";
   }
 }
 
@@ -113,7 +113,7 @@ export default function TeacherDashboardPage() {
         <h1 className="text-2xl font-bold text-primary sm:text-3xl">
           Welcome back, {teacher.firstName}!
         </h1>
-        <p className="mt-1 text-sm text-gray-500">
+        <p className="mt-1 text-sm text-muted-foreground">
           Here&apos;s an overview of your classes and student progress.
         </p>
       </div>
@@ -127,8 +127,8 @@ export default function TeacherDashboardPage() {
             </svg>
           </div>
           <div>
-            <p className="text-2xl font-bold text-gray-900">{stats.totalStudents}</p>
-            <p className="text-xs text-gray-500">Total Students</p>
+            <p className="text-2xl font-bold text-foreground">{stats.totalStudents}</p>
+            <p className="text-xs text-muted-foreground">Total Students</p>
           </div>
         </div>
 
@@ -139,8 +139,8 @@ export default function TeacherDashboardPage() {
             </svg>
           </div>
           <div>
-            <p className="text-2xl font-bold text-gray-900">{stats.activeStudents}</p>
-            <p className="text-xs text-gray-500">Active This Week</p>
+            <p className="text-2xl font-bold text-foreground">{stats.activeStudents}</p>
+            <p className="text-xs text-muted-foreground">Active This Week</p>
           </div>
         </div>
 
@@ -151,8 +151,8 @@ export default function TeacherDashboardPage() {
             </svg>
           </div>
           <div>
-            <p className="text-2xl font-bold text-gray-900">{stats.averageScore}%</p>
-            <p className="text-xs text-gray-500">Average Class Score</p>
+            <p className="text-2xl font-bold text-foreground">{stats.averageScore}%</p>
+            <p className="text-xs text-muted-foreground">Average Class Score</p>
           </div>
         </div>
 
@@ -163,8 +163,8 @@ export default function TeacherDashboardPage() {
             </svg>
           </div>
           <div>
-            <p className="text-2xl font-bold text-gray-900">{stats.submissionsThisWeek}</p>
-            <p className="text-xs text-gray-500">Submissions This Week</p>
+            <p className="text-2xl font-bold text-foreground">{stats.submissionsThisWeek}</p>
+            <p className="text-xs text-muted-foreground">Submissions This Week</p>
           </div>
         </div>
       </div>
@@ -179,7 +179,7 @@ export default function TeacherDashboardPage() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
           </svg>
-          <span className="text-sm font-medium text-gray-700">View Student Work</span>
+          <span className="text-sm font-medium text-foreground">View Student Work</span>
         </Link>
         <Link
           href="/dashboard/teacher/assignments"
@@ -188,7 +188,7 @@ export default function TeacherDashboardPage() {
           <svg className="h-5 w-5 shrink-0 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
-          <span className="text-sm font-medium text-gray-700">Assign Tasks</span>
+          <span className="text-sm font-medium text-foreground">Assign Tasks</span>
         </Link>
         <Link
           href="/dashboard/teacher/assignments"
@@ -197,7 +197,7 @@ export default function TeacherDashboardPage() {
           <svg className="h-5 w-5 shrink-0 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
           </svg>
-          <span className="text-sm font-medium text-gray-700">Create Assessment</span>
+          <span className="text-sm font-medium text-foreground">Create Assessment</span>
         </Link>
         <Link
           href="/dashboard/teacher/analytics"
@@ -206,7 +206,7 @@ export default function TeacherDashboardPage() {
           <svg className="h-5 w-5 shrink-0 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
           </svg>
-          <span className="text-sm font-medium text-gray-700">View Analytics</span>
+          <span className="text-sm font-medium text-foreground">View Analytics</span>
         </Link>
       </div>
 
@@ -214,7 +214,7 @@ export default function TeacherDashboardPage() {
         {/* ── Recent submissions (2/3 width) ─────────────────────── */}
         <section className="lg:col-span-2" aria-labelledby="submissions-heading">
           <div className="flex items-center justify-between mb-4">
-            <h2 id="submissions-heading" className="text-lg font-semibold text-gray-900">
+            <h2 id="submissions-heading" className="text-lg font-semibold text-foreground">
               Recent Submissions
             </h2>
             <Link
@@ -231,13 +231,13 @@ export default function TeacherDashboardPage() {
                 {/* TODO: Link to actual submission review page */}
                 <div className="card flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                   <div className="min-w-0 flex-1">
-                    <p className="truncate font-medium text-gray-900">
+                    <p className="truncate font-medium text-foreground">
                       {sub.studentName}
                     </p>
-                    <p className="mt-0.5 text-xs text-gray-500 truncate">
+                    <p className="mt-0.5 text-xs text-muted-foreground truncate">
                       {sub.essayTitle} &middot; {sub.subject}
                     </p>
-                    <p className="mt-0.5 text-xs text-gray-500">
+                    <p className="mt-0.5 text-xs text-muted-foreground">
                       {new Date(sub.submittedAt).toLocaleDateString("en-GB", {
                         day: "numeric",
                         month: "short",
@@ -253,7 +253,7 @@ export default function TeacherDashboardPage() {
                       {sub.status === "graded" ? "Graded" : "Pending"}
                     </span>
                     {sub.score !== null && (
-                      <span className="text-lg font-bold text-gray-900">
+                      <span className="text-lg font-bold text-foreground">
                         {sub.score}%
                       </span>
                     )}
@@ -266,16 +266,16 @@ export default function TeacherDashboardPage() {
 
         {/* ── Student progress heatmap (1/3 width) ──────────────── */}
         <section aria-labelledby="progress-heading">
-          <h2 id="progress-heading" className="text-lg font-semibold text-gray-900 mb-4">
+          <h2 id="progress-heading" className="text-lg font-semibold text-foreground mb-4">
             Student Activity
           </h2>
           <div className="card overflow-x-auto">
             <table className="w-full text-xs">
               <thead>
                 <tr>
-                  <th className="text-left font-medium text-gray-500 pb-2 pr-2">Student</th>
+                  <th className="text-left font-medium text-muted-foreground pb-2 pr-2">Student</th>
                   {WEEK_LABELS.map((w) => (
-                    <th key={w} className="text-center font-medium text-gray-500 pb-2 px-1">
+                    <th key={w} className="text-center font-medium text-muted-foreground pb-2 px-1">
                       {w}
                     </th>
                   ))}
@@ -284,7 +284,7 @@ export default function TeacherDashboardPage() {
               <tbody>
                 {MOCK_PROGRESS_GRID.map((student) => (
                   <tr key={student.name}>
-                    <td className="py-1 pr-2 font-medium text-gray-700 whitespace-nowrap">
+                    <td className="py-1 pr-2 font-medium text-foreground whitespace-nowrap">
                       {student.name}
                     </td>
                     {student.weeks.map((level, i) => (
@@ -299,9 +299,9 @@ export default function TeacherDashboardPage() {
                 ))}
               </tbody>
             </table>
-            <div className="mt-3 flex items-center gap-2 text-xs text-gray-500">
+            <div className="mt-3 flex items-center gap-2 text-xs text-muted-foreground">
               <span>Less</span>
-              <div className="w-4 h-4 rounded-sm bg-gray-100" />
+              <div className="w-4 h-4 rounded-sm bg-muted" />
               <div className="w-4 h-4 rounded-sm bg-accent-100" />
               <div className="w-4 h-4 rounded-sm bg-accent-300" />
               <div className="w-4 h-4 rounded-sm bg-accent" />

@@ -1116,7 +1116,7 @@ function TechniqueCard({ t }: { t: Technique }) {
               {t.name}
             </h3>
             {t.aka && (
-              <span className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
+              <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
                 aka {t.aka}
               </span>
             )}
@@ -1325,7 +1325,7 @@ export default function LanguageDevicesPage() {
             className={`rounded-full px-4 py-1.5 text-xs font-semibold transition ${
               activeCategory === null
                 ? "bg-accent text-white"
-                : "bg-gray-100 text-muted-foreground hover:bg-gray-200"
+                : "bg-muted text-muted-foreground hover:bg-muted"
             }`}
           >
             All categories
@@ -1339,7 +1339,7 @@ export default function LanguageDevicesPage() {
               className={`rounded-full px-4 py-1.5 text-xs font-semibold transition ${
                 activeCategory === cat
                   ? "bg-accent text-white"
-                  : "bg-gray-100 text-muted-foreground hover:bg-gray-200"
+                  : "bg-muted text-muted-foreground hover:bg-muted"
               }`}
             >
               {cat}

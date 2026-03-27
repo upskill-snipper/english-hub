@@ -221,7 +221,7 @@ export default function Grade5Page() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#27AE60]/80 px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-[#27AE60]/80 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <Link
             href="/resources/grade-targets"
@@ -310,7 +310,7 @@ export default function Grade5Page() {
                     >
                       <input
                         type="checkbox"
-                        className="h-4 w-4 rounded border-gray-300 text-[#27AE60] focus:ring-[#27AE60]"
+                        className="h-4 w-4 rounded border-border text-[#27AE60] focus:ring-[#27AE60]"
                       />
                       <span className="text-sm text-muted-foreground">{item.skill}</span>
                     </label>
@@ -478,7 +478,7 @@ export default function Grade5Page() {
             </Link>
             <Link
               href="/resources/grade-targets/grade-7"
-              className="group inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow transition hover:bg-[#1A5276]"
+              className="group inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow transition hover:bg-primary"
             >
               Ready for Grade 7? <ArrowRight />
             </Link>

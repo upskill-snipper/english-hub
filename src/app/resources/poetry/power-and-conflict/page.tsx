@@ -222,7 +222,7 @@ export default function PowerAndConflictPage() {
               placeholder="Search poems by title, poet, or theme..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full rounded-lg border border-gray-300 py-2.5 pl-10 pr-4 text-sm text-foreground placeholder-gray-400 focus:border-[#2E86C1] focus:outline-none focus:ring-2 focus:ring-primary/20 transition-colors"
+              className="w-full rounded-lg border border-border py-2.5 pl-10 pr-4 text-sm text-foreground placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-colors"
             />
             {searchQuery && (
               <button
@@ -247,8 +247,8 @@ export default function PowerAndConflictPage() {
                   onClick={() => setActiveTheme(activeTheme === theme ? null : theme)}
                   className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
                     activeTheme === theme
-                      ? "bg-[#1A5276] text-white"
-                      : "bg-gray-100 text-muted-foreground hover:bg-primary/10 hover:text-foreground"
+                      ? "bg-primary text-white"
+                      : "bg-muted text-muted-foreground hover:bg-primary/10 hover:text-foreground"
                   }`}
                 >
                   {theme}
@@ -267,8 +267,8 @@ export default function PowerAndConflictPage() {
                   onClick={() => setActivePeriod(activePeriod === period ? null : period)}
                   className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
                     activePeriod === period
-                      ? "bg-[#1A5276] text-white"
-                      : "bg-gray-100 text-muted-foreground hover:bg-primary/10 hover:text-foreground"
+                      ? "bg-primary text-white"
+                      : "bg-muted text-muted-foreground hover:bg-primary/10 hover:text-foreground"
                   }`}
                 >
                   {period}
@@ -304,7 +304,7 @@ export default function PowerAndConflictPage() {
               <a
                 key={p.id}
                 href={`#${p.id}`}
-                className="rounded-lg bg-gray-100 px-3 py-1.5 text-xs font-medium text-muted-foreground hover:bg-accent-50 hover:text-accent-600 transition-colors"
+                className="rounded-lg bg-muted px-3 py-1.5 text-xs font-medium text-muted-foreground hover:bg-accent-50 hover:text-accent-600 transition-colors"
               >
                 {p.title}
               </a>
@@ -324,7 +324,7 @@ export default function PowerAndConflictPage() {
         <div className="space-y-4">
 
           {matchCount === 0 && (
-            <div className="rounded-xl border border-dashed border-gray-300 bg-muted p-8 text-center">
+            <div className="rounded-xl border border-dashed border-border bg-muted p-8 text-center">
               <p className="text-muted-foreground text-sm">No poems match your current filters. Try adjusting your search or clearing filters.</p>
             </div>
           )}

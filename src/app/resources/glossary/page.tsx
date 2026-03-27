@@ -345,7 +345,7 @@ export default function GlossaryPage() {
             className={`rounded-full px-4 py-1.5 text-sm font-semibold transition-colors ${
               activeCategory === "all"
                 ? "bg-primary text-white"
-                : "bg-gray-100 text-muted-foreground hover:bg-primary/10 hover:text-foreground"
+                : "bg-muted text-muted-foreground hover:bg-primary/10 hover:text-foreground"
             }`}
           >
             All ({GLOSSARY_TERMS.length})
@@ -357,7 +357,7 @@ export default function GlossaryPage() {
               className={`rounded-full px-4 py-1.5 text-sm font-semibold transition-colors ${
                 activeCategory === cat
                   ? "bg-primary text-white"
-                  : "bg-gray-100 text-muted-foreground hover:bg-primary/10 hover:text-foreground"
+                  : "bg-muted text-muted-foreground hover:bg-primary/10 hover:text-foreground"
               }`}
             >
               {cat} ({categoryCounts[cat]})
@@ -443,7 +443,7 @@ export default function GlossaryPage() {
                         {CATEGORY_ICONS[cat]}
                       </div>
                       <h2 className="text-lg font-bold text-foreground">{cat}</h2>
-                      <span className="rounded-full bg-gray-200 px-2 py-0.5 text-xs font-medium text-muted-foreground">
+                      <span className="rounded-full bg-muted px-2 py-0.5 text-xs font-medium text-muted-foreground">
                         {terms.length}
                       </span>
                     </div>
@@ -480,8 +480,8 @@ export default function GlossaryPage() {
 
           {/* No results */}
           {filteredTerms.length === 0 && (
-            <div className="flex flex-col items-center rounded-2xl border border-dashed border-gray-300 bg-card py-16 text-center">
-              <svg className="h-12 w-12 text-gray-300" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor">
+            <div className="flex flex-col items-center rounded-2xl border border-dashed border-border bg-card py-16 text-center">
+              <svg className="h-12 w-12 text-muted-foreground" fill="none" viewBox="0 0 24 24" strokeWidth={1} stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
               </svg>
               <p className="mt-4 text-sm font-medium text-foreground">

@@ -167,7 +167,7 @@ export default function ExamTechniquePage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#2E86C1] px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-accent-200">
             Resources
@@ -267,7 +267,7 @@ export default function ExamTechniquePage() {
                 {s.topics.map((t) => (
                   <li
                     key={t}
-                    className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-muted-foreground"
+                    className="rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground"
                   >
                     {t}
                   </li>

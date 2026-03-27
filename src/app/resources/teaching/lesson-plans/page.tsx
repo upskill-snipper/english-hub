@@ -211,7 +211,7 @@ export default function LessonPlansPage() {
             </p>
             <Link
               href="/resources"
-              className="mt-6 inline-block rounded-lg bg-[#1A5276] px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-[#1A5276]/90"
+              className="mt-6 inline-block rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-primary/90"
             >
               Back to Resources
             </Link>
@@ -225,7 +225,7 @@ export default function LessonPlansPage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#1A5276]/80 px-4 py-12 text-white sm:py-16">
+      <section className="bg-gradient-to-br from-primary to-primary/80 px-4 py-12 text-white sm:py-16">
         <div className="mx-auto max-w-4xl text-center">
           <nav className="mb-4 text-sm text-white/70">
             <Link href="/resources/teaching" className="hover:text-white transition-colors">

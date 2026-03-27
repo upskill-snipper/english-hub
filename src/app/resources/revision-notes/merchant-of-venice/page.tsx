@@ -94,7 +94,7 @@ export default function MerchantOfVeniceRevisionPage() {
             <a
               key={s}
               href={`#${s.toLowerCase().replace(/\s+/g, "-")}`}
-              className="rounded-lg bg-gray-100 px-3 py-1.5 text-xs font-medium text-muted-foreground hover:bg-accent-50 hover:text-accent-600 transition-colors"
+              className="rounded-lg bg-muted px-3 py-1.5 text-xs font-medium text-muted-foreground hover:bg-accent-50 hover:text-accent-600 transition-colors"
             >
               {s}
             </a>
@@ -665,7 +665,7 @@ export default function MerchantOfVeniceRevisionPage() {
                         <th className="px-4 py-2 font-semibold text-muted-foreground border-b">Key Techniques</th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-gray-100">
+                    <tbody className="divide-y divide-border">
                       <tr>
                         <td className="px-4 py-2 font-medium text-foreground">Opening</td>
                         <td className="px-4 py-2 text-muted-foreground">The Duke appeals to Shylock for mercy. Shylock refuses, citing the law and his &ldquo;humour.&rdquo;</td>

@@ -190,7 +190,7 @@ export default function Grade9Page() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#8E44AD]/80 px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-[#8E44AD]/80 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <Link
             href="/resources/grade-targets"
@@ -307,9 +307,9 @@ export default function Grade9Page() {
               <div className="border-b border-border bg-muted px-6 py-3">
                 <h3 className="font-bold text-foreground">{item.principle}</h3>
               </div>
-              <div className="grid sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-gray-200">
+              <div className="grid sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-border">
                 <div className="p-5">
-                  <span className="rounded-full bg-gray-200 px-2.5 py-0.5 text-xs font-semibold text-muted-foreground">
+                  <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-semibold text-muted-foreground">
                     Competent (5-7)
                   </span>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
@@ -427,7 +427,7 @@ export default function Grade9Page() {
           </Link>
           <Link
             href="/resources/grade-targets"
-            className="group inline-flex items-center gap-2 rounded-lg bg-[#1A5276] px-5 py-2.5 text-sm font-semibold text-white shadow transition hover:bg-[#1A5276]/90"
+            className="group inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow transition hover:bg-primary/90"
           >
             All Grade Targets <ArrowRight />
           </Link>

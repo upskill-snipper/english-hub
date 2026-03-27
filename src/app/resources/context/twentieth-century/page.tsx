@@ -300,7 +300,7 @@ export default function TwentiethCenturyContextPage() {
           </Section>
 
           {/* Post-war Society */}
-          <Section id="postwar" title="Post-War Disillusionment" colour="bg-gray-700">
+          <Section id="postwar" title="Post-War Disillusionment" colour="bg-muted">
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 The aftermath of WWII did not bring simple optimism. The revelations of the

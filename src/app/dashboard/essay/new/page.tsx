@@ -82,28 +82,28 @@ export default function NewEssayPage() {
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6 lg:px-8">
       {/* ── Breadcrumb ──────────────────────────────────────── */}
       <nav aria-label="Breadcrumb" className="mb-6">
-        <ol className="flex items-center gap-1.5 text-sm text-gray-500">
+        <ol className="flex items-center gap-1.5 text-sm text-muted-foreground">
           <li>
             <Link href="/dashboard" className="hover:text-accent">
               Dashboard
             </Link>
           </li>
           <li aria-hidden="true">/</li>
-          <li className="font-medium text-gray-900">New Essay</li>
+          <li className="font-medium text-foreground">New Essay</li>
         </ol>
       </nav>
 
       <h1 className="text-2xl font-bold text-primary sm:text-3xl">
         Write a New Essay
       </h1>
-      <p className="mt-1 text-sm text-gray-500">
+      <p className="mt-1 text-sm text-muted-foreground">
         Submit your essay below and get instant AI-powered feedback.
       </p>
 
       <form onSubmit={handleSubmit} className="mt-8 space-y-6">
         {/* ── Title ──────────────────────────────────────────── */}
         <div>
-          <label htmlFor="essay-title" className="block text-sm font-medium text-gray-700">
+          <label htmlFor="essay-title" className="block text-sm font-medium text-foreground">
             Essay Title <span className="text-warn">*</span>
           </label>
           <input
@@ -121,7 +121,7 @@ export default function NewEssayPage() {
         {/* ── Subject & Exam Board ───────────────────────────── */}
         <div className="grid gap-4 sm:grid-cols-2">
           <div>
-            <label htmlFor="subject" className="block text-sm font-medium text-gray-700">
+            <label htmlFor="subject" className="block text-sm font-medium text-foreground">
               Subject <span className="text-warn">*</span>
             </label>
             <select
@@ -143,7 +143,7 @@ export default function NewEssayPage() {
           </div>
 
           <div>
-            <label htmlFor="exam-board" className="block text-sm font-medium text-gray-700">
+            <label htmlFor="exam-board" className="block text-sm font-medium text-foreground">
               Exam Board <span className="text-warn">*</span>
             </label>
 
@@ -185,9 +185,9 @@ export default function NewEssayPage() {
 
         {/* ── Topic / Prompt (optional) ─────────────────────── */}
         <div>
-          <label htmlFor="topic" className="block text-sm font-medium text-gray-700">
+          <label htmlFor="topic" className="block text-sm font-medium text-foreground">
             Topic / Prompt{" "}
-            <span className="text-xs font-normal text-gray-500">(optional)</span>
+            <span className="text-xs font-normal text-muted-foreground">(optional)</span>
           </label>
           <input
             id="topic"
@@ -202,7 +202,7 @@ export default function NewEssayPage() {
 
         {/* ── Essay content ─────────────────────────────────── */}
         <div>
-          <label htmlFor="essay-content" className="block text-sm font-medium text-gray-700">
+          <label htmlFor="essay-content" className="block text-sm font-medium text-foreground">
             Your Essay <span className="text-warn">*</span>
           </label>
           <textarea
@@ -213,7 +213,7 @@ export default function NewEssayPage() {
             onChange={(e) => setContent(e.target.value)}
             required
           />
-          <div className="mt-1.5 flex items-center justify-between text-xs text-gray-500">
+          <div className="mt-1.5 flex items-center justify-between text-xs text-muted-foreground">
             <span>
               {wordCount} {wordCount === 1 ? "word" : "words"}
               {wordCount > 0 && wordCount < 50 && (

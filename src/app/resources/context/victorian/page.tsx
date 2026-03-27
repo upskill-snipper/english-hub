@@ -191,7 +191,7 @@ export default function VictorianContextPage() {
           </Section>
 
           {/* Industrial Revolution */}
-          <Section id="industry" title="The Industrial Revolution" colour="bg-gray-700">
+          <Section id="industry" title="The Industrial Revolution" colour="bg-muted">
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 Britain was the birthplace of the Industrial Revolution. By the mid-nineteenth

@@ -630,7 +630,7 @@ export default function RevisionNotesHub() {
             className={`rounded-full px-3.5 py-1.5 text-xs font-semibold transition-colors ${
               activeBoard === null
                 ? "bg-primary text-white"
-                : "bg-gray-100 text-muted-foreground hover:bg-gray-200"
+                : "bg-muted text-muted-foreground hover:bg-muted"
             }`}
           >
             All Boards
@@ -644,7 +644,7 @@ export default function RevisionNotesHub() {
               className={`rounded-full px-3.5 py-1.5 text-xs font-semibold transition-colors ${
                 activeBoard === board
                   ? "bg-primary text-white"
-                  : "bg-gray-100 text-muted-foreground hover:bg-primary/10 hover:text-primary"
+                  : "bg-muted text-muted-foreground hover:bg-primary/10 hover:text-primary"
               }`}
             >
               {board}
@@ -657,7 +657,7 @@ export default function RevisionNotesHub() {
       {categoriesWithTexts.length === 0 && (
         <div className="rounded-xl border border-border bg-card py-16 text-center">
           <svg
-            className="mx-auto h-12 w-12 text-gray-300"
+            className="mx-auto h-12 w-12 text-muted-foreground"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -743,7 +743,7 @@ export default function RevisionNotesHub() {
                       {text.themes.map((theme) => (
                         <span
                           key={theme}
-                          className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-muted-foreground"
+                          className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground"
                         >
                           {theme}
                         </span>

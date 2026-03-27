@@ -108,7 +108,7 @@ export default function RomanticContextPage() {
         </div>
 
         {/* Industrial Revolution Response */}
-        <Section id="industry" title="Response to the Industrial Revolution" defaultOpen colour="bg-gray-700">
+        <Section id="industry" title="Response to the Industrial Revolution" defaultOpen colour="bg-muted">
           <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
             <p>
               The Romantic movement arose in direct opposition to the <strong>Industrial Revolution</strong>.

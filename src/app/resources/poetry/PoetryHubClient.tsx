@@ -21,7 +21,7 @@ const ANTHOLOGY_SECTIONS = [
       "All 15 poems analysed in depth: Ozymandias, London, The Prelude, My Last Duchess, Charge of the Light Brigade, Exposure, Storm on the Island, Bayonet Charge, Remains, Poppies, War Photographer, Tissue, The Emigree, Kamikaze, and Checking Out Me History.",
     poems: 15,
     board: "AQA" as const,
-    colour: "border-[#2E86C1]",
+    colour: "border-primary",
   },
   {
     title: "AQA Love and Relationships",
@@ -30,7 +30,7 @@ const ANTHOLOGY_SECTIONS = [
       "All 15 poems analysed: When We Two Parted, Love's Philosophy, Porphyria's Lover, Sonnet 29, Neutral Tones, Letters from Yorkshire, The Farmer's Bride, Walking Away, Eden Rock, Follower, Mother Any Distance, Before You Were Mine, Winter Swans, Singh Song!, and Climbing My Grandfather.",
     poems: 15,
     board: "AQA" as const,
-    colour: "border-[#2E86C1]",
+    colour: "border-primary",
   },
   {
     title: "Edexcel Poetry Anthology",
@@ -190,7 +190,7 @@ export function PoetryHubClient() {
   return (
     <>
       {/* ── Hero ─────────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#1A5276]/80 px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary/80 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary/70">
             GCSE English Literature
@@ -255,7 +255,7 @@ export function PoetryHubClient() {
                   <PoemIcon />
                   {section.poems} poems
                 </span>
-                <span className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
+                <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
                   {section.board}
                 </span>
               </div>
@@ -287,7 +287,7 @@ export function PoetryHubClient() {
               <Link
                 key={guide.href}
                 href={guide.href}
-                className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-md transition hover:border-[#2E86C1]/40 hover:shadow-md"
+                className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-md transition hover:border-primary/40 hover:shadow-md"
               >
                 <div className="flex items-center justify-between">
                   {getSkillIcon(guide.icon)}
@@ -330,9 +330,9 @@ export function PoetryHubClient() {
             <Link
               key={poem.href}
               href={poem.href}
-              className="group flex items-start gap-3 rounded-lg border border-border bg-card p-4 shadow-md transition hover:border-[#2E86C1]/40 hover:shadow-md"
+              className="group flex items-start gap-3 rounded-lg border border-border bg-card p-4 shadow-md transition hover:border-primary/40 hover:shadow-md"
             >
-              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">
+              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
                 {i + 1}
               </span>
               <div className="min-w-0">
@@ -342,7 +342,7 @@ export function PoetryHubClient() {
                 <p className="mt-0.5 truncate text-xs text-muted-foreground">
                   {poem.poet}
                 </p>
-                <span className="mt-1 inline-block rounded-full bg-gray-100 px-2 py-0.5 text-[10px] font-medium text-muted-foreground">
+                <span className="mt-1 inline-block rounded-full bg-muted px-2 py-0.5 text-[10px] font-medium text-muted-foreground">
                   {poem.board}
                 </span>
               </div>
@@ -378,7 +378,7 @@ export function PoetryHubClient() {
       </section>
 
       {/* ── How poetry is assessed ───────────────────────────────── */}
-      <section className="bg-[#1A5276]/5 px-4 py-12 sm:px-6 lg:px-8">
+      <section className="bg-primary/5 px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-2xl font-bold text-foreground">
             How Poetry Is Assessed
@@ -414,7 +414,7 @@ export function PoetryHubClient() {
                 className="rounded-lg border border-border bg-card p-5 shadow-md"
               >
                 <div className="flex items-start gap-4">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-sm font-bold text-white">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
                     {obj.ao}
                   </span>
                   <div>

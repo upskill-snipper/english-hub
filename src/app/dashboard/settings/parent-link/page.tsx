@@ -158,9 +158,9 @@ function StudentView() {
   if (loading) {
     return (
       <div className="animate-pulse space-y-4">
-        <div className="h-8 w-48 rounded bg-gray-200" />
-        <div className="h-32 w-full rounded bg-gray-100" />
-        <div className="h-32 w-full rounded bg-gray-100" />
+        <div className="h-8 w-48 rounded bg-muted" />
+        <div className="h-32 w-full rounded bg-muted" />
+        <div className="h-32 w-full rounded bg-muted" />
       </div>
     );
   }
@@ -174,7 +174,7 @@ function StudentView() {
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-muted-foreground">
               Generate an invite link and share it with your parent or guardian.
               They will be able to view your progress reports and scores for free.
             </p>
@@ -189,7 +189,7 @@ function StudentView() {
             {activeInvite ? (
               <div className="space-y-4">
                 <div className="rounded-lg border-2 border-dashed border-accent-200 bg-accent-50 p-4">
-                  <p className="text-xs font-medium text-gray-500 uppercase tracking-wide">
+                  <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
                     Your invite code
                   </p>
                   <div className="mt-1 flex items-center gap-3">
@@ -199,12 +199,12 @@ function StudentView() {
                     <button
                       type="button"
                       onClick={handleCopyCode}
-                      className="rounded-md bg-white px-2.5 py-1.5 text-xs font-medium text-gray-700 shadow-sm ring-1 ring-gray-300 hover:bg-gray-50 transition-colors"
+                      className="rounded-md bg-card px-2.5 py-1.5 text-xs font-medium text-foreground shadow-sm ring-1 ring-border hover:bg-muted transition-colors"
                     >
                       {copied ? "Copied" : "Copy code"}
                     </button>
                   </div>
-                  <p className="mt-2 text-xs text-gray-500">
+                  <p className="mt-2 text-xs text-muted-foreground">
                     Expires:{" "}
                     {new Date(activeInvite.expiresAt).toLocaleDateString("en-GB", {
                       day: "numeric",
@@ -230,7 +230,7 @@ function StudentView() {
                   </Button>
                 </div>
 
-                <p className="text-xs text-gray-500">
+                <p className="text-xs text-muted-foreground">
                   Generating a new code will invalidate the current one.
                 </p>
               </div>
@@ -250,7 +250,7 @@ function StudentView() {
         </CardHeader>
         <CardContent>
           {linkedParents.length === 0 ? (
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-muted-foreground">
               No parent is currently linked to your account. Generate an invite
               above to get started.
             </p>
@@ -259,14 +259,14 @@ function StudentView() {
               {linkedParents.map((parent) => (
                 <div
                   key={parent.id}
-                  className="flex items-center justify-between rounded-lg border border-gray-200 p-4"
+                  className="flex items-center justify-between rounded-lg border border-border p-4"
                 >
                   <div>
-                    <p className="text-sm font-medium text-gray-900">
+                    <p className="text-sm font-medium text-foreground">
                       {parent.firstName} {parent.lastName}
                     </p>
-                    <p className="text-xs text-gray-500">{parent.email}</p>
-                    <p className="text-xs text-gray-500">
+                    <p className="text-xs text-muted-foreground">{parent.email}</p>
+                    <p className="text-xs text-muted-foreground">
                       Linked{" "}
                       {new Date(parent.linkedAt).toLocaleDateString("en-GB", {
                         day: "numeric",
@@ -389,9 +389,9 @@ function ParentView() {
   if (loading) {
     return (
       <div className="animate-pulse space-y-4">
-        <div className="h-8 w-48 rounded bg-gray-200" />
-        <div className="h-32 w-full rounded bg-gray-100" />
-        <div className="h-32 w-full rounded bg-gray-100" />
+        <div className="h-8 w-48 rounded bg-muted" />
+        <div className="h-32 w-full rounded bg-muted" />
+        <div className="h-32 w-full rounded bg-muted" />
       </div>
     );
   }
@@ -405,7 +405,7 @@ function ParentView() {
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-muted-foreground">
               Enter the invite code your child shared with you to link your
               accounts. This gives you free access to their progress reports.
             </p>
@@ -414,7 +414,7 @@ function ParentView() {
               <div>
                 <label
                   htmlFor="invite-code"
-                  className="block text-sm font-medium text-gray-700 mb-1"
+                  className="block text-sm font-medium text-foreground mb-1"
                 >
                   Invite code
                 </label>
@@ -439,7 +439,7 @@ function ParentView() {
               </Button>
             </form>
 
-            <p className="text-xs text-gray-500">
+            <p className="text-xs text-muted-foreground">
               Don&apos;t have a code? Ask your child to generate one from their account
               settings.
             </p>
@@ -454,7 +454,7 @@ function ParentView() {
         </CardHeader>
         <CardContent>
           {linkedStudents.length === 0 ? (
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-muted-foreground">
               You are not linked to any students yet. Use an invite code above to
               get started.
             </p>
@@ -463,11 +463,11 @@ function ParentView() {
               {linkedStudents.map((student) => (
                 <div
                   key={student.id}
-                  className="flex items-center justify-between rounded-lg border border-gray-200 p-4"
+                  className="flex items-center justify-between rounded-lg border border-border p-4"
                 >
                   <div>
                     <div className="flex items-center gap-2">
-                      <p className="text-sm font-medium text-gray-900">
+                      <p className="text-sm font-medium text-foreground">
                         {student.firstName} {student.lastName}
                       </p>
                       {student.hasActiveSubscription ? (
@@ -481,9 +481,9 @@ function ParentView() {
                       )}
                     </div>
                     {student.school && (
-                      <p className="text-xs text-gray-500">{student.school}</p>
+                      <p className="text-xs text-muted-foreground">{student.school}</p>
                     )}
-                    <p className="text-xs text-gray-500">
+                    <p className="text-xs text-muted-foreground">
                       Linked{" "}
                       {new Date(student.linkedAt).toLocaleDateString("en-GB", {
                         day: "numeric",
@@ -553,9 +553,9 @@ function ParentLinkContent() {
     return (
       <div className="mx-auto max-w-2xl px-4 py-8 sm:px-6 lg:px-8">
         <div className="animate-pulse space-y-4">
-          <div className="h-8 w-48 rounded bg-gray-200" />
-          <div className="h-4 w-64 rounded bg-gray-100" />
-          <div className="mt-6 h-40 w-full rounded bg-gray-100" />
+          <div className="h-8 w-48 rounded bg-muted" />
+          <div className="h-4 w-64 rounded bg-muted" />
+          <div className="mt-6 h-40 w-full rounded bg-muted" />
         </div>
       </div>
     );
@@ -567,7 +567,7 @@ function ParentLinkContent() {
   return (
     <div className="mx-auto max-w-2xl px-4 py-8 sm:px-6 lg:px-8">
       <div className="mb-6">
-        <nav className="text-sm text-gray-500 mb-2" aria-label="Breadcrumb">
+        <nav className="text-sm text-muted-foreground mb-2" aria-label="Breadcrumb">
           <a
             href="/dashboard/settings"
             className="hover:text-accent-600 transition-colors"
@@ -575,12 +575,12 @@ function ParentLinkContent() {
             Settings
           </a>
           <span className="mx-2">/</span>
-          <span className="text-gray-900">Parent Linking</span>
+          <span className="text-foreground">Parent Linking</span>
         </nav>
         <h1 className="text-2xl font-bold text-primary sm:text-3xl">
           {isStudent ? "Invite a Parent" : isParent ? "Link to Student" : "Parent Linking"}
         </h1>
-        <p className="mt-1 text-sm text-gray-500">
+        <p className="mt-1 text-sm text-muted-foreground">
           {isStudent
             ? "Connect your parent or guardian so they can track your progress."
             : isParent

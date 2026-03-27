@@ -919,7 +919,7 @@ export default function PoetryTechniquesPage() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search techniques, poems, or definitions..."
-              className="w-full rounded-lg border border-gray-300 bg-card py-2.5 pl-10 pr-4 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+              className="w-full rounded-lg border border-border bg-card py-2.5 pl-10 pr-4 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
             />
             {searchQuery && (
               <button
@@ -942,7 +942,7 @@ export default function PoetryTechniquesPage() {
                 className={`rounded-full px-3 py-1.5 text-xs font-semibold transition-colors ${
                   activeCategory === cat
                     ? "bg-primary text-white"
-                    : "bg-gray-100 text-muted-foreground hover:bg-primary/10"
+                    : "bg-muted text-muted-foreground hover:bg-primary/10"
                 }`}
               >
                 {cat}

@@ -374,7 +374,7 @@ export default function LanguageComparisonPage() {
                         <th className="py-3 text-left font-bold text-foreground">Sentence Starter</th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-gray-100">
+                    <tbody className="divide-y divide-border">
                       {[
                         { purpose: "Compare openings", starter: "Both writers open by..., yet Source A uses... whereas Source B..." },
                         { purpose: "Compare language", starter: "While Source A employs [technique] to create [effect], Source B instead uses..." },

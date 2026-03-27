@@ -67,7 +67,7 @@ export default function CreativeWritingPage() {
           &larr; Back to Resources
         </Link>
         <h1 className="text-2xl font-bold text-primary">Creative Writing Masterclass</h1>
-        <p className="mt-2 text-sm text-gray-500">
+        <p className="mt-2 text-sm text-muted-foreground">
           Model texts, annotated examples, and structured tasks for teaching descriptive
           and narrative writing at GCSE level. Suitable for AQA Paper 1 Q5 / Edexcel Paper 1 Section B.
         </p>
@@ -76,14 +76,14 @@ export default function CreativeWritingPage() {
       {/* Model Text */}
       <section className="card">
         <div className="flex items-center justify-between mb-3">
-          <h2 className="text-lg font-semibold text-gray-900">{model.title}</h2>
+          <h2 className="text-lg font-semibold text-foreground">{model.title}</h2>
           <span className="inline-flex items-center rounded-full bg-emerald-50 px-2.5 py-0.5 text-xs font-medium text-emerald-700">
             {model.level}
           </span>
         </div>
-        <div className="rounded-lg bg-gray-50 p-5 border-l-4 border-primary/30">
+        <div className="rounded-lg bg-background p-5 border-l-4 border-primary/30">
           {model.text.split('\n\n').map((para, i) => (
-            <p key={i} className="text-sm text-gray-700 leading-relaxed mb-3 last:mb-0 italic">
+            <p key={i} className="text-sm text-foreground leading-relaxed mb-3 last:mb-0 italic">
               {para}
             </p>
           ))}
@@ -92,7 +92,7 @@ export default function CreativeWritingPage() {
 
       {/* Annotations */}
       <section className="card">
-        <h2 className="text-lg font-semibold text-gray-900 mb-4">Technique Annotations</h2>
+        <h2 className="text-lg font-semibold text-foreground mb-4">Technique Annotations</h2>
         <div className="space-y-3">
           {model.annotations.map((ann, i) => (
             <div key={i} className="flex gap-3 rounded-lg border p-3">
@@ -100,11 +100,11 @@ export default function CreativeWritingPage() {
                 {i + 1}
               </div>
               <div className="min-w-0 flex-1">
-                <p className="font-medium text-gray-900 text-sm">{ann.technique}</p>
+                <p className="font-medium text-foreground text-sm">{ann.technique}</p>
                 <p className="text-xs text-primary mt-0.5">
                   Example: <span className="italic">{ann.example}</span>
                 </p>
-                <p className="text-xs text-gray-500 mt-1">Effect: {ann.effect}</p>
+                <p className="text-xs text-muted-foreground mt-1">Effect: {ann.effect}</p>
               </div>
             </div>
           ))}
@@ -113,14 +113,14 @@ export default function CreativeWritingPage() {
 
       {/* Technique Toolkit */}
       <section className="card">
-        <h2 className="text-lg font-semibold text-gray-900 mb-4">Technique Toolkit for Students</h2>
+        <h2 className="text-lg font-semibold text-foreground mb-4">Technique Toolkit for Students</h2>
         <div className="grid gap-3 sm:grid-cols-2">
           {TECHNIQUE_TOOLKIT.map((tech, i) => (
             <div key={i} className="rounded-lg border p-3">
               <p className="font-semibold text-primary text-sm">{tech.name}</p>
-              <p className="text-xs text-gray-500 mt-0.5">{tech.description}</p>
-              <p className="text-xs text-gray-600 mt-1.5 italic bg-gray-50 rounded p-1.5">{tech.example}</p>
-              <p className="text-xs text-gray-500 mt-1">
+              <p className="text-xs text-muted-foreground mt-0.5">{tech.description}</p>
+              <p className="text-xs text-muted-foreground mt-1.5 italic bg-background rounded p-1.5">{tech.example}</p>
+              <p className="text-xs text-muted-foreground mt-1">
                 <span className="font-medium">Use when:</span> {tech.when}
               </p>
             </div>
@@ -130,17 +130,17 @@ export default function CreativeWritingPage() {
 
       {/* Writing Tasks */}
       <section>
-        <h2 className="text-lg font-semibold text-gray-900 mb-4">Structured Writing Tasks</h2>
+        <h2 className="text-lg font-semibold text-foreground mb-4">Structured Writing Tasks</h2>
         <div className="space-y-4">
           {WRITING_TASKS.map((task, i) => (
             <div key={i} className="card">
               <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold text-gray-900 text-sm">{task.title}</h3>
-                <span className="inline-flex items-center rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-gray-600">
+                <h3 className="font-semibold text-foreground text-sm">{task.title}</h3>
+                <span className="inline-flex items-center rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
                   {task.time}
                 </span>
               </div>
-              <p className="text-sm text-gray-600 mb-3">{task.instruction}</p>
+              <p className="text-sm text-muted-foreground mb-3">{task.instruction}</p>
               <div className="rounded bg-emerald-50 p-3">
                 <p className="text-xs font-semibold text-emerald-800 mb-1.5">Success Criteria</p>
                 <ul className="space-y-1">

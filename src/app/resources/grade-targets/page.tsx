@@ -33,7 +33,7 @@ const GRADE_CARDS = [
     grade: "7",
     label: "Distinction",
     href: "/resources/grade-targets/grade-7",
-    colour: "border-[#2E86C1]",
+    colour: "border-primary",
     bg: "bg-primary",
     tagline: "Thoughtful analysis, confident expression",
     description:
@@ -176,7 +176,7 @@ export default function GradeTargetsPage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#1A5276]/80 px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary/80 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary/80">
             Resources
@@ -342,12 +342,12 @@ export default function GradeTargetsPage() {
                 {item.options.map((option) => (
                   <label
                     key={option.level}
-                    className="flex cursor-pointer items-start gap-3 rounded-lg border border-border p-3 transition hover:border-[#2E86C1]/40 hover:bg-primary/5"
+                    className="flex cursor-pointer items-start gap-3 rounded-lg border border-border p-3 transition hover:border-primary/40 hover:bg-primary/5"
                   >
                     <input
                       type="radio"
                       name={`q${idx}`}
-                      className="mt-0.5 h-4 w-4 border-gray-300 text-primary focus:ring-primary"
+                      className="mt-0.5 h-4 w-4 border-border text-primary focus:ring-primary"
                     />
                     <div>
                       <p className="text-sm text-muted-foreground">{option.text}</p>
@@ -370,7 +370,7 @@ export default function GradeTargetsPage() {
           ))}
         </div>
 
-        <div className="mt-8 rounded-xl border-2 border-[#2E86C1]/20 bg-primary/5 p-6">
+        <div className="mt-8 rounded-xl border-2 border-primary/20 bg-primary/5 p-6">
           <h3 className="font-bold text-foreground">What next?</h3>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
             If most of your answers fell in the <strong>Grade 4-5</strong> range,

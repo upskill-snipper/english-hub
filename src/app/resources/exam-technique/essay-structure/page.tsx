@@ -18,7 +18,7 @@ export default function EssayStructurePage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#2E86C1] px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-accent-200">
             Exam Technique
@@ -103,7 +103,7 @@ export default function EssayStructurePage() {
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 {tech.desc}
               </p>
-              <blockquote className="mt-4 rounded-lg border-l-4 border-[#2E86C1] bg-muted px-4 py-3 text-sm italic text-muted-foreground leading-relaxed">
+              <blockquote className="mt-4 rounded-lg border-l-4 border-primary bg-muted px-4 py-3 text-sm italic text-muted-foreground leading-relaxed">
                 {tech.example}
               </blockquote>
               <p className="mt-3 text-xs font-semibold text-primary">
@@ -131,7 +131,7 @@ export default function EssayStructurePage() {
               {
                 letter: "P",
                 label: "Point",
-                colour: "bg-[#1A5276]",
+                colour: "bg-primary",
                 desc: "Make a clear, specific point that directly answers the question. This is your topic sentence.",
                 example:
                   "Shakespeare presents Lady Macbeth as the driving force behind Duncan's murder.",
@@ -155,7 +155,7 @@ export default function EssayStructurePage() {
               {
                 letter: "L",
                 label: "Link",
-                colour: "bg-[#1A5276]",
+                colour: "bg-primary",
                 desc: "Connect your analysis back to the question and/or to the wider text, themes, or context.",
                 example:
                   "This reflects the play's broader exploration of duplicity and moral corruption, themes that Shakespeare's Jacobean audience -- living under the shadow of the Gunpowder Plot -- would have found deeply resonant.",
@@ -175,7 +175,7 @@ export default function EssayStructurePage() {
                   <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                     {step.desc}
                   </p>
-                  <blockquote className="mt-3 rounded-lg border-l-4 border-[#2E86C1] bg-muted px-4 py-3 text-sm italic text-muted-foreground leading-relaxed">
+                  <blockquote className="mt-3 rounded-lg border-l-4 border-primary bg-muted px-4 py-3 text-sm italic text-muted-foreground leading-relaxed">
                     {step.example}
                   </blockquote>
                 </div>
@@ -198,7 +198,7 @@ export default function EssayStructurePage() {
         </p>
 
         <div className="mt-8 rounded-xl border border-border bg-card shadow-md overflow-hidden">
-          <div className="divide-y divide-gray-100">
+          <div className="divide-y divide-border">
             {[
               {
                 bad: "Macbeth is a play about ambition.",
@@ -312,7 +312,7 @@ export default function EssayStructurePage() {
                     </span>
                   ))}
                 </div>
-                <blockquote className="mt-4 rounded-lg border-l-4 border-[#2E86C1] bg-muted px-4 py-3 text-sm italic text-muted-foreground leading-relaxed">
+                <blockquote className="mt-4 rounded-lg border-l-4 border-primary bg-muted px-4 py-3 text-sm italic text-muted-foreground leading-relaxed">
                   {link.example}
                 </blockquote>
               </div>
@@ -344,7 +344,7 @@ export default function EssayStructurePage() {
                   <th className="px-6 py-3">Example questions</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100">
+              <tbody className="divide-y divide-border">
                 {[
                   {
                     marks: "8-12 marks",
@@ -387,7 +387,7 @@ export default function EssayStructurePage() {
           </div>
 
           {/* Mobile cards */}
-          <div className="sm:hidden divide-y divide-gray-100">
+          <div className="sm:hidden divide-y divide-border">
             {[
               {
                 marks: "8-12 marks",
@@ -477,7 +477,7 @@ export default function EssayStructurePage() {
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   {tech.desc}
                 </p>
-                <blockquote className="mt-4 rounded-lg border-l-4 border-[#2E86C1] bg-muted px-4 py-3 text-sm italic text-muted-foreground leading-relaxed">
+                <blockquote className="mt-4 rounded-lg border-l-4 border-primary bg-muted px-4 py-3 text-sm italic text-muted-foreground leading-relaxed">
                   {tech.example}
                 </blockquote>
               </div>

@@ -18,7 +18,7 @@ export default function ExamDayPage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#2E86C1] px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-accent-200">
             Exam Technique
@@ -154,7 +154,7 @@ export default function ExamDayPage() {
                 key={item.step}
                 className="flex gap-4 rounded-xl border border-border bg-card p-5 shadow-md"
               >
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-sm font-bold text-white">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
                   {item.step}
                 </span>
                 <div>
@@ -181,7 +181,7 @@ export default function ExamDayPage() {
         </p>
 
         <div className="mt-8 grid gap-6 sm:grid-cols-2">
-          <div className="rounded-xl border-2 border-[#2E86C1] bg-card p-6 shadow-md">
+          <div className="rounded-xl border-2 border-primary bg-card p-6 shadow-md">
             <h3 className="font-bold text-foreground">
               For analytical/essay questions
             </h3>
@@ -391,13 +391,13 @@ export default function ExamDayPage() {
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
               href="/resources/exam-technique/time-management"
-              className="rounded-lg bg-[#1A5276] px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-[#1A5276]/90"
+              className="rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-primary/90"
             >
               Review time management
             </Link>
             <Link
               href="/resources/exam-technique/question-types"
-              className="rounded-lg border-2 border-[#2E86C1] px-6 py-3 text-sm font-semibold text-foreground transition hover:bg-primary/10"
+              className="rounded-lg border-2 border-primary px-6 py-3 text-sm font-semibold text-foreground transition hover:bg-primary/10"
             >
               Review question types
             </Link>

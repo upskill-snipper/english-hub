@@ -231,7 +231,7 @@ export default function ReportsPage() {
           <h1 className="text-2xl font-bold text-primary sm:text-3xl">
             Weekly Reports
           </h1>
-          <p className="mt-1 text-sm text-gray-500">
+          <p className="mt-1 text-sm text-muted-foreground">
             View detailed weekly progress reports for your child.
           </p>
         </div>
@@ -243,7 +243,7 @@ export default function ReportsPage() {
               setSelectedStudent(e.target.value);
               setExpandedReport(null);
             }}
-            className="self-start rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 focus:border-accent focus:ring-1 focus:ring-accent"
+            className="self-start rounded-lg border border-border bg-card px-4 py-2 text-sm font-medium text-foreground focus:border-accent focus:ring-1 focus:ring-accent"
             aria-label="Select student"
           >
             {MOCK_STUDENTS.map((s) => (
@@ -258,9 +258,9 @@ export default function ReportsPage() {
       {/* ── Reports list ─────────────────────────────────────── */}
       {reports.length === 0 ? (
         <div className="card text-center py-12">
-          <CalendarIcon className="mx-auto h-10 w-10 text-gray-400" />
-          <p className="mt-4 text-gray-500">No reports available yet.</p>
-          <p className="mt-1 text-sm text-gray-500">
+          <CalendarIcon className="mx-auto h-10 w-10 text-muted-foreground" />
+          <p className="mt-4 text-muted-foreground">No reports available yet.</p>
+          <p className="mt-1 text-sm text-muted-foreground">
             Weekly reports are generated automatically every week.
           </p>
         </div>
@@ -282,10 +282,10 @@ export default function ReportsPage() {
                   <div className="flex items-center gap-3">
                     <CalendarIcon className="h-5 w-5 shrink-0 text-accent" />
                     <div>
-                      <p className="font-semibold text-gray-900">
+                      <p className="font-semibold text-foreground">
                         Week of {formatWeekRange(report.weekStart, report.weekEnd)}
                       </p>
-                      <p className="mt-0.5 text-xs text-gray-500">
+                      <p className="mt-0.5 text-xs text-muted-foreground">
                         {report.essaysCompleted} essay{report.essaysCompleted !== 1 ? "s" : ""} &middot;{" "}
                         {formatTime(report.timeSpentMinutes)} &middot;{" "}
                         Avg {report.averageScore}%{" "}
@@ -296,15 +296,15 @@ export default function ReportsPage() {
                     </div>
                   </div>
                   {isExpanded ? (
-                    <ChevronUpIcon className="h-5 w-5 shrink-0 text-gray-500" />
+                    <ChevronUpIcon className="h-5 w-5 shrink-0 text-muted-foreground" />
                   ) : (
-                    <ChevronDownIcon className="h-5 w-5 shrink-0 text-gray-500" />
+                    <ChevronDownIcon className="h-5 w-5 shrink-0 text-muted-foreground" />
                   )}
                 </button>
 
                 {/* ── Expanded detail ──────────────────────── */}
                 {isExpanded && (
-                  <div className="mt-6 space-y-6 border-t border-gray-100 pt-6">
+                  <div className="mt-6 space-y-6 border-t border-border pt-6">
                     {/* Summary stats */}
                     <div className="grid gap-4 sm:grid-cols-3">
                       <div className="rounded-lg bg-primary-50 px-4 py-3 text-center">
@@ -328,11 +328,11 @@ export default function ReportsPage() {
 
                     {/* Projected grades */}
                     <div>
-                      <h4 className="text-sm font-semibold text-gray-900">Projected Grades</h4>
+                      <h4 className="text-sm font-semibold text-foreground">Projected Grades</h4>
                       <div className="mt-2 grid gap-2 sm:grid-cols-2">
                         {report.projectedGrades.map((g, i) => (
-                          <div key={i} className="flex items-center justify-between rounded-lg border border-gray-200 px-4 py-2">
-                            <span className="text-sm text-gray-700">{g.subject}</span>
+                          <div key={i} className="flex items-center justify-between rounded-lg border border-border px-4 py-2">
+                            <span className="text-sm text-foreground">{g.subject}</span>
                             <span className="font-bold text-primary">Grade {g.grade}</span>
                           </div>
                         ))}
@@ -341,10 +341,10 @@ export default function ReportsPage() {
 
                     {/* Strengths */}
                     <div>
-                      <h4 className="text-sm font-semibold text-gray-900">Top Strengths</h4>
+                      <h4 className="text-sm font-semibold text-foreground">Top Strengths</h4>
                       <ul className="mt-2 space-y-2">
                         {report.strengths.map((s, i) => (
-                          <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
+                          <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
                             <svg className="mt-0.5 h-4 w-4 shrink-0 text-success" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                               <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                             </svg>
@@ -356,10 +356,10 @@ export default function ReportsPage() {
 
                     {/* Areas for improvement */}
                     <div>
-                      <h4 className="text-sm font-semibold text-gray-900">Areas for Improvement</h4>
+                      <h4 className="text-sm font-semibold text-foreground">Areas for Improvement</h4>
                       <ul className="mt-2 space-y-2">
                         {report.improvements.map((imp, i) => (
-                          <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
+                          <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
                             <svg className="mt-0.5 h-4 w-4 shrink-0 text-warn" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
                               <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z" />
                             </svg>
@@ -371,10 +371,10 @@ export default function ReportsPage() {
 
                     {/* Recommendations */}
                     <div>
-                      <h4 className="text-sm font-semibold text-gray-900">Recommended Next Steps</h4>
+                      <h4 className="text-sm font-semibold text-foreground">Recommended Next Steps</h4>
                       <ul className="mt-2 space-y-2">
                         {report.recommendations.map((rec, i) => (
-                          <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
+                          <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
                             <svg className="mt-0.5 h-4 w-4 shrink-0 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
                               <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                             </svg>
@@ -385,12 +385,12 @@ export default function ReportsPage() {
                     </div>
 
                     {/* Download PDF button */}
-                    <div className="flex justify-end border-t border-gray-100 pt-4">
+                    <div className="flex justify-end border-t border-border pt-4">
                       <button
                         type="button"
                         onClick={() => handleDownloadPdf(report)}
                         disabled={downloadingId === report.id}
-                        className="inline-flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-50 transition-colors"
+                        className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-4 py-2 text-sm font-medium text-foreground hover:bg-background disabled:cursor-not-allowed disabled:opacity-50 transition-colors"
                       >
                         <DownloadIcon className="h-4 w-4" />
                         {downloadingId === report.id ? "Generating..." : "Download as PDF"}

@@ -64,14 +64,14 @@ function StageIcon({
     // Active
     return (
       <div className="flex h-8 w-8 items-center justify-center rounded-full bg-accent text-white">
-        <div className="h-2.5 w-2.5 rounded-full bg-white animate-pulse" />
+        <div className="h-2.5 w-2.5 rounded-full bg-card animate-pulse" />
       </div>
     );
   }
 
   // Pending
   return (
-    <div className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-gray-300 bg-white">
+    <div className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-border bg-card">
       <div className="h-2 w-2 rounded-full bg-gray-300" />
     </div>
   );
@@ -112,9 +112,9 @@ export default function ReviewStatusPage() {
     return (
       <div className="mx-auto max-w-2xl px-4 py-12">
         <div className="card animate-pulse space-y-4">
-          <div className="h-6 w-48 rounded bg-gray-200" />
-          <div className="h-4 w-full rounded bg-gray-100" />
-          <div className="h-4 w-3/4 rounded bg-gray-100" />
+          <div className="h-6 w-48 rounded bg-muted" />
+          <div className="h-4 w-full rounded bg-muted" />
+          <div className="h-4 w-3/4 rounded bg-muted" />
         </div>
       </div>
     );
@@ -124,7 +124,7 @@ export default function ReviewStatusPage() {
     return (
       <div className="mx-auto max-w-2xl px-4 py-12">
         <div className="card text-center">
-          <p className="text-gray-600">{error ?? "Review not found."}</p>
+          <p className="text-muted-foreground">{error ?? "Review not found."}</p>
           <Link href="/dashboard" className="btn-primary mt-6 inline-block text-sm">
             Back to Dashboard
           </Link>
@@ -144,23 +144,23 @@ export default function ReviewStatusPage() {
       <div className="mb-2">
         <Link
           href="/dashboard"
-          className="text-sm text-gray-500 hover:text-primary transition-colors"
+          className="text-sm text-muted-foreground hover:text-primary transition-colors"
         >
           &larr; Back to Dashboard
         </Link>
       </div>
 
       <h1 className="text-2xl font-semibold text-primary">Review Status</h1>
-      <p className="mt-1 text-sm text-gray-500">
+      <p className="mt-1 text-sm text-muted-foreground">
         Reference:{" "}
-        <span className="font-mono font-medium text-gray-700">
+        <span className="font-mono font-medium text-foreground">
           {review.referenceNumber}
         </span>
       </p>
 
       {/* ---------- Progress tracker ---------- */}
       <div className="card mt-6">
-        <h2 className="text-sm font-medium text-gray-500 uppercase tracking-wider mb-6">
+        <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-6">
           Progress
         </h2>
 
@@ -179,7 +179,7 @@ export default function ReviewStatusPage() {
                       className={`w-0.5 flex-1 my-1 ${
                         stageIndex(review.status) > idx
                           ? "bg-green-400"
-                          : "bg-gray-200"
+                          : "bg-muted"
                       }`}
                     />
                   )}
@@ -190,14 +190,14 @@ export default function ReviewStatusPage() {
                   <p
                     className={`text-sm font-medium ${
                       stageIndex(review.status) >= idx
-                        ? "text-gray-900"
-                        : "text-gray-500"
+                        ? "text-foreground"
+                        : "text-muted-foreground"
                     }`}
                   >
                     {stageLabels[stage]}
                   </p>
                   {event?.timestamp && (
-                    <p className="mt-0.5 text-xs text-gray-500">
+                    <p className="mt-0.5 text-xs text-muted-foreground">
                       {new Date(event.timestamp).toLocaleDateString("en-GB", {
                         day: "numeric",
                         month: "long",
@@ -208,7 +208,7 @@ export default function ReviewStatusPage() {
                     </p>
                   )}
                   {event?.description && (
-                    <p className="mt-1 text-sm text-gray-600">
+                    <p className="mt-1 text-sm text-muted-foreground">
                       {event.description}
                     </p>
                   )}
@@ -222,10 +222,10 @@ export default function ReviewStatusPage() {
       {/* ---------- Reviewer response ---------- */}
       {review.status === "completed" && review.reviewerResponse && (
         <div className="card mt-6">
-          <h2 className="text-sm font-medium text-gray-500 uppercase tracking-wider mb-3">
+          <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3">
             Reviewer Response
           </h2>
-          <div className="rounded-lg bg-primary/5 border border-primary/15 p-4 text-sm text-gray-800 leading-relaxed whitespace-pre-wrap">
+          <div className="rounded-lg bg-primary/5 border border-primary/15 p-4 text-sm text-foreground leading-relaxed whitespace-pre-wrap">
             {review.reviewerResponse}
           </div>
         </div>
@@ -233,35 +233,35 @@ export default function ReviewStatusPage() {
 
       {/* ---------- Your request details ---------- */}
       <div className="card mt-6">
-        <h2 className="text-sm font-medium text-gray-500 uppercase tracking-wider mb-3">
+        <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3">
           Your Request
         </h2>
         <dl className="space-y-3 text-sm">
           <div>
-            <dt className="text-gray-500">Essay</dt>
-            <dd className="mt-0.5 text-gray-800">{review.essayTitle}</dd>
+            <dt className="text-muted-foreground">Essay</dt>
+            <dd className="mt-0.5 text-foreground">{review.essayTitle}</dd>
           </div>
           <div>
-            <dt className="text-gray-500">Reason</dt>
-            <dd className="mt-0.5 text-gray-800">{review.reason}</dd>
+            <dt className="text-muted-foreground">Reason</dt>
+            <dd className="mt-0.5 text-foreground">{review.reason}</dd>
           </div>
           <div>
-            <dt className="text-gray-500">Details</dt>
-            <dd className="mt-0.5 text-gray-800 whitespace-pre-wrap">
+            <dt className="text-muted-foreground">Details</dt>
+            <dd className="mt-0.5 text-foreground whitespace-pre-wrap">
               {review.detail}
             </dd>
           </div>
           {review.selfAssessment && (
             <div>
-              <dt className="text-gray-500">Your self-assessment</dt>
-              <dd className="mt-0.5 text-gray-800 whitespace-pre-wrap">
+              <dt className="text-muted-foreground">Your self-assessment</dt>
+              <dd className="mt-0.5 text-foreground whitespace-pre-wrap">
                 {review.selfAssessment}
               </dd>
             </div>
           )}
           <div>
-            <dt className="text-gray-500">Submitted</dt>
-            <dd className="mt-0.5 text-gray-800">
+            <dt className="text-muted-foreground">Submitted</dt>
+            <dd className="mt-0.5 text-foreground">
               {new Date(review.createdAt).toLocaleDateString("en-GB", {
                 day: "numeric",
                 month: "long",
@@ -276,7 +276,7 @@ export default function ReviewStatusPage() {
 
       {/* ---------- Timeline ---------- */}
       <div className="card mt-6">
-        <h2 className="text-sm font-medium text-gray-500 uppercase tracking-wider mb-3">
+        <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3">
           Timeline
         </h2>
         <ul className="space-y-3">
@@ -289,7 +289,7 @@ export default function ReviewStatusPage() {
             )
             .map((event, idx) => (
               <li key={idx} className="flex gap-3 text-sm">
-                <span className="shrink-0 text-xs text-gray-500 w-32">
+                <span className="shrink-0 text-xs text-muted-foreground w-32">
                   {new Date(event.timestamp!).toLocaleDateString("en-GB", {
                     day: "numeric",
                     month: "short",
@@ -297,10 +297,10 @@ export default function ReviewStatusPage() {
                     minute: "2-digit",
                   })}
                 </span>
-                <span className="text-gray-700">
+                <span className="text-foreground">
                   {event.label}
                   {event.description && (
-                    <span className="text-gray-500">
+                    <span className="text-muted-foreground">
                       {" "}
                       — {event.description}
                     </span>

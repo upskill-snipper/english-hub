@@ -95,7 +95,7 @@ export default function InspectorCallsRevisionPage() {
             <a
               key={s}
               href={`#${s.toLowerCase().replace(/\s+/g, "-")}`}
-              className="rounded-lg bg-gray-100 px-3 py-1.5 text-xs font-medium text-muted-foreground hover:bg-primary/10 hover:text-primary transition-colors"
+              className="rounded-lg bg-muted px-3 py-1.5 text-xs font-medium text-muted-foreground hover:bg-primary/10 hover:text-primary transition-colors"
             >
               {s}
             </a>
@@ -422,8 +422,8 @@ export default function InspectorCallsRevisionPage() {
               <div>
                 <h3 className="text-lg font-bold text-foreground border-b border-border pb-2">Edna</h3>
                 <div className="mt-2 flex flex-wrap gap-2">
-                  <span className="rounded-full bg-gray-200 px-2.5 py-0.5 text-xs font-semibold text-muted-foreground">Minor Role</span>
-                  <span className="rounded-full bg-gray-200 px-2.5 py-0.5 text-xs font-semibold text-muted-foreground">Symbolic</span>
+                  <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-semibold text-muted-foreground">Minor Role</span>
+                  <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-semibold text-muted-foreground">Symbolic</span>
                 </div>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   Edna is the Birlings&apos; parlour maid and has very few lines, but her presence is significant. She represents the working class who are invisible to the Birlings &mdash; present in the house, serving their needs, but never acknowledged as a person. She is the one who announces the Inspector&apos;s arrival, inadvertently introducing the force that will expose her employers. Her silence and servitude are a reminder that there is a real Eva Smith in every wealthy household: someone whose labour is taken for granted, whose feelings are never considered, and who could easily be discarded. She provides a quiet contrast to the Birlings&apos; noisy self-justifications.
@@ -845,7 +845,7 @@ export default function InspectorCallsRevisionPage() {
 
         {/* ────────────────────────────────────────── EXAM BOARD TIPS */}
         <div id="exam-board-tips">
-          <Section id="exam-boards" title="Exam Board Comparison" badge="4 Boards" colour="bg-gray-600">
+          <Section id="exam-boards" title="Exam Board Comparison" badge="4 Boards" colour="bg-muted">
             <div className="space-y-4">
 
               <div className="rounded-lg border border-border p-4">

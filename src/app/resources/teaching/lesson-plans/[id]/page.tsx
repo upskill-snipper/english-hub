@@ -783,7 +783,7 @@ export default function LessonPlanDetailPage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#1A5276]/80 px-4 py-12 text-white sm:py-16">
+      <section className="bg-gradient-to-br from-primary to-primary/80 px-4 py-12 text-white sm:py-16">
         <div className="mx-auto max-w-4xl">
           <nav className="mb-4 text-sm text-white/70">
             <Link href="/resources/teaching" className="hover:text-white transition-colors">
@@ -893,7 +893,7 @@ export default function LessonPlanDetailPage() {
           </div>
 
           {/* Main Activity */}
-          <div className="mt-4 rounded-xl border-l-4 border-[#2E86C1] bg-primary/5 p-5">
+          <div className="mt-4 rounded-xl border-l-4 border-primary bg-primary/5 p-5">
             <div className="flex items-center justify-between">
               <h3 className="font-bold text-primary">Main: {plan.mainActivity.title}</h3>
               <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary">

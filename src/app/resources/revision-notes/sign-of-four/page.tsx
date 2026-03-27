@@ -105,7 +105,7 @@ export default function SignOfFourPage() {
             <a
               key={s}
               href={`#${s.toLowerCase().replace(/[\u2019\s]+/g, "-")}`}
-              className="rounded-lg bg-gray-100 px-3 py-1.5 text-xs font-medium text-muted-foreground hover:bg-primary/10 hover:text-primary transition-colors"
+              className="rounded-lg bg-muted px-3 py-1.5 text-xs font-medium text-muted-foreground hover:bg-primary/10 hover:text-primary transition-colors"
             >
               {s}
             </a>

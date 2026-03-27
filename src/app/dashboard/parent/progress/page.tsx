@@ -149,10 +149,10 @@ function LineChart({
 
   return (
     <div className="card">
-      <h3 className="text-sm font-semibold text-gray-900 mb-4">{label}</h3>
+      <h3 className="text-sm font-semibold text-foreground mb-4">{label}</h3>
       <div className="relative h-48">
         {/* Y-axis labels */}
-        <div className="absolute left-0 top-0 bottom-6 flex flex-col justify-between text-xs text-gray-500 w-8">
+        <div className="absolute left-0 top-0 bottom-6 flex flex-col justify-between text-xs text-muted-foreground w-8">
           <span>{formatValue ? formatValue(max) : max}</span>
           <span>{formatValue ? formatValue(Math.round((max + min) / 2)) : Math.round((max + min) / 2)}</span>
           <span>{formatValue ? formatValue(min) : min}</span>
@@ -165,7 +165,7 @@ function LineChart({
             const clampedHeight = Math.max(height, 4);
             return (
               <div key={i} className="flex-1 flex flex-col items-center gap-1">
-                <span className="text-xs font-medium text-gray-700">
+                <span className="text-xs font-medium text-foreground">
                   {formatValue ? formatValue(value) : value}
                 </span>
                 <div
@@ -176,7 +176,7 @@ function LineChart({
                     minHeight: "4px",
                   }}
                 />
-                <span className="text-[10px] text-gray-500 whitespace-nowrap">{d.week}</span>
+                <span className="text-[10px] text-muted-foreground whitespace-nowrap">{d.week}</span>
               </div>
             );
           })}
@@ -199,7 +199,7 @@ function StrengthsRadar({ strengths }: { strengths: StrengthsData }) {
 
   return (
     <div className="card">
-      <h3 className="text-sm font-semibold text-gray-900 mb-4">Strengths Radar</h3>
+      <h3 className="text-sm font-semibold text-foreground mb-4">Strengths Radar</h3>
       <div className="space-y-4">
         {skills.map((skill) => {
           const barColor =
@@ -211,10 +211,10 @@ function StrengthsRadar({ strengths }: { strengths: StrengthsData }) {
           return (
             <div key={skill.label}>
               <div className="flex items-center justify-between text-sm mb-1">
-                <span className="text-gray-700">{skill.label}</span>
-                <span className="font-semibold text-gray-900">{skill.value}%</span>
+                <span className="text-foreground">{skill.label}</span>
+                <span className="font-semibold text-foreground">{skill.value}%</span>
               </div>
-              <div className="h-3 w-full rounded-full bg-gray-100">
+              <div className="h-3 w-full rounded-full bg-muted">
                 <div
                   className={`h-3 rounded-full ${barColor} transition-all duration-500`}
                   style={{ width: `${skill.value}%` }}
@@ -233,7 +233,7 @@ function StrengthsRadar({ strengths }: { strengths: StrengthsData }) {
 function gradeColour(projected: string, target: string): string {
   const p = parseInt(projected);
   const t = parseInt(target);
-  if (isNaN(p) || isNaN(t)) return "text-gray-700";
+  if (isNaN(p) || isNaN(t)) return "text-foreground";
   if (p >= t) return "text-success";
   if (p >= t - 1) return "text-accent";
   return "text-warn";
@@ -259,7 +259,7 @@ export default function ProgressPage() {
           <h1 className="text-2xl font-bold text-primary sm:text-3xl">
             Detailed Progress
           </h1>
-          <p className="mt-1 text-sm text-gray-500">
+          <p className="mt-1 text-sm text-muted-foreground">
             Track {student.name}&apos;s learning journey over time.
           </p>
         </div>
@@ -268,7 +268,7 @@ export default function ProgressPage() {
           <select
             value={selectedStudent}
             onChange={(e) => setSelectedStudent(e.target.value)}
-            className="self-start rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 focus:border-accent focus:ring-1 focus:ring-accent"
+            className="self-start rounded-lg border border-border bg-card px-4 py-2 text-sm font-medium text-foreground focus:border-accent focus:ring-1 focus:ring-accent"
             aria-label="Select student"
           >
             {MOCK_STUDENTS.map((s) => (
@@ -328,14 +328,14 @@ export default function ProgressPage() {
 
       {/* ── Weaknesses with recommended learning paths ─────── */}
       <section aria-labelledby="weaknesses-heading">
-        <h2 id="weaknesses-heading" className="text-lg font-semibold text-gray-900">
+        <h2 id="weaknesses-heading" className="text-lg font-semibold text-foreground">
           Areas for Improvement
         </h2>
         <div className="mt-4 space-y-4">
           {weaknesses.map((w, idx) => (
             <div key={idx} className="card border-l-4 border-l-warn">
-              <h3 className="font-semibold text-gray-900">{w.area}</h3>
-              <p className="mt-1 text-sm text-gray-600">{w.description}</p>
+              <h3 className="font-semibold text-foreground">{w.area}</h3>
+              <p className="mt-1 text-sm text-muted-foreground">{w.description}</p>
               <div className="mt-3 rounded-lg bg-accent-50 px-4 py-3">
                 <p className="text-xs font-semibold uppercase tracking-wider text-accent-700">
                   Recommended Learning Path
@@ -349,18 +349,18 @@ export default function ProgressPage() {
 
       {/* ── Projected vs Target Grades ─────────────────────── */}
       <section aria-labelledby="grades-comparison-heading">
-        <h2 id="grades-comparison-heading" className="text-lg font-semibold text-gray-900">
+        <h2 id="grades-comparison-heading" className="text-lg font-semibold text-foreground">
           Projected vs Target Grades
         </h2>
         <div className="mt-4 card">
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-gray-200">
-                  <th scope="col" className="pb-2 pr-4 text-left text-xs font-medium text-gray-500">Subject</th>
-                  <th scope="col" className="pb-2 pr-4 text-left text-xs font-medium text-gray-500">Projected Grade</th>
-                  <th scope="col" className="pb-2 pr-4 text-left text-xs font-medium text-gray-500">Target Grade</th>
-                  <th scope="col" className="pb-2 text-left text-xs font-medium text-gray-500">Status</th>
+                <tr className="border-b border-border">
+                  <th scope="col" className="pb-2 pr-4 text-left text-xs font-medium text-muted-foreground">Subject</th>
+                  <th scope="col" className="pb-2 pr-4 text-left text-xs font-medium text-muted-foreground">Projected Grade</th>
+                  <th scope="col" className="pb-2 pr-4 text-left text-xs font-medium text-muted-foreground">Target Grade</th>
+                  <th scope="col" className="pb-2 text-left text-xs font-medium text-muted-foreground">Status</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
@@ -380,11 +380,11 @@ export default function ProgressPage() {
 
                   return (
                     <tr key={idx}>
-                      <td className="py-2.5 pr-4 font-medium text-gray-700">{row.subject}</td>
+                      <td className="py-2.5 pr-4 font-medium text-foreground">{row.subject}</td>
                       <td className={`py-2.5 pr-4 font-bold ${gradeColour(row.projected, row.target)}`}>
                         Grade {row.projected}
                       </td>
-                      <td className="py-2.5 pr-4 font-medium text-gray-500">Grade {row.target}</td>
+                      <td className="py-2.5 pr-4 font-medium text-muted-foreground">Grade {row.target}</td>
                       <td className="py-2.5">
                         <span className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${statusClass}`}>
                           {statusLabel}

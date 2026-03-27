@@ -808,7 +808,7 @@ export default function EdexcelAnthologyPage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#2E86C1] px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-blue-200">
             Edexcel GCSE English Literature
@@ -846,7 +846,7 @@ export default function EdexcelAnthologyPage() {
           </div>
           <button
             onClick={() => setExpandAll(!expandAll)}
-            className="inline-flex items-center gap-2 rounded-lg border border-[#2E86C1] px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary hover:text-white"
+            className="inline-flex items-center gap-2 rounded-lg border border-primary px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary hover:text-white"
           >
             {expandAll ? "Collapse All" : "Expand All"}
           </button>
@@ -914,14 +914,14 @@ export default function EdexcelAnthologyPage() {
           <div className="mt-6 hidden overflow-hidden rounded-xl border border-border bg-card shadow-md lg:block">
             <table className="w-full text-left text-sm">
               <thead>
-                <tr className="bg-[#1A5276] text-white">
+                <tr className="bg-primary text-white">
                   <th className="px-5 py-3 font-semibold">Poem A</th>
                   <th className="px-5 py-3 font-semibold">Poem B</th>
                   <th className="px-5 py-3 font-semibold">Link</th>
                   <th className="px-5 py-3 font-semibold">Key Contrast</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100">
+              <tbody className="divide-y divide-border">
                 {COMPARISON_PAIRS.map((pair, i) => (
                   <tr
                     key={i}
@@ -1100,7 +1100,7 @@ function PoemSectionControlled({
               {poem.quotes.map((q, i) => (
                 <div
                   key={i}
-                  className="rounded-lg border-l-4 border-[#2E86C1] bg-muted p-4"
+                  className="rounded-lg border-l-4 border-primary bg-muted p-4"
                 >
                   <p className="font-medium italic text-foreground">
                     &ldquo;{q.text}&rdquo;
@@ -1125,7 +1125,7 @@ function PoemSectionControlled({
               {poem.themes.map((theme) => (
                 <span
                   key={theme}
-                  className="rounded-full bg-[#1A5276]/10 px-3 py-1 text-xs font-medium text-foreground"
+                  className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-foreground"
                 >
                   {theme}
                 </span>

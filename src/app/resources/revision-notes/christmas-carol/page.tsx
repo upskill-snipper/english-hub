@@ -97,7 +97,7 @@ export default function ChristmasCarolRevisionPage() {
             <a
               key={s}
               href={`#${s.toLowerCase().replace(/\s+/g, "-")}`}
-              className="rounded-lg bg-gray-100 px-3 py-1.5 text-xs font-medium text-muted-foreground hover:bg-accent-50 hover:text-accent-600 transition-colors"
+              className="rounded-lg bg-muted px-3 py-1.5 text-xs font-medium text-muted-foreground hover:bg-accent-50 hover:text-accent-600 transition-colors"
             >
               {s}
             </a>
@@ -228,9 +228,9 @@ export default function ChristmasCarolRevisionPage() {
               <div>
                 <h3 className="text-lg font-bold text-foreground border-b border-border pb-2">Ebenezer Scrooge</h3>
                 <div className="mt-2 flex flex-wrap gap-2">
-                  <span className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Protagonist</span>
-                  <span className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Transformation Arc</span>
-                  <span className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Allegorical Figure</span>
+                  <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Protagonist</span>
+                  <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Transformation Arc</span>
+                  <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Allegorical Figure</span>
                 </div>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   Scrooge is the central character and his transformation is the entire purpose of the novella. At the start, he is cold, miserly, and utterly isolated. Dickens uses a barrage of similes and metaphors to establish his character: he is &ldquo;hard and sharp as flint,&rdquo; &ldquo;solitary as an oyster,&rdquo; and the cold within him freezes his features. He values money above all human connection and views the poor as a burden. His past reveals the roots of this: a neglected childhood, a cold father, the loss of his sister Fan, and the departure of Belle. Fezziwig showed him a model of generous, joyful employment, but Scrooge chose greed instead. Through the three spirits, Scrooge is forced to confront what he has become, what he is missing, and what awaits him. His transformation in Stave Five is joyous, almost childlike &mdash; he becomes generous, warm, sociable, and deeply connected to his community. Dickens uses Scrooge to argue that change is always possible and that no one is beyond redemption. He represents the Victorian wealthy class whom Dickens wanted to awaken to their social responsibilities.
@@ -267,8 +267,8 @@ export default function ChristmasCarolRevisionPage() {
               <div>
                 <h3 className="text-lg font-bold text-foreground border-b border-border pb-2">The Ghost of Christmas Past</h3>
                 <div className="mt-2 flex flex-wrap gap-2">
-                  <span className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Supernatural</span>
-                  <span className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Memory &amp; Truth</span>
+                  <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Supernatural</span>
+                  <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Memory &amp; Truth</span>
                 </div>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   The first spirit is an androgynous, contradictory figure &mdash; simultaneously old and young, strong and gentle, with a bright jet of light shining from its crown. It represents memory, truth, and the light of self-knowledge. Its shifting appearance suggests the fluid, unstable nature of memory itself. The light symbolises the truth that Scrooge has tried to suppress. Significantly, Scrooge can extinguish the light (suppress his memories) but not destroy the spirit &mdash; the past cannot be erased. This ghost speaks gently and does not judge; it simply shows. The visions it presents establish the origins of Scrooge&apos;s character: his neglected childhood explains his emotional isolation, Fezziwig provides a counter-example to his miserly employment of Bob Cratchit, and Belle shows the personal cost of his greed.
@@ -299,8 +299,8 @@ export default function ChristmasCarolRevisionPage() {
               <div>
                 <h3 className="text-lg font-bold text-foreground border-b border-border pb-2">The Ghost of Christmas Present</h3>
                 <div className="mt-2 flex flex-wrap gap-2">
-                  <span className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Supernatural</span>
-                  <span className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Abundance &amp; Warning</span>
+                  <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Supernatural</span>
+                  <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Abundance &amp; Warning</span>
                 </div>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   A giant, jolly spirit dressed in a green robe bordered with white fur, wearing a holly wreath and carrying a torch shaped like a cornucopia. It sits on a throne of Christmas food &mdash; turkeys, geese, game, fruit, and punch. It represents abundance, generosity, and the spirit of Christmas celebration. However, it also delivers the novella&apos;s harshest social criticism. It ages visibly during the stave (it has over 1,800 brothers, one for each year of Christianity), and before it dies, it reveals Ignorance and Want &mdash; two wretched children &mdash; beneath its robe. The spirit&apos;s warmth contrasts with its devastating warning about society&apos;s neglect. Its torch sprinkles goodwill on food, particularly the food of the poor, showing that generosity of spirit matters more than material wealth.
@@ -331,8 +331,8 @@ export default function ChristmasCarolRevisionPage() {
               <div>
                 <h3 className="text-lg font-bold text-foreground border-b border-border pb-2">The Ghost of Christmas Yet to Come</h3>
                 <div className="mt-2 flex flex-wrap gap-2">
-                  <span className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Supernatural</span>
-                  <span className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Death &amp; Consequence</span>
+                  <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Supernatural</span>
+                  <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Death &amp; Consequence</span>
                 </div>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   The final spirit is the most terrifying. It is a dark, hooded phantom, shrouded in black, that never speaks &mdash; it only points. Its silence makes it more menacing and gives Scrooge (and the reader) no comfort or explanation. It resembles the Grim Reaper and represents death, judgement, and the inevitable consequences of one&apos;s choices. Unlike the other ghosts, it shows not certainties but possibilities &mdash; what <em>will</em> happen if Scrooge does not change. Its visions are the novella&apos;s darkest: a death that causes no grief, the stripping of a corpse&apos;s possessions, and a neglected grave. The contrast between the unmourned rich man and the deeply mourned Tiny Tim provides the final catalyst for Scrooge&apos;s transformation.
@@ -357,8 +357,8 @@ export default function ChristmasCarolRevisionPage() {
               <div>
                 <h3 className="text-lg font-bold text-foreground border-b border-border pb-2">Bob Cratchit</h3>
                 <div className="mt-2 flex flex-wrap gap-2">
-                  <span className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Working Poor</span>
-                  <span className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Foil to Scrooge</span>
+                  <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Working Poor</span>
+                  <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Foil to Scrooge</span>
                 </div>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   Scrooge&apos;s clerk and a key figure representing the deserving poor in Victorian society. Despite earning only fifteen shillings a week (barely enough to survive), Bob is cheerful, loving, and devoted to his family. He wears a &ldquo;comforter&rdquo; (scarf) because Scrooge will not allow a sufficient fire. He tries to toast Scrooge at Christmas dinner, even though Mrs. Cratchit refuses. He is patient, long-suffering, and morally superior to his employer. Bob represents the exploited working class &mdash; hardworking people trapped in poverty by the greed of their employers. His love for Tiny Tim is deeply emotional, and his grief in Stave Four over Tim&apos;s death is one of the novella&apos;s most moving passages. He acts as a foil to Scrooge: where Scrooge is rich but emotionally impoverished, Bob is poor but rich in love and family.
@@ -383,8 +383,8 @@ export default function ChristmasCarolRevisionPage() {
               <div>
                 <h3 className="text-lg font-bold text-foreground border-b border-border pb-2">Tiny Tim</h3>
                 <div className="mt-2 flex flex-wrap gap-2">
-                  <span className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Sympathetic Figure</span>
-                  <span className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Moral Catalyst</span>
+                  <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Sympathetic Figure</span>
+                  <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Moral Catalyst</span>
                 </div>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   Bob Cratchit&apos;s youngest son, a disabled child who walks with a crutch and has an unspecified illness. Despite his suffering, he is cheerful, kind, and deeply spiritual. He is Dickens&apos;s most potent tool for evoking the reader&apos;s sympathy and is used to represent all the innocent poor who suffer and die because of society&apos;s neglect. His potential death is directly linked to Scrooge&apos;s choices &mdash; if Scrooge changes, Tiny Tim lives; if not, he dies. This makes the consequences of greed and social indifference tangible and personal rather than abstract. Tim is not a fully developed character but a symbolic figure designed to move both Scrooge and the reader to compassion and action.
@@ -415,8 +415,8 @@ export default function ChristmasCarolRevisionPage() {
               <div>
                 <h3 className="text-lg font-bold text-foreground border-b border-border pb-2">Fred (Scrooge&apos;s Nephew)</h3>
                 <div className="mt-2 flex flex-wrap gap-2">
-                  <span className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Foil to Scrooge</span>
-                  <span className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Christmas Spirit</span>
+                  <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Foil to Scrooge</span>
+                  <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Christmas Spirit</span>
                 </div>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   Scrooge&apos;s nephew, the son of Scrooge&apos;s beloved sister Fan (who died giving birth to him). Fred is warm, cheerful, persistent, and embodies the true spirit of Christmas. Despite Scrooge&apos;s repeated rejections, Fred returns every year to invite his uncle to dinner, showing unconditional love and patience. He refuses to be angry at Scrooge, instead pitying him. At his party, he defends Scrooge and insists on toasting him. Fred represents what Scrooge could be &mdash; he has little money but is rich in love and happiness. He is the living connection to Fan, and his warmth contrasts sharply with Scrooge&apos;s coldness. His persistence is ultimately rewarded when the transformed Scrooge arrives at his door on Christmas Day.
@@ -441,8 +441,8 @@ export default function ChristmasCarolRevisionPage() {
               <div>
                 <h3 className="text-lg font-bold text-foreground border-b border-border pb-2">Fan (Scrooge&apos;s Sister)</h3>
                 <div className="mt-2 flex flex-wrap gap-2">
-                  <span className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Memory</span>
-                  <span className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Lost Love</span>
+                  <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Memory</span>
+                  <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Lost Love</span>
                 </div>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   Scrooge&apos;s younger sister, who comes to collect him from boarding school with the joyful news that &ldquo;Father is so much kinder than he used to be.&rdquo; She is described as having a &ldquo;large heart&rdquo; and clearly adores her brother. Fan died young (giving birth to Fred), and her death is one of the losses that hardened Scrooge. She represents warmth, familial love, and innocence. Her brief appearance is crucial because it shows that Scrooge was once capable of deep love and was once loved in return. Fan also connects Scrooge to Fred &mdash; by rejecting his nephew, Scrooge is rejecting the living legacy of the sister he cherished.
@@ -459,8 +459,8 @@ export default function ChristmasCarolRevisionPage() {
               <div>
                 <h3 className="text-lg font-bold text-foreground border-b border-border pb-2">Belle</h3>
                 <div className="mt-2 flex flex-wrap gap-2">
-                  <span className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Lost Love</span>
-                  <span className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Turning Point</span>
+                  <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Lost Love</span>
+                  <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Turning Point</span>
                 </div>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   Scrooge&apos;s former fiancee, a beautiful young woman who releases Scrooge from their engagement because he has replaced her with the love of money. She is perceptive, dignified, and honest. She does not leave him in anger but in sadness, recognising that the man she loved has changed. The later vision of Belle as a happy wife and mother, surrounded by laughing children in a warm, bright home, is deliberately contrasted with Scrooge&apos;s cold, empty chambers. Belle represents the life and love that Scrooge sacrificed for wealth. Her departure marks the moment when Scrooge&apos;s isolation became a choice rather than a circumstance.
@@ -485,8 +485,8 @@ export default function ChristmasCarolRevisionPage() {
               <div>
                 <h3 className="text-lg font-bold text-foreground border-b border-border pb-2">Fezziwig</h3>
                 <div className="mt-2 flex flex-wrap gap-2">
-                  <span className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Foil to Scrooge</span>
-                  <span className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Ideal Employer</span>
+                  <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Foil to Scrooge</span>
+                  <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Ideal Employer</span>
                 </div>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   Scrooge&apos;s former employer, a fat, jovial businessman who throws a generous Christmas party for his workers. Fezziwig represents the ideal employer &mdash; someone who understands that he has power over his employees&apos; happiness and uses it benevolently. His party costs relatively little money but creates enormous joy. He is a direct foil to Scrooge&apos;s treatment of Bob Cratchit: Fezziwig gives warmth, celebration, and community; Scrooge gives cold offices and fifteen shillings a week. The Ghost of Christmas Past forces Scrooge to see the contrast, and Scrooge begins to understand that an employer has moral obligations beyond paying wages. Fezziwig demonstrates Dickens&apos;s belief that the wealthy can choose to use their position for good.
@@ -511,8 +511,8 @@ export default function ChristmasCarolRevisionPage() {
               <div>
                 <h3 className="text-lg font-bold text-foreground border-b border-border pb-2">Jacob Marley</h3>
                 <div className="mt-2 flex flex-wrap gap-2">
-                  <span className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Supernatural</span>
-                  <span className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Warning &amp; Catalyst</span>
+                  <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Supernatural</span>
+                  <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">Warning &amp; Catalyst</span>
                 </div>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   Scrooge&apos;s deceased business partner, dead for seven years when the novella begins. His ghost appears in Stave One, bound in heavy chains made of &ldquo;cash-boxes, keys, padlocks, ledgers, deeds, and heavy purses wrought in steel.&rdquo; These chains represent the greed and materialism that defined his life. Marley is tormented not by what he did but by what he failed to do &mdash; he did not help others when he had the chance. He serves as a mirror and a warning: Scrooge was his equal in life, and unless Scrooge changes, he will share Marley&apos;s fate. Marley&apos;s appearance sets the supernatural plot in motion and establishes the novella&apos;s moral framework: we are judged not by our wealth but by our impact on others.

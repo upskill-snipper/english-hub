@@ -117,10 +117,10 @@ export default function LessonPlansPage() {
           <span className="inline-flex items-center rounded-full bg-primary-50 px-3 py-1 text-xs font-medium text-primary">
             {plan.board}
           </span>
-          <span className="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600">
+          <span className="inline-flex items-center rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground">
             {plan.duration}
           </span>
-          <span className="inline-flex items-center rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600">
+          <span className="inline-flex items-center rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground">
             {plan.yearGroup}
           </span>
         </div>
@@ -128,16 +128,16 @@ export default function LessonPlansPage() {
 
       {/* Overview */}
       <section className="card">
-        <h2 className="text-lg font-semibold text-gray-900 mb-2">Overview</h2>
-        <p className="text-sm text-gray-600">{plan.overview}</p>
+        <h2 className="text-lg font-semibold text-foreground mb-2">Overview</h2>
+        <p className="text-sm text-muted-foreground">{plan.overview}</p>
       </section>
 
       {/* Learning Objectives */}
       <section className="card">
-        <h2 className="text-lg font-semibold text-gray-900 mb-3">Learning Objectives</h2>
+        <h2 className="text-lg font-semibold text-foreground mb-3">Learning Objectives</h2>
         <ul className="space-y-2">
           {plan.objectives.map((obj, i) => (
-            <li key={i} className="flex gap-2 text-sm text-gray-600">
+            <li key={i} className="flex gap-2 text-sm text-muted-foreground">
               <span className="text-primary font-bold shrink-0">AO{i + 1}</span>
               <span>{obj}</span>
             </li>
@@ -152,19 +152,19 @@ export default function LessonPlansPage() {
             <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-white text-sm font-bold">
               {lesson.number}
             </div>
-            <h2 className="text-lg font-semibold text-gray-900">{lesson.title}</h2>
+            <h2 className="text-lg font-semibold text-foreground">{lesson.title}</h2>
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-gray-700 mb-1">Starter (5-10 mins)</h3>
-            <p className="text-sm text-gray-600">{lesson.starter}</p>
+            <h3 className="text-sm font-semibold text-foreground mb-1">Starter (5-10 mins)</h3>
+            <p className="text-sm text-muted-foreground">{lesson.starter}</p>
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-gray-700 mb-2">Main Activities</h3>
+            <h3 className="text-sm font-semibold text-foreground mb-2">Main Activities</h3>
             <ol className="space-y-2">
               {lesson.mainActivities.map((activity, i) => (
-                <li key={i} className="flex gap-2 text-sm text-gray-600">
+                <li key={i} className="flex gap-2 text-sm text-muted-foreground">
                   <span className="text-primary font-medium shrink-0">{i + 1}.</span>
                   <span>{activity}</span>
                 </li>
@@ -173,8 +173,8 @@ export default function LessonPlansPage() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold text-gray-700 mb-1">Plenary (5-10 mins)</h3>
-            <p className="text-sm text-gray-600">{lesson.plenary}</p>
+            <h3 className="text-sm font-semibold text-foreground mb-1">Plenary (5-10 mins)</h3>
+            <p className="text-sm text-muted-foreground">{lesson.plenary}</p>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
@@ -196,10 +196,10 @@ export default function LessonPlansPage() {
 
       {/* Assessment Opportunities */}
       <section className="card">
-        <h2 className="text-lg font-semibold text-gray-900 mb-3">Assessment Opportunities</h2>
+        <h2 className="text-lg font-semibold text-foreground mb-3">Assessment Opportunities</h2>
         <ul className="space-y-1.5">
           {plan.assessmentOpportunities.map((opp, i) => (
-            <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
+            <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
               <svg className="h-4 w-4 shrink-0 text-primary mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
@@ -211,10 +211,10 @@ export default function LessonPlansPage() {
 
       {/* Cross-Curricular Links */}
       <section className="card">
-        <h2 className="text-lg font-semibold text-gray-900 mb-3">Cross-Curricular Links</h2>
+        <h2 className="text-lg font-semibold text-foreground mb-3">Cross-Curricular Links</h2>
         <ul className="space-y-1.5">
           {plan.crossCurricular.map((link, i) => (
-            <li key={i} className="text-sm text-gray-600">
+            <li key={i} className="text-sm text-muted-foreground">
               <span className="font-medium">{link.split(':')[0]}:</span>
               {link.split(':').slice(1).join(':')}
             </li>

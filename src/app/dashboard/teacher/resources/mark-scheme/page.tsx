@@ -83,7 +83,7 @@ export default function MarkSchemePage() {
         <h1 className="text-2xl font-bold text-primary">
           AQA English Literature Mark Scheme Guide
         </h1>
-        <p className="mt-2 text-sm text-gray-500">
+        <p className="mt-2 text-sm text-muted-foreground">
           A teacher-friendly breakdown of the AQA GCSE English Literature 8702 mark scheme
           with annotated student examples at each band level.
         </p>
@@ -91,26 +91,26 @@ export default function MarkSchemePage() {
 
       {/* Quick Reference */}
       <section className="card">
-        <h2 className="text-lg font-semibold text-gray-900 mb-3">Assessment Objectives at a Glance</h2>
+        <h2 className="text-lg font-semibold text-foreground mb-3">Assessment Objectives at a Glance</h2>
         <div className="grid gap-3 sm:grid-cols-3">
           <div className="rounded-lg border p-3">
             <p className="font-bold text-primary text-sm">AO1 (12 marks)</p>
-            <p className="text-xs text-gray-600 mt-1">Read, understand, respond. Use evidence and quotes.</p>
+            <p className="text-xs text-muted-foreground mt-1">Read, understand, respond. Use evidence and quotes.</p>
           </div>
           <div className="rounded-lg border p-3">
             <p className="font-bold text-primary text-sm">AO2 (12 marks)</p>
-            <p className="text-xs text-gray-600 mt-1">Analyse language, form, structure. Use terminology.</p>
+            <p className="text-xs text-muted-foreground mt-1">Analyse language, form, structure. Use terminology.</p>
           </div>
           <div className="rounded-lg border p-3">
             <p className="font-bold text-primary text-sm">AO3 (6 marks)</p>
-            <p className="text-xs text-gray-600 mt-1">Context: social, historical, literary. Link to writer&apos;s purpose.</p>
+            <p className="text-xs text-muted-foreground mt-1">Context: social, historical, literary. Link to writer&apos;s purpose.</p>
           </div>
         </div>
       </section>
 
       {/* Band Descriptors with Examples */}
       <section>
-        <h2 className="text-lg font-semibold text-gray-900 mb-4">Band Descriptors with Student Examples</h2>
+        <h2 className="text-lg font-semibold text-foreground mb-4">Band Descriptors with Student Examples</h2>
         <div className="space-y-6">
           {BANDS.map((band) => (
             <div key={band.level} className={`rounded-lg border-2 p-5 ${band.colour}`}>
@@ -149,7 +149,7 @@ export default function MarkSchemePage() {
 
       {/* Common Errors */}
       <section className="card">
-        <h2 className="text-lg font-semibold text-gray-900 mb-4">Common Student Errors & How to Fix Them</h2>
+        <h2 className="text-lg font-semibold text-foreground mb-4">Common Student Errors & How to Fix Them</h2>
         <div className="space-y-4">
           {COMMON_ERRORS.map((item, i) => (
             <div key={i} className="rounded-lg border p-4">
@@ -158,12 +158,12 @@ export default function MarkSchemePage() {
                   !
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="font-medium text-gray-900 text-sm">{item.error}</p>
-                  <p className="text-xs text-gray-500 mt-1">
+                  <p className="font-medium text-foreground text-sm">{item.error}</p>
+                  <p className="text-xs text-muted-foreground mt-1">
                     <span className="font-medium text-primary">Fix:</span> {item.fix}
                   </p>
-                  <div className="mt-2 rounded bg-gray-50 p-2">
-                    <p className="text-xs text-gray-600 italic">{item.example}</p>
+                  <div className="mt-2 rounded bg-muted p-2">
+                    <p className="text-xs text-muted-foreground italic">{item.example}</p>
                   </div>
                 </div>
               </div>
@@ -174,8 +174,8 @@ export default function MarkSchemePage() {
 
       {/* Marking Tips */}
       <section className="card">
-        <h2 className="text-lg font-semibold text-gray-900 mb-3">Quick Marking Tips</h2>
-        <ul className="space-y-2 text-sm text-gray-600">
+        <h2 className="text-lg font-semibold text-foreground mb-3">Quick Marking Tips</h2>
+        <ul className="space-y-2 text-sm text-muted-foreground">
           <li className="flex gap-2">
             <span className="text-primary font-bold">1.</span>
             Read the whole response first before marking — get an overall impression of the band.

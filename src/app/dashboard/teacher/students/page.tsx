@@ -63,7 +63,7 @@ function trendIcon(trend: "up" | "down" | "stable") {
     );
   }
   return (
-    <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <svg className="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14" />
     </svg>
   );
@@ -93,7 +93,7 @@ export default function StudentsPage() {
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h1 className="text-2xl font-bold text-primary">Students</h1>
-          <p className="mt-1 text-sm text-gray-500">
+          <p className="mt-1 text-sm text-muted-foreground">
             Manage your linked students and track their progress.
           </p>
         </div>
@@ -136,7 +136,7 @@ export default function StudentsPage() {
       <div className="space-y-3">
         {filteredStudents.length === 0 ? (
           <div className="card text-center py-12">
-            <p className="text-gray-500">No students found matching your criteria.</p>
+            <p className="text-muted-foreground">No students found matching your criteria.</p>
           </div>
         ) : (
           filteredStudents.map((student) => (
@@ -158,8 +158,8 @@ export default function StudentsPage() {
                         .join("")}
                     </div>
                     <div>
-                      <p className="font-medium text-gray-900">{student.name}</p>
-                      <p className="text-xs text-gray-500">
+                      <p className="font-medium text-foreground">{student.name}</p>
+                      <p className="text-xs text-muted-foreground">
                         {student.email} &middot; {student.group}
                       </p>
                     </div>
@@ -168,23 +168,23 @@ export default function StudentsPage() {
 
                 <div className="flex items-center gap-6 text-sm">
                   <div className="text-center">
-                    <p className="font-semibold text-gray-900">
+                    <p className="font-semibold text-foreground">
                       {student.essaysSubmitted}
                     </p>
-                    <p className="text-xs text-gray-500">Essays</p>
+                    <p className="text-xs text-muted-foreground">Essays</p>
                   </div>
                   <div className="text-center">
                     <p className={`font-semibold ${scoreColor(student.averageScore)}`}>
                       {student.averageScore}%
                     </p>
-                    <p className="text-xs text-gray-500">Avg Score</p>
+                    <p className="text-xs text-muted-foreground">Avg Score</p>
                   </div>
                   <div className="flex items-center gap-1">
                     {trendIcon(student.trend)}
-                    <span className="text-xs text-gray-500">Trend</span>
+                    <span className="text-xs text-muted-foreground">Trend</span>
                   </div>
                   <div className="text-center hidden sm:block">
-                    <p className="text-xs text-gray-500">
+                    <p className="text-xs text-muted-foreground">
                       Last active{" "}
                       {new Date(student.lastActive).toLocaleDateString("en-GB", {
                         day: "numeric",
@@ -193,7 +193,7 @@ export default function StudentsPage() {
                     </p>
                   </div>
                   <svg
-                    className={`w-5 h-5 text-gray-500 transition-transform ${
+                    className={`w-5 h-5 text-muted-foreground transition-transform ${
                       expandedStudent === student.id ? "rotate-180" : ""
                     }`}
                     fill="none"
@@ -207,8 +207,8 @@ export default function StudentsPage() {
 
               {/* Expanded view */}
               {expandedStudent === student.id && (
-                <div className="mt-4 pt-4 border-t border-gray-200">
-                  <h3 className="text-sm font-semibold text-gray-700 mb-3">
+                <div className="mt-4 pt-4 border-t border-border">
+                  <h3 className="text-sm font-semibold text-foreground mb-3">
                     Recent Essays
                   </h3>
                   {/* TODO: Fetch real essays for this student via API */}
@@ -216,13 +216,13 @@ export default function StudentsPage() {
                     {MOCK_STUDENT_ESSAYS.map((essay) => (
                       <li
                         key={essay.id}
-                        className="flex items-center justify-between rounded-lg bg-gray-50 px-4 py-2.5"
+                        className="flex items-center justify-between rounded-lg bg-background px-4 py-2.5"
                       >
                         <div>
-                          <p className="text-sm font-medium text-gray-900">
+                          <p className="text-sm font-medium text-foreground">
                             {essay.title}
                           </p>
-                          <p className="text-xs text-gray-500">
+                          <p className="text-xs text-muted-foreground">
                             {new Date(essay.date).toLocaleDateString("en-GB", {
                               day: "numeric",
                               month: "short",
@@ -255,12 +255,12 @@ export default function StudentsPage() {
       {/* ── Add Student Modal ──────────────────────────────────── */}
       {showAddModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
-          <div className="w-full max-w-md rounded-xl bg-white p-6 shadow-xl">
+          <div className="w-full max-w-md rounded-xl bg-card p-6 shadow-xl">
             <div className="flex items-center justify-between mb-4">
-              <h2 className="text-lg font-semibold text-gray-900">Add Student</h2>
+              <h2 className="text-lg font-semibold text-foreground">Add Student</h2>
               <button
                 onClick={() => setShowAddModal(false)}
-                className="text-gray-500 hover:text-gray-600"
+                className="text-muted-foreground hover:text-muted-foreground"
                 aria-label="Close"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -268,7 +268,7 @@ export default function StudentsPage() {
                 </svg>
               </button>
             </div>
-            <p className="text-sm text-gray-500 mb-4">
+            <p className="text-sm text-muted-foreground mb-4">
               Enter a student&apos;s email address or invitation code to link them to your class.
             </p>
             <input

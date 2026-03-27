@@ -648,7 +648,7 @@ export default function PersuasiveWritingPage() {
                       <p className="text-xl font-black text-foreground">[HEADLINE: Punchy, attention-grabbing]</p>
                       <p className="italic text-muted-foreground">[Strapline: One-sentence summary expanding the headline]</p>
                       <p className="text-xs text-muted-foreground">By [Your Name]</p>
-                      <hr className="border-gray-300" />
+                      <hr className="border-border" />
                       <p>[Opening paragraph: Hook the reader with a striking fact, rhetorical question, or bold claim. State your position.]</p>
                       <p className="font-bold text-muted-foreground">[Subheading]</p>
                       <p>[Body paragraphs: Each with a clear point, evidence, and technique. Include one counter-argument paragraph.]</p>
@@ -780,7 +780,7 @@ export default function PersuasiveWritingPage() {
                     <div className="rounded-lg bg-muted p-5 font-mono text-sm text-foreground space-y-3">
                       <p className="font-bold">Report on [Topic]</p>
                       <p className="text-xs text-muted-foreground">Prepared for: [Audience] | Date: [Date] | Prepared by: [Your Name]</p>
-                      <hr className="border-gray-300" />
+                      <hr className="border-border" />
                       <p className="font-bold text-muted-foreground">1. Introduction</p>
                       <p>[State the purpose of the report and how the information was gathered.]</p>
                       <p className="font-bold text-muted-foreground">2. Findings</p>
@@ -823,7 +823,7 @@ export default function PersuasiveWritingPage() {
                     <div className="rounded-lg bg-muted p-5 font-mono text-sm text-foreground space-y-3">
                       <p className="font-bold text-foreground">[HEADLINE: Witty or evaluative]</p>
                       <p className="text-xs text-muted-foreground">Reviewed by [Your Name] | Rating: [Stars or verdict]</p>
-                      <hr className="border-gray-300" />
+                      <hr className="border-border" />
                       <p>[Opening paragraph: Set the scene. What are you reviewing? First impressions. Hook the reader with a vivid detail or a provocative opinion.]</p>
                       <p>[Positives paragraph(s): What works well? Use descriptive, specific detail. Avoid vague praise like &ldquo;it was good.&rdquo;]</p>
                       <p>[Negatives paragraph: What could be improved? Be fair but honest. Use humour or wit if appropriate.]</p>
@@ -939,7 +939,7 @@ export default function PersuasiveWritingPage() {
                 <div className="mt-3 overflow-x-auto">
                   <table className="w-full text-sm border-collapse">
                     <thead>
-                      <tr className="border-b border-gray-300">
+                      <tr className="border-b border-border">
                         <th className="px-4 py-2 text-left font-semibold text-destructive">Weak (avoid)</th>
                         <th className="px-4 py-2 text-left font-semibold text-success">Strong (use instead)</th>
                         <th className="px-4 py-2 text-left font-semibold text-foreground">Why it works</th>
@@ -982,7 +982,7 @@ export default function PersuasiveWritingPage() {
 
               <div className="rounded-xl border border-border bg-card p-6 sm:p-8 shadow-md space-y-5 text-[15px] leading-[1.9] text-foreground">
                 {/* Headline */}
-                <div className="border-b-2 border-gray-900 pb-4">
+                <div className="border-b-2 border-foreground pb-4">
                   <h3 className="text-2xl font-black text-foreground leading-tight">
                     <Annotation note="Headline uses alliteration ('Screen Steal') and a provocative metaphor. It's punchy and memorable.">The Screen That Steals: How Social Media Is Robbing a Generation</Annotation>
                   </h3>

@@ -170,7 +170,7 @@ export default function QuestionTypesPage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#2E86C1] px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-accent-200">
             Exam Technique
@@ -214,7 +214,7 @@ export default function QuestionTypesPage() {
               <a
                 key={qt.id}
                 href={`#${qt.id}`}
-                className="rounded-full border border-border bg-muted px-4 py-2 text-sm font-medium text-muted-foreground transition hover:bg-primary/10 hover:text-foreground hover:border-[#2E86C1]/30"
+                className="rounded-full border border-border bg-muted px-4 py-2 text-sm font-medium text-muted-foreground transition hover:bg-primary/10 hover:text-foreground hover:border-primary/30"
               >
                 {qt.title.replace(/"/g, "")}
               </a>
@@ -233,7 +233,7 @@ export default function QuestionTypesPage() {
               className="scroll-mt-24 rounded-2xl border border-border bg-card shadow-md overflow-hidden"
             >
               {/* Header */}
-              <div className="bg-gradient-to-r from-[#1A5276] to-[#2E86C1] px-6 py-5 sm:px-8">
+              <div className="bg-gradient-to-r from-primary to-primary px-6 py-5 sm:px-8">
                 <div className="flex items-center gap-3">
                   <span className="flex h-8 w-8 items-center justify-center rounded-full bg-card/20 text-sm font-bold text-white">
                     {idx + 1}
@@ -300,7 +300,7 @@ export default function QuestionTypesPage() {
                   <h3 className="text-base font-bold text-foreground">
                     Example response snippet
                   </h3>
-                  <blockquote className="mt-3 rounded-lg border-l-4 border-[#2E86C1] bg-muted px-5 py-4 text-sm italic leading-relaxed text-muted-foreground">
+                  <blockquote className="mt-3 rounded-lg border-l-4 border-primary bg-muted px-5 py-4 text-sm italic leading-relaxed text-muted-foreground">
                     {qt.example}
                   </blockquote>
                 </div>

@@ -128,22 +128,22 @@ export default function DataRequestsPage() {
           <h1 className="text-2xl font-semibold text-primary">
             Request Submitted
           </h1>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             Your {TYPE_LABELS[result.type]?.toLowerCase() ?? "data request"} has been received.
           </p>
 
-          <div className="mt-6 rounded-lg bg-gray-50 p-4 text-sm">
-            <p className="text-gray-500">Your reference number</p>
+          <div className="mt-6 rounded-lg bg-muted p-4 text-sm">
+            <p className="text-muted-foreground">Your reference number</p>
             <p className="mt-1 text-lg font-mono font-semibold text-primary">
               {result.referenceNumber}
             </p>
           </div>
 
-          <div className="mt-4 rounded-lg bg-accent-50 border border-accent-200 p-4 text-sm text-gray-700">
+          <div className="mt-4 rounded-lg bg-accent-50 border border-accent-200 p-4 text-sm text-foreground">
             <p>
               <strong>Estimated completion:</strong> {result.deadlineFormatted}
             </p>
-            <p className="mt-1 text-xs text-gray-500">
+            <p className="mt-1 text-xs text-muted-foreground">
               Under UK GDPR, we must respond within one calendar month of your request.
             </p>
           </div>
@@ -170,7 +170,7 @@ export default function DataRequestsPage() {
       <div className="mb-2">
         <Link
           href="/dashboard"
-          className="text-sm text-gray-500 hover:text-primary transition-colors"
+          className="text-sm text-muted-foreground hover:text-primary transition-colors"
         >
           &larr; Back to Dashboard
         </Link>
@@ -179,16 +179,16 @@ export default function DataRequestsPage() {
       <h1 className="text-2xl font-semibold text-primary">
         Your Data Rights
       </h1>
-      <p className="mt-2 text-sm text-gray-600">
+      <p className="mt-2 text-sm text-muted-foreground">
         Under UK GDPR, you have rights over your personal data. Use the options
         below to exercise these rights. All requests are processed within one
         calendar month.
       </p>
 
       {/* Rights notice */}
-      <div className="mt-4 rounded-lg border border-primary-200 bg-primary-50 p-4 text-sm text-gray-700">
+      <div className="mt-4 rounded-lg border border-primary-200 bg-primary-50 p-4 text-sm text-foreground">
         <p className="font-medium text-primary">Your data protection rights</p>
-        <ul className="mt-2 space-y-1 text-gray-600">
+        <ul className="mt-2 space-y-1 text-muted-foreground">
           <li>
             <strong>Article 15</strong> &mdash; Right of Access: request a copy
             of all personal data we hold about you.
@@ -220,8 +220,8 @@ export default function DataRequestsPage() {
               </svg>
             </div>
             <div className="flex-1">
-              <h3 className="font-medium text-gray-900">Request My Data</h3>
-              <p className="mt-1 text-xs text-gray-500">
+              <h3 className="font-medium text-foreground">Request My Data</h3>
+              <p className="mt-1 text-xs text-muted-foreground">
                 Article 15 &mdash; Get a full copy of all personal data we hold
                 about you.
               </p>
@@ -245,8 +245,8 @@ export default function DataRequestsPage() {
               </svg>
             </div>
             <div className="flex-1">
-              <h3 className="font-medium text-gray-900">Download My Data</h3>
-              <p className="mt-1 text-xs text-gray-500">
+              <h3 className="font-medium text-foreground">Download My Data</h3>
+              <p className="mt-1 text-xs text-muted-foreground">
                 Article 20 &mdash; Download your data in a machine-readable
                 format (JSON).
               </p>
@@ -270,8 +270,8 @@ export default function DataRequestsPage() {
               </svg>
             </div>
             <div className="flex-1">
-              <h3 className="font-medium text-gray-900">Correct My Data</h3>
-              <p className="mt-1 text-xs text-gray-500">
+              <h3 className="font-medium text-foreground">Correct My Data</h3>
+              <p className="mt-1 text-xs text-muted-foreground">
                 Article 16 &mdash; Update or correct any inaccurate personal
                 information.
               </p>
@@ -294,8 +294,8 @@ export default function DataRequestsPage() {
               </svg>
             </div>
             <div className="flex-1">
-              <h3 className="font-medium text-gray-900">Delete My Data</h3>
-              <p className="mt-1 text-xs text-gray-500">
+              <h3 className="font-medium text-foreground">Delete My Data</h3>
+              <p className="mt-1 text-xs text-muted-foreground">
                 Article 17 &mdash; Request erasure of your personal data. This
                 action cannot be undone.
               </p>
@@ -305,13 +305,13 @@ export default function DataRequestsPage() {
             <button
               onClick={() => setShowEraseConfirm(true)}
               disabled={submitting !== null}
-              className="mt-4 w-full inline-flex items-center justify-center rounded-lg border-2 border-warn bg-white px-5 py-2.5 text-sm font-medium text-warn hover:bg-warn hover:text-white transition-colors disabled:opacity-50"
+              className="mt-4 w-full inline-flex items-center justify-center rounded-lg border-2 border-warn bg-card px-5 py-2.5 text-sm font-medium text-warn hover:bg-warn hover:text-white transition-colors disabled:opacity-50"
             >
               Delete My Data
             </button>
           ) : (
             <div className="mt-4 space-y-3">
-              <div className="rounded-lg border border-warn-200 bg-warn-50 p-3 text-sm text-warn-800">
+              <div className="rounded-lg border border-warn-200 bg-warn-50 p-3 text-sm text-foreground">
                 <p className="font-medium">Are you sure?</p>
                 <p className="mt-1 text-xs">
                   This will anonymise your account and remove your essays,
@@ -357,7 +357,7 @@ export default function DataRequestsPage() {
       {error && (
         <div
           role="alert"
-          className="mt-6 rounded-lg border border-warn-200 bg-warn-50 p-3 text-sm text-warn-700"
+          className="mt-6 rounded-lg border border-warn-200 bg-warn-50 p-3 text-sm text-foreground"
         >
           {error}
         </div>
@@ -366,16 +366,16 @@ export default function DataRequestsPage() {
       {/* Request history */}
       <div className="mt-12">
         <h2 className="text-lg font-semibold text-primary">Request History</h2>
-        <p className="mt-1 text-sm text-gray-500">
+        <p className="mt-1 text-sm text-muted-foreground">
           Track the status of your data requests below.
         </p>
 
         {loading ? (
-          <div className="mt-4 text-center text-sm text-gray-500">
+          <div className="mt-4 text-center text-sm text-muted-foreground">
             Loading your requests...
           </div>
         ) : requests.length === 0 ? (
-          <div className="mt-4 card text-center text-sm text-gray-500">
+          <div className="mt-4 card text-center text-sm text-muted-foreground">
             You have not made any data requests yet.
           </div>
         ) : (
@@ -385,16 +385,16 @@ export default function DataRequestsPage() {
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                   <div>
                     <div className="flex items-center gap-2">
-                      <span className="font-medium text-gray-900">
+                      <span className="font-medium text-foreground">
                         {TYPE_LABELS[req.type] ?? req.type}
                       </span>
                       <span
-                        className={`inline-flex rounded-full px-2.5 py-0.5 text-xs font-medium ${STATUS_STYLES[req.status] ?? "bg-gray-100 text-gray-700"}`}
+                        className={`inline-flex rounded-full px-2.5 py-0.5 text-xs font-medium ${STATUS_STYLES[req.status] ?? "bg-muted text-foreground"}`}
                       >
                         {req.status}
                       </span>
                     </div>
-                    <p className="mt-1 text-xs text-gray-500">
+                    <p className="mt-1 text-xs text-muted-foreground">
                       Submitted{" "}
                       {new Date(req.requestedAt).toLocaleDateString("en-GB", {
                         day: "numeric",
@@ -421,7 +421,7 @@ export default function DataRequestsPage() {
                             ? "text-warn"
                             : req.daysRemaining <= 14
                               ? "text-yellow-600"
-                              : "text-gray-500"
+                              : "text-muted-foreground"
                         }`}
                       >
                         {req.daysRemaining > 0
@@ -429,7 +429,7 @@ export default function DataRequestsPage() {
                           : "Overdue"}
                       </p>
                     )}
-                    <p className="text-xs text-gray-500">
+                    <p className="text-xs text-muted-foreground">
                       Deadline:{" "}
                       {new Date(req.deadline).toLocaleDateString("en-GB", {
                         day: "numeric",
@@ -446,8 +446,8 @@ export default function DataRequestsPage() {
       </div>
 
       {/* Processing time info */}
-      <div className="mt-8 rounded-lg border border-gray-200 bg-gray-50 p-4 text-sm text-gray-600">
-        <p className="font-medium text-gray-700">Processing times</p>
+      <div className="mt-8 rounded-lg border border-border bg-muted p-4 text-sm text-muted-foreground">
+        <p className="font-medium text-foreground">Processing times</p>
         <p className="mt-1">
           Under UK GDPR, we are required to respond to your request within{" "}
           <strong>one calendar month</strong>. In exceptional cases (complex or

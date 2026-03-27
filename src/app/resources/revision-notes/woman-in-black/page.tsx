@@ -72,7 +72,7 @@ export default function WomanInBlackRevisionPage() {
       {/* Hero */}
       <div className="mb-8">
         <div className="flex flex-wrap items-center gap-3 mb-2">
-          <span className="rounded-full bg-gray-800 px-3 py-1 text-xs font-bold text-white uppercase tracking-wider">Gothic Fiction</span>
+          <span className="rounded-full bg-muted px-3 py-1 text-xs font-bold text-white uppercase tracking-wider">Gothic Fiction</span>
           <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-semibold text-accent-600">AQA</span>
           <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-semibold text-accent-600">Edexcel</span>
           <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-semibold text-accent-600">CAIE</span>
@@ -94,7 +94,7 @@ export default function WomanInBlackRevisionPage() {
             <a
               key={s}
               href={`#${s.toLowerCase().replace(/\s+/g, "-")}`}
-              className="rounded-lg bg-gray-100 px-3 py-1.5 text-xs font-medium text-muted-foreground hover:bg-accent-50 hover:text-accent-600 transition-colors"
+              className="rounded-lg bg-muted px-3 py-1.5 text-xs font-medium text-muted-foreground hover:bg-accent-50 hover:text-accent-600 transition-colors"
             >
               {s}
             </a>
@@ -104,11 +104,11 @@ export default function WomanInBlackRevisionPage() {
 
       <div className="space-y-4" id="plot-summary">
         {/* ────────────────────────────────────────── PLOT SUMMARY */}
-        <Section id="plot" title="Chapter-by-Chapter Plot Summary" badge="9 Sections" colour="bg-gray-800" defaultOpen>
+        <Section id="plot" title="Chapter-by-Chapter Plot Summary" badge="9 Sections" colour="bg-muted" defaultOpen>
           <div className="space-y-6">
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-gray-200 text-xs font-bold text-muted-foreground">1</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-muted text-xs font-bold text-muted-foreground">1</span>
                 Christmas Eve (Frame Narrative)
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -126,7 +126,7 @@ export default function WomanInBlackRevisionPage() {
 
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-gray-200 text-xs font-bold text-muted-foreground">2</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-muted text-xs font-bold text-muted-foreground">2</span>
                 A London Particular
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -136,7 +136,7 @@ export default function WomanInBlackRevisionPage() {
 
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-gray-200 text-xs font-bold text-muted-foreground">3</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-muted text-xs font-bold text-muted-foreground">3</span>
                 The Journey North
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -146,7 +146,7 @@ export default function WomanInBlackRevisionPage() {
 
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-gray-200 text-xs font-bold text-muted-foreground">4</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-muted text-xs font-bold text-muted-foreground">4</span>
                 The Funeral of Mrs Drablow
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -164,7 +164,7 @@ export default function WomanInBlackRevisionPage() {
 
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-gray-200 text-xs font-bold text-muted-foreground">5</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-muted text-xs font-bold text-muted-foreground">5</span>
                 Across the Causeway / Eel Marsh House
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -174,7 +174,7 @@ export default function WomanInBlackRevisionPage() {
 
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-gray-200 text-xs font-bold text-muted-foreground">6</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-muted text-xs font-bold text-muted-foreground">6</span>
                 The Sound of the Pony and Trap / The Letters
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -184,7 +184,7 @@ export default function WomanInBlackRevisionPage() {
 
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-gray-200 text-xs font-bold text-muted-foreground">7</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-muted text-xs font-bold text-muted-foreground">7</span>
                 The Nursery / Spider
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -194,7 +194,7 @@ export default function WomanInBlackRevisionPage() {
 
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-gray-200 text-xs font-bold text-muted-foreground">8</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-muted text-xs font-bold text-muted-foreground">8</span>
                 Spider&apos;s Rescue / The Full Truth
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -204,7 +204,7 @@ export default function WomanInBlackRevisionPage() {
 
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-gray-200 text-xs font-bold text-muted-foreground">9</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-muted text-xs font-bold text-muted-foreground">9</span>
                 The Ending
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -311,7 +311,7 @@ export default function WomanInBlackRevisionPage() {
             <div className="space-y-8">
               <div>
                 <h3 className="text-lg font-bold text-foreground flex items-center gap-2">
-                  <span className="h-3 w-3 rounded-full bg-gray-700" />
+                  <span className="h-3 w-3 rounded-full bg-muted" />
                   Isolation and Vulnerability
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">

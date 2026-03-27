@@ -132,14 +132,14 @@ export default function AllEssaysPage() {
     <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
       {/* ── Breadcrumb ──────────────────────────────────────── */}
       <nav aria-label="Breadcrumb" className="mb-6">
-        <ol className="flex items-center gap-1.5 text-sm text-gray-500">
+        <ol className="flex items-center gap-1.5 text-sm text-muted-foreground">
           <li>
             <Link href="/dashboard" className="hover:text-accent">
               Dashboard
             </Link>
           </li>
           <li aria-hidden="true">/</li>
-          <li className="font-medium text-gray-900">All Essays</li>
+          <li className="font-medium text-foreground">All Essays</li>
         </ol>
       </nav>
 
@@ -149,7 +149,7 @@ export default function AllEssaysPage() {
           <h1 className="text-2xl font-bold text-primary sm:text-3xl">
             Your Essays
           </h1>
-          <p className="mt-1 text-sm text-gray-500">
+          <p className="mt-1 text-sm text-muted-foreground">
             {sorted.length} {sorted.length === 1 ? "essay" : "essays"} submitted
           </p>
         </div>
@@ -163,14 +163,14 @@ export default function AllEssaysPage() {
 
       {/* ── Sort controls ───────────────────────────────────── */}
       <div className="mt-6 flex items-center gap-2 text-sm">
-        <span className="text-gray-500">Sort by:</span>
+        <span className="text-muted-foreground">Sort by:</span>
         <button
           type="button"
           onClick={() => toggleSort("date")}
           className={`rounded-md px-3 py-1 font-medium transition-colors ${
             sortField === "date"
               ? "bg-primary text-white"
-              : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+              : "bg-muted text-muted-foreground hover:bg-muted"
           }`}
         >
           Date
@@ -182,7 +182,7 @@ export default function AllEssaysPage() {
           className={`rounded-md px-3 py-1 font-medium transition-colors ${
             sortField === "score"
               ? "bg-primary text-white"
-              : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+              : "bg-muted text-muted-foreground hover:bg-muted"
           }`}
         >
           Score
@@ -193,7 +193,7 @@ export default function AllEssaysPage() {
       {/* ── Essays list ─────────────────────────────────────── */}
       {sorted.length === 0 ? (
         <div className="mt-8 card text-center">
-          <p className="text-gray-500">You haven&apos;t submitted any essays yet.</p>
+          <p className="text-muted-foreground">You haven&apos;t submitted any essays yet.</p>
           <Link href="/dashboard/essay/new" className="btn-primary mt-4 inline-flex">
             Write Your First Essay
           </Link>
@@ -202,54 +202,54 @@ export default function AllEssaysPage() {
         <>
           {/* ── Desktop table ─────────────────────────────────── */}
           <div className="mt-6 hidden sm:block">
-            <div className="overflow-hidden rounded-xl border border-gray-200">
+            <div className="overflow-hidden rounded-xl border border-border">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-gray-200 bg-gray-50">
-                    <th className="px-4 py-3 text-left font-medium text-gray-500">
+                  <tr className="border-b border-border bg-muted">
+                    <th className="px-4 py-3 text-left font-medium text-muted-foreground">
                       Title
                     </th>
-                    <th className="px-4 py-3 text-left font-medium text-gray-500">
+                    <th className="px-4 py-3 text-left font-medium text-muted-foreground">
                       Subject
                     </th>
-                    <th className="px-4 py-3 text-left font-medium text-gray-500">
+                    <th className="px-4 py-3 text-left font-medium text-muted-foreground">
                       Board
                     </th>
                     <th
-                      className="cursor-pointer px-4 py-3 text-left font-medium text-gray-500 hover:text-gray-700"
+                      className="cursor-pointer px-4 py-3 text-left font-medium text-muted-foreground hover:text-foreground"
                       onClick={() => toggleSort("score")}
                     >
                       Score
                       <SortIndicator field="score" />
                     </th>
                     <th
-                      className="cursor-pointer px-4 py-3 text-left font-medium text-gray-500 hover:text-gray-700"
+                      className="cursor-pointer px-4 py-3 text-left font-medium text-muted-foreground hover:text-foreground"
                       onClick={() => toggleSort("date")}
                     >
                       Date
                       <SortIndicator field="date" />
                     </th>
-                    <th className="px-4 py-3 text-right font-medium text-gray-500">
+                    <th className="px-4 py-3 text-right font-medium text-muted-foreground">
                       Actions
                     </th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-gray-100">
+                <tbody className="divide-y divide-border">
                   {sorted.map((essay) => (
                     <tr
                       key={essay.id}
-                      className="hover:bg-gray-50/50 transition-colors"
+                      className="hover:bg-muted/50 transition-colors"
                     >
                       <td className="px-4 py-3">
                         <Link
                           href={`/dashboard/essay/${essay.id}`}
-                          className="font-medium text-gray-900 hover:text-accent"
+                          className="font-medium text-foreground hover:text-accent"
                         >
                           {essay.title}
                         </Link>
                       </td>
-                      <td className="px-4 py-3 text-gray-500">{essay.subject}</td>
-                      <td className="px-4 py-3 text-gray-500">{essay.examBoard}</td>
+                      <td className="px-4 py-3 text-muted-foreground">{essay.subject}</td>
+                      <td className="px-4 py-3 text-muted-foreground">{essay.examBoard}</td>
                       <td className="px-4 py-3">
                         <span
                           className={`inline-flex rounded-full px-2 py-0.5 text-xs font-bold ${scoreBadgeBg(
@@ -259,7 +259,7 @@ export default function AllEssaysPage() {
                           {essay.score}%
                         </span>
                       </td>
-                      <td className="px-4 py-3 text-gray-500">
+                      <td className="px-4 py-3 text-muted-foreground">
                         {new Date(essay.createdAt).toLocaleDateString("en-GB", {
                           day: "numeric",
                           month: "short",
@@ -279,7 +279,7 @@ export default function AllEssaysPage() {
                             <button
                               type="button"
                               onClick={() => setDeletingId(null)}
-                              className="text-xs text-gray-500 hover:text-gray-600"
+                              className="text-xs text-muted-foreground hover:text-muted-foreground"
                             >
                               Cancel
                             </button>
@@ -295,7 +295,7 @@ export default function AllEssaysPage() {
                             <button
                               type="button"
                               onClick={() => setDeletingId(essay.id)}
-                              className="text-xs text-gray-500 hover:text-warn"
+                              className="text-xs text-muted-foreground hover:text-warn"
                             >
                               Delete
                             </button>
@@ -318,13 +318,13 @@ export default function AllEssaysPage() {
                     href={`/dashboard/essay/${essay.id}`}
                     className="min-w-0 flex-1"
                   >
-                    <p className="truncate font-medium text-gray-900 hover:text-accent">
+                    <p className="truncate font-medium text-foreground hover:text-accent">
                       {essay.title}
                     </p>
-                    <p className="mt-0.5 text-xs text-gray-500">
+                    <p className="mt-0.5 text-xs text-muted-foreground">
                       {essay.subject} &middot; {essay.examBoard}
                     </p>
-                    <p className="mt-0.5 text-xs text-gray-500">
+                    <p className="mt-0.5 text-xs text-muted-foreground">
                       {new Date(essay.createdAt).toLocaleDateString("en-GB", {
                         day: "numeric",
                         month: "short",
@@ -341,7 +341,7 @@ export default function AllEssaysPage() {
                   </span>
                 </div>
 
-                <div className="mt-3 flex items-center gap-3 border-t border-gray-100 pt-3">
+                <div className="mt-3 flex items-center gap-3 border-t border-border pt-3">
                   <Link
                     href={`/dashboard/essay/${essay.id}`}
                     className="text-xs font-medium text-accent hover:text-accent-600"
@@ -360,7 +360,7 @@ export default function AllEssaysPage() {
                       <button
                         type="button"
                         onClick={() => setDeletingId(null)}
-                        className="text-xs text-gray-500 hover:text-gray-600"
+                        className="text-xs text-muted-foreground hover:text-muted-foreground"
                       >
                         Cancel
                       </button>
@@ -369,7 +369,7 @@ export default function AllEssaysPage() {
                     <button
                       type="button"
                       onClick={() => setDeletingId(essay.id)}
-                      className="text-xs text-gray-500 hover:text-warn"
+                      className="text-xs text-muted-foreground hover:text-warn"
                     >
                       Delete
                     </button>

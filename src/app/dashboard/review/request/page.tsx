@@ -126,24 +126,24 @@ export default function ReviewRequestPage() {
           <h1 className="text-2xl font-semibold text-primary">
             Review Request Submitted
           </h1>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             Your request has been received. A qualified reviewer will look at
             your essay and the AI feedback.
           </p>
 
-          <div className="mt-6 rounded-lg bg-gray-50 p-4 text-sm">
-            <p className="text-gray-500">Your reference number</p>
+          <div className="mt-6 rounded-lg bg-background p-4 text-sm">
+            <p className="text-muted-foreground">Your reference number</p>
             <p className="mt-1 text-lg font-mono font-semibold text-primary">
               {result.referenceNumber}
             </p>
           </div>
 
-          <div className="mt-4 rounded-lg bg-accent/5 border border-accent/20 p-4 text-sm text-gray-700">
+          <div className="mt-4 rounded-lg bg-accent/5 border border-accent/20 p-4 text-sm text-foreground">
             <p>
               <strong>Estimated response time:</strong>{" "}
               {result.estimatedResponse}
             </p>
-            <p className="mt-1 text-xs text-gray-500">
+            <p className="mt-1 text-xs text-muted-foreground">
               We&apos;ll notify you by email when the review is complete.
             </p>
           </div>
@@ -170,7 +170,7 @@ export default function ReviewRequestPage() {
       <div className="mb-2">
         <Link
           href="/dashboard"
-          className="text-sm text-gray-500 hover:text-primary transition-colors"
+          className="text-sm text-muted-foreground hover:text-primary transition-colors"
         >
           &larr; Back to Dashboard
         </Link>
@@ -179,14 +179,14 @@ export default function ReviewRequestPage() {
       <h1 className="text-2xl font-semibold text-primary">
         Request a Human Review
       </h1>
-      <p className="mt-2 text-sm text-gray-600">
+      <p className="mt-2 text-sm text-muted-foreground">
         If you&apos;re unsure about the AI&apos;s feedback on your essay, you
         can ask a real person to take a look. This is completely normal and
         it&apos;s your right — not a complaint.
       </p>
 
       {/* Rights notice */}
-      <div className="mt-4 rounded-lg border border-primary/20 bg-primary/5 p-4 text-sm text-gray-700">
+      <div className="mt-4 rounded-lg border border-primary/20 bg-primary/5 p-4 text-sm text-foreground">
         <p className="font-medium text-primary">Your rights</p>
         <p className="mt-1">
           Under UK data protection law (UK GDPR &amp; the Data Use and Access
@@ -200,7 +200,7 @@ export default function ReviewRequestPage() {
       <form onSubmit={handleSubmit} className="mt-8 space-y-6">
         {/* Essay selector */}
         <div>
-          <label htmlFor="essayId" className="block text-sm font-medium text-gray-700">
+          <label htmlFor="essayId" className="block text-sm font-medium text-foreground">
             Which essay? <span className="text-red-500">*</span>
           </label>
           <select
@@ -228,7 +228,7 @@ export default function ReviewRequestPage() {
 
         {/* Reason */}
         <div>
-          <label htmlFor="reason" className="block text-sm font-medium text-gray-700">
+          <label htmlFor="reason" className="block text-sm font-medium text-foreground">
             Why are you requesting a review? <span className="text-red-500">*</span>
           </label>
           <select
@@ -248,10 +248,10 @@ export default function ReviewRequestPage() {
 
         {/* Detail */}
         <div>
-          <label htmlFor="detail" className="block text-sm font-medium text-gray-700">
+          <label htmlFor="detail" className="block text-sm font-medium text-foreground">
             Tell us more <span className="text-red-500">*</span>
           </label>
-          <p className="mt-0.5 text-xs text-gray-500">
+          <p className="mt-0.5 text-xs text-muted-foreground">
             What specifically would you like a human to look at?
           </p>
           <textarea
@@ -267,7 +267,7 @@ export default function ReviewRequestPage() {
           />
           <p
             className={`mt-1 text-right text-xs ${
-              detail.length >= DETAIL_MAX ? "text-red-500 font-medium" : "text-gray-500"
+              detail.length >= DETAIL_MAX ? "text-red-500 font-medium" : "text-muted-foreground"
             }`}
           >
             {detail.length}/{DETAIL_MAX}
@@ -278,12 +278,12 @@ export default function ReviewRequestPage() {
         <div>
           <label
             htmlFor="selfAssessment"
-            className="block text-sm font-medium text-gray-700"
+            className="block text-sm font-medium text-foreground"
           >
             Your own thoughts on your essay{" "}
-            <span className="text-gray-500 font-normal">(optional)</span>
+            <span className="text-muted-foreground font-normal">(optional)</span>
           </label>
-          <p className="mt-0.5 text-xs text-gray-500">
+          <p className="mt-0.5 text-xs text-muted-foreground">
             If you&apos;d like, share what you think you did well or what you
             were trying to achieve. This helps the reviewer understand your
             perspective.
@@ -302,7 +302,7 @@ export default function ReviewRequestPage() {
             className={`mt-1 text-right text-xs ${
               selfAssessment.length >= SELF_ASSESSMENT_MAX
                 ? "text-red-500 font-medium"
-                : "text-gray-500"
+                : "text-muted-foreground"
             }`}
           >
             {selfAssessment.length}/{SELF_ASSESSMENT_MAX}

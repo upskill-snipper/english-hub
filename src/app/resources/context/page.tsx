@@ -162,7 +162,7 @@ export default function ContextHubPage() {
                   {era.texts.map((text) => (
                     <span
                       key={text}
-                      className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-muted-foreground"
+                      className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground"
                     >
                       {text}
                     </span>

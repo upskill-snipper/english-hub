@@ -182,14 +182,14 @@ function ResourceCard({ resource }: { resource: Resource }) {
       {typeIcon(resource.type)}
       <div className="min-w-0 flex-1">
         <div className="flex items-center gap-2 flex-wrap">
-          <h3 className="font-medium text-gray-900">{resource.title}</h3>
+          <h3 className="font-medium text-foreground">{resource.title}</h3>
           {resource.examBoard && (
-            <span className="inline-flex items-center rounded-full bg-gray-100 px-2 py-0.5 text-xs font-medium text-gray-600">
+            <span className="inline-flex items-center rounded-full bg-muted px-2 py-0.5 text-xs font-medium text-muted-foreground">
               {resource.examBoard}
             </span>
           )}
         </div>
-        <p className="mt-1 text-sm text-gray-500 line-clamp-2">
+        <p className="mt-1 text-sm text-muted-foreground line-clamp-2">
           {resource.description}
         </p>
         <div className="mt-2">
@@ -228,7 +228,7 @@ export default function ResourcesPage() {
       {/* Header */}
       <div>
         <h1 className="text-2xl font-bold text-primary">Teaching Resources</h1>
-        <p className="mt-1 text-sm text-gray-500">
+        <p className="mt-1 text-sm text-muted-foreground">
           Lesson plans, assessment guides, exam board resources, and printable
           worksheets to support your teaching.
         </p>
@@ -236,7 +236,7 @@ export default function ResourcesPage() {
 
       {/* ── Lesson Plan Templates ───────────────────────────────── */}
       <section aria-labelledby="lesson-plans-heading">
-        <h2 id="lesson-plans-heading" className="text-lg font-semibold text-gray-900 mb-4">
+        <h2 id="lesson-plans-heading" className="text-lg font-semibold text-foreground mb-4">
           Lesson Plan Templates
         </h2>
         <div className="grid gap-4 sm:grid-cols-2">
@@ -248,7 +248,7 @@ export default function ResourcesPage() {
 
       {/* ── Assessment Criteria Guides ──────────────────────────── */}
       <section aria-labelledby="assessment-heading">
-        <h2 id="assessment-heading" className="text-lg font-semibold text-gray-900 mb-4">
+        <h2 id="assessment-heading" className="text-lg font-semibold text-foreground mb-4">
           Assessment Criteria Guides
         </h2>
         <div className="grid gap-4 sm:grid-cols-2">
@@ -260,7 +260,7 @@ export default function ResourcesPage() {
 
       {/* ── Exam Board Specific Resources ───────────────────────── */}
       <section aria-labelledby="exam-board-heading">
-        <h2 id="exam-board-heading" className="text-lg font-semibold text-gray-900 mb-4">
+        <h2 id="exam-board-heading" className="text-lg font-semibold text-foreground mb-4">
           Exam Board Specific Resources
         </h2>
         <div className="grid gap-4 sm:grid-cols-2">
@@ -272,7 +272,7 @@ export default function ResourcesPage() {
 
       {/* ── Printable Worksheets ────────────────────────────────── */}
       <section aria-labelledby="worksheets-heading">
-        <h2 id="worksheets-heading" className="text-lg font-semibold text-gray-900 mb-4">
+        <h2 id="worksheets-heading" className="text-lg font-semibold text-foreground mb-4">
           Printable Worksheets
         </h2>
         <div className="grid gap-4 sm:grid-cols-2">

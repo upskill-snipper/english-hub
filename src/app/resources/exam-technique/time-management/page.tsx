@@ -209,7 +209,7 @@ export default function TimeManagementPage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#2E86C1] px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-accent-200">
             Exam Technique
@@ -313,7 +313,7 @@ export default function TimeManagementPage() {
                         <th className="px-6 py-3">Notes</th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-gray-100">
+                    <tbody className="divide-y divide-border">
                       {paper.questions.map((q) => (
                         <tr key={q.q} className="hover:bg-muted/50">
                           <td className="px-6 py-3 font-medium text-foreground">
@@ -337,7 +337,7 @@ export default function TimeManagementPage() {
                 </div>
 
                 {/* Mobile cards */}
-                <div className="sm:hidden divide-y divide-gray-100">
+                <div className="sm:hidden divide-y divide-border">
                   {paper.questions.map((q) => (
                     <div key={q.q} className="px-4 py-4 space-y-2">
                       <p className="font-medium text-foreground text-sm">
@@ -462,7 +462,7 @@ export default function TimeManagementPage() {
               key={item.title}
               className="flex gap-4 rounded-xl border border-border bg-card p-5 shadow-md"
             >
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-sm font-bold text-white">
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
                 {i + 1}
               </span>
               <div>
@@ -488,7 +488,7 @@ export default function TimeManagementPage() {
           </p>
 
           <div className="mt-8 overflow-hidden rounded-xl border border-border bg-card shadow-md">
-            <div className="divide-y divide-gray-100">
+            <div className="divide-y divide-border">
               {[
                 {
                   phase: "Reading time",

@@ -233,7 +233,7 @@ export default function ParentSettingsPage() {
         <h1 className="text-2xl font-bold text-primary sm:text-3xl">
           Parent Settings
         </h1>
-        <p className="mt-1 text-sm text-gray-500">
+        <p className="mt-1 text-sm text-muted-foreground">
           Manage your notifications, report preferences, and linked students.
         </p>
       </div>
@@ -263,10 +263,10 @@ export default function ParentSettingsPage() {
 
       {/* ── Email notification preferences ───────────────────── */}
       <section className="card" aria-labelledby="notifications-heading">
-        <h2 id="notifications-heading" className="text-lg font-semibold text-gray-900">
+        <h2 id="notifications-heading" className="text-lg font-semibold text-foreground">
           Email Notifications
         </h2>
-        <p className="mt-1 text-sm text-gray-500">
+        <p className="mt-1 text-sm text-muted-foreground">
           Choose which email notifications you would like to receive.
         </p>
 
@@ -276,11 +276,11 @@ export default function ParentSettingsPage() {
               type="checkbox"
               checked={weeklyReportEmail}
               onChange={(e) => setWeeklyReportEmail(e.target.checked)}
-              className="mt-0.5 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+              className="mt-0.5 h-4 w-4 rounded border-border text-primary focus:ring-primary"
             />
             <div>
-              <p className="text-sm font-medium text-gray-700">Weekly progress report</p>
-              <p className="text-xs text-gray-500">Receive a summary of your child&apos;s weekly activity, scores, and recommendations.</p>
+              <p className="text-sm font-medium text-foreground">Weekly progress report</p>
+              <p className="text-xs text-muted-foreground">Receive a summary of your child&apos;s weekly activity, scores, and recommendations.</p>
             </div>
           </label>
 
@@ -289,11 +289,11 @@ export default function ParentSettingsPage() {
               type="checkbox"
               checked={lowScoreAlert}
               onChange={(e) => setLowScoreAlert(e.target.checked)}
-              className="mt-0.5 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+              className="mt-0.5 h-4 w-4 rounded border-border text-primary focus:ring-primary"
             />
             <div>
-              <p className="text-sm font-medium text-gray-700">Low score alerts</p>
-              <p className="text-xs text-gray-500">Get notified when your child scores below 50% on an essay.</p>
+              <p className="text-sm font-medium text-foreground">Low score alerts</p>
+              <p className="text-xs text-muted-foreground">Get notified when your child scores below 50% on an essay.</p>
             </div>
           </label>
 
@@ -302,11 +302,11 @@ export default function ParentSettingsPage() {
               type="checkbox"
               checked={inactivityAlert}
               onChange={(e) => setInactivityAlert(e.target.checked)}
-              className="mt-0.5 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+              className="mt-0.5 h-4 w-4 rounded border-border text-primary focus:ring-primary"
             />
             <div>
-              <p className="text-sm font-medium text-gray-700">Inactivity alerts</p>
-              <p className="text-xs text-gray-500">Get notified if your child hasn&apos;t used the platform for 5+ days.</p>
+              <p className="text-sm font-medium text-foreground">Inactivity alerts</p>
+              <p className="text-xs text-muted-foreground">Get notified if your child hasn&apos;t used the platform for 5+ days.</p>
             </div>
           </label>
 
@@ -315,11 +315,11 @@ export default function ParentSettingsPage() {
               type="checkbox"
               checked={milestoneAlerts}
               onChange={(e) => setMilestoneAlerts(e.target.checked)}
-              className="mt-0.5 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+              className="mt-0.5 h-4 w-4 rounded border-border text-primary focus:ring-primary"
             />
             <div>
-              <p className="text-sm font-medium text-gray-700">Milestone celebrations</p>
-              <p className="text-xs text-gray-500">Receive emails when your child reaches score milestones or completes achievements.</p>
+              <p className="text-sm font-medium text-foreground">Milestone celebrations</p>
+              <p className="text-xs text-muted-foreground">Receive emails when your child reaches score milestones or completes achievements.</p>
             </div>
           </label>
         </div>
@@ -338,23 +338,23 @@ export default function ParentSettingsPage() {
 
       {/* ── Weekly report schedule ────────────────────────────── */}
       <section className="card" aria-labelledby="schedule-heading">
-        <h2 id="schedule-heading" className="text-lg font-semibold text-gray-900">
+        <h2 id="schedule-heading" className="text-lg font-semibold text-foreground">
           Weekly Report Schedule
         </h2>
-        <p className="mt-1 text-sm text-gray-500">
+        <p className="mt-1 text-sm text-muted-foreground">
           Choose when you&apos;d like to receive your weekly progress report.
         </p>
 
         <div className="mt-6 grid gap-4 sm:grid-cols-2 max-w-md">
           <div>
-            <label htmlFor="report-day" className="block text-sm font-medium text-gray-700">
+            <label htmlFor="report-day" className="block text-sm font-medium text-foreground">
               Day of week
             </label>
             <select
               id="report-day"
               value={reportDay}
               onChange={(e) => setReportDay(e.target.value)}
-              className="mt-1 block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm focus:border-accent focus:ring-1 focus:ring-accent"
+              className="mt-1 block w-full rounded-lg border border-border bg-card px-3 py-2 text-sm focus:border-primary focus:ring-1 focus:ring-primary"
             >
               {DAYS_OF_WEEK.map((day) => (
                 <option key={day} value={day}>{day}</option>
@@ -363,14 +363,14 @@ export default function ParentSettingsPage() {
           </div>
 
           <div>
-            <label htmlFor="report-time" className="block text-sm font-medium text-gray-700">
+            <label htmlFor="report-time" className="block text-sm font-medium text-foreground">
               Time
             </label>
             <select
               id="report-time"
               value={reportTime}
               onChange={(e) => setReportTime(e.target.value)}
-              className="mt-1 block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm focus:border-accent focus:ring-1 focus:ring-accent"
+              className="mt-1 block w-full rounded-lg border border-border bg-card px-3 py-2 text-sm focus:border-primary focus:ring-1 focus:ring-primary"
             >
               {REPORT_TIMES.map((time) => (
                 <option key={time} value={time}>{time}</option>
@@ -395,17 +395,17 @@ export default function ParentSettingsPage() {
       <section className="card" aria-labelledby="students-heading">
         <div className="flex items-center justify-between">
           <div>
-            <h2 id="students-heading" className="text-lg font-semibold text-gray-900">
+            <h2 id="students-heading" className="text-lg font-semibold text-foreground">
               Linked Students
             </h2>
-            <p className="mt-1 text-sm text-gray-500">
+            <p className="mt-1 text-sm text-muted-foreground">
               Manage the students linked to your parent account.
             </p>
           </div>
           <button
             type="button"
             onClick={() => setShowAddForm(true)}
-            className="inline-flex items-center gap-1.5 rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
+            className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-card px-3 py-2 text-sm font-medium text-foreground hover:bg-muted transition-colors"
           >
             <PlusIcon className="h-4 w-4" />
             Add Student
@@ -415,8 +415,8 @@ export default function ParentSettingsPage() {
         {/* Add student form */}
         {showAddForm && (
           <div className="mt-4 rounded-lg border border-accent-200 bg-accent-50 p-4">
-            <h3 className="text-sm font-semibold text-gray-900">Link a new student</h3>
-            <p className="mt-1 text-xs text-gray-500">
+            <h3 className="text-sm font-semibold text-foreground">Link a new student</h3>
+            <p className="mt-1 text-xs text-muted-foreground">
               Enter the email address associated with the student&apos;s account.
               They must have an active paid subscription.
             </p>
@@ -429,7 +429,7 @@ export default function ParentSettingsPage() {
                   setInviteError("");
                 }}
                 placeholder="student@example.com"
-                className="flex-1 rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-accent focus:ring-1 focus:ring-accent"
+                className="flex-1 rounded-lg border border-border px-3 py-2 text-sm focus:border-primary focus:ring-1 focus:ring-primary"
               />
               <div className="flex gap-2">
                 <button
@@ -447,7 +447,7 @@ export default function ParentSettingsPage() {
                     setInviteEmail("");
                     setInviteError("");
                   }}
-                  className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
+                  className="rounded-lg border border-border bg-card px-3 py-2 text-sm font-medium text-foreground hover:bg-muted transition-colors"
                 >
                   Cancel
                 </button>
@@ -462,17 +462,17 @@ export default function ParentSettingsPage() {
         {/* Student list */}
         <div className="mt-6 space-y-4">
           {students.map((student) => (
-            <div key={student.id} className="rounded-lg border border-gray-200 p-4">
+            <div key={student.id} className="rounded-lg border border-border p-4">
               <div className="flex items-start justify-between">
                 <div className="flex items-start gap-3">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary-50 text-primary">
                     <UserIcon className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900">
+                    <p className="font-semibold text-foreground">
                       {student.firstName} {student.lastName}
                     </p>
-                    <p className="text-xs text-gray-500">
+                    <p className="text-xs text-muted-foreground">
                       {student.email} &middot; Age {student.age} &middot; {student.school}
                     </p>
                     <div className="mt-1 flex items-center gap-2">
@@ -481,7 +481,7 @@ export default function ParentSettingsPage() {
                           ? "bg-success-50 text-success-700"
                           : student.planStatus === "Trial"
                             ? "bg-yellow-50 text-yellow-700"
-                            : "bg-gray-100 text-gray-600"
+                            : "bg-muted text-muted-foreground"
                       }`}>
                         {student.plan} - {student.planStatus}
                       </span>
@@ -491,7 +491,7 @@ export default function ParentSettingsPage() {
                 <button
                   type="button"
                   onClick={() => handleRemoveStudent(student.id)}
-                  className="rounded-lg p-1.5 text-gray-500 hover:bg-warn-50 hover:text-warn transition-colors"
+                  className="rounded-lg p-1.5 text-muted-foreground hover:bg-warn-50 hover:text-warn transition-colors"
                   title="Unlink student"
                 >
                   <TrashIcon className="h-4 w-4" />
@@ -499,9 +499,9 @@ export default function ParentSettingsPage() {
               </div>
 
               {/* Target grades */}
-              <div className="mt-4 border-t border-gray-100 pt-4">
+              <div className="mt-4 border-t border-border pt-4">
                 <div className="flex items-center justify-between">
-                  <h4 className="text-sm font-semibold text-gray-700">Target Grades</h4>
+                  <h4 className="text-sm font-semibold text-foreground">Target Grades</h4>
                   {editingGrades === student.id ? (
                     <div className="flex gap-2">
                       <button
@@ -515,7 +515,7 @@ export default function ParentSettingsPage() {
                       <button
                         type="button"
                         onClick={() => setEditingGrades(null)}
-                        className="rounded-lg border border-gray-300 px-3 py-1 text-xs font-medium text-gray-600 hover:bg-gray-50 transition-colors"
+                        className="rounded-lg border border-border px-3 py-1 text-xs font-medium text-muted-foreground hover:bg-muted transition-colors"
                       >
                         Cancel
                       </button>
@@ -533,15 +533,15 @@ export default function ParentSettingsPage() {
 
                 <div className="mt-2 grid gap-2 sm:grid-cols-2">
                   {student.targetGrades.map((tg) => (
-                    <div key={tg.subject} className="flex items-center justify-between rounded-lg bg-gray-50 px-3 py-2">
-                      <span className="text-sm text-gray-700">{tg.subject}</span>
+                    <div key={tg.subject} className="flex items-center justify-between rounded-lg bg-muted px-3 py-2">
+                      <span className="text-sm text-foreground">{tg.subject}</span>
                       {editingGrades === student.id ? (
                         <select
                           value={gradeEdits[tg.subject] || tg.grade}
                           onChange={(e) =>
                             setGradeEdits((prev) => ({ ...prev, [tg.subject]: e.target.value }))
                           }
-                          className="rounded border border-gray-300 bg-white px-2 py-1 text-sm font-bold text-primary focus:border-accent focus:ring-1 focus:ring-accent"
+                          className="rounded border border-border bg-card px-2 py-1 text-sm font-bold text-primary focus:border-primary focus:ring-1 focus:ring-primary"
                         >
                           {GRADE_OPTIONS.map((g) => (
                             <option key={g} value={g}>Grade {g}</option>
@@ -559,9 +559,9 @@ export default function ParentSettingsPage() {
 
           {students.length === 0 && (
             <div className="text-center py-8">
-              <UserIcon className="mx-auto h-10 w-10 text-gray-400" />
-              <p className="mt-4 text-gray-500">No students linked yet.</p>
-              <p className="mt-1 text-sm text-gray-500">
+              <UserIcon className="mx-auto h-10 w-10 text-muted-foreground" />
+              <p className="mt-4 text-muted-foreground">No students linked yet.</p>
+              <p className="mt-1 text-sm text-muted-foreground">
                 Click &quot;Add Student&quot; to link your child&apos;s account.
               </p>
             </div>

@@ -200,7 +200,7 @@ export default function SpokenLanguagePage() {
                 <p className="text-lg font-bold text-amber-700">Pass</p>
                 <p className="mt-1 text-xs text-muted-foreground">Basic competence demonstrated</p>
               </div>
-              <div className="rounded-lg border-2 border-gray-400 bg-muted p-4 text-center">
+              <div className="rounded-lg border-2 border-border bg-muted p-4 text-center">
                 <p className="text-lg font-bold text-muted-foreground">Not Classified</p>
                 <p className="mt-1 text-xs text-muted-foreground">Requirements not met</p>
               </div>
@@ -617,7 +617,7 @@ export default function SpokenLanguagePage() {
                     <th className="px-4 py-3 text-left font-semibold text-foreground">Use Instead (Standard English)</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-gray-200">
+                <tbody className="divide-y divide-border">
                   <tr className="bg-red-50/50">
                     <td className="px-4 py-2">&ldquo;We was going&hellip;&rdquo;</td>
                     <td className="px-4 py-2">&ldquo;We were going&hellip;&rdquo;</td>
@@ -872,7 +872,7 @@ export default function SpokenLanguagePage() {
               </div>
 
               {/* Not Classified */}
-              <div className="rounded-lg border-2 border-gray-400 bg-muted p-5">
+              <div className="rounded-lg border-2 border-border bg-muted p-5">
                 <h3 className="text-lg font-bold text-muted-foreground">Not Classified</h3>
                 <p className="mt-2 text-sm text-muted-foreground">
                   The student has not met the minimum requirements for a Pass.

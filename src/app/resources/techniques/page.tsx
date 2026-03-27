@@ -43,7 +43,7 @@ const CATEGORIES = [
     description:
       "Every language and literary technique you need for GCSE English. Metaphor, simile, personification, irony, semantic fields, sound devices, and much more -- each with a definition, example, effect, and exam sentence starter.",
     colour: "border-accent",
-    bgGradient: "from-[#2E86C1]/5 to-[#2E86C1]/10",
+    bgGradient: "from-primary/5 to-primary/10",
     iconColour: "text-accent",
     topics: [
       "Figurative Language",
@@ -66,7 +66,7 @@ const CATEGORIES = [
     description:
       "Master the structural and form techniques examiners reward. Sentence types, narrative structures, poetic form, dialogue, shifts in focus, and how writers organise whole texts for effect.",
     colour: "border-primary",
-    bgGradient: "from-[#1A5276]/5 to-[#1A5276]/10",
+    bgGradient: "from-primary/5 to-primary/10",
     iconColour: "text-primary",
     topics: [
       "Sentence Types",
@@ -197,7 +197,7 @@ export default function TechniquesHubPage() {
     <>
 
       {/* ── Hero Section ─────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-[#1A5276] via-[#1A5276] to-[#2E86C1] px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary via-primary to-primary px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-blue-200">
             Techniques Reference

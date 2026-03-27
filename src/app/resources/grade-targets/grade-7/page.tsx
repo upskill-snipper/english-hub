@@ -175,7 +175,7 @@ export default function Grade7Page() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#2E86C1]/80 px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary/80 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <Link
             href="/resources/grade-targets"
@@ -277,7 +277,7 @@ export default function Grade7Page() {
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {skill.description}
                 </p>
-                <div className="mt-4 rounded-lg bg-primary/5 border border-[#2E86C1]/10 p-4">
+                <div className="mt-4 rounded-lg bg-primary/5 border border-primary/10 p-4">
                   <p className="text-xs font-semibold uppercase tracking-wide text-primary">
                     Example
                   </p>
@@ -337,7 +337,7 @@ export default function Grade7Page() {
                 </div>
               </div>
 
-              <div className="border-t border-[#2E86C1]/20 bg-primary/5 px-6 py-4">
+              <div className="border-t border-primary/20 bg-primary/5 px-6 py-4">
                 <h4 className="text-xs font-semibold uppercase tracking-wide text-primary">
                   Examiner Comment
                 </h4>
@@ -351,7 +351,7 @@ export default function Grade7Page() {
       </section>
 
       {/* How to push from 6 to 7 */}
-      <section className="bg-gradient-to-br from-[#2E86C1]/5 to-[#2E86C1]/10 px-4 py-12 sm:px-6 lg:px-8">
+      <section className="bg-gradient-to-br from-primary/5 to-primary/10 px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
           <h2 className="text-2xl font-bold text-foreground">
             How to push from Grade 6 to Grade 7
@@ -364,7 +364,7 @@ export default function Grade7Page() {
             {PUSHING_FROM_6.map((item) => (
               <div
                 key={item.step}
-                className="rounded-xl border border-[#2E86C1]/20 bg-card p-6 shadow-md"
+                className="rounded-xl border border-primary/20 bg-card p-6 shadow-md"
               >
                 <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
                   {item.step}

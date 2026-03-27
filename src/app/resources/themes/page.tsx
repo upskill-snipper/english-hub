@@ -50,7 +50,7 @@ const THEMES = [
     description:
       "Writers who challenge their audience to consider their duty to society -- from Priestley's socialism to Dickens' critique of Victorian poverty.",
     texts: ["An Inspector Calls", "A Christmas Carol", "London (Blake)"],
-    colour: "border-[#2E86C1]",
+    colour: "border-primary",
     bgColour: "bg-primary/10",
     textColour: "text-primary",
     icon: (
@@ -119,7 +119,7 @@ export default function ThemeExplorerPage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#1A5276]/80 px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary/80 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary/80">
             Resources
@@ -170,7 +170,7 @@ export default function ThemeExplorerPage() {
                 {theme.texts.map((text) => (
                   <li
                     key={text}
-                    className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-muted-foreground"
+                    className="rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground"
                   >
                     {text}
                   </li>
@@ -262,7 +262,7 @@ export default function ThemeExplorerPage() {
             <Link
               key={link.href}
               href={link.href}
-              className="group rounded-xl border border-border bg-card p-5 shadow-md transition hover:shadow-md hover:border-[#2E86C1]/40"
+              className="group rounded-xl border border-border bg-card p-5 shadow-md transition hover:shadow-md hover:border-primary/40"
             >
               <h3 className="font-bold text-foreground group-hover:text-foreground transition-colors">
                 {link.label}

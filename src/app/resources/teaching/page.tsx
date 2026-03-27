@@ -77,7 +77,7 @@ const SPEC_LINKS = [
       { label: "English Language (8700)", url: "https://www.aqa.org.uk/subjects/english/gcse/english-language-8700" },
       { label: "English Literature (8702)", url: "https://www.aqa.org.uk/subjects/english/gcse/english-literature-8702" },
     ],
-    color: "border-[#2E86C1]",
+    color: "border-primary",
   },
   {
     board: "Edexcel",
@@ -131,7 +131,7 @@ export default function TeachingResourcesHub() {
             </p>
             <Link
               href="/resources"
-              className="mt-6 inline-block rounded-lg bg-[#1A5276] px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-[#1A5276]/90"
+              className="mt-6 inline-block rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-primary/90"
             >
               Back to Resources
             </Link>
@@ -145,7 +145,7 @@ export default function TeachingResourcesHub() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#1A5276]/80 px-4 py-14 text-white sm:py-18">
+      <section className="bg-gradient-to-br from-primary to-primary/80 px-4 py-14 text-white sm:py-18">
         <div className="mx-auto max-w-4xl text-center">
           <span className="inline-flex items-center rounded-full bg-card/20 px-3 py-1 text-xs font-semibold uppercase tracking-wider backdrop-blur-sm">
             Teacher Resources

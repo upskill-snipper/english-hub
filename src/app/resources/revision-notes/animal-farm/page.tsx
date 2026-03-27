@@ -591,7 +591,7 @@ export default function AnimalFarmStudyGuide() {
                 <th className="pb-2 font-semibold text-foreground">Historical Parallel</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-100">
+            <tbody className="divide-y divide-border">
               {[
                 ["Old Major", "Karl Marx / Vladimir Lenin"],
                 ["Napoleon", "Joseph Stalin"],

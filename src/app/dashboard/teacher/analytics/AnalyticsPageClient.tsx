@@ -94,7 +94,7 @@ export default function AnalyticsPageClient() {
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h1 className="text-2xl font-bold text-primary">Class Analytics</h1>
-          <p className="mt-1 text-sm text-gray-500">
+          <p className="mt-1 text-sm text-muted-foreground">
             Track class performance, identify skill gaps, and support students
             who need help.
           </p>
@@ -117,7 +117,7 @@ export default function AnalyticsPageClient() {
 
       {/* ── Average Scores Over Time ────────────────────────────── */}
       <section aria-labelledby="scores-chart-heading">
-        <h2 id="scores-chart-heading" className="text-lg font-semibold text-gray-900 mb-4">
+        <h2 id="scores-chart-heading" className="text-lg font-semibold text-foreground mb-4">
           Average Scores Over Time
         </h2>
         <div className="card">
@@ -125,18 +125,18 @@ export default function AnalyticsPageClient() {
           <div className="flex items-end gap-2 sm:gap-4 h-48">
             {MOCK_WEEKLY_SCORES.map((w) => (
               <div key={w.week} className="flex-1 flex flex-col items-center gap-1">
-                <span className="text-xs font-semibold text-gray-700">{w.score}%</span>
+                <span className="text-xs font-semibold text-foreground">{w.score}%</span>
                 <div
                   className={`w-full rounded-t-md ${barColor(w.score)} transition-all`}
                   style={{ height: `${(w.score / maxScore) * 100}%` }}
                 />
-                <span className="text-[10px] text-gray-500 text-center leading-tight mt-1">
+                <span className="text-[10px] text-muted-foreground text-center leading-tight mt-1">
                   {w.week}
                 </span>
               </div>
             ))}
           </div>
-          <p className="mt-4 text-xs text-gray-500 text-center">
+          <p className="mt-4 text-xs text-muted-foreground text-center">
             Class average score by week. Trend is upward (+10% over 8 weeks).
           </p>
         </div>
@@ -144,19 +144,19 @@ export default function AnalyticsPageClient() {
 
       {/* ── Skill/Topic Breakdown ───────────────────────────────── */}
       <section aria-labelledby="skills-heading">
-        <h2 id="skills-heading" className="text-lg font-semibold text-gray-900 mb-4">
+        <h2 id="skills-heading" className="text-lg font-semibold text-foreground mb-4">
           Skill Area Breakdown
         </h2>
         <div className="card space-y-4">
           {MOCK_SKILL_BREAKDOWN.map((skill) => (
             <div key={skill.skill}>
               <div className="flex items-center justify-between mb-1">
-                <span className="text-sm font-medium text-gray-700">{skill.skill}</span>
+                <span className="text-sm font-medium text-foreground">{skill.skill}</span>
                 <span className={`text-sm font-bold ${scoreColor(skill.score)}`}>
                   {skill.score}%
                 </span>
               </div>
-              <div className="h-2.5 rounded-full bg-gray-100 overflow-hidden">
+              <div className="h-2.5 rounded-full bg-muted overflow-hidden">
                 <div
                   className={`h-full rounded-full transition-all ${barColor(skill.score)}`}
                   style={{ width: `${skill.score}%` }}
@@ -164,7 +164,7 @@ export default function AnalyticsPageClient() {
               </div>
             </div>
           ))}
-          <p className="text-xs text-gray-500 pt-2">
+          <p className="text-xs text-muted-foreground pt-2">
             Weakest area: Exam Technique (61%). Consider targeted revision sessions.
           </p>
         </div>
@@ -172,12 +172,12 @@ export default function AnalyticsPageClient() {
 
       {/* ── Students Who Need Support ───────────────────────────── */}
       <section aria-labelledby="at-risk-heading">
-        <h2 id="at-risk-heading" className="text-lg font-semibold text-gray-900 mb-4">
+        <h2 id="at-risk-heading" className="text-lg font-semibold text-foreground mb-4">
           Students Who May Need Support
         </h2>
         {MOCK_STUDENTS_AT_RISK.length === 0 ? (
           <div className="card text-center py-8">
-            <p className="text-gray-500">
+            <p className="text-muted-foreground">
               All students are performing within expected ranges.
             </p>
           </div>
@@ -188,22 +188,22 @@ export default function AnalyticsPageClient() {
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                   <div>
                     <div className="flex items-center gap-2">
-                      <p className="font-semibold text-gray-900">{student.name}</p>
+                      <p className="font-semibold text-foreground">{student.name}</p>
                       <span className="inline-flex items-center rounded-full bg-warn-50 px-2 py-0.5 text-xs font-medium text-warn-700">
                         {student.recentTrend === "declining"
                           ? "Declining"
                           : "Stagnant"}
                       </span>
                     </div>
-                    <p className="mt-0.5 text-xs text-gray-500">{student.group}</p>
-                    <p className="mt-1 text-sm text-gray-600">{student.concern}</p>
+                    <p className="mt-0.5 text-xs text-muted-foreground">{student.group}</p>
+                    <p className="mt-1 text-sm text-muted-foreground">{student.concern}</p>
                   </div>
                   <div className="flex items-center gap-4 shrink-0">
                     <div className="text-center">
                       <p className={`text-lg font-bold ${scoreColor(student.averageScore)}`}>
                         {student.averageScore}%
                       </p>
-                      <p className="text-xs text-gray-500">Avg Score</p>
+                      <p className="text-xs text-muted-foreground">Avg Score</p>
                     </div>
                     {/* TODO: Link to student profile */}
                     <Link
@@ -222,21 +222,21 @@ export default function AnalyticsPageClient() {
 
       {/* ── Summary Stats Row ───────────────────────────────────── */}
       <section aria-labelledby="summary-heading">
-        <h2 id="summary-heading" className="text-lg font-semibold text-gray-900 mb-4">
+        <h2 id="summary-heading" className="text-lg font-semibold text-foreground mb-4">
           Summary
         </h2>
         <div className="grid gap-4 sm:grid-cols-3">
           <div className="card text-center">
             <p className="text-3xl font-bold text-primary">32</p>
-            <p className="text-sm text-gray-500 mt-1">Total Students</p>
+            <p className="text-sm text-muted-foreground mt-1">Total Students</p>
           </div>
           <div className="card text-center">
             <p className="text-3xl font-bold text-success">+10%</p>
-            <p className="text-sm text-gray-500 mt-1">Score Improvement (8 weeks)</p>
+            <p className="text-sm text-muted-foreground mt-1">Score Improvement (8 weeks)</p>
           </div>
           <div className="card text-center">
             <p className="text-3xl font-bold text-warn">3</p>
-            <p className="text-sm text-gray-500 mt-1">Students Need Support</p>
+            <p className="text-sm text-muted-foreground mt-1">Students Need Support</p>
           </div>
         </div>
       </section>

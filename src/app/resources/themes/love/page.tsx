@@ -134,7 +134,7 @@ export default function LoveThemePage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#1A5276]/80 px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary/80 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <Link
             href="/resources/themes"
@@ -187,7 +187,7 @@ export default function LoveThemePage() {
               <ul className="mt-5 space-y-3">
                 {text.analysis.map((point, i) => (
                   <li key={i} className="flex gap-3 text-sm leading-relaxed text-muted-foreground">
-                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#1A5276]/10 text-xs font-bold text-foreground">
+                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-foreground">
                       {i + 1}
                     </span>
                     {point}
@@ -252,7 +252,7 @@ export default function LoveThemePage() {
             <Link
               key={link.href}
               href={link.href}
-              className="group rounded-xl border border-border bg-card p-5 shadow-md transition hover:shadow-md hover:border-[#2E86C1]/40"
+              className="group rounded-xl border border-border bg-card p-5 shadow-md transition hover:shadow-md hover:border-primary/40"
             >
               <h3 className="font-bold text-foreground group-hover:text-foreground transition-colors">
                 {link.label}

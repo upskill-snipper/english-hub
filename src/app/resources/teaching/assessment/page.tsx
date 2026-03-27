@@ -375,7 +375,7 @@ export default function AssessmentToolsPage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#1A5276]/80 px-4 py-12 text-white sm:py-16">
+      <section className="bg-gradient-to-br from-primary to-primary/80 px-4 py-12 text-white sm:py-16">
         <div className="mx-auto max-w-4xl text-center">
           <nav className="mb-4 text-sm text-white/70">
             <Link href="/resources/teaching" className="hover:text-white transition-colors">
@@ -483,7 +483,7 @@ export default function AssessmentToolsPage() {
 
                   <div className="mt-4 space-y-2">
                     {currentQuestion.options.map((option, i) => {
-                      let optionClass = "border-border bg-card hover:border-[#2E86C1]/40";
+                      let optionClass = "border-border bg-card hover:border-primary/40";
                       if (showAnswer) {
                         if (i === currentQuestion.correctIndex) {
                           optionClass = "border-green-500 bg-green-50";
@@ -491,7 +491,7 @@ export default function AssessmentToolsPage() {
                           optionClass = "border-red-500 bg-red-50";
                         }
                       } else if (i === selectedAnswer) {
-                        optionClass = "border-[#2E86C1] bg-primary/5";
+                        optionClass = "border-primary bg-primary/5";
                       }
 
                       return (
@@ -568,7 +568,7 @@ export default function AssessmentToolsPage() {
                 <div className="bg-primary px-5 py-3">
                   <h3 className="font-bold text-white">{selectedQuizTopic} — Answer Key</h3>
                 </div>
-                <div className="divide-y divide-gray-100">
+                <div className="divide-y divide-border">
                   {quizQuestions.map((q, i) => (
                     <div key={i} className="px-5 py-4">
                       <p className="text-sm font-medium text-foreground">
@@ -708,7 +708,7 @@ export default function AssessmentToolsPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                     </svg>
                   </button>
-                  <div className={`divide-y divide-gray-100 ${expandedMarkSchemes.has(idx) ? "" : "hidden print:block"}`}>
+                  <div className={`divide-y divide-border ${expandedMarkSchemes.has(idx) ? "" : "hidden print:block"}`}>
                     {template.levels.map((level) => (
                       <div key={level.level} className="flex flex-col gap-1 px-5 py-3 sm:flex-row sm:gap-4">
                         <span className="shrink-0 text-sm font-bold text-primary sm:w-52">

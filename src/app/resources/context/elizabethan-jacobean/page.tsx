@@ -213,7 +213,7 @@ export default function ElizabethanJacobeanContextPage() {
           </Section>
 
           {/* Witchcraft */}
-          <Section id="witchcraft" title="Attitudes to Witchcraft" colour="bg-gray-800">
+          <Section id="witchcraft" title="Attitudes to Witchcraft" colour="bg-muted">
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 Belief in witchcraft was <strong>widespread and deadly serious</strong> in this period.

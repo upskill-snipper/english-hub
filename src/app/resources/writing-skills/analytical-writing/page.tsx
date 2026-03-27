@@ -1142,7 +1142,7 @@ export default function AnalyticalWritingPage() {
                       <th className="px-4 py-3 text-left font-semibold">Grade 9</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-gray-200">
+                  <tbody className="divide-y divide-border">
                     <tr className="bg-card">
                       <td className="px-4 py-3 font-medium text-foreground">Point</td>
                       <td className="px-4 py-3 text-muted-foreground">Valid but simple</td>

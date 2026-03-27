@@ -29,7 +29,7 @@ function LabeledInput({
   return (
     <div className="space-y-1.5">
       {label && (
-        <Label htmlFor={inputId} className="text-sm font-medium text-gray-700">
+        <Label htmlFor={inputId} className="text-sm font-medium text-foreground">
           {label}
         </Label>
       )}
@@ -276,21 +276,21 @@ function ProfileTab({
 
       <div className="space-y-3">
         <div>
-          <p className="text-sm font-medium text-gray-700">Email</p>
-          <p className="mt-1 text-sm text-gray-500">{profile.email}</p>
-          <p className="text-xs text-gray-500 mt-0.5">
+          <p className="text-sm font-medium text-foreground">Email</p>
+          <p className="mt-1 text-sm text-muted-foreground">{profile.email}</p>
+          <p className="text-xs text-muted-foreground mt-0.5">
             Contact support to change your email address.
           </p>
         </div>
 
         <div className="grid gap-3 sm:grid-cols-3">
           <div>
-            <p className="text-sm font-medium text-gray-700">Age</p>
-            <p className="mt-1 text-sm text-gray-500">{profile.age}</p>
+            <p className="text-sm font-medium text-foreground">Age</p>
+            <p className="mt-1 text-sm text-muted-foreground">{profile.age}</p>
           </div>
           <div>
-            <p className="text-sm font-medium text-gray-700">Minor status</p>
-            <p className="mt-1 text-sm text-gray-500">
+            <p className="text-sm font-medium text-foreground">Minor status</p>
+            <p className="mt-1 text-sm text-muted-foreground">
               {profile.isMinor ? (
                 <span className="inline-flex items-center rounded-full bg-yellow-100 px-2.5 py-0.5 text-xs font-medium text-yellow-800">
                   Under 18
@@ -303,8 +303,8 @@ function ProfileTab({
             </p>
           </div>
           <div>
-            <p className="text-sm font-medium text-gray-700">Country</p>
-            <p className="mt-1 text-sm text-gray-500">
+            <p className="text-sm font-medium text-foreground">Country</p>
+            <p className="mt-1 text-sm text-muted-foreground">
               {COUNTRY_LABELS[profile.country] ?? profile.country}
             </p>
           </div>
@@ -411,7 +411,7 @@ function PasswordTab() {
               <li
                 key={check.label}
                 className={`flex items-center gap-2 text-xs ${
-                  check.met ? "text-success-600" : "text-gray-500"
+                  check.met ? "text-success-600" : "text-muted-foreground"
                 }`}
               >
                 {check.met ? (
@@ -516,10 +516,10 @@ function CommunicationTab() {
   return (
     <div className="space-y-6 max-w-lg">
       <div>
-        <h3 className="text-sm font-semibold text-gray-900">
+        <h3 className="text-sm font-semibold text-foreground">
           Email notifications
         </h3>
-        <p className="mt-1 text-xs text-gray-500">
+        <p className="mt-1 text-xs text-muted-foreground">
           Choose which emails you would like to receive.
         </p>
       </div>
@@ -530,14 +530,14 @@ function CommunicationTab() {
           <div className="relative inline-flex h-6 w-11 shrink-0 cursor-not-allowed rounded-full bg-primary-500 opacity-70">
             <span
               aria-hidden="true"
-              className="pointer-events-none inline-block h-5 w-5 translate-x-5 transform rounded-full bg-white shadow-sm"
+              className="pointer-events-none inline-block h-5 w-5 translate-x-5 transform rounded-full bg-card shadow-sm"
             />
           </div>
           <div>
-            <p className="text-sm font-medium text-gray-700">
+            <p className="text-sm font-medium text-foreground">
               Essential emails
             </p>
-            <p className="text-xs text-gray-500">
+            <p className="text-xs text-muted-foreground">
               Billing confirmations, security alerts, and account notifications.
               These cannot be disabled.
             </p>
@@ -594,22 +594,22 @@ function SubscriptionTab() {
     <div className="space-y-8 max-w-2xl">
       {/* Current plan */}
       <div className="card">
-        <h3 className="text-sm font-semibold text-gray-900">Current plan</h3>
+        <h3 className="text-sm font-semibold text-foreground">Current plan</h3>
         <div className="mt-3 grid gap-3 sm:grid-cols-3">
           <div>
-            <p className="text-xs text-gray-500">Plan</p>
-            <p className="mt-0.5 text-sm font-medium text-gray-900">
+            <p className="text-xs text-muted-foreground">Plan</p>
+            <p className="mt-0.5 text-sm font-medium text-foreground">
               {subscription.plan}
             </p>
           </div>
           <div>
-            <p className="text-xs text-gray-500">Status</p>
+            <p className="text-xs text-muted-foreground">Status</p>
             <p className="mt-0.5">
               <span
                 className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${
                   subscription.status === "Active"
                     ? "bg-success-50 text-success-700"
-                    : "bg-gray-100 text-gray-700"
+                    : "bg-muted text-foreground"
                 }`}
               >
                 {subscription.status}
@@ -617,8 +617,8 @@ function SubscriptionTab() {
             </p>
           </div>
           <div>
-            <p className="text-xs text-gray-500">Next billing date</p>
-            <p className="mt-0.5 text-sm font-medium text-gray-900">
+            <p className="text-xs text-muted-foreground">Next billing date</p>
+            <p className="mt-0.5 text-sm font-medium text-foreground">
               {subscription.nextBillingDate
                 ? new Date(subscription.nextBillingDate).toLocaleDateString(
                     "en-GB",
@@ -644,58 +644,58 @@ function SubscriptionTab() {
 
       {/* Billing history */}
       <div>
-        <h3 className="text-sm font-semibold text-gray-900">
+        <h3 className="text-sm font-semibold text-foreground">
           Billing history
         </h3>
         {billing.length === 0 ? (
-          <p className="mt-3 text-sm text-gray-500">
+          <p className="mt-3 text-sm text-muted-foreground">
             No billing history available.
           </p>
         ) : (
           <div className="mt-3 overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-gray-200">
+                <tr className="border-b border-border">
                   <th
                     scope="col"
-                    className="pb-2 pr-4 text-left text-xs font-medium text-gray-500"
+                    className="pb-2 pr-4 text-left text-xs font-medium text-muted-foreground"
                   >
                     Date
                   </th>
                   <th
                     scope="col"
-                    className="pb-2 pr-4 text-left text-xs font-medium text-gray-500"
+                    className="pb-2 pr-4 text-left text-xs font-medium text-muted-foreground"
                   >
                     Description
                   </th>
                   <th
                     scope="col"
-                    className="pb-2 pr-4 text-left text-xs font-medium text-gray-500"
+                    className="pb-2 pr-4 text-left text-xs font-medium text-muted-foreground"
                   >
                     Amount
                   </th>
                   <th
                     scope="col"
-                    className="pb-2 text-left text-xs font-medium text-gray-500"
+                    className="pb-2 text-left text-xs font-medium text-muted-foreground"
                   >
                     Status
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100">
+              <tbody className="divide-y divide-border">
                 {billing.map((entry) => (
                   <tr key={entry.id}>
-                    <td className="py-2.5 pr-4 text-gray-700">
+                    <td className="py-2.5 pr-4 text-foreground">
                       {new Date(entry.date).toLocaleDateString("en-GB", {
                         day: "numeric",
                         month: "short",
                         year: "numeric",
                       })}
                     </td>
-                    <td className="py-2.5 pr-4 text-gray-700">
+                    <td className="py-2.5 pr-4 text-foreground">
                       {entry.description}
                     </td>
-                    <td className="py-2.5 pr-4 font-medium text-gray-900">
+                    <td className="py-2.5 pr-4 font-medium text-foreground">
                       {entry.amount}
                     </td>
                     <td className="py-2.5">
@@ -772,27 +772,27 @@ function DataPrivacyTab() {
     <div className="space-y-8 max-w-lg">
       {/* Links */}
       <div className="space-y-3">
-        <h3 className="text-sm font-semibold text-gray-900">
+        <h3 className="text-sm font-semibold text-foreground">
           Privacy management
         </h3>
         <nav className="space-y-2" aria-label="Privacy settings navigation">
           <Link
             href="/dashboard/privacy"
-            className="flex items-center justify-between rounded-lg border border-gray-200 px-4 py-3 text-sm text-gray-700 hover:border-accent/40 hover:bg-gray-50 transition-colors"
+            className="flex items-center justify-between rounded-lg border border-border px-4 py-3 text-sm text-foreground hover:border-accent/40 hover:bg-muted transition-colors"
           >
             <span>Privacy Settings</span>
             <ChevronRightIcon />
           </Link>
           <Link
             href="/dashboard/data-requests"
-            className="flex items-center justify-between rounded-lg border border-gray-200 px-4 py-3 text-sm text-gray-700 hover:border-accent/40 hover:bg-gray-50 transition-colors"
+            className="flex items-center justify-between rounded-lg border border-border px-4 py-3 text-sm text-foreground hover:border-accent/40 hover:bg-muted transition-colors"
           >
             <span>Data Rights (DSAR)</span>
             <ChevronRightIcon />
           </Link>
           <Link
             href="/dashboard/consent"
-            className="flex items-center justify-between rounded-lg border border-gray-200 px-4 py-3 text-sm text-gray-700 hover:border-accent/40 hover:bg-gray-50 transition-colors"
+            className="flex items-center justify-between rounded-lg border border-border px-4 py-3 text-sm text-foreground hover:border-accent/40 hover:bg-muted transition-colors"
           >
             <span>Consent Management</span>
             <ChevronRightIcon />
@@ -802,10 +802,10 @@ function DataPrivacyTab() {
 
       {/* Data export */}
       <div>
-        <h3 className="text-sm font-semibold text-gray-900">
+        <h3 className="text-sm font-semibold text-foreground">
           Download your data
         </h3>
-        <p className="mt-1 text-xs text-gray-500">
+        <p className="mt-1 text-xs text-muted-foreground">
           Request a copy of all data we hold about you. You will receive an
           email with a download link once the export is ready.
         </p>
@@ -888,7 +888,7 @@ function DataPrivacyTab() {
           <div>
             <label
               htmlFor="delete-confirm"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-sm font-medium text-foreground"
             >
               Type <span className="font-mono font-bold">DELETE</span> to
               confirm
@@ -898,7 +898,7 @@ function DataPrivacyTab() {
               type="text"
               value={deleteConfirm}
               onChange={(e) => setDeleteConfirm(e.target.value)}
-              className="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-warn-500 focus:ring-1 focus:ring-warn-500"
+              className="mt-1 block w-full rounded-lg border border-border px-3 py-2 text-sm focus:border-warn-500 focus:ring-1 focus:ring-warn-500"
               autoComplete="off"
               spellCheck={false}
             />
@@ -914,7 +914,7 @@ function DataPrivacyTab() {
 function ChevronRightIcon() {
   return (
     <svg
-      className="h-4 w-4 text-gray-500"
+      className="h-4 w-4 text-muted-foreground"
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
@@ -960,10 +960,10 @@ function SettingsContent() {
     return (
       <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
         <div className="animate-pulse space-y-4">
-          <div className="h-8 w-48 rounded bg-gray-200" />
-          <div className="h-4 w-64 rounded bg-gray-100" />
-          <div className="mt-6 h-10 w-full rounded bg-gray-100" />
-          <div className="h-40 w-full rounded bg-gray-100" />
+          <div className="h-8 w-48 rounded bg-muted" />
+          <div className="h-4 w-64 rounded bg-muted" />
+          <div className="mt-6 h-10 w-full rounded bg-muted" />
+          <div className="h-40 w-full rounded bg-muted" />
         </div>
       </div>
     );
@@ -972,7 +972,7 @@ function SettingsContent() {
   if (!profile) {
     return (
       <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
-        <p className="text-sm text-gray-500">
+        <p className="text-sm text-muted-foreground">
           Unable to load your profile.{" "}
           <button
             type="button"
@@ -995,7 +995,7 @@ function SettingsContent() {
         <h1 className="text-2xl font-bold text-primary sm:text-3xl">
           Account Settings
         </h1>
-        <p className="mt-1 text-sm text-gray-500">
+        <p className="mt-1 text-sm text-muted-foreground">
           Manage your profile, security, and preferences.
         </p>
       </div>

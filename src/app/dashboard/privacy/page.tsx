@@ -111,17 +111,17 @@ export default function PrivacyDashboard() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="min-h-screen flex items-center justify-center bg-background">
         <div className="text-center">
           <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
-          <p className="mt-3 text-sm text-gray-500">Loading your privacy settings...</p>
+          <p className="mt-3 text-sm text-muted-foreground">Loading your privacy settings...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-background">
       {/* Toast */}
       {toast && (
         <div className="fixed top-4 right-4 z-50 animate-fade-in rounded-lg bg-success px-5 py-3 text-sm font-medium text-white shadow-lg">
@@ -132,17 +132,17 @@ export default function PrivacyDashboard() {
       <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-2xl font-bold text-gray-900 sm:text-3xl">
+          <h1 className="text-2xl font-bold text-foreground sm:text-3xl">
             {"\u{1F512}"} Privacy &amp; Data
           </h1>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-muted-foreground">
             You&apos;re in control. Manage how your data is used, download it, or delete it anytime.
           </p>
         </div>
 
         {/* Tabs */}
         <div className="mb-6 overflow-x-auto">
-          <nav className="flex gap-1 rounded-xl bg-white p-1.5 shadow-sm border border-gray-200" role="tablist">
+          <nav className="flex gap-1 rounded-xl bg-card p-1.5 shadow-sm border border-border" role="tablist">
             {TABS.map((tab) => (
               <button
                 key={tab.id}
@@ -152,7 +152,7 @@ export default function PrivacyDashboard() {
                 className={`flex items-center gap-1.5 whitespace-nowrap rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
                   activeTab === tab.id
                     ? "bg-primary text-white shadow-sm"
-                    : "text-gray-600 hover:bg-gray-100 hover:text-gray-900"
+                    : "text-muted-foreground hover:bg-muted hover:text-foreground"
                 }`}
               >
                 <span className="text-base">{tab.icon}</span>
@@ -245,8 +245,8 @@ function SettingsTab({
 
   return (
     <div>
-      <h2 className="text-lg font-semibold text-gray-900 mb-1">Privacy Settings</h2>
-      <p className="text-sm text-gray-500 mb-6">
+      <h2 className="text-lg font-semibold text-foreground mb-1">Privacy Settings</h2>
+      <p className="text-sm text-muted-foreground mb-6">
         Everything is <strong>off by default</strong> to keep your data private. Turn things on only if you want to.
       </p>
 
@@ -254,12 +254,12 @@ function SettingsTab({
         {toggles.map((item) => (
           <label
             key={item.key}
-            className="flex items-start gap-4 rounded-xl border border-gray-200 p-4 cursor-pointer hover:border-primary-200 hover:bg-primary-50/30 transition-colors"
+            className="flex items-start gap-4 rounded-xl border border-border p-4 cursor-pointer hover:border-primary-200 hover:bg-primary-50/30 transition-colors"
           >
             <span className="text-2xl mt-0.5">{item.icon}</span>
             <div className="flex-1 min-w-0">
-              <span className="block text-sm font-medium text-gray-900">{item.label}</span>
-              <span className="block text-xs text-gray-500 mt-0.5">{item.description}</span>
+              <span className="block text-sm font-medium text-foreground">{item.label}</span>
+              <span className="block text-xs text-muted-foreground mt-0.5">{item.description}</span>
             </div>
             <button
               type="button"
@@ -267,11 +267,11 @@ function SettingsTab({
               aria-checked={settings[item.key]}
               onClick={() => toggle(item.key)}
               className={`relative mt-0.5 inline-flex h-6 w-11 shrink-0 items-center rounded-full transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${
-                settings[item.key] ? "bg-success" : "bg-gray-300"
+                settings[item.key] ? "bg-success" : "bg-muted-foreground/30"
               }`}
             >
               <span
-                className={`inline-block h-4 w-4 rounded-full bg-white shadow-sm transition-transform ${
+                className={`inline-block h-4 w-4 rounded-full bg-card shadow-sm transition-transform ${
                   settings[item.key] ? "translate-x-6" : "translate-x-1"
                 }`}
               />
@@ -281,12 +281,12 @@ function SettingsTab({
       </div>
 
       {/* Profile Visibility */}
-      <div className="mt-6 rounded-xl border border-gray-200 p-4">
+      <div className="mt-6 rounded-xl border border-border p-4">
         <div className="flex items-start gap-4">
           <span className="text-2xl mt-0.5">{"\u{1F464}"}</span>
           <div className="flex-1">
-            <span className="block text-sm font-medium text-gray-900">Profile Visibility</span>
-            <span className="block text-xs text-gray-500 mt-0.5">
+            <span className="block text-sm font-medium text-foreground">Profile Visibility</span>
+            <span className="block text-xs text-muted-foreground mt-0.5">
               Control who can see your profile information
             </span>
             <div className="mt-3 flex flex-wrap gap-2">
@@ -304,11 +304,11 @@ function SettingsTab({
                   className={`rounded-lg border-2 px-3 py-2 text-xs font-medium transition-colors ${
                     settings.profileVisibility === opt.value
                       ? "border-primary bg-primary-50 text-primary"
-                      : "border-gray-200 text-gray-600 hover:border-gray-300"
+                      : "border-border text-muted-foreground hover:border-border"
                   }`}
                 >
                   {opt.label}
-                  <span className="block text-[10px] font-normal text-gray-500 mt-0.5">{opt.desc}</span>
+                  <span className="block text-[10px] font-normal text-muted-foreground mt-0.5">{opt.desc}</span>
                 </button>
               ))}
             </div>
@@ -334,7 +334,7 @@ function SettingsTab({
 
 function DataTab({ summary }: { summary: DataSummary | null }) {
   if (!summary) {
-    return <p className="text-sm text-gray-500">Unable to load your data summary.</p>;
+    return <p className="text-sm text-muted-foreground">Unable to load your data summary.</p>;
   }
 
   const cards = [
@@ -370,8 +370,8 @@ function DataTab({ summary }: { summary: DataSummary | null }) {
 
   return (
     <div>
-      <h2 className="text-lg font-semibold text-gray-900 mb-1">Your Data at a Glance</h2>
-      <p className="text-sm text-gray-500 mb-6">
+      <h2 className="text-lg font-semibold text-foreground mb-1">Your Data at a Glance</h2>
+      <p className="text-sm text-muted-foreground mb-6">
         Here&apos;s a summary of what we hold about you. No surprises.
       </p>
 
@@ -379,24 +379,24 @@ function DataTab({ summary }: { summary: DataSummary | null }) {
         {cards.map((card) => (
           <div
             key={card.label}
-            className="rounded-xl border border-gray-200 p-5 hover:shadow-md transition-shadow"
+            className="rounded-xl border border-border p-5 hover:shadow-md transition-shadow"
           >
             <div className={`inline-flex items-center justify-center h-10 w-10 rounded-lg ${card.color} text-xl mb-3`}>
               {card.icon}
             </div>
-            <p className="text-xs font-medium text-gray-500 uppercase tracking-wide">{card.label}</p>
-            <p className="text-xl font-bold text-gray-900 mt-1">{card.value}</p>
-            <p className="text-xs text-gray-500 mt-0.5">{card.sub}</p>
+            <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide">{card.label}</p>
+            <p className="text-xl font-bold text-foreground mt-1">{card.value}</p>
+            <p className="text-xs text-muted-foreground mt-0.5">{card.sub}</p>
           </div>
         ))}
       </div>
 
       {summary.school && (
-        <div className="mt-4 rounded-xl border border-gray-200 p-4 flex items-center gap-3">
+        <div className="mt-4 rounded-xl border border-border p-4 flex items-center gap-3">
           <span className="text-xl">{"\u{1F3EB}"}</span>
           <div>
-            <p className="text-xs font-medium text-gray-500">School</p>
-            <p className="text-sm font-semibold text-gray-900">{summary.school}</p>
+            <p className="text-xs font-medium text-muted-foreground">School</p>
+            <p className="text-sm font-semibold text-foreground">{summary.school}</p>
           </div>
         </div>
       )}
@@ -442,17 +442,17 @@ function DownloadTab({ onToast }: { onToast: (msg: string) => void }) {
 
   return (
     <div>
-      <h2 className="text-lg font-semibold text-gray-900 mb-1">Download Your Data</h2>
-      <p className="text-sm text-gray-500 mb-6">
+      <h2 className="text-lg font-semibold text-foreground mb-1">Download Your Data</h2>
+      <p className="text-sm text-muted-foreground mb-6">
         You have the right to take your data with you. Request a copy and we&apos;ll email it to you.
       </p>
 
       {/* What's included */}
-      <div className="rounded-xl border border-gray-200 p-5 mb-6">
-        <h3 className="text-sm font-semibold text-gray-900 mb-3">What&apos;s included in your export</h3>
+      <div className="rounded-xl border border-border p-5 mb-6">
+        <h3 className="text-sm font-semibold text-foreground mb-3">What&apos;s included in your export</h3>
         <ul className="space-y-2">
           {includedItems.map((item) => (
-            <li key={item.text} className="flex items-center gap-2.5 text-sm text-gray-600">
+            <li key={item.text} className="flex items-center gap-2.5 text-sm text-muted-foreground">
               <span className="text-base">{item.icon}</span>
               {item.text}
             </li>
@@ -462,7 +462,7 @@ function DownloadTab({ onToast }: { onToast: (msg: string) => void }) {
 
       {/* Format picker */}
       <div className="mb-6">
-        <label className="block text-sm font-medium text-gray-700 mb-2">Choose format</label>
+        <label className="block text-sm font-medium text-foreground mb-2">Choose format</label>
         <div className="flex gap-3">
           {(["JSON", "PDF"] as const).map((f) => (
             <button
@@ -472,11 +472,11 @@ function DownloadTab({ onToast }: { onToast: (msg: string) => void }) {
               className={`rounded-lg border-2 px-5 py-3 text-sm font-medium transition-colors ${
                 format === f
                   ? "border-primary bg-primary-50 text-primary"
-                  : "border-gray-200 text-gray-600 hover:border-gray-300"
+                  : "border-border text-muted-foreground hover:border-border"
               }`}
             >
               {f === "JSON" ? "\u{1F4C4}" : "\u{1F4D1}"} {f}
-              <span className="block text-[10px] font-normal text-gray-500 mt-0.5">
+              <span className="block text-[10px] font-normal text-muted-foreground mt-0.5">
                 {f === "JSON" ? "Machine-readable" : "Human-readable"}
               </span>
             </button>
@@ -571,28 +571,28 @@ function DeleteTab({
 
   return (
     <div>
-      <h2 className="text-lg font-semibold text-gray-900 mb-1">Delete Your Data</h2>
-      <p className="text-sm text-gray-500 mb-6">
+      <h2 className="text-lg font-semibold text-foreground mb-1">Delete Your Data</h2>
+      <p className="text-sm text-muted-foreground mb-6">
         You can delete individual essays or your entire account. Take your time - there&apos;s no pressure.
       </p>
 
       {/* Delete individual essays */}
       <div className="mb-8">
-        <h3 className="text-sm font-semibold text-gray-900 mb-3">{"\u{1F4DD}"} Delete Individual Essays</h3>
+        <h3 className="text-sm font-semibold text-foreground mb-3">{"\u{1F4DD}"} Delete Individual Essays</h3>
         {essays.length === 0 ? (
-          <div className="rounded-xl border border-dashed border-gray-300 p-6 text-center">
-            <p className="text-sm text-gray-500">No essays to show.</p>
+          <div className="rounded-xl border border-dashed border-border p-6 text-center">
+            <p className="text-sm text-muted-foreground">No essays to show.</p>
           </div>
         ) : (
           <div className="space-y-2 max-h-64 overflow-y-auto">
             {essays.map((essay) => (
               <div
                 key={essay.id}
-                className="flex items-center justify-between rounded-lg border border-gray-200 px-4 py-3 hover:bg-gray-50 transition-colors"
+                className="flex items-center justify-between rounded-lg border border-border px-4 py-3 hover:bg-muted transition-colors"
               >
                 <div className="min-w-0 flex-1">
-                  <p className="text-sm font-medium text-gray-900 truncate">{essay.title}</p>
-                  <p className="text-xs text-gray-500">
+                  <p className="text-sm font-medium text-foreground truncate">{essay.title}</p>
+                  <p className="text-xs text-muted-foreground">
                     {essay.subject} &middot;{" "}
                     {new Date(essay.createdAt).toLocaleDateString("en-GB", {
                       day: "numeric",
@@ -619,14 +619,14 @@ function DeleteTab({
         <h3 className="text-sm font-semibold text-warn-700 mb-2">
           {"\u26A0\uFE0F"} Delete Your Account
         </h3>
-        <p className="text-sm text-gray-600 mb-3">
+        <p className="text-sm text-muted-foreground mb-3">
           This will schedule your account for deletion. You&apos;ll have a <strong>30-day grace period</strong> to
           change your mind. After that, all your data will be permanently erased.
         </p>
 
-        <div className="rounded-lg bg-white border border-warn-200 p-4 mb-4">
-          <p className="text-xs font-medium text-gray-700 mb-1">What happens when you delete your account:</p>
-          <ul className="text-xs text-gray-500 space-y-1">
+        <div className="rounded-lg bg-card border border-warn-200 p-4 mb-4">
+          <p className="text-xs font-medium text-foreground mb-1">What happens when you delete your account:</p>
+          <ul className="text-xs text-muted-foreground space-y-1">
             <li>{"\u2022"} Your account is deactivated immediately</li>
             <li>{"\u2022"} You have 30 days to log back in and cancel the deletion</li>
             <li>{"\u2022"} After 30 days, all data is permanently and irreversibly deleted</li>
@@ -634,7 +634,7 @@ function DeleteTab({
           </ul>
         </div>
 
-        <label className="block text-xs font-medium text-gray-700 mb-1.5">
+        <label className="block text-xs font-medium text-foreground mb-1.5">
           Type <span className="font-mono font-bold text-warn">DELETE MY ACCOUNT</span> to confirm
         </label>
         <input
@@ -706,8 +706,8 @@ function RightsTab() {
 
   return (
     <div>
-      <h2 className="text-lg font-semibold text-gray-900 mb-1">Your Data Rights</h2>
-      <p className="text-sm text-gray-500 mb-6">
+      <h2 className="text-lg font-semibold text-foreground mb-1">Your Data Rights</h2>
+      <p className="text-sm text-muted-foreground mb-6">
         Under UK GDPR and the ICO Children&apos;s Code, you have powerful rights over your data. Here&apos;s what they mean
         in plain English.
       </p>
@@ -716,11 +716,11 @@ function RightsTab() {
         {rights.map((right) => (
           <div
             key={right.title}
-            className="rounded-xl border border-gray-200 p-5 hover:shadow-md hover:border-primary-200 transition-all"
+            className="rounded-xl border border-border p-5 hover:shadow-md hover:border-primary-200 transition-all"
           >
             <div className="text-2xl mb-2">{right.icon}</div>
-            <h3 className="text-sm font-semibold text-gray-900">{right.title}</h3>
-            <p className="text-xs text-gray-500 mt-1 mb-3">{right.description}</p>
+            <h3 className="text-sm font-semibold text-foreground">{right.title}</h3>
+            <p className="text-xs text-muted-foreground mt-1 mb-3">{right.description}</p>
             {"href" in right && right.href ? (
               <a
                 href={right.href}

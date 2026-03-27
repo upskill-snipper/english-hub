@@ -78,10 +78,10 @@ export default function TeacherLayout({
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="min-h-screen flex items-center justify-center bg-background">
         <div className="text-center">
           <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-          <p className="text-gray-500 text-sm">Loading teacher dashboard...</p>
+          <p className="text-muted-foreground text-sm">Loading teacher dashboard...</p>
         </div>
       </div>
     );
@@ -89,11 +89,11 @@ export default function TeacherLayout({
 
   if (!isTeacher) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="min-h-screen flex items-center justify-center bg-background">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">Access Denied</h1>
-          <p className="text-gray-600 mb-4">You need a teacher account to view this page.</p>
-          <p className="text-sm text-gray-500 mb-4">
+          <h1 className="text-2xl font-bold text-foreground mb-2">Access Denied</h1>
+          <p className="text-muted-foreground mb-4">You need a teacher account to view this page.</p>
+          <p className="text-sm text-muted-foreground mb-4">
             If you are a teacher, please register with a teacher account.
           </p>
           <div className="flex gap-3 justify-center">
@@ -110,7 +110,7 @@ export default function TeacherLayout({
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 flex">
+    <div className="min-h-screen bg-background flex">
       {/* Mobile sidebar backdrop */}
       {sidebarOpen && (
         <div
@@ -152,8 +152,8 @@ export default function TeacherLayout({
                 href={item.href}
                 className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
                   isActive
-                    ? "bg-white/15 text-white"
-                    : "text-white/70 hover:bg-white/10 hover:text-white"
+                    ? "bg-card/15 text-white"
+                    : "text-white/70 hover:bg-card/10 hover:text-white"
                 }`}
               >
                 {item.icon}
@@ -179,9 +179,9 @@ export default function TeacherLayout({
       {/* Main content */}
       <div className="flex-1 flex flex-col min-w-0">
         {/* Top bar */}
-        <header className="h-16 bg-white border-b border-gray-200 flex items-center px-4 lg:px-8">
+        <header className="h-16 bg-card border-b border-border flex items-center px-4 lg:px-8">
           <button
-            className="lg:hidden text-gray-500 hover:text-gray-700 mr-4"
+            className="lg:hidden text-muted-foreground hover:text-foreground mr-4"
             onClick={() => setSidebarOpen(true)}
             aria-label="Open sidebar"
           >
@@ -189,7 +189,7 @@ export default function TeacherLayout({
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
-          <h1 className="text-lg font-semibold text-gray-900">
+          <h1 className="text-lg font-semibold text-foreground">
             The English Hub — Teacher Dashboard
           </h1>
         </header>

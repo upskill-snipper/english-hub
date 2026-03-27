@@ -23,7 +23,7 @@ function Section({
 }) {
   return (
     <section id={id} className="scroll-mt-24">
-      <h2 className="mb-6 text-2xl font-bold text-foreground border-b-2 border-[#2E86C1]/20 pb-3">
+      <h2 className="mb-6 text-2xl font-bold text-foreground border-b-2 border-primary/20 pb-3">
         {title}
       </h2>
       {children}
@@ -35,7 +35,7 @@ function Section({
 
 function Tip({ children }: { children: React.ReactNode }) {
   return (
-    <div className="my-4 rounded-xl border-l-4 border-[#2E86C1] bg-primary/5 px-5 py-4">
+    <div className="my-4 rounded-xl border-l-4 border-primary bg-primary/5 px-5 py-4">
       <p className="text-sm font-semibold text-foreground mb-1">Exam Tip</p>
       <div className="text-sm text-muted-foreground leading-relaxed">{children}</div>
     </div>
@@ -89,7 +89,7 @@ function ModelResponse({
   children: React.ReactNode;
 }) {
   return (
-    <div className="my-6 rounded-xl border-2 border-[#2E86C1]/30 bg-card p-6">
+    <div className="my-6 rounded-xl border-2 border-primary/30 bg-card p-6">
       <p className="text-xs font-bold uppercase tracking-wider text-primary mb-3">
         {label}
       </p>
@@ -104,7 +104,7 @@ function ModelResponse({
 
 function ExaminerCommentary({ children }: { children: React.ReactNode }) {
   return (
-    <div className="my-4 rounded-xl bg-[#1A5276]/5 border border-[#1A5276]/10 px-5 py-4">
+    <div className="my-4 rounded-xl bg-primary/5 border border-primary/10 px-5 py-4">
       <p className="text-xs font-bold uppercase tracking-wider text-foreground mb-2">
         Examiner Commentary
       </p>
@@ -120,7 +120,7 @@ export default function UnseenPoetryPage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#1A5276]/80 px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary/80 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary/80">
             Poetry Skills
@@ -214,7 +214,7 @@ export default function UnseenPoetryPage() {
                 {/* R */}
                 <div className="rounded-xl border border-border bg-card p-5 shadow-md">
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1A5276] text-white font-bold text-lg">
+                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white font-bold text-lg">
                       R
                     </span>
                     <h3 className="font-bold text-foreground text-lg">Read</h3>
@@ -235,7 +235,7 @@ export default function UnseenPoetryPage() {
                 {/* E */}
                 <div className="rounded-xl border border-border bg-card p-5 shadow-md">
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1A5276] text-white font-bold text-lg">
+                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white font-bold text-lg">
                       E
                     </span>
                     <h3 className="font-bold text-foreground text-lg">Examine</h3>
@@ -255,7 +255,7 @@ export default function UnseenPoetryPage() {
                 {/* A */}
                 <div className="rounded-xl border border-border bg-card p-5 shadow-md">
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1A5276] text-white font-bold text-lg">
+                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white font-bold text-lg">
                       A
                     </span>
                     <h3 className="font-bold text-foreground text-lg">Analyse</h3>
@@ -275,7 +275,7 @@ export default function UnseenPoetryPage() {
                 {/* D */}
                 <div className="rounded-xl border border-border bg-card p-5 shadow-md">
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1A5276] text-white font-bold text-lg">
+                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white font-bold text-lg">
                       D
                     </span>
                     <h3 className="font-bold text-foreground text-lg">Develop</h3>
@@ -372,14 +372,14 @@ export default function UnseenPoetryPage() {
               </p>
 
               <div className="grid gap-4 sm:grid-cols-2">
-                <div className="rounded-xl bg-[#1A5276] p-5 text-white">
+                <div className="rounded-xl bg-primary p-5 text-white">
                   <p className="text-xl font-bold mb-1">P -- Point</p>
                   <p className="text-sm text-white/90">
                     Make a clear, concise statement about the poet&apos;s intent or the
                     poem&apos;s effect. This answers the question directly.
                   </p>
                 </div>
-                <div className="rounded-xl bg-[#1A5276]/90 p-5 text-white">
+                <div className="rounded-xl bg-primary/90 p-5 text-white">
                   <p className="text-xl font-bold mb-1">E -- Evidence</p>
                   <p className="text-sm text-white/90">
                     Embed a short, precise quotation from the poem. You do not need full
@@ -506,7 +506,7 @@ export default function UnseenPoetryPage() {
               </p>
 
               <div className="mb-6 overflow-hidden rounded-xl border border-border">
-                <div className="grid grid-cols-2 text-sm font-bold bg-[#1A5276] text-white">
+                <div className="grid grid-cols-2 text-sm font-bold bg-primary text-white">
                   <div className="px-4 py-3">Weak (Separate)</div>
                   <div className="px-4 py-3 border-l border-white/20">
                     Strong (Integrated)
@@ -574,7 +574,7 @@ export default function UnseenPoetryPage() {
                 Useful Comparison Connectives
               </h3>
               <div className="grid gap-3 sm:grid-cols-2">
-                <div className="rounded-lg bg-primary/5 border border-[#2E86C1]/20 p-4">
+                <div className="rounded-lg bg-primary/5 border border-primary/20 p-4">
                   <p className="font-bold text-foreground text-sm mb-2">
                     Showing Similarity
                   </p>
@@ -585,7 +585,7 @@ export default function UnseenPoetryPage() {
                     <li>Like Poem A, the second poem presents...</li>
                   </ul>
                 </div>
-                <div className="rounded-lg bg-primary/5 border border-[#2E86C1]/20 p-4">
+                <div className="rounded-lg bg-primary/5 border border-primary/20 p-4">
                   <p className="font-bold text-foreground text-sm mb-2">
                     Showing Difference
                   </p>
@@ -920,7 +920,7 @@ export default function UnseenPoetryPage() {
               <div className="overflow-hidden rounded-xl border border-border">
                 <table className="w-full text-sm">
                   <thead>
-                    <tr className="bg-[#1A5276] text-white text-left">
+                    <tr className="bg-primary text-white text-left">
                       <th className="px-4 py-3 font-semibold">Phase</th>
                       <th className="px-4 py-3 font-semibold">Time</th>
                       <th className="px-4 py-3 font-semibold">What to Do</th>
@@ -1019,7 +1019,7 @@ export default function UnseenPoetryPage() {
                 ].map((phrase) => (
                   <div
                     key={phrase}
-                    className="rounded-lg bg-primary/5 border border-[#2E86C1]/20 px-4 py-3 text-sm text-muted-foreground italic"
+                    className="rounded-lg bg-primary/5 border border-primary/20 px-4 py-3 text-sm text-muted-foreground italic"
                   >
                     {phrase}
                   </div>
@@ -1046,7 +1046,7 @@ export default function UnseenPoetryPage() {
                 ].map((phrase) => (
                   <div
                     key={phrase}
-                    className="rounded-lg bg-[#1A5276]/5 border border-[#1A5276]/10 px-4 py-3 text-sm text-muted-foreground italic"
+                    className="rounded-lg bg-primary/5 border border-primary/10 px-4 py-3 text-sm text-muted-foreground italic"
                   >
                     {phrase}
                   </div>

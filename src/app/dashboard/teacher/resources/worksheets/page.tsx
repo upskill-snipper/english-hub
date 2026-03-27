@@ -68,7 +68,7 @@ export default function WorksheetsPage() {
         <h1 className="text-2xl font-bold text-primary">
           Quote Analysis Worksheet: An Inspector Calls
         </h1>
-        <p className="mt-2 text-sm text-gray-500">
+        <p className="mt-2 text-sm text-muted-foreground">
           Pre-filled example worksheet with key quotes, techniques, and analysis.
           Use as a model answer or teacher reference. Print-friendly layout.
         </p>
@@ -77,7 +77,7 @@ export default function WorksheetsPage() {
       {/* Instructions Box */}
       <div className="rounded-lg border-2 border-dashed border-primary/30 bg-primary/5 p-4">
         <h2 className="font-semibold text-primary text-sm mb-2">How to Use This Worksheet</h2>
-        <ul className="text-xs text-gray-600 space-y-1">
+        <ul className="text-xs text-muted-foreground space-y-1">
           <li>• <strong>As a model:</strong> Show students what detailed quote analysis looks like at Level 5-6.</li>
           <li>• <strong>As a scaffold:</strong> Give students the quotes and techniques columns, ask them to complete the effect and theme columns.</li>
           <li>• <strong>As revision:</strong> Students can use this as a reference when planning exam responses.</li>
@@ -94,16 +94,16 @@ export default function WorksheetsPage() {
                 {i + 1}
               </span>
               <div>
-                <p className="font-semibold text-gray-900 text-sm">{q.character}</p>
-                <p className="text-xs text-gray-500">Act {q.act.replace('Act ', '')}</p>
+                <p className="font-semibold text-foreground text-sm">{q.character}</p>
+                <p className="text-xs text-muted-foreground">Act {q.act.replace('Act ', '')}</p>
               </div>
               <span className="ml-auto inline-flex items-center rounded-full bg-primary-50 px-2.5 py-0.5 text-xs font-medium text-primary">
                 {q.theme}
               </span>
             </div>
 
-            <blockquote className="border-l-4 border-primary/30 pl-4 py-2 mb-3 bg-gray-50 rounded-r">
-              <p className="text-sm italic text-gray-700">&ldquo;{q.quote}&rdquo;</p>
+            <blockquote className="border-l-4 border-primary/30 pl-4 py-2 mb-3 bg-background rounded-r">
+              <p className="text-sm italic text-foreground">&ldquo;{q.quote}&rdquo;</p>
             </blockquote>
 
             <div className="grid gap-3 sm:grid-cols-2">
@@ -122,11 +122,11 @@ export default function WorksheetsPage() {
 
       {/* Student Task */}
       <div className="card border-2 border-accent/30">
-        <h2 className="font-semibold text-gray-900 mb-2">Student Extension Task</h2>
-        <p className="text-sm text-gray-600 mb-3">
+        <h2 className="font-semibold text-foreground mb-2">Student Extension Task</h2>
+        <p className="text-sm text-muted-foreground mb-3">
           Using the model analyses above, complete the same process for these additional quotes:
         </p>
-        <ol className="space-y-2 text-sm text-gray-600">
+        <ol className="space-y-2 text-sm text-muted-foreground">
           <li className="flex gap-2">
             <span className="font-bold text-primary">1.</span>
             Gerald: &ldquo;Everything&apos;s all right now, Sheila. What about this ring?&rdquo; (Act 3)

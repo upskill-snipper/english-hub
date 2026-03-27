@@ -156,7 +156,7 @@ export default function MacbethRevisionPage() {
             <a
               key={s.href}
               href={`#${s.href}`}
-              className="rounded-lg bg-gray-100 px-3 py-1.5 text-xs font-medium text-muted-foreground hover:bg-accent-50 hover:text-accent-600 transition-colors"
+              className="rounded-lg bg-muted px-3 py-1.5 text-xs font-medium text-muted-foreground hover:bg-accent-50 hover:text-accent-600 transition-colors"
             >
               {s.label}
             </a>
@@ -1053,7 +1053,7 @@ export default function MacbethRevisionPage() {
                 <p className="text-sm text-muted-foreground mb-3">Use this table to find quotations by theme for your essay planning.</p>
                 <table className="w-full text-sm text-left">
                   <thead>
-                    <tr className="border-b border-gray-300">
+                    <tr className="border-b border-border">
                       <th className="py-2 pr-4 font-bold text-foreground">Theme</th>
                       <th className="py-2 font-bold text-foreground">Key Quotations</th>
                     </tr>
@@ -1341,7 +1341,7 @@ export default function MacbethRevisionPage() {
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm text-left">
                     <thead>
-                      <tr className="border-b-2 border-gray-300">
+                      <tr className="border-b-2 border-border">
                         <th className="py-2 pr-3 font-bold text-foreground"></th>
                         <th className="py-2 px-3 font-bold text-[#40197F]">AQA</th>
                         <th className="py-2 px-3 font-bold text-[#E5231B]">Edexcel</th>

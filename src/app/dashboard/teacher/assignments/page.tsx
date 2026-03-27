@@ -81,7 +81,7 @@ function statusBadge(status: "active" | "closed" | "draft") {
     case "active":
       return "bg-success-50 text-success-700";
     case "closed":
-      return "bg-gray-100 text-gray-600";
+      return "bg-muted text-muted-foreground";
     case "draft":
       return "bg-warn-50 text-warn-700";
   }
@@ -121,7 +121,7 @@ export default function AssignmentsPage() {
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h1 className="text-2xl font-bold text-primary">Assignments</h1>
-          <p className="mt-1 text-sm text-gray-500">
+          <p className="mt-1 text-sm text-muted-foreground">
             Create and manage writing assignments for your classes.
           </p>
         </div>
@@ -145,7 +145,7 @@ export default function AssignmentsPage() {
             className={`rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
               filterStatus === s
                 ? "bg-primary text-white"
-                : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                : "bg-muted text-muted-foreground hover:bg-muted"
             }`}
           >
             {s.charAt(0).toUpperCase() + s.slice(1)}
@@ -157,7 +157,7 @@ export default function AssignmentsPage() {
       <div className="space-y-4">
         {filteredAssignments.length === 0 ? (
           <div className="card text-center py-12">
-            <p className="text-gray-500">No assignments match this filter.</p>
+            <p className="text-muted-foreground">No assignments match this filter.</p>
           </div>
         ) : (
           filteredAssignments.map((assignment) => (
@@ -165,7 +165,7 @@ export default function AssignmentsPage() {
               <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center gap-2 flex-wrap">
-                    <h3 className="font-semibold text-gray-900">
+                    <h3 className="font-semibold text-foreground">
                       {assignment.title}
                     </h3>
                     <span
@@ -175,10 +175,10 @@ export default function AssignmentsPage() {
                         assignment.status.slice(1)}
                     </span>
                   </div>
-                  <p className="mt-1 text-sm text-gray-500 line-clamp-2">
+                  <p className="mt-1 text-sm text-muted-foreground line-clamp-2">
                     {assignment.prompt}
                   </p>
-                  <div className="mt-2 flex flex-wrap gap-3 text-xs text-gray-500">
+                  <div className="mt-2 flex flex-wrap gap-3 text-xs text-muted-foreground">
                     <span>{assignment.subject}</span>
                     <span>&middot;</span>
                     <span>{assignment.group}</span>
@@ -197,11 +197,11 @@ export default function AssignmentsPage() {
                 {/* Submission progress */}
                 <div className="flex items-center gap-6 shrink-0">
                   <div className="text-center">
-                    <p className="text-lg font-bold text-gray-900">
+                    <p className="text-lg font-bold text-foreground">
                       {assignment.submitted}/{assignment.totalStudents}
                     </p>
-                    <p className="text-xs text-gray-500">Submitted</p>
-                    <div className="mt-1 h-1.5 w-20 rounded-full bg-gray-100 overflow-hidden">
+                    <p className="text-xs text-muted-foreground">Submitted</p>
+                    <div className="mt-1 h-1.5 w-20 rounded-full bg-muted overflow-hidden">
                       <div
                         className="h-full rounded-full bg-accent"
                         style={{
@@ -211,11 +211,11 @@ export default function AssignmentsPage() {
                     </div>
                   </div>
                   <div className="text-center">
-                    <p className="text-lg font-bold text-gray-900">
+                    <p className="text-lg font-bold text-foreground">
                       {assignment.graded}/{assignment.submitted}
                     </p>
-                    <p className="text-xs text-gray-500">Graded</p>
-                    <div className="mt-1 h-1.5 w-20 rounded-full bg-gray-100 overflow-hidden">
+                    <p className="text-xs text-muted-foreground">Graded</p>
+                    <div className="mt-1 h-1.5 w-20 rounded-full bg-muted overflow-hidden">
                       <div
                         className="h-full rounded-full bg-success"
                         style={{
@@ -231,7 +231,7 @@ export default function AssignmentsPage() {
               </div>
 
               {/* Actions */}
-              <div className="mt-4 pt-3 border-t border-gray-100 flex flex-wrap gap-2">
+              <div className="mt-4 pt-3 border-t border-border flex flex-wrap gap-2">
                 {/* TODO: Wire these to real actions */}
                 <button className="btn-outline text-xs px-3 py-1.5">
                   View Submissions
@@ -246,7 +246,7 @@ export default function AssignmentsPage() {
                     Publish
                   </button>
                 )}
-                <button className="text-xs px-3 py-1.5 text-gray-500 hover:text-gray-700 transition-colors">
+                <button className="text-xs px-3 py-1.5 text-muted-foreground hover:text-foreground transition-colors">
                   Edit
                 </button>
               </div>
@@ -258,14 +258,14 @@ export default function AssignmentsPage() {
       {/* ── Create Assignment Modal ────────────────────────────── */}
       {showCreateModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
-          <div className="w-full max-w-lg rounded-xl bg-white p-6 shadow-xl max-h-[90vh] overflow-y-auto">
+          <div className="w-full max-w-lg rounded-xl bg-card p-6 shadow-xl max-h-[90vh] overflow-y-auto">
             <div className="flex items-center justify-between mb-4">
-              <h2 className="text-lg font-semibold text-gray-900">
+              <h2 className="text-lg font-semibold text-foreground">
                 Create Assignment
               </h2>
               <button
                 onClick={() => setShowCreateModal(false)}
-                className="text-gray-500 hover:text-gray-600"
+                className="text-muted-foreground hover:text-muted-foreground"
                 aria-label="Close"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -276,7 +276,7 @@ export default function AssignmentsPage() {
 
             <div className="space-y-4">
               <div>
-                <label htmlFor="assign-title" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="assign-title" className="block text-sm font-medium text-foreground mb-1">
                   Title
                 </label>
                 <input
@@ -290,7 +290,7 @@ export default function AssignmentsPage() {
               </div>
 
               <div>
-                <label htmlFor="assign-prompt" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="assign-prompt" className="block text-sm font-medium text-foreground mb-1">
                   Writing Prompt
                 </label>
                 <textarea
@@ -305,7 +305,7 @@ export default function AssignmentsPage() {
 
               <div className="grid gap-4 sm:grid-cols-2">
                 <div>
-                  <label htmlFor="assign-subject" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="assign-subject" className="block text-sm font-medium text-foreground mb-1">
                     Subject
                   </label>
                   <select
@@ -319,7 +319,7 @@ export default function AssignmentsPage() {
                   </select>
                 </div>
                 <div>
-                  <label htmlFor="assign-group" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="assign-group" className="block text-sm font-medium text-foreground mb-1">
                     Class Group
                   </label>
                   <select
@@ -338,7 +338,7 @@ export default function AssignmentsPage() {
               </div>
 
               <div>
-                <label htmlFor="assign-deadline" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="assign-deadline" className="block text-sm font-medium text-foreground mb-1">
                   Deadline
                 </label>
                 <input

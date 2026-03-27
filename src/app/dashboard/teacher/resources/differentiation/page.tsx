@@ -153,7 +153,7 @@ export default function DifferentiationPage() {
           &larr; Back to Resources
         </Link>
         <h1 className="text-2xl font-bold text-primary">Differentiation Guide for English</h1>
-        <p className="mt-2 text-sm text-gray-500">
+        <p className="mt-2 text-sm text-muted-foreground">
           Practical strategies for differentiating English lessons by ability, need, and learning style.
           Includes PP, SEND, and EAL guidance aligned to Ofsted expectations.
         </p>
@@ -161,11 +161,11 @@ export default function DifferentiationPage() {
 
       {/* Differentiation by Ability */}
       <section>
-        <h2 className="text-lg font-semibold text-gray-900 mb-4">Differentiation by Ability</h2>
+        <h2 className="text-lg font-semibold text-foreground mb-4">Differentiation by Ability</h2>
         <div className="space-y-6">
           {STRATEGIES.map((strat) => (
             <div key={strat.category} className="card">
-              <h3 className="font-semibold text-gray-900 mb-3">
+              <h3 className="font-semibold text-foreground mb-3">
                 {strat.icon} {strat.category}
               </h3>
               <div className="grid gap-3 sm:grid-cols-3">
@@ -201,25 +201,25 @@ export default function DifferentiationPage() {
 
       {/* Example Differentiated Task */}
       <section className="card">
-        <h2 className="text-lg font-semibold text-gray-900 mb-2">Example: Differentiated Task</h2>
-        <p className="text-sm text-gray-500 mb-1">{DIFFERENTIATED_TASK.text}</p>
-        <p className="text-sm font-medium text-gray-700 mb-4">
+        <h2 className="text-lg font-semibold text-foreground mb-2">Example: Differentiated Task</h2>
+        <p className="text-sm text-muted-foreground mb-1">{DIFFERENTIATED_TASK.text}</p>
+        <p className="text-sm font-medium text-foreground mb-4">
           Q: {DIFFERENTIATED_TASK.question}
         </p>
         <div className="grid gap-3 sm:grid-cols-3">
           <div className="rounded-lg border-2 border-amber-200 p-3">
             <p className="text-xs font-bold text-amber-700 mb-1">{DIFFERENTIATED_TASK.bronze.label}</p>
-            <p className="text-xs text-gray-600 mb-2">{DIFFERENTIATED_TASK.bronze.task}</p>
+            <p className="text-xs text-muted-foreground mb-2">{DIFFERENTIATED_TASK.bronze.task}</p>
             <p className="text-xs text-amber-600 font-medium">Target: {DIFFERENTIATED_TASK.bronze.outcome}</p>
           </div>
           <div className="rounded-lg border-2 border-blue-200 p-3">
             <p className="text-xs font-bold text-blue-700 mb-1">{DIFFERENTIATED_TASK.silver.label}</p>
-            <p className="text-xs text-gray-600 mb-2">{DIFFERENTIATED_TASK.silver.task}</p>
+            <p className="text-xs text-muted-foreground mb-2">{DIFFERENTIATED_TASK.silver.task}</p>
             <p className="text-xs text-blue-600 font-medium">Target: {DIFFERENTIATED_TASK.silver.outcome}</p>
           </div>
           <div className="rounded-lg border-2 border-emerald-200 p-3">
             <p className="text-xs font-bold text-emerald-700 mb-1">{DIFFERENTIATED_TASK.gold.label}</p>
-            <p className="text-xs text-gray-600 mb-2">{DIFFERENTIATED_TASK.gold.task}</p>
+            <p className="text-xs text-muted-foreground mb-2">{DIFFERENTIATED_TASK.gold.task}</p>
             <p className="text-xs text-emerald-600 font-medium">Target: {DIFFERENTIATED_TASK.gold.outcome}</p>
           </div>
         </div>
@@ -227,14 +227,14 @@ export default function DifferentiationPage() {
 
       {/* PP / SEND / EAL Strategies */}
       <section>
-        <h2 className="text-lg font-semibold text-gray-900 mb-4">PP, SEND & EAL Strategies</h2>
+        <h2 className="text-lg font-semibold text-foreground mb-4">PP, SEND & EAL Strategies</h2>
         <div className="space-y-4">
           {PP_SEND_STRATEGIES.map((group) => (
             <div key={group.need} className="card">
-              <h3 className="font-semibold text-gray-900 text-sm mb-2">{group.need}</h3>
+              <h3 className="font-semibold text-foreground text-sm mb-2">{group.need}</h3>
               <ul className="space-y-1.5">
                 {group.strategies.map((s, i) => (
-                  <li key={i} className="flex items-start gap-2 text-xs text-gray-600">
+                  <li key={i} className="flex items-start gap-2 text-xs text-muted-foreground">
                     <svg className="h-3.5 w-3.5 shrink-0 text-primary mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>

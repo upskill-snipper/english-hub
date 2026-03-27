@@ -92,7 +92,7 @@ function ScoreGauge({ score }: { score: number }) {
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
         <span className={`text-3xl font-bold ${colour}`}>{score}%</span>
-        <span className="text-xs text-gray-500">Overall</span>
+        <span className="text-xs text-muted-foreground">Overall</span>
       </div>
     </div>
   );
@@ -118,10 +118,10 @@ function CategoryBar({
   return (
     <div>
       <div className="flex items-center justify-between text-sm">
-        <span className="font-medium text-gray-700">{name}</span>
-        <span className="text-gray-500">{score}/{maxScore}</span>
+        <span className="font-medium text-foreground">{name}</span>
+        <span className="text-muted-foreground">{score}/{maxScore}</span>
       </div>
-      <div className="mt-1.5 h-2.5 overflow-hidden rounded-full bg-gray-100">
+      <div className="mt-1.5 h-2.5 overflow-hidden rounded-full bg-muted">
         <div
           className={`h-full rounded-full ${barColour} transition-all duration-500`}
           style={{ width: `${percentage}%` }}
@@ -153,7 +153,7 @@ export default function EssayFeedbackPage() {
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       {/* ── Breadcrumb ──────────────────────────────────────── */}
       <nav aria-label="Breadcrumb" className="mb-6">
-        <ol className="flex items-center gap-1.5 text-sm text-gray-500">
+        <ol className="flex items-center gap-1.5 text-sm text-muted-foreground">
           <li>
             <Link href="/dashboard" className="hover:text-accent">
               Dashboard
@@ -166,7 +166,7 @@ export default function EssayFeedbackPage() {
             </Link>
           </li>
           <li aria-hidden="true">/</li>
-          <li className="max-w-[200px] truncate font-medium text-gray-900">
+          <li className="max-w-[200px] truncate font-medium text-foreground">
             {essay.title}
           </li>
         </ol>
@@ -178,7 +178,7 @@ export default function EssayFeedbackPage() {
           <h1 className="text-xl font-bold text-primary sm:text-2xl">
             {essay.title}
           </h1>
-          <p className="mt-1 text-sm text-gray-500">
+          <p className="mt-1 text-sm text-muted-foreground">
             {essay.subject} &middot; {essay.examBoard} &middot;{" "}
             {new Date(essay.createdAt).toLocaleDateString("en-GB", {
               day: "numeric",
@@ -187,7 +187,7 @@ export default function EssayFeedbackPage() {
             })}
           </p>
           {essay.topic && (
-            <p className="mt-2 text-sm italic text-gray-600">
+            <p className="mt-2 text-sm italic text-muted-foreground">
               Prompt: &ldquo;{essay.topic}&rdquo;
             </p>
           )}
@@ -212,7 +212,7 @@ export default function EssayFeedbackPage() {
               <button
                 type="button"
                 onClick={() => setShowDeleteConfirm(false)}
-                className="text-xs text-gray-500 hover:text-gray-700"
+                className="text-xs text-muted-foreground hover:text-foreground"
               >
                 Cancel
               </button>
@@ -246,15 +246,15 @@ export default function EssayFeedbackPage() {
         {/* ── Essay text (left / top) ───────────────────────── */}
         <div className="lg:col-span-3">
           <div className="card">
-            <h2 className="mb-4 text-sm font-semibold uppercase tracking-wider text-gray-500">
+            <h2 className="mb-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
               Your Essay
             </h2>
-            <div className="prose prose-sm max-w-none text-gray-700 leading-relaxed">
+            <div className="prose prose-sm max-w-none text-foreground leading-relaxed">
               {essay.content.split("\n\n").map((paragraph, i) => (
                 <p key={i}>{paragraph}</p>
               ))}
             </div>
-            <p className="mt-4 text-xs text-gray-500">
+            <p className="mt-4 text-xs text-muted-foreground">
               {essay.content.trim().split(/\s+/).length} words
             </p>
           </div>
@@ -264,7 +264,7 @@ export default function EssayFeedbackPage() {
         <div className="space-y-6 lg:col-span-2">
           {/* Overall score */}
           <div className="card text-center">
-            <h2 className="mb-4 text-sm font-semibold uppercase tracking-wider text-gray-500">
+            <h2 className="mb-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
               Overall Score
             </h2>
             <ScoreGauge score={feedback.overallScore} />
@@ -272,7 +272,7 @@ export default function EssayFeedbackPage() {
 
           {/* Category scores */}
           <div className="card">
-            <h2 className="mb-4 text-sm font-semibold uppercase tracking-wider text-gray-500">
+            <h2 className="mb-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
               Category Scores
             </h2>
             <div className="space-y-4">
@@ -289,10 +289,10 @@ export default function EssayFeedbackPage() {
 
           {/* Detailed feedback */}
           <div className="card">
-            <h2 className="mb-4 text-sm font-semibold uppercase tracking-wider text-gray-500">
+            <h2 className="mb-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
               Detailed Feedback
             </h2>
-            <div className="prose prose-sm max-w-none text-gray-700 leading-relaxed">
+            <div className="prose prose-sm max-w-none text-foreground leading-relaxed">
               {feedback.detailedFeedback.split("\n\n").map((paragraph, i) => {
                 // Handle **bold** markers in text
                 const parts = paragraph.split(/(\*\*[^*]+\*\*)/g);
@@ -313,7 +313,7 @@ export default function EssayFeedbackPage() {
 
           {/* Improvement suggestions */}
           <div className="card">
-            <h2 className="mb-4 text-sm font-semibold uppercase tracking-wider text-gray-500">
+            <h2 className="mb-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
               Improvement Suggestions
             </h2>
             <ul className="space-y-3" role="list">
@@ -322,7 +322,7 @@ export default function EssayFeedbackPage() {
                   <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent-50 text-xs font-bold text-accent">
                     {i + 1}
                   </span>
-                  <span className="text-sm text-gray-700">{suggestion}</span>
+                  <span className="text-sm text-foreground">{suggestion}</span>
                 </li>
               ))}
             </ul>
