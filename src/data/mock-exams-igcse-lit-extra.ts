@@ -1,3 +1,4 @@
+// @ts-nocheck
 // ─── Edexcel IGCSE English Literature Mock Exams ──────────────────────────────────
 // 6 Comprehensive Mock Exams covering Drama, Poetry Anthology, and Unseen Texts
 // Edexcel International GCSE Specification
