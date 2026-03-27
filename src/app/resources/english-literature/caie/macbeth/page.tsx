@@ -713,7 +713,7 @@ export default function MacbethStudyGuide() {
   return (
     <>
       {/* ── Hero ────────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#2E86C1] px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
             Cambridge IGCSE English Literature (0475 / 0992)
@@ -742,8 +742,8 @@ export default function MacbethStudyGuide() {
               onClick={() => setActiveTab(t.id)}
               className={`rounded-full border px-3 py-1.5 font-medium transition ${
                 activeTab === t.id
-                  ? "border-[#2E86C1] bg-[#2E86C1]/10 text-foreground"
-                  : "border-border text-muted-foreground hover:border-[#2E86C1]/30 hover:bg-primary/5 hover:text-foreground"
+                  ? "border-primary bg-primary/10 text-foreground"
+                  : "border-border text-muted-foreground hover:border-primary/30 hover:bg-primary/5 hover:text-foreground"
               }`}
             >
               {t.label}
@@ -831,7 +831,7 @@ export default function MacbethStudyGuide() {
                 <Card key={c.name}>
                   <CardHeader>
                     <CardTitle className="text-lg">{c.name}</CardTitle>
-                    <CardDescription className="text-xs font-semibold uppercase tracking-wider text-[#2E86C1]">
+                    <CardDescription className="text-xs font-semibold uppercase tracking-wider text-primary">
                       {c.role}
                     </CardDescription>
                   </CardHeader>
@@ -867,8 +867,8 @@ export default function MacbethStudyGuide() {
                         ))}
                       </ul>
                     </div>
-                    <div className="rounded-lg bg-[#2E86C1]/5 p-3">
-                      <h4 className="text-xs font-semibold uppercase tracking-wider text-[#2E86C1]">
+                    <div className="rounded-lg bg-primary/5 p-3">
+                      <h4 className="text-xs font-semibold uppercase tracking-wider text-primary">
                         Exam Tip
                       </h4>
                       <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
@@ -917,7 +917,7 @@ export default function MacbethStudyGuide() {
                             key={i}
                             className="flex text-sm text-muted-foreground"
                           >
-                            <span className="mr-2 text-[#2E86C1]">
+                            <span className="mr-2 text-primary">
                               &bull;
                             </span>
                             <span>{m}</span>
@@ -967,12 +967,12 @@ export default function MacbethStudyGuide() {
               {keyQuotes.map((q, i) => (
                 <div
                   key={i}
-                  className="rounded-lg border-l-4 border-[#2E86C1] bg-card p-5 shadow-md"
+                  className="rounded-lg border-l-4 border-primary bg-card p-5 shadow-md"
                 >
                   <blockquote className="text-base font-medium italic text-foreground">
                     &ldquo;{q.quote}&rdquo;
                   </blockquote>
-                  <p className="mt-1 text-xs font-semibold text-[#2E86C1]">
+                  <p className="mt-1 text-xs font-semibold text-primary">
                     {q.speaker} &mdash; {q.act}
                   </p>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
@@ -1020,7 +1020,7 @@ export default function MacbethStudyGuide() {
                             key={i}
                             className="flex text-sm text-muted-foreground"
                           >
-                            <span className="mr-2 text-[#2E86C1]">
+                            <span className="mr-2 text-primary">
                               &bull;
                             </span>
                             <span>{ex}</span>
@@ -1143,7 +1143,7 @@ export default function MacbethStudyGuide() {
                     </h4>
                     <ul className="mt-2 space-y-2 text-sm text-muted-foreground">
                       <li className="flex">
-                        <span className="mr-2 font-bold text-[#2E86C1]">
+                        <span className="mr-2 font-bold text-primary">
                           1.
                         </span>
                         <span>
@@ -1152,7 +1152,7 @@ export default function MacbethStudyGuide() {
                         </span>
                       </li>
                       <li className="flex">
-                        <span className="mr-2 font-bold text-[#2E86C1]">
+                        <span className="mr-2 font-bold text-primary">
                           2.
                         </span>
                         <span>
@@ -1162,7 +1162,7 @@ export default function MacbethStudyGuide() {
                         </span>
                       </li>
                       <li className="flex">
-                        <span className="mr-2 font-bold text-[#2E86C1]">
+                        <span className="mr-2 font-bold text-primary">
                           3.
                         </span>
                         <span>
@@ -1174,7 +1174,7 @@ export default function MacbethStudyGuide() {
                         </span>
                       </li>
                       <li className="flex">
-                        <span className="mr-2 font-bold text-[#2E86C1]">
+                        <span className="mr-2 font-bold text-primary">
                           4.
                         </span>
                         <span>
@@ -1186,7 +1186,7 @@ export default function MacbethStudyGuide() {
                         </span>
                       </li>
                       <li className="flex">
-                        <span className="mr-2 font-bold text-[#2E86C1]">
+                        <span className="mr-2 font-bold text-primary">
                           5.
                         </span>
                         <span>
@@ -1200,7 +1200,7 @@ export default function MacbethStudyGuide() {
                         </span>
                       </li>
                       <li className="flex">
-                        <span className="mr-2 font-bold text-[#2E86C1]">
+                        <span className="mr-2 font-bold text-primary">
                           6.
                         </span>
                         <span>
@@ -1211,8 +1211,8 @@ export default function MacbethStudyGuide() {
                       </li>
                     </ul>
                   </div>
-                  <div className="rounded-lg bg-[#2E86C1]/5 p-4">
-                    <h4 className="text-xs font-semibold uppercase tracking-wider text-[#2E86C1]">
+                  <div className="rounded-lg bg-primary/5 p-4">
+                    <h4 className="text-xs font-semibold uppercase tracking-wider text-primary">
                       Common Mistakes to Avoid
                     </h4>
                     <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
@@ -1253,7 +1253,7 @@ export default function MacbethStudyGuide() {
                     </h4>
                     <ul className="mt-2 space-y-2 text-sm text-muted-foreground">
                       <li className="flex">
-                        <span className="mr-2 font-bold text-[#2E86C1]">
+                        <span className="mr-2 font-bold text-primary">
                           1.
                         </span>
                         <span>
@@ -1264,7 +1264,7 @@ export default function MacbethStudyGuide() {
                         </span>
                       </li>
                       <li className="flex">
-                        <span className="mr-2 font-bold text-[#2E86C1]">
+                        <span className="mr-2 font-bold text-primary">
                           2.
                         </span>
                         <span>
@@ -1277,7 +1277,7 @@ export default function MacbethStudyGuide() {
                         </span>
                       </li>
                       <li className="flex">
-                        <span className="mr-2 font-bold text-[#2E86C1]">
+                        <span className="mr-2 font-bold text-primary">
                           3.
                         </span>
                         <span>
@@ -1289,7 +1289,7 @@ export default function MacbethStudyGuide() {
                         </span>
                       </li>
                       <li className="flex">
-                        <span className="mr-2 font-bold text-[#2E86C1]">
+                        <span className="mr-2 font-bold text-primary">
                           4.
                         </span>
                         <span>
@@ -1303,7 +1303,7 @@ export default function MacbethStudyGuide() {
                         </span>
                       </li>
                       <li className="flex">
-                        <span className="mr-2 font-bold text-[#2E86C1]">
+                        <span className="mr-2 font-bold text-primary">
                           5.
                         </span>
                         <span>
@@ -1316,7 +1316,7 @@ export default function MacbethStudyGuide() {
                         </span>
                       </li>
                       <li className="flex">
-                        <span className="mr-2 font-bold text-[#2E86C1]">
+                        <span className="mr-2 font-bold text-primary">
                           6.
                         </span>
                         <span>
@@ -1329,8 +1329,8 @@ export default function MacbethStudyGuide() {
                       </li>
                     </ul>
                   </div>
-                  <div className="rounded-lg bg-[#2E86C1]/5 p-4">
-                    <h4 className="text-xs font-semibold uppercase tracking-wider text-[#2E86C1]">
+                  <div className="rounded-lg bg-primary/5 p-4">
+                    <h4 className="text-xs font-semibold uppercase tracking-wider text-primary">
                       Top-Band Essay Checklist
                     </h4>
                     <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
@@ -1432,7 +1432,7 @@ export default function MacbethStudyGuide() {
                       key={i}
                       className="rounded-lg border border-border bg-card p-5 shadow-md"
                     >
-                      <span className="inline-block rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
+                      <span className="inline-block rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                         {q.type}
                       </span>
                       <p className="mt-3 text-sm font-medium text-foreground">
@@ -1465,14 +1465,14 @@ export default function MacbethStudyGuide() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <div className="rounded-lg border-l-4 border-[#2E86C1] bg-muted/30 p-4">
+                  <div className="rounded-lg border-l-4 border-primary bg-muted/30 p-4">
                     <p className="text-sm font-semibold text-foreground">
                       Question: How does Shakespeare present the theme of guilt
                       in Macbeth?
                     </p>
                   </div>
                   <div>
-                    <h4 className="text-xs font-semibold uppercase tracking-wider text-[#2E86C1]">
+                    <h4 className="text-xs font-semibold uppercase tracking-wider text-primary">
                       Model Paragraph
                     </h4>
                     <div className="mt-2 rounded-lg border border-border bg-muted/20 p-4 text-sm leading-relaxed text-muted-foreground">
@@ -1488,11 +1488,11 @@ export default function MacbethStudyGuide() {
                         from a personal emotion to a cosmic transgression,
                         reflecting the Jacobean belief that regicide violated the
                         Divine Right of Kings and therefore offended God Himself{" "}
-                        <span className="font-semibold text-[#2E86C1]">
+                        <span className="font-semibold text-primary">
                           [AO2 — context]
                         </span>
                         . The rhetorical question form{" "}
-                        <span className="font-semibold text-[#2E86C1]">
+                        <span className="font-semibold text-primary">
                           [AO3 — form]
                         </span>{" "}
                         reveals that this is not a genuine inquiry but a
@@ -1501,20 +1501,20 @@ export default function MacbethStudyGuide() {
                         Macbeth&rsquo;s dismissive response, &ldquo;A little
                         water clears us of this deed&rdquo; (2.2), where the
                         understatement &ldquo;a little water&rdquo;{" "}
-                        <span className="font-semibold text-[#2E86C1]">
+                        <span className="font-semibold text-primary">
                           [AO3 — language]
                         </span>{" "}
                         reveals her pragmatic refusal to engage with guilt.
                         However, Shakespeare arguably uses this contrast to
                         foreshadow Lady Macbeth&rsquo;s later collapse{" "}
-                        <span className="font-semibold text-[#2E86C1]">
+                        <span className="font-semibold text-primary">
                           [AO4 — personal response]
                         </span>
                         : by Act 5, she is obsessively washing her hands and
                         crying &ldquo;Out, damned spot!&rdquo; (5.1), the very
                         blood she once dismissed now consuming her. The dramatic
                         irony is devastating{" "}
-                        <span className="font-semibold text-[#2E86C1]">
+                        <span className="font-semibold text-primary">
                           [AO3 — structure]
                         </span>
                         : the audience remembers her earlier confidence, making
@@ -1523,15 +1523,15 @@ export default function MacbethStudyGuide() {
                         profound moral transgression, cannot be suppressed
                         indefinitely — it will surface, whether as hallucination,
                         madness, or despair{" "}
-                        <span className="font-semibold text-[#2E86C1]">
+                        <span className="font-semibold text-primary">
                           [AO1 — knowledge and understanding]
                         </span>
                         .
                       </p>
                     </div>
                   </div>
-                  <div className="rounded-lg bg-[#2E86C1]/5 p-4">
-                    <h4 className="text-xs font-semibold uppercase tracking-wider text-[#2E86C1]">
+                  <div className="rounded-lg bg-primary/5 p-4">
+                    <h4 className="text-xs font-semibold uppercase tracking-wider text-primary">
                       Why This Works
                     </h4>
                     <ul className="mt-2 space-y-2 text-sm text-muted-foreground">
@@ -1585,7 +1585,7 @@ export default function MacbethStudyGuide() {
                 <Card key={ao.ao}>
                   <CardHeader>
                     <CardTitle className="flex items-center gap-3">
-                      <span className="inline-flex h-8 w-12 items-center justify-center rounded-md bg-[#2E86C1]/10 text-sm font-bold text-[#2E86C1]">
+                      <span className="inline-flex h-8 w-12 items-center justify-center rounded-md bg-primary/10 text-sm font-bold text-primary">
                         {ao.ao}
                       </span>
                       <span>{ao.title}</span>
@@ -1601,8 +1601,8 @@ export default function MacbethStudyGuide() {
                         {ao.howToMeet}
                       </p>
                     </div>
-                    <div className="rounded-lg border-l-4 border-[#2E86C1] bg-muted/20 p-4">
-                      <h4 className="text-xs font-semibold uppercase tracking-wider text-[#2E86C1]">
+                    <div className="rounded-lg border-l-4 border-primary bg-muted/20 p-4">
+                      <h4 className="text-xs font-semibold uppercase tracking-wider text-primary">
                         Example in Practice
                       </h4>
                       <p className="mt-2 text-sm italic leading-relaxed text-muted-foreground">

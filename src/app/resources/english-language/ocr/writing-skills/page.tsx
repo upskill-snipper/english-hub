@@ -404,7 +404,7 @@ export default function OCRWritingSkillsPage() {
                       <th className="py-3 font-semibold text-foreground">Precise Alternatives</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-gray-100">
+                  <tbody className="divide-y divide-border">
                     <tr>
                       <td className="py-3 pr-4">Walked</td>
                       <td className="py-3">Trudged, ambled, strode, shuffled, marched, sauntered, crept</td>

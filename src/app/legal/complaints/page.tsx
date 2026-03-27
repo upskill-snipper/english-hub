@@ -35,7 +35,7 @@ export default function ComplaintsProcedurePage() {
       <section className="mb-10">
         <h2 className="text-2xl font-bold mb-4">2. How to Complain</h2>
         <div className="space-y-4 mb-4">
-          <div className="border-l-4 border-[#1A5276] pl-4">
+          <div className="border-l-4 border-primary pl-4">
             <h3 className="font-semibold">By Email</h3>
             <p className="text-sm">
               Send an email to{" "}
@@ -44,13 +44,13 @@ export default function ComplaintsProcedurePage() {
               </a>
             </p>
           </div>
-          <div className="border-l-4 border-[#1A5276] pl-4">
+          <div className="border-l-4 border-primary pl-4">
             <h3 className="font-semibold">Using the In-Platform Form</h3>
             <p className="text-sm">
               Log in and go to <strong>Help &gt; Make a Complaint</strong>
             </p>
           </div>
-          <div className="border-l-4 border-[#1A5276] pl-4">
+          <div className="border-l-4 border-primary pl-4">
             <h3 className="font-semibold">By Post</h3>
             <p className="text-sm">
               Write to: Complaints Team, Upskill Energy Limited, United Kingdom
@@ -119,7 +119,7 @@ export default function ComplaintsProcedurePage() {
           ))}
         </div>
 
-        <div className="bg-red-50 border border-red-200 rounded-lg p-4 mt-4 text-sm">
+        <div className="bg-warn/5 border border-warn/20 rounded-lg p-4 mt-4 text-sm">
           <p className="font-semibold">Safeguarding Concerns</p>
           <p className="mb-2">
             Safeguarding complaints are treated with the highest priority and
@@ -149,7 +149,7 @@ export default function ComplaintsProcedurePage() {
         <h2 className="text-2xl font-bold mb-4">4. Complaints Process</h2>
 
         <div className="space-y-6">
-          <div className="border-l-4 border-[#1A5276] pl-4">
+          <div className="border-l-4 border-primary pl-4">
             <h3 className="font-semibold text-lg">
               Stage 1: Initial Response — Within 3 Working Days
             </h3>
@@ -165,7 +165,7 @@ export default function ComplaintsProcedurePage() {
             </ul>
           </div>
 
-          <div className="border-l-4 border-[#1A5276] pl-4">
+          <div className="border-l-4 border-primary pl-4">
             <h3 className="font-semibold text-lg">
               Stage 2: Investigation — Within 10 Working Days
             </h3>
@@ -182,7 +182,7 @@ export default function ComplaintsProcedurePage() {
             </ul>
           </div>
 
-          <div className="border-l-4 border-[#1A5276] pl-4">
+          <div className="border-l-4 border-primary pl-4">
             <h3 className="font-semibold text-lg">
               Stage 3: Final Response — Within 20 Working Days
             </h3>
@@ -197,7 +197,7 @@ export default function ComplaintsProcedurePage() {
             </ul>
           </div>
 
-          <div className="border-l-4 border-gray-400 pl-4">
+          <div className="border-l-4 border-border pl-4">
             <h3 className="font-semibold text-lg">
               Stage 4: External Escalation
             </h3>

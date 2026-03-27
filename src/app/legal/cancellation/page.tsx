@@ -24,7 +24,7 @@ export default function CancellationPolicyPage() {
       </p>
 
       {/* In short */}
-      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8 text-sm">
+      <div className="bg-primary/5 border border-primary/20 rounded-lg p-4 mb-8 text-sm">
         <h2 className="text-lg font-semibold mb-2">In Short</h2>
         <ul className="list-disc pl-6 space-y-1">
           <li>
@@ -199,7 +199,7 @@ export default function CancellationPolicyPage() {
           subscription.&quot; We will confirm within 2 working days.
         </p>
 
-        <div className="bg-green-50 border border-green-200 rounded-lg p-4 text-sm">
+        <div className="bg-success/5 border border-success/20 rounded-lg p-4 text-sm">
           <p className="font-semibold mb-2">We will never:</p>
           <ul className="list-disc pl-6 space-y-1">
             <li>Require you to phone a premium-rate number</li>

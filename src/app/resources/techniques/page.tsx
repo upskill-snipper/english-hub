@@ -90,7 +90,7 @@ const WHW_STEPS = [
   {
     letter: "W",
     label: "What",
-    colour: "bg-[#1A5276]",
+    colour: "bg-primary",
     heading: "What technique is being used?",
     description:
       "Identify the specific device. Be precise -- say 'sibilance' rather than 'sound technique', or 'extended metaphor' rather than just 'metaphor'.",
@@ -108,7 +108,7 @@ const WHW_STEPS = [
   {
     letter: "W",
     label: "Why",
-    colour: "bg-[#1A5276]",
+    colour: "bg-primary",
     heading: "Why has the writer used it?",
     description:
       "Connect to the writer's purpose. What effect does it have on the reader? How does it link to themes, character, or context?",
@@ -261,11 +261,11 @@ export default function TechniquesHubPage() {
             <Link
               key={cat.href}
               href={cat.href}
-              className={`group flex flex-col rounded-2xl border-2 ${cat.colour} bg-gradient-to-br ${cat.bgGradient} p-8 shadow-md transition hover:shadow-lg`}
+              className={`group flex flex-col rounded-2xl border-2 border-primary bg-gradient-to-br from-primary/5 to-primary/10 p-8 shadow-md transition hover:shadow-lg`}
             >
               <div className="flex items-start justify-between">
-                <div className={cat.iconColour}>{cat.icon}</div>
-                <span className="rounded-full bg-[#1A5276]/10 px-3 py-1 text-xs font-bold text-foreground">
+                <div className="text-primary">{cat.icon}</div>
+                <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary">
                   {cat.count} techniques
                 </span>
               </div>
@@ -316,8 +316,8 @@ export default function TechniquesHubPage() {
                 onClick={() => setCategoryFilter(filter.key)}
                 className={`rounded-full px-4 py-1.5 text-sm font-semibold transition-colors ${
                   categoryFilter === filter.key
-                    ? "bg-[#1A5276] text-white"
-                    : "bg-card text-muted-foreground hover:bg-[#1A5276]/10 hover:text-foreground"
+                    ? "bg-primary text-white"
+                    : "bg-card text-muted-foreground hover:bg-primary/10 hover:text-foreground"
                 }`}
               >
                 {filter.label}
@@ -330,7 +330,7 @@ export default function TechniquesHubPage() {
             {filteredTechniques.map((tech) => (
               <div
                 key={tech.name}
-                className="rounded-xl border border-border bg-card p-5 shadow-md transition hover:shadow-md hover:border-[#2E86C1]/40"
+                className="rounded-xl border border-border bg-card p-5 shadow-md transition hover:shadow-md hover:border-primary/40"
               >
                 <div className="flex items-start justify-between gap-2">
                   <h3 className="text-base font-bold text-foreground">
@@ -340,7 +340,7 @@ export default function TechniquesHubPage() {
                     className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider ${
                       tech.category === "language"
                         ? "bg-primary/10 text-primary"
-                        : "bg-[#1A5276]/10 text-foreground"
+                        : "bg-primary/10 text-primary"
                     }`}
                   >
                     {tech.category === "language" ? "Lang" : "Struct"}
@@ -377,7 +377,7 @@ export default function TechniquesHubPage() {
             >
               See all language devices <ArrowRight />
             </Link>
-            <span className="text-gray-300">|</span>
+            <span className="text-muted-foreground">|</span>
             <Link
               href="/resources/techniques/structural-devices"
               className="group inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors hover:text-foreground"
@@ -432,7 +432,7 @@ export default function TechniquesHubPage() {
         </div>
 
         {/* Full worked example */}
-        <div className="mt-10 rounded-2xl border-2 border-[#2E86C1]/20 bg-primary/5 p-6 sm:p-8">
+        <div className="mt-10 rounded-2xl border-2 border-primary/20 bg-primary/5 p-6 sm:p-8">
           <h3 className="text-lg font-bold text-foreground">
             Putting it all together
           </h3>
@@ -517,7 +517,7 @@ export default function TechniquesHubPage() {
             <Link
               key={link.href}
               href={link.href}
-              className="group rounded-xl border border-border bg-card p-5 shadow-md transition hover:shadow-md hover:border-[#2E86C1]/40"
+              className="group rounded-xl border border-border bg-card p-5 shadow-md transition hover:shadow-md hover:border-primary/40"
             >
               <h3 className="font-bold text-foreground transition-colors group-hover:text-foreground">
                 {link.label}

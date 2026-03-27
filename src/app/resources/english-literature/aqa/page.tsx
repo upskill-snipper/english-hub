@@ -81,8 +81,8 @@ const papers = [
           "You will be given an extract from your studied novel, plus a question. Write about the extract and then the novel as a whole. (30 marks)",
       },
     ],
-    colour: "border-[#1A5276]",
-    bgColour: "bg-[#1A5276]",
+    colour: "border-primary",
+    bgColour: "bg-primary",
     href: "/resources/english-literature/aqa/paper-1",
   },
   {
@@ -107,7 +107,7 @@ const papers = [
           "Q1: Analyse one unseen poem (24 marks). Q2: Compare it with a second unseen poem (8 marks).",
       },
     ],
-    colour: "border-[#2E86C1]",
+    colour: "border-primary",
     bgColour: "bg-primary",
     href: "/resources/english-literature/aqa/paper-2",
   },
@@ -153,7 +153,7 @@ export default function AqaEnglishLiteraturePage() {
     <>
 
       {/* ── Hero ── */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#2E86C1] px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-accent-200">
             GCSE Revision
@@ -208,7 +208,7 @@ export default function AqaEnglishLiteraturePage() {
               </div>
 
               {/* Sections */}
-              <ul className="divide-y divide-gray-100 bg-card">
+              <ul className="divide-y divide-border bg-card">
                 {paper.sections.map((sec) => (
                   <li key={sec.name} className="px-6 py-4">
                     <p className="font-semibold text-foreground">{sec.name}</p>
@@ -240,11 +240,11 @@ export default function AqaEnglishLiteraturePage() {
               <Link
                 key={guide.href}
                 href={guide.href}
-                className="group flex flex-col rounded-xl border border-border bg-card shadow-md transition hover:shadow-md hover:border-[#2E86C1]"
+                className="group flex flex-col rounded-xl border border-border bg-card shadow-md transition hover:shadow-md hover:border-primary"
               >
                 {/* Coloured top strip */}
                 <div
-                  className={`h-1.5 rounded-t-xl ${guide.paper === 1 ? "bg-[#1A5276]" : "bg-primary"}`}
+                  className={`h-1.5 rounded-t-xl ${guide.paper === 1 ? "bg-primary" : "bg-primary"}`}
                 />
                 <div className="flex flex-1 flex-col p-6">
                   <div className="flex items-center gap-2">
@@ -283,7 +283,7 @@ export default function AqaEnglishLiteraturePage() {
         <div className="mt-8 overflow-x-auto">
           <table className="w-full min-w-[600px] text-left text-sm">
             <thead>
-              <tr className="border-b-2 border-[#1A5276]">
+              <tr className="border-b-2 border-primary">
                 <th className="py-3 pr-4 font-semibold text-foreground">
                   &nbsp;
                 </th>
@@ -293,7 +293,7 @@ export default function AqaEnglishLiteraturePage() {
                 <th className="py-3 font-semibold text-primary">Paper 2</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-100">
+            <tbody className="divide-y divide-border">
               <tr>
                 <td className="py-3 pr-4 font-medium text-muted-foreground">
                   Duration
@@ -367,7 +367,7 @@ export default function AqaEnglishLiteraturePage() {
                 className="rounded-lg bg-card p-5 shadow-md border border-border"
               >
                 <div className="flex items-start gap-4">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-sm font-bold text-white">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
                     {obj.ao}
                   </span>
                   <div>
@@ -430,7 +430,7 @@ export default function AqaEnglishLiteraturePage() {
       </section>
 
       {/* ── CTA banner ── */}
-      <section className="bg-gradient-to-r from-[#1A5276] to-[#2E86C1] px-4 py-12 text-white text-center">
+      <section className="bg-gradient-to-r from-primary to-primary px-4 py-12 text-white text-center">
         <div className="mx-auto max-w-3xl">
           <h2 className="text-2xl font-bold sm:text-3xl">
             Ready to start revising?

@@ -9,7 +9,7 @@ function Section({
   id,
   title,
   badge,
-  colour = "bg-[#1A5276]",
+  colour = "bg-primary",
   children,
   defaultOpen = false,
 }: {
@@ -56,7 +56,7 @@ function Section({
 
 function Quote({ text, speaker, act, analysis }: { text: string; speaker: string; act: string; analysis: string }) {
   return (
-    <div className="rounded-lg border-l-4 border-[#2E86C1] bg-primary/5 p-4">
+    <div className="rounded-lg border-l-4 border-primary bg-primary/5 p-4">
       <p className="text-sm font-semibold italic text-foreground">&ldquo;{text}&rdquo;</p>
       <p className="mt-1 text-xs text-muted-foreground">{speaker} &mdash; {act}</p>
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
@@ -72,7 +72,7 @@ export default function InspectorCallsRevisionPage() {
       {/* Hero */}
       <div className="mb-8">
         <div className="flex flex-wrap items-center gap-3 mb-2">
-          <span className="rounded-full bg-[#1A5276]/10 px-3 py-1 text-xs font-bold text-foreground uppercase tracking-wider">J.B. Priestley</span>
+          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-foreground uppercase tracking-wider">J.B. Priestley</span>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">AQA</span>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">Edexcel</span>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">WJEC</span>
@@ -107,11 +107,11 @@ export default function InspectorCallsRevisionPage() {
 
         {/* ────────────────────────────────────────── PLOT SUMMARY */}
         <div id="plot-summary">
-          <Section id="plot" title="Act-by-Act Plot Summary" badge="3 Acts" colour="bg-[#1A5276]" defaultOpen>
+          <Section id="plot" title="Act-by-Act Plot Summary" badge="3 Acts" colour="bg-primary" defaultOpen>
             <div className="space-y-6">
               <div>
                 <h3 className="font-bold text-foreground flex items-center gap-2">
-                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#1A5276]/10 text-xs font-bold text-foreground">1</span>
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-foreground">1</span>
                   Act 1 &mdash; The Inspector Arrives
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -137,7 +137,7 @@ export default function InspectorCallsRevisionPage() {
 
               <div>
                 <h3 className="font-bold text-foreground flex items-center gap-2">
-                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#1A5276]/10 text-xs font-bold text-foreground">2</span>
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-foreground">2</span>
                   Act 2 &mdash; Gerald and Mrs Birling
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -160,7 +160,7 @@ export default function InspectorCallsRevisionPage() {
 
               <div>
                 <h3 className="font-bold text-foreground flex items-center gap-2">
-                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#1A5276]/10 text-xs font-bold text-foreground">3</span>
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-foreground">3</span>
                   Act 3 &mdash; Eric, the Aftermath, and the Final Call
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -401,9 +401,9 @@ export default function InspectorCallsRevisionPage() {
               <div>
                 <h3 className="text-lg font-bold text-foreground border-b border-border pb-2">Eva Smith / Daisy Renton</h3>
                 <div className="mt-2 flex flex-wrap gap-2">
-                  <span className="rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">Symbolic</span>
-                  <span className="rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">Everyman Figure</span>
-                  <span className="rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">Absent Presence</span>
+                  <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">Symbolic</span>
+                  <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">Everyman Figure</span>
+                  <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">Absent Presence</span>
                 </div>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   Eva Smith never appears on stage, but she is the play&apos;s most important character. She represents every working-class person exploited by the wealthy. Her name is symbolic: &ldquo;Eva&rdquo; suggests Eve (the first woman, representing all women) and &ldquo;Smith&rdquo; is the most common English surname. She changes her name to &ldquo;Daisy Renton&rdquo; &mdash; &ldquo;Daisy&rdquo; suggests innocence and freshness, while &ldquo;Renton&rdquo; may echo &ldquo;rent,&rdquo; connecting her to the commodification of people. Her absence from the stage is deliberate: she has no voice, no power, no ability to speak for herself. Each Birling tells their own version of events, and Eva is constructed through their perspectives. Whether she is one girl or several is ambiguous and ultimately irrelevant &mdash; the point is that there are countless Eva Smiths being failed by society. She is shown to have dignity and moral courage: she refused stolen money, she led a strike for fair wages, and she tried to protect Eric from himself.
@@ -442,7 +442,7 @@ export default function InspectorCallsRevisionPage() {
               {/* Social Responsibility */}
               <div>
                 <h3 className="text-lg font-bold text-foreground flex items-center gap-2">
-                  <span className="h-3 w-3 rounded-full bg-[#1A5276]" />
+                  <span className="h-3 w-3 rounded-full bg-primary" />
                   Social Responsibility
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -658,7 +658,7 @@ export default function InspectorCallsRevisionPage() {
           <Section id="context" title="Historical &amp; Social Context" badge="Essential" colour="bg-teal-600">
             <div className="space-y-6">
 
-              <div className="rounded-lg bg-[#1A5276]/5 p-4">
+              <div className="rounded-lg bg-primary/5 p-4">
                 <h3 className="font-bold text-foreground">When was it written vs when is it set?</h3>
                 <div className="mt-3 grid gap-4 sm:grid-cols-2">
                   <div className="rounded-lg bg-card p-4 shadow-md">
@@ -894,7 +894,7 @@ export default function InspectorCallsRevisionPage() {
                 </ul>
               </div>
 
-              <div className="mt-4 rounded-lg bg-[#1A5276]/5 p-4">
+              <div className="mt-4 rounded-lg bg-primary/5 p-4">
                 <h3 className="font-bold text-foreground">Universal Exam Tips</h3>
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                   <li>&bull; Always refer to Priestley by name &mdash; &ldquo;Priestley presents...&rdquo; not &ldquo;it shows...&rdquo;</li>

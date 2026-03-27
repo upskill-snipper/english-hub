@@ -36,7 +36,7 @@ const BOARDS: Board[] = [
     totalMarks: 160,
     duration: "1h 45m per paper",
     uniqueFeature: "Spoken language endorsement (Pass/Merit/Distinction)",
-    color: "border-[#2E86C1]",
+    color: "border-primary",
     accent: "bg-primary",
     icon: "A",
   },
@@ -172,7 +172,7 @@ const RESOURCE_LINKS = [
     title: "Writing Skills Guides",
     description: "Master creative, persuasive, and analytical writing techniques with step-by-step guides.",
     href: "/resources/writing-skills",
-    color: "from-[#1A5276] to-[#2E86C1]",
+    color: "from-primary to-primary",
   },
   {
     title: "Language Techniques",
@@ -301,11 +301,11 @@ export default function EnglishLanguagePage() {
     <>
 
       {/* ─── Hero Section ─────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#1A5276] via-[#1A5276]/95 to-[#2E86C1]/80 px-4 py-16 text-white sm:py-20">
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-primary/80 px-4 py-16 text-white sm:py-20">
         {/* Background decoration */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-primary/20 blur-3xl" />
-          <div className="absolute -bottom-32 -left-20 h-96 w-96 rounded-full bg-[#1A5276]/30 blur-3xl" />
+          <div className="absolute -bottom-32 -left-20 h-96 w-96 rounded-full bg-primary/30 blur-3xl" />
         </div>
 
         <div className="relative mx-auto max-w-5xl text-center">
@@ -355,7 +355,7 @@ export default function EnglishLanguagePage() {
 
       {/* ─── What English Language Covers ─────────────────────── */}
       <section className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
-        <div className="rounded-xl border border-[#2E86C1]/20 bg-primary/5 p-6 sm:p-8">
+        <div className="rounded-xl border border-primary/20 bg-primary/5 p-6 sm:p-8">
           <h2 className="text-xl font-bold text-foreground">
             What does English Language cover?
           </h2>
@@ -482,7 +482,7 @@ export default function EnglishLanguagePage() {
           </div>
 
           {/* Interactive finder */}
-          <div className="mt-6 rounded-xl border border-[#2E86C1]/30 bg-primary/5 p-6">
+          <div className="mt-6 rounded-xl border border-primary/30 bg-primary/5 p-6">
             <h3 className="font-semibold text-foreground">Quick board finder</h3>
             <p className="mt-1 text-sm text-muted-foreground">
               Answer the question below to narrow down your likely exam board.
@@ -498,7 +498,7 @@ export default function EnglishLanguagePage() {
                     <button
                       key={option.label}
                       onClick={() => handleFinderOption(option.boards)}
-                      className="rounded-lg border border-[#2E86C1]/30 bg-card px-4 py-2 text-sm font-medium text-foreground transition hover:border-[#2E86C1] hover:bg-primary/10"
+                      className="rounded-lg border border-primary/30 bg-card px-4 py-2 text-sm font-medium text-foreground transition hover:border-primary hover:bg-primary/10"
                     >
                       {option.label}
                     </button>
@@ -559,7 +559,7 @@ export default function EnglishLanguagePage() {
                 <th className="px-4 py-3 font-semibold text-foreground">Unique Feature</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-100">
+            <tbody className="divide-y divide-border">
               {BOARDS.map((board) => (
                 <tr key={board.slug} className="transition hover:bg-muted/80">
                   <td className="px-4 py-3">
@@ -635,14 +635,14 @@ export default function EnglishLanguagePage() {
               <div className="mt-4 flex flex-wrap gap-3">
                 <Link
                   href="/resources/practice"
-                  className="inline-flex items-center gap-2 rounded-lg bg-[#1A5276] px-5 py-2.5 text-sm font-semibold text-white shadow transition hover:bg-[#1A5276]/90 hover:shadow-md"
+                  className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow transition hover:bg-primary/90 hover:shadow-md"
                 >
                   Try practice questions
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
                   href="/resources/practice"
-                  className="inline-flex items-center gap-2 rounded-lg border border-[#1A5276]/30 px-5 py-2.5 text-sm font-semibold text-foreground transition hover:bg-[#1A5276]/5"
+                  className="inline-flex items-center gap-2 rounded-lg border border-primary/30 px-5 py-2.5 text-sm font-semibold text-foreground transition hover:bg-primary/5"
                 >
                   See how it works
                 </Link>

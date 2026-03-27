@@ -216,25 +216,25 @@ export default function PrintableResourcesPage() {
     return (
       <>
         <div className="flex min-h-[60vh] items-center justify-center px-4">
-          <div className="max-w-md rounded-xl border border-red-200 bg-red-50 p-8 text-center">
-            <svg className="mx-auto h-12 w-12 text-red-400" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+          <div className="max-w-md rounded-xl border border-destructive/20 bg-destructive/10 p-8 text-center">
+            <svg className="mx-auto h-12 w-12 text-destructive" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
             </svg>
-            <h2 className="mt-4 text-lg font-bold text-red-800">Teacher Plan Required</h2>
-            <p className="mt-2 text-sm text-red-600">
+            <h2 className="mt-4 text-lg font-bold text-destructive">Teacher Plan Required</h2>
+            <p className="mt-2 text-sm text-destructive/80">
               Printable resources are only available to users with a Teacher Plan.
               Upgrade your account or log in with a teacher account to access these materials.
             </p>
             <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               <Link
                 href="/pricing"
-                className="inline-block rounded-lg bg-[#1A5276] px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-[#1A5276]/90"
+                className="inline-block rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-primary/90"
               >
                 View Teacher Plans
               </Link>
               <Link
                 href="/resources"
-                className="inline-block rounded-lg border border-gray-300 px-6 py-2.5 text-sm font-semibold text-muted-foreground transition hover:bg-muted"
+                className="inline-block rounded-lg border border-border px-6 py-2.5 text-sm font-semibold text-muted-foreground transition hover:bg-muted"
               >
                 Back to Resources
               </Link>
@@ -277,7 +277,7 @@ export default function PrintableResourcesPage() {
               <a
                 key={cat.slug}
                 href={`#${cat.slug}`}
-                className="group flex items-start gap-3 rounded-xl border border-border bg-card p-4 shadow-md transition hover:shadow-md hover:border-[#2E86C1]/40"
+                className="group flex items-start gap-3 rounded-xl border border-border bg-card p-4 shadow-md transition hover:shadow-md hover:border-primary/40"
               >
                 <div className="mt-0.5 shrink-0">{cat.icon}</div>
                 <div>
@@ -316,14 +316,14 @@ export default function PrintableResourcesPage() {
                 {resources.map((resource) => (
                   <div
                     key={resource.id}
-                    className="group flex flex-col rounded-xl border border-border bg-card p-5 shadow-md transition hover:shadow-md hover:border-[#2E86C1]/40"
+                    className="group flex flex-col rounded-xl border border-border bg-card p-5 shadow-md transition hover:shadow-md hover:border-primary/40"
                   >
                     {/* Tags */}
                     <div className="flex flex-wrap gap-1.5">
                       {resource.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="rounded-full bg-[#1A5276]/10 px-2 py-0.5 text-[11px] font-semibold text-foreground"
+                          className="rounded-full bg-primary/10 px-2 py-0.5 text-[11px] font-semibold text-primary"
                         >
                           {tag}
                         </span>
@@ -344,13 +344,13 @@ export default function PrintableResourcesPage() {
                     <div className="mt-4 flex items-center gap-3">
                       <button
                         onClick={() => window.print()}
-                        className="inline-flex items-center gap-1.5 rounded-lg bg-[#1A5276] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#1A5276]/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1A5276] focus-visible:ring-offset-2"
+                        className="inline-flex items-center gap-1.5 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white transition hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
                       >
                         <PrinterIcon />
                         Print
                       </button>
                       <button
-                        className="inline-flex items-center gap-1.5 rounded-lg border border-gray-300 px-4 py-2 text-sm font-semibold text-muted-foreground transition hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                        className="inline-flex items-center gap-1.5 rounded-lg border border-border px-4 py-2 text-sm font-semibold text-muted-foreground transition hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
                       >
                         <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
@@ -367,8 +367,8 @@ export default function PrintableResourcesPage() {
       })}
 
       {/* Teacher Plan notice */}
-      <section className="bg-[#1A5276]/5 px-4 py-10 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl rounded-xl border border-[#2E86C1]/20 bg-card p-6 text-center shadow-md sm:p-8">
+      <section className="bg-primary/5 px-4 py-10 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl rounded-xl border border-primary/20 bg-card p-6 text-center shadow-md sm:p-8">
           <h3 className="text-lg font-bold text-foreground">
             Need more resources?
           </h3>
@@ -379,13 +379,13 @@ export default function PrintableResourcesPage() {
           <div className="mt-5 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <Link
               href="/resources/teaching"
-              className="inline-block rounded-lg bg-[#1A5276] px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-[#1A5276]/90"
+              className="inline-block rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-primary/90"
             >
               Back to Teaching Hub
             </Link>
             <Link
               href="/resources/teaching/lesson-plans"
-              className="inline-block rounded-lg border border-gray-300 px-6 py-2.5 text-sm font-semibold text-muted-foreground transition hover:bg-muted"
+              className="inline-block rounded-lg border border-border px-6 py-2.5 text-sm font-semibold text-muted-foreground transition hover:bg-muted"
             >
               Browse Lesson Plans
             </Link>

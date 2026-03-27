@@ -351,7 +351,7 @@ export default function JekyllAndHydePage() {
     <>
 
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#2E86C1] px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-3xl text-center">
           <Link
             href="/resources/english-literature/edexcel"
@@ -403,7 +403,7 @@ export default function JekyllAndHydePage() {
                 className="rounded-xl border border-border p-6 shadow-md"
               >
                 <div className="flex items-center gap-3">
-                  <span className="rounded-full bg-[#1A5276] px-3 py-1 text-xs font-bold text-white">
+                  <span className="rounded-full bg-primary px-3 py-1 text-xs font-bold text-white">
                     {ch.chapter}
                   </span>
                   <h3 className="text-lg font-bold text-foreground">
@@ -464,7 +464,7 @@ export default function JekyllAndHydePage() {
             {THEMES.map((t) => (
               <div
                 key={t.theme}
-                className="rounded-xl border-l-4 border-[#1A5276] bg-muted p-6"
+                className="rounded-xl border-l-4 border-primary bg-muted p-6"
               >
                 <h3 className="text-lg font-bold text-foreground">
                   {t.theme}
@@ -556,7 +556,7 @@ export default function JekyllAndHydePage() {
               <p className="mt-2 text-sm text-muted-foreground">
                 Jekyll and Hyde appears in <strong>Paper 2, Section A</strong> (19th-century novel). You will be given an <strong>extract</strong> from the novella and a question that asks you to analyse a character, theme, or idea. You must write about <strong>both the extract and the wider novella</strong>. The question is worth <strong>40 marks</strong> (no SPaG marks on Paper 2).
               </p>
-              <div className="mt-4 rounded-lg border-2 border-dashed border-[#2E86C1] bg-card p-4">
+              <div className="mt-4 rounded-lg border-2 border-dashed border-primary bg-card p-4">
                 <p className="text-xs font-semibold uppercase tracking-wide text-primary">
                   Example Question
                 </p>
@@ -577,25 +577,25 @@ export default function JekyllAndHydePage() {
               </h3>
               <ol className="mt-4 space-y-3 text-sm text-muted-foreground">
                 <li className="flex gap-3">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">1</span>
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">1</span>
                   <span>
                     <strong>Brief introduction</strong> — outline Stevenson&apos;s overall presentation of the theme/character in 2-3 sentences. Mention the novella&apos;s Victorian context.
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">2</span>
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">2</span>
                   <span>
                     <strong>2-3 paragraphs on the extract</strong> — analyse specific language, imagery, and techniques from the given passage. Use short embedded quotations from the extract. Link to context where relevant.
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">3</span>
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">3</span>
                   <span>
                     <strong>2-3 paragraphs on the wider novella</strong> — discuss how the theme/character is presented elsewhere. Use memorised quotes from other parts of the text. Track development across the narrative.
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">4</span>
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">4</span>
                   <span>
                     <strong>Conclude briefly</strong> — summarise Stevenson&apos;s message and its relevance to a Victorian audience. Consider what Stevenson wanted readers to understand about human nature.
                   </span>
@@ -627,7 +627,7 @@ export default function JekyllAndHydePage() {
               </ul>
             </div>
 
-            <div className="rounded-xl border-2 border-[#2E86C1] bg-blue-50 p-6">
+            <div className="rounded-xl border-2 border-primary bg-blue-50 p-6">
               <h3 className="text-lg font-bold text-foreground">
                 Top Tips for Top Marks
               </h3>

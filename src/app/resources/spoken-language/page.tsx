@@ -79,7 +79,7 @@ export default function SpokenLanguagePage() {
     <>
 
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#2E86C1] px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-[primary] px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-blue-200">
             Resources
@@ -158,7 +158,7 @@ export default function SpokenLanguagePage() {
               to communicate effectively in a formal spoken context &mdash; a
               skill valued by employers, colleges, and universities.
             </p>
-            <div className="rounded-lg border border-[#2E86C1]/20 bg-primary/5 p-5">
+            <div className="rounded-lg border border-primary/20 bg-primary/5 p-5">
               <p className="text-sm font-semibold text-foreground">Key facts</p>
               <ul className="ml-4 mt-2 list-disc space-y-1 text-sm text-muted-foreground">
                 <li>Required for all GCSE English Language students (AQA, Edexcel, OCR)</li>
@@ -192,7 +192,7 @@ export default function SpokenLanguagePage() {
                 <p className="text-lg font-bold text-emerald-700">Distinction</p>
                 <p className="mt-1 text-xs text-muted-foreground">Outstanding performance across all three strands</p>
               </div>
-              <div className="rounded-lg border-2 border-[#2E86C1] bg-blue-50 p-4 text-center">
+              <div className="rounded-lg border-2 border-primary bg-blue-50 p-4 text-center">
                 <p className="text-lg font-bold text-primary">Merit</p>
                 <p className="mt-1 text-xs text-muted-foreground">Competent and clear across all strands</p>
               </div>
@@ -264,14 +264,14 @@ export default function SpokenLanguagePage() {
                   key={i}
                   className="flex items-start gap-3 rounded-lg border border-border bg-muted p-3"
                 >
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
                     {i + 1}
                   </span>
                   <span className="text-sm">{topic}</span>
                 </div>
               ))}
             </div>
-            <div className="mt-4 rounded-lg border border-[#2E86C1]/20 bg-primary/5 p-5">
+            <div className="mt-4 rounded-lg border border-primary/20 bg-primary/5 p-5">
               <p className="text-sm text-muted-foreground">
                 <strong>Want more ideas?</strong> We have 30+ topics with full
                 outlines, key points, and potential questions.{" "}
@@ -341,7 +341,7 @@ export default function SpokenLanguagePage() {
               Recommended Structure
             </h3>
             <div className="mt-3 space-y-3">
-              <div className="rounded-lg border-l-4 border-[#1A5276] bg-muted p-4">
+              <div className="rounded-lg border-l-4 border-[primary] bg-muted p-4">
                 <p className="font-semibold text-foreground">Introduction (30&ndash;45 seconds)</p>
                 <p className="mt-1 text-sm">
                   Hook your audience with a compelling opening: a rhetorical
@@ -350,7 +350,7 @@ export default function SpokenLanguagePage() {
                   position clearly.
                 </p>
               </div>
-              <div className="rounded-lg border-l-4 border-[#2E86C1] bg-muted p-4">
+              <div className="rounded-lg border-l-4 border-primary bg-muted p-4">
                 <p className="font-semibold text-primary">Main Points (2&ndash;3 minutes)</p>
                 <p className="mt-1 text-sm">
                   Present 3&ndash;4 well-developed points, each supported with
@@ -414,7 +414,7 @@ export default function SpokenLanguagePage() {
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="rounded-lg border border-border bg-muted p-5">
                 <div className="flex items-center gap-3">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#1A5276] text-white">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-white">
                     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
@@ -432,7 +432,7 @@ export default function SpokenLanguagePage() {
 
               <div className="rounded-lg border border-border bg-muted p-5">
                 <div className="flex items-center gap-3">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#1A5276] text-white">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-white">
                     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                     </svg>
@@ -449,7 +449,7 @@ export default function SpokenLanguagePage() {
 
               <div className="rounded-lg border border-border bg-muted p-5">
                 <div className="flex items-center gap-3">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#1A5276] text-white">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-white">
                     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
                     </svg>
@@ -466,7 +466,7 @@ export default function SpokenLanguagePage() {
 
               <div className="rounded-lg border border-border bg-muted p-5">
                 <div className="flex items-center gap-3">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#1A5276] text-white">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-white">
                     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 0 0-2.455 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
                     </svg>
@@ -483,7 +483,7 @@ export default function SpokenLanguagePage() {
 
               <div className="rounded-lg border border-border bg-muted p-5">
                 <div className="flex items-center gap-3">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#1A5276] text-white">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-white">
                     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
                     </svg>
@@ -500,7 +500,7 @@ export default function SpokenLanguagePage() {
 
               <div className="rounded-lg border border-border bg-muted p-5">
                 <div className="flex items-center gap-3">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#1A5276] text-white">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-white">
                     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
                     </svg>
@@ -576,7 +576,7 @@ export default function SpokenLanguagePage() {
               </li>
             </ul>
 
-            <div className="rounded-lg border border-[#2E86C1]/20 bg-primary/5 p-5">
+            <div className="rounded-lg border border-primary/20 bg-primary/5 p-5">
               <p className="text-sm font-semibold text-foreground">Top tip</p>
               <p className="mt-1 text-sm text-muted-foreground">
                 When preparing your presentation, write down 5&ndash;10
@@ -612,7 +612,7 @@ export default function SpokenLanguagePage() {
             <div className="overflow-x-auto">
               <table className="mt-3 w-full text-sm">
                 <thead>
-                  <tr className="border-b-2 border-[#1A5276]">
+                  <tr className="border-b-2 border-[primary]">
                     <th className="px-4 py-3 text-left font-semibold text-foreground">Avoid (Non-Standard)</th>
                     <th className="px-4 py-3 text-left font-semibold text-foreground">Use Instead (Standard English)</th>
                   </tr>
@@ -702,12 +702,12 @@ export default function SpokenLanguagePage() {
           <div className="mt-4 space-y-6 text-muted-foreground leading-relaxed">
 
             {/* Example 1 */}
-            <div className="rounded-lg border-2 border-[#1A5276]/20 bg-card p-6 shadow-md">
+            <div className="rounded-lg border-2 border-[primary]/20 bg-card p-6 shadow-md">
               <h3 className="text-lg font-bold text-foreground">
                 Example 1: &ldquo;Should the Voting Age Be Lowered to 16?&rdquo;
               </h3>
               <div className="mt-4 space-y-3">
-                <div className="rounded border-l-4 border-[#1A5276] bg-muted p-3">
+                <div className="rounded border-l-4 border-[primary] bg-muted p-3">
                   <p className="text-sm font-semibold text-foreground">Introduction</p>
                   <p className="mt-1 text-sm">
                     Hook: &ldquo;In 2014, 75% of 16 and 17-year-olds voted in
@@ -716,7 +716,7 @@ export default function SpokenLanguagePage() {
                     argument: voting age should be lowered to 16.
                   </p>
                 </div>
-                <div className="rounded border-l-4 border-[#2E86C1] bg-muted p-3">
+                <div className="rounded border-l-4 border-primary bg-muted p-3">
                   <p className="text-sm font-semibold text-primary">Point 1: Taxation and representation</p>
                   <p className="mt-1 text-sm">
                     16-year-olds can work and pay tax. The principle of &ldquo;no
@@ -724,7 +724,7 @@ export default function SpokenLanguagePage() {
                     have a vote.
                   </p>
                 </div>
-                <div className="rounded border-l-4 border-[#2E86C1] bg-muted p-3">
+                <div className="rounded border-l-4 border-primary bg-muted p-3">
                   <p className="text-sm font-semibold text-primary">Point 2: Legal responsibilities</p>
                   <p className="mt-1 text-sm">
                     At 16, you can join the army, get married, and leave school.
@@ -732,7 +732,7 @@ export default function SpokenLanguagePage() {
                     trusted to vote.
                   </p>
                 </div>
-                <div className="rounded border-l-4 border-[#2E86C1] bg-muted p-3">
+                <div className="rounded border-l-4 border-primary bg-muted p-3">
                   <p className="text-sm font-semibold text-primary">Point 3: Engagement and habit-forming</p>
                   <p className="mt-1 text-sm">
                     Research shows that voting early creates lifelong habits of
@@ -762,12 +762,12 @@ export default function SpokenLanguagePage() {
             </div>
 
             {/* Example 2 */}
-            <div className="rounded-lg border-2 border-[#1A5276]/20 bg-card p-6 shadow-md">
+            <div className="rounded-lg border-2 border-[primary]/20 bg-card p-6 shadow-md">
               <h3 className="text-lg font-bold text-foreground">
                 Example 2: &ldquo;The Impact of Social Media on Mental Health&rdquo;
               </h3>
               <div className="mt-4 space-y-3">
-                <div className="rounded border-l-4 border-[#1A5276] bg-muted p-3">
+                <div className="rounded border-l-4 border-[primary] bg-muted p-3">
                   <p className="text-sm font-semibold text-foreground">Introduction</p>
                   <p className="mt-1 text-sm">
                     Hook: &ldquo;The average teenager spends over seven hours a
@@ -776,7 +776,7 @@ export default function SpokenLanguagePage() {
                     social media on young people&rsquo;s mental health.
                   </p>
                 </div>
-                <div className="rounded border-l-4 border-[#2E86C1] bg-muted p-3">
+                <div className="rounded border-l-4 border-primary bg-muted p-3">
                   <p className="text-sm font-semibold text-primary">Point 1: Comparison culture and self-esteem</p>
                   <p className="mt-1 text-sm">
                     Filtered images and curated lives lead to unhealthy
@@ -784,7 +784,7 @@ export default function SpokenLanguagePage() {
                     self-esteem, particularly among teenage girls.
                   </p>
                 </div>
-                <div className="rounded border-l-4 border-[#2E86C1] bg-muted p-3">
+                <div className="rounded border-l-4 border-primary bg-muted p-3">
                   <p className="text-sm font-semibold text-primary">Point 2: Cyberbullying</p>
                   <p className="mt-1 text-sm">
                     Social media provides a platform for anonymous harassment.
@@ -792,7 +792,7 @@ export default function SpokenLanguagePage() {
                     lasting psychological effects.
                   </p>
                 </div>
-                <div className="rounded border-l-4 border-[#2E86C1] bg-muted p-3">
+                <div className="rounded border-l-4 border-primary bg-muted p-3">
                   <p className="text-sm font-semibold text-primary">Point 3: Sleep disruption and anxiety</p>
                   <p className="mt-1 text-sm">
                     Blue light and notification cycles disrupt sleep patterns.
@@ -852,7 +852,7 @@ export default function SpokenLanguagePage() {
               </div>
 
               {/* Merit */}
-              <div className="rounded-lg border-2 border-[#2E86C1] bg-blue-50 p-5">
+              <div className="rounded-lg border-2 border-primary bg-blue-50 p-5">
                 <h3 className="text-lg font-bold text-primary">Merit</h3>
                 <ul className="ml-4 mt-3 list-disc space-y-2 text-sm text-muted-foreground">
                   <li><strong>Presenting:</strong> The presentation is clearly and competently delivered with good audience engagement. Content is well-organised, relevant, and supported with evidence. Rhetorical and presentational techniques are used with success.</li>
@@ -917,7 +917,7 @@ export default function SpokenLanguagePage() {
                   key={i}
                   className="flex items-start gap-3 rounded-lg border border-border bg-muted p-3"
                 >
-                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border-2 border-[#1A5276]/40 text-xs text-transparent">
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border-2 border-[primary]/40 text-xs text-transparent">
                     &#10003;
                   </span>
                   <span className="text-sm">{item}</span>
@@ -928,7 +928,7 @@ export default function SpokenLanguagePage() {
         </section>
 
         {/* CTA to topics */}
-        <div className="mt-12 rounded-lg bg-gradient-to-r from-[#1A5276] to-[#2E86C1] p-8 text-center text-white shadow-lg">
+        <div className="mt-12 rounded-lg bg-gradient-to-r from-primary to-[primary] p-8 text-center text-white shadow-lg">
           <h2 className="text-2xl font-bold">Need a Topic?</h2>
           <p className="mx-auto mt-2 max-w-lg text-white/90">
             Browse our collection of 30+ presentation topic ideas, each with a

@@ -15,12 +15,12 @@ export const metadata: Metadata = {
 function Annotation({ children, note }: { children: React.ReactNode; note: string }) {
   return (
     <span className="group relative">
-      <span className="rounded bg-primary/10 px-1 py-0.5 text-foreground border-b-2 border-dashed border-[#2E86C1]/40">
+      <span className="rounded bg-primary/10 px-1 py-0.5 text-foreground border-b-2 border-dashed border-primary/40">
         {children}
       </span>
-      <span className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 w-56 -translate-x-1/2 rounded-lg bg-[#1A5276] px-3 py-2 text-xs leading-relaxed text-white opacity-0 shadow-lg transition-opacity group-hover:pointer-events-auto group-hover:opacity-100">
+      <span className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 w-56 -translate-x-1/2 rounded-lg bg-primary px-3 py-2 text-xs leading-relaxed text-white opacity-0 shadow-lg transition-opacity group-hover:pointer-events-auto group-hover:opacity-100">
         {note}
-        <span className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-[#1A5276]" />
+        <span className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-[primary]" />
       </span>
     </span>
   );
@@ -31,7 +31,7 @@ function Annotation({ children, note }: { children: React.ReactNode; note: strin
 function Section({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
   return (
     <section id={id} className="scroll-mt-24">
-      <h2 className="mb-6 text-2xl font-bold text-foreground border-b-2 border-[#2E86C1]/20 pb-3">
+      <h2 className="mb-6 text-2xl font-bold text-foreground border-b-2 border-primary/20 pb-3">
         {title}
       </h2>
       {children}
@@ -56,7 +56,7 @@ const TOC = [
 const CONNECTIVE_GROUPS = [
   {
     heading: "Similarity",
-    colour: "bg-[#27AE60]/10 border-[#27AE60]/30",
+    colour: "bg-success/10 border-[success]/30",
     phrases: [
       "Similarly,",
       "In the same way,",
@@ -75,7 +75,7 @@ const CONNECTIVE_GROUPS = [
   },
   {
     heading: "Difference",
-    colour: "bg-[#E74C3C]/10 border-[#E74C3C]/30",
+    colour: "bg-destructive/10 border-destructive/30",
     phrases: [
       "In contrast,",
       "However,",
@@ -94,7 +94,7 @@ const CONNECTIVE_GROUPS = [
   },
   {
     heading: "Developing a Point",
-    colour: "bg-primary/10 border-[#2E86C1]/30",
+    colour: "bg-primary/10 border-primary/30",
     phrases: [
       "Furthermore,",
       "Moreover,",
@@ -109,7 +109,7 @@ const CONNECTIVE_GROUPS = [
   },
   {
     heading: "Evaluative / Analytical",
-    colour: "bg-[#8E44AD]/10 border-[#8E44AD]/30",
+    colour: "bg-secondary/10 border-secondary/30",
     phrases: [
       "Perhaps more significantly,",
       "Arguably,",
@@ -138,7 +138,7 @@ export default function PoetryComparisonPage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#1A5276]/80 px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary/80 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary/80">
             Comparison Skills
@@ -226,7 +226,7 @@ export default function PoetryComparisonPage() {
                   },
                 ].map((s) => (
                   <div key={s.step} className="flex gap-4 rounded-xl border border-border bg-card p-5 shadow-md">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-sm font-bold text-white">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
                       {s.step}
                     </div>
                     <div>
@@ -246,7 +246,7 @@ export default function PoetryComparisonPage() {
 
               <div className="mt-6 grid gap-6 sm:grid-cols-2">
                 {/* Alternating */}
-                <div className="rounded-xl border-2 border-[#2E86C1] bg-primary/5 p-6">
+                <div className="rounded-xl border-2 border-primary bg-primary/5 p-6">
                   <h3 className="text-lg font-bold text-foreground">Alternating (Recommended)</h3>
                   <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                     Each paragraph discusses both poems, moving between them to make direct comparisons. This approach makes your comparison feel integrated and sophisticated.
@@ -265,30 +265,30 @@ export default function PoetryComparisonPage() {
                       <span className="font-semibold text-foreground">Conclusion:</span> Evaluate both -- which is more effective and why?
                     </div>
                   </div>
-                  <div className="mt-4 rounded-lg bg-[#27AE60]/10 px-4 py-3">
-                    <p className="text-sm font-semibold text-[#27AE60]">Best for: sustained, integrated comparison that flows naturally.</p>
+                  <div className="mt-4 rounded-lg bg-success/10 px-4 py-3">
+                    <p className="text-sm font-semibold text-success">Best for: sustained, integrated comparison that flows naturally.</p>
                   </div>
                 </div>
 
                 {/* Block */}
-                <div className="rounded-xl border-2 border-[#E67E22] bg-[#E67E22]/5 p-6">
+                <div className="rounded-xl border-2 border-accent bg-accent/5 p-6">
                   <h3 className="text-lg font-bold text-foreground">Block</h3>
                   <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                     Write about Poem A in the first half, then Poem B in the second half, making links back to Poem A as you go. Simpler to plan but harder to make comparative.
                   </p>
                   <div className="mt-4 space-y-2">
                     <div className="rounded-lg bg-card p-3 text-sm">
-                      <span className="font-semibold text-[#E67E22]">Section 1:</span> Analyse Poem A in full (3-4 paragraphs)
+                      <span className="font-semibold text-accent">Section 1:</span> Analyse Poem A in full (3-4 paragraphs)
                     </div>
                     <div className="rounded-lg bg-card p-3 text-sm">
-                      <span className="font-semibold text-[#E67E22]">Section 2:</span> Analyse Poem B, linking back to Poem A throughout
+                      <span className="font-semibold text-accent">Section 2:</span> Analyse Poem B, linking back to Poem A throughout
                     </div>
                     <div className="rounded-lg bg-card p-3 text-sm">
-                      <span className="font-semibold text-[#E67E22]">Conclusion:</span> Draw together the key similarities and differences
+                      <span className="font-semibold text-accent">Conclusion:</span> Draw together the key similarities and differences
                     </div>
                   </div>
-                  <div className="mt-4 rounded-lg bg-[#E74C3C]/10 px-4 py-3">
-                    <p className="text-sm font-semibold text-[#E74C3C]">Warning: you MUST link back to Poem A in Section 2, or it reads as two separate essays.</p>
+                  <div className="mt-4 rounded-lg bg-destructive/10 px-4 py-3">
+                    <p className="text-sm font-semibold text-destructive">Warning: you MUST link back to Poem A in Section 2, or it reads as two separate essays.</p>
                   </div>
                 </div>
               </div>
@@ -328,7 +328,7 @@ export default function PoetryComparisonPage() {
                 </p>
               </div>
 
-              <div className="rounded-xl border-2 border-[#2E86C1]/30 bg-card p-6 sm:p-8">
+              <div className="rounded-xl border-2 border-primary/30 bg-card p-6 sm:p-8">
                 <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-primary">Full Model Essay</p>
 
                 <div className="space-y-4 text-sm leading-relaxed text-muted-foreground">
@@ -359,7 +359,7 @@ export default function PoetryComparisonPage() {
                 </div>
               </div>
 
-              <div className="mt-4 rounded-xl bg-[#1A5276]/5 p-5">
+              <div className="mt-4 rounded-xl bg-primary/5 p-5">
                 <h4 className="font-bold text-foreground">Why This Works</h4>
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                   <li>- Every paragraph compares both poems (alternating structure)</li>
@@ -381,7 +381,7 @@ export default function PoetryComparisonPage() {
                 </p>
               </div>
 
-              <div className="rounded-xl border-2 border-[#2E86C1]/30 bg-card p-6 sm:p-8">
+              <div className="rounded-xl border-2 border-primary/30 bg-card p-6 sm:p-8">
                 <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-primary">Full Model Essay</p>
 
                 <div className="space-y-4 text-sm leading-relaxed text-muted-foreground">
@@ -422,49 +422,49 @@ export default function PoetryComparisonPage() {
                     label: "Sustained comparison",
                     detail: "Every paragraph must reference both poems. Do not write about them in isolation.",
                     level: "Essential",
-                    levelColour: "bg-[#E74C3C] text-white",
+                    levelColour: "bg-destructive text-white",
                   },
                   {
                     label: "Analytical language terminology",
                     detail: "Name techniques (metaphor, enjambment, caesura) and explain their effects.",
                     level: "Essential",
-                    levelColour: "bg-[#E74C3C] text-white",
+                    levelColour: "bg-destructive text-white",
                   },
                   {
                     label: "Embedded quotations",
                     detail: "Weave short quotations into your sentences rather than copying out long passages.",
                     level: "Essential",
-                    levelColour: "bg-[#E74C3C] text-white",
+                    levelColour: "bg-destructive text-white",
                   },
                   {
                     label: "Comparative connectives",
                     detail: "Use words like 'similarly', 'however', 'whereas', 'in contrast' consistently.",
                     level: "Essential",
-                    levelColour: "bg-[#E74C3C] text-white",
+                    levelColour: "bg-destructive text-white",
                   },
                   {
                     label: "Form and structure analysis",
                     detail: "Go beyond language: discuss how the poets use form, structure, and rhythm.",
                     level: "Top Band",
-                    levelColour: "bg-[#8E44AD] text-white",
+                    levelColour: "bg-secondary text-white",
                   },
                   {
                     label: "Context (where relevant)",
                     detail: "Link to the poet's life, era, or movement -- but only when it deepens your analysis.",
                     level: "Top Band",
-                    levelColour: "bg-[#8E44AD] text-white",
+                    levelColour: "bg-secondary text-white",
                   },
                   {
                     label: "Evaluative conclusion",
                     detail: "End by weighing up which poem is more effective or offers a more powerful message.",
                     level: "Top Band",
-                    levelColour: "bg-[#8E44AD] text-white",
+                    levelColour: "bg-secondary text-white",
                   },
                   {
                     label: "Personal response / alternative readings",
                     detail: "Offer 'perhaps' or 'alternatively' to show critical thinking and multiple interpretations.",
                     level: "Top Band",
-                    levelColour: "bg-[#8E44AD] text-white",
+                    levelColour: "bg-secondary text-white",
                   },
                 ].map((item) => (
                   <div key={item.label} className="rounded-xl border border-border bg-card p-5 shadow-md">
@@ -520,12 +520,12 @@ export default function PoetryComparisonPage() {
                   <div key={i} className="rounded-xl border border-border bg-card p-5 shadow-md">
                     <div className="flex flex-col sm:flex-row sm:gap-6">
                       <div className="flex-1">
-                        <p className="text-sm font-bold text-[#E74C3C]">
+                        <p className="text-sm font-bold text-destructive">
                           <span className="mr-1">&#10007;</span> {item.mistake}
                         </p>
                       </div>
                       <div className="mt-2 flex-1 sm:mt-0">
-                        <p className="text-sm font-bold text-[#27AE60]">
+                        <p className="text-sm font-bold text-success">
                           <span className="mr-1">&#10003;</span> {item.fix}
                         </p>
                       </div>

@@ -327,7 +327,7 @@ export default function AnimalFarmPage() {
     <>
 
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#2E86C1] px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-3xl text-center">
           <Link
             href="/resources/english-literature/edexcel"
@@ -374,7 +374,7 @@ export default function AnimalFarmPage() {
           <h2 className="text-2xl font-bold text-foreground">
             Edexcel Paper 1, Section B — What You Need to Know
           </h2>
-          <div className="mt-6 rounded-xl border-2 border-[#2E86C1] bg-blue-50 p-6">
+          <div className="mt-6 rounded-xl border-2 border-primary bg-blue-50 p-6">
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li className="flex gap-2">
                 <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
@@ -415,7 +415,7 @@ export default function AnimalFarmPage() {
                 className="rounded-xl border border-border p-6 shadow-md"
               >
                 <div className="flex items-center gap-3">
-                  <span className="rounded-full bg-[#1A5276] px-3 py-1 text-xs font-bold text-white">
+                  <span className="rounded-full bg-primary px-3 py-1 text-xs font-bold text-white">
                     {ch.chapter}
                   </span>
                   <h3 className="text-lg font-bold text-foreground">
@@ -474,7 +474,7 @@ export default function AnimalFarmPage() {
             {THEMES.map((t) => (
               <div
                 key={t.theme}
-                className="rounded-xl border-l-4 border-[#1A5276] bg-muted p-6"
+                className="rounded-xl border-l-4 border-primary bg-muted p-6"
               >
                 <h3 className="text-lg font-bold text-foreground">
                   {t.theme}
@@ -590,7 +590,7 @@ export default function AnimalFarmPage() {
                 then explore the theme or character across the whole novella.
               </p>
               <div className="mt-4 space-y-3">
-                <div className="rounded-lg border-2 border-dashed border-[#2E86C1] bg-card p-4">
+                <div className="rounded-lg border-2 border-dashed border-primary bg-card p-4">
                   <p className="text-xs font-semibold uppercase tracking-wide text-primary">
                     Example Question 1
                   </p>
@@ -602,7 +602,7 @@ export default function AnimalFarmPage() {
                     and in the novella as a whole?
                   </p>
                 </div>
-                <div className="rounded-lg border-2 border-dashed border-[#2E86C1] bg-card p-4">
+                <div className="rounded-lg border-2 border-dashed border-primary bg-card p-4">
                   <p className="text-xs font-semibold uppercase tracking-wide text-primary">
                     Example Question 2
                   </p>
@@ -623,31 +623,31 @@ export default function AnimalFarmPage() {
               </h3>
               <ol className="mt-4 space-y-3 text-sm text-muted-foreground">
                 <li className="flex gap-3">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">1</span>
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">1</span>
                   <span>
                     <strong>Introduction (2–3 minutes)</strong> — state Orwell&apos;s purpose and how the theme/character connects to his wider political message. Briefly mention the Russian Revolution context.
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">2</span>
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">2</span>
                   <span>
                     <strong>Analyse the extract (2–3 paragraphs)</strong> — work through the extract closely. Identify key language, literary techniques, and what Orwell is conveying. Use short, embedded quotations from the extract.
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">3</span>
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">3</span>
                   <span>
                     <strong>Explore the wider novella (2–3 paragraphs)</strong> — move beyond the extract. Discuss how the theme/character is presented elsewhere, tracking development across the text. Recall your own quotations.
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">4</span>
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">4</span>
                   <span>
                     <strong>Integrate context throughout</strong> — link to the Russian Revolution, Stalin, Orwell&apos;s own experiences, and the political message. Context should be woven into analysis, not added as a separate paragraph.
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">5</span>
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">5</span>
                   <span>
                     <strong>Conclusion</strong> — briefly summarise Orwell&apos;s overall message. Connect to the novella&apos;s genre as a political allegory and its enduring relevance.
                   </span>
@@ -655,7 +655,7 @@ export default function AnimalFarmPage() {
               </ol>
             </div>
 
-            <div className="rounded-xl border-2 border-[#2E86C1] bg-blue-50 p-6">
+            <div className="rounded-xl border-2 border-primary bg-blue-50 p-6">
               <h3 className="text-lg font-bold text-foreground">
                 Top Tips for Top Marks
               </h3>

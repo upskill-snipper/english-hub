@@ -33,8 +33,8 @@ const CATEGORIES: Category[] = [
   {
     name: "Society and Politics",
     colour: "text-foreground",
-    borderColour: "border-[#1A5276]",
-    bgColour: "bg-[#1A5276]/5",
+    borderColour: "border-[primary]",
+    bgColour: "bg-primary/5",
     topics: [
       {
         title: "Should the voting age be lowered to 16?",
@@ -131,7 +131,7 @@ const CATEGORIES: Category[] = [
   {
     name: "Technology and the Digital World",
     colour: "text-primary",
-    borderColour: "border-[#2E86C1]",
+    borderColour: "border-primary",
     bgColour: "bg-primary/5",
     topics: [
       {
@@ -645,7 +645,7 @@ export default function SpokenLanguageTopicsPage() {
     <>
 
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#2E86C1] px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-[primary] px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <Link
             href="/resources/spoken-language"
@@ -780,7 +780,7 @@ export default function SpokenLanguageTopicsPage() {
         </div>
 
         {/* ── Choosing tips ────────────────────────────────────── */}
-        <div className="mt-16 rounded-lg border border-[#2E86C1]/20 bg-primary/5 p-6">
+        <div className="mt-16 rounded-lg border border-primary/20 bg-primary/5 p-6">
           <h2 className="text-xl font-bold text-foreground">
             How to Choose the Right Topic for You
           </h2>
@@ -816,7 +816,7 @@ export default function SpokenLanguageTopicsPage() {
         </div>
 
         {/* ── CTA back to guide ───────────────────────────────── */}
-        <div className="mt-12 rounded-lg bg-gradient-to-r from-[#1A5276] to-[#2E86C1] p-8 text-center text-white shadow-lg">
+        <div className="mt-12 rounded-lg bg-gradient-to-r from-primary to-[primary] p-8 text-center text-white shadow-lg">
           <h2 className="text-2xl font-bold">Ready to Prepare?</h2>
           <p className="mx-auto mt-2 max-w-lg text-white/90">
             Head back to our full Spoken Language guide for detailed advice on

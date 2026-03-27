@@ -1186,7 +1186,7 @@ function TechniqueCard({ t }: { t: Technique }) {
               {t.relevantQuestions.map((q) => (
                 <span
                   key={q}
-                  className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-muted-foreground"
+                  className="rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground"
                 >
                   {q}
                 </span>
@@ -1278,7 +1278,7 @@ export default function LanguageDevicesPage() {
               setActiveLetter(null);
             }}
             placeholder="Search techniques (e.g. metaphor, irony, sound)..."
-            className="w-full rounded-xl border border-gray-300 bg-card py-3 pl-11 pr-4 text-sm text-foreground shadow-md placeholder:text-muted-foreground focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+            className="w-full rounded-xl border border-border bg-card py-3 pl-11 pr-4 text-sm text-foreground shadow-md placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30"
           />
         </div>
 
@@ -1289,7 +1289,7 @@ export default function LanguageDevicesPage() {
             className={`rounded-md px-2.5 py-1 text-xs font-bold transition ${
               activeLetter === null
                 ? "bg-primary text-white"
-                : "bg-gray-100 text-muted-foreground hover:bg-gray-200"
+                : "bg-muted text-muted-foreground hover:bg-muted/80"
             }`}
           >
             All
@@ -1308,8 +1308,8 @@ export default function LanguageDevicesPage() {
                   activeLetter === letter
                     ? "bg-primary text-white"
                     : available
-                    ? "bg-gray-100 text-muted-foreground hover:bg-gray-200"
-                    : "bg-muted text-gray-300 cursor-not-allowed"
+                    ? "bg-muted text-muted-foreground hover:bg-muted/80"
+                    : "bg-muted/50 text-muted-foreground/50 cursor-not-allowed"
                 }`}
               >
                 {letter}
@@ -1360,7 +1360,7 @@ export default function LanguageDevicesPage() {
           {filtered.length > 0 ? (
             filtered.map((t) => <TechniqueCard key={t.name} t={t} />)
           ) : (
-            <div className="rounded-xl border border-dashed border-gray-300 py-16 text-center">
+            <div className="rounded-xl border border-dashed border-border py-16 text-center">
               <p className="text-muted-foreground">
                 No techniques match your search. Try a different term or clear
                 your filters.

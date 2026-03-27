@@ -120,7 +120,7 @@ export default function GradeBoundariesPage() {
                   <th className="py-2 pr-4">Approx. %</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100">
+              <tbody className="divide-y divide-border">
                 <tr className="bg-success-50">
                   <td className="py-2 pr-4 font-bold text-success-700">9</td>
                   <td className="py-2 pr-4">119</td>
@@ -293,7 +293,7 @@ export default function GradeBoundariesPage() {
               </div>
             </div>
 
-            <div className="rounded-lg border-l-4 border-gray-300 bg-muted/50 p-5">
+            <div className="rounded-lg border-l-4 border-border bg-muted/50 p-5">
               <h3 className="text-lg font-bold text-muted-foreground">Grades 1-3 &mdash; Below standard pass</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <p><strong>Reading:</strong></p>
@@ -418,7 +418,7 @@ export default function GradeBoundariesPage() {
                   <th className="py-2 pr-4">Assessment objective</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100">
+              <tbody className="divide-y divide-border">
                 <tr>
                   <td className="py-2 pr-4 font-semibold">Q1</td>
                   <td className="py-2 pr-4">4 marks (list 4 things)</td>

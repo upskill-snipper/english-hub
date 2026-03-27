@@ -180,7 +180,7 @@ export default function WritingSkillsPage() {
                   <th className="py-2 pr-4">Example</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100">
+              <tbody className="divide-y divide-border">
                 <tr><td className="py-2 pr-4 font-semibold">Adverb</td><td className="py-2 pr-4 italic">&ldquo;Cautiously, she pushed open the door.&rdquo;</td></tr>
                 <tr><td className="py-2 pr-4 font-semibold">-ing verb (present participle)</td><td className="py-2 pr-4 italic">&ldquo;Trembling, he reached for the handle.&rdquo;</td></tr>
                 <tr><td className="py-2 pr-4 font-semibold">-ed verb (past participle)</td><td className="py-2 pr-4 italic">&ldquo;Abandoned by her friends, she walked home alone.&rdquo;</td></tr>
@@ -304,7 +304,7 @@ export default function WritingSkillsPage() {
                   <th className="py-2 pr-4">Why it works</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100">
+              <tbody className="divide-y divide-border">
                 <tr><td className="py-2 pr-4">walked</td><td className="py-2 pr-4">trudged, ambled, staggered, strode</td><td className="py-2 pr-4">Each verb tells the reader HOW the person walked</td></tr>
                 <tr><td className="py-2 pr-4">said</td><td className="py-2 pr-4">murmured, snapped, pleaded, declared</td><td className="py-2 pr-4">Reveals emotion and tone without needing adverbs</td></tr>
                 <tr><td className="py-2 pr-4">looked at</td><td className="py-2 pr-4">scrutinised, surveyed, glanced at, fixated on</td><td className="py-2 pr-4">Conveys the intensity and purpose of the gaze</td></tr>
@@ -553,7 +553,7 @@ export default function WritingSkillsPage() {
                 "I have avoided cliches ('it was a dark and stormy night', 'blood-red sky').",
               ].map((item, i) => (
                 <li key={i} className="flex gap-3">
-                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border border-gray-300 text-xs text-muted-foreground">
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border border-border text-xs text-muted-foreground">
                     {i + 1}
                   </span>
                   <span className="text-sm">{item}</span>
@@ -574,7 +574,7 @@ export default function WritingSkillsPage() {
                 "I have proofread my work for any errors.",
               ].map((item, i) => (
                 <li key={i} className="flex gap-3">
-                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border border-gray-300 text-xs text-muted-foreground">
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border border-border text-xs text-muted-foreground">
                     {i + 1}
                   </span>
                   <span className="text-sm">{item}</span>
@@ -606,7 +606,7 @@ export default function WritingSkillsPage() {
                 "I have maintained a consistent narrative perspective (first or third person) and have not accidentally switched.",
               ].map((item, i) => (
                 <li key={i} className="flex gap-3">
-                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border border-gray-300 text-xs text-muted-foreground">
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border border-border text-xs text-muted-foreground">
                     {i + 1}
                   </span>
                   <span className="text-sm">{item}</span>

@@ -69,7 +69,7 @@ export default function Paper2Page() {
                   <th className="py-3 font-semibold text-foreground">Suggested Time</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100 text-muted-foreground">
+              <tbody className="divide-y divide-border text-muted-foreground">
                 <tr>
                   <td className="py-3 pr-4 font-medium">Section 1</td>
                   <td className="py-3 pr-4">Directed Writing &mdash; write in a specified format using ideas from a passage and your own ideas</td>
@@ -537,7 +537,7 @@ export default function Paper2Page() {
             {/* Band 3 */}
             <div className="rounded-lg border border-border bg-card p-5">
               <div className="flex items-center gap-3">
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-400 text-sm font-bold text-white">3</span>
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-muted text-sm font-bold text-foreground">3</span>
                 <div>
                   <p className="font-semibold text-foreground">Adequate (15&ndash;21 marks)</p>
                   <p className="text-xs text-muted-foreground">C / Grade 4 standard</p>
@@ -566,7 +566,7 @@ export default function Paper2Page() {
             {/* Band 2 */}
             <div className="rounded-lg border border-border bg-card p-5">
               <div className="flex items-center gap-3">
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-300 text-sm font-bold text-white">2</span>
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-muted text-sm font-bold text-foreground">2</span>
                 <div>
                   <p className="font-semibold text-foreground">Limited (8&ndash;14 marks)</p>
                   <p className="text-xs text-muted-foreground">D&ndash;E / Grade 2&ndash;3 standard</p>
@@ -584,7 +584,7 @@ export default function Paper2Page() {
             {/* Band 1 */}
             <div className="rounded-lg border border-border bg-card p-5">
               <div className="flex items-center gap-3">
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gray-200 text-sm font-bold text-muted-foreground">1</span>
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-muted text-sm font-bold text-foreground">1</span>
                 <div>
                   <p className="font-semibold text-foreground">Poor (1&ndash;7 marks)</p>
                   <p className="text-xs text-muted-foreground">F&ndash;G / Grade 1 standard</p>

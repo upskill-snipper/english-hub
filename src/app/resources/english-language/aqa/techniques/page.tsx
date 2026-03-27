@@ -430,7 +430,7 @@ export default function TechniquesPage() {
               className={`rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
                 filter === cat
                   ? "bg-primary text-white"
-                  : "bg-gray-100 text-muted-foreground hover:bg-gray-200"
+                  : "bg-muted text-muted-foreground hover:bg-muted/80"
               }`}
             >
               {cat}

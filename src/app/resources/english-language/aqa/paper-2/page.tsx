@@ -117,7 +117,7 @@ export default function Paper2Page() {
                   <th className="py-2 pr-4">Time</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100">
+              <tbody className="divide-y divide-border">
                 <tr><td className="py-2 pr-4">Read both texts carefully</td><td className="py-2 pr-4">-</td><td className="py-2 pr-4">10-15 mins</td></tr>
                 <tr><td className="py-2 pr-4">Question 1 (true/false)</td><td className="py-2 pr-4">4</td><td className="py-2 pr-4">5 mins</td></tr>
                 <tr><td className="py-2 pr-4">Question 2 (summary/synthesis)</td><td className="py-2 pr-4">8</td><td className="py-2 pr-4">8-10 mins</td></tr>
@@ -180,7 +180,7 @@ export default function Paper2Page() {
                   <th className="py-2 pr-4">Descriptor</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100">
+              <tbody className="divide-y divide-border">
                 <tr><td className="py-2 pr-4 font-semibold">Level 4</td><td className="py-2 pr-4">7-8</td><td className="py-2 pr-4">Perceptive synthesis and interpretation of both sources. Judicious references.</td></tr>
                 <tr><td className="py-2 pr-4 font-semibold">Level 3</td><td className="py-2 pr-4">5-6</td><td className="py-2 pr-4">Clear synthesis and interpretation. Relevant references from both sources.</td></tr>
                 <tr><td className="py-2 pr-4 font-semibold">Level 2</td><td className="py-2 pr-4">3-4</td><td className="py-2 pr-4">Some ability to link ideas between sources. Some appropriate references.</td></tr>
@@ -255,7 +255,7 @@ export default function Paper2Page() {
                   <th className="py-2 pr-4">Descriptor</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100">
+              <tbody className="divide-y divide-border">
                 <tr><td className="py-2 pr-4 font-semibold">Level 4</td><td className="py-2 pr-4">10-12</td><td className="py-2 pr-4">Perceptive, detailed analysis. Analyses effects of writer&rsquo;s language choices. Judicious examples. Sophisticated, accurate subject terminology.</td></tr>
                 <tr><td className="py-2 pr-4 font-semibold">Level 3</td><td className="py-2 pr-4">7-9</td><td className="py-2 pr-4">Clear, relevant explanation. Clearly explains effects. Relevant examples. Accurate subject terminology.</td></tr>
                 <tr><td className="py-2 pr-4 font-semibold">Level 2</td><td className="py-2 pr-4">4-6</td><td className="py-2 pr-4">Some understanding. Attempts to comment on effect. Some appropriate examples. Some subject terminology.</td></tr>
@@ -319,7 +319,7 @@ export default function Paper2Page() {
                   <th className="py-2 pr-4">Descriptor</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100">
+              <tbody className="divide-y divide-border">
                 <tr><td className="py-2 pr-4 font-semibold">Level 4</td><td className="py-2 pr-4">13-16</td><td className="py-2 pr-4">Perceptive understanding of both writers&rsquo; viewpoints. Detailed, perceptive analysis of how methods are used. Perceptive comparison. Judicious references from both texts.</td></tr>
                 <tr><td className="py-2 pr-4 font-semibold">Level 3</td><td className="py-2 pr-4">9-12</td><td className="py-2 pr-4">Clear understanding of both viewpoints. Clear, relevant analysis of methods. Clear comparison. Relevant references from both texts.</td></tr>
                 <tr><td className="py-2 pr-4 font-semibold">Level 2</td><td className="py-2 pr-4">5-8</td><td className="py-2 pr-4">Some understanding of viewpoints. Some comment on methods. Some comparison. Some references.</td></tr>
@@ -506,7 +506,7 @@ export default function Paper2Page() {
                   <th className="py-2 pr-4">Paper 2</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100">
+              <tbody className="divide-y divide-border">
                 <tr><td className="py-2 pr-4 font-semibold">Text type</td><td className="py-2 pr-4">Fiction (literary prose)</td><td className="py-2 pr-4">Non-fiction (articles, letters, speeches, essays, journals)</td></tr>
                 <tr><td className="py-2 pr-4 font-semibold">Number of texts</td><td className="py-2 pr-4">One</td><td className="py-2 pr-4">Two (linked by theme)</td></tr>
                 <tr><td className="py-2 pr-4 font-semibold">Period</td><td className="py-2 pr-4">Post-1900</td><td className="py-2 pr-4">One 19th century + one 20th/21st century</td></tr>

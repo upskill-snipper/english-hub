@@ -1524,7 +1524,7 @@ const CATEGORY_COLOURS: Record<string, string> = {
   "Dramatic Structure": "bg-warn-50 text-warn-700 border-warn-200",
   "Opening Techniques": "bg-success-100 text-success-800 border-success-300",
   "Ending Techniques": "bg-primary-50 text-primary-700 border-primary-200",
-  "Additional Structural Techniques": "bg-gray-100 text-muted-foreground border-gray-300",
+  "Additional Structural Techniques": "bg-muted text-muted-foreground border-border",
 };
 
 /* ─── Icons ──────────────────────────────────────────────────── */
@@ -1571,7 +1571,7 @@ function ChevronDown({ open }: { open: boolean }) {
 
 function TechniqueCard({ t }: { t: Technique }) {
   const [open, setOpen] = useState(false);
-  const catColour = CATEGORY_COLOURS[t.category] ?? "bg-gray-100 text-muted-foreground border-gray-300";
+  const catColour = CATEGORY_COLOURS[t.category] ?? "bg-muted text-muted-foreground border-border";
 
   return (
     <div className="rounded-xl border border-border bg-card shadow-md transition hover:shadow-md">
@@ -1659,7 +1659,7 @@ function TechniqueCard({ t }: { t: Technique }) {
               {t.relevantQuestions.map((q) => (
                 <span
                   key={q}
-                  className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-muted-foreground"
+                  className="rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground"
                 >
                   {q}
                 </span>
@@ -1751,7 +1751,7 @@ export default function StructuralDevicesPage() {
               setActiveLetter(null);
             }}
             placeholder="Search techniques (e.g. enjambment, cliffhanger, opening)..."
-            className="w-full rounded-xl border border-gray-300 bg-card py-3 pl-11 pr-4 text-sm text-foreground shadow-md placeholder:text-muted-foreground focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30"
+            className="w-full rounded-xl border border-border bg-card py-3 pl-11 pr-4 text-sm text-foreground shadow-md placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30"
           />
         </div>
 
@@ -1762,7 +1762,7 @@ export default function StructuralDevicesPage() {
             className={`rounded-md px-2.5 py-1 text-xs font-bold transition ${
               activeLetter === null
                 ? "bg-primary text-white"
-                : "bg-gray-100 text-muted-foreground hover:bg-gray-200"
+                : "bg-muted text-muted-foreground hover:bg-muted/80"
             }`}
           >
             All
@@ -1781,8 +1781,8 @@ export default function StructuralDevicesPage() {
                   activeLetter === letter
                     ? "bg-primary text-white"
                     : available
-                    ? "bg-gray-100 text-muted-foreground hover:bg-gray-200"
-                    : "bg-muted text-gray-300 cursor-not-allowed"
+                    ? "bg-muted text-muted-foreground hover:bg-muted/80"
+                    : "bg-muted/50 text-muted-foreground/50 cursor-not-allowed"
                 }`}
               >
                 {letter}
@@ -1833,7 +1833,7 @@ export default function StructuralDevicesPage() {
           {filtered.length > 0 ? (
             filtered.map((t) => <TechniqueCard key={t.name} t={t} />)
           ) : (
-            <div className="rounded-xl border border-dashed border-gray-300 py-16 text-center">
+            <div className="rounded-xl border border-dashed border-border py-16 text-center">
               <p className="text-muted-foreground">
                 No techniques match your search. Try a different term or clear
                 your filters.

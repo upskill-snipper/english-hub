@@ -43,7 +43,7 @@ function Section({
 
 function QuoteCard({ quote, speaker, analysis }: { quote: string; speaker?: string; analysis: string }) {
   return (
-    <div className="rounded-lg border-l-4 border-[#2E86C1] bg-primary/5 p-4 mb-3">
+    <div className="rounded-lg border-l-4 border-primary bg-primary/5 p-4 mb-3">
       <p className="text-sm font-semibold text-foreground italic">&ldquo;{quote}&rdquo;</p>
       {speaker && <p className="mt-1 text-xs font-medium text-primary">&mdash; {speaker}</p>}
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
@@ -62,7 +62,7 @@ function CharacterCard({ name, description }: { name: string; description: strin
 
 function ThemeCard({ title, description }: { title: string; description: string }) {
   return (
-    <div className="rounded-lg border border-[#2E86C1]/20 bg-primary/5 p-4 mb-3">
+    <div className="rounded-lg border border-primary/20 bg-primary/5 p-4 mb-3">
       <h4 className="font-bold text-foreground">{title}</h4>
       <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{description}</p>
     </div>
@@ -513,7 +513,7 @@ export default function SignOfFourPage() {
       {/* ─── Context ─────────────────────────────────────────── */}
       <Section title="Historical and Social Context" icon="🏛️">
         <div className="space-y-4" id="context">
-          <div className="rounded-lg bg-[#1A5276]/5 p-4">
+          <div className="rounded-lg bg-primary/5 p-4">
             <h4 className="font-bold text-foreground">Victorian Detective Fiction</h4>
             <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               <em>The Sign of the Four</em> was published in 1890, during the golden age of detective fiction.
@@ -524,7 +524,7 @@ export default function SignOfFourPage() {
               the fictional detective &mdash; brilliant, eccentric, and operating outside official institutions.
             </p>
           </div>
-          <div className="rounded-lg bg-[#1A5276]/5 p-4">
+          <div className="rounded-lg bg-primary/5 p-4">
             <h4 className="font-bold text-foreground">The British Empire and India</h4>
             <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               By 1890, the British Empire controlled approximately a quarter of the world&apos;s land surface.
@@ -536,7 +536,7 @@ export default function SignOfFourPage() {
               and betrayal to everyone who touches it.
             </p>
           </div>
-          <div className="rounded-lg bg-[#1A5276]/5 p-4">
+          <div className="rounded-lg bg-primary/5 p-4">
             <h4 className="font-bold text-foreground">The Agra Treasure and Colonial Wealth</h4>
             <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               The Agra treasure represents the vast wealth extracted from India by the British. Agra is a
@@ -547,7 +547,7 @@ export default function SignOfFourPage() {
               no one and destroys many.
             </p>
           </div>
-          <div className="rounded-lg bg-[#1A5276]/5 p-4">
+          <div className="rounded-lg bg-primary/5 p-4">
             <h4 className="font-bold text-foreground">Opium and Drug Use</h4>
             <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               Holmes&apos;s cocaine use reflects a real Victorian phenomenon. Cocaine and opium were legal
@@ -558,7 +558,7 @@ export default function SignOfFourPage() {
               and the novel links drug use, colonial wealth, and moral corruption.
             </p>
           </div>
-          <div className="rounded-lg bg-[#1A5276]/5 p-4">
+          <div className="rounded-lg bg-primary/5 p-4">
             <h4 className="font-bold text-foreground">The Victorian Class System</h4>
             <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               Class shapes every relationship in the novel. Watson cannot propose to Mary while she stands to
@@ -569,7 +569,7 @@ export default function SignOfFourPage() {
               restores social order. Conan Doyle both reflects and quietly critiques this system.
             </p>
           </div>
-          <div className="rounded-lg bg-[#1A5276]/5 p-4">
+          <div className="rounded-lg bg-primary/5 p-4">
             <h4 className="font-bold text-foreground">Race and Victorian Attitudes</h4>
             <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               The novel&apos;s treatment of race, particularly through Tonga and the Sikh characters, reflects
@@ -581,7 +581,7 @@ export default function SignOfFourPage() {
               their time and critiqued in any modern analysis.
             </p>
           </div>
-          <div className="rounded-lg bg-[#1A5276]/5 p-4">
+          <div className="rounded-lg bg-primary/5 p-4">
             <h4 className="font-bold text-foreground">Science and Rationalism</h4>
             <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
               The late Victorian period saw enormous faith in scientific progress. Darwin&apos;s theory of
@@ -598,7 +598,7 @@ export default function SignOfFourPage() {
       {/* ─── Essay Planning ──────────────────────────────────── */}
       <Section title="Essay Planning" icon="✍️">
         <div className="space-y-6" id="essay-planning">
-          <div className="rounded-lg border border-[#2E86C1]/20 bg-primary/5 p-5">
+          <div className="rounded-lg border border-primary/20 bg-primary/5 p-5">
             <h4 className="font-bold text-foreground">Sample Question 1: How does Conan Doyle present the theme of justice?</h4>
             <div className="mt-3 space-y-3 text-sm text-muted-foreground">
               <div>
@@ -620,7 +620,7 @@ export default function SignOfFourPage() {
             </div>
           </div>
 
-          <div className="rounded-lg border border-[#2E86C1]/20 bg-primary/5 p-5">
+          <div className="rounded-lg border border-primary/20 bg-primary/5 p-5">
             <h4 className="font-bold text-foreground">Sample Question 2: How does Conan Doyle present the relationship between Holmes and Watson?</h4>
             <div className="mt-3 space-y-3 text-sm text-muted-foreground">
               <div>
@@ -642,7 +642,7 @@ export default function SignOfFourPage() {
             </div>
           </div>
 
-          <div className="rounded-lg border border-[#2E86C1]/20 bg-primary/5 p-5">
+          <div className="rounded-lg border border-primary/20 bg-primary/5 p-5">
             <h4 className="font-bold text-foreground">Sample Question 3: How does Conan Doyle explore the theme of empire and colonialism?</h4>
             <div className="mt-3 space-y-3 text-sm text-muted-foreground">
               <div>
@@ -667,7 +667,7 @@ export default function SignOfFourPage() {
       </Section>
 
       {/* ─── Exam Tips ───────────────────────────────────────── */}
-      <div className="mt-6 rounded-xl border border-[#2E86C1]/20 bg-primary/5 p-6">
+      <div className="mt-6 rounded-xl border border-primary/20 bg-primary/5 p-6">
         <h3 className="text-lg font-bold text-foreground">Exam Tips for The Sign of the Four</h3>
         <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
           <li className="flex items-start gap-2">

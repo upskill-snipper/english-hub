@@ -240,7 +240,7 @@ export default function InspectorCallsPage() {
     <>
 
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#2E86C1] px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-3xl text-center">
           <Link
             href="/resources/english-literature/edexcel"
@@ -294,7 +294,7 @@ export default function InspectorCallsPage() {
                 className="rounded-xl border border-border p-6 shadow-md"
               >
                 <div className="flex items-center gap-3">
-                  <span className="rounded-full bg-[#1A5276] px-3 py-1 text-xs font-bold text-white">
+                  <span className="rounded-full bg-primary px-3 py-1 text-xs font-bold text-white">
                     {act.act}
                   </span>
                   <h3 className="text-lg font-bold text-foreground">
@@ -348,7 +348,7 @@ export default function InspectorCallsPage() {
             {THEMES.map((t) => (
               <div
                 key={t.theme}
-                className="rounded-xl border-l-4 border-[#1A5276] bg-muted p-6"
+                className="rounded-xl border-l-4 border-primary bg-muted p-6"
               >
                 <h3 className="text-lg font-bold text-foreground">
                   {t.theme}
@@ -432,7 +432,7 @@ export default function InspectorCallsPage() {
                 extract — you must recall your own evidence from the play.
               </p>
               <div className="mt-4 space-y-3">
-                <div className="rounded-lg border-2 border-dashed border-[#2E86C1] bg-card p-4">
+                <div className="rounded-lg border-2 border-dashed border-primary bg-card p-4">
                   <p className="text-xs font-semibold uppercase tracking-wide text-primary">
                     Example Question 1
                   </p>
@@ -441,7 +441,7 @@ export default function InspectorCallsPage() {
                     in <em>An Inspector Calls</em>?
                   </p>
                 </div>
-                <div className="rounded-lg border-2 border-dashed border-[#2E86C1] bg-card p-4">
+                <div className="rounded-lg border-2 border-dashed border-primary bg-card p-4">
                   <p className="text-xs font-semibold uppercase tracking-wide text-primary">
                     Example Question 2
                   </p>
@@ -459,31 +459,31 @@ export default function InspectorCallsPage() {
               </h3>
               <ol className="mt-4 space-y-3 text-sm text-muted-foreground">
                 <li className="flex gap-3">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">1</span>
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">1</span>
                   <span>
                     <strong>Introduction</strong> — state Priestley&apos;s overall purpose and how the theme/character serves his message. Mention the 1912 setting and 1945 context.
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">2</span>
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">2</span>
                   <span>
                     <strong>4-5 analytical paragraphs</strong> tracking across the play. Use &quot;Priestley presents/suggests/conveys...&quot; to show awareness of the writer&apos;s craft.
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">3</span>
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">3</span>
                   <span>
                     <strong>Embed quotations</strong> — short quotes woven into sentences work best. Analyse the language within your quotes.
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">4</span>
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">4</span>
                   <span>
                     <strong>Link to context</strong> — connect to Priestley&apos;s socialism, the 1945 audience, Edwardian class system, or the dual time setting. Integrate context into analysis rather than bolting it on.
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">5</span>
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">5</span>
                   <span>
                     <strong>Discuss dramatic techniques</strong> — stage directions, dramatic irony, the unities (time, place, action), the cyclic structure, lighting changes, the telephone as a dramatic device.
                   </span>
@@ -491,7 +491,7 @@ export default function InspectorCallsPage() {
               </ol>
             </div>
 
-            <div className="rounded-xl border-2 border-[#2E86C1] bg-blue-50 p-6">
+            <div className="rounded-xl border-2 border-primary bg-blue-50 p-6">
               <h3 className="text-lg font-bold text-foreground">
                 Top Tips for Top Marks
               </h3>

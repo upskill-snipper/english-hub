@@ -150,7 +150,7 @@ export default function EdexcelEnglishLanguagePage() {
                   <th className="px-4 py-3 font-semibold">% of GCSE</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100">
+              <tbody className="divide-y divide-border">
                 <tr className="hover:bg-muted">
                   <td className="px-4 py-3 font-medium text-foreground">Paper 1 &mdash; Fiction &amp; Imaginative Writing</td>
                   <td className="px-4 py-3 text-muted-foreground">1 hr 45 min</td>

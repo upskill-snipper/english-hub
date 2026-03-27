@@ -85,8 +85,8 @@ export default function ReportIssuePage() {
                     onClick={() => setIssueType(type.value)}
                     className={`text-left p-3 rounded-lg border transition-all ${
                       issueType === type.value
-                        ? "border-[#2E86C1] bg-primary/5 ring-1 ring-primary/20"
-                        : "border-border hover:border-slate-300"
+                        ? "border-primary bg-primary/5 ring-1 ring-primary/20"
+                        : "border-border hover:border-border"
                     }`}
                   >
                     <p className="font-medium text-sm text-foreground">{type.label}</p>
@@ -108,7 +108,7 @@ export default function ReportIssuePage() {
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 placeholder="When I click on... I expected... but instead..."
-                className="w-full px-4 py-3 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-[#2E86C1] resize-y"
+                className="w-full px-4 py-3 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary resize-y"
                 required
               />
             </div>
@@ -124,7 +124,7 @@ export default function ReportIssuePage() {
                 value={pageUrl}
                 onChange={(e) => setPageUrl(e.target.value)}
                 placeholder="https://theenglishhub.app/resources/..."
-                className="w-full px-4 py-2.5 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-[#2E86C1]"
+                className="w-full px-4 py-2.5 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
               />
             </div>
 
@@ -137,7 +137,7 @@ export default function ReportIssuePage() {
                 id="browser"
                 value={browser}
                 onChange={(e) => setBrowser(e.target.value)}
-                className="w-full px-4 py-2.5 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-[#2E86C1]"
+                className="w-full px-4 py-2.5 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
               >
                 <option value="">Select browser</option>
                 {BROWSERS.map((b) => (
@@ -157,7 +157,7 @@ export default function ReportIssuePage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@example.com"
-                className="w-full px-4 py-2.5 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-[#2E86C1]"
+                className="w-full px-4 py-2.5 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
               />
             </div>
 

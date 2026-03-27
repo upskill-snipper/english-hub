@@ -616,7 +616,7 @@ export default function RevisionNotesHub() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search texts, authors, or themes..."
-            className="w-full rounded-xl border border-border bg-card py-3 pl-11 pr-4 text-sm text-foreground shadow-md placeholder:text-muted-foreground focus:border-[#2E86C1] focus:outline-none focus:ring-2 focus:ring-primary/20"
+            className="w-full rounded-xl border border-border bg-card py-3 pl-11 pr-4 text-sm text-foreground shadow-md placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
           />
         </div>
 
@@ -629,7 +629,7 @@ export default function RevisionNotesHub() {
             onClick={() => setActiveBoard(null)}
             className={`rounded-full px-3.5 py-1.5 text-xs font-semibold transition-colors ${
               activeBoard === null
-                ? "bg-[#1A5276] text-white"
+                ? "bg-primary text-white"
                 : "bg-gray-100 text-muted-foreground hover:bg-gray-200"
             }`}
           >
@@ -680,7 +680,7 @@ export default function RevisionNotesHub() {
               setSearch("");
               setActiveBoard(null);
             }}
-            className="mt-4 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white transition hover:bg-[#1A5276]"
+            className="mt-4 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white transition hover:bg-primary"
           >
             Clear filters
           </button>
@@ -706,7 +706,7 @@ export default function RevisionNotesHub() {
                       ? `/resources/poetry/${text.slug}`
                       : `/resources/revision-notes/${text.slug}`
                   }
-                  className="group relative flex flex-col overflow-hidden rounded-xl border border-border bg-card shadow-md transition hover:shadow-lg hover:border-[#2E86C1]/40"
+                  className="group relative flex flex-col overflow-hidden rounded-xl border border-border bg-card shadow-md transition hover:shadow-lg hover:border-primary/40"
                 >
                   {/* Gradient header */}
                   <div
@@ -794,7 +794,7 @@ export default function RevisionNotesHub() {
       ))}
 
       {/* Study tip box */}
-      <div className="mt-4 rounded-xl border border-[#2E86C1]/20 bg-primary/5 p-6">
+      <div className="mt-4 rounded-xl border border-primary/20 bg-primary/5 p-6">
         <h3 className="text-lg font-bold text-foreground">
           How to use these revision notes
         </h3>

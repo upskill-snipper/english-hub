@@ -18,7 +18,7 @@ export default function UnseenAnalysisPage() {
     <>
 
       {/* ── Hero ────────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#2E86C1] px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
             Cambridge IGCSE English Literature
@@ -215,7 +215,7 @@ export default function UnseenAnalysisPage() {
             </p>
           </div>
 
-          <div className="mt-4 rounded-lg border-l-4 border-[#2E86C1] bg-card p-5 shadow-md">
+          <div className="mt-4 rounded-lg border-l-4 border-primary bg-card p-5 shadow-md">
             <p className="text-xs font-semibold uppercase tracking-wide text-foreground">
               Model paragraph
             </p>
@@ -234,7 +234,7 @@ export default function UnseenAnalysisPage() {
             </p>
           </div>
 
-          <div className="mt-4 rounded-lg border border-[#2E86C1]/20 bg-primary/5 p-5">
+          <div className="mt-4 rounded-lg border border-primary/20 bg-primary/5 p-5">
             <p className="text-xs font-semibold text-foreground">Why this works:</p>
             <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
               <li>&bull; Opens with a clear point about the writer&rsquo;s method (personification)</li>
@@ -269,7 +269,7 @@ export default function UnseenAnalysisPage() {
             </p>
           </div>
 
-          <div className="mt-4 rounded-lg border-l-4 border-[#2E86C1] bg-card p-5 shadow-md">
+          <div className="mt-4 rounded-lg border-l-4 border-primary bg-card p-5 shadow-md">
             <p className="text-xs font-semibold uppercase tracking-wide text-foreground">
               Model paragraph
             </p>
@@ -290,7 +290,7 @@ export default function UnseenAnalysisPage() {
             </p>
           </div>
 
-          <div className="mt-4 rounded-lg border border-[#2E86C1]/20 bg-primary/5 p-5">
+          <div className="mt-4 rounded-lg border border-primary/20 bg-primary/5 p-5">
             <p className="text-xs font-semibold text-foreground">Why this works:</p>
             <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
               <li>&bull; Identifies the technique (juxtaposition, sentence structure) rather than just describing the scene</li>

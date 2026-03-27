@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 function Section({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
   return (
     <section id={id} className="scroll-mt-24">
-      <h2 className="mb-6 text-2xl font-bold text-foreground border-b-2 border-[#2E86C1]/20 pb-3">
+      <h2 className="mb-6 text-2xl font-bold text-foreground border-b-2 border-primary/20 pb-3">
         {title}
       </h2>
       {children}
@@ -61,7 +61,7 @@ function CorrectIncorrect({ correct, incorrect }: { correct: string; incorrect: 
 
 function TipBox({ children }: { children: React.ReactNode }) {
   return (
-    <div className="mt-4 rounded-lg bg-primary/5 border border-[#2E86C1]/20 px-4 py-3">
+    <div className="mt-4 rounded-lg bg-primary/5 border border-primary/20 px-4 py-3">
       <p className="text-sm text-foreground">
         <span className="font-semibold">Top Tip:</span> {children}
       </p>
@@ -76,7 +76,7 @@ export default function GrammarPunctuationPage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#1A5276]/80 px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary/80 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary/80">
             Writing Skills Masterclass
@@ -843,23 +843,23 @@ export default function GrammarPunctuationPage() {
                 <RuleCard title="How to Move from Level 3 to Level 4">
                   <div className="mt-2 space-y-3">
                     <div className="flex items-start gap-3">
-                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">1</span>
+                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">1</span>
                       <p className="text-sm"><strong>Ambitious vocabulary:</strong> Do not just use interesting words -- use the <em>right</em> word precisely. &quot;The house loomed&quot; is better than &quot;the house was very big.&quot;</p>
                     </div>
                     <div className="flex items-start gap-3">
-                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">2</span>
+                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">2</span>
                       <p className="text-sm"><strong>Sentence variety for effect:</strong> Deliberately vary your sentence lengths and types. Follow a long complex sentence with a short simple one. Use minor sentences for impact.</p>
                     </div>
                     <div className="flex items-start gap-3">
-                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">3</span>
+                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">3</span>
                       <p className="text-sm"><strong>Punctuation range:</strong> Use semicolons, colons, dashes, and ellipses correctly. Even one well-placed semicolon shows the examiner you have control.</p>
                     </div>
                     <div className="flex items-start gap-3">
-                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">4</span>
+                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">4</span>
                       <p className="text-sm"><strong>Consistent accuracy:</strong> Proofread carefully. Eliminate basic errors (their/there, comma splices, tense shifts). One or two minor slips are forgivable; repeated errors are not.</p>
                     </div>
                     <div className="flex items-start gap-3">
-                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">5</span>
+                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">5</span>
                       <p className="text-sm"><strong>Paragraphing for effect:</strong> Use varied paragraph lengths. Include at least one short, one-line paragraph for emphasis. Begin paragraphs with strong topic sentences.</p>
                     </div>
                   </div>

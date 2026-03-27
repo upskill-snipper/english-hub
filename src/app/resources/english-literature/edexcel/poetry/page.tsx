@@ -524,7 +524,7 @@ export default function PoetryPage() {
     <>
 
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#2E86C1] px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-3xl text-center">
           <Link
             href="/resources/english-literature/edexcel"
@@ -668,31 +668,31 @@ export default function PoetryPage() {
               </h3>
               <ol className="mt-4 space-y-3 text-sm text-muted-foreground">
                 <li className="flex gap-3">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">1</span>
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">1</span>
                   <span>
                     <strong>Introduction</strong> — briefly state how both poems present the named theme. Identify a key similarity or difference.
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">2</span>
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">2</span>
                   <span>
                     <strong>Comparative paragraphs (3-4)</strong> — each paragraph should discuss both poems. Compare a specific technique or idea, using comparative connectives (&quot;Similarly,&quot; &quot;In contrast,&quot; &quot;Whereas,&quot; &quot;Both poets&quot;).
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">3</span>
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">3</span>
                   <span>
                     <strong>Analyse methods</strong> — don&apos;t just compare what the poems say, but how they say it. Compare language choices, structural techniques, form, tone, and imagery.
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">4</span>
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">4</span>
                   <span>
                     <strong>Include context where relevant</strong> — when and why was the poem written? How does the poet&apos;s background inform the poem? (AO3)
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">5</span>
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">5</span>
                   <span>
                     <strong>Brief conclusion</strong> — which poem is more effective? Or how do they complement each other?
                   </span>
@@ -700,7 +700,7 @@ export default function PoetryPage() {
               </ol>
             </div>
 
-            <div className="rounded-xl border-2 border-[#2E86C1] bg-blue-50 p-6">
+            <div className="rounded-xl border-2 border-primary bg-blue-50 p-6">
               <h3 className="text-lg font-bold text-foreground">
                 Useful Comparison Connectives
               </h3>

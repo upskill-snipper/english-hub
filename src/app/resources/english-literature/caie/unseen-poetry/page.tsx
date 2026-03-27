@@ -15,7 +15,7 @@ export default function UnseenPoetryPage() {
   return (
     <>
       {/* ── Hero ────────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#2E86C1] px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
             Cambridge IGCSE English Literature &mdash; Paper 4
@@ -327,7 +327,7 @@ export default function UnseenPoetryPage() {
               </CardContent>
             </Card>
 
-            <div className="rounded-lg border-l-4 border-[#2E86C1] bg-card p-5 shadow-md">
+            <div className="rounded-lg border-l-4 border-primary bg-card p-5 shadow-md">
               <p className="text-xs font-semibold uppercase tracking-wide text-foreground">
                 Examiner tip
               </p>
@@ -464,7 +464,7 @@ the harbour holds its breath. And waits. For no one.`}
           </div>
 
           {/* Model response */}
-          <div className="mt-4 rounded-lg border-l-4 border-[#2E86C1] bg-card p-5 shadow-md">
+          <div className="mt-4 rounded-lg border-l-4 border-primary bg-card p-5 shadow-md">
             <p className="text-xs font-semibold uppercase tracking-wide text-foreground">
               Model critical commentary
             </p>
@@ -549,7 +549,7 @@ the harbour holds its breath. And waits. For no one.`}
           </div>
 
           {/* Why this works */}
-          <div className="mt-4 rounded-lg border border-[#2E86C1]/20 bg-primary/5 p-5">
+          <div className="mt-4 rounded-lg border border-primary/20 bg-primary/5 p-5">
             <p className="text-xs font-semibold text-foreground">
               Why this response scores highly:
             </p>
@@ -710,7 +710,7 @@ the harbour holds its breath. And waits. For no one.`}
             </Card>
           </div>
 
-          <div className="mt-6 rounded-lg border-l-4 border-[#2E86C1] bg-card p-5 shadow-md">
+          <div className="mt-6 rounded-lg border-l-4 border-primary bg-card p-5 shadow-md">
             <p className="text-xs font-semibold uppercase tracking-wide text-foreground">
               The key difference between bands
             </p>

@@ -63,7 +63,7 @@ export default function OCRLitPaper1Page() {
                     <th className="py-3 font-semibold text-foreground">Time Guide</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-gray-100">
+                <tbody className="divide-y divide-border">
                   <tr>
                     <td className="py-3 pr-4 font-medium">A</td>
                     <td className="py-3 pr-4">Modern prose or drama text (post-1914)</td>

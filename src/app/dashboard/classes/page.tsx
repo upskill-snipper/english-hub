@@ -108,7 +108,7 @@ export default function ClassesPage() {
               ← Back to Dashboard
             </Link>
             <h1 className="text-3xl font-bold text-foreground">My Classes</h1>
-            <p className="text-slate-600 mt-1">
+            <p className="text-muted-foreground mt-1">
               Manage your classes and track student progress
             </p>
           </div>
@@ -123,7 +123,7 @@ export default function ClassesPage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Class List Sidebar */}
           <div className="lg:col-span-1 space-y-3">
-            <h2 className="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-3">
+            <h2 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-3">
               Your Classes ({MOCK_CLASSES.length})
             </h2>
             {MOCK_CLASSES.map((cls) => (
@@ -135,8 +135,8 @@ export default function ClassesPage() {
                 }}
                 className={`w-full text-left p-4 rounded-xl border transition-all ${
                   selectedClass === cls.id
-                    ? "bg-white border-[#2E86C1] shadow-md ring-1 ring-[#2E86C1]/20"
-                    : "bg-white border-border hover:border-[#2E86C1]/40 hover:shadow-sm"
+                    ? "bg-card border-primary shadow-md ring-1 ring-primary/20"
+                    : "bg-card border-border hover:border-primary/40 hover:shadow-sm"
                 }`}
               >
                 <div className="flex items-center justify-between mb-1">
@@ -145,10 +145,10 @@ export default function ClassesPage() {
                     {cls.examBoard}
                   </span>
                 </div>
-                <p className="text-sm text-slate-500">
+                <p className="text-sm text-muted-foreground">
                   {cls.students.length} students · Year {cls.yearGroup}
                 </p>
-                <div className="mt-2 flex items-center gap-3 text-xs text-slate-400">
+                <div className="mt-2 flex items-center gap-3 text-xs text-muted-foreground">
                   <span>{cls.subject}</span>
                   <span>·</span>
                   <span>
@@ -167,21 +167,21 @@ export default function ClassesPage() {
           {/* Class Detail */}
           <div className="lg:col-span-2">
             {activeClass ? (
-              <div className="bg-white rounded-xl border border-border shadow-sm">
+              <div className="bg-card rounded-xl border border-border shadow-sm">
                 {/* Class Header */}
-                <div className="p-6 border-b border-slate-100">
+                <div className="p-6 border-b border-border">
                   <div className="flex items-center justify-between">
                     <div>
                       <h2 className="text-xl font-bold text-foreground">
                         {activeClass.name}
                       </h2>
-                      <p className="text-sm text-slate-500 mt-1">
+                      <p className="text-sm text-muted-foreground mt-1">
                         {activeClass.subject} · {activeClass.examBoard} · Year{" "}
                         {activeClass.yearGroup}
                       </p>
                     </div>
                     <div className="flex gap-2">
-                      <button className="text-sm bg-slate-100 text-slate-600 px-3 py-1.5 rounded-lg hover:bg-slate-200 transition-colors">
+                      <button className="text-sm bg-muted text-muted-foreground px-3 py-1.5 rounded-lg hover:bg-muted transition-colors">
                         Edit Class
                       </button>
                       <button className="text-sm bg-primary/10 text-primary px-3 py-1.5 rounded-lg hover:bg-primary/20 transition-colors">
@@ -196,7 +196,7 @@ export default function ClassesPage() {
                       <p className="text-2xl font-bold text-foreground">
                         {activeClass.students.length}
                       </p>
-                      <p className="text-xs text-slate-500">Students</p>
+                      <p className="text-xs text-muted-foreground">Students</p>
                     </div>
                     <div className="bg-muted rounded-lg p-3 text-center">
                       <p className="text-2xl font-bold text-primary">
@@ -208,7 +208,7 @@ export default function ClassesPage() {
                         )}
                         %
                       </p>
-                      <p className="text-xs text-slate-500">Class Average</p>
+                      <p className="text-xs text-muted-foreground">Class Average</p>
                     </div>
                     <div className="bg-muted rounded-lg p-3 text-center">
                       <p className="text-2xl font-bold text-green-600">
@@ -217,19 +217,19 @@ export default function ClassesPage() {
                           0
                         )}
                       </p>
-                      <p className="text-xs text-slate-500">Total Essays</p>
+                      <p className="text-xs text-muted-foreground">Total Essays</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Search */}
-                <div className="p-4 border-b border-slate-100">
+                <div className="p-4 border-b border-border">
                   <input
                     type="text"
                     placeholder="Search students..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#2E86C1]/30 focus:border-[#2E86C1]"
+                    className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
                   />
                 </div>
 
@@ -237,7 +237,7 @@ export default function ClassesPage() {
                 <div className="overflow-x-auto">
                   <table className="w-full">
                     <thead>
-                      <tr className="text-left text-xs text-slate-500 uppercase tracking-wider">
+                      <tr className="text-left text-xs text-muted-foreground uppercase tracking-wider">
                         <th className="px-6 py-3 font-medium">Student</th>
                         <th className="px-4 py-3 font-medium">Avg Score</th>
                         <th className="px-4 py-3 font-medium">Essays</th>
@@ -255,7 +255,7 @@ export default function ClassesPage() {
                             <p className="font-medium text-foreground text-sm">
                               {student.name}
                             </p>
-                            <p className="text-xs text-slate-400">
+                            <p className="text-xs text-muted-foreground">
                               {student.email}
                             </p>
                           </td>
@@ -272,7 +272,7 @@ export default function ClassesPage() {
                               {student.averageScore}%
                             </span>
                           </td>
-                          <td className="px-4 py-3 text-sm text-slate-600">
+                          <td className="px-4 py-3 text-sm text-muted-foreground">
                             {student.essaysSubmitted}
                           </td>
                           <td className="px-4 py-3">
@@ -284,7 +284,7 @@ export default function ClassesPage() {
                               {student.projectedGrade}
                             </span>
                           </td>
-                          <td className="px-4 py-3 text-sm text-slate-400">
+                          <td className="px-4 py-3 text-sm text-muted-foreground">
                             {new Date(student.lastActive).toLocaleDateString(
                               "en-GB",
                               {
@@ -300,10 +300,10 @@ export default function ClassesPage() {
                 </div>
               </div>
             ) : (
-              <div className="bg-white rounded-xl border border-border p-12 text-center">
+              <div className="bg-card rounded-xl border border-border p-12 text-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-16 w-16 mx-auto text-slate-300 mb-4"
+                  className="h-16 w-16 mx-auto text-muted-foreground mb-4"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -318,7 +318,7 @@ export default function ClassesPage() {
                 <h3 className="text-lg font-semibold text-foreground mb-2">
                   Select a Class
                 </h3>
-                <p className="text-slate-500 text-sm">
+                <p className="text-muted-foreground text-sm">
                   Choose a class from the sidebar to view student progress and
                   manage your group.
                 </p>
@@ -330,36 +330,36 @@ export default function ClassesPage() {
         {/* Create Class Modal */}
         {showCreateModal && (
           <div className="fixed inset-0 bg-black/40 z-50 flex items-center justify-center p-4">
-            <div className="bg-white rounded-2xl shadow-xl max-w-md w-full p-6">
+            <div className="bg-card rounded-2xl shadow-xl max-w-md w-full p-6">
               <h3 className="text-xl font-bold text-foreground mb-4">
                 Create New Class
               </h3>
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-1">
+                  <label className="block text-sm font-medium text-foreground mb-1">
                     Class Name
                   </label>
                   <input
                     type="text"
                     placeholder="e.g. 10A English Literature"
-                    className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#2E86C1]/30"
+                    className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
                   />
                 </div>
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-1">
+                    <label className="block text-sm font-medium text-foreground mb-1">
                       Subject
                     </label>
-                    <select className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#2E86C1]/30">
+                    <select className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/30">
                       <option>English Literature</option>
                       <option>English Language</option>
                     </select>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-slate-700 mb-1">
+                    <label className="block text-sm font-medium text-foreground mb-1">
                       Exam Board
                     </label>
-                    <select className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#2E86C1]/30">
+                    <select className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/30">
                       <option>AQA</option>
                       <option>Edexcel</option>
                       <option>CAIE</option>
@@ -369,10 +369,10 @@ export default function ClassesPage() {
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-1">
+                  <label className="block text-sm font-medium text-foreground mb-1">
                     Year Group
                   </label>
-                  <select className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#2E86C1]/30">
+                  <select className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/30">
                     <option>Year 10</option>
                     <option>Year 11</option>
                     <option>Year 12</option>
@@ -383,7 +383,7 @@ export default function ClassesPage() {
               <div className="flex gap-3 mt-6">
                 <button
                   onClick={() => setShowCreateModal(false)}
-                  className="flex-1 px-4 py-2 border border-border rounded-lg text-sm text-slate-600 hover:bg-muted transition-colors"
+                  className="flex-1 px-4 py-2 border border-border rounded-lg text-sm text-muted-foreground hover:bg-muted transition-colors"
                 >
                   Cancel
                 </button>

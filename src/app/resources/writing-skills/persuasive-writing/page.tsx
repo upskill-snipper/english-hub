@@ -15,12 +15,12 @@ export const metadata: Metadata = {
 function Annotation({ children, note }: { children: React.ReactNode; note: string }) {
   return (
     <span className="group relative">
-      <span className="rounded bg-[#E67E22]/10 px-1 py-0.5 text-foreground border-b-2 border-dashed border-[#E67E22]/40">
+      <span className="rounded bg-accent/10 px-1 py-0.5 text-foreground border-b-2 border-dashed border-accent/40">
         {children}
       </span>
-      <span className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 w-56 -translate-x-1/2 rounded-lg bg-[#1A5276] px-3 py-2 text-xs leading-relaxed text-white opacity-0 shadow-lg transition-opacity group-hover:pointer-events-auto group-hover:opacity-100">
+      <span className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 w-56 -translate-x-1/2 rounded-lg bg-primary px-3 py-2 text-xs leading-relaxed text-white opacity-0 shadow-lg transition-opacity group-hover:pointer-events-auto group-hover:opacity-100">
         {note}
-        <span className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-[#1A5276]" />
+        <span className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-[primary]" />
       </span>
     </span>
   );
@@ -31,7 +31,7 @@ function Annotation({ children, note }: { children: React.ReactNode; note: strin
 function Section({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
   return (
     <section id={id} className="scroll-mt-24">
-      <h2 className="mb-6 text-2xl font-bold text-foreground border-b-2 border-[#E67E22]/20 pb-3">
+      <h2 className="mb-6 text-2xl font-bold text-foreground border-b-2 border-accent/20 pb-3">
         {title}
       </h2>
       {children}
@@ -49,7 +49,7 @@ function TechniqueCard({ name, definition, example, effect }: { name: string; de
       <div className="mt-3 rounded-lg bg-muted px-4 py-3">
         <p className="text-sm italic text-muted-foreground">{example}</p>
       </div>
-      <p className="mt-2 text-sm text-[#E67E22]">
+      <p className="mt-2 text-sm text-accent">
         <span className="font-semibold">Effect:</span> {effect}
       </p>
     </div>
@@ -63,9 +63,9 @@ export default function PersuasiveWritingPage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#1A5276]/80 px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary/80 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-[#E67E22]/80">
+          <p className="text-sm font-semibold uppercase tracking-widest text-accent/80">
             Writing Skills Masterclass
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -111,7 +111,7 @@ export default function PersuasiveWritingPage() {
                 { id: "model-speech", label: "Model: Speech" },
                 { id: "common-mistakes", label: "Common Mistakes" },
               ].map((item) => (
-                <a key={item.id} href={`#${item.id}`} className="block rounded-lg px-3 py-1.5 text-muted-foreground hover:bg-[#E67E22]/10 hover:text-foreground transition-colors">
+                <a key={item.id} href={`#${item.id}`} className="block rounded-lg px-3 py-1.5 text-muted-foreground hover:bg-accent/10 hover:text-foreground transition-colors">
                   {item.label}
                 </a>
               ))}
@@ -190,7 +190,7 @@ export default function PersuasiveWritingPage() {
                 ].map((item) => (
                   <div key={item.letter} className="rounded-xl border border-border bg-card shadow-md overflow-hidden">
                     <div className="flex items-stretch">
-                      <div className="flex w-16 shrink-0 items-center justify-center bg-[#E67E22] text-3xl font-black text-white">
+                      <div className="flex w-16 shrink-0 items-center justify-center bg-accent text-3xl font-black text-white">
                         {item.letter}
                       </div>
                       <div className="flex-1 p-5">
@@ -200,9 +200,9 @@ export default function PersuasiveWritingPage() {
                           <p className="text-sm italic text-muted-foreground">{item.example}</p>
                         </div>
                         <p className="mt-2 text-sm text-muted-foreground">
-                          <span className="font-semibold text-[#E67E22]">Effect:</span> {item.effect}
+                          <span className="font-semibold text-accent">Effect:</span> {item.effect}
                         </p>
-                        <div className="mt-3 rounded-lg border-l-4 border-[#2E86C1] bg-primary/5 px-4 py-2">
+                        <div className="mt-3 rounded-lg border-l-4 border-primary bg-primary/5 px-4 py-2">
                           <p className="text-sm text-muted-foreground">
                             <span className="font-semibold text-foreground">Top Tip:</span> {item.topTip}
                           </p>
@@ -224,20 +224,20 @@ export default function PersuasiveWritingPage() {
 
               <h3 className="mb-4 text-lg font-bold text-foreground">The Three-Step Structure</h3>
               <div className="grid gap-4 sm:grid-cols-3 mb-8">
-                <div className="rounded-xl border-2 border-[#E67E22]/30 bg-[#E67E22]/5 p-5 text-center">
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#E67E22] text-lg font-bold text-white">1</span>
+                <div className="rounded-xl border-2 border-accent/30 bg-accent/5 p-5 text-center">
+                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-accent text-lg font-bold text-white">1</span>
                   <p className="mt-3 font-bold text-foreground">Acknowledge</p>
                   <p className="mt-1 text-sm text-muted-foreground">Show you understand the opposing view</p>
                   <p className="mt-2 text-sm italic text-muted-foreground">&ldquo;Some may argue that...&rdquo;</p>
                 </div>
-                <div className="rounded-xl border-2 border-[#E67E22]/30 bg-[#E67E22]/5 p-5 text-center">
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#E67E22] text-lg font-bold text-white">2</span>
+                <div className="rounded-xl border-2 border-accent/30 bg-accent/5 p-5 text-center">
+                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-accent text-lg font-bold text-white">2</span>
                   <p className="mt-3 font-bold text-foreground">Challenge</p>
                   <p className="mt-1 text-sm text-muted-foreground">Explain why it is flawed, limited, or misguided</p>
                   <p className="mt-2 text-sm italic text-muted-foreground">&ldquo;However, this fails to account for...&rdquo;</p>
                 </div>
-                <div className="rounded-xl border-2 border-[#E67E22]/30 bg-[#E67E22]/5 p-5 text-center">
-                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#E67E22] text-lg font-bold text-white">3</span>
+                <div className="rounded-xl border-2 border-accent/30 bg-accent/5 p-5 text-center">
+                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-accent text-lg font-bold text-white">3</span>
                   <p className="mt-3 font-bold text-foreground">Reassert</p>
                   <p className="mt-1 text-sm text-muted-foreground">Return to your own argument, now strengthened</p>
                   <p className="mt-2 text-sm italic text-muted-foreground">&ldquo;The reality is...&rdquo;</p>
@@ -247,13 +247,13 @@ export default function PersuasiveWritingPage() {
               <h3 className="mb-4 text-lg font-bold text-foreground">Full Example</h3>
               <div className="rounded-xl border border-border bg-card p-5 shadow-md space-y-3 text-sm">
                 <p className="text-muted-foreground">
-                  <span className="font-semibold text-[#E67E22]">[Acknowledge]</span> Some may argue that social media has brought people closer together, enabling friendships across continents and giving young people a voice they never had before.
+                  <span className="font-semibold text-accent">[Acknowledge]</span> Some may argue that social media has brought people closer together, enabling friendships across continents and giving young people a voice they never had before.
                 </p>
                 <p className="text-muted-foreground">
-                  <span className="font-semibold text-[#E67E22]">[Challenge]</span> However, this argument conveniently ignores the overwhelming evidence that social media use is directly linked to rising rates of anxiety, depression, and loneliness among teenagers. A connection made through a screen is not the same as a connection made through shared experience.
+                  <span className="font-semibold text-accent">[Challenge]</span> However, this argument conveniently ignores the overwhelming evidence that social media use is directly linked to rising rates of anxiety, depression, and loneliness among teenagers. A connection made through a screen is not the same as a connection made through shared experience.
                 </p>
                 <p className="text-muted-foreground">
-                  <span className="font-semibold text-[#E67E22]">[Reassert]</span> The reality is that while social media may offer the illusion of connection, it is, for many young people, a substitute for the real thing -- and a poor one at that.
+                  <span className="font-semibold text-accent">[Reassert]</span> The reality is that while social media may offer the illusion of connection, it is, for many young people, a substitute for the real thing -- and a poor one at that.
                 </p>
               </div>
 
@@ -271,7 +271,7 @@ export default function PersuasiveWritingPage() {
                       <ul className="space-y-1 text-sm text-muted-foreground">
                         {group.phrases.map((phrase, i) => (
                           <li key={i} className="flex items-start gap-2">
-                            <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#E67E22]" />
+                            <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                             {phrase}
                           </li>
                         ))}
@@ -293,7 +293,7 @@ export default function PersuasiveWritingPage() {
               <div className="overflow-x-auto mb-8">
                 <table className="w-full text-sm border-collapse">
                   <thead>
-                    <tr className="bg-[#1A5276] text-white">
+                    <tr className="bg-primary text-white">
                       <th className="px-4 py-3 text-left font-semibold">Form</th>
                       <th className="px-4 py-3 text-left font-semibold">Register</th>
                       <th className="px-4 py-3 text-left font-semibold">Typical Tone</th>
@@ -321,7 +321,7 @@ export default function PersuasiveWritingPage() {
                 </table>
               </div>
 
-              <div className="rounded-xl border-l-4 border-[#E67E22] bg-[#E67E22]/5 p-5">
+              <div className="rounded-xl border-l-4 border-accent bg-accent/5 p-5">
                 <p className="font-bold text-foreground">Common Mistake: One-Note Tone</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Weaker responses maintain the same angry or sarcastic tone throughout. Strong responses
@@ -353,7 +353,7 @@ export default function PersuasiveWritingPage() {
                       { para: "6. Conclusion", desc: "Return to your opening image or phrase (circular structure). End with a call to action or a powerful final statement." },
                     ].map((item, i) => (
                       <div key={i} className="flex items-start gap-3">
-                        <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#E67E22]/10 text-xs font-bold text-[#E67E22]">{i + 1}</span>
+                        <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent/10 text-xs font-bold text-accent">{i + 1}</span>
                         <div>
                           <p className="font-semibold text-sm text-foreground">{item.para}</p>
                           <p className="text-sm text-muted-foreground">{item.desc}</p>
@@ -376,7 +376,7 @@ export default function PersuasiveWritingPage() {
                       { para: "6. Call to action", desc: "End with a direct, memorable instruction. Tell the audience what to DO. Use imperative verbs and repetition." },
                     ].map((item, i) => (
                       <div key={i} className="flex items-start gap-3">
-                        <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#E67E22]/10 text-xs font-bold text-[#E67E22]">{i + 1}</span>
+                        <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent/10 text-xs font-bold text-accent">{i + 1}</span>
                         <div>
                           <p className="font-semibold text-sm text-foreground">{item.para}</p>
                           <p className="text-sm text-muted-foreground">{item.desc}</p>
@@ -412,7 +412,7 @@ export default function PersuasiveWritingPage() {
                       </div>
                     ))}
                   </div>
-                  <div className="mt-4 rounded-lg border-l-4 border-[#2E86C1] bg-primary/5 px-4 py-2">
+                  <div className="mt-4 rounded-lg border-l-4 border-primary bg-primary/5 px-4 py-2">
                     <p className="text-sm text-muted-foreground">
                       <span className="font-semibold text-foreground">Best for:</span> Balanced argument tasks, &ldquo;discuss both sides&rdquo; questions, and topics where the opposition has strong points you need to address.
                     </p>
@@ -437,7 +437,7 @@ export default function PersuasiveWritingPage() {
                       { para: "6. Conclusion", desc: "The climax. Call to action. The reader should feel that the argument is irresistible." },
                     ].map((item, i) => (
                       <div key={i} className="flex items-start gap-3">
-                        <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#27AE60]/10 text-xs font-bold text-[#27AE60]">{i + 1}</span>
+                        <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-success/10 text-xs font-bold text-success">{i + 1}</span>
                         <div>
                           <p className="font-semibold text-sm text-foreground">{item.para}</p>
                           <p className="text-sm text-muted-foreground">{item.desc}</p>
@@ -445,7 +445,7 @@ export default function PersuasiveWritingPage() {
                       </div>
                     ))}
                   </div>
-                  <div className="mt-4 rounded-lg border-l-4 border-[#27AE60] bg-[#27AE60]/5 px-4 py-2">
+                  <div className="mt-4 rounded-lg border-l-4 border-[success] bg-success/5 px-4 py-2">
                     <p className="text-sm text-muted-foreground">
                       <span className="font-semibold text-foreground">Best for:</span> Speeches, passionate opinion pieces, and tasks where you want to create an emotional crescendo.
                     </p>
@@ -471,7 +471,7 @@ export default function PersuasiveWritingPage() {
                       { para: "6. Conclusion", desc: "Decisive close. Circular reference to opening. Call to action." },
                     ].map((item, i) => (
                       <div key={i} className="flex items-start gap-3">
-                        <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#8E44AD]/10 text-xs font-bold text-[#8E44AD]">{i + 1}</span>
+                        <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-secondary/10 text-xs font-bold text-secondary">{i + 1}</span>
                         <div>
                           <p className="font-semibold text-sm text-foreground">{item.para}</p>
                           <p className="text-sm text-muted-foreground">{item.desc}</p>
@@ -479,7 +479,7 @@ export default function PersuasiveWritingPage() {
                       </div>
                     ))}
                   </div>
-                  <div className="mt-4 rounded-lg border-l-4 border-[#8E44AD] bg-[#8E44AD]/5 px-4 py-2">
+                  <div className="mt-4 rounded-lg border-l-4 border-secondary bg-secondary/5 px-4 py-2">
                     <p className="text-sm text-muted-foreground">
                       <span className="font-semibold text-foreground">Best for:</span> Newspaper articles, reports, and any task where you want to establish authority from the very first line.
                     </p>
@@ -497,7 +497,7 @@ export default function PersuasiveWritingPage() {
 
               <div className="grid gap-6 sm:grid-cols-2">
                 {/* Article */}
-                <div className="rounded-xl border-2 border-[#2E86C1]/30 bg-card p-6 shadow-md">
+                <div className="rounded-xl border-2 border-primary/30 bg-card p-6 shadow-md">
                   <h3 className="text-lg font-bold text-foreground mb-4">Article</h3>
                   <div className="space-y-3 text-sm">
                     <div>
@@ -524,48 +524,48 @@ export default function PersuasiveWritingPage() {
                 </div>
 
                 {/* Letter */}
-                <div className="rounded-xl border-2 border-[#27AE60]/30 bg-card p-6 shadow-md">
+                <div className="rounded-xl border-2 border-[success]/30 bg-card p-6 shadow-md">
                   <h3 className="text-lg font-bold text-foreground mb-4">Formal Letter</h3>
                   <div className="space-y-3 text-sm">
                     <div>
-                      <p className="font-semibold text-[#27AE60]">Addresses</p>
+                      <p className="font-semibold text-success">Addresses</p>
                       <p className="text-muted-foreground">Your address (top right), recipient&apos;s address (left, below yours), date below that.</p>
                     </div>
                     <div>
-                      <p className="font-semibold text-[#27AE60]">Greeting</p>
+                      <p className="font-semibold text-success">Greeting</p>
                       <p className="text-muted-foreground">&ldquo;Dear Sir/Madam,&rdquo; (if name unknown) or &ldquo;Dear Mr/Mrs [Name],&rdquo;</p>
                     </div>
                     <div>
-                      <p className="font-semibold text-[#27AE60]">Sign-off</p>
+                      <p className="font-semibold text-success">Sign-off</p>
                       <p className="text-muted-foreground">&ldquo;Yours faithfully,&rdquo; (if Dear Sir/Madam) or &ldquo;Yours sincerely,&rdquo; (if you used their name).</p>
                     </div>
                     <div>
-                      <p className="font-semibold text-[#27AE60]">Tone</p>
+                      <p className="font-semibold text-success">Tone</p>
                       <p className="text-muted-foreground">Formal, polite, but can be firm. No contractions, no slang, no exclamation marks.</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Speech */}
-                <div className="rounded-xl border-2 border-[#E67E22]/30 bg-card p-6 shadow-md">
+                <div className="rounded-xl border-2 border-accent/30 bg-card p-6 shadow-md">
                   <h3 className="text-lg font-bold text-foreground mb-4">Speech</h3>
                   <div className="space-y-3 text-sm">
                     <div>
-                      <p className="font-semibold text-[#E67E22]">Direct Address</p>
+                      <p className="font-semibold text-accent">Direct Address</p>
                       <p className="text-muted-foreground">Address your audience directly throughout. &ldquo;You,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; &ldquo;our.&rdquo;</p>
                       <p className="mt-1 italic text-muted-foreground">&ldquo;I stand before you today because I believe we can do better.&rdquo;</p>
                     </div>
                     <div>
-                      <p className="font-semibold text-[#E67E22]">Rhetorical Pauses</p>
+                      <p className="font-semibold text-accent">Rhetorical Pauses</p>
                       <p className="text-muted-foreground">Short sentences, fragments, or dashes to create natural pauses for emphasis.</p>
                       <p className="mt-1 italic text-muted-foreground">&ldquo;This is not a distant problem. This is our problem. Right here. Right now.&rdquo;</p>
                     </div>
                     <div>
-                      <p className="font-semibold text-[#E67E22]">Inclusive Language</p>
+                      <p className="font-semibold text-accent">Inclusive Language</p>
                       <p className="text-muted-foreground">Use &ldquo;we&rdquo; and &ldquo;together&rdquo; to unite the audience with the speaker.</p>
                     </div>
                     <div>
-                      <p className="font-semibold text-[#E67E22]">Repetition / Anaphora</p>
+                      <p className="font-semibold text-accent">Repetition / Anaphora</p>
                       <p className="text-muted-foreground">Repeat a phrase at the start of consecutive sentences for rhythmic, memorable impact.</p>
                       <p className="mt-1 italic text-muted-foreground">&ldquo;We deserve better. We demand better. We will be better.&rdquo;</p>
                     </div>
@@ -573,56 +573,56 @@ export default function PersuasiveWritingPage() {
                 </div>
 
                 {/* Report */}
-                <div className="rounded-xl border-2 border-[#8E44AD]/30 bg-card p-6 shadow-md">
+                <div className="rounded-xl border-2 border-secondary/30 bg-card p-6 shadow-md">
                   <h3 className="text-lg font-bold text-foreground mb-4">Report</h3>
                   <div className="space-y-3 text-sm">
                     <div>
-                      <p className="font-semibold text-[#8E44AD]">Title</p>
+                      <p className="font-semibold text-secondary">Title</p>
                       <p className="text-muted-foreground">Clear and factual: &ldquo;Report on [Topic] for [Audience]&rdquo;</p>
                     </div>
                     <div>
-                      <p className="font-semibold text-[#8E44AD]">Formal Tone</p>
+                      <p className="font-semibold text-secondary">Formal Tone</p>
                       <p className="text-muted-foreground">Third person, impersonal, no emotional language. &ldquo;It was observed that...&rdquo;</p>
                     </div>
                     <div>
-                      <p className="font-semibold text-[#8E44AD]">Subheadings</p>
+                      <p className="font-semibold text-secondary">Subheadings</p>
                       <p className="text-muted-foreground">Organise findings clearly: Introduction, Findings, Conclusion, Recommendations.</p>
                     </div>
                     <div>
-                      <p className="font-semibold text-[#8E44AD]">Recommendations</p>
+                      <p className="font-semibold text-secondary">Recommendations</p>
                       <p className="text-muted-foreground">End with actionable suggestions: &ldquo;It is recommended that...&rdquo;</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Review */}
-                <div className="rounded-xl border-2 border-[#E74C3C]/30 bg-card p-6 shadow-md sm:col-span-2">
+                <div className="rounded-xl border-2 border-destructive/30 bg-card p-6 shadow-md sm:col-span-2">
                   <h3 className="text-lg font-bold text-foreground mb-4">Review</h3>
                   <div className="grid gap-3 sm:grid-cols-2 text-sm">
                     <div>
-                      <p className="font-semibold text-[#E74C3C]">Balanced Opinion</p>
+                      <p className="font-semibold text-destructive">Balanced Opinion</p>
                       <p className="text-muted-foreground">Present both positives and negatives, but make your overall verdict clear. Avoid fence-sitting.</p>
                     </div>
                     <div>
-                      <p className="font-semibold text-[#E74C3C]">Star Rating / Verdict</p>
+                      <p className="font-semibold text-destructive">Star Rating / Verdict</p>
                       <p className="text-muted-foreground">Optional but shows form awareness. A clear final verdict: &ldquo;Worth seeing&rdquo; or &ldquo;Give it a miss.&rdquo;</p>
                     </div>
                     <div>
-                      <p className="font-semibold text-[#E74C3C]">Descriptive Detail</p>
+                      <p className="font-semibold text-destructive">Descriptive Detail</p>
                       <p className="text-muted-foreground">Describe what you are reviewing vividly so the reader can picture or imagine it.</p>
                       <p className="mt-1 italic text-muted-foreground">&ldquo;The opening scene plunges you into a soundscape of crashing waves and whispered dialogue.&rdquo;</p>
                     </div>
                     <div>
-                      <p className="font-semibold text-[#E74C3C]">Personal Voice</p>
+                      <p className="font-semibold text-destructive">Personal Voice</p>
                       <p className="text-muted-foreground">First person is expected. Your personality, wit, and style should come through. Reviews can be humorous or sharp.</p>
                       <p className="mt-1 italic text-muted-foreground">&ldquo;If you enjoy films that make you question every life choice you have ever made, this one is for you.&rdquo;</p>
                     </div>
                     <div>
-                      <p className="font-semibold text-[#E74C3C]">Recommendation</p>
+                      <p className="font-semibold text-destructive">Recommendation</p>
                       <p className="text-muted-foreground">End with a clear recommendation to a specific audience: &ldquo;Perfect for fans of...&rdquo; or &ldquo;Avoid if you...&rdquo;</p>
                     </div>
                     <div>
-                      <p className="font-semibold text-[#E74C3C]">Comparison</p>
+                      <p className="font-semibold text-destructive">Comparison</p>
                       <p className="text-muted-foreground">Compare to similar products, films, books, or restaurants to give the reader a frame of reference.</p>
                     </div>
                   </div>
@@ -667,7 +667,7 @@ export default function PersuasiveWritingPage() {
                         ))}
                       </ul>
                     </div>
-                    <div className="rounded-lg border-l-4 border-[#2E86C1] bg-primary/5 px-4 py-3">
+                    <div className="rounded-lg border-l-4 border-primary bg-primary/5 px-4 py-3">
                       <p className="font-semibold text-foreground text-sm">Example Opening Paragraph</p>
                       <p className="mt-1 text-sm italic text-muted-foreground">
                         &ldquo;Every morning, 1.4 million British teenagers reach for their phones before
@@ -683,7 +683,7 @@ export default function PersuasiveWritingPage() {
 
                 {/* Letter Template */}
                 <div className="rounded-xl border border-border bg-card shadow-md overflow-hidden">
-                  <div className="bg-[#27AE60] px-6 py-4">
+                  <div className="bg-success px-6 py-4">
                     <h3 className="text-lg font-bold text-white">Formal Letter Template</h3>
                   </div>
                   <div className="p-6 space-y-4">
@@ -712,13 +712,13 @@ export default function PersuasiveWritingPage() {
                       <ul className="grid gap-1 sm:grid-cols-2 text-sm text-muted-foreground">
                         {["Your address (top right)", "Recipient's address (left)", "Date", "Dear Sir/Madam or Dear Mr/Mrs [Name]", "Yours faithfully (unknown name) / sincerely (known name)", "Formal register -- no contractions", "First person (\"I am writing to...\")", "Polite but firm tone"].map((item, i) => (
                           <li key={i} className="flex items-start gap-2">
-                            <span className="mt-0.5 text-[#27AE60]">&#10003;</span>
+                            <span className="mt-0.5 text-success">&#10003;</span>
                             {item}
                           </li>
                         ))}
                       </ul>
                     </div>
-                    <div className="rounded-lg border-l-4 border-[#27AE60] bg-[#27AE60]/5 px-4 py-3">
+                    <div className="rounded-lg border-l-4 border-[success] bg-success/5 px-4 py-3">
                       <p className="font-semibold text-foreground text-sm">Example Opening Paragraph</p>
                       <p className="mt-1 text-sm italic text-muted-foreground">
                         &ldquo;I am writing to express my deep concern regarding the proposed closure
@@ -733,7 +733,7 @@ export default function PersuasiveWritingPage() {
 
                 {/* Speech Template */}
                 <div className="rounded-xl border border-border bg-card shadow-md overflow-hidden">
-                  <div className="bg-[#E67E22] px-6 py-4">
+                  <div className="bg-accent px-6 py-4">
                     <h3 className="text-lg font-bold text-white">Speech Template</h3>
                   </div>
                   <div className="p-6 space-y-4">
@@ -751,13 +751,13 @@ export default function PersuasiveWritingPage() {
                       <ul className="grid gap-1 sm:grid-cols-2 text-sm text-muted-foreground">
                         {["Direct address to audience", "Inclusive pronouns (we, us, our)", "Rhetorical questions (2-3 maximum)", "Pauses: short sentences, fragments, dashes", "Tricolon / rule of three", "Anaphora (repeated sentence starters)", "Personal anecdote", "Call to action with imperative verbs"].map((item, i) => (
                           <li key={i} className="flex items-start gap-2">
-                            <span className="mt-0.5 text-[#E67E22]">&#10003;</span>
+                            <span className="mt-0.5 text-accent">&#10003;</span>
                             {item}
                           </li>
                         ))}
                       </ul>
                     </div>
-                    <div className="rounded-lg border-l-4 border-[#E67E22] bg-[#E67E22]/5 px-4 py-3">
+                    <div className="rounded-lg border-l-4 border-accent bg-accent/5 px-4 py-3">
                       <p className="font-semibold text-foreground text-sm">Example Opening Paragraph</p>
                       <p className="mt-1 text-sm italic text-muted-foreground">
                         &ldquo;Ladies and gentlemen, I want you to imagine something. Imagine waking up
@@ -773,7 +773,7 @@ export default function PersuasiveWritingPage() {
 
                 {/* Report Template */}
                 <div className="rounded-xl border border-border bg-card shadow-md overflow-hidden">
-                  <div className="bg-[#8E44AD] px-6 py-4">
+                  <div className="bg-secondary px-6 py-4">
                     <h3 className="text-lg font-bold text-white">Report Template</h3>
                   </div>
                   <div className="p-6 space-y-4">
@@ -795,13 +795,13 @@ export default function PersuasiveWritingPage() {
                       <ul className="grid gap-1 sm:grid-cols-2 text-sm text-muted-foreground">
                         {["Clear title with audience stated", "Numbered or named sections", "Formal, impersonal register", "Third person throughout", "Data and evidence (not emotion)", "Subheadings for each section", "Recommendations section at the end", "No contractions, no slang"].map((item, i) => (
                           <li key={i} className="flex items-start gap-2">
-                            <span className="mt-0.5 text-[#8E44AD]">&#10003;</span>
+                            <span className="mt-0.5 text-secondary">&#10003;</span>
                             {item}
                           </li>
                         ))}
                       </ul>
                     </div>
-                    <div className="rounded-lg border-l-4 border-[#8E44AD] bg-[#8E44AD]/5 px-4 py-3">
+                    <div className="rounded-lg border-l-4 border-secondary bg-secondary/5 px-4 py-3">
                       <p className="font-semibold text-foreground text-sm">Example Opening Paragraph</p>
                       <p className="mt-1 text-sm italic text-muted-foreground">
                         &ldquo;This report was commissioned to investigate the impact of reduced
@@ -816,7 +816,7 @@ export default function PersuasiveWritingPage() {
 
                 {/* Review Template */}
                 <div className="rounded-xl border border-border bg-card shadow-md overflow-hidden">
-                  <div className="bg-[#E74C3C] px-6 py-4">
+                  <div className="bg-destructive px-6 py-4">
                     <h3 className="text-lg font-bold text-white">Review Template</h3>
                   </div>
                   <div className="p-6 space-y-4">
@@ -835,13 +835,13 @@ export default function PersuasiveWritingPage() {
                       <ul className="grid gap-1 sm:grid-cols-2 text-sm text-muted-foreground">
                         {["Engaging headline", "First person throughout", "Balanced: positives AND negatives", "Specific descriptive detail (not vague)", "Personal voice -- wit, humour, or personality", "Comparison to similar products/works", "Clear final verdict / recommendation", "Target audience identified"].map((item, i) => (
                           <li key={i} className="flex items-start gap-2">
-                            <span className="mt-0.5 text-[#E74C3C]">&#10003;</span>
+                            <span className="mt-0.5 text-destructive">&#10003;</span>
                             {item}
                           </li>
                         ))}
                       </ul>
                     </div>
-                    <div className="rounded-lg border-l-4 border-[#E74C3C] bg-[#E74C3C]/5 px-4 py-3">
+                    <div className="rounded-lg border-l-4 border-[destructive] bg-destructive/5 px-4 py-3">
                       <p className="font-semibold text-foreground text-sm">Example Opening Paragraph</p>
                       <p className="mt-1 text-sm italic text-muted-foreground">
                         &ldquo;I walked into The Olive Garden expecting the usual: plastic menus,
@@ -868,32 +868,32 @@ export default function PersuasiveWritingPage() {
                 {[
                   {
                     category: "Expressing Urgency",
-                    colour: "#E67E22",
+                    colour: "accent",
                     words: ["immediately", "critical", "pressing", "imperative", "paramount", "dire", "escalating", "unprecedented", "alarmingly", "without delay"],
                   },
                   {
                     category: "Expressing Certainty",
-                    colour: "#2E86C1",
+                    colour: "primary",
                     words: ["undeniably", "irrefutably", "indisputably", "unequivocally", "categorically", "beyond doubt", "self-evidently", "overwhelmingly", "conclusively", "demonstrably"],
                   },
                   {
                     category: "Expressing Outrage",
-                    colour: "#E74C3C",
+                    colour: "destructive",
                     words: ["unacceptable", "disgraceful", "shameful", "appalling", "inexcusable", "deplorable", "scandalous", "intolerable", "reprehensible", "unconscionable"],
                   },
                   {
                     category: "Expressing Empathy",
-                    colour: "#27AE60",
+                    colour: "success",
                     words: ["vulnerable", "overlooked", "silenced", "marginalised", "abandoned", "neglected", "struggling", "powerless", "invisible", "unheard"],
                   },
                   {
                     category: "Dismissing Opposition",
-                    colour: "#8E44AD",
+                    colour: "secondary",
                     words: ["naive", "short-sighted", "misguided", "superficial", "complacent", "blinkered", "simplistic", "ill-informed", "reductive", "hollow"],
                   },
                   {
                     category: "Calling to Action",
-                    colour: "#1A5276",
+                    colour: "primary",
                     words: ["demand", "insist", "refuse", "challenge", "confront", "champion", "mobilise", "transform", "reclaim", "revolutionise"],
                   },
                 ].map((group) => (
@@ -934,14 +934,14 @@ export default function PersuasiveWritingPage() {
                 </div>
               </div>
 
-              <div className="mt-6 rounded-xl border-l-4 border-[#E67E22] bg-[#E67E22]/5 p-5">
+              <div className="mt-6 rounded-xl border-l-4 border-accent bg-accent/5 p-5">
                 <p className="font-bold text-foreground">Word Choice: Weak vs. Strong</p>
                 <div className="mt-3 overflow-x-auto">
                   <table className="w-full text-sm border-collapse">
                     <thead>
                       <tr className="border-b border-gray-300">
-                        <th className="px-4 py-2 text-left font-semibold text-[#E74C3C]">Weak (avoid)</th>
-                        <th className="px-4 py-2 text-left font-semibold text-[#27AE60]">Strong (use instead)</th>
+                        <th className="px-4 py-2 text-left font-semibold text-destructive">Weak (avoid)</th>
+                        <th className="px-4 py-2 text-left font-semibold text-success">Strong (use instead)</th>
                         <th className="px-4 py-2 text-left font-semibold text-foreground">Why it works</th>
                       </tr>
                     </thead>
@@ -968,7 +968,7 @@ export default function PersuasiveWritingPage() {
 
             {/* ─── MODEL ARTICLE ─────────────────────────────────── */}
             <Section id="model-article" title="Model Response: Persuasive Article">
-              <div className="mb-6 rounded-xl border border-[#E67E22]/30 bg-[#E67E22]/5 p-5">
+              <div className="mb-6 rounded-xl border border-accent/30 bg-accent/5 p-5">
                 <p className="font-bold text-foreground">Task</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Write an article for a national newspaper arguing that social media is doing more
@@ -977,7 +977,7 @@ export default function PersuasiveWritingPage() {
               </div>
 
               <div className="mb-4 flex flex-wrap gap-2 text-xs">
-                <span className="rounded-full bg-[#E67E22]/10 px-3 py-1 font-semibold text-[#E67E22]">Hover over highlighted text for annotations</span>
+                <span className="rounded-full bg-accent/10 px-3 py-1 font-semibold text-accent">Hover over highlighted text for annotations</span>
               </div>
 
               <div className="rounded-xl border border-border bg-card p-6 sm:p-8 shadow-md space-y-5 text-[15px] leading-[1.9] text-foreground">
@@ -1037,7 +1037,7 @@ export default function PersuasiveWritingPage() {
                 </p>
               </div>
 
-              <div className="mt-6 rounded-xl border-l-4 border-[#27AE60] bg-[#27AE60]/5 p-5">
+              <div className="mt-6 rounded-xl border-l-4 border-[success] bg-success/5 p-5">
                 <p className="font-bold text-foreground">Why This Response Works</p>
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground list-disc list-inside">
                   <li>Correct article format: headline, strapline, subheading, byline-ready</li>
@@ -1053,7 +1053,7 @@ export default function PersuasiveWritingPage() {
 
             {/* ─── MODEL SPEECH ──────────────────────────────────── */}
             <Section id="model-speech" title="Model Response: Speech">
-              <div className="mb-6 rounded-xl border border-[#E67E22]/30 bg-[#E67E22]/5 p-5">
+              <div className="mb-6 rounded-xl border border-accent/30 bg-accent/5 p-5">
                 <p className="font-bold text-foreground">Task</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Write a speech to your school arguing that the school day should start later.
@@ -1061,7 +1061,7 @@ export default function PersuasiveWritingPage() {
               </div>
 
               <div className="mb-4 flex flex-wrap gap-2 text-xs">
-                <span className="rounded-full bg-[#E67E22]/10 px-3 py-1 font-semibold text-[#E67E22]">Hover over highlighted text for annotations</span>
+                <span className="rounded-full bg-accent/10 px-3 py-1 font-semibold text-accent">Hover over highlighted text for annotations</span>
               </div>
 
               <div className="rounded-xl border border-border bg-card p-6 sm:p-8 shadow-md space-y-5 text-[15px] leading-[1.9] text-foreground">
@@ -1104,7 +1104,7 @@ export default function PersuasiveWritingPage() {
                 </p>
               </div>
 
-              <div className="mt-6 rounded-xl border-l-4 border-[#27AE60] bg-[#27AE60]/5 p-5">
+              <div className="mt-6 rounded-xl border-l-4 border-[success] bg-success/5 p-5">
                 <p className="font-bold text-foreground">Why This Response Works</p>
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground list-disc list-inside">
                   <li>Correct speech conventions: direct address, inclusive language, rhetorical devices</li>
@@ -1171,13 +1171,13 @@ export default function PersuasiveWritingPage() {
                 ].map((item, i) => (
                   <div key={i} className="rounded-xl border border-border bg-card shadow-md overflow-hidden">
                     <div className="flex items-stretch">
-                      <div className="flex w-2 shrink-0 bg-[#E74C3C]" />
+                      <div className="flex w-2 shrink-0 bg-destructive" />
                       <div className="flex-1 p-5">
-                        <h4 className="font-bold text-[#E74C3C]">{item.mistake}</h4>
+                        <h4 className="font-bold text-destructive">{item.mistake}</h4>
                         <p className="mt-1 text-sm text-muted-foreground">{item.explanation}</p>
-                        <div className="mt-3 rounded-lg border-l-4 border-[#27AE60] bg-[#27AE60]/5 px-4 py-2">
+                        <div className="mt-3 rounded-lg border-l-4 border-[success] bg-success/5 px-4 py-2">
                           <p className="text-sm text-muted-foreground">
-                            <span className="font-semibold text-[#27AE60]">Fix:</span> {item.fix}
+                            <span className="font-semibold text-success">Fix:</span> {item.fix}
                           </p>
                         </div>
                       </div>
@@ -1189,7 +1189,7 @@ export default function PersuasiveWritingPage() {
 
             {/* Back to hub */}
             <div className="flex justify-center pt-8">
-              <Link href="/resources/writing-skills" className="rounded-lg bg-[#1A5276] px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-[#1A5276]/90">
+              <Link href="/resources/writing-skills" className="rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-primary/90">
                 &larr; Back to Writing Skills Hub
               </Link>
             </div>

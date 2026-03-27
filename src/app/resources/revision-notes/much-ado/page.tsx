@@ -104,7 +104,7 @@ export default function MuchAdoRevisionPage() {
 
       <div className="space-y-4" id="plot-summary">
         {/* ────────────────────────────────────────── PLOT SUMMARY */}
-        <Section id="plot" title="Scene-by-Scene Plot Summary" badge="5 Acts" colour="bg-[#1A5276]" defaultOpen>
+        <Section id="plot" title="Scene-by-Scene Plot Summary" badge="5 Acts" colour="bg-primary" defaultOpen>
           <div className="space-y-6">
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">

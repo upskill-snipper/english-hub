@@ -20,7 +20,7 @@ function Section({
     <section id={id} aria-labelledby={`${id}-heading`} className="scroll-mt-20">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between rounded-lg bg-gradient-to-r from-[#1A5276] to-[#2E86C1] px-5 py-3.5 text-left text-lg font-bold text-white shadow-md transition hover:opacity-90"
+        className="flex w-full items-center justify-between rounded-lg bg-gradient-to-r from-primary to-[primary] px-5 py-3.5 text-left text-lg font-bold text-white shadow-md transition hover:opacity-90"
         aria-expanded={open}
       >
         <span id={`${id}-heading`}>{title}</span>
@@ -60,7 +60,7 @@ function QuoteCard({
   analysis: string;
 }) {
   return (
-    <div className="rounded-lg border-l-4 border-[#2E86C1] bg-card p-5 shadow-md">
+    <div className="rounded-lg border-l-4 border-primary bg-card p-5 shadow-md">
       <blockquote className="text-base font-medium italic text-foreground">
         &ldquo;{quote}&rdquo;
       </blockquote>
@@ -453,7 +453,7 @@ export default function MuchAdoStudyGuide() {
   return (
     <>
       {/* ── Hero ────────────────────────────────────────────────── */}
-      <section className="rounded-xl bg-gradient-to-br from-[#1A5276] to-[#2E86C1] px-4 py-12 text-white sm:py-16">
+      <section className="rounded-xl bg-gradient-to-br from-primary to-[primary] px-4 py-12 text-white sm:py-16">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
             GCSE English Literature
@@ -475,7 +475,7 @@ export default function MuchAdoStudyGuide() {
             <a
               key={s}
               href={`#${s.toLowerCase().replace(/\s+/g, "-")}`}
-              className="rounded-full border border-[#2E86C1]/30 px-3 py-1 text-foreground transition hover:bg-primary/10"
+              className="rounded-full border border-primary/30 px-3 py-1 text-foreground transition hover:bg-primary/10"
             >
               {s}
             </a>
@@ -542,7 +542,7 @@ export default function MuchAdoStudyGuide() {
           </p>
           {examQuestions.map((eq, i) => (
             <div key={i} className="rounded-lg border border-border bg-card p-5 shadow-md">
-              <span className="inline-block rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
+              <span className="inline-block rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
                 {eq.type}
               </span>
               <p className="mt-3 text-sm font-medium text-foreground">{eq.question}</p>

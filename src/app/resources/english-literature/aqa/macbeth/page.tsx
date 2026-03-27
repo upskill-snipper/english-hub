@@ -640,7 +640,7 @@ export default function MacbethPage() {
             <a
               key={href}
               href={href}
-              className="rounded-full border border-gray-300 px-3 py-1 text-muted-foreground transition hover:bg-primary hover:text-white hover:border-primary"
+              className="rounded-full border border-border px-3 py-1 text-muted-foreground transition hover:bg-primary hover:text-white hover:border-primary"
             >
               {label}
             </a>

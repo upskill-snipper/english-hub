@@ -301,7 +301,7 @@ export default function Paper1Page() {
                   <th className="px-4 py-3 font-semibold">AO6 Descriptor</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100">
+              <tbody className="divide-y divide-border">
                 <tr className="hover:bg-muted">
                   <td className="px-4 py-3 font-bold text-foreground">1</td>
                   <td className="px-4 py-3 text-muted-foreground">1-6</td>
@@ -483,7 +483,7 @@ export default function Paper1Page() {
                   <th className="px-4 py-3 font-semibold">Key Advice</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100">
+              <tbody className="divide-y divide-border">
                 <tr className="hover:bg-muted">
                   <td className="px-4 py-3 font-medium text-foreground">Q1</td>
                   <td className="px-4 py-3 text-muted-foreground">1</td>

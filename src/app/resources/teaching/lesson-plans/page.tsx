@@ -257,7 +257,7 @@ export default function LessonPlansPage() {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Search lesson plans..."
-                className="w-full rounded-lg border border-gray-300 bg-card py-2.5 pl-10 pr-4 text-sm text-foreground placeholder:text-muted-foreground focus:border-[#2E86C1] focus:outline-none focus:ring-2 focus:ring-primary/20"
+                className="w-full rounded-lg border border-border bg-card py-2.5 pl-10 pr-4 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
               />
             </div>
 
@@ -265,7 +265,7 @@ export default function LessonPlansPage() {
             <select
               value={topicFilter}
               onChange={(e) => setTopicFilter(e.target.value)}
-              className="rounded-lg border border-gray-300 bg-card px-3 py-2.5 text-sm text-muted-foreground focus:border-[#2E86C1] focus:outline-none focus:ring-2 focus:ring-primary/20"
+              className="rounded-lg border border-border bg-card px-3 py-2.5 text-sm text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
             >
               <option value="">All Topics</option>
               {ALL_TOPICS.map((t) => (
@@ -277,7 +277,7 @@ export default function LessonPlansPage() {
             <select
               value={yearGroupFilter}
               onChange={(e) => setYearGroupFilter(e.target.value)}
-              className="rounded-lg border border-gray-300 bg-card px-3 py-2.5 text-sm text-muted-foreground focus:border-[#2E86C1] focus:outline-none focus:ring-2 focus:ring-primary/20"
+              className="rounded-lg border border-border bg-card px-3 py-2.5 text-sm text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
             >
               <option value="">All Year Groups</option>
               {ALL_YEAR_GROUPS.map((y) => (
@@ -289,7 +289,7 @@ export default function LessonPlansPage() {
             <select
               value={textFilter}
               onChange={(e) => setTextFilter(e.target.value)}
-              className="rounded-lg border border-gray-300 bg-card px-3 py-2.5 text-sm text-muted-foreground focus:border-[#2E86C1] focus:outline-none focus:ring-2 focus:ring-primary/20"
+              className="rounded-lg border border-border bg-card px-3 py-2.5 text-sm text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
             >
               <option value="">All Texts</option>
               {ALL_TEXTS.map((t) => (
@@ -333,11 +333,11 @@ export default function LessonPlansPage() {
               <Link
                 key={lp.id}
                 href={`/resources/teaching/lesson-plans/${lp.id}`}
-                className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-md transition hover:shadow-md hover:border-[#2E86C1]/40"
+                className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-md transition hover:shadow-md hover:border-primary/40"
               >
                 {/* Tags row */}
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
+                  <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary">
                     {lp.subject}
                   </span>
                   <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary">

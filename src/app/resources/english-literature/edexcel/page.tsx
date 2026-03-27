@@ -20,7 +20,7 @@ const PAPERS = [
     description:
       "Shakespeare plays including Macbeth, Romeo and Juliet, and more. Post-1914 texts such as An Inspector Calls, Lord of the Flies, and Animal Farm.",
     marks: "80 marks — 50% of GCSE",
-    colour: "bg-[#1A5276]",
+    colour: "bg-primary",
   },
   {
     href: "/resources/english-literature/edexcel/paper-2",
@@ -94,7 +94,7 @@ export default function EdexcelEnglishLiteraturePage() {
     <>
 
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#2E86C1] px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
             Edexcel (Pearson) GCSE
@@ -179,7 +179,7 @@ export default function EdexcelEnglishLiteraturePage() {
           How Edexcel Differs from AQA
         </h2>
         <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
-          <div className="rounded-lg border-l-4 border-[#1A5276] bg-blue-50 p-4">
+          <div className="rounded-lg border-l-4 border-primary bg-blue-50 p-4">
             <h3 className="font-semibold text-foreground">Closed-book exam</h3>
             <p className="mt-1 text-sm">
               Both Edexcel papers are fully closed-book. You must memorise
@@ -187,7 +187,7 @@ export default function EdexcelEnglishLiteraturePage() {
               and the 19th-century novel, but Edexcel does not.
             </p>
           </div>
-          <div className="rounded-lg border-l-4 border-[#1A5276] bg-blue-50 p-4">
+          <div className="rounded-lg border-l-4 border-primary bg-blue-50 p-4">
             <h3 className="font-semibold text-foreground">
               Different text options
             </h3>
@@ -197,7 +197,7 @@ export default function EdexcelEnglishLiteraturePage() {
               while AQA offers different modern texts.
             </p>
           </div>
-          <div className="rounded-lg border-l-4 border-[#1A5276] bg-blue-50 p-4">
+          <div className="rounded-lg border-l-4 border-primary bg-blue-50 p-4">
             <h3 className="font-semibold text-foreground">
               Poetry anthology clusters
             </h3>
@@ -206,7 +206,7 @@ export default function EdexcelEnglishLiteraturePage() {
               while AQA uses Power and Conflict plus Love and Relationships.
             </p>
           </div>
-          <div className="rounded-lg border-l-4 border-[#1A5276] bg-blue-50 p-4">
+          <div className="rounded-lg border-l-4 border-primary bg-blue-50 p-4">
             <h3 className="font-semibold text-foreground">
               Question structure
             </h3>
@@ -253,7 +253,7 @@ export default function EdexcelEnglishLiteraturePage() {
                 key={obj.ao}
                 className="rounded-lg border border-border bg-card p-5"
               >
-                <span className="inline-block rounded bg-[#1A5276] px-2 py-0.5 text-xs font-bold text-white">
+                <span className="inline-block rounded bg-primary px-2 py-0.5 text-xs font-bold text-white">
                   {obj.ao}
                 </span>
                 <p className="mt-2 text-sm text-muted-foreground">{obj.desc}</p>

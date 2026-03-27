@@ -97,7 +97,7 @@ export default function GradeBoundariesPage() {
     <>
 
       {/* ── Hero ────────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#2E86C1] px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-blue-200">
             Cambridge IGCSE English Language (0500 / 0990)
@@ -161,7 +161,7 @@ export default function GradeBoundariesPage() {
           </p>
 
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
-            <div className="rounded-lg border-2 border-[#2E86C1]/30 bg-primary/5 p-5">
+            <div className="rounded-lg border-2 border-primary/30 bg-primary/5 p-5">
               <h3 className="text-lg font-bold text-foreground">Extended Tier</h3>
               <p className="mt-1 text-sm font-medium text-muted-foreground">Paper 2 (Reading) + Paper 4 (Directed Writing &amp; Composition)</p>
               <ul className="mt-3 ml-5 list-disc space-y-1 text-sm">
@@ -203,7 +203,7 @@ export default function GradeBoundariesPage() {
           <div className="overflow-x-auto mt-4">
             <table className="w-full min-w-[700px] text-sm">
               <thead>
-                <tr className="border-b-2 border-[#1A5276]/20 text-left text-muted-foreground">
+                <tr className="border-b-2 border-primary/20 text-left text-muted-foreground">
                   <th className="py-3 pr-3">Series</th>
                   <th className="py-3 pr-3 text-center bg-primary/10 font-semibold text-foreground">A*</th>
                   <th className="py-3 pr-3 text-center">A</th>
@@ -215,7 +215,7 @@ export default function GradeBoundariesPage() {
                   <th className="py-3 text-center">G</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100">
+              <tbody className="divide-y divide-border">
                 {EXTENDED_BOUNDARIES.map((row) => (
                   <tr key={row.series}>
                     <td className="py-3 pr-3 font-medium">{row.series}</td>
@@ -241,7 +241,7 @@ export default function GradeBoundariesPage() {
 
           {/* Approximate percentages */}
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="rounded-lg border-2 border-[#2E86C1]/30 bg-gradient-to-br from-[#2E86C1]/10 to-[#2E86C1]/5 p-4 text-center">
+            <div className="rounded-lg border-2 border-primary/30 bg-gradient-to-br from-primary/10 to-primary/5 p-4 text-center">
               <p className="text-3xl font-bold text-primary">84%+</p>
               <p className="mt-1 text-sm font-semibold text-foreground">A*</p>
               <p className="mt-1 text-xs text-muted-foreground">Exceptional performance across all components</p>
@@ -282,7 +282,7 @@ export default function GradeBoundariesPage() {
           <div className="overflow-x-auto mt-4">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b-2 border-gray-300 text-left text-muted-foreground">
+                <tr className="border-b-2 border-border text-left text-muted-foreground">
                   <th className="py-3 pr-3">Series</th>
                   <th className="py-3 pr-3 text-center font-semibold text-muted-foreground">C</th>
                   <th className="py-3 pr-3 text-center">D</th>
@@ -291,7 +291,7 @@ export default function GradeBoundariesPage() {
                   <th className="py-3 text-center">G</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100">
+              <tbody className="divide-y divide-border">
                 {CORE_BOUNDARIES.map((row) => (
                   <tr key={row.series}>
                     <td className="py-3 pr-3 font-medium">{row.series}</td>
@@ -325,13 +325,13 @@ export default function GradeBoundariesPage() {
           <div className="mt-4 overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b-2 border-[#1A5276]/20 text-left">
+                <tr className="border-b-2 border-primary/20 text-left">
                   <th className="py-3 pr-4 font-semibold text-foreground">9&ndash;1 Grade</th>
                   <th className="py-3 pr-4 font-semibold text-foreground">Equivalent A*&ndash;G Grade</th>
                   <th className="py-3 font-semibold text-foreground">Description</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100 text-muted-foreground">
+              <tbody className="divide-y divide-border text-muted-foreground">
                 <tr className="bg-primary/5">
                   <td className="py-3 pr-4 font-bold text-primary">9</td>
                   <td className="py-3 pr-4">High A*</td>
@@ -398,7 +398,7 @@ export default function GradeBoundariesPage() {
           </p>
 
           <div className="mt-4 space-y-6">
-            <div className="rounded-lg border-l-4 border-[#2E86C1] bg-primary/5 p-5">
+            <div className="rounded-lg border-l-4 border-primary bg-primary/5 p-5">
               <h3 className="text-lg font-bold text-foreground">Grade A* (9) &mdash; Exceptional</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <p><strong>Reading (Paper 2 / Paper 1):</strong></p>
@@ -421,7 +421,7 @@ export default function GradeBoundariesPage() {
               </div>
             </div>
 
-            <div className="rounded-lg border-l-4 border-[#1A5276] bg-[#1A5276]/5 p-5">
+            <div className="rounded-lg border-l-4 border-primary bg-primary/5 p-5">
               <h3 className="text-lg font-bold text-foreground">Grades A&ndash;B (7&ndash;8) &mdash; Strong</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <p><strong>Reading:</strong></p>
@@ -442,7 +442,7 @@ export default function GradeBoundariesPage() {
               </div>
             </div>
 
-            <div className="rounded-lg border-l-4 border-[#2E86C1]/60 bg-primary/5 p-5">
+            <div className="rounded-lg border-l-4 border-primary/60 bg-primary/5 p-5">
               <h3 className="text-lg font-bold text-foreground/80">Grades C&ndash;D (4&ndash;5) &mdash; Competent</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <p><strong>Reading:</strong></p>
@@ -483,7 +483,7 @@ export default function GradeBoundariesPage() {
               </div>
             </div>
 
-            <div className="rounded-lg border-l-4 border-gray-300 bg-muted/50 p-5">
+            <div className="rounded-lg border-l-4 border-border bg-muted/50 p-5">
               <h3 className="text-lg font-bold text-muted-foreground">Grade G (1) &mdash; Elementary</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <p><strong>Reading:</strong></p>
@@ -518,7 +518,7 @@ export default function GradeBoundariesPage() {
                       <th className="py-2 pr-4">Weighting</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-gray-100">
+                  <tbody className="divide-y divide-border">
                     <tr>
                       <td className="py-2 pr-4 font-semibold">Paper 2 &mdash; Reading</td>
                       <td className="py-2 pr-4">Comprehension, language analysis, summary, writer&rsquo;s effect</td>
@@ -554,7 +554,7 @@ export default function GradeBoundariesPage() {
                       <th className="py-2 pr-4">Weighting</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-gray-100">
+                  <tbody className="divide-y divide-border">
                     <tr>
                       <td className="py-2 pr-4 font-semibold">Paper 1 &mdash; Reading</td>
                       <td className="py-2 pr-4">Comprehension, language analysis, summary</td>
@@ -685,7 +685,7 @@ export default function GradeBoundariesPage() {
               </ul>
             </div>
 
-            <div className="rounded-lg border-2 border-[#2E86C1]/30 bg-primary/5 p-5">
+            <div className="rounded-lg border-2 border-primary/30 bg-primary/5 p-5">
               <h3 className="font-bold text-primary">Grade A &rarr; Grade A*</h3>
               <ul className="mt-2 ml-5 list-disc space-y-2 text-sm">
                 <li>
@@ -773,28 +773,28 @@ export default function GradeBoundariesPage() {
           <div className="mt-4 grid gap-3 sm:grid-cols-2">
             <Link
               href="/resources/english-language/caie/paper-1"
-              className="rounded-lg border border-border p-4 transition-colors hover:border-[#2E86C1]/40 hover:bg-primary/5"
+              className="rounded-lg border border-border p-4 transition-colors hover:border-primary/40 hover:bg-primary/5"
             >
               <p className="font-semibold text-foreground">Paper 1: Reading (Core)</p>
               <p className="mt-1 text-xs text-muted-foreground">Comprehension, summary, and language analysis</p>
             </Link>
             <Link
               href="/resources/english-language/caie/paper-2"
-              className="rounded-lg border border-border p-4 transition-colors hover:border-[#2E86C1]/40 hover:bg-primary/5"
+              className="rounded-lg border border-border p-4 transition-colors hover:border-primary/40 hover:bg-primary/5"
             >
               <p className="font-semibold text-foreground">Paper 2: Reading (Extended)</p>
               <p className="mt-1 text-xs text-muted-foreground">Comprehension, summary, language analysis, and writer&rsquo;s effect</p>
             </Link>
             <Link
               href="/resources/english-language/caie/techniques"
-              className="rounded-lg border border-border p-4 transition-colors hover:border-[#2E86C1]/40 hover:bg-primary/5"
+              className="rounded-lg border border-border p-4 transition-colors hover:border-primary/40 hover:bg-primary/5"
             >
               <p className="font-semibold text-foreground">Language Techniques</p>
               <p className="mt-1 text-xs text-muted-foreground">30+ techniques with examples and effects</p>
             </Link>
             <Link
               href="/resources/english-language/caie/writing-skills"
-              className="rounded-lg border border-border p-4 transition-colors hover:border-[#2E86C1]/40 hover:bg-primary/5"
+              className="rounded-lg border border-border p-4 transition-colors hover:border-primary/40 hover:bg-primary/5"
             >
               <p className="font-semibold text-foreground">Writing Skills</p>
               <p className="mt-1 text-xs text-muted-foreground">All formats, summary technique, and composition</p>

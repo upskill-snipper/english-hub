@@ -398,7 +398,7 @@ export default function OCRSpokenLanguagePage() {
               </ul>
             </div>
 
-            <div className="rounded-lg border border-gray-300 bg-muted p-5">
+            <div className="rounded-lg border border-border bg-muted p-5">
               <h3 className="font-semibold text-muted-foreground">Pass</h3>
               <ul className="ml-4 mt-2 list-disc space-y-1 text-sm text-muted-foreground">
                 <li>Presentation is delivered with basic competence</li>

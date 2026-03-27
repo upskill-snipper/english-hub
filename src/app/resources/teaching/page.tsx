@@ -106,10 +106,10 @@ const SPEC_LINKS = [
 ];
 
 const QUICK_STATS = [
-  { label: "Lesson Plans", value: "10+", color: "bg-[#1A5276]" },
+  { label: "Lesson Plans", value: "10+", color: "bg-primary" },
   { label: "Assessment Tools", value: "4", color: "bg-primary" },
-  { label: "Exam Boards", value: "4", color: "bg-[#27AE60]" },
-  { label: "Topics Covered", value: "10+", color: "bg-[#8E44AD]" },
+  { label: "Exam Boards", value: "4", color: "bg-primary" },
+  { label: "Topics Covered", value: "10+", color: "bg-primary" },
 ];
 
 /* ─── Page ───────────────────────────────────────────────────── */
@@ -201,11 +201,11 @@ export default function TeachingResourcesHub() {
                 className={`group relative flex flex-col rounded-xl border border-border bg-card p-6 shadow-md transition ${
                   section.comingSoon
                     ? "opacity-60 cursor-not-allowed"
-                    : "hover:shadow-md hover:border-[#2E86C1]/40"
+                    : "hover:shadow-md hover:border-primary/40"
                 }`}
               >
                 {section.comingSoon && (
-                  <span className="absolute right-4 top-4 rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
+                  <span className="absolute right-4 top-4 rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
                     Coming Soon
                   </span>
                 )}

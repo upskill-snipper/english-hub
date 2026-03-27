@@ -360,7 +360,7 @@ export default function TechniquesPage() {
           <a href="#both" className="rounded-full bg-success-100 px-4 py-1.5 text-sm font-semibold text-success-700 hover:bg-success-200 transition-colors">
             Both ({bothTechniques.length})
           </a>
-          <a href="#using-techniques" className="rounded-full bg-gray-100 px-4 py-1.5 text-sm font-semibold text-muted-foreground hover:bg-gray-200 transition-colors">
+          <a href="#using-techniques" className="rounded-full bg-muted px-4 py-1.5 text-sm font-semibold text-muted-foreground hover:bg-muted/80 transition-colors">
             How to Use in Exams
           </a>
         </div>

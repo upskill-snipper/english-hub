@@ -764,22 +764,22 @@ export default function MerchantOfVeniceRevisionPage() {
               <div>
                 <h3 className="font-bold text-foreground mb-2">How to Structure a Literature Essay (PEEL)</h3>
                 <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-                  <div className="rounded-lg bg-[#1A5276]/10 border border-[#1A5276]/20 p-4 text-center">
+                  <div className="rounded-lg bg-primary/10 border border-[primary]/20 p-4 text-center">
                     <p className="text-2xl font-bold text-foreground">P</p>
                     <p className="text-sm font-semibold text-foreground mt-1">Point</p>
                     <p className="text-xs text-muted-foreground mt-1">A clear argument that answers the question directly</p>
                   </div>
-                  <div className="rounded-lg bg-primary/10 border border-[#2E86C1]/20 p-4 text-center">
+                  <div className="rounded-lg bg-primary/10 border border-primary/20 p-4 text-center">
                     <p className="text-2xl font-bold text-primary">E</p>
                     <p className="text-sm font-semibold text-foreground mt-1">Evidence</p>
                     <p className="text-xs text-muted-foreground mt-1">A short, embedded quotation from the text</p>
                   </div>
-                  <div className="rounded-lg bg-[#1A5276]/10 border border-[#1A5276]/20 p-4 text-center">
+                  <div className="rounded-lg bg-primary/10 border border-[primary]/20 p-4 text-center">
                     <p className="text-2xl font-bold text-foreground">E</p>
                     <p className="text-sm font-semibold text-foreground mt-1">Explain</p>
                     <p className="text-xs text-muted-foreground mt-1">Analyse language, structure, form. Use subject terminology</p>
                   </div>
-                  <div className="rounded-lg bg-primary/10 border border-[#2E86C1]/20 p-4 text-center">
+                  <div className="rounded-lg bg-primary/10 border border-primary/20 p-4 text-center">
                     <p className="text-2xl font-bold text-primary">L</p>
                     <p className="text-sm font-semibold text-foreground mt-1">Link</p>
                     <p className="text-xs text-muted-foreground mt-1">Connect to context, audience, wider themes, or the question</p>

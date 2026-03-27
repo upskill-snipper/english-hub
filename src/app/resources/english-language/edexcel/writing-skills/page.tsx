@@ -44,7 +44,7 @@ export default function WritingSkillsPage() {
             <a
               key={s}
               href={`#${s.toLowerCase().replace(" ", "-")}`}
-              className="rounded-full bg-gray-100 px-4 py-1.5 text-sm font-semibold text-muted-foreground hover:bg-accent-100 hover:text-accent-700 transition-colors"
+              className="rounded-full bg-muted px-4 py-1.5 text-sm font-semibold text-muted-foreground hover:bg-accent-100 hover:text-accent-700 transition-colors"
             >
               {s}
             </a>
@@ -564,7 +564,7 @@ export default function WritingSkillsPage() {
                 "Form conventions present (headline for article, addresses for letter, etc.)",
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
-                  <span className="mt-0.5 h-4 w-4 shrink-0 rounded border border-gray-300 bg-card" />
+                  <span className="mt-0.5 h-4 w-4 shrink-0 rounded border border-border bg-card" />
                   {item}
                 </div>
               ))}

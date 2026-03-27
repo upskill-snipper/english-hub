@@ -86,7 +86,7 @@ export default function AITransparencyPage() {
             produces feedback and suggestions tailored to your specific essay.
           </li>
         </ol>
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-4 text-sm">
+        <div className="bg-primary/5 border border-primary/20 rounded-lg p-4 mt-4 text-sm">
           <p className="font-semibold">Important:</p>
           <p>
             We do <strong>not</strong> use your essays to train or improve the AI
@@ -139,14 +139,14 @@ export default function AITransparencyPage() {
           2025, you have clear rights when AI processes your work:
         </p>
         <div className="space-y-4">
-          <div className="border-l-4 border-[#1A5276] pl-4">
+          <div className="border-l-4 border-primary pl-4">
             <h3 className="font-semibold">Right to Human Review</h3>
             <p className="text-sm">
               You can request that a real person reviews any feedback or score the
               AI has given you. No reason needed.
             </p>
           </div>
-          <div className="border-l-4 border-[#1A5276] pl-4">
+          <div className="border-l-4 border-primary pl-4">
             <h3 className="font-semibold">
               Right to Contest the AI&apos;s Assessment
             </h3>
@@ -155,14 +155,14 @@ export default function AITransparencyPage() {
               challenge it. A qualified person will look at it.
             </p>
           </div>
-          <div className="border-l-4 border-[#1A5276] pl-4">
+          <div className="border-l-4 border-primary pl-4">
             <h3 className="font-semibold">Right to an Explanation</h3>
             <p className="text-sm">
               You can ask us to explain why the AI gave you specific feedback. We
               will provide a clear, understandable answer.
             </p>
           </div>
-          <div className="border-l-4 border-[#1A5276] pl-4">
+          <div className="border-l-4 border-primary pl-4">
             <h3 className="font-semibold">Right to Opt Out</h3>
             <p className="text-sm">
               You can stop your essays from being processed by AI entirely. Go to{" "}

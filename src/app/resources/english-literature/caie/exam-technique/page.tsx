@@ -66,7 +66,7 @@ function TipCard({
   children: React.ReactNode;
 }) {
   return (
-    <div className="rounded-lg border-l-4 border-[#2E86C1] bg-primary/5 p-4 mb-3">
+    <div className="rounded-lg border-l-4 border-primary bg-primary/5 p-4 mb-3">
       <p className="text-sm font-semibold text-foreground mb-1">{heading}</p>
       <div className="text-sm text-muted-foreground leading-relaxed">
         {children}

@@ -125,7 +125,7 @@ export default function Paper1Page() {
                   <th className="py-2 pr-4">Time</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100">
+              <tbody className="divide-y divide-border">
                 <tr><td className="py-2 pr-4">Read the extract carefully</td><td className="py-2 pr-4">-</td><td className="py-2 pr-4">10-15 mins</td></tr>
                 <tr><td className="py-2 pr-4">Question 1 (list 4 things)</td><td className="py-2 pr-4">4</td><td className="py-2 pr-4">5 mins</td></tr>
                 <tr><td className="py-2 pr-4">Question 2 (language analysis)</td><td className="py-2 pr-4">8</td><td className="py-2 pr-4">8-10 mins</td></tr>
@@ -215,7 +215,7 @@ export default function Paper1Page() {
                   <th className="py-2 pr-4">Descriptor</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100">
+              <tbody className="divide-y divide-border">
                 <tr>
                   <td className="py-2 pr-4 font-semibold">Level 4</td>
                   <td className="py-2 pr-4">7-8</td>
@@ -418,7 +418,7 @@ export default function Paper1Page() {
                   <th className="py-2 pr-4">Descriptor</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100">
+              <tbody className="divide-y divide-border">
                 <tr>
                   <td className="py-2 pr-4 font-semibold">Level 4</td>
                   <td className="py-2 pr-4">7-8</td>
@@ -469,7 +469,7 @@ export default function Paper1Page() {
                   <th className="py-2 pr-4">Descriptor</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100">
+              <tbody className="divide-y divide-border">
                 <tr>
                   <td className="py-2 pr-4 font-semibold">Level 4</td>
                   <td className="py-2 pr-4">16-20</td>
@@ -568,7 +568,7 @@ export default function Paper1Page() {
                   <th className="py-2 pr-4">Descriptor</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100">
+              <tbody className="divide-y divide-border">
                 <tr>
                   <td className="py-2 pr-4 font-semibold">Level 4</td>
                   <td className="py-2 pr-4">19-24</td>
@@ -603,7 +603,7 @@ export default function Paper1Page() {
                   <th className="py-2 pr-4">Descriptor</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100">
+              <tbody className="divide-y divide-border">
                 <tr>
                   <td className="py-2 pr-4 font-semibold">Level 4</td>
                   <td className="py-2 pr-4">13-16</td>

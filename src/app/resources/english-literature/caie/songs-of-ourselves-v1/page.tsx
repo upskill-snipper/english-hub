@@ -505,7 +505,7 @@ export default function SongsOfOurselvesV1Page() {
   return (
     <>
       {/* ── Hero ────────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#2E86C1] px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
             Cambridge IGCSE English Literature (0475)
@@ -644,7 +644,7 @@ export default function SongsOfOurselvesV1Page() {
                 className="overflow-hidden rounded-xl border border-border bg-card shadow-md"
               >
                 {/* Poem header */}
-                <div className="border-b border-border bg-gradient-to-r from-[#1A5276]/5 to-transparent px-5 py-4 sm:px-6">
+                <div className="border-b border-border bg-gradient-to-r from-primary/5 to-transparent px-5 py-4 sm:px-6">
                   <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                     Poem {idx + 1} of {poems.length}
                   </p>
@@ -744,7 +744,7 @@ export default function SongsOfOurselvesV1Page() {
                           key={ti}
                           className="flex items-start gap-2 text-sm text-muted-foreground"
                         >
-                          <span className="mt-1 block h-1.5 w-1.5 shrink-0 rounded-full bg-[#2E86C1]" />
+                          <span className="mt-1 block h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                           <span>{tip}</span>
                         </li>
                       ))}
@@ -872,7 +872,7 @@ export default function SongsOfOurselvesV1Page() {
                   ].map((c) => (
                     <span
                       key={c}
-                      className="rounded-full bg-[#1A5276]/10 px-3 py-1 text-xs font-medium text-foreground"
+                      className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-foreground"
                     >
                       {c}
                     </span>

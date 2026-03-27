@@ -110,7 +110,7 @@ export default function Paper1Page() {
     <>
 
       {/* ── Hero ────────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#2E86C1] px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
             Cambridge IGCSE English Literature
@@ -194,7 +194,7 @@ export default function Paper1Page() {
             ))}
           </div>
 
-          <div className="mt-6 rounded-lg border border-[#2E86C1]/20 bg-primary/5 p-5">
+          <div className="mt-6 rounded-lg border border-primary/20 bg-primary/5 p-5">
             <h3 className="font-semibold text-foreground">Approaching a Poetry Question</h3>
             <ol className="mt-3 space-y-2 text-sm text-muted-foreground">
               <li>

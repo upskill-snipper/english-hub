@@ -769,7 +769,7 @@ export default function LessonPlanDetailPage() {
             </p>
             <Link
               href="/resources/teaching/lesson-plans"
-              className="mt-6 inline-block rounded-lg bg-[#1A5276] px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-[#1A5276]/90"
+              className="mt-6 inline-block rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-primary/90"
             >
               Back to Lesson Plans
             </Link>
@@ -844,8 +844,8 @@ export default function LessonPlanDetailPage() {
           </h2>
           <ul className="mt-4 space-y-2">
             {plan.learningObjectives.map((obj, i) => (
-              <li key={i} className="flex items-start gap-3 rounded-lg bg-[#1A5276]/5 p-3">
-                <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">
+              <li key={i} className="flex items-start gap-3 rounded-lg bg-primary/5 p-3">
+                <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
                   {i + 1}
                 </span>
                 <span className="text-sm text-muted-foreground">{obj}</span>
@@ -963,7 +963,7 @@ export default function LessonPlanDetailPage() {
           <ul className="mt-4 space-y-2">
             {plan.assessmentCriteria.map((criterion, i) => (
               <li key={i} className="flex items-start gap-3 rounded-lg border border-border bg-card p-3">
-                <svg className="mt-0.5 h-5 w-5 shrink-0 text-[#27AE60]" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                <svg className="mt-0.5 h-5 w-5 shrink-0 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                 </svg>
                 <span className="text-sm text-muted-foreground">{criterion}</span>

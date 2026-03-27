@@ -80,8 +80,8 @@ export default function SuggestionsPage() {
                     onClick={() => setCategory(cat.value)}
                     className={`flex items-center gap-2 p-3 rounded-lg border text-left transition-all ${
                       category === cat.value
-                        ? "border-[#2E86C1] bg-primary/5 ring-1 ring-primary/20"
-                        : "border-border hover:border-slate-300"
+                        ? "border-primary bg-primary/5 ring-1 ring-primary/20"
+                        : "border-border hover:border-border"
                     }`}
                   >
                     <span className="text-lg">{cat.icon}</span>
@@ -102,7 +102,7 @@ export default function SuggestionsPage() {
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 placeholder="A short summary of your idea"
-                className="w-full px-4 py-2.5 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-[#2E86C1]"
+                className="w-full px-4 py-2.5 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
                 required
               />
             </div>
@@ -121,7 +121,7 @@ export default function SuggestionsPage() {
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 placeholder="I think it would be great if..."
-                className="w-full px-4 py-3 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-[#2E86C1] resize-y"
+                className="w-full px-4 py-3 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary resize-y"
                 required
               />
             </div>
@@ -137,7 +137,7 @@ export default function SuggestionsPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@example.com"
-                className="w-full px-4 py-2.5 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-[#2E86C1]"
+                className="w-full px-4 py-2.5 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
               />
             </div>
 
@@ -170,9 +170,9 @@ export default function SuggestionsPage() {
                     <span className="text-sm text-foreground font-medium">{req.title}</span>
                   </div>
                   <span className={`text-xs px-2.5 py-1 rounded-full font-medium ${
-                    req.status === "Planned" ? "bg-green-100 text-green-700" :
-                    req.status === "In Progress" ? "bg-blue-100 text-blue-700" :
-                    "bg-amber-100 text-amber-700"
+                    req.status === "Planned" ? "bg-success/10 text-success" :
+                    req.status === "In Progress" ? "bg-primary/10 text-primary" :
+                    "bg-warn/10 text-warn"
                   }`}>
                     {req.status}
                   </span>

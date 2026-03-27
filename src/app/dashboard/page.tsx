@@ -269,10 +269,10 @@ export default function DashboardPage() {
 
   const quickActions = [
     { label: 'Browse Courses', href: '/courses', icon: BookOpen, color: 'text-primary', bg: 'bg-primary/10' },
-    { label: 'Practice Questions', href: '/practice', icon: FileText, color: 'text-blue-400', bg: 'bg-blue-500/10' },
-    { label: 'Essay Feedback', href: '/dashboard/essay-feedback', icon: Sparkles, color: 'text-amber-400', bg: 'bg-amber-500/10' },
+    { label: 'Practice Questions', href: '/practice', icon: FileText, color: 'text-blue-400', bg: 'bg-blue-950/200/10' },
+    { label: 'Essay Feedback', href: '/dashboard/essay-feedback', icon: Sparkles, color: 'text-amber-400', bg: 'bg-amber-950/200/10' },
     { label: 'Revision Cards', href: '/revision', icon: Layers, color: 'text-purple-400', bg: 'bg-purple-500/10' },
-    { label: 'Mock Exams', href: '/dashboard/mock-exam', icon: Timer, color: 'text-red-400', bg: 'bg-red-500/10' },
+    { label: 'Mock Exams', href: '/dashboard/mock-exam', icon: Timer, color: 'text-red-400', bg: 'bg-red-950/200/10' },
     { label: 'Grade Dashboard', href: '/dashboard/grades', icon: TrendingUp, color: 'text-green-400', bg: 'bg-green-500/10' },
     { label: 'Analytics', href: '/dashboard/analytics', icon: BarChart3, color: 'text-cyan-400', bg: 'bg-cyan-500/10' },
     ...(schoolInfo
@@ -402,7 +402,7 @@ export default function DashboardPage() {
                 />
                 <StatCard
                   icon={<CheckCircle className="h-5 w-5" />}
-                  iconBg="bg-blue-500/10"
+                  iconBg="bg-blue-950/200/10"
                   iconColor="text-blue-400"
                   label="Completed"
                   value={completedModulesCount}
@@ -765,7 +765,7 @@ function GradeBadge({ grade }: { grade: string }) {
 
   const colorMap: Record<string, string> = {
     Distinction: 'bg-yellow-500/15 text-yellow-400 border-yellow-500/30',
-    Merit: 'bg-blue-500/15 text-blue-400 border-blue-500/30',
+    Merit: 'bg-blue-950/200/15 text-blue-400 border-blue-500/30',
     Pass: 'bg-primary/15 text-primary border-primary/30',
   }
 

@@ -108,7 +108,7 @@ function QuoteCompact({ text, speaker, act, themes, analysis }: { text: string; 
       <p className="mt-1 text-xs text-muted-foreground">{speaker} &mdash; {act}</p>
       <div className="mt-1.5 flex flex-wrap gap-1">
         {themes.map((t) => (
-          <span key={t} className="rounded-full bg-[#1A5276]/10 px-2 py-0.5 text-[10px] font-semibold text-foreground">{t}</span>
+          <span key={t} className="rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-semibold text-foreground">{t}</span>
         ))}
       </div>
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>

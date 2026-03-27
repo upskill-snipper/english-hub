@@ -19,7 +19,7 @@ export default function QatarPrivacyNoticePage() {
         2016 — PDPPL)
       </p>
 
-      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8 text-sm">
+      <div className="bg-primary/5 border border-primary/20 rounded-lg p-4 mb-8 text-sm">
         <p>
           This notice is provided in English. An Arabic translation shall be made
           available and, in the event of any discrepancy, the Arabic version
@@ -350,7 +350,7 @@ export default function QatarPrivacyNoticePage() {
           ].map((item) => (
             <div
               key={item.right}
-              className="border-l-4 border-[#1A5276] pl-4"
+              className="border-l-4 border-primary pl-4"
             >
               <h3 className="font-semibold text-sm">{item.right}</h3>
               <p className="text-sm text-muted-foreground">{item.desc}</p>

@@ -176,7 +176,7 @@ export default function DisclaimerPage() {
         <div className="mt-4 overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-gray-300">
+              <tr className="border-b border-border">
                 <th className="pb-2 pr-4 text-left font-semibold text-foreground">
                   Organisation
                 </th>
@@ -189,7 +189,7 @@ export default function DisclaimerPage() {
               {EXAM_BOARDS.map((board) => (
                 <tr
                   key={board.name}
-                  className="border-b border-gray-100"
+                  className="border-b border-border"
                 >
                   <td className="py-2 pr-4 font-medium text-foreground align-top whitespace-nowrap">
                     {board.name}

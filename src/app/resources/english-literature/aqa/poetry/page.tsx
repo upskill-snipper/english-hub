@@ -218,7 +218,7 @@ function PoemRow({
   return (
     <Link
       href={`${clusterPath}/${poem.slug}`}
-      className="group flex flex-col gap-2 rounded-xl border border-border p-5 shadow-md transition hover:border-[#2E86C1] hover:shadow-md sm:flex-row sm:items-center sm:justify-between"
+      className="group flex flex-col gap-2 rounded-xl border border-border p-5 shadow-md transition hover:border-primary hover:shadow-md sm:flex-row sm:items-center sm:justify-between"
     >
       <div>
         <h3 className="text-lg font-bold text-foreground group-hover:text-primary">
@@ -245,7 +245,7 @@ export default function AqaPoetryPage() {
     <>
 
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#2E86C1] px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-3xl text-center">
           <Link
             href="/resources/english-literature/aqa"
@@ -329,7 +329,7 @@ export default function AqaPoetryPage() {
             <p>
               AQA&apos;s comparison question typically follows this format:
             </p>
-            <div className="mt-2 rounded-lg border border-[#2E86C1] bg-card p-4 italic text-muted-foreground">
+            <div className="mt-2 rounded-lg border border-primary bg-card p-4 italic text-muted-foreground">
               &ldquo;Compare how poets present [theme/idea] in
               &lsquo;[named poem]&rsquo; and in one other poem from your
               anthology.&rdquo;
@@ -344,7 +344,7 @@ export default function AqaPoetryPage() {
           </h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-3">
             <div className="rounded-xl border border-border p-5 shadow-md">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1A5276] text-sm font-bold text-white">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
                 AO1
               </div>
               <h3 className="mt-3 font-bold text-foreground">
@@ -362,7 +362,7 @@ export default function AqaPoetryPage() {
               </p>
             </div>
             <div className="rounded-xl border border-border p-5 shadow-md">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1A5276] text-sm font-bold text-white">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
                 AO2
               </div>
               <h3 className="mt-3 font-bold text-foreground">
@@ -379,7 +379,7 @@ export default function AqaPoetryPage() {
               </p>
             </div>
             <div className="rounded-xl border border-border p-5 shadow-md">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1A5276] text-sm font-bold text-white">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
                 AO3
               </div>
               <h3 className="mt-3 font-bold text-foreground">
@@ -403,7 +403,7 @@ export default function AqaPoetryPage() {
           <h2 className="text-2xl font-bold text-foreground">
             Timing &amp; Exam Strategy
           </h2>
-          <div className="mt-4 rounded-xl border-2 border-[#2E86C1] bg-blue-50 p-6 text-sm text-muted-foreground leading-relaxed space-y-3">
+          <div className="mt-4 rounded-xl border-2 border-primary bg-blue-50 p-6 text-sm text-muted-foreground leading-relaxed space-y-3">
             <div className="grid gap-4 sm:grid-cols-2">
               <div>
                 <h3 className="font-bold text-foreground">
@@ -521,7 +521,7 @@ export default function AqaPoetryPage() {
               </h3>
               <ol className="mt-4 space-y-3 text-sm text-muted-foreground">
                 <li className="flex gap-3">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
                     1
                   </span>
                   <span>
@@ -532,7 +532,7 @@ export default function AqaPoetryPage() {
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
                     2
                   </span>
                   <span>
@@ -543,7 +543,7 @@ export default function AqaPoetryPage() {
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
                     3
                   </span>
                   <span>
@@ -555,7 +555,7 @@ export default function AqaPoetryPage() {
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
                     4
                   </span>
                   <span>
@@ -567,7 +567,7 @@ export default function AqaPoetryPage() {
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
                     5
                   </span>
                   <span>
@@ -579,7 +579,7 @@ export default function AqaPoetryPage() {
               </ol>
             </div>
 
-            <div className="rounded-xl border-2 border-[#2E86C1] bg-blue-50 p-6">
+            <div className="rounded-xl border-2 border-primary bg-blue-50 p-6">
               <h3 className="text-lg font-bold text-foreground">
                 Useful Comparison Connectives
               </h3>

@@ -34,7 +34,7 @@ const SKILL_AREAS = [
         <path strokeLinecap="round" strokeLinejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
       </svg>
     ),
-    colour: "border-[#2E86C1]",
+    colour: "border-primary",
     bg: "bg-primary/5",
     hoverBg: "hover:bg-primary/10",
   },
@@ -53,13 +53,13 @@ const SKILL_AREAS = [
       "Model responses",
     ],
     icon: (
-      <svg className="h-10 w-10 text-[#E67E22]" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+      <svg className="h-10 w-10 text-accent" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 18.75a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 0 1-3-3V4.5a3 3 0 1 1 6 0v8.25a3 3 0 0 1-3 3Z" />
       </svg>
     ),
-    colour: "border-[#E67E22]",
-    bg: "bg-[#E67E22]/5",
-    hoverBg: "hover:bg-[#E67E22]/10",
+    colour: "border-accent",
+    bg: "bg-accent/5",
+    hoverBg: "hover:bg-accent/10",
   },
   {
     title: "Analytical Writing",
@@ -77,13 +77,13 @@ const SKILL_AREAS = [
       "Model essays",
     ],
     icon: (
-      <svg className="h-10 w-10 text-[#8E44AD]" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+      <svg className="h-10 w-10 text-secondary" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
       </svg>
     ),
-    colour: "border-[#8E44AD]",
-    bg: "bg-[#8E44AD]/5",
-    hoverBg: "hover:bg-[#8E44AD]/10",
+    colour: "border-secondary",
+    bg: "bg-secondary/5",
+    hoverBg: "hover:bg-secondary/10",
   },
   {
     title: "Grammar & Punctuation",
@@ -101,13 +101,13 @@ const SKILL_AREAS = [
       "Tense consistency",
     ],
     icon: (
-      <svg className="h-10 w-10 text-[#27AE60]" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+      <svg className="h-10 w-10 text-success" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M10.125 2.25h-4.5c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125v-9M10.125 2.25h.375a9 9 0 0 1 9 9v.375M10.125 2.25A3.375 3.375 0 0 1 13.5 5.625v1.5c0 .621.504 1.125 1.125 1.125h1.5a3.375 3.375 0 0 1 3.375 3.375M9 15l2.25 2.25L15 12" />
       </svg>
     ),
-    colour: "border-[#27AE60]",
-    bg: "bg-[#27AE60]/5",
-    hoverBg: "hover:bg-[#27AE60]/10",
+    colour: "border-success",
+    bg: "bg-success/5",
+    hoverBg: "hover:bg-success/10",
   },
 ];
 
@@ -184,7 +184,7 @@ export default function WritingSkillsPage() {
     <>
 
       {/* ── Hero ───────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#1A5276] via-[#1A5276]/95 to-[#2E86C1]/80 px-4 py-20 text-white sm:py-24">
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-primary/80 px-4 py-20 text-white sm:py-24">
         {/* Decorative background pattern */}
         <div className="pointer-events-none absolute inset-0 opacity-[0.04]" aria-hidden="true">
           <div className="absolute -right-20 -top-20 h-96 w-96 rounded-full border-[40px] border-white" />
@@ -316,7 +316,7 @@ export default function WritingSkillsPage() {
 
       {/* ── AI Feedback Callout ─────────────────────────────────── */}
       <section className="px-4 py-14 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl border-2 border-[#2E86C1]/20 bg-gradient-to-br from-[#1A5276]/[0.03] to-[#2E86C1]/[0.06]">
+        <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl border-2 border-primary/20 bg-gradient-to-br from-primary/[0.03] to-primary/[0.06]">
           <div className="flex flex-col items-center gap-6 p-8 text-center sm:p-12 md:flex-row md:text-left">
             {/* Icon */}
             <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-primary/10">
@@ -338,7 +338,7 @@ export default function WritingSkillsPage() {
               </p>
               <Link
                 href="/resources/practice"
-                className="mt-4 inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow-md transition hover:bg-[#1A5276]"
+                className="mt-4 inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow-md transition hover:bg-primary"
               >
                 Try a Practice Question
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
@@ -365,7 +365,7 @@ export default function WritingSkillsPage() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="group rounded-xl border border-border bg-muted p-5 shadow-md transition-all hover:border-[#2E86C1]/40 hover:shadow-md"
+                className="group rounded-xl border border-border bg-muted p-5 shadow-md transition-all hover:border-primary/40 hover:shadow-md"
               >
                 <h3 className="font-bold text-foreground transition-colors group-hover:text-foreground">
                   {link.label}
@@ -385,7 +385,7 @@ export default function WritingSkillsPage() {
         <h2 className="text-2xl font-bold text-foreground">Why These Guides Work</h2>
         <div className="mt-8 grid gap-6 sm:grid-cols-3">
           <div className="rounded-xl border border-border bg-card p-6">
-            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#1A5276]/10">
+            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
               <svg className="h-6 w-6 text-foreground" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
               </svg>
@@ -413,8 +413,8 @@ export default function WritingSkillsPage() {
           </div>
 
           <div className="rounded-xl border border-border bg-card p-6">
-            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#27AE60]/10">
-              <svg className="h-6 w-6 text-[#27AE60]" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-success/10">
+              <svg className="h-6 w-6 text-success" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.745 3.745 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
               </svg>
             </div>

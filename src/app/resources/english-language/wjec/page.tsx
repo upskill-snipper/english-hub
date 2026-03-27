@@ -24,7 +24,7 @@ const sections = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
       </svg>
     ),
-    colour: "bg-[#1A5276]",
+    colour: "bg-primary",
   },
   {
     title: "Component 2: 19th & 21st Century Non-Fiction Reading & Transactional/Persuasive Writing",
@@ -47,7 +47,7 @@ export default function WJECEnglishLanguagePage() {
     <>
 
       {/* ── Hero ──────────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#2E86C1] px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-white/70">
             WJEC Eduqas GCSE (C700QS)
@@ -88,7 +88,7 @@ export default function WJECEnglishLanguagePage() {
 
           <div className="mt-8 overflow-x-auto rounded-xl border border-border bg-card shadow-md">
             <table className="w-full text-left text-sm">
-              <thead className="bg-[#1A5276] text-white">
+              <thead className="bg-primary text-white">
                 <tr>
                   <th className="px-4 py-3 font-semibold">Component</th>
                   <th className="px-4 py-3 font-semibold">Duration</th>
@@ -96,7 +96,7 @@ export default function WJECEnglishLanguagePage() {
                   <th className="px-4 py-3 font-semibold">% of GCSE</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100">
+              <tbody className="divide-y divide-border">
                 <tr className="hover:bg-muted">
                   <td className="px-4 py-3 font-medium text-foreground">Component 1 &mdash; 20th Century Literature Reading &amp; Creative Prose Writing</td>
                   <td className="px-4 py-3 text-muted-foreground">1 hr 45 min</td>
@@ -263,7 +263,7 @@ export default function WJECEnglishLanguagePage() {
                 key={obj.ao}
                 className="flex gap-4 rounded-xl border border-border bg-card p-5 shadow-md"
               >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#1A5276] text-sm font-bold text-white">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary text-sm font-bold text-white">
                   {obj.ao}
                 </div>
                 <div>
@@ -292,7 +292,7 @@ export default function WJECEnglishLanguagePage() {
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <Link
               href="/resources/english-language/wjec/grade-boundaries"
-              className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-md transition hover:shadow-md hover:border-[#2E86C1]/40 hover:-translate-y-0.5"
+              className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-md transition hover:shadow-md hover:border-primary/40 hover:-translate-y-0.5"
             >
               <div className="flex items-center justify-between">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-foreground" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} aria-hidden="true">
@@ -320,7 +320,7 @@ export default function WJECEnglishLanguagePage() {
             How WJEC Eduqas Differs from AQA &amp; Edexcel
           </h2>
           <div className="mt-8 space-y-4">
-            <div className="rounded-lg border-l-4 border-[#1A5276] bg-blue-50 p-4">
+            <div className="rounded-lg border-l-4 border-primary bg-blue-50 p-4">
               <h3 className="font-semibold text-foreground">Components, not Papers</h3>
               <p className="mt-1 text-sm text-muted-foreground">
                 WJEC Eduqas uses the term &ldquo;Component&rdquo; rather than &ldquo;Paper.&rdquo;
@@ -328,7 +328,7 @@ export default function WJECEnglishLanguagePage() {
                 Component 2 covers 19th and 21st-century non-fiction with transactional writing.
               </p>
             </div>
-            <div className="rounded-lg border-l-4 border-[#1A5276] bg-blue-50 p-4">
+            <div className="rounded-lg border-l-4 border-primary bg-blue-50 p-4">
               <h3 className="font-semibold text-foreground">20th Century Literature Extract</h3>
               <p className="mt-1 text-sm text-muted-foreground">
                 Component 1 reading uses a 20th-century literary prose extract &mdash; neither AQA
@@ -337,7 +337,7 @@ export default function WJECEnglishLanguagePage() {
                 between 1900 and 1999.
               </p>
             </div>
-            <div className="rounded-lg border-l-4 border-[#1A5276] bg-blue-50 p-4">
+            <div className="rounded-lg border-l-4 border-primary bg-blue-50 p-4">
               <h3 className="font-semibold text-foreground">Two Compulsory Writing Tasks in Component 2</h3>
               <p className="mt-1 text-sm text-muted-foreground">
                 Unlike AQA and Edexcel, where the non-fiction writing section requires one extended
@@ -346,7 +346,7 @@ export default function WJECEnglishLanguagePage() {
                 same exam sitting.
               </p>
             </div>
-            <div className="rounded-lg border-l-4 border-[#1A5276] bg-blue-50 p-4">
+            <div className="rounded-lg border-l-4 border-primary bg-blue-50 p-4">
               <h3 className="font-semibold text-foreground">Creative Writing: Prose Only</h3>
               <p className="mt-1 text-sm text-muted-foreground">
                 Component 1&apos;s creative writing section is strictly prose &mdash; narrative or
@@ -354,7 +354,7 @@ export default function WJECEnglishLanguagePage() {
                 imaginative writing options. WJEC provides a choice of four titles.
               </p>
             </div>
-            <div className="rounded-lg border-l-4 border-[#1A5276] bg-blue-50 p-4">
+            <div className="rounded-lg border-l-4 border-primary bg-blue-50 p-4">
               <h3 className="font-semibold text-foreground">Weighting: 40/60 Split</h3>
               <p className="mt-1 text-sm text-muted-foreground">
                 Component 1 is worth 40% and Component 2 is worth 60%. This contrasts with AQA&apos;s

@@ -18,7 +18,7 @@ export default function Paper2Page() {
     <>
 
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#2E86C1] px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-3xl text-center">
           <Link
             href="/resources/english-literature/edexcel"
@@ -134,7 +134,7 @@ export default function Paper2Page() {
                 </h3>
                 <Link
                   href="/resources/english-literature/edexcel/christmas-carol"
-                  className="rounded-lg bg-[#1A5276] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#1A5276]/90"
+                  className="rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white transition hover:bg-primary/90"
                 >
                   Full Study Guide &rarr;
                 </Link>
@@ -440,19 +440,19 @@ export default function Paper2Page() {
                 <h4 className="text-sm font-semibold text-foreground">Step-by-step approach:</h4>
                 <ol className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex gap-3">
-                    <span className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">1</span>
+                    <span className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">1</span>
                     <span>Read the poem twice. Annotate key words, images, and techniques on the second read.</span>
                   </li>
                   <li className="flex gap-3">
-                    <span className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">2</span>
+                    <span className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">2</span>
                     <span>Identify the poem&apos;s subject matter, tone, and overall message.</span>
                   </li>
                   <li className="flex gap-3">
-                    <span className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">3</span>
+                    <span className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">3</span>
                     <span>Look at language (imagery, word choice, figurative language), structure (stanzas, line length, enjambment), and form (sonnet, free verse, dramatic monologue).</span>
                   </li>
                   <li className="flex gap-3">
-                    <span className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">4</span>
+                    <span className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">4</span>
                     <span>Write 3-4 focused paragraphs using PEA (Point, Evidence, Analysis). Quote directly from the poem.</span>
                   </li>
                 </ol>
@@ -491,7 +491,7 @@ export default function Paper2Page() {
             </div>
 
             {/* Key techniques checklist */}
-            <div className="rounded-xl border-2 border-[#2E86C1] bg-blue-50 p-6">
+            <div className="rounded-xl border-2 border-primary bg-blue-50 p-6">
               <h3 className="text-lg font-bold text-foreground">
                 Poetry Analysis Techniques Checklist
               </h3>
@@ -536,7 +536,7 @@ export default function Paper2Page() {
           <div className="mt-4 overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b-2 border-[#1A5276] text-left">
+                <tr className="border-b-2 border-primary text-left">
                   <th className="py-2 pr-4 font-semibold text-foreground">Section</th>
                   <th className="py-2 pr-4 font-semibold text-foreground">Marks</th>
                   <th className="py-2 pr-4 font-semibold text-foreground">Time</th>

@@ -194,7 +194,7 @@ export default function CancellationFormPage() {
             className={`px-4 py-3 text-sm font-medium border-b-2 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${
               activeTab === "online"
                 ? "border-primary text-primary"
-                : "border-transparent text-muted-foreground hover:text-muted-foreground hover:border-gray-300"
+                : "border-transparent text-muted-foreground hover:text-muted-foreground hover:border-border"
             }`}
           >
             Online Cancellation
@@ -208,7 +208,7 @@ export default function CancellationFormPage() {
             className={`px-4 py-3 text-sm font-medium border-b-2 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${
               activeTab === "printable"
                 ? "border-primary text-primary"
-                : "border-transparent text-muted-foreground hover:text-muted-foreground hover:border-gray-300"
+                : "border-transparent text-muted-foreground hover:text-muted-foreground hover:border-border"
             }`}
           >
             Printable Model Form
@@ -229,7 +229,7 @@ export default function CancellationFormPage() {
             <form onSubmit={handleSubmit} className="space-y-6">
               {submitResult?.error && (
                 <div
-                  className="bg-warn-50 border border-warn-200 text-warn-700 px-4 py-3 rounded-lg"
+                  className="bg-warn/5 border border-warn/20 text-warn px-4 py-3 rounded-lg"
                   role="alert"
                 >
                   <p className="font-medium">Cancellation could not be processed</p>
@@ -251,7 +251,7 @@ export default function CancellationFormPage() {
                   required
                   value={formData.fullName}
                   onChange={(e) => updateField("fullName", e.target.value)}
-                  className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
+                  className="w-full rounded-lg border border-border px-3 py-2 text-sm shadow-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
                   placeholder="Your full name"
                 />
               </div>
@@ -270,7 +270,7 @@ export default function CancellationFormPage() {
                   required
                   value={formData.email}
                   onChange={(e) => updateField("email", e.target.value)}
-                  className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
+                  className="w-full rounded-lg border border-border px-3 py-2 text-sm shadow-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
                   placeholder="you@example.com"
                 />
               </div>
@@ -289,7 +289,7 @@ export default function CancellationFormPage() {
                   rows={3}
                   value={formData.address}
                   onChange={(e) => updateField("address", e.target.value)}
-                  className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors resize-none"
+                  className="w-full rounded-lg border border-border px-3 py-2 text-sm shadow-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors resize-none"
                   placeholder="Your address"
                 />
               </div>
@@ -333,7 +333,7 @@ export default function CancellationFormPage() {
                   required
                   value={formData.startDate}
                   onChange={(e) => updateField("startDate", e.target.value)}
-                  className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
+                  className="w-full rounded-lg border border-border px-3 py-2 text-sm shadow-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
                 />
               </div>
 
@@ -415,7 +415,7 @@ export default function CancellationFormPage() {
                 </button>
                 <a
                   href="/dashboard"
-                  className="inline-flex items-center justify-center px-6 py-2.5 rounded-lg border border-gray-300 text-muted-foreground font-medium text-sm hover:bg-muted focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors"
+                  className="inline-flex items-center justify-center px-6 py-2.5 rounded-lg border border-border text-muted-foreground font-medium text-sm hover:bg-muted focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors"
                 >
                   Keep my subscription
                 </a>
@@ -458,7 +458,7 @@ export default function CancellationFormPage() {
           </div>
 
           {/* The legally prescribed model form */}
-          <div className="border border-gray-300 rounded-lg p-6 sm:p-8 bg-card space-y-6">
+          <div className="border border-border rounded-lg p-6 sm:p-8 bg-card space-y-6">
             <div className="text-center border-b border-border pb-6">
               <h2 className="text-xl font-bold text-foreground">
                 Model Cancellation Form
@@ -479,7 +479,7 @@ export default function CancellationFormPage() {
                   Email:{" "}
                   <a
                     href="mailto:support@theenglishhub.app"
-                    className="text-primary underline"
+                    className="text-primary hover:underline"
                   >
                     support@theenglishhub.app
                   </a>
@@ -503,7 +503,7 @@ export default function CancellationFormPage() {
                   <span className="font-medium whitespace-nowrap">
                     Ordered on (*) / received on (*):
                   </span>
-                  <span className="flex-1 border-b border-gray-400 min-h-[24px] print-line">
+                  <span className="flex-1 border-b border-foreground min-h-[24px] print-line">
                     &nbsp;
                   </span>
                 </div>
@@ -512,7 +512,7 @@ export default function CancellationFormPage() {
                   <span className="font-medium whitespace-nowrap">
                     Name of consumer(s):
                   </span>
-                  <span className="flex-1 border-b border-gray-400 min-h-[24px] print-line">
+                  <span className="flex-1 border-b border-foreground min-h-[24px] print-line">
                     &nbsp;
                   </span>
                 </div>
@@ -521,7 +521,7 @@ export default function CancellationFormPage() {
                   <span className="font-medium whitespace-nowrap">
                     Address of consumer(s):
                   </span>
-                  <span className="flex-1 border-b border-gray-400 min-h-[24px] print-line">
+                  <span className="flex-1 border-b border-foreground min-h-[24px] print-line">
                     &nbsp;
                   </span>
                 </div>
@@ -530,7 +530,7 @@ export default function CancellationFormPage() {
                   <span className="font-medium whitespace-nowrap">
                     Email address:
                   </span>
-                  <span className="flex-1 border-b border-gray-400 min-h-[24px] print-line">
+                  <span className="flex-1 border-b border-foreground min-h-[24px] print-line">
                     &nbsp;
                   </span>
                 </div>
@@ -539,7 +539,7 @@ export default function CancellationFormPage() {
                   <span className="font-medium whitespace-nowrap">
                     Subscription plan:
                   </span>
-                  <span className="flex-1 border-b border-gray-400 min-h-[24px] print-line">
+                  <span className="flex-1 border-b border-foreground min-h-[24px] print-line">
                     &nbsp;
                   </span>
                 </div>
@@ -556,14 +556,14 @@ export default function CancellationFormPage() {
                     </span>
                     :
                   </span>
-                  <span className="flex-1 border-b border-gray-400 min-h-[40px] print-signature-line">
+                  <span className="flex-1 border-b border-foreground min-h-[40px] print-signature-line">
                     &nbsp;
                   </span>
                 </div>
 
                 <div className="flex flex-col sm:flex-row sm:items-end gap-1 sm:gap-2">
                   <span className="font-medium whitespace-nowrap">Date:</span>
-                  <span className="flex-1 border-b border-gray-400 min-h-[24px] print-line">
+                  <span className="flex-1 border-b border-foreground min-h-[24px] print-line">
                     &nbsp;
                   </span>
                 </div>
@@ -579,7 +579,7 @@ export default function CancellationFormPage() {
           </div>
 
           {/* Additional info below the form */}
-          <div className="mt-6 p-4 bg-primary-50 rounded-lg border border-primary-100 no-print">
+          <div className="mt-6 p-4 bg-primary/5 rounded-lg border border-primary/20 no-print">
             <h3 className="text-sm font-semibold text-primary mb-2">
               How to submit this form
             </h3>
@@ -605,7 +605,7 @@ export default function CancellationFormPage() {
                   Or scan and email to:{" "}
                   <a
                     href="mailto:support@theenglishhub.app"
-                    className="text-primary underline"
+                    className="text-primary hover:underline"
                   >
                     support@theenglishhub.app
                   </a>
@@ -623,7 +623,7 @@ export default function CancellationFormPage() {
 function SuccessMessage({ refNumber }: { refNumber: string }) {
   return (
     <div className="text-center py-8 space-y-6">
-      <div className="mx-auto w-16 h-16 bg-success-50 rounded-full flex items-center justify-center">
+      <div className="mx-auto w-16 h-16 bg-success/10 rounded-full flex items-center justify-center">
         <svg
           className="w-8 h-8 text-success"
           fill="none"

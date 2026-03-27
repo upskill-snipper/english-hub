@@ -135,12 +135,12 @@ const CATEGORIES: GlossaryCategory[] = [
 ];
 
 const CATEGORY_COLOURS: Record<GlossaryCategory, { border: string; bg: string; text: string; pill: string }> = {
-  "Literary Devices": { border: "border-[#1A5276]", bg: "bg-[#1A5276]/5", text: "text-foreground", pill: "bg-[#1A5276]/10 text-foreground" },
-  "Poetic Terms": { border: "border-[#2E86C1]", bg: "bg-primary/5", text: "text-primary", pill: "bg-primary/10 text-primary" },
-  "Dramatic Terms": { border: "border-[#8E44AD]", bg: "bg-[#8E44AD]/5", text: "text-[#8E44AD]", pill: "bg-[#8E44AD]/10 text-[#8E44AD]" },
-  "Narrative Terms": { border: "border-[#27AE60]", bg: "bg-[#27AE60]/5", text: "text-[#27AE60]", pill: "bg-[#27AE60]/10 text-[#27AE60]" },
-  "Language Analysis Terms": { border: "border-[#E67E22]", bg: "bg-[#E67E22]/5", text: "text-[#E67E22]", pill: "bg-[#E67E22]/10 text-[#E67E22]" },
-  "Grammar Terms": { border: "border-[#E74C3C]", bg: "bg-[#E74C3C]/5", text: "text-[#E74C3C]", pill: "bg-[#E74C3C]/10 text-[#E74C3C]" },
+  "Literary Devices": { border: "border-[primary]", bg: "bg-primary/5", text: "text-foreground", pill: "bg-primary/10 text-foreground" },
+  "Poetic Terms": { border: "border-primary", bg: "bg-primary/5", text: "text-primary", pill: "bg-primary/10 text-primary" },
+  "Dramatic Terms": { border: "border-secondary", bg: "bg-secondary/5", text: "text-secondary", pill: "bg-secondary/10 text-secondary" },
+  "Narrative Terms": { border: "border-[success]", bg: "bg-success/5", text: "text-success", pill: "bg-success/10 text-success" },
+  "Language Analysis Terms": { border: "border-accent", bg: "bg-accent/5", text: "text-accent", pill: "bg-accent/10 text-accent" },
+  "Grammar Terms": { border: "border-[destructive]", bg: "bg-destructive/5", text: "text-destructive", pill: "bg-destructive/10 text-destructive" },
 };
 
 const CATEGORY_ICONS: Record<GlossaryCategory, React.ReactNode> = {
@@ -202,7 +202,7 @@ function TermCard({
   return (
     <div
       className={`rounded-xl border bg-card shadow-md transition-all hover:shadow-md ${
-        isExpanded ? `border-2 ${colours.border}` : "border-border hover:border-[#2E86C1]/40"
+        isExpanded ? `border-2 ${colours.border}` : "border-border hover:border-primary/40"
       }`}
     >
       <button
@@ -294,7 +294,7 @@ export default function GlossaryPage() {
     <>
 
       {/* ── Hero Section ──────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-[#1A5276] via-[#1A5276] to-[#2E86C1] px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary via-primary to-[primary] px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-blue-200">
             Reference
@@ -344,8 +344,8 @@ export default function GlossaryPage() {
             onClick={() => setActiveCategory("all")}
             className={`rounded-full px-4 py-1.5 text-sm font-semibold transition-colors ${
               activeCategory === "all"
-                ? "bg-[#1A5276] text-white"
-                : "bg-gray-100 text-muted-foreground hover:bg-[#1A5276]/10 hover:text-foreground"
+                ? "bg-primary text-white"
+                : "bg-gray-100 text-muted-foreground hover:bg-primary/10 hover:text-foreground"
             }`}
           >
             All ({GLOSSARY_TERMS.length})
@@ -356,8 +356,8 @@ export default function GlossaryPage() {
               onClick={() => setActiveCategory(activeCategory === cat ? "all" : cat)}
               className={`rounded-full px-4 py-1.5 text-sm font-semibold transition-colors ${
                 activeCategory === cat
-                  ? "bg-[#1A5276] text-white"
-                  : "bg-gray-100 text-muted-foreground hover:bg-[#1A5276]/10 hover:text-foreground"
+                  ? "bg-primary text-white"
+                  : "bg-gray-100 text-muted-foreground hover:bg-primary/10 hover:text-foreground"
               }`}
             >
               {cat} ({categoryCounts[cat]})
@@ -586,7 +586,7 @@ export default function GlossaryPage() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="group rounded-xl border border-border bg-card p-5 shadow-md transition hover:shadow-md hover:border-[#2E86C1]/40"
+                className="group rounded-xl border border-border bg-card p-5 shadow-md transition hover:shadow-md hover:border-primary/40"
               >
                 <h3 className="font-bold text-foreground transition-colors group-hover:text-foreground">
                   {link.label}

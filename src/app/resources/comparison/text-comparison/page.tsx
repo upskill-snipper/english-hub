@@ -15,12 +15,12 @@ export const metadata: Metadata = {
 function Annotation({ children, note }: { children: React.ReactNode; note: string }) {
   return (
     <span className="group relative">
-      <span className="rounded bg-primary/10 px-1 py-0.5 text-foreground border-b-2 border-dashed border-[#2E86C1]/40">
+      <span className="rounded bg-primary/10 px-1 py-0.5 text-foreground border-b-2 border-dashed border-primary/40">
         {children}
       </span>
-      <span className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 w-56 -translate-x-1/2 rounded-lg bg-[#1A5276] px-3 py-2 text-xs leading-relaxed text-white opacity-0 shadow-lg transition-opacity group-hover:pointer-events-auto group-hover:opacity-100">
+      <span className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 w-56 -translate-x-1/2 rounded-lg bg-primary px-3 py-2 text-xs leading-relaxed text-white opacity-0 shadow-lg transition-opacity group-hover:pointer-events-auto group-hover:opacity-100">
         {note}
-        <span className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-[#1A5276]" />
+        <span className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-[primary]" />
       </span>
     </span>
   );
@@ -31,7 +31,7 @@ function Annotation({ children, note }: { children: React.ReactNode; note: strin
 function Section({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
   return (
     <section id={id} className="scroll-mt-24">
-      <h2 className="mb-6 text-2xl font-bold text-foreground border-b-2 border-[#2E86C1]/20 pb-3">
+      <h2 className="mb-6 text-2xl font-bold text-foreground border-b-2 border-primary/20 pb-3">
         {title}
       </h2>
       {children}
@@ -55,7 +55,7 @@ export default function TextComparisonPage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#1A5276]/80 px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary/80 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary/80">
             Comparison Skills
@@ -172,7 +172,7 @@ export default function TextComparisonPage() {
                     label: "Point",
                     detail: "Make a comparative point that addresses the question. Start with a claim about how both texts/characters relate to the theme.",
                     example: "Both Macbeth and Lady Macbeth experience guilt, but Shakespeare presents their responses as fundamentally different.",
-                    colour: "bg-[#1A5276]",
+                    colour: "bg-primary",
                   },
                   {
                     step: "E",
@@ -193,21 +193,21 @@ export default function TextComparisonPage() {
                     label: "Compare (Text B)",
                     detail: "Use a comparative connective and bring in the second text/character. Show how it is similar or different.",
                     example: "In contrast, Lady Macbeth's guilt does not emerge until Act 5, when she sleepwalks and tries to wash imaginary blood from her hands.",
-                    colour: "bg-[#E67E22]",
+                    colour: "bg-accent",
                   },
                   {
                     step: "E",
                     label: "Evidence & Analyse (Text B)",
                     detail: "Provide a quotation from the second text and analyse it, linking back to the comparison point.",
                     example: "Her desperate cry \"Out, damned spot!\" uses the imperative to show she has lost control -- the very control she prided herself on in Act 1.",
-                    colour: "bg-[#E67E22]",
+                    colour: "bg-accent",
                   },
                   {
                     step: "L",
                     label: "Link / Evaluate",
                     detail: "Link back to the question and offer an evaluative judgement. Which response is more significant? What does this comparison reveal?",
                     example: "Shakespeare thus suggests that guilt is inescapable: whether it strikes immediately (Macbeth) or is delayed (Lady Macbeth), it ultimately destroys both.",
-                    colour: "bg-[#8E44AD]",
+                    colour: "bg-secondary",
                   },
                 ].map((item) => (
                   <div key={item.step + item.label} className="flex gap-4 rounded-xl border border-border bg-card p-5 shadow-md">
@@ -235,7 +235,7 @@ export default function TextComparisonPage() {
                 </p>
               </div>
 
-              <div className="rounded-xl border-2 border-[#2E86C1]/30 bg-card p-6 sm:p-8">
+              <div className="rounded-xl border-2 border-primary/30 bg-card p-6 sm:p-8">
                 <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-primary">Model Comparative Response</p>
 
                 <div className="space-y-4 text-sm leading-relaxed text-muted-foreground">
@@ -277,7 +277,7 @@ export default function TextComparisonPage() {
                 </p>
               </div>
 
-              <div className="rounded-xl border-2 border-[#2E86C1]/30 bg-card p-6 sm:p-8">
+              <div className="rounded-xl border-2 border-primary/30 bg-card p-6 sm:p-8">
                 <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-primary">Model Comparative Response</p>
 
                 <div className="space-y-4 text-sm leading-relaxed text-muted-foreground">

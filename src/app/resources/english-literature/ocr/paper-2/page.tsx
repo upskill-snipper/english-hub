@@ -62,7 +62,7 @@ export default function OCRLitPaper2Page() {
                     <th className="py-3 font-semibold text-foreground">Time Guide</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-gray-100">
+                <tbody className="divide-y divide-border">
                   <tr>
                     <td className="py-3 pr-4 font-medium">A</td>
                     <td className="py-3 pr-4">Shakespeare (extract-based + essay)</td>

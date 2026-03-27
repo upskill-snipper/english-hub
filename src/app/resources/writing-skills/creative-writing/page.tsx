@@ -15,12 +15,12 @@ export const metadata: Metadata = {
 function Annotation({ children, note }: { children: React.ReactNode; note: string }) {
   return (
     <span className="group relative">
-      <span className="rounded bg-primary/10 px-1 py-0.5 text-foreground border-b-2 border-dashed border-[#2E86C1]/40">
+      <span className="rounded bg-primary/10 px-1 py-0.5 text-foreground border-b-2 border-dashed border-primary/40">
         {children}
       </span>
-      <span className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 w-56 -translate-x-1/2 rounded-lg bg-[#1A5276] px-3 py-2 text-xs leading-relaxed text-white opacity-0 shadow-lg transition-opacity group-hover:pointer-events-auto group-hover:opacity-100">
+      <span className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 w-56 -translate-x-1/2 rounded-lg bg-primary px-3 py-2 text-xs leading-relaxed text-white opacity-0 shadow-lg transition-opacity group-hover:pointer-events-auto group-hover:opacity-100">
         {note}
-        <span className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-[#1A5276]" />
+        <span className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-primary" />
       </span>
     </span>
   );
@@ -39,7 +39,7 @@ function Section({
 }) {
   return (
     <section id={id} className="scroll-mt-24">
-      <h2 className="mb-6 text-2xl font-bold text-foreground border-b-2 border-[#2E86C1]/20 pb-3">
+      <h2 className="mb-6 text-2xl font-bold text-foreground border-b-2 border-primary/20 pb-3">
         {title}
       </h2>
       {children}
@@ -117,7 +117,7 @@ export default function CreativeWritingPage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#1A5276]/80 px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary/80 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary/80">
             Writing Skills Masterclass
@@ -197,32 +197,32 @@ export default function CreativeWritingPage() {
                 when planning any descriptive piece.
               </p>
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mb-8">
-                <div className="rounded-lg bg-primary/5 border border-[#2E86C1]/20 p-4">
+                <div className="rounded-lg bg-primary/5 border border-primary/20 p-4">
                   <p className="font-bold text-foreground text-sm">Sight (Visual)</p>
                   <p className="mt-1 text-sm text-muted-foreground">Colour, shape, light, shadow, movement</p>
                   <p className="mt-2 text-sm italic text-muted-foreground">&ldquo;The amber streetlight bled through the rain-slicked glass, casting long, trembling shadows across the ceiling.&rdquo;</p>
                 </div>
-                <div className="rounded-lg bg-primary/5 border border-[#2E86C1]/20 p-4">
+                <div className="rounded-lg bg-primary/5 border border-primary/20 p-4">
                   <p className="font-bold text-foreground text-sm">Sound (Auditory)</p>
                   <p className="mt-1 text-sm text-muted-foreground">Volume, pitch, rhythm, silence</p>
                   <p className="mt-2 text-sm italic text-muted-foreground">&ldquo;The only sound was the slow, rhythmic drip of water from the broken gutter, marking time like a metronome.&rdquo;</p>
                 </div>
-                <div className="rounded-lg bg-primary/5 border border-[#2E86C1]/20 p-4">
+                <div className="rounded-lg bg-primary/5 border border-primary/20 p-4">
                   <p className="font-bold text-foreground text-sm">Touch (Tactile)</p>
                   <p className="mt-1 text-sm text-muted-foreground">Texture, temperature, pressure, pain</p>
                   <p className="mt-2 text-sm italic text-muted-foreground">&ldquo;The rough bark scraped against her palms as she climbed, each grip sending a jolt of cold through her fingers.&rdquo;</p>
                 </div>
-                <div className="rounded-lg bg-primary/5 border border-[#2E86C1]/20 p-4">
+                <div className="rounded-lg bg-primary/5 border border-primary/20 p-4">
                   <p className="font-bold text-foreground text-sm">Smell (Olfactory)</p>
                   <p className="mt-1 text-sm text-muted-foreground">Pleasant, acrid, subtle, overwhelming</p>
                   <p className="mt-2 text-sm italic text-muted-foreground">&ldquo;The air was thick with the cloying sweetness of overripe fruit, undercut by something sharper -- decay.&rdquo;</p>
                 </div>
-                <div className="rounded-lg bg-primary/5 border border-[#2E86C1]/20 p-4">
+                <div className="rounded-lg bg-primary/5 border border-primary/20 p-4">
                   <p className="font-bold text-foreground text-sm">Taste (Gustatory)</p>
                   <p className="mt-1 text-sm text-muted-foreground">Bitter, metallic, sweet, sour, salty</p>
                   <p className="mt-2 text-sm italic text-muted-foreground">&ldquo;She bit her lip, tasting the copper tang of blood as the wind whipped the dust into her face.&rdquo;</p>
                 </div>
-                <div className="rounded-lg bg-primary/5 border border-[#2E86C1]/20 p-4">
+                <div className="rounded-lg bg-primary/5 border border-primary/20 p-4">
                   <p className="font-bold text-foreground text-sm">Bonus: Synaesthesia</p>
                   <p className="mt-1 text-sm text-muted-foreground">Mixing senses for striking effect</p>
                   <p className="mt-2 text-sm italic text-muted-foreground">&ldquo;The silence tasted of dust and old stone, heavy on the tongue like a word she could not quite remember.&rdquo;</p>
@@ -237,7 +237,7 @@ export default function CreativeWritingPage() {
                 detail, and body language. Here are 10 examples showing the transformation.
               </p>
               <div className="mb-8 overflow-hidden rounded-xl border border-border">
-                <div className="grid grid-cols-2 text-sm font-bold bg-[#1A5276] text-white">
+                <div className="grid grid-cols-2 text-sm font-bold bg-primary text-white">
                   <div className="px-4 py-3">Telling (Weak)</div>
                   <div className="px-4 py-3 border-l border-white/20">Showing (Strong)</div>
                 </div>
@@ -661,7 +661,7 @@ export default function CreativeWritingPage() {
                 ].map((item) => (
                   <div key={item.num} className="rounded-xl border border-border bg-card p-5 shadow-md">
                     <div className="flex items-start gap-3">
-                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-sm font-bold text-white">
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
                         {item.num}
                       </span>
                       <div>
@@ -857,7 +857,7 @@ export default function CreativeWritingPage() {
               <div className="overflow-x-auto">
                 <table className="w-full text-sm border-collapse">
                   <thead>
-                    <tr className="bg-[#1A5276] text-white">
+                    <tr className="bg-primary text-white">
                       <th className="px-4 py-3 text-left font-semibold rounded-tl-lg">Instead of...</th>
                       <th className="px-4 py-3 text-left font-semibold rounded-tr-lg">Try...</th>
                     </tr>
@@ -890,7 +890,7 @@ export default function CreativeWritingPage() {
                 </table>
               </div>
 
-              <div className="mt-6 rounded-xl border-l-4 border-[#2E86C1] bg-primary/5 p-5">
+              <div className="mt-6 rounded-xl border-l-4 border-primary bg-primary/5 p-5">
                 <p className="text-sm font-bold text-foreground">Top Tip: Precision Over Complexity</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   &ldquo;Trudged&rdquo; is better than &ldquo;walked slowly&rdquo; not because it is a harder word,
@@ -903,7 +903,7 @@ export default function CreativeWritingPage() {
 
             {/* ─── MODEL DESCRIPTIVE RESPONSE ────────────────────── */}
             <Section id="model-descriptive" title="Model Response: Descriptive Writing">
-              <div className="mb-6 rounded-xl border border-[#2E86C1]/30 bg-primary/5 p-5">
+              <div className="mb-6 rounded-xl border border-primary/30 bg-primary/5 p-5">
                 <p className="font-bold text-foreground">Task</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Describe a place that feels abandoned. You could write about the setting, the
@@ -984,7 +984,7 @@ export default function CreativeWritingPage() {
                 </p>
               </div>
 
-              <div className="mt-6 rounded-xl border-l-4 border-[#27AE60] bg-[#27AE60]/5 p-5">
+              <div className="mt-6 rounded-xl border-l-4 border-success bg-success/5 p-5">
                 <p className="font-bold text-foreground">Why This Response Works (Examiner Perspective)</p>
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground list-disc list-inside">
                   <li>Opens with a single-word sentence that immediately establishes atmosphere</li>
@@ -1001,7 +1001,7 @@ export default function CreativeWritingPage() {
 
             {/* ─── MODEL NARRATIVE RESPONSE ──────────────────────── */}
             <Section id="model-narrative" title="Model Response: Narrative Writing">
-              <div className="mb-6 rounded-xl border border-[#2E86C1]/30 bg-primary/5 p-5">
+              <div className="mb-6 rounded-xl border border-primary/30 bg-primary/5 p-5">
                 <p className="font-bold text-foreground">Task</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Write a story about a moment that changed everything. You may wish to consider a
@@ -1094,7 +1094,7 @@ export default function CreativeWritingPage() {
                 </p>
               </div>
 
-              <div className="mt-6 rounded-xl border-l-4 border-[#27AE60] bg-[#27AE60]/5 p-5">
+              <div className="mt-6 rounded-xl border-l-4 border-success bg-success/5 p-5">
                 <p className="font-bold text-foreground">Why This Response Works (Examiner Perspective)</p>
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground list-disc list-inside">
                   <li>Opens in medias res with immediate intrigue (the pre-opened letter)</li>
@@ -1126,7 +1126,7 @@ export default function CreativeWritingPage() {
               <div className="mb-8 rounded-xl border border-border bg-card p-6 shadow-md">
                 <div className="flex flex-col items-center">
                   {/* Centre */}
-                  <div className="rounded-full bg-[#1A5276] px-6 py-4 text-white font-bold text-center text-sm shadow-md">
+                  <div className="rounded-full bg-primary px-6 py-4 text-white font-bold text-center text-sm shadow-md">
                     TOPIC<br />
                     <span className="text-xs font-normal text-white/80">e.g. &ldquo;An abandoned fairground&rdquo;</span>
                   </div>
@@ -1140,7 +1140,7 @@ export default function CreativeWritingPage() {
                       { sense: "Taste", details: "Dust on the tongue, metallic air", technique: "Metaphor" },
                       { sense: "Emotion / Atmosphere", details: "Eerie, melancholy, nostalgic, haunting", technique: "Pathetic fallacy, semantic field" },
                     ].map((branch, i) => (
-                      <div key={i} className="rounded-lg border border-[#2E86C1]/20 bg-primary/5 p-4">
+                      <div key={i} className="rounded-lg border border-primary/20 bg-primary/5 p-4">
                         <p className="font-bold text-foreground text-sm">{branch.sense}</p>
                         <p className="mt-1 text-sm text-muted-foreground">{branch.details}</p>
                         <p className="mt-2 text-xs text-primary">
@@ -1216,7 +1216,7 @@ export default function CreativeWritingPage() {
 
               {/* Quick Planning Checklist */}
               <h3 className="mb-4 text-lg font-bold text-foreground">Quick Planning Checklist</h3>
-              <div className="rounded-xl border-l-4 border-[#2E86C1] bg-primary/5 p-5">
+              <div className="rounded-xl border-l-4 border-primary bg-primary/5 p-5">
                 <p className="text-sm text-muted-foreground mb-3">Before you start writing, check these boxes:</p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   {[
@@ -1230,7 +1230,7 @@ export default function CreativeWritingPage() {
                     "Does my piece have a consistent mood or atmosphere?",
                   ].map((item, i) => (
                     <li key={i} className="flex items-start gap-2">
-                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border border-[#2E86C1]/30 bg-card text-xs text-primary">
+                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded border border-primary/30 bg-card text-xs text-primary">
                         {i + 1}
                       </span>
                       {item}
@@ -1326,7 +1326,7 @@ export default function CreativeWritingPage() {
             <div className="flex justify-center pt-8">
               <Link
                 href="/resources/writing-skills"
-                className="rounded-lg bg-[#1A5276] px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-[#1A5276]/90"
+                className="rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-primary/90"
               >
                 &larr; Back to Writing Skills Hub
               </Link>

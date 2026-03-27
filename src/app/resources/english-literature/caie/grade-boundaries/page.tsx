@@ -47,7 +47,7 @@ export default function GradeBoundariesPage() {
       {/* Hero */}
       <section
         className="px-4 py-16 text-white sm:py-20"
-        style={{ background: "linear-gradient(135deg, #1A5276, #2E86C1)" }}
+        style={{ background: "linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary)) 50%, hsl(var(--primary)) 80%)" }}
       >
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-blue-200">
@@ -122,7 +122,7 @@ export default function GradeBoundariesPage() {
                   <th className="py-2 pr-4">Approx. %</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100">
+              <tbody className="divide-y divide-border">
                 <tr className="bg-success-50">
                   <td className="py-2 pr-4 font-bold text-success-700">A*</td>
                   <td className="py-2 pr-4">90</td>
@@ -198,7 +198,7 @@ export default function GradeBoundariesPage() {
               </div>
             </div>
 
-            <div className="rounded-lg border-l-4 border-[#2E86C1] bg-blue-50/30 p-5">
+            <div className="rounded-lg border-l-4 border-primary bg-blue-50/30 p-5">
               <h3 className="text-lg font-bold text-primary">Grades A&ndash;B &mdash; Strong</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <ul className="ml-5 list-disc space-y-1">
@@ -212,7 +212,7 @@ export default function GradeBoundariesPage() {
               </div>
             </div>
 
-            <div className="rounded-lg border-l-4 border-[#1A5276] bg-blue-50/20 p-5">
+            <div className="rounded-lg border-l-4 border-primary bg-blue-50/20 p-5">
               <h3 className="text-lg font-bold text-foreground">Grades C&ndash;D &mdash; Competent</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <ul className="ml-5 list-disc space-y-1">
@@ -240,7 +240,7 @@ export default function GradeBoundariesPage() {
               </div>
             </div>
 
-            <div className="rounded-lg border-l-4 border-gray-300 bg-muted/50 p-5">
+            <div className="rounded-lg border-l-4 border-border bg-muted/50 p-5">
               <h3 className="text-lg font-bold text-muted-foreground">Grades F&ndash;G &mdash; Below pass</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <ul className="ml-5 list-disc space-y-1">
@@ -370,7 +370,7 @@ export default function GradeBoundariesPage() {
                   <th className="py-2 pr-4">Focus</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100">
+              <tbody className="divide-y divide-border">
                 <tr>
                   <td className="py-2 pr-4 font-semibold">Poetry</td>
                   <td className="py-2 pr-4">25 marks</td>
@@ -403,7 +403,7 @@ export default function GradeBoundariesPage() {
                   <th className="py-2 pr-4">Focus</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100">
+              <tbody className="divide-y divide-border">
                 <tr>
                   <td className="py-2 pr-4 font-semibold">Drama</td>
                   <td className="py-2 pr-4">50 marks</td>

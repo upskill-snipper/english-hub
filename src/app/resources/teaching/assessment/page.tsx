@@ -354,14 +354,14 @@ export default function AssessmentToolsPage() {
     return (
       <>
         <div className="flex min-h-[60vh] items-center justify-center px-4">
-          <div className="max-w-md rounded-xl border border-red-200 bg-red-50 p-8 text-center">
+          <div className="max-w-md rounded-xl border border-destructive/20 bg-destructive/10 p-8 text-center">
             <h2 className="text-lg font-bold text-red-800">Teacher Access Only</h2>
             <p className="mt-2 text-sm text-red-600">
               Assessment tools are only available to verified teacher accounts.
             </p>
             <Link
               href="/resources"
-              className="mt-6 inline-block rounded-lg bg-[#1A5276] px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-[#1A5276]/90"
+              className="mt-6 inline-block rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-primary/90"
             >
               Back to Resources
             </Link>
@@ -407,8 +407,8 @@ export default function AssessmentToolsPage() {
               onClick={() => setActiveTab(tab.key)}
               className={`whitespace-nowrap border-b-2 px-4 py-3.5 text-sm font-medium transition-colors ${
                 activeTab === tab.key
-                  ? "border-[#2E86C1] text-foreground"
-                  : "border-transparent text-muted-foreground hover:border-gray-300 hover:text-muted-foreground"
+                  ? "border-primary text-foreground"
+                  : "border-transparent text-muted-foreground hover:border-border hover:text-muted-foreground"
               }`}
             >
               {tab.label}
@@ -441,8 +441,8 @@ export default function AssessmentToolsPage() {
                   }}
                   className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
                     selectedQuizTopic === topic
-                      ? "bg-[#1A5276] text-white"
-                      : "bg-gray-100 text-muted-foreground hover:bg-primary/10 hover:text-primary"
+                      ? "bg-primary text-white"
+                      : "bg-muted text-muted-foreground hover:bg-primary/10 hover:text-primary"
                   }`}
                 >
                   {topic}
@@ -472,7 +472,7 @@ export default function AssessmentToolsPage() {
                     <span>Question {currentQuestionIndex + 1} of {quizQuestions.length}</span>
                     <span>Score: {score}/{currentQuestionIndex + (showAnswer ? 1 : 0)}</span>
                   </div>
-                  <div className="mb-6 h-2 rounded-full bg-gray-100">
+                  <div className="mb-6 h-2 rounded-full bg-muted">
                     <div
                       className="h-2 rounded-full bg-primary transition-all"
                       style={{ width: `${((currentQuestionIndex + 1) / quizQuestions.length) * 100}%` }}
@@ -501,7 +501,7 @@ export default function AssessmentToolsPage() {
                           disabled={showAnswer}
                           className={`flex w-full items-center gap-3 rounded-lg border-2 p-4 text-left text-sm transition ${optionClass}`}
                         >
-                          <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-gray-300 text-xs font-bold">
+                          <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-border text-xs font-bold">
                             {String.fromCharCode(65 + i)}
                           </span>
                           {option}
@@ -515,7 +515,7 @@ export default function AssessmentToolsPage() {
                       <button
                         onClick={checkAnswer}
                         disabled={selectedAnswer === null}
-                        className="rounded-lg bg-[#1A5276] px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-[#1A5276]/90 disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed"
                       >
                         Check Answer
                       </button>
@@ -553,7 +553,7 @@ export default function AssessmentToolsPage() {
                     </button>
                     <button
                       onClick={() => setShowAllAnswers(!showAllAnswers)}
-                      className="rounded-lg border border-[#1A5276] px-6 py-2.5 text-sm font-semibold text-foreground transition hover:bg-[#1A5276]/5"
+                      className="rounded-lg border border-primary px-6 py-2.5 text-sm font-semibold text-foreground transition hover:bg-primary/5"
                     >
                       {showAllAnswers ? "Hide Answers" : "View All Answers"}
                     </button>
@@ -565,7 +565,7 @@ export default function AssessmentToolsPage() {
             {/* Expandable answers section */}
             {showAllAnswers && (
               <div className="mt-6 rounded-xl border border-border bg-card shadow-md overflow-hidden">
-                <div className="bg-[#1A5276] px-5 py-3">
+                <div className="bg-primary px-5 py-3">
                   <h3 className="font-bold text-white">{selectedQuizTopic} — Answer Key</h3>
                 </div>
                 <div className="divide-y divide-gray-100">
@@ -601,7 +601,7 @@ export default function AssessmentToolsPage() {
                 <select
                   value={essayTopicFilter}
                   onChange={(e) => setEssayTopicFilter(e.target.value)}
-                  className="rounded-lg border border-gray-300 bg-card px-3 py-2.5 text-sm text-muted-foreground focus:border-[#2E86C1] focus:outline-none focus:ring-2 focus:ring-primary/20"
+                  className="rounded-lg border border-border bg-card px-3 py-2.5 text-sm text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
                 >
                   <option value="">All Topics</option>
                   {essayTopics.map((t) => (
@@ -611,7 +611,7 @@ export default function AssessmentToolsPage() {
                 <select
                   value={essayBoardFilter}
                   onChange={(e) => setEssayBoardFilter(e.target.value)}
-                  className="rounded-lg border border-gray-300 bg-card px-3 py-2.5 text-sm text-muted-foreground focus:border-[#2E86C1] focus:outline-none focus:ring-2 focus:ring-primary/20"
+                  className="rounded-lg border border-border bg-card px-3 py-2.5 text-sm text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
                 >
                   <option value="">All Exam Boards</option>
                   {essayBoards.map((b) => (
@@ -632,7 +632,7 @@ export default function AssessmentToolsPage() {
                   className="rounded-xl border border-border bg-card p-5 shadow-md"
                 >
                   <div className="flex flex-wrap items-center gap-2 mb-2">
-                    <span className="rounded-full bg-[#1A5276]/10 px-2.5 py-0.5 text-xs font-semibold text-foreground">
+                    <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary">
                       {eq.subject}
                     </span>
                     <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary">
@@ -641,7 +641,7 @@ export default function AssessmentToolsPage() {
                     <span className="rounded-full bg-amber-50 px-2.5 py-0.5 text-xs font-semibold text-amber-700">
                       {eq.marks} marks
                     </span>
-                    <span className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
+                    <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
                       {eq.examBoard}
                     </span>
                   </div>
@@ -669,7 +669,7 @@ export default function AssessmentToolsPage() {
                 <select
                   value={markSchemeBoard}
                   onChange={(e) => setMarkSchemeBoard(e.target.value)}
-                  className="rounded-lg border border-gray-300 bg-card px-3 py-2.5 text-sm text-muted-foreground focus:border-[#2E86C1] focus:outline-none focus:ring-2 focus:ring-primary/20"
+                  className="rounded-lg border border-border bg-card px-3 py-2.5 text-sm text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
                 >
                   <option value="">All Boards</option>
                   <option value="AQA">AQA</option>
@@ -678,7 +678,7 @@ export default function AssessmentToolsPage() {
                 </select>
                 <button
                   onClick={handlePrint}
-                  className="inline-flex items-center gap-2 rounded-lg border border-[#1A5276] px-4 py-2.5 text-sm font-semibold text-foreground transition hover:bg-[#1A5276]/5 print:hidden"
+                  className="inline-flex items-center gap-2 rounded-lg border border-primary px-4 py-2.5 text-sm font-semibold text-foreground transition hover:bg-primary/5 print:hidden"
                 >
                   <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6.72 13.829c-.24.03-.48.062-.72.096m.72-.096a42.415 42.415 0 0 1 10.56 0m-10.56 0L6.34 18m10.94-4.171c.24.03.48.062.72.096m-.72-.096L17.66 18m0 0 .229 2.523a1.125 1.125 0 0 1-1.12 1.227H7.231c-.662 0-1.18-.568-1.12-1.227L6.34 18m11.318 0h1.091A2.25 2.25 0 0 0 21 15.75V9.456c0-1.081-.768-2.015-1.837-2.175a48.055 48.055 0 0 0-1.913-.247M6.34 18H5.25A2.25 2.25 0 0 1 3 15.75V9.456c0-1.081.768-2.015 1.837-2.175a48.041 48.041 0 0 1 1.913-.247m0 0a48.77 48.77 0 0 1 10.5 0m-10.5 0V6.169c0-1.244.757-2.373 1.916-2.793a48.032 48.032 0 0 1 6.168 0c1.159.42 1.916 1.549 1.916 2.793V8.034" />
@@ -693,7 +693,7 @@ export default function AssessmentToolsPage() {
                 <div key={template.title} className="rounded-xl border border-border bg-card shadow-md overflow-hidden print:break-inside-avoid">
                   <button
                     onClick={() => toggleMarkScheme(idx)}
-                    className="flex w-full items-center justify-between bg-[#1A5276] px-5 py-3 text-left print:pointer-events-none"
+                    className="flex w-full items-center justify-between bg-primary px-5 py-3 text-left print:pointer-events-none"
                   >
                     <div className="flex items-center gap-3">
                       <h3 className="font-bold text-white">{template.title}</h3>
@@ -736,7 +736,7 @@ export default function AssessmentToolsPage() {
               </div>
               <button
                 onClick={handlePrint}
-                className="inline-flex items-center gap-2 rounded-lg border border-[#1A5276] px-4 py-2.5 text-sm font-semibold text-foreground transition hover:bg-[#1A5276]/5 print:hidden"
+                className="inline-flex items-center gap-2 rounded-lg border border-primary px-4 py-2.5 text-sm font-semibold text-foreground transition hover:bg-primary/5 print:hidden"
               >
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6.72 13.829c-.24.03-.48.062-.72.096m.72-.096a42.415 42.415 0 0 1 10.56 0m-10.56 0L6.34 18m10.94-4.171c.24.03.48.062.72.096m-.72-.096L17.66 18m0 0 .229 2.523a1.125 1.125 0 0 1-1.12 1.227H7.231c-.662 0-1.18-.568-1.12-1.227L6.34 18m11.318 0h1.091A2.25 2.25 0 0 0 21 15.75V9.456c0-1.081-.768-2.015-1.837-2.175a48.055 48.055 0 0 0-1.913-.247M6.34 18H5.25A2.25 2.25 0 0 1 3 15.75V9.456c0-1.081.768-2.015 1.837-2.175a48.041 48.041 0 0 1 1.913-.247m0 0a48.77 48.77 0 0 1 10.5 0m-10.5 0V6.169c0-1.244.757-2.373 1.916-2.793a48.032 48.032 0 0 1 6.168 0c1.159.42 1.916 1.549 1.916 2.793V8.034" />
@@ -821,7 +821,7 @@ export default function AssessmentToolsPage() {
               <div className="mt-6 grid gap-6 lg:grid-cols-3">
                 {Object.entries(SKILLS_CHECKLIST).map(([category, skills]) => (
                   <div key={category} className="rounded-xl border border-border bg-card shadow-md overflow-hidden print:break-inside-avoid">
-                    <div className="bg-[#1A5276] px-5 py-3">
+                    <div className="bg-primary px-5 py-3">
                       <h3 className="text-sm font-bold text-white">{category}</h3>
                     </div>
                     <div className="p-4 space-y-3">
@@ -829,7 +829,7 @@ export default function AssessmentToolsPage() {
                         <label key={i} className="flex items-start gap-3 cursor-pointer group">
                           <input
                             type="checkbox"
-                            className="mt-0.5 h-4 w-4 shrink-0 rounded border-gray-300 text-primary focus:ring-primary/20"
+                            className="mt-0.5 h-4 w-4 shrink-0 rounded border-border text-primary focus:ring-primary/20"
                           />
                           <span className="text-xs leading-relaxed text-muted-foreground group-hover:text-foreground transition-colors">
                             {skill}

@@ -243,7 +243,7 @@ export default function ChristmasCarolPage() {
     <>
 
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#2E86C1] px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-3xl text-center">
           <Link
             href="/resources/english-literature/edexcel"
@@ -298,7 +298,7 @@ export default function ChristmasCarolPage() {
                 className="rounded-xl border border-border p-6 shadow-md"
               >
                 <div className="flex items-center gap-3">
-                  <span className="rounded-full bg-[#1A5276] px-3 py-1 text-xs font-bold text-white">
+                  <span className="rounded-full bg-primary px-3 py-1 text-xs font-bold text-white">
                     {s.stave}
                   </span>
                   <h3 className="text-lg font-bold text-foreground">{s.title}</h3>
@@ -350,7 +350,7 @@ export default function ChristmasCarolPage() {
             {THEMES.map((t) => (
               <div
                 key={t.theme}
-                className="rounded-xl border-l-4 border-[#1A5276] bg-muted p-6"
+                className="rounded-xl border-l-4 border-primary bg-muted p-6"
               >
                 <h3 className="text-lg font-bold text-foreground">
                   {t.theme}
@@ -434,7 +434,7 @@ export default function ChristmasCarolPage() {
                 is no extract — you must recall your own evidence.
               </p>
               <div className="mt-4 space-y-3">
-                <div className="rounded-lg border-2 border-dashed border-[#2E86C1] bg-card p-4">
+                <div className="rounded-lg border-2 border-dashed border-primary bg-card p-4">
                   <p className="text-xs font-semibold uppercase tracking-wide text-primary">
                     Example Question 1
                   </p>
@@ -447,7 +447,7 @@ export default function ChristmasCarolPage() {
                     (40 marks, including 4 marks for SPaG)
                   </p>
                 </div>
-                <div className="rounded-lg border-2 border-dashed border-[#2E86C1] bg-card p-4">
+                <div className="rounded-lg border-2 border-dashed border-primary bg-card p-4">
                   <p className="text-xs font-semibold uppercase tracking-wide text-primary">
                     Example Question 2
                   </p>
@@ -465,31 +465,31 @@ export default function ChristmasCarolPage() {
               </h3>
               <ol className="mt-4 space-y-3 text-sm text-muted-foreground">
                 <li className="flex gap-3">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">1</span>
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">1</span>
                   <span>
                     <strong>Introduction</strong> — state Dickens&apos; purpose and how the theme/character connects to his social message. Reference the Victorian context.
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">2</span>
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">2</span>
                   <span>
                     <strong>4-5 analytical paragraphs</strong> covering different staves. Track how the theme/character develops across the novella.
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">3</span>
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">3</span>
                   <span>
                     <strong>Analyse Dickens&apos; methods</strong> — language (imagery, simile, listing, hyperbole), structure (the five-stave form, the transformation arc), and narrative voice (the intrusive narrator who addresses the reader directly).
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">4</span>
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">4</span>
                   <span>
                     <strong>Integrate context</strong> — link to Victorian poverty, the Poor Law, Malthus, child labour, and Dickens&apos; own experiences. Make context serve your argument.
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">5</span>
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">5</span>
                   <span>
                     <strong>Conclude</strong> — summarise Dickens&apos; overall message and what he wanted his Victorian readers to do differently.
                   </span>
@@ -497,7 +497,7 @@ export default function ChristmasCarolPage() {
               </ol>
             </div>
 
-            <div className="rounded-xl border-2 border-[#2E86C1] bg-blue-50 p-6">
+            <div className="rounded-xl border-2 border-primary bg-blue-50 p-6">
               <h3 className="text-lg font-bold text-foreground">
                 Top Tips for Top Marks
               </h3>

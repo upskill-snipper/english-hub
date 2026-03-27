@@ -60,7 +60,7 @@ export default function CancelSubscriptionPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-muted">
       <div className="max-w-2xl mx-auto px-4 py-12">
         {/* Progress indicator */}
         <div className="mb-8">
@@ -70,8 +70,8 @@ export default function CancelSubscriptionPage() {
                 <div
                   className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${
                     s <= step
-                      ? "bg-[#1A5276] text-white"
-                      : "bg-gray-200 text-gray-500"
+                      ? "bg-primary text-white"
+                      : "bg-muted text-muted-foreground"
                   }`}
                 >
                   {s < step ? (
@@ -95,7 +95,7 @@ export default function CancelSubscriptionPage() {
                 {s < 4 && (
                   <div
                     className={`w-16 sm:w-24 h-0.5 mx-1 ${
-                      s < step ? "bg-[#1A5276]" : "bg-gray-200"
+                      s < step ? "bg-primary" : "bg-muted"
                     }`}
                   />
                 )}
@@ -106,11 +106,11 @@ export default function CancelSubscriptionPage() {
 
         {/* Step 1: Review what you'll lose */}
         {step === 1 && (
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-8">
-            <h1 className="text-2xl font-bold text-gray-900 mb-2">
+          <div className="bg-card rounded-2xl shadow-sm border border-border p-8">
+            <h1 className="text-2xl font-bold text-foreground mb-2">
               Cancel Your Subscription
             </h1>
-            <p className="text-gray-600 mb-8">
+            <p className="text-muted-foreground mb-8">
               Here is what will change if you cancel:
             </p>
 
@@ -124,7 +124,7 @@ export default function CancelSubscriptionPage() {
               ].map((feature, i) => (
                 <div key={i} className="flex items-start gap-3">
                   <svg
-                    className="w-5 h-5 text-gray-500 mt-0.5 flex-shrink-0"
+                    className="w-5 h-5 text-muted-foreground mt-0.5 flex-shrink-0"
                     fill="none"
                     viewBox="0 0 24 24"
                     strokeWidth={2}
@@ -136,12 +136,12 @@ export default function CancelSubscriptionPage() {
                       d="M6 18L18 6M6 6l12 12"
                     />
                   </svg>
-                  <span className="text-gray-700">{feature}</span>
+                  <span className="text-foreground">{feature}</span>
                 </div>
               ))}
             </div>
 
-            <p className="text-sm text-gray-600 mb-8">
+            <p className="text-sm text-muted-foreground mb-8">
               Your access will continue until the end of your current billing
               period. Your essays and data will be retained in accordance with
               our data retention policy.
@@ -151,13 +151,13 @@ export default function CancelSubscriptionPage() {
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 href="/dashboard/subscription"
-                className="flex-1 py-3 px-4 text-center rounded-lg font-medium border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors"
+                className="flex-1 py-3 px-4 text-center rounded-lg font-medium border border-border text-foreground hover:bg-muted transition-colors"
               >
                 Keep Subscription
               </Link>
               <button
                 onClick={() => setStep(2)}
-                className="flex-1 py-3 px-4 rounded-lg font-medium border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors"
+                className="flex-1 py-3 px-4 rounded-lg font-medium border border-border text-foreground hover:bg-muted transition-colors"
               >
                 Continue Cancellation
               </button>
@@ -167,11 +167,11 @@ export default function CancelSubscriptionPage() {
 
         {/* Step 2: Optional feedback (skippable) */}
         {step === 2 && (
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-8">
-            <h1 className="text-2xl font-bold text-gray-900 mb-2">
+          <div className="bg-card rounded-2xl shadow-sm border border-border p-8">
+            <h1 className="text-2xl font-bold text-foreground mb-2">
               Quick Feedback (Optional)
             </h1>
-            <p className="text-gray-600 mb-6">
+            <p className="text-muted-foreground mb-6">
               This step is entirely optional. Your feedback helps us improve.
             </p>
 
@@ -187,9 +187,9 @@ export default function CancelSubscriptionPage() {
                     value={reason}
                     checked={selectedReason === reason}
                     onChange={(e) => setSelectedReason(e.target.value)}
-                    className="h-4 w-4 text-foreground focus:ring-[#1A5276] border-gray-300"
+                    className="h-4 w-4 text-foreground focus:ring-primary border-border"
                   />
-                  <span className="text-gray-700">{reason}</span>
+                  <span className="text-foreground">{reason}</span>
                 </label>
               ))}
             </div>
@@ -197,7 +197,7 @@ export default function CancelSubscriptionPage() {
             <div className="mb-8">
               <label
                 htmlFor="feedback"
-                className="block text-sm font-medium text-gray-700 mb-2"
+                className="block text-sm font-medium text-foreground mb-2"
               >
                 Anything else you&apos;d like to share? (Optional)
               </label>
@@ -207,7 +207,7 @@ export default function CancelSubscriptionPage() {
                 value={feedbackText}
                 onChange={(e) => setFeedbackText(e.target.value)}
                 placeholder="Your thoughts..."
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:ring-[#1A5276] focus:border-[#1A5276] resize-none"
+                className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:ring-primary focus:border-primary resize-none"
                 maxLength={2000}
               />
             </div>
@@ -215,19 +215,19 @@ export default function CancelSubscriptionPage() {
             <div className="flex flex-col sm:flex-row gap-3">
               <button
                 onClick={() => setStep(1)}
-                className="flex-1 py-3 px-4 rounded-lg font-medium border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors"
+                className="flex-1 py-3 px-4 rounded-lg font-medium border border-border text-foreground hover:bg-muted transition-colors"
               >
                 Back
               </button>
               <button
                 onClick={() => setStep(3)}
-                className="flex-1 py-3 px-4 rounded-lg font-medium border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors"
+                className="flex-1 py-3 px-4 rounded-lg font-medium border border-border text-foreground hover:bg-muted transition-colors"
               >
                 Skip & Continue
               </button>
               <button
                 onClick={() => setStep(3)}
-                className="flex-1 py-3 px-4 rounded-lg font-medium border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors"
+                className="flex-1 py-3 px-4 rounded-lg font-medium border border-border text-foreground hover:bg-muted transition-colors"
               >
                 Submit & Continue
               </button>
@@ -237,37 +237,37 @@ export default function CancelSubscriptionPage() {
 
         {/* Step 3: Confirm cancellation */}
         {step === 3 && (
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-8">
-            <h1 className="text-2xl font-bold text-gray-900 mb-2">
+          <div className="bg-card rounded-2xl shadow-sm border border-border p-8">
+            <h1 className="text-2xl font-bold text-foreground mb-2">
               Confirm Cancellation
             </h1>
-            <p className="text-gray-600 mb-6">
+            <p className="text-muted-foreground mb-6">
               Please review the details below before confirming.
             </p>
 
-            <div className="bg-gray-50 rounded-xl p-6 mb-6 space-y-3">
+            <div className="bg-muted rounded-xl p-6 mb-6 space-y-3">
               <div className="flex justify-between">
-                <span className="text-sm text-gray-600">What happens next</span>
-                <span className="text-sm text-gray-900 font-medium">
+                <span className="text-sm text-muted-foreground">What happens next</span>
+                <span className="text-sm text-foreground font-medium">
                   Access continues until period end
                 </span>
               </div>
               <div className="flex justify-between">
-                <span className="text-sm text-gray-600">Future charges</span>
-                <span className="text-sm text-gray-900 font-medium">
+                <span className="text-sm text-muted-foreground">Future charges</span>
+                <span className="text-sm text-foreground font-medium">
                   No further charges
                 </span>
               </div>
               <div className="flex justify-between">
-                <span className="text-sm text-gray-600">Your data</span>
-                <span className="text-sm text-gray-900 font-medium">
+                <span className="text-sm text-muted-foreground">Your data</span>
+                <span className="text-sm text-foreground font-medium">
                   Retained per privacy policy
                 </span>
               </div>
             </div>
 
-            <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-8">
-              <p className="text-sm text-blue-800">
+            <div className="bg-blue-950/20 border border-blue-900/40 rounded-xl p-4 mb-8">
+              <p className="text-sm text-blue-300">
                 <strong>Cooling-off information:</strong> If you subscribed
                 within the last 14 days and did not waive your cooling-off
                 rights, you may be entitled to a full refund under consumer
@@ -283,22 +283,22 @@ export default function CancelSubscriptionPage() {
             </div>
 
             {error && (
-              <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
-                <p className="text-sm text-red-700">{error}</p>
+              <div className="bg-red-950/20 border border-red-200 rounded-lg p-4 mb-6">
+                <p className="text-sm text-red-400">{error}</p>
               </div>
             )}
 
             <div className="flex flex-col sm:flex-row gap-3">
               <button
                 onClick={() => setStep(2)}
-                className="flex-1 py-3 px-4 rounded-lg font-medium border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors"
+                className="flex-1 py-3 px-4 rounded-lg font-medium border border-border text-foreground hover:bg-muted transition-colors"
               >
                 Go Back
               </button>
               <button
                 onClick={handleConfirmCancel}
                 disabled={isSubmitting}
-                className="flex-1 py-3 px-4 rounded-lg font-medium border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex-1 py-3 px-4 rounded-lg font-medium border border-border text-foreground hover:bg-muted transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? "Cancelling..." : "Confirm Cancellation"}
               </button>
@@ -308,8 +308,8 @@ export default function CancelSubscriptionPage() {
 
         {/* Step 4: Confirmation */}
         {step === 4 && (
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 text-center">
-            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+          <div className="bg-card rounded-2xl shadow-sm border border-border p-8 text-center">
+            <div className="w-16 h-16 bg-green-950/30 rounded-full flex items-center justify-center mx-auto mb-6">
               <svg
                 className="w-8 h-8 text-green-600"
                 fill="none"
@@ -325,17 +325,17 @@ export default function CancelSubscriptionPage() {
               </svg>
             </div>
 
-            <h1 className="text-2xl font-bold text-gray-900 mb-2">
+            <h1 className="text-2xl font-bold text-foreground mb-2">
               Subscription Cancelled
             </h1>
-            <p className="text-gray-600 mb-6">
+            <p className="text-muted-foreground mb-6">
               Your subscription has been cancelled successfully.
             </p>
 
-            <div className="bg-gray-50 rounded-xl p-6 mb-8 text-left space-y-3">
+            <div className="bg-muted rounded-xl p-6 mb-8 text-left space-y-3">
               <div className="flex justify-between">
-                <span className="text-sm text-gray-600">Access until</span>
-                <span className="text-sm text-gray-900 font-medium">
+                <span className="text-sm text-muted-foreground">Access until</span>
+                <span className="text-sm text-foreground font-medium">
                   {accessEndDate
                     ? new Date(accessEndDate).toLocaleDateString("en-GB", {
                         day: "numeric",
@@ -346,20 +346,20 @@ export default function CancelSubscriptionPage() {
                 </span>
               </div>
               <div className="flex justify-between">
-                <span className="text-sm text-gray-600">Your essays</span>
-                <span className="text-sm text-gray-900 font-medium">
+                <span className="text-sm text-muted-foreground">Your essays</span>
+                <span className="text-sm text-foreground font-medium">
                   Saved and accessible
                 </span>
               </div>
               <div className="flex justify-between">
-                <span className="text-sm text-gray-600">Your data</span>
-                <span className="text-sm text-gray-900 font-medium">
+                <span className="text-sm text-muted-foreground">Your data</span>
+                <span className="text-sm text-foreground font-medium">
                   Retained per privacy policy
                 </span>
               </div>
             </div>
 
-            <p className="text-sm text-gray-500 mb-8">
+            <p className="text-sm text-muted-foreground mb-8">
               You can request a copy or deletion of your data at any time from
               your{" "}
               <Link
@@ -374,13 +374,13 @@ export default function CancelSubscriptionPage() {
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link
                 href="/dashboard"
-                className="py-3 px-6 rounded-lg font-medium border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors"
+                className="py-3 px-6 rounded-lg font-medium border border-border text-foreground hover:bg-muted transition-colors"
               >
                 Return to Dashboard
               </Link>
               <Link
                 href="/pricing"
-                className="py-3 px-6 rounded-lg font-medium border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors"
+                className="py-3 px-6 rounded-lg font-medium border border-border text-foreground hover:bg-muted transition-colors"
               >
                 Resubscribe
               </Link>

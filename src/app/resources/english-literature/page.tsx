@@ -17,7 +17,7 @@ const BOARDS = [
       "Paper 1: Shakespeare & 19th-Century Novel",
       "Paper 2: Modern Texts & Poetry",
     ],
-    color: "border-[#2E86C1]",
+    color: "border-primary",
     bgColor: "bg-primary",
     students: "~300,000",
     highlight: "Most popular board in England",
@@ -209,7 +209,7 @@ const EXPLORE_SECTIONS = [
     description:
       "Line-by-line annotation, language techniques, and comparison practice for anthology and unseen poems.",
     href: "/resources/english-literature/aqa/paper-2",
-    color: "from-[#1A5276] to-[#2E86C1]",
+    color: "from-primary to-primary",
   },
   {
     title: "Themes & Context",
@@ -280,7 +280,7 @@ function TickCell() {
 function CrossCell() {
   return (
     <td className="px-3 py-2.5 text-center">
-      <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-gray-100 text-muted-foreground">
+      <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-muted text-muted-foreground">
         <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
         </svg>
@@ -330,7 +330,7 @@ export default function EnglishLiteraturePage() {
     <>
 
       {/* ── Hero ─────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#1A5276] via-[#1A5276]/95 to-[#2E86C1]/80 px-4 py-16 text-white sm:py-20">
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-primary/80 px-4 py-16 text-white sm:py-20">
         <div className="absolute inset-0 opacity-10" aria-hidden="true">
           <div className="absolute -right-24 -top-24 h-96 w-96 rounded-full bg-card/20 blur-3xl" />
           <div className="absolute -bottom-32 -left-32 h-[30rem] w-[30rem] rounded-full bg-primary/30 blur-3xl" />
@@ -370,7 +370,7 @@ export default function EnglishLiteraturePage() {
 
       {/* ── What English Literature covers ───────────────────── */}
       <section className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
-        <div className="rounded-xl border border-[#2E86C1]/20 bg-primary/5 p-6 sm:p-8">
+        <div className="rounded-xl border border-primary/20 bg-primary/5 p-6 sm:p-8">
           <h2 className="text-xl font-bold text-foreground">
             What does English Literature cover?
           </h2>
@@ -416,7 +416,7 @@ export default function EnglishLiteraturePage() {
                 <h3 className="text-lg font-bold text-foreground transition-colors group-hover:text-foreground">
                   {board.name}
                 </h3>
-                <span className="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-semibold text-muted-foreground">
+                <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-semibold text-muted-foreground">
                   {board.spec}
                 </span>
               </div>
@@ -478,13 +478,13 @@ export default function EnglishLiteraturePage() {
                 <div className="mt-6 flex gap-4">
                   <button
                     onClick={() => handleFinderAnswer("yes")}
-                    className="rounded-lg bg-[#1A5276] px-6 py-2.5 text-sm font-semibold text-white shadow transition hover:bg-[#1A5276]/90"
+                    className="rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-white shadow transition hover:bg-primary/90"
                   >
                     Yes
                   </button>
                   <button
                     onClick={() => handleFinderAnswer("no")}
-                    className="rounded-lg border border-gray-300 bg-card px-6 py-2.5 text-sm font-semibold text-muted-foreground shadow-md transition hover:bg-muted"
+                    className="rounded-lg border border-border bg-card px-6 py-2.5 text-sm font-semibold text-muted-foreground shadow-md transition hover:bg-muted"
                   >
                     No
                   </button>
@@ -520,7 +520,7 @@ export default function EnglishLiteraturePage() {
                 <div className="mt-6 flex items-center justify-center gap-4">
                   <Link
                     href={`/resources/english-literature/${finderResult}`}
-                    className="rounded-lg bg-[#1A5276] px-5 py-2.5 text-sm font-semibold text-white shadow transition hover:bg-[#1A5276]/90"
+                    className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow transition hover:bg-primary/90"
                   >
                     Go to{" "}
                     {BOARDS.find((b) => b.slug === finderResult)?.name}{" "}
@@ -528,7 +528,7 @@ export default function EnglishLiteraturePage() {
                   </Link>
                   <button
                     onClick={resetFinder}
-                    className="rounded-lg border border-gray-300 bg-card px-5 py-2.5 text-sm font-semibold text-muted-foreground shadow-md transition hover:bg-muted"
+                    className="rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-muted-foreground shadow-md transition hover:bg-muted"
                   >
                     Start over
                   </button>
@@ -557,7 +557,7 @@ export default function EnglishLiteraturePage() {
         <div className="mt-6 overflow-x-auto rounded-xl border border-border shadow-md">
           <table className="w-full min-w-[600px] text-sm">
             <thead>
-              <tr className="bg-[#1A5276] text-white">
+              <tr className="bg-primary text-white">
                 <th className="px-4 py-3 text-left font-semibold">Text</th>
                 <th className="px-3 py-3 text-left text-xs font-semibold">
                   Type
@@ -621,9 +621,9 @@ export default function EnglishLiteraturePage() {
               <Link
                 key={text.title}
                 href={text.href}
-                className="group flex items-start gap-3 rounded-xl border border-border bg-card p-4 shadow-md transition hover:shadow-md hover:border-[#2E86C1]/40"
+                className="group flex items-start gap-3 rounded-xl border border-border bg-card p-4 shadow-md transition hover:shadow-md hover:border-primary/40"
               >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#1A5276]/10 text-foreground">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-foreground">
                   <BookIcon />
                 </div>
                 <div>
@@ -640,7 +640,7 @@ export default function EnglishLiteraturePage() {
 
       {/* ── AI Feedback Callout ──────────────────────────────── */}
       <section className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-[#1A5276] to-[#2E86C1] p-8 text-white shadow-lg sm:p-10">
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-primary to-primary p-8 text-white shadow-lg sm:p-10">
           <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-card/10 blur-2xl" />
           <div className="absolute -bottom-16 -left-16 h-56 w-56 rounded-full bg-card/5 blur-3xl" />
 
@@ -705,7 +705,7 @@ export default function EnglishLiteraturePage() {
 
       {/* ── Exam Tips Banner ─────────────────────────────────── */}
       <section className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="rounded-xl border border-[#2E86C1]/20 bg-primary/5 p-6 sm:p-8">
+        <div className="rounded-xl border border-primary/20 bg-primary/5 p-6 sm:p-8">
           <h2 className="text-xl font-bold text-foreground">
             Top 5 literature exam tips
           </h2>
@@ -721,7 +721,7 @@ export default function EnglishLiteraturePage() {
                 key={i}
                 className="flex items-start gap-3 text-sm text-muted-foreground"
               >
-                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
                   {i + 1}
                 </span>
                 {tip}

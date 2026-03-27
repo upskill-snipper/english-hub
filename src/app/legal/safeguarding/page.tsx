@@ -258,7 +258,7 @@ export default function SafeguardingPolicyPage() {
           <li>Ministry of Interior: 999 (emergency)</li>
         </ul>
 
-        <div className="bg-red-50 border border-red-200 rounded-lg p-4 mt-4 text-sm">
+        <div className="bg-warn/5 border border-warn/20 rounded-lg p-4 mt-4 text-sm">
           <p className="font-semibold">Urgent and Immediate Risk:</p>
           <p>
             If a child is in immediate danger and the DSL is not available,

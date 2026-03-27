@@ -257,7 +257,7 @@ export default function MacbethPage() {
     <>
 
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#2E86C1] px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-3xl text-center">
           <Link
             href="/resources/english-literature/edexcel"
@@ -309,7 +309,7 @@ export default function MacbethPage() {
                 className="rounded-xl border border-border p-6 shadow-md"
               >
                 <div className="flex items-center gap-3">
-                  <span className="rounded-full bg-[#1A5276] px-3 py-1 text-xs font-bold text-white">
+                  <span className="rounded-full bg-primary px-3 py-1 text-xs font-bold text-white">
                     {act.act}
                   </span>
                   <h3 className="text-lg font-bold text-foreground">
@@ -368,7 +368,7 @@ export default function MacbethPage() {
             {THEMES.map((t) => (
               <div
                 key={t.theme}
-                className="rounded-xl border-l-4 border-[#1A5276] bg-muted p-6"
+                className="rounded-xl border-l-4 border-primary bg-muted p-6"
               >
                 <h3 className="text-lg font-bold text-foreground">
                   {t.theme}
@@ -462,7 +462,7 @@ export default function MacbethPage() {
                 character, theme, or idea across the whole play. There is no
                 extract — you must recall your own evidence.
               </p>
-              <div className="mt-4 rounded-lg border-2 border-dashed border-[#2E86C1] bg-card p-4">
+              <div className="mt-4 rounded-lg border-2 border-dashed border-primary bg-card p-4">
                 <p className="text-xs font-semibold uppercase tracking-wide text-primary">
                   Example Question
                 </p>
@@ -483,25 +483,25 @@ export default function MacbethPage() {
               </h3>
               <ol className="mt-4 space-y-3 text-sm text-muted-foreground">
                 <li className="flex gap-3">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">1</span>
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">1</span>
                   <span>
                     <strong>Brief introduction</strong> — outline Shakespeare&apos;s overall presentation of the theme/character in 2-3 sentences. Mention the play&apos;s context.
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">2</span>
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">2</span>
                   <span>
                     <strong>4-5 analytical paragraphs</strong> covering different moments across the play. Each paragraph: Point &rarr; Evidence (embedded quote) &rarr; Analysis of language/technique &rarr; Context woven in.
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">3</span>
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">3</span>
                   <span>
                     <strong>Track development</strong> — show how the theme/character changes across the play (beginning &rarr; middle &rarr; end).
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">4</span>
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">4</span>
                   <span>
                     <strong>Conclude briefly</strong> — summarise Shakespeare&apos;s message and its relevance to the Jacobean audience.
                   </span>
@@ -509,7 +509,7 @@ export default function MacbethPage() {
               </ol>
             </div>
 
-            <div className="rounded-xl border-2 border-[#2E86C1] bg-blue-50 p-6">
+            <div className="rounded-xl border-2 border-primary bg-blue-50 p-6">
               <h3 className="text-lg font-bold text-foreground">
                 Top Tips for Top Marks
               </h3>

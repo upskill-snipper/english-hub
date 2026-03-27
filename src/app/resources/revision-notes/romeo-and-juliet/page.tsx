@@ -21,7 +21,7 @@ function Section({
     <section id={id} aria-labelledby={`${id}-heading`} className="scroll-mt-20">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between rounded-lg bg-gradient-to-r from-[#1A5276] to-[#2E86C1] px-5 py-3.5 text-left text-lg font-bold text-white shadow-md transition hover:opacity-90"
+        className="flex w-full items-center justify-between rounded-lg bg-gradient-to-r from-primary to-[primary] px-5 py-3.5 text-left text-lg font-bold text-white shadow-md transition hover:opacity-90"
         aria-expanded={open}
       >
         <span id={`${id}-heading`}>{title}</span>
@@ -61,7 +61,7 @@ function QuoteCard({
   analysis: string;
 }) {
   return (
-    <div className="rounded-lg border-l-4 border-[#2E86C1] bg-card p-5 shadow-md">
+    <div className="rounded-lg border-l-4 border-primary bg-card p-5 shadow-md">
       <blockquote className="text-base font-medium italic text-foreground">
         &ldquo;{quote}&rdquo;
       </blockquote>

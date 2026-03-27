@@ -688,7 +688,7 @@ export default function FrankensteinPage() {
             <h4 className="font-bold text-foreground">Key Verbs for Discussing Shelley&apos;s Methods</h4>
             <div className="mt-2 flex flex-wrap gap-2">
               {["presents", "conveys", "suggests", "implies", "critiques", "challenges", "subverts", "reinforces", "foreshadows", "juxtaposes", "parallels", "symbolises", "reflects", "undermines", "exposes"].map((verb) => (
-                <span key={verb} className="rounded-full bg-[#1A5276]/10 px-3 py-1 text-xs font-semibold text-foreground">
+                <span key={verb} className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-foreground">
                   {verb}
                 </span>
               ))}

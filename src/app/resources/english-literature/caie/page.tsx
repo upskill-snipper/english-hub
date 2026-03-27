@@ -198,7 +198,7 @@ export default function CaieEnglishLiteratureHub() {
     <>
 
       {/* ── Hero banner ─────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#2E86C1] px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
             Cambridge IGCSE
@@ -238,7 +238,7 @@ export default function CaieEnglishLiteratureHub() {
           </div>
         </div>
 
-        <div className="mt-6 rounded-lg border border-[#2E86C1]/20 bg-primary/5 p-5">
+        <div className="mt-6 rounded-lg border border-primary/20 bg-primary/5 p-5">
           <h3 className="font-semibold text-foreground">Assessment Objectives</h3>
           <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
             <li>
@@ -275,7 +275,7 @@ export default function CaieEnglishLiteratureHub() {
             <div key={group.heading} className="mt-10">
               <div className="mb-4 flex items-center gap-3">
                 <h3 className="text-lg font-bold text-foreground">{group.heading}</h3>
-                <span className="h-px flex-1 bg-[#1A5276]/15" />
+                <span className="h-px flex-1 bg-primary/15" />
               </div>
               <p className="mb-5 text-sm text-muted-foreground">{group.subtitle}</p>
 
@@ -284,9 +284,9 @@ export default function CaieEnglishLiteratureHub() {
                   <Link
                     key={r.href}
                     href={r.href}
-                    className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-md transition hover:border-[#2E86C1] hover:shadow-md"
+                    className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-md transition hover:border-primary hover:shadow-md"
                   >
-                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#1A5276]/10 text-foreground transition group-hover:bg-primary/10 group-hover:text-primary">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-foreground transition group-hover:bg-primary/10 group-hover:text-primary">
                       {r.icon}
                     </div>
                     <h4 className="mt-4 text-lg font-semibold text-foreground group-hover:text-primary">

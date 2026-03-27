@@ -15,12 +15,12 @@ export const metadata: Metadata = {
 function Annotation({ children, note }: { children: React.ReactNode; note: string }) {
   return (
     <span className="group relative">
-      <span className="rounded bg-primary/10 px-1 py-0.5 text-foreground border-b-2 border-dashed border-[#2E86C1]/40">
+      <span className="rounded bg-primary/10 px-1 py-0.5 text-foreground border-b-2 border-dashed border-primary/40">
         {children}
       </span>
-      <span className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 w-56 -translate-x-1/2 rounded-lg bg-[#1A5276] px-3 py-2 text-xs leading-relaxed text-white opacity-0 shadow-lg transition-opacity group-hover:pointer-events-auto group-hover:opacity-100">
+      <span className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 w-56 -translate-x-1/2 rounded-lg bg-primary px-3 py-2 text-xs leading-relaxed text-white opacity-0 shadow-lg transition-opacity group-hover:pointer-events-auto group-hover:opacity-100">
         {note}
-        <span className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-[#1A5276]" />
+        <span className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-[primary]" />
       </span>
     </span>
   );
@@ -39,7 +39,7 @@ function Section({
 }) {
   return (
     <section id={id} className="scroll-mt-24">
-      <h2 className="mb-6 text-2xl font-bold text-foreground border-b-2 border-[#2E86C1]/20 pb-3">
+      <h2 className="mb-6 text-2xl font-bold text-foreground border-b-2 border-primary/20 pb-3">
         {title}
       </h2>
       {children}
@@ -54,7 +54,7 @@ export default function AnalyticalWritingPage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#1A5276]/80 px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary/80 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary/80">
             Writing Skills Masterclass
@@ -126,7 +126,7 @@ export default function AnalyticalWritingPage() {
               </p>
 
               <div className="grid gap-4 sm:grid-cols-2 mb-8">
-                <div className="rounded-xl border-l-4 border-[#1A5276] bg-[#1A5276]/5 p-5">
+                <div className="rounded-xl border-l-4 border-[primary] bg-primary/5 p-5">
                   <h4 className="font-bold text-foreground text-lg">P &mdash; Point</h4>
                   <p className="mt-2 text-sm text-muted-foreground">
                     Your topic sentence. It makes a clear, arguable claim that directly addresses
@@ -141,7 +141,7 @@ export default function AnalyticalWritingPage() {
                   </div>
                 </div>
 
-                <div className="rounded-xl border-l-4 border-[#2E86C1] bg-primary/5 p-5">
+                <div className="rounded-xl border-l-4 border-primary bg-primary/5 p-5">
                   <h4 className="font-bold text-primary text-lg">E &mdash; Evidence</h4>
                   <p className="mt-2 text-sm text-muted-foreground">
                     A carefully selected quotation or reference from the text that directly supports
@@ -156,7 +156,7 @@ export default function AnalyticalWritingPage() {
                   </div>
                 </div>
 
-                <div className="rounded-xl border-l-4 border-[#1A5276] bg-[#1A5276]/5 p-5">
+                <div className="rounded-xl border-l-4 border-[primary] bg-primary/5 p-5">
                   <h4 className="font-bold text-foreground text-lg">E &mdash; Explain</h4>
                   <p className="mt-2 text-sm text-muted-foreground">
                     The most important part. Analyse <strong>how</strong> and <strong>why</strong> the
@@ -174,7 +174,7 @@ export default function AnalyticalWritingPage() {
                   </div>
                 </div>
 
-                <div className="rounded-xl border-l-4 border-[#2E86C1] bg-primary/5 p-5">
+                <div className="rounded-xl border-l-4 border-primary bg-primary/5 p-5">
                   <h4 className="font-bold text-primary text-lg">L &mdash; Link</h4>
                   <p className="mt-2 text-sm text-muted-foreground">
                     Connect back to the question, to the wider text, or to relevant context.
@@ -194,7 +194,7 @@ export default function AnalyticalWritingPage() {
 
               {/* Full PEEL example */}
               <h3 className="mb-4 text-lg font-bold text-foreground">Full PEEL Paragraph in Action</h3>
-              <div className="rounded-xl border border-[#2E86C1]/30 bg-gradient-to-br from-[#2E86C1]/5 to-white p-6">
+              <div className="rounded-xl border border-primary/30 bg-gradient-to-br from-[primary]/5 to-white p-6">
                 <p className="text-foreground leading-relaxed">
                   <Annotation note="POINT: Clear, arguable claim addressing the question directly">
                     Shakespeare presents Macbeth&apos;s guilt as an inescapable, almost supernatural
@@ -246,7 +246,7 @@ export default function AnalyticalWritingPage() {
               {/* Method 1 */}
               <div className="mb-8 rounded-xl border border-border bg-card p-6 shadow-md">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#1A5276] text-sm font-bold text-white">1</span>
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">1</span>
                   <h3 className="text-lg font-bold text-foreground">Mid-Sentence Embedding</h3>
                 </div>
                 <p className="text-sm text-muted-foreground mb-3">
@@ -268,7 +268,7 @@ export default function AnalyticalWritingPage() {
               {/* Method 2 */}
               <div className="mb-8 rounded-xl border border-border bg-card p-6 shadow-md">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#1A5276] text-sm font-bold text-white">2</span>
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">2</span>
                   <h3 className="text-lg font-bold text-foreground">Single Word / Short Phrase Embedding</h3>
                 </div>
                 <p className="text-sm text-muted-foreground mb-3">
@@ -291,7 +291,7 @@ export default function AnalyticalWritingPage() {
               {/* Method 3 */}
               <div className="mb-8 rounded-xl border border-border bg-card p-6 shadow-md">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#1A5276] text-sm font-bold text-white">3</span>
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">3</span>
                   <h3 className="text-lg font-bold text-foreground">Contextualised Introduction</h3>
                 </div>
                 <p className="text-sm text-muted-foreground mb-3">
@@ -332,7 +332,7 @@ export default function AnalyticalWritingPage() {
               {/* Word Level */}
               <div className="mb-8">
                 <h3 className="mb-4 text-lg font-bold text-foreground flex items-center gap-2">
-                  <span className="inline-block h-3 w-3 rounded-full bg-[#1A5276]"></span>
+                  <span className="inline-block h-3 w-3 rounded-full bg-primary"></span>
                   Word Level
                 </h3>
                 <p className="mb-4 text-sm text-muted-foreground">
@@ -391,7 +391,7 @@ export default function AnalyticalWritingPage() {
               {/* Whole-Text Level */}
               <div className="mb-8">
                 <h3 className="mb-4 text-lg font-bold text-foreground flex items-center gap-2">
-                  <span className="inline-block h-3 w-3 rounded-full bg-[#1A5276]"></span>
+                  <span className="inline-block h-3 w-3 rounded-full bg-primary"></span>
                   Whole-Text Level
                 </h3>
                 <p className="mb-4 text-sm text-muted-foreground">
@@ -435,7 +435,7 @@ export default function AnalyticalWritingPage() {
                   { term: "Cyclical Structure", desc: "The text ends where it began, creating a sense of entrapment, inevitability, or thematic unity." },
                   { term: "Contrasts and Juxtaposition", desc: "Placing opposing ideas, settings, or characters side by side to highlight differences and create meaning." },
                 ].map((item) => (
-                  <div key={item.term} className="rounded-lg bg-primary/5 border border-[#2E86C1]/20 p-4">
+                  <div key={item.term} className="rounded-lg bg-primary/5 border border-primary/20 p-4">
                     <p className="font-bold text-foreground text-sm">{item.term}</p>
                     <p className="mt-1 text-sm text-muted-foreground">{item.desc}</p>
                   </div>
@@ -443,7 +443,7 @@ export default function AnalyticalWritingPage() {
               </div>
 
               <h3 className="mb-4 text-lg font-bold text-foreground">Model Structural Analysis Paragraph</h3>
-              <div className="rounded-xl border border-[#2E86C1]/30 bg-gradient-to-br from-[#2E86C1]/5 to-white p-6">
+              <div className="rounded-xl border border-primary/30 bg-gradient-to-br from-[primary]/5 to-white p-6">
                 <p className="text-foreground leading-relaxed">
                   <Annotation note="POINT about structure, not language">
                     At the opening of the extract, the writer establishes a deceptively calm
@@ -480,7 +480,7 @@ export default function AnalyticalWritingPage() {
                     "The narrative perspective shifts from...", "The text builds towards...",
                     "The writer withholds... until...", "This cyclical structure suggests...",
                   ].map((phrase) => (
-                    <span key={phrase} className="rounded-full bg-[#1A5276]/10 px-3 py-1 text-xs font-medium text-foreground">
+                    <span key={phrase} className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-foreground">
                       {phrase}
                     </span>
                   ))}
@@ -621,7 +621,7 @@ export default function AnalyticalWritingPage() {
 
             {/* ─── 7. MODEL LITERATURE ESSAY ───────────────────────── */}
             <Section id="model-literature" title="7. Model Literature Essay: Macbeth">
-              <div className="mb-4 rounded-lg bg-[#1A5276]/5 border border-[#1A5276]/20 p-4">
+              <div className="mb-4 rounded-lg bg-primary/5 border border-[primary]/20 p-4">
                 <p className="text-sm font-semibold text-foreground">Question:</p>
                 <p className="text-sm text-muted-foreground mt-1 italic">
                   Starting with this extract, explore how Shakespeare presents the theme of
@@ -629,7 +629,7 @@ export default function AnalyticalWritingPage() {
                 </p>
               </div>
 
-              <div className="rounded-xl border border-[#2E86C1]/30 bg-gradient-to-br from-[#2E86C1]/5 to-white p-6 space-y-6">
+              <div className="rounded-xl border border-primary/30 bg-gradient-to-br from-[primary]/5 to-white p-6 space-y-6">
                 {/* Introduction */}
                 <div>
                   <p className="text-xs font-bold text-primary uppercase tracking-wider mb-2">Introduction</p>
@@ -779,7 +779,7 @@ export default function AnalyticalWritingPage() {
 
             {/* ─── 8. MODEL LANGUAGE ANALYSIS ──────────────────────── */}
             <Section id="model-language" title="8. Model Language Analysis Response">
-              <div className="mb-4 rounded-lg bg-[#1A5276]/5 border border-[#1A5276]/20 p-4">
+              <div className="mb-4 rounded-lg bg-primary/5 border border-[primary]/20 p-4">
                 <p className="text-sm font-semibold text-foreground">Question:</p>
                 <p className="text-sm text-muted-foreground mt-1 italic">
                   How does the writer use language to describe the storm?
@@ -799,7 +799,7 @@ export default function AnalyticalWritingPage() {
                 </p>
               </div>
 
-              <div className="rounded-xl border border-[#2E86C1]/30 bg-gradient-to-br from-[#2E86C1]/5 to-white p-6 space-y-6">
+              <div className="rounded-xl border border-primary/30 bg-gradient-to-br from-[primary]/5 to-white p-6 space-y-6">
                 {/* Paragraph 1 */}
                 <div>
                   <p className="text-xs font-bold text-primary uppercase tracking-wider mb-2">Paragraph 1 &mdash; Word Level</p>
@@ -944,7 +944,7 @@ export default function AnalyticalWritingPage() {
                       "However,", "Both writers..., yet...", "Unlike Source A,",
                       "This differs markedly from Source B, where...",
                     ].map((conn) => (
-                      <span key={conn} className="rounded-full bg-[#1A5276]/10 px-3 py-1 text-xs font-medium text-foreground">
+                      <span key={conn} className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-foreground">
                         {conn}
                       </span>
                     ))}
@@ -964,7 +964,7 @@ export default function AnalyticalWritingPage() {
               </div>
 
               <h3 className="mb-4 text-lg font-bold text-foreground">Model Comparison Paragraph</h3>
-              <div className="rounded-xl border border-[#2E86C1]/30 bg-gradient-to-br from-[#2E86C1]/5 to-white p-6">
+              <div className="rounded-xl border border-primary/30 bg-gradient-to-br from-[primary]/5 to-white p-6">
                 <p className="text-foreground leading-relaxed">
                   <Annotation note="Comparative point addressing both texts">
                     Both writers present the sea as a force beyond human control, yet their
@@ -1007,7 +1007,7 @@ export default function AnalyticalWritingPage() {
                 to exceptional.
               </p>
 
-              <div className="mb-4 rounded-lg bg-[#1A5276]/5 border border-[#1A5276]/20 p-4">
+              <div className="mb-4 rounded-lg bg-primary/5 border border-[primary]/20 p-4">
                 <p className="text-sm font-semibold text-foreground">Question:</p>
                 <p className="text-sm text-muted-foreground mt-1 italic">
                   How does Shakespeare present Lady Macbeth as a powerful character?
@@ -1135,7 +1135,7 @@ export default function AnalyticalWritingPage() {
               <div className="overflow-x-auto">
                 <table className="w-full text-sm border-collapse">
                   <thead>
-                    <tr className="bg-[#1A5276] text-white">
+                    <tr className="bg-primary text-white">
                       <th className="px-4 py-3 text-left font-semibold">Skill</th>
                       <th className="px-4 py-3 text-left font-semibold">Grade 5</th>
                       <th className="px-4 py-3 text-left font-semibold">Grade 7</th>
@@ -1189,7 +1189,7 @@ export default function AnalyticalWritingPage() {
       </div>
 
       {/* CTA */}
-      <section className="bg-[#1A5276] px-4 py-12 text-center text-white">
+      <section className="bg-primary px-4 py-12 text-center text-white">
         <div className="mx-auto max-w-2xl">
           <h2 className="text-2xl font-bold sm:text-3xl">Ready to write top-grade analytical responses?</h2>
           <p className="mt-3 text-white/80">

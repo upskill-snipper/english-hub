@@ -64,7 +64,7 @@ export default function OCRPaper1Page() {
                     <th className="py-3 font-semibold text-foreground">Time Guide</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-gray-100">
+                <tbody className="divide-y divide-border">
                   <tr>
                     <td className="py-3 pr-4 font-medium">A &mdash; Reading</td>
                     <td className="py-3 pr-4">Non-fiction / literary non-fiction</td>
@@ -430,7 +430,7 @@ export default function OCRPaper1Page() {
                       <th className="py-3 font-semibold text-foreground">Example</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-gray-100">
+                  <tbody className="divide-y divide-border">
                     <tr>
                       <td className="py-3 pr-4 font-medium">Rhetorical question</td>
                       <td className="py-3 pr-4">A question asked for effect, not expecting an answer</td>
@@ -523,7 +523,7 @@ export default function OCRPaper1Page() {
                       <th className="py-3 font-semibold text-foreground">Suggested Time</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-gray-100">
+                  <tbody className="divide-y divide-border">
                     <tr>
                       <td className="py-3 pr-4">Reading the texts and annotating</td>
                       <td className="py-3">10&ndash;15 minutes</td>

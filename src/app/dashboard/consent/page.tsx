@@ -184,7 +184,7 @@ export default function ConsentManagementPage() {
   if (loading) {
     return (
       <div className="mx-auto max-w-3xl px-4 py-12">
-        <p className="text-gray-500">Loading your consent records...</p>
+        <p className="text-muted-foreground">Loading your consent records...</p>
       </div>
     );
   }
@@ -196,7 +196,7 @@ export default function ConsentManagementPage() {
       <div className="mb-2">
         <Link
           href="/dashboard"
-          className="text-sm text-gray-500 hover:text-primary transition-colors"
+          className="text-sm text-muted-foreground hover:text-primary transition-colors"
         >
           &larr; Back to Dashboard
         </Link>
@@ -205,7 +205,7 @@ export default function ConsentManagementPage() {
       <h1 className="text-2xl font-semibold text-primary">
         Manage Your Consents
       </h1>
-      <p className="mt-2 text-sm text-gray-600">
+      <p className="mt-2 text-sm text-muted-foreground">
         View and manage the consents you have given. Under UK GDPR, you have the
         right to withdraw optional consents at any time. Essential consents are
         required for the service to function.
@@ -215,7 +215,7 @@ export default function ConsentManagementPage() {
       {error && (
         <div
           role="alert"
-          className="mt-4 rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-700"
+          className="mt-4 rounded-lg border border-red-200 bg-red-950/20 p-3 text-sm text-red-400"
         >
           {error}
         </div>
@@ -223,7 +223,7 @@ export default function ConsentManagementPage() {
       {success && (
         <div
           role="status"
-          className="mt-4 rounded-lg border border-green-200 bg-green-50 p-3 text-sm text-green-700"
+          className="mt-4 rounded-lg border border-green-200 bg-green-950/20 p-3 text-sm text-green-400"
         >
           {success}
         </div>
@@ -231,10 +231,10 @@ export default function ConsentManagementPage() {
 
       {/* Active consents */}
       <section className="mt-8">
-        <h2 className="text-lg font-medium text-gray-900">Active Consents</h2>
+        <h2 className="text-lg font-medium text-foreground">Active Consents</h2>
 
         {consents.length === 0 ? (
-          <p className="mt-4 text-sm text-gray-500">
+          <p className="mt-4 text-sm text-muted-foreground">
             No active consents found.
           </p>
         ) : (
@@ -242,28 +242,28 @@ export default function ConsentManagementPage() {
             {consents.map((consent) => (
               <div
                 key={consent.id}
-                className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm"
+                className="rounded-lg border border-border bg-card p-4 shadow-sm"
               >
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
                     <div className="flex items-center gap-2">
-                      <h3 className="font-medium text-gray-900">
+                      <h3 className="font-medium text-foreground">
                         {getLabel(consent.consentType)}
                       </h3>
                       {consent.isEssential ? (
-                        <span className="inline-flex items-center rounded-full bg-blue-50 px-2 py-0.5 text-xs font-medium text-blue-700">
+                        <span className="inline-flex items-center rounded-full bg-blue-950/20 px-2 py-0.5 text-xs font-medium text-blue-400">
                           Essential
                         </span>
                       ) : (
-                        <span className="inline-flex items-center rounded-full bg-gray-100 px-2 py-0.5 text-xs font-medium text-gray-600">
+                        <span className="inline-flex items-center rounded-full bg-muted px-2 py-0.5 text-xs font-medium text-muted-foreground">
                           Optional
                         </span>
                       )}
                     </div>
-                    <p className="mt-1 text-sm text-gray-500">
+                    <p className="mt-1 text-sm text-muted-foreground">
                       {getDescription(consent.consentType)}
                     </p>
-                    <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-gray-500">
+                    <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted-foreground">
                       <span>
                         Granted: {formatDate(consent.grantedAt)}
                       </span>
@@ -276,7 +276,7 @@ export default function ConsentManagementPage() {
                     <button
                       onClick={() => handleWithdraw(consent.consentType)}
                       disabled={withdrawing === consent.consentType}
-                      className="ml-4 shrink-0 rounded-md border border-red-200 bg-white px-3 py-1.5 text-sm font-medium text-red-600 hover:bg-red-50 disabled:opacity-50 transition-colors"
+                      className="ml-4 shrink-0 rounded-md border border-red-200 bg-card px-3 py-1.5 text-sm font-medium text-red-600 hover:bg-red-950/20 disabled:opacity-50 transition-colors"
                     >
                       {withdrawing === consent.consentType
                         ? "Withdrawing..."
@@ -286,7 +286,7 @@ export default function ConsentManagementPage() {
                 </div>
 
                 {consent.isEssential && (
-                  <p className="mt-2 text-xs text-gray-500 italic">
+                  <p className="mt-2 text-xs text-muted-foreground italic">
                     This consent is required for the service to function. To
                     withdraw it, you must{" "}
                     <Link
@@ -327,20 +327,20 @@ export default function ConsentManagementPage() {
       {/* Consent history */}
       {showHistory && (
         <section className="mt-8">
-          <h2 className="text-lg font-medium text-gray-900">
+          <h2 className="text-lg font-medium text-foreground">
             Full Consent History
           </h2>
-          <p className="mt-1 text-sm text-gray-500">
+          <p className="mt-1 text-sm text-muted-foreground">
             Complete audit trail of all consent changes, in chronological order.
           </p>
 
           {history.length === 0 ? (
-            <p className="mt-4 text-sm text-gray-500">No history found.</p>
+            <p className="mt-4 text-sm text-muted-foreground">No history found.</p>
           ) : (
             <div className="mt-4 overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-gray-200 text-left text-xs font-medium uppercase tracking-wider text-gray-500">
+                  <tr className="border-b border-border text-left text-xs font-medium uppercase tracking-wider text-muted-foreground">
                     <th className="px-3 py-2">Type</th>
                     <th className="px-3 py-2">Action</th>
                     <th className="px-3 py-2">Version</th>
@@ -350,8 +350,8 @@ export default function ConsentManagementPage() {
                 </thead>
                 <tbody className="divide-y divide-gray-100">
                   {history.map((record) => (
-                    <tr key={record.id} className="hover:bg-gray-50">
-                      <td className="px-3 py-2 font-medium text-gray-700">
+                    <tr key={record.id} className="hover:bg-muted">
+                      <td className="px-3 py-2 font-medium text-foreground">
                         {getLabel(record.consentType)}
                       </td>
                       <td className="px-3 py-2">
@@ -361,13 +361,13 @@ export default function ConsentManagementPage() {
                           <span className="text-red-600">Withdrawn</span>
                         )}
                       </td>
-                      <td className="px-3 py-2 text-gray-500">
+                      <td className="px-3 py-2 text-muted-foreground">
                         {record.version}
                       </td>
-                      <td className="px-3 py-2 text-gray-500">
+                      <td className="px-3 py-2 text-muted-foreground">
                         {formatDate(record.grantedAt)}
                       </td>
-                      <td className="px-3 py-2 text-gray-500">
+                      <td className="px-3 py-2 text-muted-foreground">
                         {record.method.replace("_", " ").toLowerCase()}
                       </td>
                     </tr>
@@ -380,7 +380,7 @@ export default function ConsentManagementPage() {
       )}
 
       {/* Rights notice */}
-      <section className="mt-10 rounded-lg border border-primary/20 bg-primary/5 p-4 text-sm text-gray-700">
+      <section className="mt-10 rounded-lg border border-primary/20 bg-primary/5 p-4 text-sm text-foreground">
         <p className="font-medium text-primary">Your data rights</p>
         <p className="mt-1">
           Under UK GDPR, you can withdraw optional consents at any time without

@@ -20,7 +20,7 @@ const COMPONENTS = [
       "Section A: Shakespeare — one play studied in depth with an extract-based essay question. Section B: Poetry — two poems from the WJEC anthology compared in a single essay.",
     marks: "80 marks — 40% of GCSE",
     duration: "2 hours",
-    colour: "bg-[#1A5276]",
+    colour: "bg-primary",
   },
   {
     title: "Component 2: Post-1914 Prose/Drama, 19th Century Prose & Unseen Poetry",
@@ -72,7 +72,7 @@ export default function WJECEnglishLiteraturePage() {
     <>
 
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#2E86C1] px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
             WJEC Eduqas GCSE
@@ -283,7 +283,7 @@ export default function WJECEnglishLiteraturePage() {
                 key={obj.ao}
                 className="rounded-lg border border-border bg-card p-5"
               >
-                <span className="inline-block rounded bg-[#1A5276] px-2 py-0.5 text-xs font-bold text-white">
+                <span className="inline-block rounded bg-primary px-2 py-0.5 text-xs font-bold text-white">
                   {obj.ao}
                 </span>
                 <p className="mt-2 text-sm text-muted-foreground">{obj.desc}</p>
@@ -300,7 +300,7 @@ export default function WJECEnglishLiteraturePage() {
             How WJEC Eduqas Differs from AQA &amp; Edexcel
           </h2>
           <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
-            <div className="rounded-lg border-l-4 border-[#1A5276] bg-blue-50 p-4">
+            <div className="rounded-lg border-l-4 border-primary bg-blue-50 p-4">
               <h3 className="font-semibold text-foreground">Poetry anthology is compared, not contrasted with unseen</h3>
               <p className="mt-1 text-sm">
                 WJEC Eduqas prints both anthology poems on the paper and asks you to
@@ -310,7 +310,7 @@ export default function WJECEnglishLiteraturePage() {
                 to choose.
               </p>
             </div>
-            <div className="rounded-lg border-l-4 border-[#1A5276] bg-blue-50 p-4">
+            <div className="rounded-lg border-l-4 border-primary bg-blue-50 p-4">
               <h3 className="font-semibold text-foreground">
                 Unseen poetry carries heavy weight
               </h3>
@@ -320,7 +320,7 @@ export default function WJECEnglishLiteraturePage() {
                 of Paper 2) or Edexcel. Strong unseen poetry skills are essential.
               </p>
             </div>
-            <div className="rounded-lg border-l-4 border-[#1A5276] bg-blue-50 p-4">
+            <div className="rounded-lg border-l-4 border-primary bg-blue-50 p-4">
               <h3 className="font-semibold text-foreground">
                 Extract provided for Shakespeare
               </h3>
@@ -330,7 +330,7 @@ export default function WJECEnglishLiteraturePage() {
                 extract and part (ii) requires discussion of the whole play.
               </p>
             </div>
-            <div className="rounded-lg border-l-4 border-[#1A5276] bg-blue-50 p-4">
+            <div className="rounded-lg border-l-4 border-primary bg-blue-50 p-4">
               <h3 className="font-semibold text-foreground">
                 40/60 weighting between components
               </h3>
@@ -340,7 +340,7 @@ export default function WJECEnglishLiteraturePage() {
                 its two papers.
               </p>
             </div>
-            <div className="rounded-lg border-l-4 border-[#1A5276] bg-blue-50 p-4">
+            <div className="rounded-lg border-l-4 border-primary bg-blue-50 p-4">
               <h3 className="font-semibold text-foreground">
                 Different text options
               </h3>

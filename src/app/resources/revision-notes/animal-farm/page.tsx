@@ -472,7 +472,7 @@ export default function AnimalFarmStudyGuide() {
   return (
     <div className="space-y-6">
       {/* Hero */}
-      <div className="rounded-xl bg-gradient-to-br from-[#1A5276] to-[#2E86C1] px-6 py-10 text-white sm:py-14">
+      <div className="rounded-xl bg-gradient-to-br from-primary to-[primary] px-6 py-10 text-white sm:py-14">
         <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
           GCSE English Literature &mdash; Revision Notes
         </p>
@@ -492,7 +492,7 @@ export default function AnimalFarmStudyGuide() {
             <a
               key={s}
               href={`#${s.toLowerCase().replace(/\s+/g, "-")}`}
-              className="rounded-full border border-[#2E86C1]/30 px-3 py-1 text-foreground transition hover:bg-primary/10"
+              className="rounded-full border border-primary/30 px-3 py-1 text-foreground transition hover:bg-primary/10"
             >
               {s}
             </a>
@@ -548,7 +548,7 @@ export default function AnimalFarmStudyGuide() {
         </p>
         <div className="space-y-4">
           {keyQuotes.map((q, i) => (
-            <div key={i} className="rounded-lg border-l-4 border-[#2E86C1] bg-muted p-4">
+            <div key={i} className="rounded-lg border-l-4 border-primary bg-muted p-4">
               <blockquote className="text-base font-medium italic text-foreground">
                 &ldquo;{q.quote}&rdquo;
               </blockquote>

@@ -419,7 +419,7 @@ export default function PoetryAnalysisPage() {
     <>
 
       {/* ── Hero ────────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#2E86C1] px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
             Cambridge IGCSE English Literature
@@ -451,7 +451,7 @@ export default function PoetryAnalysisPage() {
                 <li>&bull; Uses <strong>literary terminology accurately</strong> and purposefully</li>
               </ul>
             </div>
-            <div className="rounded-lg border border-[#2E86C1]/20 bg-primary/5 p-5">
+            <div className="rounded-lg border border-primary/20 bg-primary/5 p-5">
               <h3 className="font-semibold text-foreground">What examiners look for</h3>
               <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                 <li>&bull; <strong>Close reading:</strong> analysis of specific words and phrases, not just general themes</li>
@@ -491,7 +491,7 @@ export default function PoetryAnalysisPage() {
                 ].map((c) => (
                   <span
                     key={c}
-                    className="rounded-full bg-[#1A5276]/10 px-3 py-1 text-xs font-medium text-foreground"
+                    className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-foreground"
                   >
                     {c}
                   </span>
@@ -556,7 +556,7 @@ export default function PoetryAnalysisPage() {
                 className="rounded-xl border border-border bg-card shadow-md overflow-hidden"
               >
                 {/* Poem header */}
-                <div className="border-b border-border bg-gradient-to-r from-[#1A5276]/5 to-transparent px-5 py-4 sm:px-6">
+                <div className="border-b border-border bg-gradient-to-r from-primary/5 to-transparent px-5 py-4 sm:px-6">
                   <h3 className="text-lg font-bold text-foreground">
                     {poem.title}
                   </h3>

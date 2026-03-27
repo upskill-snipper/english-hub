@@ -95,7 +95,7 @@ export default function ProgressPage() {
           <h1 className="text-3xl font-bold text-foreground">
             Student Progress
           </h1>
-          <p className="text-slate-600 mt-1">
+          <p className="text-muted-foreground mt-1">
             Track your child&apos;s learning journey and achievements
           </p>
         </div>
@@ -109,7 +109,7 @@ export default function ProgressPage() {
               className={`px-5 py-2.5 rounded-xl text-sm font-medium transition-all ${
                 selectedStudent === s.id
                   ? "bg-primary text-white shadow-md"
-                  : "bg-white text-slate-600 border border-border hover:border-[#2E86C1]/40"
+                  : "bg-card text-muted-foreground border border-border hover:border-primary/40"
               }`}
             >
               {s.name}
@@ -119,19 +119,19 @@ export default function ProgressPage() {
 
         {/* Overview Cards */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-          <div className="bg-white rounded-xl border border-border p-4 text-center">
+          <div className="bg-card rounded-xl border border-border p-4 text-center">
             <p className="text-3xl font-bold text-foreground">
               {student.averageScore}%
             </p>
-            <p className="text-sm text-slate-500 mt-1">Average Score</p>
+            <p className="text-sm text-muted-foreground mt-1">Average Score</p>
           </div>
-          <div className="bg-white rounded-xl border border-border p-4 text-center">
+          <div className="bg-card rounded-xl border border-border p-4 text-center">
             <p className="text-3xl font-bold text-primary">
               {student.totalEssays}
             </p>
-            <p className="text-sm text-slate-500 mt-1">Essays Written</p>
+            <p className="text-sm text-muted-foreground mt-1">Essays Written</p>
           </div>
-          <div className="bg-white rounded-xl border border-border p-4 text-center">
+          <div className="bg-card rounded-xl border border-border p-4 text-center">
             <p
               className={`text-3xl font-bold ${
                 parseInt(student.projectedGrade) >= parseInt(student.targetGrade)
@@ -141,15 +141,15 @@ export default function ProgressPage() {
             >
               Grade {student.projectedGrade}
             </p>
-            <p className="text-sm text-slate-500 mt-1">
+            <p className="text-sm text-muted-foreground mt-1">
               Projected (target: {student.targetGrade})
             </p>
           </div>
-          <div className="bg-white rounded-xl border border-border p-4 text-center">
+          <div className="bg-card rounded-xl border border-border p-4 text-center">
             <p className="text-3xl font-bold text-green-600">
               {student.weeklyActivity.reduce((a, b) => a + b, 0)}
             </p>
-            <p className="text-sm text-slate-500 mt-1">Activities This Week</p>
+            <p className="text-sm text-muted-foreground mt-1">Activities This Week</p>
           </div>
         </div>
 
@@ -157,7 +157,7 @@ export default function ProgressPage() {
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-6">
             {/* Weekly Activity */}
-            <div className="bg-white rounded-xl border border-border p-6">
+            <div className="bg-card rounded-xl border border-border p-6">
               <h2 className="text-lg font-semibold text-foreground mb-4">
                 Weekly Activity
               </h2>
@@ -173,7 +173,7 @@ export default function ProgressPage() {
                         style={{ height: `${Math.max(count * 20, 4)}px` }}
                       />
                     </div>
-                    <span className="text-xs text-slate-400 mt-2">
+                    <span className="text-xs text-muted-foreground mt-2">
                       {DAYS[i]}
                     </span>
                   </div>
@@ -182,7 +182,7 @@ export default function ProgressPage() {
             </div>
 
             {/* Recent Work */}
-            <div className="bg-white rounded-xl border border-border p-6">
+            <div className="bg-card rounded-xl border border-border p-6">
               <h2 className="text-lg font-semibold text-foreground mb-4">
                 Recent Work
               </h2>
@@ -196,7 +196,7 @@ export default function ProgressPage() {
                       <p className="font-medium text-sm text-foreground truncate">
                         {entry.essayTitle}
                       </p>
-                      <p className="text-xs text-slate-400 mt-0.5">
+                      <p className="text-xs text-muted-foreground mt-0.5">
                         {entry.subject} ·{" "}
                         {new Date(entry.date).toLocaleDateString("en-GB", {
                           day: "numeric",
@@ -224,25 +224,25 @@ export default function ProgressPage() {
           {/* Sidebar */}
           <div className="space-y-6">
             {/* Student Info */}
-            <div className="bg-white rounded-xl border border-border p-6">
+            <div className="bg-card rounded-xl border border-border p-6">
               <h2 className="text-lg font-semibold text-foreground mb-3">
                 Student Info
               </h2>
               <dl className="space-y-2 text-sm">
                 <div className="flex justify-between">
-                  <dt className="text-slate-500">School</dt>
+                  <dt className="text-muted-foreground">School</dt>
                   <dd className="text-foreground font-medium">
                     {student.school}
                   </dd>
                 </div>
                 <div className="flex justify-between">
-                  <dt className="text-slate-500">Year Group</dt>
+                  <dt className="text-muted-foreground">Year Group</dt>
                   <dd className="text-foreground font-medium">
                     Year {student.yearGroup}
                   </dd>
                 </div>
                 <div className="flex justify-between">
-                  <dt className="text-slate-500">Exam Board</dt>
+                  <dt className="text-muted-foreground">Exam Board</dt>
                   <dd className="text-foreground font-medium">
                     {student.examBoard}
                   </dd>
@@ -251,7 +251,7 @@ export default function ProgressPage() {
             </div>
 
             {/* Strengths */}
-            <div className="bg-white rounded-xl border border-border p-6">
+            <div className="bg-card rounded-xl border border-border p-6">
               <h2 className="text-lg font-semibold text-green-700 mb-3">
                 Strengths
               </h2>
@@ -259,14 +259,14 @@ export default function ProgressPage() {
                 {student.strengths.map((s, i) => (
                   <li key={i} className="flex items-start gap-2 text-sm">
                     <span className="text-green-500 mt-0.5">✓</span>
-                    <span className="text-slate-600">{s}</span>
+                    <span className="text-muted-foreground">{s}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
             {/* Areas to Improve */}
-            <div className="bg-white rounded-xl border border-border p-6">
+            <div className="bg-card rounded-xl border border-border p-6">
               <h2 className="text-lg font-semibold text-amber-700 mb-3">
                 Areas to Improve
               </h2>
@@ -274,14 +274,14 @@ export default function ProgressPage() {
                 {student.areasToImprove.map((a, i) => (
                   <li key={i} className="flex items-start gap-2 text-sm">
                     <span className="text-amber-500 mt-0.5">→</span>
-                    <span className="text-slate-600">{a}</span>
+                    <span className="text-muted-foreground">{a}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
             {/* Actions */}
-            <div className="bg-white rounded-xl border border-border p-6">
+            <div className="bg-card rounded-xl border border-border p-6">
               <h2 className="text-lg font-semibold text-foreground mb-3">
                 Actions
               </h2>
@@ -294,7 +294,7 @@ export default function ProgressPage() {
                 </Link>
                 <Link
                   href="/help/contact"
-                  className="block w-full text-center px-4 py-2 bg-slate-100 text-slate-600 rounded-lg text-sm font-medium hover:bg-slate-200 transition-colors"
+                  className="block w-full text-center px-4 py-2 bg-muted text-muted-foreground rounded-lg text-sm font-medium hover:bg-muted transition-colors"
                 >
                   Contact Teacher
                 </Link>

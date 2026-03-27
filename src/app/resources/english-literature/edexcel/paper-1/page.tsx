@@ -18,7 +18,7 @@ export default function Paper1Page() {
     <>
 
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#2E86C1] px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-3xl text-center">
           <Link
             href="/resources/english-literature/edexcel"
@@ -118,7 +118,7 @@ export default function Paper1Page() {
                 <h3 className="text-xl font-bold text-foreground">Macbeth</h3>
                 <Link
                   href="/resources/english-literature/edexcel/macbeth"
-                  className="rounded-lg bg-[#1A5276] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#1A5276]/90"
+                  className="rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white transition hover:bg-primary/90"
                 >
                   Full Study Guide &rarr;
                 </Link>
@@ -308,7 +308,7 @@ export default function Paper1Page() {
                 </h3>
                 <Link
                   href="/resources/english-literature/edexcel/inspector-calls"
-                  className="rounded-lg bg-[#1A5276] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#1A5276]/90"
+                  className="rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white transition hover:bg-primary/90"
                 >
                   Full Study Guide &rarr;
                 </Link>
@@ -439,7 +439,7 @@ export default function Paper1Page() {
               </h3>
               <ol className="mt-4 space-y-3 text-sm text-muted-foreground">
                 <li className="flex gap-3">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
                     1
                   </span>
                   <span>
@@ -449,7 +449,7 @@ export default function Paper1Page() {
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
                     2
                   </span>
                   <span>
@@ -459,7 +459,7 @@ export default function Paper1Page() {
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
                     3
                   </span>
                   <span>
@@ -469,7 +469,7 @@ export default function Paper1Page() {
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
                     4
                   </span>
                   <span>
@@ -479,7 +479,7 @@ export default function Paper1Page() {
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
                     5
                   </span>
                   <span>
@@ -490,7 +490,7 @@ export default function Paper1Page() {
                   </span>
                 </li>
                 <li className="flex gap-3">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-[#1A5276] text-xs font-bold text-white">
+                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
                     6
                   </span>
                   <span>
@@ -561,7 +561,7 @@ export default function Paper1Page() {
             </div>
 
             {/* Sample paragraph */}
-            <div className="rounded-xl border-2 border-[#2E86C1] bg-blue-50 p-6">
+            <div className="rounded-xl border-2 border-primary bg-blue-50 p-6">
               <h3 className="text-lg font-bold text-foreground">
                 Model Paragraph Structure (PEA+C)
               </h3>
@@ -607,7 +607,7 @@ export default function Paper1Page() {
           <div className="mt-4 overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b-2 border-[#1A5276] text-left">
+                <tr className="border-b-2 border-primary text-left">
                   <th className="py-2 pr-4 font-semibold text-foreground">Section</th>
                   <th className="py-2 pr-4 font-semibold text-foreground">Time</th>
                   <th className="py-2 font-semibold text-foreground">Tip</th>

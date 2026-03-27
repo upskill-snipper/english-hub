@@ -350,7 +350,7 @@ export default function ToKillAMockingbirdStudyGuide() {
     <>
 
       {/* ── Hero ────────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-[#2C3E50] to-[#1A5276] px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-[#2C3E50] to-primary px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
             Cambridge IGCSE English Literature
@@ -382,7 +382,7 @@ export default function ToKillAMockingbirdStudyGuide() {
             <a
               key={s}
               href={`#${s.toLowerCase().replace(/\s+/g, "-")}`}
-              className="rounded-full border border-[#1A5276]/30 px-3 py-1 text-foreground transition hover:bg-primary/10"
+              className="rounded-full border border-primary/30 px-3 py-1 text-foreground transition hover:bg-primary/10"
             >
               {s}
             </a>
@@ -407,7 +407,7 @@ export default function ToKillAMockingbirdStudyGuide() {
                   <h3 className="font-semibold text-foreground">{ch.title}</h3>
                 </div>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{ch.events}</p>
-                <div className="mt-3 rounded border-l-2 border-[#1A5276] bg-primary/5 px-3 py-2">
+                <div className="mt-3 rounded border-l-2 border-primary bg-primary/5 px-3 py-2">
                   <p className="text-xs italic text-foreground">&ldquo;{ch.keyQuote}&rdquo;</p>
                   <p className="mt-1 text-xs text-muted-foreground">{ch.quoteContext}</p>
                 </div>
@@ -471,7 +471,7 @@ export default function ToKillAMockingbirdStudyGuide() {
             {keyQuotes.map((q, i) => (
               <div
                 key={i}
-                className="rounded-lg border-l-4 border-[#1A5276] bg-card p-5 shadow-md"
+                className="rounded-lg border-l-4 border-primary bg-card p-5 shadow-md"
               >
                 <blockquote className="text-base font-medium italic text-foreground">
                   &ldquo;{q.quote}&rdquo;
@@ -655,7 +655,7 @@ export default function ToKillAMockingbirdStudyGuide() {
             </div>
 
             {/* ── Model Paragraph ──────────────────────────────────── */}
-            <div className="rounded-lg border-2 border-[#1A5276]/40 bg-card p-5 shadow-md">
+            <div className="rounded-lg border-2 border-primary/40 bg-card p-5 shadow-md">
               <h3 className="text-lg font-semibold text-foreground">
                 Model Paragraph (for the passage-based question above)
               </h3>
@@ -737,7 +737,7 @@ export default function ToKillAMockingbirdStudyGuide() {
             </div>
 
             {/* ── Exam Technique ───────────────────────────────────── */}
-            <div className="rounded-lg border-2 border-[#1A5276]/30 bg-primary/5 p-5">
+            <div className="rounded-lg border-2 border-primary/30 bg-primary/5 p-5">
               <h3 className="text-lg font-semibold text-foreground">
                 Cambridge Exam Technique: Key Tips
               </h3>

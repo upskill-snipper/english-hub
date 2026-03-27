@@ -94,7 +94,7 @@ export default function CaieEnglishLanguagePage() {
     <>
 
       {/* ── Hero banner ─────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#2E86C1] px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           {/* Breadcrumb */}
           <nav aria-label="Breadcrumb" className="mb-6 flex justify-center">
@@ -137,7 +137,7 @@ export default function CaieEnglishLanguagePage() {
         <div className="mt-6 overflow-x-auto">
           <table className="w-full min-w-[600px] text-left text-sm">
             <thead>
-              <tr className="border-b-2 border-[#1A5276]/20">
+              <tr className="border-b-2 border-primary/20">
                 <th className="py-3 pr-4 font-semibold text-foreground">Component</th>
                 <th className="py-3 pr-4 font-semibold text-foreground">Paper</th>
                 <th className="py-3 pr-4 font-semibold text-foreground">Duration</th>
@@ -145,7 +145,7 @@ export default function CaieEnglishLanguagePage() {
                 <th className="py-3 font-semibold text-foreground">Weighting</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-100 text-muted-foreground">
+            <tbody className="divide-y divide-border text-muted-foreground">
               <tr>
                 <td className="py-3 pr-4 font-medium">Reading (Core)</td>
                 <td className="py-3 pr-4">Paper 1</td>
@@ -197,9 +197,9 @@ export default function CaieEnglishLanguagePage() {
               <Link
                 key={r.href}
                 href={r.href}
-                className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-md transition-all hover:border-[#2E86C1]/40 hover:shadow-md hover:shadow-[#2E86C1]/5"
+                className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-md transition-all hover:border-primary/40 hover:shadow-md hover:shadow-primary/5"
               >
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-[#1A5276]/10 text-foreground transition-colors group-hover:bg-primary/10 group-hover:text-primary">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-foreground transition-colors group-hover:bg-primary/10 group-hover:text-primary">
                   {r.icon}
                 </div>
                 <h3 className="text-lg font-semibold text-foreground group-hover:text-primary">
@@ -229,7 +229,7 @@ export default function CaieEnglishLanguagePage() {
           Exam Tips for International Students
         </h2>
         <div className="mt-6 grid gap-6 sm:grid-cols-2">
-          <div className="rounded-lg border border-border border-l-4 border-l-[#2E86C1] bg-card p-5 shadow-md">
+          <div className="rounded-lg border border-border border-l-4 border-l-primary bg-card p-5 shadow-md">
             <h3 className="font-semibold text-foreground">Time Management</h3>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
               In Paper 2 (Extended Reading), you have 2 hours for three
@@ -239,7 +239,7 @@ export default function CaieEnglishLanguagePage() {
               check your work.
             </p>
           </div>
-          <div className="rounded-lg border border-border border-l-4 border-l-[#2E86C1] bg-card p-5 shadow-md">
+          <div className="rounded-lg border border-border border-l-4 border-l-primary bg-card p-5 shadow-md">
             <h3 className="font-semibold text-foreground">Use the Passages</h3>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
               Cambridge examiners reward candidates who engage closely with the
@@ -248,7 +248,7 @@ export default function CaieEnglishLanguagePage() {
               that support your point.
             </p>
           </div>
-          <div className="rounded-lg border border-border border-l-4 border-l-[#2E86C1] bg-card p-5 shadow-md">
+          <div className="rounded-lg border border-border border-l-4 border-l-primary bg-card p-5 shadow-md">
             <h3 className="font-semibold text-foreground">Directed Writing Format</h3>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
               In directed writing, always adopt the correct format (letter,
@@ -257,7 +257,7 @@ export default function CaieEnglishLanguagePage() {
               is where many students lose marks unnecessarily.
             </p>
           </div>
-          <div className="rounded-lg border border-border border-l-4 border-l-[#2E86C1] bg-card p-5 shadow-md">
+          <div className="rounded-lg border border-border border-l-4 border-l-primary bg-card p-5 shadow-md">
             <h3 className="font-semibold text-foreground">Vocabulary Building</h3>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
               Cambridge passages often use sophisticated vocabulary. Build your

@@ -69,7 +69,7 @@ export default function Paper1ReadingPage() {
                   <th className="py-3 font-semibold text-foreground">Suggested Time</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100 text-muted-foreground">
+              <tbody className="divide-y divide-border text-muted-foreground">
                 <tr>
                   <td className="py-3 pr-4 font-medium">Question 1</td>
                   <td className="py-3 pr-4">Detailed comprehension &mdash; factual retrieval, inference, vocabulary in context</td>

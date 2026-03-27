@@ -15,12 +15,12 @@ export const metadata: Metadata = {
 function Annotation({ children, note }: { children: React.ReactNode; note: string }) {
   return (
     <span className="group relative">
-      <span className="rounded bg-primary/10 px-1 py-0.5 text-foreground border-b-2 border-dashed border-[#2E86C1]/40">
+      <span className="rounded bg-primary/10 px-1 py-0.5 text-foreground border-b-2 border-dashed border-primary/40">
         {children}
       </span>
-      <span className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 w-56 -translate-x-1/2 rounded-lg bg-[#1A5276] px-3 py-2 text-xs leading-relaxed text-white opacity-0 shadow-lg transition-opacity group-hover:pointer-events-auto group-hover:opacity-100">
+      <span className="pointer-events-none absolute bottom-full left-1/2 z-10 mb-2 w-56 -translate-x-1/2 rounded-lg bg-primary px-3 py-2 text-xs leading-relaxed text-white opacity-0 shadow-lg transition-opacity group-hover:pointer-events-auto group-hover:opacity-100">
         {note}
-        <span className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-[#1A5276]" />
+        <span className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-[primary]" />
       </span>
     </span>
   );
@@ -31,7 +31,7 @@ function Annotation({ children, note }: { children: React.ReactNode; note: strin
 function Section({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
   return (
     <section id={id} className="scroll-mt-24">
-      <h2 className="mb-6 text-2xl font-bold text-foreground border-b-2 border-[#2E86C1]/20 pb-3">
+      <h2 className="mb-6 text-2xl font-bold text-foreground border-b-2 border-primary/20 pb-3">
         {title}
       </h2>
       {children}
@@ -53,7 +53,7 @@ const TOC = [
 const PHRASE_CATEGORIES = [
   {
     heading: "Introducing a Comparison",
-    colour: "border-[#2E86C1]/30 bg-primary/5",
+    colour: "border-primary/30 bg-primary/5",
     phrases: [
       "Both writers...",
       "Both sources present...",
@@ -64,7 +64,7 @@ const PHRASE_CATEGORIES = [
   },
   {
     heading: "Highlighting Similarities",
-    colour: "border-[#27AE60]/30 bg-[#27AE60]/5",
+    colour: "border-[success]/30 bg-success/5",
     phrases: [
       "Similarly, Source B...",
       "In the same way, the writer of Source B...",
@@ -77,7 +77,7 @@ const PHRASE_CATEGORIES = [
   },
   {
     heading: "Highlighting Differences",
-    colour: "border-[#E74C3C]/30 bg-[#E74C3C]/5",
+    colour: "border-destructive/30 bg-destructive/5",
     phrases: [
       "However, Source B takes a different approach...",
       "In contrast to Source A, the writer of Source B...",
@@ -91,7 +91,7 @@ const PHRASE_CATEGORIES = [
   },
   {
     heading: "Analysing Methods",
-    colour: "border-[#8E44AD]/30 bg-[#8E44AD]/5",
+    colour: "border-secondary/30 bg-secondary/5",
     phrases: [
       "The writer uses... to convey...",
       "Through the use of..., the writer creates...",
@@ -104,7 +104,7 @@ const PHRASE_CATEGORIES = [
   },
   {
     heading: "Evaluating Impact",
-    colour: "border-[#E67E22]/30 bg-[#E67E22]/5",
+    colour: "border-accent/30 bg-accent/5",
     phrases: [
       "Perhaps the most striking difference is...",
       "Arguably, Source A is more effective because...",
@@ -123,7 +123,7 @@ export default function LanguageComparisonPage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#1A5276]/80 px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary/80 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary/80">
             Comparison Skills
@@ -203,17 +203,17 @@ export default function LanguageComparisonPage() {
                   </div>
                 </div>
 
-                <div className="rounded-xl border-2 border-[#E74C3C]/30 bg-[#E74C3C]/5 p-5">
-                  <h3 className="font-bold text-[#E74C3C]">The Most Common Error</h3>
+                <div className="rounded-xl border-2 border-destructive/30 bg-destructive/5 p-5">
+                  <h3 className="font-bold text-destructive">The Most Common Error</h3>
                   <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                     Students often write about what the writers say (their opinions) rather than how they say it (their methods). Compare this:
                   </p>
                   <div className="mt-3 space-y-2">
                     <div className="rounded-lg bg-card p-3">
-                      <p className="text-sm"><span className="font-bold text-[#E74C3C]">Weak:</span> &ldquo;Source A thinks school uniforms are good. Source B thinks they are bad.&rdquo;</p>
+                      <p className="text-sm"><span className="font-bold text-destructive">Weak:</span> &ldquo;Source A thinks school uniforms are good. Source B thinks they are bad.&rdquo;</p>
                     </div>
                     <div className="rounded-lg bg-card p-3">
-                      <p className="text-sm"><span className="font-bold text-[#27AE60]">Strong:</span> &ldquo;Source A uses an anecdote to engage the reader&rsquo;s sympathy, whereas Source B relies on statistics to build a logical, evidence-based argument.&rdquo;</p>
+                      <p className="text-sm"><span className="font-bold text-success">Strong:</span> &ldquo;Source A uses an anecdote to engage the reader&rsquo;s sympathy, whereas Source B relies on statistics to build a logical, evidence-based argument.&rdquo;</p>
                     </div>
                   </div>
                 </div>
@@ -232,7 +232,7 @@ export default function LanguageComparisonPage() {
                     para: "Introduction",
                     time: "1-2 minutes",
                     detail: "Briefly state the shared topic and signal the key difference in approach. No need for a long introduction -- get straight into comparison.",
-                    colour: "bg-[#1A5276]",
+                    colour: "bg-primary",
                   },
                   {
                     para: "Paragraph 1",
@@ -256,13 +256,13 @@ export default function LanguageComparisonPage() {
                     para: "Paragraph 4 (if time)",
                     time: "4-5 minutes",
                     detail: "Compare how the writers conclude or use evidence. Do they end with a call to action, a warning, an emotional appeal? This is an opportunity to discuss the overall effect of each text.",
-                    colour: "bg-[#E67E22]",
+                    colour: "bg-accent",
                   },
                   {
                     para: "Conclusion",
                     time: "1-2 minutes",
                     detail: "A brief evaluative statement: which writer's methods are more effective for the intended audience and purpose? Keep it to 2-3 sentences.",
-                    colour: "bg-[#8E44AD]",
+                    colour: "bg-secondary",
                   },
                 ].map((item) => (
                   <div key={item.para} className="flex gap-4 rounded-xl border border-border bg-card p-5 shadow-md">
@@ -295,7 +295,7 @@ export default function LanguageComparisonPage() {
                 </div>
               </div>
 
-              <div className="rounded-xl border-2 border-[#2E86C1]/30 bg-card p-6 sm:p-8">
+              <div className="rounded-xl border-2 border-primary/30 bg-card p-6 sm:p-8">
                 <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-primary">Model Response</p>
 
                 <div className="space-y-4 text-sm leading-relaxed text-muted-foreground">
@@ -326,7 +326,7 @@ export default function LanguageComparisonPage() {
                 </div>
               </div>
 
-              <div className="mt-4 rounded-xl bg-[#1A5276]/5 p-5">
+              <div className="mt-4 rounded-xl bg-primary/5 p-5">
                 <h4 className="font-bold text-foreground">What Makes This Response Effective</h4>
                 <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
                   <li>- Focuses on methods (language, tone, structure) not just opinions</li>
@@ -369,7 +369,7 @@ export default function LanguageComparisonPage() {
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead>
-                      <tr className="border-b-2 border-[#1A5276]/20">
+                      <tr className="border-b-2 border-[primary]/20">
                         <th className="py-3 pr-4 text-left font-bold text-foreground">Purpose</th>
                         <th className="py-3 text-left font-bold text-foreground">Sentence Starter</th>
                       </tr>

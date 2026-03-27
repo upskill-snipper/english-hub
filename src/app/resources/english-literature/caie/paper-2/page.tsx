@@ -189,7 +189,7 @@ export default function Paper2Page() {
     <>
 
       {/* ── Hero ────────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-[#1A5276] to-[#2E86C1] px-4 py-16 text-white sm:py-20">
+      <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
             Cambridge IGCSE English Literature
@@ -338,7 +338,7 @@ export default function Paper2Page() {
             {dramaticTechniques.map((dt) => (
               <div
                 key={dt.technique}
-                className="rounded-lg border-l-4 border-[#2E86C1] bg-card p-5 shadow-md"
+                className="rounded-lg border-l-4 border-primary bg-card p-5 shadow-md"
               >
                 <h3 className="font-semibold text-foreground">{dt.technique}</h3>
                 <p className="mt-1 text-sm text-muted-foreground">
@@ -355,7 +355,7 @@ export default function Paper2Page() {
             ))}
           </div>
 
-          <div className="mt-8 rounded-lg border border-[#2E86C1]/20 bg-primary/5 p-5">
+          <div className="mt-8 rounded-lg border border-primary/20 bg-primary/5 p-5">
             <h3 className="font-semibold text-foreground">
               Key Phrases for Writing About Drama
             </h3>
