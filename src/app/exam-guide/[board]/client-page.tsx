@@ -490,9 +490,31 @@ function PoemCard({ poem }: { poem: PoemAnalysis }) {
 
 // ─── Main Page Component ────────────────────────────────────────────────────
 
+// ─── Tab definitions ──────────────────────────────────────────────────────
+
+type TabDef = {
+  id: string
+  label: string
+  shortLabel: string
+  icon: React.ReactNode
+}
+
+const ALL_TABS: TabDef[] = [
+  { id: 'overview', label: 'Assessment Objectives', shortLabel: 'AOs', icon: <Target className="w-4 h-4" /> },
+  { id: 'papers', label: 'Paper Breakdown', shortLabel: 'Papers', icon: <FileText className="w-4 h-4" /> },
+  { id: 'markbands', label: 'Mark Band Descriptors', shortLabel: 'Mark Bands', icon: <Award className="w-4 h-4" /> },
+  { id: 'grades', label: 'Grade Boundaries', shortLabel: 'Grades', icon: <TrendingUp className="w-4 h-4" /> },
+  { id: 'tips', label: 'Examiner Tips', shortLabel: 'Tips', icon: <Lightbulb className="w-4 h-4" /> },
+  { id: 'changes', label: 'Key Changes', shortLabel: 'Changes', icon: <Calendar className="w-4 h-4" /> },
+  { id: 'texts', label: 'Set Texts', shortLabel: 'Texts', icon: <BookOpen className="w-4 h-4" /> },
+  { id: 'poetry', label: 'Poetry Anthology', shortLabel: 'Poetry', icon: <Feather className="w-4 h-4" /> },
+  { id: 'unique', label: 'Distinctive Features', shortLabel: 'Features', icon: <Star className="w-4 h-4" /> },
+]
+
 export default function BoardExamGuidePage() {
   const params = useParams<{ board: string }>()
   const boardSlug = params.board
+  const [activeTab, setActiveTab] = useState('overview')
 
   // Map slug to proper casing
   const boardName = boardMap[boardSlug]
@@ -504,6 +526,14 @@ export default function BoardExamGuidePage() {
   if (!guide) {
     notFound()
   }
+
+  // Filter tabs based on available data
+  const tabs = ALL_TABS.filter((tab) => {
+    if (tab.id === 'changes') return guide.keyChanges && guide.keyChanges.length > 0
+    if (tab.id === 'texts') return guide.setTexts && guide.setTexts.length > 0
+    if (tab.id === 'poetry') return guide.poems && guide.poems.length > 0
+    return true
+  })
 
   return (
     <main className="min-h-screen bg-background">
@@ -538,7 +568,7 @@ export default function BoardExamGuidePage() {
           className="absolute inset-x-0 top-0 h-1.5"
           style={{ backgroundColor: guide.boardColor }}
         />
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-10 pb-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-10 pb-6">
           <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-6">
             <div className="flex-1">
               <h1 className="text-3xl sm:text-4xl font-extrabold text-foreground mb-4">
@@ -569,140 +599,163 @@ export default function BoardExamGuidePage() {
         </div>
       </section>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 pb-16 space-y-8">
-        {/* ── Section 1: Assessment Objectives ──────────────────────────────── */}
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
-            <Target className="w-6 h-6 text-primary" />
-            Assessment Objectives
-          </h2>
-          <div className="grid lg:grid-cols-2 gap-6">
-            {/* Language AOs */}
-            <div>
-              <h3 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                <BookOpen className="w-5 h-5 text-primary" />
-                Language AOs
-              </h3>
-              <div className="space-y-3">
-                {guide.languageAOs.map((ao) => (
-                  <AOCard key={ao.code} ao={ao} />
-                ))}
-              </div>
-            </div>
-
-            {/* Literature AOs */}
-            <div>
-              <h3 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                <Feather className="w-5 h-5 text-primary" />
-                Literature AOs
-              </h3>
-              <div className="space-y-3">
-                {guide.literatureAOs.map((ao) => (
-                  <AOCard key={ao.code} ao={ao} />
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ── Section 2: Paper Breakdown ────────────────────────────────────── */}
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
-            <FileText className="w-6 h-6 text-primary" />
-            Paper Breakdown
-          </h2>
-
-          {/* Language Papers */}
-          {guide.languagePapers.length > 0 && (
-            <div className="mb-8">
-              <h3 className="font-semibold text-foreground mb-4 text-lg flex items-center gap-2">
-                <BookOpen className="w-5 h-5 text-primary" />
-                Language Papers
-              </h3>
-              <div className="space-y-6">
-                {guide.languagePapers.map((paper, i) => (
-                  <PaperCard key={i} paper={paper} boardColor={guide.boardColor} />
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Literature Papers */}
-          {guide.literaturePapers.length > 0 && (
-            <div>
-              <h3 className="font-semibold text-foreground mb-4 text-lg flex items-center gap-2">
-                <Feather className="w-5 h-5 text-primary" />
-                Literature Papers
-              </h3>
-              <div className="space-y-6">
-                {guide.literaturePapers.map((paper, i) => (
-                  <PaperCard key={i} paper={paper} boardColor={guide.boardColor} />
-                ))}
-              </div>
-            </div>
-          )}
-        </section>
-
-        {/* ── Section 3: Mark Band Descriptors ──────────────────────────────── */}
-        <Collapsible
-          title="Mark Band Descriptors"
-          icon={<Award className="w-5 h-5" />}
-          defaultOpen={false}
-          badge={
-            <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 font-semibold uppercase tracking-wider">
-              Levels 5-6 = Target Zone
-            </span>
-          }
-        >
-          <div className="pt-4">
-            <MarkBandTable bands={guide.markBands} />
-          </div>
-        </Collapsible>
-
-        {/* ── Section 4: Grade Boundaries ───────────────────────────────────── */}
-        <Collapsible
-          title="Grade Boundaries"
-          icon={<TrendingUp className="w-5 h-5" />}
-          defaultOpen={false}
-        >
-          <div className="pt-4">
-            <GradeBoundaryTable boundaries={guide.gradeBoundaries} />
-          </div>
-        </Collapsible>
-
-        {/* ── Section 5: Examiner Tips ──────────────────────────────────────── */}
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
-            <Lightbulb className="w-6 h-6 text-amber-400" />
-            Examiner Tips
-          </h2>
-          <div className="grid sm:grid-cols-2 gap-4">
-            {guide.examinerTips.map((tip, i) => (
-              <div
-                key={i}
-                className="p-5 rounded-xl border border-border bg-card hover:border-amber-500/30 transition-colors"
+      {/* ── Tab Navigation (sticky) ───────────────────────────────────────── */}
+      <div className="sticky top-0 z-30 border-b border-border bg-background/95 backdrop-blur">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="flex gap-1 overflow-x-auto scrollbar-hide py-2 -mb-px">
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`flex items-center gap-2 whitespace-nowrap px-4 py-2.5 text-sm font-medium rounded-lg transition-colors ${
+                  activeTab === tab.id
+                    ? 'bg-primary/10 text-primary'
+                    : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                }`}
               >
-                <div className="flex items-start gap-3 mb-3">
-                  <Lightbulb className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
-                  <h4 className="font-semibold text-foreground text-sm">{tip.question}</h4>
-                </div>
-                <ul className="space-y-2 ml-8">
-                  {tip.tips.map((t, j) => (
-                    <li key={j} className="flex items-start gap-2 text-sm text-muted-foreground">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-amber-400 shrink-0 mt-0.5" />
-                      <span>{t}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                {tab.icon}
+                <span className="hidden sm:inline">{tab.label}</span>
+                <span className="sm:hidden">{tab.shortLabel}</span>
+              </button>
             ))}
           </div>
-        </section>
+        </div>
+      </div>
 
-        {/* ── Section 6: Key Changes (if present) ──────────────────────────── */}
-        {guide.keyChanges && guide.keyChanges.length > 0 && (
-          <section>
-            <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
+      {/* ── Tab Content ───────────────────────────────────────────────────── */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 pb-16">
+        {/* Assessment Objectives */}
+        {activeTab === 'overview' && (
+          <section className="space-y-6 animate-in fade-in duration-300">
+            <h2 className="text-2xl font-bold text-foreground flex items-center gap-3">
+              <Target className="w-6 h-6 text-primary" />
+              Assessment Objectives
+            </h2>
+            <div className="grid lg:grid-cols-2 gap-6">
+              <div>
+                <h3 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                  <BookOpen className="w-5 h-5 text-primary" />
+                  Language AOs
+                </h3>
+                <div className="space-y-3">
+                  {guide.languageAOs.map((ao) => (
+                    <AOCard key={ao.code} ao={ao} />
+                  ))}
+                </div>
+              </div>
+              <div>
+                <h3 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                  <Feather className="w-5 h-5 text-primary" />
+                  Literature AOs
+                </h3>
+                <div className="space-y-3">
+                  {guide.literatureAOs.map((ao) => (
+                    <AOCard key={ao.code} ao={ao} />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Paper Breakdown */}
+        {activeTab === 'papers' && (
+          <section className="space-y-8 animate-in fade-in duration-300">
+            <h2 className="text-2xl font-bold text-foreground flex items-center gap-3">
+              <FileText className="w-6 h-6 text-primary" />
+              Paper Breakdown
+            </h2>
+            {guide.languagePapers.length > 0 && (
+              <div>
+                <h3 className="font-semibold text-foreground mb-4 text-lg flex items-center gap-2">
+                  <BookOpen className="w-5 h-5 text-primary" />
+                  Language Papers
+                </h3>
+                <div className="space-y-6">
+                  {guide.languagePapers.map((paper, i) => (
+                    <PaperCard key={i} paper={paper} boardColor={guide.boardColor} />
+                  ))}
+                </div>
+              </div>
+            )}
+            {guide.literaturePapers.length > 0 && (
+              <div>
+                <h3 className="font-semibold text-foreground mb-4 text-lg flex items-center gap-2">
+                  <Feather className="w-5 h-5 text-primary" />
+                  Literature Papers
+                </h3>
+                <div className="space-y-6">
+                  {guide.literaturePapers.map((paper, i) => (
+                    <PaperCard key={i} paper={paper} boardColor={guide.boardColor} />
+                  ))}
+                </div>
+              </div>
+            )}
+          </section>
+        )}
+
+        {/* Mark Band Descriptors */}
+        {activeTab === 'markbands' && (
+          <section className="space-y-6 animate-in fade-in duration-300">
+            <div className="flex items-center justify-between">
+              <h2 className="text-2xl font-bold text-foreground flex items-center gap-3">
+                <Award className="w-6 h-6 text-primary" />
+                Mark Band Descriptors
+              </h2>
+              <span className="text-xs px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 font-semibold uppercase tracking-wider">
+                Levels 5-6 = Target Zone
+              </span>
+            </div>
+            <MarkBandTable bands={guide.markBands} />
+          </section>
+        )}
+
+        {/* Grade Boundaries */}
+        {activeTab === 'grades' && (
+          <section className="space-y-6 animate-in fade-in duration-300">
+            <h2 className="text-2xl font-bold text-foreground flex items-center gap-3">
+              <TrendingUp className="w-6 h-6 text-primary" />
+              Grade Boundaries
+            </h2>
+            <GradeBoundaryTable boundaries={guide.gradeBoundaries} />
+          </section>
+        )}
+
+        {/* Examiner Tips */}
+        {activeTab === 'tips' && (
+          <section className="space-y-6 animate-in fade-in duration-300">
+            <h2 className="text-2xl font-bold text-foreground flex items-center gap-3">
+              <Lightbulb className="w-6 h-6 text-amber-400" />
+              Examiner Tips
+            </h2>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {guide.examinerTips.map((tip, i) => (
+                <div
+                  key={i}
+                  className="p-5 rounded-xl border border-border bg-card hover:border-amber-500/30 transition-colors"
+                >
+                  <div className="flex items-start gap-3 mb-3">
+                    <Lightbulb className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
+                    <h4 className="font-semibold text-foreground text-sm">{tip.question}</h4>
+                  </div>
+                  <ul className="space-y-2 ml-8">
+                    {tip.tips.map((t, j) => (
+                      <li key={j} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-amber-400 shrink-0 mt-0.5" />
+                        <span>{t}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Key Changes */}
+        {activeTab === 'changes' && guide.keyChanges && guide.keyChanges.length > 0 && (
+          <section className="space-y-6 animate-in fade-in duration-300">
+            <h2 className="text-2xl font-bold text-foreground flex items-center gap-3">
               <Calendar className="w-6 h-6 text-primary" />
               Key Changes
             </h2>
@@ -724,10 +777,10 @@ export default function BoardExamGuidePage() {
           </section>
         )}
 
-        {/* ── Section 7: Set Texts (if present) ────────────────────────────── */}
-        {guide.setTexts && guide.setTexts.length > 0 && (
-          <section>
-            <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
+        {/* Set Texts */}
+        {activeTab === 'texts' && guide.setTexts && guide.setTexts.length > 0 && (
+          <section className="space-y-6 animate-in fade-in duration-300">
+            <h2 className="text-2xl font-bold text-foreground flex items-center gap-3">
               <BookOpen className="w-6 h-6 text-primary" />
               Set Texts
             </h2>
@@ -739,10 +792,10 @@ export default function BoardExamGuidePage() {
           </section>
         )}
 
-        {/* ── Section 8: Poetry (if present) ───────────────────────────────── */}
-        {guide.poems && guide.poems.length > 0 && (
-          <section>
-            <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
+        {/* Poetry Anthology */}
+        {activeTab === 'poetry' && guide.poems && guide.poems.length > 0 && (
+          <section className="space-y-6 animate-in fade-in duration-300">
+            <h2 className="text-2xl font-bold text-foreground flex items-center gap-3">
               <Feather className="w-6 h-6 text-primary" />
               Poetry Anthology
             </h2>
@@ -754,23 +807,25 @@ export default function BoardExamGuidePage() {
           </section>
         )}
 
-        {/* ── Section 9: Unique Features ───────────────────────────────────── */}
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-3">
-            <Star className="w-6 h-6 text-primary" />
-            What Makes {guide.boardName} Distinctive
-          </h2>
-          <div className="p-6 rounded-xl border border-border bg-card">
-            <ul className="space-y-3">
-              {guide.uniqueFeatures.map((feature, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <Sparkles className="w-4 h-4 text-primary shrink-0 mt-1" />
-                  <span className="text-foreground text-sm">{feature}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
+        {/* Distinctive Features */}
+        {activeTab === 'unique' && (
+          <section className="space-y-6 animate-in fade-in duration-300">
+            <h2 className="text-2xl font-bold text-foreground flex items-center gap-3">
+              <Star className="w-6 h-6 text-primary" />
+              What Makes {guide.boardName} Distinctive
+            </h2>
+            <div className="p-6 rounded-xl border border-border bg-card">
+              <ul className="space-y-3">
+                {guide.uniqueFeatures.map((feature, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <Sparkles className="w-4 h-4 text-primary shrink-0 mt-1" />
+                    <span className="text-foreground text-sm">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        )}
       </div>
     </main>
   )
