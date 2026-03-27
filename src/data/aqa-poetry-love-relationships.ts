@@ -669,6 +669,31 @@ export const aqaLoveRelationshipsCourse: CourseData = {
 <div class="text-extract">"And a pond edged with greyish leaves"<div class="source">Stanza 4</div></div>
 <p>The return to the pond in the final stanza creates a <strong>cyclical structure</strong>. The image has become a symbol permanently associated with love's failure — whenever the speaker sees such a scene, the pain returns.</p>
 
+<h3>Grade 9 Model Paragraphs</h3>
+
+<p><strong>Model Paragraph 1: Nature &amp; Emotional State</strong></p>
+<p>"Hardy's depiction of nature in 'Neutral Tones' is a calculated inversion of Romantic tradition. Where Romantic poets like Shelley present nature as alive and united, Hardy presents a landscape that is deliberately drained of colour and vitality. The sun is 'white, as though chidden of God' — not warm but pale and scolded. The grass is 'starving.' The leaves are 'greyish.' This colour palette becomes the poem's emotional landscape: the desolate setting does not merely describe the scene but externalises the speaker's emotional state. By the final stanza, the pond is not just a location but a symbol of failed love. Hardy's genius is in making the natural world indifferent rather than sympathetic — nature does not console or inspire, it merely reflects emptiness. This reflects Hardy's loss of faith and rejection of Romantic idealism."</p>
+
+<p><strong>Model Paragraph 2: The Performance of Love</strong></p>
+<p>"The poem presents love not as a genuine emotion but as a <strong>performance</strong>. The beloved's eyes are 'as eyes that rove' — wandering, detached, looking without seeing. Most devastatingly, 'The smile on your mouth was the deadest thing.' This oxymoron — a smile being lifeless — reveals the hollow performance at the heart of the relationship. The couple 'played' words 'to and fro,' suggesting their conversation is a game, insincere and meaningless. Neither speaks what they truly feel. By presenting these intimate moments as theatrical performances, Hardy suggests that the relationship was always a deception. The speaker learns 'keen lessons that love deceives,' bitter wisdom that colours all future relationships. This transformation of intimacy into performance is deeply unsettling and reveals Hardy's cynical view of human connection."</p>
+
+<p><strong>Model Paragraph 3: Cyclical Entrapment</strong></p>
+<p>"The cyclical structure of 'Neutral Tones' creates a sense of psychological entrapment. The poem opens at a pond and returns to it in the final stanza, suggesting the speaker cannot escape the memory. The ABBA rhyme scheme (enclosed rhyme) reinforces this feeling — the lines close in on themselves, mirroring how painful memories trap the mind. More subtly, Hardy reveals that this is not a single visit but the memory of one visit that has permanently altered the speaker's perception. 'Since then' — and note the title 'Neutral Tones' is ironic — the speaker sees greyish leaves and the pain returns. A single moment has become a permanent wound. The cyclical structure thus functions psychologically: the memory circulates endlessly through the speaker's mind, and any similar scene triggers the original trauma. This is not nostalgia but psychological scar tissue."</p>
+
+<h3>Key Quotation Bank for Essays</h3>
+<ul>
+  <li>"We stood by a pond that winter day" — Opening establishes stagnant, lifeless setting</li>
+  <li>"the sun was white, as though chidden of God" — Nature indifferent, even punished</li>
+  <li>"a few leaves lay on the starving sod" — Desolation; personification of lack</li>
+  <li>"Your eyes on me were as eyes that rove" — Emotional disconnection made visible</li>
+  <li>"The smile on your mouth was the deadest thing" — Oxymoron capturing hollow affection</li>
+  <li>"alive enough to have strength to die" — Paradox of love in final moments</li>
+  <li>"words played between us to and fro" — Love as insincere performance</li>
+  <li>"keen lessons that love deceives" — Bitter wisdom, permanent disillusionment</li>
+  <li>"And a pond edged with greyish leaves" — Cyclical return; permanent association with failure</li>
+  <li>"Since then, keen lessons that love deceives" — Past moment haunts present</li>
+</ul>
+
 <h3>Comparison Links</h3>
 <ul>
   <li><strong>When We Two Parted (Byron):</strong> Both use cyclical structures to trap speakers in painful memories of lost love, though Byron's speaker also feels betrayal while Hardy's is more disillusioned.</li>
@@ -986,6 +1011,31 @@ export const aqaLoveRelationshipsCourse: CourseData = {
   <li><strong>Singh Song! (Nagra):</strong> Both depict marriages, but Nagra's is playful and mutual while Mew's is terrifying and one-sided.</li>
 </ul>
 
+<h3>Grade 9 Model Paragraphs</h3>
+
+<p><strong>Model Paragraph 1: Dehumanisation Through Animal Imagery</strong></p>
+<p>"Mew's repeated animal similes function as a deliberate dehumanisation of the bride. She is compared to a mouse, then a hare, then a leveret — all small, prey animals hunted by predators. By using these comparisons, Mew reveals the farmer's perception: he does not see a woman but a creature to be caught, possessed and controlled. The collective verb 'We caught her, fetched her home' reinforces this — the community participated in recapturing her, treating her as property rather than a person. The similes are not merely decorative but structurally central to understanding the power dynamic. The farmer's language strips away the bride's humanity, and by extension, her agency and dignity. By the final stanza, when his language fragments into exclamatory fragments about 'the soft young down,' the dehumanisation is complete — she has become merely an object of desire. Mew's genius is in using the farmer's own language and perspective to condemn him."</p>
+
+<p><strong>Model Paragraph 2: Voicelessness as Powerlessness</strong></p>
+<p>"The bride's complete voicelessness in the poem is structurally significant. She is the subject but never the speaker — we never hear her perspective, her feelings, or her voice except for the single reported cry 'Not near, not near!' This linguistic absence mirrors her social and marital powerlessness. She is discussed, observed, pursued, but never given agency through speech. Her only moment of resistance — the denial 'Not near!' — is reported by the farmer, filtered through his perspective. Even her refusal is not directly heard but relayed to us. This structural silencing reflects the historical reality of women in marriage: they were possessed legally and socially, stripped of identity, and denied voice. The poem's power lies in its form reflecting its meaning — the bride's silence is not a stylistic choice but a depiction of oppression. A Grade 9 response recognises that Mew's choice to silence the bride is a political statement about women's powerlessness."</p>
+
+<p><strong>Model Paragraph 3: Escalating Danger and Fragmentation</strong></p>
+<p>"The final stanza represents a psychological and linguistic collapse. The farmer's language disintegrates into fragmented exclamations: 'her eyes, her hair, her hair! / Oh! my God! the down, the soft young down.' The repeated 'hair' and the escalating intensity suggest his control is slipping, his desire spiralling out of control. The repetition and exclamatory tone convey mounting sexual intensity and implicit threat. The phrase 'soft young down' — suggesting the bride's youth and vulnerability — combined with his fragmenting language, creates an atmosphere of imminent violence. Mew leaves the poem unresolved: we do not know what the farmer will do next, but the linguistic breakdown suggests he may be on the verge of acting on his desire. The ambiguity is part of the horror — the poem ends not with closure but with a sense of impending danger. This is not a love story but a tragedy of possession and potential violence."</p>
+
+<h3>Key Quotation Bank for Essays</h3>
+<ul>
+  <li>"Three Sundays — that's nothing at all." — Acceptance of the brief courtship period</li>
+  <li>"'Chose' her like a commodity" — Opening verb reveals possession</li>
+  <li>"like a mouse / When she first came" — Animal simile; dehumanisation begins</li>
+  <li>"We caught her, fetched her home" — Collective hunting metaphor; community complicity</li>
+  <li>"her eyes, her hair, her hair!" — Repetition; escalating fragmentation</li>
+  <li>"Not near, not near!" — Bride's only reported utterance; refusal and terror</li>
+  <li>"she sleeps up in the attic there" — Physical separation; retreat and isolation</li>
+  <li>"like a leveret caught in a snare" — Trapped animal; helplessness</li>
+  <li>"Oh! my God! the down, the soft young down" — Escalating sexual intensity; danger</li>
+  <li>"And she'll not come down" — Bride's resistance continues; power dynamic unresolved</li>
+</ul>
+
 <div class="common-mistake"><strong>Common Mistake:</strong> Feeling sympathy only for the farmer because he narrates the poem. Remember that the bride is <strong>voiceless and trapped</strong>. The strongest responses interrogate the farmer's perspective and consider what the poem might look like from her point of view.</div>
 `,
       quiz: [
@@ -1117,6 +1167,31 @@ export const aqaLoveRelationshipsCourse: CourseData = {
 <div class="text-extract">"love is proved in the letting go"<div class="source">Stanza 4</div></div>
 <p>The poem's final, most important line. True love is not about holding on but about <strong>releasing</strong>. The passive "letting go" makes the parent the one who must act — and suffer — for the child's benefit.</p>
 
+<h3>Grade 9 Model Paragraphs</h3>
+
+<p><strong>Model Paragraph 1: Memory &amp; Permanence of Pain</strong></p>
+<p>"Day-Lewis's precise dating — 'It is eighteen years ago, almost to the day' — reveals that this single moment has permanently marked the speaker's memory. The poem is not about a one-off event but about how a specific moment becomes etched into consciousness, revisited repeatedly over decades. The verb 'Gnaws at my mind still' suggests ongoing, involuntary pain — it is not something the speaker chooses to remember but something that persists against his will. The accumulation of natural metaphors (satellite, seed, fledgling) shows the speaker's repeated attempt to intellectualise and justify the separation, yet none of these metaphors bring peace. Instead, they reveal the tension between understanding the necessity of separation and experiencing its pain. The poem's power lies in this gap between intellectual acceptance ('selfhood begins with a walking away') and emotional suffering. A Grade 9 response recognises that the poem charts not a moment of epiphany but ongoing, unresolved grief that memory continually resurrects."</p>
+
+<p><strong>Model Paragraph 2: Form &amp; Emotional Landscape</strong></p>
+<p>"The loose quintain structure and ABACA rhyme scheme create a sense of attempted control within emotional chaos. The regular form reflects the father's effort to impose order on his pain — he structures his emotions into neat stanzas, as if organisation can contain the experience. Yet the enjambment between stanzas undermines this control: lines spill across boundaries, mirroring how the memory itself overflows and disrupts neat containment. The shift from the specific memory (stanzas 1-2) to abstract reflection (stanzas 3-4) shows the speaker moving from the personal to the universal, as if stepping back from pain offers perspective. But the final lines return to the father's suffering, suggesting that abstraction provides no comfort. Form enacts meaning: the poem's structure itself attempts what the speaker attempts — to understand and contain — but ultimately fails to bring resolution."</p>
+
+<p><strong>Model Paragraph 3: Paradox of Parental Love</strong></p>
+<p>"The poem's central paradox is that love is proved through separation and suffering. The father must allow his child to become independent (a natural, necessary process) yet this requires him to endure pain. The metaphors shift from violent ('wrenched') to natural ('seed') to acknowledge both the trauma of separation and its inevitability. The speaker moves towards understanding that 'selfhood begins with a walking away,' a philosophical acceptance that the child's identity formation requires distance from the parent. Yet understanding does not eliminate pain. The final line 'love is proved in the letting go' is not triumphant but bittersweet: love is proved through the parent's sacrifice and suffering. This inverts typical romantic love — instead of mutual joy, parental love is defined by solitary pain endured for another's benefit. The poem celebrates this selfless love while honestly depicting its cost."</p>
+
+<h3>Key Quotation Bank for Essays</h3>
+<ul>
+  <li>"It is eighteen years ago, almost to the day" — Precision reveals permanent memory</li>
+  <li>"a satellite wrenched from its orbit" — Violent separation metaphor</li>
+  <li>"Gnaws at my mind still" — Physical pain of memory; ongoing</li>
+  <li>"like a winged seed loosened from its parent stem" — Natural metaphor for necessary growth</li>
+  <li>"a half-fledged thing set free" — Vulnerable child; reluctant release</li>
+  <li>"eddying away" — Uncertain, drifting movement; parent's anxiety</li>
+  <li>"selfhood begins with a walking away" — Philosophical thesis</li>
+  <li>"love is proved in the letting go" — Central paradox; love through sacrifice</li>
+  <li>"Eighteen years" — Temporal permanence of pain</li>
+  <li>"set free" — Release rather than abandonment; love's paradox</li>
+</ul>
+
 <h3>Comparison Links</h3>
 <ul>
   <li><strong>Follower (Heaney):</strong> Both explore parent-child relationships and changing dynamics over time. Day-Lewis watches his child leave; Heaney recalls following his father.</li>
@@ -1240,6 +1315,31 @@ export const aqaLoveRelationshipsCourse: CourseData = {
 
 <div class="text-extract">"Slowly the wicker gate"<div class="source">Stanza 3</div></div>
 <p>The <strong>wicker gate</strong> is a threshold — a boundary between two worlds. Its slow opening suggests a gradual transition rather than a sudden crossing, mirroring how the speaker approaches death without fear.</p>
+
+<h3>Grade 9 Model Paragraphs</h3>
+
+<p><strong>Model Paragraph 1: The Power of Specificity &amp; Memory</strong></p>
+<p>"Causley's use of hyper-specific, almost photographic detail gives the poem its haunting power. The father is described as 'twenty-five, in the same suit' — not just any man, but a particular man at a particular moment in time. The mother's hair is 'the colour of wheat' — a precise, natural comparison that conjures a vivid image. These details operate on multiple levels: they could represent a treasured photograph come to life, a memory replayed so often it has become photographic, or an encounter so significant that every detail is indelibly marked on consciousness. The specificity makes the vision feel real rather than dreamlike. We are not in an abstract afterlife but a specific location (Eden Rock) with specific people. This grounding in sensory detail paradoxically makes the supernatural aspect more believable — if every detail is accurate, how can we doubt the reality of what Causley describes? The poem's power lies in this paradox: the more real the details, the more we accept the impossible."</p>
+
+<p><strong>Model Paragraph 2: Thresholds &amp; Gentle Transitions</strong></p>
+<p>"The poem is structured around thresholds and gentle crossings rather than violent breaks. The 'wicker gate' opens slowly, not suddenly. The parents 'beckon' rather than demand. The stream must be crossed, but the approach is gradual. Even the sky 'whitens' slowly, 'as if lit by three suns,' suggesting a gentle illumination rather than a harsh reveal. This vocabulary of gentleness and gradualism extends to the final stanza: 'I had not thought it would be like this.' The tone is calm, accepting, almost surprised at the peace rather than fear. Causley presents death (or reunion, or whatever the crossing represents) not as terrifying but as familiar, as a return to what was lost. The thresholds are passages to be crossed gently, with loved ones waiting on the other side. This contrasts sharply with traditional depictions of death as frightening or violent — Causley's vision is consoling."</p>
+
+<p><strong>Model Paragraph 3: Ambiguity &amp; Multiple Interpretations</strong></p>
+<p>"The poem's enduring power comes from its deliberate ambiguity. Causley never explicitly states that this is a vision of the afterlife, yet the evidence points that way: the parents are described as if from memory, the 'other bank' suggests crossing between worlds, the speaker approaches without fear. Yet the poem could equally be read as a vivid memory, a dream, or the speaker's imagination of what he wishes could be true. This ambiguity is crucial because it allows readers to bring their own experience of loss and longing. A reader who has lost a parent might read this as consoling proof of an afterlife; another might read it as a powerful act of imagination that keeps loved ones alive through memory. The strongest responses avoid fixing the poem as definitively one reading or another, instead exploring how the ambiguity allows multiple layers of meaning. The poem's restraint — never stating explicitly what it describes — is a formal choice that enacts the poem's theme: loss, memory, and the mysterious nature of love that persists beyond death."</p>
+
+<h3>Key Quotation Bank for Essays</h3>
+<ul>
+  <li>"They are waiting for me somewhere beyond Eden Rock" — Opening; establishing waiting and paradise</li>
+  <li>"My father, twenty-five, in the same suit" — Hyper-specific detail; vivid memory or photograph</li>
+  <li>"Her hair, the colour of wheat" — Natural simile; warmth and abundance</li>
+  <li>"The sky whitens as if lit by three suns" — Gradual illumination; supernatural atmosphere</li>
+  <li>"my mother shades her eyes" — Ordinary human gesture within extraordinary scene</li>
+  <li>"They beckon to me from the other bank" — Invitation without force; gentle</li>
+  <li>"Slowly the wicker gate" — Gradual threshold; transitional space</li>
+  <li>"I had not thought it would be like this" — Calm acceptance; surprised peace</li>
+  <li>"the colour of wheat" — Nourishment and warmth</li>
+  <li>"beyond Eden Rock" — Paradise and innocence</li>
+</ul>
 
 <h3>Comparison Links</h3>
 <ul>

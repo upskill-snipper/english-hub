@@ -964,11 +964,80 @@ The juxtaposition of tears with the comfortable domestic routine — "bath and p
   <li>"How does Duffy present the effects of conflict in 'War Photographer'?"</li>
   <li>"Explore how Duffy creates sympathy for the war photographer."</li>
   <li>"How does Duffy use imagery to convey the poem's themes?"</li>
+  <li>"Compare Duffy's presentation of suffering with another poem you have studied."</li>
+  <li>"What is Duffy's critique in this poem, and how does she convey it?"</li>
 </ul>
 
-<h3>Model Paragraph</h3>
+<h3>Quotation Bank — Key Quotes Organised by Theme</h3>
+<div class="quotation-bank">
+<table>
+<tr>
+  <td><strong>The photographer as sacred figure</strong></td>
+  <td>"as though this were a church and he a priest preparing to intone a Mass"</td>
+  <td>Religious imagery elevates photography to a spiritual act; "intone" = solemn, ritualistic</td>
+</tr>
+<tr>
+  <td><strong>Suffering transformed to commodity</strong></td>
+  <td>"spools of suffering set out in ordered rows"</td>
+  <td>Alliteration of "s"; "ordered rows" suggests industrial processing of human pain</td>
+</tr>
+<tr>
+  <td><strong>The geographic catalogue of conflict</strong></td>
+  <td>"Belfast. Beirut. Phnom Penh."</td>
+  <td>Staccato listing; places reduced to single names; implying endless cycle of wars</td>
+</tr>
+<tr>
+  <td><strong>The biblical echo</strong></td>
+  <td>"All flesh is grass"</td>
+  <td>Quote from Isaiah 40:6; universal human mortality; the photographer's work documents inevitable death</td>
+</tr>
+<tr>
+  <td><strong>The victim's presence</strong></td>
+  <td>"a half-formed ghost"</td>
+  <td>The developing photograph; "ghost" suggests haunting quality; the dead returning to haunt viewers</td>
+</tr>
+<tr>
+  <td><strong>Sound of suffering erased</strong></td>
+  <td>"the cries / of this man's wife"</td>
+  <td>Enjambment breaks the cry; sound exists but is unheard; photography cannot capture sound</td>
+</tr>
+<tr>
+  <td><strong>The readers' casual indifference</strong></td>
+  <td>"between the bath and pre-lunch beers"</td>
+  <td>Precise domestic details; readers' routines bracket their moment of seeing suffering</td>
+</tr>
+<tr>
+  <td><strong>Distance and impact</strong></td>
+  <td>"a field / beneath a nightmare sky"</td>
+  <td>Enjambment; "nightmare sky" conveys horror; beauty and violence coexist</td>
+</tr>
+</table>
+</div>
+
+<h3>Grade 9 Insights — What Examiners Reward</h3>
+<div class="grade9-insight">
+<p><strong>The Gap is the Poem's Subject:</strong> Duffy is not primarily concerned with the war itself or the photographer's experience (though she presents both sympathetically). She is concerned with the <em>gap</em> between witness and viewer, between the photographer's sacred work and the public's casual consumption. High-scoring responses identify this gap and track how Duffy creates it linguistically. The shift from the photographer's careful, ritual language to the readers' domestic language ("bath," "beers") is crucial.</p>
+
+<p><strong>Religious Language is Structural:</strong> The "church" and "priest" simile is not ornamental. It runs through the poem: "Mass," "All flesh is grass" (biblical), "intone" (liturgical chant). This sustained religious register elevates the photographer's work while simultaneously condemning the readers' failure to treat the suffering with equivalent reverence. Examiners reward essays that track this pattern.</p>
+
+<p><strong>Collocation and Juxtaposition Are Tools:</strong> Notice how Duffy juxtaposes the photographer's solemnity with the readers' superficiality: "between the bath and pre-lunch beers." These are not random domestic details — they represent the reader's routine continuing uninterrupted. Similarly, "spools of suffering set out in ordered rows" — the oxymoron of orderliness applied to suffering — reveals how photography both preserves and sterilises human pain.</p>
+
+<p><strong>Context Sharpens the Critique:</strong> The 1980s context (Northern Ireland, Middle East crises) is vital. Duffy is responding to a specific moment of media saturation. Her critique is not that photographs of war are bad, but that constant exposure has produced <em>desensitisation</em>. The readers' tears ("eyeballs prick") are real but brief — they don't lead to action or genuine solidarity.</p>
+</div>
+
+<h3>Model Paragraph 1: The Sacred vs. The Profane</h3>
 <div class="model-response">
-<p>Duffy constructs the war photographer as a morally serious figure whose suffering is ignored by the comfortable society he serves. The extended simile comparing his darkroom to "a church" and the photographer to "a priest preparing to intone a Mass" elevates his work from mere journalism to a sacred act of witness. The verb "intone" — meaning to chant in a solemn, ritualistic manner — implies that developing photographs is a form of prayer for the dead, performed with reverence in a consecrated space. This religious framing makes the public's indifference all the more damning: when readers' "eyeballs prick / with tears between the bath and pre-lunch beers," the juxtaposition of shallow emotion with domestic comfort exposes a society that has rituals of its own — the weekend routine — which exclude any genuine engagement with suffering. The contrast between the photographer's sacred solitude and the readers' casual consumption is reinforced by the poem's structural shift: we spend three stanzas inside the photographer's mind before being expelled into the indifferent public sphere. Duffy, writing in the 1980s when images from conflicts in Northern Ireland and the Middle East saturated the media, critiques a culture in which the constant flow of suffering has produced not compassion but desensitisation.</p>
+<p>Duffy constructs the war photographer as a morally serious figure whose suffering is ignored by the comfortable society he serves. The extended simile comparing his darkroom to "a church" and the photographer to "a priest preparing to intone a Mass" elevates his work from mere journalism to a sacred act of witness. The verb "intone" — meaning to chant in a solemn, ritualistic manner — implies that developing photographs is a form of prayer for the dead, performed with reverence in a consecrated space. The religious register continues: "All flesh is grass" echoes Isaiah and emphasises universal mortality; the developing photograph becomes "a half-formed ghost," as if the dead are being summoned back to testify. Yet this sacred work is met with profane indifference. When readers' "eyeballs prick / with tears between the bath and pre-lunch beers," the juxtaposition is devastating: the moment of emotional response is bracketed by mundane domesticity. The tears are real but momentary — they do not interrupt the reader's routine. Duffy, writing during an era of media saturation, suggests that constant exposure to suffering has produced not compassion but a kind of emotional tourism: we feel briefly and move on.</p>
+</div>
+
+<h3>Model Paragraph 2: Photography as Both Preservation and Erasure</h3>
+<div class="model-response">
+<p>A sophisticated reading recognises that Duffy presents photography as fundamentally paradoxical: it preserves suffering while simultaneously rendering it consumable. The "spools of suffering set out in ordered rows" presents an oxymoron — the orderliness of cataloguing applied to human pain. Photography orders, categorises, and aestheticises; it transforms three-dimensional human anguish into two-dimensional images. The staccato catalogue "Belfast. Beirut. Phnom Penh." — places reduced to mere names — exemplifies this reduction: whole conflicts are compressed into three words. Furthermore, the photograph cannot capture the most essential dimension of suffering: "the cries / of this man's wife." The enjambment breaks the cry across lines, emphasising that sound — the most immediate expression of grief — is absent from the photograph. The medium preserves the visual while inevitably erasing the auditory, the visceral, the unbearably present. Duffy's critique, then, is not anti-photography but anti-complacency: the photographer works with integrity within an inherently limited medium; the public's failure is to treat the image as sufficient testimony rather than as a gateway to deeper engagement.</p>
+</div>
+
+<h3>Model Paragraph 3: Structural Shift and Narrative Perspective</h3>
+<div class="model-response">
+<p>Duffy's most powerful technique is her manipulation of narrative perspective. The first three stanzas are dominated by the photographer's interiority — we enter his thoughts, his rituals, his reverence. The language is precise, formal, almost liturgical. But the final stanza abruptly shifts to the readers' perspective: "their eyeballs prick" (second person, momentary emotion) and the transition to the domestic sphere ("bath," "beers," "Sunday supplements") represents a tonal collapse. The shift from the darkroom's sacred space to the reader's casual Sunday is enacted structurally: the poem moves us from depth to surface, from ritual to routine. This structural shift argues that suffering is not inherently invisible; the photographer works to make it visible. Rather, our collective culture — the culture of casual consumption — makes visibility into invisibility. We see the image and forget. Duffy's critique is ultimately not of conflict or journalism but of a reading public that has been trained to consume images of suffering without allowing them to disturb our comfort. The poem's power resides in how it uses form to enact this critique.</p>
 </div>
 
 <h3>Key Quotations to Memorise</h3>
@@ -980,10 +1049,21 @@ The juxtaposition of tears with the comfortable domestic routine — "bath and p
   <li>"a half-formed ghost"</li>
   <li>"the cries / of this man's wife"</li>
   <li>"between the bath and pre-lunch beers"</li>
+  <li>"a field / beneath a nightmare sky"</li>
+  <li>"The readers' eyeballs prick with tears"</li>
 </ol>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Writing that the poem is about the horrors of war. It is not — it is about the <em>response</em> to war, specifically the gap between those who witness suffering and those who consume images of it. Keep your argument focused on this distinction.</div>
-`,
+<h3>Comparison Pairings</h3>
+<ul>
+  <li><strong>With "Remember" (Christina Rossetti):</strong> Both poems address the viewer's/reader's responsibility. Rossetti explores how to hold memory without causing grief; Duffy explores how to witness suffering without becoming indifferent. Both challenge the reader to reconsider passive consumption.</li>
+  <li><strong>With "Do not go gentle into that good night" (Dylan Thomas):</strong> Thomas writes about death with rage; Duffy writes about witnessing death with solemnity. Both engage with mortality, but Duffy adds a layer of critique about how society processes death imagery.</li>
+  <li><strong>With "Half-caste" (John Agard):</strong> Both poems critique how society's routines and language mask injustice. Agard critiques linguistic racism; Duffy critiques how media consumption of suffering reflects moral failure.</li>
+</ul>
+
+<div class="common-mistake"><strong>Common Mistake:</strong> Writing that the poem is about the horrors of war. It is not — it is about the <em>response</em> to war, specifically the gap between those who witness suffering and those who consume images of it. Keep your argument focused on this distinction. Similarly, avoid suggesting the photographer is complicit; he is presented sympathetically. The critique is directed at the readers and the culture that trains them.</div>
+
+<div class="examiner-tip"><strong>Examiner Tip:</strong> Track the shift from the photographer's perspective to the readers' perspective. This is a structural argument: Duffy moves us from depth to surface, from sacred to profane. Show how this shift is enacted through language, tone, and imagery. Essays that identify and analyse this structural shift score highly because they demonstrate sensitivity to how meaning is created through form.</div>
+`,`,,
     quiz: [
       {
         id: 'igp2-warpho-m4-q1',
@@ -1295,11 +1375,80 @@ The final stanza repeats the first almost exactly, but with one crucial change: 
   <li>"How does Blake present ideas about power and creation in 'The Tyger'?"</li>
   <li>"Explore how Blake creates a sense of awe in this poem."</li>
   <li>"How does Blake use form and structure to convey meaning in 'The Tyger'?"</li>
+  <li>"What does the Tyger represent, and how does Blake's language convey this?"</li>
+  <li>"Compare Blake's presentation of creation in 'The Tyger' with 'The Lamb.'"</li>
 </ul>
 
-<h3>Model Paragraph</h3>
+<h3>Quotation Bank — Key Quotes with Contextual Analysis</h3>
+<div class="quotation-bank">
+<table>
+<tr>
+  <td><strong>Opening incantation</strong></td>
+  <td>"Tyger Tyger, burning bright, / In the forests of the night"</td>
+  <td>Repetition creates incantatory effect; "burning bright" = both beautiful and dangerous; contradiction established immediately</td>
+</tr>
+<tr>
+  <td><strong>Paradoxical beauty</strong></td>
+  <td>"Could frame thy fearful symmetry?"</td>
+  <td>"Fearful symmetry" = oxymoron; beauty and terror inseparable; beauty can be terrible; perfection can terrify</td>
+</tr>
+<tr>
+  <td><strong>Divine origin questioned</strong></td>
+  <td>"In what distant deeps or skies, / Burnt the fire of thine eyes?"</td>
+  <td>"Fire" = both divine spark and primal violence; location "distant" suggests otherness; creation is remote from human understanding</td>
+</tr>
+<tr>
+  <td><strong>Industrial creation</strong></td>
+  <td>"What the hammer? what the chain, / In what furnace was thy brain?"</td>
+  <td>Industrial imagery replaces pastoral; Creator is a blacksmith, not a gentle gardener; violence in creation</td>
+</tr>
+<tr>
+  <td><strong>Creator's intention</strong></td>
+  <td>"Did he smile his work to see? / Did he laugh at the slaughter?"</td>
+  <td>Questions whether Creator takes pleasure in violence he creates; theological crisis deepens</td>
+</tr>
+<tr>
+  <td><strong>The theological centre</strong></td>
+  <td>"Did he who made the Lamb make thee?"</td>
+  <td>Reference to companion poem; capitalised "Lamb"; ultimate paradox: same Creator made both innocence and violence</td>
+</tr>
+<tr>
+  <td><strong>Repetition of opening</strong></td>
+  <td>"Tyger Tyger, burning bright"</td>
+  <td>Returns to opening but with new weight; readers now understand the paradox the speaker could only question</td>
+</tr>
+<tr>
+  <td><strong>Final question</strong></td>
+  <td>"Dare frame thy fearful symmetry?"</td>
+  <td>Shift from "Could" to "Dare" — active choice; raises stakes; final uncertainty about the Creator's audacity</td>
+</tr>
+</table>
+</div>
+
+<h3>Grade 9 Insights — What Examiners Reward</h3>
+<div class="grade9-insight">
+<p><strong>The Tyger as Symbol, Not Creature:</strong> Students who score highly do not describe the tiger's physical appearance. They engage with symbolism: the tiger represents primal creative energy, the violent forces that cannot be controlled, the coexistence of beauty and terror in the natural world. High-scoring responses ask: What does the tiger represent in Blake's theology? What does it tell us about creation itself?</p>
+
+<p><strong>Form Enacts Meaning:</strong> Blake's choice of trochaic tetrameter (seven syllables per line, stressed on the first syllable) is not accidental. The falling, pounding rhythm ("TY-ger TY-ger BURN-ing BRIGHT") mimics a hammer's blows, reinforcing the industrial imagery of the poem. The repetitive, almost aggressive rhythm mirrors the tiger's fierce power. Examiners reward essays that explain how metrical choice supports meaning.</p>
+
+<p><strong>The Theological Crisis is Central:</strong> "Did he who made the Lamb make thee?" is not a casual question. It articulates a fundamental Christian paradox: How can a benevolent God create both innocence (the Lamb) and violence (the Tyger)? This is theodicy — the attempt to reconcile God's goodness with the existence of evil and suffering. Contextual sophistication means understanding that Blake, writing during the French Revolution, saw this paradox played out in real time: revolutionary ideals promised liberation but through violence.</p>
+
+<p><strong>Uncertainty Matters:</strong> Notice that the poem ends with a question, not an answer. Blake offers no resolution to the paradox. This is philosophically honest and theologically complex. Essays that embrace this uncertainty and discuss why Blake chooses not to resolve it demonstrate mature thinking.</p>
+</div>
+
+<h3>Model Paragraph 1: Power and Paradox</h3>
 <div class="model-response">
-<p>Blake presents creation as an act of terrifying audacity through the poem's relentless accumulation of unanswered questions. The industrial imagery — "What the hammer? what the chain, / In what furnace was thy brain?" — depicts the Creator as a blacksmith forging the tiger through violent, physical labour, with the staccato questions mirroring the rhythmic blows of a hammer on an anvil. This Creator is not the gentle shepherd of "The Lamb" but a figure of awesome, almost reckless power. Blake's trochaic tetrameter reinforces this sense of relentless force — the driving, falling rhythm ("TY-ger TY-ger BURN-ing BRIGHT") pulses through the poem like a heartbeat or a forge's bellows, refusing to let the reader rest. The theological crisis reaches its peak in "Did he who made the Lamb make thee?" — where the capitalised "Lamb," echoing the companion poem from Songs of Innocence, forces the reader to confront the paradox that innocence and violence coexist within the same divine creation. Writing during the French Revolution, Blake was living through a period in which creative and destructive energy were inseparable — the revolution promised liberation but through violence, just as the tiger embodies both beauty and terror in its "fearful symmetry."</p>
+<p>Blake presents creation as an act of terrifying audacity through the poem's relentless accumulation of unanswered questions. The industrial imagery — "What the hammer? what the chain, / In what furnace was thy brain?" — depicts the Creator as a blacksmith forging the tiger through violent, physical labour, with the staccato questions mirroring the rhythmic blows of a hammer on an anvil. This Creator is not the gentle shepherd of "The Lamb" but a figure of awesome, almost reckless power. The Creator actively makes dangerous things; he does not merely permit them to exist. Moreover, the central paradox, "Could frame thy fearful symmetry?" uses an oxymoron — "fearful" (terrifying) and "symmetry" (orderly, balanced) — to suggest that beauty and terror are inseparable. The tiger's perfection is precisely what makes it dangerous. Blake's point is profound: if the Creator could make the tiger any differently, he would; but the tiger's fearfulness is inherent to its beauty. Creation is not a process of careful control but of dangerous making — the Creator takes risks, makes things that might hurt him or humanity.</p>
+</div>
+
+<h3>Model Paragraph 2: The Theological Crisis</h3>
+<div class="model-response">
+<p>The poem's deepest meaning emerges in the penultimate stanza: "Did he who made the Lamb make thee?" This question crystallises a theological crisis that Blake explores throughout. In Songs of Innocence, "The Lamb" presents a benevolent Creator, gentle and nurturing. But if the same Creator made both the Lamb and the Tyger, how can we maintain our faith in benevolence? The capitals — "He" for the Creator, "Lamb" for innocence — signal that both are sacred, yet fundamentally opposed. Blake is articulating theodicy: the ancient problem of reconciling God's goodness with the existence of violence, suffering, and predatory power in nature. The irresolution of the question is crucial. Blake offers no answer, no reconciliation. Instead, he forces the reader to sit with the paradox. This is particularly resonant given Blake's historical context: writing in 1794, during the French Revolution, Blake witnessed how revolutionary ideals (the promise of liberation) required revolutionary violence. Creation and destruction are intertwined; innocence and violence cannot be separated. The poem's refusal to resolve the paradox is philosophically honest.</p>
+</div>
+
+<h3>Model Paragraph 3: Form, Sound, and Meaning</h3>
+<div class="model-response">
+<p>Blake's choice of trochaic tetrameter — a seven-syllable line with stress falling on the first syllable — creates a pounding, falling rhythm that enacts the poem's meaning: "TY-ger TY-ger BURN-ing BRIGHT / in the FOR-ests OF the NIGHT." This rhythm is relentless, almost aggressive; it does not allow the reader to rest comfortably. The repetition of "Tyger Tyger" at opening and closing adds to this hammering effect, as if the name itself must be beaten into our consciousness. Furthermore, the rhyme scheme (AABB couplets) creates tight, enclosed units of meaning — each couplet feels complete, even as the overall message remains incomplete. The initial anaphora — the repeated "What" questions — creates a staccato effect that mirrors industrial labour: "What the hammer? what the chain, / In what furnace was thy brain?" The rapid-fire questions feel like hammer blows. All of these formal choices work together: Blake's form is not ornamental but essential. The sound and structure of the poem embody the tiger's power and the creative violence Blake is attempting to convey.</p>
 </div>
 
 <h3>Key Quotations to Memorise</h3>
@@ -1309,12 +1458,25 @@ The final stanza repeats the first almost exactly, but with one crucial change: 
   <li>"In what distant deeps or skies, / Burnt the fire of thine eyes?"</li>
   <li>"What the hammer? what the chain, / In what furnace was thy brain?"</li>
   <li>"Did he smile his work to see?"</li>
+  <li>"Did he laugh at the slaughter?"</li>
   <li>"Did he who made the Lamb make thee?"</li>
   <li>"Dare frame thy fearful symmetry?"</li>
 </ol>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Treating the poem as simply being "about a tiger." The tiger is a symbol — for primal energy, for the violent side of creation, for the forces (revolutionary, natural, divine) that cannot be tamed. Your essay must engage with what the tiger represents, not describe the animal.</div>
-`,
+<h3>Comparison Pairings</h3>
+<ul>
+  <li><strong>With "The Lamb" (William Blake):</strong> Essential. Compare how Blake presents two contrasting aspects of creation. "The Lamb" is gentle, innocent, celebratory; "The Tyger" is violent, terrible, questioning. Together they reveal Blake's complex theology. Both poems are in Blake's <em>Songs</em> — compare how the form differs to express different truths.</li>
+  <li><strong>With "Do not go gentle into that good night" (Dylan Thomas):</strong> Both explore powerful forces and human response. Thomas's speaker rages against dying; Blake questions the Creator's authority to make dangerous things. Both deal with conflict between human will and external power.</li>
+  <li><strong>With "War Photographer" (Carol Ann Duffy):</strong> Both poems wrestle with awe and terror. The photographer witnesses terrible beauty (suffering photographed); Blake presents terrible beauty as the tiger. Both ask: how do we respond when beauty and violence coexist?</li>
+</ul>
+
+<h3>Key Context: Blake and the French Revolution</h3>
+<p>Blake was writing in 1794, the year of the French Revolution's Terror. The promise of liberation was being enacted through violence; the ideals of liberty and equality were being pursued through bloodshed. This historical moment deeply shaped "The Tyger." The poem asks: Is violent creation necessary? Can benevolent outcomes come from violent means? Blake's answer — articulated through the paradox of the tiger — is that creation itself is inherently violent, paradoxical, and ineradicable. The tiger cannot be unmade because the Creator chose to make it. This is both celebration (the tiger's power is real and awesome) and lament (the coexistence of violence and beauty cannot be resolved).</p>
+
+<div class="common-mistake"><strong>Common Mistake:</strong> Treating the poem as simply being "about a tiger." The tiger is a symbol — for primal energy, for the violent side of creation, for the forces (revolutionary, natural, divine) that cannot be tamed. Your essay must engage with what the tiger represents, not describe the animal. Similarly, avoid saying the poem "celebrates" or "condemns" the tiger — Blake's stance is more complex: he awe-struck, troubled, questioning.</div>
+
+<div class="examiner-tip"><strong>Examiner Tip:</strong> Spend time on the comparison with "The Lamb." Examiners are looking for essays that recognise both poems and use them to illuminate each other. Show how Blake uses two contrasting poems to explore the paradox of divine creation. This demonstrates sophisticated contextual understanding and elevates your response above those that treat "The Tyger" in isolation.</div>
+`,`,,
     quiz: [
       {
         id: 'igp2-tyger-m4-q1',
@@ -2642,11 +2804,80 @@ The poem's central statement presents two balanced alternatives: forget/smile vs
   <li>"How does Rossetti present attitudes to death and memory in 'Remember'?"</li>
   <li>"Explore how Rossetti uses the sonnet form to convey her ideas."</li>
   <li>"How does Rossetti present love in this poem?"</li>
+  <li>"Compare Rossetti's presentation of death with another poem you have studied."</li>
+  <li>"How does Rossetti use formal structure to convey a shifting emotional perspective?"</li>
 </ul>
 
-<h3>Model Paragraph</h3>
+<h3>Quotation Bank — Essential Quotes</h3>
+<div class="quotation-bank">
+<table>
+<tr>
+  <td><strong>Opening volta setup</strong></td>
+  <td>"Remember me when I am gone away"</td>
+  <td>Imperative mood establishes demand; "gone away" suggests both distance and permanence</td>
+</tr>
+<tr>
+  <td><strong>Accumulating loss</strong></td>
+  <td>"When you can no more hold me by the hand"</td>
+  <td>Shift from emotional to physical absence; tactile imagery emphasises the irreversibility of death</td>
+</tr>
+<tr>
+  <td><strong>Isolation intensified</strong></td>
+  <td>"Gone far away into the silent land"</td>
+  <td>Assonance of long vowels creates mournful tone; "silent land" suggests both death and spiritual realm</td>
+</tr>
+<tr>
+  <td><strong>Hesitation in death</strong></td>
+  <td>"Nor I half turn to go yet turning stay"</td>
+  <td>Paradoxical movement; the volta is approaching; "half turn" suggests the speaker cannot leave</td>
+</tr>
+<tr>
+  <td><strong>The crucial volta</strong></td>
+  <td>"Yet if you should forget me for a while / And afterwards forget"</td>
+  <td>Concessive "Yet"; shift from imperative to conditional; repetition of "forget" marks acceptance</td>
+</tr>
+<tr>
+  <td><strong>The emotional reversal</strong></td>
+  <td>"Better by far you should forget and smile / Than that you should remember and be sad"</td>
+  <td>Perfect antithesis structures the selfless sacrifice; "smile" vs. "sad" shows priorities have shifted</td>
+</tr>
+<tr>
+  <td><strong>Release and permission</strong></td>
+  <td>"I shall not see the shadows, nor feel the rain"</td>
+  <td>Acceptance of absence from sensory experience; peace with non-existence</td>
+</tr>
+<tr>
+  <td><strong>Conclusion — ultimate acceptance</strong></td>
+  <td>"Unless you come to me or I come to you"</td>
+  <td>Conditional spirituality; suggests belief in afterlife reunion, transcending earthly memory</td>
+</tr>
+</table>
+</div>
+
+<h3>Grade 9 Insights — What Examiners Reward</h3>
+<div class="grade9-insight">
+<p><strong>The Volta is Everything:</strong> High-scoring responses do not simply identify the volta at line 9; they <em>track the speaker's emotional journey</em> from desperate pleading (octave) to selfless acceptance (sestet). Discuss how the volta represents a fundamental shift in the speaker's understanding of love itself — from possessive ("Remember me") to generative ("be happy without me"). This demonstrates sophisticated analytical thinking.</p>
+
+<p><strong>Form and Meaning are Inseparable:</strong> The Petrarchan sonnet's traditional structure — octave + sestet — physically enacts the poem's meaning. Don't just note that it's a Petrarchan sonnet; explain how the form's requirement for a volta forced Rossetti to articulate a profound paradox: how can you love someone while willingly being forgotten? This is structural sophistication.</p>
+
+<p><strong>Context Matters Precisely:</strong> Rossetti's devout Anglicanism is not decoration. Her acceptance of "the silent land" is rooted in Christian belief in the afterlife and reunion. This is not biographical trivia — it explains why the speaker can let go of earthly memory with such serenity. Examiners reward specificity: show how faith shapes the poem's resolution.</p>
+
+<p><strong>The Conditional Mood is Crucial:</strong> In the sestet, imperatives ("Remember!") give way to conditionals ("if you should forget"). This grammatical shift is not accidental — it represents the speaker surrendering control. Noting this demonstrates precision in technical analysis.</p>
+</div>
+
+<h3>Model Paragraph 1: The Volta as Meaning</h3>
 <div class="model-response">
-<p>Rossetti uses the Petrarchan sonnet's structural division to dramatise a profound emotional reversal. The octave's fivefold repetition of "Remember" creates an insistent, almost desperate plea — the imperative mood and the accumulating clauses ("when I am gone away," "when you can no more hold me by the hand") build a picture of irreversible loss that demands to be acknowledged. Yet at the volta — signalled by the concessive "Yet" in line 9 — the speaker surrenders her own claim on memory: "Better by far you should forget and smile / Than that you should remember and be sad." The perfectly balanced antithesis ("forget and smile" vs. "remember and be sad") crystallises a selfless love that prioritises the beloved's happiness over the speaker's memorialisation. This emotional generosity is reinforced by the sestet's softer tone — the imperatives give way to conditionals ("if you should forget"), and the anxious insistence relaxes into gentle permission. Rossetti, whose devout Anglicanism shaped her understanding of death as a transition rather than an ending, may be drawing on her faith to accept that earthly remembrance is less important than spiritual peace — "the silent land" suggests an afterlife where human concerns fall away.</p>
+<p>Rossetti uses the Petrarchan sonnet's structural division to dramatise a profound emotional reversal. The octave's fivefold repetition of "Remember" creates an insistent, almost desperate plea — the imperative mood and the accumulating clauses ("when I am gone away," "when you can no more hold me by the hand") build a picture of irreversible loss that demands to be acknowledged. Yet at the volta — signalled by the concessive "Yet" in line 9 — the speaker surrenders her own claim on memory: "Better by far you should forget and smile / Than that you should remember and be sad." The perfectly balanced antithesis ("forget and smile" vs. "remember and be sad") crystallises a selfless love that prioritises the beloved's happiness over the speaker's memorialisation. This emotional generosity is reinforced by the sestet's softer tone — the imperatives give way to conditionals ("if you should forget"), and the anxious insistence relaxes into gentle permission. The volta is not simply a structural device; it is the poem's <em>meaning</em> — the recognition that true love consists not in being remembered, but in releasing the beloved from grief.</p>
+</div>
+
+<h3>Model Paragraph 2: Faith and Acceptance</h3>
+<div class="model-response">
+<p>The poem's resolution is inseparable from Rossetti's Christian faith. The final couplet — "Unless you come to me or I come to you" — is not a sad resignation to earthly separation but a quiet affirmation of spiritual reunion. References to "the silent land," the absence of sensory experience ("I shall not see the shadows, nor feel the rain"), and the overall tone of graceful acceptance all point to the Christian concept of death as a transition, not an ending. This is crucial: the speaker can relinquish earthly remembrance only because she believes in eternal life. For Rossetti, mortality is not annihilation but transformation — hence the speaker's willingness to be forgotten in this world. Examiners often overlook this context, but it is essential: the poem's peace comes not from romantic generosity alone, but from theological conviction. A sophisticated essay acknowledges this dimension and shows how Rossetti's personal faith shapes the poem's emotional architecture.</p>
+</div>
+
+<h3>Model Paragraph 3: Technical Analysis of Repetition and Rhythm</h3>
+<div class="model-response">
+<p>Rossetti's use of repetition and iambic pentameter creates a rhythmic insistence that mirrors the speaker's emotional state. The opening "Remember me, remember me, remember me" — though not all explicit in the poem — is present in spirit through the fivefold imperative. This creates a <em>hammering</em> effect, as if the speaker cannot help but repeat the plea. The metrical regularity of iambic pentameter reinforces this: the regular ti-TUM, ti-TUM rhythm is almost incantatory, like a prayer or a chant. But notice how the volta disrupts this: the shift to conditionals and the gentler diction ("if you should forget," "shall not see") actually subtly loosens the metrical tension. Rossetti is using sound and rhythm to enact the emotional journey — from insistent repetition to gentle release. This is an example of form serving meaning: the poem's technical choices are not ornamental but essential to its emotional impact.</p>
 </div>
 
 <h3>Key Quotations to Memorise</h3>
@@ -2658,10 +2889,21 @@ The poem's central statement presents two balanced alternatives: forget/smile vs
   <li>"our future that you plann'd"</li>
   <li>"Yet if you should forget me for a while / And afterwards forget"</li>
   <li>"Better by far you should forget and smile / Than that you should remember and be sad"</li>
+  <li>"I shall not see the shadows, nor feel the rain"</li>
+  <li>"Unless you come to me or I come to you"</li>
 </ol>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Saying the poem is simply about a woman who wants to be remembered. The poem is about the <em>reversal</em> of that desire — the speaker moves from wanting remembrance to choosing the beloved's happiness. The volta is the poem's meaning.</div>
-`,
+<h3>Comparison Pairings</h3>
+<ul>
+  <li><strong>With "Do not go gentle into that good night" (Dylan Thomas):</strong> Both poems address death, but from opposite perspectives. Thomas's speaker rages against dying; Rossetti's accepts it with grace. Explore how form, tone, and personal context shape these contrasting attitudes.</li>
+  <li><strong>With "My Last Duchess" (Robert Browning):</strong> Both are about love and loss, but whereas Browning's Duke seeks to control memory through possessing a portrait, Rossetti's speaker releases her beloved into freedom. This reversal reveals how differently love is conceived.</li>
+  <li><strong>With "Half-caste" (John Agard):</strong> While not about death, both poems use form and tone to critique society's limited perspectives — Agard critiques racism, Rossetti critiques the demand to mourn endlessly.</li>
+</ul>
+
+<div class="common-mistake"><strong>Common Mistake:</strong> Saying the poem is simply about a woman who wants to be remembered. The poem is about the <em>reversal</em> of that desire — the speaker moves from wanting remembrance to choosing the beloved's happiness. The volta is the poem's meaning. Similarly, avoid reading it as merely sad; the sestet is peaceful and accepting, not tragic.</div>
+
+<div class="examiner-tip"><strong>Examiner Tip:</strong> The volta is worth spending 40% of your essay time on. Identify it, trace how the grammatical mood changes (imperative → conditional), note how the tone shifts (desperate → accepting), and explain what this shift reveals about the speaker's understanding of love. This is the heart of the poem and the basis of a top-level response.</div>
+`,`,,
     quiz: [
       {
         id: 'igp2-remember-m4-q1',

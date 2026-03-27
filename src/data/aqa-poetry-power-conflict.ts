@@ -47,6 +47,9 @@ export const aqaPowerConflictCourse: CourseData = {
   <li><strong>Pride and hubris:</strong> Ozymandias' arrogance is rendered absurd by the surrounding wasteland.</li>
 </ul>
 
+<h3>Poet Context: William Wordsworth & the Sublime</h3>
+<p>William Wordsworth (1770–1850) was a founding figure of Romanticism in English poetry. <em>The Prelude</em>, his major work, is an epic autobiographical poem tracing "the growth of a poet's mind" from childhood through adulthood. Unlike earlier autobiography, which often focused on external events and achievements, Wordsworth insisted that the most important history is the history of the individual's inner consciousness and emotional development. Writing during the aftermath of the French Revolution—when he had radical hopes for human society—Wordsworth believed that nature was the primary teacher of moral and spiritual truth. The "Stealing the Boat" extract comes from Book I and illustrates a key Romantic belief: that nature teaches through powerful emotional experiences. For Wordsworth, the encounter with the mountain is not a punishment but an education—the boy learns his true place in the universe and gains humility and awe. This extract became one of the most influential passages in English Romantic poetry, shaping later poets' understanding of the sublime as an experience that is simultaneously beautiful, terrifying, and spiritually transformative.</p>
+
 <h3>Key Quotations &amp; Analysis</h3>
 
 <p><strong>1. "Two vast and trunkless legs of stone"</strong><br/>
@@ -77,6 +80,50 @@ A stark, monosyllabic sentence that flatly contradicts the bombastic inscription
 Sibilance (<em>sands stretch</em>) and the long vowels in <em>lone</em> and <em>far away</em> create a vast, empty soundscape. The desert — nature — has the final word.</p>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> When writing about <em>Ozymandias</em>, always link the broken form of the sonnet to the theme of decaying power. Examiners reward candidates who connect <strong>form</strong> to <strong>meaning</strong> rather than simply identifying features.</div>
+
+<h3>Structural Analysis: From Confidence to Awe</h3>
+<ul>
+  <li><strong>Blank Verse (Unrhymed Iambic Pentameter):</strong> Wordsworth chose this elevated form, associated with Milton's <em>Paradise Lost</em>, to give his personal experience epic significance. The consistent iambic rhythm initially creates a sense of control and confidence ("lustily I dipped my oars"), but as the mountain appears, the rhythm becomes disrupted by caesura and stressed beats, mirroring the emotional disturbance.</li>
+  <li><strong>Narrative Arc:</strong> The extract follows a clear emotional journey—confidence and pleasure, growing unease, terror, and finally lasting psychological change. This three-act structure shows how a single moment can permanently alter a person's consciousness.</li>
+  <li><strong>Personification of Nature:</strong> Nature is consistently personified as a conscious, threatening force ("like one who rows / Proud of his skill," the mountain "Upreared its head"). This removes nature from the realm of passive backdrop and makes it an active agent in the boy's education.</li>
+  <li><strong>Enjambment:</strong> Lines flow across line breaks, creating forward momentum that mirrors the boat's uncontrollable movement. Enjambment also creates moments where grammatically important words fall at line beginnings or endings, creating emphasis—for example, "struck and struck again" where the repetition of "struck" across line breaks emphasises panic.</li>
+  <li><strong>Shift from Past to Present Tense:</strong> The extract moves from simple past ("I dipped my oars") to present-tense description ("huge and mighty forms...that do not live like living men"), creating an immediacy that suggests the memory is still fresh and still emotionally present.</li>
+</ul>
+
+<h3>Grade 9 Model Paragraph: The Sublime as Education</h3>
+<div class="model-paragraph">
+<p><strong>Sample Question: How does Wordsworth present the power of nature in The Prelude extract?</strong></p>
+
+<p>Wordsworth presents nature as a powerful, conscious force that educates through overwhelming emotional experience—a phenomenon known as the sublime. The young boy's initial confidence ("lustily I dipped my oars") is rapidly destroyed by the mountain's apparent aggression. When he describes the mountain as appearing "like one who rows, / Proud of his skill," he humanises the landscape, suggesting it is deliberately mocking his youthful arrogance. The personification "Upreared its head" further emphasises nature's agency—the mountain is not a passive object but an animate being that deliberately intimidates the intruder. Most significantly, Wordsworth shows that this terrifying experience produces a lasting psychological change. The final lines reveal that the boy is haunted by "huge and mighty forms, that do not live / Like living men" and describes them as "a trouble to my dreams." Nature has not merely frightened him; it has permanently altered his consciousness. This reflects the Romantic belief that emotional intensity—even fear—is a source of spiritual education and moral growth. The sublime moment has transformed the boy from a proud, confident child into a humbled individual aware of his insignificance in the face of nature's grandeur.</p>
+</div>
+
+<h3>Quotation Bank for Essays</h3>
+<table>
+  <tr>
+    <th>Theme</th>
+    <th>Key Quotations</th>
+  </tr>
+  <tr>
+    <td>Youth &amp; Arrogance</td>
+    <td>"like one who rows, / Proud of his skill" / "lustily I dipped my oars"</td>
+  </tr>
+  <tr>
+    <td>Nature as Conscious Threat</td>
+    <td>"Upreared its head" / "a huge peak, black and huge" / "As if with voluntary power instinct"</td>
+  </tr>
+  <tr>
+    <td>Panic &amp; Loss of Control</td>
+    <td>"struck and struck again" / "and troubled pleasure"</td>
+  </tr>
+  <tr>
+    <td>Lasting Psychological Impact</td>
+    <td>"huge and mighty forms...that do not live / Like living men" / "a trouble to my dreams"</td>
+  </tr>
+  <tr>
+    <td>The Sublime (Awe &amp; Terror Combined)</td>
+    <td>"One summer evening (led by her)" / whole extract demonstrates sublimity</td>
+  </tr>
+</table>
 
 <h3>Comparison Links</h3>
 <ul>
@@ -195,6 +242,9 @@ Sibilance (<em>sands stretch</em>) and the long vowels in <em>lone</em> and <em>
   <li><strong>Suffering and hopelessness:</strong> The poem's tone is unrelentingly bleak — there is no redemption offered.</li>
 </ul>
 
+<h3>Poet Context: Ted Hughes & the Burden of War Memory</h3>
+<p>Ted Hughes (1930–1998) was one of the most significant English poets of the twentieth century, later serving as Poet Laureate (1984–1998). Hughes was fascinated by nature, power, and violence—themes he explored in stark, visceral imagery. Though Hughes did not experience WWI himself, his father, Captain William Henry Hughes, survived the Gallipoli campaign (1915)—one of the bloodiest battles of WWI. His father rarely spoke of the experience, and this silence profoundly affected Hughes. The unspoken trauma, the things his father could not articulate, haunted Hughes throughout his life and career. <em>Bayonet Charge</em>, published in Hughes's first collection <em>The Hawk in the Rain</em> (1957), represents Hughes's attempt to imaginatively reconstruct the soldier's experience—to give voice to what his father could not or would not say. Hughes's approach is distinctly different from Romantic war poetry (like Tennyson's): rather than celebrating heroism or patriotic duty, Hughes strips away all rhetoric and presents raw, physical terror and confusion. Hughes's spare, intense language and his focus on the body—the soldier's physical sensations and animal instincts—became characteristic of his mature style.</p>
+
 <h3>Key Quotations &amp; Analysis</h3>
 
 <p><strong>1. "I wander thro' each charter'd street"</strong><br/>
@@ -228,6 +278,50 @@ The <em>Harlot</em> is young — another lost innocent. <em>Curse</em> means bot
 A shocking oxymoron that fuses marriage (life, hope) with a hearse (death). Blake implies that even love and family are poisoned by the society he describes.</p>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> Blake's capitalisation of words like <em>Church</em>, <em>Soldier</em>, and <em>Palace</em> is deliberate — it turns individuals into symbols of whole institutions. Mention this in your essay to show awareness of the writer's craft.</div>
+
+<h3>Structural Analysis: Form as Chaos</h3>
+<ul>
+  <li><strong>In Medias Res Opening:</strong> "Suddenly he awoke and was running" plunges the reader directly into chaos without warning or context. There is no introduction, no explanation—only the immediate, disorientating experience of combat. This technique mimics the soldier's own disorientation and lack of control.</li>
+  <li><strong>Three-Stanza Structure:</strong> The first stanza depicts physical action; the second presents existential doubt and paralysis; the third returns to desperate action. This arc mirrors the progression from instinctive reaction to philosophical questioning to survival instinct.</li>
+  <li><strong>Irregular Line Lengths &amp; Lack of Rhyme Scheme:</strong> The absence of formal control in the poem's structure mirrors the absence of control in the soldier's experience. Unlike the ordered confidence of Tennyson's <em>Charge of the Light Brigade</em>, Hughes's form is chaotic and unpredictable.</li>
+  <li><strong>Enjambment &amp; Caesura:</strong> Lines spill across stanzas, and caesura (pauses mid-line) create moments of frozen hesitation. The second stanza, in particular, uses pauses to suggest the soldier's mental paralysis: "In what cold clockwork of the stars and the nations / Was he the hand pointing that second?"</li>
+  <li><strong>Shift from Action to Thought to Action:</strong> Stanza 1 = physical running; Stanza 2 = existential doubt and philosophical questioning; Stanza 3 = return to animal survival instinct. This structure shows how war strips away rational thought and reduces humans to bodies driven by terror.</li>
+</ul>
+
+<h3>Grade 9 Model Paragraph: The Dehumanising Reality of Combat</h3>
+<div class="model-paragraph">
+<p><strong>Sample Question: How does Hughes present the reality of war in Bayonet Charge?</strong></p>
+
+<p>Hughes presents war not as a heroic struggle but as a dehumanising experience that reduces the soldier to a body driven by terror and instinct. The in medias res opening—"Suddenly he awoke and was running"—offers no context or explanation; the reader is thrown into chaos just as the soldier is. Crucially, the soldier is unnamed and depersonalised—he is never given individuality or agency. Hughes emphasises the physical body: "raw-seamed hot khaki" focuses on the painful uniform; "stumbling across a field of clods" shows ungainly, desperate movement. Most devastatingly, the second stanza presents a moment of existential questioning: "In what cold clockwork of the stars and the nations / Was he the hand pointing that second?" The soldier realises he is merely an instrument, a "hand" on the "clock" of larger historical forces. The repeated phrase "King, honour, human dignity, etcetera" dismissively reduces patriotic ideals to meaningless clichés. The word "etcetera" is crushing—these supposed reasons for dying are not worth fully naming. The poem's structure enacts this dehumanisation: irregular lines and no rhyme scheme create chaos, mirroring the loss of order and meaning in combat. Unlike Tennyson's celebration of the soldier's brave obedience, Hughes reveals that bravery is irrelevant; survival depends only on the body's animal response to threat.</p>
+</div>
+
+<h3>Quotation Bank for Essays</h3>
+<table>
+  <tr>
+    <th>Theme</th>
+    <th>Key Quotations</th>
+  </tr>
+  <tr>
+    <td>Disorientation &amp; Chaos</td>
+    <td>"Suddenly he awoke and was running" / "stumbling across a field of clods"</td>
+  </tr>
+  <tr>
+    <td>Physical Pain &amp; Discomfort</td>
+    <td>"raw-seamed hot khaki" / "bullets smacking the belly out of the air"</td>
+  </tr>
+  <tr>
+    <td>Lack of Agency &amp; Control</td>
+    <td>"Was he the hand pointing that second?" / "In what cold clockwork of the stars and the nations"</td>
+  </tr>
+  <tr>
+    <td>Meaninglessness of Patriotism</td>
+    <td>"King, honour, human dignity, etcetera" / "His terror's touchy dynamite"</td>
+  </tr>
+  <tr>
+    <td>Innocent Victimhood</td>
+    <td>"a yellow hare that rolled like a flame" / entire poem's dehumanisation of soldier</td>
+  </tr>
+</table>
 
 <h3>Comparison Links</h3>
 <ul>
@@ -331,6 +425,9 @@ A shocking oxymoron that fuses marriage (life, hope) with a hearse (death). Blak
   <li><strong>The sublime:</strong> The mountain inspires awe mixed with terror — a classic Romantic concept.</li>
 </ul>
 
+<h3>Poet Context: Jane Weir & the Domestic Cost of War</h3>
+<p>Jane Weir (b. 1963) is a British poet known for her accessible, emotionally direct work. She was born in England but has lived extensively in Northern Ireland, where she has witnessed firsthand the impact of conflict on civilian communities. <em>Poppies</em> was commissioned by Carol Ann Duffy as part of a collection exploring conflict, published in <em>Exit Wounds</em> (2009). What distinguishes Weir's work is her focus on the domestic, emotional impact of war rather than the battlefield itself. Her experience of Northern Ireland's conflict—where violence erupts within communities and affects families directly—shaped her understanding that war's destruction extends far beyond combat zones into the homes, relationships, and daily lives of ordinary people. Weir's poetry typically employs clear, conversational language, avoiding complex metaphors in favour of direct emotional expression. This accessibility makes her work particularly powerful: the reader feels close to the mother's grief, not distanced by literary artifice. <em>Poppies</em> exemplifies how contemporary war poetry has shifted from celebrating military heroism to exploring psychological trauma, grief, and the perspective of those left behind.</p>
+
 <h3>Key Quotations &amp; Analysis</h3>
 
 <p><strong>1. "One summer evening (led by her)"</strong><br/>
@@ -364,6 +461,50 @@ After the event, the boy is haunted by <em>huge and mighty forms</em> in his ima
 The experience does not end when the boat is returned. The phrase suggests lasting psychological impact — nature has educated the boy through fear.</p>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> The Prelude extract is ideal for exploring the <strong>shift in tone</strong>. Structure your essay around the contrast between the boy's confidence at the start and his terror/humility at the end. This shows you understand structural techniques, which addresses AO2.</div>
+
+<h3>Structural Analysis: Memory &amp; Maternal Grief</h3>
+<ul>
+  <li><strong>Free Verse with No Regular Metre:</strong> The lack of formal structure mirrors the uncontrolled nature of grief. Weir does not impose artificial order or closure on the mother's experience—the poem flows with the naturalness of a consciousness processing trauma.</li>
+  <li><strong>Non-Chronological Structure:</strong> The poem blends present action (pinning the poppy, smoothing the collar) with past memory and future anxiety. Time is disrupted by grief—the mother lives simultaneously in the moment of departure, memories of the child, and fear of his death.</li>
+  <li><strong>Semantic Fields (Textiles &amp; Warfare):</strong> Weir deliberately interweaves two semantic fields. Words associated with sewing and domesticity (crimped, Sellotape, smoothed, upturned collar) collide with military language (bandaged, steeled, war memorial). This technique embodies the central tension: the private, domestic world invaded by the public reality of war.</li>
+  <li><strong>Enjambment &amp; Line Breaks:</strong> Strategic line breaks force pauses at emotionally significant moments. For example, "smoothed down your shirt's / upturned collar" breaks across lines, forcing the reader to pause at the physical gesture—this creates intimacy and lingering tenderness.</li>
+  <li><strong>Long, Flowing Sentences:</strong> The poem's sentences are lengthy and interconnected, reflecting how the mother's thoughts spill across time without neat closure. The continuous flow mirrors an unresolved emotional state.</li>
+</ul>
+
+<h3>Grade 9 Model Paragraph: Maternal Grief &amp; Loss</h3>
+<div class="model-paragraph">
+<p><strong>Sample Question: How does Weir present the mother's experience of her son's departure in Poppies?</strong></p>
+
+<p>Weir presents maternal love and grief as the poem's emotional centre, showing how a mother must relinquish her protective role when her son enters military service. The intimate action of pinning the poppy—"I pinned one onto your lapel, crimped petals"—is simultaneously tender and ritualistic, connecting the private maternal gesture to the public remembrance of war's dead. The word "crimped" (from textile language) emphasises the mother's domestic world—sewing, smoothing, caring—which contrasts starkly with the militarised world her son is about to enter. When she "smoothed down your shirt's / upturned collar," Weir captures the archetypal maternal act, but the enjambment forces a pause, making the reader linger over this moment of tenderness before separation. Most devastatingly, the simile "leaned against it like a war memorial" transforms the mother into a monument—a physical structure defined entirely by loss and grief. She has become an unchanging memorial to her son, frozen in the moment of his departure. The final image—"hoping to hear your playground voice"—reveals the unbridgeable distance between the child she knew and the soldier he has become. Weir's use of free verse and non-chronological structure enacts the fragmentation of grief: the mother's consciousness moves between past memory, present anxiety, and ambiguous future, unable to find linear progression or resolution.</p>
+</div>
+
+<h3>Quotation Bank for Essays</h3>
+<table>
+  <tr>
+    <th>Theme</th>
+    <th>Key Quotations</th>
+  </tr>
+  <tr>
+    <td>Maternal Love &amp; Tender Gesture</td>
+    <td>"I pinned one onto your lapel, crimped petals" / "smoothed down your shirt's upturned collar"</td>
+  </tr>
+  <tr>
+    <td>Collision of Domestic &amp; Military</td>
+    <td>"Sellotape bandaged around my hand" / "steeled the softness of my face"</td>
+  </tr>
+  <tr>
+    <td>Grief &amp; Transformation into Monument</td>
+    <td>"leaned against it like a war memorial" / "I traced the inscriptions on the war memorial"</td>
+  </tr>
+  <tr>
+    <td>Ambiguous Loss &amp; Uncertainty</td>
+    <td>"released a song bird from its cage" / "hoping to hear your playground voice"</td>
+  </tr>
+  <tr>
+    <td>Maternal Relinquishment</td>
+    <td>"threw it open, the world overflowing" / entire poem's structure of non-closure</td>
+  </tr>
+</table>
 
 <h3>Comparison Links</h3>
 <ul>
@@ -657,6 +798,9 @@ The final image: a bronze of the god Neptune (power) <em>taming</em> a sea-horse
   <li><strong>Memory and memorialisation:</strong> Tennyson urges the reader to "Honour the charge they made" — the poem itself is an act of remembrance.</li>
 </ul>
 
+<h3>Poet Context: Carol Ann Duffy & Photography as Witness</h3>
+<p>Carol Ann Duffy (b. 1955) served as Poet Laureate from 2009 to 2019—the first woman and first openly LGBTQ+ person to hold the title. Her work is characterised by psychological depth, emotional directness, and a concern with power, identity, and morality. <em>War Photographer</em>, published in <em>Standing Female Nude</em> (1985), was inspired by Duffy's friendships with actual war photographers, particularly Don McCullin, who documented conflicts in Vietnam, Northern Ireland, and Cambodia. McCullin's photographs are among the most powerful visual records of modern war—his work forces the viewer to confront suffering they would otherwise avoid. Duffy's poem explores the moral complexity of such photography: it bears witness to suffering and truth, but does witnessing lead to action or merely to comfortable consumption? Duffy implicates the reader—we are the "public" who briefly feels emotion at disturbing images before turning the page. The poem raises profound questions about our relationship with images of suffering in the media age. Duffy's approach is characteristically modern: she avoids sentimentality and easy moral judgement, instead presenting the tension between the photographer's commitment to truth and the public's indifference with unflinching clarity.</p>
+
 <h3>Key Quotations &amp; Analysis</h3>
 
 <p><strong>1. "Half a league, half a league"</strong><br/>
@@ -687,6 +831,50 @@ The painful repetition of <em>not</em> forces the reader to confront the losses.
 The imperative directly addresses the reader, demanding respect and remembrance. The poem shifts from narrative to memorial.</p>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> Address the <strong>tension</strong> in this poem: Tennyson celebrates bravery but also acknowledges a "blunder." The best essays explore whether the poem glorifies war or subtly questions the system that sent men to die.</div>
+
+<h3>Structural Analysis: Form &amp; Public Indifference</h3>
+<ul>
+  <li><strong>Four Regular Sestets (Six-Line Stanzas):</strong> The regularity and formality of the structure contrast sharply with the chaotic, violent subject matter. This creates a tension: the poet maintains technical control and order while describing suffering that cannot be ordered or controlled. The formal structure also mirrors the photographer's professional discipline—he imposes order on chaos through his craft.</li>
+  <li><strong>Third-Person Narration ("He"):</strong> Using "he" rather than "I" creates detachment and distance. This distance mirrors how the public views war photographs—from a safe, remote position. The reader becomes complicit in this observational distance.</li>
+  <li><strong>Chronological Structure Following the Darkroom Process:</strong> The poem traces the physical and metaphorical journey from experiencing war (field work) through documenting it (darkroom development) to public consumption (newspaper publication). This progression shows how suffering is transformed into image, then into commodity.</li>
+  <li><strong>Volta in the Final Stanza:</strong> The poem's tone shifts from the photographer's reverent, sacred relationship with his images ("as though this were a church and he a priest") to harsh critique of public indifference ("they do not care"). This structural turn reveals Duffy's real target: not the photographer but the public.</li>
+  <li><strong>Specific, Sensory Language vs Abstraction:</strong> Duffy moves between vivid, physical imagery (the darkroom, developing photographs, "running children in a nightmare heat") and abstract moral critique ("All flesh is grass," "they do not care"). This combination forces the reader to feel both the texture of experience and the weight of responsibility.</li>
+</ul>
+
+<h3>Grade 9 Model Paragraph: Witnessing &amp; Responsibility</h3>
+<div class="model-paragraph">
+<p><strong>Sample Question: How does Duffy present the relationship between documenting war and public responsibility in War Photographer?</strong></p>
+
+<p>Duffy presents the war photographer as a solitary witness committed to documenting truth, while indicting the public for their complicity in consuming images of suffering without changing their behaviour or moral priorities. The darkroom is presented as a sacred space—"as though this were a church and he a priest preparing to intone a Mass"—elevating the photographer's work to a spiritual, almost religious calling. The developing photographs are treated with reverence ("spools of suffering set out in ordered rows"), suggesting the photographer understands the moral weight of what he has witnessed. However, Duffy's focus shifts in the final stanza to expose the public's moral failure. The image of the reader responding to war photographs "between the bath and pre-lunch beers" is devastating in its specificity—the domestic comfort (bathing, drinking) juxtaposed with images of human suffering reveals the reader's inability or unwillingness to let war truly affect their comfortable life. The final, blunt statement—"they do not care"—directly implicates the reader. Duffy forces us to recognise that we are "they." The poem argues that photography can bear witness to truth, but witnessing alone does not create moral action; instead, images of suffering can be consumed like any other media, then forgotten. The photographer's sacrifice—his psychological burden—ultimately means nothing if the public remains indifferent.</p>
+</div>
+
+<h3>Quotation Bank for Essays</h3>
+<table>
+  <tr>
+    <th>Theme</th>
+    <th>Key Quotations</th>
+  </tr>
+  <tr>
+    <td>Sacred Duty of Documentation</td>
+    <td>"as though this were a church and he a priest" / "spools of suffering set out in ordered rows"</td>
+  </tr>
+  <tr>
+    <td>Psychological Burden of Witnessing</td>
+    <td>"In his darkroom he is finally alone" / "All flesh is grass"</td>
+  </tr>
+  <tr>
+    <td>Specific Places of Suffering</td>
+    <td>"Belfast. Beirut. Phnom Penh." / "running children in a nightmare heat"</td>
+  </tr>
+  <tr>
+    <td>Emergence of the Image (Development Process)</td>
+    <td>"A stranger's features faintly start to twist" / "a half-formed ghost"</td>
+  </tr>
+  <tr>
+    <td>Public Indifference &amp; Moral Failure</td>
+    <td>"The reader's eyeballs prick with tears / between the bath and pre-lunch beers" / "they do not care"</td>
+  </tr>
+</table>
 
 <h3>Comparison Links</h3>
 <ul>
@@ -792,6 +980,9 @@ The imperative directly addresses the reader, demanding respect and remembrance.
   <li><strong>Loss of faith:</strong> The soldiers question whether God has abandoned them: "love of God seems dying."</li>
 </ul>
 
+<h3>Poet Context: Jane Weir & the Domestic Cost of War</h3>
+<p>Jane Weir (b. 1963) is a British poet known for her accessible, emotionally direct work. She was born in England but has lived extensively in Northern Ireland, where she has witnessed firsthand the impact of conflict on civilian communities. <em>Poppies</em> was commissioned by Carol Ann Duffy as part of a collection exploring conflict, published in <em>Exit Wounds</em> (2009). What distinguishes Weir's work is her focus on the domestic, emotional impact of war rather than the battlefield itself. Her experience of Northern Ireland's conflict—where violence erupts within communities and affects families directly—shaped her understanding that war's destruction extends far beyond combat zones into the homes, relationships, and daily lives of ordinary people. Weir's poetry typically employs clear, conversational language, avoiding complex metaphors in favour of direct emotional expression. This accessibility makes her work particularly powerful: the reader feels close to the mother's grief, not distanced by literary artifice. <em>Poppies</em> exemplifies how contemporary war poetry has shifted from celebrating military heroism to exploring psychological trauma, grief, and the perspective of those left behind.</p>
+
 <h3>Key Quotations &amp; Analysis</h3>
 
 <p><strong>1. "Our brains ache, in the merciless iced east winds that knive us"</strong><br/>
@@ -825,6 +1016,50 @@ Even the thought of spring — renewal, life — brings fear rather than hope. T
 The final image: the soldiers' eyes are literally frozen. The monosyllables and the assonance of the long "i" sound create a stark, final image of death.</p>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> Examiners reward candidates who discuss <em>what is absent</em> in the poem as well as what is present. The absence of battle, the absence of meaning, the absence of God — these absences are central to Owen's message.</div>
+
+<h3>Structural Analysis: Memory &amp; Maternal Grief</h3>
+<ul>
+  <li><strong>Free Verse with No Regular Metre:</strong> The lack of formal structure mirrors the uncontrolled nature of grief. Weir does not impose artificial order or closure on the mother's experience—the poem flows with the naturalness of a consciousness processing trauma.</li>
+  <li><strong>Non-Chronological Structure:</strong> The poem blends present action (pinning the poppy, smoothing the collar) with past memory and future anxiety. Time is disrupted by grief—the mother lives simultaneously in the moment of departure, memories of the child, and fear of his death.</li>
+  <li><strong>Semantic Fields (Textiles &amp; Warfare):</strong> Weir deliberately interweaves two semantic fields. Words associated with sewing and domesticity (crimped, Sellotape, smoothed, upturned collar) collide with military language (bandaged, steeled, war memorial). This technique embodies the central tension: the private, domestic world invaded by the public reality of war.</li>
+  <li><strong>Enjambment &amp; Line Breaks:</strong> Strategic line breaks force pauses at emotionally significant moments. For example, "smoothed down your shirt's / upturned collar" breaks across lines, forcing the reader to pause at the physical gesture—this creates intimacy and lingering tenderness.</li>
+  <li><strong>Long, Flowing Sentences:</strong> The poem's sentences are lengthy and interconnected, reflecting how the mother's thoughts spill across time without neat closure. The continuous flow mirrors an unresolved emotional state.</li>
+</ul>
+
+<h3>Grade 9 Model Paragraph: Maternal Grief &amp; Loss</h3>
+<div class="model-paragraph">
+<p><strong>Sample Question: How does Weir present the mother's experience of her son's departure in Poppies?</strong></p>
+
+<p>Weir presents maternal love and grief as the poem's emotional centre, showing how a mother must relinquish her protective role when her son enters military service. The intimate action of pinning the poppy—"I pinned one onto your lapel, crimped petals"—is simultaneously tender and ritualistic, connecting the private maternal gesture to the public remembrance of war's dead. The word "crimped" (from textile language) emphasises the mother's domestic world—sewing, smoothing, caring—which contrasts starkly with the militarised world her son is about to enter. When she "smoothed down your shirt's / upturned collar," Weir captures the archetypal maternal act, but the enjambment forces a pause, making the reader linger over this moment of tenderness before separation. Most devastatingly, the simile "leaned against it like a war memorial" transforms the mother into a monument—a physical structure defined entirely by loss and grief. She has become an unchanging memorial to her son, frozen in the moment of his departure. The final image—"hoping to hear your playground voice"—reveals the unbridgeable distance between the child she knew and the soldier he has become. Weir's use of free verse and non-chronological structure enacts the fragmentation of grief: the mother's consciousness moves between past memory, present anxiety, and ambiguous future, unable to find linear progression or resolution.</p>
+</div>
+
+<h3>Quotation Bank for Essays</h3>
+<table>
+  <tr>
+    <th>Theme</th>
+    <th>Key Quotations</th>
+  </tr>
+  <tr>
+    <td>Maternal Love &amp; Tender Gesture</td>
+    <td>"I pinned one onto your lapel, crimped petals" / "smoothed down your shirt's upturned collar"</td>
+  </tr>
+  <tr>
+    <td>Collision of Domestic &amp; Military</td>
+    <td>"Sellotape bandaged around my hand" / "steeled the softness of my face"</td>
+  </tr>
+  <tr>
+    <td>Grief &amp; Transformation into Monument</td>
+    <td>"leaned against it like a war memorial" / "I traced the inscriptions on the war memorial"</td>
+  </tr>
+  <tr>
+    <td>Ambiguous Loss &amp; Uncertainty</td>
+    <td>"released a song bird from its cage" / "hoping to hear your playground voice"</td>
+  </tr>
+  <tr>
+    <td>Maternal Relinquishment</td>
+    <td>"threw it open, the world overflowing" / entire poem's structure of non-closure</td>
+  </tr>
+</table>
 
 <h3>Comparison Links</h3>
 <ul>
@@ -1574,6 +1809,9 @@ The final image: she listens for her son's <em>childhood</em> voice, not his adu
   <li><strong>Art and truth:</strong> Can an image capture the reality of war, or does it reduce suffering to something consumable?</li>
 </ul>
 
+<h3>Poet Context: Carol Ann Duffy & Photography as Witness</h3>
+<p>Carol Ann Duffy (b. 1955) served as Poet Laureate from 2009 to 2019—the first woman and first openly LGBTQ+ person to hold the title. Her work is characterised by psychological depth, emotional directness, and a concern with power, identity, and morality. <em>War Photographer</em>, published in <em>Standing Female Nude</em> (1985), was inspired by Duffy's friendships with actual war photographers, particularly Don McCullin, who documented conflicts in Vietnam, Northern Ireland, and Cambodia. McCullin's photographs are among the most powerful visual records of modern war—his work forces the viewer to confront suffering they would otherwise avoid. Duffy's poem explores the moral complexity of such photography: it bears witness to suffering and truth, but does witnessing lead to action or merely to comfortable consumption? Duffy implicates the reader—we are the "public" who briefly feels emotion at disturbing images before turning the page. The poem raises profound questions about our relationship with images of suffering in the media age. Duffy's approach is characteristically modern: she avoids sentimentality and easy moral judgement, instead presenting the tension between the photographer's commitment to truth and the public's indifference with unflinching clarity.</p>
+
 <h3>Key Quotations &amp; Analysis</h3>
 
 <p><strong>1. "In his darkroom he is finally alone"</strong><br/>
@@ -1607,6 +1845,50 @@ A biting, satirical couplet. The public briefly feels emotion but immediately re
 The bluntest statement in the poem. After all the photographer's anguish, the public's response is apathy. Duffy implicates the reader directly.</p>
 
 <div class="examiner-tip"><strong>Examiner Tip:</strong> Duffy implicates the <em>reader</em> — we are part of the public that looks at war photographs and then turns the page. The best essays acknowledge this self-reflexive quality and ask whether the poem is a criticism of <em>us</em>.</div>
+
+<h3>Structural Analysis: Form &amp; Public Indifference</h3>
+<ul>
+  <li><strong>Four Regular Sestets (Six-Line Stanzas):</strong> The regularity and formality of the structure contrast sharply with the chaotic, violent subject matter. This creates a tension: the poet maintains technical control and order while describing suffering that cannot be ordered or controlled. The formal structure also mirrors the photographer's professional discipline—he imposes order on chaos through his craft.</li>
+  <li><strong>Third-Person Narration ("He"):</strong> Using "he" rather than "I" creates detachment and distance. This distance mirrors how the public views war photographs—from a safe, remote position. The reader becomes complicit in this observational distance.</li>
+  <li><strong>Chronological Structure Following the Darkroom Process:</strong> The poem traces the physical and metaphorical journey from experiencing war (field work) through documenting it (darkroom development) to public consumption (newspaper publication). This progression shows how suffering is transformed into image, then into commodity.</li>
+  <li><strong>Volta in the Final Stanza:</strong> The poem's tone shifts from the photographer's reverent, sacred relationship with his images ("as though this were a church and he a priest") to harsh critique of public indifference ("they do not care"). This structural turn reveals Duffy's real target: not the photographer but the public.</li>
+  <li><strong>Specific, Sensory Language vs Abstraction:</strong> Duffy moves between vivid, physical imagery (the darkroom, developing photographs, "running children in a nightmare heat") and abstract moral critique ("All flesh is grass," "they do not care"). This combination forces the reader to feel both the texture of experience and the weight of responsibility.</li>
+</ul>
+
+<h3>Grade 9 Model Paragraph: Witnessing &amp; Responsibility</h3>
+<div class="model-paragraph">
+<p><strong>Sample Question: How does Duffy present the relationship between documenting war and public responsibility in War Photographer?</strong></p>
+
+<p>Duffy presents the war photographer as a solitary witness committed to documenting truth, while indicting the public for their complicity in consuming images of suffering without changing their behaviour or moral priorities. The darkroom is presented as a sacred space—"as though this were a church and he a priest preparing to intone a Mass"—elevating the photographer's work to a spiritual, almost religious calling. The developing photographs are treated with reverence ("spools of suffering set out in ordered rows"), suggesting the photographer understands the moral weight of what he has witnessed. However, Duffy's focus shifts in the final stanza to expose the public's moral failure. The image of the reader responding to war photographs "between the bath and pre-lunch beers" is devastating in its specificity—the domestic comfort (bathing, drinking) juxtaposed with images of human suffering reveals the reader's inability or unwillingness to let war truly affect their comfortable life. The final, blunt statement—"they do not care"—directly implicates the reader. Duffy forces us to recognise that we are "they." The poem argues that photography can bear witness to truth, but witnessing alone does not create moral action; instead, images of suffering can be consumed like any other media, then forgotten. The photographer's sacrifice—his psychological burden—ultimately means nothing if the public remains indifferent.</p>
+</div>
+
+<h3>Quotation Bank for Essays</h3>
+<table>
+  <tr>
+    <th>Theme</th>
+    <th>Key Quotations</th>
+  </tr>
+  <tr>
+    <td>Sacred Duty of Documentation</td>
+    <td>"as though this were a church and he a priest" / "spools of suffering set out in ordered rows"</td>
+  </tr>
+  <tr>
+    <td>Psychological Burden of Witnessing</td>
+    <td>"In his darkroom he is finally alone" / "All flesh is grass"</td>
+  </tr>
+  <tr>
+    <td>Specific Places of Suffering</td>
+    <td>"Belfast. Beirut. Phnom Penh." / "running children in a nightmare heat"</td>
+  </tr>
+  <tr>
+    <td>Emergence of the Image (Development Process)</td>
+    <td>"A stranger's features faintly start to twist" / "a half-formed ghost"</td>
+  </tr>
+  <tr>
+    <td>Public Indifference &amp; Moral Failure</td>
+    <td>"The reader's eyeballs prick with tears / between the bath and pre-lunch beers" / "they do not care"</td>
+  </tr>
+</table>
 
 <h3>Comparison Links</h3>
 <ul>
