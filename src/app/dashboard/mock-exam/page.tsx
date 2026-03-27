@@ -1048,13 +1048,13 @@ function ExamResults() {
                           </p>
 
                           {/* Mark scheme */}
-                          {question.markScheme && question.markScheme.length > 0 && (
+                          {question.markScheme && (Array.isArray(question.markScheme) ? question.markScheme.length > 0 : Object.keys(question.markScheme).length > 0) && (
                             <div className="mt-3 border-t border-green-500/10 pt-3">
                               <div className="mb-1 text-xs font-semibold text-muted-foreground uppercase tracking-wider">
                                 Mark Scheme
                               </div>
                               <ul className="space-y-0.5">
-                                {question.markScheme.map((point, i) => (
+                                {(Array.isArray(question.markScheme) ? question.markScheme : Object.entries(question.markScheme).flatMap(([cat, points]) => [`${cat}:`, ...points])).map((point, i) => (
                                   <li key={i} className="flex gap-1.5 text-xs text-muted-foreground">
                                     <span className="text-primary">-</span>
                                     {point}

@@ -486,7 +486,7 @@ export default function PracticePage() {
 
                 {/* Mark Scheme */}
                 {currentQuestion.markScheme &&
-                  currentQuestion.markScheme.length > 0 && (
+                  (Array.isArray(currentQuestion.markScheme) ? currentQuestion.markScheme.length > 0 : Object.keys(currentQuestion.markScheme).length > 0) && (
                     <Card>
                       <CardContent>
                         <div className="mb-3 flex items-center gap-2 text-sm font-semibold text-foreground">
@@ -494,7 +494,7 @@ export default function PracticePage() {
                           Mark Scheme Points
                         </div>
                         <ul className="space-y-2">
-                          {currentQuestion.markScheme.map((point, i) => (
+                          {(Array.isArray(currentQuestion.markScheme) ? currentQuestion.markScheme : Object.entries(currentQuestion.markScheme).flatMap(([cat, points]) => [`${cat}:`, ...points])).map((point, i) => (
                             <li
                               key={i}
                               className="flex items-start gap-2 text-sm text-muted-foreground"

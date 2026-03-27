@@ -37,8 +37,8 @@ export interface MockExamQuestion {
   extractSource?: string
   /** Model answer keyed by grade band (or fullMark/partialMarks structure) */
   modelAnswers?: Record<string, string | string[]>
-  /** Mark scheme bullet points */
-  markScheme?: string[]
+  /** Mark scheme bullet points (flat array) or categorised object */
+  markScheme?: string[] | Record<string, string[]>
 }
 
 export interface MockExamSection {
