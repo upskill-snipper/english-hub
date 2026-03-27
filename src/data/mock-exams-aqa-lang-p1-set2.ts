@@ -165,13 +165,17 @@ export const aqaLangP1MocksSet2: MockExamPaper[] = [
   {
     id: 'aqa-lang-p1-set2-mock-01',
     board: 'AQA',
+    paperNumber: 1,
     qualification: 'GCSE',
     subject: 'English Language',
     paper: 'Paper 1',
     title: 'Paper 1 Mock Exam - Set 2, Mock 1: The Signal (Science Fiction)',
+    subtitle: 'Explorations in creative reading and writing',
+    code: '8700/1',
     description: 'Science fiction dystopian extract: technological alienation, surveillance, human connection',
     totalMarks: 80,
     duration: 105,
+    totalTimeMinutes: 105,
     sections: [
       {
         id: 'mock-01-section-a',
@@ -300,13 +304,17 @@ export const aqaLangP1MocksSet2: MockExamPaper[] = [
   {
     id: 'aqa-lang-p1-set2-mock-02',
     board: 'AQA',
+    paperNumber: 1,
     qualification: 'GCSE',
     subject: 'English Language',
     paper: 'Paper 1',
     title: 'Paper 1 Mock Exam - Set 2, Mock 2: The Mapmaker (Historical Fiction)',
+    subtitle: 'Explorations in creative reading and writing',
+    code: '8700/1',
     description: 'Historical fiction extract: 18th century cartography, colonialism, moral ambiguity',
     totalMarks: 80,
     duration: 105,
+    totalTimeMinutes: 105,
     sections: [
       {
         id: 'mock-02-section-a',
@@ -435,13 +443,17 @@ export const aqaLangP1MocksSet2: MockExamPaper[] = [
   {
     id: 'aqa-lang-p1-set2-mock-03',
     board: 'AQA',
+    paperNumber: 1,
     qualification: 'GCSE',
     subject: 'English Language',
     paper: 'Paper 1',
     title: 'Paper 1 Mock Exam - Set 2, Mock 3: The House at Ravenswick (Horror)',
+    subtitle: 'Explorations in creative reading and writing',
+    code: '8700/1',
     description: 'Horror fiction extract: psychological terror, unreliable narrator, supernatural atmosphere',
     totalMarks: 80,
     duration: 105,
+    totalTimeMinutes: 105,
     sections: [
       {
         id: 'mock-03-section-a',
@@ -570,13 +582,17 @@ export const aqaLangP1MocksSet2: MockExamPaper[] = [
   {
     id: 'aqa-lang-p1-set2-mock-04',
     board: 'AQA',
+    paperNumber: 1,
     qualification: 'GCSE',
     subject: 'English Language',
     paper: 'Paper 1',
     title: 'Paper 1 Mock Exam - Set 2, Mock 4: The Year of Waiting (Romance)',
+    subtitle: 'Explorations in creative reading and writing',
+    code: '8700/1',
     description: 'Contemporary romance extract: emotional complexity, patient love, self-discovery',
     totalMarks: 80,
     duration: 105,
+    totalTimeMinutes: 105,
     sections: [
       {
         id: 'mock-04-section-a',
@@ -705,13 +721,17 @@ export const aqaLangP1MocksSet2: MockExamPaper[] = [
   {
     id: 'aqa-lang-p1-set2-mock-05',
     board: 'AQA',
+    paperNumber: 1,
     qualification: 'GCSE',
     subject: 'English Language',
     paper: 'Paper 1',
     title: 'Paper 1 Mock Exam - Set 2, Mock 5: The Last Trench (War Fiction)',
+    subtitle: 'Explorations in creative reading and writing',
+    code: '8700/1',
     description: 'War fiction extract: soldier\'s perspective, moral numbness, machinery of conflict',
     totalMarks: 80,
     duration: 105,
+    totalTimeMinutes: 105,
     sections: [
       {
         id: 'mock-05-section-a',
@@ -840,13 +860,17 @@ export const aqaLangP1MocksSet2: MockExamPaper[] = [
   {
     id: 'aqa-lang-p1-set2-mock-06',
     board: 'AQA',
+    paperNumber: 1,
     qualification: 'GCSE',
     subject: 'English Language',
     paper: 'Paper 1',
     title: 'Paper 1 Mock Exam - Set 2, Mock 6: The Becoming (Coming-of-Age)',
+    subtitle: 'Explorations in creative reading and writing',
+    code: '8700/1',
     description: 'Coming-of-age fiction: adolescent transformation, loss of innocence, betrayal',
     totalMarks: 80,
     duration: 105,
+    totalTimeMinutes: 105,
     sections: [
       {
         id: 'mock-06-section-a',

@@ -89,22 +89,27 @@ const WJEC_C1_P1: MockExamPaper = {
   paperNumber: 1,
   component: 1,
   title: 'WJEC GCSE English Language: Component 1, Paper 1',
-  duration: 105,
+  subtitle: 'Component 1: 20th Century Literature Reading and Creative Prose Writing',
+  code: 'C700U10-1',
+  totalTimeMinutes: 105,
   totalMarks: 80,
   sections: [
     {
       id: 'c1-p1-reading',
       title: 'Section A: Reading',
       totalMarks: 40,
-      instructions: 'Read the extract below and answer all questions. You have 60 minutes for this section.',
+      description: 'Read the extract below and answer all questions. You have 60 minutes for this section.',
       sourceText: WJEC_C1_P1_LITERARY_EXTRACT,
       sourceAttribution: 'Adapted literary fiction (contemporary)',
       questions: [
         {
           id: 'q1',
-          number: 1,
-          text: 'How does the writer use language to convey Sarah\'s initial state of mind in the opening paragraph?',
+          questionNumber: 1,
+          questionText: 'How does the writer use language to convey Sarah\'s initial state of mind in the opening paragraph?',
           marks: 8,
+          suggestedTimeMinutes: 15,
+          questionType: 'analysis',
+          markScheme: [],
           section: 'Reading',
           modelAnswers: [
             {
@@ -123,9 +128,12 @@ const WJEC_C1_P1: MockExamPaper = {
         },
         {
           id: 'q2',
-          number: 2,
-          text: 'What does the passage suggest about the reasons for Sarah\'s isolation?',
+          questionNumber: 2,
+          questionText: 'What does the passage suggest about the reasons for Sarah\'s isolation?',
           marks: 8,
+          suggestedTimeMinutes: 15,
+          questionType: 'analysis',
+          markScheme: [],
           section: 'Reading',
           modelAnswers: [
             {
@@ -144,9 +152,12 @@ const WJEC_C1_P1: MockExamPaper = {
         },
         {
           id: 'q3',
-          number: 3,
-          text: 'How does the writer create suspense in the passage? Analyze specific techniques.',
+          questionNumber: 3,
+          questionText: 'How does the writer create suspense in the passage? Analyze specific techniques.',
           marks: 12,
+          suggestedTimeMinutes: 20,
+          questionType: 'analysis',
+          markScheme: [],
           section: 'Reading',
           modelAnswers: [
             {
@@ -165,9 +176,12 @@ const WJEC_C1_P1: MockExamPaper = {
         },
         {
           id: 'q4',
-          number: 4,
-          text: 'Discuss what the passage reveals about human connection and isolation. Support your answer with reference to the text.',
+          questionNumber: 4,
+          questionText: 'Discuss what the passage reveals about human connection and isolation. Support your answer with reference to the text.',
           marks: 12,
+          suggestedTimeMinutes: 10,
+          questionType: 'analysis',
+          markScheme: [],
           section: 'Reading',
           modelAnswers: [
             {
@@ -190,13 +204,16 @@ const WJEC_C1_P1: MockExamPaper = {
       id: 'c1-p1-writing',
       title: 'Section B: Creative Writing',
       totalMarks: 40,
-      instructions: 'Write a creative piece of prose (fiction, autobiography, or imaginative recount) on one of the following titles. You have 45 minutes for this section. Aim for 400-600 words.',
+      description: 'Write a creative piece of prose (fiction, autobiography, or imaginative recount) on one of the following titles. You have 45 minutes for this section. Aim for 400-600 words.',
       questions: [
         {
           id: 'q5',
-          number: 5,
-          text: 'Choose one of the following writing tasks:\n\n(a) "The Stranger": Write about an unexpected encounter with someone from outside your normal world.\n\n(b) "Returning": Write about going back to a place you once knew well but have not visited for a long time.\n\n(c) "What I Almost Did": Write about a moment when you nearly made a choice that would have changed your life, but ultimately chose differently.',
+          questionNumber: 5,
+          questionText: 'Choose one of the following writing tasks:\n\n(a) "The Stranger": Write about an unexpected encounter with someone from outside your normal world.\n\n(b) "Returning": Write about going back to a place you once knew well but have not visited for a long time.\n\n(c) "What I Almost Did": Write about a moment when you nearly made a choice that would have changed your life, but ultimately chose differently.',
           marks: 40,
+          suggestedTimeMinutes: 45,
+          questionType: 'creative-writing',
+          markScheme: [],
           section: 'Writing',
           modelAnswers: [
             {
@@ -229,22 +246,27 @@ const WJEC_C1_P2: MockExamPaper = {
   paperNumber: 2,
   component: 1,
   title: 'WJEC GCSE English Language: Component 1, Paper 2',
-  duration: 105,
+  subtitle: 'Component 1: 20th Century Literature Reading and Creative Prose Writing',
+  code: 'C700U10-1',
+  totalTimeMinutes: 105,
   totalMarks: 80,
   sections: [
     {
       id: 'c1-p2-reading',
       title: 'Section A: Reading',
       totalMarks: 40,
-      instructions: 'Read the extract below and answer all questions. You have 60 minutes for this section.',
+      description: 'Read the extract below and answer all questions. You have 60 minutes for this section.',
       sourceText: WJEC_C1_P2_LITERARY_EXTRACT,
       sourceAttribution: 'Adapted literary fiction (early 20th century)',
       questions: [
         {
           id: 'q1',
-          number: 1,
-          text: 'What impression does the writer create of the city in the opening sentences?',
+          questionNumber: 1,
+          questionText: 'What impression does the writer create of the city in the opening sentences?',
           marks: 8,
+          suggestedTimeMinutes: 15,
+          questionType: 'analysis',
+          markScheme: [],
           section: 'Reading',
           modelAnswers: [
             {
@@ -263,9 +285,12 @@ const WJEC_C1_P2: MockExamPaper = {
         },
         {
           id: 'q2',
-          number: 2,
-          text: 'Analyze how the writer\'s presentation of James changes as the passage progresses.',
+          questionNumber: 2,
+          questionText: 'Analyze how the writer\'s presentation of James changes as the passage progresses.',
           marks: 8,
+          suggestedTimeMinutes: 15,
+          questionType: 'analysis',
+          markScheme: [],
           section: 'Reading',
           modelAnswers: [
             {
@@ -284,9 +309,12 @@ const WJEC_C1_P2: MockExamPaper = {
         },
         {
           id: 'q3',
-          number: 3,
-          text: 'How does the writer use language to convey the nature of the city and its effects on individuals?',
+          questionNumber: 3,
+          questionText: 'How does the writer use language to convey the nature of the city and its effects on individuals?',
           marks: 12,
+          suggestedTimeMinutes: 20,
+          questionType: 'analysis',
+          markScheme: [],
           section: 'Reading',
           modelAnswers: [
             {
@@ -305,9 +333,12 @@ const WJEC_C1_P2: MockExamPaper = {
         },
         {
           id: 'q4',
-          number: 4,
-          text: 'Discuss the passage\'s view of ambition and change. What does it suggest about personal transformation?',
+          questionNumber: 4,
+          questionText: 'Discuss the passage\'s view of ambition and change. What does it suggest about personal transformation?',
           marks: 12,
+          suggestedTimeMinutes: 10,
+          questionType: 'analysis',
+          markScheme: [],
           section: 'Reading',
           modelAnswers: [
             {
@@ -330,13 +361,16 @@ const WJEC_C1_P2: MockExamPaper = {
       id: 'c1-p2-writing',
       title: 'Section B: Creative Writing',
       totalMarks: 40,
-      instructions: 'Write a creative piece of prose (fiction, autobiography, or imaginative recount) on one of the following titles. You have 45 minutes for this section. Aim for 400-600 words.',
+      description: 'Write a creative piece of prose (fiction, autobiography, or imaginative recount) on one of the following titles. You have 45 minutes for this section. Aim for 400-600 words.',
       questions: [
         {
           id: 'q5',
-          number: 5,
-          text: 'Choose one of the following writing tasks:\n\n(a) "Arrival": Write about arriving somewhere new and your first impressions.\n\n(b) "The Cost": Write about something you gained that required you to lose something else.\n\n(c) "What Remains": Write about what persists when everything else changes.',
+          questionNumber: 5,
+          questionText: 'Choose one of the following writing tasks:\n\n(a) "Arrival": Write about arriving somewhere new and your first impressions.\n\n(b) "The Cost": Write about something you gained that required you to lose something else.\n\n(c) "What Remains": Write about what persists when everything else changes.',
           marks: 40,
+          suggestedTimeMinutes: 45,
+          questionType: 'creative-writing',
+          markScheme: [],
           section: 'Writing',
           modelAnswers: [
             {
@@ -369,22 +403,27 @@ const WJEC_C1_P3: MockExamPaper = {
   paperNumber: 3,
   component: 1,
   title: 'WJEC GCSE English Language: Component 1, Paper 3',
-  duration: 105,
+  subtitle: 'Component 1: 20th Century Literature Reading and Creative Prose Writing',
+  code: 'C700U10-1',
+  totalTimeMinutes: 105,
   totalMarks: 80,
   sections: [
     {
       id: 'c1-p3-reading',
       title: 'Section A: Reading',
       totalMarks: 40,
-      instructions: 'Read the extract below and answer all questions. You have 60 minutes for this section.',
+      description: 'Read the extract below and answer all questions. You have 60 minutes for this section.',
       sourceText: WJEC_C1_P3_LITERARY_EXTRACT,
       sourceAttribution: 'Adapted literary fiction (1950s)',
       questions: [
         {
           id: 'q1',
-          number: 1,
-          text: 'How does the writer reveal Margaret\'s character through her actions and choices?',
+          questionNumber: 1,
+          questionText: 'How does the writer reveal Margaret\'s character through her actions and choices?',
           marks: 8,
+          suggestedTimeMinutes: 15,
+          questionType: 'analysis',
+          markScheme: [],
           section: 'Reading',
           modelAnswers: [
             {
@@ -403,9 +442,12 @@ const WJEC_C1_P3: MockExamPaper = {
         },
         {
           id: 'q2',
-          number: 2,
-          text: 'What does the passage suggest about the society Margaret lives in?',
+          questionNumber: 2,
+          questionText: 'What does the passage suggest about the society Margaret lives in?',
           marks: 8,
+          suggestedTimeMinutes: 15,
+          questionType: 'analysis',
+          markScheme: [],
           section: 'Reading',
           modelAnswers: [
             {
@@ -424,9 +466,12 @@ const WJEC_C1_P3: MockExamPaper = {
         },
         {
           id: 'q3',
-          number: 3,
-          text: 'Analyze the writer\'s use of specific details to develop the passage\'s themes.',
+          questionNumber: 3,
+          questionText: 'Analyze the writer\'s use of specific details to develop the passage\'s themes.',
           marks: 12,
+          suggestedTimeMinutes: 20,
+          questionType: 'analysis',
+          markScheme: [],
           section: 'Reading',
           modelAnswers: [
             {
@@ -445,9 +490,12 @@ const WJEC_C1_P3: MockExamPaper = {
         },
         {
           id: 'q4',
-          number: 4,
-          text: 'Discuss the significance of the final sentence. How does it encapsulate the passage\'s central message?',
+          questionNumber: 4,
+          questionText: 'Discuss the significance of the final sentence. How does it encapsulate the passage\'s central message?',
           marks: 12,
+          suggestedTimeMinutes: 10,
+          questionType: 'analysis',
+          markScheme: [],
           section: 'Reading',
           modelAnswers: [
             {
@@ -470,13 +518,16 @@ const WJEC_C1_P3: MockExamPaper = {
       id: 'c1-p3-writing',
       title: 'Section B: Creative Writing',
       totalMarks: 40,
-      instructions: 'Write a creative piece of prose (fiction, autobiography, or imaginative recount) on one of the following titles. You have 45 minutes for this section. Aim for 400-600 words.',
+      description: 'Write a creative piece of prose (fiction, autobiography, or imaginative recount) on one of the following titles. You have 45 minutes for this section. Aim for 400-600 words.',
       questions: [
         {
           id: 'q5',
-          number: 5,
-          text: 'Choose one of the following writing tasks:\n\n(a) "Breaking Rules": Write about a moment when you had to choose between following a rule and doing what seemed right.\n\n(b) "Invisible": Write about being overlooked or underestimated and what you discovered as a result.\n\n(c) "Becoming": Write about a transformation in how you understand yourself or your place in the world.',
+          questionNumber: 5,
+          questionText: 'Choose one of the following writing tasks:\n\n(a) "Breaking Rules": Write about a moment when you had to choose between following a rule and doing what seemed right.\n\n(b) "Invisible": Write about being overlooked or underestimated and what you discovered as a result.\n\n(c) "Becoming": Write about a transformation in how you understand yourself or your place in the world.',
           marks: 40,
+          suggestedTimeMinutes: 45,
+          questionType: 'creative-writing',
+          markScheme: [],
           section: 'Writing',
           modelAnswers: [
             {
@@ -509,43 +560,57 @@ const WJEC_C2_P1: MockExamPaper = {
   paperNumber: 1,
   component: 2,
   title: 'WJEC GCSE English Language: Component 2, Paper 1',
-  duration: 120,
+  subtitle: 'Component 2: Non-Fiction Reading and Imaginative Writing',
+  code: 'C700U20-1',
+  totalTimeMinutes: 120,
   totalMarks: 80,
   sections: [
     {
       id: 'c2-p1-reading',
       title: 'Section A: Reading Non-Fiction',
       totalMarks: 40,
-      instructions: 'Read both extracts below and answer all questions. You have 75 minutes for this section.',
+      description: 'Read both extracts below and answer all questions. You have 75 minutes for this section.',
       sourceText: `EXTRACT A:\n${WJEC_C2_P1_NONFICTION_A}\n\nEXTRACT B:\n${WJEC_C2_P1_NONFICTION_B}`,
       sourceAttribution: 'Contemporary non-fiction (Guardian; Psychology Today)',
       questions: [
         {
           id: 'q1',
-          number: 1,
-          text: 'According to Extract A, what are the main consequences of the decline of high streets?',
+          questionNumber: 1,
+          questionText: 'According to Extract A, what are the main consequences of the decline of high streets?',
           marks: 5,
+          suggestedTimeMinutes: 20,
+          questionType: 'analysis',
+          markScheme: [],
           section: 'Reading'
         },
         {
           id: 'q2',
-          number: 2,
-          text: 'How does Extract B explain the design of social media platforms? Identify the key argument.',
+          questionNumber: 2,
+          questionText: 'How does Extract B explain the design of social media platforms? Identify the key argument.',
           marks: 8,
+          suggestedTimeMinutes: 20,
+          questionType: 'analysis',
+          markScheme: [],
           section: 'Reading'
         },
         {
           id: 'q3',
-          number: 3,
-          text: 'Compare how the two extracts present the relationship between human wellbeing and modern systems/technologies.',
+          questionNumber: 3,
+          questionText: 'Compare how the two extracts present the relationship between human wellbeing and modern systems/technologies.',
           marks: 12,
+          suggestedTimeMinutes: 20,
+          questionType: 'analysis',
+          markScheme: [],
           section: 'Reading'
         },
         {
           id: 'q4',
-          number: 4,
-          text: 'Evaluate the effectiveness of the writers\' arguments. Which extract is more persuasive and why?',
+          questionNumber: 4,
+          questionText: 'Evaluate the effectiveness of the writers\' arguments. Which extract is more persuasive and why?',
           marks: 15,
+          suggestedTimeMinutes: 20,
+          questionType: 'analysis',
+          markScheme: [],
           section: 'Reading'
         }
       ]
@@ -554,13 +619,16 @@ const WJEC_C2_P1: MockExamPaper = {
       id: 'c2-p1-writing',
       title: 'Section B: Transactional Writing',
       totalMarks: 40,
-      instructions: 'Complete one of the following transactional writing tasks. You have 45 minutes for this section. Aim for 350-500 words.',
+      description: 'Complete one of the following transactional writing tasks. You have 45 minutes for this section. Aim for 350-500 words.',
       questions: [
         {
           id: 'q5',
-          number: 5,
-          text: 'Write a formal letter to your local council proposing a community initiative to revitalize your town center and encourage people to visit local shops and gather spaces.',
+          questionNumber: 5,
+          questionText: 'Write a formal letter to your local council proposing a community initiative to revitalize your town center and encourage people to visit local shops and gather spaces.',
           marks: 40,
+          suggestedTimeMinutes: 45,
+          questionType: \'transactional-writing\',
+          markScheme: [],
           section: 'Writing'
         }
       ]
@@ -574,43 +642,57 @@ const WJEC_C2_P2: MockExamPaper = {
   paperNumber: 2,
   component: 2,
   title: 'WJEC GCSE English Language: Component 2, Paper 2',
-  duration: 120,
+  subtitle: 'Component 2: Non-Fiction Reading and Imaginative Writing',
+  code: 'C700U20-1',
+  totalTimeMinutes: 120,
   totalMarks: 80,
   sections: [
     {
       id: 'c2-p2-reading',
       title: 'Section A: Reading Non-Fiction',
       totalMarks: 40,
-      instructions: 'Read both extracts below and answer all questions. You have 75 minutes for this section.',
+      description: 'Read both extracts below and answer all questions. You have 75 minutes for this section.',
       sourceText: `EXTRACT A:\n${WJEC_C2_P2_NONFICTION_A}\n\nEXTRACT B:\n${WJEC_C2_P2_NONFICTION_B}`,
       sourceAttribution: 'Contemporary essays (environmental and media studies)',
       questions: [
         {
           id: 'q1',
-          number: 1,
-          text: 'What does Extract A identify as the root cause of current species extinction?',
+          questionNumber: 1,
+          questionText: 'What does Extract A identify as the root cause of current species extinction?',
           marks: 5,
+          suggestedTimeMinutes: 20,
+          questionType: 'analysis',
+          markScheme: [],
           section: 'Reading'
         },
         {
           id: 'q2',
-          number: 2,
-          text: 'According to Extract B, how has screen-based reading changed our thinking patterns?',
+          questionNumber: 2,
+          questionText: 'According to Extract B, how has screen-based reading changed our thinking patterns?',
           marks: 8,
+          suggestedTimeMinutes: 20,
+          questionType: 'analysis',
+          markScheme: [],
           section: 'Reading'
         },
         {
           id: 'q3',
-          number: 3,
-          text: 'Both extracts discuss loss. Compare the types of loss each extract presents and their significance.',
+          questionNumber: 3,
+          questionText: 'Both extracts discuss loss. Compare the types of loss each extract presents and their significance.',
           marks: 12,
+          suggestedTimeMinutes: 20,
+          questionType: 'analysis',
+          markScheme: [],
           section: 'Reading'
         },
         {
           id: 'q4',
-          number: 4,
-          text: 'Analyze the writers\' language choices in one extract to show how they emphasize the seriousness of their argument.',
+          questionNumber: 4,
+          questionText: 'Analyze the writers\' language choices in one extract to show how they emphasize the seriousness of their argument.',
           marks: 15,
+          suggestedTimeMinutes: 20,
+          questionType: 'analysis',
+          markScheme: [],
           section: 'Reading'
         }
       ]
@@ -619,13 +701,16 @@ const WJEC_C2_P2: MockExamPaper = {
       id: 'c2-p2-writing',
       title: 'Section B: Transactional Writing',
       totalMarks: 40,
-      instructions: 'Complete one of the following transactional writing tasks. You have 45 minutes for this section. Aim for 350-500 words.',
+      description: 'Complete one of the following transactional writing tasks. You have 45 minutes for this section. Aim for 350-500 words.',
       questions: [
         {
           id: 'q5',
-          number: 5,
-          text: 'Write an informative blog post or article for a school website explaining the impact of technology on young people\'s reading habits and suggesting strategies for maintaining deep reading practices.',
+          questionNumber: 5,
+          questionText: 'Write an informative blog post or article for a school website explaining the impact of technology on young people\'s reading habits and suggesting strategies for maintaining deep reading practices.',
           marks: 40,
+          suggestedTimeMinutes: 45,
+          questionType: 'transactional-writing',
+          markScheme: [],
           section: 'Writing'
         }
       ]
@@ -639,43 +724,57 @@ const WJEC_C2_P3: MockExamPaper = {
   paperNumber: 3,
   component: 2,
   title: 'WJEC GCSE English Language: Component 2, Paper 3',
-  duration: 120,
+  subtitle: 'Component 2: Non-Fiction Reading and Imaginative Writing',
+  code: 'C700U20-1',
+  totalTimeMinutes: 120,
   totalMarks: 80,
   sections: [
     {
       id: 'c2-p3-reading',
       title: 'Section A: Reading Non-Fiction',
       totalMarks: 40,
-      instructions: 'Read both extracts below and answer all questions. You have 75 minutes for this section.',
+      description: 'Read both extracts below and answer all questions. You have 75 minutes for this section.',
       sourceText: `EXTRACT A:\n${WJEC_C2_P3_NONFICTION_A}\n\nEXTRACT B:\n${WJEC_C2_P3_NONFICTION_B}`,
       sourceAttribution: 'Contemporary essays (work culture and civic institutions)',
       questions: [
         {
           id: 'q1',
-          number: 1,
-          text: 'What does Extract A suggest is problematic about the concept of "work-life balance"?',
+          questionNumber: 1,
+          questionText: 'What does Extract A suggest is problematic about the concept of "work-life balance"?',
           marks: 5,
+          suggestedTimeMinutes: 20,
+          questionType: 'analysis',
+          markScheme: [],
           section: 'Reading'
         },
         {
           id: 'q2',
-          number: 2,
-          text: 'Identify and explain the reasons given in Extract B for libraries\' precarious position in society.',
+          questionNumber: 2,
+          questionText: 'Identify and explain the reasons given in Extract B for libraries\' precarious position in society.',
           marks: 8,
+          suggestedTimeMinutes: 20,
+          questionType: 'analysis',
+          markScheme: [],
           section: 'Reading'
         },
         {
           id: 'q3',
-          number: 3,
-          text: 'Both extracts discuss what is being lost in contemporary society. Compare the nature and significance of these losses.',
+          questionNumber: 3,
+          questionText: 'Both extracts discuss what is being lost in contemporary society. Compare the nature and significance of these losses.',
           marks: 12,
+          suggestedTimeMinutes: 20,
+          questionType: 'analysis',
+          markScheme: [],
           section: 'Reading'
         },
         {
           id: 'q4',
-          number: 4,
-          text: 'Assess the effectiveness of the writers\' persuasive techniques. Consider their use of language, structure, and argument development.',
+          questionNumber: 4,
+          questionText: 'Assess the effectiveness of the writers\' persuasive techniques. Consider their use of language, structure, and argument development.',
           marks: 15,
+          suggestedTimeMinutes: 20,
+          questionType: 'analysis',
+          markScheme: [],
           section: 'Reading'
         }
       ]
@@ -684,13 +783,16 @@ const WJEC_C2_P3: MockExamPaper = {
       id: 'c2-p3-writing',
       title: 'Section B: Transactional Writing',
       totalMarks: 40,
-      instructions: 'Complete one of the following transactional writing tasks. You have 45 minutes for this section. Aim for 350-500 words.',
+      description: 'Complete one of the following transactional writing tasks. You have 45 minutes for this section. Aim for 350-500 words.',
       questions: [
         {
           id: 'q5',
-          number: 5,
-          text: 'Write a proposal to your school leadership suggesting ways to help students achieve better balance between academic work and personal wellbeing. Present your case persuasively.',
+          questionNumber: 5,
+          questionText: 'Write a proposal to your school leadership suggesting ways to help students achieve better balance between academic work and personal wellbeing. Present your case persuasively.',
           marks: 40,
+          suggestedTimeMinutes: 45,
+          questionType: \'transactional-writing\',
+          markScheme: [],
           section: 'Writing'
         }
       ]
