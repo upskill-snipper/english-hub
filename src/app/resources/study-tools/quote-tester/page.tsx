@@ -861,7 +861,7 @@ export default function QuoteTesterPage() {
   if (!mounted) {
     return (
       <div className="flex min-h-[400px] items-center justify-center">
-        <div className="h-8 w-8 animate-spin rounded-full border-4 border-[#2E86C1] border-t-transparent" />
+        <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
       </div>
     );
   }
@@ -912,7 +912,7 @@ export default function QuoteTesterPage() {
                     </div>
                     <div className="mt-1 h-2 w-full overflow-hidden rounded-full bg-muted">
                       <div
-                        className="h-full rounded-full bg-gradient-to-r from-[#1A5276] to-[#2E86C1] transition-all duration-500"
+                        className="h-full rounded-full bg-gradient-to-r from-primary to-primary/80 transition-all duration-500"
                         style={{ width: `${pct}%` }}
                       />
                     </div>
@@ -921,14 +921,14 @@ export default function QuoteTesterPage() {
                   <div className="flex flex-col gap-2">
                     <button
                       onClick={() => startSession(text.slug)}
-                      className="rounded-lg bg-[#1A5276] px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#1A5276]/90"
+                      className="rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary/90"
                     >
                       Start Test
                     </button>
                     {wrongCount > 0 && (
                       <button
                         onClick={() => startSession(text.slug, true)}
-                        className="rounded-lg border-2 border-[#2E86C1] px-4 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-primary/10"
+                        className="rounded-lg border-2 border-primary px-4 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-primary/10"
                       >
                         Test Me Again ({wrongCount} wrong)
                       </button>
@@ -941,32 +941,32 @@ export default function QuoteTesterPage() {
         </div>
 
         {/* Overall stats */}
-        <div className="mt-10 rounded-xl border border-[#2E86C1]/20 bg-primary/5 p-6">
+        <div className="mt-10 rounded-xl border border-primary/20 bg-primary/5 p-6">
           <h3 className="text-lg font-bold text-foreground">How it works</h3>
           <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
             <li className="flex items-start gap-2">
-              <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#1A5276]" />
+              <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
               <span>
                 <strong>Four questions per quote.</strong> For each quote you must identify
                 the speaker, location, technique, and theme.
               </span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#1A5276]" />
+              <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
               <span>
                 <strong>Instant feedback.</strong> See whether you are right or wrong
                 immediately, with the correct answer highlighted.
               </span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#1A5276]" />
+              <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
               <span>
                 <strong>Mastery tracking.</strong> Get all four categories correct on a
                 quote to mark it as mastered. Your progress saves automatically.
               </span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#1A5276]" />
+              <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
               <span>
                 <strong>Test me again.</strong> Focus on the quotes you got wrong to
                 strengthen your weakest areas.
@@ -1073,14 +1073,14 @@ export default function QuoteTesterPage() {
             <div className="mt-6 flex flex-col gap-2">
               <button
                 onClick={() => startSession(activeSlug)}
-                className="rounded-lg bg-[#1A5276] px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#1A5276]/90"
+                className="rounded-lg bg-primary px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary/90"
               >
                 Test Again (All Quotes)
               </button>
               {wrongQIds.length > 0 && (
                 <button
                   onClick={() => startSession(activeSlug, true)}
-                  className="rounded-lg border-2 border-[#2E86C1] px-4 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-primary/10"
+                  className="rounded-lg border-2 border-primary px-4 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-primary/10"
                 >
                   Retry Wrong Answers ({wrongQIds.length})
                 </button>
@@ -1204,7 +1204,7 @@ export default function QuoteTesterPage() {
         {/* Progress bar */}
         <div className="mt-3 h-2 w-full overflow-hidden rounded-full bg-muted">
           <div
-            className="h-full rounded-full bg-gradient-to-r from-[#1A5276] to-[#2E86C1] transition-all duration-500"
+            className="h-full rounded-full bg-gradient-to-r from-primary to-primary/80 transition-all duration-500"
             style={{ width: `${progressPct}%` }}
           />
         </div>
@@ -1228,7 +1228,7 @@ export default function QuoteTesterPage() {
                     : isDone && !answer?.correct
                     ? "bg-red-500/10 text-red-500"
                     : isCurrent
-                    ? "bg-[#1A5276] text-white"
+                    ? "bg-primary text-white"
                     : "bg-muted text-muted-foreground"
                 }`}
               >
@@ -1298,7 +1298,7 @@ export default function QuoteTesterPage() {
                     }
                   } else {
                     btnClass +=
-                      "border-border bg-card text-muted-foreground hover:border-[#2E86C1] hover:bg-primary/5 cursor-pointer";
+                      "border-border bg-card text-muted-foreground hover:border-primary hover:bg-primary/5 cursor-pointer";
                   }
 
                   return (
@@ -1351,7 +1351,7 @@ export default function QuoteTesterPage() {
 
                   <button
                     onClick={handleNext}
-                    className="mt-4 w-full rounded-lg bg-[#1A5276] px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#1A5276]/90"
+                    className="mt-4 w-full rounded-lg bg-primary px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary/90"
                   >
                     {session.currentCategory < CATEGORIES.length - 1
                       ? "Next Question"

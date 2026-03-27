@@ -319,7 +319,7 @@ export default function EssayFeedbackPage() {
             <ul className="space-y-3" role="list">
               {feedback.suggestions.map((suggestion, i) => (
                 <li key={i} className="flex items-start gap-2.5">
-                  <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent-50 text-xs font-bold text-accent">
+                  <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-accent">
                     {i + 1}
                   </span>
                   <span className="text-sm text-foreground">{suggestion}</span>

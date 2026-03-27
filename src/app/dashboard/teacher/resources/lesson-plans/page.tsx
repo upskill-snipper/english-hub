@@ -108,13 +108,13 @@ export default function LessonPlansPage() {
       <div>
         <Link
           href="/dashboard/teacher/resources"
-          className="text-sm text-accent hover:text-accent-600 mb-2 inline-block"
+          className="text-sm text-accent hover:text-primary mb-2 inline-block"
         >
           &larr; Back to Resources
         </Link>
         <h1 className="text-2xl font-bold text-primary">{plan.title}</h1>
         <div className="mt-2 flex flex-wrap gap-2">
-          <span className="inline-flex items-center rounded-full bg-primary-50 px-3 py-1 text-xs font-medium text-primary">
+          <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
             {plan.board}
           </span>
           <span className="inline-flex items-center rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground">

@@ -221,7 +221,7 @@ export function SchoolSidebar({ school, member, classes }: SchoolSidebarProps) {
               <DropdownMenuSeparator />
               <DropdownMenuItem
                 render={
-                  <Link href="/school/classes/new" onClick={closeMobile} />
+                  <Link href="/school/classes" onClick={closeMobile} />
                 }
               >
                 <FolderOpen className="h-4 w-4" />
@@ -230,7 +230,7 @@ export function SchoolSidebar({ school, member, classes }: SchoolSidebarProps) {
               <DropdownMenuItem
                 render={
                   <Link
-                    href="/school/assignments/new"
+                    href="/school/assignments/create"
                     onClick={closeMobile}
                   />
                 }
@@ -240,7 +240,7 @@ export function SchoolSidebar({ school, member, classes }: SchoolSidebarProps) {
               </DropdownMenuItem>
               <DropdownMenuItem
                 render={
-                  <Link href="/school/lessons/new" onClick={closeMobile} />
+                  <Link href="/school/lessons" onClick={closeMobile} />
                 }
               >
                 <BookOpen className="h-4 w-4" />

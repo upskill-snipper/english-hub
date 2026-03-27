@@ -309,7 +309,7 @@ export default function CancellationFormPage() {
                   onChange={(e) =>
                     updateField("subscriptionPlan", e.target.value)
                   }
-                  className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors bg-card"
+                  className="w-full rounded-lg border border-border px-3 py-2 text-sm shadow-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors bg-card"
                 >
                   {SUBSCRIPTION_PLANS.map((plan) => (
                     <option key={plan.value} value={plan.value}>
@@ -350,7 +350,7 @@ export default function CancellationFormPage() {
                   id="reason"
                   value={formData.reason}
                   onChange={(e) => updateField("reason", e.target.value)}
-                  className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm shadow-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors bg-card"
+                  className="w-full rounded-lg border border-border px-3 py-2 text-sm shadow-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors bg-card"
                 >
                   {CANCELLATION_REASONS.map((r) => (
                     <option key={r.value} value={r.value}>
@@ -367,7 +367,7 @@ export default function CancellationFormPage() {
                     type="checkbox"
                     checked={formData.confirmed}
                     onChange={(e) => updateField("confirmed", e.target.checked)}
-                    className="mt-0.5 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary"
+                    className="mt-0.5 h-4 w-4 rounded border-border text-primary focus:ring-primary"
                     required
                   />
                   <span className="text-sm text-muted-foreground">
@@ -675,7 +675,7 @@ function SuccessMessage({ refNumber }: { refNumber: string }) {
         </a>
         <a
           href="/legal/cancellation"
-          className="inline-flex items-center justify-center px-6 py-2.5 rounded-lg border border-gray-300 text-muted-foreground font-medium text-sm hover:bg-muted focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors"
+          className="inline-flex items-center justify-center px-6 py-2.5 rounded-lg border border-border text-muted-foreground font-medium text-sm hover:bg-muted focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors"
         >
           View Cancellation Policy
         </a>

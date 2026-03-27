@@ -28,7 +28,7 @@ const CHECKLISTS: ChecklistBoard[] = [
   {
     slug: "aqa-language",
     label: "AQA English Language (8700)",
-    colour: "border-[#2E86C1]",
+    colour: "border-primary",
     sections: [
       {
         title: "Paper 1: Explorations in Creative Reading and Writing",
@@ -69,7 +69,7 @@ const CHECKLISTS: ChecklistBoard[] = [
   {
     slug: "aqa-literature",
     label: "AQA English Literature (8702)",
-    colour: "border-[#2E86C1]",
+    colour: "border-primary",
     sections: [
       {
         title: "Paper 1: Shakespeare and the 19th-Century Novel",

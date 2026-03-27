@@ -83,9 +83,9 @@ const CATEGORIES = [
       "Authoritative phrasing",
       "Connectives for argument",
     ],
-    colour: "border-[#E67E22]",
-    bg: "bg-[#E67E22]/5",
-    iconColour: "text-[#E67E22]",
+    colour: "border-warn",
+    bg: "bg-warn/5",
+    iconColour: "text-warn",
     icon: (
       <svg className="h-10 w-10" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 18.75a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 0 1-3-3V4.5a3 3 0 1 1 6 0v8.25a3 3 0 0 1-3 3Z" />
@@ -130,7 +130,7 @@ export default function VocabularyHubPage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-primary to-primary-600 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-accent-200">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary/20">
             Resources
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">

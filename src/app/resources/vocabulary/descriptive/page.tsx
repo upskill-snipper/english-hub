@@ -108,8 +108,8 @@ const CATEGORIES: DescCategory[] = [
   {
     id: "emotion",
     title: "Emotion Vocabulary",
-    colour: "border-[#8E44AD]",
-    tagColour: "bg-[#8E44AD]/10 text-[#8E44AD]",
+    colour: "border-primary",
+    tagColour: "bg-primary/10 text-primary",
     subcategories: [
       {
         name: "Fear & Anxiety",
@@ -210,8 +210,8 @@ const CATEGORIES: DescCategory[] = [
   {
     id: "character",
     title: "Character Description Vocabulary",
-    colour: "border-[#E67E22]",
-    tagColour: "bg-[#E67E22]/10 text-[#E67E22]",
+    colour: "border-warn",
+    tagColour: "bg-warn/10 text-warn",
     subcategories: [
       {
         name: "Physical Appearance",
@@ -330,7 +330,7 @@ export default function DescriptiveVocabularyPage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-primary to-primary-600 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-accent-200">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary/20">
             Vocabulary Builder
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">

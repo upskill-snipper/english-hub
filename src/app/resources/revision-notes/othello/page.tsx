@@ -33,7 +33,7 @@ function Section({
           <span className={`h-2.5 w-2.5 rounded-full ${colour}`} />
           <h2 className="text-lg font-bold text-foreground">{title}</h2>
           {badge && (
-            <span className="rounded-full bg-accent-50 px-2.5 py-0.5 text-xs font-semibold text-accent-600">
+            <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary">
               {badge}
             </span>
           )}
@@ -73,10 +73,10 @@ export default function OthelloRevisionPage() {
       <div className="mb-8">
         <div className="flex flex-wrap items-center gap-3 mb-2">
           <span className="rounded-full bg-red-100 px-3 py-1 text-xs font-bold text-red-700 uppercase tracking-wider">Shakespeare</span>
-          <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-semibold text-accent-600">CAIE</span>
-          <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-semibold text-accent-600">AQA</span>
-          <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-semibold text-accent-600">Edexcel</span>
-          <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-semibold text-accent-600">OCR</span>
+          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">CAIE</span>
+          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">AQA</span>
+          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">Edexcel</span>
+          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">OCR</span>
         </div>
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           Othello &mdash; Complete Revision Guide
@@ -95,7 +95,7 @@ export default function OthelloRevisionPage() {
             <a
               key={s}
               href={`#${s.toLowerCase().replace(/['\s]+/g, "-")}`}
-              className="rounded-lg bg-muted px-3 py-1.5 text-xs font-medium text-muted-foreground hover:bg-accent-50 hover:text-accent-600 transition-colors"
+              className="rounded-lg bg-muted px-3 py-1.5 text-xs font-medium text-muted-foreground hover:bg-primary/10 hover:text-primary transition-colors"
             >
               {s}
             </a>
@@ -869,38 +869,38 @@ export default function OthelloRevisionPage() {
               <div>
                 <h3 className="text-lg font-bold text-foreground border-b border-border pb-2">Top Exam Tips</h3>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
-                  <div className="rounded-lg bg-accent-50/40 border border-accent/20 p-4">
-                    <p className="text-sm font-semibold text-accent-700">Always use &ldquo;Shakespeare presents...&rdquo;</p>
+                  <div className="rounded-lg bg-primary/10 border border-accent/20 p-4">
+                    <p className="text-sm font-semibold text-primary">Always use &ldquo;Shakespeare presents...&rdquo;</p>
                     <p className="mt-1 text-xs text-muted-foreground">
                       Remember, characters are constructs. Don&apos;t write &ldquo;Othello is jealous&rdquo; &mdash; write &ldquo;Shakespeare presents Othello as consumed by jealousy to warn the audience about...&rdquo; This shows awareness of authorial intent.
                     </p>
                   </div>
-                  <div className="rounded-lg bg-accent-50/40 border border-accent/20 p-4">
-                    <p className="text-sm font-semibold text-accent-700">Embed short quotations</p>
+                  <div className="rounded-lg bg-primary/10 border border-accent/20 p-4">
+                    <p className="text-sm font-semibold text-primary">Embed short quotations</p>
                     <p className="mt-1 text-xs text-muted-foreground">
                       Use two- or three-word quotations woven into your sentences rather than long block quotes. E.g., &ldquo;Iago&apos;s description of jealousy as a &lsquo;green-eyed monster&rsquo; personifies the emotion as predatory.&rdquo;
                     </p>
                   </div>
-                  <div className="rounded-lg bg-accent-50/40 border border-accent/20 p-4">
-                    <p className="text-sm font-semibold text-accent-700">Link language to meaning</p>
+                  <div className="rounded-lg bg-primary/10 border border-accent/20 p-4">
+                    <p className="text-sm font-semibold text-primary">Link language to meaning</p>
                     <p className="mt-1 text-xs text-muted-foreground">
                       Identify specific techniques (metaphor, irony, repetition, animal imagery, antithesis) and explain their <em>effect</em>. Don&apos;t just name them &mdash; explain what they reveal about character, theme, or Shakespeare&apos;s purpose.
                     </p>
                   </div>
-                  <div className="rounded-lg bg-accent-50/40 border border-accent/20 p-4">
-                    <p className="text-sm font-semibold text-accent-700">Include context meaningfully</p>
+                  <div className="rounded-lg bg-primary/10 border border-accent/20 p-4">
+                    <p className="text-sm font-semibold text-primary">Include context meaningfully</p>
                     <p className="mt-1 text-xs text-muted-foreground">
                       Don&apos;t bolt context on at the end. Integrate it: &ldquo;A Jacobean audience, who associated blackness with sin, would find Othello&apos;s nobility a direct challenge to their prejudices, which is precisely Shakespeare&apos;s point.&rdquo;
                     </p>
                   </div>
-                  <div className="rounded-lg bg-accent-50/40 border border-accent/20 p-4">
-                    <p className="text-sm font-semibold text-accent-700">Track changes across the play</p>
+                  <div className="rounded-lg bg-primary/10 border border-accent/20 p-4">
+                    <p className="text-sm font-semibold text-primary">Track changes across the play</p>
                     <p className="mt-1 text-xs text-muted-foreground">
                       Examiners reward discussion of how characters and themes develop. Show how Othello&apos;s language changes from eloquent verse to broken prose and back again. Show how Emilia moves from obedience to defiance.
                     </p>
                   </div>
-                  <div className="rounded-lg bg-accent-50/40 border border-accent/20 p-4">
-                    <p className="text-sm font-semibold text-accent-700">Consider alternative interpretations</p>
+                  <div className="rounded-lg bg-primary/10 border border-accent/20 p-4">
+                    <p className="text-sm font-semibold text-primary">Consider alternative interpretations</p>
                     <p className="mt-1 text-xs text-muted-foreground">
                       Use phrases like &ldquo;Alternatively, this could suggest...&rdquo; or &ldquo;A feminist reading might argue...&rdquo; to show critical thinking. For example: is Othello&apos;s final speech noble self-awareness or continued self-deception?
                     </p>

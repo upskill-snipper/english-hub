@@ -66,7 +66,7 @@ function SupportResources() {
             <strong>Childline</strong> &mdash;{" "}
             <a
               href="tel:08001111"
-              className="font-semibold text-accent hover:text-accent-600 underline"
+              className="font-semibold text-accent hover:text-primary underline"
             >
               0800 1111
             </a>
@@ -93,7 +93,7 @@ function SupportResources() {
             <strong>NSPCC Helpline</strong> &mdash;{" "}
             <a
               href="tel:08088005000"
-              className="font-semibold text-accent hover:text-accent-600 underline"
+              className="font-semibold text-accent hover:text-primary underline"
             >
               0808 800 5000
             </a>
@@ -126,7 +126,7 @@ function SupportResources() {
               href="https://www.ceop.police.uk/ceop-reporting/"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-semibold text-accent hover:text-accent-600 underline"
+              className="font-semibold text-accent hover:text-primary underline"
             >
               Report online
             </a>
@@ -326,7 +326,7 @@ export default function SafeguardingReportPage() {
                 className={`flex cursor-pointer items-center gap-3 rounded-lg border p-3 text-sm transition-colors ${
                   reportType === rt.value
                     ? "border-primary bg-primary/5 text-primary"
-                    : "border-border bg-card text-muted-foreground hover:border-gray-300"
+                    : "border-border bg-card text-muted-foreground hover:border-border"
                 }`}
               >
                 <input
@@ -341,7 +341,7 @@ export default function SafeguardingReportPage() {
                   className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 ${
                     reportType === rt.value
                       ? "border-primary"
-                      : "border-gray-300"
+                      : "border-border"
                   }`}
                   aria-hidden="true"
                 >

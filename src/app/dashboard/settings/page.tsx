@@ -527,7 +527,7 @@ function CommunicationTab() {
       <div className="space-y-5">
         {/* Essential - always on */}
         <div className="flex items-start gap-3">
-          <div className="relative inline-flex h-6 w-11 shrink-0 cursor-not-allowed rounded-full bg-primary-500 opacity-70">
+          <div className="relative inline-flex h-6 w-11 shrink-0 cursor-not-allowed rounded-full bg-primary opacity-70">
             <span
               aria-hidden="true"
               className="pointer-events-none inline-block h-5 w-5 translate-x-5 transform rounded-full bg-card shadow-sm"
@@ -980,7 +980,7 @@ function SettingsContent() {
               setLoading(true);
               fetchProfile();
             }}
-            className="font-medium text-accent hover:text-accent-600"
+            className="font-medium text-accent hover:text-primary"
           >
             Try again
           </button>

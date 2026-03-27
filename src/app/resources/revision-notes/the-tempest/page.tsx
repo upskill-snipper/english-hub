@@ -32,7 +32,7 @@ function Section({
           <span className={`h-2.5 w-2.5 rounded-full ${colour}`} />
           <h2 className="text-lg font-bold text-foreground">{title}</h2>
           {badge && (
-            <span className="rounded-full bg-accent-50 px-2.5 py-0.5 text-xs font-semibold text-accent-600">
+            <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary">
               {badge}
             </span>
           )}
@@ -72,10 +72,10 @@ export default function TheTempestRevisionPage() {
       <div className="mb-8">
         <div className="flex flex-wrap items-center gap-3 mb-2">
           <span className="rounded-full bg-blue-100 px-3 py-1 text-xs font-bold text-blue-700 uppercase tracking-wider">Shakespeare</span>
-          <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-semibold text-accent-600">AQA</span>
-          <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-semibold text-accent-600">Edexcel</span>
-          <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-semibold text-accent-600">CAIE</span>
-          <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-semibold text-accent-600">OCR</span>
+          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">AQA</span>
+          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">Edexcel</span>
+          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">CAIE</span>
+          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">OCR</span>
         </div>
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           The Tempest &mdash; Complete Revision Guide
@@ -94,7 +94,7 @@ export default function TheTempestRevisionPage() {
             <a
               key={s}
               href={`#${s.toLowerCase().replace(/\s+/g, "-")}`}
-              className="rounded-lg bg-muted px-3 py-1.5 text-xs font-medium text-muted-foreground hover:bg-accent-50 hover:text-accent-600 transition-colors"
+              className="rounded-lg bg-muted px-3 py-1.5 text-xs font-medium text-muted-foreground hover:bg-primary/10 hover:text-primary transition-colors"
             >
               {s}
             </a>
@@ -687,7 +687,7 @@ export default function TheTempestRevisionPage() {
                 <p className="mt-3 text-sm font-medium text-foreground">
                   Read Prospero&apos;s speech beginning &ldquo;Our revels now are ended&rdquo; (Act 4, Scene 1). How does Shakespeare use this speech to explore the themes of the play?
                 </p>
-                <div className="mt-3 rounded bg-accent-50/30 p-3">
+                <div className="mt-3 rounded bg-primary/10 p-3">
                   <p className="text-xs font-semibold text-primary">How to approach:</p>
                   <ul className="mt-1 space-y-1 text-xs text-muted-foreground">
                     <li>&bull; Analyse the metatheatrical imagery: &ldquo;actors,&rdquo; &ldquo;revels,&rdquo; &ldquo;pageant&rdquo; blur the line between magic and theatre</li>
@@ -707,7 +707,7 @@ export default function TheTempestRevisionPage() {
                 <p className="mt-3 text-sm font-medium text-foreground">
                   How does Shakespeare present the relationship between Prospero and Caliban?
                 </p>
-                <div className="mt-3 rounded bg-accent-50/30 p-3">
+                <div className="mt-3 rounded bg-primary/10 p-3">
                   <p className="text-xs font-semibold text-primary">How to approach:</p>
                   <ul className="mt-1 space-y-1 text-xs text-muted-foreground">
                     <li>&bull; Examine the master-slave dynamic: Prospero&apos;s language of control (&ldquo;slave,&rdquo; &ldquo;earth,&rdquo; &ldquo;tortoise&rdquo;)</li>
@@ -727,7 +727,7 @@ export default function TheTempestRevisionPage() {
                 <p className="mt-3 text-sm font-medium text-foreground">
                   How does Shakespeare explore the theme of freedom in The Tempest?
                 </p>
-                <div className="mt-3 rounded bg-accent-50/30 p-3">
+                <div className="mt-3 rounded bg-primary/10 p-3">
                   <p className="text-xs font-semibold text-primary">How to approach:</p>
                   <ul className="mt-1 space-y-1 text-xs text-muted-foreground">
                     <li>&bull; Map the different forms of imprisonment: Ariel (magical), Caliban (physical), Ferdinand (imposed), the nobles (enchantment), Prospero (exile)</li>
@@ -747,7 +747,7 @@ export default function TheTempestRevisionPage() {
                 <p className="mt-3 text-sm font-medium text-foreground">
                   Re-read Caliban&apos;s speech beginning &ldquo;Be not afeard; the isle is full of noises&rdquo; (Act 3, Scene 2). How does Shakespeare use this speech to present Caliban?
                 </p>
-                <div className="mt-3 rounded bg-accent-50/30 p-3">
+                <div className="mt-3 rounded bg-primary/10 p-3">
                   <p className="text-xs font-semibold text-primary">How to approach:</p>
                   <ul className="mt-1 space-y-1 text-xs text-muted-foreground">
                     <li>&bull; Analyse the contrast between the beauty of the language and Caliban&apos;s supposed &ldquo;savagery&rdquo;</li>
@@ -767,7 +767,7 @@ export default function TheTempestRevisionPage() {
                 <p className="mt-3 text-sm font-medium text-foreground">
                   Is Prospero a hero or a villain? Explore how Shakespeare presents Prospero in the play.
                 </p>
-                <div className="mt-3 rounded bg-accent-50/30 p-3">
+                <div className="mt-3 rounded bg-primary/10 p-3">
                   <p className="text-xs font-semibold text-primary">How to approach:</p>
                   <ul className="mt-1 space-y-1 text-xs text-muted-foreground">
                     <li>&bull; Argue both sides: he is a wronged duke seeking justice AND an authoritarian who enslaves</li>

@@ -401,7 +401,7 @@ export default function GroupGeneratorPage() {
         <h1 className="text-xl font-bold">
           Group Compositions — {selectedClass?.name ?? 'Class'}
         </h1>
-        <p className="text-sm text-gray-500">
+        <p className="text-sm text-muted-foreground">
           Strategy: {STRATEGY_OPTIONS.find((s) => s.value === strategy)?.label} &middot;{' '}
           {new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}
         </p>

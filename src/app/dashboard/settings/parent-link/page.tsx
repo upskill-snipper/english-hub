@@ -188,12 +188,12 @@ function StudentView() {
 
             {activeInvite ? (
               <div className="space-y-4">
-                <div className="rounded-lg border-2 border-dashed border-accent-200 bg-accent-50 p-4">
+                <div className="rounded-lg border-2 border-dashed border-primary/20 bg-primary/10 p-4">
                   <p className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
                     Your invite code
                   </p>
                   <div className="mt-1 flex items-center gap-3">
-                    <p className="text-2xl font-bold tracking-widest text-primary-600">
+                    <p className="text-2xl font-bold tracking-widest text-primary">
                       {activeInvite.code}
                     </p>
                     <button
@@ -570,7 +570,7 @@ function ParentLinkContent() {
         <nav className="text-sm text-muted-foreground mb-2" aria-label="Breadcrumb">
           <a
             href="/dashboard/settings"
-            className="hover:text-accent-600 transition-colors"
+            className="hover:text-primary transition-colors"
           >
             Settings
           </a>

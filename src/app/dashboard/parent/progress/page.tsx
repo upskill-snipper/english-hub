@@ -336,11 +336,11 @@ export default function ProgressPage() {
             <div key={idx} className="card border-l-4 border-l-warn">
               <h3 className="font-semibold text-foreground">{w.area}</h3>
               <p className="mt-1 text-sm text-muted-foreground">{w.description}</p>
-              <div className="mt-3 rounded-lg bg-accent-50 px-4 py-3">
-                <p className="text-xs font-semibold uppercase tracking-wider text-accent-700">
+              <div className="mt-3 rounded-lg bg-primary/10 px-4 py-3">
+                <p className="text-xs font-semibold uppercase tracking-wider text-primary">
                   Recommended Learning Path
                 </p>
-                <p className="mt-1 text-sm text-accent-800">{w.recommendedPath}</p>
+                <p className="mt-1 text-sm text-primary">{w.recommendedPath}</p>
               </div>
             </div>
           ))}

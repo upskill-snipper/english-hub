@@ -183,7 +183,7 @@ const RESOURCE_LINKS = [
   {
     title: "Practice Questions",
     description: "Board-specific practice questions with model answers and AI-powered feedback.",
-    href: "/resources/practice",
+    href: "/practice",
     color: "from-[#8E44AD] to-[#9B59B6]",
   },
 ];
@@ -634,14 +634,14 @@ export default function EnglishLanguagePage() {
               </p>
               <div className="mt-4 flex flex-wrap gap-3">
                 <Link
-                  href="/resources/practice"
+                  href="/practice"
                   className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow transition hover:bg-primary/90 hover:shadow-md"
                 >
                   Try practice questions
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
-                  href="/resources/practice"
+                  href="/practice"
                   className="inline-flex items-center gap-2 rounded-lg border border-primary/30 px-5 py-2.5 text-sm font-semibold text-foreground transition hover:bg-primary/5"
                 >
                   See how it works

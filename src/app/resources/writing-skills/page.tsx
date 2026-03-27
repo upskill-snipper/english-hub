@@ -212,7 +212,7 @@ export default function WritingSkillsPage() {
               Explore Writing Skills
             </Link>
             <Link
-              href="/resources/practice"
+              href="/practice"
               className="rounded-lg border-2 border-white/30 bg-card/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-card/20"
             >
               Practice Questions
@@ -337,7 +337,7 @@ export default function WritingSkillsPage() {
                 with actionable suggestions to push your writing into the top band.
               </p>
               <Link
-                href="/resources/practice"
+                href="/practice"
                 className="mt-4 inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow-md transition hover:bg-primary"
               >
                 Try a Practice Question

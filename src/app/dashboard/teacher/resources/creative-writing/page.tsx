@@ -62,7 +62,7 @@ export default function CreativeWritingPage() {
       <div>
         <Link
           href="/dashboard/teacher/resources"
-          className="text-sm text-accent hover:text-accent-600 mb-2 inline-block"
+          className="text-sm text-accent hover:text-primary mb-2 inline-block"
         >
           &larr; Back to Resources
         </Link>
@@ -96,7 +96,7 @@ export default function CreativeWritingPage() {
         <div className="space-y-3">
           {model.annotations.map((ann, i) => (
             <div key={i} className="flex gap-3 rounded-lg border p-3">
-              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent-50 text-accent text-xs font-bold">
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-accent text-xs font-bold">
                 {i + 1}
               </div>
               <div className="min-w-0 flex-1">

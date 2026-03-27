@@ -313,7 +313,7 @@ function TechniqueCard({ t }: { t: Technique }) {
       >
         <div>
           <span className="font-bold text-foreground">{t.name}</span>
-          <span className="ml-3 rounded-full bg-accent-50 px-2.5 py-0.5 text-xs font-medium text-accent-700">
+          <span className="ml-3 rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary/70">
             {t.category}
           </span>
         </div>
@@ -366,7 +366,7 @@ export default function TechniquesPage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-primary to-primary-600 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-accent-200">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary/20">
             AQA GCSE English Language
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -398,7 +398,7 @@ export default function TechniquesPage() {
 
       <div className="mx-auto max-w-5xl px-4 py-10">
         {/* Intro */}
-        <div className="rounded-xl border border-accent-100 bg-accent-50/50 p-6 sm:p-8 mb-8">
+        <div className="rounded-xl border border-primary/20 bg-primary/5 p-6 sm:p-8 mb-8">
           <h2 className="text-xl font-bold text-foreground">
             How to use this guide
           </h2>

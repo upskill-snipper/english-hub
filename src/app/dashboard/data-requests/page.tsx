@@ -32,7 +32,7 @@ const TYPE_LABELS: Record<string, string> = {
 
 const STATUS_STYLES: Record<string, string> = {
   PENDING: "bg-yellow-100 text-yellow-800",
-  PROCESSING: "bg-accent-100 text-accent-700",
+  PROCESSING: "bg-primary/15 text-primary",
   COMPLETED: "bg-success-100 text-success-700",
   REFUSED: "bg-warn-100 text-warn-700",
 };
@@ -139,7 +139,7 @@ export default function DataRequestsPage() {
             </p>
           </div>
 
-          <div className="mt-4 rounded-lg bg-accent-50 border border-accent-200 p-4 text-sm text-foreground">
+          <div className="mt-4 rounded-lg bg-primary/10 border border-primary/20 p-4 text-sm text-foreground">
             <p>
               <strong>Estimated completion:</strong> {result.deadlineFormatted}
             </p>
@@ -186,7 +186,7 @@ export default function DataRequestsPage() {
       </p>
 
       {/* Rights notice */}
-      <div className="mt-4 rounded-lg border border-primary-200 bg-primary-50 p-4 text-sm text-foreground">
+      <div className="mt-4 rounded-lg border border-primary/20 bg-primary/10 p-4 text-sm text-foreground">
         <p className="font-medium text-primary">Your data protection rights</p>
         <ul className="mt-2 space-y-1 text-muted-foreground">
           <li>
@@ -213,7 +213,7 @@ export default function DataRequestsPage() {
         {/* Access */}
         <div className="card">
           <div className="flex items-start gap-3">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent-100 text-accent-600">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/15 text-primary">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                 <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
@@ -264,7 +264,7 @@ export default function DataRequestsPage() {
         {/* Rectification */}
         <div className="card">
           <div className="flex items-start gap-3">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary-100 text-primary-600">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/15 text-primary">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
               </svg>

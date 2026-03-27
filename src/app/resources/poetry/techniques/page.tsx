@@ -894,7 +894,7 @@ export default function PoetryTechniquesPage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-primary to-primary-600 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-accent-200">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary/20">
             Poetry Skills
           </p>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -1016,13 +1016,13 @@ export default function PoetryTechniquesPage() {
                     </ul>
                   </div>
 
-                  <div className="rounded-lg bg-accent-50 p-4">
-                    <h4 className="text-sm font-semibold text-accent-700 mb-1">GCSE Example</h4>
+                  <div className="rounded-lg bg-primary/10 p-4">
+                    <h4 className="text-sm font-semibold text-primary mb-1">GCSE Example</h4>
                     <p className="text-sm text-muted-foreground leading-relaxed">{form.example}</p>
                     <p className="mt-1 text-xs text-muted-foreground">From: {form.poem}</p>
                   </div>
 
-                  <div className="rounded-lg bg-primary-50 p-4">
+                  <div className="rounded-lg bg-primary/10 p-4">
                     <h4 className="text-sm font-semibold text-primary mb-1">Exam Tip</h4>
                     <p className="text-sm text-muted-foreground leading-relaxed">{form.examTip}</p>
                   </div>
@@ -1090,8 +1090,8 @@ export default function PoetryTechniquesPage() {
                           <p className="text-sm text-muted-foreground leading-relaxed">{tech.effect}</p>
                         </div>
 
-                        <div className="rounded-lg bg-accent-50 border border-accent-100 p-4">
-                          <h4 className="text-sm font-semibold text-accent-700 mb-1">Sentence Starter for Exams</h4>
+                        <div className="rounded-lg bg-primary/10 border border-primary/20 p-4">
+                          <h4 className="text-sm font-semibold text-primary mb-1">Sentence Starter for Exams</h4>
                           <p className="text-sm text-muted-foreground leading-relaxed italic">{tech.sentenceStarter}</p>
                         </div>
                       </div>
@@ -1128,7 +1128,7 @@ export default function PoetryTechniquesPage() {
 
       {/* ── How to Write About Form and Structure ──────────────── */}
       {(activeCategory === "All" || activeCategory === "Form Types" || activeCategory === "Structural Devices") && !query && (
-        <section id="form-structure-guide" className="bg-primary-50 px-4 py-12 sm:px-6 lg:px-8">
+        <section id="form-structure-guide" className="bg-primary/10 px-4 py-12 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-6xl">
             <h2 className="text-2xl font-bold text-foreground">How to Write About Form and Structure</h2>
             <p className="mt-2 max-w-3xl text-muted-foreground">
@@ -1197,7 +1197,7 @@ export default function PoetryTechniquesPage() {
                     </ul>
                   </div>
 
-                  <div className="rounded-lg bg-primary-50 p-3">
+                  <div className="rounded-lg bg-primary/10 p-3">
                     <p className="text-xs font-semibold text-primary">Tip: {approach.tip}</p>
                   </div>
                 </div>
@@ -1271,12 +1271,12 @@ export default function PoetryTechniquesPage() {
                       <h3 className="text-lg font-bold text-foreground">{step.label}</h3>
                       <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{step.description}</p>
 
-                      <div className="mt-3 rounded-lg bg-accent-50 p-4">
-                        <p className="text-sm font-semibold text-accent-700 mb-1">Example</p>
+                      <div className="mt-3 rounded-lg bg-primary/10 p-4">
+                        <p className="text-sm font-semibold text-primary mb-1">Example</p>
                         <p className="text-sm text-muted-foreground italic leading-relaxed">{step.example}</p>
                       </div>
 
-                      <div className="mt-3 rounded-lg bg-primary-50 p-3">
+                      <div className="mt-3 rounded-lg bg-primary/10 p-3">
                         <p className="text-xs font-semibold text-primary">Tip: {step.tip}</p>
                       </div>
                     </div>
@@ -1303,7 +1303,7 @@ export default function PoetryTechniquesPage() {
 
       {/* ── Exam Tips ──────────────────────────────────────────── */}
       {(activeCategory === "All") && !query && (
-        <section id="exam-tips" className="bg-primary-50 px-4 py-12 sm:px-6 lg:px-8">
+        <section id="exam-tips" className="bg-primary/10 px-4 py-12 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-6xl">
             <h2 className="text-2xl font-bold text-foreground">Exam Tips for Poetry Analysis</h2>
             <div className="mt-8 grid gap-6 sm:grid-cols-2">

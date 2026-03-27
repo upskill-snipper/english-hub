@@ -307,13 +307,13 @@ export default function ReportsPage() {
                   <div className="mt-6 space-y-6 border-t border-border pt-6">
                     {/* Summary stats */}
                     <div className="grid gap-4 sm:grid-cols-3">
-                      <div className="rounded-lg bg-primary-50 px-4 py-3 text-center">
+                      <div className="rounded-lg bg-primary/10 px-4 py-3 text-center">
                         <p className="text-2xl font-bold text-primary">{report.essaysCompleted}</p>
-                        <p className="text-xs text-primary-600">Essays Completed</p>
+                        <p className="text-xs text-primary">Essays Completed</p>
                       </div>
-                      <div className="rounded-lg bg-accent-50 px-4 py-3 text-center">
+                      <div className="rounded-lg bg-primary/10 px-4 py-3 text-center">
                         <p className="text-2xl font-bold text-accent">{formatTime(report.timeSpentMinutes)}</p>
-                        <p className="text-xs text-accent-600">Time on Platform</p>
+                        <p className="text-xs text-primary">Time on Platform</p>
                       </div>
                       <div className="rounded-lg bg-success-50 px-4 py-3 text-center">
                         <p className="text-2xl font-bold text-success">{report.averageScore}%</p>

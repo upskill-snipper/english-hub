@@ -135,7 +135,7 @@ function ContentDisclaimer({ className, selectedBoard }: { className?: string; s
       <p className="text-xs leading-relaxed text-muted-foreground">
         {text}{" "}
         <Link
-          href="/legal/terms"
+          href="/legal/disclaimer"
           className="font-medium text-primary underline underline-offset-2 hover:text-primary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-1 rounded-sm"
         >
           Full disclaimer

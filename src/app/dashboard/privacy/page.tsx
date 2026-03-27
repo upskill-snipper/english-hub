@@ -254,7 +254,7 @@ function SettingsTab({
         {toggles.map((item) => (
           <label
             key={item.key}
-            className="flex items-start gap-4 rounded-xl border border-border p-4 cursor-pointer hover:border-primary-200 hover:bg-primary-50/30 transition-colors"
+            className="flex items-start gap-4 rounded-xl border border-border p-4 cursor-pointer hover:border-primary/20 hover:bg-primary/5 transition-colors"
           >
             <span className="text-2xl mt-0.5">{item.icon}</span>
             <div className="flex-1 min-w-0">
@@ -303,7 +303,7 @@ function SettingsTab({
                   onClick={() => onChange({ ...settings, profileVisibility: opt.value })}
                   className={`rounded-lg border-2 px-3 py-2 text-xs font-medium transition-colors ${
                     settings.profileVisibility === opt.value
-                      ? "border-primary bg-primary-50 text-primary"
+                      ? "border-primary bg-primary/10 text-primary"
                       : "border-border text-muted-foreground hover:border-border"
                   }`}
                 >
@@ -343,14 +343,14 @@ function DataTab({ summary }: { summary: DataSummary | null }) {
       label: "Account Info",
       value: `${summary.firstName} ${summary.lastName}`,
       sub: summary.email,
-      color: "bg-primary-50 text-primary",
+      color: "bg-primary/10 text-primary",
     },
     {
       icon: "\u{1F4DD}",
       label: "Essays Submitted",
       value: String(summary.essayCount),
       sub: "total essays",
-      color: "bg-accent-50 text-accent",
+      color: "bg-primary/10 text-accent",
     },
     {
       icon: "\u{1F4AC}",
@@ -471,7 +471,7 @@ function DownloadTab({ onToast }: { onToast: (msg: string) => void }) {
               onClick={() => setFormat(f)}
               className={`rounded-lg border-2 px-5 py-3 text-sm font-medium transition-colors ${
                 format === f
-                  ? "border-primary bg-primary-50 text-primary"
+                  ? "border-primary bg-primary/10 text-primary"
                   : "border-border text-muted-foreground hover:border-border"
               }`}
             >
@@ -485,11 +485,11 @@ function DownloadTab({ onToast }: { onToast: (msg: string) => void }) {
       </div>
 
       {/* Delivery info */}
-      <div className="rounded-xl bg-accent-50 border border-accent-200 p-4 mb-6 flex items-start gap-3">
+      <div className="rounded-xl bg-primary/10 border border-primary/20 p-4 mb-6 flex items-start gap-3">
         <span className="text-xl mt-0.5">{"\u23F0"}</span>
         <div>
-          <p className="text-sm font-medium text-accent-700">Estimated delivery: within 48 hours</p>
-          <p className="text-xs text-accent-600 mt-0.5">
+          <p className="text-sm font-medium text-primary">Estimated delivery: within 48 hours</p>
+          <p className="text-xs text-primary mt-0.5">
             We&apos;ll email a secure download link to your registered email address.
           </p>
         </div>
@@ -716,7 +716,7 @@ function RightsTab() {
         {rights.map((right) => (
           <div
             key={right.title}
-            className="rounded-xl border border-border p-5 hover:shadow-md hover:border-primary-200 transition-all"
+            className="rounded-xl border border-border p-5 hover:shadow-md hover:border-primary/20 transition-all"
           >
             <div className="text-2xl mb-2">{right.icon}</div>
             <h3 className="text-sm font-semibold text-foreground">{right.title}</h3>
@@ -724,7 +724,7 @@ function RightsTab() {
             {"href" in right && right.href ? (
               <a
                 href={right.href}
-                className="inline-flex items-center gap-1 text-xs font-medium text-primary hover:text-primary-600 transition-colors"
+                className="inline-flex items-center gap-1 text-xs font-medium text-primary hover:text-primary transition-colors"
               >
                 {right.action} {"\u2192"}
               </a>
@@ -737,8 +737,8 @@ function RightsTab() {
         ))}
       </div>
 
-      <div className="mt-6 rounded-xl bg-primary-50 border border-primary-200 p-4">
-        <p className="text-sm text-primary-700">
+      <div className="mt-6 rounded-xl bg-primary/10 border border-primary/20 p-4">
+        <p className="text-sm text-primary">
           <strong>Need help?</strong> If you want to exercise any of these rights or have questions, email us at{" "}
           <a href="mailto:privacy@theenglishhub.app" className="underline font-medium">
             privacy@theenglishhub.app

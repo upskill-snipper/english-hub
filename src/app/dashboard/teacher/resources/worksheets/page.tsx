@@ -61,7 +61,7 @@ export default function WorksheetsPage() {
       <div>
         <Link
           href="/dashboard/teacher/resources"
-          className="text-sm text-accent hover:text-accent-600 mb-2 inline-block"
+          className="text-sm text-accent hover:text-primary mb-2 inline-block"
         >
           &larr; Back to Resources
         </Link>
@@ -97,7 +97,7 @@ export default function WorksheetsPage() {
                 <p className="font-semibold text-foreground text-sm">{q.character}</p>
                 <p className="text-xs text-muted-foreground">Act {q.act.replace('Act ', '')}</p>
               </div>
-              <span className="ml-auto inline-flex items-center rounded-full bg-primary-50 px-2.5 py-0.5 text-xs font-medium text-primary">
+              <span className="ml-auto inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
                 {q.theme}
               </span>
             </div>

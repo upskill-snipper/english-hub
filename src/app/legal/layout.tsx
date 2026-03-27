@@ -44,7 +44,7 @@ export default function LegalLayout({
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="bg-[#1A5276] text-white">
+      <header className="bg-primary text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
           <Link href="/" className="text-xl font-bold hover:opacity-90">
             The English Hub
@@ -75,7 +75,7 @@ export default function LegalLayout({
                         href={page.href}
                         className={`block px-3 py-2 rounded-md text-sm transition-colors ${
                           isActive
-                            ? "bg-[#1A5276] text-white font-medium"
+                            ? "bg-primary text-white font-medium"
                             : "text-muted-foreground hover:bg-muted"
                         }`}
                       >
@@ -139,9 +139,9 @@ export default function LegalLayout({
                     <li key={page.href}>
                       <Link
                         href={page.href}
-                        className={`block px-4 py-2.5 text-sm border-b border-gray-100 last:border-b-0 ${
+                        className={`block px-4 py-2.5 text-sm border-b border-border last:border-b-0 ${
                           isActive
-                            ? "bg-[#1A5276]/5 text-foreground font-medium"
+                            ? "bg-primary/5 text-foreground font-medium"
                             : "text-muted-foreground hover:bg-muted"
                         }`}
                       >

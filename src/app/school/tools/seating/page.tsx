@@ -349,7 +349,7 @@ export default function SeatingPlanPage() {
         <h1 className="text-xl font-bold">
           Seating Plan — {selectedClass?.name ?? 'Class'}
         </h1>
-        <p className="text-sm text-gray-500">
+        <p className="text-sm text-muted-foreground">
           {new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}
         </p>
       </div>

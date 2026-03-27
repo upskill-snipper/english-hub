@@ -518,7 +518,7 @@ export default function QuoteTesterPage() {
   if (!mounted) {
     return (
       <div className="flex min-h-[400px] items-center justify-center">
-        <div className="h-8 w-8 animate-spin rounded-full border-4 border-[#2E86C1] border-t-transparent" />
+        <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
       </div>
     );
   }
@@ -569,7 +569,7 @@ export default function QuoteTesterPage() {
           <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
             <button
               onClick={handleTryAgain}
-              className="rounded-lg bg-[#1A5276] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#1A5276]/90"
+              className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-primary/90"
             >
               Try Again
             </button>
@@ -582,7 +582,7 @@ export default function QuoteTesterPage() {
             {wrongResults.length > 0 && (
               <button
                 onClick={() => setShowReview(true)}
-                className="rounded-lg border border-[#2E86C1] bg-card px-5 py-2.5 text-sm font-semibold text-primary transition hover:bg-primary/5"
+                className="rounded-lg border border-primary bg-card px-5 py-2.5 text-sm font-semibold text-primary transition hover:bg-primary/5"
               >
                 Review Wrong Answers ({wrongResults.length})
               </button>
@@ -679,7 +679,7 @@ export default function QuoteTesterPage() {
         <div className="mt-8 flex flex-wrap gap-3">
           <button
             onClick={handleTryAgain}
-            className="rounded-lg bg-[#1A5276] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#1A5276]/90"
+            className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-primary/90"
           >
             Try Again
           </button>
@@ -740,7 +740,7 @@ export default function QuoteTesterPage() {
         {/* Progress bar */}
         <div className="mb-6 h-2 w-full overflow-hidden rounded-full bg-muted">
           <div
-            className="h-full rounded-full bg-gradient-to-r from-[#1A5276] to-[#2E86C1] transition-all duration-300"
+            className="h-full rounded-full bg-gradient-to-r from-primary to-primary/80 transition-all duration-300"
             style={{ width: `${((currentIdx + 1) / questions.length) * 100}%` }}
           />
         </div>
@@ -775,10 +775,10 @@ export default function QuoteTesterPage() {
                   classes += "border-border bg-muted text-muted-foreground";
                 }
               } else if (isSelected) {
-                classes += "border-[#2E86C1] bg-primary/5 text-foreground ring-2 ring-primary/20";
+                classes += "border-primary bg-primary/5 text-foreground ring-2 ring-primary/20";
               } else {
                 classes +=
-                  "border-border bg-card text-muted-foreground hover:border-[#2E86C1]/40 hover:bg-primary/5 cursor-pointer";
+                  "border-border bg-card text-muted-foreground hover:border-primary/40 hover:bg-primary/5 cursor-pointer";
               }
 
               return (
@@ -827,7 +827,7 @@ export default function QuoteTesterPage() {
               <button
                 onClick={() => handleLockAnswer()}
                 disabled={selectedAnswer === null}
-                className="rounded-lg bg-[#1A5276] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#1A5276]/90 disabled:cursor-not-allowed disabled:opacity-40"
+                className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-40"
               >
                 Submit Answer
               </button>
@@ -874,14 +874,14 @@ export default function QuoteTesterPage() {
                     onClick={() => toggleText(set.slug)}
                     className={`flex w-full items-center gap-3 rounded-lg border-2 px-4 py-3 text-left transition ${
                       isActive
-                        ? "border-[#2E86C1] bg-primary/5"
+                        ? "border-primary bg-primary/5"
                         : "border-border hover:border-border"
                     }`}
                   >
                     <div
                       className={`flex h-5 w-5 shrink-0 items-center justify-center rounded border-2 transition ${
                         isActive
-                          ? "border-[#2E86C1] bg-primary"
+                          ? "border-primary bg-primary"
                           : "border-border"
                       }`}
                     >
@@ -914,14 +914,14 @@ export default function QuoteTesterPage() {
                   onClick={() => setSelectedMode(mode)}
                   className={`flex w-full items-center gap-3 rounded-lg border-2 px-4 py-3 text-left transition ${
                     selectedMode === mode
-                      ? "border-[#2E86C1] bg-primary/5"
+                      ? "border-primary bg-primary/5"
                       : "border-border hover:border-border"
                   }`}
                 >
                   <div
                     className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 transition ${
                       selectedMode === mode
-                        ? "border-[#2E86C1] bg-primary"
+                        ? "border-primary bg-primary"
                         : "border-border"
                     }`}
                   >
@@ -965,7 +965,7 @@ export default function QuoteTesterPage() {
           {/* Start button */}
           <button
             onClick={startQuiz}
-            className="w-full rounded-xl bg-gradient-to-r from-[#1A5276] to-[#2E86C1] px-6 py-3.5 text-base font-bold text-white shadow-md transition hover:shadow-md hover:brightness-110"
+            className="w-full rounded-xl bg-gradient-to-r from-primary to-primary/80 px-6 py-3.5 text-base font-bold text-white shadow-md transition hover:shadow-md hover:brightness-110"
           >
             Start Quiz ({QUESTION_COUNT} Questions)
           </button>
@@ -998,7 +998,7 @@ export default function QuoteTesterPage() {
           </div>
 
           {/* Tips */}
-          <div className="rounded-xl border border-[#2E86C1]/20 bg-primary/5 p-6">
+          <div className="rounded-xl border border-primary/20 bg-primary/5 p-6">
             <h3 className="text-lg font-bold text-foreground">Quiz Tips</h3>
             <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
               <li className="flex items-start gap-2">

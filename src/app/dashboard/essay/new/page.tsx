@@ -150,13 +150,13 @@ export default function NewEssayPage() {
             {boardIsPreFilled ? (
               /* ── Pre-filled: show the board name with a Change link ── */
               <div className="mt-1 flex items-center gap-2">
-                <span className="inline-flex items-center rounded-lg border border-accent/30 bg-accent-50 px-3 py-2 text-sm font-medium text-primary">
+                <span className="inline-flex items-center rounded-lg border border-accent/30 bg-primary/10 px-3 py-2 text-sm font-medium text-primary">
                   {boardLabel(examBoard)}
                 </span>
                 <button
                   type="button"
                   onClick={() => setShowBoardSelector(true)}
-                  className="text-xs font-medium text-accent hover:text-accent-600 underline underline-offset-2"
+                  className="text-xs font-medium text-accent hover:text-primary underline underline-offset-2"
                 >
                   Change
                 </button>
@@ -228,7 +228,7 @@ export default function NewEssayPage() {
         <ExamBoardDisclaimer variant="content" selectedBoard={examBoard || contextBoard} />
 
         {/* ── AI consent reminder ───────────────────────────── */}
-        <div className="flex items-start gap-2 rounded-lg border border-accent-200 bg-accent-50 px-3 py-2">
+        <div className="flex items-start gap-2 rounded-lg border border-primary/20 bg-primary/10 px-3 py-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="mt-0.5 h-4 w-4 shrink-0 text-accent"
@@ -244,11 +244,11 @@ export default function NewEssayPage() {
               d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
             />
           </svg>
-          <p className="text-xs leading-relaxed text-accent-800">
+          <p className="text-xs leading-relaxed text-primary">
             Your essay will be analysed by AI to provide feedback.{" "}
             <Link
               href="/legal/ai-transparency"
-              className="font-medium underline underline-offset-2 hover:text-accent-600"
+              className="font-medium underline underline-offset-2 hover:text-primary"
             >
               See our AI Transparency page
             </Link>{" "}

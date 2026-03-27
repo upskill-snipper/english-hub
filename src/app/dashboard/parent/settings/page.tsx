@@ -246,14 +246,14 @@ export default function ParentSettingsPage() {
       )}
 
       {/* ── Free access note ─────────────────────────────────── */}
-      <div className="card bg-accent-50 border-accent-200">
+      <div className="card bg-primary/10 border-primary/20">
         <div className="flex items-start gap-3">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 shrink-0 text-accent mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
           <div>
-            <p className="font-semibold text-accent-800">Free Parent Access</p>
-            <p className="mt-1 text-sm text-accent-700">
+            <p className="font-semibold text-primary">Free Parent Access</p>
+            <p className="mt-1 text-sm text-primary">
               Your parent dashboard is completely free and comes included with your child&apos;s paid subscription.
               You can monitor progress, receive weekly reports, and set target grades at no additional cost.
             </p>
@@ -414,7 +414,7 @@ export default function ParentSettingsPage() {
 
         {/* Add student form */}
         {showAddForm && (
-          <div className="mt-4 rounded-lg border border-accent-200 bg-accent-50 p-4">
+          <div className="mt-4 rounded-lg border border-primary/20 bg-primary/10 p-4">
             <h3 className="text-sm font-semibold text-foreground">Link a new student</h3>
             <p className="mt-1 text-xs text-muted-foreground">
               Enter the email address associated with the student&apos;s account.
@@ -465,7 +465,7 @@ export default function ParentSettingsPage() {
             <div key={student.id} className="rounded-lg border border-border p-4">
               <div className="flex items-start justify-between">
                 <div className="flex items-start gap-3">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary-50 text-primary">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
                     <UserIcon className="h-5 w-5" />
                   </div>
                   <div>
@@ -508,7 +508,7 @@ export default function ParentSettingsPage() {
                         type="button"
                         onClick={() => handleSaveGrades(student.id)}
                         disabled={savingGrades}
-                        className="rounded-lg bg-primary px-3 py-1 text-xs font-medium text-white hover:bg-primary-600 disabled:opacity-50 transition-colors"
+                        className="rounded-lg bg-primary px-3 py-1 text-xs font-medium text-white hover:bg-primary/90 disabled:opacity-50 transition-colors"
                       >
                         {savingGrades ? "Saving..." : "Save"}
                       </button>
@@ -524,7 +524,7 @@ export default function ParentSettingsPage() {
                     <button
                       type="button"
                       onClick={() => startEditingGrades(student)}
-                      className="text-xs font-medium text-accent hover:text-accent-600 transition-colors"
+                      className="text-xs font-medium text-accent hover:text-primary transition-colors"
                     >
                       Edit targets
                     </button>

@@ -80,13 +80,13 @@ export default function JekyllAndHydePage() {
           <span className="rounded-full bg-violet-100 px-3 py-1 text-xs font-bold text-violet-700 uppercase tracking-wider">
             19th-Century Prose
           </span>
-          <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-bold text-accent-600 uppercase tracking-wider">
+          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary uppercase tracking-wider">
             AQA
           </span>
-          <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-bold text-accent-600 uppercase tracking-wider">
+          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary uppercase tracking-wider">
             Edexcel
           </span>
-          <span className="rounded-full bg-accent-50 px-3 py-1 text-xs font-bold text-accent-600 uppercase tracking-wider">
+          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary uppercase tracking-wider">
             OCR
           </span>
         </div>
@@ -109,7 +109,7 @@ export default function JekyllAndHydePage() {
             <a
               key={s}
               href={`#${s.toLowerCase().replace(/\s+/g, "-")}`}
-              className="rounded-lg bg-muted px-3 py-1.5 text-xs font-medium text-muted-foreground hover:bg-accent-50 hover:text-accent-600 transition-colors"
+              className="rounded-lg bg-muted px-3 py-1.5 text-xs font-medium text-muted-foreground hover:bg-primary/10 hover:text-primary transition-colors"
             >
               {s}
             </a>
@@ -645,8 +645,8 @@ export default function JekyllAndHydePage() {
         <div id="context">
           <Section title="Historical and Social Context" icon="🏛️">
             <div className="space-y-4">
-              <div className="rounded-lg bg-primary-50 p-4">
-                <h4 className="font-bold text-primary-700">Victorian Society and Morality</h4>
+              <div className="rounded-lg bg-primary/10 p-4">
+                <h4 className="font-bold text-primary">Victorian Society and Morality</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The Victorian era (1837&ndash;1901) prized respectability, moral restraint, and public decency.
                   Gentlemen were expected to be paragons of virtue. However, beneath this surface, Victorian
@@ -655,8 +655,8 @@ export default function JekyllAndHydePage() {
                   The novella suggests that rigid moral codes do not eliminate vice but merely drive it underground.
                 </p>
               </div>
-              <div className="rounded-lg bg-primary-50 p-4">
-                <h4 className="font-bold text-primary-700">Darwin and the Evolution Debate</h4>
+              <div className="rounded-lg bg-primary/10 p-4">
+                <h4 className="font-bold text-primary">Darwin and the Evolution Debate</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Charles Darwin&apos;s <em>On the Origin of Species</em> (1859) shocked Victorian society
                   by suggesting humans evolved from animals. Hyde&apos;s ape-like appearance and &ldquo;troglodytic&rdquo;
@@ -665,8 +665,8 @@ export default function JekyllAndHydePage() {
                   taps into the fear that civilisation is a thin veneer over animal instincts.
                 </p>
               </div>
-              <div className="rounded-lg bg-primary-50 p-4">
-                <h4 className="font-bold text-primary-700">Repression and the Unconscious</h4>
+              <div className="rounded-lg bg-primary/10 p-4">
+                <h4 className="font-bold text-primary">Repression and the Unconscious</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Although Freud&apos;s theories came later (1890s&ndash;1900s), Stevenson anticipates the idea
                   that repressed desires emerge in dangerous forms. Jekyll&apos;s suppression of his darker
@@ -675,8 +675,8 @@ export default function JekyllAndHydePage() {
                   the two cannot coexist peacefully when forced apart.
                 </p>
               </div>
-              <div className="rounded-lg bg-primary-50 p-4">
-                <h4 className="font-bold text-primary-700">London Setting and Urban Anxiety</h4>
+              <div className="rounded-lg bg-primary/10 p-4">
+                <h4 className="font-bold text-primary">London Setting and Urban Anxiety</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   1880s London was a city of extreme contrasts: wealth and poverty existed side by side.
                   The Jack the Ripper murders (1888, two years after publication) would soon confirm
@@ -685,8 +685,8 @@ export default function JekyllAndHydePage() {
                   a space where anonymity enables crime.
                 </p>
               </div>
-              <div className="rounded-lg bg-primary-50 p-4">
-                <h4 className="font-bold text-primary-700">The Doppelg&auml;nger Tradition</h4>
+              <div className="rounded-lg bg-primary/10 p-4">
+                <h4 className="font-bold text-primary">The Doppelg&auml;nger Tradition</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   Stevenson draws on a rich literary tradition of the &ldquo;double.&rdquo; The German word
                   <em> Doppelg&auml;nger</em> (literally &ldquo;double walker&rdquo;) was popularised by Jean Paul
@@ -697,8 +697,8 @@ export default function JekyllAndHydePage() {
                   horror and making duality a physical as well as psychological reality.
                 </p>
               </div>
-              <div className="rounded-lg bg-primary-50 p-4">
-                <h4 className="font-bold text-primary-700">Science and Ethics</h4>
+              <div className="rounded-lg bg-primary/10 p-4">
+                <h4 className="font-bold text-primary">Science and Ethics</h4>
                 <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
                   The Victorian era saw rapid scientific advancement, raising questions about the moral
                   limits of experimentation. Jekyll&apos;s experiment echoes concerns about vivisection,

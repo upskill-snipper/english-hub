@@ -74,9 +74,9 @@ function Quote({
   analysis: string;
 }) {
   return (
-    <div className="rounded-lg border-l-4 border-accent bg-accent-50/40 p-4">
+    <div className="rounded-lg border-l-4 border-accent bg-primary/5 p-4">
       <p className="text-sm font-semibold italic text-foreground">&ldquo;{text}&rdquo;</p>
-      <p className="mt-1 text-xs font-semibold text-accent-600">{technique}</p>
+      <p className="mt-1 text-xs font-semibold text-primary">{technique}</p>
       <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{analysis}</p>
     </div>
   );
@@ -84,7 +84,7 @@ function Quote({
 
 function ThemeTag({ theme }: { theme: string }) {
   return (
-    <span className="inline-block rounded-full bg-primary-50 px-3 py-1 text-xs font-semibold text-primary">
+    <span className="inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
       {theme}
     </span>
   );
@@ -186,7 +186,7 @@ export default function LoveAndRelationshipsPage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-primary to-primary-600 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-accent-200">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary/20">
             AQA GCSE English Literature &middot; Poetry Anthology
           </p>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -304,14 +304,14 @@ export default function LoveAndRelationshipsPage() {
               <a
                 key={p.id}
                 href={`#${p.id}`}
-                className="rounded-lg bg-muted px-3 py-1.5 text-xs font-medium text-muted-foreground hover:bg-accent-50 hover:text-accent-600 transition-colors"
+                className="rounded-lg bg-muted px-3 py-1.5 text-xs font-medium text-muted-foreground hover:bg-primary/10 hover:text-primary transition-colors"
               >
                 {p.title}
               </a>
             ))}
             <a
               href="#comparison-table"
-              className="rounded-lg bg-accent-50 px-3 py-1.5 text-xs font-semibold text-accent-600 hover:bg-accent-100 transition-colors"
+              className="rounded-lg bg-primary/10 px-3 py-1.5 text-xs font-semibold text-primary hover:bg-primary/20 transition-colors"
             >
               Comparison Table
             </a>
@@ -1420,7 +1420,7 @@ export default function LoveAndRelationshipsPage() {
       {/* ================================================================== */}
       {/*  Comparison Table                                                   */}
       {/* ================================================================== */}
-      <section id="comparison-table" className="bg-primary-50 px-4 py-12 sm:px-6 lg:px-8">
+      <section id="comparison-table" className="bg-primary/10 px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
           <h2 className="text-2xl font-bold text-foreground">Comparison Table</h2>
           <p className="mt-2 text-muted-foreground">

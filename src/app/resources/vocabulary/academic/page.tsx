@@ -84,7 +84,7 @@ const CATEGORIES: VocabCategory[] = [
   {
     id: "description",
     title: "Description & Argumentation Words",
-    colour: "border-[#E67E22]",
+    colour: "border-warn",
     words: [
       { word: "Pervasive", definition: "Spreading widely throughout an area or group", example: "A pervasive sense of dread runs through the extract.", synonyms: ["widespread", "prevalent", "omnipresent"] },
       { word: "Intrinsic", definition: "Belonging naturally; essential", example: "Loyalty is intrinsic to the character of Benvolio.", synonyms: ["inherent", "fundamental", "innate"] },
@@ -234,7 +234,7 @@ export default function AcademicVocabularyPage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-primary to-primary-600 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-accent-200">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary/20">
             Vocabulary Builder
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -342,7 +342,7 @@ export default function AcademicVocabularyPage() {
       {/* Persuasive vocabulary */}
       <section id="persuasive" className="bg-muted px-4 py-14 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
-          <h2 className="mb-6 text-2xl font-bold text-primary border-b-2 border-[#E67E22] pb-3">
+          <h2 className="mb-6 text-2xl font-bold text-primary border-b-2 border-warn pb-3">
             Persuasive Vocabulary
             <span className="ml-3 text-base font-normal text-muted-foreground">
               ({filteredPersuasive.length} words)
@@ -351,14 +351,14 @@ export default function AcademicVocabularyPage() {
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {filteredPersuasive.map((w) => (
               <div key={w.word} className="rounded-xl border border-border bg-card p-5 shadow-md hover:shadow-md transition">
-                <h3 className="text-lg font-bold text-[#E67E22]">{w.word}</h3>
+                <h3 className="text-lg font-bold text-warn">{w.word}</h3>
                 <p className="mt-1 text-sm text-muted-foreground">{w.definition}</p>
                 <div className="mt-3 rounded-lg bg-muted px-4 py-3">
                   <p className="text-sm italic text-muted-foreground">&ldquo;{w.example}&rdquo;</p>
                 </div>
                 <div className="mt-3 flex flex-wrap gap-1.5">
                   {w.synonyms.map((s) => (
-                    <span key={s} className="rounded-full bg-[#E67E22]/10 px-2.5 py-0.5 text-xs font-medium text-[#E67E22]">
+                    <span key={s} className="rounded-full bg-warn/10 px-2.5 py-0.5 text-xs font-medium text-warn">
                       {s}
                     </span>
                   ))}

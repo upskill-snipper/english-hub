@@ -148,7 +148,7 @@ export default function DifferentiationPage() {
       <div>
         <Link
           href="/dashboard/teacher/resources"
-          className="text-sm text-accent hover:text-accent-600 mb-2 inline-block"
+          className="text-sm text-accent hover:text-primary mb-2 inline-block"
         >
           &larr; Back to Resources
         </Link>

@@ -84,9 +84,9 @@ function heatmapColor(level: number): string {
     case 3:
       return "bg-accent";
     case 2:
-      return "bg-accent-300";
+      return "bg-primary/30";
     case 1:
-      return "bg-accent-100";
+      return "bg-primary/15";
     default:
       return "bg-muted";
   }
@@ -219,7 +219,7 @@ export default function TeacherDashboardPage() {
             </h2>
             <Link
               href="/dashboard/teacher/assignments"
-              className="text-sm font-medium text-accent hover:text-accent-600"
+              className="text-sm font-medium text-accent hover:text-primary"
             >
               View all
             </Link>
@@ -302,8 +302,8 @@ export default function TeacherDashboardPage() {
             <div className="mt-3 flex items-center gap-2 text-xs text-muted-foreground">
               <span>Less</span>
               <div className="w-4 h-4 rounded-sm bg-muted" />
-              <div className="w-4 h-4 rounded-sm bg-accent-100" />
-              <div className="w-4 h-4 rounded-sm bg-accent-300" />
+              <div className="w-4 h-4 rounded-sm bg-primary/15" />
+              <div className="w-4 h-4 rounded-sm bg-primary/30" />
               <div className="w-4 h-4 rounded-sm bg-accent" />
               <span>More</span>
             </div>

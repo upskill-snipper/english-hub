@@ -80,7 +80,7 @@ function scoreColour(score: number): string {
 
 function scoreBadgeBg(score: number): string {
   if (score >= 80) return "bg-success-50 text-success";
-  if (score >= 60) return "bg-accent-50 text-accent";
+  if (score >= 60) return "bg-primary/10 text-accent";
   return "bg-warn-50 text-warn";
 }
 
@@ -288,7 +288,7 @@ export default function AllEssaysPage() {
                           <div className="flex items-center justify-end gap-3">
                             <Link
                               href={`/dashboard/essay/${essay.id}`}
-                              className="text-xs font-medium text-accent hover:text-accent-600"
+                              className="text-xs font-medium text-accent hover:text-primary"
                             >
                               View
                             </Link>
@@ -344,7 +344,7 @@ export default function AllEssaysPage() {
                 <div className="mt-3 flex items-center gap-3 border-t border-border pt-3">
                   <Link
                     href={`/dashboard/essay/${essay.id}`}
-                    className="text-xs font-medium text-accent hover:text-accent-600"
+                    className="text-xs font-medium text-accent hover:text-primary"
                   >
                     View Feedback
                   </Link>
