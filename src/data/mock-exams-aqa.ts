@@ -1197,13 +1197,145 @@ What I wish to impress upon you is this: children are born with a capacity for w
   q5Text: '"We are raising a generation of children who are addicted to screens and unable to engage with the real world. It is time to take drastic action."\n\nWrite an article for a parenting website in which you argue your point of view on this statement.\n\n(24 marks for content and organisation / 16 marks for technical accuracy)',
 })
 
+
+const p1_16 = makeP1(16, {
+  set: '16',
+  source: 'Adapted from Sadie Smith, The Depths (2023)',
+  extract: `The lighthouse keeper's cottage sat perched on the cliff edge like a bird about to take flight. Margaret had lived there for forty-seven years, tending the light, watching the sea. The stairs spiralled upward through stone so old it seemed to remember being mountain. She climbed them daily, her arthritic knees protesting, carrying the small rituals that kept the light burning.
+
+The view from the lamp room was infinite. On clear days, she could see twenty miles or more — the curve of the coastline, the scatter of fishing boats, the darker smudge where sea met sky. But it was the storms that truly seized her. When the wind rose and rain hammered against the glass in sheets, when the light's beam cut through the darkness in its eternal rotation, she felt most alive. The sea, she had learned, was not cruel. It was indifferent. And there was something clarifying about that indifference, something that stripped away all pretence.
+
+A letter arrived on Tuesday. The postman, huffing from the steep climb, handed it to her with the expression of someone delivering bad news. The letter was from the council. They were decommissioning the lighthouse. Automation, they wrote. Progress. The light would continue, but no keeper was required. Margaret read the letter twice. She sat down at the kitchen table where she had eaten forty-seven years' worth of breakfasts, and she felt the ground shift beneath her — not the house, not the cliff, but the ground of her self.
+
+What was a lighthouse keeper without a lighthouse to keep? What was Margaret without the daily climb, the nightly check, the sense of purpose that the light provided? She had never married, never had children. The sea had been her life, the light her prayer. Now both would continue without her.`,
+  q1TrueStatements: 'from the beginning to "all pretence."',
+  q1Options: 'A) The cottage is located on flat ground.\nB) Margaret has lived there less than thirty years.\nC) The stairs are made of stone.\nD) Margaret finds the storms peaceful.\nE) On clear days she can see fifty miles.\nF) Margaret has lived there nearly half a century.\nG) She climbs the stairs daily.\nH) The sea is described as cruel.',
+  q1Answers45: 'C, D, F, G — C: "stairs spiralled upward through stone." D: "she felt most alive" during storms. F: "forty-seven years." G: "She climbed them daily."',
+  q1Answers67: 'C, D, F, G — A is false: "perched on the cliff edge." B is false: "forty-seven years." E is false: "could see twenty miles or more." H is false: "not cruel... indifferent."',
+  q2Focus: 'from "A letter arrived on Tuesday" to "but the ground of her self."',
+  q2Text: 'to convey the significance of the letter for Margaret?',
+  q2Answer45: 'The detail of the postman "huffing from the steep climb" and his expression of "delivering bad news" makes it clear the letter brings bad news. The repetition of Margaret reading "the letter twice" shows she cannot accept it. The phrase "the ground shift beneath her — not the house, not the cliff, but the ground of her self" is powerful because it shows the letter threatens her identity.',
+  q2Answer67: 'Smith establishes the letter\'s existential weight through a carefully managed shift from external to internal disruption. The postman is characterised not by what he says but by his physical struggle — "huffing from the steep climb" — and his tacit knowledge.',
+  q3Text: 'How has the writer structured the text to create effects of contrast and isolation?',
+  q3Answer45: 'The extract opens with description of the peaceful cottage and Margaret\'s contentment at tending the light, especially during storms. Then it shifts suddenly to the arrival of the letter. This contrast between her settled life and the disruption makes the letter\'s impact more shocking.',
+  q3Answer67: 'Smith\'s structure exploits spatial and temporal scales to dramatise Margaret\'s isolation. The opening three paragraphs establish concentric circles of belonging — the cottage in the landscape, the lamp room overlooking the sea, Margaret within the cottage.',
+  q4Focus: 'from "What was a lighthouse keeper" to the end.',
+  q4Statement: 'Margaret\'s story is profoundly moving because it shows how people\'s identities can be entirely wrapped up in their work.',
+  q4Text: '',
+  q4Answer45: 'I agree strongly. The extract shows Margaret has lived for the lighthouse for forty-seven years. The rhetorical questions "What was a lighthouse keeper without a lighthouse?" show she cannot imagine herself without this role.',
+  q4Answer67: 'I agree substantively, though with nuance. Smith\'s construction of Margaret is deliberately precarious: her identity is not merely *wrapped up in* work but *composed entirely of* work.',
+  q5ImageDesc: 'A photograph of an old lighthouse at sunset, with rough waves crashing against the rocks below and a figure standing alone at the top of the light tower.',
+  q5NarrativePrompt: 'Write the opening part of a story about someone facing an unexpected ending or transition in their life.',
+})
+
+const p1_17 = makeP1(17, {
+  set: '17',
+  source: 'Adapted from James Norton, The Passenger (2024)',
+  extract: `The train window was a mirror and a portal simultaneously. Outside, the industrial outskirts of Manchester yielded gradually to moorland — the transition happening so slowly I could not pinpoint the moment when the city ended and wilderness began. I pressed my forehead against the glass, which was warm from the afternoon sun, and watched the landscape transform.
+
+An elderly woman across from me was reading a newspaper. Occasionally, she would lower it and gaze out of the window with the expression of someone searching for something lost long ago. Her face was lined like an ancient map, and her hands trembled slightly as they held the paper. I wondered if she was making this journey out of habit, or if she was running toward something, or from something.
+
+She folded her newspaper carefully and turned to look at me directly. "First time on this route?" she asked.
+
+"How did you know?" I asked, surprised.
+
+"You keep looking like you're trying to memorise it," she said, a smile playing at the corners of her mouth. "People who take this journey often just look out the window. But you... you're recording it. Saving it somehow."
+
+I didn't know how to respond. She had articulated something I hadn't been able to name myself — the sense that this moment was somehow significant, that I needed to fix it in my memory before it slipped away forever. The train rattled through a tunnel, and for a moment, all we could see was darkness and our own reflections in the glass. When we emerged on the other side, the landscape had changed again. Fields of wind turbines now dominated the horizon, white towers catching the light like monuments to progress.
+
+"Beautiful, isn't it?" the woman said. "The old and the new, together."
+
+I nodded, but I felt a strange sadness. The turbines were beautiful, yes, but they represented something I could not fully articulate — an ending perhaps, or a transformation I wasn't ready for.`,
+  q1TrueStatements: 'from the beginning to "from something."',
+  q1Options: 'A) The journey begins in Manchester.\nB) The landscape transition is abrupt.\nC) The narrator is an elderly man.\nD) The woman is reading a magazine.\nE) The narrator wonders about the woman\'s purpose for travelling.\nF) The moorland appears before the city.\nG) The narrator presses his hand against the window.\nH) The woman\'s hands are unsteady.',
+  q1Answers45: 'A, E, H — A: "outskirts of Manchester." E: "wondered...running toward...or from something." H: "hands trembled slightly."',
+  q1Answers67: 'A, E, H — A: "outskirts of Manchester." E: "wondered if...running toward...or from something." H: "trembled slightly." Note: B is false (transition is "slow"); C is indeterminate; D is false ("newspaper"); F is false (city comes first); G is false ("forehead").',
+  q2Focus: 'from "She folded her newspaper" to "catching the light like monuments to progress."',
+  q2Text: 'to create a moment of connection and understanding between the two characters?',
+  q2Answer45: 'The woman directly addresses the narrator, asking if it\'s their first time on the route. When the narrator expresses surprise, she explains that they are "recording it" and "saving it somehow" — she understands what the narrator is doing without being told. This shows a deep perceptiveness and empathy.',
+  q2Answer67: 'Norton constructs the connection through accurate observation functioning as a form of intimacy. The woman\'s initial question — "First time on this route?" — appears conversational but is immediately revealed as rhetorical: she already knows the answer through observational skill.',
+  q3Text: 'How has the writer used contrast throughout the extract to develop the narrative?',
+  q3Answer45: 'The extract opens with the contrast between the city and the moorland — civilization giving way to nature. The window is described as both "a mirror and a portal" — showing both reflection and escape. The woman\'s appearance (elderly, lined face, trembling hands) contrasts with the narrator\'s implied youth and stability.',
+  q3Answer67: 'Norton\'s structure of contrast operates on multiple registers. The opening image — the window as simultaneously "mirror and portal" — establishes the fundamental tension: reflective interiority versus external movement. The landscape transitions from industrial to natural to technological, mapping a historical arc.',
+  q4Focus: 'from "She folded her newspaper" to the end.',
+  q4Statement: 'The encounter with the woman transforms the narrator\'s understanding of the journey from a personal moment into something with broader significance about loss and change.',
+  q4Text: '',
+  q4Answer45: 'I agree. Before the woman speaks, the narrator is simply recording their memories, trying to "save" something. But the woman\'s comment about "The old and the new, together" shifts the focus outward.',
+  q4Answer67: 'I agree substantially. The woman functions as interpretive guide: her initial observation — "you\'re recording it" — validates the narrator\'s compulsion as meaningful rather than neurotic.',
+  q5ImageDesc: 'A train window showing a landscape that transitions from grey industrial buildings on the left to green moorland on the right, with a reflection of the narrator\'s face faintly visible in the glass.',
+  q5NarrativePrompt: 'Write the opening part of a story about a chance conversation that changes how someone sees something familiar.',
+})
+
+const p2_16 = makeP2(16, {
+  sourceAText: `Loneliness is not the absence of people. It is the absence of understanding. I have spent evenings in crowded rooms where no one knew me, and I felt the peculiar ache of isolation that comes from being surrounded but unseen. In our increasingly connected world, we have somehow become more alone. We have more "friends" than ever before — digital friends, social media connections, followers — yet surveys consistently show that loneliness, depression, and anxiety have risen dramatically over the past two decades.
+
+The problem is not connection itself but the quality and depth of connection. We communicate constantly — texting, tweeting, posting — yet rarely do we truly communicate. We broadcast our curated selves and receive the curated selves of others, but the real, messy, vulnerable self remains hidden behind the screen. We have built a culture that privileges breadth of connection over depth of relationship, and we are paying the price in mental health and wellbeing.
+
+What we need is not more tools for connection but fewer barriers to genuine connection. We need to restore the value of depth — of friendships that require time, presence, and the courage to be truly known. The digital age promised us unlimited connection, but what we actually need is the kind of connection that can only happen when we make ourselves vulnerable, when we risk being misunderstood or rejected because we have chosen honesty over safety.
+
+Technology is not the enemy. Our misuse of it is. But we must be honest: technology is designed to be addictive, to keep us scrolling, liking, commenting, building the illusion of community. Until we fundamentally shift how we view connection — from quantity to quality, from broadcast to dialogue — we will remain trapped in this paradox of connection without belonging.`,
+  sourceARef: 'Amelia Hart, "The Loneliness Paradox", Modern Life Magazine, 2025',
+  sourceBText: `I have moved thirteen times in my life. I have lived in small towns where everyone knew my family history, and I have lived in cities where I could walk invisibly through millions. I have made friends I have kept for decades, and I have made friends I lost touch with within months. What I have learned from all this movement is that loneliness is not determined by geography or population density. It is determined by whether you have people who see you.
+
+By "see you," I do not mean merely recognising your face or knowing your name. I mean the kind of attention that notices when you are not yourself, that knows the particular shape of your sadness, that can sit with you in difficulty without needing to fix it or change the subject. This kind of attention is rare and precious. It cannot be rushed or manufactured. It requires time, yes, but more importantly, it requires intention.
+
+In my experience, the most profound loneliness comes not from isolation but from mismatch — from living among people who do not see you, or from trying to be someone you are not in order to earn their seeing. The antidote is not more people but more authentic connection. But here is what society often fails to recognise: sometimes authentic connection requires solitude. You cannot know yourself fully if you are constantly performing for an audience. You cannot be truly known if you are hiding who you are.
+
+So I would argue that the solution to loneliness is paradoxical: it requires both deeper connection and the freedom to be alone. It requires the courage to be fully yourself — flaws, failures, and all — and the grace to accept others in their full humanity. Our hyperconnected world has made us forget that being truly together means sometimes being apart, and that being truly alone is not the same as being lonely.`,
+  sourceBRef: 'Rebecca Okonkwo, Belonging (2024)',
+  q1Text: 'Read again Source A, the first paragraph.\nChoose four statements below which are TRUE.\nA) The writer has experienced crowded rooms.\nB) People in crowds always know each other.\nC) The writer equates loneliness with absence of people.\nD) Depression has decreased over the past twenty years.\nE) We have more digital connections than previous generations.\nF) The writer felt isolated in a crowded room.\nG) "Friends" on social media are always genuine friendships.\nH) Surveys show loneliness has increased in recent decades.',
+  q1Answer45: 'A, E, F, H',
+  q2Text: 'You need to refer to Source A and Source B for this question.\nUse details from both sources. Write a summary of the similarities and differences in how the writers address loneliness in the modern world.',
+  q2Answer45: 'Both writers discuss loneliness despite increased connectivity. Hart argues the problem is quality of connection — we have many digital connections but they are shallow and inauthentic. Okonkwo argues the problem is mismatch — living among people who don\'t truly "see" you.',
+  q2Answer67: 'Both texts diagnose loneliness as a crisis of authenticity rather than mere isolation, but they locate different problems. Hart argues the culprit is technological mediation: we "broadcast our curated selves" and receive others\' curation in return.',
+  q3Text: 'You now need to refer only to Source A.\nHow does the writer use language to convey the problem of inauthentic connection in our digital age?',
+  q3Answer45: 'Hart uses the distinction between "friends" in quotes and real friendship to show the difference between digital and genuine connection. The phrase "broadcast our curated selves" shows how social media creates false presentations.',
+  q3Answer67: 'Hart constructs the problem of inauthenticity through a series of conceptual oppositions that expose digital communication\'s inherent limitations. Opening with the redefinition — "Loneliness is not the absence of people. It is the absence of understanding".',
+  q4Text: 'For this question, you need to refer to the whole of Source A, together with the whole of Source B.\nCompare how the two writers address the causes and solutions to loneliness.\nIn your answer, you could:\n- compare their different explanations for loneliness\n- compare how they suggest loneliness might be addressed\n- support your response with references to both texts.',
+  q4Answer45: 'Hart blames technology for creating false connection and shallow relationships. Her solution is to use technology differently and prioritise depth over breadth. Okonkwo argues the problem is deeper — it\'s about whether people truly "see" you.',
+  q4Answer67: 'Both writers recognise that modern loneliness is paradoxical — we are more "connected" yet more isolated — but attribute this to different causes and propose different solutions. Hart locates the problem in technological mediation.',
+  q5Text: '"In our modern world, technology has made us lonelier, not more connected. We should drastically reduce our use of digital communication."\nWrite an article for a lifestyle magazine in which you argue your point of view on this statement.\n(24 marks for content and organisation / 16 marks for technical accuracy)',
+})
+
+const p2_17 = makeP2(17, {
+  sourceAText: `The future of work is not about robots replacing humans. It is about humans learning to work alongside machines. I have spent thirty years in manufacturing, watching the landscape change from vast factory floors with thousands of workers to sleek facilities where a handful of technicians manage automated systems. Some mourn this transition. They see only job loss, dignity lost, communities destroyed. But they are looking backward when they should be looking forward.
+
+The workers I speak to today are not suffering from automation. They are suffering from a failure of education and retraining. A factory worker displaced by a machine can become a technician, a programmer, an engineer — but only if society invests in making that transition possible. We have the technology to transform the nature of work. What we lack is the political will to invest in people.
+
+The narrative of technological unemployment is both old and false. Every generation has faced technological disruption — from the spinning jenny to the steam engine to the computer — and every generation has adapted, found new work, created new industries. We should have learned by now that the threat is not technology itself but our failure to prepare people for technological change. If we invest in education, in apprenticeships, in retraining programs, automation becomes an opportunity rather than a catastrophe.
+
+The real question is not whether automation will displace workers. Of course it will. The question is whether we will support that displacement with investment in human potential. That is a political choice, not a technological inevitability.`,
+  sourceARef: 'Dr Jonathan Mills, "The Future of Work", Economic Forum Today, 2025',
+  sourceBText: `I worked in a textile factory for forty-two years. I started there when I was fifteen, and I retired last year when the plant closed permanently. Of all the changes I have seen in my lifetime — the rise of computers, the shift to global supply chains, the push toward automation — none of them compare to the day I heard the announcement that our factory would close.
+
+They told us there would be retraining programs. They told us new jobs would be created. They told us we were part of progress. But here is what actually happened: the factory closed, and most of us were too old, too tired, and too broken in body to learn new skills. A handful of younger workers did get into retraining programs. Some of these workers are now employed. Most of them earn half what they earned before.
+
+I am not a Luddite. I understand technology. But I understand something else too — the human cost of progress. The woman next to me at the factory for thirty years? She never found steady work again. The man who trained me, who knew every inch of every machine? He died two years after the closure, taking his knowledge with him. The community that had built itself around that factory disappeared. The pub where we gathered, the local shops, the sense of belonging — all of it went away.
+
+I am glad that society is progressing. But progress should not come at the cost of people's dignity, their livelihoods, and their communities. If society truly valued the workers who made that progress possible, we would not leave them behind. We would invest in them, support them, and ensure that they share in the prosperity that their displacement has created. That would be true progress.`,
+  sourceBRef: 'Margaret Chen, "Forty-Two Years", Workers\' Voice, 2024',
+  q1Text: 'Read again Source A, the first paragraph.\nChoose four statements below which are TRUE.\nA) Mills has worked in manufacturing for thirty years.\nB) Factory floors used to have fewer workers than today.\nC) Automation has destroyed communities.\nD) Mills believes humans should work with machines.\nE) Modern facilities have thousands of workers.\nF) Mills sees job loss and destroyed communities as real problems.\nG) Mills argues some people mourn technological change.\nH) Mills advocates looking forward rather than backward.',
+  q1Answer45: 'A, D, G, H',
+  q2Text: 'You need to refer to Source A and Source B for this question.\nUse details from both sources. Write a summary of the similarities and differences in how the writers view automation and its effects on workers.',
+  q2Answer45: 'Both writers acknowledge that automation has displaced workers. Mills argues that displacement itself is not the problem — the problem is lack of retraining and education. Chen describes her experience: she and her coworkers lost their jobs, most were too old for retraining.',
+  q2Answer67: 'Both texts engage with automation\'s displacement of workers, but they inhabit different epistemological positions. Mills writes from a position of systemic/policy analysis: automation is inevitable, but its consequences are politically contingent.',
+  q3Text: 'You now need to refer only to Source A.\nHow does Mills use language to argue that automation is not inherently a threat to workers?',
+  q3Answer45: 'Mills says automation is "an opportunity rather than a catastrophe" — showing the problem is not technology itself but how society responds to it. He uses the historical examples of "the spinning jenny to the steam engine to the computer".',
+  q3Answer67: 'Mills structures his argument by systematically separating the technological from the political. His opening — "The future of work is not about robots replacing humans. It is about humans learning to work alongside machines".',
+  q4Text: 'For this question, you need to refer to the whole of Source A, together with the whole of Source B.\nCompare how the two writers convey their perspectives on automation, progress, and social responsibility.\nIn your answer, you could:\n- compare their different perspectives\n- compare the methods they use to convey their perspectives\n- support your response with references to both texts.',
+  q4Answer45: 'Mills is optimistic about automation if we invest in retraining. He argues technological displacement is not new — every generation has adapted. He sees automation as an opportunity if society makes the right political choice.',
+  q4Answer67: 'Mills and Chen occupy radically different positions on automation\'s inevitability and society\'s capacity to mitigate its harms. Mills writes as a systems theorist: automation is recurrent and historically inevitable, but its social effects are politically determined.',
+  q5Text: '"Technological progress inevitably comes at a cost to workers and communities. Society must balance innovation with support for those affected by change."\nWrite an article for a business journal in which you argue your point of view on this statement.\n(24 marks for content and organisation / 16 marks for technical accuracy)',
+})
+
+
 // ═════════════════════════════════════════════════════════════════════════════
 // EXPORT
 // ═════════════════════════════════════════════════════════════════════════════
 
 export const aqaMockExams: MockExamPaper[] = [
   p1_01, p1_02, p1_03, p1_04, p1_05, p1_06, p1_07, p1_08, p1_09, p1_10,
-  p1_11, p1_12, p1_13, p1_14, p1_15,
+  p1_11, p1_12, p1_13, p1_14, p1_15, p1_16, p1_17,
   p2_01, p2_02, p2_03, p2_04, p2_05, p2_06, p2_07, p2_08, p2_09, p2_10,
-  p2_11, p2_12, p2_13, p2_14, p2_15,
+  p2_11, p2_12, p2_13, p2_14, p2_15, p2_16, p2_17,
 ]

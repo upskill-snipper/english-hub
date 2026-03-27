@@ -566,6 +566,99 @@ export const examQuestions: ExamQuestion[] = [
   { id: 'wjec-lit-up-2', text: 'How does the poet explore the experience of growing up in the poem? Consider the poet\'s choices of language and form.', board: 'WJEC', paper: 'Literature', questionType: 'Unseen Poetry' },
   { id: 'wjec-lit-up-3', text: 'Now read the second poem. Compare the ways the two poets present ideas about the relationship between humans and nature.', board: 'WJEC', paper: 'Literature', questionType: 'Unseen Poetry' },
   { id: 'wjec-lit-up-custom', text: "I'll type my own question", board: 'WJEC', paper: 'Literature', questionType: 'Unseen Poetry' },
+
+  // ============================================================
+  // ADDITIONAL QUESTIONS - EDEXCEL LANGUAGE & LITERATURE
+  // ============================================================
+
+  // --- Edexcel Paper 1: Reading Comprehension ---
+  { id: 'edexcel-p1-rc-1', text: 'Read the first part of Source A. Which four of these statements are true about the text? Shade the correct circles.', board: 'Edexcel', paper: 'Paper 1', questionType: 'Reading Comprehension' },
+  { id: 'edexcel-p1-rc-2', text: 'What impression of the main character does the writer create in lines 1-20? Support your answer with evidence from the text.', board: 'Edexcel', paper: 'Paper 1', questionType: 'Reading Comprehension' },
+  { id: 'edexcel-p1-rc-3', text: 'The writer uses several descriptive techniques in this extract. Analyse how the language creates a sense of danger and suspense.', board: 'Edexcel', paper: 'Paper 1', questionType: 'Reading Comprehension' },
+  { id: 'edexcel-p1-rc-4', text: 'In what ways does the writer\'s style change as the extract progresses? Explain the effect on the reader.', board: 'Edexcel', paper: 'Paper 1', questionType: 'Reading Comprehension' },
+
+  // --- Edexcel Paper 2: Non-Fiction Reading & Writing ---
+  { id: 'edexcel-p2-nf-1', text: 'Summarise the key arguments made in Source A about the future of work. (1-2 sentences)', board: 'Edexcel', paper: 'Paper 2', questionType: 'Non-Fiction Writing' },
+  { id: 'edexcel-p2-nf-2', text: 'Using details from both sources, compare how the two writers present views on climate change. Highlight similarities and differences.', board: 'Edexcel', paper: 'Paper 2', questionType: 'Non-Fiction Writing' },
+  { id: 'edexcel-p2-nf-3', text: 'How does the writer of Source B use persuasive techniques to convince the reader of their argument? Analyse the effect of specific language choices.', board: 'Edexcel', paper: 'Paper 2', questionType: 'Non-Fiction Writing' },
+  { id: 'edexcel-p2-nf-4', text: 'Write an article for a magazine arguing your own perspective on the issue presented in these sources. Aim to persuade your audience.', board: 'Edexcel', paper: 'Paper 2', questionType: 'Non-Fiction Writing' },
+
+  // --- Edexcel Paper 2: Expressive Writing ---
+  { id: 'edexcel-p2-exp-1', text: 'Write a personal narrative about a time you had to make a difficult decision. Focus on your feelings and thoughts at the time.', board: 'Edexcel', paper: 'Paper 2', questionType: 'Expressive Writing' },
+  { id: 'edexcel-p2-exp-2', text: 'Write a reflective piece about a place that holds special meaning for you. Explore why this place is significant.', board: 'Edexcel', paper: 'Paper 2', questionType: 'Expressive Writing' },
+
+  // --- Edexcel Literature: Character & Theme ---
+  { id: 'edexcel-lit-ct-1', text: 'How does the writer present the relationship between the two main characters and how it changes throughout the novel?', board: 'Edexcel', paper: 'Literature', questionType: 'Character & Theme' },
+  { id: 'edexcel-lit-ct-2', text: 'Analyse how the theme of power is explored through the characterisation of the protagonist.', board: 'Edexcel', paper: 'Literature', questionType: 'Character & Theme' },
+
+  // ============================================================
+  // ADDITIONAL QUESTIONS - OCR LANGUAGE & LITERATURE
+  // ============================================================
+
+  // --- OCR Paper 1: Reading & Analysing ---
+  { id: 'ocr-p1-ra-1', text: 'Read Source A carefully. Identify five pieces of information about the setting described in the opening paragraph.', board: 'OCR', paper: 'Paper 1', questionType: 'Reading & Analysing' },
+  { id: 'ocr-p1-ra-2', text: 'How does the writer use linguistic features to convey the atmosphere of the location? Consider vocabulary, sentence structure, and imagery.', board: 'OCR', paper: 'Paper 1', questionType: 'Reading & Analysing' },
+  { id: 'ocr-p1-ra-3', text: 'Evaluate how effectively the writer has created a sense of tension and suspense in this extract. Use specific textual evidence.', board: 'OCR', paper: 'Paper 1', questionType: 'Reading & Analysing' },
+
+  // --- OCR Paper 2: Reading & Writing ---
+  { id: 'ocr-p2-rw-1', text: 'Read the two sources. Compare the ways the writers present their attitudes towards technology.', board: 'OCR', paper: 'Paper 2', questionType: 'Reading & Writing' },
+  { id: 'ocr-p2-rw-2', text: 'Using evidence from both texts, write a summary of the different perspectives on education presented by the two writers.', board: 'OCR', paper: 'Paper 2', questionType: 'Reading & Writing' },
+  { id: 'ocr-p2-rw-3', text: 'Write an article for a broadsheet newspaper arguing your position on whether art and music should be valued equally with science and mathematics in schools.', board: 'OCR', paper: 'Paper 2', questionType: 'Reading & Writing' },
+
+  // --- OCR Paper 3: Components of a response (Higher) ---
+  { id: 'ocr-p3-comp-1', text: 'Write a thoughtful essay about how a writer you have studied explores ideas about family and relationships.', board: 'OCR', paper: 'Paper 3', questionType: 'Components of Response' },
+  { id: 'ocr-p3-comp-2', text: 'Analyse how the author creates a vivid and memorable opening to the novel you have studied.', board: 'OCR', paper: 'Paper 3', questionType: 'Components of Response' },
+
+  // --- OCR Literature: Extended Writing ---
+  { id: 'ocr-lit-ew-1', text: 'How does Shakespeare present the female characters in the play you have studied? Consider their agency, relationships, and significance.', board: 'OCR', paper: 'Literature', questionType: 'Extended Writing' },
+  { id: 'ocr-lit-ew-2', text: 'Explore how the author uses setting to reflect the emotional or social conflicts experienced by the main character.', board: 'OCR', paper: 'Literature', questionType: 'Extended Writing' },
+
+  // ============================================================
+  // ADDITIONAL QUESTIONS - CAIE LANGUAGE & LITERATURE
+  // ============================================================
+
+  // --- CAIE Paper 1: Reading & Language Use ---
+  { id: 'caie-p1-rlu-1', text: 'Read the passage. Identify the main purpose and intended audience of the text, and explain how the writer has adapted the content for this audience.', board: 'CAIE', paper: 'Paper 1', questionType: 'Reading & Language Use' },
+  { id: 'caie-p1-rlu-2', text: 'Analyse the writer\'s use of three linguistic or structural features that contribute to the effectiveness of this persuasive text.', board: 'CAIE', paper: 'Paper 1', questionType: 'Reading & Language Use' },
+  { id: 'caie-p1-rlu-3', text: 'Write a formal letter to your local council proposing a solution to a problem in your community. Use appropriate register and tone.', board: 'CAIE', paper: 'Paper 1', questionType: 'Reading & Language Use' },
+
+  // --- CAIE Paper 2: Directed Writing & Composition ---
+  { id: 'caie-p2-dw-1', text: 'Using ideas from both passages, write a balanced essay discussing whether social media has been beneficial or harmful to society.', board: 'CAIE', paper: 'Paper 2', questionType: 'Directed Writing' },
+  { id: 'caie-p2-dw-2', text: 'Write a short story exploring the theme of personal growth and self-discovery. Your narrative should be between 500-600 words.', board: 'CAIE', paper: 'Paper 2', questionType: 'Directed Writing' },
+  { id: 'caie-p2-dw-3', text: 'Write a persuasive speech to be delivered to your school community about an issue that you feel strongly about.', board: 'CAIE', paper: 'Paper 2', questionType: 'Directed Writing' },
+
+  // --- CAIE Literature: Textual Analysis ---
+  { id: 'caie-lit-ta-1', text: 'Write a detailed analysis of how the playwright presents the theme of ambition through the development of the protagonist\'s character.', board: 'CAIE', paper: 'Literature', questionType: 'Textual Analysis' },
+  { id: 'caie-lit-ta-2', text: 'Explore how the novel you have studied uses symbolism to convey its central themes and ideas.', board: 'CAIE', paper: 'Literature', questionType: 'Textual Analysis' },
+  { id: 'caie-lit-ta-3', text: 'Compare the characterisation of two significant characters in the text you have studied, focusing on their development and significance.', board: 'CAIE', paper: 'Literature', questionType: 'Textual Analysis' },
+
+  // --- CAIE Literature: Unseen Poetry ---
+  { id: 'caie-lit-up-1', text: 'How does the poet use language, form, and structure to convey ideas about identity and belonging in this poem?', board: 'CAIE', paper: 'Literature', questionType: 'Unseen Poetry' },
+  { id: 'caie-lit-up-2', text: 'Analyse the ways in which the poet creates a sense of movement or change throughout this poem.', board: 'CAIE', paper: 'Literature', questionType: 'Unseen Poetry' },
+
+  // ============================================================
+  // EXTENDED QUESTIONS - ALL BOARDS
+  // ============================================================
+
+  // --- AQA Extended Questions ---
+  { id: 'aqa-ext-1', text: 'How does Priestley use dramatic techniques to convey the theme of social responsibility throughout the play?', board: 'AQA', paper: 'Extended', questionType: 'Extended Response' },
+  { id: 'aqa-ext-2', text: 'Evaluate the extent to which the writer successfully creates an atmosphere of menace in the opening of the novel.', board: 'AQA', paper: 'Extended', questionType: 'Extended Response' },
+
+  // --- Edexcel Extended Questions ---
+  { id: 'edexcel-ext-1', text: 'How does the author explore the concept of identity through the experiences of the main character?', board: 'Edexcel', paper: 'Extended', questionType: 'Extended Response' },
+  { id: 'edexcel-ext-2', text: 'To what extent does the writer succeed in making the reader sympathise with the antagonist?', board: 'Edexcel', paper: 'Extended', questionType: 'Extended Response' },
+
+  // --- OCR Extended Questions ---
+  { id: 'ocr-ext-1', text: 'Analyse how the writer uses contrasting settings to develop the central themes of the narrative.', board: 'OCR', paper: 'Extended', questionType: 'Extended Response' },
+  { id: 'ocr-ext-2', text: 'Discuss how effectively the playwright uses dialogue to reveal character and advance the plot.', board: 'OCR', paper: 'Extended', questionType: 'Extended Response' },
+
+  // --- WJEC Extended Questions ---
+  { id: 'wjec-ext-1', text: 'How does the writer\'s use of first-person narrative affect the reader\'s understanding of events and the narrator\'s reliability?', board: 'WJEC', paper: 'Extended', questionType: 'Extended Response' },
+  { id: 'wjec-ext-2', text: 'Evaluate how successfully the writer has created a concluding chapter that resolves the tensions established throughout the narrative.', board: 'WJEC', paper: 'Extended', questionType: 'Extended Response' },
+
+  // --- CAIE Extended Questions ---
+  { id: 'caie-ext-1', text: 'Analyse how the text you have studied has shaped or challenged your own perspectives on a significant human issue.', board: 'CAIE', paper: 'Extended', questionType: 'Extended Response' },
+  { id: 'caie-ext-2', text: 'Discuss how effectively the writer uses narrative techniques to create an unreliable narrator and maintain reader engagement.', board: 'CAIE', paper: 'Extended', questionType: 'Extended Response' },
 ]
 
 export function getQuestionsForType(board: string, paper: string, questionType: string): ExamQuestion[] {

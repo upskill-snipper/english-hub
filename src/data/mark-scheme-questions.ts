@@ -1495,6 +1495,195 @@ const wjecLiterature: MarkScheme[] = [
   },
 ]
 
+// ── CAIE Mark Schemes ────────────────────────────────────────────────────────
+
+const caieLanguage: MarkScheme[] = [
+  {
+    id: 'caie-lang-p1-q1',
+    board: 'CAIE',
+    subject: 'Language',
+    paper: 'Paper 1: Reading & Language Use',
+    question: 'Q1 — Summary of main ideas (AO1)',
+    totalMarks: 10,
+    levels: [
+      { level: 1, marks: '1-3', descriptor: 'Attempts to identify main ideas but the summary is incomplete or inaccurate. Limited use of own words.' },
+      { level: 2, marks: '4-6', descriptor: 'Identifies most main ideas. Some accurate use of own words, though may include unnecessary detail.' },
+      { level: 3, marks: '7-9', descriptor: 'Clearly identifies key ideas. Effectively uses own words. Well-organised and concise.' },
+      { level: 4, marks: '10', descriptor: 'Perceptively identifies main ideas with precise use of own words. Excellent organisation and brevity.' },
+    ],
+    topTips: [
+      'Read the text twice before summarising.',
+      'Use your own words — direct quotation loses marks.',
+      'Focus on main ideas, not supporting details.',
+      'Aim for one-third of the original text\'s length.',
+      'Organise your summary logically.',
+    ],
+    commonMistakes: [
+      'Copying too much from the original text.',
+      'Including minor details rather than main ideas.',
+      'Writing a summary that\'s too long.',
+      'Changing the meaning whilst rephrasing.',
+      'Poor organisation of ideas.',
+    ],
+  },
+  {
+    id: 'caie-lang-p1-q2',
+    board: 'CAIE',
+    subject: 'Language',
+    paper: 'Paper 1: Reading & Language Use',
+    question: 'Q2 — Analysis of language and style (AO2)',
+    totalMarks: 15,
+    levels: [
+      { level: 1, marks: '1-4', descriptor: 'Attempts to analyse language but comments are superficial. Limited use of subject terminology.' },
+      { level: 2, marks: '5-8', descriptor: 'Some analysis of language effects. Uses some subject terminology. Attempts to explain impact on reader.' },
+      { level: 3, marks: '9-12', descriptor: 'Clear analysis of language and style. Accurate use of subject terminology. Explains effects effectively.' },
+      { level: 4, marks: '13-15', descriptor: 'Perceptive analysis of language and style. Sophisticated use of terminology. Explores layers of meaning.' },
+    ],
+    topTips: [
+      'Use the PEER structure: Point, Evidence, Effect, Response.',
+      'Identify specific linguistic features and analyse their purpose.',
+      'Consider register, tone, and narrative voice.',
+      'Explain the effect on the target audience.',
+      'Use subject terminology accurately.',
+    ],
+    commonMistakes: [
+      'Identifying features without analysing effects.',
+      'Using incorrect or imprecise terminology.',
+      'Not linking analysis to the writer\'s purpose.',
+      'Over-quoting and under-explaining.',
+      'Forgetting to consider the reader.',
+    ],
+  },
+  {
+    id: 'caie-lang-p2-q1',
+    board: 'CAIE',
+    subject: 'Language',
+    paper: 'Paper 2: Directed Writing & Composition',
+    question: 'Q1 — Directed writing task (AO3)',
+    totalMarks: 25,
+    levels: [
+      { level: 1, marks: '1-7', descriptor: 'Attempts the task but may not fully meet the requirements. Limited control of register and form.' },
+      { level: 2, marks: '8-14', descriptor: 'Addresses the task appropriately. Generally suitable register and form. Some lapses in clarity.' },
+      { level: 3, marks: '15-20', descriptor: 'Fulfils the task well. Appropriate register and form. Clear and engaging writing.' },
+      { level: 4, marks: '21-25', descriptor: 'Fully achieves the task. Excellent register and form. Sophisticated, engaging writing.' },
+    ],
+    topTips: [
+      'Read the task carefully — understand purpose, audience, form, and content.',
+      'Plan before writing — structure your ideas.',
+      'Adopt the correct register and tone for the form (letter, article, speech, etc.).',
+      'Use appropriate conventions for the format.',
+      'Write with clarity and precision.',
+    ],
+    commonMistakes: [
+      'Not addressing the audience or purpose.',
+      'Using incorrect register for the form.',
+      'Poor organisation and structure.',
+      'Spelling and punctuation errors.',
+      'Not fulfilling all aspects of the task.',
+    ],
+  },
+]
+
+const caieEssayMarking: MarkScheme[] = [
+  {
+    id: 'caie-lit-essay-1',
+    board: 'CAIE',
+    subject: 'Literature',
+    paper: 'Extended Essay (40 marks)',
+    question: 'Literary essay on character, theme, or technique',
+    totalMarks: 40,
+    levels: [
+      { level: 1, marks: '1-10', descriptor: 'Simple understanding. Limited textual reference. Little analysis. Narrow interpretation.' },
+      { level: 2, marks: '11-20', descriptor: 'Clear understanding. Some textual evidence. Some analysis. Developing interpretation.' },
+      { level: 3, marks: '21-30', descriptor: 'Secure understanding. Well-chosen textual evidence. Clear analysis. Developed interpretation.' },
+      { level: 4, marks: '31-40', descriptor: 'Sophisticated understanding. Judicious textual references. Perceptive analysis. Critical interpretation.' },
+    ],
+    topTips: [
+      'Develop a clear thesis and sustain it throughout.',
+      'Use PEE: Point, Evidence (quotation), Explanation.',
+      'Embed quotations — avoid standalone quotes.',
+      'Analyse language, form, and structure.',
+      'Develop your ideas — don\'t just make statements.',
+      'Consider multiple interpretations and engage critically.',
+    ],
+    commonMistakes: [
+      'Telling the story rather than analysing it.',
+      'Using long quotations without explanation.',
+      'Not developing points beyond surface level.',
+      'Forgetting to analyse form and structure.',
+      'Straying from the argument.',
+      'Writing descriptively rather than analytically.',
+    ],
+  },
+]
+
+// ── Edexcel Extended Mark Schemes ────────────────────────────────────────────
+
+const edexcelExtended: MarkScheme[] = [
+  {
+    id: 'edexcel-ext-comp-1',
+    board: 'Edexcel',
+    subject: 'Language',
+    paper: 'Extended: Comparative Writing',
+    question: 'Compare two texts on a given theme',
+    totalMarks: 20,
+    levels: [
+      { level: 1, marks: '1-5', descriptor: 'Simple comparison. Limited detailed reference. Basic analysis.' },
+      { level: 2, marks: '6-10', descriptor: 'Some clear comparison. Adequate evidence. Some analysis.' },
+      { level: 3, marks: '11-15', descriptor: 'Clear sustained comparison. Well-chosen evidence. Developed analysis.' },
+      { level: 4, marks: '16-20', descriptor: 'Perceptive detailed comparison. Judicious evidence. Sophisticated analysis.' },
+    ],
+    topTips: [
+      'Write about both texts together, not separately.',
+      'Use comparative language: "whereas," "similarly," "in contrast."',
+      'Select precise evidence from both texts.',
+      'Analyse similarities AND differences.',
+      'Develop analytical points rather than just noting contrasts.',
+    ],
+    commonMistakes: [
+      'Treating it as two separate analyses.',
+      'Using vague comparative language.',
+      'Over-quoting without explanation.',
+      'Only noting obvious surface differences.',
+      'Failing to balance discussion of both texts.',
+    ],
+  },
+]
+
+// ── OCR Extended Mark Schemes ────────────────────────────────────────────────
+
+const ocrExtended: MarkScheme[] = [
+  {
+    id: 'ocr-ext-response-1',
+    board: 'OCR',
+    subject: 'Language',
+    paper: 'Extended: Analytical Response',
+    question: 'Extended analytical response to a text',
+    totalMarks: 30,
+    levels: [
+      { level: 1, marks: '1-7', descriptor: 'Simple response. Limited analysis. Minimal development of ideas.' },
+      { level: 2, marks: '8-15', descriptor: 'Developing response. Some sustained analysis. Ideas developing.' },
+      { level: 3, marks: '16-23', descriptor: 'Effective response. Clear sustained analysis. Well-developed ideas.' },
+      { level: 4, marks: '24-30', descriptor: 'Sophisticated response. Perceptive analysis. Ideas fully developed.' },
+    ],
+    topTips: [
+      'Plan your response before writing.',
+      'Structure your response with clear paragraphing.',
+      'Develop each point fully before moving to the next.',
+      'Use embedded quotations.',
+      'Consider multiple perspectives and interpretations.',
+      'Conclude with a synthesis of your analysis.',
+    ],
+    commonMistakes: [
+      'Lack of clear structure.',
+      'Points left undeveloped.',
+      'Insufficient textual evidence.',
+      'Superficial analysis.',
+      'Jumping between ideas without coherence.',
+    ],
+  },
+]
+
 // ── Exported registry ────────────────────────────────────────────────────────
 
 export const markSchemeQuestions: MarkScheme[] = [
@@ -1502,14 +1691,18 @@ export const markSchemeQuestions: MarkScheme[] = [
   ...aqaLiterature,
   ...edexcelLanguage,
   ...edexcelLiterature,
+  ...edexcelExtended,
   ...ocrLanguage,
   ...ocrLiterature,
+  ...ocrExtended,
   ...wjecLanguage,
   ...wjecLiterature,
+  ...caieLanguage,
+  ...caieEssayMarking,
 ]
 
 /** All unique boards */
-export const boards = ['AQA', 'Edexcel', 'OCR', 'WJEC'] as const
+export const boards = ['AQA', 'Edexcel', 'OCR', 'WJEC', 'CAIE'] as const
 export type Board = (typeof boards)[number]
 
 /** Get all mark schemes for a given board */

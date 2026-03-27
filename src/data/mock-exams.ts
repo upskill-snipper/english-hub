@@ -1196,13 +1196,17 @@ export const mockExamPapers: MockExamPaper[] = [
   },
 ]
 
-// ─── Import Expanded Exam Bank (120 additional papers) ──────────────────────
+// ─── Import Expanded Exam Bank ─────────────────────────────────────────────────
 
+import { wjecMockExams } from "./mock-exams-wjec"
+import { edexcelMockExams } from "./mock-exams-edexcel"
 import { expandedMockExams } from './mock-exams/index'
 
-/** All mock exam papers — original 8 + 120 expanded = 128 total */
+/** All mock exam papers — original 8 + 6 Edexcel + 120 expanded = 134 total */
 export const allMockExamPapers: MockExamPaper[] = [
   ...mockExamPapers,
+  ...wjecMockExams,
+  ...edexcelMockExams,
   ...expandedMockExams,
 ]
 

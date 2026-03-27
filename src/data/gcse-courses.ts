@@ -37,7 +37,37 @@ const gcseLangReading: CourseData = {
   <li>No analysis or explanation is needed.</li>
 </ul>
 
+<h3>Understanding the Mark Scheme</h3>
+<p><strong>AQA Q1 Mark Scheme:</strong></p>
+<ul>
+  <li><strong>1 mark per correct point</strong> — Straightforward, no partial credit.</li>
+  <li>Points must be <strong>distinct and separate</strong> — you cannot score two marks for paraphrasing the same detail.</li>
+  <li>Quotation or paraphrase both work equally — there is no bonus for quoting.</li>
+  <li>The detail must relate directly to the question focus (e.g., if asked about "the weather," a detail about a character's clothes won't score).</li>
+</ul>
+
 <div class="text-extract">The kitchen was cold and unwelcoming. Frost clung to the inside of the window pane, and the tap dripped with a relentless, hollow rhythm. A single light bulb hung from the ceiling, casting long shadows across the cracked tiles. On the table sat a bowl of porridge, untouched and already forming a grey skin on its surface.<div class="source">Original passage in the style of AQA exam fiction extracts</div></div>
+
+<h3>Worked Example 1: What Works</h3>
+<p><strong>Question:</strong> List four things the passage tells us about the kitchen.</p>
+<p><strong>Grade 4 Response (Full 4 Marks):</strong></p>
+<ol>
+  <li>It was cold and unwelcoming.</li>
+  <li>Frost was on the inside of the window pane.</li>
+  <li>A single light bulb hung from the ceiling.</li>
+  <li>There was a bowl of porridge on the table.</li>
+</ol>
+<p><strong>Why this scores 4/4:</strong> Each point is clear, distinct, directly from the text, and relevant to the question focus.</p>
+
+<h3>Worked Example 2: Common Pitfall</h3>
+<p><strong>Question:</strong> List four things the passage tells us about the kitchen.</p>
+<p><strong>Student Response (Scores 2/4):</strong></p>
+<ol>
+  <li>It was cold and unwelcoming.</li>
+  <li>It was dark and miserable. <strong>[X — Inference. "Miserable" is not stated.]</strong></li>
+  <li>There was only one light. <strong>[✓ — Correct, paraphrased from "single light bulb"]</strong></li>
+  <li>The porridge showed that no one cared about food. <strong>[X — Inference. Not explicitly stated.]</strong></li>
+</ol>
 
 <h3>Step-by-Step Strategy</h3>
 <ol>
@@ -45,14 +75,38 @@ const gcseLangReading: CourseData = {
   <li><strong>Number the lines</strong> in the specified section so you stay within range.</li>
   <li><strong>Scan and highlight</strong> — look for simple, factual details. Do not overthink.</li>
   <li><strong>Write short statements</strong> — one per line. For example: <em>"The kitchen was cold and unwelcoming."</em></li>
+  <li><strong>Do a final check</strong> — can each point be found directly in the text? Does each relate to the question?</li>
 </ol>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Many students lose marks by going outside the specified line range. Always double-check you are reading from the correct section before you write anything.</div>
+<h3>Practice Extraction: Multiple Texts</h3>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Giving a point that requires inference — e.g. writing "The person who lives here is poor." The question asks for explicit information, not deduction. Stick to what is directly stated in the text.</div>
+<p><strong>Extract A:</strong> <em>"Sarah arrived at the station at ten o'clock. The platform was nearly empty, with only a few scattered commuters waiting for the next train. A cleaner was sweeping leaves from the corner. The November wind cut through the shelter, and Sarah wrapped her coat tighter around her shoulders."</em></p>
+
+<p><strong>Question:</strong> List four things about the station.</p>
+<p><strong>Sample Answers:</strong></p>
+<ol>
+  <li>Sarah arrived at ten o'clock.</li>
+  <li>The platform was nearly empty.</li>
+  <li>A cleaner was sweeping leaves.</li>
+  <li>The November wind was cold.</li>
+</ol>
+
+<div class="examiner-tip"><strong>Examiner Tip 1:</strong> Many students lose marks by going outside the specified line range. Always double-check you are reading from the correct section before you write anything.</div>
+
+<div class="examiner-tip"><strong>Examiner Tip 2:</strong> Q1 is a quick-fire question. Spend no more than 5 minutes on it so you have adequate time for Q2, Q3, and Q4, which are worth more marks.</div>
+
+<div class="examiner-tip"><strong>Examiner Tip 3:</strong> If you miss a detail, keep moving. Spending 2 minutes hunting for a fourth detail wastes time. Move on and come back if you have time at the end.</div>
+
+<div class="common-mistake"><strong>Common Mistake 1:</strong> Giving a point that requires inference — e.g. writing "The person who lives here is poor." The question asks for explicit information, not deduction. Stick to what is directly stated in the text.</div>
+
+<div class="common-mistake"><strong>Common Mistake 2:</strong> Listing the same point twice in different words. For example: "The kitchen was cold" and "The temperature was low." These are the same detail. The examiner will only credit one.</div>
+
+<div class="common-mistake"><strong>Common Mistake 3:</strong> Writing too much detail. A simple, short sentence is enough. Do not quote long phrases — just lift one key fact per line.</div>
+
+<div class="grade-9-technique"><strong>Grade 9 Technique:</strong> If a detail could be expressed in two ways, choose the most precise wording. For instance, instead of "There was frost," write "Frost clung to the inside of the window pane" — it shows you've read carefully and selected exact language from the text.</div>
 
 <h3>Quick Practice</h3>
-<p>Using the extract above, list four things you learn about the kitchen:</p>
+<p>Using the original kitchen extract, list four things you learn about the kitchen:</p>
 <ol>
   <li>The kitchen was cold and unwelcoming.</li>
   <li>Frost clung to the inside of the window pane.</li>
@@ -60,7 +114,18 @@ const gcseLangReading: CourseData = {
   <li>A bowl of porridge sat untouched on the table.</li>
 </ol>
 
-<p>Notice how each point is a simple, direct statement lifted from the text. That is all Q1 requires — accuracy and relevance, not flair.</p>
+<p><strong>Why these answers work:</strong> Each is a direct, factual statement from the passage. No inference. No waffle. No analysis. That is all Q1 requires — accuracy and relevance.</p>
+
+<h3>Time Management Advice</h3>
+<p>On Paper 1, you have 90 minutes total. Allocate your time as follows:</p>
+<ul>
+  <li><strong>Q1 (4 marks):</strong> 5 minutes max</li>
+  <li><strong>Q2 (8 marks):</strong> 12 minutes</li>
+  <li><strong>Q3 (8 marks):</strong> 12 minutes</li>
+  <li><strong>Q4 (20 marks):</strong> 35 minutes</li>
+  <li><strong>Checking:</strong> 10 minutes</li>
+</ul>
+<p>Never exceed 5 minutes on Q1, as it is only 4% of the paper's marks.</p>
 `,
       quiz: [
         {
@@ -133,10 +198,10 @@ const gcseLangReading: CourseData = {
 
 <h3>The AQA Mark Scheme: What Gets Top Marks</h3>
 <ul>
-  <li><strong>Level 4 (7-8 marks):</strong> Perceptive, detailed analysis. Uses subject terminology accurately and precisely. Analyses effects of individual words and phrases.</li>
-  <li><strong>Level 3 (5-6 marks):</strong> Clear, relevant explanations with appropriate terminology.</li>
-  <li><strong>Level 2 (3-4 marks):</strong> Attempts to comment on language with some awareness of methods.</li>
-  <li><strong>Level 1 (1-2 marks):</strong> Simple identification of language features with little explanation.</li>
+  <li><strong>Level 4 (7-8 marks):</strong> Perceptive, detailed analysis. Uses subject terminology accurately and precisely. Analyses effects of individual words and phrases. Evaluates writer's choices.</li>
+  <li><strong>Level 3 (5-6 marks):</strong> Clear, relevant explanations with appropriate terminology. Good use of evidence and analysis.</li>
+  <li><strong>Level 2 (3-4 marks):</strong> Attempts to comment on language with some awareness of methods. Some analysis but limited in depth.</li>
+  <li><strong>Level 1 (1-2 marks):</strong> Simple identification of language features with little explanation. Minimal analysis of effects.</li>
 </ul>
 
 <div class="text-extract">The fog did not simply arrive; it devoured the street. Lamp posts became vague, ghostly sentinels, their amber glow reduced to dull smudges of warmth. Every sound was swallowed — footsteps, voices, the distant growl of traffic — all consumed by the grey, suffocating silence.<div class="source">Original passage in the style of AQA exam fiction extracts</div></div>
@@ -149,19 +214,98 @@ const gcseLangReading: CourseData = {
   <li><strong>Why</strong> — Explain the effect on the reader. What does it suggest, imply, or make the reader feel?</li>
 </ol>
 
-<div class="model-answer"><strong>Model Answer (Grade 8-9):</strong> The writer personifies the fog through the verb "devoured," which transforms a natural phenomenon into something predatory and consuming. The connotations of violent consumption suggest the fog is not merely present but actively hostile, stripping the street of its identity. This is reinforced by the metaphor "ghostly sentinels" to describe the lamp posts, which implies that familiar, reassuring objects have been rendered spectral and ineffective — guardians that can no longer protect. The cumulative effect of the listing — "footsteps, voices, the distant growl of traffic" — emphasises the totality of the fog's dominance, as every layer of human presence is systematically erased, leaving the reader with a claustrophobic sense of isolation.</div>
+<h3>Worked Example 1: Single-Technique Paragraph</h3>
+<p><strong>Weak response (Feature spotting):</strong> "The writer uses personification with 'devoured.' This is a powerful word."</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Avoid "feature spotting" — simply naming a technique without explaining its effect. The examiner wants to see you explore <em>why</em> the writer chose that particular word or image and what it makes the reader think or feel.</div>
+<p><strong>Strong response (What-How-Why):</strong> The writer uses the verb "devoured" to personify the fog, transforming it from a passive natural phenomenon into something predatory and aggressive. The verb connotes violent consumption and malice, suggesting the fog is not merely present but actively hostile, deliberately erasing the familiar landmarks of the street. This elevates the reader's sense of threat and unease beyond simple poor visibility into a feeling of being hunted or consumed.</p>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Writing "This creates a vivid image in the reader's mind" as your entire explanation. This is too vague. Be specific: what kind of image? What atmosphere, emotion, or idea does it convey?</div>
+<h3>Worked Example 2: Grade 8-9 Full Response</h3>
+<p><strong>Model Answer (Integrated, Sophisticated):</strong></p>
 
-<h3>Key Language Methods to Revise</h3>
+<p>The writer creates a pervasive sense of menace and oppression through sustained personification and predatory imagery. The fog "devoured the street" — the verb personifies fog as a predatory creature, and "devoured" specifically evokes violent consumption and malice. This is not a fog that merely blocks sight but an active, hostile force. The lamposts become "ghostly sentinels," which compounds this effect: they are rendered ineffective, unable to guide or protect. The word "ghostly" suggests they are present only as specks, almost supernatural, reinforcing the sense that the familiar world has been drained of substance and reliability.</p>
+
+<p>The passage employs anaphoric repetition with "consumed" and "swallowed," words that echo the initial verb "devoured" and build a pattern of violent consumption. The listing structure — "footsteps, voices, the distant growl of traffic" — emphasises the systematic erasure of all human sound and presence. Short, punchy phrases heighten the sense of suffocation: the sound is not merely absent but "grey, suffocating silence" — an oxymoronic fusion of visual and auditory language that destabilises the reader's sense of the world. By the passage's end, the fog has transformed from a weather phenomenon into something that obliterates identity and security.</p>
+
+<h3>Language Methods: Detailed Breakdown</h3>
+
+<h4>Metaphor and Simile</h4>
+<p><strong>Definition:</strong> Metaphor states that something <em>is</em> something else; simile states it <em>is like</em> something else.</p>
+<p><strong>Example from extract:</strong> "Lamp posts became vague, ghostly sentinels" = metaphor (lamp posts <em>are</em> sentinels, not like sentinels)</p>
+<p><strong>Effect to explore:</strong> What does the comparison reveal? What are the connotations of the comparison word?</p>
+
+<h4>Personification</h4>
+<p><strong>Definition:</strong> Attributing human qualities to non-human things.</p>
+<p><strong>Examples from extract:</strong> "devoured," "swallowed," "consumed" — the fog acts like a creature with agency and hunger.</p>
+<p><strong>Effect to explore:</strong> What does the humanisation suggest about the non-human thing? What emotions does it evoke?</p>
+
+<h4>Semantic Field</h4>
+<p><strong>Definition:</strong> A group of words related to the same topic or idea, creating a cohesive atmosphere.</p>
+<p><strong>Example from extract:</strong> "devoured," "swallowed," "consumed" form a semantic field of violent consumption and predation.</p>
+<p><strong>Effect to explore:</strong> How does this cluster of related words reinforce a particular mood or idea?</p>
+
+<h4>Sensory Language</h4>
+<p><strong>Definition:</strong> Language that appeals to the five senses (sight, sound, touch, taste, smell).</p>
+<p><strong>Examples from extract:</strong> "amber glow" (sight), "distant growl of traffic" (sound), "suffocating" (touch/sensation)</p>
+<p><strong>Effect to explore:</strong> Which senses dominate? What does this tell us about the writer's focus?</p>
+
+<h4>Sentence Forms and Syntax</h4>
+<p><strong>Techniques:</strong></p>
 <ul>
-  <li><strong>Metaphor and simile</strong> — comparisons that shape meaning.</li>
-  <li><strong>Personification</strong> — giving human qualities to non-human things.</li>
-  <li><strong>Semantic fields</strong> — groups of words from the same topic area.</li>
-  <li><strong>Sensory language</strong> — sight, sound, touch, taste, smell.</li>
-  <li><strong>Sentence forms</strong> — short sentences for impact, long sentences for building tension.</li>
+  <li><strong>Short sentences:</strong> Create impact and urgency. Break ideas sharply.</li>
+  <li><strong>Long sentences:</strong> Build tension, accumulate ideas, create a sense of overwhelming experience.</li>
+  <li><strong>Listing (asyndeton):</strong> Rapid-fire ideas without conjunctions increase pace and intensity.</li>
+  <li><strong>Dashes and semicolons:</strong> Create pauses, emphasise contrasts, allow reader reflection.</li>
+</ul>
+<p><strong>Example from extract:</strong> "Every sound was swallowed — footsteps, voices, the distant growl of traffic — all consumed by the grey, suffocating silence." The dashes and listing create a breathless, suffocating rhythm that mirrors the fog's consuming effect.</p>
+
+<h3>Common Pitfalls and How to Avoid Them</h3>
+
+<div class="common-mistake"><strong>Common Mistake 1: Feature Spotting</strong> — Simply naming techniques without explaining effects. <strong>WRONG:</strong> "The writer uses metaphor: 'ghostly sentinels.'" <strong>RIGHT:</strong> "The metaphor 'ghostly sentinels' renders familiar protective objects ineffectual and spectral, heightening the reader's sense of vulnerability."</div>
+
+<div class="common-mistake"><strong>Common Mistake 2: Vague Effect Statements</strong> — Writing "This creates a vivid image" or "It has a strong effect." <strong>WRONG:</strong> "The personification makes the passage more interesting." <strong>RIGHT:</strong> "The personification transforms the fog from a passive natural force into a malevolent predator, evoking fear and claustrophobia."</div>
+
+<div class="common-mistake"><strong>Common Mistake 3: Over-interpreting</strong> — Reading meanings that aren't there. <strong>WRONG:</strong> "The word 'devoured' suggests the writer had a traumatic childhood." <strong>RIGHT:</strong> "The word 'devoured' evokes predatory violence and active malice, making the fog seem intentionally destructive rather than indifferent."</div>
+
+<div class="common-mistake"><strong>Common Mistake 4: Weak Integration of Quotations</strong> — Quoting without embedding properly. <strong>WRONG:</strong> "Personification is used. 'It devoured the street.' This is powerful." <strong>RIGHT:</strong> "The personification 'devoured' presents the fog as an active, predatory force, not merely a passive weather condition."</div>
+
+<h3>Practice Exercise: Analyse This Passage</h3>
+
+<p><strong>Extract:</strong> "The silence pressed down like a physical weight. Every breath felt stolen. The darkness crept closer, inch by inch, until the edges of the room seemed to dissolve into nothingness. Sarah's heartbeat echoed in her ears — the only sound in a world that had forgotten noise."</p>
+
+<p><strong>Identify and analyse:</strong></p>
+<ul>
+  <li>Simile: "pressed down like a physical weight" — suggests silence has tangible, oppressive force</li>
+  <li>Metaphor: "stolen" (implied — breath is stolen, not given) — suggests agency or theft</li>
+  <li>Personification: "crept closer," "forgotten noise" — darkness and world treated as agents</li>
+  <li>Sensory language: emphasis on auditory and tactile experience over visual</li>
+  <li>Sentence form: short, punchy final sentence — provides climactic emphasis after longer build-up</li>
+</ul>
+
+<div class="examiner-tip"><strong>Examiner Tip 1:</strong> Avoid "feature spotting" — simply naming a technique without explaining its effect. The examiner wants to see you explore <em>why</em> the writer chose that particular word or image and what it makes the reader think or feel.</div>
+
+<div class="examiner-tip"><strong>Examiner Tip 2:</strong> Aim for 4-5 detailed paragraphs, each covering one or two related techniques. Never write more than one sentence per technique — depth beats breadth.</div>
+
+<div class="examiner-tip"><strong>Examiner Tip 3:</strong> Use subject terminology accurately (metaphor, not just "comparison"). Incorrect terminology will cost you marks.</div>
+
+<div class="examiner-tip"><strong>Examiner Tip 4:</strong> Focus on techniques that cluster together thematically. Do not jump randomly from one technique to another. Show how the writer builds meaning through cumulative choices.</div>
+
+<h3>Key Language Methods to Master</h3>
+<ul>
+  <li><strong>Metaphor and simile</strong> — comparisons that shape meaning and reveal attitudes.</li>
+  <li><strong>Personification</strong> — giving human qualities to non-human things to evoke emotion.</li>
+  <li><strong>Semantic fields</strong> — groups of words creating cohesive mood and reinforcing themes.</li>
+  <li><strong>Sensory language</strong> — sight, sound, touch, taste, smell — which senses dominate?</li>
+  <li><strong>Sentence forms</strong> — short sentences for impact, long sentences for building tension or complexity.</li>
+  <li><strong>Alliteration and assonance</strong> — sound patterns that create rhythm and emphasis.</li>
+  <li><strong>Imagery</strong> — visual, auditory, tactile, olfactory, gustatory appeals.</li>
+</ul>
+
+<h3>Time Management</h3>
+<p>For Q2 (8 marks, 12 minutes):</p>
+<ul>
+  <li><strong>Planning (2 min):</strong> Identify 3-4 key techniques to analyse.</li>
+  <li><strong>Writing (9 min):</strong> 4-5 paragraphs with integrated evidence and analysis.</li>
+  <li><strong>Checking (1 min):</strong> Ensure each paragraph has a clear technique, evidence, and effect explanation.</li>
 </ul>
 `,
       quiz: [
@@ -233,30 +377,114 @@ const gcseLangReading: CourseData = {
 
 <div class="key-term"><strong>Key Term: Structural Feature</strong> — A deliberate choice about how a text is organised, including focus shifts, narrative perspective changes, the use of openings and endings, pacing, and the ordering of events.</div>
 
+<h3>The AQA Mark Scheme for Q3</h3>
+<ul>
+  <li><strong>Level 4 (7-8 marks):</strong> Perceptive analysis of structural features across the whole text. Clear links between structure and reader effect. Precise subject terminology.</li>
+  <li><strong>Level 3 (5-6 marks):</strong> Clear explanations of structural choices with some analysis of effect. Mostly whole-text approach.</li>
+  <li><strong>Level 2 (3-4 marks):</strong> Identifies structural features with some explanation of effect. May focus on parts rather than whole.</li>
+  <li><strong>Level 1 (1-2 marks):</strong> Simple identification of structural features. Limited explanation or link to effect.</li>
+</ul>
+
 <h3>What Counts as "Structure"?</h3>
 <ul>
   <li><strong>Focus shifts</strong> — moving from a wide shot to a close-up, or from external action to internal thought.</li>
-  <li><strong>Openings</strong> — how the writer hooks the reader (e.g. in medias res, mystery, description).</li>
-  <li><strong>Endings</strong> — how the text concludes (e.g. cliffhanger, resolution, circular structure).</li>
+  <li><strong>Openings</strong> — how the writer hooks the reader (e.g. in medias res, mystery, description, question).</li>
+  <li><strong>Endings</strong> — how the text concludes (e.g. cliffhanger, resolution, circular structure, twist, ambiguity).</li>
   <li><strong>Pacing</strong> — acceleration through short sentences/paragraphs; deceleration through long description.</li>
-  <li><strong>Narrative perspective</strong> — shifts between characters or between present and past.</li>
-  <li><strong>Paragraph length and arrangement</strong> — a single-sentence paragraph for emphasis, for example.</li>
+  <li><strong>Narrative perspective</strong> — shifts between characters, tense, or between present and past.</li>
+  <li><strong>Paragraph length and arrangement</strong> — a single-sentence paragraph for emphasis, or extended description for immersion.</li>
+  <li><strong>Temporal shifts</strong> — moving backward and forward in time (flashbacks, foreshadowing).</li>
+  <li><strong>Contrast and juxtaposition</strong> — placing two opposite ideas or scenes next to each other for effect.</li>
 </ul>
 
 <div class="text-extract">The market square was alive. Traders bellowed prices, children darted between stalls, and the smell of roasting chestnuts mingled with engine fumes. Elena stood at the edge of it all, clutching her letter.<br><br>She unfolded it for the third time. The words had not changed. <em>We regret to inform you…</em><br><br>Around her the crowd pressed on, oblivious. A woman laughed. A dog barked. Somewhere a glass shattered.<br><br>Elena folded the letter and placed it in her coat pocket. Then she walked into the crowd and let it swallow her whole.<div class="source">Original passage in the style of AQA exam fiction extracts</div></div>
 
 <h3>Approaching Q3: A Whole-Text Method</h3>
 <ol>
-  <li><strong>Beginning</strong> — How does the writer open? What is established? What hooks the reader?</li>
-  <li><strong>Development</strong> — How does the focus shift? Does the perspective narrow or widen? Does tension build?</li>
-  <li><strong>Ending</strong> — How does the writer conclude? Is there resolution, ambiguity, or a twist?</li>
+  <li><strong>Opening (Beginning):</strong> How does the writer hook the reader? What is established? What atmosphere or tension is created?</li>
+  <li><strong>Development (Middle):</strong> How does the focus shift? Does tension build or ease? Does the perspective narrow or widen? What pacing choices are made?</li>
+  <li><strong>Ending (Conclusion):</strong> How does the writer conclude? Is there resolution, ambiguity, a twist, or a question? Does the ending echo or contrast with the opening?</li>
 </ol>
 
-<div class="model-answer"><strong>Model Answer (Grade 8-9):</strong> The writer opens with a wide-angle establishing shot of the market square, using listing ("traders bellowed prices, children darted between stalls") to create a sense of bustling normality. The structural shift occurs in the second paragraph, where the focus narrows sharply to Elena and her letter, moving from the communal to the intensely personal. This contrast between the vibrant public scene and the private devastation of "We regret to inform you" creates dramatic irony — the reader understands Elena's pain while the crowd remains "oblivious." The final image of Elena letting the crowd "swallow her whole" provides a circular return to the opening's sense of the market as an overwhelming force, but the reader now perceives it differently: it is no longer alive with energy but threatening to erase Elena's individuality. The ending is deliberately ambiguous, leaving the reader uncertain whether Elena is finding comfort in anonymity or losing herself entirely.</div>
+<h3>Worked Example 1: Strong Structural Analysis (Grade 8-9)</h3>
+<p><strong>Model Paragraph:</strong> The writer opens with a wide-angle establishing shot of the market square in motion, using rapid-fire listing ("traders bellowed prices, children darted between stalls") and the exclamatory statement "The market square was alive" to create a sense of bustling normality and energy. The structural shift occurs in the second paragraph, where the focus narrows sharply from the communal chaos to Elena's intensely private moment with her letter. This movement from the macro to the micro creates dramatic irony — the reader understands Elena's inner devastation while the crowd remains "oblivious." The repetition of "Around her the crowd pressed on" reinforces this contrast. The final paragraph effects a circular return: Elena re-enters the crowd, echoing the opening's sense of the market as a living, consuming force, but the reader now perceives it differently. The metaphor "let it swallow her whole" — echoing the earlier "alive" — transforms the market from an energising space into something that threatens to erase her individuality. The ending's ambiguity — is this escape or obliteration? — leaves the reader uncertain, mirroring Elena's own emotional confusion.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Always link structural choices to the reader's experience. Do not just describe what happens ("the writer moves from the market to Elena"). Explain <em>why</em> this shift matters — what effect does it have on the reader?</div>
+<h3>Worked Example 2: Common Error — Language Analysis Disguised as Structure</h3>
+<p><strong>Weak response:</strong> "The writer uses metaphor when describing the market as 'alive.' The word 'alive' has positive connotations. The letter is described using the word 'regret,' which is sad."</p>
+<p><strong>Why this fails:</strong> This is language analysis (metaphor, connotations, word choice), not structural analysis. The examiner specifically wants you to explain how the text is <em>organised</em>, not how individual words work.</p>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Analysing language instead of structure. If you find yourself discussing metaphors or adjectives, you have drifted off-task. Q3 is about how the text is arranged, not how individual words are used.</div>
+<h3>Worked Example 3: Correct Structure Focus</h3>
+<p><strong>Strong response:</strong> "The writer structures the text by contrasting the external chaos of the market with Elena's internal emotional state. This is achieved through the opening's wide-angle perspective, which narrows in the second paragraph to focus on Elena's private moment. The structural juxtaposition emphasises the gap between public normality and private devastation."</p>
+
+<h3>Key Structural Techniques: Definitions and Examples</h3>
+
+<h4>Structural Opening Techniques</h4>
+<ul>
+  <li><strong>In medias res:</strong> Starting in the middle of action. Effect: Immediate immersion, creates momentum.</li>
+  <li><strong>Establish-then-complicate:</strong> Begin with normality, then disrupt it. Effect: Creates shock and sympathy.</li>
+  <li><strong>Question opening:</strong> Begin with a question to the reader. Effect: Engages reader intellectually, creates curiosity.</li>
+  <li><strong>Contrast opening:</strong> Begin with two opposing images. Effect: Creates tension or intrigue.</li>
+</ul>
+
+<h4>Structural Pacing Techniques</h4>
+<ul>
+  <li><strong>Short sentences and paragraphs:</strong> Accelerate pace, create tension, emphasise key moments.</li>
+  <li><strong>Long, flowing sentences:</strong> Slow pace, allow reader immersion, create reflective mood.</li>
+  <li><strong>Repetition:</strong> Creates rhythm and emphasises key ideas across the text.</li>
+  <li><strong>Pauses (white space):</strong> Single-sentence paragraphs or line breaks provide dramatic emphasis.</li>
+</ul>
+
+<h4>Structural Focus Shift Techniques</h4>
+<ul>
+  <li><strong>Macro → Micro:</strong> Wide establishing shot narrows to intimate focus (as in the Elena example).</li>
+  <li><strong>Micro → Macro:</strong> Intimate focus widens to reveal larger context.</li>
+  <li><strong>External → Internal:</strong> Objective events yield to subjective thought or emotion.</li>
+  <li><strong>Present → Past:</strong> Current action interrupted by flashback or memory.</li>
+</ul>
+
+<h3>Practice Passage for Structural Analysis</h3>
+
+<p><strong>Extract:</strong> "The interview room was silent. She had been waiting for three hours. Her name was called. She stood, her legs unsteady. The interviewer smiled and extended her hand. 'Congratulations,' she said. 'You've got the job.' Sarah heard the words but did not quite believe them. She was still unemployed. She had been for six months. But now she was not. The realisation struck her slowly, like ice melting: she was free."</p>
+
+<p><strong>Identify structural techniques:</strong></p>
+<ul>
+  <li><strong>Opening:</strong> Establishes tension through waiting and silence.</li>
+  <li><strong>Focus shift:</strong> Moves from external (waiting room, interviewer) to internal (Sarah's emotional disbelief).</li>
+  <li><strong>Pacing:</strong> Short sentences ("She stood," "The interviewer smiled") build tension; longer reflective sentences at the end slow pace and allow emotional impact.</li>
+  <li><strong>Temporal structure:</strong> Present action (interview) interrupted by backstory (six months of unemployment), then returns to present moment of realisation.</li>
+  <li><strong>Ending:</strong> Circular return to freedom theme; simile "like ice melting" provides gradual revelation matching Sarah's emotional realisation.</li>
+</ul>
+
+<h3>Avoiding the Q3 Pitfall: Language vs. Structure</h3>
+
+<p><strong>Language questions (Q2, Q4) ask about:</strong> Word choice, imagery, figurative language, sentence forms for <em>stylistic</em> effect.</p>
+<p><strong>Structural questions (Q3) ask about:</strong> How the text is <em>organised</em> — focus shifts, pacing, perspective changes, openings/endings, temporal arrangement.</p>
+
+<p><strong>Memory aid:</strong> If you are quoting a word or phrase and discussing its <em>connotations</em>, you are doing language analysis (Q2/Q4). If you are discussing <em>where</em> something appears in the text and <em>why</em> that placement matters, you are doing structure (Q3).</p>
+
+<div class="examiner-tip"><strong>Examiner Tip 1:</strong> Always link structural choices to the reader's experience. Do not just describe what happens ("the writer moves from the market to Elena"). Explain <em>why</em> this shift matters — what effect does it have on the reader's engagement, emotion, or understanding?</div>
+
+<div class="examiner-tip"><strong>Examiner Tip 2:</strong> Reference the <em>whole</em> text, not just opening or ending. Show awareness of how beginning, middle, and end work together to create effect.</div>
+
+<div class="examiner-tip"><strong>Examiner Tip 3:</strong> Use precise structural terminology: not "the writer moves from here to there," but "the writer shifts focus from the macro to the micro" or "establishes then complicates."</div>
+
+<div class="examiner-tip"><strong>Examiner Tip 4:</strong> If you mention language features (metaphor, personification, alliteration), always connect them back to structural effect. For example: "The listing in the opening creates a sense of narrative momentum that carries the reader into Elena's private moment."</div>
+
+<div class="common-mistake"><strong>Common Mistake 1:</strong> Analysing language instead of structure. If you find yourself discussing metaphors, connotations, or imagery in detail, you have drifted off-task. Q3 is about how the text is <em>arranged</em>, not how individual words are <em>chosen</em>.</div>
+
+<div class="common-mistake"><strong>Common Mistake 2:</strong> Discussing only the opening or ending. Q3 requires whole-text analysis. Show how the beginning sets up expectations, the middle develops or complicates them, and the ending resolves (or deliberately leaves unresolved) the tension.</div>
+
+<div class="common-mistake"><strong>Common Mistake 3:</strong> Making vague statements like "The structure is interesting" or "It keeps the reader hooked." Always explain <em>how</em> and <em>why</em>. What specific structural choices create this effect?</div>
+
+<div class="grade-9-technique"><strong>Grade 9 Technique:</strong> Analyse the structural <em>arc</em> of the text as a whole. Identify the emotional or narrative trajectory: does tension build consistently, does it peak and then ease, does it end on ambiguity? Show how structural choices (pacing, focus shifts, endings) shape this arc and create reader response.</div>
+
+<h3>Time Management</h3>
+<p>For Q3 (8 marks, 12 minutes):</p>
+<ul>
+  <li><strong>Planning (2 min):</strong> Identify opening technique, 2-3 focus shifts, and ending type.</li>
+  <li><strong>Writing (9 min):</strong> 3-4 paragraphs covering opening, development, and ending.</li>
+  <li><strong>Checking (1 min):</strong> Ensure structural terminology is used accurately and effects are linked to reader experience.</li>
+</ul>
 `,
       quiz: [
         {
@@ -427,11 +655,21 @@ const gcseLangReading: CourseData = {
 <h3>How It Works</h3>
 <p>The exam paper presents a list of eight statements labelled A–H. Each statement makes a claim about what happens or what is described in a specified section of Source A. Exactly four statements are true and four are false. You shade the boxes next to the four you believe are true.</p>
 
+<h3>The AQA Mark Scheme</h3>
+<ul>
+  <li><strong>4 marks:</strong> All four correct statements selected, no incorrect statements selected.</li>
+  <li><strong>3 marks:</strong> Three correct statements selected, no incorrect statements selected; OR four correct statements selected with one incorrect.</li>
+  <li><strong>2 marks:</strong> Two correct statements selected, no incorrect statements selected; OR three correct statements selected with one incorrect.</li>
+  <li><strong>1 mark:</strong> One correct statement selected, no incorrect statements selected; OR two correct statements selected with one incorrect.</li>
+  <li><strong>0 marks:</strong> No correct statements selected, or more than one incorrect statement selected alongside correct ones.</li>
+</ul>
+<p><strong>Critical rule:</strong> Shading five or more boxes will result in no credit, even if four of them are correct. Precision matters.</p>
+
 <h3>Example Source Extract</h3>
 <div class="text-extract">The expedition set out at dawn on 14th March 1897. The party consisted of seven men, two of whom had previously attempted the crossing. They carried provisions for twelve days and a single canvas tent. The weather, which had been fair for a week, turned abruptly; by noon a bitter wind swept across the plateau, reducing visibility to a few yards. Captain Hargreaves ordered a halt and the men made camp beside a frozen stream.<div class="source">Original passage in the style of AQA exam non-fiction extracts</div></div>
 
-<h3>Example Statements</h3>
-<p>Which four are true according to the extract above?</p>
+<h3>Worked Example 1: Full Marks Response</h3>
+<p><strong>Question:</strong> Which four statements are true?</p>
 <ul>
   <li>A: The expedition left in the morning. <strong>✓ TRUE</strong> — "set out at dawn"</li>
   <li>B: There were eight men in the party. <strong>✗ FALSE</strong> — there were seven.</li>
@@ -442,18 +680,85 @@ const gcseLangReading: CourseData = {
   <li>G: The men camped near a frozen stream. <strong>✓ TRUE</strong> — "beside a frozen stream"</li>
   <li>H: Captain Hargreaves decided to continue marching. <strong>✗ FALSE</strong> — he "ordered a halt."</li>
 </ul>
+<p><strong>Correct answer: Shade A, D, F, G (exactly 4 boxes) = 4 marks</strong></p>
 
-<h3>Top Strategies</h3>
+<h3>Worked Example 2: Common Error</h3>
+<p><strong>Student shades:</strong> A, D, F, G, and H (5 boxes total)</p>
+<p><strong>Score:</strong> 0 marks (shading more than 4 boxes automatically earns no credit, regardless of how many are correct)</p>
+
+<h3>Worked Example 3: Partial Credit</h3>
+<p><strong>Student shades:</strong> A, D, F, B (4 boxes)</p>
+<p><strong>Analysis:</strong> A, D, F are correct; B is incorrect.</p>
+<p><strong>Score:</strong> 2 marks (three correct statements with one incorrect statement)</p>
+
+<h3>Recognising False Statements: Distortion Tactics</h3>
+<p>Examiners use specific tricks to create plausible false statements. Watch for these patterns:</p>
+
+<h4>Tactic 1: Subtle Number Changes</h4>
+<p><strong>Text says:</strong> "The party consisted of seven men"<br>
+<strong>False statement:</strong> "There were eight members of the party"<br>
+<strong>Why it's tricky:</strong> The number is close, and "members" instead of "men" adds confusion.</p>
+
+<h4>Tactic 2: Reversing Quantity Words</h4>
+<p><strong>Text says:</strong> "Only two had previously attempted the crossing"<br>
+<strong>False statement:</strong> "Most of the men had previous expedition experience"<br>
+<strong>Why it's tricky:</strong> Uses different language but misrepresents the "few" versus "many" implication.</p>
+
+<h4>Tactic 3: Adding Inference</h4>
+<p><strong>Text says:</strong> "The weather turned abruptly"<br>
+<strong>False statement:</strong> "The men were surprised by the sudden weather change"<br>
+<strong>Why it's tricky:</strong> "Surprised" is an inference, not stated in the text.</p>
+
+<h4>Tactic 4: Confusing Temporal Details</h4>
+<p><strong>Text says:</strong> "The weather had been fair for a week, then turned abruptly"<br>
+<strong>False statement:</strong> "The poor weather had lasted for several days before the expedition set out"<br>
+<strong>Why it's tricky:</strong> Reverses the timeline — weather was fair before, then turned bad.</p>
+
+<h3>Step-by-Step Strategy</h3>
 <ol>
-  <li><strong>Read the specified lines first</strong> — do not rely on memory from your initial read-through.</li>
-  <li><strong>Check each statement against the text</strong> — go through A–H systematically.</li>
-  <li><strong>Watch for subtle distortions</strong> — "all" versus "some," "before" versus "after," exact numbers changed slightly.</li>
-  <li><strong>Do not shade more than four boxes</strong> — if you shade five or more, you automatically lose marks.</li>
+  <li><strong>Read the entire extract specified</strong> — do not skim or rely on memory.</li>
+  <li><strong>Read each statement carefully</strong> — underline key words (numbers, names, action verbs).</li>
+  <li><strong>Check the statement against the text</strong> — find the relevant section and verify it explicitly.</li>
+  <li><strong>Mark confidently true statements</strong> — tick them on your question paper.</li>
+  <li><strong>Mark confidently false statements</strong> — cross them on your question paper.</li>
+  <li><strong>Return to any doubtful statements</strong> — re-read the text in their context.</li>
+  <li><strong>Count: shade exactly four boxes</strong> — recount before finalising.</li>
 </ol>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> If you are unsure about one statement, come back to it after checking the others. Often, once you have confidently identified three true statements, the fourth becomes clearer by elimination.</div>
+<h3>Practice Exercise</h3>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Shading five boxes "just to be safe." The mark scheme explicitly penalises extra selections — if you shade five, you will be marked out of three instead of four. Always select exactly four.</div>
+<p><strong>New Extract:</strong> <em>"Dr Eleanor Morris founded the research institute in 1956. It began with a team of five scientists and limited funding. By 1965, the institute had expanded to thirty staff members and occupied three buildings in the city centre. Morris served as director for twenty-three years. Her successor, Dr James Whitmore, took over in 1979 and modernised the laboratory equipment. Today, the institute employs over two hundred researchers and is recognised internationally for its work in genetic engineering."</em></p>
+
+<p><strong>Which four statements are true?</strong></p>
+<ul>
+  <li>A: Eleanor Morris founded the institute in 1956. [TRUE]</li>
+  <li>B: The institute originally had ten scientists on staff. [FALSE — it had five]</li>
+  <li>C: By 1965, the institute occupied three buildings. [TRUE]</li>
+  <li>D: Dr James Whitmore directed the institute for twenty-three years. [FALSE — Eleanor Morris did]</li>
+  <li>E: The institute specialises in genetic engineering. [TRUE]</li>
+  <li>F: Morris remained director until 1979. [FALSE — she left when Whitmore took over, but exact end date unclear]</li>
+  <li>G: The institute currently employs more than 200 researchers. [TRUE]</li>
+  <li>H: Whitmore expanded the laboratory equipment. [TRUE — but only one true statement left!]</li>
+</ul>
+
+<p><strong>Answer:</strong> A, C, E, G (exactly 4 boxes) = 4 marks</p>
+
+<div class="examiner-tip"><strong>Examiner Tip 1:</strong> Always double-check that you have selected exactly four boxes. A common error is selecting five in panic, which wipes out your entire score.</div>
+
+<div class="examiner-tip"><strong>Examiner Tip 2:</strong> If you are genuinely unsure about one statement, use logic: if you are confident about three, the fourth must be the one you select. Trust the logic of the test.</div>
+
+<div class="examiner-tip"><strong>Examiner Tip 3:</strong> Do not overthink this question. Q1 should take 3–5 minutes maximum. It is worth only 4 marks; move on to the higher-mark questions quickly.</div>
+
+<div class="common-mistake"><strong>Common Mistake 1:</strong> Shading five boxes "just to be safe." The mark scheme explicitly penalises extra selections — if you shade five, you score zero. Always select exactly four.</div>
+
+<div class="common-mistake"><strong>Common Mistake 2:</strong> Making inferences. A statement saying "The director was unhappy about the weather" is false if the text only says "The weather changed abruptly." Do not infer emotion or opinion.</div>
+
+<div class="common-mistake"><strong>Common Mistake 3:</strong> Trusting vague memory of the extract. Always refer back to the specified lines to verify each statement.</div>
+
+<div class="grade-9-technique"><strong>Grade 9 Technique:</strong> Before shading any boxes, mark all statements T or F on your question paper. This ensures you do a complete pass and do not accidentally mark five boxes while rushing.</div>
+
+<h3>Time Allocation</h3>
+<p>Paper 2 is 80 minutes total for 80 marks. Q1 (4 marks) should take approximately 4 minutes. This leaves you 76 minutes for the remaining 76 marks.</p>
 `,
       quiz: [
         {
@@ -524,10 +829,26 @@ const gcseLangReading: CourseData = {
 
 <div class="key-term"><strong>Key Term: Synthesis</strong> — The skill of combining information from two or more sources to identify points of comparison or contrast, presenting them in an integrated, connected way rather than treating each source separately.</div>
 
+<h3>AQA Mark Scheme for Q2</h3>
+<ul>
+  <li><strong>Level 4 (7-8 marks):</strong> Clear, sustained comparison across both sources. Integrated, fluent writing. Precise, well-selected evidence from both texts.</li>
+  <li><strong>Level 3 (5-6 marks):</strong> Clear comparative statements with evidence from both sources. Some synthesis but organisation could be tighter.</li>
+  <li><strong>Level 2 (3-4 marks):</strong> Attempts comparison but may discuss sources separately at times. Some relevant evidence but not consistently integrated.</li>
+  <li><strong>Level 1 (1-2 marks):</strong> Limited comparison. Minimal use of evidence or only from one source.</li>
+</ul>
+
 <h3>Source Extracts</h3>
 <div class="text-extract"><strong>Source A (21st century):</strong> The school canteen had been transformed. Where plastic trays and beige walls once dominated, there were now bright murals, a salad bar, and a digital menu board showing the calorie count of every dish. Students queued with enthusiasm, debating the merits of the Thai curry over the halloumi wrap. Mrs Patel, the head of catering, beamed. "We listened to the students," she said. "This is their space now."<div class="source">Original passage — modern newspaper feature</div></div>
 
 <div class="text-extract"><strong>Source B (19th century):</strong> The dining hall was a grim chamber of long wooden benches and the pervasive odour of boiled cabbage. No child spoke above a whisper. The food, such as it was, consisted of a thin broth and a heel of bread, distributed under the watchful eye of Mr Grantly, whose expression suggested that even this meagre offering was more than the boys deserved.<div class="source">Original passage — Victorian school memoir style</div></div>
+
+<h3>Identifying Comparison Points</h3>
+<p><strong>Before you write, plan three comparison points:</strong></p>
+<ol>
+  <li><strong>The physical space and environment</strong> — Source A: modern, colourful, welcoming. Source B: grim, austere, unwelcoming.</li>
+  <li><strong>Student agency and choice</strong> — Source A: students listened to, menu variety. Source B: no choice, students silenced.</li>
+  <li><strong>The quality and philosophy of food provision</strong> — Source A: nourishing, diverse options. Source B: minimal, punitive.</li>
+</ol>
 
 <h3>How to Structure Your Response</h3>
 <p>Use <strong>comparative connectives</strong> to weave the sources together:</p>
@@ -536,15 +857,50 @@ const gcseLangReading: CourseData = {
   <li>"Both sources suggest… however…"</li>
   <li>"While Source A presents… Source B conveys…"</li>
   <li>"In contrast to Source A's depiction of… Source B shows…"</li>
+  <li>"Similarly… and yet…"</li>
+  <li>"Source A emphasises… in stark contrast to Source B, which…"</li>
 </ul>
 
-<h3>Worked Example</h3>
-<p><strong>Point:</strong> The two sources present very different attitudes towards students at mealtimes.</p>
-<p>In Source A, the school has "listened to the students" and made the canteen "their space," suggesting respect for student voice and agency. In contrast, Source B describes a dining hall governed by fear: students dare not speak "above a whisper" under the "watchful eye" of Mr Grantly, implying that children's opinions and comfort are irrelevant. While Source A celebrates student choice through its "salad bar" and varied menu, Source B reduces eating to mere survival with "a thin broth and a heel of bread."</p>
+<h3>Worked Example 1: Grade 8-9 Response (Integrated, Fluent)</h3>
+<p><strong>Point:</strong> The two sources present starkly different attitudes towards the school dining space and student autonomy.</p>
+<p><strong>Sample paragraph:</strong> In Source A, the school has "listened to the students" and made the canteen "their space," suggesting respect for student voice and agency. The canteen is now visually inviting with "bright murals" and a "salad bar," and students display genuine enthusiasm, "debating the merits of the Thai curry over the halloumi wrap." In stark contrast, Source B describes a dining hall as "a grim chamber" where children dare not speak "above a whisper," governed entirely by the authority of Mr Grantly's "watchful eye." While Source A celebrates student choice and comfort, Source B portrays eating as a controlled, joyless experience where food is merely rationed. The contrast in tone is crucial: Source A's language is celebratory and optimistic, whereas Source B's is harsh and oppressive.</p>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> You must use evidence from <strong>both</strong> sources in every paragraph. A response that discusses Source A for two paragraphs and then Source B for two paragraphs will not score highly because it lacks synthesis — the sources must be woven together.</div>
+<h3>Worked Example 2: Common Error — Treating Sources Separately</h3>
+<p><strong>Incorrect structure (Level 2):</strong></p>
+<p>"Source A shows the canteen being transformed. There are bright murals and a salad bar. Students are enthusiastic and debate menu choices. Mrs Patel is pleased with the changes. Source B shows a very different dining hall. It is grim and dark. Children are silent and afraid. The food is basic and meagre. Mr Grantly controls everyone."</p>
+<p><strong>Why this is weak:</strong> The sources are described separately, with minimal integration. There is no direct comparison using connectives. The response simply lists features of each text.</p>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Analysing language in detail. Q2 is a <em>summary</em> question — you need to identify <em>what</em> the sources say, not <em>how</em> they say it. Brief references to language are fine, but extended analysis of metaphors or imagery is not what the examiner is looking for.</div>
+<h3>Worked Example 3: Better (Level 4)</h3>
+<p><strong>Correct structure (with synthesis):</strong></p>
+<p>"The sources differ fundamentally in their portrayal of the dining space as either a place of student autonomy or institutional control. In Source A, the canteen is described as students' space, inviting and colourful with options like a 'salad bar' and varied menu. In Source B, by contrast, the dining hall is 'grim' and austere, dominated by the 'watchful eye' of Mr Grantly. Both sources depict the dining space through architectural and sensory detail — bright murals versus boiled cabbage odour — suggesting that the physical environment reflects the school's broader attitude to student welfare. Source A implies student voices are valued; Source B implies they are irrelevant."</p>
+
+<h3>Practice: Identifying What NOT to Do in Q2</h3>
+
+<p><strong>Mistake 1: Extensive Language Analysis</strong></p>
+<p>WRONG: "The use of the metaphor 'grim chamber' emphasises the oppressive atmosphere. The word 'pervasive' suggests the smell is inescapable and oppressive. 'Boiled cabbage' uses concrete imagery…"</p>
+<p>RIGHT: "Source B portrays the dining hall as oppressive and unpleasant, with its 'grim' atmosphere and pervasive smell of boiled cabbage."</p>
+
+<p><strong>Mistake 2: Only One Source per Paragraph</strong></p>
+<p>WRONG: Paragraph 1 about Source A only. Paragraph 2 about Source A only. Paragraph 3 about Source B only.</p>
+<p>RIGHT: Each paragraph weaves both sources together with clear comparative statements.</p>
+
+<p><strong>Mistake 3: Vague Comparisons</strong></p>
+<p>WRONG: "The sources are very different."</p>
+<p>RIGHT: "Source A presents the canteen as a space where students' preferences are valued, whereas Source B depicts the dining hall as a place of austere discipline and control."</p>
+
+<div class="examiner-tip"><strong>Examiner Tip 1:</strong> You must use evidence from <strong>both</strong> sources in every paragraph. A response that discusses Source A for two paragraphs and then Source B for two paragraphs will not score highly because it lacks synthesis — the sources must be woven together.</div>
+
+<div class="examiner-tip"><strong>Examiner Tip 2:</strong> Use topic sentences that explicitly signal comparison. Start paragraphs with phrases like "While Source A suggests… Source B implies…" or "Both sources convey… however…"</div>
+
+<div class="examiner-tip"><strong>Examiner Tip 3:</strong> Remember that Q2 is only worth 8 marks (out of 80 total), so spend around 12-15 minutes on it. Do not over-prepare. A clear, well-integrated response of three solid paragraphs is sufficient.</div>
+
+<div class="common-mistake"><strong>Common Mistake 1:</strong> Analysing language in excessive detail. Q2 is a <em>summary</em> question — you identify <em>what</em> the sources say, not <em>how</em> they say it. Brief references to language are acceptable, but extended analysis of metaphors or imagery is not needed and wastes time.</div>
+
+<div class="common-mistake"><strong>Common Mistake 2:</strong> Discussing sources in isolation. This kills the mark for synthesis. Always weave sources together using comparative language.</div>
+
+<div class="common-mistake"><strong>Common Mistake 3:</strong> Making vague, unsupported claims like "The sources are quite different." Always back up comparative points with specific evidence from both texts.</div>
+
+<div class="grade-9-technique"><strong>Grade 9 Technique:</strong> Begin your response with a clear thesis statement that identifies the overall comparison: "The sources present fundamentally opposed views on [topic], with Source A emphasising [aspect] while Source B stresses [aspect]." This frames your entire response and shows the examiner you have grasped the overarching comparison before diving into detail.</div>
 
 <h3>Key Differences Between Q2 and Q3</h3>
 <ul>
@@ -552,6 +908,14 @@ const gcseLangReading: CourseData = {
   <li><strong>Q3</strong> = Language comparison (how the writers say it) — focus on methods and effects.</li>
 </ul>
 <p>Keeping this distinction clear is vital. Many students lose marks by accidentally doing Q3's task in Q2.</p>
+
+<h3>Time Management</h3>
+<p>For an 8-mark question:</p>
+<ul>
+  <li><strong>Planning (2 min):</strong> Identify three comparison points.</li>
+  <li><strong>Writing (10-12 min):</strong> Three integrated paragraphs with evidence from both sources.</li>
+  <li><strong>Checking (1 min):</strong> Ensure both sources are mentioned in each paragraph.</li>
+</ul>
 `,
       quiz: [
         {

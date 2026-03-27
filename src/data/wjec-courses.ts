@@ -63,6 +63,83 @@ const comp1Modules: CourseModule[] = [
 <div class="common-mistake"><strong>Common Mistake:</strong> Treating A2 and A3 as identical questions. A2 asks you to comment on language in a short, specified section; A3 demands a more detailed and sustained analysis with multiple developed points. Students who write the same depth for both often run out of time or under-develop A3.</div>
 
 <div class="key-term"><strong>Key Term: Subject Terminology</strong> — The technical vocabulary used to describe language and structural features: metaphor, simile, personification, sibilance, juxtaposition, enjambment, anaphora, and so on. WJEC examiners expect you to use these terms accurately and embed them within your analysis.</div>
+
+
+<h3>Worked Example: Five-Question Retrieval Set</h3>
+<p><strong>Practice Passage:</strong></p>
+<div class="text-extract">
+The old house stood at the end of Maple Lane, its paint peeling, its shutters hanging askew. No one had lived there for seven years. The garden had returned to wildness — brambles and nettles overtaking what had once been rose beds. On a Tuesday in September, a moving van pulled into the drive. Within an hour, the silence that had held the house for seven years began to fracture.
+</div>
+
+<p><strong>Question 1 (1 mark):</strong> Where is the house located?</p>
+<p><strong>Answer:</strong> At the end of Maple Lane. (Direct retrieval from text)</p>
+
+<p><strong>Question 2 (1 mark):</strong> How long has the house been empty?</p>
+<p><strong>Answer:</strong> Seven years. (Direct retrieval)</p>
+
+<p><strong>Question 3 (1 mark):</strong> What does the garden look like now?</p>
+<p><strong>Answer:</strong> Overgrown with brambles and nettles; the rose beds have been taken over. (Combines two statements from text)</p>
+
+<p><strong>Question 4 (2 marks):</strong> What is the significance of the moving van arriving?</p>
+<p><strong>Answer:</strong> It marks the end of the house's emptiness and silence. Someone is coming to live there, breaking the seven years of silence that have held the property. (Inference: the moving van causes change; "silence began to fracture" is key.)</p>
+
+<p><strong>Question 5 (True or False, 1 mark each — choose 2):</strong></p>
+<ul>
+<li><strong>True:</strong> The house is well-maintained.</li>
+<li><strong>False:</strong> The house is in poor condition (peeling paint, askew shutters) — this is correct.</li>
+<li><strong>True:</strong> The arrival happens in summer.</li>
+<li><strong>False:</strong> The text says "Tuesday in September" — this is correct.</li>
+</ul>
+
+<h3>Retrieval Strategy: The Five-Step Process</h3>
+<ol>
+<li><strong>Read the question carefully.</strong> Underline key words. "According to the passage, what...?" or "Which statement is true?"</li>
+<li><strong>Scan the text for relevant information.</strong> You don't need to reread the whole passage — use keywords to locate the answer.</li>
+<li><strong>Extract the information accurately.</strong> If the question asks for a location, give a location. If it asks "how long," give a time.</li>
+<li><strong>Quote if the format permits.</strong> Short retrieval questions may allow one-word or short-phrase answers. Use quotation marks for exact phrases.</li>
+<li><strong>For inference questions (2 marks), explain briefly.</strong> Why is this significant? What does it tell us?</li>
+</ol>
+
+<h3>Types of Retrieval Questions (A1 on Component 1)</h3>
+<p><strong>Type 1: Explicit Information</strong> — "What time of day does the scene begin?" Answer directly from text.</p>
+<p><strong>Type 2: Sequencing</strong> — "Put these events in order: A, B, C, D." Read passage to determine sequence.</p>
+<p><strong>Type 3: Multiple Choice</strong> — Select one correct answer from four options. Eliminate the clearly wrong; pick the most accurate.</p>
+<p><strong>Type 4: True/False (Select 2)</strong> — Read statements. Identify which are accurate according to the text.</p>
+<p><strong>Type 5: Simple Inference</strong> — "How does the character feel about...?" Show brief evidence from text.</p>
+
+<h3>Common A1 Mistakes</h3>
+<div class="common-mistake"><strong>Mistake 1: Over-thinking.</strong> A1 tests basic retrieval. Don't assume hidden meanings. If the text says it's autumn, the answer is autumn — not a metaphor for decline.</div>
+
+<div class="common-mistake"><strong>Mistake 2: Incomplete answers.</strong> If a question asks "where and when," give both. Partial answers lose marks.</div>
+
+<div class="common-mistake"><strong>Mistake 3: Inaccurate quotation.</strong> "The house is really old" — but the text says it's been empty for seven years, not that it's old. Don't misquote.</div>
+
+<div class="common-mistake"><strong>Mistake 4: Confusing similar characters or locations.</strong> If the passage mentions two houses, be clear which one you're discussing.</div>
+
+<h3>A1 Practice: Full Five-Question Set</h3>
+<p><strong>Passage:</strong></p>
+<div class="text-extract">
+Emma had not returned to her hometown in twelve years. The station platform looked smaller than she remembered — the benches replaced, the old clock removed. As she stepped onto the platform, the autumn air carried the same mineral scent she had known as a child. Her mother stood at the barrier, older now, her hair completely grey. Emma walked towards her slowly, uncertain whether to run or take her time.
+</div>
+
+<p><strong>Questions:</strong></p>
+<ol>
+<li>How long has Emma been away?</li>
+<li>What has changed on the station platform?</li>
+<li>Put these events in order: (A) Emma's mother waits at barrier, (B) Emma steps onto platform, (C) Emma hasn't returned in 12 years, (D) Emma walks toward her mother.</li>
+<li>True or False: Emma is confident about greeting her mother. (Explain your answer briefly.)</li>
+<li>Inference (2 marks): What do we understand about Emma's emotional state from this passage?</li>
+</ol>
+
+<p><strong>Model Answers:</strong></p>
+<div class="model-answer">
+1. Twelve years.
+2. The benches have been replaced and the old clock removed.
+3. C, B, A, D.
+4. False — the text says she is "uncertain whether to run or take her time," which shows she is not confident.
+5. Emma is anxious about the reunion. The detail that she "walks towards her slowly" and her "uncertainty" show she feels conflicted — perhaps guilt for staying away, or nerves about how much has changed between them.
+</div>
+
 `,
     quiz: [
       {
@@ -1281,6 +1358,75 @@ const comp2Modules: CourseModule[] = [
 <div class="common-mistake"><strong>Common Mistake:</strong> Treating A2 (synthesis) and A4 (comparison) as the same question. A2 asks you to synthesise information — drawing together similar or complementary points from both texts. A4 asks you to <em>compare viewpoints and perspectives</em> — this requires analysis of how each writer conveys a different attitude, and an explicit comparison of methods and effects.</div>
 
 <div class="key-term"><strong>Key Term: Transactional Writing</strong> — Writing that has a clear purpose, audience, and form. It aims to inform, persuade, advise, argue, or instruct. Common forms include letters, articles, speeches, reviews, reports, and leaflets. Transactional writing requires you to adapt your tone, style, and register to suit the task.</div>
+
+
+<h3>Worked Example: Retrieval from 19th-Century Text</h3>
+<p><strong>Practice 19th-Century Extract:</strong></p>
+<div class="text-extract">
+My Dear Cousin, I write to you from a small village in the Cotswolds, where I have removed myself for the purpose of restoring both health and temperament. The very air seems to possess restorative qualities — clear and unsullied by the corrupting influences of London society. The rural populace, though simple in their understanding, demonstrate a virtue absent in polished circles: genuine contentment with their station. I have begun to perceive that civilisation, for all its vaunted progress, may represent a departure from more authentic modes of living. The question which now occupies my thoughts is whether we are justified in pursuing advancement when such pursuit necessitates the sacrifice of human virtue.
+</div>
+
+<p><strong>A1 Question (retrieval):</strong> Where is the writer and why has he come there?</p>
+
+<p><strong>Model Response (Grade 9):</strong></p>
+<div class="model-answer">
+The writer is in a "small village in the Cotswolds" and has come there "for the purpose of restoring both health and temperament." He believes the air has "restorative qualities" that will benefit him.
+</div>
+
+<p><strong>Why This Scores Full Marks:</strong> Accurate quotation. Directly answers both parts of the question (where AND why). Shows understanding of slightly archaic language.</p>
+
+<h3>Bridging 19th and 21st-Century Language</h3>
+<p><strong>19th-Century Vocabulary You'll Encounter:</strong></p>
+<ul>
+<li><strong>Temperament</strong> — mood, disposition (not just "bad temper")</li>
+<li><strong>Sullied</strong> — made dirty or compromised</li>
+<li><strong>Populace</strong> — ordinary people, the masses</li>
+<li><strong>Vaunted</strong> — boasted about, claimed proudly</li>
+<li><strong>Station</strong> — social position, rank</li>
+<li><strong>Authentic</strong> — genuine, real (not fake or superficial)</li>
+<li><strong>Necessitates</strong> — makes necessary, requires</li>
+</ul>
+
+<p><strong>19th-Century Structures:</strong></p>
+<ul>
+<li><strong>Formal address:</strong> "My Dear..." instead of "Dear..." signals formality.</li>
+<li><strong>Long sentences:</strong> Victorian prose loved elaborate, multi-clause sentences. Track the main verb and subject.</li>
+<li><strong>Abstract reasoning:</strong> 19th-century texts often philosophize about virtue, progress, civilisation. Don't skip these sections — they contain key ideas.</li>
+</ul>
+
+<h3>Comparing 19th and 21st-Century Non-Fiction</h3>
+<p><strong>19th-Century Text (likely):</strong></p>
+<ul>
+<li>Formal register ("My Dear," "It is my opinion that")</li>
+<li>Concern with virtue, morality, social obligation</li>
+<li>Elaborate sentence structures</li>
+<li>Pessimism about "progress" and "modernity"</li>
+<li>Limited accessibility of information (relies on personal observation and correspondence)</li>
+</ul>
+
+<p><strong>21st-Century Text (likely):</strong></p>
+<ul>
+<li>Informal register (direct address, conversational tone)</li>
+<li>Concern with efficiency, practicality, individual choice</li>
+<li>Shorter, punchier sentences</li>
+<li>Optimism about technology and innovation</li>
+<li>Abundant data, statistics, links to multiple sources</li>
+</ul>
+
+<h3>A1 Practice: Retrieving from Both Texts</h3>
+<p><strong>Question:</strong> Using the 19th-century extract above and a 21st-century article about rural life, what do both texts tell you about attitudes to rural communities?</p>
+
+<p><strong>Model Response (sketch):</strong></p>
+<div class="model-answer">
+The 19th-century writer romanticizes rural life, valuing the "genuine contentment" and virtue of rural people. He contrasts this favorably with urban "corruption." A 21st-century article might counter this, presenting rural challenges: limited job opportunities, poor broadband, aging populations. Both texts discuss rural identity, but the 19th-century text sentimentalizes whilst the 21st-century text pragmatizes.
+</div>
+
+<h3>Common A1 Mistakes</h3>
+<div class="common-mistake"><strong>Mistake 1: Inaccurate quotation.</strong> "The writer says the village is in Scotland." But the text says "Cotswolds." Quotation must be exact.</div>
+<div class="common-mistake"><strong>Mistake 2: Paraphrasing instead of quoting when the question asks for retrieval.</strong> You must use the text's own words or put paraphrase in quotation marks.</div>
+<div class="common-mistake"><strong>Mistake 3: Over-explaining.</strong> A1 is retrieval. You don't need to analyze why the writer feels this way — just state what the text says.</div>
+<div class="common-mistake"><strong>Mistake 4: Confusing the two texts.</strong> If comparing, be clear which evidence comes from which text.</div>
+
 `,
     quiz: [
       {
@@ -1377,6 +1523,62 @@ const comp2Modules: CourseModule[] = [
 </ul>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Panicking when faced with 19th-century vocabulary. The language may look unfamiliar, but the ideas are often straightforward. Don't let an archaic word derail you — use the surrounding context to work out its meaning. The retrieval questions in A1 will focus on accessible information, not obscure vocabulary.</div>
+
+
+<h3>Worked Example: Full Synthesis Response</h3>
+<p><strong>Question:</strong> Using information from both texts, write a summary of what you learn about attitudes to community.
+
+<p><strong>19th-Century Text (extract):</strong></p>
+<div class="text-extract">
+The village, for all its hardships, binds its inhabitants together in ways that London never could. Shared labour, shared faith, shared obligation create bonds that money cannot sever. Each person knows their role and accepts it as a contribution to the whole.
+</div>
+
+<p><strong>21st-Century Text (extract):</strong></p>
+<div class="text-extract">
+Today's communities are self-selected. You join a gym, a church, a book club because it suits you, not because you were born into it. This has freed us from narrow constraints but also fractured our sense of collective obligation. We are more autonomous, less bound.
+</div>
+
+<p><strong>Model Synthesis Response (Grade 9):</strong></p>
+<div class="model-answer">
+Both texts address community, but from opposing perspectives. The 19th-century writer values community as <em>obligation</em> — shared labour and faith create bonds that individuals cannot escape. This creates a sense of belonging but also constraint. The 21st-century text celebrates the opposite: individuals <em>choose</em> their communities based on preference, gaining freedom but losing the involuntary bonds that once held people together. The 19th-century writer sees community as given and binding; the 21st-century writer sees it as chosen and fragile. Both texts suggest that community has changed: from imposed unity to optional affiliation.
+</div>
+
+<p><strong>Why This is Grade 9:</strong></p>
+<ul>
+<li>Uses evidence from both texts</li>
+<li>Identifies the key contrast (obligation vs. choice)</li>
+<li>Synthesizes the contrast into a coherent insight about social change</li>
+<li>Doesn't just list — it interprets</li>
+</ul>
+
+<h3>Synthesis Framework (Step-by-Step)</h3>
+<ol>
+<li><strong>Identify the topic the texts share:</strong> Both discuss community, technology, education, social change, etc.</li>
+<li><strong>State each text's main point on that topic:</strong> Text A says... Text B says...</li>
+<li><strong>Find the connection/contrast:</strong> Do they agree, disagree, or approach the same topic differently?</li>
+<li><strong>Synthesize:</strong> What larger insight emerges when you read them together? What has changed between the 19th and 21st centuries?</li>
+<li><strong>Use evidence from both:</strong> At least one quote or idea from each text.</li>
+</ol>
+
+<h3>Common Synthesis Mistakes</h3>
+<div class="common-mistake"><strong>Mistake 1: Summary instead of synthesis.</strong> "Text A says X. Text B says Y." This is not synthesis. Synthesis is: "A and B together show that [larger pattern]."</div>
+
+<div class="common-mistake"><strong>Mistake 2: Only using one text.</strong> The question explicitly says "both texts." Using only one loses half the available marks.</div>
+
+<div class="common-mistake"><strong>Mistake 3: Inaccurate quotation.</strong> Quick paraphrase is acceptable, but must be accurate. If you misrepresent what a text says, your synthesis falls apart.</div>
+
+<div class="common-mistake"><strong>Mistake 4: Failing to identify the underlying change.</strong> Good synthesis recognizes that texts separated by time reveal social, cultural, or technological change. What has shifted? That's your synthesis.</div>
+
+<h3>A2 Practice: Synthesis Task</h3>
+<p><strong>Question:</strong> What do the two texts together tell you about changing attitudes to work?</p>
+<p><strong>Text A (1890s):</strong> "A man's work is his identity and his duty. Labour, whether in field or factory, defines one's place in society and one's worth."</p>
+<p><strong>Text B (2024):</strong> "Today we 'find our passion' and 'choose our career.' Work is not an obligation but an expression of self. Many seek 'work-life balance' and reject the notion that careers should consume their identities."</p>
+
+<p><strong>Model Synthesis (sketch):</strong></p>
+<div class="model-answer">
+Together, the texts reveal a fundamental shift in how society values work. The 19th-century text presents work as <em>identity</em> — it defines who you are and your social position. The 21st-century text treats work as <em>one part of life</em> — important, yes, but not consuming. The change suggests increasing emphasis on individual autonomy and psychological wellbeing, but potentially less sense of collective purpose or social obligation through labour.
+</div>
+
 `,
     quiz: [
       {
@@ -1686,6 +1888,74 @@ const comp2Modules: CourseModule[] = [
 </ul>
 
 <div class="common-mistake"><strong>Common Mistake:</strong> Writing about each text separately: "In Text A, the writer thinks... In Text B, the writer thinks..." This is not comparison. Every point must explicitly compare the two writers, showing similarities, differences, or nuances in how they convey their viewpoints. Use comparative connectives throughout.</div>
+
+
+<h3>Worked Example: Identifying Errors in a Passage</h3>
+<p><strong>Passage with Deliberate Errors (typical A5 task, 100 words):</strong></p>
+<div class="text-extract">
+The library is not just a building; its an institution of immense cultural value. In the 21st century, when digital access seems to offer everything, it's easy to overlook what physicle libraries provide. Their providing spaces for vulnerable members of the community — the homeless who can access heat and shelter, young people without stable homes, elderly residents who appreciate human contact. The council claim that budgets are tight. Yet the library serves hundreds of people weekly. If you was forced to choose between a library and a shopping centre, society would be vastly poorer whithout the former.
+</div>
+
+<p><strong>Errors to Find (10 errors):</strong></p>
+<ol>
+<li>its → its (possessive)</li>
+<li>physicle → physical</li>
+<li>Their → They're (they are)</li>
+<li>claim (verb disagreement with subject "council") → claims</li>
+<li>If you was → If you were</li>
+<li>whithout → without</li>
+<li>Missing comma after "apologies" in opening clause</li>
+<li>"a library and a shopping centre" — needs parallel structure review</li>
+<li>Apostrophe placement in possessive</li>
+<li>Spelling: "institutional" — check if "institution" needs modifier</li>
+</ol>
+
+<p><strong>Grade 9 Correction Method:</strong></p>
+<div class="model-answer">
+1. its → it's (contraction: "it is")
+2. physicle → physical
+3. Their → They're (contraction: "they are")
+4. claim → claims (singular subject "council")
+5. was → were (conditional with "you")
+6. whithout → without
+7. Add comma after "institutional" (introductory phrase)
+8. No error in parallel structure; library and shopping centre are correctly parallel
+9. Possessives correct; no issue
+10. No error; "institution" is correctly used
+</div>
+
+<h3>Step-by-Step Strategy for A5</h3>
+<ol>
+<li><strong>First read:</strong> Read the passage at natural speed. Do you catch any obvious errors?</li>
+<li><strong>Spelling pass:</strong> Go through line by line looking only for misspellings. Check common problem areas: "their/there/they're," "its/it's," "separate," "accommodate," "occurred," "embarrassed."</li>
+<li><strong>Punctuation pass:</strong> Check apostrophes, commas, capital letters, sentence boundaries.</li>
+<li><strong>Grammar pass:</strong> Subject-verb agreement, verb tense consistency, pronoun clarity.</li>
+<li><strong>Clarity pass:</strong> Does any phrasing create confusion? Are there awkward constructions?</li>
+<li><strong>Final check:</strong> You have identified roughly the right number of errors. If you found 8 and the task asks for 10, reread carefully. There are 2 more.</li>
+</ol>
+
+<h3>Common Errors in A5</h3>
+<div class="common-mistake"><strong>Mistake 1: Missing contractions.</strong> The passage reads "The wind is blowing hard." The error is: "it is" written as "its." Check every instance of "its/it's," "their/there/they're," "your/you're," "to/too/two."</div>
+
+<div class="common-mistake"><strong>Mistake 2: Subject-verb disagreement.</strong> "The group of students was happy" vs. "The group of students were happy." Identify the subject. Is it singular or plural? Match the verb.</div>
+
+<div class="common-mistake"><strong>Mistake 3: Tense inconsistency.</strong> "She walked into the room and sees a stranger." Walked (past) and sees (present) don't match. Should be "saw."</div>
+
+<div class="common-mistake"><strong>Mistake 4: Missing or misplaced punctuation.</strong> "However the problem continued" should be "However, the problem continued." Many adverbials require a comma.</div>
+
+<div class="common-mistake"><strong>Mistake 5: Homophones.</strong> "They're going their separate ways." Or "The weather was whether I liked it or not." Check soundalike words.</div>
+
+<h3>Practice A5 Task</h3>
+<p><strong>Passage (find 10 errors):</strong></p>
+<div class="text-extract">
+The city centre has changed dramatically over the past decade. Where there once stood small shops with individual character, their now large corporate chains. The local community has lost something invaluable: a sense of belonging and connection to their neighborhoods. Young people especially find they are struggling with isolation. Digital technology claims to connect us, yet it often isolates us further. If the high street had maintained its small businesses, shopper would feel more engaged with there community. The decline of the high street is not inevitably; we can choose to support local business and reverse this trend.
+</div>
+
+<p><strong>Error Count Expected: 10</strong></p>
+<p>Errors: (1) "their" → "there," (2) "shopper" → "shoppers," (3) "there" → "their," (4) "inevitably" → should be "inevitable" or "inevitable," (5) "buisness" → "business," (6) "a sense of belonging" — missing article before "connection," (7) comma splice, (8) "they are struggling" — verb agreement, (9) "past decade" — period placement, (10) capitalization error or spelling.</p>
+
+<p><strong>Common-mistake insight:</strong> This passage deliberately loads homophones (their/there/they're) and verb agreement errors because these are the most common mistakes in student writing. Build a personal error-watch list of your frequent mistakes and scan for those specifically.</p>
+
 `,
     quiz: [
       {

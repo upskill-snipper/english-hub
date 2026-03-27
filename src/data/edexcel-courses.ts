@@ -13,52 +13,157 @@ const paper1Modules: CourseModule[] = [
     title: 'Paper 1 Overview & Assessment Objectives',
     duration: '45 min',
     content: `
-<h2>Edexcel GCSE English Language — Paper 1 (1EN2/01)</h2>
+<h2>Edexcel GCSE English Language — Paper 1 (1EN2/01): Complete Overview</h2>
 
-<p>Paper 1 is titled <strong>Non-Fiction Texts and Transactional Writing</strong>. It is worth <strong>80 marks</strong> and accounts for <strong>50%</strong> of the total GCSE. You have <strong>1 hour and 55 minutes</strong> to complete two sections.</p>
+<p>Paper 1 is titled <strong>Non-Fiction Texts and Transactional Writing</strong>. It is worth <strong>80 marks</strong> and accounts for <strong>50%</strong> of the total GCSE. You have <strong>1 hour and 55 minutes</strong> to complete two sections — and every minute counts.</p>
 
-<div class="key-term"><strong>Key Term: 19th-Century Non-Fiction</strong> — A non-fiction text published between 1800 and 1899. This could be a letter, diary entry, newspaper article, travel writing, speech transcript, or essay from the Victorian or Romantic period.</div>
+<div class="key-term"><strong>Key Term: 19th-Century Non-Fiction</strong> — A non-fiction text published between 1800 and 1899. This could be a letter, diary entry, newspaper article, travel writing, speech transcript, sermon, or essay from the Victorian or Romantic period. Common themes: social reform, exploration, politics, morality, industry.</div>
 
-<h3>Paper Structure at a Glance</h3>
-<ul>
-  <li><strong>Section A — Reading (40 marks):</strong> You are given one unseen 19th-century non-fiction extract and answer five questions on it.</li>
-  <li><strong>Section B — Writing (40 marks):</strong> One extended transactional writing task (e.g. letter, article, speech, review).</li>
-</ul>
+<h3>Paper Structure: The Big Picture</h3>
 
-<h3>Question-by-Question Breakdown</h3>
+<table>
+  <tr>
+    <th>Section</th>
+    <th>Task</th>
+    <th>Marks</th>
+    <th>Time</th>
+    <th>Assessment</th>
+  </tr>
+  <tr>
+    <td><strong>A: Reading</strong></td>
+    <td>5 questions on one unseen 19th-century extract</td>
+    <td>40</td>
+    <td>~60 min</td>
+    <td>AO1, AO2, AO4</td>
+  </tr>
+  <tr>
+    <td><strong>B: Writing</strong></td>
+    <td>1 extended transactional task (letter, article, speech, review, etc.)</td>
+    <td>40</td>
+    <td>~50 min</td>
+    <td>AO5, AO6</td>
+  </tr>
+</table>
+
+<h3>Question-by-Question Breakdown with Strategies</h3>
+
 <ol>
-  <li><strong>Q1 (1 mark)</strong> — Short comprehension. Identify a single piece of explicit information from the text.</li>
-  <li><strong>Q2 (2 marks)</strong> — Give two things you learn about a topic from the text. Brief, factual responses.</li>
-  <li><strong>Q3 (6 marks)</strong> — Analyse the effect of language choices. Select relevant quotations and explain how the writer uses language to achieve an effect.</li>
-  <li><strong>Q4 (15 marks)</strong> — Analyse the whole text. How does the writer use language and structure to influence the reader? This is the highest-tariff reading question.</li>
-  <li><strong>Q5 (16 marks)</strong> — Evaluate critically. To what extent do you agree with a given statement about the text? Requires a personal response supported by textual evidence.</li>
-  <li><strong>Q6 (40 marks)</strong> — Transactional writing. 24 marks for <strong>AO5</strong> (content and organisation) and 16 marks for <strong>AO6</strong> (technical accuracy — spelling, punctuation, grammar).</li>
+  <li><strong>Q1 (1 mark) — Explicit Comprehension</strong>
+    <ul>
+      <li><em>Example command:</em> "Give one phrase from the text that shows the writer's attitude to the factory."</li>
+      <li><em>Strategy:</em> Locate, underline, copy. No explanation needed — just a precise phrase or sentence.</li>
+      <li><em>Time budget:</em> 2 minutes maximum.</li>
+    </ul>
+  </li>
+
+  <li><strong>Q2 (2 marks) — Two Things You Learn</strong>
+    <ul>
+      <li><em>Example command:</em> "Give two things you learn about the children's working conditions."</li>
+      <li><em>Strategy:</em> Find two distinct facts. State each clearly. Each fact = 1 mark.</li>
+      <li><em>Common error:</em> Giving two versions of the same fact (e.g., "They were tired" and "They were exhausted") — this scores only 1 mark.</li>
+      <li><em>Time budget:</em> 3 minutes maximum.</li>
+    </ul>
+  </li>
+
+  <li><strong>Q3 (6 marks) — Language Analysis</strong>
+    <ul>
+      <li><em>Example command:</em> "Analyse the effect of language choices in lines 10–15. You should comment on the writer's choice of words and phrases."</li>
+      <li><em>Strategy:</em> Pick 2–3 short quotations. For each, explain the effect. Use PEE: Point (identify technique) + Evidence (quote) + Explanation (effect on reader).</li>
+      <li><em>Grade 8–9 approach:</em> Identify the specific technique (metaphor, simile, alliteration, emotive language, etc.), explain why the writer chose it, and link to the text's purpose.</li>
+      <li><em>Time budget:</em> 10 minutes.</li>
+    </ul>
+  </li>
+
+  <li><strong>Q4 (15 marks) — Language &amp; Structure Analysis</strong>
+    <ul>
+      <li><em>Example command:</em> "How does the writer use language and structure to influence the reader?"</li>
+      <li><em>Strategy:</em> This is the big one. Analyse 4–5 language techniques plus structural choices (paragraphing, opening, closing, sentence variety). Link all to the writer's purpose and effect on the reader.</li>
+      <li><em>Grade 8–9 approach:</em> Show understanding of how language AND structure work together to create a cumulative effect. Don't just list techniques — show their interrelationship.</li>
+      <li><em>Time budget:</em> 20 minutes.</li>
+    </ul>
+  </li>
+
+  <li><strong>Q5 (16 marks) — Critical Evaluation</strong>
+    <ul>
+      <li><em>Example command:</em> "To what extent do you agree that the writer is critical of modern society? Support your answer with textual evidence."</li>
+      <li><em>Strategy:</em> Take a clear position (agree/disagree/partially agree). Develop 2–3 paragraphs with evidence. Acknowledge the other viewpoint and counter it.</li>
+      <li><em>Grade 8–9 approach:</em> Show nuance. Evaluate the text's methods (is the evidence strong? Is the argument persuasive?) as well as the ideas themselves. Use precise quotations and explain their significance.</li>
+      <li><em>Time budget:</em> 20 minutes.</li>
+    </ul>
+  </li>
+
+  <li><strong>Q6 (40 marks) — Transactional Writing</strong>
+    <ul>
+      <li><em>Example command:</em> "Write an article for a broadsheet newspaper about the dangers of social media."</li>
+      <li><em>Strategy:</em> Spend 5 minutes planning. Identify audience, purpose, form, tone. Write in paragraphs with a clear introduction and conclusion. Use techniques appropriate to the form.</li>
+      <li><em>Marking breakdown:</em> 24 marks for AO5 (content, organisation, clarity) + 16 marks for AO6 (spelling, punctuation, grammar, vocabulary range, sentence variety).</li>
+      <li><em>Time budget:</em> 45–50 minutes total (5 min plan + 40–45 min write).</li>
+    </ul>
+  </li>
 </ol>
 
-<h3>Assessment Objectives</h3>
+<h3>Assessment Objectives Explained</h3>
+
 <ul>
-  <li><strong>AO1</strong> — Identify and interpret explicit and implicit information and ideas.</li>
-  <li><strong>AO2</strong> — Explain, comment on and analyse how writers use language and structure to achieve effects.</li>
-  <li><strong>AO4</strong> — Evaluate texts critically and support this with appropriate textual references.</li>
-  <li><strong>AO5</strong> — Communicate clearly, effectively and imaginatively; organise information using structural and grammatical features.</li>
-  <li><strong>AO6</strong> — Use a range of vocabulary and sentence structures for clarity, purpose and effect; spell and punctuate accurately.</li>
+  <li><strong>AO1 (Reading)</strong> — Identify and interpret explicit information and ideas; identify and interpret implicit meanings. <em>What is the text saying, literally and between the lines?</em></li>
+  <li><strong>AO2 (Reading)</strong> — Explain, comment on and analyse how writers use language and structure to achieve effects. <em>Why did the writer make this choice? What effect does it create?</em></li>
+  <li><strong>AO4 (Reading)</strong> — Evaluate texts critically and support judgements with appropriate textual references. <em>Is the argument persuasive? Do you agree? Why or why not?</em></li>
+  <li><strong>AO5 (Writing)</strong> — Communicate clearly, effectively and imaginatively; organise information using structural and grammatical features. <em>Is your writing well-structured, clear, and suited to the task?</em></li>
+  <li><strong>AO6 (Writing)</strong> — Use a range of vocabulary and sentence structures for clarity, purpose and effect; spell and punctuate accurately. <em>Is your technical accuracy flawless? Do you vary your sentence types?</em></li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Spend roughly 1 hour on Section A and 50–55 minutes on Section B. Within Section A, allocate time in proportion to the marks: Q1 and Q2 should take no more than 5 minutes combined, Q3 around 10 minutes, Q4 about 20 minutes, and Q5 about 20 minutes. Leave 5 minutes at the end for checking.</div>
+<div class="grade-9-technique"><strong>Grade 9 Technique: The Interconnected Response</strong> — Top-band responses do not treat reading and writing as separate skills. When analysing a 19th-century text in Q4–Q5, notice the writer's techniques and use similar techniques in your own Q6 writing. If the source uses anaphora for emphasis, try anaphora in your article. This shows holistic understanding of how language creates meaning.</div>
 
-<h3>Recommended Timing Plan</h3>
+<h3>Recommended Timing Plan: The Minute-by-Minute Breakdown</h3>
+
+<table>
+  <tr><th>Phase</th><th>Activity</th><th>Cumulative Time</th></tr>
+  <tr><td>1</td><td>Read source text twice, annotate key phrases and ideas</td><td>5 min</td></tr>
+  <tr><td>2</td><td>Q1: Explicit comprehension (1 mark)</td><td>7 min</td></tr>
+  <tr><td>3</td><td>Q2: Two things (2 marks)</td><td>10 min</td></tr>
+  <tr><td>4</td><td>Q3: Language analysis (6 marks)</td><td>20 min</td></tr>
+  <tr><td>5</td><td>Q4: Language &amp; structure (15 marks)</td><td>40 min</td></tr>
+  <tr><td>6</td><td>Q5: Evaluation (16 marks)</td><td>60 min</td></tr>
+  <tr><td>7</td><td>Q6 planning (brainstorm, structure, technique selection)</td><td>65 min</td></tr>
+  <tr><td>8</td><td>Q6 writing (draft introduction, body, conclusion)</td><td>110 min</td></tr>
+  <tr><td>9</td><td>Proofread entire paper (both sections)</td><td>115 min</td></tr>
+</table>
+
+<p><strong>Golden rule:</strong> If Q1–Q5 overrun, move on. The writing section (Q6) is worth 40 marks and must not be sacrificed for 40 marks of reading. A rushed but complete response scores more than an incomplete one.</p>
+
+<h3>Common Mistakes to Avoid</h3>
+
+<div class="common-mistake"><strong>Time Trap:</strong> Spending 15 minutes on Q1 and Q2 (worth 3 marks) and only 10 minutes on Q5 (worth 16 marks). Keep your early answers brief — you are just retrieving information, not writing essays.</div>
+
+<div class="common-mistake"><strong>Q4/Q5 Confusion:</strong> Q4 asks "How does the writer use language and structure?" (analysis). Q5 asks "To what extent do you agree?" (evaluation + personal response). Don't evaluate in Q4 or just analyse in Q5 — match your response to the command word.</div>
+
+<div class="common-mistake"><strong>Writing Neglect:</strong> Leaving only 20 minutes for Q6. You need at least 45 minutes to write a coherent, well-structured piece worth 40 marks. Plan your time ruthlessly.</div>
+
+<div class="common-mistake"><strong>Generic Answers:</strong> Analysing language without explaining why the effect matters. Don't just say "The writer uses repetition to emphasise the point." Say "The writer uses repetition to emphasise the point <em>that injustice is systemic</em> — by repeating the phrase 'nothing changed', they imply the problem is structural and resistant to reform."</div>
+
+<h3>The 80-Mark Prize: What Each Grade Requires</h3>
+
+<table>
+  <tr><th>Grade</th><th>Marks (out of 80)</th><th>Key Characteristics</th></tr>
+  <tr><td>9</td><td>72–80</td><td>Sophisticated analysis; precise vocabulary; fluent writing; perceptive evaluation; flawless accuracy</td></tr>
+  <tr><td>8</td><td>64–71</td><td>Secure analysis with some insight; varied vocabulary; well-organised writing; thoughtful evaluation; minor errors</td></tr>
+  <tr><td>7</td><td>56–63</td><td>Clear analysis; range of techniques identified; clear organisation; supported evaluation; generally accurate</td></tr>
+  <tr><td>5</td><td>44–55</td><td>Basic analysis; some technique identification; adequate organisation; simple evaluation; some errors</td></tr>
+  <tr><td>4</td><td>36–43</td><td>Limited analysis; few techniques; basic organisation; minimal evaluation; frequent errors</td></tr>
+</table>
+
+<h3>The One Essential Skill: Close Reading</h3>
+
+<p>Everything in Paper 1 depends on close, careful reading of the 19th-century extract. Before answering any question, you must:</p>
+
 <ol>
-  <li><strong>0–5 min:</strong> Read the source text carefully, underlining key phrases.</li>
-  <li><strong>5–10 min:</strong> Answer Q1 (1 mark) and Q2 (2 marks).</li>
-  <li><strong>10–20 min:</strong> Answer Q3 (6 marks).</li>
-  <li><strong>20–40 min:</strong> Answer Q4 (15 marks).</li>
-  <li><strong>40–60 min:</strong> Answer Q5 (16 marks).</li>
-  <li><strong>60–65 min:</strong> Plan your Q6 response.</li>
-  <li><strong>65–105 min:</strong> Write your Q6 response (40 marks).</li>
-  <li><strong>105–115 min:</strong> Proofread both sections.</li>
+  <li>Read the entire extract twice without underlining.</li>
+  <li>On the second read, underline key phrases: dramatic language, repeated words, structural markers (e.g., "But", "Yet", "Finally").</li>
+  <li>Note what surprises you, what stands out, what the writer emphasises.</li>
+  <li>Consider: <em>Who is this writer? When did they write this? Why? What do they want the reader to feel?</em></li>
 </ol>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Spending too long on Q1 and Q2 (which are worth only 3 marks combined) and then running out of time on Q4 and Q5, which together carry 31 marks. Always keep your low-tariff answers brief.</div>
+<p>This 5-minute investment in reading comprehension will unlock marks across all five questions.</p>
 `,
     quiz: [
       {
@@ -724,60 +829,138 @@ const paper1Modules: CourseModule[] = [
     id: 'edx-lp1-m7',
     title: 'Transactional Writing: Audience, Purpose & Form',
     duration: '55 min',
-    content: `
-<h2>Audience, Purpose &amp; Form — The Foundation of Section B</h2>
+    content: `<h2>Audience, Purpose &amp; Form — The Foundation of Grade 8–9 Writing</h2>
 
-<p>Section B of Edexcel Paper 1 (1EN2/01) asks you to produce a <strong>transactional/discursive</strong> piece. Before writing, lock in three things: <em>who</em> you are writing for (audience), <em>why</em> (purpose), and <em>what shape</em> it takes (form). Get these wrong and your response feels generic — rarely scoring above Level 3.</p>
+<p>Section B of Edexcel Paper 1 (1EN2/01) asks you to produce a <strong>transactional/discursive</strong> piece. Before you write a single word, you must lock in three things: <em>who</em> you are writing for (audience), <em>why</em> (purpose), and <em>what shape</em> it takes (form). Get these wrong and your response feels generic — rarely scoring above Level 3. Get them right, and you unlock Levels 4–5 and beyond.</p>
 
-<h3>1. Audience</h3>
+<h3>1. Audience: Speaking to the Right Reader</h3>
+
+<p>Different audiences require different registers, vocabulary, and tone. Mismatching your audience loses marks across AO5 (clarity and organisation) and AO6 (vocabulary range).</p>
+
+<h4>Formal Audiences (Examiners Reward These)</h4>
 <ul>
-  <li><strong>Formal</strong> (headteacher, council, editor) — Standard English, measured tone, no slang.</li>
-  <li><strong>Informal</strong> (peers, younger students) — conversational register is fine, but accuracy still matters.</li>
-  <li><strong>Authority figures</strong> — hedge politely (<em>"It could be argued…"</em>) and use evidence.</li>
+  <li><strong>Headteacher / Principal</strong> — Standard English, measured tone, no slang. Use formal conventions: "Dear Sir/Madam", respectful language, clear problem-solution structure.</li>
+  <li><strong>Local Council / Authority</strong> — Evidence-based, logical argumentation. Cite statistics. Structure: opening statement of intent → evidence → call to action.</li>
+  <li><strong>Newspaper Editor / Broadsheet</strong> — Professional register, but can use rhetorical techniques (questions, short sentences for impact). Write as though you are a commentator, not a student.</li>
+  <li><strong>Academic/Professional Audience</strong> — Advanced vocabulary, complex sentences, formal structures (headings, subheadings, clear paragraphing).</li>
 </ul>
 
-<div class="key-term"><strong>Key Term: Register</strong> — The level of formality in your writing, determined by audience and purpose. Shifting register mid-piece is one of the most common reasons students drop marks on AO5.</div>
+<div class="grade-9-technique"><strong>Grade 9 Technique: Audience Awareness as Voice Control</strong> — Grade 9 writers subtly shift their voice to address the audience. Writing to a headteacher feels respectful but not servile. Writing to a newspaper reads as authoritative but accessible. The shift is felt through word choice, sentence structure, and tone — not through explicitly saying "Dear Headteacher".</div>
 
-<h3>2. Purpose</h3>
-<ol>
-  <li><strong>Argue</strong> — take a clear position and defend it with logic and evidence.</li>
-  <li><strong>Persuade</strong> — move the reader to action using rhetorical techniques.</li>
-  <li><strong>Advise</strong> — offer guidance in a supportive, knowledgeable tone.</li>
-  <li><strong>Inform</strong> — present facts and ideas clearly, with explanation where needed.</li>
-</ol>
+<h4>Informal Audiences (Acceptable, but Harder to Score High)</h4>
+<ul>
+  <li><strong>Peers / Younger Students</strong> — Conversational register is acceptable. Still requires accuracy. Can use rhetorical questions, direct address ("You might think…"), and varied pace.</li>
+  <li><strong>Friends / Social Groups</strong> — Less common in exam tasks, but if set, maintain clarity and purpose. Do not confuse informal with sloppy.</li>
+</ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Many tasks blend purposes — e.g. <em>"Write an article arguing that…"</em> is both argue <strong>and</strong> inform. Identify the dominant purpose, but weave in the secondary one for a sophisticated response.</div>
+<div class="key-term"><strong>Key Term: Register</strong> — The level of formality in your writing, determined by audience and purpose. Shifting register mid-piece (e.g., starting formal, then using slang) is one of the most common reasons students drop marks on AO5. Examiners can feel when the writer loses control of their voice.</div>
 
-<h3>3. Form Conventions</h3>
+<h3>2. Purpose: The Writer's Intention</h3>
+
+<p>Every piece of writing has a purpose. Identifying your purpose helps you select appropriate techniques and structure your argument logically.</p>
+
+<h4>To Argue</h4>
+<p><strong>Definition:</strong> Present a clear position on a topic and defend it with logic, evidence, and counter-arguments.</p>
+<p><strong>Structure:</strong> Introduction (state position clearly) → Evidence paragraph 1 (with explanations) → Evidence paragraph 2 (with rebuttals of opposing view) → Conclusion (restate position, call to action).</p>
+<p><strong>Techniques:</strong> Facts, statistics, rhetorical questions, parallel structures, logical connectives ("Therefore", "Consequently").</p>
+<p><em>Example task:</em> "Write an article arguing that school uniforms should be abolished."</p>
+
+<h4>To Persuade</h4>
+<p><strong>Definition:</strong> Move the reader to action or agreement using emotional appeal, logical argument, or credibility.</p>
+<p><strong>Structure:</strong> Hook (engage reader emotionally) → Problem (make reader care) → Solution (your proposal) → Call to action (what reader should do next).</p>
+<p><strong>Techniques:</strong> Emotive language, rhetorical questions, anecdotes, direct address ("Imagine if..."), triadic structures, powerful verbs.</p>
+<p><em>Example task:</em> "Write a letter to your MP persuading them to fund youth mental health services."</p>
+
+<h4>To Advise</h4>
+<p><strong>Definition:</strong> Offer guidance on a topic in a supportive, knowledgeable, and authoritative tone.</p>
+<p><strong>Structure:</strong> Introduction (establish credibility) → Numbered or bullet-pointed advice → Explanation of each point → Conclusion (encourage action).</p>
+<p><strong>Techniques:</strong> Imperative verbs ("Consider…", "Avoid…"), conditional statements ("If you do X, then Y will happen"), signposting ("First", "Second", "Finally").</p>
+<p><em>Example task:</em> "Write an advice leaflet for teenagers about managing exam stress."</p>
+
+<h4>To Inform</h4>
+<p><strong>Definition:</strong> Present facts and ideas clearly, with explanation where needed. No explicit persuasion, but can be engaging.</p>
+<p><strong>Structure:</strong> Introduction (what is the topic?) → Explanation of key points with examples → Conclusion (why does this matter?).</p>
+<p><strong>Techniques:</strong> Clear headings, varied sentence starters, rhetorical questions for engagement, specific examples and statistics.</p>
+<p><em>Example task:</em> "Write an article informing students about the impact of social media on mental health."</em></p>
+
+<h3>3. Form: The Genre You're Writing</h3>
+
+<p>Form means the type of text you're writing. Each form has conventions — ways that readers expect the text to be structured and styled. Violating these conventions loses marks on AO5.</p>
+
+<h4>Article (for Newspaper or Magazine)</h4>
+<ul>
+  <li><strong>Structure:</strong> Headline (punchy, intriguing) → Byline or introduction (hook the reader) → Body paragraphs (3–4, each with a point + evidence) → Conclusion (summary or call to action).</li>
+  <li><strong>Techniques:</strong> Short, punchy opening sentence. Varied paragraph length (some single-sentence for impact). Rhetorical questions. Direct address to reader.</li>
+  <li><strong>Tone:</strong> Authoritative but accessible. As if you are a professional journalist, not a student.</li>
+  <li><strong>Grade 9 marker:</strong> The article reads as though it could be published. It has a distinctive voice and a clear argument.</li>
+</ul>
+
+<div class="examiner-tip"><strong>Examiner Tip:</strong> Do NOT write "Written by [Your Name]" in an exam article unless explicitly asked. Do write a compelling headline — examiners notice.</div>
+
+<h4>Letter (Formal or Semi-Formal)</h4>
+<ul>
+  <li><strong>Structure:</strong> Sender's address (top right) → Date → Recipient's details (left) → Opening ("Dear Sir/Madam" or "Dear Mr X,") → Body (3–4 paragraphs, each addressing one point) → Closing formula ("Yours faithfully" or "Yours sincerely,") → Signature.</li>
+  <li><strong>Tone:</strong> Respectful, measured, logical. No slang or casual phrasing.</li>
+  <li><strong>Common mistake:</strong> Writing a letter like an informal email. Maintain formal conventions.</li>
+  <li><strong>Grade 9 marker:</strong> The letter is so well-structured and persuasive that it feels as though it could actually be sent to the intended recipient.</li>
+</ul>
+
+<h4>Speech</h4>
+<ul>
+  <li><strong>Structure:</strong> Opening hook (attention-grabber) → Clear thesis/purpose → Evidence section (3–4 key points, each developed) → Rhetorical devices throughout (questions, repetition, triads) → Powerful closing statement.</li>
+  <li><strong>Techniques Specific to Speeches:</strong> Direct address ("You…", "We…") → Rhetorical questions → Repetition and parallel structures → Short, punchy sentences (easier to deliver orally) → Rhetorical exclamation.</li>
+  <li><strong>Tone:</strong> Passionate, engaging, as though you are speaking to a live audience.</li>
+  <li><strong>Grade 9 marker:</strong> The speech would be powerful if delivered aloud. Rhythm and pacing are evident.</li>
+</ul>
+
+<h4>Review</h4>
+<ul>
+  <li><strong>Structure:</strong> Opening opinion/hook → Detailed analysis of subject (plot, characters, design, etc.) → Strengths and weaknesses → Rating or recommendation → Conclusion.</li>
+  <li><strong>Tone:</strong> Conversational but informed. As though you are a professional critic, not a fan.</li>
+  <li><strong>Techniques:</strong> Vivid language to describe the subject. Specific examples. Reasoned judgment (don't just say "it was good" — explain why).</li>
+  <li><strong>Grade 9 marker:</strong> The review is persuasive. The reader understands both the strengths and weaknesses, and feels compelled to agree with your judgment.</li>
+</ul>
+
+<h3>Worked Example: Identifying Audience, Purpose &amp; Form</h3>
+
+<p><strong>Exam Task:</strong> "Write a letter to your local MP persuading them to fund youth mental health services in your area."</p>
+
 <table>
-  <tr><th>Form</th><th>Key Conventions</th></tr>
-  <tr><td><strong>Article</strong></td><td>Headline, strapline, subheadings, opening hook, call to action.</td></tr>
-  <tr><td><strong>Letter</strong></td><td>Addresses, date, salutation (<em>Dear Sir/Madam</em>), sign-off (<em>Yours faithfully</em> if unnamed, <em>Yours sincerely</em> if named).</td></tr>
-  <tr><td><strong>Speech</strong></td><td>Direct address, rhetorical questions, tricolon, inclusive pronouns (<em>we, us</em>), powerful closing.</td></tr>
-  <tr><td><strong>Review</strong></td><td>Star rating or verdict, balanced evaluation, personal voice, recommendation.</td></tr>
+  <tr><th>Element</th><th>Your Analysis</th></tr>
+  <tr><td><strong>Audience</strong></td><td>Local MP (formal, authority figure, busy). Use respectful language, evidence-based argument, clear and concise writing.</td></tr>
+  <tr><td><strong>Purpose</strong></td><td>To persuade (convince them that funding is necessary). Use emotional appeal (stories of young people) + logical argument (statistics on demand) + call to action.</td></tr>
+  <tr><td><strong>Form</strong></td><td>Letter (formal conventions apply). Address format, salutation, closing formula. Structure as persuasive letter, not informal email.</td></tr>
+  <tr><td><strong>Register</strong></td><td>Formal. No slang. Sentences: varied length, but generally longer and more complex than in casual writing. Vocabulary: sophisticated, precise.</td></tr>
+  <tr><td><strong>Opening</strong></td><td>"Dear [MP's Name], I am writing to urge you to support increased funding for youth mental health services…" (clear purpose, respectful tone)</td></tr>
+  <tr><td><strong>Body</strong></td><td>Paragraph 1: Statistics on youth mental health crisis. Paragraph 2: Personal anecdote or local example. Paragraph 3: Explain benefits of investment. Paragraph 4: Counter opposing arguments.</td></tr>
+  <tr><td><strong>Close</strong></td><td>"Yours sincerely, [Your Name]" (formal closing formula for letter where recipient name is used)</td></tr>
 </table>
 
-<h3>Sample Task — Two Versions Compared</h3>
+<h3>Common Mistakes: Losing Marks on APF</h3>
 
-<div class="text-extract"><em>"A national newspaper is inviting young people to contribute articles on whether school uniforms should be abolished. Write an article arguing your point of view."</em><div class="source">Edexcel-style transactional writing prompt</div></div>
+<div class="common-mistake"><strong>Mis-Matched Register:</strong> Starting formal, then slipping into casual language. <em>WRONG: "The government must act immediately. LOL, the current system is totally broken."</em> CORRECT: Maintain one register throughout.</div>
 
-<p><strong>Version A — Correct form:</strong></p>
-<div class="text-extract">
-<strong style="font-size:1.1em;">Uniforms: The Straightjacket Schools Won't Let Go Of</strong><br/>
-<em>Why forcing students into identical outfits does more harm than good</em><br/><br/>
-<strong>The illusion of equality</strong><br/>
-Walk into any British secondary school and you will see rows of blazers and ties — a comforting image of discipline. But beneath the surface, uniforms mask inequality rather than erase it…
-<div class="source">Headline, strapline, subheading, formal register</div></div>
+<div class="common-mistake"><strong>Generic, Purposeless Writing:</strong> Writing an article that could be about anything. No hook, no clear argument, no reason to read it. Grade 9 writing has a distinctive voice and clear intent.</div>
 
-<p><strong>Version B — Ignores form:</strong></p>
-<div class="text-extract">
-I think school uniforms should be abolished. They are expensive and students don't like them. In this essay I will explain why…
-<div class="source">No headline, no hook — reads as a generic essay</div></div>
+<div class="common-mistake"><strong>Ignoring Form Conventions:</strong> Writing a "letter" that looks like an essay, or a "speech" that reads like a magazine article. Examiners expect you to know the conventions of each form.</div>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Writing "In this essay I will…" is a red flag — it signals the student has ignored form. Articles need headlines and hooks, not essay introductions.</div>
+<div class="common-mistake"><strong>Addressing the Wrong Audience:</strong> Writing to teenagers when the audience is a headteacher. Re-read the task carefully and keep your audience in mind with every sentence.</div>
 
-<p>Version A signals <strong>craft</strong> from the first line. Version B reads as formless and will struggle to reach Level 3 on AO5.</p>
-`,
+<h3>The APF Checklist: Before You Write</h3>
+
+<p>Spend 2 minutes answering these questions before you write Q6:</p>
+
+<ul>
+  <li>Who am I writing for? (Formal or informal? Authority figure or peer?)</li>
+  <li>What is my purpose? (Argue, persuade, advise, inform, or combination?)</li>
+  <li>What form am I writing? (Article, letter, speech, review?)</li>
+  <li>What register should I use? (Formal, semi-formal, informal?)</li>
+  <li>How should I open? (Hook, respectful greeting, question, statement?)</li>
+  <li>What techniques will I use? (Rhetoric, facts, anecdotes, logic?)</li>
+  <li>How should I close? (Call to action, summary, powerful statement?)</li>
+</ul>
+
+<p>Answering these questions is not wasting time — it is building the scaffolding that holds your 40-mark response together.`,
     quiz: [
       {
         id: 'edx-lp1-m7-q1',
@@ -840,64 +1023,190 @@ I think school uniforms should be abolished. They are expensive and students don
     id: 'edx-lp1-m8',
     title: 'Transactional Writing: Persuasive Techniques',
     duration: '55 min',
-    content: `
-<h2>Persuasive Techniques — Building a Grade 8–9 Response</h2>
+    content: `<h2>Persuasive Techniques — Building a Grade 8–9 Response</h2>
 
-<p>Audience, purpose, and form get you to Level 3. To reach <strong>Level 4–5</strong> on AO5, you need persuasive techniques deployed with <em>precision</em>, not scattered randomly.</p>
+<p>You now understand audience, purpose, and form. But how do you actually persuade? Audience, purpose, and form get you to Level 3. To reach <strong>Level 4–5</strong> on AO5, you need persuasive techniques deployed with <em>precision</em>, not scattered randomly. You must also understand why each technique works and integrate them into a logical, compelling argument.</p>
 
-<h3>1. AFOREST — The Core Toolkit</h3>
+<h3>Understanding Persuasion: Ethos, Pathos, Logos</h3>
+
+<p>For 2,000 years, persuasive writing has rested on three pillars. Understand these, and you understand all persuasive techniques.</p>
+
+<ul>
+  <li><strong>Ethos (Credibility):</strong> Persuade by establishing that you are trustworthy and knowledgeable. "As a teacher with 20 years of experience…" or "The evidence clearly shows…"</li>
+  <li><strong>Pathos (Emotion):</strong> Persuade by appealing to the reader's feelings. Stories, vivid language, emotive words make the reader care.</li>
+  <li><strong>Logos (Logic):</strong> Persuade through reasoned argument, facts, statistics, and clear cause-and-effect relationships.</li>
+</ul>
+
+<p><strong>Grade 9 secret:</strong> Combine all three. Open with pathos (a story). Develop with logos (evidence). Close with ethos (you know this is true because…).</p>
+
+<h3>AFOREST Revisited: The Core Toolkit with Depth</h3>
 
 <table>
-  <tr><th>Technique</th><th>Example</th></tr>
-  <tr><td><strong>A</strong>lliteration</td><td><em>"brutal, broken Britain"</em></td></tr>
-  <tr><td><strong>F</strong>acts</td><td><em>"1.4 million UK children live in poverty"</em></td></tr>
-  <tr><td><strong>O</strong>pinions as fact</td><td><em>"It is undeniable that…"</em></td></tr>
-  <tr><td><strong>R</strong>hetorical Qs</td><td><em>"How can we call ourselves civilised…?"</em></td></tr>
-  <tr><td><strong>E</strong>motive language</td><td><em>"abandoned", "devastating"</em></td></tr>
-  <tr><td><strong>S</strong>tatistics</td><td><em>"73% of teachers report…"</em></td></tr>
-  <tr><td><strong>T</strong>ricolon</td><td><em>"Act, change, succeed."</em></td></tr>
+  <tr>
+    <th>Technique</th>
+    <th>Definition &amp; Purpose</th>
+    <th>Example</th>
+    <th>When to Use</th>
+  </tr>
+  <tr>
+    <td><strong>A — Alliteration</strong></td>
+    <td>Repetition of initial consonant sounds. Creates rhythm, emphasis, memorability.</td>
+    <td><em>"brutal, broken Britain"</em></td>
+    <td>When you want a phrase to stick in the reader's mind. Political slogans love this.</td>
+  </tr>
+  <tr>
+    <td><strong>F — Facts</strong></td>
+    <td>Verifiable, objective information. The backbone of logical persuasion.</td>
+    <td><em>"1.4 million UK children live in poverty"</em></td>
+    <td>Always. Facts give credibility. But explain why the fact matters — don't just drop it.</td>
+  </tr>
+  <tr>
+    <td><strong>O — Opinions as Fact</strong></td>
+    <td>Presenting opinions as though they are certain facts. Creates confidence in the reader.</td>
+    <td><em>"It is undeniable that social media damages young people's mental health."</em></td>
+    <td>Use sparingly and carefully. If overused, it seems arrogant. Best in the opening or closing.</td>
+  </tr>
+  <tr>
+    <td><strong>R — Rhetorical Questions</strong></td>
+    <td>Questions asked for effect, not to receive an answer. Engage the reader as a thinking partner.</td>
+    <td><em>"How can we call ourselves civilised when children sleep rough on our streets?"</em></td>
+    <td>Opens paragraphs powerfully. Creates emotional engagement. Make sure the implied answer supports your argument.</td>
+  </tr>
+  <tr>
+    <td><strong>E — Emotive Language</strong></td>
+    <td>Words chosen for emotional associations, not just literal meaning. "Abandoned" vs. "left alone".</td>
+    <td><em>"abandoned children", "devastating impact", "harrowing conditions"</em></td>
+    <td>Throughout persuasive writing. But avoid melodrama — Grade 8–9 writing uses emotive language subtly.</td>
+  </tr>
+  <tr>
+    <td><strong>S — Statistics</strong></td>
+    <td>Numerical evidence. Concrete, persuasive, often more convincing than facts alone.</td>
+    <td><em>"73% of teachers report increased stress levels"; "Attendance has risen by 15% since the policy began."</em></td>
+    <td>Essential for logical persuasion. Always explain what the statistic means and why it matters.</td>
+  </tr>
+  <tr>
+    <td><strong>T — Tricolon/Triadic Structure</strong></td>
+    <td>Three parallel elements in sequence. Creates rhythm and emphasis. "Life, liberty, and the pursuit of happiness."</td>
+    <td><em>"Act, change, succeed." "Strong, silent, unstoppable."</em></td>
+    <td>For powerful closing statements or to emphasise three interconnected ideas. Very common in speeches.</td>
+  </tr>
 </table>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> Top-band responses <em>integrate</em> techniques into chains — rhetorical question, then statistic, then emotive language. Orchestra, not checklist.</div>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> Top-band responses <em>integrate</em> AFOREST techniques into logical chains, not checklists. You do not need to use all seven techniques in every piece. Use the ones that serve your argument. A rhetorical question followed by a statistic, then an emotive phrase, creates a much stronger effect than seven isolated techniques scattered through the text.</div>
 
-<h3>2. Advanced Rhetoric</h3>
+<h3>Advanced Persuasive Techniques: Beyond AFOREST</h3>
+
+<h4>1. Counter-Arguments &amp; Rebuttals</h4>
+<p><strong>How it works:</strong> Acknowledge the opposing viewpoint, then dismantle it with stronger evidence.</p>
+<p><strong>Why it's persuasive:</strong> Shows you are fair-minded and have considered the other side. Readers trust writers who do this.</p>
+<p><strong>Structure:</strong> "Some argue that X. However, this ignores Y, which clearly shows Z."</p>
+<p><em>Example:</em> "Some claim that uniforms restrict self-expression. Yet evidence from schools that have introduced them shows improved focus and reduced bullying — benefits that clearly outweigh concerns about minor restrictions on fashion choice."</p>
+
+<h4>2. Anecdotes &amp; Personal Stories</h4>
+<p><strong>How it works:</strong> A brief, vivid story makes abstract arguments concrete and human.</p>
+<p><strong>Why it's persuasive:</strong> Emotional connection. Readers remember stories more than statistics.</p>
+<p><strong>Grade 9 tip:</strong> Keep anecdotes brief (2–3 sentences max). Make them specific and relevant. Connect them explicitly to your argument.</p>
+<p><em>Example:</em> "Last year, a student in my year struggled silently with anxiety for months. With proper mental health support, she is now thriving. Multiply her story by thousands of young people across the country, and you see the human cost of underfunding."</p>
+
+<h4>3. Expert Testimony &amp; Authority</h4>
+<p><strong>How it works:</strong> Cite credible experts or institutions to support your argument.</p>
+<p><strong>Why it's persuasive:</strong> Builds ethos. Readers trust experts.</p>
+<p><em>Example:</em> "According to the British Psychological Association, adolescent anxiety has increased by 40% in the past decade, largely due to social media use."</p>
+
+<h4>4. Vivid Imagery &amp; Description</h4>
+<p><strong>How it works:</strong> Use specific sensory language to make your argument memorable and emotionally resonant.</p>
+<p><strong>Why it's persuasive:</strong> Creates mental images that stay with the reader.</p>
+<p><em>Example:</em> "Imagine standing in a classroom where the radiators are broken in January, where textbooks are dog-eared from the 1990s, where the ceiling is patched with tape. This is the reality for students in underfunded schools."</p>
+
+<h4>5. Parallel Structures &amp; Anaphora</h4>
+<p><strong>How it works:</strong> Repeating grammatical patterns or opening words to create rhythm and emphasis.</p>
+<p><strong>Why it's persuasive:</strong> Memorable, rhythmic, builds momentum.</p>
+<p><em>Example:</em> "We must invest in youth services. We must reform the education system. We must hold government accountable. Only then will we build a fairer society."</p>
+
+<h4>6. Concession &amp; Qualified Language</h4>
+<p><strong>How it works:</strong> Use phrases like "Admittedly", "It could be argued", "Some might suggest" to appear fair-minded before making a stronger counter-point.</p>
+<p><strong>Why it's persuasive:</strong> Readers trust writers who sound balanced, not dogmatic.</p>
+<p><em>Example:</em> "Admittedly, regulation does impose costs on business. However, the cost of inaction — environmental damage and public health crises — far outweighs any financial burden."</p>
+
+<h4>7. Direct Address &amp; Second-Person Perspective</h4>
+<p><strong>How it works:</strong> Speak directly to the reader using "you" or "we".</p>
+<p><strong>Why it's persuasive:</strong> Makes the reader feel personally involved and responsible.</p>
+<p><em>Example:</em> "You've experienced the frustration of slow public transport. You know the environmental cost of endless cars on our roads. You can demand change."</p>
+
+<h3>Worked Examples: Technique Chains, Not Checklists</h3>
+
+<h4>Weak (Checklist Approach):</h4>
+<p><em>"The government should invest in youth services. This is important. There is a statistic: youth anxiety has increased. Some people disagree. But I think we should still do it because young people matter."</em></p>
+
+<p><strong>Problems:</strong> Techniques are isolated. No rhythm. No emotional connection. Argument feels fragmented.</p>
+
+<h4>Strong (Chained Approach):</h4>
+<p><em>"Young people are in crisis. In the past decade, adolescent anxiety has increased by 40%. This is not a statistic — behind every percentage point is a real teenager struggling in silence. Yet government investment in youth mental health has fallen by 25%. How can we call ourselves a civilised society when we abandon our young to their darkest moments? The evidence is clear: investment in youth services saves lives. The choice is ours: act now, or face a generation of broken young people. We must act."</em></p>
+
+<p><strong>What's working here?</strong></p>
 <ul>
-  <li><strong>Counter-arguments &amp; rebuttals</strong> — Acknowledge the opposing view, then dismantle it.</li>
-  <li><strong>Anecdotes</strong> — A brief story humanises your argument.</li>
-  <li><strong>Expert testimony</strong> — Citing authority adds credibility.</li>
-  <li><strong>Tone modulation</strong> — Shifting from calm reasoning to passion shows voice control.</li>
+  <li>Opening: Emotive statement to engage pathos.</li>
+  <li>Statistic: Logos (logic and evidence).</li>
+  <li>Vivid rephrasing: "Behind every percentage point is a real teenager" — humanises the statistic.</li>
+  <li>Counter-fact: Government spending has fallen — strengthens the argument.</li>
+  <li>Rhetorical question: Engages reader emotionally and implicitly calls out the government.</li>
+  <li>Counter-argument acknowledgement: "The evidence is clear" — ethos and logos combined.</li>
+  <li>Triadic close: "Act, save, heal" structure (simplified). Powerful.</li>
+  <li>Final statement: Simple, emphatic, leaves the reader thinking.</li>
 </ul>
 
-<div class="key-term"><strong>Key Term: Counter-argument</strong> — Presenting and refuting the opposing view. Shows the writer has weighed multiple perspectives.</div>
+<h3>Grade 9 Technique: The Persuasive Paragraph Structure</h3>
 
-<h3>3. Annotated Model Answer (Grade 8–9)</h3>
+<p>Each paragraph in persuasive writing should follow this pattern:</p>
 
-<p>Task: <em>"Write an article arguing the school day should be shortened."</em></p>
+<ol>
+  <li><strong>Topic Sentence (Ethos):</strong> Make a clear claim. "Investment in education is the foundation of social mobility."</li>
+  <li><strong>Evidence (Logos):</strong> Provide facts, statistics, or expert testimony. "Research from the Institute for Education shows that students from disadvantaged backgrounds who receive early intervention are 35% more likely to progress to university."</li>
+  <li><strong>Elaboration (Pathos + Logic):</strong> Explain why this evidence matters and what it means for the reader. Use vivid language, anecdotes, or emotional resonance. "This means that a young person in a poor area has a genuine chance — if we give them the tools. Without investment, their postcodes determine their futures."</li>
+  <li><strong>Link to Argument (Ethos):</strong> Tie it back to your main persuasive goal. "This is why increased education funding is not a luxury — it is a moral imperative."</li>
+</ol>
 
-<div class="text-extract">
-<strong style="font-size:1.1em;">Shorter Days, Sharper Minds</strong> <em>[Alliteration]</em><br/>
-<em>Why a Victorian timetable is failing a modern generation</em> <em>[Strapline]</em><br/><br/>
-Eight million children drag themselves through school gates for seven hours. <em>[Statistic + emotive verb]</em> By 2 p.m., classrooms are graveyards of concentration: eyes glazed, pens idle, minds elsewhere. <em>[Tricolon + metaphor]</em><br/><br/>
-Some insist shorter days mean less learning <em>[Counter-argument]</em> — but this confuses <em>time spent</em> with <em>time well spent</em>. <em>[Rebuttal]</em><br/><br/>
-We owe our children energy, not exhaustion. Curiosity, not compliance. A future, not a formula. <em>[Tricolon + antithesis]</em>
-<div class="source">Annotated model — Grade 8–9</div></div>
+<h3>Common Mistakes in Persuasive Writing</h3>
 
-<h3>4. AO5 Level 4–5 Descriptors</h3>
-<ul>
-  <li><strong>Level 5 (21–24):</strong> Compelling, ambitious vocabulary, sustained crafting, register matched to audience.</li>
-  <li><strong>Level 4 (16–20):</strong> Convincing, secure register, connected ideas, effective techniques.</li>
-</ul>
+<div class="common-mistake"><strong>Technique Overload:</strong> Using every technique in a single paragraph. This is exhausting to read and dilutes the effect. Choose 1–2 techniques per paragraph that serve your argument.</div>
 
-<h3>5. Before &amp; After Upgrade</h3>
+<div class="common-mistake"><strong>Unmotivated Techniques:</strong> Using alliteration or rhetorical questions just because they are "good techniques". They must serve your persuasive goal. Ask yourself: "Does this phrase persuade the reader to agree with me?"</div>
 
-<p><strong>Before (Level 2–3):</strong></p>
-<div class="text-extract">School days are too long and students get tired. I think we should make school shorter.<div class="source">Generic, no techniques, flat vocabulary</div></div>
+<div class="common-mistake"><strong>Ignoring Counter-Arguments:</strong> Addressing only your own side of the debate. Top-band responses acknowledge opposing viewpoints and refute them. This shows intellectual honesty and makes your argument stronger.</div>
 
-<p><strong>After (Level 4–5):</strong></p>
-<div class="text-extract">By afternoon, the classroom is a theatre of disengagement: heads propped on hands, whispered conversations, the clock drowning out the teacher. Dr Levitin confirms the adolescent brain cannot sustain focus beyond four hours. Yet we persist with a model designed not for learning, but for childcare.<div class="source">Tricolon, expert testimony, counter-argument, emotive language</div></div>
+<div class="common-mistake"><strong>Statistics Without Explanation:</strong> Dropping a statistic and moving on. Always explain what it means and why it matters. <em>WEAK: "73% of students support the proposal."</em> STRONG: <em>"73% of students support the proposal — evidence that there is substantial demand for change."</em></div>
 
-<div class="common-mistake"><strong>Common Mistake:</strong> Techniques in isolation — one rhetorical question in a flat paragraph. Examiners reward <em>sustained</em> craft, not isolated devices.</div>
-`,
+<div class="common-mistake"><strong>Melodramatic Tone:</strong> Using overly emotional language that seems exaggerated. Grade 8–9 writing is persuasive but measured. <em>WEAK: "This is literally the worst disaster in human history!"</em> STRONG: <em>"This represents a significant harm to vulnerable populations."</em></div>
+
+<h3>Practice: Build Your Technique Chain</h3>
+
+<p><strong>Prompt:</strong> "Write an article persuading your school to extend the school day to include after-school clubs and mentoring."</p>
+
+<p><strong>Your persuasive chain (identify the techniques):</strong></p>
+
+<ol>
+  <li><strong>Opening:</strong> "Students today face unprecedented pressure — academic, social, and emotional. Our schools must do more to support them."
+    <ul><li>Technique: ___________</li></ul>
+  </li>
+  
+  <li><strong>Evidence paragraph:</strong> "Research from the Educational Psychology Review shows that students in schools offering extended support programmes achieve 12% higher grades and report 35% lower stress levels."
+    <ul><li>Technique: ___________</li></ul>
+  </li>
+  
+  <li><strong>Emotional resonance:</strong> "Imagine a young person struggling at home, with nowhere safe to go after 3 PM. An after-school club could be the difference between isolation and belonging."
+    <ul><li>Technique: ___________</li></ul>
+  </li>
+  
+  <li><strong>Counter-argument:</strong> "Some argue that funding constraints make this impossible. Yet the long-term cost of mental health crises and underachievement far exceeds the investment needed now."
+    <ul><li>Technique: ___________</li></ul>
+  </li>
+  
+  <li><strong>Closing:</strong> "Invest in students. Build community. Transform lives. The choice is clear."
+    <ul><li>Technique: ___________</li></ul>
+  </li>
+</ol>
+
+<p><strong>Answers:</strong> (1) Emotive language, (2) Statistics + authority, (3) Vivid imagery + anecdote, (4) Counter-argument + rebuttal, (5) Parallel structure (triadic) + imperative</p>`,
     quiz: [
       {
         id: 'edx-lp1-m8-q1',
@@ -979,58 +1288,216 @@ We owe our children energy, not exhaustion. Curiosity, not compliance. A future,
     title: 'Spelling, Punctuation & Grammar for Paper 1',
     duration: '45 min',
     content: `
-<h2>AO6: Spelling, Punctuation &amp; Grammar</h2>
+<h2>AO6: Spelling, Punctuation &amp; Grammar — The Technical Mark Multiplier</h2>
 
-<p>On Edexcel Paper 1 (1EN2/01), <strong>AO6 is worth 16 marks</strong> on writing — that is <strong>40% of the writing mark</strong>. Examiners reward technical accuracy at every grade boundary.</p>
+<p>On Edexcel Paper 1 (1EN2/01), <strong>AO6 is worth 16 marks</strong> on writing — that is <strong>40% of the writing mark</strong>. This is not a minor bonus; it is the difference between a Grade 5 and a Grade 7. Examiners reward technical accuracy at every grade boundary, and sloppy work loses marks even if the ideas are strong.</p>
 
 <div class="key-term"><strong>Key Term: AO6</strong> — Use a range of vocabulary and sentence structures for clarity, purpose and effect, with accurate spelling and punctuation.</div>
 
-<h3>Common Spelling Errors</h3>
+<h3>The AO6 Mark Pyramid</h3>
 <ul>
-  <li><strong>definitely</strong> — not "definately"</li>
-  <li><strong>necessary</strong> — one <em>c</em>, two <em>s</em>s</li>
-  <li><strong>separate</strong> — there is "a rat" in separate</li>
-  <li><strong>conscience</strong> — has "science" in it</li>
-  <li><strong>environment</strong> — don't forget the <em>n</em> before the <em>m</em></li>
-  <li><strong>business</strong> — "bus-i-ness", not "buisness"</li>
+  <li><strong>Grades 1–3:</strong> Basic spelling and punctuation, frequent errors that obscure meaning.</li>
+  <li><strong>Grades 4–5:</strong> Generally accurate spelling and punctuation; variety in sentence structure is attempted but not always controlled.</li>
+  <li><strong>Grades 6–7:</strong> Accurate spelling and punctuation; wide range of sentence structures used effectively for clarity and effect.</li>
+  <li><strong>Grades 8–9:</strong> Sophisticated vocabulary and spelling; precise punctuation used for maximum impact; varied sentence structures create rhythm, pace, and emphasis.</li>
 </ul>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> If unsure how to spell a word, replace it with a synonym you can spell confidently. A simpler word spelled correctly is always worth more than an ambitious word spelled wrong.</div>
-
-<h3>Punctuation for Effect</h3>
+<h3>Common Spelling Errors &amp; Mnemonics</h3>
 <ul>
-  <li><strong>Semicolons</strong> — link related independent clauses: <em>The corridor was empty; every door stood ajar.</em></li>
-  <li><strong>Colons</strong> — introduce a list or dramatic reveal: <em>She had one rule: never look back.</em></li>
-  <li><strong>Dashes</strong> — parenthetical info or interruption: <em>The garden — once immaculate — was reclaimed by weeds.</em></li>
-  <li><strong>Ellipsis</strong> — build tension: <em>He reached for the handle...</em></li>
+  <li><strong>definitely</strong> — not "definately" (def-i-nite-ly: it has no 'a')</li>
+  <li><strong>necessary</strong> — one <em>c</em>, two <em>s</em>s (remember: one collar, two sleeves)</li>
+  <li><strong>separate</strong> — there is "a rat" in sep<em>a</em>rate</li>
+  <li><strong>conscience</strong> — has "science" in it (your moral science)</li>
+  <li><strong>environment</strong> — don't forget the <em>n</em> before the <em>m</em> (environ-m-ent)</li>
+  <li><strong>business</strong> — "bus-i-ness", not "buisness" (there is no 'u')</li>
+  <li><strong>privilege</strong> — not "privelige" (think: "I get special treatment")</li>
+  <li><strong>occurrence</strong> — double 'c', double 'r' (it happens twice)</li>
+  <li><strong>questionnaire</strong> — two 'n's, two 'r's (questions need double-checking)</li>
+  <li><strong>accommodate</strong> — double 'c', double 'm' (a friend + a motel = accommodation)</li>
 </ul>
 
-<h3>Varied Sentence Openers</h3>
+<div class="examiner-tip"><strong>Examiner Tip:</strong> If unsure how to spell a word, replace it with a synonym you can spell confidently. A simpler word spelled correctly is always worth more than an ambitious word spelled wrong. Never guess at complex words in an exam.</div>
+
+<h3>Punctuation for Maximum Effect</h3>
+
+<div class="grade-9-technique"><strong>Grade 9 Technique: Punctuation as Meaning-Maker</strong> — Advanced writers do not use punctuation merely to follow rules; they use it strategically to guide the reader's pace, create emphasis, and shape tone. A semicolon creates a pause shorter than a full stop. A dash interrupts. An ellipsis creates suspense. Master this distinction.</div>
+
+<h4>Semicolons: The Sophisticated Pause</h4>
+<p><strong>Purpose:</strong> Link two related independent clauses without a conjunction. Creates a subtle pause — closer than a full stop, more deliberate than a comma.</p>
 <ul>
-  <li><strong>Adverbial:</strong> <em>Silently, the figure crept along the wall.</em></li>
-  <li><strong>Participial:</strong> <em>Trembling with anticipation, she opened the letter.</em></li>
-  <li><strong>Imperative:</strong> <em>Consider this: every great city was once a village.</em></li>
+  <li><em>The corridor was empty; every door stood ajar.</em></li>
+  <li><em>She had practised for months; the performance was effortless.</em></li>
+  <li><em>Climate change is real; the evidence is overwhelming.</em></li>
+</ul>
+<p><strong>Why examiners love it:</strong> Demonstrates mature control and shows you can handle grammatically complex ideas without fragmenting them.</p>
+
+<h4>Colons: The Dramatic Reveal</h4>
+<p><strong>Purpose:</strong> Introduce a list, explanation, or dramatic statement that expands on what came before.</p>
+<ul>
+  <li><em>She had one rule: never look back.</em></li>
+  <li><em>The policy requires three things: evidence, transparency, and accountability.</em></li>
+  <li><em>His silence said everything: he disagreed profoundly.</em></li>
 </ul>
 
-<h3>Sentence Types</h3>
+<h4>Dashes: The Interruption</h4>
+<p><strong>Purpose:</strong> Insert parenthetical information, create emphasis, or show an interruption in thought.</p>
 <ul>
-  <li><strong>Simple</strong> — one clause, dramatic emphasis: <em>She ran.</em></li>
-  <li><strong>Compound</strong> — two clauses joined by FANBOYS. Balances ideas.</li>
-  <li><strong>Complex</strong> — independent + subordinate clauses. Shows control.</li>
-  <li><strong>Minor</strong> — a deliberate fragment: <em>Silence. Nothing but silence.</em></li>
+  <li><em>The garden — once immaculate — was reclaimed by weeds.</em> (parenthetical insert)</li>
+  <li><em>She turned to leave — then hesitated.</em> (sudden shift or realisation)</li>
+  <li><em>Three things drive society: power, money, and — if we're lucky — compassion.</em> (emphatic insertion)</li>
 </ul>
 
-<p>Vary <strong>paragraph length</strong> too — a single-sentence paragraph amid longer ones creates a jolt of emphasis examiners reward.</p>
+<h4>Ellipsis: The Pregnant Pause</h4>
+<p><strong>Purpose:</strong> Build tension, suggest something unsaid, or show a character's hesitation.</p>
+<ul>
+  <li><em>He reached for the door handle...</em> (What will he find?)</li>
+  <li><em>She had always known the truth, but never expected him to...</em> (Trail off strategically)</li>
+  <li><em>First came the wind. Then the rain. Then...</em> (Suspense)</li>
+</ul>
+<p><strong>Important:</strong> Use sparingly. Overuse of ellipsis appears immature.</p>
 
-<div class="common-mistake"><strong>Common Mistake: Comma Splicing</strong> — <em>He opened the door, the room was empty.</em> Fix with a full stop, semicolon, or conjunction.</div>
+<h3>Varied Sentence Openers: Breaking the Subject-Verb Pattern</h3>
 
-<div class="common-mistake"><strong>Common Mistake: Tense Shifting</strong> — Pick one tense and maintain it. Read your work back to catch slips.</div>
+<p><strong>Common mistake:</strong> Every sentence begins with the subject. This creates a monotonous rhythm that bores examiners. Grade 9 responses vary their starters.</p>
 
-<div class="common-mistake"><strong>Common Mistake: Apostrophe Errors</strong> — "It's" means "it is"; "its" is possessive. "They're" means "they are"; "their" is possessive.</div>
+<h4>Adverbial Openers</h4>
+<ul>
+  <li><em>Silently, the figure crept along the wall.</em></li>
+  <li><em>Immediately, the response was clear: rejection.</em></li>
+  <li><em>Gradually, the truth emerged.</em></li>
+</ul>
 
-<h3>Quick Practice</h3>
-<p>Rewrite this passage using at least three punctuation techniques from above:</p>
-<p><em>"The house was old. It had broken windows. The garden was overgrown. Nobody had lived there for years. It was creepy."</em></p>
+<h4>Participial Openers (Using -ing or -ed)</h4>
+<ul>
+  <li><em>Trembling with anticipation, she opened the letter.</em></li>
+  <li><em>Exhausted from the search, they gave up.</em></li>
+  <li><em>Having considered the evidence, the jury returned a guilty verdict.</em></li>
+</ul>
+
+<h4>Prepositional Openers</h4>
+<ul>
+  <li><em>In the depths of the forest, an ancient secret lay hidden.</em></li>
+  <li><em>Beyond the mountains, a new world awaited.</em></li>
+  <li><em>Throughout history, power corrupts the weak.</em></li>
+</ul>
+
+<h4>Imperative Openers (Commands)</h4>
+<ul>
+  <li><em>Consider this: every great city was once a village.</em></li>
+  <li><em>Imagine a world without electricity.</em></li>
+  <li><em>Think about the long-term consequences.</em></li>
+</ul>
+
+<h4>Question Openers</h4>
+<ul>
+  <li><em>What happens when society forgets its duty to its young?</em></li>
+  <li><em>How can we expect change without first challenging ourselves?</em></li>
+</ul>
+
+<h3>Sentence Types: Building Grammatical Variety</h3>
+
+<h4>Simple Sentences (1 Independent Clause)</h4>
+<p><strong>Effect:</strong> Dramatic emphasis, pace, shock value.</p>
+<ul>
+  <li><em>She ran.</em></li>
+  <li><em>The lights went out.</em></li>
+  <li><em>Nothing changed.</em></li>
+</ul>
+<p><strong>Grade 9 tip:</strong> Use occasional simple sentences to create impact after longer complex sentences.</p>
+
+<h4>Compound Sentences (2+ Independent Clauses)</h4>
+<p><strong>Effect:</strong> Balances two equal ideas; suggests parallel weight or consequence.</p>
+<ul>
+  <li><em>He opened the door, and the room was empty.</em> (FANBOYS: and, but, or, yet, so, nor)</li>
+  <li><em>The evidence was clear; therefore, the jury had no choice.</em></li>
+  <li><em>Some argue for regulation, yet others demand freedom.</em></li>
+</ul>
+
+<h4>Complex Sentences (Independent + Subordinate Clauses)</h4>
+<p><strong>Effect:</strong> Shows sophisticated thinking; creates hierarchy of ideas (main idea + supporting detail).</p>
+<ul>
+  <li><em>Although the policy seems harsh, it is necessary.</em> (subordinate clause first)</li>
+  <li><em>She left the city because she could no longer bear the noise.</em> (subordinate clause second)</li>
+  <li><em>If the government fails to act, society will suffer.</em> (conditional relationship)</li>
+</ul>
+
+<h4>Minor Sentences (Deliberate Fragments)</h4>
+<p><strong>Effect:</strong> Emphasis, rhythm, immediacy. Use sparingly and purposefully.</p>
+<ul>
+  <li><em>Silence. Nothing but silence.</em></li>
+  <li><em>The end. No exceptions. No apologies.</em></li>
+  <li><em>Impossible. Yet it happened.</em></li>
+</ul>
+
+<div class="grade-9-technique"><strong>Grade 9 Technique: The Sentence Rhythm Symphony</strong> — A Grade 9 response moves between short, punchy sentences (for impact) and long, flowing complex sentences (for sophistication). This creates a musical rhythm that keeps the reader engaged. Read your work aloud — you should hear variation in pace.</div>
+
+<h3>Paragraph Variation: Length Creates Emphasis</h3>
+
+<p>Vary not just sentences, but paragraphs. A single-sentence paragraph stands out like a spotlight.</p>
+
+<ul>
+  <li><strong>Long paragraph (5–7 sentences):</strong> Development, evidence, explanation.</li>
+  <li><strong>Standard paragraph (3–4 sentences):</strong> Point + evidence + explanation.</li>
+  <li><strong>Short paragraph (1–2 sentences):</strong> Emphasis, turning point, shock reveal.</li>
+</ul>
+
+<p><em>Example:</em></p>
+<p><em>"The government promised reform. For decades, nothing changed. Communities were forgotten. Schools crumbled. Services disappeared. Yet politicians claimed success. Change is possible only when accountability exists."</em></p>
+
+<h3>Common AO6 Mistakes to Avoid</h3>
+
+<div class="common-mistake"><strong>Comma Splicing:</strong> Joining two independent clauses with only a comma. <em>"He opened the door, the room was empty."</em> Fix: Use a full stop, semicolon, or conjunction. <em>"He opened the door. The room was empty."</em> or <em>"He opened the door; the room was empty."</em> or <em>"He opened the door, and the room was empty."</em></div>
+
+<div class="common-mistake"><strong>Tense Shifting:</strong> Switching randomly between past, present, and future. <em>"She walks into the room and saw a mysterious figure."</em> Pick one tense (past) and maintain it throughout: <em>"She walked into the room and saw a mysterious figure."</em></div>
+
+<div class="common-mistake"><strong>Apostrophe Confusion:</strong>
+  <ul>
+    <li><em>"It's"</em> = "it is" or "it has"; <em>"its"</em> = possessive (no apostrophe)</li>
+    <li><em>"They're"</em> = "they are"; <em>"their"</em> = possessive; <em>"there"</em> = place</li>
+    <li><em>"You're"</em> = "you are"; <em>"your"</em> = possessive</li>
+    <li><em>"Who's"</em> = "who is"; <em>"whose"</em> = possessive</li>
+  </ul>
+  <p><em>Correct:</em> <em>"The team submitted its report on time."</em> NOT <em>"its' report"</em> or <em>"it's report"</em>.</p>
+</div>
+
+<div class="common-mistake"><strong>Unclear Pronoun Reference:</strong> <em>"The teacher told the student he was late."</em> (Is the teacher or student late?) Fix: <em>"The teacher told the late student he must work harder."</em> or <em>"The teacher, who was late, told the student to focus."</em></div>
+
+<div class="common-mistake"><strong>Sentences Beginning with "However" or "Therefore":</strong> These conjunctions should be preceded by a semicolon or placed after a full stop. <em>WRONG: "The evidence was clear. However, the court was unconvinced."</em> CORRECT: <em>"The evidence was clear; however, the court was unconvinced."</em></div>
+
+<div class="common-mistake"><strong>Overuse of Exclamation Marks:</strong> One per essay maximum. They are not emphatic — they are immature.</div>
+
+<h3>Worked Example: Elevating Your Technical Writing</h3>
+
+<h4>Original (Grade 4–5):</h4>
+<p><em>"Schools are important. They teach students. Students learn maths and english. Teachers are good at their jobs. Schools help the economy."</em></p>
+
+<h4>Elevated (Grade 8–9):</h4>
+<p><em>"Schools represent the bedrock of an equitable society. Beyond merely teaching mathematics and English, educational institutions develop critical thinking, foster social cohesion, and prepare young people for economic participation. Yet underfunding threatens this mission; schools lack resources, teachers are demoralised, and students are denied opportunity. Consider this: every pound invested in education yields manifold returns."</em></p>
+
+<p><strong>What changed?</strong></p>
+<ul>
+  <li>Sophisticated vocabulary: "bedrock", "equitable", "demoralised", "manifold"</li>
+  <li>Varied sentence structure: simple statement, then complex explanation, then parallel clauses, then rhetorical question</li>
+  <li>Strategic punctuation: semicolon links related ideas; dash creates emphasis</li>
+  <li>Paragraph rhythm: builds argument logically</li>
+</ul>
+
+<h3>Practice: Edit for AO6</h3>
+
+<p><strong>Original passage (containing 5 errors):</strong></p>
+<p><em>"The internet has changed everything. It allows people to communicate instantly. People can access information from anywhere. Its easy to share ideas. However, there are risks; some people use it for crime. The impact is huge, it affects everyone."</em></p>
+
+<p><strong>Identify the errors, then rewrite using Grade 9 technique:</strong></p>
+<ul>
+  <li>Repetitive sentence starters</li>
+  <li>Apostrophe error ("Its" should be "It's")</li>
+  <li>Comma splice ("huge, it affects")</li>
+  <li>Lack of sophisticated vocabulary</li>
+  <li>Missing sentence variety</li>
+</ul>
+
+<p><strong>Possible Grade 8–9 rewrite:</strong></p>
+<p><em>"The internet has fundamentally transformed how we communicate, work, and learn. Instant global connectivity has democratised access to information; yet this same power has enabled unprecedented security threats. While legitimate users share ideas and build communities, bad actors exploit the system for fraud, harassment, and worse. The challenge is not technological — it is moral: how do we preserve the internet's liberating potential while protecting society from its darker applications?"</em></p>
 `,
     quiz: [
       {
@@ -1103,71 +1570,309 @@ We owe our children energy, not exhaustion. Curiosity, not compliance. A future,
     id: 'edx-lp1-m10',
     title: 'Paper 1 Exam Strategy & Timed Practice',
     duration: '60 min',
-    content: `
-<h2>Paper 1 Exam Strategy &amp; Timed Practice</h2>
+    content: `<h2>Paper 1 Exam Strategy &amp; Timed Practice — The Full Walkthrough</h2>
 
-<p>Edexcel Paper 1 (1EN2/01) lasts <strong>1 hour 55 minutes</strong> and is worth 80 marks. This module gives you a timing plan, a mock walkthrough, and strategies for exam day.</p>
+<p>You now understand all the components of Paper 1: reading analysis, evaluation, and transactional writing. But understanding concepts and executing them under exam pressure are two different things. This module shows you how to allocate time ruthlessly, manage pressure, and walk through a complete mock exam.</p>
 
-<h3>Recommended Timing Plan</h3>
+<h3>The Golden Rule: One Minute Per Mark (Plus Strategic Padding)</h3>
 
-<div class="key-term"><strong>Key Principle:</strong> Roughly one minute per mark, plus reading time and a proofread.</div>
+<p>With 80 marks in 115 minutes, you have roughly <strong>1.4 minutes per mark</strong>. But marks are not equally weighted. Questions worth 1–2 marks need only seconds. Questions worth 15–16 marks need careful time investment.</p>
+
+<h4>Realistic Time Allocation</h4>
 
 <table>
-  <tr><th>Section</th><th>Marks</th><th>Time</th></tr>
-  <tr><td>Read source text</td><td>—</td><td>5 min</td></tr>
-  <tr><td>Q1 — Comprehension</td><td>1</td><td>2 min</td></tr>
-  <tr><td>Q2 — Two things</td><td>2</td><td>3 min</td></tr>
-  <tr><td>Q3 — Language analysis</td><td>6</td><td>10 min</td></tr>
-  <tr><td>Q4 — Language &amp; structure</td><td>15</td><td>20 min</td></tr>
-  <tr><td>Q5 — Evaluation</td><td>16</td><td>20 min</td></tr>
-  <tr><td>Q6 — Writing</td><td>40</td><td>50 min</td></tr>
-  <tr><td>Proofread</td><td>—</td><td>10 min</td></tr>
+  <tr>
+    <th>Activity</th>
+    <th>Marks</th>
+    <th>Time</th>
+    <th>Cumulative</th>
+  </tr>
+  <tr>
+    <td><strong>1. Read source text (carefully)</strong></td>
+    <td>—</td>
+    <td>5 min</td>
+    <td>5 min</td>
+  </tr>
+  <tr>
+    <td><strong>2. Q1 — Comprehension</strong></td>
+    <td>1</td>
+    <td>2 min</td>
+    <td>7 min</td>
+  </tr>
+  <tr>
+    <td><strong>3. Q2 — Two things</strong></td>
+    <td>2</td>
+    <td>3 min</td>
+    <td>10 min</td>
+  </tr>
+  <tr>
+    <td><strong>4. Q3 — Language analysis</strong></td>
+    <td>6</td>
+    <td>10 min</td>
+    <td>20 min</td>
+  </tr>
+  <tr>
+    <td><strong>5. Q4 — Language &amp; structure</strong></td>
+    <td>15</td>
+    <td>20 min</td>
+    <td>40 min</td>
+  </tr>
+  <tr>
+    <td><strong>6. Q5 — Evaluation</strong></td>
+    <td>16</td>
+    <td>20 min</td>
+    <td>60 min</td>
+  </tr>
+  <tr>
+    <td><strong>SECTION A COMPLETE</strong></td>
+    <td><strong>40</strong></td>
+    <td><strong>60 min</strong></td>
+    <td><strong>60 min</strong></td>
+  </tr>
+  <tr>
+    <td><strong>7. Q6 — Plan (brainstorm, outline)</strong></td>
+    <td>—</td>
+    <td>5 min</td>
+    <td>65 min</td>
+  </tr>
+  <tr>
+    <td><strong>8. Q6 — Write (introduction)</strong></td>
+    <td>—</td>
+    <td>10 min</td>
+    <td>75 min</td>
+  </tr>
+  <tr>
+    <td><strong>9. Q6 — Write (body paragraphs)</strong></td>
+    <td>—</td>
+    <td>25 min</td>
+    <td>100 min</td>
+  </tr>
+  <tr>
+    <td><strong>10. Q6 — Write (conclusion)</strong></td>
+    <td>—</td>
+    <td>5 min</td>
+    <td>105 min</td>
+  </tr>
+  <tr>
+    <td><strong>11. Proofread (both sections)</strong></td>
+    <td>—</td>
+    <td>10 min</td>
+    <td>115 min</td>
+  </tr>
+  <tr>
+    <td><strong>TOTAL</strong></td>
+    <td><strong>80</strong></td>
+    <td><strong>115 min</strong></td>
+    <td></td>
+  </tr>
 </table>
 
-<div class="examiner-tip"><strong>Examiner Tip:</strong> If a reading question overruns, move on. The writing section carries 40 marks and must not be rushed.</div>
+<div class="grade-9-technique"><strong>Grade 9 Technique: The Overrun Rule</strong> — If you overrun on Q1–Q5, skip to Q6. The writing section is worth 40 marks — exactly 50% of the paper. A complete, well-written response is always worth more than a perfect reading section with a rushed or missing essay.</div>
 
-<h3>Exam Day Checklist</h3>
+<h3>The Reading Section: Strategic Skimming &amp; Close Reading</h3>
+
+<h4>Step 1: Read the Source Text (5 min)</h4>
+<p><strong>First read (2 min, no marking):</strong> Read the entire text once, without underlining or annotating. Get a feel for the writer's argument, tone, and main ideas.</p>
+
+<p><strong>Second read (3 min, with annotation):</strong> Read again slowly. This time:
 <ul>
-  <li>Black pen (plus spare), highlighter, watch.</li>
-  <li>Read the <strong>entire source</strong> before answering — annotate as you go.</li>
-  <li>Underline command words: <em>how, explain, evaluate, to what extent</em>.</li>
-  <li>Spend 5 minutes planning your writing before you begin.</li>
+  <li>Underline key phrases (words and phrases that reveal the writer's attitude, purpose, or technique).</li>
+  <li>Circle repeated words or structural markers ("But", "Yet", "Finally", "Moreover").</li>
+  <li>Note your immediate reactions: "This is shocking", "This is clever wordplay", "This is emotional appeal".</li>
 </ul>
+</p>
 
-<h3>Approaching the Writing Task (Q6)</h3>
-<p>Spend 5 minutes planning before you write. Identify the <strong>purpose, audience and form</strong> from the prompt. Sketch a brief paragraph plan with a strong opening and a purposeful ending — strong endings secure top marks. Avoid generic openings; aim for something that immediately establishes your voice and register.</p>
+<h4>Step 2–3: Q1 &amp; Q2 (5 min total)</h4>
+<p><strong>Q1 (2 min):</strong> Locate the relevant phrase. Copy or paraphrase it closely. One phrase is enough. Done.</p>
 
-<h3>Running Out of Time?</h3>
+<p><strong>Q2 (3 min):</strong> Find two distinct facts. State each in one sentence. Move on.</p>
+
+<p><strong>Golden rule:</strong> Do not write elaborate explanations for Q1–Q2. The marks are few. Short answers are faster and just as effective.</p>
+
+<h4>Step 4: Q3 — Language Analysis (10 min)</h4>
+<p><strong>Task:</strong> Analyse the effect of language choices in a specific section. You must:
+1. Identify a language technique (metaphor, simile, alliteration, emotive language, etc.)
+2. Quote a short phrase (2–5 words)
+3. Explain the effect on the reader
+
+<p><strong>Structure your answer:</strong></p>
 <ol>
-  <li>Write a <strong>brief plan</strong> so the examiner sees your structure.</li>
-  <li>Write your <strong>opening paragraph</strong> as strongly as you can.</li>
-  <li>Skip to your <strong>ending</strong> — a purposeful conclusion shows control.</li>
-  <li>Fill in middle paragraphs with remaining time.</li>
+  <li>"The writer uses [technique] in the phrase '[quote]'."</li>
+  <li>"This creates an effect of [mood/feeling] because…"</li>
+  <li>"As a result, the reader [feels/thinks/understands]…"</li>
 </ol>
 
-<h3>Mock Walkthrough</h3>
+<p><strong>Do 2–3 techniques:</strong> Each technique + explanation = 2 marks roughly. Aim for 2–3 mini-analyses to secure 5–6 marks.</p>
 
-<div class="text-extract">"The factory bell rang at half-past five, and within minutes the lane was alive with figures — men, women, and children — shuffling towards the mill. Their faces were pale, their clothing threadbare. A boy of no more than ten carried a bundle of rags under one arm. He did not speak, nor did he look up. The overseer stood at the gate, watch in hand, marking each name with a stub of pencil."<div class="source">Adapted from a 19th-century factory report</div></div>
+<h4>Step 5: Q4 — Language &amp; Structure (20 min)</h4>
+<p><strong>Task:</strong> How does the writer use language AND structure to influence the reader? This is the biggest reading question (15 marks). You must:</p>
 
-<p><strong>Q1 (1 mark):</strong> One thing about the people: their faces were pale.</p>
+<ol>
+  <li><strong>Analyse 4–5 language techniques</strong> (use PEE: Point, Evidence, Explanation).</li>
+  <li><strong>Analyse structural choices:</strong> Opening (hook or calm?), paragraphing (short or long?), sentence variety (builds pace?), closing (powerful or reflective?).</li>
+  <li><strong>Link all to effect:</strong> How do these choices work together to influence the reader?</li>
+</ol>
 
-<p><strong>Q2 (2 marks):</strong> Two things about the people: (1) faces pale and drawn; (2) clothing threadbare.</p>
+<p><strong>Sample structure:</strong></p>
+<p><em>"The writer uses [technique] throughout the text to [effect]. For example, in line X, [quote]. This creates [feeling] in the reader. Additionally, the writer's structural choice to [short sentences / varied paragraph length / opening statement] reinforces this by [why it matters]. Together, these choices [cumulative effect on reader]."</em></p>
 
-<p><strong>Q3 (6 marks):</strong> Analyse language describing the boy — "no more than ten" (emphasises youth), "bundle of rags" (poverty), "did not speak, nor did he look up" (exhaustion/resignation).</p>
+<p><strong>Grade 9 secret:</strong> Show how language and structure work TOGETHER. Don't just list techniques; show their interconnection.</p>
 
-<p><strong>Q4 (15 marks):</strong> Structure moves from wide shot (lane) to close-up (boy) to the overseer — a cinematic zoom building empathy before introducing authority. Analyse how language and structure work together to influence the reader.</p>
+<h4>Step 6: Q5 — Evaluation (20 min)</h4>
+<p><strong>Task:</strong> To what extent do you agree with a statement about the text? This requires a personal, critical response backed by evidence.</p>
 
-<p><strong>Q5 (16 marks):</strong> Evaluate: agree the descriptions create sympathy; partially disagree the observational tone may distance the reader. Conclude with a clear, evidence-based judgement.</p>
+<p><strong>Structure:</strong></p>
+<ol>
+  <li><strong>Opening (2 min):</strong> Clear statement of your position. "I agree to a large extent because…" OR "I partially agree because…" OR "I disagree because…"</li>
+  <li><strong>Body Paragraph 1 (6 min):</strong> Your first piece of evidence. Quote, explain, link to your position.</li>
+  <li><strong>Body Paragraph 2 (6 min):</strong> Your second piece of evidence. Quote, explain, link.</li>
+  <li><strong>Counter-argument Paragraph (4 min):</strong> Acknowledge the opposite view, then refute it. "Some might argue…. However,…"</li>
+  <li><strong>Conclusion (2 min):</strong> Restate your position in light of the evidence. "On balance, I agree because…"</li>
+</ol>
 
-<h3>Grade Boundaries &amp; Final Tips</h3>
+<p><strong>Grade 9 approach:</strong> Evaluate the writer's METHODS, not just ideas. "Is the evidence strong?" "Is the argument logically sound?" "Does the emotional appeal feel authentic or manipulative?"</p>
+
+<h3>The Writing Section: Planning &amp; Execution</h3>
+
+<h4>Step 7: Planning (5 min) — This Time Investment Pays Dividends</h4>
+<p><strong>Do not skip planning.</strong> A rushed plan is faster than a rambling first draft you then have to cross out.</p>
+
+<p><strong>Your plan should include:</strong></p>
+<ol>
+  <li><strong>Audience, purpose, form:</strong> Who am I writing for? What do I want to achieve? What shape does it take?</li>
+  <li><strong>Register &amp; tone:</strong> Formal or informal? Confident or cautious?</li>
+  <li><strong>Opening hook:</strong> How will I grab the reader's attention?</li>
+  <li><strong>Main argument/points:</strong> 3–4 key points to develop.</li>
+  <li><strong>Techniques to use:</strong> What rhetorical/structural techniques will I employ?</li>
+  <li><strong>Closing strategy:</strong> How will I leave the reader?</li>
+</ol>
+
+<p><strong>Quick example plan for "Write a letter to your MP persuading them to fund youth mental health services":</strong></p>
 <ul>
-  <li><strong>Grade 5</strong> ≈ 59% (47/80) | <strong>Grade 7</strong> ≈ 71% (57/80) | <strong>Grade 9</strong> ≈ 83% (66/80)</li>
-  <li>Practise at least two full timed papers before exam day.</li>
-  <li>Read widely — 19th-century non-fiction, editorials, travel writing.</li>
-  <li>Build a vocabulary bank of analytical verbs: <em>conveys, implies, evokes, reinforces, juxtaposes</em>.</li>
-  <li>Study examiner reports to understand what top-band responses look like.</li>
+  <li><strong>Audience:</strong> Formal (MP) → respectful, evidence-based</li>
+  <li><strong>Purpose:</strong> Persuade → emotional appeal + statistics + call to action</li>
+  <li><strong>Form:</strong> Letter → formal conventions (salutation, closing)</li>
+  <li><strong>Opening:</strong> "I am writing to urge you to…" (clear, direct)</li>
+  <li><strong>Point 1:</strong> Scale of the problem (statistics)</li>
+  <li><strong>Point 2:</strong> Human impact (anecdote)</li>
+  <li><strong>Point 3:</strong> Investment = solution (logic + counter-argument)</li>
+  <li><strong>Close:</strong> Call to action + appeal to values</li>
 </ul>
-`,
+
+<h4>Steps 8–10: Writing the Q6 (40–45 min)</h4>
+
+<h5>Introduction (10 min, ~150–200 words)</h5>
+<p><strong>Goals:</strong> Hook the reader. Establish audience/purpose/form. Preview your argument.</p>
+
+<p><strong>Worked example (article on social media):</strong></p>
+<p><em>"We check our phones 150 times a day. We compare ourselves to strangers' curated lives. We feel anxious when we miss a post. Social media has promised to connect us; instead, it has isolated us. It is time to acknowledge the truth: social media is damaging our mental health, and we must act."</em></p>
+
+<p><strong>What's working:</strong> Opening statistic (hooks reader) → personal relevance → clear thesis (your argument) → imperative (call to action).</p>
+
+<h5>Body Paragraphs (25 min, ~400–500 words total)</h5>
+<p><strong>Goal:</strong> Develop 3–4 key points with evidence and explanation. Use persuasive techniques appropriately.</p>
+
+<p><strong>Structure each paragraph:</strong></p>
+<ol>
+  <li>Topic sentence (your point)</li>
+  <li>Evidence (statistic, expert quote, example)</li>
+  <li>Explanation (why this matters)</li>
+  <li>Persuasive technique (rhetorical question, vivid language, counter-argument)</li>
+  <li>Link to your main argument</li>
+</ol>
+
+<p><strong>Worked example (body paragraph on social media):</strong></p>
+<p><em>"Mental health professionals have documented a 40% rise in adolescent anxiety since 2010, directly correlating with increased social media use. A teenager today faces constant comparison: Are my photos good enough? Do I have enough likes? This is not a trivial concern — the psychological toll is real. Young people report feeling inadequate, isolated, and trapped by the need for validation. Yet social media platforms profit from this cycle. Is it not time to demand better?"</em></p>
+
+<p><strong>Techniques used:</strong> Statistic (logos) → rhetorical questions (pathos) → vivid description (pathos) → counter-argument (ethos) → final rhetorical question (engagement).</p>
+
+<h5>Conclusion (5 min, ~100–150 words)</h5>
+<p><strong>Goal:</strong> Restate your thesis. Emphasise why your argument matters. End with a call to action or powerful thought.</p>
+
+<p><strong>Worked example:</strong></p>
+<p><em>"We cannot undo the past decade of social media damage. But we can choose a different future. Regulation, digital literacy education, and honest conversations about mental health are not luxuries — they are necessities. The choice is ours: accept a generation of anxious young people, or act decisively to reclaim their wellbeing."</em></p>
+
+<h4>Step 11: Proofreading (10 min)</h4>
+<p><strong>What to check (in order):</strong></p>
+
+<ol>
+  <li><strong>Spelling:</strong> Scan for your common errors. Run through a mental spell-check of difficult words.</li>
+  <li><strong>Punctuation:</strong> Check sentences are complete. No comma splices. Apostrophes correct.</li>
+  <li><strong>Tense:</strong> Have you maintained consistency? No sudden shift from past to present.</li>
+  <li><strong>Clarity:</strong> Are sentences clear? Do pronouns have clear antecedents? Would a reader understand?</li>
+  <li><strong>Coherence:</strong> Do paragraphs flow? Are there clear topic sentences? Does the argument build logically?</li>
+</ol>
+
+<p><strong>Do not rewrite large sections.</strong> Proofreading is for catching errors, not restructuring. If you have time left, reread one more time.</p>
+
+<h3>The Complete Mock Walkthrough: A Case Study</h3>
+
+<p><strong>Exam task:</strong> Read an extract from a Victorian newspaper article on factory conditions. Answer Q1–Q5. Write a letter to a factory owner persuading him to improve worker safety.</p>
+
+<p><strong>The source text (adapted):</strong></p>
+<blockquote><em>"We visited Thornton Mill yesterday and witnessed scenes that froze our blood. Children, no older than eight, stood thirteen hours a day at spinning frames, their fingers raw, their faces grey with exhaustion. The air was thick with cotton dust — workers coughed blood into their handkerchiefs. The owner, Mr. Thornton, sat in his office, warm and comfortable, counting his profits whilst his workers suffered. This is not industry; this is slavery. We demand reform. We demand justice."</em></blockquote>
+
+<h4>Q1 Response (1 min):</h4>
+<p><em>"cotton dust"</em> — directly shows the poor air quality.</p>
+
+<h4>Q2 Response (2 min):</h4>
+<ul>
+  <li>Children as young as eight worked in the mill.</li>
+  <li>Workers suffered serious physical health problems (coughing blood).</li>
+</ul>
+
+<h4>Q3 Response (8 min, analyzing language):</h4>
+<p><em>"The writer uses emotive language such as 'froze our blood' and 'slavery' to create horror and moral outrage in the reader. These words are extreme — comparing factory conditions to slavery — which makes the reader feel shocked and demand change. Additionally, the writer uses a rhetorical question: 'This is not industry; this is slavery. We demand reform. We demand justice.' The repetition of 'We demand' creates a sense of collective outrage and calls the reader to action."</em></p>
+
+<h4>Q4 Response (15 min, analyzing language &amp; structure):</h4>
+<p><em>"The writer uses language and structure strategically to inflame the reader's sense of injustice. The opening phrase 'scenes that froze our blood' immediately creates horror and positions the reader as a witness to atrocity. The writer then shifts to vivid, brutal imagery: 'fingers raw', 'faces grey with exhaustion', 'coughed blood'. This accumulation of visual detail makes suffering undeniable. The structural choice to contrast the workers' suffering with the owner's comfort — 'warm and comfortable, counting his profits' — sharpens the moral outrage. Finally, the closing questions and imperatives ('This is not industry; this is slavery. We demand reform. We demand justice.') move from description to action. The short, staccato sentences accelerate the pace, building momentum towards the call for change. Collectively, these language and structural choices transform the reader from neutral observer to participant in the demand for justice."</em></p>
+
+<h4>Q5 Response (15 min, evaluation):</h4>
+<p><em>"To a very large extent, I agree that the writer is successful in persuading the reader that factory conditions are morally unacceptable. The writer's use of extreme comparative language — 'slavery' — is powerful. By equating industrial conditions with slavery, the writer frames the issue as a fundamental violation of human rights, not merely a workplace safety concern. Supporting evidence shows the writer's moral position: children as young as eight are working, and workers are suffering serious physical harm. However, I would argue that the writer's hyperbolic language — whilst emotionally effective — slightly undermines the logical credibility of the argument. A reader might think 'factories are not quite slavery, so perhaps the writer is exaggerating.' Nonetheless, the emotional impact is considerable. The writer's choice to open with personal witness ('We visited') and close with collective demands ('We demand') creates a powerful sense of moral urgency. Overall, the writer is highly persuasive because the evidence is real and the moral case is unassailable, even if the language is sometimes excessive."</em></p>
+
+<h4>Q6 Letter Plan (5 min):</h4>
+<ul>
+  <li><strong>Audience:</strong> Mr. Thornton (formal, authority figure)</li>
+  <li><strong>Purpose:</strong> Persuade him to improve safety</li>
+  <li><strong>Form:</strong> Letter (formal conventions)</li>
+  <li><strong>Opening:</strong> "I am writing to urge you to implement immediate safety reforms at Thornton Mill."</li>
+  <li><strong>Point 1:</strong> Current conditions are unacceptable (evidence from visit)</li>
+  <li><strong>Point 2:</strong> Reform benefits him (productivity, reputation)</li>
+  <li><strong>Point 3:</strong> Moral imperative (you have a duty)</li>
+  <li><strong>Close:</strong> "I trust you will do the right thing."</li>
+</ul>
+
+<h4>Q6 Letter Outline (40 min, full draft):</h4>
+<p><em>[Full letter would be 300–350 words, structured as above, with appropriate formal conventions, persuasive techniques, and clear argumentation.]</em></p>
+
+<h3>Exam Day: The Reality Check</h3>
+
+<div class="examiner-tip"><strong>The Golden Rules of Exam Day</strong></div>
+
+<ul>
+  <li><strong>Arrive early.</strong> Use the extra time to calm yourself, read through the entire paper, and allocate your time.</li>
+  <li><strong>Read the entire paper before starting.</strong> You might notice that Q5 is asking about the writer's purpose — this informs your Q4 answer.</li>
+  <li><strong>Underline command words:</strong> "Analyse", "Evaluate", "To what extent", "Persuade". These tell you exactly what the examiner wants.</li>
+  <li><strong>If you blank on Q4, move on to Q5.</strong> You can come back if time allows. Leaving a 15-mark question blank is worse than leaving a partial answer and securing marks on Q5.</li>
+  <li><strong>If you run out of time on reading, write Q6 anyway.</strong> A complete 40-mark writing response is always worth more than perfect reading with no writing.</li>
+  <li><strong>Use a pen.</strong> Do not use pencil for the main responses (though underlining in pencil is fine). Examiners need to see clear ink.</li>
+  <li><strong>Number your answers clearly.</strong> Q1, Q2, Q3, etc. Examiners will not hunt for your responses.</li>
+  <li><strong>Do not leave the exam early.</strong> Use every minute to proofread and refine.</li>
+</ul>
+
+<h3>Post-Exam Reflection: Learning from Practice</h3>
+
+<p>After a mock exam, analyse what happened:</p>
+
+<ul>
+  <li><strong>Did you finish all sections?</strong> If not, why? Time management or difficulty?</li>
+  <li><strong>Which questions did you find hardest?</strong> Spend extra practice time on these.</li>
+  <li><strong>Did you follow the timing plan?</strong> If you overran, where? Make adjustments.</li>
+  <li><strong>What errors did you make?</strong> Spelling? Tense consistency? Comma splices? Create a personal "common mistakes" list and check for these specifically when proofreading.</li>
+  <li><strong>Did your writing feel rushed or polished?</strong> If rushed, you need more time; if polished, you could spend more time on reading.</li>
+</ul>
+
+<p>Each practice exam is a data point. Use it to refine your strategy.</p>`,
     quiz: [
       {
         id: 'edx-lp1-m10-q1',

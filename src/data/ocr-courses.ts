@@ -971,6 +971,57 @@ const c1Modules: CourseModule[] = [
 </ul>
 
 <div class="key-term"><strong>Key Term: Ethos, Pathos, Logos</strong> — The three classical modes of persuasion. <em>Ethos</em> appeals to the speaker's credibility ("As someone who has worked in education for 20 years..."). <em>Pathos</em> appeals to emotion ("Think of the children who will suffer..."). <em>Logos</em> appeals to logic and evidence ("Studies show that 73% of..."). The strongest persuasive writing uses all three.</div>
+
+
+<h3>Grade 9 Technical Accuracy in Practice</h3>
+<p><strong>What Separates Grade 7 from Grade 9 in AO6:</strong> Grade 7 responses are technically correct with some sentence variety. Grade 9 responses demonstrate that accuracy and sentence variety are <em>deliberate choices</em> that enhance meaning and purpose. A Grade 9 student varies sentence length because that variation serves the writing's purpose — not because they have been told to vary sentences.</p>
+
+<h4>Worked Example: A Letter to a Local Newspaper</h4>
+<p><strong>Grade 7 Response (competent but safe):</strong></p>
+<div class="text-extract">
+Dear Editor, I am writing to express my concern about the closure of the local library. The library provides many important services to our community. People use it for reading, studying, and learning. Children benefit from story time and computer access. It would be a loss if the library were to close. The community should fight to keep it open.
+</div>
+
+<p><strong>Issues:</strong> Correct but repetitive sentence structures. Uses simple sentences throughout. Lacks sophisticated punctuation. The content is clear but not compelling.</p>
+
+<p><strong>Grade 9 Response (same content, elevated through control):</strong></p>
+<div class="model-answer">
+Dear Editor, For fifteen years, the library at the corner of Station Road has been the quiet heart of this community — not merely a building full of books, but a space where isolation turns to connection, where curiosity finds answers, where children discover worlds beyond their own. Its closure would constitute an act of cultural erasure. We would lose not just the facility itself, but the librarians who know their regulars by name; the after-school refuge for young people who might otherwise have nowhere safe to go; the public computers that bridge the digital divide for those who cannot afford their own technology. Of course, the council claims efficiency. But some institutions are too valuable to measure in spreadsheets. The cost of preserving the library is trivial compared to the cost of losing it.
+</div>
+
+<p><strong>What Elevates This to Grade 9:</strong></p>
+<ul>
+<li><strong>Varied sentence structure:</strong> Opening compound-complex sentence draws the reader in. Fragments ("Its closure would constitute an act of cultural erasure.") create emphasis. Longer sentences with multiple clauses build argument. Short final sentence lands with force.</li>
+<li><strong>Sophisticated punctuation:</strong> Dashes create interruption and emphasis ("— not merely a building..."). Semicolon connects related but distinct ideas.</li>
+<li><strong>Word choice precision:</strong> "Cultural erasure" vs. "losing the library." "Constitute" vs. "be." "Bridge the digital divide" shows specific understanding.</li>
+<li><strong>Conciseness with complexity:</strong> Every sentence earns its place. No filler. Dense with meaning.</li>
+</ul>
+
+<h3>Step-by-Step Accuracy Framework</h3>
+<ol>
+<li><strong>Spell-check stage:</strong> Read through specifically looking for spelling. Use your knowledge of common errors (accommodate, separate, definitely, their/there/they're).</li>
+<li><strong>Punctuation stage:</strong> Check sentence boundaries. Are clauses properly linked? Do you have any comma splices? Are apostrophes used correctly?</li>
+<li><strong>Sentence variety stage:</strong> Read aloud. Does your writing have rhythm? Vary deliberately: one short sentence to puncture a moment, then longer sentences for development.</li>
+<li><strong>Voice and register stage:</strong> Does your vocabulary and tone match your purpose and audience? A letter to the editor needs formality and clarity. A narrative needs atmosphere and immediacy.</li>
+</ol>
+
+<h3>Common AO6 Mistakes in Transactional Writing</h3>
+<div class="common-mistake"><strong>Mistake 1: Inconsistent tone.</strong> A persuasive article that swings between formal and colloquial undermines its argument. Choose a register and sustain it.</div>
+<div class="common-mistake"><strong>Mistake 2: Run-on sentences.</strong> "The building is old and it hasn't been updated since 2005 and the roof leaks and there is no heating in winter and students are uncomfortable." Use punctuation to separate ideas: periods, semicolons, dashes.</div>
+<div class="common-mistake"><strong>Mistake 3: Passive voice overuse.</strong> "It is believed that changes should be made" is weaker than "We must make changes." Use active voice for impact.</div>
+<div class="common-mistake"><strong>Mistake 4: Homophone confusion.</strong> Your/you're, their/there/they're, its/it's. These errors appear in even strong responses but cost marks. Build a personal error-watch list.</div>
+
+<h3>AO6 Practice Task</h3>
+<p><strong>Rewrite this for Grade 9 AO6:</strong></p>
+<div class="text-extract">
+The school should change its policy about mobile phones. Many students bring phones to school. Some students use them to cheat in tests. Some use them for bullying on social media. But some students say they need them for emergencies. The school needs to find a balance between safety and freedom.
+</div>
+
+<p><strong>Model Response:</strong></p>
+<div class="model-answer">
+While students cite safety concerns — emergencies, parental contact — the evidence suggests that unrestricted phone access creates more problems than it solves. Exam boards have documented instances of cheating facilitated by hidden devices. More insidiously, social media bullying now extends beyond school gates into evenings and weekends, offering bullies 24/7 access to their victims. The question, then, is not whether phones should be permitted, but on what terms. A compromise might satisfy neither camp completely, yet a staggered approach — phones permitted in designated areas, off-limits during lessons — offers a workable middle ground that acknowledges both teenage autonomy and institutional duty of care.
+</div>
+
 `,
     quiz: [
       {
@@ -1138,6 +1189,91 @@ const c1Modules: CourseModule[] = [
 <div class="examiner-tip"><strong>Examiner Tip:</strong> Do not use ambitious vocabulary unless you are confident it is correct. Using "juxtaposition" when you mean "comparison" or "dichotomy" when you mean "difference" suggests you are reaching beyond your understanding. One precisely used word is worth more than three misused ones. Accuracy trumps ambition.</div>
 
 <div class="key-term"><strong>Key Term: Subordinate Clause</strong> — A clause that cannot stand alone as a complete sentence and depends on a main clause for its meaning. It often begins with a subordinating conjunction (although, because, while, if, when, unless). Example: "Although the rain was heavy, the match continued." — "Although the rain was heavy" is the subordinate clause.</div>
+
+
+<h3>The 80-Minute Exam Broken Down: A Worked Walkthrough</h3>
+<p><strong>Scenario: You receive two non-fiction texts (one 20th century, one 21st century) and must answer all questions in Section A and complete both writing tasks in Section B.</strong></p>
+
+<p><strong>Minutes 0–10: READ AND ANNOTATE</strong></p>
+<div class="examiner-tip">Many students read the questions first, then read the text. This is inefficient. Read the texts fully and mark key ideas, techniques, and turning points. Underline surprising claims. Mark dates and sources. This takes 8 minutes but saves time later because you won't need to reread.</div>
+
+<p><strong>Minutes 10–25: ANSWER Q1 (RETRIEVAL)</strong></p>
+<p>This is your confidence-building section. Each question is worth 1–2 marks. You can earn 8–10 marks here with accuracy and care. Slow down. Use quotation marks. Be precise. If a question asks "What time did the event occur?" and the text says "at half past three," write "3:30 p.m." — not "afternoon." Precision earns marks.</p>
+
+<p><strong>Worked Example:</strong></p>
+<div class="text-extract">
+Q1: According to the article, what reason does the council give for closing the library?
+Text extract: "The council states that it must close the library due to insufficient funding in the 2024 budget and declining visitor numbers."
+</div>
+
+<p><strong>Good Response:</strong> The council claims there is "insufficient funding in the 2024 budget" and "declining visitor numbers."</p>
+
+<p><strong>Minutes 25–40: ANSWER Q2 (LANGUAGE ANALYSIS)</strong></p>
+<p>This question asks you to analyze a specific technique or phrase. You will use PEE: Point (what technique), Evidence (the quote), Explanation (why the writer used it and what effect it achieves).</p>
+
+<p><strong>Worked Example:</strong></p>
+<div class="text-extract">
+Q2: The writer uses the phrase "the quiet heart of the community." Analyze the effect of the words "quiet" and "heart."
+</div>
+
+<p><strong>Grade 9 Response:</strong></p>
+<div class="model-answer">
+The word "heart" suggests the library is central to the community's survival and wellbeing — not peripheral but vital. The modifier "quiet" subverts expectation: we might expect a "beating" or "strong" heart, but "quiet" suggests that the library's most important work happens privately, without fanfare. Libraries don't shout their value; they work steadily. This combination creates pathos — the library's humility and understatement make its potential loss more tragic.
+</div>
+
+<p><strong>Minutes 40–55: ANSWER Q3 (COMPARISON)</strong></p>
+<p>This asks how the two texts compare in viewpoint, tone, or approach to the same topic. Use comparative language: "whereas," "similarly," "in contrast," "both texts." Provide evidence from both texts — not one longer quote from Text A and one brief reference to Text B.</p>
+
+<p><strong>Worked Example:</strong></p>
+<div class="text-extract">
+Q3: How do the two texts differ in their stance on funding public institutions?
+</div>
+
+<p><strong>Grade 9 Response (excerpt):</strong></p>
+<div class="model-answer">
+The 20th-century text argues that institutions like libraries are "investments in knowledge" and defends public funding as a moral obligation. By contrast, the 21st-century article adopts a cost-benefit analysis, citing "declining footfall" and "budget pressures" as the primary determinant of value. The first text values culture; the second values efficiency. This shift reflects changing attitudes toward what government should fund.
+</div>
+
+<p><strong>Minutes 55–65: ANSWER Q4 (EVALUATION)</strong></p>
+<p>This is the highest-tariff question. You must judge how effectively the writer has argued their position, using evidence. Use phrases like "the writer persuades the reader through," "the evidence is convincing because," "however, this argument is weakened by."</p>
+
+<p><strong>Worked Example:</strong></p>
+<div class="text-extract">
+Q4: To what extent does the writer convince you that the library closure is a mistake?
+</div>
+
+<p><strong>Grade 9 Response (excerpt):</strong></p>
+<div class="model-answer">
+The writer persuades through emotional appeal and logical argument. The image of the community losing "the quiet heart" generates sympathy, whilst statistical evidence about visitor demographics provides rational support. However, the argument might be strengthened by acknowledging the council's financial constraints. The writer does not engage with the opposing view, which somewhat weakens the overall persuasiveness. On balance, the personal narratives embedded in the text are most convincing: real voices of community members carry more weight than abstract argument.
+</div>
+
+<p><strong>Minutes 65–70: PLAN Q5 (SHORT WRITING TASK, 16 MARKS)</strong></p>
+<p>Spend 5 minutes planning. Jot: purpose (persuade/inform/explain?), audience (who am I writing for?), form (letter/article/speech?), three key points you'll make. This prevents rambling and ensures structure.</p>
+
+<p><strong>Minutes 70–85: WRITE Q5</strong></p>
+<p>Write purposefully. Your opening line should establish voice and purpose immediately. Aim for 250–300 words. Quality over quantity. Every sentence should advance your argument or develop your idea. Do not repeat points just to fill space.</p>
+
+<p><strong>Minutes 85–90: PLAN Q6 (EXTENDED WRITING TASK, 24 MARKS)</strong></p>
+<p>This is the largest task. Spend 5 minutes planning three or four main ideas. Brief jottings. This is your scaffolding.</p>
+
+<p><strong>Minutes 90–115: WRITE Q6</strong></p>
+<p>Aim for 400–500 words. Pace yourself: roughly 8–10 minutes per main idea, including introduction and conclusion. Vary your sentence structures. Include specific evidence or examples. This is where you demonstrate control and sophistication.</p>
+
+<p><strong>Minutes 115–120: PROOFREAD</strong></p>
+<p>Spend your final 5 minutes on spelling, punctuation, and clarity. Read aloud if possible. Look specifically for:</p>
+<ul>
+<li>Spelling of subject-specific terms (if analyzing an article about technology, spell "algorithm" correctly)</li>
+<li>Apostrophes in "it's" vs. "its"</li>
+<li>Sentence boundaries (no comma splices)</li>
+<li>Technical accuracy in writing tasks (AO6 marks)</li>
+</ul>
+
+<h3>Common Exam Day Mistakes</h3>
+<div class="common-mistake"><strong>Mistake 1: Spending too long on reading.</strong> Don't annotate every word. Mark key claims, techniques, and turning points. Move on.</div>
+<div class="common-mistake"><strong>Mistake 2: Overshooting on Q3 and Q4.</strong> Students often write 2000 words of analysis on Q4 and then rush through writing tasks. Watch your time. Q4 should be roughly 300–400 words.</div>
+<div class="common-mistake"><strong>Mistake 3: Writing without planning writing tasks.</strong> A quick plan prevents structure breakdown and rambling. 5 minutes planning saves 15 minutes writing.</div>
+<div class="common-mistake"><strong>Mistake 4: Skipping the final 5 minutes.</strong> Proofreading catches the careless errors that cost you marks — and they are easy to lose if you're exhausted.</div>
+
 `,
     quiz: [
       {
@@ -1677,6 +1813,52 @@ const c2Modules: CourseModule[] = [
 </ul>
 
 <div class="key-term"><strong>Key Term: Structural Analysis</strong> — Examining how a writer organises and sequences their text to create effects. This includes the opening and ending, shifts in focus or perspective, pacing, chronology, paragraph length, and how the reader's attention is directed through the text.</div>
+
+
+<h3>Worked Example: Character Inference in Action</h3>
+<p><strong>Practice Extract:</strong></p>
+<div class="text-extract">
+Marcus had not spoken to his father in three years. The postcard arrived on a Tuesday — a beach scene, generic and impersonal — with a single line of handwriting. "I'm sorry." No signature. Marcus read it once, then twice, then placed it on the kitchen counter next to the empty coffee mug he'd left that morning. He left it there for a week. When his mother found it, she wept. Marcus felt nothing at all.
+</div>
+
+<p><strong>Inference Question (examiner style):</strong> What can we infer about Marcus's feelings toward his father's attempt at reconciliation?</p>
+
+<p><strong>Model Response (Grade 9):</strong></p>
+<div class="model-answer">
+Marcus's decision to leave the postcard untouched on the counter suggests that a single apology — unsigned, impersonal — is insufficient to bridge three years of silence. His emotional numbness (we're told "he felt nothing at all") indicates that hurt has calcified into indifference. The contrast with his mother's tears sharpens this reading: she still grieves the relationship; he has apparently moved beyond grief into emotional distance. The fact that he leaves the postcard where she will find it, rather than disposing of it, suggests ambivalence — he cannot forgive, but he cannot quite reject the gesture either.
+</div>
+
+<p><strong>Why This Scores Well:</strong> The response uses textual evidence (specific words, actions, contrasts). It interprets those details to reveal emotional subtext. It acknowledges complexity and ambiguity rather than settling for one-dimensional conclusions.</p>
+
+<h3>Character Inference Framework</h3>
+<p><strong>When answering questions about character, follow this pattern:</strong></p>
+<ol>
+<li><strong>Identify what the character does/says:</strong> Quote the action or dialogue. "Marcus places the postcard on the counter."</li>
+<li><strong>Consider the alternatives the character rejects:</strong> He could have read it repeatedly, framed it, hidden it, destroyed it. He does none of these. Rejection of alternatives tells us something.</li>
+<li><strong>Layer in physical or emotional details:</strong> "He felt nothing at all" contradicts what we might expect — relief, anger, longing. The contradiction reveals depth.</li>
+<li><strong>Consider context:</strong> Three years of silence precedes this moment. That time matters. A postcard immediately after the argument means something different than one after a decade.</li>
+<li><strong>Draw your inference:</strong> Based on actions, rejections, and contrasts, what emotional truth does the character embody?</li>
+</ol>
+
+<h3>Common Inference Mistakes</h3>
+<div class="common-mistake"><strong>Mistake 1: Over-interpreting.</strong> Not every detail is symbolic. A blue door is usually just a blue door. But when a blue door appears repeatedly, it might carry meaning. Ask: Is this detail repeated or emphasized?</div>
+<div class="common-mistake"><strong>Mistake 2: Ignoring contradiction.</strong> If a character says they are angry but laughs, the contradiction is the point. Don't smooth it away; explore it.</div>
+<div class="common-mistake"><strong>Mistake 3: Confusing what the reader knows with what the character knows.</strong> The reader might understand why the character is acting as they are, but the character might not. This gap is part of the text's meaning.</div>
+<div class="common-mistake"><strong>Mistake 4: Stating the obvious.</strong> "Ellis is sad because she is crying." Grade 9 answers explain <em>why</em> she is sad and what that emotional state reveals about her character or situation.</div>
+
+<h3>Practice: Character Inference Task</h3>
+<p><strong>Extract (provided):</strong></p>
+<div class="text-extract">
+When the job offer arrived, Priya read the letter five times. She did not open the email with the contract. She did not call her parents. Instead, she went to the old oak tree at the end of her street — the one where she and her friends had carved their initials ten years ago — and sat on the lowest branch until dark. When she finally came home, her mother asked if she had good news. Priya smiled and said nothing.
+</div>
+
+<p><strong>Inference Question:</strong> What can we infer about Priya's emotional state regarding the job offer?</p>
+
+<p><strong>Model Response:</strong></p>
+<div class="model-answer">
+Priya's reluctance to engage with the formal elements of the offer — she reads the letter repeatedly but avoids opening the contract, does not share the news with her family — suggests that this opportunity creates anxiety rather than joy. Her retreat to the oak tree, a site of nostalgic memory and lost youth, implies that she is grappling with what acceptance would mean: a departure from her past, a step into adulthood that perhaps frightens her. Her smile to her mother followed by silence indicates a performance of happiness masking ambivalence or fear. The repetition of her reading (five times) suggests she is searching for a reason to refuse it, or wrestling with a decision that feels anything but straightforward.
+</div>
+
 `,
     quiz: [
       {
@@ -2583,6 +2765,49 @@ She answered it. Listened. The park was still bright, still impossibly still, bu
 <div class="examiner-tip"><strong>Examiner Tip:</strong> Examiners at the top mark bands look for <strong>controlled, deliberate craft</strong>. Every detail should feel chosen. If your description of a room includes a cracked mirror, the examiner will assume it is symbolic. Make sure every detail earns its place in your writing. The difference between a Grade 7 and a Grade 9 is not more techniques — it is more <em>control</em>.</div>
 
 <div class="key-term"><strong>Key Term: Subtext</strong> — The underlying meaning beneath the surface of what is said or described. In dialogue, subtext is what characters are really thinking or feeling but not saying aloud. In description, subtext is the deeper significance of the details a writer chooses to include.</div>
+
+
+<h3>7. Worked Example: Transforming Basic into Grade 9</h3>
+<p><strong>Student's Original Paragraph (Grade 6):</strong></p>
+<div class="text-extract">
+She walked into the room. It was dark. There was a window but the curtains were closed. She felt scared. She moved slowly towards the wall to find the light switch.
+</div>
+
+<p><strong>Analysis of Weaknesses:</strong> Simple sentences with limited variety. Emotional state named rather than shown. No sensory details beyond visual. No subtext or tension.</p>
+
+<p><strong>Grade 9 Transformation:</strong></p>
+<div class="model-answer">
+She stepped into the darkness and waited for her eyes to adjust. The curtains held firm against the afternoon light, reducing the room to shades of grey and black. Behind her, the door creaked as it swung shut. Her breathing shallowed. She could hear the hum of the boiler in the basement — a sound she had not noticed in daylight, now unnaturally loud. Her hand extended ahead of her, fingers splayed, searching for the light switch. The wallpaper was rough under her palm, ancient and peeling.
+</div>
+
+<p><strong>Why This is Grade 9:</strong> Sensory layering (visual, tactile, auditory). Pace variation (snappy opening, longer atmosphere-building sentences). Subtext over naming (fear shown through shallow breathing, defensive body position, hyperawareness). Every detail serves a purpose.</p>
+
+<h3>8. Step-by-Step Framework for Grade 9</h3>
+<ol>
+<li><strong>Planning:</strong> Jot opening image, central character moment, closing image. What emotion? What climax?</li>
+<li><strong>First draft:</strong> Write quickly for narrative shape and perspective control.</li>
+<li><strong>Sensory depth:</strong> Add at least one unexpected sensory detail per paragraph. Avoid clichés.</li>
+<li><strong>Sentence variety:</strong> Read aloud. Vary length. Create pace through structure.</li>
+<li><strong>Subtext and symbols:</strong> What is beneath the surface? Can an image recur? Can silence create tension?</li>
+<li><strong>Precision pass:</strong> Check every verb. "Walked" → "drifted"? "Blue eyes" → "eyes the color of winter water"?</li>
+</ol>
+
+<h3>9. Common Mistakes in Advanced Writing</h3>
+<div class="common-mistake"><strong>Mistake 1: Over-technique.</strong> Using multiple techniques per sentence because they're "techniques" shows inexperience. Grade 9 uses them invisibly.</div>
+<div class="common-mistake"><strong>Mistake 2: Telling instead of showing.</strong> "She was angry" — show the clenched jaw, let readers infer.</div>
+<div class="common-mistake"><strong>Mistake 3: Unnatural vocabulary.</strong> Don't use words you wouldn't say. Precision doesn't mean formality.</div>
+<div class="common-mistake"><strong>Mistake 4: Assuming busy = better.</strong> White space and pauses are often more powerful than packed paragraphs.</div>
+
+<h3>10. Practice: Rewrite This for Grade 9</h3>
+<div class="text-extract">
+The beach was beautiful. The sun shone on the water and made it sparkle. She felt happy as she walked along the shore. She thought about her problems and decided that being by the sea made her feel better.
+</div>
+
+<p><strong>Model Response:</strong></p>
+<div class="model-answer">
+The beach smell of salt and something chemical — the ghost of last night's storm. She stood in the shallows, her trainers already waterlogged, watching the tide pull back. The wet sand held the imprint of her footprints for barely a second before the water swallowed them. She knelt down. Scooped. Let it run through her fingers. For the first time in three weeks — since the argument, the silence, the locked doors — her shoulders dropped. She was just breathing.
+</div>
+
 `,
     quiz: [
       {
