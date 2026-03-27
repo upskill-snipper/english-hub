@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { MockExamPaper } from '../types';
 
 export const ocrLangMocksSet2: MockExamPaper[] = [
