@@ -39,17 +39,6 @@ import {
 } from '@/data/exam-guides'
 import { useBoardStore } from '@/store/board-store'
 
-// ─── Lazy-load DOMPurify (it requires `window`, so cannot be imported at module level) ───
-let _purify: typeof import('dompurify').default | null = null
-function sanitize(html: string): string {
-  if (typeof window === 'undefined') return html
-  if (!_purify) {
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    _purify = require('dompurify') as typeof import('dompurify').default
-  }
-  return _purify.sanitize(html)
-}
-
 // ─── Board slug to proper name mapping ──────────────────────────────────────
 
 export const boardMap: Record<string, string> = {
@@ -588,7 +577,7 @@ export default function BoardExamGuidePage() {
               <div
                 className="text-muted-foreground leading-relaxed prose prose-sm max-w-none
                   [&_strong]:text-foreground [&_em]:text-primary [&_a]:text-primary"
-                dangerouslySetInnerHTML={{ __html: sanitize(guide.overview) }}
+                dangerouslySetInnerHTML={{ __html: guide.overview }}
               />
             </div>
           </div>

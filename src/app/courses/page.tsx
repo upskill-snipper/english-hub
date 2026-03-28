@@ -31,12 +31,16 @@ export default function CourseCataloguePage() {
   const { user, profile } = useAuthStore()
 
   const [courses, setCourses] = useState<CourseData[]>([])
+  const [isLoading, setIsLoading] = useState(true)
   const [activeTier, setActiveTier] = useState<Tier>('All')
   const hasManuallySelected = useRef(false)
 
   // Load course data dynamically
   useEffect(() => {
-    loadAllCourses().then(setCourses)
+    loadAllCourses().then((data) => {
+      setCourses(data)
+      setIsLoading(false)
+    })
   }, [])
 
   // Auto-select tier based on user's year group once profile loads
@@ -144,7 +148,23 @@ export default function CourseCataloguePage() {
             ))}
           </div>
 
-          {filtered.length === 0 ? (
+          {isLoading ? (
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {Array.from({ length: 6 }).map((_, i) => (
+                <div key={i} className="rounded-xl border border-border/40 bg-card p-6 animate-pulse">
+                  <div className="h-1 w-full bg-muted rounded mb-4" />
+                  <div className="flex gap-2 mb-3">
+                    <div className="h-5 w-12 bg-muted rounded-full" />
+                    <div className="h-5 w-16 bg-muted rounded-full" />
+                  </div>
+                  <div className="h-6 w-3/4 bg-muted rounded mb-2" />
+                  <div className="h-4 w-full bg-muted rounded mb-1" />
+                  <div className="h-4 w-2/3 bg-muted rounded mb-4" />
+                  <div className="h-4 w-1/2 bg-muted rounded" />
+                </div>
+              ))}
+            </div>
+          ) : filtered.length === 0 ? (
             <div className="py-20 text-center">
               <p className="text-muted-foreground mb-4">
                 No courses found for this level. Try selecting a different tier above.
