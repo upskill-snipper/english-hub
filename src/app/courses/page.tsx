@@ -51,15 +51,22 @@ export default function CourseCataloguePage() {
     setActiveTier(value as Tier)
   }, [])
 
-  const filtered = useMemo(
-    () =>
-      courses.filter((c) => {
-        if (!matchesBoard(c.board, selectedBoard)) return false
+  const filtered = useMemo(() => {
+    const result = courses.filter((c) => {
+      if (!matchesBoard(c.board, selectedBoard)) return false
+      if (activeTier !== 'All' && c.tier?.toUpperCase() !== activeTier) return false
+      return true
+    })
+    // If board+tier combination yields nothing, relax the board filter so
+    // visitors always see courses rather than an empty page.
+    if (result.length === 0 && courses.length > 0) {
+      return courses.filter((c) => {
         if (activeTier !== 'All' && c.tier?.toUpperCase() !== activeTier) return false
         return true
-      }),
-    [courses, selectedBoard, activeTier]
-  )
+      })
+    }
+    return result
+  }, [courses, selectedBoard, activeTier])
 
   return (
     <main className="min-h-screen bg-background">
@@ -138,9 +145,14 @@ export default function CourseCataloguePage() {
           </div>
 
           {filtered.length === 0 ? (
-            <p className="py-20 text-center text-muted-foreground">
-              No courses found for this level.
-            </p>
+            <div className="py-20 text-center">
+              <p className="text-muted-foreground mb-4">
+                No courses found for this level. Try selecting a different tier above.
+              </p>
+              <Button variant="outline" onClick={() => handleTierChange('All')}>
+                Show All Courses
+              </Button>
+            </div>
           ) : (
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {filtered.map((course) => (

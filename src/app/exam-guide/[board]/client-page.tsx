@@ -24,7 +24,6 @@ import {
   Users,
   Layers,
 } from 'lucide-react'
-import DOMPurify from 'dompurify'
 import {
   getGuideByBoard,
   type BoardExamGuide,
@@ -39,6 +38,17 @@ import {
   type PoemAnalysis,
 } from '@/data/exam-guides'
 import { useBoardStore } from '@/store/board-store'
+
+// ─── Lazy-load DOMPurify (it requires `window`, so cannot be imported at module level) ───
+let _purify: typeof import('dompurify').default | null = null
+function sanitize(html: string): string {
+  if (typeof window === 'undefined') return html
+  if (!_purify) {
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    _purify = require('dompurify') as typeof import('dompurify').default
+  }
+  return _purify.sanitize(html)
+}
 
 // ─── Board slug to proper name mapping ──────────────────────────────────────
 
@@ -578,7 +588,7 @@ export default function BoardExamGuidePage() {
               <div
                 className="text-muted-foreground leading-relaxed prose prose-sm max-w-none
                   [&_strong]:text-foreground [&_em]:text-primary [&_a]:text-primary"
-                dangerouslySetInnerHTML={{ __html: typeof window !== 'undefined' ? DOMPurify.sanitize(guide.overview) : guide.overview }}
+                dangerouslySetInnerHTML={{ __html: sanitize(guide.overview) }}
               />
             </div>
           </div>
@@ -816,7 +826,7 @@ export default function BoardExamGuidePage() {
             </h2>
             <div className="p-6 rounded-xl border border-border bg-card">
               <ul className="space-y-3">
-                {guide.uniqueFeatures.map((feature, i) => (
+                {(guide.uniqueFeatures ?? []).map((feature, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <Sparkles className="w-4 h-4 text-primary shrink-0 mt-1" />
                     <span className="text-foreground text-sm">{feature}</span>
