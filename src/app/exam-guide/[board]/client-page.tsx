@@ -38,16 +38,10 @@ import {
   type PoemAnalysis,
 } from '@/data/exam-guides'
 import { useBoardStore } from '@/store/board-store'
+import { boardMap } from '@/data/exam-guides/board-map'
 
-// ─── Board slug to proper name mapping ──────────────────────────────────────
-
-export const boardMap: Record<string, string> = {
-  aqa: 'AQA',
-  edexcel: 'Edexcel',
-  ocr: 'OCR',
-  wjec: 'WJEC',
-  igcse: 'IGCSE',
-}
+// Re-export for backward compatibility
+export { boardMap } from '@/data/exam-guides/board-map'
 
 // ─── Collapsible Section Component ──────────────────────────────────────────
 

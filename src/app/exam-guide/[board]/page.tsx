@@ -1,6 +1,28 @@
 import type { Metadata } from 'next'
+import dynamic from 'next/dynamic'
 import { getGuideByBoard } from '@/data/exam-guides'
-import BoardExamGuidePage, { boardMap } from './client-page'
+import { boardMap } from '@/data/exam-guides/board-map'
+
+// Disable SSR for the client component — it uses useParams, useBoardStore
+// (localStorage), and other browser-only APIs that crash during static generation.
+const BoardExamGuidePage = dynamic(() => import('./client-page'), {
+  ssr: false,
+  loading: () => (
+    <div className="min-h-screen bg-background">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+        <div className="animate-pulse space-y-6">
+          <div className="h-8 w-1/3 bg-muted rounded" />
+          <div className="h-4 w-2/3 bg-muted rounded" />
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mt-8">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <div key={i} className="h-32 bg-muted rounded-xl" />
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  ),
+})
 
 interface Props {
   params: { board: string }
