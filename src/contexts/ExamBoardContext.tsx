@@ -174,7 +174,7 @@ export function BoardSelector({ forceShow = false, className = '' }: BoardSelect
         .filter(Boolean)
         .join(' ')}
     >
-      <h2 className="text-lg font-semibold text-[#1A5276] mb-1">
+      <h2 className="text-lg font-semibold text-foreground mb-1">
         Choose your exam board
       </h2>
       <p className="text-sm text-muted-foreground mb-5">
@@ -195,7 +195,7 @@ export function BoardSelector({ forceShow = false, className = '' }: BoardSelect
               className={[
                 'rounded-full px-4 py-1.5 text-sm font-medium transition-colors',
                 subject === s.value
-                  ? 'bg-[#2E86C1] text-white shadow-sm'
+                  ? 'bg-primary text-primary-foreground shadow-sm'
                   : 'bg-muted text-muted-foreground hover:bg-muted',
               ].join(' ')}
               aria-pressed={subject === s.value}
@@ -220,8 +220,8 @@ export function BoardSelector({ forceShow = false, className = '' }: BoardSelect
               className={[
                 'rounded-lg border px-4 py-2.5 text-sm font-medium transition-all',
                 selectedBoard === b.value
-                  ? 'border-[#2E86C1] bg-[#2E86C1]/10 text-[#1A5276] ring-1 ring-[#2E86C1]'
-                  : 'border-border text-foreground hover:border-[#2E86C1]/50 hover:bg-[#2E86C1]/5',
+                  ? 'border-primary bg-primary/10 text-primary ring-1 ring-primary'
+                  : 'border-border text-foreground hover:border-primary/50 hover:bg-primary/5',
               ].join(' ')}
               aria-pressed={selectedBoard === b.value}
             >
