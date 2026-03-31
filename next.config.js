@@ -19,6 +19,20 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/resources/revision',
+        destination: '/resources/revision-notes',
+        permanent: true,
+      },
+      {
+        source: '/resources/games',
+        destination: '/games',
+        permanent: true,
+      },
+    ]
+  },
   async headers() {
     return [
       {
