@@ -107,8 +107,8 @@ export function TrendChart({
   onDateRangeChange,
   height = 240,
   maxValue: maxValueProp,
-  color = '#22c55e',
-  secondaryColor = '#3b82f6',
+  color = 'hsl(var(--chart-1))',
+  secondaryColor = 'hsl(var(--chart-2))',
   showLabels = true,
   showDots = true,
   showArea = true,
@@ -295,9 +295,9 @@ export function TrendChart({
 
   function annotationColor(type?: string) {
     switch (type) {
-      case 'exam': return '#ef4444'
-      case 'module': return '#8b5cf6'
-      default: return '#f59e0b'
+      case 'exam': return 'hsl(var(--chart-5))'
+      case 'module': return 'hsl(var(--chart-4))'
+      default: return 'hsl(var(--chart-3))'
     }
   }
 
@@ -424,7 +424,7 @@ export function TrendChart({
               x2={width - padding.right}
               y1={targetY}
               y2={targetY}
-              stroke="#eab308"
+              stroke="hsl(var(--chart-3))"
               strokeWidth="1.5"
               strokeDasharray="8 4"
               opacity={0.7}
@@ -433,7 +433,7 @@ export function TrendChart({
               x={width - padding.right + 4}
               y={targetY + 4}
               fontSize="9"
-              fill="#eab308"
+              fill="hsl(var(--chart-3))"
               fontWeight="600"
             >
               {targetLabel}
@@ -675,7 +675,7 @@ function getThresholdColor(
   thresholds?: { value: number; color: string }[],
   fallback?: string,
 ): string {
-  if (!thresholds || thresholds.length === 0) return fallback ?? '#22c55e'
+  if (!thresholds || thresholds.length === 0) return fallback ?? 'hsl(var(--chart-1))'
   const sorted = [...thresholds].sort((a, b) => a.value - b.value)
   for (const t of sorted) {
     if (value < t.value) return t.color
@@ -687,7 +687,7 @@ export function BarChart({
   data,
   height = 200,
   maxValue: maxValueProp,
-  defaultColor = '#22c55e',
+  defaultColor = 'hsl(var(--chart-1))',
   className,
   thresholds,
 }: BarChartProps) {

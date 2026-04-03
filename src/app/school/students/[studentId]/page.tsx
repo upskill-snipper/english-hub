@@ -310,7 +310,7 @@ function LineChart({
   height = 200,
   valueKey = 'score',
   labelKey = 'label',
-  color = '#6366f1',
+  color = 'hsl(var(--chart-4))',
   maxValue,
 }: {
   data: { [key: string]: unknown }[]
@@ -1230,7 +1230,7 @@ export default function StudentDrilldownPage() {
                   height={220}
                   valueKey="score"
                   labelKey="label"
-                  color="#6366f1"
+                  color="hsl(var(--chart-4))"
                   maxValue={100}
                 />
               ) : (

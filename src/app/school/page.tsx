@@ -814,8 +814,8 @@ export default function SchoolOverviewPage() {
               <TrendChart
                 data={trendChartData}
                 height={200}
-                color="#22c55e"
-                secondaryColor="#3b82f6"
+                color="hsl(var(--chart-1))"
+                secondaryColor="hsl(var(--chart-2))"
                 label="Avg Score"
                 secondaryLabel="Modules Completed"
                 showArea

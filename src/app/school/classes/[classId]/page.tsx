@@ -704,7 +704,7 @@ export default function ClassDetailPage() {
                       data={trendChartData}
                       height={200}
                       maxValue={100}
-                      color="#22c55e"
+                      color="hsl(var(--chart-1))"
                       label="Avg Score %"
                       showArea
                       showDots

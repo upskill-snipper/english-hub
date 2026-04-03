@@ -287,7 +287,7 @@ export default function ProgressPage() {
           data={scoreTrends}
           valueKey="score"
           label="Average Score Trend"
-          color="#2E86C1"
+          color="hsl(var(--chart-2))"
           formatValue={(v) => `${v}%`}
         />
       </section>
@@ -300,7 +300,7 @@ export default function ProgressPage() {
             data={essaysPerWeek}
             valueKey="count"
             label="Essays Completed Per Week"
-            color="#1A5276"
+            color="hsl(var(--chart-2))"
           />
         </section>
 
@@ -310,7 +310,7 @@ export default function ProgressPage() {
             data={timeSpent}
             valueKey="minutes"
             label="Time Spent Studying (minutes)"
-            color="#27AE60"
+            color="hsl(var(--chart-1))"
             formatValue={(v) => {
               const h = Math.floor(v / 60);
               const m = v % 60;
