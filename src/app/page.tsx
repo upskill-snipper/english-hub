@@ -239,6 +239,10 @@ function ForSchoolsSection() {
           <Button variant="secondary" size="lg" className="text-base px-8 h-12" render={<Link href="/for-schools" />}>
             Learn More
           </Button>
+          <Button variant="outline" size="lg" className="text-base px-8 h-12 gap-2" render={<Link href="/demo/school" />}>
+            <Sparkles className="w-4 h-4" />
+            Try Interactive Demo
+          </Button>
         </div>
       </div>
     </section>
@@ -310,6 +314,10 @@ function ForTeachersSection() {
           <Button variant="secondary" size="lg" className="text-base px-8 h-12" render={<Link href="/for-teachers" />}>
             Teacher Plans
           </Button>
+          <Button variant="outline" size="lg" className="text-base px-8 h-12 gap-2" render={<Link href="/demo/teacher" />}>
+            <Sparkles className="w-4 h-4" />
+            Try Teacher Demo
+          </Button>
         </div>
       </div>
     </section>
@@ -358,6 +366,10 @@ export default function Home() {
             </Button>
             <Button variant="secondary" size="lg" className="text-base px-8 h-12" render={<Link href="/courses" />}>
               Browse Courses
+            </Button>
+            <Button variant="outline" size="lg" className="text-base px-8 h-12 gap-2" render={<Link href="/demo" />}>
+              <Sparkles className="w-4 h-4" />
+              Try Free Demo
             </Button>
           </div>
         </div>

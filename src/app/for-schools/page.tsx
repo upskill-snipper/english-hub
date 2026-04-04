@@ -326,6 +326,16 @@ export default function ForSchoolsPage() {
                 Request a Demo
               </Button>
             </a>
+            <Link href="/demo/school">
+              <Button
+                variant="outline"
+                size="lg"
+                className="text-base px-8 h-13 border-primary/40 text-primary hover:bg-primary/10 gap-2 font-semibold"
+              >
+                <Layers className="w-4 h-4" />
+                Try Interactive Demo -- Free
+              </Button>
+            </Link>
           </div>
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
@@ -394,6 +404,86 @@ export default function ForSchoolsPage() {
                 </Link>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════ TRY BEFORE YOU BUY ════════════════ */}
+      <section className="py-24 sm:py-32">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <Badge variant="outline" className="border-primary/30 bg-primary/[0.06] text-primary mb-5 text-xs font-semibold uppercase tracking-wide gap-1.5">
+              <Layers className="w-3.5 h-3.5" />
+              Interactive Demo
+            </Badge>
+            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground mb-4">
+              Explore the Full Platform -- No Signup Required
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed">
+              Navigate a complete school dashboard with sample data. Click through students,
+              classes, analytics, and reports. See exactly what your school gets.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
+            {[
+              {
+                icon: BarChart3,
+                color: "text-blue-400 bg-blue-500/10 border-blue-500/20",
+                title: "School Dashboard",
+                desc: "Overview of all year groups",
+                href: "/demo/school",
+              },
+              {
+                icon: Users,
+                color: "text-primary bg-primary/10 border-primary/20",
+                title: "Student Analytics",
+                desc: "Drill down to individual student level",
+                href: "/demo/school/analytics",
+              },
+              {
+                icon: FileText,
+                color: "text-emerald-400 bg-emerald-500/10 border-emerald-500/20",
+                title: "Class Reports",
+                desc: "Personalised reports per class",
+                href: "/demo/school/reports",
+              },
+              {
+                icon: GraduationCap,
+                color: "text-purple-400 bg-purple-500/10 border-purple-500/20",
+                title: "Teacher Insights",
+                desc: "See teacher-level performance data",
+                href: "/demo/school/teachers",
+              },
+            ].map((card) => (
+              <Link key={card.title} href={card.href}>
+                <Card className="p-6 border-border/40 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 cursor-pointer h-full group">
+                  <div className={cn("w-11 h-11 rounded-xl flex items-center justify-center mb-4 border", card.color)}>
+                    <card.icon className="w-5 h-5" />
+                  </div>
+                  <h3 className="font-bold text-foreground mb-1.5 group-hover:text-primary transition-colors duration-200">
+                    {card.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground">{card.desc}</p>
+                  <div className="mt-3 flex items-center gap-1.5 text-xs font-semibold text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                    Explore
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </div>
+                </Card>
+              </Link>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link href="/demo/school">
+              <Button size="lg" className="text-base px-10 h-13 shadow-lg shadow-primary/25 gap-2 font-bold">
+                <Layers className="w-5 h-5" />
+                Launch Interactive Demo
+              </Button>
+            </Link>
+            <p className="text-sm text-muted-foreground mt-4">
+              No signup, no email, completely free to explore
+            </p>
           </div>
         </div>
       </section>
@@ -700,6 +790,15 @@ export default function ForSchoolsPage() {
                   </li>
                 ))}
               </ul>
+              <div className="mt-8">
+                <Link href="/demo/school/analytics">
+                  <Button variant="outline" className="border-primary/40 text-primary hover:bg-primary/10 gap-2 font-semibold">
+                    <BarChart3 className="w-4 h-4" />
+                    See Full Demo
+                    <ArrowRight className="w-4 h-4" />
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>

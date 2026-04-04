@@ -30,6 +30,10 @@ import {
   Building2,
   ChevronRight,
   Award,
+  Download,
+  Play,
+  Monitor,
+  Eye,
 } from 'lucide-react'
 
 /* ------------------------------------------------------------------ */
@@ -240,6 +244,15 @@ export default function ForTeachersPage() {
             >
               See School Plans
             </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="text-base px-8 h-12"
+              render={<Link href="/demo/teacher" />}
+            >
+              <Play className="w-4 h-4 mr-2" />
+              Try Teacher Demo
+            </Button>
           </div>
 
           <p className="mt-5 text-sm text-muted-foreground">
@@ -277,6 +290,77 @@ export default function ForTeachersPage() {
           </div>
         </div>
       </section>
+
+      {/* ================================================================
+          TRY THE PLATFORM -- INTERACTIVE DEMO
+      ================================================================ */}
+      <section className="py-24 sm:py-32">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <Badge
+              variant="outline"
+              className="border-primary/20 bg-primary/[0.06] text-primary text-xs font-semibold mb-6 gap-1.5 px-3 py-1"
+            >
+              <Play className="w-3.5 h-3.5" />
+              Interactive Demo
+            </Badge>
+            <h2 className="text-foreground">Try the Platform -- No Signup Required</h2>
+            <p className="mt-4 text-muted-foreground max-w-xl mx-auto text-lg">
+              Explore a fully working demo with sample data. See exactly how The English Hub will save you time before you create an account.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-3 gap-5 mb-10">
+            {[
+              {
+                icon: Monitor,
+                color: "text-primary bg-primary/10",
+                title: "My Dashboard",
+                desc: "See your classes, upcoming lessons, and student alerts at a glance.",
+                href: "/demo/teacher",
+              },
+              {
+                icon: Layers,
+                color: "text-emerald-400 bg-emerald-500/10",
+                title: "Lesson Builder",
+                desc: "Build a full lesson plan aligned to your exam board in minutes.",
+                href: "/demo/teacher/lessons",
+              },
+              {
+                icon: BarChart3,
+                color: "text-blue-400 bg-blue-500/10",
+                title: "Student Analytics",
+                desc: "Track progress, spot at-risk students, and view predicted grades.",
+                href: "/demo/teacher/students/s1",
+              },
+            ].map((card) => (
+              <Link key={card.title} href={card.href}>
+                <Card className="p-6 border-border/40 hover:border-primary/40 transition-colors duration-300 h-full">
+                  <div className={cn("w-11 h-11 rounded-xl flex items-center justify-center mb-5", card.color)}>
+                    <card.icon className="w-5 h-5" />
+                  </div>
+                  <h3 className="text-lg font-bold tracking-tight text-foreground mb-2">{card.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{card.desc}</p>
+                </Card>
+              </Link>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Button
+              variant="default"
+              size="lg"
+              className="text-base px-8 h-12 shadow-lg shadow-primary/20"
+              render={<Link href="/demo/teacher" />}
+            >
+              <Play className="w-4 h-4 mr-2" />
+              Launch Teacher Demo
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <Separator className="opacity-40" />
 
       {/* ================================================================
           FEATURES (6 CARDS)
@@ -350,6 +434,17 @@ export default function ForTeachersPage() {
                   </li>
                 ))}
               </ul>
+              <div className="mt-8">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="text-base px-6 h-11"
+                  render={<Link href="/demo/teacher/lessons" />}
+                >
+                  <Play className="w-4 h-4 mr-2" />
+                  Try Lesson Builder Demo
+                </Button>
+              </div>
             </div>
 
             {/* Mock generated lesson card */}
@@ -572,6 +667,77 @@ export default function ForTeachersPage() {
               </Card>
             ))}
           </div>
+        </div>
+      </section>
+
+      <Separator className="opacity-40" />
+
+      {/* ================================================================
+          FREE TEACHING RESOURCES
+      ================================================================ */}
+      <section className="py-24 sm:py-32">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <Badge
+              variant="outline"
+              className="border-amber-500/20 bg-amber-500/[0.06] text-amber-400 text-xs font-semibold mb-6 gap-1.5 px-3 py-1"
+            >
+              <Download className="w-3.5 h-3.5" />
+              Free Resources
+            </Badge>
+            <h2 className="text-foreground">Download Free Teaching Materials</h2>
+            <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-lg">
+              Get a complete lesson pack for An Inspector Calls -- free, no signup required.
+              See the quality of our resources.
+            </p>
+          </div>
+
+          <Card className="max-w-2xl mx-auto p-8 border-border/40 bg-card/60 mb-10">
+            <div className="flex items-center gap-2 mb-6">
+              <div className="w-9 h-9 rounded-lg bg-amber-500/10 flex items-center justify-center">
+                <FileText className="w-5 h-5 text-amber-400" />
+              </div>
+              <div>
+                <h3 className="font-bold text-foreground">An Inspector Calls -- Free Lesson Pack</h3>
+                <p className="text-xs text-muted-foreground">Everything you need for a 60-minute lesson</p>
+              </div>
+            </div>
+
+            <div className="space-y-3 mb-8">
+              {[
+                "Complete 60-minute lesson plan",
+                "8-question worksheet with model answers",
+                "Teaching guide with context, themes, key quotes",
+                "Differentiated activities (support/core/stretch)",
+              ].map((item) => (
+                <div key={item} className="flex items-start gap-3">
+                  <CheckCircle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                  <span className="text-sm text-foreground">{item}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Button
+                variant="default"
+                size="lg"
+                className="text-base h-12 flex-1 shadow-lg shadow-primary/20"
+                render={<Link href="/for-teachers/free-resources" />}
+              >
+                <Download className="w-4 h-4 mr-2" />
+                Download Free Pack
+              </Button>
+              <Button
+                variant="secondary"
+                size="lg"
+                className="text-base h-12 flex-1"
+                render={<Link href="/auth/teacher-register" />}
+              >
+                <Eye className="w-4 h-4 mr-2" />
+                See All 300+ Lessons
+              </Button>
+            </div>
+          </Card>
         </div>
       </section>
 

@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useAuthStore, useAuthUserLoading } from '@/store/auth-store'
-import { Menu, LogOut, School } from 'lucide-react'
+import { Menu, LogOut, School, Sparkles } from 'lucide-react'
 import {
   Sheet,
   SheetContent,
@@ -116,6 +116,10 @@ export function Header() {
               <Button variant="ghost" size="sm" render={<Link href="/for-schools" />}>
                 For Schools
               </Button>
+              <Button variant="ghost" size="sm" render={<Link href="/demo/school" />}>
+                <Sparkles className="mr-1 h-3.5 w-3.5" />
+                Try Demo
+              </Button>
               <Button variant="ghost" size="sm" render={<Link href="/for-teachers" />}>
                 For Teachers
               </Button>
@@ -223,6 +227,15 @@ export function Header() {
                     onClick={() => setMobileOpen(false)}
                   >
                     For Schools
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    className="w-full justify-start"
+                    render={<Link href="/demo/school" />}
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    <Sparkles className="mr-1.5 h-4 w-4" />
+                    Try Demo
                   </Button>
                   <Button
                     variant="ghost"
