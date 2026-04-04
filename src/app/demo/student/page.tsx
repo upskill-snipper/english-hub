@@ -7,7 +7,7 @@ import {
   Clock,
   Trophy,
   RotateCcw,
-  ChevronRight,
+  ChevronDown,
   FileText,
   Sparkles,
   Star,
@@ -21,7 +21,9 @@ import {
   ThumbsUp,
   AlertTriangle,
   Lightbulb,
+  Play,
 } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
 // ---------------------------------------------------------------------------
 // Demo data -- Aisha Rahman's student perspective
@@ -38,6 +40,8 @@ const STUDENT = {
   averageScore: 74,
   targetGrade: "7",
   predictedGrade: "6",
+  totalAssignments: 20,
+  assignmentsDone: 14,
 }
 
 const COURSES = [
@@ -56,7 +60,7 @@ const COURSES = [
     title: "GCSE English Language",
     board: "AQA",
     progress: 54,
-    nextLesson: "Paper 2 Question 5: Writing to Argue",
+    nextLesson: "Paper 2 Q5: Writing to Argue",
     color: "from-blue-500/20 to-blue-500/5",
     border: "border-blue-500/15",
     accent: "text-blue-400",
@@ -125,6 +129,7 @@ const RECOMMENDED_NEXT = [
     reason: "Your weakest area -- targeted practice will boost your grade",
     priority: "high" as const,
     courseId: "igcse-lit-poetry",
+    icon: Target,
   },
   {
     title: "Exam Technique Masterclass",
@@ -132,6 +137,7 @@ const RECOMMENDED_NEXT = [
     reason: "Improve time management for Paper 1 and Paper 2",
     priority: "high" as const,
     courseId: "exam-technique",
+    icon: Clock,
   },
   {
     title: "Macbeth Act 3 Analysis",
@@ -139,10 +145,9 @@ const RECOMMENDED_NEXT = [
     reason: "Continue your Literature course -- next lesson ready",
     priority: "medium" as const,
     courseId: "igcse-lang-p1",
+    icon: BookOpen,
   },
 ]
-
-const SCORE_TREND = [62, 70, 55, 78, 80, 65, 85, 72, 74, 77, 80, 73]
 
 const FLASHCARDS = [
   { front: "Pathetic Fallacy", back: "When the weather or environment reflects the mood or emotions of the characters." },
@@ -152,33 +157,33 @@ const FLASHCARDS = [
   { front: "Juxtaposition", back: "Placing two contrasting things close together to highlight their differences." },
 ]
 
-const MOCK_EXAMS = [
-  { id: 1, title: "English Literature Paper 1", duration: "1h 45m", questions: "Shakespeare + 19th Century Novel" },
-  { id: 2, title: "English Language Paper 1", duration: "1h 45m", questions: "Explorations in Creative Reading & Writing" },
-]
-
 // ---------------------------------------------------------------------------
-// Progress Ring Component
+// Progress Ring Component (large, with gradient stroke)
 // ---------------------------------------------------------------------------
 
-function ProgressRing({ value, size = 120, stroke = 8 }: { value: number; size?: number; stroke?: number }) {
+function ProgressRing({ value, size = 200, stroke = 12 }: { value: number; size?: number; stroke?: number }) {
   const radius = (size - stroke) / 2
   const circumference = 2 * Math.PI * radius
   const offset = circumference - (value / 100) * circumference
 
-  let color = "stroke-red-500"
-  if (value >= 70) color = "stroke-emerald-500"
-  else if (value >= 50) color = "stroke-amber-500"
+  const gradientId = `progress-gradient-${size}`
 
   return (
     <div className="relative" style={{ width: size, height: size }}>
       <svg width={size} height={size} className="-rotate-90">
+        <defs>
+          <linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#a78bfa" />
+            <stop offset="50%" stopColor="#818cf8" />
+            <stop offset="100%" stopColor="#34d399" />
+          </linearGradient>
+        </defs>
         <circle
           cx={size / 2}
           cy={size / 2}
           r={radius}
           fill="none"
-          stroke="rgba(255,255,255,0.05)"
+          stroke="rgba(255,255,255,0.04)"
           strokeWidth={stroke}
         />
         <circle
@@ -186,7 +191,7 @@ function ProgressRing({ value, size = 120, stroke = 8 }: { value: number; size?:
           cy={size / 2}
           r={radius}
           fill="none"
-          className={color}
+          stroke={`url(#${gradientId})`}
           strokeWidth={stroke}
           strokeLinecap="round"
           strokeDasharray={circumference}
@@ -195,10 +200,38 @@ function ProgressRing({ value, size = 120, stroke = 8 }: { value: number; size?:
         />
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <span className="text-2xl font-semibold text-white/90">{value}%</span>
-        <span className="text-[10px] text-white/40">overall</span>
+        <span className="text-4xl font-bold text-white/90 tabular-nums">{value}%</span>
+        <span className="text-xs text-white/40 mt-0.5">overall progress</span>
       </div>
     </div>
+  )
+}
+
+// ---------------------------------------------------------------------------
+// Mini Progress Ring (for course cards)
+// ---------------------------------------------------------------------------
+
+function MiniRing({ value, size = 44, stroke = 3, color }: { value: number; size?: number; stroke?: number; color: string }) {
+  const radius = (size - stroke) / 2
+  const circumference = 2 * Math.PI * radius
+  const offset = circumference - (value / 100) * circumference
+
+  return (
+    <svg width={size} height={size} className="-rotate-90">
+      <circle cx={size / 2} cy={size / 2} r={radius} fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth={stroke} />
+      <circle
+        cx={size / 2}
+        cy={size / 2}
+        r={radius}
+        fill="none"
+        className={color}
+        strokeWidth={stroke}
+        strokeLinecap="round"
+        strokeDasharray={circumference}
+        strokeDashoffset={offset}
+        style={{ transition: "stroke-dashoffset 0.6s ease-out" }}
+      />
+    </svg>
   )
 }
 
@@ -221,50 +254,35 @@ function FlashcardWidget() {
 
   return (
     <div className="space-y-4">
-      {/* Card */}
       <div
         onClick={() => setFlipped(!flipped)}
         className="relative cursor-pointer select-none"
         style={{ perspective: "1000px" }}
       >
         <div
-          className="relative w-full h-48 transition-transform duration-500"
+          className="relative w-full h-44 transition-transform duration-500"
           style={{
             transformStyle: "preserve-3d",
             transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
           }}
         >
-          {/* Front */}
           <div
             className="absolute inset-0 rounded-xl border border-white/10 bg-gradient-to-br from-violet-500/10 to-pink-500/10 flex flex-col items-center justify-center p-6"
             style={{ backfaceVisibility: "hidden" }}
           >
             <p className="text-xs text-white/40 mb-3">Tap to reveal</p>
-            <p className="text-lg font-medium text-white/90 text-center">
-              {card.front}
-            </p>
-            <p className="text-xs text-white/30 mt-4">
-              {index + 1} / {FLASHCARDS.length}
-            </p>
+            <p className="text-lg font-medium text-white/90 text-center">{card.front}</p>
+            <p className="text-xs text-white/30 mt-4">{index + 1} / {FLASHCARDS.length}</p>
           </div>
-
-          {/* Back */}
           <div
             className="absolute inset-0 rounded-xl border border-violet-500/20 bg-gradient-to-br from-violet-500/15 to-pink-500/15 flex flex-col items-center justify-center p-6"
-            style={{
-              backfaceVisibility: "hidden",
-              transform: "rotateY(180deg)",
-            }}
+            style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
           >
             <p className="text-xs text-violet-400/70 mb-3">Definition</p>
-            <p className="text-sm text-white/80 text-center leading-relaxed">
-              {card.back}
-            </p>
+            <p className="text-sm text-white/80 text-center leading-relaxed">{card.back}</p>
           </div>
         </div>
       </div>
-
-      {/* Controls */}
       <div className="flex items-center justify-center gap-3">
         <button
           onClick={handleNext}
@@ -283,7 +301,9 @@ function FlashcardWidget() {
 // ---------------------------------------------------------------------------
 
 export default function StudentDemoPage() {
-  const maxTrend = Math.max(...SCORE_TREND)
+  const [flashcardsOpen, setFlashcardsOpen] = useState(false)
+
+  const assignmentPct = Math.round((STUDENT.assignmentsDone / STUDENT.totalAssignments) * 100)
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white">
@@ -291,132 +311,349 @@ export default function StudentDemoPage() {
         {/* Demo banner */}
         <div className="mb-6 rounded-lg border border-violet-500/20 bg-violet-500/5 px-4 py-3">
           <p className="text-sm text-violet-400">
-            <span className="font-semibold">Student Demo</span> -- See what
-            students experience
+            <span className="font-semibold">Student Demo</span> -- See what students experience
           </p>
         </div>
 
-        {/* Welcome */}
-        <div className="mb-8 flex items-start justify-between">
-          <div>
-            <h1 className="text-3xl font-light tracking-tight text-white/90">
-              Welcome back, {STUDENT.name}
-            </h1>
-            <p className="text-white/40 text-sm mt-1">
-              {STUDENT.yearGroup} -- {STUDENT.school}
-            </p>
-          </div>
-          <div className="flex items-center gap-2 rounded-lg border border-amber-500/20 bg-amber-500/5 px-3 py-2">
-            <Flame className="h-4 w-4 text-amber-400" />
-            <span className="text-sm font-medium text-amber-400">{STUDENT.streak} day streak</span>
-          </div>
-        </div>
+        {/* ── HERO SECTION ─────────────────────────────────────────────── */}
+        <section className="mb-10">
+          <div className="rounded-2xl border border-white/5 bg-gradient-to-br from-violet-500/[0.06] via-transparent to-emerald-500/[0.04] p-8">
+            <div className="flex flex-col lg:flex-row items-center gap-8">
+              {/* Left: Welcome text */}
+              <div className="flex-1 text-center lg:text-left">
+                <h1 className="text-3xl md:text-4xl font-light tracking-tight text-white/90 mb-2">
+                  Welcome back, {STUDENT.name}
+                </h1>
+                <p className="text-white/40 text-sm mb-5">
+                  {STUDENT.yearGroup} &middot; {STUDENT.school}
+                </p>
 
-        {/* ── Your Progress overview ────────────────────────────────────── */}
-        <section id="progress" className="mb-10">
-          <h2 className="text-lg font-medium text-white/80 mb-4">Your Progress</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
-            {/* Progress ring */}
-            <div className="rounded-xl border border-white/5 bg-white/[0.02] p-6 flex flex-col items-center justify-center">
-              <ProgressRing value={STUDENT.overallProgress} />
-              <div className="flex items-center gap-4 mt-4 text-xs text-white/40">
-                <span className="flex items-center gap-1">
-                  <Star className="h-3 w-3 text-amber-400" />
-                  {STUDENT.quizzesCompleted} quizzes
-                </span>
-                <span className="flex items-center gap-1">
-                  <FileText className="h-3 w-3 text-blue-400" />
-                  {STUDENT.essaysSubmitted} essays
-                </span>
-              </div>
-            </div>
-
-            {/* Score trend */}
-            <div className="lg:col-span-2 rounded-xl border border-white/5 bg-white/[0.02] p-6">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-sm font-medium text-white/60">Score Trajectory</h3>
-                <span className="flex items-center gap-1 text-xs text-emerald-400">
-                  <TrendingUp className="h-3 w-3" />
-                  Improving
-                </span>
-              </div>
-              <div className="flex items-end gap-1.5 h-28">
-                {SCORE_TREND.map((s, i) => (
-                  <div key={i} className="flex flex-1 flex-col items-center gap-1">
-                    <span className="text-[9px] text-white/30 tabular-nums">{s}%</span>
-                    <div
-                      className={`w-full rounded-t-sm transition-all ${
-                        i >= SCORE_TREND.length - 3
-                          ? "bg-gradient-to-t from-emerald-600 to-emerald-400"
-                          : "bg-gradient-to-t from-violet-600/60 to-violet-400/60"
-                      }`}
-                      style={{ height: `${(s / maxTrend) * 100}%` }}
-                    />
+                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3">
+                  {/* Current grade */}
+                  <div className="flex items-center gap-2 rounded-lg border border-amber-500/20 bg-amber-500/5 px-3 py-2">
+                    <Award className="h-4 w-4 text-amber-400" />
+                    <span className="text-sm text-white/70">
+                      Predicted: <span className="font-semibold text-amber-400">Grade {STUDENT.predictedGrade}</span>
+                    </span>
                   </div>
-                ))}
+                  {/* Target grade */}
+                  <div className="flex items-center gap-2 rounded-lg border border-emerald-500/20 bg-emerald-500/5 px-3 py-2">
+                    <Target className="h-4 w-4 text-emerald-400" />
+                    <span className="text-sm text-white/70">
+                      Target: <span className="font-semibold text-emerald-400">Grade {STUDENT.targetGrade}</span>
+                    </span>
+                  </div>
+                  {/* Streak badge */}
+                  <div className="flex items-center gap-2 rounded-lg border border-orange-500/20 bg-gradient-to-r from-orange-500/10 to-red-500/10 px-3 py-2">
+                    <Flame className="h-4 w-4 text-orange-400" />
+                    <span className="text-sm font-semibold text-orange-400">{STUDENT.streak} day streak</span>
+                  </div>
+                </div>
               </div>
-              <p className="mt-2 text-center text-[10px] text-white/20">Last 12 assessments</p>
-            </div>
 
-            {/* Key stats */}
-            <div className="rounded-xl border border-white/5 bg-white/[0.02] p-6 space-y-4">
-              <div>
-                <p className="text-[11px] text-white/30 mb-1">Average Score</p>
-                <p className="text-2xl font-light text-white/90">{STUDENT.averageScore}%</p>
+              {/* Right: Progress ring */}
+              <div className="flex-shrink-0">
+                <ProgressRing value={STUDENT.overallProgress} size={200} stroke={12} />
               </div>
-              <div>
-                <p className="text-[11px] text-white/30 mb-1">Target Grade</p>
-                <p className="text-lg font-medium text-emerald-400">Grade {STUDENT.targetGrade}</p>
-              </div>
-              <div>
-                <p className="text-[11px] text-white/30 mb-1">Predicted Grade</p>
-                <p className="text-lg font-medium text-amber-400">Grade {STUDENT.predictedGrade}</p>
-              </div>
-              <Link
-                href="/demo/student/progress"
-                className="flex items-center gap-1 text-xs text-violet-400 hover:text-violet-300 transition-colors pt-1"
-              >
-                View full progress
-                <ArrowRight className="h-3 w-3" />
-              </Link>
             </div>
           </div>
         </section>
 
-        {/* ── Your Recent Results ───────────────────────────────────────── */}
+        {/* ── QUICK STATS ROW ──────────────────────────────────────────── */}
         <section className="mb-10">
-          <h2 className="text-lg font-medium text-white/80 mb-4">
-            Your Recent Results
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {/* Average Score */}
+            <div className="rounded-xl border border-white/5 bg-gradient-to-br from-blue-500/[0.08] to-blue-500/[0.02] p-5">
+              <div className="flex items-center justify-between mb-3">
+                <p className="text-xs font-medium text-white/40 uppercase tracking-wider">Avg Score</p>
+                <span className="flex items-center gap-1 text-xs text-emerald-400">
+                  <TrendingUp className="h-3 w-3" />
+                  +3%
+                </span>
+              </div>
+              <p className="text-3xl font-bold text-white/90 tabular-nums">{STUDENT.averageScore}%</p>
+              <p className="text-[11px] text-white/30 mt-1">across all assessments</p>
+            </div>
+
+            {/* Assignments Done */}
+            <div className="rounded-xl border border-white/5 bg-gradient-to-br from-emerald-500/[0.08] to-emerald-500/[0.02] p-5">
+              <div className="flex items-center justify-between mb-3">
+                <p className="text-xs font-medium text-white/40 uppercase tracking-wider">Completed</p>
+                <CheckCircle className="h-4 w-4 text-emerald-400/50" />
+              </div>
+              <p className="text-3xl font-bold text-white/90 tabular-nums">
+                {STUDENT.assignmentsDone}<span className="text-lg text-white/30">/{STUDENT.totalAssignments}</span>
+              </p>
+              <div className="mt-2 h-1.5 rounded-full bg-white/5">
+                <div
+                  className="h-1.5 rounded-full bg-gradient-to-r from-emerald-500 to-emerald-400 transition-all"
+                  style={{ width: `${assignmentPct}%` }}
+                />
+              </div>
+            </div>
+
+            {/* Study Streak */}
+            <div className="rounded-xl border border-white/5 bg-gradient-to-br from-orange-500/[0.08] to-red-500/[0.04] p-5">
+              <div className="flex items-center justify-between mb-3">
+                <p className="text-xs font-medium text-white/40 uppercase tracking-wider">Streak</p>
+                <Flame className="h-4 w-4 text-orange-400/50" />
+              </div>
+              <p className="text-3xl font-bold text-white/90 tabular-nums">
+                {STUDENT.streak} <span className="text-lg text-white/30">days</span>
+              </p>
+              <p className="text-[11px] text-white/30 mt-1">keep it going!</p>
+            </div>
+
+            {/* Next Goal */}
+            <div className="rounded-xl border border-white/5 bg-gradient-to-br from-violet-500/[0.08] to-pink-500/[0.04] p-5">
+              <div className="flex items-center justify-between mb-3">
+                <p className="text-xs font-medium text-white/40 uppercase tracking-wider">Next Goal</p>
+                <Star className="h-4 w-4 text-violet-400/50" />
+              </div>
+              <p className="text-lg font-bold text-white/90">Grade {STUDENT.targetGrade}</p>
+              <p className="text-[11px] text-white/30 mt-1">
+                {Number(STUDENT.targetGrade) - Number(STUDENT.predictedGrade)} grade{Number(STUDENT.targetGrade) - Number(STUDENT.predictedGrade) !== 1 ? "s" : ""} to go
+              </p>
+              <div className="mt-2">
+                <Link
+                  href="/demo/student/progress"
+                  className="inline-flex items-center gap-1 text-xs text-violet-400 hover:text-violet-300 transition-colors"
+                >
+                  View progress
+                  <ArrowRight className="h-3 w-3" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── STRENGTHS & IMPROVEMENTS (side by side) ───────────────────── */}
+        <section className="mb-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {/* Strengths */}
+            <div className="rounded-2xl border border-emerald-500/10 bg-gradient-to-b from-emerald-500/[0.06] to-transparent p-6">
+              <h2 className="text-lg font-medium text-white/80 mb-4 flex items-center gap-2">
+                <ThumbsUp className="h-5 w-5 text-emerald-400" />
+                Your Strengths
+              </h2>
+              <div className="flex flex-wrap gap-2 mb-4">
+                {STRENGTHS.map((s) => (
+                  <span
+                    key={s.topic}
+                    className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 px-3 py-1.5 text-xs font-medium text-emerald-400"
+                  >
+                    <CheckCircle className="h-3 w-3" />
+                    {s.topic}
+                    <span className="text-emerald-400/60">{s.score}%</span>
+                  </span>
+                ))}
+              </div>
+              <div className="space-y-2">
+                {STRENGTHS.map((s) => (
+                  <div key={s.topic} className="flex items-center gap-3 text-xs text-white/40">
+                    <span className="font-medium text-white/60 w-36 shrink-0">{s.topic}</span>
+                    <div className="flex-1 h-1 rounded-full bg-white/5">
+                      <div
+                        className="h-1 rounded-full bg-emerald-500/60"
+                        style={{ width: `${s.score}%` }}
+                      />
+                    </div>
+                    <span className="tabular-nums text-emerald-400/70 w-8 text-right">{s.score}%</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Areas to Improve */}
+            <div className="rounded-2xl border border-amber-500/10 bg-gradient-to-b from-amber-500/[0.06] to-transparent p-6">
+              <h2 className="text-lg font-medium text-white/80 mb-4 flex items-center gap-2">
+                <Target className="h-5 w-5 text-amber-400" />
+                Areas to Improve
+              </h2>
+              <div className="flex flex-wrap gap-2 mb-4">
+                {AREAS_TO_IMPROVE.map((a) => (
+                  <span
+                    key={a.topic}
+                    className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium ${
+                      a.score < 50
+                        ? "bg-red-500/10 border-red-500/20 text-red-400"
+                        : "bg-amber-500/10 border-amber-500/20 text-amber-400"
+                    }`}
+                  >
+                    <AlertTriangle className="h-3 w-3" />
+                    {a.topic}
+                    <span className="opacity-60">{a.score}%</span>
+                  </span>
+                ))}
+              </div>
+              <div className="space-y-3">
+                {AREAS_TO_IMPROVE.map((a) => (
+                  <div key={a.topic} className="rounded-lg border border-white/5 bg-white/[0.02] p-3">
+                    <div className="flex items-center gap-3 mb-1.5">
+                      <span className="font-medium text-sm text-white/70">{a.topic}</span>
+                      <div className="flex-1 h-1 rounded-full bg-white/5">
+                        <div
+                          className={`h-1 rounded-full ${a.score < 50 ? "bg-red-500/60" : "bg-amber-500/60"}`}
+                          style={{ width: `${a.score}%` }}
+                        />
+                      </div>
+                      <span className={`tabular-nums text-xs w-8 text-right ${a.score < 50 ? "text-red-400/70" : "text-amber-400/70"}`}>
+                        {a.score}%
+                      </span>
+                    </div>
+                    <div className="flex items-start gap-1.5">
+                      <Lightbulb className="h-3 w-3 text-amber-400/50 mt-0.5 flex-shrink-0" />
+                      <p className="text-xs text-white/40">{a.suggestion}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── MY COURSES (2-col compact grid) ──────────────────────────── */}
+        <section id="courses" className="mb-10">
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-lg font-medium text-white/80">My Courses</h2>
+            <Link
+              href="/demo/student/courses"
+              className="text-xs text-violet-400 hover:text-violet-300 transition-colors flex items-center gap-1"
+            >
+              View all <ArrowRight className="h-3 w-3" />
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {COURSES.map((course) => (
+              <Link
+                key={course.id}
+                href={`/demo/student/courses/${course.id}`}
+                className={`rounded-xl border ${course.border} bg-gradient-to-br ${course.color} p-5 transition-all hover:scale-[1.01] hover:border-white/10 block`}
+              >
+                <div className="flex items-start justify-between mb-3">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-sm font-medium text-white/90 mb-0.5">{course.title}</h3>
+                    <span className="text-[10px] text-white/30">{course.board}</span>
+                  </div>
+                  <div className="relative flex-shrink-0 ml-3">
+                    <MiniRing
+                      value={course.progress}
+                      size={44}
+                      stroke={3}
+                      color={
+                        course.progress >= 70
+                          ? "stroke-emerald-400"
+                          : course.progress >= 50
+                            ? "stroke-amber-400"
+                            : "stroke-red-400"
+                      }
+                    />
+                    <span className="absolute inset-0 flex items-center justify-center text-[10px] font-semibold text-white/70 tabular-nums">
+                      {course.progress}%
+                    </span>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2 text-xs text-white/40">
+                  <Play className="h-3 w-3 text-white/25" />
+                  <span className="truncate">
+                    <span className="text-white/50">Next:</span> {course.nextLesson}
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        {/* ── RECOMMENDED NEXT (prominent CTA cards) ───────────────────── */}
+        <section className="mb-10">
+          <h2 className="text-lg font-medium text-white/80 mb-4 flex items-center gap-2">
+            <Zap className="h-5 w-5 text-violet-400" />
+            Recommended Next
           </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {RECOMMENDED_NEXT.map((r) => {
+              const Icon = r.icon
+              return (
+                <div
+                  key={r.title}
+                  className={`group rounded-xl border p-5 transition-all ${
+                    r.priority === "high"
+                      ? "border-violet-500/20 bg-gradient-to-b from-violet-500/10 to-violet-500/[0.02]"
+                      : "border-white/5 bg-white/[0.02]"
+                  }`}
+                >
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className={`w-9 h-9 rounded-lg flex items-center justify-center ${
+                      r.priority === "high" ? "bg-violet-500/15" : "bg-white/5"
+                    }`}>
+                      <Icon className={`h-4 w-4 ${r.priority === "high" ? "text-violet-400" : "text-white/40"}`} />
+                    </div>
+                    <span
+                      className={`text-[10px] font-medium uppercase tracking-wider ${
+                        r.priority === "high" ? "text-violet-400" : "text-white/30"
+                      }`}
+                    >
+                      {r.priority === "high" ? "Priority" : "Up Next"}
+                    </span>
+                  </div>
+                  <h3 className="text-sm font-medium text-white/90 mb-1">{r.title}</h3>
+                  <p className="text-[11px] text-white/30 mb-3">{r.course}</p>
+                  <p className="text-xs text-white/50 leading-relaxed mb-4">{r.reason}</p>
+                  <Button
+                    size="sm"
+                    className={`w-full ${
+                      r.priority === "high"
+                        ? "bg-violet-500/20 border-violet-500/30 text-violet-300 hover:bg-violet-500/30"
+                        : "bg-white/5 border-white/10 text-white/60 hover:bg-white/10"
+                    }`}
+                    variant="outline"
+                    render={<Link href={`/demo/student/courses/${r.courseId}`} />}
+                  >
+                    <Play className="h-3.5 w-3.5 mr-1.5" />
+                    Start
+                  </Button>
+                </div>
+              )
+            })}
+          </div>
+        </section>
+
+        {/* ── RECENT RESULTS (clean table with color-coded scores) ──────── */}
+        <section className="mb-10">
+          <h2 className="text-lg font-medium text-white/80 mb-4">Recent Results</h2>
           <div className="rounded-xl border border-white/5 bg-white/[0.02] overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-white/5">
-                    <th className="text-left px-4 py-3 text-xs font-medium text-white/40">Assessment</th>
-                    <th className="text-left px-4 py-3 text-xs font-medium text-white/40">Type</th>
-                    <th className="text-left px-4 py-3 text-xs font-medium text-white/40">Score</th>
-                    <th className="text-left px-4 py-3 text-xs font-medium text-white/40">Grade</th>
-                    <th className="text-left px-4 py-3 text-xs font-medium text-white/40">Date</th>
+                    <th className="text-left px-5 py-3 text-xs font-medium text-white/40">Assessment</th>
+                    <th className="text-left px-5 py-3 text-xs font-medium text-white/40">Type</th>
+                    <th className="text-left px-5 py-3 text-xs font-medium text-white/40">Score</th>
+                    <th className="text-left px-5 py-3 text-xs font-medium text-white/40">Date</th>
                   </tr>
                 </thead>
                 <tbody>
                   {RECENT_SCORES.map((s) => {
                     const pct = Math.round((s.score / s.maxScore) * 100)
-                    let grade = "U"
-                    if (pct >= 90) grade = "9"
-                    else if (pct >= 80) grade = "8"
-                    else if (pct >= 70) grade = "7"
-                    else if (pct >= 60) grade = "6"
-                    else if (pct >= 50) grade = "5"
-                    else if (pct >= 40) grade = "4"
+                    const scoreColor =
+                      pct >= 80
+                        ? "text-emerald-400"
+                        : pct >= 60
+                          ? "text-amber-400"
+                          : "text-red-400"
+                    const scoreBg =
+                      pct >= 80
+                        ? "bg-emerald-500/10"
+                        : pct >= 60
+                          ? "bg-amber-500/10"
+                          : "bg-red-500/10"
                     return (
                       <tr
                         key={s.id}
                         className="border-b border-white/5 last:border-0 hover:bg-white/[0.02]"
                       >
-                        <td className="px-4 py-3 text-white/80">{s.title}</td>
-                        <td className="px-4 py-3">
+                        <td className="px-5 py-3 text-white/80">{s.title}</td>
+                        <td className="px-5 py-3">
                           <span
                             className={`inline-flex items-center rounded-full px-2 py-0.5 text-[11px] font-medium ${
                               s.type === "essay"
@@ -429,26 +666,13 @@ export default function StudentDemoPage() {
                             {s.type}
                           </span>
                         </td>
-                        <td className="px-4 py-3">
-                          <span
-                            className={
-                              pct >= 70
-                                ? "text-green-400"
-                                : pct >= 50
-                                  ? "text-amber-400"
-                                  : "text-red-400"
-                            }
-                          >
+                        <td className="px-5 py-3">
+                          <span className={`inline-flex items-center gap-1.5 rounded-md px-2 py-1 text-xs font-medium ${scoreBg} ${scoreColor}`}>
                             {s.score}/{s.maxScore}
-                          </span>
-                          <span className="text-white/30 ml-1 text-xs">({pct}%)</span>
-                        </td>
-                        <td className="px-4 py-3">
-                          <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-white/5 text-xs font-medium text-white/70">
-                            {grade}
+                            <span className="opacity-60">({pct}%)</span>
                           </span>
                         </td>
-                        <td className="px-4 py-3 text-xs text-white/40">{s.date}</td>
+                        <td className="px-5 py-3 text-xs text-white/40">{s.date}</td>
                       </tr>
                     )
                   })}
@@ -458,166 +682,16 @@ export default function StudentDemoPage() {
           </div>
         </section>
 
-        {/* ── Strengths + Areas to Improve row ──────────────────────────── */}
+        {/* ── UPCOMING ASSIGNMENTS + FLASHCARDS (side by side) ──────────── */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
-          {/* Strengths */}
+          {/* Upcoming Assignments */}
           <section>
-            <h2 className="text-lg font-medium text-white/80 mb-4 flex items-center gap-2">
-              <ThumbsUp className="h-5 w-5 text-emerald-400" />
-              Your Strengths
-            </h2>
-            <div className="space-y-3">
-              {STRENGTHS.map((s) => (
-                <div
-                  key={s.topic}
-                  className="rounded-xl border border-emerald-500/10 bg-emerald-500/5 p-4"
-                >
-                  <div className="flex items-center justify-between mb-2">
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className="h-4 w-4 text-emerald-400" />
-                      <span className="text-sm font-medium text-white/90">{s.topic}</span>
-                    </div>
-                    <span className="inline-flex items-center rounded-full bg-emerald-500/20 border border-emerald-500/30 px-2 py-0.5 text-[11px] font-medium text-emerald-400">
-                      {s.score}%
-                    </span>
-                  </div>
-                  <p className="text-xs text-white/40 ml-6">{s.detail}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Areas to improve */}
-          <section>
-            <h2 className="text-lg font-medium text-white/80 mb-4 flex items-center gap-2">
-              <Target className="h-5 w-5 text-amber-400" />
-              Areas to Improve
-            </h2>
-            <div className="space-y-3">
-              {AREAS_TO_IMPROVE.map((a) => (
-                <div
-                  key={a.topic}
-                  className={`rounded-xl border p-4 ${
-                    a.score < 50
-                      ? "border-red-500/10 bg-red-500/5"
-                      : "border-amber-500/10 bg-amber-500/5"
-                  }`}
-                >
-                  <div className="flex items-center justify-between mb-2">
-                    <div className="flex items-center gap-2">
-                      <AlertTriangle className={`h-4 w-4 ${a.score < 50 ? "text-red-400" : "text-amber-400"}`} />
-                      <span className="text-sm font-medium text-white/90">{a.topic}</span>
-                    </div>
-                    <span
-                      className={`inline-flex items-center rounded-full border px-2 py-0.5 text-[11px] font-medium ${
-                        a.score < 50
-                          ? "bg-red-500/20 border-red-500/30 text-red-400"
-                          : "bg-amber-500/20 border-amber-500/30 text-amber-400"
-                      }`}
-                    >
-                      {a.score}%
-                    </span>
-                  </div>
-                  <div className="flex items-start gap-2 ml-6">
-                    <Lightbulb className="h-3.5 w-3.5 text-white/30 mt-0.5 flex-shrink-0" />
-                    <p className="text-xs text-white/50">{a.suggestion}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-        </div>
-
-        {/* ── Recommended Next ──────────────────────────────────────────── */}
-        <section className="mb-10">
-          <h2 className="text-lg font-medium text-white/80 mb-4 flex items-center gap-2">
-            <Zap className="h-5 w-5 text-violet-400" />
-            Recommended Next
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {RECOMMENDED_NEXT.map((r) => (
-              <Link
-                key={r.title}
-                href={`/demo/student/courses/${r.courseId}`}
-                className={`group rounded-xl border p-5 transition-all hover:scale-[1.02] ${
-                  r.priority === "high"
-                    ? "border-violet-500/20 bg-gradient-to-b from-violet-500/10 to-violet-500/5"
-                    : "border-white/5 bg-white/[0.02]"
-                }`}
-              >
-                <div className="flex items-center justify-between mb-3">
-                  <span
-                    className={`text-[10px] font-medium uppercase tracking-wider ${
-                      r.priority === "high" ? "text-violet-400" : "text-white/30"
-                    }`}
-                  >
-                    {r.priority === "high" ? "Priority" : "Up Next"}
-                  </span>
-                  <ArrowRight className="h-4 w-4 text-white/15 group-hover:text-white/40 transition-colors" />
-                </div>
-                <h3 className="text-sm font-medium text-white/90 mb-1">{r.title}</h3>
-                <p className="text-[11px] text-white/30 mb-3">{r.course}</p>
-                <p className="text-xs text-white/50 leading-relaxed">{r.reason}</p>
-              </Link>
-            ))}
-          </div>
-        </section>
-
-        {/* ── My Courses ─────────────────────────────────────────────────── */}
-        <section id="courses" className="mb-10">
-          <h2 className="text-lg font-medium text-white/80 mb-4">My Courses</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {COURSES.map((course) => (
-              <Link
-                key={course.id}
-                href={`/demo/student/courses/${course.id}`}
-                className={`rounded-xl border ${course.border} bg-gradient-to-b ${course.color} p-5 transition-all hover:scale-[1.02] block`}
-              >
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-sm font-medium text-white/90">
-                    {course.title}
-                  </h3>
-                  <span className="text-[10px] text-white/30 bg-white/5 px-2 py-0.5 rounded-full">
-                    {course.board}
-                  </span>
-                </div>
-                <div className="mb-3">
-                  <div className="flex items-center justify-between text-xs mb-1">
-                    <span className="text-white/40">Progress</span>
-                    <span className={course.accent}>{course.progress}%</span>
-                  </div>
-                  <div className="h-1.5 rounded-full bg-white/5">
-                    <div
-                      className={`h-1.5 rounded-full bg-gradient-to-r ${
-                        course.progress >= 70
-                          ? "from-emerald-500 to-emerald-400"
-                          : course.progress >= 50
-                            ? "from-amber-500 to-amber-400"
-                            : "from-red-500 to-red-400"
-                      } transition-all`}
-                      style={{ width: `${course.progress}%` }}
-                    />
-                  </div>
-                </div>
-                <p className="text-xs text-white/40">
-                  <span className="text-white/50">Next:</span> {course.nextLesson}
-                </p>
-              </Link>
-            ))}
-          </div>
-        </section>
-
-        {/* ── Upcoming Assignments ──────────────────────────────────────── */}
-        <section className="mb-10">
-          <h2 className="text-lg font-medium text-white/80 mb-4">
-            Upcoming Assignments
-          </h2>
-          <div className="rounded-xl border border-white/5 bg-white/[0.02] p-6">
+            <h2 className="text-lg font-medium text-white/80 mb-4">Upcoming Assignments</h2>
             <div className="space-y-3">
               {ASSIGNMENTS.map((a) => (
                 <div
                   key={a.id}
-                  className="flex items-center gap-4 rounded-lg border border-white/5 bg-white/[0.01] px-4 py-3"
+                  className="flex items-center gap-4 rounded-xl border border-white/5 bg-white/[0.02] px-4 py-3 hover:border-white/10 transition-colors"
                 >
                   <div
                     className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${
@@ -647,75 +721,50 @@ export default function StudentDemoPage() {
                 </div>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* ── Flashcard Practice + Mock Exams row ────────────────────────── */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
-          {/* Flashcard Practice */}
-          <section id="flashcards">
-            <h2 className="text-lg font-medium text-white/80 mb-4">
-              Flashcard Practice
-            </h2>
-            <div className="rounded-xl border border-white/5 bg-white/[0.02] p-6">
-              <p className="text-xs text-white/40 mb-4">
-                Literary Terms -- {FLASHCARDS.length} cards
-              </p>
-              <FlashcardWidget />
-            </div>
           </section>
 
-          {/* Mock Exam Practice */}
-          <section>
-            <h2 className="text-lg font-medium text-white/80 mb-4">
-              Mock Exam Practice
-            </h2>
-            <div className="space-y-4">
-              {MOCK_EXAMS.map((exam) => (
-                <div
-                  key={exam.id}
-                  className="rounded-xl border border-white/5 bg-white/[0.02] p-5 transition-all hover:border-white/10 hover:bg-white/[0.04]"
-                >
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="text-sm font-medium text-white/90">
-                      {exam.title}
-                    </h3>
-                    <ChevronRight className="h-4 w-4 text-white/20" />
-                  </div>
-                  <div className="flex items-center gap-4 text-xs text-white/40 mb-3">
-                    <span className="flex items-center gap-1">
-                      <Clock className="h-3.5 w-3.5" />
-                      {exam.duration}
-                    </span>
-                    <span>{exam.questions}</span>
-                  </div>
-                  <button className="w-full flex items-center justify-center gap-2 rounded-lg border border-violet-500/20 bg-violet-500/10 px-4 py-2 text-sm text-violet-400 hover:bg-violet-500/20 transition-colors">
-                    <FileText className="h-4 w-4" />
-                    Take Practice Paper
-                  </button>
-                </div>
-              ))}
-            </div>
+          {/* Flashcard Practice (collapsible) */}
+          <section id="flashcards">
+            <button
+              onClick={() => setFlashcardsOpen(!flashcardsOpen)}
+              className="flex items-center gap-2 text-lg font-medium text-white/80 mb-4 w-full text-left hover:text-white/90 transition-colors"
+            >
+              <ChevronDown
+                className={`h-4 w-4 text-white/40 transition-transform ${flashcardsOpen ? "rotate-0" : "-rotate-90"}`}
+              />
+              Flashcard Practice
+              <span className="text-xs text-white/30 font-normal ml-1">({FLASHCARDS.length} cards)</span>
+            </button>
+            {flashcardsOpen ? (
+              <div className="rounded-xl border border-white/5 bg-white/[0.02] p-6">
+                <p className="text-xs text-white/40 mb-4">Literary Terms</p>
+                <FlashcardWidget />
+              </div>
+            ) : (
+              <div
+                onClick={() => setFlashcardsOpen(true)}
+                className="rounded-xl border border-dashed border-white/10 bg-white/[0.01] p-6 flex items-center justify-center cursor-pointer hover:border-white/15 transition-colors"
+              >
+                <p className="text-sm text-white/30">Click to expand flashcard practice</p>
+              </div>
+            )}
           </section>
         </div>
 
         {/* ── CTA ────────────────────────────────────────────────────────── */}
         <section className="mb-10">
-          <div className="rounded-xl border border-violet-500/20 bg-gradient-to-r from-violet-500/10 via-pink-500/10 to-violet-500/10 p-8 text-center">
-            <h2 className="text-xl font-medium text-white/90 mb-2">
-              Get full access
-            </h2>
+          <div className="rounded-2xl border border-violet-500/20 bg-gradient-to-r from-violet-500/10 via-pink-500/10 to-violet-500/10 p-8 text-center">
+            <h2 className="text-xl font-medium text-white/90 mb-2">Get full access</h2>
             <p className="text-sm text-white/50 mb-6 max-w-md mx-auto">
-              Unlock all courses, unlimited flashcards, mock exams with instant
-              feedback, and personalised study plans.
+              Unlock all courses, unlimited flashcards, mock exams with instant feedback, and personalised study plans.
             </p>
-            <Link
-              href="/auth/register"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-violet-500 to-pink-500 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+            <Button
+              render={<Link href="/auth/register" />}
+              className="bg-gradient-to-r from-violet-500 to-pink-500 text-white border-0 hover:opacity-90"
             >
-              <Sparkles className="h-4 w-4" />
+              <Sparkles className="h-4 w-4 mr-2" />
               Start Free Trial
-            </Link>
+            </Button>
           </div>
         </section>
       </div>

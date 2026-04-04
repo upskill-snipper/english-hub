@@ -15,12 +15,15 @@ import {
   ClipboardList,
   ChevronRight,
   ArrowUpRight,
+  ArrowDownRight,
   Info,
   GraduationCap,
+  Search,
 } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import { toast } from "sonner"
 import { openPrintableDocument } from "@/lib/generate-download"
 import {
@@ -54,7 +57,7 @@ function vary(base: number, range: DateRange, round = true): number {
   return round ? Math.round(v) : Math.round(v * 10) / 10
 }
 
-// ── Progress bar color helper ───────────────────────────────
+// ── Color helpers ──────────────────────────────────────────
 function progressColor(pct: number): string {
   if (pct >= 75) return "bg-emerald-500"
   if (pct >= 60) return "bg-amber-500"
@@ -67,7 +70,98 @@ function progressTextColor(pct: number): string {
   return "text-red-400"
 }
 
-// ── Top lessons & mock exams (inline) ───────────────────────
+function ragBadge(pct: number) {
+  if (pct >= 75)
+    return <Badge className="bg-emerald-500/15 text-emerald-400 border-emerald-500/20">On Track</Badge>
+  if (pct >= 60)
+    return <Badge className="bg-amber-500/15 text-amber-400 border-amber-500/20">Needs Support</Badge>
+  return <Badge className="bg-red-500/15 text-red-400 border-red-500/20">At Risk</Badge>
+}
+
+// ── Ring chart (SVG donut) ─────────────────────────────────
+function RingChart({
+  value,
+  size = 80,
+  strokeWidth = 8,
+  color = "text-emerald-400",
+  bgColor = "text-white/10",
+  label,
+}: {
+  value: number
+  size?: number
+  strokeWidth?: number
+  color?: string
+  bgColor?: string
+  label?: string
+}) {
+  const radius = (size - strokeWidth) / 2
+  const circumference = 2 * Math.PI * radius
+  const offset = circumference - (Math.min(value, 100) / 100) * circumference
+  return (
+    <div className="relative inline-flex items-center justify-center" style={{ width: size, height: size }}>
+      <svg width={size} height={size} className="-rotate-90">
+        <circle
+          cx={size / 2}
+          cy={size / 2}
+          r={radius}
+          fill="none"
+          stroke="currentColor"
+          strokeWidth={strokeWidth}
+          className={bgColor}
+        />
+        <circle
+          cx={size / 2}
+          cy={size / 2}
+          r={radius}
+          fill="none"
+          stroke="currentColor"
+          strokeWidth={strokeWidth}
+          strokeDasharray={circumference}
+          strokeDashoffset={offset}
+          strokeLinecap="round"
+          className={color}
+        />
+      </svg>
+      <div className="absolute inset-0 flex flex-col items-center justify-center">
+        <span className="text-base font-bold text-white">{Math.round(value)}%</span>
+        {label && <span className="text-[9px] text-neutral-500 leading-tight">{label}</span>}
+      </div>
+    </div>
+  )
+}
+
+// ── Trend indicator ────────────────────────────────────────
+function TrendBadge({ value, suffix = "%" }: { value: number; suffix?: string }) {
+  if (value > 0)
+    return (
+      <span className="inline-flex items-center gap-0.5 text-xs font-semibold text-emerald-400">
+        <ArrowUpRight className="w-3.5 h-3.5" />
+        +{value}{suffix}
+      </span>
+    )
+  if (value < 0)
+    return (
+      <span className="inline-flex items-center gap-0.5 text-xs font-semibold text-red-400">
+        <ArrowDownRight className="w-3.5 h-3.5" />
+        {value}{suffix}
+      </span>
+    )
+  return <span className="text-xs text-neutral-500">No change</span>
+}
+
+// ── Horizontal bar ─────────────────────────────────────────
+function HBar({ value, max, color = "bg-blue-500" }: { value: number; max: number; color?: string }) {
+  return (
+    <div className="h-2.5 rounded-full bg-white/10 overflow-hidden">
+      <div
+        className={`h-full rounded-full transition-all ${color}`}
+        style={{ width: `${Math.min((value / max) * 100, 100)}%` }}
+      />
+    </div>
+  )
+}
+
+// ── Inline data ────────────────────────────────────────────
 const TOP_LESSONS = [
   { title: "Macbeth Act 1 Analysis", count: 312 },
   { title: "Creative Writing: Narrative Voice", count: 287 },
@@ -84,16 +178,24 @@ const TOP_MOCK_EXAMS = [
   { title: "AQA Lit Paper 2 Mock", count: 118 },
 ]
 
-// ── Main page ───────────────────────────────────────────────
+type TabKey = "overview" | "year-groups" | "teachers" | "students" | "assessments"
+
+// ── Main page ──────────────────────────────────────────────
 export default function AnalyticsPage() {
   const [dateRange, setDateRange] = useState<DateRange>("term")
   const [yearFilter, setYearFilter] = useState<number | null>(null)
+  const [studentSearch, setStudentSearch] = useState("")
 
   const atRiskStudents = DEMO_STUDENTS.filter((s) => s.atRisk)
 
-  const filteredStudents = yearFilter
-    ? DEMO_STUDENTS.filter((s) => s.yearGroup === `Year ${yearFilter}`)
-    : DEMO_STUDENTS
+  const filteredStudents = DEMO_STUDENTS.filter((s) => {
+    if (yearFilter && s.yearGroup !== `Year ${yearFilter}`) return false
+    if (studentSearch) {
+      const q = studentSearch.toLowerCase()
+      return s.name.toLowerCase().includes(q) || s.yearGroup.toLowerCase().includes(q)
+    }
+    return true
+  })
 
   const topClasses = [...DEMO_CLASSES]
     .sort((a, b) => b.avgProgress - a.avgProgress)
@@ -106,7 +208,7 @@ export default function AnalyticsPage() {
   const maxLessonCount = TOP_LESSONS[0].count
   const maxMockCount = TOP_MOCK_EXAMS[0].count
 
-  // Compute year-group level at-risk counts from students
+  // Year-group at-risk counts
   const yearGroupAtRisk = DEMO_YEAR_GROUPS.map((yg: any) => {
     const count = DEMO_STUDENTS.filter(
       (s) => s.yearGroup === `Year ${yg.year}` && s.atRisk
@@ -114,19 +216,15 @@ export default function AnalyticsPage() {
     return { ...yg, atRiskCount: count || Math.round(yg.studentCount * 0.06) }
   })
 
-  // Compute teacher assignments completed percentage
+  // Teacher stats
   const teacherStats = DEMO_TEACHERS.map((t) => {
     const teacherClasses = DEMO_CLASSES.filter((c) => c.teacherId === t.id)
     const totalSet = teacherClasses.reduce((acc, c) => acc + c.assignmentsSet, 0)
-    const totalDone = teacherClasses.reduce(
-      (acc, c) => acc + c.assignmentsCompleted,
-      0
-    )
+    const totalDone = teacherClasses.reduce((acc, c) => acc + c.assignmentsCompleted, 0)
     const avgProg =
       teacherClasses.length > 0
         ? Math.round(
-            teacherClasses.reduce((acc, c) => acc + c.avgProgress, 0) /
-              teacherClasses.length
+            teacherClasses.reduce((acc, c) => acc + c.avgProgress, 0) / teacherClasses.length
           )
         : 0
     return {
@@ -137,6 +235,40 @@ export default function AnalyticsPage() {
       avgProgress: avgProg,
     }
   }).sort((a, b) => b.avgProgress - a.avgProgress)
+
+  // Weakness analysis
+  const allWeaknesses: Record<string, number> = {}
+  DEMO_STUDENTS.forEach((s) => {
+    s.weaknesses.forEach((w) => {
+      const name = typeof w === "string" ? w : w.name
+      allWeaknesses[name] = (allWeaknesses[name] || 0) + 1
+    })
+  })
+  const topWeaknesses = Object.entries(allWeaknesses)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 6)
+  const maxWeaknessCount = topWeaknesses[0]?.[1] || 1
+
+  // Grade distribution
+  const gradeBuckets: Record<string, number> = { "8-9": 0, "6-7": 0, "4-5": 0, "2-3": 0 }
+  DEMO_STUDENTS.forEach((s) => {
+    s.mockExamResults.forEach((r) => {
+      const g = parseInt(r.grade, 10)
+      if (g >= 8) gradeBuckets["8-9"]++
+      else if (g >= 6) gradeBuckets["6-7"]++
+      else if (g >= 4) gradeBuckets["4-5"]++
+      else gradeBuckets["2-3"]++
+    })
+  })
+  const maxGrade = Math.max(...Object.values(gradeBuckets), 1)
+
+  // Assessment trend data
+  const months = ["Jan", "Feb", "Mar"]
+  const assessmentCategories = [
+    { label: "Mock Exams", avgs: [62, 65, vary(68, dateRange)], color: "amber" },
+    { label: "Essays", avgs: [58, 63, vary(66, dateRange)], color: "cyan" },
+    { label: "Quizzes", avgs: [70, 72, vary(74, dateRange)], color: "purple" },
+  ]
 
   function handleExport(type: string) {
     if (type === "PDF") {
@@ -184,805 +316,229 @@ export default function AnalyticsPage() {
       </div>
 
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
+        {/* Header row */}
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
           <div>
-            <h1 className="text-3xl font-bold tracking-tight">
-              School Analytics
-            </h1>
+            <h1 className="text-3xl font-bold tracking-tight">School Analytics</h1>
             <p className="text-neutral-400 mt-1">
-              {DEMO_SCHOOL.name} &middot; {vary(DEMO_STATS.totalStudents, dateRange)}{" "}
-              students enrolled
+              {DEMO_SCHOOL.name} &middot; {vary(DEMO_STATS.totalStudents, dateRange)} students enrolled
             </p>
           </div>
 
-          {/* Date range selector */}
-          <div className="flex items-center gap-1 rounded-lg bg-white/5 border border-white/10 p-1">
-            {(Object.keys(DATE_LABELS) as DateRange[]).map((key) => (
-              <button
-                key={key}
-                onClick={() => setDateRange(key)}
-                className={`px-3 py-1.5 text-sm rounded-md transition-all ${
-                  dateRange === key
-                    ? "bg-white/10 text-white font-medium"
-                    : "text-neutral-400 hover:text-white hover:bg-white/5"
-                }`}
+          <div className="flex items-center gap-3">
+            {/* Date range selector */}
+            <div className="flex items-center gap-1 rounded-lg bg-white/5 border border-white/10 p-1">
+              {(Object.keys(DATE_LABELS) as DateRange[]).map((key) => (
+                <button
+                  key={key}
+                  onClick={() => setDateRange(key)}
+                  className={`px-3 py-1.5 text-sm rounded-md transition-all ${
+                    dateRange === key
+                      ? "bg-white/10 text-white font-medium"
+                      : "text-neutral-400 hover:text-white hover:bg-white/5"
+                  }`}
+                >
+                  {DATE_LABELS[key]}
+                </button>
+              ))}
+            </div>
+
+            {/* Export */}
+            <div className="hidden sm:flex items-center gap-2">
+              <Button
+                variant="outline"
+                size="sm"
+                className="border-white/10 text-neutral-300 hover:text-white hover:bg-white/5"
+                onClick={() => handleExport("Excel")}
               >
-                {DATE_LABELS[key]}
-              </button>
-            ))}
+                <FileSpreadsheet className="w-4 h-4 mr-1.5" />
+                Excel
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                className="border-white/10 text-neutral-300 hover:text-white hover:bg-white/5"
+                onClick={() => handleExport("PDF")}
+              >
+                <Download className="w-4 h-4 mr-1.5" />
+                PDF
+              </Button>
+            </div>
           </div>
         </div>
 
-        {/* ── Top stats row ──────────────────────────────────── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-          <Card className="bg-[#111] border-white/10">
-            <CardContent className="pt-5">
-              <div className="flex items-center justify-between mb-3">
-                <div className="p-2 rounded-lg bg-emerald-500/10">
-                  <Users className="w-5 h-5 text-emerald-400" />
-                </div>
-                <Badge variant="secondary" className="text-emerald-400 bg-emerald-500/10 border-emerald-500/20">
-                  +{vary(12, dateRange)}%
-                </Badge>
-              </div>
-              <p className="text-2xl font-bold">{vary(305, dateRange)}/{vary(342, dateRange)}</p>
-              <p className="text-sm text-neutral-400 mt-1">Active Students</p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-[#111] border-white/10">
-            <CardContent className="pt-5">
-              <div className="flex items-center justify-between mb-3">
-                <div className="p-2 rounded-lg bg-blue-500/10">
-                  <FileText className="w-5 h-5 text-blue-400" />
-                </div>
-                <Badge variant="secondary" className="text-blue-400 bg-blue-500/10 border-blue-500/20">
-                  +{vary(8, dateRange)}%
-                </Badge>
-              </div>
-              <p className="text-2xl font-bold">{vary(1247, dateRange).toLocaleString()}</p>
-              <p className="text-sm text-neutral-400 mt-1">Assignments Submitted</p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-[#111] border-white/10">
-            <CardContent className="pt-5">
-              <div className="flex items-center justify-between mb-3">
-                <div className="p-2 rounded-lg bg-purple-500/10">
-                  <TrendingUp className="w-5 h-5 text-purple-400" />
-                </div>
-                <Badge variant="secondary" className="text-purple-400 bg-purple-500/10 border-purple-500/20">
-                  +{vary(3, dateRange)}%
-                </Badge>
-              </div>
-              <p className="text-2xl font-bold">{vary(68, dateRange)}%</p>
-              <p className="text-sm text-neutral-400 mt-1">Average Score</p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-[#111] border-white/10">
-            <CardContent className="pt-5">
-              <div className="flex items-center justify-between mb-3">
-                <div className="p-2 rounded-lg bg-red-500/10">
-                  <AlertTriangle className="w-5 h-5 text-red-400" />
-                </div>
-                <Badge variant="secondary" className="text-red-400 bg-red-500/10 border-red-500/20">
-                  Needs attention
-                </Badge>
-              </div>
-              <p className="text-2xl font-bold">{vary(23, dateRange)}</p>
-              <p className="text-sm text-neutral-400 mt-1">At-Risk Students</p>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* ── Year Group Performance ─────────────────────────── */}
-        <Card className="bg-[#111] border-white/10 mb-8">
-          <CardHeader>
-            <div className="flex items-center justify-between">
-              <div>
-                <CardTitle className="text-white flex items-center gap-2">
-                  <GraduationCap className="w-5 h-5 text-neutral-400" />
-                  Year Group Performance
-                </CardTitle>
-                <CardDescription className="text-neutral-500 mt-1">
-                  Click a row to filter student list by year group
-                  {yearFilter && (
-                    <button
-                      onClick={() => setYearFilter(null)}
-                      className="ml-3 text-blue-400 hover:text-blue-300 underline underline-offset-2"
-                    >
-                      Clear filter
-                    </button>
-                  )}
-                </CardDescription>
-              </div>
-            </div>
-          </CardHeader>
-          <CardContent>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="border-b border-white/10 text-neutral-400">
-                    <th className="text-left py-3 px-2 font-medium">Year Group</th>
-                    <th className="text-center py-3 px-2 font-medium">Students</th>
-                    <th className="text-left py-3 px-2 font-medium w-48">Avg Progress</th>
-                    <th className="text-center py-3 px-2 font-medium">Classes</th>
-                    <th className="text-center py-3 px-2 font-medium">At-Risk</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {yearGroupAtRisk.map((yg: any) => (
-                    <tr
-                      key={yg.year}
-                      onClick={() =>
-                        setYearFilter(yearFilter === yg.year ? null : yg.year)
-                      }
-                      className={`border-b border-white/5 cursor-pointer transition-colors ${
-                        yearFilter === yg.year
-                          ? "bg-blue-500/10"
-                          : "hover:bg-white/5"
-                      }`}
-                    >
-                      <td className="py-3 px-2 font-medium text-white">
-                        {yg.label}
-                      </td>
-                      <td className="py-3 px-2 text-center text-neutral-300">
-                        {yg.studentCount}
-                      </td>
-                      <td className="py-3 px-2">
-                        <div className="flex items-center gap-3">
-                          <div className="flex-1 h-2 rounded-full bg-white/10 overflow-hidden">
-                            <div
-                              className={`h-full rounded-full transition-all ${progressColor(
-                                vary(yg.avgProgress, dateRange)
-                              )}`}
-                              style={{
-                                width: `${vary(yg.avgProgress, dateRange)}%`,
-                              }}
-                            />
-                          </div>
-                          <span
-                            className={`text-xs font-medium w-10 text-right ${progressTextColor(
-                              vary(yg.avgProgress, dateRange)
-                            )}`}
-                          >
-                            {vary(yg.avgProgress, dateRange)}%
-                          </span>
-                        </div>
-                      </td>
-                      <td className="py-3 px-2 text-center text-neutral-300">
-                        {yg.classCount}
-                      </td>
-                      <td className="py-3 px-2 text-center">
-                        {yg.atRiskCount > 0 ? (
-                          <Badge
-                            variant="destructive"
-                            className="text-red-300 bg-red-500/15"
-                          >
-                            {yg.atRiskCount}
-                          </Badge>
-                        ) : (
-                          <span className="text-neutral-500">0</span>
-                        )}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* ── At-Risk Students ───────────────────────────────── */}
-        <Card className="bg-[#111] border-white/10 mb-8">
-          <CardHeader>
-            <CardTitle className="text-white flex items-center gap-2">
-              <AlertTriangle className="w-5 h-5 text-red-400" />
-              At-Risk Students
-            </CardTitle>
-            <CardDescription className="text-neutral-500">
-              Students requiring immediate attention ({atRiskStudents.length} total)
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-2">
-              {atRiskStudents.map((student) => (
-                <Link
-                  key={student.id}
-                  href={`/demo/school/students/${student.id}`}
-                  className="flex items-center justify-between p-3 rounded-lg bg-white/[0.03] border border-white/5 hover:bg-white/[0.06] hover:border-red-500/20 transition-all group"
-                >
-                  <div className="flex items-center gap-4 min-w-0 flex-1">
-                    <div className="w-9 h-9 rounded-full bg-red-500/10 flex items-center justify-center shrink-0">
-                      <span className="text-sm font-semibold text-red-400">
-                        {student.name
-                          .split(" ")
-                          .map((n) => n[0])
-                          .join("")}
-                      </span>
-                    </div>
-                    <div className="min-w-0">
-                      <p className="font-medium text-white group-hover:text-red-300 transition-colors truncate">
-                        {student.name}
-                      </p>
-                      <p className="text-xs text-neutral-500 truncate">
-                        Year {student.yearGroup} &middot; Last active:{" "}
-                        {student.lastActive}
-                      </p>
-                    </div>
-                  </div>
-                  <div className="hidden sm:block flex-1 px-4 min-w-0">
-                    <p className="text-xs text-red-400/80 truncate">
-                      {student.riskReason}
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-3 shrink-0">
-                    <Badge
-                      variant="destructive"
-                      className="text-red-300 bg-red-500/15 hidden md:inline-flex"
-                    >
-                      {student.overallProgress}%
-                    </Badge>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className="text-neutral-400 group-hover:text-white"
-                    >
-                      View Student
-                      <ChevronRight className="w-4 h-4 ml-1" />
-                    </Button>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* ── Assessment Trends ───────────────────────────────── */}
-        <Card className="bg-[#111] border-white/10 mb-8">
-          <CardHeader>
-            <CardTitle className="text-white flex items-center gap-2">
-              <ClipboardList className="w-5 h-5 text-cyan-400" />
-              Assessment Score Trends
-            </CardTitle>
-            <CardDescription className="text-neutral-500">
-              Average scores across different assessment types over recent months
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-              {(() => {
-                const months = ["Jan", "Feb", "Mar"]
-                const mockAvgs = [62, 65, vary(68, dateRange)]
-                const essayAvgs = [58, 63, vary(66, dateRange)]
-                const quizAvgs = [70, 72, vary(74, dateRange)]
-                const categories = [
-                  { label: "Mock Exams", avgs: mockAvgs, color: "amber", icon: <GraduationCap className="w-4 h-4 text-amber-400" /> },
-                  { label: "Essays", avgs: essayAvgs, color: "cyan", icon: <FileText className="w-4 h-4 text-cyan-400" /> },
-                  { label: "Quizzes", avgs: quizAvgs, color: "purple", icon: <BookOpen className="w-4 h-4 text-purple-400" /> },
-                ]
-                return categories.map((cat, ci) => (
-                  <div key={ci} className="p-4 rounded-lg bg-white/[0.03] border border-white/5">
-                    <div className="flex items-center gap-2 mb-3">
-                      {cat.icon}
-                      <span className="text-sm font-medium text-white">{cat.label}</span>
-                      <span className={`ml-auto text-sm font-bold text-${cat.color}-400`}>
-                        {cat.avgs[cat.avgs.length - 1]}%
-                      </span>
-                    </div>
-                    <div className="flex items-end gap-2 h-20">
-                      {cat.avgs.map((val, mi) => (
-                        <div key={mi} className="flex-1 flex flex-col items-center gap-1">
-                          <span className="text-[10px] text-neutral-400">{val}%</span>
-                          <div className="w-full bg-white/5 rounded-t-sm overflow-hidden" style={{ height: "50px" }}>
-                            <div
-                              className={`w-full bg-${cat.color}-500/70 rounded-t-sm`}
-                              style={{
-                                height: `${(val / 100) * 100}%`,
-                                marginTop: `${100 - (val / 100) * 100}%`,
-                              }}
-                            />
-                          </div>
-                          <span className="text-[10px] text-neutral-500">{months[mi]}</span>
-                        </div>
-                      ))}
-                    </div>
-                    <div className="mt-2 text-center">
-                      <Badge variant="secondary" className={`text-${cat.color}-400 bg-${cat.color}-500/10 border-${cat.color}-500/20 text-[10px]`}>
-                        +{cat.avgs[cat.avgs.length - 1] - cat.avgs[0]}% since {months[0]}
-                      </Badge>
-                    </div>
-                  </div>
-                ))
-              })()}
-            </div>
-            {/* Grade Distribution */}
-            <div className="p-4 rounded-lg bg-white/[0.03] border border-white/5">
-              <h4 className="text-sm font-medium text-white mb-3">Grade Distribution (Latest Mock Exams)</h4>
-              <div className="flex items-end gap-2 h-28">
-                {(() => {
-                  const gradeBuckets: Record<string, number> = { "8-9": 0, "6-7": 0, "4-5": 0, "2-3": 0 }
-                  DEMO_STUDENTS.forEach((s) => {
-                    s.mockExamResults.forEach((r) => {
-                      const g = parseInt(r.grade, 10)
-                      if (g >= 8) gradeBuckets["8-9"]++
-                      else if (g >= 6) gradeBuckets["6-7"]++
-                      else if (g >= 4) gradeBuckets["4-5"]++
-                      else gradeBuckets["2-3"]++
-                    })
-                  })
-                  const max = Math.max(...Object.values(gradeBuckets), 1)
-                  const colors = ["bg-emerald-500", "bg-blue-500", "bg-amber-500", "bg-red-500"]
-                  const textColors = ["text-emerald-400", "text-blue-400", "text-amber-400", "text-red-400"]
-                  return Object.entries(gradeBuckets).map(([label, count], i) => (
-                    <div key={label} className="flex-1 flex flex-col items-center gap-1">
-                      <span className={`text-xs font-medium ${textColors[i]}`}>{count}</span>
-                      <div className="w-full bg-white/5 rounded-t-sm overflow-hidden" style={{ height: "80px" }}>
-                        <div
-                          className={`w-full ${colors[i]}/70 rounded-t-sm`}
-                          style={{
-                            height: `${(count / max) * 100}%`,
-                            marginTop: `${100 - (count / max) * 100}%`,
-                          }}
-                        />
-                      </div>
-                      <span className="text-xs text-neutral-400">Grade {label}</span>
-                    </div>
-                  ))
-                })()}
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* ── Weakness Heatmap ───────────────────────────────── */}
-        <Card className="bg-[#111] border-white/10 mb-8">
-          <CardHeader>
-            <CardTitle className="text-white flex items-center gap-2">
-              <AlertTriangle className="w-5 h-5 text-red-400" />
-              School-Wide Weakness Analysis
-            </CardTitle>
-            <CardDescription className="text-neutral-500">
-              Topics where students struggle most, by year group
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-3">
-              {(() => {
-                const weaknessByYear: Record<string, Record<string, number>> = {}
-                DEMO_STUDENTS.forEach((s) => {
-                  const yg = s.yearGroup
-                  if (!weaknessByYear[yg]) weaknessByYear[yg] = {}
-                  s.weaknesses.forEach((w) => {
-                    const name = typeof w === "string" ? w : w.name
-                    weaknessByYear[yg][name] = (weaknessByYear[yg][name] || 0) + 1
-                  })
-                })
-                const allWeaknesses: Record<string, number> = {}
-                Object.values(weaknessByYear).forEach((yw) => {
-                  Object.entries(yw).forEach(([name, count]) => {
-                    allWeaknesses[name] = (allWeaknesses[name] || 0) + count
-                  })
-                })
-                const topWeaknesses = Object.entries(allWeaknesses)
-                  .sort((a, b) => b[1] - a[1])
-                  .slice(0, 6)
-                const maxCount = topWeaknesses[0]?.[1] || 1
-                return topWeaknesses.map(([name, count], i) => (
-                  <div key={i}>
-                    <div className="flex items-center justify-between mb-1">
-                      <span className="text-sm text-neutral-300">{name}</span>
-                      <span className="text-xs text-neutral-500">{count} students affected</span>
-                    </div>
-                    <div className="h-2.5 rounded-full bg-white/10 overflow-hidden">
-                      <div
-                        className={`h-full rounded-full transition-all ${count / maxCount > 0.7 ? "bg-red-500" : count / maxCount > 0.4 ? "bg-amber-500" : "bg-blue-500"}`}
-                        style={{ width: `${(count / maxCount) * 100}%` }}
-                      />
-                    </div>
-                  </div>
-                ))
-              })()}
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* ── Two-column: Top Classes + Resource Usage ────────── */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-          {/* Top Performing Classes */}
-          <Card className="bg-[#111] border-white/10">
-            <CardHeader>
-              <CardTitle className="text-white flex items-center gap-2">
-                <Trophy className="w-5 h-5 text-amber-400" />
-                Top Performing Classes
-              </CardTitle>
-              <CardDescription className="text-neutral-500">
-                Ranked by average student progress
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-2">
-                {topClasses.map((cls, i) => (
-                  <Link
-                    key={cls.id}
-                    href={`/demo/school/classes/${cls.id}`}
-                    className="flex items-center gap-3 p-3 rounded-lg bg-white/[0.03] border border-white/5 hover:bg-white/[0.06] hover:border-amber-500/20 transition-all group"
-                  >
-                    <span
-                      className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold shrink-0 ${
-                        i === 0
-                          ? "bg-amber-500/20 text-amber-400"
-                          : i === 1
-                          ? "bg-neutral-500/20 text-neutral-300"
-                          : i === 2
-                          ? "bg-orange-500/20 text-orange-400"
-                          : "bg-white/5 text-neutral-500"
-                      }`}
-                    >
-                      {i + 1}
-                    </span>
-                    <div className="flex-1 min-w-0">
-                      <p className="font-medium text-white truncate group-hover:text-amber-300 transition-colors">
-                        {cls.name}
-                      </p>
-                      <p className="text-xs text-neutral-500 truncate">
-                        {cls.teacher} &middot; {cls.studentCount} students
-                      </p>
-                    </div>
-                    <div className="text-right shrink-0">
-                      <p
-                        className={`text-sm font-bold ${progressTextColor(
-                          cls.avgProgress
-                        )}`}
-                      >
-                        {vary(cls.avgProgress, dateRange)}%
-                      </p>
-                    </div>
-                    <ChevronRight className="w-4 h-4 text-neutral-600 group-hover:text-neutral-300 transition-colors shrink-0" />
-                  </Link>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Resource Usage */}
-          <div className="space-y-8">
-            {/* Top Lessons */}
-            <Card className="bg-[#111] border-white/10">
-              <CardHeader>
-                <CardTitle className="text-white flex items-center gap-2">
-                  <BookOpen className="w-5 h-5 text-blue-400" />
-                  Top 5 Lessons Accessed
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-3">
-                  {TOP_LESSONS.map((lesson) => (
-                    <div key={lesson.title}>
-                      <div className="flex items-center justify-between mb-1">
-                        <p className="text-sm text-neutral-300 truncate pr-4">
-                          {lesson.title}
-                        </p>
-                        <span className="text-xs text-neutral-500 shrink-0">
-                          {vary(lesson.count, dateRange)} views
-                        </span>
-                      </div>
-                      <div className="h-2 rounded-full bg-white/10 overflow-hidden">
-                        <div
-                          className="h-full rounded-full bg-blue-500 transition-all"
-                          style={{
-                            width: `${(vary(lesson.count, dateRange) / vary(maxLessonCount, dateRange)) * 100}%`,
-                          }}
-                        />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Top Mock Exams */}
-            <Card className="bg-[#111] border-white/10">
-              <CardHeader>
-                <CardTitle className="text-white flex items-center gap-2">
-                  <ClipboardList className="w-5 h-5 text-purple-400" />
-                  Top 5 Mock Exams Taken
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-3">
-                  {TOP_MOCK_EXAMS.map((exam) => (
-                    <div key={exam.title}>
-                      <div className="flex items-center justify-between mb-1">
-                        <p className="text-sm text-neutral-300 truncate pr-4">
-                          {exam.title}
-                        </p>
-                        <span className="text-xs text-neutral-500 shrink-0">
-                          {vary(exam.count, dateRange)} taken
-                        </span>
-                      </div>
-                      <div className="h-2 rounded-full bg-white/10 overflow-hidden">
-                        <div
-                          className="h-full rounded-full bg-purple-500 transition-all"
-                          style={{
-                            width: `${(vary(exam.count, dateRange) / vary(maxMockCount, dateRange)) * 100}%`,
-                          }}
-                        />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-
-        {/* ── Assignment Overview by Class ────────────────────── */}
-        <Card className="bg-[#111] border-white/10 mb-8">
-          <CardHeader>
-            <CardTitle className="text-white flex items-center gap-2">
-              <FileText className="w-5 h-5 text-blue-400" />
-              Assignment Overview by Class
-            </CardTitle>
-            <CardDescription className="text-neutral-500">
-              Completion rates and overdue assignments across classes
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="border-b border-white/10 text-neutral-400">
-                    <th className="text-left py-3 px-2 font-medium">Class</th>
-                    <th className="text-left py-3 px-2 font-medium">Teacher</th>
-                    <th className="text-left py-3 px-2 font-medium w-48">
-                      Completion Rate
-                    </th>
-                    <th className="text-center py-3 px-2 font-medium">Overdue</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {classesForAssignment.map((cls) => {
-                    const completion =
-                      cls.assignmentsSet > 0
-                        ? Math.round(
-                            (cls.assignmentsCompleted / cls.assignmentsSet) * 100
-                          )
-                        : 0
-                    const overdue = cls.assignmentsSet - cls.assignmentsCompleted
-                    return (
-                      <tr
-                        key={cls.id}
-                        className="border-b border-white/5 hover:bg-white/5 transition-colors"
-                      >
-                        <td className="py-3 px-2 font-medium text-white">
-                          {cls.name}
-                        </td>
-                        <td className="py-3 px-2 text-neutral-400">
-                          {cls.teacher}
-                        </td>
-                        <td className="py-3 px-2">
-                          <div className="flex items-center gap-3">
-                            <div className="flex-1 h-2 rounded-full bg-white/10 overflow-hidden">
-                              <div
-                                className={`h-full rounded-full transition-all ${progressColor(
-                                  completion
-                                )}`}
-                                style={{ width: `${completion}%` }}
-                              />
-                            </div>
-                            <span
-                              className={`text-xs font-medium w-10 text-right ${progressTextColor(
-                                completion
-                              )}`}
-                            >
-                              {completion}%
-                            </span>
-                          </div>
-                        </td>
-                        <td className="py-3 px-2 text-center">
-                          {overdue > 0 ? (
-                            <Badge
-                              variant="destructive"
-                              className="text-red-300 bg-red-500/15"
-                            >
-                              {overdue}
-                            </Badge>
-                          ) : (
-                            <span className="text-emerald-400 text-xs">
-                              All done
-                            </span>
-                          )}
-                        </td>
-                      </tr>
-                    )
-                  })}
-                </tbody>
-              </table>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* ── Department Comparison (Teacher Performance) ─────── */}
-        <Card className="bg-[#111] border-white/10 mb-8">
-          <CardHeader>
-            <CardTitle className="text-white flex items-center gap-2">
-              <BarChart3 className="w-5 h-5 text-cyan-400" />
-              Teacher Performance Comparison
-            </CardTitle>
-            <CardDescription className="text-neutral-500">
-              Average student progress by teacher
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-3">
-              {teacherStats.map((t) => (
-                <div
-                  key={t.id}
-                  className="flex items-center gap-4 p-3 rounded-lg bg-white/[0.03] border border-white/5"
-                >
-                  <div className="w-9 h-9 rounded-full bg-cyan-500/10 flex items-center justify-center shrink-0">
-                    <span className="text-xs font-semibold text-cyan-400">
-                      {t.name
-                        .split(" ")
-                        .slice(-1)[0]
-                        .charAt(0)}
-                    </span>
-                  </div>
-                  <div className="min-w-0 w-40 shrink-0">
-                    <p className="font-medium text-white text-sm truncate">
-                      {t.name}
-                    </p>
-                    <p className="text-xs text-neutral-500">
-                      {t.department} &middot; {t.classCount} class{t.classCount !== 1 ? "es" : ""}
-                    </p>
-                  </div>
-                  <div className="flex-1 flex items-center gap-3">
-                    <div className="flex-1 h-2.5 rounded-full bg-white/10 overflow-hidden">
-                      <div
-                        className={`h-full rounded-full transition-all ${progressColor(
-                          vary(t.avgProgress, dateRange)
-                        )}`}
-                        style={{
-                          width: `${vary(t.avgProgress, dateRange)}%`,
-                        }}
-                      />
-                    </div>
-                    <span
-                      className={`text-sm font-bold w-12 text-right ${progressTextColor(
-                        vary(t.avgProgress, dateRange)
-                      )}`}
-                    >
-                      {vary(t.avgProgress, dateRange)}%
-                    </span>
-                  </div>
-                  <div className="hidden md:block text-right w-28 shrink-0">
-                    <p className="text-xs text-neutral-500">
-                      {t.studentCount} students
-                    </p>
-                    <p className="text-xs text-neutral-500">
-                      {t.completionRate}% completed
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* ── Export Buttons ──────────────────────────────────── */}
-        <div className="flex flex-wrap items-center gap-3 mb-8">
-          <Button
-            variant="outline"
-            className="border-white/10 text-neutral-300 hover:text-white hover:bg-white/5"
-            onClick={() => handleExport("Excel")}
+        {/* ── Tabbed Navigation ──────────────────────────────── */}
+        <Tabs defaultValue="overview">
+          <TabsList
+            variant="line"
+            className="w-full justify-start border-b border-white/10 rounded-none mb-8 gap-0 bg-transparent"
           >
-            <FileSpreadsheet className="w-4 h-4 mr-2" />
-            Export Excel
-          </Button>
-          <Button
-            variant="outline"
-            className="border-white/10 text-neutral-300 hover:text-white hover:bg-white/5"
-            onClick={() => handleExport("PDF")}
-          >
-            <Download className="w-4 h-4 mr-2" />
-            Export PDF
-          </Button>
-        </div>
+            <TabsTrigger
+              value="overview"
+              className="px-4 py-2.5 text-sm data-active:text-emerald-400 text-neutral-400 hover:text-white rounded-none border-b-2 border-transparent data-active:border-emerald-400"
+            >
+              <BarChart3 className="w-4 h-4 mr-1.5" />
+              Overview
+            </TabsTrigger>
+            <TabsTrigger
+              value="year-groups"
+              className="px-4 py-2.5 text-sm data-active:text-blue-400 text-neutral-400 hover:text-white rounded-none border-b-2 border-transparent data-active:border-blue-400"
+            >
+              <GraduationCap className="w-4 h-4 mr-1.5" />
+              Year Groups
+            </TabsTrigger>
+            <TabsTrigger
+              value="teachers"
+              className="px-4 py-2.5 text-sm data-active:text-cyan-400 text-neutral-400 hover:text-white rounded-none border-b-2 border-transparent data-active:border-cyan-400"
+            >
+              <Users className="w-4 h-4 mr-1.5" />
+              Teachers
+            </TabsTrigger>
+            <TabsTrigger
+              value="students"
+              className="px-4 py-2.5 text-sm data-active:text-purple-400 text-neutral-400 hover:text-white rounded-none border-b-2 border-transparent data-active:border-purple-400"
+            >
+              <Users className="w-4 h-4 mr-1.5" />
+              Students
+            </TabsTrigger>
+            <TabsTrigger
+              value="assessments"
+              className="px-4 py-2.5 text-sm data-active:text-amber-400 text-neutral-400 hover:text-white rounded-none border-b-2 border-transparent data-active:border-amber-400"
+            >
+              <ClipboardList className="w-4 h-4 mr-1.5" />
+              Assessments
+            </TabsTrigger>
+          </TabsList>
 
-        {/* ── School Report Card ─────────────────────────────── */}
-        <Card className="bg-gradient-to-br from-[#111] to-[#0d1117] border-white/10 mb-12">
-          <CardHeader>
-            <CardTitle className="text-white text-xl flex items-center gap-2">
-              <BarChart3 className="w-6 h-6 text-emerald-400" />
-              {DEMO_SCHOOL.name} Performance Summary
-            </CardTitle>
-            <CardDescription className="text-neutral-400">
-              Personalised school report card &middot; Spring Term 2026
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          {/* ════════════════════════════════════════════════════
+              TAB 1: OVERVIEW
+              ════════════════════════════════════════════════════ */}
+          <TabsContent value="overview">
+            {/* Large stat cards with ring charts */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
+              {/* Active Students */}
+              <Card className="bg-gradient-to-br from-emerald-500/5 to-[#111] border-emerald-500/10 hover:border-emerald-500/25 transition-colors">
+                <CardContent className="pt-6 pb-5">
+                  <div className="flex items-start justify-between">
+                    <div>
+                      <p className="text-sm text-neutral-400 mb-1">Active Students</p>
+                      <p className="text-3xl font-bold text-white">{vary(305, dateRange)}<span className="text-lg text-neutral-500">/{vary(342, dateRange)}</span></p>
+                      <div className="mt-2">
+                        <TrendBadge value={vary(12, dateRange)} />
+                      </div>
+                    </div>
+                    <RingChart value={(vary(305, dateRange) / vary(342, dateRange)) * 100} color="text-emerald-400" label="active" />
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Assignments */}
+              <Card className="bg-gradient-to-br from-blue-500/5 to-[#111] border-blue-500/10 hover:border-blue-500/25 transition-colors">
+                <CardContent className="pt-6 pb-5">
+                  <div className="flex items-start justify-between">
+                    <div>
+                      <p className="text-sm text-neutral-400 mb-1">Assignments Submitted</p>
+                      <p className="text-3xl font-bold text-white">{vary(1247, dateRange).toLocaleString()}</p>
+                      <div className="mt-2">
+                        <TrendBadge value={vary(8, dateRange)} />
+                      </div>
+                    </div>
+                    <div className="p-3 rounded-xl bg-blue-500/10">
+                      <FileText className="w-7 h-7 text-blue-400" />
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Average Score */}
+              <Card className="bg-gradient-to-br from-purple-500/5 to-[#111] border-purple-500/10 hover:border-purple-500/25 transition-colors">
+                <CardContent className="pt-6 pb-5">
+                  <div className="flex items-start justify-between">
+                    <div>
+                      <p className="text-sm text-neutral-400 mb-1">Average Score</p>
+                      <p className="text-3xl font-bold text-white">{vary(68, dateRange)}%</p>
+                      <div className="mt-2">
+                        <TrendBadge value={vary(3, dateRange)} />
+                      </div>
+                    </div>
+                    <RingChart value={vary(68, dateRange)} color="text-purple-400" label="avg" />
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* At Risk */}
+              <Card className="bg-gradient-to-br from-red-500/5 to-[#111] border-red-500/10 hover:border-red-500/25 transition-colors">
+                <CardContent className="pt-6 pb-5">
+                  <div className="flex items-start justify-between">
+                    <div>
+                      <p className="text-sm text-neutral-400 mb-1">At-Risk Students</p>
+                      <p className="text-3xl font-bold text-red-400">{vary(23, dateRange)}</p>
+                      <div className="mt-2">
+                        <TrendBadge value={-2} suffix=" fewer" />
+                      </div>
+                    </div>
+                    <div className="p-3 rounded-xl bg-red-500/10">
+                      <AlertTriangle className="w-7 h-7 text-red-400" />
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Quick insights row */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 mb-8">
               {/* Key Metrics */}
-              <div className="space-y-4">
-                <h3 className="text-sm font-semibold text-neutral-300 uppercase tracking-wider">
-                  Key Metrics
-                </h3>
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-neutral-400">
-                      Student engagement rate
-                    </span>
-                    <span className="text-sm font-bold text-emerald-400">
-                      89%
-                    </span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-neutral-400">
-                      Assignment completion
-                    </span>
-                    <span className="text-sm font-bold text-amber-400">74%</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-neutral-400">
-                      Avg mock exam score
-                    </span>
-                    <span className="text-sm font-bold text-blue-400">
-                      {vary(68, dateRange)}%
-                    </span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-neutral-400">
-                      Resource utilisation
-                    </span>
-                    <span className="text-sm font-bold text-purple-400">
-                      67%
-                    </span>
-                  </div>
-                </div>
-              </div>
+              <Card className="bg-[#111] border-white/10">
+                <CardHeader className="pb-3">
+                  <CardTitle className="text-sm font-semibold text-neutral-300 uppercase tracking-wider">
+                    Key Metrics
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  {[
+                    { label: "Student engagement rate", value: "89%", color: "text-emerald-400" },
+                    { label: "Assignment completion", value: "74%", color: "text-amber-400" },
+                    { label: "Avg mock exam score", value: `${vary(68, dateRange)}%`, color: "text-blue-400" },
+                    { label: "Resource utilisation", value: "67%", color: "text-purple-400" },
+                  ].map((m) => (
+                    <div key={m.label} className="flex items-center justify-between">
+                      <span className="text-sm text-neutral-400">{m.label}</span>
+                      <span className={`text-sm font-bold ${m.color}`}>{m.value}</span>
+                    </div>
+                  ))}
+                </CardContent>
+              </Card>
 
               {/* Trends */}
-              <div className="space-y-4">
-                <h3 className="text-sm font-semibold text-neutral-300 uppercase tracking-wider">
-                  Trends
-                </h3>
-                <div className="space-y-3">
-                  <div className="flex items-start gap-2">
-                    <ArrowUpRight className="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" />
-                    <p className="text-sm text-neutral-400">
-                      Year 11 progress up 12% since last half-term
-                    </p>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <ArrowUpRight className="w-4 h-4 text-emerald-400 mt-0.5 shrink-0" />
-                    <p className="text-sm text-neutral-400">
-                      Creative writing scores improving across KS3
-                    </p>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <TrendingUp className="w-4 h-4 text-amber-400 mt-0.5 shrink-0" />
-                    <p className="text-sm text-neutral-400">
-                      Mock exam participation up 23% this term
-                    </p>
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <AlertTriangle className="w-4 h-4 text-red-400 mt-0.5 shrink-0" />
-                    <p className="text-sm text-neutral-400">
-                      Year 9 engagement dipping — review needed
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <Card className="bg-[#111] border-white/10">
+                <CardHeader className="pb-3">
+                  <CardTitle className="text-sm font-semibold text-neutral-300 uppercase tracking-wider">
+                    Trends
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  {[
+                    { text: "Year 11 progress up 12% since last half-term", icon: <ArrowUpRight className="w-4 h-4 text-emerald-400 shrink-0" /> },
+                    { text: "Creative writing scores improving across KS3", icon: <ArrowUpRight className="w-4 h-4 text-emerald-400 shrink-0" /> },
+                    { text: "Mock exam participation up 23% this term", icon: <TrendingUp className="w-4 h-4 text-amber-400 shrink-0" /> },
+                    { text: "Year 9 engagement dipping -- review needed", icon: <AlertTriangle className="w-4 h-4 text-red-400 shrink-0" /> },
+                  ].map((t, i) => (
+                    <div key={i} className="flex items-start gap-2">
+                      {t.icon}
+                      <p className="text-sm text-neutral-400">{t.text}</p>
+                    </div>
+                  ))}
+                </CardContent>
+              </Card>
 
               {/* Recommendations */}
-              <div className="space-y-4">
-                <h3 className="text-sm font-semibold text-neutral-300 uppercase tracking-wider">
-                  Recommendations
-                </h3>
-                <div className="space-y-3">
+              <Card className="bg-[#111] border-white/10">
+                <CardHeader className="pb-3">
+                  <CardTitle className="text-sm font-semibold text-neutral-300 uppercase tracking-wider">
+                    Recommendations
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-3">
                   <div className="p-3 rounded-lg bg-emerald-500/5 border border-emerald-500/10">
                     <p className="text-sm text-neutral-300">
                       Schedule intervention sessions for 23 at-risk students before Easter break
@@ -998,25 +554,593 @@ export default function AnalyticsPage() {
                       Share top-performing class strategies across department
                     </p>
                   </div>
-                </div>
-              </div>
+                </CardContent>
+              </Card>
             </div>
 
-            <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-              <p className="text-sm text-neutral-500">
-                This summary is generated from demo data. Register your school to
-                receive real performance reports.
-              </p>
-              <Button
-                onClick={handleDownloadReport}
-                className="bg-emerald-600 hover:bg-emerald-500 text-white"
-              >
-                <Download className="w-4 h-4 mr-2" />
-                Download Full Report
-              </Button>
+            {/* Top classes + weakness analysis */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-8">
+              {/* Top Performing Classes */}
+              <Card className="bg-[#111] border-white/10">
+                <CardHeader>
+                  <CardTitle className="text-white flex items-center gap-2">
+                    <Trophy className="w-5 h-5 text-amber-400" />
+                    Top Performing Classes
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-2">
+                    {topClasses.map((cls, i) => (
+                      <Link
+                        key={cls.id}
+                        href={`/demo/school/classes/${cls.id}`}
+                        className="flex items-center gap-3 p-3 rounded-lg bg-white/[0.03] border border-white/5 hover:bg-white/[0.06] hover:border-amber-500/20 transition-all group"
+                      >
+                        <span
+                          className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold shrink-0 ${
+                            i === 0
+                              ? "bg-amber-500/20 text-amber-400"
+                              : i === 1
+                              ? "bg-neutral-500/20 text-neutral-300"
+                              : i === 2
+                              ? "bg-orange-500/20 text-orange-400"
+                              : "bg-white/5 text-neutral-500"
+                          }`}
+                        >
+                          {i + 1}
+                        </span>
+                        <div className="flex-1 min-w-0">
+                          <p className="font-medium text-white truncate group-hover:text-amber-300 transition-colors">
+                            {cls.name}
+                          </p>
+                          <p className="text-xs text-neutral-500 truncate">
+                            {cls.teacher} &middot; {cls.studentCount} students
+                          </p>
+                        </div>
+                        <div className="text-right shrink-0">
+                          <p className={`text-sm font-bold ${progressTextColor(cls.avgProgress)}`}>
+                            {vary(cls.avgProgress, dateRange)}%
+                          </p>
+                        </div>
+                        <ChevronRight className="w-4 h-4 text-neutral-600 group-hover:text-neutral-300 transition-colors shrink-0" />
+                      </Link>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Weakness Analysis */}
+              <Card className="bg-[#111] border-white/10">
+                <CardHeader>
+                  <CardTitle className="text-white flex items-center gap-2">
+                    <AlertTriangle className="w-5 h-5 text-red-400" />
+                    School-Wide Weakness Analysis
+                  </CardTitle>
+                  <CardDescription className="text-neutral-500">
+                    Topics where students struggle most
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    {topWeaknesses.map(([name, count], i) => (
+                      <div key={i}>
+                        <div className="flex items-center justify-between mb-1.5">
+                          <span className="text-sm text-neutral-300">{name}</span>
+                          <span className="text-xs text-neutral-500">{count} students</span>
+                        </div>
+                        <HBar
+                          value={count}
+                          max={maxWeaknessCount}
+                          color={count / maxWeaknessCount > 0.7 ? "bg-red-500" : count / maxWeaknessCount > 0.4 ? "bg-amber-500" : "bg-blue-500"}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
             </div>
-          </CardContent>
-        </Card>
+
+            {/* Download report CTA */}
+            <Card className="bg-gradient-to-r from-emerald-500/5 via-[#111] to-blue-500/5 border-white/10">
+              <CardContent className="py-5">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                  <div>
+                    <p className="font-semibold text-white">{DEMO_SCHOOL.name} Performance Summary</p>
+                    <p className="text-sm text-neutral-500 mt-0.5">
+                      Spring Term 2026 &middot; Demo data
+                    </p>
+                  </div>
+                  <Button
+                    onClick={handleDownloadReport}
+                    className="bg-emerald-600 hover:bg-emerald-500 text-white"
+                  >
+                    <Download className="w-4 h-4 mr-2" />
+                    Download Full Report
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          {/* ════════════════════════════════════════════════════
+              TAB 2: YEAR GROUPS
+              ════════════════════════════════════════════════════ */}
+          <TabsContent value="year-groups">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 mb-8">
+              {yearGroupAtRisk.map((yg: any) => {
+                const progress = vary(yg.avgProgress, dateRange)
+                return (
+                  <Card
+                    key={yg.year}
+                    className={`bg-[#111] border-white/10 hover:border-white/20 transition-all cursor-pointer ${
+                      yearFilter === yg.year ? "ring-1 ring-blue-500/40 border-blue-500/30" : ""
+                    }`}
+                    onClick={() => setYearFilter(yearFilter === yg.year ? null : yg.year)}
+                  >
+                    <CardContent className="pt-5 pb-4">
+                      <div className="flex items-start justify-between mb-4">
+                        <div>
+                          <h3 className="text-lg font-bold text-white">{yg.label}</h3>
+                          <p className="text-xs text-neutral-500">{yg.studentCount} students &middot; {yg.classCount} classes</p>
+                        </div>
+                        <RingChart value={progress} size={64} strokeWidth={6} color={progressTextColor(progress).replace("text-", "text-")} />
+                      </div>
+
+                      {/* Comparison bars */}
+                      <div className="space-y-2.5">
+                        <div>
+                          <div className="flex justify-between text-xs mb-1">
+                            <span className="text-neutral-400">Avg Progress</span>
+                            <span className={`font-semibold ${progressTextColor(progress)}`}>{progress}%</span>
+                          </div>
+                          <HBar value={progress} max={100} color={progressColor(progress)} />
+                        </div>
+                        <div>
+                          <div className="flex justify-between text-xs mb-1">
+                            <span className="text-neutral-400">Completion Rate</span>
+                            <span className={`font-semibold ${progressTextColor(yg.completionRate)}`}>{yg.completionRate}%</span>
+                          </div>
+                          <HBar value={yg.completionRate} max={100} color={progressColor(yg.completionRate)} />
+                        </div>
+                      </div>
+
+                      {/* Footer stats */}
+                      <div className="flex items-center justify-between mt-4 pt-3 border-t border-white/5">
+                        <div className="flex items-center gap-1">
+                          {yg.atRiskCount > 0 ? (
+                            <Badge variant="destructive" className="text-red-300 bg-red-500/15 text-xs">
+                              {yg.atRiskCount} at risk
+                            </Badge>
+                          ) : (
+                            <Badge className="bg-emerald-500/15 text-emerald-400 border-emerald-500/20 text-xs">
+                              None at risk
+                            </Badge>
+                          )}
+                        </div>
+                        <TrendBadge value={Math.round(progress - 65)} />
+                      </div>
+                    </CardContent>
+                  </Card>
+                )
+              })}
+            </div>
+
+            {yearFilter && (
+              <div className="mb-4 flex items-center gap-2">
+                <Badge className="bg-blue-500/15 text-blue-400 border-blue-500/20">
+                  Filtering: Year {yearFilter}
+                </Badge>
+                <button
+                  onClick={() => setYearFilter(null)}
+                  className="text-xs text-neutral-400 hover:text-white underline underline-offset-2"
+                >
+                  Clear filter
+                </button>
+              </div>
+            )}
+          </TabsContent>
+
+          {/* ════════════════════════════════════════════════════
+              TAB 3: TEACHERS
+              ════════════════════════════════════════════════════ */}
+          <TabsContent value="teachers">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+              {teacherStats.map((t, i) => {
+                const progress = vary(t.avgProgress, dateRange)
+                return (
+                  <Card key={t.id} className="bg-[#111] border-white/10 hover:border-white/20 transition-colors">
+                    <CardContent className="pt-5 pb-4">
+                      <div className="flex items-start gap-4 mb-4">
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center shrink-0">
+                          <span className="text-lg font-bold text-cyan-400">
+                            {t.name.split(" ").map((n) => n[0]).join("")}
+                          </span>
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <div className="flex items-start justify-between">
+                            <div>
+                              <p className="font-semibold text-white truncate">{t.name}</p>
+                              <p className="text-xs text-neutral-500">{t.department} &middot; {t.classCount} class{t.classCount !== 1 ? "es" : ""}</p>
+                            </div>
+                            {i === 0 && (
+                              <Badge className="bg-amber-500/15 text-amber-400 border-amber-500/20 text-[10px] shrink-0">
+                                Top
+                              </Badge>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Visual indicators */}
+                      <div className="grid grid-cols-3 gap-3 mb-4">
+                        <div className="text-center p-2 rounded-lg bg-white/[0.03]">
+                          <p className="text-lg font-bold text-white">{t.studentCount}</p>
+                          <p className="text-[10px] text-neutral-500">Students</p>
+                        </div>
+                        <div className="text-center p-2 rounded-lg bg-white/[0.03]">
+                          <p className={`text-lg font-bold ${progressTextColor(progress)}`}>{progress}%</p>
+                          <p className="text-[10px] text-neutral-500">Avg Progress</p>
+                        </div>
+                        <div className="text-center p-2 rounded-lg bg-white/[0.03]">
+                          <p className={`text-lg font-bold ${progressTextColor(t.completionRate)}`}>{t.completionRate}%</p>
+                          <p className="text-[10px] text-neutral-500">Completion</p>
+                        </div>
+                      </div>
+
+                      {/* Progress bar */}
+                      <div>
+                        <div className="flex justify-between text-xs mb-1">
+                          <span className="text-neutral-400">Student Progress</span>
+                          <span className={`font-semibold ${progressTextColor(progress)}`}>{progress}%</span>
+                        </div>
+                        <HBar value={progress} max={100} color={progressColor(progress)} />
+                      </div>
+                    </CardContent>
+                  </Card>
+                )
+              })}
+            </div>
+          </TabsContent>
+
+          {/* ════════════════════════════════════════════════════
+              TAB 4: STUDENTS
+              ════════════════════════════════════════════════════ */}
+          <TabsContent value="students">
+            {/* Filters */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 mb-6">
+              <div className="relative flex-1 max-w-sm">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-500" />
+                <input
+                  type="text"
+                  placeholder="Search students..."
+                  value={studentSearch}
+                  onChange={(e) => setStudentSearch(e.target.value)}
+                  className="w-full pl-9 pr-4 py-2 text-sm rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-neutral-500 focus:outline-none focus:border-purple-500/50"
+                />
+              </div>
+              <div className="flex items-center gap-1 rounded-lg bg-white/5 border border-white/10 p-1">
+                <button
+                  onClick={() => setYearFilter(null)}
+                  className={`px-3 py-1.5 text-xs rounded-md transition-all ${
+                    yearFilter === null ? "bg-white/10 text-white font-medium" : "text-neutral-400 hover:text-white"
+                  }`}
+                >
+                  All Years
+                </button>
+                {[7, 8, 9, 10, 11, 12, 13].map((y) => (
+                  <button
+                    key={y}
+                    onClick={() => setYearFilter(yearFilter === y ? null : y)}
+                    className={`px-2.5 py-1.5 text-xs rounded-md transition-all ${
+                      yearFilter === y ? "bg-white/10 text-white font-medium" : "text-neutral-400 hover:text-white"
+                    }`}
+                  >
+                    Y{y}
+                  </button>
+                ))}
+              </div>
+              <Badge className="bg-white/5 text-neutral-400 border-white/10">
+                {filteredStudents.length} student{filteredStudents.length !== 1 ? "s" : ""}
+              </Badge>
+            </div>
+
+            {/* Student grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
+              {filteredStudents.slice(0, 30).map((student) => (
+                <Link
+                  key={student.id}
+                  href={`/demo/school/students/${student.id}`}
+                  className="flex items-center gap-3 p-3 rounded-lg bg-[#111] border border-white/5 hover:bg-white/[0.04] hover:border-white/15 transition-all group"
+                >
+                  <div
+                    className={`w-9 h-9 rounded-full flex items-center justify-center shrink-0 ${
+                      student.atRisk
+                        ? "bg-red-500/10"
+                        : student.overallProgress >= 75
+                        ? "bg-emerald-500/10"
+                        : "bg-amber-500/10"
+                    }`}
+                  >
+                    <span
+                      className={`text-sm font-semibold ${
+                        student.atRisk
+                          ? "text-red-400"
+                          : student.overallProgress >= 75
+                          ? "text-emerald-400"
+                          : "text-amber-400"
+                      }`}
+                    >
+                      {student.name.split(" ").map((n) => n[0]).join("")}
+                    </span>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-medium text-white text-sm truncate group-hover:text-purple-300 transition-colors">
+                      {student.name}
+                    </p>
+                    <p className="text-xs text-neutral-500 truncate">
+                      {student.yearGroup} &middot; {student.className}
+                    </p>
+                  </div>
+                  <div className="text-right shrink-0">
+                    <p className={`text-sm font-bold ${progressTextColor(student.overallProgress)}`}>
+                      {student.overallProgress}%
+                    </p>
+                    {ragBadge(student.overallProgress)}
+                  </div>
+                </Link>
+              ))}
+            </div>
+
+            {filteredStudents.length > 30 && (
+              <p className="text-center text-sm text-neutral-500 mt-4">
+                Showing 30 of {filteredStudents.length} students. Use search or filters to narrow results.
+              </p>
+            )}
+
+            {/* At-risk highlight */}
+            {atRiskStudents.length > 0 && (
+              <Card className="bg-[#111] border-red-500/10 mt-8">
+                <CardHeader>
+                  <CardTitle className="text-white flex items-center gap-2">
+                    <AlertTriangle className="w-5 h-5 text-red-400" />
+                    At-Risk Students ({atRiskStudents.length})
+                  </CardTitle>
+                  <CardDescription className="text-neutral-500">
+                    Students requiring immediate attention
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-2">
+                    {atRiskStudents.map((student) => (
+                      <Link
+                        key={student.id}
+                        href={`/demo/school/students/${student.id}`}
+                        className="flex items-center justify-between p-3 rounded-lg bg-white/[0.03] border border-white/5 hover:bg-white/[0.06] hover:border-red-500/20 transition-all group"
+                      >
+                        <div className="flex items-center gap-3 min-w-0 flex-1">
+                          <div className="w-9 h-9 rounded-full bg-red-500/10 flex items-center justify-center shrink-0">
+                            <span className="text-sm font-semibold text-red-400">
+                              {student.name.split(" ").map((n) => n[0]).join("")}
+                            </span>
+                          </div>
+                          <div className="min-w-0">
+                            <p className="font-medium text-white group-hover:text-red-300 transition-colors truncate">
+                              {student.name}
+                            </p>
+                            <p className="text-xs text-neutral-500 truncate">
+                              {student.yearGroup} &middot; Last active: {student.lastActive}
+                            </p>
+                          </div>
+                        </div>
+                        <div className="hidden sm:block flex-1 px-4 min-w-0">
+                          <p className="text-xs text-red-400/80 truncate">{student.riskReason}</p>
+                        </div>
+                        <div className="flex items-center gap-3 shrink-0">
+                          <Badge variant="destructive" className="text-red-300 bg-red-500/15 hidden md:inline-flex">
+                            {student.overallProgress}%
+                          </Badge>
+                          <ChevronRight className="w-4 h-4 text-neutral-600 group-hover:text-neutral-300" />
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            )}
+          </TabsContent>
+
+          {/* ════════════════════════════════════════════════════
+              TAB 5: ASSESSMENTS
+              ════════════════════════════════════════════════════ */}
+          <TabsContent value="assessments">
+            {/* Score trends */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
+              {assessmentCategories.map((cat, ci) => {
+                const latest = cat.avgs[cat.avgs.length - 1]
+                const change = latest - cat.avgs[0]
+                const colorMap: Record<string, { ring: string; bar: string; text: string }> = {
+                  amber: { ring: "text-amber-400", bar: "bg-amber-500", text: "text-amber-400" },
+                  cyan: { ring: "text-cyan-400", bar: "bg-cyan-500", text: "text-cyan-400" },
+                  purple: { ring: "text-purple-400", bar: "bg-purple-500", text: "text-purple-400" },
+                }
+                const c = colorMap[cat.color]
+                return (
+                  <Card key={ci} className="bg-[#111] border-white/10">
+                    <CardContent className="pt-5 pb-4">
+                      <div className="flex items-start justify-between mb-4">
+                        <div>
+                          <p className="text-sm text-neutral-400">{cat.label}</p>
+                          <p className={`text-2xl font-bold ${c.text}`}>{latest}%</p>
+                          <TrendBadge value={change} />
+                        </div>
+                        <RingChart value={latest} size={64} strokeWidth={6} color={c.ring} />
+                      </div>
+                      <div className="flex items-end gap-3 h-16">
+                        {cat.avgs.map((val, mi) => (
+                          <div key={mi} className="flex-1 flex flex-col items-center gap-1">
+                            <span className="text-[10px] text-neutral-400">{val}%</span>
+                            <div className="w-full bg-white/5 rounded-t-sm overflow-hidden" style={{ height: "40px" }}>
+                              <div
+                                className={`w-full ${c.bar}/70 rounded-t-sm`}
+                                style={{
+                                  height: `${(val / 100) * 100}%`,
+                                  marginTop: `${100 - (val / 100) * 100}%`,
+                                }}
+                              />
+                            </div>
+                            <span className="text-[10px] text-neutral-500">{months[mi]}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                )
+              })}
+            </div>
+
+            {/* Grade Distribution */}
+            <Card className="bg-[#111] border-white/10 mb-8">
+              <CardHeader>
+                <CardTitle className="text-white">Grade Distribution (Latest Mock Exams)</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-4 gap-4">
+                  {(() => {
+                    const colors = ["bg-emerald-500", "bg-blue-500", "bg-amber-500", "bg-red-500"]
+                    const textColors = ["text-emerald-400", "text-blue-400", "text-amber-400", "text-red-400"]
+                    const bgColors = ["bg-emerald-500/10", "bg-blue-500/10", "bg-amber-500/10", "bg-red-500/10"]
+                    return Object.entries(gradeBuckets).map(([label, count], i) => (
+                      <div key={label} className={`text-center p-4 rounded-xl ${bgColors[i]} border border-white/5`}>
+                        <p className={`text-3xl font-bold ${textColors[i]}`}>{count}</p>
+                        <p className="text-xs text-neutral-400 mt-1">Grade {label}</p>
+                        <div className="mt-3">
+                          <HBar value={count} max={maxGrade} color={colors[i]} />
+                        </div>
+                      </div>
+                    ))
+                  })()}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Resource usage: lessons + mocks side by side */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-8">
+              <Card className="bg-[#111] border-white/10">
+                <CardHeader>
+                  <CardTitle className="text-white flex items-center gap-2">
+                    <BookOpen className="w-5 h-5 text-blue-400" />
+                    Top 5 Lessons Accessed
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {TOP_LESSONS.map((lesson) => (
+                      <div key={lesson.title}>
+                        <div className="flex items-center justify-between mb-1">
+                          <p className="text-sm text-neutral-300 truncate pr-4">{lesson.title}</p>
+                          <span className="text-xs text-neutral-500 shrink-0">
+                            {vary(lesson.count, dateRange)} views
+                          </span>
+                        </div>
+                        <HBar
+                          value={vary(lesson.count, dateRange)}
+                          max={vary(maxLessonCount, dateRange)}
+                          color="bg-blue-500"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-[#111] border-white/10">
+                <CardHeader>
+                  <CardTitle className="text-white flex items-center gap-2">
+                    <ClipboardList className="w-5 h-5 text-purple-400" />
+                    Top 5 Mock Exams Taken
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {TOP_MOCK_EXAMS.map((exam) => (
+                      <div key={exam.title}>
+                        <div className="flex items-center justify-between mb-1">
+                          <p className="text-sm text-neutral-300 truncate pr-4">{exam.title}</p>
+                          <span className="text-xs text-neutral-500 shrink-0">
+                            {vary(exam.count, dateRange)} taken
+                          </span>
+                        </div>
+                        <HBar
+                          value={vary(exam.count, dateRange)}
+                          max={vary(maxMockCount, dateRange)}
+                          color="bg-purple-500"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Assignment Overview by Class */}
+            <Card className="bg-[#111] border-white/10">
+              <CardHeader>
+                <CardTitle className="text-white flex items-center gap-2">
+                  <FileText className="w-5 h-5 text-blue-400" />
+                  Assignment Completion by Class
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b border-white/10 text-neutral-400">
+                        <th className="text-left py-3 px-2 font-medium">Class</th>
+                        <th className="text-left py-3 px-2 font-medium">Teacher</th>
+                        <th className="text-left py-3 px-2 font-medium w-48">Completion Rate</th>
+                        <th className="text-center py-3 px-2 font-medium">Overdue</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {classesForAssignment.map((cls) => {
+                        const completion =
+                          cls.assignmentsSet > 0
+                            ? Math.round((cls.assignmentsCompleted / cls.assignmentsSet) * 100)
+                            : 0
+                        const overdue = cls.assignmentsSet - cls.assignmentsCompleted
+                        return (
+                          <tr key={cls.id} className="border-b border-white/5 hover:bg-white/5 transition-colors">
+                            <td className="py-3 px-2 font-medium text-white">{cls.name}</td>
+                            <td className="py-3 px-2 text-neutral-400">{cls.teacher}</td>
+                            <td className="py-3 px-2">
+                              <div className="flex items-center gap-3">
+                                <div className="flex-1">
+                                  <HBar value={completion} max={100} color={progressColor(completion)} />
+                                </div>
+                                <span className={`text-xs font-medium w-10 text-right ${progressTextColor(completion)}`}>
+                                  {completion}%
+                                </span>
+                              </div>
+                            </td>
+                            <td className="py-3 px-2 text-center">
+                              {overdue > 0 ? (
+                                <Badge variant="destructive" className="text-red-300 bg-red-500/15">
+                                  {overdue}
+                                </Badge>
+                              ) : (
+                                <span className="text-emerald-400 text-xs">All done</span>
+                              )}
+                            </td>
+                          </tr>
+                        )
+                      })}
+                    </tbody>
+                  </table>
+                </div>
+              </CardContent>
+            </Card>
+          </TabsContent>
+        </Tabs>
       </div>
     </div>
   )

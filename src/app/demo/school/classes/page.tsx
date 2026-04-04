@@ -5,6 +5,7 @@ import Link from "next/link"
 import { BookOpen, Users, Plus, Search, X, GraduationCap } from "lucide-react"
 import { toast } from "sonner"
 import { DEMO_CLASSES, DEMO_STUDENTS } from "@/data/demo-data"
+import { useScrollRestore } from "@/hooks/useScrollRestore"
 
 function boardBadgeClass(board: string): string {
   switch (board) {
@@ -32,6 +33,7 @@ function progressBarColor(pct: number): string {
 }
 
 export default function DemoClassesPage() {
+  useScrollRestore()
   const [search, setSearch] = useState("")
 
   const classesWithStats = useMemo(() => {

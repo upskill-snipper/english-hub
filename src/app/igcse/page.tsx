@@ -20,6 +20,7 @@ import { loadCoursesByBoard, loadAllCourses } from '@/data/course-loader'
 import type { CourseData } from '@/data/courses'
 import { useBoardStore } from '@/store/board-store'
 import { useAuthStore } from '@/store/auth-store'
+import { useScrollRestore } from '@/hooks/useScrollRestore'
 
 /* ───────────────────── Spec A / Spec B skills ───────────────────── */
 
@@ -120,8 +121,9 @@ const examStructure = [
 /* ───────────────────── Page ───────────────────── */
 
 export default function IGCSELandingPage() {
+  useScrollRestore()
   const { selectedBoard } = useBoardStore();
-  const { user } = useAuthStore();
+  const { user, profile } = useAuthStore();
   const [igcseLangCourses, setIgcseLangCourses] = useState<CourseData[]>([])
   const [igcseLitPoetry, setIgcseLitPoetry] = useState<CourseData[]>([])
   const [igcseLitProse, setIgcseLitProse] = useState<CourseData[]>([])
@@ -131,12 +133,56 @@ export default function IGCSELandingPage() {
   useEffect(() => {
     loadCoursesByBoard('igcse').then(setIgcseLangCourses)
     loadAllCourses().then((all) => {
-      setIgcseLitPoetry(all.filter((c) => c.id.startsWith('igcse-lit-poem') || c.id === 'igcse-lit-poetry'))
+      // Collect all poetry courses (anthology poems + overview/unseen course)
+      const allPoetry = all.filter(
+        (c) => c.id.startsWith('igcse-lit-poem') || c.id === 'igcse-lit-poetry'
+      )
+      // Sort: overview course first, then individual poems alphabetically by title
+      allPoetry.sort((a, b) => {
+        if (a.id === 'igcse-lit-poetry') return -1
+        if (b.id === 'igcse-lit-poetry') return 1
+        return a.title.localeCompare(b.title)
+      })
+      setIgcseLitPoetry(allPoetry)
       setIgcseLitProse(all.filter((c) => c.id.startsWith('igcse-lit-prose')))
       setIgcseLitDrama(all.filter((c) => c.id.startsWith('igcse-lit-drama')))
       setIgcseLitClassics(all.filter((c) => c.id.startsWith('igcse-lit-classic')))
     })
   }, [])
+
+  /* ── Categorise drama & prose into subsections ── */
+  const shakespeareIds = [
+    'igcse-lit-drama-romeo-juliet',
+    'igcse-lit-drama-macbeth',
+    'igcse-lit-drama-merchant-of-venice',
+  ]
+  const modernDramaIds = [
+    'igcse-lit-drama-view-from-bridge',
+    'igcse-lit-drama-inspector-calls',
+    'igcse-lit-drama-curious-incident',
+    'igcse-lit-drama-kindertransport',
+    'igcse-lit-drama-death-kings-horseman',
+  ]
+  const contemporaryProseIds = [
+    'igcse-lit-prose-klara-and-the-sun',
+    'igcse-lit-prose-western-lane',
+    'igcse-lit-prose-whale-rider',
+    'igcse-lit-prose-joy-luck-club',
+  ]
+  const classicProseIds = [
+    'igcse-lit-prose-of-mice-and-men',
+    'igcse-lit-prose-to-kill-a-mockingbird',
+    'igcse-lit-prose-things-fall-apart',
+    'igcse-lit-classic-pride-and-prejudice',
+    'igcse-lit-classic-great-expectations',
+    'igcse-lit-classic-the-scarlet-letter',
+  ]
+
+  const allDramaAndProse = [...igcseLitDrama, ...igcseLitProse, ...igcseLitClassics]
+  const shakespeare = allDramaAndProse.filter((c) => shakespeareIds.includes(c.id))
+  const modernDrama = allDramaAndProse.filter((c) => modernDramaIds.includes(c.id))
+  const contemporaryProse = allDramaAndProse.filter((c) => contemporaryProseIds.includes(c.id))
+  const classicProse = allDramaAndProse.filter((c) => classicProseIds.includes(c.id))
 
   // Block non-Edexcel users from IGCSE page
   if (selectedBoard && selectedBoard !== 'Edexcel') {
@@ -148,6 +194,23 @@ export default function IGCSELandingPage() {
         </p>
         <Link href="/courses" className="btn-primary text-sm">
           Browse your courses
+        </Link>
+      </div>
+    )
+  }
+
+  // Block KS3-only students (Years 7-9) — IGCSE is a GCSE-level qualification
+  const yearNum = profile?.year_group?.replace(/\D/g, '')
+  if (yearNum && ['7', '8', '9'].includes(yearNum)) {
+    return (
+      <div className="flex min-h-[60vh] flex-col items-center justify-center gap-4 bg-background text-foreground">
+        <h1 className="text-2xl font-bold">IGCSE courses are for Year 10+ students.</h1>
+        <p className="text-muted-foreground text-center max-w-md">
+          You&apos;re in <strong>Year {yearNum}</strong>. IGCSE content is designed for students in Years 10 and 11.
+          Check out our KS3 courses instead.
+        </p>
+        <Link href="/courses" className="btn-primary text-sm">
+          Browse KS3 courses
         </Link>
       </div>
     )
@@ -400,29 +463,37 @@ export default function IGCSELandingPage() {
             </p>
           </div>
 
-          {/* ── Poetry ── */}
+          {/* ── Poetry (unified: anthology + unseen) ── */}
           {igcseLitPoetry.length > 0 && (
             <div className="mb-12">
-              <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center gap-3 mb-2">
                 <div className="w-10 h-10 rounded-lg bg-violet-500/10 flex items-center justify-center">
                   <Feather className="w-5 h-5 text-violet-400" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-foreground">Poetry</h3>
                   <p className="text-xs text-muted-foreground">
-                    {igcseLitPoetry.length} poems &mdash; individual text courses
+                    {igcseLitPoetry.length} courses &mdash; anthology poems and unseen poetry preparation
                   </p>
                 </div>
               </div>
+              <p className="text-xs text-muted-foreground/70 mb-6 ml-[52px]">
+                Includes anthology poems and unseen poetry preparation
+              </p>
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {igcseLitPoetry.map((course) => (
                   <Link
                     key={course.id}
                     href={`/courses/${course.id}`}
-                    className="card group flex flex-col overflow-hidden transition-all duration-200 hover:border-violet-400/40 hover:shadow-lg hover:shadow-violet-500/5"
+                    className={`card group flex flex-col overflow-hidden transition-all duration-200 hover:border-violet-400/40 hover:shadow-lg hover:shadow-violet-500/5${course.id === 'igcse-lit-poetry' ? ' sm:col-span-2 border-violet-500/30' : ''}`}
                   >
-                    <div className="h-1 w-full bg-violet-500" />
+                    <div className={`w-full ${course.id === 'igcse-lit-poetry' ? 'h-1.5 bg-gradient-to-r from-violet-500 to-purple-500' : 'h-1 bg-violet-500'}`} />
                     <div className="flex flex-1 flex-col p-4">
+                      {course.id === 'igcse-lit-poetry' && (
+                        <span className="mb-2 inline-flex w-fit items-center gap-1 rounded-md bg-violet-500/15 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-violet-400">
+                          Overview &amp; Unseen Poetry
+                        </span>
+                      )}
                       <h4 className="text-sm font-bold text-foreground group-hover:text-violet-400 transition-colors duration-200 line-clamp-2">
                         {course.title}
                       </h4>
@@ -451,73 +522,22 @@ export default function IGCSELandingPage() {
             </div>
           )}
 
-          {/* ── Prose ── */}
-          {igcseLitProse.length > 0 && (
-            <div className="mb-12">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center">
-                  <BookText className="w-5 h-5 text-emerald-400" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-foreground">Prose</h3>
-                  <p className="text-xs text-muted-foreground">
-                    {igcseLitProse.length} novels &mdash; individual text courses
-                  </p>
-                </div>
-              </div>
-              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                {igcseLitProse.map((course) => (
-                  <Link
-                    key={course.id}
-                    href={`/courses/${course.id}`}
-                    className="card group flex flex-col overflow-hidden transition-all duration-200 hover:border-emerald-400/40 hover:shadow-lg hover:shadow-emerald-500/5"
-                  >
-                    <div className="h-1 w-full bg-emerald-500" />
-                    <div className="flex flex-1 flex-col p-4">
-                      <h4 className="text-sm font-bold text-foreground group-hover:text-emerald-400 transition-colors duration-200 line-clamp-2">
-                        {course.title}
-                      </h4>
-                      <p className="mt-1 text-xs text-muted-foreground line-clamp-2">
-                        {course.subtitle}
-                      </p>
-                      <div className="mt-3 flex items-center gap-3 text-xs text-muted-foreground">
-                        <span className="inline-flex items-center gap-1">
-                          <BookOpen className="h-3 w-3" />
-                          {course.moduleList.length} modules
-                        </span>
-                        <span className="inline-flex items-center gap-1">
-                          <Clock className="h-3 w-3" />
-                          {course.duration}
-                        </span>
-                      </div>
-                      <div className="mt-3 flex items-center justify-end">
-                        <span className="inline-flex items-center gap-1 text-xs font-semibold text-emerald-400 group-hover:text-emerald-300">
-                          View <ArrowRight className="w-3 h-3" />
-                        </span>
-                      </div>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* ── Drama ── */}
-          {igcseLitDrama.length > 0 && (
+          {/* ── Shakespeare ── */}
+          {shakespeare.length > 0 && (
             <div className="mb-12">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center">
                   <Drama className="w-5 h-5 text-amber-400" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-foreground">Drama</h3>
+                  <h3 className="text-xl font-bold text-foreground">Shakespeare</h3>
                   <p className="text-xs text-muted-foreground">
-                    {igcseLitDrama.length} plays &mdash; individual text courses
+                    {shakespeare.length} plays &mdash; individual text courses
                   </p>
                 </div>
               </div>
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                {igcseLitDrama.map((course) => (
+                {shakespeare.map((course) => (
                   <Link
                     key={course.id}
                     href={`/courses/${course.id}`}
@@ -525,6 +545,7 @@ export default function IGCSELandingPage() {
                   >
                     <div className="h-1 w-full bg-amber-500" />
                     <div className="flex flex-1 flex-col p-4">
+                      <span className="inline-flex self-start items-center rounded-md bg-amber-500/10 px-2 py-0.5 text-[10px] font-semibold text-amber-400 mb-2">Drama</span>
                       <h4 className="text-sm font-bold text-foreground group-hover:text-amber-400 transition-colors duration-200 line-clamp-2">
                         {course.title}
                       </h4>
@@ -543,7 +564,7 @@ export default function IGCSELandingPage() {
                       </div>
                       <div className="mt-3 flex items-center justify-end">
                         <span className="inline-flex items-center gap-1 text-xs font-semibold text-amber-400 group-hover:text-amber-300">
-                          View <ArrowRight className="w-3 h-3" />
+                          Start Course <ArrowRight className="w-3 h-3" />
                         </span>
                       </div>
                     </div>
@@ -553,22 +574,126 @@ export default function IGCSELandingPage() {
             </div>
           )}
 
-          {/* ── Classics ── */}
-          {igcseLitClassics.length > 0 && (
+          {/* ── Modern Drama ── */}
+          {modernDrama.length > 0 && (
+            <div className="mb-12">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center">
+                  <Drama className="w-5 h-5 text-orange-400" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-foreground">Modern Drama</h3>
+                  <p className="text-xs text-muted-foreground">
+                    {modernDrama.length} plays &mdash; individual text courses
+                  </p>
+                </div>
+              </div>
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                {modernDrama.map((course) => (
+                  <Link
+                    key={course.id}
+                    href={`/courses/${course.id}`}
+                    className="card group flex flex-col overflow-hidden transition-all duration-200 hover:border-orange-400/40 hover:shadow-lg hover:shadow-orange-500/5"
+                  >
+                    <div className="h-1 w-full bg-orange-500" />
+                    <div className="flex flex-1 flex-col p-4">
+                      <span className="inline-flex self-start items-center rounded-md bg-orange-500/10 px-2 py-0.5 text-[10px] font-semibold text-orange-400 mb-2">Drama</span>
+                      <h4 className="text-sm font-bold text-foreground group-hover:text-orange-400 transition-colors duration-200 line-clamp-2">
+                        {course.title}
+                      </h4>
+                      <p className="mt-1 text-xs text-muted-foreground line-clamp-2">
+                        {course.subtitle}
+                      </p>
+                      <div className="mt-3 flex items-center gap-3 text-xs text-muted-foreground">
+                        <span className="inline-flex items-center gap-1">
+                          <BookOpen className="h-3 w-3" />
+                          {course.moduleList.length} modules
+                        </span>
+                        <span className="inline-flex items-center gap-1">
+                          <Clock className="h-3 w-3" />
+                          {course.duration}
+                        </span>
+                      </div>
+                      <div className="mt-3 flex items-center justify-end">
+                        <span className="inline-flex items-center gap-1 text-xs font-semibold text-orange-400 group-hover:text-orange-300">
+                          Start Course <ArrowRight className="w-3 h-3" />
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* ── Prose — Contemporary ── */}
+          {contemporaryProse.length > 0 && (
+            <div className="mb-12">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center">
+                  <BookText className="w-5 h-5 text-emerald-400" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-foreground">Prose &mdash; Contemporary</h3>
+                  <p className="text-xs text-muted-foreground">
+                    {contemporaryProse.length} novels &mdash; individual text courses
+                  </p>
+                </div>
+              </div>
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                {contemporaryProse.map((course) => (
+                  <Link
+                    key={course.id}
+                    href={`/courses/${course.id}`}
+                    className="card group flex flex-col overflow-hidden transition-all duration-200 hover:border-emerald-400/40 hover:shadow-lg hover:shadow-emerald-500/5"
+                  >
+                    <div className="h-1 w-full bg-emerald-500" />
+                    <div className="flex flex-1 flex-col p-4">
+                      <span className="inline-flex self-start items-center rounded-md bg-emerald-500/10 px-2 py-0.5 text-[10px] font-semibold text-emerald-400 mb-2">Prose</span>
+                      <h4 className="text-sm font-bold text-foreground group-hover:text-emerald-400 transition-colors duration-200 line-clamp-2">
+                        {course.title}
+                      </h4>
+                      <p className="mt-1 text-xs text-muted-foreground line-clamp-2">
+                        {course.subtitle}
+                      </p>
+                      <div className="mt-3 flex items-center gap-3 text-xs text-muted-foreground">
+                        <span className="inline-flex items-center gap-1">
+                          <BookOpen className="h-3 w-3" />
+                          {course.moduleList.length} modules
+                        </span>
+                        <span className="inline-flex items-center gap-1">
+                          <Clock className="h-3 w-3" />
+                          {course.duration}
+                        </span>
+                      </div>
+                      <div className="mt-3 flex items-center justify-end">
+                        <span className="inline-flex items-center gap-1 text-xs font-semibold text-emerald-400 group-hover:text-emerald-300">
+                          Start Course <ArrowRight className="w-3 h-3" />
+                        </span>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* ── Prose — Classic ── */}
+          {classicProse.length > 0 && (
             <div>
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-lg bg-rose-500/10 flex items-center justify-center">
                   <Scroll className="w-5 h-5 text-rose-400" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-foreground">Classics</h3>
+                  <h3 className="text-xl font-bold text-foreground">Prose &mdash; Classic</h3>
                   <p className="text-xs text-muted-foreground">
-                    {igcseLitClassics.length} classic texts &mdash; individual text courses
+                    {classicProse.length} texts &mdash; individual text courses
                   </p>
                 </div>
               </div>
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                {igcseLitClassics.map((course) => (
+                {classicProse.map((course) => (
                   <Link
                     key={course.id}
                     href={`/courses/${course.id}`}
@@ -576,6 +701,7 @@ export default function IGCSELandingPage() {
                   >
                     <div className="h-1 w-full bg-rose-500" />
                     <div className="flex flex-1 flex-col p-4">
+                      <span className="inline-flex self-start items-center rounded-md bg-rose-500/10 px-2 py-0.5 text-[10px] font-semibold text-rose-400 mb-2">Classic</span>
                       <h4 className="text-sm font-bold text-foreground group-hover:text-rose-400 transition-colors duration-200 line-clamp-2">
                         {course.title}
                       </h4>
@@ -594,7 +720,7 @@ export default function IGCSELandingPage() {
                       </div>
                       <div className="mt-3 flex items-center justify-end">
                         <span className="inline-flex items-center gap-1 text-xs font-semibold text-rose-400 group-hover:text-rose-300">
-                          View <ArrowRight className="w-3 h-3" />
+                          Start Course <ArrowRight className="w-3 h-3" />
                         </span>
                       </div>
                     </div>

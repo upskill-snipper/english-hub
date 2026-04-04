@@ -8,18 +8,17 @@ import {
   AlertTriangle,
   ArrowRight,
   TrendingUp,
-  TrendingDown,
-  Minus,
   BookOpen,
   Hammer,
   CalendarDays,
   Rocket,
   FolderOpen,
   CheckCircle,
-  XCircle,
   BarChart3,
+  GraduationCap,
+  ClipboardCheck,
+  Target,
 } from "lucide-react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import {
@@ -29,25 +28,9 @@ import {
   TEACHER_DEMO_SUBMISSIONS,
   DEMO_STUDENTS,
   type DemoClass,
-  type DemoStudent,
 } from "@/data/demo-data"
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
-
-function ragDot(status: "green" | "amber" | "red") {
-  const colors = {
-    green: "bg-green-500",
-    amber: "bg-amber-500",
-    red: "bg-red-500",
-  }
-  return <span className={`inline-block w-2 h-2 rounded-full ${colors[status]}`} />
-}
-
-function trendIcon(trend: "up" | "down" | "stable") {
-  if (trend === "up") return <TrendingUp className="h-3.5 w-3.5 text-green-400" />
-  if (trend === "down") return <TrendingDown className="h-3.5 w-3.5 text-red-400" />
-  return <Minus className="h-3.5 w-3.5 text-white/30" />
-}
 
 function scoreColor(score: number) {
   if (score >= 70) return "text-green-400"
@@ -55,13 +38,48 @@ function scoreColor(score: number) {
   return "text-red-400"
 }
 
-function progressBarColor(pct: number) {
-  if (pct >= 70) return "bg-green-500"
-  if (pct >= 50) return "bg-amber-500"
+function scoreBg(score: number) {
+  if (score >= 70) return "bg-green-500"
+  if (score >= 50) return "bg-amber-500"
   return "bg-red-500"
 }
 
-// Gather all at-risk students across teacher's classes
+function ragBarSegments(cls: DemoClass) {
+  const students = DEMO_STUDENTS.filter((s) => s.className === cls.name)
+  const total = students.length || 1
+  const green = students.filter((s) => s.status === "on-track" || s.status === "excelling").length
+  const amber = students.filter((s) => s.status === "needs-support").length
+  const red = students.filter((s) => s.status === "at-risk").length
+  return { green: (green / total) * 100, amber: (amber / total) * 100, red: (red / total) * 100 }
+}
+
+function ProgressRing({ pct, size = 56, stroke = 4, color = "text-emerald-400" }: { pct: number; size?: number; stroke?: number; color?: string }) {
+  const radius = (size - stroke) / 2
+  const circumference = 2 * Math.PI * radius
+  const offset = circumference - (pct / 100) * circumference
+  return (
+    <svg width={size} height={size} className="transform -rotate-90">
+      <circle cx={size / 2} cy={size / 2} r={radius} fill="none" stroke="currentColor" strokeWidth={stroke} className="text-white/5" />
+      <circle cx={size / 2} cy={size / 2} r={radius} fill="none" stroke="currentColor" strokeWidth={stroke} strokeDasharray={circumference} strokeDashoffset={offset} strokeLinecap="round" className={color} />
+    </svg>
+  )
+}
+
+function InitialsAvatar({ name, color = "bg-white/10" }: { name: string; color?: string }) {
+  const initials = name.split(" ").map((n) => n[0]).join("").slice(0, 2)
+  return (
+    <div className={`w-9 h-9 rounded-full ${color} flex items-center justify-center text-xs font-semibold text-white/80 shrink-0`}>
+      {initials}
+    </div>
+  )
+}
+
+// ── Computed data ────────────────────────────────────────────────────────────
+
+const totalStudents = TEACHER_DEMO_CLASSES.reduce((sum, cls) => sum + cls.studentCount, 0)
+const avgClassScore = Math.round(TEACHER_DEMO_CLASSES.reduce((sum, cls) => sum + cls.avgScore, 0) / TEACHER_DEMO_CLASSES.length)
+
+// At-risk students across teacher's classes
 const atRiskStudents = TEACHER_DEMO_CLASSES.flatMap((cls: DemoClass) => {
   const students = DEMO_STUDENTS.filter((s) => s.className === cls.name)
   return students
@@ -69,87 +87,17 @@ const atRiskStudents = TEACHER_DEMO_CLASSES.flatMap((cls: DemoClass) => {
     .map((s) => ({ ...s, className: cls.name, classId: cls.id }))
 })
 
-// Upcoming assignments due this week (mock data)
+// Marking queue from TEACHER_DEMO_SUBMISSIONS
+const pendingMarking = TEACHER_DEMO_SUBMISSIONS.filter((s) => s.status === "submitted" || s.status === "pending")
+const markedCount = TEACHER_DEMO_SUBMISSIONS.filter((s) => s.status === "graded").length
+const totalSubmissions = TEACHER_DEMO_SUBMISSIONS.length
+
+// Assignments due this week
 const assignmentsDueThisWeek = [
-  { id: "a1", title: "Macbeth Act 3 Essay", className: "10A English Literature", dueDate: "Friday 4 Apr", submittedCount: 18, totalCount: 28 },
-  { id: "a2", title: "Language P1 Q5 Practice", className: "10B English Language", dueDate: "Thursday 3 Apr", submittedCount: 26, totalCount: 30 },
-  { id: "a3", title: "Inspector Calls Revision Pack", className: "11A English Literature", dueDate: "Monday 7 Apr", submittedCount: 8, totalCount: 26 },
+  { id: "a1", title: "Macbeth Act 3 Essay", className: "10A English Literature", dueDate: "Fri 4 Apr", submittedCount: 18, totalCount: 28 },
+  { id: "a2", title: "Language P1 Q5 Practice", className: "10B English Language", dueDate: "Thu 3 Apr", submittedCount: 26, totalCount: 30 },
+  { id: "a3", title: "Inspector Calls Revision Pack", className: "11A English Literature", dueDate: "Mon 7 Apr", submittedCount: 8, totalCount: 26 },
 ]
-
-// Recent marking items – combine essays and quizzes from all students across teacher's classes
-const recentMarkingItems = TEACHER_DEMO_CLASSES.flatMap((cls: DemoClass) => {
-  const students = DEMO_STUDENTS.filter((s: DemoStudent) => s.className === cls.name)
-  return students.flatMap((s: DemoStudent) => {
-    const essays = s.essaySubmissions.map((e) => ({
-      studentName: s.name,
-      studentId: s.id,
-      title: e.title,
-      type: "essay" as const,
-      score: e.score,
-      maxScore: 100,
-      date: e.date,
-      status: e.score > 0 ? "marked" : "pending",
-      className: cls.name,
-    }))
-    const quizzes = s.quizAttempts.map((q) => ({
-      studentName: s.name,
-      studentId: s.id,
-      title: q.quiz,
-      type: "quiz" as const,
-      score: q.score,
-      maxScore: q.maxScore,
-      date: q.date,
-      status: "marked" as const,
-      className: cls.name,
-    }))
-    return [...essays, ...quizzes]
-  })
-})
-  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-  .slice(0, 8)
-
-// Students with declining scores or missed assignments
-const studentsNeedingAttention = TEACHER_DEMO_CLASSES.flatMap((cls: DemoClass) => {
-  const students = DEMO_STUDENTS.filter((s: DemoStudent) => s.className === cls.name)
-  return students
-    .filter((s: DemoStudent) => {
-      const scores = s.recentScores
-      if (scores.length >= 3) {
-        const recent = scores.slice(-3)
-        const earlier = scores.slice(-6, -3)
-        if (earlier.length > 0) {
-          const recentAvg = recent.reduce((a, b) => a + b, 0) / recent.length
-          const earlierAvg = earlier.reduce((a, b) => a + b, 0) / earlier.length
-          if (recentAvg < earlierAvg - 5) return true
-        }
-      }
-      if (s.assignmentsCompleted < s.assignmentsTotal * 0.7) return true
-      if (s.status === "at-risk" || s.status === "needs-support") return true
-      return false
-    })
-    .map((s: DemoStudent) => {
-      const scores = s.recentScores
-      let reason = ""
-      if (scores.length >= 3) {
-        const recent = scores.slice(-3)
-        const earlier = scores.slice(-6, -3)
-        if (earlier.length > 0) {
-          const recentAvg = Math.round(recent.reduce((a, b) => a + b, 0) / recent.length)
-          const earlierAvg = Math.round(earlier.reduce((a, b) => a + b, 0) / earlier.length)
-          if (recentAvg < earlierAvg - 5) {
-            reason = `Score dropped from ${earlierAvg}% to ${recentAvg}% over recent work`
-          }
-        }
-      }
-      if (!reason && s.assignmentsCompleted < s.assignmentsTotal * 0.7) {
-        reason = `Only ${s.assignmentsCompleted}/${s.assignmentsTotal} assignments completed`
-      }
-      if (!reason) {
-        reason = s.riskReason || "Flagged as needing support"
-      }
-      return { ...s, className: cls.name, classId: cls.id, attentionReason: reason }
-    })
-}).slice(0, 6)
 
 // ── Page ─────────────────────────────────────────────────────────────────────
 
@@ -165,409 +113,315 @@ export default function TeacherDemoDashboard() {
           </p>
         </div>
 
-        {/* Welcome */}
-        <div className="mb-8">
-          <h1 className="text-3xl font-light tracking-tight text-white/90">
-            Welcome, {DEMO_TEACHER.name}
-          </h1>
-          <p className="text-white/40 text-sm mt-1">
-            {DEMO_TEACHER.department} Department -- Riverside Academy
-          </p>
-        </div>
+        {/* ── Hero Section ──────────────────────────────────────────── */}
+        <section className="mb-10">
+          <div className="mb-6">
+            <h1 className="text-3xl font-light tracking-tight text-white/90">
+              Welcome back, {DEMO_TEACHER.name.split(" ")[0]}
+            </h1>
+            <p className="text-white/40 text-sm mt-1">
+              {DEMO_TEACHER.department} Department -- Riverside Academy
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {/* Classes Taught */}
+            <div className="rounded-xl border border-emerald-500/10 bg-gradient-to-br from-emerald-500/10 via-emerald-500/5 to-transparent p-5">
+              <div className="flex items-center gap-2 mb-3">
+                <GraduationCap className="h-4 w-4 text-emerald-400/70" />
+                <span className="text-xs text-emerald-400/70 font-medium uppercase tracking-wider">Classes</span>
+              </div>
+              <p className="text-3xl font-bold text-white/90">{TEACHER_DEMO_CLASSES.length}</p>
+              <p className="text-xs text-white/30 mt-1">Across Years 10-13</p>
+            </div>
+
+            {/* Total Students */}
+            <div className="rounded-xl border border-blue-500/10 bg-gradient-to-br from-blue-500/10 via-blue-500/5 to-transparent p-5">
+              <div className="flex items-center gap-2 mb-3">
+                <Users className="h-4 w-4 text-blue-400/70" />
+                <span className="text-xs text-blue-400/70 font-medium uppercase tracking-wider">Students</span>
+              </div>
+              <p className="text-3xl font-bold text-white/90">{totalStudents}</p>
+              <p className="text-xs text-white/30 mt-1">{atRiskStudents.length} need attention</p>
+            </div>
+
+            {/* Average Class Score */}
+            <div className="rounded-xl border border-purple-500/10 bg-gradient-to-br from-purple-500/10 via-purple-500/5 to-transparent p-5">
+              <div className="flex items-center gap-2 mb-3">
+                <Target className="h-4 w-4 text-purple-400/70" />
+                <span className="text-xs text-purple-400/70 font-medium uppercase tracking-wider">Avg Score</span>
+              </div>
+              <p className="text-3xl font-bold text-white/90">{avgClassScore}%</p>
+              <p className="text-xs text-white/30 mt-1 flex items-center gap-1">
+                <TrendingUp className="h-3 w-3 text-green-400" /> +2% this term
+              </p>
+            </div>
+
+            {/* Assignments Due */}
+            <div className="rounded-xl border border-amber-500/10 bg-gradient-to-br from-amber-500/10 via-amber-500/5 to-transparent p-5">
+              <div className="flex items-center gap-2 mb-3">
+                <ClipboardCheck className="h-4 w-4 text-amber-400/70" />
+                <span className="text-xs text-amber-400/70 font-medium uppercase tracking-wider">Due Soon</span>
+              </div>
+              <p className="text-3xl font-bold text-white/90">{assignmentsDueThisWeek.length}</p>
+              <p className="text-xs text-white/30 mt-1">{pendingMarking.length} awaiting marking</p>
+            </div>
+          </div>
+        </section>
+
+        {/* ── At-Risk Students Banner ────────────────────────────────── */}
+        {atRiskStudents.length > 0 && (
+          <section className="mb-10">
+            <div className="rounded-xl border border-red-500/15 bg-gradient-to-r from-red-500/[0.07] via-amber-500/[0.04] to-transparent p-5">
+              <div className="flex items-center gap-2 mb-4">
+                <AlertTriangle className="h-5 w-5 text-red-400" />
+                <h2 className="text-base font-medium text-white/80">
+                  {atRiskStudents.length} Students At Risk
+                </h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                {atRiskStudents.slice(0, 6).map((student) => (
+                  <Link
+                    key={`${student.classId}-${student.id}`}
+                    href={`/demo/teacher/students/${student.id}`}
+                    className="group flex items-center gap-3 rounded-lg border border-white/5 bg-white/[0.02] p-3 transition-all hover:border-red-500/20 hover:bg-red-500/[0.03]"
+                  >
+                    <InitialsAvatar name={student.name} color="bg-red-500/15" />
+                    <div className="min-w-0 flex-1">
+                      <p className="text-sm font-medium text-white/90 truncate">{student.name}</p>
+                      <p className="text-[11px] text-white/30 truncate">{student.className}</p>
+                      <p className="text-[11px] text-red-400/70 truncate mt-0.5">{student.riskReason}</p>
+                    </div>
+                    <div className="text-right shrink-0">
+                      <p className={`text-sm font-semibold ${scoreColor(student.averageScore)}`}>{student.averageScore}%</p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* ── My Classes ─────────────────────────────────────────────── */}
         <section className="mb-10">
           <h2 className="text-lg font-medium text-white/80 mb-4">My Classes</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {TEACHER_DEMO_CLASSES.map((cls: any) => (
-              <Link
-                key={cls.id}
-                href={`/demo/teacher/classes/${cls.id}`}
-                className="group rounded-xl border border-white/5 bg-white/[0.02] p-5 transition-all hover:border-white/10 hover:bg-white/[0.04]"
-              >
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-base font-medium text-white/90">
-                    {cls.name}
-                  </h3>
-                  <ArrowRight className="h-4 w-4 text-white/20 group-hover:text-white/50 transition-colors" />
-                </div>
-                <div className="flex items-center gap-3 mb-3">
-                  <Badge variant="secondary" className="text-[11px]">
-                    Year {cls.yearGroup}
-                  </Badge>
-                  <span className="flex items-center gap-1 text-xs text-white/40">
-                    <Users className="h-3.5 w-3.5" />
-                    {cls.studentCount} students
-                  </span>
-                  <span className="text-xs text-white/30">{cls.examBoard}</span>
-                </div>
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between text-xs">
-                    <span className="text-white/40">Avg Score</span>
-                    <span className={scoreColor(cls.avgScore)}>
-                      {cls.avgScore}%
-                    </span>
-                  </div>
-                  <div className="h-1.5 rounded-full bg-white/5">
-                    <div
-                      className={`h-1.5 rounded-full ${progressBarColor(cls.avgScore)} transition-all`}
-                      style={{ width: `${cls.avgScore}%` }}
-                    />
-                  </div>
-                  <div className="flex items-center justify-between text-xs">
-                    <span className="text-white/40">Completion</span>
-                    <span className="text-white/60">{cls.completionRate}%</span>
-                  </div>
-                  {cls.atRiskCount > 0 && (
-                    <div className="flex items-center gap-1 text-xs text-red-400 mt-1">
-                      <AlertTriangle className="h-3 w-3" />
-                      {cls.atRiskCount} at-risk student{cls.atRiskCount > 1 ? "s" : ""}
-                    </div>
-                  )}
-                </div>
-              </Link>
-            ))}
-          </div>
-        </section>
-
-        {/* ── Today's Overview ────────────────────────────────────────── */}
-        <section className="mb-10">
-          <h2 className="text-lg font-medium text-white/80 mb-4 flex items-center gap-2">
-            <CalendarDays className="h-5 w-5 text-emerald-400" />
-            Today&apos;s Overview
-          </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {/* Upcoming lessons */}
-            <Card className="border-white/5 bg-white/[0.02]">
-              <CardHeader className="pb-2">
-                <CardTitle className="text-sm font-medium text-white/70">
-                  Upcoming Lessons
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                {TEACHER_DEMO_LESSONS.map((lesson: any) => (
-                  <div
-                    key={lesson.id}
-                    className="flex items-start gap-3 rounded-lg border border-white/5 bg-white/[0.02] p-3"
-                  >
-                    <div className="flex items-center gap-1.5 text-xs text-emerald-400/70 whitespace-nowrap pt-0.5">
-                      <Clock className="h-3.5 w-3.5" />
-                      {lesson.time}
-                    </div>
-                    <div className="min-w-0">
-                      <p className="text-sm font-medium text-white/90 truncate">
-                        {lesson.className}
-                      </p>
-                      <p className="text-xs text-white/40">{lesson.topic}</p>
-                      <p className="text-[11px] text-white/25 mt-0.5">{lesson.room}</p>
-                    </div>
-                  </div>
-                ))}
-              </CardContent>
-            </Card>
-
-            {/* Assignments due this week */}
-            <Card className="border-white/5 bg-white/[0.02]">
-              <CardHeader className="pb-2">
-                <CardTitle className="text-sm font-medium text-white/70">
-                  Assignments Due This Week
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                {assignmentsDueThisWeek.map((assignment) => (
-                  <div
-                    key={assignment.id}
-                    className="rounded-lg border border-white/5 bg-white/[0.02] p-3"
-                  >
-                    <div className="flex items-center justify-between mb-1">
-                      <p className="text-sm font-medium text-white/90">
-                        {assignment.title}
-                      </p>
-                      <span className="text-[11px] text-white/40 whitespace-nowrap">
-                        {assignment.dueDate}
-                      </span>
-                    </div>
-                    <p className="text-xs text-white/40 mb-2">{assignment.className}</p>
-                    <div className="flex items-center gap-2">
-                      <div className="flex-1 h-1.5 rounded-full bg-white/5">
-                        <div
-                          className="h-1.5 rounded-full bg-emerald-500 transition-all"
-                          style={{
-                            width: `${Math.round((assignment.submittedCount / assignment.totalCount) * 100)}%`,
-                          }}
-                        />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {TEACHER_DEMO_CLASSES.map((cls: DemoClass) => {
+              const rag = ragBarSegments(cls)
+              const atRiskCount = DEMO_STUDENTS.filter((s) => s.className === cls.name && s.atRisk).length
+              return (
+                <Link
+                  key={cls.id}
+                  href={`/demo/teacher/classes/${cls.id}`}
+                  className="group rounded-xl border border-white/5 bg-white/[0.02] p-5 transition-all hover:border-white/10 hover:bg-white/[0.04]"
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <div>
+                      <h3 className="text-base font-medium text-white/90">{cls.name}</h3>
+                      <div className="flex items-center gap-2 mt-1">
+                        <Badge variant="secondary" className="text-[11px]">Year {cls.yearGroup}</Badge>
+                        <span className="text-[11px] text-white/30">{cls.examBoard}</span>
                       </div>
-                      <span className="text-[11px] text-white/50">
-                        {assignment.submittedCount}/{assignment.totalCount} submitted
+                    </div>
+                    {/* Progress ring for completion */}
+                    <div className="relative">
+                      <ProgressRing pct={cls.completionRate} size={48} stroke={3.5} />
+                      <span className="absolute inset-0 flex items-center justify-center text-[10px] font-semibold text-white/70">
+                        {cls.completionRate}%
                       </span>
                     </div>
                   </div>
-                ))}
-              </CardContent>
-            </Card>
-          </div>
-        </section>
 
-        {/* ── Recent Student Submissions ──────────────────────────────── */}
-        <section className="mb-10">
-          <h2 className="text-lg font-medium text-white/80 mb-4 flex items-center gap-2">
-            <FileText className="h-5 w-5 text-blue-400" />
-            Recent Student Submissions
-          </h2>
-          <div className="rounded-xl border border-white/5 bg-white/[0.02] overflow-hidden">
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="border-b border-white/5">
-                    <th className="text-left px-4 py-3 text-xs font-medium text-white/40">
-                      Student
-                    </th>
-                    <th className="text-left px-4 py-3 text-xs font-medium text-white/40">
-                      Title
-                    </th>
-                    <th className="text-left px-4 py-3 text-xs font-medium text-white/40">
-                      Type
-                    </th>
-                    <th className="text-left px-4 py-3 text-xs font-medium text-white/40">
-                      Score
-                    </th>
-                    <th className="text-left px-4 py-3 text-xs font-medium text-white/40">
-                      Submitted
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {TEACHER_DEMO_SUBMISSIONS.map((sub: any) => (
-                    <tr
-                      key={sub.id}
-                      className="border-b border-white/5 last:border-0 hover:bg-white/[0.02]"
-                    >
-                      <td className="px-4 py-3">
-                        <Link
-                          href={`/demo/teacher/students/${sub.studentId}`}
-                          className="text-white/80 hover:text-emerald-400 transition-colors"
-                        >
-                          {sub.studentName}
-                        </Link>
-                        <p className="text-[11px] text-white/30">{sub.className}</p>
-                      </td>
-                      <td className="px-4 py-3 text-white/60">{sub.title}</td>
-                      <td className="px-4 py-3">
-                        <Badge
-                          variant="outline"
-                          className={
-                            sub.type === "essay"
-                              ? "bg-blue-500/10 text-blue-400 border-blue-500/20"
-                              : sub.type === "homework"
-                                ? "bg-purple-500/10 text-purple-400 border-purple-500/20"
-                                : "bg-amber-500/10 text-amber-400 border-amber-500/20"
-                          }
-                        >
-                          {sub.type}
-                        </Badge>
-                      </td>
-                      <td className="px-4 py-3">
-                        <span className={scoreColor(Math.round((sub.score / sub.maxScore) * 100))}>
-                          {sub.score}/{sub.maxScore}
-                        </span>
-                      </td>
-                      <td className="px-4 py-3 text-white/40 text-xs">
-                        {sub.submittedAt}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </section>
-
-        {/* ── At-Risk Students ────────────────────────────────────────── */}
-        <section className="mb-10">
-          <h2 className="text-lg font-medium text-white/80 mb-4 flex items-center gap-2">
-            <AlertTriangle className="h-5 w-5 text-red-400" />
-            At-Risk Students in My Classes
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {atRiskStudents.map((student: any) => (
-              <Link
-                key={`${student.classId}-${student.id}`}
-                href={`/demo/teacher/students/${student.id}`}
-                className="group rounded-xl border border-red-500/10 bg-red-500/[0.03] p-4 transition-all hover:border-red-500/20 hover:bg-red-500/[0.05]"
-              >
-                <div className="flex items-center justify-between mb-2">
-                  <div className="flex items-center gap-2">
-                    {ragDot(student.ragStatus)}
-                    <span className="text-sm font-medium text-white/90">
-                      {student.name}
-                    </span>
+                  {/* Average score as large number */}
+                  <div className="mb-3">
+                    <span className={`text-2xl font-bold ${scoreColor(cls.avgScore)}`}>{cls.avgScore}%</span>
+                    <span className="text-xs text-white/30 ml-2">avg score</span>
                   </div>
-                  <span className="text-xs text-white/30">{student.className}</span>
-                </div>
-                <p className="text-xs text-red-400/70 mb-2">{student.riskReason}</p>
-                <div className="flex items-center gap-4 text-xs text-white/40">
-                  <span>Score: {student.overallScore}%</span>
-                  <span>Last active: {student.lastActive}</span>
-                  <span className="flex items-center gap-1">
-                    {trendIcon(student.trend)}
-                  </span>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </section>
 
-        {/* ── Recent Marking ──────────────────────────────────────────── */}
-        <section className="mb-10">
-          <h2 className="text-lg font-medium text-white/80 mb-4 flex items-center gap-2">
-            <FileText className="h-5 w-5 text-purple-400" />
-            Recent Marking
-          </h2>
-          <div className="rounded-xl border border-white/5 bg-white/[0.02] overflow-hidden">
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="border-b border-white/5">
-                    <th className="text-left px-4 py-3 text-xs font-medium text-white/40">Student</th>
-                    <th className="text-left px-4 py-3 text-xs font-medium text-white/40">Title</th>
-                    <th className="text-left px-4 py-3 text-xs font-medium text-white/40">Type</th>
-                    <th className="text-left px-4 py-3 text-xs font-medium text-white/40">Score</th>
-                    <th className="text-left px-4 py-3 text-xs font-medium text-white/40">Status</th>
-                    <th className="text-left px-4 py-3 text-xs font-medium text-white/40">Date</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {recentMarkingItems.map((item, idx) => {
-                    const pct = item.maxScore > 0 ? Math.round((item.score / item.maxScore) * 100) : 0
-                    return (
-                      <tr key={idx} className="border-b border-white/5 last:border-0 hover:bg-white/[0.02]">
-                        <td className="px-4 py-3">
-                          <Link
-                            href={`/demo/teacher/students/${item.studentId}`}
-                            className="text-white/80 hover:text-emerald-400 transition-colors"
-                          >
-                            {item.studentName}
-                          </Link>
-                          <p className="text-[11px] text-white/30">{item.className}</p>
-                        </td>
-                        <td className="px-4 py-3 text-white/60 max-w-[200px] truncate">{item.title}</td>
-                        <td className="px-4 py-3">
-                          <Badge
-                            variant="outline"
-                            className={
-                              item.type === "essay"
-                                ? "bg-blue-500/10 text-blue-400 border-blue-500/20"
-                                : "bg-amber-500/10 text-amber-400 border-amber-500/20"
-                            }
-                          >
-                            {item.type}
-                          </Badge>
-                        </td>
-                        <td className="px-4 py-3">
-                          {item.status === "marked" ? (
-                            <span className={scoreColor(pct)}>
-                              {item.score}/{item.maxScore}
-                            </span>
-                          ) : (
-                            <span className="text-white/30">--</span>
-                          )}
-                        </td>
-                        <td className="px-4 py-3">
-                          {item.status === "marked" ? (
-                            <span className="inline-flex items-center gap-1 text-xs text-green-400">
-                              <CheckCircle className="h-3 w-3" /> Marked
-                            </span>
-                          ) : (
-                            <span className="inline-flex items-center gap-1 text-xs text-amber-400">
-                              <Clock className="h-3 w-3" /> Needs Marking
-                            </span>
-                          )}
-                        </td>
-                        <td className="px-4 py-3 text-white/40 text-xs">{item.date}</td>
-                      </tr>
-                    )
-                  })}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </section>
+                  {/* RAG indicator bar */}
+                  <div className="h-1.5 rounded-full overflow-hidden flex mb-3">
+                    <div className="bg-green-500 transition-all" style={{ width: `${rag.green}%` }} />
+                    <div className="bg-amber-500 transition-all" style={{ width: `${rag.amber}%` }} />
+                    <div className="bg-red-500 transition-all" style={{ width: `${rag.red}%` }} />
+                  </div>
 
-        {/* ── Class Performance Snapshot ──────────────────────────────── */}
-        <section className="mb-10">
-          <h2 className="text-lg font-medium text-white/80 mb-4 flex items-center gap-2">
-            <BarChart3 className="h-5 w-5 text-cyan-400" />
-            Class Performance Snapshot
-          </h2>
-          <Card className="border-white/5 bg-white/[0.02]">
-            <CardContent className="p-6">
-              <div className="space-y-4">
-                {TEACHER_DEMO_CLASSES.map((cls: DemoClass) => (
-                  <div key={cls.id} className="flex items-center gap-4">
-                    <div className="w-44 shrink-0">
-                      <Link
-                        href={`/demo/teacher/classes/${cls.id}`}
-                        className="text-sm text-white/70 hover:text-emerald-400 transition-colors"
-                      >
-                        {cls.name}
-                      </Link>
-                    </div>
-                    <div className="flex-1 flex items-center gap-3">
-                      <div className="flex-1 h-6 rounded bg-white/5 overflow-hidden relative">
-                        <div
-                          className={`h-full rounded transition-all ${progressBarColor(cls.avgScore)}`}
-                          style={{ width: `${cls.avgScore}%` }}
-                        />
-                        <span className="absolute inset-0 flex items-center justify-center text-[10px] font-medium text-white/70">
-                          {cls.avgScore}%
-                        </span>
-                      </div>
-                      <div className="w-20 text-right">
-                        <span className="text-xs text-white/40">{cls.studentCount} students</span>
-                      </div>
-                    </div>
-                    {(cls.atRiskCount ?? 0) > 0 && (
-                      <span className="text-xs text-red-400 flex items-center gap-1 shrink-0">
-                        <AlertTriangle className="h-3 w-3" />
-                        {cls.atRiskCount}
+                  {/* Bottom stats */}
+                  <div className="flex items-center justify-between text-xs text-white/40">
+                    <span className="flex items-center gap-1">
+                      <Users className="h-3 w-3" /> {cls.studentCount} students
+                    </span>
+                    {atRiskCount > 0 && (
+                      <span className="text-red-400 flex items-center gap-1">
+                        <AlertTriangle className="h-3 w-3" /> {atRiskCount} at risk
                       </span>
                     )}
                   </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
+                </Link>
+              )
+            })}
+          </div>
         </section>
 
-        {/* ── Students Needing Attention ──────────────────────────────── */}
-        {studentsNeedingAttention.length > 0 && (
-          <section className="mb-10">
+        {/* ── Today's Overview + Assignments Due (side by side) ──────── */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
+          {/* Today's Lessons - timeline style */}
+          <section>
             <h2 className="text-lg font-medium text-white/80 mb-4 flex items-center gap-2">
-              <XCircle className="h-5 w-5 text-amber-400" />
-              Students Needing Attention
+              <CalendarDays className="h-5 w-5 text-emerald-400" />
+              Today&apos;s Lessons
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {studentsNeedingAttention.map((student: any) => (
-                <Link
-                  key={`attention-${student.id}`}
-                  href={`/demo/teacher/students/${student.id}`}
-                  className="group rounded-xl border border-amber-500/10 bg-amber-500/[0.03] p-4 transition-all hover:border-amber-500/20 hover:bg-amber-500/[0.05]"
-                >
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm font-medium text-white/90">{student.name}</span>
-                    <span className="text-xs text-white/30">{student.className}</span>
-                  </div>
-                  <p className="text-xs text-amber-400/80 mb-2">{student.attentionReason}</p>
-                  <div className="flex items-center gap-4 text-xs text-white/40">
-                    <span>Avg Score: <span className={scoreColor(student.averageScore)}>{student.averageScore}%</span></span>
-                    <span>Progress: {student.overallProgress}%</span>
-                    <span>Last active: {student.lastActive}</span>
-                  </div>
-                </Link>
-              ))}
+            <div className="rounded-xl border border-white/5 bg-white/[0.02] p-4">
+              <div className="relative">
+                {/* Timeline line */}
+                <div className="absolute left-[18px] top-3 bottom-3 w-px bg-white/5" />
+                <div className="space-y-4">
+                  {TEACHER_DEMO_LESSONS.map((lesson: any, idx: number) => (
+                    <div key={lesson.id} className="flex items-start gap-4 relative">
+                      {/* Timeline dot */}
+                      <div className={`w-[9px] h-[9px] rounded-full mt-1.5 shrink-0 relative z-10 ${idx === 0 ? "bg-emerald-400 ring-2 ring-emerald-400/20" : "bg-white/20"}`} />
+                      <div className="flex-1 rounded-lg border border-white/5 bg-white/[0.02] p-3">
+                        <div className="flex items-center justify-between mb-1">
+                          <p className="text-sm font-medium text-white/90">{lesson.className}</p>
+                          <span className="text-[11px] text-emerald-400/70 flex items-center gap-1">
+                            <Clock className="h-3 w-3" /> {lesson.time}
+                          </span>
+                        </div>
+                        <p className="text-xs text-white/40">{lesson.topic}</p>
+                        <p className="text-[11px] text-white/20 mt-0.5">{lesson.room}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </section>
-        )}
+
+          {/* Assignments Due */}
+          <section>
+            <h2 className="text-lg font-medium text-white/80 mb-4 flex items-center gap-2">
+              <FileText className="h-5 w-5 text-blue-400" />
+              Assignments Due
+            </h2>
+            <div className="rounded-xl border border-white/5 bg-white/[0.02] p-4 space-y-3">
+              {assignmentsDueThisWeek.map((assignment) => {
+                const pct = Math.round((assignment.submittedCount / assignment.totalCount) * 100)
+                return (
+                  <div key={assignment.id} className="rounded-lg border border-white/5 bg-white/[0.02] p-3">
+                    <div className="flex items-center justify-between mb-1">
+                      <p className="text-sm font-medium text-white/90">{assignment.title}</p>
+                      <Badge variant="outline" className="text-[10px] border-blue-500/20 text-blue-400/70">{assignment.dueDate}</Badge>
+                    </div>
+                    <p className="text-xs text-white/30 mb-2">{assignment.className}</p>
+                    <div className="flex items-center gap-3">
+                      <div className="flex-1 h-1.5 rounded-full bg-white/5 overflow-hidden">
+                        <div className={`h-1.5 rounded-full transition-all ${scoreBg(pct)}`} style={{ width: `${pct}%` }} />
+                      </div>
+                      <span className="text-[11px] text-white/50 whitespace-nowrap">
+                        {assignment.submittedCount}/{assignment.totalCount}
+                      </span>
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          </section>
+        </div>
+
+        {/* ── Marking Queue ──────────────────────────────────────────── */}
+        <section className="mb-10">
+          <h2 className="text-lg font-medium text-white/80 mb-4 flex items-center gap-2">
+            <ClipboardCheck className="h-5 w-5 text-purple-400" />
+            Marking Queue
+          </h2>
+          <div className="rounded-xl border border-white/5 bg-white/[0.02] p-5">
+            {/* Progress summary */}
+            <div className="flex items-center gap-4 mb-5">
+              <div className="flex-1">
+                <div className="flex items-center justify-between text-sm mb-2">
+                  <span className="text-white/50">{markedCount} marked / {totalSubmissions} total</span>
+                  <span className="text-white/70 font-medium">{Math.round((markedCount / totalSubmissions) * 100)}%</span>
+                </div>
+                <div className="h-2 rounded-full bg-white/5 overflow-hidden">
+                  <div className="h-2 rounded-full bg-gradient-to-r from-purple-500 to-purple-400 transition-all" style={{ width: `${(markedCount / totalSubmissions) * 100}%` }} />
+                </div>
+              </div>
+            </div>
+
+            {/* Pending items list */}
+            {pendingMarking.length > 0 ? (
+              <div className="space-y-2">
+                <p className="text-xs text-white/30 font-medium uppercase tracking-wider mb-3">Needs Marking</p>
+                {pendingMarking.map((item) => {
+                  const student = DEMO_STUDENTS.find((s) => s.name === item.studentName)
+                  return (
+                    <div key={item.id} className="flex items-center gap-3 rounded-lg border border-purple-500/10 bg-purple-500/[0.03] p-3">
+                      <InitialsAvatar name={item.studentName} color="bg-purple-500/15" />
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm text-white/80 truncate">{item.assignment}</p>
+                        <p className="text-[11px] text-white/30">{item.studentName} -- submitted {item.date}</p>
+                      </div>
+                      {student && (
+                        <Button
+                          render={<Link href={`/demo/teacher/students/${student.id}`} />}
+                          variant="ghost"
+                          size="sm"
+                          className="text-purple-400 hover:text-purple-300 text-xs shrink-0"
+                        >
+                          View
+                        </Button>
+                      )}
+                    </div>
+                  )
+                })}
+              </div>
+            ) : (
+              <div className="text-center py-4">
+                <CheckCircle className="h-6 w-6 text-green-400 mx-auto mb-2" />
+                <p className="text-sm text-white/50">All caught up!</p>
+              </div>
+            )}
+          </div>
+        </section>
+
+        {/* ── Class Performance ───────────────────────────────────────── */}
+        <section className="mb-10">
+          <h2 className="text-lg font-medium text-white/80 mb-4 flex items-center gap-2">
+            <BarChart3 className="h-5 w-5 text-cyan-400" />
+            Class Performance
+          </h2>
+          <div className="rounded-xl border border-white/5 bg-white/[0.02] p-5 space-y-4">
+            {TEACHER_DEMO_CLASSES.map((cls: DemoClass) => {
+              const atRiskCount = DEMO_STUDENTS.filter((s) => s.className === cls.name && s.atRisk).length
+              return (
+                <div key={cls.id} className="flex items-center gap-4">
+                  <Link
+                    href={`/demo/teacher/classes/${cls.id}`}
+                    className="w-44 shrink-0 text-sm text-white/70 hover:text-emerald-400 transition-colors truncate"
+                  >
+                    {cls.name}
+                  </Link>
+                  <div className="flex-1 flex items-center gap-3">
+                    <div className="flex-1 h-6 rounded bg-white/5 overflow-hidden relative">
+                      <div
+                        className={`h-full rounded transition-all ${scoreBg(cls.avgScore)}`}
+                        style={{ width: `${cls.avgScore}%` }}
+                      />
+                      <span className="absolute inset-0 flex items-center justify-center text-[10px] font-medium text-white/70">
+                        {cls.avgScore}%
+                      </span>
+                    </div>
+                    <span className="w-20 text-right text-xs text-white/40">{cls.studentCount} students</span>
+                  </div>
+                  {atRiskCount > 0 && (
+                    <span className="text-xs text-red-400 flex items-center gap-1 shrink-0">
+                      <AlertTriangle className="h-3 w-3" /> {atRiskCount}
+                    </span>
+                  )}
+                </div>
+              )
+            })}
+          </div>
+        </section>
 
         {/* ── Quick Actions ───────────────────────────────────────────── */}
         <section className="mb-10">
@@ -577,39 +431,48 @@ export default function TeacherDemoDashboard() {
               {
                 icon: Hammer,
                 label: "Lesson Builder",
+                desc: "Plan and create lessons",
                 href: "/demo/teacher/lessons",
-                color: "from-purple-500/10 to-purple-500/5",
+                gradient: "from-purple-500/10 to-purple-500/5",
                 border: "border-purple-500/10 hover:border-purple-500/20",
+                iconColor: "text-purple-400",
               },
               {
                 icon: Users,
                 label: "My Students",
+                desc: "View student profiles",
                 href: "/demo/teacher/students",
-                color: "from-emerald-500/10 to-emerald-500/5",
+                gradient: "from-emerald-500/10 to-emerald-500/5",
                 border: "border-emerald-500/10 hover:border-emerald-500/20",
+                iconColor: "text-emerald-400",
               },
               {
                 icon: FolderOpen,
                 label: "Resources",
+                desc: "Teaching materials",
                 href: "/demo/teacher/resources",
-                color: "from-amber-500/10 to-amber-500/5",
+                gradient: "from-amber-500/10 to-amber-500/5",
                 border: "border-amber-500/10 hover:border-amber-500/20",
+                iconColor: "text-amber-400",
               },
               {
                 icon: BookOpen,
                 label: "Mark Book",
+                desc: "Grades and records",
                 href: "/demo/teacher/classes",
-                color: "from-blue-500/10 to-blue-500/5",
+                gradient: "from-blue-500/10 to-blue-500/5",
                 border: "border-blue-500/10 hover:border-blue-500/20",
+                iconColor: "text-blue-400",
               },
             ].map((action) => (
               <Link
                 key={action.label}
                 href={action.href}
-                className={`flex flex-col items-center gap-3 rounded-xl border bg-gradient-to-b ${action.color} ${action.border} p-5 transition-all hover:scale-[1.02]`}
+                className={`flex flex-col items-center gap-2 rounded-xl border bg-gradient-to-b ${action.gradient} ${action.border} p-5 transition-all hover:scale-[1.02]`}
               >
-                <action.icon className="h-6 w-6 text-white/60" />
-                <span className="text-sm text-white/70">{action.label}</span>
+                <action.icon className={`h-7 w-7 ${action.iconColor}`} />
+                <span className="text-sm font-medium text-white/80">{action.label}</span>
+                <span className="text-[11px] text-white/30">{action.desc}</span>
               </Link>
             ))}
           </div>

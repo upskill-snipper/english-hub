@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { DEMO_STUDENTS, DEMO_CLASSES } from "@/data/demo-data"
+import { useScrollRestore } from "@/hooks/useScrollRestore"
 
 // ---------------------------------------------------------------------------
 // Derive enriched student data from the base demo data
@@ -202,6 +203,7 @@ const YEAR_OPTIONS = [7, 8, 9, 10, 11, 12, 13]
 const STATUS_OPTIONS: StudentStatus[] = ["On Track", "Needs Support", "At Risk", "Excelling"]
 
 export default function StudentsPage() {
+  useScrollRestore()
   const [search, setSearch] = useState("")
   const [yearFilter, setYearFilter] = useState<number | "all">("all")
   const [statusFilter, setStatusFilter] = useState<StudentStatus | "all">("all")

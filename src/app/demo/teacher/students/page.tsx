@@ -5,6 +5,7 @@ import { useState } from "react"
 import Link from "next/link"
 import { DEMO_STUDENTS } from "@/data/demo-data"
 import DemoBanner from "@/components/demo/DemoBanner"
+import { useScrollRestore } from "@/hooks/useScrollRestore"
 
 // Mrs Mitchell teaches these three classes in the demo
 const MITCHELL_CLASSES = [
@@ -50,6 +51,7 @@ function statusBadge(atRisk: boolean) {
 }
 
 export default function TeacherStudentsPage() {
+  useScrollRestore()
   const [classFilter, setClassFilter] = useState<MitchellClassId | "all">("all")
 
   const filtered =
