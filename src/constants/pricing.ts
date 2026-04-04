@@ -4,6 +4,10 @@ export const PRICING = {
   CURRENCY: '£',
   TRIAL_DAYS: 30,
   TRIAL_TEXT: 'First month free',
+  SCHOOL_ANNUAL: 1500,
+  SCHOOL_CURRENCY: '£',
+  FOUNDER_PROMO_CODE: 'FOUNDER',
+  FOUNDER_ACCESS_UNTIL: '2026-08-31',
 } as const
 
 export const PRICING_DISPLAY = {

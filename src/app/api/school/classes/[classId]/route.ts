@@ -51,6 +51,11 @@ export async function GET(
       .eq('school_id', member.school_id)
       .single()
 
+    // Teachers may only access classes they are assigned to
+    if (!classError && classData && member.role === 'teacher' && classData.teacher_id !== member.id) {
+      return NextResponse.json({ error: 'Forbidden: you are not assigned to this class' }, { status: 403 })
+    }
+
     if (classError || !classData) {
       return NextResponse.json({ error: 'Class not found' }, { status: 404 })
     }
@@ -213,7 +218,7 @@ export async function PATCH(
     }
 
     // Only allow specific fields to be updated
-    const allowedFields = ['name', 'year_group', 'exam_board', 'academic_year']
+    const allowedFields = ['name', 'year_group', 'exam_board', 'teacher_id', 'academic_year']
     const updates: Record<string, unknown> = {}
     for (const field of allowedFields) {
       if (body[field] !== undefined) {
@@ -237,6 +242,21 @@ export async function PATCH(
     }
 
     const admin = createServiceRoleClient()
+
+    // Validate teacher_id belongs to the same school if provided
+    if (updates.teacher_id !== undefined && updates.teacher_id !== null) {
+      const { data: assignedMember, error: memberErr } = await admin
+        .from('school_members')
+        .select('id')
+        .eq('id', updates.teacher_id as string)
+        .eq('school_id', member.school_id)
+        .eq('invite_status', 'accepted')
+        .single()
+      if (memberErr || !assignedMember) {
+        return NextResponse.json({ error: 'Assigned teacher is not a member of this school' }, { status: 422 })
+      }
+    }
+
     const { data: updated, error: updateError } = await admin
       .from('classes')
       .update(updates)
@@ -276,9 +296,9 @@ export async function DELETE(
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    const member = await verifySchoolMember(user.id, ['admin', 'head_of_department'])
+    const member = await verifySchoolMember(user.id, ['admin'])
     if (!member) {
-      return NextResponse.json({ error: 'Forbidden: insufficient permissions' }, { status: 403 })
+      return NextResponse.json({ error: 'Forbidden: school admin only' }, { status: 403 })
     }
 
     const { classId } = params
@@ -306,3 +326,6 @@ export async function DELETE(
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
   }
 }
+
+// PUT is an alias for PATCH — the spec exposes PUT /api/school/classes/[id]
+export const PUT = PATCH

@@ -553,3 +553,427 @@ ${ctaButton("Accept invitation", inviteUrl)}
     { isSubscription: false }
   );
 }
+
+// ═══════════════════════════════════════════════════════════════════════════
+// SCHOOL TEMPLATES
+// ═══════════════════════════════════════════════════════════════════════════
+
+// ─── p. School welcome (sent to admin after registration) ────────────────
+
+export function schoolWelcomeEmail(params: {
+  adminName: string;
+  schoolName: string;
+  loginUrl: string;
+  accessType: "FOUNDER" | "TRIAL" | string;
+  accessUntil: Date | string;
+}): { subject: string; html: string; text: string } {
+  const { adminName, schoolName, loginUrl, accessType, accessUntil } = params;
+
+  const isFounder = accessType === "FOUNDER";
+  const badgeLabel = isFounder ? "FOUNDER Access" : "Free Trial";
+  const badgeColor = isFounder ? "#1A5276" : "#117A65";
+
+  const accessBlock = isFounder
+    ? `<div style="background:${BRAND_LIGHT};border-left:4px solid ${BRAND_COLOR};border-radius:4px;padding:20px;margin:20px 0;">
+  <p style="margin:0 0 8px 0;font-size:16px;font-weight:700;color:${BRAND_COLOR};">You have FOUNDER access</p>
+  <p style="margin:0;font-size:15px;line-height:1.6;">
+    As a founding school partner, you have been granted extended access to The English Hub at a locked-in preferential rate. Your access runs until <strong>${formatDate(accessUntil)}</strong>.
+  </p>
+</div>`
+    : `<div style="background:#E8F8F5;border-left:4px solid #117A65;border-radius:4px;padding:20px;margin:20px 0;">
+  <p style="margin:0 0 8px 0;font-size:16px;font-weight:700;color:#117A65;">Your free trial is active</p>
+  <p style="margin:0;font-size:15px;line-height:1.6;">
+    You have full access to all school features until <strong>${formatDate(accessUntil)}</strong>. After your trial we will be in touch to discuss next steps.
+  </p>
+</div>`;
+
+  const subject = isFounder
+    ? `Welcome to The English Hub, ${schoolName} - FOUNDER Access Confirmed`
+    : `Welcome to The English Hub, ${schoolName} - Your Trial Is Active`;
+
+  const html = layout(
+    subject,
+    `<h2 style="color:${BRAND_COLOR};margin:0 0 8px 0;">Welcome to The English Hub, ${adminName}!</h2>
+<p style="margin:0 0 20px 0;">
+  <span style="display:inline-block;background:${badgeColor};color:#ffffff;font-size:12px;font-weight:700;padding:4px 10px;border-radius:20px;letter-spacing:0.5px;">${badgeLabel}</span>
+</p>
+<p style="font-size:16px;line-height:1.6;">
+  Thank you for registering <strong>${schoolName}</strong> with The English Hub. We're delighted to have you on board.
+</p>
+${accessBlock}
+<p style="font-size:16px;line-height:1.6;font-weight:600;">Getting started</p>
+<ul style="font-size:15px;line-height:1.8;padding-left:20px;margin:0 0 20px 0;">
+  <li>Log in to your school admin dashboard to manage teachers and students</li>
+  <li>Invite teachers using the teacher management section</li>
+  <li>Import students individually or in bulk via CSV</li>
+  <li>Track progress and usage from the school analytics panel</li>
+</ul>
+${ctaButton("Go to your school dashboard", loginUrl)}
+<p style="font-size:13px;color:#888888;line-height:1.5;">
+  If you have any questions, our team is here to help. Reply to this email or visit our <a href="${BASE_URL}/contact" style="color:${BRAND_COLOR};">contact page</a>.
+</p>`,
+    { isSubscription: false }
+  );
+
+  const text = [
+    `Welcome to The English Hub, ${adminName}!`,
+    "",
+    `School: ${schoolName}`,
+    `Access type: ${badgeLabel}`,
+    `Access until: ${formatDate(accessUntil)}`,
+    "",
+    "Getting started:",
+    "- Log in to your school admin dashboard to manage teachers and students",
+    "- Invite teachers using the teacher management section",
+    "- Import students individually or in bulk via CSV",
+    "- Track progress and usage from the school analytics panel",
+    "",
+    `Log in here: ${loginUrl}`,
+    "",
+    "If you have any questions, reply to this email or visit https://theenglishhub.app/contact",
+  ].join("\n");
+
+  return { subject, html, text };
+}
+
+// ─── q. Teacher invite (credentials sent to new teacher) ─────────────────
+
+export function teacherInviteEmail(params: {
+  teacherName: string;
+  schoolName: string;
+  loginEmail: string;
+  temporaryPassword: string;
+  loginUrl: string;
+  adminName: string;
+}): { subject: string; html: string; text: string } {
+  const { teacherName, schoolName, loginEmail, temporaryPassword, loginUrl, adminName } = params;
+
+  const subject = `You have been added to The English Hub - ${schoolName}`;
+
+  const html = layout(
+    subject,
+    `<h2 style="color:${BRAND_COLOR};margin:0 0 16px 0;">Welcome to The English Hub, ${teacherName}!</h2>
+<p style="font-size:16px;line-height:1.6;">
+  <strong>${adminName}</strong> at <strong>${schoolName}</strong> has added you to The English Hub. You now have a teacher account where you can view your students' work and feedback.
+</p>
+<p style="font-size:16px;line-height:1.6;font-weight:600;">Your login details</p>
+<div style="background:${BRAND_LIGHT};border-radius:8px;padding:20px;margin:16px 0;">
+  <table role="presentation" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+      <td style="font-size:15px;color:#555;padding:6px 0;width:40%;">Email</td>
+      <td style="font-size:15px;font-weight:600;padding:6px 0;">${loginEmail}</td>
+    </tr>
+    <tr>
+      <td style="font-size:15px;color:#555;padding:6px 0;">Temporary password</td>
+      <td style="font-size:15px;font-weight:700;padding:6px 0;letter-spacing:1px;color:${BRAND_COLOR};">${temporaryPassword}</td>
+    </tr>
+  </table>
+</div>
+<p style="font-size:16px;line-height:1.6;">
+  For your security, please change your password the first time you log in.
+</p>
+${ctaButton("Log in to The English Hub", loginUrl)}
+<p style="font-size:16px;line-height:1.6;font-weight:600;">What you can do as a teacher</p>
+<ul style="font-size:15px;line-height:1.8;padding-left:20px;margin:0 0 20px 0;">
+  <li>View your students' essays and AI feedback</li>
+  <li>Monitor individual and class progress</li>
+  <li>Track grades and improvement trends over time</li>
+</ul>
+<p style="font-size:13px;color:#888888;line-height:1.5;">
+  If you weren't expecting this email or have any questions, please contact your school admin or reach us at <a href="${BASE_URL}/contact" style="color:${BRAND_COLOR};">The English Hub support</a>.
+</p>`,
+    { isSubscription: false }
+  );
+
+  const text = [
+    `Welcome to The English Hub, ${teacherName}!`,
+    "",
+    `${adminName} at ${schoolName} has added you to The English Hub.`,
+    "",
+    "Your login details:",
+    `  Email: ${loginEmail}`,
+    `  Temporary password: ${temporaryPassword}`,
+    "",
+    "Please change your password when you first log in.",
+    "",
+    `Log in here: ${loginUrl}`,
+    "",
+    "If you weren't expecting this, contact your school admin or visit https://theenglishhub.app/contact",
+  ].join("\n");
+
+  return { subject, html, text };
+}
+
+// ─── r. Student welcome (credentials sent to new student) ────────────────
+
+export function studentWelcomeEmail(params: {
+  studentName: string;
+  schoolName: string;
+  loginEmail: string;
+  temporaryPassword: string;
+  loginUrl: string;
+}): { subject: string; html: string; text: string } {
+  const { studentName, schoolName, loginEmail, temporaryPassword, loginUrl } = params;
+
+  const subject = `Your English Hub account is ready - ${schoolName}`;
+
+  const html = layout(
+    subject,
+    `<h2 style="color:${BRAND_COLOR};margin:0 0 16px 0;">Hi ${studentName}, your account is ready!</h2>
+<p style="font-size:16px;line-height:1.6;">
+  Your school, <strong>${schoolName}</strong>, has set up an English Hub account for you. You can now submit essays and get instant AI-powered feedback on your English Language and Literature work.
+</p>
+<p style="font-size:16px;line-height:1.6;font-weight:600;">Your login details</p>
+<div style="background:${BRAND_LIGHT};border-radius:8px;padding:20px;margin:16px 0;">
+  <table role="presentation" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+      <td style="font-size:15px;color:#555;padding:6px 0;width:40%;">Email</td>
+      <td style="font-size:15px;font-weight:600;padding:6px 0;">${loginEmail}</td>
+    </tr>
+    <tr>
+      <td style="font-size:15px;color:#555;padding:6px 0;">Temporary password</td>
+      <td style="font-size:15px;font-weight:700;padding:6px 0;letter-spacing:1px;color:${BRAND_COLOR};">${temporaryPassword}</td>
+    </tr>
+  </table>
+</div>
+<p style="font-size:16px;line-height:1.6;">
+  Please change your password after your first login to keep your account secure.
+</p>
+${ctaButton("Log in and get started", loginUrl)}
+<p style="font-size:16px;line-height:1.6;font-weight:600;">What you can do</p>
+<ul style="font-size:15px;line-height:1.8;padding-left:20px;margin:0 0 20px 0;">
+  <li>Submit essays for instant AI feedback</li>
+  <li>See detailed marks and suggestions for improvement</li>
+  <li>Track your progress over time</li>
+  <li>Practise for your GCSE and A Level exams</li>
+</ul>
+<p style="font-size:13px;color:#888888;line-height:1.5;">
+  If you have any trouble logging in, speak to your teacher or contact us at <a href="${BASE_URL}/contact" style="color:${BRAND_COLOR};">The English Hub support</a>.
+</p>`,
+    { isSubscription: false }
+  );
+
+  const text = [
+    `Hi ${studentName}, your English Hub account is ready!`,
+    "",
+    `Your school, ${schoolName}, has set up an account for you.`,
+    "",
+    "Your login details:",
+    `  Email: ${loginEmail}`,
+    `  Temporary password: ${temporaryPassword}`,
+    "",
+    "Please change your password after your first login.",
+    "",
+    `Log in here: ${loginUrl}`,
+    "",
+    "What you can do:",
+    "- Submit essays for instant AI feedback",
+    "- See detailed marks and suggestions for improvement",
+    "- Track your progress over time",
+    "- Practise for your GCSE and A Level exams",
+    "",
+    "Need help? Visit https://theenglishhub.app/contact",
+  ].join("\n");
+
+  return { subject, html, text };
+}
+
+// ─── s. FOUNDER access expiry warning (30 days before) ───────────────────
+
+export function founderAccessExpiryWarningEmail(params: {
+  adminName: string;
+  schoolName: string;
+  accessUntil: Date | string;
+  renewalUrl: string;
+  renewalPrice: string;
+}): { subject: string; html: string; text: string } {
+  const { adminName, schoolName, accessUntil, renewalUrl, renewalPrice } = params;
+
+  const subject = `Action required: Your FOUNDER access expires on ${formatDate(accessUntil)} - ${schoolName}`;
+
+  const html = layout(
+    subject,
+    `<h2 style="color:${BRAND_COLOR};margin:0 0 16px 0;">Your FOUNDER access expires soon, ${adminName}</h2>
+<p style="font-size:16px;line-height:1.6;">
+  This is a reminder that <strong>${schoolName}</strong>'s FOUNDER access to The English Hub expires on <strong>${formatDate(accessUntil)}</strong> &mdash; that's 30 days away.
+</p>
+<div style="background:#FEF9E7;border-left:4px solid #D4AC0D;border-radius:4px;padding:20px;margin:20px 0;">
+  <p style="margin:0 0 8px 0;font-size:16px;font-weight:700;color:#B7950B;">Don't lose access to The English Hub</p>
+  <p style="margin:0;font-size:15px;line-height:1.6;">
+    After <strong>${formatDate(accessUntil)}</strong>, your school's account will be suspended unless you renew. All teacher and student accounts will lose access.
+  </p>
+</div>
+<p style="font-size:16px;line-height:1.6;font-weight:600;">Renewing is straightforward</p>
+<div style="background:${BRAND_LIGHT};border-radius:8px;padding:20px;margin:16px 0;">
+  <table role="presentation" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+      <td style="font-size:15px;color:#555;padding:6px 0;">School</td>
+      <td style="font-size:15px;font-weight:600;text-align:right;padding:6px 0;">${schoolName}</td>
+    </tr>
+    <tr>
+      <td style="font-size:15px;color:#555;padding:6px 0;">Access expires</td>
+      <td style="font-size:15px;font-weight:600;text-align:right;padding:6px 0;">${formatDate(accessUntil)}</td>
+    </tr>
+    <tr>
+      <td style="font-size:15px;color:#555;padding:6px 0;">Renewal price</td>
+      <td style="font-size:15px;font-weight:700;text-align:right;padding:6px 0;color:${BRAND_COLOR};">${renewalPrice}</td>
+    </tr>
+  </table>
+</div>
+${ctaButton("Renew now", renewalUrl)}
+<p style="font-size:13px;color:#888888;line-height:1.5;">
+  Questions about renewal? Reply to this email or visit our <a href="${BASE_URL}/contact" style="color:${BRAND_COLOR};">contact page</a> and we'll be happy to help.
+</p>`,
+    { isSubscription: false }
+  );
+
+  const text = [
+    `Hi ${adminName},`,
+    "",
+    `Your FOUNDER access for ${schoolName} expires on ${formatDate(accessUntil)} - that's 30 days away.`,
+    "",
+    "After that date your school's account will be suspended unless you renew.",
+    "",
+    `Renewal price: ${renewalPrice}`,
+    "",
+    `Renew here: ${renewalUrl}`,
+    "",
+    "Questions? Reply to this email or visit https://theenglishhub.app/contact",
+  ].join("\n");
+
+  return { subject, html, text };
+}
+
+// ─── t. FOUNDER access expired ───────────────────────────────────────────
+
+export function founderAccessExpiredEmail(params: {
+  adminName: string;
+  schoolName: string;
+  renewalUrl: string;
+  renewalPrice: string;
+}): { subject: string; html: string; text: string } {
+  const { adminName, schoolName, renewalUrl, renewalPrice } = params;
+
+  const subject = `Your FOUNDER access has expired - ${schoolName}`;
+
+  const html = layout(
+    subject,
+    `<h2 style="color:#c0392b;margin:0 0 16px 0;">Your FOUNDER access has expired</h2>
+<p style="font-size:16px;line-height:1.6;">
+  Hi ${adminName}, the FOUNDER access for <strong>${schoolName}</strong> has now expired. Teacher and student accounts at your school no longer have access to The English Hub.
+</p>
+<div style="background:#FDEDEC;border-left:4px solid #c0392b;border-radius:4px;padding:20px;margin:20px 0;">
+  <p style="margin:0 0 8px 0;font-size:16px;font-weight:700;color:#c0392b;">Access is currently suspended</p>
+  <p style="margin:0;font-size:15px;line-height:1.6;">
+    No data has been deleted. All essays, feedback, and student records are safe. Renew to restore access immediately.
+  </p>
+</div>
+<p style="font-size:16px;line-height:1.6;font-weight:600;">Restore access today</p>
+<div style="background:${BRAND_LIGHT};border-radius:8px;padding:20px;margin:16px 0;">
+  <table role="presentation" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+      <td style="font-size:15px;color:#555;padding:6px 0;">School</td>
+      <td style="font-size:15px;font-weight:600;text-align:right;padding:6px 0;">${schoolName}</td>
+    </tr>
+    <tr>
+      <td style="font-size:15px;color:#555;padding:6px 0;">Renewal price</td>
+      <td style="font-size:15px;font-weight:700;text-align:right;padding:6px 0;color:${BRAND_COLOR};">${renewalPrice}</td>
+    </tr>
+  </table>
+</div>
+${ctaButton("Renew and restore access", renewalUrl)}
+<p style="font-size:13px;color:#888888;line-height:1.5;">
+  Need help or want to discuss your options? Reply to this email or visit our <a href="${BASE_URL}/contact" style="color:${BRAND_COLOR};">contact page</a>.
+</p>`,
+    { isSubscription: false }
+  );
+
+  const text = [
+    `Hi ${adminName},`,
+    "",
+    `The FOUNDER access for ${schoolName} has expired.`,
+    "",
+    "Teacher and student accounts at your school no longer have access to The English Hub.",
+    "",
+    "No data has been deleted - renew to restore access immediately.",
+    "",
+    `Renewal price: ${renewalPrice}`,
+    "",
+    `Renew here: ${renewalUrl}`,
+    "",
+    "Need help? Reply to this email or visit https://theenglishhub.app/contact",
+  ].join("\n");
+
+  return { subject, html, text };
+}
+
+// ─── u. Bulk import complete (sent to admin) ─────────────────────────────
+
+export function schoolBulkImportCompleteEmail(params: {
+  adminName: string;
+  schoolName: string;
+  importCount: number;
+  importType: "students" | "teachers" | string;
+  downloadUrl: string;
+}): { subject: string; html: string; text: string } {
+  const { adminName, schoolName, importCount, importType, downloadUrl } = params;
+
+  const typeLabel = importType.charAt(0).toUpperCase() + importType.slice(1).toLowerCase();
+  const subject = `Bulk import complete - ${importCount} ${importType} added to ${schoolName}`;
+
+  const html = layout(
+    subject,
+    `<h2 style="color:${BRAND_COLOR};margin:0 0 16px 0;">Bulk import complete, ${adminName}!</h2>
+<p style="font-size:16px;line-height:1.6;">
+  The bulk import for <strong>${schoolName}</strong> has finished. Here's a summary:
+</p>
+<div style="background:${BRAND_LIGHT};border-radius:8px;padding:20px;margin:20px 0;">
+  <table role="presentation" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+      <td style="font-size:15px;color:#555;padding:6px 0;">School</td>
+      <td style="font-size:15px;font-weight:600;text-align:right;padding:6px 0;">${schoolName}</td>
+    </tr>
+    <tr>
+      <td style="font-size:15px;color:#555;padding:6px 0;">Import type</td>
+      <td style="font-size:15px;font-weight:600;text-align:right;padding:6px 0;">${typeLabel}</td>
+    </tr>
+    <tr>
+      <td style="font-size:15px;color:#555;padding:6px 0;">Records imported</td>
+      <td style="font-size:22px;font-weight:700;text-align:right;padding:6px 0;color:${BRAND_COLOR};">${importCount.toLocaleString()}</td>
+    </tr>
+  </table>
+</div>
+<p style="font-size:16px;line-height:1.6;">
+  A full import report including any skipped or failed rows is available to download below. We recommend reviewing it to make sure everything looks correct.
+</p>
+${ctaButton("Download import report", downloadUrl)}
+<p style="font-size:16px;line-height:1.6;">
+  ${importType === "students" || importType === "teachers"
+    ? `Each imported ${importType.replace(/s$/, "")} has received a welcome email with their login credentials.`
+    : "Imported accounts have been notified with their login credentials."}
+</p>
+<p style="font-size:13px;color:#888888;line-height:1.5;">
+  The download link expires in <strong>7 days</strong>. If you need a new report after that, you can re-run the export from your admin dashboard.
+  If you have any questions, <a href="${BASE_URL}/contact" style="color:${BRAND_COLOR};">contact us</a>.
+</p>`,
+    { isSubscription: false }
+  );
+
+  const text = [
+    `Hi ${adminName},`,
+    "",
+    `The bulk import for ${schoolName} is complete.`,
+    "",
+    `Import type: ${typeLabel}`,
+    `Records imported: ${importCount.toLocaleString()}`,
+    "",
+    "A full import report is available to download:",
+    downloadUrl,
+    "",
+    "The download link expires in 7 days.",
+    "",
+    "Questions? Visit https://theenglishhub.app/contact",
+  ].join("\n");
+
+  return { subject, html, text };
+}

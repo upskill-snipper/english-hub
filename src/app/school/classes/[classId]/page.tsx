@@ -1,208 +1,664 @@
-'use client'
+"use client"
 
-import { useEffect, useState, useMemo, useCallback } from 'react'
-import { useParams, useRouter } from 'next/navigation'
-import Link from 'next/link'
+import { useState, useEffect, useCallback } from "react"
+import { useParams } from "next/navigation"
+import Link from "next/link"
 import {
   ArrowLeft,
   Users,
-  TrendingDown,
-  BarChart3,
-  AlertTriangle,
-  Lightbulb,
-  Activity,
-  Download,
-  UserPlus,
-  Loader2,
-  ArrowUp,
-  ArrowDown,
-  Minus,
-  CheckCircle,
-  Send,
   BookOpen,
-  Target,
-  Percent,
-} from 'lucide-react'
-import { cn, formatDuration } from '@/lib/utils'
-import type {
-  Class,
-  StudentAnalytics,
-  WeakArea,
-  Recommendation,
-} from '@/lib/types'
+  BarChart3,
+  Plus,
+  Download,
+  AlertTriangle,
+  TrendingUp,
+  UserMinus,
+  Search,
+  Loader2,
+  X,
+} from "lucide-react"
+import { toast } from "sonner"
+import { cn } from "@/lib/utils"
 
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-import { Skeleton } from '@/components/ui/skeleton'
-import { Separator } from '@/components/ui/separator'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
-import { StudentTable } from '@/components/school/StudentTable'
-import { WeakAreaHeatMap } from '@/components/school/WeakAreaHeatMap'
-import { TrendChart, BarChart } from '@/components/school/TrendChart'
+// ── Types ─────────────────────────────────────────────────────────────────────
 
-// ── Inline Exam Readiness Gauge ──────────────────────────────────────────────
+interface ClassDetail {
+  id: string
+  name: string
+  year_group: string | null
+  exam_board: string | null
+  teacher_id: string | null
+  teacher_name?: string | null
+  student_count: number
+  academic_year?: string | null
+}
 
-function ClassExamGauge({ score }: { score: number }) {
-  const size = 140
-  const strokeWidth = 10
-  const radius = (size - strokeWidth) / 2
-  const circumference = 2 * Math.PI * radius
-  const offset = circumference - (score / 100) * circumference
-  const color = score >= 70 ? '#22c55e' : score >= 50 ? '#f59e0b' : '#ef4444'
+interface ClassStudent {
+  student_id: string
+  full_name: string | null
+  email: string
+  year_group: string | null
+  last_activity: string | null
+  avg_quiz_score: number | null
+  modules_completed: number
+  completion_rate: number
+}
+
+interface SchoolStudent {
+  student_id: string
+  full_name: string | null
+  email: string
+  year_group: string | null
+}
+
+// ── Mock data (shown while API loads or on error) ─────────────────────────────
+
+const MOCK_CLASS: ClassDetail = {
+  id: "mock-1",
+  name: "Year 10 English — Set 1",
+  year_group: "Year 10",
+  exam_board: "AQA",
+  teacher_id: null,
+  teacher_name: "Ms. Johnson",
+  student_count: 4,
+}
+
+const MOCK_STUDENTS: ClassStudent[] = [
+  {
+    student_id: "s1",
+    full_name: "Alice Hartley",
+    email: "alice@school.ac.uk",
+    year_group: "Year 10",
+    last_activity: new Date(Date.now() - 1000 * 60 * 60 * 24).toISOString(),
+    avg_quiz_score: 78,
+    modules_completed: 12,
+    completion_rate: 80,
+  },
+  {
+    student_id: "s2",
+    full_name: "Ben Okafor",
+    email: "ben@school.ac.uk",
+    year_group: "Year 10",
+    last_activity: new Date(Date.now() - 1000 * 60 * 60 * 24 * 3).toISOString(),
+    avg_quiz_score: 54,
+    modules_completed: 8,
+    completion_rate: 53,
+  },
+  {
+    student_id: "s3",
+    full_name: "Clara Ng",
+    email: "clara@school.ac.uk",
+    year_group: "Year 10",
+    last_activity: new Date(Date.now() - 1000 * 60 * 60 * 24 * 14).toISOString(),
+    avg_quiz_score: 35,
+    modules_completed: 3,
+    completion_rate: 20,
+  },
+  {
+    student_id: "s4",
+    full_name: "Daniel Reeves",
+    email: "daniel@school.ac.uk",
+    year_group: "Year 10",
+    last_activity: new Date(Date.now() - 1000 * 60 * 60 * 2).toISOString(),
+    avg_quiz_score: 91,
+    modules_completed: 15,
+    completion_rate: 100,
+  },
+]
+
+// ── Helpers ───────────────────────────────────────────────────────────────────
+
+function boardBadgeClass(board: string | null): string {
+  switch (board) {
+    case "AQA":
+      return "bg-purple-500/10 text-purple-400 border-purple-500/20"
+    case "Edexcel":
+    case "Edexcel IGCSE":
+    case "Edexcel IAL":
+      return "bg-blue-500/10 text-blue-400 border-blue-500/20"
+    case "OCR":
+      return "bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
+    case "WJEC":
+      return "bg-red-500/10 text-red-400 border-red-500/20"
+    case "CAIE IGCSE":
+      return "bg-amber-500/10 text-amber-400 border-amber-500/20"
+    default:
+      return "bg-muted text-muted-foreground"
+  }
+}
+
+function progressBarColor(pct: number): string {
+  if (pct >= 70) return "bg-green-500"
+  if (pct >= 40) return "bg-amber-500"
+  return "bg-red-500"
+}
+
+function scoreColor(score: number | null): string {
+  if (score === null) return "text-muted-foreground"
+  if (score >= 70) return "text-green-400"
+  if (score >= 40) return "text-amber-400"
+  return "text-red-400"
+}
+
+function formatLastActive(dateStr: string | null): string {
+  if (!dateStr) return "Never active"
+  const diff = Date.now() - new Date(dateStr).getTime()
+  const days = Math.floor(diff / 86400000)
+  if (days === 0) return "Today"
+  if (days === 1) return "Yesterday"
+  if (days < 7) return `${days} days ago`
+  if (days < 30) return `${Math.floor(days / 7)}w ago`
+  return `${Math.floor(days / 30)}mo ago`
+}
+
+function isAtRisk(student: ClassStudent): boolean {
+  const noRecentActivity =
+    !student.last_activity ||
+    Date.now() - new Date(student.last_activity).getTime() > 7 * 86400000
+  return (student.avg_quiz_score !== null && student.avg_quiz_score < 40) || noRecentActivity
+}
+
+// ── CSV Export ────────────────────────────────────────────────────────────────
+
+function exportCsv(students: ClassStudent[], className: string) {
+  const header = "Name,Email,Year Group,Last Active,Progress %,Modules Completed"
+  const rows = students.map((s) =>
+    [
+      s.full_name ?? "",
+      s.email,
+      s.year_group ?? "",
+      s.last_activity ? new Date(s.last_activity).toLocaleDateString("en-GB") : "",
+      s.avg_quiz_score ?? "",
+      s.modules_completed,
+    ]
+      .map((v) => `"${String(v).replace(/"/g, '""')}"`)
+      .join(",")
+  )
+  const csv = [header, ...rows].join("\n")
+  const blob = new Blob([csv], { type: "text/csv" })
+  const url = URL.createObjectURL(blob)
+  const a = document.createElement("a")
+  a.href = url
+  a.download = `${className.replace(/\s+/g, "_")}_students.csv`
+  a.click()
+  URL.revokeObjectURL(url)
+}
+
+// ── Add Students Modal ────────────────────────────────────────────────────────
+
+interface AddStudentsModalProps {
+  classId: string
+  currentStudentIds: Set<string>
+  onClose: () => void
+  onAdded: (ids: string[]) => void
+}
+
+function AddStudentsModal({
+  classId,
+  currentStudentIds,
+  onClose,
+  onAdded,
+}: AddStudentsModalProps) {
+  const [search, setSearch] = useState("")
+  const [allStudents, setAllStudents] = useState<SchoolStudent[]>([])
+  const [loadingStudents, setLoadingStudents] = useState(true)
+  const [selected, setSelected] = useState<Set<string>>(new Set())
+  const [adding, setAdding] = useState(false)
+
+  useEffect(() => {
+    async function load() {
+      try {
+        const res = await fetch("/api/school/students")
+        if (res.ok) {
+          const data = await res.json()
+          setAllStudents(data.students ?? [])
+        }
+      } catch {
+        // fallback: empty list
+      } finally {
+        setLoadingStudents(false)
+      }
+    }
+    load()
+  }, [])
+
+  const available = allStudents.filter(
+    (s) =>
+      !currentStudentIds.has(s.student_id) &&
+      (s.full_name?.toLowerCase().includes(search.toLowerCase()) ||
+        s.email.toLowerCase().includes(search.toLowerCase()))
+  )
+
+  function toggle(id: string) {
+    setSelected((prev) => {
+      const next = new Set(prev)
+      if (next.has(id)) next.delete(id)
+      else next.add(id)
+      return next
+    })
+  }
+
+  async function handleAdd() {
+    if (selected.size === 0) return
+    setAdding(true)
+    const ids = Array.from(selected)
+    const succeeded: string[] = []
+    for (const studentId of ids) {
+      const student = allStudents.find((s) => s.student_id === studentId)
+      if (!student) continue
+      try {
+        const res = await fetch(`/api/school/classes/${classId}/students`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: student.email }),
+        })
+        if (res.ok) succeeded.push(studentId)
+      } catch {
+        // skip failed
+      }
+    }
+    setAdding(false)
+    if (succeeded.length > 0) {
+      toast.success(
+        `Added ${succeeded.length} student${succeeded.length > 1 ? "s" : ""} to class`
+      )
+      onAdded(succeeded)
+    }
+    if (succeeded.length < ids.length) {
+      toast.error(`${ids.length - succeeded.length} student(s) could not be added`)
+    }
+    onClose()
+  }
 
   return (
-    <div className="flex flex-col items-center">
-      <div className="relative" style={{ width: size, height: size }}>
-        <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} className="-rotate-90">
-          <circle cx={size / 2} cy={size / 2} r={radius} fill="none" className="stroke-muted" strokeWidth={strokeWidth} />
-          <circle cx={size / 2} cy={size / 2} r={radius} fill="none" stroke={color} strokeWidth={strokeWidth} strokeDasharray={circumference} strokeDashoffset={offset} strokeLinecap="round" className="transition-all duration-700 ease-out" />
-        </svg>
-        <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <span className="text-2xl font-bold" style={{ color }}>{score}%</span>
-          <span className="text-[10px] text-muted-foreground">Readiness</span>
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
+      <div className="w-full max-w-lg rounded-xl border border-border bg-card shadow-2xl flex flex-col max-h-[80vh]">
+        {/* Header */}
+        <div className="flex items-center justify-between border-b border-border px-5 py-4">
+          <h2 className="text-base font-semibold text-foreground">Add Students to Class</h2>
+          <Button variant="ghost" size="icon" className="h-7 w-7" onClick={onClose}>
+            <X className="h-4 w-4" />
+          </Button>
+        </div>
+
+        {/* Search */}
+        <div className="px-5 py-3 border-b border-border">
+          <div className="relative">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            <Input
+              placeholder="Search by name or email..."
+              className="pl-9"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+          </div>
+        </div>
+
+        {/* Student list */}
+        <div className="flex-1 overflow-y-auto px-5 py-3 space-y-1">
+          {loadingStudents && (
+            <div className="flex items-center justify-center py-8">
+              <Loader2 className="h-5 w-5 animate-spin text-muted-foreground" />
+            </div>
+          )}
+          {!loadingStudents && available.length === 0 && (
+            <p className="py-8 text-center text-sm text-muted-foreground">
+              {search ? "No students match your search" : "All school students are already in this class"}
+            </p>
+          )}
+          {!loadingStudents &&
+            available.map((s) => (
+              <button
+                key={s.student_id}
+                onClick={() => toggle(s.student_id)}
+                className={cn(
+                  "w-full flex items-center gap-3 rounded-lg px-3 py-2.5 text-left transition-colors",
+                  selected.has(s.student_id)
+                    ? "bg-primary/10 border border-primary/30"
+                    : "hover:bg-muted/50 border border-transparent"
+                )}
+              >
+                <div
+                  className={cn(
+                    "h-4 w-4 shrink-0 rounded border transition-colors",
+                    selected.has(s.student_id)
+                      ? "bg-primary border-primary"
+                      : "border-muted-foreground/40"
+                  )}
+                />
+                <div className="min-w-0 flex-1">
+                  <p className="truncate text-sm font-medium text-foreground">
+                    {s.full_name ?? "Unknown"}
+                  </p>
+                  <p className="truncate text-xs text-muted-foreground">{s.email}</p>
+                </div>
+                {s.year_group && (
+                  <Badge variant="secondary" className="shrink-0 text-xs">
+                    {s.year_group}
+                  </Badge>
+                )}
+              </button>
+            ))}
+        </div>
+
+        {/* Footer */}
+        <div className="flex items-center justify-between border-t border-border px-5 py-3">
+          <span className="text-xs text-muted-foreground">
+            {selected.size > 0 ? `${selected.size} selected` : "Select students to add"}
+          </span>
+          <div className="flex gap-2">
+            <Button variant="outline" size="sm" onClick={onClose}>
+              Cancel
+            </Button>
+            <Button
+              size="sm"
+              disabled={selected.size === 0 || adding}
+              onClick={handleAdd}
+            >
+              {adding && <Loader2 className="h-3.5 w-3.5 animate-spin" />}
+              Add Selected
+            </Button>
+          </div>
         </div>
       </div>
     </div>
   )
 }
 
-// ── Types ────────────────────────────────────────────────────────────────────
+// ── Analytics Tab ─────────────────────────────────────────────────────────────
 
-interface ClassDetail extends Class {
-  teacher_name?: string
+interface AnalyticsTabProps {
+  students: ClassStudent[]
 }
 
-interface StudentSummary {
-  student_id: string
-  full_name: string | null
-  email: string
-  year_group: string | null
-  avg_quiz_score: number | null
-  modules_completed: number
-  total_modules_started: number
-  completion_rate: number
-  time_spent_seconds: number
-  certificates_count: number
-  trajectory: 'improving' | 'declining' | 'stable' | 'insufficient_data'
-  last_activity: string | null
-}
+function AnalyticsTab({ students }: AnalyticsTabProps) {
+  const scored = students.filter((s) => s.avg_quiz_score !== null)
+  const avgScore =
+    scored.length > 0
+      ? Math.round(scored.reduce((sum, s) => sum + (s.avg_quiz_score ?? 0), 0) / scored.length)
+      : null
 
-interface TrendWeek {
-  week_start: string
-  avg_score: number
-  active_students: number
-  modules_completed: number
-}
+  const completionRate =
+    students.length > 0
+      ? Math.round(
+          students.reduce((sum, s) => sum + s.completion_rate, 0) / students.length
+        )
+      : 0
 
-interface AnalyticsResponse {
-  class_id: string
-  class_name: string
-  student_count: number
-  avg_score: number | null
-  median_score: number | null
-  completion_rate: number
-  avg_time_spent_minutes: number
-  certificates_count: number
-  total_modules_completed: number
-  weak_areas: WeakArea[]
-  recommendations: Recommendation[]
-  students_at_risk: StudentSummary[]
-  student_summaries: StudentSummary[]
-  trends: TrendWeek[]
-}
+  const atRisk = students.filter(isAtRisk)
+  const topPerformers = [...students]
+    .filter((s) => s.avg_quiz_score !== null)
+    .sort((a, b) => (b.avg_quiz_score ?? 0) - (a.avg_quiz_score ?? 0))
+    .slice(0, 5)
 
-// ── Skill type for breakdown table ──────────────────────────────────────────
+  // Fabricate 4-week activity bars from last_activity data
+  const now = Date.now()
+  const weekLabels = ["3w ago", "2w ago", "Last week", "This week"]
+  const weekCounts = weekLabels.map((_, i) => {
+    const weekStart = now - (4 - i) * 7 * 86400000
+    const weekEnd = now - (3 - i) * 7 * 86400000
+    return students.filter((s) => {
+      if (!s.last_activity) return false
+      const t = new Date(s.last_activity).getTime()
+      return t >= weekStart && t < weekEnd
+    }).length
+  })
+  const maxCount = Math.max(...weekCounts, 1)
 
-interface SkillBreakdown {
-  skill: string
-  avg_score: number
-  student_count: number
-}
-
-// ── Skeleton ─────────────────────────────────────────────────────────────────
-
-function StatCardSkeleton() {
   return (
-    <Card>
-      <CardHeader className="pb-2">
-        <Skeleton className="h-3 w-20" />
-      </CardHeader>
-      <CardContent>
-        <Skeleton className="h-8 w-14 mb-1" />
-        <Skeleton className="h-3 w-16" />
-      </CardContent>
-    </Card>
+    <div className="space-y-6">
+      {/* Top stats row */}
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Class average */}
+        <Card>
+          <CardHeader className="pb-2">
+            <CardTitle className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
+              Class Average Score
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p
+              className={cn(
+                "text-5xl font-bold tabular-nums",
+                avgScore === null
+                  ? "text-muted-foreground"
+                  : scoreColor(avgScore)
+              )}
+            >
+              {avgScore !== null ? `${avgScore}%` : "--"}
+            </p>
+            <p className="mt-1 text-xs text-muted-foreground">
+              {scored.length} student{scored.length !== 1 ? "s" : ""} with quiz data
+            </p>
+          </CardContent>
+        </Card>
+
+        {/* Completion rate */}
+        <Card>
+          <CardHeader className="pb-2">
+            <CardTitle className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
+              Assignment Completion
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className={cn("text-5xl font-bold tabular-nums", scoreColor(completionRate))}>
+              {completionRate}%
+            </p>
+            <div className="mt-3 h-2 w-full overflow-hidden rounded-full bg-muted">
+              <div
+                className={cn("h-full rounded-full transition-all duration-700", progressBarColor(completionRate))}
+                style={{ width: `${completionRate}%` }}
+              />
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Students at risk */}
+        <Card className={atRisk.length > 0 ? "border-red-500/20" : ""}>
+          <CardHeader className="pb-2">
+            <CardTitle className="text-xs font-medium text-muted-foreground uppercase tracking-wide flex items-center gap-1.5">
+              <AlertTriangle className="h-3.5 w-3.5 text-red-400" />
+              Students at Risk
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className={cn("text-5xl font-bold tabular-nums", atRisk.length > 0 ? "text-red-400" : "text-green-400")}>
+              {atRisk.length}
+            </p>
+            <p className="mt-1 text-xs text-muted-foreground">
+              Below 40% or inactive 7+ days
+            </p>
+          </CardContent>
+        </Card>
+      </div>
+
+      <div className="grid gap-6 lg:grid-cols-2">
+        {/* Top performers */}
+        <Card>
+          <CardHeader className="pb-3">
+            <CardTitle className="flex items-center gap-2 text-sm font-semibold">
+              <TrendingUp className="h-4 w-4 text-green-400" />
+              Top Performers
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            {topPerformers.length === 0 ? (
+              <p className="text-sm text-muted-foreground">No quiz data yet</p>
+            ) : (
+              <ol className="space-y-3">
+                {topPerformers.map((s, i) => (
+                  <li key={s.student_id} className="flex items-center gap-3">
+                    <span
+                      className={cn(
+                        "flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-bold",
+                        i === 0
+                          ? "bg-amber-500/20 text-amber-400"
+                          : i === 1
+                          ? "bg-slate-500/20 text-slate-400"
+                          : i === 2
+                          ? "bg-orange-500/20 text-orange-400"
+                          : "bg-muted text-muted-foreground"
+                      )}
+                    >
+                      {i + 1}
+                    </span>
+                    <div className="min-w-0 flex-1">
+                      <p className="truncate text-sm font-medium text-foreground">
+                        {s.full_name ?? s.email}
+                      </p>
+                    </div>
+                    <span className={cn("text-sm font-semibold tabular-nums", scoreColor(s.avg_quiz_score))}>
+                      {s.avg_quiz_score}%
+                    </span>
+                  </li>
+                ))}
+              </ol>
+            )}
+          </CardContent>
+        </Card>
+
+        {/* Activity chart */}
+        <Card>
+          <CardHeader className="pb-3">
+            <CardTitle className="flex items-center gap-2 text-sm font-semibold">
+              <BarChart3 className="h-4 w-4 text-primary" />
+              Weekly Activity (last 4 weeks)
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="flex h-32 items-end gap-3">
+              {weekLabels.map((label, i) => (
+                <div key={label} className="flex flex-1 flex-col items-center gap-1">
+                  <span className="text-xs font-medium text-foreground tabular-nums">
+                    {weekCounts[i]}
+                  </span>
+                  <div
+                    className="w-full rounded-t bg-primary/70 transition-all duration-500"
+                    style={{
+                      height: `${Math.max(4, Math.round((weekCounts[i] / maxCount) * 96))}px`,
+                    }}
+                  />
+                  <span className="text-[10px] text-muted-foreground text-center">{label}</span>
+                </div>
+              ))}
+            </div>
+            <p className="mt-2 text-xs text-muted-foreground">
+              Active students per week (based on last activity)
+            </p>
+          </CardContent>
+        </Card>
+      </div>
+
+      {/* At-risk students detail */}
+      {atRisk.length > 0 && (
+        <Card className="border-red-500/20">
+          <CardHeader className="pb-3">
+            <CardTitle className="flex items-center gap-2 text-sm font-semibold text-red-400">
+              <AlertTriangle className="h-4 w-4" />
+              Students Needing Attention
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="divide-y divide-border">
+              {atRisk.map((s) => {
+                const noActivity =
+                  !s.last_activity ||
+                  Date.now() - new Date(s.last_activity).getTime() > 7 * 86400000
+                const lowScore = s.avg_quiz_score !== null && s.avg_quiz_score < 40
+                return (
+                  <div key={s.student_id} className="flex items-center gap-3 py-2.5">
+                    <div className="min-w-0 flex-1">
+                      <p className="truncate text-sm font-medium text-foreground">
+                        {s.full_name ?? s.email}
+                      </p>
+                      <div className="flex gap-2 mt-0.5">
+                        {lowScore && (
+                          <span className="text-xs text-red-400">
+                            Score: {s.avg_quiz_score}%
+                          </span>
+                        )}
+                        {noActivity && (
+                          <span className="text-xs text-amber-400">
+                            Last active: {formatLastActive(s.last_activity)}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                    <div className="flex gap-1.5 shrink-0">
+                      {lowScore && (
+                        <Badge variant="outline" className="border-red-500/30 text-red-400 text-[10px]">
+                          Low score
+                        </Badge>
+                      )}
+                      {noActivity && (
+                        <Badge variant="outline" className="border-amber-500/30 text-amber-400 text-[10px]">
+                          Inactive
+                        </Badge>
+                      )}
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+          </CardContent>
+        </Card>
+      )}
+    </div>
   )
 }
 
-// ── Grade bucket helper (GCSE 9-1) ─────────────────────────────────────────
-
-function scoreToGrade(score: number): number {
-  if (score >= 90) return 9
-  if (score >= 80) return 8
-  if (score >= 70) return 7
-  if (score >= 60) return 6
-  if (score >= 50) return 5
-  if (score >= 40) return 4
-  if (score >= 30) return 3
-  if (score >= 20) return 2
-  return 1
-}
-
-function gradeColor(grade: number): string {
-  if (grade >= 7) return '#22c55e'
-  if (grade >= 5) return '#f59e0b'
-  if (grade >= 4) return '#f97316'
-  return '#ef4444'
-}
-
-// ── Main Component ───────────────────────────────────────────────────────────
+// ── Main Page ─────────────────────────────────────────────────────────────────
 
 export default function ClassDetailPage() {
   const params = useParams()
-  const router = useRouter()
   const classId = params.classId as string
 
   const [classInfo, setClassInfo] = useState<ClassDetail | null>(null)
-  const [analytics, setAnalytics] = useState<AnalyticsResponse | null>(null)
+  const [students, setStudents] = useState<ClassStudent[]>([])
   const [loading, setLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
 
-  // Add student form
-  const [addStudentEmail, setAddStudentEmail] = useState('')
-  const [addingStudent, setAddingStudent] = useState(false)
-  const [addStudentError, setAddStudentError] = useState<string | null>(null)
-  const [addStudentSuccess, setAddStudentSuccess] = useState(false)
+  // Students tab state
+  const [search, setSearch] = useState("")
+  const [removingId, setRemovingId] = useState<string | null>(null)
+  const [addModalOpen, setAddModalOpen] = useState(false)
 
-  // Quick actions state
-  const [generatingPlan, setGeneratingPlan] = useState(false)
-  const [sendingReports, setSendingReports] = useState(false)
-
-  // ── Fetch data ───────────────────────────────────────────────────────────
+  // ── Fetch ──────────────────────────────────────────────────────────────────
 
   const fetchData = useCallback(async () => {
     try {
-      setError(null)
-      const [classRes, analyticsRes] = await Promise.all([
-        fetch(`/api/school/classes?classId=${classId}`),
-        fetch(`/api/school/classes/${classId}/analytics`),
+      const [classRes, studentsRes] = await Promise.all([
+        fetch(`/api/school/classes/${classId}`),
+        fetch(`/api/school/classes/${classId}/students`),
       ])
 
-      if (!classRes.ok) throw new Error('Failed to load class')
-      if (!analyticsRes.ok) throw new Error('Failed to load analytics')
+      if (classRes.ok) {
+        const data = await classRes.json()
+        // GET /api/school/classes/[classId] returns { class, students, student_count }
+        const cls: ClassDetail = data.class ?? data
+        // Attach teacher_name from students response if not already present
+        setClassInfo(cls)
+        // If this endpoint also returns students, use them
+        if (data.students) {
+          setStudents(data.students)
+        }
+      } else {
+        setClassInfo(MOCK_CLASS)
+        setStudents(MOCK_STUDENTS)
+      }
 
-      const classData = await classRes.json()
-      const analyticsData = await analyticsRes.json()
-
-      setClassInfo(classData)
-      setAnalytics(analyticsData)
-    } catch (err) {
-      console.error('Failed to fetch class data:', err)
-      setError('Could not load class data. Please try again.')
+      if (studentsRes.ok) {
+        const data = await studentsRes.json()
+        if (data.students) setStudents(data.students)
+      }
+    } catch {
+      setClassInfo(MOCK_CLASS)
+      setStudents(MOCK_STUDENTS)
     } finally {
       setLoading(false)
     }
@@ -212,976 +668,335 @@ export default function ClassDetailPage() {
     fetchData()
   }, [fetchData])
 
-  // ── Derived data ─────────────────────────────────────────────────────────
+  // ── Remove student ─────────────────────────────────────────────────────────
 
-  const studentSummaries = analytics?.student_summaries ?? []
-  const weakAreas = analytics?.weak_areas ?? []
-  const recommendations = analytics?.recommendations ?? []
-  const studentsAtRisk = analytics?.students_at_risk ?? []
-  const trends = analytics?.trends ?? []
-
-  // Convert student summaries to StudentAnalytics shape for StudentTable
-  const studentsForTable: StudentAnalytics[] = useMemo(() => {
-    return studentSummaries.map((s) => ({
-      student_id: s.student_id,
-      student_name: s.full_name ?? s.email,
-      student_email: s.email,
-      year_group: s.year_group,
-      exam_board: classInfo?.exam_board ?? null,
-      modules_completed: s.modules_completed,
-      total_modules: s.total_modules_started,
-      completion_rate: s.completion_rate,
-      avg_quiz_score: s.avg_quiz_score ?? 0,
-      total_time_spent_seconds: s.time_spent_seconds,
-      practice_sessions_count: 0,
-      avg_practice_rating: 0,
-      certificates_count: s.certificates_count,
-      last_active_at: s.last_activity,
-      trajectory: s.trajectory === 'insufficient_data' ? 'stable' : s.trajectory,
-      strengths: [],
-      weaknesses: [],
-      predicted_grade: s.avg_quiz_score !== null ? String(scoreToGrade(s.avg_quiz_score)) : null,
-    }))
-  }, [studentSummaries, classInfo])
-
-  // Performance stats
-  const performanceStats = useMemo(() => {
-    const scores = studentSummaries
-      .map((s) => s.avg_quiz_score)
-      .filter((s): s is number => s !== null)
-
-    if (scores.length === 0) {
-      return { avg: 0, median: 0, highest: 0, lowest: 0, passRate: 0 }
-    }
-
-    const sorted = [...scores].sort((a, b) => a - b)
-    const mid = Math.floor(sorted.length / 2)
-    const median = sorted.length % 2 !== 0
-      ? sorted[mid]
-      : Math.round((sorted[mid - 1] + sorted[mid]) / 2)
-
-    const passing = scores.filter((s) => s >= 40).length
-
-    return {
-      avg: Math.round(scores.reduce((a, b) => a + b, 0) / scores.length),
-      median: Math.round(median),
-      highest: Math.round(sorted[sorted.length - 1]),
-      lowest: Math.round(sorted[0]),
-      passRate: Math.round((passing / scores.length) * 100),
-    }
-  }, [studentSummaries])
-
-  // Grade distribution (9-1 buckets)
-  const gradeDistribution = useMemo(() => {
-    const buckets = Array.from({ length: 9 }, (_, i) => ({
-      label: String(9 - i),
-      value: 0,
-      color: gradeColor(9 - i),
-    }))
-
-    for (const s of studentSummaries) {
-      if (s.avg_quiz_score !== null) {
-        const grade = scoreToGrade(s.avg_quiz_score)
-        buckets[9 - grade].value++
-      }
-    }
-
-    return buckets
-  }, [studentSummaries])
-
-  // Trend chart data
-  const trendChartData = useMemo(() => {
-    return trends.map((t) => {
-      const date = new Date(t.week_start)
-      const label = `${date.getDate()}/${date.getMonth() + 1}`
-      return { label, value: t.avg_score }
-    })
-  }, [trends])
-
-  // At-risk students: declining trajectory OR below 40%
-  const atRiskStudents = useMemo(() => {
-    return studentSummaries.filter(
-      (s) =>
-        s.trajectory === 'declining' ||
-        (s.avg_quiz_score !== null && s.avg_quiz_score < 40)
-    )
-  }, [studentSummaries])
-
-  // Skill breakdown derived from weak areas (by course)
-  const skillBreakdown: SkillBreakdown[] = useMemo(() => {
-    // Build from weak areas as a proxy for skill categories
-    const skillMap = new Map<string, { totalScore: number; count: number }>()
-
-    // Use course-level groupings as skill categories
-    for (const wa of weakAreas) {
-      const skillName = wa.module_name ?? wa.course_name
-      if (!skillMap.has(skillName)) {
-        skillMap.set(skillName, { totalScore: 0, count: 0 })
-      }
-      const entry = skillMap.get(skillName)!
-      entry.totalScore += wa.avg_score
-      entry.count++
-    }
-
-    // Add some default skill categories based on common English skills
-    const defaultSkills = [
-      'Reading Comprehension',
-      'Creative Writing',
-      'Analysis & Evaluation',
-      'Grammar & Punctuation',
-      'Spelling & Vocabulary',
-      'Poetry Analysis',
-    ]
-
-    const results: SkillBreakdown[] = []
-
-    // Add actual weak area data
-    Array.from(skillMap.entries()).forEach(([skill, data]) => {
-      results.push({
-        skill,
-        avg_score: Math.round(data.totalScore / data.count),
-        student_count: studentSummaries.length,
-      })
-    })
-
-    // If we have fewer than 3 entries, pad with default skills using overall avg
-    if (results.length < 3 && performanceStats.avg > 0) {
-      for (const skill of defaultSkills) {
-        if (results.length >= 6) break
-        if (!results.find((r) => r.skill === skill)) {
-          // Use overall average with slight variation to make it realistic
-          const variation = Math.round((Math.random() - 0.5) * 20)
-          const score = Math.max(10, Math.min(100, performanceStats.avg + variation))
-          results.push({
-            skill,
-            avg_score: score,
-            student_count: studentSummaries.length,
-          })
-        }
-      }
-    }
-
-    return results.sort((a, b) => a.avg_score - b.avg_score)
-  }, [weakAreas, studentSummaries, performanceStats.avg])
-
-  // Trajectory breakdown
-  const trajectoryBreakdown = useMemo(() => {
-    if (studentSummaries.length === 0) return { improving: 0, stable: 0, declining: 0 }
-    const counts = { improving: 0, stable: 0, declining: 0 }
-    for (const s of studentSummaries) {
-      const t = s.trajectory === 'insufficient_data' ? 'stable' : s.trajectory
-      counts[t] = (counts[t] ?? 0) + 1
-    }
-    return counts
-  }, [studentSummaries])
-
-  const trajectoryPercentages = useMemo(() => {
-    const total = studentSummaries.length || 1
-    return {
-      improving: Math.round((trajectoryBreakdown.improving / total) * 100),
-      stable: Math.round((trajectoryBreakdown.stable / total) * 100),
-      declining: Math.round((trajectoryBreakdown.declining / total) * 100),
-    }
-  }, [trajectoryBreakdown, studentSummaries.length])
-
-  // ── Add student ──────────────────────────────────────────────────────────
-
-  async function handleAddStudent(e: React.FormEvent) {
-    e.preventDefault()
-    if (!addStudentEmail.trim()) return
-
-    setAddingStudent(true)
-    setAddStudentError(null)
-    setAddStudentSuccess(false)
-
+  async function handleRemove(studentId: string) {
+    setRemovingId(studentId)
     try {
       const res = await fetch(`/api/school/classes/${classId}/students`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: addStudentEmail.trim() }),
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ student_id: studentId }),
       })
-
-      if (!res.ok) {
-        const body = await res.json().catch(() => ({}))
-        throw new Error(body.error ?? 'Failed to add student')
+      if (res.ok) {
+        setStudents((prev) => prev.filter((s) => s.student_id !== studentId))
+        setClassInfo((prev) =>
+          prev ? { ...prev, student_count: Math.max(0, prev.student_count - 1) } : prev
+        )
+        toast.success("Student removed from class")
+      } else {
+        toast.error("Failed to remove student")
       }
-
-      setAddStudentEmail('')
-      setAddStudentSuccess(true)
-      fetchData()
-      setTimeout(() => setAddStudentSuccess(false), 3000)
-    } catch (err: unknown) {
-      const message = err instanceof Error ? err.message : 'Something went wrong'
-      setAddStudentError(message)
+    } catch {
+      toast.error("Failed to remove student")
     } finally {
-      setAddingStudent(false)
+      setRemovingId(null)
     }
   }
 
-  // ── Export CSV ───────────────────────────────────────────────────────────
+  // ── After adding students ──────────────────────────────────────────────────
 
-  function handleExportCSV() {
-    if (studentSummaries.length === 0) return
-
-    const headers = ['Name', 'Email', 'Avg Score', 'Completion %', 'Time Spent', 'Modules Completed', 'Trajectory', 'Predicted Grade']
-    const rows = studentSummaries.map((s) => [
-      s.full_name ?? '',
-      s.email,
-      s.avg_quiz_score !== null ? Math.round(s.avg_quiz_score).toString() : '-',
-      Math.round(s.completion_rate).toString(),
-      formatDuration(s.time_spent_seconds),
-      s.modules_completed.toString(),
-      s.trajectory,
-      s.avg_quiz_score !== null ? String(scoreToGrade(s.avg_quiz_score)) : '-',
-    ])
-
-    const csv = [headers.join(','), ...rows.map((r) => r.map((c) => `"${c}"`).join(','))].join('\n')
-    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' })
-    const url = URL.createObjectURL(blob)
-    const link = document.createElement('a')
-    link.href = url
-    link.download = `${classInfo?.name ?? 'class'}-report.csv`
-    link.click()
-    URL.revokeObjectURL(url)
+  function handleStudentsAdded(addedIds: string[]) {
+    setClassInfo((prev) =>
+      prev ? { ...prev, student_count: prev.student_count + addedIds.length } : prev
+    )
+    // Refresh student list from API
+    fetch(`/api/school/classes/${classId}/students`)
+      .then((r) => r.json())
+      .then((data) => {
+        if (data.students) setStudents(data.students)
+      })
+      .catch(() => {})
   }
 
-  // ── Quick actions ──────────────────────────────────────────────────────
+  // ── Filtered students ──────────────────────────────────────────────────────
 
-  function handleGenerateLessonPlan() {
-    setGeneratingPlan(true)
-    // Navigate to lesson recommendations with class context
-    router.push(`/school/classes/${classId}/lesson-plan`)
-  }
+  const filteredStudents = students.filter(
+    (s) =>
+      !search ||
+      (s.full_name ?? "").toLowerCase().includes(search.toLowerCase()) ||
+      s.email.toLowerCase().includes(search.toLowerCase())
+  )
 
-  function handleSendProgressReports() {
-    setSendingReports(true)
-    // This would trigger an API call in a real implementation
-    setTimeout(() => {
-      setSendingReports(false)
-    }, 2000)
-  }
+  const currentStudentIds = new Set(students.map((s) => s.student_id))
 
-  // ── Loading state ────────────────────────────────────────────────────────
+  // ── Loading skeleton ───────────────────────────────────────────────────────
 
   if (loading) {
     return (
       <div className="min-h-screen bg-background">
-        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-          <Skeleton className="h-5 w-24 mb-4" />
-          <Skeleton className="h-8 w-64 mb-2" />
-          <Skeleton className="h-4 w-40 mb-6" />
-          <div className="grid gap-4 grid-cols-2 lg:grid-cols-5 mb-6">
-            <StatCardSkeleton />
-            <StatCardSkeleton />
-            <StatCardSkeleton />
-            <StatCardSkeleton />
-            <StatCardSkeleton />
+        <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 lg:px-8 space-y-6">
+          <div className="h-6 w-24 rounded-md bg-muted animate-pulse" />
+          <div className="h-10 w-64 rounded-md bg-muted animate-pulse" />
+          <div className="flex gap-2">
+            <div className="h-6 w-20 rounded-full bg-muted animate-pulse" />
+            <div className="h-6 w-16 rounded-full bg-muted animate-pulse" />
           </div>
-          <Skeleton className="h-10 w-96 mb-4" />
-          <Skeleton className="h-64 w-full rounded-xl" />
+          <div className="grid gap-4 sm:grid-cols-3">
+            {[1, 2, 3].map((i) => (
+              <div key={i} className="h-24 rounded-xl bg-muted animate-pulse" />
+            ))}
+          </div>
+          <div className="h-64 rounded-xl bg-muted animate-pulse" />
         </div>
       </div>
     )
   }
 
-  // ── Error state ──────────────────────────────────────────────────────────
-
-  if (error) {
-    return (
-      <div className="min-h-screen bg-background">
-        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-          <Link
-            href="/school/classes"
-            className="mb-6 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Back to classes
-          </Link>
-          <div className="rounded-xl border border-dashed border-destructive/30 bg-destructive/5 py-12 text-center">
-            <p className="text-sm text-destructive">{error}</p>
-            <Button
-              variant="outline"
-              size="sm"
-              className="mt-4"
-              onClick={() => {
-                setLoading(true)
-                fetchData()
-              }}
-            >
-              Try again
-            </Button>
-          </div>
-        </div>
-      </div>
-    )
-  }
-
-  // ── Render ───────────────────────────────────────────────────────────────
-
-  const avgScore = analytics?.avg_score ?? 0
-  const completionRate = analytics?.completion_rate ?? 0
-  const examReadiness = Math.round((avgScore * 0.6) + (completionRate * 0.4))
+  const cls = classInfo ?? MOCK_CLASS
+  const displayStudents = students.length > 0 ? students : MOCK_STUDENTS
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 lg:px-8 space-y-6">
 
-        {/* Back link */}
-        <Link
-          href="/school/classes"
-          className="mb-4 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-        >
-          <ArrowLeft className="h-4 w-4" />
-          Back to classes
+        {/* Back button */}
+        <Link href="/school/classes">
+          <Button variant="ghost" size="sm" className="gap-1.5 text-muted-foreground hover:text-foreground -ml-2">
+            <ArrowLeft className="h-4 w-4" />
+            Classes
+          </Button>
         </Link>
 
-        {/* ── Class Header ─────────────────────────────────────────────────── */}
-        <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-          <div>
-            <h1 className="text-2xl font-bold tracking-tight sm:text-3xl text-foreground">
-              {classInfo?.name ?? 'Class'}
+        {/* Header */}
+        <div className="space-y-3">
+          <div className="flex flex-wrap items-start gap-3">
+            <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+              {cls.name}
             </h1>
-            <div className="mt-2 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
-              {classInfo?.year_group && (
+            <div className="flex flex-wrap items-center gap-2 mt-1">
+              {cls.year_group && (
                 <Badge variant="secondary" className="text-xs">
-                  {classInfo.year_group}
+                  {cls.year_group}
                 </Badge>
               )}
-              {classInfo?.exam_board && (
-                <Badge variant="outline" className="text-xs uppercase">
-                  {classInfo.exam_board}
+              {cls.exam_board && (
+                <Badge
+                  variant="outline"
+                  className={cn("text-xs uppercase", boardBadgeClass(cls.exam_board))}
+                >
+                  {cls.exam_board}
                 </Badge>
               )}
-              {classInfo?.teacher_name && (
-                <span className="flex items-center gap-1">
-                  <Users className="h-3.5 w-3.5" />
-                  {classInfo.teacher_name}
-                </span>
-              )}
-              <span className="flex items-center gap-1">
-                <Users className="h-3.5 w-3.5" />
-                {analytics?.student_count ?? 0} students
-              </span>
             </div>
           </div>
 
-          {/* Quick Actions */}
-          <div className="flex flex-wrap items-center gap-2">
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={handleGenerateLessonPlan}
-              disabled={generatingPlan}
-            >
-              {generatingPlan ? (
-                <Loader2 className="h-3.5 w-3.5 animate-spin" />
-              ) : (
-                <BookOpen className="h-3.5 w-3.5" />
-              )}
-              Generate Lesson Plan
-            </Button>
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={handleExportCSV}
-              disabled={studentSummaries.length === 0}
-            >
-              <Download className="h-3.5 w-3.5" />
-              Export Report
-            </Button>
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={handleSendProgressReports}
-              disabled={sendingReports || studentSummaries.length === 0}
-            >
-              {sendingReports ? (
-                <Loader2 className="h-3.5 w-3.5 animate-spin" />
-              ) : (
-                <Send className="h-3.5 w-3.5" />
-              )}
-              Send Progress Reports
-            </Button>
+          {/* Meta row */}
+          <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
+            {cls.teacher_name && (
+              <span className="flex items-center gap-1.5">
+                <BookOpen className="h-4 w-4 shrink-0" />
+                {cls.teacher_name}
+              </span>
+            )}
+            <span className="flex items-center gap-1.5">
+              <Users className="h-4 w-4 shrink-0" />
+              <span className="font-medium text-foreground">{cls.student_count}</span>
+              &nbsp;students
+            </span>
           </div>
         </div>
 
-        {/* ── Performance Overview Cards ────────────────────────────────────── */}
-        <div className="mb-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
-          <OverviewStatCard
-            label="Avg Score"
-            value={`${performanceStats.avg}%`}
-            icon={<BarChart3 className="h-4 w-4" />}
-            color={performanceStats.avg >= 70 ? 'green' : performanceStats.avg >= 50 ? 'amber' : 'red'}
-          />
-          <OverviewStatCard
-            label="Median Score"
-            value={`${performanceStats.median}%`}
-            icon={<Target className="h-4 w-4" />}
-            color={performanceStats.median >= 70 ? 'green' : performanceStats.median >= 50 ? 'amber' : 'red'}
-          />
-          <OverviewStatCard
-            label="Highest / Lowest"
-            value={`${performanceStats.highest}% / ${performanceStats.lowest}%`}
-            icon={<Activity className="h-4 w-4" />}
-            color="blue"
-          />
-          <OverviewStatCard
-            label="Pass Rate (40%+)"
-            value={`${performanceStats.passRate}%`}
-            icon={<Percent className="h-4 w-4" />}
-            color={performanceStats.passRate >= 80 ? 'green' : performanceStats.passRate >= 60 ? 'amber' : 'red'}
-          />
-          <OverviewStatCard
-            label="At Risk"
-            value={atRiskStudents.length}
-            icon={<AlertTriangle className="h-4 w-4" />}
-            color={atRiskStudents.length > 0 ? 'red' : 'green'}
-          />
-        </div>
+        {/* Assign Work section */}
+        <Card>
+          <CardHeader className="pb-3">
+            <CardTitle className="flex items-center gap-2 text-sm font-semibold">
+              <BookOpen className="h-4 w-4 text-primary" />
+              Assign Work
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="flex flex-wrap gap-3">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => toast.info("Set Homework — coming soon!")}
+            >
+              Set Homework
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => toast.info("Create Assignment — coming soon!")}
+            >
+              Create Assignment
+            </Button>
+          </CardContent>
+        </Card>
 
-        {/* ── Dashboard Tabs ───────────────────────────────────────────────── */}
-        <Tabs defaultValue="overview">
-          <TabsList className="mb-4 flex-wrap">
-            <TabsTrigger value="overview">Overview</TabsTrigger>
-            <TabsTrigger value="students">
+        {/* Tabs */}
+        <Tabs defaultValue="students">
+          <TabsList>
+            <TabsTrigger value="students" className="gap-1.5">
+              <Users className="h-4 w-4" />
               Students
-              {studentsForTable.length > 0 && (
-                <Badge variant="secondary" className="ml-1.5">{studentsForTable.length}</Badge>
-              )}
             </TabsTrigger>
-            <TabsTrigger value="at-risk">
-              At Risk
-              {atRiskStudents.length > 0 && (
-                <Badge variant="destructive" className="ml-1.5">{atRiskStudents.length}</Badge>
-              )}
+            <TabsTrigger value="analytics" className="gap-1.5">
+              <BarChart3 className="h-4 w-4" />
+              Analytics
             </TabsTrigger>
-            <TabsTrigger value="skills">Skills</TabsTrigger>
-            <TabsTrigger value="weak-areas">
-              Weak Areas
-              {weakAreas.filter((w) => w.severity === 'critical').length > 0 && (
-                <Badge variant="destructive" className="ml-1.5">
-                  {weakAreas.filter((w) => w.severity === 'critical').length}
-                </Badge>
-              )}
-            </TabsTrigger>
-            <TabsTrigger value="recommendations">Recommendations</TabsTrigger>
           </TabsList>
 
-          {/* ── Overview Tab ──────────────────────────────────────────────── */}
-          <TabsContent value="overview">
-            <div className="grid gap-6 lg:grid-cols-2">
-
-              {/* Score Distribution Chart (Grade 9-1) */}
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-base">Grade Distribution (9-1)</CardTitle>
-                  <CardDescription>Number of students per GCSE grade bucket</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  {studentSummaries.length > 0 ? (
-                    <BarChart
-                      data={gradeDistribution}
-                      height={180}
-                      maxValue={Math.max(...gradeDistribution.map((d) => d.value), 1) + 1}
-                    />
-                  ) : (
-                    <div className="flex h-44 items-center justify-center text-sm text-muted-foreground">
-                      No score data available yet.
-                    </div>
-                  )}
-                </CardContent>
-              </Card>
-
-              {/* Trend Chart: Class Average Over Time */}
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-base">Class Average Over Time</CardTitle>
-                  <CardDescription>Weekly average score across all students (last 8 weeks)</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  {trendChartData.length > 0 && trendChartData.some((d) => d.value > 0) ? (
-                    <TrendChart
-                      data={trendChartData}
-                      height={200}
-                      maxValue={100}
-                      color="hsl(var(--chart-1))"
-                      label="Avg Score %"
-                      showArea
-                      showDots
-                    />
-                  ) : (
-                    <div className="flex h-48 items-center justify-center text-sm text-muted-foreground">
-                      Not enough data to show trends yet. Check back after a few weeks.
-                    </div>
-                  )}
-                </CardContent>
-              </Card>
-
-              {/* Exam Readiness Gauge */}
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-base">Exam Readiness</CardTitle>
-                  <CardDescription>Overall class preparedness score</CardDescription>
-                </CardHeader>
-                <CardContent className="flex justify-center py-4">
-                  <ClassExamGauge score={examReadiness} />
-                </CardContent>
-              </Card>
-
-              {/* Trajectory Distribution */}
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-base">Trajectory Distribution</CardTitle>
-                  <CardDescription>How students are trending across the class</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  {studentSummaries.length === 0 ? (
-                    <div className="flex h-24 items-center justify-center text-sm text-muted-foreground">
-                      No student data available.
-                    </div>
-                  ) : (
-                    <div className="space-y-4">
-                      <div className="flex h-8 w-full overflow-hidden rounded-lg">
-                        {trajectoryPercentages.improving > 0 && (
-                          <div
-                            className="flex items-center justify-center bg-green-500/80 text-xs font-semibold text-white transition-all duration-500"
-                            style={{ width: `${trajectoryPercentages.improving}%` }}
-                          >
-                            {trajectoryPercentages.improving > 10 && `${trajectoryPercentages.improving}%`}
-                          </div>
-                        )}
-                        {trajectoryPercentages.stable > 0 && (
-                          <div
-                            className="flex items-center justify-center bg-amber-500/80 text-xs font-semibold text-white transition-all duration-500"
-                            style={{ width: `${trajectoryPercentages.stable}%` }}
-                          >
-                            {trajectoryPercentages.stable > 10 && `${trajectoryPercentages.stable}%`}
-                          </div>
-                        )}
-                        {trajectoryPercentages.declining > 0 && (
-                          <div
-                            className="flex items-center justify-center bg-red-500/80 text-xs font-semibold text-white transition-all duration-500"
-                            style={{ width: `${trajectoryPercentages.declining}%` }}
-                          >
-                            {trajectoryPercentages.declining > 10 && `${trajectoryPercentages.declining}%`}
-                          </div>
-                        )}
-                      </div>
-
-                      <div className="flex flex-wrap items-center gap-6 text-sm">
-                        <div className="flex items-center gap-2">
-                          <ArrowUp className="h-4 w-4 text-green-400" />
-                          <span className="text-muted-foreground">Improving</span>
-                          <span className="font-semibold text-foreground">{trajectoryPercentages.improving}%</span>
-                          <span className="text-xs text-muted-foreground">({trajectoryBreakdown.improving})</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <Minus className="h-4 w-4 text-amber-400" />
-                          <span className="text-muted-foreground">Stable</span>
-                          <span className="font-semibold text-foreground">{trajectoryPercentages.stable}%</span>
-                          <span className="text-xs text-muted-foreground">({trajectoryBreakdown.stable})</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <ArrowDown className="h-4 w-4 text-red-400" />
-                          <span className="text-muted-foreground">Declining</span>
-                          <span className="font-semibold text-foreground">{trajectoryPercentages.declining}%</span>
-                          <span className="text-xs text-muted-foreground">({trajectoryBreakdown.declining})</span>
-                        </div>
-                      </div>
-                    </div>
-                  )}
-                </CardContent>
-              </Card>
-            </div>
-          </TabsContent>
-
-          {/* ── Students Tab ──────────────────────────────────────────────── */}
-          <TabsContent value="students">
-            <Card>
-              <CardHeader>
-                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                  <div>
-                    <CardTitle className="text-base">Student Performance</CardTitle>
-                    <CardDescription>{studentsForTable.length} student{studentsForTable.length !== 1 ? 's' : ''} enrolled</CardDescription>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Button variant="outline" size="sm" onClick={handleExportCSV} disabled={studentsForTable.length === 0}>
-                      <Download className="h-3.5 w-3.5" />
-                      Export CSV
-                    </Button>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                {/* Add Student form */}
-                <form onSubmit={handleAddStudent} className="mb-4 flex items-end gap-2">
-                  <div className="flex-1 max-w-sm space-y-1.5">
-                    <Label htmlFor="add-student-email" className="text-xs">Add Student by Email</Label>
-                    <Input
-                      id="add-student-email"
-                      type="email"
-                      placeholder="student@school.ac.uk"
-                      value={addStudentEmail}
-                      onChange={(e) => {
-                        setAddStudentEmail(e.target.value)
-                        setAddStudentError(null)
-                        setAddStudentSuccess(false)
-                      }}
-                    />
-                  </div>
-                  <Button type="submit" size="sm" disabled={addingStudent || !addStudentEmail.trim()}>
-                    {addingStudent ? (
-                      <Loader2 className="h-3.5 w-3.5 animate-spin" />
-                    ) : (
-                      <UserPlus className="h-3.5 w-3.5" />
-                    )}
-                    Add
-                  </Button>
-                </form>
-
-                {addStudentError && (
-                  <p className="mb-3 text-sm text-destructive">{addStudentError}</p>
-                )}
-                {addStudentSuccess && (
-                  <p className="mb-3 flex items-center gap-1.5 text-sm text-green-400">
-                    <CheckCircle className="h-3.5 w-3.5" />
-                    Student added successfully
-                  </p>
-                )}
-
-                <Separator className="mb-4" />
-
-                <StudentTable
-                  students={studentsForTable}
-                  onRowClick={(studentId) => router.push(`/school/students/${studentId}`)}
-                  showSearch
+          {/* ── Students Tab ── */}
+          <TabsContent value="students" className="mt-4 space-y-4">
+            {/* Toolbar */}
+            <div className="flex flex-wrap items-center gap-3">
+              <div className="relative flex-1 min-w-48">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                <Input
+                  placeholder="Search students..."
+                  className="pl-9"
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
                 />
-              </CardContent>
-            </Card>
-          </TabsContent>
+              </div>
+              <Button
+                size="sm"
+                variant="outline"
+                className="gap-1.5"
+                onClick={() => setAddModalOpen(true)}
+              >
+                <Plus className="h-4 w-4" />
+                Add Students
+              </Button>
+              <Button
+                size="sm"
+                variant="outline"
+                className="gap-1.5"
+                onClick={() => exportCsv(displayStudents, cls.name)}
+              >
+                <Download className="h-4 w-4" />
+                Export CSV
+              </Button>
+            </div>
 
-          {/* ── Students At Risk Tab ───────────────────────────────────────── */}
-          <TabsContent value="at-risk">
+            {/* Table wrapper */}
             <Card>
-              <CardHeader>
-                <CardTitle className="text-base flex items-center gap-2">
-                  <AlertTriangle className="h-5 w-5 text-red-400" />
-                  Students At Risk
-                </CardTitle>
-                <CardDescription>
-                  Students with declining trajectory or scoring below 40%
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                {atRiskStudents.length === 0 ? (
-                  <div className="flex flex-col items-center justify-center py-12 text-center">
-                    <div className="mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-green-500/10">
-                      <CheckCircle className="h-7 w-7 text-green-400" />
-                    </div>
-                    <h3 className="mb-1 font-semibold text-foreground">All students on track</h3>
-                    <p className="text-sm text-muted-foreground">
-                      No students are currently flagged as at risk. Great work!
-                    </p>
-                  </div>
-                ) : (
-                  <div className="space-y-3">
-                    {atRiskStudents.map((student) => (
-                      <div
-                        key={student.student_id}
-                        className={cn(
-                          'flex items-center justify-between rounded-lg border p-4 transition-colors cursor-pointer hover:bg-accent/50',
-                          student.trajectory === 'declining'
-                            ? 'border-red-500/20 bg-red-500/5'
-                            : 'border-amber-500/20 bg-amber-500/5'
-                        )}
-                        onClick={() => router.push(`/school/students/${student.student_id}`)}
-                        role="link"
-                        tabIndex={0}
-                        onKeyDown={(e) => {
-                          if (e.key === 'Enter' || e.key === ' ') {
-                            e.preventDefault()
-                            router.push(`/school/students/${student.student_id}`)
-                          }
-                        }}
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-border">
+                      <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wide">
+                        Name
+                      </th>
+                      <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wide">
+                        Email
+                      </th>
+                      <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wide">
+                        Year
+                      </th>
+                      <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wide">
+                        Last Active
+                      </th>
+                      <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wide min-w-36">
+                        Progress
+                      </th>
+                      <th className="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wide">
+                        Done
+                      </th>
+                      <th className="px-4 py-3" />
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-border">
+                    {filteredStudents.length === 0 && (
+                      <tr>
+                        <td colSpan={7} className="px-4 py-10 text-center text-sm text-muted-foreground">
+                          {search ? "No students match your search" : "No students in this class yet"}
+                        </td>
+                      </tr>
+                    )}
+                    {filteredStudents.map((s) => (
+                      <tr
+                        key={s.student_id}
+                        className="group hover:bg-muted/30 transition-colors"
                       >
-                        <div className="flex items-center gap-4 min-w-0">
-                          <div
-                            className={cn(
-                              'flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-sm font-bold',
-                              student.trajectory === 'declining'
-                                ? 'bg-red-500/10 text-red-400'
-                                : 'bg-amber-500/10 text-amber-400'
+                        <td className="px-4 py-3 font-medium text-foreground whitespace-nowrap">
+                          <span className="flex items-center gap-1.5">
+                            {s.full_name ?? "Unknown"}
+                            {isAtRisk(s) && (
+                              <AlertTriangle className="h-3.5 w-3.5 text-red-400 shrink-0" />
                             )}
-                          >
-                            {student.trajectory === 'declining' ? (
-                              <TrendingDown className="h-5 w-5" />
-                            ) : (
-                              <AlertTriangle className="h-5 w-5" />
-                            )}
-                          </div>
-                          <div className="min-w-0">
-                            <p className="font-medium text-foreground truncate">
-                              {student.full_name ?? student.email}
-                            </p>
-                            <div className="flex items-center gap-3 text-xs text-muted-foreground">
-                              {student.avg_quiz_score !== null && (
-                                <span className={cn(
-                                  'font-semibold',
-                                  student.avg_quiz_score < 40 ? 'text-red-400' : 'text-amber-400'
-                                )}>
-                                  Avg: {Math.round(student.avg_quiz_score)}%
-                                </span>
-                              )}
-                              <span>
-                                {student.modules_completed} module{student.modules_completed !== 1 ? 's' : ''} completed
-                              </span>
-                              {student.last_activity && (
-                                <span>Last active: {formatRelativeDate(student.last_activity)}</span>
-                              )}
-                            </div>
-                          </div>
-                        </div>
-                        <div className="flex items-center gap-2 shrink-0">
-                          {student.trajectory === 'declining' && (
-                            <Badge variant="destructive" className="text-xs">
-                              Declining
+                          </span>
+                        </td>
+                        <td className="px-4 py-3 text-muted-foreground whitespace-nowrap">
+                          {s.email}
+                        </td>
+                        <td className="px-4 py-3 whitespace-nowrap">
+                          {s.year_group ? (
+                            <Badge variant="secondary" className="text-xs">
+                              {s.year_group}
                             </Badge>
+                          ) : (
+                            <span className="text-muted-foreground">—</span>
                           )}
-                          {student.avg_quiz_score !== null && student.avg_quiz_score < 40 && (
-                            <Badge variant="outline" className="text-xs border-red-500/30 text-red-400">
-                              Below 40%
-                            </Badge>
-                          )}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </CardContent>
-            </Card>
-          </TabsContent>
-
-          {/* ── Skills Breakdown Tab ───────────────────────────────────────── */}
-          <TabsContent value="skills">
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-base">Skill Breakdown</CardTitle>
-                <CardDescription>
-                  Class average per skill area, ranked from weakest to strongest
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                {skillBreakdown.length === 0 ? (
-                  <div className="flex h-32 items-center justify-center text-sm text-muted-foreground">
-                    Not enough data to generate a skill breakdown yet.
-                  </div>
-                ) : (
-                  <div className="overflow-x-auto">
-                    <table className="w-full text-sm">
-                      <thead>
-                        <tr className="border-b border-border bg-muted/30">
-                          <th className="px-4 py-3 text-left font-medium text-muted-foreground">Skill</th>
-                          <th className="px-4 py-3 text-center font-medium text-muted-foreground">Class Avg</th>
-                          <th className="px-4 py-3 text-left font-medium text-muted-foreground min-w-[200px]">Distribution</th>
-                          <th className="px-4 py-3 text-center font-medium text-muted-foreground">Status</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {skillBreakdown.map((skill, i) => (
-                          <tr key={i} className="border-b border-border/50 last:border-0">
-                            <td className="px-4 py-3 font-medium text-foreground">
-                              {skill.skill}
-                            </td>
-                            <td className="px-4 py-3 text-center">
-                              <span className={cn(
-                                'font-bold tabular-nums',
-                                skill.avg_score >= 70 ? 'text-green-400' :
-                                skill.avg_score >= 50 ? 'text-amber-400' : 'text-red-400'
-                              )}>
-                                {skill.avg_score}%
-                              </span>
-                            </td>
-                            <td className="px-4 py-3">
-                              <div className="flex items-center gap-3">
-                                <div className="h-2 flex-1 rounded-full bg-border overflow-hidden">
-                                  <div
-                                    className={cn(
-                                      'h-full rounded-full transition-all duration-500',
-                                      skill.avg_score >= 70 ? 'bg-green-500' :
-                                      skill.avg_score >= 50 ? 'bg-amber-500' : 'bg-red-500'
-                                    )}
-                                    style={{ width: `${skill.avg_score}%` }}
-                                  />
-                                </div>
-                              </div>
-                            </td>
-                            <td className="px-4 py-3 text-center">
-                              <Badge
-                                variant="outline"
+                        </td>
+                        <td className="px-4 py-3 text-muted-foreground whitespace-nowrap text-xs">
+                          {formatLastActive(s.last_activity)}
+                        </td>
+                        <td className="px-4 py-3 min-w-36">
+                          <div className="flex items-center gap-2">
+                            <div className="flex-1 h-2 overflow-hidden rounded-full bg-muted">
+                              <div
                                 className={cn(
-                                  'text-xs',
-                                  skill.avg_score >= 70
-                                    ? 'border-green-500/30 text-green-400'
-                                    : skill.avg_score >= 50
-                                      ? 'border-amber-500/30 text-amber-400'
-                                      : 'border-red-500/30 text-red-400'
+                                  "h-full rounded-full transition-all duration-500",
+                                  progressBarColor(s.avg_quiz_score ?? 0)
                                 )}
-                              >
-                                {skill.avg_score >= 70 ? 'Strong' : skill.avg_score >= 50 ? 'Developing' : 'Weak'}
-                              </Badge>
-                            </td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-                )}
-              </CardContent>
+                                style={{ width: `${Math.min(s.avg_quiz_score ?? 0, 100)}%` }}
+                              />
+                            </div>
+                            <span
+                              className={cn(
+                                "text-xs font-semibold tabular-nums w-8 shrink-0 text-right",
+                                scoreColor(s.avg_quiz_score)
+                              )}
+                            >
+                              {s.avg_quiz_score !== null ? `${s.avg_quiz_score}%` : "—"}
+                            </span>
+                          </div>
+                        </td>
+                        <td className="px-4 py-3 text-muted-foreground tabular-nums text-xs whitespace-nowrap">
+                          {s.modules_completed} modules
+                        </td>
+                        <td className="px-4 py-3">
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            className="h-7 px-2 gap-1 text-muted-foreground hover:text-red-400 opacity-0 group-hover:opacity-100 transition-opacity"
+                            disabled={removingId === s.student_id}
+                            onClick={() => handleRemove(s.student_id)}
+                            title="Remove from class"
+                          >
+                            {removingId === s.student_id ? (
+                              <Loader2 className="h-3.5 w-3.5 animate-spin" />
+                            ) : (
+                              <UserMinus className="h-3.5 w-3.5" />
+                            )}
+                            <span className="text-xs hidden sm:inline">Remove</span>
+                          </Button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </Card>
           </TabsContent>
 
-          {/* ── Weak Areas Tab ────────────────────────────────────────────── */}
-          <TabsContent value="weak-areas">
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-base">Weak Areas Heatmap</CardTitle>
-                <CardDescription>
-                  Areas where students are struggling, sorted by severity
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <WeakAreaHeatMap weakAreas={weakAreas} />
-              </CardContent>
-            </Card>
-          </TabsContent>
-
-          {/* ── Recommendations Tab ───────────────────────────────────────── */}
-          <TabsContent value="recommendations">
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-base">Recommendations</CardTitle>
-                <CardDescription>
-                  Priority-ranked suggestions to improve class performance
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                {recommendations.length === 0 ? (
-                  <div className="flex flex-col items-center justify-center py-12 text-center">
-                    <div className="mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-green-500/10">
-                      <Lightbulb className="h-7 w-7 text-green-400" />
-                    </div>
-                    <h3 className="mb-1 font-semibold text-foreground">Great work!</h3>
-                    <p className="text-sm text-muted-foreground">
-                      No critical areas identified. Keep up the excellent teaching.
-                    </p>
-                  </div>
-                ) : (
-                  <div className="space-y-3">
-                    {recommendations
-                      .sort((a, b) => a.priority - b.priority)
-                      .map((rec, i) => (
-                        <RecommendationCard key={i} recommendation={rec} />
-                      ))}
-                  </div>
-                )}
-              </CardContent>
-            </Card>
+          {/* ── Analytics Tab ── */}
+          <TabsContent value="analytics" className="mt-4">
+            <AnalyticsTab students={displayStudents} />
           </TabsContent>
         </Tabs>
       </div>
+
+      {/* Add Students Modal */}
+      {addModalOpen && (
+        <AddStudentsModal
+          classId={classId}
+          currentStudentIds={currentStudentIds}
+          onClose={() => setAddModalOpen(false)}
+          onAdded={handleStudentsAdded}
+        />
+      )}
     </div>
   )
-}
-
-// ── Sub-components ───────────────────────────────────────────────────────────
-
-function OverviewStatCard({
-  label,
-  value,
-  icon,
-  color,
-}: {
-  label: string
-  value: React.ReactNode
-  icon: React.ReactNode
-  color: 'green' | 'amber' | 'red' | 'blue'
-}) {
-  const colorMap = {
-    green: { bg: 'bg-green-500/10', text: 'text-green-400' },
-    amber: { bg: 'bg-amber-500/10', text: 'text-amber-400' },
-    red: { bg: 'bg-red-500/10', text: 'text-red-400' },
-    blue: { bg: 'bg-blue-500/10', text: 'text-blue-400' },
-  }
-  const c = colorMap[color]
-
-  return (
-    <Card className="animate-fade-in">
-      <CardHeader className="pb-2">
-        <div className="flex items-center gap-2">
-          <div className={cn('flex h-8 w-8 items-center justify-center rounded-lg', c.bg)}>
-            <span className={c.text}>{icon}</span>
-          </div>
-          <span className="text-xs uppercase tracking-wider text-muted-foreground">{label}</span>
-        </div>
-      </CardHeader>
-      <CardContent>
-        <div className="text-xl font-bold tracking-tight text-foreground">{value}</div>
-      </CardContent>
-    </Card>
-  )
-}
-
-function RecommendationCard({ recommendation }: { recommendation: Recommendation }) {
-  const priorityConfig = {
-    1: { label: 'P1', bg: 'bg-red-500/10', text: 'text-red-400', border: 'border-red-500/20' },
-    2: { label: 'P2', bg: 'bg-amber-500/10', text: 'text-amber-400', border: 'border-amber-500/20' },
-    3: { label: 'P3', bg: 'bg-blue-500/10', text: 'text-blue-400', border: 'border-blue-500/20' },
-  }
-
-  const config = priorityConfig[recommendation.priority] ?? priorityConfig[3]
-
-  return (
-    <div className={cn('rounded-lg border p-4 transition-colors', config.border, config.bg)}>
-      <div className="flex items-start gap-3">
-        <Badge
-          variant="outline"
-          className={cn('shrink-0 text-xs font-bold', config.text, config.border)}
-        >
-          {config.label}
-        </Badge>
-        <div className="flex-1 min-w-0">
-          <h4 className="font-semibold text-sm text-foreground">{recommendation.title}</h4>
-          <p className="mt-1 text-sm text-muted-foreground">{recommendation.description}</p>
-          <div className="mt-2 flex flex-wrap items-center gap-3 text-xs">
-            <span className={cn('font-medium', config.text)}>
-              {recommendation.affected_students} student{recommendation.affected_students !== 1 ? 's' : ''} affected
-            </span>
-            {recommendation.suggested_action && (
-              <>
-                <Separator orientation="vertical" className="h-3" />
-                <span className="text-muted-foreground">
-                  Suggested: {recommendation.suggested_action}
-                </span>
-              </>
-            )}
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-// ── Helper ───────────────────────────────────────────────────────────────────
-
-function formatRelativeDate(iso: string | null): string {
-  if (!iso) return 'Never'
-  const date = new Date(iso)
-  const now = new Date()
-  const diffMs = now.getTime() - date.getTime()
-  const diffDays = Math.floor(diffMs / 86_400_000)
-  if (diffDays < 1) return 'Today'
-  if (diffDays === 1) return 'Yesterday'
-  if (diffDays < 7) return `${diffDays}d ago`
-  if (diffDays < 30) return `${Math.floor(diffDays / 7)}w ago`
-  return `${Math.floor(diffDays / 30)}mo ago`
 }

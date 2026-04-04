@@ -113,6 +113,9 @@ export function Header() {
             </>
           ) : (
             <>
+              <Button variant="ghost" size="sm" render={<Link href="/for-schools" />}>
+                For Schools
+              </Button>
               <Button variant="ghost" size="sm" render={<Link href="/for-teachers" />}>
                 For Teachers
               </Button>
@@ -196,6 +199,14 @@ export function Header() {
                   <Button
                     variant="ghost"
                     className="w-full justify-start"
+                    render={<Link href="/for-schools" />}
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    For Schools
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    className="w-full justify-start"
                     render={<Link href="/for-teachers" />}
                     onClick={() => setMobileOpen(false)}
                   >
@@ -205,6 +216,14 @@ export function Header() {
                 </>
               ) : (
                 <>
+                  <Button
+                    variant="ghost"
+                    className="w-full justify-start"
+                    render={<Link href="/for-schools" />}
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    For Schools
+                  </Button>
                   <Button
                     variant="ghost"
                     className="w-full justify-start"

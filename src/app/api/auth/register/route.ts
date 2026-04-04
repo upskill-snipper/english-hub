@@ -11,6 +11,9 @@ import {
 import { rateLimit, getClientIp } from "@/lib/rate-limit";
 import { ZodError } from "zod";
 
+// Accepted role values. Defaults to "student" when omitted.
+type UserRole = "student" | "teacher" | "school_admin";
+
 // NOTE: Prisma client import — uncomment once Prisma is set up:
 // import { prisma } from "@/lib/prisma";
 
@@ -31,17 +34,37 @@ export async function POST(request: NextRequest) {
 
     const body = await request.json();
 
+    // ── Extract and normalise role ────────────────────────────────────
+    const rawRole: unknown = body.role;
+    const role: UserRole =
+      rawRole === "teacher" || rawRole === "school_admin"
+        ? (rawRole as UserRole)
+        : "student";
+
+    const isTeacher = role === "teacher" || role === "school_admin";
+
     // ── Validate input ────────────────────────────────────────────────
     const data = registrationSchema.parse(body);
 
-    // ── Age gate ──────────────────────────────────────────────────────
-    const age = calculateAge(data.dobYear, data.dobMonth, data.dobDay);
-    if (age < 13) {
+    // ── Age gate (students only — teachers are adults) ────────────────
+    const age = isTeacher
+      ? 18
+      : calculateAge(data.dobYear, data.dobMonth, data.dobDay);
+
+    if (!isTeacher && age < 13) {
       return NextResponse.json(
         { error: "You must be 13 or older to register." },
         { status: 403 }
       );
     }
+
+    // ── Build user metadata ───────────────────────────────────────────
+    const userMetadata =
+      role === "teacher"
+        ? { role: "teacher", is_teacher: true }
+        : role === "school_admin"
+        ? { role: "school_admin", is_teacher: true }
+        : { role: "student", is_teacher: false };
 
     // ── Hash password ─────────────────────────────────────────────────
     const passwordHash = await hashPassword(data.password);
@@ -75,11 +98,13 @@ export async function POST(request: NextRequest) {
     //       passwordHash,
     //       firstName: data.firstName,
     //       lastName: data.lastName,
-    //       dateOfBirth: new Date(data.dobYear, data.dobMonth - 1, data.dobDay),
+    //       dateOfBirth: isTeacher ? null : new Date(data.dobYear, data.dobMonth - 1, data.dobDay),
     //       country: data.country,
     //       school: data.school ?? null,
-    //       isMinor: age < 18,
-    //       ageAtRegistration: age,
+    //       isMinor: !isTeacher && age < 18,
+    //       ageAtRegistration: isTeacher ? null : age,
+    //       role,            // profiles.role column (migration 20260327_add_profile_role)
+    //       metadata: userMetadata,
     //     },
     //   });
     //
@@ -135,7 +160,9 @@ export async function POST(request: NextRequest) {
       email: data.email.toLowerCase(),
       firstName: data.firstName,
       lastName: data.lastName,
-      isMinor: age < 18,
+      isMinor: !isTeacher && age < 18,
+      role,
+      metadata: userMetadata,
     };
 
     // ── Response ──────────────────────────────────────────────────────
@@ -147,6 +174,7 @@ export async function POST(request: NextRequest) {
           email: userStub.email,
           firstName: userStub.firstName,
           lastName: userStub.lastName,
+          role: userStub.role,
         },
       },
       { status: 201 }

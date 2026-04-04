@@ -238,6 +238,22 @@ export default function RegisterPage() {
           Back to home
         </Button>
 
+        {/* Teacher banner */}
+        <div className="mb-4 flex items-center justify-between gap-3 rounded-lg border border-primary/30 bg-primary/5 px-4 py-3">
+          <p className="text-sm text-muted-foreground">
+            <span className="font-medium text-foreground">Are you a teacher?</span>{' '}
+            Get lesson plans, AI marking, and analytics built for educators.
+          </p>
+          <Button
+            variant="outline"
+            size="sm"
+            className="shrink-0 border-primary/40 text-primary hover:bg-primary/10"
+            render={<Link href="/auth/teacher-register" />}
+          >
+            Teacher sign-up
+          </Button>
+        </div>
+
         <Card>
           <CardHeader className="text-center">
             <CardTitle className="text-2xl">

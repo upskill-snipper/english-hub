@@ -54,7 +54,21 @@ export { EngagementHeatmap } from './EngagementHeatmap'
 export { ScoreDistribution } from './ScoreDistribution'
 export { RadarChart } from './RadarChart'
 
+// Access & billing
+export { SchoolAccessBanner } from './SchoolAccessBanner'
+
 // UI & utilities
 export { ExportDialog } from './ExportDialog'
 export { OnboardingWizard } from './OnboardingWizard'
 export { ExamCountdown } from './ExamCountdown'
+
+// Marketing
+export { SchoolComparison } from './SchoolComparison'
+export { SchoolFAQ } from './SchoolFAQ'
+export { SchoolTestimonials } from './SchoolTestimonials'
+export { SchoolStats } from './SchoolStats'
+export { ContentCreationDemo } from './ContentCreationDemo'
+export { AnalyticsDashboardDemo } from './AnalyticsDashboardDemo'
+
+export { LessonBuilderPreview } from './LessonBuilderPreview'
+export { StudentProgressPreview } from './StudentProgressPreview'

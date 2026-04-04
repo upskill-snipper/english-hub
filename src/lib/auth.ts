@@ -79,7 +79,7 @@ export const registrationSchema = z
   );
 
 // ─── Role type ───────────────────────────────────────────────────────────
-export type UserRole = "student" | "teacher" | "parent";
+export type UserRole = "student" | "teacher" | "school_admin" | "parent";
 
 // ─── Teacher registration schema ─────────────────────────────────────────
 export const teacherRegistrationSchema = z
@@ -104,8 +104,8 @@ export const teacherRegistrationSchema = z
     country: z.enum(["UK", "QA", "OTHER"]),
     schoolName: z
       .string()
-      .min(1, "School name is required")
-      .max(200, "School name is too long"),
+      .max(200, "School name is too long")
+      .optional(),
     schoolEmail: z.string().email("Please enter a valid school email").optional().or(z.literal("")),
     studentCount: z.enum(["1-10", "11-30", "31-60", "61-100", "100+"], "Please select how many students you have"),
     subjectTaught: z

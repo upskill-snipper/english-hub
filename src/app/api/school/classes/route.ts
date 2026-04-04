@@ -38,10 +38,17 @@ export async function GET(request: NextRequest) {
 
     const admin = createServiceRoleClient()
     const schoolId = member.school_id
+    const isTeacher = member.role === 'teacher'
 
     // Fetch classes and school members in parallel
+    // Teachers only see their own classes
+    let classesQuery = admin.from('classes').select('*').eq('school_id', schoolId).order('created_at', { ascending: false })
+    if (isTeacher) {
+      classesQuery = classesQuery.eq('teacher_id', member.id)
+    }
+
     const [classesResult, membersResult] = await Promise.all([
-      admin.from('classes').select('*').eq('school_id', schoolId).order('created_at', { ascending: false }),
+      classesQuery,
       admin.from('school_members').select('id, full_name, role, user_id')
         .eq('school_id', schoolId).eq('invite_status', 'accepted'),
     ])
@@ -149,14 +156,30 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Forbidden: requires admin or head of department role' }, { status: 403 })
     }
 
-    let body: { name?: string; year_group?: string; exam_board?: string; academic_year?: string }
+    let body: {
+      name?: string
+      year_group?: string; yearGroup?: string
+      exam_board?: string; examBoard?: string
+      teacher_id?: string; teacherId?: string
+      academic_year?: string; academicYear?: string
+    }
     try {
       body = await request.json()
     } catch {
       return NextResponse.json({ error: 'Invalid request body' }, { status: 400 })
     }
 
-    const { name, year_group, exam_board, academic_year } = body
+    const {
+      name,
+      year_group, yearGroup,
+      exam_board, examBoard,
+      teacher_id, teacherId,
+      academic_year, academicYear,
+    } = body
+    const resolvedYearGroup = year_group ?? yearGroup
+    const resolvedExamBoard = exam_board ?? examBoard
+    const resolvedTeacherIdRaw = teacher_id ?? teacherId
+    const resolvedAcademicYear = academic_year ?? academicYear
 
     if (!name || typeof name !== 'string' || name.trim().length === 0) {
       return NextResponse.json({ error: 'Class name is required' }, { status: 422 })
@@ -166,28 +189,45 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Class name must be 100 characters or fewer' }, { status: 422 })
     }
 
-    if (year_group && typeof year_group !== 'string') {
-      return NextResponse.json({ error: 'year_group must be a string' }, { status: 422 })
+    if (resolvedYearGroup && typeof resolvedYearGroup !== 'string') {
+      return NextResponse.json({ error: 'yearGroup must be a string' }, { status: 422 })
     }
 
-    if (exam_board && typeof exam_board !== 'string') {
-      return NextResponse.json({ error: 'exam_board must be a string' }, { status: 422 })
+    if (resolvedExamBoard && typeof resolvedExamBoard !== 'string') {
+      return NextResponse.json({ error: 'examBoard must be a string' }, { status: 422 })
     }
 
-    if (academic_year && !/^\d{4}-\d{4}$/.test(academic_year)) {
-      return NextResponse.json({ error: 'academic_year must be in format YYYY-YYYY' }, { status: 422 })
+    if (resolvedAcademicYear && !/^\d{4}-\d{4}$/.test(resolvedAcademicYear)) {
+      return NextResponse.json({ error: 'academicYear must be in format YYYY-YYYY' }, { status: 422 })
     }
 
     const admin = createServiceRoleClient()
+
+    // If a specific teacherId is provided, verify they belong to the same school
+    let resolvedTeacherId = member.id
+    if (resolvedTeacherIdRaw && typeof resolvedTeacherIdRaw === 'string') {
+      const { data: assignedMember, error: memberErr } = await admin
+        .from('school_members')
+        .select('id')
+        .eq('id', resolvedTeacherIdRaw)
+        .eq('school_id', member.school_id)
+        .eq('invite_status', 'accepted')
+        .single()
+      if (memberErr || !assignedMember) {
+        return NextResponse.json({ error: 'Assigned teacher is not a member of this school' }, { status: 422 })
+      }
+      resolvedTeacherId = assignedMember.id
+    }
+
     const { data: newClass, error: createError } = await admin
       .from('classes')
       .insert({
         school_id: member.school_id,
-        teacher_id: member.id,
+        teacher_id: resolvedTeacherId,
         name: name.trim(),
-        year_group: year_group || null,
-        exam_board: exam_board || null,
-        academic_year: academic_year || getCurrentAcademicYear(),
+        year_group: resolvedYearGroup || null,
+        exam_board: resolvedExamBoard || null,
+        academic_year: resolvedAcademicYear || getCurrentAcademicYear(),
       })
       .select()
       .single()

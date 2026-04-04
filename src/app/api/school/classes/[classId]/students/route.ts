@@ -177,32 +177,42 @@ export async function POST(
       return NextResponse.json({ error: 'Class not found' }, { status: 404 })
     }
 
-    let body: { email?: string }
+    let body: { studentIds?: string[]; studentId?: string; email?: string }
     try {
       body = await request.json()
     } catch {
       return NextResponse.json({ error: 'Invalid request body' }, { status: 400 })
     }
 
-    const { email } = body
-    if (!email || typeof email !== 'string' || email.trim().length === 0) {
-      return NextResponse.json({ error: 'email is required' }, { status: 422 })
-    }
-
     const admin = createServiceRoleClient()
 
-    // Look up user by email
-    const { data: profile } = await admin
-      .from('profiles')
-      .select('id')
-      .eq('email', email.toLowerCase().trim())
-      .single()
+    // Accept bulk studentIds (spec), falling back to single studentId or legacy email
+    let studentIds: string[] = []
 
-    if (!profile) {
-      return NextResponse.json({ error: 'No user found with that email' }, { status: 404 })
+    if (body.studentIds !== undefined) {
+      if (!Array.isArray(body.studentIds) || body.studentIds.length === 0) {
+        return NextResponse.json({ error: 'studentIds must be a non-empty array' }, { status: 422 })
+      }
+      if (body.studentIds.some(id => typeof id !== 'string' || id.trim().length === 0)) {
+        return NextResponse.json({ error: 'All studentIds must be non-empty strings' }, { status: 422 })
+      }
+      studentIds = body.studentIds.map(id => id.trim())
+    } else if (body.studentId && typeof body.studentId === 'string') {
+      studentIds = [body.studentId.trim()]
+    } else if (body.email && typeof body.email === 'string') {
+      // Legacy single-by-email path
+      const { data: profile } = await admin
+        .from('profiles')
+        .select('id')
+        .eq('email', body.email.toLowerCase().trim())
+        .single()
+      if (!profile) {
+        return NextResponse.json({ error: 'No user found with that email' }, { status: 404 })
+      }
+      studentIds = [profile.id]
+    } else {
+      return NextResponse.json({ error: 'studentIds is required' }, { status: 422 })
     }
-
-    const studentId = profile.id
 
     // Check seat limit and subscription status
     const { data: school } = await admin
@@ -211,73 +221,91 @@ export async function POST(
       .eq('id', member.school_id)
       .single()
 
-    if (school && school.seats_used >= school.seat_limit) {
-      return NextResponse.json({ error: 'School seat limit reached' }, { status: 422 })
-    }
-
-    // Check if the student is already in any class at this school (for seat counting)
+    // Get all class IDs at this school for seat-counting
     const { data: schoolClasses } = await admin
       .from('classes')
       .select('id')
       .eq('school_id', member.school_id)
 
     const schoolClassIds = (schoolClasses || []).map((c: { id: string }) => c.id)
-    let alreadyInSchool = false
 
-    if (schoolClassIds.length > 0) {
-      const { data: existingMembership } = await admin
+    const added: string[] = []
+    const skipped: string[] = []
+    const errors: string[] = []
+
+    for (const studentId of studentIds) {
+      // Seat limit check per student
+      if (school && school.seats_used + added.length >= school.seat_limit) {
+        errors.push(`${studentId}: school seat limit reached`)
+        continue
+      }
+
+      // Check if student is already in any class at this school
+      let alreadyInSchool = false
+      if (schoolClassIds.length > 0) {
+        const { data: existingMembership } = await admin
+          .from('class_students')
+          .select('id')
+          .in('class_id', schoolClassIds)
+          .eq('student_id', studentId)
+          .eq('is_active', true)
+          .limit(1)
+        alreadyInSchool = !!existingMembership && existingMembership.length > 0
+      }
+
+      // Check if already in this class (active or inactive)
+      const { data: existing } = await admin
         .from('class_students')
-        .select('id')
-        .in('class_id', schoolClassIds)
+        .select('id, is_active')
+        .eq('class_id', classId)
         .eq('student_id', studentId)
-        .eq('is_active', true)
-        .limit(1)
+        .maybeSingle()
 
-      alreadyInSchool = !!existingMembership && existingMembership.length > 0
-    }
-
-    // Check if already in class (active or inactive)
-    const { data: existing } = await admin
-      .from('class_students')
-      .select('id, is_active')
-      .eq('class_id', classId)
-      .eq('student_id', studentId)
-      .single()
-
-    if (existing && existing.is_active) {
-      return NextResponse.json({ error: 'Student is already in this class' }, { status: 422 })
-    }
-
-    if (existing && !existing.is_active) {
-      // Reactivate
-      const { error: updateError } = await admin
-        .from('class_students')
-        .update({ is_active: true, removed_at: null, joined_at: new Date().toISOString() })
-        .eq('id', existing.id)
-
-      if (updateError) {
-        console.error('Reactivate student error:', updateError)
-        return NextResponse.json({ error: 'Failed to add student' }, { status: 500 })
+      if (existing && existing.is_active) {
+        skipped.push(studentId)
+        continue
       }
-    } else {
-      // Insert new
-      const { error: insertError } = await admin
-        .from('class_students')
-        .insert({ class_id: classId, student_id: studentId })
 
-      if (insertError) {
-        console.error('Add student error:', insertError)
-        return NextResponse.json({ error: 'Failed to add student' }, { status: 500 })
+      if (existing && !existing.is_active) {
+        const { error: updateError } = await admin
+          .from('class_students')
+          .update({ is_active: true, removed_at: null, joined_at: new Date().toISOString() })
+          .eq('id', existing.id)
+        if (updateError) {
+          console.error('Reactivate student error:', updateError)
+          errors.push(`${studentId}: failed to reactivate`)
+          continue
+        }
+      } else {
+        const { error: insertError } = await admin
+          .from('class_students')
+          .insert({ class_id: classId, student_id: studentId })
+        if (insertError) {
+          console.error('Add student error:', insertError)
+          errors.push(`${studentId}: failed to insert`)
+          continue
+        }
       }
-    }
 
-    // Increment seats_used if this is a new student at the school
-    if (!alreadyInSchool && school) {
-      await admin
-        .from('schools')
-        .update({ seats_used: school.seats_used + 1 })
-        .eq('id', member.school_id)
-        .lt('seats_used', school.seat_limit)
+      added.push(studentId)
+
+      // Increment seats_used for new-to-school students
+      if (!alreadyInSchool && school) {
+        await admin
+          .from('schools')
+          .update({ seats_used: school.seats_used + added.length })
+          .eq('id', member.school_id)
+          .lt('seats_used', school.seat_limit)
+      }
+
+      // Grant pro access if school subscription is active
+      const schoolSubStatus = school?.subscription_status
+      if (schoolSubStatus === 'active' || schoolSubStatus === 'trialing') {
+        await admin
+          .from('profiles')
+          .update({ subscription_status: 'pro' })
+          .eq('id', studentId)
+      }
     }
 
     // Update class student_count
@@ -289,16 +317,11 @@ export async function POST(
 
     await admin.from('classes').update({ student_count: studentCount || 0 }).eq('id', classId)
 
-    // Grant pro access to the student only if the school has an active subscription
-    const schoolSubStatus = school?.subscription_status
-    if (schoolSubStatus === 'active' || schoolSubStatus === 'trialing') {
-      await admin
-        .from('profiles')
-        .update({ subscription_status: 'pro' })
-        .eq('id', studentId)
+    if (added.length === 0 && errors.length > 0) {
+      return NextResponse.json({ error: 'Failed to add any students', details: errors }, { status: 422 })
     }
 
-    return NextResponse.json({ success: true, student_id: studentId }, { status: 201 })
+    return NextResponse.json({ success: true, added, skipped, errors }, { status: 201 })
   } catch (error) {
     console.error('Add student error:', error)
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
@@ -335,26 +358,28 @@ export async function DELETE(
       return NextResponse.json({ error: 'Class not found' }, { status: 404 })
     }
 
-    let body: { student_id?: string }
+    let body: { studentId?: string; student_id?: string }
     try {
       body = await request.json()
     } catch {
       return NextResponse.json({ error: 'Invalid request body' }, { status: 400 })
     }
 
-    const { student_id } = body
-    if (!student_id) {
-      return NextResponse.json({ error: 'student_id is required' }, { status: 422 })
+    const student_id = body.studentId ?? body.student_id
+    if (!student_id || typeof student_id !== 'string' || student_id.trim().length === 0) {
+      return NextResponse.json({ error: 'studentId is required' }, { status: 422 })
     }
 
     const admin = createServiceRoleClient()
+
+    const trimmedStudentId = student_id.trim()
 
     // Soft delete: set is_active = false
     const { error: removeError } = await admin
       .from('class_students')
       .update({ is_active: false, removed_at: new Date().toISOString() })
       .eq('class_id', classId)
-      .eq('student_id', student_id)
+      .eq('student_id', trimmedStudentId)
       .eq('is_active', true)
 
     if (removeError) {
