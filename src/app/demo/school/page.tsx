@@ -105,6 +105,12 @@ export default function DemoSchoolDashboardPage() {
             >
               DEMO
             </Badge>
+            <Badge
+              variant="secondary"
+              className="border-primary/30 bg-primary/10 text-xs text-primary"
+            >
+              Exam Board: AQA
+            </Badge>
           </p>
         </div>
         <Button

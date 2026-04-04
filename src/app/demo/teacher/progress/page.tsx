@@ -35,7 +35,7 @@ interface TeacherClass {
 const TEACHER_CLASSES: TeacherClass[] = [
   { id: "mc-001", name: "10A English", yearGroup: 10, examBoard: "AQA" },
   { id: "mc-002", name: "11B English", yearGroup: 11, examBoard: "AQA" },
-  { id: "mc-003", name: "13 IAL Lang", yearGroup: 13, examBoard: "Pearson IAL" },
+  { id: "mc-003", name: "13 A-Level Lang", yearGroup: 13, examBoard: "AQA" },
 ]
 
 // ── Students mapped to classes with progress data ────────────────────────────
@@ -72,12 +72,12 @@ const CLASS_STUDENTS: ClassStudent[] = [
   { id: "s11", name: "Tom Harrison", classId: "mc-002", className: "11B English", score: 79, progress: 76, status: "green", trend: "stable", lastActive: "Today", assignmentsCompleted: 24, assignmentsTotal: 30 },
   { id: "s18", name: "Grace Williams", classId: "mc-002", className: "11B English", score: 68, progress: 65, status: "amber", trend: "up", lastActive: "Yesterday", assignmentsCompleted: 20, assignmentsTotal: 30 },
   { id: "s19", name: "Ryan O'Brien", classId: "mc-002", className: "11B English", score: 55, progress: 50, status: "amber", trend: "down", lastActive: "3 days ago", assignmentsCompleted: 16, assignmentsTotal: 30 },
-  // 13 IAL Lang
-  { id: "s10", name: "Aisha Begum", classId: "mc-003", className: "13 IAL Lang", score: 28, progress: 24, status: "red", trend: "down", lastActive: "1 week ago", assignmentsCompleted: 5, assignmentsTotal: 22 },
-  { id: "s7", name: "Liam Patterson", classId: "mc-003", className: "13 IAL Lang", score: 63, progress: 60, status: "amber", trend: "stable", lastActive: "Yesterday", assignmentsCompleted: 14, assignmentsTotal: 22 },
-  { id: "s8", name: "Emma Rodriguez", classId: "mc-003", className: "13 IAL Lang", score: 72, progress: 70, status: "green", trend: "up", lastActive: "Today", assignmentsCompleted: 18, assignmentsTotal: 22 },
-  { id: "s12", name: "Noah Williams", classId: "mc-003", className: "13 IAL Lang", score: 59, progress: 55, status: "amber", trend: "stable", lastActive: "2 days ago", assignmentsCompleted: 13, assignmentsTotal: 22 },
-  { id: "s20", name: "Isla Campbell", classId: "mc-003", className: "13 IAL Lang", score: 35, progress: 30, status: "red", trend: "down", lastActive: "5 days ago", assignmentsCompleted: 7, assignmentsTotal: 22 },
+  // 13 A-Level Lang
+  { id: "s10", name: "Aisha Begum", classId: "mc-003", className: "13 A-Level Lang", score: 28, progress: 24, status: "red", trend: "down", lastActive: "1 week ago", assignmentsCompleted: 5, assignmentsTotal: 22 },
+  { id: "s7", name: "Liam Patterson", classId: "mc-003", className: "13 A-Level Lang", score: 63, progress: 60, status: "amber", trend: "stable", lastActive: "Yesterday", assignmentsCompleted: 14, assignmentsTotal: 22 },
+  { id: "s8", name: "Emma Rodriguez", classId: "mc-003", className: "13 A-Level Lang", score: 72, progress: 70, status: "green", trend: "up", lastActive: "Today", assignmentsCompleted: 18, assignmentsTotal: 22 },
+  { id: "s12", name: "Noah Williams", classId: "mc-003", className: "13 A-Level Lang", score: 59, progress: 55, status: "amber", trend: "stable", lastActive: "2 days ago", assignmentsCompleted: 13, assignmentsTotal: 22 },
+  { id: "s20", name: "Isla Campbell", classId: "mc-003", className: "13 A-Level Lang", score: 35, progress: 30, status: "red", trend: "down", lastActive: "5 days ago", assignmentsCompleted: 7, assignmentsTotal: 22 },
 ]
 
 // ── Weekly activity data ─────────────────────────────────────────────────────

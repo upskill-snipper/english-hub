@@ -89,7 +89,7 @@ function generateStudentFromId(id: string): DemoStudent {
   const yearGroups = ["Year 7", "Year 8", "Year 9", "Year 10", "Year 11", "Year 12", "Year 13"]
   const classNames = [
     "7A English", "8B English", "9C English", "10A English", "10B English",
-    "11A English", "11B English", "12 A-Level Lit", "13 IAL Lang",
+    "11A English", "11B English", "12 A-Level Lit", "13 A-Level Lang",
   ]
 
   const firstName = firstNames[Math.floor(rand() * firstNames.length)]

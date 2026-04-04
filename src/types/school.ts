@@ -23,6 +23,8 @@ export interface School {
   promoCodeUsed?: string
   seatLimit: number
   seatsUsed: number
+  examBoard?: string
+  curriculum?: string[]
   logoUrl?: string
   createdAt: string
 }

@@ -2,7 +2,9 @@
 
 import { useParams } from "next/navigation";
 import Link from "next/link";
+import { toast } from "sonner";
 import { DEMO_CLASSES, DEMO_STUDENTS } from "@/data/demo-data";
+import { downloadCSV } from "@/lib/download-csv";
 
 function scoreToGrade(score: number): string {
   if (score >= 90) return "A*";
@@ -207,6 +209,42 @@ export default function ClassReportPage() {
             <span>&larr;</span> Back to Reports
           </Link>
           <div className="flex items-center gap-3">
+            <button
+              onClick={() => {
+                toast.success("Report emailed to department", {
+                  description: "In production, this sends the class report PDF to all teachers in the English department.",
+                });
+              }}
+              className="px-4 py-2.5 bg-neutral-800 hover:bg-neutral-700 text-neutral-200 rounded-lg font-medium text-sm transition-colors flex items-center gap-2 border border-neutral-700"
+            >
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+              Email to Department
+            </button>
+            <button
+              onClick={() => {
+                if (students.length > 0) {
+                  const csvData = students.map((s) => ({
+                    Name: s.name,
+                    "Average Score (%)": s.averageScore,
+                    Grade: scoreToGrade(s.averageScore),
+                    "Overall Progress (%)": s.overallProgress,
+                    "Assignments Completed": s.assignmentsCompleted,
+                    "Assignments Total": s.assignmentsTotal,
+                    Status: s.status,
+                  }));
+                  downloadCSV(csvData, `${cls.name.replace(/\s+/g, "-")}-class-data.csv`);
+                  toast.success("CSV downloaded", {
+                    description: `Exported data for ${students.length} students in ${cls.name}.`,
+                  });
+                } else {
+                  toast.info("No student data available to export for this class in the demo.");
+                }
+              }}
+              className="px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-medium text-sm transition-colors flex items-center gap-2"
+            >
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+              Export CSV
+            </button>
             <button
               onClick={() => window.print()}
               className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium text-sm transition-colors flex items-center gap-2"
@@ -653,6 +691,78 @@ export default function ClassReportPage() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Compare with Previous Term */}
+        <div className="report-card bg-neutral-900 border border-neutral-800 rounded-xl p-6 print:rounded-none">
+          <h2 className="text-lg font-semibold text-neutral-100 print:text-black mb-4">
+            Compare with Previous Term
+          </h2>
+          <p className="text-xs text-neutral-500 print:text-neutral-600 mb-4">
+            Comparison of key metrics between Autumn Term 2025-26 and Summer Term 2024-25.
+          </p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="bg-neutral-800 print:bg-neutral-200">
+                  <th className="text-left px-3 py-2.5 font-semibold text-neutral-300 print:text-black rounded-tl-lg print:rounded-none">
+                    Metric
+                  </th>
+                  <th className="text-center px-3 py-2.5 font-semibold text-neutral-300 print:text-black">
+                    Previous Term
+                  </th>
+                  <th className="text-center px-3 py-2.5 font-semibold text-neutral-300 print:text-black">
+                    This Term
+                  </th>
+                  <th className="text-center px-3 py-2.5 font-semibold text-neutral-300 print:text-black rounded-tr-lg print:rounded-none">
+                    Change
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { metric: "Average Score", prev: Math.max(classAvgScore - 7, 30), curr: classAvgScore, unit: "%" },
+                  { metric: "Completion Rate", prev: Math.max(classCompletionPct - 12, 25), curr: classCompletionPct, unit: "%" },
+                  { metric: "Excelling Students", prev: Math.max(ragCounts.excelling - 1, 0), curr: ragCounts.excelling, unit: "" },
+                  { metric: "At Risk Students", prev: ragCounts.atRisk + 2, curr: ragCounts.atRisk, unit: "" },
+                  { metric: "Class Grade", prev: scoreToGrade(Math.max(classAvgScore - 7, 30)), curr: scoreToGrade(classAvgScore), unit: "" },
+                ].map((row, i) => {
+                  const numDiff = typeof row.prev === "number" && typeof row.curr === "number" ? row.curr - row.prev : 0;
+                  const improved = row.metric === "At Risk Students" ? numDiff < 0 : numDiff > 0;
+                  const isGrade = row.metric === "Class Grade";
+                  return (
+                    <tr
+                      key={row.metric}
+                      className={i % 2 === 0 ? "bg-neutral-900 print:bg-white" : "bg-neutral-850 print:bg-neutral-50"}
+                    >
+                      <td className="px-3 py-2.5 text-neutral-200 print:text-black font-medium">{row.metric}</td>
+                      <td className="px-3 py-2.5 text-center text-neutral-400 print:text-neutral-600">
+                        {isGrade ? row.prev : `${row.prev}${row.unit}`}
+                      </td>
+                      <td className="px-3 py-2.5 text-center text-neutral-100 print:text-black font-semibold">
+                        {isGrade ? row.curr : `${row.curr}${row.unit}`}
+                      </td>
+                      <td className="px-3 py-2.5 text-center">
+                        {isGrade ? (
+                          <span className="text-neutral-400 print:text-neutral-600">--</span>
+                        ) : (
+                          <span className={`text-xs font-semibold ${improved ? "text-emerald-400 print:text-emerald-700" : numDiff === 0 ? "text-neutral-400" : "text-red-400 print:text-red-700"}`}>
+                            {numDiff > 0 ? "+" : ""}{numDiff}{row.unit}
+                            {improved ? " \u2191" : numDiff < 0 ? " \u2193" : ""}
+                          </span>
+                        )}
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-4 text-sm text-neutral-300 print:text-black leading-relaxed">
+            {classAvgScore > (classAvgScore - 7)
+              ? "The class has shown positive improvement compared to the previous term. Continue with current strategies and maintain momentum heading into the next assessment window."
+              : "Performance has remained stable. Consider reviewing teaching approaches and intervention strategies to drive improvement."}
+          </p>
         </div>
 
         {/* Recommendations */}

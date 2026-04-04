@@ -51,7 +51,7 @@ const features = [
     icon: PenTool,
     color: 'text-emerald-400 bg-emerald-500/10',
     title: 'AI Essay Marking',
-    desc: 'Students submit essays and get instant, detailed feedback aligned to AQA, Edexcel, OCR or WJEC mark schemes. Review and adjust before it reaches them.',
+    desc: 'Students submit essays and get instant, detailed feedback aligned to your school\'s chosen exam board mark scheme. Review and adjust before it reaches them.',
   },
   {
     icon: BarChart3,
@@ -74,8 +74,8 @@ const features = [
   {
     icon: Award,
     color: 'text-red-400 bg-red-500/10',
-    title: 'Exam Board Coverage',
-    desc: 'Full coverage of AQA, Edexcel IGCSE, Edexcel IAL, OCR and WJEC. Every resource and lesson is mapped to the correct specification so nothing is wasted.',
+    title: 'Your Exam Board, Your Content',
+    desc: 'We support AQA, Edexcel, OCR, WJEC, and IGCSE/CAIE. Your school selects one board during setup and every lesson, resource, and mark scheme is tailored to that specification -- so nothing is wasted.',
   },
 ]
 
@@ -119,7 +119,7 @@ const faqs = [
   },
   {
     q: 'Which exam boards do you cover?',
-    a: 'We cover AQA, Edexcel IGCSE, Edexcel IAL, OCR, and WJEC Eduqas. All lessons and resources are mapped to the relevant specification so you and your students only work with what is needed for their exams.',
+    a: 'We support all major boards: AQA, Edexcel, OCR, WJEC Eduqas, and IGCSE/CAIE. Your school selects one exam board during setup and all content -- lessons, resources, mark schemes, and AI feedback -- is tailored to that board\'s specification. You only ever see what is relevant to your students\' exams.',
   },
   {
     q: 'How does AI Essay Marking work?',
@@ -780,7 +780,7 @@ export default function ForTeachersPage() {
                   'Student Progress Analytics',
                   'Homework & Assignment Manager',
                   '300+ ready resources',
-                  'AQA, Edexcel IGCSE, IAL, OCR & WJEC',
+                  'All boards supported -- content tailored to yours',
                   'Cancel any time',
                 ].map((feature) => (
                   <div key={feature} className="flex items-start gap-3">

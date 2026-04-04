@@ -77,6 +77,12 @@ export default function TeacherDemoLayout({
               </Badge>
             </div>
             <p className="text-xs text-muted-foreground">Head of English</p>
+            <div className="flex items-center gap-1.5 mt-1">
+              <Badge className="text-[10px] px-1.5 py-0 h-4 bg-primary/10 text-primary border-primary/20">
+                AQA
+              </Badge>
+              <span className="text-[10px] text-muted-foreground">Exam Board</span>
+            </div>
           </div>
         </div>
       </div>

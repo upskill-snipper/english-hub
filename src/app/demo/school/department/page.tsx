@@ -146,7 +146,7 @@ interface CpdRecommendation {
 
 const CPD_RECOMMENDATIONS: CpdRecommendation[] = [
   { teacher: "Ms. Thompson", recommendation: "Consider collaborative planning for Year 10 poetry comparison essays" },
-  { teacher: "Mrs. Clarke", recommendation: "Attend Edexcel moderation training to improve Year 9 assessment accuracy" },
+  { teacher: "Mrs. Clarke", recommendation: "Attend AQA moderation training to improve Year 9 assessment accuracy" },
   { teacher: "Mr. Roberts", recommendation: "Observe Ms. Khan's structured revision sessions for KS3 engagement strategies" },
   { teacher: "Ms. Williams", recommendation: "Pair with Mr. Patel for NQT mentoring on Year 7 literacy scaffolding" },
   { teacher: "Mrs. Okafor", recommendation: "Pilot formative assessment toolkit in Year 9 to close the gap to target" },

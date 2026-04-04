@@ -33,6 +33,8 @@ import { Switch } from "@/components/ui/switch"
 interface SchoolProfile {
   name: string
   type: string
+  examBoard: string
+  curriculum: string[]
   address: string
   city: string
   postcode: string
@@ -61,6 +63,22 @@ interface AdminUser {
 // ---------------------------------------------------------------------------
 // Mock data
 // ---------------------------------------------------------------------------
+
+const EXAM_BOARDS = [
+  "AQA",
+  "Edexcel (Pearson)",
+  "OCR",
+  "WJEC/Eduqas",
+  "IGCSE (Cambridge/CAIE)",
+]
+
+const CURRICULUM_OPTIONS = [
+  "GCSE English Language",
+  "GCSE English Literature",
+  "A-Level English Language",
+  "A-Level English Literature",
+  "KS3 English (Years 7-9)",
+]
 
 const MOCK_JOIN_CODE = "EH-XK92-DELTA"
 
@@ -94,6 +112,8 @@ function SchoolProfileSection() {
   const [profile, setProfile] = useState<SchoolProfile>({
     name: "Westfield Academy",
     type: "Secondary",
+    examBoard: "AQA",
+    curriculum: ["GCSE English Language", "GCSE English Literature"],
     address: "12 School Lane",
     city: "Manchester",
     postcode: "M14 5TP",
@@ -101,7 +121,7 @@ function SchoolProfileSection() {
     phone: "0161 555 0192",
   })
 
-  function handleChange(field: keyof SchoolProfile, value: string) {
+  function handleChange(field: keyof SchoolProfile, value: string | string[]) {
     setProfile((prev) => ({ ...prev, [field]: value }))
   }
 
@@ -147,6 +167,51 @@ function SchoolProfileSection() {
               onChange={(e) => handleChange("type", e.target.value)}
               placeholder="e.g. Secondary, Sixth Form, FE College"
             />
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          <div className="space-y-1.5">
+            <Label htmlFor="exam-board">Exam Board</Label>
+            <select
+              id="exam-board"
+              value={profile.examBoard}
+              onChange={(e) => handleChange("examBoard", e.target.value)}
+              className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 text-foreground"
+            >
+              <option value="" disabled>Select exam board...</option>
+              {EXAM_BOARDS.map((board) => (
+                <option key={board} value={board}>{board}</option>
+              ))}
+            </select>
+            <p className="text-xs text-muted-foreground">
+              Content and assessments are tailored to your exam board.
+            </p>
+          </div>
+        </div>
+
+        <div className="space-y-2">
+          <Label>Curriculum</Label>
+          <p className="text-xs text-muted-foreground">
+            Select all qualifications your school teaches.
+          </p>
+          <div className="space-y-2">
+            {CURRICULUM_OPTIONS.map((option) => (
+              <label key={option} className="flex items-center gap-3 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={profile.curriculum.includes(option)}
+                  onChange={(e) => {
+                    const next = e.target.checked
+                      ? [...profile.curriculum, option]
+                      : profile.curriculum.filter((c) => c !== option)
+                    handleChange("curriculum", next)
+                  }}
+                  className="h-4 w-4 accent-primary rounded"
+                />
+                <span className="text-sm text-foreground">{option}</span>
+              </label>
+            ))}
           </div>
         </div>
 

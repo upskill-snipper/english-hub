@@ -12,6 +12,8 @@ import {
   Mail,
   Key,
   Sparkles,
+  BookOpen,
+  ChevronDown,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -97,6 +99,62 @@ export default function DemoSettingsPage() {
 
         <div className="mt-5 flex justify-end">
           <Button onClick={handleSave}>Save Changes</Button>
+        </div>
+      </section>
+
+      {/* Exam Board & Curriculum */}
+      <section className="rounded-xl border border-border bg-card p-6">
+        <div className="flex items-center gap-3 mb-6">
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10">
+            <BookOpen className="h-4.5 w-4.5 text-primary" />
+          </div>
+          <div>
+            <h2 className="text-base font-semibold">Exam Board & Curriculum</h2>
+            <p className="text-xs text-muted-foreground">Configure your exam board and active specifications</p>
+          </div>
+        </div>
+
+        <div className="grid gap-5 sm:grid-cols-2">
+          <div className="space-y-1.5">
+            <label className="text-sm font-medium text-foreground">Exam Board</label>
+            <Input value={DEMO_SCHOOL.examBoard} readOnly className="bg-muted/50" />
+          </div>
+          <div className="space-y-1.5">
+            <label className="text-sm font-medium text-foreground">Academic Year</label>
+            <div className="relative">
+              <select
+                defaultValue="2025-2026"
+                onChange={() => handleSave()}
+                className="w-full appearance-none rounded-md border border-border bg-background px-3 py-2 pr-8 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/40"
+              >
+                <option value="2025-2026">2025-2026</option>
+                <option value="2024-2025">2024-2025</option>
+              </select>
+              <ChevronDown className="pointer-events-none absolute right-2.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-5">
+          <label className="text-sm font-medium text-foreground">Active Curriculum Areas</label>
+          <div className="mt-2 flex flex-wrap gap-2">
+            <Badge className="bg-green-500/10 text-green-400 border-green-500/25 gap-1.5">
+              <Check className="h-3 w-3" />
+              GCSE English Language
+            </Badge>
+            <Badge className="bg-green-500/10 text-green-400 border-green-500/25 gap-1.5">
+              <Check className="h-3 w-3" />
+              GCSE English Literature
+            </Badge>
+          </div>
+        </div>
+
+        <p className="mt-4 text-xs text-muted-foreground">
+          All content, assessments, and reports are tailored to your exam board specification.
+        </p>
+
+        <div className="mt-5 flex justify-end">
+          <Button onClick={handleSave}>Save Curriculum Settings</Button>
         </div>
       </section>
 

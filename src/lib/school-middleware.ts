@@ -2,6 +2,7 @@
 // Returns whether a school's access is currently active.
 
 import { createServerSupabaseClient, createServiceRoleClient } from "./supabase/server"
+import { isSiteAdmin } from "./site-admin"
 
 // ---------------------------------------------------------------------------
 // Error type
@@ -54,6 +55,21 @@ export async function requireSchoolAdmin(): Promise<{
     .eq("invite_status", "accepted")
     .in("role", ["admin", "head_of_department"])
     .single()
+
+  // Site admins bypass school membership requirements
+  if ((memberError || !member) && isSiteAdmin(user.email)) {
+    return {
+      user: { id: user.id, email: user.email },
+      schoolId: "__site_admin__",
+      schoolName: "Site Admin (All Schools)",
+      accessInfo: {
+        isActive: true,
+        accessType: "founder",
+        accessUntil: null,
+        daysRemaining: null,
+      },
+    }
+  }
 
   if (memberError || !member) {
     throw new SchoolAccessError(

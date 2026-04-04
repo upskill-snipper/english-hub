@@ -24,7 +24,7 @@ export default async function SchoolAdminLayout({
     redirect("/auth/login")
   }
 
-  const access = await getSchoolAccess(user.id)
+  const access = await getSchoolAccess(user.id, user.email ?? undefined)
 
   if (!access || !access.isActive) {
     redirect("/auth/login")

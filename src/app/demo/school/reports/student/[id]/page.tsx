@@ -1,7 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
+import { toast } from "sonner";
 import { DEMO_STUDENTS } from "@/data/demo-data";
 
 function scoreToGrade(score: number): string {
@@ -75,6 +77,7 @@ function getScoreTrend(scores: number[]): { label: string; description: string }
 export default function StudentReportPage() {
   const params = useParams();
   const student = DEMO_STUDENTS.find((s) => s.id === params.id);
+  const [teacherNotes, setTeacherNotes] = useState("");
 
   if (!student) {
     return (
@@ -203,6 +206,17 @@ export default function StudentReportPage() {
             <span>&larr;</span> Back to Reports
           </Link>
           <div className="flex items-center gap-3">
+            <button
+              onClick={() => {
+                toast.success("Secure link generated", {
+                  description: "In production, this sends a secure, time-limited link to the student's parents/carers via email. They can view the report without needing an account.",
+                });
+              }}
+              className="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-medium text-sm transition-colors flex items-center gap-2"
+            >
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+              Share with Parents
+            </button>
             <button
               onClick={() => window.print()}
               className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium text-sm transition-colors flex items-center gap-2"
@@ -642,6 +656,85 @@ export default function StudentReportPage() {
             <p className="text-sm text-neutral-400 print:text-neutral-600 mt-3 text-right">
               -- {student.teacherName}, {student.className}
             </p>
+          </div>
+        </div>
+
+        {/* Previous Reports */}
+        <div className="no-print report-card bg-neutral-900 border border-neutral-800 rounded-xl p-6">
+          <h2 className="text-lg font-semibold text-neutral-100 mb-4 flex items-center gap-2">
+            <svg className="h-5 w-5 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            Previous Reports
+          </h2>
+          <p className="text-xs text-neutral-500 mb-4">
+            In the full product, all previously generated reports are archived and accessible here.
+          </p>
+          <div className="space-y-2">
+            {[
+              { date: "4 April 2026", term: "Spring Term 2025-26", type: "Progress Report" },
+              { date: "13 December 2025", term: "Autumn Term 2025-26", type: "Progress Report" },
+              { date: "18 July 2025", term: "Summer Term 2024-25", type: "End of Year Report" },
+              { date: "28 March 2025", term: "Spring Term 2024-25", type: "Progress Report" },
+              { date: "15 December 2024", term: "Autumn Term 2024-25", type: "Progress Report" },
+            ].map((report) => (
+              <div
+                key={report.date}
+                className="flex items-center justify-between bg-neutral-800/50 rounded-lg px-4 py-3 text-sm"
+              >
+                <div className="flex items-center gap-3">
+                  <svg className="h-4 w-4 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                  <div>
+                    <span className="text-neutral-200 font-medium">{report.type}</span>
+                    <span className="text-neutral-500 ml-2">-- {report.term}</span>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-neutral-500 text-xs">{report.date}</span>
+                  <button
+                    onClick={() => toast.info("In the full product, this would open the archived report PDF.")}
+                    className="text-blue-400 hover:text-blue-300 text-xs font-medium"
+                  >
+                    View
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Add Teacher Notes */}
+        <div className="no-print report-card bg-neutral-900 border border-neutral-800 rounded-xl p-6">
+          <h2 className="text-lg font-semibold text-neutral-100 mb-2 flex items-center gap-2">
+            <svg className="h-5 w-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>
+            Add Teacher Notes
+          </h2>
+          <p className="text-xs text-neutral-500 mb-3">
+            Add additional notes for this report. In the full product, notes are saved and included in the exported PDF.
+          </p>
+          <textarea
+            value={teacherNotes}
+            onChange={(e) => setTeacherNotes(e.target.value)}
+            placeholder="Add any additional observations, context, or notes about this student's progress..."
+            className="w-full bg-neutral-800/50 border border-neutral-700 rounded-lg p-4 text-sm text-neutral-200 placeholder:text-neutral-600 focus:outline-none focus:border-blue-500/50 resize-y min-h-[100px]"
+            rows={4}
+          />
+          <div className="flex items-center justify-between mt-3">
+            <span className="text-xs text-neutral-600">
+              {teacherNotes.length > 0 ? `${teacherNotes.length} characters` : "No notes added"}
+            </span>
+            <button
+              onClick={() => {
+                if (teacherNotes.trim()) {
+                  toast.success("Notes saved", {
+                    description: "In the full product, these notes would be saved and included in future report exports.",
+                  });
+                } else {
+                  toast.info("No notes to save. Type your notes in the box above.");
+                }
+              }}
+              className="px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white rounded-lg font-medium text-xs transition-colors"
+            >
+              Save Notes
+            </button>
           </div>
         </div>
 

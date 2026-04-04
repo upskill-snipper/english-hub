@@ -10,7 +10,7 @@ import DemoBanner from "@/components/demo/DemoBanner"
 const MITCHELL_CLASSES = [
   { id: "mc-001", name: "10A English", yearGroup: 10 },
   { id: "mc-002", name: "11B English", yearGroup: 11 },
-  { id: "mc-003", name: "13 IAL Lang", yearGroup: 13 },
+  { id: "mc-003", name: "13 A-Level Lang", yearGroup: 13 },
 ] as const
 
 type MitchellClassId = (typeof MITCHELL_CLASSES)[number]["id"]
@@ -27,11 +27,11 @@ const MITCHELL_STUDENTS = [
   { ...DEMO_STUDENTS[13], className: "11B English", classId: "mc-002", score: 42 },
   { ...DEMO_STUDENTS[5], className: "11B English", classId: "mc-002", score: 82 },
   { ...DEMO_STUDENTS[10], className: "11B English", classId: "mc-002", score: 79 },
-  { ...DEMO_STUDENTS[9], className: "13 IAL Lang", classId: "mc-003", score: 28 },
-  { ...DEMO_STUDENTS[3], className: "13 IAL Lang", classId: "mc-003", score: 35 },
-  { ...DEMO_STUDENTS[7], className: "13 IAL Lang", classId: "mc-003", score: 63 },
-  { ...DEMO_STUDENTS[11], className: "13 IAL Lang", classId: "mc-003", score: 59 },
-  { ...DEMO_STUDENTS[14], className: "13 IAL Lang", classId: "mc-003", score: 72 },
+  { ...DEMO_STUDENTS[9], className: "13 A-Level Lang", classId: "mc-003", score: 28 },
+  { ...DEMO_STUDENTS[3], className: "13 A-Level Lang", classId: "mc-003", score: 35 },
+  { ...DEMO_STUDENTS[7], className: "13 A-Level Lang", classId: "mc-003", score: 63 },
+  { ...DEMO_STUDENTS[11], className: "13 A-Level Lang", classId: "mc-003", score: 59 },
+  { ...DEMO_STUDENTS[14], className: "13 A-Level Lang", classId: "mc-003", score: 72 },
 ]
 
 function statusBadge(atRisk: boolean) {

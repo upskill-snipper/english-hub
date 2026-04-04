@@ -3,6 +3,8 @@
 import { useState, useEffect, useCallback } from "react";
 import { generateLessonPlan, generateWorksheet } from "@/lib/generate-teaching-pdf";
 import type { LessonPlanData, WorksheetQuestion as PdfWorksheetQuestion } from "@/lib/generate-teaching-pdf";
+import { generateLessonPlanWord, generateWorksheetWord } from "@/lib/generate-docx";
+import { generateLessonPlanPptx } from "@/lib/generate-pptx";
 
 // ─── Types (mirroring src/types.ts) ──────────────────────────────────────────
 
@@ -60,7 +62,7 @@ const YEAR_GROUPS = [
   "Year 13",
 ] as const;
 
-const EXAM_BOARDS = ["AQA", "Edexcel", "IGCSE", "IAL", "OCR"] as const;
+const EXAM_BOARDS = ["AQA"] as const;
 
 const DURATIONS = ["30 minutes", "45 minutes", "60 minutes"] as const;
 
@@ -510,12 +512,12 @@ const LESSON_PLANS: LessonPlan[] = [
     ],
   },
 
-  // 4 -- Of Mice and Men / IGCSE / Reading Analysis
+  // 4 -- Of Mice and Men / AQA / Reading Analysis
   {
     id: "demo-omam-01",
     title: "Dreams and Loneliness: The American Dream in Of Mice and Men",
     text: "Of Mice and Men",
-    board: "IGCSE",
+    board: "AQA",
     yearGroup: "Year 10",
     duration: "60 minutes",
     objectives: [
@@ -738,12 +740,12 @@ const LESSON_PLANS: LessonPlan[] = [
     ],
   },
 
-  // 6 -- Macbeth / Edexcel / Exam Practice
+  // 6 -- Macbeth / AQA / Exam Practice
   {
     id: "demo-mac-02",
     title: "Exam Practice: Writing About Lady Macbeth Under Timed Conditions",
     text: "Macbeth",
-    board: "Edexcel",
+    board: "AQA",
     yearGroup: "Year 11",
     duration: "45 minutes",
     objectives: [
@@ -841,12 +843,12 @@ const LESSON_PLANS: LessonPlan[] = [
     ],
   },
 
-  // 7 -- A Christmas Carol / Edexcel / Writing Skills
+  // 7 -- A Christmas Carol / AQA / Writing Skills
   {
     id: "demo-acc-02",
     title: "Descriptive Writing: Creating Atmosphere Inspired by Dickens",
     text: "A Christmas Carol",
-    board: "Edexcel",
+    board: "AQA",
     yearGroup: "Year 9",
     duration: "45 minutes",
     objectives: [
@@ -955,12 +957,12 @@ const LESSON_PLANS: LessonPlan[] = [
     ],
   },
 
-  // 8 -- An Inspector Calls / OCR / Speaking & Listening
+  // 8 -- An Inspector Calls / AQA / Speaking & Listening
   {
     id: "demo-aic-02",
     title: "Hot-Seating the Birlings: Speaking and Listening Assessment",
     text: "An Inspector Calls",
-    board: "OCR",
+    board: "AQA",
     yearGroup: "Year 11",
     duration: "60 minutes",
     objectives: [
@@ -1058,12 +1060,12 @@ const LESSON_PLANS: LessonPlan[] = [
     ],
   },
 
-  // 9 -- Of Mice and Men / Edexcel / Exam Practice
+  // 9 -- Of Mice and Men / AQA / Exam Practice
   {
     id: "demo-omam-02",
     title: "Exam Technique: Extract-Based Questions on Steinbeck's Methods",
     text: "Of Mice and Men",
-    board: "Edexcel",
+    board: "AQA",
     yearGroup: "Year 11",
     duration: "60 minutes",
     objectives: [
@@ -1161,12 +1163,12 @@ const LESSON_PLANS: LessonPlan[] = [
     ],
   },
 
-  // 10 -- Poetry Anthology / Edexcel / Writing Skills
+  // 10 -- Poetry Anthology / AQA / Writing Skills
   {
     id: "demo-poetry-02",
     title: "Writing Your Own Conflict Poem: Voice, Imagery, and Structure",
     text: "Poetry Anthology",
-    board: "Edexcel",
+    board: "AQA",
     yearGroup: "Year 9",
     duration: "60 minutes",
     objectives: [
@@ -1275,12 +1277,12 @@ const LESSON_PLANS: LessonPlan[] = [
     ],
   },
 
-  // 11 -- A Christmas Carol / IGCSE / Exam Practice
+  // 11 -- A Christmas Carol / AQA / Exam Practice
   {
     id: "demo-acc-03",
     title: "Redemption and Morality: Stave 5 and the Transformed Scrooge",
     text: "A Christmas Carol",
-    board: "IGCSE",
+    board: "AQA",
     yearGroup: "Year 10",
     duration: "60 minutes",
     objectives: [
@@ -1627,6 +1629,100 @@ export default function LessonBuilderDemo() {
     showToast("Worksheet opened for printing/saving as PDF");
   }, [generatedPlan]);
 
+  const handleDownloadWordLesson = useCallback(() => {
+    if (!generatedPlan) return;
+    const plan = generatedPlan;
+    generateLessonPlanWord(plan.text, {
+      title: plan.title,
+      duration: plan.duration,
+      yearGroup: plan.yearGroup,
+      examBoard: plan.board,
+      text: plan.text,
+      objectives: plan.objectives,
+      starterActivity: {
+        title: plan.starterActivity.title,
+        duration: plan.starterActivity.duration,
+        instructions: plan.starterActivity.instructions,
+        differentiation: plan.starterActivity.differentiation,
+      },
+      mainActivities: plan.mainActivities.map((a) => ({
+        title: a.title,
+        duration: a.duration,
+        instructions: a.instructions,
+        differentiation: a.differentiation,
+      })),
+      plenary: {
+        title: plan.plenaryActivity.title,
+        instructions: plan.plenaryActivity.instructions,
+        differentiation: plan.plenaryActivity.differentiation,
+      },
+      keyVocabulary: plan.keywords,
+      resourcesNeeded: plan.starterActivity.resources || [],
+      homework: plan.homework,
+      teacherNotes: plan.teacherNotes,
+    });
+    showToast("Lesson plan downloaded as Word document");
+  }, [generatedPlan]);
+
+  const handleDownloadWordWorksheet = useCallback(() => {
+    if (!generatedPlan) return;
+    const plan = generatedPlan;
+    const questions = plan.worksheetQuestions.map((q) => ({
+      question: q.question,
+      type: "short-answer" as const,
+      marks: q.marks || 3,
+      lines: q.lines,
+    }));
+    generateWorksheetWord(
+      plan.text,
+      {
+        title: `Worksheet: ${plan.title}`,
+        instructions: "Answer all questions in the spaces provided. Use quotations to support your answers where appropriate.",
+        text: plan.text,
+        yearGroup: plan.yearGroup,
+        examBoard: plan.board,
+      },
+      questions,
+    );
+    showToast("Worksheet downloaded as Word document");
+  }, [generatedPlan]);
+
+  const handleDownloadPptx = useCallback(() => {
+    if (!generatedPlan) return;
+    const plan = generatedPlan;
+    const lessonData: LessonPlanData = {
+      title: plan.title,
+      duration: plan.duration,
+      yearGroup: plan.yearGroup,
+      examBoard: plan.board,
+      text: plan.text,
+      objectives: plan.objectives,
+      starterActivity: {
+        title: plan.starterActivity.title,
+        duration: plan.starterActivity.duration,
+        instructions: plan.starterActivity.instructions,
+        differentiation: plan.starterActivity.differentiation,
+      },
+      mainActivities: plan.mainActivities.map((a) => ({
+        title: a.title,
+        duration: a.duration,
+        instructions: a.instructions,
+        differentiation: a.differentiation,
+      })),
+      plenary: {
+        title: plan.plenaryActivity.title,
+        instructions: plan.plenaryActivity.instructions,
+        differentiation: plan.plenaryActivity.differentiation,
+      },
+      keyVocabulary: plan.keywords,
+      resourcesNeeded: plan.starterActivity.resources || [],
+      homework: plan.homework,
+      teacherNotes: plan.teacherNotes,
+    };
+    generateLessonPlanPptx(plan.text, lessonData);
+    showToast("Lesson plan downloaded as PowerPoint");
+  }, [generatedPlan]);
+
   const handleCopy = useCallback(async () => {
     if (!generatedPlan) return;
     try {
@@ -1821,9 +1917,12 @@ export default function LessonBuilderDemo() {
             </div>
 
             {/* Action Buttons */}
-            <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-10">
+            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-3 mb-10">
               <ActionButton onClick={handleDownloadPDF} label="Download PDF" />
               <ActionButton onClick={handleDownloadWorksheet} label="Download Worksheet" />
+              <ActionButton onClick={handleDownloadPptx} label="Download PowerPoint" />
+              <ActionButton onClick={handleDownloadWordLesson} label="Download Word" />
+              <ActionButton onClick={handleDownloadWordWorksheet} label="Worksheet (Word)" />
               <ActionButton onClick={handleCopy} label={copied ? "Copied!" : "Copy to Clipboard"} />
               <ActionButton onClick={handleReset} label="Generate Another" />
               <ActionButton onClick={() => showToast("Available with full account")} label="Edit Lesson" />

@@ -146,8 +146,8 @@ const HOW_IT_WORKS = [
     step: "1",
     icon: School,
     color: "text-primary bg-primary/10 border-primary/20",
-    title: "Register Your School Free",
-    desc: "Create your school admin account and enter the promo code FOUNDER at checkout. No payment details required. Takes under 5 minutes.",
+    title: "Register & Choose Your Exam Board",
+    desc: "Create your school admin account, select your exam board (AQA, Edexcel, OCR, WJEC, or IGCSE/CAIE), and enter the promo code FOUNDER. All content is instantly tailored to your board. Takes under 5 minutes.",
   },
   {
     step: "2",
@@ -177,7 +177,7 @@ const COMPARISON_ROWS = [
   { feature: "Progress reports", school: true, individual: false },
   { feature: "AI essay feedback", school: true, individual: true },
   { feature: "300+ resources", school: true, individual: true },
-  { feature: "Exam board content", school: true, individual: true },
+  { feature: "Content tailored to your exam board", school: true, individual: true },
 ];
 
 /* ─────────────── Testimonials ─────────────── */
@@ -205,7 +205,7 @@ const TESTIMONIALS = [
     color: "bg-emerald-500/10 text-emerald-400",
   },
   {
-    quote: "The lesson resources save me hours each week. Everything is mapped to AQA so I know it is specification-relevant without having to check myself.",
+    quote: "The lesson resources save me hours each week. We chose AQA during setup and everything is mapped to our specification -- I never have to check if a resource matches our board.",
     name: "NQT English Teacher",
     school: "Academy Trust, Leeds",
     initials: "NT",
@@ -234,7 +234,7 @@ const SCHOOL_FAQS = [
   },
   {
     q: "Which exam boards do you cover?",
-    a: "We cover AQA GCSE, Edexcel GCSE, OCR GCSE, WJEC/Eduqas GCSE, and Edexcel International GCSE (IGCSE). All content is mapped to the specific exam board specification so students are always practising the right material.",
+    a: "We support all major boards: AQA, Edexcel, OCR, WJEC/Eduqas, and IGCSE/CAIE. Your school selects one exam board during setup and all content -- lessons, resources, mark schemes, and AI feedback -- is tailored to that board's specification. Students only ever see what is relevant to their exams.",
   },
   {
     q: "Is the platform GDPR compliant?",
@@ -301,9 +301,9 @@ export default function ForSchoolsPage() {
           </h1>
 
           <p className="mt-7 text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Transform English teaching across your whole school. Give every student and teacher
-            access to board-specific content, AI essay feedback, real-time analytics, and a
-            full lesson resource library -- all from one platform.
+            Transform English teaching across your whole school. Choose your exam board during
+            setup and every lesson, resource, and assessment is tailored to your specification.
+            AI essay feedback, real-time analytics, and a full resource library -- all from one platform.
           </p>
 
           <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -526,6 +526,7 @@ export default function ForSchoolsPage() {
               </div>
               <ul className="space-y-3 flex-1">
                 {[
+                  "Choose your exam board (AQA, Edexcel, OCR, WJEC, IGCSE/CAIE) -- all content tailored to your specification",
                   "Unlimited student accounts",
                   "Unlimited teacher accounts",
                   "Department analytics dashboard",
@@ -581,7 +582,7 @@ export default function ForSchoolsPage() {
                   { label: "No progress reports", available: false },
                   { label: "AI essay feedback", available: true },
                   { label: "300+ resources", available: true },
-                  { label: "Exam board content", available: true },
+                  { label: "Content tailored to your exam board", available: true },
                 ].map((row) => (
                   <li key={row.label} className="flex items-start gap-3 text-sm text-muted-foreground">
                     {row.available ? (

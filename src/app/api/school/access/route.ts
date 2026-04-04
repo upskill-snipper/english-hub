@@ -39,7 +39,7 @@ export async function GET(request: NextRequest) {
     }
 
     // Fetch school access
-    const access = await getSchoolAccess(user.id)
+    const access = await getSchoolAccess(user.id, user.email ?? undefined)
     if (!access) {
       return NextResponse.json({ error: "No school association found for this user." }, { status: 404 })
     }

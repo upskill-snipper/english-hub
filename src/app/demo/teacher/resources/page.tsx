@@ -29,6 +29,8 @@ import {
   generateMarkScheme,
   generateRevisionGuide,
 } from "@/lib/generate-teaching-pdf"
+import { generateLessonPlanPptx, generateResourcePptx } from "@/lib/generate-pptx"
+import { generateLessonPlanWord } from "@/lib/generate-docx"
 import {
   act1LessonPlan,
   characterWorksheetMeta,
@@ -39,6 +41,7 @@ import {
   responsibilityMarkSchemeAnswers,
   inspectorCallsRevisionGuide,
 } from "@/lib/inspector-calls-free-pack"
+import { FileDown } from "lucide-react"
 
 // ─── Types ─────────────────────────────────────────────────────────────────
 
@@ -125,7 +128,7 @@ const RESOURCES: TeachingResource[] = [
     type: "Lesson Plan",
     title: "Romeo and Juliet: Prologue and Fate -- Examining the Sonnet Prologue",
     yearGroup: "Year 9",
-    examBoard: "Edexcel",
+    examBoard: "AQA",
     duration: "55 min",
     isFree: false,
     objectives: [
@@ -170,7 +173,7 @@ const RESOURCES: TeachingResource[] = [
     type: "Lesson Plan",
     title: "Creative Writing: Narrative Openings -- Hooking the Reader",
     yearGroup: "Year 9",
-    examBoard: "Edexcel",
+    examBoard: "AQA",
     duration: "55 min",
     isFree: false,
     objectives: [
@@ -255,14 +258,14 @@ const RESOURCES: TeachingResource[] = [
     firstActivity: "Scheme overview: review the lesson sequence, key assessment points, and resource checklist for the full unit.",
   },
   {
-    id: "tg-igcse-transition",
+    id: "tg-gcse-alevel-transition",
     type: "Teaching Guide",
-    title: "IGCSE to IAL Transition: Bridging the Gap for Year 12",
+    title: "GCSE to A-Level Transition: Bridging the Gap for Year 12",
     yearGroup: "Year 12",
-    examBoard: "IAL",
+    examBoard: "AQA",
     isFree: false,
     objectives: [
-      "Identify key skill gaps between IGCSE and IAL expectations",
+      "Identify key skill gaps between GCSE and A-Level expectations",
       "Plan bridging activities for the first half-term of Year 12",
       "Establish independent study habits and critical essay-writing frameworks",
     ],
@@ -363,7 +366,7 @@ const RESOURCES: TeachingResource[] = [
 // ─── Filter Options ────────────────────────────────────────────────────────
 
 const YEAR_GROUPS = ["All", "Year 7", "Year 8", "Year 9", "Year 10", "Year 11", "Year 12", "Year 13"]
-const EXAM_BOARDS = ["All", "AQA", "Edexcel", "IGCSE", "IAL", "OCR"]
+const EXAM_BOARDS = ["All", "AQA"]
 const RESOURCE_TYPES: ("All" | ResourceType)[] = [
   "All",
   "Lesson Plan",
@@ -432,10 +435,15 @@ export default function TeacherResourcesPage() {
     return true
   })
 
-  function handleDownload(resource: TeachingResource) {
+  function handleDownload(resource: TeachingResource, format: "pdf" | "pptx" | "word" = "pdf") {
     if (resource.isFree) {
-      // Generate the free An Inspector Calls lesson plan in a new tab
-      generateLessonPlan("An Inspector Calls", act1LessonPlan)
+      if (format === "pdf") {
+        generateLessonPlan("An Inspector Calls", act1LessonPlan)
+      } else if (format === "pptx") {
+        generateLessonPlanPptx("An Inspector Calls", act1LessonPlan)
+      } else if (format === "word") {
+        generateLessonPlanWord("An Inspector Calls", act1LessonPlan)
+      }
       return
     }
     setToast("Subscribe to download -- first month free")
@@ -628,47 +636,72 @@ export default function TeacherResourcesPage() {
                   <div className="flex-1" />
 
                   {/* Action buttons */}
-                  <div className="flex items-center gap-2 pt-2 border-t border-white/[0.06]">
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className="flex-1 text-xs text-neutral-400 hover:text-white hover:bg-white/[0.06] gap-1.5"
-                      onClick={() => setPreviewOpen(isPreviewOpen ? null : resource.id)}
-                    >
-                      {isPreviewOpen ? (
-                        <>
-                          <EyeOff className="h-3.5 w-3.5" />
-                          Hide Preview
-                        </>
-                      ) : (
-                        <>
-                          <Eye className="h-3.5 w-3.5" />
-                          Preview
-                        </>
-                      )}
-                    </Button>
+                  <div className="space-y-2 pt-2 border-t border-white/[0.06]">
+                    <div className="flex items-center gap-2">
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className="flex-1 text-xs text-neutral-400 hover:text-white hover:bg-white/[0.06] gap-1.5"
+                        onClick={() => setPreviewOpen(isPreviewOpen ? null : resource.id)}
+                      >
+                        {isPreviewOpen ? (
+                          <>
+                            <EyeOff className="h-3.5 w-3.5" />
+                            Hide Preview
+                          </>
+                        ) : (
+                          <>
+                            <Eye className="h-3.5 w-3.5" />
+                            Preview
+                          </>
+                        )}
+                      </Button>
 
-                    <Button
-                      size="sm"
-                      className={`flex-1 text-xs gap-1.5 ${
-                        resource.isFree
-                          ? "bg-emerald-600 hover:bg-emerald-500 text-white"
-                          : "bg-white/10 hover:bg-white/15 text-neutral-300"
-                      }`}
-                      onClick={() => handleDownload(resource)}
-                    >
-                      {resource.isFree ? (
-                        <>
-                          <Download className="h-3.5 w-3.5" />
-                          Download Free
-                        </>
-                      ) : (
-                        <>
-                          <Lock className="h-3.5 w-3.5" />
-                          Download
-                        </>
-                      )}
-                    </Button>
+                      <Button
+                        size="sm"
+                        className={`flex-1 text-xs gap-1.5 ${
+                          resource.isFree
+                            ? "bg-emerald-600 hover:bg-emerald-500 text-white"
+                            : "bg-white/10 hover:bg-white/15 text-neutral-300"
+                        }`}
+                        onClick={() => handleDownload(resource, "pdf")}
+                      >
+                        {resource.isFree ? (
+                          <>
+                            <Download className="h-3.5 w-3.5" />
+                            PDF
+                          </>
+                        ) : (
+                          <>
+                            <Lock className="h-3.5 w-3.5" />
+                            Download
+                          </>
+                        )}
+                      </Button>
+                    </div>
+
+                    {resource.isFree && (
+                      <div className="flex items-center gap-2">
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          className="flex-1 text-xs text-neutral-400 hover:text-white hover:bg-white/[0.06] gap-1.5"
+                          onClick={() => handleDownload(resource, "pptx")}
+                        >
+                          <Presentation className="h-3.5 w-3.5" />
+                          PowerPoint
+                        </Button>
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          className="flex-1 text-xs text-neutral-400 hover:text-white hover:bg-white/[0.06] gap-1.5"
+                          onClick={() => handleDownload(resource, "word")}
+                        >
+                          <FileDown className="h-3.5 w-3.5" />
+                          Word
+                        </Button>
+                      </div>
+                    )}
                   </div>
                 </div>
               </Card>

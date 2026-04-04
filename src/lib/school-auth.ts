@@ -1,4 +1,5 @@
-import { createServiceRoleClient } from '@/lib/supabase/server'
+import { createServiceRoleClient, createServerSupabaseClient } from '@/lib/supabase/server'
+import { isSiteAdmin } from '@/lib/site-admin'
 
 export class SchoolAuthError extends Error {
   constructor(message: string, public readonly code: string) {
@@ -19,7 +20,12 @@ export async function verifySchoolMember(userId: string, requiredRoles?: string[
 
   if (error) {
     // PGRST116 = "no rows returned" from .single() -- not a member
-    if (error.code === 'PGRST116') return null
+    if (error.code === 'PGRST116') {
+      // Site admins bypass school membership requirements
+      const siteAdminMember = await _getSiteAdminSyntheticMember(userId)
+      if (siteAdminMember) return siteAdminMember
+      return null
+    }
     // Any other error (network, multiple rows, etc.) should propagate
     throw new SchoolAuthError(
       `Failed to verify school membership: ${error.message}`,
@@ -27,10 +33,45 @@ export async function verifySchoolMember(userId: string, requiredRoles?: string[
     )
   }
 
-  if (!member) return null
-  if (requiredRoles && !requiredRoles.includes(member.role)) return null
+  if (!member) {
+    const siteAdminMember = await _getSiteAdminSyntheticMember(userId)
+    if (siteAdminMember) return siteAdminMember
+    return null
+  }
+  if (requiredRoles && !requiredRoles.includes(member.role)) {
+    // Site admins bypass role restrictions
+    const siteAdminMember = await _getSiteAdminSyntheticMember(userId)
+    if (siteAdminMember) return siteAdminMember
+    return null
+  }
 
   return member
+}
+
+/**
+ * If the user is a site admin, returns a synthetic school member object
+ * so they can access all school API endpoints.
+ */
+async function _getSiteAdminSyntheticMember(userId: string) {
+  const anonClient = createServerSupabaseClient()
+  const { data: { user } } = await anonClient.auth.getUser()
+  if (!user || user.id !== userId) return null
+  if (!isSiteAdmin(user.email)) return null
+
+  return {
+    id: `site-admin-${userId}`,
+    user_id: userId,
+    school_id: '__site_admin__',
+    role: 'admin',
+    invite_status: 'accepted',
+    schools: {
+      id: '__site_admin__',
+      name: 'Site Admin (All Schools)',
+      access_type: 'founder',
+      access_until: null,
+      subscription_status: 'active',
+    },
+  }
 }
 
 export async function getSchoolForMember(userId: string) {

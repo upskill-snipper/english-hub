@@ -166,7 +166,7 @@ const YEAR_GROUPS: YearGroupData[] = [
     classes: [
       { name: "10A English", avgScore: 74, completionRate: 76, teacher: "Ms. Thompson" },
       { name: "10B English Lit", avgScore: 69, completionRate: 70, teacher: "Mr. Davies" },
-      { name: "10C IGCSE Lang", avgScore: 62, completionRate: 64, teacher: "Dr. Chen" },
+      { name: "10C English Lang", avgScore: 62, completionRate: 64, teacher: "Dr. Chen" },
     ],
     modules: [
       { name: "Macbeth", completionRate: 82 },
@@ -178,7 +178,7 @@ const YEAR_GROUPS: YearGroupData[] = [
     ],
     interventions: [
       "16 at-risk students: deploy exam technique intervention programme",
-      "10C IGCSE Lang: below target -- arrange departmental support observation",
+      "10C English Lang: below target -- arrange departmental support observation",
       "Poetry Anthology completion critically low -- introduce weekly poetry sessions",
       "Schedule mock exam preparation workshops for borderline C/D students",
     ],
@@ -270,7 +270,7 @@ const YEAR_GROUPS: YearGroupData[] = [
     ],
     classes: [
       { name: "13A English Lit A-Level", avgScore: 78, completionRate: 84, teacher: "Dr. Chen" },
-      { name: "13 IAL Language", avgScore: 70, completionRate: 76, teacher: "Ms. Khan" },
+      { name: "13 A-Level Language", avgScore: 70, completionRate: 76, teacher: "Ms. Khan" },
     ],
     modules: [
       { name: "Othello Revision", completionRate: 86 },

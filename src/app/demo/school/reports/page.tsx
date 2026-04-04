@@ -23,11 +23,17 @@ import {
   Minus,
   Star,
   CircleDot,
+  Clock,
+  CalendarDays,
+  Mail,
+  Archive,
+  Zap,
 } from "lucide-react"
 import { toast } from "sonner"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import { Switch } from "@/components/ui/switch"
 import DemoBanner from "@/components/demo/DemoBanner"
 import {
   DEMO_SCHOOL,
@@ -606,6 +612,127 @@ export default function ReportsPage() {
                   <Button size="sm" className="bg-emerald-600 hover:bg-emerald-700 text-white gap-1.5" onClick={() => toast.info("Register your school to batch-download all reports as a ZIP file.")}>
                     <Download className="h-3.5 w-3.5" />Download All Reports
                   </Button>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Schedule Reports */}
+            <Card className="bg-[#111] border-white/10 print-avoid-break" data-print-hide>
+              <CardHeader>
+                <CardTitle className="text-white flex items-center gap-2">
+                  <CalendarDays className="h-5 w-5 text-violet-400" />
+                  Schedule Reports
+                </CardTitle>
+                <CardDescription className="text-neutral-400">
+                  In the full product, reports are generated automatically and sent to the relevant staff.
+                  Toggle schedules below to configure auto-generation.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  {[
+                    {
+                      title: "Weekly Progress Report",
+                      description: "Auto-sent to Head of Department every Monday at 8:00 AM",
+                      recipient: "HoD",
+                      frequency: "Weekly",
+                      icon: <Clock className="h-4 w-4 text-blue-400" />,
+                      defaultOn: true,
+                    },
+                    {
+                      title: "Monthly Performance Summary",
+                      description: "Auto-sent to Senior Leadership Team on the 1st of each month",
+                      recipient: "SLT",
+                      frequency: "Monthly",
+                      icon: <BarChart3 className="h-4 w-4 text-emerald-400" />,
+                      defaultOn: true,
+                    },
+                    {
+                      title: "Termly Assessment Report",
+                      description: "Generated automatically before Parents' Evening -- includes all student reports",
+                      recipient: "Parents",
+                      frequency: "Termly",
+                      icon: <GraduationCap className="h-4 w-4 text-amber-400" />,
+                      defaultOn: false,
+                    },
+                  ].map((schedule) => (
+                    <div
+                      key={schedule.title}
+                      className="flex items-center justify-between bg-white/5 rounded-lg p-4 border border-white/5"
+                    >
+                      <div className="flex items-start gap-3">
+                        <div className="mt-0.5">{schedule.icon}</div>
+                        <div>
+                          <h4 className="text-sm font-semibold text-white">{schedule.title}</h4>
+                          <p className="text-xs text-neutral-500 mt-0.5">{schedule.description}</p>
+                          <div className="flex items-center gap-2 mt-2">
+                            <Badge className="bg-white/10 text-neutral-300 border-white/10 text-[10px]">
+                              <Mail className="h-3 w-3 mr-1" />{schedule.recipient}
+                            </Badge>
+                            <Badge className="bg-white/10 text-neutral-300 border-white/10 text-[10px]">
+                              <CalendarDays className="h-3 w-3 mr-1" />{schedule.frequency}
+                            </Badge>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          className="border-white/20 text-white hover:bg-white/10 gap-1.5 text-xs"
+                          onClick={() => {
+                            toast.success(`${schedule.title} generated successfully`, {
+                              description: "In production, this report would open or download automatically.",
+                            })
+                          }}
+                        >
+                          <Zap className="h-3 w-3" />
+                          Generate Now
+                        </Button>
+                        <Switch
+                          defaultChecked={schedule.defaultOn}
+                          onCheckedChange={(checked) => {
+                            toast.info(
+                              checked
+                                ? `${schedule.title} scheduling enabled`
+                                : `${schedule.title} scheduling disabled`,
+                              { description: "Demo only -- no actual scheduling occurs." }
+                            )
+                          }}
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Download All Student Reports */}
+                <div className="mt-6 pt-4 border-t border-white/5">
+                  <div className="flex items-center justify-between bg-gradient-to-r from-violet-600/10 via-blue-600/10 to-cyan-600/10 rounded-lg p-4 border border-white/10">
+                    <div className="flex items-start gap-3">
+                      <Archive className="h-5 w-5 text-violet-400 mt-0.5" />
+                      <div>
+                        <h4 className="text-sm font-semibold text-white">Download All Student Reports</h4>
+                        <p className="text-xs text-neutral-500 mt-0.5">
+                          Generate a ZIP archive containing individual PDF reports for every student across all classes.
+                        </p>
+                        <p className="text-xs text-neutral-400 mt-1">
+                          {DEMO_STUDENTS.length} students across {DEMO_CLASSES.length} classes
+                        </p>
+                      </div>
+                    </div>
+                    <Button
+                      size="sm"
+                      className="bg-violet-600 hover:bg-violet-700 text-white gap-1.5"
+                      onClick={() => {
+                        toast.info("Download All Student Reports", {
+                          description: `In production, this would generate ${DEMO_STUDENTS.length} individual student PDFs and bundle them into a single ZIP file for download. Register your school to enable this feature.`,
+                        })
+                      }}
+                    >
+                      <Download className="h-3.5 w-3.5" />
+                      Download ZIP
+                    </Button>
+                  </div>
                 </div>
               </CardContent>
             </Card>

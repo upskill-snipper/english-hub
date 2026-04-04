@@ -78,7 +78,7 @@ export default function DemoSchoolLayoutClient({
                 Demo
               </Badge>
             </div>
-            <p className="text-xs text-muted-foreground">School Portal</p>
+            <p className="text-xs text-muted-foreground">School Portal &middot; AQA</p>
           </div>
         </div>
       </div>

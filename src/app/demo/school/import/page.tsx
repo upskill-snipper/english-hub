@@ -74,7 +74,7 @@ export default function DemoImportPage() {
       <div>
         <h1 className="text-2xl font-bold tracking-tight">Bulk Import</h1>
         <p className="mt-1 text-sm text-muted-foreground">
-          Import students and teachers from a spreadsheet. Accounts are created automatically.
+          Import students and teachers from a spreadsheet. Accounts are created automatically with access to AQA GCSE English content.
         </p>
       </div>
 
@@ -88,6 +88,7 @@ export default function DemoImportPage() {
         </div>
         <p className="mb-4 text-sm text-muted-foreground">
           Download the CSV template, fill it with your student or teacher data, then upload it below.
+          Imported students will be enrolled with your school's AQA specification.
         </p>
         <Button variant="outline" render={<a href="/api/school/export/template" download />}>
             <FileSpreadsheet className="h-4 w-4" />

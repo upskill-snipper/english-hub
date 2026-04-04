@@ -38,7 +38,13 @@ const YEAR_GROUPS = [
   "Year 13",
 ]
 
-const EXAM_BOARDS = ["AQA", "Edexcel", "OCR", "WJEC", "CIE", "Eduqas"]
+const EXAM_BOARDS = [
+  "AQA",
+  "Edexcel (Pearson)",
+  "OCR",
+  "WJEC/Eduqas",
+  "IGCSE (Cambridge/CAIE)",
+]
 
 const STEP_LABELS = ["Welcome", "Teachers", "Students", "Classes", "Complete"]
 

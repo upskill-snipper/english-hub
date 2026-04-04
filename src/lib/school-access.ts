@@ -1,4 +1,5 @@
 import { createServerSupabaseClient, createServiceRoleClient } from "./supabase/server"
+import { isSiteAdmin } from "./site-admin"
 
 export type SchoolAccessStatus = "active" | "expired" | "not_found" | "trial"
 
@@ -18,7 +19,7 @@ export interface SchoolAccess {
 // Checks school_members (staff + students via role column).
 // ---------------------------------------------------------------------------
 
-export async function getSchoolAccess(userId: string): Promise<SchoolAccess | null> {
+export async function getSchoolAccess(userId: string, userEmail?: string): Promise<SchoolAccess | null> {
   const admin = createServiceRoleClient()
 
   // Find the user's school_members row (covers admins, teachers, and students)
@@ -28,6 +29,19 @@ export async function getSchoolAccess(userId: string): Promise<SchoolAccess | nu
     .eq("user_id", userId)
     .eq("invite_status", "accepted")
     .single()
+
+  // Site admins get synthetic full access even without a school_members row
+  if ((memberError || !member) && isSiteAdmin(userEmail)) {
+    return {
+      schoolId: "__site_admin__",
+      schoolName: "Site Admin (All Schools)",
+      accessType: "founder",
+      accessUntil: null,
+      isActive: true,
+      daysRemaining: null,
+      userRole: "admin",
+    }
+  }
 
   if (memberError || !member) return null
 

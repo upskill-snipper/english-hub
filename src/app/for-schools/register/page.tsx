@@ -29,6 +29,8 @@ import { Label } from "@/components/ui/label";
 interface SchoolForm {
   schoolName: string;
   schoolType: string;
+  examBoard: string;
+  curriculum: string[];
   address: string;
   city: string;
   postcode: string;
@@ -78,6 +80,22 @@ const JOB_TITLES = [
   "Deputy Head",
   "Principal",
   "Other",
+];
+
+const EXAM_BOARDS = [
+  "AQA",
+  "Edexcel (Pearson)",
+  "OCR",
+  "WJEC/Eduqas",
+  "IGCSE (Cambridge/CAIE)",
+];
+
+const CURRICULUM_OPTIONS = [
+  "GCSE English Language",
+  "GCSE English Literature",
+  "A-Level English Language",
+  "A-Level English Literature",
+  "KS3 English (Years 7-9)",
 ];
 
 const COUNTRIES = ["UK", "Qatar", "Other"];
@@ -221,6 +239,47 @@ function Step1({
           placeholder="Select school type..."
         />
         <FieldError msg={errors.schoolType} />
+      </div>
+
+      <div className="space-y-1.5">
+        <Label htmlFor="examBoard">Exam Board *</Label>
+        <NativeSelect
+          id="examBoard"
+          value={data.examBoard}
+          onChange={(v) => onChange({ examBoard: v })}
+          options={EXAM_BOARDS}
+          placeholder="Select exam board..."
+        />
+        <p className="text-xs text-muted-foreground mt-0.5">
+          All content, assessments, and resources will be tailored to your selected exam board.
+        </p>
+        <FieldError msg={errors.examBoard} />
+      </div>
+
+      <div className="space-y-2">
+        <Label>Curriculum *</Label>
+        <p className="text-xs text-muted-foreground -mt-1">
+          Select all qualifications your school teaches.
+        </p>
+        <div className="space-y-2">
+          {CURRICULUM_OPTIONS.map((option) => (
+            <label key={option} className="flex items-center gap-3 cursor-pointer group">
+              <input
+                type="checkbox"
+                checked={data.curriculum.includes(option)}
+                onChange={(e) => {
+                  const next = e.target.checked
+                    ? [...data.curriculum, option]
+                    : data.curriculum.filter((c) => c !== option);
+                  onChange({ curriculum: next });
+                }}
+                className="h-4 w-4 accent-primary rounded"
+              />
+              <span className="text-sm text-foreground">{option}</span>
+            </label>
+          ))}
+        </div>
+        <FieldError msg={errors.curriculum} />
       </div>
 
       <div className="space-y-1.5">
@@ -576,6 +635,8 @@ export default function SchoolRegisterPage() {
   const [schoolData, setSchoolData] = useState<SchoolForm>({
     schoolName: "",
     schoolType: "",
+    examBoard: "",
+    curriculum: [],
     address: "",
     city: "",
     postcode: "",
@@ -622,6 +683,8 @@ export default function SchoolRegisterPage() {
     const errs: Partial<Record<keyof SchoolForm, string>> = {};
     if (!schoolData.schoolName.trim()) errs.schoolName = "School name is required.";
     if (!schoolData.schoolType) errs.schoolType = "Please select a school type.";
+    if (!schoolData.examBoard) errs.examBoard = "Please select your exam board.";
+    if (schoolData.curriculum.length === 0) errs.curriculum = "Please select at least one curriculum.";
     if (!schoolData.country) errs.country = "Please select a country.";
     setSchoolErrors(errs);
     return Object.keys(errs).length === 0;

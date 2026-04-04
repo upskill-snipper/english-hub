@@ -22,6 +22,7 @@ import {
   ClipboardList,
   Users,
   Award,
+  FileDown,
 } from "lucide-react"
 import { y11IgcseLitInspectorLessons } from "@/data/lesson-plans/y11-igcse-lit-inspector-lessons"
 import {
@@ -30,6 +31,13 @@ import {
   generateMarkScheme,
   generateRevisionGuide,
 } from "@/lib/generate-teaching-pdf"
+import {
+  generateLessonPlanWord,
+  generateWorksheetWord,
+  generateMarkSchemeWord,
+} from "@/lib/generate-docx"
+import { generateLessonPlanPptx } from "@/lib/generate-pptx"
+import { Presentation } from "lucide-react"
 import {
   act1LessonPlan,
   characterWorksheetMeta,
@@ -115,6 +123,26 @@ function downloadMarkScheme() {
   generateMarkScheme("An Inspector Calls", responsibilityMarkSchemeMeta, responsibilityMarkSchemeAnswers)
 }
 
+function downloadLessonPlanWord() {
+  generateLessonPlanWord("An Inspector Calls", act1LessonPlan)
+}
+
+function downloadWorksheetWord() {
+  generateWorksheetWord("An Inspector Calls", characterWorksheetMeta, characterWorksheetQuestions)
+}
+
+function downloadQuotesWorksheetWord() {
+  generateWorksheetWord("An Inspector Calls", quotesWorksheetMeta, quotesWorksheetQuestions)
+}
+
+function downloadMarkSchemeWord() {
+  generateMarkSchemeWord("An Inspector Calls", responsibilityMarkSchemeMeta, responsibilityMarkSchemeAnswers)
+}
+
+function downloadLessonPlanPptx() {
+  generateLessonPlanPptx("An Inspector Calls", act1LessonPlan)
+}
+
 /* ------------------------------------------------------------------ */
 /*  Subscription preview cards                                         */
 /* ------------------------------------------------------------------ */
@@ -156,8 +184,11 @@ export default function FreeResourcesPage() {
             <span className="block text-primary">An Inspector Calls</span>
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Download a complete lesson, worksheet, and teaching guide for free.
+            Download a complete lesson, worksheet, and teaching guide for AQA GCSE English Literature -- free, no signup required.
             See exactly what you get with a subscription.
+          </p>
+          <p className="mx-auto mt-2 max-w-2xl text-sm text-muted-foreground/80">
+            Resources available for all major exam boards (AQA, Edexcel, OCR, WJEC, IGCSE/CAIE). Your school&apos;s content is tailored to your chosen board.
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-sm text-muted-foreground">
             <span className="flex items-center gap-1.5">
@@ -166,7 +197,7 @@ export default function FreeResourcesPage() {
             </span>
             <span className="flex items-center gap-1.5">
               <BookOpen className="h-4 w-4 text-primary" />
-              {lesson.board} English Literature
+              AQA GCSE English Literature
             </span>
             <span className="flex items-center gap-1.5">
               <Clock className="h-4 w-4 text-primary" />
@@ -363,14 +394,34 @@ export default function FreeResourcesPage() {
             </div>
 
             {/* Download */}
-            <Button
-              size="lg"
-              className="w-full sm:w-auto"
-              onClick={downloadLessonPlan}
-            >
-              <Download className="mr-2 h-4 w-4" />
-              Download Lesson Plan
-            </Button>
+            <div className="flex flex-wrap gap-3">
+              <Button
+                size="lg"
+                className="w-full sm:w-auto"
+                onClick={downloadLessonPlan}
+              >
+                <Download className="mr-2 h-4 w-4" />
+                Download PDF
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="w-full sm:w-auto"
+                onClick={downloadLessonPlanPptx}
+              >
+                <Presentation className="mr-2 h-4 w-4" />
+                Download PowerPoint
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="w-full sm:w-auto"
+                onClick={downloadLessonPlanWord}
+              >
+                <FileDown className="mr-2 h-4 w-4" />
+                Download Word
+              </Button>
+            </div>
           </Card>
         </section>
 
@@ -450,14 +501,25 @@ export default function FreeResourcesPage() {
               ))}
             </div>
 
-            <Button
-              size="lg"
-              className="w-full sm:w-auto"
-              onClick={downloadWorksheet}
-            >
-              <Download className="mr-2 h-4 w-4" />
-              Download Character Worksheet
-            </Button>
+            <div className="flex flex-wrap gap-3">
+              <Button
+                size="lg"
+                className="w-full sm:w-auto"
+                onClick={downloadWorksheet}
+              >
+                <Download className="mr-2 h-4 w-4" />
+                Download PDF
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="w-full sm:w-auto"
+                onClick={downloadWorksheetWord}
+              >
+                <FileDown className="mr-2 h-4 w-4" />
+                Download Word
+              </Button>
+            </div>
           </Card>
         </section>
 
@@ -533,7 +595,7 @@ export default function FreeResourcesPage() {
 
             {/* Assessment Criteria */}
             <div>
-              <h3 className="text-lg font-semibold mb-3">Assessment Criteria (Edexcel IGCSE)</h3>
+              <h3 className="text-lg font-semibold mb-3">Assessment Criteria (AQA GCSE)</h3>
               <div className="space-y-3">
                 {teachingGuide.assessmentCriteria.map((ac) => (
                   <div key={ac.code} className="flex items-start gap-3 text-sm">
@@ -584,14 +646,25 @@ export default function FreeResourcesPage() {
               <Badge variant="secondary" className="text-xs">45 marks total</Badge>
               <Badge variant="secondary" className="text-xs">WHAT-HOW-WHY framework</Badge>
             </div>
-            <Button
-              size="lg"
-              className="w-full sm:w-auto"
-              onClick={downloadQuotesWorksheet}
-            >
-              <Download className="mr-2 h-4 w-4" />
-              Download Quotes Worksheet
-            </Button>
+            <div className="flex flex-wrap gap-3">
+              <Button
+                size="lg"
+                className="w-full sm:w-auto"
+                onClick={downloadQuotesWorksheet}
+              >
+                <Download className="mr-2 h-4 w-4" />
+                Download PDF
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="w-full sm:w-auto"
+                onClick={downloadQuotesWorksheetWord}
+              >
+                <FileDown className="mr-2 h-4 w-4" />
+                Download Word
+              </Button>
+            </div>
           </Card>
         </section>
 
@@ -620,14 +693,25 @@ export default function FreeResourcesPage() {
               <Badge variant="secondary" className="text-xs">AO1 + AO2 + AO3</Badge>
               <Badge variant="secondary" className="text-xs">Grade boundary examples</Badge>
             </div>
-            <Button
-              size="lg"
-              className="w-full sm:w-auto"
-              onClick={downloadMarkScheme}
-            >
-              <Download className="mr-2 h-4 w-4" />
-              Download Mark Scheme
-            </Button>
+            <div className="flex flex-wrap gap-3">
+              <Button
+                size="lg"
+                className="w-full sm:w-auto"
+                onClick={downloadMarkScheme}
+              >
+                <Download className="mr-2 h-4 w-4" />
+                Download PDF
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="w-full sm:w-auto"
+                onClick={downloadMarkSchemeWord}
+              >
+                <FileDown className="mr-2 h-4 w-4" />
+                Download Word
+              </Button>
+            </div>
           </Card>
         </section>
 

@@ -11,6 +11,8 @@ export const dynamic = "force-dynamic";
 interface RegisterBody {
   schoolName?: string;
   schoolType?: string;
+  examBoard?: string;
+  curriculum?: string[];
   address?: string;
   city?: string;
   postcode?: string;
@@ -102,9 +104,9 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     );
   }
 
-  let body: RegisterBody;
+  let raw: Record<string, unknown>;
   try {
-    body = await request.json();
+    raw = await request.json();
   } catch {
     return NextResponse.json(
       { error: "Invalid JSON body." },
@@ -112,10 +114,35 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     );
   }
 
+  // Support both flat body and nested { school, admin, plan } format
+  const schoolObj = (raw.school ?? {}) as Record<string, unknown>;
+  const adminObj = (raw.admin ?? {}) as Record<string, unknown>;
+  const planObj = (raw.plan ?? {}) as Record<string, unknown>;
+
+  const body: RegisterBody = {
+    schoolName: (raw.schoolName ?? schoolObj.schoolName) as string | undefined,
+    schoolType: (raw.schoolType ?? schoolObj.schoolType) as string | undefined,
+    examBoard: (raw.examBoard ?? schoolObj.examBoard) as string | undefined,
+    curriculum: (raw.curriculum ?? schoolObj.curriculum) as string[] | undefined,
+    address: (raw.address ?? schoolObj.address) as string | undefined,
+    city: (raw.city ?? schoolObj.city) as string | undefined,
+    postcode: (raw.postcode ?? schoolObj.postcode) as string | undefined,
+    country: (raw.country ?? schoolObj.country) as string | undefined,
+    adminFirstName: (raw.adminFirstName ?? adminObj.firstName) as string | undefined,
+    adminLastName: (raw.adminLastName ?? adminObj.lastName) as string | undefined,
+    jobTitle: (raw.jobTitle ?? adminObj.jobTitle) as string | undefined,
+    email: (raw.email ?? adminObj.email) as string | undefined,
+    phone: (raw.phone ?? adminObj.phone) as string | undefined,
+    password: (raw.password ?? adminObj.password) as string | undefined,
+    promoCode: (raw.promoCode ?? planObj.promoCode) as string | undefined,
+  };
+
   // ── Validate required fields ─────────────────────────────────────────────
   const {
     schoolName,
     schoolType,
+    examBoard,
+    curriculum,
     address,
     city,
     postcode,
@@ -135,6 +162,12 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
   }
   if (!schoolType || typeof schoolType !== "string" || !schoolType.trim()) {
     missing.push("schoolType");
+  }
+  if (!examBoard || typeof examBoard !== "string" || !examBoard.trim()) {
+    missing.push("examBoard");
+  }
+  if (!curriculum || !Array.isArray(curriculum) || curriculum.length === 0) {
+    missing.push("curriculum");
   }
   if (
     !adminFirstName ||
@@ -263,6 +296,8 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     contact_email: normalizedEmail,
     contact_phone: phone?.trim() ?? null,
     school_type: schoolType!.trim(),
+    exam_board: examBoard!.trim(),
+    curriculum: curriculum ?? [],
     subscription_status: subscriptionStatus,
     subscription_plan: "school",
     seat_limit: 9999,

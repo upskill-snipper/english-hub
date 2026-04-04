@@ -1,5 +1,6 @@
 import { getServerSession } from "next-auth";
 import { prisma } from "@/lib/prisma";
+import { isSiteAdmin } from "@/lib/site-admin";
 
 // ─── Types ──────────────────────────────────────────────────────────────
 
@@ -112,7 +113,7 @@ export async function requireAdmin(): Promise<{
     throw new AdminAuthError("User not found", 404);
   }
 
-  if (user.role !== "ADMIN") {
+  if (user.role !== "ADMIN" && !isSiteAdmin(user.email)) {
     throw new AdminAuthError("Admin access required", 403);
   }
 

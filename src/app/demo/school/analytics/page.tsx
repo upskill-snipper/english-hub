@@ -80,7 +80,7 @@ const TOP_MOCK_EXAMS = [
   { title: "AQA Lang Paper 1 Mock", count: 189 },
   { title: "AQA Lit Paper 1 Mock", count: 176 },
   { title: "AQA Lang Paper 2 Mock", count: 152 },
-  { title: "Edexcel IGCSE Lang Mock", count: 134 },
+  { title: "AQA Lang Paper 1 Practice", count: 134 },
   { title: "AQA Lit Paper 2 Mock", count: 118 },
 ]
 
