@@ -110,6 +110,35 @@ export default function ClassReportPage() {
       : 0;
   const classVsSchool = classAvgScore - schoolAvg;
 
+  // Module performance analysis
+  const modulePerformance = (() => {
+    if (students.length === 0) return [];
+    const moduleMap: Record<string, { totalScore: number; count: number }> = {};
+    students.forEach((s) => {
+      s.modules.forEach((m) => {
+        if (m.score > 0) {
+          if (!moduleMap[m.name]) moduleMap[m.name] = { totalScore: 0, count: 0 };
+          moduleMap[m.name].totalScore += m.score;
+          moduleMap[m.name].count += 1;
+        }
+      });
+    });
+    return Object.entries(moduleMap)
+      .map(([name, data]) => ({
+        name,
+        avgScore: Math.round(data.totalScore / data.count),
+        studentCount: data.count,
+      }))
+      .sort((a, b) => b.avgScore - a.avgScore);
+  })();
+
+  // Distribution analysis
+  const totalStudentCount = students.length > 0 ? students.length : cls.studentCount;
+  const excellingPct = students.length > 0 ? Math.round((ragCounts.excelling / students.length) * 100) : 0;
+  const onTrackPct = students.length > 0 ? Math.round((ragCounts.onTrack / students.length) * 100) : 0;
+  const needsSupportPct = students.length > 0 ? Math.round((ragCounts.needsSupport / students.length) * 100) : 0;
+  const atRiskPct = students.length > 0 ? Math.round((ragCounts.atRisk / students.length) * 100) : 0;
+
   return (
     <>
       {/* Print Styles */}
@@ -162,11 +191,14 @@ export default function ClassReportPage() {
           * {
             color: black !important;
           }
+          .print-page-break {
+            page-break-before: always;
+          }
         }
       `}</style>
 
       <div className="print-container max-w-4xl mx-auto px-4 py-8 space-y-6">
-        {/* Print Button */}
+        {/* Action Bar */}
         <div className="no-print flex items-center justify-between mb-4">
           <Link
             href="/demo/school/reports"
@@ -174,12 +206,15 @@ export default function ClassReportPage() {
           >
             <span>&larr;</span> Back to Reports
           </Link>
-          <button
-            onClick={() => window.print()}
-            className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium text-sm transition-colors"
-          >
-            Print this Report
-          </button>
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => window.print()}
+              className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium text-sm transition-colors flex items-center gap-2"
+            >
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2z" /></svg>
+              Download PDF
+            </button>
+          </div>
         </div>
 
         {/* Report Header */}
@@ -187,14 +222,14 @@ export default function ClassReportPage() {
           <div className="flex items-start justify-between">
             <div>
               <div className="text-sm font-medium text-neutral-400 print:text-neutral-600 uppercase tracking-wider mb-1">
-                Riverside Academy
+                The English Hub
               </div>
               <h1 className="text-2xl font-bold text-neutral-100 print:text-black">
                 Class Progress Report
               </h1>
             </div>
             <div className="text-right text-sm text-neutral-400 print:text-neutral-600">
-              <div className="w-16 h-16 border-2 border-dashed border-neutral-700 print:border-neutral-400 rounded-lg flex items-center justify-center text-xs text-neutral-500 print:text-neutral-500 mb-1">
+              <div className="w-16 h-16 border-2 border-dashed border-neutral-700 print:border-neutral-400 rounded-lg flex items-center justify-center text-[10px] text-neutral-500 print:text-neutral-500 mb-1 font-medium">
                 LOGO
               </div>
             </div>
@@ -257,7 +292,7 @@ export default function ClassReportPage() {
             </div>
             <div className="bg-neutral-800/50 print:bg-neutral-100 rounded-lg p-4 text-center">
               <div className="text-2xl font-bold text-neutral-100 print:text-black">
-                {students.length > 0 ? students.length : cls.studentCount}
+                {totalStudentCount}
               </div>
               <div className="text-neutral-500 print:text-neutral-600 text-xs mt-1">
                 Students
@@ -274,43 +309,83 @@ export default function ClassReportPage() {
           </div>
 
           {/* RAG Breakdown */}
-          <div className="mt-5 pt-4 border-t border-neutral-800 print:border-neutral-300">
-            <h3 className="text-sm font-medium text-neutral-300 print:text-black mb-3">
-              RAG Breakdown
-            </h3>
-            <div className="grid grid-cols-4 gap-3 text-sm">
-              <div className="flex items-center gap-2 bg-emerald-500/10 print:bg-emerald-50 rounded-lg px-3 py-2">
-                <span className="size-3 rounded-full bg-emerald-400 print:bg-emerald-600" />
-                <span className="text-neutral-300 print:text-black">
-                  Excelling: <strong className="text-neutral-100 print:text-black">{ragCounts.excelling}</strong>
-                </span>
-              </div>
-              <div className="flex items-center gap-2 bg-blue-500/10 print:bg-blue-50 rounded-lg px-3 py-2">
-                <span className="size-3 rounded-full bg-blue-400 print:bg-blue-600" />
-                <span className="text-neutral-300 print:text-black">
-                  On Track: <strong className="text-neutral-100 print:text-black">{ragCounts.onTrack}</strong>
-                </span>
-              </div>
-              <div className="flex items-center gap-2 bg-amber-500/10 print:bg-amber-50 rounded-lg px-3 py-2">
-                <span className="size-3 rounded-full bg-amber-400 print:bg-amber-600" />
-                <span className="text-neutral-300 print:text-black">
-                  Needs Support: <strong className="text-neutral-100 print:text-black">{ragCounts.needsSupport}</strong>
-                </span>
-              </div>
-              <div className="flex items-center gap-2 bg-red-500/10 print:bg-red-50 rounded-lg px-3 py-2">
-                <span className="size-3 rounded-full bg-red-400 print:bg-red-600" />
-                <span className="text-neutral-300 print:text-black">
-                  At Risk: <strong className="text-neutral-100 print:text-black">{ragCounts.atRisk}</strong>
-                </span>
+          {students.length > 0 && (
+            <div className="mt-5 pt-4 border-t border-neutral-800 print:border-neutral-300">
+              <h3 className="text-sm font-medium text-neutral-300 print:text-black mb-3">
+                RAG Breakdown
+              </h3>
+              <div className="grid grid-cols-4 gap-3 text-sm">
+                <div className="flex items-center gap-2 bg-emerald-500/10 print:bg-emerald-50 rounded-lg px-3 py-2">
+                  <span className="size-3 rounded-full bg-emerald-400 print:bg-emerald-600" />
+                  <span className="text-neutral-300 print:text-black">
+                    Excelling: <strong className="text-neutral-100 print:text-black">{ragCounts.excelling}</strong>
+                  </span>
+                </div>
+                <div className="flex items-center gap-2 bg-blue-500/10 print:bg-blue-50 rounded-lg px-3 py-2">
+                  <span className="size-3 rounded-full bg-blue-400 print:bg-blue-600" />
+                  <span className="text-neutral-300 print:text-black">
+                    On Track: <strong className="text-neutral-100 print:text-black">{ragCounts.onTrack}</strong>
+                  </span>
+                </div>
+                <div className="flex items-center gap-2 bg-amber-500/10 print:bg-amber-50 rounded-lg px-3 py-2">
+                  <span className="size-3 rounded-full bg-amber-400 print:bg-amber-600" />
+                  <span className="text-neutral-300 print:text-black">
+                    Needs Support: <strong className="text-neutral-100 print:text-black">{ragCounts.needsSupport}</strong>
+                  </span>
+                </div>
+                <div className="flex items-center gap-2 bg-red-500/10 print:bg-red-50 rounded-lg px-3 py-2">
+                  <span className="size-3 rounded-full bg-red-400 print:bg-red-600" />
+                  <span className="text-neutral-300 print:text-black">
+                    At Risk: <strong className="text-neutral-100 print:text-black">{ragCounts.atRisk}</strong>
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
+          )}
         </div>
+
+        {/* Distribution Analysis */}
+        {students.length > 0 && (
+          <div className="report-card bg-neutral-900 border border-neutral-800 rounded-xl p-6 print:rounded-none">
+            <h2 className="text-lg font-semibold text-neutral-100 print:text-black mb-4">
+              Distribution Analysis
+            </h2>
+            <div className="space-y-3">
+              {[
+                { label: "Excelling", count: ragCounts.excelling, pct: excellingPct, color: "bg-emerald-500 print:bg-emerald-600", textColor: "text-emerald-400 print:text-emerald-700" },
+                { label: "On Track", count: ragCounts.onTrack, pct: onTrackPct, color: "bg-blue-500 print:bg-blue-600", textColor: "text-blue-400 print:text-blue-700" },
+                { label: "Needs Support", count: ragCounts.needsSupport, pct: needsSupportPct, color: "bg-amber-500 print:bg-amber-600", textColor: "text-amber-400 print:text-amber-700" },
+                { label: "At Risk", count: ragCounts.atRisk, pct: atRiskPct, color: "bg-red-500 print:bg-red-600", textColor: "text-red-400 print:text-red-700" },
+              ].map((band) => (
+                <div key={band.label} className="flex items-center gap-3">
+                  <span className={`text-sm w-28 shrink-0 font-medium ${band.textColor}`}>{band.label}</span>
+                  <div className="flex-1 bg-neutral-800 print:bg-neutral-200 rounded-full h-5 overflow-hidden">
+                    <div
+                      className={`${band.color} h-full rounded-full flex items-center justify-end pr-2 text-white text-[10px] font-medium min-w-[32px]`}
+                      style={{ width: `${Math.max(band.pct, 5)}%` }}
+                    >
+                      {band.count}
+                    </div>
+                  </div>
+                  <span className="text-sm text-neutral-400 print:text-neutral-600 w-10 text-right">{band.pct}%</span>
+                </div>
+              ))}
+            </div>
+            <p className="mt-4 text-sm text-neutral-300 print:text-black leading-relaxed">
+              {ragCounts.excelling + ragCounts.onTrack > ragCounts.needsSupport + ragCounts.atRisk
+                ? `The majority of the class (${excellingPct + onTrackPct}%) is performing at or above expected levels. `
+                : `A significant proportion of the class (${needsSupportPct + atRiskPct}%) is performing below expected levels and requires targeted intervention. `}
+              {ragCounts.atRisk > 0
+                ? `${ragCounts.atRisk} student${ragCounts.atRisk > 1 ? "s require" : " requires"} immediate intervention.`
+                : "No students are currently classified as at risk."}
+            </p>
+          </div>
+        )}
 
         {/* Student Results Table */}
         <div className="report-card bg-neutral-900 border border-neutral-800 rounded-xl p-6 print:rounded-none">
           <h2 className="text-lg font-semibold text-neutral-100 print:text-black mb-4">
-            Student Results
+            Student Performance Table
           </h2>
           {students.length > 0 ? (
             <div className="overflow-x-auto">
@@ -331,6 +406,9 @@ export default function ClassReportPage() {
                     </th>
                     <th className="text-center px-3 py-2.5 font-semibold text-neutral-300 print:text-black">
                       Progress
+                    </th>
+                    <th className="text-center px-3 py-2.5 font-semibold text-neutral-300 print:text-black">
+                      Completed
                     </th>
                     <th className="text-center px-3 py-2.5 font-semibold text-neutral-300 print:text-black rounded-tr-lg print:rounded-none">
                       Status
@@ -361,6 +439,9 @@ export default function ClassReportPage() {
                         <td className="px-3 py-2.5 text-center text-neutral-300 print:text-black">
                           {s.overallProgress}%
                         </td>
+                        <td className="px-3 py-2.5 text-center text-neutral-400 print:text-neutral-600">
+                          {s.assignmentsCompleted}/{s.assignmentsTotal}
+                        </td>
                         <td className="px-3 py-2.5 text-center">
                           <span className={`inline-block text-xs px-2 py-0.5 rounded-full font-medium ${badge.cls}`}>
                             {badge.label}
@@ -379,6 +460,63 @@ export default function ClassReportPage() {
             </p>
           )}
         </div>
+
+        {/* Module Performance */}
+        {modulePerformance.length > 0 && (
+          <div className="report-card bg-neutral-900 border border-neutral-800 rounded-xl p-6 print:rounded-none">
+            <h2 className="text-lg font-semibold text-neutral-100 print:text-black mb-4">
+              Module Performance
+            </h2>
+            <div className="space-y-3">
+              {modulePerformance.map((mod) => (
+                <div key={mod.name} className="flex items-center gap-4">
+                  <span className="text-sm text-neutral-300 print:text-black w-44 shrink-0 font-medium">{mod.name}</span>
+                  <div className="flex-1 bg-neutral-800 print:bg-neutral-200 rounded-full h-4 overflow-hidden">
+                    <div
+                      className={`h-full rounded-full flex items-center justify-end pr-2 text-white text-[10px] font-medium ${
+                        mod.avgScore >= 70
+                          ? "bg-emerald-500 print:bg-emerald-600"
+                          : mod.avgScore >= 50
+                          ? "bg-amber-500 print:bg-amber-600"
+                          : "bg-red-500 print:bg-red-600"
+                      }`}
+                      style={{ width: `${mod.avgScore}%` }}
+                    >
+                      {mod.avgScore}%
+                    </div>
+                  </div>
+                  <span className="text-xs text-neutral-500 print:text-neutral-600 w-20 text-right">
+                    {mod.studentCount} student{mod.studentCount !== 1 ? "s" : ""}
+                  </span>
+                </div>
+              ))}
+            </div>
+            <div className="mt-4 pt-4 border-t border-neutral-800 print:border-neutral-300 grid grid-cols-2 gap-4 text-sm">
+              <div>
+                <h4 className="text-xs font-semibold text-emerald-400 print:text-emerald-700 uppercase tracking-wider mb-2">Strongest Modules</h4>
+                <ul className="space-y-1">
+                  {modulePerformance.slice(0, 2).map((m) => (
+                    <li key={m.name} className="text-neutral-300 print:text-black flex items-center gap-2">
+                      <span className="size-1.5 rounded-full bg-emerald-400 print:bg-emerald-600" />
+                      {m.name} ({m.avgScore}%)
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-xs font-semibold text-red-400 print:text-red-700 uppercase tracking-wider mb-2">Weakest Modules</h4>
+                <ul className="space-y-1">
+                  {modulePerformance.slice(-2).reverse().map((m) => (
+                    <li key={m.name} className="text-neutral-300 print:text-black flex items-center gap-2">
+                      <span className="size-1.5 rounded-full bg-red-400 print:bg-red-600" />
+                      {m.name} ({m.avgScore}%)
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Top Performers */}
         {topPerformers.length > 0 && (
@@ -547,6 +685,12 @@ export default function ClassReportPage() {
                 Implement structured homework monitoring and follow-up procedures.
               </li>
             )}
+            {modulePerformance.length > 0 && modulePerformance[modulePerformance.length - 1].avgScore < 60 && (
+              <li className="leading-relaxed pl-1">
+                {modulePerformance[modulePerformance.length - 1].name} is the weakest module at {modulePerformance[modulePerformance.length - 1].avgScore}%.
+                Consider dedicated revision sessions and supplementary resources for this area.
+              </li>
+            )}
             {topPerformers.length > 0 && (
               <li className="leading-relaxed pl-1">
                 {topPerformers.length} top performer{topPerformers.length > 1 ? "s" : ""} should be
@@ -567,7 +711,7 @@ export default function ClassReportPage() {
         {/* Footer */}
         <div className="text-center text-xs text-neutral-500 print:text-neutral-600 pt-4 border-t border-neutral-800 print:border-neutral-300">
           <p>
-            Riverside Academy -- Class Progress Report -- Confidential
+            The English Hub -- Class Progress Report -- Confidential
           </p>
           <p className="mt-1">
             Generated on{" "}
@@ -576,13 +720,14 @@ export default function ClassReportPage() {
           </p>
         </div>
 
-        {/* Bottom Print Button */}
+        {/* Bottom Download Button */}
         <div className="no-print text-center pt-2">
           <button
             onClick={() => window.print()}
-            className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium text-sm transition-colors"
+            className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium text-sm transition-colors flex items-center gap-2 mx-auto"
           >
-            Print this Report
+            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2z" /></svg>
+            Download PDF
           </button>
         </div>
       </div>

@@ -1,10 +1,12 @@
 "use client"
 
 import { useState } from "react"
+import Link from "next/link"
 import {
   FileText,
   Download,
   Printer,
+  ExternalLink,
   TrendingUp,
   TrendingDown,
   Users,
@@ -557,13 +559,64 @@ export default function ReportsPage() {
               </CardContent>
             </Card>
 
+            {/* Generate Reports Quick Actions */}
+            <Card className="bg-[#111] border-white/10 print-avoid-break">
+              <CardHeader>
+                <CardTitle className="text-white flex items-center gap-2">
+                  <FileText className="h-5 w-5 text-blue-400" />
+                  Generate Reports
+                </CardTitle>
+                <CardDescription className="text-neutral-400">Generate printable, downloadable reports for any class or student</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                  <div className="bg-white/5 rounded-lg p-4 border border-white/5">
+                    <h4 className="text-sm font-semibold text-white mb-2">School Overview</h4>
+                    <p className="text-xs text-neutral-500 mb-3">Full school performance report with all year groups and departments.</p>
+                    <Button size="sm" className="w-full bg-blue-600 hover:bg-blue-700 text-white gap-1.5" onClick={() => window.print()}>
+                      <Download className="h-3.5 w-3.5" />Download
+                    </Button>
+                  </div>
+                  <div className="bg-white/5 rounded-lg p-4 border border-white/5">
+                    <h4 className="text-sm font-semibold text-white mb-2">Year Group</h4>
+                    <p className="text-xs text-neutral-500 mb-3">Performance breakdown by year group with class comparisons.</p>
+                    <Button size="sm" variant="outline" className="w-full border-white/20 text-white hover:bg-white/10 gap-1.5" onClick={() => { setActiveTab("year-group"); }}>
+                      <BarChart3 className="h-3.5 w-3.5" />Select Year
+                    </Button>
+                  </div>
+                  <div className="bg-white/5 rounded-lg p-4 border border-white/5">
+                    <h4 className="text-sm font-semibold text-white mb-2">Class Report</h4>
+                    <p className="text-xs text-neutral-500 mb-3">Detailed class report with student table, RAG status, and module analysis.</p>
+                    <Button size="sm" variant="outline" className="w-full border-white/20 text-white hover:bg-white/10 gap-1.5" render={<Link href={`/demo/school/reports/class/${DEMO_CLASSES[0].id}`} />}>
+                      <ExternalLink className="h-3.5 w-3.5" />Generate
+                    </Button>
+                  </div>
+                  <div className="bg-white/5 rounded-lg p-4 border border-white/5">
+                    <h4 className="text-sm font-semibold text-white mb-2">Student Report</h4>
+                    <p className="text-xs text-neutral-500 mb-3">Individual student progress report with assessments and recommendations.</p>
+                    <Button size="sm" variant="outline" className="w-full border-white/20 text-white hover:bg-white/10 gap-1.5" render={<Link href={`/demo/school/reports/student/${DEMO_STUDENTS[0].id}`} />}>
+                      <ExternalLink className="h-3.5 w-3.5" />Generate
+                    </Button>
+                  </div>
+                </div>
+
+                {/* Download All */}
+                <div className="mt-4 pt-4 border-t border-white/5 flex items-center justify-between">
+                  <p className="text-xs text-neutral-500">Generate all class and student reports at once for the current term.</p>
+                  <Button size="sm" className="bg-emerald-600 hover:bg-emerald-700 text-white gap-1.5" onClick={() => toast.info("Register your school to batch-download all reports as a ZIP file.")}>
+                    <Download className="h-3.5 w-3.5" />Download All Reports
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+
             {/* Print / Download */}
             <div className="flex justify-center gap-4 pt-4" data-print-hide>
               <Button size="lg" className="bg-white text-black hover:bg-neutral-200 font-semibold gap-2" onClick={() => window.print()}>
                 <Printer className="h-4 w-4" />
                 Print Overview Report
               </Button>
-              <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10 font-semibold gap-2" onClick={() => toast.info("Register your school for full PDF export access.")}>
+              <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10 font-semibold gap-2" onClick={() => window.print()}>
                 <Download className="h-4 w-4" />
                 Download PDF
               </Button>
@@ -852,9 +905,13 @@ export default function ReportsPage() {
               </CardContent>
             </Card>
 
-            <div className="flex justify-center pt-4" data-print-hide>
+            <div className="flex justify-center gap-4 pt-4" data-print-hide>
               <Button size="lg" className="bg-white text-black hover:bg-neutral-200 font-semibold gap-2" onClick={() => window.print()}>
                 <Printer className="h-4 w-4" />Print Class Report
+              </Button>
+              <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10 font-semibold gap-2" render={<Link href={`/demo/school/reports/class/${selectedClassId}`} />}>
+                <ExternalLink className="h-4 w-4" />
+                Generate Full Report
               </Button>
             </div>
           </div>
@@ -984,9 +1041,13 @@ export default function ReportsPage() {
                 </div>
               </div>
 
-              <div className="border-t border-white/10 p-6 flex justify-center" data-print-hide>
+              <div className="border-t border-white/10 p-6 flex justify-center gap-4" data-print-hide>
                 <Button size="lg" className="bg-white text-black hover:bg-neutral-200 font-semibold gap-2" onClick={() => window.print()}>
                   <Printer className="h-4 w-4" />Print Student Report
+                </Button>
+                <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10 font-semibold gap-2" render={<Link href={`/demo/school/reports/student/${selectedStudentId}`} />}>
+                  <ExternalLink className="h-4 w-4" />
+                  Generate Full Report
                 </Button>
               </div>
             </div>

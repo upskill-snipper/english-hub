@@ -20,6 +20,10 @@ import {
   ClipboardList,
   Clock,
   BarChart3,
+  Sparkles,
+  XCircle,
+  Lightbulb,
+  Award,
 } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -259,6 +263,377 @@ export default function TeacherStudentProfilePage() {
                   <span className="text-[9px] text-neutral-600">W{i + 1}</span>
                 </div>
               ))}
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* ── Topic Mastery Map ──────────────────────────────────────── */}
+        <Card className="bg-white/[0.02] border-white/5 mb-8">
+          <CardHeader>
+            <CardTitle className="text-sm font-medium text-white/80 flex items-center gap-2">
+              <Target className="h-4 w-4 text-violet-400" />
+              Topic Mastery Map
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+              {(() => {
+                // Build mastery from module progress and essay/quiz data
+                const topicSkills: { name: string; status: "mastered" | "developing" | "needs-work" }[] = [
+                  { name: "Reading Comprehension", status: (() => {
+                    const mod = student.moduleProgress.find((m) => m.module.toLowerCase().includes("reading") || m.module.toLowerCase().includes("comprehension"))
+                    if (mod && mod.score >= 70) return "mastered"
+                    if (mod && mod.score >= 50) return "developing"
+                    return student.averageScore >= 65 ? "developing" : "needs-work"
+                  })() },
+                  { name: "Essay Writing", status: (() => {
+                    const essayScores = student.essaySubmissions.filter((e) => e.score > 0).map((e) => e.score)
+                    if (essayScores.length === 0) return "needs-work"
+                    const avg = essayScores.reduce((a, b) => a + b, 0) / essayScores.length
+                    if (avg >= 70) return "mastered"
+                    if (avg >= 50) return "developing"
+                    return "needs-work"
+                  })() },
+                  { name: "Creative Writing", status: (() => {
+                    const mod = student.moduleProgress.find((m) => m.module.toLowerCase().includes("creative"))
+                    if (mod && mod.score >= 70) return "mastered"
+                    if (mod && mod.score >= 50) return "developing"
+                    const hasCreativeEssay = student.essaySubmissions.some((e) => e.title.toLowerCase().includes("creative"))
+                    if (hasCreativeEssay) {
+                      const score = student.essaySubmissions.find((e) => e.title.toLowerCase().includes("creative"))?.score ?? 0
+                      if (score >= 70) return "mastered"
+                      if (score >= 50) return "developing"
+                    }
+                    return "needs-work"
+                  })() },
+                  { name: "Grammar & Punctuation", status: (() => {
+                    const hasStrength = student.strengths.some((s) => {
+                      const name = typeof s === "string" ? s : s.name
+                      return name.toLowerCase().includes("grammar") || name.toLowerCase().includes("punctuation") || name.toLowerCase().includes("spag")
+                    })
+                    if (hasStrength) return "mastered"
+                    const hasWeakness = student.weaknesses.some((w) => {
+                      const name = typeof w === "string" ? w : w.name
+                      return name.toLowerCase().includes("grammar") || name.toLowerCase().includes("punctuation") || name.toLowerCase().includes("spag")
+                    })
+                    if (hasWeakness) return "needs-work"
+                    return "developing"
+                  })() },
+                  { name: "Literary Analysis", status: (() => {
+                    const mod = student.moduleProgress.find((m) =>
+                      m.module.toLowerCase().includes("inspector") || m.module.toLowerCase().includes("macbeth") || m.module.toLowerCase().includes("literature")
+                    )
+                    if (mod && mod.score >= 70) return "mastered"
+                    if (mod && mod.score >= 50) return "developing"
+                    return student.averageScore >= 60 ? "developing" : "needs-work"
+                  })() },
+                  { name: "Character Analysis", status: (() => {
+                    const hasStrength = student.strengths.some((s) => {
+                      const name = typeof s === "string" ? s : s.name
+                      return name.toLowerCase().includes("character")
+                    })
+                    if (hasStrength) return "mastered"
+                    const hasWeakness = student.weaknesses.some((w) => {
+                      const name = typeof w === "string" ? w : w.name
+                      return name.toLowerCase().includes("character")
+                    })
+                    if (hasWeakness) return "needs-work"
+                    return student.averageScore >= 65 ? "developing" : "needs-work"
+                  })() },
+                  { name: "Theme Analysis", status: (() => {
+                    const hasEssay = student.essaySubmissions.some((e) => e.title.toLowerCase().includes("theme"))
+                    if (hasEssay) {
+                      const score = student.essaySubmissions.find((e) => e.title.toLowerCase().includes("theme"))?.score ?? 0
+                      if (score >= 70) return "mastered"
+                      if (score >= 50) return "developing"
+                      return "needs-work"
+                    }
+                    return student.averageScore >= 65 ? "developing" : "needs-work"
+                  })() },
+                  { name: "Quote Analysis", status: (() => {
+                    const hasStrength = student.strengths.some((s) => {
+                      const name = typeof s === "string" ? s : s.name
+                      return name.toLowerCase().includes("quote") || name.toLowerCase().includes("evidence") || name.toLowerCase().includes("pee")
+                    })
+                    if (hasStrength) return "mastered"
+                    const hasWeakness = student.weaknesses.some((w) => {
+                      const name = typeof w === "string" ? w : w.name
+                      return name.toLowerCase().includes("quote") || name.toLowerCase().includes("evidence")
+                    })
+                    if (hasWeakness) return "needs-work"
+                    return "developing"
+                  })() },
+                  { name: "Exam Technique", status: (() => {
+                    const mockScores = student.mockExamResults.map((m) => m.score)
+                    if (mockScores.length === 0) return "needs-work"
+                    const avg = mockScores.reduce((a, b) => a + b, 0) / mockScores.length
+                    if (avg >= 70) return "mastered"
+                    if (avg >= 50) return "developing"
+                    return "needs-work"
+                  })() },
+                  { name: "Spelling & Vocabulary", status: (() => {
+                    const hasStrength = student.strengths.some((s) => {
+                      const name = typeof s === "string" ? s : s.name
+                      return name.toLowerCase().includes("spelling") || name.toLowerCase().includes("vocabulary") || name.toLowerCase().includes("vocab")
+                    })
+                    if (hasStrength) return "mastered"
+                    const hasWeakness = student.weaknesses.some((w) => {
+                      const name = typeof w === "string" ? w : w.name
+                      return name.toLowerCase().includes("spelling") || name.toLowerCase().includes("vocabulary") || name.toLowerCase().includes("vocab")
+                    })
+                    if (hasWeakness) return "needs-work"
+                    return "developing"
+                  })() },
+                ]
+                return topicSkills.map((skill, i) => (
+                  <div
+                    key={i}
+                    className={`rounded-lg border p-3 text-center ${
+                      skill.status === "mastered"
+                        ? "border-green-500/20 bg-green-500/5"
+                        : skill.status === "developing"
+                        ? "border-amber-500/20 bg-amber-500/5"
+                        : "border-red-500/20 bg-red-500/5"
+                    }`}
+                  >
+                    <p className="text-xs font-medium text-white/70 mb-1.5">{skill.name}</p>
+                    <span
+                      className={`inline-block text-[10px] font-medium uppercase tracking-wider px-2 py-0.5 rounded-full ${
+                        skill.status === "mastered"
+                          ? "bg-green-500/15 text-green-400"
+                          : skill.status === "developing"
+                          ? "bg-amber-500/15 text-amber-400"
+                          : "bg-red-500/15 text-red-400"
+                      }`}
+                    >
+                      {skill.status === "mastered" ? "Mastered" : skill.status === "developing" ? "Developing" : "Needs Work"}
+                    </span>
+                  </div>
+                ))
+              })()}
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* ── Learning Journey ─────────────────────────────────────────── */}
+        <Card className="bg-white/[0.02] border-white/5 mb-8">
+          <CardHeader>
+            <CardTitle className="text-sm font-medium text-white/80 flex items-center gap-2">
+              <Sparkles className="h-4 w-4 text-cyan-400" />
+              Learning Journey
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="relative">
+              <div className="absolute left-3 top-0 bottom-0 w-px bg-white/5" />
+              <div className="space-y-4">
+                {(() => {
+                  // Combine all assessments into a timeline
+                  const allAssessments: { title: string; type: string; score: number; maxScore: number; date: string }[] = [
+                    ...student.essaySubmissions.filter((e) => e.score > 0).map((e) => ({
+                      title: e.title, type: "Essay", score: e.score, maxScore: 100, date: e.date,
+                    })),
+                    ...student.quizAttempts.map((q) => ({
+                      title: q.quiz, type: "Quiz", score: q.score, maxScore: q.maxScore, date: q.date,
+                    })),
+                    ...student.mockExamResults.map((m) => ({
+                      title: m.exam, type: "Mock Exam", score: m.score, maxScore: 100, date: m.date,
+                    })),
+                  ].sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
+
+                  return allAssessments.map((item, i) => {
+                    const pct = Math.round((item.score / item.maxScore) * 100)
+                    const prevPct = i > 0 ? Math.round((allAssessments[i - 1].score / allAssessments[i - 1].maxScore) * 100) : null
+                    const change = prevPct !== null ? pct - prevPct : null
+                    return (
+                      <div key={i} className="flex items-start gap-4 pl-1">
+                        <div className={`relative z-10 w-6 h-6 rounded-full flex items-center justify-center shrink-0 ${
+                          pct >= 70 ? "bg-green-500/20 border border-green-500/30" :
+                          pct >= 50 ? "bg-amber-500/20 border border-amber-500/30" :
+                          "bg-red-500/20 border border-red-500/30"
+                        }`}>
+                          <span className={`text-[9px] font-bold ${
+                            pct >= 70 ? "text-green-400" : pct >= 50 ? "text-amber-400" : "text-red-400"
+                          }`}>{pct}</span>
+                        </div>
+                        <div className="flex-1 min-w-0 pb-1">
+                          <div className="flex items-center gap-2 flex-wrap">
+                            <span className="text-sm text-white/80">{item.title}</span>
+                            <Badge variant="outline" className={`text-[9px] ${
+                              item.type === "Essay" ? "border-blue-500/20 text-blue-400" :
+                              item.type === "Quiz" ? "border-amber-500/20 text-amber-400" :
+                              "border-purple-500/20 text-purple-400"
+                            }`}>{item.type}</Badge>
+                            {change !== null && change !== 0 && (
+                              <span className={`text-[10px] flex items-center gap-0.5 ${change > 0 ? "text-green-400" : "text-red-400"}`}>
+                                {change > 0 ? <TrendingUp className="h-3 w-3" /> : <TrendingDown className="h-3 w-3" />}
+                                {change > 0 ? "+" : ""}{change}%
+                              </span>
+                            )}
+                          </div>
+                          <p className="text-[11px] text-neutral-600 mt-0.5">{item.date}</p>
+                        </div>
+                        <span className={`text-sm tabular-nums font-medium shrink-0 ${scoreColor(pct)}`}>
+                          {item.score}/{item.maxScore}
+                        </span>
+                      </div>
+                    )
+                  })
+                })()}
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* ── What They've Grasped ─────────────────────────────────────── */}
+        <Card className="bg-white/[0.02] border-white/5 mb-8">
+          <CardHeader>
+            <CardTitle className="text-sm font-medium text-emerald-400 flex items-center gap-2">
+              <Award className="h-4 w-4" /> What They&apos;ve Grasped
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-3">
+              {student.strengths.map((s, i) => {
+                const name = typeof s === "string" ? s : s.name
+                const score = typeof s === "string" ? null : s.score
+                // Find supporting evidence from essays/quizzes
+                const relatedEssay = student.essaySubmissions.find((e) =>
+                  e.title.toLowerCase().includes(name.toLowerCase().split(" ")[0]) && e.score >= 65
+                )
+                const relatedQuiz = student.quizAttempts.find((q) =>
+                  q.quiz.toLowerCase().includes(name.toLowerCase().split(" ")[0]) && (q.score / q.maxScore) >= 0.65
+                )
+                return (
+                  <div key={i} className="rounded-lg border border-green-500/10 bg-green-500/[0.03] p-3">
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="text-sm font-medium text-green-400">{name}</span>
+                      {score && <span className="text-xs text-green-400/70">{score}%</span>}
+                    </div>
+                    {relatedEssay && (
+                      <p className="text-[11px] text-white/40">
+                        Evidence: Scored {relatedEssay.score}% on &quot;{relatedEssay.title}&quot;
+                      </p>
+                    )}
+                    {!relatedEssay && relatedQuiz && (
+                      <p className="text-[11px] text-white/40">
+                        Evidence: Scored {relatedQuiz.score}/{relatedQuiz.maxScore} on &quot;{relatedQuiz.quiz}&quot;
+                      </p>
+                    )}
+                    {!relatedEssay && !relatedQuiz && (
+                      <p className="text-[11px] text-white/40">
+                        Consistently demonstrated across multiple assessments
+                      </p>
+                    )}
+                  </div>
+                )
+              })}
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* ── Where They're Struggling ─────────────────────────────────── */}
+        <Card className="bg-white/[0.02] border-white/5 mb-8">
+          <CardHeader>
+            <CardTitle className="text-sm font-medium text-red-400 flex items-center gap-2">
+              <XCircle className="h-4 w-4" /> Where They&apos;re Struggling
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-3">
+              {student.weaknesses.map((w, i) => {
+                const name = typeof w === "string" ? w : w.name
+                const score = typeof w === "string" ? null : w.score
+                // Generate actionable improvement suggestions
+                const suggestion = (() => {
+                  const lower = name.toLowerCase()
+                  if (lower.includes("essay") || lower.includes("writing") || lower.includes("paragraph"))
+                    return "Practice using PEE (Point, Evidence, Explain) structure in each paragraph. Try timed essay practice with model answers."
+                  if (lower.includes("grammar") || lower.includes("punctuation") || lower.includes("spag"))
+                    return "Daily SPAG drills for 10 minutes. Focus on semicolons, apostrophes, and sentence variety."
+                  if (lower.includes("quote") || lower.includes("evidence"))
+                    return "Build a quote bank for each text. Practice embedding short quotes into analytical sentences."
+                  if (lower.includes("time") || lower.includes("exam") || lower.includes("technique"))
+                    return "Practice timed responses: 5 min per mark. Use past paper questions under exam conditions."
+                  if (lower.includes("analysis") || lower.includes("depth"))
+                    return "Use the 'What? How? Why?' framework to deepen analytical responses. Focus on word-level analysis."
+                  if (lower.includes("vocabulary") || lower.includes("spelling"))
+                    return "Weekly vocabulary expansion exercises. Focus on Tier 2 academic vocabulary."
+                  if (lower.includes("reading") || lower.includes("comprehension"))
+                    return "Daily reading of non-fiction extracts. Practice summarising key ideas in own words."
+                  return "Focus on targeted practice with teacher feedback. Book a 1:1 review session."
+                })()
+                return (
+                  <div key={i} className="rounded-lg border border-red-500/10 bg-red-500/[0.03] p-3">
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="text-sm font-medium text-red-400">{name}</span>
+                      {score && <span className="text-xs text-red-400/70">{score}%</span>}
+                    </div>
+                    <p className="text-[11px] text-white/50">{suggestion}</p>
+                  </div>
+                )
+              })}
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* ── Suggested Next Steps ─────────────────────────────────────── */}
+        <Card className="bg-white/[0.02] border-white/5 mb-8">
+          <CardHeader>
+            <CardTitle className="text-sm font-medium text-white/80 flex items-center gap-2">
+              <Lightbulb className="h-4 w-4 text-amber-400" />
+              Suggested Next Steps
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-3">
+              {(() => {
+                const suggestions: string[] = []
+                // Check for declining essay scores
+                const essayScores = student.essaySubmissions.filter((e) => e.score > 0).map((e) => e.score)
+                if (essayScores.length >= 2) {
+                  const lastTwo = essayScores.slice(-2)
+                  const prevTwo = essayScores.slice(-4, -2)
+                  if (prevTwo.length > 0) {
+                    const recentAvg = Math.round(lastTwo.reduce((a, b) => a + b, 0) / lastTwo.length)
+                    const prevAvg = Math.round(prevTwo.reduce((a, b) => a + b, 0) / prevTwo.length)
+                    if (recentAvg < prevAvg - 5) {
+                      suggestions.push(`Focus on essay paragraph structure - score dropped from ${prevAvg}% to ${recentAvg}% over last ${lastTwo.length} essays`)
+                    }
+                  }
+                }
+                // Check for weak quiz areas
+                const weakQuizzes = student.quizAttempts.filter((q) => (q.score / q.maxScore) < 0.5)
+                if (weakQuizzes.length > 0) {
+                  suggestions.push(`Revise topics from failed quizzes: ${weakQuizzes.map((q) => q.quiz).slice(0, 2).join(", ")}`)
+                }
+                // Check for incomplete modules
+                const incompleteModules = student.moduleProgress.filter((m) => m.progress < 50)
+                if (incompleteModules.length > 0) {
+                  suggestions.push(`Complete outstanding modules: ${incompleteModules.map((m) => m.module).slice(0, 2).join(", ")} (under 50% progress)`)
+                }
+                // Check assignments completion rate
+                if (student.assignmentsCompleted < student.assignmentsTotal * 0.8) {
+                  suggestions.push(`Catch up on ${student.assignmentsTotal - student.assignmentsCompleted} outstanding assignments to stay on track`)
+                }
+                // Mock exam performance
+                const mockScores = student.mockExamResults.map((m) => m.score)
+                if (mockScores.length > 0 && mockScores[mockScores.length - 1] < 60) {
+                  suggestions.push(`Book a revision session before next mock exam - last score was ${mockScores[mockScores.length - 1]}%`)
+                }
+                // Add from existing recommendations if we need more
+                if (suggestions.length < 3) {
+                  student.recommendations.slice(0, 3 - suggestions.length).forEach((r) => suggestions.push(r))
+                }
+                return suggestions.map((suggestion, i) => (
+                  <div key={i} className="flex items-start gap-3 rounded-lg border border-amber-500/10 bg-amber-500/[0.03] p-3">
+                    <span className="shrink-0 mt-0.5 h-5 w-5 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-[10px] text-amber-400 tabular-nums font-medium">
+                      {i + 1}
+                    </span>
+                    <p className="text-sm text-white/70">{suggestion}</p>
+                  </div>
+                ))
+              })()}
             </div>
           </CardContent>
         </Card>

@@ -13,6 +13,10 @@ import {
   CheckCircle,
   Target,
   ExternalLink,
+  FileText,
+  Lightbulb,
+  XCircle,
+  BookOpen,
 } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -87,6 +91,9 @@ export default function TeacherClassDetailPage() {
     return b.overallScore - a.overallScore
   })
 
+  // Full student data from DEMO_STUDENTS for deeper analytics
+  const fullClassStudents = DEMO_STUDENTS.filter((s: DemoStudent) => s.className === cls.name)
+
   const avgScore = cls.avgScore
   const avgCompletion = cls.completionRate
   const atRiskCount = cls.atRiskCount ?? 0
@@ -94,6 +101,43 @@ export default function TeacherClassDetailPage() {
   const monitorCount = classStudents.filter((s: any) => s.ragStatus === "amber").length
   const improvingCount = classStudents.filter((s: any) => s.trend === "up").length
   const decliningCount = classStudents.filter((s: any) => s.trend === "down").length
+
+  // Aggregate recent assessment results
+  const recentAssessments = fullClassStudents.flatMap((s: DemoStudent) => {
+    const essays = s.essaySubmissions.filter((e) => e.score > 0).map((e) => ({
+      studentName: s.name, studentId: s.id, title: e.title, type: "Essay" as const,
+      score: e.score, maxScore: 100, date: e.date,
+    }))
+    const quizzes = s.quizAttempts.map((q) => ({
+      studentName: s.name, studentId: s.id, title: q.quiz, type: "Quiz" as const,
+      score: q.score, maxScore: q.maxScore, date: q.date,
+    }))
+    const mocks = s.mockExamResults.map((m) => ({
+      studentName: s.name, studentId: s.id, title: m.exam, type: "Mock" as const,
+      score: m.score, maxScore: 100, date: m.date,
+    }))
+    return [...essays, ...quizzes, ...mocks]
+  }).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, 12)
+
+  // Aggregate strengths and weaknesses across class
+  const strengthCounts: Record<string, number> = {}
+  const weaknessCounts: Record<string, number> = {}
+  fullClassStudents.forEach((s: DemoStudent) => {
+    s.strengths.forEach((st) => {
+      const name = typeof st === "string" ? st : st.name
+      strengthCounts[name] = (strengthCounts[name] || 0) + 1
+    })
+    s.weaknesses.forEach((w) => {
+      const name = typeof w === "string" ? w : w.name
+      weaknessCounts[name] = (weaknessCounts[name] || 0) + 1
+    })
+  })
+  const topStrengths = Object.entries(strengthCounts)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 5)
+  const topWeaknesses = Object.entries(weaknessCounts)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 5)
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white">
@@ -255,6 +299,186 @@ export default function TeacherClassDetailPage() {
                 </tbody>
               </table>
             </div>
+          </Card>
+        </section>
+
+        {/* ── Assessment Results Table ─────────────────────────────── */}
+        <section className="mb-10">
+          <h2 className="text-lg font-medium text-white/80 mb-4 flex items-center gap-2">
+            <FileText className="h-5 w-5 text-blue-400" />
+            Recent Assessment Results
+          </h2>
+          <Card className="bg-white/[0.02] border-white/5 overflow-hidden">
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-white/5">
+                    <th className="text-left px-4 py-3 text-xs font-medium text-white/40">Student</th>
+                    <th className="text-left px-4 py-3 text-xs font-medium text-white/40">Assessment</th>
+                    <th className="text-left px-4 py-3 text-xs font-medium text-white/40">Type</th>
+                    <th className="text-left px-4 py-3 text-xs font-medium text-white/40">Score</th>
+                    <th className="text-left px-4 py-3 text-xs font-medium text-white/40 hidden md:table-cell">Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {recentAssessments.map((item, idx) => {
+                    const pct = Math.round((item.score / item.maxScore) * 100)
+                    return (
+                      <tr key={idx} className="border-b border-white/5 last:border-0 hover:bg-white/[0.02]">
+                        <td className="px-4 py-3">
+                          <Link
+                            href={`/demo/teacher/students/${item.studentId}`}
+                            className="text-white/80 hover:text-emerald-400 transition-colors font-medium"
+                          >
+                            {item.studentName}
+                          </Link>
+                        </td>
+                        <td className="px-4 py-3 text-white/60 max-w-[200px] truncate">{item.title}</td>
+                        <td className="px-4 py-3">
+                          <Badge variant="outline" className={
+                            item.type === "Essay" ? "bg-blue-500/10 text-blue-400 border-blue-500/20" :
+                            item.type === "Quiz" ? "bg-amber-500/10 text-amber-400 border-amber-500/20" :
+                            "bg-purple-500/10 text-purple-400 border-purple-500/20"
+                          }>{item.type}</Badge>
+                        </td>
+                        <td className="px-4 py-3">
+                          <span className={scoreColor(pct)}>{item.score}/{item.maxScore}</span>
+                          <span className="text-neutral-600 text-xs ml-1">({pct}%)</span>
+                        </td>
+                        <td className="px-4 py-3 text-white/40 text-xs hidden md:table-cell">{item.date}</td>
+                      </tr>
+                    )
+                  })}
+                </tbody>
+              </table>
+            </div>
+          </Card>
+        </section>
+
+        {/* ── Class Strengths & Weaknesses ────────────────────────────── */}
+        <section className="mb-10">
+          <h2 className="text-lg font-medium text-white/80 mb-4 flex items-center gap-2">
+            <BarChart3 className="h-5 w-5 text-violet-400" />
+            Class Strengths &amp; Weaknesses
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <Card className="bg-white/[0.02] border-white/5">
+              <CardHeader className="pb-2">
+                <CardTitle className="text-sm font-medium text-emerald-400 flex items-center gap-2">
+                  <CheckCircle className="h-4 w-4" /> Class Strengths
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3">
+                  {topStrengths.map(([name, count], i) => (
+                    <div key={i} className="flex items-center justify-between">
+                      <span className="text-sm text-white/70">{name}</span>
+                      <div className="flex items-center gap-2">
+                        <div className="w-20 h-1.5 rounded-full bg-white/5 overflow-hidden">
+                          <div
+                            className="h-full rounded-full bg-green-500"
+                            style={{ width: `${(count / fullClassStudents.length) * 100}%` }}
+                          />
+                        </div>
+                        <span className="text-[11px] text-white/40 w-16 text-right">
+                          {count}/{fullClassStudents.length} students
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white/[0.02] border-white/5">
+              <CardHeader className="pb-2">
+                <CardTitle className="text-sm font-medium text-red-400 flex items-center gap-2">
+                  <XCircle className="h-4 w-4" /> Class Weaknesses
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3">
+                  {topWeaknesses.map(([name, count], i) => (
+                    <div key={i} className="flex items-center justify-between">
+                      <span className="text-sm text-white/70">{name}</span>
+                      <div className="flex items-center gap-2">
+                        <div className="w-20 h-1.5 rounded-full bg-white/5 overflow-hidden">
+                          <div
+                            className="h-full rounded-full bg-red-500"
+                            style={{ width: `${(count / fullClassStudents.length) * 100}%` }}
+                          />
+                        </div>
+                        <span className="text-[11px] text-white/40 w-16 text-right">
+                          {count}/{fullClassStudents.length} students
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* ── Suggested Lesson Focus ──────────────────────────────────── */}
+        <section className="mb-10">
+          <h2 className="text-lg font-medium text-white/80 mb-4 flex items-center gap-2">
+            <Lightbulb className="h-5 w-5 text-amber-400" />
+            Suggested Lesson Focus
+          </h2>
+          <Card className="bg-white/[0.02] border-white/5">
+            <CardContent className="p-6">
+              <div className="space-y-4">
+                {topWeaknesses.slice(0, 3).map(([weakness, count], i) => {
+                  const lower = weakness.toLowerCase()
+                  let suggestion = ""
+                  let activity = ""
+                  if (lower.includes("essay") || lower.includes("writing") || lower.includes("paragraph")) {
+                    suggestion = "Dedicate a lesson to essay structure using model answers. Break down PEE paragraphs with live examples."
+                    activity = "Collaborative essay scaffolding exercise with peer feedback"
+                  } else if (lower.includes("grammar") || lower.includes("punctuation") || lower.includes("spag")) {
+                    suggestion = "Run a focused SPAG workshop with common error patterns from recent submissions."
+                    activity = "Error correction relay: students identify and fix errors in anonymised work"
+                  } else if (lower.includes("quote") || lower.includes("evidence")) {
+                    suggestion = "Teach the embed-and-analyse technique for weaving quotes into analytical paragraphs."
+                    activity = "Quote embedding challenge: transform clunky quotes into fluent analysis"
+                  } else if (lower.includes("time") || lower.includes("exam") || lower.includes("technique")) {
+                    suggestion = "Practice timed exam responses with immediate self-assessment against mark schemes."
+                    activity = "Speed analysis: 5-minute response bursts with mark scheme comparison"
+                  } else if (lower.includes("analysis") || lower.includes("depth")) {
+                    suggestion = "Model deep analysis using the 'What? How? Why?' framework on a key extract."
+                    activity = "Layered analysis: whole class builds from surface to deep reading together"
+                  } else if (lower.includes("vocabulary") || lower.includes("spelling")) {
+                    suggestion = "Introduce Tier 2 academic vocabulary with contextual usage examples."
+                    activity = "Vocabulary auction: students bid on words to use in their next piece"
+                  } else if (lower.includes("reading") || lower.includes("comprehension")) {
+                    suggestion = "Use retrieval and inference practice with unfamiliar non-fiction texts."
+                    activity = "Reading detective: answer retrieval vs inference questions collaboratively"
+                  } else {
+                    suggestion = `Address the common weakness in ${weakness.toLowerCase()} through targeted practice.`
+                    activity = "Differentiated practice tasks with teacher-led focus group"
+                  }
+                  return (
+                    <div key={i} className="rounded-lg border border-amber-500/10 bg-amber-500/[0.03] p-4">
+                      <div className="flex items-center gap-2 mb-2">
+                        <BookOpen className="h-4 w-4 text-amber-400" />
+                        <span className="text-sm font-medium text-white/80">
+                          Focus: {weakness}
+                        </span>
+                        <span className="text-[11px] text-white/30 ml-auto">
+                          Affects {count}/{fullClassStudents.length} students
+                        </span>
+                      </div>
+                      <p className="text-xs text-white/60 mb-2">{suggestion}</p>
+                      <div className="flex items-center gap-2">
+                        <span className="text-[10px] uppercase tracking-wider text-amber-400/60">Suggested Activity:</span>
+                        <span className="text-xs text-white/50">{activity}</span>
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+            </CardContent>
           </Card>
         </section>
 

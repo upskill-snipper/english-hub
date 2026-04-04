@@ -18,6 +18,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import DemoBanner from "@/components/demo/DemoBanner"
+import { openPrintableDocument } from "@/lib/generate-download"
 
 // ── Mock benchmark data ──────────────────────────────────────────────────────
 
@@ -106,10 +107,35 @@ export default function BenchmarksPage() {
 
   function handleDownload() {
     setDownloading(true)
-    setTimeout(() => {
-      setDownloading(false)
-      toast.success("Benchmark report downloaded successfully")
-    }, 1200)
+    const e = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    const body = `
+      <h2>Overview</h2>
+      <table>
+        <tr><th>Metric</th><th>School</th><th>National</th><th>Difference</th></tr>
+        ${overviewCards.map((c) => `<tr><td>${e(c.label)}</td><td>${c.school}%</td><td>${c.national}%</td><td>${c.diff > 0 ? "+" : ""}${c.diff}%</td></tr>`).join("")}
+      </table>
+      <h2>Year Group Benchmarks</h2>
+      <table>
+        <tr><th>Year Group</th><th>School Avg</th><th>National Avg</th><th>Difference</th><th>Percentile</th></tr>
+        ${yearGroupBenchmarks.map((y) => `<tr><td>${e(y.year)}</td><td>${y.school}%</td><td>${y.national}%</td><td>+${y.diff}%</td><td>${y.percentile}th</td></tr>`).join("")}
+      </table>
+      <h2>Subject Comparison</h2>
+      <table>
+        <tr><th>Subject</th><th>School</th><th>Platform Avg</th></tr>
+        ${subjectComparison.map((s) => `<tr><td>${e(s.subject)}</td><td>${s.school}%</td><td>${s.platform}%</td></tr>`).join("")}
+      </table>
+      <h2>Term-on-Term Trend</h2>
+      <table>
+        <tr><th>Term</th><th>School</th><th>National</th></tr>
+        ${termTrend.map((t) => `<tr><td>${e(t.term)}</td><td>${t.school}%</td><td>${t.national}%</td></tr>`).join("")}
+      </table>
+      <h2>Recommendations</h2>
+      <ol>${recommendations.map((r) => `<li>${e(r.text)}</li>`).join("")}</ol>`
+    openPrintableDocument("Performance Benchmark Report", body, {
+      subtitle: "Riverside Academy | English Department | Demo Data",
+    })
+    setDownloading(false)
+    toast.success("Benchmark report opened for download")
   }
 
   const maxTermSchool = Math.max(...termTrend.map((t) => t.school))

@@ -30,6 +30,7 @@ import {
   DEMO_STUDENTS,
 } from "@/data/demo-data"
 import DemoBanner from "@/components/demo/DemoBanner"
+import { openPrintableDocument } from "@/lib/generate-download"
 
 // ── Constants ──────────────────────────────────────────────────────────────
 
@@ -227,8 +228,20 @@ export default function DepartmentPage() {
   })
 
   function handleExport() {
-    toast.success("Department report queued for download", {
-      description: "Your PDF report will be ready in a few moments.",
+    const e = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    const body = `
+      <h2>Department Summary</h2>
+      <table>
+        <tr><th>Teachers</th><td>${DEPT_TEACHERS.length}</td><th>Department Avg</th><td>${DEPT_AVG}%</td></tr>
+        <tr><th>Target</th><td>${DEPT_TARGET}%</td><th>Gap</th><td>${DEPT_AVG >= DEPT_TARGET ? "On target" : `${DEPT_TARGET - DEPT_AVG}% below`}</td></tr>
+      </table>
+      <h2>Teacher Performance</h2>
+      <table>
+        <tr><th>Teacher</th><th>Classes</th><th>Students</th><th>Avg Score</th><th>Completion</th></tr>
+        ${sortedTeachers.map((t) => `<tr><td>${e(t.name)}</td><td>${t.classes}</td><td>${t.students}</td><td>${t.avgScore}%</td><td>${t.completionRate}%</td></tr>`).join("")}
+      </table>`
+    openPrintableDocument("Department Overview Report", body, {
+      subtitle: `${DEMO_SCHOOL.name} | English Department | Demo Data`,
     })
   }
 

@@ -397,6 +397,163 @@ export default function DemoSchoolDashboardPage() {
               </div>
             </CardContent>
           </Card>
+
+          {/* Latest Assessment Results */}
+          <Card className="border-border bg-card/60">
+            <CardHeader>
+              <div className="flex items-center justify-between">
+                <CardTitle className="flex items-center gap-2 text-base font-semibold text-foreground">
+                  <ClipboardCheck className="h-4 w-4 text-blue-400" />
+                  Latest Assessment Results
+                </CardTitle>
+                <Link
+                  href="/demo/school/analytics"
+                  className="text-xs text-primary hover:underline"
+                >
+                  View all
+                </Link>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-2">
+                {(() => {
+                  const allResults = DEMO_STUDENTS.flatMap((s) => [
+                    ...s.mockExamResults.map((r) => ({ ...r, studentName: s.name, studentId: s.id, yearGroup: s.yearGroup, type: "Mock Exam" as const })),
+                    ...s.essaySubmissions.map((r) => ({ exam: r.title, score: r.score, grade: "", date: r.date, studentName: s.name, studentId: s.id, yearGroup: s.yearGroup, type: "Essay" as const })),
+                    ...s.quizAttempts.map((r) => ({ exam: r.quiz, score: Math.round((r.score / r.maxScore) * 100), grade: "", date: r.date, studentName: s.name, studentId: s.id, yearGroup: s.yearGroup, type: "Quiz" as const })),
+                  ])
+                  const sorted = allResults.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, 8)
+                  return sorted.map((r, i) => (
+                    <Link
+                      key={i}
+                      href={`/demo/school/students/${r.studentId}`}
+                      className="flex items-center justify-between rounded-lg border border-border bg-background/50 px-3 py-2.5 transition-colors hover:border-primary/30 hover:bg-primary/5"
+                    >
+                      <div className="min-w-0 flex-1">
+                        <p className="truncate text-sm font-medium text-foreground">{r.exam}</p>
+                        <p className="mt-0.5 text-xs text-muted-foreground">
+                          {r.studentName} &middot; {r.yearGroup}
+                        </p>
+                      </div>
+                      <div className="flex items-center gap-2 shrink-0 ml-3">
+                        <Badge
+                          variant="secondary"
+                          className={`text-xs ${r.type === "Mock Exam" ? "border-amber-500/30 bg-amber-500/10 text-amber-400" : r.type === "Essay" ? "border-cyan-500/30 bg-cyan-500/10 text-cyan-400" : "border-pink-500/30 bg-pink-500/10 text-pink-400"}`}
+                        >
+                          {r.type}
+                        </Badge>
+                        <span className={`text-sm font-semibold ${r.score >= 70 ? "text-green-400" : r.score >= 50 ? "text-amber-400" : "text-red-400"}`}>
+                          {r.score}%
+                        </span>
+                      </div>
+                    </Link>
+                  ))
+                })()}
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Areas of Concern */}
+          <Card className="border-border bg-card/60">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-base font-semibold text-foreground">
+                <AlertTriangle className="h-4 w-4 text-amber-400" />
+                Areas of Concern
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-xs text-muted-foreground">
+                Topics where multiple students are struggling across the school.
+              </p>
+              <div className="space-y-3">
+                {(() => {
+                  const weaknessCounts: Record<string, number> = {}
+                  DEMO_STUDENTS.forEach((s) => {
+                    s.weaknesses.forEach((w) => {
+                      const name = typeof w === "string" ? w : w.name
+                      weaknessCounts[name] = (weaknessCounts[name] || 0) + 1
+                    })
+                  })
+                  const sorted = Object.entries(weaknessCounts)
+                    .sort((a, b) => b[1] - a[1])
+                    .slice(0, 6)
+                  const max = sorted[0]?.[1] || 1
+                  return sorted.map(([name, count], i) => (
+                    <div key={i}>
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="text-sm text-foreground">{name}</span>
+                        <span className="text-xs text-muted-foreground">{count} students</span>
+                      </div>
+                      <div className="h-2 w-full overflow-hidden rounded-full bg-muted">
+                        <div
+                          className="h-full rounded-full bg-amber-500"
+                          style={{ width: `${(count / max) * 100}%` }}
+                        />
+                      </div>
+                    </div>
+                  ))
+                })()}
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Suggested Interventions */}
+          <Card className="border-border bg-card/60 border-l-4 border-l-violet-500">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-base font-semibold text-foreground">
+                <TrendingUp className="h-4 w-4 text-violet-400" />
+                Suggested Interventions
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-xs text-muted-foreground">
+                Recommended actions for at-risk students based on assessment data.
+              </p>
+              <div className="space-y-2">
+                {atRiskStudents.slice(0, 5).map((student) => {
+                  const weakList = student.weaknesses.map((w) => typeof w === "string" ? w : w.name)
+                  const interventionMap: Record<string, string> = {
+                    "Spelling & Grammar": "Assign daily SPaG drills and proofreading exercises",
+                    "Essay Structure": "Schedule 1:1 essay planning sessions with teacher",
+                    "Timed Conditions": "Enrol in after-school exam technique workshop",
+                    "Essay Length": "Set incremental word count targets for each assignment",
+                    "Quotation Integration": "Provide quotation embedding scaffold sheets",
+                    "Written Expression": "Pair with writing mentor for peer feedback sessions",
+                    "Exam Technique": "Book mock exam practice slots weekly",
+                    "Paragraph Structure": "Use PEAL framework checklists for all written work",
+                    "Analytical Depth": "Assign critical reading tasks with discussion prompts",
+                  }
+                  const topWeak = weakList[0] || "General"
+                  const intervention = interventionMap[topWeak] || "Schedule progress review meeting with class teacher"
+                  return (
+                    <Link
+                      key={student.id}
+                      href={`/demo/school/students/${student.id}`}
+                      className="block rounded-lg border border-border bg-background/50 p-3 transition-colors hover:border-violet-500/30 hover:bg-violet-500/5"
+                    >
+                      <div className="flex items-start justify-between gap-2">
+                        <div>
+                          <p className="text-sm font-medium text-foreground">{student.name}</p>
+                          <p className="mt-0.5 text-xs text-muted-foreground">{student.className}</p>
+                        </div>
+                        <Badge
+                          variant="secondary"
+                          className="shrink-0 border-red-500/30 bg-red-500/10 text-xs text-red-400"
+                        >
+                          {student.overallProgress}%
+                        </Badge>
+                      </div>
+                      <div className="mt-2 rounded-md bg-violet-500/5 border border-violet-500/10 px-2.5 py-1.5">
+                        <p className="text-xs text-violet-300">
+                          <span className="font-medium">Action:</span> {intervention}
+                        </p>
+                      </div>
+                    </Link>
+                  )
+                })}
+              </div>
+            </CardContent>
+          </Card>
         </div>
 
         {/* Right column */}

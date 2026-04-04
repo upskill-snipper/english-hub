@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { openPrintableDocument } from "@/lib/generate-download"
 import {
   Sparkles,
   Download,
@@ -135,53 +136,35 @@ const GENERATED_QUESTIONS: QuizQuestion[] = [
 // ---------------------------------------------------------------------------
 
 function downloadQuiz(questions: QuizQuestion[]) {
-  const lines: string[] = []
-  lines.push("============================================================")
-  lines.push("QUIZ: AN INSPECTOR CALLS")
-  lines.push("============================================================")
-  lines.push("")
-  lines.push("Year Group: 11  |  Difficulty: Higher  |  Questions: 10")
-  lines.push("")
-
-  questions.forEach((q) => {
-    lines.push(`${q.id}. ${q.question}`)
-    q.options.forEach((opt, i) => {
-      const letter = String.fromCharCode(65 + i)
-      lines.push(`   ${letter}) ${opt}`)
-    })
-    lines.push("")
+  const e = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+  const body = `
+    <p><strong>Name:</strong> _______________________________ &nbsp;&nbsp; <strong>Date:</strong> ______________</p>
+    <p>Answer all questions by circling the correct letter.</p>
+    ${questions.map((q) => `
+      <div class="section">
+        <p><strong>${q.id}.</strong> ${e(q.question)}</p>
+        <table style="margin-left:20px;border:none">
+          ${q.options.map((opt, i) => `<tr style="border:none"><td style="border:none;padding:3px 8px;font-weight:600">${String.fromCharCode(65 + i)})</td><td style="border:none;padding:3px 8px">${e(opt)}</td></tr>`).join("")}
+        </table>
+      </div>`).join("")}`
+  openPrintableDocument("Quiz: An Inspector Calls", body, {
+    subtitle: "Year 11 | Higher | 10 questions",
   })
-
-  const blob = new Blob([lines.join("\n")], { type: "text/plain" })
-  const url = URL.createObjectURL(blob)
-  const a = document.createElement("a")
-  a.href = url
-  a.download = "quiz-an-inspector-calls.txt"
-  a.click()
-  URL.revokeObjectURL(url)
 }
 
 function downloadAnswerSheet(questions: QuizQuestion[]) {
-  const lines: string[] = []
-  lines.push("============================================================")
-  lines.push("ANSWER SHEET: AN INSPECTOR CALLS")
-  lines.push("============================================================")
-  lines.push("")
-
-  questions.forEach((q) => {
-    const letter = String.fromCharCode(65 + q.correctIndex)
-    lines.push(`${q.id}. ${letter}) ${q.options[q.correctIndex]}`)
-    lines.push(`   ${q.explanation}`)
-    lines.push("")
+  const e = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+  const body = `
+    <table>
+      <tr><th>Q</th><th>Answer</th><th>Explanation</th></tr>
+      ${questions.map((q) => {
+        const letter = String.fromCharCode(65 + q.correctIndex)
+        return `<tr><td><strong>${q.id}</strong></td><td><strong>${letter})</strong> ${e(q.options[q.correctIndex])}</td><td>${e(q.explanation)}</td></tr>`
+      }).join("")}
+    </table>`
+  openPrintableDocument("Answer Sheet: An Inspector Calls", body, {
+    subtitle: "Year 11 | Higher | 10 questions",
   })
-
-  const blob = new Blob([lines.join("\n")], { type: "text/plain" })
-  const url = URL.createObjectURL(blob)
-  const a = document.createElement("a")
-  a.href = url
-  a.download = "answers-an-inspector-calls.txt"
-  a.click()
-  URL.revokeObjectURL(url)
 }
 
 // ---------------------------------------------------------------------------

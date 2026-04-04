@@ -23,6 +23,22 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import DemoBanner from "@/components/demo/DemoBanner"
+import {
+  generateLessonPlan,
+  generateWorksheet,
+  generateMarkScheme,
+  generateRevisionGuide,
+} from "@/lib/generate-teaching-pdf"
+import {
+  act1LessonPlan,
+  characterWorksheetMeta,
+  characterWorksheetQuestions,
+  quotesWorksheetMeta,
+  quotesWorksheetQuestions,
+  responsibilityMarkSchemeMeta,
+  responsibilityMarkSchemeAnswers,
+  inspectorCallsRevisionGuide,
+} from "@/lib/inspector-calls-free-pack"
 
 // ─── Types ─────────────────────────────────────────────────────────────────
 
@@ -418,8 +434,8 @@ export default function TeacherResourcesPage() {
 
   function handleDownload(resource: TeachingResource) {
     if (resource.isFree) {
-      // The free An Inspector Calls lesson actually navigates
-      window.location.href = "/for-teachers/free-resources"
+      // Generate the free An Inspector Calls lesson plan in a new tab
+      generateLessonPlan("An Inspector Calls", act1LessonPlan)
       return
     }
     setToast("Subscribe to download -- first month free")

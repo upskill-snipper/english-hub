@@ -494,6 +494,85 @@ export default function SchoolStudentDetailPage() {
         </div>
 
         {/* ---------------------------------------------------------------- */}
+        {/* 4b. Assessment Results Timeline                                  */}
+        {/* ---------------------------------------------------------------- */}
+        <Card className="bg-zinc-900 border-zinc-800">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2 text-zinc-100">
+              <Clock className="w-5 h-5 text-cyan-400" />
+              Assessment Results Timeline
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="relative">
+              <div className="absolute left-5 top-0 bottom-0 w-px bg-zinc-800" />
+              <div className="space-y-3">
+                {(() => {
+                  const allAssessments = [
+                    ...student.mockExams.map((e) => ({
+                      type: "Mock Exam" as const,
+                      title: e.name,
+                      score: e.score,
+                      grade: e.grade,
+                      date: e.date,
+                      icon: <GraduationCap className="w-4 h-4 text-amber-400" />,
+                      color: "amber",
+                    })),
+                    ...student.essays.map((e) => ({
+                      type: "Essay" as const,
+                      title: e.title,
+                      score: e.score,
+                      grade: null,
+                      date: e.date,
+                      icon: <FileText className="w-4 h-4 text-cyan-400" />,
+                      color: "cyan",
+                    })),
+                    ...student.quizAttempts.map((q) => ({
+                      type: "Quiz" as const,
+                      title: q.quiz,
+                      score: Math.round((q.score / q.maxScore) * 100),
+                      grade: null,
+                      date: q.date,
+                      icon: <Brain className="w-4 h-4 text-pink-400" />,
+                      color: "pink",
+                    })),
+                  ].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+
+                  return allAssessments.map((item, i) => (
+                    <div key={i} className="flex items-start gap-4 relative">
+                      <div className="w-10 h-10 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center shrink-0 z-10">
+                        {item.icon}
+                      </div>
+                      <div className="flex-1 p-3 rounded-lg bg-zinc-800/40 border border-zinc-800">
+                        <div className="flex items-center justify-between gap-2 flex-wrap">
+                          <div className="flex items-center gap-2">
+                            <Badge variant="outline" className={`text-[10px] bg-${item.color}-500/10 text-${item.color}-400 border-${item.color}-500/30`}>
+                              {item.type}
+                            </Badge>
+                            <span className="text-sm font-medium text-zinc-200">{item.title}</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <span className={`text-sm font-bold ${item.score >= 70 ? "text-emerald-400" : item.score >= 50 ? "text-amber-400" : "text-red-400"}`}>
+                              {item.score}%
+                            </span>
+                            {item.grade && (
+                              <Badge variant="outline" className={`text-xs ${gradeColor(item.grade)}`}>
+                                Grade {item.grade}
+                              </Badge>
+                            )}
+                          </div>
+                        </div>
+                        <span className="text-xs text-zinc-500 mt-1 block">{item.date}</span>
+                      </div>
+                    </div>
+                  ))
+                })()}
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* ---------------------------------------------------------------- */}
         {/* 5. Score Trend (last 8 scores)                                   */}
         {/* ---------------------------------------------------------------- */}
         <Card className="bg-zinc-900 border-zinc-800">
@@ -662,6 +741,65 @@ export default function SchoolStudentDetailPage() {
                   ))}
                 </tbody>
               </table>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* ---------------------------------------------------------------- */}
+        {/* 7b. Mastery Tracker                                              */}
+        {/* ---------------------------------------------------------------- */}
+        <Card className="bg-zinc-900 border-zinc-800">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2 text-zinc-100">
+              <Target className="w-5 h-5 text-violet-400" />
+              Curriculum Mastery Tracker
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {student.modules.map((mod, i) => {
+                const masteryLevel = mod.progress >= 90 ? "Mastered" : mod.progress >= 50 ? "Developing" : "Needs Work"
+                const masteryColor = masteryLevel === "Mastered"
+                  ? { bar: "bg-emerald-500", text: "text-emerald-400", bg: "bg-emerald-500/10", border: "border-emerald-500/30" }
+                  : masteryLevel === "Developing"
+                  ? { bar: "bg-amber-500", text: "text-amber-400", bg: "bg-amber-500/10", border: "border-amber-500/30" }
+                  : { bar: "bg-red-500", text: "text-red-400", bg: "bg-red-500/10", border: "border-red-500/30" }
+                return (
+                  <div key={i} className="p-3 rounded-lg bg-zinc-800/40 border border-zinc-800">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-sm font-medium text-zinc-200">{mod.name}</span>
+                      <Badge variant="outline" className={`text-[10px] ${masteryColor.bg} ${masteryColor.text} ${masteryColor.border}`}>
+                        {masteryLevel}
+                      </Badge>
+                    </div>
+                    <div className="w-full h-2.5 bg-zinc-800 rounded-full overflow-hidden">
+                      <div
+                        className={`h-full rounded-full ${masteryColor.bar} transition-all duration-500`}
+                        style={{ width: `${mod.progress}%` }}
+                      />
+                    </div>
+                    <div className="flex items-center justify-between mt-1.5">
+                      <span className="text-[10px] text-zinc-500">{mod.progress}% complete</span>
+                      {mod.score > 0 && (
+                        <span className={`text-[10px] font-medium ${mod.score >= 70 ? "text-emerald-400" : mod.score >= 50 ? "text-amber-400" : "text-red-400"}`}>
+                          Avg score: {mod.score}%
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+            <div className="mt-4 flex items-center gap-6 text-xs text-zinc-500">
+              <span className="flex items-center gap-1.5">
+                <span className="w-3 h-3 rounded bg-emerald-500 inline-block" /> Mastered (90%+)
+              </span>
+              <span className="flex items-center gap-1.5">
+                <span className="w-3 h-3 rounded bg-amber-500 inline-block" /> Developing (50-89%)
+              </span>
+              <span className="flex items-center gap-1.5">
+                <span className="w-3 h-3 rounded bg-red-500 inline-block" /> Needs Work (&lt;50%)
+              </span>
             </div>
           </CardContent>
         </Card>
@@ -866,6 +1004,78 @@ export default function SchoolStudentDetailPage() {
                   <p className="text-sm text-zinc-300 leading-relaxed">{rec}</p>
                 </div>
               ))}
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* ---------------------------------------------------------------- */}
+        {/* 12b. Suggested Learning Paths                                    */}
+        {/* ---------------------------------------------------------------- */}
+        <Card className="bg-zinc-900 border-zinc-800 border-l-4 border-l-blue-500">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2 text-zinc-100">
+              <BookOpen className="w-5 h-5 text-blue-400" />
+              Suggested Learning Paths
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-xs text-zinc-500 mb-4">Based on identified weaknesses and module gaps, these learning paths are recommended for this student.</p>
+            <div className="space-y-3">
+              {(() => {
+                const weakItems = student.weaknesses.map((w) => typeof w === "string" ? w : w.name)
+                const incompleteModules = student.modules.filter((m) => (m.status ?? "In Progress") !== "Complete")
+
+                const pathMap: Record<string, { module: string; exercises: string[]; priority: "High" | "Medium" | "Low" }> = {
+                  "Spelling & Grammar": { module: "Language Paper 1 - Section A", exercises: ["Grammar drill worksheets", "Proofreading practice passages", "SPaG quiz bank"], priority: "High" },
+                  "Essay Structure": { module: "Essay Craft Workshop", exercises: ["PEAL paragraph builder", "Model answer comparisons", "Timed planning exercises"], priority: "High" },
+                  "Timed Conditions": { module: "Exam Technique Bootcamp", exercises: ["Mock exam practice under timed conditions", "Speed-planning drills", "Past paper sprints"], priority: "Medium" },
+                  "Essay Length": { module: "Extended Writing Development", exercises: ["Sentence expansion activities", "Detail embedding practice", "Three-paragraph challenges"], priority: "Medium" },
+                  "Quotation Integration": { module: "Textual Evidence Mastery", exercises: ["Quote-embed sentence starters", "AO1/AO2 practice sheets", "Embedded vs standalone quotation drills"], priority: "High" },
+                  "Written Expression": { module: "Creative Writing Techniques", exercises: ["Vocabulary expansion tasks", "Stylistic device practice", "Descriptive writing prompts"], priority: "Medium" },
+                  "Exam Technique": { module: "Exam Technique Bootcamp", exercises: ["Question analysis walkthroughs", "Mark scheme exploration", "Grade boundary awareness"], priority: "High" },
+                  "Paragraph Structure": { module: "Analytical Writing Frameworks", exercises: ["Topic sentence practice", "PEAL/PETER paragraph building", "Cohesion and linking exercises"], priority: "Medium" },
+                  "Analytical Depth": { module: "Critical Analysis Advanced", exercises: ["Alternative interpretation exercises", "Critic comparison tasks", "Conceptualised response practice"], priority: "Low" },
+                }
+
+                const paths = weakItems
+                  .map((w) => ({ weakness: w, ...(pathMap[w] || { module: "General Revision", exercises: ["Review revision guides", "Complete practice questions", "Seek teacher feedback"], priority: "Medium" as const }) }))
+                  .concat(
+                    incompleteModules.slice(0, 2).map((m) => ({
+                      weakness: `Incomplete: ${m.name}`,
+                      module: m.name,
+                      exercises: ["Complete remaining lessons", "Attempt end-of-module quiz", "Review key concepts"],
+                      priority: (m.progress < 30 ? "High" : "Medium") as "High" | "Medium" | "Low",
+                    }))
+                  )
+
+                return paths.map((path, i) => (
+                  <div key={i} className="p-4 rounded-lg bg-zinc-800/40 border border-zinc-800">
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center gap-2">
+                        <Badge variant="outline" className={`text-[10px] ${
+                          path.priority === "High" ? "bg-red-500/10 text-red-400 border-red-500/30"
+                          : path.priority === "Medium" ? "bg-amber-500/10 text-amber-400 border-amber-500/30"
+                          : "bg-blue-500/10 text-blue-400 border-blue-500/30"
+                        }`}>
+                          {path.priority} Priority
+                        </Badge>
+                        <span className="text-sm font-medium text-zinc-200">{path.weakness}</span>
+                      </div>
+                    </div>
+                    <p className="text-xs text-zinc-400 mb-2">
+                      Recommended module: <span className="text-blue-400 font-medium">{path.module}</span>
+                    </p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {path.exercises.map((ex, j) => (
+                        <span key={j} className="inline-flex items-center gap-1 text-[11px] px-2 py-1 rounded-md bg-zinc-800 text-zinc-400 border border-zinc-700">
+                          <Lightbulb className="w-3 h-3 text-violet-400" />
+                          {ex}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))
+              })()}
             </div>
           </CardContent>
         </Card>

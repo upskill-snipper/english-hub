@@ -198,6 +198,7 @@ export function StudentProgressPreview() {
         <div className="flex flex-wrap gap-2 pt-1 border-t border-white/[0.06]">
           <button
             type="button"
+            onClick={() => window.print()}
             className="flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/[0.04] px-3 py-2 text-xs font-medium text-white/65 hover:bg-white/[0.08] hover:text-white/85 transition-colors"
           >
             <Download className="h-3.5 w-3.5" />

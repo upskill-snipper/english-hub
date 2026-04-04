@@ -24,6 +24,22 @@ import {
   Award,
 } from "lucide-react"
 import { y11IgcseLitInspectorLessons } from "@/data/lesson-plans/y11-igcse-lit-inspector-lessons"
+import {
+  generateLessonPlan,
+  generateWorksheet,
+  generateMarkScheme,
+  generateRevisionGuide,
+} from "@/lib/generate-teaching-pdf"
+import {
+  act1LessonPlan,
+  characterWorksheetMeta,
+  characterWorksheetQuestions,
+  quotesWorksheetMeta,
+  quotesWorksheetQuestions,
+  responsibilityMarkSchemeMeta,
+  responsibilityMarkSchemeAnswers,
+  inspectorCallsRevisionGuide,
+} from "@/lib/inspector-calls-free-pack"
 
 /* ------------------------------------------------------------------ */
 /*  Pull the first lesson as our free sample                           */
@@ -76,168 +92,27 @@ const teachingGuide = {
 }
 
 /* ------------------------------------------------------------------ */
-/*  PDF generation helpers (blob downloads of formatted text)          */
+/*  Download handlers — open professional HTML docs in new tab          */
 /* ------------------------------------------------------------------ */
 
-function downloadTextAsPdf(filename: string, content: string) {
-  const blob = new Blob([content], { type: "application/pdf" })
-  const url = URL.createObjectURL(blob)
-  const a = document.createElement("a")
-  a.href = url
-  a.download = filename
-  document.body.appendChild(a)
-  a.click()
-  document.body.removeChild(a)
-  URL.revokeObjectURL(url)
+function downloadLessonPlan() {
+  generateLessonPlan("An Inspector Calls", act1LessonPlan)
 }
 
-function generateLessonPlanText(): string {
-  const lines: string[] = []
-  lines.push("=" .repeat(70))
-  lines.push("LESSON PLAN")
-  lines.push("=" .repeat(70))
-  lines.push("")
-  lines.push(`Title: ${lesson.title}`)
-  lines.push(`Text: ${lesson.text}`)
-  lines.push(`Board: ${lesson.board}`)
-  lines.push(`Year Group: ${lesson.yearGroup}`)
-  lines.push(`Duration: ${lesson.duration}`)
-  lines.push("")
-  lines.push("-" .repeat(70))
-  lines.push("OBJECTIVES")
-  lines.push("-" .repeat(70))
-  lesson.objectives.forEach((o, i) => lines.push(`${i + 1}. ${o}`))
-  lines.push("")
-  lines.push("-" .repeat(70))
-  lines.push("SUCCESS CRITERIA")
-  lines.push("-" .repeat(70))
-  lesson.successCriteria.forEach((s, i) => lines.push(`${i + 1}. ${s}`))
-  lines.push("")
-  lines.push("-" .repeat(70))
-  lines.push("KEYWORDS")
-  lines.push("-" .repeat(70))
-  lines.push(lesson.keywords.join(", "))
-  lines.push("")
-  lines.push("-" .repeat(70))
-  lines.push(`STARTER ACTIVITY: ${lesson.starterActivity.title} (${lesson.starterActivity.duration})`)
-  lines.push("-" .repeat(70))
-  lines.push(lesson.starterActivity.instructions)
-  if (lesson.starterActivity.differentiation) {
-    lines.push("")
-    lines.push("Differentiation:")
-    lines.push(`  Support: ${lesson.starterActivity.differentiation.support}`)
-    lines.push(`  Core: ${lesson.starterActivity.differentiation.core}`)
-    lines.push(`  Stretch: ${lesson.starterActivity.differentiation.stretch}`)
-  }
-  lines.push("")
-  lesson.mainActivities.forEach((act, i) => {
-    lines.push("-" .repeat(70))
-    lines.push(`MAIN ACTIVITY ${i + 1}: ${act.title} (${act.duration})`)
-    lines.push("-" .repeat(70))
-    lines.push(act.instructions)
-    if (act.differentiation) {
-      lines.push("")
-      lines.push("Differentiation:")
-      lines.push(`  Support: ${act.differentiation.support}`)
-      lines.push(`  Core: ${act.differentiation.core}`)
-      lines.push(`  Stretch: ${act.differentiation.stretch}`)
-    }
-    lines.push("")
-  })
-  lines.push("-" .repeat(70))
-  lines.push(`PLENARY: ${lesson.plenaryActivity.title}`)
-  lines.push("-" .repeat(70))
-  lines.push(lesson.plenaryActivity.instructions)
-  if (lesson.plenaryActivity.differentiation) {
-    lines.push("")
-    lines.push("Differentiation:")
-    lines.push(`  Support: ${lesson.plenaryActivity.differentiation.support}`)
-    lines.push(`  Core: ${lesson.plenaryActivity.differentiation.core}`)
-    lines.push(`  Stretch: ${lesson.plenaryActivity.differentiation.stretch}`)
-  }
-  lines.push("")
-  if (lesson.homework) {
-    lines.push("-" .repeat(70))
-    lines.push("HOMEWORK")
-    lines.push("-" .repeat(70))
-    lines.push(lesson.homework)
-    lines.push("")
-  }
-  lines.push("-" .repeat(70))
-  lines.push("TEACHER NOTES")
-  lines.push("-" .repeat(70))
-  lesson.teacherNotes.forEach((n, i) => lines.push(`${i + 1}. ${n}`))
-  return lines.join("\n")
+function downloadWorksheet() {
+  generateWorksheet("An Inspector Calls", characterWorksheetMeta, characterWorksheetQuestions)
 }
 
-function generateWorksheetText(): string {
-  const lines: string[] = []
-  lines.push("=" .repeat(70))
-  lines.push("WORKSHEET: An Inspector Calls -- Act 1")
-  lines.push(`Text: ${lesson.text} | Board: ${lesson.board} | ${lesson.yearGroup}`)
-  lines.push("=" .repeat(70))
-  lines.push("")
-  lesson.worksheetQuestions.forEach((q, i) => {
-    lines.push(`Question ${i + 1}${q.marks ? ` [${q.marks} marks]` : ""}`)
-    lines.push(q.question)
-    lines.push("")
-    lines.push("Answer:")
-    lines.push("_".repeat(60))
-    for (let l = 0; l < q.lines; l++) {
-      lines.push("_".repeat(60))
-    }
-    lines.push("")
-  })
-  lines.push("")
-  lines.push("=" .repeat(70))
-  lines.push("MODEL ANSWERS")
-  lines.push("=" .repeat(70))
-  lines.push("")
-  lesson.worksheetQuestions.forEach((q, i) => {
-    lines.push(`Question ${i + 1}:`)
-    lines.push(q.modelAnswer || "")
-    lines.push("")
-  })
-  return lines.join("\n")
+function downloadTeachingGuide() {
+  generateRevisionGuide("An Inspector Calls", inspectorCallsRevisionGuide)
 }
 
-function generateTeachingGuideText(): string {
-  const lines: string[] = []
-  lines.push("=" .repeat(70))
-  lines.push("TEACHING GUIDE: An Inspector Calls")
-  lines.push("Edexcel IGCSE English Literature")
-  lines.push("=" .repeat(70))
-  lines.push("")
-  lines.push("-" .repeat(70))
-  lines.push("CONTEXT NOTES")
-  lines.push("-" .repeat(70))
-  teachingGuide.contextNotes.forEach((n, i) => lines.push(`${i + 1}. ${n}`))
-  lines.push("")
-  lines.push("-" .repeat(70))
-  lines.push("KEY THEMES")
-  lines.push("-" .repeat(70))
-  teachingGuide.themes.forEach((t) => lines.push(`${t.name}: ${t.description}`))
-  lines.push("")
-  lines.push("-" .repeat(70))
-  lines.push("KEY CHARACTERS")
-  lines.push("-" .repeat(70))
-  teachingGuide.characters.forEach((c) => lines.push(`${c.name}: ${c.description}`))
-  lines.push("")
-  lines.push("-" .repeat(70))
-  lines.push("KEY QUOTES")
-  lines.push("-" .repeat(70))
-  teachingGuide.keyQuotes.forEach((q) => {
-    lines.push(`"${q.quote}" -- ${q.speaker}`)
-    lines.push(`  Significance: ${q.significance}`)
-    lines.push("")
-  })
-  lines.push("-" .repeat(70))
-  lines.push("ASSESSMENT CRITERIA (Edexcel IGCSE)")
-  lines.push("-" .repeat(70))
-  teachingGuide.assessmentCriteria.forEach((c) => {
-    lines.push(`${c.code} (${c.weighting}): ${c.description}`)
-  })
-  return lines.join("\n")
+function downloadQuotesWorksheet() {
+  generateWorksheet("An Inspector Calls", quotesWorksheetMeta, quotesWorksheetQuestions)
+}
+
+function downloadMarkScheme() {
+  generateMarkScheme("An Inspector Calls", responsibilityMarkSchemeMeta, responsibilityMarkSchemeAnswers)
 }
 
 /* ------------------------------------------------------------------ */
@@ -491,10 +366,10 @@ export default function FreeResourcesPage() {
             <Button
               size="lg"
               className="w-full sm:w-auto"
-              onClick={() => downloadTextAsPdf("Inspector-Calls-Lesson-Plan.pdf", generateLessonPlanText())}
+              onClick={downloadLessonPlan}
             >
               <Download className="mr-2 h-4 w-4" />
-              Download Lesson Plan (PDF)
+              Download Lesson Plan
             </Button>
           </Card>
         </section>
@@ -578,10 +453,10 @@ export default function FreeResourcesPage() {
             <Button
               size="lg"
               className="w-full sm:w-auto"
-              onClick={() => downloadTextAsPdf("Inspector-Calls-Worksheet.pdf", generateWorksheetText())}
+              onClick={downloadWorksheet}
             >
               <Download className="mr-2 h-4 w-4" />
-              Download Worksheet (PDF)
+              Download Character Worksheet
             </Button>
           </Card>
         </section>
@@ -677,10 +552,81 @@ export default function FreeResourcesPage() {
             <Button
               size="lg"
               className="w-full sm:w-auto"
-              onClick={() => downloadTextAsPdf("Inspector-Calls-Teaching-Guide.pdf", generateTeachingGuideText())}
+              onClick={downloadTeachingGuide}
             >
               <Download className="mr-2 h-4 w-4" />
-              Download Guide (PDF)
+              Download Revision Guide
+            </Button>
+          </Card>
+        </section>
+
+        {/* ---------------------------------------------------------- */}
+        {/*  D. KEY QUOTES WORKSHEET                                     */}
+        {/* ---------------------------------------------------------- */}
+        <section>
+          <div className="flex items-center gap-3 mb-6">
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-500/10">
+              <PenTool className="h-5 w-5 text-amber-400" />
+            </div>
+            <div>
+              <h2 className="text-2xl font-bold">Key Quotes Worksheet</h2>
+              <p className="text-sm text-muted-foreground">8 quote analysis tasks using the WHAT-HOW-WHY framework</p>
+            </div>
+          </div>
+          <Card className="p-6 md:p-8 space-y-4 border-border/60 bg-card">
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Practise analysing the most important quotations from An Inspector Calls. Each task provides a key quotation
+              and asks you to identify language techniques, explain context, and link to Priestley&apos;s wider message.
+              Includes a comparative extended writing task worth 8 marks.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <Badge variant="secondary" className="text-xs">8 questions</Badge>
+              <Badge variant="secondary" className="text-xs">45 marks total</Badge>
+              <Badge variant="secondary" className="text-xs">WHAT-HOW-WHY framework</Badge>
+            </div>
+            <Button
+              size="lg"
+              className="w-full sm:w-auto"
+              onClick={downloadQuotesWorksheet}
+            >
+              <Download className="mr-2 h-4 w-4" />
+              Download Quotes Worksheet
+            </Button>
+          </Card>
+        </section>
+
+        {/* ---------------------------------------------------------- */}
+        {/*  E. MARK SCHEME                                              */}
+        {/* ---------------------------------------------------------- */}
+        <section>
+          <div className="flex items-center gap-3 mb-6">
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-red-500/10">
+              <BarChart3 className="h-5 w-5 text-red-400" />
+            </div>
+            <div>
+              <h2 className="text-2xl font-bold">Mark Scheme</h2>
+              <p className="text-sm text-muted-foreground">Essay: &quot;How does Priestley present responsibility?&quot;</p>
+            </div>
+          </div>
+          <Card className="p-6 md:p-8 space-y-4 border-border/60 bg-card">
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              A complete mark scheme for the responsibility essay with question-by-question marking criteria,
+              example answers at three grade boundaries (7-9, 4-6, 1-3), AO mapping, and common misconceptions
+              to watch for when marking. Covers AO1, AO2, and AO3 across three sub-questions worth 36 marks total.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <Badge variant="secondary" className="text-xs">3 sub-questions</Badge>
+              <Badge variant="secondary" className="text-xs">36 marks total</Badge>
+              <Badge variant="secondary" className="text-xs">AO1 + AO2 + AO3</Badge>
+              <Badge variant="secondary" className="text-xs">Grade boundary examples</Badge>
+            </div>
+            <Button
+              size="lg"
+              className="w-full sm:w-auto"
+              onClick={downloadMarkScheme}
+            >
+              <Download className="mr-2 h-4 w-4" />
+              Download Mark Scheme
             </Button>
           </Card>
         </section>

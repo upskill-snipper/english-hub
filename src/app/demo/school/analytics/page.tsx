@@ -22,6 +22,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { toast } from "sonner"
+import { openPrintableDocument } from "@/lib/generate-download"
 import {
   DEMO_SCHOOL,
   DEMO_STUDENTS,
@@ -138,14 +139,30 @@ export default function AnalyticsPage() {
   }).sort((a, b) => b.avgProgress - a.avgProgress)
 
   function handleExport(type: string) {
+    if (type === "PDF") {
+      handleDownloadReport()
+      return
+    }
     toast.info(`${type} export is available with a full account`, {
       description: "Register your school to unlock data exports.",
     })
   }
 
   function handleDownloadReport() {
-    toast.info("Full report downloads require registration", {
-      description: "Sign up to access detailed PDF reports for your school.",
+    const e = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    const body = `
+      <h2>School Overview</h2>
+      <table>
+        <tr><th>Total Students</th><td>${DEMO_STUDENTS.length}</td><th>Total Classes</th><td>${DEMO_CLASSES.length}</td></tr>
+      </table>
+      <h2>Teacher Performance</h2>
+      <table>
+        <tr><th>Teacher</th><th>Classes</th><th>Students</th><th>Avg Progress</th><th>Completion</th></tr>
+        ${teacherStats.map((t) => `<tr><td>${e(t.name)}</td><td>${t.classCount}</td><td>${t.studentCount}</td><td>${t.avgProgress}%</td><td>${t.completionRate}%</td></tr>`).join("")}
+      </table>
+      <p style="margin-top:16px;font-size:10pt;color:#888">This is demo data. Register your school for real analytics.</p>`
+    openPrintableDocument("School Analytics Report", body, {
+      subtitle: `${DEMO_SCHOOL.name} | Demo Data`,
     })
   }
 
@@ -419,6 +436,155 @@ export default function AnalyticsPage() {
                   </div>
                 </Link>
               ))}
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* ── Assessment Trends ───────────────────────────────── */}
+        <Card className="bg-[#111] border-white/10 mb-8">
+          <CardHeader>
+            <CardTitle className="text-white flex items-center gap-2">
+              <ClipboardList className="w-5 h-5 text-cyan-400" />
+              Assessment Score Trends
+            </CardTitle>
+            <CardDescription className="text-neutral-500">
+              Average scores across different assessment types over recent months
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+              {(() => {
+                const months = ["Jan", "Feb", "Mar"]
+                const mockAvgs = [62, 65, vary(68, dateRange)]
+                const essayAvgs = [58, 63, vary(66, dateRange)]
+                const quizAvgs = [70, 72, vary(74, dateRange)]
+                const categories = [
+                  { label: "Mock Exams", avgs: mockAvgs, color: "amber", icon: <GraduationCap className="w-4 h-4 text-amber-400" /> },
+                  { label: "Essays", avgs: essayAvgs, color: "cyan", icon: <FileText className="w-4 h-4 text-cyan-400" /> },
+                  { label: "Quizzes", avgs: quizAvgs, color: "purple", icon: <BookOpen className="w-4 h-4 text-purple-400" /> },
+                ]
+                return categories.map((cat, ci) => (
+                  <div key={ci} className="p-4 rounded-lg bg-white/[0.03] border border-white/5">
+                    <div className="flex items-center gap-2 mb-3">
+                      {cat.icon}
+                      <span className="text-sm font-medium text-white">{cat.label}</span>
+                      <span className={`ml-auto text-sm font-bold text-${cat.color}-400`}>
+                        {cat.avgs[cat.avgs.length - 1]}%
+                      </span>
+                    </div>
+                    <div className="flex items-end gap-2 h-20">
+                      {cat.avgs.map((val, mi) => (
+                        <div key={mi} className="flex-1 flex flex-col items-center gap-1">
+                          <span className="text-[10px] text-neutral-400">{val}%</span>
+                          <div className="w-full bg-white/5 rounded-t-sm overflow-hidden" style={{ height: "50px" }}>
+                            <div
+                              className={`w-full bg-${cat.color}-500/70 rounded-t-sm`}
+                              style={{
+                                height: `${(val / 100) * 100}%`,
+                                marginTop: `${100 - (val / 100) * 100}%`,
+                              }}
+                            />
+                          </div>
+                          <span className="text-[10px] text-neutral-500">{months[mi]}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="mt-2 text-center">
+                      <Badge variant="secondary" className={`text-${cat.color}-400 bg-${cat.color}-500/10 border-${cat.color}-500/20 text-[10px]`}>
+                        +{cat.avgs[cat.avgs.length - 1] - cat.avgs[0]}% since {months[0]}
+                      </Badge>
+                    </div>
+                  </div>
+                ))
+              })()}
+            </div>
+            {/* Grade Distribution */}
+            <div className="p-4 rounded-lg bg-white/[0.03] border border-white/5">
+              <h4 className="text-sm font-medium text-white mb-3">Grade Distribution (Latest Mock Exams)</h4>
+              <div className="flex items-end gap-2 h-28">
+                {(() => {
+                  const gradeBuckets: Record<string, number> = { "8-9": 0, "6-7": 0, "4-5": 0, "2-3": 0 }
+                  DEMO_STUDENTS.forEach((s) => {
+                    s.mockExamResults.forEach((r) => {
+                      const g = parseInt(r.grade, 10)
+                      if (g >= 8) gradeBuckets["8-9"]++
+                      else if (g >= 6) gradeBuckets["6-7"]++
+                      else if (g >= 4) gradeBuckets["4-5"]++
+                      else gradeBuckets["2-3"]++
+                    })
+                  })
+                  const max = Math.max(...Object.values(gradeBuckets), 1)
+                  const colors = ["bg-emerald-500", "bg-blue-500", "bg-amber-500", "bg-red-500"]
+                  const textColors = ["text-emerald-400", "text-blue-400", "text-amber-400", "text-red-400"]
+                  return Object.entries(gradeBuckets).map(([label, count], i) => (
+                    <div key={label} className="flex-1 flex flex-col items-center gap-1">
+                      <span className={`text-xs font-medium ${textColors[i]}`}>{count}</span>
+                      <div className="w-full bg-white/5 rounded-t-sm overflow-hidden" style={{ height: "80px" }}>
+                        <div
+                          className={`w-full ${colors[i]}/70 rounded-t-sm`}
+                          style={{
+                            height: `${(count / max) * 100}%`,
+                            marginTop: `${100 - (count / max) * 100}%`,
+                          }}
+                        />
+                      </div>
+                      <span className="text-xs text-neutral-400">Grade {label}</span>
+                    </div>
+                  ))
+                })()}
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* ── Weakness Heatmap ───────────────────────────────── */}
+        <Card className="bg-[#111] border-white/10 mb-8">
+          <CardHeader>
+            <CardTitle className="text-white flex items-center gap-2">
+              <AlertTriangle className="w-5 h-5 text-red-400" />
+              School-Wide Weakness Analysis
+            </CardTitle>
+            <CardDescription className="text-neutral-500">
+              Topics where students struggle most, by year group
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-3">
+              {(() => {
+                const weaknessByYear: Record<string, Record<string, number>> = {}
+                DEMO_STUDENTS.forEach((s) => {
+                  const yg = s.yearGroup
+                  if (!weaknessByYear[yg]) weaknessByYear[yg] = {}
+                  s.weaknesses.forEach((w) => {
+                    const name = typeof w === "string" ? w : w.name
+                    weaknessByYear[yg][name] = (weaknessByYear[yg][name] || 0) + 1
+                  })
+                })
+                const allWeaknesses: Record<string, number> = {}
+                Object.values(weaknessByYear).forEach((yw) => {
+                  Object.entries(yw).forEach(([name, count]) => {
+                    allWeaknesses[name] = (allWeaknesses[name] || 0) + count
+                  })
+                })
+                const topWeaknesses = Object.entries(allWeaknesses)
+                  .sort((a, b) => b[1] - a[1])
+                  .slice(0, 6)
+                const maxCount = topWeaknesses[0]?.[1] || 1
+                return topWeaknesses.map(([name, count], i) => (
+                  <div key={i}>
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="text-sm text-neutral-300">{name}</span>
+                      <span className="text-xs text-neutral-500">{count} students affected</span>
+                    </div>
+                    <div className="h-2.5 rounded-full bg-white/10 overflow-hidden">
+                      <div
+                        className={`h-full rounded-full transition-all ${count / maxCount > 0.7 ? "bg-red-500" : count / maxCount > 0.4 ? "bg-amber-500" : "bg-blue-500"}`}
+                        style={{ width: `${(count / maxCount) * 100}%` }}
+                      />
+                    </div>
+                  </div>
+                ))
+              })()}
             </div>
           </CardContent>
         </Card>

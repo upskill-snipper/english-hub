@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { openPrintableDocument } from "@/lib/generate-download";
 
 /* ─── Mock data (replace with real data fetching) ────────────────── */
 
@@ -207,17 +208,29 @@ export default function ReportsPage() {
   async function handleDownloadPdf(report: WeeklyReport) {
     setDownloadingId(report.id);
     try {
-      // TODO: Replace with real API call to generate PDF
-      // const res = await fetch(`/api/reports/${report.id}/pdf`);
-      // const blob = await res.blob();
-      // const url = URL.createObjectURL(blob);
-      // const a = document.createElement("a");
-      // a.href = url;
-      // a.download = `weekly-report-${report.weekStart}.pdf`;
-      // a.click();
-      // URL.revokeObjectURL(url);
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      alert("PDF download will be available once the API is connected.");
+      const e = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+      const scoreDiff = report.averageScore - report.previousWeekScore;
+      const body = `
+        <h2>Summary</h2>
+        <table>
+          <tr><th>Student</th><td>${e(report.studentName)}</td><th>Week</th><td>${e(report.weekStart)} to ${e(report.weekEnd)}</td></tr>
+          <tr><th>Essays Completed</th><td>${report.essaysCompleted}</td><th>Time Spent</th><td>${Math.round(report.timeSpentMinutes / 60 * 10) / 10} hours</td></tr>
+          <tr><th>Average Score</th><td>${report.averageScore}%</td><th>Change</th><td>${scoreDiff >= 0 ? "+" : ""}${scoreDiff}%</td></tr>
+        </table>
+        <h2>Projected Grades</h2>
+        <table>
+          <tr><th>Subject</th><th>Projected Grade</th></tr>
+          ${report.projectedGrades.map((g) => `<tr><td>${e(g.subject)}</td><td>Grade ${e(g.grade)}</td></tr>`).join("")}
+        </table>
+        <h2>Strengths</h2>
+        <ul>${report.strengths.map((s) => `<li>${e(s)}</li>`).join("")}</ul>
+        <h2>Areas for Improvement</h2>
+        <ul>${report.improvements.map((s) => `<li>${e(s)}</li>`).join("")}</ul>
+        <h2>Recommendations</h2>
+        <ol>${report.recommendations.map((s) => `<li>${e(s)}</li>`).join("")}</ol>`;
+      openPrintableDocument(`Weekly Report: ${report.studentName}`, body, {
+        subtitle: `Week of ${report.weekStart} to ${report.weekEnd}`,
+      });
     } finally {
       setDownloadingId(null);
     }

@@ -15,6 +15,9 @@ import {
   CalendarDays,
   Rocket,
   FolderOpen,
+  CheckCircle,
+  XCircle,
+  BarChart3,
 } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -72,6 +75,81 @@ const assignmentsDueThisWeek = [
   { id: "a2", title: "Language P1 Q5 Practice", className: "10B English Language", dueDate: "Thursday 3 Apr", submittedCount: 26, totalCount: 30 },
   { id: "a3", title: "Inspector Calls Revision Pack", className: "11A English Literature", dueDate: "Monday 7 Apr", submittedCount: 8, totalCount: 26 },
 ]
+
+// Recent marking items – combine essays and quizzes from all students across teacher's classes
+const recentMarkingItems = TEACHER_DEMO_CLASSES.flatMap((cls: DemoClass) => {
+  const students = DEMO_STUDENTS.filter((s: DemoStudent) => s.className === cls.name)
+  return students.flatMap((s: DemoStudent) => {
+    const essays = s.essaySubmissions.map((e) => ({
+      studentName: s.name,
+      studentId: s.id,
+      title: e.title,
+      type: "essay" as const,
+      score: e.score,
+      maxScore: 100,
+      date: e.date,
+      status: e.score > 0 ? "marked" : "pending",
+      className: cls.name,
+    }))
+    const quizzes = s.quizAttempts.map((q) => ({
+      studentName: s.name,
+      studentId: s.id,
+      title: q.quiz,
+      type: "quiz" as const,
+      score: q.score,
+      maxScore: q.maxScore,
+      date: q.date,
+      status: "marked" as const,
+      className: cls.name,
+    }))
+    return [...essays, ...quizzes]
+  })
+})
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  .slice(0, 8)
+
+// Students with declining scores or missed assignments
+const studentsNeedingAttention = TEACHER_DEMO_CLASSES.flatMap((cls: DemoClass) => {
+  const students = DEMO_STUDENTS.filter((s: DemoStudent) => s.className === cls.name)
+  return students
+    .filter((s: DemoStudent) => {
+      const scores = s.recentScores
+      if (scores.length >= 3) {
+        const recent = scores.slice(-3)
+        const earlier = scores.slice(-6, -3)
+        if (earlier.length > 0) {
+          const recentAvg = recent.reduce((a, b) => a + b, 0) / recent.length
+          const earlierAvg = earlier.reduce((a, b) => a + b, 0) / earlier.length
+          if (recentAvg < earlierAvg - 5) return true
+        }
+      }
+      if (s.assignmentsCompleted < s.assignmentsTotal * 0.7) return true
+      if (s.status === "at-risk" || s.status === "needs-support") return true
+      return false
+    })
+    .map((s: DemoStudent) => {
+      const scores = s.recentScores
+      let reason = ""
+      if (scores.length >= 3) {
+        const recent = scores.slice(-3)
+        const earlier = scores.slice(-6, -3)
+        if (earlier.length > 0) {
+          const recentAvg = Math.round(recent.reduce((a, b) => a + b, 0) / recent.length)
+          const earlierAvg = Math.round(earlier.reduce((a, b) => a + b, 0) / earlier.length)
+          if (recentAvg < earlierAvg - 5) {
+            reason = `Score dropped from ${earlierAvg}% to ${recentAvg}% over recent work`
+          }
+        }
+      }
+      if (!reason && s.assignmentsCompleted < s.assignmentsTotal * 0.7) {
+        reason = `Only ${s.assignmentsCompleted}/${s.assignmentsTotal} assignments completed`
+      }
+      if (!reason) {
+        reason = s.riskReason || "Flagged as needing support"
+      }
+      return { ...s, className: cls.name, classId: cls.id, attentionReason: reason }
+    })
+}).slice(0, 6)
 
 // ── Page ─────────────────────────────────────────────────────────────────────
 
@@ -338,6 +416,158 @@ export default function TeacherDemoDashboard() {
             ))}
           </div>
         </section>
+
+        {/* ── Recent Marking ──────────────────────────────────────────── */}
+        <section className="mb-10">
+          <h2 className="text-lg font-medium text-white/80 mb-4 flex items-center gap-2">
+            <FileText className="h-5 w-5 text-purple-400" />
+            Recent Marking
+          </h2>
+          <div className="rounded-xl border border-white/5 bg-white/[0.02] overflow-hidden">
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-white/5">
+                    <th className="text-left px-4 py-3 text-xs font-medium text-white/40">Student</th>
+                    <th className="text-left px-4 py-3 text-xs font-medium text-white/40">Title</th>
+                    <th className="text-left px-4 py-3 text-xs font-medium text-white/40">Type</th>
+                    <th className="text-left px-4 py-3 text-xs font-medium text-white/40">Score</th>
+                    <th className="text-left px-4 py-3 text-xs font-medium text-white/40">Status</th>
+                    <th className="text-left px-4 py-3 text-xs font-medium text-white/40">Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {recentMarkingItems.map((item, idx) => {
+                    const pct = item.maxScore > 0 ? Math.round((item.score / item.maxScore) * 100) : 0
+                    return (
+                      <tr key={idx} className="border-b border-white/5 last:border-0 hover:bg-white/[0.02]">
+                        <td className="px-4 py-3">
+                          <Link
+                            href={`/demo/teacher/students/${item.studentId}`}
+                            className="text-white/80 hover:text-emerald-400 transition-colors"
+                          >
+                            {item.studentName}
+                          </Link>
+                          <p className="text-[11px] text-white/30">{item.className}</p>
+                        </td>
+                        <td className="px-4 py-3 text-white/60 max-w-[200px] truncate">{item.title}</td>
+                        <td className="px-4 py-3">
+                          <Badge
+                            variant="outline"
+                            className={
+                              item.type === "essay"
+                                ? "bg-blue-500/10 text-blue-400 border-blue-500/20"
+                                : "bg-amber-500/10 text-amber-400 border-amber-500/20"
+                            }
+                          >
+                            {item.type}
+                          </Badge>
+                        </td>
+                        <td className="px-4 py-3">
+                          {item.status === "marked" ? (
+                            <span className={scoreColor(pct)}>
+                              {item.score}/{item.maxScore}
+                            </span>
+                          ) : (
+                            <span className="text-white/30">--</span>
+                          )}
+                        </td>
+                        <td className="px-4 py-3">
+                          {item.status === "marked" ? (
+                            <span className="inline-flex items-center gap-1 text-xs text-green-400">
+                              <CheckCircle className="h-3 w-3" /> Marked
+                            </span>
+                          ) : (
+                            <span className="inline-flex items-center gap-1 text-xs text-amber-400">
+                              <Clock className="h-3 w-3" /> Needs Marking
+                            </span>
+                          )}
+                        </td>
+                        <td className="px-4 py-3 text-white/40 text-xs">{item.date}</td>
+                      </tr>
+                    )
+                  })}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Class Performance Snapshot ──────────────────────────────── */}
+        <section className="mb-10">
+          <h2 className="text-lg font-medium text-white/80 mb-4 flex items-center gap-2">
+            <BarChart3 className="h-5 w-5 text-cyan-400" />
+            Class Performance Snapshot
+          </h2>
+          <Card className="border-white/5 bg-white/[0.02]">
+            <CardContent className="p-6">
+              <div className="space-y-4">
+                {TEACHER_DEMO_CLASSES.map((cls: DemoClass) => (
+                  <div key={cls.id} className="flex items-center gap-4">
+                    <div className="w-44 shrink-0">
+                      <Link
+                        href={`/demo/teacher/classes/${cls.id}`}
+                        className="text-sm text-white/70 hover:text-emerald-400 transition-colors"
+                      >
+                        {cls.name}
+                      </Link>
+                    </div>
+                    <div className="flex-1 flex items-center gap-3">
+                      <div className="flex-1 h-6 rounded bg-white/5 overflow-hidden relative">
+                        <div
+                          className={`h-full rounded transition-all ${progressBarColor(cls.avgScore)}`}
+                          style={{ width: `${cls.avgScore}%` }}
+                        />
+                        <span className="absolute inset-0 flex items-center justify-center text-[10px] font-medium text-white/70">
+                          {cls.avgScore}%
+                        </span>
+                      </div>
+                      <div className="w-20 text-right">
+                        <span className="text-xs text-white/40">{cls.studentCount} students</span>
+                      </div>
+                    </div>
+                    {(cls.atRiskCount ?? 0) > 0 && (
+                      <span className="text-xs text-red-400 flex items-center gap-1 shrink-0">
+                        <AlertTriangle className="h-3 w-3" />
+                        {cls.atRiskCount}
+                      </span>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* ── Students Needing Attention ──────────────────────────────── */}
+        {studentsNeedingAttention.length > 0 && (
+          <section className="mb-10">
+            <h2 className="text-lg font-medium text-white/80 mb-4 flex items-center gap-2">
+              <XCircle className="h-5 w-5 text-amber-400" />
+              Students Needing Attention
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {studentsNeedingAttention.map((student: any) => (
+                <Link
+                  key={`attention-${student.id}`}
+                  href={`/demo/teacher/students/${student.id}`}
+                  className="group rounded-xl border border-amber-500/10 bg-amber-500/[0.03] p-4 transition-all hover:border-amber-500/20 hover:bg-amber-500/[0.05]"
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-sm font-medium text-white/90">{student.name}</span>
+                    <span className="text-xs text-white/30">{student.className}</span>
+                  </div>
+                  <p className="text-xs text-amber-400/80 mb-2">{student.attentionReason}</p>
+                  <div className="flex items-center gap-4 text-xs text-white/40">
+                    <span>Avg Score: <span className={scoreColor(student.averageScore)}>{student.averageScore}%</span></span>
+                    <span>Progress: {student.overallProgress}%</span>
+                    <span>Last active: {student.lastActive}</span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* ── Quick Actions ───────────────────────────────────────────── */}
         <section className="mb-10">
