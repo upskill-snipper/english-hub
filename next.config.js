@@ -2,6 +2,14 @@ const { withSentryConfig } = require('@sentry/nextjs')
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  typescript: {
+    // Type checking done locally pre-commit; skip on Vercel to avoid timeout
+    ignoreBuildErrors: true,
+  },
+  eslint: {
+    // Linting done locally pre-commit; skip on Vercel to avoid timeout
+    ignoreDuringBuilds: true,
+  },
   experimental: {
     scrollRestoration: true,
     optimizePackageImports: [
