@@ -25,6 +25,8 @@ import {
   Loader2,
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
+import { useSearchParams } from 'next/navigation'
+import { trackEvent } from '@/lib/gtag'
 import { useAuthStore } from '@/store/auth-store'
 import { loadAllCourses } from '@/data/course-loader'
 import { cn, formatDate } from '@/lib/utils'
@@ -123,6 +125,7 @@ function ActivitySkeleton() {
 export default function DashboardPage() {
   const { user, profile, isLoading } = useAuthStore()
   const router = useRouter()
+  const searchParams = useSearchParams()
   const [allCourses, setAllCourses] = useState<CourseData[]>([])
   const [enrolments, setEnrolments] = useState<Enrolment[]>([])
   const [moduleProgress, setModuleProgress] = useState<ModuleProgress[]>([])
@@ -148,6 +151,13 @@ export default function DashboardPage() {
       router.push('/auth/login?redirect=' + encodeURIComponent(window.location.pathname))
     }
   }, [isLoading, user, router])
+
+  // Track purchase conversion after Stripe checkout success
+  useEffect(() => {
+    if (searchParams.get('checkout') === 'success') {
+      trackEvent('purchase', { currency: 'GBP' })
+    }
+  }, [searchParams])
 
   useEffect(() => {
     if (!user) return
@@ -636,9 +646,9 @@ export default function DashboardPage() {
                                 <Award className="h-5 w-5 text-yellow-400" />
                               </div>
                               <div className="min-w-0 flex-1">
-                                <h3 className="truncate text-sm font-semibold text-foreground">
+                                <h2 className="truncate text-sm font-semibold text-foreground">
                                   {course?.title ?? 'Unknown course'}
-                                </h3>
+                                </h2>
                                 <div className="mt-1 flex flex-wrap items-center gap-2">
                                   <GradeBadge grade={cert.grade} />
                                   <span className="text-xs text-muted-foreground">
@@ -847,7 +857,7 @@ function EmptyState({
     <Card className="border-dashed">
       <CardContent className="flex flex-col items-center justify-center py-12 text-center">
         <div className="mb-3">{icon}</div>
-        <h3 className="mb-1 font-semibold text-foreground">{title}</h3>
+        <h2 className="mb-1 font-semibold text-foreground">{title}</h2>
         <p className="mb-4 text-sm text-muted-foreground">{description}</p>
         <Button render={<Link href={actionHref} />}>
           {actionLabel} <ArrowRight className="h-4 w-4" />

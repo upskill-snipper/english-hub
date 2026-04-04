@@ -24,6 +24,19 @@ export function CookieConsent() {
     }
   }, [])
 
+  // Allow re-opening the banner via a custom event (UK PECR requirement)
+  useEffect(() => {
+    function handleOpenConsent() {
+      const currentConsent = localStorage.getItem('cookie-consent')
+      setAnalyticsEnabled(currentConsent === 'all')
+      setShowPreferences(false)
+      setVisible(true)
+    }
+    window.addEventListener('open-cookie-consent', handleOpenConsent)
+    return () =>
+      window.removeEventListener('open-cookie-consent', handleOpenConsent)
+  }, [])
+
   function saveConsent(value: ConsentValue) {
     if (!value) return
     localStorage.setItem('cookie-consent', value)

@@ -1,5 +1,7 @@
 /* ─── Metadata ───────────────────────────────────────────────── */
 
+import Link from "next/link";
+
 export const metadata = {
   title: "Full Disclaimer",
   description:
@@ -112,7 +114,7 @@ export default function DisclaimerPage() {
         </ul>
         <p>
           For transparency about how our AI works, please see our{" "}
-          <a href="/legal/ai-transparency">AI Transparency page</a>.
+          <Link href="/legal/ai-transparency">AI Transparency page</Link>.
         </p>
       </section>
 

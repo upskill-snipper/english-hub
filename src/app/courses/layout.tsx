@@ -10,6 +10,12 @@ export const metadata: Metadata = {
     description:
       'Browse structured KS3, GCSE and IGCSE English courses with video lessons, quizzes and exam-style tasks across all major UK exam boards.',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Courses — The English Hub',
+    description:
+      'Browse structured KS3, GCSE and IGCSE English courses with video lessons, quizzes and exam-style tasks across all major UK exam boards.',
+  },
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {

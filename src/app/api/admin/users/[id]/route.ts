@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { rateLimit, getClientIp } from "@/lib/rate-limit";
 import {
   requireAdmin,
   getUserDetails,
@@ -12,10 +13,20 @@ import {
 // Returns full user details for admin viewing.
 
 export async function GET(
-  _request: NextRequest,
+  request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    // ── Rate limit: 30 per IP per minute ───────────────────
+    const ip = getClientIp(request.headers);
+    const rl = await rateLimit(`admin-user-detail:${ip}`, { limit: 30, windowSeconds: 60 });
+    if (!rl.success) {
+      return NextResponse.json(
+        { error: "Too many requests. Please try again later." },
+        { status: 429, headers: { "Retry-After": String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+      );
+    }
+
     await requireAdmin();
 
     const { id } = await params;
@@ -45,6 +56,16 @@ export async function PATCH(
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    // ── Rate limit: 30 per IP per minute ───────────────────
+    const ip = getClientIp(request.headers);
+    const rl = await rateLimit(`admin-user-detail:${ip}`, { limit: 30, windowSeconds: 60 });
+    if (!rl.success) {
+      return NextResponse.json(
+        { error: "Too many requests. Please try again later." },
+        { status: 429, headers: { "Retry-After": String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+      );
+    }
+
     const admin = await requireAdmin();
     const { id } = await params;
 
@@ -55,11 +76,6 @@ export async function PATCH(
       return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
     }
     const { action, reason } = body as { action?: string; reason?: string };
-
-    const ip =
-      request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ??
-      request.headers.get("x-real-ip") ??
-      "unknown";
 
     if (action === "suspend") {
       if (!reason || typeof reason !== "string" || reason.trim().length === 0) {
@@ -116,13 +132,18 @@ export async function DELETE(
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    // ── Rate limit: 30 per IP per minute ───────────────────
+    const ip = getClientIp(request.headers);
+    const rl = await rateLimit(`admin-user-detail:${ip}`, { limit: 30, windowSeconds: 60 });
+    if (!rl.success) {
+      return NextResponse.json(
+        { error: "Too many requests. Please try again later." },
+        { status: 429, headers: { "Retry-After": String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+      );
+    }
+
     const admin = await requireAdmin();
     const { id } = await params;
-
-    const ip =
-      request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ??
-      request.headers.get("x-real-ip") ??
-      "unknown";
 
     await processAccountDeletion(id, admin.id, ip);
 

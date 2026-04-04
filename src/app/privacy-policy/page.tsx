@@ -299,6 +299,48 @@ export default function PrivacyPolicyPage() {
                 .
               </p>
             </div>
+
+            <div>
+              <h3 className="text-lg font-medium text-foreground mb-1">
+                Resend (Email Delivery)
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Resend, Inc. provides our transactional email delivery service. When we send you
+                emails such as contact form confirmations or trial notifications, your email address
+                and the email content are processed by Resend. Resend&apos;s privacy policy is
+                available at{' '}
+                <a
+                  href="https://resend.com/legal/privacy-policy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline text-foreground"
+                >
+                  resend.com/legal/privacy-policy
+                </a>
+                .
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-medium text-foreground mb-1">
+                Microsoft Azure (Backend Hosting)
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Microsoft Corporation provides cloud hosting for our backend API via Microsoft Azure.
+                All data processed by the backend API passes through Azure infrastructure hosted in
+                the United Kingdom (UK South region). Microsoft&apos;s privacy policy is available
+                at{' '}
+                <a
+                  href="https://privacy.microsoft.com/en-gb/privacystatement"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline text-foreground"
+                >
+                  privacy.microsoft.com
+                </a>
+                .
+              </p>
+            </div>
           </div>
         </section>
 

@@ -940,7 +940,7 @@ function buildInactivityWarningEmail(
       <div style="padding: 24px; border: 1px solid #e5e7eb; border-top: none; border-radius: 0 0 12px 12px;">
         <p>Dear ${firstName},</p>
         <p>We noticed that you have not logged in to your English Hub account for over two years.</p>
-        <p>In line with our <a href="https://theenglishhub.app/legal/privacy" style="color: #2E86C1;">data retention policy</a>,
+        <p>In line with our <a href="https://theenglishhub.app/privacy-policy" style="color: #2E86C1;">data retention policy</a>,
            we will automatically delete your account and all associated data on:</p>
         <p style="font-weight: 600; color: #1A5276; font-size: 18px;">${deletionDate}</p>
         <p>To keep your account, simply <a href="https://theenglishhub.app/auth/login" style="color: #2E86C1;">log in</a>

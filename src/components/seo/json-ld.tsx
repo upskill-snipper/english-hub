@@ -12,13 +12,24 @@ export function WebsiteJsonLd() {
       suggestedMinAge: 14,
       suggestedMaxAge: 18,
     },
-    offers: {
-      '@type': 'Offer',
-      price: '9.99',
-      priceCurrency: 'GBP',
-      availability: 'https://schema.org/InStock',
-      priceValidUntil: '2027-01-01',
-    },
+    offers: [
+      {
+        '@type': 'Offer',
+        name: 'Monthly Plan',
+        price: '9.99',
+        priceCurrency: 'GBP',
+        availability: 'https://schema.org/InStock',
+        priceValidUntil: '2027-01-01',
+      },
+      {
+        '@type': 'Offer',
+        name: 'Annual Plan',
+        price: '79.99',
+        priceCurrency: 'GBP',
+        availability: 'https://schema.org/InStock',
+        priceValidUntil: '2027-01-01',
+      },
+    ],
   }
 
   return (

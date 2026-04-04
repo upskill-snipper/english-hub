@@ -10,6 +10,12 @@ export const metadata: Metadata = {
     description:
       'Discover how The English Hub supports English teachers with ready-made lessons, student progress tracking and exam-board-aligned resources.',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'For Teachers — The English Hub',
+    description:
+      'Discover how The English Hub supports English teachers with ready-made lessons, student progress tracking and exam-board-aligned resources.',
+  },
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {

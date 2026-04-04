@@ -269,56 +269,6 @@ export default function Home() {
       <Separator className="opacity-40" />
 
       <CTABannerSection />
-
-      {/* ━━━ FOOTER (static — always needed) ━━━ */}
-      <footer className="border-t border-border/40 bg-card/20">
-        <div className="max-w-6xl mx-auto px-6 py-14">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-            {/* Logo */}
-            <div>
-              <Link
-                href="/"
-                className="text-lg font-bold tracking-tight text-foreground flex items-center gap-2 hover:text-primary transition-colors duration-200"
-              >
-                <BookOpen className="w-5 h-5 text-primary" />
-                The English Hub
-              </Link>
-              <p className="text-sm text-muted-foreground mt-2 max-w-xs">
-                Expert English courses for KS3, GCSE, IGCSE, and all major exam boards.
-              </p>
-            </div>
-
-            {/* Links */}
-            <div className="flex flex-wrap gap-x-6 gap-y-1 text-sm">
-              {[
-                { label: 'Courses', href: '/courses' },
-                { label: 'Practice', href: '/practice' },
-                { label: 'Revision', href: '/revision' },
-                { label: 'Exam Guide', href: '/exam-guide' },
-                { label: 'For Teachers', href: '/for-teachers' },
-                { label: 'For Schools', href: '/for-schools' },
-                { label: 'Dashboard', href: '/dashboard' },
-                { label: 'Log in', href: '/auth/login' },
-                { label: 'Register', href: '/auth/register' },
-              ].map((link) => (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  className="py-2 text-muted-foreground hover:text-foreground transition-colors duration-200"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          <Separator className="mt-10 mb-6 opacity-40" />
-
-          <div className="text-center text-xs text-muted-foreground/70">
-            &copy; {new Date().getFullYear()} The English Hub. All rights reserved.
-          </div>
-        </div>
-      </footer>
     </main>
   )
 }

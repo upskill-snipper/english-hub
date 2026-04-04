@@ -4,6 +4,7 @@
  * In production, hides internal error details.
  */
 
+import * as Sentry from '@sentry/node';
 import type { Request, Response, NextFunction } from 'express';
 import { AppError } from '../utils/errors.js';
 import { config } from '../config/index.js';
@@ -19,6 +20,7 @@ export function errorHandler(
   if (err instanceof AppError) {
     if (err.statusCode >= 500) {
       logger.error(err.message, { code: err.code, stack: err.stack });
+      Sentry.captureException(err);
     }
 
     res.status(err.statusCode).json({
@@ -49,6 +51,7 @@ export function errorHandler(
     stack: err.stack,
     name: err.name,
   });
+  Sentry.captureException(err);
 
   res.status(500).json({
     error: {

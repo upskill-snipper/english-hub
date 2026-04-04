@@ -8,8 +8,8 @@ const BRAND_ACCENT = "#2E86C1";
 const BRAND_LIGHT = "#D6EAF8";
 const DASHBOARD_URL = `${BASE_URL}/dashboard/parent`;
 const UNSUBSCRIBE_URL = `${BASE_URL}/dashboard/parent/settings`;
-const TERMS_URL = `${BASE_URL}/legal/terms`;
-const PRIVACY_URL = `${BASE_URL}/legal/privacy`;
+const TERMS_URL = `${BASE_URL}/terms`;
+const PRIVACY_URL = `${BASE_URL}/privacy-policy`;
 
 // ─── Types ────────────────────────────────────────────────────────────
 

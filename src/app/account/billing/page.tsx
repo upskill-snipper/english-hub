@@ -7,6 +7,7 @@ import { createClient } from '@/lib/supabase/client'
 import { useAuthStore } from '@/store/auth-store'
 import { useRewardful } from '@/hooks/useRewardful'
 import { PRICING } from '@/constants/pricing'
+import { trackEvent } from '@/lib/gtag'
 import { getCourseName } from '@/lib/utils'
 import {
   CreditCard,
@@ -92,6 +93,7 @@ export default function BillingPage() {
         return
       }
 
+      trackEvent('begin_checkout', { currency: 'GBP' })
       window.location.href = data.url
     } catch {
       setError('Something went wrong. Please try again.')

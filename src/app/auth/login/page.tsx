@@ -128,7 +128,7 @@ function LoginForm() {
 
         <Card>
           <CardHeader className="text-center">
-            <CardTitle className="text-2xl">Welcome back</CardTitle>
+            <h1 className="text-2xl font-semibold leading-none tracking-tight">Welcome back</h1>
             <CardDescription>
               Sign in to your English Hub account.
             </CardDescription>

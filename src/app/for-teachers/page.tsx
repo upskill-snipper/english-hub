@@ -37,7 +37,7 @@ const faqs = [
   },
   {
     q: 'How does billing work?',
-    a: 'You will be billed £9.99 per month from the date you subscribe. You can cancel at any time from your account settings and retain access until the end of your current billing period.',
+    a: 'You will be billed £9.99 per month (or £79.99 per year if you choose the annual plan). You can cancel at any time from your account settings and retain access until the end of your current billing period.',
   },
   {
     q: 'Which exam boards do you cover?',
@@ -130,7 +130,7 @@ export default function ForTeachersPage() {
               className="text-base px-8 h-12 shadow-lg shadow-primary/20"
               render={<Link href="/auth/register?type=teacher" />}
             >
-              Get Started &mdash; &pound;9.99/month
+              Get Started &mdash; from &pound;9.99/month
             </Button>
             <Button variant="secondary" size="lg" className="text-base px-8 h-12" render={<Link href="/courses" />}>
               Browse Courses
@@ -407,6 +407,7 @@ export default function ForTeachersPage() {
                 <span className="text-muted-foreground text-lg">/month</span>
               </div>
               <p className="text-sm text-muted-foreground mt-2">per teacher, billed monthly</p>
+              <p className="text-sm text-emerald-400 font-semibold mt-1">or £79.99/year (save 33%)</p>
             </div>
 
             <div className="space-y-3 text-left max-w-sm mx-auto mb-8">
@@ -471,7 +472,7 @@ export default function ForTeachersPage() {
           </h2>
           <p className="text-muted-foreground text-body-lg max-w-xl mx-auto mb-10 leading-relaxed">
             Join hundreds of English teachers who save hours every week with The English Hub.
-            Subscribe today for just &pound;9.99/month.
+            Subscribe today for just &pound;9.99/month or &pound;79.99/year.
           </p>
           <Button
             variant="default"

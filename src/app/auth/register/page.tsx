@@ -7,6 +7,8 @@ import { createClient } from '@/lib/supabase/client'
 import { useBoardStore } from '@/store/board-store'
 import { Mail, Lock, User, GraduationCap, BookOpen, Loader2, ArrowLeft, CheckCircle, Eye, EyeOff, Calendar, School } from 'lucide-react'
 import { PRICING_DISPLAY } from '@/constants/pricing'
+import { getUtmParams } from '@/lib/utm'
+import { trackEvent } from '@/lib/gtag'
 import { YEAR_GROUPS, EXAM_BOARDS } from '@/lib/utils'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -92,15 +94,50 @@ export default function RegisterPage() {
 
     setLoading(true)
 
+    // Server-side age validation for students
+    if (accountType === 'student' && dobDay && dobMonth && dobYear) {
+      try {
+        const ageRes = await fetch('/api/auth/validate-age', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            dobDay: parseInt(dobDay),
+            dobMonth: parseInt(dobMonth),
+            dobYear: parseInt(dobYear),
+            ...(parentGuardianEmail ? { parentGuardianEmail } : {}),
+          }),
+        })
+
+        if (!ageRes.ok) {
+          const ageData = await ageRes.json()
+          setError(ageData.error || 'Age validation failed.')
+          setLoading(false)
+          return
+        }
+      } catch {
+        setError('Unable to verify age. Please try again.')
+        setLoading(false)
+        return
+      }
+    }
+
     const supabase = createClient()
 
     const siteUrl = window.location.origin
+    const utmParams = getUtmParams()
     const { data, error: signUpError } = await supabase.auth.signUp({
       email,
       password,
       options: {
         data: {
           full_name: fullName,
+          ...(utmParams && {
+            utm_source: utmParams.utm_source,
+            utm_medium: utmParams.utm_medium,
+            utm_campaign: utmParams.utm_campaign,
+            utm_term: utmParams.utm_term,
+            utm_content: utmParams.utm_content,
+          }),
         },
         emailRedirectTo: `${siteUrl}/auth/callback`,
       },
@@ -125,14 +162,35 @@ export default function RegisterPage() {
         school_name: accountType === 'teacher' ? (schoolName || null) : null,
         date_of_birth: accountType === 'student' ? dateOfBirth : null,
         parent_guardian_email: accountType === 'student' ? (parentGuardianEmail || null) : null,
+        utm_source: utmParams?.utm_source ?? null,
+        utm_medium: utmParams?.utm_medium ?? null,
+        utm_campaign: utmParams?.utm_campaign ?? null,
       })
 
       if (profileError) {
         console.error('Profile upsert error:', profileError)
         // Don't block signup for profile error — it can be updated later
       }
+
+      // Send parental consent email if under-16 student provided a parent email
+      if (parentGuardianEmail) {
+        try {
+          await fetch('/api/auth/parent-notify', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              parentEmail: parentGuardianEmail,
+              studentName: fullName,
+            }),
+          })
+        } catch (err) {
+          // Non-blocking — don't fail signup for parent notification error
+          console.error('Parent notification error:', err)
+        }
+      }
     }
 
+    trackEvent('sign_up', { method: 'email' })
     setSuccess(true)
     setLoading(false)
   }

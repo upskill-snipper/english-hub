@@ -52,6 +52,36 @@ import { igcseLessons as igcseLessonPlans } from './igcse-lessons'
 // Exam Skills & Revision
 import { revisionTechniquesLessons } from './revision-techniques-lessons'
 
+// New Curriculum Lesson Plans (Year 7-13)
+import { y7Term1Lessons } from './y7-term1-lessons'
+import { y7Term2Lessons } from './y7-term2-lessons'
+import { y7Term3Lessons } from './y7-term3-lessons'
+import { y8FullLessons } from './y8-full-lessons'
+import { y8Term2Lessons } from './y8-term2-lessons'
+import { y8Term3Lessons } from './y8-term3-lessons'
+import { y8ExtendedLessons } from './y8-extended-lessons'
+import { y9FullLessons } from './y9-full-lessons'
+import { y9Term1Lessons } from './y9-term1-lessons'
+import { y9Term3Lessons } from './y9-term3-lessons'
+import { y9ExtendedLessons } from './y9-extended-lessons'
+import { ks3CurriculumLessons } from './ks3-curriculum-lessons'
+import { y10IgcseLessons } from './y10-igcse-lessons'
+import { y10IgcseLangP1Lessons } from './y10-igcse-lang-p1-lessons'
+import { y10IgcseLitPoetryLessons } from './y10-igcse-lit-poetry-lessons'
+import { y10IgcseLitOmamLessons } from './y10-igcse-lit-omam-lessons'
+import { y10IgcseExtendedLessons } from './y10-igcse-extended-lessons'
+import { y11IgcseLessons } from './y11-igcse-lessons'
+import { y11IgcseLangP2Lessons } from './y11-igcse-lang-p2-lessons'
+import { y11IgcseLitInspectorLessons } from './y11-igcse-lit-inspector-lessons'
+import { y11IgcseLitMacbethLessons } from './y11-igcse-lit-macbeth-lessons'
+import { y11IgcseExtendedLessons } from './y11-igcse-extended-lessons'
+import { y12IalUnit1Lessons } from './y12-ial-unit1-lessons'
+import { y12IalUnit2Lessons } from './y12-ial-unit2-lessons'
+import { y12IalExtendedLessons } from './y12-ial-extended-lessons'
+import { y13IalUnit3Lessons } from './y13-ial-unit3-lessons'
+import { y13IalUnit4Lessons } from './y13-ial-unit4-lessons'
+import { y13IalExtendedLessons } from './y13-ial-extended-lessons'
+
 // ─── Master Array ───────────────────────────────────────────────────────────
 
 export const ALL_LESSON_PLANS: LessonPlan[] = [
@@ -93,6 +123,35 @@ export const ALL_LESSON_PLANS: LessonPlan[] = [
   ...igcseLessonPlans,
   // Exam Skills & Revision
   ...revisionTechniquesLessons,
+  // New Curriculum Lesson Plans (Year 7-13)
+  ...y7Term1Lessons,
+  ...y7Term2Lessons,
+  ...y7Term3Lessons,
+  ...y8FullLessons,
+  ...y8Term2Lessons,
+  ...y8Term3Lessons,
+  ...y8ExtendedLessons,
+  ...y9FullLessons,
+  ...y9Term1Lessons,
+  ...y9Term3Lessons,
+  ...y9ExtendedLessons,
+  ...ks3CurriculumLessons,
+  ...y10IgcseLessons,
+  ...y10IgcseLangP1Lessons,
+  ...y10IgcseLitPoetryLessons,
+  ...y10IgcseLitOmamLessons,
+  ...y10IgcseExtendedLessons,
+  ...y11IgcseLessons,
+  ...y11IgcseLangP2Lessons,
+  ...y11IgcseLitInspectorLessons,
+  ...y11IgcseLitMacbethLessons,
+  ...y11IgcseExtendedLessons,
+  ...y12IalUnit1Lessons,
+  ...y12IalUnit2Lessons,
+  ...y12IalExtendedLessons,
+  ...y13IalUnit3Lessons,
+  ...y13IalUnit4Lessons,
+  ...y13IalExtendedLessons,
 ]
 
 /** @deprecated Use ALL_LESSON_PLANS instead */

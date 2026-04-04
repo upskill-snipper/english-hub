@@ -10,7 +10,9 @@ import { BoardSidebar } from '@/components/layout/board-sidebar'
 import { BoardGate } from '@/components/layout/board-gate'
 import { WebsiteJsonLd } from '@/components/seo/json-ld'
 import { CookieConsent } from '@/components/cookie-consent'
+import { UtmCapture } from '@/components/utm-capture'
 import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 
 const monaSans = localFont({
@@ -89,9 +91,11 @@ export default function RootLayout({
             <Footer />
             <Toaster richColors position="bottom-right" />
             <CookieConsent />
+            <UtmCapture />
           </TooltipProvider>
         </SupabaseProvider>
         <Analytics />
+        <SpeedInsights />
         {process.env.NEXT_PUBLIC_GA4_ID && (
           <Script
             id="ga4-consent-check"

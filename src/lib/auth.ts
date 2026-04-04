@@ -4,7 +4,7 @@ import { z } from "zod";
 // ─── Constants ──────────────────────────────────────────────────────────
 const SALT_ROUNDS = 12;
 const SESSION_EXPIRY_HOURS = 24;
-const MIN_AGE = 14;
+const MIN_AGE = 13;
 const MINOR_AGE_THRESHOLD = 18;
 
 // ─── Schemas ────────────────────────────────────────────────────────────

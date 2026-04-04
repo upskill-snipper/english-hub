@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { allCourses } from '@/data/courses'
+import { CourseJsonLd } from '@/components/seo/json-ld'
 import CourseDetailPage from './client-page'
 
 interface Props {
@@ -18,6 +19,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title,
     description,
+    alternates: {
+      canonical: `https://theenglishhub.app/courses/${params.id}`,
+    },
     openGraph: {
       title,
       description,
@@ -40,5 +44,10 @@ export default function Page({ params }: Props) {
   const course = allCourses.find((c) => c.id === params.id)
   if (!course) notFound()
 
-  return <CourseDetailPage course={course} />
+  return (
+    <>
+      <CourseJsonLd name={course.title} description={course.subtitle || course.description.slice(0, 160)} />
+      <CourseDetailPage course={course} />
+    </>
+  )
 }

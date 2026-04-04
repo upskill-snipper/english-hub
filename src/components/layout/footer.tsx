@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 
 const FOOTER_SECTIONS = [
@@ -8,7 +10,7 @@ const FOOTER_SECTIONS = [
       { href: '/mock-exams', label: 'Mock Exams' },
       { href: '/games', label: 'Games' },
       { href: '/practice', label: 'Practice' },
-      { href: '/revision', label: 'Revision' },
+      { href: '/resources', label: 'Resources' },
       { href: '/exam-guide', label: 'Exam Guide' },
     ],
   },
@@ -75,6 +77,21 @@ export function Footer() {
                     </Link>
                   </li>
                 ))}
+                {section.title === 'Legal' && (
+                  <li>
+                    <button
+                      type="button"
+                      onClick={() =>
+                        window.dispatchEvent(
+                          new CustomEvent('open-cookie-consent')
+                        )
+                      }
+                      className="text-sm text-muted-foreground transition-colors duration-200 hover:text-foreground"
+                    >
+                      Manage Cookies
+                    </button>
+                  </li>
+                )}
               </ul>
             </div>
           ))}

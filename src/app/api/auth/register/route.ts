@@ -36,9 +36,9 @@ export async function POST(request: NextRequest) {
 
     // ── Age gate ──────────────────────────────────────────────────────
     const age = calculateAge(data.dobYear, data.dobMonth, data.dobDay);
-    if (age < 14) {
+    if (age < 13) {
       return NextResponse.json(
-        { error: "You must be 14 or older to register." },
+        { error: "You must be 13 or older to register." },
         { status: 403 }
       );
     }

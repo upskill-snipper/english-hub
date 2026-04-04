@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Acceptable Use Policy",
@@ -330,9 +331,9 @@ export default function AcceptableUsePolicyPage() {
 
       <p className="text-sm text-muted-foreground italic">
         This Acceptable Use Policy should be read alongside our{" "}
-        <a href="/privacy-policy">Privacy Policy</a>,{" "}
-        <a href="/terms">Terms and Conditions</a>, and{" "}
-        <a href="/cookie-policy">Cookie Policy</a>.
+        <Link href="/privacy-policy">Privacy Policy</Link>,{" "}
+        <Link href="/terms">Terms and Conditions</Link>, and{" "}
+        <Link href="/cookie-policy">Cookie Policy</Link>.
       </p>
     </>
   );

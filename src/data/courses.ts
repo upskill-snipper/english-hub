@@ -59,6 +59,11 @@ import { igcsePoetry2Courses } from './edexcel-igcse-lit-poetry-courses-2';
 import { igcseProseCourses } from './edexcel-igcse-lit-prose-courses';
 import { igcseDramaCourses } from './edexcel-igcse-lit-drama-courses';
 import { igcseClassicsCourses } from './edexcel-igcse-lit-classics-courses';
+import { ks3Year7Courses } from './ks3-year7-courses';
+import { ks3Year8Courses } from './ks3-year8-courses';
+import { ks3Year9Courses } from './ks3-year9-courses';
+import { igcseYear1011Courses } from './igcse-year10-11-courses';
+import { ialYear1213Courses } from './ial-year12-13-courses';
 
 // ─── Master Course List ──────────────────────────────────────────────────────
 
@@ -85,6 +90,14 @@ export const allCourses: CourseData[] = [
   ...igcseProseCourses,
   ...igcseDramaCourses,
   ...igcseClassicsCourses,
+  // KS3 Year-group curriculum courses
+  ...ks3Year7Courses,
+  ...ks3Year8Courses,
+  ...ks3Year9Courses,
+  // IGCSE Year 10-11 curriculum courses
+  ...igcseYear1011Courses,
+  // IAL Year 12-13 curriculum courses
+  ...ialYear1213Courses,
 ];
 
 export default allCourses;

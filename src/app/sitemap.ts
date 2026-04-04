@@ -237,6 +237,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/accessibility`, lastModified: now, changeFrequency: 'monthly', priority: 0.3 },
     { url: `${base}/refund-policy`, lastModified: now, changeFrequency: 'monthly', priority: 0.3 },
     { url: `${base}/data-processing`, lastModified: now, changeFrequency: 'monthly', priority: 0.3 },
+
+    // Additional pages
+    { url: `${base}/pricing`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${base}/affiliates`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${base}/legal/acceptable-use`, lastModified: now, changeFrequency: 'monthly', priority: 0.3 },
+    { url: `${base}/legal/ai-transparency`, lastModified: now, changeFrequency: 'monthly', priority: 0.3 },
+    { url: `${base}/legal/cancellation`, lastModified: now, changeFrequency: 'monthly', priority: 0.3 },
+    { url: `${base}/legal/cancellation-form`, lastModified: now, changeFrequency: 'monthly', priority: 0.3 },
+    { url: `${base}/legal/complaints`, lastModified: now, changeFrequency: 'monthly', priority: 0.3 },
+    { url: `${base}/legal/disclaimer`, lastModified: now, changeFrequency: 'monthly', priority: 0.3 },
+    { url: `${base}/legal/privacy-qatar`, lastModified: now, changeFrequency: 'monthly', priority: 0.3 },
+    { url: `${base}/legal/safeguarding`, lastModified: now, changeFrequency: 'monthly', priority: 0.3 },
   ]
 
   const courseRoutes: MetadataRoute.Sitemap = allCourses.map((course) => ({

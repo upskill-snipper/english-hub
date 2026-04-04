@@ -33,13 +33,25 @@ export default function PricingSection() {
           </Badge>
           <h3 className="text-lg font-bold tracking-tight text-foreground">Everything Included</h3>
           <p className="text-sm text-muted-foreground mt-1 mb-6">
-            One plan, full access — cancel anytime.
+            Full access — cancel anytime.
           </p>
-          <div className="mb-2">
-            <span className="text-4xl font-extrabold tracking-tight text-foreground">
-              {PRICING.CURRENCY}{PRICING.MONTHLY}
-            </span>
-            <span className="text-muted-foreground text-sm ml-1">/month</span>
+          <div className="mb-2 flex items-baseline gap-4 flex-wrap">
+            <div>
+              <span className="text-4xl font-extrabold tracking-tight text-foreground">
+                {PRICING.CURRENCY}{PRICING.MONTHLY}
+              </span>
+              <span className="text-muted-foreground text-sm ml-1">/month</span>
+            </div>
+            <span className="text-muted-foreground text-sm">or</span>
+            <div>
+              <span className="text-4xl font-extrabold tracking-tight text-foreground">
+                {PRICING.CURRENCY}{PRICING.ANNUAL}
+              </span>
+              <span className="text-muted-foreground text-sm ml-1">/year</span>
+              <Badge variant="outline" className="ml-2 bg-emerald-500/10 border-emerald-500/25 text-emerald-400 text-xs font-semibold">
+                Save 33%
+              </Badge>
+            </div>
           </div>
           <p className="text-sm text-emerald-400 font-semibold mb-6">
             First month completely free

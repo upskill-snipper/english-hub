@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { rateLimit, getClientIp } from '@/lib/rate-limit'
 import { createServiceRoleClient } from '@/lib/supabase/server'
 import { createRewardfulAffiliate } from '@/lib/rewardful'
 import { verifyAdmin } from '@/lib/admin-auth'
@@ -14,6 +15,16 @@ interface ApproveBody {
  * Approve or reject an affiliate application.
  */
 export async function POST(request: NextRequest) {
+  // ── Rate limit: 30 per IP per minute ───────────────────
+  const ip = getClientIp(request.headers)
+  const rl = await rateLimit(`admin-affiliates-approve:${ip}`, { limit: 30, windowSeconds: 60 })
+  if (!rl.success) {
+    return NextResponse.json(
+      { error: 'Too many requests. Please try again later.' },
+      { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+    )
+  }
+
   const { error: authError } = await verifyAdmin()
   if (authError) {
     return NextResponse.json({ error: authError }, { status: authError === 'Unauthorized' ? 401 : 403 })

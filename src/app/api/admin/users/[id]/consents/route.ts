@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { rateLimit, getClientIp } from "@/lib/rate-limit";
 import { prisma } from "@/lib/prisma";
 import { requireAdmin, AdminAuthError } from "@/lib/admin";
 
@@ -6,10 +7,20 @@ import { requireAdmin, AdminAuthError } from "@/lib/admin";
 // Returns the full consent history for a user. Requires ADMIN role.
 
 export async function GET(
-  _request: NextRequest,
+  request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    // ── Rate limit: 30 per IP per minute ───────────────────
+    const ip = getClientIp(request.headers);
+    const rl = await rateLimit(`admin-user-consents:${ip}`, { limit: 30, windowSeconds: 60 });
+    if (!rl.success) {
+      return NextResponse.json(
+        { error: "Too many requests. Please try again later." },
+        { status: 429, headers: { "Retry-After": String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+      );
+    }
+
     await requireAdmin();
 
     const { id } = await params;

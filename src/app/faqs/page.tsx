@@ -11,6 +11,7 @@ import {
   CreditCard,
   BookOpen,
   Wrench,
+  Shield,
   School,
 } from 'lucide-react'
 
@@ -74,7 +75,7 @@ const FAQ_SECTIONS: FaqSection[] = [
       {
         question: 'How much does The English Hub cost?',
         answer:
-          'We offer one simple plan at £9.99/month, first month free. The plan gives you full, unrestricted access to every feature on the platform. Cancel anytime.',
+          'We offer two simple plans: £9.99/month or £79.99/year (save over 30%), both with the first month free. Every plan gives you full, unrestricted access to every feature on the platform. Cancel anytime.',
       },
       {
         question: 'Is there a free trial?',
@@ -163,9 +164,32 @@ const FAQ_SECTIONS: FaqSection[] = [
           'Yes. We take data security seriously. All data is encrypted in transit and at rest. We comply with UK GDPR and never sell your personal information. For full details, read our Privacy Policy. Students under 16 should have a parent or guardian manage their account.',
       },
       {
+        question: 'How do I reset my password?',
+        answer:
+          "Click 'Forgot password?' on the login page. Enter your email address and we'll send you a reset link. If you don't receive the email within a few minutes, check your spam folder or contact support@theenglishhub.app.",
+      },
+      {
         question: 'Can I use The English Hub offline?',
         answer:
           'The English Hub requires an internet connection to access courses, submit mock exams, and receive feedback. We recommend a stable broadband or mobile data connection for the best experience.',
+      },
+    ],
+  },
+  {
+    id: 'parents-safety',
+    title: 'Parents & Safety',
+    icon: Shield,
+    color: 'text-pink-400 bg-pink-500/10 border-pink-500/20',
+    items: [
+      {
+        question: 'What parental controls are available?',
+        answer:
+          "Parents can link to their child's account to receive weekly progress reports. For students under 16, we require parental consent during registration. Parents can view their child's learning activity, and request data access or deletion at any time. Visit our Privacy Policy for full details on how we protect children's data.",
+      },
+      {
+        question: "How do I link my parent account to my child's?",
+        answer:
+          "Your child can send you a linking invitation from their account settings, or you can contact support@theenglishhub.app with your child's registered email. Once linked, you'll receive weekly progress reports and can manage consent preferences.",
       },
     ],
   },

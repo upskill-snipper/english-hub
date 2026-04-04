@@ -7,8 +7,8 @@ const BRAND_COLOR = "#1A5276";
 const BRAND_LIGHT = "#D6EAF8";
 const CANCEL_URL = `${BASE_URL}/account/cancel`;
 const UNSUBSCRIBE_URL = `${BASE_URL}/account/email-preferences`;
-const TERMS_URL = `${BASE_URL}/legal/terms`;
-const PRIVACY_URL = `${BASE_URL}/legal/privacy`;
+const TERMS_URL = `${BASE_URL}/terms`;
+const PRIVACY_URL = `${BASE_URL}/privacy-policy`;
 const CANCELLATION_POLICY_URL = `${BASE_URL}/legal/cancellation`;
 
 // ─── Layout wrapper ──────────────────────────────────────────────────────

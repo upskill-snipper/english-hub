@@ -29,6 +29,14 @@ const BOARD_LOADERS: Record<string, () => Promise<Record<string, unknown>>> = {
   'igcse-prose': () => import('./edexcel-igcse-lit-prose-courses'),
   'igcse-drama': () => import('./edexcel-igcse-lit-drama-courses'),
   'igcse-classics': () => import('./edexcel-igcse-lit-classics-courses'),
+  // KS3 year-group curriculum courses
+  'ks3-y7': () => import('./ks3-year7-courses'),
+  'ks3-y8': () => import('./ks3-year8-courses'),
+  'ks3-y9': () => import('./ks3-year9-courses'),
+  // IGCSE year 10-11 curriculum courses
+  'igcse-y10-11': () => import('./igcse-year10-11-courses'),
+  // IAL year 12-13 curriculum courses
+  'ial-y12-13': () => import('./ial-year12-13-courses'),
 }
 
 // Course ID prefix -> board mapping
@@ -67,6 +75,17 @@ function getBoardForCourse(courseId: string): string {
 
   // Edexcel Language
   if (courseId.startsWith('edexcel-')) return 'edexcel'
+
+  // KS3 year-group curriculum courses
+  if (courseId.startsWith('ks3-y7-')) return 'ks3-y7'
+  if (courseId.startsWith('ks3-y8-')) return 'ks3-y8'
+  if (courseId.startsWith('ks3-y9-')) return 'ks3-y9'
+
+  // IGCSE year 10-11 curriculum courses
+  if (courseId.startsWith('igcse-y10-') || courseId.startsWith('igcse-y11-')) return 'igcse-y10-11'
+
+  // IAL year 12-13 curriculum courses
+  if (courseId.startsWith('ial-y12-') || courseId.startsWith('ial-y13-')) return 'ial-y12-13'
 
   // IGCSE Language
   if (courseId.startsWith('igcse-')) return 'igcse'

@@ -275,10 +275,24 @@ export default function DataProcessingPage() {
                   </td>
                   <td className="px-4 py-3">Global (edge network)</td>
                 </tr>
-                <tr>
+                <tr className="border-b border-border">
                   <td className="px-4 py-3 font-medium text-foreground">Sentry</td>
                   <td className="px-4 py-3">Error monitoring and performance tracking</td>
                   <td className="px-4 py-3">US</td>
+                </tr>
+                <tr className="border-b border-border">
+                  <td className="px-4 py-3 font-medium text-foreground">Resend</td>
+                  <td className="px-4 py-3">
+                    Transactional email delivery (contact form confirmations, trial notifications)
+                  </td>
+                  <td className="px-4 py-3">US</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-3 font-medium text-foreground">Microsoft Azure</td>
+                  <td className="px-4 py-3">
+                    Backend API hosting and data processing
+                  </td>
+                  <td className="px-4 py-3">UK (UK South)</td>
                 </tr>
               </tbody>
             </table>

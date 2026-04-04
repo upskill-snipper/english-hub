@@ -131,10 +131,10 @@ export default function CancellationPolicyPage() {
             Example: Annual pro-rata refund
           </p>
           <p>
-            You pay &pound;89.99 for a 12-month plan and cancel after 4 months
+            You pay &pound;79.99 for a 12-month plan and cancel after 4 months
             and 10 days. You have used 5 months (4 complete + 1 partial). Refund
-            for the remaining 7 months: &pound;89.99 &divide; 12 = &pound;7.50/month
-            &times; 7 = <strong>&pound;52.50 refund</strong>.
+            for the remaining 7 months: &pound;79.99 &divide; 12 = &pound;6.67/month
+            &times; 7 = <strong>&pound;46.69 refund</strong>.
           </p>
         </div>
       </section>

@@ -49,6 +49,7 @@ import { literacyAcrossCurriculumGuide } from './literacy-across-curriculum'
 import { markingGuide } from './marking-guide'
 import { examPrepGuide } from './exam-prep-guide'
 import { dataDrivenTeachingGuide } from './data-driven-teaching-guide'
+import { curriculumTeachingGuide } from './curriculum-teaching-guide'
 
 // ── Master Index ─────────────────────────────────────────────────────────────
 
@@ -64,6 +65,7 @@ export const allTeachingGuides: TeachingGuide[] = [
   markingGuide,
   examPrepGuide,
   dataDrivenTeachingGuide,
+  curriculumTeachingGuide,
 ]
 
 /** Look up a single guide by its `id` field. */

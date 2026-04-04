@@ -26,7 +26,7 @@ export default function TermsPage() {
           <h2 className="text-xl font-semibold text-foreground">1. Introduction</h2>
           <p className="mt-2 text-muted-foreground leading-relaxed">
             These Terms of Service (&quot;Terms&quot;) govern your access to and use of The English
-            Hub (accessible at theenglishhub.app), operated by Upskill Energy Limited, trading as The English Hub, a company
+            Hub (accessible at theenglishhub.app), operated by Upskill Energy Limited (Company No. 16254656), trading as The English Hub, a company
             registered in England and Wales (&quot;we&quot;, &quot;us&quot;, &quot;our&quot;). By
             creating an account or using any part of our platform, you agree to be bound by these
             Terms. If you do not agree, you must not use the Service.
@@ -87,6 +87,9 @@ export default function TermsPage() {
           <ul className="mt-2 list-disc pl-6 text-muted-foreground leading-relaxed space-y-1">
             <li>
               <strong>Monthly Plan:</strong> £9.99 per month, billed monthly on a recurring basis. First month free.
+            </li>
+            <li>
+              <strong>Annual Plan:</strong> £79.99 per year, billed annually on a recurring basis. First month free.
             </li>
           </ul>
           <p className="mt-2 text-muted-foreground leading-relaxed">

@@ -613,6 +613,16 @@ export default function PracticePage() {
             <p className="mt-1 text-sm text-muted-foreground">
               Try adjusting your filters to see available questions.
             </p>
+            <Button
+              variant="default"
+              className="mt-6"
+              onClick={() => {
+                setQuestionType('All')
+                setDifficulty('All')
+              }}
+            >
+              Reset Filters
+            </Button>
           </Card>
         )}
       </div>

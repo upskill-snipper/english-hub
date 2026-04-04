@@ -136,6 +136,7 @@ export default function CourseCataloguePage() {
               <button
                 key={tier}
                 onClick={() => handleTierChange(tier)}
+                aria-pressed={activeTier === tier}
                 className={cn(
                   'inline-flex items-center rounded-full px-4 py-1.5 text-sm font-medium transition-all duration-200',
                   activeTier === tier
@@ -165,13 +166,22 @@ export default function CourseCataloguePage() {
               ))}
             </div>
           ) : filtered.length === 0 ? (
-            <div className="py-20 text-center">
-              <p className="text-muted-foreground mb-4">
-                No courses found for this level. Try selecting a different tier above.
+            <div className="flex flex-col items-center justify-center rounded-xl border-2 border-dashed border-border bg-card px-6 py-12 text-center">
+              <div className="flex h-14 w-14 items-center justify-center rounded-full bg-muted">
+                <GraduationCap className="h-6 w-6 text-muted-foreground" />
+              </div>
+              <h3 className="mt-4 text-base font-semibold text-foreground">
+                No courses found for this level
+              </h3>
+              <p className="mt-2 max-w-sm text-sm leading-relaxed text-muted-foreground">
+                There are no courses matching your current filters. Try selecting a different level or browse all courses.
               </p>
-              <Button variant="outline" onClick={() => handleTierChange('All')}>
-                Show All Courses
-              </Button>
+              <button
+                onClick={() => handleTierChange('All')}
+                className="mt-6 inline-flex items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors"
+              >
+                Browse All Courses
+              </button>
             </div>
           ) : (
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

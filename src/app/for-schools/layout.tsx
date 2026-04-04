@@ -10,6 +10,12 @@ export const metadata: Metadata = {
     description:
       'Equip your school with a complete English learning platform. Bulk licences, admin dashboards and curriculum-aligned content for KS3 to IGCSE.',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'For Schools — The English Hub',
+    description:
+      'Equip your school with a complete English learning platform. Bulk licences, admin dashboards and curriculum-aligned content for KS3 to IGCSE.',
+  },
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {

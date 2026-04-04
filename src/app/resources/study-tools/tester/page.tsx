@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, useMemo, useRef } from "react";
+import Link from "next/link";
 
 /* ─── Types ──────────────────────────────────────────────────── */
 
@@ -1026,9 +1027,9 @@ export default function QuoteTesterPage() {
                 <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
                 <span>
                   <strong>Combine with flashcards.</strong> Use the{" "}
-                  <a href="/resources/study-tools/flashcards" className="font-semibold text-primary underline underline-offset-2 hover:text-foreground">
+                  <Link href="/resources/study-tools/flashcards" className="font-semibold text-primary underline underline-offset-2 hover:text-foreground">
                     Quote Flashcards
-                  </a>{" "}
+                  </Link>{" "}
                   tool to learn quotes before testing yourself here.
                 </span>
               </li>

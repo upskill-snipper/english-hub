@@ -1,0 +1,96 @@
+import type { CourseData } from './courses';
+import { y10IgcseLangP1Modules } from './curriculum/y10-igcse-lang-p1-modules';
+import { y10IgcseLitPoetryModules } from './curriculum/y10-igcse-lit-poetry-modules';
+import { y10IgcseLitOmamModules } from './curriculum/y10-igcse-lit-omam-modules';
+import { y11IgcseLangP2Modules } from './curriculum/y11-igcse-lang-p2-modules';
+import { y11IgcseLitInspectorModules } from './curriculum/y11-igcse-lit-inspector-calls-modules';
+import { y11IgcseLitMacbethModules } from './curriculum/y11-igcse-lit-macbeth-modules';
+
+export const igcseYear1011Courses: CourseData[] = [
+  {
+    id: 'igcse-y10-lang-p1',
+    title: 'IGCSE Language Paper 1',
+    subtitle: 'Reading and directed writing - Edexcel IGCSE English Language (4EA1).',
+    tier: 'IGCSE',
+    board: 'Edexcel IGCSE',
+    specCode: '4EA1',
+    price: 0,
+    duration: '8-10 hours',
+    level: 'Year 10',
+    description: 'Master Edexcel IGCSE English Language Paper 1: reading comprehension, language analysis, summary writing, and directed writing. Covers all four question types with model answers and examiner guidance.',
+    color: '#2563eb',
+    moduleList: y10IgcseLangP1Modules,
+  },
+  {
+    id: 'igcse-y10-lit-poetry',
+    title: 'IGCSE Literature: Poetry Anthology',
+    subtitle: 'Anthology poems - unseen poetry and comparative analysis (4ET1).',
+    tier: 'IGCSE',
+    board: 'Edexcel IGCSE',
+    specCode: '4ET1',
+    price: 0,
+    duration: '8-10 hours',
+    level: 'Year 10',
+    description: 'Study the Edexcel IGCSE Poetry Anthology in depth. Analyse individual poems, compare across the anthology, and develop skills for both the studied and unseen poetry questions. Includes all six clusters with full close analysis.',
+    color: '#7c3aed',
+    moduleList: y10IgcseLitPoetryModules,
+  },
+  {
+    id: 'igcse-y10-lit-omam',
+    title: 'IGCSE Literature: Of Mice and Men',
+    subtitle: "Steinbeck's novella - character, context, and exam technique (4ET1).",
+    tier: 'IGCSE',
+    board: 'Edexcel IGCSE',
+    specCode: '4ET1',
+    price: 0,
+    duration: '8-10 hours',
+    level: 'Year 10',
+    description: "Detailed study of Steinbeck's Of Mice and Men for Edexcel IGCSE Literature. Covers all characters, themes, language, structure, and 1930s context with full exam preparation including model essays and mark-scheme guidance.",
+    color: '#059669',
+    moduleList: y10IgcseLitOmamModules,
+  },
+  {
+    id: 'igcse-y11-lang-p2',
+    title: 'IGCSE Language Paper 2',
+    subtitle: 'Writing and composition - Edexcel IGCSE English Language (4EA1).',
+    tier: 'IGCSE',
+    board: 'Edexcel IGCSE',
+    specCode: '4EA1',
+    price: 0,
+    duration: '8-10 hours',
+    level: 'Year 11',
+    description: 'Master Edexcel IGCSE English Language Paper 2: transactional and creative writing. Develop skills in writing for different purposes and audiences, with full coverage of all required formats, structural techniques, and AO mark schemes.',
+    color: '#0891b2',
+    moduleList: y11IgcseLangP2Modules,
+  },
+  {
+    id: 'igcse-y11-lit-inspector',
+    title: 'IGCSE Literature: An Inspector Calls',
+    subtitle: "Priestley's drama - social responsibility and exam mastery (4ET1).",
+    tier: 'IGCSE',
+    board: 'Edexcel IGCSE',
+    specCode: '4ET1',
+    price: 0,
+    duration: '8-10 hours',
+    level: 'Year 11',
+    description: "Complete study of J.B. Priestley's An Inspector Calls for Edexcel IGCSE Literature. Analyse every character, explore themes of responsibility and social class, and master the extract and essay questions with model answers and examiner tips.",
+    color: '#b45309',
+    moduleList: y11IgcseLitInspectorModules,
+  },
+  {
+    id: 'igcse-y11-lit-macbeth',
+    title: 'IGCSE Literature: Macbeth',
+    subtitle: "Shakespeare's tragedy - ambition, power, and dramatic technique (4ET1).",
+    tier: 'IGCSE',
+    board: 'Edexcel IGCSE',
+    specCode: '4ET1',
+    price: 0,
+    duration: '8-10 hours',
+    level: 'Year 11',
+    description: "In-depth study of Shakespeare's Macbeth for Edexcel IGCSE Literature. Master all characters, themes, dramatic techniques, and contextual factors. Full exam preparation with extract analysis skills and essay planning frameworks.",
+    color: '#4b5563',
+    moduleList: y11IgcseLitMacbethModules,
+  },
+];
+
+export default igcseYear1011Courses;
