@@ -60,7 +60,7 @@ const DEPT_TEACHERS: DeptTeacher[] = [
         ? Math.round(tc.reduce((a, c) => a + c.completionRate, 0) / tc.length)
         : 0
     const atRisk = DEMO_STUDENTS.filter(
-      (s) => s.teacherName === t.name && s.status === "At Risk"
+      (s) => s.teacherName === t.name && s.status === "at-risk"
     ).length
     return {
       id: t.id,

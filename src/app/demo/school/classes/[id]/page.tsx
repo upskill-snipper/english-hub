@@ -48,13 +48,13 @@ function progressBarColor(pct: number): string {
 
 function statusBadgeStyle(status: DemoStudent["status"]): { label: string; className: string } {
   switch (status) {
-    case "Excelling":
+    case "excelling":
       return { label: "Excelling", className: "bg-green-500/10 text-green-400 border-green-500/20" }
-    case "On Track":
+    case "on-track":
       return { label: "On Track", className: "bg-blue-500/10 text-blue-400 border-blue-500/20" }
-    case "Needs Support":
+    case "needs-support":
       return { label: "Needs Support", className: "bg-amber-500/10 text-amber-400 border-amber-500/20" }
-    case "At Risk":
+    case "at-risk":
       return { label: "At Risk", className: "bg-red-500/10 text-red-400 border-red-500/20" }
     default:
       return { label: status, className: "bg-neutral-500/10 text-neutral-400 border-neutral-500/20" }
@@ -104,7 +104,7 @@ export default function DemoClassDetailPage() {
   const completionRate = cls?.completionRate ?? 0
 
   const atRiskCount = useMemo(
-    () => students.filter((s) => s.status === "At Risk" || s.status === "Needs Support").length,
+    () => students.filter((s) => s.status === "at-risk" || s.status === "needs-support").length,
     [students]
   )
 

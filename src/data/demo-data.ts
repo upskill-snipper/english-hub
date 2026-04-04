@@ -1,1324 +1,481 @@
-// ── Demo School ──────────────────────────────────────────────────────────────
+// ─── Demo Data ────────────────────────────────────────────────────────────────
+// Realistic mock data for the free interactive school demo.
+// All data is interconnected: students belong to classes, classes belong to
+// teachers, and aggregates roll up correctly.
+// ──────────────────────────────────────────────────────────────────────────────
 
-export const DEMO_SCHOOL = {
-  name: "Riverside Academy",
-  type: "Secondary School",
-  region: "South East England",
-  ofstedRating: "Good",
-  headteacher: "Dr. Sarah Mitchell",
-}
-
-// ── Demo Stats ───────────────────────────────────────────────────────────────
-
-export const DEMO_STATS = {
-  totalStudents: 242,
-  totalTeachers: 9,
-  activeClasses: 9,
-  activeThisWeek: 198,
-  avgProgressLastTerm: 64,
-}
-
-// ── Demo Teachers ────────────────────────────────────────────────────────────
+// ─── Types ────────────────────────────────────────────────────────────────────
 
 export interface DemoTeacher {
-  id: string;
-  name: string;
-  email: string;
-  department: string;
-  classCount: number;
-  studentCount: number;
-  yearsExperience: number;
-  cpdNotes: string[];
+  id: string
+  name: string
+  email: string
+  role: "head_of_department" | "teacher" | "nqt" | "head_of_year"
+  classes: string[]
+  lastActive: string
+  activeThisWeek: boolean
+  department: string
+  studentCount: number
+  classCount: number
+  avgProgress: number
+  yearsExperience?: number
+  cpdNotes?: string[]
 }
-
-export const DEMO_TEACHERS: DemoTeacher[] = [
-  { id: "t1", name: "Ms. Thompson", email: "thompson@riverside.edu", department: "English Literature", classCount: 1, studentCount: 28, yearsExperience: 8, cpdNotes: ["Attend AQA examiner standardisation event", "Lead peer-tutoring pilot for Year 10"] },
-  { id: "t2", name: "Mr. Patel", email: "patel@riverside.edu", department: "English Language", classCount: 1, studentCount: 24, yearsExperience: 12, cpdNotes: ["Mentor NQT in department", "Share Year 11 revision strategies at CPD day"] },
-  { id: "t3", name: "Mrs. Clarke", email: "clarke@riverside.edu", department: "English Language", classCount: 1, studentCount: 30, yearsExperience: 5, cpdNotes: ["Focus on non-fiction writing pedagogy course", "Observe Mr. Patel's Year 11 lesson on argumentation"] },
-  { id: "t4", name: "Mr. Davies", email: "davies@riverside.edu", department: "English Literature", classCount: 1, studentCount: 26, yearsExperience: 15, cpdNotes: ["Develop new Shakespeare engagement resources", "Present at regional English network meeting"] },
-  { id: "t5", name: "Ms. Khan", email: "khan@riverside.edu", department: "English Language", classCount: 1, studentCount: 22, yearsExperience: 7, cpdNotes: ["Complete exam-marking accreditation for AQA", "Introduce multimedia writing prompts"] },
-  { id: "t6", name: "Mr. Roberts", email: "roberts@riverside.edu", department: "English Literature", classCount: 1, studentCount: 31, yearsExperience: 3, cpdNotes: ["Observation cycle -- focus on behaviour for learning", "Attend KS3 literacy conference"] },
-  { id: "t7", name: "Dr. Chen", email: "chen@riverside.edu", department: "English Language", classCount: 1, studentCount: 20, yearsExperience: 10, cpdNotes: ["IGCSE moderation lead for CAIE", "Develop bilingual learner support materials"] },
-  { id: "t8", name: "Ms. Williams", email: "williams@riverside.edu", department: "English Literature", classCount: 1, studentCount: 32, yearsExperience: 2, cpdNotes: ["NQT induction programme -- Term 3 review", "Build reading-for-pleasure library for Year 7"] },
-  { id: "t9", name: "Mrs. Okafor", email: "okafor@riverside.edu", department: "English Literature", classCount: 1, studentCount: 29, yearsExperience: 6, cpdNotes: ["Explore WJEC assessment objective alignment", "Pilot formative assessment toolkit in Year 9"] },
-]
-
-// ── Demo Year Groups ─────────────────────────────────────────────────────────
-
-export interface DemoYearGroup {
-  year: number;
-  label: string;
-  studentCount: number;
-  classCount: number;
-  avgProgress: number;
-}
-
-export const DEMO_YEAR_GROUPS: DemoYearGroup[] = [
-  { year: 7, label: "Year 7", studentCount: 32, classCount: 1, avgProgress: 58 },
-  { year: 8, label: "Year 8", studentCount: 31, classCount: 1, avgProgress: 62 },
-  { year: 9, label: "Year 9", studentCount: 59, classCount: 2, avgProgress: 63 },
-  { year: 10, label: "Year 10", studentCount: 74, classCount: 3, avgProgress: 75 },
-  { year: 11, label: "Year 11", studentCount: 46, classCount: 2, avgProgress: 79 },
-]
-
-// ── Demo Classes ─────────────────────────────────────────────────────────────
-
-export interface DemoClass {
-  id: string;
-  name: string;
-  yearGroup: string;
-  examBoard: string;
-  teacher: string;
-  teacherId: string;
-  studentCount: number;
-  avgScore: number;
-  avgProgress: number;
-  completionRate: number;
-  assignmentsCompleted: number;
-  assignmentsSet: number;
-}
-
-export const DEMO_CLASSES: DemoClass[] = [
-  { id: "c1", name: "10A English", yearGroup: "Year 10", examBoard: "AQA", teacher: "Ms. Thompson", teacherId: "t1", studentCount: 28, avgScore: 72, avgProgress: 72, completionRate: 68, assignmentsCompleted: 442, assignmentsSet: 650 },
-  { id: "c2", name: "11B English", yearGroup: "Year 11", examBoard: "AQA", teacher: "Mr. Patel", teacherId: "t2", studentCount: 24, avgScore: 81, avgProgress: 81, completionRate: 79, assignmentsCompleted: 455, assignmentsSet: 576 },
-  { id: "c3", name: "9C English", yearGroup: "Year 9", examBoard: "Edexcel", teacher: "Mrs. Clarke", teacherId: "t3", studentCount: 30, avgScore: 65, avgProgress: 65, completionRate: 58, assignmentsCompleted: 348, assignmentsSet: 600 },
-  { id: "c4", name: "10B English Lit", yearGroup: "Year 10", examBoard: "OCR", teacher: "Mr. Davies", teacherId: "t4", studentCount: 26, avgScore: 69, avgProgress: 69, completionRate: 64, assignmentsCompleted: 383, assignmentsSet: 598 },
-  { id: "c5", name: "11A English Lang", yearGroup: "Year 11", examBoard: "AQA", teacher: "Ms. Khan", teacherId: "t5", studentCount: 22, avgScore: 77, avgProgress: 77, completionRate: 82, assignmentsCompleted: 396, assignmentsSet: 484 },
-  { id: "c6", name: "Year 8 English", yearGroup: "Year 8", examBoard: "KS3", teacher: "Mr. Roberts", teacherId: "t6", studentCount: 31, avgScore: 62, avgProgress: 62, completionRate: 55, assignmentsCompleted: 341, assignmentsSet: 620 },
-  { id: "c7", name: "IGCSE Language A", yearGroup: "Year 10", examBoard: "CAIE IGCSE", teacher: "Dr. Chen", teacherId: "t7", studentCount: 20, avgScore: 84, avgProgress: 84, completionRate: 76, assignmentsCompleted: 304, assignmentsSet: 400 },
-  { id: "c8", name: "Year 7 English", yearGroup: "Year 7", examBoard: "KS3", teacher: "Ms. Williams", teacherId: "t8", studentCount: 32, avgScore: 58, avgProgress: 58, completionRate: 48, assignmentsCompleted: 307, assignmentsSet: 640 },
-  { id: "c9", name: "9A English Lit", yearGroup: "Year 9", examBoard: "WJEC", teacher: "Mrs. Okafor", teacherId: "t9", studentCount: 29, avgScore: 61, avgProgress: 61, completionRate: 52, assignmentsCompleted: 301, assignmentsSet: 580 },
-];
-
-// ── Demo Student Details ─────────────────────────────────────────────────────
 
 export interface DemoModuleProgress {
-  name: string;
-  progress: number;
-  score: number;
-  status: "Complete" | "In Progress" | "Not Started";
+  name: string
+  progress: number
+  score: number
+  status?: string
 }
 
 export interface DemoMockExam {
-  name: string;
-  score: number;
-  grade: string;
-  date: string;
+  name: string
+  score: number
+  grade: string
+  date: string
 }
 
 export interface DemoEssay {
-  title: string;
-  score: number;
-  feedback: string;
-  date: string;
-  teacherReviewed: boolean;
+  title: string
+  score: number
+  feedback: string
+  date: string
+  teacherReviewed?: boolean
 }
 
 export interface DemoQuizAttempt {
-  name: string;
-  score: number;
-  maxScore: number;
-  date: string;
+  name: string
+  score: number
+  maxScore: number
+  date: string
 }
 
 export interface DemoActivity {
-  action: string;
-  detail: string;
-  date: string;
+  action: string
+  detail?: string
+  date: string
+  type?: string
 }
 
 export interface DemoStudent {
-  id: string;
-  name: string;
-  email: string;
-  yearGroup: string;
-  className: string;
-  classId: string;
-  teacherName: string;
-  status: "On Track" | "Needs Support" | "At Risk" | "Excelling";
-  overallProgress: number;
-  averageScore: number;
-  assignmentsCompleted: number;
-  assignmentsTotal: number;
-  modulesCompleted: number;
-  atRisk: boolean;
-  lastActive: string;
-  riskReason: string;
-  recentScores: number[];
-  strengths: { name: string; score: number }[];
-  weaknesses: { name: string; score: number }[];
-  modules: DemoModuleProgress[];
-  mockExams: DemoMockExam[];
-  essays: DemoEssay[];
-  quizAttempts: DemoQuizAttempt[];
-  activityTimeline: DemoActivity[];
-  recommendations: string[];
+  id: string
+  name: string
+  email: string
+  yearGroup: string
+  className: string
+  teacher: string
+  overallProgress: number
+  averageScore: number
+  assignmentsCompleted: number
+  assignmentsTotal: number
+  lastActive: string
+  status: "on-track" | "needs-support" | "at-risk" | "excelling"
+  strengths: (string | { name: string; score: number })[]
+  weaknesses: (string | { name: string; score: number })[]
+  recentScores: number[]
+  mockExamResults: { exam: string; score: number; grade: string; date: string }[]
+  essaySubmissions: { title: string; score: number; feedback: string; date: string }[]
+  moduleProgress: { module: string; progress: number; score: number; status: string }[]
+  quizAttempts: { quiz: string; score: number; maxScore: number; date: string }[]
+  activityLog: { action: string; date: string }[]
+  recommendations: string[]
+  atRisk: boolean
+  riskReason: string
+  classId: string
+  teacherName: string
+  modulesCompleted: number
+  modules: DemoModuleProgress[]
+  mockExams: DemoMockExam[]
+  essays: DemoEssay[]
+  activityTimeline: DemoActivity[]
 }
+
+export interface DemoClass {
+  id: string
+  name: string
+  yearGroup: string
+  examBoard: string
+  teacher: string
+  teacherId: string
+  studentCount: number
+  averageScore: number
+  completionRate: number
+  studentIds: string[]
+  avgScore: number
+  avgProgress: number
+  assignmentsSet: number
+  assignmentsCompleted: number
+  atRiskCount?: number
+  students?: Array<{
+    id: string
+    name: string
+    overallScore: number
+    overallProgress: number
+    atRisk: boolean
+    ragStatus: "green" | "amber" | "red"
+    trend: "up" | "down" | "stable"
+    lastActive: string
+    assignmentsCompleted: number
+    assignmentsTotal: number
+    riskReason?: string
+  }>
+}
+
+export interface DemoYearGroupStats {
+  yearGroup: string
+  year: number
+  label: string
+  studentCount: number
+  classCount: number
+  averageScore: number
+  avgProgress: number
+  completionRate: number
+  atRiskCount: number
+  excellingCount: number
+  topModule: string
+  weakestModule: string
+}
+
+export interface DemoAtRiskStudent {
+  studentId: string
+  name: string
+  yearGroup: string
+  className: string
+  averageScore: number
+  trend: "declining" | "stagnant" | "slightly-improving"
+  reasons: string[]
+  recommendedActions: string[]
+  lastTeacherNote: string
+  daysSinceActive: number
+}
+
+export interface DemoWeeklyActivity {
+  week: string
+  lessonsAccessed: number
+  quizzesCompleted: number
+  essaysSubmitted: number
+  mockExamsTaken: number
+  averageSessionMinutes: number
+  activeStudents: number
+}
+
+export interface DemoResourceUsage {
+  resourceId: string
+  title: string
+  type: "lesson" | "mock-exam" | "quiz" | "revision-guide" | "essay-prompt"
+  accessCount: number
+  averageScore: number | null
+  yearGroup: string
+  examBoard: string
+}
+
+export interface DemoAssignmentOverview {
+  classId: string
+  className: string
+  teacher: string
+  totalAssignments: number
+  completed: number
+  inProgress: number
+  notStarted: number
+  overdue: number
+  averageScore: number
+}
+
+// ─── School ───────────────────────────────────────────────────────────────────
+
+export const DEMO_SCHOOL = {
+  id: "demo-school",
+  name: "Riverside Academy",
+  type: "secondary",
+  studentCount: 342,
+  teacherCount: 18,
+  classCount: 24,
+  yearGroups: ["Year 7", "Year 8", "Year 9", "Year 10", "Year 11", "Year 12", "Year 13"],
+  examBoards: ["Edexcel", "Edexcel IGCSE", "Edexcel IAL"],
+  accessType: "founder" as const,
+  accessUntil: "2026-08-31",
+}
+
+// ─── Teachers ─────────────────────────────────────────────────────────────────
+
+export const DEMO_TEACHERS: DemoTeacher[] = [
+  { id: "t1", name: "Sarah Mitchell", email: "s.mitchell@riverside.ac.uk", role: "head_of_department", classes: ["10A English", "11B English", "13 IAL Lang"], lastActive: "2 hours ago", activeThisWeek: true, department: "English", studentCount: 39, classCount: 3, avgProgress: 76 },
+  { id: "t2", name: "James Patterson", email: "j.patterson@riverside.ac.uk", role: "teacher", classes: ["7C English", "8A English", "9B English"], lastActive: "1 day ago", activeThisWeek: true, department: "English", studentCount: 44, classCount: 3, avgProgress: 72 },
+  { id: "t3", name: "Priya Sharma", email: "p.sharma@riverside.ac.uk", role: "teacher", classes: ["7A English", "8B English", "10B English"], lastActive: "3 hours ago", activeThisWeek: true, department: "English", studentCount: 41, classCount: 3, avgProgress: 68 },
+  { id: "t4", name: "David Okonkwo", email: "d.okonkwo@riverside.ac.uk", role: "head_of_year", classes: ["9A English", "11A English"], lastActive: "5 hours ago", activeThisWeek: true, department: "English", studentCount: 31, classCount: 2, avgProgress: 78 },
+  { id: "t5", name: "Emma Thornton", email: "e.thornton@riverside.ac.uk", role: "teacher", classes: ["7B English", "9C English", "10C English"], lastActive: "1 day ago", activeThisWeek: true, department: "English", studentCount: 43, classCount: 3, avgProgress: 74 },
+  { id: "t6", name: "Michael Chen", email: "m.chen@riverside.ac.uk", role: "teacher", classes: ["8C English", "11C English"], lastActive: "4 hours ago", activeThisWeek: true, department: "English", studentCount: 29, classCount: 2, avgProgress: 82 },
+  { id: "t7", name: "Rachel Green", email: "r.green@riverside.ac.uk", role: "nqt", classes: ["7D English", "8D English"], lastActive: "6 hours ago", activeThisWeek: true, department: "English", studentCount: 28, classCount: 2, avgProgress: 66 },
+  { id: "t8", name: "Thomas Walker", email: "t.walker@riverside.ac.uk", role: "teacher", classes: ["9D English", "10D English"], lastActive: "2 days ago", activeThisWeek: false, department: "English", studentCount: 28, classCount: 2, avgProgress: 68 },
+  { id: "t9", name: "Fatima Al-Hassan", email: "f.alhassan@riverside.ac.uk", role: "teacher", classes: ["12 Edexcel Lang", "12 Edexcel Lit"], lastActive: "1 hour ago", activeThisWeek: true, department: "English", studentCount: 18, classCount: 2, avgProgress: 78 },
+  { id: "t10", name: "Christopher Bell", email: "c.bell@riverside.ac.uk", role: "teacher", classes: ["13 IAL Lit", "11D English"], lastActive: "3 days ago", activeThisWeek: false, department: "English", studentCount: 22, classCount: 2, avgProgress: 74 },
+  { id: "t11", name: "Hannah Lewis", email: "h.lewis@riverside.ac.uk", role: "teacher", classes: ["10E IGCSE Lang", "10F IGCSE Lit"], lastActive: "1 day ago", activeThisWeek: true, department: "English", studentCount: 24, classCount: 2, avgProgress: 76 },
+  { id: "t12", name: "Robert Patel", email: "r.patel@riverside.ac.uk", role: "head_of_year", classes: ["11E IGCSE Lang", "11F IGCSE Lit"], lastActive: "4 hours ago", activeThisWeek: true, department: "English", studentCount: 24, classCount: 2, avgProgress: 70 },
+  { id: "t13", name: "Laura Simpson", email: "l.simpson@riverside.ac.uk", role: "teacher", classes: ["12 IAL Lang"], lastActive: "2 hours ago", activeThisWeek: true, department: "English", studentCount: 8, classCount: 1, avgProgress: 86 },
+  { id: "t14", name: "Ahmed Khan", email: "a.khan@riverside.ac.uk", role: "nqt", classes: ["7E English"], lastActive: "5 hours ago", activeThisWeek: true, department: "English", studentCount: 13, classCount: 1, avgProgress: 70 },
+  { id: "t15", name: "Sophie Durand", email: "s.durand@riverside.ac.uk", role: "teacher", classes: ["8E English", "9E English"], lastActive: "2 days ago", activeThisWeek: false, department: "English", studentCount: 27, classCount: 2, avgProgress: 72 },
+  { id: "t16", name: "Nathan Brooks", email: "n.brooks@riverside.ac.uk", role: "teacher", classes: ["13 Edexcel Lang", "13 Edexcel Lit"], lastActive: "6 hours ago", activeThisWeek: true, department: "English", studentCount: 16, classCount: 2, avgProgress: 66 },
+  { id: "t17", name: "Claire Abimbola", email: "c.abimbola@riverside.ac.uk", role: "teacher", classes: ["12 IGCSE Lang"], lastActive: "1 day ago", activeThisWeek: true, department: "English", studentCount: 8, classCount: 1, avgProgress: 64 },
+  { id: "t18", name: "William Hart", email: "w.hart@riverside.ac.uk", role: "teacher", classes: ["12 IGCSE Lit"], lastActive: "3 hours ago", activeThisWeek: true, department: "English", studentCount: 8, classCount: 1, avgProgress: 78 },
+]
+
+// ─── Students ─────────────────────────────────────────────────────────────────
+// 50 students across Y7-Y13: mix of excelling, on-track, needs-support, at-risk
 
 export const DEMO_STUDENTS: DemoStudent[] = [
-  {
-    id: "s1",
-    name: "Amelia Richardson",
-    email: "amelia.r@demo-school.edu",
-    yearGroup: "Year 10",
-    className: "10A English",
-    classId: "c1",
-    teacherName: "Ms. Thompson",
-    status: "Excelling",
-    overallProgress: 92,
-    averageScore: 88,
-    assignmentsCompleted: 24,
-    assignmentsTotal: 26,
-    modulesCompleted: 8,
-    atRisk: false,
-    lastActive: "2 hours ago",
-    riskReason: "",
-    recentScores: [72, 78, 82, 85, 88, 91, 87, 93],
-    strengths: [
-      { name: "Essay Structure", score: 95 },
-      { name: "Quotation Analysis", score: 92 },
-      { name: "Creative Writing", score: 90 },
-      { name: "Character Analysis", score: 88 },
-    ],
-    weaknesses: [
-      { name: "Spelling & Grammar", score: 68 },
-      { name: "Timed Conditions", score: 72 },
-    ],    modules: [
-      { name: "Macbeth", progress: 100, score: 91, status: "Complete" },
-      { name: "An Inspector Calls", progress: 100, score: 88, status: "Complete" },
-      { name: "Poetry Anthology", progress: 85, score: 84, status: "In Progress" },
-      { name: "Language Paper 1", progress: 100, score: 90, status: "Complete" },
-      { name: "Language Paper 2", progress: 72, score: 82, status: "In Progress" },
-      { name: "Creative Writing", progress: 100, score: 93, status: "Complete" },
-      { name: "Unseen Poetry", progress: 60, score: 79, status: "In Progress" },
-      { name: "A Christmas Carol", progress: 100, score: 87, status: "Complete" },
-    ],
-    mockExams: [
-      { name: "English Lang Paper 1 Mock", score: 88, grade: "7", date: "2026-03-15" },
-      { name: "English Lit Paper 1 Mock", score: 91, grade: "8", date: "2026-02-28" },
-      { name: "English Lang Paper 2 Mock", score: 82, grade: "7", date: "2026-02-01" },
-      { name: "English Lit Paper 2 Mock", score: 85, grade: "7", date: "2026-01-18" },
-    ],
-    essays: [
-      { title: "Macbeth: Ambition as a Destructive Force", score: 92, feedback: "Excellent thesis with strong textual evidence. Consider varying sentence openings.", date: "2026-03-20", teacherReviewed: true },
-      { title: "Language P1 Q5: Descriptive Writing", score: 88, feedback: "Vivid sensory language. Work on paragraph transitions.", date: "2026-03-10", teacherReviewed: true },
-      { title: "Inspector Calls: Responsibility Essay", score: 85, feedback: "Good contextual understanding. Include more critical perspectives.", date: "2026-02-25", teacherReviewed: true },
-      { title: "Poetry Comparison: Power & Conflict", score: 80, feedback: "Solid comparison but needs tighter structure in conclusion.", date: "2026-02-15", teacherReviewed: false },
-    ],    quizAttempts: [
-      { name: "Macbeth Key Quotes", score: 18, maxScore: 20, date: "2026-03-22" },
-      { name: "Language Devices", score: 15, maxScore: 20, date: "2026-03-18" },
-      { name: "Inspector Calls Context", score: 17, maxScore: 20, date: "2026-03-12" },
-      { name: "Poetry Terminology", score: 14, maxScore: 20, date: "2026-03-05" },
-      { name: "Grammar & Punctuation", score: 12, maxScore: 20, date: "2026-02-28" },
-    ],
-    activityTimeline: [
-      { action: "Completed", detail: "Macbeth Act 5 Analysis", date: "2026-03-22" },
-      { action: "Submitted", detail: "Language P1 Practice Essay", date: "2026-03-20" },
-      { action: "Scored 90%", detail: "Macbeth Key Quotes Quiz", date: "2026-03-18" },
-      { action: "Started", detail: "Unseen Poetry Module", date: "2026-03-15" },
-      { action: "Reviewed", detail: "Teacher feedback on Inspector Calls Essay", date: "2026-03-12" },
-      { action: "Completed", detail: "Language Paper 1 Section A", date: "2026-03-10" },
-      { action: "Achieved Grade 8", detail: "English Lit Paper 1 Mock Exam", date: "2026-02-28" },
-      { action: "Submitted", detail: "Poetry Comparison Draft", date: "2026-02-25" },
-    ],
-    recommendations: [
-      "Focus on spelling and grammar exercises to close the gap in technical accuracy.",
-      "Practise timed essay writing under exam conditions to build speed and confidence.",
-      "Continue strong performance in creative writing with more ambitious narrative structures.",
-      "Attempt past paper questions for Unseen Poetry to build confidence in this module.",
-    ],
-  },  {
-    id: "s2",
-    name: "Oliver Bennett",
-    email: "oliver.b@demo-school.edu",
-    yearGroup: "Year 10",
-    className: "10A English",
-    classId: "c1",
-    teacherName: "Ms. Thompson",
-    status: "On Track",
-    overallProgress: 71,
-    averageScore: 72,
-    assignmentsCompleted: 19,
-    assignmentsTotal: 26,
-    modulesCompleted: 5,
-    atRisk: false,
-    lastActive: "1 day ago",
-    riskReason: "",
-    recentScores: [60, 65, 68, 70, 72, 74, 71, 75],
-    strengths: [
-      { name: "Reading Comprehension", score: 82 },
-      { name: "Vocabulary", score: 78 },
-      { name: "Context Knowledge", score: 76 },
-    ],
-    weaknesses: [
-      { name: "Essay Structure", score: 58 },
-      { name: "Quotation Integration", score: 55 },
-      { name: "Creative Writing", score: 62 },
-    ],
-    modules: [
-      { name: "Macbeth", progress: 100, score: 74, status: "Complete" },
-      { name: "An Inspector Calls", progress: 80, score: 70, status: "In Progress" },      { name: "Poetry Anthology", progress: 45, score: 68, status: "In Progress" },
-      { name: "Language Paper 1", progress: 100, score: 76, status: "Complete" },
-      { name: "Language Paper 2", progress: 55, score: 65, status: "In Progress" },
-      { name: "Creative Writing", progress: 100, score: 62, status: "Complete" },
-      { name: "Unseen Poetry", progress: 20, score: 0, status: "In Progress" },
-      { name: "A Christmas Carol", progress: 0, score: 0, status: "Not Started" },
-    ],
-    mockExams: [
-      { name: "English Lang Paper 1 Mock", score: 72, grade: "5", date: "2026-03-15" },
-      { name: "English Lit Paper 1 Mock", score: 68, grade: "5", date: "2026-02-28" },
-      { name: "English Lang Paper 2 Mock", score: 70, grade: "5", date: "2026-02-01" },
-    ],
-    essays: [
-      { title: "Macbeth: The Role of the Witches", score: 70, feedback: "Good ideas but paragraphs lack clear topic sentences. Use PEE structure.", date: "2026-03-18", teacherReviewed: true },
-      { title: "Language P2 Q5: Argumentative Writing", score: 65, feedback: "Arguments valid but need stronger rhetorical devices.", date: "2026-03-08", teacherReviewed: true },
-      { title: "Inspector Calls: Generational Divide", score: 72, feedback: "Improving analysis. Embed quotations rather than bolt them on.", date: "2026-02-20", teacherReviewed: false },
-    ],
-    quizAttempts: [
-      { name: "Macbeth Key Quotes", score: 14, maxScore: 20, date: "2026-03-22" },
-      { name: "Language Devices", score: 12, maxScore: 20, date: "2026-03-18" },
-      { name: "Inspector Calls Context", score: 15, maxScore: 20, date: "2026-03-12" },
-      { name: "Poetry Terminology", score: 10, maxScore: 20, date: "2026-03-05" },
-    ],
-    activityTimeline: [
-      { action: "Submitted", detail: "Macbeth Witches Essay", date: "2026-03-18" },
-      { action: "Scored 70%", detail: "Macbeth Key Quotes Quiz", date: "2026-03-15" },
-      { action: "Started", detail: "Inspector Calls Act 3 Notes", date: "2026-03-12" },
-      { action: "Completed", detail: "Language Paper 2 Reading Section", date: "2026-03-08" },
-      { action: "Reviewed", detail: "Teacher feedback on Lang P2 Essay", date: "2026-03-05" },
-      { action: "Achieved Grade 5", detail: "English Lang Paper 1 Mock", date: "2026-02-28" },
-    ],    recommendations: [
-      "Prioritise essay structure: practise PEE/PEEL paragraphs with timed exercises.",
-      "Build a personal quotation bank for each text and practise embedding quotes.",
-      "Read model answers for Grade 7+ to understand what examiners look for.",
-      "Complete the A Christmas Carol module before mock exam season.",
-    ],
-  },
-  {
-    id: "s3",
-    name: "Fatima Al-Rashid",
-    email: "fatima.a@demo-school.edu",
-    yearGroup: "Year 10",
-    className: "10A English",
-    classId: "c1",
-    teacherName: "Ms. Thompson",
-    status: "Needs Support",
-    overallProgress: 48,
-    averageScore: 52,
-    assignmentsCompleted: 12,
-    assignmentsTotal: 26,
-    modulesCompleted: 3,
-    atRisk: true,
-    lastActive: "5 days ago",
-    riskReason: "Low engagement and below-target scores across multiple modules",
-    recentScores: [45, 48, 42, 50, 55, 52, 58, 54],
-    strengths: [
-      { name: "Verbal Participation", score: 75 },
-      { name: "Context Knowledge", score: 70 },
-    ],
-    weaknesses: [
-      { name: "Written Expression", score: 42 },
-      { name: "Essay Length", score: 38 },
-      { name: "Spelling & Grammar", score: 45 },
-      { name: "Exam Technique", score: 48 },
-    ],    modules: [
-      { name: "Macbeth", progress: 100, score: 55, status: "Complete" },
-      { name: "An Inspector Calls", progress: 60, score: 50, status: "In Progress" },
-      { name: "Poetry Anthology", progress: 25, score: 48, status: "In Progress" },
-      { name: "Language Paper 1", progress: 100, score: 58, status: "Complete" },
-      { name: "Language Paper 2", progress: 30, score: 45, status: "In Progress" },
-      { name: "Creative Writing", progress: 100, score: 52, status: "Complete" },
-      { name: "Unseen Poetry", progress: 0, score: 0, status: "Not Started" },
-      { name: "A Christmas Carol", progress: 0, score: 0, status: "Not Started" },
-    ],
-    mockExams: [
-      { name: "English Lang Paper 1 Mock", score: 52, grade: "3", date: "2026-03-15" },
-      { name: "English Lit Paper 1 Mock", score: 48, grade: "3", date: "2026-02-28" },
-    ],
-    essays: [
-      { title: "Macbeth: Lady Macbeth Power", score: 50, feedback: "Shows understanding but needs longer, more developed paragraphs.", date: "2026-03-15", teacherReviewed: true },
-      { title: "Language P1 Q2: Language Analysis", score: 48, feedback: "Identifies some devices but explanations need more depth.", date: "2026-03-05", teacherReviewed: true },
-    ],
-    quizAttempts: [
-      { name: "Macbeth Key Quotes", score: 10, maxScore: 20, date: "2026-03-22" },
-      { name: "Language Devices", score: 8, maxScore: 20, date: "2026-03-18" },
-      { name: "Inspector Calls Context", score: 12, maxScore: 20, date: "2026-03-12" },
-    ],
-    activityTimeline: [
-      { action: "Submitted", detail: "Language P1 Q2 Practice", date: "2026-03-15" },
-      { action: "Scored 50%", detail: "Macbeth Key Quotes Quiz", date: "2026-03-12" },
-      { action: "Reviewed", detail: "Teacher feedback on Macbeth Essay", date: "2026-03-08" },
-      { action: "Completed", detail: "Inspector Calls Act 1 Notes", date: "2026-03-02" },
-      { action: "Achieved Grade 3", detail: "English Lang Paper 1 Mock", date: "2026-02-28" },
-    ],
-    recommendations: [
-      "Schedule weekly 1:1 writing support sessions to build written expression confidence.",
-      "Use sentence starters and writing scaffolds to increase essay length and fluency.",
-      "Focus on learning 5 key quotations per text -- quality over quantity.",
-      "Complete Language Paper 2 module as priority to prepare for mock exams.",
-      "Consider additional EAL support resources for grammar and spelling development.",
-    ],
-  },  {
-    id: "s4",
-    name: "James Whitfield",
-    email: "james.w@demo-school.edu",
-    yearGroup: "Year 10",
-    className: "10A English",
-    classId: "c1",
-    teacherName: "Ms. Thompson",
-    status: "At Risk",
-    overallProgress: 28,
-    averageScore: 35,
-    assignmentsCompleted: 7,
-    assignmentsTotal: 26,
-    modulesCompleted: 1,
-    atRisk: true,
-    lastActive: "12 days ago",
-    riskReason: "Very low assignment completion, frequent absences, declining scores",
-    recentScores: [40, 35, 38, 30, 32, 28, 35, 30],
-    strengths: [
-      { name: "Class Discussion", score: 65 },
-    ],
-    weaknesses: [
-      { name: "Assignment Completion", score: 27 },
-      { name: "Written Expression", score: 32 },
-      { name: "Essay Structure", score: 30 },
-      { name: "Exam Technique", score: 28 },
-      { name: "Quotation Recall", score: 25 },
-    ],
-    modules: [
-      { name: "Macbeth", progress: 100, score: 40, status: "Complete" },
-      { name: "An Inspector Calls", progress: 30, score: 35, status: "In Progress" },
-      { name: "Poetry Anthology", progress: 10, score: 0, status: "In Progress" },      { name: "Language Paper 1", progress: 45, score: 38, status: "In Progress" },
-      { name: "Language Paper 2", progress: 15, score: 0, status: "In Progress" },
-      { name: "Creative Writing", progress: 40, score: 32, status: "In Progress" },
-      { name: "Unseen Poetry", progress: 0, score: 0, status: "Not Started" },
-      { name: "A Christmas Carol", progress: 0, score: 0, status: "Not Started" },
-    ],
-    mockExams: [
-      { name: "English Lang Paper 1 Mock", score: 35, grade: "2", date: "2026-03-15" },
-      { name: "English Lit Paper 1 Mock", score: 30, grade: "2", date: "2026-02-28" },
-    ],
-    essays: [
-      { title: "Macbeth: Violence in the Play", score: 35, feedback: "Essay is too short. Needs to develop ideas fully. Book a support session.", date: "2026-03-10", teacherReviewed: true },
-    ],
-    quizAttempts: [
-      { name: "Macbeth Key Quotes", score: 6, maxScore: 20, date: "2026-03-22" },
-      { name: "Language Devices", score: 5, maxScore: 20, date: "2026-03-18" },
-    ],
-    activityTimeline: [
-      { action: "Incomplete", detail: "Language Paper 1 Q5 -- not submitted", date: "2026-03-18" },
-      { action: "Scored 30%", detail: "Macbeth Key Quotes Quiz", date: "2026-03-15" },
-      { action: "Absent", detail: "Missed Poetry Anthology lesson", date: "2026-03-12" },
-      { action: "Submitted late", detail: "Macbeth Violence Essay (3 days late)", date: "2026-03-10" },
-      { action: "Achieved Grade 2", detail: "English Lang Paper 1 Mock", date: "2026-02-28" },
-    ],
-    recommendations: [
-      "URGENT: Arrange parent/carer meeting to discuss engagement and support plan.",
-      "Set up structured intervention timetable with daily check-ins.",
-      "Break assignments into smaller, achievable chunks with closer deadlines.",
-      "Assign a peer mentor from higher-achieving students for collaborative work.",
-      "Refer to pastoral team to explore any barriers to learning.",
-    ],
-  },  {
-    id: "s5",
-    name: "Sophie Chen",
-    email: "sophie.c@demo-school.edu",
-    yearGroup: "Year 11",
-    className: "11B English",
-    classId: "c2",
-    teacherName: "Mr. Davies",
-    status: "Excelling",
-    overallProgress: 96,
-    averageScore: 94,
-    assignmentsCompleted: 30,
-    assignmentsTotal: 30,
-    modulesCompleted: 10,
-    atRisk: false,
-    lastActive: "3 hours ago",
-    riskReason: "",
-    recentScores: [88, 90, 92, 91, 95, 93, 96, 97],
-    strengths: [
-      { name: "Critical Analysis", score: 97 },
-      { name: "Essay Structure", score: 96 },
-      { name: "Creative Writing", score: 95 },
-      { name: "Quotation Integration", score: 94 },
-      { name: "Exam Technique", score: 93 },
-    ],
-    weaknesses: [
-      { name: "Time Management", score: 78 },
-    ],
-    modules: [
-      { name: "Macbeth", progress: 100, score: 96, status: "Complete" },
-      { name: "An Inspector Calls", progress: 100, score: 94, status: "Complete" },
-      { name: "Poetry Anthology", progress: 100, score: 92, status: "Complete" },      { name: "Language Paper 1", progress: 100, score: 95, status: "Complete" },
-      { name: "Language Paper 2", progress: 100, score: 93, status: "Complete" },
-      { name: "Creative Writing", progress: 100, score: 97, status: "Complete" },
-      { name: "Unseen Poetry", progress: 100, score: 90, status: "Complete" },
-      { name: "A Christmas Carol", progress: 100, score: 94, status: "Complete" },
-    ],
-    mockExams: [
-      { name: "English Lang Paper 1 Mock", score: 95, grade: "9", date: "2026-03-15" },
-      { name: "English Lit Paper 1 Mock", score: 96, grade: "9", date: "2026-02-28" },
-      { name: "English Lang Paper 2 Mock", score: 93, grade: "8", date: "2026-02-01" },
-      { name: "English Lit Paper 2 Mock", score: 94, grade: "9", date: "2026-01-18" },
-    ],
-    essays: [
-      { title: "Macbeth: Masculinity and Power", score: 96, feedback: "Outstanding critical analysis with sophisticated vocabulary. Grade 9 response.", date: "2026-03-20", teacherReviewed: true },
-      { title: "Inspector Calls: Social Class Essay", score: 94, feedback: "Exceptional use of context. Perhaps explore feminist critical theory too.", date: "2026-03-12", teacherReviewed: true },
-      { title: "Language P1 Q5: Narrative Writing", score: 97, feedback: "Brilliant command of language. Consider entering creative writing competitions.", date: "2026-03-05", teacherReviewed: true },
-    ],
-    quizAttempts: [
-      { name: "Macbeth Key Quotes", score: 20, maxScore: 20, date: "2026-03-22" },
-      { name: "Language Devices", score: 19, maxScore: 20, date: "2026-03-18" },
-      { name: "Inspector Calls Context", score: 20, maxScore: 20, date: "2026-03-12" },
-      { name: "Poetry Terminology", score: 18, maxScore: 20, date: "2026-03-05" },
-    ],
-    activityTimeline: [
-      { action: "Completed", detail: "All revision modules for Literature", date: "2026-03-22" },
-      { action: "Scored 100%", detail: "Macbeth Key Quotes Quiz", date: "2026-03-20" },
-      { action: "Submitted", detail: "Extension essay on Feminist Criticism", date: "2026-03-18" },
-      { action: "Achieved Grade 9", detail: "English Lang Paper 1 Mock", date: "2026-03-15" },
-      { action: "Completed", detail: "Creative Writing portfolio (distinction)", date: "2026-03-10" },
-    ],
-    recommendations: [
-      "Challenge with A-Level bridging material to maintain engagement.",
-      "Encourage entering external writing competitions (Young Writers, Foyle).",
-      "Practise strict timed conditions to optimise exam time management.",
-      "Consider peer mentoring role to help support other students.",
-    ],
-  },
-  // ── s6: Excelling, Year 9 ────────────────────────────────────────────────
-  {
-    id: "s6",
-    name: "Priya Sharma",
-    email: "priya.s@demo-school.edu",
-    yearGroup: "Year 9",
-    className: "9C English",
-    classId: "c3",
-    teacherName: "Mrs. Clarke",
-    status: "Excelling",
-    overallProgress: 91,
-    averageScore: 90,
-    assignmentsCompleted: 22,
-    assignmentsTotal: 24,
-    modulesCompleted: 7,
-    atRisk: false,
-    lastActive: "1 hour ago",
-    riskReason: "",
-    recentScores: [82, 85, 88, 90, 87, 92, 91, 94],
-    strengths: [
-      { name: "Creative Writing", score: 96 },
-      { name: "Reading Comprehension", score: 94 },
-      { name: "Vocabulary Range", score: 92 },
-      { name: "Analytical Thinking", score: 90 },
-    ],
-    weaknesses: [
-      { name: "Timed Essay Conditions", score: 72 },
-      { name: "Handwriting Presentation", score: 70 },
-    ],
-    modules: [
-      { name: "Of Mice and Men", progress: 100, score: 92, status: "Complete" },
-      { name: "Poetry: Conflict", progress: 100, score: 90, status: "Complete" },
-      { name: "Persuasive Writing", progress: 100, score: 94, status: "Complete" },
-      { name: "Reading Non-Fiction", progress: 100, score: 88, status: "Complete" },
-      { name: "Shakespeare Introduction", progress: 100, score: 91, status: "Complete" },
-      { name: "Creative Writing KS3", progress: 85, score: 95, status: "In Progress" },
-    ],
-    mockExams: [
-      { name: "KS3 End of Year Reading", score: 92, grade: "8a", date: "2026-03-12" },
-      { name: "KS3 End of Year Writing", score: 90, grade: "7a", date: "2026-03-12" },
-      { name: "Shakespeare Assessment", score: 88, grade: "7a", date: "2026-02-15" },
-    ],
-    essays: [
-      { title: "Of Mice and Men: The American Dream", score: 94, feedback: "Exceptional response with mature critical voice. Consider entering essay competitions.", date: "2026-03-18", teacherReviewed: true },
-      { title: "Descriptive Writing: City at Dawn", score: 96, feedback: "Outstanding sensory language and structural control. A Level standard.", date: "2026-03-08", teacherReviewed: true },
-      { title: "Persuasive Speech: Climate Action", score: 92, feedback: "Powerful rhetoric. Excellent use of tricolon and anaphora.", date: "2026-02-25", teacherReviewed: true },
-      { title: "Poetry Response: Bayonet Charge", score: 88, feedback: "Sophisticated analysis. Explore context more to push to top marks.", date: "2026-02-12", teacherReviewed: true },
-    ],
-    quizAttempts: [
-      { name: "Literary Devices Basics", score: 19, maxScore: 20, date: "2026-03-20" },
-      { name: "Of Mice and Men Characters", score: 20, maxScore: 20, date: "2026-03-14" },
-      { name: "Punctuation Rules", score: 17, maxScore: 20, date: "2026-03-08" },
-      { name: "Poetry Terms", score: 18, maxScore: 20, date: "2026-02-28" },
-      { name: "Spelling Test 4", score: 19, maxScore: 20, date: "2026-02-20" },
-    ],
-    activityTimeline: [
-      { action: "Submitted", detail: "Of Mice and Men Essay", date: "2026-03-18" },
-      { action: "Scored 95%", detail: "Literary Devices Quiz", date: "2026-03-15" },
-      { action: "Won", detail: "School Creative Writing Competition", date: "2026-03-12" },
-      { action: "Completed", detail: "Shakespeare Introduction Module", date: "2026-03-10" },
-      { action: "Submitted", detail: "Descriptive Writing Portfolio", date: "2026-03-08" },
-      { action: "Reviewed", detail: "Teacher feedback on Persuasive Speech", date: "2026-03-05" },
-      { action: "Scored 100%", detail: "Of Mice and Men Quiz", date: "2026-02-28" },
-      { action: "Achieved Grade 8a", detail: "KS3 Reading Assessment", date: "2026-02-20" },
-      { action: "Submitted", detail: "Bayonet Charge Poetry Response", date: "2026-02-12" },
-    ],
-    recommendations: [
-      "Provide GCSE-level extension tasks to maintain challenge and engagement.",
-      "Encourage entering Young Writers or BBC 500 Words competition.",
-      "Practise timed writing to improve speed without sacrificing quality.",
-      "Consider peer mentoring role for struggling students in the class.",
-    ],
-  },
-  // ── s7: On Track, Year 7 ─────────────────────────────────────────────────
-  {
-    id: "s7",
-    name: "Marcus Taylor",
-    email: "marcus.t@demo-school.edu",
-    yearGroup: "Year 7",
-    className: "Year 7 English",
-    classId: "c8",
-    teacherName: "Ms. Williams",
-    status: "On Track",
-    overallProgress: 64,
-    averageScore: 62,
-    assignmentsCompleted: 16,
-    assignmentsTotal: 22,
-    modulesCompleted: 3,
-    atRisk: false,
-    lastActive: "Today",
-    riskReason: "",
-    recentScores: [55, 58, 60, 62, 65, 60, 68, 64],
-    strengths: [
-      { name: "Verbal Reasoning", score: 78 },
-      { name: "Inference Skills", score: 72 },
-      { name: "Group Discussion", score: 70 },
-    ],
-    weaknesses: [
-      { name: "Extended Writing", score: 52 },
-      { name: "Spelling Accuracy", score: 48 },
-      { name: "Handwriting Legibility", score: 50 },
-    ],
-    modules: [
-      { name: "Wonder (novel study)", progress: 100, score: 65, status: "Complete" },
-      { name: "Poetry: Animals", progress: 70, score: 60, status: "In Progress" },
-      { name: "Autobiography Writing", progress: 100, score: 62, status: "Complete" },
-      { name: "Myths and Legends", progress: 55, score: 58, status: "In Progress" },
-      { name: "Introduction to Shakespeare", progress: 100, score: 64, status: "Complete" },
-      { name: "Spelling & Grammar Basics", progress: 40, score: 50, status: "In Progress" },
-    ],
-    mockExams: [
-      { name: "Year 7 Reading Test", score: 65, grade: "5c", date: "2026-03-05" },
-      { name: "Year 7 Writing Test", score: 60, grade: "4a", date: "2026-03-05" },
-      { name: "Spelling Assessment", score: 52, grade: "4b", date: "2026-02-10" },
-    ],
-    essays: [
-      { title: "Wonder: Auggie's Courage", score: 64, feedback: "Good empathy shown. Develop ideas with more evidence from the text.", date: "2026-03-12", teacherReviewed: true },
-      { title: "My Autobiography: Chapter 1", score: 62, feedback: "Engaging voice. Focus on full sentences and paragraphing.", date: "2026-02-28", teacherReviewed: true },
-      { title: "Retelling: Perseus and Medusa", score: 58, feedback: "Exciting narrative but needs more descriptive detail.", date: "2026-02-15", teacherReviewed: true },
-    ],
-    quizAttempts: [
-      { name: "Wonder Characters", score: 14, maxScore: 20, date: "2026-03-18" },
-      { name: "Parts of Speech", score: 11, maxScore: 20, date: "2026-03-10" },
-      { name: "Poetry Terms Intro", score: 12, maxScore: 20, date: "2026-03-02" },
-      { name: "Spelling Test 5", score: 10, maxScore: 20, date: "2026-02-22" },
-      { name: "Punctuation Basics", score: 13, maxScore: 20, date: "2026-02-14" },
-    ],
-    activityTimeline: [
-      { action: "Submitted", detail: "Wonder Essay", date: "2026-03-12" },
-      { action: "Scored 70%", detail: "Wonder Characters Quiz", date: "2026-03-10" },
-      { action: "Started", detail: "Myths and Legends Module", date: "2026-03-08" },
-      { action: "Reviewed", detail: "Teacher feedback on Autobiography", date: "2026-03-05" },
-      { action: "Completed", detail: "Autobiography Writing Module", date: "2026-02-28" },
-      { action: "Scored 55%", detail: "Parts of Speech Quiz", date: "2026-02-22" },
-      { action: "Submitted", detail: "Perseus Retelling", date: "2026-02-15" },
-      { action: "Completed", detail: "Introduction to Shakespeare", date: "2026-02-10" },
-    ],
-    recommendations: [
-      "Use writing frames for extended responses to build paragraph confidence.",
-      "Practise spelling with weekly look-cover-write-check lists from class vocabulary.",
-      "Join the lunchtime reading club to build comprehension stamina.",
-      "Consider word processing for longer writing tasks if handwriting remains a barrier.",
-    ],
-  },
-  // ── s8: On Track, Year 8 ─────────────────────────────────────────────────
-  {
-    id: "s8",
-    name: "Emily Foster",
-    email: "emily.f@demo-school.edu",
-    yearGroup: "Year 8",
-    className: "Year 8 English",
-    classId: "c6",
-    teacherName: "Mr. Roberts",
-    status: "On Track",
-    overallProgress: 70,
-    averageScore: 68,
-    assignmentsCompleted: 18,
-    assignmentsTotal: 24,
-    modulesCompleted: 4,
-    atRisk: false,
-    lastActive: "3 hours ago",
-    riskReason: "",
-    recentScores: [62, 64, 66, 68, 70, 72, 68, 74],
-    strengths: [
-      { name: "Textual Analysis", score: 78 },
-      { name: "Empathetic Response", score: 76 },
-      { name: "Poetry Appreciation", score: 74 },
-    ],
-    weaknesses: [
-      { name: "Argumentative Writing", score: 58 },
-      { name: "Formal Register", score: 55 },
-    ],
-    modules: [
-      { name: "Private Peaceful", progress: 100, score: 72, status: "Complete" },
-      { name: "Poetry: Identity", progress: 80, score: 70, status: "In Progress" },
-      { name: "Descriptive Writing", progress: 100, score: 74, status: "Complete" },
-      { name: "Non-Fiction Reading", progress: 65, score: 64, status: "In Progress" },
-      { name: "Shakespeare: The Tempest", progress: 100, score: 68, status: "Complete" },
-      { name: "Debate & Rhetoric", progress: 50, score: 60, status: "In Progress" },
-    ],
-    mockExams: [
-      { name: "KS3 Reading Assessment", score: 70, grade: "5a", date: "2026-03-08" },
-      { name: "KS3 Writing Assessment", score: 68, grade: "5b", date: "2026-03-08" },
-      { name: "Shakespeare Test", score: 66, grade: "5b", date: "2026-02-12" },
-    ],
-    essays: [
-      { title: "Private Peaceful: Bravery and Sacrifice", score: 72, feedback: "Thoughtful response with good personal engagement. Push for more formal analysis.", date: "2026-03-14", teacherReviewed: true },
-      { title: "Descriptive Writing: A Storm at Sea", score: 76, feedback: "Excellent use of sensory detail and extended metaphor.", date: "2026-03-02", teacherReviewed: true },
-      { title: "The Tempest: Prospero's Power", score: 66, feedback: "Shows understanding but needs more formal analytical vocabulary.", date: "2026-02-18", teacherReviewed: true },
-      { title: "Letter to MP: School Funding", score: 60, feedback: "Good ideas but register slips from formal to informal. Practise persuasive form.", date: "2026-02-05", teacherReviewed: false },
-    ],
-    quizAttempts: [
-      { name: "Literary Devices KS3", score: 15, maxScore: 20, date: "2026-03-18" },
-      { name: "Private Peaceful Characters", score: 16, maxScore: 20, date: "2026-03-12" },
-      { name: "Grammar Essentials", score: 13, maxScore: 20, date: "2026-03-05" },
-      { name: "The Tempest Key Scenes", score: 14, maxScore: 20, date: "2026-02-25" },
-      { name: "Spelling & Vocabulary 3", score: 14, maxScore: 20, date: "2026-02-15" },
-    ],
-    activityTimeline: [
-      { action: "Submitted", detail: "Private Peaceful Essay", date: "2026-03-14" },
-      { action: "Scored 75%", detail: "Literary Devices Quiz", date: "2026-03-12" },
-      { action: "Completed", detail: "Poetry Identity Section 3", date: "2026-03-10" },
-      { action: "Started", detail: "Debate & Rhetoric Module", date: "2026-03-08" },
-      { action: "Reviewed", detail: "Teacher feedback on Descriptive Writing", date: "2026-03-05" },
-      { action: "Submitted", detail: "Descriptive Writing Final", date: "2026-03-02" },
-      { action: "Completed", detail: "The Tempest Module", date: "2026-02-22" },
-      { action: "Scored 70%", detail: "The Tempest Key Scenes Quiz", date: "2026-02-15" },
-    ],
-    recommendations: [
-      "Practise formal letter and speech writing to strengthen argumentative register.",
-      "Read non-fiction articles weekly to build familiarity with formal language.",
-      "Continue strong descriptive writing -- consider submitting to school magazine.",
-      "Use analytical sentence starters to bridge from personal to formal response.",
-    ],
-  },
-  // ── s9: On Track, Year 11 ────────────────────────────────────────────────
-  {
-    id: "s9",
-    name: "Daniel Okafor",
-    email: "daniel.o@demo-school.edu",
-    yearGroup: "Year 11",
-    className: "11A English Lang",
-    classId: "c5",
-    teacherName: "Ms. Khan",
-    status: "On Track",
-    overallProgress: 78,
-    averageScore: 76,
-    assignmentsCompleted: 20,
-    assignmentsTotal: 24,
-    modulesCompleted: 6,
-    atRisk: false,
-    lastActive: "Yesterday",
-    riskReason: "",
-    recentScores: [70, 72, 74, 76, 78, 75, 80, 77],
-    strengths: [
-      { name: "Language Analysis", score: 84 },
-      { name: "Comparison Skills", score: 80 },
-      { name: "Exam Technique", score: 78 },
-    ],
-    weaknesses: [
-      { name: "Creative Writing Openings", score: 62 },
-      { name: "Vocabulary Range", score: 60 },
-    ],
-    modules: [
-      { name: "Language Paper 1 Section A", progress: 100, score: 80, status: "Complete" },
-      { name: "Language Paper 1 Section B", progress: 100, score: 72, status: "Complete" },
-      { name: "Language Paper 2 Section A", progress: 85, score: 78, status: "In Progress" },
-      { name: "Language Paper 2 Section B", progress: 70, score: 74, status: "In Progress" },
-      { name: "Spoken Language", progress: 100, score: 82, status: "Complete" },
-      { name: "Revision & Practice Papers", progress: 60, score: 76, status: "In Progress" },
-    ],
-    mockExams: [
-      { name: "English Lang Paper 1 Mock", score: 78, grade: "6", date: "2026-03-15" },
-      { name: "English Lang Paper 2 Mock", score: 76, grade: "6", date: "2026-02-28" },
-      { name: "Spoken Language Assessment", score: 80, grade: "Merit", date: "2026-02-01" },
-    ],
-    essays: [
-      { title: "Lang P1 Q5: Descriptive Writing", score: 72, feedback: "Solid structure. Opening needs more impact -- try starting in medias res.", date: "2026-03-18", teacherReviewed: true },
-      { title: "Lang P2 Q5: Argumentative Writing", score: 78, feedback: "Strong rhetorical devices. Excellent counter-argument technique.", date: "2026-03-08", teacherReviewed: true },
-      { title: "Lang P1 Q2: Language Analysis", score: 80, feedback: "Precise analysis with well-embedded quotations. Keep this standard.", date: "2026-02-22", teacherReviewed: true },
-    ],
-    quizAttempts: [
-      { name: "Language Paper 1 Terminology", score: 16, maxScore: 20, date: "2026-03-22" },
-      { name: "Rhetorical Devices", score: 15, maxScore: 20, date: "2026-03-18" },
-      { name: "Narrative Techniques", score: 14, maxScore: 20, date: "2026-03-12" },
-      { name: "Grammar & Syntax", score: 13, maxScore: 20, date: "2026-03-05" },
-      { name: "Spelling Test 8", score: 12, maxScore: 20, date: "2026-02-28" },
-    ],
-    activityTimeline: [
-      { action: "Submitted", detail: "Lang P1 Q5 Practice Essay", date: "2026-03-18" },
-      { action: "Scored 80%", detail: "Language Paper 1 Terminology Quiz", date: "2026-03-15" },
-      { action: "Completed", detail: "Paper 2 Section A Module", date: "2026-03-12" },
-      { action: "Started", detail: "Revision & Practice Papers", date: "2026-03-10" },
-      { action: "Reviewed", detail: "Teacher feedback on Argumentative Essay", date: "2026-03-08" },
-      { action: "Achieved Grade 6", detail: "English Lang Paper 1 Mock", date: "2026-03-05" },
-      { action: "Submitted", detail: "Language Analysis Practice", date: "2026-02-22" },
-      { action: "Completed", detail: "Spoken Language Assessment", date: "2026-02-15" },
-    ],
-    recommendations: [
-      "Study published openings to improve creative writing introductions.",
-      "Build a wider vocabulary bank with context-specific word lists.",
-      "Continue strong exam technique -- aim for Grade 7 boundary in next mock.",
-      "Complete Paper 2 Section B module to ensure full exam coverage.",
-    ],
-  },
-  // ── s10: On Track, Year 10 ───────────────────────────────────────────────
-  {
-    id: "s10",
-    name: "Chloe Morgan",
-    email: "chloe.m@demo-school.edu",
-    yearGroup: "Year 10",
-    className: "10B English Lit",
-    classId: "c4",
-    teacherName: "Mr. Davies",
-    status: "On Track",
-    overallProgress: 72,
-    averageScore: 70,
-    assignmentsCompleted: 18,
-    assignmentsTotal: 24,
-    modulesCompleted: 4,
-    atRisk: false,
-    lastActive: "Today",
-    riskReason: "",
-    recentScores: [64, 66, 68, 70, 72, 69, 74, 72],
-    strengths: [
-      { name: "Character Analysis", score: 80 },
-      { name: "Context Understanding", score: 78 },
-      { name: "Group Discussion", score: 76 },
-    ],
-    weaknesses: [
-      { name: "Poetic Form Analysis", score: 56 },
-      { name: "Timed Writing Speed", score: 58 },
-    ],
-    modules: [
-      { name: "Romeo and Juliet", progress: 100, score: 74, status: "Complete" },
-      { name: "An Inspector Calls", progress: 100, score: 72, status: "Complete" },
-      { name: "Poetry Anthology", progress: 65, score: 66, status: "In Progress" },
-      { name: "A Christmas Carol", progress: 100, score: 70, status: "Complete" },
-      { name: "Unseen Poetry", progress: 35, score: 58, status: "In Progress" },
-      { name: "Exam Revision", progress: 20, score: 0, status: "In Progress" },
-    ],
-    mockExams: [
-      { name: "English Lit Paper 1 Mock", score: 72, grade: "5", date: "2026-03-15" },
-      { name: "English Lit Paper 2 Mock", score: 68, grade: "5", date: "2026-02-28" },
-      { name: "Unseen Poetry Practice", score: 60, grade: "4", date: "2026-02-01" },
-    ],
-    essays: [
-      { title: "Romeo and Juliet: Fate and Free Will", score: 74, feedback: "Good argument well supported by quotations. Push for more critical perspective.", date: "2026-03-18", teacherReviewed: true },
-      { title: "Inspector Calls: Birling as a Symbol", score: 72, feedback: "Strong contextual awareness. Explore Priestley's dramatic methods more.", date: "2026-03-05", teacherReviewed: true },
-      { title: "Christmas Carol: Scrooge's Transformation", score: 70, feedback: "Solid response. Use more varied vocabulary for higher marks.", date: "2026-02-20", teacherReviewed: true },
-    ],
-    quizAttempts: [
-      { name: "Romeo and Juliet Quotes", score: 15, maxScore: 20, date: "2026-03-22" },
-      { name: "Inspector Calls Context", score: 14, maxScore: 20, date: "2026-03-18" },
-      { name: "Poetry Terminology", score: 11, maxScore: 20, date: "2026-03-12" },
-      { name: "Christmas Carol Themes", score: 14, maxScore: 20, date: "2026-03-05" },
-      { name: "Unseen Poetry Practice", score: 10, maxScore: 20, date: "2026-02-28" },
-    ],
-    activityTimeline: [
-      { action: "Submitted", detail: "Romeo and Juliet Essay", date: "2026-03-18" },
-      { action: "Scored 75%", detail: "Romeo and Juliet Quotes Quiz", date: "2026-03-15" },
-      { action: "Completed", detail: "Poetry Anthology Section 4", date: "2026-03-12" },
-      { action: "Started", detail: "Unseen Poetry Module", date: "2026-03-10" },
-      { action: "Reviewed", detail: "Teacher feedback on Inspector Calls Essay", date: "2026-03-08" },
-      { action: "Achieved Grade 5", detail: "English Lit Paper 1 Mock", date: "2026-03-05" },
-      { action: "Submitted", detail: "Christmas Carol Essay", date: "2026-02-20" },
-      { action: "Completed", detail: "A Christmas Carol Module", date: "2026-02-15" },
-    ],
-    recommendations: [
-      "Focus on unseen poetry practice -- learn the SMILE framework for analysis.",
-      "Build timed writing stamina with weekly practice under exam conditions.",
-      "Study poetic forms (sonnet, ballad, dramatic monologue) with examples.",
-      "Aim for Grade 6 in next mock by developing vocabulary and critical language.",
-    ],
-  },
-  // ── s11: On Track, Year 10 (IGCSE) ───────────────────────────────────────
-  {
-    id: "s11",
-    name: "Yuki Tanaka",
-    email: "yuki.t@demo-school.edu",
-    yearGroup: "Year 10",
-    className: "IGCSE Language A",
-    classId: "c7",
-    teacherName: "Dr. Chen",
-    status: "On Track",
-    overallProgress: 80,
-    averageScore: 78,
-    assignmentsCompleted: 18,
-    assignmentsTotal: 20,
-    modulesCompleted: 5,
-    atRisk: false,
-    lastActive: "Today",
-    riskReason: "",
-    recentScores: [72, 74, 76, 78, 80, 78, 82, 80],
-    strengths: [
-      { name: "Summary Writing", score: 86 },
-      { name: "Directed Writing", score: 84 },
-      { name: "Reading Comprehension", score: 82 },
-    ],
-    weaknesses: [
-      { name: "Descriptive Composition", score: 64 },
-      { name: "Inference Beyond the Text", score: 66 },
-    ],
-    modules: [
-      { name: "IGCSE Reading Paper 1", progress: 100, score: 82, status: "Complete" },
-      { name: "IGCSE Directed Writing", progress: 100, score: 80, status: "Complete" },
-      { name: "IGCSE Summary Skills", progress: 100, score: 84, status: "Complete" },
-      { name: "IGCSE Composition: Narrative", progress: 70, score: 72, status: "In Progress" },
-      { name: "IGCSE Composition: Descriptive", progress: 55, score: 64, status: "In Progress" },
-      { name: "IGCSE Exam Practice", progress: 40, score: 76, status: "In Progress" },
-    ],
-    mockExams: [
-      { name: "IGCSE Paper 1 Mock", score: 80, grade: "B", date: "2026-03-15" },
-      { name: "IGCSE Paper 2 Mock", score: 76, grade: "B", date: "2026-02-28" },
-      { name: "Summary Skills Test", score: 84, grade: "A", date: "2026-02-01" },
-    ],
-    essays: [
-      { title: "Directed Writing: Letter to Editor on Deforestation", score: 82, feedback: "Strong register and persuasive techniques. Consider audience awareness more.", date: "2026-03-18", teacherReviewed: true },
-      { title: "Narrative Composition: The Unexpected Journey", score: 74, feedback: "Good plot structure. Develop descriptive passages and character interiority.", date: "2026-03-05", teacherReviewed: true },
-      { title: "Summary: Coral Reef Decline", score: 86, feedback: "Excellent concision and accuracy. One of the best summaries in the class.", date: "2026-02-20", teacherReviewed: true },
-    ],
-    quizAttempts: [
-      { name: "IGCSE Reading Techniques", score: 17, maxScore: 20, date: "2026-03-22" },
-      { name: "Summary Writing Rules", score: 18, maxScore: 20, date: "2026-03-18" },
-      { name: "Directed Writing Conventions", score: 16, maxScore: 20, date: "2026-03-12" },
-      { name: "Descriptive Techniques", score: 13, maxScore: 20, date: "2026-03-05" },
-      { name: "Vocabulary: Formal Register", score: 15, maxScore: 20, date: "2026-02-28" },
-    ],
-    activityTimeline: [
-      { action: "Submitted", detail: "Directed Writing Practice", date: "2026-03-18" },
-      { action: "Scored 85%", detail: "IGCSE Reading Techniques Quiz", date: "2026-03-15" },
-      { action: "Completed", detail: "Summary Skills Module", date: "2026-03-12" },
-      { action: "Started", detail: "Descriptive Composition Module", date: "2026-03-10" },
-      { action: "Reviewed", detail: "Teacher feedback on Narrative Composition", date: "2026-03-08" },
-      { action: "Achieved Grade B", detail: "IGCSE Paper 1 Mock", date: "2026-03-05" },
-      { action: "Submitted", detail: "Coral Reef Summary Exercise", date: "2026-02-20" },
-      { action: "Completed", detail: "Directed Writing Module", date: "2026-02-15" },
-    ],
-    recommendations: [
-      "Study model descriptive compositions to develop sensory language and atmosphere.",
-      "Practise making inferences by reading between the lines in unseen passages.",
-      "Aim for Grade A in next mock by strengthening composition marks.",
-      "Use reading journal to note effective descriptive techniques from personal reading.",
-    ],
-  },
-  // ── s12: Needs Support, Year 9 ───────────────────────────────────────────
-  {
-    id: "s12",
-    name: "Ryan Fletcher",
-    email: "ryan.f@demo-school.edu",
-    yearGroup: "Year 9",
-    className: "9A English Lit",
-    classId: "c9",
-    teacherName: "Mrs. Okafor",
-    status: "Needs Support",
-    overallProgress: 45,
-    averageScore: 48,
-    assignmentsCompleted: 10,
-    assignmentsTotal: 22,
-    modulesCompleted: 2,
-    atRisk: true,
-    lastActive: "3 days ago",
-    riskReason: "Declining scores and low assignment completion rate",
-    recentScores: [50, 48, 45, 52, 46, 50, 44, 48],
-    strengths: [
-      { name: "Verbal Comprehension", score: 68 },
-      { name: "Peer Collaboration", score: 65 },
-    ],
-    weaknesses: [
-      { name: "Independent Writing", score: 40 },
-      { name: "Reading Stamina", score: 42 },
-      { name: "Punctuation", score: 38 },
-    ],
-    modules: [
-      { name: "Much Ado About Nothing", progress: 100, score: 52, status: "Complete" },
-      { name: "Poetry: War & Conflict", progress: 40, score: 45, status: "In Progress" },
-      { name: "Narrative Writing", progress: 100, score: 48, status: "Complete" },
-      { name: "Non-Fiction Texts", progress: 25, score: 40, status: "In Progress" },
-      { name: "Gothic Literature", progress: 30, score: 42, status: "In Progress" },
-      { name: "Speaking & Listening", progress: 60, score: 58, status: "In Progress" },
-    ],
-    mockExams: [
-      { name: "KS3 Reading Assessment", score: 48, grade: "4c", date: "2026-03-12" },
-      { name: "KS3 Writing Assessment", score: 42, grade: "3a", date: "2026-03-12" },
-      { name: "Shakespeare Assessment", score: 45, grade: "4c", date: "2026-02-15" },
-    ],
-    essays: [
-      { title: "Much Ado: Beatrice and Benedick", score: 48, feedback: "Basic understanding shown. Needs to develop points beyond surface level.", date: "2026-03-10", teacherReviewed: true },
-      { title: "Narrative Writing: The Chase", score: 52, feedback: "Some good ideas. Work on paragraphing and varied sentence structures.", date: "2026-02-25", teacherReviewed: true },
-      { title: "Gothic Extract Response", score: 40, feedback: "Very brief. Use the writing frame and aim for three developed paragraphs.", date: "2026-02-12", teacherReviewed: true },
-    ],
-    quizAttempts: [
-      { name: "Shakespeare Terminology", score: 9, maxScore: 20, date: "2026-03-20" },
-      { name: "Much Ado Characters", score: 11, maxScore: 20, date: "2026-03-14" },
-      { name: "Punctuation Rules", score: 7, maxScore: 20, date: "2026-03-08" },
-      { name: "Poetry Terms", score: 8, maxScore: 20, date: "2026-02-28" },
-      { name: "Spelling Test 4", score: 10, maxScore: 20, date: "2026-02-20" },
-    ],
-    activityTimeline: [
-      { action: "Submitted late", detail: "Much Ado Essay (2 days late)", date: "2026-03-10" },
-      { action: "Scored 45%", detail: "Shakespeare Terminology Quiz", date: "2026-03-08" },
-      { action: "Started", detail: "Gothic Literature Module", date: "2026-03-05" },
-      { action: "Absent", detail: "Missed Poetry lesson", date: "2026-03-02" },
-      { action: "Reviewed", detail: "Teacher feedback on Narrative Writing", date: "2026-02-28" },
-      { action: "Submitted", detail: "Narrative Writing Draft", date: "2026-02-25" },
-      { action: "Scored 40%", detail: "Gothic Extract Response", date: "2026-02-12" },
-      { action: "Completed", detail: "Much Ado Module", date: "2026-02-08" },
-    ],
-    recommendations: [
-      "Provide differentiated reading materials at appropriate challenge level.",
-      "Use structured writing frames for all extended writing tasks.",
-      "Set shorter, more frequent writing targets rather than long essays.",
-      "Pair with a reading buddy for class reading activities.",
-      "Refer to literacy intervention programme for targeted punctuation support.",
-    ],
-  },
-  // ── s13: Needs Support, Year 7 ───────────────────────────────────────────
-  {
-    id: "s13",
-    name: "Jasmine Patel",
-    email: "jasmine.p@demo-school.edu",
-    yearGroup: "Year 7",
-    className: "Year 7 English",
-    classId: "c8",
-    teacherName: "Ms. Williams",
-    status: "Needs Support",
-    overallProgress: 50,
-    averageScore: 48,
-    assignmentsCompleted: 14,
-    assignmentsTotal: 22,
-    modulesCompleted: 3,
-    atRisk: true,
-    lastActive: "2 days ago",
-    riskReason: "Reading speed significantly below age-related expectations",
-    recentScores: [46, 48, 44, 50, 52, 48, 54, 50],
-    strengths: [
-      { name: "Listening Comprehension", score: 72 },
-      { name: "Visual Literacy", score: 68 },
-    ],
-    weaknesses: [
-      { name: "Written Fluency", score: 44 },
-      { name: "Sentence Structure", score: 42 },
-      { name: "Reading Speed", score: 38 },
-    ],
-    modules: [
-      { name: "Wonder (novel study)", progress: 100, score: 52, status: "Complete" },
-      { name: "Poetry: Animals", progress: 55, score: 48, status: "In Progress" },
-      { name: "Autobiography Writing", progress: 100, score: 50, status: "Complete" },
-      { name: "Myths and Legends", progress: 40, score: 46, status: "In Progress" },
-      { name: "Introduction to Shakespeare", progress: 100, score: 48, status: "Complete" },
-      { name: "Spelling & Grammar Basics", progress: 65, score: 42, status: "In Progress" },
-    ],
-    mockExams: [
-      { name: "Year 7 Reading Test", score: 48, grade: "3a", date: "2026-03-05" },
-      { name: "Year 7 Writing Test", score: 46, grade: "3b", date: "2026-03-05" },
-      { name: "Spelling Assessment", score: 40, grade: "3c", date: "2026-02-10" },
-    ],
-    essays: [
-      { title: "Wonder: Auggie's Journey", score: 50, feedback: "Good empathy shown. Practise using connectives to link your ideas.", date: "2026-03-12", teacherReviewed: true },
-      { title: "My Autobiography: Chapter 1", score: 48, feedback: "Interesting content. Focus on full stops and capital letters.", date: "2026-02-28", teacherReviewed: true },
-      { title: "Retelling: Theseus and the Minotaur", score: 44, feedback: "Good story knowledge. Needs more descriptive detail in writing.", date: "2026-02-15", teacherReviewed: true },
-    ],
-    quizAttempts: [
-      { name: "Wonder Characters", score: 12, maxScore: 20, date: "2026-03-18" },
-      { name: "Parts of Speech", score: 9, maxScore: 20, date: "2026-03-10" },
-      { name: "Poetry Terms Intro", score: 10, maxScore: 20, date: "2026-03-02" },
-      { name: "Spelling Test 5", score: 8, maxScore: 20, date: "2026-02-22" },
-      { name: "Punctuation Basics", score: 9, maxScore: 20, date: "2026-02-14" },
-    ],
-    activityTimeline: [
-      { action: "Submitted", detail: "Wonder Essay", date: "2026-03-12" },
-      { action: "Scored 60%", detail: "Wonder Characters Quiz", date: "2026-03-10" },
-      { action: "Started", detail: "Myths and Legends Module", date: "2026-03-08" },
-      { action: "Reviewed", detail: "Teacher feedback on Autobiography", date: "2026-03-05" },
-      { action: "Completed", detail: "Autobiography Writing Module", date: "2026-02-28" },
-      { action: "Scored 45%", detail: "Parts of Speech Quiz", date: "2026-02-22" },
-      { action: "Submitted", detail: "Theseus Retelling", date: "2026-02-15" },
-      { action: "Completed", detail: "Introduction to Shakespeare", date: "2026-02-10" },
-    ],
-    recommendations: [
-      "Provide sentence starter cards for all writing tasks to build fluency.",
-      "Use paired reading with a Year 9 reading buddy twice per week.",
-      "Focus on basic punctuation through daily 5-minute starter activities.",
-      "Set personal spelling list of 10 words per week from class texts.",
-      "Consider referral to SEN team for reading speed assessment.",
-    ],
-  },
-  // ── s14: At Risk, Year 11 ────────────────────────────────────────────────
-  {
-    id: "s14",
-    name: "Tyler Brooks",
-    email: "tyler.b@demo-school.edu",
-    yearGroup: "Year 11",
-    className: "11B English",
-    classId: "c2",
-    teacherName: "Mr. Patel",
-    status: "At Risk",
-    overallProgress: 22,
-    averageScore: 30,
-    assignmentsCompleted: 5,
-    assignmentsTotal: 26,
-    modulesCompleted: 0,
-    atRisk: true,
-    lastActive: "2 weeks ago",
-    riskReason: "Attendance below 60%; no assignments submitted in 3 weeks",
-    recentScores: [35, 30, 28, 25, 32, 22, 28, 20],
-    strengths: [
-      { name: "Verbal Understanding", score: 55 },
-    ],
-    weaknesses: [
-      { name: "Attendance", score: 20 },
-      { name: "Assignment Submission", score: 19 },
-      { name: "Written Expression", score: 28 },
-      { name: "Reading Comprehension", score: 32 },
-      { name: "Exam Preparation", score: 22 },
-    ],
-    modules: [
-      { name: "Macbeth", progress: 60, score: 32, status: "In Progress" },
-      { name: "An Inspector Calls", progress: 20, score: 28, status: "In Progress" },
-      { name: "Poetry Anthology", progress: 5, score: 0, status: "In Progress" },
-      { name: "Language Paper 1", progress: 30, score: 30, status: "In Progress" },
-      { name: "Language Paper 2", progress: 10, score: 0, status: "In Progress" },
-      { name: "Creative Writing", progress: 25, score: 25, status: "In Progress" },
-      { name: "Unseen Poetry", progress: 0, score: 0, status: "Not Started" },
-      { name: "A Christmas Carol", progress: 0, score: 0, status: "Not Started" },
-    ],
-    mockExams: [
-      { name: "English Lang Paper 1 Mock", score: 28, grade: "1", date: "2026-03-15" },
-      { name: "English Lit Paper 1 Mock", score: 22, grade: "1", date: "2026-02-28" },
-    ],
-    essays: [
-      { title: "Macbeth: Power Essay", score: 30, feedback: "Attempt shows some understanding but needs significantly more development.", date: "2026-03-05", teacherReviewed: true },
-    ],
-    quizAttempts: [
-      { name: "Macbeth Key Quotes", score: 4, maxScore: 20, date: "2026-03-22" },
-      { name: "Language Devices", score: 3, maxScore: 20, date: "2026-03-18" },
-    ],
-    activityTimeline: [
-      { action: "Absent", detail: "Missed 3 consecutive lessons", date: "2026-03-20" },
-      { action: "Scored 20%", detail: "Macbeth Key Quotes Quiz", date: "2026-03-15" },
-      { action: "Incomplete", detail: "Inspector Calls homework not submitted", date: "2026-03-10" },
-      { action: "Absent", detail: "Missed Language Paper 1 lesson", date: "2026-03-08" },
-      { action: "Submitted late", detail: "Macbeth Power Essay (1 week late)", date: "2026-03-05" },
-      { action: "Achieved Grade 1", detail: "English Lit Paper 1 Mock", date: "2026-02-28" },
-      { action: "Absent", detail: "Missed Poetry lesson", date: "2026-02-25" },
-      { action: "Absent", detail: "Missed Creative Writing lesson", date: "2026-02-20" },
-    ],
-    recommendations: [
-      "CRITICAL: Attendance below 60% -- immediate pastoral and safeguarding referral required.",
-      "Arrange emergency meeting with parent/carer, Head of Year, and SENCO.",
-      "Provide 1:1 catch-up sessions during registration or break times.",
-      "Consider alternative provision or modified timetable to support re-engagement.",
-      "Set up daily check-in system with form tutor and subject teacher.",
-    ],
-  },
-  // ── s15: At Risk, Year 8 ─────────────────────────────────────────────────
-  {
-    id: "s15",
-    name: "Kayla Henderson",
-    email: "kayla.h@demo-school.edu",
-    yearGroup: "Year 8",
-    className: "Year 8 English",
-    classId: "c6",
-    teacherName: "Mr. Roberts",
-    status: "At Risk",
-    overallProgress: 32,
-    averageScore: 38,
-    assignmentsCompleted: 8,
-    assignmentsTotal: 24,
-    modulesCompleted: 1,
-    atRisk: true,
-    lastActive: "4 days ago",
-    riskReason: "Reading confidence very low; written output significantly below expectations",
-    recentScores: [38, 35, 40, 36, 42, 34, 38, 35],
-    strengths: [
-      { name: "Creativity (Art-Based)", score: 62 },
-      { name: "Drama Participation", score: 60 },
-    ],
-    weaknesses: [
-      { name: "Reading Confidence", score: 30 },
-      { name: "Written Output", score: 28 },
-      { name: "Concentration", score: 32 },
-      { name: "Homework Completion", score: 33 },
-    ],
-    modules: [
-      { name: "Private Peaceful", progress: 70, score: 40, status: "In Progress" },
-      { name: "Poetry: Identity", progress: 20, score: 35, status: "In Progress" },
-      { name: "Descriptive Writing", progress: 100, score: 42, status: "Complete" },
-      { name: "Non-Fiction Reading", progress: 15, score: 0, status: "In Progress" },
-      { name: "Shakespeare: The Tempest", progress: 40, score: 35, status: "In Progress" },
-      { name: "Media Literacy", progress: 10, score: 0, status: "In Progress" },
-      { name: "Debate & Rhetoric", progress: 55, score: 38, status: "In Progress" },
-    ],
-    mockExams: [
-      { name: "KS3 Reading Assessment", score: 35, grade: "3c", date: "2026-03-08" },
-      { name: "KS3 Writing Assessment", score: 38, grade: "3b", date: "2026-03-08" },
-    ],
-    essays: [
-      { title: "Private Peaceful: Brothers' Bond", score: 40, feedback: "Emotional response but very short. Needs to write more and use evidence.", date: "2026-03-08", teacherReviewed: true },
-      { title: "Descriptive Writing: My Favourite Place", score: 42, feedback: "Some nice ideas. Work on sentence variety and paragraphing.", date: "2026-02-20", teacherReviewed: true },
-    ],
-    quizAttempts: [
-      { name: "Literary Devices KS3", score: 7, maxScore: 20, date: "2026-03-18" },
-      { name: "Private Peaceful Characters", score: 8, maxScore: 20, date: "2026-03-12" },
-      { name: "Grammar Essentials", score: 6, maxScore: 20, date: "2026-03-05" },
-      { name: "The Tempest Key Scenes", score: 7, maxScore: 20, date: "2026-02-25" },
-      { name: "Spelling & Vocabulary 3", score: 8, maxScore: 20, date: "2026-02-15" },
-    ],
-    activityTimeline: [
-      { action: "Incomplete", detail: "Private Peaceful Chapter 8 questions", date: "2026-03-18" },
-      { action: "Scored 35%", detail: "Literary Devices Quiz", date: "2026-03-15" },
-      { action: "Submitted", detail: "Private Peaceful Essay (with TA support)", date: "2026-03-08" },
-      { action: "Absent", detail: "Missed Poetry lesson", date: "2026-03-05" },
-      { action: "Incomplete", detail: "Non-Fiction Reading homework", date: "2026-03-02" },
-      { action: "Achieved Grade 3c", detail: "KS3 Reading Assessment", date: "2026-02-28" },
-      { action: "Submitted", detail: "Descriptive Writing with scaffold", date: "2026-02-20" },
-      { action: "Absent", detail: "Missed Shakespeare lesson", date: "2026-02-15" },
-      { action: "Reviewed", detail: "Learning support plan meeting", date: "2026-02-10" },
-    ],
-    recommendations: [
-      "Implement individual learning support plan with TA assistance in lessons.",
-      "Use visual and drama-based approaches to engage with texts.",
-      "Provide audio versions of class texts alongside written copies.",
-      "Set up structured homework support session after school on Tuesdays.",
-      "Link English tasks to art and drama interests where possible.",
-    ],
-  },
-];
+  // ── Year 7 (7 students) ──
+  { id: "s1", name: "Oliver Hughes", email: "o.hughes@riverside.ac.uk", yearGroup: "Year 7", className: "7A English", teacher: "Priya Sharma", overallProgress: 82, averageScore: 78, assignmentsCompleted: 14, assignmentsTotal: 16, lastActive: "Today", status: "on-track", strengths: ["Creative writing", "Vocabulary range"], weaknesses: ["Spelling accuracy", "Paragraphing"], recentScores: [75, 72, 80, 78, 82, 79, 85, 81], mockExamResults: [{ exam: "KS3 Autumn Assessment", score: 76, grade: "5", date: "2025-12-10" }], essaySubmissions: [{ title: "My Favourite Place - Descriptive Writing", score: 78, feedback: "Vivid imagery and strong vocabulary. Work on paragraph transitions.", date: "2026-03-15" }, { title: "Letter to the Headteacher", score: 74, feedback: "Good persuasive techniques. Check spelling of key words.", date: "2026-02-20" }], moduleProgress: [{ module: "Descriptive Writing", progress: 100, score: 78, status: "completed" }, { module: "Poetry Introduction", progress: 65, score: 72, status: "in-progress" }, { module: "Reading Comprehension", progress: 80, score: 80, status: "in-progress" }], quizAttempts: [{ quiz: "Figurative Language Quiz", score: 8, maxScore: 10, date: "2026-03-28" }, { quiz: "Grammar Basics", score: 7, maxScore: 10, date: "2026-03-14" }], activityLog: [{ action: "Completed Descriptive Writing module", date: "2026-03-20" }, { action: "Scored 8/10 on Figurative Language Quiz", date: "2026-03-28" }], recommendations: ["Practise paragraphing with the Paragraph Structure worksheet", "Try the Spelling Patterns revision cards"], atRisk: false, riskReason: "", classId: "7a-english", teacherName: "Priya Sharma", modulesCompleted: 1, modules: [{ name: "Descriptive Writing", progress: 100, score: 78 }, { name: "Poetry Introduction", progress: 65, score: 72 }, { name: "Reading Comprehension", progress: 80, score: 80 }], mockExams: [{ name: "KS3 Autumn Assessment", score: 76, grade: "5", date: "2025-12-10" }], essays: [{ title: "My Favourite Place - Descriptive Writing", score: 78, feedback: "Vivid imagery and strong vocabulary. Work on paragraph transitions.", date: "2026-03-15" }, { title: "Letter to the Headteacher", score: 74, feedback: "Good persuasive techniques. Check spelling of key words.", date: "2026-02-20" }], activityTimeline: [{ action: "Completed Descriptive Writing module", date: "2026-03-20", type: "activity" }, { action: "Scored 8/10 on Figurative Language Quiz", date: "2026-03-28", type: "activity" }] },
+  { id: "s2", name: "Amara Osei", email: "a.osei@riverside.ac.uk", yearGroup: "Year 7", className: "7B English", teacher: "Emma Thornton", overallProgress: 91, averageScore: 88, assignmentsCompleted: 16, assignmentsTotal: 16, lastActive: "Today", status: "excelling", strengths: ["Analytical reading", "Sentence variety", "SPaG"], weaknesses: ["Time management in timed tasks"], recentScores: [85, 88, 90, 86, 92, 89, 91, 87], mockExamResults: [{ exam: "KS3 Autumn Assessment", score: 88, grade: "7", date: "2025-12-10" }], essaySubmissions: [{ title: "Character Analysis - Matilda", score: 90, feedback: "Excellent use of evidence and perceptive analysis. Outstanding work.", date: "2026-03-18" }], moduleProgress: [{ module: "Descriptive Writing", progress: 100, score: 90, status: "completed" }, { module: "Poetry Introduction", progress: 100, score: 88, status: "completed" }, { module: "Reading Comprehension", progress: 90, score: 86, status: "in-progress" }], quizAttempts: [{ quiz: "Figurative Language Quiz", score: 10, maxScore: 10, date: "2026-03-28" }], activityLog: [{ action: "Completed Poetry Introduction module", date: "2026-03-22" }], recommendations: ["Challenge yourself with the Year 8 extension reading tasks"], atRisk: false, riskReason: "", classId: "7b-english", teacherName: "Emma Thornton", modulesCompleted: 2, modules: [{ name: "Descriptive Writing", progress: 100, score: 90 }, { name: "Poetry Introduction", progress: 100, score: 88 }, { name: "Reading Comprehension", progress: 90, score: 86 }], mockExams: [{ name: "KS3 Autumn Assessment", score: 88, grade: "7", date: "2025-12-10" }], essays: [{ title: "Character Analysis - Matilda", score: 90, feedback: "Excellent use of evidence and perceptive analysis. Outstanding work.", date: "2026-03-18" }], activityTimeline: [{ action: "Completed Poetry Introduction module", date: "2026-03-22", type: "activity" }] },
+  { id: "s3", name: "Ethan Clarke", email: "e.clarke@riverside.ac.uk", yearGroup: "Year 7", className: "7C English", teacher: "James Patterson", overallProgress: 45, averageScore: 42, assignmentsCompleted: 8, assignmentsTotal: 16, lastActive: "5 days ago", status: "at-risk", strengths: ["Verbal contributions in class"], weaknesses: ["Written expression", "Reading fluency", "Homework completion"], recentScores: [48, 40, 45, 38, 42, 44, 40, 39], mockExamResults: [{ exam: "KS3 Autumn Assessment", score: 40, grade: "2", date: "2025-12-10" }], essaySubmissions: [{ title: "My Favourite Place - Descriptive Writing", score: 38, feedback: "Some good ideas but needs much more development. Focus on full sentences.", date: "2026-03-15" }], moduleProgress: [{ module: "Descriptive Writing", progress: 50, score: 42, status: "in-progress" }, { module: "Poetry Introduction", progress: 20, score: 38, status: "in-progress" }, { module: "Reading Comprehension", progress: 30, score: 44, status: "in-progress" }], quizAttempts: [{ quiz: "Grammar Basics", score: 4, maxScore: 10, date: "2026-03-14" }], activityLog: [{ action: "Submitted essay: My Favourite Place", date: "2026-03-15" }], recommendations: ["Complete the Sentence Building scaffolded worksheets", "Use the SEND reading support resources", "Daily 10-minute reading practice"], atRisk: false, riskReason: "", classId: "7c-english", teacherName: "James Patterson", modulesCompleted: 0, modules: [{ name: "Descriptive Writing", progress: 50, score: 42 }, { name: "Poetry Introduction", progress: 20, score: 38 }, { name: "Reading Comprehension", progress: 30, score: 44 }], mockExams: [{ name: "KS3 Autumn Assessment", score: 40, grade: "2", date: "2025-12-10" }], essays: [{ title: "My Favourite Place - Descriptive Writing", score: 38, feedback: "Some good ideas but needs much more development. Focus on full sentences.", date: "2026-03-15" }], activityTimeline: [{ action: "Submitted essay: My Favourite Place", date: "2026-03-15", type: "activity" }] },
+  { id: "s4", name: "Isla Mackenzie", email: "i.mackenzie@riverside.ac.uk", yearGroup: "Year 7", className: "7D English", teacher: "Rachel Green", overallProgress: 68, averageScore: 65, assignmentsCompleted: 12, assignmentsTotal: 16, lastActive: "2 days ago", status: "on-track", strengths: ["Creative ideas", "Reading engagement"], weaknesses: ["SPaG", "Structuring longer responses"], recentScores: [62, 65, 60, 68, 64, 70, 66, 63], mockExamResults: [{ exam: "KS3 Autumn Assessment", score: 62, grade: "4", date: "2025-12-10" }], essaySubmissions: [{ title: "Diary Entry - Character Perspective", score: 68, feedback: "Great voice and personality. Check punctuation of speech marks.", date: "2026-03-12" }], moduleProgress: [{ module: "Descriptive Writing", progress: 85, score: 66, status: "in-progress" }, { module: "Poetry Introduction", progress: 55, score: 62, status: "in-progress" }, { module: "Reading Comprehension", progress: 60, score: 68, status: "in-progress" }], quizAttempts: [{ quiz: "Figurative Language Quiz", score: 6, maxScore: 10, date: "2026-03-28" }], activityLog: [{ action: "Submitted essay: Diary Entry", date: "2026-03-12" }], recommendations: ["Use the SPaG revision cards daily", "Practise paragraph structure with the writing frames"], atRisk: false, riskReason: "", classId: "7d-english", teacherName: "Rachel Green", modulesCompleted: 0, modules: [{ name: "Descriptive Writing", progress: 85, score: 66 }, { name: "Poetry Introduction", progress: 55, score: 62 }, { name: "Reading Comprehension", progress: 60, score: 68 }], mockExams: [{ name: "KS3 Autumn Assessment", score: 62, grade: "4", date: "2025-12-10" }], essays: [{ title: "Diary Entry - Character Perspective", score: 68, feedback: "Great voice and personality. Check punctuation of speech marks.", date: "2026-03-12" }], activityTimeline: [{ action: "Submitted essay: Diary Entry", date: "2026-03-12", type: "activity" }] },
+  { id: "s5", name: "Zain Ahmed", email: "z.ahmed@riverside.ac.uk", yearGroup: "Year 7", className: "7A English", teacher: "Priya Sharma", overallProgress: 75, averageScore: 72, assignmentsCompleted: 13, assignmentsTotal: 16, lastActive: "1 day ago", status: "on-track", strengths: ["Non-fiction analysis", "Identifying techniques"], weaknesses: ["Creative writing fluency", "Spelling"], recentScores: [70, 74, 68, 72, 76, 71, 73, 75], mockExamResults: [{ exam: "KS3 Autumn Assessment", score: 70, grade: "5", date: "2025-12-10" }], essaySubmissions: [{ title: "Review of a Film", score: 74, feedback: "Strong opinions backed up with examples. Improve sentence variety.", date: "2026-03-10" }], moduleProgress: [{ module: "Descriptive Writing", progress: 75, score: 70, status: "in-progress" }, { module: "Poetry Introduction", progress: 70, score: 74, status: "in-progress" }, { module: "Reading Comprehension", progress: 80, score: 72, status: "in-progress" }], quizAttempts: [{ quiz: "Figurative Language Quiz", score: 7, maxScore: 10, date: "2026-03-28" }], activityLog: [{ action: "Scored 7/10 on Figurative Language Quiz", date: "2026-03-28" }], recommendations: ["Try the Creative Writing Prompts pack", "Use the Spelling Rules flashcards"], atRisk: false, riskReason: "", classId: "7a-english", teacherName: "Priya Sharma", modulesCompleted: 0, modules: [{ name: "Descriptive Writing", progress: 75, score: 70 }, { name: "Poetry Introduction", progress: 70, score: 74 }, { name: "Reading Comprehension", progress: 80, score: 72 }], mockExams: [{ name: "KS3 Autumn Assessment", score: 70, grade: "5", date: "2025-12-10" }], essays: [{ title: "Review of a Film", score: 74, feedback: "Strong opinions backed up with examples. Improve sentence variety.", date: "2026-03-10" }], activityTimeline: [{ action: "Scored 7/10 on Figurative Language Quiz", date: "2026-03-28", type: "activity" }] },
+  { id: "s6", name: "Grace Novak", email: "g.novak@riverside.ac.uk", yearGroup: "Year 7", className: "7B English", teacher: "Emma Thornton", overallProgress: 55, averageScore: 52, assignmentsCompleted: 10, assignmentsTotal: 16, lastActive: "3 days ago", status: "needs-support", strengths: ["Effort and participation"], weaknesses: ["Reading comprehension", "Vocabulary range", "Written accuracy"], recentScores: [50, 48, 55, 52, 54, 49, 53, 51], mockExamResults: [{ exam: "KS3 Autumn Assessment", score: 48, grade: "3", date: "2025-12-10" }], essaySubmissions: [{ title: "My Favourite Place - Descriptive Writing", score: 50, feedback: "Some nice ideas. Work on expanding sentences and using more adjectives.", date: "2026-03-15" }], moduleProgress: [{ module: "Descriptive Writing", progress: 60, score: 52, status: "in-progress" }, { module: "Poetry Introduction", progress: 35, score: 48, status: "in-progress" }, { module: "Reading Comprehension", progress: 45, score: 54, status: "in-progress" }], quizAttempts: [{ quiz: "Grammar Basics", score: 5, maxScore: 10, date: "2026-03-14" }], activityLog: [{ action: "Completed Reading Comprehension lesson 3", date: "2026-03-22" }], recommendations: ["Use the differentiated reading worksheets (support tier)", "Practise vocabulary with the Word-a-Day resource"], atRisk: false, riskReason: "", classId: "7b-english", teacherName: "Emma Thornton", modulesCompleted: 0, modules: [{ name: "Descriptive Writing", progress: 60, score: 52 }, { name: "Poetry Introduction", progress: 35, score: 48 }, { name: "Reading Comprehension", progress: 45, score: 54 }], mockExams: [{ name: "KS3 Autumn Assessment", score: 48, grade: "3", date: "2025-12-10" }], essays: [{ title: "My Favourite Place - Descriptive Writing", score: 50, feedback: "Some nice ideas. Work on expanding sentences and using more adjectives.", date: "2026-03-15" }], activityTimeline: [{ action: "Completed Reading Comprehension lesson 3", date: "2026-03-22", type: "activity" }] },
+  { id: "s7", name: "Lucas Rivera", email: "l.rivera@riverside.ac.uk", yearGroup: "Year 7", className: "7E English", teacher: "Ahmed Khan", overallProgress: 70, averageScore: 67, assignmentsCompleted: 11, assignmentsTotal: 16, lastActive: "1 day ago", status: "on-track", strengths: ["Storytelling ability", "Engagement with texts"], weaknesses: ["Analytical writing", "Using evidence"], recentScores: [65, 68, 64, 70, 66, 72, 67, 64], mockExamResults: [{ exam: "KS3 Autumn Assessment", score: 66, grade: "4", date: "2025-12-10" }], essaySubmissions: [{ title: "Short Story - The Storm", score: 72, feedback: "Engaging narrative with good tension. Include more sophisticated vocabulary.", date: "2026-03-08" }], moduleProgress: [{ module: "Descriptive Writing", progress: 70, score: 68, status: "in-progress" }, { module: "Poetry Introduction", progress: 50, score: 62, status: "in-progress" }, { module: "Reading Comprehension", progress: 65, score: 70, status: "in-progress" }], quizAttempts: [{ quiz: "Figurative Language Quiz", score: 7, maxScore: 10, date: "2026-03-28" }], activityLog: [{ action: "Submitted essay: Short Story - The Storm", date: "2026-03-08" }], recommendations: ["Practise PEE paragraphs with the Evidence Skills pack"], atRisk: false, riskReason: "", classId: "7e-english", teacherName: "Ahmed Khan", modulesCompleted: 0, modules: [{ name: "Descriptive Writing", progress: 70, score: 68 }, { name: "Poetry Introduction", progress: 50, score: 62 }, { name: "Reading Comprehension", progress: 65, score: 70 }], mockExams: [{ name: "KS3 Autumn Assessment", score: 66, grade: "4", date: "2025-12-10" }], essays: [{ title: "Short Story - The Storm", score: 72, feedback: "Engaging narrative with good tension. Include more sophisticated vocabulary.", date: "2026-03-08" }], activityTimeline: [{ action: "Submitted essay: Short Story - The Storm", date: "2026-03-08", type: "activity" }] },
+  // ── Year 8 (7 students) ──
+  { id: "s8", name: "Sophie Williams", email: "s.williams@riverside.ac.uk", yearGroup: "Year 8", className: "8A English", teacher: "James Patterson", overallProgress: 85, averageScore: 82, assignmentsCompleted: 18, assignmentsTotal: 20, lastActive: "Today", status: "on-track", strengths: ["Essay structure", "Use of quotations"], weaknesses: ["Comparing texts"], recentScores: [80, 78, 84, 82, 86, 80, 85, 83], mockExamResults: [{ exam: "KS3 Spring Assessment", score: 82, grade: "6", date: "2026-03-01" }], essaySubmissions: [{ title: "Gothic Writing - Haunted House", score: 84, feedback: "Atmospheric and well-structured. Excellent use of pathetic fallacy.", date: "2026-03-20" }], moduleProgress: [{ module: "Gothic Literature", progress: 90, score: 84, status: "in-progress" }, { module: "Non-Fiction Analysis", progress: 80, score: 78, status: "in-progress" }, { module: "Shakespeare Introduction", progress: 60, score: 80, status: "in-progress" }], quizAttempts: [{ quiz: "Gothic Conventions Quiz", score: 9, maxScore: 10, date: "2026-03-25" }], activityLog: [{ action: "Scored 9/10 on Gothic Conventions Quiz", date: "2026-03-25" }], recommendations: ["Use the Comparison Writing Framework for paired texts"], atRisk: false, riskReason: "", classId: "8a-english", teacherName: "James Patterson", modulesCompleted: 0, modules: [{ name: "Gothic Literature", progress: 90, score: 84 }, { name: "Non-Fiction Analysis", progress: 80, score: 78 }, { name: "Shakespeare Introduction", progress: 60, score: 80 }], mockExams: [{ name: "KS3 Spring Assessment", score: 82, grade: "6", date: "2026-03-01" }], essays: [{ title: "Gothic Writing - Haunted House", score: 84, feedback: "Atmospheric and well-structured. Excellent use of pathetic fallacy.", date: "2026-03-20" }], activityTimeline: [{ action: "Scored 9/10 on Gothic Conventions Quiz", date: "2026-03-25", type: "activity" }] },
+  { id: "s9", name: "Daniel Kowalski", email: "d.kowalski@riverside.ac.uk", yearGroup: "Year 8", className: "8B English", teacher: "Priya Sharma", overallProgress: 38, averageScore: 35, assignmentsCompleted: 7, assignmentsTotal: 20, lastActive: "8 days ago", status: "at-risk", strengths: ["Verbal discussion skills"], weaknesses: ["Written expression", "Homework completion", "Reading stamina", "Attendance"], recentScores: [38, 35, 40, 32, 36, 34, 30, 37], mockExamResults: [{ exam: "KS3 Spring Assessment", score: 34, grade: "2", date: "2026-03-01" }], essaySubmissions: [{ title: "Gothic Writing - Haunted House", score: 32, feedback: "Needs significant improvement. Focus on complete sentences.", date: "2026-03-20" }], moduleProgress: [{ module: "Gothic Literature", progress: 30, score: 34, status: "in-progress" }, { module: "Non-Fiction Analysis", progress: 20, score: 32, status: "in-progress" }, { module: "Shakespeare Introduction", progress: 10, score: 30, status: "not-started" }], quizAttempts: [{ quiz: "Language Techniques Recap", score: 3, maxScore: 10, date: "2026-03-10" }], activityLog: [{ action: "Logged in after 5-day absence", date: "2026-03-27" }], recommendations: ["Urgent: Schedule 1:1 with SENCO", "Use SEND-adapted reading resources", "Daily sentence-writing exercises"], atRisk: false, riskReason: "", classId: "8b-english", teacherName: "Priya Sharma", modulesCompleted: 0, modules: [{ name: "Gothic Literature", progress: 30, score: 34 }, { name: "Non-Fiction Analysis", progress: 20, score: 32 }, { name: "Shakespeare Introduction", progress: 10, score: 30 }], mockExams: [{ name: "KS3 Spring Assessment", score: 34, grade: "2", date: "2026-03-01" }], essays: [{ title: "Gothic Writing - Haunted House", score: 32, feedback: "Needs significant improvement. Focus on complete sentences.", date: "2026-03-20" }], activityTimeline: [{ action: "Logged in after 5-day absence", date: "2026-03-27", type: "activity" }] },
+  { id: "s10", name: "Mia Johnson", email: "m.johnson@riverside.ac.uk", yearGroup: "Year 8", className: "8C English", teacher: "Michael Chen", overallProgress: 76, averageScore: 74, assignmentsCompleted: 16, assignmentsTotal: 20, lastActive: "1 day ago", status: "on-track", strengths: ["Poetry analysis", "Imaginative writing"], weaknesses: ["Non-fiction writing", "Using formal register"], recentScores: [72, 75, 70, 78, 74, 76, 72, 74], mockExamResults: [{ exam: "KS3 Spring Assessment", score: 74, grade: "5", date: "2026-03-01" }], essaySubmissions: [{ title: "Poem Response - Ozymandias", score: 78, feedback: "Perceptive comments on imagery. Develop points about structure.", date: "2026-03-18" }], moduleProgress: [{ module: "Gothic Literature", progress: 75, score: 74, status: "in-progress" }, { module: "Non-Fiction Analysis", progress: 70, score: 70, status: "in-progress" }, { module: "Shakespeare Introduction", progress: 55, score: 76, status: "in-progress" }], quizAttempts: [{ quiz: "Gothic Conventions Quiz", score: 7, maxScore: 10, date: "2026-03-25" }], activityLog: [{ action: "Completed Non-Fiction Analysis lesson 6", date: "2026-03-26" }], recommendations: ["Practise formal writing with the Register Toolkit"], atRisk: false, riskReason: "", classId: "8c-english", teacherName: "Michael Chen", modulesCompleted: 0, modules: [{ name: "Gothic Literature", progress: 75, score: 74 }, { name: "Non-Fiction Analysis", progress: 70, score: 70 }, { name: "Shakespeare Introduction", progress: 55, score: 76 }], mockExams: [{ name: "KS3 Spring Assessment", score: 74, grade: "5", date: "2026-03-01" }], essays: [{ title: "Poem Response - Ozymandias", score: 78, feedback: "Perceptive comments on imagery. Develop points about structure.", date: "2026-03-18" }], activityTimeline: [{ action: "Completed Non-Fiction Analysis lesson 6", date: "2026-03-26", type: "activity" }] },
+  { id: "s11", name: "Aiden Murphy", email: "a.murphy@riverside.ac.uk", yearGroup: "Year 8", className: "8D English", teacher: "Rachel Green", overallProgress: 62, averageScore: 60, assignmentsCompleted: 13, assignmentsTotal: 20, lastActive: "2 days ago", status: "needs-support", strengths: ["Class participation", "Understanding of themes"], weaknesses: ["Written accuracy", "Exam technique", "Time management"], recentScores: [58, 62, 56, 64, 60, 58, 62, 60], mockExamResults: [{ exam: "KS3 Spring Assessment", score: 58, grade: "3", date: "2026-03-01" }], essaySubmissions: [{ title: "Gothic Writing - Haunted House", score: 60, feedback: "Good atmosphere but incomplete. Practise planning.", date: "2026-03-20" }], moduleProgress: [{ module: "Gothic Literature", progress: 60, score: 60, status: "in-progress" }, { module: "Non-Fiction Analysis", progress: 50, score: 58, status: "in-progress" }, { module: "Shakespeare Introduction", progress: 40, score: 62, status: "in-progress" }], quizAttempts: [{ quiz: "Gothic Conventions Quiz", score: 6, maxScore: 10, date: "2026-03-25" }], activityLog: [{ action: "Submitted essay: Gothic Writing", date: "2026-03-20" }], recommendations: ["Use the Exam Technique revision guide", "Practise timed writing"], atRisk: false, riskReason: "", classId: "8d-english", teacherName: "Rachel Green", modulesCompleted: 0, modules: [{ name: "Gothic Literature", progress: 60, score: 60 }, { name: "Non-Fiction Analysis", progress: 50, score: 58 }, { name: "Shakespeare Introduction", progress: 40, score: 62 }], mockExams: [{ name: "KS3 Spring Assessment", score: 58, grade: "3", date: "2026-03-01" }], essays: [{ title: "Gothic Writing - Haunted House", score: 60, feedback: "Good atmosphere but incomplete. Practise planning.", date: "2026-03-20" }], activityTimeline: [{ action: "Submitted essay: Gothic Writing", date: "2026-03-20", type: "activity" }] },
+  { id: "s12", name: "Chloe Nguyen", email: "c.nguyen@riverside.ac.uk", yearGroup: "Year 8", className: "8A English", teacher: "James Patterson", overallProgress: 93, averageScore: 91, assignmentsCompleted: 20, assignmentsTotal: 20, lastActive: "Today", status: "excelling", strengths: ["Analytical depth", "Academic vocabulary", "Independent study"], weaknesses: ["Occasionally over-analytical at expense of personal response"], recentScores: [88, 92, 90, 94, 91, 93, 89, 92], mockExamResults: [{ exam: "KS3 Spring Assessment", score: 92, grade: "8", date: "2026-03-01" }], essaySubmissions: [{ title: "Gothic Writing - Haunted House", score: 94, feedback: "Exceptional control of language and structure. Truly sophisticated.", date: "2026-03-20" }], moduleProgress: [{ module: "Gothic Literature", progress: 100, score: 94, status: "completed" }, { module: "Non-Fiction Analysis", progress: 95, score: 90, status: "in-progress" }, { module: "Shakespeare Introduction", progress: 80, score: 88, status: "in-progress" }], quizAttempts: [{ quiz: "Gothic Conventions Quiz", score: 10, maxScore: 10, date: "2026-03-25" }], activityLog: [{ action: "Completed Gothic Literature module", date: "2026-03-24" }], recommendations: ["Explore the Year 9 Shakespeare extension tasks"], atRisk: false, riskReason: "", classId: "8a-english", teacherName: "James Patterson", modulesCompleted: 1, modules: [{ name: "Gothic Literature", progress: 100, score: 94 }, { name: "Non-Fiction Analysis", progress: 95, score: 90 }, { name: "Shakespeare Introduction", progress: 80, score: 88 }], mockExams: [{ name: "KS3 Spring Assessment", score: 92, grade: "8", date: "2026-03-01" }], essays: [{ title: "Gothic Writing - Haunted House", score: 94, feedback: "Exceptional control of language and structure. Truly sophisticated.", date: "2026-03-20" }], activityTimeline: [{ action: "Completed Gothic Literature module", date: "2026-03-24", type: "activity" }] },
+  { id: "s13", name: "Ryan O'Brien", email: "r.obrien@riverside.ac.uk", yearGroup: "Year 8", className: "8E English", teacher: "Sophie Durand", overallProgress: 70, averageScore: 68, assignmentsCompleted: 14, assignmentsTotal: 20, lastActive: "1 day ago", status: "on-track", strengths: ["Reading engagement", "Creative narrative voice"], weaknesses: ["Analytical paragraphs", "Using terminology"], recentScores: [66, 70, 64, 72, 68, 70, 66, 68], mockExamResults: [{ exam: "KS3 Spring Assessment", score: 68, grade: "4", date: "2026-03-01" }], essaySubmissions: [{ title: "Gothic Writing - Haunted House", score: 72, feedback: "Great tension and suspense. Use more analytical vocabulary.", date: "2026-03-20" }], moduleProgress: [{ module: "Gothic Literature", progress: 70, score: 70, status: "in-progress" }, { module: "Non-Fiction Analysis", progress: 60, score: 66, status: "in-progress" }, { module: "Shakespeare Introduction", progress: 45, score: 68, status: "in-progress" }], quizAttempts: [{ quiz: "Gothic Conventions Quiz", score: 7, maxScore: 10, date: "2026-03-25" }], activityLog: [{ action: "Scored 7/10 on Gothic Conventions Quiz", date: "2026-03-25" }], recommendations: ["Use the Analytical Vocabulary word mat"], atRisk: false, riskReason: "", classId: "8e-english", teacherName: "Sophie Durand", modulesCompleted: 0, modules: [{ name: "Gothic Literature", progress: 70, score: 70 }, { name: "Non-Fiction Analysis", progress: 60, score: 66 }, { name: "Shakespeare Introduction", progress: 45, score: 68 }], mockExams: [{ name: "KS3 Spring Assessment", score: 68, grade: "4", date: "2026-03-01" }], essays: [{ title: "Gothic Writing - Haunted House", score: 72, feedback: "Great tension and suspense. Use more analytical vocabulary.", date: "2026-03-20" }], activityTimeline: [{ action: "Scored 7/10 on Gothic Conventions Quiz", date: "2026-03-25", type: "activity" }] },
+  { id: "s14", name: "Freya Johansson", email: "f.johansson@riverside.ac.uk", yearGroup: "Year 8", className: "8B English", teacher: "Priya Sharma", overallProgress: 80, averageScore: 77, assignmentsCompleted: 17, assignmentsTotal: 20, lastActive: "Today", status: "on-track", strengths: ["Structured responses", "Comparative analysis"], weaknesses: ["Creative writing flair", "Varying sentence length"], recentScores: [74, 78, 76, 80, 77, 79, 75, 78], mockExamResults: [{ exam: "KS3 Spring Assessment", score: 78, grade: "5", date: "2026-03-01" }], essaySubmissions: [{ title: "Comparing Two Articles", score: 80, feedback: "Well-structured comparison. Add more creative vocabulary.", date: "2026-02-15" }], moduleProgress: [{ module: "Gothic Literature", progress: 85, score: 76, status: "in-progress" }, { module: "Non-Fiction Analysis", progress: 80, score: 80, status: "in-progress" }, { module: "Shakespeare Introduction", progress: 60, score: 74, status: "in-progress" }], quizAttempts: [{ quiz: "Gothic Conventions Quiz", score: 8, maxScore: 10, date: "2026-03-25" }], activityLog: [{ action: "Completed Non-Fiction Analysis lesson 7", date: "2026-03-28" }], recommendations: ["Explore the Sentence Craft toolkit for varied syntax"], atRisk: false, riskReason: "", classId: "8b-english", teacherName: "Priya Sharma", modulesCompleted: 0, modules: [{ name: "Gothic Literature", progress: 85, score: 76 }, { name: "Non-Fiction Analysis", progress: 80, score: 80 }, { name: "Shakespeare Introduction", progress: 60, score: 74 }], mockExams: [{ name: "KS3 Spring Assessment", score: 78, grade: "5", date: "2026-03-01" }], essays: [{ title: "Comparing Two Articles", score: 80, feedback: "Well-structured comparison. Add more creative vocabulary.", date: "2026-02-15" }], activityTimeline: [{ action: "Completed Non-Fiction Analysis lesson 7", date: "2026-03-28", type: "activity" }] },
+  // ── Year 9 (7 students) ──
+  { id: "s15", name: "Mohammed Al-Rashid", email: "m.alrashid@riverside.ac.uk", yearGroup: "Year 9", className: "9A English", teacher: "David Okonkwo", overallProgress: 78, averageScore: 76, assignmentsCompleted: 17, assignmentsTotal: 22, lastActive: "Today", status: "on-track", strengths: ["Shakespeare understanding", "Contextual knowledge"], weaknesses: ["Essay conclusions", "Sustaining analysis"], recentScores: [74, 76, 72, 78, 80, 75, 77, 76], mockExamResults: [{ exam: "Year 9 Mock - English Language", score: 76, grade: "6", date: "2026-02-15" }], essaySubmissions: [{ title: "Romeo and Juliet Act 3 Scene 1 Analysis", score: 78, feedback: "Strong understanding of conflict. Need stronger conclusions.", date: "2026-03-22" }], moduleProgress: [{ module: "Romeo and Juliet", progress: 80, score: 78, status: "in-progress" }, { module: "Transactional Writing", progress: 75, score: 74, status: "in-progress" }, { module: "Unseen Poetry", progress: 55, score: 72, status: "in-progress" }], quizAttempts: [{ quiz: "Romeo and Juliet Context Quiz", score: 9, maxScore: 10, date: "2026-03-20" }], activityLog: [{ action: "Scored 9/10 on Romeo and Juliet Context Quiz", date: "2026-03-20" }], recommendations: ["Use the Conclusion Writing Framework"], atRisk: false, riskReason: "", classId: "9a-english", teacherName: "David Okonkwo", modulesCompleted: 0, modules: [{ name: "Romeo and Juliet", progress: 80, score: 78 }, { name: "Transactional Writing", progress: 75, score: 74 }, { name: "Unseen Poetry", progress: 55, score: 72 }], mockExams: [{ name: "Year 9 Mock - English Language", score: 76, grade: "6", date: "2026-02-15" }], essays: [{ title: "Romeo and Juliet Act 3 Scene 1 Analysis", score: 78, feedback: "Strong understanding of conflict. Need stronger conclusions.", date: "2026-03-22" }], activityTimeline: [{ action: "Scored 9/10 on Romeo and Juliet Context Quiz", date: "2026-03-20", type: "activity" }] },
+  { id: "s16", name: "Emily Saunders", email: "e.saunders@riverside.ac.uk", yearGroup: "Year 9", className: "9B English", teacher: "James Patterson", overallProgress: 88, averageScore: 86, assignmentsCompleted: 21, assignmentsTotal: 22, lastActive: "Today", status: "excelling", strengths: ["Critical analysis", "Independent research", "Written accuracy"], weaknesses: ["Can be overly cautious - needs more interpretive risks"], recentScores: [84, 88, 86, 90, 85, 87, 84, 88], mockExamResults: [{ exam: "Year 9 Mock - English Language", score: 88, grade: "8", date: "2026-02-15" }], essaySubmissions: [{ title: "Romeo and Juliet - Juliet's Transformation", score: 90, feedback: "Sophisticated argument with excellent embedding of quotations.", date: "2026-03-22" }], moduleProgress: [{ module: "Romeo and Juliet", progress: 95, score: 90, status: "in-progress" }, { module: "Transactional Writing", progress: 90, score: 86, status: "in-progress" }, { module: "Unseen Poetry", progress: 70, score: 82, status: "in-progress" }], quizAttempts: [{ quiz: "Romeo and Juliet Context Quiz", score: 10, maxScore: 10, date: "2026-03-20" }], activityLog: [{ action: "Achieved 10/10 on Romeo and Juliet Context Quiz", date: "2026-03-20" }], recommendations: ["Try the critical theory extension materials"], atRisk: false, riskReason: "", classId: "9b-english", teacherName: "James Patterson", modulesCompleted: 0, modules: [{ name: "Romeo and Juliet", progress: 95, score: 90 }, { name: "Transactional Writing", progress: 90, score: 86 }, { name: "Unseen Poetry", progress: 70, score: 82 }], mockExams: [{ name: "Year 9 Mock - English Language", score: 88, grade: "8", date: "2026-02-15" }], essays: [{ title: "Romeo and Juliet - Juliet's Transformation", score: 90, feedback: "Sophisticated argument with excellent embedding of quotations.", date: "2026-03-22" }], activityTimeline: [{ action: "Achieved 10/10 on Romeo and Juliet Context Quiz", date: "2026-03-20", type: "activity" }] },
+  { id: "s17", name: "Jake Turner", email: "j.turner@riverside.ac.uk", yearGroup: "Year 9", className: "9C English", teacher: "Emma Thornton", overallProgress: 50, averageScore: 48, assignmentsCompleted: 10, assignmentsTotal: 22, lastActive: "4 days ago", status: "needs-support", strengths: ["Understanding of character"], weaknesses: ["Written expression", "Quotation selection", "Exam technique", "Engagement"], recentScores: [50, 46, 52, 44, 48, 50, 46, 48], mockExamResults: [{ exam: "Year 9 Mock - English Language", score: 46, grade: "3", date: "2026-02-15" }], essaySubmissions: [{ title: "Romeo and Juliet Act 3 Scene 1 Analysis", score: 48, feedback: "Shows understanding but needs to develop points more fully.", date: "2026-03-22" }], moduleProgress: [{ module: "Romeo and Juliet", progress: 50, score: 50, status: "in-progress" }, { module: "Transactional Writing", progress: 40, score: 46, status: "in-progress" }, { module: "Unseen Poetry", progress: 25, score: 44, status: "in-progress" }], quizAttempts: [{ quiz: "Romeo and Juliet Context Quiz", score: 5, maxScore: 10, date: "2026-03-20" }], activityLog: [{ action: "Submitted essay: Romeo and Juliet Analysis (late)", date: "2026-03-22" }], recommendations: ["Use the scaffolded essay writing frames", "Complete the Quotation Bank flashcards"], atRisk: false, riskReason: "", classId: "9c-english", teacherName: "Emma Thornton", modulesCompleted: 0, modules: [{ name: "Romeo and Juliet", progress: 50, score: 50 }, { name: "Transactional Writing", progress: 40, score: 46 }, { name: "Unseen Poetry", progress: 25, score: 44 }], mockExams: [{ name: "Year 9 Mock - English Language", score: 46, grade: "3", date: "2026-02-15" }], essays: [{ title: "Romeo and Juliet Act 3 Scene 1 Analysis", score: 48, feedback: "Shows understanding but needs to develop points more fully.", date: "2026-03-22" }], activityTimeline: [{ action: "Submitted essay: Romeo and Juliet Analysis (late)", date: "2026-03-22", type: "activity" }] },
+  { id: "s18", name: "Anya Petrova", email: "a.petrova@riverside.ac.uk", yearGroup: "Year 9", className: "9D English", teacher: "Thomas Walker", overallProgress: 72, averageScore: 70, assignmentsCompleted: 15, assignmentsTotal: 22, lastActive: "1 day ago", status: "on-track", strengths: ["Poetry response", "Empathy with characters"], weaknesses: ["Formal register", "Structuring arguments"], recentScores: [68, 72, 66, 74, 70, 72, 68, 70], mockExamResults: [{ exam: "Year 9 Mock - English Language", score: 70, grade: "5", date: "2026-02-15" }], essaySubmissions: [{ title: "Unseen Poetry Response", score: 74, feedback: "Sensitive and thoughtful. Link analysis to the question more explicitly.", date: "2026-03-18" }], moduleProgress: [{ module: "Romeo and Juliet", progress: 70, score: 72, status: "in-progress" }, { module: "Transactional Writing", progress: 60, score: 66, status: "in-progress" }, { module: "Unseen Poetry", progress: 65, score: 74, status: "in-progress" }], quizAttempts: [{ quiz: "Romeo and Juliet Context Quiz", score: 7, maxScore: 10, date: "2026-03-20" }], activityLog: [{ action: "Submitted essay: Unseen Poetry Response", date: "2026-03-18" }], recommendations: ["Use the Argument Structuring toolkit"], atRisk: false, riskReason: "", classId: "9d-english", teacherName: "Thomas Walker", modulesCompleted: 0, modules: [{ name: "Romeo and Juliet", progress: 70, score: 72 }, { name: "Transactional Writing", progress: 60, score: 66 }, { name: "Unseen Poetry", progress: 65, score: 74 }], mockExams: [{ name: "Year 9 Mock - English Language", score: 70, grade: "5", date: "2026-02-15" }], essays: [{ title: "Unseen Poetry Response", score: 74, feedback: "Sensitive and thoughtful. Link analysis to the question more explicitly.", date: "2026-03-18" }], activityTimeline: [{ action: "Submitted essay: Unseen Poetry Response", date: "2026-03-18", type: "activity" }] },
+  { id: "s19", name: "Tyler Bennett", email: "t.bennett@riverside.ac.uk", yearGroup: "Year 9", className: "9A English", teacher: "David Okonkwo", overallProgress: 60, averageScore: 58, assignmentsCompleted: 12, assignmentsTotal: 22, lastActive: "2 days ago", status: "needs-support", strengths: ["Engagement with stories"], weaknesses: ["Analytical vocabulary", "Essay structure", "Punctuation"], recentScores: [56, 60, 54, 62, 58, 56, 60, 58], mockExamResults: [{ exam: "Year 9 Mock - English Language", score: 56, grade: "3", date: "2026-02-15" }], essaySubmissions: [{ title: "Romeo and Juliet Act 3 Scene 1 Analysis", score: 58, feedback: "Understanding present but analytical writing needs development.", date: "2026-03-22" }], moduleProgress: [{ module: "Romeo and Juliet", progress: 60, score: 60, status: "in-progress" }, { module: "Transactional Writing", progress: 50, score: 54, status: "in-progress" }, { module: "Unseen Poetry", progress: 35, score: 56, status: "in-progress" }], quizAttempts: [{ quiz: "Romeo and Juliet Context Quiz", score: 6, maxScore: 10, date: "2026-03-20" }], activityLog: [{ action: "Submitted essay: Romeo and Juliet Analysis", date: "2026-03-22" }], recommendations: ["Complete the Analytical Vocabulary flashcards"], atRisk: false, riskReason: "", classId: "9a-english", teacherName: "David Okonkwo", modulesCompleted: 0, modules: [{ name: "Romeo and Juliet", progress: 60, score: 60 }, { name: "Transactional Writing", progress: 50, score: 54 }, { name: "Unseen Poetry", progress: 35, score: 56 }], mockExams: [{ name: "Year 9 Mock - English Language", score: 56, grade: "3", date: "2026-02-15" }], essays: [{ title: "Romeo and Juliet Act 3 Scene 1 Analysis", score: 58, feedback: "Understanding present but analytical writing needs development.", date: "2026-03-22" }], activityTimeline: [{ action: "Submitted essay: Romeo and Juliet Analysis", date: "2026-03-22", type: "activity" }] },
+  { id: "s20", name: "Lily Chen", email: "l.chen@riverside.ac.uk", yearGroup: "Year 9", className: "9E English", teacher: "Sophie Durand", overallProgress: 84, averageScore: 82, assignmentsCompleted: 19, assignmentsTotal: 22, lastActive: "Today", status: "on-track", strengths: ["Close reading", "Written fluency", "Vocabulary"], weaknesses: ["Exploring multiple interpretations"], recentScores: [80, 82, 78, 84, 86, 82, 80, 84], mockExamResults: [{ exam: "Year 9 Mock - English Language", score: 82, grade: "7", date: "2026-02-15" }], essaySubmissions: [{ title: "Romeo and Juliet - Theme of Fate", score: 84, feedback: "Fluent and well-argued. Push for alternative readings.", date: "2026-03-22" }], moduleProgress: [{ module: "Romeo and Juliet", progress: 85, score: 84, status: "in-progress" }, { module: "Transactional Writing", progress: 85, score: 82, status: "in-progress" }, { module: "Unseen Poetry", progress: 70, score: 80, status: "in-progress" }], quizAttempts: [{ quiz: "Romeo and Juliet Context Quiz", score: 9, maxScore: 10, date: "2026-03-20" }], activityLog: [{ action: "Scored 9/10 on Romeo and Juliet Context Quiz", date: "2026-03-20" }], recommendations: ["Explore the Alternative Interpretations extension pack"], atRisk: false, riskReason: "", classId: "9e-english", teacherName: "Sophie Durand", modulesCompleted: 0, modules: [{ name: "Romeo and Juliet", progress: 85, score: 84 }, { name: "Transactional Writing", progress: 85, score: 82 }, { name: "Unseen Poetry", progress: 70, score: 80 }], mockExams: [{ name: "Year 9 Mock - English Language", score: 82, grade: "7", date: "2026-02-15" }], essays: [{ title: "Romeo and Juliet - Theme of Fate", score: 84, feedback: "Fluent and well-argued. Push for alternative readings.", date: "2026-03-22" }], activityTimeline: [{ action: "Scored 9/10 on Romeo and Juliet Context Quiz", date: "2026-03-20", type: "activity" }] },
+  { id: "s21", name: "Callum Reid", email: "c.reid@riverside.ac.uk", yearGroup: "Year 9", className: "9B English", teacher: "James Patterson", overallProgress: 65, averageScore: 62, assignmentsCompleted: 14, assignmentsTotal: 22, lastActive: "1 day ago", status: "on-track", strengths: ["Reading comprehension", "Discussion skills"], weaknesses: ["Written fluency", "SPaG under timed conditions"], recentScores: [60, 64, 58, 66, 62, 64, 60, 62], mockExamResults: [{ exam: "Year 9 Mock - English Language", score: 62, grade: "4", date: "2026-02-15" }], essaySubmissions: [{ title: "Transactional Writing - Charity Leaflet", score: 64, feedback: "Good content. Proofread carefully for SPaG errors.", date: "2026-03-10" }], moduleProgress: [{ module: "Romeo and Juliet", progress: 65, score: 64, status: "in-progress" }, { module: "Transactional Writing", progress: 60, score: 62, status: "in-progress" }, { module: "Unseen Poetry", progress: 40, score: 58, status: "in-progress" }], quizAttempts: [{ quiz: "Romeo and Juliet Context Quiz", score: 7, maxScore: 10, date: "2026-03-20" }], activityLog: [{ action: "Scored 7/10 on Romeo and Juliet Context Quiz", date: "2026-03-20" }], recommendations: ["Use the Proofreading Checklist before submitting work"], atRisk: false, riskReason: "", classId: "9b-english", teacherName: "James Patterson", modulesCompleted: 0, modules: [{ name: "Romeo and Juliet", progress: 65, score: 64 }, { name: "Transactional Writing", progress: 60, score: 62 }, { name: "Unseen Poetry", progress: 40, score: 58 }], mockExams: [{ name: "Year 9 Mock - English Language", score: 62, grade: "4", date: "2026-02-15" }], essays: [{ title: "Transactional Writing - Charity Leaflet", score: 64, feedback: "Good content. Proofread carefully for SPaG errors.", date: "2026-03-10" }], activityTimeline: [{ action: "Scored 7/10 on Romeo and Juliet Context Quiz", date: "2026-03-20", type: "activity" }] },
+  // ── Year 10 (8 students) ──
+  { id: "s22", name: "Jessica Taylor", email: "j.taylor@riverside.ac.uk", yearGroup: "Year 10", className: "10A English", teacher: "Sarah Mitchell", overallProgress: 80, averageScore: 78, assignmentsCompleted: 20, assignmentsTotal: 24, lastActive: "Today", status: "on-track", strengths: ["Essay planning", "Close analysis of language"], weaknesses: ["Exploring context in depth"], recentScores: [76, 78, 74, 80, 82, 78, 76, 80], mockExamResults: [{ exam: "Edexcel Lang Paper 1 Mock", score: 78, grade: "6", date: "2026-01-20" }, { exam: "Edexcel Lit Paper 1 Mock", score: 76, grade: "6", date: "2026-02-10" }], essaySubmissions: [{ title: "An Inspector Calls - Responsibility Theme", score: 80, feedback: "Well-structured with good quotation use. Develop contextual links.", date: "2026-03-15" }], moduleProgress: [{ module: "An Inspector Calls", progress: 85, score: 80, status: "in-progress" }, { module: "Edexcel Language Paper 1", progress: 75, score: 76, status: "in-progress" }, { module: "Poetry Anthology", progress: 60, score: 74, status: "in-progress" }, { module: "Edexcel Language Paper 2", progress: 50, score: 78, status: "in-progress" }], quizAttempts: [{ quiz: "An Inspector Calls Key Quotes", score: 8, maxScore: 10, date: "2026-03-22" }], activityLog: [{ action: "Scored 8/10 on An Inspector Calls Key Quotes", date: "2026-03-22" }], recommendations: ["Use the Context Cards for An Inspector Calls"], atRisk: false, riskReason: "", classId: "10a-english", teacherName: "Sarah Mitchell", modulesCompleted: 0, modules: [{ name: "An Inspector Calls", progress: 85, score: 80 }, { name: "Edexcel Language Paper 1", progress: 75, score: 76 }, { name: "Poetry Anthology", progress: 60, score: 74 }, { name: "Edexcel Language Paper 2", progress: 50, score: 78 }], mockExams: [{ name: "Edexcel Lang Paper 1 Mock", score: 78, grade: "6", date: "2026-01-20" }, { name: "Edexcel Lit Paper 1 Mock", score: 76, grade: "6", date: "2026-02-10" }], essays: [{ title: "An Inspector Calls - Responsibility Theme", score: 80, feedback: "Well-structured with good quotation use. Develop contextual links.", date: "2026-03-15" }], activityTimeline: [{ action: "Scored 8/10 on An Inspector Calls Key Quotes", date: "2026-03-22", type: "activity" }] },
+  { id: "s23", name: "Marcus Thompson", email: "m.thompson@riverside.ac.uk", yearGroup: "Year 10", className: "10B English", teacher: "Priya Sharma", overallProgress: 42, averageScore: 40, assignmentsCompleted: 9, assignmentsTotal: 24, lastActive: "6 days ago", status: "at-risk", strengths: ["Can engage verbally when motivated"], weaknesses: ["Written output", "Attendance", "Completing tasks", "Basic literacy skills"], recentScores: [44, 38, 42, 36, 40, 38, 44, 40], mockExamResults: [{ exam: "Edexcel Lang Paper 1 Mock", score: 38, grade: "2", date: "2026-01-20" }, { exam: "Edexcel Lit Paper 1 Mock", score: 40, grade: "3", date: "2026-02-10" }], essaySubmissions: [{ title: "An Inspector Calls - Sheila's Change", score: 40, feedback: "Some understanding but very brief. Must develop points fully.", date: "2026-03-15" }], moduleProgress: [{ module: "An Inspector Calls", progress: 40, score: 42, status: "in-progress" }, { module: "Edexcel Language Paper 1", progress: 30, score: 38, status: "in-progress" }, { module: "Poetry Anthology", progress: 15, score: 36, status: "in-progress" }, { module: "Edexcel Language Paper 2", progress: 20, score: 40, status: "in-progress" }], quizAttempts: [{ quiz: "An Inspector Calls Key Quotes", score: 4, maxScore: 10, date: "2026-03-22" }], activityLog: [{ action: "Submitted essay: An Inspector Calls (late, incomplete)", date: "2026-03-15" }], recommendations: ["Urgent: Intervention plan needed", "Use SEND-adapted resources with scaffolding", "Contact home regarding attendance"], atRisk: false, riskReason: "", classId: "10b-english", teacherName: "Priya Sharma", modulesCompleted: 0, modules: [{ name: "An Inspector Calls", progress: 40, score: 42 }, { name: "Edexcel Language Paper 1", progress: 30, score: 38 }, { name: "Poetry Anthology", progress: 15, score: 36 }, { name: "Edexcel Language Paper 2", progress: 20, score: 40 }], mockExams: [{ name: "Edexcel Lang Paper 1 Mock", score: 38, grade: "2", date: "2026-01-20" }, { name: "Edexcel Lit Paper 1 Mock", score: 40, grade: "3", date: "2026-02-10" }], essays: [{ title: "An Inspector Calls - Sheila's Change", score: 40, feedback: "Some understanding but very brief. Must develop points fully.", date: "2026-03-15" }], activityTimeline: [{ action: "Submitted essay: An Inspector Calls (late, incomplete)", date: "2026-03-15", type: "activity" }] },
+  { id: "s24", name: "Aisha Begum", email: "a.begum@riverside.ac.uk", yearGroup: "Year 10", className: "10C English", teacher: "Emma Thornton", overallProgress: 90, averageScore: 88, assignmentsCompleted: 23, assignmentsTotal: 24, lastActive: "Today", status: "excelling", strengths: ["Sophisticated analysis", "Wide reading", "Exam technique", "SPaG"], weaknesses: ["Sometimes lacks personal engagement with creative tasks"], recentScores: [86, 90, 88, 92, 87, 89, 86, 90], mockExamResults: [{ exam: "Edexcel Lang Paper 1 Mock", score: 90, grade: "8", date: "2026-01-20" }, { exam: "Edexcel Lit Paper 1 Mock", score: 88, grade: "8", date: "2026-02-10" }], essaySubmissions: [{ title: "An Inspector Calls - Dramatic Devices", score: 92, feedback: "Exceptional analysis of staging and dramatic irony.", date: "2026-03-15" }], moduleProgress: [{ module: "An Inspector Calls", progress: 95, score: 92, status: "in-progress" }, { module: "Edexcel Language Paper 1", progress: 90, score: 88, status: "in-progress" }, { module: "Poetry Anthology", progress: 80, score: 86, status: "in-progress" }, { module: "Edexcel Language Paper 2", progress: 85, score: 90, status: "in-progress" }], quizAttempts: [{ quiz: "An Inspector Calls Key Quotes", score: 10, maxScore: 10, date: "2026-03-22" }], activityLog: [{ action: "Achieved 10/10 on An Inspector Calls Key Quotes", date: "2026-03-22" }], recommendations: ["Explore the Grade 9 exemplar essays"], atRisk: false, riskReason: "", classId: "10c-english", teacherName: "Emma Thornton", modulesCompleted: 0, modules: [{ name: "An Inspector Calls", progress: 95, score: 92 }, { name: "Edexcel Language Paper 1", progress: 90, score: 88 }, { name: "Poetry Anthology", progress: 80, score: 86 }, { name: "Edexcel Language Paper 2", progress: 85, score: 90 }], mockExams: [{ name: "Edexcel Lang Paper 1 Mock", score: 90, grade: "8", date: "2026-01-20" }, { name: "Edexcel Lit Paper 1 Mock", score: 88, grade: "8", date: "2026-02-10" }], essays: [{ title: "An Inspector Calls - Dramatic Devices", score: 92, feedback: "Exceptional analysis of staging and dramatic irony.", date: "2026-03-15" }], activityTimeline: [{ action: "Achieved 10/10 on An Inspector Calls Key Quotes", date: "2026-03-22", type: "activity" }] },
+  { id: "s25", name: "Liam O'Connor", email: "l.oconnor@riverside.ac.uk", yearGroup: "Year 10", className: "10D English", teacher: "Thomas Walker", overallProgress: 65, averageScore: 62, assignmentsCompleted: 15, assignmentsTotal: 24, lastActive: "2 days ago", status: "needs-support", strengths: ["Understanding of plot and character"], weaknesses: ["Written accuracy", "Analysis of language", "Revision skills"], recentScores: [60, 64, 58, 66, 62, 60, 64, 62], mockExamResults: [{ exam: "Edexcel Lang Paper 1 Mock", score: 60, grade: "4", date: "2026-01-20" }], essaySubmissions: [{ title: "An Inspector Calls - Mr Birling", score: 64, feedback: "Understanding clear. Need to analyse language choices, not just retell.", date: "2026-03-15" }], moduleProgress: [{ module: "An Inspector Calls", progress: 65, score: 64, status: "in-progress" }, { module: "Edexcel Language Paper 1", progress: 55, score: 60, status: "in-progress" }, { module: "Poetry Anthology", progress: 40, score: 58, status: "in-progress" }, { module: "Edexcel Language Paper 2", progress: 45, score: 62, status: "in-progress" }], quizAttempts: [{ quiz: "An Inspector Calls Key Quotes", score: 6, maxScore: 10, date: "2026-03-22" }], activityLog: [{ action: "Submitted essay: An Inspector Calls - Mr Birling", date: "2026-03-15" }], recommendations: ["Use the Language Analysis Step-by-Step guide"], atRisk: false, riskReason: "", classId: "10d-english", teacherName: "Thomas Walker", modulesCompleted: 0, modules: [{ name: "An Inspector Calls", progress: 65, score: 64 }, { name: "Edexcel Language Paper 1", progress: 55, score: 60 }, { name: "Poetry Anthology", progress: 40, score: 58 }, { name: "Edexcel Language Paper 2", progress: 45, score: 62 }], mockExams: [{ name: "Edexcel Lang Paper 1 Mock", score: 60, grade: "4", date: "2026-01-20" }], essays: [{ title: "An Inspector Calls - Mr Birling", score: 64, feedback: "Understanding clear. Need to analyse language choices, not just retell.", date: "2026-03-15" }], activityTimeline: [{ action: "Submitted essay: An Inspector Calls - Mr Birling", date: "2026-03-15", type: "activity" }] },
+  { id: "s26", name: "Fatimah Hassan", email: "f.hassan@riverside.ac.uk", yearGroup: "Year 10", className: "10E IGCSE Lang", teacher: "Hannah Lewis", overallProgress: 74, averageScore: 72, assignmentsCompleted: 17, assignmentsTotal: 24, lastActive: "1 day ago", status: "on-track", strengths: ["Reading comprehension", "Summary skills"], weaknesses: ["Descriptive writing", "Vocabulary precision"], recentScores: [70, 74, 68, 76, 72, 74, 70, 72], mockExamResults: [{ exam: "IGCSE Lang Paper 1 Mock", score: 72, grade: "B", date: "2026-01-25" }], essaySubmissions: [{ title: "Descriptive Writing - Market Scene", score: 70, feedback: "Good sensory details. Sharpen vocabulary choices.", date: "2026-03-12" }], moduleProgress: [{ module: "IGCSE Reading Comprehension", progress: 80, score: 76, status: "in-progress" }, { module: "IGCSE Summary Writing", progress: 75, score: 74, status: "in-progress" }, { module: "IGCSE Descriptive Writing", progress: 60, score: 68, status: "in-progress" }, { module: "IGCSE Narrative Writing", progress: 55, score: 70, status: "in-progress" }], quizAttempts: [{ quiz: "IGCSE Reading Skills", score: 8, maxScore: 10, date: "2026-03-18" }], activityLog: [{ action: "Scored 8/10 on IGCSE Reading Skills", date: "2026-03-18" }], recommendations: ["Use the Vocabulary Upgrade flashcards"], atRisk: false, riskReason: "", classId: "10e-igcse-lang", teacherName: "Hannah Lewis", modulesCompleted: 0, modules: [{ name: "IGCSE Reading Comprehension", progress: 80, score: 76 }, { name: "IGCSE Summary Writing", progress: 75, score: 74 }, { name: "IGCSE Descriptive Writing", progress: 60, score: 68 }, { name: "IGCSE Narrative Writing", progress: 55, score: 70 }], mockExams: [{ name: "IGCSE Lang Paper 1 Mock", score: 72, grade: "B", date: "2026-01-25" }], essays: [{ title: "Descriptive Writing - Market Scene", score: 70, feedback: "Good sensory details. Sharpen vocabulary choices.", date: "2026-03-12" }], activityTimeline: [{ action: "Scored 8/10 on IGCSE Reading Skills", date: "2026-03-18", type: "activity" }] },
+  { id: "s27", name: "Ravi Kapoor", email: "r.kapoor@riverside.ac.uk", yearGroup: "Year 10", className: "10F IGCSE Lit", teacher: "Hannah Lewis", overallProgress: 82, averageScore: 80, assignmentsCompleted: 19, assignmentsTotal: 24, lastActive: "Today", status: "on-track", strengths: ["Textual analysis", "Understanding of themes", "Contextual knowledge"], weaknesses: ["Comparative essays", "Time allocation in exams"], recentScores: [78, 82, 76, 84, 80, 82, 78, 80], mockExamResults: [{ exam: "IGCSE Lit Paper 1 Mock", score: 80, grade: "A", date: "2026-02-05" }], essaySubmissions: [{ title: "Of Mice and Men - Dreams Theme", score: 84, feedback: "Insightful analysis with strong contextual understanding.", date: "2026-03-20" }], moduleProgress: [{ module: "IGCSE Set Text - Of Mice and Men", progress: 85, score: 84, status: "in-progress" }, { module: "IGCSE Poetry", progress: 75, score: 76, status: "in-progress" }, { module: "IGCSE Unseen Prose", progress: 70, score: 78, status: "in-progress" }], quizAttempts: [{ quiz: "Of Mice and Men Context", score: 9, maxScore: 10, date: "2026-03-16" }], activityLog: [{ action: "Scored 9/10 on Of Mice and Men Context", date: "2026-03-16" }], recommendations: ["Use the Comparison Essay Framework"], atRisk: false, riskReason: "", classId: "10f-igcse-lit", teacherName: "Hannah Lewis", modulesCompleted: 0, modules: [{ name: "IGCSE Set Text - Of Mice and Men", progress: 85, score: 84 }, { name: "IGCSE Poetry", progress: 75, score: 76 }, { name: "IGCSE Unseen Prose", progress: 70, score: 78 }], mockExams: [{ name: "IGCSE Lit Paper 1 Mock", score: 80, grade: "A", date: "2026-02-05" }], essays: [{ title: "Of Mice and Men - Dreams Theme", score: 84, feedback: "Insightful analysis with strong contextual understanding.", date: "2026-03-20" }], activityTimeline: [{ action: "Scored 9/10 on Of Mice and Men Context", date: "2026-03-16", type: "activity" }] },
+  { id: "s28", name: "Charlotte Brown", email: "c.brown@riverside.ac.uk", yearGroup: "Year 10", className: "10A English", teacher: "Sarah Mitchell", overallProgress: 70, averageScore: 68, assignmentsCompleted: 16, assignmentsTotal: 24, lastActive: "1 day ago", status: "on-track", strengths: ["Creative writing voice", "Empathy with characters"], weaknesses: ["Analytical writing", "Using subject terminology"], recentScores: [66, 70, 64, 72, 68, 70, 66, 68], mockExamResults: [{ exam: "Edexcel Lang Paper 1 Mock", score: 68, grade: "5", date: "2026-01-20" }], essaySubmissions: [{ title: "Creative Writing - Childhood Memory", score: 72, feedback: "Beautifully evocative writing. Keep this voice.", date: "2026-03-18" }], moduleProgress: [{ module: "An Inspector Calls", progress: 70, score: 68, status: "in-progress" }, { module: "Edexcel Language Paper 1", progress: 65, score: 66, status: "in-progress" }, { module: "Poetry Anthology", progress: 50, score: 64, status: "in-progress" }, { module: "Edexcel Language Paper 2", progress: 55, score: 70, status: "in-progress" }], quizAttempts: [{ quiz: "An Inspector Calls Key Quotes", score: 7, maxScore: 10, date: "2026-03-22" }], activityLog: [{ action: "Submitted essay: Creative Writing - Childhood Memory", date: "2026-03-18" }], recommendations: ["Use the Subject Terminology flashcards"], atRisk: false, riskReason: "", classId: "10a-english", teacherName: "Sarah Mitchell", modulesCompleted: 0, modules: [{ name: "An Inspector Calls", progress: 70, score: 68 }, { name: "Edexcel Language Paper 1", progress: 65, score: 66 }, { name: "Poetry Anthology", progress: 50, score: 64 }, { name: "Edexcel Language Paper 2", progress: 55, score: 70 }], mockExams: [{ name: "Edexcel Lang Paper 1 Mock", score: 68, grade: "5", date: "2026-01-20" }], essays: [{ title: "Creative Writing - Childhood Memory", score: 72, feedback: "Beautifully evocative writing. Keep this voice.", date: "2026-03-18" }], activityTimeline: [{ action: "Submitted essay: Creative Writing - Childhood Memory", date: "2026-03-18", type: "activity" }] },
+  { id: "s29", name: "Ibrahim Yusuf", email: "i.yusuf@riverside.ac.uk", yearGroup: "Year 10", className: "10B English", teacher: "Priya Sharma", overallProgress: 58, averageScore: 55, assignmentsCompleted: 13, assignmentsTotal: 24, lastActive: "3 days ago", status: "needs-support", strengths: ["Determination", "Improving attendance"], weaknesses: ["Reading speed", "Essay length", "Vocabulary range"], recentScores: [52, 56, 50, 58, 54, 56, 58, 55], mockExamResults: [{ exam: "Edexcel Lang Paper 1 Mock", score: 54, grade: "3", date: "2026-01-20" }], essaySubmissions: [{ title: "An Inspector Calls - Who is Most Responsible?", score: 56, feedback: "Shows understanding. Needs to develop points more fully.", date: "2026-03-15" }], moduleProgress: [{ module: "An Inspector Calls", progress: 55, score: 56, status: "in-progress" }, { module: "Edexcel Language Paper 1", progress: 45, score: 52, status: "in-progress" }, { module: "Poetry Anthology", progress: 30, score: 50, status: "in-progress" }, { module: "Edexcel Language Paper 2", progress: 35, score: 54, status: "in-progress" }], quizAttempts: [{ quiz: "An Inspector Calls Key Quotes", score: 5, maxScore: 10, date: "2026-03-22" }], activityLog: [{ action: "Submitted essay: Who is Most Responsible?", date: "2026-03-15" }], recommendations: ["Use the Reading Speed Builder exercises"], atRisk: false, riskReason: "", classId: "10b-english", teacherName: "Priya Sharma", modulesCompleted: 0, modules: [{ name: "An Inspector Calls", progress: 55, score: 56 }, { name: "Edexcel Language Paper 1", progress: 45, score: 52 }, { name: "Poetry Anthology", progress: 30, score: 50 }, { name: "Edexcel Language Paper 2", progress: 35, score: 54 }], mockExams: [{ name: "Edexcel Lang Paper 1 Mock", score: 54, grade: "3", date: "2026-01-20" }], essays: [{ title: "An Inspector Calls - Who is Most Responsible?", score: 56, feedback: "Shows understanding. Needs to develop points more fully.", date: "2026-03-15" }], activityTimeline: [{ action: "Submitted essay: Who is Most Responsible?", date: "2026-03-15", type: "activity" }] },
+  // ── Year 11 (8 students) ──
+  { id: "s30", name: "Hannah Price", email: "h.price@riverside.ac.uk", yearGroup: "Year 11", className: "11A English", teacher: "David Okonkwo", overallProgress: 86, averageScore: 84, assignmentsCompleted: 26, assignmentsTotal: 28, lastActive: "Today", status: "on-track", strengths: ["Exam technique", "Time management", "Consistent performance"], weaknesses: ["Unseen poetry confidence"], recentScores: [82, 84, 80, 86, 88, 84, 82, 86], mockExamResults: [{ exam: "Edexcel Lang Paper 1 Mock 2", score: 84, grade: "7", date: "2026-02-20" }, { exam: "Edexcel Lit Paper 1 Mock 2", score: 86, grade: "7", date: "2026-03-01" }, { exam: "Edexcel Lang Paper 2 Mock", score: 82, grade: "7", date: "2026-03-10" }], essaySubmissions: [{ title: "Macbeth - Power and Ambition", score: 86, feedback: "Mature and well-argued. Strong contextual knowledge.", date: "2026-03-18" }], moduleProgress: [{ module: "Macbeth", progress: 95, score: 86, status: "in-progress" }, { module: "An Inspector Calls Revision", progress: 90, score: 84, status: "in-progress" }, { module: "Poetry Anthology Revision", progress: 80, score: 82, status: "in-progress" }, { module: "Language Paper 1 Revision", progress: 85, score: 84, status: "in-progress" }, { module: "Language Paper 2 Revision", progress: 80, score: 82, status: "in-progress" }], quizAttempts: [{ quiz: "Macbeth Key Quotes", score: 9, maxScore: 10, date: "2026-03-25" }], activityLog: [{ action: "Completed Macbeth revision module", date: "2026-03-26" }], recommendations: ["Practise Unseen Poetry with the 15-minute response drills"], atRisk: false, riskReason: "", classId: "11a-english", teacherName: "David Okonkwo", modulesCompleted: 0, modules: [{ name: "Macbeth", progress: 95, score: 86 }, { name: "An Inspector Calls Revision", progress: 90, score: 84 }, { name: "Poetry Anthology Revision", progress: 80, score: 82 }, { name: "Language Paper 1 Revision", progress: 85, score: 84 }, { name: "Language Paper 2 Revision", progress: 80, score: 82 }], mockExams: [{ name: "Edexcel Lang Paper 1 Mock 2", score: 84, grade: "7", date: "2026-02-20" }, { name: "Edexcel Lit Paper 1 Mock 2", score: 86, grade: "7", date: "2026-03-01" }, { name: "Edexcel Lang Paper 2 Mock", score: 82, grade: "7", date: "2026-03-10" }], essays: [{ title: "Macbeth - Power and Ambition", score: 86, feedback: "Mature and well-argued. Strong contextual knowledge.", date: "2026-03-18" }], activityTimeline: [{ action: "Completed Macbeth revision module", date: "2026-03-26", type: "activity" }] },
+  { id: "s31", name: "Nathan Wright", email: "n.wright@riverside.ac.uk", yearGroup: "Year 11", className: "11B English", teacher: "Sarah Mitchell", overallProgress: 52, averageScore: 50, assignmentsCompleted: 15, assignmentsTotal: 28, lastActive: "4 days ago", status: "at-risk", strengths: ["Can produce good work when focused"], weaknesses: ["Consistency", "Revision habits", "Engagement declining", "Mock results dropping"], recentScores: [54, 50, 52, 46, 48, 52, 50, 48], mockExamResults: [{ exam: "Edexcel Lang Paper 1 Mock 2", score: 48, grade: "3", date: "2026-02-20" }, { exam: "Edexcel Lit Paper 1 Mock 2", score: 50, grade: "3", date: "2026-03-01" }], essaySubmissions: [{ title: "Macbeth - Lady Macbeth's Guilt", score: 52, feedback: "Some valid points but too brief. Must develop analysis.", date: "2026-03-18" }], moduleProgress: [{ module: "Macbeth", progress: 55, score: 52, status: "in-progress" }, { module: "An Inspector Calls Revision", progress: 40, score: 48, status: "in-progress" }, { module: "Poetry Anthology Revision", progress: 30, score: 46, status: "in-progress" }, { module: "Language Paper 1 Revision", progress: 45, score: 50, status: "in-progress" }, { module: "Language Paper 2 Revision", progress: 35, score: 48, status: "in-progress" }], quizAttempts: [{ quiz: "Macbeth Key Quotes", score: 5, maxScore: 10, date: "2026-03-25" }], activityLog: [{ action: "Submitted essay: Lady Macbeth's Guilt (late)", date: "2026-03-18" }], recommendations: ["Urgent: Pre-exam intervention sessions", "Create a structured revision timetable"], atRisk: false, riskReason: "", classId: "11b-english", teacherName: "Sarah Mitchell", modulesCompleted: 0, modules: [{ name: "Macbeth", progress: 55, score: 52 }, { name: "An Inspector Calls Revision", progress: 40, score: 48 }, { name: "Poetry Anthology Revision", progress: 30, score: 46 }, { name: "Language Paper 1 Revision", progress: 45, score: 50 }, { name: "Language Paper 2 Revision", progress: 35, score: 48 }], mockExams: [{ name: "Edexcel Lang Paper 1 Mock 2", score: 48, grade: "3", date: "2026-02-20" }, { name: "Edexcel Lit Paper 1 Mock 2", score: 50, grade: "3", date: "2026-03-01" }], essays: [{ title: "Macbeth - Lady Macbeth's Guilt", score: 52, feedback: "Some valid points but too brief. Must develop analysis.", date: "2026-03-18" }], activityTimeline: [{ action: "Submitted essay: Lady Macbeth's Guilt (late)", date: "2026-03-18", type: "activity" }] },
+  { id: "s32", name: "Olivia Foster", email: "o.foster@riverside.ac.uk", yearGroup: "Year 11", className: "11C English", teacher: "Michael Chen", overallProgress: 92, averageScore: 90, assignmentsCompleted: 28, assignmentsTotal: 28, lastActive: "Today", status: "excelling", strengths: ["Exceptional analytical ability", "Wide vocabulary", "Exam technique", "Independent revision"], weaknesses: ["None significant - consistently outstanding"], recentScores: [88, 92, 90, 94, 91, 90, 88, 92], mockExamResults: [{ exam: "Edexcel Lang Paper 1 Mock 2", score: 92, grade: "9", date: "2026-02-20" }, { exam: "Edexcel Lit Paper 1 Mock 2", score: 90, grade: "8", date: "2026-03-01" }], essaySubmissions: [{ title: "Macbeth - Supernatural and Moral Disorder", score: 94, feedback: "Outstanding. Sophisticated argument with perceptive contextual integration.", date: "2026-03-18" }], moduleProgress: [{ module: "Macbeth", progress: 100, score: 94, status: "completed" }, { module: "An Inspector Calls Revision", progress: 100, score: 92, status: "completed" }, { module: "Poetry Anthology Revision", progress: 95, score: 88, status: "in-progress" }, { module: "Language Paper 1 Revision", progress: 100, score: 92, status: "completed" }, { module: "Language Paper 2 Revision", progress: 95, score: 88, status: "in-progress" }], quizAttempts: [{ quiz: "Macbeth Key Quotes", score: 10, maxScore: 10, date: "2026-03-25" }], activityLog: [{ action: "Achieved 10/10 on Macbeth Key Quotes", date: "2026-03-25" }], recommendations: ["Focus remaining revision on Poetry Anthology weaker poems"], atRisk: false, riskReason: "", classId: "11c-english", teacherName: "Michael Chen", modulesCompleted: 3, modules: [{ name: "Macbeth", progress: 100, score: 94 }, { name: "An Inspector Calls Revision", progress: 100, score: 92 }, { name: "Poetry Anthology Revision", progress: 95, score: 88 }, { name: "Language Paper 1 Revision", progress: 100, score: 92 }, { name: "Language Paper 2 Revision", progress: 95, score: 88 }], mockExams: [{ name: "Edexcel Lang Paper 1 Mock 2", score: 92, grade: "9", date: "2026-02-20" }, { name: "Edexcel Lit Paper 1 Mock 2", score: 90, grade: "8", date: "2026-03-01" }], essays: [{ title: "Macbeth - Supernatural and Moral Disorder", score: 94, feedback: "Outstanding. Sophisticated argument with perceptive contextual integration.", date: "2026-03-18" }], activityTimeline: [{ action: "Achieved 10/10 on Macbeth Key Quotes", date: "2026-03-25", type: "activity" }] },
+  { id: "s33", name: "Kai Nakamura", email: "k.nakamura@riverside.ac.uk", yearGroup: "Year 11", className: "11D English", teacher: "Christopher Bell", overallProgress: 70, averageScore: 68, assignmentsCompleted: 19, assignmentsTotal: 28, lastActive: "1 day ago", status: "on-track", strengths: ["Creative writing", "Character analysis"], weaknesses: ["Language analysis terminology", "Poetry response"], recentScores: [66, 70, 64, 72, 68, 70, 66, 68], mockExamResults: [{ exam: "Edexcel Lang Paper 1 Mock 2", score: 70, grade: "5", date: "2026-02-20" }], essaySubmissions: [{ title: "Macbeth - Appearance vs Reality", score: 70, feedback: "Good character analysis. Strengthen literary terminology.", date: "2026-03-18" }], moduleProgress: [{ module: "Macbeth", progress: 75, score: 70, status: "in-progress" }, { module: "An Inspector Calls Revision", progress: 65, score: 68, status: "in-progress" }, { module: "Poetry Anthology Revision", progress: 45, score: 62, status: "in-progress" }, { module: "Language Paper 1 Revision", progress: 70, score: 70, status: "in-progress" }, { module: "Language Paper 2 Revision", progress: 55, score: 66, status: "in-progress" }], quizAttempts: [{ quiz: "Macbeth Key Quotes", score: 7, maxScore: 10, date: "2026-03-25" }], activityLog: [{ action: "Scored 7/10 on Macbeth Key Quotes", date: "2026-03-25" }], recommendations: ["Use the Literary Terminology flashcards daily"], atRisk: false, riskReason: "", classId: "11d-english", teacherName: "Christopher Bell", modulesCompleted: 0, modules: [{ name: "Macbeth", progress: 75, score: 70 }, { name: "An Inspector Calls Revision", progress: 65, score: 68 }, { name: "Poetry Anthology Revision", progress: 45, score: 62 }, { name: "Language Paper 1 Revision", progress: 70, score: 70 }, { name: "Language Paper 2 Revision", progress: 55, score: 66 }], mockExams: [{ name: "Edexcel Lang Paper 1 Mock 2", score: 70, grade: "5", date: "2026-02-20" }], essays: [{ title: "Macbeth - Appearance vs Reality", score: 70, feedback: "Good character analysis. Strengthen literary terminology.", date: "2026-03-18" }], activityTimeline: [{ action: "Scored 7/10 on Macbeth Key Quotes", date: "2026-03-25", type: "activity" }] },
+  { id: "s34", name: "Ella Chambers", email: "e.chambers@riverside.ac.uk", yearGroup: "Year 11", className: "11E IGCSE Lang", teacher: "Robert Patel", overallProgress: 78, averageScore: 76, assignmentsCompleted: 22, assignmentsTotal: 28, lastActive: "Today", status: "on-track", strengths: ["Summary writing", "Reading accuracy"], weaknesses: ["Argumentative writing", "Developing a personal voice"], recentScores: [74, 78, 72, 80, 76, 78, 74, 76], mockExamResults: [{ exam: "IGCSE Lang Paper 1 Mock 2", score: 76, grade: "B", date: "2026-02-15" }], essaySubmissions: [{ title: "IGCSE Argumentative Essay - Social Media", score: 74, feedback: "Clear structure. Develop counter-arguments.", date: "2026-03-14" }], moduleProgress: [{ module: "IGCSE Reading Comprehension", progress: 85, score: 78, status: "in-progress" }, { module: "IGCSE Summary Writing", progress: 90, score: 80, status: "in-progress" }, { module: "IGCSE Argumentative Writing", progress: 65, score: 72, status: "in-progress" }, { module: "IGCSE Descriptive Writing", progress: 70, score: 74, status: "in-progress" }], quizAttempts: [{ quiz: "IGCSE Reading Skills", score: 8, maxScore: 10, date: "2026-03-20" }], activityLog: [{ action: "Scored 8/10 on IGCSE Reading Skills", date: "2026-03-20" }], recommendations: ["Use the Argumentative Writing Model Answers"], atRisk: false, riskReason: "", classId: "11e-igcse-lang", teacherName: "Robert Patel", modulesCompleted: 0, modules: [{ name: "IGCSE Reading Comprehension", progress: 85, score: 78 }, { name: "IGCSE Summary Writing", progress: 90, score: 80 }, { name: "IGCSE Argumentative Writing", progress: 65, score: 72 }, { name: "IGCSE Descriptive Writing", progress: 70, score: 74 }], mockExams: [{ name: "IGCSE Lang Paper 1 Mock 2", score: 76, grade: "B", date: "2026-02-15" }], essays: [{ title: "IGCSE Argumentative Essay - Social Media", score: 74, feedback: "Clear structure. Develop counter-arguments.", date: "2026-03-14" }], activityTimeline: [{ action: "Scored 8/10 on IGCSE Reading Skills", date: "2026-03-20", type: "activity" }] },
+  { id: "s35", name: "Alfie Dixon", email: "a.dixon@riverside.ac.uk", yearGroup: "Year 11", className: "11F IGCSE Lit", teacher: "Robert Patel", overallProgress: 60, averageScore: 58, assignmentsCompleted: 16, assignmentsTotal: 28, lastActive: "2 days ago", status: "needs-support", strengths: ["Plot knowledge"], weaknesses: ["Close analysis", "Essay length", "Using quotations effectively"], recentScores: [56, 60, 54, 62, 58, 56, 60, 58], mockExamResults: [{ exam: "IGCSE Lit Paper 1 Mock 2", score: 58, grade: "C", date: "2026-02-20" }], essaySubmissions: [{ title: "Of Mice and Men - Loneliness", score: 60, feedback: "Understands the theme but needs to analyse language closely.", date: "2026-03-16" }], moduleProgress: [{ module: "IGCSE Set Text - Of Mice and Men", progress: 65, score: 60, status: "in-progress" }, { module: "IGCSE Poetry", progress: 45, score: 54, status: "in-progress" }, { module: "IGCSE Unseen Prose", progress: 40, score: 56, status: "in-progress" }], quizAttempts: [{ quiz: "Of Mice and Men Context", score: 6, maxScore: 10, date: "2026-03-16" }], activityLog: [{ action: "Submitted essay: Of Mice and Men - Loneliness", date: "2026-03-16" }], recommendations: ["Practise quotation embedding with the model answer bank"], atRisk: false, riskReason: "", classId: "11f-igcse-lit", teacherName: "Robert Patel", modulesCompleted: 0, modules: [{ name: "IGCSE Set Text - Of Mice and Men", progress: 65, score: 60 }, { name: "IGCSE Poetry", progress: 45, score: 54 }, { name: "IGCSE Unseen Prose", progress: 40, score: 56 }], mockExams: [{ name: "IGCSE Lit Paper 1 Mock 2", score: 58, grade: "C", date: "2026-02-20" }], essays: [{ title: "Of Mice and Men - Loneliness", score: 60, feedback: "Understands the theme but needs to analyse language closely.", date: "2026-03-16" }], activityTimeline: [{ action: "Submitted essay: Of Mice and Men - Loneliness", date: "2026-03-16", type: "activity" }] },
+  { id: "s36", name: "Zara Mahmood", email: "z.mahmood@riverside.ac.uk", yearGroup: "Year 11", className: "11A English", teacher: "David Okonkwo", overallProgress: 75, averageScore: 73, assignmentsCompleted: 21, assignmentsTotal: 28, lastActive: "1 day ago", status: "on-track", strengths: ["Contextual understanding", "Poetry anthology knowledge"], weaknesses: ["Creative writing under pressure", "Language Paper 1 Q5"], recentScores: [72, 74, 70, 76, 73, 75, 72, 74], mockExamResults: [{ exam: "Edexcel Lang Paper 1 Mock 2", score: 72, grade: "5", date: "2026-02-20" }], essaySubmissions: [{ title: "Poetry Comparison - Love and Relationships", score: 76, feedback: "Perceptive comparison with strong contextual grounding.", date: "2026-03-20" }], moduleProgress: [{ module: "Macbeth", progress: 80, score: 76, status: "in-progress" }, { module: "An Inspector Calls Revision", progress: 75, score: 74, status: "in-progress" }, { module: "Poetry Anthology Revision", progress: 85, score: 78, status: "in-progress" }, { module: "Language Paper 1 Revision", progress: 60, score: 68, status: "in-progress" }, { module: "Language Paper 2 Revision", progress: 70, score: 74, status: "in-progress" }], quizAttempts: [{ quiz: "Macbeth Key Quotes", score: 8, maxScore: 10, date: "2026-03-25" }], activityLog: [{ action: "Submitted essay: Poetry Comparison", date: "2026-03-20" }], recommendations: ["Focus on Language Paper 1 Q5 with the Creative Writing Bootcamp"], atRisk: false, riskReason: "", classId: "11a-english", teacherName: "David Okonkwo", modulesCompleted: 0, modules: [{ name: "Macbeth", progress: 80, score: 76 }, { name: "An Inspector Calls Revision", progress: 75, score: 74 }, { name: "Poetry Anthology Revision", progress: 85, score: 78 }, { name: "Language Paper 1 Revision", progress: 60, score: 68 }, { name: "Language Paper 2 Revision", progress: 70, score: 74 }], mockExams: [{ name: "Edexcel Lang Paper 1 Mock 2", score: 72, grade: "5", date: "2026-02-20" }], essays: [{ title: "Poetry Comparison - Love and Relationships", score: 76, feedback: "Perceptive comparison with strong contextual grounding.", date: "2026-03-20" }], activityTimeline: [{ action: "Submitted essay: Poetry Comparison", date: "2026-03-20", type: "activity" }] },
+  { id: "s37", name: "Ben Carter", email: "b.carter@riverside.ac.uk", yearGroup: "Year 11", className: "11B English", teacher: "Sarah Mitchell", overallProgress: 82, averageScore: 80, assignmentsCompleted: 24, assignmentsTotal: 28, lastActive: "Today", status: "on-track", strengths: ["Language analysis", "Exam technique", "Consistent effort"], weaknesses: ["Literature context sometimes superficial"], recentScores: [78, 82, 76, 84, 80, 82, 78, 80], mockExamResults: [{ exam: "Edexcel Lang Paper 1 Mock 2", score: 82, grade: "7", date: "2026-02-20" }, { exam: "Edexcel Lit Paper 1 Mock 2", score: 80, grade: "6", date: "2026-03-01" }], essaySubmissions: [{ title: "Macbeth - Kingship and Tyranny", score: 80, feedback: "Strong language analysis. Push contextual understanding deeper.", date: "2026-03-18" }], moduleProgress: [{ module: "Macbeth", progress: 85, score: 80, status: "in-progress" }, { module: "An Inspector Calls Revision", progress: 80, score: 78, status: "in-progress" }, { module: "Poetry Anthology Revision", progress: 75, score: 76, status: "in-progress" }, { module: "Language Paper 1 Revision", progress: 90, score: 84, status: "in-progress" }, { module: "Language Paper 2 Revision", progress: 80, score: 78, status: "in-progress" }], quizAttempts: [{ quiz: "Macbeth Key Quotes", score: 8, maxScore: 10, date: "2026-03-25" }], activityLog: [{ action: "Scored 8/10 on Macbeth Key Quotes", date: "2026-03-25" }], recommendations: ["Deepen contextual knowledge with the Historical Context revision pack"], atRisk: false, riskReason: "", classId: "11b-english", teacherName: "Sarah Mitchell", modulesCompleted: 0, modules: [{ name: "Macbeth", progress: 85, score: 80 }, { name: "An Inspector Calls Revision", progress: 80, score: 78 }, { name: "Poetry Anthology Revision", progress: 75, score: 76 }, { name: "Language Paper 1 Revision", progress: 90, score: 84 }, { name: "Language Paper 2 Revision", progress: 80, score: 78 }], mockExams: [{ name: "Edexcel Lang Paper 1 Mock 2", score: 82, grade: "7", date: "2026-02-20" }, { name: "Edexcel Lit Paper 1 Mock 2", score: 80, grade: "6", date: "2026-03-01" }], essays: [{ title: "Macbeth - Kingship and Tyranny", score: 80, feedback: "Strong language analysis. Push contextual understanding deeper.", date: "2026-03-18" }], activityTimeline: [{ action: "Scored 8/10 on Macbeth Key Quotes", date: "2026-03-25", type: "activity" }] },
+  // ── Year 12 (6 students) ──
+  { id: "s38", name: "Eleanor Whitfield", email: "e.whitfield@riverside.ac.uk", yearGroup: "Year 12", className: "12 Edexcel Lang", teacher: "Fatima Al-Hassan", overallProgress: 84, averageScore: 82, assignmentsCompleted: 14, assignmentsTotal: 16, lastActive: "Today", status: "on-track", strengths: ["Language investigation skills", "Academic register", "Research methods"], weaknesses: ["Original language coursework ideas"], recentScores: [80, 84, 78, 86, 82, 84, 80, 82], mockExamResults: [{ exam: "Edexcel A-Level Lang Paper 1 Mock", score: 82, grade: "B", date: "2026-02-25" }], essaySubmissions: [{ title: "Language and Gender - Analysis of Political Speeches", score: 84, feedback: "Well-researched with good application of theory.", date: "2026-03-20" }], moduleProgress: [{ module: "Language and Gender", progress: 90, score: 84, status: "in-progress" }, { module: "Child Language Acquisition", progress: 85, score: 82, status: "in-progress" }, { module: "Language Change", progress: 60, score: 78, status: "in-progress" }, { module: "Language Investigation Prep", progress: 50, score: 80, status: "in-progress" }], quizAttempts: [{ quiz: "Language Theorists", score: 8, maxScore: 10, date: "2026-03-22" }], activityLog: [{ action: "Scored 8/10 on Language Theorists", date: "2026-03-22" }], recommendations: ["Brainstorm investigation topics with the Coursework Ideas Generator"], atRisk: false, riskReason: "", classId: "12-edexcel-lang", teacherName: "Fatima Al-Hassan", modulesCompleted: 0, modules: [{ name: "Language and Gender", progress: 90, score: 84 }, { name: "Child Language Acquisition", progress: 85, score: 82 }, { name: "Language Change", progress: 60, score: 78 }, { name: "Language Investigation Prep", progress: 50, score: 80 }], mockExams: [{ name: "Edexcel A-Level Lang Paper 1 Mock", score: 82, grade: "B", date: "2026-02-25" }], essays: [{ title: "Language and Gender - Analysis of Political Speeches", score: 84, feedback: "Well-researched with good application of theory.", date: "2026-03-20" }], activityTimeline: [{ action: "Scored 8/10 on Language Theorists", date: "2026-03-22", type: "activity" }] },
+  { id: "s39", name: "George Hamilton", email: "g.hamilton@riverside.ac.uk", yearGroup: "Year 12", className: "12 Edexcel Lit", teacher: "Fatima Al-Hassan", overallProgress: 76, averageScore: 74, assignmentsCompleted: 12, assignmentsTotal: 16, lastActive: "1 day ago", status: "on-track", strengths: ["Close reading", "Engagement with challenging texts"], weaknesses: ["Critical theory application", "Essay planning under pressure"], recentScores: [72, 76, 70, 78, 74, 76, 72, 74], mockExamResults: [{ exam: "Edexcel A-Level Lit Paper 1 Mock", score: 74, grade: "C", date: "2026-02-25" }], essaySubmissions: [{ title: "Othello - Jealousy and Race", score: 76, feedback: "Thoughtful engagement. Apply critical perspectives more explicitly.", date: "2026-03-18" }], moduleProgress: [{ module: "Othello", progress: 80, score: 76, status: "in-progress" }, { module: "The Handmaid's Tale", progress: 65, score: 72, status: "in-progress" }, { module: "Poetry Comparison", progress: 55, score: 70, status: "in-progress" }], quizAttempts: [{ quiz: "Othello Context and Critics", score: 7, maxScore: 10, date: "2026-03-20" }], activityLog: [{ action: "Submitted essay: Othello - Jealousy and Race", date: "2026-03-18" }], recommendations: ["Study the Critical Theory Introduction pack"], atRisk: false, riskReason: "", classId: "12-edexcel-lit", teacherName: "Fatima Al-Hassan", modulesCompleted: 0, modules: [{ name: "Othello", progress: 80, score: 76 }, { name: "The Handmaid's Tale", progress: 65, score: 72 }, { name: "Poetry Comparison", progress: 55, score: 70 }], mockExams: [{ name: "Edexcel A-Level Lit Paper 1 Mock", score: 74, grade: "C", date: "2026-02-25" }], essays: [{ title: "Othello - Jealousy and Race", score: 76, feedback: "Thoughtful engagement. Apply critical perspectives more explicitly.", date: "2026-03-18" }], activityTimeline: [{ action: "Submitted essay: Othello - Jealousy and Race", date: "2026-03-18", type: "activity" }] },
+  { id: "s40", name: "Maya Chandra", email: "m.chandra@riverside.ac.uk", yearGroup: "Year 12", className: "12 IAL Lang", teacher: "Laura Simpson", overallProgress: 88, averageScore: 86, assignmentsCompleted: 15, assignmentsTotal: 16, lastActive: "Today", status: "excelling", strengths: ["Linguistic analysis", "Data commentary", "Academic writing"], weaknesses: ["Occasional over-reliance on theorists"], recentScores: [84, 88, 82, 90, 86, 88, 84, 86], mockExamResults: [{ exam: "IAL Language Unit 1 Mock", score: 86, grade: "A", date: "2026-02-20" }], essaySubmissions: [{ title: "Language and Power - Media Discourse Analysis", score: 88, feedback: "Sophisticated analysis with excellent use of frameworks.", date: "2026-03-22" }], moduleProgress: [{ module: "Language and Power", progress: 95, score: 88, status: "in-progress" }, { module: "Sociolinguistics", progress: 90, score: 86, status: "in-progress" }, { module: "Language Acquisition", progress: 75, score: 82, status: "in-progress" }], quizAttempts: [{ quiz: "Language Frameworks", score: 9, maxScore: 10, date: "2026-03-20" }], activityLog: [{ action: "Scored 9/10 on Language Frameworks", date: "2026-03-20" }], recommendations: ["Develop independent analytical voice alongside theoretical frameworks"], atRisk: false, riskReason: "", classId: "12-ial-lang", teacherName: "Laura Simpson", modulesCompleted: 0, modules: [{ name: "Language and Power", progress: 95, score: 88 }, { name: "Sociolinguistics", progress: 90, score: 86 }, { name: "Language Acquisition", progress: 75, score: 82 }], mockExams: [{ name: "IAL Language Unit 1 Mock", score: 86, grade: "A", date: "2026-02-20" }], essays: [{ title: "Language and Power - Media Discourse Analysis", score: 88, feedback: "Sophisticated analysis with excellent use of frameworks.", date: "2026-03-22" }], activityTimeline: [{ action: "Scored 9/10 on Language Frameworks", date: "2026-03-20", type: "activity" }] },
+  { id: "s41", name: "Oscar Fleming", email: "o.fleming@riverside.ac.uk", yearGroup: "Year 12", className: "12 IGCSE Lang", teacher: "Claire Abimbola", overallProgress: 66, averageScore: 64, assignmentsCompleted: 10, assignmentsTotal: 16, lastActive: "2 days ago", status: "needs-support", strengths: ["Ideas and content"], weaknesses: ["Academic writing skills", "Grammar accuracy", "Meeting deadlines"], recentScores: [62, 66, 60, 68, 64, 66, 62, 64], mockExamResults: [{ exam: "IGCSE Lang Paper 1 Mock", score: 64, grade: "C", date: "2026-02-15" }], essaySubmissions: [{ title: "Argumentative Essay - Technology in Education", score: 66, feedback: "Good ideas but grammatical errors weaken the argument.", date: "2026-03-14" }], moduleProgress: [{ module: "IGCSE Reading Comprehension", progress: 70, score: 68, status: "in-progress" }, { module: "IGCSE Summary Writing", progress: 60, score: 62, status: "in-progress" }, { module: "IGCSE Argumentative Writing", progress: 50, score: 60, status: "in-progress" }], quizAttempts: [{ quiz: "IGCSE Reading Skills", score: 6, maxScore: 10, date: "2026-03-18" }], activityLog: [{ action: "Submitted essay: Technology in Education (late)", date: "2026-03-14" }], recommendations: ["Complete the Grammar Accuracy Workbook"], atRisk: false, riskReason: "", classId: "12-igcse-lang", teacherName: "Claire Abimbola", modulesCompleted: 0, modules: [{ name: "IGCSE Reading Comprehension", progress: 70, score: 68 }, { name: "IGCSE Summary Writing", progress: 60, score: 62 }, { name: "IGCSE Argumentative Writing", progress: 50, score: 60 }], mockExams: [{ name: "IGCSE Lang Paper 1 Mock", score: 64, grade: "C", date: "2026-02-15" }], essays: [{ title: "Argumentative Essay - Technology in Education", score: 66, feedback: "Good ideas but grammatical errors weaken the argument.", date: "2026-03-14" }], activityTimeline: [{ action: "Submitted essay: Technology in Education (late)", date: "2026-03-14", type: "activity" }] },
+  { id: "s42", name: "Sophia Alexandrou", email: "s.alexandrou@riverside.ac.uk", yearGroup: "Year 12", className: "12 IGCSE Lit", teacher: "William Hart", overallProgress: 80, averageScore: 78, assignmentsCompleted: 13, assignmentsTotal: 16, lastActive: "Today", status: "on-track", strengths: ["Character analysis", "Thematic understanding", "Consistent effort"], weaknesses: ["Analysing writers' methods in detail"], recentScores: [76, 80, 74, 82, 78, 80, 76, 78], mockExamResults: [{ exam: "IGCSE Lit Paper 1 Mock", score: 78, grade: "B", date: "2026-02-20" }], essaySubmissions: [{ title: "Great Expectations - Social Class", score: 80, feedback: "Excellent thematic understanding. Analyse language choices more closely.", date: "2026-03-16" }], moduleProgress: [{ module: "IGCSE Set Text - Great Expectations", progress: 85, score: 80, status: "in-progress" }, { module: "IGCSE Poetry", progress: 70, score: 76, status: "in-progress" }, { module: "IGCSE Unseen Prose", progress: 65, score: 74, status: "in-progress" }], quizAttempts: [{ quiz: "Great Expectations Context", score: 8, maxScore: 10, date: "2026-03-18" }], activityLog: [{ action: "Scored 8/10 on Great Expectations Context", date: "2026-03-18" }], recommendations: ["Practise close language analysis with the Writers' Methods Toolkit"], atRisk: false, riskReason: "", classId: "12-igcse-lit", teacherName: "William Hart", modulesCompleted: 0, modules: [{ name: "IGCSE Set Text - Great Expectations", progress: 85, score: 80 }, { name: "IGCSE Poetry", progress: 70, score: 76 }, { name: "IGCSE Unseen Prose", progress: 65, score: 74 }], mockExams: [{ name: "IGCSE Lit Paper 1 Mock", score: 78, grade: "B", date: "2026-02-20" }], essays: [{ title: "Great Expectations - Social Class", score: 80, feedback: "Excellent thematic understanding. Analyse language choices more closely.", date: "2026-03-16" }], activityTimeline: [{ action: "Scored 8/10 on Great Expectations Context", date: "2026-03-18", type: "activity" }] },
+  { id: "s43", name: "Leo Fernandez", email: "l.fernandez@riverside.ac.uk", yearGroup: "Year 12", className: "12 Edexcel Lang", teacher: "Fatima Al-Hassan", overallProgress: 72, averageScore: 70, assignmentsCompleted: 11, assignmentsTotal: 16, lastActive: "1 day ago", status: "on-track", strengths: ["Language change knowledge", "Enthusiasm for subject"], weaknesses: ["Data analysis skills", "Extended essay writing"], recentScores: [68, 72, 66, 74, 70, 72, 68, 70], mockExamResults: [{ exam: "Edexcel A-Level Lang Paper 1 Mock", score: 70, grade: "C", date: "2026-02-25" }], essaySubmissions: [{ title: "Language Change - Impact of Technology", score: 72, feedback: "Good examples. Develop analytical depth in data commentary.", date: "2026-03-18" }], moduleProgress: [{ module: "Language and Gender", progress: 75, score: 72, status: "in-progress" }, { module: "Child Language Acquisition", progress: 65, score: 68, status: "in-progress" }, { module: "Language Change", progress: 70, score: 72, status: "in-progress" }], quizAttempts: [{ quiz: "Language Theorists", score: 7, maxScore: 10, date: "2026-03-22" }], activityLog: [{ action: "Submitted essay: Impact of Technology", date: "2026-03-18" }], recommendations: ["Practise data commentary with the Analysis Framework"], atRisk: false, riskReason: "", classId: "12-edexcel-lang", teacherName: "Fatima Al-Hassan", modulesCompleted: 0, modules: [{ name: "Language and Gender", progress: 75, score: 72 }, { name: "Child Language Acquisition", progress: 65, score: 68 }, { name: "Language Change", progress: 70, score: 72 }], mockExams: [{ name: "Edexcel A-Level Lang Paper 1 Mock", score: 70, grade: "C", date: "2026-02-25" }], essays: [{ title: "Language Change - Impact of Technology", score: 72, feedback: "Good examples. Develop analytical depth in data commentary.", date: "2026-03-18" }], activityTimeline: [{ action: "Submitted essay: Impact of Technology", date: "2026-03-18", type: "activity" }] },
+  // ── Year 13 (7 students) ──
+  { id: "s44", name: "Victoria Ashworth", email: "v.ashworth@riverside.ac.uk", yearGroup: "Year 13", className: "13 IAL Lang", teacher: "Sarah Mitchell", overallProgress: 90, averageScore: 88, assignmentsCompleted: 18, assignmentsTotal: 18, lastActive: "Today", status: "excelling", strengths: ["Outstanding linguistic analysis", "Independent research", "Academic writing", "Critical thinking"], weaknesses: ["Occasionally needs to simplify arguments for clarity"], recentScores: [86, 90, 88, 92, 87, 89, 86, 90], mockExamResults: [{ exam: "IAL Language Unit 3 Mock", score: 88, grade: "A", date: "2026-02-15" }, { exam: "IAL Language Unit 4 Mock", score: 90, grade: "A*", date: "2026-03-05" }], essaySubmissions: [{ title: "Language Investigation - Code-Switching in Bilingual Families", score: 92, feedback: "Exceptional research methodology and analysis.", date: "2026-03-20" }], moduleProgress: [{ module: "Language Investigation", progress: 95, score: 92, status: "in-progress" }, { module: "World Englishes", progress: 100, score: 88, status: "completed" }, { module: "Language and Representation", progress: 90, score: 86, status: "in-progress" }], quizAttempts: [{ quiz: "World Englishes Theorists", score: 10, maxScore: 10, date: "2026-03-18" }], activityLog: [{ action: "Achieved 10/10 on World Englishes Theorists", date: "2026-03-18" }], recommendations: ["Finalize investigation conclusion - ensure clarity of argument"], atRisk: false, riskReason: "", classId: "13-ial-lang", teacherName: "Sarah Mitchell", modulesCompleted: 1, modules: [{ name: "Language Investigation", progress: 95, score: 92 }, { name: "World Englishes", progress: 100, score: 88 }, { name: "Language and Representation", progress: 90, score: 86 }], mockExams: [{ name: "IAL Language Unit 3 Mock", score: 88, grade: "A", date: "2026-02-15" }, { name: "IAL Language Unit 4 Mock", score: 90, grade: "A*", date: "2026-03-05" }], essays: [{ title: "Language Investigation - Code-Switching in Bilingual Families", score: 92, feedback: "Exceptional research methodology and analysis.", date: "2026-03-20" }], activityTimeline: [{ action: "Achieved 10/10 on World Englishes Theorists", date: "2026-03-18", type: "activity" }] },
+  { id: "s45", name: "James McAllister", email: "j.mcallister@riverside.ac.uk", yearGroup: "Year 13", className: "13 IAL Lit", teacher: "Christopher Bell", overallProgress: 74, averageScore: 72, assignmentsCompleted: 14, assignmentsTotal: 18, lastActive: "1 day ago", status: "on-track", strengths: ["Understanding of literary context", "Discussion skills"], weaknesses: ["Close textual analysis", "Sustaining argument across longer essays"], recentScores: [70, 74, 68, 76, 72, 74, 70, 72], mockExamResults: [{ exam: "IAL Lit Unit 3 Mock", score: 72, grade: "C", date: "2026-02-15" }], essaySubmissions: [{ title: "A Streetcar Named Desire - Desire and Destruction", score: 74, feedback: "Good contextual knowledge. Need more close analysis of language.", date: "2026-03-18" }], moduleProgress: [{ module: "A Streetcar Named Desire", progress: 80, score: 74, status: "in-progress" }, { module: "Keats Poetry", progress: 70, score: 72, status: "in-progress" }, { module: "Coursework", progress: 60, score: 70, status: "in-progress" }], quizAttempts: [{ quiz: "Streetcar Key Quotes", score: 7, maxScore: 10, date: "2026-03-16" }], activityLog: [{ action: "Submitted essay: Desire and Destruction", date: "2026-03-18" }], recommendations: ["Use the Close Analysis Toolkit for detailed textual work"], atRisk: false, riskReason: "", classId: "13-ial-lit", teacherName: "Christopher Bell", modulesCompleted: 0, modules: [{ name: "A Streetcar Named Desire", progress: 80, score: 74 }, { name: "Keats Poetry", progress: 70, score: 72 }, { name: "Coursework", progress: 60, score: 70 }], mockExams: [{ name: "IAL Lit Unit 3 Mock", score: 72, grade: "C", date: "2026-02-15" }], essays: [{ title: "A Streetcar Named Desire - Desire and Destruction", score: 74, feedback: "Good contextual knowledge. Need more close analysis of language.", date: "2026-03-18" }], activityTimeline: [{ action: "Submitted essay: Desire and Destruction", date: "2026-03-18", type: "activity" }] },
+  { id: "s46", name: "Priyanka Desai", email: "p.desai@riverside.ac.uk", yearGroup: "Year 13", className: "13 Edexcel Lang", teacher: "Nathan Brooks", overallProgress: 82, averageScore: 80, assignmentsCompleted: 16, assignmentsTotal: 18, lastActive: "Today", status: "on-track", strengths: ["Language investigation methodology", "Data analysis", "Theoretical knowledge"], weaknesses: ["Originality in coursework", "Time management in exams"], recentScores: [78, 82, 76, 84, 80, 82, 78, 80], mockExamResults: [{ exam: "Edexcel A-Level Lang Paper 2 Mock", score: 80, grade: "B", date: "2026-02-20" }], essaySubmissions: [{ title: "Language and Technology - Emoji Semiotics", score: 82, feedback: "Interesting angle with strong data. Address counter-arguments.", date: "2026-03-16" }], moduleProgress: [{ module: "Language and Technology", progress: 85, score: 82, status: "in-progress" }, { module: "Language Investigation", progress: 75, score: 78, status: "in-progress" }, { module: "Editorial Writing", progress: 70, score: 80, status: "in-progress" }], quizAttempts: [{ quiz: "Discourse Analysis", score: 8, maxScore: 10, date: "2026-03-20" }], activityLog: [{ action: "Submitted essay: Emoji Semiotics", date: "2026-03-16" }], recommendations: ["Review original investigation angle with the Topic Refinement Guide"], atRisk: false, riskReason: "", classId: "13-edexcel-lang", teacherName: "Nathan Brooks", modulesCompleted: 0, modules: [{ name: "Language and Technology", progress: 85, score: 82 }, { name: "Language Investigation", progress: 75, score: 78 }, { name: "Editorial Writing", progress: 70, score: 80 }], mockExams: [{ name: "Edexcel A-Level Lang Paper 2 Mock", score: 80, grade: "B", date: "2026-02-20" }], essays: [{ title: "Language and Technology - Emoji Semiotics", score: 82, feedback: "Interesting angle with strong data. Address counter-arguments.", date: "2026-03-16" }], activityTimeline: [{ action: "Submitted essay: Emoji Semiotics", date: "2026-03-16", type: "activity" }] },
+  { id: "s47", name: "Tom Hargreaves", email: "t.hargreaves@riverside.ac.uk", yearGroup: "Year 13", className: "13 Edexcel Lit", teacher: "Nathan Brooks", overallProgress: 68, averageScore: 66, assignmentsCompleted: 13, assignmentsTotal: 18, lastActive: "2 days ago", status: "needs-support", strengths: ["Engagement with modern texts"], weaknesses: ["Pre-1900 literature analysis", "Essay structure", "Meeting coursework deadlines"], recentScores: [64, 68, 62, 70, 66, 68, 64, 66], mockExamResults: [{ exam: "Edexcel A-Level Lit Paper 1 Mock", score: 66, grade: "D", date: "2026-02-20" }], essaySubmissions: [{ title: "The Great Gatsby - American Dream", score: 68, feedback: "Shows understanding. Struggle with Fitzgerald's prose style analysis.", date: "2026-03-14" }], moduleProgress: [{ module: "The Great Gatsby", progress: 70, score: 68, status: "in-progress" }, { module: "Pre-1900 Drama", progress: 50, score: 62, status: "in-progress" }, { module: "Coursework", progress: 45, score: 64, status: "in-progress" }], quizAttempts: [{ quiz: "Gatsby Context", score: 7, maxScore: 10, date: "2026-03-12" }], activityLog: [{ action: "Submitted essay: American Dream", date: "2026-03-14" }], recommendations: ["Focus on Pre-1900 Drama with the Historical Context pack"], atRisk: false, riskReason: "", classId: "13-edexcel-lit", teacherName: "Nathan Brooks", modulesCompleted: 0, modules: [{ name: "The Great Gatsby", progress: 70, score: 68 }, { name: "Pre-1900 Drama", progress: 50, score: 62 }, { name: "Coursework", progress: 45, score: 64 }], mockExams: [{ name: "Edexcel A-Level Lit Paper 1 Mock", score: 66, grade: "D", date: "2026-02-20" }], essays: [{ title: "The Great Gatsby - American Dream", score: 68, feedback: "Shows understanding. Struggle with Fitzgerald's prose style analysis.", date: "2026-03-14" }], activityTimeline: [{ action: "Submitted essay: American Dream", date: "2026-03-14", type: "activity" }] },
+  { id: "s48", name: "Naomi Abebe", email: "n.abebe@riverside.ac.uk", yearGroup: "Year 13", className: "13 IAL Lang", teacher: "Sarah Mitchell", overallProgress: 78, averageScore: 76, assignmentsCompleted: 15, assignmentsTotal: 18, lastActive: "Today", status: "on-track", strengths: ["Sociolinguistic knowledge", "Applying frameworks"], weaknesses: ["Original analysis vs. reciting theory", "Exam essay conclusions"], recentScores: [74, 78, 72, 80, 76, 78, 74, 76], mockExamResults: [{ exam: "IAL Language Unit 3 Mock", score: 76, grade: "B", date: "2026-02-15" }], essaySubmissions: [{ title: "Sociolinguistics - Language and Identity", score: 78, feedback: "Strong theoretical knowledge. Develop more original analytical points.", date: "2026-03-20" }], moduleProgress: [{ module: "Language Investigation", progress: 80, score: 78, status: "in-progress" }, { module: "World Englishes", progress: 85, score: 76, status: "in-progress" }, { module: "Language and Representation", progress: 70, score: 74, status: "in-progress" }], quizAttempts: [{ quiz: "World Englishes Theorists", score: 8, maxScore: 10, date: "2026-03-18" }], activityLog: [{ action: "Submitted essay: Language and Identity", date: "2026-03-20" }], recommendations: ["Practise developing original points beyond theoretical frameworks"], atRisk: false, riskReason: "", classId: "13-ial-lang", teacherName: "Sarah Mitchell", modulesCompleted: 0, modules: [{ name: "Language Investigation", progress: 80, score: 78 }, { name: "World Englishes", progress: 85, score: 76 }, { name: "Language and Representation", progress: 70, score: 74 }], mockExams: [{ name: "IAL Language Unit 3 Mock", score: 76, grade: "B", date: "2026-02-15" }], essays: [{ title: "Sociolinguistics - Language and Identity", score: 78, feedback: "Strong theoretical knowledge. Develop more original analytical points.", date: "2026-03-20" }], activityTimeline: [{ action: "Submitted essay: Language and Identity", date: "2026-03-20", type: "activity" }] },
+  { id: "s49", name: "Daniel Kim", email: "d.kim@riverside.ac.uk", yearGroup: "Year 13", className: "13 IAL Lit", teacher: "Christopher Bell", overallProgress: 86, averageScore: 84, assignmentsCompleted: 17, assignmentsTotal: 18, lastActive: "Today", status: "on-track", strengths: ["Sophisticated close reading", "Independent thinking", "Comparative analysis"], weaknesses: ["Can sometimes over-complicate arguments"], recentScores: [82, 86, 80, 88, 84, 86, 82, 84], mockExamResults: [{ exam: "IAL Lit Unit 3 Mock", score: 84, grade: "A", date: "2026-02-15" }, { exam: "IAL Lit Unit 4 Mock", score: 86, grade: "A", date: "2026-03-05" }], essaySubmissions: [{ title: "A Streetcar Named Desire - Light and Dark Symbolism", score: 88, feedback: "Excellent close reading with sophisticated interpretation.", date: "2026-03-18" }], moduleProgress: [{ module: "A Streetcar Named Desire", progress: 95, score: 88, status: "in-progress" }, { module: "Keats Poetry", progress: 90, score: 84, status: "in-progress" }, { module: "Coursework", progress: 80, score: 82, status: "in-progress" }], quizAttempts: [{ quiz: "Streetcar Key Quotes", score: 9, maxScore: 10, date: "2026-03-16" }], activityLog: [{ action: "Submitted essay: Light and Dark Symbolism", date: "2026-03-18" }], recommendations: ["Review the Clarity in Argument guide"], atRisk: false, riskReason: "", classId: "13-ial-lit", teacherName: "Christopher Bell", modulesCompleted: 0, modules: [{ name: "A Streetcar Named Desire", progress: 95, score: 88 }, { name: "Keats Poetry", progress: 90, score: 84 }, { name: "Coursework", progress: 80, score: 82 }], mockExams: [{ name: "IAL Lit Unit 3 Mock", score: 84, grade: "A", date: "2026-02-15" }, { name: "IAL Lit Unit 4 Mock", score: 86, grade: "A", date: "2026-03-05" }], essays: [{ title: "A Streetcar Named Desire - Light and Dark Symbolism", score: 88, feedback: "Excellent close reading with sophisticated interpretation.", date: "2026-03-18" }], activityTimeline: [{ action: "Submitted essay: Light and Dark Symbolism", date: "2026-03-18", type: "activity" }] },
+  { id: "s50", name: "Amelia Thornton-Banks", email: "a.thorntonbanks@riverside.ac.uk", yearGroup: "Year 13", className: "13 Edexcel Lang", teacher: "Nathan Brooks", overallProgress: 44, averageScore: 42, assignmentsCompleted: 8, assignmentsTotal: 18, lastActive: "7 days ago", status: "at-risk", strengths: ["Capable when engaged"], weaknesses: ["Attendance", "Coursework progress critically behind", "Exam preparation", "Engagement"], recentScores: [46, 42, 44, 38, 40, 44, 42, 40], mockExamResults: [{ exam: "Edexcel A-Level Lang Paper 2 Mock", score: 42, grade: "U", date: "2026-02-20" }], essaySubmissions: [{ title: "Editorial Writing Practice", score: 44, feedback: "Very brief and underdeveloped. Must attend intervention sessions.", date: "2026-03-10" }], moduleProgress: [{ module: "Language and Technology", progress: 40, score: 44, status: "in-progress" }, { module: "Language Investigation", progress: 20, score: 38, status: "at-risk" }, { module: "Editorial Writing", progress: 35, score: 42, status: "in-progress" }], quizAttempts: [{ quiz: "Discourse Analysis", score: 4, maxScore: 10, date: "2026-03-20" }], activityLog: [{ action: "Missed scheduled intervention session", date: "2026-03-24" }], recommendations: ["Critical: Immediate meeting with student and parent/carer", "Fast-track coursework plan with weekly milestones", "Daily check-ins with form tutor"], atRisk: false, riskReason: "", classId: "13-edexcel-lang", teacherName: "Nathan Brooks", modulesCompleted: 0, modules: [{ name: "Language and Technology", progress: 40, score: 44 }, { name: "Language Investigation", progress: 20, score: 38 }, { name: "Editorial Writing", progress: 35, score: 42 }], mockExams: [{ name: "Edexcel A-Level Lang Paper 2 Mock", score: 42, grade: "U", date: "2026-02-20" }], essays: [{ title: "Editorial Writing Practice", score: 44, feedback: "Very brief and underdeveloped. Must attend intervention sessions.", date: "2026-03-10" }], activityTimeline: [{ action: "Missed scheduled intervention session", date: "2026-03-24", type: "activity" }] },
+]
 
-// ── Teacher Demo Data ──────────────────────────────────────────────────────
+// ─── Classes ──────────────────────────────────────────────────────────────────
 
-export const DEMO_TEACHER = {
-  id: "t-mitchell",
-  name: "Mrs Mitchell",
-  email: "mitchell@riverside.demo",
-  department: "English",
-  role: "Head of KS4 English",
-};
+export const DEMO_CLASSES: DemoClass[] = [
+  { id: "c1", name: "7A English", yearGroup: "Year 7", examBoard: "Edexcel", teacher: "Priya Sharma", teacherId: "t3", studentCount: 15, averageScore: 75, completionRate: 78, studentIds: ["s1", "s5"], avgScore: 75, avgProgress: 78, assignmentsSet: 16, assignmentsCompleted: 12 },
+  { id: "c2", name: "7B English", yearGroup: "Year 7", examBoard: "Edexcel", teacher: "Emma Thornton", teacherId: "t5", studentCount: 14, averageScore: 70, completionRate: 72, studentIds: ["s2", "s6"], avgScore: 70, avgProgress: 75, assignmentsSet: 16, assignmentsCompleted: 11 },
+  { id: "c3", name: "7C English", yearGroup: "Year 7", examBoard: "Edexcel", teacher: "James Patterson", teacherId: "t2", studentCount: 15, averageScore: 62, completionRate: 65, studentIds: ["s3"], avgScore: 62, avgProgress: 64, assignmentsSet: 16, assignmentsCompleted: 10 },
+  { id: "c4", name: "7D English", yearGroup: "Year 7", examBoard: "Edexcel", teacher: "Rachel Green", teacherId: "t7", studentCount: 14, averageScore: 65, completionRate: 68, studentIds: ["s4"], avgScore: 65, avgProgress: 70, assignmentsSet: 16, assignmentsCompleted: 10 },
+  { id: "c5", name: "7E English", yearGroup: "Year 7", examBoard: "Edexcel", teacher: "Ahmed Khan", teacherId: "t14", studentCount: 13, averageScore: 67, completionRate: 70, studentIds: ["s7"], avgScore: 67, avgProgress: 74, assignmentsSet: 16, assignmentsCompleted: 11 },
+  { id: "c6", name: "8A English", yearGroup: "Year 8", examBoard: "Edexcel", teacher: "James Patterson", teacherId: "t2", studentCount: 15, averageScore: 78, completionRate: 82, studentIds: ["s8", "s12"], avgScore: 78, avgProgress: 80, assignmentsSet: 20, assignmentsCompleted: 16 },
+  { id: "c7", name: "8B English", yearGroup: "Year 8", examBoard: "Edexcel", teacher: "Priya Sharma", teacherId: "t3", studentCount: 14, averageScore: 58, completionRate: 60, studentIds: ["s9", "s14"], avgScore: 58, avgProgress: 61, assignmentsSet: 20, assignmentsCompleted: 12 },
+  { id: "c8", name: "8C English", yearGroup: "Year 8", examBoard: "Edexcel", teacher: "Michael Chen", teacherId: "t6", studentCount: 15, averageScore: 74, completionRate: 76, studentIds: ["s10"], avgScore: 74, avgProgress: 79, assignmentsSet: 20, assignmentsCompleted: 15 },
+  { id: "c9", name: "8D English", yearGroup: "Year 8", examBoard: "Edexcel", teacher: "Rachel Green", teacherId: "t7", studentCount: 14, averageScore: 62, completionRate: 64, studentIds: ["s11"], avgScore: 62, avgProgress: 63, assignmentsSet: 20, assignmentsCompleted: 12 },
+  { id: "c10", name: "8E English", yearGroup: "Year 8", examBoard: "Edexcel", teacher: "Sophie Durand", teacherId: "t15", studentCount: 14, averageScore: 68, completionRate: 70, studentIds: ["s13"], avgScore: 68, avgProgress: 72, assignmentsSet: 20, assignmentsCompleted: 14 },
+  { id: "c11", name: "9A English", yearGroup: "Year 9", examBoard: "Edexcel", teacher: "David Okonkwo", teacherId: "t4", studentCount: 15, averageScore: 68, completionRate: 70, studentIds: ["s15", "s19"], avgScore: 68, avgProgress: 70, assignmentsSet: 22, assignmentsCompleted: 15 },
+  { id: "c12", name: "9B English", yearGroup: "Year 9", examBoard: "Edexcel", teacher: "James Patterson", teacherId: "t2", studentCount: 14, averageScore: 76, completionRate: 78, studentIds: ["s16", "s21"], avgScore: 76, avgProgress: 82, assignmentsSet: 22, assignmentsCompleted: 17 },
+  { id: "c13", name: "9C English", yearGroup: "Year 9", examBoard: "Edexcel", teacher: "Emma Thornton", teacherId: "t5", studentCount: 15, averageScore: 55, completionRate: 58, studentIds: ["s17"], avgScore: 55, avgProgress: 60, assignmentsSet: 22, assignmentsCompleted: 12 },
+  { id: "c14", name: "9D English", yearGroup: "Year 9", examBoard: "Edexcel", teacher: "Thomas Walker", teacherId: "t8", studentCount: 14, averageScore: 70, completionRate: 72, studentIds: ["s18"], avgScore: 70, avgProgress: 73, assignmentsSet: 22, assignmentsCompleted: 15 },
+  { id: "c15", name: "9E English", yearGroup: "Year 9", examBoard: "Edexcel", teacher: "Sophie Durand", teacherId: "t15", studentCount: 13, averageScore: 82, completionRate: 85, studentIds: ["s20"], avgScore: 82, avgProgress: 88, assignmentsSet: 22, assignmentsCompleted: 18 },
+  { id: "c16", name: "10A English", yearGroup: "Year 10", examBoard: "Edexcel", teacher: "Sarah Mitchell", teacherId: "t1", studentCount: 16, averageScore: 74, completionRate: 76, studentIds: ["s22", "s28"], avgScore: 74, avgProgress: 75, assignmentsSet: 24, assignmentsCompleted: 18 },
+  { id: "c17", name: "10B English", yearGroup: "Year 10", examBoard: "Edexcel", teacher: "Priya Sharma", teacherId: "t3", studentCount: 15, averageScore: 50, completionRate: 52, studentIds: ["s23", "s29"], avgScore: 50, avgProgress: 60, assignmentsSet: 24, assignmentsCompleted: 12 },
+  { id: "c18", name: "10C English", yearGroup: "Year 10", examBoard: "Edexcel", teacher: "Emma Thornton", teacherId: "t5", studentCount: 14, averageScore: 88, completionRate: 92, studentIds: ["s24"], avgScore: 88, avgProgress: 92, assignmentsSet: 24, assignmentsCompleted: 22 },
+  { id: "c19", name: "10D English", yearGroup: "Year 10", examBoard: "Edexcel", teacher: "Thomas Walker", teacherId: "t8", studentCount: 14, averageScore: 62, completionRate: 64, studentIds: ["s25"], avgScore: 62, avgProgress: 68, assignmentsSet: 24, assignmentsCompleted: 15 },
+  { id: "c20", name: "10E IGCSE Lang", yearGroup: "Year 10", examBoard: "Edexcel IGCSE", teacher: "Hannah Lewis", teacherId: "t11", studentCount: 12, averageScore: 72, completionRate: 74, studentIds: ["s26"], avgScore: 72, avgProgress: 72, assignmentsSet: 24, assignmentsCompleted: 17 },
+  { id: "c21", name: "10F IGCSE Lit", yearGroup: "Year 10", examBoard: "Edexcel IGCSE", teacher: "Hannah Lewis", teacherId: "t11", studentCount: 12, averageScore: 80, completionRate: 82, studentIds: ["s27"], avgScore: 80, avgProgress: 83, assignmentsSet: 24, assignmentsCompleted: 19 },
+  { id: "c22", name: "11A English", yearGroup: "Year 11", examBoard: "Edexcel", teacher: "David Okonkwo", teacherId: "t4", studentCount: 16, averageScore: 78, completionRate: 82, studentIds: ["s30", "s36"], avgScore: 78, avgProgress: 85, assignmentsSet: 28, assignmentsCompleted: 22 },
+  { id: "c23", name: "11B English", yearGroup: "Year 11", examBoard: "Edexcel", teacher: "Sarah Mitchell", teacherId: "t1", studentCount: 15, averageScore: 66, completionRate: 68, studentIds: ["s31", "s37"], avgScore: 66, avgProgress: 67, assignmentsSet: 28, assignmentsCompleted: 19 },
+  { id: "c24", name: "11C English", yearGroup: "Year 11", examBoard: "Edexcel", teacher: "Michael Chen", teacherId: "t6", studentCount: 14, averageScore: 90, completionRate: 95, studentIds: ["s32"], avgScore: 90, avgProgress: 95, assignmentsSet: 28, assignmentsCompleted: 26 },
+  { id: "c25", name: "11D English", yearGroup: "Year 11", examBoard: "Edexcel", teacher: "Christopher Bell", teacherId: "t10", studentCount: 14, averageScore: 68, completionRate: 70, studentIds: ["s33"], avgScore: 68, avgProgress: 70, assignmentsSet: 28, assignmentsCompleted: 19 },
+  { id: "c26", name: "11E IGCSE Lang", yearGroup: "Year 11", examBoard: "Edexcel IGCSE", teacher: "Robert Patel", teacherId: "t12", studentCount: 12, averageScore: 76, completionRate: 78, studentIds: ["s34"], avgScore: 76, avgProgress: 82, assignmentsSet: 28, assignmentsCompleted: 21 },
+  { id: "c27", name: "11F IGCSE Lit", yearGroup: "Year 11", examBoard: "Edexcel IGCSE", teacher: "Robert Patel", teacherId: "t12", studentCount: 12, averageScore: 58, completionRate: 60, studentIds: ["s35"], avgScore: 58, avgProgress: 60, assignmentsSet: 28, assignmentsCompleted: 16 },
+  { id: "c28", name: "12 Edexcel Lang", yearGroup: "Year 12", examBoard: "Edexcel", teacher: "Fatima Al-Hassan", teacherId: "t9", studentCount: 10, averageScore: 76, completionRate: 80, studentIds: ["s38", "s43"], avgScore: 76, avgProgress: 81, assignmentsSet: 16, assignmentsCompleted: 12 },
+  { id: "c29", name: "12 Edexcel Lit", yearGroup: "Year 12", examBoard: "Edexcel", teacher: "Fatima Al-Hassan", teacherId: "t9", studentCount: 10, averageScore: 74, completionRate: 76, studentIds: ["s39"], avgScore: 74, avgProgress: 79, assignmentsSet: 16, assignmentsCompleted: 12 },
+  { id: "c30", name: "12 IAL Lang", yearGroup: "Year 12", examBoard: "Edexcel IAL", teacher: "Laura Simpson", teacherId: "t13", studentCount: 8, averageScore: 86, completionRate: 90, studentIds: ["s40"], avgScore: 86, avgProgress: 89, assignmentsSet: 16, assignmentsCompleted: 14 },
+  { id: "c31", name: "12 IGCSE Lang", yearGroup: "Year 12", examBoard: "Edexcel IGCSE", teacher: "Claire Abimbola", teacherId: "t17", studentCount: 8, averageScore: 64, completionRate: 66, studentIds: ["s41"], avgScore: 64, avgProgress: 68, assignmentsSet: 16, assignmentsCompleted: 10 },
+  { id: "c32", name: "12 IGCSE Lit", yearGroup: "Year 12", examBoard: "Edexcel IGCSE", teacher: "William Hart", teacherId: "t18", studentCount: 8, averageScore: 78, completionRate: 80, studentIds: ["s42"], avgScore: 78, avgProgress: 80, assignmentsSet: 16, assignmentsCompleted: 12 },
+  { id: "c33", name: "13 IAL Lang", yearGroup: "Year 13", examBoard: "Edexcel IAL", teacher: "Sarah Mitchell", teacherId: "t1", studentCount: 8, averageScore: 82, completionRate: 88, studentIds: ["s44", "s48"], avgScore: 82, avgProgress: 92, assignmentsSet: 18, assignmentsCompleted: 15 },
+  { id: "c34", name: "13 IAL Lit", yearGroup: "Year 13", examBoard: "Edexcel IAL", teacher: "Christopher Bell", teacherId: "t10", studentCount: 8, averageScore: 78, completionRate: 82, studentIds: ["s45", "s49"], avgScore: 78, avgProgress: 80, assignmentsSet: 18, assignmentsCompleted: 14 },
+  { id: "c35", name: "13 Edexcel Lang", yearGroup: "Year 13", examBoard: "Edexcel", teacher: "Nathan Brooks", teacherId: "t16", studentCount: 8, averageScore: 62, completionRate: 64, studentIds: ["s46", "s50"], avgScore: 62, avgProgress: 65, assignmentsSet: 18, assignmentsCompleted: 11 },
+  { id: "c36", name: "13 Edexcel Lit", yearGroup: "Year 13", examBoard: "Edexcel", teacher: "Nathan Brooks", teacherId: "t16", studentCount: 8, averageScore: 66, completionRate: 70, studentIds: ["s47"], avgScore: 66, avgProgress: 73, assignmentsSet: 18, assignmentsCompleted: 12 },
+]
 
-export interface TeacherDemoStudent {
-  id: string;
-  name: string;
-  atRisk: boolean;
-  ragStatus: "green" | "amber" | "red";
-  riskReason: string;
-  overallScore: number;
-  completionRate: number;
-  currentGrade: string;
-  predictedGrade: string;
-  lastActive: string;
-  trend: "up" | "down" | "stable";
+// ─── Year Group Stats ─────────────────────────────────────────────────────────
+
+export const DEMO_YEAR_GROUP_STATS: DemoYearGroupStats[] = [
+  { yearGroup: "Year 7", year: 7, label: "Year 7", studentCount: 71, classCount: 5, averageScore: 66, avgProgress: 69, completionRate: 70, atRiskCount: 1, excellingCount: 1, topModule: "Descriptive Writing", weakestModule: "Poetry Introduction" },
+  { yearGroup: "Year 8", year: 8, label: "Year 8", studentCount: 72, classCount: 5, averageScore: 70, avgProgress: 72, completionRate: 72, atRiskCount: 1, excellingCount: 1, topModule: "Gothic Literature", weakestModule: "Shakespeare Introduction" },
+  { yearGroup: "Year 9", year: 9, label: "Year 9", studentCount: 63, classCount: 5, averageScore: 69, avgProgress: 71, completionRate: 72, atRiskCount: 0, excellingCount: 1, topModule: "Romeo and Juliet", weakestModule: "Unseen Poetry" },
+  { yearGroup: "Year 10", year: 10, label: "Year 10", studentCount: 56, classCount: 6, averageScore: 68, avgProgress: 70, completionRate: 70, atRiskCount: 1, excellingCount: 1, topModule: "An Inspector Calls", weakestModule: "Poetry Anthology" },
+  { yearGroup: "Year 11", year: 11, label: "Year 11", studentCount: 44, classCount: 6, averageScore: 72, avgProgress: 74, completionRate: 76, atRiskCount: 1, excellingCount: 1, topModule: "Macbeth", weakestModule: "Unseen Poetry" },
+  { yearGroup: "Year 12", year: 12, label: "Year 12", studentCount: 20, classCount: 5, averageScore: 76, avgProgress: 78, completionRate: 78, atRiskCount: 0, excellingCount: 1, topModule: "Language and Gender", weakestModule: "Language Investigation Prep" },
+  { yearGroup: "Year 13", year: 13, label: "Year 13", studentCount: 16, classCount: 4, averageScore: 72, avgProgress: 74, completionRate: 76, atRiskCount: 1, excellingCount: 1, topModule: "Language Investigation", weakestModule: "Pre-1900 Drama" },
+]
+
+// ─── At-Risk Students ─────────────────────────────────────────────────────────
+
+export const DEMO_AT_RISK_STUDENTS: DemoAtRiskStudent[] = [
+  { studentId: "s3", name: "Ethan Clarke", yearGroup: "Year 7", className: "7C English", averageScore: 42, trend: "stagnant", reasons: ["Homework completion below 50%", "Reading fluency significantly below year group average", "5-day login gap detected", "Mock exam grade 2 - well below target"], recommendedActions: ["Refer to SENCO for literacy assessment", "Set up structured homework support with parent/carer", "Assign differentiated reading materials", "Weekly 1:1 check-in with form tutor"], lastTeacherNote: "Ethan shows good verbal engagement in class but struggles significantly with written work. Possible undiagnosed literacy needs.", daysSinceActive: 5 },
+  { studentId: "s9", name: "Daniel Kowalski", yearGroup: "Year 8", className: "8B English", averageScore: 35, trend: "declining", reasons: ["Attendance dropping - 8-day gap since last login", "Only 35% of assignments completed", "All module progress below 30%", "Mock exam grade 2 with declining trend"], recommendedActions: ["Urgent attendance review meeting", "Contact home to discuss barriers to engagement", "Assign a peer mentor from the class", "Use the SEND-adapted curriculum pathway", "Consider safeguarding referral if attendance does not improve"], lastTeacherNote: "Daniel has been increasingly disengaged this term. Verbal contributions have also declined. Home contact attempted twice - no response.", daysSinceActive: 8 },
+  { studentId: "s23", name: "Marcus Thompson", yearGroup: "Year 10", className: "10B English", averageScore: 40, trend: "declining", reasons: ["GCSE year with grades significantly below target", "Only 38% of assignments completed", "6-day login gap", "Mock exam grades both at grade 2", "Attendance concerns"], recommendedActions: ["Urgent intervention: schedule weekly support sessions", "Create a structured catch-up plan for GCSE content", "Parent/carer meeting to discuss exam preparation", "Consider additional access arrangements for exams", "Assign after-school revision sessions"], lastTeacherNote: "Marcus is capable when he attends but engagement has dropped significantly since January. He responds well to 1:1 support.", daysSinceActive: 6 },
+  { studentId: "s31", name: "Nathan Wright", yearGroup: "Year 11", className: "11B English", averageScore: 50, trend: "declining", reasons: ["GCSE exams imminent - scores declining over last 8 weeks", "Mock results dropped from grade 4 to grade 3", "Revision engagement minimal", "4-day login gap during critical revision period"], recommendedActions: ["Emergency intervention sessions before exams", "Create a focused revision timetable targeting weakest areas", "Contact home urgently about exam preparation", "Walking Talking Mock sessions", "Assign targeted past paper practice"], lastTeacherNote: "Nathan's decline is concerning with exams approaching. Was previously on track for grade 5. Needs immediate intensive support to recover.", daysSinceActive: 4 },
+  { studentId: "s50", name: "Amelia Thornton-Banks", yearGroup: "Year 13", className: "13 Edexcel Lang", averageScore: 42, trend: "declining", reasons: ["A-Level year with coursework critically behind", "Only 44% of assignments completed", "7-day login gap", "Mock exam result: U grade", "Missed scheduled intervention session"], recommendedActions: ["Immediate meeting with student, parent/carer, and head of sixth form", "Fast-track coursework recovery plan with weekly milestones", "Daily check-ins with personal tutor", "Explore whether extenuating circumstances apply", "Consider coursework deadline extension"], lastTeacherNote: "Amelia has significant personal circumstances affecting her studies. She is capable but needs urgent structured support to have any chance of completing the course.", daysSinceActive: 7 },
+]
+
+// ─── Weekly Activity ──────────────────────────────────────────────────────────
+
+export const DEMO_WEEKLY_ACTIVITY: DemoWeeklyActivity[] = [
+  { week: "10 Feb", lessonsAccessed: 285, quizzesCompleted: 142, essaysSubmitted: 38, mockExamsTaken: 12, averageSessionMinutes: 22, activeStudents: 298 },
+  { week: "17 Feb", lessonsAccessed: 310, quizzesCompleted: 156, essaysSubmitted: 42, mockExamsTaken: 18, averageSessionMinutes: 25, activeStudents: 312 },
+  { week: "24 Feb", lessonsAccessed: 145, quizzesCompleted: 68, essaysSubmitted: 15, mockExamsTaken: 6, averageSessionMinutes: 18, activeStudents: 180 },
+  { week: "3 Mar", lessonsAccessed: 335, quizzesCompleted: 178, essaysSubmitted: 48, mockExamsTaken: 22, averageSessionMinutes: 28, activeStudents: 320 },
+  { week: "10 Mar", lessonsAccessed: 348, quizzesCompleted: 185, essaysSubmitted: 52, mockExamsTaken: 25, averageSessionMinutes: 30, activeStudents: 328 },
+  { week: "17 Mar", lessonsAccessed: 362, quizzesCompleted: 192, essaysSubmitted: 56, mockExamsTaken: 28, averageSessionMinutes: 32, activeStudents: 332 },
+  { week: "24 Mar", lessonsAccessed: 375, quizzesCompleted: 198, essaysSubmitted: 60, mockExamsTaken: 30, averageSessionMinutes: 31, activeStudents: 335 },
+  { week: "31 Mar", lessonsAccessed: 358, quizzesCompleted: 190, essaysSubmitted: 54, mockExamsTaken: 26, averageSessionMinutes: 29, activeStudents: 330 },
+]
+
+// ─── Resource Usage ───────────────────────────────────────────────────────────
+
+export const DEMO_RESOURCE_USAGE: DemoResourceUsage[] = [
+  { resourceId: "r1", title: "Macbeth Key Quotes Revision", type: "revision-guide", accessCount: 245, averageScore: null, yearGroup: "Year 11", examBoard: "Edexcel" },
+  { resourceId: "r2", title: "Edexcel Language Paper 1 Mock Exam Set 1", type: "mock-exam", accessCount: 218, averageScore: 68, yearGroup: "Year 11", examBoard: "Edexcel" },
+  { resourceId: "r3", title: "An Inspector Calls - Themes and Context", type: "lesson", accessCount: 198, averageScore: null, yearGroup: "Year 10", examBoard: "Edexcel" },
+  { resourceId: "r4", title: "Poetry Anthology Comparison Practice", type: "quiz", accessCount: 186, averageScore: 72, yearGroup: "Year 11", examBoard: "Edexcel" },
+  { resourceId: "r5", title: "IGCSE Language Paper 1 Mock Exam", type: "mock-exam", accessCount: 175, averageScore: 70, yearGroup: "Year 10", examBoard: "Edexcel IGCSE" },
+  { resourceId: "r6", title: "Descriptive Writing Masterclass", type: "lesson", accessCount: 168, averageScore: null, yearGroup: "Year 7", examBoard: "Edexcel" },
+  { resourceId: "r7", title: "Romeo and Juliet Context Cards", type: "revision-guide", accessCount: 155, averageScore: null, yearGroup: "Year 9", examBoard: "Edexcel" },
+  { resourceId: "r8", title: "Gothic Writing Essay Prompt", type: "essay-prompt", accessCount: 142, averageScore: 66, yearGroup: "Year 8", examBoard: "Edexcel" },
+  { resourceId: "r9", title: "IAL Language Unit 1 Practice Paper", type: "mock-exam", accessCount: 128, averageScore: 74, yearGroup: "Year 12", examBoard: "Edexcel IAL" },
+  { resourceId: "r10", title: "Figurative Language Quiz", type: "quiz", accessCount: 120, averageScore: 78, yearGroup: "Year 7", examBoard: "Edexcel" },
+  { resourceId: "r11", title: "Language Paper 2 Viewpoint Writing", type: "lesson", accessCount: 115, averageScore: null, yearGroup: "Year 11", examBoard: "Edexcel" },
+  { resourceId: "r12", title: "Edexcel Literature Paper 1 Mock", type: "mock-exam", accessCount: 108, averageScore: 72, yearGroup: "Year 11", examBoard: "Edexcel" },
+  { resourceId: "r13", title: "Unseen Poetry Method Guide", type: "revision-guide", accessCount: 98, averageScore: null, yearGroup: "Year 11", examBoard: "Edexcel" },
+  { resourceId: "r14", title: "Creative Writing - Sentence Craft", type: "lesson", accessCount: 92, averageScore: null, yearGroup: "Year 10", examBoard: "Edexcel" },
+  { resourceId: "r15", title: "A-Level Language Investigation Exemplars", type: "revision-guide", accessCount: 85, averageScore: null, yearGroup: "Year 13", examBoard: "Edexcel IAL" },
+]
+
+// ─── Assignment Overview ──────────────────────────────────────────────────────
+
+export const DEMO_ASSIGNMENT_OVERVIEW: DemoAssignmentOverview[] = [
+  { classId: "c1", className: "7A English", teacher: "Priya Sharma", totalAssignments: 16, completed: 13, inProgress: 2, notStarted: 1, overdue: 0, averageScore: 75 },
+  { classId: "c2", className: "7B English", teacher: "Emma Thornton", totalAssignments: 16, completed: 13, inProgress: 2, notStarted: 1, overdue: 0, averageScore: 70 },
+  { classId: "c3", className: "7C English", teacher: "James Patterson", totalAssignments: 16, completed: 8, inProgress: 4, notStarted: 2, overdue: 2, averageScore: 62 },
+  { classId: "c6", className: "8A English", teacher: "James Patterson", totalAssignments: 20, completed: 19, inProgress: 1, notStarted: 0, overdue: 0, averageScore: 78 },
+  { classId: "c7", className: "8B English", teacher: "Priya Sharma", totalAssignments: 20, completed: 12, inProgress: 4, notStarted: 2, overdue: 2, averageScore: 58 },
+  { classId: "c8", className: "8C English", teacher: "Michael Chen", totalAssignments: 20, completed: 16, inProgress: 3, notStarted: 1, overdue: 0, averageScore: 74 },
+  { classId: "c11", className: "9A English", teacher: "David Okonkwo", totalAssignments: 22, completed: 14, inProgress: 5, notStarted: 2, overdue: 1, averageScore: 68 },
+  { classId: "c12", className: "9B English", teacher: "James Patterson", totalAssignments: 22, completed: 17, inProgress: 3, notStarted: 1, overdue: 1, averageScore: 76 },
+  { classId: "c13", className: "9C English", teacher: "Emma Thornton", totalAssignments: 22, completed: 10, inProgress: 5, notStarted: 4, overdue: 3, averageScore: 55 },
+  { classId: "c16", className: "10A English", teacher: "Sarah Mitchell", totalAssignments: 24, completed: 18, inProgress: 4, notStarted: 1, overdue: 1, averageScore: 74 },
+  { classId: "c17", className: "10B English", teacher: "Priya Sharma", totalAssignments: 24, completed: 11, inProgress: 5, notStarted: 4, overdue: 4, averageScore: 50 },
+  { classId: "c18", className: "10C English", teacher: "Emma Thornton", totalAssignments: 24, completed: 23, inProgress: 1, notStarted: 0, overdue: 0, averageScore: 88 },
+  { classId: "c20", className: "10E IGCSE Lang", teacher: "Hannah Lewis", totalAssignments: 24, completed: 17, inProgress: 4, notStarted: 2, overdue: 1, averageScore: 72 },
+  { classId: "c22", className: "11A English", teacher: "David Okonkwo", totalAssignments: 28, completed: 23, inProgress: 3, notStarted: 1, overdue: 1, averageScore: 78 },
+  { classId: "c23", className: "11B English", teacher: "Sarah Mitchell", totalAssignments: 28, completed: 19, inProgress: 4, notStarted: 3, overdue: 2, averageScore: 66 },
+  { classId: "c24", className: "11C English", teacher: "Michael Chen", totalAssignments: 28, completed: 28, inProgress: 0, notStarted: 0, overdue: 0, averageScore: 90 },
+  { classId: "c26", className: "11E IGCSE Lang", teacher: "Robert Patel", totalAssignments: 28, completed: 22, inProgress: 4, notStarted: 1, overdue: 1, averageScore: 76 },
+  { classId: "c28", className: "12 Edexcel Lang", teacher: "Fatima Al-Hassan", totalAssignments: 16, completed: 12, inProgress: 3, notStarted: 1, overdue: 0, averageScore: 76 },
+  { classId: "c30", className: "12 IAL Lang", teacher: "Laura Simpson", totalAssignments: 16, completed: 15, inProgress: 1, notStarted: 0, overdue: 0, averageScore: 86 },
+  { classId: "c33", className: "13 IAL Lang", teacher: "Sarah Mitchell", totalAssignments: 18, completed: 16, inProgress: 1, notStarted: 1, overdue: 0, averageScore: 82 },
+  { classId: "c34", className: "13 IAL Lit", teacher: "Christopher Bell", totalAssignments: 18, completed: 15, inProgress: 2, notStarted: 1, overdue: 0, averageScore: 78 },
+  { classId: "c35", className: "13 Edexcel Lang", teacher: "Nathan Brooks", totalAssignments: 18, completed: 12, inProgress: 3, notStarted: 2, overdue: 1, averageScore: 62 },
+  { classId: "c36", className: "13 Edexcel Lit", teacher: "Nathan Brooks", totalAssignments: 18, completed: 13, inProgress: 3, notStarted: 1, overdue: 1, averageScore: 66 },
+]
+
+// ─── Helper Functions ─────────────────────────────────────────────────────────
+
+export function getDemoStudentsByClass(className: string): DemoStudent[] {
+  return DEMO_STUDENTS.filter((s) => s.className === className)
 }
 
-export interface TeacherDemoClass {
-  id: string;
-  name: string;
-  yearGroup: number;
-  examBoard: string;
-  studentCount: number;
-  avgScore: number;
-  completionRate: number;
-  atRiskCount: number;
-  students: TeacherDemoStudent[];
+export function getDemoStudentsByYearGroup(yearGroup: string): DemoStudent[] {
+  return DEMO_STUDENTS.filter((s) => s.yearGroup === yearGroup)
 }
 
-export const TEACHER_DEMO_CLASSES: TeacherDemoClass[] = [
-  {
-    id: "tc1",
-    name: "10A English Literature",
-    yearGroup: 10,
-    examBoard: "AQA",
-    studentCount: 28,
-    avgScore: 68,
-    completionRate: 74,
-    atRiskCount: 3,
-    students: [
-      { id: "s1", name: "Amelia Richardson", atRisk: false, ragStatus: "green", riskReason: "", overallScore: 88, completionRate: 92, currentGrade: "8", predictedGrade: "9", lastActive: "Today", trend: "up" },
-      { id: "s2", name: "Oliver Bennett", atRisk: false, ragStatus: "green", riskReason: "", overallScore: 72, completionRate: 78, currentGrade: "6", predictedGrade: "7", lastActive: "Today", trend: "up" },
-      { id: "s3", name: "Fatima Al-Rashid", atRisk: true, ragStatus: "red", riskReason: "Score dropped 15% over last 3 weeks", overallScore: 52, completionRate: 45, currentGrade: "4", predictedGrade: "5", lastActive: "3 days ago", trend: "down" },
-      { id: "ts1", name: "James Whitfield", atRisk: true, ragStatus: "red", riskReason: "4 consecutive missed assignments", overallScore: 41, completionRate: 30, currentGrade: "3", predictedGrade: "4", lastActive: "1 week ago", trend: "down" },
-      { id: "ts2", name: "Priya Patel", atRisk: false, ragStatus: "amber", riskReason: "", overallScore: 62, completionRate: 65, currentGrade: "5", predictedGrade: "6", lastActive: "Yesterday", trend: "stable" },
-      { id: "ts3", name: "Liam O'Connor", atRisk: true, ragStatus: "red", riskReason: "Below target grade by 2 levels", overallScore: 38, completionRate: 28, currentGrade: "2", predictedGrade: "4", lastActive: "5 days ago", trend: "down" },
-      { id: "ts4", name: "Emily Watson", atRisk: false, ragStatus: "green", riskReason: "", overallScore: 81, completionRate: 85, currentGrade: "7", predictedGrade: "8", lastActive: "Today", trend: "up" },
-    ],
-  },
-  {
-    id: "tc2",
-    name: "10B English Language",
-    yearGroup: 10,
-    examBoard: "AQA",
-    studentCount: 30,
-    avgScore: 71,
-    completionRate: 78,
-    atRiskCount: 2,
-    students: [
-      { id: "ts5", name: "Zara Hussain", atRisk: false, ragStatus: "green", riskReason: "", overallScore: 85, completionRate: 90, currentGrade: "7", predictedGrade: "8", lastActive: "Today", trend: "up" },
-      { id: "ts6", name: "Daniel Foster", atRisk: true, ragStatus: "amber", riskReason: "Inconsistent scores -- ranging from 35% to 72%", overallScore: 49, completionRate: 52, currentGrade: "4", predictedGrade: "5", lastActive: "2 days ago", trend: "down" },
-      { id: "ts7", name: "Chloe Martin", atRisk: false, ragStatus: "green", riskReason: "", overallScore: 76, completionRate: 80, currentGrade: "6", predictedGrade: "7", lastActive: "Today", trend: "stable" },
-      { id: "ts8", name: "Ryan Osei", atRisk: true, ragStatus: "red", riskReason: "Attendance below 80%, 6 missed classes", overallScore: 44, completionRate: 35, currentGrade: "3", predictedGrade: "4", lastActive: "4 days ago", trend: "down" },
-      { id: "ts9", name: "Hannah Clarke", atRisk: false, ragStatus: "green", riskReason: "", overallScore: 79, completionRate: 82, currentGrade: "6", predictedGrade: "7", lastActive: "Yesterday", trend: "up" },
-    ],
-  },
-  {
-    id: "tc3",
-    name: "11A English Literature",
-    yearGroup: 11,
-    examBoard: "AQA",
-    studentCount: 26,
-    avgScore: 74,
-    completionRate: 82,
-    atRiskCount: 1,
-    students: [
-      { id: "s5", name: "Sophie Chen", atRisk: false, ragStatus: "green", riskReason: "", overallScore: 94, completionRate: 98, currentGrade: "9", predictedGrade: "9", lastActive: "Today", trend: "up" },
-      { id: "ts10", name: "Marcus Brown", atRisk: false, ragStatus: "green", riskReason: "", overallScore: 78, completionRate: 82, currentGrade: "6", predictedGrade: "7", lastActive: "Today", trend: "stable" },
-      { id: "ts11", name: "Isabella Torres", atRisk: false, ragStatus: "amber", riskReason: "", overallScore: 65, completionRate: 68, currentGrade: "5", predictedGrade: "6", lastActive: "Yesterday", trend: "stable" },
-      { id: "ts12", name: "Ethan Walker", atRisk: true, ragStatus: "red", riskReason: "Mock exam score 32% -- well below target", overallScore: 42, completionRate: 38, currentGrade: "3", predictedGrade: "4", lastActive: "3 days ago", trend: "down" },
-      { id: "ts13", name: "Grace Liu", atRisk: false, ragStatus: "green", riskReason: "", overallScore: 82, completionRate: 88, currentGrade: "7", predictedGrade: "8", lastActive: "Today", trend: "up" },
-    ],
-  },
-];
-
-export interface TeacherDemoLesson {
-  id: string;
-  time: string;
-  className: string;
-  topic: string;
-  room: string;
+export function getDemoStudentsByStatus(status: DemoStudent["status"]): DemoStudent[] {
+  return DEMO_STUDENTS.filter((s) => s.status === status)
 }
 
-export const TEACHER_DEMO_LESSONS: TeacherDemoLesson[] = [
-  { id: "tl1", time: "09:00 - 10:00", className: "10A English Literature", topic: "Macbeth Act 3: The Banquet Scene", room: "Room 204" },
-  { id: "tl2", time: "11:15 - 12:15", className: "10B English Language", topic: "Language Paper 1 Q5: Descriptive Writing", room: "Room 204" },
-  { id: "tl3", time: "13:30 - 14:30", className: "11A English Literature", topic: "An Inspector Calls: Revision & Essay Practice", room: "Room 112" },
-];
-
-export interface TeacherDemoSubmission {
-  id: string;
-  studentId: string;
-  studentName: string;
-  className: string;
-  title: string;
-  type: "essay" | "homework" | "quiz";
-  score: number;
-  maxScore: number;
-  submittedAt: string;
+export function getDemoClassesByTeacher(teacherId: string): DemoClass[] {
+  return DEMO_CLASSES.filter((c) => c.teacherId === teacherId)
 }
 
-export const TEACHER_DEMO_SUBMISSIONS: TeacherDemoSubmission[] = [
-  { id: "sub1", studentId: "s1", studentName: "Amelia Richardson", className: "10A English Lit", title: "Macbeth: Ambition as a Destructive Force", type: "essay", score: 38, maxScore: 40, submittedAt: "2 hours ago" },
-  { id: "sub2", studentId: "ts5", studentName: "Zara Hussain", className: "10B English Lang", title: "Language P1 Q5: Descriptive Writing", type: "essay", score: 32, maxScore: 40, submittedAt: "3 hours ago" },
-  { id: "sub3", studentId: "ts10", studentName: "Marcus Brown", className: "11A English Lit", title: "Inspector Calls: Key Quotes Homework", type: "homework", score: 17, maxScore: 20, submittedAt: "5 hours ago" },
-  { id: "sub4", studentId: "s3", studentName: "Fatima Al-Rashid", className: "10A English Lit", title: "Poetry Anthology: Comparison Practice", type: "homework", score: 10, maxScore: 20, submittedAt: "Yesterday" },
-  { id: "sub5", studentId: "s5", studentName: "Sophie Chen", className: "11A English Lit", title: "Macbeth Key Quotes Quiz", type: "quiz", score: 20, maxScore: 20, submittedAt: "Yesterday" },
-];
+export function getDemoTeacherById(teacherId: string): DemoTeacher | undefined {
+  return DEMO_TEACHERS.find((t) => t.id === teacherId)
+}
+
+export function getDemoStudentById(studentId: string): DemoStudent | undefined {
+  return DEMO_STUDENTS.find((s) => s.id === studentId)
+}
+
+export function getDemoClassById(classId: string): DemoClass | undefined {
+  return DEMO_CLASSES.find((c) => c.id === classId)
+}
+
+// ─── Derived Exports ─────────────────────────────────────────────────────────
+
+export const DEMO_TEACHER = DEMO_TEACHERS[0]
+
+export const TEACHER_DEMO_CLASSES = DEMO_CLASSES.filter((c) => c.teacherId === DEMO_TEACHER.id)
+
+export const TEACHER_DEMO_LESSONS: { id: string; title: string; date: string; className: string; status: string; topic: string }[] = [
+  { id: "l1", title: "An Inspector Calls - Act 1 Analysis", date: "2026-04-01", className: "10A English", status: "completed", topic: "Literature" },
+  { id: "l2", title: "Language Paper 1 - Q5 Creative Writing", date: "2026-04-02", className: "11B English", status: "completed", topic: "Language" },
+  { id: "l3", title: "IAL Language - World Englishes", date: "2026-04-02", className: "13 IAL Lang", status: "completed", topic: "Language" },
+  { id: "l4", title: "An Inspector Calls - Dramatic Irony", date: "2026-04-03", className: "10A English", status: "in-progress", topic: "Literature" },
+  { id: "l5", title: "Macbeth - Act 5 Revision", date: "2026-04-03", className: "11B English", status: "in-progress", topic: "Literature" },
+  { id: "l6", title: "IAL Language Investigation Workshop", date: "2026-04-04", className: "13 IAL Lang", status: "scheduled", topic: "Language" },
+  { id: "l7", title: "Poetry Anthology - Comparison Practice", date: "2026-04-07", className: "11B English", status: "scheduled", topic: "Literature" },
+  { id: "l8", title: "An Inspector Calls - Context Lesson", date: "2026-04-07", className: "10A English", status: "scheduled", topic: "Literature" },
+]
+
+export const TEACHER_DEMO_SUBMISSIONS: { id: string; studentName: string; assignment: string; score: number; date: string; status: string }[] = [
+  { id: "sub1", studentName: "Jessica Taylor", assignment: "An Inspector Calls - Responsibility Theme", score: 80, date: "2026-03-15", status: "graded" },
+  { id: "sub2", studentName: "Charlotte Brown", assignment: "Creative Writing - Childhood Memory", score: 72, date: "2026-03-18", status: "graded" },
+  { id: "sub3", studentName: "Nathan Wright", assignment: "Macbeth - Lady Macbeth's Guilt", score: 52, date: "2026-03-18", status: "graded" },
+  { id: "sub4", studentName: "Ben Carter", assignment: "Macbeth - Kingship and Tyranny", score: 80, date: "2026-03-18", status: "graded" },
+  { id: "sub5", studentName: "Victoria Ashworth", assignment: "Language Investigation - Code-Switching", score: 92, date: "2026-03-20", status: "graded" },
+  { id: "sub6", studentName: "Naomi Abebe", assignment: "Sociolinguistics - Language and Identity", score: 78, date: "2026-03-20", status: "graded" },
+  { id: "sub7", studentName: "Jessica Taylor", assignment: "Poetry Anthology Comparison", score: 76, date: "2026-03-28", status: "pending" },
+  { id: "sub8", studentName: "Nathan Wright", assignment: "Language Paper 2 - Viewpoint Writing", score: 0, date: "2026-04-01", status: "submitted" },
+  { id: "sub9", studentName: "Ben Carter", assignment: "Poetry Anthology Comparison", score: 0, date: "2026-04-02", status: "submitted" },
+  { id: "sub10", studentName: "Victoria Ashworth", assignment: "Language and Representation Essay", score: 0, date: "2026-04-03", status: "submitted" },
+]
+
+export const DEMO_YEAR_GROUPS = DEMO_YEAR_GROUP_STATS
+
+export const DEMO_STATS = {
+  totalStudents: DEMO_SCHOOL.studentCount,
+  totalTeachers: DEMO_SCHOOL.teacherCount,
+  totalClasses: DEMO_SCHOOL.classCount,
+  avgScore: Math.round(DEMO_STUDENTS.reduce((sum, s) => sum + s.averageScore, 0) / DEMO_STUDENTS.length),
+  avgProgress: Math.round(DEMO_STUDENTS.reduce((sum, s) => sum + s.overallProgress, 0) / DEMO_STUDENTS.length),
+  atRiskCount: DEMO_STUDENTS.filter((s) => s.status === "at-risk").length,
+  activeClasses: DEMO_CLASSES.length,
+  activeThisWeek: DEMO_TEACHERS.filter((t) => t.activeThisWeek).length,
+}

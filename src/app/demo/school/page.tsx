@@ -299,7 +299,7 @@ export default function DemoSchoolDashboardPage() {
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-border">
-                    {DEMO_YEAR_GROUPS.map((yg) => (
+                    {DEMO_YEAR_GROUPS.map((yg: any) => (
                       <tr key={yg.year} className="group">
                         <td className="py-3 pr-4">
                           <Link

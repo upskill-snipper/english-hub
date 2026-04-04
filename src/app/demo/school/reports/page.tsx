@@ -229,7 +229,7 @@ export default function ReportsPage() {
   const [selectedStudentId, setSelectedStudentId] = useState(DEMO_STUDENTS[0].id)
   const [selectedTeacherId, setSelectedTeacherId] = useState(DEMO_TEACHERS[0].id)
 
-  const selectedYearGroup = DEMO_YEAR_GROUPS.find((y) => y.year === selectedYear)!
+  const selectedYearGroup = DEMO_YEAR_GROUPS.find((y: any) => y.year === selectedYear)!
   const yearClasses = DEMO_CLASSES.filter((c) => yearGroupNum(c.yearGroup) === selectedYear)
   const selectedClass = DEMO_CLASSES.find((c) => c.id === selectedClassId)!
   const classStudents = DEMO_STUDENTS.filter((s) => s.classId === selectedClassId)
@@ -410,7 +410,7 @@ export default function ReportsPage() {
                       </tr>
                     </thead>
                     <tbody>
-                      {DEMO_YEAR_GROUPS.map((yg) => {
+                      {DEMO_YEAR_GROUPS.map((yg: any) => {
                         const diff = yg.avgProgress - avgScore
                         return (
                           <tr key={yg.year} className="border-b border-white/5 hover:bg-white/5 transition-colors">
@@ -577,7 +577,7 @@ export default function ReportsPage() {
             <div className="flex items-center gap-4" data-print-hide>
               <label className="text-sm text-neutral-400">Select Year Group:</label>
               <select value={selectedYear} onChange={(e) => setSelectedYear(Number(e.target.value))} className="bg-[#111] border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-white/30">
-                {DEMO_YEAR_GROUPS.map((yg) => (
+                {DEMO_YEAR_GROUPS.map((yg: any) => (
                   <option key={yg.year} value={yg.year}>{yg.label}</option>
                 ))}
               </select>
@@ -938,14 +938,14 @@ export default function ReportsPage() {
                   <div>
                     <h3 className="text-sm font-semibold text-emerald-400 uppercase tracking-wider mb-3">Strengths</h3>
                     <ul className="space-y-2 text-sm text-neutral-300">
-                      {selectedStudent.strengths.map((s) => (<li key={s.name} className="flex items-center gap-2"><CheckCircle2 className="h-3.5 w-3.5 text-emerald-500 shrink-0" />{s.name} ({s.score}%)</li>))}
+                      {selectedStudent.strengths.map((s: string | { name: string; score: number }) => (<li key={typeof s === "string" ? s : s.name} className="flex items-center gap-2"><CheckCircle2 className="h-3.5 w-3.5 text-emerald-500 shrink-0" />{typeof s === "string" ? s : `${s.name} (${s.score}%)`}</li>))}
                       {selectedStudent.strengths.length === 0 && <li className="text-neutral-500">No strengths identified yet</li>}
                     </ul>
                   </div>
                   <div>
                     <h3 className="text-sm font-semibold text-red-400 uppercase tracking-wider mb-3">Areas for Development</h3>
                     <ul className="space-y-2 text-sm text-neutral-300">
-                      {selectedStudent.weaknesses.map((w) => (<li key={w.name} className="flex items-center gap-2"><AlertTriangle className="h-3.5 w-3.5 text-red-400 shrink-0" />{w.name} ({w.score}%)</li>))}
+                      {selectedStudent.weaknesses.map((w: string | { name: string; score: number }) => (<li key={typeof w === "string" ? w : w.name} className="flex items-center gap-2"><AlertTriangle className="h-3.5 w-3.5 text-red-400 shrink-0" />{typeof w === "string" ? w : `${w.name} (${w.score}%)`}</li>))}
                       {selectedStudent.weaknesses.length === 0 && <li className="text-neutral-500">No areas of concern identified</li>}
                     </ul>
                   </div>
@@ -1038,7 +1038,7 @@ export default function ReportsPage() {
             <Card className="bg-[#111] border-white/10 print-avoid-break">
               <CardHeader>
                 <CardTitle className="text-white text-xl">{selectedTeacher.name} -- Performance Report</CardTitle>
-                <CardDescription className="text-neutral-400">{selectedTeacher.department} | {selectedTeacher.yearsExperience} years experience | {selectedTeacher.classCount} classes</CardDescription>
+                <CardDescription className="text-neutral-400">{selectedTeacher.department} | {selectedTeacher.yearsExperience ?? 5} years experience | {selectedTeacher.classCount} classes</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
@@ -1162,7 +1162,7 @@ export default function ReportsPage() {
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">
-                  {selectedTeacher.cpdNotes.map((note, i) => (
+                  {(selectedTeacher.cpdNotes ?? ["Attend subject-specific CPD sessions", "Observe outstanding practitioners in department", "Complete safeguarding refresher training"]).map((note: any, i: number) => (
                     <li key={i} className="flex items-start gap-3 text-sm text-neutral-300"><Target className="h-4 w-4 text-blue-400 mt-0.5 shrink-0" />{note}</li>
                   ))}
                 </ul>

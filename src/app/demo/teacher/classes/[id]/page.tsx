@@ -17,7 +17,7 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { TEACHER_DEMO_CLASSES, DEMO_STUDENTS } from "@/data/demo-data"
+import { TEACHER_DEMO_CLASSES, DEMO_STUDENTS, type DemoClass, type DemoStudent } from "@/data/demo-data"
 
 function ragDot(status: "green" | "amber" | "red") {
   const colors = {
@@ -64,7 +64,7 @@ function progressBarColor(pct: number) {
 export default function TeacherClassDetailPage() {
   const params = useParams()
   const classId = params.id as string
-  const cls = TEACHER_DEMO_CLASSES.find((c) => c.id === classId)
+  const cls = TEACHER_DEMO_CLASSES.find((c: any) => c.id === classId)
 
   if (!cls) {
     return (
@@ -80,20 +80,20 @@ export default function TeacherClassDetailPage() {
     )
   }
 
-  const sortedStudents = [...cls.students].sort((a, b) => {
+  const classStudents = cls.students ?? []
+  const sortedStudents = [...classStudents].sort((a, b) => {
     if (a.atRisk && !b.atRisk) return -1
     if (!a.atRisk && b.atRisk) return 1
     return b.overallScore - a.overallScore
   })
 
-  const classStudents = cls.students
   const avgScore = cls.avgScore
   const avgCompletion = cls.completionRate
-  const atRiskCount = cls.atRiskCount
-  const onTrackCount = classStudents.filter((s) => s.ragStatus === "green").length
-  const monitorCount = classStudents.filter((s) => s.ragStatus === "amber").length
-  const improvingCount = classStudents.filter((s) => s.trend === "up").length
-  const decliningCount = classStudents.filter((s) => s.trend === "down").length
+  const atRiskCount = cls.atRiskCount ?? 0
+  const onTrackCount = classStudents.filter((s: any) => s.ragStatus === "green").length
+  const monitorCount = classStudents.filter((s: any) => s.ragStatus === "amber").length
+  const improvingCount = classStudents.filter((s: any) => s.trend === "up").length
+  const decliningCount = classStudents.filter((s: any) => s.trend === "down").length
 
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white">

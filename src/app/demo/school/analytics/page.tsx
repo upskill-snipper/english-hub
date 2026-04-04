@@ -106,7 +106,7 @@ export default function AnalyticsPage() {
   const maxMockCount = TOP_MOCK_EXAMS[0].count
 
   // Compute year-group level at-risk counts from students
-  const yearGroupAtRisk = DEMO_YEAR_GROUPS.map((yg) => {
+  const yearGroupAtRisk = DEMO_YEAR_GROUPS.map((yg: any) => {
     const count = DEMO_STUDENTS.filter(
       (s) => s.yearGroup === `Year ${yg.year}` && s.atRisk
     ).length
@@ -296,7 +296,7 @@ export default function AnalyticsPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  {yearGroupAtRisk.map((yg) => (
+                  {yearGroupAtRisk.map((yg: any) => (
                     <tr
                       key={yg.year}
                       onClick={() =>

@@ -24,22 +24,22 @@ function gradeColor(grade: string): string {
 
 function statusBadge(status: string): { label: string; cls: string } {
   switch (status) {
-    case "Excelling":
+    case "excelling":
       return {
         label: "Excelling",
         cls: "bg-emerald-500/15 text-emerald-400 print:bg-emerald-100 print:text-emerald-700",
       };
-    case "On Track":
+    case "on-track":
       return {
         label: "On Track",
         cls: "bg-blue-500/15 text-blue-400 print:bg-blue-100 print:text-blue-700",
       };
-    case "Needs Support":
+    case "needs-support":
       return {
         label: "Needs Support",
         cls: "bg-amber-500/15 text-amber-400 print:bg-amber-100 print:text-amber-700",
       };
-    case "At Risk":
+    case "at-risk":
       return {
         label: "At Risk",
         cls: "bg-red-500/15 text-red-400 print:bg-red-100 print:text-red-700",
@@ -90,16 +90,16 @@ export default function ClassReportPage() {
       : cls.completionRate;
 
   const ragCounts = {
-    excelling: students.filter((s) => s.status === "Excelling").length,
-    onTrack: students.filter((s) => s.status === "On Track").length,
-    needsSupport: students.filter((s) => s.status === "Needs Support").length,
-    atRisk: students.filter((s) => s.status === "At Risk").length,
+    excelling: students.filter((s) => s.status === "excelling").length,
+    onTrack: students.filter((s) => s.status === "on-track").length,
+    needsSupport: students.filter((s) => s.status === "needs-support").length,
+    atRisk: students.filter((s) => s.status === "at-risk").length,
   };
 
   const sortedStudents = [...students].sort((a, b) => b.averageScore - a.averageScore);
-  const topPerformers = sortedStudents.filter((s) => s.status === "Excelling");
+  const topPerformers = sortedStudents.filter((s) => s.status === "excelling");
   const needingSupport = sortedStudents.filter(
-    (s) => s.status === "Needs Support" || s.status === "At Risk"
+    (s) => s.status === "needs-support" || s.status === "at-risk"
   );
 
   // School average (across all demo students)

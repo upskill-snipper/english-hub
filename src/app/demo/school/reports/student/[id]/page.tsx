@@ -323,29 +323,38 @@ export default function StudentReportPage() {
           </h2>
           <p className="text-sm text-neutral-300 print:text-black leading-relaxed">
             {student.name} demonstrates strong ability in{" "}
-            {student.strengths.map((s) => s.name.toLowerCase()).join(", ")}.
-            {student.strengths.length > 0 && (
+            {student.strengths.map((s) => (typeof s === "string" ? s : s.name).toLowerCase()).join(", ")}.
+            {student.strengths.length > 0 && (() => {
+              const first = student.strengths[0]
+              const firstName = typeof first === "string" ? first : first.name
+              const firstScore = typeof first === "string" ? null : first.score
+              return (
               <> Their highest-performing area is{" "}
               <strong className="text-neutral-100 print:text-black">
-                {student.strengths[0].name}
-              </strong>{" "}
-              with a score of {student.strengths[0].score}%.
-              {student.status === "Excelling" &&
+                {firstName}
+              </strong>
+              {firstScore !== null && <> with a score of {firstScore}%</>}.
+              {student.status === "excelling" &&
                 " This student is performing above expectations and should be encouraged to pursue extension activities."}
-              {student.status === "On Track" &&
+              {student.status === "on-track" &&
                 " Continued effort in these areas will help maintain strong progress."}
               </>
-            )}
+              )
+            })()}
           </p>
           <div className="mt-3 flex flex-wrap gap-2">
-            {student.strengths.map((s) => (
+            {student.strengths.map((s) => {
+              const sName = typeof s === "string" ? s : s.name
+              const sScore = typeof s === "string" ? null : s.score
+              return (
               <span
-                key={s.name}
+                key={sName}
                 className="text-xs px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 print:bg-emerald-50 print:text-emerald-700 print:border-emerald-300"
               >
-                {s.name}: {s.score}%
+                {sName}{sScore !== null && <>: {sScore}%</>}
               </span>
-            ))}
+              )
+            })}
           </div>
         </div>
 
@@ -358,15 +367,24 @@ export default function StudentReportPage() {
             {student.weaknesses.length > 0 ? (
               <>
                 To improve further, {student.name} should focus on developing{" "}
-                {student.weaknesses.map((w) => w.name.toLowerCase()).join(", ")}.
+                {student.weaknesses.map((w) => (typeof w === "string" ? w : w.name).toLowerCase()).join(", ")}.
                 {" "}The area requiring most attention is{" "}
-                <strong className="text-neutral-100 print:text-black">
-                  {student.weaknesses[student.weaknesses.length - 1].name}
-                </strong>{" "}
-                (currently at {student.weaknesses[student.weaknesses.length - 1].score}%).
-                {student.status === "At Risk" &&
+                {(() => {
+                  const last = student.weaknesses[student.weaknesses.length - 1]
+                  const lastName = typeof last === "string" ? last : last.name
+                  const lastScore = typeof last === "string" ? null : last.score
+                  return (
+                    <>
+                      <strong className="text-neutral-100 print:text-black">
+                        {lastName}
+                      </strong>
+                      {lastScore !== null && <> (currently at {lastScore}%)</>}
+                    </>
+                  )
+                })()}.
+                {student.status === "at-risk" &&
                   " Immediate intervention and additional support are strongly recommended."}
-                {student.status === "Needs Support" &&
+                {student.status === "needs-support" &&
                   " Targeted support in these areas will help close the gap with expected standards."}
               </>
             ) : (
@@ -374,14 +392,18 @@ export default function StudentReportPage() {
             )}
           </p>
           <div className="mt-3 flex flex-wrap gap-2">
-            {student.weaknesses.map((w) => (
+            {student.weaknesses.map((w) => {
+              const wName = typeof w === "string" ? w : w.name
+              const wScore = typeof w === "string" ? null : w.score
+              return (
               <span
-                key={w.name}
+                key={wName}
                 className="text-xs px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20 print:bg-amber-50 print:text-amber-700 print:border-amber-300"
               >
-                {w.name}: {w.score}%
+                {wName}{wScore !== null && <>: {wScore}%</>}
               </span>
-            ))}
+              )
+            })}
           </div>
         </div>
 
@@ -393,11 +415,11 @@ export default function StudentReportPage() {
           <div className="bg-neutral-800/50 print:bg-neutral-50 rounded-lg p-4 border border-neutral-700 print:border-neutral-300">
             <p className="text-sm text-neutral-300 print:text-black leading-relaxed italic">
               &quot;{student.name} has shown{" "}
-              {student.status === "Excelling"
+              {student.status === "excelling"
                 ? "exceptional dedication and consistently outstanding work this term. Their contributions to class discussions and written assignments are of the highest calibre."
-                : student.status === "On Track"
+                : student.status === "on-track"
                 ? "steady progress throughout the term with a positive attitude towards learning. They engage well in lessons and are developing their analytical skills effectively."
-                : student.status === "Needs Support"
+                : student.status === "needs-support"
                 ? "some progress this term but would benefit from more consistent engagement with homework and revision activities. I would encourage more regular reading and practice of written skills."
                 : "potential in class discussions but this is not yet reflected in their written work. Consistent attendance, completion of set work, and engagement with support sessions are essential to make progress."}
               &quot;

@@ -24,6 +24,9 @@ import {
   TEACHER_DEMO_CLASSES,
   TEACHER_DEMO_LESSONS,
   TEACHER_DEMO_SUBMISSIONS,
+  DEMO_STUDENTS,
+  type DemoClass,
+  type DemoStudent,
 } from "@/data/demo-data"
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
@@ -56,11 +59,12 @@ function progressBarColor(pct: number) {
 }
 
 // Gather all at-risk students across teacher's classes
-const atRiskStudents = TEACHER_DEMO_CLASSES.flatMap((cls) =>
-  cls.students
+const atRiskStudents = TEACHER_DEMO_CLASSES.flatMap((cls: DemoClass) => {
+  const students = DEMO_STUDENTS.filter((s) => s.className === cls.name)
+  return students
     .filter((s) => s.atRisk)
     .map((s) => ({ ...s, className: cls.name, classId: cls.id }))
-)
+})
 
 // Upcoming assignments due this week (mock data)
 const assignmentsDueThisWeek = [
@@ -97,7 +101,7 @@ export default function TeacherDemoDashboard() {
         <section className="mb-10">
           <h2 className="text-lg font-medium text-white/80 mb-4">My Classes</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {TEACHER_DEMO_CLASSES.map((cls) => (
+            {TEACHER_DEMO_CLASSES.map((cls: any) => (
               <Link
                 key={cls.id}
                 href={`/demo/teacher/classes/${cls.id}`}
@@ -163,7 +167,7 @@ export default function TeacherDemoDashboard() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
-                {TEACHER_DEMO_LESSONS.map((lesson) => (
+                {TEACHER_DEMO_LESSONS.map((lesson: any) => (
                   <div
                     key={lesson.id}
                     className="flex items-start gap-3 rounded-lg border border-white/5 bg-white/[0.02] p-3"
@@ -255,7 +259,7 @@ export default function TeacherDemoDashboard() {
                   </tr>
                 </thead>
                 <tbody>
-                  {TEACHER_DEMO_SUBMISSIONS.map((sub) => (
+                  {TEACHER_DEMO_SUBMISSIONS.map((sub: any) => (
                     <tr
                       key={sub.id}
                       className="border-b border-white/5 last:border-0 hover:bg-white/[0.02]"
@@ -307,7 +311,7 @@ export default function TeacherDemoDashboard() {
             At-Risk Students in My Classes
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {atRiskStudents.map((student) => (
+            {atRiskStudents.map((student: any) => (
               <Link
                 key={`${student.classId}-${student.id}`}
                 href={`/demo/teacher/students/${student.id}`}

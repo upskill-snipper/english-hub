@@ -24,7 +24,7 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { DEMO_STUDENTS } from "@/data/demo-data"
+import { DEMO_STUDENTS, type DemoStudent } from "@/data/demo-data"
 
 function scoreColor(score: number) {
   if (score >= 70) return "text-green-400"
@@ -40,10 +40,10 @@ function scoreBg(score: number) {
 
 function statusBadge(status: string) {
   const styles: Record<string, string> = {
-    "Excelling": "bg-green-500/10 text-green-400 border-green-500/20",
-    "On Track": "bg-blue-500/10 text-blue-400 border-blue-500/20",
-    "Needs Support": "bg-amber-500/10 text-amber-400 border-amber-500/20",
-    "At Risk": "bg-red-500/10 text-red-400 border-red-500/20",
+    "excelling": "bg-green-500/10 text-green-400 border-green-500/20",
+    "on-track": "bg-blue-500/10 text-blue-400 border-blue-500/20",
+    "needs-support": "bg-amber-500/10 text-amber-400 border-amber-500/20",
+    "at-risk": "bg-red-500/10 text-red-400 border-red-500/20",
   }
   return styles[status] || "bg-neutral-500/10 text-neutral-400 border-neutral-500/20"
 }
@@ -66,7 +66,7 @@ export default function TeacherStudentProfilePage() {
   const studentId = params.id as string
   const [comment, setComment] = useState("")
 
-  const studentIdx = DEMO_STUDENTS.findIndex((s) => s.id === studentId)
+  const studentIdx = DEMO_STUDENTS.findIndex((s: DemoStudent) => s.id === studentId)
   const student = DEMO_STUDENTS[studentIdx]
 
   if (!student) {
@@ -87,15 +87,15 @@ export default function TeacherStudentProfilePage() {
   }
 
   // Class average calculations
-  const classmates = DEMO_STUDENTS.filter((s) => s.classId === student.classId)
+  const classmates = DEMO_STUDENTS.filter((s: DemoStudent) => s.classId === student.classId)
   const classAvgScore = classmates.length > 0
-    ? Math.round(classmates.reduce((sum, s) => sum + s.averageScore, 0) / classmates.length)
+    ? Math.round(classmates.reduce((sum: number, s: DemoStudent) => sum + s.averageScore, 0) / classmates.length)
     : 0
   const classAvgProgress = classmates.length > 0
-    ? Math.round(classmates.reduce((sum, s) => sum + s.overallProgress, 0) / classmates.length)
+    ? Math.round(classmates.reduce((sum: number, s: DemoStudent) => sum + s.overallProgress, 0) / classmates.length)
     : 0
   const classAvgAssignments = classmates.length > 0
-    ? Math.round(classmates.reduce((sum, s) => sum + s.assignmentsCompleted, 0) / classmates.length)
+    ? Math.round(classmates.reduce((sum: number, s: DemoStudent) => sum + s.assignmentsCompleted, 0) / classmates.length)
     : 0
 
   const prevStudent = studentIdx > 0 ? DEMO_STUDENTS[studentIdx - 1] : null
@@ -144,9 +144,9 @@ export default function TeacherStudentProfilePage() {
         <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-8">
           <div
             className={`h-14 w-14 shrink-0 rounded-full flex items-center justify-center text-lg font-medium ${
-              student.status === "At Risk"
+              student.status === "at-risk"
                 ? "bg-red-500/15 text-red-400"
-                : student.status === "Excelling"
+                : student.status === "excelling"
                 ? "bg-green-500/15 text-green-400"
                 : "bg-gradient-to-br from-white/10 to-white/5 text-white/60"
             }`}
@@ -275,13 +275,7 @@ export default function TeacherStudentProfilePage() {
               <div className="space-y-3">
                 {student.strengths.map((s, i) => (
                   <div key={i} className="flex items-center justify-between">
-                    <span className="text-sm text-neutral-300">{s.name}</span>
-                    <div className="flex items-center gap-2">
-                      <div className="w-20 h-1.5 rounded-full bg-white/5 overflow-hidden">
-                        <div className="h-full rounded-full bg-emerald-500" style={{ width: `${s.score}%` }} />
-                      </div>
-                      <span className="text-xs text-emerald-400 tabular-nums w-8 text-right">{s.score}%</span>
-                    </div>
+                    <span className="text-sm text-neutral-300">{typeof s === "string" ? s : s.name}</span>
                   </div>
                 ))}
               </div>
@@ -297,13 +291,7 @@ export default function TeacherStudentProfilePage() {
               <div className="space-y-3">
                 {student.weaknesses.map((w, i) => (
                   <div key={i} className="flex items-center justify-between">
-                    <span className="text-sm text-neutral-300">{w.name}</span>
-                    <div className="flex items-center gap-2">
-                      <div className="w-20 h-1.5 rounded-full bg-white/5 overflow-hidden">
-                        <div className="h-full rounded-full bg-red-500" style={{ width: `${w.score}%` }} />
-                      </div>
-                      <span className="text-xs text-red-400 tabular-nums w-8 text-right">{w.score}%</span>
-                    </div>
+                    <span className="text-sm text-neutral-300">{typeof w === "string" ? w : w.name}</span>
                   </div>
                 ))}
               </div>
@@ -411,7 +399,7 @@ export default function TeacherStudentProfilePage() {
             <span className="text-right">Score</span>
             <span className="text-right">Status</span>
           </div>
-          {student.modules.map((mod, i) => (
+          {student.modules.map((mod: any, i: number) => (
             <div key={i} className="grid grid-cols-1 sm:grid-cols-[1fr_160px_80px_80px] gap-1 sm:gap-4 px-5 py-3 border-b border-white/[0.03]">
               <p className="text-sm text-white/80">{mod.name}</p>
               <div className="flex items-center gap-2">
@@ -430,14 +418,14 @@ export default function TeacherStudentProfilePage() {
                 <Badge
                   variant="outline"
                   className={`text-[10px] ${
-                    mod.status === "Complete"
+                    (mod.status ?? "") === "Complete"
                       ? "border-green-500/20 text-green-400"
-                      : mod.status === "In Progress"
+                      : (mod.status ?? "") === "In Progress"
                       ? "border-amber-500/20 text-amber-400"
                       : "border-neutral-500/20 text-neutral-500"
                   }`}
                 >
-                  {mod.status}
+                  {mod.status ?? "In Progress"}
                 </Badge>
               </div>
             </div>
@@ -457,7 +445,7 @@ export default function TeacherStudentProfilePage() {
             <span className="text-center">Score</span>
             <span className="text-center">Grade</span>
           </div>
-          {student.mockExams.map((exam, i) => (
+          {student.mockExams.map((exam: any, i: number) => (
             <div key={i} className="grid grid-cols-1 sm:grid-cols-[1fr_100px_80px_60px] gap-1 sm:gap-4 px-5 py-3 border-b border-white/[0.03]">
               <p className="text-sm text-white/80">{exam.name}</p>
               <p className="text-sm text-neutral-500">{exam.date}</p>
@@ -474,7 +462,7 @@ export default function TeacherStudentProfilePage() {
               <FileText className="h-4 w-4 text-emerald-400" /> Essay Submissions
             </CardTitle>
           </CardHeader>
-          {student.essays.map((essay, i) => (
+          {student.essays.map((essay: any, i: number) => (
             <div key={i} className="px-5 py-4 border-b border-white/[0.03]">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-2">
                 <div className="flex items-center gap-2">
@@ -507,11 +495,11 @@ export default function TeacherStudentProfilePage() {
             <span>Date</span>
             <span className="text-right">Score</span>
           </div>
-          {student.quizAttempts.map((quiz, i) => {
+          {student.quizAttempts.map((quiz: any, i: number) => {
             const pct = Math.round((quiz.score / quiz.maxScore) * 100)
             return (
               <div key={i} className="grid grid-cols-1 sm:grid-cols-[1fr_100px_100px] gap-1 sm:gap-4 px-5 py-3 border-b border-white/[0.03]">
-                <p className="text-sm text-white/80">{quiz.name}</p>
+                <p className="text-sm text-white/80">{quiz.quiz}</p>
                 <p className="text-sm text-neutral-500">{quiz.date}</p>
                 <p className={`text-sm tabular-nums text-right ${scoreColor(pct)}`}>
                   {quiz.score}/{quiz.maxScore} ({pct}%)
@@ -530,7 +518,7 @@ export default function TeacherStudentProfilePage() {
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              {student.activityTimeline.map((item, i) => {
+              {student.activityTimeline.map((item: any, i: number) => {
                 const isPositive = item.action === "Completed" || item.action === "Submitted" || item.action.startsWith("Achieved") || item.action.startsWith("Scored")
                 const isNegative = item.action === "Absent" || item.action === "Incomplete" || item.action.includes("late")
                 return (

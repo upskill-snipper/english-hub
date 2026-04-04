@@ -108,11 +108,11 @@ function generateStudentFromId(id: string): DemoStudent {
   )
   const modulesCompleted = Math.min(8, Math.max(0, Math.floor((overallProgress / 100) * 8)))
 
-  let status: "On Track" | "Needs Support" | "At Risk" | "Excelling"
-  if (overallProgress >= 85) status = "Excelling"
-  else if (overallProgress >= 60) status = "On Track"
-  else if (overallProgress >= 40) status = "Needs Support"
-  else status = "At Risk"
+  let status: "on-track" | "needs-support" | "at-risk" | "excelling"
+  if (overallProgress >= 85) status = "excelling"
+  else if (overallProgress >= 60) status = "on-track"
+  else if (overallProgress >= 40) status = "needs-support"
+  else status = "at-risk"
 
   const recentScores: number[] = []
   let scoreBase = Math.max(20, averageScore - 15)
@@ -131,8 +131,8 @@ function generateStudentFromId(id: string): DemoStudent {
     "Written Expression", "Exam Technique", "Paragraph Structure", "Analytical Depth",
   ]
 
-  const strengthCount = status === "Excelling" ? 4 : status === "On Track" ? 3 : 2
-  const weaknessCount = status === "At Risk" ? 4 : status === "Needs Support" ? 3 : 2
+  const strengthCount = status === "excelling" ? 4 : status === "on-track" ? 3 : 2
+  const weaknessCount = status === "at-risk" ? 4 : status === "needs-support" ? 3 : 2
 
   const strengths: { name: string; score: number }[] = []
   const usedS = new Set<number>()
@@ -226,6 +226,7 @@ function generateStudentFromId(id: string): DemoStudent {
     yearGroup,
     className,
     classId: "c-" + (Math.floor(rand() * 20) + 1),
+    teacher,
     teacherName: teacher,
     status,
     overallProgress,
@@ -239,12 +240,16 @@ function generateStudentFromId(id: string): DemoStudent {
     modules,
     mockExams,
     essays,
-    quizAttempts,
+    quizAttempts: quizAttempts.map((q) => ({ quiz: q.name, score: q.score, maxScore: q.maxScore, date: q.date })),
     activityTimeline,
     recommendations,
-    atRisk: status === "At Risk",
+    mockExamResults: mockExams.map((m) => ({ exam: m.name, score: m.score, grade: m.grade, date: m.date })),
+    essaySubmissions: essays.map((e) => ({ title: e.title, score: e.score, feedback: e.feedback, date: e.date })),
+    moduleProgress: modules.map((m) => ({ module: m.name, progress: m.progress, score: m.score, status: m.status ?? "In Progress" })),
+    activityLog: activityTimeline.map((a) => ({ action: a.action + ": " + a.detail, date: a.date })),
+    atRisk: status === "at-risk",
     lastActive: ["Today", "Yesterday", "2 days ago", "5 days ago", "1 week ago"][Math.floor(rand() * 5)],
-    riskReason: status === "At Risk" ? "Score below target" : "",
+    riskReason: status === "at-risk" ? "Score below target" : "",
   }
 }
 
@@ -280,17 +285,17 @@ function getClassAverage() {
 // ---------------------------------------------------------------------------
 
 const STATUS_CONFIG: Record<string, { bg: string; text: string; border: string; label: string }> = {
-  "On Track": { bg: "bg-emerald-500/15", text: "text-emerald-400", border: "border-emerald-500/30", label: "On Track" },
-  "Needs Support": { bg: "bg-amber-500/15", text: "text-amber-400", border: "border-amber-500/30", label: "Needs Support" },
-  "At Risk": { bg: "bg-red-500/15", text: "text-red-400", border: "border-red-500/30", label: "At Risk" },
-  "Excelling": { bg: "bg-blue-500/15", text: "text-blue-400", border: "border-blue-500/30", label: "Excelling" },
+  "on-track": { bg: "bg-emerald-500/15", text: "text-emerald-400", border: "border-emerald-500/30", label: "On Track" },
+  "needs-support": { bg: "bg-amber-500/15", text: "text-amber-400", border: "border-amber-500/30", label: "Needs Support" },
+  "at-risk": { bg: "bg-red-500/15", text: "text-red-400", border: "border-red-500/30", label: "At Risk" },
+  "excelling": { bg: "bg-blue-500/15", text: "text-blue-400", border: "border-blue-500/30", label: "Excelling" },
 }
 
 const STATUS_ICON: Record<string, React.ReactNode> = {
-  "On Track": <CheckCircle2 className="w-4 h-4" />,
-  "Needs Support": <AlertTriangle className="w-4 h-4" />,
-  "At Risk": <XCircle className="w-4 h-4" />,
-  "Excelling": <Star className="w-4 h-4" />,
+  "on-track": <CheckCircle2 className="w-4 h-4" />,
+  "needs-support": <AlertTriangle className="w-4 h-4" />,
+  "at-risk": <XCircle className="w-4 h-4" />,
+  "excelling": <Star className="w-4 h-4" />,
 }
 
 const MODULE_STATUS_STYLE: Record<string, string> = {
@@ -560,19 +565,22 @@ export default function SchoolStudentDetailPage() {
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
-              {student.strengths.map((s, i) => (
-                <div key={i} className="flex items-center gap-3">
-                  <div className="flex-1">
-                    <div className="flex items-center justify-between mb-1">
-                      <span className="text-sm text-zinc-300">{s.name}</span>
-                      <span className="text-sm font-medium text-emerald-400">{s.score}%</span>
-                    </div>
-                    <div className="w-full h-2 bg-zinc-800 rounded-full overflow-hidden">
-                      <div className="h-full bg-emerald-500/70 rounded-full" style={{ width: `${s.score}%` }} />
+              {student.strengths.map((s, i) => {
+                const item = typeof s === "string" ? { name: s, score: 75 } : s
+                return (
+                  <div key={i} className="flex items-center gap-3">
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="text-sm text-zinc-300">{item.name}</span>
+                        <span className="text-sm font-medium text-emerald-400">{item.score}%</span>
+                      </div>
+                      <div className="w-full h-2 bg-zinc-800 rounded-full overflow-hidden">
+                        <div className="h-full bg-emerald-500/70 rounded-full" style={{ width: `${item.score}%` }} />
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                )
+              })}
             </CardContent>
           </Card>
 
@@ -584,19 +592,22 @@ export default function SchoolStudentDetailPage() {
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
-              {student.weaknesses.map((w, i) => (
-                <div key={i} className="flex items-center gap-3">
-                  <div className="flex-1">
-                    <div className="flex items-center justify-between mb-1">
-                      <span className="text-sm text-zinc-300">{w.name}</span>
-                      <span className="text-sm font-medium text-red-400">{w.score}%</span>
-                    </div>
-                    <div className="w-full h-2 bg-zinc-800 rounded-full overflow-hidden">
-                      <div className="h-full bg-red-500/70 rounded-full" style={{ width: `${w.score}%` }} />
+              {student.weaknesses.map((w, i) => {
+                const item = typeof w === "string" ? { name: w, score: 40 } : w
+                return (
+                  <div key={i} className="flex items-center gap-3">
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="text-sm text-zinc-300">{item.name}</span>
+                        <span className="text-sm font-medium text-red-400">{item.score}%</span>
+                      </div>
+                      <div className="w-full h-2 bg-zinc-800 rounded-full overflow-hidden">
+                        <div className="h-full bg-red-500/70 rounded-full" style={{ width: `${item.score}%` }} />
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                )
+              })}
             </CardContent>
           </Card>
         </div>
@@ -643,8 +654,8 @@ export default function SchoolStudentDetailPage() {
                         </span>
                       </td>
                       <td className="py-3 px-4 text-center">
-                        <Badge variant="outline" className={`text-xs ${MODULE_STATUS_STYLE[mod.status]}`}>
-                          {mod.status}
+                        <Badge variant="outline" className={`text-xs ${MODULE_STATUS_STYLE[mod.status ?? "In Progress"]}`}>
+                          {mod.status ?? "In Progress"}
                         </Badge>
                       </td>
                     </tr>
@@ -775,7 +786,7 @@ export default function SchoolStudentDetailPage() {
                     const pct = Math.round((quiz.score / quiz.maxScore) * 100)
                     return (
                       <tr key={i} className="border-b border-zinc-800/50 hover:bg-zinc-800/30 transition-colors">
-                        <td className="py-3 px-4 font-medium text-zinc-200">{quiz.name}</td>
+                        <td className="py-3 px-4 font-medium text-zinc-200">{quiz.quiz}</td>
                         <td className="py-3 px-4 text-center text-zinc-300">
                           {quiz.score}/{quiz.maxScore}
                         </td>
