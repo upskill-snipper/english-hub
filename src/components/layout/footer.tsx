@@ -36,6 +36,7 @@ const FOOTER_SECTIONS = [
       { href: '/for-schools', label: 'For Schools' },
       { href: '/for-parents', label: 'For Parents' },
       { href: '/contact', label: 'Contact' },
+      { href: '/affiliates', label: 'Affiliate Programme' },
     ],
   },
   {

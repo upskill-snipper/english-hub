@@ -26,6 +26,8 @@ export default async function AffiliateDashboardPage() {
         commission_amount_gbp,
         commission_status,
         converted_to_paid_at,
+        clicked_at,
+        signed_up_at,
         created_at
       ),
       affiliate_payouts (
@@ -79,6 +81,9 @@ export default async function AffiliateDashboardPage() {
     )
     .reduce((sum, r) => sum + (r.commission_amount_gbp ?? 0), 0)
 
+  // Total clicks (referrals that have a clicked_at timestamp)
+  const totalClicks = referrals.filter((r) => r.clicked_at).length
+
   // Get commission defaults for display
   const { data: commissionDefaults } = await supabase
     .from('affiliate_commission_defaults')
@@ -95,6 +100,7 @@ export default async function AffiliateDashboardPage() {
       pendingEarnings={pendingEarnings}
       totalPaid={totalPaid}
       thisMonthEarnings={thisMonthEarnings}
+      totalClicks={totalClicks}
       commissionRates={commissionDefaults}
     />
   )

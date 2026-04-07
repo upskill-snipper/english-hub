@@ -3,9 +3,9 @@ import { redirect } from 'next/navigation'
 import AffiliatePublicPage from '@/components/affiliates/AffiliatePublicPage'
 
 export const metadata = {
-  title: 'Affiliate Programme — The English Hub',
+  title: 'Partner With Us — The English Hub',
   description:
-    'Earn money sharing The English Hub with your audience. Join our affiliate programme for student creators.',
+    'Partner with The English Hub and help students achieve their potential. Earn competitive commission while making a real difference in education.',
 }
 
 export default async function AffiliatesPage() {
@@ -30,8 +30,10 @@ export default async function AffiliatesPage() {
       affiliate?.status === 'agreement_sent' ||
       affiliate?.status === 'agreement_signed'
     ) {
-      return <AffiliatePublicPage applicationStatus={affiliate.status} />
+      return <AffiliatePublicPage applicationStatus={affiliate.status} isLoggedIn />
     }
+
+    return <AffiliatePublicPage isLoggedIn />
   }
 
   return <AffiliatePublicPage />
