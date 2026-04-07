@@ -11,6 +11,7 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   experimental: {
+    instrumentationHook: true,
     scrollRestoration: true,
     optimizePackageImports: [
       'lucide-react',
@@ -62,6 +63,6 @@ const nextConfig = {
   },
 }
 module.exports = withSentryConfig(nextConfig, {
-  silent: true,
+  silent: 'warn',
   hideSourceMaps: true,
 })
