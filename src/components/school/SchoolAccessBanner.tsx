@@ -97,8 +97,7 @@ function ExpiredBanner({ schoolId }: { schoolId: string }) {
       <div className="min-w-0">
         <p className="font-semibold text-red-100">Access expired</p>
         <p className="mt-0.5 text-red-300">
-          Your school no longer has active access. Renew at{" "}
-          <span className="font-medium text-red-100">&pound;1,500/year</span> to restore full access for
+          Your school no longer has active access. Contact us to renew and restore full access for
           all students and teachers.
         </p>
       </div>

@@ -3,16 +3,16 @@ import Link from "next/link"
 
 export const metadata: Metadata = {
   title: "English Hub for Teachers | AI Lesson Planning & Analytics",
-  description: "Save 5+ hours/week with AI lesson planning, student analytics, and 300+ ready resources. Try free for 1 month. School plans available from £1,500/year.",
+  description: "Save 5+ hours/week with AI lesson planning, student analytics, and 300+ ready resources. Try free for 1 month. School plans available -- book a call.",
   alternates: { canonical: "https://theenglishhub.app/for-teachers" },
   openGraph: {
     title: "English Hub for Teachers | AI Lesson Planning & Analytics",
-    description: "Save 5+ hours/week with AI lesson planning, student analytics, and 300+ ready resources. Try free for 1 month. School plans available from £1,500/year.",
+    description: "Save 5+ hours/week with AI lesson planning, student analytics, and 300+ ready resources. Try free for 1 month. School plans available -- book a call.",
   },
   twitter: {
     card: "summary_large_image",
     title: "English Hub for Teachers | AI Lesson Planning & Analytics",
-    description: "Save 5+ hours/week with AI lesson planning, student analytics, and 300+ ready resources. Try free for 1 month. School plans available from £1,500/year.",
+    description: "Save 5+ hours/week with AI lesson planning, student analytics, and 300+ ready resources. Try free for 1 month. School plans available -- book a call.",
   },
 }
 
@@ -26,7 +26,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </Link>{" "}
         or{" "}
         <Link href="/for-schools" className="font-medium text-foreground underline underline-offset-2 hover:opacity-80">
-          register your school for &pound;1,500/year
+          join the Founding Schools Programme
         </Link>
       </div>
       {children}

@@ -1,12 +1,12 @@
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "English Hub for Schools | £1,500/year Site License",
-  description: "Give every student and teacher at your school access to 470+ English courses, AI feedback, and analytics for just £1,500/year. Register FREE now with code FOUNDER until August 2026.",
+  title: "English Hub for Schools | Founding Schools Programme 2026",
+  description: "Join the Founding Schools Programme. Full platform access for all students and teachers. 5-8 hours saved per teacher per week. Ofsted-ready reporting. Only 20 places.",
   alternates: { canonical: "https://theenglishhub.app/for-schools" },
   openGraph: {
-    title: "English Hub for Schools | £1,500/year Site License",
-    description: "School site license: unlimited students and teachers, all courses, analytics dashboard, bulk user management. Register FREE with FOUNDER until August 2026.",
+    title: "English Hub for Schools | Founding Schools Programme 2026",
+    description: "Founding Schools Programme: unlimited students and teachers, all courses, analytics dashboard, priority onboarding. Only 20 places for 2026.",
     images: [{ url: "https://theenglishhub.app/og/schools.png", width: 1200, height: 630 }]
   },
   keywords: ["school English platform", "GCSE English online", "school subscription", "English department", "IGCSE resources"]

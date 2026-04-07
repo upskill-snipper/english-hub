@@ -32,7 +32,7 @@ const BENEFITS = [
   { icon: BarChart2,     text: 'Real-time student analytics' },
   { icon: ClipboardList, text: 'Homework management' },
   { icon: FileText,      text: 'Mock exam papers for all boards' },
-  { icon: Star,          text: 'First month FREE' },
+  { icon: Star,          text: '3 free uses of every AI tool' },
 ]
 
 export default function TeacherRegisterPage() {
@@ -120,9 +120,15 @@ export default function TeacherRegisterPage() {
             <CardContent className="pt-10 pb-8">
               <CheckCircle className="w-14 h-14 text-primary mx-auto mb-4" />
               <h1 className="text-2xl font-bold text-foreground mb-3">Account created!</h1>
-              <p className="text-muted-foreground mb-6">
+              <p className="text-muted-foreground mb-4">
                 Check your email to verify your address, then log in to access your teacher dashboard.
               </p>
+              <div className="rounded-lg border border-primary/20 bg-primary/5 p-3 mb-6 text-left">
+                <p className="text-sm text-muted-foreground">
+                  <span className="font-medium text-foreground">Your free trial is ready.</span>{' '}
+                  You have 3 free uses of every premium feature — AI marking, lesson plans, and more. Upgrade for unlimited at &pound;12.99/month (first month free).
+                </p>
+              </div>
               <Button render={<Link href="/auth/login" />} className="w-full" size="lg">
                 Go to login
               </Button>
@@ -150,10 +156,13 @@ export default function TeacherRegisterPage() {
         {/* Header */}
         <div className="text-center mb-10">
           <Badge variant="secondary" className="mb-4">Teachers</Badge>
-          <h1 className="text-3xl font-bold text-foreground mb-3">Create Your Teacher Account</h1>
+          <h1 className="text-3xl font-bold text-foreground mb-3">Start your free teacher account</h1>
           <p className="text-muted-foreground max-w-xl mx-auto text-base">
-            Join thousands of English teachers saving hours every week with AI-powered lesson planning,
-            analytics, and ready-made resources.
+            Save 5+ hours per week with AI lesson planning and marking.
+            3 free uses of every AI tool. Upgrade for unlimited.
+          </p>
+          <p className="text-sm text-primary font-medium mt-2">
+            &pound;12.99/month &mdash; first month free
           </p>
         </div>
 
@@ -403,7 +412,7 @@ export default function TeacherRegisterPage() {
                         Creating account...
                       </>
                     ) : (
-                      'Create Teacher Account'
+                      'Create free teacher account'
                     )}
                   </Button>
                 </form>
@@ -412,11 +421,11 @@ export default function TeacherRegisterPage() {
               <CardFooter className="flex-col gap-4 pt-0">
                 {/* School CTA */}
                 <p className="text-xs text-muted-foreground text-center border-t border-border pt-4 w-full">
-                  Is your school subscribing? Ask your IT admin or Head of Department to{' '}
-                  <Link href="/for-schools/register" className="underline underline-offset-2 hover:text-foreground transition-colors">
-                    register the school at /for-schools/register
+                  Is your school interested? Ask your Head of Department to{' '}
+                  <Link href="/for-schools" className="underline underline-offset-2 hover:text-foreground transition-colors">
+                    learn about the Founding Schools Programme
                   </Link>{' '}
-                  for all-staff access at &pound;1,500/year.
+                  for full department access.
                 </p>
 
                 {/* Login link */}
@@ -440,7 +449,8 @@ export default function TeacherRegisterPage() {
             <div className="sticky top-8 space-y-4">
               <Card className="border-primary/20 bg-primary/5">
                 <CardHeader className="pb-3">
-                  <CardTitle className="text-base text-primary">What you get</CardTitle>
+                  <CardTitle className="text-base text-primary">What&apos;s included free</CardTitle>
+                  <p className="text-xs text-muted-foreground">No credit card required</p>
                 </CardHeader>
                 <CardContent className="space-y-3">
                   {BENEFITS.map(({ icon: Icon, text }) => (

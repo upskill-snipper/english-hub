@@ -1,17 +1,24 @@
 export const PRICING = {
-  MONTHLY: 9.99,
-  ANNUAL: 79.99,
+  STUDENT_MONTHLY: 8.99,
+  STUDENT_ANNUAL: 79.99,
+  TEACHER_MONTHLY: 12.99,
+  TEACHER_ANNUAL: 99.99,
+  FOUNDER_SCHOOL_MIN: 3000,
+  FOUNDER_SCHOOL_MAX: 7000,
+  FREE_USES_PER_FEATURE: 3,
   CURRENCY: '£',
-  TRIAL_DAYS: 30,
   TRIAL_TEXT: 'First month free',
-  SCHOOL_ANNUAL: 1500,
+  FOUNDER_SCHOOL_LIMIT: 20,
   SCHOOL_CURRENCY: '£',
-  FOUNDER_PROMO_CODE: 'FOUNDER',
-  FOUNDER_ACCESS_UNTIL: '2026-08-31',
+  /** @deprecated Use STUDENT_MONTHLY instead */
+  MONTHLY: 8.99,
+  /** @deprecated Use STUDENT_ANNUAL instead */
+  ANNUAL: 79.99,
+  TRIAL_DAYS: 30,
 } as const
 
 export const PRICING_DISPLAY = {
-  monthly: `£${PRICING.MONTHLY}/month`,
-  annual: `£${PRICING.ANNUAL}/year`,
-  trialText: `First month free! Then £${PRICING.MONTHLY}/month`,
+  monthly: `£${PRICING.STUDENT_MONTHLY}/month`,
+  annual: `£${PRICING.STUDENT_ANNUAL}/year`,
+  trialText: `First month free! Then £${PRICING.STUDENT_MONTHLY}/month`,
 } as const

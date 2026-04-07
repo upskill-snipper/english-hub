@@ -23,6 +23,8 @@ import {
   School,
   UserPlus,
   Loader2,
+  Gift,
+  X,
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { useSearchParams } from 'next/navigation'
@@ -134,6 +136,7 @@ export default function DashboardPage() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [schoolInfo, setSchoolInfo] = useState<{ name: string; role: string } | null>(null)
+  const [showWelcome, setShowWelcome] = useState(searchParams.get('welcome') === 'true')
 
   const courseMap = useMemo(
     () => new Map<string, CourseData>(allCourses.map((c) => [c.id, c])),
@@ -348,6 +351,25 @@ export default function DashboardPage() {
               </div>
             </div>
           </div>
+
+          {/* ── Welcome Banner (new users) ────────────────────────────── */}
+          {showWelcome && (
+            <Alert className="mb-6 border-primary/30 bg-primary/5">
+              <Gift className="h-4 w-4 text-primary" />
+              <AlertTitle className="text-foreground">Welcome to English Hub!</AlertTitle>
+              <AlertDescription className="text-muted-foreground">
+                You have 3 free uses of every premium feature. Try AI marking, lesson plans, and more.
+                Upgrade when you&apos;re ready — first month free.
+              </AlertDescription>
+              <button
+                onClick={() => setShowWelcome(false)}
+                className="absolute right-3 top-3 text-muted-foreground hover:text-foreground transition-colors"
+                aria-label="Dismiss welcome banner"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            </Alert>
+          )}
 
           {/* ── Teacher Banner ────────────────────────────────────────── */}
           {profile?.role === 'teacher' && (

@@ -58,6 +58,11 @@ export async function GET(request: NextRequest) {
       if (type === 'recovery') {
         return NextResponse.redirect(`${origin}/auth/reset-password`)
       }
+      // For signup verification, add welcome flag so dashboard shows onboarding
+      if (type === 'signup') {
+        const separator = next.includes('?') ? '&' : '?'
+        return NextResponse.redirect(`${origin}${next}${separator}welcome=true`)
+      }
       return NextResponse.redirect(`${origin}${next}`)
     }
   }

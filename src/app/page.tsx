@@ -184,15 +184,10 @@ function ForSchoolsSection() {
           </Badge>
           <h2 className="text-foreground mb-5">A Whole-School English Platform</h2>
           <p className="text-body-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Give every student and teacher at your school full access for{' '}
-            <span className="text-foreground font-semibold">£1,500/year</span>{' '}
-            — or register FREE with code{' '}
+            Give every student and teacher at your school full access.{' '}
+            <span className="text-foreground font-semibold">Book a call</span>{' '}
+            for custom pricing — or register FREE with code{' '}
             <span className="text-cyan-400 font-bold tracking-wide">FOUNDER</span>
-          </p>
-          <p className="mt-2 text-sm text-muted-foreground">
-            vs{' '}
-            <span className="line-through decoration-muted-foreground/60">£24,000/year</span>{' '}
-            for individual student subscriptions
           </p>
         </div>
 
@@ -214,27 +209,26 @@ function ForSchoolsSection() {
           ))}
         </div>
 
-        {/* FOUNDER promo box */}
+        {/* Founding Schools Programme box */}
         <div className="rounded-2xl border border-cyan-500/30 bg-cyan-500/[0.06] px-7 py-6 mb-8 flex flex-col sm:flex-row items-start sm:items-center gap-4">
           <div className="shrink-0 w-10 h-10 rounded-xl bg-cyan-500/15 flex items-center justify-center">
             <Award className="w-5 h-5 text-cyan-400" />
           </div>
           <div className="flex-1">
             <p className="font-semibold text-foreground text-base mb-0.5">
-              Limited Pilot Opportunity
+              Founding Schools Programme &mdash; 2026. Limited to 20 schools.
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Register your school free with code{' '}
-              <span className="font-bold text-cyan-400 tracking-wide">FOUNDER</span>.
-              {' '}Full access until August 2026. No payment required during the pilot period.
+              Heavily discounted pricing, early features, direct product input, and locked
+              preferential rates for 2-3 years. Book a call to discuss.
             </p>
           </div>
         </div>
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button variant="default" size="lg" className="text-base px-8 h-12 shadow-lg shadow-primary/20" render={<Link href="/for-schools/register" />}>
-            Register School Free (FOUNDER)
+          <Button variant="default" size="lg" className="text-base px-8 h-12 shadow-lg shadow-primary/20" render={<Link href="/contact" />}>
+            Book a Call
           </Button>
           <Button variant="secondary" size="lg" className="text-base px-8 h-12" render={<Link href="/for-schools" />}>
             Learn More

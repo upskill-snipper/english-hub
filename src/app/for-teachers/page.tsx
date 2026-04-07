@@ -111,11 +111,11 @@ const testimonials = [
 const faqs = [
   {
     q: 'How much does it cost?',
-    a: 'Individual teacher plans are £9.99 per month or £79.99 per year. The annual plan saves you 33% and your first month is completely free -- no credit card required to start. School site licences start at £1,500 per year for unlimited teachers.',
+    a: 'Every feature is free to try -- you get 3 free uses per tool with no card required. When you are ready to upgrade, the Teacher plan is £12.99 per month (first month free) or £99.99 per year. School plans are available through our Founding Schools Programme -- book a call to discuss pricing.',
   },
   {
     q: 'What features are included?',
-    a: 'Every feature is included in the individual plan: Lesson Builder, AI Essay Marking, Student Progress Analytics, Homework and Assignment Manager, 300+ ready resources, predicted grades, and full exam board coverage. There are no add-on charges.',
+    a: 'Every feature is available on the free tier with 3 uses per tool -- AI Lesson Plans, AI Marking, Worksheet Builder, Student Progress Analytics, and more. The Premium plan removes all limits and gives you full access to 300+ ready resources, predicted grades, and complete exam board coverage. There are no add-on charges.',
   },
   {
     q: 'Which exam boards do you cover?',
@@ -130,8 +130,8 @@ const faqs = [
     a: 'Absolutely. If you want to roll The English Hub out to your department or whole school, visit our School Plans page or email us at schools@theenglishhub.app. We can migrate your existing data and give your colleagues instant access.',
   },
   {
-    q: 'What happens at the end of my free trial?',
-    a: 'After your free month you are automatically moved to the paid plan you selected at signup. You can cancel any time before the trial ends from your account settings and you will not be charged. No hidden fees, no awkward cancellation calls.',
+    q: 'What happens when I use my free tries?',
+    a: 'You get 3 free uses per tool -- AI Lesson Plans, AI Marking, and Worksheet Builder. Once you have used them, you can upgrade to the Premium plan at any time. If you choose the monthly plan, your first month is completely free. Cancel any time from your account settings -- no hidden fees, no awkward cancellation calls.',
   },
 ]
 
@@ -222,9 +222,9 @@ export default function ForTeachersPage() {
           </h1>
 
           <p className="mt-7 text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Save hours of planning every week and supercharge your student outcomes.
-            AI-powered lesson building, instant essay marking, and real-time progress
-            analytics -- all built specifically for English teachers.
+            Premium academic infrastructure, not a cheap app. Save 5+ hours per week
+            with AI-powered lesson building, instant essay marking, and real-time
+            progress analytics -- built specifically for English teachers.
           </p>
 
           <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -232,17 +232,17 @@ export default function ForTeachersPage() {
               variant="default"
               size="lg"
               className="text-base px-8 h-12 shadow-lg shadow-primary/20"
-              render={<Link href="/auth/register" />}
+              render={<Link href="/auth/teacher-register" />}
             >
-              Start Free Trial
+              Start Free
             </Button>
             <Button
               variant="secondary"
               size="lg"
               className="text-base px-8 h-12"
-              render={<Link href="/for-schools" />}
+              render={<Link href="/pricing" />}
             >
-              See School Plans
+              View Pricing
             </Button>
             <Button
               variant="outline"
@@ -251,12 +251,12 @@ export default function ForTeachersPage() {
               render={<Link href="/demo/teacher" />}
             >
               <Play className="w-4 h-4 mr-2" />
-              Try Teacher Demo
+              Try the Demo
             </Button>
           </div>
 
           <p className="mt-5 text-sm text-muted-foreground">
-            First month free. No credit card required. Cancel any time.
+            Every feature available to try -- 3 free uses per tool. No credit card required.
           </p>
         </div>
       </section>
@@ -290,6 +290,91 @@ export default function ForTeachersPage() {
           </div>
         </div>
       </section>
+
+      {/* ================================================================
+          START FREE -> TRY PREMIUM FLOW
+      ================================================================ */}
+      <section className="py-24 sm:py-32">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <Badge
+              variant="outline"
+              className="border-emerald-500/20 bg-emerald-500/[0.06] text-emerald-400 text-xs font-semibold mb-6 gap-1.5 px-3 py-1"
+            >
+              <Sparkles className="w-3.5 h-3.5" />
+              Start Free
+            </Badge>
+            <h2 className="text-foreground">Every Feature Available to Try</h2>
+            <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-lg">
+              No credit card. No time limit. Try each premium tool 3 times free and
+              see the results for yourself before you pay a penny.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-3 gap-5 mb-10">
+            {[
+              {
+                icon: Layers,
+                color: 'text-primary bg-primary/10',
+                title: 'AI Lesson Plans',
+                desc: 'Generate complete, exam-board-aligned lessons in seconds. Starter, main tasks, plenary -- all done.',
+                uses: '3 free uses',
+              },
+              {
+                icon: PenTool,
+                color: 'text-emerald-400 bg-emerald-500/10',
+                title: 'AI Marking',
+                desc: 'Students submit essays and get instant, detailed feedback aligned to your mark scheme. You review before they see it.',
+                uses: '3 free uses',
+              },
+              {
+                icon: FileText,
+                color: 'text-purple-400 bg-purple-500/10',
+                title: 'Worksheet Builder',
+                desc: 'Create differentiated worksheets with model answers at multiple levels -- ready to print or share digitally.',
+                uses: '3 free uses',
+              },
+            ].map((tool) => (
+              <Card key={tool.title} className="p-6 border-border/40 hover:border-primary/40 transition-colors duration-300 flex flex-col">
+                <div className={cn('w-11 h-11 rounded-xl flex items-center justify-center mb-5', tool.color)}>
+                  <tool.icon className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-bold tracking-tight text-foreground mb-2">{tool.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed flex-1 mb-4">{tool.desc}</p>
+                <Badge variant="outline" className="text-xs border-emerald-500/20 text-emerald-400 w-fit">
+                  {tool.uses}
+                </Badge>
+              </Card>
+            ))}
+          </div>
+
+          <div className="text-center space-y-4">
+            <p className="text-muted-foreground text-lg">
+              Upgrade when you are ready. First month free on the monthly plan.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button
+                variant="default"
+                size="lg"
+                className="text-base px-8 h-12 shadow-lg shadow-primary/20"
+                render={<Link href="/auth/teacher-register" />}
+              >
+                Start Free
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="text-base px-8 h-12"
+                render={<Link href="/pricing" />}
+              >
+                View Pricing
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Separator className="opacity-40" />
 
       {/* ================================================================
           TRY THE PLATFORM -- INTERACTIVE DEMO
@@ -370,7 +455,7 @@ export default function ForTeachersPage() {
           <div className="text-center mb-16">
             <h2 className="text-foreground">Everything You Need to Teach Smarter</h2>
             <p className="mt-4 text-muted-foreground max-w-xl mx-auto text-lg">
-              Powerful tools built specifically for English teachers. Less admin, more impact.
+              Premium tools built specifically for English teachers. Save 5+ hours per week -- less admin, more impact.
             </p>
           </div>
 
@@ -751,36 +836,80 @@ export default function ForTeachersPage() {
           <div className="text-center mb-14">
             <h2 className="text-foreground">Simple, Transparent Pricing</h2>
             <p className="mt-4 text-muted-foreground max-w-xl mx-auto text-lg">
-              One plan. Every feature. No hidden costs. Try it free for a month.
+              Start free, upgrade when you are ready. Premium academic infrastructure for English teachers.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-6">
-            {/* Individual plan */}
-            <Card className="p-8 border-primary/30 bg-primary/[0.03] relative overflow-hidden">
+          <div className="grid sm:grid-cols-3 gap-6">
+            {/* Free tier */}
+            <Card className="p-8 border-border/40 bg-card/60 flex flex-col">
+              <div className="mb-2">
+                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-3">Free</p>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-4xl font-bold text-foreground tracking-tight">£0</span>
+                  <span className="text-muted-foreground">/forever</span>
+                </div>
+                <p className="text-sm text-muted-foreground mt-1.5">3 free uses per tool</p>
+              </div>
+
+              <Separator className="my-6 opacity-40" />
+
+              <div className="space-y-3 mb-8 flex-1">
+                {[
+                  'AI Lesson Plans -- 3 uses',
+                  'AI Marking -- 3 uses',
+                  'Worksheet Builder -- 3 uses',
+                  'Student Progress Analytics',
+                  'All exam boards supported',
+                  'No credit card required',
+                ].map((feature) => (
+                  <div key={feature} className="flex items-start gap-3">
+                    <CheckCircle className="w-4 h-4 text-muted-foreground shrink-0 mt-0.5" />
+                    <span className="text-sm text-foreground">{feature}</span>
+                  </div>
+                ))}
+              </div>
+
+              <Button
+                variant="secondary"
+                size="lg"
+                className="w-full text-base h-12"
+                render={<Link href="/auth/teacher-register" />}
+              >
+                Start Free
+              </Button>
+              <p className="text-xs text-muted-foreground mt-3 text-center">
+                No card needed. Try every feature.
+              </p>
+            </Card>
+
+            {/* Teacher Premium plan */}
+            <Card className="p-8 border-primary/30 bg-primary/[0.03] relative overflow-hidden flex flex-col">
               <div className="absolute top-0 right-0 bg-primary text-primary-foreground text-xs font-semibold px-4 py-1.5 rounded-bl-lg">
                 First Month FREE
               </div>
 
               <div className="mb-2">
-                <p className="text-xs font-semibold text-primary uppercase tracking-widest mb-3">Individual Teacher</p>
+                <p className="text-xs font-semibold text-primary uppercase tracking-widest mb-3">Teacher Premium</p>
                 <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-bold text-foreground tracking-tight">£9.99</span>
+                  <span className="text-4xl font-bold text-foreground tracking-tight">£12.99</span>
                   <span className="text-muted-foreground">/month</span>
                 </div>
-                <p className="text-sm text-emerald-400 font-semibold mt-1.5">or £79.99/year -- save 33%</p>
+                <p className="text-sm text-emerald-400 font-semibold mt-1.5">or £99.99/year -- save 36%</p>
               </div>
 
               <Separator className="my-6 opacity-40" />
 
-              <div className="space-y-3 mb-8">
+              <div className="space-y-3 mb-8 flex-1">
                 {[
-                  'Lesson Builder',
-                  'AI Essay Marking',
+                  'Unlimited AI Lesson Plans',
+                  'Unlimited AI Marking',
+                  'Unlimited Worksheet Builder',
                   'Student Progress Analytics',
                   'Homework & Assignment Manager',
                   '300+ ready resources',
-                  'All boards supported -- content tailored to yours',
+                  'Predicted grades & interventions',
+                  'All boards -- content tailored to yours',
                   'Cancel any time',
                 ].map((feature) => (
                   <div key={feature} className="flex items-start gap-3">
@@ -794,12 +923,12 @@ export default function ForTeachersPage() {
                 variant="default"
                 size="lg"
                 className="w-full text-base h-12 shadow-lg shadow-primary/20"
-                render={<Link href="/auth/register" />}
+                render={<Link href="/auth/teacher-register" />}
               >
-                Start Free Trial
+                Start Free
               </Button>
               <p className="text-xs text-muted-foreground mt-3 text-center">
-                No credit card required for trial.
+                First month free on the monthly plan. No card to start.
               </p>
             </Card>
 
@@ -808,17 +937,16 @@ export default function ForTeachersPage() {
               <div className="mb-2">
                 <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-3">School / Department</p>
                 <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-bold text-foreground tracking-tight">£1,500</span>
-                  <span className="text-muted-foreground">/year</span>
+                  <span className="text-2xl font-bold text-foreground tracking-tight">Tailored pricing</span>
                 </div>
-                <p className="text-sm text-muted-foreground mt-1.5">Site licence -- unlimited teachers</p>
+                <p className="text-sm text-muted-foreground mt-1.5">Founding Schools Programme -- book a call</p>
               </div>
 
               <Separator className="my-6 opacity-40" />
 
               <div className="space-y-3 mb-8 flex-1">
                 {[
-                  'All individual plan features',
+                  'All Teacher Premium features',
                   'Unlimited teacher accounts',
                   'Department-level analytics',
                   'Centralised resource library',
@@ -863,11 +991,11 @@ export default function ForTeachersPage() {
               className="border-primary/20 bg-primary/[0.06] text-primary text-xs font-semibold mb-6 gap-1.5 px-3 py-1"
             >
               <Sparkles className="w-3.5 h-3.5" />
-              Free Trial
+              Start Free
             </Badge>
             <h2 className="text-foreground">Get Started in 30 Seconds</h2>
             <p className="mt-4 text-muted-foreground text-lg">
-              Create your account and start your free month today.
+              Create your free account and try every feature -- 3 free uses per tool, no card required.
             </p>
           </div>
 
@@ -914,15 +1042,15 @@ export default function ForTeachersPage() {
                 variant="default"
                 size="lg"
                 className="w-full text-base h-12 shadow-lg shadow-primary/20 mt-2"
-                render={<Link href="/auth/register" />}
+                render={<Link href="/auth/teacher-register" />}
               >
-                Start Free Trial
+                Start Free
                 <ChevronRight className="w-4 h-4 ml-1" />
               </Button>
 
               <p className="text-xs text-muted-foreground text-center">
                 By signing up you agree to our Terms of Service and Privacy Policy.
-                First month free, then £9.99/month or £79.99/year.
+                Free tier includes 3 uses per tool. Premium: £12.99/month or £99.99/year.
               </p>
             </div>
           </Card>
@@ -970,8 +1098,8 @@ export default function ForTeachersPage() {
             Ready to Reclaim Your Evenings?
           </h2>
           <p className="text-muted-foreground text-xl max-w-xl mx-auto mb-10 leading-relaxed">
-            Join over 1,000 English teachers saving hours every week with The English Hub.
-            Start your free month today -- no card needed.
+            Join over 1,000 English teachers saving 5+ hours every week with The English Hub.
+            Try every feature free -- upgrade when you are ready.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -979,22 +1107,31 @@ export default function ForTeachersPage() {
               variant="default"
               size="lg"
               className="text-base px-10 h-12 shadow-lg shadow-primary/20"
-              render={<Link href="/auth/register" />}
+              render={<Link href="/auth/teacher-register" />}
             >
-              Start Free Trial
+              Start Free
             </Button>
             <Button
               variant="secondary"
               size="lg"
               className="text-base px-8 h-12"
-              render={<Link href="/for-schools" />}
+              render={<Link href="/pricing" />}
             >
-              See School Plans
+              View Pricing
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="text-base px-8 h-12"
+              render={<Link href="/demo/teacher" />}
+            >
+              <Play className="w-4 h-4 mr-2" />
+              Try the Demo
             </Button>
           </div>
 
           <p className="mt-6 text-sm text-muted-foreground">
-            Individual plan from £9.99/month or £79.99/year. School site licence from £1,500/year.
+            3 free uses per tool. Premium from £12.99/month (first month free) or £99.99/year.
           </p>
         </div>
       </section>

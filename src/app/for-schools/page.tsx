@@ -39,25 +39,26 @@ import {
   Mail,
   ArrowRight,
   AlertCircle,
-  Gift,
-  PoundSterling,
-  Table,
+  Phone,
+  CalendarCheck,
+  Lock,
   Eye,
   Settings,
   ChevronRight,
   X,
   Check,
+  Table,
 } from "lucide-react";
 
-/* ─────────────── FOUNDER Banner ─────────────── */
+/* ─────────────── Founding Schools Programme Benefits ─────────────── */
 
-const FOUNDER_BENEFITS = [
-  "Full site access for ALL students and ALL teachers",
-  "Access runs until August 2026 — completely free",
-  "Then just 1,500 GBP/year per school site after the pilot",
-  "No credit card required to register",
-  "Priority onboarding support included",
-  "Lock in the founder rate before it closes",
+const FOUNDING_BENEFITS = [
+  "Full platform access for ALL students and ALL teachers",
+  "Early access to new features before general release",
+  "Direct product input -- help shape the platform",
+  "Priority onboarding and dedicated support",
+  "Locked preferential pricing for 2-3 years",
+  "Founding partner recognition on the platform",
 ];
 
 /* ─────────────── Feature Cards ─────────────── */
@@ -144,17 +145,17 @@ const ANALYTICS_METRICS = [
 const HOW_IT_WORKS = [
   {
     step: "1",
-    icon: School,
+    icon: Phone,
     color: "text-primary bg-primary/10 border-primary/20",
-    title: "Register & Choose Your Exam Board",
-    desc: "Create your school admin account, select your exam board (AQA, Edexcel, OCR, WJEC, or IGCSE/CAIE), and enter the promo code FOUNDER. All content is instantly tailored to your board. Takes under 5 minutes.",
+    title: "Book a 20-Minute Call",
+    desc: "Speak with our schools team. We will walk you through the platform, discuss your department needs, and agree a tailored package. No obligation.",
   },
   {
     step: "2",
     icon: Upload,
     color: "text-blue-400 bg-blue-500/10 border-blue-500/20",
-    title: "Upload Your Student & Teacher List",
-    desc: "Download our Excel template, add your students and teachers, and upload it. Accounts are created instantly in bulk — no manual sign-ups.",
+    title: "We Set Up Your School",
+    desc: "We handle onboarding for you. Your exam board is configured, accounts are created in bulk, and your admin dashboard is ready to go.",
   },
   {
     step: "3",
@@ -175,6 +176,7 @@ const COMPARISON_ROWS = [
   { feature: "Admin controls", school: true, individual: false },
   { feature: "Homework management", school: true, individual: false },
   { feature: "Progress reports", school: true, individual: false },
+  { feature: "Ofsted-ready reporting", school: true, individual: false },
   { feature: "AI essay feedback", school: true, individual: true },
   { feature: "300+ resources", school: true, individual: true },
   { feature: "Content tailored to your exam board", school: true, individual: true },
@@ -198,14 +200,14 @@ const TESTIMONIALS = [
     color: "bg-blue-500/10 text-blue-400",
   },
   {
-    quote: "Setting up was genuinely easy. I uploaded our class lists on Monday and by Tuesday every student had an account and could log in.",
+    quote: "Setting up was genuinely easy. The onboarding team handled everything and by Tuesday every student had an account and could log in.",
     name: "Second in Department",
     school: "Comprehensive, Manchester",
     initials: "SD",
     color: "bg-emerald-500/10 text-emerald-400",
   },
   {
-    quote: "The lesson resources save me hours each week. We chose AQA during setup and everything is mapped to our specification -- I never have to check if a resource matches our board.",
+    quote: "I save 5-6 hours a week on planning and marking. The resources are mapped to our spec so I never have to check if something matches our board.",
     name: "NQT English Teacher",
     school: "Academy Trust, Leeds",
     initials: "NT",
@@ -217,12 +219,16 @@ const TESTIMONIALS = [
 
 const SCHOOL_FAQS = [
   {
-    q: "How does the FOUNDER promo work?",
-    a: "Register your school now and enter the promo code FOUNDER during sign-up. You get full site access for every student and teacher at your school, completely free, until August 2026. After the pilot ends, the price is 1,500 GBP per school site per year. This is a limited pilot and places are capped, so early registration is recommended.",
+    q: "What is the Founding Schools Programme?",
+    a: "The Founding Schools Programme is a strategic partnership for the 2026 academic year, limited to 20 schools. Founding schools receive full platform access, early features, direct product input, priority onboarding, and locked preferential pricing for 2-3 years. This is not a free trial -- it is a partnership with heavily discounted pricing tailored to your department size.",
+  },
+  {
+    q: "How much does it cost?",
+    a: "Pricing is tailored to your department size and discussed during your onboarding call. Founding schools receive heavily discounted rates compared to our post-programme pricing. Book a call to discuss your specific package.",
   },
   {
     q: "How do students and teachers get access?",
-    a: "Once your school is registered, you receive an admin account. You can then bulk-upload all students and teachers via our Excel template. Accounts are created instantly. Students and teachers can also join by entering your unique school code when they register themselves.",
+    a: "Once your school is onboarded, we set up your admin account and bulk-create all student and teacher accounts for you. Students and teachers can also join by entering your unique school code when they register themselves.",
   },
   {
     q: "How does the Excel bulk upload work?",
@@ -234,11 +240,15 @@ const SCHOOL_FAQS = [
   },
   {
     q: "Which exam boards do you cover?",
-    a: "We support all major boards: AQA, Edexcel, OCR, WJEC/Eduqas, and IGCSE/CAIE. Your school selects one exam board during setup and all content -- lessons, resources, mark schemes, and AI feedback -- is tailored to that board's specification. Students only ever see what is relevant to their exams.",
+    a: "We support all major boards: AQA, Edexcel, OCR, WJEC/Eduqas, and IGCSE/CAIE. Your school selects one exam board during setup and all content -- lessons, resources, mark schemes, and AI feedback -- is tailored to that board's specification.",
   },
   {
     q: "Is the platform GDPR compliant?",
-    a: "Yes. We are fully GDPR compliant. All student data is stored securely on UK-based servers. We do not share data with third parties, run no advertising or tracking on the platform, and can sign a Data Processing Agreement with your school. Contact us for a copy.",
+    a: "Yes. We are fully GDPR compliant. All student data is stored securely on UK-based servers. We do not share data with third parties, run no advertising or tracking on the platform, and can sign a Data Processing Agreement with your school.",
+  },
+  {
+    q: "What happens after the Founding Schools Programme?",
+    a: "Founding schools lock in preferential pricing for 2-3 years. Post-programme standard pricing will be significantly higher. The exact terms are agreed during your onboarding call.",
   },
 ];
 
@@ -301,48 +311,36 @@ export default function ForSchoolsPage() {
           </h1>
 
           <p className="mt-7 text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Transform English teaching across your whole school. Choose your exam board during
-            setup and every lesson, resource, and assessment is tailored to your specification.
-            AI essay feedback, real-time analytics, and a full resource library -- all from one platform.
+            Reduce teacher workload by 5-8 hours per week. Real-time visibility across every student.
+            Ofsted-ready reporting. AI essay feedback, a full resource library, and a department
+            analytics dashboard -- all from one platform.
           </p>
 
           <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/auth/register?type=school&promo=FOUNDER">
-              <Button
-                size="lg"
-                className="text-base px-8 h-13 shadow-lg shadow-primary/25 gap-2 font-semibold"
-              >
-                <Gift className="w-4 h-4" />
-                Register Your School Free (FOUNDER)
-              </Button>
-            </Link>
-            <a href="#demo">
-              <Button
-                variant="outline"
-                size="lg"
-                className="text-base px-8 h-13 border-border/60 gap-2"
-              >
-                <Eye className="w-4 h-4" />
-                Request a Demo
-              </Button>
-            </a>
-            <Link href="/demo/school">
-              <Button
-                variant="outline"
-                size="lg"
-                className="text-base px-8 h-13 border-primary/40 text-primary hover:bg-primary/10 gap-2 font-semibold"
-              >
-                <Layers className="w-4 h-4" />
-                Try Interactive Demo -- Free
-              </Button>
-            </Link>
+            <Button
+              size="lg"
+              className="text-base px-8 h-13 shadow-lg shadow-primary/25 gap-2 font-semibold"
+              render={<Link href="/contact" />}
+            >
+              <Phone className="w-4 h-4" />
+              Book a 20-Minute Call
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="text-base px-8 h-13 border-primary/40 text-primary hover:bg-primary/10 gap-2 font-semibold"
+              render={<Link href="/demo" />}
+            >
+              <Eye className="w-4 h-4" />
+              View the Demo
+            </Button>
           </div>
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
             {[
-              "No credit card required",
-              "Full access until August 2026",
-              "All students + all teachers",
+              "Only 20 founding schools",
+              "5-8 hours saved per teacher per week",
+              "Ofsted-ready reporting",
             ].map((item) => (
               <span key={item} className="flex items-center gap-2">
                 <CheckCircle className="w-4 h-4 text-primary shrink-0" />
@@ -353,55 +351,53 @@ export default function ForSchoolsPage() {
         </div>
       </section>
 
-      {/* ════════════════ FOUNDER PROMO BANNER ════════════════ */}
-      <section className="border-y border-amber-500/30 bg-amber-500/[0.06]">
+      {/* ════════════════ FOUNDING SCHOOLS PROGRAMME BANNER ════════════════ */}
+      <section className="border-y border-primary/30 bg-primary/[0.04]">
         <div className="max-w-5xl mx-auto px-6 py-14">
           <div className="flex flex-col lg:flex-row items-start lg:items-center gap-10">
 
             <div className="flex-1">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-xl bg-amber-500/15 border border-amber-500/20 flex items-center justify-center">
-                  <Gift className="w-5 h-5 text-amber-400" />
+                <div className="w-10 h-10 rounded-xl bg-primary/15 border border-primary/20 flex items-center justify-center">
+                  <Award className="w-5 h-5 text-primary" />
                 </div>
-                <Badge className="bg-amber-500/15 text-amber-400 border-amber-500/30 font-bold text-sm px-3 py-1">
-                  LIMITED PILOT -- FOUNDER ACCESS
+                <Badge className="bg-primary/15 text-primary border-primary/30 font-bold text-sm px-3 py-1">
+                  LIMITED TO 20 SCHOOLS
                 </Badge>
               </div>
 
               <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-foreground mb-3">
-                Register Now. It&apos;s Free Until August 2026.
+                Founding Schools Programme &mdash; 2026
               </h2>
               <p className="text-muted-foreground leading-relaxed max-w-xl">
-                We are opening The English Hub to a limited number of schools as founding partners.
-                Enter the promo code{" "}
-                <span className="font-bold text-amber-400 tracking-widest bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20">
-                  FOUNDER
-                </span>{" "}
-                when you register and your school gets full site access for every student and
-                every teacher -- completely free until August 2026. After the pilot, it is just
-                1,500 GBP per school site per year. Places are capped. Do not miss this.
+                We are partnering with a small number of schools to shape the future of English
+                teaching. This is not a free trial &mdash; it is a strategic partnership. Founding
+                schools receive heavily discounted pricing, early features, direct product input,
+                and locked preferential rates for 2-3 years. Only 20 places available this academic
+                year. When the programme closes, it closes.
               </p>
             </div>
 
             <div className="w-full lg:w-auto lg:min-w-[320px]">
-              <div className="rounded-2xl border border-amber-500/25 bg-amber-500/[0.04] p-6">
-                <p className="text-sm font-semibold text-amber-400 mb-4 uppercase tracking-wide">
-                  What you get free with FOUNDER
+              <div className="rounded-2xl border border-primary/25 bg-primary/[0.04] p-6">
+                <p className="text-sm font-semibold text-primary mb-4 uppercase tracking-wide">
+                  What founding schools receive
                 </p>
                 <ul className="space-y-3">
-                  {FOUNDER_BENEFITS.map((benefit) => (
+                  {FOUNDING_BENEFITS.map((benefit) => (
                     <li key={benefit} className="flex items-start gap-3 text-sm text-foreground/90">
-                      <CheckCircle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                      <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-0.5" />
                       {benefit}
                     </li>
                   ))}
                 </ul>
-                <Link href="/auth/register?type=school&promo=FOUNDER" className="block mt-6">
-                  <Button className="w-full font-semibold gap-2 bg-amber-500 hover:bg-amber-400 text-black">
-                    <Gift className="w-4 h-4" />
-                    Claim Your FOUNDER Access
-                  </Button>
-                </Link>
+                <Button
+                  className="w-full font-semibold gap-2 mt-6"
+                  render={<Link href="/contact" />}
+                >
+                  <Phone className="w-4 h-4" />
+                  Book a 20-Minute Call
+                </Button>
               </div>
             </div>
           </div>
@@ -475,12 +471,10 @@ export default function ForSchoolsPage() {
           </div>
 
           <div className="text-center">
-            <Link href="/demo/school">
-              <Button size="lg" className="text-base px-10 h-13 shadow-lg shadow-primary/25 gap-2 font-bold">
-                <Layers className="w-5 h-5" />
-                Launch Interactive Demo
-              </Button>
-            </Link>
+            <Button size="lg" className="text-base px-10 h-13 shadow-lg shadow-primary/25 gap-2 font-bold" render={<Link href="/demo/school" />}>
+              <Layers className="w-5 h-5" />
+              Launch Interactive Demo
+            </Button>
             <p className="text-sm text-muted-foreground mt-4">
               No signup, no email, completely free to explore
             </p>
@@ -488,25 +482,25 @@ export default function ForSchoolsPage() {
         </div>
       </section>
 
-      {/* ════════════════ SCHOOL PRICING ════════════════ */}
-      <section className="py-24 sm:py-32">
+      {/* ════════════════ VALUE PROPOSITION ════════════════ */}
+      <section className="py-24 sm:py-32 bg-card/20 border-y border-border/40">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground mb-4">
-              One Price. Unlimited Students.
+              Why Schools Join the Founding Programme
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto text-lg">
-              A flat annual school site licence -- not per student. The more students you have,
-              the more you save compared to individual subscriptions.
+              Founding schools get more than a platform -- they get a partnership that shapes
+              the future of English teaching.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            {/* School Site Licence */}
+            {/* Founding School Programme */}
             <div className="relative rounded-2xl border-2 border-primary/40 bg-primary/[0.04] p-8 flex flex-col">
               <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
                 <Badge className="bg-primary text-primary-foreground font-bold text-xs px-3 py-1">
-                  RECOMMENDED
+                  FOUNDING PARTNER
                 </Badge>
               </div>
               <div className="flex items-center gap-3 mb-5">
@@ -514,75 +508,69 @@ export default function ForSchoolsPage() {
                   <Building2 className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <p className="font-bold text-foreground">School Site Licence</p>
-                  <p className="text-xs text-muted-foreground">After August 2026 pilot</p>
+                  <p className="font-bold text-foreground">Founding Schools Programme</p>
+                  <p className="text-xs text-muted-foreground">Limited to 20 schools -- 2026</p>
                 </div>
               </div>
               <div className="mb-6">
-                <span className="text-4xl font-extrabold text-foreground">1,500</span>
-                <span className="text-xl font-semibold text-foreground"> GBP</span>
-                <span className="text-muted-foreground text-sm"> / year</span>
-                <p className="text-sm text-muted-foreground mt-1">Per school site -- unlimited students &amp; teachers</p>
+                <p className="text-lg font-bold text-foreground">Tailored pricing</p>
+                <p className="text-sm text-muted-foreground mt-1">Discussed during your onboarding call. Heavily discounted vs post-programme rates.</p>
               </div>
               <ul className="space-y-3 flex-1">
                 {[
-                  "Choose your exam board (AQA, Edexcel, OCR, WJEC, IGCSE/CAIE) -- all content tailored to your specification",
-                  "Unlimited student accounts",
-                  "Unlimited teacher accounts",
-                  "Department analytics dashboard",
-                  "Bulk Excel account creation",
-                  "Full admin controls",
-                  "AI essay feedback for all students",
-                  "300+ lesson resources",
-                  "Progress reports &amp; exports",
-                  "Priority support",
+                  "Full platform access -- all features, all students, all teachers",
+                  "Choose your exam board (AQA, Edexcel, OCR, WJEC, IGCSE/CAIE)",
+                  "Early access to new features",
+                  "Direct product input and feedback loop",
+                  "Priority onboarding and dedicated support",
+                  "Locked preferential pricing for 2-3 years",
+                  "Founding partner recognition",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm text-foreground/90">
                     <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                    <span dangerouslySetInnerHTML={{ __html: item }} />
+                    {item}
                   </li>
                 ))}
               </ul>
-              <Link href="/auth/register?type=school&promo=FOUNDER" className="mt-7 block">
-                <Button className="w-full font-semibold gap-2">
-                  <Gift className="w-4 h-4" />
-                  Free Now with FOUNDER
-                </Button>
-              </Link>
+              <Button
+                className="w-full font-semibold gap-2 mt-7"
+                render={<Link href="/contact" />}
+              >
+                <Phone className="w-4 h-4" />
+                Book a Call to Discuss
+              </Button>
             </div>
 
-            {/* Individual Subscriptions comparison */}
+            {/* Post-programme pricing teaser */}
             <div className="rounded-2xl border border-border/40 bg-card/40 p-8 flex flex-col">
               <div className="flex items-center gap-3 mb-5">
                 <div className="w-11 h-11 rounded-xl bg-muted/40 flex items-center justify-center">
-                  <Users className="w-5 h-5 text-muted-foreground" />
+                  <Lock className="w-5 h-5 text-muted-foreground" />
                 </div>
                 <div>
-                  <p className="font-bold text-foreground">Per-Student Pricing</p>
-                  <p className="text-xs text-muted-foreground">Individual subscriptions</p>
+                  <p className="font-bold text-foreground">Post-Programme Pricing</p>
+                  <p className="text-xs text-muted-foreground">After the founding cohort closes</p>
                 </div>
               </div>
               <div className="mb-6">
-                <span className="text-4xl font-extrabold text-foreground">~12</span>
-                <span className="text-xl font-semibold text-foreground"> GBP</span>
-                <span className="text-muted-foreground text-sm"> / student / year</span>
-                <p className="text-sm text-muted-foreground mt-1">Scales with your school size</p>
+                <p className="text-lg font-bold text-foreground">Significantly higher</p>
+                <p className="text-sm text-muted-foreground mt-1">Standard pricing will reflect the full value of the platform.</p>
               </div>
-              <div className="rounded-xl bg-destructive/5 border border-destructive/20 p-4 mb-6">
-                <p className="text-sm font-semibold text-destructive mb-2">Cost for 200 students</p>
-                <p className="text-2xl font-bold text-destructive">2,400 GBP / year</p>
-                <p className="text-xs text-muted-foreground mt-1">vs 1,500 GBP with a school site licence</p>
+              <div className="rounded-xl bg-amber-500/5 border border-amber-500/20 p-4 mb-6">
+                <p className="text-sm font-semibold text-amber-400 mb-1">Why join now?</p>
+                <p className="text-sm text-muted-foreground">
+                  Founding schools lock in preferential rates for 2-3 years. Post-programme pricing
+                  will be substantially higher. This offer closes when 20 schools have joined.
+                </p>
               </div>
               <ul className="space-y-3 flex-1">
                 {[
-                  { label: "No department analytics", available: false },
-                  { label: "No bulk upload", available: false },
-                  { label: "No admin controls", available: false },
-                  { label: "No homework management", available: false },
-                  { label: "No progress reports", available: false },
-                  { label: "AI essay feedback", available: true },
-                  { label: "300+ resources", available: true },
-                  { label: "Content tailored to your exam board", available: true },
+                  { label: "No early features access", available: false },
+                  { label: "No direct product input", available: false },
+                  { label: "No locked preferential pricing", available: false },
+                  { label: "No founding partner recognition", available: false },
+                  { label: "Standard onboarding", available: true },
+                  { label: "Full platform access", available: true },
                 ].map((row) => (
                   <li key={row.label} className="flex items-start gap-3 text-sm text-muted-foreground">
                     {row.available ? (
@@ -598,14 +586,13 @@ export default function ForSchoolsPage() {
           </div>
 
           <p className="text-center text-sm text-muted-foreground mt-8">
-            A school of 200+ students saves over 900 GBP a year with the site licence -- and
-            gets the full school management suite included.
+            Only 20 schools. When the programme closes, it closes. Book a call to secure your place.
           </p>
         </div>
       </section>
 
       {/* ════════════════ FEATURE SHOWCASE ════════════════ */}
-      <section id="features" className="py-24 sm:py-32 bg-card/20 border-y border-border/40 scroll-mt-16">
+      <section id="features" className="py-24 sm:py-32 border-b border-border/40 scroll-mt-16">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <Badge variant="outline" className="border-border/50 text-muted-foreground mb-5 text-xs font-semibold uppercase tracking-wide">
@@ -672,12 +659,10 @@ export default function ForSchoolsPage() {
                   </li>
                 ))}
               </ul>
-              <a href="#demo">
-                <Button variant="outline" className="border-border/60 gap-2">
-                  See It in a Demo
-                  <ArrowRight className="w-4 h-4" />
-                </Button>
-              </a>
+              <Button variant="outline" className="border-border/60 gap-2" render={<Link href="/demo" />}>
+                See It in a Demo
+                <ArrowRight className="w-4 h-4" />
+              </Button>
             </div>
 
             <div className="grid grid-cols-2 gap-4">
@@ -700,7 +685,7 @@ export default function ForSchoolsPage() {
                   </div>
                   <div className="bg-background/60 rounded-lg border border-border/40 p-4">
                     <p className="text-xs text-muted-foreground mb-2">Generate a lesson plan for...</p>
-                    <p className="text-sm font-medium text-foreground">"AQA Language Paper 2 -- Viewpoints &amp; Perspectives, Year 11"</p>
+                    <p className="text-sm font-medium text-foreground">&quot;AQA Language Paper 2 -- Viewpoints &amp; Perspectives, Year 11&quot;</p>
                     <div className="mt-3 flex items-center gap-2">
                       <div className="h-1.5 flex-1 rounded-full bg-primary/20">
                         <div className="h-1.5 w-3/4 rounded-full bg-primary animate-pulse" />
@@ -792,13 +777,11 @@ export default function ForSchoolsPage() {
                 ))}
               </ul>
               <div className="mt-8">
-                <Link href="/demo/school/analytics">
-                  <Button variant="outline" className="border-primary/40 text-primary hover:bg-primary/10 gap-2 font-semibold">
-                    <BarChart3 className="w-4 h-4" />
-                    See Full Demo
-                    <ArrowRight className="w-4 h-4" />
-                  </Button>
-                </Link>
+                <Button variant="outline" className="border-primary/40 text-primary hover:bg-primary/10 gap-2 font-semibold" render={<Link href="/demo/school/analytics" />}>
+                  <BarChart3 className="w-4 h-4" />
+                  See Full Demo
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
               </div>
             </div>
           </div>
@@ -951,12 +934,10 @@ export default function ForSchoolsPage() {
           </div>
 
           <div className="text-center mt-14">
-            <Link href="/auth/register?type=school&promo=FOUNDER">
-              <Button size="lg" className="text-base px-8 h-12 shadow-lg shadow-primary/20 gap-2 font-semibold">
-                <Gift className="w-4 h-4" />
-                Start Now with FOUNDER
-              </Button>
-            </Link>
+            <Button size="lg" className="text-base px-8 h-12 shadow-lg shadow-primary/20 gap-2 font-semibold" render={<Link href="/contact" />}>
+              <Phone className="w-4 h-4" />
+              Book a 20-Minute Call
+            </Button>
           </div>
         </div>
       </section>
@@ -966,7 +947,7 @@ export default function ForSchoolsPage() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <Badge variant="outline" className="border-border/50 text-muted-foreground mb-5 text-xs font-semibold uppercase tracking-wide">
-              Social Proof
+              From Schools Using the Platform
             </Badge>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground mb-4">
               What Teachers Are Saying
@@ -986,7 +967,7 @@ export default function ForSchoolsPage() {
                 </div>
                 <Quote className="w-7 h-7 text-primary/15 mb-3" />
                 <p className="text-sm text-muted-foreground leading-relaxed mb-5 flex-1 italic">
-                  "{t.quote}"
+                  &quot;{t.quote}&quot;
                 </p>
                 <div className="flex items-center gap-3">
                   <div className={cn("w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold shrink-0", t.color)}>
@@ -1011,10 +992,10 @@ export default function ForSchoolsPage() {
               Value Comparison
             </Badge>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground mb-4">
-              School Licence vs Individual Subscriptions
+              School Partnership vs Individual Subscriptions
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto text-lg">
-              The school site licence is not just cheaper -- it unlocks features that individual
+              The school partnership is not just better value -- it unlocks features that individual
               subscriptions simply do not include.
             </p>
           </div>
@@ -1023,12 +1004,12 @@ export default function ForSchoolsPage() {
             <div className="grid grid-cols-3 bg-card text-sm font-semibold">
               <div className="px-5 py-4 text-foreground border-r border-border/40">Feature</div>
               <div className="px-5 py-4 text-primary text-center border-r border-border/40">
-                School Site Licence
-                <div className="text-xs font-normal text-muted-foreground">1,500 GBP/yr</div>
+                School Partnership
+                <div className="text-xs font-normal text-muted-foreground">Tailored pricing</div>
               </div>
               <div className="px-5 py-4 text-muted-foreground text-center">
                 Individual Subs
-                <div className="text-xs font-normal">~12 GBP/student/yr</div>
+                <div className="text-xs font-normal">Per student</div>
               </div>
             </div>
             {COMPARISON_ROWS.map((row, i) => (
@@ -1083,32 +1064,32 @@ export default function ForSchoolsPage() {
 
           <p className="text-center text-sm text-muted-foreground mt-10">
             Got a question not answered here?{" "}
-            <a href="#demo" className="text-primary underline underline-offset-4 hover:text-primary/80 transition-colors">
-              Get in touch
-            </a>{" "}
+            <Link href="/contact" className="text-primary underline underline-offset-4 hover:text-primary/80 transition-colors">
+              Book a call
+            </Link>{" "}
             and we will get back to you within one working day.
           </p>
         </div>
       </section>
 
-      {/* ════════════════ DEMO / CONTACT FORM ════════════════ */}
+      {/* ════════════════ BOOK A CALL / CONTACT FORM ════════════════ */}
       <section id="demo" className="py-24 sm:py-32 bg-card/20 border-y border-border/40 scroll-mt-16">
         <div className="max-w-2xl mx-auto px-6">
           <div className="text-center mb-12">
             <div className="inline-flex w-14 h-14 rounded-2xl bg-primary/10 items-center justify-center mb-6 border border-primary/20">
-              <Eye className="w-7 h-7 text-primary" />
+              <CalendarCheck className="w-7 h-7 text-primary" />
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground mb-4">
-              Request a Demo
+              Book a 20-Minute Call
             </h2>
             <p className="text-muted-foreground max-w-lg mx-auto text-lg">
-              See the platform live with your team. We will set up a personalised walkthrough
-              for your department and answer every question you have.
+              Speak with our schools team. We will walk you through the platform, discuss pricing
+              tailored to your department, and answer every question you have.
             </p>
           </div>
 
           <Card className="p-6 sm:p-8 border-border/40">
-            <DemoRequestForm />
+            <BookCallForm />
           </Card>
         </div>
       </section>
@@ -1119,34 +1100,30 @@ export default function ForSchoolsPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-primary/[0.06] rounded-full blur-[160px] pointer-events-none" />
 
         <div className="relative max-w-3xl mx-auto px-6 text-center">
-          <Badge className="bg-amber-500/15 text-amber-400 border-amber-500/30 font-bold text-sm px-4 py-1.5 mb-8 gap-2">
-            <Gift className="w-4 h-4" />
-            LIMITED FOUNDER PILOT
+          <Badge className="bg-primary/15 text-primary border-primary/30 font-bold text-sm px-4 py-1.5 mb-8 gap-2">
+            <Award className="w-4 h-4" />
+            ONLY 20 FOUNDING SCHOOLS
           </Badge>
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-foreground mb-5">
-            Get Your School Started Today --{" "}
-            <span className="text-primary">Free with FOUNDER</span>
+            Join the Founding Schools Programme{" "}
+            <span className="text-primary">Before It Closes</span>
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed max-w-xl mx-auto mb-10">
-            Register now and enter the promo code FOUNDER. Your entire school gets full access
-            free until August 2026 -- then just 1,500 GBP per year. Places are limited.
+            Only 20 schools. Heavily discounted pricing locked for 2-3 years. Early features.
+            Direct product input. When the programme closes, it closes.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/auth/register?type=school&promo=FOUNDER">
-              <Button size="lg" className="text-base px-10 h-13 shadow-xl shadow-primary/25 gap-2 font-bold">
-                <Gift className="w-5 h-5" />
-                Register Your School Free (FOUNDER)
-              </Button>
-            </Link>
-            <a href="#demo">
-              <Button variant="outline" size="lg" className="text-base px-8 h-13 border-border/60 gap-2">
-                <Eye className="w-4 h-4" />
-                Request a Demo First
-              </Button>
-            </a>
+            <Button size="lg" className="text-base px-10 h-13 shadow-xl shadow-primary/25 gap-2 font-bold" render={<Link href="/contact" />}>
+              <Phone className="w-5 h-5" />
+              Book a 20-Minute Call
+            </Button>
+            <Button variant="outline" size="lg" className="text-base px-8 h-13 border-border/60 gap-2" render={<Link href="/demo" />}>
+              <Eye className="w-4 h-4" />
+              View the Demo
+            </Button>
           </div>
           <p className="text-xs text-muted-foreground/60 mt-6">
-            No credit card required. No commitment during the pilot. Cancel anytime.
+            No obligation. No hard sell. Just a conversation about whether the programme is right for your school.
           </p>
         </div>
       </section>
@@ -1195,9 +1172,9 @@ export default function ForSchoolsPage() {
   );
 }
 
-/* ─────────────── Demo Request Form (extracted for useState) ─────────────── */
+/* ─────────────── Book a Call Form (extracted for useState) ─────────────── */
 
-function DemoRequestForm() {
+function BookCallForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -1242,7 +1219,7 @@ function DemoRequestForm() {
         <h3 className="text-xl font-bold text-foreground mb-2">Thank you!</h3>
         <p className="text-muted-foreground leading-relaxed max-w-md mx-auto">
           We have received your request and will be in touch within one working day to arrange
-          your personalised demo. Check your inbox for a confirmation email.
+          your call. Check your inbox for a confirmation email.
         </p>
       </div>
     );
@@ -1331,7 +1308,7 @@ function DemoRequestForm() {
         <textarea
           id="message"
           name="message"
-          placeholder="Tell us about your department, any specific needs, or your preferred demo time..."
+          placeholder="Tell us about your department, any specific needs, or your preferred call time..."
           rows={4}
           maxLength={1000}
           className="w-full rounded-lg border border-input bg-transparent px-3.5 py-2.5 text-sm transition-all duration-200 outline-none focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/25 resize-none dark:bg-input/20 placeholder:text-muted-foreground/60"
@@ -1348,21 +1325,21 @@ function DemoRequestForm() {
       <Button
         type="submit"
         size="lg"
-        className="w-full text-base h-12 shadow-lg shadow-primary/20 gap-2"
+        className="w-full gap-2 font-semibold text-base"
         disabled={status === "submitting"}
       >
         {status === "submitting" ? (
-          "Sending your request..."
+          <>Sending...</>
         ) : (
           <>
-            <Mail className="w-4 h-4" />
-            Request a Demo
+            <Phone className="w-4 h-4" />
+            Book a 20-Minute Call
           </>
         )}
       </Button>
 
-      <p className="text-xs text-muted-foreground/60 text-center">
-        We respond within one working day. No spam, no obligation.
+      <p className="text-center text-xs text-muted-foreground">
+        We reply within one working day. No obligation, no hard sell.
       </p>
     </form>
   );

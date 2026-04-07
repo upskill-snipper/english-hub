@@ -769,7 +769,7 @@ export default function FreeResourcesPage() {
                 See All Plans
             </Button>
             <Button render={<Link href="/for-schools" />} variant="ghost" size="lg">
-                School Plans from &pound;1,500/year
+                Founding Schools Programme
             </Button>
           </div>
         </section>

@@ -238,22 +238,29 @@ export default function BillingPage() {
               </p>
 
               <div className="grid sm:grid-cols-2 gap-4">
-                {/* Monthly */}
+                {/* Student Monthly */}
                 <div className="border border-border rounded-xl p-5 hover:border-primary/50 transition-colors">
                   <h3 className="text-lg font-semibold text-foreground mb-1">
-                    Pro
+                    Student
                   </h3>
                   <p className="text-2xl font-bold text-primary mb-1">
-                    {PRICING.CURRENCY}{PRICING.MONTHLY}
+                    {PRICING.CURRENCY}{PRICING.STUDENT_MONTHLY}
                     <span className="text-sm font-normal text-muted-foreground">
                       /month
                     </span>
+                  </p>
+                  <p className="text-xs text-muted-foreground mb-1">
+                    or {PRICING.CURRENCY}{PRICING.STUDENT_ANNUAL}/year
                   </p>
                   <p className="text-sm text-emerald-500 font-semibold mb-2">{PRICING.TRIAL_TEXT}</p>
                   <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                     <li className="flex items-center gap-1.5">
                       <CheckCircle className="w-3.5 h-3.5 text-primary" />
                       All courses included
+                    </li>
+                    <li className="flex items-center gap-1.5">
+                      <CheckCircle className="w-3.5 h-3.5 text-primary" />
+                      3 free uses per feature
                     </li>
                     <li className="flex items-center gap-1.5">
                       <CheckCircle className="w-3.5 h-3.5 text-primary" />
@@ -271,7 +278,52 @@ export default function BillingPage() {
                         Loading...
                       </>
                     ) : (
-                      'Upgrade Monthly'
+                      'Upgrade Student'
+                    )}
+                  </button>
+                </div>
+
+                {/* Teacher */}
+                <div className="border border-purple-500/30 rounded-xl p-5 hover:border-purple-500/50 transition-colors">
+                  <h3 className="text-lg font-semibold text-foreground mb-1">
+                    Teacher
+                  </h3>
+                  <p className="text-2xl font-bold text-purple-400 mb-1">
+                    {PRICING.CURRENCY}{PRICING.TEACHER_MONTHLY}
+                    <span className="text-sm font-normal text-muted-foreground">
+                      /month
+                    </span>
+                  </p>
+                  <p className="text-xs text-muted-foreground mb-1">
+                    or {PRICING.CURRENCY}{PRICING.TEACHER_ANNUAL}/year
+                  </p>
+                  <p className="text-sm text-emerald-500 font-semibold mb-2">{PRICING.TRIAL_TEXT}</p>
+                  <ul className="text-sm text-muted-foreground space-y-1 mb-4">
+                    <li className="flex items-center gap-1.5">
+                      <CheckCircle className="w-3.5 h-3.5 text-purple-400" />
+                      Everything in Student
+                    </li>
+                    <li className="flex items-center gap-1.5">
+                      <CheckCircle className="w-3.5 h-3.5 text-purple-400" />
+                      AI Lesson Builder
+                    </li>
+                    <li className="flex items-center gap-1.5">
+                      <CheckCircle className="w-3.5 h-3.5 text-purple-400" />
+                      Student Analytics
+                    </li>
+                  </ul>
+                  <button
+                    onClick={() => handleCheckout('monthly')}
+                    disabled={checkoutLoading !== null}
+                    className="btn-primary w-full text-sm bg-purple-600 hover:bg-purple-700"
+                  >
+                    {checkoutLoading === 'monthly' ? (
+                      <>
+                        <Loader2 className="w-4 h-4 animate-spin mr-2" />
+                        Loading...
+                      </>
+                    ) : (
+                      'Upgrade Teacher'
                     )}
                   </button>
                 </div>

@@ -37,8 +37,8 @@ export default function DemoBanner({
         <p className="text-amber-200/90 truncate">{message}</p>
       </div>
       <div className="flex items-center gap-3 shrink-0">
-        <Button render={<Link href="/for-schools/register" />} size="sm" className="bg-amber-500 text-black hover:bg-amber-400 font-semibold">
-          Register Your School
+        <Button render={<Link href="/contact" />} size="sm" className="bg-amber-500 text-black hover:bg-amber-400 font-semibold">
+          Book a Call
         </Button>
         <button
           onClick={handleDismiss}

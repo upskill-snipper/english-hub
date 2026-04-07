@@ -90,7 +90,7 @@ export default function SubscriptionPage() {
   const isTrialing = subscription.status === "TRIALING";
   const isPastDue = subscription.status === "PAST_DUE";
 
-  const monthlyPrice = 9.99;
+  const monthlyPrice = 8.99;
   const currentPrice = monthlyPrice;
   const billingCycle = "month";
 

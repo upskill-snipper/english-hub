@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { ChevronDown, CheckCircle } from "lucide-react"
+import Link from "next/link"
 
 interface FAQItem {
   question: string
@@ -10,14 +11,14 @@ interface FAQItem {
 
 const faqs: FAQItem[] = [
   {
-    question: "What is included in the PS1,500 school site license?",
+    question: "What is the Founding Schools Programme?",
     answer:
-      "Full access for all students and teachers at your school. Includes all 470+ courses, lesson plans, AI essay feedback, analytics dashboard, homework management, bulk user upload, and priority support. Unlimited users.",
+      "The Founding Schools Programme is a strategic partnership limited to 20 schools for the 2026 academic year. Founding schools receive full platform access, early features, direct product input, priority onboarding, and locked preferential pricing for 2-3 years. This is not a free trial -- it is a partnership with heavily discounted pricing tailored to your department size.",
   },
   {
-    question: "What is the FOUNDER promo code?",
+    question: "How much does it cost?",
     answer:
-      "FOUNDER schools get completely free access until 31 August 2026. This is our pilot programme. After August 2026, the school license costs PS1,500/year. Your access will continue with no disruption if you renew before the expiry date.",
+      "Pricing is tailored to your department size and discussed during your onboarding call. Founding schools receive heavily discounted rates compared to post-programme pricing. Book a call to discuss your specific package.",
   },
   {
     question: "How does the Excel bulk upload work?",
@@ -32,12 +33,12 @@ const faqs: FAQItem[] = [
   {
     question: "Is the platform GDPR compliant?",
     answer:
-      "Yes. We are ICO registered, all data is stored on EU servers, we have a full data processing agreement available, and you can export or delete all school data at any time.",
+      "Yes. We are ICO registered, all data is stored on UK-based servers, we have a full data processing agreement available, and you can export or delete all school data at any time.",
   },
   {
-    question: "What happens after FOUNDER access expires?",
+    question: "What happens after the Founding Schools Programme?",
     answer:
-      "You will receive email reminders before August 2026. To continue access, renew at PS1,500/year. Students and teachers retain their accounts but lose access to premium content until renewal.",
+      "Founding schools lock in preferential pricing for 2-3 years. Post-programme standard pricing will be significantly higher. The exact terms are agreed during your onboarding call.",
   },
   {
     question: "Which exam boards are covered?",
@@ -47,7 +48,7 @@ const faqs: FAQItem[] = [
   {
     question: "Can individual teachers sign up separately?",
     answer:
-      "Yes. Individual teacher plans are PS9.99/month or PS79.99/year. School site licenses are far better value for schools with 20+ students.",
+      "Yes. Individual teacher plans are available separately. School partnerships are far better value for departments with multiple teachers and classes.",
   },
 ]
 
@@ -127,7 +128,7 @@ export function SchoolFAQ() {
           Frequently Asked Questions
         </h2>
         <p className="text-slate-400 text-base">
-          Everything you need to know about English Hub for schools.
+          Everything you need to know about The English Hub for schools.
         </p>
       </div>
 
@@ -148,12 +149,12 @@ export function SchoolFAQ() {
       <div className="max-w-3xl mx-auto mt-10 text-center">
         <p className="text-slate-400 text-sm">
           Still have questions?{" "}
-          <a
-            href="mailto:schools@english-hub.co.uk"
+          <Link
+            href="/contact"
             className="text-emerald-400 hover:text-emerald-300 underline underline-offset-2 transition-colors font-medium"
           >
-            Email our schools team
-          </a>{" "}
+            Book a call with our schools team
+          </Link>{" "}
           - we reply within one working day.
         </p>
       </div>

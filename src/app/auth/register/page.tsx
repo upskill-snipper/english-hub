@@ -5,8 +5,8 @@ import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import { useBoardStore } from '@/store/board-store'
-import { Mail, Lock, User, GraduationCap, BookOpen, Loader2, ArrowLeft, CheckCircle, Eye, EyeOff, Calendar, School } from 'lucide-react'
-import { PRICING_DISPLAY } from '@/constants/pricing'
+import { Mail, Lock, User, GraduationCap, BookOpen, Loader2, ArrowLeft, CheckCircle, Eye, EyeOff, Calendar, School, Sparkles, Gift, Zap } from 'lucide-react'
+
 import { getUtmParams } from '@/lib/utm'
 import { trackEvent } from '@/lib/gtag'
 import { YEAR_GROUPS, EXAM_BOARDS } from '@/lib/utils'
@@ -205,11 +205,17 @@ export default function RegisterPage() {
               <h1 className="text-2xl font-bold text-foreground mb-2">
                 Check your email
               </h1>
-              <p className="text-muted-foreground mb-6">
+              <p className="text-muted-foreground mb-4">
                 We&apos;ve sent a confirmation link to{' '}
                 <span className="text-foreground font-medium">{email}</span>.
                 Please click the link to verify your {accountType === 'teacher' ? 'teacher' : ''} account before signing in.
               </p>
+              <div className="rounded-lg border border-primary/20 bg-primary/5 p-3 mb-6">
+                <p className="text-sm text-muted-foreground">
+                  <span className="font-medium text-foreground">Your free trial is ready.</span>{' '}
+                  You have 3 free uses of every premium feature — AI marking, lesson plans, and more.
+                </p>
+              </div>
               {accountType === 'teacher' && (
                 <p className="text-sm text-muted-foreground mb-4">
                   Once verified, you&apos;ll have access to the Teacher Dashboard with lesson planning, student analytics, and assessment tools.
@@ -257,14 +263,38 @@ export default function RegisterPage() {
         <Card>
           <CardHeader className="text-center">
             <CardTitle className="text-2xl">
-              {accountType === 'teacher' ? 'Create Teacher Account' : 'Start Your Free Trial'}
+              {accountType === 'teacher' ? 'Start your free teacher account' : 'Create your free account'}
             </CardTitle>
             <CardDescription>
               {accountType === 'teacher'
-                ? 'Access lesson planning, analytics, and AI marking tools.'
-                : `${PRICING_DISPLAY.trialText}. Cancel anytime.`}
+                ? 'Save 5+ hours per week with AI lesson planning and marking.'
+                : 'No credit card required. Try every premium feature 3 times, free.'}
             </CardDescription>
           </CardHeader>
+
+          {/* Free trial benefits */}
+          <div className="px-6 pb-2">
+            <div className="rounded-lg border border-primary/20 bg-primary/5 p-4 space-y-2.5">
+              <p className="text-sm font-medium text-foreground flex items-center gap-2">
+                <Gift className="h-4 w-4 text-primary" />
+                What&apos;s included free
+              </p>
+              <div className="grid grid-cols-1 gap-1.5 text-sm text-muted-foreground">
+                <span className="flex items-center gap-2">
+                  <CheckCircle className="h-3.5 w-3.5 text-primary shrink-0" />
+                  Courses, revision notes, flashcards (unlimited)
+                </span>
+                <span className="flex items-center gap-2">
+                  <Sparkles className="h-3.5 w-3.5 text-primary shrink-0" />
+                  3 free uses of every AI tool (marking, lesson plans, and more)
+                </span>
+                <span className="flex items-center gap-2">
+                  <Zap className="h-3.5 w-3.5 text-primary shrink-0" />
+                  Upgrade when you&apos;re ready — first month free
+                </span>
+              </div>
+            </div>
+          </div>
 
           <CardContent>
             {error && (
@@ -589,9 +619,9 @@ export default function RegisterPage() {
                     Creating account...
                   </>
                 ) : accountType === 'teacher' ? (
-                  'Create teacher account'
+                  'Create free teacher account'
                 ) : (
-                  'Create account'
+                  'Create free account'
                 )}
               </Button>
             </form>

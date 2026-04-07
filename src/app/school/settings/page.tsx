@@ -318,17 +318,12 @@ function SubscriptionSection() {
             <div>
               <p className="text-sm font-medium text-foreground">Current Plan</p>
               <p className="text-base font-semibold text-foreground mt-0.5">
-                {isFounder ? "FOUNDER Access" : "School Site License"}
-                {!isFounder && (
-                  <span className="ml-1.5 text-sm font-normal text-muted-foreground">
-                    &pound;1,500/year
-                  </span>
-                )}
+                {isFounder ? "Founding School Partner" : "School Partnership"}
               </p>
             </div>
             {isFounder && (
-              <Badge className="bg-amber-500/15 text-amber-400 border border-amber-500/30 text-xs font-semibold">
-                FOUNDER
+              <Badge className="bg-primary/15 text-primary border border-primary/30 text-xs font-semibold">
+                FOUNDING PARTNER
               </Badge>
             )}
           </div>
@@ -339,14 +334,13 @@ function SubscriptionSection() {
             </Badge>
             <span className="text-sm text-muted-foreground">
               {isFounder
-                ? "Active until 31 August 2026 (FOUNDER)"
-                : "Active until 31 August 2026"}
+                ? "Founding Schools Programme -- preferential rate locked"
+                : "Active subscription"}
             </span>
           </div>
 
           <p className="text-xs text-muted-foreground">
-            After expiry: access will revert to a free tier. Renew before 31 August 2026 to
-            maintain full access for the next academic year.
+            Contact us to discuss renewal terms. Founding schools have locked preferential rates.
           </p>
         </div>
 

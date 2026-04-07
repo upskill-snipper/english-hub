@@ -1,4 +1,5 @@
 import { CheckCircle, X } from "lucide-react"
+import Link from "next/link"
 
 interface ComparisonRow {
   feature: string
@@ -9,8 +10,8 @@ interface ComparisonRow {
 const rows: ComparisonRow[] = [
   {
     feature: "Price",
-    individual: "PS9.99/student/month",
-    school: "PS1,500/year total",
+    individual: "Per student per month",
+    school: "Tailored to department size",
   },
   {
     feature: "Students covered",
@@ -38,6 +39,11 @@ const rows: ComparisonRow[] = [
     school: true,
   },
   {
+    feature: "Ofsted-ready reporting",
+    individual: false,
+    school: true,
+  },
+  {
     feature: "Progress reports",
     individual: false,
     school: "Automated",
@@ -48,9 +54,9 @@ const rows: ComparisonRow[] = [
     school: "Priority",
   },
   {
-    feature: "Typical 200-student cost",
-    individual: "~PS24,000/year",
-    school: "PS1,500/year",
+    feature: "Early features access",
+    individual: false,
+    school: "Founding schools only",
   },
 ]
 
@@ -78,29 +84,32 @@ export function SchoolComparison() {
       {/* Header */}
       <div className="max-w-5xl mx-auto text-center mb-10">
         <h2 className="text-3xl font-bold text-white mb-3">
-          School Site License vs Individual Plans
+          School Partnership vs Individual Plans
         </h2>
         <p className="text-slate-400 text-lg">
-          One simple price for your entire school. No per-seat counting.
+          A school partnership unlocks features that individual plans simply do not include.
         </p>
       </div>
 
-      {/* Savings callout */}
+      {/* CTA callout */}
       <div className="max-w-5xl mx-auto mb-8">
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 px-6 py-5">
           <div className="text-center sm:text-left">
             <p className="text-slate-300 text-sm font-medium uppercase tracking-widest mb-1">
-              Based on 200 students
+              Founding Schools Programme
             </p>
             <p className="text-white text-2xl font-bold">
-              Save <span className="text-emerald-400">PS22,476/year</span> with
-              the school license
+              Only <span className="text-emerald-400">20 places</span> available
+              for 2026
             </p>
           </div>
           <div className="flex-shrink-0">
-            <span className="inline-block rounded-full bg-emerald-500 px-5 py-2 text-white font-extrabold text-xl tracking-tight shadow-lg">
-              Save 94%
-            </span>
+            <Link
+              href="/contact"
+              className="inline-block rounded-full bg-emerald-500 px-5 py-2 text-white font-extrabold text-sm tracking-tight shadow-lg hover:bg-emerald-400 transition-colors"
+            >
+              Book a Call
+            </Link>
           </div>
         </div>
       </div>
@@ -125,7 +134,7 @@ export function SchoolComparison() {
                 <div className="flex flex-col items-center gap-1">
                   <div className="flex items-center gap-2">
                     <span className="text-white font-bold text-sm uppercase tracking-wider">
-                      School Site License
+                      School Partnership
                     </span>
                   </div>
                   <span className="inline-block rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 text-xs font-semibold px-3 py-0.5">
@@ -157,34 +166,13 @@ export function SchoolComparison() {
               </tr>
             ))}
           </tbody>
-          <tfoot>
-            <tr className="bg-slate-800 border-t-2 border-slate-600">
-              <td className="px-6 py-5 text-slate-300 font-semibold text-sm">
-                Annual cost (200 students)
-              </td>
-              <td className="px-6 py-5 text-center">
-                <span className="text-red-400 font-bold text-lg line-through decoration-2">
-                  PS23,976
-                </span>
-                <p className="text-slate-500 text-xs mt-0.5">
-                  PS9.99 x 200 x 12
-                </p>
-              </td>
-              <td className="px-6 py-5 text-center bg-emerald-500/5">
-                <span className="text-emerald-400 font-extrabold text-2xl">
-                  PS1,500
-                </span>
-                <p className="text-slate-400 text-xs mt-0.5">flat annual fee</p>
-              </td>
-            </tr>
-          </tfoot>
         </table>
       </div>
 
       {/* Sub-note */}
       <p className="max-w-5xl mx-auto mt-4 text-center text-slate-500 text-sm">
-        School site license covers all students and all teachers. No per-seat
-        fees. Prices shown in GBP. VAT may apply.
+        Founding school pricing is tailored to your department size. Book a call
+        to discuss your package.
       </p>
     </section>
   )

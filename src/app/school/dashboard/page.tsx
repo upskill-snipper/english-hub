@@ -35,8 +35,8 @@ interface SchoolData {
   created_at: string
 }
 
-const FOUNDER_ACCESS_UNTIL = "August 2026"
-const RENEWAL_PRICE = "1,500"
+const FOUNDER_ACCESS_UNTIL = "August 2027"
+const RENEWAL_PRICE = "Contact us"
 
 // ── Setup checklist ──────────────────────────────────────────────────────────
 
@@ -182,10 +182,10 @@ export default function SchoolDashboardPage() {
             <span className="mt-0.5 text-lg">&#9733;</span>
             <div>
               <p className="font-semibold text-amber-400">
-                Your FOUNDER access is active until {FOUNDER_ACCESS_UNTIL}.
+                Your Founding Schools access is active until {FOUNDER_ACCESS_UNTIL}.
               </p>
               <p className="mt-0.5 text-sm text-amber-400/80">
-                After this date, renewal is &pound;{RENEWAL_PRICE}/year.
+                Your preferential rate is locked. Contact us to discuss renewal.
               </p>
             </div>
           </div>

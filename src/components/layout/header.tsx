@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useAuthStore, useAuthUserLoading } from '@/store/auth-store'
+import { useAuthStore, useAuthUserLoading, useAuthProfile } from '@/store/auth-store'
 import { Menu, LogOut, School, Sparkles } from 'lucide-react'
 import {
   Sheet,
@@ -24,13 +24,19 @@ const NAV_LINKS = [
   { href: '/practice', label: 'Practice' },
   { href: '/revision', label: 'Revision' },
   { href: '/exam-guide', label: 'Exam Guide' },
+  { href: '/for-teachers', label: 'For Teachers' },
+  { href: '/for-schools', label: 'For Schools' },
+  { href: '/pricing', label: 'Pricing' },
 ]
 
 export function Header() {
   const { user, isLoading } = useAuthUserLoading()
+  const profile = useAuthProfile()
   const pathname = usePathname()
   const [mobileOpen, setMobileOpen] = useState(false)
   const [isSchoolMember, setIsSchoolMember] = useState(false)
+
+  const isPremium = profile?.subscription_status === 'pro'
 
   useEffect(() => {
     if (!user) {
@@ -97,9 +103,20 @@ export function Header() {
             <Skeleton className="h-8 w-20 rounded-lg" />
           ) : user ? (
             <>
-              <Button variant="ghost" size="sm" render={<Link href="/dashboard" />}>
-                Dashboard
-              </Button>
+              {isPremium ? (
+                <Button variant="default" size="sm" render={<Link href="/dashboard" />}>
+                  Dashboard
+                </Button>
+              ) : (
+                <>
+                  <Button variant="ghost" size="sm" render={<Link href="/dashboard" />}>
+                    Dashboard
+                  </Button>
+                  <Button variant="default" size="sm" render={<Link href="/pricing" />}>
+                    Upgrade
+                  </Button>
+                </>
+              )}
               <Button variant="ghost" size="sm" render={<Link href="/account" />}>
                 Account
               </Button>
@@ -113,21 +130,15 @@ export function Header() {
             </>
           ) : (
             <>
-              <Button variant="ghost" size="sm" render={<Link href="/for-schools" />}>
-                For Schools
-              </Button>
               <Button variant="ghost" size="sm" render={<Link href="/demo/school" />}>
                 <Sparkles className="mr-1 h-3.5 w-3.5" />
                 Try Demo
-              </Button>
-              <Button variant="ghost" size="sm" render={<Link href="/for-teachers" />}>
-                For Teachers
               </Button>
               <Button variant="ghost" size="sm" render={<Link href="/auth/login" />}>
                 Log in
               </Button>
               <Button variant="default" size="sm" render={<Link href="/auth/register" />}>
-                Register
+                Start Free
               </Button>
             </>
           )}
@@ -173,14 +184,35 @@ export function Header() {
                 <Skeleton className="h-9 w-full rounded-lg" />
               ) : user ? (
                 <>
-                  <Button
-                    variant="ghost"
-                    className="w-full justify-start"
-                    render={<Link href="/dashboard" />}
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    Dashboard
-                  </Button>
+                  {isPremium ? (
+                    <Button
+                      variant="default"
+                      className="w-full"
+                      render={<Link href="/dashboard" />}
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      Dashboard
+                    </Button>
+                  ) : (
+                    <>
+                      <Button
+                        variant="ghost"
+                        className="w-full justify-start"
+                        render={<Link href="/dashboard" />}
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        Dashboard
+                      </Button>
+                      <Button
+                        variant="default"
+                        className="w-full"
+                        render={<Link href="/pricing" />}
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        Upgrade
+                      </Button>
+                    </>
+                  )}
                   <Button
                     variant="ghost"
                     className="w-full justify-start"
@@ -200,34 +232,10 @@ export function Header() {
                       School Dashboard
                     </Button>
                   )}
-                  <Button
-                    variant="ghost"
-                    className="w-full justify-start"
-                    render={<Link href="/for-schools" />}
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    For Schools
-                  </Button>
-                  <Button
-                    variant="ghost"
-                    className="w-full justify-start"
-                    render={<Link href="/for-teachers" />}
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    For Teachers
-                  </Button>
                   <SignOutButton />
                 </>
               ) : (
                 <>
-                  <Button
-                    variant="ghost"
-                    className="w-full justify-start"
-                    render={<Link href="/for-schools" />}
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    For Schools
-                  </Button>
                   <Button
                     variant="ghost"
                     className="w-full justify-start"
@@ -236,14 +244,6 @@ export function Header() {
                   >
                     <Sparkles className="mr-1.5 h-4 w-4" />
                     Try Demo
-                  </Button>
-                  <Button
-                    variant="ghost"
-                    className="w-full justify-start"
-                    render={<Link href="/for-teachers" />}
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    For Teachers
                   </Button>
                   <Button
                     variant="ghost"
@@ -259,7 +259,7 @@ export function Header() {
                     render={<Link href="/auth/register" />}
                     onClick={() => setMobileOpen(false)}
                   >
-                    Register
+                    Start Free
                   </Button>
                 </>
               )}
