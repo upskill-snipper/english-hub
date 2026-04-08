@@ -654,13 +654,13 @@ export default function AffiliateDashboard({
                 QR Code
               </h3>
               {/* Simple text-based QR placeholder */}
-              <div className="bg-white rounded-xl p-4 w-fit mx-auto mb-5">
+              <div className="bg-card rounded-xl p-4 w-fit mx-auto mb-5">
                 <div className="grid grid-cols-11 gap-[2px]" aria-label="QR code placeholder">
                   {QR_PATTERN.map((row, ri) =>
                     row.map((cell, ci) => (
                       <div
                         key={`${ri}-${ci}`}
-                        className={`w-[6px] h-[6px] rounded-[1px] ${cell ? 'bg-gray-900' : 'bg-white'}`}
+                        className={`w-[6px] h-[6px] rounded-[1px] ${cell ? 'bg-foreground' : 'bg-card'}`}
                       />
                     ))
                   )}
