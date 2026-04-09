@@ -422,7 +422,7 @@ export default function AffiliateSettingsClient({
             )}
 
             <a
-              href="/legal/affiliate-agreement"
+              href="/terms"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 text-sm text-primary hover:text-primary-hover transition-colors"

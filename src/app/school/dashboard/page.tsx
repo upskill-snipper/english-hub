@@ -323,7 +323,7 @@ export default function SchoolDashboardPage() {
               <Button
                 variant="outline"
                 className="h-auto justify-start gap-3 px-4 py-3"
-                render={<Link href="/school/export" />}
+                render={<Link href="/school/import" />}
               >
                   <Download className="h-4 w-4 shrink-0 text-primary" />
                   <div className="text-left">

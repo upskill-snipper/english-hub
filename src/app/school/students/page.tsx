@@ -617,7 +617,7 @@ export default function StudentsPage() {
                 <Upload className="size-4" />
                 Import Students
             </Button>
-            <Button size="sm" render={<Link href="/school/students/new" />}>
+            <Button size="sm" render={<Link href="/school/import?type=student" />}>
                 <UserPlus className="size-4" />
                 Add Student
             </Button>

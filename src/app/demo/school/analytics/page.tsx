@@ -306,7 +306,7 @@ export default function AnalyticsPage() {
           <Info className="inline-block w-4 h-4 mr-1.5 -mt-0.5" />
           This is a demo dashboard with sample data.{" "}
           <Link
-            href="/register"
+            href="/for-schools/register"
             className="underline underline-offset-2 hover:text-amber-100 font-medium"
           >
             Register your school

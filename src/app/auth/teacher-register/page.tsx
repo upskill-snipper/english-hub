@@ -395,7 +395,7 @@ export default function TeacherRegisterPage() {
                       />
                       <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
                         I have read and accept the{' '}
-                        <Link href="/privacy" className="underline underline-offset-2 hover:text-foreground transition-colors">
+                        <Link href="/privacy-policy" className="underline underline-offset-2 hover:text-foreground transition-colors">
                           Privacy Policy
                         </Link>
                       </span>

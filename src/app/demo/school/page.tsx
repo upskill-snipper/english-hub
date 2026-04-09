@@ -644,7 +644,7 @@ export default function DemoSchoolDashboardPage() {
                 <Button
                   variant="outline"
                   className="h-auto flex-col gap-2 px-3 py-4"
-                  render={<Link href="/demo/school/export" />}
+                  render={<Link href="/demo/school/import" />}
                 >
                   <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-amber-500/10">
                     <Download className="h-4 w-4 text-amber-400" />
