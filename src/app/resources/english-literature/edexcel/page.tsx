@@ -179,7 +179,7 @@ export default function EdexcelEnglishLiteraturePage() {
           How Edexcel Differs from AQA
         </h2>
         <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
-          <div className="rounded-lg border-l-4 border-primary bg-blue-50 p-4">
+          <div className="rounded-lg border-l-4 border-primary bg-blue-500/10 p-4">
             <h3 className="font-semibold text-foreground">Closed-book exam</h3>
             <p className="mt-1 text-sm">
               Both Edexcel papers are fully closed-book. You must memorise
@@ -187,7 +187,7 @@ export default function EdexcelEnglishLiteraturePage() {
               and the 19th-century novel, but Edexcel does not.
             </p>
           </div>
-          <div className="rounded-lg border-l-4 border-primary bg-blue-50 p-4">
+          <div className="rounded-lg border-l-4 border-primary bg-blue-500/10 p-4">
             <h3 className="font-semibold text-foreground">
               Different text options
             </h3>
@@ -197,7 +197,7 @@ export default function EdexcelEnglishLiteraturePage() {
               while AQA offers different modern texts.
             </p>
           </div>
-          <div className="rounded-lg border-l-4 border-primary bg-blue-50 p-4">
+          <div className="rounded-lg border-l-4 border-primary bg-blue-500/10 p-4">
             <h3 className="font-semibold text-foreground">
               Poetry anthology clusters
             </h3>
@@ -206,7 +206,7 @@ export default function EdexcelEnglishLiteraturePage() {
               while AQA uses Power and Conflict plus Love and Relationships.
             </p>
           </div>
-          <div className="rounded-lg border-l-4 border-primary bg-blue-50 p-4">
+          <div className="rounded-lg border-l-4 border-primary bg-blue-500/10 p-4">
             <h3 className="font-semibold text-foreground">
               Question structure
             </h3>

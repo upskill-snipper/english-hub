@@ -169,13 +169,15 @@ function generateStudentFromId(id: string): DemoStudent {
   })
 
   const gradeFromScore = (s: number) => {
-    if (s >= 85) return "8"
-    if (s >= 75) return "7"
-    if (s >= 65) return "6"
-    if (s >= 55) return "5"
-    if (s >= 45) return "4"
-    if (s >= 35) return "3"
-    return "2"
+    if (s >= 90) return "9"
+    if (s >= 80) return "8"
+    if (s >= 70) return "7"
+    if (s >= 60) return "6"
+    if (s >= 50) return "5"
+    if (s >= 40) return "4"
+    if (s >= 30) return "3"
+    if (s >= 20) return "2"
+    return "1"
   }
 
   const ms1 = Math.max(20, averageScore + Math.floor(rand() * 10) - 5)

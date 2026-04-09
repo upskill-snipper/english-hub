@@ -212,7 +212,7 @@ const characters = [
 const themes = [
   {
     title: "Social Responsibility",
-    colour: "bg-red-50 border-red-200",
+    colour: "bg-red-500/10 border-red-500/30",
     analysis:
       "This is the central theme of the play. Priestley uses the Inspector to argue that we are all interconnected and responsible for each other's welfare. Mr Birling's individualist philosophy ('a man has to look after himself') is systematically dismantled as each character is shown the consequences of their selfishness. The play is a direct argument for socialism and the welfare state, written in 1945 just as the Labour government was creating the NHS and the modern welfare system.",
     keyPoints: [
@@ -231,7 +231,7 @@ const themes = [
   },
   {
     title: "Class and Inequality",
-    colour: "bg-amber-50 border-amber-200",
+    colour: "bg-amber-500/10 border-amber-500/30",
     analysis:
       "The play exposes the rigid class system of Edwardian England, where the wealthy exploited the poor without consequence. Every character's treatment of Eva is shaped by class: Birling sees her as disposable labour, Sheila sees her as a shop girl who dared to smile, Mrs Birling sees her as a girl 'of that class.' Priestley argues that class privilege creates moral blindness - the Birlings cannot see Eva as fully human because her class makes her invisible.",
     keyPoints: [
@@ -250,7 +250,7 @@ const themes = [
   },
   {
     title: "Gender and Power",
-    colour: "bg-purple-50 border-purple-200",
+    colour: "bg-purple-500/10 border-purple-500/30",
     analysis:
       "Eva Smith's story exposes the vulnerability of women in Edwardian society. She is exploited by men (Birling as employer, Gerald as lover, Eric through coercion) and judged by women of higher class (Sheila's jealousy, Mrs Birling's prejudice). Eva had no legal protections, no vote (women did not get the vote until 1918), and no economic independence. Priestley shows that gender compounds class disadvantage.",
     keyPoints: [
@@ -269,7 +269,7 @@ const themes = [
   },
   {
     title: "Generational Divide",
-    colour: "bg-green-50 border-green-200",
+    colour: "bg-green-500/10 border-green-500/30",
     analysis:
       "The play creates a clear divide between the older generation (Mr and Mrs Birling, who refuse to change) and the younger generation (Sheila and Eric, who accept responsibility). This was directly relevant to Priestley's 1945 audience: the older generation had created two world wars, and the younger generation had a chance to build something better. Priestley places his hope in the young, while condemning the moral rigidity of the old.",
     keyPoints: [
@@ -288,7 +288,7 @@ const themes = [
   },
   {
     title: "Morality and Conscience",
-    colour: "bg-blue-50 border-blue-200",
+    colour: "bg-blue-500/10 border-blue-500/30",
     analysis:
       "The play functions as a moral test for each character. The Inspector presents them with evidence of their wrongdoing and watches how they respond. Those with genuine conscience (Sheila, Eric) are changed. Those who suppress conscience (Mr Birling, Mrs Birling) remain the same. The Inspector himself is conscience personified - a figure who forces people to confront uncomfortable truths they would rather ignore.",
     keyPoints: [
@@ -499,7 +499,7 @@ export default function InspectorCallsPage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-primary to-primary/90 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary/20">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-white/70">
             AQA English Literature &middot; Paper 2
           </p>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">

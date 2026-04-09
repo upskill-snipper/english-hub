@@ -217,7 +217,7 @@ const characters = [
 const themes = [
   {
     title: "Duality of Human Nature",
-    colour: "bg-red-50 border-red-200",
+    colour: "bg-red-500/10 border-red-500/30",
     analysis:
       "The central theme of the novella. Stevenson argues that every person contains both good and evil. Jekyll's experiment to separate these natures fails catastrophically - rather than purifying himself, he unleashes pure evil in Hyde while his 'good' side remains mixed. The novella suggests that duality is natural and that attempting to deny or separate it is dangerous. Victorian society's insistence on moral purity only forces people to hide their darker impulses, making those impulses more destructive.",
     keyPoints: [
@@ -236,7 +236,7 @@ const themes = [
   },
   {
     title: "Repression and Victorian Hypocrisy",
-    colour: "bg-purple-50 border-purple-200",
+    colour: "bg-purple-500/10 border-purple-500/30",
     analysis:
       "Victorian society demanded rigid moral standards, particularly of middle- and upper-class men. Stevenson shows that this repression does not eliminate sinful desires but drives them underground. Jekyll's 'profound duplicity of life' is not unique to him - it is the condition of his entire social class. The novella implies that Victorian respectability is a performance, and that the pressure to appear morally pure creates the very monsters it seeks to prevent.",
     keyPoints: [
@@ -255,7 +255,7 @@ const themes = [
   },
   {
     title: "Science and Its Limits",
-    colour: "bg-indigo-50 border-indigo-200",
+    colour: "bg-indigo-500/10 border-indigo-200",
     analysis:
       "The novella explores the dangerous potential of science unchecked by morality. Jekyll's experiment represents the Victorian anxiety about scientific progress overstepping natural or divine boundaries. Darwin's theory of evolution (1859), new chemical discoveries, and rapid industrialisation all raised fears about where science might lead. Stevenson suggests that science without ethical restraint creates monsters - both literal and metaphorical.",
     keyPoints: [
@@ -274,7 +274,7 @@ const themes = [
   },
   {
     title: "Secrecy and Silence",
-    colour: "bg-orange-50 border-orange-200",
+    colour: "bg-orange-500/10 border-orange-500/30",
     analysis:
       "The novella is structured around secrets: Jekyll's secret identity, hidden doors, locked cabinets, sealed letters, and unspoken suspicions. Characters repeatedly choose silence over investigation. Utterson and Enfield agree not to discuss what they have seen. Utterson suppresses his suspicion about the forged letter. This code of silence protects reputations but enables evil. Stevenson suggests that Victorian discretion is complicity.",
     keyPoints: [
@@ -293,7 +293,7 @@ const themes = [
   },
   {
     title: "Violence and Evil",
-    colour: "bg-green-50 border-green-200",
+    colour: "bg-green-500/10 border-green-500/30",
     analysis:
       "Hyde's violence escalates through the novella: from trampling a child to beating Sir Danvers Carew to death. This escalation suggests that evil, once indulged, cannot be contained. Hyde's violence is gratuitous and pleasurable to him, representing pure malice without conscience. Stevenson presents evil not as an external force but as something within every person, waiting to be unleashed.",
     keyPoints: [
@@ -313,7 +313,7 @@ const themes = [
   },
   {
     title: "Reputation and Social Class",
-    colour: "bg-teal-50 border-teal-200",
+    colour: "bg-teal-500/10 border-teal-200",
     analysis:
       "In Victorian society, reputation was everything, especially for professional gentlemen like Jekyll, Utterson, and Lanyon. The novella shows how the obsession with respectability creates a culture of concealment. Jekyll does not create Hyde because he is unusually evil, but because he cannot bear to damage his reputation. The respectable setting of London's West End - with its hidden back-streets and secret doors - symbolises a society built on surfaces.",
     keyPoints: [
@@ -534,7 +534,7 @@ export default function JekyllAndHydePage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-primary to-primary/90 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary/20">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-white/70">
             AQA English Literature &middot; Paper 1 Section B
           </p>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -549,14 +549,14 @@ export default function JekyllAndHydePage() {
       </section>
 
       {/* Exam format banner */}
-      <section className="bg-amber-50 border-b border-amber-200 px-4 py-6">
+      <section className="bg-amber-500/10 border-b border-amber-500/30 px-4 py-6">
         <div className="mx-auto max-w-5xl">
-          <h2 className="text-lg font-bold text-amber-900">
+          <h2 className="text-lg font-bold text-amber-800 dark:text-amber-200">
             AQA Exam Format: {examInfo.paper}
           </h2>
           <div className="mt-3 grid gap-4 sm:grid-cols-3">
-            <div className="rounded-lg bg-card p-4 border border-amber-200">
-              <p className="text-xs font-semibold uppercase tracking-wider text-amber-700">
+            <div className="rounded-lg bg-card p-4 border border-amber-500/30">
+              <p className="text-xs font-semibold uppercase tracking-wider text-amber-700 dark:text-amber-300">
                 Section &amp; Marks
               </p>
               <p className="mt-1 text-sm font-bold text-foreground">
@@ -566,8 +566,8 @@ export default function JekyllAndHydePage() {
                 {examInfo.marks} marks &middot; {examInfo.time}
               </p>
             </div>
-            <div className="rounded-lg bg-card p-4 border border-amber-200 sm:col-span-2">
-              <p className="text-xs font-semibold uppercase tracking-wider text-amber-700">
+            <div className="rounded-lg bg-card p-4 border border-amber-500/30 sm:col-span-2">
+              <p className="text-xs font-semibold uppercase tracking-wider text-amber-700 dark:text-amber-300">
                 Key Difference
               </p>
               <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
@@ -577,20 +577,20 @@ export default function JekyllAndHydePage() {
           </div>
 
           <div className="mt-4">
-            <p className="text-xs font-semibold uppercase tracking-wider text-amber-700 mb-3">
+            <p className="text-xs font-semibold uppercase tracking-wider text-amber-700 dark:text-amber-300 mb-3">
               Assessment Objectives
             </p>
             <div className="grid gap-3 sm:grid-cols-3">
               {examInfo.assessmentObjectives.map((ao) => (
                 <div
                   key={ao.code}
-                  className="rounded-lg bg-card p-4 border border-amber-200"
+                  className="rounded-lg bg-card p-4 border border-amber-500/30"
                 >
                   <div className="flex items-baseline gap-2">
                     <span className="text-sm font-bold text-primary">
                       {ao.code}
                     </span>
-                    <span className="text-xs font-medium text-amber-700">
+                    <span className="text-xs font-medium text-amber-700 dark:text-amber-300">
                       {ao.marks}
                     </span>
                   </div>

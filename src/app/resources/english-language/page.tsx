@@ -618,9 +618,9 @@ export default function EnglishLanguagePage() {
 
       {/* ─── AI Feedback Callout ──────────────────────────────── */}
       <section className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="overflow-hidden rounded-2xl border border-amber-200 bg-gradient-to-r from-amber-50 to-orange-50 shadow-md">
+        <div className="overflow-hidden rounded-2xl border border-amber-500/30 bg-gradient-to-r from-amber-500/10 to-orange-500/10 shadow-md">
           <div className="flex flex-col items-start gap-6 p-6 sm:flex-row sm:items-center sm:p-8">
-            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-amber-100">
+            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-amber-500/15">
               <SparklesIcon />
             </div>
             <div className="flex-1">

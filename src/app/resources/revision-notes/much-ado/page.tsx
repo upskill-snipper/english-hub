@@ -71,7 +71,7 @@ export default function MuchAdoRevisionPage() {
       {/* Hero */}
       <div className="mb-8">
         <div className="flex flex-wrap items-center gap-3 mb-2">
-          <span className="rounded-full bg-red-100 px-3 py-1 text-xs font-bold text-red-700 uppercase tracking-wider">Shakespeare</span>
+          <span className="rounded-full bg-red-500/15 px-3 py-1 text-xs font-bold text-red-700 dark:text-red-300 uppercase tracking-wider">Shakespeare</span>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">AQA</span>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">Edexcel</span>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">CAIE</span>
@@ -108,7 +108,7 @@ export default function MuchAdoRevisionPage() {
           <div className="space-y-6">
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 text-xs font-bold text-foreground">1</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-500/15 text-xs font-bold text-foreground">1</span>
                 Act 1 &mdash; Arrival and Sparring
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -127,7 +127,7 @@ export default function MuchAdoRevisionPage() {
 
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 text-xs font-bold text-foreground">2</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-500/15 text-xs font-bold text-foreground">2</span>
                 Act 2 &mdash; The Masked Ball and the Gulling Plots
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -146,7 +146,7 @@ export default function MuchAdoRevisionPage() {
 
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 text-xs font-bold text-foreground">3</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-500/15 text-xs font-bold text-foreground">3</span>
                 Act 3 &mdash; The Gulling of Beatrice and Don John&apos;s Plot
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -166,7 +166,7 @@ export default function MuchAdoRevisionPage() {
 
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 text-xs font-bold text-foreground">4</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-500/15 text-xs font-bold text-foreground">4</span>
                 Act 4 &mdash; The Shaming of Hero
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -186,7 +186,7 @@ export default function MuchAdoRevisionPage() {
 
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 text-xs font-bold text-foreground">5</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-500/15 text-xs font-bold text-foreground">5</span>
                 Act 5 &mdash; Resolution and Reconciliation
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -704,7 +704,7 @@ export default function MuchAdoRevisionPage() {
         <div id="exam-board-tips">
           <Section id="exam-boards" title="Exam Board Comparison" colour="bg-primary">
             <div className="space-y-6">
-              <div className="rounded-lg border border-purple-200 bg-purple-50/50 p-4">
+              <div className="rounded-lg border border-purple-500/30 bg-purple-500/5 p-4">
                 <h3 className="font-bold text-foreground flex items-center gap-2">
                   <span className="rounded bg-[#40197F] px-2 py-0.5 text-xs font-bold text-white">AQA</span>
                   AQA GCSE English Literature (8702) &mdash; Paper 1, Section A
@@ -718,7 +718,7 @@ export default function MuchAdoRevisionPage() {
                 </ul>
               </div>
 
-              <div className="rounded-lg border border-red-200 bg-red-50/50 p-4">
+              <div className="rounded-lg border border-red-500/30 bg-red-500/5 p-4">
                 <h3 className="font-bold text-foreground flex items-center gap-2">
                   <span className="rounded bg-[#E5231B] px-2 py-0.5 text-xs font-bold text-white">Edexcel</span>
                   Edexcel GCSE English Literature (1ET0) &mdash; Paper 1, Section A
@@ -732,7 +732,7 @@ export default function MuchAdoRevisionPage() {
                 </ul>
               </div>
 
-              <div className="rounded-lg border border-green-200 bg-green-50/50 p-4">
+              <div className="rounded-lg border border-green-500/30 bg-green-500/5 p-4">
                 <h3 className="font-bold text-foreground flex items-center gap-2">
                   <span className="rounded bg-[#00A651] px-2 py-0.5 text-xs font-bold text-white">CAIE</span>
                   Cambridge IGCSE Literature (0475 / 0992) &mdash; Paper 1 (Drama)
@@ -745,7 +745,7 @@ export default function MuchAdoRevisionPage() {
                 </ul>
               </div>
 
-              <div className="rounded-lg border border-blue-200 bg-blue-50/50 p-4">
+              <div className="rounded-lg border border-blue-500/30 bg-blue-500/5 p-4">
                 <h3 className="font-bold text-foreground flex items-center gap-2">
                   <span className="rounded bg-[#2A7DE1] px-2 py-0.5 text-xs font-bold text-white">OCR</span>
                   OCR GCSE English Literature (J352) &mdash; Shakespeare Component

@@ -26,7 +26,7 @@ export function FounderBanner() {
   return (
     <div className="relative flex items-center justify-center gap-3 bg-gradient-to-r from-primary/90 to-primary px-4 py-2.5 text-sm font-medium text-primary-foreground">
       <span>
-        Founding Schools Programme &mdash; only 20 places for 2026.{" "}
+        Founding Schools Programme &mdash; only 10 places for 2026.{" "}
         <strong className="font-bold">Heavily discounted pricing + locked rates.</strong>
       </span>
       <Link

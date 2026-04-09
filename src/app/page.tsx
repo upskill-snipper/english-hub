@@ -216,7 +216,7 @@ function ForSchoolsSection() {
           </div>
           <div className="flex-1">
             <p className="font-semibold text-foreground text-base mb-0.5">
-              Founding Schools Programme &mdash; 2026. Limited to 20 schools.
+              Founding Schools Programme &mdash; 2026. Limited to 10 schools.
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Heavily discounted pricing, early features, direct product input, and locked

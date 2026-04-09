@@ -95,13 +95,13 @@ const PRINT_STYLES = `
 
   .worksheet-question {
     page-break-inside: avoid;
-    margin-bottom: 4mm;
+    margin-bottom: 8mm;
   }
 
   .answer-line {
-    border-bottom: 1px solid #666 !important;
-    height: 8mm;
-    margin-bottom: 2mm;
+    border-bottom: 1.5px solid #555 !important;
+    height: 10mm;
+    margin-bottom: 3mm;
   }
 
   .model-answer {
@@ -285,7 +285,7 @@ export const PrintableWorksheet = forwardRef<HTMLDivElement, PrintableWorksheetP
 
               <div
                 className={cn(
-                  'space-y-5',
+                  'space-y-7',
                   section.twoColumn && 'two-column-section sm:columns-2 sm:gap-6',
                 )}
               >
@@ -315,12 +315,12 @@ export const PrintableWorksheet = forwardRef<HTMLDivElement, PrintableWorksheetP
                         )}
 
                         {/* Answer lines */}
-                        {(q.lines ?? 3) > 0 && (
-                          <div className="mt-3">
-                            {Array.from({ length: q.lines ?? 3 }).map((_, lineIdx) => (
+                        {(q.lines ?? 4) > 0 && (
+                          <div className="mt-4">
+                            {Array.from({ length: q.lines ?? 4 }).map((_, lineIdx) => (
                               <div
                                 key={lineIdx}
-                                className="answer-line border-b border-border/50 h-8 mb-1"
+                                className="answer-line border-b border-border/60 h-9 mb-1.5"
                               />
                             ))}
                           </div>

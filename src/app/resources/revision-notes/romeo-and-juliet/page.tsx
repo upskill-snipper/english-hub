@@ -81,7 +81,7 @@ export default function RomeoAndJulietRevisionPage() {
       {/* Hero */}
       <div>
         <div className="flex flex-wrap items-center gap-2 mb-3">
-          <span className="rounded-full bg-rose-100 px-3 py-1 text-xs font-bold uppercase tracking-wider text-rose-700">Shakespeare</span>
+          <span className="rounded-full bg-rose-500/15 px-3 py-1 text-xs font-bold uppercase tracking-wider text-rose-700">Shakespeare</span>
           {["AQA", "Edexcel", "CAIE", "OCR"].map((b) => (
             <span key={b} className="rounded-full bg-[#EBF5FB] px-3 py-1 text-xs font-semibold text-primary">{b}</span>
           ))}

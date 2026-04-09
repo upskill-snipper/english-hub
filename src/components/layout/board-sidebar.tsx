@@ -58,12 +58,16 @@ function SidebarSkeleton() {
 /** Routes where the BoardSidebar is hidden (they have their own navigation). */
 const HIDDEN_PREFIXES = ['/dashboard', '/help', '/legal']
 
+/** Exact routes where the BoardSidebar is hidden (full-width pages). */
+const HIDDEN_EXACT = ['/']
+
 export function BoardSidebar() {
   const pathname = usePathname()
   const { selectedBoard, _hasHydrated } = useBoardWithHydration()
   const clearBoard = useBoardStore((s) => s.clearBoard)
 
   // Hide on routes that don't need board selection
+  if (HIDDEN_EXACT.includes(pathname)) return null
   if (HIDDEN_PREFIXES.some((prefix) => pathname.startsWith(prefix))) return null
 
   if (!_hasHydrated) return <SidebarSkeleton />

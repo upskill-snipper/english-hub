@@ -516,7 +516,7 @@ export default function WomanInBlackRevisionPage() {
         <div id="exam-tips">
           <Section id="exam-tips" title="Exam Tips" colour="bg-primary">
             <div className="space-y-6">
-              <div className="rounded-lg border border-blue-200 bg-blue-50/50 p-4">
+              <div className="rounded-lg border border-blue-500/30 bg-blue-500/5 p-4">
                 <h3 className="font-bold text-foreground">Structure Your Essay</h3>
                 <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                   <li>&bull; <strong>Introduction:</strong> Briefly address the question, mention the text&apos;s genre (gothic ghost story), and outline your argument.</li>
@@ -525,7 +525,7 @@ export default function WomanInBlackRevisionPage() {
                 </ul>
               </div>
 
-              <div className="rounded-lg border border-green-200 bg-green-50/50 p-4">
+              <div className="rounded-lg border border-green-500/30 bg-green-500/5 p-4">
                 <h3 className="font-bold text-foreground">Key Techniques to Discuss</h3>
                 <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                   <li>&bull; <strong>First-person narration:</strong> Creates intimacy and reliability but limits perspective &mdash; we only see what Arthur sees.</li>
@@ -537,7 +537,7 @@ export default function WomanInBlackRevisionPage() {
                 </ul>
               </div>
 
-              <div className="rounded-lg border border-amber-200 bg-amber-50/50 p-4">
+              <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
                 <h3 className="font-bold text-foreground">Common Mistakes to Avoid</h3>
                 <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                   <li>&bull; Do not simply retell the story &mdash; analyse <em>how</em> Hill creates effects.</li>

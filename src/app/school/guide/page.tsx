@@ -522,8 +522,8 @@ function FaqContent() {
       answer: (
         <span>
           Go to <strong>School &rsaquo; Settings &rsaquo; Billing</strong>. From there you can view your current plan, update payment details, and download invoices. For enterprise pricing or purchase orders, contact us at{" "}
-          <a href="mailto:schools@theenglishhub.app" className="text-primary underline-offset-4 hover:underline">
-            schools@theenglishhub.app
+          <a href="mailto:info@Upskillenergy.com" className="text-primary underline-offset-4 hover:underline">
+            info@Upskillenergy.com
           </a>.
         </span>
       ),
@@ -630,7 +630,7 @@ export default function SchoolSetupGuidePage() {
             <Download className="h-4 w-4" />
             Download as PDF
           </Button>
-          <Button size="sm" className="gap-1.5" render={<a href="mailto:schools@theenglishhub.app" />}>
+          <Button size="sm" className="gap-1.5" render={<a href="mailto:info@Upskillenergy.com" />}>
               <Mail className="h-4 w-4" />
               Contact Support
           </Button>
@@ -714,9 +714,9 @@ export default function SchoolSetupGuidePage() {
               <Download className="h-4 w-4" />
               Download PDF guide
             </Button>
-            <Button size="sm" className="gap-1.5" render={<a href="mailto:schools@theenglishhub.app" />}>
+            <Button size="sm" className="gap-1.5" render={<a href="mailto:info@Upskillenergy.com" />}>
                 <Mail className="h-4 w-4" />
-                schools@theenglishhub.app
+                info@Upskillenergy.com
             </Button>
           </div>
         </CardContent>

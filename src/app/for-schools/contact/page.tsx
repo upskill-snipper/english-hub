@@ -44,6 +44,18 @@ const STUDENT_COUNTS = [
 
 const EXAM_BOARDS = ["AQA", "Edexcel", "OCR", "WJEC", "IGCSE/CAIE"];
 
+const COUNTRY_CODES = [
+  { code: "+44", label: "UK (+44)" },
+  { code: "+1", label: "US/CA (+1)" },
+  { code: "+971", label: "UAE (+971)" },
+  { code: "+974", label: "Qatar (+974)" },
+  { code: "+65", label: "Singapore (+65)" },
+  { code: "+852", label: "HK (+852)" },
+  { code: "+61", label: "Australia (+61)" },
+];
+
+const PREFERRED_CONTACT_OPTIONS = ["Email", "Phone", "Either"] as const;
+
 // ---------------------------------------------------------------------------
 // NativeSelect (matches register page style)
 // ---------------------------------------------------------------------------
@@ -104,7 +116,9 @@ interface ContactForm {
   schoolName: string;
   contactName: string;
   email: string;
+  countryCode: string;
   phone: string;
+  preferredContact: string;
   role: string;
   studentCount: string;
   examBoard: string;
@@ -115,7 +129,9 @@ const INITIAL_FORM: ContactForm = {
   schoolName: "",
   contactName: "",
   email: "",
+  countryCode: "+44",
   phone: "",
+  preferredContact: "Email",
   role: "",
   studentCount: "",
   examBoard: "",
@@ -189,7 +205,7 @@ function FoundingSchoolsPanel() {
 
           <div className="rounded-md border border-yellow-500/30 bg-yellow-500/10 px-4 py-3">
             <p className="text-sm font-semibold text-yellow-300">
-              Only 20 schools. Programme closes when full.
+              Only 10 schools. Programme closes when full.
             </p>
           </div>
         </CardContent>
@@ -230,6 +246,15 @@ function FoundingSchoolsPanel() {
           <p className="text-sm italic text-muted-foreground pt-1">
             No obligation. No sales deck. Just a conversation.
           </p>
+
+          <div className="rounded-md border border-primary/20 bg-primary/5 px-4 py-3 mt-4">
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              <span className="font-medium text-foreground">Missed exams?</span>{" "}
+              Our analytics data can also support schools in cases where students
+              miss exams, providing predicted grades based on continuous assessment
+              data, mock exam performance, and coursework to ensure fair outcomes.
+            </p>
+          </div>
         </CardContent>
       </Card>
     </div>
@@ -406,16 +431,56 @@ export default function BookACallPage() {
                   <FieldError msg={errors.email} />
                 </div>
 
-                {/* Phone */}
+                {/* Phone with country code */}
                 <div className="space-y-1.5">
                   <Label htmlFor="phone">Phone (optional)</Label>
-                  <Input
-                    id="phone"
-                    type="tel"
-                    placeholder="+44 7700 000000"
-                    value={form.phone}
-                    onChange={(e) => patch({ phone: e.target.value })}
-                  />
+                  <div className="flex gap-2">
+                    <select
+                      id="countryCode"
+                      value={form.countryCode}
+                      onChange={(e) => patch({ countryCode: e.target.value })}
+                      className="flex h-10 w-[140px] shrink-0 rounded-lg border border-input bg-transparent px-2 py-2 text-sm text-foreground transition-colors outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/25"
+                    >
+                      {COUNTRY_CODES.map((cc) => (
+                        <option key={cc.code} value={cc.code}>
+                          {cc.label}
+                        </option>
+                      ))}
+                    </select>
+                    <Input
+                      id="phone"
+                      type="tel"
+                      placeholder="7700 000000"
+                      value={form.phone}
+                      onChange={(e) => patch({ phone: e.target.value })}
+                      className="flex-1"
+                    />
+                  </div>
+                </div>
+
+                {/* Preferred contact method */}
+                <div className="space-y-1.5">
+                  <Label>Preferred Contact Method</Label>
+                  <div className="flex gap-4">
+                    {PREFERRED_CONTACT_OPTIONS.map((option) => (
+                      <label
+                        key={option}
+                        className="flex items-center gap-2 cursor-pointer text-sm text-foreground"
+                      >
+                        <input
+                          type="radio"
+                          name="preferredContact"
+                          value={option}
+                          checked={form.preferredContact === option}
+                          onChange={(e) =>
+                            patch({ preferredContact: e.target.value })
+                          }
+                          className="accent-primary h-4 w-4"
+                        />
+                        {option}
+                      </label>
+                    ))}
+                  </div>
                 </div>
 
                 {/* Role */}

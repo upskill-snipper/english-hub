@@ -573,7 +573,7 @@ export default function AnimalFarmStudyGuide() {
               <p className="text-sm font-medium text-foreground">
                 <span className="font-semibold text-foreground">{i + 1}.</span> {c.original}
               </p>
-              <p className="mt-1 text-sm text-red-700">
+              <p className="mt-1 text-sm text-red-700 dark:text-red-300">
                 <span className="font-semibold">Altered to:</span> {c.altered}
               </p>
             </div>

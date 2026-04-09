@@ -97,11 +97,11 @@ function MistakeCard({
         <span className="font-semibold">Fix:</span> {fix}
       </p>
       <div className="mt-3 grid gap-2 sm:grid-cols-2">
-        <div className="rounded-lg bg-red-50 px-4 py-3">
+        <div className="rounded-lg bg-red-500/10 px-4 py-3">
           <p className="text-xs font-semibold text-red-500 mb-1">Before</p>
           <p className="text-sm italic text-muted-foreground">{exampleBad}</p>
         </div>
-        <div className="rounded-lg bg-green-50 px-4 py-3">
+        <div className="rounded-lg bg-green-500/10 px-4 py-3">
           <p className="text-xs font-semibold text-green-600 mb-1">After</p>
           <p className="text-sm italic text-muted-foreground">{exampleGood}</p>
         </div>
@@ -119,7 +119,7 @@ export default function CreativeWritingPage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-primary to-primary/80 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-primary/80">
+          <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
             Writing Skills Masterclass
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -422,11 +422,11 @@ export default function CreativeWritingPage() {
                     emotional states. The best pathetic fallacy is subtle enough that the reader feels the mood without consciously noticing the technique.
                   </p>
                   <div className="mt-3 grid gap-3 sm:grid-cols-2">
-                    <div className="rounded-lg bg-blue-50 px-4 py-3">
+                    <div className="rounded-lg bg-blue-500/10 px-4 py-3">
                       <p className="text-xs font-semibold text-primary mb-1">Mirroring (mood matches weather)</p>
                       <p className="text-sm italic text-muted-foreground">&ldquo;The sky sagged, grey and heavy, pressing down on the rooftops as though it, too, had given up.&rdquo;</p>
                     </div>
-                    <div className="rounded-lg bg-blue-50 px-4 py-3">
+                    <div className="rounded-lg bg-blue-500/10 px-4 py-3">
                       <p className="text-xs font-semibold text-primary mb-1">Contrasting (mood clashes with weather)</p>
                       <p className="text-sm italic text-muted-foreground">&ldquo;Outside, the sun was obscenely bright. Birds sang. Children played. None of it matched the silence inside the house.&rdquo;</p>
                     </div>

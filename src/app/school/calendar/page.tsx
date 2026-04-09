@@ -69,9 +69,9 @@ const URGENCY_DOT: Record<string, string> = {
 }
 
 const URGENCY_BG: Record<string, string> = {
-  green: 'bg-emerald-50 dark:bg-emerald-950/30',
-  amber: 'bg-amber-50 dark:bg-amber-950/30',
-  red: 'bg-red-50 dark:bg-red-950/30',
+  green: 'bg-emerald-500/10 dark:bg-emerald-950/30',
+  amber: 'bg-amber-500/10 dark:bg-amber-950/30',
+  red: 'bg-red-500/10 dark:bg-red-950/30',
 }
 
 // ── Local types ──────────────────────────────────────────────────────────────
@@ -420,7 +420,7 @@ export default function CalendarPage() {
                   key={week.weekStart}
                   className={cn(
                     'px-5 py-3.5',
-                    week.examsThisWeek.length > 0 && 'bg-red-50/50 dark:bg-red-950/20',
+                    week.examsThisWeek.length > 0 && 'bg-red-500/5 dark:bg-red-950/20',
                   )}
                 >
                   <div className="flex items-center justify-between mb-2">
@@ -445,7 +445,7 @@ export default function CalendarPage() {
                       {week.examsThisWeek.map((exam) => (
                         <div
                           key={exam.id}
-                          className="flex items-center gap-2 text-xs text-red-700 dark:text-red-400"
+                          className="flex items-center gap-2 text-xs text-red-700 dark:text-red-300 dark:text-red-400"
                         >
                           <FileText className="h-3 w-3 shrink-0" />
                           <span className="font-medium">{exam.board}</span>
@@ -613,7 +613,7 @@ function MonthView({
               className={cn(
                 'border-r border-b border-border last:border-r-0 p-1.5 overflow-hidden relative group',
                 isToday && 'bg-primary/5',
-                exams.length > 0 && 'bg-red-50/40 dark:bg-red-950/10',
+                exams.length > 0 && 'bg-red-500/10/40 dark:bg-red-950/10',
               )}
               onDragOver={onDragOver}
               onDrop={() => onDrop(iso)}
@@ -665,7 +665,7 @@ function MonthView({
                   key={lesson.id}
                   draggable
                   onDragStart={() => onDragStart(lesson.id)}
-                  className="text-[10px] leading-tight px-1 py-0.5 rounded mb-0.5 truncate bg-blue-50 dark:bg-blue-950/30 text-blue-800 dark:text-blue-300 cursor-grab active:cursor-grabbing flex items-center gap-0.5 group/lesson"
+                  className="text-[10px] leading-tight px-1 py-0.5 rounded mb-0.5 truncate bg-blue-500/10 dark:bg-blue-950/30 text-blue-700 dark:text-blue-300 cursor-grab active:cursor-grabbing flex items-center gap-0.5 group/lesson"
                   title={lesson.title}
                 >
                   <GripVertical className="h-2.5 w-2.5 shrink-0 opacity-50" />
@@ -683,7 +683,7 @@ function MonthView({
               {assignmentsList.map((a) => (
                 <div
                   key={a.id}
-                  className="text-[10px] leading-tight px-1 py-0.5 rounded mb-0.5 truncate bg-purple-50 dark:bg-purple-950/30 text-purple-800 dark:text-purple-300"
+                  className="text-[10px] leading-tight px-1 py-0.5 rounded mb-0.5 truncate bg-purple-500/10 dark:bg-purple-950/30 text-purple-700 dark:text-purple-300"
                   title={`Due: ${a.title} (${a.className})`}
                 >
                   <FileText className="inline h-2.5 w-2.5 mr-0.5" />
@@ -738,7 +738,7 @@ function WeekView({
             className={cn(
               'overflow-hidden',
               isToday && 'ring-2 ring-primary/30',
-              exams.length > 0 && 'border-red-200 dark:border-red-800',
+              exams.length > 0 && 'border-red-500/30 dark:border-red-800',
             )}
             onDragOver={onDragOver}
             onDrop={() => onDrop(iso)}
@@ -774,10 +774,10 @@ function WeekView({
                         'flex items-start gap-3 p-2.5 rounded-lg border',
                         URGENCY_BG[colour],
                         colour === 'red'
-                          ? 'border-red-200 dark:border-red-800'
+                          ? 'border-red-500/30 dark:border-red-800'
                           : colour === 'amber'
-                            ? 'border-amber-200 dark:border-amber-800'
-                            : 'border-emerald-200 dark:border-emerald-800',
+                            ? 'border-amber-500/30 dark:border-amber-800'
+                            : 'border-emerald-500/30 dark:border-emerald-800',
                       )}
                     >
                       <span className={cn('mt-0.5 h-2.5 w-2.5 rounded-full shrink-0', URGENCY_DOT[colour])} />
@@ -803,12 +803,12 @@ function WeekView({
                     key={lesson.id}
                     draggable
                     onDragStart={() => onDragStart(lesson.id)}
-                    className="flex items-center gap-2 p-2 rounded-lg bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-800 cursor-grab active:cursor-grabbing group/lesson"
+                    className="flex items-center gap-2 p-2 rounded-lg bg-blue-500/10 dark:bg-blue-950/30 border border-blue-500/30 dark:border-blue-800 cursor-grab active:cursor-grabbing group/lesson"
                   >
                     <GripVertical className="h-4 w-4 text-blue-400 shrink-0" />
                     <BookOpen className="h-3.5 w-3.5 text-blue-600 shrink-0" />
                     <div className="min-w-0 flex-1">
-                      <p className="text-sm font-medium text-blue-900 dark:text-blue-200 truncate">
+                      <p className="text-sm font-medium text-blue-800 dark:text-blue-200 dark:text-blue-200 truncate">
                         {lesson.title}
                       </p>
                       {lesson.period && (
@@ -830,11 +830,11 @@ function WeekView({
                 {assignmentsList.map((a) => (
                   <div
                     key={a.id}
-                    className="flex items-center gap-2 p-2 rounded-lg bg-purple-50 dark:bg-purple-950/30 border border-purple-200 dark:border-purple-800"
+                    className="flex items-center gap-2 p-2 rounded-lg bg-purple-500/10 dark:bg-purple-950/30 border border-purple-500/30 dark:border-purple-800"
                   >
                     <FileText className="h-3.5 w-3.5 text-purple-600 shrink-0" />
                     <div className="min-w-0">
-                      <p className="text-sm font-medium text-purple-900 dark:text-purple-200 truncate">
+                      <p className="text-sm font-medium text-purple-800 dark:text-purple-200 dark:text-purple-200 truncate">
                         {a.title}
                       </p>
                       <span className="text-[10px] text-purple-600 dark:text-purple-400">

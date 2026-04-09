@@ -21,6 +21,7 @@ import {
 } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import { percentageToGCSEGrade } from "@/lib/grades"
 import {
   DEMO_TEACHER,
   TEACHER_DEMO_CLASSES,
@@ -151,7 +152,7 @@ export default function TeacherDemoDashboard() {
                 <Target className="h-4 w-4 text-purple-400/70" />
                 <span className="text-xs text-purple-400/70 font-medium uppercase tracking-wider">Avg Score</span>
               </div>
-              <p className="text-3xl font-bold text-white/90">{avgClassScore}%</p>
+              <p className="text-3xl font-bold text-white/90">{avgClassScore}% <span className="text-lg text-white/50">(Grade {percentageToGCSEGrade(avgClassScore)})</span></p>
               <p className="text-xs text-white/30 mt-1 flex items-center gap-1">
                 <TrendingUp className="h-3 w-3 text-green-400" /> +2% this term
               </p>
@@ -193,7 +194,7 @@ export default function TeacherDemoDashboard() {
                       <p className="text-[11px] text-red-400/70 truncate mt-0.5">{student.riskReason}</p>
                     </div>
                     <div className="text-right shrink-0">
-                      <p className={`text-sm font-semibold ${scoreColor(student.averageScore)}`}>{student.averageScore}%</p>
+                      <p className={`text-sm font-semibold ${scoreColor(student.averageScore)}`}>{student.averageScore}% (Grade {percentageToGCSEGrade(student.averageScore)})</p>
                     </div>
                   </Link>
                 ))}
@@ -235,7 +236,7 @@ export default function TeacherDemoDashboard() {
                   {/* Average score as large number */}
                   <div className="mb-3">
                     <span className={`text-2xl font-bold ${scoreColor(cls.avgScore)}`}>{cls.avgScore}%</span>
-                    <span className="text-xs text-white/30 ml-2">avg score</span>
+                    <span className="text-xs text-white/30 ml-2">avg score (Grade {percentageToGCSEGrade(cls.avgScore)})</span>
                   </div>
 
                   {/* RAG indicator bar */}
@@ -275,7 +276,7 @@ export default function TeacherDemoDashboard() {
                 {/* Timeline line */}
                 <div className="absolute left-[18px] top-3 bottom-3 w-px bg-white/5" />
                 <div className="space-y-4">
-                  {TEACHER_DEMO_LESSONS.map((lesson: any, idx: number) => (
+                  {TEACHER_DEMO_LESSONS.map((lesson, idx) => (
                     <div key={lesson.id} className="flex items-start gap-4 relative">
                       {/* Timeline dot */}
                       <div className={`w-[9px] h-[9px] rounded-full mt-1.5 shrink-0 relative z-10 ${idx === 0 ? "bg-emerald-400 ring-2 ring-emerald-400/20" : "bg-white/20"}`} />

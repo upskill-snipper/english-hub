@@ -45,7 +45,7 @@ function Section({
 function QuoteCard({ quote, speaker, analysis }: { quote: string; speaker?: string; analysis: string }) {
   return (
     <div className="rounded-lg border-l-4 border-slate-400 bg-muted/50 p-4 mb-3">
-      <p className="text-sm font-semibold text-slate-900 italic">&ldquo;{quote}&rdquo;</p>
+      <p className="text-sm font-semibold text-foreground italic">&ldquo;{quote}&rdquo;</p>
       {speaker && <p className="mt-1 text-xs font-medium text-muted-foreground">&mdash; {speaker}</p>}
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
@@ -64,7 +64,7 @@ function CharacterCard({ name, description }: { name: string; description: strin
 function ThemeCard({ title, description }: { title: string; description: string }) {
   return (
     <div className="rounded-lg border border-border bg-muted/30 p-4 mb-3">
-      <h4 className="font-bold text-slate-800">{title}</h4>
+      <h4 className="font-bold text-foreground">{title}</h4>
       <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{description}</p>
     </div>
   );
@@ -78,7 +78,7 @@ export default function JaneEyrePage() {
       {/* Hero */}
       <div className="mb-8">
         <div className="flex flex-wrap items-center gap-3 mb-2">
-          <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-muted-foreground uppercase tracking-wider">
+          <span className="rounded-full bg-muted px-3 py-1 text-xs font-bold text-muted-foreground uppercase tracking-wider">
             19th-Century Prose
           </span>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary uppercase tracking-wider">

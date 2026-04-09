@@ -11,7 +11,7 @@ const rows: ComparisonRow[] = [
   {
     feature: "Price",
     individual: "Per student per month",
-    school: "Tailored to department size",
+    school: "\u00a33,000 \u2013 \u00a37,000 / year",
   },
   {
     feature: "Students covered",
@@ -99,7 +99,7 @@ export function SchoolComparison() {
               Founding Schools Programme
             </p>
             <p className="text-white text-2xl font-bold">
-              Only <span className="text-emerald-400">20 places</span> available
+              Only <span className="text-emerald-400">10 places</span> available
               for 2026
             </p>
           </div>
@@ -171,7 +171,7 @@ export function SchoolComparison() {
 
       {/* Sub-note */}
       <p className="max-w-5xl mx-auto mt-4 text-center text-slate-500 text-sm">
-        Founding school pricing is tailored to your department size. Book a call
+        Founding Schools Programme pricing ranges from £3,000 to £7,000 per year. Book a call
         to discuss your package.
       </p>
     </section>

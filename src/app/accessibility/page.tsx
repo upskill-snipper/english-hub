@@ -196,10 +196,10 @@ export default function AccessibilityPage() {
             <li>
               <strong>Email:</strong>{' '}
               <a
-                href="mailto:support@theenglishhub.app"
+                href="mailto:info@Upskillenergy.com"
                 className="underline hover:text-foreground transition-colors"
               >
-                support@theenglishhub.app
+                info@Upskillenergy.com
               </a>
             </li>
           </ul>

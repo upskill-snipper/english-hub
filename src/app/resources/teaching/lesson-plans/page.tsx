@@ -204,8 +204,8 @@ export default function LessonPlansPage() {
     return (
       <>
         <div className="flex min-h-[60vh] items-center justify-center px-4">
-          <div className="max-w-md rounded-xl border border-red-200 bg-red-50 p-8 text-center">
-            <h2 className="text-lg font-bold text-red-800">Teacher Access Only</h2>
+          <div className="max-w-md rounded-xl border border-red-500/30 bg-red-500/10 p-8 text-center">
+            <h2 className="text-lg font-bold text-red-700 dark:text-red-300">Teacher Access Only</h2>
             <p className="mt-2 text-sm text-red-600">
               Lesson plans are only available to verified teacher accounts.
             </p>

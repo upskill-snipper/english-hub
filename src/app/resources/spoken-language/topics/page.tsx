@@ -246,9 +246,9 @@ const CATEGORIES: Category[] = [
   },
   {
     name: "Environment and Science",
-    colour: "text-emerald-700",
+    colour: "text-emerald-700 dark:text-emerald-300",
     borderColour: "border-emerald-500",
-    bgColour: "bg-emerald-50",
+    bgColour: "bg-emerald-500/10",
     topics: [
       {
         title: "Is space exploration worth the cost?",
@@ -362,9 +362,9 @@ const CATEGORIES: Category[] = [
   },
   {
     name: "Education and Young People",
-    colour: "text-purple-700",
+    colour: "text-purple-700 dark:text-purple-300",
     borderColour: "border-purple-500",
-    bgColour: "bg-purple-50",
+    bgColour: "bg-purple-500/10",
     topics: [
       {
         title: "Should homework be banned?",
@@ -480,7 +480,7 @@ const CATEGORIES: Category[] = [
     name: "Health and Wellbeing",
     colour: "text-rose-700",
     borderColour: "border-rose-500",
-    bgColour: "bg-rose-50",
+    bgColour: "bg-rose-500/10",
     topics: [
       {
         title: "The importance of mental health awareness in schools",
@@ -558,9 +558,9 @@ const CATEGORIES: Category[] = [
   },
   {
     name: "Culture, Media, and Identity",
-    colour: "text-amber-700",
+    colour: "text-amber-700 dark:text-amber-300",
     borderColour: "border-amber-500",
-    bgColour: "bg-amber-50",
+    bgColour: "bg-amber-500/10",
     topics: [
       {
         title: "Why representation in the media matters",
@@ -825,7 +825,7 @@ export default function SpokenLanguageTopicsPage() {
           </p>
           <Link
             href="/resources/spoken-language"
-            className="mt-6 inline-block rounded-lg bg-card px-8 py-3 text-sm font-semibold text-foreground shadow transition hover:bg-blue-50"
+            className="mt-6 inline-block rounded-lg bg-card px-8 py-3 text-sm font-semibold text-foreground shadow transition hover:bg-blue-500/10"
           >
             &larr; Back to the Full Guide
           </Link>

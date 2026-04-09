@@ -7,20 +7,22 @@ import { DEMO_CLASSES, DEMO_STUDENTS } from "@/data/demo-data";
 import { downloadCSV } from "@/lib/download-csv";
 
 function scoreToGrade(score: number): string {
-  if (score >= 90) return "A*";
-  if (score >= 80) return "A";
-  if (score >= 70) return "B";
-  if (score >= 60) return "C";
-  if (score >= 50) return "D";
-  if (score >= 40) return "E";
-  return "U";
+  if (score >= 90) return "9";
+  if (score >= 80) return "8";
+  if (score >= 70) return "7";
+  if (score >= 60) return "6";
+  if (score >= 50) return "5";
+  if (score >= 40) return "4";
+  if (score >= 30) return "3";
+  if (score >= 20) return "2";
+  return "1";
 }
 
 function gradeColor(grade: string): string {
-  if (grade === "A*" || grade === "A") return "text-emerald-400 print:text-emerald-700";
-  if (grade === "B") return "text-blue-400 print:text-blue-700";
-  if (grade === "C") return "text-amber-400 print:text-amber-700";
-  if (grade === "D") return "text-orange-400 print:text-orange-700";
+  const num = parseInt(grade);
+  if (num >= 8) return "text-emerald-400 print:text-emerald-700";
+  if (num >= 6) return "text-blue-400 print:text-blue-700";
+  if (num >= 4) return "text-amber-400 print:text-amber-700";
   return "text-red-400 print:text-red-700";
 }
 
@@ -338,7 +340,7 @@ export default function ClassReportPage() {
             </div>
             <div className="bg-neutral-800/50 print:bg-neutral-100 rounded-lg p-4 text-center">
               <div className={`text-2xl font-bold ${gradeColor(scoreToGrade(classAvgScore))}`}>
-                {scoreToGrade(classAvgScore)}
+                Grade {scoreToGrade(classAvgScore)}
               </div>
               <div className="text-neutral-500 print:text-neutral-600 text-xs mt-1">
                 Class Grade
@@ -472,7 +474,7 @@ export default function ClassReportPage() {
                           {s.averageScore}%
                         </td>
                         <td className={`px-3 py-2.5 text-center font-semibold ${gradeColor(grade)}`}>
-                          {grade}
+                          Grade {grade}
                         </td>
                         <td className="px-3 py-2.5 text-center text-neutral-300 print:text-black">
                           {s.overallProgress}%
@@ -576,7 +578,7 @@ export default function ClassReportPage() {
                   <span className="text-neutral-200 print:text-black font-medium">{s.name}</span>
                   <div className="flex items-center gap-4">
                     <span className="text-neutral-400 print:text-neutral-600">
-                      {s.averageScore}% ({scoreToGrade(s.averageScore)})
+                      {s.averageScore}% (Grade {scoreToGrade(s.averageScore)})
                     </span>
                     <span className="text-emerald-400 print:text-emerald-700 text-xs font-medium">
                       {s.assignmentsCompleted}/{s.assignmentsTotal} completed
@@ -614,7 +616,7 @@ export default function ClassReportPage() {
                     </div>
                     <div className="flex items-center gap-4">
                       <span className="text-neutral-400 print:text-neutral-600">
-                        {s.averageScore}% ({scoreToGrade(s.averageScore)})
+                        {s.averageScore}% (Grade {scoreToGrade(s.averageScore)})
                       </span>
                       <span className="text-red-400 print:text-red-700 text-xs font-medium">
                         {s.assignmentsCompleted}/{s.assignmentsTotal} completed

@@ -230,7 +230,7 @@ function PoemRow({
         {poem.themes.map((t) => (
           <span
             key={t}
-            className="rounded-full bg-blue-50 px-2.5 py-0.5 text-xs font-medium text-foreground"
+            className="rounded-full bg-blue-500/10 px-2.5 py-0.5 text-xs font-medium text-foreground"
           >
             {t}
           </span>
@@ -403,7 +403,7 @@ export default function AqaPoetryPage() {
           <h2 className="text-2xl font-bold text-foreground">
             Timing &amp; Exam Strategy
           </h2>
-          <div className="mt-4 rounded-xl border-2 border-primary bg-blue-50 p-6 text-sm text-muted-foreground leading-relaxed space-y-3">
+          <div className="mt-4 rounded-xl border-2 border-primary bg-blue-500/10 p-6 text-sm text-muted-foreground leading-relaxed space-y-3">
             <div className="grid gap-4 sm:grid-cols-2">
               <div>
                 <h3 className="font-bold text-foreground">
@@ -579,7 +579,7 @@ export default function AqaPoetryPage() {
               </ol>
             </div>
 
-            <div className="rounded-xl border-2 border-primary bg-blue-50 p-6">
+            <div className="rounded-xl border-2 border-primary bg-blue-500/10 p-6">
               <h3 className="text-lg font-bold text-foreground">
                 Useful Comparison Connectives
               </h3>

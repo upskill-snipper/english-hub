@@ -56,7 +56,7 @@ export default function AnalyticalWritingPage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-primary to-primary/80 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-primary/80">
+          <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
             Writing Skills Masterclass
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -136,7 +136,7 @@ export default function AnalyticalWritingPage() {
                   <div className="mt-3 rounded-lg bg-card p-3 border border-border">
                     <p className="text-xs font-semibold text-red-600 mb-1">Weak:</p>
                     <p className="text-sm text-muted-foreground italic">&ldquo;Shakespeare uses metaphors in Macbeth.&rdquo;</p>
-                    <p className="text-xs font-semibold text-green-700 mb-1 mt-2">Strong:</p>
+                    <p className="text-xs font-semibold text-green-700 dark:text-green-300 mb-1 mt-2">Strong:</p>
                     <p className="text-sm text-muted-foreground italic">&ldquo;Shakespeare presents Macbeth&apos;s growing guilt as an inescapable psychological torment through increasingly violent imagery.&rdquo;</p>
                   </div>
                 </div>
@@ -151,7 +151,7 @@ export default function AnalyticalWritingPage() {
                   <div className="mt-3 rounded-lg bg-card p-3 border border-border">
                     <p className="text-xs font-semibold text-red-600 mb-1">Weak:</p>
                     <p className="text-sm text-muted-foreground italic">&ldquo;Macbeth says &lsquo;Will all great Neptune&apos;s ocean wash this blood clean from my hand?&rsquo;&rdquo;</p>
-                    <p className="text-xs font-semibold text-green-700 mb-1 mt-2">Strong:</p>
+                    <p className="text-xs font-semibold text-green-700 dark:text-green-300 mb-1 mt-2">Strong:</p>
                     <p className="text-sm text-muted-foreground italic">&ldquo;This is evident when Macbeth despairs that not even &lsquo;great Neptune&apos;s ocean&rsquo; could &lsquo;wash this blood clean&rsquo; from his hands.&rdquo;</p>
                   </div>
                 </div>
@@ -225,9 +225,9 @@ export default function AnalyticalWritingPage() {
                 </p>
               </div>
 
-              <div className="mt-6 rounded-lg bg-amber-50 border border-amber-200 p-4">
-                <p className="text-sm font-semibold text-amber-800">Top tip</p>
-                <p className="mt-1 text-sm text-amber-700">
+              <div className="mt-6 rounded-lg bg-amber-500/10 border border-amber-500/30 p-4">
+                <p className="text-sm font-semibold text-amber-700 dark:text-amber-300">Top tip</p>
+                <p className="mt-1 text-sm text-amber-700 dark:text-amber-300">
                   The best responses have the E (Explain) section as the longest part of the
                   paragraph. Aim for at least 3&ndash;4 sentences of analysis for every
                   quotation you use. This is where the marks are.
@@ -254,12 +254,12 @@ export default function AnalyticalWritingPage() {
                   sophisticated method and should be your default approach.
                 </p>
                 <div className="space-y-3">
-                  <div className="rounded-lg bg-red-50 p-3 border border-red-200">
+                  <div className="rounded-lg bg-red-500/10 p-3 border border-red-500/30">
                     <p className="text-xs font-semibold text-red-600 mb-1">Instead of:</p>
                     <p className="text-sm text-muted-foreground">Scrooge is presented as miserly. &ldquo;He was a tight-fisted hand at the grindstone.&rdquo;</p>
                   </div>
-                  <div className="rounded-lg bg-green-50 p-3 border border-green-200">
-                    <p className="text-xs font-semibold text-green-700 mb-1">Write:</p>
+                  <div className="rounded-lg bg-green-500/10 p-3 border border-green-500/30">
+                    <p className="text-xs font-semibold text-green-700 dark:text-green-300 mb-1">Write:</p>
                     <p className="text-sm text-muted-foreground">Dickens presents Scrooge as a &ldquo;tight-fisted hand at the grindstone&rdquo;, immediately establishing his miserly and unfeeling nature.</p>
                   </div>
                 </div>
@@ -277,8 +277,8 @@ export default function AnalyticalWritingPage() {
                   hallmark of top-grade responses.
                 </p>
                 <div className="space-y-3">
-                  <div className="rounded-lg bg-green-50 p-3 border border-green-200">
-                    <p className="text-xs font-semibold text-green-700 mb-1">Example:</p>
+                  <div className="rounded-lg bg-green-500/10 p-3 border border-green-500/30">
+                    <p className="text-xs font-semibold text-green-700 dark:text-green-300 mb-1">Example:</p>
                     <p className="text-sm text-muted-foreground">
                       The verb &ldquo;squeezing&rdquo; suggests Scrooge physically extracts
                       value from others, while the adjective &ldquo;covetous&rdquo; implies
@@ -299,8 +299,8 @@ export default function AnalyticalWritingPage() {
                   This is useful for longer quotations or when the dramatic context matters.
                 </p>
                 <div className="space-y-3">
-                  <div className="rounded-lg bg-green-50 p-3 border border-green-200">
-                    <p className="text-xs font-semibold text-green-700 mb-1">Example:</p>
+                  <div className="rounded-lg bg-green-500/10 p-3 border border-green-500/30">
+                    <p className="text-xs font-semibold text-green-700 dark:text-green-300 mb-1">Example:</p>
                     <p className="text-sm text-muted-foreground">
                       At the climax of his moral crisis, Macbeth acknowledges his own damnation,
                       confessing that he has &ldquo;filed my mind&rdquo; and given his
@@ -310,9 +310,9 @@ export default function AnalyticalWritingPage() {
                 </div>
               </div>
 
-              <div className="rounded-lg bg-amber-50 border border-amber-200 p-4">
-                <p className="text-sm font-semibold text-amber-800">Golden rule</p>
-                <p className="mt-1 text-sm text-amber-700">
+              <div className="rounded-lg bg-amber-500/10 border border-amber-500/30 p-4">
+                <p className="text-sm font-semibold text-amber-700 dark:text-amber-300">Golden rule</p>
+                <p className="mt-1 text-sm text-amber-700 dark:text-amber-300">
                   Never let a quotation sit on its own as a standalone sentence. It should always be
                   embedded within your analysis or introduced with context. If you can remove the
                   quotation marks and the sentence still reads grammatically, you have embedded
@@ -470,8 +470,8 @@ export default function AnalyticalWritingPage() {
                 </p>
               </div>
 
-              <div className="mt-6 rounded-lg bg-amber-50 border border-amber-200 p-4">
-                <p className="text-sm font-semibold text-amber-800">Key phrases for structural analysis</p>
+              <div className="mt-6 rounded-lg bg-amber-500/10 border border-amber-500/30 p-4">
+                <p className="text-sm font-semibold text-amber-700 dark:text-amber-300">Key phrases for structural analysis</p>
                 <div className="mt-2 flex flex-wrap gap-2">
                   {[
                     "At the opening...", "The writer shifts focus to...",
@@ -531,7 +531,7 @@ export default function AnalyticalWritingPage() {
 
               <h3 className="mb-4 text-lg font-bold text-foreground">Without vs. With Evaluative Language</h3>
               <div className="grid gap-4 sm:grid-cols-2">
-                <div className="rounded-xl border border-red-200 bg-red-50 p-5">
+                <div className="rounded-xl border border-red-500/30 bg-red-500/10 p-5">
                   <p className="text-xs font-bold text-red-600 uppercase tracking-wider mb-2">Without evaluation</p>
                   <p className="text-sm text-muted-foreground">
                     &ldquo;Shakespeare uses the metaphor of blood to show guilt. The word
@@ -539,8 +539,8 @@ export default function AnalyticalWritingPage() {
                     feels guilty.&rdquo;
                   </p>
                 </div>
-                <div className="rounded-xl border border-green-200 bg-green-50 p-5">
-                  <p className="text-xs font-bold text-green-700 uppercase tracking-wider mb-2">With evaluation</p>
+                <div className="rounded-xl border border-green-500/30 bg-green-500/10 p-5">
+                  <p className="text-xs font-bold text-green-700 dark:text-green-300 uppercase tracking-wider mb-2">With evaluation</p>
                   <p className="text-sm text-muted-foreground">
                     &ldquo;Shakespeare masterfully constructs blood as a pervasive motif that
                     compellingly charts Macbeth&apos;s psychological disintegration. The
@@ -563,7 +563,7 @@ export default function AnalyticalWritingPage() {
               <h3 className="mb-4 text-lg font-bold text-foreground">Three Rules for Context</h3>
               <div className="space-y-4 mb-8">
                 <div className="flex gap-4 items-start">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-red-100 text-sm font-bold text-red-700">1</span>
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-red-500/15 text-sm font-bold text-red-700 dark:text-red-300">1</span>
                   <div>
                     <p className="font-semibold text-foreground">Never write a &ldquo;context paragraph&rdquo;</p>
                     <p className="text-sm text-muted-foreground mt-1">
@@ -574,7 +574,7 @@ export default function AnalyticalWritingPage() {
                   </div>
                 </div>
                 <div className="flex gap-4 items-start">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-red-100 text-sm font-bold text-red-700">2</span>
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-red-500/15 text-sm font-bold text-red-700 dark:text-red-300">2</span>
                   <div>
                     <p className="font-semibold text-foreground">Always connect context to the writer&apos;s purpose</p>
                     <p className="text-sm text-muted-foreground mt-1">
@@ -584,7 +584,7 @@ export default function AnalyticalWritingPage() {
                   </div>
                 </div>
                 <div className="flex gap-4 items-start">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-red-100 text-sm font-bold text-red-700">3</span>
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-red-500/15 text-sm font-bold text-red-700 dark:text-red-300">3</span>
                   <div>
                     <p className="font-semibold text-foreground">Use context to deepen analysis, not replace it</p>
                     <p className="text-sm text-muted-foreground mt-1">
@@ -597,7 +597,7 @@ export default function AnalyticalWritingPage() {
 
               <h3 className="mb-4 text-lg font-bold text-foreground">Weak vs. Strong Context Integration</h3>
               <div className="grid gap-4 sm:grid-cols-2">
-                <div className="rounded-xl border border-red-200 bg-red-50 p-5">
+                <div className="rounded-xl border border-red-500/30 bg-red-500/10 p-5">
                   <p className="text-xs font-bold text-red-600 uppercase tracking-wider mb-2">Bolted on (weak)</p>
                   <p className="text-sm text-muted-foreground">
                     &ldquo;In Victorian times, there was a lot of poverty. Many people were poor.
@@ -605,8 +605,8 @@ export default function AnalyticalWritingPage() {
                     show that rich people should help poor people.&rdquo;
                   </p>
                 </div>
-                <div className="rounded-xl border border-green-200 bg-green-50 p-5">
-                  <p className="text-xs font-bold text-green-700 uppercase tracking-wider mb-2">Woven in (strong)</p>
+                <div className="rounded-xl border border-green-500/30 bg-green-500/10 p-5">
+                  <p className="text-xs font-bold text-green-700 dark:text-green-300 uppercase tracking-wider mb-2">Woven in (strong)</p>
                   <p className="text-sm text-muted-foreground">
                     &ldquo;Dickens&apos; portrayal of Scrooge as &lsquo;solitary as an
                     oyster&rsquo; arguably reflects the utilitarian philosophy prevalent in
@@ -907,7 +907,7 @@ export default function AnalyticalWritingPage() {
               <div className="mb-8 space-y-4">
                 <div className="rounded-xl border border-border bg-card p-5 shadow-md">
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-red-100 text-sm font-bold text-red-700">1</span>
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-red-500/15 text-sm font-bold text-red-700 dark:text-red-300">1</span>
                     <p className="font-semibold text-foreground">Make a comparative point</p>
                   </div>
                   <p className="text-sm text-muted-foreground">
@@ -922,7 +922,7 @@ export default function AnalyticalWritingPage() {
 
                 <div className="rounded-xl border border-border bg-card p-5 shadow-md">
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-red-100 text-sm font-bold text-red-700">2</span>
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-red-500/15 text-sm font-bold text-red-700 dark:text-red-300">2</span>
                     <p className="font-semibold text-foreground">Analyse Text A with evidence</p>
                   </div>
                   <p className="text-sm text-muted-foreground">
@@ -932,7 +932,7 @@ export default function AnalyticalWritingPage() {
 
                 <div className="rounded-xl border border-border bg-card p-5 shadow-md">
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-red-100 text-sm font-bold text-red-700">3</span>
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-red-500/15 text-sm font-bold text-red-700 dark:text-red-300">3</span>
                     <p className="font-semibold text-foreground">Use a comparative connective to transition</p>
                   </div>
                   <p className="text-sm text-muted-foreground mb-3">
@@ -953,7 +953,7 @@ export default function AnalyticalWritingPage() {
 
                 <div className="rounded-xl border border-border bg-card p-5 shadow-md">
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-red-100 text-sm font-bold text-red-700">4</span>
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-red-500/15 text-sm font-bold text-red-700 dark:text-red-300">4</span>
                     <p className="font-semibold text-foreground">Analyse Text B with evidence</p>
                   </div>
                   <p className="text-sm text-muted-foreground">
@@ -1015,12 +1015,12 @@ export default function AnalyticalWritingPage() {
               </div>
 
               {/* Grade 5 */}
-              <div className="mb-6 rounded-xl border-2 border-amber-300 bg-amber-50 p-6">
+              <div className="mb-6 rounded-xl border-2 border-amber-500/40 bg-amber-500/10 p-6">
                 <div className="flex items-center gap-3 mb-4">
                   <span className="rounded-full bg-amber-400 px-4 py-1 text-sm font-bold text-white">Grade 5</span>
-                  <span className="text-sm font-semibold text-amber-700">Clear, explained response</span>
+                  <span className="text-sm font-semibold text-amber-700 dark:text-amber-300">Clear, explained response</span>
                 </div>
-                <div className="rounded-lg bg-card p-4 border border-amber-200">
+                <div className="rounded-lg bg-card p-4 border border-amber-500/30">
                   <p className="text-sm text-foreground leading-relaxed">
                     Shakespeare presents Lady Macbeth as a powerful character. When she finds
                     out about the witches&apos; prophecy, she says &ldquo;unsex me here&rdquo;
@@ -1033,8 +1033,8 @@ export default function AnalyticalWritingPage() {
                   </p>
                 </div>
                 <div className="mt-4 space-y-2">
-                  <p className="text-sm font-semibold text-amber-800">What keeps this at Grade 5:</p>
-                  <ul className="list-disc pl-5 text-sm text-amber-700 space-y-1">
+                  <p className="text-sm font-semibold text-amber-700 dark:text-amber-300">What keeps this at Grade 5:</p>
+                  <ul className="list-disc pl-5 text-sm text-amber-700 dark:text-amber-300 space-y-1">
                     <li>Makes a valid point and uses quotations</li>
                     <li>Some explanation of language, but stays surface-level</li>
                     <li>Context is mentioned but feels &ldquo;bolted on&rdquo; (&ldquo;in those days&rdquo;)</li>
@@ -1045,12 +1045,12 @@ export default function AnalyticalWritingPage() {
               </div>
 
               {/* Grade 7 */}
-              <div className="mb-6 rounded-xl border-2 border-blue-300 bg-blue-50 p-6">
+              <div className="mb-6 rounded-xl border-2 border-blue-500/40 bg-blue-500/10 p-6">
                 <div className="flex items-center gap-3 mb-4">
                   <span className="rounded-full bg-blue-500 px-4 py-1 text-sm font-bold text-white">Grade 7</span>
-                  <span className="text-sm font-semibold text-blue-700">Thoughtful, developed response</span>
+                  <span className="text-sm font-semibold text-blue-700 dark:text-blue-300">Thoughtful, developed response</span>
                 </div>
-                <div className="rounded-lg bg-card p-4 border border-blue-200">
+                <div className="rounded-lg bg-card p-4 border border-blue-500/30">
                   <p className="text-sm text-foreground leading-relaxed">
                     Shakespeare presents Lady Macbeth as a character who deliberately rejects
                     femininity in order to seize power in a patriarchal world. Her invocation,
@@ -1069,8 +1069,8 @@ export default function AnalyticalWritingPage() {
                   </p>
                 </div>
                 <div className="mt-4 space-y-2">
-                  <p className="text-sm font-semibold text-blue-800">What makes this Grade 7:</p>
-                  <ul className="list-disc pl-5 text-sm text-blue-700 space-y-1">
+                  <p className="text-sm font-semibold text-blue-700 dark:text-blue-300">What makes this Grade 7:</p>
+                  <ul className="list-disc pl-5 text-sm text-blue-700 dark:text-blue-300 space-y-1">
                     <li>Clear, arguable topic sentence</li>
                     <li>Longer quotation that is embedded and analysed in detail</li>
                     <li>Zooms in on specific words (&ldquo;direst&rdquo;, &ldquo;top-full&rdquo;)</li>
@@ -1082,12 +1082,12 @@ export default function AnalyticalWritingPage() {
               </div>
 
               {/* Grade 9 */}
-              <div className="mb-6 rounded-xl border-2 border-purple-300 bg-purple-50 p-6">
+              <div className="mb-6 rounded-xl border-2 border-purple-500/40 bg-purple-500/10 p-6">
                 <div className="flex items-center gap-3 mb-4">
                   <span className="rounded-full bg-purple-600 px-4 py-1 text-sm font-bold text-white">Grade 9</span>
-                  <span className="text-sm font-semibold text-purple-700">Convincing, critical, conceptualised response</span>
+                  <span className="text-sm font-semibold text-purple-700 dark:text-purple-300">Convincing, critical, conceptualised response</span>
                 </div>
-                <div className="rounded-lg bg-card p-4 border border-purple-200">
+                <div className="rounded-lg bg-card p-4 border border-purple-500/30">
                   <p className="text-sm text-foreground leading-relaxed">
                     Shakespeare constructs Lady Macbeth&apos;s power as fundamentally
                     transgressive &mdash; a deliberate violation of the gender hierarchy that
@@ -1116,8 +1116,8 @@ export default function AnalyticalWritingPage() {
                   </p>
                 </div>
                 <div className="mt-4 space-y-2">
-                  <p className="text-sm font-semibold text-purple-800">What makes this Grade 9:</p>
-                  <ul className="list-disc pl-5 text-sm text-purple-700 space-y-1">
+                  <p className="text-sm font-semibold text-purple-700 dark:text-purple-300">What makes this Grade 9:</p>
+                  <ul className="list-disc pl-5 text-sm text-purple-700 dark:text-purple-300 space-y-1">
                     <li>Conceptualised argument (&ldquo;fundamentally transgressive&rdquo;)</li>
                     <li>Analyses the writer&apos;s craft, not just the character</li>
                     <li>Zooms into individual words <em>and</em> zooms out to structural parallels</li>

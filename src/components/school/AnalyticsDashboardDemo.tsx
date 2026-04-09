@@ -40,7 +40,7 @@ const AT_RISK_STUDENTS = [
   {
     name: "Callum W.",
     year: "Y9",
-    issue: "Grade drop: B to D",
+    issue: "Grade drop: 7 to 5",
     severity: "medium",
     class: "9C English",
   },

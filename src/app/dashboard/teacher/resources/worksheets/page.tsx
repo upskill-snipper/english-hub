@@ -107,13 +107,13 @@ export default function WorksheetsPage() {
             </blockquote>
 
             <div className="grid gap-3 sm:grid-cols-2">
-              <div className="rounded bg-blue-50 p-3">
-                <p className="text-xs font-bold text-blue-800 mb-1">Technique(s)</p>
-                <p className="text-xs text-blue-700">{q.technique}</p>
+              <div className="rounded bg-blue-500/10 p-3">
+                <p className="text-xs font-bold text-blue-700 dark:text-blue-300 mb-1">Technique(s)</p>
+                <p className="text-xs text-blue-700 dark:text-blue-300">{q.technique}</p>
               </div>
-              <div className="rounded bg-emerald-50 p-3">
-                <p className="text-xs font-bold text-emerald-800 mb-1">Effect & Analysis</p>
-                <p className="text-xs text-emerald-700">{q.effect}</p>
+              <div className="rounded bg-emerald-500/10 p-3">
+                <p className="text-xs font-bold text-emerald-700 dark:text-emerald-300 mb-1">Effect & Analysis</p>
+                <p className="text-xs text-emerald-700 dark:text-emerald-300">{q.effect}</p>
               </div>
             </div>
           </div>

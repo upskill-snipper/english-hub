@@ -42,22 +42,22 @@ const MOCK_STUDENT_ESSAYS = [
 ];
 
 function scoreColor(score: number): string {
-  if (score >= 80) return "text-success";
-  if (score >= 60) return "text-accent";
-  return "text-warn";
+  if (score >= 80) return "text-green-500";
+  if (score >= 60) return "text-amber-500";
+  return "text-red-500";
 }
 
 function trendIcon(trend: "up" | "down" | "stable") {
   if (trend === "up") {
     return (
-      <svg className="w-4 h-4 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
       </svg>
     );
   }
   if (trend === "down") {
     return (
-      <svg className="w-4 h-4 text-warn" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
       </svg>
     );

@@ -131,9 +131,9 @@ export default function CancellationPolicyPage() {
             Example: Annual pro-rata refund
           </p>
           <p>
-            You pay &pound;79.99 for a 12-month plan and cancel after 4 months
+            You pay &pound;67.99 for a 12-month plan and cancel after 4 months
             and 10 days. You have used 5 months (4 complete + 1 partial). Refund
-            for the remaining 7 months: &pound;79.99 &divide; 12 = &pound;6.67/month
+            for the remaining 7 months: &pound;67.99 &divide; 12 = &pound;5.67/month
             &times; 7 = <strong>&pound;46.69 refund</strong>.
           </p>
         </div>
@@ -192,8 +192,8 @@ export default function CancellationPolicyPage() {
         </h3>
         <p className="mb-3">
           Send an email to{" "}
-          <a href="mailto:support@theenglishhub.app">
-            support@theenglishhub.app
+          <a href="mailto:info@Upskillenergy.com">
+            info@Upskillenergy.com
           </a>{" "}
           with your full name, account email, and &quot;I want to cancel my
           subscription.&quot; We will confirm within 2 working days.
@@ -252,8 +252,8 @@ export default function CancellationPolicyPage() {
           <li>
             You can request a copy of your data at any time before deletion by
             emailing{" "}
-            <a href="mailto:support@theenglishhub.app">
-              support@theenglishhub.app
+            <a href="mailto:info@Upskillenergy.com">
+              info@Upskillenergy.com
             </a>
             .
           </li>
@@ -268,8 +268,8 @@ export default function CancellationPolicyPage() {
           using any of the methods above. If you are aged 14 to 17 and manage
           your own account, you have exactly the same cancellation rights. If you
           are unsure about anything, email{" "}
-          <a href="mailto:support@theenglishhub.app">
-            support@theenglishhub.app
+          <a href="mailto:info@Upskillenergy.com">
+            info@Upskillenergy.com
           </a>{" "}
           and we will help you.
         </p>
@@ -281,8 +281,8 @@ export default function CancellationPolicyPage() {
         <div className="bg-muted rounded-lg p-4 text-sm">
           <p>
             Email:{" "}
-            <a href="mailto:support@theenglishhub.app">
-              support@theenglishhub.app
+            <a href="mailto:info@Upskillenergy.com">
+              info@Upskillenergy.com
             </a>
           </p>
           <p>Operated by: Upskill Energy Limited</p>
@@ -312,8 +312,8 @@ export default function CancellationPolicyPage() {
             Hub
             <br />
             <strong>Email:</strong>{" "}
-            <a href="mailto:support@theenglishhub.app">
-              support@theenglishhub.app
+            <a href="mailto:info@Upskillenergy.com">
+              info@Upskillenergy.com
             </a>
           </p>
           <p className="mb-4">

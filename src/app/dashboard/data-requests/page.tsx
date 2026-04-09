@@ -31,7 +31,7 @@ const TYPE_LABELS: Record<string, string> = {
 };
 
 const STATUS_STYLES: Record<string, string> = {
-  PENDING: "bg-yellow-100 text-yellow-800",
+  PENDING: "bg-yellow-500/15 text-yellow-700 dark:text-yellow-300",
   PROCESSING: "bg-primary/15 text-primary",
   COMPLETED: "bg-success-100 text-success-700",
   REFUSED: "bg-warn-100 text-warn-700",

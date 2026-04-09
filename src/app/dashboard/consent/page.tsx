@@ -215,7 +215,7 @@ export default function ConsentManagementPage() {
       {error && (
         <div
           role="alert"
-          className="mt-4 rounded-lg border border-red-200 bg-red-950/20 p-3 text-sm text-red-400"
+          className="mt-4 rounded-lg border border-red-500/30 bg-red-950/20 p-3 text-sm text-red-400"
         >
           {error}
         </div>
@@ -223,7 +223,7 @@ export default function ConsentManagementPage() {
       {success && (
         <div
           role="status"
-          className="mt-4 rounded-lg border border-green-200 bg-green-950/20 p-3 text-sm text-green-400"
+          className="mt-4 rounded-lg border border-green-500/30 bg-green-950/20 p-3 text-sm text-green-400"
         >
           {success}
         </div>
@@ -276,7 +276,7 @@ export default function ConsentManagementPage() {
                     <button
                       onClick={() => handleWithdraw(consent.consentType)}
                       disabled={withdrawing === consent.consentType}
-                      className="ml-4 shrink-0 rounded-md border border-red-200 bg-card px-3 py-1.5 text-sm font-medium text-red-600 hover:bg-red-950/20 disabled:opacity-50 transition-colors"
+                      className="ml-4 shrink-0 rounded-md border border-red-500/30 bg-card px-3 py-1.5 text-sm font-medium text-red-600 hover:bg-red-950/20 disabled:opacity-50 transition-colors"
                     >
                       {withdrawing === consent.consentType
                         ? "Withdrawing..."

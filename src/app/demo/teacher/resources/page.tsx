@@ -435,14 +435,20 @@ export default function TeacherResourcesPage() {
     return true
   })
 
-  function handleDownload(resource: TeachingResource, format: "pdf" | "pptx" | "word" = "pdf") {
+  async function handleDownload(resource: TeachingResource, format: "pdf" | "pptx" | "word" = "pdf") {
     if (resource.isFree) {
-      if (format === "pdf") {
-        generateLessonPlan("An Inspector Calls", act1LessonPlan)
-      } else if (format === "pptx") {
-        generateLessonPlanPptx("An Inspector Calls", act1LessonPlan)
-      } else if (format === "word") {
-        generateLessonPlanWord("An Inspector Calls", act1LessonPlan)
+      try {
+        if (format === "pdf") {
+          generateLessonPlan("An Inspector Calls", act1LessonPlan)
+        } else if (format === "pptx") {
+          await generateLessonPlanPptx("An Inspector Calls", act1LessonPlan)
+        } else if (format === "word") {
+          generateLessonPlanWord("An Inspector Calls", act1LessonPlan)
+        }
+      } catch (err) {
+        console.error("Download failed:", err)
+        setToast("Download failed -- please try again")
+        setTimeout(() => setToast(null), 3000)
       }
       return
     }

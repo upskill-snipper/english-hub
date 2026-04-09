@@ -189,7 +189,7 @@ const characters = [
 const themes = [
   {
     title: "Social Responsibility and Poverty",
-    colour: "bg-red-50 border-red-200",
+    colour: "bg-red-500/10 border-red-500/30",
     analysis:
       "This is the novella's most important theme. Dickens wrote A Christmas Carol as an explicit attack on the indifference of the wealthy towards the poor. Scrooge's initial attitude ('Are there no prisons?') reflects real Victorian views that poverty was the fault of the poor themselves. Through Scrooge's transformation, Dickens argues that the wealthy have a moral and social duty to help those less fortunate. The novella is fundamentally a political text disguised as a Christmas story.",
     keyPoints: [
@@ -209,7 +209,7 @@ const themes = [
   },
   {
     title: "Redemption and Transformation",
-    colour: "bg-green-50 border-green-200",
+    colour: "bg-green-500/10 border-green-500/30",
     analysis:
       "A Christmas Carol is fundamentally a story about the possibility of change. Dickens shows that even someone as deeply entrenched in selfishness as Scrooge can be redeemed. The transformation is not gradual but sudden and dramatic - reflecting Dickens's optimistic belief that moral awakening can happen at any moment. However, Scrooge's change is driven by both compassion for others (Tiny Tim) and fear for himself (his own death), raising the question of whether true altruism is possible.",
     keyPoints: [
@@ -228,7 +228,7 @@ const themes = [
   },
   {
     title: "Christmas and Generosity",
-    colour: "bg-amber-50 border-amber-200",
+    colour: "bg-amber-500/10 border-amber-500/30",
     analysis:
       "Christmas in the novella represents more than a religious festival. It symbolises everything Scrooge lacks: warmth, generosity, family, community, and compassion. Dickens helped shape the modern idea of Christmas as a time for giving and togetherness. Fred's defence of Christmas as 'a kind, forgiving, charitable, pleasant time' is the novella's manifesto. However, Scrooge learns to 'keep Christmas all the year' - generosity should not be limited to one day.",
     keyPoints: [
@@ -246,7 +246,7 @@ const themes = [
   },
   {
     title: "Family and Isolation",
-    colour: "bg-blue-50 border-blue-200",
+    colour: "bg-blue-500/10 border-blue-500/30",
     analysis:
       "The novella contrasts warm family life (the Cratchits, Fred) with Scrooge's cold isolation. Dickens shows that money cannot compensate for human connection. Scrooge's past reveals how isolation was imposed on him (abandoned at school) before he chose it (rejecting Belle, rejecting Fred). His redemption is a return to community - he becomes a 'second father' to Tiny Tim and joins Fred's celebrations.",
     keyPoints: [
@@ -265,7 +265,7 @@ const themes = [
   },
   {
     title: "Greed and Wealth",
-    colour: "bg-yellow-50 border-yellow-200",
+    colour: "bg-yellow-500/10 border-yellow-500/30",
     analysis:
       "Dickens presents greed as spiritually and socially destructive. Scrooge and Marley devoted their lives to accumulating wealth, but it brought neither happiness nor fulfilment. Marley's chains - each link forged from a selfish act - visualise the moral cost of greed. The novella does not argue against wealth itself, but against hoarding it while others suffer. Fezziwig shows that wealth used generously brings joy to everyone.",
     keyPoints: [
@@ -467,7 +467,7 @@ export default function ChristmasCarolPage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-primary to-primary/90 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary/20">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-white/70">
             AQA English Literature &middot; Paper 1
           </p>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">

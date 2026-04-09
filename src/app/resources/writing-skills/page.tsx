@@ -147,22 +147,22 @@ const QUICK_TIPS = [
 const PRACTICE_LINKS = [
   {
     label: "Creative Writing Questions",
-    href: "/resources/practice?type=creative-writing",
+    href: "/practice?type=creative-writing",
     description: "Descriptive and narrative prompts with AI-powered feedback.",
   },
   {
     label: "Persuasive Writing Questions",
-    href: "/resources/practice?type=persuasive-writing",
+    href: "/practice?type=persuasive-writing",
     description: "Article, speech, and letter tasks to sharpen your argument.",
   },
   {
     label: "Language Analysis Questions",
-    href: "/resources/practice?type=language-analysis",
+    href: "/practice?type=language-analysis",
     description: "Extract-based questions testing your analytical writing.",
   },
   {
     label: "All Practice Questions",
-    href: "/resources/practice",
+    href: "/practice",
     description: "Browse every question type across all exam boards.",
   },
 ];
@@ -192,7 +192,7 @@ export default function WritingSkillsPage() {
         </div>
 
         <div className="relative mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-primary/80">
+          <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
             Writing Skills Masterclass
           </p>
           <h1 className="mt-3 text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">

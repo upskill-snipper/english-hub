@@ -79,11 +79,11 @@ const MOCK_GROUPS = ["10A English Lit", "10B English Lang", "11A English Lit"];
 function statusBadge(status: "active" | "closed" | "draft") {
   switch (status) {
     case "active":
-      return "bg-success-50 text-success-700";
+      return "bg-green-500/10 text-green-600";
     case "closed":
       return "bg-muted text-muted-foreground";
     case "draft":
-      return "bg-warn-50 text-warn-700";
+      return "bg-amber-500/10 text-amber-600";
   }
 }
 
@@ -217,7 +217,7 @@ export default function AssignmentsPage() {
                     <p className="text-xs text-muted-foreground">Graded</p>
                     <div className="mt-1 h-1.5 w-20 rounded-full bg-muted overflow-hidden">
                       <div
-                        className="h-full rounded-full bg-success"
+                        className="h-full rounded-full bg-green-500"
                         style={{
                           width:
                             assignment.submitted > 0

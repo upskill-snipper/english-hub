@@ -24,6 +24,7 @@ import {
   Play,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { percentageToGCSEGrade } from "@/lib/grades"
 
 // ---------------------------------------------------------------------------
 // Demo data -- Aisha Rahman's student perspective
@@ -371,7 +372,7 @@ export default function StudentDemoPage() {
                   +3%
                 </span>
               </div>
-              <p className="text-3xl font-bold text-white/90 tabular-nums">{STUDENT.averageScore}%</p>
+              <p className="text-3xl font-bold text-white/90 tabular-nums">{STUDENT.averageScore}% <span className="text-lg text-white/50">(Grade {percentageToGCSEGrade(STUDENT.averageScore)})</span></p>
               <p className="text-[11px] text-white/30 mt-1">across all assessments</p>
             </div>
 

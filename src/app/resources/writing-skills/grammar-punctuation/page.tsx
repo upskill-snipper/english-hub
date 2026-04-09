@@ -47,13 +47,13 @@ function ExampleBox({ children }: { children: React.ReactNode }) {
 function CorrectIncorrect({ correct, incorrect }: { correct: string; incorrect: string }) {
   return (
     <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3">
-      <div className="rounded-lg bg-red-50 border border-red-200 px-4 py-3">
+      <div className="rounded-lg bg-red-500/10 border border-red-500/30 px-4 py-3">
         <p className="text-xs font-semibold text-red-600 uppercase tracking-wider mb-1">Incorrect</p>
-        <p className="text-sm text-red-800 italic">{incorrect}</p>
+        <p className="text-sm text-red-700 dark:text-red-300 italic">{incorrect}</p>
       </div>
-      <div className="rounded-lg bg-green-50 border border-green-200 px-4 py-3">
+      <div className="rounded-lg bg-green-500/10 border border-green-500/30 px-4 py-3">
         <p className="text-xs font-semibold text-green-600 uppercase tracking-wider mb-1">Correct</p>
-        <p className="text-sm text-green-800 italic">{correct}</p>
+        <p className="text-sm text-green-700 dark:text-green-300 italic">{correct}</p>
       </div>
     </div>
   );
@@ -78,7 +78,7 @@ export default function GrammarPunctuationPage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-primary to-primary/80 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-primary/80">
+          <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
             Writing Skills Masterclass
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -804,33 +804,33 @@ export default function GrammarPunctuationPage() {
               <div className="space-y-4">
                 <RuleCard title="What Examiners Are Looking For">
                   <div className="mt-2 space-y-4">
-                    <div className="rounded-lg border-l-4 border-red-400 bg-red-50 px-4 py-3">
-                      <p className="font-semibold text-red-800 text-sm">Level 1 (1-4 marks) -- Limited</p>
-                      <ul className="mt-1 text-sm text-red-700 list-disc list-inside space-y-1">
+                    <div className="rounded-lg border-l-4 border-red-400 bg-red-500/10 px-4 py-3">
+                      <p className="font-semibold text-red-700 dark:text-red-300 text-sm">Level 1 (1-4 marks) -- Limited</p>
+                      <ul className="mt-1 text-sm text-red-700 dark:text-red-300 list-disc list-inside space-y-1">
                         <li>Simple vocabulary; limited sentence forms</li>
                         <li>Some accuracy in spelling of common words</li>
                         <li>Some accuracy in basic punctuation (full stops, capital letters)</li>
                       </ul>
                     </div>
-                    <div className="rounded-lg border-l-4 border-yellow-400 bg-yellow-50 px-4 py-3">
-                      <p className="font-semibold text-yellow-800 text-sm">Level 2 (5-8 marks) -- Some Success</p>
-                      <ul className="mt-1 text-sm text-yellow-700 list-disc list-inside space-y-1">
+                    <div className="rounded-lg border-l-4 border-yellow-400 bg-yellow-500/10 px-4 py-3">
+                      <p className="font-semibold text-yellow-700 dark:text-yellow-300 text-sm">Level 2 (5-8 marks) -- Some Success</p>
+                      <ul className="mt-1 text-sm text-yellow-700 dark:text-yellow-300 list-disc list-inside space-y-1">
                         <li>Some varied vocabulary; some sentence variety</li>
                         <li>Spelling generally accurate (including some complex words)</li>
                         <li>Some varied punctuation used, sometimes successfully</li>
                       </ul>
                     </div>
-                    <div className="rounded-lg border-l-4 border-blue-400 bg-blue-50 px-4 py-3">
-                      <p className="font-semibold text-blue-800 text-sm">Level 3 (9-12 marks) -- Consistent</p>
-                      <ul className="mt-1 text-sm text-blue-700 list-disc list-inside space-y-1">
+                    <div className="rounded-lg border-l-4 border-blue-400 bg-blue-500/10 px-4 py-3">
+                      <p className="font-semibold text-blue-700 dark:text-blue-300 text-sm">Level 3 (9-12 marks) -- Consistent</p>
+                      <ul className="mt-1 text-sm text-blue-700 dark:text-blue-300 list-disc list-inside space-y-1">
                         <li>Increasingly sophisticated vocabulary; variety of sentence forms for effect</li>
                         <li>Spelling generally accurate, including complex and irregular words</li>
                         <li>Range of punctuation used with general accuracy</li>
                       </ul>
                     </div>
-                    <div className="rounded-lg border-l-4 border-green-400 bg-green-50 px-4 py-3">
-                      <p className="font-semibold text-green-800 text-sm">Level 4 (13-16 marks) -- Compelling</p>
-                      <ul className="mt-1 text-sm text-green-700 list-disc list-inside space-y-1">
+                    <div className="rounded-lg border-l-4 border-green-400 bg-green-500/10 px-4 py-3">
+                      <p className="font-semibold text-green-700 dark:text-green-300 text-sm">Level 4 (13-16 marks) -- Compelling</p>
+                      <ul className="mt-1 text-sm text-green-700 dark:text-green-300 list-disc list-inside space-y-1">
                         <li>Extensive and ambitious vocabulary</li>
                         <li>Full range of sentence forms used effectively for purpose</li>
                         <li>Spelling consistently accurate throughout, including ambitious vocabulary</li>

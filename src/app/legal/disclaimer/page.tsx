@@ -213,8 +213,8 @@ export default function DisclaimerPage() {
           If you have questions about any of these disclaimers, or if you
           believe any content on The English Hub infringes on your intellectual
           property, please contact us at{" "}
-          <a href="mailto:support@theenglishhub.app">
-            support@theenglishhub.app
+          <a href="mailto:info@Upskillenergy.com">
+            info@Upskillenergy.com
           </a>
           .
         </p>

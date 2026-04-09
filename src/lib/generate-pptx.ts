@@ -367,7 +367,7 @@ export async function generateLessonPlanPptx(topic: string, data: LessonPlanData
 
   // ── Write file ──────────────────────────────────────────────────────────
   const fileName = `${topic.replace(/\s+/g, '-')}-lesson-plan.pptx`
-  pptx.writeFile({ fileName })
+  await pptx.writeFile({ fileName })
 }
 
 // ─── Differentiation grid helper ──────────────────────────────────────────────
@@ -490,5 +490,5 @@ export async function generateResourcePptx(data: ResourcePptxData): Promise<void
   })
 
   const fileName = `${data.title.replace(/[^a-zA-Z0-9]+/g, '-').replace(/-+$/, '')}.pptx`
-  pptx.writeFile({ fileName })
+  await pptx.writeFile({ fileName })
 }

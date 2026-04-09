@@ -20,7 +20,7 @@ export default function ExamDayPage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-primary/20">
+          <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
             Exam Technique
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -64,7 +64,7 @@ export default function ExamDayPage() {
 
         <div className="mt-8 grid gap-6 sm:grid-cols-2">
           <div className="rounded-xl border border-border bg-card p-6 shadow-md">
-            <h3 className="font-bold text-green-700">Essentials</h3>
+            <h3 className="font-bold text-green-700 dark:text-green-300">Essentials</h3>
             <ul className="mt-4 space-y-3">
               {[
                 "Black pens (at least 2 -- one will run out at the worst moment)",
@@ -75,7 +75,7 @@ export default function ExamDayPage() {
                 "Any required ID or exam card",
               ].map((item) => (
                 <li key={item} className="flex gap-3 text-sm text-muted-foreground">
-                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-green-100 text-xs text-green-600">
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-green-500/15 text-xs text-green-600">
                     &#10003;
                   </span>
                   <span className="leading-relaxed">{item}</span>
@@ -238,7 +238,7 @@ export default function ExamDayPage() {
           </div>
         </div>
 
-        <div className="mt-8 rounded-xl border border-primary/20 bg-primary/10/50 p-6">
+        <div className="mt-8 rounded-xl border border-primary/20 bg-primary/10 p-6">
           <p className="text-sm text-muted-foreground leading-relaxed">
             <strong>Pro tip:</strong> Cross out your plan with a single line
             when you are done. The examiner will not mark it, but if you run out

@@ -508,7 +508,7 @@ function PoemCard({ poem }: { poem: PoemAnalysis }) {
           </ul>
         </div>
 
-        <div className="rounded-lg bg-blue-50 p-3">
+        <div className="rounded-lg bg-blue-500/10 p-3">
           <h4 className="text-xs font-semibold uppercase tracking-wide text-foreground">
             Comparison Ideas
           </h4>
@@ -700,7 +700,7 @@ export default function PoetryPage() {
               </ol>
             </div>
 
-            <div className="rounded-xl border-2 border-primary bg-blue-50 p-6">
+            <div className="rounded-xl border-2 border-primary bg-blue-500/10 p-6">
               <h3 className="text-lg font-bold text-foreground">
                 Useful Comparison Connectives
               </h3>

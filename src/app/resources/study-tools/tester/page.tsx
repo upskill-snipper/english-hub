@@ -636,14 +636,14 @@ export default function QuoteTesterPage() {
           {wrongResults.map((result, idx) => (
             <div
               key={result.question.id}
-              className="overflow-hidden rounded-xl border border-red-200 bg-card shadow-md"
+              className="overflow-hidden rounded-xl border border-red-500/30 bg-card shadow-md"
             >
-              <div className="border-b border-red-100 bg-red-50 px-5 py-3">
+              <div className="border-b border-red-500/20 bg-red-500/10 px-5 py-3">
                 <div className="flex items-center gap-2">
                   <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-red-500/10 text-xs font-bold text-red-500">
                     {idx + 1}
                   </span>
-                  <span className="text-sm font-semibold text-red-800">
+                  <span className="text-sm font-semibold text-red-700 dark:text-red-300">
                     {result.question.prompt}
                   </span>
                 </div>
@@ -667,7 +667,7 @@ export default function QuoteTesterPage() {
                     {result.question.correctAnswer}
                   </span>
                 </div>
-                <div className="mt-3 rounded-lg bg-blue-50 border border-blue-100 px-4 py-3">
+                <div className="mt-3 rounded-lg bg-blue-500/10 border border-blue-500/20 px-4 py-3">
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     {result.question.explanation}
                   </p>
@@ -769,9 +769,9 @@ export default function QuoteTesterPage() {
 
               if (answerLocked) {
                 if (isCorrect) {
-                  classes += "border-emerald-500 bg-emerald-50 text-emerald-800";
+                  classes += "border-emerald-500 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300";
                 } else if (isSelected && !isCorrect) {
-                  classes += "border-red-400 bg-red-50 text-red-500";
+                  classes += "border-red-400 bg-red-500/10 text-red-500";
                 } else {
                   classes += "border-border bg-muted text-muted-foreground";
                 }
@@ -809,7 +809,7 @@ export default function QuoteTesterPage() {
 
           {/* Explanation after answer */}
           {answerLocked && (
-            <div className="mt-5 rounded-lg border border-blue-100 bg-blue-50 px-4 py-3">
+            <div className="mt-5 rounded-lg border border-blue-500/20 bg-blue-500/10 px-4 py-3">
               <p className="text-sm leading-relaxed text-muted-foreground">
                 {currentQuestion.explanation}
               </p>

@@ -156,10 +156,10 @@ export default function RefundPolicyPage() {
             <li>
               <strong className="text-foreground">Email us</strong> at{' '}
               <a
-                href="mailto:support@theenglishhub.app"
+                href="mailto:info@Upskillenergy.com"
                 className="underline hover:text-foreground"
               >
-                support@theenglishhub.app
+                info@Upskillenergy.com
               </a>{' '}
               with your account email address and a brief description of why you would like a
               refund. We aim to respond to all refund requests within two business days.
@@ -190,10 +190,10 @@ export default function RefundPolicyPage() {
             If you have not received your refund after ten business days, please check with your
             bank or card provider first. If the issue persists, contact us at{' '}
             <a
-              href="mailto:support@theenglishhub.app"
+              href="mailto:info@Upskillenergy.com"
               className="underline hover:text-foreground"
             >
-              support@theenglishhub.app
+              info@Upskillenergy.com
             </a>{' '}
             and we will investigate.
           </p>
@@ -269,10 +269,10 @@ export default function RefundPolicyPage() {
             <li>
               Email:{' '}
               <a
-                href="mailto:support@theenglishhub.app"
+                href="mailto:info@Upskillenergy.com"
                 className="underline hover:text-foreground"
               >
-                support@theenglishhub.app
+                info@Upskillenergy.com
               </a>
             </li>
             <li>

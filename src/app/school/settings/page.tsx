@@ -348,10 +348,10 @@ function SubscriptionSection() {
           <p className="text-sm text-muted-foreground">
             Billing enquiries:{" "}
             <a
-              href="mailto:schools@theenglishhub.app"
+              href="mailto:info@Upskillenergy.com"
               className="text-primary underline-offset-4 hover:underline"
             >
-              schools@theenglishhub.app
+              info@Upskillenergy.com
             </a>
           </p>
           <Button variant="outline" size="sm">

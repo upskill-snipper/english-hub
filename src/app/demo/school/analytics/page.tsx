@@ -84,7 +84,7 @@ function RingChart({
   size = 80,
   strokeWidth = 8,
   color = "text-emerald-400",
-  bgColor = "text-white/10",
+  bgColor = "text-foreground/10",
   label,
 }: {
   value: number
@@ -123,8 +123,8 @@ function RingChart({
         />
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <span className="text-base font-bold text-white">{Math.round(value)}%</span>
-        {label && <span className="text-[9px] text-neutral-500 leading-tight">{label}</span>}
+        <span className="text-base font-bold text-foreground">{Math.round(value)}%</span>
+        {label && <span className="text-[9px] text-muted-foreground/70 leading-tight">{label}</span>}
       </div>
     </div>
   )
@@ -146,13 +146,13 @@ function TrendBadge({ value, suffix = "%" }: { value: number; suffix?: string })
         {value}{suffix}
       </span>
     )
-  return <span className="text-xs text-neutral-500">No change</span>
+  return <span className="text-xs text-muted-foreground/70">No change</span>
 }
 
 // ── Horizontal bar ─────────────────────────────────────────
 function HBar({ value, max, color = "bg-blue-500" }: { value: number; max: number; color?: string }) {
   return (
-    <div className="h-2.5 rounded-full bg-white/10 overflow-hidden">
+    <div className="h-2.5 rounded-full bg-muted overflow-hidden">
       <div
         className={`h-full rounded-full transition-all ${color}`}
         style={{ width: `${Math.min((value / max) * 100, 100)}%` }}
@@ -299,43 +299,43 @@ export default function AnalyticsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white">
-      {/* Demo banner */}
-      <div className="bg-amber-500/10 border-b border-amber-500/20 px-4 py-2.5 text-center">
-        <p className="text-sm text-amber-200/90">
-          <Info className="inline-block w-4 h-4 mr-1.5 -mt-0.5" />
-          This is a demo dashboard with sample data.{" "}
+    <div className="text-foreground">
+      <div className="space-y-8">
+        {/* Page toggle: Analytics / Reports */}
+        <div className="flex items-center gap-1 rounded-lg border border-border bg-muted/40 p-1 w-fit">
+          <span className="flex items-center gap-1.5 rounded-md bg-primary/10 text-primary px-4 py-2 text-sm font-semibold">
+            <BarChart3 className="w-4 h-4" />
+            Analytics
+          </span>
           <Link
-            href="/for-schools/register"
-            className="underline underline-offset-2 hover:text-amber-100 font-medium"
+            href="/demo/school/reports"
+            className="flex items-center gap-1.5 rounded-md px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
           >
-            Register your school
-          </Link>{" "}
-          to see your real analytics.
-        </p>
-      </div>
+            <FileText className="w-4 h-4" />
+            Reports
+          </Link>
+        </div>
 
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header row */}
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
             <h1 className="text-3xl font-bold tracking-tight">School Analytics</h1>
-            <p className="text-neutral-400 mt-1">
+            <p className="text-muted-foreground mt-1">
               {DEMO_SCHOOL.name} &middot; {vary(DEMO_STATS.totalStudents, dateRange)} students enrolled
             </p>
           </div>
 
           <div className="flex items-center gap-3">
             {/* Date range selector */}
-            <div className="flex items-center gap-1 rounded-lg bg-white/5 border border-white/10 p-1">
+            <div className="flex items-center gap-1 rounded-lg bg-muted/50 border border-border p-1">
               {(Object.keys(DATE_LABELS) as DateRange[]).map((key) => (
                 <button
                   key={key}
                   onClick={() => setDateRange(key)}
                   className={`px-3 py-1.5 text-sm rounded-md transition-all ${
                     dateRange === key
-                      ? "bg-white/10 text-white font-medium"
-                      : "text-neutral-400 hover:text-white hover:bg-white/5"
+                      ? "bg-muted text-foreground font-medium"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
                   }`}
                 >
                   {DATE_LABELS[key]}
@@ -348,7 +348,7 @@ export default function AnalyticsPage() {
               <Button
                 variant="outline"
                 size="sm"
-                className="border-white/10 text-neutral-300 hover:text-white hover:bg-white/5"
+                className="border-border text-foreground/80 hover:text-foreground hover:bg-muted/50"
                 onClick={() => handleExport("Excel")}
               >
                 <FileSpreadsheet className="w-4 h-4 mr-1.5" />
@@ -357,7 +357,7 @@ export default function AnalyticsPage() {
               <Button
                 variant="outline"
                 size="sm"
-                className="border-white/10 text-neutral-300 hover:text-white hover:bg-white/5"
+                className="border-border text-foreground/80 hover:text-foreground hover:bg-muted/50"
                 onClick={() => handleExport("PDF")}
               >
                 <Download className="w-4 h-4 mr-1.5" />
@@ -371,39 +371,39 @@ export default function AnalyticsPage() {
         <Tabs defaultValue="overview">
           <TabsList
             variant="line"
-            className="w-full justify-start border-b border-white/10 rounded-none mb-8 gap-0 bg-transparent"
+            className="w-full justify-start border-b border-border rounded-none mb-8 gap-0 bg-transparent"
           >
             <TabsTrigger
               value="overview"
-              className="px-4 py-2.5 text-sm data-active:text-emerald-400 text-neutral-400 hover:text-white rounded-none border-b-2 border-transparent data-active:border-emerald-400"
+              className="px-4 py-2.5 text-sm data-active:text-emerald-400 text-muted-foreground hover:text-foreground rounded-none border-b-2 border-transparent data-active:border-emerald-400"
             >
               <BarChart3 className="w-4 h-4 mr-1.5" />
               Overview
             </TabsTrigger>
             <TabsTrigger
               value="year-groups"
-              className="px-4 py-2.5 text-sm data-active:text-blue-400 text-neutral-400 hover:text-white rounded-none border-b-2 border-transparent data-active:border-blue-400"
+              className="px-4 py-2.5 text-sm data-active:text-blue-400 text-muted-foreground hover:text-foreground rounded-none border-b-2 border-transparent data-active:border-blue-400"
             >
               <GraduationCap className="w-4 h-4 mr-1.5" />
               Year Groups
             </TabsTrigger>
             <TabsTrigger
               value="teachers"
-              className="px-4 py-2.5 text-sm data-active:text-cyan-400 text-neutral-400 hover:text-white rounded-none border-b-2 border-transparent data-active:border-cyan-400"
+              className="px-4 py-2.5 text-sm data-active:text-cyan-400 text-muted-foreground hover:text-foreground rounded-none border-b-2 border-transparent data-active:border-cyan-400"
             >
               <Users className="w-4 h-4 mr-1.5" />
               Teachers
             </TabsTrigger>
             <TabsTrigger
               value="students"
-              className="px-4 py-2.5 text-sm data-active:text-purple-400 text-neutral-400 hover:text-white rounded-none border-b-2 border-transparent data-active:border-purple-400"
+              className="px-4 py-2.5 text-sm data-active:text-purple-400 text-muted-foreground hover:text-foreground rounded-none border-b-2 border-transparent data-active:border-purple-400"
             >
               <Users className="w-4 h-4 mr-1.5" />
               Students
             </TabsTrigger>
             <TabsTrigger
               value="assessments"
-              className="px-4 py-2.5 text-sm data-active:text-amber-400 text-neutral-400 hover:text-white rounded-none border-b-2 border-transparent data-active:border-amber-400"
+              className="px-4 py-2.5 text-sm data-active:text-amber-400 text-muted-foreground hover:text-foreground rounded-none border-b-2 border-transparent data-active:border-amber-400"
             >
               <ClipboardList className="w-4 h-4 mr-1.5" />
               Assessments
@@ -417,12 +417,12 @@ export default function AnalyticsPage() {
             {/* Large stat cards with ring charts */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
               {/* Active Students */}
-              <Card className="bg-gradient-to-br from-emerald-500/5 to-[#111] border-emerald-500/10 hover:border-emerald-500/25 transition-colors">
+              <Card className="bg-gradient-to-br from-emerald-500/5 to-card border-emerald-500/10 hover:border-emerald-500/25 transition-colors">
                 <CardContent className="pt-6 pb-5">
                   <div className="flex items-start justify-between">
                     <div>
-                      <p className="text-sm text-neutral-400 mb-1">Active Students</p>
-                      <p className="text-3xl font-bold text-white">{vary(305, dateRange)}<span className="text-lg text-neutral-500">/{vary(342, dateRange)}</span></p>
+                      <p className="text-sm text-muted-foreground mb-1">Active Students</p>
+                      <p className="text-3xl font-bold text-foreground">{vary(305, dateRange)}<span className="text-lg text-muted-foreground/70">/{vary(342, dateRange)}</span></p>
                       <div className="mt-2">
                         <TrendBadge value={vary(12, dateRange)} />
                       </div>
@@ -433,12 +433,12 @@ export default function AnalyticsPage() {
               </Card>
 
               {/* Assignments */}
-              <Card className="bg-gradient-to-br from-blue-500/5 to-[#111] border-blue-500/10 hover:border-blue-500/25 transition-colors">
+              <Card className="bg-gradient-to-br from-blue-500/5 to-card border-blue-500/10 hover:border-blue-500/25 transition-colors">
                 <CardContent className="pt-6 pb-5">
                   <div className="flex items-start justify-between">
                     <div>
-                      <p className="text-sm text-neutral-400 mb-1">Assignments Submitted</p>
-                      <p className="text-3xl font-bold text-white">{vary(1247, dateRange).toLocaleString()}</p>
+                      <p className="text-sm text-muted-foreground mb-1">Assignments Submitted</p>
+                      <p className="text-3xl font-bold text-foreground">{vary(1247, dateRange).toLocaleString()}</p>
                       <div className="mt-2">
                         <TrendBadge value={vary(8, dateRange)} />
                       </div>
@@ -451,12 +451,12 @@ export default function AnalyticsPage() {
               </Card>
 
               {/* Average Score */}
-              <Card className="bg-gradient-to-br from-purple-500/5 to-[#111] border-purple-500/10 hover:border-purple-500/25 transition-colors">
+              <Card className="bg-gradient-to-br from-purple-500/5 to-card border-purple-500/10 hover:border-purple-500/25 transition-colors">
                 <CardContent className="pt-6 pb-5">
                   <div className="flex items-start justify-between">
                     <div>
-                      <p className="text-sm text-neutral-400 mb-1">Average Score</p>
-                      <p className="text-3xl font-bold text-white">{vary(68, dateRange)}%</p>
+                      <p className="text-sm text-muted-foreground mb-1">Average Score</p>
+                      <p className="text-3xl font-bold text-foreground">{vary(68, dateRange)}%</p>
                       <div className="mt-2">
                         <TrendBadge value={vary(3, dateRange)} />
                       </div>
@@ -467,11 +467,11 @@ export default function AnalyticsPage() {
               </Card>
 
               {/* At Risk */}
-              <Card className="bg-gradient-to-br from-red-500/5 to-[#111] border-red-500/10 hover:border-red-500/25 transition-colors">
+              <Card className="bg-gradient-to-br from-red-500/5 to-card border-red-500/10 hover:border-red-500/25 transition-colors">
                 <CardContent className="pt-6 pb-5">
                   <div className="flex items-start justify-between">
                     <div>
-                      <p className="text-sm text-neutral-400 mb-1">At-Risk Students</p>
+                      <p className="text-sm text-muted-foreground mb-1">At-Risk Students</p>
                       <p className="text-3xl font-bold text-red-400">{vary(23, dateRange)}</p>
                       <div className="mt-2">
                         <TrendBadge value={-2} suffix=" fewer" />
@@ -488,9 +488,9 @@ export default function AnalyticsPage() {
             {/* Quick insights row */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 mb-8">
               {/* Key Metrics */}
-              <Card className="bg-[#111] border-white/10">
+              <Card className="bg-card border-border">
                 <CardHeader className="pb-3">
-                  <CardTitle className="text-sm font-semibold text-neutral-300 uppercase tracking-wider">
+                  <CardTitle className="text-sm font-semibold text-foreground/80 uppercase tracking-wider">
                     Key Metrics
                   </CardTitle>
                 </CardHeader>
@@ -502,7 +502,7 @@ export default function AnalyticsPage() {
                     { label: "Resource utilisation", value: "67%", color: "text-purple-400" },
                   ].map((m) => (
                     <div key={m.label} className="flex items-center justify-between">
-                      <span className="text-sm text-neutral-400">{m.label}</span>
+                      <span className="text-sm text-muted-foreground">{m.label}</span>
                       <span className={`text-sm font-bold ${m.color}`}>{m.value}</span>
                     </div>
                   ))}
@@ -510,9 +510,9 @@ export default function AnalyticsPage() {
               </Card>
 
               {/* Trends */}
-              <Card className="bg-[#111] border-white/10">
+              <Card className="bg-card border-border">
                 <CardHeader className="pb-3">
-                  <CardTitle className="text-sm font-semibold text-neutral-300 uppercase tracking-wider">
+                  <CardTitle className="text-sm font-semibold text-foreground/80 uppercase tracking-wider">
                     Trends
                   </CardTitle>
                 </CardHeader>
@@ -525,32 +525,32 @@ export default function AnalyticsPage() {
                   ].map((t, i) => (
                     <div key={i} className="flex items-start gap-2">
                       {t.icon}
-                      <p className="text-sm text-neutral-400">{t.text}</p>
+                      <p className="text-sm text-muted-foreground">{t.text}</p>
                     </div>
                   ))}
                 </CardContent>
               </Card>
 
               {/* Recommendations */}
-              <Card className="bg-[#111] border-white/10">
+              <Card className="bg-card border-border">
                 <CardHeader className="pb-3">
-                  <CardTitle className="text-sm font-semibold text-neutral-300 uppercase tracking-wider">
+                  <CardTitle className="text-sm font-semibold text-foreground/80 uppercase tracking-wider">
                     Recommendations
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <div className="p-3 rounded-lg bg-emerald-500/5 border border-emerald-500/10">
-                    <p className="text-sm text-neutral-300">
+                    <p className="text-sm text-foreground/80">
                       Schedule intervention sessions for 23 at-risk students before Easter break
                     </p>
                   </div>
                   <div className="p-3 rounded-lg bg-blue-500/5 border border-blue-500/10">
-                    <p className="text-sm text-neutral-300">
+                    <p className="text-sm text-foreground/80">
                       Increase Year 9 Literature mock exam access to boost engagement
                     </p>
                   </div>
                   <div className="p-3 rounded-lg bg-purple-500/5 border border-purple-500/10">
-                    <p className="text-sm text-neutral-300">
+                    <p className="text-sm text-foreground/80">
                       Share top-performing class strategies across department
                     </p>
                   </div>
@@ -561,9 +561,9 @@ export default function AnalyticsPage() {
             {/* Top classes + weakness analysis */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-8">
               {/* Top Performing Classes */}
-              <Card className="bg-[#111] border-white/10">
+              <Card className="bg-card border-border">
                 <CardHeader>
-                  <CardTitle className="text-white flex items-center gap-2">
+                  <CardTitle className="text-foreground flex items-center gap-2">
                     <Trophy className="w-5 h-5 text-amber-400" />
                     Top Performing Classes
                   </CardTitle>
@@ -574,26 +574,26 @@ export default function AnalyticsPage() {
                       <Link
                         key={cls.id}
                         href={`/demo/school/classes/${cls.id}`}
-                        className="flex items-center gap-3 p-3 rounded-lg bg-white/[0.03] border border-white/5 hover:bg-white/[0.06] hover:border-amber-500/20 transition-all group"
+                        className="flex items-center gap-3 p-3 rounded-lg bg-muted/30 border border-border/50 hover:bg-muted/50 hover:border-amber-500/20 transition-all group"
                       >
                         <span
                           className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold shrink-0 ${
                             i === 0
                               ? "bg-amber-500/20 text-amber-400"
                               : i === 1
-                              ? "bg-neutral-500/20 text-neutral-300"
+                              ? "bg-neutral-500/20 text-foreground/80"
                               : i === 2
                               ? "bg-orange-500/20 text-orange-400"
-                              : "bg-white/5 text-neutral-500"
+                              : "bg-muted/50 text-muted-foreground/70"
                           }`}
                         >
                           {i + 1}
                         </span>
                         <div className="flex-1 min-w-0">
-                          <p className="font-medium text-white truncate group-hover:text-amber-300 transition-colors">
+                          <p className="font-medium text-foreground truncate group-hover:text-amber-300 transition-colors">
                             {cls.name}
                           </p>
-                          <p className="text-xs text-neutral-500 truncate">
+                          <p className="text-xs text-muted-foreground/70 truncate">
                             {cls.teacher} &middot; {cls.studentCount} students
                           </p>
                         </div>
@@ -602,7 +602,7 @@ export default function AnalyticsPage() {
                             {vary(cls.avgProgress, dateRange)}%
                           </p>
                         </div>
-                        <ChevronRight className="w-4 h-4 text-neutral-600 group-hover:text-neutral-300 transition-colors shrink-0" />
+                        <ChevronRight className="w-4 h-4 text-neutral-600 group-hover:text-foreground/80 transition-colors shrink-0" />
                       </Link>
                     ))}
                   </div>
@@ -610,13 +610,13 @@ export default function AnalyticsPage() {
               </Card>
 
               {/* Weakness Analysis */}
-              <Card className="bg-[#111] border-white/10">
+              <Card className="bg-card border-border">
                 <CardHeader>
-                  <CardTitle className="text-white flex items-center gap-2">
+                  <CardTitle className="text-foreground flex items-center gap-2">
                     <AlertTriangle className="w-5 h-5 text-red-400" />
                     School-Wide Weakness Analysis
                   </CardTitle>
-                  <CardDescription className="text-neutral-500">
+                  <CardDescription className="text-muted-foreground/70">
                     Topics where students struggle most
                   </CardDescription>
                 </CardHeader>
@@ -625,8 +625,8 @@ export default function AnalyticsPage() {
                     {topWeaknesses.map(([name, count], i) => (
                       <div key={i}>
                         <div className="flex items-center justify-between mb-1.5">
-                          <span className="text-sm text-neutral-300">{name}</span>
-                          <span className="text-xs text-neutral-500">{count} students</span>
+                          <span className="text-sm text-foreground/80">{name}</span>
+                          <span className="text-xs text-muted-foreground/70">{count} students</span>
                         </div>
                         <HBar
                           value={count}
@@ -641,18 +641,18 @@ export default function AnalyticsPage() {
             </div>
 
             {/* Download report CTA */}
-            <Card className="bg-gradient-to-r from-emerald-500/5 via-[#111] to-blue-500/5 border-white/10">
+            <Card className="bg-gradient-to-r from-emerald-500/5 via-[#111] to-blue-500/5 border-border">
               <CardContent className="py-5">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                   <div>
-                    <p className="font-semibold text-white">{DEMO_SCHOOL.name} Performance Summary</p>
-                    <p className="text-sm text-neutral-500 mt-0.5">
+                    <p className="font-semibold text-foreground">{DEMO_SCHOOL.name} Performance Summary</p>
+                    <p className="text-sm text-muted-foreground/70 mt-0.5">
                       Spring Term 2026 &middot; Demo data
                     </p>
                   </div>
                   <Button
                     onClick={handleDownloadReport}
-                    className="bg-emerald-600 hover:bg-emerald-500 text-white"
+                    className="bg-emerald-600 hover:bg-emerald-500 text-foreground"
                   >
                     <Download className="w-4 h-4 mr-2" />
                     Download Full Report
@@ -672,7 +672,7 @@ export default function AnalyticsPage() {
                 return (
                   <Card
                     key={yg.year}
-                    className={`bg-[#111] border-white/10 hover:border-white/20 transition-all cursor-pointer ${
+                    className={`bg-card border-border hover:border-border/80 transition-all cursor-pointer ${
                       yearFilter === yg.year ? "ring-1 ring-blue-500/40 border-blue-500/30" : ""
                     }`}
                     onClick={() => setYearFilter(yearFilter === yg.year ? null : yg.year)}
@@ -680,8 +680,8 @@ export default function AnalyticsPage() {
                     <CardContent className="pt-5 pb-4">
                       <div className="flex items-start justify-between mb-4">
                         <div>
-                          <h3 className="text-lg font-bold text-white">{yg.label}</h3>
-                          <p className="text-xs text-neutral-500">{yg.studentCount} students &middot; {yg.classCount} classes</p>
+                          <h3 className="text-lg font-bold text-foreground">{yg.label}</h3>
+                          <p className="text-xs text-muted-foreground/70">{yg.studentCount} students &middot; {yg.classCount} classes</p>
                         </div>
                         <RingChart value={progress} size={64} strokeWidth={6} color={progressTextColor(progress).replace("text-", "text-")} />
                       </div>
@@ -690,14 +690,14 @@ export default function AnalyticsPage() {
                       <div className="space-y-2.5">
                         <div>
                           <div className="flex justify-between text-xs mb-1">
-                            <span className="text-neutral-400">Avg Progress</span>
+                            <span className="text-muted-foreground">Avg Progress</span>
                             <span className={`font-semibold ${progressTextColor(progress)}`}>{progress}%</span>
                           </div>
                           <HBar value={progress} max={100} color={progressColor(progress)} />
                         </div>
                         <div>
                           <div className="flex justify-between text-xs mb-1">
-                            <span className="text-neutral-400">Completion Rate</span>
+                            <span className="text-muted-foreground">Completion Rate</span>
                             <span className={`font-semibold ${progressTextColor(yg.completionRate)}`}>{yg.completionRate}%</span>
                           </div>
                           <HBar value={yg.completionRate} max={100} color={progressColor(yg.completionRate)} />
@@ -705,7 +705,7 @@ export default function AnalyticsPage() {
                       </div>
 
                       {/* Footer stats */}
-                      <div className="flex items-center justify-between mt-4 pt-3 border-t border-white/5">
+                      <div className="flex items-center justify-between mt-4 pt-3 border-t border-border/50">
                         <div className="flex items-center gap-1">
                           {yg.atRiskCount > 0 ? (
                             <Badge variant="destructive" className="text-red-300 bg-red-500/15 text-xs">
@@ -719,6 +719,13 @@ export default function AnalyticsPage() {
                         </div>
                         <TrendBadge value={Math.round(progress - 65)} />
                       </div>
+                      <Link
+                        href="/demo/school/reports"
+                        className="mt-3 flex items-center justify-center gap-1.5 rounded-md border border-border/50 px-3 py-1.5 text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+                      >
+                        View Full Report
+                        <ChevronRight className="w-3 h-3" />
+                      </Link>
                     </CardContent>
                   </Card>
                 )
@@ -732,7 +739,7 @@ export default function AnalyticsPage() {
                 </Badge>
                 <button
                   onClick={() => setYearFilter(null)}
-                  className="text-xs text-neutral-400 hover:text-white underline underline-offset-2"
+                  className="text-xs text-muted-foreground hover:text-foreground underline underline-offset-2"
                 >
                   Clear filter
                 </button>
@@ -748,7 +755,7 @@ export default function AnalyticsPage() {
               {teacherStats.map((t, i) => {
                 const progress = vary(t.avgProgress, dateRange)
                 return (
-                  <Card key={t.id} className="bg-[#111] border-white/10 hover:border-white/20 transition-colors">
+                  <Card key={t.id} className="bg-card border-border hover:border-border/80 transition-colors">
                     <CardContent className="pt-5 pb-4">
                       <div className="flex items-start gap-4 mb-4">
                         <div className="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center shrink-0">
@@ -759,8 +766,8 @@ export default function AnalyticsPage() {
                         <div className="min-w-0 flex-1">
                           <div className="flex items-start justify-between">
                             <div>
-                              <p className="font-semibold text-white truncate">{t.name}</p>
-                              <p className="text-xs text-neutral-500">{t.department} &middot; {t.classCount} class{t.classCount !== 1 ? "es" : ""}</p>
+                              <p className="font-semibold text-foreground truncate">{t.name}</p>
+                              <p className="text-xs text-muted-foreground/70">{t.department} &middot; {t.classCount} class{t.classCount !== 1 ? "es" : ""}</p>
                             </div>
                             {i === 0 && (
                               <Badge className="bg-amber-500/15 text-amber-400 border-amber-500/20 text-[10px] shrink-0">
@@ -773,24 +780,24 @@ export default function AnalyticsPage() {
 
                       {/* Visual indicators */}
                       <div className="grid grid-cols-3 gap-3 mb-4">
-                        <div className="text-center p-2 rounded-lg bg-white/[0.03]">
-                          <p className="text-lg font-bold text-white">{t.studentCount}</p>
-                          <p className="text-[10px] text-neutral-500">Students</p>
+                        <div className="text-center p-2 rounded-lg bg-muted/30">
+                          <p className="text-lg font-bold text-foreground">{t.studentCount}</p>
+                          <p className="text-[10px] text-muted-foreground/70">Students</p>
                         </div>
-                        <div className="text-center p-2 rounded-lg bg-white/[0.03]">
+                        <div className="text-center p-2 rounded-lg bg-muted/30">
                           <p className={`text-lg font-bold ${progressTextColor(progress)}`}>{progress}%</p>
-                          <p className="text-[10px] text-neutral-500">Avg Progress</p>
+                          <p className="text-[10px] text-muted-foreground/70">Avg Progress</p>
                         </div>
-                        <div className="text-center p-2 rounded-lg bg-white/[0.03]">
+                        <div className="text-center p-2 rounded-lg bg-muted/30">
                           <p className={`text-lg font-bold ${progressTextColor(t.completionRate)}`}>{t.completionRate}%</p>
-                          <p className="text-[10px] text-neutral-500">Completion</p>
+                          <p className="text-[10px] text-muted-foreground/70">Completion</p>
                         </div>
                       </div>
 
                       {/* Progress bar */}
                       <div>
                         <div className="flex justify-between text-xs mb-1">
-                          <span className="text-neutral-400">Student Progress</span>
+                          <span className="text-muted-foreground">Student Progress</span>
                           <span className={`font-semibold ${progressTextColor(progress)}`}>{progress}%</span>
                         </div>
                         <HBar value={progress} max={100} color={progressColor(progress)} />
@@ -809,20 +816,20 @@ export default function AnalyticsPage() {
             {/* Filters */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 mb-6">
               <div className="relative flex-1 max-w-sm">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-500" />
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/70" />
                 <input
                   type="text"
                   placeholder="Search students..."
                   value={studentSearch}
                   onChange={(e) => setStudentSearch(e.target.value)}
-                  className="w-full pl-9 pr-4 py-2 text-sm rounded-lg bg-white/5 border border-white/10 text-white placeholder:text-neutral-500 focus:outline-none focus:border-purple-500/50"
+                  className="w-full pl-9 pr-4 py-2 text-sm rounded-lg bg-muted/50 border border-border text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:border-purple-500/50"
                 />
               </div>
-              <div className="flex items-center gap-1 rounded-lg bg-white/5 border border-white/10 p-1">
+              <div className="flex items-center gap-1 rounded-lg bg-muted/50 border border-border p-1">
                 <button
                   onClick={() => setYearFilter(null)}
                   className={`px-3 py-1.5 text-xs rounded-md transition-all ${
-                    yearFilter === null ? "bg-white/10 text-white font-medium" : "text-neutral-400 hover:text-white"
+                    yearFilter === null ? "bg-muted text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
                   All Years
@@ -832,14 +839,14 @@ export default function AnalyticsPage() {
                     key={y}
                     onClick={() => setYearFilter(yearFilter === y ? null : y)}
                     className={`px-2.5 py-1.5 text-xs rounded-md transition-all ${
-                      yearFilter === y ? "bg-white/10 text-white font-medium" : "text-neutral-400 hover:text-white"
+                      yearFilter === y ? "bg-muted text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
                     }`}
                   >
                     Y{y}
                   </button>
                 ))}
               </div>
-              <Badge className="bg-white/5 text-neutral-400 border-white/10">
+              <Badge className="bg-muted/50 text-muted-foreground border-border">
                 {filteredStudents.length} student{filteredStudents.length !== 1 ? "s" : ""}
               </Badge>
             </div>
@@ -850,7 +857,7 @@ export default function AnalyticsPage() {
                 <Link
                   key={student.id}
                   href={`/demo/school/students/${student.id}`}
-                  className="flex items-center gap-3 p-3 rounded-lg bg-[#111] border border-white/5 hover:bg-white/[0.04] hover:border-white/15 transition-all group"
+                  className="flex items-center gap-3 p-3 rounded-lg bg-card border border-border/50 hover:bg-muted/40 hover:border-border transition-all group"
                 >
                   <div
                     className={`w-9 h-9 rounded-full flex items-center justify-center shrink-0 ${
@@ -874,10 +881,10 @@ export default function AnalyticsPage() {
                     </span>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="font-medium text-white text-sm truncate group-hover:text-purple-300 transition-colors">
+                    <p className="font-medium text-foreground text-sm truncate group-hover:text-purple-300 transition-colors">
                       {student.name}
                     </p>
-                    <p className="text-xs text-neutral-500 truncate">
+                    <p className="text-xs text-muted-foreground/70 truncate">
                       {student.yearGroup} &middot; {student.className}
                     </p>
                   </div>
@@ -892,20 +899,20 @@ export default function AnalyticsPage() {
             </div>
 
             {filteredStudents.length > 30 && (
-              <p className="text-center text-sm text-neutral-500 mt-4">
+              <p className="text-center text-sm text-muted-foreground/70 mt-4">
                 Showing 30 of {filteredStudents.length} students. Use search or filters to narrow results.
               </p>
             )}
 
             {/* At-risk highlight */}
             {atRiskStudents.length > 0 && (
-              <Card className="bg-[#111] border-red-500/10 mt-8">
+              <Card className="bg-card border-red-500/10 mt-8">
                 <CardHeader>
-                  <CardTitle className="text-white flex items-center gap-2">
+                  <CardTitle className="text-foreground flex items-center gap-2">
                     <AlertTriangle className="w-5 h-5 text-red-400" />
                     At-Risk Students ({atRiskStudents.length})
                   </CardTitle>
-                  <CardDescription className="text-neutral-500">
+                  <CardDescription className="text-muted-foreground/70">
                     Students requiring immediate attention
                   </CardDescription>
                 </CardHeader>
@@ -915,7 +922,7 @@ export default function AnalyticsPage() {
                       <Link
                         key={student.id}
                         href={`/demo/school/students/${student.id}`}
-                        className="flex items-center justify-between p-3 rounded-lg bg-white/[0.03] border border-white/5 hover:bg-white/[0.06] hover:border-red-500/20 transition-all group"
+                        className="flex items-center justify-between p-3 rounded-lg bg-muted/30 border border-border/50 hover:bg-muted/50 hover:border-red-500/20 transition-all group"
                       >
                         <div className="flex items-center gap-3 min-w-0 flex-1">
                           <div className="w-9 h-9 rounded-full bg-red-500/10 flex items-center justify-center shrink-0">
@@ -924,10 +931,10 @@ export default function AnalyticsPage() {
                             </span>
                           </div>
                           <div className="min-w-0">
-                            <p className="font-medium text-white group-hover:text-red-300 transition-colors truncate">
+                            <p className="font-medium text-foreground group-hover:text-red-300 transition-colors truncate">
                               {student.name}
                             </p>
-                            <p className="text-xs text-neutral-500 truncate">
+                            <p className="text-xs text-muted-foreground/70 truncate">
                               {student.yearGroup} &middot; Last active: {student.lastActive}
                             </p>
                           </div>
@@ -939,7 +946,7 @@ export default function AnalyticsPage() {
                           <Badge variant="destructive" className="text-red-300 bg-red-500/15 hidden md:inline-flex">
                             {student.overallProgress}%
                           </Badge>
-                          <ChevronRight className="w-4 h-4 text-neutral-600 group-hover:text-neutral-300" />
+                          <ChevronRight className="w-4 h-4 text-neutral-600 group-hover:text-foreground/80" />
                         </div>
                       </Link>
                     ))}
@@ -965,11 +972,11 @@ export default function AnalyticsPage() {
                 }
                 const c = colorMap[cat.color]
                 return (
-                  <Card key={ci} className="bg-[#111] border-white/10">
+                  <Card key={ci} className="bg-card border-border">
                     <CardContent className="pt-5 pb-4">
                       <div className="flex items-start justify-between mb-4">
                         <div>
-                          <p className="text-sm text-neutral-400">{cat.label}</p>
+                          <p className="text-sm text-muted-foreground">{cat.label}</p>
                           <p className={`text-2xl font-bold ${c.text}`}>{latest}%</p>
                           <TrendBadge value={change} />
                         </div>
@@ -978,8 +985,8 @@ export default function AnalyticsPage() {
                       <div className="flex items-end gap-3 h-16">
                         {cat.avgs.map((val, mi) => (
                           <div key={mi} className="flex-1 flex flex-col items-center gap-1">
-                            <span className="text-[10px] text-neutral-400">{val}%</span>
-                            <div className="w-full bg-white/5 rounded-t-sm overflow-hidden" style={{ height: "40px" }}>
+                            <span className="text-[10px] text-muted-foreground">{val}%</span>
+                            <div className="w-full bg-muted/50 rounded-t-sm overflow-hidden" style={{ height: "40px" }}>
                               <div
                                 className={`w-full ${c.bar}/70 rounded-t-sm`}
                                 style={{
@@ -988,7 +995,7 @@ export default function AnalyticsPage() {
                                 }}
                               />
                             </div>
-                            <span className="text-[10px] text-neutral-500">{months[mi]}</span>
+                            <span className="text-[10px] text-muted-foreground/70">{months[mi]}</span>
                           </div>
                         ))}
                       </div>
@@ -999,9 +1006,9 @@ export default function AnalyticsPage() {
             </div>
 
             {/* Grade Distribution */}
-            <Card className="bg-[#111] border-white/10 mb-8">
+            <Card className="bg-card border-border mb-8">
               <CardHeader>
-                <CardTitle className="text-white">Grade Distribution (Latest Mock Exams)</CardTitle>
+                <CardTitle className="text-foreground">Grade Distribution (Latest Mock Exams)</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-4 gap-4">
@@ -1010,9 +1017,9 @@ export default function AnalyticsPage() {
                     const textColors = ["text-emerald-400", "text-blue-400", "text-amber-400", "text-red-400"]
                     const bgColors = ["bg-emerald-500/10", "bg-blue-500/10", "bg-amber-500/10", "bg-red-500/10"]
                     return Object.entries(gradeBuckets).map(([label, count], i) => (
-                      <div key={label} className={`text-center p-4 rounded-xl ${bgColors[i]} border border-white/5`}>
+                      <div key={label} className={`text-center p-4 rounded-xl ${bgColors[i]} border border-border/50`}>
                         <p className={`text-3xl font-bold ${textColors[i]}`}>{count}</p>
-                        <p className="text-xs text-neutral-400 mt-1">Grade {label}</p>
+                        <p className="text-xs text-muted-foreground mt-1">Grade {label}</p>
                         <div className="mt-3">
                           <HBar value={count} max={maxGrade} color={colors[i]} />
                         </div>
@@ -1025,9 +1032,9 @@ export default function AnalyticsPage() {
 
             {/* Resource usage: lessons + mocks side by side */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-8">
-              <Card className="bg-[#111] border-white/10">
+              <Card className="bg-card border-border">
                 <CardHeader>
-                  <CardTitle className="text-white flex items-center gap-2">
+                  <CardTitle className="text-foreground flex items-center gap-2">
                     <BookOpen className="w-5 h-5 text-blue-400" />
                     Top 5 Lessons Accessed
                   </CardTitle>
@@ -1037,8 +1044,8 @@ export default function AnalyticsPage() {
                     {TOP_LESSONS.map((lesson) => (
                       <div key={lesson.title}>
                         <div className="flex items-center justify-between mb-1">
-                          <p className="text-sm text-neutral-300 truncate pr-4">{lesson.title}</p>
-                          <span className="text-xs text-neutral-500 shrink-0">
+                          <p className="text-sm text-foreground/80 truncate pr-4">{lesson.title}</p>
+                          <span className="text-xs text-muted-foreground/70 shrink-0">
                             {vary(lesson.count, dateRange)} views
                           </span>
                         </div>
@@ -1053,9 +1060,9 @@ export default function AnalyticsPage() {
                 </CardContent>
               </Card>
 
-              <Card className="bg-[#111] border-white/10">
+              <Card className="bg-card border-border">
                 <CardHeader>
-                  <CardTitle className="text-white flex items-center gap-2">
+                  <CardTitle className="text-foreground flex items-center gap-2">
                     <ClipboardList className="w-5 h-5 text-purple-400" />
                     Top 5 Mock Exams Taken
                   </CardTitle>
@@ -1065,8 +1072,8 @@ export default function AnalyticsPage() {
                     {TOP_MOCK_EXAMS.map((exam) => (
                       <div key={exam.title}>
                         <div className="flex items-center justify-between mb-1">
-                          <p className="text-sm text-neutral-300 truncate pr-4">{exam.title}</p>
-                          <span className="text-xs text-neutral-500 shrink-0">
+                          <p className="text-sm text-foreground/80 truncate pr-4">{exam.title}</p>
+                          <span className="text-xs text-muted-foreground/70 shrink-0">
                             {vary(exam.count, dateRange)} taken
                           </span>
                         </div>
@@ -1083,9 +1090,9 @@ export default function AnalyticsPage() {
             </div>
 
             {/* Assignment Overview by Class */}
-            <Card className="bg-[#111] border-white/10">
+            <Card className="bg-card border-border">
               <CardHeader>
-                <CardTitle className="text-white flex items-center gap-2">
+                <CardTitle className="text-foreground flex items-center gap-2">
                   <FileText className="w-5 h-5 text-blue-400" />
                   Assignment Completion by Class
                 </CardTitle>
@@ -1094,7 +1101,7 @@ export default function AnalyticsPage() {
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead>
-                      <tr className="border-b border-white/10 text-neutral-400">
+                      <tr className="border-b border-border text-muted-foreground">
                         <th className="text-left py-3 px-2 font-medium">Class</th>
                         <th className="text-left py-3 px-2 font-medium">Teacher</th>
                         <th className="text-left py-3 px-2 font-medium w-48">Completion Rate</th>
@@ -1109,9 +1116,9 @@ export default function AnalyticsPage() {
                             : 0
                         const overdue = cls.assignmentsSet - cls.assignmentsCompleted
                         return (
-                          <tr key={cls.id} className="border-b border-white/5 hover:bg-white/5 transition-colors">
-                            <td className="py-3 px-2 font-medium text-white">{cls.name}</td>
-                            <td className="py-3 px-2 text-neutral-400">{cls.teacher}</td>
+                          <tr key={cls.id} className="border-b border-border/50 hover:bg-muted/50 transition-colors">
+                            <td className="py-3 px-2 font-medium text-foreground">{cls.name}</td>
+                            <td className="py-3 px-2 text-muted-foreground">{cls.teacher}</td>
                             <td className="py-3 px-2">
                               <div className="flex items-center gap-3">
                                 <div className="flex-1">

@@ -463,8 +463,8 @@ export default function GradeBoundariesPage() {
               </div>
             </div>
 
-            <div className="rounded-lg border-l-4 border-yellow-400 bg-yellow-50/30 p-5">
-              <h3 className="text-lg font-bold text-yellow-700">Grades E&ndash;F (2&ndash;3) &mdash; Developing</h3>
+            <div className="rounded-lg border-l-4 border-yellow-400 bg-yellow-500/10/30 p-5">
+              <h3 className="text-lg font-bold text-yellow-700 dark:text-yellow-300">Grades E&ndash;F (2&ndash;3) &mdash; Developing</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <p><strong>Reading:</strong></p>
                 <ul className="ml-5 list-disc space-y-1">
@@ -733,8 +733,8 @@ export default function GradeBoundariesPage() {
           </p>
 
           <div className="mt-4 space-y-4">
-            <div className="rounded-lg bg-red-50/50 border border-red-200/50 p-4">
-              <h3 className="font-semibold text-red-800">Reading responses</h3>
+            <div className="rounded-lg bg-red-500/5 border border-red-500/15 p-4">
+              <h3 className="font-semibold text-red-700 dark:text-red-300">Reading responses</h3>
               <ul className="mt-2 ml-5 list-disc space-y-1 text-sm text-muted-foreground">
                 <li><strong>Feature-spotting</strong> &mdash; naming a technique (e.g., &ldquo;The writer uses a metaphor&rdquo;) without explaining its effect. Always follow up with &ldquo;This suggests / creates / emphasises...&rdquo;</li>
                 <li><strong>Retelling the story</strong> &mdash; summarising what happens instead of analysing how the writer achieves their effect.</li>
@@ -743,8 +743,8 @@ export default function GradeBoundariesPage() {
               </ul>
             </div>
 
-            <div className="rounded-lg bg-red-50/50 border border-red-200/50 p-4">
-              <h3 className="font-semibold text-red-800">Summary responses</h3>
+            <div className="rounded-lg bg-red-500/5 border border-red-500/15 p-4">
+              <h3 className="font-semibold text-red-700 dark:text-red-300">Summary responses</h3>
               <ul className="mt-2 ml-5 list-disc space-y-1 text-sm text-muted-foreground">
                 <li><strong>Copying from the passage</strong> &mdash; lifting whole phrases instead of using your own words. Examiners specifically look for evidence of your own vocabulary.</li>
                 <li><strong>Including irrelevant content</strong> &mdash; adding points that are not relevant to the specific summary question.</li>
@@ -752,8 +752,8 @@ export default function GradeBoundariesPage() {
               </ul>
             </div>
 
-            <div className="rounded-lg bg-red-50/50 border border-red-200/50 p-4">
-              <h3 className="font-semibold text-red-800">Writing responses</h3>
+            <div className="rounded-lg bg-red-500/5 border border-red-500/15 p-4">
+              <h3 className="font-semibold text-red-700 dark:text-red-300">Writing responses</h3>
               <ul className="mt-2 ml-5 list-disc space-y-1 text-sm text-muted-foreground">
                 <li><strong>Wrong format in directed writing</strong> &mdash; writing a letter when asked for a speech, or missing key features like addresses and sign-offs.</li>
                 <li><strong>Overloading with techniques</strong> &mdash; cramming in every device you know rather than using a few well-chosen ones for genuine effect.</li>

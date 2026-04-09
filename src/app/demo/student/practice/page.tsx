@@ -360,7 +360,7 @@ export default function StudentPracticeDemoPage() {
               {/* Header */}
               <div className="flex items-start justify-between mb-3">
                 <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-500/10">
-                  <FileText className="h-4.5 w-4.5 text-blue-400" />
+                  <FileText className="h-5 w-5 text-blue-400" />
                 </div>
                 <span
                   className={`rounded-full border px-2.5 py-0.5 text-[11px] font-medium ${difficultyColor(paper.difficulty)}`}

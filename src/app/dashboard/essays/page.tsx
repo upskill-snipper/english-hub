@@ -73,15 +73,15 @@ type SortField = "date" | "score";
 type SortDir = "asc" | "desc";
 
 function scoreColour(score: number): string {
-  if (score >= 80) return "text-success";
-  if (score >= 60) return "text-accent";
-  return "text-warn";
+  if (score >= 80) return "text-green-500";
+  if (score >= 60) return "text-amber-500";
+  return "text-red-500";
 }
 
 function scoreBadgeBg(score: number): string {
-  if (score >= 80) return "bg-success-50 text-success";
-  if (score >= 60) return "bg-primary/10 text-accent";
-  return "bg-warn-50 text-warn";
+  if (score >= 80) return "bg-green-500/10 text-green-500";
+  if (score >= 60) return "bg-primary/10 text-amber-500";
+  return "bg-red-500/10 text-red-500";
 }
 
 /* ─── Page ───────────────────────────────────────────────────── */
@@ -272,7 +272,7 @@ export default function AllEssaysPage() {
                             <button
                               type="button"
                               onClick={() => handleDelete(essay.id)}
-                              className="text-xs font-medium text-warn hover:text-warn-600"
+                              className="text-xs font-medium text-red-500 hover:text-red-600"
                             >
                               Confirm
                             </button>
@@ -295,7 +295,7 @@ export default function AllEssaysPage() {
                             <button
                               type="button"
                               onClick={() => setDeletingId(essay.id)}
-                              className="text-xs text-muted-foreground hover:text-warn"
+                              className="text-xs text-muted-foreground hover:text-red-500"
                             >
                               Delete
                             </button>
@@ -353,7 +353,7 @@ export default function AllEssaysPage() {
                       <button
                         type="button"
                         onClick={() => handleDelete(essay.id)}
-                        className="text-xs font-medium text-warn hover:text-warn-600"
+                        className="text-xs font-medium text-red-500 hover:text-red-600"
                       >
                         Confirm Delete
                       </button>
@@ -369,7 +369,7 @@ export default function AllEssaysPage() {
                     <button
                       type="button"
                       onClick={() => setDeletingId(essay.id)}
-                      className="text-xs text-muted-foreground hover:text-warn"
+                      className="text-xs text-muted-foreground hover:text-red-500"
                     >
                       Delete
                     </button>

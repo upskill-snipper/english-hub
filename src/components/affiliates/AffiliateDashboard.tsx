@@ -301,9 +301,9 @@ export default function AffiliateDashboard({
         {/* ── Disclosure Reminder ── */}
         <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-xl p-4 mb-8 flex items-start gap-3">
           <AlertTriangle className="w-5 h-5 text-yellow-400 mt-0.5 shrink-0" />
-          <div className="text-sm text-yellow-200/90">
+          <div className="text-sm text-yellow-800 dark:text-yellow-200/90">
             <strong>Required for every post:</strong> Include{' '}
-            <code className="bg-yellow-500/20 px-1.5 py-0.5 rounded text-yellow-300 font-mono text-xs">
+            <code className="bg-yellow-500/20 px-1.5 py-0.5 rounded text-yellow-700 dark:text-yellow-300 font-mono text-xs">
               #ad
             </code>{' '}
             in the first 3 words of your caption. Posts without disclosure will not earn

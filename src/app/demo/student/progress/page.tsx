@@ -352,7 +352,7 @@ export default function StudentProgressPage() {
             <div className="flex items-center justify-between mb-5">
               <div className="flex items-center gap-3">
                 <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-purple-500/20">
-                  <BarChart3 className="h-4.5 w-4.5 text-purple-400" />
+                  <BarChart3 className="h-5 w-5 text-purple-400" />
                 </div>
                 <div>
                   <h2 className="text-lg font-semibold">Score Trend</h2>

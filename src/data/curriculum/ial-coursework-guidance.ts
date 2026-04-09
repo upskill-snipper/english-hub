@@ -656,7 +656,7 @@ export const courseworkExemplars: AnnouncedExemplar[] = [
       'Replace generic descriptors (beautiful, amazing, incredible) with precise, original language choices that create a distinctive voice.',
       'The commentary should name and explain specific techniques rather than describing the content of the writing; band 3 and above requires linguistic metalanguage.',
     ],
-    grade: 'C',
+    grade: '6',
   },
   {
     id: 'u3-exemplar-band2-b',
@@ -677,7 +677,7 @@ export const courseworkExemplars: AnnouncedExemplar[] = [
       'Develop the audience discussion: identify specific characteristics of the target audience and explain how individual language choices respond to those characteristics.',
       'Give equal analytical attention to both pieces: the second piece deserves as many analytical observations as the first.',
     ],
-    grade: 'C',
+    grade: '6',
   },
 
   // ── Unit 3 — Band 4 ──────────────────────────
@@ -700,7 +700,7 @@ export const courseworkExemplars: AnnouncedExemplar[] = [
       'The occasional use of overly literary metaphor sits slightly uneasily within the political oratory genre, which tends to prefer accessible metaphors grounded in shared experience.',
       'The commentary could more precisely identify the strategic placement of techniques: not just that anaphora is used but why it is positioned at that specific moment in the argument.',
     ],
-    grade: 'A',
+    grade: '8',
   },
   {
     id: 'u3-exemplar-band4-b',
@@ -721,7 +721,7 @@ export const courseworkExemplars: AnnouncedExemplar[] = [
       'The discussion of the second piece\'s structure is thinner than that of the first — the final section feels slightly rushed and could benefit from two or three additional precise analytical observations.',
       'Consider discussing a moment where an initial choice was rejected in favour of a better alternative — this kind of meta-reflective writing is highly valued at the top of the band.',
     ],
-    grade: 'A',
+    grade: '8',
   },
 
   // ── Unit 4 — Band 2 ──────────────────────────
@@ -744,7 +744,7 @@ export const courseworkExemplars: AnnouncedExemplar[] = [
       'Strengthen the bibliography: replace the uncited website with an academic source and ensure all entries have full publication details.',
       'Include a methodology section that explains how data was collected, why these particular speakers were chosen, and what the limitations of the data set are.',
     ],
-    grade: 'D',
+    grade: '5',
   },
   {
     id: 'u4-exemplar-band2-b',
@@ -765,7 +765,7 @@ export const courseworkExemplars: AnnouncedExemplar[] = [
       'Moderate the conclusion: acknowledge the limitations of the sample size and avoid generalisations that the data cannot support.',
       'Engage more specifically with linguistic theory: Crystal\'s work on language and the internet or Baron\'s research on digital communication should be cited and applied in the analysis.',
     ],
-    grade: 'D',
+    grade: '5',
   },
 
   // ── Unit 4 — Band 4 ──────────────────────────
@@ -789,7 +789,7 @@ export const courseworkExemplars: AnnouncedExemplar[] = [
       'One analytical paragraph in the central section moves away from the data to discuss broader sociolinguistic theory at length — this should be tightened to maintain focus on what the primary data reveals.',
       'The conclusion could go slightly further in positioning the findings within the wider scholarly debate about bilingual identity and code-switching function.',
     ],
-    grade: 'A*',
+    grade: '9',
   },
   {
     id: 'u4-exemplar-band4-b',
@@ -810,6 +810,6 @@ export const courseworkExemplars: AnnouncedExemplar[] = [
       'The investigation would benefit from a brief discussion of the role of editorial policy in shaping linguistic choices, which would add another layer of contextual awareness to the discourse analysis.',
       'Some of the modal verb frequency tables could be more precisely labelled to distinguish instances in direct quotation from scientists from those in the journalist\'s own prose.',
     ],
-    grade: 'A*',
+    grade: '9',
   },
 ];

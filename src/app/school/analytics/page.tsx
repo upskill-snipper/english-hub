@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import Link from "next/link"
 import {
   BarChart3,
   TrendingUp,
@@ -13,6 +14,7 @@ import {
   BookOpen,
   FileText,
   Clock,
+  ChevronRight,
 } from "lucide-react"
 import { useAuthStore } from "@/store/auth-store"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
@@ -290,8 +292,8 @@ export default function SchoolAnalyticsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <div className="mx-auto max-w-7xl space-y-8 px-4 py-8 sm:px-6 lg:px-8">
+    <div className="text-foreground">
+      <div className="space-y-8">
 
         {/* ── Header ─────────────────────────────────────────────────────── */}
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -399,8 +401,13 @@ export default function SchoolAnalyticsPage() {
                   </thead>
                   <tbody className="divide-y divide-border/40">
                     {data.yearGroups.map((row) => (
-                      <tr key={row.year} className="group hover:bg-muted/30 transition-colors">
-                        <td className="py-3 font-medium">{row.year}</td>
+                      <tr key={row.year} className="group hover:bg-muted/30 transition-colors cursor-pointer" onClick={() => window.location.href = `/school/classes?year=${encodeURIComponent(row.year)}`}>
+                        <td className="py-3 font-medium">
+                          <span className="flex items-center gap-1.5 group-hover:text-primary transition-colors">
+                            {row.year}
+                            <ChevronRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                          </span>
+                        </td>
                         <td className="py-3 text-right tabular-nums text-muted-foreground">{row.students}</td>
                         <td className="py-3 pl-6">
                           <InlineProgressBar pct={row.avgProgress} colorClass={progressColor(row.avgProgress)} />
@@ -453,7 +460,7 @@ export default function SchoolAnalyticsPage() {
                   <tbody className="divide-y divide-border/40">
                     {data.atRiskStudents.map((student) => (
                       <tr key={student.id} className="hover:bg-muted/30 transition-colors">
-                        <td className="py-3 font-medium">{student.name}</td>
+                        <td className="py-3 font-medium"><Link href={`/school/students/${student.id}`} className="hover:text-primary hover:underline transition-colors">{student.name}</Link></td>
                         <td className="py-3 text-muted-foreground">{student.year}</td>
                         <td className="py-3 text-muted-foreground flex items-center gap-1.5">
                           <Clock className="h-3 w-3 shrink-0" />

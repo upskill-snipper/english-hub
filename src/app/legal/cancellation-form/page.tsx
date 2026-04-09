@@ -478,10 +478,10 @@ export default function CancellationFormPage() {
                 <p>
                   Email:{" "}
                   <a
-                    href="mailto:support@theenglishhub.app"
+                    href="mailto:info@Upskillenergy.com"
                     className="text-primary hover:underline"
                   >
-                    support@theenglishhub.app
+                    info@Upskillenergy.com
                   </a>
                 </p>
               </div>
@@ -604,10 +604,10 @@ export default function CancellationFormPage() {
                 <span>
                   Or scan and email to:{" "}
                   <a
-                    href="mailto:support@theenglishhub.app"
+                    href="mailto:info@Upskillenergy.com"
                     className="text-primary hover:underline"
                   >
-                    support@theenglishhub.app
+                    info@Upskillenergy.com
                   </a>
                 </span>
               </li>

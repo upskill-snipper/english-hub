@@ -30,6 +30,7 @@ import {
   DEMO_YEAR_GROUPS,
   DEMO_STATS,
 } from "@/data/demo-data"
+import { percentageToGCSEGrade } from "@/lib/grades"
 
 // ── Helpers ─────────────────────────────────────────────────────────────────
 
@@ -330,7 +331,7 @@ export default function DemoSchoolDashboardPage() {
                 Avg Score
               </p>
               <p className="mt-2 text-4xl font-bold tracking-tight text-foreground">
-                {DEMO_STATS.avgScore}%
+                {DEMO_STATS.avgScore}% <span className="text-lg text-muted-foreground">(Grade {percentageToGCSEGrade(DEMO_STATS.avgScore)})</span>
               </p>
               <p className="mt-1 flex items-center gap-1 text-xs text-emerald-400">
                 <TrendingUp className="h-3 w-3" />
@@ -582,7 +583,7 @@ export default function DemoSchoolDashboardPage() {
                             variant="secondary"
                             className="shrink-0 border-red-500/30 bg-red-500/10 text-[10px] text-red-400"
                           >
-                            {student.overallProgress}%
+                            {student.overallProgress}% (Grade {percentageToGCSEGrade(student.overallProgress)})
                           </Badge>
                         </div>
                         <p className="mt-1 text-[11px] text-violet-300">
@@ -755,7 +756,7 @@ export default function DemoSchoolDashboardPage() {
                       variant="secondary"
                       className="shrink-0 border-red-500/30 bg-red-500/10 text-[10px] text-red-400"
                     >
-                      {student.overallProgress}%
+                      {student.overallProgress}% (Grade {percentageToGCSEGrade(student.overallProgress)})
                     </Badge>
                   </Link>
                 ))}

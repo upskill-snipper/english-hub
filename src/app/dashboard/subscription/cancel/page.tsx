@@ -273,17 +273,17 @@ export default function CancelSubscriptionPage() {
                 rights, you may be entitled to a full refund under consumer
                 protection regulations. Contact us at{" "}
                 <a
-                  href="mailto:support@theenglishhub.app"
+                  href="mailto:info@Upskillenergy.com"
                   className="underline"
                 >
-                  support@theenglishhub.app
+                  info@Upskillenergy.com
                 </a>{" "}
                 for refund requests.
               </p>
             </div>
 
             {error && (
-              <div className="bg-red-950/20 border border-red-200 rounded-lg p-4 mb-6">
+              <div className="bg-red-950/20 border border-red-500/30 rounded-lg p-4 mb-6">
                 <p className="text-sm text-red-400">{error}</p>
               </div>
             )}

@@ -1687,7 +1687,7 @@ export default function LessonBuilderDemo() {
     showToast("Worksheet downloaded as Word document");
   }, [generatedPlan]);
 
-  const handleDownloadPptx = useCallback(() => {
+  const handleDownloadPptx = useCallback(async () => {
     if (!generatedPlan) return;
     const plan = generatedPlan;
     const lessonData: LessonPlanData = {
@@ -1719,8 +1719,13 @@ export default function LessonBuilderDemo() {
       homework: plan.homework,
       teacherNotes: plan.teacherNotes,
     };
-    generateLessonPlanPptx(plan.text, lessonData);
-    showToast("Lesson plan downloaded as PowerPoint");
+    try {
+      await generateLessonPlanPptx(plan.text, lessonData);
+      showToast("Lesson plan downloaded as PowerPoint");
+    } catch (err) {
+      console.error("PPTX download failed:", err);
+      showToast("Failed to download PowerPoint -- please try again");
+    }
   }, [generatedPlan]);
 
   const handleCopy = useCallback(async () => {

@@ -169,27 +169,27 @@ export default function DifferentiationPage() {
                 {strat.icon} {strat.category}
               </h3>
               <div className="grid gap-3 sm:grid-cols-3">
-                <div className="rounded-lg bg-amber-50 p-3">
-                  <p className="text-xs font-bold text-amber-800 mb-2">Lower Ability</p>
+                <div className="rounded-lg bg-amber-500/10 p-3">
+                  <p className="text-xs font-bold text-amber-700 dark:text-amber-300 mb-2">Lower Ability</p>
                   <ul className="space-y-1.5">
                     {strat.lower.map((item, i) => (
-                      <li key={i} className="text-xs text-amber-700">{item}</li>
+                      <li key={i} className="text-xs text-amber-700 dark:text-amber-300">{item}</li>
                     ))}
                   </ul>
                 </div>
-                <div className="rounded-lg bg-blue-50 p-3">
-                  <p className="text-xs font-bold text-blue-800 mb-2">Middle Ability</p>
+                <div className="rounded-lg bg-blue-500/10 p-3">
+                  <p className="text-xs font-bold text-blue-700 dark:text-blue-300 mb-2">Middle Ability</p>
                   <ul className="space-y-1.5">
                     {strat.middle.map((item, i) => (
-                      <li key={i} className="text-xs text-blue-700">{item}</li>
+                      <li key={i} className="text-xs text-blue-700 dark:text-blue-300">{item}</li>
                     ))}
                   </ul>
                 </div>
-                <div className="rounded-lg bg-emerald-50 p-3">
-                  <p className="text-xs font-bold text-emerald-800 mb-2">Higher Ability</p>
+                <div className="rounded-lg bg-emerald-500/10 p-3">
+                  <p className="text-xs font-bold text-emerald-700 dark:text-emerald-300 mb-2">Higher Ability</p>
                   <ul className="space-y-1.5">
                     {strat.higher.map((item, i) => (
-                      <li key={i} className="text-xs text-emerald-700">{item}</li>
+                      <li key={i} className="text-xs text-emerald-700 dark:text-emerald-300">{item}</li>
                     ))}
                   </ul>
                 </div>
@@ -207,18 +207,18 @@ export default function DifferentiationPage() {
           Q: {DIFFERENTIATED_TASK.question}
         </p>
         <div className="grid gap-3 sm:grid-cols-3">
-          <div className="rounded-lg border-2 border-amber-200 p-3">
-            <p className="text-xs font-bold text-amber-700 mb-1">{DIFFERENTIATED_TASK.bronze.label}</p>
+          <div className="rounded-lg border-2 border-amber-500/30 p-3">
+            <p className="text-xs font-bold text-amber-700 dark:text-amber-300 mb-1">{DIFFERENTIATED_TASK.bronze.label}</p>
             <p className="text-xs text-muted-foreground mb-2">{DIFFERENTIATED_TASK.bronze.task}</p>
             <p className="text-xs text-amber-600 font-medium">Target: {DIFFERENTIATED_TASK.bronze.outcome}</p>
           </div>
-          <div className="rounded-lg border-2 border-blue-200 p-3">
-            <p className="text-xs font-bold text-blue-700 mb-1">{DIFFERENTIATED_TASK.silver.label}</p>
+          <div className="rounded-lg border-2 border-blue-500/30 p-3">
+            <p className="text-xs font-bold text-blue-700 dark:text-blue-300 mb-1">{DIFFERENTIATED_TASK.silver.label}</p>
             <p className="text-xs text-muted-foreground mb-2">{DIFFERENTIATED_TASK.silver.task}</p>
             <p className="text-xs text-blue-600 font-medium">Target: {DIFFERENTIATED_TASK.silver.outcome}</p>
           </div>
-          <div className="rounded-lg border-2 border-emerald-200 p-3">
-            <p className="text-xs font-bold text-emerald-700 mb-1">{DIFFERENTIATED_TASK.gold.label}</p>
+          <div className="rounded-lg border-2 border-emerald-500/30 p-3">
+            <p className="text-xs font-bold text-emerald-700 dark:text-emerald-300 mb-1">{DIFFERENTIATED_TASK.gold.label}</p>
             <p className="text-xs text-muted-foreground mb-2">{DIFFERENTIATED_TASK.gold.task}</p>
             <p className="text-xs text-emerald-600 font-medium">Target: {DIFFERENTIATED_TASK.gold.outcome}</p>
           </div>

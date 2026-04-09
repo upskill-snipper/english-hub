@@ -55,11 +55,11 @@ const YEAR_GROUPS: YearGroupData[] = [
     needsSupport: 48,
     atRisk: 20,
     predictedGrades: [
-      { grade: "A*/A", pct: 8, color: "bg-emerald-500" },
-      { grade: "B", pct: 22, color: "bg-emerald-400" },
-      { grade: "C", pct: 38, color: "bg-amber-400" },
-      { grade: "D", pct: 22, color: "bg-orange-400" },
-      { grade: "U", pct: 10, color: "bg-red-500" },
+      { grade: "8-9", pct: 8, color: "bg-emerald-500" },
+      { grade: "7", pct: 22, color: "bg-emerald-400" },
+      { grade: "6", pct: 38, color: "bg-amber-400" },
+      { grade: "5", pct: 22, color: "bg-orange-400" },
+      { grade: "1-4", pct: 10, color: "bg-red-500" },
     ],
     classes: [
       { name: "7A English", avgScore: 64, completionRate: 68, teacher: "Ms. Williams" },
@@ -89,11 +89,11 @@ const YEAR_GROUPS: YearGroupData[] = [
     needsSupport: 39,
     atRisk: 18,
     predictedGrades: [
-      { grade: "A*/A", pct: 10, color: "bg-emerald-500" },
-      { grade: "B", pct: 25, color: "bg-emerald-400" },
-      { grade: "C", pct: 36, color: "bg-amber-400" },
-      { grade: "D", pct: 20, color: "bg-orange-400" },
-      { grade: "U", pct: 9, color: "bg-red-500" },
+      { grade: "8-9", pct: 10, color: "bg-emerald-500" },
+      { grade: "7", pct: 25, color: "bg-emerald-400" },
+      { grade: "6", pct: 36, color: "bg-amber-400" },
+      { grade: "5", pct: 20, color: "bg-orange-400" },
+      { grade: "1-4", pct: 9, color: "bg-red-500" },
     ],
     classes: [
       { name: "8A English", avgScore: 68, completionRate: 72, teacher: "Mr. Harris" },
@@ -123,11 +123,11 @@ const YEAR_GROUPS: YearGroupData[] = [
     needsSupport: 35,
     atRisk: 17,
     predictedGrades: [
-      { grade: "A*/A", pct: 12, color: "bg-emerald-500" },
-      { grade: "B", pct: 28, color: "bg-emerald-400" },
-      { grade: "C", pct: 34, color: "bg-amber-400" },
-      { grade: "D", pct: 18, color: "bg-orange-400" },
-      { grade: "U", pct: 8, color: "bg-red-500" },
+      { grade: "8-9", pct: 12, color: "bg-emerald-500" },
+      { grade: "7", pct: 28, color: "bg-emerald-400" },
+      { grade: "6", pct: 34, color: "bg-amber-400" },
+      { grade: "5", pct: 18, color: "bg-orange-400" },
+      { grade: "1-4", pct: 8, color: "bg-red-500" },
     ],
     classes: [
       { name: "9A English", avgScore: 70, completionRate: 74, teacher: "Mrs. Okafor" },
@@ -157,11 +157,11 @@ const YEAR_GROUPS: YearGroupData[] = [
     needsSupport: 34,
     atRisk: 16,
     predictedGrades: [
-      { grade: "A*/A", pct: 15, color: "bg-emerald-500" },
-      { grade: "B", pct: 30, color: "bg-emerald-400" },
-      { grade: "C", pct: 35, color: "bg-amber-400" },
-      { grade: "D", pct: 15, color: "bg-orange-400" },
-      { grade: "U", pct: 5, color: "bg-red-500" },
+      { grade: "8-9", pct: 15, color: "bg-emerald-500" },
+      { grade: "7", pct: 30, color: "bg-emerald-400" },
+      { grade: "6", pct: 35, color: "bg-amber-400" },
+      { grade: "5", pct: 15, color: "bg-orange-400" },
+      { grade: "1-4", pct: 5, color: "bg-red-500" },
     ],
     classes: [
       { name: "10A English", avgScore: 74, completionRate: 76, teacher: "Ms. Thompson" },
@@ -193,11 +193,11 @@ const YEAR_GROUPS: YearGroupData[] = [
     needsSupport: 28,
     atRisk: 12,
     predictedGrades: [
-      { grade: "A*/A", pct: 18, color: "bg-emerald-500" },
-      { grade: "B", pct: 32, color: "bg-emerald-400" },
-      { grade: "C", pct: 32, color: "bg-amber-400" },
-      { grade: "D", pct: 13, color: "bg-orange-400" },
-      { grade: "U", pct: 5, color: "bg-red-500" },
+      { grade: "8-9", pct: 18, color: "bg-emerald-500" },
+      { grade: "7", pct: 32, color: "bg-emerald-400" },
+      { grade: "6", pct: 32, color: "bg-amber-400" },
+      { grade: "5", pct: 13, color: "bg-orange-400" },
+      { grade: "1-4", pct: 5, color: "bg-red-500" },
     ],
     classes: [
       { name: "11A English Lang", avgScore: 78, completionRate: 84, teacher: "Ms. Khan" },
@@ -229,11 +229,11 @@ const YEAR_GROUPS: YearGroupData[] = [
     needsSupport: 14,
     atRisk: 6,
     predictedGrades: [
-      { grade: "A*/A", pct: 20, color: "bg-emerald-500" },
-      { grade: "B", pct: 35, color: "bg-emerald-400" },
-      { grade: "C", pct: 28, color: "bg-amber-400" },
-      { grade: "D", pct: 12, color: "bg-orange-400" },
-      { grade: "U", pct: 5, color: "bg-red-500" },
+      { grade: "8-9", pct: 20, color: "bg-emerald-500" },
+      { grade: "7", pct: 35, color: "bg-emerald-400" },
+      { grade: "6", pct: 28, color: "bg-amber-400" },
+      { grade: "5", pct: 12, color: "bg-orange-400" },
+      { grade: "1-4", pct: 5, color: "bg-red-500" },
     ],
     classes: [
       { name: "12A English Lit A-Level", avgScore: 74, completionRate: 78, teacher: "Dr. Chen" },
@@ -262,11 +262,11 @@ const YEAR_GROUPS: YearGroupData[] = [
     needsSupport: 10,
     atRisk: 4,
     predictedGrades: [
-      { grade: "A*/A", pct: 22, color: "bg-emerald-500" },
-      { grade: "B", pct: 34, color: "bg-emerald-400" },
-      { grade: "C", pct: 30, color: "bg-amber-400" },
-      { grade: "D", pct: 10, color: "bg-orange-400" },
-      { grade: "U", pct: 4, color: "bg-red-500" },
+      { grade: "8-9", pct: 22, color: "bg-emerald-500" },
+      { grade: "7", pct: 34, color: "bg-emerald-400" },
+      { grade: "6", pct: 30, color: "bg-amber-400" },
+      { grade: "5", pct: 10, color: "bg-orange-400" },
+      { grade: "1-4", pct: 4, color: "bg-red-500" },
     ],
     classes: [
       { name: "13A English Lit A-Level", avgScore: 78, completionRate: 84, teacher: "Dr. Chen" },
@@ -410,11 +410,11 @@ export default function SchoolProgressPage() {
             <CardContent>
               <div className="space-y-1.5">
                 {[
-                  { grade: "A*/A", pct: 15, color: "bg-emerald-500" },
-                  { grade: "B", pct: 30, color: "bg-emerald-400" },
-                  { grade: "C", pct: 35, color: "bg-amber-400" },
-                  { grade: "D", pct: 15, color: "bg-orange-400" },
-                  { grade: "U", pct: 5, color: "bg-red-500" },
+                  { grade: "8-9", pct: 15, color: "bg-emerald-500" },
+                  { grade: "7", pct: 30, color: "bg-emerald-400" },
+                  { grade: "6", pct: 35, color: "bg-amber-400" },
+                  { grade: "5", pct: 15, color: "bg-orange-400" },
+                  { grade: "1-4", pct: 5, color: "bg-red-500" },
                 ].map((g) => (
                   <div key={g.grade} className="flex items-center gap-2 text-xs">
                     <span className="w-10 text-neutral-400 font-medium">{g.grade}</span>

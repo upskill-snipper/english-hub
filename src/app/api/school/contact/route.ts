@@ -12,12 +12,17 @@ interface ContactBody {
   schoolName?: string;
   contactName?: string;
   email?: string;
+  countryCode?: string;
   phone?: string;
+  preferredContact?: string;
   role?: string;
   studentCount?: string;
   examBoard?: string;
   message?: string;
 }
+
+const VALID_COUNTRY_CODES = ["+44", "+1", "+971", "+974", "+65", "+852", "+61"];
+const VALID_PREFERRED_CONTACT = ["Email", "Phone", "Either"];
 
 const VALID_ROLES = [
   "Head of Department",
@@ -62,7 +67,7 @@ export async function POST(req: NextRequest) {
   }
 
   // Validate required fields
-  const { schoolName, contactName, email, phone, role, studentCount, examBoard, message } = body;
+  const { schoolName, contactName, email, countryCode, phone, preferredContact, role, studentCount, examBoard, message } = body;
 
   if (!schoolName?.trim()) {
     return NextResponse.json({ error: "School name is required." }, { status: 400 });
@@ -87,13 +92,20 @@ export async function POST(req: NextRequest) {
   try {
     const supabase = createServiceRoleClient();
 
+    // Build the full phone number with country code
+    const fullPhone = phone?.trim()
+      ? `${countryCode || "+44"} ${phone.trim()}`
+      : null;
+
     const { error: insertError } = await supabase
       .from("school_contact_requests")
       .insert({
         school_name: schoolName.trim(),
         contact_name: contactName.trim(),
         email: email.trim().toLowerCase(),
-        phone: phone?.trim() || null,
+        phone: fullPhone,
+        country_code: countryCode || "+44",
+        preferred_contact: preferredContact || "Email",
         role,
         student_count: studentCount,
         exam_board: examBoard,

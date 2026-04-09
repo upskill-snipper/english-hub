@@ -71,11 +71,14 @@ export function downloadAsWord(title: string, htmlContent: string, fileName?: st
         .label-main { background-color: #dbeafe; color: #1e40af; }
         .label-plenary { background-color: #fee2e2; color: #991b1b; }
         .diff-table { width: 100%; margin-top: 8pt; }
-        .diff-table th { font-size: 9pt; padding: 4pt 8pt; }
+        .diff-table th { font-size: 9pt; padding: 4pt 8pt; font-weight: bold; }
         .diff-table td { font-size: 9pt; padding: 6pt 8pt; }
-        .diff-support { background-color: #eff6ff; }
-        .diff-core { background-color: #f0fdf4; }
-        .diff-stretch { background-color: #faf5ff; }
+        .diff-table th.diff-support { background-color: #dbeafe; color: #1e40af; }
+        .diff-table th.diff-core { background-color: #dcfce7; color: #166534; }
+        .diff-table th.diff-stretch { background-color: #ede9fe; color: #5b21b6; }
+        .diff-support td, td.diff-support { background-color: #eff6ff; }
+        .diff-core td, td.diff-core { background-color: #f0fdf4; }
+        .diff-stretch td, td.diff-stretch { background-color: #faf5ff; }
         .keyword-chip { display: inline-block; background-color: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; padding: 2pt 10pt; margin: 2pt 4pt 2pt 0; font-size: 9pt; }
         .quote-block { border-left: 3px solid #2563eb; padding: 8pt 14pt; margin: 8pt 0; background-color: #f8faff; }
         .quote-text { font-style: italic; font-size: 10.5pt; color: #1f2937; }
@@ -88,7 +91,7 @@ export function downloadAsWord(title: string, htmlContent: string, fileName?: st
         .grade-box.top .grade-label { color: #16a34a; }
         .grade-box.mid .grade-label { color: #b45309; }
         .grade-box.lower .grade-label { color: #dc2626; }
-        .answer-line { border-bottom: 1px solid #d1d5db; height: 24pt; margin-bottom: 2pt; }
+        .answer-line { border-bottom: 1.5px solid #b0b8c4; height: 30pt; margin-bottom: 4pt; }
         .footer { margin-top: 24pt; padding-top: 8pt; border-top: 1px solid #e2e8f0; font-size: 9pt; color: #a0aec0; }
       </style>
     </head>
@@ -285,8 +288,8 @@ export function generateWorksheetWord(
       if (q.type === 'multiple-choice' && q.options) {
         questionContent += `<div style="margin:6pt 0 4pt 20pt;">${q.options.map((opt, oi) => `<p style="margin:3pt 0;font-size:10pt;"><strong>${String.fromCharCode(65 + oi)}.</strong> ${escHtml(opt)}</p>`).join('')}</div>`
       } else {
-        const lines = q.lines || (q.type === 'extended-writing' ? 12 : q.type === 'quote-analysis' ? 8 : 4)
-        questionContent += `<div style="margin:8pt 0;">${Array.from({ length: lines }, () => '<div class="answer-line"></div>').join('')}</div>`
+        const lines = q.lines || (q.type === 'extended-writing' ? 14 : q.type === 'quote-analysis' ? 10 : 5)
+        questionContent += `<div style="margin:10pt 0 6pt 0;">${Array.from({ length: lines }, () => '<div class="answer-line"></div>').join('')}</div>`
       }
 
       const typeLabel =
@@ -299,9 +302,9 @@ export function generateWorksheetWord(
               : 'Quote Analysis'
 
       return `
-        <div style="margin-bottom:18pt;">
+        <div style="margin-bottom:24pt;">
           <p style="font-weight:bold;font-size:10.5pt;">
-            <span style="color:#2563eb;margin-right:6pt;">${i + 1}.</span>
+            <span style="color:#2563eb;font-weight:bold;margin-right:8pt;">${i + 1}.</span>
             ${escHtml(q.question)}
             <span style="font-size:8pt;color:#718096;font-weight:normal;margin-left:8pt;">[${q.marks} mark${q.marks !== 1 ? 's' : ''} &mdash; ${typeLabel}]</span>
           </p>

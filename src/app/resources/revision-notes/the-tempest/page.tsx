@@ -71,7 +71,7 @@ export default function TheTempestRevisionPage() {
       {/* Hero */}
       <div className="mb-8">
         <div className="flex flex-wrap items-center gap-3 mb-2">
-          <span className="rounded-full bg-blue-100 px-3 py-1 text-xs font-bold text-blue-700 uppercase tracking-wider">Shakespeare</span>
+          <span className="rounded-full bg-blue-500/15 px-3 py-1 text-xs font-bold text-blue-700 dark:text-blue-300 uppercase tracking-wider">Shakespeare</span>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">AQA</span>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">Edexcel</span>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">CAIE</span>
@@ -108,7 +108,7 @@ export default function TheTempestRevisionPage() {
           <div className="space-y-6">
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 text-xs font-bold text-blue-700">1</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-500/15 text-xs font-bold text-blue-700 dark:text-blue-300">1</span>
                 Act 1, Scene 1 &mdash; The Storm
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -126,7 +126,7 @@ export default function TheTempestRevisionPage() {
 
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 text-xs font-bold text-blue-700">2</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-500/15 text-xs font-bold text-blue-700 dark:text-blue-300">2</span>
                 Act 1, Scene 2 &mdash; Prospero&apos;s Story
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -146,7 +146,7 @@ export default function TheTempestRevisionPage() {
 
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 text-xs font-bold text-blue-700">3</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-500/15 text-xs font-bold text-blue-700 dark:text-blue-300">3</span>
                 Act 2, Scene 1 &mdash; The Nobles on the Island
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -164,7 +164,7 @@ export default function TheTempestRevisionPage() {
 
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 text-xs font-bold text-blue-700">4</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-500/15 text-xs font-bold text-blue-700 dark:text-blue-300">4</span>
                 Act 2, Scene 2 &mdash; Caliban, Stephano, and Trinculo
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -182,7 +182,7 @@ export default function TheTempestRevisionPage() {
 
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 text-xs font-bold text-blue-700">5</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-500/15 text-xs font-bold text-blue-700 dark:text-blue-300">5</span>
                 Act 3, Scene 1 &mdash; Ferdinand and Miranda
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -200,7 +200,7 @@ export default function TheTempestRevisionPage() {
 
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 text-xs font-bold text-blue-700">6</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-500/15 text-xs font-bold text-blue-700 dark:text-blue-300">6</span>
                 Act 3, Scene 2 &mdash; The Assassination Plot
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -218,7 +218,7 @@ export default function TheTempestRevisionPage() {
 
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 text-xs font-bold text-blue-700">7</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-500/15 text-xs font-bold text-blue-700 dark:text-blue-300">7</span>
                 Act 3, Scene 3 &mdash; The Banquet
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -236,7 +236,7 @@ export default function TheTempestRevisionPage() {
 
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 text-xs font-bold text-blue-700">8</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-500/15 text-xs font-bold text-blue-700 dark:text-blue-300">8</span>
                 Act 4, Scene 1 &mdash; The Masque
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -255,7 +255,7 @@ export default function TheTempestRevisionPage() {
 
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 text-xs font-bold text-blue-700">9</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-500/15 text-xs font-bold text-blue-700 dark:text-blue-300">9</span>
                 Act 5, Scene 1 &amp; Epilogue &mdash; Resolution and Renunciation
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -681,7 +681,7 @@ export default function TheTempestRevisionPage() {
             </p>
             <div className="space-y-4">
               <div className="rounded-lg border border-border bg-card p-5 shadow-md">
-                <span className="inline-block rounded-full bg-blue-50 px-2.5 py-0.5 text-xs font-semibold text-blue-700">
+                <span className="inline-block rounded-full bg-blue-500/10 px-2.5 py-0.5 text-xs font-semibold text-blue-700 dark:text-blue-300">
                   Extract-Based
                 </span>
                 <p className="mt-3 text-sm font-medium text-foreground">
@@ -701,7 +701,7 @@ export default function TheTempestRevisionPage() {
               </div>
 
               <div className="rounded-lg border border-border bg-card p-5 shadow-md">
-                <span className="inline-block rounded-full bg-emerald-50 px-2.5 py-0.5 text-xs font-semibold text-emerald-700">
+                <span className="inline-block rounded-full bg-emerald-500/10 px-2.5 py-0.5 text-xs font-semibold text-emerald-700 dark:text-emerald-300">
                   Essay Question
                 </span>
                 <p className="mt-3 text-sm font-medium text-foreground">
@@ -721,7 +721,7 @@ export default function TheTempestRevisionPage() {
               </div>
 
               <div className="rounded-lg border border-border bg-card p-5 shadow-md">
-                <span className="inline-block rounded-full bg-emerald-50 px-2.5 py-0.5 text-xs font-semibold text-emerald-700">
+                <span className="inline-block rounded-full bg-emerald-500/10 px-2.5 py-0.5 text-xs font-semibold text-emerald-700 dark:text-emerald-300">
                   Essay Question
                 </span>
                 <p className="mt-3 text-sm font-medium text-foreground">
@@ -741,7 +741,7 @@ export default function TheTempestRevisionPage() {
               </div>
 
               <div className="rounded-lg border border-border bg-card p-5 shadow-md">
-                <span className="inline-block rounded-full bg-blue-50 px-2.5 py-0.5 text-xs font-semibold text-blue-700">
+                <span className="inline-block rounded-full bg-blue-500/10 px-2.5 py-0.5 text-xs font-semibold text-blue-700 dark:text-blue-300">
                   Extract-Based
                 </span>
                 <p className="mt-3 text-sm font-medium text-foreground">
@@ -761,7 +761,7 @@ export default function TheTempestRevisionPage() {
               </div>
 
               <div className="rounded-lg border border-border bg-card p-5 shadow-md">
-                <span className="inline-block rounded-full bg-emerald-50 px-2.5 py-0.5 text-xs font-semibold text-emerald-700">
+                <span className="inline-block rounded-full bg-emerald-500/10 px-2.5 py-0.5 text-xs font-semibold text-emerald-700 dark:text-emerald-300">
                   Essay Question
                 </span>
                 <p className="mt-3 text-sm font-medium text-foreground">

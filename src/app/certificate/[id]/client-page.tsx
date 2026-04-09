@@ -69,14 +69,11 @@ export default function CertificatePage() {
   }
 
   function getGradeColor(grade: string): string {
-    switch (grade) {
-      case 'Distinction':
-        return 'text-yellow-400'
-      case 'Merit':
-        return 'text-primary'
-      default:
-        return 'text-brand-blue'
-    }
+    const num = parseInt(grade.replace('Grade ', ''))
+    if (num >= 8) return 'text-yellow-400'
+    if (num >= 6) return 'text-primary'
+    if (num >= 4) return 'text-brand-blue'
+    return 'text-muted-foreground'
   }
 
   function handlePrint() {

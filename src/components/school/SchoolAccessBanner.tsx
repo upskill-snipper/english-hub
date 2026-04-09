@@ -55,7 +55,7 @@ function FounderWarningSoonBanner({
         FOUNDER access &mdash; renew to keep access
       </span>
       <a
-        href={`/school/${schoolId}/billing`}
+        href="/school/billing"
         className="ml-auto shrink-0 rounded-md bg-amber-700 px-3 py-1 text-xs font-semibold text-amber-50 transition-colors hover:bg-amber-600"
       >
         Renew now
@@ -81,7 +81,7 @@ function FounderUrgentBanner({
         &mdash; your FOUNDER access is about to expire. Renew now to avoid disruption.
       </span>
       <a
-        href={`/school/${schoolId}/billing`}
+        href="/school/billing"
         className="ml-auto shrink-0 rounded-md bg-red-700 px-3 py-1 text-xs font-semibold text-red-50 transition-colors hover:bg-red-600"
       >
         Renew urgently
@@ -102,7 +102,7 @@ function ExpiredBanner({ schoolId }: { schoolId: string }) {
         </p>
       </div>
       <a
-        href={`/school/${schoolId}/billing`}
+        href="/school/billing"
         className="ml-auto shrink-0 rounded-md bg-red-600 px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-red-500"
       >
         Restore access
@@ -144,7 +144,7 @@ function TrialActiveBanner({ accessUntil, schoolId }: { accessUntil: string | nu
         ) : null}
       </span>
       <a
-        href={`/school/${schoolId}/billing`}
+        href="/school/billing"
         className="ml-auto shrink-0 rounded-md bg-amber-700 px-3 py-1 text-xs font-semibold text-amber-50 transition-colors hover:bg-amber-600"
       >
         Upgrade to full access

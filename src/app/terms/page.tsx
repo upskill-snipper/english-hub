@@ -67,7 +67,7 @@ export default function TermsPage() {
             You are responsible for maintaining the confidentiality of your account credentials and
             for all activity that occurs under your account. You must provide accurate and complete
             information when registering and keep your details up to date. You agree to notify us
-            immediately at support@theenglishhub.app if you become aware of any unauthorised use of
+            immediately at info@Upskillenergy.com if you become aware of any unauthorised use of
             your account.
           </p>
           <p className="mt-2 text-muted-foreground leading-relaxed">
@@ -89,7 +89,7 @@ export default function TermsPage() {
               <strong>Monthly Plan:</strong> £9.99 per month, billed monthly on a recurring basis. First month free.
             </li>
             <li>
-              <strong>Annual Plan:</strong> £79.99 per year, billed annually on a recurring basis. First month free.
+              <strong>Annual Plan:</strong> £67.99 per year, billed annually on a recurring basis. First month free.
             </li>
           </ul>
           <p className="mt-2 text-muted-foreground leading-relaxed">
@@ -233,7 +233,7 @@ export default function TermsPage() {
           <h2 className="text-xl font-semibold text-foreground">10. Cancellation and Refunds</h2>
           <p className="mt-2 text-muted-foreground leading-relaxed">
             You may cancel your subscription at any time through your account settings or by
-            contacting us at support@theenglishhub.app. Upon cancellation, you will retain access to
+            contacting us at info@Upskillenergy.com. Upon cancellation, you will retain access to
             the platform until the end of your current billing period. No further charges will be
             made after cancellation takes effect.
           </p>
@@ -305,7 +305,7 @@ export default function TermsPage() {
           <h2 className="text-xl font-semibold text-foreground">13. Dispute Resolution</h2>
           <p className="mt-2 text-muted-foreground leading-relaxed">
             If you have a complaint or dispute regarding the Service, we encourage you to contact us
-            first at support@theenglishhub.app so that we can attempt to resolve the matter
+            first at info@Upskillenergy.com so that we can attempt to resolve the matter
             informally. We will acknowledge your complaint within 5 business days and aim to provide
             a substantive response within 14 business days.
           </p>
@@ -344,7 +344,7 @@ export default function TermsPage() {
           <p className="mt-2 text-muted-foreground leading-relaxed">
             Upskill Energy Limited, trading as The English Hub
             <br />
-            Email: support@theenglishhub.app
+            Email: info@Upskillenergy.com
           </p>
         </section>
       </div>

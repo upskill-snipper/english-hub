@@ -285,7 +285,7 @@ const characters = [
 const themes = [
   {
     title: "Ambition",
-    colour: "bg-red-50 border-red-200",
+    colour: "bg-red-500/10 border-red-500/30",
     analysis:
       "Ambition is the driving force of the play. Shakespeare presents it as a powerful and destructive force. Macbeth's ambition exists before the Witches' prophecy ('My thought, whose murder yet is but fantastical') - they merely ignite it. Lady Macbeth's ambition is initially stronger than Macbeth's, but the play shows how unchecked ambition destroys both of them. The key message is not that ambition itself is evil, but that ambition without moral restraint leads to destruction.",
     keyPoints: [
@@ -301,7 +301,7 @@ const themes = [
   },
   {
     title: "Guilt and Conscience",
-    colour: "bg-purple-50 border-purple-200",
+    colour: "bg-purple-500/10 border-purple-500/30",
     analysis:
       "Guilt is presented as an inescapable psychological force. From the moment Macbeth kills Duncan, guilt haunts him through hallucinations (the dagger, Banquo's ghost) and sleeplessness. Lady Macbeth initially appears immune to guilt ('A little water clears us of this deed') but it eventually manifests as madness in her sleepwalking scene. Shakespeare suggests that guilt is the natural human response to moral transgression - it cannot be suppressed, only delayed.",
     keyPoints: [
@@ -320,7 +320,7 @@ const themes = [
   },
   {
     title: "The Supernatural",
-    colour: "bg-indigo-50 border-indigo-200",
+    colour: "bg-indigo-500/10 border-indigo-200",
     analysis:
       "The supernatural permeates the play through the Witches, ghosts, hallucinations, and prophecies. Shakespeare uses it to create atmosphere and explore the boundary between fate and free will. The Witches' prophecies raise a central question: do they cause Macbeth's actions, or simply predict what he would have done anyway? For a Jacobean audience, the supernatural was real and terrifying - James I himself wrote about witchcraft.",
     keyPoints: [
@@ -339,7 +339,7 @@ const themes = [
   },
   {
     title: "Masculinity and Gender",
-    colour: "bg-orange-50 border-orange-200",
+    colour: "bg-orange-500/10 border-orange-500/30",
     analysis:
       "Shakespeare interrogates what it means to be a 'man' throughout the play. Lady Macbeth equates masculinity with violence and ambition, shaming Macbeth into murder by questioning his manhood. Macbeth internalises this toxic definition, seeing compassion as weakness. However, the play ultimately rejects this view - Macduff's tears for his family ('I must also feel it as a man') present a healthier, more complete masculinity.",
     keyPoints: [
@@ -358,7 +358,7 @@ const themes = [
   },
   {
     title: "Kingship and Tyranny",
-    colour: "bg-green-50 border-green-200",
+    colour: "bg-green-500/10 border-green-500/30",
     analysis:
       "The play contrasts good kingship (Duncan, Edward, Malcolm) with tyranny (Macbeth). Duncan is generous, trusting, and divinely appointed. Macbeth rules through fear and violence. The play upholds the Jacobean belief in the divine right of kings: when the rightful king is murdered, the natural world is thrown into chaos. Order is only restored when Malcolm, the legitimate heir, takes the throne.",
     keyPoints: [
@@ -376,7 +376,7 @@ const themes = [
   },
   {
     title: "Appearance vs Reality",
-    colour: "bg-teal-50 border-teal-200",
+    colour: "bg-teal-500/10 border-teal-200",
     analysis:
       "From the Witches' opening 'Fair is foul, and foul is fair,' the play constantly questions what is real and what is illusion. Characters deceive others (Lady Macbeth's hospitality, Macbeth's loyalty), and deceive themselves (Macbeth's belief in his invincibility). The audience is also challenged: is the dagger real? Is the ghost? Shakespeare suggests that in a world of moral corruption, truth itself becomes unstable.",
     keyPoints: [
@@ -614,7 +614,7 @@ export default function MacbethPage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-primary to-primary/90 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary/20">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-white/70">
             AQA English Literature &middot; Paper 1
           </p>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">

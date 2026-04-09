@@ -198,7 +198,7 @@ export default function GradeBoundariesPage() {
               </div>
             </div>
 
-            <div className="rounded-lg border-l-4 border-primary bg-blue-50/30 p-5">
+            <div className="rounded-lg border-l-4 border-primary bg-blue-500/10/30 p-5">
               <h3 className="text-lg font-bold text-primary">Grades A&ndash;B &mdash; Strong</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <ul className="ml-5 list-disc space-y-1">
@@ -212,7 +212,7 @@ export default function GradeBoundariesPage() {
               </div>
             </div>
 
-            <div className="rounded-lg border-l-4 border-primary bg-blue-50/20 p-5">
+            <div className="rounded-lg border-l-4 border-primary bg-blue-500/10/20 p-5">
               <h3 className="text-lg font-bold text-foreground">Grades C&ndash;D &mdash; Competent</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <ul className="ml-5 list-disc space-y-1">
@@ -226,8 +226,8 @@ export default function GradeBoundariesPage() {
               </div>
             </div>
 
-            <div className="rounded-lg border-l-4 border-yellow-400 bg-yellow-50/30 p-5">
-              <h3 className="text-lg font-bold text-yellow-700">Grade E &mdash; Basic pass</h3>
+            <div className="rounded-lg border-l-4 border-yellow-400 bg-yellow-500/10/30 p-5">
+              <h3 className="text-lg font-bold text-yellow-700 dark:text-yellow-300">Grade E &mdash; Basic pass</h3>
               <div className="mt-3 space-y-2 text-sm">
                 <ul className="ml-5 list-disc space-y-1">
                   <li>Some response to the text, though may lack development or consistency.</li>

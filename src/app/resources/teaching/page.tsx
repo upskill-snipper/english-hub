@@ -120,11 +120,11 @@ export default function TeachingResourcesHub() {
     return (
       <>
         <div className="flex min-h-[60vh] items-center justify-center px-4">
-          <div className="max-w-md rounded-xl border border-red-200 bg-red-50 p-8 text-center">
+          <div className="max-w-md rounded-xl border border-red-500/30 bg-red-500/10 p-8 text-center">
             <svg className="mx-auto h-12 w-12 text-red-400" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
             </svg>
-            <h2 className="mt-4 text-lg font-bold text-red-800">Teacher Access Only</h2>
+            <h2 className="mt-4 text-lg font-bold text-red-700 dark:text-red-300">Teacher Access Only</h2>
             <p className="mt-2 text-sm text-red-600">
               Teaching resources are only available to verified teacher accounts.
               Please log in with a teacher account or contact support if you believe this is an error.

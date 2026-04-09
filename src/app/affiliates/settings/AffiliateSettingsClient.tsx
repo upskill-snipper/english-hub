@@ -425,14 +425,14 @@ export default function AffiliateSettingsClient({
               href="/terms"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-sm text-primary hover:text-primary-hover transition-colors"
+              className="inline-flex items-center gap-1.5 text-sm text-primary hover:text-primary/80 transition-colors"
             >
               View affiliate agreement
               <ExternalLink className="w-3.5 h-3.5" />
             </a>
 
             <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-3 mt-3">
-              <p className="text-sm text-yellow-200">
+              <p className="text-sm text-yellow-700 dark:text-yellow-300 dark:text-yellow-200">
                 <strong>Disclosure reminder:</strong> You must include{' '}
                 <code className="bg-yellow-500/20 px-1 rounded">#ad</code> in the first
                 3 words of every promotional post. Failure to disclose may result in

@@ -72,7 +72,7 @@ export default function CrucibleRevisionPage() {
       {/* Hero */}
       <div className="mb-8">
         <div className="flex flex-wrap items-center gap-3 mb-2">
-          <span className="rounded-full bg-red-100 px-3 py-1 text-xs font-bold text-red-700 uppercase tracking-wider">Modern Drama</span>
+          <span className="rounded-full bg-red-500/15 px-3 py-1 text-xs font-bold text-red-700 dark:text-red-300 uppercase tracking-wider">Modern Drama</span>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">AQA</span>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">Edexcel</span>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">CAIE</span>
@@ -109,7 +109,7 @@ export default function CrucibleRevisionPage() {
           <div className="space-y-6">
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-100 text-xs font-bold text-red-700">1</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-500/15 text-xs font-bold text-red-700 dark:text-red-300">1</span>
                 Act 1 &mdash; The Discovery
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -128,7 +128,7 @@ export default function CrucibleRevisionPage() {
 
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-100 text-xs font-bold text-red-700">2</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-500/15 text-xs font-bold text-red-700 dark:text-red-300">2</span>
                 Act 2 &mdash; The Accusations Spread
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -147,7 +147,7 @@ export default function CrucibleRevisionPage() {
 
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-100 text-xs font-bold text-red-700">3</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-500/15 text-xs font-bold text-red-700 dark:text-red-300">3</span>
                 Act 3 &mdash; The Trial
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -166,7 +166,7 @@ export default function CrucibleRevisionPage() {
 
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-100 text-xs font-bold text-red-700">4</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-500/15 text-xs font-bold text-red-700 dark:text-red-300">4</span>
                 Act 4 &mdash; The Choice
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -500,7 +500,7 @@ export default function CrucibleRevisionPage() {
         <div id="exam-tips">
           <Section id="exam-tips" title="Exam Tips" colour="bg-primary">
             <div className="space-y-6">
-              <div className="rounded-lg border border-blue-200 bg-blue-50/50 p-4">
+              <div className="rounded-lg border border-blue-500/30 bg-blue-500/5 p-4">
                 <h3 className="font-bold text-foreground">General Tips for The Crucible</h3>
                 <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                   <li>&bull; <strong>Always link to McCarthyism:</strong> The play is an allegory. Every essay should connect Salem to 1950s America &mdash; this is essential context.</li>
@@ -512,7 +512,7 @@ export default function CrucibleRevisionPage() {
                 </ul>
               </div>
 
-              <div className="rounded-lg border border-purple-200 bg-purple-50/50 p-4">
+              <div className="rounded-lg border border-purple-500/30 bg-purple-500/5 p-4">
                 <h3 className="font-bold text-foreground flex items-center gap-2">
                   <span className="rounded bg-[#40197F] px-2 py-0.5 text-xs font-bold text-white">AQA</span>
                   AQA GCSE English Literature &mdash; Paper 2, Section A
@@ -525,7 +525,7 @@ export default function CrucibleRevisionPage() {
                 </ul>
               </div>
 
-              <div className="rounded-lg border border-green-200 bg-green-50/50 p-4">
+              <div className="rounded-lg border border-green-500/30 bg-green-500/5 p-4">
                 <h3 className="font-bold text-foreground flex items-center gap-2">
                   <span className="rounded bg-[#00A651] px-2 py-0.5 text-xs font-bold text-white">CAIE</span>
                   Cambridge IGCSE Literature &mdash; Paper 1 (Drama)

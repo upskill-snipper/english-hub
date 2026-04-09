@@ -139,8 +139,12 @@ function downloadMarkSchemeWord() {
   generateMarkSchemeWord("An Inspector Calls", responsibilityMarkSchemeMeta, responsibilityMarkSchemeAnswers)
 }
 
-function downloadLessonPlanPptx() {
-  generateLessonPlanPptx("An Inspector Calls", act1LessonPlan)
+async function downloadLessonPlanPptx() {
+  try {
+    await generateLessonPlanPptx("An Inspector Calls", act1LessonPlan)
+  } catch (err) {
+    console.error("PPTX download failed:", err)
+  }
 }
 
 /* ------------------------------------------------------------------ */

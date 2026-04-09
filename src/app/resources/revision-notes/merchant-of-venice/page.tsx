@@ -71,7 +71,7 @@ export default function MerchantOfVeniceRevisionPage() {
       {/* Hero */}
       <div className="mb-8">
         <div className="flex flex-wrap items-center gap-3 mb-2">
-          <span className="rounded-full bg-amber-100 px-3 py-1 text-xs font-bold text-amber-700 uppercase tracking-wider">Shakespeare</span>
+          <span className="rounded-full bg-amber-500/15 px-3 py-1 text-xs font-bold text-amber-700 dark:text-amber-300 uppercase tracking-wider">Shakespeare</span>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">AQA</span>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">Edexcel</span>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">CAIE</span>
@@ -108,7 +108,7 @@ export default function MerchantOfVeniceRevisionPage() {
           <div className="space-y-6">
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-100 text-xs font-bold text-amber-700">1</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-500/15 text-xs font-bold text-amber-700 dark:text-amber-300">1</span>
                 Act 1 &mdash; The Bond
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -127,7 +127,7 @@ export default function MerchantOfVeniceRevisionPage() {
 
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-100 text-xs font-bold text-amber-700">2</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-500/15 text-xs font-bold text-amber-700 dark:text-amber-300">2</span>
                 Act 2 &mdash; Caskets and Elopement
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -146,7 +146,7 @@ export default function MerchantOfVeniceRevisionPage() {
 
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-100 text-xs font-bold text-amber-700">3</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-500/15 text-xs font-bold text-amber-700 dark:text-amber-300">3</span>
                 Act 3 &mdash; The Casket Choice and the Bond Due
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -165,7 +165,7 @@ export default function MerchantOfVeniceRevisionPage() {
 
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-100 text-xs font-bold text-amber-700">4</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-500/15 text-xs font-bold text-amber-700 dark:text-amber-300">4</span>
                 Act 4 &mdash; The Trial
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -184,7 +184,7 @@ export default function MerchantOfVeniceRevisionPage() {
 
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-100 text-xs font-bold text-amber-700">5</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-500/15 text-xs font-bold text-amber-700 dark:text-amber-300">5</span>
                 Act 5 &mdash; Reunion at Belmont
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -704,16 +704,16 @@ export default function MerchantOfVeniceRevisionPage() {
               <div>
                 <h3 className="font-bold text-foreground mb-2">Key Arguments About the Trial</h3>
                 <div className="grid gap-3 sm:grid-cols-2">
-                  <div className="rounded-lg bg-emerald-50 border border-emerald-200 p-4">
-                    <p className="text-sm font-bold text-emerald-800 mb-2">Portia is the hero</p>
-                    <ul className="space-y-1 text-sm text-emerald-700">
+                  <div className="rounded-lg bg-emerald-500/10 border border-emerald-500/30 p-4">
+                    <p className="text-sm font-bold text-emerald-700 dark:text-emerald-300 mb-2">Portia is the hero</p>
+                    <ul className="space-y-1 text-sm text-emerald-700 dark:text-emerald-300">
                       <li>&bull; She saves Antonio&apos;s life through intelligence</li>
                       <li>&bull; She offers Shylock multiple chances to show mercy</li>
                       <li>&bull; She demonstrates that women can excel in male-dominated spaces</li>
                       <li>&bull; She upholds the law while seeking mercy</li>
                     </ul>
                   </div>
-                  <div className="rounded-lg bg-rose-50 border border-rose-200 p-4">
+                  <div className="rounded-lg bg-rose-500/10 border border-rose-200 p-4">
                     <p className="text-sm font-bold text-rose-800 mb-2">Portia is complicit in cruelty</p>
                     <ul className="space-y-1 text-sm text-rose-700">
                       <li>&bull; She allows Shylock to commit fully before springing the trap</li>
@@ -722,16 +722,16 @@ export default function MerchantOfVeniceRevisionPage() {
                       <li>&bull; The forced conversion violates the mercy she advocated</li>
                     </ul>
                   </div>
-                  <div className="rounded-lg bg-emerald-50 border border-emerald-200 p-4">
-                    <p className="text-sm font-bold text-emerald-800 mb-2">Shylock is a villain</p>
-                    <ul className="space-y-1 text-sm text-emerald-700">
+                  <div className="rounded-lg bg-emerald-500/10 border border-emerald-500/30 p-4">
+                    <p className="text-sm font-bold text-emerald-700 dark:text-emerald-300 mb-2">Shylock is a villain</p>
+                    <ul className="space-y-1 text-sm text-emerald-700 dark:text-emerald-300">
                       <li>&bull; He seeks to kill a man for a debt</li>
                       <li>&bull; He refuses all offers of money (proving malice)</li>
                       <li>&bull; He sharpens his knife on his shoe in court</li>
                       <li>&bull; He represents the danger of unchecked revenge</li>
                     </ul>
                   </div>
-                  <div className="rounded-lg bg-rose-50 border border-rose-200 p-4">
+                  <div className="rounded-lg bg-rose-500/10 border border-rose-200 p-4">
                     <p className="text-sm font-bold text-rose-800 mb-2">Shylock is a victim</p>
                     <ul className="space-y-1 text-sm text-rose-700">
                       <li>&bull; He has suffered years of systematic abuse</li>

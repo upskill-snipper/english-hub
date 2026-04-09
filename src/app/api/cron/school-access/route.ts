@@ -65,7 +65,7 @@ function schoolAccessWarningEmail(
                 </tr>
               </table>
               <p style="font-size:13px;color:#888888;line-height:1.5;">
-                If you have any questions, please contact us at <a href="mailto:schools@theenglishhub.app" style="color:${BRAND_COLOR};">schools@theenglishhub.app</a>.
+                If you have any questions, please contact us at <a href="mailto:info@Upskillenergy.com" style="color:${BRAND_COLOR};">info@Upskillenergy.com</a>.
               </p>
             </td>
           </tr>
@@ -124,7 +124,7 @@ function schoolAccessExpiredEmail(schoolName: string, accessUntil: string): stri
                 </tr>
               </table>
               <p style="font-size:13px;color:#888888;line-height:1.5;">
-                If you have any questions, please contact us at <a href="mailto:schools@theenglishhub.app" style="color:${BRAND_COLOR};">schools@theenglishhub.app</a>.
+                If you have any questions, please contact us at <a href="mailto:info@Upskillenergy.com" style="color:${BRAND_COLOR};">info@Upskillenergy.com</a>.
               </p>
             </td>
           </tr>

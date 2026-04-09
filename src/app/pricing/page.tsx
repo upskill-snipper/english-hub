@@ -96,7 +96,7 @@ const FAQ_ITEMS = [
   },
   {
     q: 'Is the Founding Schools Programme a free trial?',
-    a: 'No. It is a strategic partnership limited to 20 schools. Schools pay a one-time fee based on department size and receive locked preferential pricing, early feature access, and direct product input.',
+    a: 'No. It is a strategic partnership limited to 10 schools. Pricing ranges from £3,000 to £7,000 per year depending on department size. Schools receive locked preferential pricing, early feature access, and direct product input.',
   },
   {
     q: 'Can I cancel anytime?',
@@ -478,7 +478,7 @@ export default function PricingPage() {
               className="bg-amber-500/10 border-amber-500/25 text-amber-400 text-sm font-bold mb-6 gap-2 px-4 py-1.5"
             >
               <School className="w-4 h-4" />
-              Limited to 20 Schools
+              Limited to 10 Schools
             </Badge>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground max-w-3xl mx-auto leading-tight">
               Founding Schools Programme — 2026
@@ -530,7 +530,7 @@ export default function PricingPage() {
               <div className="rounded-xl border border-amber-500/20 bg-amber-500/5 px-5 py-4 text-center mb-8">
                 <p className="text-sm text-muted-foreground">
                   <span className="font-semibold text-amber-400">
-                    This programme closes when 20 schools are onboarded.
+                    This programme closes when 10 schools are onboarded.
                   </span>{' '}
                   Once all places are filled, entry will not reopen at this pricing.
                 </p>

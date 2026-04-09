@@ -74,15 +74,15 @@ const MOCK_STUDENTS_AT_RISK: StudentAtRisk[] = [
 const maxScore = Math.max(...MOCK_WEEKLY_SCORES.map((w) => w.score), 100);
 
 function scoreColor(score: number): string {
-  if (score >= 80) return "text-success";
-  if (score >= 60) return "text-accent";
-  return "text-warn";
+  if (score >= 80) return "text-green-500";
+  if (score >= 60) return "text-amber-500";
+  return "text-red-500";
 }
 
 function barColor(score: number): string {
-  if (score >= 75) return "bg-success";
-  if (score >= 65) return "bg-accent";
-  return "bg-warn";
+  if (score >= 75) return "bg-green-500";
+  if (score >= 65) return "bg-amber-500";
+  return "bg-red-500";
 }
 
 /* ─── Page ───────────────────────────────────────────────────────────── */
@@ -189,7 +189,7 @@ export default function AnalyticsPageClient() {
                   <div>
                     <div className="flex items-center gap-2">
                       <p className="font-semibold text-foreground">{student.name}</p>
-                      <span className="inline-flex items-center rounded-full bg-warn-50 px-2 py-0.5 text-xs font-medium text-warn-700">
+                      <span className="inline-flex items-center rounded-full bg-amber-500/10 px-2 py-0.5 text-xs font-medium text-amber-600">
                         {student.recentTrend === "declining"
                           ? "Declining"
                           : "Stagnant"}
@@ -231,11 +231,11 @@ export default function AnalyticsPageClient() {
             <p className="text-sm text-muted-foreground mt-1">Total Students</p>
           </div>
           <div className="card text-center">
-            <p className="text-3xl font-bold text-success">+10%</p>
+            <p className="text-3xl font-bold text-green-500">+10%</p>
             <p className="text-sm text-muted-foreground mt-1">Score Improvement (8 weeks)</p>
           </div>
           <div className="card text-center">
-            <p className="text-3xl font-bold text-warn">3</p>
+            <p className="text-3xl font-bold text-amber-500">3</p>
             <p className="text-sm text-muted-foreground mt-1">Students Need Support</p>
           </div>
         </div>

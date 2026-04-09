@@ -239,12 +239,16 @@ function htmlShell(title: string, body: string): string {
 
   /* ── Answer lines ─────────────────────────────────── */
   .answer-lines {
-    margin: 10px 0;
+    margin: 12px 0 8px 0;
+    padding-left: 4px;
   }
   .answer-line {
-    border-bottom: 1px solid #d1d5db;
-    height: 28px;
-    margin-bottom: 2px;
+    border-bottom: 1.5px solid #b0b8c4;
+    height: 32px;
+    margin-bottom: 4px;
+  }
+  .answer-line:last-child {
+    margin-bottom: 0;
   }
 
   /* ── Quote blocks ─────────────────────────────────── */
@@ -546,7 +550,7 @@ export function generateWorksheet(
       if (q.type === "multiple-choice" && q.options) {
         questionContent += `<div style="margin:8px 0 4px 20px;">${q.options.map((opt, oi) => `<p style="margin:4px 0;font-size:10pt;"><strong>${String.fromCharCode(65 + oi)}.</strong> ${escHtml(opt)}</p>`).join("")}</div>`
       } else {
-        const lines = q.lines || (q.type === "extended-writing" ? 12 : q.type === "quote-analysis" ? 8 : 4)
+        const lines = q.lines || (q.type === "extended-writing" ? 14 : q.type === "quote-analysis" ? 10 : 5)
         questionContent += `<div class="answer-lines">${Array.from({ length: lines }, () => '<div class="answer-line"></div>').join("")}</div>`
       }
 
@@ -560,10 +564,10 @@ export function generateWorksheet(
               : "Quote Analysis"
 
       return `
-        <div style="margin-bottom:20px;">
-          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;">
+        <div style="margin-bottom:28px;page-break-inside:avoid;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;">
             <p style="font-weight:600;font-size:10.5pt;flex:1;">
-              <span style="color:#2563eb;margin-right:6px;">${i + 1}.</span>
+              <span style="color:#2563eb;font-weight:700;margin-right:8px;">${i + 1}.</span>
               ${escHtml(q.question)}
             </p>
             <span style="font-size:8pt;color:#6b7280;white-space:nowrap;margin-left:12px;background:#f3f4f6;padding:2px 8px;border-radius:3px;font-weight:600;">${q.marks} mark${q.marks !== 1 ? "s" : ""} — ${typeLabel}</span>

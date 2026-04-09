@@ -62,7 +62,7 @@ const SKILL_GUIDES = [
   },
   {
     title: "How to Compare Poems",
-    href: "/resources/poetry/comparing-poems",
+    href: "/resources/poetry/techniques#comparing-poems",
     description:
       "A structured approach to comparison questions. Learn how to weave both poems together, choose strong comparison points, and write integrated paragraphs that impress examiners.",
     tag: "Key Skill",
@@ -71,16 +71,16 @@ const SKILL_GUIDES = [
 ];
 
 const TOP_TEN_POEMS = [
-  { title: "Ozymandias", poet: "Percy Bysshe Shelley", board: "AQA" as const, href: "/resources/poetry/power-and-conflict/ozymandias" },
-  { title: "London", poet: "William Blake", board: "AQA" as const, href: "/resources/poetry/power-and-conflict/london" },
-  { title: "My Last Duchess", poet: "Robert Browning", board: "AQA" as const, href: "/resources/poetry/power-and-conflict/my-last-duchess" },
-  { title: "Remains", poet: "Simon Armitage", board: "AQA" as const, href: "/resources/poetry/power-and-conflict/remains" },
-  { title: "Exposure", poet: "Wilfred Owen", board: "AQA" as const, href: "/resources/poetry/power-and-conflict/exposure" },
-  { title: "Porphyria's Lover", poet: "Robert Browning", board: "AQA" as const, href: "/resources/poetry/love-and-relationships/porphyrias-lover" },
-  { title: "Neutral Tones", poet: "Thomas Hardy", board: "AQA" as const, href: "/resources/poetry/love-and-relationships/neutral-tones" },
-  { title: "When We Two Parted", poet: "Lord Byron", board: "AQA" as const, href: "/resources/poetry/love-and-relationships/when-we-two-parted" },
-  { title: "War Photographer", poet: "Carol Ann Duffy", board: "AQA" as const, href: "/resources/poetry/power-and-conflict/war-photographer" },
-  { title: "The Charge of the Light Brigade", poet: "Alfred, Lord Tennyson", board: "AQA" as const, href: "/resources/poetry/power-and-conflict/charge-of-the-light-brigade" },
+  { title: "Ozymandias", poet: "Percy Bysshe Shelley", board: "AQA" as const, href: "/resources/poetry/power-and-conflict" },
+  { title: "London", poet: "William Blake", board: "AQA" as const, href: "/resources/poetry/power-and-conflict" },
+  { title: "My Last Duchess", poet: "Robert Browning", board: "AQA" as const, href: "/resources/poetry/power-and-conflict" },
+  { title: "Remains", poet: "Simon Armitage", board: "AQA" as const, href: "/resources/poetry/power-and-conflict" },
+  { title: "Exposure", poet: "Wilfred Owen", board: "AQA" as const, href: "/resources/poetry/power-and-conflict" },
+  { title: "Porphyria's Lover", poet: "Robert Browning", board: "AQA" as const, href: "/resources/poetry/love-and-relationships" },
+  { title: "Neutral Tones", poet: "Thomas Hardy", board: "AQA" as const, href: "/resources/poetry/love-and-relationships" },
+  { title: "When We Two Parted", poet: "Lord Byron", board: "AQA" as const, href: "/resources/poetry/love-and-relationships" },
+  { title: "War Photographer", poet: "Carol Ann Duffy", board: "AQA" as const, href: "/resources/poetry/power-and-conflict" },
+  { title: "The Charge of the Light Brigade", poet: "Alfred, Lord Tennyson", board: "AQA" as const, href: "/resources/poetry/power-and-conflict" },
 ];
 
 const QUICK_TIPS = [

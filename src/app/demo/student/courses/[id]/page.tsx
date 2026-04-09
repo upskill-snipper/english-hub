@@ -440,11 +440,11 @@ export default function CourseDetailPage({ params }: { params: Promise<{ id: str
 
           {/* Back */}
           <Link
-            href="/demo/student"
+            href="/demo/student/courses"
             className="inline-flex items-center gap-1.5 text-sm text-white/40 hover:text-white/70 transition-colors mb-6"
           >
             <ArrowLeft className="h-3.5 w-3.5" />
-            Back to Dashboard
+            Back to Courses
           </Link>
 
           {/* Course header */}

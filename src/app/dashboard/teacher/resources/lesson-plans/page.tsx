@@ -178,13 +178,13 @@ export default function LessonPlansPage() {
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
-            <div className="rounded-lg bg-blue-50 p-3">
-              <h3 className="text-sm font-semibold text-blue-800 mb-1">Differentiation</h3>
-              <p className="text-xs text-blue-700">{lesson.differentiation}</p>
+            <div className="rounded-lg bg-blue-500/10 p-3">
+              <h3 className="text-sm font-semibold text-blue-700 dark:text-blue-300 mb-1">Differentiation</h3>
+              <p className="text-xs text-blue-700 dark:text-blue-300">{lesson.differentiation}</p>
             </div>
-            <div className="rounded-lg bg-amber-50 p-3">
-              <h3 className="text-sm font-semibold text-amber-800 mb-1">Resources Needed</h3>
-              <ul className="text-xs text-amber-700 space-y-0.5">
+            <div className="rounded-lg bg-amber-500/10 p-3">
+              <h3 className="text-sm font-semibold text-amber-700 dark:text-amber-300 mb-1">Resources Needed</h3>
+              <ul className="text-xs text-amber-700 dark:text-amber-300 space-y-0.5">
                 {lesson.resources.map((r, i) => (
                   <li key={i}>• {r}</li>
                 ))}

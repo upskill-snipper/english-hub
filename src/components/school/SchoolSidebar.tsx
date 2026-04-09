@@ -80,14 +80,14 @@ const NAV_ITEMS: NavItem[] = [
   { label: 'Resources', href: '/school/resources', icon: Library },
   { label: 'Teaching Guides', href: '/school/guides', icon: Lightbulb },
   { label: 'Calendar', href: '/school/calendar', icon: CalendarDays },
-  { label: 'Reports', href: '/school/reports', icon: BarChart3 },
+  { label: 'Reports', href: '/school/progress-cards', icon: BarChart3 },
   {
     label: 'Tools',
     href: '/school/tools',
     icon: Wrench,
     children: [
-      { label: 'Seating Plans', href: '/school/tools/seating-plans' },
-      { label: 'Group Generator', href: '/school/tools/group-generator' },
+      { label: 'Seating Plans', href: '/school/tools/seating' },
+      { label: 'Group Generator', href: '/school/tools/groups' },
     ],
   },
   { label: 'Notifications', href: '/school/notifications', icon: Bell, badge: true },

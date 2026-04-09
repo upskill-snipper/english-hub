@@ -123,7 +123,7 @@ function difficultyLabel(d: DifficultyLevel): string {
 }
 
 function lines(d: DifficultyLevel, base: number): number {
-  return d === 'foundation' ? base + 2 : d === 'core' ? base : base - 1
+  return d === 'foundation' ? base + 3 : d === 'core' ? base + 1 : base
 }
 
 // ── Generators ───────────────────────────────────────────────────────────────
@@ -167,24 +167,24 @@ function generateQuoteAnalysis(config: WorksheetConfig): GeneratedWorksheet {
       title: 'Section A: Initial Response',
       instructions: 'Read the quote carefully and respond to the following.',
       questions: [
-        { number: 1, question: 'Summarise the meaning of this quote in your own words.', lines: 3, marks: 2 },
-        { number: 2, question: `Explain the significance of this quote in the context of ${textLabel}.`, lines: 4, marks: 4 },
+        { number: 1, question: 'Summarise the meaning of this quote in your own words.', lines: 4, marks: 2 },
+        { number: 2, question: `Explain the significance of this quote in the context of ${textLabel}.`, lines: 5, marks: 4 },
       ],
     })
     sections.push({
       title: 'Section B: Language & Structure Analysis',
       instructions: 'Analyse the writer\'s use of language and structural choices.',
       questions: [
-        { number: 3, question: 'Identify and analyse TWO language techniques used in this quote. Explain the effect of each on the reader.', lines: 6, marks: 6 },
-        { number: 4, question: 'How does the position/placement of this quote within the text contribute to its meaning?', lines: 4, marks: 4 },
+        { number: 3, question: 'Identify and analyse TWO language techniques used in this quote. Explain the effect of each on the reader.', lines: 8, marks: 6 },
+        { number: 4, question: 'How does the position/placement of this quote within the text contribute to its meaning?', lines: 5, marks: 4 },
       ],
     })
     sections.push({
       title: 'Section C: Context & Evaluation',
       instructions: `Link the quote to the context of ${textLabel} and the theme of "${topicLabel}".`,
       questions: [
-        { number: 5, question: 'How does this quote reflect the social or historical context of the time?', lines: 4, marks: 4 },
-        { number: 6, question: `How does the writer use this quote to present ideas about "${topicLabel}"? Write a PEEL paragraph.`, lines: 8, marks: 8 },
+        { number: 5, question: 'How does this quote reflect the social or historical context of the time?', lines: 5, marks: 4 },
+        { number: 6, question: `How does the writer use this quote to present ideas about "${topicLabel}"? Write a PEEL paragraph.`, lines: 10, marks: 8 },
       ],
     })
   } else {
@@ -192,23 +192,23 @@ function generateQuoteAnalysis(config: WorksheetConfig): GeneratedWorksheet {
       title: 'Section A: Close Language Analysis',
       instructions: 'Provide a detailed, perceptive analysis of the language in this quote.',
       questions: [
-        { number: 1, question: 'Analyse the semantic field(s) present in this quote. How do they contribute to the writer\'s message?', lines: 5, marks: 6 },
-        { number: 2, question: 'Explore how the syntax and structure of this quote shapes meaning and reader response.', lines: 5, marks: 6 },
+        { number: 1, question: 'Analyse the semantic field(s) present in this quote. How do they contribute to the writer\'s message?', lines: 7, marks: 6 },
+        { number: 2, question: 'Explore how the syntax and structure of this quote shapes meaning and reader response.', lines: 7, marks: 6 },
       ],
     })
     sections.push({
       title: 'Section B: Contextual Interpretation',
       instructions: 'Demonstrate sophisticated understanding of context as a lens for interpretation.',
       questions: [
-        { number: 3, question: `How might a contemporary audience have interpreted this quote differently from a modern reader? Consider at least TWO contextual factors.`, lines: 6, marks: 8 },
-        { number: 4, question: 'Some critics argue this quote reveals the writer\'s ambivalence. To what extent do you agree?', lines: 6, marks: 8 },
+        { number: 3, question: `How might a contemporary audience have interpreted this quote differently from a modern reader? Consider at least TWO contextual factors.`, lines: 8, marks: 8 },
+        { number: 4, question: 'Some critics argue this quote reveals the writer\'s ambivalence. To what extent do you agree?', lines: 8, marks: 8 },
       ],
     })
     sections.push({
       title: 'Section C: Extended Response',
       instructions: 'Write a critical essay paragraph that could form part of an exam response.',
       questions: [
-        { number: 5, question: `Starting from this quote, write a detailed analytical paragraph exploring how the writer presents "${topicLabel}" in ${textLabel}. You should analyse language, structure, and context.`, lines: 12, marks: 12 },
+        { number: 5, question: `Starting from this quote, write a detailed analytical paragraph exploring how the writer presents "${topicLabel}" in ${textLabel}. You should analyse language, structure, and context.`, lines: 14, marks: 12 },
       ],
     })
   }
@@ -242,10 +242,10 @@ function generateComparisonFrame(config: WorksheetConfig): GeneratedWorksheet {
       title: 'Section B: Making Comparisons (PEEL Scaffold)',
       instructions: 'Use the PEEL framework below to write a comparison paragraph.',
       questions: [
-        { number: 5, question: 'POINT: Both texts present... / While Text A..., Text B... (Write your comparison point)', lines: 3 },
-        { number: 6, question: 'EVIDENCE: In Text A, the writer uses "___" ... In Text B, the writer uses "___" ...', lines: 4 },
-        { number: 7, question: 'EXPLAIN: This suggests... / The effect of this is... / The reader might feel...', lines: 4 },
-        { number: 8, question: 'LINK: Overall, this shows that... / This links to the idea of...', lines: 3 },
+        { number: 5, question: 'POINT: Both texts present... / While Text A..., Text B... (Write your comparison point)', lines: 4 },
+        { number: 6, question: 'EVIDENCE: In Text A, the writer uses "___" ... In Text B, the writer uses "___" ...', lines: 5 },
+        { number: 7, question: 'EXPLAIN: This suggests... / The effect of this is... / The reader might feel...', lines: 5 },
+        { number: 8, question: 'LINK: Overall, this shows that... / This links to the idea of...', lines: 4 },
       ],
     })
   } else if (difficulty === 'core') {
@@ -253,22 +253,22 @@ function generateComparisonFrame(config: WorksheetConfig): GeneratedWorksheet {
       title: 'Section A: Identifying Similarities & Differences',
       instructions: `Compare how both texts present ideas about "${topicLabel}".`,
       questions: [
-        { number: 1, question: 'Identify ONE similarity in how the two texts approach this theme. Support with a brief quotation from each.', lines: 5, marks: 4 },
-        { number: 2, question: 'Identify ONE difference. Support with a brief quotation from each.', lines: 5, marks: 4 },
+        { number: 1, question: 'Identify ONE similarity in how the two texts approach this theme. Support with a brief quotation from each.', lines: 6, marks: 4 },
+        { number: 2, question: 'Identify ONE difference. Support with a brief quotation from each.', lines: 6, marks: 4 },
       ],
     })
     sections.push({
       title: 'Section B: Comparative PEEL Paragraphs',
       instructions: 'Write TWO PEEL paragraphs comparing the texts. Use connectives: similarly, in contrast, whereas, however, likewise.',
       questions: [
-        { number: 3, question: 'PEEL Paragraph 1: Compare the writers\' use of LANGUAGE to present this theme.', lines: 8, marks: 8 },
-        { number: 4, question: 'PEEL Paragraph 2: Compare the writers\' use of STRUCTURE or FORM to present this theme.', lines: 8, marks: 8 },
+        { number: 3, question: 'PEEL Paragraph 1: Compare the writers\' use of LANGUAGE to present this theme.', lines: 10, marks: 8 },
+        { number: 4, question: 'PEEL Paragraph 2: Compare the writers\' use of STRUCTURE or FORM to present this theme.', lines: 10, marks: 8 },
       ],
     })
     sections.push({
       title: 'Section C: Conclusion',
       questions: [
-        { number: 5, question: 'Which text do you think presents this theme more effectively? Justify your answer.', lines: 5, marks: 6 },
+        { number: 5, question: 'Which text do you think presents this theme more effectively? Justify your answer.', lines: 7, marks: 6 },
       ],
     })
   } else {
@@ -276,15 +276,15 @@ function generateComparisonFrame(config: WorksheetConfig): GeneratedWorksheet {
       title: 'Section A: Conceptualised Comparison',
       instructions: 'Move beyond surface-level comparison to explore the writers\' intentions and methods.',
       questions: [
-        { number: 1, question: `Both writers engage with "${topicLabel}" but adopt fundamentally different approaches. Analyse how each writer\'s method reflects their purpose, audience, and context.`, lines: 8, marks: 10 },
-        { number: 2, question: 'Compare how the writers use language to position the reader. Consider tone, register, and rhetorical strategies.', lines: 8, marks: 10 },
+        { number: 1, question: `Both writers engage with "${topicLabel}" but adopt fundamentally different approaches. Analyse how each writer\'s method reflects their purpose, audience, and context.`, lines: 10, marks: 10 },
+        { number: 2, question: 'Compare how the writers use language to position the reader. Consider tone, register, and rhetorical strategies.', lines: 10, marks: 10 },
       ],
     })
     sections.push({
       title: 'Section B: Extended Comparative Essay',
       instructions: `Write a full comparative response. You should compare the writers' ideas, methods, and the effect on the reader.`,
       questions: [
-        { number: 3, question: `Compare how the two writers present their ideas about "${topicLabel}". In your answer you should: compare their ideas and perspectives; compare the methods they use; support with quotations from both texts.`, lines: 16, marks: 16 },
+        { number: 3, question: `Compare how the two writers present their ideas about "${topicLabel}". In your answer you should: compare their ideas and perspectives; compare the methods they use; support with quotations from both texts.`, lines: 20, marks: 16 },
       ],
     })
   }
@@ -312,16 +312,16 @@ function generateExtractAnalysis(config: WorksheetConfig): GeneratedWorksheet {
       : 'Demonstrate your understanding of the extract.',
     questions: d === 'foundation'
       ? [
-          { number: 1, question: 'List THREE things you learn about the character/setting from this extract.', lines: 4, marks: 3 },
-          { number: 2, question: 'What is the mood/atmosphere at the start of this extract?', lines: 3, marks: 2 },
+          { number: 1, question: 'List THREE things you learn about the character/setting from this extract.', lines: 5, marks: 3 },
+          { number: 2, question: 'What is the mood/atmosphere at the start of this extract?', lines: 4, marks: 2 },
         ]
       : d === 'core'
         ? [
-            { number: 1, question: 'Summarise what happens in this extract in your own words.', lines: 3, marks: 2 },
-            { number: 2, question: 'What impression does the reader get of the main character/speaker? Support your answer.', lines: 4, marks: 4 },
+            { number: 1, question: 'Summarise what happens in this extract in your own words.', lines: 4, marks: 2 },
+            { number: 2, question: 'What impression does the reader get of the main character/speaker? Support your answer.', lines: 6, marks: 4 },
           ]
         : [
-            { number: 1, question: 'How does the writer establish a narrative voice in this extract? What is its effect?', lines: 4, marks: 4 },
+            { number: 1, question: 'How does the writer establish a narrative voice in this extract? What is its effect?', lines: 6, marks: 4 },
           ],
   })
 
@@ -333,9 +333,9 @@ function generateExtractAnalysis(config: WorksheetConfig): GeneratedWorksheet {
       : 'Analyse the writer\'s methods in detail.',
     questions: d === 'foundation'
       ? [
-          { number: 3, question: 'Find ONE example of a simile, metaphor, or personification. Write it here:', lines: 2 },
-          { number: 4, question: 'What effect does this technique have on the reader? (It makes the reader feel... / It suggests...)', lines: 4, marks: 3 },
-          { number: 5, question: 'Find ONE powerful verb or adjective. What does it suggest?', lines: 4, marks: 3 },
+          { number: 3, question: 'Find ONE example of a simile, metaphor, or personification. Write it here:', lines: 3 },
+          { number: 4, question: 'What effect does this technique have on the reader? (It makes the reader feel... / It suggests...)', lines: 5, marks: 3 },
+          { number: 5, question: 'Find ONE powerful verb or adjective. What does it suggest?', lines: 5, marks: 3 },
         ]
       : d === 'core'
         ? [
@@ -343,7 +343,7 @@ function generateExtractAnalysis(config: WorksheetConfig): GeneratedWorksheet {
             { number: 4, question: 'How does the writer use structure to interest the reader? Consider beginnings, endings, shifts in focus.', lines: lines(d, 6), marks: 8 },
           ]
         : [
-            { number: 2, question: `Analyse how the writer uses language and structure to present "${topicLabel}". You should consider: word choice, imagery, sentence forms, narrative perspective, and structural shifts.`, lines: 10, marks: 12 },
+            { number: 2, question: `Analyse how the writer uses language and structure to present "${topicLabel}". You should consider: word choice, imagery, sentence forms, narrative perspective, and structural shifts.`, lines: 14, marks: 12 },
           ],
   })
 
@@ -355,14 +355,14 @@ function generateExtractAnalysis(config: WorksheetConfig): GeneratedWorksheet {
       : 'Evaluate the writer\'s success critically.',
     questions: d === 'foundation'
       ? [
-          { number: 6, question: 'Do you think the writer does a good job of making the reader feel a strong emotion? Explain why, using a quote.', lines: 5, marks: 4 },
+          { number: 6, question: 'Do you think the writer does a good job of making the reader feel a strong emotion? Explain why, using a quote.', lines: 7, marks: 4 },
         ]
       : d === 'core'
         ? [
             { number: 5, question: `"The writer successfully creates a sense of ${topicLabel.toLowerCase()} throughout this extract." To what extent do you agree? Use evidence to support your response.`, lines: 8, marks: 8 },
           ]
         : [
-            { number: 3, question: `A critic has written: "In this extract, the writer masterfully manipulates the reader's sympathies." Evaluate this statement with detailed reference to the text. You may agree, disagree, or offer a nuanced response.`, lines: 12, marks: 12 },
+            { number: 3, question: `A critic has written: "In this extract, the writer masterfully manipulates the reader's sympathies." Evaluate this statement with detailed reference to the text. You may agree, disagree, or offer a nuanced response.`, lines: 14, marks: 12 },
           ],
   })
 
@@ -470,12 +470,12 @@ function generateVocabularyBuilder(config: WorksheetConfig): GeneratedWorksheet 
         ]
       : d === 'core'
         ? [
-            { number: 1, question: 'Define Term 1 in your own words and provide an example from the text:', lines: 3, marks: 2 },
-            { number: 2, question: 'Define Term 2 in your own words and provide an example from the text:', lines: 3, marks: 2 },
-            { number: 3, question: 'Define Term 3 in your own words and provide an example from the text:', lines: 3, marks: 2 },
-            { number: 4, question: 'Define Term 4 in your own words and provide an example from the text:', lines: 3, marks: 2 },
-            { number: 5, question: 'Define Term 5 in your own words and provide an example from the text:', lines: 3, marks: 2 },
-            { number: 6, question: 'Define Term 6 in your own words and provide an example from the text:', lines: 3, marks: 2 },
+            { number: 1, question: 'Define Term 1 in your own words and provide an example from the text:', lines: 4, marks: 2 },
+            { number: 2, question: 'Define Term 2 in your own words and provide an example from the text:', lines: 4, marks: 2 },
+            { number: 3, question: 'Define Term 3 in your own words and provide an example from the text:', lines: 4, marks: 2 },
+            { number: 4, question: 'Define Term 4 in your own words and provide an example from the text:', lines: 4, marks: 2 },
+            { number: 5, question: 'Define Term 5 in your own words and provide an example from the text:', lines: 4, marks: 2 },
+            { number: 6, question: 'Define Term 6 in your own words and provide an example from the text:', lines: 4, marks: 2 },
           ]
         : [
             { number: 1, question: 'Define each term, explain its connotations, and analyse why the writer chose it over a synonym:', lines: 4, marks: 3 },
@@ -646,15 +646,15 @@ function generateCharacterProfile(config: WorksheetConfig): GeneratedWorksheet {
       : `Select and analyse key quotations that reveal aspects of ${characterName}.`,
     questions: d === 'foundation'
       ? [
-          { number: 4, question: 'Quote 1: "___" — This tells us...', lines: 4 },
-          { number: 5, question: 'Quote 2: "___" — This tells us...', lines: 4 },
-          { number: 6, question: 'Quote 3: "___" — This tells us...', lines: 4 },
+          { number: 4, question: 'Quote 1: "___" — This tells us...', lines: 5 },
+          { number: 5, question: 'Quote 2: "___" — This tells us...', lines: 5 },
+          { number: 6, question: 'Quote 3: "___" — This tells us...', lines: 5 },
         ]
       : d === 'core'
         ? [
-            { number: 3, question: 'Quote 1: Analyse the language used. What does it reveal about the character?', lines: 5, marks: 4 },
-            { number: 4, question: 'Quote 2: How does this quote show a change or development?', lines: 5, marks: 4 },
-            { number: 5, question: 'Quote 3: How does this quote link to a key theme?', lines: 5, marks: 4 },
+            { number: 3, question: 'Quote 1: Analyse the language used. What does it reveal about the character?', lines: 6, marks: 4 },
+            { number: 4, question: 'Quote 2: How does this quote show a change or development?', lines: 6, marks: 4 },
+            { number: 5, question: 'Quote 3: How does this quote link to a key theme?', lines: 6, marks: 4 },
           ]
         : [
             { number: 3, question: `Select 3 quotations that chart ${characterName}'s arc. For each: analyse the language in detail, explore what it reveals about the writer's intentions, and explain how it connects to wider themes and context.`, lines: 12, marks: 12 },
@@ -666,13 +666,13 @@ function generateCharacterProfile(config: WorksheetConfig): GeneratedWorksheet {
     instructions: `Link ${characterName} to the context of ${textLabel} and to essay themes.`,
     questions: d === 'foundation'
       ? [
-          { number: 7, question: `What was happening in society when this text was written that relates to ${characterName}?`, lines: 4, marks: 3 },
-          { number: 8, question: `If you had to write an essay about ${characterName}, what would your main argument be?`, lines: 4, marks: 3 },
+          { number: 7, question: `What was happening in society when this text was written that relates to ${characterName}?`, lines: 5, marks: 3 },
+          { number: 8, question: `If you had to write an essay about ${characterName}, what would your main argument be?`, lines: 5, marks: 3 },
         ]
       : d === 'core'
         ? [
-            { number: 6, question: `How does ${characterName} reflect the social/historical context? Give specific examples.`, lines: 5, marks: 6 },
-            { number: 7, question: `Write an essay-style PEEL paragraph about ${characterName} and a key theme.`, lines: 8, marks: 8 },
+            { number: 6, question: `How does ${characterName} reflect the social/historical context? Give specific examples.`, lines: 7, marks: 6 },
+            { number: 7, question: `Write an essay-style PEEL paragraph about ${characterName} and a key theme.`, lines: 10, marks: 8 },
           ]
         : [
             { number: 4, question: `Write a thesis statement about ${characterName} that could anchor a full essay. Then write two supporting analytical paragraphs with integrated context.`, lines: 16, marks: 16 },
@@ -701,13 +701,13 @@ function generateThemeExplorer(config: WorksheetConfig): GeneratedWorksheet {
       : `Explore the writer's presentation of "${topicLabel}" throughout ${textLabel}.`,
     questions: d === 'foundation'
       ? [
-          { number: 1, question: `What does "${topicLabel}" mean? Write a definition in your own words.`, lines: 3 },
-          { number: 2, question: `How is "${topicLabel}" shown in ${textLabel}? Give 2-3 examples from the story.`, lines: 5 },
+          { number: 1, question: `What does "${topicLabel}" mean? Write a definition in your own words.`, lines: 4 },
+          { number: 2, question: `How is "${topicLabel}" shown in ${textLabel}? Give 2-3 examples from the story.`, lines: 6 },
         ]
       : d === 'core'
         ? [
-            { number: 1, question: `Write a clear theme statement: "In ${textLabel}, the writer presents ${topicLabel.toLowerCase()} as..."`, lines: 3, marks: 3 },
-            { number: 2, question: `How does the writer's presentation of this theme change across the text?`, lines: 5, marks: 5 },
+            { number: 1, question: `Write a clear theme statement: "In ${textLabel}, the writer presents ${topicLabel.toLowerCase()} as..."`, lines: 4, marks: 3 },
+            { number: 2, question: `How does the writer's presentation of this theme change across the text?`, lines: 7, marks: 5 },
           ]
         : [
             { number: 1, question: `Craft a conceptualised thesis statement about "${topicLabel}" in ${textLabel}. This should go beyond description to argue a specific interpretation.`, lines: 4, marks: 4 },
@@ -721,15 +721,15 @@ function generateThemeExplorer(config: WorksheetConfig): GeneratedWorksheet {
       : `Select and analyse evidence that demonstrates the development of this theme.`,
     questions: d === 'foundation'
       ? [
-          { number: 3, question: 'Quote from the BEGINNING of the text: "___" — This shows...', lines: 4 },
-          { number: 4, question: 'Quote from the MIDDLE of the text: "___" — This shows...', lines: 4 },
-          { number: 5, question: 'Quote from the END of the text: "___" — This shows...', lines: 4 },
+          { number: 3, question: 'Quote from the BEGINNING of the text: "___" — This shows...', lines: 5 },
+          { number: 4, question: 'Quote from the MIDDLE of the text: "___" — This shows...', lines: 5 },
+          { number: 5, question: 'Quote from the END of the text: "___" — This shows...', lines: 5 },
         ]
       : d === 'core'
         ? [
-            { number: 3, question: 'Identify a key moment where this theme is introduced. Analyse the writer\'s language choices.', lines: 5, marks: 5 },
-            { number: 4, question: 'Identify a moment where this theme develops or shifts. Analyse how the writer signals this change.', lines: 5, marks: 5 },
-            { number: 5, question: 'Identify the climactic moment for this theme. How does the writer create impact?', lines: 5, marks: 5 },
+            { number: 3, question: 'Identify a key moment where this theme is introduced. Analyse the writer\'s language choices.', lines: 7, marks: 5 },
+            { number: 4, question: 'Identify a moment where this theme develops or shifts. Analyse how the writer signals this change.', lines: 7, marks: 5 },
+            { number: 5, question: 'Identify the climactic moment for this theme. How does the writer create impact?', lines: 7, marks: 5 },
           ]
         : [
             { number: 2, question: `Trace the trajectory of "${topicLabel}" across the text. Select 3-4 key moments and analyse how the writer's methods evolve. Consider: language, structure, symbolism, and narrative technique.`, lines: 12, marks: 12 },
@@ -741,16 +741,16 @@ function generateThemeExplorer(config: WorksheetConfig): GeneratedWorksheet {
     instructions: `Consider why the writer chose to explore "${topicLabel}" and what message they convey.`,
     questions: d === 'foundation'
       ? [
-          { number: 6, question: `Why do you think the writer wanted to write about "${topicLabel}"? What message are they trying to give?`, lines: 4, marks: 3 },
-          { number: 7, question: 'What was happening in society at the time that links to this theme?', lines: 4, marks: 3 },
+          { number: 6, question: `Why do you think the writer wanted to write about "${topicLabel}"? What message are they trying to give?`, lines: 5, marks: 3 },
+          { number: 7, question: 'What was happening in society at the time that links to this theme?', lines: 5, marks: 3 },
         ]
       : d === 'core'
         ? [
-            { number: 6, question: `What is the writer's message about "${topicLabel}"? How does this reflect the values of the time?`, lines: 5, marks: 5 },
-            { number: 7, question: `How might a modern reader respond to this theme differently from the original audience?`, lines: 5, marks: 5 },
+            { number: 6, question: `What is the writer's message about "${topicLabel}"? How does this reflect the values of the time?`, lines: 7, marks: 5 },
+            { number: 7, question: `How might a modern reader respond to this theme differently from the original audience?`, lines: 7, marks: 5 },
           ]
         : [
-            { number: 3, question: `Evaluate the writer's purpose in exploring "${topicLabel}". Consider: the writer as a social commentator, the political/cultural context, and how the text functions as a critique or endorsement of contemporary values.`, lines: 8, marks: 8 },
+            { number: 3, question: `Evaluate the writer's purpose in exploring "${topicLabel}". Consider: the writer as a social commentator, the political/cultural context, and how the text functions as a critique or endorsement of contemporary values.`, lines: 10, marks: 8 },
           ],
   })
 
@@ -761,7 +761,7 @@ function generateThemeExplorer(config: WorksheetConfig): GeneratedWorksheet {
       instructions: 'Connect this theme to other texts, themes, or ideas you have studied.',
       questions: d === 'core'
         ? [
-            { number: 8, question: `How does "${topicLabel}" in ${textLabel} compare to the same theme in another text you have studied?`, lines: 5, marks: 5 },
+            { number: 8, question: `How does "${topicLabel}" in ${textLabel} compare to the same theme in another text you have studied?`, lines: 7, marks: 5 },
           ]
         : [
             { number: 4, question: `Write a comparative paragraph linking "${topicLabel}" in ${textLabel} to its treatment in another text. Explore how the different writers' contexts shape their approaches.`, lines: 10, marks: 10 },

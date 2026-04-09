@@ -78,7 +78,7 @@ function GuideSection({
       {section.examples && section.examples.length > 0 && (
         <div className="ml-10 space-y-3">
           {section.examples.map((example, i) => (
-            <Card key={i} className="border-amber-200/60 bg-amber-50/30 dark:border-amber-800/40 dark:bg-amber-950/20">
+            <Card key={i} className="border-amber-500/30/60 bg-amber-500/10/30 dark:border-amber-800/40 dark:bg-amber-950/20">
               <CardHeader className="pb-2">
                 <CardTitle className="flex items-center gap-2 text-sm">
                   <MessageSquare className="h-4 w-4 text-amber-600 dark:text-amber-400" />

@@ -81,10 +81,10 @@ function TimelineEvent({ year, event }: { year: string; event: string }) {
   return (
     <div className="flex gap-4">
       <div className="flex flex-col items-center">
-        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-slate-100 text-xs font-bold text-slate-800">
+        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-muted text-xs font-bold text-foreground">
           {year}
         </span>
-        <div className="mt-1 h-full w-px bg-slate-200" />
+        <div className="mt-1 h-full w-px bg-border" />
       </div>
       <p className="pb-6 text-sm text-muted-foreground">{event}</p>
     </div>
@@ -127,7 +127,7 @@ export default function TwentiethCenturyContextPage() {
       <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
         <div className="mb-8">
           <div className="flex flex-wrap items-center gap-3 mb-2">
-            <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-800 uppercase tracking-wider">
+            <span className="rounded-full bg-muted px-3 py-1 text-xs font-bold text-foreground uppercase tracking-wider">
               1900 -- 1999
             </span>
             <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">An Inspector Calls</span>
@@ -377,7 +377,7 @@ export default function TwentiethCenturyContextPage() {
                 />
               </div>
 
-              <div className="mt-6 rounded-xl border border-primary/20 bg-primary/10/50 p-5">
+              <div className="mt-6 rounded-xl border border-primary/20 bg-primary/10 p-5">
                 <h3 className="text-sm font-bold text-foreground">Sentence starters for context</h3>
                 <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">

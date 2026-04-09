@@ -72,7 +72,7 @@ export default function ChristmasCarolRevisionPage() {
       {/* Hero */}
       <div className="mb-8">
         <div className="flex flex-wrap items-center gap-3 mb-2">
-          <span className="rounded-full bg-green-100 px-3 py-1 text-xs font-bold text-green-700 uppercase tracking-wider">Victorian Novella</span>
+          <span className="rounded-full bg-green-500/15 px-3 py-1 text-xs font-bold text-green-700 dark:text-green-300 uppercase tracking-wider">Victorian Novella</span>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">AQA</span>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">Edexcel</span>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">CAIE</span>
@@ -109,15 +109,15 @@ export default function ChristmasCarolRevisionPage() {
         {/* ────────────────────────────────────────── PLOT SUMMARY */}
         <Section id="plot" title="Stave-by-Stave Plot Summary" badge="5 Staves" colour="bg-green-600" defaultOpen>
           <div className="space-y-6">
-            <div className="rounded-lg bg-amber-50 border border-amber-200 p-3 mb-4">
-              <p className="text-sm text-amber-800">
+            <div className="rounded-lg bg-amber-500/10 border border-amber-500/30 p-3 mb-4">
+              <p className="text-sm text-amber-700 dark:text-amber-300">
                 <strong>Why &ldquo;Staves&rdquo;?</strong> Dickens deliberately called his chapters &ldquo;staves&rdquo; (the lines of a musical staff) to reinforce the musical, carol-like structure of the novella. This reminds the reader that the story is, at heart, a song of Christmas and redemption.
               </p>
             </div>
 
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-green-100 text-xs font-bold text-green-700">1</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-green-500/15 text-xs font-bold text-green-700 dark:text-green-300">1</span>
                 Stave One &mdash; Marley&apos;s Ghost
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -137,7 +137,7 @@ export default function ChristmasCarolRevisionPage() {
 
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-green-100 text-xs font-bold text-green-700">2</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-green-500/15 text-xs font-bold text-green-700 dark:text-green-300">2</span>
                 Stave Two &mdash; The First of the Three Spirits
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -157,7 +157,7 @@ export default function ChristmasCarolRevisionPage() {
 
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-green-100 text-xs font-bold text-green-700">3</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-green-500/15 text-xs font-bold text-green-700 dark:text-green-300">3</span>
                 Stave Three &mdash; The Second of the Three Spirits
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -178,7 +178,7 @@ export default function ChristmasCarolRevisionPage() {
 
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-green-100 text-xs font-bold text-green-700">4</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-green-500/15 text-xs font-bold text-green-700 dark:text-green-300">4</span>
                 Stave Four &mdash; The Last of the Spirits
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -199,7 +199,7 @@ export default function ChristmasCarolRevisionPage() {
 
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-green-100 text-xs font-bold text-green-700">5</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-green-500/15 text-xs font-bold text-green-700 dark:text-green-300">5</span>
                 Stave Five &mdash; The End of It
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -1002,8 +1002,8 @@ export default function ChristmasCarolRevisionPage() {
         <div id="essay-planning">
           <Section id="essays" title="Essay Planning for Common Questions" badge="6 Questions" colour="bg-primary">
             <div className="space-y-8">
-              <div className="rounded-lg bg-blue-50 border border-blue-200 p-4 mb-4">
-                <p className="text-sm text-blue-800">
+              <div className="rounded-lg bg-blue-500/10 border border-blue-500/30 p-4 mb-4">
+                <p className="text-sm text-blue-700 dark:text-blue-300">
                   <strong>Exam tip:</strong> For <em>A Christmas Carol</em>, you will typically get an extract and a question asking you to discuss a theme or character with reference to both the extract and the wider novella. Always analyse language in the extract closely, then broaden to the rest of the text. Use the PEEL structure: Point, Evidence, Explanation, Link.
                 </p>
               </div>
@@ -1166,8 +1166,8 @@ export default function ChristmasCarolRevisionPage() {
 
               <div>
                 <h3 className="text-base font-bold text-foreground mb-2">General Exam Advice</h3>
-                <div className="rounded-lg bg-blue-50 border border-blue-200 p-4">
-                  <ul className="space-y-2 text-sm text-blue-800">
+                <div className="rounded-lg bg-blue-500/10 border border-blue-500/30 p-4">
+                  <ul className="space-y-2 text-sm text-blue-700 dark:text-blue-300">
                     <li>&bull; <strong>Memorise short, versatile quotations</strong> that can be used across multiple themes and questions.</li>
                     <li>&bull; <strong>Always analyse language:</strong> name the technique (simile, metaphor, listing, repetition, pathetic fallacy), quote the evidence, explain the effect, and link to Dickens&apos;s purpose.</li>
                     <li>&bull; <strong>Refer to Dickens as a writer making deliberate choices:</strong> &ldquo;Dickens presents...&rdquo;, &ldquo;Dickens uses... to...&rdquo;, &ldquo;Dickens suggests...&rdquo;</li>

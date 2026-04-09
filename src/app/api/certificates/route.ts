@@ -13,10 +13,14 @@ import { rateLimit } from '@/lib/rate-limit'
 // This runs server-side with the service role client so RLS INSERT restrictions
 // on the certificates table are bypassed intentionally.
 
-function getGrade(percentage: number): 'Pass' | 'Merit' | 'Distinction' | null {
-  if (percentage >= 85) return 'Distinction'
-  if (percentage >= 70) return 'Merit'
-  if (percentage >= 50) return 'Pass'
+function getGrade(percentage: number): string | null {
+  if (percentage >= 90) return 'Grade 9'
+  if (percentage >= 80) return 'Grade 8'
+  if (percentage >= 70) return 'Grade 7'
+  if (percentage >= 60) return 'Grade 6'
+  if (percentage >= 50) return 'Grade 5'
+  if (percentage >= 40) return 'Grade 4'
+  if (percentage < 40) return null
   return null
 }
 

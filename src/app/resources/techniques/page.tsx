@@ -505,7 +505,7 @@ export default function TechniquesHubPage() {
             },
             {
               label: "Exam Guide",
-              href: "/resources/exam-guide",
+              href: "/resources/exam-technique",
               desc: "Paper structures, timings, and mark schemes.",
             },
             {

@@ -374,7 +374,7 @@ export default function AnimalFarmPage() {
           <h2 className="text-2xl font-bold text-foreground">
             Edexcel Paper 1, Section B — What You Need to Know
           </h2>
-          <div className="mt-6 rounded-xl border-2 border-primary bg-blue-50 p-6">
+          <div className="mt-6 rounded-xl border-2 border-primary bg-blue-500/10 p-6">
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li className="flex gap-2">
                 <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary" />
@@ -655,7 +655,7 @@ export default function AnimalFarmPage() {
               </ol>
             </div>
 
-            <div className="rounded-xl border-2 border-primary bg-blue-50 p-6">
+            <div className="rounded-xl border-2 border-primary bg-blue-500/10 p-6">
               <h3 className="text-lg font-bold text-foreground">
                 Top Tips for Top Marks
               </h3>

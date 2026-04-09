@@ -75,7 +75,7 @@ const FAQ_SECTIONS: FaqSection[] = [
       {
         question: 'How much does The English Hub cost?',
         answer:
-          'We offer two simple plans: £9.99/month or £79.99/year (save over 30%), both with the first month free. Every plan gives you full, unrestricted access to every feature on the platform. Cancel anytime.',
+          'We offer two simple plans: £9.99/month or £67.99/year (save over 30%), both with the first month free. Every plan gives you full, unrestricted access to every feature on the platform. Cancel anytime.',
       },
       {
         question: 'Is there a free trial?',
@@ -166,7 +166,7 @@ const FAQ_SECTIONS: FaqSection[] = [
       {
         question: 'How do I reset my password?',
         answer:
-          "Click 'Forgot password?' on the login page. Enter your email address and we'll send you a reset link. If you don't receive the email within a few minutes, check your spam folder or contact support@theenglishhub.app.",
+          "Click 'Forgot password?' on the login page. Enter your email address and we'll send you a reset link. If you don't receive the email within a few minutes, check your spam folder or contact info@Upskillenergy.com.",
       },
       {
         question: 'Can I use The English Hub offline?',
@@ -189,7 +189,7 @@ const FAQ_SECTIONS: FaqSection[] = [
       {
         question: "How do I link my parent account to my child's?",
         answer:
-          "Your child can send you a linking invitation from their account settings, or you can contact support@theenglishhub.app with your child's registered email. Once linked, you'll receive weekly progress reports and can manage consent preferences.",
+          "Your child can send you a linking invitation from their account settings, or you can contact info@Upskillenergy.com with your child's registered email. Once linked, you'll receive weekly progress reports and can manage consent preferences.",
       },
     ],
   },

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 const CONTACTS = [
   {
     label: "General Support",
-    email: "support@theenglishhub.app",
+    email: "info@Upskillenergy.com",
     description:
       "Questions about your account, essays, feedback, or anything else? This is the best place to start.",
     icon: (
@@ -200,10 +200,10 @@ export default function ContactPage() {
                 </dt>
                 <dd className="mt-1 text-sm">
                   <a
-                    href="mailto:support@theenglishhub.app"
+                    href="mailto:info@Upskillenergy.com"
                     className="font-medium text-primary hover:underline underline-offset-2"
                   >
-                    support@theenglishhub.app
+                    info@Upskillenergy.com
                   </a>
                 </dd>
               </div>

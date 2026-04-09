@@ -392,7 +392,7 @@ export const selfAssessmentChecklists: SelfAssessmentChecklist[] = [
     title: 'IGCSE English Language Reading Self-Assessment',
     yearGroup: 'Year 10-11',
     taskType: 'analysis',
-    targetGrade: 'C-A*',
+    targetGrade: '6-9',
     checklistItems: [
       {
         item: 'I have re-read the question carefully and identified exactly what it is asking.',
@@ -453,7 +453,7 @@ export const selfAssessmentChecklists: SelfAssessmentChecklist[] = [
     title: 'IGCSE English Language Writing Self-Assessment',
     yearGroup: 'Year 10-11',
     taskType: 'creative-writing',
-    targetGrade: 'C-A*',
+    targetGrade: '6-9',
     checklistItems: [
       {
         item: 'I have clearly identified whether the task requires creative or transactional writing.',
@@ -514,7 +514,7 @@ export const selfAssessmentChecklists: SelfAssessmentChecklist[] = [
     title: 'IGCSE Literature Essay Self-Assessment',
     yearGroup: 'Year 10-11',
     taskType: 'essay',
-    targetGrade: 'C-A*',
+    targetGrade: '6-9',
     checklistItems: [
       {
         item: 'I have addressed both aspects of the question if it has two parts.',
@@ -580,7 +580,7 @@ export const selfAssessmentChecklists: SelfAssessmentChecklist[] = [
     title: 'IAL English Language Data Analysis Self-Assessment (WEN04)',
     yearGroup: 'Year 12-13',
     taskType: 'analysis',
-    targetGrade: 'C-A',
+    targetGrade: '6-8',
     checklistItems: [
       {
         item: 'I have identified the key linguistic features of each data text before writing.',
@@ -646,7 +646,7 @@ export const selfAssessmentChecklists: SelfAssessmentChecklist[] = [
     title: 'IAL English Language Essay Writing Self-Assessment',
     yearGroup: 'Year 12-13',
     taskType: 'essay',
-    targetGrade: 'C-A',
+    targetGrade: '6-8',
     checklistItems: [
       {
         item: 'My introduction defines key terms and establishes a clear thesis.',
@@ -707,7 +707,7 @@ export const selfAssessmentChecklists: SelfAssessmentChecklist[] = [
     title: 'IAL English Language Coursework Self-Assessment',
     yearGroup: 'Year 12-13',
     taskType: 'general',
-    targetGrade: 'C-A',
+    targetGrade: '6-8',
     checklistItems: [
       {
         item: 'My investigation has a clearly stated research question that is linguistically focused.',

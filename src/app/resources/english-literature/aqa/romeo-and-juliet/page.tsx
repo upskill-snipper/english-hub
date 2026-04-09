@@ -273,7 +273,7 @@ const characters = [
 const themes = [
   {
     title: "Love",
-    colour: "bg-red-50 border-red-200",
+    colour: "bg-red-500/10 border-red-500/30",
     analysis:
       "Shakespeare presents multiple types of love throughout the play. Romeo's initial infatuation with Rosaline is shallow, conventional Petrarchan love, using tired cliches. His love for Juliet is presented as transformative and genuine — a spiritual and physical union expressed through shared sonnets and religious imagery. However, Shakespeare also questions whether their love is truly different from infatuation, given its speed and intensity. The play ultimately presents love as a force powerful enough to overcome hatred, but only through sacrifice and death.",
     keyPoints: [
@@ -291,7 +291,7 @@ const themes = [
   },
   {
     title: "Fate and Free Will",
-    colour: "bg-purple-50 border-purple-200",
+    colour: "bg-purple-500/10 border-purple-500/30",
     analysis:
       "The prologue announces Romeo and Juliet are 'star-cross'd' — destined to die. Shakespeare creates a tension between this predetermined fate and the characters' free choices. Romeo's impulsive decisions (killing Tybalt, buying poison) could be seen as fate working through his character, or as avoidable mistakes. The play asks whether tragedy is inevitable or whether different choices could have changed the outcome. Every moment of bad timing (the undelivered letter, Romeo arriving minutes too early) reinforces the sense of cosmic injustice.",
     keyPoints: [
@@ -310,7 +310,7 @@ const themes = [
   },
   {
     title: "Conflict and Violence",
-    colour: "bg-orange-50 border-orange-200",
+    colour: "bg-orange-500/10 border-orange-500/30",
     analysis:
       "The feud between the Montagues and Capulets is the engine of the tragedy. Shakespeare never explains its origin — it is simply inherited hatred, making it all the more absurd and destructive. Violence is presented as cyclical and self-perpetuating: each act of aggression demands retaliation. The play moves between private love scenes and public violence, showing how the feud invades every aspect of life in Verona. Only the lovers' deaths can break the cycle, suggesting that entrenched hatred can only be overcome through catastrophic sacrifice.",
     keyPoints: [
@@ -329,7 +329,7 @@ const themes = [
   },
   {
     title: "Youth vs Age / Generational Conflict",
-    colour: "bg-green-50 border-green-200",
+    colour: "bg-green-500/10 border-green-500/30",
     analysis:
       "The play presents a stark contrast between the passionate, idealistic young characters and the rigid, controlling older generation. The parents perpetuate the feud; the children pay for it with their lives. Capulet's authoritarian control over Juliet reflects the patriarchal power structures of Elizabethan society. The Friar and the Nurse, both adult authority figures, fail the lovers through well-meaning but inadequate intervention. Shakespeare implies that the older generation's values — honour, obedience, social status — are destructive when imposed without compassion.",
     keyPoints: [
@@ -347,7 +347,7 @@ const themes = [
   },
   {
     title: "Light and Darkness",
-    colour: "bg-indigo-50 border-indigo-200",
+    colour: "bg-indigo-500/10 border-indigo-200",
     analysis:
       "Shakespeare uses light and dark imagery paradoxically throughout the play. Conventionally, light represents goodness and dark represents evil, but Shakespeare inverts this. Romeo and Juliet's love flourishes in darkness (the balcony scene, the wedding night) and is threatened by daylight (which brings separation and public violence). Juliet is consistently associated with light — 'the sun,' 'a rich jewel in an Ethiope's ear' — suggesting she illuminates Romeo's world. However, this light imagery is always set against darkness, foreshadowing the idea that their love can only truly exist beyond the world of the living.",
     keyPoints: [
@@ -365,7 +365,7 @@ const themes = [
   },
   {
     title: "Gender and Patriarchy",
-    colour: "bg-teal-50 border-teal-200",
+    colour: "bg-teal-500/10 border-teal-200",
     analysis:
       "The play exposes the rigid gender roles of Elizabethan society and their devastating consequences. Men are expected to be aggressive and honour-bound — those who refuse to fight (like Romeo after his marriage) are mocked. Women are treated as property: Juliet's marriage is arranged without her consent, and her refusal is met with threats of disownment. Shakespeare uses Juliet to challenge these norms: she is the play's most intelligent and decisive character, yet she is trapped by a patriarchal system that denies her autonomy. The tragedy is partly caused by a society that values male honour over female agency.",
     keyPoints: [
@@ -642,7 +642,7 @@ export default function RomeoAndJulietPage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-primary to-primary/90 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary/20">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-white/70">
             AQA English Literature &middot; Paper 1
           </p>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">

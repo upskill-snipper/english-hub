@@ -621,7 +621,7 @@ export default function FlashcardsPage() {
                     onClick={() => toggleMastered(card.id)}
                     className={`inline-flex items-center gap-1.5 text-xs font-semibold transition-colors ${
                       isMastered
-                        ? "text-emerald-600 hover:text-emerald-700"
+                        ? "text-emerald-600 hover:text-emerald-700 dark:text-emerald-300"
                         : "text-muted-foreground hover:text-primary"
                     }`}
                   >

@@ -109,7 +109,7 @@ export default function ReviewRequestPage() {
       <div className="mx-auto max-w-2xl px-4 py-12">
         <div className="card text-center">
           {/* Checkmark */}
-          <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-green-100 text-green-600">
+          <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-green-500/15 text-green-600">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-7 w-7"
@@ -313,7 +313,7 @@ export default function ReviewRequestPage() {
         {error && (
           <div
             role="alert"
-            className="rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-700"
+            className="rounded-lg border border-red-500/30 bg-red-500/10 p-3 text-sm text-red-700 dark:text-red-300"
           >
             {error}
           </div>

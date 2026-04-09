@@ -43,8 +43,8 @@ function Section({
 
 function QuoteCard({ quote, speaker, analysis }: { quote: string; speaker?: string; analysis: string }) {
   return (
-    <div className="rounded-lg border-l-4 border-violet-400 bg-violet-50/50 p-4 mb-3">
-      <p className="text-sm font-semibold text-violet-900 italic">&ldquo;{quote}&rdquo;</p>
+    <div className="rounded-lg border-l-4 border-violet-400 bg-violet-500/5 p-4 mb-3">
+      <p className="text-sm font-semibold text-violet-800 dark:text-violet-200 italic">&ldquo;{quote}&rdquo;</p>
       {speaker && <p className="mt-1 text-xs font-medium text-violet-600">&mdash; {speaker}</p>}
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
     </div>
@@ -62,8 +62,8 @@ function CharacterCard({ name, description }: { name: string; description: strin
 
 function ThemeCard({ title, description }: { title: string; description: string }) {
   return (
-    <div className="rounded-lg border border-violet-200 bg-violet-50/30 p-4 mb-3">
-      <h4 className="font-bold text-violet-800">{title}</h4>
+    <div className="rounded-lg border border-violet-500/30 bg-violet-500/10/30 p-4 mb-3">
+      <h4 className="font-bold text-violet-700 dark:text-violet-300">{title}</h4>
       <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{description}</p>
     </div>
   );
@@ -77,7 +77,7 @@ export default function JekyllAndHydePage() {
       {/* Hero */}
       <div className="mb-8">
         <div className="flex flex-wrap items-center gap-3 mb-2">
-          <span className="rounded-full bg-violet-100 px-3 py-1 text-xs font-bold text-violet-700 uppercase tracking-wider">
+          <span className="rounded-full bg-violet-500/15 px-3 py-1 text-xs font-bold text-violet-700 dark:text-violet-300 uppercase tracking-wider">
             19th-Century Prose
           </span>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary uppercase tracking-wider">
@@ -124,7 +124,7 @@ export default function JekyllAndHydePage() {
             <div className="space-y-4">
               <div>
                 <h4 className="font-bold text-foreground flex items-center gap-2">
-                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-100 text-xs font-bold text-violet-700">1</span>
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">1</span>
                   Chapter 1: Story of the Door
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -147,7 +147,7 @@ export default function JekyllAndHydePage() {
 
               <div>
                 <h4 className="font-bold text-foreground flex items-center gap-2">
-                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-100 text-xs font-bold text-violet-700">2</span>
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">2</span>
                   Chapter 2: Search for Mr Hyde
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -170,7 +170,7 @@ export default function JekyllAndHydePage() {
 
               <div>
                 <h4 className="font-bold text-foreground flex items-center gap-2">
-                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-100 text-xs font-bold text-violet-700">3</span>
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">3</span>
                   Chapter 3: Dr Jekyll Was Quite at Ease
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -191,7 +191,7 @@ export default function JekyllAndHydePage() {
 
               <div>
                 <h4 className="font-bold text-foreground flex items-center gap-2">
-                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-100 text-xs font-bold text-violet-700">4</span>
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">4</span>
                   Chapter 4: The Carew Murder Case
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -214,7 +214,7 @@ export default function JekyllAndHydePage() {
 
               <div>
                 <h4 className="font-bold text-foreground flex items-center gap-2">
-                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-100 text-xs font-bold text-violet-700">5</span>
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">5</span>
                   Chapter 5: Incident of the Letter
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -235,7 +235,7 @@ export default function JekyllAndHydePage() {
 
               <div>
                 <h4 className="font-bold text-foreground flex items-center gap-2">
-                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-100 text-xs font-bold text-violet-700">6</span>
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">6</span>
                   Chapter 6: Remarkable Incident of Dr Lanyon
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -256,7 +256,7 @@ export default function JekyllAndHydePage() {
 
               <div>
                 <h4 className="font-bold text-foreground flex items-center gap-2">
-                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-100 text-xs font-bold text-violet-700">7</span>
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">7</span>
                   Chapter 7: Incident at the Window
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -277,7 +277,7 @@ export default function JekyllAndHydePage() {
 
               <div>
                 <h4 className="font-bold text-foreground flex items-center gap-2">
-                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-100 text-xs font-bold text-violet-700">8</span>
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">8</span>
                   Chapter 8: The Last Night
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -300,7 +300,7 @@ export default function JekyllAndHydePage() {
 
               <div>
                 <h4 className="font-bold text-foreground flex items-center gap-2">
-                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-100 text-xs font-bold text-violet-700">9</span>
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">9</span>
                   Chapter 9: Dr Lanyon&apos;s Narrative
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -323,7 +323,7 @@ export default function JekyllAndHydePage() {
 
               <div>
                 <h4 className="font-bold text-foreground flex items-center gap-2">
-                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-100 text-xs font-bold text-violet-700">10</span>
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500/15 text-xs font-bold text-violet-700 dark:text-violet-300">10</span>
                   Chapter 10: Henry Jekyll&apos;s Full Statement of the Case
                 </h4>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -777,139 +777,139 @@ export default function JekyllAndHydePage() {
 
             <div className="space-y-6">
               {/* Essay 1 */}
-              <div className="rounded-xl border border-violet-200 bg-violet-50/30 p-5">
-                <h4 className="font-bold text-violet-900 text-base">How does Stevenson present the theme of duality?</h4>
+              <div className="rounded-xl border border-violet-500/30 bg-violet-500/10/30 p-5">
+                <h4 className="font-bold text-violet-800 dark:text-violet-200 text-base">How does Stevenson present the theme of duality?</h4>
                 <div className="mt-3 space-y-3">
                   <div>
-                    <p className="text-xs font-semibold text-violet-700 uppercase tracking-wider">Thesis</p>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">Thesis</p>
                     <p className="mt-1 text-sm text-muted-foreground">Stevenson uses Jekyll and Hyde to argue that duality is an inescapable part of human nature, and that Victorian society&apos;s insistence on moral purity only makes the &ldquo;darker half&rdquo; more dangerous.</p>
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-violet-700 uppercase tracking-wider">Paragraph 1 &mdash; Jekyll&apos;s confession</p>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">Paragraph 1 &mdash; Jekyll&apos;s confession</p>
                     <p className="mt-1 text-sm text-muted-foreground">&ldquo;Man is not truly one, but truly two.&rdquo; Analyse the thesis statement. Link to Victorian expectations of moral consistency. Discuss how Jekyll&apos;s experiment is born from the pressure to appear wholly virtuous.</p>
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-violet-700 uppercase tracking-wider">Paragraph 2 &mdash; Hyde&apos;s physical appearance</p>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">Paragraph 2 &mdash; Hyde&apos;s physical appearance</p>
                     <p className="mt-1 text-sm text-muted-foreground">&ldquo;He gave an impression of deformity without any nameable malformation.&rdquo; Explore how Hyde&apos;s appearance reflects internal evil. Connect to physiognomy, Darwin, and degeneration anxiety.</p>
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-violet-700 uppercase tracking-wider">Paragraph 3 &mdash; The setting as duality</p>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">Paragraph 3 &mdash; The setting as duality</p>
                     <p className="mt-1 text-sm text-muted-foreground">&ldquo;The door, which was equipped with neither bell nor knocker, was blistered and distained.&rdquo; Analyse how Jekyll&apos;s house (grand front / decayed back) physically mirrors duality. Link to the geography of respectable London concealing Soho&apos;s vice.</p>
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-violet-700 uppercase tracking-wider">Paragraph 4 &mdash; Loss of control</p>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">Paragraph 4 &mdash; Loss of control</p>
                     <p className="mt-1 text-sm text-muted-foreground">&ldquo;My devil had been long caged, he came out roaring.&rdquo; Discuss how repression intensifies evil. Argue that Stevenson shows the Victorian attempt to cage the &ldquo;Hyde&rdquo; within everyone leads to catastrophe. Connect to Freud&apos;s theories of the unconscious.</p>
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-violet-700 uppercase tracking-wider">Conclusion</p>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">Conclusion</p>
                     <p className="mt-1 text-sm text-muted-foreground">Stevenson perhaps suggests that accepting human complexity &mdash; rather than forcing an artificial division &mdash; is the only way to prevent self-destruction. The novella remains relevant because it addresses universal human psychology.</p>
                   </div>
                 </div>
               </div>
 
               {/* Essay 2 */}
-              <div className="rounded-xl border border-violet-200 bg-violet-50/30 p-5">
-                <h4 className="font-bold text-violet-900 text-base">How does Stevenson present Hyde as a frightening outsider?</h4>
+              <div className="rounded-xl border border-violet-500/30 bg-violet-500/10/30 p-5">
+                <h4 className="font-bold text-violet-800 dark:text-violet-200 text-base">How does Stevenson present Hyde as a frightening outsider?</h4>
                 <div className="mt-3 space-y-3">
                   <div>
-                    <p className="text-xs font-semibold text-violet-700 uppercase tracking-wider">Thesis</p>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">Thesis</p>
                     <p className="mt-1 text-sm text-muted-foreground">Stevenson presents Hyde as frightening precisely because he cannot be categorised or understood &mdash; he exists outside the boundaries of rational Victorian society, embodying everything it represses.</p>
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-violet-700 uppercase tracking-wider">Paragraph 1 &mdash; Indescribable appearance</p>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">Paragraph 1 &mdash; Indescribable appearance</p>
                     <p className="mt-1 text-sm text-muted-foreground">&ldquo;There is something wrong with his appearance; something displeasing, something downright detestable.&rdquo; Analyse the tricolon and the failure of language to capture Hyde. His horror is beyond rational description, making him a Gothic figure of the sublime.</p>
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-violet-700 uppercase tracking-wider">Paragraph 2 &mdash; Animalistic and primitive</p>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">Paragraph 2 &mdash; Animalistic and primitive</p>
                     <p className="mt-1 text-sm text-muted-foreground">&ldquo;Something troglodytic&rdquo; and &ldquo;ape-like fury.&rdquo; Connect Hyde&apos;s primitive nature to Darwinian fears. Hyde is frightening because he represents what Victorians feared they truly were beneath the veneer of civilisation.</p>
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-violet-700 uppercase tracking-wider">Paragraph 3 &mdash; Escalating violence</p>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">Paragraph 3 &mdash; Escalating violence</p>
                     <p className="mt-1 text-sm text-muted-foreground">&ldquo;With a transport of glee, I mauled the unresisting body.&rdquo; Trace the escalation from trampling a girl to murder. Hyde grows stronger with each act, suggesting evil feeds on itself. The semantic field of pleasure makes the violence especially disturbing.</p>
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-violet-700 uppercase tracking-wider">Paragraph 4 &mdash; Hyde as internal, not external</p>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">Paragraph 4 &mdash; Hyde as internal, not external</p>
                     <p className="mt-1 text-sm text-muted-foreground">&ldquo;He, I say &mdash; I cannot say, I.&rdquo; Argue that Hyde&apos;s greatest horror is that he is not a separate monster but part of Jekyll. The outsider is inside. This subverts the Gothic convention of the external threat and makes the horror inescapable.</p>
                   </div>
                 </div>
               </div>
 
               {/* Essay 3 */}
-              <div className="rounded-xl border border-violet-200 bg-violet-50/30 p-5">
-                <h4 className="font-bold text-violet-900 text-base">How does Stevenson explore the theme of repression?</h4>
+              <div className="rounded-xl border border-violet-500/30 bg-violet-500/10/30 p-5">
+                <h4 className="font-bold text-violet-800 dark:text-violet-200 text-base">How does Stevenson explore the theme of repression?</h4>
                 <div className="mt-3 space-y-3">
                   <div>
-                    <p className="text-xs font-semibold text-violet-700 uppercase tracking-wider">Thesis</p>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">Thesis</p>
                     <p className="mt-1 text-sm text-muted-foreground">Stevenson uses the Jekyll/Hyde narrative to argue that Victorian repression does not eliminate vice but amplifies it, creating a cycle of concealment and eruption that destroys the individual.</p>
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-violet-700 uppercase tracking-wider">Paragraph 1 &mdash; Jekyll&apos;s secret pleasures</p>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">Paragraph 1 &mdash; Jekyll&apos;s secret pleasures</p>
                     <p className="mt-1 text-sm text-muted-foreground">&ldquo;I concealed my pleasures&rdquo; and &ldquo;I stood already committed to a profound duplicity of life.&rdquo; Analyse how Jekyll&apos;s concealment is driven by social expectation, not genuine evil. He hides &ldquo;irregularities&rdquo; &mdash; Victorian euphemism for behaviours that are ordinary but socially unacceptable.</p>
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-violet-700 uppercase tracking-wider">Paragraph 2 &mdash; The caged devil</p>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">Paragraph 2 &mdash; The caged devil</p>
                     <p className="mt-1 text-sm text-muted-foreground">&ldquo;My devil had been long caged, he came out roaring.&rdquo; The metaphor shows that repression intensifies desire. The longer Jekyll suppresses Hyde, the more violent Hyde becomes. Connect to Freud&apos;s theory of the return of the repressed.</p>
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-violet-700 uppercase tracking-wider">Paragraph 3 &mdash; Secrecy as social norm</p>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">Paragraph 3 &mdash; Secrecy as social norm</p>
                     <p className="mt-1 text-sm text-muted-foreground">Utterson &ldquo;inclined to Cain&apos;s heresy&rdquo; of letting others go their own way. All characters collude in secrecy. Stevenson shows repression is not individual but systemic &mdash; an entire society built on not asking questions.</p>
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-violet-700 uppercase tracking-wider">Paragraph 4 &mdash; The inevitability of eruption</p>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">Paragraph 4 &mdash; The inevitability of eruption</p>
                     <p className="mt-1 text-sm text-muted-foreground">&ldquo;I felt younger, lighter, happier in body.&rdquo; When repression finally breaks, the release is intoxicating. Jekyll&apos;s pleasure in becoming Hyde shows that repression creates a dangerous desire for freedom. The tragedy is that this freedom can only be achieved through destruction.</p>
                   </div>
                 </div>
               </div>
 
               {/* Essay 4 */}
-              <div className="rounded-xl border border-violet-200 bg-violet-50/30 p-5">
-                <h4 className="font-bold text-violet-900 text-base">How does Stevenson use setting to create atmosphere?</h4>
+              <div className="rounded-xl border border-violet-500/30 bg-violet-500/10/30 p-5">
+                <h4 className="font-bold text-violet-800 dark:text-violet-200 text-base">How does Stevenson use setting to create atmosphere?</h4>
                 <div className="mt-3 space-y-3">
                   <div>
-                    <p className="text-xs font-semibold text-violet-700 uppercase tracking-wider">Thesis</p>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">Thesis</p>
                     <p className="mt-1 text-sm text-muted-foreground">Stevenson uses Victorian London as more than a backdrop &mdash; the city itself embodies duality, with its respectable facades concealing sinister spaces, its fog obscuring moral boundaries, and its geography reflecting the divided self.</p>
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-violet-700 uppercase tracking-wider">Paragraph 1 &mdash; Jekyll&apos;s house as symbol</p>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">Paragraph 1 &mdash; Jekyll&apos;s house as symbol</p>
                     <p className="mt-1 text-sm text-muted-foreground">The grand front entrance vs the &ldquo;blistered and distained&rdquo; back door. The house physically represents Jekyll&apos;s divided identity: public respectability at the front, hidden depravity at the rear. The laboratory &mdash; a space of dangerous experimentation &mdash; is deliberately concealed.</p>
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-violet-700 uppercase tracking-wider">Paragraph 2 &mdash; Fog and darkness</p>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">Paragraph 2 &mdash; Fog and darkness</p>
                     <p className="mt-1 text-sm text-muted-foreground">&ldquo;The fog still slept on the wing above the drowned city.&rdquo; Pathetic fallacy creates Gothic atmosphere. Fog symbolises moral ambiguity and concealment. The &ldquo;chocolate-coloured pall&rdquo; suggests suffocation. London is literally obscured, mirroring the hidden truths of the narrative.</p>
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-violet-700 uppercase tracking-wider">Paragraph 3 &mdash; Soho</p>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">Paragraph 3 &mdash; Soho</p>
                     <p className="mt-1 text-sm text-muted-foreground">Hyde&apos;s Soho lodgings represent the underside of respectable London. The &ldquo;dismal quarter&rdquo; with its &ldquo;muddy ways&rdquo; and &ldquo;slatternly passengers&rdquo; geographically embodies the vice hidden within the city. That Hyde lives here, with furniture of &ldquo;luxury and good taste,&rdquo; shows respectability and corruption coexisting.</p>
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-violet-700 uppercase tracking-wider">Paragraph 4 &mdash; Night-time London</p>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">Paragraph 4 &mdash; Night-time London</p>
                     <p className="mt-1 text-sm text-muted-foreground">Almost all significant events occur at night. Darkness enables Hyde&apos;s crimes and symbolises the hidden world of Victorian vice. Connect to the real-life anxieties about London at night &mdash; crime, prostitution, and the anonymity that darkness provides.</p>
                   </div>
                 </div>
               </div>
 
               {/* Essay 5 */}
-              <div className="rounded-xl border border-violet-200 bg-violet-50/30 p-5">
-                <h4 className="font-bold text-violet-900 text-base">How does Stevenson present the conflict between science and religion?</h4>
+              <div className="rounded-xl border border-violet-500/30 bg-violet-500/10/30 p-5">
+                <h4 className="font-bold text-violet-800 dark:text-violet-200 text-base">How does Stevenson present the conflict between science and religion?</h4>
                 <div className="mt-3 space-y-3">
                   <div>
-                    <p className="text-xs font-semibold text-violet-700 uppercase tracking-wider">Thesis</p>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">Thesis</p>
                     <p className="mt-1 text-sm text-muted-foreground">Stevenson presents Jekyll&apos;s experiment as a Promethean act that trespasses into God&apos;s domain, reflecting wider Victorian anxieties about whether scientific progress was leading humanity towards enlightenment or damnation.</p>
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-violet-700 uppercase tracking-wider">Paragraph 1 &mdash; Jekyll as Promethean scientist</p>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">Paragraph 1 &mdash; Jekyll as Promethean scientist</p>
                     <p className="mt-1 text-sm text-muted-foreground">Jekyll attempts to separate good from evil &mdash; a power that belongs to God. His experiment echoes Frankenstein&apos;s creation of life. The &ldquo;transcendental medicine&rdquo; combines science with the supernatural, blurring boundaries that Victorian society wanted kept separate.</p>
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-violet-700 uppercase tracking-wider">Paragraph 2 &mdash; Lanyon as orthodox science</p>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">Paragraph 2 &mdash; Lanyon as orthodox science</p>
                     <p className="mt-1 text-sm text-muted-foreground">&ldquo;Unscientific balderdash.&rdquo; Lanyon represents mainstream, respectable science. His death after witnessing the transformation suggests that the truth shatters conventional scientific understanding. He describes Hyde in religious terms (&ldquo;the slime of the pit&rdquo;), showing science cannot explain what he has seen.</p>
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-violet-700 uppercase tracking-wider">Paragraph 3 &mdash; Religious language throughout</p>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">Paragraph 3 &mdash; Religious language throughout</p>
                     <p className="mt-1 text-sm text-muted-foreground">&ldquo;Satan&apos;s signature,&rdquo; &ldquo;child of Hell,&rdquo; &ldquo;chief of sinners.&rdquo; Characters consistently describe Hyde in biblical terms. This religious framework suggests science has released something diabolical &mdash; that Jekyll has committed a sin, not merely a scientific error.</p>
                   </div>
                   <div>
-                    <p className="text-xs font-semibold text-violet-700 uppercase tracking-wider">Paragraph 4 &mdash; Darwin and degeneration</p>
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300 uppercase tracking-wider">Paragraph 4 &mdash; Darwin and degeneration</p>
                     <p className="mt-1 text-sm text-muted-foreground">&ldquo;Something troglodytic.&rdquo; Hyde&apos;s appearance reflects Darwinian fears about evolution in reverse. Connect to the tension between evolutionary science and religious belief in human beings as God&apos;s creation. Hyde suggests humanity&apos;s animal past is not truly left behind.</p>
                   </div>
                 </div>
@@ -920,7 +920,7 @@ export default function JekyllAndHydePage() {
       </div>
 
       {/* Exam Tips */}
-      <div className="mt-6 rounded-xl border border-primary/20 bg-primary/10/50 p-6">
+      <div className="mt-6 rounded-xl border border-primary/20 bg-primary/10 p-6">
         <h3 className="text-lg font-bold text-foreground">Exam Tips for Jekyll and Hyde</h3>
         <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
           <li className="flex items-start gap-2">

@@ -65,8 +65,8 @@ const MOCK_CLASSES: ClassGroup[] = [
     examBoard: "CAIE",
     yearGroup: 10,
     students: [
-      { id: "s9", name: "Isabella Martinez", email: "isabella.m@school.edu", averageScore: 91, essaysSubmitted: 16, lastActive: "2026-03-23", projectedGrade: "A*" },
-      { id: "s10", name: "Noah Kim", email: "noah.k@school.edu", averageScore: 73, essaysSubmitted: 11, lastActive: "2026-03-22", projectedGrade: "B" },
+      { id: "s9", name: "Isabella Martinez", email: "isabella.m@school.edu", averageScore: 91, essaysSubmitted: 16, lastActive: "2026-03-23", projectedGrade: "9" },
+      { id: "s10", name: "Noah Kim", email: "noah.k@school.edu", averageScore: 73, essaysSubmitted: 11, lastActive: "2026-03-22", projectedGrade: "6" },
     ],
     createdAt: "2025-09-08",
   },
@@ -79,9 +79,7 @@ function getGradeColor(grade: string): string {
     if (num >= 5) return "text-amber-600";
     return "text-red-600";
   }
-  if (grade.includes("A")) return "text-green-600";
-  if (grade === "B") return "text-amber-600";
-  return "text-red-600";
+  return "text-muted-foreground";
 }
 
 export default function ClassesPage() {
@@ -245,7 +243,7 @@ export default function ClassesPage() {
                         <th className="px-4 py-3 font-medium">Last Active</th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-slate-100">
+                    <tbody className="divide-y divide-border">
                       {(filteredStudents ?? []).map((student) => (
                         <tr
                           key={student.id}

@@ -127,7 +127,7 @@ const faqs = [
   },
   {
     q: 'Can I upgrade to a school plan later?',
-    a: 'Absolutely. If you want to roll The English Hub out to your department or whole school, visit our School Plans page or email us at schools@theenglishhub.app. We can migrate your existing data and give your colleagues instant access.',
+    a: 'Absolutely. If you want to roll The English Hub out to your department or whole school, visit our School Plans page or email us at info@Upskillenergy.com. We can migrate your existing data and give your colleagues instant access.',
   },
   {
     q: 'What happens when I use my free tries?',

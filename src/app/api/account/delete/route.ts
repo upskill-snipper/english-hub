@@ -80,7 +80,7 @@ export async function POST(request: NextRequest) {
     if (deleteError) {
       console.error('Account deletion failed:', deleteError)
       return NextResponse.json(
-        { error: 'Failed to delete account. Please contact support at support@theenglishhub.app.' },
+        { error: 'Failed to delete account. Please contact support at info@Upskillenergy.com.' },
         { status: 500 }
       )
     }
@@ -89,7 +89,7 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error('Account deletion error:', error)
     return NextResponse.json(
-      { error: 'Internal server error. Please contact support at support@theenglishhub.app.' },
+      { error: 'Internal server error. Please contact support at info@Upskillenergy.com.' },
       { status: 500 }
     )
   }

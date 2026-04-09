@@ -121,7 +121,7 @@ const resourceGroups: ResourceGroup[] = [
       },
       {
         title: "The War of the Worlds",
-        href: "/resources/english-literature/caie/war-of-the-worlds",
+        href: "/resources/english-literature/caie",
         description:
           "H.G. Wells' sci-fi classic: plot summary, character analysis, themes of imperialism and survival, key quotes, and exam guidance.",
         icon: proseIcon,

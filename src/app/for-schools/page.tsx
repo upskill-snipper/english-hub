@@ -220,11 +220,11 @@ const TESTIMONIALS = [
 const SCHOOL_FAQS = [
   {
     q: "What is the Founding Schools Programme?",
-    a: "The Founding Schools Programme is a strategic partnership for the 2026 academic year, limited to 20 schools. Founding schools receive full platform access, early features, direct product input, priority onboarding, and locked preferential pricing for 2-3 years. This is not a free trial -- it is a partnership with heavily discounted pricing tailored to your department size.",
+    a: "The Founding Schools Programme is a strategic partnership for the 2026 academic year, limited to 10 schools. Founding schools receive full platform access, early features, direct product input, priority onboarding, and locked preferential pricing for 2-3 years. This is not a free trial -- it is a partnership with heavily discounted pricing tailored to your department size.",
   },
   {
     q: "How much does it cost?",
-    a: "Pricing is tailored to your department size and discussed during your onboarding call. Founding schools receive heavily discounted rates compared to our post-programme pricing. Book a call to discuss your specific package.",
+    a: "Founding Schools Programme pricing ranges from £3,000 to £7,000 per year, depending on your department size. This is heavily discounted compared to our post-programme pricing. The exact package is discussed during your onboarding call. Book a call to find out your school's price.",
   },
   {
     q: "How do students and teachers get access?",
@@ -338,7 +338,7 @@ export default function ForSchoolsPage() {
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
             {[
-              "Only 20 founding schools",
+              "Only 10 founding schools",
               "5-8 hours saved per teacher per week",
               "Ofsted-ready reporting",
             ].map((item) => (
@@ -362,7 +362,7 @@ export default function ForSchoolsPage() {
                   <Award className="w-5 h-5 text-primary" />
                 </div>
                 <Badge className="bg-primary/15 text-primary border-primary/30 font-bold text-sm px-3 py-1">
-                  LIMITED TO 20 SCHOOLS
+                  LIMITED TO 10 SCHOOLS
                 </Badge>
               </div>
 
@@ -373,7 +373,7 @@ export default function ForSchoolsPage() {
                 We are partnering with a small number of schools to shape the future of English
                 teaching. This is not a free trial &mdash; it is a strategic partnership. Founding
                 schools receive heavily discounted pricing, early features, direct product input,
-                and locked preferential rates for 2-3 years. Only 20 places available this academic
+                and locked preferential rates for 2-3 years. Only 10 places available this academic
                 year. When the programme closes, it closes.
               </p>
             </div>
@@ -509,12 +509,12 @@ export default function ForSchoolsPage() {
                 </div>
                 <div>
                   <p className="font-bold text-foreground">Founding Schools Programme</p>
-                  <p className="text-xs text-muted-foreground">Limited to 20 schools -- 2026</p>
+                  <p className="text-xs text-muted-foreground">Limited to 10 schools -- 2026</p>
                 </div>
               </div>
               <div className="mb-6">
-                <p className="text-lg font-bold text-foreground">Tailored pricing</p>
-                <p className="text-sm text-muted-foreground mt-1">Discussed during your onboarding call. Heavily discounted vs post-programme rates.</p>
+                <p className="text-lg font-bold text-foreground">£3,000 &ndash; £7,000 <span className="text-sm font-normal text-muted-foreground">/ year</span></p>
+                <p className="text-sm text-muted-foreground mt-1">Tailored to your department size. Discussed during your onboarding call.</p>
               </div>
               <ul className="space-y-3 flex-1">
                 {[
@@ -560,7 +560,7 @@ export default function ForSchoolsPage() {
                 <p className="text-sm font-semibold text-amber-400 mb-1">Why join now?</p>
                 <p className="text-sm text-muted-foreground">
                   Founding schools lock in preferential rates for 2-3 years. Post-programme pricing
-                  will be substantially higher. This offer closes when 20 schools have joined.
+                  will be substantially higher. This offer closes when 10 schools have joined.
                 </p>
               </div>
               <ul className="space-y-3 flex-1">
@@ -586,7 +586,7 @@ export default function ForSchoolsPage() {
           </div>
 
           <p className="text-center text-sm text-muted-foreground mt-8">
-            Only 20 schools. When the programme closes, it closes. Book a call to secure your place.
+            Only 10 schools. When the programme closes, it closes. Book a call to secure your place.
           </p>
         </div>
       </section>
@@ -769,6 +769,7 @@ export default function ForSchoolsPage() {
                   "Class-by-class and student-by-student drill down",
                   "One-click Ofsted and data export reports",
                   "Comparison against previous cohorts and national averages",
+                  "Predicted grades for students who miss exams, based on continuous assessment and mock performance",
                 ].map((point) => (
                   <li key={point} className="flex items-start gap-3 text-sm text-foreground/90">
                     <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-0.5" />
@@ -776,6 +777,13 @@ export default function ForSchoolsPage() {
                   </li>
                 ))}
               </ul>
+              <div className="mt-6 rounded-xl bg-primary/[0.06] border border-primary/20 p-4">
+                <p className="text-sm text-foreground/90 leading-relaxed">
+                  Our platform provides predicted grades based on continuous assessment, mock
+                  performance, and coursework data &mdash; supporting fair outcomes when students
+                  miss exams for any reason.
+                </p>
+              </div>
               <div className="mt-8">
                 <Button variant="outline" className="border-primary/40 text-primary hover:bg-primary/10 gap-2 font-semibold" render={<Link href="/demo/school/analytics" />}>
                   <BarChart3 className="w-4 h-4" />
@@ -1005,7 +1013,7 @@ export default function ForSchoolsPage() {
               <div className="px-5 py-4 text-foreground border-r border-border/40">Feature</div>
               <div className="px-5 py-4 text-primary text-center border-r border-border/40">
                 School Partnership
-                <div className="text-xs font-normal text-muted-foreground">Tailored pricing</div>
+                <div className="text-xs font-normal text-muted-foreground">£3,000 – £7,000 / year</div>
               </div>
               <div className="px-5 py-4 text-muted-foreground text-center">
                 Individual Subs
@@ -1067,6 +1075,10 @@ export default function ForSchoolsPage() {
             <Link href="/contact" className="text-primary underline underline-offset-4 hover:text-primary/80 transition-colors">
               Book a call
             </Link>{" "}
+            or email{" "}
+            <a href="mailto:info@Upskillenergy.com" className="text-primary underline underline-offset-4 hover:text-primary/80 transition-colors">
+              info@Upskillenergy.com
+            </a>{" "}
             and we will get back to you within one working day.
           </p>
         </div>
@@ -1102,14 +1114,14 @@ export default function ForSchoolsPage() {
         <div className="relative max-w-3xl mx-auto px-6 text-center">
           <Badge className="bg-primary/15 text-primary border-primary/30 font-bold text-sm px-4 py-1.5 mb-8 gap-2">
             <Award className="w-4 h-4" />
-            ONLY 20 FOUNDING SCHOOLS
+            ONLY 10 FOUNDING SCHOOLS
           </Badge>
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-foreground mb-5">
             Join the Founding Schools Programme{" "}
             <span className="text-primary">Before It Closes</span>
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed max-w-xl mx-auto mb-10">
-            Only 20 schools. Heavily discounted pricing locked for 2-3 years. Early features.
+            Only 10 schools. Heavily discounted pricing locked for 2-3 years. Early features.
             Direct product input. When the programme closes, it closes.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -1124,6 +1136,12 @@ export default function ForSchoolsPage() {
           </div>
           <p className="text-xs text-muted-foreground/60 mt-6">
             No obligation. No hard sell. Just a conversation about whether the programme is right for your school.
+          </p>
+          <p className="text-xs text-muted-foreground/60 mt-2">
+            Or email us directly at{" "}
+            <a href="mailto:info@Upskillenergy.com" className="text-primary hover:underline">
+              info@Upskillenergy.com
+            </a>
           </p>
         </div>
       </section>
@@ -1163,8 +1181,13 @@ export default function ForSchoolsPage() {
               ))}
             </div>
           </div>
-          <div className="mt-10 pt-6 border-t border-border/40 text-center text-xs text-muted-foreground/70">
-            &copy; {new Date().getFullYear()} The English Hub. All rights reserved.
+          <div className="mt-10 pt-6 border-t border-border/40 text-center text-xs text-muted-foreground/70 space-y-1">
+            <p>&copy; {new Date().getFullYear()} The English Hub. All rights reserved.</p>
+            <p>
+              <a href="mailto:info@Upskillenergy.com" className="hover:text-foreground transition-colors">
+                info@Upskillenergy.com
+              </a>
+            </p>
           </div>
         </div>
       </footer>
@@ -1340,6 +1363,12 @@ function BookCallForm() {
 
       <p className="text-center text-xs text-muted-foreground">
         We reply within one working day. No obligation, no hard sell.
+      </p>
+      <p className="text-center text-xs text-muted-foreground mt-1">
+        Or email us at{" "}
+        <a href="mailto:info@Upskillenergy.com" className="text-primary hover:underline">
+          info@Upskillenergy.com
+        </a>
       </p>
     </form>
   );

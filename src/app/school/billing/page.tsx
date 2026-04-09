@@ -40,7 +40,7 @@ interface UsageStats {
 // Constants
 // ---------------------------------------------------------------------------
 
-const BILLING_EMAIL = "schools@theenglishhub.app"
+const BILLING_EMAIL = "info@Upskillenergy.com"
 const FOUNDER_EXPIRY = new Date("2026-08-31T23:59:59Z")
 const LICENSE_PRICE = "1,500"
 const RENEWAL_WARNING_DAYS = 60

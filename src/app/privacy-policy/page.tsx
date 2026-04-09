@@ -43,8 +43,8 @@ export default function PrivacyPolicyPage() {
             Protection Act 2018, the data controller is Upskill Energy Limited, trading as The
             English Hub. If you have any questions about this policy or how we handle your data,
             please contact us at{' '}
-            <a href="mailto:privacy@theenglishhub.app" className="underline text-foreground">
-              privacy@theenglishhub.app
+            <a href="mailto:info@Upskillenergy.com" className="underline text-foreground">
+              info@Upskillenergy.com
             </a>
             .
           </p>
@@ -407,8 +407,8 @@ export default function PrivacyPolicyPage() {
             <li>
               Parents and guardians can review, amend, or request deletion of their child&apos;s
               data at any time by contacting us at{' '}
-              <a href="mailto:privacy@theenglishhub.app" className="underline text-foreground">
-                privacy@theenglishhub.app
+              <a href="mailto:info@Upskillenergy.com" className="underline text-foreground">
+                info@Upskillenergy.com
               </a>
               .
             </li>
@@ -478,8 +478,8 @@ export default function PrivacyPolicyPage() {
           </ul>
           <p className="text-muted-foreground leading-relaxed mt-3">
             To exercise any of these rights, please contact us at{' '}
-            <a href="mailto:privacy@theenglishhub.app" className="underline text-foreground">
-              privacy@theenglishhub.app
+            <a href="mailto:info@Upskillenergy.com" className="underline text-foreground">
+              info@Upskillenergy.com
             </a>
             . We will respond within one month. If your request is complex or we receive a large
             number of requests, we may extend this by a further two months, but we will let you
@@ -626,8 +626,8 @@ export default function PrivacyPolicyPage() {
           <ul className="list-none pl-0 text-muted-foreground leading-relaxed space-y-1 mt-3">
             <li>
               <strong className="text-foreground">Email:</strong>{' '}
-              <a href="mailto:privacy@theenglishhub.app" className="underline text-foreground">
-                privacy@theenglishhub.app
+              <a href="mailto:info@Upskillenergy.com" className="underline text-foreground">
+                info@Upskillenergy.com
               </a>
             </li>
             <li>

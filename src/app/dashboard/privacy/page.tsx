@@ -672,7 +672,7 @@ function RightsTab() {
       title: "Right to Rectification",
       description: "If any of your personal data is wrong, you can ask us to fix it.",
       action: "Contact us to correct",
-      href: "mailto:privacy@theenglishhub.app?subject=Data%20Rectification%20Request",
+      href: "mailto:info@Upskillenergy.com?subject=Data%20Rectification%20Request",
     },
     {
       icon: "\u{1F5D1}\uFE0F",
@@ -693,7 +693,7 @@ function RightsTab() {
       title: "Right to Restrict Processing",
       description: "You can ask us to stop using your data in certain ways while we resolve a concern.",
       action: "Contact us to restrict",
-      href: "mailto:privacy@theenglishhub.app?subject=Data%20Restriction%20Request",
+      href: "mailto:info@Upskillenergy.com?subject=Data%20Restriction%20Request",
     },
     {
       icon: "\u{1F6D1}",
@@ -740,8 +740,8 @@ function RightsTab() {
       <div className="mt-6 rounded-xl bg-primary/10 border border-primary/20 p-4">
         <p className="text-sm text-primary">
           <strong>Need help?</strong> If you want to exercise any of these rights or have questions, email us at{" "}
-          <a href="mailto:privacy@theenglishhub.app" className="underline font-medium">
-            privacy@theenglishhub.app
+          <a href="mailto:info@Upskillenergy.com" className="underline font-medium">
+            info@Upskillenergy.com
           </a>{" "}
           and we&apos;ll respond within 30 days (usually much sooner).
         </p>

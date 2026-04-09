@@ -364,10 +364,10 @@ export default function CookiePolicyPage() {
             with applicable regulations. If you have questions about our use of cookies or wish
             to exercise your data rights, please contact us at{' '}
             <a
-              href="mailto:privacy@theenglishhub.app"
+              href="mailto:info@Upskillenergy.com"
               className="underline hover:text-foreground"
             >
-              privacy@theenglishhub.app
+              info@Upskillenergy.com
             </a>
             .
           </p>

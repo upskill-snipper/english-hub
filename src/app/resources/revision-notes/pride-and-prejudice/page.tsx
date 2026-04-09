@@ -43,7 +43,7 @@ function Section({
 
 function QuoteCard({ quote, speaker, analysis }: { quote: string; speaker?: string; analysis: string }) {
   return (
-    <div className="rounded-lg border-l-4 border-rose-400 bg-rose-50/50 p-4 mb-3">
+    <div className="rounded-lg border-l-4 border-rose-400 bg-rose-500/5 p-4 mb-3">
       <p className="text-sm font-semibold text-rose-900 italic">&ldquo;{quote}&rdquo;</p>
       {speaker && <p className="mt-1 text-xs font-medium text-rose-600">&mdash; {speaker}</p>}
       <p className="mt-2 text-sm text-muted-foreground">{analysis}</p>
@@ -62,7 +62,7 @@ function CharacterCard({ name, description }: { name: string; description: strin
 
 function ThemeCard({ title, description }: { title: string; description: string }) {
   return (
-    <div className="rounded-lg border border-rose-200 bg-rose-50/30 p-4 mb-3">
+    <div className="rounded-lg border border-rose-200 bg-rose-500/10/30 p-4 mb-3">
       <h4 className="font-bold text-rose-800">{title}</h4>
       <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{description}</p>
     </div>
@@ -77,7 +77,7 @@ export default function PrideAndPrejudicePage() {
       {/* Hero */}
       <div className="mb-8">
         <div className="flex flex-wrap items-center gap-3 mb-2">
-          <span className="rounded-full bg-rose-100 px-3 py-1 text-xs font-bold text-rose-700 uppercase tracking-wider">
+          <span className="rounded-full bg-rose-500/15 px-3 py-1 text-xs font-bold text-rose-700 uppercase tracking-wider">
             19th-Century Prose
           </span>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary uppercase tracking-wider">

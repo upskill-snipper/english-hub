@@ -72,7 +72,7 @@ export default function OthelloRevisionPage() {
       {/* Hero */}
       <div className="mb-8">
         <div className="flex flex-wrap items-center gap-3 mb-2">
-          <span className="rounded-full bg-red-100 px-3 py-1 text-xs font-bold text-red-700 uppercase tracking-wider">Shakespeare</span>
+          <span className="rounded-full bg-red-500/15 px-3 py-1 text-xs font-bold text-red-700 dark:text-red-300 uppercase tracking-wider">Shakespeare</span>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">CAIE</span>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">AQA</span>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">Edexcel</span>
@@ -109,7 +109,7 @@ export default function OthelloRevisionPage() {
           <div className="space-y-6">
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-100 text-xs font-bold text-red-700">1</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-500/15 text-xs font-bold text-red-700 dark:text-red-300">1</span>
                 Act 1 &mdash; Elopement and Accusations
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -128,7 +128,7 @@ export default function OthelloRevisionPage() {
 
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-100 text-xs font-bold text-red-700">2</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-500/15 text-xs font-bold text-red-700 dark:text-red-300">2</span>
                 Act 2 &mdash; Arrival in Cyprus and Cassio&apos;s Downfall
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -148,7 +148,7 @@ export default function OthelloRevisionPage() {
 
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-100 text-xs font-bold text-red-700">3</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-500/15 text-xs font-bold text-red-700 dark:text-red-300">3</span>
                 Act 3 &mdash; The Temptation
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -168,7 +168,7 @@ export default function OthelloRevisionPage() {
 
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-100 text-xs font-bold text-red-700">4</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-500/15 text-xs font-bold text-red-700 dark:text-red-300">4</span>
                 Act 4 &mdash; Jealousy Takes Hold
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -188,7 +188,7 @@ export default function OthelloRevisionPage() {
 
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-100 text-xs font-bold text-red-700">5</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-500/15 text-xs font-bold text-red-700 dark:text-red-300">5</span>
                 Act 5 &mdash; Murder, Revelation, and Death
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -730,8 +730,8 @@ export default function OthelloRevisionPage() {
                 </div>
               </div>
 
-              <div className="rounded-lg border-l-4 border-red-400 bg-red-50 p-4 mt-4">
-                <p className="text-sm font-semibold text-red-800">Exam Tip</p>
+              <div className="rounded-lg border-l-4 border-red-400 bg-red-500/10 p-4 mt-4">
+                <p className="text-sm font-semibold text-red-700 dark:text-red-300">Exam Tip</p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   When writing about Iago, always consider Shakespeare&apos;s dramatic purpose. Iago&apos;s soliloquies create dramatic irony: the audience knows the truth while the characters do not. This generates tension and horror. Consider whether Shakespeare wants us to see Iago as a realistic psychopath, a symbolic figure of evil (like the Vice in medieval morality plays), or both.
                 </p>

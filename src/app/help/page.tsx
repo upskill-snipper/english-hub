@@ -157,7 +157,7 @@ const HELP_CATEGORIES: HelpCategory[] = [
       {
         question: 'How much does The English Hub cost?',
         answer:
-          'We offer two simple plans: £9.99/month or £79.99/year (save over 30%), both with the first month free. Every plan includes full access to all features. Cancel anytime.',
+          'We offer two simple plans: £9.99/month or £67.99/year (save over 30%), both with the first month free. Every plan includes full access to all features. Cancel anytime.',
       },
       {
         question: 'Can I cancel my subscription?',

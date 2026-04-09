@@ -124,7 +124,7 @@ export default function MacbethRevisionPage() {
       {/* Hero */}
       <div className="mb-8">
         <div className="flex flex-wrap items-center gap-3 mb-2">
-          <span className="rounded-full bg-red-100 px-3 py-1 text-xs font-bold text-red-700 uppercase tracking-wider">Shakespeare</span>
+          <span className="rounded-full bg-red-500/15 px-3 py-1 text-xs font-bold text-red-700 dark:text-red-300 uppercase tracking-wider">Shakespeare</span>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">AQA</span>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">Edexcel</span>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">CAIE</span>
@@ -171,7 +171,7 @@ export default function MacbethRevisionPage() {
             {/* Act 1 */}
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-100 text-xs font-bold text-red-700">1</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-500/15 text-xs font-bold text-red-700 dark:text-red-300">1</span>
                 Act 1 &mdash; The Prophecy
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -199,7 +199,7 @@ export default function MacbethRevisionPage() {
             {/* Act 2 */}
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-100 text-xs font-bold text-red-700">2</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-500/15 text-xs font-bold text-red-700 dark:text-red-300">2</span>
                 Act 2 &mdash; The Murder of Duncan
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -222,7 +222,7 @@ export default function MacbethRevisionPage() {
             {/* Act 3 */}
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-100 text-xs font-bold text-red-700">3</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-500/15 text-xs font-bold text-red-700 dark:text-red-300">3</span>
                 Act 3 &mdash; Banquo&apos;s Murder and the Banquet
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -246,7 +246,7 @@ export default function MacbethRevisionPage() {
             {/* Act 4 */}
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-100 text-xs font-bold text-red-700">4</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-500/15 text-xs font-bold text-red-700 dark:text-red-300">4</span>
                 Act 4 &mdash; The Apparitions and Macduff&apos;s Family
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -271,7 +271,7 @@ export default function MacbethRevisionPage() {
             {/* Act 5 */}
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-100 text-xs font-bold text-red-700">5</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-500/15 text-xs font-bold text-red-700 dark:text-red-300">5</span>
                 Act 5 &mdash; Downfall and Death
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -305,9 +305,9 @@ export default function MacbethRevisionPage() {
               <SubSection id="char-macbeth" title="Macbeth" defaultOpen>
                 <div className="space-y-3">
                   <div className="flex flex-wrap gap-2 mb-2">
-                    <span className="rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-semibold text-red-700">Tragic Hero</span>
-                    <span className="rounded-full bg-purple-100 px-2.5 py-0.5 text-xs font-semibold text-purple-700">Protagonist</span>
-                    <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-semibold text-amber-700">Thane &rarr; King &rarr; Tyrant</span>
+                    <span className="rounded-full bg-red-500/15 px-2.5 py-0.5 text-xs font-semibold text-red-700 dark:text-red-300">Tragic Hero</span>
+                    <span className="rounded-full bg-purple-500/15 px-2.5 py-0.5 text-xs font-semibold text-purple-700 dark:text-purple-300">Protagonist</span>
+                    <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-300">Thane &rarr; King &rarr; Tyrant</span>
                   </div>
                   <div className="text-sm text-muted-foreground leading-relaxed space-y-2">
                     <p><strong>Role:</strong> Thane of Glamis, then Thane of Cawdor, then King of Scotland. The play&apos;s tragic hero whose downfall is driven by ambition and moral weakness.</p>
@@ -353,9 +353,9 @@ export default function MacbethRevisionPage() {
               <SubSection id="char-ladymacbeth" title="Lady Macbeth">
                 <div className="space-y-3">
                   <div className="flex flex-wrap gap-2 mb-2">
-                    <span className="rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-semibold text-red-700">Tragic Figure</span>
-                    <span className="rounded-full bg-purple-100 px-2.5 py-0.5 text-xs font-semibold text-purple-700">Catalyst</span>
-                    <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-semibold text-amber-700">Powerful &rarr; Broken</span>
+                    <span className="rounded-full bg-red-500/15 px-2.5 py-0.5 text-xs font-semibold text-red-700 dark:text-red-300">Tragic Figure</span>
+                    <span className="rounded-full bg-purple-500/15 px-2.5 py-0.5 text-xs font-semibold text-purple-700 dark:text-purple-300">Catalyst</span>
+                    <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-300">Powerful &rarr; Broken</span>
                   </div>
                   <div className="text-sm text-muted-foreground leading-relaxed space-y-2">
                     <p><strong>Role:</strong> Macbeth&apos;s wife and the driving force behind Duncan&apos;s murder. One of Shakespeare&apos;s most complex female characters.</p>
@@ -401,9 +401,9 @@ export default function MacbethRevisionPage() {
               <SubSection id="char-banquo" title="Banquo">
                 <div className="space-y-3">
                   <div className="flex flex-wrap gap-2 mb-2">
-                    <span className="rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-semibold text-green-700">Moral Foil</span>
-                    <span className="rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-semibold text-blue-700">Victim</span>
-                    <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-semibold text-amber-700">Loyal &rarr; Murdered</span>
+                    <span className="rounded-full bg-green-500/15 px-2.5 py-0.5 text-xs font-semibold text-green-700 dark:text-green-300">Moral Foil</span>
+                    <span className="rounded-full bg-blue-500/15 px-2.5 py-0.5 text-xs font-semibold text-blue-700 dark:text-blue-300">Victim</span>
+                    <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-300">Loyal &rarr; Murdered</span>
                   </div>
                   <div className="text-sm text-muted-foreground leading-relaxed space-y-2">
                     <p><strong>Role:</strong> Macbeth&apos;s fellow general and friend. Father of Fleance. Ancestor of King James I&apos;s Stuart dynasty (a deliberate compliment to the king).</p>
@@ -437,9 +437,9 @@ export default function MacbethRevisionPage() {
               <SubSection id="char-macduff" title="Macduff">
                 <div className="space-y-3">
                   <div className="flex flex-wrap gap-2 mb-2">
-                    <span className="rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-semibold text-green-700">Hero</span>
-                    <span className="rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-semibold text-blue-700">Agent of Justice</span>
-                    <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-semibold text-amber-700">Suspicious &rarr; Avenging</span>
+                    <span className="rounded-full bg-green-500/15 px-2.5 py-0.5 text-xs font-semibold text-green-700 dark:text-green-300">Hero</span>
+                    <span className="rounded-full bg-blue-500/15 px-2.5 py-0.5 text-xs font-semibold text-blue-700 dark:text-blue-300">Agent of Justice</span>
+                    <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-300">Suspicious &rarr; Avenging</span>
                   </div>
                   <div className="text-sm text-muted-foreground leading-relaxed space-y-2">
                     <p><strong>Role:</strong> Thane of Fife. Discovers Duncan&apos;s body. Ultimately kills Macbeth and restores the legitimate monarchy.</p>
@@ -473,9 +473,9 @@ export default function MacbethRevisionPage() {
               <SubSection id="char-duncan" title="King Duncan">
                 <div className="space-y-3">
                   <div className="flex flex-wrap gap-2 mb-2">
-                    <span className="rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-semibold text-green-700">Ideal King</span>
-                    <span className="rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-semibold text-red-700">Victim</span>
-                    <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-semibold text-amber-700">Trusting &rarr; Murdered</span>
+                    <span className="rounded-full bg-green-500/15 px-2.5 py-0.5 text-xs font-semibold text-green-700 dark:text-green-300">Ideal King</span>
+                    <span className="rounded-full bg-red-500/15 px-2.5 py-0.5 text-xs font-semibold text-red-700 dark:text-red-300">Victim</span>
+                    <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-300">Trusting &rarr; Murdered</span>
                   </div>
                   <div className="text-sm text-muted-foreground leading-relaxed space-y-2">
                     <p><strong>Role:</strong> King of Scotland. His murder is the play&apos;s inciting crime, and his goodness makes the act more horrific.</p>
@@ -509,9 +509,9 @@ export default function MacbethRevisionPage() {
               <SubSection id="char-malcolm" title="Malcolm">
                 <div className="space-y-3">
                   <div className="flex flex-wrap gap-2 mb-2">
-                    <span className="rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-semibold text-green-700">Legitimate Heir</span>
-                    <span className="rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-semibold text-blue-700">Restorer of Order</span>
-                    <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-semibold text-amber-700">Fugitive &rarr; King</span>
+                    <span className="rounded-full bg-green-500/15 px-2.5 py-0.5 text-xs font-semibold text-green-700 dark:text-green-300">Legitimate Heir</span>
+                    <span className="rounded-full bg-blue-500/15 px-2.5 py-0.5 text-xs font-semibold text-blue-700 dark:text-blue-300">Restorer of Order</span>
+                    <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-300">Fugitive &rarr; King</span>
                   </div>
                   <div className="text-sm text-muted-foreground leading-relaxed space-y-2">
                     <p><strong>Role:</strong> Duncan&apos;s eldest son and rightful heir. Flees to England, then returns to defeat Macbeth and restore legitimate rule.</p>
@@ -545,9 +545,9 @@ export default function MacbethRevisionPage() {
               <SubSection id="char-witches" title="The Witches (Weird Sisters)">
                 <div className="space-y-3">
                   <div className="flex flex-wrap gap-2 mb-2">
-                    <span className="rounded-full bg-violet-100 px-2.5 py-0.5 text-xs font-semibold text-violet-700">Supernatural</span>
-                    <span className="rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-semibold text-red-700">Catalysts</span>
-                    <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-semibold text-amber-700">Ambiguous</span>
+                    <span className="rounded-full bg-violet-500/15 px-2.5 py-0.5 text-xs font-semibold text-violet-700 dark:text-violet-300">Supernatural</span>
+                    <span className="rounded-full bg-red-500/15 px-2.5 py-0.5 text-xs font-semibold text-red-700 dark:text-red-300">Catalysts</span>
+                    <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-300">Ambiguous</span>
                   </div>
                   <div className="text-sm text-muted-foreground leading-relaxed space-y-2">
                     <p><strong>Role:</strong> Three supernatural beings who prophesy Macbeth&apos;s rise and manipulate events through equivocation. They open and shape the play but never directly command Macbeth to act.</p>
@@ -587,8 +587,8 @@ export default function MacbethRevisionPage() {
               <SubSection id="char-ladymacduff" title="Lady Macduff">
                 <div className="space-y-3">
                   <div className="flex flex-wrap gap-2 mb-2">
-                    <span className="rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-semibold text-green-700">Foil to Lady Macbeth</span>
-                    <span className="rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-semibold text-red-700">Innocent Victim</span>
+                    <span className="rounded-full bg-green-500/15 px-2.5 py-0.5 text-xs font-semibold text-green-700 dark:text-green-300">Foil to Lady Macbeth</span>
+                    <span className="rounded-full bg-red-500/15 px-2.5 py-0.5 text-xs font-semibold text-red-700 dark:text-red-300">Innocent Victim</span>
                   </div>
                   <div className="text-sm text-muted-foreground leading-relaxed space-y-2">
                     <p><strong>Role:</strong> Macduff&apos;s wife. Her brief appearance and murder in Act 4 marks the moral nadir of Macbeth&apos;s tyranny.</p>
@@ -622,8 +622,8 @@ export default function MacbethRevisionPage() {
               <SubSection id="char-ross" title="Ross">
                 <div className="space-y-3">
                   <div className="flex flex-wrap gap-2 mb-2">
-                    <span className="rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-semibold text-blue-700">Messenger</span>
-                    <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-semibold text-amber-700">Diplomat &amp; Survivor</span>
+                    <span className="rounded-full bg-blue-500/15 px-2.5 py-0.5 text-xs font-semibold text-blue-700 dark:text-blue-300">Messenger</span>
+                    <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-300">Diplomat &amp; Survivor</span>
                   </div>
                   <div className="text-sm text-muted-foreground leading-relaxed space-y-2">
                     <p><strong>Role:</strong> A Scottish nobleman and kinsman of Macduff. Acts as a messenger and go-between, delivering crucial news throughout the play. He is the play&apos;s most politically adaptable figure.</p>
@@ -657,8 +657,8 @@ export default function MacbethRevisionPage() {
               <SubSection id="char-lennox" title="Lennox">
                 <div className="space-y-3">
                   <div className="flex flex-wrap gap-2 mb-2">
-                    <span className="rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-semibold text-blue-700">Voice of Scotland</span>
-                    <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-semibold text-amber-700">Cautious Dissenter</span>
+                    <span className="rounded-full bg-blue-500/15 px-2.5 py-0.5 text-xs font-semibold text-blue-700 dark:text-blue-300">Voice of Scotland</span>
+                    <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-300">Cautious Dissenter</span>
                   </div>
                   <div className="text-sm text-muted-foreground leading-relaxed space-y-2">
                     <p><strong>Role:</strong> A Scottish nobleman who gradually sees through Macbeth&apos;s pretence. His ironic speeches in Act 3, Scene 6 voice the growing opposition to Macbeth&apos;s rule.</p>
@@ -1060,11 +1060,11 @@ export default function MacbethRevisionPage() {
                   </thead>
                   <tbody className="text-muted-foreground">
                     <tr className="border-b border-border">
-                      <td className="py-2 pr-4 font-semibold text-red-700 whitespace-nowrap">Ambition</td>
+                      <td className="py-2 pr-4 font-semibold text-red-700 dark:text-red-300 whitespace-nowrap">Ambition</td>
                       <td className="py-2">&ldquo;Vaulting ambition, which o&apos;erleaps itself&rdquo; &bull; &ldquo;Stars, hide your fires&rdquo; &bull; &ldquo;Art not without ambition, but without the illness&rdquo; &bull; &ldquo;All hail, Macbeth, that shalt be king&rdquo; &bull; &ldquo;Tomorrow, and tomorrow&rdquo;</td>
                     </tr>
                     <tr className="border-b border-border">
-                      <td className="py-2 pr-4 font-semibold text-amber-700 whitespace-nowrap">Power</td>
+                      <td className="py-2 pr-4 font-semibold text-amber-700 dark:text-amber-300 whitespace-nowrap">Power</td>
                       <td className="py-2">&ldquo;To be thus is nothing, but to be safely thus&rdquo; &bull; &ldquo;Full of scorpions is my mind&rdquo; &bull; &ldquo;I am in blood stepp&apos;d in so far&rdquo; &bull; &ldquo;Bleed, bleed, poor country&rdquo; &bull; &ldquo;Something wicked this way comes&rdquo;</td>
                     </tr>
                     <tr className="border-b border-border">
@@ -1072,11 +1072,11 @@ export default function MacbethRevisionPage() {
                       <td className="py-2">&ldquo;Will all great Neptune&apos;s ocean wash this blood?&rdquo; &bull; &ldquo;Macbeth does murder sleep&rdquo; &bull; &ldquo;Out, damned spot!&rdquo; &bull; &ldquo;All the perfumes of Arabia&rdquo; &bull; &ldquo;A little water clears us&rdquo; &bull; &ldquo;Had he not resembled my father&rdquo;</td>
                     </tr>
                     <tr className="border-b border-border">
-                      <td className="py-2 pr-4 font-semibold text-violet-700 whitespace-nowrap">Supernatural</td>
+                      <td className="py-2 pr-4 font-semibold text-violet-700 dark:text-violet-300 whitespace-nowrap">Supernatural</td>
                       <td className="py-2">&ldquo;Fair is foul, and foul is fair&rdquo; &bull; &ldquo;Is this a dagger?&rdquo; &bull; &ldquo;Come, you spirits, unsex me here&rdquo; &bull; &ldquo;Double, double toil and trouble&rdquo; &bull; &ldquo;So foul and fair a day&rdquo;</td>
                     </tr>
                     <tr className="border-b border-border">
-                      <td className="py-2 pr-4 font-semibold text-blue-700 whitespace-nowrap">Gender</td>
+                      <td className="py-2 pr-4 font-semibold text-blue-700 dark:text-blue-300 whitespace-nowrap">Gender</td>
                       <td className="py-2">&ldquo;When you durst do it, then you were a man&rdquo; &bull; &ldquo;Unsex me here&rdquo; &bull; &ldquo;Take my milk for gall&rdquo; &bull; &ldquo;I must also feel it as a man&rdquo; &bull; &ldquo;I dare do all that may become a man&rdquo;</td>
                     </tr>
                     <tr className="border-b border-border">
@@ -1084,7 +1084,7 @@ export default function MacbethRevisionPage() {
                       <td className="py-2">&ldquo;He&apos;s here in double trust&rdquo; &bull; &ldquo;Instruments of darkness tell us truths&rdquo; &bull; &ldquo;Thou play&apos;dst most foully&rdquo; &bull; &ldquo;An absolute trust&rdquo; &bull; &ldquo;O horror, horror, horror!&rdquo;</td>
                     </tr>
                     <tr className="border-b border-border">
-                      <td className="py-2 pr-4 font-semibold text-pink-700 whitespace-nowrap">Fate vs Free Will</td>
+                      <td className="py-2 pr-4 font-semibold text-pink-700 dark:text-pink-300 whitespace-nowrap">Fate vs Free Will</td>
                       <td className="py-2">&ldquo;If chance will have me king&rdquo; &bull; &ldquo;Come what come may&rdquo; &bull; &ldquo;All hail, Macbeth, that shalt be king&rdquo; &bull; &ldquo;When the battle&apos;s lost and won&rdquo; &bull; &ldquo;Restrain in me the cursed thoughts&rdquo;</td>
                     </tr>
                     <tr>
@@ -1275,7 +1275,7 @@ export default function MacbethRevisionPage() {
               Different exam boards examine <em>Macbeth</em> in slightly different ways. Understanding your specific board&apos;s requirements can gain you marks.
             </p>
             <div className="space-y-6">
-              <div className="rounded-lg border border-purple-200 bg-purple-50/50 p-4">
+              <div className="rounded-lg border border-purple-500/30 bg-purple-500/5 p-4">
                 <h3 className="font-bold text-foreground flex items-center gap-2">
                   <span className="rounded bg-[#40197F] px-2 py-0.5 text-xs font-bold text-white">AQA</span>
                   AQA GCSE English Literature (8702) &mdash; Paper 1, Section A
@@ -1290,7 +1290,7 @@ export default function MacbethRevisionPage() {
                 </ul>
               </div>
 
-              <div className="rounded-lg border border-red-200 bg-red-50/50 p-4">
+              <div className="rounded-lg border border-red-500/30 bg-red-500/5 p-4">
                 <h3 className="font-bold text-foreground flex items-center gap-2">
                   <span className="rounded bg-[#E5231B] px-2 py-0.5 text-xs font-bold text-white">Edexcel</span>
                   Edexcel GCSE English Literature (1ET0) &mdash; Paper 1, Section A
@@ -1305,7 +1305,7 @@ export default function MacbethRevisionPage() {
                 </ul>
               </div>
 
-              <div className="rounded-lg border border-green-200 bg-green-50/50 p-4">
+              <div className="rounded-lg border border-green-500/30 bg-green-500/5 p-4">
                 <h3 className="font-bold text-foreground flex items-center gap-2">
                   <span className="rounded bg-[#00A651] px-2 py-0.5 text-xs font-bold text-white">CAIE</span>
                   Cambridge IGCSE Literature (0475 / 0992) &mdash; Paper 1 (Drama)
@@ -1320,7 +1320,7 @@ export default function MacbethRevisionPage() {
                 </ul>
               </div>
 
-              <div className="rounded-lg border border-blue-200 bg-blue-50/50 p-4">
+              <div className="rounded-lg border border-blue-500/30 bg-blue-500/5 p-4">
                 <h3 className="font-bold text-foreground flex items-center gap-2">
                   <span className="rounded bg-[#2A7DE1] px-2 py-0.5 text-xs font-bold text-white">OCR</span>
                   OCR GCSE English Literature (J352) &mdash; Shakespeare Component

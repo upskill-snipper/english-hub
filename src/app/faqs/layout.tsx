@@ -51,7 +51,7 @@ const FAQ_JSON_LD_DATA: { question: string; answer: string }[] = [
   {
     question: 'How much does The English Hub cost?',
     answer:
-      'We offer two simple plans: £9.99/month or £79.99/year (save over 30%), both with the first month free. Every plan gives you full, unrestricted access to every feature on the platform. Cancel anytime.',
+      'We offer two simple plans: £9.99/month or £67.99/year (save over 40%), both with the first month free. Every plan gives you full, unrestricted access to every feature on the platform. Cancel anytime.',
   },
   {
     question: 'Is there a free trial?',

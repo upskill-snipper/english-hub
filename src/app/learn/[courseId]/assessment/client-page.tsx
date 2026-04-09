@@ -37,44 +37,37 @@ interface AssessmentResult {
   score: number
   total: number
   percentage: number
-  grade: 'Fail' | 'Pass' | 'Merit' | 'Distinction'
+  grade: string
   passed: boolean
   answers: { questionId: string; selected: number; correct: boolean }[]
 }
 
-function getGrade(
-  percentage: number
-): 'Fail' | 'Pass' | 'Merit' | 'Distinction' {
-  if (percentage >= 85) return 'Distinction'
-  if (percentage >= 70) return 'Merit'
-  if (percentage >= 50) return 'Pass'
-  return 'Fail'
+function getGrade(percentage: number): string {
+  if (percentage >= 90) return 'Grade 9'
+  if (percentage >= 80) return 'Grade 8'
+  if (percentage >= 70) return 'Grade 7'
+  if (percentage >= 60) return 'Grade 6'
+  if (percentage >= 50) return 'Grade 5'
+  if (percentage >= 40) return 'Grade 4'
+  if (percentage >= 30) return 'Grade 3'
+  if (percentage >= 20) return 'Grade 2'
+  return 'Grade 1'
 }
 
 function getGradeColor(grade: string): string {
-  switch (grade) {
-    case 'Distinction':
-      return 'text-primary'
-    case 'Merit':
-      return 'text-brand-blue'
-    case 'Pass':
-      return 'text-brand-warning'
-    default:
-      return 'text-destructive'
-  }
+  const num = parseInt(grade.replace('Grade ', ''))
+  if (num >= 8) return 'text-primary'
+  if (num >= 6) return 'text-brand-blue'
+  if (num >= 4) return 'text-brand-warning'
+  return 'text-destructive'
 }
 
 function getGradeBg(grade: string): string {
-  switch (grade) {
-    case 'Distinction':
-      return 'bg-primary/10 border-primary/30'
-    case 'Merit':
-      return 'bg-brand-blue/10 border-brand-blue/30'
-    case 'Pass':
-      return 'bg-brand-warning/10 border-brand-warning/30'
-    default:
-      return 'bg-destructive/10 border-destructive/30'
-  }
+  const num = parseInt(grade.replace('Grade ', ''))
+  if (num >= 8) return 'bg-primary/10 border-primary/30'
+  if (num >= 6) return 'bg-brand-blue/10 border-brand-blue/30'
+  if (num >= 4) return 'bg-brand-warning/10 border-brand-warning/30'
+  return 'bg-destructive/10 border-destructive/30'
 }
 
 // ─── Main Page ───────────────────────────────────────────────────────────────
@@ -383,11 +376,11 @@ export default function AssessmentPage() {
               <span className="text-foreground font-medium">50%</span>
             </div>
             <div className="flex items-center justify-between py-3">
-              <span className="text-muted-foreground">Grading</span>
+              <span className="text-muted-foreground">Grading (GCSE 1-9)</span>
               <div className="text-right text-sm">
-                <p className="text-brand-warning">Pass: 50-69%</p>
-                <p className="text-brand-blue">Merit: 70-84%</p>
-                <p className="text-primary">Distinction: 85%+</p>
+                <p className="text-brand-warning">Grade 4-5: 40-59%</p>
+                <p className="text-brand-blue">Grade 6-7: 60-79%</p>
+                <p className="text-primary">Grade 8-9: 80%+</p>
               </div>
             </div>
           </div>
@@ -625,7 +618,7 @@ export default function AssessmentPage() {
             </h1>
             <p className="text-muted-foreground mb-6">
               {result.passed
-                ? `You passed with a ${result.grade}!`
+                ? `You achieved ${result.grade}! Well done.`
                 : 'You did not meet the pass mark. Review the modules and try again.'}
             </p>
 
@@ -635,7 +628,7 @@ export default function AssessmentPage() {
                 <div className="text-5xl font-bold text-foreground">
                   {result.percentage}%
                 </div>
-                <div className="text-sm text-muted-foreground mt-1">Score</div>
+                <div className="text-sm text-muted-foreground mt-1">Score ({result.grade})</div>
               </div>
               <div
                 className={`px-4 py-2 rounded-lg border ${getGradeBg(

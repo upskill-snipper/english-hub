@@ -1,12 +1,9 @@
-"use client"
-
-import { useState } from "react"
 import Link from "next/link"
 import { BookOpen, ArrowRight, CheckCircle2, ArrowLeft } from "lucide-react"
 
 const STUDENT = {
   name: "Aisha Rahman",
-  year: "Year 10",
+  year: "Year 11",
 }
 
 const COURSES = [
@@ -65,21 +62,13 @@ export default function StudentCoursesPage() {
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white">
       <div className="max-w-6xl mx-auto px-6 py-8">
-        {/* Demo banner */}
-        <div className="mb-6 rounded-lg border border-emerald-500/20 bg-emerald-500/5 px-4 py-3">
-          <p className="text-sm text-emerald-400">
-            <span className="font-semibold">Student Demo</span> -- See what
-            students experience when they log in
-          </p>
-        </div>
-
         {/* Back link */}
         <Link
-          href="/demo"
+          href="/demo/student"
           className="inline-flex items-center gap-1.5 text-sm text-white/40 hover:text-white/70 transition-colors mb-6"
         >
           <ArrowLeft className="h-3.5 w-3.5" />
-          Back to demos
+          Back to dashboard
         </Link>
 
         {/* Header */}

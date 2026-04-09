@@ -108,7 +108,7 @@ export async function POST(request: NextRequest) {
           },
           body: JSON.stringify({
             from: fromAddress,
-            to: 'support@theenglishhub.app',
+            to: 'info@Upskillenergy.com',
             subject: `[Contact Form] ${body.subject} – from ${body.name.trim()}`,
             html: [
               `<h2>New Contact Form Submission</h2>`,

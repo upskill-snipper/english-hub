@@ -46,8 +46,8 @@ function Tip({ children }: { children: React.ReactNode }) {
 
 function Warning({ children }: { children: React.ReactNode }) {
   return (
-    <div className="my-4 rounded-xl border-l-4 border-amber-500 bg-amber-50 px-5 py-4">
-      <p className="text-sm font-semibold text-amber-800 mb-1">Common Mistake</p>
+    <div className="my-4 rounded-xl border-l-4 border-amber-500 bg-amber-500/10 px-5 py-4">
+      <p className="text-sm font-semibold text-amber-700 dark:text-amber-300 mb-1">Common Mistake</p>
       <div className="text-sm text-muted-foreground leading-relaxed">{children}</div>
     </div>
   );
@@ -122,7 +122,7 @@ export default function UnseenPoetryPage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-primary to-primary/80 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-primary/80">
+          <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
             Poetry Skills
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">

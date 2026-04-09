@@ -20,7 +20,7 @@ export default function EssayStructurePage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-primary/20">
+          <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
             Exam Technique
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -223,13 +223,13 @@ export default function EssayStructurePage() {
             ].map((row, i) => (
               <div key={i} className="p-6 space-y-3">
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <div className="flex-1 rounded-lg bg-red-50 p-3">
+                  <div className="flex-1 rounded-lg bg-red-500/10 p-3">
                     <span className="text-xs font-bold text-red-600 uppercase tracking-wider">
                       Weak
                     </span>
                     <p className="mt-1 text-sm text-muted-foreground">{row.bad}</p>
                   </div>
-                  <div className="flex-1 rounded-lg bg-green-50 p-3">
+                  <div className="flex-1 rounded-lg bg-green-500/10 p-3">
                     <span className="text-xs font-bold text-green-600 uppercase tracking-wider">
                       Strong
                     </span>

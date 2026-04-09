@@ -905,16 +905,16 @@ export default function LessonPlanDetailPage() {
             {/* Differentiation */}
             <div className="mt-4 space-y-3">
               <h4 className="text-sm font-bold text-foreground">Differentiation</h4>
-              <div className="rounded-lg bg-amber-50 border border-amber-200 p-4">
-                <p className="text-xs font-bold uppercase tracking-wider text-amber-700">Support</p>
+              <div className="rounded-lg bg-amber-500/10 border border-amber-500/30 p-4">
+                <p className="text-xs font-bold uppercase tracking-wider text-amber-700 dark:text-amber-300">Support</p>
                 <p className="mt-1 text-sm text-muted-foreground">{plan.mainActivity.differentiation.support}</p>
               </div>
-              <div className="rounded-lg bg-blue-50 border border-blue-200 p-4">
-                <p className="text-xs font-bold uppercase tracking-wider text-blue-700">Core</p>
+              <div className="rounded-lg bg-blue-500/10 border border-blue-500/30 p-4">
+                <p className="text-xs font-bold uppercase tracking-wider text-blue-700 dark:text-blue-300">Core</p>
                 <p className="mt-1 text-sm text-muted-foreground">{plan.mainActivity.differentiation.core}</p>
               </div>
-              <div className="rounded-lg bg-purple-50 border border-purple-200 p-4">
-                <p className="text-xs font-bold uppercase tracking-wider text-purple-700">Extension</p>
+              <div className="rounded-lg bg-purple-500/10 border border-purple-500/30 p-4">
+                <p className="text-xs font-bold uppercase tracking-wider text-purple-700 dark:text-purple-300">Extension</p>
                 <p className="mt-1 text-sm text-muted-foreground">{plan.mainActivity.differentiation.extension}</p>
               </div>
             </div>

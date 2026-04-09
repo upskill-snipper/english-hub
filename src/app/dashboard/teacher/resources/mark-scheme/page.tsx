@@ -9,7 +9,7 @@ const BANDS = [
     level: 6,
     marks: "26-30",
     label: "Convincing, critical",
-    colour: "bg-emerald-50 border-emerald-200 text-emerald-800",
+    colour: "bg-emerald-500/10 border-emerald-500/30 text-emerald-700 dark:text-emerald-300",
     ao1: "Critical, exploratory, conceptualised response. Judicious use of precise references to support interpretation(s).",
     ao2: "Analysis of writer's methods with subject terminology used judiciously. Sophisticated exploration of effects of language/structure.",
     ao3: "Exploration of ideas/perspectives/contextual factors shown across the text. Detailed, perceptive understanding of relationships between text and context.",
@@ -19,7 +19,7 @@ const BANDS = [
     level: 5,
     marks: "21-25",
     label: "Thoughtful, developed",
-    colour: "bg-blue-50 border-blue-200 text-blue-800",
+    colour: "bg-blue-500/10 border-blue-500/30 text-blue-700 dark:text-blue-300",
     ao1: "Thoughtful, developed response. Apt references integrated into interpretation(s).",
     ao2: "Examination of writer's methods with subject terminology used effectively. Thoughtful consideration of effects.",
     ao3: "Thoughtful consideration of ideas/perspectives/contextual factors shown across the text.",
@@ -29,7 +29,7 @@ const BANDS = [
     level: 4,
     marks: "16-20",
     label: "Clear, relevant",
-    colour: "bg-yellow-50 border-yellow-200 text-yellow-800",
+    colour: "bg-yellow-500/10 border-yellow-500/30 text-yellow-700 dark:text-yellow-300",
     ao1: "Clear, explained response. Effective use of references to support explanation.",
     ao2: "Clear explanation of writer's methods with appropriate use of subject terminology. Understanding of effects.",
     ao3: "Clear understanding of ideas/perspectives/contextual factors.",
@@ -39,7 +39,7 @@ const BANDS = [
     level: 3,
     marks: "11-15",
     label: "Some, relevant",
-    colour: "bg-orange-50 border-orange-200 text-orange-800",
+    colour: "bg-orange-500/10 border-orange-500/30 text-orange-700 dark:text-orange-300",
     ao1: "Some explained response. References used to support a range of relevant comments.",
     ao2: "Some understanding of writer's methods. Some reference to subject terminology.",
     ao3: "Some understanding of contextual factors.",
@@ -118,27 +118,27 @@ export default function MarkSchemePage() {
                 <h3 className="font-bold text-lg">
                   Level {band.level}: {band.label}
                 </h3>
-                <span className="rounded-full bg-white/80 px-3 py-1 text-sm font-bold">
+                <span className="rounded-full bg-background/80 px-3 py-1 text-sm font-bold">
                   {band.marks} marks
                 </span>
               </div>
 
               <div className="grid gap-3 sm:grid-cols-3 mb-4">
-                <div className="rounded bg-white/60 p-2.5">
+                <div className="rounded bg-background/60 p-2.5">
                   <p className="text-xs font-bold mb-1">AO1</p>
                   <p className="text-xs">{band.ao1}</p>
                 </div>
-                <div className="rounded bg-white/60 p-2.5">
+                <div className="rounded bg-background/60 p-2.5">
                   <p className="text-xs font-bold mb-1">AO2</p>
                   <p className="text-xs">{band.ao2}</p>
                 </div>
-                <div className="rounded bg-white/60 p-2.5">
+                <div className="rounded bg-background/60 p-2.5">
                   <p className="text-xs font-bold mb-1">AO3</p>
                   <p className="text-xs">{band.ao3}</p>
                 </div>
               </div>
 
-              <div className="rounded bg-white/80 p-3">
+              <div className="rounded bg-background/80 p-3">
                 <p className="text-xs font-bold mb-1">Example Student Response (An Inspector Calls)</p>
                 <p className="text-xs italic leading-relaxed">{band.studentExample}</p>
               </div>
@@ -154,7 +154,7 @@ export default function MarkSchemePage() {
           {COMMON_ERRORS.map((item, i) => (
             <div key={i} className="rounded-lg border p-4">
               <div className="flex items-start gap-3">
-                <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-red-100 text-red-600 text-xs font-bold">
+                <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-red-500/15 text-red-600 text-xs font-bold">
                   !
                 </div>
                 <div className="flex-1 min-w-0">

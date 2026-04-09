@@ -355,7 +355,7 @@ export default function AssessmentToolsPage() {
       <>
         <div className="flex min-h-[60vh] items-center justify-center px-4">
           <div className="max-w-md rounded-xl border border-destructive/20 bg-destructive/10 p-8 text-center">
-            <h2 className="text-lg font-bold text-red-800">Teacher Access Only</h2>
+            <h2 className="text-lg font-bold text-red-700 dark:text-red-300">Teacher Access Only</h2>
             <p className="mt-2 text-sm text-red-600">
               Assessment tools are only available to verified teacher accounts.
             </p>
@@ -486,9 +486,9 @@ export default function AssessmentToolsPage() {
                       let optionClass = "border-border bg-card hover:border-primary/40";
                       if (showAnswer) {
                         if (i === currentQuestion.correctIndex) {
-                          optionClass = "border-green-500 bg-green-50";
+                          optionClass = "border-green-500 bg-green-500/10";
                         } else if (i === selectedAnswer && i !== currentQuestion.correctIndex) {
-                          optionClass = "border-red-500 bg-red-50";
+                          optionClass = "border-red-500 bg-red-500/10";
                         }
                       } else if (i === selectedAnswer) {
                         optionClass = "border-primary bg-primary/5";
@@ -575,7 +575,7 @@ export default function AssessmentToolsPage() {
                         <span className="mr-2 font-bold text-primary">Q{i + 1}.</span>
                         {q.question}
                       </p>
-                      <p className="mt-1 text-sm text-green-700">
+                      <p className="mt-1 text-sm text-green-700 dark:text-green-300">
                         <span className="font-semibold">Answer:</span>{" "}
                         {String.fromCharCode(65 + q.correctIndex)}) {q.options[q.correctIndex]}
                       </p>
@@ -638,7 +638,7 @@ export default function AssessmentToolsPage() {
                     <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary">
                       {eq.topic}
                     </span>
-                    <span className="rounded-full bg-amber-50 px-2.5 py-0.5 text-xs font-semibold text-amber-700">
+                    <span className="rounded-full bg-amber-500/10 px-2.5 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-300">
                       {eq.marks} marks
                     </span>
                     <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">

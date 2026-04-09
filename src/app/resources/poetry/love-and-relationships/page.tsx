@@ -186,7 +186,7 @@ export default function LoveAndRelationshipsPage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-primary to-primary/90 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary/20">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-white/70">
             AQA GCSE English Literature &middot; Poetry Anthology
           </p>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -277,7 +277,7 @@ export default function LoveAndRelationshipsPage() {
               {(activeTheme || activePeriod || searchQuery) && (
                 <button
                   onClick={() => { setActiveTheme(null); setActivePeriod(null); setSearchQuery(""); }}
-                  className="rounded-full bg-red-50 px-3 py-1 text-xs font-medium text-red-600 hover:bg-red-100 transition-colors"
+                  className="rounded-full bg-red-500/10 px-3 py-1 text-xs font-medium text-red-600 hover:bg-red-500/15 transition-colors"
                 >
                   Clear all filters
                 </button>

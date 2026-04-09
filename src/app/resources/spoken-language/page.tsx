@@ -95,7 +95,7 @@ export default function SpokenLanguagePage() {
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
               href="/resources/spoken-language/topics"
-              className="rounded-lg bg-card px-6 py-3 text-sm font-semibold text-foreground shadow-md transition hover:bg-blue-50"
+              className="rounded-lg bg-card px-6 py-3 text-sm font-semibold text-foreground shadow-md transition hover:bg-blue-500/10"
             >
               Browse 30+ Topic Ideas
             </Link>
@@ -188,16 +188,16 @@ export default function SpokenLanguagePage() {
               four outcomes:
             </p>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              <div className="rounded-lg border-2 border-emerald-500 bg-emerald-50 p-4 text-center">
-                <p className="text-lg font-bold text-emerald-700">Distinction</p>
+              <div className="rounded-lg border-2 border-emerald-500 bg-emerald-500/10 p-4 text-center">
+                <p className="text-lg font-bold text-emerald-700 dark:text-emerald-300">Distinction</p>
                 <p className="mt-1 text-xs text-muted-foreground">Outstanding performance across all three strands</p>
               </div>
-              <div className="rounded-lg border-2 border-primary bg-blue-50 p-4 text-center">
+              <div className="rounded-lg border-2 border-primary bg-blue-500/10 p-4 text-center">
                 <p className="text-lg font-bold text-primary">Merit</p>
                 <p className="mt-1 text-xs text-muted-foreground">Competent and clear across all strands</p>
               </div>
-              <div className="rounded-lg border-2 border-amber-500 bg-amber-50 p-4 text-center">
-                <p className="text-lg font-bold text-amber-700">Pass</p>
+              <div className="rounded-lg border-2 border-amber-500 bg-amber-500/10 p-4 text-center">
+                <p className="text-lg font-bold text-amber-700 dark:text-amber-300">Pass</p>
                 <p className="mt-1 text-xs text-muted-foreground">Basic competence demonstrated</p>
               </div>
               <div className="rounded-lg border-2 border-border bg-muted p-4 text-center">
@@ -360,7 +360,7 @@ export default function SpokenLanguagePage() {
                 </p>
               </div>
               <div className="rounded-lg border-l-4 border-amber-500 bg-muted p-4">
-                <p className="font-semibold text-amber-700">Counter-Argument (30&ndash;45 seconds)</p>
+                <p className="font-semibold text-amber-700 dark:text-amber-300">Counter-Argument (30&ndash;45 seconds)</p>
                 <p className="mt-1 text-sm">
                   Acknowledge the opposing viewpoint and explain why your
                   position is stronger. This demonstrates maturity and critical
@@ -368,7 +368,7 @@ export default function SpokenLanguagePage() {
                 </p>
               </div>
               <div className="rounded-lg border-l-4 border-emerald-500 bg-muted p-4">
-                <p className="font-semibold text-emerald-700">Conclusion (30&ndash;45 seconds)</p>
+                <p className="font-semibold text-emerald-700 dark:text-emerald-300">Conclusion (30&ndash;45 seconds)</p>
                 <p className="mt-1 text-sm">
                   Summarise your key points, restate your argument, and end with
                   a memorable closing line or call to action. Circle back to your
@@ -618,7 +618,7 @@ export default function SpokenLanguagePage() {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-border">
-                  <tr className="bg-red-50/50">
+                  <tr className="bg-red-500/5">
                     <td className="px-4 py-2">&ldquo;We was going&hellip;&rdquo;</td>
                     <td className="px-4 py-2">&ldquo;We were going&hellip;&rdquo;</td>
                   </tr>
@@ -626,7 +626,7 @@ export default function SpokenLanguagePage() {
                     <td className="px-4 py-2">&ldquo;I done it&rdquo;</td>
                     <td className="px-4 py-2">&ldquo;I did it&rdquo; / &ldquo;I have done it&rdquo;</td>
                   </tr>
-                  <tr className="bg-red-50/50">
+                  <tr className="bg-red-500/5">
                     <td className="px-4 py-2">&ldquo;They ain&rsquo;t&rdquo;</td>
                     <td className="px-4 py-2">&ldquo;They are not&rdquo; / &ldquo;They have not&rdquo;</td>
                   </tr>
@@ -634,7 +634,7 @@ export default function SpokenLanguagePage() {
                     <td className="px-4 py-2">&ldquo;Like, basically&hellip;&rdquo;</td>
                     <td className="px-4 py-2">&ldquo;Essentially&hellip;&rdquo; / &ldquo;In summary&hellip;&rdquo;</td>
                   </tr>
-                  <tr className="bg-red-50/50">
+                  <tr className="bg-red-500/5">
                     <td className="px-4 py-2">&ldquo;Innit&rdquo; / &ldquo;Yeah&rdquo;</td>
                     <td className="px-4 py-2">&ldquo;Is it not?&rdquo; / &ldquo;Indeed&rdquo;</td>
                   </tr>
@@ -642,7 +642,7 @@ export default function SpokenLanguagePage() {
                     <td className="px-4 py-2">&ldquo;Me and my friend&hellip;&rdquo;</td>
                     <td className="px-4 py-2">&ldquo;My friend and I&hellip;&rdquo;</td>
                   </tr>
-                  <tr className="bg-red-50/50">
+                  <tr className="bg-red-500/5">
                     <td className="px-4 py-2">&ldquo;Could of&rdquo;</td>
                     <td className="px-4 py-2">&ldquo;Could have&rdquo;</td>
                   </tr>
@@ -676,7 +676,7 @@ export default function SpokenLanguagePage() {
                 className="rounded-lg border border-border bg-muted p-5"
               >
                 <div className="flex items-start gap-3">
-                  <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-red-100 text-xs font-bold text-red-600">
+                  <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-red-500/15 text-xs font-bold text-red-600">
                     {i + 1}
                   </span>
                   <div>
@@ -741,7 +741,7 @@ export default function SpokenLanguagePage() {
                   </p>
                 </div>
                 <div className="rounded border-l-4 border-amber-500 bg-muted p-3">
-                  <p className="text-sm font-semibold text-amber-700">Counter-argument</p>
+                  <p className="text-sm font-semibold text-amber-700 dark:text-amber-300">Counter-argument</p>
                   <p className="mt-1 text-sm">
                     &ldquo;Some argue that 16-year-olds lack the maturity and
                     political knowledge to vote responsibly. However, maturity
@@ -750,7 +750,7 @@ export default function SpokenLanguagePage() {
                   </p>
                 </div>
                 <div className="rounded border-l-4 border-emerald-500 bg-muted p-3">
-                  <p className="text-sm font-semibold text-emerald-700">Conclusion</p>
+                  <p className="text-sm font-semibold text-emerald-700 dark:text-emerald-300">Conclusion</p>
                   <p className="mt-1 text-sm">
                     Summarise key points. Circular ending: &ldquo;If 75% of
                     16-year-olds can turn out in Scotland, imagine what they
@@ -801,7 +801,7 @@ export default function SpokenLanguagePage() {
                   </p>
                 </div>
                 <div className="rounded border-l-4 border-amber-500 bg-muted p-3">
-                  <p className="text-sm font-semibold text-amber-700">Counter-argument</p>
+                  <p className="text-sm font-semibold text-amber-700 dark:text-amber-300">Counter-argument</p>
                   <p className="mt-1 text-sm">
                     &ldquo;Some argue that social media can be positive &mdash;
                     connecting communities, raising awareness, and supporting
@@ -810,7 +810,7 @@ export default function SpokenLanguagePage() {
                   </p>
                 </div>
                 <div className="rounded border-l-4 border-emerald-500 bg-muted p-3">
-                  <p className="text-sm font-semibold text-emerald-700">Conclusion</p>
+                  <p className="text-sm font-semibold text-emerald-700 dark:text-emerald-300">Conclusion</p>
                   <p className="mt-1 text-sm">
                     Call to action: &ldquo;We need better regulation, better
                     education, and better awareness. Seven hours a day is not
@@ -842,8 +842,8 @@ export default function SpokenLanguagePage() {
 
             <div className="space-y-4">
               {/* Distinction */}
-              <div className="rounded-lg border-2 border-emerald-500 bg-emerald-50 p-5">
-                <h3 className="text-lg font-bold text-emerald-700">Distinction</h3>
+              <div className="rounded-lg border-2 border-emerald-500 bg-emerald-500/10 p-5">
+                <h3 className="text-lg font-bold text-emerald-700 dark:text-emerald-300">Distinction</h3>
                 <ul className="ml-4 mt-3 list-disc space-y-2 text-sm text-muted-foreground">
                   <li><strong>Presenting:</strong> The presentation is confidently, skilfully, and engagingly delivered with a commanding presence. Content is challenging, well-researched, and compelling. A wide range of rhetorical and presentational techniques is used effectively and deliberately.</li>
                   <li><strong>Listening &amp; Responding:</strong> Responds to questions and feedback perceptively, with authority and in considerable detail. Demonstrates sophisticated critical thinking and the ability to develop and extend ideas spontaneously.</li>
@@ -852,7 +852,7 @@ export default function SpokenLanguagePage() {
               </div>
 
               {/* Merit */}
-              <div className="rounded-lg border-2 border-primary bg-blue-50 p-5">
+              <div className="rounded-lg border-2 border-primary bg-blue-500/10 p-5">
                 <h3 className="text-lg font-bold text-primary">Merit</h3>
                 <ul className="ml-4 mt-3 list-disc space-y-2 text-sm text-muted-foreground">
                   <li><strong>Presenting:</strong> The presentation is clearly and competently delivered with good audience engagement. Content is well-organised, relevant, and supported with evidence. Rhetorical and presentational techniques are used with success.</li>
@@ -862,8 +862,8 @@ export default function SpokenLanguagePage() {
               </div>
 
               {/* Pass */}
-              <div className="rounded-lg border-2 border-amber-500 bg-amber-50 p-5">
-                <h3 className="text-lg font-bold text-amber-700">Pass</h3>
+              <div className="rounded-lg border-2 border-amber-500 bg-amber-500/10 p-5">
+                <h3 className="text-lg font-bold text-amber-700 dark:text-amber-300">Pass</h3>
                 <ul className="ml-4 mt-3 list-disc space-y-2 text-sm text-muted-foreground">
                   <li><strong>Presenting:</strong> The presentation is delivered with basic competence. Content is understandable and has some structure, though it may lack depth or sustained development. Some attempt is made to use presentational techniques.</li>
                   <li><strong>Listening &amp; Responding:</strong> Responds to questions with simple, relevant answers but may lack development or detail.</li>
@@ -936,7 +936,7 @@ export default function SpokenLanguagePage() {
           </p>
           <Link
             href="/resources/spoken-language/topics"
-            className="mt-6 inline-block rounded-lg bg-card px-8 py-3 text-sm font-semibold text-foreground shadow transition hover:bg-blue-50"
+            className="mt-6 inline-block rounded-lg bg-card px-8 py-3 text-sm font-semibold text-foreground shadow transition hover:bg-blue-500/10"
           >
             Browse All Topics &rarr;
           </Link>

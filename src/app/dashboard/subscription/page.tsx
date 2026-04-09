@@ -153,7 +153,7 @@ export default function SubscriptionPage() {
                   : isCancelled
                     ? "bg-muted text-foreground"
                     : isTrialing
-                      ? "bg-blue-950/30 text-blue-800"
+                      ? "bg-blue-950/30 text-blue-700 dark:text-blue-300"
                       : "bg-green-950/30 text-green-300"
               }`}
             >

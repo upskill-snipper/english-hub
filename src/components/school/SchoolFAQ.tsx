@@ -13,12 +13,12 @@ const faqs: FAQItem[] = [
   {
     question: "What is the Founding Schools Programme?",
     answer:
-      "The Founding Schools Programme is a strategic partnership limited to 20 schools for the 2026 academic year. Founding schools receive full platform access, early features, direct product input, priority onboarding, and locked preferential pricing for 2-3 years. This is not a free trial -- it is a partnership with heavily discounted pricing tailored to your department size.",
+      "The Founding Schools Programme is a strategic partnership limited to 10 schools for the 2026 academic year. Founding schools receive full platform access, early features, direct product input, priority onboarding, and locked preferential pricing for 2-3 years. This is not a free trial -- it is a partnership with heavily discounted pricing tailored to your department size.",
   },
   {
     question: "How much does it cost?",
     answer:
-      "Pricing is tailored to your department size and discussed during your onboarding call. Founding schools receive heavily discounted rates compared to post-programme pricing. Book a call to discuss your specific package.",
+      "Founding Schools Programme pricing ranges from \u00a33,000 to \u00a37,000 per year, depending on your department size. This is heavily discounted compared to our post-programme pricing. The exact package is discussed during your onboarding call. Book a call to find out your school's price.",
   },
   {
     question: "How does the Excel bulk upload work?",

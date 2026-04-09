@@ -12,9 +12,10 @@ import {
 
 const navItems = [
   { href: "/demo/student", label: "My Dashboard", icon: LayoutDashboard },
-  { href: "/demo/student#courses", label: "My Courses", icon: BookOpen },
-  { href: "/demo/student#flashcards", label: "Practice", icon: Target },
-  { href: "/demo/student#progress", label: "Progress", icon: BarChart3 },
+  { href: "/demo/student/courses", label: "My Courses", icon: BookOpen },
+  { href: "/demo/student/flashcards", label: "Flashcards", icon: Target },
+  { href: "/demo/student/practice", label: "Practice", icon: Sparkles },
+  { href: "/demo/student/progress", label: "Progress", icon: BarChart3 },
 ]
 
 export default function StudentDemoLayout({
@@ -45,7 +46,7 @@ export default function StudentDemoLayout({
             const isActive =
               item.href === "/demo/student"
                 ? pathname === "/demo/student"
-                : pathname.startsWith(item.href) && !item.href.includes("#")
+                : pathname.startsWith(item.href)
             return (
               <Link
                 key={item.label}

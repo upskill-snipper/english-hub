@@ -288,11 +288,9 @@ export default function TeacherClassDetailPage() {
                         {student.lastActive}
                       </td>
                       <td className="px-4 py-3 text-right">
-                        <Link href={`/demo/teacher/students/${student.id}`}>
-                          <Button variant="ghost" size="xs" className="text-white/40 hover:text-emerald-400">
+                        <Button render={<Link href={`/demo/teacher/students/${student.id}`} />} variant="ghost" size="xs" className="text-white/40 hover:text-emerald-400">
                             <ExternalLink className="h-3.5 w-3.5" />
-                          </Button>
-                        </Link>
+                        </Button>
                       </td>
                     </tr>
                   ))}

@@ -54,7 +54,7 @@ In contrast, Sheila represents hope for change. Her immediate guilt upon learnin
 The Inspector himself functions as a moral authority. His final speech warning that "we are all members of one body" echoes socialist principles and serves as a direct address to the audience. Priestley deliberately breaks the fourth wall to challenge the audience's own sense of responsibility.
 
 Ultimately, Priestley suggests that responsibility cannot be avoided. The cyclical structure of the play, with the final phone call announcing a real inspector, implies that those who refuse to accept responsibility will be forced to confront it again and again.`,
-    grade: "B",
+    grade: "6",
     ao1: 14,
     ao1Max: 20,
     ao2: 12,
@@ -80,7 +80,7 @@ Ultimately, Priestley suggests that responsibility cannot be avoided. The cyclic
     ],
     feedback: [
       "This is a well-structured response that demonstrates clear understanding of Priestley's message about responsibility. The comparison between Mr Birling and Sheila is effective and shows awareness of generational differences in the play.",
-      "To move from a B to an A, you need to develop your contextual analysis. The post-war context is mentioned but not explored in depth. Consider how the welfare state and Beveridge Report influenced Priestley's writing. Additionally, exploring critical perspectives (e.g. feminist readings of Sheila's transformation) would demonstrate higher-level thinking.",
+      "To move from a Grade 6 to a Grade 7, you need to develop your contextual analysis. The post-war context is mentioned but not explored in depth. Consider how the welfare state and Beveridge Report influenced Priestley's writing. Additionally, exploring critical perspectives (e.g. feminist readings of Sheila's transformation) would demonstrate higher-level thinking.",
     ],
   },
   {
@@ -95,7 +95,7 @@ Lady Macbeth's ambition initially appears even stronger than her husband's. Her 
 However, Shakespeare shows that ambition ultimately leads to destruction. Macbeth's paranoia after becoming king -- "full of scorpions is my mind" -- uses a metaphor of internal torment to show how ambition has poisoned his mental state. Similarly, Lady Macbeth's sleepwalking in Act 5 reveals that her ambition has been replaced by overwhelming guilt.
 
 Shakespeare's message is clear: ambition that overrides morality leads to inevitable downfall, reflecting the Jacobean belief in the Divine Right of Kings.`,
-    grade: "A",
+    grade: "7",
     ao1: 16,
     ao1Max: 20,
     ao2: 15,
@@ -121,7 +121,7 @@ Shakespeare's message is clear: ambition that overrides morality leads to inevit
     ],
     feedback: [
       "An impressive response that demonstrates sophisticated analytical skills. Your close reading of 'yield' is exactly the kind of detailed language analysis that examiners reward. The comparison between Macbeth and Lady Macbeth's ambition is well-handled.",
-      "To reach A*, develop your contextual understanding beyond surface-level references. The Jacobean context is mentioned but could be woven more organically into your analysis. Consider how James I's own interest in witchcraft and his book Daemonologie might inform the play's treatment of supernatural ambition.",
+      "To reach Grade 8/9, develop your contextual understanding beyond surface-level references. The Jacobean context is mentioned but could be woven more organically into your analysis. Consider how James I's own interest in witchcraft and his book Daemonologie might inform the play's treatment of supernatural ambition.",
     ],
   },
   {
@@ -136,7 +136,7 @@ The Ghost of Christmas Past begins Scrooge's change by showing him memories of h
 By the end of the story, Scrooge has completely changed. He buys the biggest turkey for the Cratchit family and raises Bob Cratchit's salary. Dickens writes that Scrooge "knew how to keep Christmas well." This simple statement contrasts with the complex list of negative adjectives at the start, showing that goodness is straightforward while greed is complicated.
 
 Dickens uses Scrooge's transformation to argue that anyone can change and that the wealthy have a duty to help the poor.`,
-    grade: "C",
+    grade: "4",
     ao1: 11,
     ao1Max: 20,
     ao2: 9,

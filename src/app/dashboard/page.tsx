@@ -789,22 +789,26 @@ function SubscriptionBadge({
 }
 
 function GradeBadge({ grade }: { grade: string }) {
-  const variantMap: Record<string, 'default' | 'secondary' | 'outline'> = {
-    Distinction: 'default',
-    Merit: 'secondary',
-    Pass: 'outline',
+  // Parse GCSE numeric grade from strings like "Grade 7" or "7"
+  const num = parseInt(grade.replace('Grade ', ''), 10)
+
+  const getVariant = (): 'default' | 'secondary' | 'outline' => {
+    if (num >= 8) return 'default'
+    if (num >= 6) return 'secondary'
+    return 'outline'
   }
 
-  const colorMap: Record<string, string> = {
-    Distinction: 'bg-yellow-500/15 text-yellow-400 border-yellow-500/30',
-    Merit: 'bg-blue-950/200/15 text-blue-400 border-blue-500/30',
-    Pass: 'bg-primary/15 text-primary border-primary/30',
+  const getColor = (): string => {
+    if (num >= 8) return 'bg-yellow-500/15 text-yellow-400 border-yellow-500/30'
+    if (num >= 6) return 'bg-blue-500/15 text-blue-400 border-blue-500/30'
+    if (num >= 4) return 'bg-primary/15 text-primary border-primary/30'
+    return 'bg-muted text-muted-foreground border-border'
   }
 
   return (
     <Badge
-      variant={variantMap[grade] ?? 'outline'}
-      className={colorMap[grade] ?? colorMap.Pass}
+      variant={getVariant()}
+      className={getColor()}
     >
       {grade}
     </Badge>

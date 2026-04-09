@@ -13,7 +13,7 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { TEACHER_DEMO_CLASSES, DEMO_TEACHER, type DemoClass, type DemoStudent } from "@/data/demo-data"
+import { TEACHER_DEMO_CLASSES, DEMO_TEACHER, DEMO_STUDENTS, type DemoClass } from "@/data/demo-data"
 
 function scoreColor(score: number) {
   if (score >= 70) return "text-green-400"
@@ -28,11 +28,12 @@ function progressBarColor(pct: number) {
 }
 
 function trendIcon(cls: typeof TEACHER_DEMO_CLASSES[number]) {
-  const students = cls.students ?? []
-  const upCount = students.filter((s: any) => s.trend === "up").length
-  const downCount = students.filter((s: any) => s.trend === "down").length
-  if (upCount > downCount) return <TrendingUp className="h-3.5 w-3.5 text-green-400" />
-  if (downCount > upCount) return <TrendingDown className="h-3.5 w-3.5 text-red-400" />
+  // Derive trend from DEMO_STUDENTS matched by class name
+  const students = DEMO_STUDENTS.filter((s) => s.className === cls.name)
+  if (students.length === 0) return <Minus className="h-3.5 w-3.5 text-white/30" />
+  const avgScore = Math.round(students.reduce((sum, s) => sum + s.averageScore, 0) / students.length)
+  if (avgScore >= 70) return <TrendingUp className="h-3.5 w-3.5 text-green-400" />
+  if (avgScore < 50) return <TrendingDown className="h-3.5 w-3.5 text-red-400" />
   return <Minus className="h-3.5 w-3.5 text-white/30" />
 }
 
@@ -55,11 +56,9 @@ export default function TeacherClassesPage() {
               {TEACHER_DEMO_CLASSES.length} classes -- {DEMO_TEACHER.department} Department
             </p>
           </div>
-          <Link href="/demo/teacher">
-            <Button variant="outline" size="sm" className="text-white/60 border-white/10 hover:border-white/20">
+          <Button render={<Link href="/demo/teacher" />} variant="outline" size="sm" className="text-white/60 border-white/10 hover:border-white/20">
               Back to Dashboard
-            </Button>
-          </Link>
+          </Button>
         </div>
 
         {/* Summary KPIs */}
@@ -67,32 +66,32 @@ export default function TeacherClassesPage() {
           <div className="rounded-xl border border-white/5 bg-white/[0.02] p-4">
             <p className="text-[11px] uppercase tracking-wider text-white/30 mb-1">Total Students</p>
             <p className="text-2xl font-light text-white/80">
-              {TEACHER_DEMO_CLASSES.reduce((sum: number, c: any) => sum + c.studentCount, 0)}
+              {TEACHER_DEMO_CLASSES.reduce((sum, c) => sum + c.studentCount, 0)}
             </p>
           </div>
           <div className="rounded-xl border border-white/5 bg-white/[0.02] p-4">
             <p className="text-[11px] uppercase tracking-wider text-white/30 mb-1">Avg Score</p>
-            <p className={`text-2xl font-light ${scoreColor(Math.round(TEACHER_DEMO_CLASSES.reduce((sum: number, c: any) => sum + c.avgScore, 0) / TEACHER_DEMO_CLASSES.length))}`}>
-              {Math.round(TEACHER_DEMO_CLASSES.reduce((sum: number, c: any) => sum + c.avgScore, 0) / TEACHER_DEMO_CLASSES.length)}%
+            <p className={`text-2xl font-light ${scoreColor(Math.round(TEACHER_DEMO_CLASSES.reduce((sum, c) => sum + c.avgScore, 0) / TEACHER_DEMO_CLASSES.length))}`}>
+              {Math.round(TEACHER_DEMO_CLASSES.reduce((sum, c) => sum + c.avgScore, 0) / TEACHER_DEMO_CLASSES.length)}%
             </p>
           </div>
           <div className="rounded-xl border border-white/5 bg-white/[0.02] p-4">
             <p className="text-[11px] uppercase tracking-wider text-white/30 mb-1">Avg Completion</p>
             <p className="text-2xl font-light text-white/80">
-              {Math.round(TEACHER_DEMO_CLASSES.reduce((sum: number, c: any) => sum + c.completionRate, 0) / TEACHER_DEMO_CLASSES.length)}%
+              {Math.round(TEACHER_DEMO_CLASSES.reduce((sum, c) => sum + c.completionRate, 0) / TEACHER_DEMO_CLASSES.length)}%
             </p>
           </div>
           <div className="rounded-xl border border-white/5 bg-white/[0.02] p-4">
             <p className="text-[11px] uppercase tracking-wider text-white/30 mb-1">At-Risk Students</p>
-            <p className={`text-2xl font-light ${TEACHER_DEMO_CLASSES.reduce((sum: number, c: any) => sum + c.atRiskCount, 0) > 0 ? "text-red-400" : "text-green-400"}`}>
-              {TEACHER_DEMO_CLASSES.reduce((sum: number, c: any) => sum + c.atRiskCount, 0)}
+            <p className={`text-2xl font-light ${TEACHER_DEMO_CLASSES.reduce((sum, c) => sum + (c.atRiskCount ?? 0), 0) > 0 ? "text-red-400" : "text-green-400"}`}>
+              {TEACHER_DEMO_CLASSES.reduce((sum, c) => sum + (c.atRiskCount ?? 0), 0)}
             </p>
           </div>
         </div>
 
         {/* Class Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {TEACHER_DEMO_CLASSES.map((cls: any) => (
+          {TEACHER_DEMO_CLASSES.map((cls) => (
             <Link key={cls.id} href={`/demo/teacher/classes/${cls.id}`} className="block group">
               <Card className="bg-white/[0.02] border-white/5 hover:border-white/10 hover:bg-white/[0.04] transition-all duration-200 h-full">
                 <CardHeader className="pb-3">
@@ -150,13 +149,13 @@ export default function TeacherClassesPage() {
                   </div>
 
                   {/* At-risk indicator */}
-                  {cls.atRiskCount > 0 && (
+                  {(cls.atRiskCount ?? 0) > 0 && (
                     <div className="flex items-center gap-1.5 text-xs text-red-400/80">
                       <AlertTriangle className="h-3.5 w-3.5" />
-                      {cls.atRiskCount} student{cls.atRiskCount > 1 ? "s" : ""} at risk
+                      {cls.atRiskCount} student{(cls.atRiskCount ?? 0) > 1 ? "s" : ""} at risk
                     </div>
                   )}
-                  {cls.atRiskCount === 0 && (
+                  {(cls.atRiskCount ?? 0) === 0 && (
                     <div className="flex items-center gap-1.5 text-xs text-green-400/60">
                       <BookOpen className="h-3.5 w-3.5" />
                       All students on track

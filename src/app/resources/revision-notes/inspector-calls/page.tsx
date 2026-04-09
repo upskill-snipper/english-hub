@@ -197,9 +197,9 @@ export default function InspectorCallsRevisionPage() {
               <div>
                 <h3 className="text-lg font-bold text-foreground border-b border-border pb-2">Inspector Goole</h3>
                 <div className="mt-2 flex flex-wrap gap-2">
-                  <span className="rounded-full bg-purple-100 px-2.5 py-0.5 text-xs font-semibold text-purple-700">Mouthpiece for Priestley</span>
-                  <span className="rounded-full bg-purple-100 px-2.5 py-0.5 text-xs font-semibold text-purple-700">Omniscient</span>
-                  <span className="rounded-full bg-purple-100 px-2.5 py-0.5 text-xs font-semibold text-purple-700">Moral Authority</span>
+                  <span className="rounded-full bg-purple-500/15 px-2.5 py-0.5 text-xs font-semibold text-purple-700 dark:text-purple-300">Mouthpiece for Priestley</span>
+                  <span className="rounded-full bg-purple-500/15 px-2.5 py-0.5 text-xs font-semibold text-purple-700 dark:text-purple-300">Omniscient</span>
+                  <span className="rounded-full bg-purple-500/15 px-2.5 py-0.5 text-xs font-semibold text-purple-700 dark:text-purple-300">Moral Authority</span>
                 </div>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   The Inspector is Priestley&apos;s mouthpiece and the play&apos;s moral centre. He is described as creating &ldquo;an impression of massiveness, solidity and purposefulness&rdquo; and speaks &ldquo;carefully, weightily.&rdquo; His name &mdash; &ldquo;Goole&rdquo; &mdash; is a homophone of &ldquo;ghoul,&rdquo; suggesting he may be a supernatural figure: a ghost, an angel, or the embodiment of collective conscience. He does not behave like a real police inspector: he shows the photograph to only one person at a time, he already seems to know all the answers, and he has an extraordinary power to make each character confess. His function is not to solve a crime but to force the Birlings (and the audience) to recognise their social responsibility. He is classless, unintimidated by wealth, and immovable. His final speech is essentially a socialist sermon, warning that if people do not learn to share responsibility for one another, they will be taught in &ldquo;fire and blood and anguish.&rdquo;
@@ -236,9 +236,9 @@ export default function InspectorCallsRevisionPage() {
               <div>
                 <h3 className="text-lg font-bold text-foreground border-b border-border pb-2">Arthur Birling</h3>
                 <div className="mt-2 flex flex-wrap gap-2">
-                  <span className="rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-semibold text-red-700">Capitalist</span>
-                  <span className="rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-semibold text-red-700">Self-Important</span>
-                  <span className="rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-semibold text-red-700">Unchanging</span>
+                  <span className="rounded-full bg-red-500/15 px-2.5 py-0.5 text-xs font-semibold text-red-700 dark:text-red-300">Capitalist</span>
+                  <span className="rounded-full bg-red-500/15 px-2.5 py-0.5 text-xs font-semibold text-red-700 dark:text-red-300">Self-Important</span>
+                  <span className="rounded-full bg-red-500/15 px-2.5 py-0.5 text-xs font-semibold text-red-700 dark:text-red-300">Unchanging</span>
                 </div>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   Arthur Birling is a &ldquo;heavy-looking, rather portentous man&rdquo; and a prosperous factory owner. He is Priestley&apos;s representative of Edwardian capitalist values: self-made, socially ambitious (he married above his class, and his daughter&apos;s engagement to Gerald Croft will strengthen business ties), and utterly convinced that a man&apos;s only responsibility is to himself and his family. He is presented as foolish through dramatic irony: his confident predictions about the Titanic being &ldquo;unsinkable&rdquo; and there being no chance of war would have been laughable to the 1945 audience. He sacked Eva Smith for leading a strike and feels no guilt whatsoever. Throughout the play, his primary concern is avoiding a &ldquo;public scandal.&rdquo; He represents the older generation who refuse to learn or change. After the Inspector is revealed as possibly fake, Birling is hugely relieved, having learned nothing about his moral responsibilities.
@@ -269,9 +269,9 @@ export default function InspectorCallsRevisionPage() {
               <div>
                 <h3 className="text-lg font-bold text-foreground border-b border-border pb-2">Sybil Birling</h3>
                 <div className="mt-2 flex flex-wrap gap-2">
-                  <span className="rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-semibold text-red-700">Cold</span>
-                  <span className="rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-semibold text-red-700">Prejudiced</span>
-                  <span className="rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-semibold text-red-700">Unchanging</span>
+                  <span className="rounded-full bg-red-500/15 px-2.5 py-0.5 text-xs font-semibold text-red-700 dark:text-red-300">Cold</span>
+                  <span className="rounded-full bg-red-500/15 px-2.5 py-0.5 text-xs font-semibold text-red-700 dark:text-red-300">Prejudiced</span>
+                  <span className="rounded-full bg-red-500/15 px-2.5 py-0.5 text-xs font-semibold text-red-700 dark:text-red-300">Unchanging</span>
                 </div>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   Sybil Birling is described as &ldquo;about fifty, a rather cold woman and her husband&apos;s social superior.&rdquo; She is the most class-conscious character in the play. As chair of the Brumley Women&apos;s Charity Organisation, she had the power to help Eva/Daisy but chose not to, finding the girl&apos;s use of the name &ldquo;Mrs Birling&rdquo; offensive and believing that a working-class girl claiming to have been wronged by a man of higher class was simply lying. She is completely lacking in empathy, judging Eva entirely by class rather than need. Her cruelest moment is when she insists the father of the child should accept &ldquo;public responsibility&rdquo; &mdash; not realising she is condemning her own son Eric. Even when the truth is revealed, she refuses to accept blame. Like her husband, she represents the entrenched, unrepentant upper-middle class.
@@ -302,9 +302,9 @@ export default function InspectorCallsRevisionPage() {
               <div>
                 <h3 className="text-lg font-bold text-foreground border-b border-border pb-2">Sheila Birling</h3>
                 <div className="mt-2 flex flex-wrap gap-2">
-                  <span className="rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-semibold text-green-700">Transforms</span>
-                  <span className="rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-semibold text-green-700">Empathetic</span>
-                  <span className="rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-semibold text-green-700">Moral Growth</span>
+                  <span className="rounded-full bg-green-500/15 px-2.5 py-0.5 text-xs font-semibold text-green-700 dark:text-green-300">Transforms</span>
+                  <span className="rounded-full bg-green-500/15 px-2.5 py-0.5 text-xs font-semibold text-green-700 dark:text-green-300">Empathetic</span>
+                  <span className="rounded-full bg-green-500/15 px-2.5 py-0.5 text-xs font-semibold text-green-700 dark:text-green-300">Moral Growth</span>
                 </div>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   Sheila begins the play as a &ldquo;pretty girl in her early twenties, very pleased with life and rather excited&rdquo; about her engagement. She is initially frivolous and sheltered, a product of her privileged upbringing. Her involvement with Eva &mdash; having her sacked from Milwards out of jealousy &mdash; reveals her potential for cruelty. However, Sheila is the character who undergoes the greatest transformation. She is the first to recognise the Inspector&apos;s power and to accept genuine responsibility, saying she will &ldquo;never, never do it again to anybody.&rdquo; As the play progresses, she takes on an almost Inspector-like role, warning her parents and Gerald that the Inspector already knows everything and that they should not try to hide the truth. By the end, she has fundamentally changed: she sees through her parents&apos; hypocrisy, challenges their values, and insists that the lessons learned matter regardless of whether the Inspector was real. She represents Priestley&apos;s hope for the younger generation.
@@ -341,9 +341,9 @@ export default function InspectorCallsRevisionPage() {
               <div>
                 <h3 className="text-lg font-bold text-foreground border-b border-border pb-2">Eric Birling</h3>
                 <div className="mt-2 flex flex-wrap gap-2">
-                  <span className="rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-semibold text-green-700">Transforms</span>
-                  <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-semibold text-amber-700">Troubled</span>
-                  <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-semibold text-amber-700">Drinks Heavily</span>
+                  <span className="rounded-full bg-green-500/15 px-2.5 py-0.5 text-xs font-semibold text-green-700 dark:text-green-300">Transforms</span>
+                  <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-300">Troubled</span>
+                  <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-300">Drinks Heavily</span>
                 </div>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   Eric is described as &ldquo;in his early twenties, not quite at ease, half shy, half assertive.&rdquo; The stage directions hint early on that something is wrong: he is &ldquo;squiffy&rdquo; (drunk) at dinner, and his parents are oblivious. Eric is the character with the most serious involvement in Eva&apos;s story: he forced himself upon her while drunk (an assault), got her pregnant, and stole money from his father&apos;s firm. His behaviour reveals the darker side of upper-class privilege &mdash; young men like Eric can exploit working-class women with impunity. However, like Sheila, Eric undergoes genuine moral change. He is horrified by what he has done and accepts responsibility. He turns on his mother with real anger when he learns she rejected Eva&apos;s plea for help. By the end, he stands with Sheila against his parents, insisting that their guilt is real regardless of whether the Inspector was genuine. He represents both the failings and the potential for redemption in the younger generation.
@@ -374,9 +374,9 @@ export default function InspectorCallsRevisionPage() {
               <div>
                 <h3 className="text-lg font-bold text-foreground border-b border-border pb-2">Gerald Croft</h3>
                 <div className="mt-2 flex flex-wrap gap-2">
-                  <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-semibold text-amber-700">Aristocratic</span>
-                  <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-xs font-semibold text-amber-700">Complex</span>
-                  <span className="rounded-full bg-red-100 px-2.5 py-0.5 text-xs font-semibold text-red-700">Ultimately Unchanged</span>
+                  <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-300">Aristocratic</span>
+                  <span className="rounded-full bg-amber-500/15 px-2.5 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-300">Complex</span>
+                  <span className="rounded-full bg-red-500/15 px-2.5 py-0.5 text-xs font-semibold text-red-700 dark:text-red-300">Ultimately Unchanged</span>
                 </div>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
                   Gerald is &ldquo;an attractive chap about thirty&rdquo; and the son of Sir George Croft, whose company is a rival to Birling&apos;s. He is socially superior to the Birlings (landed aristocracy vs. new money). His involvement with Daisy Renton is the most ambiguous: he genuinely rescued her from Alderman Meggarty, gave her a home, and seems to have cared for her &mdash; but he also kept her as his mistress while engaged to Sheila, and discarded her when it suited him. He is the only character who made Eva &ldquo;happy for a time,&rdquo; but his kindness was ultimately self-serving. Gerald is the one who discovers the Inspector is not a real police officer and leads the effort to discredit the evening&apos;s events. He aligns with the older Birlings in his relief and desire to return to normal. He represents the ruling class who can acknowledge individual kindness but refuse systemic responsibility.

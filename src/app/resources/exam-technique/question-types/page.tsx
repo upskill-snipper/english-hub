@@ -172,7 +172,7 @@ export default function QuestionTypesPage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-primary/20">
+          <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
             Exam Technique
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -286,7 +286,7 @@ export default function QuestionTypesPage() {
                         key={i}
                         className="flex gap-3 text-sm text-muted-foreground"
                       >
-                        <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-red-100 text-xs text-red-600">
+                        <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-red-500/15 text-xs text-red-600">
                           &times;
                         </span>
                         <span className="leading-relaxed">{mistake}</span>

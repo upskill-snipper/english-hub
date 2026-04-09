@@ -300,7 +300,7 @@ export default function RomeoAndJulietPage() {
 
         {/* ── Paper 1 Section A overview ──────────────────────────── */}
         <section className="mt-14 scroll-mt-20">
-          <div className="rounded-xl border-2 border-primary bg-blue-50 p-6">
+          <div className="rounded-xl border-2 border-primary bg-blue-500/10 p-6">
             <h2 className="text-lg font-bold text-foreground">
               Edexcel Paper 1, Section A — Shakespeare (40 marks)
             </h2>
@@ -579,7 +579,7 @@ export default function RomeoAndJulietPage() {
               </div>
             </div>
 
-            <div className="rounded-xl border-2 border-primary bg-blue-50 p-6">
+            <div className="rounded-xl border-2 border-primary bg-blue-500/10 p-6">
               <h3 className="text-lg font-bold text-foreground">
                 Top Tips for Top Marks
               </h3>

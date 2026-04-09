@@ -77,7 +77,7 @@ export default function CreativeWritingPage() {
       <section className="card">
         <div className="flex items-center justify-between mb-3">
           <h2 className="text-lg font-semibold text-foreground">{model.title}</h2>
-          <span className="inline-flex items-center rounded-full bg-emerald-50 px-2.5 py-0.5 text-xs font-medium text-emerald-700">
+          <span className="inline-flex items-center rounded-full bg-emerald-500/10 px-2.5 py-0.5 text-xs font-medium text-emerald-700 dark:text-emerald-300">
             {model.level}
           </span>
         </div>
@@ -141,11 +141,11 @@ export default function CreativeWritingPage() {
                 </span>
               </div>
               <p className="text-sm text-muted-foreground mb-3">{task.instruction}</p>
-              <div className="rounded bg-emerald-50 p-3">
-                <p className="text-xs font-semibold text-emerald-800 mb-1.5">Success Criteria</p>
+              <div className="rounded bg-emerald-500/10 p-3">
+                <p className="text-xs font-semibold text-emerald-700 dark:text-emerald-300 mb-1.5">Success Criteria</p>
                 <ul className="space-y-1">
                   {task.success.map((s, j) => (
-                    <li key={j} className="flex items-start gap-1.5 text-xs text-emerald-700">
+                    <li key={j} className="flex items-start gap-1.5 text-xs text-emerald-700 dark:text-emerald-300">
                       <svg className="h-3.5 w-3.5 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>

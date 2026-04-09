@@ -475,7 +475,7 @@ function ParentView() {
                           Active
                         </span>
                       ) : (
-                        <span className="inline-flex items-center rounded-full bg-yellow-50 px-2 py-0.5 text-xs font-medium text-yellow-700">
+                        <span className="inline-flex items-center rounded-full bg-yellow-500/10 px-2 py-0.5 text-xs font-medium text-yellow-700 dark:text-yellow-300">
                           No subscription
                         </span>
                       )}

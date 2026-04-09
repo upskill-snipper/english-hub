@@ -42,24 +42,24 @@ export default function AffiliateResources({
   }
 
   return (
-    <div className="min-h-screen bg-brand-bg">
+    <div className="min-h-screen bg-background">
       <div className="max-w-4xl mx-auto px-4 py-8">
         {/* Header */}
         <Link
           href="/affiliates/dashboard"
-          className="inline-flex items-center gap-2 text-brand-muted hover:text-brand-text transition-colors mb-8"
+          className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8"
         >
           <ArrowLeft className="w-4 h-4" />
           Back to Dashboard
         </Link>
 
         <div className="flex items-center gap-3 mb-2">
-          <Sparkles className="w-7 h-7 text-brand-accent" />
-          <h1 className="text-3xl font-bold text-brand-text">
+          <Sparkles className="w-7 h-7 text-primary" />
+          <h1 className="text-3xl font-bold text-foreground">
             Affiliate Resources
           </h1>
         </div>
-        <p className="text-brand-muted mb-10">
+        <p className="text-muted-foreground mb-10">
           Ready-to-use content, brand guidelines, and tips to help you earn more.
           Everything here is ready to copy and paste.
         </p>
@@ -67,9 +67,9 @@ export default function AffiliateResources({
         {/* ─── Section 1: Your Link & Promo Code ─── */}
         <section className="mb-12">
           <SectionHeading icon={LinkIcon} title="Your Link & Promo Code" />
-          <div className="bg-brand-card border border-brand-border rounded-xl p-6 space-y-4">
+          <div className="bg-card border border-border rounded-xl p-6 space-y-4">
             <div>
-              <label className="block text-sm font-medium text-brand-muted mb-1.5">
+              <label className="block text-sm font-medium text-muted-foreground mb-1.5">
                 Your affiliate link
               </label>
               <CopyRow
@@ -80,7 +80,7 @@ export default function AffiliateResources({
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-brand-muted mb-1.5">
+              <label className="block text-sm font-medium text-muted-foreground mb-1.5">
                 Your referral code
               </label>
               <CopyRow
@@ -90,7 +90,7 @@ export default function AffiliateResources({
                 onCopy={handleCopy}
               />
             </div>
-            <p className="text-sm text-brand-muted">
+            <p className="text-sm text-muted-foreground">
               Your followers get access through your unique link. Share it
               anywhere &mdash; bio links, captions, stories, DMs.
             </p>
@@ -103,7 +103,7 @@ export default function AffiliateResources({
             icon={MessageSquare}
             title="Ready-Made Social Media Content"
           />
-          <p className="text-brand-muted mb-6">
+          <p className="text-muted-foreground mb-6">
             Grab a caption, swap in your link, and post. Each one is written to
             perform &mdash; just pick the platform.
           </p>
@@ -154,16 +154,16 @@ export default function AffiliateResources({
         {/* ─── Section 3: Content Ideas ─── */}
         <section className="mb-12">
           <SectionHeading icon={Lightbulb} title="Content Ideas" />
-          <p className="text-brand-muted mb-4">
+          <p className="text-muted-foreground mb-4">
             Not sure what to post? These formats consistently drive sign-ups.
           </p>
-          <div className="bg-brand-card border border-brand-border rounded-xl divide-y divide-brand-border">
+          <div className="bg-card border border-border rounded-xl divide-y divide-border">
             {contentIdeas.map((idea, i) => (
               <div key={i} className="flex items-start gap-3 px-5 py-4">
-                <span className="mt-0.5 flex-shrink-0 w-6 h-6 rounded-full bg-brand-accent/10 text-brand-accent text-xs font-bold flex items-center justify-center">
+                <span className="mt-0.5 flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 text-primary text-xs font-bold flex items-center justify-center">
                   {i + 1}
                 </span>
-                <p className="text-sm text-brand-text leading-relaxed">
+                <p className="text-sm text-foreground leading-relaxed">
                   {idea}
                 </p>
               </div>
@@ -174,19 +174,19 @@ export default function AffiliateResources({
         {/* ─── Section 4: Brand Guidelines ─── */}
         <section className="mb-12">
           <SectionHeading icon={Palette} title="Brand Guidelines" />
-          <div className="bg-brand-card border border-brand-border rounded-xl p-6 space-y-5">
+          <div className="bg-card border border-border rounded-xl p-6 space-y-5">
             <div className="space-y-3">
               {brandGuidelines.map((guideline, i) => (
                 <div key={i} className="flex items-start gap-3">
-                  <span className="mt-1 w-1.5 h-1.5 rounded-full bg-brand-accent flex-shrink-0" />
-                  <p className="text-sm text-brand-text leading-relaxed">
+                  <span className="mt-1 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
+                  <p className="text-sm text-foreground leading-relaxed">
                     {guideline}
                   </p>
                 </div>
               ))}
             </div>
-            <div className="border-t border-brand-border pt-5">
-              <p className="text-xs font-medium text-brand-muted uppercase tracking-wider mb-3">
+            <div className="border-t border-border pt-5">
+              <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-3">
                 Brand Colours
               </p>
               <div className="flex flex-wrap gap-3">
@@ -206,15 +206,15 @@ export default function AffiliateResources({
             {performanceTips.map((tip, i) => (
               <div
                 key={i}
-                className="bg-brand-card border border-brand-border rounded-xl p-5"
+                className="bg-card border border-border rounded-xl p-5"
               >
                 <div className="flex items-center gap-2 mb-2">
-                  <tip.icon className="w-4 h-4 text-brand-accent" />
-                  <h4 className="font-semibold text-sm text-brand-text">
+                  <tip.icon className="w-4 h-4 text-primary" />
+                  <h4 className="font-semibold text-sm text-foreground">
                     {tip.title}
                   </h4>
                 </div>
-                <p className="text-sm text-brand-muted leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   {tip.description}
                 </p>
               </div>
@@ -223,11 +223,11 @@ export default function AffiliateResources({
         </section>
 
         {/* ─── Bottom CTA ─── */}
-        <div className="bg-brand-card border border-brand-border rounded-xl p-6 text-center">
-          <p className="text-brand-text font-semibold mb-1">
+        <div className="bg-card border border-border rounded-xl p-6 text-center">
+          <p className="text-foreground font-semibold mb-1">
             Ready to start sharing?
           </p>
-          <p className="text-sm text-brand-muted mb-4">
+          <p className="text-sm text-muted-foreground mb-4">
             Copy your link and start creating content today.
           </p>
           <div className="flex justify-center gap-3">
@@ -263,8 +263,8 @@ function SectionHeading({
 }) {
   return (
     <div className="flex items-center gap-2 mb-4">
-      <Icon className="w-5 h-5 text-brand-accent" />
-      <h2 className="text-xl font-bold text-brand-text">{title}</h2>
+      <Icon className="w-5 h-5 text-primary" />
+      <h2 className="text-xl font-bold text-foreground">{title}</h2>
     </div>
   )
 }
@@ -278,8 +278,8 @@ function SubHeading({
 }) {
   return (
     <div className="flex items-center gap-2 mb-3">
-      <Icon className="w-4 h-4 text-brand-muted" />
-      <h3 className="text-sm font-semibold text-brand-text uppercase tracking-wider">
+      <Icon className="w-4 h-4 text-muted-foreground" />
+      <h3 className="text-sm font-semibold text-foreground uppercase tracking-wider">
         {title}
       </h3>
     </div>
@@ -300,7 +300,7 @@ function CopyRow({
   const isCopied = copiedId === id
   return (
     <div className="flex items-center gap-2">
-      <div className="flex-1 bg-brand-bg rounded-lg border border-brand-border px-4 py-2.5 font-mono text-sm text-brand-muted truncate">
+      <div className="flex-1 bg-background rounded-lg border border-border px-4 py-2.5 font-mono text-sm text-muted-foreground truncate">
         {text}
       </div>
       <Button variant="outline" size="sm" onClick={() => onCopy(text, id)}>
@@ -328,17 +328,17 @@ function CopyableCaption({
 }) {
   const isCopied = copiedId === id
   return (
-    <div className="bg-brand-card border border-brand-border rounded-xl p-4 flex items-start gap-3">
-      <p className="flex-1 text-sm text-brand-text leading-relaxed whitespace-pre-line">
+    <div className="bg-card border border-border rounded-xl p-4 flex items-start gap-3">
+      <p className="flex-1 text-sm text-foreground leading-relaxed whitespace-pre-line">
         {text}
       </p>
       <button
         onClick={() => onCopy(text, id)}
-        className="flex-shrink-0 mt-0.5 p-2 rounded-lg border border-brand-border hover:bg-brand-bg text-brand-muted hover:text-brand-text transition-colors"
+        className="flex-shrink-0 mt-0.5 p-2 rounded-lg border border-border hover:bg-background text-muted-foreground hover:text-foreground transition-colors"
         title="Copy to clipboard"
       >
         {isCopied ? (
-          <Check className="w-4 h-4 text-brand-accent" />
+          <Check className="w-4 h-4 text-primary" />
         ) : (
           <Copy className="w-4 h-4" />
         )}
@@ -351,12 +351,12 @@ function ColourSwatch({ colour, label }: { colour: string; label: string }) {
   return (
     <div className="flex items-center gap-2">
       <div
-        className="w-8 h-8 rounded-lg border border-brand-border"
+        className="w-8 h-8 rounded-lg border border-border"
         style={{ backgroundColor: colour }}
       />
       <div>
-        <p className="text-xs font-medium text-brand-text">{label}</p>
-        <p className="text-xs text-brand-muted font-mono">{colour}</p>
+        <p className="text-xs font-medium text-foreground">{label}</p>
+        <p className="text-xs text-muted-foreground font-mono">{colour}</p>
       </div>
     </div>
   )

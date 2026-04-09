@@ -1052,7 +1052,7 @@ export default function QuoteTesterPage() {
             {/* Performance badge */}
             <div className="mt-6 rounded-lg border border-border bg-muted p-4 text-center">
               {pct >= 90 ? (
-                <p className="text-sm font-semibold text-emerald-700">
+                <p className="text-sm font-semibold text-emerald-700 dark:text-emerald-300">
                   Outstanding! You know these quotes inside out.
                 </p>
               ) : pct >= 70 ? (
@@ -1108,8 +1108,8 @@ export default function QuoteTesterPage() {
                   key={q.id}
                   className={`rounded-lg border p-4 ${
                     allRight
-                      ? "border-emerald-200 bg-emerald-50/50"
-                      : "border-red-200 bg-red-50/30"
+                      ? "border-emerald-500/30 bg-emerald-500/5"
+                      : "border-red-500/30 bg-red-500/10/30"
                   }`}
                 >
                   <p className="text-sm font-semibold italic text-foreground">
@@ -1124,7 +1124,7 @@ export default function QuoteTesterPage() {
                             key={cat.key}
                             className={`inline-flex items-center rounded px-2 py-0.5 text-[10px] font-semibold ${
                               rec?.correct
-                                ? "bg-emerald-100 text-emerald-700"
+                                ? "bg-emerald-500/15 text-emerald-700 dark:text-emerald-300"
                                 : "bg-red-500/10 text-red-500"
                             }`}
                           >
@@ -1224,7 +1224,7 @@ export default function QuoteTesterPage() {
               <div
                 className={`flex h-8 items-center gap-1.5 rounded-full px-3 text-xs font-semibold transition-all ${
                   isDone && answer?.correct
-                    ? "bg-emerald-100 text-emerald-700"
+                    ? "bg-emerald-500/15 text-emerald-700 dark:text-emerald-300"
                     : isDone && !answer?.correct
                     ? "bg-red-500/10 text-red-500"
                     : isCurrent
@@ -1289,10 +1289,10 @@ export default function QuoteTesterPage() {
                   if (showFeedback) {
                     if (isCorrectOption) {
                       btnClass +=
-                        "border-emerald-500 bg-emerald-50 text-emerald-800 ring-2 ring-emerald-200";
+                        "border-emerald-500 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 ring-2 ring-emerald-200";
                     } else if (isSelected && !isCorrectOption) {
                       btnClass +=
-                        "border-red-400 bg-red-50 text-red-500 ring-2 ring-red-200";
+                        "border-red-400 bg-red-500/10 text-red-500 ring-2 ring-red-200";
                     } else {
                       btnClass += "border-border bg-muted text-muted-foreground";
                     }
@@ -1332,16 +1332,16 @@ export default function QuoteTesterPage() {
                   <div
                     className={`rounded-lg p-4 ${
                       session.selectedAnswer === correctAnswerForCurrent
-                        ? "border border-emerald-200 bg-emerald-50"
-                        : "border border-red-200 bg-red-50"
+                        ? "border border-emerald-500/30 bg-emerald-500/10"
+                        : "border border-red-500/30 bg-red-500/10"
                     }`}
                   >
                     {session.selectedAnswer === correctAnswerForCurrent ? (
-                      <p className="text-sm font-semibold text-emerald-800">
+                      <p className="text-sm font-semibold text-emerald-700 dark:text-emerald-300">
                         Correct! Well done.
                       </p>
                     ) : (
-                      <p className="text-sm text-red-800">
+                      <p className="text-sm text-red-700 dark:text-red-300">
                         <span className="font-semibold">Not quite.</span> The correct
                         answer is{" "}
                         <span className="font-bold">{correctAnswerForCurrent}</span>.

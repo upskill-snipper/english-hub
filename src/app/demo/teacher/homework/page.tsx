@@ -461,11 +461,11 @@ export default function HomeworkDemoPage() {
                 {/* Grade prediction */}
                 <div className="flex items-center gap-3 mb-4 p-3 rounded-lg bg-white/[0.03] border border-white/[0.06]">
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500/20 to-emerald-500/20 border border-cyan-500/20">
-                    <span className="text-lg font-bold text-cyan-300">B</span>
+                    <span className="text-lg font-bold text-cyan-300">6</span>
                   </div>
                   <div>
                     <p className="text-xs text-white/40">Predicted Grade</p>
-                    <p className="text-sm font-semibold text-white/90">Grade B (Upper)</p>
+                    <p className="text-sm font-semibold text-white/90">Grade 6</p>
                   </div>
                 </div>
 
@@ -518,10 +518,10 @@ export default function HomeworkDemoPage() {
                   <div className="space-y-2">
                     <label className="text-xs text-white/50">Adjusted Grade</label>
                     <select className="w-full rounded-lg bg-white/[0.04] border border-white/[0.08] px-3 py-2 text-sm text-white/90 focus:outline-none focus:border-cyan-500/40">
-                      <option value="B" className="bg-[#1a1a1a]">B (agree with AI)</option>
-                      <option value="B+" className="bg-[#1a1a1a]">B+</option>
-                      <option value="A" className="bg-[#1a1a1a]">A</option>
-                      <option value="C" className="bg-[#1a1a1a]">C</option>
+                      <option value="6" className="bg-[#1a1a1a]">Grade 6 (agree with AI)</option>
+                      <option value="7" className="bg-[#1a1a1a]">Grade 7</option>
+                      <option value="5" className="bg-[#1a1a1a]">Grade 5</option>
+                      <option value="4" className="bg-[#1a1a1a]">Grade 4</option>
                     </select>
                   </div>
 

@@ -91,7 +91,7 @@ export default function RomanticContextPage() {
       <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
         <div className="mb-8">
           <div className="flex flex-wrap items-center gap-3 mb-2">
-            <span className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-bold text-emerald-800 uppercase tracking-wider">
+            <span className="rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-bold text-emerald-700 dark:text-emerald-300 uppercase tracking-wider">
               1780 -- 1850
             </span>
             <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">Poetry Anthology</span>
@@ -163,7 +163,7 @@ export default function RomanticContextPage() {
                     detail: "Many Romantics initially supported the French Revolution (1789) as a triumph of liberty. Although they became disillusioned with the violence, the ideal of freedom -- political, personal, and spiritual -- remained central to the movement.",
                   },
                 ].map((item) => (
-                  <div key={item.ideal} className="rounded-lg bg-emerald-50/50 border border-emerald-100 p-4">
+                  <div key={item.ideal} className="rounded-lg bg-emerald-500/5 border border-emerald-500/20 p-4">
                     <h3 className="text-sm font-bold text-foreground">{item.ideal}</h3>
                     <p className="mt-2 text-sm text-muted-foreground">{item.detail}</p>
                   </div>
@@ -342,7 +342,7 @@ export default function RomanticContextPage() {
                 </p>
               </div>
 
-              <div className="mt-6 rounded-xl border border-primary/20 bg-primary/10/50 p-5">
+              <div className="mt-6 rounded-xl border border-primary/20 bg-primary/10 p-5">
                 <h3 className="text-sm font-bold text-foreground">Sentence starters for Romantic context</h3>
                 <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">

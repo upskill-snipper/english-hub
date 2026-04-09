@@ -325,22 +325,22 @@ const BOARDS = ["AQA", "Edexcel", "CAIE", "OCR"] as const;
 
 const TYPE_LABELS: Record<string, { label: string; bg: string; text: string }> =
   {
-    play: { label: "Play", bg: "bg-purple-100", text: "text-purple-700" },
-    novel: { label: "Novel", bg: "bg-blue-100", text: "text-blue-700" },
+    play: { label: "Play", bg: "bg-purple-500/15", text: "text-purple-700 dark:text-purple-300" },
+    novel: { label: "Novel", bg: "bg-blue-500/15", text: "text-blue-700 dark:text-blue-300" },
     novella: {
       label: "Novella",
-      bg: "bg-cyan-100",
+      bg: "bg-cyan-500/15",
       text: "text-cyan-700",
     },
     allegory: {
       label: "Allegory",
-      bg: "bg-orange-100",
-      text: "text-orange-700",
+      bg: "bg-orange-500/15",
+      text: "text-orange-700 dark:text-orange-300",
     },
     anthology: {
       label: "Anthology",
-      bg: "bg-emerald-100",
-      text: "text-emerald-700",
+      bg: "bg-emerald-500/15",
+      text: "text-emerald-700 dark:text-emerald-300",
     },
   };
 

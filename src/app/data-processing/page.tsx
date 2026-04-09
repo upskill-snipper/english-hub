@@ -453,10 +453,10 @@ export default function DataProcessingPage() {
           <p className="text-muted-foreground leading-relaxed mt-3">
             To request a DPA or discuss data protection arrangements, please contact us at{' '}
             <a
-              href="mailto:affiliates@theenglishhub.app"
+              href="mailto:info@Upskillenergy.com"
               className="underline text-foreground"
             >
-              affiliates@theenglishhub.app
+              info@Upskillenergy.com
             </a>
             . We are also happy to review and sign your School&apos;s own DPA template if
             preferred.
@@ -475,19 +475,19 @@ export default function DataProcessingPage() {
             <li>
               <strong className="text-foreground">School partnerships and DPA requests:</strong>{' '}
               <a
-                href="mailto:affiliates@theenglishhub.app"
+                href="mailto:info@Upskillenergy.com"
                 className="underline text-foreground"
               >
-                affiliates@theenglishhub.app
+                info@Upskillenergy.com
               </a>
             </li>
             <li>
               <strong className="text-foreground">Data protection enquiries:</strong>{' '}
               <a
-                href="mailto:privacy@theenglishhub.app"
+                href="mailto:info@Upskillenergy.com"
                 className="underline text-foreground"
               >
-                privacy@theenglishhub.app
+                info@Upskillenergy.com
               </a>
             </li>
           </ul>

@@ -142,7 +142,7 @@ export default function ProgressPage() {
               Grade {student.projectedGrade}
             </p>
             <p className="text-sm text-muted-foreground mt-1">
-              Projected (target: {student.targetGrade})
+              Projected (target: Grade {student.targetGrade})
             </p>
           </div>
           <div className="bg-card rounded-xl border border-border p-4 text-center">
@@ -252,7 +252,7 @@ export default function ProgressPage() {
 
             {/* Strengths */}
             <div className="bg-card rounded-xl border border-border p-6">
-              <h2 className="text-lg font-semibold text-green-700 mb-3">
+              <h2 className="text-lg font-semibold text-green-700 dark:text-green-300 mb-3">
                 Strengths
               </h2>
               <ul className="space-y-2">
@@ -267,7 +267,7 @@ export default function ProgressPage() {
 
             {/* Areas to Improve */}
             <div className="bg-card rounded-xl border border-border p-6">
-              <h2 className="text-lg font-semibold text-amber-700 mb-3">
+              <h2 className="text-lg font-semibold text-amber-700 dark:text-amber-300 mb-3">
                 Areas to Improve
               </h2>
               <ul className="space-y-2">

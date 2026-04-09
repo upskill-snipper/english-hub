@@ -894,7 +894,7 @@ export default function PoetryTechniquesPage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-primary to-primary/90 px-4 py-16 text-white sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary/20">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-white/70">
             Poetry Skills
           </p>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -1147,12 +1147,12 @@ export default function PoetryTechniquesPage() {
                       <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{item.description}</p>
 
                       <div className="mt-3 grid gap-3 sm:grid-cols-2">
-                        <div className="rounded-lg bg-green-50 border border-green-200 p-3">
-                          <p className="text-xs font-semibold text-green-700 mb-1">Strong example</p>
+                        <div className="rounded-lg bg-green-500/10 border border-green-500/30 p-3">
+                          <p className="text-xs font-semibold text-green-700 dark:text-green-300 mb-1">Strong example</p>
                           <p className="text-sm text-muted-foreground italic leading-relaxed">{item.good}</p>
                         </div>
-                        <div className="rounded-lg bg-red-50 border border-red-200 p-3">
-                          <p className="text-xs font-semibold text-red-700 mb-1">Weak example</p>
+                        <div className="rounded-lg bg-red-500/10 border border-red-500/30 p-3">
+                          <p className="text-xs font-semibold text-red-700 dark:text-red-300 mb-1">Weak example</p>
                           <p className="text-sm text-muted-foreground italic leading-relaxed">{item.weak}</p>
                         </div>
                       </div>
@@ -1214,7 +1214,7 @@ export default function PoetryTechniquesPage() {
           <div className="mt-6 grid gap-6 md:grid-cols-3">
             {/* Similarity */}
             <div className="rounded-xl border border-border bg-card p-5 shadow-md">
-              <h4 className="font-bold text-green-700 mb-3">Showing Similarity</h4>
+              <h4 className="font-bold text-green-700 dark:text-green-300 mb-3">Showing Similarity</h4>
               <ul className="space-y-2">
                 {COMPARISON_CONNECTIVES.similarity.map((phrase, i) => (
                   <li key={i} className="text-sm text-muted-foreground italic leading-relaxed">
@@ -1226,7 +1226,7 @@ export default function PoetryTechniquesPage() {
 
             {/* Difference */}
             <div className="rounded-xl border border-border bg-card p-5 shadow-md">
-              <h4 className="font-bold text-red-700 mb-3">Showing Difference</h4>
+              <h4 className="font-bold text-red-700 dark:text-red-300 mb-3">Showing Difference</h4>
               <ul className="space-y-2">
                 {COMPARISON_CONNECTIVES.difference.map((phrase, i) => (
                   <li key={i} className="text-sm text-muted-foreground italic leading-relaxed">

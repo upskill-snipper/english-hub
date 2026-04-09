@@ -72,7 +72,7 @@ export default function SilasMarnerRevisionPage() {
       {/* Hero */}
       <div className="mb-8">
         <div className="flex flex-wrap items-center gap-3 mb-2">
-          <span className="rounded-full bg-amber-100 px-3 py-1 text-xs font-bold text-amber-700 uppercase tracking-wider">19th Century Novel</span>
+          <span className="rounded-full bg-amber-500/15 px-3 py-1 text-xs font-bold text-amber-700 dark:text-amber-300 uppercase tracking-wider">19th Century Novel</span>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">AQA</span>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">Edexcel</span>
           <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">CAIE</span>
@@ -109,7 +109,7 @@ export default function SilasMarnerRevisionPage() {
           <div className="space-y-6">
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-100 text-xs font-bold text-amber-700">1</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-500/15 text-xs font-bold text-amber-700 dark:text-amber-300">1</span>
                 Part One &mdash; Betrayal, Isolation, and the Coming of Eppie
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -130,7 +130,7 @@ export default function SilasMarnerRevisionPage() {
 
             <div>
               <h3 className="font-bold text-foreground flex items-center gap-2">
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-100 text-xs font-bold text-amber-700">2</span>
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-500/15 text-xs font-bold text-amber-700 dark:text-amber-300">2</span>
                 Part Two &mdash; Sixteen Years Later
               </h3>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -466,7 +466,7 @@ export default function SilasMarnerRevisionPage() {
         <div id="exam-tips">
           <Section id="exam-tips" title="Exam Tips" colour="bg-primary">
             <div className="space-y-6">
-              <div className="rounded-lg border border-blue-200 bg-blue-50/50 p-4">
+              <div className="rounded-lg border border-blue-500/30 bg-blue-500/5 p-4">
                 <h3 className="font-bold text-foreground">General Tips for Silas Marner</h3>
                 <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                   <li>&bull; <strong>Always refer to Eliot as the novelist:</strong> Use phrases like &ldquo;Eliot presents...&rdquo; or &ldquo;Eliot uses Silas to explore...&rdquo; This shows awareness of authorial intent.</li>
@@ -478,7 +478,7 @@ export default function SilasMarnerRevisionPage() {
                 </ul>
               </div>
 
-              <div className="rounded-lg border border-purple-200 bg-purple-50/50 p-4">
+              <div className="rounded-lg border border-purple-500/30 bg-purple-500/5 p-4">
                 <h3 className="font-bold text-foreground flex items-center gap-2">
                   <span className="rounded bg-[#40197F] px-2 py-0.5 text-xs font-bold text-white">AQA</span>
                   AQA GCSE English Literature &mdash; Paper 1, Section B (19th Century Novel)
@@ -491,7 +491,7 @@ export default function SilasMarnerRevisionPage() {
                 </ul>
               </div>
 
-              <div className="rounded-lg border border-green-200 bg-green-50/50 p-4">
+              <div className="rounded-lg border border-green-500/30 bg-green-500/5 p-4">
                 <h3 className="font-bold text-foreground flex items-center gap-2">
                   <span className="rounded bg-[#00A651] px-2 py-0.5 text-xs font-bold text-white">CAIE</span>
                   Cambridge IGCSE Literature &mdash; Paper 2 (Prose)

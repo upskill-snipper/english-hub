@@ -268,7 +268,7 @@ function CheckIcon() {
 function TickCell() {
   return (
     <td className="px-3 py-2.5 text-center">
-      <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-green-100 text-green-600">
+      <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-green-500/15 text-green-600">
         <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
         </svg>

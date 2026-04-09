@@ -497,7 +497,7 @@ export default function ChristmasCarolPage() {
               </ol>
             </div>
 
-            <div className="rounded-xl border-2 border-primary bg-blue-50 p-6">
+            <div className="rounded-xl border-2 border-primary bg-blue-500/10 p-6">
               <h3 className="text-lg font-bold text-foreground">
                 Top Tips for Top Marks
               </h3>

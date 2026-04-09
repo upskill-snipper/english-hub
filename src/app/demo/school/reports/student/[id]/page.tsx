@@ -7,20 +7,22 @@ import { toast } from "sonner";
 import { DEMO_STUDENTS } from "@/data/demo-data";
 
 function scoreToGrade(score: number): string {
-  if (score >= 90) return "A*";
-  if (score >= 80) return "A";
-  if (score >= 70) return "B";
-  if (score >= 60) return "C";
-  if (score >= 50) return "D";
-  if (score >= 40) return "E";
-  return "U";
+  if (score >= 90) return "9";
+  if (score >= 80) return "8";
+  if (score >= 70) return "7";
+  if (score >= 60) return "6";
+  if (score >= 50) return "5";
+  if (score >= 40) return "4";
+  if (score >= 30) return "3";
+  if (score >= 20) return "2";
+  return "1";
 }
 
 function gradeColor(grade: string): string {
-  if (grade === "A*" || grade === "A") return "text-emerald-400 print:text-emerald-700";
-  if (grade === "B") return "text-blue-400 print:text-blue-700";
-  if (grade === "C") return "text-amber-400 print:text-amber-700";
-  if (grade === "D") return "text-orange-400 print:text-orange-700";
+  const num = parseInt(grade);
+  if (num >= 8) return "text-emerald-400 print:text-emerald-700";
+  if (num >= 6) return "text-blue-400 print:text-blue-700";
+  if (num >= 4) return "text-amber-400 print:text-amber-700";
   return "text-red-400 print:text-red-700";
 }
 

@@ -300,7 +300,7 @@ export default function WJECEnglishLiteraturePage() {
             How WJEC Eduqas Differs from AQA &amp; Edexcel
           </h2>
           <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
-            <div className="rounded-lg border-l-4 border-primary bg-blue-50 p-4">
+            <div className="rounded-lg border-l-4 border-primary bg-blue-500/10 p-4">
               <h3 className="font-semibold text-foreground">Poetry anthology is compared, not contrasted with unseen</h3>
               <p className="mt-1 text-sm">
                 WJEC Eduqas prints both anthology poems on the paper and asks you to
@@ -310,7 +310,7 @@ export default function WJECEnglishLiteraturePage() {
                 to choose.
               </p>
             </div>
-            <div className="rounded-lg border-l-4 border-primary bg-blue-50 p-4">
+            <div className="rounded-lg border-l-4 border-primary bg-blue-500/10 p-4">
               <h3 className="font-semibold text-foreground">
                 Unseen poetry carries heavy weight
               </h3>
@@ -320,7 +320,7 @@ export default function WJECEnglishLiteraturePage() {
                 of Paper 2) or Edexcel. Strong unseen poetry skills are essential.
               </p>
             </div>
-            <div className="rounded-lg border-l-4 border-primary bg-blue-50 p-4">
+            <div className="rounded-lg border-l-4 border-primary bg-blue-500/10 p-4">
               <h3 className="font-semibold text-foreground">
                 Extract provided for Shakespeare
               </h3>
@@ -330,7 +330,7 @@ export default function WJECEnglishLiteraturePage() {
                 extract and part (ii) requires discussion of the whole play.
               </p>
             </div>
-            <div className="rounded-lg border-l-4 border-primary bg-blue-50 p-4">
+            <div className="rounded-lg border-l-4 border-primary bg-blue-500/10 p-4">
               <h3 className="font-semibold text-foreground">
                 40/60 weighting between components
               </h3>
@@ -340,7 +340,7 @@ export default function WJECEnglishLiteraturePage() {
                 its two papers.
               </p>
             </div>
-            <div className="rounded-lg border-l-4 border-primary bg-blue-50 p-4">
+            <div className="rounded-lg border-l-4 border-primary bg-blue-500/10 p-4">
               <h3 className="font-semibold text-foreground">
                 Different text options
               </h3>

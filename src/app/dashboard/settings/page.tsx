@@ -292,11 +292,11 @@ function ProfileTab({
             <p className="text-sm font-medium text-foreground">Minor status</p>
             <p className="mt-1 text-sm text-muted-foreground">
               {profile.isMinor ? (
-                <span className="inline-flex items-center rounded-full bg-yellow-100 px-2.5 py-0.5 text-xs font-medium text-yellow-800">
+                <span className="inline-flex items-center rounded-full bg-amber-500/10 px-2.5 py-0.5 text-xs font-medium text-amber-400">
                   Under 18
                 </span>
               ) : (
-                <span className="inline-flex items-center rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800">
+                <span className="inline-flex items-center rounded-full bg-green-500/10 px-2.5 py-0.5 text-xs font-medium text-green-400">
                   Adult
                 </span>
               )}
@@ -411,7 +411,7 @@ function PasswordTab() {
               <li
                 key={check.label}
                 className={`flex items-center gap-2 text-xs ${
-                  check.met ? "text-success-600" : "text-muted-foreground"
+                  check.met ? "text-green-600" : "text-muted-foreground"
                 }`}
               >
                 {check.met ? (
@@ -566,7 +566,7 @@ function CommunicationTab() {
             description="Promotions, offers, and partner content."
           />
           {marketing && (
-            <p className="mt-2 ml-14 text-xs text-yellow-700 bg-yellow-50 rounded-lg px-3 py-2">
+            <p className="mt-2 ml-14 text-xs text-amber-400 bg-amber-500/10 rounded-lg px-3 py-2">
               By enabling marketing emails, you explicitly consent to receiving
               promotional communications. You can withdraw this consent at any
               time.
@@ -608,7 +608,7 @@ function SubscriptionTab() {
               <span
                 className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${
                   subscription.status === "Active"
-                    ? "bg-success-50 text-success-700"
+                    ? "bg-green-500/10 text-green-600"
                     : "bg-muted text-foreground"
                 }`}
               >
@@ -635,7 +635,7 @@ function SubscriptionTab() {
           </Link>
           <Link
             href="/dashboard/subscription/cancel"
-            className="text-sm font-medium text-warn-500 hover:text-warn-600 transition-colors px-2 py-2"
+            className="text-sm font-medium text-red-500 hover:text-red-600 transition-colors px-2 py-2"
           >
             Cancel subscription
           </Link>
@@ -702,10 +702,10 @@ function SubscriptionTab() {
                       <span
                         className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ${
                           entry.status === "paid"
-                            ? "bg-success-50 text-success-700"
+                            ? "bg-green-500/10 text-green-600"
                             : entry.status === "pending"
-                              ? "bg-yellow-50 text-yellow-700"
-                              : "bg-warn-50 text-warn-700"
+                              ? "bg-amber-500/10 text-amber-400"
+                              : "bg-red-500/10 text-red-600"
                         }`}
                       >
                         {entry.status.charAt(0).toUpperCase() +
@@ -821,11 +821,11 @@ function DataPrivacyTab() {
       </div>
 
       {/* Delete account */}
-      <div className="rounded-lg border border-warn-200 bg-warn-50 p-4">
-        <h3 className="text-sm font-semibold text-warn-800">
+      <div className="rounded-lg border border-red-500/20 bg-red-500/10 p-4">
+        <h3 className="text-sm font-semibold text-red-700 dark:text-red-300">
           Delete your account
         </h3>
-        <p className="mt-1 text-xs text-warn-700">
+        <p className="mt-1 text-xs text-red-600">
           This action is permanent and cannot be undone. All your data, essays,
           feedback, and subscription will be permanently deleted.
         </p>
@@ -872,11 +872,11 @@ function DataPrivacyTab() {
         }
       >
         <div className="space-y-4">
-          <div className="rounded-lg bg-warn-50 border border-warn-200 p-3">
-            <p className="text-sm text-warn-800 font-medium">
+          <div className="rounded-lg bg-red-500/10 border border-red-500/20 p-3">
+            <p className="text-sm text-red-700 dark:text-red-300 font-medium">
               This cannot be undone.
             </p>
-            <ul className="mt-2 space-y-1 text-xs text-warn-700 list-disc list-inside">
+            <ul className="mt-2 space-y-1 text-xs text-red-600 list-disc list-inside">
               <li>All your essays and feedback will be permanently deleted</li>
               <li>Your subscription will be cancelled immediately</li>
               <li>
@@ -898,7 +898,7 @@ function DataPrivacyTab() {
               type="text"
               value={deleteConfirm}
               onChange={(e) => setDeleteConfirm(e.target.value)}
-              className="mt-1 block w-full rounded-lg border border-border px-3 py-2 text-sm focus:border-warn-500 focus:ring-1 focus:ring-warn-500"
+              className="mt-1 block w-full rounded-lg border border-border px-3 py-2 text-sm focus:border-red-500 focus:ring-1 focus:ring-red-500"
               autoComplete="off"
               spellCheck={false}
             />

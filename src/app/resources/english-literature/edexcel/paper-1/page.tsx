@@ -561,7 +561,7 @@ export default function Paper1Page() {
             </div>
 
             {/* Sample paragraph */}
-            <div className="rounded-xl border-2 border-primary bg-blue-50 p-6">
+            <div className="rounded-xl border-2 border-primary bg-blue-500/10 p-6">
               <h3 className="text-lg font-bold text-foreground">
                 Model Paragraph Structure (PEA+C)
               </h3>
