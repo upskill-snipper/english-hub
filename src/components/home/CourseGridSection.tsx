@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { useBoardStore } from '@/store/board-store'
 import { PRICING } from '@/constants/pricing'
 import {
   BookOpen,
@@ -111,8 +110,6 @@ const courses = [
 ] as const
 
 export default function CourseGridSection() {
-  const selectedBoard = useBoardStore((s) => s.selectedBoard)
-
   return (
     <section className="py-24 sm:py-32">
       <div className="max-w-6xl mx-auto px-6">
@@ -126,7 +123,7 @@ export default function CourseGridSection() {
         </div>
 
         <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-          {courses.filter((course) => (course.boards as readonly string[]).includes('all') || (selectedBoard && (course.boards as readonly string[]).includes(selectedBoard))).map((course) => (
+          {courses.map((course) => (
             <Link key={course.title} href="/courses" className="block group">
             <Card
               className="overflow-hidden border-border/40 hover:border-primary/25 hover:shadow-card-hover transition-all duration-300 hover:-translate-y-0.5 flex flex-col"

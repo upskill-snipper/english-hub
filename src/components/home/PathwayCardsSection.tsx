@@ -3,16 +3,14 @@
 import Link from 'next/link'
 import { Card } from '@/components/ui/card'
 import { cn } from '@/lib/utils'
-import { useBoardStore } from '@/store/board-store'
 import {
   BookMarked,
   PenTool,
   RotateCcw,
+  BookOpen,
 } from 'lucide-react'
 
 export default function PathwayCardsSection() {
-  const selectedBoard = useBoardStore((s) => s.selectedBoard)
-
   return (
     <section className="py-24 sm:py-32">
       <div className="max-w-6xl mx-auto px-6">
@@ -26,41 +24,35 @@ export default function PathwayCardsSection() {
           </p>
         </div>
 
-        <div className={cn('grid sm:grid-cols-2 gap-5', selectedBoard === 'KS3' ? 'lg:grid-cols-3' : 'lg:grid-cols-4')}>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {[
             {
               icon: BookMarked,
               color: 'text-blue-400 bg-blue-500/10',
-              title: 'KS3 Reading',
-              subtitle: 'Years 7\u20139',
-              desc: 'Build your foundation with core reading comprehension and analysis skills.',
+              title: 'KS3 Reading & Writing',
+              subtitle: 'Years 7–9',
+              desc: 'Build your foundation with core reading comprehension, analysis, and writing skills.',
             },
             {
               icon: PenTool,
-              color: 'text-emerald-400 bg-emerald-500/10',
-              title: 'KS3 Writing',
-              subtitle: 'Years 7\u20139',
-              desc: 'Develop creative and transactional writing skills with structured lessons.',
+              color: 'text-primary bg-primary/10',
+              title: 'GCSE Language',
+              subtitle: 'All Boards',
+              desc: 'Master reading analysis and writing techniques for your Language papers.',
             },
-            ...(selectedBoard !== 'KS3'
-              ? [
-                  {
-                    icon: PenTool,
-                    color: 'text-primary bg-primary/10',
-                    title: 'GCSE Language',
-                    subtitle: selectedBoard ?? 'All Boards',
-                    desc: 'Master reading analysis and writing techniques for your Language papers.',
-                  },
-                ]
-              : []),
+            {
+              icon: BookOpen,
+              color: 'text-purple-400 bg-purple-500/10',
+              title: 'GCSE Literature',
+              subtitle: 'All Boards',
+              desc: 'Poetry, prose, and drama — essay technique and textual analysis for top grades.',
+            },
             {
               icon: RotateCcw,
               color: 'text-amber-400 bg-amber-500/10',
-              title: 'Revision',
+              title: 'Revision & Exam Prep',
               subtitle: 'Exam-Ready',
-              desc: selectedBoard === 'KS3'
-                ? 'Flashcards and revision tools to consolidate your Key Stage 3 knowledge.'
-                : 'Intensive revision courses to boost your grade in weeks, not months.',
+              desc: 'Intensive revision courses to boost your grade in weeks, not months.',
             },
           ].map((card) => (
             <Link key={card.title} href="/courses" className="block group">

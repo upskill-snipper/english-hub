@@ -7,32 +7,36 @@ import { ChevronDown } from 'lucide-react'
 
 const faqs = [
   {
-    q: 'Can I access on my phone?',
-    a: 'Absolutely. The English Hub is fully responsive and works perfectly on smartphones, tablets, and desktops. Study wherever suits you best.',
+    q: 'Is there a free trial?',
+    a: 'Yes! Your first month is completely free — no card required. You get full access to all courses, practice questions, flashcards, mock exams, and revision tools. Cancel anytime during the trial and you won\u2019t be charged a penny.',
   },
   {
     q: 'What exam boards do you cover?',
-    a: 'We cover AQA GCSE, Edexcel GCSE, Edexcel International GCSE (IGCSE), OCR, and WJEC/Eduqas. Each course is mapped to the relevant specification so you only study what you need.',
+    a: 'We cover AQA GCSE, Edexcel GCSE, Edexcel International GCSE (IGCSE), OCR, and WJEC/Eduqas. Each course is mapped to the exact specification so you only study what you need. We also cover KS3 for Years 7–9.',
+  },
+  {
+    q: 'How does the AI essay feedback work?',
+    a: 'Submit any essay and receive instant, detailed feedback scored against real GCSE mark schemes. You get an estimated grade band, assessment objective scores, specific strengths with direct quotes, and actionable suggestions to improve — like having a tutor available 24/7.',
+  },
+  {
+    q: 'How is this different from YouTube?',
+    a: 'YouTube offers scattered videos with no structure, no feedback, and no progress tracking. The English Hub provides sequenced lessons written by examiners, exam-style practice with model answers, AI feedback, GCSE 1–9 grade tracking, and certificates.',
   },
   {
     q: 'Can I cancel my subscription?',
     a: "Yes — cancel anytime from your account settings. There are no contracts or hidden fees. You'll keep access until the end of your billing period.",
   },
   {
-    q: 'Do I get a certificate?',
-    a: 'Yes. Every completed course awards a verifiable digital certificate you can share with schools, tutors, or on your profile.',
+    q: 'Is there a version for teachers and schools?',
+    a: 'Yes! Teachers get an AI lesson builder, student analytics dashboards, AI essay marking, and class management tools. Schools get a whole-school licence with department analytics, bulk user management, and dedicated support. We also have a Founding Schools Programme with preferential pricing for early adopters.',
   },
   {
-    q: 'Is there a free trial?',
-    a: 'Yes! Your first month is completely free. You get full access to all courses, practice questions, flashcards, and revision tools for 30 days. Cancel anytime during the trial and you won\u2019t be charged a penny.',
+    q: 'Can I access on my phone?',
+    a: 'Absolutely. The English Hub is fully responsive and works perfectly on smartphones, tablets, and desktops. Study wherever suits you best.',
   },
   {
-    q: 'How is this different from YouTube?',
-    a: 'YouTube offers scattered videos with no structure or feedback. The English Hub provides sequenced lessons written by examiners, exam-style practice with model answers, progress tracking, and certificates.',
-  },
-  {
-    q: 'Is there a version for teachers?',
-    a: 'Yes! Teachers get access to a lesson builder with 300+ templates, student analytics dashboards, AI essay marking for whole classes, and class management tools. Visit our For Teachers page to learn more.',
+    q: 'What grades does this cover?',
+    a: 'All content uses the GCSE 1–9 grading system. Every student gets a Working At Grade, Predicted Grade, and Target Grade so you always know where you stand and what to work on next. For KS3 students, we adapt the tracking to match your year group.',
   },
 ]
 

@@ -5,19 +5,34 @@ import { Quote, Star } from 'lucide-react'
 
 const testimonials = [
   {
-    quote: 'I went from a Grade 4 to a 7 in six months. The model answers are brilliant.',
-    name: 'Sophie',
-    role: 'Year 11',
+    quote: 'I went from a Grade 4 to a 7 in six months. The structured courses and model answers made everything click.',
+    name: 'Sophie T.',
+    role: 'Year 11 — AQA',
   },
   {
-    quote: "My daughter's confidence has completely changed. She actually wants to revise now.",
-    name: 'Mark',
+    quote: "My daughter's confidence has completely changed. She actually wants to revise now and her mock results have gone up two grades.",
+    name: 'Mark H.',
     role: 'Parent',
   },
   {
-    quote: 'The exam technique sections are worth the subscription alone.',
-    name: 'James',
-    role: 'GCSE Student',
+    quote: 'The AI essay feedback is like having a tutor available 24/7. It spotted weaknesses my teacher missed.',
+    name: 'James R.',
+    role: 'Year 11 — Edexcel',
+  },
+  {
+    quote: 'As a Head of English, the analytics dashboard alone saves me hours each week. We can track every student across all year groups.',
+    name: 'Mrs Patterson',
+    role: 'Head of English',
+  },
+  {
+    quote: 'The mock exams with grade boundaries are exactly like the real thing. I felt so prepared walking into my actual exam.',
+    name: 'Priya K.',
+    role: 'Year 11 — OCR',
+  },
+  {
+    quote: 'Finally an English resource that covers all the boards properly. The lesson builder has halved my planning time.',
+    name: 'Mr Davies',
+    role: 'English Teacher',
   },
 ]
 
