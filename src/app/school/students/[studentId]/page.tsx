@@ -38,7 +38,15 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
-import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor, formatPercentageWithGrade } from '@/lib/grades'
+import {
+  percentageToGCSEGrade,
+  percentageToGCSEGradeLabel,
+  gcseGradeColor,
+  formatPercentageWithGrade,
+  predictedGradeColor,
+  getGradeRecommendation,
+  isGCSEYearGroup,
+} from '@/lib/grades'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -681,7 +689,7 @@ export default function StudentDrilldownPage() {
   if (loading) {
     return (
       <div className="min-h-screen bg-background text-foreground">
-        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <div className="px-4 py-8 sm:px-6 lg:px-8">
           <div className="mb-6">
             <Skeleton className="h-4 w-32 mb-6" />
           </div>
@@ -711,7 +719,7 @@ export default function StudentDrilldownPage() {
   if (!student) {
     return (
       <div className="min-h-screen bg-background text-foreground">
-        <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <div className="px-4 py-8 sm:px-6 lg:px-8">
           <Link
             href="/school"
             className="mb-6 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -770,7 +778,7 @@ export default function StudentDrilldownPage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground print:bg-white print:text-black">
-      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+      <div className="px-4 py-8 sm:px-6 lg:px-8">
 
         {/* ── Back Link ──────────────────────────────────────────────────── */}
         <div className="mb-6 flex items-center justify-between print:hidden">
@@ -906,12 +914,12 @@ export default function StudentDrilldownPage() {
           <div className="rounded-xl border border-border bg-card p-5">
             <div className="flex items-center gap-2 text-muted-foreground mb-2">
               <BarChart3 className="h-4 w-4" />
-              <span className="text-xs font-medium uppercase tracking-wider">Avg Score</span>
+              <span className="text-xs font-medium uppercase tracking-wider">Working At Grade</span>
             </div>
-            <p className={`text-2xl font-bold tabular-nums ${scoreTextColor(student.averageQuizScore)}`}>
-              {student.averageQuizScore}%
+            <p className={`text-2xl font-bold tabular-nums ${gcseGradeColor(percentageToGCSEGrade(student.averageQuizScore))}`}>
+              Grade {percentageToGCSEGrade(student.averageQuizScore)}
             </p>
-            <p className="text-xs text-muted-foreground mt-1">Quiz Average</p>
+            <p className="text-xs text-muted-foreground mt-1">Based on quiz average ({student.averageQuizScore}%)</p>
           </div>
 
           <div className="rounded-xl border border-border bg-card p-5">

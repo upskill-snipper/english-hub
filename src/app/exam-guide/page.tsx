@@ -53,12 +53,6 @@ const BOARD_STYLES: Record<
     badge: 'bg-blue-500/15 text-blue-400',
     border: 'border-blue-500/40',
   },
-  Edexcel: {
-    accent: 'text-violet-400',
-    dot: 'bg-violet-500',
-    badge: 'bg-violet-500/15 text-violet-400',
-    border: 'border-violet-500/40',
-  },
   OCR: {
     accent: 'text-orange-400',
     dot: 'bg-orange-500',
@@ -92,17 +86,6 @@ const BOARD_CARDS = [
     badge: 'bg-blue-500/15 text-blue-400',
     description:
       'The most popular board in England. Known for clear structure, predictable question formats, and forgiving grade boundaries.',
-  },
-  {
-    id: 'Edexcel' as const,
-    slug: 'edexcel',
-    color: 'border-violet-500/50',
-    hoverColor: 'hover:border-violet-500/80 hover:bg-violet-500/10',
-    accent: 'text-violet-400',
-    dot: 'bg-violet-500',
-    badge: 'bg-violet-500/15 text-violet-400',
-    description:
-      'Pearson Edexcel offers two Language specs (A and B). Broad essay-style questions with emphasis on extended writing.',
   },
   {
     id: 'OCR' as const,
@@ -203,7 +186,7 @@ export default function ExamGuidePage() {
   const isGCSEBoard =
     selectedBoard != null &&
     selectedBoard !== 'KS3' &&
-    ['AQA', 'Edexcel', 'OCR', 'WJEC', 'IGCSE'].includes(selectedBoard)
+    ['AQA', 'OCR', 'WJEC', 'IGCSE'].includes(selectedBoard)
 
   const guide = isGCSEBoard ? getGuideByBoard(selectedBoard!) : null
   const style = isGCSEBoard ? BOARD_STYLES[selectedBoard!] : null

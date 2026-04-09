@@ -29,7 +29,20 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { DEMO_STUDENTS, type DemoStudent } from "@/data/demo-data"
-import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor, formatPercentageWithGrade } from "@/lib/grades"
+import {
+  percentageToGCSEGrade,
+  percentageToGCSEGradeLabel,
+  gcseGradeColor,
+  formatPercentageWithGrade,
+  predictedGradeColor,
+  predictedGradeBg,
+  getGradeRecommendation,
+  getPersonalisedRecommendations,
+  isGCSEYearGroup,
+  formatScoreForYearGroup,
+} from "@/lib/grades"
+import GradeProgressCard from "@/components/GradeProgressCard"
+import GradeRecommendations from "@/components/GradeRecommendations"
 
 function scoreColor(score: number) {
   if (score >= 70) return "text-green-400"
@@ -175,8 +188,45 @@ export default function TeacherStudentProfilePage() {
           </Badge>
         </div>
 
+        {/* Grade Cards */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-6">
+          <Card className="bg-white/[0.02] border-white/5">
+            <CardContent className="p-5">
+              <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-500 mb-1">Working At Grade</p>
+              <p className={`text-3xl font-light tabular-nums ${gcseGradeColor(student.workingAtGrade)}`}>
+                Grade {student.workingAtGrade}
+              </p>
+              <p className="text-[11px] text-neutral-500 mt-1">Based on last 5 assessments</p>
+            </CardContent>
+          </Card>
+          <Card className={`border ${predictedGradeBg(student.predictedGrade, student.workingAtGrade)}`}>
+            <CardContent className="p-5">
+              <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-500 mb-1">Predicted Grade</p>
+              <p className={`text-3xl font-light tabular-nums ${predictedGradeColor(student.predictedGrade, student.workingAtGrade)}`}>
+                Grade {student.predictedGrade}
+              </p>
+              <p className="text-[11px] text-neutral-500 mt-1">
+                {student.predictedGrade > student.workingAtGrade ? "Improving trajectory" : student.predictedGrade === student.workingAtGrade ? "Stable trajectory" : "Declining trajectory"}
+              </p>
+            </CardContent>
+          </Card>
+          <Card className="bg-white/[0.02] border-violet-500/20">
+            <CardContent className="p-5">
+              <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-500 mb-1">Target Grade</p>
+              <p className="text-3xl font-light text-violet-400 tabular-nums">
+                Grade {student.targetGrade}
+              </p>
+              <p className="text-[11px] text-neutral-500 mt-1">
+                {student.targetGrade - student.workingAtGrade > 0
+                  ? `${student.targetGrade - student.workingAtGrade} grade${student.targetGrade - student.workingAtGrade > 1 ? "s" : ""} to target`
+                  : "At target"}
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+
         {/* KPI Cards */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
           <Card className="bg-white/[0.02] border-white/5">
             <CardContent className="p-5">
               <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-500 mb-1">Progress</p>
@@ -187,9 +237,11 @@ export default function TeacherStudentProfilePage() {
           </Card>
           <Card className="bg-white/[0.02] border-white/5">
             <CardContent className="p-5">
-              <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-500 mb-1">Avg Score</p>
-              <p className={`text-3xl font-light tabular-nums ${scoreColor(student.averageScore)}`}>
-                {student.averageScore}%
+              <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-500 mb-1">
+                {isGCSEYearGroup(student.yearGroup) ? "Average Grade" : "Avg Score"}
+              </p>
+              <p className={`text-3xl font-light tabular-nums ${isGCSEYearGroup(student.yearGroup) ? gcseGradeColor(percentageToGCSEGrade(student.averageScore)) : scoreColor(student.averageScore)}`}>
+                {formatScoreForYearGroup(student.averageScore, student.yearGroup)}
               </p>
             </CardContent>
           </Card>
@@ -210,6 +262,31 @@ export default function TeacherStudentProfilePage() {
             </CardContent>
           </Card>
         </div>
+
+        {/* How to Reach Next Grade */}
+        <Card className="bg-white/[0.02] border-white/5 mb-8">
+          <CardHeader>
+            <CardTitle className="text-sm font-medium text-white/80 flex items-center gap-2">
+              <Lightbulb className="h-4 w-4 text-amber-400" />
+              How to Reach the Next Grade
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-3">
+              {getPersonalisedRecommendations(
+                student.workingAtGrade,
+                student.weaknesses.map((w) => typeof w === "string" ? w : w.name)
+              ).map((rec, i) => (
+                <div key={i} className="flex items-start gap-3 rounded-lg border border-white/5 bg-white/[0.02] p-3">
+                  <span className="mt-0.5 h-5 w-5 shrink-0 rounded-full bg-amber-500/15 text-amber-400 flex items-center justify-center text-[10px] font-bold">
+                    {i + 1}
+                  </span>
+                  <p className="text-sm text-white/70">{rec}</p>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
 
         {/* Teacher Action Buttons */}
         <div className="flex flex-wrap gap-3 mb-8">
@@ -265,6 +342,45 @@ export default function TeacherStudentProfilePage() {
                 </div>
               ))}
             </div>
+          </CardContent>
+        </Card>
+
+        {/* ── Grade Recommendations (Teacher View) ──────────────────── */}
+        <Card className="bg-white/[0.02] border-white/5 mb-8">
+          <CardHeader>
+            <CardTitle className="text-sm font-medium text-white/80 flex items-center gap-2">
+              <Lightbulb className="h-4 w-4 text-cyan-400" />
+              Next Grade Recommendations
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="mb-4">
+              <GradeProgressCard
+                currentGrade={percentageToGCSEGrade(student.averageScore)}
+                predictedGrade={percentageToGCSEGrade(student.averageScore)}
+                targetGrade={Math.min(9, percentageToGCSEGrade(student.averageScore) + 1)}
+                trend={
+                  student.recentScores.length >= 2 && student.recentScores[student.recentScores.length - 1] > student.recentScores[0]
+                    ? "up"
+                    : student.recentScores.length >= 2 && student.recentScores[student.recentScores.length - 1] < student.recentScores[0]
+                      ? "down"
+                      : "stable"
+                }
+                compact
+              />
+            </div>
+            <GradeRecommendations
+              currentGrade={percentageToGCSEGrade(student.averageScore)}
+              weakAreas={
+                (student.weaknesses || []).map((w) =>
+                  typeof w === "string" ? w : w.name
+                )
+              }
+              maxActions={3}
+              showResources={false}
+              showProgress
+              compact
+            />
           </CardContent>
         </Card>
 

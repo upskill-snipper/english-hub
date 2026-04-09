@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import Link from 'next/link'
 import {
   Sparkles,
   Users,
@@ -29,14 +28,14 @@ export default function CreatorsPage() {
       {/* Hero */}
       <section className="px-4 py-20 text-center">
         <div className="max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-accent/10 text-brand-accent text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
             <Sparkles className="w-4 h-4" />
             Creator Partners
           </div>
-          <h1 className="text-4xl sm:text-5xl font-bold text-brand-text mb-4">
+          <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
             Earn Money Sharing Education
           </h1>
-          <p className="text-lg text-brand-muted max-w-2xl mx-auto mb-8">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
             Join The English Hub&apos;s affiliate program. Earn 20% recurring commission
             on every student you refer.
           </p>
@@ -44,20 +43,20 @@ export default function CreatorsPage() {
             <a href="#apply" className="btn-primary text-lg px-8 py-4">
               Apply to Become a Partner
             </a>
-            <Link
-              href="/affiliates"
-              className="text-brand-muted hover:text-brand-text transition-colors text-sm underline underline-offset-2"
+            <a
+              href="mailto:info@Upskillenergy.com"
+              className="text-muted-foreground hover:text-foreground transition-colors text-sm underline underline-offset-2"
             >
-              Already an affiliate? Go to your dashboard
-            </Link>
+              Already an affiliate? Contact us
+            </a>
           </div>
         </div>
       </section>
 
       {/* How It Works */}
-      <section className="px-4 py-16 bg-brand-card/50">
+      <section className="px-4 py-16 bg-card/50">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-brand-text text-center mb-12">
+          <h2 className="text-2xl font-bold text-foreground text-center mb-12">
             How It Works
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -93,12 +92,12 @@ export default function CreatorsPage() {
       <section className="px-4 py-16">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center justify-center gap-3 mb-8">
-            <Calculator className="w-6 h-6 text-brand-accent" />
-            <h2 className="text-2xl font-bold text-brand-text text-center">
+            <Calculator className="w-6 h-6 text-primary" />
+            <h2 className="text-2xl font-bold text-foreground text-center">
               Earning Calculator
             </h2>
           </div>
-          <p className="text-brand-muted text-center mb-8">
+          <p className="text-muted-foreground text-center mb-8">
             See how much you could earn with our 20% recurring commission on the{' '}
             {PRICING.CURRENCY}{PRICING.MONTHLY}/mo plan.
           </p>
@@ -117,7 +116,7 @@ export default function CreatorsPage() {
               monthly={Number((1000 * PRICING.MONTHLY * 0.2).toFixed(2))}
             />
           </div>
-          <p className="text-brand-muted text-xs text-center mt-4">
+          <p className="text-muted-foreground text-xs text-center mt-4">
             Based on {PRICING.CURRENCY}{PRICING.MONTHLY}/mo subscription price.
             Commission is recurring for as long as the student remains subscribed.
           </p>
@@ -125,11 +124,11 @@ export default function CreatorsPage() {
       </section>
 
       {/* Content Ideas */}
-      <section className="px-4 py-16 bg-brand-card/50">
+      <section className="px-4 py-16 bg-card/50">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center justify-center gap-3 mb-8">
-            <Lightbulb className="w-6 h-6 text-brand-accent" />
-            <h2 className="text-2xl font-bold text-brand-text text-center">
+            <Lightbulb className="w-6 h-6 text-primary" />
+            <h2 className="text-2xl font-bold text-foreground text-center">
               Content Ideas That Convert
             </h2>
           </div>
@@ -165,7 +164,7 @@ export default function CreatorsPage() {
       {/* Benefits */}
       <section className="px-4 py-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-brand-text text-center mb-8">
+          <h2 className="text-2xl font-bold text-foreground text-center mb-8">
             Partner Benefits
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -204,12 +203,12 @@ export default function CreatorsPage() {
       </section>
 
       {/* Application Form */}
-      <section id="apply" className="px-4 py-16 bg-brand-card/50">
+      <section id="apply" className="px-4 py-16 bg-card/50">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-2xl font-bold text-brand-text text-center mb-2">
+          <h2 className="text-2xl font-bold text-foreground text-center mb-2">
             Apply to Become a Creator Partner
           </h2>
-          <p className="text-brand-muted text-center mb-8">
+          <p className="text-muted-foreground text-center mb-8">
             We review all applications within 48 hours.
           </p>
           <CreatorApplicationForm />
@@ -219,7 +218,7 @@ export default function CreatorsPage() {
       {/* FAQ */}
       <section className="px-4 py-16">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-brand-text text-center mb-8">
+          <h2 className="text-2xl font-bold text-foreground text-center mb-8">
             Frequently Asked Questions
           </h2>
           <div className="space-y-3">
@@ -273,12 +272,12 @@ function Step({
 }) {
   return (
     <div className="text-center">
-      <div className="w-14 h-14 rounded-full bg-brand-accent/10 text-brand-accent flex items-center justify-center mx-auto mb-4">
+      <div className="w-14 h-14 rounded-full bg-primary/10 text-primary flex items-center justify-center mx-auto mb-4">
         {icon}
       </div>
-      <div className="text-xs text-brand-muted mb-1">Step {number}</div>
-      <h3 className="text-base font-semibold text-brand-text mb-2">{title}</h3>
-      <p className="text-sm text-brand-muted">{description}</p>
+      <div className="text-xs text-muted-foreground mb-1">Step {number}</div>
+      <h3 className="text-base font-semibold text-foreground mb-2">{title}</h3>
+      <p className="text-sm text-muted-foreground">{description}</p>
     </div>
   )
 }
@@ -296,17 +295,17 @@ function EarningCard({
     <div
       className={`rounded-xl p-6 text-center ${
         highlighted
-          ? 'border-2 border-brand-accent bg-brand-accent/5'
+          ? 'border-2 border-primary bg-primary/5'
           : 'card'
       }`}
     >
-      <p className="text-brand-muted text-sm mb-2">
+      <p className="text-muted-foreground text-sm mb-2">
         {students.toLocaleString()} students referred
       </p>
-      <p className="text-3xl font-bold text-brand-text mb-1">
+      <p className="text-3xl font-bold text-foreground mb-1">
         {PRICING.CURRENCY}{monthly.toFixed(2)}
       </p>
-      <p className="text-brand-muted text-xs">per month, recurring</p>
+      <p className="text-muted-foreground text-xs">per month, recurring</p>
     </div>
   )
 }
@@ -325,13 +324,13 @@ function ContentIdea({
   return (
     <div className="card p-5">
       <div className="flex items-start gap-3">
-        <div className="w-10 h-10 rounded-lg bg-brand-accent/10 text-brand-accent flex items-center justify-center shrink-0">
+        <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
           {icon}
         </div>
         <div>
-          <h3 className="font-semibold text-brand-text mb-1">{title}</h3>
-          <p className="text-sm text-brand-muted mb-2">{description}</p>
-          <span className="text-xs text-brand-accent font-medium">{platform}</span>
+          <h3 className="font-semibold text-foreground mb-1">{title}</h3>
+          <p className="text-sm text-muted-foreground mb-2">{description}</p>
+          <span className="text-xs text-primary font-medium">{platform}</span>
         </div>
       </div>
     </div>
@@ -349,12 +348,12 @@ function Benefit({
 }) {
   return (
     <div className="flex items-start gap-3">
-      <div className="w-10 h-10 rounded-lg bg-brand-accent/10 text-brand-accent flex items-center justify-center shrink-0">
+      <div className="w-10 h-10 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
         {icon}
       </div>
       <div>
-        <h3 className="font-semibold text-brand-text mb-1">{title}</h3>
-        <p className="text-sm text-brand-muted">{description}</p>
+        <h3 className="font-semibold text-foreground mb-1">{title}</h3>
+        <p className="text-sm text-muted-foreground">{description}</p>
       </div>
     </div>
   )
@@ -368,15 +367,15 @@ function FAQ({ q, a }: { q: string; a: string }) {
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between p-4 text-left"
       >
-        <span className="font-medium text-brand-text pr-4">{q}</span>
+        <span className="font-medium text-foreground pr-4">{q}</span>
         {open ? (
-          <ChevronUp className="w-4 h-4 text-brand-muted shrink-0" />
+          <ChevronUp className="w-4 h-4 text-muted-foreground shrink-0" />
         ) : (
-          <ChevronDown className="w-4 h-4 text-brand-muted shrink-0" />
+          <ChevronDown className="w-4 h-4 text-muted-foreground shrink-0" />
         )}
       </button>
       {open && (
-        <div className="px-4 pb-4 text-sm text-brand-muted">{a}</div>
+        <div className="px-4 pb-4 text-sm text-muted-foreground">{a}</div>
       )}
     </div>
   )
@@ -424,17 +423,17 @@ function CreatorApplicationForm() {
   if (success) {
     return (
       <div className="card p-8 text-center">
-        <CheckCircle2 className="w-12 h-12 text-brand-accent mx-auto mb-4" />
-        <h3 className="text-xl font-semibold text-brand-text mb-2">
+        <CheckCircle2 className="w-12 h-12 text-primary mx-auto mb-4" />
+        <h3 className="text-xl font-semibold text-foreground mb-2">
           Application Submitted!
         </h3>
-        <p className="text-brand-muted">
+        <p className="text-muted-foreground">
           We&apos;ll review your application within 48 hours and email you with next
-          steps. In the meantime, check out our{' '}
-          <Link href="/affiliates" className="text-brand-accent underline">
-            affiliate programme page
-          </Link>{' '}
-          for more details.
+          steps. If you have any questions, contact us at{' '}
+          <a href="mailto:info@Upskillenergy.com" className="text-primary underline">
+            info@Upskillenergy.com
+          </a>
+          .
         </p>
       </div>
     )
@@ -443,7 +442,7 @@ function CreatorApplicationForm() {
   return (
     <form onSubmit={handleSubmit} className="card p-6 space-y-5">
       {error && (
-        <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-3 text-red-400 text-sm flex items-start gap-2">
+        <div className="bg-destructive/10 border border-destructive/30 rounded-lg p-3 text-destructive text-sm flex items-start gap-2">
           <AlertTriangle className="w-4 h-4 mt-0.5 shrink-0" />
           {error}
         </div>

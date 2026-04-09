@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
@@ -16,7 +16,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Alert, AlertDescription } from '@/components/ui/alert'
 
-export default function RegisterPage() {
+function RegisterForm() {
   const searchParams = useSearchParams()
   const selectedBoard = useBoardStore((s) => s.selectedBoard)
   const [accountType, setAccountType] = useState<'student' | 'teacher'>(
@@ -607,6 +607,18 @@ export default function RegisterPage() {
                 </div>
               </div>
 
+              <p className="text-xs text-muted-foreground">
+                By creating an account, you agree to our{' '}
+                <Link href="/terms" className="underline underline-offset-2 hover:text-foreground transition-colors">
+                  Terms of Service
+                </Link>{' '}
+                and{' '}
+                <Link href="/privacy-policy" className="underline underline-offset-2 hover:text-foreground transition-colors">
+                  Privacy Policy
+                </Link>
+                .
+              </p>
+
               <Button
                 type="submit"
                 disabled={loading || (accountType === 'student' && isUnder13)}
@@ -643,5 +655,13 @@ export default function RegisterPage() {
         </Card>
       </div>
     </div>
+  )
+}
+
+export default function RegisterPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-background" />}>
+      <RegisterForm />
+    </Suspense>
   )
 }

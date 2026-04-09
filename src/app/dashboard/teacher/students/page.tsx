@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { percentageToGCSEGradeLabel } from "@/lib/grades";
+import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor, predictedGradeColor, calculateWorkingAtGrade, calculateTargetGrade } from "@/lib/grades";
 
 /* ─── Mock data ─────────────────────────────────────────────────────────
    TODO: Replace with real API calls:
@@ -175,10 +175,10 @@ export default function StudentsPage() {
                     <p className="text-xs text-muted-foreground">Essays</p>
                   </div>
                   <div className="text-center">
-                    <p className={`font-semibold ${scoreColor(student.averageScore)}`}>
-                      {student.averageScore}%
+                    <p className={`font-semibold ${gcseGradeColor(percentageToGCSEGrade(student.averageScore))}`}>
+                      Grade {percentageToGCSEGrade(student.averageScore)}
                     </p>
-                    <p className="text-xs text-muted-foreground">Avg Score</p>
+                    <p className="text-xs text-muted-foreground">Working At</p>
                   </div>
                   <div className="flex items-center gap-1">
                     {trendIcon(student.trend)}

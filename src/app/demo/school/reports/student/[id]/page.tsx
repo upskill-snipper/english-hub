@@ -191,7 +191,7 @@ export default function StudentReportPage() {
         }
       `}</style>
 
-      <div className="print-container max-w-4xl mx-auto px-4 py-8 space-y-6">
+      <div className="print-container px-4 py-8 space-y-6">
         {/* Action Bar */}
         <div className="no-print flex items-center justify-between mb-4">
           <Link

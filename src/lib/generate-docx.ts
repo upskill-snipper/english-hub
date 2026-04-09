@@ -429,3 +429,83 @@ export function generateMarkSchemeWord(
 
   downloadAsWord(meta.title, htmlContent, `Mark-Scheme-${topic.replace(/[^a-zA-Z0-9]/g, '-')}`)
 }
+
+// ═══════════════════════════════════════════════════════════════════════════
+//  4. HOMEWORK ASSIGNMENT — Word download
+// ═══════════════════════════════════════════════════════════════════════════
+
+export interface WordHomeworkData {
+  title: string
+  topic: string
+  homeworkType: string
+  yearGroup: string
+  targetGrade: string
+  estimatedTime: string
+  instructions: string
+  questions: { question: string; marks: number; lines: number; modelAnswer?: string }[]
+  successCriteria: string[]
+  extensionTasks: string[]
+  markScheme: string[]
+}
+
+export function generateHomeworkWord(data: WordHomeworkData): void {
+  const dateStr = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
+  const totalMarks = data.questions.reduce((s, q) => s + q.marks, 0)
+
+  const questionsHtml = data.questions
+    .map(
+      (q, i) => `
+      <div style="margin-bottom:18pt;page-break-inside:avoid;">
+        <p style="font-weight:bold;font-size:10.5pt;margin-bottom:4pt;">
+          <span style="color:#2563eb;margin-right:6pt;">${i + 1}.</span>
+          ${escHtml(q.question)}
+          <span style="font-size:8pt;color:#6b7280;font-weight:normal;margin-left:8pt;">[${q.marks} mark${q.marks !== 1 ? 's' : ''}]</span>
+        </p>
+        <div>${Array.from({ length: q.lines }, () => '<div class="answer-line"></div>').join('')}</div>
+      </div>`,
+    )
+    .join('')
+
+  const htmlContent = `
+    <div class="brand-header">
+      <div class="brand-name">The English Hub</div>
+      <div class="brand-tagline">theenglishhub.app &mdash; ${escHtml(dateStr)}</div>
+    </div>
+
+    <h1>${escHtml(data.title)}</h1>
+    <p style="font-size:10pt;color:#718096;margin-bottom:14pt;">${escHtml(data.topic)} &mdash; ${escHtml(data.homeworkType)}</p>
+
+    <table class="meta-grid">
+      <tr><td>Topic</td><td>${escHtml(data.topic)}</td></tr>
+      <tr><td>Year Group</td><td>${escHtml(data.yearGroup)}</td></tr>
+      <tr><td>Target Grade</td><td>${escHtml(data.targetGrade)}</td></tr>
+      <tr><td>Est. Time</td><td>${escHtml(data.estimatedTime)}</td></tr>
+      <tr><td>Total Marks</td><td>${totalMarks}</td></tr>
+    </table>
+
+    <div class="info-box">
+      <p style="font-weight:bold;margin-bottom:4pt;">Instructions</p>
+      <p>${escHtml(data.instructions)}</p>
+    </div>
+
+    <div class="tip">
+      <p style="font-weight:bold;margin-bottom:4pt;">Success Criteria</p>
+      <ul>${data.successCriteria.map((s) => `<li>${escHtml(s)}</li>`).join('')}</ul>
+    </div>
+
+    <p style="margin-bottom:14pt;"><strong>Name:</strong> _______________________________ &nbsp; <strong>Date:</strong> _______________</p>
+
+    ${questionsHtml}
+
+    <div style="text-align:right;border-top:1px solid #e2e8f0;padding-top:8pt;margin-top:16pt;">
+      <p style="font-weight:bold;">Total: _______ / ${totalMarks}</p>
+    </div>
+
+    <div style="margin-top:16pt;background-color:#faf5ff;padding:10pt 14pt;border-left:4px solid #7c3aed;">
+      <p style="font-weight:bold;color:#5b21b6;margin-bottom:4pt;">Extension Tasks (Higher Ability)</p>
+      <ul>${data.extensionTasks.map((t) => `<li>${escHtml(t)}</li>`).join('')}</ul>
+    </div>
+  `
+
+  downloadAsWord(data.title, htmlContent, `Homework-${data.topic.replace(/[^a-zA-Z0-9]/g, '-')}`)
+}

@@ -768,3 +768,150 @@ export function generateRevisionGuide(topic: string, data: RevisionGuideData): v
 
   openHtmlInNewTab(htmlShell(`${topic} — Revision Guide`, body))
 }
+
+// ═══════════════════════════════════════════════════════════════════════════
+//  5. HOMEWORK ASSIGNMENT GENERATOR
+// ═══════════════════════════════════════════════════════════════════════════
+
+export interface HomeworkQuestion {
+  question: string
+  marks: number
+  lines: number
+  modelAnswer?: string
+}
+
+export interface HomeworkData {
+  title: string
+  topic: string
+  homeworkType: string
+  yearGroup: string
+  targetGrade: string
+  estimatedTime: string
+  instructions: string
+  questions: HomeworkQuestion[]
+  successCriteria: string[]
+  extensionTasks: string[]
+  markScheme: string[]
+}
+
+export function generateHomeworkPdf(data: HomeworkData): void {
+  const totalMarks = data.questions.reduce((s, q) => s + q.marks, 0)
+
+  const questionsHtml = data.questions
+    .map(
+      (q, i) => `
+      <div style="margin-bottom:24px;page-break-inside:avoid;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;">
+          <p style="font-weight:600;font-size:10.5pt;flex:1;">
+            <span style="color:#2563eb;font-weight:700;margin-right:8px;">${i + 1}.</span>
+            ${escHtml(q.question)}
+          </p>
+          <span style="font-size:8pt;color:#6b7280;white-space:nowrap;margin-left:12px;background:#f3f4f6;padding:2px 8px;border-radius:3px;font-weight:600;">${q.marks} mark${q.marks !== 1 ? "s" : ""}</span>
+        </div>
+        <div class="answer-lines">${Array.from({ length: q.lines }, () => '<div class="answer-line"></div>').join("")}</div>
+      </div>`,
+    )
+    .join("")
+
+  const successCriteriaHtml = data.successCriteria
+    .map((s) => `<li style="font-size:9.5pt;margin-bottom:3px;">${escHtml(s)}</li>`)
+    .join("")
+
+  const extensionHtml = data.extensionTasks
+    .map((t) => `<li style="font-size:9.5pt;margin-bottom:3px;">${escHtml(t)}</li>`)
+    .join("")
+
+  const body = `
+    <h1>${escHtml(data.title)}</h1>
+    <p class="subtitle">${escHtml(data.topic)} — ${escHtml(data.homeworkType)}</p>
+
+    <div class="meta-grid">
+      <div class="meta-item"><label>Topic</label><span>${escHtml(data.topic)}</span></div>
+      <div class="meta-item"><label>Year Group</label><span>${escHtml(data.yearGroup)}</span></div>
+      <div class="meta-item"><label>Target Grade</label><span>${escHtml(data.targetGrade)}</span></div>
+      <div class="meta-item"><label>Est. Time</label><span>${escHtml(data.estimatedTime)}</span></div>
+      <div class="meta-item"><label>Total Marks</label><span>${totalMarks}</span></div>
+      <div class="meta-item"><label>Type</label><span>${escHtml(data.homeworkType)}</span></div>
+    </div>
+
+    <div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:12px 16px;margin-bottom:20px;">
+      <p style="font-size:10pt;font-weight:600;color:#1e40af;margin-bottom:4px;">Instructions</p>
+      <p style="font-size:9.5pt;color:#374151;">${escHtml(data.instructions)}</p>
+    </div>
+
+    <div style="background:#f0fdf4;border:1px solid #86efac;border-radius:6px;padding:12px 16px;margin-bottom:20px;">
+      <p style="font-size:10pt;font-weight:600;color:#166534;margin-bottom:6px;">Success Criteria</p>
+      <ul style="margin-left:16px;">${successCriteriaHtml}</ul>
+    </div>
+
+    <div style="display:flex;gap:24px;margin-bottom:20px;font-size:9.5pt;">
+      <p><strong>Name:</strong> ________________________________________</p>
+      <p><strong>Date:</strong> ____________________</p>
+    </div>
+
+    ${questionsHtml}
+
+    <div style="margin-top:24px;padding:12px 16px;background:#f9fafb;border:1px solid #e5e7eb;border-radius:6px;text-align:right;">
+      <p style="font-size:10pt;font-weight:700;">Total: _______ / ${totalMarks}</p>
+    </div>
+
+    <div style="margin-top:24px;background:#faf5ff;border:1px solid #c4b5fd;border-radius:6px;padding:12px 16px;page-break-inside:avoid;">
+      <p style="font-size:10pt;font-weight:600;color:#5b21b6;margin-bottom:6px;">Extension Tasks (Higher Ability)</p>
+      <ul style="margin-left:16px;">${extensionHtml}</ul>
+    </div>
+  `
+
+  openHtmlInNewTab(htmlShell(data.title, body))
+}
+
+export function generateHomeworkMarkSchemePdf(data: HomeworkData): void {
+  const totalMarks = data.questions.reduce((s, q) => s + q.marks, 0)
+
+  const answersHtml = data.questions
+    .map(
+      (q, i) => `
+      <div style="margin-bottom:20px;page-break-inside:avoid;border:1px solid #e5e7eb;border-radius:6px;padding:14px 16px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;">
+          <p style="font-weight:600;font-size:10.5pt;flex:1;">
+            <span style="color:#2563eb;font-weight:700;margin-right:8px;">Q${i + 1}.</span>
+            ${escHtml(q.question)}
+          </p>
+          <span style="font-size:8pt;color:#6b7280;white-space:nowrap;margin-left:12px;background:#f3f4f6;padding:2px 8px;border-radius:3px;font-weight:600;">${q.marks} mark${q.marks !== 1 ? "s" : ""}</span>
+        </div>
+        ${q.modelAnswer ? `<div style="border-left:3px solid #16a34a;padding:8px 14px;background:#f0fdf4;margin-top:8px;"><p style="font-size:8pt;text-transform:uppercase;letter-spacing:0.5pt;font-weight:700;color:#16a34a;margin-bottom:4px;">Model Answer</p><p style="font-size:9.5pt;color:#374151;">${escHtml(q.modelAnswer)}</p></div>` : ""}
+      </div>`,
+    )
+    .join("")
+
+  const markSchemeHtml = data.markScheme
+    .map((m) => `<li style="font-size:9.5pt;margin-bottom:3px;">${escHtml(m)}</li>`)
+    .join("")
+
+  const body = `
+    <h1>${escHtml(data.title)} — Mark Scheme</h1>
+    <p class="subtitle">${escHtml(data.topic)} — Teacher Copy</p>
+
+    <div class="meta-grid">
+      <div class="meta-item"><label>Topic</label><span>${escHtml(data.topic)}</span></div>
+      <div class="meta-item"><label>Year Group</label><span>${escHtml(data.yearGroup)}</span></div>
+      <div class="meta-item"><label>Target Grade</label><span>${escHtml(data.targetGrade)}</span></div>
+      <div class="meta-item"><label>Total Marks</label><span>${totalMarks}</span></div>
+    </div>
+
+    <div style="background:#fef2f2;border:1px solid #fca5a5;border-radius:6px;padding:12px 16px;margin-bottom:20px;">
+      <p style="font-size:10pt;font-weight:600;color:#991b1b;">TEACHER COPY — DO NOT DISTRIBUTE TO STUDENTS</p>
+    </div>
+
+    <h2>Marking Guidance</h2>
+    <ul style="margin-left:16px;margin-bottom:20px;">${markSchemeHtml}</ul>
+
+    <h2>Questions & Model Answers</h2>
+    ${answersHtml}
+
+    <div style="margin-top:24px;padding:12px 16px;background:#f9fafb;border:1px solid #e5e7eb;border-radius:6px;text-align:right;">
+      <p style="font-size:10pt;font-weight:700;">Total: ${totalMarks} marks</p>
+    </div>
+  `
+
+  openHtmlInNewTab(htmlShell(`${data.title} — Mark Scheme`, body))
+}

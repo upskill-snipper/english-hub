@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { percentageToGCSEGradeLabel } from "@/lib/grades";
+import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor } from "@/lib/grades";
 
 /* ─── Mock data ─────────────────────────────────────────────────────────
    TODO: Replace all mock data with real API calls:
@@ -152,8 +152,8 @@ export default function TeacherDashboardPage() {
             </svg>
           </div>
           <div>
-            <p className="text-2xl font-bold text-foreground">{stats.averageScore}%</p>
-            <p className="text-xs text-muted-foreground">Average Class Score</p>
+            <p className={`text-2xl font-bold ${gcseGradeColor(percentageToGCSEGrade(stats.averageScore))}`}>Grade {percentageToGCSEGrade(stats.averageScore)}</p>
+            <p className="text-xs text-muted-foreground">Average Class Grade</p>
           </div>
         </div>
 

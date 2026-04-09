@@ -7,6 +7,7 @@ const legalPages = [
   { href: "/terms", label: "Terms & Conditions" },
   { href: "/privacy-policy", label: "Privacy Policy" },
   { href: "/cookie-policy", label: "Cookie Policy" },
+  { href: "/refund-policy", label: "Refund Policy" },
   { href: "/legal/cancellation", label: "Cancellation Policy" },
   { href: "/legal/acceptable-use", label: "Acceptable Use Policy" },
   { href: "/legal/ai-transparency", label: "AI Transparency" },
@@ -14,6 +15,7 @@ const legalPages = [
   { href: "/accessibility", label: "Accessibility Statement" },
   { href: "/legal/complaints", label: "Complaints Procedure" },
   { href: "/legal/cancellation-form", label: "Cancellation Form" },
+  { href: "/data-processing", label: "Data Processing" },
   { href: "/legal/privacy-qatar", label: "Qatar Privacy Notice" },
   { href: "/legal/disclaimer", label: "Full Disclaimer" },
 ];
@@ -157,7 +159,7 @@ export default function LegalLayout({
           {/* Main content */}
           <main className="min-w-0">
             <article className="bg-card rounded-lg shadow-md border border-border p-6 sm:p-8 lg:p-10">
-              <div className="prose prose-gray max-w-none prose-headings:text-foreground prose-a:text-foreground prose-a:underline">
+              <div className="prose dark:prose-invert max-w-none prose-headings:text-foreground prose-a:text-foreground prose-a:underline">
                 {children}
               </div>
               <ExamBoardDisclaimer />

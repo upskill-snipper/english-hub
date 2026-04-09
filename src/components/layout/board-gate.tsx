@@ -71,7 +71,7 @@ export function BoardGate() {
   // Skip the homepage (full-width landing page) and auth-related pages
   if (pathname === '/') return null
 
-  const skipPaths = ['/auth', '/verify', '/for-teachers', '/for-parents', '/for-schools', '/account', '/admin', '/affiliates', '/creators', '/school', '/help', '/legal', '/dashboard', '/safeguarding']
+  const skipPaths = ['/auth', '/verify', '/for-teachers', '/for-parents', '/for-schools', '/account', '/admin', '/affiliates', '/creators', '/school', '/demo', '/help', '/legal', '/dashboard', '/safeguarding']
   if (skipPaths.some((p) => pathname.startsWith(p))) {
     return null
   }

@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { DEMO_STUDENTS, DEMO_CLASSES } from "@/data/demo-data"
 import { useScrollRestore } from "@/hooks/useScrollRestore"
-import { percentageToGCSEGrade } from "@/lib/grades"
+import { percentageToGCSEGrade, gcseGradeColor, predictedGradeColor, calculateWorkingAtGrade, calculatePredictedGrade, calculateTargetGrade, isGCSEYearGroup, formatScoreForYearGroup } from "@/lib/grades"
 
 // ---------------------------------------------------------------------------
 // Derive enriched student data from the base demo data
@@ -29,6 +29,9 @@ interface EnrichedStudent {
   status: StudentStatus
   lastActive: string
   initials: string
+  workingAtGrade: number
+  predictedGrade: number
+  targetGrade: number
 }
 
 function seededHash(str: string): number {
@@ -122,6 +125,10 @@ function generateExtraStudents(): EnrichedStudent[] {
       status = "On Track"
     }
 
+    const avgScore = deriveAverageScore(progress, id)
+    const wag = percentageToGCSEGrade(avgScore)
+    const pGrade = percentageToGCSEGrade(Math.max(0, Math.min(100, avgScore + ((r4 % 20) - 10))))
+    const tGrade = calculateTargetGrade(wag)
     extras.push({
       id,
       name,
@@ -130,17 +137,20 @@ function generateExtraStudents(): EnrichedStudent[] {
       className: cls.name,
       classId: cId,
       progress,
-      averageScore: deriveAverageScore(progress, id),
+      averageScore: avgScore,
       status,
       lastActive: lastActiveTimes[r3 % lastActiveTimes.length],
       initials: getInitials(name),
+      workingAtGrade: wag,
+      predictedGrade: pGrade,
+      targetGrade: tGrade,
     })
   }
   return extras
 }
 
 const ALL_STUDENTS = [
-  ...DEMO_STUDENTS.map((s) => ({
+  ...DEMO_STUDENTS.map((s): EnrichedStudent => ({
     id: s.id,
     name: s.name,
     email: deriveEmail(s.name, s.id),
@@ -152,6 +162,9 @@ const ALL_STUDENTS = [
     status: deriveStatus(s.overallProgress, s.atRisk),
     lastActive: s.lastActive,
     initials: getInitials(s.name),
+    workingAtGrade: s.workingAtGrade,
+    predictedGrade: s.predictedGrade,
+    targetGrade: s.targetGrade,
   })),
   ...generateExtraStudents(),
 ]
@@ -483,7 +496,9 @@ export default function StudentsPage() {
                   <th className="px-4 py-3 text-left font-medium text-muted-foreground">Year</th>
                   <th className="px-4 py-3 text-left font-medium text-muted-foreground hidden lg:table-cell">Class</th>
                   <th className="px-4 py-3 text-left font-medium text-muted-foreground">Progress</th>
-                  <th className="px-4 py-3 text-left font-medium text-muted-foreground hidden sm:table-cell">Avg Score</th>
+                  <th className="px-4 py-3 text-left font-medium text-muted-foreground hidden sm:table-cell">Working At</th>
+                  <th className="px-4 py-3 text-left font-medium text-muted-foreground hidden md:table-cell">Predicted</th>
+                  <th className="px-4 py-3 text-left font-medium text-muted-foreground hidden lg:table-cell">Target</th>
                   <th className="px-4 py-3 text-left font-medium text-muted-foreground">Status</th>
                   <th className="px-4 py-3 text-left font-medium text-muted-foreground hidden xl:table-cell">Last Active</th>
                 </tr>
@@ -544,7 +559,13 @@ export default function StudentsPage() {
                         </div>
                       </td>
                       <td className="px-4 py-3 hidden sm:table-cell">
-                        <span className="tabular-nums text-foreground">{student.averageScore}% <span className="text-xs text-muted-foreground">(G{percentageToGCSEGrade(student.averageScore)})</span></span>
+                        <span className={`tabular-nums font-medium ${gcseGradeColor(student.workingAtGrade)}`}>Grade {student.workingAtGrade}</span>
+                      </td>
+                      <td className="px-4 py-3 hidden md:table-cell">
+                        <span className={`tabular-nums font-medium ${predictedGradeColor(student.predictedGrade, student.workingAtGrade)}`}>Grade {student.predictedGrade}</span>
+                      </td>
+                      <td className="px-4 py-3 hidden lg:table-cell">
+                        <span className="tabular-nums font-medium text-violet-500">Grade {student.targetGrade}</span>
                       </td>
                       <td className="px-4 py-3">
                         <span className={`inline-flex items-center rounded-full border px-2 py-0.5 text-xs font-semibold whitespace-nowrap ${STATUS_COLORS[student.status]}`}>
@@ -559,7 +580,7 @@ export default function StudentsPage() {
                 })}
                 {paginated.length === 0 && (
                   <tr>
-                    <td colSpan={9} className="px-4 py-12 text-center text-muted-foreground">
+                    <td colSpan={11} className="px-4 py-12 text-center text-muted-foreground">
                       No students match your filters.
                     </td>
                   </tr>

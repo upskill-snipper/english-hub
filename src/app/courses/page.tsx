@@ -395,26 +395,26 @@ export default function CourseCataloguePage() {
         )}
 
         {/* Category navigation bar */}
-        <div className="mb-6 flex flex-wrap gap-2">
+        <div className="mb-6 flex flex-wrap gap-2 rounded-xl border border-border/60 bg-muted/40 p-1.5">
           {CATEGORIES.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
               aria-pressed={activeCategory === cat.id}
               className={cn(
-                'inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 text-sm font-medium transition-all duration-200',
+                'inline-flex items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200',
                 activeCategory === cat.id
                   ? 'bg-primary text-primary-foreground shadow-sm'
-                  : 'bg-card border border-border text-muted-foreground hover:border-primary/40 hover:text-foreground',
+                  : 'text-muted-foreground hover:bg-background hover:text-foreground hover:shadow-sm',
               )}
             >
               {cat.label}
               <span
                 className={cn(
-                  'ml-0.5 text-xs tabular-nums',
+                  'ml-0.5 rounded-full px-1.5 py-0.5 text-[10px] font-bold tabular-nums leading-none',
                   activeCategory === cat.id
-                    ? 'text-primary-foreground/70'
-                    : 'text-muted-foreground/60',
+                    ? 'bg-primary-foreground/20 text-primary-foreground'
+                    : 'bg-muted text-muted-foreground',
                 )}
               >
                 {categoryCounts[cat.id] ?? 0}
@@ -534,16 +534,23 @@ export default function CourseCataloguePage() {
           </div>
         ) : (
           <>
-            {/* Recommended section */}
+            {/* Featured / Recommended section */}
             {activeCategory === 'all' &&
               !searchQuery.trim() &&
               recommended.length > 0 && (
-                <div className="mb-10">
-                  <div className="mb-4 flex items-center gap-2">
-                    <Star className="h-5 w-5 text-amber-400" />
-                    <h2 className="text-lg font-bold tracking-tight text-foreground">
-                      Recommended for You
-                    </h2>
+                <div className="mb-12 rounded-xl border border-amber-500/20 bg-amber-500/[0.03] p-5 sm:p-6">
+                  <div className="mb-5 flex items-center gap-2.5">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-500/15">
+                      <Star className="h-4 w-4 text-amber-400" />
+                    </div>
+                    <div>
+                      <h2 className="text-lg font-bold tracking-tight text-foreground">
+                        Recommended for You
+                      </h2>
+                      <p className="text-xs text-muted-foreground">
+                        Based on your level and preferences
+                      </p>
+                    </div>
                     <LearningTip categories={['course', 'motivation']} />
                   </div>
                   <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
@@ -690,12 +697,12 @@ function CategorySection({
         <div className="mt-5 text-center">
           <button
             onClick={onToggle}
-            className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-card px-5 py-2 text-sm font-medium text-foreground hover:border-primary/40 hover:text-primary transition-colors"
+            className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-medium text-foreground hover:border-primary/40 hover:text-primary transition-all duration-200 hover:shadow-sm"
           >
             {expanded ? 'Show Less' : `View All ${courses.length} Courses`}
             <ChevronRight
               className={cn(
-                'h-4 w-4 transition-transform',
+                'h-4 w-4 transition-transform duration-200',
                 expanded ? 'rotate-90' : '',
               )}
             />
@@ -715,22 +722,24 @@ interface CourseCardProps {
 }
 
 const CourseCard = memo(function CourseCard({ course }: CourseCardProps) {
-  const [showDetails, setShowDetails] = useState(false)
+  const totalLessons = course.moduleList.reduce(
+    (sum, mod) => sum + (mod.quiz?.length ?? 0),
+    0,
+  )
+  const categoryLabel = deriveCategory(course)
 
   return (
-    <div
-      className="group relative"
-      onMouseEnter={() => setShowDetails(true)}
-      onMouseLeave={() => setShowDetails(false)}
-    >
+    <div className="group relative">
       <Link href={`/courses/${course.id}`}>
         <Card className="flex h-full flex-col overflow-hidden border-border/40 hover:border-primary/25 hover:shadow-card-hover transition-all duration-300 hover:-translate-y-0.5">
+          {/* Colour accent bar */}
           <div
-            className="h-1 w-full"
+            className="h-1.5 w-full"
             style={{ backgroundColor: course.color }}
           />
 
-          <CardHeader className="pb-0">
+          <CardHeader className="pb-1">
+            {/* Badges row */}
             <div className="mb-2 flex flex-wrap items-center gap-1.5">
               <Badge
                 variant="outline"
@@ -750,6 +759,12 @@ const CourseCard = memo(function CourseCard({ course }: CourseCardProps) {
                   {course.board}
                 </Badge>
               )}
+              <Badge
+                variant="outline"
+                className="rounded-full border-border/60 text-[10px] text-muted-foreground capitalize"
+              >
+                {categoryLabel === 'exam-skills' ? 'Exam Skills' : categoryLabel}
+              </Badge>
             </div>
 
             <CardTitle className="text-base font-bold tracking-tight text-foreground group-hover:text-primary transition-colors duration-200 line-clamp-2">
@@ -757,41 +772,39 @@ const CourseCard = memo(function CourseCard({ course }: CourseCardProps) {
             </CardTitle>
           </CardHeader>
 
-          <CardContent className="flex-1 pt-2">
+          <CardContent className="flex-1 pt-1">
             <p className="text-sm text-muted-foreground line-clamp-2">
               {course.subtitle}
             </p>
 
-            <div
-              className={cn(
-                'overflow-hidden transition-all duration-200',
-                showDetails
-                  ? 'max-h-24 opacity-100 mt-2'
-                  : 'max-h-0 opacity-0',
-              )}
-            >
-              <p className="text-xs leading-relaxed text-muted-foreground/80 line-clamp-3">
-                {course.description}
-              </p>
-            </div>
-
-            <div className="mt-3 flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
+            {/* Stats grid */}
+            <div className="mt-3 grid grid-cols-2 gap-x-3 gap-y-1.5 text-xs text-muted-foreground">
               <span className="inline-flex items-center gap-1">
-                <Clock className="h-3 w-3" />
-                {course.duration}
+                <BookOpen className="h-3 w-3 shrink-0" />
+                {course.moduleList.length} modules
               </span>
               <span className="inline-flex items-center gap-1">
-                <BookOpen className="h-3 w-3" />
-                {course.moduleList.length} modules
+                <Clock className="h-3 w-3 shrink-0" />
+                {course.duration}
+              </span>
+              {totalLessons > 0 && (
+                <span className="inline-flex items-center gap-1">
+                  <PenTool className="h-3 w-3 shrink-0" />
+                  {totalLessons} quizzes
+                </span>
+              )}
+              <span className="inline-flex items-center gap-1">
+                <GraduationCap className="h-3 w-3 shrink-0" />
+                {course.level}
               </span>
             </div>
           </CardContent>
 
-          <CardFooter className="pt-3">
+          <CardFooter className="pt-2">
             <div className="flex w-full items-center justify-between">
-              <span className="inline-flex items-center gap-1 text-xs text-primary">
+              <span className="inline-flex items-center gap-1.5 rounded-md bg-emerald-500/10 px-2 py-1 text-xs font-semibold text-emerald-500 ring-1 ring-emerald-500/20">
                 <Play className="h-3 w-3" />
-                Free preview
+                Free Preview
               </span>
               <Button
                 variant="ghost"

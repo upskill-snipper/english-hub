@@ -252,7 +252,7 @@ export default function JoinCodesPage() {
   // ── Render ──────────────────────────────────────────────────────────────────
 
   return (
-    <div className="space-y-8 p-6 max-w-6xl mx-auto">
+    <div className="space-y-8 p-6">
       {/* Header */}
       <div>
         <h1 className="text-2xl font-bold text-white">Join Codes</h1>

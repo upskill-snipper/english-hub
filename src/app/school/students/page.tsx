@@ -23,6 +23,7 @@ import {
   Hash,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { percentageToGCSEGrade, gcseGradeColor, isGCSEYearGroup } from "@/lib/grades"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -602,7 +603,7 @@ export default function StudentsPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="mx-auto max-w-7xl space-y-6 px-4 py-8 sm:px-6 lg:px-8">
+      <div className="space-y-6 px-4 py-8 sm:px-6 lg:px-8">
 
         {/* Header */}
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -814,6 +815,7 @@ export default function StudentsPage() {
                   <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wide text-muted-foreground">Class</th>
                   <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wide text-muted-foreground">Last Active</th>
                   <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wide text-muted-foreground">Progress</th>
+                  <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wide text-muted-foreground">Working At</th>
                   <th className="px-4 py-3 text-left text-xs font-medium uppercase tracking-wide text-muted-foreground">Status</th>
                   <th className="px-4 py-3 text-right text-xs font-medium uppercase tracking-wide text-muted-foreground">Actions</th>
                 </tr>
@@ -907,6 +909,11 @@ export default function StudentsPage() {
                           </div>
                           <span className="text-xs tabular-nums text-muted-foreground">{student.progress}%</span>
                         </div>
+                      </td>
+                      <td className="px-4 py-3">
+                        <span className={`text-sm font-medium ${gcseGradeColor(percentageToGCSEGrade(student.progress))}`}>
+                          Grade {percentageToGCSEGrade(student.progress)}
+                        </span>
                       </td>
                       <td className="px-4 py-3">
                         <StatusBadge status={student.status} />

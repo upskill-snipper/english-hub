@@ -261,7 +261,7 @@ export default function ImportResultsPage() {
   if (status === "failed" && !job) {
     return (
       <div className="min-h-screen bg-zinc-950 px-4 py-10 text-zinc-100">
-        <div className="mx-auto max-w-2xl space-y-6">
+        <div className="space-y-6">
           <button
             onClick={() => router.push("/school/import")}
             className="flex items-center gap-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors"
@@ -300,7 +300,7 @@ export default function ImportResultsPage() {
   if (status === "processing") {
     return (
       <div className="min-h-screen bg-zinc-950 px-4 py-10 text-zinc-100">
-        <div className="mx-auto max-w-2xl space-y-6">
+        <div className="space-y-6">
           <button
             onClick={() => router.push("/school/import")}
             className="flex items-center gap-2 text-sm text-zinc-400 hover:text-zinc-200 transition-colors"
@@ -361,7 +361,7 @@ export default function ImportResultsPage() {
 
   return (
     <div className="min-h-screen bg-zinc-950 px-4 py-10 text-zinc-100">
-      <div className="mx-auto max-w-3xl space-y-8">
+      <div className="space-y-8">
 
         {/* ── Back nav ── */}
         <button

@@ -17,6 +17,7 @@ import {
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import { DownloadMenu } from "@/components/DownloadMenu"
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -411,7 +412,7 @@ export default function ImportUsersPage() {
 
   return (
     <div className="min-h-screen bg-zinc-950 px-4 py-10 text-zinc-100">
-      <div className="mx-auto max-w-3xl space-y-8">
+      <div className="space-y-8">
 
         {/* ── Header ── */}
         <div>
@@ -747,22 +748,15 @@ export default function ImportUsersPage() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-3">
-                <Button
-                  onClick={() => downloadLoginDetails("excel")}
+                <DownloadMenu
                   size="lg"
-                  className="w-full gap-2 bg-emerald-600 hover:bg-emerald-500 text-white shadow-lg shadow-emerald-900/40"
-                >
-                  <FileSpreadsheet className="size-5" />
-                  Download Login Details (Excel)
-                </Button>
-                <Button
-                  onClick={() => downloadLoginDetails("pdf")}
-                  variant="outline"
-                  className="w-full gap-2"
-                >
-                  <Download className="size-4" />
-                  Download as PDF
-                </Button>
+                  label="Download Login Details"
+                  className="w-full bg-emerald-600 hover:bg-emerald-500 text-white shadow-lg shadow-emerald-900/40"
+                  options={[
+                    { label: "Download as Excel (.csv)", format: "csv", onClick: () => downloadLoginDetails("excel") },
+                    { label: "Download as PDF", format: "pdf", onClick: () => downloadLoginDetails("pdf") },
+                  ]}
+                />
               </CardContent>
             </Card>
 

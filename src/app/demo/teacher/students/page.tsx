@@ -3,7 +3,7 @@ export const dynamic = "force-dynamic"
 
 import { useState } from "react"
 import Link from "next/link"
-import { percentageToGCSEGrade, gcseGradeColor } from "@/lib/grades"
+import { percentageToGCSEGrade, gcseGradeColor, predictedGradeColor } from "@/lib/grades"
 import { DEMO_STUDENTS } from "@/data/demo-data"
 import DemoBanner from "@/components/demo/DemoBanner"
 import { useScrollRestore } from "@/hooks/useScrollRestore"
@@ -109,8 +109,8 @@ export default function TeacherStudentsPage() {
             onClick={() => setClassFilter("all")}
             className={`rounded-full px-4 py-1.5 text-xs font-medium transition-colors border ${
               classFilter === "all"
-                ? "bg-white/10 text-white border-white/20"
-                : "bg-white/[0.02] text-neutral-400 border-white/5 hover:bg-white/[0.05]"
+                ? "bg-emerald-500/15 text-emerald-300 border-emerald-500/30"
+                : "bg-white/[0.04] text-neutral-300 border-white/10 hover:bg-white/[0.08] hover:text-white"
             }`}
           >
             All Classes ({MITCHELL_STUDENTS.length})
@@ -123,8 +123,8 @@ export default function TeacherStudentsPage() {
                 onClick={() => setClassFilter(cls.id)}
                 className={`rounded-full px-4 py-1.5 text-xs font-medium transition-colors border ${
                   classFilter === cls.id
-                    ? "bg-white/10 text-white border-white/20"
-                    : "bg-white/[0.02] text-neutral-400 border-white/5 hover:bg-white/[0.05]"
+                    ? "bg-emerald-500/15 text-emerald-300 border-emerald-500/30"
+                    : "bg-white/[0.04] text-neutral-300 border-white/10 hover:bg-white/[0.08] hover:text-white"
                 }`}
               >
                 {cls.name} ({count})
@@ -157,14 +157,48 @@ export default function TeacherStudentsPage() {
           ))}
         </div>
 
+        {/* Grade Summary */}
+        {filtered.length > 0 && (() => {
+          const avgWorking = Math.round(filtered.reduce((sum, s) => sum + s.workingAtGrade, 0) / filtered.length)
+          const avgPredicted = Math.round(filtered.reduce((sum, s) => sum + s.predictedGrade, 0) / filtered.length)
+          const gradeDist = [9, 8, 7, 6, 5, 4, 3, 2, 1].map((g) => ({
+            grade: g,
+            count: filtered.filter((s) => s.workingAtGrade === g).length,
+          })).filter((g) => g.count > 0)
+
+          return (
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+              <div className="rounded-xl border border-white/5 bg-white/[0.02] p-4">
+                <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-500 mb-1">Avg Working At Grade</p>
+                <p className={`text-2xl font-light tabular-nums ${gcseGradeColor(avgWorking)}`}>Grade {avgWorking}</p>
+              </div>
+              <div className="rounded-xl border border-white/5 bg-white/[0.02] p-4">
+                <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-500 mb-1">Avg Predicted Grade</p>
+                <p className={`text-2xl font-light tabular-nums ${predictedGradeColor(avgPredicted, avgWorking)}`}>Grade {avgPredicted}</p>
+              </div>
+              <div className="rounded-xl border border-white/5 bg-white/[0.02] p-4">
+                <p className="text-[10px] uppercase tracking-[0.2em] text-neutral-500 mb-2">Grade Distribution</p>
+                <div className="flex flex-wrap gap-2">
+                  {gradeDist.map((g) => (
+                    <span key={g.grade} className={`inline-flex items-center rounded-full px-2 py-0.5 text-[11px] font-medium border ${gcseGradeColor(g.grade)} border-white/10 bg-white/[0.03]`}>
+                      G{g.grade}: {g.count}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )
+        })()}
+
         {/* Student Table */}
         <div className="rounded-xl border border-white/5 bg-white/[0.02] overflow-hidden">
           {/* Table header */}
-          <div className="hidden sm:grid grid-cols-[1fr_120px_140px_80px_90px_100px] gap-4 px-5 py-3 border-b border-white/5 text-[10px] uppercase tracking-[0.2em] text-neutral-500">
+          <div className="hidden sm:grid grid-cols-[1fr_110px_80px_80px_80px_90px_100px] gap-4 px-5 py-3 border-b border-white/5 text-[10px] uppercase tracking-[0.2em] text-neutral-500">
             <span>Name</span>
             <span>Class</span>
-            <span>Progress</span>
-            <span className="text-center">Score</span>
+            <span className="text-center">Working At</span>
+            <span className="text-center">Predicted</span>
+            <span className="text-center">Target</span>
             <span className="text-center">Status</span>
             <span className="text-right">Last Active</span>
           </div>
@@ -174,7 +208,7 @@ export default function TeacherStudentsPage() {
             <Link
               key={student.id}
               href={`/demo/teacher/students/${student.id}`}
-              className={`group grid grid-cols-1 sm:grid-cols-[1fr_120px_140px_80px_90px_100px] gap-1 sm:gap-4 px-5 py-4 border-b border-white/[0.03] hover:bg-white/[0.03] transition-colors cursor-pointer ${
+              className={`group grid grid-cols-1 sm:grid-cols-[1fr_110px_80px_80px_80px_90px_100px] gap-1 sm:gap-4 px-5 py-4 border-b border-white/[0.03] hover:bg-white/[0.03] transition-colors cursor-pointer ${
                 student.atRisk ? "bg-red-500/[0.03]" : ""
               }`}
             >
@@ -208,31 +242,28 @@ export default function TeacherStudentsPage() {
                 <p className="text-sm text-neutral-400">{student.className}</p>
               </div>
 
-              {/* Progress */}
-              <div className="hidden sm:flex items-center gap-2">
-                <div className="flex-1 h-1.5 rounded-full bg-white/5 overflow-hidden">
-                  <div
-                    className={`h-full rounded-full transition-all ${
-                      student.overallProgress >= 70
-                        ? "bg-emerald-500"
-                        : student.overallProgress >= 50
-                        ? "bg-amber-500"
-                        : "bg-red-500"
-                    }`}
-                    style={{ width: `${student.overallProgress}%` }}
-                  />
-                </div>
-                <span className="text-xs text-neutral-500 tabular-nums w-8 text-right">
-                  {student.overallProgress}%
+              {/* Working At Grade */}
+              <div className="hidden sm:flex items-center justify-center">
+                <span
+                  className={`text-sm tabular-nums font-medium ${gcseGradeColor(student.workingAtGrade)}`}
+                >
+                  {student.workingAtGrade}
                 </span>
               </div>
 
-              {/* Score */}
+              {/* Predicted Grade */}
               <div className="hidden sm:flex items-center justify-center">
                 <span
-                  className={`text-sm tabular-nums font-medium ${gcseGradeColor(percentageToGCSEGrade(student.score))}`}
+                  className={`text-sm tabular-nums font-medium ${predictedGradeColor(student.predictedGrade, student.workingAtGrade)}`}
                 >
-                  Grade {percentageToGCSEGrade(student.score)}
+                  {student.predictedGrade}
+                </span>
+              </div>
+
+              {/* Target Grade */}
+              <div className="hidden sm:flex items-center justify-center">
+                <span className="text-sm tabular-nums font-medium text-violet-400">
+                  {student.targetGrade}
                 </span>
               </div>
 

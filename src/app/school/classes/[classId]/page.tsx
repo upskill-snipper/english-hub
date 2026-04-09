@@ -726,7 +726,7 @@ export default function ClassDetailPage() {
   if (loading) {
     return (
       <div className="min-h-screen bg-background">
-        <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 lg:px-8 space-y-6">
+        <div className="px-4 py-6 sm:px-6 lg:px-8 space-y-6">
           <div className="h-6 w-24 rounded-md bg-muted animate-pulse" />
           <div className="h-10 w-64 rounded-md bg-muted animate-pulse" />
           <div className="flex gap-2">
@@ -749,7 +749,7 @@ export default function ClassDetailPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 lg:px-8 space-y-6">
+      <div className="px-4 py-6 sm:px-6 lg:px-8 space-y-6">
 
         {/* Back button */}
         <Link href="/school/classes">

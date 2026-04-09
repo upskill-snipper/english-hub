@@ -2,6 +2,8 @@
 
 import Link from "next/link"
 import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor } from "@/lib/grades"
+import GradeProgressCard from "@/components/GradeProgressCard"
+import GradeRecommendations from "@/components/GradeRecommendations"
 import {
   ArrowLeft,
   CheckCircle2,
@@ -218,7 +220,7 @@ function MiniRing({ percent, color, size = 56 }: { percent: number; color: strin
 
 // Stat card gradient configs
 const statCards = [
-  { label: "Average Score", value: `${STUDENT.averageScore}%`, trend: "+4%", trendUp: true, gradient: "from-purple-600/30 to-purple-800/10 border-purple-500/20" },
+  { label: "Average Grade", value: `Grade ${percentageToGCSEGrade(STUDENT.averageScore)}`, trend: "improving", trendUp: true, gradient: "from-purple-600/30 to-purple-800/10 border-purple-500/20" },
   { label: "Study Hours", value: `${STUDENT.totalStudyHours}h`, trend: "+6h", trendUp: true, gradient: "from-blue-600/30 to-blue-800/10 border-blue-500/20" },
   { label: "Quizzes Done", value: `${STUDENT.totalQuizzes}`, trend: "+3", trendUp: true, gradient: "from-cyan-600/30 to-cyan-800/10 border-cyan-500/20" },
   { label: "Essays Written", value: `${STUDENT.totalEssays}`, trend: "+2", trendUp: true, gradient: "from-pink-600/30 to-pink-800/10 border-pink-500/20" },
@@ -299,11 +301,16 @@ export default function StudentProgressPage() {
               {/* Grade info */}
               <div className="flex flex-col items-center gap-4 md:items-start">
                 <div className="flex items-center gap-3">
+                  <div className={`rounded-xl bg-blue-500/10 border border-blue-500/20 px-4 py-3 text-center`}>
+                    <p className="text-[10px] uppercase tracking-wider text-blue-400/60 mb-0.5">Working At</p>
+                    <p className={`text-3xl font-bold ${gcseGradeColor(percentageToGCSEGrade(STUDENT.averageScore))}`}>Grade {percentageToGCSEGrade(STUDENT.averageScore)}</p>
+                  </div>
+                  <ArrowUpRight className="h-5 w-5 text-white/30" />
                   <div className="rounded-xl bg-amber-500/10 border border-amber-500/20 px-4 py-3 text-center">
-                    <p className="text-[10px] uppercase tracking-wider text-amber-400/60 mb-0.5">Current</p>
+                    <p className="text-[10px] uppercase tracking-wider text-amber-400/60 mb-0.5">Predicted</p>
                     <p className="text-3xl font-bold text-amber-400">Grade {STUDENT.predictedGrade}</p>
                   </div>
-                  <ArrowRight className="h-5 w-5 text-white/30" />
+                  <ArrowUpRight className="h-5 w-5 text-white/30" />
                   <div className="rounded-xl bg-emerald-500/10 border border-emerald-500/20 px-4 py-3 text-center">
                     <p className="text-[10px] uppercase tracking-wider text-emerald-400/60 mb-0.5">Target</p>
                     <p className="text-3xl font-bold text-emerald-400">Grade {STUDENT.targetGrade}</p>
@@ -403,6 +410,44 @@ export default function StudentProgressPage() {
               <span className="flex items-center gap-1"><span className="inline-block h-2 w-2 rounded-sm bg-indigo-500" /> Older</span>
               <span className="flex items-center gap-1"><span className="inline-block h-2 w-2 rounded-sm bg-emerald-500" /> Recent</span>
             </div>
+          </div>
+        </section>
+
+        {/* ================================================================ */}
+        {/* SECTION 3b: Grade Progress & Next Grade Recommendations          */}
+        {/* ================================================================ */}
+        <section className="mb-8">
+          <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-cyan-900/10 via-white/[0.02] to-white/[0.01] p-6">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-cyan-500/20">
+                <Target className="h-5 w-5 text-cyan-400" />
+              </div>
+              <div>
+                <h2 className="text-lg font-semibold">Next Grade Recommendations</h2>
+                <p className="text-xs text-white/40">Personalised advice to reach Grade {STUDENT.targetGrade}</p>
+              </div>
+            </div>
+
+            <div className="mb-6">
+              <GradeProgressCard
+                currentGrade={Number(STUDENT.predictedGrade)}
+                predictedGrade={Number(STUDENT.predictedGrade)}
+                targetGrade={Number(STUDENT.targetGrade)}
+                trend="up"
+              />
+            </div>
+
+            <GradeRecommendations
+              currentGrade={Number(STUDENT.predictedGrade)}
+              weakAreas={
+                modules
+                  .flatMap((m) => m.topics.filter((t) => t.status === "weak" || t.status === "developing"))
+                  .map((t) => t.name)
+              }
+              maxActions={5}
+              showResources
+              showProgress
+            />
           </div>
         </section>
 

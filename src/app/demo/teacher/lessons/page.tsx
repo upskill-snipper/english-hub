@@ -5,6 +5,7 @@ import { generateLessonPlan, generateWorksheet } from "@/lib/generate-teaching-p
 import type { LessonPlanData, WorksheetQuestion as PdfWorksheetQuestion } from "@/lib/generate-teaching-pdf";
 import { generateLessonPlanWord, generateWorksheetWord } from "@/lib/generate-docx";
 import { generateLessonPlanPptx } from "@/lib/generate-pptx";
+import { DownloadMenu } from "@/components/DownloadMenu";
 
 // ─── Types (mirroring src/types.ts) ──────────────────────────────────────────
 
@@ -1922,12 +1923,25 @@ export default function LessonBuilderDemo() {
             </div>
 
             {/* Action Buttons */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-3 mb-10">
-              <ActionButton onClick={handleDownloadPDF} label="Download PDF" />
-              <ActionButton onClick={handleDownloadWorksheet} label="Download Worksheet" />
-              <ActionButton onClick={handleDownloadPptx} label="Download PowerPoint" />
-              <ActionButton onClick={handleDownloadWordLesson} label="Download Word" />
-              <ActionButton onClick={handleDownloadWordWorksheet} label="Worksheet (Word)" />
+            <div className="flex flex-wrap gap-3 mb-10">
+              <DownloadMenu
+                label="Lesson Plan"
+                className="text-xs"
+                options={[
+                  { label: "Download PDF", format: "pdf", onClick: handleDownloadPDF },
+                  { label: "Download Word (.docx)", format: "word", onClick: handleDownloadWordLesson },
+                  { label: "Download PowerPoint (.pptx)", format: "pptx", onClick: handleDownloadPptx },
+                ]}
+              />
+              <DownloadMenu
+                label="Worksheet"
+                variant="outline"
+                className="text-xs border-white/10 text-neutral-300 hover:bg-white/[0.07] hover:text-white"
+                options={[
+                  { label: "Download PDF", format: "pdf", onClick: handleDownloadWorksheet },
+                  { label: "Download Word (.docx)", format: "word", onClick: handleDownloadWordWorksheet },
+                ]}
+              />
               <ActionButton onClick={handleCopy} label={copied ? "Copied!" : "Copy to Clipboard"} />
               <ActionButton onClick={handleReset} label="Generate Another" />
               <ActionButton onClick={() => showToast("Available with full account")} label="Edit Lesson" />

@@ -39,8 +39,8 @@ export default function ComplaintsProcedurePage() {
             <h3 className="font-semibold">By Email</h3>
             <p className="text-sm">
               Send an email to{" "}
-              <a href="mailto:complaints@theenglishhub.app">
-                complaints@theenglishhub.app
+              <a href="mailto:info@Upskillenergy.com">
+                info@Upskillenergy.com
               </a>
             </p>
           </div>

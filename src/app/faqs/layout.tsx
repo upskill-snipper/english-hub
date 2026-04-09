@@ -2,11 +2,11 @@ import type { Metadata } from 'next'
 import { FAQPageJsonLd } from '@/components/seo/json-ld'
 
 export const metadata: Metadata = {
-  title: 'FAQs — Frequently Asked Questions | The English Hub',
+  title: 'FAQs — Frequently Asked Questions',
   description:
     'Got questions about The English Hub? Find answers about pricing, courses, GCSE & IGCSE exam prep, school licenses, technical issues, and more.',
   openGraph: {
-    title: 'FAQs — Frequently Asked Questions | The English Hub',
+    title: 'FAQs — Frequently Asked Questions — The English Hub',
     description:
       'Got questions about The English Hub? Find answers about pricing, courses, GCSE & IGCSE exam prep, school licenses, technical issues, and more.',
     url: 'https://theenglishhub.app/faqs',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'FAQs — Frequently Asked Questions | The English Hub',
+    title: 'FAQs — Frequently Asked Questions — The English Hub',
     description:
       'Got questions about The English Hub? Find answers about pricing, courses, GCSE & IGCSE exam prep, school licenses, technical issues, and more.',
   },
@@ -51,12 +51,12 @@ const FAQ_JSON_LD_DATA: { question: string; answer: string }[] = [
   {
     question: 'How much does The English Hub cost?',
     answer:
-      'We offer two simple plans: £9.99/month or £67.99/year (save over 40%), both with the first month free. Every plan gives you full, unrestricted access to every feature on the platform. Cancel anytime.',
+      'For students: £8.99/month or £67.99/year (save over 35%). For teachers: £12.99/month or £99.99/year. Both plans include a free first month and full, unrestricted access to every feature on the platform. Every feature also comes with 3 free uses — no card required. Cancel anytime.',
   },
   {
     question: 'Is there a free trial?',
     answer:
-      'Yes. Every new account starts with a completely free 30-day trial. You get full access to all courses, mock exams, practice questions, and revision materials. No credit card is required to start your trial.',
+      'Yes! Every feature comes with 3 free uses — no card required. When you subscribe, your first month is completely free with full access to all courses, mock exams, practice questions, and revision materials.',
   },
   {
     question: 'Can I cancel my subscription?',
@@ -82,9 +82,9 @@ const FAQ_JSON_LD_DATA: { question: string; answer: string }[] = [
   },
   // Schools & Teachers
   {
-    question: 'How do school licenses work?',
+    question: 'How does the Founding Schools Programme work?',
     answer:
-      'School licenses give your students full access to The English Hub at a discounted per-student rate. Our Department package covers up to 50 students for £500/year (£10/student). Larger packages are available for bigger schools and multi-academy trusts. Visit our For Schools page for full pricing.',
+      'Our Founding Schools Programme is a strategic partnership limited to 10 schools, with pricing ranging from £3,000 to £7,000 per year depending on department size. Schools receive full platform access, priority onboarding, early features, and locked preferential pricing for 2-3 years. Visit our For Schools page or contact info@Upskillenergy.com for details.',
   },
   {
     question: 'Can we try it before committing to a school license?',

@@ -56,10 +56,16 @@ export default function ForgotPasswordPage() {
               <h1 className="text-2xl font-bold text-foreground mb-2">
                 Check your email
               </h1>
-              <p className="text-muted-foreground mb-6">
+              <p className="text-muted-foreground mb-4">
                 If an account exists for{' '}
                 <span className="text-foreground font-medium">{email}</span>, we&apos;ve
                 sent a password reset link. Please check your inbox.
+              </p>
+              <p className="text-xs text-muted-foreground mb-6">
+                Didn&apos;t receive an email? Check your spam folder or contact{' '}
+                <a href="mailto:info@Upskillenergy.com" className="underline underline-offset-2 hover:text-foreground transition-colors">
+                  info@Upskillenergy.com
+                </a>
               </p>
               <Button variant="outline" render={<Link href="/auth/login" />}>
                 Back to login
@@ -135,7 +141,7 @@ export default function ForgotPasswordPage() {
             </form>
           </CardContent>
 
-          <CardFooter className="justify-center">
+          <CardFooter className="flex-col gap-3">
             <p className="text-muted-foreground text-sm">
               Remember your password?{' '}
               <Button
@@ -146,6 +152,12 @@ export default function ForgotPasswordPage() {
               >
                 Sign in
               </Button>
+            </p>
+            <p className="text-xs text-muted-foreground text-center">
+              Still need help? Contact us at{' '}
+              <a href="mailto:info@Upskillenergy.com" className="underline underline-offset-2 hover:text-foreground transition-colors">
+                info@Upskillenergy.com
+              </a>
             </p>
           </CardFooter>
         </Card>

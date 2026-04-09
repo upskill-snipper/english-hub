@@ -163,7 +163,7 @@ const recentActivity = getRecentActivity()
 
 export default function DemoSchoolDashboardPage() {
   return (
-    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+    <div className="px-4 py-8 sm:px-6 lg:px-8">
       {/* Demo banner */}
       <div className="mb-6 rounded-lg border border-blue-500/30 bg-blue-500/10 px-5 py-4">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">

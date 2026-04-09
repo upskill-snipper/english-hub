@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'About',
+  title: 'About Us',
   description:
     'Learn about The English Hub, our mission to close the attainment gap, and how we help students master GCSE and IGCSE English with expert resources.',
   alternates: { canonical: 'https://theenglishhub.app/about' },

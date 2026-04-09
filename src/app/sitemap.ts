@@ -240,6 +240,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Additional pages
     { url: `${base}/pricing`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${base}/for-teachers/free-resources`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${base}/for-schools/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${base}/affiliates`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${base}/legal/acceptable-use`, lastModified: now, changeFrequency: 'monthly', priority: 0.3 },
     { url: `${base}/legal/ai-transparency`, lastModified: now, changeFrequency: 'monthly', priority: 0.3 },

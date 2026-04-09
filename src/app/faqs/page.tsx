@@ -75,17 +75,17 @@ const FAQ_SECTIONS: FaqSection[] = [
       {
         question: 'How much does The English Hub cost?',
         answer:
-          'We offer two simple plans: £9.99/month or £67.99/year (save over 30%), both with the first month free. Every plan gives you full, unrestricted access to every feature on the platform. Cancel anytime.',
+          'For students: £8.99/month or £67.99/year (save over 35%). For teachers: £12.99/month or £99.99/year. Both plans include a free first month and full, unrestricted access to every feature on the platform. Every feature also comes with 3 free uses — no card required. Cancel anytime.',
       },
       {
         question: 'Is there a free trial?',
         answer:
-          'Yes. Every new account starts with a completely free 30-day trial. You get full access to all courses, mock exams, practice questions, and revision materials. No credit card is required to start your trial.',
+          'Yes! Every feature comes with 3 free uses — no card required. When you subscribe, your first month is completely free with full access to all courses, mock exams, practice questions, and revision materials.',
       },
       {
         question: 'What happens after my free trial ends?',
         answer:
-          'We\'ll send you a reminder email before your trial ends. If you\'ve added a payment method and chosen a plan, your subscription will start automatically. If you haven\'t added payment details, your account will simply be paused — you won\'t be charged anything.',
+          'We\'ll send you a reminder email before your free first month ends. If you\'ve added a payment method and chosen a plan, your subscription will start automatically. If you haven\'t added payment details, your account will simply be paused — you won\'t be charged anything.',
       },
       {
         question: 'Can I cancel my subscription?',
@@ -200,9 +200,9 @@ const FAQ_SECTIONS: FaqSection[] = [
     color: 'text-indigo-400 bg-indigo-500/10 border-indigo-500/20',
     items: [
       {
-        question: 'How do school licenses work?',
+        question: 'How does the Founding Schools Programme work?',
         answer:
-          'School licenses give your students full access to The English Hub at a discounted per-student rate. Our Department package covers up to 50 students for £500/year (£10/student). Larger packages are available for bigger schools and multi-academy trusts. Visit our For Schools page for full pricing.',
+          'Our Founding Schools Programme is a strategic partnership limited to 10 schools, with pricing ranging from £3,000 to £7,000 per year depending on department size. Schools receive full platform access, priority onboarding, early features, and locked preferential pricing for 2-3 years. Visit our For Schools page or contact info@Upskillenergy.com for details.',
       },
       {
         question: 'What does the teacher dashboard include?',
@@ -335,7 +335,7 @@ export default function FaqsPage() {
               No FAQs found for &ldquo;{searchQuery}&rdquo;. Try a different
               search term or{' '}
               <Link
-                href="/contact"
+                href="/help/contact"
                 className="text-primary underline hover:text-primary/80"
               >
                 ask our support team
@@ -401,7 +401,7 @@ export default function FaqsPage() {
             <ArrowRight className="h-4 w-4" />
           </Link>
           <Link
-            href="/contact"
+            href="/help/contact"
             className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
             Contact Support

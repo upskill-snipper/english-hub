@@ -15,6 +15,7 @@ import {
   Sparkles,
   Star,
   ArrowLeft,
+  Wand2,
 } from "lucide-react"
 import DemoBanner from "@/components/demo/DemoBanner"
 
@@ -201,11 +202,20 @@ export default function HomeworkDemoPage() {
       <div className="mx-auto max-w-5xl px-4 sm:px-6 py-8 lg:py-12">
         {/* Header */}
         <div className="mb-8">
-          <div className="flex items-center gap-3 mb-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500/20 to-emerald-500/20 border border-cyan-500/20">
-              <ClipboardList className="h-5 w-5 text-cyan-400" />
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3 mb-2">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500/20 to-emerald-500/20 border border-cyan-500/20">
+                <ClipboardList className="h-5 w-5 text-cyan-400" />
+              </div>
+              <h1 className="text-2xl font-bold text-white">Homework Dashboard</h1>
             </div>
-            <h1 className="text-2xl font-bold text-white">Homework Dashboard</h1>
+            <Link
+              href="/demo/teacher/homework/generate"
+              className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-emerald-500 to-cyan-500 text-sm font-semibold text-black hover:opacity-90 transition-opacity"
+            >
+              <Wand2 className="h-4 w-4" />
+              Auto-Generate Homework
+            </Link>
           </div>
           <p className="text-white/50 text-sm mt-1">Set, track, and mark homework assignments for your classes.</p>
         </div>
@@ -235,6 +245,29 @@ export default function HomeworkDemoPage() {
         {/* ============================================================= */}
         {activeTab === "set" && (
           <div className="space-y-6">
+            {/* AI Generate Card */}
+            <Link
+              href="/demo/teacher/homework/generate"
+              className="block rounded-xl border border-emerald-500/20 bg-gradient-to-r from-emerald-500/5 to-cyan-500/5 p-6 hover:from-emerald-500/10 hover:to-cyan-500/10 transition-all group"
+            >
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 border border-emerald-500/20">
+                    <Sparkles className="h-6 w-6 text-emerald-400" />
+                  </div>
+                  <div>
+                    <h3 className="text-base font-semibold text-white group-hover:text-emerald-300 transition-colors">
+                      Auto-Generate Homework with AI
+                    </h3>
+                    <p className="text-sm text-white/50 mt-0.5">
+                      Select a topic, type, and grade level -- get a complete homework assignment with mark scheme, success criteria, and extension tasks in seconds.
+                    </p>
+                  </div>
+                </div>
+                <ChevronRight className="h-5 w-5 text-white/30 group-hover:text-emerald-400 transition-colors shrink-0 ml-4" />
+              </div>
+            </Link>
+
             <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-6">
               <h2 className="text-lg font-semibold text-white mb-6">Create New Assignment</h2>
 

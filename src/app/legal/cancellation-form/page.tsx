@@ -16,9 +16,11 @@ interface FormData {
 
 const SUBSCRIPTION_PLANS = [
   { value: "", label: "Select your plan" },
-  { value: "monthly", label: "Monthly Plan" },
-  { value: "family", label: "Family Plan" },
-  { value: "student", label: "Student Plan" },
+  { value: "student-monthly", label: "Student Monthly (£8.99/month)" },
+  { value: "student-annual", label: "Student Annual (£67.99/year)" },
+  { value: "teacher-monthly", label: "Teacher Monthly (£12.99/month)" },
+  { value: "teacher-annual", label: "Teacher Annual (£99.99/year)" },
+  { value: "school", label: "School / Institutional Plan" },
 ];
 
 const CANCELLATION_REASONS = [

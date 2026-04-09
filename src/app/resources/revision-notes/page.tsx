@@ -269,6 +269,17 @@ const TEXTS: TextCard[] = [
     icon: "scales",
     type: "play",
   },
+  {
+    title: "Of Mice and Men",
+    slug: "of-mice-and-men",
+    author: "John Steinbeck",
+    category: "modern",
+    boards: ["AQA", "Edexcel", "CAIE", "OCR"],
+    themes: ["Loneliness", "The American Dream", "Friendship", "Prejudice"],
+    colour: "from-amber-900 to-amber-700",
+    icon: "wheat",
+    type: "novella",
+  },
 
   // Poetry Anthologies
   {

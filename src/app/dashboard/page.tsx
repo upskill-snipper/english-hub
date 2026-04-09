@@ -289,6 +289,7 @@ export default function DashboardPage() {
     { label: 'Revision Cards', href: '/revision', icon: Layers, color: 'text-purple-400', bg: 'bg-purple-500/10' },
     { label: 'Mock Exams', href: '/dashboard/mock-exam', icon: Timer, color: 'text-red-400', bg: 'bg-red-950/200/10' },
     { label: 'Grade Dashboard', href: '/dashboard/grades', icon: TrendingUp, color: 'text-green-400', bg: 'bg-green-500/10' },
+    { label: 'Reading Assessment', href: '/assessment/reading', icon: BookOpen, color: 'text-emerald-400', bg: 'bg-emerald-500/10' },
     { label: 'Analytics', href: '/dashboard/analytics', icon: BarChart3, color: 'text-cyan-400', bg: 'bg-cyan-500/10' },
     ...(schoolInfo
       ? [{ label: 'School Dashboard', href: '/school', icon: School, color: 'text-indigo-400', bg: 'bg-indigo-500/10' }]

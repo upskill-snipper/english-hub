@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState, memo } from 'react'
+import { useEffect, useState, useMemo, memo } from 'react'
 import Link from 'next/link'
 import {
   BookOpen,
@@ -10,6 +10,7 @@ import {
   ArrowLeft,
   Lock,
   Play,
+  PenTool,
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { PRICING } from '@/constants/pricing'
@@ -18,6 +19,7 @@ import { useBoardStore } from '@/store/board-store'
 import { matchesBoard } from '@/lib/board-filter'
 import type { CourseData } from '@/data/courses'
 import { LearningTip } from '@/components/ui/learning-tip'
+import { Button } from '@/components/ui/button'
 
 interface CourseDetailPageProps {
   course: CourseData
@@ -68,9 +70,9 @@ export default function CourseDetailPage({ course }: CourseDetailPageProps) {
         <p className="text-muted-foreground text-center max-w-md">
           This course is for the <strong>{course.board}</strong> exam board. You currently have <strong>{selectedBoard}</strong> selected.
         </p>
-        <Link href="/courses" className="btn-primary text-sm">
+        <Button render={<Link href="/courses" />}>
           Browse your courses
-        </Link>
+        </Button>
       </div>
     )
   }
@@ -80,6 +82,15 @@ export default function CourseDetailPage({ course }: CourseDetailPageProps) {
   const firstModuleHref = firstModule ? `/learn/${course.id}/${firstModule.id}` : `/courses`
   const ctaLabel = hasAccess ? 'Start Learning' : 'Try Free Preview'
   const ctaHref = firstModuleHref
+
+  const totalQuizzes = useMemo(
+    () =>
+      course.moduleList.reduce(
+        (sum, mod) => sum + (mod.quiz?.length ?? 0),
+        0,
+      ),
+    [course.moduleList],
+  )
 
   return (
     <div className="min-h-screen bg-background">
@@ -132,11 +143,31 @@ export default function CourseDetailPage({ course }: CourseDetailPageProps) {
                   <BookOpen className="h-4 w-4 text-primary" />
                   {course.moduleList.length} modules
                 </span>
+                {totalQuizzes > 0 && (
+                  <span className="inline-flex items-center gap-1.5">
+                    <PenTool className="h-4 w-4 text-primary" />
+                    {totalQuizzes} quizzes
+                  </span>
+                )}
                 <span className="inline-flex items-center gap-1.5">
                   <GraduationCap className="h-4 w-4 text-primary" />
                   {course.level}
                 </span>
               </div>
+
+              {/* Free preview CTA - prominent for non-logged-in users */}
+              {!hasAccess && !loading && (
+                <div className="mt-6">
+                  <Button
+                    size="lg"
+                    className="shadow-lg shadow-primary/20"
+                    render={<Link href={ctaHref} />}
+                  >
+                    <Play className="h-4 w-4" />
+                    Try Free Preview — No Sign-Up Needed
+                  </Button>
+                </div>
+              )}
             </div>
 
             {/* Desktop sidebar subscription card removed — single CTA in sticky aside below */}
@@ -194,14 +225,17 @@ export default function CourseDetailPage({ course }: CourseDetailPageProps) {
                             {mod.title}
                           </span>
                           {isFreePreview && (
-                            <span className="shrink-0 rounded-md bg-primary/15 px-2 py-0.5 text-[11px] font-bold uppercase tracking-wider text-primary ring-1 ring-primary/20">
+                            <span className="shrink-0 rounded-md bg-emerald-500/15 px-2 py-0.5 text-[11px] font-bold uppercase tracking-wider text-emerald-500 ring-1 ring-emerald-500/20">
                               Free Preview
                             </span>
                           )}
                         </div>
-                        <span className="mt-0.5 block text-xs text-muted-foreground">
-                          {mod.duration}
-                        </span>
+                        <div className="mt-0.5 flex items-center gap-3 text-xs text-muted-foreground">
+                          <span>{mod.duration}</span>
+                          {mod.quiz?.length > 0 && (
+                            <span>{mod.quiz.length} {mod.quiz.length === 1 ? 'quiz' : 'quizzes'}</span>
+                          )}
+                        </div>
                       </div>
 
                       {/* Icon */}
@@ -274,9 +308,14 @@ export default function CourseDetailPage({ course }: CourseDetailPageProps) {
           {loading ? (
             <div className="h-11 w-36 animate-pulse rounded-lg bg-card" />
           ) : (
-            <Link href={ctaHref} className="btn-primary text-sm">
+            <Button
+              size="lg"
+              className="shadow-lg shadow-primary/20"
+              render={<Link href={ctaHref} />}
+            >
+              <Play className="h-4 w-4" />
               {ctaLabel}
-            </Link>
+            </Button>
           )}
         </div>
       </div>
@@ -320,12 +359,14 @@ const SubscriptionCard = memo(function SubscriptionCard({
             {loading ? (
               <div className="h-12 w-full animate-pulse rounded-lg bg-background" />
             ) : (
-              <Link
-                href={ctaHref}
-                className="btn-primary w-full justify-center text-base"
+              <Button
+                size="lg"
+                className="w-full shadow-lg shadow-primary/20"
+                render={<Link href={ctaHref} />}
               >
+                <Play className="h-4 w-4" />
                 {ctaLabel}
-              </Link>
+              </Button>
             )}
           </>
         ) : (
@@ -333,12 +374,14 @@ const SubscriptionCard = memo(function SubscriptionCard({
             {loading ? (
               <div className="h-12 w-full animate-pulse rounded-lg bg-background" />
             ) : (
-              <Link
-                href={ctaHref}
-                className="btn-primary w-full justify-center text-base"
+              <Button
+                size="lg"
+                className="w-full shadow-lg shadow-primary/20"
+                render={<Link href={ctaHref} />}
               >
+                <Play className="h-4 w-4" />
                 {ctaLabel}
-              </Link>
+              </Button>
             )}
 
             <div className="mt-4 rounded-lg border border-border/60 bg-background/50 p-3 text-center">

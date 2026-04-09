@@ -107,7 +107,7 @@ export default function TeacherDetailPage() {
     <div className="min-h-screen bg-[#0a0a0a] text-white">
       <DemoBanner message="You are viewing an interactive demo with sample data. No real teacher data is used." />
 
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <div className="px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         {/* Back link */}
         <Link
           href="/demo/school/teachers"

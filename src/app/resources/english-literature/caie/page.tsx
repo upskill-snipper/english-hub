@@ -53,31 +53,11 @@ const examIcon = (
 );
 
 const resourceGroups: ResourceGroup[] = [
+  /* ── Shakespeare ── */
   {
-    heading: "Drama",
-    subtitle: "Study guides for each set drama text, with summaries, themes, characters, and key quotes.",
+    heading: "Shakespeare",
+    subtitle: "Set Shakespeare plays for Paper 2, Section A \u2014 full study guides with plot, characters, themes, key quotes, and stagecraft analysis.",
     items: [
-      {
-        title: "A Midsummer Night's Dream",
-        href: "/resources/english-literature/caie/a-midsummer-nights-dream",
-        description:
-          "Shakespeare's enchanting comedy: plot summary, character analysis, themes of love and illusion, key quotes, and exam guidance.",
-        icon: dramaIcon,
-      },
-      {
-        title: "A Streetcar Named Desire",
-        href: "/resources/english-literature/caie/a-streetcar-named-desire",
-        description:
-          "Tennessee Williams' classic: scene-by-scene summary, character study, themes of desire and decay, key quotes, and exam practice.",
-        icon: dramaIcon,
-      },
-      {
-        title: "A Taste of Honey",
-        href: "/resources/english-literature/caie/a-taste-of-honey",
-        description:
-          "Shelagh Delaney's kitchen-sink drama: plot summary, character analysis, themes of class and identity, key quotes, and exam guidance.",
-        icon: dramaIcon,
-      },
       {
         title: "Macbeth",
         href: "/resources/english-literature/caie/macbeth",
@@ -85,66 +65,159 @@ const resourceGroups: ResourceGroup[] = [
           "Full plot summary, character analysis, themes, 20+ key quotes, historical context, and Cambridge exam questions.",
         icon: dramaIcon,
       },
+      {
+        title: "A Midsummer Night\u2019s Dream",
+        href: "/resources/english-literature/caie/a-midsummer-nights-dream",
+        description:
+          "Shakespeare\u2019s enchanting comedy: plot summary, character analysis, themes of love and illusion, key quotes, and exam guidance.",
+        icon: dramaIcon,
+      },
+      {
+        title: "The Merchant of Venice",
+        href: "/resources/english-literature/caie/the-merchant-of-venice",
+        description:
+          "Plot summary, character study, themes of justice, mercy, and prejudice, key quotes, and Cambridge exam practice.",
+        icon: dramaIcon,
+      },
+      {
+        title: "Othello",
+        href: "/resources/english-literature/caie/othello",
+        description:
+          "Shakespeare\u2019s tragedy of jealousy: plot summary, character analysis, themes of race, manipulation, and honour, key quotes, and exam guidance.",
+        icon: dramaIcon,
+      },
+      {
+        title: "Romeo and Juliet",
+        href: "/resources/english-literature/caie/romeo-and-juliet",
+        description:
+          "Plot summary, character analysis, themes of love, fate, and conflict, key quotes, and Cambridge exam practice.",
+        icon: dramaIcon,
+      },
     ],
   },
+  /* ── Modern Drama ── */
   {
-    heading: "Prose",
-    subtitle: "In-depth study guides for each set prose text, covering plot, characters, themes, and exam technique.",
+    heading: "Modern Drama",
+    subtitle: "Non-Shakespeare drama texts for Paper 2, Section B \u2014 detailed guides covering dramatic technique and stagecraft.",
     items: [
       {
-        title: "Great Expectations",
-        href: "/resources/english-literature/caie/great-expectations",
+        title: "A Streetcar Named Desire",
+        href: "/resources/english-literature/caie/a-streetcar-named-desire",
         description:
-          "Dickens' bildungsroman: chapter summaries, character analysis, themes of ambition and social class, key quotes, and exam guidance.",
-        icon: proseIcon,
+          "Tennessee Williams\u2019 classic: scene-by-scene summary, character study, themes of desire and decay, key quotes, and exam practice.",
+        icon: dramaIcon,
       },
+      {
+        title: "A Taste of Honey",
+        href: "/resources/english-literature/caie/a-taste-of-honey",
+        description:
+          "Shelagh Delaney\u2019s kitchen-sink drama: plot summary, character analysis, themes of class and identity, key quotes, and exam guidance.",
+        icon: dramaIcon,
+      },
+      {
+        title: "Death and the King\u2019s Horseman",
+        href: "/resources/english-literature/caie/death-and-the-kings-horseman",
+        description:
+          "Wole Soyinka\u2019s powerful drama: plot summary, character analysis, themes of duty, colonialism, and cultural clash, key quotes, and exam guidance.",
+        icon: dramaIcon,
+      },
+      {
+        title: "An Inspector Calls",
+        href: "/resources/english-literature/caie/an-inspector-calls",
+        description:
+          "J.B. Priestley\u2019s morality play: plot summary, character analysis, themes of responsibility and class, key quotes, and exam practice.",
+        icon: dramaIcon,
+      },
+    ],
+  },
+  /* ── Contemporary Prose ── */
+  {
+    heading: "Contemporary Prose",
+    subtitle: "Modern set prose texts for Paper 1, Section B \u2014 in-depth guides covering plot, characters, themes, and exam technique.",
+    items: [
       {
         title: "To Kill a Mockingbird",
         href: "/resources/english-literature/caie/to-kill-a-mockingbird",
         description:
-          "Harper Lee's classic: plot summary, character study, themes of justice and prejudice, key quotes, and Cambridge exam practice.",
+          "Harper Lee\u2019s classic: plot summary, character study, themes of justice and prejudice, key quotes, and Cambridge exam practice.",
         icon: proseIcon,
       },
       {
         title: "Things Fall Apart",
         href: "/resources/english-literature/caie/things-fall-apart",
         description:
-          "Chinua Achebe's landmark novel: plot summary, character analysis, themes of colonialism and cultural identity, key quotes, and exam guidance.",
+          "Chinua Achebe\u2019s landmark novel: plot summary, character analysis, themes of colonialism and cultural identity, key quotes, and exam guidance.",
         icon: proseIcon,
       },
       {
         title: "Rebecca",
         href: "/resources/english-literature/caie/rebecca",
         description:
-          "Daphne du Maurier's gothic romance: plot summary, character analysis, themes of identity and obsession, key quotes, and exam practice.",
+          "Daphne du Maurier\u2019s gothic romance: plot summary, character analysis, themes of identity and obsession, key quotes, and exam practice.",
         icon: proseIcon,
       },
       {
         title: "The War of the Worlds",
-        href: "/resources/english-literature/caie",
+        href: "/resources/english-literature/caie/the-war-of-the-worlds",
         description:
-          "H.G. Wells' sci-fi classic: plot summary, character analysis, themes of imperialism and survival, key quotes, and exam guidance.",
+          "H.G. Wells\u2019 sci-fi classic: plot summary, character analysis, themes of imperialism and survival, key quotes, and exam guidance.",
         icon: proseIcon,
       },
       {
         title: "Fire on the Mountain",
         href: "/resources/english-literature/caie/fire-on-the-mountain",
         description:
-          "Anita Desai's evocative novella: plot summary, character analysis, themes of isolation and disillusionment, key quotes, and exam practice.",
+          "Anita Desai\u2019s evocative novella: plot summary, character analysis, themes of isolation and disillusionment, key quotes, and exam practice.",
         icon: proseIcon,
       },
       {
         title: "Picnic at Hanging Rock",
         href: "/resources/english-literature/caie/picnic-at-hanging-rock",
         description:
-          "Joan Lindsay's mystery: plot summary, character analysis, themes of the uncanny and nature, key quotes, and Cambridge exam guidance.",
+          "Joan Lindsay\u2019s mystery: plot summary, character analysis, themes of the uncanny and nature, key quotes, and Cambridge exam guidance.",
+        icon: proseIcon,
+      },
+      {
+        title: "The Joy Luck Club",
+        href: "/resources/english-literature/caie/the-joy-luck-club",
+        description:
+          "Amy Tan\u2019s intergenerational saga: plot summary, character analysis, themes of heritage, identity, and mother-daughter bonds, key quotes, and exam guidance.",
         icon: proseIcon,
       },
     ],
   },
+  /* ── Classic Prose ── */
+  {
+    heading: "Classic Prose",
+    subtitle: "Pre-20th century set texts \u2014 study guides with chapter summaries, contextual analysis, and exam strategies.",
+    items: [
+      {
+        title: "Great Expectations",
+        href: "/resources/english-literature/caie/great-expectations",
+        description:
+          "Dickens\u2019 bildungsroman: chapter summaries, character analysis, themes of ambition and social class, key quotes, and exam guidance.",
+        icon: proseIcon,
+      },
+      {
+        title: "Pride and Prejudice",
+        href: "/resources/english-literature/caie/pride-and-prejudice",
+        description:
+          "Jane Austen\u2019s classic: plot summary, character analysis, themes of class, marriage, and personal growth, key quotes, and exam practice.",
+        icon: proseIcon,
+      },
+      {
+        title: "Jane Eyre",
+        href: "/resources/english-literature/caie/jane-eyre",
+        description:
+          "Charlotte Bront\u00eb\u2019s gothic romance: plot summary, character analysis, themes of independence, morality, and love, key quotes, and exam guidance.",
+        icon: proseIcon,
+      },
+    ],
+  },
+  /* ── Poetry ── */
   {
     heading: "Poetry",
-    subtitle: "Comprehensive poetry guides with full analysis, comparison techniques, and marking guidance.",
+    subtitle: "Comprehensive poetry guides \u2014 full analysis of set anthology poems, comparison techniques, unseen poetry preparation, and A*\u2013G marking guidance.",
     items: [
       {
         title: "Songs of Ourselves Volume 1",
@@ -169,9 +242,10 @@ const resourceGroups: ResourceGroup[] = [
       },
     ],
   },
+  /* ── Exam Skills ── */
   {
     heading: "Exam Skills",
-    subtitle: "Build the exam technique and knowledge you need to maximise your marks.",
+    subtitle: "Build the exam technique and knowledge you need to maximise your marks and achieve a top grade (A*\u2013G scale).",
     items: [
       {
         title: "Exam Technique",
@@ -184,7 +258,7 @@ const resourceGroups: ResourceGroup[] = [
         title: "Grade Boundaries",
         href: "/resources/english-literature/caie/grade-boundaries",
         description:
-          "Historical grade boundaries for Cambridge IGCSE English Literature, with analysis of trends and what you need to aim for.",
+          "Historical A*\u2013G grade boundaries for Cambridge IGCSE English Literature, with analysis of trends and what you need to aim for.",
         icon: examIcon,
       },
     ],
@@ -209,7 +283,8 @@ export default function CaieEnglishLiteratureHub() {
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Everything you need to prepare for Cambridge IGCSE English Literature.
             Poetry, prose, drama, unseen analysis &mdash; structured around
-            Papers&nbsp;1 and&nbsp;2 with real study content and exam technique.
+            Papers&nbsp;1 and&nbsp;2 with real study content and exam technique
+            to help you achieve an A* (CAIE grades A*&ndash;G).
           </p>
         </div>
       </section>
@@ -236,6 +311,15 @@ export default function CaieEnglishLiteratureHub() {
               <li>&bull; Focus on dramatic technique and stagecraft</li>
             </ul>
           </div>
+        </div>
+
+        <div className="mt-6 rounded-lg border border-amber-500/20 bg-amber-500/5 p-5">
+          <h3 className="font-semibold text-foreground">Grading</h3>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Cambridge IGCSE English Literature is graded on the <strong className="text-foreground">A*&ndash;G</strong> scale
+            (not 1&ndash;9). The highest grade is <strong className="text-foreground">A*</strong>, and a
+            grade <strong className="text-foreground">C</strong> or above is generally considered a good pass.
+          </p>
         </div>
 
         <div className="mt-6 rounded-lg border border-primary/20 bg-primary/5 p-5">

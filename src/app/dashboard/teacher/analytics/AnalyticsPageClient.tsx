@@ -201,10 +201,10 @@ export default function AnalyticsPageClient() {
                   </div>
                   <div className="flex items-center gap-4 shrink-0">
                     <div className="text-center">
-                      <p className={`text-lg font-bold ${scoreColor(student.averageScore)}`}>
-                        {student.averageScore}%
+                      <p className={`text-lg font-bold ${gcseGradeColor(percentageToGCSEGrade(student.averageScore))}`}>
+                        Grade {percentageToGCSEGrade(student.averageScore)}
                       </p>
-                      <p className="text-xs text-muted-foreground">Avg Score</p>
+                      <p className="text-xs text-muted-foreground">Working At</p>
                     </div>
                     {/* TODO: Link to student profile */}
                     <Link

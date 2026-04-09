@@ -24,7 +24,7 @@ import { createClient } from '@/lib/supabase/client'
 import { useAuthStore } from '@/store/auth-store'
 import { loadAllCourses } from '@/data/course-loader'
 import { cn, formatDate, formatDuration } from '@/lib/utils'
-import { percentageToGCSEGradeLabel } from '@/lib/grades'
+import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor } from '@/lib/grades'
 import type { CourseData } from '@/lib/types'
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -473,6 +473,42 @@ export default function ParentDashboardPage() {
     return Math.round(avgCompletion * 0.6 + scoreComponent * 0.4)
   }, [childProgress, courseProgressList, averageScore])
 
+  // ── Working At Grade (recent performance) & Predicted Grade (trajectory) ──
+
+  const workingAtGrade = useMemo(() => {
+    if (!childProgress) return null
+    // Use the last 4 weeks of quiz scores to determine current working grade
+    const fourWeeksAgo = new Date()
+    fourWeeksAgo.setDate(fourWeeksAgo.getDate() - 28)
+    const recentScores = childProgress.module_progress
+      .filter(
+        (mp) =>
+          mp.quiz_score !== null &&
+          mp.completed_at &&
+          new Date(mp.completed_at) >= fourWeeksAgo
+      )
+      .map((mp) => mp.quiz_score!)
+    if (recentScores.length === 0) return averageScore !== null ? percentageToGCSEGrade(averageScore) : null
+    const recentAvg = Math.round(recentScores.reduce((a, b) => a + b, 0) / recentScores.length)
+    return percentageToGCSEGrade(recentAvg)
+  }, [childProgress, averageScore])
+
+  const predictedGrade = useMemo(() => {
+    if (!childProgress) return null
+    // Use score trend: if recent scores are higher than earlier, project upward
+    const sorted = childProgress.module_progress
+      .filter((mp) => mp.quiz_score !== null && mp.completed_at)
+      .sort((a, b) => new Date(a.completed_at!).getTime() - new Date(b.completed_at!).getTime())
+    if (sorted.length < 2) return workingAtGrade
+    const firstHalf = sorted.slice(0, Math.floor(sorted.length / 2))
+    const secondHalf = sorted.slice(Math.floor(sorted.length / 2))
+    const firstAvg = firstHalf.reduce((s, mp) => s + mp.quiz_score!, 0) / firstHalf.length
+    const secondAvg = secondHalf.reduce((s, mp) => s + mp.quiz_score!, 0) / secondHalf.length
+    // Project the improvement forward by half again
+    const projected = Math.min(100, Math.max(0, secondAvg + (secondAvg - firstAvg) * 0.5))
+    return percentageToGCSEGrade(Math.round(projected))
+  }, [childProgress, workingAtGrade])
+
   // ── Unlink handler ────────────────────────────────────────────────────────
 
   async function handleUnlink() {
@@ -618,6 +654,72 @@ export default function ParentDashboardPage() {
                   {unlinking ? 'Unlinking...' : 'Unlink'}
                 </Button>
               </div>
+
+              {/* ── Working At Grade & Predicted Grade ────────── */}
+              {(workingAtGrade !== null || predictedGrade !== null) && (
+                <Card className="mb-6 animate-fade-in">
+                  <CardContent className="py-5">
+                    <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-center sm:gap-8">
+                      {workingAtGrade !== null && (
+                        <div className="flex items-center gap-4">
+                          <div className="text-center">
+                            <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-1">
+                              Working At Grade
+                            </p>
+                            <div className={cn(
+                              'inline-flex items-center justify-center h-14 w-14 rounded-xl border-2 text-2xl font-extrabold',
+                              workingAtGrade >= 7
+                                ? 'border-emerald-500/30 bg-emerald-500/10 text-emerald-400'
+                                : workingAtGrade >= 5
+                                ? 'border-amber-500/30 bg-amber-500/10 text-amber-400'
+                                : 'border-red-500/30 bg-red-500/10 text-red-400'
+                            )}>
+                              {workingAtGrade}
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                      {workingAtGrade !== null && predictedGrade !== null && (
+                        <Separator orientation="vertical" className="hidden sm:block h-14" />
+                      )}
+                      {predictedGrade !== null && (
+                        <div className="flex items-center gap-4">
+                          <div className="text-center">
+                            <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-1">
+                              Predicted Grade
+                            </p>
+                            <div className={cn(
+                              'inline-flex items-center justify-center h-14 w-14 rounded-xl border-2 text-2xl font-extrabold',
+                              predictedGrade >= 7
+                                ? 'border-emerald-500/30 bg-emerald-500/10 text-emerald-400'
+                                : predictedGrade >= 5
+                                ? 'border-amber-500/30 bg-amber-500/10 text-amber-400'
+                                : 'border-red-500/30 bg-red-500/10 text-red-400'
+                            )}>
+                              {predictedGrade}
+                            </div>
+                          </div>
+                          {predictedGrade > (workingAtGrade ?? 0) && (
+                            <div className="flex items-center gap-1 text-xs text-emerald-400">
+                              <TrendingUp className="h-3.5 w-3.5" />
+                              Trending up
+                            </div>
+                          )}
+                          {predictedGrade < (workingAtGrade ?? 0) && (
+                            <div className="flex items-center gap-1 text-xs text-amber-400">
+                              <TrendingDown className="h-3.5 w-3.5" />
+                              Needs attention
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                    <p className="text-center text-xs text-muted-foreground mt-3">
+                      GCSE grades 1&ndash;9 &middot; Based on {childFirstName}&rsquo;s recent performance and progress trajectory
+                    </p>
+                  </CardContent>
+                </Card>
+              )}
 
               {/* ── Stats Row ──────────────────────────────────── */}
               <div className="mb-6 grid grid-cols-2 gap-3 lg:grid-cols-4">

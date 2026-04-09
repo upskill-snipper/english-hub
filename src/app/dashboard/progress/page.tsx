@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { percentageToGCSEGradeLabel, formatPercentageWithGrade } from "@/lib/grades";
+import { percentageToGCSEGrade, percentageToGCSEGradeLabel, formatPercentageWithGrade } from "@/lib/grades";
 import { LearningTip } from "@/components/ui/learning-tip";
 
 /* ─── Mock data ─────────────────────────────────────────────────────────
@@ -126,10 +126,10 @@ export default function ProgressPage() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
           <div className="bg-card rounded-xl border border-border p-4 text-center">
             <p className="text-3xl font-bold text-foreground">
-              {student.averageScore}%
+              Grade {percentageToGCSEGrade(student.averageScore)}
             </p>
             <LearningTip categories={['progress']} side="bottom">
-              <p className="text-sm text-muted-foreground mt-1">Average Score</p>
+              <p className="text-sm text-muted-foreground mt-1">Working At Grade</p>
             </LearningTip>
           </div>
           <div className="bg-card rounded-xl border border-border p-4 text-center">

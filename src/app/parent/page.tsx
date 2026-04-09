@@ -31,6 +31,7 @@ const childInfo = {
   yearGroup: 'Year 10',
   school: 'Greenfield Academy',
   class: '10B English',
+  workingAtGrade: 6,
   predictedGrade: 7,
   targetGrade: 8,
 }
@@ -179,11 +180,20 @@ export default function ParentDashboard() {
               </div>
             </div>
 
-            {/* Predicted grade */}
+            {/* Grade indicators */}
             <div className={cn(
               'flex items-center gap-3 rounded-xl border px-4 py-3',
               getGradeBg(childInfo.predictedGrade)
             )}>
+              <div className="text-center">
+                <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                  Working At
+                </p>
+                <p className={cn('text-3xl font-extrabold', getGradeColour(childInfo.workingAtGrade))}>
+                  {childInfo.workingAtGrade}
+                </p>
+              </div>
+              <Separator orientation="vertical" className="h-10" />
               <div className="text-center">
                 <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
                   Predicted
@@ -315,8 +325,17 @@ export default function ParentDashboard() {
             </div>
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
+                <BookOpen className="h-4 w-4 text-blue-400" />
+                <span className="text-sm text-muted-foreground">Working at grade</span>
+              </div>
+              <span className={cn('text-sm font-bold', getGradeColour(childInfo.workingAtGrade))}>
+                {childInfo.workingAtGrade}
+              </span>
+            </div>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
                 <TrendingUp className="h-4 w-4 text-emerald-400" />
-                <span className="text-sm text-muted-foreground">Your child&apos;s predicted</span>
+                <span className="text-sm text-muted-foreground">Predicted grade</span>
               </div>
               <span className={cn('text-sm font-bold', getGradeColour(childInfo.predictedGrade))}>
                 {childInfo.predictedGrade}

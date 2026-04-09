@@ -63,8 +63,8 @@ export default function CancellationPolicyPage() {
             <strong>If you consent and then cancel within 14 days:</strong> You
             will receive a refund minus a proportionate charge for the days you
             used the service. For example, if you have a monthly plan at
-            &pound;9.99 and cancel after 5 days, we deduct 5/30 of &pound;9.99
-            (&pound;1.67) and refund &pound;8.32.
+            &pound;8.99 and cancel after 5 days, we deduct 5/30 of &pound;8.99
+            (&pound;1.50) and refund &pound;7.49.
           </li>
           <li>
             <strong>If you do not consent:</strong> Your access begins after the

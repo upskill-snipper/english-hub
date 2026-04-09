@@ -586,7 +586,7 @@ export default function ReportsPage() {
                     <h4 className="text-sm font-semibold text-foreground mb-2">School Overview</h4>
                     <p className="text-xs text-muted-foreground/70 mb-3">Full school performance report with all year groups and departments.</p>
                     <Button size="sm" className="w-full bg-blue-600 hover:bg-blue-700 text-foreground gap-1.5" onClick={() => window.print()}>
-                      <Download className="h-3.5 w-3.5" />Download
+                      <Printer className="h-3.5 w-3.5" />Print / Save as PDF
                     </Button>
                   </div>
                   <div className="bg-muted/50 rounded-lg p-4 border border-border/50">
@@ -747,11 +747,7 @@ export default function ReportsPage() {
             <div className="flex justify-center gap-4 pt-4" data-print-hide>
               <Button size="lg" className="font-semibold gap-2" onClick={() => window.print()}>
                 <Printer className="h-4 w-4" />
-                Print Overview Report
-              </Button>
-              <Button size="lg" variant="outline" className="border-border/80 text-foreground hover:bg-muted font-semibold gap-2" onClick={() => window.print()}>
-                <Download className="h-4 w-4" />
-                Download PDF
+                Print / Save as PDF
               </Button>
             </div>
           </div>

@@ -474,8 +474,8 @@ export default function GradeDashboardPage() {
                 style={{ background: conicGradient }}
               >
                 <div className="flex h-28 w-28 flex-col items-center justify-center rounded-full bg-card">
-                  <span className="text-3xl font-bold">{averageScore}%</span>
-                  <span className="text-xs text-muted-foreground">average</span>
+                  <span className="text-3xl font-bold">Grade {scoreToGrade(averageScore, selectedBoard ?? undefined)}</span>
+                  <span className="text-xs text-muted-foreground">working at</span>
                 </div>
               </div>
             </div>

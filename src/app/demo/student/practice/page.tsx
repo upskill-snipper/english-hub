@@ -203,12 +203,26 @@ export default function StudentPracticeDemoPage() {
                 className="w-full h-48 rounded-xl border border-white/10 bg-white/[0.02] px-4 py-3 text-white/80 placeholder:text-white/20 focus:outline-none focus:border-white/20 resize-none text-sm leading-relaxed"
               />
               <div className="flex items-center justify-between mt-4">
-                <p className="text-xs text-white/30">
-                  {answer.length > 0 ? `${answer.split(/\s+/).filter(Boolean).length} words` : "Start typing your answer"}
-                </p>
+                <div className="space-y-1">
+                  <p
+                    className={`text-xs font-medium ${
+                      answer.split(/\s+/).filter(Boolean).length >= 100
+                        ? "text-green-400"
+                        : "text-red-400"
+                    }`}
+                  >
+                    {answer.split(/\s+/).filter(Boolean).length} / 100 words
+                  </p>
+                  {answer.split(/\s+/).filter(Boolean).length < 100 && (
+                    <p className="text-xs text-white/30">
+                      Write at least 100 words to submit your response
+                    </p>
+                  )}
+                </div>
                 <button
                   onClick={handleSubmit}
-                  className="flex items-center gap-2 rounded-lg bg-amber-500 px-5 py-2.5 text-sm font-semibold text-black hover:bg-amber-400 transition-colors"
+                  disabled={answer.split(/\s+/).filter(Boolean).length < 100}
+                  className="flex items-center gap-2 rounded-lg bg-amber-500 px-5 py-2.5 text-sm font-semibold text-black hover:bg-amber-400 transition-colors disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-amber-500"
                 >
                   <Send className="h-4 w-4" />
                   Submit Answer

@@ -326,6 +326,12 @@ export default function AITransparencyPage() {
             how the AI works, contact us:
           </p>
           <ul className="space-y-1">
+            <li>
+              Email:{" "}
+              <a href="mailto:info@Upskillenergy.com">
+                info@Upskillenergy.com
+              </a>
+            </li>
             <li>In-app: Use the &quot;Help&quot; button</li>
           </ul>
           <p className="mt-2">

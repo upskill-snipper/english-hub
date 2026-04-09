@@ -116,7 +116,7 @@ export default function AssignmentDetailPage() {
 
   if (!assignment) {
     return (
-      <div className="mx-auto max-w-3xl px-4 py-6 sm:px-6 lg:px-8">
+      <div className="px-4 py-6 sm:px-6 lg:px-8">
         <Button
           variant="ghost"
           size="sm"
@@ -223,7 +223,7 @@ export default function AssignmentDetailPage() {
   }
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-6 sm:px-6 lg:px-8">
+    <div className="px-4 py-6 sm:px-6 lg:px-8">
       {/* Back link */}
       <Button
         variant="ghost"

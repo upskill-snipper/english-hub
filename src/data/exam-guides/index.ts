@@ -2,12 +2,11 @@
 
 import type { BoardExamGuide } from './types';
 import { aqaGuide } from './aqa-guide';
-import { edexcelGuide } from './edexcel-guide';
 import { ocrGuide } from './ocr-guide';
 import { wjecGuide } from './wjec-guide';
 import { igcseGuide } from './igcse-guide';
 
-export { aqaGuide, edexcelGuide, ocrGuide, wjecGuide, igcseGuide };
+export { aqaGuide, ocrGuide, wjecGuide, igcseGuide };
 export { ks3Guide } from './ks3-guide';
 export type { KS3Guide } from './ks3-guide';
 export { genericOverview } from './generic-overview';
@@ -20,7 +19,6 @@ export type * from './types';
 
 const guides: Record<string, BoardExamGuide> = {
   aqa: aqaGuide,
-  edexcel: edexcelGuide,
   ocr: ocrGuide,
   wjec: wjecGuide,
   igcse: igcseGuide,

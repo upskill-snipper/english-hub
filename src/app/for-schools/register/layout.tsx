@@ -3,7 +3,7 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Book a Call | The English Hub for Schools",
   description: "Book a call to discuss the Founding Schools Programme. Tailored pricing, priority onboarding, and full platform access for your school.",
-  alternates: { canonical: "https://theenglishhub.app/contact" },
+  alternates: { canonical: "https://theenglishhub.app/for-schools/register" },
   openGraph: {
     title: "Book a Call | The English Hub for Schools",
     description: "Founding Schools Programme: book a call to discuss tailored pricing for your department.",

@@ -61,7 +61,7 @@ const HELP_CATEGORIES: HelpCategory[] = [
       {
         question: 'Is there a free trial?',
         answer:
-          'Yes! Every new account gets a 30-day free trial with full access to all features — courses, mock exams, practice questions, and revision materials. No credit card required to start.',
+          'Yes! Every feature comes with 3 free uses — no card required. When you subscribe, your first month is completely free with full access to all features — courses, mock exams, practice questions, and revision materials.',
       },
     ],
   },
@@ -157,7 +157,7 @@ const HELP_CATEGORIES: HelpCategory[] = [
       {
         question: 'How much does The English Hub cost?',
         answer:
-          'We offer two simple plans: £9.99/month or £67.99/year (save over 30%), both with the first month free. Every plan includes full access to all features. Cancel anytime.',
+          'For students: £8.99/month or £67.99/year (save over 35%). For teachers: £12.99/month or £99.99/year. Both plans include a free first month and full access to all features. Every feature also comes with 3 free uses — no card required. Cancel anytime.',
       },
       {
         question: 'Can I cancel my subscription?',
@@ -172,7 +172,7 @@ const HELP_CATEGORIES: HelpCategory[] = [
       {
         question: 'What happens when my free trial ends?',
         answer:
-          'Near the end of your 30-day trial, we\'ll send you a reminder email. If you\'ve added a payment method, your chosen plan will start automatically. If you haven\'t added payment details, your account will be paused until you subscribe.',
+          'Near the end of your free first month, we\'ll send you a reminder email. If you\'ve added a payment method, your chosen plan will start automatically. If you haven\'t added payment details, your account will be paused until you subscribe.',
       },
     ],
   },
@@ -184,9 +184,9 @@ const HELP_CATEGORIES: HelpCategory[] = [
     color: 'text-indigo-400 bg-indigo-500/10 border-indigo-500/20',
     items: [
       {
-        question: 'Do you offer school licenses?',
+        question: 'Do you offer school plans?',
         answer:
-          'Yes! We offer bulk school licenses from £500/year for up to 50 students (£10/student). Larger packages are available for bigger schools. Visit our For Schools page or contact us for a tailored quote.',
+          'Yes! Our Founding Schools Programme is a strategic partnership limited to 10 schools, with pricing ranging from £3,000 to £7,000 per year depending on department size. Schools receive full platform access, priority onboarding, early features, and locked preferential pricing. Visit our For Schools page or contact info@Upskillenergy.com to learn more.',
       },
       {
         question: 'Is there a teacher dashboard?',
@@ -306,11 +306,11 @@ export default function HelpCentrePage() {
         <p className="mt-4 text-lg text-muted-foreground">
           Find answers to your questions about The English Hub. Can&apos;t find
           what you&apos;re looking for?{' '}
-          <Link href="/help/faq" className="text-primary underline hover:text-primary/80">
+          <Link href="/faqs" className="text-primary underline hover:text-primary/80">
             Check our FAQs
           </Link>{' '}
           or{' '}
-          <Link href="/contact" className="text-primary underline hover:text-primary/80">
+          <Link href="/help/contact" className="text-primary underline hover:text-primary/80">
             get in touch
           </Link>
           .
@@ -337,7 +337,7 @@ export default function HelpCentrePage() {
               No results found for &ldquo;{searchQuery}&rdquo;. Try a different
               search term or{' '}
               <Link
-                href="/contact"
+                href="/help/contact"
                 className="text-primary underline hover:text-primary/80"
               >
                 contact our support team
@@ -395,7 +395,7 @@ export default function HelpCentrePage() {
           to you as soon as possible.
         </p>
         <Link
-          href="/contact"
+          href="/help/contact"
           className="mt-4 inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
         >
           Contact Support

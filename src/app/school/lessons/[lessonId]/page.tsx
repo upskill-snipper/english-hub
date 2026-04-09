@@ -1015,7 +1015,7 @@ export default function LessonDetailPage() {
       <style dangerouslySetInnerHTML={{ __html: LESSON_PRINT_STYLES }} />
 
       <div className="min-h-screen bg-background print-container">
-        <div className="mx-auto max-w-5xl px-4 py-6 sm:px-6 lg:px-8">
+        <div className="px-4 py-6 sm:px-6 lg:px-8">
 
           {/* Back link */}
           <Link

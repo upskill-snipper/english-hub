@@ -495,7 +495,7 @@ export default function SchoolBillingPage() {
   const daysRemaining = isFounder ? calcDaysRemaining() : (access?.daysRemaining ?? 0)
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6 lg:px-8">
+    <div className="px-4 py-8 sm:px-6 lg:px-8">
       {/* Header */}
       <div className="mb-8 flex items-center gap-3">
         <CreditCard className="h-6 w-6 text-muted-foreground" />

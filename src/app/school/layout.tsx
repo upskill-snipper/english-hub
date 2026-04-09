@@ -47,7 +47,7 @@ export default async function SchoolAdminLayout({
       />
 
       {/* Main content area */}
-      <main className="flex-1 overflow-auto p-6">{children}</main>
+      <main className="flex-1 min-w-0 overflow-auto p-6">{children}</main>
     </div>
   )
 }

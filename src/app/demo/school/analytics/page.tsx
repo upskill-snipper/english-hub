@@ -26,6 +26,7 @@ import { Button } from "@/components/ui/button"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import { toast } from "sonner"
 import { openPrintableDocument } from "@/lib/generate-download"
+import { DownloadMenu } from "@/components/DownloadMenu"
 import {
   DEMO_SCHOOL,
   DEMO_STUDENTS,
@@ -346,24 +347,16 @@ export default function AnalyticsPage() {
 
             {/* Export */}
             <div className="hidden sm:flex items-center gap-2">
-              <Button
-                variant="outline"
+              <DownloadMenu
                 size="sm"
-                className="border-border text-foreground/80 hover:text-foreground hover:bg-muted/50"
-                onClick={() => handleExport("Excel")}
-              >
-                <FileSpreadsheet className="w-4 h-4 mr-1.5" />
-                Excel
-              </Button>
-              <Button
                 variant="outline"
-                size="sm"
+                label="Export"
                 className="border-border text-foreground/80 hover:text-foreground hover:bg-muted/50"
-                onClick={() => handleExport("PDF")}
-              >
-                <Download className="w-4 h-4 mr-1.5" />
-                PDF
-              </Button>
+                options={[
+                  { label: "Export as PDF", format: "pdf", onClick: () => handleExport("PDF") },
+                  { label: "Export as Excel (.csv)", format: "csv", onClick: () => handleExport("Excel") },
+                ]}
+              />
             </div>
           </div>
         </div>

@@ -19,7 +19,7 @@ interface WeeklyReport {
   timeSpentMinutes: number;
   averageScore: number;
   previousWeekScore: number;
-  projectedGrades: { subject: string; grade: string }[];
+  projectedGrades: { subject: string; workingAt: string; predicted: string }[];
   strengths: string[];
   improvements: string[];
   recommendations: string[];
@@ -37,8 +37,8 @@ const MOCK_REPORTS: Record<string, WeeklyReport[]> = {
       averageScore: 78,
       previousWeekScore: 73,
       projectedGrades: [
-        { subject: "English Literature", grade: "6" },
-        { subject: "English Language", grade: "7" },
+        { subject: "English Literature", workingAt: "6", predicted: "7" },
+        { subject: "English Language", workingAt: "6", predicted: "7" },
       ],
       strengths: [
         "Strong analytical paragraphs with contextual references",
@@ -66,8 +66,8 @@ const MOCK_REPORTS: Record<string, WeeklyReport[]> = {
       averageScore: 73,
       previousWeekScore: 71,
       projectedGrades: [
-        { subject: "English Literature", grade: "6" },
-        { subject: "English Language", grade: "6" },
+        { subject: "English Literature", workingAt: "5", predicted: "6" },
+        { subject: "English Language", workingAt: "6", predicted: "6" },
       ],
       strengths: [
         "Consistent use of PEA paragraphs",
@@ -95,8 +95,8 @@ const MOCK_REPORTS: Record<string, WeeklyReport[]> = {
       averageScore: 71,
       previousWeekScore: 68,
       projectedGrades: [
-        { subject: "English Literature", grade: "5" },
-        { subject: "English Language", grade: "6" },
+        { subject: "English Literature", workingAt: "5", predicted: "5" },
+        { subject: "English Language", workingAt: "5", predicted: "6" },
       ],
       strengths: [
         "Improving analytical depth in literature essays",
@@ -126,8 +126,8 @@ const MOCK_REPORTS: Record<string, WeeklyReport[]> = {
       averageScore: 68,
       previousWeekScore: 66,
       projectedGrades: [
-        { subject: "English Literature", grade: "5" },
-        { subject: "English Language", grade: "5" },
+        { subject: "English Literature", workingAt: "4", predicted: "5" },
+        { subject: "English Language", workingAt: "5", predicted: "5" },
       ],
       strengths: [
         "Creative flair in descriptive writing",
@@ -217,10 +217,10 @@ export default function ReportsPage() {
           <tr><th>Essays Completed</th><td>${report.essaysCompleted}</td><th>Time Spent</th><td>${Math.round(report.timeSpentMinutes / 60 * 10) / 10} hours</td></tr>
           <tr><th>Average Score</th><td>${report.averageScore}%</td><th>Change</th><td>${scoreDiff >= 0 ? "+" : ""}${scoreDiff}%</td></tr>
         </table>
-        <h2>Projected Grades</h2>
+        <h2>Working At &amp; Predicted Grades</h2>
         <table>
-          <tr><th>Subject</th><th>Projected Grade</th></tr>
-          ${report.projectedGrades.map((g) => `<tr><td>${e(g.subject)}</td><td>Grade ${e(g.grade)}</td></tr>`).join("")}
+          <tr><th>Subject</th><th>Working At</th><th>Predicted</th></tr>
+          ${report.projectedGrades.map((g) => `<tr><td>${e(g.subject)}</td><td>Grade ${e(g.workingAt)}</td><td>Grade ${e(g.predicted)}</td></tr>`).join("")}
         </table>
         <h2>Strengths</h2>
         <ul>${report.strengths.map((s) => `<li>${e(s)}</li>`).join("")}</ul>
@@ -339,14 +339,19 @@ export default function ReportsPage() {
                       </div>
                     </div>
 
-                    {/* Projected grades */}
+                    {/* Working At & Predicted grades */}
                     <div>
-                      <h4 className="text-sm font-semibold text-foreground">Projected Grades</h4>
-                      <div className="mt-2 grid gap-2 sm:grid-cols-2">
+                      <h4 className="text-sm font-semibold text-foreground">Working At &amp; Predicted Grades</h4>
+                      <div className="mt-2 space-y-2">
                         {report.projectedGrades.map((g, i) => (
                           <div key={i} className="flex items-center justify-between rounded-lg border border-border px-4 py-2">
                             <span className="text-sm text-foreground">{g.subject}</span>
-                            <span className="font-bold text-primary">Grade {g.grade}</span>
+                            <div className="flex items-center gap-3">
+                              <span className="text-xs text-muted-foreground">Working At:</span>
+                              <span className="font-bold text-primary">Grade {g.workingAt}</span>
+                              <span className="text-xs text-muted-foreground">Predicted:</span>
+                              <span className="font-bold text-primary">Grade {g.predicted}</span>
+                            </div>
                           </div>
                         ))}
                       </div>

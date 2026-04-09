@@ -2,16 +2,16 @@ import type { Metadata } from "next"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "English Hub for Teachers | AI Lesson Planning & Analytics",
+  title: "For Teachers | AI Lesson Planning & Analytics",
   description: "Save 5+ hours/week with AI lesson planning, student analytics, and 300+ ready resources. Try free for 1 month. School plans available -- book a call.",
   alternates: { canonical: "https://theenglishhub.app/for-teachers" },
   openGraph: {
-    title: "English Hub for Teachers | AI Lesson Planning & Analytics",
+    title: "For Teachers | AI Lesson Planning & Analytics — The English Hub",
     description: "Save 5+ hours/week with AI lesson planning, student analytics, and 300+ ready resources. Try free for 1 month. School plans available -- book a call.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "English Hub for Teachers | AI Lesson Planning & Analytics",
+    title: "For Teachers | AI Lesson Planning & Analytics — The English Hub",
     description: "Save 5+ hours/week with AI lesson planning, student analytics, and 300+ ready resources. Try free for 1 month. School plans available -- book a call.",
   },
 }

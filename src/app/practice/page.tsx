@@ -404,6 +404,25 @@ export default function PracticePage() {
                 disabled={submitted}
                 className="resize-y text-base leading-relaxed"
               />
+              {!submitted && (
+                <div className="flex items-center justify-between">
+                  <p
+                    className={cn(
+                      'text-sm font-medium',
+                      answer.split(/\s+/).filter(Boolean).length >= 100
+                        ? 'text-green-600 dark:text-green-400'
+                        : 'text-destructive'
+                    )}
+                  >
+                    {answer.split(/\s+/).filter(Boolean).length} / 100 words
+                  </p>
+                  {answer.split(/\s+/).filter(Boolean).length < 100 && (
+                    <p className="text-sm text-muted-foreground">
+                      Write at least 100 words to submit your response
+                    </p>
+                  )}
+                </div>
+              )}
             </div>
 
             {/* Submit Answer button — only before submission */}
@@ -411,7 +430,7 @@ export default function PracticePage() {
               <Button
                 className="bg-primary text-primary-foreground hover:bg-primary/90"
                 onClick={() => setSubmitted(true)}
-                disabled={!answer.trim()}
+                disabled={answer.split(/\s+/).filter(Boolean).length < 100}
               >
                 <Send className="h-4 w-4" />
                 Submit Answer

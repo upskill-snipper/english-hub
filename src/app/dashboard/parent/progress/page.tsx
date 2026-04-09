@@ -116,14 +116,14 @@ const MOCK_WEAKNESSES: Record<string, { area: string; description: string; recom
   ],
 };
 
-const MOCK_GRADE_COMPARISON: Record<string, { subject: string; projected: string; target: string }[]> = {
+const MOCK_GRADE_COMPARISON: Record<string, { subject: string; workingAt: string; predicted: string; target: string }[]> = {
   s1: [
-    { subject: "English Literature", projected: "6", target: "7" },
-    { subject: "English Language", projected: "7", target: "7" },
+    { subject: "English Literature", workingAt: "6", predicted: "7", target: "7" },
+    { subject: "English Language", workingAt: "6", predicted: "7", target: "7" },
   ],
   s2: [
-    { subject: "English Literature", projected: "5", target: "6" },
-    { subject: "English Language", projected: "5", target: "6" },
+    { subject: "English Literature", workingAt: "4", predicted: "5", target: "6" },
+    { subject: "English Language", workingAt: "5", predicted: "5", target: "6" },
   ],
 };
 
@@ -230,12 +230,12 @@ function StrengthsRadar({ strengths }: { strengths: StrengthsData }) {
 
 /* ─── Grade colour helper ───────────────────────────────────────────── */
 
-function gradeColour(projected: string, target: string): string {
-  const p = parseInt(projected);
+function gradeColour(grade: string, target: string): string {
+  const g = parseInt(grade);
   const t = parseInt(target);
-  if (isNaN(p) || isNaN(t)) return "text-foreground";
-  if (p >= t) return "text-success";
-  if (p >= t - 1) return "text-accent";
+  if (isNaN(g) || isNaN(t)) return "text-foreground";
+  if (g >= t) return "text-success";
+  if (g >= t - 1) return "text-accent";
   return "text-warn";
 }
 
@@ -350,7 +350,7 @@ export default function ProgressPage() {
       {/* ── Projected vs Target Grades ─────────────────────── */}
       <section aria-labelledby="grades-comparison-heading">
         <h2 id="grades-comparison-heading" className="text-lg font-semibold text-foreground">
-          Projected vs Target Grades
+          Working At Grade, Predicted Grade &amp; Target
         </h2>
         <div className="mt-4 card">
           <div className="overflow-x-auto">
@@ -358,14 +358,15 @@ export default function ProgressPage() {
               <thead>
                 <tr className="border-b border-border">
                   <th scope="col" className="pb-2 pr-4 text-left text-xs font-medium text-muted-foreground">Subject</th>
-                  <th scope="col" className="pb-2 pr-4 text-left text-xs font-medium text-muted-foreground">Projected Grade</th>
-                  <th scope="col" className="pb-2 pr-4 text-left text-xs font-medium text-muted-foreground">Target Grade</th>
+                  <th scope="col" className="pb-2 pr-4 text-left text-xs font-medium text-muted-foreground">Working At</th>
+                  <th scope="col" className="pb-2 pr-4 text-left text-xs font-medium text-muted-foreground">Predicted</th>
+                  <th scope="col" className="pb-2 pr-4 text-left text-xs font-medium text-muted-foreground">Target</th>
                   <th scope="col" className="pb-2 text-left text-xs font-medium text-muted-foreground">Status</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
                 {gradeComparison.map((row, idx) => {
-                  const p = parseInt(row.projected);
+                  const p = parseInt(row.predicted);
                   const t = parseInt(row.target);
                   const diff = p - t;
                   let statusLabel = "On track";
@@ -381,8 +382,11 @@ export default function ProgressPage() {
                   return (
                     <tr key={idx}>
                       <td className="py-2.5 pr-4 font-medium text-foreground">{row.subject}</td>
-                      <td className={`py-2.5 pr-4 font-bold ${gradeColour(row.projected, row.target)}`}>
-                        Grade {row.projected}
+                      <td className={`py-2.5 pr-4 font-bold ${gradeColour(row.workingAt, row.target)}`}>
+                        Grade {row.workingAt}
+                      </td>
+                      <td className={`py-2.5 pr-4 font-bold ${gradeColour(row.predicted, row.target)}`}>
+                        Grade {row.predicted}
                       </td>
                       <td className="py-2.5 pr-4 font-medium text-muted-foreground">Grade {row.target}</td>
                       <td className="py-2.5">

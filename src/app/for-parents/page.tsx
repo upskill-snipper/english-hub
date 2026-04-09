@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import type { Metadata } from 'next'
 import { PRICING } from '@/constants/pricing'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -50,6 +49,10 @@ const faqs = [
   {
     q: 'What if my child already has an account?',
     a: 'No problem. Simply enter their email address or invite code in your parent dashboard, and we will send them a link request. They must accept it before you can see their data.',
+  },
+  {
+    q: 'What are Working At Grade and Predicted Grade?',
+    a: 'Working At Grade is your child\u2019s current GCSE grade (1\u20139) based on their recent quiz and assessment scores. Predicted Grade is where our system estimates they\u2019re heading based on their progress trajectory. Both use the UK GCSE 1\u20139 grading system so you always have a clear picture.',
   },
   {
     q: 'Can I cancel anytime?',
@@ -266,8 +269,8 @@ export default function ForParentsPage() {
               {
                 icon: Target,
                 color: 'text-emerald-400 bg-emerald-500/10',
-                title: 'Exam Readiness Score',
-                desc: 'A single, easy-to-understand score (0-100) that tells you how prepared your child is for their exam. Based on modules completed, quiz scores, and coverage.',
+                title: 'Working At Grade & Predicted Grade',
+                desc: 'See your child\u2019s current Working At Grade (based on recent performance) and their Predicted Grade (where they\u2019re heading) using GCSE grades 1\u20139. Clear, at-a-glance indicators of progress.',
               },
               {
                 icon: Bell,
@@ -417,6 +420,9 @@ export default function ForParentsPage() {
               <p className="text-center text-xs text-muted-foreground mt-3">
                 No credit card required &middot; Cancel anytime
               </p>
+              <p className="text-center text-xs text-muted-foreground mt-2">
+                Or save with the annual plan: {PRICING.CURRENCY}{PRICING.ANNUAL}/year
+              </p>
             </CardContent>
           </Card>
         </div>
@@ -441,6 +447,27 @@ export default function ForParentsPage() {
               <FAQItem key={faq.q} q={faq.q} a={faq.a} />
             ))}
           </div>
+        </div>
+      </section>
+
+      <Separator className="opacity-40" />
+
+      {/* ━━━ CONTACT ━━━ */}
+      <section className="py-16 sm:py-20">
+        <div className="max-w-2xl mx-auto px-6 text-center">
+          <Mail className="w-10 h-10 text-primary mx-auto mb-4" />
+          <h2 className="text-foreground mb-3">
+            Have a Question?
+          </h2>
+          <p className="text-muted-foreground text-body-lg mb-6">
+            We&rsquo;re here to help. If you have any questions about how the platform works, pricing, or your child&rsquo;s progress, please get in touch.
+          </p>
+          <a
+            href="mailto:info@Upskillenergy.com"
+            className="text-primary font-semibold hover:underline text-lg"
+          >
+            info@Upskillenergy.com
+          </a>
         </div>
       </section>
 

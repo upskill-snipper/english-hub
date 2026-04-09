@@ -6,7 +6,6 @@ import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import {
-  Download,
   BookOpen,
   FileText,
   CheckCircle,
@@ -22,7 +21,6 @@ import {
   ClipboardList,
   Users,
   Award,
-  FileDown,
 } from "lucide-react"
 import { y11IgcseLitInspectorLessons } from "@/data/lesson-plans/y11-igcse-lit-inspector-lessons"
 import {
@@ -37,7 +35,7 @@ import {
   generateMarkSchemeWord,
 } from "@/lib/generate-docx"
 import { generateLessonPlanPptx } from "@/lib/generate-pptx"
-import { Presentation } from "lucide-react"
+import { DownloadMenu } from "@/components/DownloadMenu"
 import {
   act1LessonPlan,
   characterWorksheetMeta,
@@ -144,6 +142,7 @@ async function downloadLessonPlanPptx() {
     await generateLessonPlanPptx("An Inspector Calls", act1LessonPlan)
   } catch (err) {
     console.error("PPTX download failed:", err)
+    alert("PowerPoint download failed. Please try the PDF download instead.")
   }
 }
 
@@ -398,34 +397,15 @@ export default function FreeResourcesPage() {
             </div>
 
             {/* Download */}
-            <div className="flex flex-wrap gap-3">
-              <Button
-                size="lg"
-                className="w-full sm:w-auto"
-                onClick={downloadLessonPlan}
-              >
-                <Download className="mr-2 h-4 w-4" />
-                Download PDF
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="w-full sm:w-auto"
-                onClick={downloadLessonPlanPptx}
-              >
-                <Presentation className="mr-2 h-4 w-4" />
-                Download PowerPoint
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="w-full sm:w-auto"
-                onClick={downloadLessonPlanWord}
-              >
-                <FileDown className="mr-2 h-4 w-4" />
-                Download Word
-              </Button>
-            </div>
+            <DownloadMenu
+              size="lg"
+              label="Download Lesson Plan"
+              options={[
+                { label: "Download PDF", format: "pdf", onClick: downloadLessonPlan },
+                { label: "Download Word (.docx)", format: "word", onClick: downloadLessonPlanWord },
+                { label: "Download PowerPoint (.pptx)", format: "pptx", onClick: downloadLessonPlanPptx },
+              ]}
+            />
           </Card>
         </section>
 
@@ -505,25 +485,14 @@ export default function FreeResourcesPage() {
               ))}
             </div>
 
-            <div className="flex flex-wrap gap-3">
-              <Button
-                size="lg"
-                className="w-full sm:w-auto"
-                onClick={downloadWorksheet}
-              >
-                <Download className="mr-2 h-4 w-4" />
-                Download PDF
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="w-full sm:w-auto"
-                onClick={downloadWorksheetWord}
-              >
-                <FileDown className="mr-2 h-4 w-4" />
-                Download Word
-              </Button>
-            </div>
+            <DownloadMenu
+              size="lg"
+              label="Download Worksheet"
+              options={[
+                { label: "Download PDF", format: "pdf", onClick: downloadWorksheet },
+                { label: "Download Word (.docx)", format: "word", onClick: downloadWorksheetWord },
+              ]}
+            />
           </Card>
         </section>
 
@@ -615,14 +584,12 @@ export default function FreeResourcesPage() {
               </div>
             </div>
 
-            <Button
+            <DownloadMenu
               size="lg"
-              className="w-full sm:w-auto"
-              onClick={downloadTeachingGuide}
-            >
-              <Download className="mr-2 h-4 w-4" />
-              Download Revision Guide
-            </Button>
+              options={[
+                { label: "Download Revision Guide (PDF)", format: "pdf", onClick: downloadTeachingGuide },
+              ]}
+            />
           </Card>
         </section>
 
@@ -650,25 +617,14 @@ export default function FreeResourcesPage() {
               <Badge variant="secondary" className="text-xs">45 marks total</Badge>
               <Badge variant="secondary" className="text-xs">WHAT-HOW-WHY framework</Badge>
             </div>
-            <div className="flex flex-wrap gap-3">
-              <Button
-                size="lg"
-                className="w-full sm:w-auto"
-                onClick={downloadQuotesWorksheet}
-              >
-                <Download className="mr-2 h-4 w-4" />
-                Download PDF
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="w-full sm:w-auto"
-                onClick={downloadQuotesWorksheetWord}
-              >
-                <FileDown className="mr-2 h-4 w-4" />
-                Download Word
-              </Button>
-            </div>
+            <DownloadMenu
+              size="lg"
+              label="Download Quotes Worksheet"
+              options={[
+                { label: "Download PDF", format: "pdf", onClick: downloadQuotesWorksheet },
+                { label: "Download Word (.docx)", format: "word", onClick: downloadQuotesWorksheetWord },
+              ]}
+            />
           </Card>
         </section>
 
@@ -697,25 +653,14 @@ export default function FreeResourcesPage() {
               <Badge variant="secondary" className="text-xs">AO1 + AO2 + AO3</Badge>
               <Badge variant="secondary" className="text-xs">Grade boundary examples</Badge>
             </div>
-            <div className="flex flex-wrap gap-3">
-              <Button
-                size="lg"
-                className="w-full sm:w-auto"
-                onClick={downloadMarkScheme}
-              >
-                <Download className="mr-2 h-4 w-4" />
-                Download PDF
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="w-full sm:w-auto"
-                onClick={downloadMarkSchemeWord}
-              >
-                <FileDown className="mr-2 h-4 w-4" />
-                Download Word
-              </Button>
-            </div>
+            <DownloadMenu
+              size="lg"
+              label="Download Mark Scheme"
+              options={[
+                { label: "Download PDF", format: "pdf", onClick: downloadMarkScheme },
+                { label: "Download Word (.docx)", format: "word", onClick: downloadMarkSchemeWord },
+              ]}
+            />
           </Card>
         </section>
 

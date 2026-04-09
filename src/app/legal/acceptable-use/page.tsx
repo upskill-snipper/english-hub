@@ -317,6 +317,12 @@ export default function AcceptableUsePolicyPage() {
         <div className="bg-muted rounded-lg p-4 text-sm">
           <p className="font-semibold">Upskill Energy Limited</p>
           <p>
+            Email:{" "}
+            <a href="mailto:info@Upskillenergy.com">
+              info@Upskillenergy.com
+            </a>
+          </p>
+          <p>
             Website:{" "}
             <a
               href="https://www.theenglishhub.app"

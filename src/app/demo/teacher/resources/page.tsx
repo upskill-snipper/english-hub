@@ -41,7 +41,7 @@ import {
   responsibilityMarkSchemeAnswers,
   inspectorCallsRevisionGuide,
 } from "@/lib/inspector-calls-free-pack"
-import { FileDown } from "lucide-react"
+import { DownloadMenu } from "@/components/DownloadMenu"
 
 // ─── Types ─────────────────────────────────────────────────────────────────
 
@@ -642,71 +642,46 @@ export default function TeacherResourcesPage() {
                   <div className="flex-1" />
 
                   {/* Action buttons */}
-                  <div className="space-y-2 pt-2 border-t border-white/[0.06]">
-                    <div className="flex items-center gap-2">
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        className="flex-1 text-xs text-neutral-400 hover:text-white hover:bg-white/[0.06] gap-1.5"
-                        onClick={() => setPreviewOpen(isPreviewOpen ? null : resource.id)}
-                      >
-                        {isPreviewOpen ? (
-                          <>
-                            <EyeOff className="h-3.5 w-3.5" />
-                            Hide Preview
-                          </>
-                        ) : (
-                          <>
-                            <Eye className="h-3.5 w-3.5" />
-                            Preview
-                          </>
-                        )}
-                      </Button>
+                  <div className="flex items-center gap-2 pt-2 border-t border-white/[0.06]">
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="flex-1 text-xs text-neutral-400 hover:text-white hover:bg-white/[0.06] gap-1.5"
+                      onClick={() => setPreviewOpen(isPreviewOpen ? null : resource.id)}
+                    >
+                      {isPreviewOpen ? (
+                        <>
+                          <EyeOff className="h-3.5 w-3.5" />
+                          Hide Preview
+                        </>
+                      ) : (
+                        <>
+                          <Eye className="h-3.5 w-3.5" />
+                          Preview
+                        </>
+                      )}
+                    </Button>
 
+                    {resource.isFree ? (
+                      <DownloadMenu
+                        size="sm"
+                        label="Download"
+                        className="flex-1 text-xs bg-emerald-600 hover:bg-emerald-500 text-white"
+                        options={[
+                          { label: "Download PDF", format: "pdf", onClick: () => handleDownload(resource, "pdf") },
+                          { label: "Download Word (.docx)", format: "word", onClick: () => handleDownload(resource, "word") },
+                          { label: "Download PowerPoint (.pptx)", format: "pptx", onClick: () => handleDownload(resource, "pptx") },
+                        ]}
+                      />
+                    ) : (
                       <Button
                         size="sm"
-                        className={`flex-1 text-xs gap-1.5 ${
-                          resource.isFree
-                            ? "bg-emerald-600 hover:bg-emerald-500 text-white"
-                            : "bg-white/10 hover:bg-white/15 text-neutral-300"
-                        }`}
+                        className="flex-1 text-xs gap-1.5 bg-white/10 hover:bg-white/15 text-neutral-300"
                         onClick={() => handleDownload(resource, "pdf")}
                       >
-                        {resource.isFree ? (
-                          <>
-                            <Download className="h-3.5 w-3.5" />
-                            PDF
-                          </>
-                        ) : (
-                          <>
-                            <Lock className="h-3.5 w-3.5" />
-                            Download
-                          </>
-                        )}
+                        <Lock className="h-3.5 w-3.5" />
+                        Download
                       </Button>
-                    </div>
-
-                    {resource.isFree && (
-                      <div className="flex items-center gap-2">
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          className="flex-1 text-xs text-neutral-400 hover:text-white hover:bg-white/[0.06] gap-1.5"
-                          onClick={() => handleDownload(resource, "pptx")}
-                        >
-                          <Presentation className="h-3.5 w-3.5" />
-                          PowerPoint
-                        </Button>
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          className="flex-1 text-xs text-neutral-400 hover:text-white hover:bg-white/[0.06] gap-1.5"
-                          onClick={() => handleDownload(resource, "word")}
-                        >
-                          <FileDown className="h-3.5 w-3.5" />
-                          Word
-                        </Button>
-                      </div>
                     )}
                   </div>
                 </div>

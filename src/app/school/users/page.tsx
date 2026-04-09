@@ -726,7 +726,7 @@ export default function UserManagementPage() {
   // ── Render ──────────────────────────────────────────────────────────────────
   return (
     <div className="min-h-screen bg-background">
-      <div className="mx-auto max-w-7xl space-y-6 px-4 py-8 sm:px-6 lg:px-8">
+      <div className="space-y-6 px-4 py-8 sm:px-6 lg:px-8">
 
         {/* ── Page header ── */}
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -790,7 +790,7 @@ export default function UserManagementPage() {
                 ).map((tab) => (
                   <TabsTrigger key={tab.value} value={tab.value}>
                     {tab.label}
-                    <span className="ml-1 rounded-full bg-muted px-1.5 py-px text-[10px] font-semibold tabular-nums text-muted-foreground">
+                    <span className="ml-1 rounded-full bg-primary/10 px-1.5 py-px text-[10px] font-semibold tabular-nums text-muted-foreground">
                       {tab.count}
                     </span>
                   </TabsTrigger>

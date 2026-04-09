@@ -56,7 +56,7 @@ function SidebarSkeleton() {
 }
 
 /** Routes where the BoardSidebar is hidden (they have their own navigation). */
-const HIDDEN_PREFIXES = ['/dashboard', '/help', '/legal']
+const HIDDEN_PREFIXES = ['/dashboard', '/help', '/legal', '/school', '/demo']
 
 /** Exact routes where the BoardSidebar is hidden (full-width pages). */
 const HIDDEN_EXACT = ['/']

@@ -25,6 +25,8 @@ import {
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor } from "@/lib/grades"
+import GradeProgressCard from "@/components/GradeProgressCard"
+import GradeRecommendations from "@/components/GradeRecommendations"
 
 // ---------------------------------------------------------------------------
 // Demo data -- Aisha Rahman's student perspective
@@ -330,7 +332,14 @@ export default function StudentDemoPage() {
                 </p>
 
                 <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3">
-                  {/* Current grade */}
+                  {/* Working At Grade */}
+                  <div className="flex items-center gap-2 rounded-lg border border-blue-500/20 bg-blue-500/5 px-3 py-2">
+                    <Star className="h-4 w-4 text-blue-400" />
+                    <span className="text-sm text-white/70">
+                      Working At: <span className={`font-semibold ${gcseGradeColor(percentageToGCSEGrade(STUDENT.averageScore))}`}>Grade {percentageToGCSEGrade(STUDENT.averageScore)}</span>
+                    </span>
+                  </div>
+                  {/* Predicted grade */}
                   <div className="flex items-center gap-2 rounded-lg border border-amber-500/20 bg-amber-500/5 px-3 py-2">
                     <Award className="h-4 w-4 text-amber-400" />
                     <span className="text-sm text-white/70">
@@ -363,16 +372,16 @@ export default function StudentDemoPage() {
         {/* ── QUICK STATS ROW ──────────────────────────────────────────── */}
         <section className="mb-10">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            {/* Average Score */}
+            {/* Average Grade */}
             <div className="rounded-xl border border-white/5 bg-gradient-to-br from-blue-500/[0.08] to-blue-500/[0.02] p-5">
               <div className="flex items-center justify-between mb-3">
-                <p className="text-xs font-medium text-white/40 uppercase tracking-wider">Avg Score</p>
+                <p className="text-xs font-medium text-white/40 uppercase tracking-wider">Average Grade</p>
                 <span className="flex items-center gap-1 text-xs text-emerald-400">
                   <TrendingUp className="h-3 w-3" />
-                  +3%
+                  improving
                 </span>
               </div>
-              <p className="text-3xl font-bold text-white/90 tabular-nums">{STUDENT.averageScore}% <span className="text-lg text-white/50">(Grade {percentageToGCSEGrade(STUDENT.averageScore)})</span></p>
+              <p className={`text-3xl font-bold tabular-nums ${gcseGradeColor(percentageToGCSEGrade(STUDENT.averageScore))}`}>Grade {percentageToGCSEGrade(STUDENT.averageScore)}</p>
               <p className="text-[11px] text-white/30 mt-1">across all assessments</p>
             </div>
 
@@ -513,6 +522,46 @@ export default function StudentDemoPage() {
           </div>
         </section>
 
+        {/* ── GRADE PROGRESS & RECOMMENDATIONS ─────────────────────────── */}
+        <section className="mb-10">
+          <h2 className="text-lg font-medium text-white/80 mb-4 flex items-center gap-2">
+            <TrendingUp className="h-5 w-5 text-cyan-400" />
+            Next Grade Recommendations
+          </h2>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            {/* Grade Progress Card */}
+            <div className="lg:col-span-1">
+              <GradeProgressCard
+                currentGrade={Number(STUDENT.predictedGrade)}
+                predictedGrade={Number(STUDENT.predictedGrade)}
+                targetGrade={Number(STUDENT.targetGrade)}
+                trend="up"
+              />
+            </div>
+            {/* Recommendations */}
+            <div className="lg:col-span-2">
+              <GradeRecommendations
+                currentGrade={Number(STUDENT.predictedGrade)}
+                weakAreas={AREAS_TO_IMPROVE.map((a) => a.topic)}
+                maxActions={3}
+                showResources={false}
+                compact
+              />
+            </div>
+          </div>
+          <div className="mt-4 text-center">
+            <Button
+              variant="outline"
+              size="sm"
+              render={<Link href="/demo/student/progress" />}
+              className="text-cyan-400 border-cyan-500/20 hover:bg-cyan-500/10"
+            >
+              View Full Recommendations
+              <ArrowRight className="h-3.5 w-3.5 ml-1.5" />
+            </Button>
+          </div>
+        </section>
+
         {/* ── MY COURSES (2-col compact grid) ──────────────────────────── */}
         <section id="courses" className="mb-10">
           <div className="flex items-center justify-between mb-4">
@@ -617,6 +666,28 @@ export default function StudentDemoPage() {
               )
             })}
           </div>
+        </section>
+
+        {/* ── READING ASSESSMENT CTA ───────────────────────────────────── */}
+        <section className="mb-10">
+          <Link
+            href="/assessment/reading"
+            className="group block rounded-2xl border border-emerald-500/15 bg-gradient-to-r from-emerald-500/10 via-blue-500/10 to-violet-500/10 p-6 transition-all hover:border-emerald-500/30 hover:shadow-lg"
+          >
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              <div className="w-12 h-12 rounded-xl bg-emerald-500/15 flex items-center justify-center shrink-0">
+                <BookOpen className="h-6 w-6 text-emerald-400" />
+              </div>
+              <div className="flex-1">
+                <h3 className="text-base font-semibold text-white/90 mb-1">Reading Comprehension Assessment</h3>
+                <p className="text-xs text-white/50">
+                  Discover your reading age, decoding skills, and fluency level with our standardised assessment tool.
+                  Takes approximately 20-30 minutes.
+                </p>
+              </div>
+              <ArrowRight className="h-5 w-5 text-emerald-400 transition-transform group-hover:translate-x-1 shrink-0 hidden sm:block" />
+            </div>
+          </Link>
         </section>
 
         {/* ── RECENT RESULTS (clean table with color-coded scores) ──────── */}
