@@ -19,6 +19,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import DemoBanner from "@/components/demo/DemoBanner"
 import { openPrintableDocument } from "@/lib/generate-download"
+import { percentageToGCSEGrade } from "@/lib/grades"
 
 // ── Mock benchmark data ──────────────────────────────────────────────────────
 
@@ -184,7 +185,12 @@ export default function BenchmarksPage() {
                 </div>
                 <p className="text-sm text-zinc-400 mb-1">{card.label}</p>
                 <div className="flex items-baseline gap-2">
-                  <span className="text-2xl font-bold text-white">{card.school}%</span>
+                  <span className="text-2xl font-bold text-white">
+                    {card.school}%
+                    {card.label === "Average Score" && (
+                      <span className="text-base font-normal text-zinc-400 ml-1">(Grade {percentageToGCSEGrade(card.school)})</span>
+                    )}
+                  </span>
                   <span className="text-sm text-zinc-500">
                     vs {card.national}% national
                   </span>
@@ -228,8 +234,8 @@ export default function BenchmarksPage() {
                     className="border-b border-zinc-800/50 hover:bg-zinc-800/30 transition-colors"
                   >
                     <td className="py-3 px-4 text-white font-medium">{row.year}</td>
-                    <td className="text-right py-3 px-4 text-white">{row.school}%</td>
-                    <td className="text-right py-3 px-4 text-zinc-400">{row.national}%</td>
+                    <td className="text-right py-3 px-4 text-white">{row.school}% <span className="text-zinc-500 text-xs">(G{percentageToGCSEGrade(row.school)})</span></td>
+                    <td className="text-right py-3 px-4 text-zinc-400">{row.national}% <span className="text-zinc-600 text-xs">(G{percentageToGCSEGrade(row.national)})</span></td>
                     <td className="text-right py-3 px-4">
                       <span className="text-green-400 font-medium">+{row.diff}%</span>
                     </td>

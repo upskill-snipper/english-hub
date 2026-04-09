@@ -97,15 +97,15 @@ export default function GradeBoundariesPage() {
     <>
 
       {/* ── Hero ────────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
+      <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-blue-200">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary">
             Cambridge IGCSE English Language (0500 / 0990)
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Grade Boundaries
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Historical grade boundaries for Core and Extended tiers, what each
             grade looks like in practice, and targeted strategies for reaching
             the next level.

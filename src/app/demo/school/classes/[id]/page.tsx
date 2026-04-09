@@ -18,6 +18,7 @@ import {
 import { toast } from "sonner"
 import { DEMO_CLASSES, DEMO_STUDENTS } from "@/data/demo-data"
 import type { DemoStudent } from "@/data/demo-data"
+import { percentageToGCSEGrade } from "@/lib/grades"
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -118,10 +119,10 @@ export default function DemoClassDetailPage() {
 
   const scoreDistribution = useMemo(() => {
     const buckets = [
-      { label: "0-39%", count: 0, color: "bg-red-500" },
-      { label: "40-59%", count: 0, color: "bg-amber-500" },
-      { label: "60-79%", count: 0, color: "bg-blue-500" },
-      { label: "80-100%", count: 0, color: "bg-green-500" },
+      { label: "Grade 1-3", count: 0, color: "bg-red-500" },
+      { label: "Grade 4-5", count: 0, color: "bg-amber-500" },
+      { label: "Grade 6-7", count: 0, color: "bg-blue-500" },
+      { label: "Grade 8-9", count: 0, color: "bg-green-500" },
     ]
     students.forEach((s) => {
       if (s.averageScore < 40) buckets[0].count++
@@ -307,7 +308,7 @@ export default function DemoClassDetailPage() {
                               </span>
                             </div>
                           </td>
-                          <td className="px-4 py-3 tabular-nums">{student.averageScore}%</td>
+                          <td className="px-4 py-3 tabular-nums">{student.averageScore}% <span className="text-muted-foreground text-xs">(G{percentageToGCSEGrade(student.averageScore)})</span></td>
                           <td className="px-4 py-3">
                             <span
                               className={`inline-flex items-center rounded-md border px-2 py-0.5 text-[11px] font-medium ${badge.className}`}
@@ -339,7 +340,7 @@ export default function DemoClassDetailPage() {
               <p className="text-[10px] uppercase tracking-wider text-muted-foreground mb-1">
                 Class Average Score
               </p>
-              <p className="text-3xl font-bold tabular-nums">{avgScore}%</p>
+              <p className="text-3xl font-bold tabular-nums">{avgScore}% <span className="text-lg font-normal text-muted-foreground">(Grade {percentageToGCSEGrade(avgScore)})</span></p>
               <p className="text-xs text-muted-foreground mt-1">
                 Across {students.length > 0 ? students.length : cls.studentCount} students
               </p>
@@ -400,7 +401,7 @@ export default function DemoClassDetailPage() {
                         <p className="text-sm font-medium truncate">{student.name}</p>
                       </div>
                       <span className="text-sm font-semibold tabular-nums text-green-400">
-                        {student.averageScore}%
+                        {student.averageScore}% <span className="text-xs font-normal text-muted-foreground">(G{percentageToGCSEGrade(student.averageScore)})</span>
                       </span>
                     </div>
                   ))}

@@ -38,6 +38,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
+import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor, formatPercentageWithGrade } from '@/lib/grades'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -295,8 +296,8 @@ function ExamReadinessGaugeInline({ score }: { score: number }) {
           <circle cx={size / 2} cy={size / 2} r={radius} fill="none" stroke={color} strokeWidth={strokeWidth} strokeDasharray={circumference} strokeDashoffset={offset} strokeLinecap="round" className="transition-all duration-700 ease-out" />
         </svg>
         <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <span className="text-2xl font-bold" style={{ color }}>{score}%</span>
-          <span className="text-[10px] text-muted-foreground">Readiness</span>
+          <span className={`text-lg font-bold ${gcseGradeColor(percentageToGCSEGrade(score))}`}>Grade {percentageToGCSEGrade(score)}</span>
+          <span className="text-[10px] text-muted-foreground">{score}%</span>
         </div>
       </div>
     </div>
@@ -1021,11 +1022,9 @@ export default function StudentDrilldownPage() {
                         />
                       </div>
                       <span
-                        className={`text-xs font-semibold tabular-nums w-10 text-right ${
-                          isStrength ? 'text-green-400' : 'text-red-400'
-                        }`}
+                        className={`text-xs font-semibold tabular-nums w-14 text-right ${gcseGradeColor(percentageToGCSEGrade(item.score))}`}
                       >
-                        {item.score}%
+                        G{percentageToGCSEGrade(item.score)}
                       </span>
                     </div>
                   )
@@ -1148,7 +1147,7 @@ export default function StudentDrilldownPage() {
                         <span className="truncate">{s.area}</span>
                       </span>
                       <span className="shrink-0 rounded-md bg-green-500/20 px-2 py-0.5 text-xs font-semibold text-green-400 tabular-nums">
-                        {s.score}%
+                        G{percentageToGCSEGrade(s.score)}
                       </span>
                     </div>
                   ))}
@@ -1176,7 +1175,7 @@ export default function StudentDrilldownPage() {
                         <span className="truncate">{w.area}</span>
                       </span>
                       <span className="shrink-0 rounded-md bg-red-500/20 px-2 py-0.5 text-xs font-semibold text-red-400 tabular-nums">
-                        {w.score}%
+                        G{percentageToGCSEGrade(w.score)}
                       </span>
                     </div>
                   ))}
@@ -1273,7 +1272,7 @@ export default function StudentDrilldownPage() {
                       className="group relative flex flex-1 flex-col items-center"
                     >
                       <div className="pointer-events-none absolute -top-8 z-10 hidden rounded bg-background border border-border px-2 py-1 text-xs font-medium whitespace-nowrap group-hover:block">
-                        {week.score}%
+                        {percentageToGCSEGradeLabel(week.score)} ({week.score}%)
                       </div>
                       <div
                         className={`w-full max-w-[48px] rounded-t transition-all duration-300 ${barColor}`}
@@ -1418,8 +1417,8 @@ export default function StudentDrilldownPage() {
                           >
                             {essay.grade}
                           </Badge>
-                          <span className={`text-sm font-semibold tabular-nums ${scoreTextColor(essay.score)}`}>
-                            {essay.score}%
+                          <span className={`text-sm font-semibold tabular-nums ${gcseGradeColor(percentageToGCSEGrade(essay.score))}`}>
+                            {percentageToGCSEGradeLabel(essay.score)}
                           </span>
                         </div>
                       </div>

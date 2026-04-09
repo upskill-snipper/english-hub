@@ -190,15 +190,15 @@ export function PoetryHubClient() {
   return (
     <>
       {/* ── Hero ─────────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-primary to-primary/80 px-4 py-16 text-white sm:py-20">
+      <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary/70">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">
             GCSE English Literature
           </p>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Poetry Made Clear
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Everything you need to master GCSE poetry. Anthology analysis,
             poetic techniques, unseen poetry strategies, and comparison skills
             &mdash; all in one place.
@@ -206,17 +206,17 @@ export function PoetryHubClient() {
 
           {/* Exam board filter */}
           <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
-            <span className="mr-1 text-sm font-medium text-white/70">
+            <span className="mr-1 text-sm font-medium text-muted-foreground">
               Filter by board:
             </span>
             {boards.map((board) => (
               <button
                 key={board}
                 onClick={() => setActiveBoard(board)}
-                className={`rounded-full px-4 py-2 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white ${
+                className={`rounded-full px-4 py-2 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
                   activeBoard === board
                     ? "bg-card text-foreground shadow-md"
-                    : "bg-card/15 text-white hover:bg-card/25 backdrop-blur-sm"
+                    : "bg-muted text-muted-foreground hover:bg-muted/80"
                 }`}
               >
                 {board === "All" ? "All Boards" : board}

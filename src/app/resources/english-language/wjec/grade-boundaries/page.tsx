@@ -50,13 +50,13 @@ export default function GradeBoundariesPage() {
         style={{ background: "linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary)) 50%, hsl(var(--primary)) 80%)" }}
       >
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-blue-200">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary">
             WJEC Eduqas GCSE English Language (C700QS)
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Grade Boundaries
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Recent grade boundaries, what each grade looks like in practice,
             and how to push your marks into the next band.
           </p>

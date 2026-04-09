@@ -19,18 +19,18 @@ export default function OCRLitPaper1Page() {
     <>
 
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-primary to-primary/90 px-4 py-16 text-white sm:py-20">
+      <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-3xl text-center">
           <Link
             href="/resources/english-literature/ocr"
-            className="inline-flex items-center gap-1 text-sm text-white/70 transition hover:text-white"
+            className="inline-flex items-center gap-1 text-sm text-muted-foreground transition hover:text-foreground"
           >
             &larr; OCR English Literature
           </Link>
           <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Paper 1: Exploring Modern and Literary Heritage Texts
           </h1>
-          <p className="mx-auto mt-4 max-w-xl text-lg text-white/90">
+          <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
             Component 01 &middot; 2 hours &middot; 80 marks &middot; 50% of
             GCSE
           </p>

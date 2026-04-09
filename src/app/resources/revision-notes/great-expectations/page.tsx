@@ -439,14 +439,14 @@ export default function GreatExpectationsStudyGuide() {
   return (
     <div className="space-y-6">
       {/* Hero */}
-      <div className="rounded-xl bg-gradient-to-br from-primary to-[primary] px-6 py-10 text-white sm:py-14">
-        <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
+      <div className="rounded-xl border bg-gradient-to-b from-primary/[0.06] to-transparent px-6 py-10 sm:py-14">
+        <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
           GCSE English Literature &mdash; Revision Notes
         </p>
         <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
           Great Expectations &mdash; Complete Study Guide
         </h1>
-        <p className="mt-3 max-w-2xl text-lg text-white/90">
+        <p className="mt-3 max-w-2xl text-lg text-muted-foreground">
           Charles Dickens&rsquo;s 1861 Bildungsroman. Three-stage plot summary, character analysis,
           themes, 25+ key quotations with analysis, Victorian context, and essay planning.
         </p>

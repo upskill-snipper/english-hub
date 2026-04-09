@@ -24,7 +24,7 @@ import {
   Play,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { percentageToGCSEGrade } from "@/lib/grades"
+import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor } from "@/lib/grades"
 
 // ---------------------------------------------------------------------------
 // Demo data -- Aisha Rahman's student perspective
@@ -445,7 +445,7 @@ export default function StudentDemoPage() {
                   >
                     <CheckCircle className="h-3 w-3" />
                     {s.topic}
-                    <span className="text-emerald-400/60">{s.score}%</span>
+                    <span className="text-emerald-400/60">G{percentageToGCSEGrade(s.score)}</span>
                   </span>
                 ))}
               </div>
@@ -459,7 +459,7 @@ export default function StudentDemoPage() {
                         style={{ width: `${s.score}%` }}
                       />
                     </div>
-                    <span className="tabular-nums text-emerald-400/70 w-8 text-right">{s.score}%</span>
+                    <span className="tabular-nums text-emerald-400/70 w-12 text-right">G{percentageToGCSEGrade(s.score)}</span>
                   </div>
                 ))}
               </div>
@@ -483,7 +483,7 @@ export default function StudentDemoPage() {
                   >
                     <AlertTriangle className="h-3 w-3" />
                     {a.topic}
-                    <span className="opacity-60">{a.score}%</span>
+                    <span className="opacity-60">G{percentageToGCSEGrade(a.score)}</span>
                   </span>
                 ))}
               </div>
@@ -498,8 +498,8 @@ export default function StudentDemoPage() {
                           style={{ width: `${a.score}%` }}
                         />
                       </div>
-                      <span className={`tabular-nums text-xs w-8 text-right ${a.score < 50 ? "text-red-400/70" : "text-amber-400/70"}`}>
-                        {a.score}%
+                      <span className={`tabular-nums text-xs w-12 text-right ${a.score < 50 ? "text-red-400/70" : "text-amber-400/70"}`}>
+                        G{percentageToGCSEGrade(a.score)}
                       </span>
                     </div>
                     <div className="flex items-start gap-1.5">

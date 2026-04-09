@@ -119,15 +119,15 @@ export default function ThemeExplorerPage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary to-primary/80 px-4 py-16 text-white sm:py-20">
+      <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
+          <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
             Resources
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Theme Explorer
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Explore the major themes that run across your GCSE set texts.
             Compare how different writers tackle the same ideas -- perfect for
             comparison essays and cross-text revision.

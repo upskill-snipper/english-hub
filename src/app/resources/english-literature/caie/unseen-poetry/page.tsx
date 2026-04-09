@@ -15,27 +15,27 @@ export default function UnseenPoetryPage() {
   return (
     <>
       {/* ── Hero ────────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
+      <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
+          <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
             Cambridge IGCSE English Literature &mdash; Paper 4
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Unseen Poetry: The Complete Guide
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Master Paper 4 with a step-by-step method for analysing any unseen
             poem. Includes technique checklists, a fully annotated model
             response, level descriptors, and common pitfalls to avoid.
           </p>
-          <div className="mx-auto mt-6 flex max-w-md flex-wrap items-center justify-center gap-3 text-sm font-medium text-white/80">
-            <span className="rounded-full border border-white/30 px-3 py-1">
+          <div className="mx-auto mt-6 flex max-w-md flex-wrap items-center justify-center gap-3 text-sm font-medium text-muted-foreground">
+            <span className="rounded-full border px-3 py-1">
               1h 15m
             </span>
-            <span className="rounded-full border border-white/30 px-3 py-1">
+            <span className="rounded-full border px-3 py-1">
               25 marks
             </span>
-            <span className="rounded-full border border-white/30 px-3 py-1">
+            <span className="rounded-full border px-3 py-1">
               Critical commentary
             </span>
           </div>

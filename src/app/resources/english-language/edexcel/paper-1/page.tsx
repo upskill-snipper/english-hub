@@ -18,11 +18,11 @@ export default function Paper1Page() {
     <>
 
       {/* ── Hero ──────────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-primary to-primary/90 px-4 py-16 text-white sm:py-20">
+      <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <Link
             href="/resources/english-language/edexcel"
-            className="mb-4 inline-flex items-center gap-1 text-sm text-white/80 hover:text-white"
+            className="mb-4 inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
           >
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
             Back to Edexcel Hub
@@ -30,7 +30,7 @@ export default function Paper1Page() {
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Paper 1: Fiction &amp; Imaginative Writing
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             1 hour 45 minutes &bull; 64 marks &bull; 40% of your GCSE
           </p>
         </div>

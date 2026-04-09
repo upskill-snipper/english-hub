@@ -22,6 +22,7 @@ import {
 import { useAuthStore } from '@/store/auth-store'
 import { useAnalytics } from '@/hooks/useAnalytics'
 import { formatDuration, formatDate, cn } from '@/lib/utils'
+import { percentageToGCSEGradeLabel } from '@/lib/grades'
 import { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -625,7 +626,7 @@ export default function AnalyticsPage() {
                             </div>
                             {item.score !== null && (
                               <Badge variant="secondary" className="shrink-0">
-                                {item.score}%
+                                {percentageToGCSEGradeLabel(item.score)}
                               </Badge>
                             )}
                           </div>

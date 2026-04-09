@@ -656,7 +656,7 @@ export default function CourseDetailPage({ params }: { params: Promise<{ id: str
                 <BookOpen className="h-4 w-4" />
                 Lesson Content
               </div>
-              <div className="prose prose-invert prose-sm max-w-none">
+              <div className="prose dark:prose-invert prose-sm max-w-none">
                 {activeModule.lessonContent.split("\n\n").map((paragraph, i) => (
                   <p key={i} className="text-sm text-white/60 leading-relaxed mb-3 whitespace-pre-line">
                     {paragraph}

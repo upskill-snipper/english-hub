@@ -184,15 +184,15 @@ export default function PowerAndConflictPage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary to-primary/90 px-4 py-16 text-white sm:py-20">
+      <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-white/70">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-muted-foreground">
             AQA GCSE English Literature &middot; Poetry Anthology
           </p>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Power and Conflict
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Complete analysis of all 15 poems in the AQA Power and Conflict cluster. Key quotations, techniques, themes, context, and comparison guidance for every poem.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">

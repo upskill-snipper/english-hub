@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { percentageToGCSEGradeLabel, formatPercentageWithGrade } from "@/lib/grades";
+import { LearningTip } from "@/components/ui/learning-tip";
 
 /* ─── Mock data ─────────────────────────────────────────────────────────
    TODO: Replace with real API calls:
@@ -92,9 +94,12 @@ export default function ProgressPage() {
           >
             ← Back to Dashboard
           </Link>
-          <h1 className="text-3xl font-bold text-foreground">
-            Student Progress
-          </h1>
+          <div className="flex items-center gap-2">
+            <h1 className="text-3xl font-bold text-foreground">
+              Student Progress
+            </h1>
+            <LearningTip categories={['progress', 'grade']} side="right" size="md" />
+          </div>
           <p className="text-muted-foreground mt-1">
             Track your child&apos;s learning journey and achievements
           </p>
@@ -123,7 +128,9 @@ export default function ProgressPage() {
             <p className="text-3xl font-bold text-foreground">
               {student.averageScore}%
             </p>
-            <p className="text-sm text-muted-foreground mt-1">Average Score</p>
+            <LearningTip categories={['progress']} side="bottom">
+              <p className="text-sm text-muted-foreground mt-1">Average Score</p>
+            </LearningTip>
           </div>
           <div className="bg-card rounded-xl border border-border p-4 text-center">
             <p className="text-3xl font-bold text-primary">
@@ -141,9 +148,11 @@ export default function ProgressPage() {
             >
               Grade {student.projectedGrade}
             </p>
-            <p className="text-sm text-muted-foreground mt-1">
-              Projected (target: Grade {student.targetGrade})
-            </p>
+            <LearningTip categories={['grade']} side="bottom">
+              <p className="text-sm text-muted-foreground mt-1">
+                Projected (target: Grade {student.targetGrade})
+              </p>
+            </LearningTip>
           </div>
           <div className="bg-card rounded-xl border border-border p-4 text-center">
             <p className="text-3xl font-bold text-green-600">
@@ -213,7 +222,7 @@ export default function ProgressPage() {
                           : "text-red-600"
                       }`}
                     >
-                      {entry.score}%
+                      {percentageToGCSEGradeLabel(entry.score)}
                     </span>
                   </div>
                 ))}
@@ -267,9 +276,12 @@ export default function ProgressPage() {
 
             {/* Areas to Improve */}
             <div className="bg-card rounded-xl border border-border p-6">
-              <h2 className="text-lg font-semibold text-amber-700 dark:text-amber-300 mb-3">
-                Areas to Improve
-              </h2>
+              <div className="flex items-center gap-1.5 mb-3">
+                <h2 className="text-lg font-semibold text-amber-700 dark:text-amber-300">
+                  Areas to Improve
+                </h2>
+                <LearningTip categories={['study', 'exam']} side="left" />
+              </div>
               <ul className="space-y-2">
                 {student.areasToImprove.map((a, i) => (
                   <li key={i} className="flex items-start gap-2 text-sm">

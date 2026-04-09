@@ -184,21 +184,16 @@ export default function WritingSkillsPage() {
     <>
 
       {/* ── Hero ───────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-primary/80 px-4 py-20 text-white sm:py-24">
-        {/* Decorative background pattern */}
-        <div className="pointer-events-none absolute inset-0 opacity-[0.04]" aria-hidden="true">
-          <div className="absolute -right-20 -top-20 h-96 w-96 rounded-full border-[40px] border-white" />
-          <div className="absolute -bottom-32 -left-32 h-[28rem] w-[28rem] rounded-full border-[40px] border-white" />
-        </div>
+      <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-20 sm:py-24">
 
-        <div className="relative mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
+        <div className="mx-auto max-w-4xl text-center">
+          <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
             Writing Skills Masterclass
           </p>
           <h1 className="mt-3 text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">
             Write Like a Grade&nbsp;9 Student
           </h1>
-          <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-white/90">
+          <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground">
             Board-agnostic writing guides that work for AQA, Edexcel, OCR, and
             Cambridge IGCSE. Whether you are crafting a story, arguing a case, or
             analysing a text, these masterclasses will transform your writing.
@@ -213,7 +208,7 @@ export default function WritingSkillsPage() {
             </Link>
             <Link
               href="/practice"
-              className="rounded-lg border-2 border-white/30 bg-card/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-card/20"
+              className="rounded-lg border px-6 py-3 text-sm font-semibold text-foreground transition hover:bg-muted"
             >
               Practice Questions
             </Link>

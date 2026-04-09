@@ -3,6 +3,7 @@
 import { useState, useMemo, useCallback, memo } from 'react'
 import { cn } from '@/lib/utils'
 import type { WeakArea } from '@/lib/types'
+import { percentageToGCSEGrade, gcseGradeColor } from '@/lib/grades'
 
 /* ── Types ─────────────────────────────────────────────────────────────────── */
 
@@ -291,7 +292,7 @@ const GridHeatMap = memo(function GridHeatMap({
                           <div className="absolute -top-10 left-1/2 z-30 -translate-x-1/2 rounded-md bg-foreground px-2.5 py-1.5 text-[11px] text-background whitespace-nowrap shadow-lg">
                             <p className="font-semibold">{student.studentName}</p>
                             <p>
-                              {skill}: {Math.round(score)}%
+                              {skill}: Grade {percentageToGCSEGrade(Math.round(score))} ({Math.round(score)}%)
                               {isBelow && ' (below threshold)'}
                             </p>
                             <div className="absolute left-1/2 top-full -translate-x-1/2 border-4 border-transparent border-t-[var(--foreground)]" />
@@ -426,7 +427,7 @@ export const WeakAreaHeatMap = memo(function WeakAreaHeatMap({
               <div className="absolute -top-12 left-1/2 -translate-x-1/2 z-20 rounded-md bg-foreground px-3 py-1.5 text-xs text-background whitespace-nowrap shadow-lg">
                 <p className="font-medium">{area.module_name ?? area.course_name}</p>
                 <p>
-                  Avg: {Math.round(area.avg_score)}% &middot;{' '}
+                  Avg: Grade {percentageToGCSEGrade(Math.round(area.avg_score))} ({Math.round(area.avg_score)}%) &middot;{' '}
                   {area.students_below_threshold} student
                   {area.students_below_threshold !== 1 ? 's' : ''} struggling
                 </p>
@@ -442,7 +443,7 @@ export const WeakAreaHeatMap = memo(function WeakAreaHeatMap({
                   scoreToTextColor(area.avg_score),
                 )}
               >
-                {Math.round(area.avg_score)}%
+                G{percentageToGCSEGrade(Math.round(area.avg_score))}
               </span>
               <span
                 className={cn(

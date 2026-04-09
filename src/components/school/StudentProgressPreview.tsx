@@ -2,6 +2,7 @@
 
 import { Download, Mail, ExternalLink, Users, TrendingUp } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { percentageToGCSEGrade, gcseGradeColor } from "@/lib/grades"
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -163,11 +164,11 @@ export function StudentProgressPreview() {
                   </div>
                   <span
                     className={cn(
-                      "shrink-0 w-8 text-right text-xs font-semibold tabular-nums",
-                      scoreTextColor(student.score)
+                      "shrink-0 w-16 text-right text-xs font-semibold tabular-nums",
+                      gcseGradeColor(percentageToGCSEGrade(student.score))
                     )}
                   >
-                    {student.score}%
+                    Grade {percentageToGCSEGrade(student.score)}
                   </span>
                 </div>
 

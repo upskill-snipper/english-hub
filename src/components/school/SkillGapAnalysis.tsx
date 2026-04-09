@@ -15,6 +15,7 @@ import {
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import type { ClassAnalytics, StudentAnalytics } from '@/lib/types'
+import { percentageToGCSEGrade } from '@/lib/grades'
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -501,7 +502,7 @@ export const SkillGapAnalysis = memo(function SkillGapAnalysis({
                               cellBorder(score)
                             )}
                           >
-                            {score}%
+                            G{percentageToGCSEGrade(score)}
                           </div>
                         </td>
                       )

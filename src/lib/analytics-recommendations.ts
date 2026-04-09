@@ -1,5 +1,6 @@
 // ─── Class Results Analysis & Recommendation Engine ─────────────────────────
 
+import { percentageToGCSEGradeLabel } from '@/lib/grades'
 import type {
   ClassAnalytics as AnalyticsClassAnalytics,
   StudentAnalytics as AnalyticsStudentAnalytics,
@@ -911,7 +912,7 @@ export function generateInterventionRecommendations(
 
     // Rationale
     const trajectoryText = trajectory === 'declining' ? 'performance is declining' : trajectory === 'stable' ? 'performance is stagnant' : 'showing some improvement but still below target'
-    const rationale = `${student.fullName ?? 'This student'} has an average score of ${avgScore}% and ${trajectoryText}. ${completionRate < 50 ? `Completion rate is only ${completionRate}%, suggesting engagement issues. ` : ''}Weakest areas: ${weakSkillAreas.slice(0, 3).join(', ') || 'general skills'}.`
+    const rationale = `${student.fullName ?? 'This student'} has an average of ${percentageToGCSEGradeLabel(avgScore)} and ${trajectoryText}. ${completionRate < 50 ? `Completion rate is only ${completionRate}%, suggesting engagement issues. ` : ''}Weakest areas: ${weakSkillAreas.slice(0, 3).join(', ') || 'general skills'}.`
 
     recommendations.push({
       studentId: student.studentId,
@@ -949,7 +950,7 @@ export function generateParentUpdateSummary(
   const doingWell: string[] = []
   for (const strength of student.strengths.slice(0, 3)) {
     if (strength.avgScore >= 70) {
-      doingWell.push(`Performing strongly in ${strength.courseName} with a score of ${strength.avgScore}%`)
+      doingWell.push(`Performing strongly in ${strength.courseName} (${percentageToGCSEGradeLabel(strength.avgScore)})`)
     } else if (strength.avgScore >= 50) {
       doingWell.push(`Making good progress in ${strength.courseName}`)
     }

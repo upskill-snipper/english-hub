@@ -12,6 +12,7 @@ import {
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import type { WeakArea } from '@/lib/types'
+import { percentageToGCSEGradeLabel } from '@/lib/grades'
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -216,7 +217,7 @@ function matchLessonsToWeakAreas(weakAreas: WeakArea[]): RecommendedLesson[] {
         if (areaScore > score) {
           score = areaScore
           const pct = Math.round((area.students_below_threshold / Math.max(area.students_below_threshold + 5, 1)) * 100)
-          bestReason = `${area.students_below_threshold} students scored below target on ${area.module_name ?? area.course_name} (avg ${Math.round(area.avg_score)}%)`
+          bestReason = `${area.students_below_threshold} students scored below target on ${area.module_name ?? area.course_name} (avg ${percentageToGCSEGradeLabel(Math.round(area.avg_score))})`
         }
       }
     }

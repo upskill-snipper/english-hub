@@ -717,7 +717,7 @@ export default function RevisionNotesHub() {
                         <h3 className="text-lg font-bold leading-tight">
                           {text.title}
                         </h3>
-                        <p className="mt-1 text-sm text-white/80">
+                        <p className="mt-1 text-sm text-muted-foreground">
                           {text.author}
                         </p>
                       </div>

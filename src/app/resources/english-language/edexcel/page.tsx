@@ -83,15 +83,15 @@ export default function EdexcelEnglishLanguagePage() {
     <>
 
       {/* ── Hero ──────────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-primary via-primary/90 to-accent px-4 py-16 text-white sm:py-20">
+      <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-white/70">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-muted-foreground">
             Edexcel GCSE (1EN0)
           </p>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             English Language Revision Hub
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Everything you need to ace your Edexcel English Language GCSE. Two papers, full mark-scheme
             breakdowns, 30+ techniques, writing masterclasses, and grade boundary data &mdash; all in one place.
           </p>
@@ -108,7 +108,7 @@ export default function EdexcelEnglishLanguagePage() {
               <Link
                 key={pill.href}
                 href={pill.href}
-                className="rounded-full border border-white/30 bg-card/10 px-4 py-1.5 text-sm font-medium text-white backdrop-blur transition hover:bg-card/20"
+                className="rounded-full border bg-muted px-4 py-1.5 text-sm font-medium text-foreground transition hover:bg-muted/80"
               >
                 {pill.label}
               </Link>

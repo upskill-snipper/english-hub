@@ -645,18 +645,18 @@ export default function SpokenLanguageTopicsPage() {
     <>
 
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-primary to-[primary] px-4 py-16 text-white sm:py-20">
+      <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <Link
             href="/resources/spoken-language"
-            className="inline-flex items-center gap-1 text-sm text-white/70 transition hover:text-white"
+            className="inline-flex items-center gap-1 text-sm text-muted-foreground transition hover:text-foreground"
           >
             &larr; Spoken Language Guide
           </Link>
           <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Presentation Topic Ideas
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Over 30 topic ideas for your Spoken Language endorsement, organised
             by category. Each includes a brief outline, key points to cover,
             and potential audience questions to prepare for.
@@ -816,9 +816,9 @@ export default function SpokenLanguageTopicsPage() {
         </div>
 
         {/* ── CTA back to guide ───────────────────────────────── */}
-        <div className="mt-12 rounded-lg bg-gradient-to-r from-primary to-[primary] p-8 text-center text-white shadow-lg">
+        <div className="mt-12 rounded-lg border bg-gradient-to-b from-primary/[0.06] to-transparent p-8 text-center">
           <h2 className="text-2xl font-bold">Ready to Prepare?</h2>
-          <p className="mx-auto mt-2 max-w-lg text-white/90">
+          <p className="mx-auto mt-2 max-w-lg text-muted-foreground">
             Head back to our full Spoken Language guide for detailed advice on
             planning, delivery, answering questions, and hitting every
             assessment criterion.

@@ -6,6 +6,7 @@ import type {
   Recommendation,
 } from '@/lib/types'
 import { formatDuration, formatDate } from '@/lib/utils'
+import { percentageToGCSEGradeLabel, formatPercentageWithGrade } from '@/lib/grades'
 
 // ── Report Data Types ─────────────────────────────────────────────────────────
 
@@ -127,8 +128,8 @@ export function generateClassReport(
       content: [],
       rows: [
         { label: 'Total Students', value: classAnalytics.student_count, highlight: 'neutral' },
-        { label: 'Class Average Score', value: `${classAnalytics.avg_score.toFixed(1)}%`, highlight: highlightFromScore(classAnalytics.avg_score) },
-        { label: 'Median Score', value: `${classAnalytics.median_score.toFixed(1)}%`, highlight: highlightFromScore(classAnalytics.median_score) },
+        { label: 'Class Average Score', value: formatPercentageWithGrade(classAnalytics.avg_score), highlight: highlightFromScore(classAnalytics.avg_score) },
+        { label: 'Median Score', value: formatPercentageWithGrade(classAnalytics.median_score), highlight: highlightFromScore(classAnalytics.median_score) },
         { label: 'Completion Rate', value: `${classAnalytics.completion_rate.toFixed(1)}%`, highlight: highlightFromScore(classAnalytics.completion_rate) },
         { label: 'Avg. Time Spent', value: `${classAnalytics.avg_time_spent_minutes} mins`, highlight: 'neutral' },
         { label: 'Certificates Earned', value: classAnalytics.certificates_count, highlight: 'neutral' },
@@ -141,9 +142,9 @@ export function generateClassReport(
       title: 'Performance Distribution',
       type: 'detail',
       content: [
-        `Top Performers (70%+): ${topStudents.length} students (${((topStudents.length / students.length) * 100).toFixed(0)}%)`,
-        `Meeting Expectations (50-69%): ${students.filter((s) => s.avg_quiz_score >= 50 && s.avg_quiz_score < 70).length} students`,
-        `Below Expectations (<50%): ${students.filter((s) => s.avg_quiz_score < 50).length} students`,
+        `Top Performers (Grade 7+): ${topStudents.length} students (${((topStudents.length / students.length) * 100).toFixed(0)}%)`,
+        `Meeting Expectations (Grade 5-6): ${students.filter((s) => s.avg_quiz_score >= 50 && s.avg_quiz_score < 70).length} students`,
+        `Below Expectations (Grade 1-4): ${students.filter((s) => s.avg_quiz_score < 50).length} students`,
         `Improving trajectory: ${improvingStudents.length} students`,
         `Declining trajectory: ${atRiskStudents.length} students`,
       ],

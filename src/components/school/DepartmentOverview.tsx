@@ -17,6 +17,7 @@ import {
   Lightbulb,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor } from '@/lib/grades'
 import type {
   School,
   Class,
@@ -304,7 +305,7 @@ export function DepartmentOverview({
         items.push({
           type: 'below_target',
           label: cls.class_name,
-          detail: `Avg score ${Math.round(cls.avg_score)}% — ${Math.round(avgDeptScore - cls.avg_score)}pp below department average`,
+          detail: `${percentageToGCSEGradeLabel(Math.round(cls.avg_score))} — ${Math.round(avgDeptScore - cls.avg_score)}pp below department average`,
           severity: cls.avg_score < avgDeptScore * 0.6 ? 'critical' : 'warning',
         })
       }
@@ -339,14 +340,14 @@ export function DepartmentOverview({
       items.push({
         type: 'top_class',
         label: sorted[0].class_name,
-        detail: `Top performing class — ${Math.round(sorted[0].avg_score)}% avg score, ${Math.round(sorted[0].completion_rate)}% completion`,
+        detail: `Top performing class — ${percentageToGCSEGradeLabel(Math.round(sorted[0].avg_score))}, ${Math.round(sorted[0].completion_rate)}% completion`,
       })
     }
     if (sorted.length > 1) {
       items.push({
         type: 'top_class',
         label: sorted[1].class_name,
-        detail: `Second highest — ${Math.round(sorted[1].avg_score)}% avg score`,
+        detail: `Second highest — ${percentageToGCSEGradeLabel(Math.round(sorted[1].avg_score))}`,
       })
     }
 
@@ -438,7 +439,7 @@ export function DepartmentOverview({
         />
         <StatCard
           title="Avg Department Score"
-          value={`${Math.round(avgDeptScore)}%`}
+          value={percentageToGCSEGradeLabel(Math.round(avgDeptScore))}
           icon={BarChart3}
           color={avgDeptScore >= 60 ? 'green' : avgDeptScore >= 40 ? 'amber' : 'red'}
           trend={avgDeptScore >= 60 ? 'up' : avgDeptScore >= 40 ? 'neutral' : 'down'}
@@ -614,8 +615,8 @@ export function DepartmentOverview({
                             </p>
                           </div>
                           <div className="text-right">
-                            <p className="text-sm font-semibold text-green-400 tabular-nums">
-                              {Math.round(cls.avg_score)}%
+                            <p className={`text-sm font-semibold tabular-nums ${gcseGradeColor(percentageToGCSEGrade(cls.avg_score))}`}>
+                              {percentageToGCSEGradeLabel(Math.round(cls.avg_score))}
                             </p>
                             <p className="text-xs text-green-400/70 tabular-nums">
                               +{Math.round(cls.avg_score - avgDeptScore)}pp
@@ -663,8 +664,8 @@ export function DepartmentOverview({
                             </p>
                           </div>
                           <div className="text-right">
-                            <p className="text-sm font-semibold text-red-400 tabular-nums">
-                              {Math.round(cls.avg_score)}%
+                            <p className={`text-sm font-semibold tabular-nums ${gcseGradeColor(percentageToGCSEGrade(cls.avg_score))}`}>
+                              {percentageToGCSEGradeLabel(Math.round(cls.avg_score))}
                             </p>
                             <p className="text-xs text-red-400/70 tabular-nums">
                               {Math.round(cls.avg_score - avgDeptScore)}pp

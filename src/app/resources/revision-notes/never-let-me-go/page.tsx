@@ -495,14 +495,14 @@ export default function NeverLetMeGoStudyGuide() {
   return (
     <div className="space-y-6">
       {/* Hero */}
-      <div className="rounded-xl bg-gradient-to-br from-primary to-[primary] px-6 py-10 text-white sm:py-14">
-        <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
+      <div className="rounded-xl border bg-gradient-to-b from-primary/[0.06] to-transparent px-6 py-10 sm:py-14">
+        <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
           GCSE English Literature &mdash; Revision Notes
         </p>
         <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
           Never Let Me Go &mdash; Complete Study Guide
         </h1>
-        <p className="mt-3 max-w-2xl text-lg text-white/90">
+        <p className="mt-3 max-w-2xl text-lg text-muted-foreground">
           Kazuo Ishiguro&rsquo;s 2005 dystopian novel. Part-by-part summaries, character analysis,
           themes, {keyQuotes.length} key quotations with analysis, historical and literary context, and essay planning.
         </p>

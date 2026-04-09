@@ -34,6 +34,7 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor, formatPercentageWithGrade } from "@/lib/grades"
 import {
   DEMO_STUDENTS,
   type DemoStudent,
@@ -447,7 +448,7 @@ export default function SchoolStudentDetailPage() {
                 <span className="text-xs font-medium text-zinc-500 uppercase tracking-wider">Overall Progress</span>
                 <TrendingUp className="w-4 h-4 text-violet-400" />
               </div>
-              <div className="text-3xl font-bold text-zinc-50">{student.overallProgress}%</div>
+              <div className="text-3xl font-bold text-zinc-50">{student.overallProgress}% <span className="text-lg font-normal text-zinc-500">(Grade {percentageToGCSEGrade(student.overallProgress)})</span></div>
               <div className="mt-2 w-full h-2 bg-zinc-800 rounded-full overflow-hidden">
                 <div
                   className="h-full bg-gradient-to-r from-violet-500 to-blue-500 rounded-full transition-all duration-700"
@@ -463,8 +464,8 @@ export default function SchoolStudentDetailPage() {
                 <span className="text-xs font-medium text-zinc-500 uppercase tracking-wider">Average Score</span>
                 <Target className="w-4 h-4 text-emerald-400" />
               </div>
-              <div className="text-3xl font-bold text-zinc-50">{student.averageScore}%</div>
-              <div className="mt-2 text-xs text-zinc-500">Class avg: {classAvg.score}%</div>
+              <div className={`text-3xl font-bold ${gcseGradeColor(percentageToGCSEGrade(student.averageScore))}`}>Grade {percentageToGCSEGrade(student.averageScore)} <span className="text-lg font-normal text-zinc-500">({student.averageScore}%)</span></div>
+              <div className="mt-2 text-xs text-zinc-500">Class avg: Grade {percentageToGCSEGrade(classAvg.score)} ({classAvg.score}%)</div>
             </CardContent>
           </Card>
 
@@ -554,8 +555,8 @@ export default function SchoolStudentDetailPage() {
                             <span className="text-sm font-medium text-zinc-200">{item.title}</span>
                           </div>
                           <div className="flex items-center gap-2">
-                            <span className={`text-sm font-bold ${item.score >= 70 ? "text-emerald-400" : item.score >= 50 ? "text-amber-400" : "text-red-400"}`}>
-                              {item.score}%
+                            <span className={`text-sm font-bold ${gcseGradeColor(percentageToGCSEGrade(item.score))}`}>
+                              G{percentageToGCSEGrade(item.score)}
                             </span>
                             {item.grade && (
                               <Badge variant="outline" className={`text-xs ${gradeColor(item.grade)}`}>
@@ -605,7 +606,7 @@ export default function SchoolStudentDetailPage() {
             <div className="flex items-end gap-3 h-48">
               {student.recentScores.map((score, i) => (
                 <div key={i} className="flex-1 flex flex-col items-center gap-2">
-                  <span className="text-xs font-medium text-zinc-300">{score}%</span>
+                  <span className="text-xs font-medium text-zinc-300">G{percentageToGCSEGrade(score)}</span>
                   <div
                     className="w-full relative rounded-t-md overflow-hidden"
                     style={{ height: `${(score / 100) * 140}px` }}
@@ -653,7 +654,7 @@ export default function SchoolStudentDetailPage() {
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-1">
                         <span className="text-sm text-zinc-300">{item.name}</span>
-                        <span className="text-sm font-medium text-emerald-400">{item.score}%</span>
+                        <span className="text-sm font-medium text-emerald-400">G{percentageToGCSEGrade(item.score)}</span>
                       </div>
                       <div className="w-full h-2 bg-zinc-800 rounded-full overflow-hidden">
                         <div className="h-full bg-emerald-500/70 rounded-full" style={{ width: `${item.score}%` }} />
@@ -680,7 +681,7 @@ export default function SchoolStudentDetailPage() {
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-1">
                         <span className="text-sm text-zinc-300">{item.name}</span>
-                        <span className="text-sm font-medium text-red-400">{item.score}%</span>
+                        <span className="text-sm font-medium text-red-400">G{percentageToGCSEGrade(item.score)}</span>
                       </div>
                       <div className="w-full h-2 bg-zinc-800 rounded-full overflow-hidden">
                         <div className="h-full bg-red-500/70 rounded-full" style={{ width: `${item.score}%` }} />
@@ -784,7 +785,7 @@ export default function SchoolStudentDetailPage() {
                       <span className="text-[10px] text-zinc-500">{mod.progress}% complete</span>
                       {mod.score > 0 && (
                         <span className={`text-[10px] font-medium ${mod.score >= 70 ? "text-emerald-400" : mod.score >= 50 ? "text-amber-400" : "text-red-400"}`}>
-                          Avg score: {mod.score}%
+                          Avg: {percentageToGCSEGradeLabel(mod.score)}
                         </span>
                       )}
                     </div>
@@ -833,7 +834,7 @@ export default function SchoolStudentDetailPage() {
                       <td className="py-3 px-4 font-medium text-zinc-200">{exam.name}</td>
                       <td className="py-3 px-4 text-center">
                         <span className={`font-medium ${exam.score >= 70 ? "text-emerald-400" : exam.score >= 50 ? "text-amber-400" : "text-red-400"}`}>
-                          {exam.score}%
+                          {percentageToGCSEGradeLabel(exam.score)}
                         </span>
                       </td>
                       <td className="py-3 px-4 text-center">

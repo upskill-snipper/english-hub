@@ -24,6 +24,7 @@ import { createClient } from '@/lib/supabase/client'
 import { useAuthStore } from '@/store/auth-store'
 import { loadAllCourses } from '@/data/course-loader'
 import { cn, formatDate, formatDuration } from '@/lib/utils'
+import { percentageToGCSEGradeLabel } from '@/lib/grades'
 import type { CourseData } from '@/lib/types'
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -882,7 +883,7 @@ export default function ParentDashboardPage() {
                                 </div>
                                 {activity.quiz_score !== null && (
                                   <Badge variant="secondary" className="shrink-0">
-                                    {activity.quiz_score}%
+                                    {percentageToGCSEGradeLabel(activity.quiz_score)}
                                   </Badge>
                                 )}
                               </div>

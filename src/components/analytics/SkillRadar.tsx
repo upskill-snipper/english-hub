@@ -1,6 +1,7 @@
 'use client'
 
 import { cn } from '@/lib/utils'
+import { percentageToGCSEGrade, gcseGradeColor } from '@/lib/grades'
 import type { SkillScore } from '@/hooks/useAnalytics'
 
 interface SkillRadarProps {
@@ -42,8 +43,8 @@ export function SkillRadar({ skills, className }: SkillRadarProps) {
                 {getScoreLabel(skill.percentage)}
               </span>
               {skill.total > 0 && (
-                <span className="text-xs tabular-nums text-muted-foreground">
-                  {skill.percentage}%
+                <span className={cn('text-xs tabular-nums font-semibold', gcseGradeColor(percentageToGCSEGrade(skill.percentage)))}>
+                  Grade {percentageToGCSEGrade(skill.percentage)}
                 </span>
               )}
             </div>

@@ -125,13 +125,13 @@ export default function OCREnglishLiteraturePage() {
         }}
       >
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-white/80">
+          <p className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
             OCR GCSE (J352)
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             English Literature
           </h1>
-          <p className="mx-auto mt-4 max-w-xl text-lg text-white/90">
+          <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
             Everything you need to revise for OCR GCSE English Literature. Two
             examined papers covering modern texts, literary heritage, poetry,
             and Shakespeare.

@@ -160,11 +160,11 @@ export default function GuiltThemePage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary to-primary/80 px-4 py-16 text-white sm:py-20">
+      <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <Link
             href="/resources/themes"
-            className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary/80 hover:text-white transition-colors"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary/80 hover:text-foreground transition-colors"
           >
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
@@ -174,7 +174,7 @@ export default function GuiltThemePage() {
           <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Guilt
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             How writers present guilt, remorse, and moral responsibility across
             your GCSE set texts. Includes key quotes, analysis, and comparison
             ideas.

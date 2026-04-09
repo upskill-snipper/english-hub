@@ -21,6 +21,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { DEMO_STUDENTS } from "@/data/demo-data"
+import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor } from "@/lib/grades"
 import DemoBanner from "@/components/demo/DemoBanner"
 
 // ── Teacher classes (Mrs Mitchell's 3 classes) ───────────────────────────────
@@ -320,7 +321,7 @@ export default function TeacherProgressPage() {
                         <div className="font-medium text-white">{student.name}</div>
                         <div className="text-xs text-neutral-500">{ragBadge(student.status)}</div>
                       </td>
-                      <td className={`py-2.5 pr-2 text-right font-mono ${progressTextColor(student.score)}`}>{student.score}%</td>
+                      <td className={`py-2.5 pr-2 text-right font-mono ${gcseGradeColor(percentageToGCSEGrade(student.score))}`}>{percentageToGCSEGradeLabel(student.score)}</td>
                       <td className="py-2.5 pr-2 text-right">
                         <div className="flex items-center justify-end gap-2">
                           <div className="w-16 h-1.5 rounded-full bg-neutral-800 overflow-hidden">
@@ -404,7 +405,7 @@ export default function TeacherProgressPage() {
                         {ragDot(student.status)}
                         <div>
                           <div className="text-sm font-medium text-white group-hover:text-violet-300 transition-colors">{student.name}</div>
-                          <div className="text-xs text-neutral-500">Score: {student.score}% -- Last active: {student.lastActive}</div>
+                          <div className="text-xs text-neutral-500">{percentageToGCSEGradeLabel(student.score)} -- Last active: {student.lastActive}</div>
                         </div>
                       </div>
                       <ChevronRight className="h-4 w-4 text-neutral-600 group-hover:text-violet-400 transition-colors" />
@@ -545,7 +546,7 @@ export default function TeacherProgressPage() {
                               {s.status === "green" ? "On Track" : s.status === "amber" ? "Support" : "At Risk"}
                             </span>
                           </td>
-                          <td className="py-1 text-right font-mono">{s.score}%</td>
+                          <td className="py-1 text-right font-mono">{percentageToGCSEGradeLabel(s.score)}</td>
                           <td className="py-1 text-right font-mono">{s.progress}%</td>
                           <td className="py-1 text-right">{s.assignmentsCompleted}/{s.assignmentsTotal}</td>
                         </tr>
@@ -561,7 +562,7 @@ export default function TeacherProgressPage() {
                     <ul className="list-disc list-inside space-y-1 text-gray-700">
                       {needsAttention.map((s) => (
                         <li key={s.id}>
-                          <span className="font-medium">{s.name}</span> -- Score: {s.score}%, Progress: {s.progress}%, Last active: {s.lastActive}
+                          <span className="font-medium">{s.name}</span> -- {percentageToGCSEGradeLabel(s.score)}, Progress: {s.progress}%, Last active: {s.lastActive}
                         </li>
                       ))}
                     </ul>

@@ -280,15 +280,15 @@ export default function MidsummerNightsDreamStudyGuide() {
   return (
     <>
       {/* ── Hero ────────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-[#2E4057] to-[#048A81] px-4 py-16 text-white sm:py-20">
+      <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
+          <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
             Cambridge IGCSE English Literature
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             A Midsummer Night&rsquo;s Dream &mdash; Complete Study Guide
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Characters, themes, act-by-act summary with key quotations,
             Shakespeare&rsquo;s dramatic techniques, and Cambridge-specific exam
             guidance.

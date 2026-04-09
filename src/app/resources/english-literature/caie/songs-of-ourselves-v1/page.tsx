@@ -505,15 +505,15 @@ export default function SongsOfOurselvesV1Page() {
   return (
     <>
       {/* ── Hero ────────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
+      <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
+          <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
             Cambridge IGCSE English Literature (0475)
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Songs of Ourselves &mdash; Volume 1
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             A comprehensive guide to the CAIE poetry anthology. Detailed analysis of six
             key poems with context, quotations, comparison techniques, and assessment
             objective guidance for Paper 1.

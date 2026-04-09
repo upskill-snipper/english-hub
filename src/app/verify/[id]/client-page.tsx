@@ -5,6 +5,7 @@ import { useParams, notFound } from 'next/navigation'
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/client'
 import { getCourseName } from '@/lib/utils'
+import { formatPercentageWithGrade } from '@/lib/grades'
 import type { Certificate } from '@/lib/types'
 import {
   ShieldCheck,
@@ -141,7 +142,7 @@ export default function VerifyPage() {
                     Score
                   </p>
                   <p className="text-foreground font-semibold">
-                    {certificate.score}%
+                    {formatPercentageWithGrade(certificate.score)}
                   </p>
                 </div>
               </div>

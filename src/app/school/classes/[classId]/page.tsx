@@ -19,6 +19,7 @@ import {
 } from "lucide-react"
 import { toast } from "sonner"
 import { cn } from "@/lib/utils"
+import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor } from "@/lib/grades"
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -431,7 +432,7 @@ function AnalyticsTab({ students }: AnalyticsTabProps) {
                   : scoreColor(avgScore)
               )}
             >
-              {avgScore !== null ? `${avgScore}%` : "--"}
+              {avgScore !== null ? percentageToGCSEGradeLabel(avgScore) : "--"}
             </p>
             <p className="mt-1 text-xs text-muted-foreground">
               {scored.length} student{scored.length !== 1 ? "s" : ""} with quiz data
@@ -513,8 +514,8 @@ function AnalyticsTab({ students }: AnalyticsTabProps) {
                         {s.full_name ?? s.email}
                       </p>
                     </div>
-                    <span className={cn("text-sm font-semibold tabular-nums", scoreColor(s.avg_quiz_score))}>
-                      {s.avg_quiz_score}%
+                    <span className={cn("text-sm font-semibold tabular-nums", gcseGradeColor(percentageToGCSEGrade(s.avg_quiz_score ?? 0)))}>
+                      {percentageToGCSEGradeLabel(s.avg_quiz_score ?? 0)}
                     </span>
                   </li>
                 ))}
@@ -580,7 +581,7 @@ function AnalyticsTab({ students }: AnalyticsTabProps) {
                       <div className="flex gap-2 mt-0.5">
                         {lowScore && (
                           <span className="text-xs text-red-400">
-                            Score: {s.avg_quiz_score}%
+                            {percentageToGCSEGradeLabel(s.avg_quiz_score ?? 0)}
                           </span>
                         )}
                         {noActivity && (
@@ -949,7 +950,7 @@ export default function ClassDetailPage() {
                                 scoreColor(s.avg_quiz_score)
                               )}
                             >
-                              {s.avg_quiz_score !== null ? `${s.avg_quiz_score}%` : "—"}
+                              {s.avg_quiz_score !== null ? `G${percentageToGCSEGrade(s.avg_quiz_score)}` : "—"}
                             </span>
                           </div>
                         </td>

@@ -3,6 +3,7 @@ export const dynamic = "force-dynamic"
 
 import { useState } from "react"
 import Link from "next/link"
+import { percentageToGCSEGrade, gcseGradeColor } from "@/lib/grades"
 import { DEMO_STUDENTS } from "@/data/demo-data"
 import DemoBanner from "@/components/demo/DemoBanner"
 import { useScrollRestore } from "@/hooks/useScrollRestore"
@@ -229,15 +230,9 @@ export default function TeacherStudentsPage() {
               {/* Score */}
               <div className="hidden sm:flex items-center justify-center">
                 <span
-                  className={`text-sm tabular-nums font-medium ${
-                    student.score >= 70
-                      ? "text-emerald-400"
-                      : student.score >= 50
-                      ? "text-amber-400"
-                      : "text-red-400"
-                  }`}
+                  className={`text-sm tabular-nums font-medium ${gcseGradeColor(percentageToGCSEGrade(student.score))}`}
                 >
-                  {student.score}%
+                  Grade {percentageToGCSEGrade(student.score)}
                 </span>
               </div>
 

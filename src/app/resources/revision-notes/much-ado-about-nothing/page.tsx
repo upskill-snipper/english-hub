@@ -20,7 +20,7 @@ function Section({
     <section id={id} aria-labelledby={`${id}-heading`} className="scroll-mt-20">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between rounded-lg bg-gradient-to-r from-primary to-[primary] px-5 py-3.5 text-left text-lg font-bold text-white shadow-md transition hover:opacity-90"
+        className="flex w-full items-center justify-between rounded-lg border bg-primary/[0.08] px-5 py-3.5 text-left text-lg font-bold text-foreground transition hover:bg-primary/[0.12]"
         aria-expanded={open}
       >
         <span id={`${id}-heading`}>{title}</span>
@@ -453,15 +453,15 @@ export default function MuchAdoStudyGuide() {
   return (
     <>
       {/* ── Hero ────────────────────────────────────────────────── */}
-      <section className="rounded-xl bg-gradient-to-br from-primary to-[primary] px-4 py-12 text-white sm:py-16">
+      <section className="rounded-xl border bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
+          <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
             GCSE English Literature
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Much Ado About Nothing &mdash; Complete Study Guide
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Scene-by-scene summary, 8 character analyses, 5 key themes, 20+ quotations with
             detailed analysis, historical context, and essay planning.
           </p>

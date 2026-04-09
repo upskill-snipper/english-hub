@@ -5,6 +5,7 @@ import { useParams, notFound } from 'next/navigation'
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/client'
 import { getCourseName } from '@/lib/utils'
+import { formatPercentageWithGrade } from '@/lib/grades'
 import type { Certificate } from '@/lib/types'
 import {
   Award,
@@ -218,7 +219,7 @@ export default function CertificatePage() {
                   Score
                 </p>
                 <p className="text-xl font-bold text-foreground">
-                  {certificate.score}%
+                  {formatPercentageWithGrade(certificate.score)}
                 </p>
               </div>
               <div className="w-px h-10 bg-border" />

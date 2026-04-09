@@ -5,17 +5,10 @@ import Link from "next/link";
 import { toast } from "sonner";
 import { DEMO_CLASSES, DEMO_STUDENTS } from "@/data/demo-data";
 import { downloadCSV } from "@/lib/download-csv";
+import { percentageToGCSEGrade } from "@/lib/grades";
 
 function scoreToGrade(score: number): string {
-  if (score >= 90) return "9";
-  if (score >= 80) return "8";
-  if (score >= 70) return "7";
-  if (score >= 60) return "6";
-  if (score >= 50) return "5";
-  if (score >= 40) return "4";
-  if (score >= 30) return "3";
-  if (score >= 20) return "2";
-  return "1";
+  return String(percentageToGCSEGrade(score));
 }
 
 function gradeColor(grade: string): string {

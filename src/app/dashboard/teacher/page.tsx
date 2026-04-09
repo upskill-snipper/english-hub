@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { percentageToGCSEGradeLabel } from "@/lib/grades";
 
 /* ─── Mock data ─────────────────────────────────────────────────────────
    TODO: Replace all mock data with real API calls:
@@ -254,7 +255,7 @@ export default function TeacherDashboardPage() {
                     </span>
                     {sub.score !== null && (
                       <span className="text-lg font-bold text-foreground">
-                        {sub.score}%
+                        {percentageToGCSEGradeLabel(sub.score)}
                       </span>
                     )}
                   </div>

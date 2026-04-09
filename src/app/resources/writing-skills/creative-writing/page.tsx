@@ -117,15 +117,15 @@ export default function CreativeWritingPage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary to-primary/80 px-4 py-16 text-white sm:py-20">
+      <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
+          <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
             Writing Skills Masterclass
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Creative Writing
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Everything you need to produce top-grade descriptive and narrative
             writing. Techniques, structures, vocabulary, planning templates, and
             full annotated model responses.
@@ -239,7 +239,7 @@ export default function CreativeWritingPage() {
               <div className="mb-8 overflow-hidden rounded-xl border border-border">
                 <div className="grid grid-cols-2 text-sm font-bold bg-primary text-white">
                   <div className="px-4 py-3">Telling (Weak)</div>
-                  <div className="px-4 py-3 border-l border-white/20">Showing (Strong)</div>
+                  <div className="px-4 py-3 border-l border-border">Showing (Strong)</div>
                 </div>
                 {[
                   { tell: "He was scared.", show: "His hands trembled. He pressed himself flat against the wall, barely breathing, eyes fixed on the handle as it began -- slowly -- to turn." },
@@ -1128,7 +1128,7 @@ export default function CreativeWritingPage() {
                   {/* Centre */}
                   <div className="rounded-full bg-primary px-6 py-4 text-white font-bold text-center text-sm shadow-md">
                     TOPIC<br />
-                    <span className="text-xs font-normal text-white/80">e.g. &ldquo;An abandoned fairground&rdquo;</span>
+                    <span className="text-xs font-normal text-muted-foreground">e.g. &ldquo;An abandoned fairground&rdquo;</span>
                   </div>
                   {/* Branches */}
                   <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 w-full">

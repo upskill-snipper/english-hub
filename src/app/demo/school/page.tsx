@@ -30,7 +30,7 @@ import {
   DEMO_YEAR_GROUPS,
   DEMO_STATS,
 } from "@/data/demo-data"
-import { percentageToGCSEGrade } from "@/lib/grades"
+import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor } from "@/lib/grades"
 
 // ── Helpers ─────────────────────────────────────────────────────────────────
 
@@ -693,7 +693,7 @@ export default function DemoSchoolDashboardPage() {
                               : "text-red-400"
                         }`}
                       >
-                        {r.score}%
+                        G{percentageToGCSEGrade(r.score)}
                       </span>
                     </div>
                     <div className="mt-1 flex items-center justify-between">

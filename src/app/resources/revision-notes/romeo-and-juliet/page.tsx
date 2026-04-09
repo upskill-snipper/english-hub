@@ -21,7 +21,7 @@ function Section({
     <section id={id} aria-labelledby={`${id}-heading`} className="scroll-mt-20">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between rounded-lg bg-gradient-to-r from-primary to-[primary] px-5 py-3.5 text-left text-lg font-bold text-white shadow-md transition hover:opacity-90"
+        className="flex w-full items-center justify-between rounded-lg border bg-primary/[0.08] px-5 py-3.5 text-left text-lg font-bold text-foreground transition hover:bg-primary/[0.12]"
         aria-expanded={open}
       >
         <span id={`${id}-heading`}>{title}</span>

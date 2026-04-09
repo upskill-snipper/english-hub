@@ -34,6 +34,7 @@ import {
   DEMO_YEAR_GROUPS,
   DEMO_STATS,
 } from "@/data/demo-data"
+import { percentageToGCSEGrade } from "@/lib/grades"
 
 // ── Date range multipliers (pretend variation) ──────────────
 type DateRange = "week" | "month" | "term" | "year"
@@ -456,7 +457,7 @@ export default function AnalyticsPage() {
                   <div className="flex items-start justify-between">
                     <div>
                       <p className="text-sm text-muted-foreground mb-1">Average Score</p>
-                      <p className="text-3xl font-bold text-foreground">{vary(68, dateRange)}%</p>
+                      <p className="text-3xl font-bold text-foreground">{vary(68, dateRange)}% <span className="text-lg font-normal text-muted-foreground">(G{percentageToGCSEGrade(vary(68, dateRange))})</span></p>
                       <div className="mt-2">
                         <TrendBadge value={vary(3, dateRange)} />
                       </div>
@@ -599,7 +600,7 @@ export default function AnalyticsPage() {
                         </div>
                         <div className="text-right shrink-0">
                           <p className={`text-sm font-bold ${progressTextColor(cls.avgProgress)}`}>
-                            {vary(cls.avgProgress, dateRange)}%
+                            {vary(cls.avgProgress, dateRange)}% <span className="text-xs font-normal text-muted-foreground">(G{percentageToGCSEGrade(vary(cls.avgProgress, dateRange))})</span>
                           </p>
                         </div>
                         <ChevronRight className="w-4 h-4 text-neutral-600 group-hover:text-foreground/80 transition-colors shrink-0" />
@@ -890,7 +891,7 @@ export default function AnalyticsPage() {
                   </div>
                   <div className="text-right shrink-0">
                     <p className={`text-sm font-bold ${progressTextColor(student.overallProgress)}`}>
-                      {student.overallProgress}%
+                      {student.overallProgress}% <span className="text-xs font-normal text-muted-foreground">(G{percentageToGCSEGrade(student.overallProgress)})</span>
                     </p>
                     {ragBadge(student.overallProgress)}
                   </div>
@@ -944,7 +945,7 @@ export default function AnalyticsPage() {
                         </div>
                         <div className="flex items-center gap-3 shrink-0">
                           <Badge variant="destructive" className="text-red-300 bg-red-500/15 hidden md:inline-flex">
-                            {student.overallProgress}%
+                            {student.overallProgress}% (G{percentageToGCSEGrade(student.overallProgress)})
                           </Badge>
                           <ChevronRight className="w-4 h-4 text-neutral-600 group-hover:text-foreground/80" />
                         </div>

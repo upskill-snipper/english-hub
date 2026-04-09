@@ -24,6 +24,7 @@ import { matchesBoard } from '@/lib/board-filter'
 import { loadAllCourses } from '@/data/course-loader'
 import { formatDate } from '@/lib/utils'
 import type { AssessmentAttempt, CourseData } from '@/lib/types'
+import { percentageToGCSEGrade, gcseGradeColor, percentageToGCSEGradeLabel } from '@/lib/grades'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -106,9 +107,7 @@ function scoreBarColor(score: number): string {
 }
 
 function scoreLabel(score: number): string {
-  if (score >= 70) return 'Excellent'
-  if (score >= 50) return 'Good'
-  return 'Needs Work'
+  return percentageToGCSEGradeLabel(score)
 }
 
 // ─── Skeleton Components ─────────────────────────────────────────────────────
@@ -531,7 +530,7 @@ export default function GradeDashboardPage() {
                     >
                       {/* Tooltip */}
                       <div className="pointer-events-none absolute -top-8 z-10 hidden rounded bg-background border border-border px-2 py-1 text-xs font-medium whitespace-nowrap group-hover:block">
-                        {item.score}% — {scoreLabel(item.score)}
+                        {scoreLabel(item.score)} ({item.score}%)
                       </div>
                       {/* Bar */}
                       <div
@@ -580,7 +579,7 @@ export default function GradeDashboardPage() {
                             {s.courseName}
                           </span>
                           <span className="shrink-0 rounded-md bg-green-500/20 px-2 py-0.5 text-xs font-semibold text-green-400">
-                            {s.average}% — {scoreLabel(s.average)}
+                            {scoreLabel(s.average)} ({s.average}%)
                           </span>
                         </div>
                       ))}
@@ -607,7 +606,7 @@ export default function GradeDashboardPage() {
                             {w.courseName}
                           </span>
                           <span className="shrink-0 rounded-md bg-amber-500/20 px-2 py-0.5 text-xs font-semibold text-amber-400">
-                            {w.average}% — {scoreLabel(w.average)}
+                            {scoreLabel(w.average)} ({w.average}%)
                           </span>
                         </div>
                       ))}

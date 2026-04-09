@@ -6,6 +6,7 @@ import { BookOpen, Users, Plus, Search, X, GraduationCap } from "lucide-react"
 import { toast } from "sonner"
 import { DEMO_CLASSES, DEMO_STUDENTS } from "@/data/demo-data"
 import { useScrollRestore } from "@/hooks/useScrollRestore"
+import { percentageToGCSEGrade } from "@/lib/grades"
 
 function boardBadgeClass(board: string): string {
   switch (board) {
@@ -155,7 +156,7 @@ export default function DemoClassesPage() {
                   <p className="text-[10px] uppercase tracking-wider text-muted-foreground mb-0.5">
                     Avg Score
                   </p>
-                  <span className="text-sm font-semibold">{cls.computedAvgScore}%</span>
+                  <span className="text-sm font-semibold">{cls.computedAvgScore}% <span className="text-xs font-normal text-muted-foreground">(G{percentageToGCSEGrade(cls.computedAvgScore)})</span></span>
                 </div>
                 <div>
                   <p className="text-[10px] uppercase tracking-wider text-muted-foreground mb-0.5">

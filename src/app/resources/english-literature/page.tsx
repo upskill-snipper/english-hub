@@ -330,20 +330,20 @@ export default function EnglishLiteraturePage() {
     <>
 
       {/* ── Hero ─────────────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-primary/80 px-4 py-16 text-white sm:py-20">
+      <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="absolute inset-0 opacity-10" aria-hidden="true">
           <div className="absolute -right-24 -top-24 h-96 w-96 rounded-full bg-card/20 blur-3xl" />
           <div className="absolute -bottom-32 -left-32 h-[30rem] w-[30rem] rounded-full bg-primary/30 blur-3xl" />
         </div>
 
         <div className="relative mx-auto max-w-5xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-primary/70">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary">
             GCSE &amp; IGCSE
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
             English Literature
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-white/90">
+          <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">
             Explore Shakespeare, poetry, prose, and drama with detailed study
             guides, character analysis, theme breakdowns, and essay-writing
             techniques tailored to your exam board.
@@ -354,12 +354,12 @@ export default function EnglishLiteraturePage() {
             {HERO_STATS.map((stat) => (
               <div
                 key={stat.label}
-                className="rounded-xl bg-card/10 px-4 py-4 backdrop-blur-sm"
+                className="rounded-xl border bg-card px-4 py-4"
               >
                 <p className="text-2xl font-extrabold sm:text-3xl">
                   {stat.value}
                 </p>
-                <p className="mt-1 text-xs font-medium uppercase tracking-wide text-white/70">
+                <p className="mt-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">
                   {stat.label}
                 </p>
               </div>
@@ -640,7 +640,7 @@ export default function EnglishLiteraturePage() {
 
       {/* ── AI Feedback Callout ──────────────────────────────── */}
       <section className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-primary to-primary p-8 text-white shadow-lg sm:p-10">
+        <div className="rounded-2xl border bg-gradient-to-b from-primary/[0.06] to-transparent p-8 sm:p-10">
           <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-card/10 blur-2xl" />
           <div className="absolute -bottom-16 -left-16 h-56 w-56 rounded-full bg-card/5 blur-3xl" />
 
@@ -652,7 +652,7 @@ export default function EnglishLiteraturePage() {
               <h2 className="text-xl font-bold sm:text-2xl">
                 Get AI-powered essay feedback
               </h2>
-              <p className="mt-2 max-w-xl text-sm leading-relaxed text-white/90">
+              <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted-foreground">
                 Paste your literature essay and receive instant, detailed
                 feedback on your argument, use of evidence, analysis of
                 language, and exam technique. Our AI marker is calibrated to
@@ -690,10 +690,10 @@ export default function EnglishLiteraturePage() {
                   className={`bg-gradient-to-br ${section.color} px-5 py-8 text-white`}
                 >
                   <h3 className="text-lg font-bold">{section.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-white/90">
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                     {section.description}
                   </p>
-                  <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-white/80 transition-colors group-hover:text-white">
+                  <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-muted-foreground transition-colors group-hover:text-foreground">
                     Explore <ArrowRight />
                   </span>
                 </div>

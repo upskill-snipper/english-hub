@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Link from "next/link"
 import {
   Upload,
   Download,
@@ -251,7 +252,7 @@ export default function DemoImportPage() {
         <p className="mt-1 text-sm text-muted-foreground">
           Register your school to bulk-import students and teachers with automatic account creation.
         </p>
-        <Button render={<a href="/for-schools/register" />} className="mt-4">
+        <Button render={<Link href="/for-schools/register" />} className="mt-4">
             Register Your School
         </Button>
       </div>

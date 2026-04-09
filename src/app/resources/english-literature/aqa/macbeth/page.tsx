@@ -612,15 +612,15 @@ export default function MacbethPage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary to-primary/90 px-4 py-16 text-white sm:py-20">
+      <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-white/70">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-muted-foreground">
             AQA English Literature &middot; Paper 1
           </p>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Macbeth &mdash; Complete Study Guide
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             William Shakespeare &middot; Written c. 1606 &middot; Tragedy
           </p>
         </div>
@@ -640,7 +640,7 @@ export default function MacbethPage() {
             <a
               key={href}
               href={href}
-              className="rounded-full border border-border px-3 py-1 text-muted-foreground transition hover:bg-primary hover:text-white hover:border-primary"
+              className="rounded-full border border-border px-3 py-1 text-muted-foreground transition hover:bg-primary hover:text-foreground hover:border-primary"
             >
               {label}
             </a>

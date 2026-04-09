@@ -77,15 +77,15 @@ export default function AQAEnglishLanguagePage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary via-primary/90 to-primary px-4 py-16 text-white sm:py-20">
+      <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
+          <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
             AQA GCSE (8700)
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             English Language Revision Hub
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Everything you need to achieve your best grade in AQA GCSE English
             Language. Detailed study notes, techniques, mark schemes, and
             example responses for both papers.
@@ -185,13 +185,13 @@ export default function AQAEnglishLanguagePage() {
             How is the qualification structured?
           </h2>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
-            <div className="rounded-lg border border-white/80 bg-card/70 p-4">
+            <div className="rounded-lg border border-border bg-card/70 p-4">
               <h3 className="font-bold text-primary">Paper 1 (50%)</h3>
               <p className="mt-1 text-sm text-muted-foreground">
                 Explorations in Creative Reading and Writing. One literature fiction text. 4 reading questions + 1 descriptive/narrative writing task. 1 hour 45 minutes.
               </p>
             </div>
-            <div className="rounded-lg border border-white/80 bg-card/70 p-4">
+            <div className="rounded-lg border border-border bg-card/70 p-4">
               <h3 className="font-bold text-primary">Paper 2 (50%)</h3>
               <p className="mt-1 text-sm text-muted-foreground">
                 Writers' Viewpoints and Perspectives. One non-fiction and one literary non-fiction text. 4 reading questions + 1 writing to present a viewpoint task. 1 hour 45 minutes.
@@ -267,11 +267,11 @@ export default function AQAEnglishLanguagePage() {
 
       {/* CTA */}
       <section className="mx-auto max-w-5xl px-4 pb-12">
-        <div className="rounded-xl bg-gradient-to-r from-primary to-accent p-8 text-center text-white sm:p-10">
+        <div className="rounded-xl border bg-gradient-to-b from-primary/[0.06] to-transparent p-8 text-center sm:p-10">
           <h2 className="text-2xl font-bold sm:text-3xl">
             Ready to start revising?
           </h2>
-          <p className="mx-auto mt-3 max-w-xl text-white/90">
+          <p className="mx-auto mt-3 max-w-xl text-muted-foreground">
             Begin with Paper 1 or Paper 2, or build your foundations with the
             Language Techniques and Writing Skills guides.
           </p>

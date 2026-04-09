@@ -24,6 +24,7 @@ import { useAuthStore } from '@/store/auth-store'
 import { useBoardStore } from '@/store/board-store'
 import { matchesBoard } from '@/lib/board-filter'
 import { shuffleArray, formatTime } from '@/lib/utils'
+import { percentageToGCSEGrade, gcseGradeColor } from '@/lib/grades'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -625,10 +626,10 @@ export default function AssessmentPage() {
             {/* Score */}
             <div className="flex items-center justify-center gap-8 mb-6">
               <div>
-                <div className="text-5xl font-bold text-foreground">
-                  {result.percentage}%
+                <div className={`text-5xl font-bold ${gcseGradeColor(percentageToGCSEGrade(result.percentage))}`}>
+                  Grade {percentageToGCSEGrade(result.percentage)}
                 </div>
-                <div className="text-sm text-muted-foreground mt-1">Score ({result.grade})</div>
+                <div className="text-sm text-muted-foreground mt-1">{result.percentage}% ({result.grade})</div>
               </div>
               <div
                 className={`px-4 py-2 rounded-lg border ${getGradeBg(

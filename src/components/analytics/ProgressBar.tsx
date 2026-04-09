@@ -1,6 +1,7 @@
 'use client'
 
 import { cn } from '@/lib/utils'
+import { percentageToGCSEGrade, gcseGradeColor } from '@/lib/grades'
 
 interface ProgressBarProps {
   value: number
@@ -8,6 +9,8 @@ interface ProgressBarProps {
   label?: string
   sublabel?: string
   showPercentage?: boolean
+  /** When true, display as GCSE grade instead of percentage (e.g. "Grade 7" not "72%") */
+  showAsGrade?: boolean
   size?: 'sm' | 'md' | 'lg'
   color?: string
   className?: string
@@ -32,12 +35,14 @@ export function ProgressBar({
   label,
   sublabel,
   showPercentage = true,
+  showAsGrade = false,
   size = 'md',
   color,
   className,
 }: ProgressBarProps) {
   const percentage = max > 0 ? Math.min(Math.round((value / max) * 100), 100) : 0
   const barColor = color ?? getColorClass(percentage)
+  const grade = percentageToGCSEGrade(percentage)
 
   return (
     <div className={cn('w-full', className)}>
@@ -52,8 +57,8 @@ export function ProgressBar({
             )}
           </div>
           {showPercentage && (
-            <span className="ml-2 shrink-0 text-xs tabular-nums text-muted-foreground">
-              {percentage}%
+            <span className={cn('ml-2 shrink-0 text-xs tabular-nums', showAsGrade ? gcseGradeColor(grade) + ' font-semibold' : 'text-muted-foreground')}>
+              {showAsGrade ? `Grade ${grade}` : `${percentage}%`}
             </span>
           )}
         </div>

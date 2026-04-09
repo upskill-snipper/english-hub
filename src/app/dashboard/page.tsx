@@ -32,6 +32,7 @@ import { trackEvent } from '@/lib/gtag'
 import { useAuthStore } from '@/store/auth-store'
 import { loadAllCourses } from '@/data/course-loader'
 import { cn, formatDate } from '@/lib/utils'
+import { percentageToGCSEGradeLabel } from '@/lib/grades'
 import type { Enrolment, ModuleProgress, Certificate, CourseData } from '@/lib/types'
 
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
@@ -40,6 +41,7 @@ import { Progress } from '@/components/ui/progress'
 import { Skeleton } from '@/components/ui/skeleton'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from '@/components/ui/tooltip'
+import { LearningTip } from '@/components/ui/learning-tip'
 import { Separator } from '@/components/ui/separator'
 import { Button } from '@/components/ui/button'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
@@ -413,6 +415,10 @@ export default function DashboardPage() {
           )}
 
           {/* ── Stats Row ──────────────────────────────────────────────── */}
+          <div className="mb-2 flex items-center gap-1.5">
+            <h2 className="text-sm font-medium text-muted-foreground">Your Stats</h2>
+            <LearningTip categories={['progress', 'motivation']} side="right" />
+          </div>
           <div className="mb-6 grid grid-cols-2 gap-3 lg:grid-cols-4">
             {loading ? (
               <>
@@ -568,7 +574,10 @@ export default function DashboardPage() {
             {/* Recent Activity */}
             <Card>
               <CardHeader>
-                <CardTitle>Recent Activity</CardTitle>
+                <div className="flex items-center gap-1.5">
+                  <CardTitle>Recent Activity</CardTitle>
+                  <LearningTip categories={['study', 'motivation']} side="right" />
+                </div>
                 <CardDescription>Your latest completed modules</CardDescription>
               </CardHeader>
               <CardContent>
@@ -612,7 +621,7 @@ export default function DashboardPage() {
                               </div>
                               {activity.quiz_score !== null && (
                                 <Badge variant="secondary" className="shrink-0">
-                                  {activity.quiz_score}%
+                                  {percentageToGCSEGradeLabel(activity.quiz_score)}
                                 </Badge>
                               )}
                             </div>
@@ -629,9 +638,12 @@ export default function DashboardPage() {
             {/* Certificates */}
             <Card>
               <CardHeader>
-                <CardTitle>
-                  {certificates.length > 0 ? 'Your Certificates' : 'Achievements'}
-                </CardTitle>
+                <div className="flex items-center gap-1.5">
+                  <CardTitle>
+                    {certificates.length > 0 ? 'Your Certificates' : 'Achievements'}
+                  </CardTitle>
+                  <LearningTip categories={['grade', 'motivation']} side="right" />
+                </div>
                 <CardDescription>
                   {certificates.length > 0
                     ? `${certificates.length} certificate${certificates.length !== 1 ? 's' : ''} earned`
@@ -674,7 +686,7 @@ export default function DashboardPage() {
                                 <div className="mt-1 flex flex-wrap items-center gap-2">
                                   <GradeBadge grade={cert.grade} />
                                   <span className="text-xs text-muted-foreground">
-                                    {cert.score}%
+                                    {percentageToGCSEGradeLabel(cert.score)}
                                   </span>
                                   <span className="text-xs text-muted-foreground opacity-70">
                                     · {formatDate(cert.issued_at)}

@@ -128,15 +128,15 @@ export default function VocabularyHubPage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary to-primary/90 px-4 py-16 text-white sm:py-20">
+      <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
+          <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
             Resources
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Vocabulary Builder
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Upgrade your vocabulary for every type of GCSE English writing.
             Academic essays, creative pieces, literary analysis, and persuasive
             texts -- find the right word every time.
@@ -151,13 +151,13 @@ export default function VocabularyHubPage() {
             </Link>
             <Link
               href="/resources/vocabulary/descriptive"
-              className="rounded-lg border-2 border-white/30 bg-card/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-card/20"
+              className="rounded-lg border px-6 py-3 text-sm font-semibold text-foreground transition hover:bg-muted"
             >
               Descriptive Words
             </Link>
             <Link
               href="/resources/vocabulary/analytical"
-              className="rounded-lg border-2 border-white/30 bg-card/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-card/20"
+              className="rounded-lg border px-6 py-3 text-sm font-semibold text-foreground transition hover:bg-muted"
             >
               Analytical Words
             </Link>

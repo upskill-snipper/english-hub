@@ -1,5 +1,6 @@
 // ─── Teacher Notification Generation & Storage ──────────────────────────────
 
+import { percentageToGCSEGradeLabel } from '@/lib/grades'
 import type {
   StudentAnalytics,
   ClassAnalytics,
@@ -202,7 +203,7 @@ function generateStudentAtRiskNotifications(
         type: 'student_at_risk',
         priority: 'high',
         title: 'Student score critically low',
-        message: `${student.student_name} has an average score of ${Math.round(student.avg_quiz_score)}% in ${className}. Consider scheduling an intervention.`,
+        message: `${student.student_name} has an average of ${percentageToGCSEGradeLabel(Math.round(student.avg_quiz_score))} in ${className}. Consider scheduling an intervention.`,
         classId,
         className,
         studentId: student.student_id,
@@ -436,7 +437,7 @@ function generateMockInterventionReminders(
       type: 'intervention_reminder',
       priority: 'medium',
       title: 'Scheduled intervention coming up',
-      message: `Reminder: Intervention session with ${student.student_name} (${className}) is scheduled for this week. Score: ${Math.round(student.avg_quiz_score)}%.`,
+      message: `Reminder: Intervention session with ${student.student_name} (${className}) is scheduled for this week. ${percentageToGCSEGradeLabel(Math.round(student.avg_quiz_score))}.`,
       classId,
       className,
       studentId: student.student_id,

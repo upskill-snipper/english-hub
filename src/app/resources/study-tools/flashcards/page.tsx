@@ -588,7 +588,7 @@ export default function FlashcardsPage() {
                       &ldquo;{card.quote}&rdquo;
                     </p>
                     {(card.character || card.act) && (
-                      <p className="mt-1.5 text-xs text-white/70">
+                      <p className="mt-1.5 text-xs text-muted-foreground">
                         {[card.character, card.act].filter(Boolean).join(" -- ")}
                       </p>
                     )}

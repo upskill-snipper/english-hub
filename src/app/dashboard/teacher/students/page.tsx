@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { percentageToGCSEGradeLabel } from "@/lib/grades";
 
 /* ─── Mock data ─────────────────────────────────────────────────────────
    TODO: Replace with real API calls:
@@ -231,7 +232,7 @@ export default function StudentsPage() {
                           </p>
                         </div>
                         <span className={`text-sm font-bold ${scoreColor(essay.score)}`}>
-                          {essay.score}%
+                          {percentageToGCSEGradeLabel(essay.score)}
                         </span>
                       </li>
                     ))}

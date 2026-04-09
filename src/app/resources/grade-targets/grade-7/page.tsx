@@ -175,11 +175,11 @@ export default function Grade7Page() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary to-primary/80 px-4 py-16 text-white sm:py-20">
+      <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <Link
             href="/resources/grade-targets"
-            className="inline-flex items-center gap-1 text-sm font-medium text-white/80 hover:text-white transition-colors"
+            className="inline-flex items-center gap-1 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
           >
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
@@ -194,12 +194,12 @@ export default function Grade7Page() {
               <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
                 Getting a Grade 7
               </h1>
-              <p className="text-sm font-medium text-white/80 uppercase tracking-wide">
+              <p className="text-sm font-medium text-muted-foreground uppercase tracking-wide">
                 Distinction
               </p>
             </div>
           </div>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Grade 7 is where competent becomes impressive. It requires
             perceptive analysis, ambitious writing, and the ability to think
             beyond the obvious.

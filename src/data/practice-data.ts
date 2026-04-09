@@ -9,8 +9,6 @@ export interface PracticeQuestion {
   paper?: number;
   questionType?: string;
   type?: string;
-  difficulty?: string;
-  tier?: string;
   title?: string;
   extract: string;
   extractSource?: string;

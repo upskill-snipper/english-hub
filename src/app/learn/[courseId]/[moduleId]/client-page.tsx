@@ -412,6 +412,10 @@ export default function CoursePlayerPage() {
 
   // Check if user has access (preview module, pro subscriber, OR enrolled)
   useEffect(() => {
+    // Don't check access until course data has loaded — without it we can't
+    // know which module index this is and whether it's the free preview.
+    if (!course) return
+
     async function checkAccess() {
       // Free preview modules are accessible to everyone
       if (isPreviewModule) {
@@ -606,7 +610,7 @@ export default function CoursePlayerPage() {
     )
   }
 
-  if (hasAccess === null && !isPreviewModule) {
+  if (hasAccess === null) {
     return (
       <div className="flex min-h-[60vh] items-center justify-center">
         <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
@@ -619,8 +623,10 @@ export default function CoursePlayerPage() {
       <div className="min-h-screen bg-background flex items-center justify-center p-4">
         <div className="card max-w-md w-full text-center space-y-4 p-8">
           <Lock className="w-12 h-12 text-muted-foreground mx-auto" />
-          <h2 className="text-xl font-bold text-foreground">Course Access Required</h2>
-          <p className="text-muted-foreground">You need to purchase this course or subscribe to Pro to access this content.</p>
+          <h2 className="text-xl font-bold text-foreground">Upgrade to Continue</h2>
+          <p className="text-muted-foreground">
+            This module requires a subscription. Try the free preview first, or subscribe to unlock all content.
+          </p>
           <div className="flex gap-3 justify-center">
             <Link href={`/courses/${courseId}`} className="btn-primary">View Course</Link>
             <Link href="/account/billing" className="btn-secondary">Subscribe</Link>

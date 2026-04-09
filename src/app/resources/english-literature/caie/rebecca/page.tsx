@@ -229,15 +229,15 @@ export default function RebeccaStudyGuide() {
   return (
     <>
       {/* ── Hero ────────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-[#4A235A] to-[#7D3C98] px-4 py-16 text-white sm:py-20">
+      <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
+          <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
             Cambridge IGCSE English Literature &mdash; Paper 1 (Prose)
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Rebecca &mdash; Complete Study Guide
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Characters, themes, chapter summaries with key quotations, du
             Maurier&rsquo;s narrative techniques, and Cambridge-specific exam
             guidance.

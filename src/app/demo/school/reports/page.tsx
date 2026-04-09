@@ -43,6 +43,7 @@ import {
   DEMO_YEAR_GROUPS,
   DEMO_STATS,
 } from "@/data/demo-data"
+import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor } from "@/lib/grades"
 
 // ── Derived data ──────────────────────────────────────────────────────────────
 
@@ -342,7 +343,7 @@ export default function ReportsPage() {
               {[
                 { label: "Total Students", value: totalStudents.toString(), icon: <Users className="h-5 w-5" />, color: "text-blue-400" },
                 { label: "Active Rate", value: `${activeRate}%`, icon: <TrendingUp className="h-5 w-5" />, color: "text-emerald-400" },
-                { label: "Avg Score", value: `${avgScore}%`, icon: <Target className="h-5 w-5" />, color: "text-violet-400" },
+                { label: "Avg Score", value: `${avgScore}% (G${percentageToGCSEGrade(avgScore)})`, icon: <Target className="h-5 w-5" />, color: "text-violet-400" },
                 { label: "Completion Rate", value: `${completionRate}%`, icon: <CheckCircle2 className="h-5 w-5" />, color: "text-cyan-400" },
                 { label: "At-Risk Students", value: atRiskCount.toString(), icon: <AlertTriangle className="h-5 w-5" />, color: "text-red-400" },
               ].map((metric) => (
@@ -430,7 +431,7 @@ export default function ReportsPage() {
                             <td className="py-3 pr-4 font-medium text-foreground">{yg.label}</td>
                             <td className="py-3 pr-4 text-foreground/80">{yg.studentCount}</td>
                             <td className="py-3 pr-4 text-foreground/80">{yg.classCount}</td>
-                            <td className="py-3 pr-4 text-foreground font-semibold">{yg.avgProgress}%</td>
+                            <td className="py-3 pr-4 text-foreground font-semibold">{yg.avgProgress}% <span className="text-xs font-normal text-muted-foreground">(G{percentageToGCSEGrade(yg.avgProgress)})</span></td>
                             <td className="py-3 pr-4">
                               <div className="w-full bg-muted rounded-full h-2.5">
                                 <div className={`h-2.5 rounded-full transition-all ${yg.avgProgress >= 75 ? "bg-emerald-500" : yg.avgProgress >= 60 ? "bg-amber-500" : "bg-red-500"}`} style={{ width: `${yg.avgProgress}%` }} />
@@ -1095,7 +1096,7 @@ export default function ReportsPage() {
                 <div>
                   <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-3">Assessment Summary</h3>
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                    <div className="bg-muted/50 rounded-lg p-4 text-center"><p className="text-2xl font-bold text-foreground">{selectedStudent.averageScore}%</p><p className="text-xs text-muted-foreground/70">Avg Score</p></div>
+                    <div className="bg-muted/50 rounded-lg p-4 text-center"><p className="text-2xl font-bold text-foreground">{selectedStudent.averageScore}% <span className="text-lg font-normal text-muted-foreground">(G{percentageToGCSEGrade(selectedStudent.averageScore)})</span></p><p className="text-xs text-muted-foreground/70">Avg Score</p></div>
                     <div className="bg-muted/50 rounded-lg p-4 text-center"><p className="text-2xl font-bold text-foreground">{selectedStudent.assignmentsCompleted}/{selectedStudent.assignmentsTotal}</p><p className="text-xs text-muted-foreground/70">Assignments</p></div>
                     <div className="bg-muted/50 rounded-lg p-4 text-center"><p className="text-2xl font-bold text-foreground">{selectedStudent.modulesCompleted}</p><p className="text-xs text-muted-foreground/70">Modules Done</p></div>
                     <div className="bg-muted/50 rounded-lg p-4 text-center"><p className="text-2xl font-bold text-foreground">{selectedStudent.mockExams.length > 0 ? selectedStudent.mockExams[0].grade : "--"}</p><p className="text-xs text-muted-foreground/70">Latest Mock Grade</p></div>
@@ -1112,7 +1113,7 @@ export default function ReportsPage() {
                         <div key={mod.name} className="flex items-center gap-4">
                           <span className="text-sm text-foreground/80 w-48 shrink-0">{mod.name}</span>
                           <div className="flex-1 bg-muted rounded-full h-2.5"><div className={`h-2.5 rounded-full ${rag === "green" ? "bg-emerald-500" : rag === "amber" ? "bg-amber-500" : "bg-red-500"}`} style={{ width: `${mod.score}%` }} /></div>
-                          <span className="text-sm text-foreground font-semibold w-12 text-right">{mod.score}%</span>
+                          <span className="text-sm text-foreground font-semibold w-16 text-right">G{percentageToGCSEGrade(mod.score)}</span>
                           <Badge className={`w-24 justify-center ${mod.status === "completed" ? "bg-emerald-500/20 text-emerald-400" : mod.status === "in-progress" ? "bg-blue-500/20 text-blue-400" : "bg-neutral-500/20 text-muted-foreground"}`}>
                             {mod.status === "completed" ? "Completed" : mod.status === "in-progress" ? "In Progress" : "Not Started"}
                           </Badge>
@@ -1127,14 +1128,14 @@ export default function ReportsPage() {
                   <div>
                     <h3 className="text-sm font-semibold text-emerald-400 uppercase tracking-wider mb-3">Strengths</h3>
                     <ul className="space-y-2 text-sm text-foreground/80">
-                      {selectedStudent.strengths.map((s: string | { name: string; score: number }) => (<li key={typeof s === "string" ? s : s.name} className="flex items-center gap-2"><CheckCircle2 className="h-3.5 w-3.5 text-emerald-500 shrink-0" />{typeof s === "string" ? s : `${s.name} (${s.score}%)`}</li>))}
+                      {selectedStudent.strengths.map((s: string | { name: string; score: number }) => (<li key={typeof s === "string" ? s : s.name} className="flex items-center gap-2"><CheckCircle2 className="h-3.5 w-3.5 text-emerald-500 shrink-0" />{typeof s === "string" ? s : `${s.name} (G${percentageToGCSEGrade(s.score)})`}</li>))}
                       {selectedStudent.strengths.length === 0 && <li className="text-muted-foreground/70">No strengths identified yet</li>}
                     </ul>
                   </div>
                   <div>
                     <h3 className="text-sm font-semibold text-red-400 uppercase tracking-wider mb-3">Areas for Development</h3>
                     <ul className="space-y-2 text-sm text-foreground/80">
-                      {selectedStudent.weaknesses.map((w: string | { name: string; score: number }) => (<li key={typeof w === "string" ? w : w.name} className="flex items-center gap-2"><AlertTriangle className="h-3.5 w-3.5 text-red-400 shrink-0" />{typeof w === "string" ? w : `${w.name} (${w.score}%)`}</li>))}
+                      {selectedStudent.weaknesses.map((w: string | { name: string; score: number }) => (<li key={typeof w === "string" ? w : w.name} className="flex items-center gap-2"><AlertTriangle className="h-3.5 w-3.5 text-red-400 shrink-0" />{typeof w === "string" ? w : `${w.name} (G${percentageToGCSEGrade(w.score)})`}</li>))}
                       {selectedStudent.weaknesses.length === 0 && <li className="text-muted-foreground/70">No areas of concern identified</li>}
                     </ul>
                   </div>
@@ -1209,7 +1210,7 @@ export default function ReportsPage() {
                           <td className="py-3 pr-4 text-foreground/80">{t.department}</td>
                           <td className="py-3 pr-4 text-foreground/80">{t.classNames.join(", ")}</td>
                           <td className="py-3 pr-4 text-foreground/80">{t.totalStudents}</td>
-                          <td className="py-3 pr-4"><span className={`font-semibold ${t.avgProgress >= 75 ? "text-emerald-400" : t.avgProgress >= 60 ? "text-amber-400" : "text-red-400"}`}>{t.avgProgress}%</span></td>
+                          <td className="py-3 pr-4"><span className={`font-semibold ${t.avgProgress >= 75 ? "text-emerald-400" : t.avgProgress >= 60 ? "text-amber-400" : "text-red-400"}`}>{t.avgProgress}% <span className="text-xs font-normal text-muted-foreground">(G{percentageToGCSEGrade(t.avgProgress)})</span></span></td>
                           <td className="py-3 text-foreground/80">{t.completionRate}%</td>
                         </tr>
                       ))}

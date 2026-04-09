@@ -176,15 +176,15 @@ export default function GradeTargetsPage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary to-primary/80 px-4 py-16 text-white sm:py-20">
+      <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
+          <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
             Resources
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Grade Targets
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             What does each grade actually look like? Understand the difference
             between a 5, a 7, and a 9 -- then build a clear plan to reach your
             target grade.
@@ -195,7 +195,7 @@ export default function GradeTargetsPage() {
               <Link
                 key={card.grade}
                 href={card.href}
-                className="rounded-lg bg-card/20 px-5 py-2.5 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-card/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                className="rounded-lg bg-muted px-5 py-2.5 text-sm font-semibold text-foreground transition hover:bg-muted/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
               >
                 Grade {card.grade}
               </Link>

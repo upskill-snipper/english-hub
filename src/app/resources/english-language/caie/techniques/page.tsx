@@ -326,11 +326,11 @@ export default function TechniquesPage() {
     <>
 
       {/* ── Hero ────────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-primary to-accent px-4 py-16 text-white sm:py-20">
+      <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl">
           <Link
             href="/resources/english-language/caie"
-            className="mb-4 inline-flex items-center text-sm text-white/70 hover:text-white"
+            className="mb-4 inline-flex items-center text-sm text-muted-foreground hover:text-foreground"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="mr-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
@@ -340,10 +340,10 @@ export default function TechniquesPage() {
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Language Techniques
           </h1>
-          <p className="mt-2 text-lg text-white/90">
+          <p className="mt-2 text-lg text-muted-foreground">
             {TECHNIQUES.length} Techniques with Definitions, Examples &amp; Effects
           </p>
-          <p className="mt-3 max-w-2xl text-white/80">
+          <p className="mt-3 max-w-2xl text-muted-foreground">
             A comprehensive reference guide to the language and literary
             techniques you need to identify and analyse in your Cambridge IGCSE
             English Language examination.
@@ -358,7 +358,7 @@ export default function TechniquesPage() {
             <a
               key={cat}
               href={`#${cat}`}
-              className="rounded-full border border-primary/20 px-3 py-1 text-xs font-medium text-primary transition-colors hover:bg-primary hover:text-white"
+              className="rounded-full border border-primary/20 px-3 py-1 text-xs font-medium text-primary transition-colors hover:bg-primary hover:text-foreground"
             >
               {CATEGORY_DISPLAY[cat]}
             </a>

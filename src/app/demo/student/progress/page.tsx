@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor } from "@/lib/grades"
 import {
   ArrowLeft,
   CheckCircle2,
@@ -430,7 +431,7 @@ export default function StudentProgressPage() {
                         {moduleLabel(mod.color)}
                       </span>
                     </div>
-                    <p className="text-xs text-white/40 mt-0.5">Avg: {mod.score}%</p>
+                    <p className="text-xs text-white/40 mt-0.5">Avg: {percentageToGCSEGradeLabel(mod.score)}</p>
                   </div>
                 </div>
 
@@ -523,12 +524,9 @@ export default function StudentProgressPage() {
                 <div key={m.name} className="rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.04] to-transparent p-6 transition-all hover:border-white/20">
                   <p className="text-sm font-medium text-white/70 mb-4">{m.name}</p>
                   <div className="flex items-center gap-4 mb-3">
-                    <span className="text-5xl font-bold tracking-tight">{m.score}%</span>
+                    <span className={`text-5xl font-bold tracking-tight ${gcseGradeColor(percentageToGCSEGrade(m.score))}`}>Grade {percentageToGCSEGrade(m.score)}</span>
                     <div className="flex flex-col items-center gap-1">
-                      <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-purple-500/20 text-xl font-bold text-purple-300 border border-purple-500/20">
-                        {m.grade}
-                      </span>
-                      <span className="text-[10px] text-white/30">Grade</span>
+                      <span className="text-sm text-white/50">{m.score}%</span>
                     </div>
                     <div className={`ml-auto flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium ${trendBg} ${trendColor}`}>
                       {m.trend === "up" ? (
@@ -568,10 +566,10 @@ export default function StudentProgressPage() {
                   <div className="flex items-center justify-between mb-2">
                     <h3 className="text-sm font-medium text-white/90">{e.title}</h3>
                     <div className="flex items-center gap-2">
-                      <span className="text-sm font-medium text-white/70">{e.score}%</span>
                       <span className={`inline-flex items-center rounded-full border px-2 py-0.5 text-[11px] font-medium ${gradeColor}`}>
                         Grade {e.grade}
                       </span>
+                      <span className="text-xs text-white/40">({e.score}%)</span>
                     </div>
                   </div>
                   <p className="text-xs text-white/50 leading-relaxed">{e.feedback}</p>

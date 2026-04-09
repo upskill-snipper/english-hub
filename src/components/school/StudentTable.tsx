@@ -11,6 +11,7 @@ import {
 import { cn, formatDuration } from '@/lib/utils'
 import { Input } from '@/components/ui/input'
 import type { StudentAnalytics } from '@/lib/types'
+import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor } from '@/lib/grades'
 
 /* ── Column configuration ──────────────────────────────────────────────────── */
 
@@ -224,7 +225,7 @@ export function StudentTable({
                   scoreColor(student.avg_quiz_score),
                 )}
               >
-                {Math.round(student.avg_quiz_score)}%
+                {percentageToGCSEGradeLabel(Math.round(student.avg_quiz_score))}
               </span>
               <div className="h-1 w-12 rounded-full bg-border overflow-hidden">
                 <div

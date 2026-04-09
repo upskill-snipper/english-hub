@@ -897,8 +897,8 @@ export default function QuoteTesterPage() {
               >
                 <div className={`bg-gradient-to-br ${text.colour} px-5 py-5 text-white`}>
                   <h3 className="text-xl font-bold">{text.title}</h3>
-                  <p className="mt-0.5 text-sm text-white/70">{text.author}</p>
-                  <p className="mt-2 text-xs text-white/60">
+                  <p className="mt-0.5 text-sm text-muted-foreground">{text.author}</p>
+                  <p className="mt-2 text-xs text-muted-foreground">
                     {total} quotes &middot; {mastered} mastered
                   </p>
                 </div>
@@ -1024,11 +1024,11 @@ export default function QuoteTesterPage() {
         {/* Score card */}
         <div className="mx-auto max-w-lg overflow-hidden rounded-2xl border border-border bg-card shadow-md">
           <div className={`bg-gradient-to-br ${activeText?.colour || "from-gray-700 to-gray-500"} p-8 text-center text-white`}>
-            <p className="text-sm font-medium uppercase tracking-wider text-white/70">
+            <p className="text-sm font-medium uppercase tracking-wider text-muted-foreground">
               {activeText?.title}
             </p>
             <div className="mt-4 text-6xl font-extrabold">{pct}%</div>
-            <p className="mt-2 text-lg text-white/80">
+            <p className="mt-2 text-lg text-muted-foreground">
               {correctQ} of {totalQ} correct
             </p>
           </div>
@@ -1259,7 +1259,7 @@ export default function QuoteTesterPage() {
           <div className={`overflow-hidden rounded-2xl border border-border bg-card shadow-md`}>
             {/* Quote display */}
             <div className={`bg-gradient-to-br ${activeText?.colour || "from-gray-700 to-gray-500"} px-6 py-8 text-white`}>
-              <p className="text-center text-xs font-medium uppercase tracking-wider text-white/60">
+              <p className="text-center text-xs font-medium uppercase tracking-wider text-muted-foreground">
                 Identify the quote
               </p>
               <p className="mt-4 text-center text-lg font-semibold italic leading-relaxed sm:text-xl">

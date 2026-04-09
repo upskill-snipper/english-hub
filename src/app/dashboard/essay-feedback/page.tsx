@@ -598,7 +598,7 @@ function FeedbackResults({
           <CardDescription>Paragraph-by-paragraph examiner commentary</CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="prose prose-sm prose-invert max-w-none text-muted-foreground">
+          <div className="prose prose-sm dark:prose-invert max-w-none text-muted-foreground">
             {feedback.annotatedFeedback.split('\n').map((paragraph, i) => (
               paragraph.trim() ? (
                 <p key={i} className="mb-3 text-sm leading-relaxed">

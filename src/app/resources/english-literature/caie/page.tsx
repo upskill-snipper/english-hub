@@ -198,15 +198,15 @@ export default function CaieEnglishLiteratureHub() {
     <>
 
       {/* ── Hero banner ─────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
+      <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
+          <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
             Cambridge IGCSE
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             English Literature (0475/0992)
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Everything you need to prepare for Cambridge IGCSE English Literature.
             Poetry, prose, drama, unseen analysis &mdash; structured around
             Papers&nbsp;1 and&nbsp;2 with real study content and exam technique.

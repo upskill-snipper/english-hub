@@ -17,6 +17,7 @@ import { useAuthStore } from '@/store/auth-store'
 import { useBoardStore } from '@/store/board-store'
 import { matchesBoard } from '@/lib/board-filter'
 import type { CourseData } from '@/data/courses'
+import { LearningTip } from '@/components/ui/learning-tip'
 
 interface CourseDetailPageProps {
   course: CourseData
@@ -77,8 +78,8 @@ export default function CourseDetailPage({ course }: CourseDetailPageProps) {
   const hasAccess = isEnrolled || isPro
   const firstModule = course.moduleList[0]
   const firstModuleHref = firstModule ? `/learn/${course.id}/${firstModule.id}` : `/courses`
-  const ctaLabel = hasAccess ? 'Start Learning' : 'Subscribe Now'
-  const ctaHref = hasAccess ? firstModuleHref : firstModuleHref
+  const ctaLabel = hasAccess ? 'Start Learning' : 'Try Free Preview'
+  const ctaHref = firstModuleHref
 
   return (
     <div className="min-h-screen bg-background">
@@ -160,9 +161,12 @@ export default function CourseDetailPage({ course }: CourseDetailPageProps) {
 
             {/* Module list */}
             <div className="card mt-6 p-6 sm:p-8">
-              <h2 className="mb-6 text-xl font-bold text-foreground">
-                What You&apos;ll Learn
-              </h2>
+              <div className="mb-6 flex items-center gap-2">
+                <h2 className="text-xl font-bold text-foreground">
+                  What You&apos;ll Learn
+                </h2>
+                <LearningTip categories={['course', 'study']} side="right" />
+              </div>
 
               <ol className="space-y-3">
                 {course.moduleList.map((mod, idx) => {

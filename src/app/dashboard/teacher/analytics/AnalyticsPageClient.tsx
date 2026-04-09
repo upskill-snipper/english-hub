@@ -1,6 +1,7 @@
 'use client'
 
 import Link from "next/link";
+import { percentageToGCSEGradeLabel, percentageToGCSEGrade, gcseGradeColor } from "@/lib/grades";
 
 /* ─── Mock data ─────────────────────────────────────────────────────────
    TODO: Replace with real API calls:
@@ -125,7 +126,7 @@ export default function AnalyticsPageClient() {
           <div className="flex items-end gap-2 sm:gap-4 h-48">
             {MOCK_WEEKLY_SCORES.map((w) => (
               <div key={w.week} className="flex-1 flex flex-col items-center gap-1">
-                <span className="text-xs font-semibold text-foreground">{w.score}%</span>
+                <span className="text-xs font-semibold text-foreground">G{percentageToGCSEGrade(w.score)}</span>
                 <div
                   className={`w-full rounded-t-md ${barColor(w.score)} transition-all`}
                   style={{ height: `${(w.score / maxScore) * 100}%` }}
@@ -137,7 +138,7 @@ export default function AnalyticsPageClient() {
             ))}
           </div>
           <p className="mt-4 text-xs text-muted-foreground text-center">
-            Class average score by week. Trend is upward (+10% over 8 weeks).
+            Class average score by week. Trend is upward over 8 weeks.
           </p>
         </div>
       </section>
@@ -152,8 +153,8 @@ export default function AnalyticsPageClient() {
             <div key={skill.skill}>
               <div className="flex items-center justify-between mb-1">
                 <span className="text-sm font-medium text-foreground">{skill.skill}</span>
-                <span className={`text-sm font-bold ${scoreColor(skill.score)}`}>
-                  {skill.score}%
+                <span className={`text-sm font-bold ${gcseGradeColor(percentageToGCSEGrade(skill.score))}`}>
+                  {percentageToGCSEGradeLabel(skill.score)}
                 </span>
               </div>
               <div className="h-2.5 rounded-full bg-muted overflow-hidden">
@@ -165,7 +166,7 @@ export default function AnalyticsPageClient() {
             </div>
           ))}
           <p className="text-xs text-muted-foreground pt-2">
-            Weakest area: Exam Technique (61%). Consider targeted revision sessions.
+            Weakest area: Exam Technique (Grade 6). Consider targeted revision sessions.
           </p>
         </div>
       </section>

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 import { HumanReviewButton } from "@/components/HumanReviewButton";
+import { percentageToGCSEGrade, gcseGradeColor } from "@/lib/grades";
 
 /* ─── Mock data (replace with real data fetching) ────────────── */
 
@@ -91,8 +92,8 @@ function ScoreGauge({ score }: { score: number }) {
         />
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <span className={`text-3xl font-bold ${colour}`}>{score}%</span>
-        <span className="text-xs text-muted-foreground">Overall</span>
+        <span className={`text-2xl font-bold ${gcseGradeColor(percentageToGCSEGrade(score))}`}>Grade {percentageToGCSEGrade(score)}</span>
+        <span className="text-xs text-muted-foreground">{score}%</span>
       </div>
     </div>
   );

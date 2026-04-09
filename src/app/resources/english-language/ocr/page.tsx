@@ -89,15 +89,15 @@ export default function OCREnglishLanguagePage() {
     <>
 
       {/* ── Hero banner ─────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-primary to-primary/90 px-4 py-16 text-white sm:py-20">
+      <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-white/80">
+          <p className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
             OCR GCSE (J351)
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             English Language
           </h1>
-          <p className="mx-auto mt-4 max-w-xl text-lg text-white/90">
+          <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
             Everything you need to revise for OCR GCSE English Language. Two
             examined components plus a spoken language endorsement.
           </p>

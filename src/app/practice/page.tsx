@@ -35,10 +35,10 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Separator } from '@/components/ui/separator'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
+import { LearningTip } from '@/components/ui/learning-tip'
 
 // ─── Constants ──────────────────────────────────────────────────────────────
 
-const DIFFICULTIES = ['All', 'Foundation', 'Higher'] as const
 const GRADE_TABS = ['Grade 4-5', 'Grade 6-7', 'Grade 8-9'] as const
 
 // Derive unique question types from the data
@@ -79,7 +79,6 @@ export default function PracticePage() {
   // Filters
   const { selectedBoard } = useBoardStore()
   const [questionType, setQuestionType] = useState<string>('All')
-  const [difficulty, setDifficulty] = useState<string>('All')
 
   // Question state
   const [currentQuestion, setCurrentQuestion] = useState<PracticeQuestion | null>(null)
@@ -124,10 +123,9 @@ export default function PracticePage() {
       practiceQuestions.filter((q) => {
         if (!matchesPracticeBoard(q, selectedBoard)) return false
         if (questionType !== 'All' && (q.questionType || q.type) !== questionType) return false
-        if (difficulty !== 'All' && (q.difficulty || q.tier) !== difficulty) return false
         return true
       }),
-    [selectedBoard, questionType, difficulty]
+    [selectedBoard, questionType]
   )
 
   // ── Pick random question ───────────────────────────────────────────────
@@ -189,7 +187,6 @@ export default function PracticePage() {
         question_id: currentQuestion.id,
         board: currentQuestion.board,
         question_type: currentQuestion.questionType || currentQuestion.type,
-        difficulty: currentQuestion.difficulty || currentQuestion.tier,
         answer,
         self_rating: rating,
         time_seconds: elapsed,
@@ -217,9 +214,12 @@ export default function PracticePage() {
       {/* Header */}
       <div className="border-b border-border bg-card/50">
         <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
-          <h1 className="text-3xl font-bold text-foreground sm:text-4xl">
-            Practice Mode
-          </h1>
+          <div className="flex items-center gap-2">
+            <h1 className="text-3xl font-bold text-foreground sm:text-4xl">
+              Practice Mode
+            </h1>
+            <LearningTip categories={['practice', 'exam']} side="right" size="md" />
+          </div>
           <p className="mt-2 text-muted-foreground">
             Sharpen your skills with exam-style questions and model answers.
           </p>
@@ -258,39 +258,20 @@ export default function PracticePage() {
               <Filter className="h-4 w-4" />
               Filters
             </div>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {/* Question Type */}
-              <div className="space-y-1.5">
-                <Label htmlFor="question-type-filter">Question Type</Label>
-                <Select value={questionType} onValueChange={(v) => v && setQuestionType(v)}>
-                  <SelectTrigger id="question-type-filter" className="w-full">
-                    <SelectValue placeholder="Select type" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {questionTypes.map((t) => (
-                      <SelectItem key={t} value={t}>
-                        {t}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-              {/* Difficulty */}
-              <div className="space-y-1.5">
-                <Label htmlFor="difficulty-filter">Difficulty</Label>
-                <Select value={difficulty} onValueChange={(v) => v && setDifficulty(v)}>
-                  <SelectTrigger id="difficulty-filter" className="w-full">
-                    <SelectValue placeholder="Select difficulty" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {DIFFICULTIES.map((d) => (
-                      <SelectItem key={d} value={d}>
-                        {d}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
+            <div className="space-y-1.5">
+              <Label htmlFor="question-type-filter">Question Type</Label>
+              <Select value={questionType} onValueChange={(v) => v && setQuestionType(v)}>
+                <SelectTrigger id="question-type-filter" className="w-full sm:max-w-xs">
+                  <SelectValue placeholder="Select type" />
+                </SelectTrigger>
+                <SelectContent>
+                  {questionTypes.map((t) => (
+                    <SelectItem key={t} value={t}>
+                      {t}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
             </div>
             <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
               <div className="flex items-center gap-3">
@@ -358,9 +339,6 @@ export default function PracticePage() {
               )}
               <Badge className="bg-amber-500/15 text-amber-600 dark:text-amber-400">
                 {(currentQuestion.questionType || currentQuestion.type || 'General').split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
-              </Badge>
-              <Badge variant="outline">
-                {currentQuestion.difficulty || currentQuestion.tier || 'Standard'}
               </Badge>
             </div>
 
@@ -462,6 +440,7 @@ export default function PracticePage() {
                       <CardTitle className="mb-2 flex items-center gap-2 text-sm">
                         <Eye className="h-4 w-4 text-primary" />
                         Model Answers
+                        <LearningTip categories={['grade', 'exam']} side="right" />
                       </CardTitle>
                       <TabsList className="w-full">
                         {GRADE_TABS.map((tab) => (
@@ -618,7 +597,6 @@ export default function PracticePage() {
               className="mt-6"
               onClick={() => {
                 setQuestionType('All')
-                setDifficulty('All')
               }}
             >
               Reset Filters

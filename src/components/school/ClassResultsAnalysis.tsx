@@ -30,6 +30,7 @@ import type {
   StrengthWeakness,
 } from '@/lib/analytics-recommendations'
 import { analyzeClassPerformance } from '@/lib/analytics-recommendations'
+import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor, formatPercentageWithGrade } from '@/lib/grades'
 
 // ── Props ────────────────────────────────────────────────────────────────────
 
@@ -164,7 +165,7 @@ function SkillRadar({ skills }: { skills: SkillBreakdown[] }) {
               >
                 {skill.skill.length > 14 ? skill.skill.slice(0, 12) + '...' : skill.skill}
               </text>
-              <title>{`${skill.skill}: ${skill.avg_score}%`}</title>
+              <title>{`${skill.skill}: Grade ${percentageToGCSEGrade(skill.avg_score)} (${skill.avg_score}%)`}</title>
             </g>
           )
         })}
@@ -349,9 +350,10 @@ export function ClassResultsAnalysis({ classId, className }: ClassResultsAnalysi
             </div>
           </CardHeader>
           <CardContent>
-            <div className={cn('text-2xl font-bold tracking-tight', avgColors.text)}>
-              {analysis.class_avg_score}%
+            <div className={cn('text-2xl font-bold tracking-tight', gcseGradeColor(percentageToGCSEGrade(analysis.class_avg_score)))}>
+              {percentageToGCSEGradeLabel(analysis.class_avg_score)}
             </div>
+            <span className="text-xs text-muted-foreground">{analysis.class_avg_score}%</span>
             <Badge variant="outline" className={cn('mt-1 text-[10px]', avgColors.text, avgColors.border)}>
               {avgStatus.label}
             </Badge>
@@ -369,8 +371,9 @@ export function ClassResultsAnalysis({ classId, className }: ClassResultsAnalysi
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold tracking-tight text-foreground">
-              {analysis.median_score}%
+              {percentageToGCSEGradeLabel(analysis.median_score)}
             </div>
+            <span className="text-xs text-muted-foreground">{analysis.median_score}%</span>
           </CardContent>
         </Card>
 
@@ -556,8 +559,8 @@ export function ClassResultsAnalysis({ classId, className }: ClassResultsAnalysi
                         }}
                       />
                     </div>
-                    <span className={cn('text-sm font-semibold tabular-nums w-10 text-right', colors.text)}>
-                      {skill.avg_score}%
+                    <span className={cn('text-sm font-semibold tabular-nums w-16 text-right', gcseGradeColor(percentageToGCSEGrade(skill.avg_score)))}>
+                      G{percentageToGCSEGrade(skill.avg_score)}
                     </span>
                     <Badge
                       variant="outline"
@@ -613,7 +616,7 @@ function WeakAreaCard({ area, classId }: { area: StrengthWeakness; classId: stri
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 mb-1">
             <span className={cn('text-xl font-bold tabular-nums', config.text)}>
-              {area.avg_score}%
+              G{percentageToGCSEGrade(area.avg_score)}
             </span>
             <Badge variant="outline" className={cn('text-[10px]', config.text, config.border)}>
               {config.label}
@@ -644,7 +647,7 @@ function StrengthCard({ area }: { area: StrengthWeakness }) {
     <div className="rounded-lg border border-green-500/20 bg-green-500/5 p-4">
       <div className="flex items-center gap-3">
         <span className="text-xl font-bold tabular-nums text-green-400">
-          {area.avg_score}%
+          G{percentageToGCSEGrade(area.avg_score)}
         </span>
         <div className="flex-1 min-w-0">
           <p className="font-medium text-sm text-foreground truncate">{area.area}</p>

@@ -120,15 +120,15 @@ export default function UnseenPoetryPage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary to-primary/80 px-4 py-16 text-white sm:py-20">
+      <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
+          <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
             Poetry Skills
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Unseen Poetry Guide
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             A comprehensive, step-by-step approach to tackling unseen poetry in
             your GCSE exam. The READ method, PEEL paragraphs, comparison
             technique, and three full practice poems with model responses.
@@ -374,28 +374,28 @@ export default function UnseenPoetryPage() {
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="rounded-xl bg-primary p-5 text-white">
                   <p className="text-xl font-bold mb-1">P -- Point</p>
-                  <p className="text-sm text-white/90">
+                  <p className="text-sm text-muted-foreground">
                     Make a clear, concise statement about the poet&apos;s intent or the
                     poem&apos;s effect. This answers the question directly.
                   </p>
                 </div>
                 <div className="rounded-xl bg-primary/90 p-5 text-white">
                   <p className="text-xl font-bold mb-1">E -- Evidence</p>
-                  <p className="text-sm text-white/90">
+                  <p className="text-sm text-muted-foreground">
                     Embed a short, precise quotation from the poem. You do not need full
                     lines -- a key phrase or even a single word is often more effective.
                   </p>
                 </div>
                 <div className="rounded-xl bg-primary p-5 text-white">
                   <p className="text-xl font-bold mb-1">E -- Explain</p>
-                  <p className="text-sm text-white/90">
+                  <p className="text-sm text-muted-foreground">
                     Explain <em>how</em> the language or technique works. Zoom in on
                     individual words, connotations, sound effects, and imagery.
                   </p>
                 </div>
                 <div className="rounded-xl bg-primary/80 p-5 text-white">
                   <p className="text-xl font-bold mb-1">L -- Link</p>
-                  <p className="text-sm text-white/90">
+                  <p className="text-sm text-muted-foreground">
                     Link back to the question, the poem&apos;s wider themes, or offer an
                     alternative interpretation. This is where you show depth.
                   </p>
@@ -508,7 +508,7 @@ export default function UnseenPoetryPage() {
               <div className="mb-6 overflow-hidden rounded-xl border border-border">
                 <div className="grid grid-cols-2 text-sm font-bold bg-primary text-white">
                   <div className="px-4 py-3">Weak (Separate)</div>
-                  <div className="px-4 py-3 border-l border-white/20">
+                  <div className="px-4 py-3 border-l border-border">
                     Strong (Integrated)
                   </div>
                 </div>

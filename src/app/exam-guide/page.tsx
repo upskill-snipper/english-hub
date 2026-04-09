@@ -823,7 +823,7 @@ export default function ExamGuidePage() {
               >
                 <div className="mt-2 space-y-4">
                   <div
-                    className="prose prose-sm prose-invert max-w-none text-muted-foreground leading-relaxed [&_h4]:text-foreground [&_h4]:font-semibold [&_h4]:mt-4 [&_h4]:mb-2 [&_strong]:text-foreground [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1 [&_li]:text-muted-foreground [&_em]:text-primary/80 [&_p]:mb-3"
+                    className="prose prose-sm dark:prose-invert max-w-none text-muted-foreground leading-relaxed [&_h4]:text-foreground [&_h4]:font-semibold [&_h4]:mt-4 [&_h4]:mb-2 [&_strong]:text-foreground [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1 [&_li]:text-muted-foreground [&_em]:text-primary/80 [&_p]:mb-3"
                     dangerouslySetInnerHTML={{ __html: sanitize(section.content) }}
                   />
                   {section.examples && section.examples.length > 0 && (

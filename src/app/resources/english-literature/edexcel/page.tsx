@@ -94,15 +94,15 @@ export default function EdexcelEnglishLiteraturePage() {
     <>
 
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
+      <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
+          <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
             Edexcel (Pearson) GCSE
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             English Literature Revision
           </h1>
-          <p className="mx-auto mt-4 max-w-xl text-lg text-white/90">
+          <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
             Everything you need to revise for Edexcel GCSE English Literature
             (1ET0). Paper overviews, full study guides, key quotes, exam
             technique, and poetry analysis.

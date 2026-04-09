@@ -326,7 +326,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-background">
       {/* ━━━ HERO (static — critical for LCP) ━━━ */}
-      <section className="relative overflow-hidden pt-24 pb-28 sm:pt-32 sm:pb-36">
+      <section className="relative overflow-x-hidden pt-24 pb-28 sm:pt-32 sm:pb-36">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-primary/[0.06] rounded-full blur-[160px] pointer-events-none" />
         <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-blue-500/[0.03] rounded-full blur-[120px] pointer-events-none" />
 

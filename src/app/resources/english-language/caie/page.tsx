@@ -94,36 +94,36 @@ export default function CaieEnglishLanguagePage() {
     <>
 
       {/* ── Hero banner ─────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
+      <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           {/* Breadcrumb */}
           <nav aria-label="Breadcrumb" className="mb-6 flex justify-center">
-            <ol className="flex items-center gap-1.5 text-xs font-medium text-white/60">
+            <ol className="flex items-center gap-1.5 text-xs font-medium text-muted-foreground">
               <li>
-                <Link href="/" className="transition-colors hover:text-white/90">Home</Link>
+                <Link href="/" className="transition-colors hover:text-muted-foreground">Home</Link>
               </li>
               <li aria-hidden="true">/</li>
               <li>
-                <Link href="/resources" className="transition-colors hover:text-white/90">Resources</Link>
+                <Link href="/resources" className="transition-colors hover:text-muted-foreground">Resources</Link>
               </li>
               <li aria-hidden="true">/</li>
               <li>
-                <Link href="/resources/english-language" className="transition-colors hover:text-white/90">English Language</Link>
+                <Link href="/resources/english-language" className="transition-colors hover:text-muted-foreground">English Language</Link>
               </li>
               <li aria-hidden="true">/</li>
-              <li className="text-white/90">CAIE</li>
+              <li className="text-muted-foreground">CAIE</li>
             </ol>
           </nav>
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-white/70">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-muted-foreground">
             Cambridge International (CAIE)
           </p>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             IGCSE English Language
           </h1>
-          <p className="mt-2 text-lg font-medium text-white/90">
+          <p className="mt-2 text-lg font-medium text-muted-foreground">
             Syllabus 0500 (Core &amp; Extended) / 0990 (9&ndash;1 Grading)
           </p>
-          <p className="mx-auto mt-4 max-w-2xl text-base text-white/80">
+          <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground">
             Everything you need to prepare for your Cambridge IGCSE English
             Language examination. Thorough coverage of both reading and writing
             papers, language techniques, mark schemes, and grade boundaries.

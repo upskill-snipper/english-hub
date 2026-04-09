@@ -16,6 +16,7 @@ import {
   AlertTriangle,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { percentageToGCSEGradeLabel, percentageToGCSEGrade, gcseGradeColor } from '@/lib/grades'
 
 import {
   Card,
@@ -446,8 +447,8 @@ export default function AssignmentDetailPage() {
                           placeholder="0-100"
                         />
                       ) : sub.score !== undefined ? (
-                        <span className={cn('font-semibold tabular-nums', scoreColor(sub.score))}>
-                          {sub.score}%
+                        <span className={cn('font-semibold tabular-nums', gcseGradeColor(percentageToGCSEGrade(sub.score)))}>
+                          {percentageToGCSEGradeLabel(sub.score)}
                         </span>
                       ) : (
                         <span className="text-xs text-muted-foreground">--</span>

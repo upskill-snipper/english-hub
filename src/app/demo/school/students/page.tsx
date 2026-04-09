@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { DEMO_STUDENTS, DEMO_CLASSES } from "@/data/demo-data"
 import { useScrollRestore } from "@/hooks/useScrollRestore"
+import { percentageToGCSEGrade } from "@/lib/grades"
 
 // ---------------------------------------------------------------------------
 // Derive enriched student data from the base demo data
@@ -543,7 +544,7 @@ export default function StudentsPage() {
                         </div>
                       </td>
                       <td className="px-4 py-3 hidden sm:table-cell">
-                        <span className="tabular-nums text-foreground">{student.averageScore}%</span>
+                        <span className="tabular-nums text-foreground">{student.averageScore}% <span className="text-xs text-muted-foreground">(G{percentageToGCSEGrade(student.averageScore)})</span></span>
                       </td>
                       <td className="px-4 py-3">
                         <span className={`inline-flex items-center rounded-full border px-2 py-0.5 text-xs font-semibold whitespace-nowrap ${STATUS_COLORS[student.status]}`}>

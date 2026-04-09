@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback, useMemo, useRef } from "react";
 import Link from "next/link";
+import { percentageToGCSEGradeLabel, percentageToGCSEGrade, gcseGradeColor } from "@/lib/grades";
 
 /* ─── Types ──────────────────────────────────────────────────── */
 
@@ -537,8 +538,8 @@ export default function QuoteTesterPage() {
 
         {/* Score card */}
         <div className="mx-auto max-w-lg rounded-2xl border border-border bg-card p-8 text-center shadow-md">
-          <div className="text-6xl font-black text-foreground">{percentage}%</div>
-          <div className="mt-2 text-xl font-bold text-primary">{gradeFromPercentage(percentage)}</div>
+          <div className={`text-6xl font-black ${gcseGradeColor(percentageToGCSEGrade(percentage))}`}>{percentageToGCSEGradeLabel(percentage)}</div>
+          <div className="mt-2 text-xl font-bold text-muted-foreground">{percentage}%</div>
           <p className="mt-3 text-muted-foreground">
             You got <span className="font-semibold text-foreground">{correctCount}</span> out of{" "}
             <span className="font-semibold text-foreground">{results.length}</span> correct.

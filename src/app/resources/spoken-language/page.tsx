@@ -79,15 +79,15 @@ export default function SpokenLanguagePage() {
     <>
 
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-primary to-[primary] px-4 py-16 text-white sm:py-20">
+      <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-blue-200">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary">
             Resources
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Spoken Language Endorsement
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Everything you need to achieve a Distinction in your GCSE English
             Language Spoken Language endorsement. Plan, practise, and deliver
             a presentation with confidence.
@@ -101,7 +101,7 @@ export default function SpokenLanguagePage() {
             </Link>
             <a
               href="#planning"
-              className="rounded-lg border border-white/30 px-6 py-3 text-sm font-semibold text-white transition hover:bg-card/10"
+              className="rounded-lg border px-6 py-3 text-sm font-semibold text-foreground transition hover:bg-muted"
             >
               How to Plan
             </a>
@@ -928,9 +928,9 @@ export default function SpokenLanguagePage() {
         </section>
 
         {/* CTA to topics */}
-        <div className="mt-12 rounded-lg bg-gradient-to-r from-primary to-[primary] p-8 text-center text-white shadow-lg">
+        <div className="mt-12 rounded-lg border bg-gradient-to-b from-primary/[0.06] to-transparent p-8 text-center">
           <h2 className="text-2xl font-bold">Need a Topic?</h2>
-          <p className="mx-auto mt-2 max-w-lg text-white/90">
+          <p className="mx-auto mt-2 max-w-lg text-muted-foreground">
             Browse our collection of 30+ presentation topic ideas, each with a
             full outline, key points to cover, and potential audience questions.
           </p>

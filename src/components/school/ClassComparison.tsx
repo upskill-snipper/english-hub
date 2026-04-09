@@ -25,6 +25,7 @@ import {
   Sparkles,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { percentageToGCSEGrade, percentageToGCSEGradeLabel, formatPercentageWithGrade } from '@/lib/grades'
 import type { Class, WeakArea, Recommendation } from '@/lib/types'
 
 import {
@@ -204,7 +205,7 @@ function generateInsights(classes: ClassWithAnalytics[], normalise: boolean): In
   if (diff > 5) {
     insights.push({
       type: diff > 15 ? 'warning' : 'info',
-      message: `${top.analytics.class_name} scores ${diff}% higher on average than ${bottom.analytics.class_name}${normalise ? ' (normalised)' : ''}.`,
+      message: `${top.analytics.class_name} scores ${diff}pp higher on average than ${bottom.analytics.class_name}${normalise ? ' (normalised)' : ''}.`,
     })
   }
 
@@ -277,7 +278,7 @@ function generateInsights(classes: ClassWithAnalytics[], normalise: boolean): In
       if (skillDiff > 15) {
         insights.push({
           type: 'info',
-          message: `${best.name} scores ${skillDiff}% higher in ${SKILL_SHORT_LABELS[skill] ?? skill} than ${worst.name}.`,
+          message: `${best.name} scores ${skillDiff}pp higher in ${SKILL_SHORT_LABELS[skill] ?? skill} than ${worst.name}.`,
         })
       }
     }
@@ -479,7 +480,7 @@ function ComparisonBarChart({
                     fill={v.color} rx="3" ry="3"
                     className="transition-all duration-300"
                   />
-                  <title>{`${v.name}: ${Math.round(v.value)}%`}</title>
+                  <title>{`${v.name}: Grade ${percentageToGCSEGrade(Math.round(v.value))} (${Math.round(v.value)}%)`}</title>
                   <text
                     x={barX + barWidth / 2} y={barY - 4}
                     textAnchor="middle" className="fill-muted-foreground" fontSize="9" fontWeight="600"
@@ -582,7 +583,7 @@ function TrendLineOverlay({
               {pts.map((p, i) => (
                 <g key={i}>
                   <circle cx={p.x} cy={p.y} r={3.5} fill={s.color} stroke="var(--background)" strokeWidth="2" />
-                  <title>{`${s.name} - ${s.data[i].label}: ${Math.round(s.data[i].value)}%`}</title>
+                  <title>{`${s.name} - ${s.data[i].label}: Grade ${percentageToGCSEGrade(Math.round(s.data[i].value))} (${Math.round(s.data[i].value)}%)`}</title>
                 </g>
               ))}
             </g>
@@ -698,7 +699,7 @@ function exportReport(
     const engPct = a.student_count > 0 ? Math.round((activeRecent / a.student_count) * 100) : 0
     lines.push(`  ${a.class_name} (Year ${cls.classInfo.year_group ?? 'N/A'})`)
     lines.push(`    Students: ${a.student_count}`)
-    lines.push(`    Average Score: ${Math.round(a.avg_score ?? 0)}%`)
+    lines.push(`    Average Score: ${percentageToGCSEGradeLabel(Math.round(a.avg_score ?? 0))}`)
     lines.push(`    Completion Rate: ${Math.round(a.completion_rate)}%`)
     lines.push(`    Engagement: ${engPct}%`)
     lines.push(`    At-Risk Students: ${a.students_at_risk.length}`)

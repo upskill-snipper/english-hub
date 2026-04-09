@@ -31,6 +31,7 @@ import {
 } from "@/data/demo-data"
 import DemoBanner from "@/components/demo/DemoBanner"
 import { openPrintableDocument } from "@/lib/generate-download"
+import { percentageToGCSEGrade } from "@/lib/grades"
 
 // ── Constants ──────────────────────────────────────────────────────────────
 
@@ -290,7 +291,7 @@ export default function DepartmentPage() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-xs font-medium uppercase tracking-wider text-zinc-500">Average Student Score</p>
-                  <p className="mt-1 text-3xl font-bold">{DEPT_AVG}%</p>
+                  <p className="mt-1 text-3xl font-bold">{DEPT_AVG}% <span className="text-lg font-normal text-zinc-400">(Grade {percentageToGCSEGrade(DEPT_AVG)})</span></p>
                 </div>
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-500/10">
                   <BarChart3 className="h-5 w-5 text-emerald-400" />
@@ -372,7 +373,7 @@ export default function DepartmentPage() {
                       <td className="px-3 py-3 text-zinc-400">{t.classes}</td>
                       <td className="px-3 py-3 text-zinc-400">{t.students}</td>
                       <td className={`px-3 py-3 font-semibold ${scoreColor(t.avgScore)}`}>
-                        {t.avgScore}%
+                        {t.avgScore}% <span className="text-zinc-500 text-xs font-normal">(G{percentageToGCSEGrade(t.avgScore)})</span>
                       </td>
                       <td className="px-3 py-3">
                         <div className="flex items-center gap-2">
@@ -445,7 +446,7 @@ export default function DepartmentPage() {
                       </p>
                     </div>
                     <span className={`text-sm font-bold ${rankText(rank, ALL_CLASSES.length)}`}>
-                      {c.avgScore}%
+                      {c.avgScore}% <span className="text-xs font-normal text-zinc-500">(G{percentageToGCSEGrade(c.avgScore)})</span>
                     </span>
                   </div>
                 )

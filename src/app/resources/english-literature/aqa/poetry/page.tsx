@@ -245,18 +245,18 @@ export default function AqaPoetryPage() {
     <>
 
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
+      <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-3xl text-center">
           <Link
             href="/resources/english-literature/aqa"
-            className="text-sm text-white/70 hover:text-white"
+            className="text-sm text-muted-foreground hover:text-foreground"
           >
             &larr; AQA English Literature
           </Link>
           <h1 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Poetry Anthology — Full Guide
           </h1>
-          <p className="mx-auto mt-4 max-w-xl text-lg text-white/90">
+          <p className="mx-auto mt-4 max-w-xl text-lg text-muted-foreground">
             AQA GCSE English Literature &middot; Paper 2, Section B
             <br />
             Power &amp; Conflict and Love &amp; Relationships — All 30 Poems

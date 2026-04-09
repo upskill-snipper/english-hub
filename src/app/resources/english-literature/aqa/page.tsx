@@ -153,15 +153,15 @@ export default function AqaEnglishLiteraturePage() {
     <>
 
       {/* ── Hero ── */}
-      <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
+      <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-white/70">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-muted-foreground">
             GCSE Revision
           </p>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             AQA English Literature
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Everything you need to revise for AQA GCSE English Literature
             (8702). In-depth study guides, exam technique, assessment objective
             breakdowns, and poetry analysis &mdash; all in one place.
@@ -195,7 +195,7 @@ export default function AqaEnglishLiteraturePage() {
                   <h3 className="text-lg font-bold">
                     {paper.paper}: {paper.title}
                   </h3>
-                  <p className="mt-0.5 text-sm text-white/80">
+                  <p className="mt-0.5 text-sm text-muted-foreground">
                     {paper.time} &middot; {paper.marks}
                   </p>
                 </div>
@@ -430,12 +430,12 @@ export default function AqaEnglishLiteraturePage() {
       </section>
 
       {/* ── CTA banner ── */}
-      <section className="bg-gradient-to-r from-primary to-primary px-4 py-12 text-white text-center">
+      <section className="border-y bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-12 text-center">
         <div className="mx-auto max-w-3xl">
           <h2 className="text-2xl font-bold sm:text-3xl">
             Ready to start revising?
           </h2>
-          <p className="mt-3 text-white/90">
+          <p className="mt-3 text-muted-foreground">
             Pick a study guide above and begin working through the key
             quotations, themes, and practice questions.
           </p>
@@ -448,7 +448,7 @@ export default function AqaEnglishLiteraturePage() {
             </Link>
             <Link
               href="/resources/english-literature/aqa/poetry"
-              className="rounded-lg border border-white/40 px-5 py-2.5 text-sm font-semibold text-white hover:bg-card/10 transition"
+              className="rounded-lg border px-5 py-2.5 text-sm font-semibold text-foreground hover:bg-muted transition"
             >
               Explore Poetry Anthology
             </Link>

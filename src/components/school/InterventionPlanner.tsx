@@ -25,6 +25,7 @@ import {
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import type { StudentAnalytics } from '@/lib/types'
+import { percentageToGCSEGradeLabel } from '@/lib/grades'
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -453,7 +454,7 @@ export function InterventionPlanner({ students, classId }: InterventionPlannerPr
                                     : 'text-red-400'
                               )}
                             >
-                              {Math.round(student.avg_quiz_score)}%
+                              {percentageToGCSEGradeLabel(Math.round(student.avg_quiz_score))}
                             </span>
                           </span>
                         </div>

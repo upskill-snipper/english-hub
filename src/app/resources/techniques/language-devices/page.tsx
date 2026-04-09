@@ -1243,10 +1243,10 @@ export default function LanguageDevicesPage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary to-primary/90 px-4 py-14 text-white sm:py-18">
+      <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-14 sm:py-18">
         <div className="mx-auto max-w-4xl text-center">
-          <nav className="text-sm text-white/70">
-            <Link href="/resources/techniques" className="hover:text-white transition-colors">
+          <nav className="text-sm text-muted-foreground">
+            <Link href="/resources/techniques" className="hover:text-foreground transition-colors">
               Techniques
             </Link>
             <span className="mx-2">/</span>
@@ -1255,7 +1255,7 @@ export default function LanguageDevicesPage() {
           <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Language &amp; Literary Devices
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             {TECHNIQUES.length} essential techniques with definitions, examples,
             effects, and exam sentence starters. Search, filter, and expand any
             card to study in detail.

@@ -20,7 +20,7 @@ export default function PrivacyPolicyPage() {
       </h1>
       <p className="mt-2 text-sm text-muted-foreground">Last updated: March 2026</p>
 
-      <div className="mt-8 prose prose-invert max-w-none space-y-8">
+      <div className="mt-8 prose dark:prose-invert max-w-none space-y-8">
         {/* 1. Introduction & Data Controller */}
         <section>
           <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">

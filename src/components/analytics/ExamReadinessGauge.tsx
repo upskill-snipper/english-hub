@@ -1,6 +1,7 @@
 'use client'
 
 import { cn } from '@/lib/utils'
+import { percentageToGCSEGrade, gcseGradeColor } from '@/lib/grades'
 
 interface ExamReadinessGaugeProps {
   percentage: number
@@ -72,7 +73,10 @@ export function ExamReadinessGauge({ percentage, className }: ExamReadinessGauge
         </svg>
         {/* Center text */}
         <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <span className={cn('text-2xl font-bold tabular-nums', getReadinessColor(clampedPct))}>
+          <span className={cn('text-lg font-bold', gcseGradeColor(percentageToGCSEGrade(clampedPct)))}>
+            Grade {percentageToGCSEGrade(clampedPct)}
+          </span>
+          <span className="text-[10px] tabular-nums text-muted-foreground">
             {clampedPct}%
           </span>
         </div>

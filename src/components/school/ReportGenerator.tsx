@@ -3,6 +3,7 @@
 import { useState, useMemo, useRef, useCallback } from 'react'
 import { cn } from '@/lib/utils'
 import { formatDate } from '@/lib/utils'
+import { percentageToGCSEGradeLabel } from '@/lib/grades'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
@@ -590,7 +591,7 @@ export function ReportGenerator({
                   <SelectContent>
                     {filteredStudents.map((s) => (
                       <SelectItem key={s.student_id} value={s.student_id}>
-                        {s.student_name} — {s.avg_quiz_score.toFixed(0)}% avg.
+                        {s.student_name} — {percentageToGCSEGradeLabel(Math.round(s.avg_quiz_score))} avg.
                       </SelectItem>
                     ))}
                   </SelectContent>

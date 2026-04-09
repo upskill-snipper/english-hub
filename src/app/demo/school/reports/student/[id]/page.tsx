@@ -3,19 +3,12 @@
 import { useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
+import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor } from "@/lib/grades";
 import { toast } from "sonner";
 import { DEMO_STUDENTS } from "@/data/demo-data";
 
 function scoreToGrade(score: number): string {
-  if (score >= 90) return "9";
-  if (score >= 80) return "8";
-  if (score >= 70) return "7";
-  if (score >= 60) return "6";
-  if (score >= 50) return "5";
-  if (score >= 40) return "4";
-  if (score >= 30) return "3";
-  if (score >= 20) return "2";
-  return "1";
+  return String(percentageToGCSEGrade(score));
 }
 
 function gradeColor(grade: string): string {
@@ -296,11 +289,11 @@ export default function StudentReportPage() {
             </div>
             <div className="flex-1 grid grid-cols-4 gap-3 text-sm">
               <div className="bg-neutral-800/50 print:bg-neutral-100 rounded-lg p-3 text-center">
-                <div className="text-2xl font-bold text-neutral-100 print:text-black">
-                  {student.averageScore}%
+                <div className={`text-2xl font-bold ${gcseGradeColor(percentageToGCSEGrade(student.averageScore))}`}>
+                  {percentageToGCSEGradeLabel(student.averageScore)}
                 </div>
                 <div className="text-neutral-500 print:text-neutral-600 text-xs mt-1">
-                  Average Score
+                  Average Score ({student.averageScore}%)
                 </div>
               </div>
               <div className="bg-neutral-800/50 print:bg-neutral-100 rounded-lg p-3 text-center">
@@ -387,7 +380,7 @@ export default function StudentReportPage() {
                         {a.date}
                       </td>
                       <td className="px-3 py-2.5 text-center text-neutral-300 print:text-black font-medium">
-                        {a.score}%
+                        G{percentageToGCSEGrade(a.score)}
                       </td>
                       <td className={`px-3 py-2.5 text-center font-bold ${gradeColor(a.grade)}`}>
                         {a.grade}
@@ -438,7 +431,7 @@ export default function StudentReportPage() {
             <div className="mt-4 flex items-end gap-2 h-24">
               {student.recentScores.map((score, i) => (
                 <div key={i} className="flex-1 flex flex-col items-center gap-1">
-                  <span className="text-[10px] text-neutral-500 print:text-neutral-600 font-medium">{score}%</span>
+                  <span className="text-[10px] text-neutral-500 print:text-neutral-600 font-medium">G{percentageToGCSEGrade(score)}</span>
                   <div className="w-full bg-neutral-800 print:bg-neutral-200 rounded-t relative" style={{ height: "70px" }}>
                     <div
                       className={`absolute bottom-0 left-0 right-0 rounded-t transition-all ${
@@ -473,7 +466,7 @@ export default function StudentReportPage() {
                     />
                   </div>
                   <span className="text-sm text-neutral-300 print:text-black w-12 text-right font-semibold">
-                    {mod.score > 0 ? `${mod.score}%` : "--"}
+                    {mod.score > 0 ? percentageToGCSEGradeLabel(mod.score) : "--"}
                   </span>
                   <span
                     className={`text-xs px-2 py-0.5 rounded-full font-medium w-24 text-center ${

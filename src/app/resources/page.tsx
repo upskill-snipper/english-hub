@@ -34,6 +34,7 @@ import {
   Library,
   type LucideIcon,
 } from "lucide-react";
+import { LearningTip } from "@/components/ui/learning-tip";
 
 /* ─── Quick Start Cards ──────────────────────────────────────── */
 
@@ -159,9 +160,12 @@ export default function ResourcesPage() {
             Study Resources
           </span>
 
-          <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl">
-            Everything You Need to Master English
-          </h1>
+          <div className="mt-6 flex items-center justify-center gap-2">
+            <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl">
+              Everything You Need to Master English
+            </h1>
+            <LearningTip categories={['resource', 'study']} side="bottom" size="md" />
+          </div>
 
           <p className="mx-auto mt-5 max-w-2xl text-lg text-muted-foreground">
             A comprehensive library of revision notes, model answers, technique
@@ -188,9 +192,12 @@ export default function ResourcesPage() {
       {/* ── Quick Start Grid ─────────────────────────────────────── */}
       <section className="border-b border-border/40">
         <div className="mx-auto max-w-5xl px-4 py-20 sm:px-6 lg:px-8">
-          <h2 className="text-center text-2xl font-bold tracking-tight text-foreground">
-            Popular Resources
-          </h2>
+          <div className="flex items-center justify-center gap-2">
+            <h2 className="text-2xl font-bold tracking-tight text-foreground">
+              Popular Resources
+            </h2>
+            <LearningTip categories={['resource', 'study']} />
+          </div>
           <p className="mx-auto mt-3 max-w-xl text-center text-muted-foreground">
             Jump straight into the most-used study materials.
           </p>
@@ -223,9 +230,12 @@ export default function ResourcesPage() {
       {/* ── All Categories Grid ──────────────────────────────────── */}
       <section className="border-b border-border/40">
         <div className="mx-auto max-w-5xl px-4 py-20 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold tracking-tight text-foreground">
-            All Categories
-          </h2>
+          <div className="flex items-center gap-2">
+            <h2 className="text-2xl font-bold tracking-tight text-foreground">
+              All Categories
+            </h2>
+            <LearningTip categories={['resource', 'exam']} />
+          </div>
           <p className="mt-2 text-muted-foreground">
             Browse every resource type available on the platform.
           </p>

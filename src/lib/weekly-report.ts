@@ -1,4 +1,5 @@
 import { sendEmail } from "@/lib/email";
+import { percentageToGCSEGradeLabel } from "@/lib/grades";
 
 // ─── Configuration ────────────────────────────────────────────────────
 
@@ -168,7 +169,7 @@ function buildWeeklyReportEmail(report: WeeklyReportData): string {
   const trendArrow = scoreDiff >= 0 ? "&#9650;" : "&#9660;"; // up or down triangle
   const trendColor = scoreDiff >= 0 ? "#27AE60" : "#E74C3C";
   const trendText =
-    scoreDiff >= 0 ? `+${scoreDiff}%` : `${scoreDiff}%`;
+    scoreDiff >= 0 ? `+${scoreDiff}pp` : `${scoreDiff}pp`;
 
   const hours = Math.floor(report.timeSpentMinutes / 60);
   const minutes = report.timeSpentMinutes % 60;

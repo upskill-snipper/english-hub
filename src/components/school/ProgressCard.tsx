@@ -6,6 +6,7 @@ import { Star, TrendingUp, TrendingDown, Minus, Clock, BookOpen, Award } from 'l
 import { Textarea } from '@/components/ui/textarea'
 
 import type { StudentAnalytics } from '@/lib/types'
+import { percentageToGCSEGradeLabel } from '@/lib/grades'
 
 /* ── Types ──────────────────────────────────────────────────────────────────── */
 
@@ -398,7 +399,7 @@ export const ProgressCard = forwardRef<HTMLDivElement, ProgressCardProps>(
                   <Award className="h-3 w-3" /> Avg Score
                 </span>
                 <span className="font-semibold text-foreground print:text-black mt-0.5 block">
-                  {Math.round(student.avg_quiz_score)}%
+                  {percentageToGCSEGradeLabel(Math.round(student.avg_quiz_score))}
                 </span>
               </div>
             </div>

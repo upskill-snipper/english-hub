@@ -783,14 +783,14 @@ export default function LessonPlanDetailPage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary to-primary/80 px-4 py-12 text-white sm:py-16">
+      <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-4xl">
-          <nav className="mb-4 text-sm text-white/70">
-            <Link href="/resources/teaching" className="hover:text-white transition-colors">
+          <nav className="mb-4 text-sm text-muted-foreground">
+            <Link href="/resources/teaching" className="hover:text-foreground transition-colors">
               Teaching Resources
             </Link>
             <span className="mx-2">/</span>
-            <Link href="/resources/teaching/lesson-plans" className="hover:text-white transition-colors">
+            <Link href="/resources/teaching/lesson-plans" className="hover:text-foreground transition-colors">
               Lesson Plans
             </Link>
             <span className="mx-2">/</span>
@@ -815,7 +815,7 @@ export default function LessonPlanDetailPage() {
           <h1 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
             {plan.title}
           </h1>
-          <p className="mt-3 max-w-3xl text-lg text-white/90">
+          <p className="mt-3 max-w-3xl text-lg text-muted-foreground">
             {plan.overview}
           </p>
 

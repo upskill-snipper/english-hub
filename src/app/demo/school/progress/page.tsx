@@ -26,6 +26,7 @@ import { Button } from "@/components/ui/button"
 import { toast } from "sonner"
 import { DEMO_STUDENTS, DEMO_CLASSES } from "@/data/demo-data"
 import DemoBanner from "@/components/demo/DemoBanner"
+import { percentageToGCSEGrade } from "@/lib/grades"
 
 // ── Year group data ──────────────────────────────────────────────────────────
 
@@ -368,7 +369,7 @@ export default function SchoolProgressPage() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-3xl font-bold text-white">{avgSchoolProgress}%</div>
+              <div className="text-3xl font-bold text-white">{avgSchoolProgress}% <span className="text-lg font-normal text-neutral-400">(Grade {percentageToGCSEGrade(avgSchoolProgress)})</span></div>
               <div className="mt-2 h-2 w-full rounded-full bg-neutral-800 overflow-hidden">
                 <div className={`h-full rounded-full ${progressColor(avgSchoolProgress)} transition-all`} style={{ width: `${avgSchoolProgress}%` }} />
               </div>
@@ -493,7 +494,7 @@ export default function SchoolProgressPage() {
             </h2>
             <div className="flex items-center gap-2">
               <span className={`text-lg font-bold ${progressTextColor(activeYearData.avgProgress)}`}>
-                {activeYearData.avgProgress}% avg
+                {activeYearData.avgProgress}% avg <span className="text-sm font-normal text-neutral-500">(Grade {percentageToGCSEGrade(activeYearData.avgProgress)})</span>
               </span>
             </div>
           </div>
@@ -516,7 +517,7 @@ export default function SchoolProgressPage() {
                         <span className="text-xs text-neutral-500 ml-2">({cls.teacher})</span>
                       </div>
                       <div className="flex items-center gap-3 text-xs">
-                        <span className="text-neutral-400">Avg: <span className={progressTextColor(cls.avgScore)}>{cls.avgScore}%</span></span>
+                        <span className="text-neutral-400">Avg: <span className={progressTextColor(cls.avgScore)}>{cls.avgScore}% (G{percentageToGCSEGrade(cls.avgScore)})</span></span>
                         <span className="text-neutral-400">Completion: <span className={progressTextColor(cls.completionRate)}>{cls.completionRate}%</span></span>
                       </div>
                     </div>

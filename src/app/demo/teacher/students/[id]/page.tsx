@@ -29,6 +29,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { DEMO_STUDENTS, type DemoStudent } from "@/data/demo-data"
+import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor, formatPercentageWithGrade } from "@/lib/grades"
 
 function scoreColor(score: number) {
   if (score >= 70) return "text-green-400"
@@ -508,11 +509,11 @@ export default function TeacherStudentProfilePage() {
                   <div key={i} className="rounded-lg border border-green-500/10 bg-green-500/[0.03] p-3">
                     <div className="flex items-center justify-between mb-1">
                       <span className="text-sm font-medium text-green-400">{name}</span>
-                      {score && <span className="text-xs text-green-400/70">{score}%</span>}
+                      {score && <span className="text-xs text-green-400/70">G{percentageToGCSEGrade(score)}</span>}
                     </div>
                     {relatedEssay && (
                       <p className="text-[11px] text-white/40">
-                        Evidence: Scored {relatedEssay.score}% on &quot;{relatedEssay.title}&quot;
+                        Evidence: {percentageToGCSEGradeLabel(relatedEssay.score)} on &quot;{relatedEssay.title}&quot;
                       </p>
                     )}
                     {!relatedEssay && relatedQuiz && (
@@ -567,7 +568,7 @@ export default function TeacherStudentProfilePage() {
                   <div key={i} className="rounded-lg border border-red-500/10 bg-red-500/[0.03] p-3">
                     <div className="flex items-center justify-between mb-1">
                       <span className="text-sm font-medium text-red-400">{name}</span>
-                      {score && <span className="text-xs text-red-400/70">{score}%</span>}
+                      {score && <span className="text-xs text-red-400/70">G{percentageToGCSEGrade(score)}</span>}
                     </div>
                     <p className="text-[11px] text-white/50">{suggestion}</p>
                   </div>
@@ -787,7 +788,7 @@ export default function TeacherStudentProfilePage() {
                 <span className="text-xs text-neutral-500 tabular-nums w-8 text-right">{mod.progress}%</span>
               </div>
               <p className={`text-sm tabular-nums text-right ${mod.score > 0 ? scoreColor(mod.score) : "text-neutral-600"}`}>
-                {mod.score > 0 ? `${mod.score}%` : "--"}
+                {mod.score > 0 ? percentageToGCSEGradeLabel(mod.score) : "--"}
               </p>
               <div className="text-right">
                 <Badge
@@ -824,7 +825,7 @@ export default function TeacherStudentProfilePage() {
             <div key={i} className="grid grid-cols-1 sm:grid-cols-[1fr_100px_80px_60px] gap-1 sm:gap-4 px-5 py-3 border-b border-white/[0.03]">
               <p className="text-sm text-white/80">{exam.name}</p>
               <p className="text-sm text-neutral-500">{exam.date}</p>
-              <p className={`text-sm tabular-nums text-center ${scoreColor(exam.score)}`}>{exam.score}%</p>
+              <p className={`text-sm tabular-nums text-center ${gcseGradeColor(percentageToGCSEGrade(exam.score))}`}>{percentageToGCSEGradeLabel(exam.score)}</p>
               <p className="text-sm font-medium text-center text-white/70">{exam.grade}</p>
             </div>
           ))}
@@ -851,7 +852,7 @@ export default function TeacherStudentProfilePage() {
                 <div className="flex items-center gap-3">
                   <span className="text-xs text-neutral-500">{essay.date}</span>
                   <span className={`text-sm tabular-nums font-medium ${scoreColor(essay.score)}`}>
-                    {essay.score}%
+                    {percentageToGCSEGradeLabel(essay.score)}
                   </span>
                 </div>
               </div>
@@ -877,7 +878,7 @@ export default function TeacherStudentProfilePage() {
                 <p className="text-sm text-white/80">{quiz.quiz}</p>
                 <p className="text-sm text-neutral-500">{quiz.date}</p>
                 <p className={`text-sm tabular-nums text-right ${scoreColor(pct)}`}>
-                  {quiz.score}/{quiz.maxScore} ({pct}%)
+                  {quiz.score}/{quiz.maxScore} ({percentageToGCSEGradeLabel(pct)})
                 </p>
               </div>
             )

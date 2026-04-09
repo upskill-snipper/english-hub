@@ -808,15 +808,15 @@ export default function EdexcelAnthologyPage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary to-primary px-4 py-16 text-white sm:py-20">
+      <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-blue-200">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">
             Edexcel GCSE English Literature
           </p>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Relationships Poetry Anthology
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             In-depth analysis of all 15 poems in the Edexcel Relationships cluster.
             Context, summaries, form and structure, key quotations with technique
             analysis, themes, and comparison guidance.
@@ -846,7 +846,7 @@ export default function EdexcelAnthologyPage() {
           </div>
           <button
             onClick={() => setExpandAll(!expandAll)}
-            className="inline-flex items-center gap-2 rounded-lg border border-primary px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary hover:text-white"
+            className="inline-flex items-center gap-2 rounded-lg border border-primary px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary hover:text-foreground"
           >
             {expandAll ? "Collapse All" : "Expand All"}
           </button>

@@ -294,15 +294,15 @@ export default function GlossaryPage() {
     <>
 
       {/* ── Hero Section ──────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-primary via-primary to-[primary] px-4 py-16 text-white sm:py-20">
+      <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-blue-200">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary">
             Reference
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             English Literature &amp; Language Glossary
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             {GLOSSARY_TERMS.length}+ essential terms for GCSE English, organised
             by category. Every definition includes a clear example to help you
             remember and apply each term in your exams.
@@ -321,13 +321,13 @@ export default function GlossaryPage() {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Search terms... e.g. metaphor, enjambment, noun"
-                className="w-full rounded-xl border-0 bg-card/95 py-3.5 pl-11 pr-4 text-sm text-foreground shadow-lg placeholder:text-muted-foreground focus:bg-card focus:outline-none focus:ring-2 focus:ring-white/50"
+                className="w-full rounded-xl border-0 bg-card/95 py-3.5 pl-11 pr-4 text-sm text-foreground shadow-lg placeholder:text-muted-foreground focus:bg-card focus:outline-none focus:ring-2 focus:ring-primary/30"
               />
             </div>
           </div>
 
           {/* Stats */}
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-sm text-white/70">
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-sm text-muted-foreground">
             <span>{GLOSSARY_TERMS.length} terms</span>
             <span className="text-white/30">|</span>
             <span>{CATEGORIES.length} categories</span>

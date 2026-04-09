@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
+import { percentageToGCSEGradeLabel, formatPercentageWithGrade } from "@/lib/grades";
 
 /* ─── Types ──────────────────────────────────────────────────── */
 
@@ -256,7 +257,7 @@ export default function AllEssaysPage() {
                             essay.score
                           )}`}
                         >
-                          {essay.score}%
+                          {percentageToGCSEGradeLabel(essay.score)}
                         </span>
                       </td>
                       <td className="px-4 py-3 text-muted-foreground">
@@ -337,7 +338,7 @@ export default function AllEssaysPage() {
                       essay.score
                     )}`}
                   >
-                    {essay.score}%
+                    {percentageToGCSEGradeLabel(essay.score)}
                   </span>
                 </div>
 

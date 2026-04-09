@@ -4,6 +4,7 @@ import { useParams } from "next/navigation"
 import Link from "next/link"
 import { DEMO_TEACHERS, DEMO_CLASSES, DEMO_STUDENTS } from "@/data/demo-data"
 import DemoBanner from "@/components/demo/DemoBanner"
+import { percentageToGCSEGrade } from "@/lib/grades"
 
 const ROLE_MAP: Record<string, "HOD" | "Teacher"> = {
   "t-001": "HOD",
@@ -106,7 +107,7 @@ export default function TeacherDetailPage() {
     <div className="min-h-screen bg-[#0a0a0a] text-white">
       <DemoBanner message="You are viewing an interactive demo with sample data. No real teacher data is used." />
 
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 py-8 sm:py-12">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         {/* Back link */}
         <Link
           href="/demo/school/teachers"
@@ -154,6 +155,7 @@ export default function TeacherDetailPage() {
             </p>
             <p className={`text-3xl font-light tabular-nums ${getProgressColor(avgStudentScore)}`}>
               {avgStudentScore}%
+              <span className="text-lg text-neutral-500 ml-1">(Grade {percentageToGCSEGrade(avgStudentScore)})</span>
             </p>
             <p className="text-[11px] text-neutral-600 mt-1">
               Across {allStudents.length} tracked student{allStudents.length !== 1 ? "s" : ""}
@@ -306,6 +308,7 @@ export default function TeacherDetailPage() {
                             className={`text-sm tabular-nums ${getProgressColor(student.overallProgress)}`}
                           >
                             {student.overallProgress}%
+                            <span className="text-neutral-500 ml-1 text-xs">(G{percentageToGCSEGrade(student.overallProgress)})</span>
                           </p>
                         </div>
                         {student.atRisk && (
@@ -357,7 +360,7 @@ export default function TeacherDetailPage() {
                   <div>
                     <p className="text-[11px] text-neutral-600 mb-0.5">Class Average</p>
                     <p className={`text-xl font-light tabular-nums ${getProgressColor(reportClassAvg)}`}>
-                      {reportClassAvg}%
+                      {reportClassAvg}% <span className="text-sm text-neutral-500">(G{percentageToGCSEGrade(reportClassAvg)})</span>
                     </p>
                   </div>
                   <div>

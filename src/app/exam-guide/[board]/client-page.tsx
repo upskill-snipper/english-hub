@@ -1,8 +1,14 @@
 'use client'
 
+import DOMPurify from 'dompurify'
 import { useState } from 'react'
 import { useParams, notFound } from 'next/navigation'
 import Link from 'next/link'
+
+const sanitize = (html: string) => {
+  if (typeof window !== 'undefined') return DOMPurify.sanitize(html)
+  return html
+}
 import {
   ChevronDown,
   ChevronRight,
@@ -569,9 +575,9 @@ export default function BoardExamGuidePage() {
                 <span className="text-primary">GCSE English Exam Guide</span>
               </h1>
               <div
-                className="text-muted-foreground leading-relaxed prose prose-sm max-w-none
+                className="text-muted-foreground leading-relaxed prose prose-sm dark:prose-invert max-w-none
                   [&_strong]:text-foreground [&_em]:text-primary [&_a]:text-primary"
-                dangerouslySetInnerHTML={{ __html: guide.overview }}
+                dangerouslySetInnerHTML={{ __html: sanitize(guide.overview) }}
               />
             </div>
           </div>

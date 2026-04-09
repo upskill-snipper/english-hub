@@ -115,15 +115,15 @@ export default function ContextHubPage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary to-primary/90 px-4 py-16 text-white sm:py-20">
+      <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
+          <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
             GCSE English Literature
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Historical &amp; Social Context
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Context is worth up to a third of your marks in Literature. Learn
             the historical periods behind every set text and discover how to
             weave contextual knowledge into your essays for top-band responses.
@@ -145,7 +145,7 @@ export default function ContextHubPage() {
                 <div className="flex items-start justify-between">
                   <div>
                     <h2 className="text-xl font-bold">{era.title}</h2>
-                    <p className="mt-1 text-sm text-white/80">{era.period}</p>
+                    <p className="mt-1 text-sm text-muted-foreground">{era.period}</p>
                   </div>
                   <div className="opacity-70">{era.icon}</div>
                 </div>

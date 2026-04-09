@@ -197,15 +197,15 @@ export default function TechniquesHubPage() {
     <>
 
       {/* ── Hero Section ─────────────────────────────────────────── */}
-      <section className="bg-gradient-to-br from-primary via-primary to-primary px-4 py-16 text-white sm:py-20">
+      <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-blue-200">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary">
             Techniques Reference
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Master Every Technique
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             The definitive guide to 60+ language and structural techniques for
             GCSE English. Definitions, examples, effects, and exam-ready
             sentence starters -- everything you need in one place.
@@ -222,7 +222,7 @@ export default function TechniquesHubPage() {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Search techniques... e.g. metaphor, sibilance"
-                className="w-full rounded-xl border-0 bg-card/95 py-3.5 pl-11 pr-4 text-sm text-foreground shadow-lg placeholder:text-muted-foreground focus:bg-card focus:outline-none focus:ring-2 focus:ring-white/50"
+                className="w-full rounded-xl border-0 bg-card/95 py-3.5 pl-11 pr-4 text-sm text-foreground shadow-lg placeholder:text-muted-foreground focus:bg-card focus:outline-none focus:ring-2 focus:ring-primary/30"
               />
             </div>
           </div>
@@ -237,7 +237,7 @@ export default function TechniquesHubPage() {
             </Link>
             <Link
               href="/resources/techniques/structural-devices"
-              className="rounded-lg border-2 border-white/30 bg-card/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-card/20"
+              className="rounded-lg border px-6 py-3 text-sm font-semibold text-foreground transition hover:bg-muted"
             >
               Structural Devices
             </Link>

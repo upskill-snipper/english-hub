@@ -301,7 +301,7 @@ export default function EnglishLanguagePage() {
     <>
 
       {/* ─── Hero Section ─────────────────────────────────────── */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-primary/80 px-4 py-16 text-white sm:py-20">
+      <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         {/* Background decoration */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-primary/20 blur-3xl" />
@@ -309,13 +309,13 @@ export default function EnglishLanguagePage() {
         </div>
 
         <div className="relative mx-auto max-w-5xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-primary/70">
+          <p className="text-sm font-semibold uppercase tracking-widest text-primary">
             GCSE &amp; IGCSE
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             English Language
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-white/90">
+          <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">
             Master reading analysis, creative writing, and transactional writing with comprehensive
             revision resources tailored to your exam board. Covering all five major boards with
             AI-powered feedback on your practice answers.
@@ -326,11 +326,11 @@ export default function EnglishLanguagePage() {
             {HERO_STATS.map((stat) => (
               <div
                 key={stat.label}
-                className="rounded-xl border border-white/15 bg-card/10 px-4 py-4 backdrop-blur-sm"
+                className="rounded-xl border bg-card px-4 py-4"
               >
                 <p className="text-2xl font-bold sm:text-3xl">{stat.value}</p>
-                <p className="mt-1 text-sm font-semibold text-white/90">{stat.label}</p>
-                <p className="mt-0.5 text-xs text-white/60">{stat.sub}</p>
+                <p className="mt-1 text-sm font-semibold text-muted-foreground">{stat.label}</p>
+                <p className="mt-0.5 text-xs text-muted-foreground">{stat.sub}</p>
               </div>
             ))}
           </div>
@@ -345,7 +345,7 @@ export default function EnglishLanguagePage() {
             </a>
             <a
               href="#comparison"
-              className="rounded-lg border border-white/30 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-white/50 hover:bg-card/10"
+              className="rounded-lg border px-5 py-2.5 text-sm font-semibold text-foreground transition hover:bg-muted"
             >
               Compare all boards
             </a>

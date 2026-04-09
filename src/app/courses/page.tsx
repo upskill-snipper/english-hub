@@ -39,6 +39,7 @@ import {
   SelectItem,
 } from '@/components/ui/select'
 import { cn } from '@/lib/utils'
+import { LearningTip } from '@/components/ui/learning-tip'
 
 /* ================================================================
    Constants
@@ -320,7 +321,10 @@ export default function CourseCataloguePage() {
       {/* ── Hero (compact) ──────────────────────────────────────── */}
       <section className="border-b border-border/40">
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
-          <h1 className="text-foreground">Course Catalogue</h1>
+          <div className="flex items-center gap-2">
+            <h1 className="text-foreground">Course Catalogue</h1>
+            <LearningTip categories={['course', 'study']} side="right" size="md" />
+          </div>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
             Structured courses designed to take you from fundamentals to exam
             confidence. Pick your level, choose a course, and start learning
@@ -540,6 +544,7 @@ export default function CourseCataloguePage() {
                     <h2 className="text-lg font-bold tracking-tight text-foreground">
                       Recommended for You
                     </h2>
+                    <LearningTip categories={['course', 'motivation']} />
                   </div>
                   <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
                     {recommended.map((course) => (
@@ -583,7 +588,10 @@ export default function CourseCataloguePage() {
       {/* ── Supplement Your Learning ────────────────────────────── */}
       <section className="border-t border-border/40">
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-          <h2 className="text-foreground">Supplement Your Learning</h2>
+          <div className="flex items-center gap-2">
+            <h2 className="text-foreground">Supplement Your Learning</h2>
+            <LearningTip categories={['resource', 'study']} size="md" />
+          </div>
           <p className="mt-3 max-w-2xl text-muted-foreground">
             Explore these complementary resources to deepen your understanding
             and boost your exam preparation.

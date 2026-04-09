@@ -145,7 +145,7 @@ export default function TeachingResourcesHub() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary to-primary/80 px-4 py-14 text-white sm:py-18">
+      <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-14 sm:py-18">
         <div className="mx-auto max-w-4xl text-center">
           <span className="inline-flex items-center rounded-full bg-card/20 px-3 py-1 text-xs font-semibold uppercase tracking-wider backdrop-blur-sm">
             Teacher Resources
@@ -153,7 +153,7 @@ export default function TeachingResourcesHub() {
           <h1 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Teaching Resources Hub
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Ready-made lesson plans, assessment tools, and printable resources
             designed for GCSE and IGCSE English teachers.
           </p>

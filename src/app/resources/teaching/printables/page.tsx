@@ -249,10 +249,10 @@ export default function PrintableResourcesPage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary to-primary/80 px-4 py-12 text-white sm:py-16">
+      <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-4xl text-center">
-          <nav className="mb-4 text-sm text-white/70">
-            <Link href="/resources/teaching" className="hover:text-white transition-colors">
+          <nav className="mb-4 text-sm text-muted-foreground">
+            <Link href="/resources/teaching" className="hover:text-foreground transition-colors">
               Teaching Resources
             </Link>
             <span className="mx-2">/</span>
@@ -261,7 +261,7 @@ export default function PrintableResourcesPage() {
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
             Printable Resources
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Downloadable worksheets, writing frames, quote organisers, and exam checklists
             ready to print for classroom use.
           </p>

@@ -11,6 +11,7 @@ import {
 } from 'lucide-react'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
+import { percentageToGCSEGradeLabel, percentageToGCSEGrade, gcseGradeColor } from '@/lib/grades'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Progress } from '@/components/ui/progress'
@@ -247,7 +248,7 @@ export default function ParentProgressPage() {
           <div className="mt-4 flex items-center gap-2 rounded-lg border border-emerald-500/20 bg-emerald-500/5 px-3 py-2">
             <TrendingUp className="h-4 w-4 text-emerald-400" />
             <span className="text-sm text-emerald-400">
-              +16% improvement from {scoreTrend[0].score}% to {scoreTrend[scoreTrend.length - 1].score}%
+              Improved from {percentageToGCSEGradeLabel(scoreTrend[0].score)} to {percentageToGCSEGradeLabel(scoreTrend[scoreTrend.length - 1].score)}
             </span>
           </div>
         </CardContent>

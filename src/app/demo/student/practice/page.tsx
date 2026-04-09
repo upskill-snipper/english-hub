@@ -23,7 +23,6 @@ interface ExamPaper {
   id: string
   name: string
   duration: string
-  difficulty: "Foundation" | "Intermediate" | "Higher"
   subject: string
   questions: number
 }
@@ -35,7 +34,6 @@ const EXAM_PAPERS: ExamPaper[] = [
     id: "aqa-lang-1",
     name: "AQA English Language Paper 1",
     duration: "1h 45min",
-    difficulty: "Higher",
     subject: "Explorations in Creative Reading & Writing",
     questions: 5,
   },
@@ -43,7 +41,6 @@ const EXAM_PAPERS: ExamPaper[] = [
     id: "aqa-lang-2",
     name: "AQA English Language Paper 2",
     duration: "1h 45min",
-    difficulty: "Higher",
     subject: "Writers' Viewpoints & Perspectives",
     questions: 5,
   },
@@ -51,7 +48,6 @@ const EXAM_PAPERS: ExamPaper[] = [
     id: "aqa-lit-poetry",
     name: "AQA Literature Poetry",
     duration: "45min",
-    difficulty: "Intermediate",
     subject: "Poetry Analysis",
     questions: 3,
   },
@@ -59,7 +55,6 @@ const EXAM_PAPERS: ExamPaper[] = [
     id: "alevel-unit-1",
     name: "A-Level Unit 1",
     duration: "2h 30min",
-    difficulty: "Higher",
     subject: "Drama & Poetry",
     questions: 5,
   },
@@ -67,7 +62,6 @@ const EXAM_PAPERS: ExamPaper[] = [
     id: "ks3-year9",
     name: "KS3 Year 9 Assessment",
     duration: "1h",
-    difficulty: "Foundation",
     subject: "Reading Comprehension",
     questions: 6,
   },
@@ -75,7 +69,6 @@ const EXAM_PAPERS: ExamPaper[] = [
     id: "creative-writing",
     name: "Creative Writing Practice",
     duration: "45min",
-    difficulty: "Intermediate",
     subject: "Narrative & Descriptive Writing",
     questions: 2,
   },
@@ -107,14 +100,6 @@ const MODEL_ANSWER = {
     "AO2: Analyses effects of writer's methods using subject terminology (up to 2 marks)",
     "AO3: Shows detailed understanding of context and how it shapes meaning (up to 2 marks)",
   ],
-}
-
-// ── Difficulty badge colour ────────────────────────────────────────────────
-
-function difficultyColor(d: ExamPaper["difficulty"]) {
-  if (d === "Foundation") return "bg-green-500/15 text-green-400 border-green-500/20"
-  if (d === "Intermediate") return "bg-amber-500/15 text-amber-400 border-amber-500/20"
-  return "bg-red-500/15 text-red-400 border-red-500/20"
 }
 
 // ── Component ──────────────────────────────────────────────────────────────
@@ -362,11 +347,6 @@ export default function StudentPracticeDemoPage() {
                 <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-500/10">
                   <FileText className="h-5 w-5 text-blue-400" />
                 </div>
-                <span
-                  className={`rounded-full border px-2.5 py-0.5 text-[11px] font-medium ${difficultyColor(paper.difficulty)}`}
-                >
-                  {paper.difficulty}
-                </span>
               </div>
 
               {/* Title */}

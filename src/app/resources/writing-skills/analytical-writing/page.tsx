@@ -54,15 +54,15 @@ export default function AnalyticalWritingPage() {
     <>
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary to-primary/80 px-4 py-16 text-white sm:py-20">
+      <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-white/70">
+          <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
             Writing Skills Masterclass
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Analytical Writing
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Master the art of analytical response writing for English Literature
             and Language. PEEL paragraphs, quotation embedding, evaluative
             language, and full annotated model essays with grade-level comparisons.
@@ -1192,7 +1192,7 @@ export default function AnalyticalWritingPage() {
       <section className="bg-primary px-4 py-12 text-center text-white">
         <div className="mx-auto max-w-2xl">
           <h2 className="text-2xl font-bold sm:text-3xl">Ready to write top-grade analytical responses?</h2>
-          <p className="mt-3 text-white/80">
+          <p className="mt-3 text-muted-foreground">
             Practise PEEL paragraphs, embed quotations, and use evaluative language in
             every response you write. The more you practise, the more natural it becomes.
           </p>
@@ -1205,7 +1205,7 @@ export default function AnalyticalWritingPage() {
             </Link>
             <Link
               href="/resources"
-              className="rounded-lg border-2 border-white/30 px-6 py-3 text-sm font-semibold text-white hover:bg-card/10 transition-colors"
+              className="rounded-lg border px-6 py-3 text-sm font-semibold text-foreground hover:bg-muted transition-colors"
             >
               Browse Resources
             </Link>

@@ -51,14 +51,14 @@ export function percentageToGCSEGradeLabel(percentage: number): string {
 }
 
 /**
- * Format a percentage with its GCSE grade in brackets.
- * e.g. "72% (Grade 7)"
+ * Format a percentage with its GCSE grade — grade first, percentage in brackets.
+ * e.g. "Grade 7 (72%)"
  *
  * @param percentage - Score as a percentage (0-100)
- * @returns Formatted string e.g. "72% (Grade 7)"
+ * @returns Formatted string e.g. "Grade 7 (72%)"
  */
 export function formatPercentageWithGrade(percentage: number): string {
-  return `${Math.round(percentage)}% (Grade ${percentageToGCSEGrade(percentage)})`
+  return `Grade ${percentageToGCSEGrade(percentage)} (${Math.round(percentage)}%)`
 }
 
 /**

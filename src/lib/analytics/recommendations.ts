@@ -1,6 +1,7 @@
 // ─── Recommendation Engine ──────────────────────────────────────────────────
 
 import type { WeakArea, ClassAnalytics, Recommendation, StudentAnalytics } from './types'
+import { percentageToGCSEGradeLabel } from '@/lib/grades'
 
 // Modules/topics that are commonly tested heavily by each exam board.
 // These get priority 3 recommendations when students are weak in them.
@@ -61,7 +62,7 @@ export function generateRecommendations(
     recommendations.push({
       priority: 1,
       title: `Urgent: ${area.moduleName} needs attention`,
-      description: `Average score is ${area.avgScore}% across ${area.totalStudentsAttempted} students in "${area.courseName}". ${area.studentsBelowThreshold} student(s) scored below 50%.`,
+      description: `Average is ${percentageToGCSEGradeLabel(area.avgScore)} across ${area.totalStudentsAttempted} students in "${area.courseName}". ${area.studentsBelowThreshold} student(s) scored below Grade 5.`,
       affectedStudentCount: affectedStudents.length,
       affectedStudentIds: affectedStudents.map((s) => s.studentId),
       suggestedAction: `Schedule a targeted revision session on "${area.moduleName}". Consider re-teaching core concepts and assigning additional practice from the "${area.courseName}" course.`,
@@ -87,7 +88,7 @@ export function generateRecommendations(
     recommendations.push({
       priority: 2,
       title: `Widespread gap: ${area.moduleName}`,
-      description: `Over half the class (${area.studentsBelowThreshold}/${area.totalStudentsAttempted}) scored below 50% on "${area.moduleName}" in "${area.courseName}".`,
+      description: `Over half the class (${area.studentsBelowThreshold}/${area.totalStudentsAttempted}) scored below Grade 5 on "${area.moduleName}" in "${area.courseName}".`,
       affectedStudentCount: affectedStudents.length,
       affectedStudentIds: affectedStudents.map((s) => s.studentId),
       suggestedAction: `This is a whole-class issue. Consider a group activity or guided practice session on "${area.moduleName}" before moving on.`,
@@ -156,11 +157,11 @@ export function generateStudentRecommendations(
     const classWeak = weakAreas.find((w) => w.courseId === weakness.courseId)
     if (classWeak) {
       recs.push(
-        `Focus on "${weakness.courseName}" — your average is ${weakness.avgScore}% vs the class average of ${classWeak.avgScore}%.`
+        `Focus on "${weakness.courseName}" — your average is ${percentageToGCSEGradeLabel(weakness.avgScore)} vs the class average of ${percentageToGCSEGradeLabel(classWeak.avgScore)}.`
       )
     } else {
       recs.push(
-        `Focus on "${weakness.courseName}" — your average score is ${weakness.avgScore}%. Try revisiting the course modules.`
+        `Focus on "${weakness.courseName}" — your average is ${percentageToGCSEGradeLabel(weakness.avgScore)}. Try revisiting the course modules.`
       )
     }
   }
