@@ -24,7 +24,7 @@ import { matchesBoard } from '@/lib/board-filter'
 import { loadAllCourses } from '@/data/course-loader'
 import { formatDate } from '@/lib/utils'
 import type { AssessmentAttempt, CourseData } from '@/lib/types'
-import { percentageToGCSEGrade, gcseGradeColor, percentageToGCSEGradeLabel } from '@/lib/grades'
+import { percentageToGCSEGrade, gcseGradeColor, percentageToGCSEGradeLabel, calculateTargetGrade } from '@/lib/grades'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -218,6 +218,7 @@ export default function GradeDashboardPage() {
   }, [assessments])
 
   const predictedGrade = useMemo(() => scoreToGrade(averageScore, dominantBoard), [averageScore, dominantBoard])
+  const targetGrade = useMemo(() => calculateTargetGrade(predictedGrade as any), [predictedGrade])
 
   const potentialGrade = useMemo(() => {
     if (assessments.length === 0) return 1
@@ -480,7 +481,7 @@ export default function GradeDashboardPage() {
               </div>
             </div>
 
-            <div className="text-center">
+            <div className="text-center space-y-2">
               <p className="text-2xl font-bold">
                 Predicted Grade:{' '}
                 <span style={{ color: gradeColor(predictedGrade) }}>
@@ -490,11 +491,14 @@ export default function GradeDashboardPage() {
                   ({gradeLabel(predictedGrade)})
                 </span>
               </p>
-              <p className="mt-1 text-sm text-primary">
+              <p className="text-lg font-semibold text-cyan-500">
+                Target Grade: {targetGrade}
+              </p>
+              <p className="text-sm text-primary">
                 Potential Grade: {potentialGrade}{' '}
                 <span className="text-muted-foreground">({gradeLabel(potentialGrade)})</span>
               </p>
-              <p className="mt-1 text-xs text-muted-foreground">
+              <p className="text-xs text-muted-foreground">
                 Based on {assessments.length} assessment{assessments.length !== 1 ? 's' : ''}
               </p>
             </div>

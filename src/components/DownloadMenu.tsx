@@ -2,12 +2,14 @@
 
 import { useState } from "react"
 import { FileText, FileDown, Presentation, ChevronDown } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
 import {
   DropdownMenu,
   DropdownMenuTrigger,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuGroup,
   DropdownMenuLabel,
   DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu"
@@ -93,15 +95,13 @@ export function DownloadMenu({
     const opt = options[0]
     return (
       <>
-        <Button
-          size={size}
-          variant={variant}
-          className={className}
+        <button
+          className={cn(buttonVariants({ variant, size }), className)}
           onClick={() => handleClick(opt)}
         >
           {formatIcon(opt.format)}
           <span className="ml-1.5">{opt.label}</span>
-        </Button>
+        </button>
         {toast && <DownloadToast message={toast} onDismiss={() => setToast(null)} />}
       </>
     )
@@ -112,23 +112,23 @@ export function DownloadMenu({
     <>
       <DropdownMenu>
         <DropdownMenuTrigger
-          render={
-            <Button size={size} variant={variant} className={className}>
-              <FileDown className="h-4 w-4" />
-              <span className="ml-1.5">{label}</span>
-              <ChevronDown className="ml-1 h-3.5 w-3.5 opacity-60" />
-            </Button>
-          }
-        />
+          render={<button className={cn(buttonVariants({ variant, size }), className)} />}
+        >
+          <FileDown className="h-4 w-4" />
+          <span className="ml-1.5">{label}</span>
+          <ChevronDown className="ml-1 h-3.5 w-3.5 opacity-60" />
+        </DropdownMenuTrigger>
         <DropdownMenuContent align="start">
-          <DropdownMenuLabel>Choose format</DropdownMenuLabel>
-          <DropdownMenuSeparator />
-          {options.map((opt) => (
-            <DropdownMenuItem key={opt.format} onClick={() => handleClick(opt)}>
-              {formatIcon(opt.format)}
-              {opt.label}
-            </DropdownMenuItem>
-          ))}
+          <DropdownMenuGroup>
+            <DropdownMenuLabel>Choose format</DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            {options.map((opt) => (
+              <DropdownMenuItem key={opt.format} onClick={() => handleClick(opt)}>
+                {formatIcon(opt.format)}
+                {opt.label}
+              </DropdownMenuItem>
+            ))}
+          </DropdownMenuGroup>
         </DropdownMenuContent>
       </DropdownMenu>
       {toast && <DownloadToast message={toast} onDismiss={() => setToast(null)} />}

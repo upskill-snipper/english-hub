@@ -17,6 +17,7 @@ import {
   ChevronRight,
 } from "lucide-react"
 import { useAuthStore } from "@/store/auth-store"
+import { percentageToGCSEGrade, gcseGradeColor } from "@/lib/grades"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -357,9 +358,9 @@ export default function SchoolAnalyticsPage() {
               />
               <StatCard
                 icon={TrendingUp}
-                label="Average Score"
-                value={`${data.topStats.averageScore}%`}
-                sub="Across all mock attempts"
+                label="Avg Working At Grade"
+                value={`Grade ${percentageToGCSEGrade(data.topStats.averageScore)}`}
+                sub={`Based on ${data.topStats.averageScore}% avg score`}
                 iconClass="bg-purple-500/10 text-purple-400"
               />
               <StatCard
@@ -394,6 +395,7 @@ export default function SchoolAnalyticsPage() {
                     <tr className="border-b border-border/60">
                       <th className="pb-3 text-left font-medium text-muted-foreground">Year Group</th>
                       <th className="pb-3 text-right font-medium text-muted-foreground">Students</th>
+                      <th className="pb-3 text-center font-medium text-muted-foreground">Avg Working At</th>
                       <th className="pb-3 pl-6 text-left font-medium text-muted-foreground min-w-[180px]">Avg Progress</th>
                       <th className="pb-3 text-right font-medium text-muted-foreground">Assignments</th>
                       <th className="pb-3 text-right font-medium text-muted-foreground">At-Risk</th>
@@ -409,6 +411,7 @@ export default function SchoolAnalyticsPage() {
                           </span>
                         </td>
                         <td className="py-3 text-right tabular-nums text-muted-foreground">{row.students}</td>
+                        <td className={`py-3 text-center font-bold ${gcseGradeColor(percentageToGCSEGrade(row.avgProgress))}`}>Grade {percentageToGCSEGrade(row.avgProgress)}</td>
                         <td className="py-3 pl-6">
                           <InlineProgressBar pct={row.avgProgress} colorClass={progressColor(row.avgProgress)} />
                         </td>

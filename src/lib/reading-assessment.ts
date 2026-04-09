@@ -28,6 +28,10 @@ export interface ReadingAssessmentResult {
   }
   /** Highest passage level completed with >50% accuracy */
   ceilingLevel: number
+  /** Whether the test ended early due to ceiling rule */
+  ceilingReached: boolean
+  /** Number of passages attempted (may be less than total if ceiling reached) */
+  passagesAttempted: number
   strengths: string[]
   areasForDevelopment: string[]
   /** GCSE grade equivalent if applicable (for Year 10+ scores) */
@@ -64,6 +68,12 @@ export interface AssessmentInput {
   questions: ComprehensionQuestion[]
   /** Decoding words reference */
   decodingWords: DecodingWord[]
+  /** Whether the test ended early due to ceiling rule */
+  ceilingReached?: boolean
+  /** Number of passages actually attempted (for partial completion) */
+  passagesAttempted?: number
+  /** Total passages available */
+  totalPassages?: number
 }
 
 // ─── Age-Score Norm Tables ───────────────────────────────────────────────────
@@ -150,6 +160,35 @@ function lookupAge(norms: [number, number, number][], value: number): AgeScore {
   return { years: 5, months: 0 }
 }
 
+/**
+ * Score a single answer against its question. Returns the points earned.
+ */
+export function scoreAnswer(
+  answer: ComprehensionAnswer,
+  question: ComprehensionQuestion
+): number {
+  if (question.type === "multiple-choice") {
+    return answer.answer === question.correctAnswer ? question.points : 0
+  }
+
+  // Short answer — check for keyword matches
+  const answerLower = answer.answer.toLowerCase().trim()
+  const keywords = [
+    ...(question.acceptableKeywords ?? []),
+    ...question.correctAnswer.split(" "),
+  ].map((k) => k.toLowerCase())
+
+  const uniqueKeywords = [...new Set(keywords)]
+  const matchCount = uniqueKeywords.filter((kw) =>
+    answerLower.includes(kw)
+  ).length
+  const matchRatio = matchCount / Math.max(uniqueKeywords.length, 1)
+
+  if (matchRatio >= 0.5) return question.points
+  if (matchRatio >= 0.25) return Math.ceil(question.points / 2)
+  return 0
+}
+
 function scoreComprehension(
   answers: ComprehensionAnswer[],
   questions: ComprehensionQuestion[]
@@ -162,32 +201,7 @@ function scoreComprehension(
     const question = questionMap.get(answer.questionId)
     if (!question) continue
     maxScore += question.points
-
-    if (question.type === "multiple-choice") {
-      if (answer.answer === question.correctAnswer) {
-        score += question.points
-      }
-    } else {
-      // Short answer — check for keyword matches
-      const answerLower = answer.answer.toLowerCase().trim()
-      const keywords = [
-        ...(question.acceptableKeywords ?? []),
-        ...question.correctAnswer.split(" "),
-      ].map((k) => k.toLowerCase())
-
-      // Award points based on keyword matches
-      const uniqueKeywords = [...new Set(keywords)]
-      const matchCount = uniqueKeywords.filter((kw) =>
-        answerLower.includes(kw)
-      ).length
-      const matchRatio = matchCount / Math.max(uniqueKeywords.length, 1)
-
-      if (matchRatio >= 0.5) {
-        score += question.points
-      } else if (matchRatio >= 0.25) {
-        score += Math.ceil(question.points / 2)
-      }
-    }
+    score += scoreAnswer(answer, question)
   }
 
   return {
@@ -380,8 +394,24 @@ export function calculateReadingAge(input: AssessmentInput): ReadingAssessmentRe
     }
   }
 
+  // When ceiling was reached, only score questions from passages that were
+  // actually attempted — don't penalise for unattempted passages
+  const answeredQuestionIds = new Set(input.comprehensionAnswers.map((a) => a.questionId))
+  const attemptedPassageIds = new Set<string>()
+  for (const a of input.comprehensionAnswers) {
+    const passageId = a.questionId.replace(/q\d+$/, "")
+    attemptedPassageIds.add(passageId)
+  }
+
+  const scorableQuestions = input.ceilingReached
+    ? input.questions.filter((q) => {
+        const passageId = q.id.replace(/q\d+$/, "")
+        return attemptedPassageIds.has(passageId)
+      })
+    : input.questions
+
   // Score each dimension
-  const comprehensionScores = scoreComprehension(input.comprehensionAnswers, input.questions)
+  const comprehensionScores = scoreComprehension(input.comprehensionAnswers, scorableQuestions)
   const decodingScores = scoreDecoding(input.decodingAnswers)
   const fluencyScores = scoreFluency(input.fluencyTimings)
 
@@ -403,7 +433,7 @@ export function calculateReadingAge(input: AssessmentInput): ReadingAssessmentRe
 
   const ceilingLevel = findCeilingLevel(
     input.comprehensionAnswers,
-    input.questions,
+    scorableQuestions,
     passageLevels
   )
 
@@ -438,6 +468,8 @@ export function calculateReadingAge(input: AssessmentInput): ReadingAssessmentRe
       fluency: fluencyScores,
     },
     ceilingLevel,
+    ceilingReached: input.ceilingReached ?? false,
+    passagesAttempted: input.passagesAttempted ?? attemptedPassageIds.size,
     strengths,
     areasForDevelopment,
     gcseEquivalent,

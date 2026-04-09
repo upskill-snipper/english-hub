@@ -21,14 +21,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/creators`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${base}/igcse`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
 
-    // Exam guides
-    { url: `${base}/exam-guide`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${base}/exam-guide/aqa`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${base}/exam-guide/edexcel`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${base}/exam-guide/ocr`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${base}/exam-guide/wjec`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${base}/exam-guide/igcse`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-
     // Resources hub
     { url: `${base}/resources`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
 

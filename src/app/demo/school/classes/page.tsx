@@ -5,6 +5,7 @@ import Link from "next/link"
 import { BookOpen, Users, Plus, Search, X, GraduationCap } from "lucide-react"
 import { toast } from "sonner"
 import { DEMO_CLASSES, DEMO_STUDENTS } from "@/data/demo-data"
+import { ReadingAgeInline } from "@/components/ReadingProfileCard"
 import { useScrollRestore } from "@/hooks/useScrollRestore"
 import { percentageToGCSEGrade } from "@/lib/grades"
 
@@ -45,7 +46,11 @@ export default function DemoClassesPage() {
         students.length > 0
           ? Math.round(students.reduce((sum, s) => sum + s.averageScore, 0) / students.length)
           : cls.avgScore
-      return { ...cls, actualStudentCount, computedAvgScore: avgScore }
+      const studentsWithRA = students.filter((s) => s.readingAge != null)
+      const avgReadingAge = studentsWithRA.length > 0
+        ? Math.round(studentsWithRA.reduce((sum, s) => sum + (s.readingAge ?? 0), 0) / studentsWithRA.length)
+        : null
+      return { ...cls, actualStudentCount, computedAvgScore: avgScore, avgReadingAge }
     })
   }, [])
 
@@ -142,7 +147,7 @@ export default function DemoClassesPage() {
               </div>
 
               {/* Stats row */}
-              <div className="grid grid-cols-3 gap-3 mb-4">
+              <div className="grid grid-cols-4 gap-3 mb-4">
                 <div>
                   <p className="text-[10px] uppercase tracking-wider text-muted-foreground mb-0.5">
                     Students
@@ -157,6 +162,14 @@ export default function DemoClassesPage() {
                     Avg Score
                   </p>
                   <span className="text-sm font-semibold">{cls.computedAvgScore}% <span className="text-xs font-normal text-muted-foreground">(G{percentageToGCSEGrade(cls.computedAvgScore)})</span></span>
+                </div>
+                <div>
+                  <p className="text-[10px] uppercase tracking-wider text-muted-foreground mb-0.5">
+                    Reading Age
+                  </p>
+                  <span className="text-sm font-semibold">
+                    <ReadingAgeInline readingAge={cls.avgReadingAge} yearGroup={cls.yearGroup} />
+                  </span>
                 </div>
                 <div>
                   <p className="text-[10px] uppercase tracking-wider text-muted-foreground mb-0.5">

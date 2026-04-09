@@ -655,12 +655,6 @@ export default function RevisionPage() {
                 </span>
               ))}
             </div>
-            <Link
-              href={`/exam-guide/${selectedBoard?.toLowerCase()}`}
-              className="shrink-0 text-sm font-medium text-primary hover:underline"
-            >
-              View your full {boardGuide.boardName} exam guide &rarr;
-            </Link>
           </div>
         </div>
       )}
@@ -889,12 +883,6 @@ export default function RevisionPage() {
                 {filteredTechniques.length} technique
                 {filteredTechniques.length !== 1 ? 's' : ''} found
               </p>
-              <Link
-                href="/exam-guide#terminology"
-                className="text-sm font-medium text-primary hover:underline"
-              >
-                See the full terminology guide &rarr;
-              </Link>
             </div>
 
             {/* Technique grid */}

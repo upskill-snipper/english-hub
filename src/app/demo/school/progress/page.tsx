@@ -26,7 +26,7 @@ import { Button } from "@/components/ui/button"
 import { toast } from "sonner"
 import { DEMO_STUDENTS, DEMO_CLASSES } from "@/data/demo-data"
 import DemoBanner from "@/components/demo/DemoBanner"
-import { percentageToGCSEGrade } from "@/lib/grades"
+import { percentageToGCSEGrade, gcseGradeColor, predictedGradeColor } from "@/lib/grades"
 
 // ── Year group data ──────────────────────────────────────────────────────────
 
@@ -36,6 +36,9 @@ interface YearGroupData {
   totalStudents: number
   avgProgress: number
   avgScore: number
+  avgWorkingAt: number
+  avgPredicted: number
+  avgTarget: number
   onTrack: number
   needsSupport: number
   atRisk: number
@@ -52,6 +55,9 @@ const YEAR_GROUPS: YearGroupData[] = [
     totalStudents: 180,
     avgProgress: 62,
     avgScore: 58,
+    avgWorkingAt: percentageToGCSEGrade(58),
+    avgPredicted: percentageToGCSEGrade(58),
+    avgTarget: Math.min(9, percentageToGCSEGrade(58) + 2),
     onTrack: 112,
     needsSupport: 48,
     atRisk: 20,
@@ -86,6 +92,9 @@ const YEAR_GROUPS: YearGroupData[] = [
     totalStudents: 165,
     avgProgress: 66,
     avgScore: 62,
+    avgWorkingAt: percentageToGCSEGrade(62),
+    avgPredicted: percentageToGCSEGrade(64),
+    avgTarget: Math.min(9, percentageToGCSEGrade(62) + 2),
     onTrack: 108,
     needsSupport: 39,
     atRisk: 18,
@@ -120,6 +129,9 @@ const YEAR_GROUPS: YearGroupData[] = [
     totalStudents: 158,
     avgProgress: 68,
     avgScore: 64,
+    avgWorkingAt: percentageToGCSEGrade(64),
+    avgPredicted: percentageToGCSEGrade(66),
+    avgTarget: Math.min(9, percentageToGCSEGrade(64) + 2),
     onTrack: 106,
     needsSupport: 35,
     atRisk: 17,
@@ -154,6 +166,9 @@ const YEAR_GROUPS: YearGroupData[] = [
     totalStudents: 142,
     avgProgress: 72,
     avgScore: 68,
+    avgWorkingAt: percentageToGCSEGrade(68),
+    avgPredicted: percentageToGCSEGrade(70),
+    avgTarget: Math.min(9, percentageToGCSEGrade(68) + 1),
     onTrack: 92,
     needsSupport: 34,
     atRisk: 16,
@@ -190,6 +205,9 @@ const YEAR_GROUPS: YearGroupData[] = [
     totalStudents: 138,
     avgProgress: 78,
     avgScore: 72,
+    avgWorkingAt: percentageToGCSEGrade(72),
+    avgPredicted: percentageToGCSEGrade(74),
+    avgTarget: Math.min(9, percentageToGCSEGrade(72) + 1),
     onTrack: 98,
     needsSupport: 28,
     atRisk: 12,
@@ -226,6 +244,9 @@ const YEAR_GROUPS: YearGroupData[] = [
     totalStudents: 64,
     avgProgress: 74,
     avgScore: 70,
+    avgWorkingAt: percentageToGCSEGrade(70),
+    avgPredicted: percentageToGCSEGrade(72),
+    avgTarget: Math.min(9, percentageToGCSEGrade(70) + 1),
     onTrack: 44,
     needsSupport: 14,
     atRisk: 6,
@@ -259,6 +280,9 @@ const YEAR_GROUPS: YearGroupData[] = [
     totalStudents: 52,
     avgProgress: 80,
     avgScore: 74,
+    avgWorkingAt: percentageToGCSEGrade(74),
+    avgPredicted: percentageToGCSEGrade(76),
+    avgTarget: Math.min(9, percentageToGCSEGrade(74) + 1),
     onTrack: 38,
     needsSupport: 10,
     atRisk: 4,
@@ -369,7 +393,7 @@ export default function SchoolProgressPage() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="text-3xl font-bold text-white">{avgSchoolProgress}% <span className="text-lg font-normal text-neutral-400">(Grade {percentageToGCSEGrade(avgSchoolProgress)})</span></div>
+              <div className={`text-3xl font-bold ${gcseGradeColor(percentageToGCSEGrade(avgSchoolProgress))}`}>Grade {percentageToGCSEGrade(avgSchoolProgress)} <span className="text-lg font-normal text-neutral-400">avg</span></div>
               <div className="mt-2 h-2 w-full rounded-full bg-neutral-800 overflow-hidden">
                 <div className={`h-full rounded-full ${progressColor(avgSchoolProgress)} transition-all`} style={{ width: `${avgSchoolProgress}%` }} />
               </div>
@@ -492,10 +516,19 @@ export default function SchoolProgressPage() {
                 {activeYearData.totalStudents} students
               </Badge>
             </h2>
-            <div className="flex items-center gap-2">
-              <span className={`text-lg font-bold ${progressTextColor(activeYearData.avgProgress)}`}>
-                {activeYearData.avgProgress}% avg <span className="text-sm font-normal text-neutral-500">(Grade {percentageToGCSEGrade(activeYearData.avgProgress)})</span>
-              </span>
+            <div className="flex items-center gap-4">
+              <div className="text-center">
+                <div className={`text-lg font-bold ${gcseGradeColor(activeYearData.avgWorkingAt)}`}>G{activeYearData.avgWorkingAt}</div>
+                <div className="text-[10px] text-neutral-500 uppercase">Working At</div>
+              </div>
+              <div className="text-center">
+                <div className={`text-lg font-bold ${predictedGradeColor(activeYearData.avgPredicted, activeYearData.avgWorkingAt)}`}>G{activeYearData.avgPredicted}</div>
+                <div className="text-[10px] text-neutral-500 uppercase">Predicted</div>
+              </div>
+              <div className="text-center">
+                <div className="text-lg font-bold text-cyan-400">G{activeYearData.avgTarget}</div>
+                <div className="text-[10px] text-neutral-500 uppercase">Target</div>
+              </div>
             </div>
           </div>
 

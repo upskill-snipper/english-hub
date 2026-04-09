@@ -21,7 +21,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { DEMO_STUDENTS } from "@/data/demo-data"
-import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor } from "@/lib/grades"
+import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor, predictedGradeColor, formatReadingAge } from "@/lib/grades"
+import GradeProgressCard from "@/components/GradeProgressCard"
 import DemoBanner from "@/components/demo/DemoBanner"
 
 // ── Teacher classes (Mrs Mitchell's 3 classes) ───────────────────────────────
@@ -53,32 +54,46 @@ interface ClassStudent {
   lastActive: string
   assignmentsCompleted: number
   assignmentsTotal: number
+  workingAtGrade: number
+  predictedGrade: number
+  targetGrade: number
+  readingAge: number | null
+}
+
+// Helper to derive grades and reading age from a score for local teacher data
+function deriveGrades(score: number, trend: "up" | "stable" | "down", yearGroup: number): { workingAtGrade: number; predictedGrade: number; targetGrade: number; readingAge: number | null } {
+  const workingAtGrade = percentageToGCSEGrade(score)
+  const predicted = trend === "up" ? Math.min(9, workingAtGrade + 1) : trend === "down" ? Math.max(1, workingAtGrade - 1) : workingAtGrade
+  const target = workingAtGrade >= 7 ? Math.min(9, workingAtGrade + 1) : Math.min(9, workingAtGrade + 2)
+  const chronoMonths = (yearGroup + 5) * 12
+  const readingAge = Math.max(72, Math.round(chronoMonths + ((score - 60) / 40) * 24))
+  return { workingAtGrade, predictedGrade: predicted, targetGrade: target, readingAge }
 }
 
 const CLASS_STUDENTS: ClassStudent[] = [
   // 10A English
-  { id: "s1", name: "Amelia Richardson", classId: "mc-001", className: "10A English", score: 88, progress: 92, status: "green", trend: "up", lastActive: "Today", assignmentsCompleted: 24, assignmentsTotal: 26 },
-  { id: "s2", name: "Oliver Bennett", classId: "mc-001", className: "10A English", score: 72, progress: 71, status: "amber", trend: "stable", lastActive: "Yesterday", assignmentsCompleted: 19, assignmentsTotal: 26 },
-  { id: "s3", name: "Fatima Al-Rashid", classId: "mc-001", className: "10A English", score: 52, progress: 48, status: "red", trend: "down", lastActive: "3 days ago", assignmentsCompleted: 12, assignmentsTotal: 26 },
-  { id: "s4", name: "James Whitfield", classId: "mc-001", className: "10A English", score: 35, progress: 28, status: "red", trend: "down", lastActive: "5 days ago", assignmentsCompleted: 7, assignmentsTotal: 26 },
-  { id: "s13", name: "Priya Sharma", classId: "mc-001", className: "10A English", score: 66, progress: 64, status: "amber", trend: "up", lastActive: "Today", assignmentsCompleted: 17, assignmentsTotal: 26 },
-  { id: "s15", name: "Hassan Ali", classId: "mc-001", className: "10A English", score: 78, progress: 76, status: "green", trend: "up", lastActive: "Today", assignmentsCompleted: 21, assignmentsTotal: 26 },
-  { id: "s16", name: "Charlotte Evans", classId: "mc-001", className: "10A English", score: 84, progress: 85, status: "green", trend: "stable", lastActive: "Yesterday", assignmentsCompleted: 23, assignmentsTotal: 26 },
-  { id: "s17", name: "Ethan Parker", classId: "mc-001", className: "10A English", score: 60, progress: 58, status: "amber", trend: "down", lastActive: "2 days ago", assignmentsCompleted: 15, assignmentsTotal: 26 },
+  { id: "s1", name: "Amelia Richardson", classId: "mc-001", className: "10A English", score: 88, progress: 92, status: "green", trend: "up", lastActive: "Today", assignmentsCompleted: 24, assignmentsTotal: 26, ...deriveGrades(88, "up", 10) },
+  { id: "s2", name: "Oliver Bennett", classId: "mc-001", className: "10A English", score: 72, progress: 71, status: "amber", trend: "stable", lastActive: "Yesterday", assignmentsCompleted: 19, assignmentsTotal: 26, ...deriveGrades(72, "stable", 10) },
+  { id: "s3", name: "Fatima Al-Rashid", classId: "mc-001", className: "10A English", score: 52, progress: 48, status: "red", trend: "down", lastActive: "3 days ago", assignmentsCompleted: 12, assignmentsTotal: 26, ...deriveGrades(52, "down", 10) },
+  { id: "s4", name: "James Whitfield", classId: "mc-001", className: "10A English", score: 35, progress: 28, status: "red", trend: "down", lastActive: "5 days ago", assignmentsCompleted: 7, assignmentsTotal: 26, ...deriveGrades(35, "down", 10) },
+  { id: "s13", name: "Priya Sharma", classId: "mc-001", className: "10A English", score: 66, progress: 64, status: "amber", trend: "up", lastActive: "Today", assignmentsCompleted: 17, assignmentsTotal: 26, ...deriveGrades(66, "up", 10) },
+  { id: "s15", name: "Hassan Ali", classId: "mc-001", className: "10A English", score: 78, progress: 76, status: "green", trend: "up", lastActive: "Today", assignmentsCompleted: 21, assignmentsTotal: 26, ...deriveGrades(78, "up", 10) },
+  { id: "s16", name: "Charlotte Evans", classId: "mc-001", className: "10A English", score: 84, progress: 85, status: "green", trend: "stable", lastActive: "Yesterday", assignmentsCompleted: 23, assignmentsTotal: 26, ...deriveGrades(84, "stable", 10) },
+  { id: "s17", name: "Ethan Parker", classId: "mc-001", className: "10A English", score: 60, progress: 58, status: "amber", trend: "down", lastActive: "2 days ago", assignmentsCompleted: 15, assignmentsTotal: 26, ...deriveGrades(60, "down", 10) },
   // 11B English
-  { id: "s5", name: "Sophie Chen", classId: "mc-002", className: "11B English", score: 94, progress: 96, status: "green", trend: "up", lastActive: "Today", assignmentsCompleted: 30, assignmentsTotal: 30 },
-  { id: "s6", name: "Marcus Thompson", classId: "mc-002", className: "11B English", score: 82, progress: 79, status: "green", trend: "stable", lastActive: "Today", assignmentsCompleted: 25, assignmentsTotal: 30 },
-  { id: "s9", name: "Daniel Cooper", classId: "mc-002", className: "11B English", score: 91, progress: 88, status: "green", trend: "up", lastActive: "Yesterday", assignmentsCompleted: 28, assignmentsTotal: 30 },
-  { id: "s14", name: "Zoe Mitchell", classId: "mc-002", className: "11B English", score: 42, progress: 40, status: "red", trend: "down", lastActive: "4 days ago", assignmentsCompleted: 12, assignmentsTotal: 30 },
-  { id: "s11", name: "Tom Harrison", classId: "mc-002", className: "11B English", score: 79, progress: 76, status: "green", trend: "stable", lastActive: "Today", assignmentsCompleted: 24, assignmentsTotal: 30 },
-  { id: "s18", name: "Grace Williams", classId: "mc-002", className: "11B English", score: 68, progress: 65, status: "amber", trend: "up", lastActive: "Yesterday", assignmentsCompleted: 20, assignmentsTotal: 30 },
-  { id: "s19", name: "Ryan O'Brien", classId: "mc-002", className: "11B English", score: 55, progress: 50, status: "amber", trend: "down", lastActive: "3 days ago", assignmentsCompleted: 16, assignmentsTotal: 30 },
+  { id: "s5", name: "Sophie Chen", classId: "mc-002", className: "11B English", score: 94, progress: 96, status: "green", trend: "up", lastActive: "Today", assignmentsCompleted: 30, assignmentsTotal: 30, ...deriveGrades(94, "up", 11) },
+  { id: "s6", name: "Marcus Thompson", classId: "mc-002", className: "11B English", score: 82, progress: 79, status: "green", trend: "stable", lastActive: "Today", assignmentsCompleted: 25, assignmentsTotal: 30, ...deriveGrades(82, "stable", 11) },
+  { id: "s9", name: "Daniel Cooper", classId: "mc-002", className: "11B English", score: 91, progress: 88, status: "green", trend: "up", lastActive: "Yesterday", assignmentsCompleted: 28, assignmentsTotal: 30, ...deriveGrades(91, "up", 11) },
+  { id: "s14", name: "Zoe Mitchell", classId: "mc-002", className: "11B English", score: 42, progress: 40, status: "red", trend: "down", lastActive: "4 days ago", assignmentsCompleted: 12, assignmentsTotal: 30, ...deriveGrades(42, "down", 11) },
+  { id: "s11", name: "Tom Harrison", classId: "mc-002", className: "11B English", score: 79, progress: 76, status: "green", trend: "stable", lastActive: "Today", assignmentsCompleted: 24, assignmentsTotal: 30, ...deriveGrades(79, "stable", 11) },
+  { id: "s18", name: "Grace Williams", classId: "mc-002", className: "11B English", score: 68, progress: 65, status: "amber", trend: "up", lastActive: "Yesterday", assignmentsCompleted: 20, assignmentsTotal: 30, ...deriveGrades(68, "up", 11) },
+  { id: "s19", name: "Ryan O'Brien", classId: "mc-002", className: "11B English", score: 55, progress: 50, status: "amber", trend: "down", lastActive: "3 days ago", assignmentsCompleted: 16, assignmentsTotal: 30, ...deriveGrades(55, "down", 11) },
   // 13 A-Level Lang
-  { id: "s10", name: "Aisha Begum", classId: "mc-003", className: "13 A-Level Lang", score: 28, progress: 24, status: "red", trend: "down", lastActive: "1 week ago", assignmentsCompleted: 5, assignmentsTotal: 22 },
-  { id: "s7", name: "Liam Patterson", classId: "mc-003", className: "13 A-Level Lang", score: 63, progress: 60, status: "amber", trend: "stable", lastActive: "Yesterday", assignmentsCompleted: 14, assignmentsTotal: 22 },
-  { id: "s8", name: "Emma Rodriguez", classId: "mc-003", className: "13 A-Level Lang", score: 72, progress: 70, status: "green", trend: "up", lastActive: "Today", assignmentsCompleted: 18, assignmentsTotal: 22 },
-  { id: "s12", name: "Noah Williams", classId: "mc-003", className: "13 A-Level Lang", score: 59, progress: 55, status: "amber", trend: "stable", lastActive: "2 days ago", assignmentsCompleted: 13, assignmentsTotal: 22 },
-  { id: "s20", name: "Isla Campbell", classId: "mc-003", className: "13 A-Level Lang", score: 35, progress: 30, status: "red", trend: "down", lastActive: "5 days ago", assignmentsCompleted: 7, assignmentsTotal: 22 },
+  { id: "s10", name: "Aisha Begum", classId: "mc-003", className: "13 A-Level Lang", score: 28, progress: 24, status: "red", trend: "down", lastActive: "1 week ago", assignmentsCompleted: 5, assignmentsTotal: 22, ...deriveGrades(28, "down", 13) },
+  { id: "s7", name: "Liam Patterson", classId: "mc-003", className: "13 A-Level Lang", score: 63, progress: 60, status: "amber", trend: "stable", lastActive: "Yesterday", assignmentsCompleted: 14, assignmentsTotal: 22, ...deriveGrades(63, "stable", 13) },
+  { id: "s8", name: "Emma Rodriguez", classId: "mc-003", className: "13 A-Level Lang", score: 72, progress: 70, status: "green", trend: "up", lastActive: "Today", assignmentsCompleted: 18, assignmentsTotal: 22, ...deriveGrades(72, "up", 13) },
+  { id: "s12", name: "Noah Williams", classId: "mc-003", className: "13 A-Level Lang", score: 59, progress: 55, status: "amber", trend: "stable", lastActive: "2 days ago", assignmentsCompleted: 13, assignmentsTotal: 22, ...deriveGrades(59, "stable", 13) },
+  { id: "s20", name: "Isla Campbell", classId: "mc-003", className: "13 A-Level Lang", score: 35, progress: 30, status: "red", trend: "down", lastActive: "5 days ago", assignmentsCompleted: 7, assignmentsTotal: 22, ...deriveGrades(35, "down", 13) },
 ]
 
 // ── Weekly activity data ─────────────────────────────────────────────────────
@@ -174,6 +189,8 @@ export default function TeacherProgressPage() {
 
   const avgScore = Math.round(classStudents.reduce((s, st) => s + st.score, 0) / classStudents.length)
   const avgProgress = Math.round(classStudents.reduce((s, st) => s + st.progress, 0) / classStudents.length)
+  const avgWorkingAt = +(classStudents.reduce((s, st) => s + st.workingAtGrade, 0) / classStudents.length).toFixed(1)
+  const avgPredicted = +(classStudents.reduce((s, st) => s + st.predictedGrade, 0) / classStudents.length).toFixed(1)
   const greenCount = classStudents.filter((s) => s.status === "green").length
   const amberCount = classStudents.filter((s) => s.status === "amber").length
   const redCount = classStudents.filter((s) => s.status === "red").length
@@ -258,11 +275,17 @@ export default function TeacherProgressPage() {
         </div>
 
         {/* ── Class Overview Cards ─────────────────────────────────── */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-6">
           <Card className="bg-neutral-900/60 border-neutral-800">
             <CardContent className="pt-4 pb-3">
-              <div className="text-xs text-neutral-500 mb-1">Average Score</div>
-              <div className={`text-2xl font-bold ${progressTextColor(avgScore)}`}>{avgScore}%</div>
+              <div className="text-xs text-neutral-500 mb-1">Avg Working At</div>
+              <div className={`text-2xl font-bold ${gcseGradeColor(Math.round(avgWorkingAt))}`}>Grade {avgWorkingAt}</div>
+            </CardContent>
+          </Card>
+          <Card className="bg-neutral-900/60 border-neutral-800">
+            <CardContent className="pt-4 pb-3">
+              <div className="text-xs text-neutral-500 mb-1">Avg Predicted</div>
+              <div className={`text-2xl font-bold ${predictedGradeColor(Math.round(avgPredicted), Math.round(avgWorkingAt))}`}>Grade {avgPredicted}</div>
             </CardContent>
           </Card>
           <Card className="bg-neutral-900/60 border-neutral-800">
@@ -305,7 +328,10 @@ export default function TeacherProgressPage() {
                   <tr className="border-b border-neutral-800 text-neutral-500 text-xs uppercase tracking-wider">
                     <th className="text-left py-2 pr-2">Status</th>
                     <th className="text-left py-2 pr-2">Student</th>
-                    <th className="text-right py-2 pr-2">Score</th>
+                    <th className="text-center py-2 pr-2">Working At</th>
+                    <th className="text-center py-2 pr-2">Predicted</th>
+                    <th className="text-center py-2 pr-2">Target</th>
+                    <th className="text-center py-2 pr-2">Reading Age</th>
                     <th className="text-right py-2 pr-2">Progress</th>
                     <th className="text-center py-2 pr-2">Trend</th>
                     <th className="text-right py-2 pr-2">Assignments</th>
@@ -321,7 +347,16 @@ export default function TeacherProgressPage() {
                         <div className="font-medium text-white">{student.name}</div>
                         <div className="text-xs text-neutral-500">{ragBadge(student.status)}</div>
                       </td>
-                      <td className={`py-2.5 pr-2 text-right font-mono ${gcseGradeColor(percentageToGCSEGrade(student.score))}`}>{percentageToGCSEGradeLabel(student.score)}</td>
+                      <td className={`py-2.5 pr-2 text-center font-bold text-lg ${gcseGradeColor(student.workingAtGrade)}`}>{student.workingAtGrade}</td>
+                      <td className={`py-2.5 pr-2 text-center font-bold text-lg ${predictedGradeColor(student.predictedGrade, student.workingAtGrade)}`}>
+                        <span className="flex items-center justify-center gap-1">
+                          {student.predictedGrade}
+                          {student.predictedGrade > student.workingAtGrade && <TrendingUp className="h-3 w-3 text-emerald-400" />}
+                          {student.predictedGrade < student.workingAtGrade && <TrendingUp className="h-3 w-3 text-red-400 rotate-180" />}
+                        </span>
+                      </td>
+                      <td className="py-2.5 pr-2 text-center font-semibold text-cyan-400">{student.targetGrade}</td>
+                      <td className="py-2.5 pr-2 text-center text-xs text-neutral-400">{student.readingAge ? formatReadingAge(student.readingAge) : "--"}</td>
                       <td className="py-2.5 pr-2 text-right">
                         <div className="flex items-center justify-end gap-2">
                           <div className="w-16 h-1.5 rounded-full bg-neutral-800 overflow-hidden">
@@ -501,8 +536,12 @@ export default function TeacherProgressPage() {
                         <td className="py-1 font-medium text-right">{classStudents.length}</td>
                       </tr>
                       <tr className="border-b">
-                        <td className="py-1 text-gray-500">Average Score</td>
-                        <td className="py-1 font-medium text-right">{avgScore}%</td>
+                        <td className="py-1 text-gray-500">Avg Working At Grade</td>
+                        <td className="py-1 font-medium text-right">Grade {avgWorkingAt}</td>
+                      </tr>
+                      <tr className="border-b">
+                        <td className="py-1 text-gray-500">Avg Predicted Grade</td>
+                        <td className="py-1 font-medium text-right">Grade {avgPredicted}</td>
                       </tr>
                       <tr className="border-b">
                         <td className="py-1 text-gray-500">Average Progress</td>
@@ -528,8 +567,9 @@ export default function TeacherProgressPage() {
                       <tr className="border-b text-gray-500">
                         <th className="py-1 font-medium">Student</th>
                         <th className="py-1 font-medium text-center">Status</th>
-                        <th className="py-1 font-medium text-right">Score</th>
-                        <th className="py-1 font-medium text-right">Progress</th>
+                        <th className="py-1 font-medium text-center">Working At</th>
+                        <th className="py-1 font-medium text-center">Predicted</th>
+                        <th className="py-1 font-medium text-center">Target</th>
                         <th className="py-1 font-medium text-right">Assignments</th>
                       </tr>
                     </thead>
@@ -546,8 +586,9 @@ export default function TeacherProgressPage() {
                               {s.status === "green" ? "On Track" : s.status === "amber" ? "Support" : "At Risk"}
                             </span>
                           </td>
-                          <td className="py-1 text-right font-mono">{percentageToGCSEGradeLabel(s.score)}</td>
-                          <td className="py-1 text-right font-mono">{s.progress}%</td>
+                          <td className="py-1 text-center font-mono">Grade {s.workingAtGrade}</td>
+                          <td className="py-1 text-center font-mono">Grade {s.predictedGrade}</td>
+                          <td className="py-1 text-center font-mono">Grade {s.targetGrade}</td>
                           <td className="py-1 text-right">{s.assignmentsCompleted}/{s.assignmentsTotal}</td>
                         </tr>
                       ))}

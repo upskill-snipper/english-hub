@@ -4,6 +4,7 @@ import Link from "next/link"
 import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor } from "@/lib/grades"
 import GradeProgressCard from "@/components/GradeProgressCard"
 import GradeRecommendations from "@/components/GradeRecommendations"
+import ReadingProfileCard from "@/components/ReadingProfileCard"
 import {
   ArrowLeft,
   CheckCircle2,
@@ -449,6 +450,20 @@ export default function StudentProgressPage() {
               showProgress
             />
           </div>
+        </section>
+
+        {/* ================================================================ */}
+        {/* SECTION 3c: Reading Profile                                       */}
+        {/* ================================================================ */}
+        <section className="mb-8">
+          <ReadingProfileCard
+            readingAge={186}
+            decodingAge={192}
+            fluencyAge={180}
+            assessmentDate="2026-02-12"
+            yearGroup="Year 11"
+            compact
+          />
         </section>
 
         {/* ================================================================ */}

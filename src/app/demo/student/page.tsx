@@ -27,6 +27,7 @@ import { Button } from "@/components/ui/button"
 import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor } from "@/lib/grades"
 import GradeProgressCard from "@/components/GradeProgressCard"
 import GradeRecommendations from "@/components/GradeRecommendations"
+import ReadingProfileCard from "@/components/ReadingProfileCard"
 
 // ---------------------------------------------------------------------------
 // Demo data -- Aisha Rahman's student perspective
@@ -560,6 +561,18 @@ export default function StudentDemoPage() {
               <ArrowRight className="h-3.5 w-3.5 ml-1.5" />
             </Button>
           </div>
+        </section>
+
+        {/* ── READING PROFILE ──────────────────────────────────────────── */}
+        <section className="mb-10">
+          <ReadingProfileCard
+            readingAge={186}
+            decodingAge={192}
+            fluencyAge={180}
+            assessmentDate="2026-02-12"
+            yearGroup="Year 11"
+            compact
+          />
         </section>
 
         {/* ── MY COURSES (2-col compact grid) ──────────────────────────── */}

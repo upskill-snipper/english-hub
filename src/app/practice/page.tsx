@@ -278,14 +278,6 @@ export default function PracticePage() {
                 <span className="text-sm text-muted-foreground">
                   {filtered.length} question{filtered.length !== 1 ? 's' : ''} available
                 </span>
-                {selectedBoard && (
-                  <Link
-                    href={`/exam-guide/${selectedBoard.toLowerCase()}`}
-                    className="text-sm font-medium text-primary hover:underline"
-                  >
-                    View your board&apos;s full exam guide
-                  </Link>
-                )}
               </div>
               <div className="flex items-center gap-3">
                 {/* Timer toggle */}

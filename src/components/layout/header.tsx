@@ -23,7 +23,6 @@ const NAV_LINKS = [
   { href: '/games', label: 'Games' },
   { href: '/practice', label: 'Practice' },
   { href: '/revision', label: 'Revision' },
-  { href: '/exam-guide', label: 'Exam Guide' },
   { href: '/for-teachers', label: 'For Teachers' },
   { href: '/for-schools', label: 'For Schools' },
   { href: '/pricing', label: 'Pricing' },
@@ -73,14 +72,14 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/90 backdrop-blur-xl supports-[backdrop-filter]:bg-background/70">
       <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5 group">
-          <span className="text-lg font-bold tracking-tight text-foreground group-hover:text-primary transition-colors duration-200">
+        <Link href="/" className="flex shrink-0 items-center gap-2.5 group">
+          <span className="text-lg font-bold tracking-tight whitespace-nowrap text-foreground group-hover:text-primary transition-colors duration-200">
             The English Hub
           </span>
         </Link>
 
         {/* Desktop nav */}
-        <nav aria-label="Main navigation" className="hidden items-center gap-0.5 md:flex">
+        <nav aria-label="Main navigation" className="hidden min-w-0 items-center gap-0.5 md:flex">
           {NAV_LINKS.map((link) => {
             const isActive = pathname === link.href || pathname.startsWith(link.href + '/')
             return (

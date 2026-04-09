@@ -55,10 +55,6 @@ const CourseGridSection = dynamic(() => import('@/components/home/CourseGridSect
   loading: () => <SectionSkeleton />,
 })
 
-const ExamGuideSection = dynamic(() => import('@/components/home/ExamGuideSection'), {
-  loading: () => <SectionSkeleton />,
-})
-
 const PricingSection = dynamic(() => import('@/components/home/PricingSection'), {
   loading: () => <SectionSkeleton />,
 })
@@ -437,10 +433,6 @@ export default function Home() {
       <Separator className="opacity-40" />
 
       <CourseGridSection />
-
-      <Separator className="opacity-40" />
-
-      <ExamGuideSection />
 
       <Separator className="opacity-40" />
 

@@ -58,6 +58,7 @@ import {
   type DemoQuizAttempt,
   type DemoActivity,
 } from "@/data/demo-data"
+import ReadingProfileCard from "@/components/ReadingProfileCard"
 
 // ---------------------------------------------------------------------------
 // Seeded random helpers for procedurally generated students
@@ -270,6 +271,27 @@ function generateStudentFromId(id: string): DemoStudent {
     workingAtGrade: calculateWorkingAtGrade(recentScores),
     predictedGrade: calculatePredictedGrade(recentScores),
     targetGrade: calculateTargetGrade(calculateWorkingAtGrade(recentScores)),
+    readingAge: (() => {
+      const ygNum = parseInt(yearGroup.replace(/\D/g, ''), 10) || 7
+      const chronoMonths = (ygNum + 5) * 12
+      return Math.max(72, Math.round(chronoMonths + ((averageScore - 60) / 40) * 24))
+    })(),
+    decodingAge: (() => {
+      const ygNum = parseInt(yearGroup.replace(/\D/g, ''), 10) || 7
+      const chronoMonths = (ygNum + 5) * 12
+      return Math.max(72, Math.round(chronoMonths + ((averageScore - 55) / 40) * 24))
+    })(),
+    fluencyAge: (() => {
+      const ygNum = parseInt(yearGroup.replace(/\D/g, ''), 10) || 7
+      const chronoMonths = (ygNum + 5) * 12
+      const fluencyOffset = status === 'at-risk' ? -12 : status === 'needs-support' ? -6 : status === 'excelling' ? 6 : 0
+      return Math.max(72, Math.round(chronoMonths + ((averageScore - 60) / 40) * 24 + fluencyOffset))
+    })(),
+    readingAgeAssessmentDate: (() => {
+      const dayOffset = (seed % 90)
+      const d = new Date(2026, 0, 15 + dayOffset)
+      return d.toISOString().slice(0, 10)
+    })(),
   }
 }
 
@@ -747,6 +769,17 @@ export default function SchoolStudentDetailPage() {
             </div>
           </CardContent>
         </Card>
+
+        {/* ---------------------------------------------------------------- */}
+        {/* 5c. Reading Profile                                              */}
+        {/* ---------------------------------------------------------------- */}
+        <ReadingProfileCard
+          readingAge={student.readingAge}
+          decodingAge={student.decodingAge}
+          fluencyAge={student.fluencyAge}
+          assessmentDate={student.readingAgeAssessmentDate}
+          yearGroup={student.yearGroup}
+        />
 
         {/* ---------------------------------------------------------------- */}
         {/* 6. Strengths & Weaknesses                                        */}

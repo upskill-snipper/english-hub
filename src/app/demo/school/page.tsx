@@ -1,5 +1,6 @@
 "use client"
 
+import { useState, useMemo } from "react"
 import Link from "next/link"
 import {
   LayoutDashboard,
@@ -10,15 +11,13 @@ import {
   Download,
   School,
   AlertTriangle,
-  Trophy,
-  ClipboardCheck,
   ArrowRight,
   TrendingUp,
   TrendingDown,
   GraduationCap,
-  UserCheck,
-  Zap,
   Target,
+  Filter,
+  BookOpenCheck,
 } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -28,35 +27,13 @@ import {
   DEMO_STUDENTS,
   DEMO_CLASSES,
   DEMO_YEAR_GROUPS,
-  DEMO_STATS,
 } from "@/data/demo-data"
-import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor } from "@/lib/grades"
+import {
+  gcseGradeColor,
+  gcseGradeBg,
+} from "@/lib/grades"
 
 // ── Helpers ─────────────────────────────────────────────────────────────────
-
-const atRiskStudents = DEMO_STUDENTS.filter((s) => s.atRisk)
-
-const topClasses = [...DEMO_CLASSES]
-  .sort((a, b) => b.avgProgress - a.avgProgress)
-  .slice(0, 3)
-
-const totalAssignmentsSet = DEMO_CLASSES.reduce(
-  (sum, c) => sum + c.assignmentsSet,
-  0
-)
-const totalAssignmentsCompleted = DEMO_CLASSES.reduce(
-  (sum, c) => sum + c.assignmentsCompleted,
-  0
-)
-const completionRate = Math.round(
-  (totalAssignmentsCompleted / totalAssignmentsSet) * 100
-)
-
-function progressColor(pct: number): string {
-  if (pct >= 75) return "text-emerald-400"
-  if (pct >= 50) return "text-amber-400"
-  return "text-red-400"
-}
 
 function ringColor(pct: number): string {
   if (pct >= 75) return "stroke-emerald-500"
@@ -68,7 +45,6 @@ function ringTrack(): string {
   return "stroke-muted/40"
 }
 
-/** CSS-based donut/ring chart */
 function ProgressRing({
   value,
   size = 56,
@@ -121,47 +97,121 @@ function ProgressRing({
   )
 }
 
-// Build unified activity feed
-function getRecentActivity() {
-  const allResults = DEMO_STUDENTS.flatMap((s) => [
-    ...s.mockExamResults.map((r) => ({
-      ...r,
-      studentName: s.name,
-      studentId: s.id,
-      yearGroup: s.yearGroup,
-      type: "Mock Exam" as const,
-    })),
-    ...s.essaySubmissions.map((r) => ({
-      exam: r.title,
-      score: r.score,
-      grade: "",
-      date: r.date,
-      studentName: s.name,
-      studentId: s.id,
-      yearGroup: s.yearGroup,
-      type: "Essay" as const,
-    })),
-    ...s.quizAttempts.map((r) => ({
-      exam: r.quiz,
-      score: Math.round((r.score / r.maxScore) * 100),
-      grade: "",
-      date: r.date,
-      studentName: s.name,
-      studentId: s.id,
-      yearGroup: s.yearGroup,
-      type: "Quiz" as const,
-    })),
-  ])
-  return allResults
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    .slice(0, 6)
-}
+// ── Computed student-level data ─────────────────────────────────────────────
 
-const recentActivity = getRecentActivity()
+function computeStudentMetrics(students: typeof DEMO_STUDENTS) {
+  if (students.length === 0)
+    return {
+      total: 0,
+      avgWorkingAt: 0,
+      avgPredicted: 0,
+      avgTarget: 0,
+      onTrackCount: 0,
+      offTrackCount: 0,
+      onTrackPct: 0,
+      gradeDistribution: {} as Record<number, number>,
+      atRiskStudents: [] as typeof DEMO_STUDENTS,
+      topImproving: [] as typeof DEMO_STUDENTS,
+      needingIntervention: [] as typeof DEMO_STUDENTS,
+    }
+
+  const total = students.length
+  const avgWorkingAt = Math.round(
+    students.reduce((sum, s) => sum + s.workingAtGrade, 0) / total
+  )
+  const avgPredicted = Math.round(
+    students.reduce((sum, s) => sum + s.predictedGrade, 0) / total
+  )
+  const avgTarget = Math.round(
+    students.reduce((sum, s) => sum + s.targetGrade, 0) / total
+  )
+
+  // On track = predicted grade >= target grade
+  const onTrackCount = students.filter(
+    (s) => s.predictedGrade >= s.targetGrade
+  ).length
+  const offTrackCount = total - onTrackCount
+  const onTrackPct = Math.round((onTrackCount / total) * 100)
+
+  // Grade distribution (working at grade)
+  const gradeDistribution: Record<number, number> = {}
+  for (let g = 1; g <= 9; g++) gradeDistribution[g] = 0
+  students.forEach((s) => {
+    gradeDistribution[s.workingAtGrade] =
+      (gradeDistribution[s.workingAtGrade] || 0) + 1
+  })
+
+  // At-risk students
+  const atRiskStudents = students.filter((s) => s.atRisk)
+
+  // Top improving: students whose predicted > working at
+  const topImproving = [...students]
+    .filter((s) => s.predictedGrade > s.workingAtGrade)
+    .sort(
+      (a, b) =>
+        b.predictedGrade - b.workingAtGrade - (a.predictedGrade - a.workingAtGrade)
+    )
+    .slice(0, 5)
+
+  // Needing intervention: predicted grade declining (predicted < working at) OR at-risk
+  const needingIntervention = students
+    .filter((s) => s.predictedGrade < s.workingAtGrade || s.atRisk)
+    .sort((a, b) => a.predictedGrade - b.predictedGrade)
+    .slice(0, 8)
+
+  return {
+    total,
+    avgWorkingAt,
+    avgPredicted,
+    avgTarget,
+    onTrackCount,
+    offTrackCount,
+    onTrackPct,
+    gradeDistribution,
+    atRiskStudents,
+    topImproving,
+    needingIntervention,
+  }
+}
 
 // ── Page ─────────────────────────────────────────────────────────────────────
 
 export default function DemoSchoolDashboardPage() {
+  const [selectedClass, setSelectedClass] = useState<string>("all")
+  const [selectedYear, setSelectedYear] = useState<string>("all")
+
+  // Filter students based on selections
+  const filteredStudents = useMemo(() => {
+    let students = DEMO_STUDENTS
+    if (selectedYear !== "all") {
+      students = students.filter((s) => s.yearGroup === selectedYear)
+    }
+    if (selectedClass !== "all") {
+      students = students.filter((s) => s.className === selectedClass)
+    }
+    return students
+  }, [selectedClass, selectedYear])
+
+  // Available classes for the year group filter
+  const availableClasses = useMemo(() => {
+    if (selectedYear === "all") return DEMO_CLASSES
+    return DEMO_CLASSES.filter((c) => c.yearGroup === selectedYear)
+  }, [selectedYear])
+
+  const metrics = computeStudentMetrics(filteredStudents)
+  const maxGradeCount = Math.max(...Object.values(metrics.gradeDistribution), 1)
+
+  // Year groups for filter
+  const yearGroups = DEMO_YEAR_GROUPS.map((yg) => yg.label)
+
+  // Active filter label
+  const filterLabel =
+    selectedClass !== "all"
+      ? selectedClass
+      : selectedYear !== "all"
+        ? selectedYear
+        : "All Students"
+
   return (
     <div className="px-4 py-8 sm:px-6 lg:px-8">
       {/* Demo banner */}
@@ -221,8 +271,59 @@ export default function DemoSchoolDashboardPage() {
         </Button>
       </div>
 
+      {/* ── Filters ─────────────────────────────────────────────────────── */}
+      <div className="mb-6 flex flex-wrap items-center gap-3">
+        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+          <Filter className="h-4 w-4" />
+          <span className="font-medium">Filter:</span>
+        </div>
+        <select
+          value={selectedYear}
+          onChange={(e) => {
+            setSelectedYear(e.target.value)
+            setSelectedClass("all")
+          }}
+          className="rounded-md border border-border bg-background px-3 py-1.5 text-sm text-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+        >
+          <option value="all">All Year Groups</option>
+          {yearGroups.map((yg) => (
+            <option key={yg} value={yg}>
+              {yg}
+            </option>
+          ))}
+        </select>
+        <select
+          value={selectedClass}
+          onChange={(e) => setSelectedClass(e.target.value)}
+          className="rounded-md border border-border bg-background px-3 py-1.5 text-sm text-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+        >
+          <option value="all">All Classes</option>
+          {availableClasses.map((c) => (
+            <option key={c.id} value={c.name}>
+              {c.name}
+            </option>
+          ))}
+        </select>
+        {(selectedYear !== "all" || selectedClass !== "all") && (
+          <button
+            onClick={() => {
+              setSelectedYear("all")
+              setSelectedClass("all")
+            }}
+            className="text-xs text-primary hover:underline"
+          >
+            Clear filters
+          </button>
+        )}
+        {filterLabel !== "All Students" && (
+          <Badge variant="secondary" className="text-xs">
+            Showing: {filterLabel}
+          </Badge>
+        )}
+      </div>
+
       {/* ── At-Risk Alert Banner ─────────────────────────────────────────── */}
-      {atRiskStudents.length > 0 && (
+      {metrics.atRiskStudents.length > 0 && (
         <div className="mb-8 overflow-hidden rounded-xl border border-red-500/30 bg-gradient-to-r from-red-500/10 via-red-500/5 to-transparent">
           <div className="flex flex-col gap-4 px-5 py-4 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-center gap-3">
@@ -231,10 +332,17 @@ export default function DemoSchoolDashboardPage() {
               </div>
               <div>
                 <p className="text-sm font-semibold text-red-300">
-                  {atRiskStudents.length} student{atRiskStudents.length !== 1 && "s"} flagged as at-risk
+                  {metrics.atRiskStudents.length} student
+                  {metrics.atRiskStudents.length !== 1 && "s"} flagged as
+                  at-risk
                 </p>
                 <p className="text-xs text-red-400/70">
-                  {atRiskStudents.map((s) => s.name).join(", ")}
+                  {metrics.atRiskStudents
+                    .slice(0, 5)
+                    .map((s) => s.name)
+                    .join(", ")}
+                  {metrics.atRiskStudents.length > 5 &&
+                    ` and ${metrics.atRiskStudents.length - 5} more`}
                 </p>
               </div>
             </div>
@@ -252,16 +360,16 @@ export default function DemoSchoolDashboardPage() {
       )}
 
       {/* ── Hero Stat Cards ──────────────────────────────────────────────── */}
-      <div className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
         {/* Total Students */}
         <div className="group relative overflow-hidden rounded-xl border border-border bg-gradient-to-br from-blue-500/10 to-blue-500/5 p-5 shadow-sm transition-shadow hover:shadow-md">
           <div className="flex items-start justify-between">
             <div>
               <p className="text-xs font-medium uppercase tracking-wider text-blue-400/80">
-                Total Students
+                Students
               </p>
-              <p className="mt-2 text-4xl font-bold tracking-tight text-foreground">
-                {DEMO_STATS.totalStudents}
+              <p className="mt-2 text-3xl font-bold tracking-tight text-foreground">
+                {metrics.total}
               </p>
               <p className="mt-1 text-xs text-muted-foreground">
                 Across {DEMO_YEAR_GROUPS.length} year groups
@@ -273,73 +381,89 @@ export default function DemoSchoolDashboardPage() {
           </div>
         </div>
 
-        {/* Total Teachers */}
+        {/* Avg Working At Grade */}
         <div className="group relative overflow-hidden rounded-xl border border-border bg-gradient-to-br from-violet-500/10 to-violet-500/5 p-5 shadow-sm transition-shadow hover:shadow-md">
           <div className="flex items-start justify-between">
             <div>
               <p className="text-xs font-medium uppercase tracking-wider text-violet-400/80">
-                Total Teachers
+                Avg Working At
               </p>
-              <p className="mt-2 text-4xl font-bold tracking-tight text-foreground">
-                {DEMO_STATS.totalTeachers}
+              <p className="mt-2 text-3xl font-bold tracking-tight text-foreground">
+                Grade {metrics.avgWorkingAt}
               </p>
               <p className="mt-1 text-xs text-muted-foreground">
-                <Link
-                  href="/demo/school/teachers"
-                  className="text-primary hover:underline"
-                >
-                  View all teachers
-                </Link>
+                Current attainment level
               </p>
             </div>
             <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-violet-500/15">
-              <UserCheck className="h-5 w-5 text-violet-400" />
+              <BookOpen className="h-5 w-5 text-violet-400" />
             </div>
           </div>
         </div>
 
-        {/* Active Classes */}
+        {/* Avg Predicted Grade */}
+        <div className="group relative overflow-hidden rounded-xl border border-border bg-gradient-to-br from-cyan-500/10 to-cyan-500/5 p-5 shadow-sm transition-shadow hover:shadow-md">
+          <div className="flex items-start justify-between">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-wider text-cyan-400/80">
+                Avg Predicted
+              </p>
+              <p className="mt-2 text-3xl font-bold tracking-tight text-foreground">
+                Grade {metrics.avgPredicted}
+              </p>
+              <p className={`mt-1 flex items-center gap-1 text-xs ${metrics.avgPredicted >= metrics.avgWorkingAt ? "text-emerald-400" : "text-red-400"}`}>
+                {metrics.avgPredicted >= metrics.avgWorkingAt ? (
+                  <TrendingUp className="h-3 w-3" />
+                ) : (
+                  <TrendingDown className="h-3 w-3" />
+                )}
+                {metrics.avgPredicted >= metrics.avgWorkingAt
+                  ? "Positive trajectory"
+                  : "Declining trajectory"}
+              </p>
+            </div>
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-500/15">
+              <TrendingUp className="h-5 w-5 text-cyan-400" />
+            </div>
+          </div>
+        </div>
+
+        {/* On Track % */}
         <div className="group relative overflow-hidden rounded-xl border border-border bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 p-5 shadow-sm transition-shadow hover:shadow-md">
           <div className="flex items-start justify-between">
             <div>
               <p className="text-xs font-medium uppercase tracking-wider text-emerald-400/80">
-                Active Classes
+                On Track
               </p>
-              <p className="mt-2 text-4xl font-bold tracking-tight text-foreground">
-                {DEMO_STATS.activeClasses}
+              <p className="mt-2 text-3xl font-bold tracking-tight text-foreground">
+                {metrics.onTrackPct}%
               </p>
               <p className="mt-1 text-xs text-muted-foreground">
-                <Link
-                  href="/demo/school/classes"
-                  className="text-primary hover:underline"
-                >
-                  Manage classes
-                </Link>
+                {metrics.onTrackCount} of {metrics.total} students
               </p>
             </div>
             <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-500/15">
-              <BookOpen className="h-5 w-5 text-emerald-400" />
+              <Target className="h-5 w-5 text-emerald-400" />
             </div>
           </div>
         </div>
 
-        {/* Avg Score */}
+        {/* Avg Target Grade */}
         <div className="group relative overflow-hidden rounded-xl border border-border bg-gradient-to-br from-amber-500/10 to-amber-500/5 p-5 shadow-sm transition-shadow hover:shadow-md">
           <div className="flex items-start justify-between">
             <div>
               <p className="text-xs font-medium uppercase tracking-wider text-amber-400/80">
-                Avg Score
+                Avg Target
               </p>
-              <p className="mt-2 text-4xl font-bold tracking-tight text-foreground">
-                {DEMO_STATS.avgScore}% <span className="text-lg text-muted-foreground">(Grade {percentageToGCSEGrade(DEMO_STATS.avgScore)})</span>
+              <p className="mt-2 text-3xl font-bold tracking-tight text-foreground">
+                Grade {metrics.avgTarget}
               </p>
-              <p className="mt-1 flex items-center gap-1 text-xs text-emerald-400">
-                <TrendingUp className="h-3 w-3" />
-                +3% from last term
+              <p className="mt-1 text-xs text-muted-foreground">
+                Aspirational target
               </p>
             </div>
             <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-500/15">
-              <Target className="h-5 w-5 text-amber-400" />
+              <GraduationCap className="h-5 w-5 text-amber-400" />
             </div>
           </div>
         </div>
@@ -349,99 +473,132 @@ export default function DemoSchoolDashboardPage() {
       <div className="grid gap-6 lg:grid-cols-12">
         {/* LEFT COLUMN - 8 cols */}
         <div className="space-y-6 lg:col-span-8">
-          {/* Performance Overview - 2-col ring chart grid */}
+          {/* Grade Distribution Chart */}
           <Card className="border-border bg-card/60">
             <CardHeader>
               <div className="flex items-center justify-between">
                 <CardTitle className="text-base font-semibold text-foreground">
-                  Year Group Performance
+                  Working At Grade Distribution
                 </CardTitle>
-                <Link
-                  href="/demo/school/analytics"
-                  className="text-xs text-primary hover:underline"
-                >
-                  Full analytics
-                </Link>
+                <div className="flex items-center gap-3 text-xs text-muted-foreground">
+                  <span className="flex items-center gap-1">
+                    <span className="inline-block h-2.5 w-2.5 rounded-full bg-emerald-500" />
+                    Grade 7-9
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <span className="inline-block h-2.5 w-2.5 rounded-full bg-blue-500" />
+                    Grade 4-6
+                  </span>
+                  <span className="flex items-center gap-1">
+                    <span className="inline-block h-2.5 w-2.5 rounded-full bg-red-500" />
+                    Grade 1-3
+                  </span>
+                </div>
               </div>
             </CardHeader>
             <CardContent>
-              <div className="grid gap-4 sm:grid-cols-2">
-                {DEMO_YEAR_GROUPS.map((yg: any) => (
-                  <Link
-                    key={yg.year}
-                    href={`/demo/school/analytics?year=${yg.year}`}
-                    className="flex items-center gap-4 rounded-xl border border-border bg-background/50 p-4 transition-colors hover:border-primary/30 hover:bg-primary/5"
-                  >
-                    <ProgressRing value={yg.avgProgress} size={56} strokeWidth={5}>
-                      <span className={`text-xs font-bold ${progressColor(yg.avgProgress)}`}>
-                        {yg.avgProgress}%
+              <div className="flex items-end gap-2" style={{ height: 180 }}>
+                {[9, 8, 7, 6, 5, 4, 3, 2, 1].map((grade) => {
+                  const count = metrics.gradeDistribution[grade] || 0
+                  const heightPct =
+                    maxGradeCount > 0
+                      ? Math.max((count / maxGradeCount) * 100, count > 0 ? 8 : 0)
+                      : 0
+                  const barColor =
+                    grade >= 7
+                      ? "bg-emerald-500"
+                      : grade >= 4
+                        ? "bg-blue-500"
+                        : "bg-red-500"
+                  return (
+                    <div
+                      key={grade}
+                      className="flex flex-1 flex-col items-center gap-1"
+                    >
+                      <span className="text-xs font-medium text-foreground">
+                        {count}
                       </span>
-                    </ProgressRing>
-                    <div className="min-w-0 flex-1">
-                      <p className="text-sm font-semibold text-foreground">
-                        {yg.label}
-                      </p>
-                      <p className="mt-0.5 text-xs text-muted-foreground">
-                        {yg.studentCount} students &middot; {yg.classCount} classes
-                      </p>
-                      <div className="mt-1.5 flex items-center gap-2">
-                        {yg.atRiskCount > 0 && (
-                          <span className="inline-flex items-center gap-1 rounded-full bg-red-500/10 px-2 py-0.5 text-[10px] font-medium text-red-400">
-                            <AlertTriangle className="h-2.5 w-2.5" />
-                            {yg.atRiskCount} at-risk
-                          </span>
-                        )}
-                        {yg.excellingCount > 0 && (
-                          <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] font-medium text-emerald-400">
-                            <Zap className="h-2.5 w-2.5" />
-                            {yg.excellingCount} excelling
-                          </span>
-                        )}
-                      </div>
+                      <div
+                        className={`w-full max-w-[40px] rounded-t-md ${barColor} transition-all`}
+                        style={{ height: `${heightPct}%`, minHeight: count > 0 ? 6 : 0 }}
+                      />
+                      <span className="text-[11px] font-medium text-muted-foreground">
+                        G{grade}
+                      </span>
                     </div>
-                    <ArrowRight className="h-4 w-4 shrink-0 text-muted-foreground/50" />
-                  </Link>
-                ))}
+                  )
+                })}
+              </div>
+              {/* Summary row below chart */}
+              <div className="mt-4 grid grid-cols-3 gap-3">
+                <div className="rounded-lg border border-emerald-500/20 bg-emerald-500/5 p-3 text-center">
+                  <p className="text-lg font-bold text-emerald-400">
+                    {(metrics.gradeDistribution[7] || 0) +
+                      (metrics.gradeDistribution[8] || 0) +
+                      (metrics.gradeDistribution[9] || 0)}
+                  </p>
+                  <p className="text-[11px] text-emerald-400/80">Grade 7-9</p>
+                </div>
+                <div className="rounded-lg border border-blue-500/20 bg-blue-500/5 p-3 text-center">
+                  <p className="text-lg font-bold text-blue-400">
+                    {(metrics.gradeDistribution[4] || 0) +
+                      (metrics.gradeDistribution[5] || 0) +
+                      (metrics.gradeDistribution[6] || 0)}
+                  </p>
+                  <p className="text-[11px] text-blue-400/80">Grade 4-6 (Standard pass+)</p>
+                </div>
+                <div className="rounded-lg border border-red-500/20 bg-red-500/5 p-3 text-center">
+                  <p className="text-lg font-bold text-red-400">
+                    {(metrics.gradeDistribution[1] || 0) +
+                      (metrics.gradeDistribution[2] || 0) +
+                      (metrics.gradeDistribution[3] || 0)}
+                  </p>
+                  <p className="text-[11px] text-red-400/80">Grade 1-3 (Below pass)</p>
+                </div>
               </div>
             </CardContent>
           </Card>
 
-          {/* Assignment Completion + Top Classes side by side */}
+          {/* On Track vs Off Track + Year Group Overview side by side */}
           <div className="grid gap-6 sm:grid-cols-2">
-            {/* Assignment Completion Donut */}
+            {/* On Track vs Off Track */}
             <Card className="border-border bg-card/60">
               <CardHeader className="pb-3">
                 <CardTitle className="text-base font-semibold text-foreground">
-                  Assignment Completion
+                  On Track vs Off Track
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="flex items-center gap-6">
-                  <ProgressRing value={completionRate} size={96} strokeWidth={8}>
+                  <ProgressRing
+                    value={metrics.onTrackPct}
+                    size={96}
+                    strokeWidth={8}
+                  >
                     <div className="text-center">
                       <p className="text-xl font-bold text-foreground">
-                        {completionRate}%
+                        {metrics.onTrackPct}%
                       </p>
-                      <p className="text-[10px] text-muted-foreground">complete</p>
+                      <p className="text-[10px] text-muted-foreground">
+                        on track
+                      </p>
                     </div>
                   </ProgressRing>
-                  <div className="space-y-2.5 text-sm">
+                  <div className="space-y-3 text-sm">
                     <div>
-                      <p className="text-xs text-muted-foreground">Set</p>
-                      <p className="text-lg font-semibold text-foreground">
-                        {totalAssignmentsSet}
+                      <p className="text-xs text-muted-foreground">
+                        On Track (predicted &ge; target)
                       </p>
-                    </div>
-                    <div>
-                      <p className="text-xs text-muted-foreground">Completed</p>
                       <p className="text-lg font-semibold text-emerald-400">
-                        {totalAssignmentsCompleted}
+                        {metrics.onTrackCount} students
                       </p>
                     </div>
                     <div>
-                      <p className="text-xs text-muted-foreground">Outstanding</p>
-                      <p className="text-lg font-semibold text-amber-400">
-                        {totalAssignmentsSet - totalAssignmentsCompleted}
+                      <p className="text-xs text-muted-foreground">
+                        Off Track (predicted &lt; target)
+                      </p>
+                      <p className="text-lg font-semibold text-red-400">
+                        {metrics.offTrackCount} students
                       </p>
                     </div>
                   </div>
@@ -449,158 +606,236 @@ export default function DemoSchoolDashboardPage() {
               </CardContent>
             </Card>
 
-            {/* Top Performing Classes */}
+            {/* Year Group Performance */}
             <Card className="border-border bg-card/60">
               <CardHeader className="pb-3">
-                <CardTitle className="flex items-center gap-2 text-base font-semibold text-foreground">
-                  <Trophy className="h-4 w-4 text-amber-400" />
-                  Top Classes
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-2.5">
-                  {topClasses.map((cls, idx) => (
-                    <Link
-                      key={cls.id}
-                      href={`/demo/school/classes/${cls.id}`}
-                      className="flex items-center gap-3 rounded-lg border border-border bg-background/50 px-3 py-2.5 transition-colors hover:border-primary/30 hover:bg-primary/5"
-                    >
-                      <span className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-amber-500/20 to-amber-600/10 text-xs font-bold text-amber-400">
-                        {idx + 1}
-                      </span>
-                      <div className="min-w-0 flex-1">
-                        <p className="truncate text-sm font-medium text-foreground">
-                          {cls.name}
-                        </p>
-                        <p className="text-xs text-muted-foreground">
-                          {cls.teacher}
-                        </p>
-                      </div>
-                      <span className={`text-sm font-bold ${progressColor(cls.avgProgress)}`}>
-                        {cls.avgProgress}%
-                      </span>
-                    </Link>
-                  ))}
-                </div>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="mt-3 w-full"
-                  render={<Link href="/demo/school/classes" />}
-                >
-                  View All Classes
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Areas of Concern + Interventions side by side */}
-          <div className="grid gap-6 sm:grid-cols-2">
-            {/* Areas of Concern */}
-            <Card className="border-border bg-card/60">
-              <CardHeader className="pb-3">
-                <CardTitle className="flex items-center gap-2 text-base font-semibold text-foreground">
-                  <AlertTriangle className="h-4 w-4 text-amber-400" />
-                  Areas of Concern
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-3">
-                  {(() => {
-                    const weaknessCounts: Record<string, number> = {}
-                    DEMO_STUDENTS.forEach((s) => {
-                      s.weaknesses.forEach((w) => {
-                        const name = typeof w === "string" ? w : w.name
-                        weaknessCounts[name] = (weaknessCounts[name] || 0) + 1
-                      })
-                    })
-                    const sorted = Object.entries(weaknessCounts)
-                      .sort((a, b) => b[1] - a[1])
-                      .slice(0, 5)
-                    const max = sorted[0]?.[1] || 1
-                    return sorted.map(([name, count], i) => (
-                      <div key={i}>
-                        <div className="mb-1 flex items-center justify-between">
-                          <span className="text-xs font-medium text-foreground">
-                            {name}
-                          </span>
-                          <span className="text-[10px] text-muted-foreground">
-                            {count} students
-                          </span>
-                        </div>
-                        <div className="h-1.5 w-full overflow-hidden rounded-full bg-muted">
-                          <div
-                            className="h-full rounded-full bg-amber-500 transition-all"
-                            style={{ width: `${(count / max) * 100}%` }}
-                          />
-                        </div>
-                      </div>
-                    ))
-                  })()}
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Suggested Interventions */}
-            <Card className="border-l-4 border-l-violet-500 border-border bg-card/60">
-              <CardHeader className="pb-3">
-                <CardTitle className="flex items-center gap-2 text-base font-semibold text-foreground">
-                  <TrendingUp className="h-4 w-4 text-violet-400" />
-                  Interventions
+                <CardTitle className="text-base font-semibold text-foreground">
+                  Year Group Overview
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-2">
-                  {atRiskStudents.slice(0, 3).map((student) => {
-                    const weakList = student.weaknesses.map((w) =>
-                      typeof w === "string" ? w : w.name
+                  {DEMO_YEAR_GROUPS.slice(0, 5).map((yg: any) => {
+                    const ygStudents = DEMO_STUDENTS.filter(
+                      (s) => s.yearGroup === yg.label
                     )
-                    const interventionMap: Record<string, string> = {
-                      "Spelling & Grammar": "Daily SPaG drills",
-                      "Essay Structure": "1:1 essay planning sessions",
-                      "Timed Conditions": "Exam technique workshop",
-                      "Essay Length": "Incremental word count targets",
-                      "Quotation Integration": "Quotation scaffold sheets",
-                      "Written Expression": "Peer feedback sessions",
-                      "Exam Technique": "Weekly mock practice",
-                      "Paragraph Structure": "PEAL framework checklists",
-                      "Analytical Depth": "Critical reading tasks",
-                    }
-                    const topWeak = weakList[0] || "General"
-                    const intervention =
-                      interventionMap[topWeak] || "Progress review meeting"
+                    const avgWAG =
+                      ygStudents.length > 0
+                        ? Math.round(
+                            ygStudents.reduce(
+                              (sum, s) => sum + s.workingAtGrade,
+                              0
+                            ) / ygStudents.length
+                          )
+                        : 0
                     return (
-                      <Link
-                        key={student.id}
-                        href={`/demo/school/students/${student.id}`}
-                        className="block rounded-lg border border-border bg-background/50 p-2.5 transition-colors hover:border-violet-500/30 hover:bg-violet-500/5"
+                      <button
+                        key={yg.year}
+                        onClick={() => {
+                          setSelectedYear(yg.label)
+                          setSelectedClass("all")
+                        }}
+                        className="flex w-full items-center gap-3 rounded-lg border border-border bg-background/50 px-3 py-2 text-left transition-colors hover:border-primary/30 hover:bg-primary/5"
                       >
-                        <div className="flex items-center justify-between gap-2">
-                          <p className="truncate text-xs font-medium text-foreground">
-                            {student.name}
+                        <div className="min-w-0 flex-1">
+                          <p className="text-xs font-semibold text-foreground">
+                            {yg.label}
                           </p>
-                          <Badge
-                            variant="secondary"
-                            className="shrink-0 border-red-500/30 bg-red-500/10 text-[10px] text-red-400"
-                          >
-                            {student.overallProgress}% (Grade {percentageToGCSEGrade(student.overallProgress)})
-                          </Badge>
+                          <p className="text-[11px] text-muted-foreground">
+                            {yg.studentCount} students
+                          </p>
                         </div>
-                        <p className="mt-1 text-[11px] text-violet-300">
-                          {intervention}
-                        </p>
-                      </Link>
+                        <div className="text-right">
+                          <span
+                            className={`text-sm font-bold ${gcseGradeColor(avgWAG)}`}
+                          >
+                            G{avgWAG}
+                          </span>
+                          <p className="text-[10px] text-muted-foreground">
+                            avg WAG
+                          </p>
+                        </div>
+                        {yg.atRiskCount > 0 && (
+                          <span className="inline-flex items-center gap-0.5 rounded-full bg-red-500/10 px-1.5 py-0.5 text-[10px] font-medium text-red-400">
+                            <AlertTriangle className="h-2.5 w-2.5" />
+                            {yg.atRiskCount}
+                          </span>
+                        )}
+                      </button>
                     )
                   })}
                 </div>
               </CardContent>
             </Card>
           </div>
+
+          {/* Students Needing Intervention */}
+          <Card className="border-border bg-card/60">
+            <CardHeader className="pb-3">
+              <div className="flex items-center justify-between">
+                <CardTitle className="flex items-center gap-2 text-base font-semibold text-foreground">
+                  <AlertTriangle className="h-4 w-4 text-red-400" />
+                  Students Needing Intervention
+                </CardTitle>
+                <Badge
+                  variant="secondary"
+                  className="border-red-500/30 bg-red-500/10 text-xs text-red-400"
+                >
+                  {metrics.needingIntervention.length}
+                </Badge>
+              </div>
+            </CardHeader>
+            <CardContent>
+              {metrics.needingIntervention.length === 0 ? (
+                <p className="py-4 text-center text-sm text-muted-foreground">
+                  No students currently flagged for intervention.
+                </p>
+              ) : (
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b border-border text-left text-xs text-muted-foreground">
+                        <th className="pb-2 pr-3 font-medium">Student</th>
+                        <th className="pb-2 pr-3 font-medium">Class</th>
+                        <th className="pb-2 pr-3 text-center font-medium">
+                          Working At
+                        </th>
+                        <th className="pb-2 pr-3 text-center font-medium">
+                          Predicted
+                        </th>
+                        <th className="pb-2 pr-3 text-center font-medium">
+                          Target
+                        </th>
+                        <th className="pb-2 font-medium">Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {metrics.needingIntervention.map((student) => (
+                        <tr
+                          key={student.id}
+                          className="border-b border-border/50 last:border-0"
+                        >
+                          <td className="py-2.5 pr-3">
+                            <Link
+                              href={`/demo/school/students/${student.id}`}
+                              className="font-medium text-foreground hover:text-primary hover:underline"
+                            >
+                              {student.name}
+                            </Link>
+                          </td>
+                          <td className="py-2.5 pr-3 text-xs text-muted-foreground">
+                            {student.className}
+                          </td>
+                          <td className="py-2.5 pr-3 text-center">
+                            <span
+                              className={`inline-flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold ${gcseGradeBg(student.workingAtGrade)} ${gcseGradeColor(student.workingAtGrade)}`}
+                            >
+                              {student.workingAtGrade}
+                            </span>
+                          </td>
+                          <td className="py-2.5 pr-3 text-center">
+                            <span
+                              className={`inline-flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold ${gcseGradeBg(student.predictedGrade)} ${gcseGradeColor(student.predictedGrade)}`}
+                            >
+                              {student.predictedGrade}
+                            </span>
+                          </td>
+                          <td className="py-2.5 pr-3 text-center">
+                            <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-muted/50 text-xs font-bold text-muted-foreground">
+                              {student.targetGrade}
+                            </span>
+                          </td>
+                          <td className="py-2.5">
+                            {student.atRisk ? (
+                              <Badge
+                                variant="secondary"
+                                className="border-red-500/30 bg-red-500/10 text-[10px] text-red-400"
+                              >
+                                At Risk
+                              </Badge>
+                            ) : student.predictedGrade <
+                              student.workingAtGrade ? (
+                              <Badge
+                                variant="secondary"
+                                className="border-amber-500/30 bg-amber-500/10 text-[10px] text-amber-400"
+                              >
+                                Declining
+                              </Badge>
+                            ) : (
+                              <Badge
+                                variant="secondary"
+                                className="text-[10px]"
+                              >
+                                Off Track
+                              </Badge>
+                            )}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
+              <Button
+                variant="outline"
+                size="sm"
+                className="mt-3 w-full"
+                render={<Link href="/demo/school/analytics?filter=at-risk" />}
+              >
+                View All At-Risk Students
+              </Button>
+            </CardContent>
+          </Card>
+
+          {/* Areas of Concern */}
+          <Card className="border-border bg-card/60">
+            <CardHeader className="pb-3">
+              <CardTitle className="flex items-center gap-2 text-base font-semibold text-foreground">
+                <AlertTriangle className="h-4 w-4 text-amber-400" />
+                Common Areas of Concern
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-3">
+                {(() => {
+                  const weaknessCounts: Record<string, number> = {}
+                  filteredStudents.forEach((s) => {
+                    s.weaknesses.forEach((w) => {
+                      const name = typeof w === "string" ? w : w.name
+                      weaknessCounts[name] = (weaknessCounts[name] || 0) + 1
+                    })
+                  })
+                  const sorted = Object.entries(weaknessCounts)
+                    .sort((a, b) => b[1] - a[1])
+                    .slice(0, 5)
+                  const max = sorted[0]?.[1] || 1
+                  return sorted.map(([name, count], i) => (
+                    <div key={i}>
+                      <div className="mb-1 flex items-center justify-between">
+                        <span className="text-xs font-medium text-foreground">
+                          {name}
+                        </span>
+                        <span className="text-[10px] text-muted-foreground">
+                          {count} students
+                        </span>
+                      </div>
+                      <div className="h-1.5 w-full overflow-hidden rounded-full bg-muted">
+                        <div
+                          className="h-full rounded-full bg-amber-500 transition-all"
+                          style={{ width: `${(count / max) * 100}%` }}
+                        />
+                      </div>
+                    </div>
+                  ))
+                })()}
+              </div>
+            </CardContent>
+          </Card>
         </div>
 
         {/* RIGHT COLUMN - 4 cols */}
         <div className="space-y-6 lg:col-span-4">
-          {/* Quick Actions - icon grid */}
+          {/* Quick Actions */}
           <Card className="border-border bg-card/60">
             <CardHeader className="pb-3">
               <CardTitle className="text-base font-semibold text-foreground">
@@ -656,119 +891,153 @@ export default function DemoSchoolDashboardPage() {
             </CardContent>
           </Card>
 
-          {/* Recent Activity Feed */}
+          {/* Top Improving Students */}
           <Card className="border-border bg-card/60">
             <CardHeader className="pb-3">
-              <div className="flex items-center justify-between">
-                <CardTitle className="flex items-center gap-2 text-base font-semibold text-foreground">
-                  <ClipboardCheck className="h-4 w-4 text-blue-400" />
-                  Recent Activity
-                </CardTitle>
-                <Link
-                  href="/demo/school/analytics"
-                  className="text-xs text-primary hover:underline"
-                >
-                  View all
-                </Link>
-              </div>
+              <CardTitle className="flex items-center gap-2 text-base font-semibold text-foreground">
+                <TrendingUp className="h-4 w-4 text-emerald-400" />
+                Top Improving Students
+              </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="space-y-2">
-                {recentActivity.map((r, i) => (
-                  <Link
-                    key={i}
-                    href={`/demo/school/students/${r.studentId}`}
-                    className="block rounded-lg border border-border bg-background/50 px-3 py-2.5 transition-colors hover:border-primary/30 hover:bg-primary/5"
-                  >
-                    <div className="flex items-center justify-between gap-2">
-                      <p className="truncate text-xs font-medium text-foreground">
-                        {r.exam}
-                      </p>
-                      <span
-                        className={`text-xs font-bold ${
-                          r.score >= 70
-                            ? "text-emerald-400"
-                            : r.score >= 50
-                              ? "text-amber-400"
-                              : "text-red-400"
-                        }`}
-                      >
-                        G{percentageToGCSEGrade(r.score)}
-                      </span>
-                    </div>
-                    <div className="mt-1 flex items-center justify-between">
-                      <p className="text-[11px] text-muted-foreground">
-                        {r.studentName}
-                      </p>
-                      <Badge
-                        variant="secondary"
-                        className={`text-[10px] ${
-                          r.type === "Mock Exam"
-                            ? "border-amber-500/30 bg-amber-500/10 text-amber-400"
-                            : r.type === "Essay"
-                              ? "border-cyan-500/30 bg-cyan-500/10 text-cyan-400"
-                              : "border-pink-500/30 bg-pink-500/10 text-pink-400"
-                        }`}
-                      >
-                        {r.type}
-                      </Badge>
-                    </div>
-                  </Link>
-                ))}
+              {metrics.topImproving.length === 0 ? (
+                <p className="py-4 text-center text-sm text-muted-foreground">
+                  No improving students in current filter.
+                </p>
+              ) : (
+                <div className="space-y-2">
+                  {metrics.topImproving.map((student) => (
+                    <Link
+                      key={student.id}
+                      href={`/demo/school/students/${student.id}`}
+                      className="flex items-center justify-between rounded-lg border border-border bg-background/50 px-3 py-2.5 transition-colors hover:border-emerald-500/30 hover:bg-emerald-500/5"
+                    >
+                      <div className="min-w-0">
+                        <p className="truncate text-xs font-medium text-foreground">
+                          {student.name}
+                        </p>
+                        <p className="text-[11px] text-muted-foreground">
+                          {student.className}
+                        </p>
+                      </div>
+                      <div className="flex items-center gap-1.5">
+                        <span
+                          className={`text-xs font-bold ${gcseGradeColor(student.workingAtGrade)}`}
+                        >
+                          G{student.workingAtGrade}
+                        </span>
+                        <ArrowRight className="h-3 w-3 text-emerald-400" />
+                        <span
+                          className={`text-xs font-bold ${gcseGradeColor(student.predictedGrade)}`}
+                        >
+                          G{student.predictedGrade}
+                        </span>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </CardContent>
+          </Card>
+
+          {/* Reading Age (placeholder) */}
+          <Card className="border-border bg-card/60">
+            <CardHeader className="pb-3">
+              <CardTitle className="flex items-center gap-2 text-base font-semibold text-foreground">
+                <BookOpenCheck className="h-4 w-4 text-cyan-400" />
+                Reading Age Data
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-3">
+                <p className="text-xs text-muted-foreground">
+                  Reading age data is populated from the Reading Comprehension
+                  Assessment. Students who have completed the assessment will
+                  have their reading age, decoding age, and fluency age recorded.
+                </p>
+                <div className="rounded-lg border border-cyan-500/20 bg-cyan-500/5 p-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-medium text-cyan-400">
+                      Assessments completed
+                    </span>
+                    <span className="text-xs font-bold text-cyan-400">
+                      Demo data
+                    </span>
+                  </div>
+                  <p className="mt-1 text-[11px] text-muted-foreground">
+                    Assign the Reading Comprehension Assessment to your classes
+                    to generate reading age data for each student.
+                  </p>
+                </div>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="w-full"
+                  render={<Link href="/assessment/reading" />}
+                >
+                  <BookOpenCheck className="mr-1.5 h-3.5 w-3.5" />
+                  View Reading Assessment
+                </Button>
               </div>
             </CardContent>
           </Card>
 
-          {/* At-Risk Students compact list */}
+          {/* Grade Comparison: WAG vs Predicted vs Target */}
           <Card className="border-border bg-card/60">
             <CardHeader className="pb-3">
-              <div className="flex items-center justify-between">
-                <CardTitle className="flex items-center gap-2 text-base font-semibold text-foreground">
-                  <AlertTriangle className="h-4 w-4 text-red-400" />
-                  At-Risk Students
-                </CardTitle>
-                <Badge
-                  variant="secondary"
-                  className="border-red-500/30 bg-red-500/10 text-xs text-red-400"
-                >
-                  {atRiskStudents.length}
-                </Badge>
-              </div>
+              <CardTitle className="text-base font-semibold text-foreground">
+                Grade Summary
+              </CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="space-y-2">
-                {atRiskStudents.map((student) => (
-                  <Link
-                    key={student.id}
-                    href={`/demo/school/students/${student.id}`}
-                    className="flex items-center justify-between rounded-lg border border-border bg-background/50 px-3 py-2.5 transition-colors hover:border-red-500/30 hover:bg-red-500/5"
+              <div className="space-y-3">
+                <div className="flex items-center justify-between rounded-lg border border-border bg-background/50 px-3 py-2.5">
+                  <span className="text-xs text-muted-foreground">
+                    Avg Working At Grade
+                  </span>
+                  <span
+                    className={`text-sm font-bold ${gcseGradeColor(metrics.avgWorkingAt)}`}
                   >
-                    <div className="min-w-0">
-                      <p className="truncate text-xs font-medium text-foreground">
-                        {student.name}
-                      </p>
-                      <p className="flex items-center gap-1 text-[11px] text-red-400/80">
-                        <TrendingDown className="h-2.5 w-2.5" />
-                        {student.className}
-                      </p>
-                    </div>
-                    <Badge
-                      variant="secondary"
-                      className="shrink-0 border-red-500/30 bg-red-500/10 text-[10px] text-red-400"
-                    >
-                      {student.overallProgress}% (Grade {percentageToGCSEGrade(student.overallProgress)})
-                    </Badge>
-                  </Link>
-                ))}
+                    Grade {metrics.avgWorkingAt}
+                  </span>
+                </div>
+                <div className="flex items-center justify-between rounded-lg border border-border bg-background/50 px-3 py-2.5">
+                  <span className="text-xs text-muted-foreground">
+                    Avg Predicted Grade
+                  </span>
+                  <span
+                    className={`text-sm font-bold ${gcseGradeColor(metrics.avgPredicted)}`}
+                  >
+                    Grade {metrics.avgPredicted}
+                  </span>
+                </div>
+                <div className="flex items-center justify-between rounded-lg border border-border bg-background/50 px-3 py-2.5">
+                  <span className="text-xs text-muted-foreground">
+                    Avg Target Grade
+                  </span>
+                  <span
+                    className={`text-sm font-bold ${gcseGradeColor(metrics.avgTarget)}`}
+                  >
+                    Grade {metrics.avgTarget}
+                  </span>
+                </div>
+                <div className="flex items-center justify-between rounded-lg border border-border bg-background/50 px-3 py-2.5">
+                  <span className="text-xs text-muted-foreground">
+                    Students on track
+                  </span>
+                  <span className="text-sm font-bold text-emerald-400">
+                    {metrics.onTrackCount}/{metrics.total}
+                  </span>
+                </div>
+                <div className="flex items-center justify-between rounded-lg border border-border bg-background/50 px-3 py-2.5">
+                  <span className="text-xs text-muted-foreground">
+                    At-risk students
+                  </span>
+                  <span className="text-sm font-bold text-red-400">
+                    {metrics.atRiskStudents.length}
+                  </span>
+                </div>
               </div>
-              <Button
-                variant="outline"
-                size="sm"
-                className="mt-3 w-full"
-                render={<Link href="/demo/school/analytics?filter=at-risk" />}
-              >
-                View All At-Risk
-              </Button>
             </CardContent>
           </Card>
         </div>

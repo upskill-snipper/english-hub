@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { DEMO_STUDENTS, DEMO_CLASSES } from "@/data/demo-data"
+import { ReadingAgeInline } from "@/components/ReadingProfileCard"
 import { useScrollRestore } from "@/hooks/useScrollRestore"
 import { percentageToGCSEGrade, gcseGradeColor, predictedGradeColor, calculateWorkingAtGrade, calculatePredictedGrade, calculateTargetGrade, isGCSEYearGroup, formatScoreForYearGroup } from "@/lib/grades"
 
@@ -32,6 +33,8 @@ interface EnrichedStudent {
   workingAtGrade: number
   predictedGrade: number
   targetGrade: number
+  readingAge: number | null
+  yearGroupStr: string
 }
 
 function seededHash(str: string): number {
@@ -129,11 +132,15 @@ function generateExtraStudents(): EnrichedStudent[] {
     const wag = percentageToGCSEGrade(avgScore)
     const pGrade = percentageToGCSEGrade(Math.max(0, Math.min(100, avgScore + ((r4 % 20) - 10))))
     const tGrade = calculateTargetGrade(wag)
+    const ygNum = parseInt(cls.yearGroup.replace(/\D/g, ""), 10)
+    const chronoM = (ygNum + 5) * 12
+    const ra = Math.max(72, Math.round(chronoM + ((avgScore - 60) / 40) * 24))
     extras.push({
       id,
       name,
       email: deriveEmail(name, id),
-      yearGroup: parseInt(cls.yearGroup.replace(/\D/g, ""), 10),
+      yearGroup: ygNum,
+      yearGroupStr: cls.yearGroup,
       className: cls.name,
       classId: cId,
       progress,
@@ -144,6 +151,7 @@ function generateExtraStudents(): EnrichedStudent[] {
       workingAtGrade: wag,
       predictedGrade: pGrade,
       targetGrade: tGrade,
+      readingAge: ra,
     })
   }
   return extras
@@ -155,6 +163,7 @@ const ALL_STUDENTS = [
     name: s.name,
     email: deriveEmail(s.name, s.id),
     yearGroup: parseInt(s.yearGroup.replace(/\D/g, ""), 10),
+    yearGroupStr: s.yearGroup,
     className: s.className,
     classId: s.classId,
     progress: s.overallProgress,
@@ -165,6 +174,7 @@ const ALL_STUDENTS = [
     workingAtGrade: s.workingAtGrade,
     predictedGrade: s.predictedGrade,
     targetGrade: s.targetGrade,
+    readingAge: s.readingAge,
   })),
   ...generateExtraStudents(),
 ]
@@ -499,6 +509,7 @@ export default function StudentsPage() {
                   <th className="px-4 py-3 text-left font-medium text-muted-foreground hidden sm:table-cell">Working At</th>
                   <th className="px-4 py-3 text-left font-medium text-muted-foreground hidden md:table-cell">Predicted</th>
                   <th className="px-4 py-3 text-left font-medium text-muted-foreground hidden lg:table-cell">Target</th>
+                  <th className="px-4 py-3 text-left font-medium text-muted-foreground hidden xl:table-cell">Reading Age</th>
                   <th className="px-4 py-3 text-left font-medium text-muted-foreground">Status</th>
                   <th className="px-4 py-3 text-left font-medium text-muted-foreground hidden xl:table-cell">Last Active</th>
                 </tr>
@@ -567,6 +578,9 @@ export default function StudentsPage() {
                       <td className="px-4 py-3 hidden lg:table-cell">
                         <span className="tabular-nums font-medium text-violet-500">Grade {student.targetGrade}</span>
                       </td>
+                      <td className="px-4 py-3 hidden xl:table-cell">
+                        <ReadingAgeInline readingAge={student.readingAge} yearGroup={student.yearGroupStr} />
+                      </td>
                       <td className="px-4 py-3">
                         <span className={`inline-flex items-center rounded-full border px-2 py-0.5 text-xs font-semibold whitespace-nowrap ${STATUS_COLORS[student.status]}`}>
                           {student.status}
@@ -580,7 +594,7 @@ export default function StudentsPage() {
                 })}
                 {paginated.length === 0 && (
                   <tr>
-                    <td colSpan={11} className="px-4 py-12 text-center text-muted-foreground">
+                    <td colSpan={12} className="px-4 py-12 text-center text-muted-foreground">
                       No students match your filters.
                     </td>
                   </tr>

@@ -3,7 +3,8 @@
 import { useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
-import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor } from "@/lib/grades";
+import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor, predictedGradeColor, formatReadingAge } from "@/lib/grades";
+import GradeProgressCard from "@/components/GradeProgressCard";
 import { toast } from "sonner";
 import { DEMO_STUDENTS } from "@/data/demo-data";
 
@@ -273,6 +274,24 @@ export default function StudentReportPage() {
           </div>
         </div>
 
+        {/* Grade Progress Card */}
+        <div className="report-card bg-neutral-900 border border-neutral-800 rounded-xl p-6 print:rounded-none">
+          <h2 className="text-lg font-semibold text-neutral-100 print:text-black mb-4">
+            Grade Summary
+          </h2>
+          <GradeProgressCard
+            currentGrade={student.workingAtGrade}
+            predictedGrade={student.predictedGrade}
+            targetGrade={student.targetGrade}
+            trend={scoreTrend.label === "Improving" ? "up" : scoreTrend.label === "Declining" ? "down" : "stable"}
+          />
+          {student.readingAge && (
+            <div className="mt-3 text-sm text-neutral-400 print:text-neutral-600">
+              Reading Age: <span className="font-semibold text-neutral-200 print:text-black">{formatReadingAge(student.readingAge)}</span>
+            </div>
+          )}
+        </div>
+
         {/* KPI Summary */}
         <div className="report-card bg-neutral-900 border border-neutral-800 rounded-xl p-6 print:rounded-none">
           <h2 className="text-lg font-semibold text-neutral-100 print:text-black mb-4">
@@ -280,28 +299,28 @@ export default function StudentReportPage() {
           </h2>
           <div className="flex items-center gap-8">
             <div className="text-center">
-              <div className={`text-5xl font-bold ${gradeColor(overallGrade)}`}>
-                {overallGrade}
+              <div className={`text-5xl font-bold ${gradeColor(String(student.workingAtGrade))}`}>
+                {student.workingAtGrade}
               </div>
               <div className="text-xs text-neutral-500 print:text-neutral-600 mt-1">
-                Predicted Grade
+                Working At Grade
               </div>
             </div>
             <div className="flex-1 grid grid-cols-4 gap-3 text-sm">
               <div className="bg-neutral-800/50 print:bg-neutral-100 rounded-lg p-3 text-center">
-                <div className={`text-2xl font-bold ${gcseGradeColor(percentageToGCSEGrade(student.averageScore))}`}>
-                  {percentageToGCSEGradeLabel(student.averageScore)}
+                <div className={`text-2xl font-bold ${predictedGradeColor(student.predictedGrade, student.workingAtGrade)}`}>
+                  Grade {student.predictedGrade}
                 </div>
                 <div className="text-neutral-500 print:text-neutral-600 text-xs mt-1">
-                  Average Score ({student.averageScore}%)
+                  Predicted Grade
                 </div>
               </div>
               <div className="bg-neutral-800/50 print:bg-neutral-100 rounded-lg p-3 text-center">
-                <div className="text-2xl font-bold text-neutral-100 print:text-black">
-                  {student.overallProgress}%
+                <div className="text-2xl font-bold text-cyan-400 print:text-cyan-700">
+                  Grade {student.targetGrade}
                 </div>
                 <div className="text-neutral-500 print:text-neutral-600 text-xs mt-1">
-                  Progress
+                  Target Grade
                 </div>
               </div>
               <div className="bg-neutral-800/50 print:bg-neutral-100 rounded-lg p-3 text-center">

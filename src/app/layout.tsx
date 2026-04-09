@@ -4,10 +4,7 @@ import Script from 'next/script'
 import { SupabaseProvider } from '@/components/providers/supabase-provider'
 import { TooltipProvider } from '@/components/ui/tooltip'
 import { Toaster } from '@/components/ui/sonner'
-import { Header } from '@/components/layout/header'
-import { Footer } from '@/components/layout/footer'
-import { BoardSidebar } from '@/components/layout/board-sidebar'
-import { BoardGate } from '@/components/layout/board-gate'
+import { RootLayoutShell } from '@/components/layout/root-layout-shell'
 import { WebsiteJsonLd } from '@/components/seo/json-ld'
 import { CookieConsent } from '@/components/cookie-consent'
 import { UtmCapture } from '@/components/utm-capture'
@@ -80,15 +77,7 @@ export default function RootLayout({
         </a>
         <SupabaseProvider>
           <TooltipProvider>
-            <Header />
-            <BoardGate />
-            <div className="flex flex-col md:flex-row min-h-[calc(100vh-3.5rem)]">
-              <BoardSidebar />
-              <div id="main-content" className="flex-1 min-w-0">
-                {children}
-              </div>
-            </div>
-            <Footer />
+            <RootLayoutShell>{children}</RootLayoutShell>
             <Toaster richColors position="bottom-right" />
             <CookieConsent />
             <UtmCapture />

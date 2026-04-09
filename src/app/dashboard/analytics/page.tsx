@@ -22,7 +22,7 @@ import {
 import { useAuthStore } from '@/store/auth-store'
 import { useAnalytics } from '@/hooks/useAnalytics'
 import { formatDuration, formatDate, cn } from '@/lib/utils'
-import { percentageToGCSEGradeLabel } from '@/lib/grades'
+import { percentageToGCSEGradeLabel, percentageToGCSEGrade, gcseGradeColor } from '@/lib/grades'
 import { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -288,12 +288,12 @@ export default function AnalyticsPage() {
                           </div>
                           <div className="min-w-0">
                             <p className="text-[11px] uppercase tracking-wider text-muted-foreground">
-                              Avg Score
+                              Working At Grade
                             </p>
-                            <p className="text-xl font-bold tabular-nums text-foreground">
-                              {averagePracticeScore}%
+                            <p className={`text-xl font-bold tabular-nums ${gcseGradeColor(percentageToGCSEGrade(averagePracticeScore))}`}>
+                              Grade {percentageToGCSEGrade(averagePracticeScore)}
                             </p>
-                            <p className="text-[11px] text-muted-foreground">across all activities</p>
+                            <p className="text-[11px] text-muted-foreground">based on avg score ({averagePracticeScore}%)</p>
                           </div>
                         </div>
                       </CardContent>

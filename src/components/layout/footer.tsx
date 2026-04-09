@@ -11,7 +11,6 @@ const FOOTER_SECTIONS = [
       { href: '/games', label: 'Games' },
       { href: '/practice', label: 'Practice' },
       { href: '/resources', label: 'Resources' },
-      { href: '/exam-guide', label: 'Exam Guide' },
       { href: '/pricing', label: 'Pricing' },
     ],
   },

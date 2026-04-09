@@ -35,7 +35,7 @@ import {
   DEMO_YEAR_GROUPS,
   DEMO_STATS,
 } from "@/data/demo-data"
-import { percentageToGCSEGrade } from "@/lib/grades"
+import { percentageToGCSEGrade, gcseGradeColor, predictedGradeColor, formatReadingAge } from "@/lib/grades"
 
 // ── Date range multipliers (pretend variation) ──────────────
 type DateRange = "week" | "month" | "term" | "year"
@@ -882,10 +882,15 @@ export default function AnalyticsPage() {
                       {student.yearGroup} &middot; {student.className}
                     </p>
                   </div>
-                  <div className="text-right shrink-0">
-                    <p className={`text-sm font-bold ${progressTextColor(student.overallProgress)}`}>
-                      {student.overallProgress}% <span className="text-xs font-normal text-muted-foreground">(G{percentageToGCSEGrade(student.overallProgress)})</span>
-                    </p>
+                  <div className="text-right shrink-0 space-y-0.5">
+                    <div className="flex items-center gap-2 justify-end">
+                      <span className="text-[10px] text-muted-foreground/70 uppercase">WAG</span>
+                      <span className={`text-sm font-bold ${gcseGradeColor(student.workingAtGrade)}`}>{student.workingAtGrade}</span>
+                      <span className="text-[10px] text-muted-foreground/70 uppercase">Pred</span>
+                      <span className={`text-sm font-bold ${predictedGradeColor(student.predictedGrade, student.workingAtGrade)}`}>{student.predictedGrade}</span>
+                      <span className="text-[10px] text-muted-foreground/70 uppercase">Tgt</span>
+                      <span className="text-sm font-bold text-cyan-400">{student.targetGrade}</span>
+                    </div>
                     {ragBadge(student.overallProgress)}
                   </div>
                 </Link>
@@ -937,9 +942,17 @@ export default function AnalyticsPage() {
                           <p className="text-xs text-red-400/80 truncate">{student.riskReason}</p>
                         </div>
                         <div className="flex items-center gap-3 shrink-0">
-                          <Badge variant="destructive" className="text-red-300 bg-red-500/15 hidden md:inline-flex">
-                            {student.overallProgress}% (G{percentageToGCSEGrade(student.overallProgress)})
-                          </Badge>
+                          <div className="hidden md:flex items-center gap-1.5">
+                            <Badge variant="destructive" className="text-red-300 bg-red-500/15">
+                              WAG {student.workingAtGrade}
+                            </Badge>
+                            <Badge className={`${predictedGradeColor(student.predictedGrade, student.workingAtGrade) === 'text-emerald-400' ? 'bg-emerald-500/15 text-emerald-300' : predictedGradeColor(student.predictedGrade, student.workingAtGrade) === 'text-red-400' ? 'bg-red-500/15 text-red-300' : 'bg-amber-500/15 text-amber-300'} border-0`}>
+                              Pred {student.predictedGrade}
+                            </Badge>
+                            <Badge className="bg-cyan-500/15 text-cyan-300 border-0">
+                              Tgt {student.targetGrade}
+                            </Badge>
+                          </div>
                           <ChevronRight className="w-4 h-4 text-neutral-600 group-hover:text-foreground/80" />
                         </div>
                       </Link>

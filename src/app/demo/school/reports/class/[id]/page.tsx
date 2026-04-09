@@ -5,7 +5,7 @@ import Link from "next/link";
 import { toast } from "sonner";
 import { DEMO_CLASSES, DEMO_STUDENTS } from "@/data/demo-data";
 import { downloadCSV } from "@/lib/download-csv";
-import { percentageToGCSEGrade } from "@/lib/grades";
+import { percentageToGCSEGrade, gcseGradeColor, predictedGradeColor, formatReadingAge } from "@/lib/grades";
 
 function scoreToGrade(score: number): string {
   return String(percentageToGCSEGrade(score));
@@ -106,6 +106,17 @@ export default function ClassReportPage() {
       ? Math.round(allStudents.reduce((sum, s) => sum + s.averageScore, 0) / allStudents.length)
       : 0;
   const classVsSchool = classAvgScore - schoolAvg;
+
+  // Compute class-level grade averages
+  const classAvgWorkingAt = students.length > 0
+    ? +(students.reduce((sum, s) => sum + s.workingAtGrade, 0) / students.length).toFixed(1)
+    : percentageToGCSEGrade(classAvgScore);
+  const classAvgPredicted = students.length > 0
+    ? +(students.reduce((sum, s) => sum + s.predictedGrade, 0) / students.length).toFixed(1)
+    : percentageToGCSEGrade(classAvgScore);
+  const classAvgTarget = students.length > 0
+    ? +(students.reduce((sum, s) => sum + s.targetGrade, 0) / students.length).toFixed(1)
+    : percentageToGCSEGrade(classAvgScore) + 1;
 
   // Module performance analysis
   const modulePerformance = (() => {
@@ -306,13 +317,29 @@ export default function ClassReportPage() {
           <h2 className="text-lg font-semibold text-neutral-100 print:text-black mb-4">
             Class Statistics
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 text-sm">
             <div className="bg-neutral-800/50 print:bg-neutral-100 rounded-lg p-4 text-center">
-              <div className="text-2xl font-bold text-neutral-100 print:text-black">
-                {classAvgScore}%
+              <div className={`text-2xl font-bold ${gradeColor(String(Math.round(classAvgWorkingAt)))}`}>
+                Grade {classAvgWorkingAt}
               </div>
               <div className="text-neutral-500 print:text-neutral-600 text-xs mt-1">
-                Average Score
+                Avg Working At
+              </div>
+            </div>
+            <div className="bg-neutral-800/50 print:bg-neutral-100 rounded-lg p-4 text-center">
+              <div className={`text-2xl font-bold ${Number(classAvgPredicted) > Number(classAvgWorkingAt) ? "text-emerald-400 print:text-emerald-700" : Number(classAvgPredicted) < Number(classAvgWorkingAt) ? "text-red-400 print:text-red-700" : "text-amber-400 print:text-amber-700"}`}>
+                Grade {classAvgPredicted}
+              </div>
+              <div className="text-neutral-500 print:text-neutral-600 text-xs mt-1">
+                Avg Predicted
+              </div>
+            </div>
+            <div className="bg-neutral-800/50 print:bg-neutral-100 rounded-lg p-4 text-center">
+              <div className="text-2xl font-bold text-cyan-400 print:text-cyan-700">
+                Grade {classAvgTarget}
+              </div>
+              <div className="text-neutral-500 print:text-neutral-600 text-xs mt-1">
+                Avg Target
               </div>
             </div>
             <div className="bg-neutral-800/50 print:bg-neutral-100 rounded-lg p-4 text-center">
@@ -329,14 +356,6 @@ export default function ClassReportPage() {
               </div>
               <div className="text-neutral-500 print:text-neutral-600 text-xs mt-1">
                 Students
-              </div>
-            </div>
-            <div className="bg-neutral-800/50 print:bg-neutral-100 rounded-lg p-4 text-center">
-              <div className={`text-2xl font-bold ${gradeColor(scoreToGrade(classAvgScore))}`}>
-                Grade {scoreToGrade(classAvgScore)}
-              </div>
-              <div className="text-neutral-500 print:text-neutral-600 text-xs mt-1">
-                Class Grade
               </div>
             </div>
           </div>
@@ -432,13 +451,16 @@ export default function ClassReportPage() {
                       Student
                     </th>
                     <th className="text-center px-3 py-2.5 font-semibold text-neutral-300 print:text-black">
-                      Avg Score
+                      Working At
                     </th>
                     <th className="text-center px-3 py-2.5 font-semibold text-neutral-300 print:text-black">
-                      Grade
+                      Predicted
                     </th>
                     <th className="text-center px-3 py-2.5 font-semibold text-neutral-300 print:text-black">
-                      Progress
+                      Target
+                    </th>
+                    <th className="text-center px-3 py-2.5 font-semibold text-neutral-300 print:text-black">
+                      Reading Age
                     </th>
                     <th className="text-center px-3 py-2.5 font-semibold text-neutral-300 print:text-black">
                       Completed
@@ -463,14 +485,17 @@ export default function ClassReportPage() {
                         <td className="px-3 py-2.5 text-neutral-200 print:text-black font-medium">
                           {s.name}
                         </td>
-                        <td className="px-3 py-2.5 text-center text-neutral-300 print:text-black">
-                          {s.averageScore}%
+                        <td className={`px-3 py-2.5 text-center font-bold ${gradeColor(String(s.workingAtGrade))}`}>
+                          {s.workingAtGrade}
                         </td>
-                        <td className={`px-3 py-2.5 text-center font-semibold ${gradeColor(grade)}`}>
-                          Grade {grade}
+                        <td className={`px-3 py-2.5 text-center font-bold ${s.predictedGrade > s.workingAtGrade ? "text-emerald-400 print:text-emerald-700" : s.predictedGrade < s.workingAtGrade ? "text-red-400 print:text-red-700" : "text-amber-400 print:text-amber-700"}`}>
+                          {s.predictedGrade}
                         </td>
-                        <td className="px-3 py-2.5 text-center text-neutral-300 print:text-black">
-                          {s.overallProgress}%
+                        <td className="px-3 py-2.5 text-center font-semibold text-cyan-400 print:text-cyan-700">
+                          {s.targetGrade}
+                        </td>
+                        <td className="px-3 py-2.5 text-center text-neutral-400 print:text-neutral-600 text-xs">
+                          {s.readingAge ? formatReadingAge(s.readingAge) : "--"}
                         </td>
                         <td className="px-3 py-2.5 text-center text-neutral-400 print:text-neutral-600">
                           {s.assignmentsCompleted}/{s.assignmentsTotal}

@@ -952,8 +952,8 @@ export default function HomeworkGeneratorDemo() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <FormSelect
                   label="Class"
-                  value=""
-                  onChange={() => {}}
+                  value="Select class..."
+                  onChange={() => showToast("Class selection available with full account")}
                   options={[
                     "Select class...",
                     "Year 10A - English Literature",

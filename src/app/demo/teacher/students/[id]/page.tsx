@@ -43,6 +43,7 @@ import {
 } from "@/lib/grades"
 import GradeProgressCard from "@/components/GradeProgressCard"
 import GradeRecommendations from "@/components/GradeRecommendations"
+import ReadingProfileCard from "@/components/ReadingProfileCard"
 
 function scoreColor(score: number) {
   if (score >= 70) return "text-green-400"
@@ -383,6 +384,17 @@ export default function TeacherStudentProfilePage() {
             />
           </CardContent>
         </Card>
+
+        {/* ── Reading Profile ────────────────────────────────────────── */}
+        <div className="mb-8">
+          <ReadingProfileCard
+            readingAge={student.readingAge}
+            decodingAge={student.decodingAge}
+            fluencyAge={student.fluencyAge}
+            assessmentDate={student.readingAgeAssessmentDate}
+            yearGroup={student.yearGroup}
+          />
+        </div>
 
         {/* ── Topic Mastery Map ──────────────────────────────────────── */}
         <Card className="bg-white/[0.02] border-white/5 mb-8">

@@ -1168,7 +1168,6 @@ export default function ForSchoolsPage() {
                 { label: "Courses", href: "/courses" },
                 { label: "Practice", href: "/practice" },
                 { label: "Revision", href: "/revision" },
-                { label: "Exam Guide", href: "/exam-guide" },
                 { label: "Log in", href: "/auth/login" },
               ].map((link) => (
                 <Link

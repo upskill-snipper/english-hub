@@ -268,6 +268,16 @@ export function isGCSEYearGroup(yearGroup: string | number): boolean {
 }
 
 /**
+ * Format a reading age in months to "Xy Zm" format.
+ * e.g. 148 => "12y 4m"
+ */
+export function formatReadingAge(months: number): string {
+  const y = Math.floor(months / 12)
+  const m = months % 12
+  return `${y}y ${m}m`
+}
+
+/**
  * Format a score display based on year group.
  * Post-Y9: shows "Grade X" only (no percentages).
  * Y7-Y9: shows "X%" with grade in brackets.

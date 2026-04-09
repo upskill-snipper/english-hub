@@ -30,6 +30,7 @@ import {
 } from "@/data/reading-passages"
 import {
   calculateReadingAge,
+  scoreAnswer,
   type ComprehensionAnswer,
   type DecodingAnswer,
   type FluencyTiming,
@@ -38,7 +39,7 @@ import {
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
-type TestPhase = "age-input" | "passage" | "questions" | "decoding" | "complete"
+type TestPhase = "age-input" | "passage" | "questions" | "decoding" | "ceiling-reached" | "complete"
 
 interface TestState {
   phase: TestPhase
@@ -56,6 +57,10 @@ interface TestState {
   // Question state
   currentQuestionIndex: number
   currentAnswer: string
+  // Ceiling rule tracking
+  consecutiveWrong: number
+  passageScores: { passageIndex: number; correct: number; total: number }[]
+  ceilingReached: boolean
 }
 
 // ─── Timer Display ───────────────────────────────────────────────────────────
@@ -436,6 +441,48 @@ function CompletingPhase() {
   )
 }
 
+// ─── Ceiling Reached Phase ──────────────────────────────────────────────────
+
+function CeilingReachedPhase({ onContinue }: { onContinue: () => void }) {
+  return (
+    <div className="mx-auto max-w-lg space-y-6">
+      <Card>
+        <CardContent className="pt-6 space-y-5">
+          <div className="flex flex-col items-center text-center space-y-3">
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-500/10">
+              <CheckCircle className="h-6 w-6 text-emerald-400" />
+            </div>
+            <h2 className="text-lg font-bold text-white/90">
+              Assessment complete
+            </h2>
+            <p className="text-sm text-white/60 leading-relaxed max-w-sm">
+              We have enough data to calculate your reading age. You do not need
+              to continue with the remaining passages.
+            </p>
+          </div>
+
+          <Separator className="bg-white/10" />
+
+          <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+            <div className="flex items-start gap-2">
+              <BookOpen className="h-4 w-4 text-blue-400 mt-0.5 shrink-0" />
+              <p className="text-xs text-white/50">
+                Your score is based on the passages you completed. Passages you
+                did not attempt do not affect your result.
+              </p>
+            </div>
+          </div>
+
+          <Button className="w-full" onClick={onContinue}>
+            Continue to Word Recognition
+            <ArrowRight className="h-4 w-4 ml-2" />
+          </Button>
+        </CardContent>
+      </Card>
+    </div>
+  )
+}
+
 // ─── Main Test Component ─────────────────────────────────────────────────────
 
 export default function ReadingTestPage() {
@@ -462,6 +509,9 @@ export default function ReadingTestPage() {
     decodingStartTime: null,
     currentQuestionIndex: 0,
     currentAnswer: "",
+    consecutiveWrong: 0,
+    passageScores: [],
+    ceilingReached: false,
   })
 
   const totalSteps = passages.length * 2 + 1 // passages + questions + decoding
@@ -518,13 +568,75 @@ export default function ReadingTestPage() {
     const question = passage.questions[state.currentQuestionIndex]
     if (!question) return
 
-    const newAnswers = [
-      ...state.comprehensionAnswers,
-      { questionId: question.id, answer: state.currentAnswer },
-    ]
+    const thisAnswer: ComprehensionAnswer = {
+      questionId: question.id,
+      answer: state.currentAnswer,
+    }
+    const newAnswers = [...state.comprehensionAnswers, thisAnswer]
+
+    // Score this answer to track ceiling rule
+    const pointsEarned = scoreAnswer(thisAnswer, question)
+    const isCorrect = pointsEarned > 0
+    const newConsecutiveWrong = isCorrect ? 0 : state.consecutiveWrong + 1
 
     const isLastQuestion = state.currentQuestionIndex === passage.questions.length - 1
     const isLastPassage = state.currentPassageIndex === passages.length - 1
+
+    // Build updated passage scores when finishing a passage
+    let newPassageScores = state.passageScores
+    let shouldTriggerCeiling = false
+
+    // Check ceiling: 3 consecutive wrong answers on current passage
+    if (newConsecutiveWrong >= 3) {
+      shouldTriggerCeiling = true
+    }
+
+    if (isLastQuestion) {
+      // Calculate this passage's score
+      const passageQuestionIds = new Set(passage.questions.map((q) => q.id))
+      const passageAnswers = newAnswers.filter((a) =>
+        passageQuestionIds.has(a.questionId)
+      )
+      let passageCorrect = 0
+      for (const a of passageAnswers) {
+        const q = passage.questions.find((pq) => pq.id === a.questionId)
+        if (q && scoreAnswer(a, q) > 0) passageCorrect++
+      }
+
+      const newScore = {
+        passageIndex: state.currentPassageIndex,
+        correct: passageCorrect,
+        total: passage.questions.length,
+      }
+      newPassageScores = [...state.passageScores, newScore]
+
+      // Check ceiling: scored 0-1 out of 4 on two consecutive passages
+      if (newPassageScores.length >= 2) {
+        const last = newPassageScores[newPassageScores.length - 1]
+        const secondLast = newPassageScores[newPassageScores.length - 2]
+        if (
+          last.correct <= 1 &&
+          secondLast.correct <= 1 &&
+          last.passageIndex === secondLast.passageIndex + 1
+        ) {
+          shouldTriggerCeiling = true
+        }
+      }
+    }
+
+    if (shouldTriggerCeiling) {
+      // End comprehension early — show ceiling message
+      setState((prev) => ({
+        ...prev,
+        comprehensionAnswers: newAnswers,
+        consecutiveWrong: newConsecutiveWrong,
+        passageScores: newPassageScores,
+        ceilingReached: true,
+        phase: "ceiling-reached",
+        currentAnswer: "",
+      }))
+      return
+    }
 
     if (isLastQuestion) {
       if (isLastPassage) {
@@ -532,6 +644,8 @@ export default function ReadingTestPage() {
         setState((prev) => ({
           ...prev,
           comprehensionAnswers: newAnswers,
+          consecutiveWrong: newConsecutiveWrong,
+          passageScores: newPassageScores,
           phase: "decoding",
           currentDecodingIndex: 0,
           decodingStartTime: Date.now(),
@@ -542,6 +656,8 @@ export default function ReadingTestPage() {
         setState((prev) => ({
           ...prev,
           comprehensionAnswers: newAnswers,
+          consecutiveWrong: newConsecutiveWrong,
+          passageScores: newPassageScores,
           phase: "passage",
           currentPassageIndex: prev.currentPassageIndex + 1,
           passageStartTime: Date.now(),
@@ -554,6 +670,8 @@ export default function ReadingTestPage() {
       setState((prev) => ({
         ...prev,
         comprehensionAnswers: newAnswers,
+        consecutiveWrong: newConsecutiveWrong,
+        passageScores: newPassageScores,
         currentQuestionIndex: prev.currentQuestionIndex + 1,
         currentAnswer: "",
       }))
@@ -563,6 +681,8 @@ export default function ReadingTestPage() {
     state.currentQuestionIndex,
     state.currentAnswer,
     state.comprehensionAnswers,
+    state.consecutiveWrong,
+    state.passageScores,
     passages,
   ])
 
@@ -571,6 +691,15 @@ export default function ReadingTestPage() {
       ...prev,
       phase: "passage",
       passageStartTime: Date.now(), // reset timer
+    }))
+  }, [])
+
+  const handleCeilingContinue = useCallback(() => {
+    setState((prev) => ({
+      ...prev,
+      phase: "decoding",
+      currentDecodingIndex: 0,
+      decodingStartTime: Date.now(),
     }))
   }, [])
 
@@ -619,12 +748,22 @@ export default function ReadingTestPage() {
     // Gather all questions from the passages we used
     const allQuestions = passages.flatMap((p) => p.questions)
 
+    // Calculate how many passages were actually attempted
+    const attemptedPassageIds = new Set<string>()
+    for (const a of state.comprehensionAnswers) {
+      const passageId = a.questionId.replace(/q\d+$/, "")
+      attemptedPassageIds.add(passageId)
+    }
+
     const input: AssessmentInput = {
       comprehensionAnswers: state.comprehensionAnswers,
       decodingAnswers: state.decodingAnswers,
       fluencyTimings: state.fluencyTimings,
       questions: allQuestions,
       decodingWords: decodingWordSet,
+      ceilingReached: state.ceilingReached,
+      passagesAttempted: attemptedPassageIds.size,
+      totalPassages: passages.length,
     }
 
     const result = calculateReadingAge(input)
@@ -652,6 +791,7 @@ export default function ReadingTestPage() {
     state.decodingAnswers,
     state.fluencyTimings,
     state.chronologicalAge,
+    state.ceilingReached,
     passages,
     decodingWordSet,
     router,
@@ -673,7 +813,7 @@ export default function ReadingTestPage() {
           <span className="text-white/60">Test</span>
         </div>
 
-        {state.phase !== "age-input" && state.phase !== "complete" && (
+        {state.phase !== "age-input" && state.phase !== "complete" && state.phase !== "ceiling-reached" && (
           <TestProgress
             currentStep={currentStep}
             totalSteps={totalSteps}
@@ -708,6 +848,10 @@ export default function ReadingTestPage() {
           onSubmitAnswer={handleSubmitAnswer}
           onBack={handleBackToPassage}
         />
+      )}
+
+      {state.phase === "ceiling-reached" && (
+        <CeilingReachedPhase onContinue={handleCeilingContinue} />
       )}
 
       {state.phase === "decoding" && (

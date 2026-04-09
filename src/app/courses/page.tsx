@@ -330,16 +330,6 @@ export default function CourseCataloguePage() {
             confidence. Pick your level, choose a course, and start learning
             today.
           </p>
-          <p className="mt-2 text-sm text-muted-foreground">
-            Need to understand your exam structure first?{' '}
-            <Link
-              href="/exam-guide"
-              className="text-primary underline underline-offset-2 hover:text-primary/80 font-medium"
-            >
-              Check out our comprehensive Exam Guide
-            </Link>
-            .
-          </p>
         </div>
       </section>
 
@@ -377,23 +367,6 @@ export default function CourseCataloguePage() {
 
       {/* ── Main content ────────────────────────────────────────── */}
       <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        {selectedBoard && (
-          <div className="mb-5">
-            <Badge
-              variant="secondary"
-              className="bg-blue-500/10 text-blue-400 hover:bg-blue-500/20"
-              render={
-                <Link
-                  href={`/exam-guide/${selectedBoard.toLowerCase()}`}
-                />
-              }
-            >
-              Showing courses for {selectedBoard} &mdash; View exam guide
-              &rarr;
-            </Badge>
-          </div>
-        )}
-
         {/* Category navigation bar */}
         <div className="mb-6 flex flex-wrap gap-2 rounded-xl border border-border/60 bg-muted/40 p-1.5">
           {CATEGORIES.map((cat) => (

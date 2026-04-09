@@ -123,7 +123,7 @@ export default function ProgressPage() {
         </div>
 
         {/* Overview Cards */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-6">
           <div className="bg-card rounded-xl border border-border p-4 text-center">
             <p className="text-3xl font-bold text-foreground">
               Grade {percentageToGCSEGrade(student.averageScore)}
@@ -133,26 +133,32 @@ export default function ProgressPage() {
             </LearningTip>
           </div>
           <div className="bg-card rounded-xl border border-border p-4 text-center">
-            <p className="text-3xl font-bold text-primary">
-              {student.totalEssays}
-            </p>
-            <p className="text-sm text-muted-foreground mt-1">Essays Written</p>
-          </div>
-          <div className="bg-card rounded-xl border border-border p-4 text-center">
             <p
               className={`text-3xl font-bold ${
                 parseInt(student.projectedGrade) >= parseInt(student.targetGrade)
                   ? "text-green-600"
+                  : parseInt(student.projectedGrade) < percentageToGCSEGrade(student.averageScore)
+                  ? "text-red-600"
                   : "text-amber-600"
               }`}
             >
               Grade {student.projectedGrade}
             </p>
             <LearningTip categories={['grade']} side="bottom">
-              <p className="text-sm text-muted-foreground mt-1">
-                Projected (target: Grade {student.targetGrade})
-              </p>
+              <p className="text-sm text-muted-foreground mt-1">Predicted Grade</p>
             </LearningTip>
+          </div>
+          <div className="bg-card rounded-xl border border-border p-4 text-center">
+            <p className="text-3xl font-bold text-cyan-600">
+              Grade {student.targetGrade}
+            </p>
+            <p className="text-sm text-muted-foreground mt-1">Target Grade</p>
+          </div>
+          <div className="bg-card rounded-xl border border-border p-4 text-center">
+            <p className="text-3xl font-bold text-primary">
+              {student.totalEssays}
+            </p>
+            <p className="text-sm text-muted-foreground mt-1">Essays Written</p>
           </div>
           <div className="bg-card rounded-xl border border-border p-4 text-center">
             <p className="text-3xl font-bold text-green-600">

@@ -43,7 +43,7 @@ import {
   DEMO_YEAR_GROUPS,
   DEMO_STATS,
 } from "@/data/demo-data"
-import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor } from "@/lib/grades"
+import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor, predictedGradeColor, formatReadingAge } from "@/lib/grades"
 
 // ── Derived data ──────────────────────────────────────────────────────────────
 
@@ -993,15 +993,16 @@ export default function ReportsPage() {
                 {classStudents.length > 0 ? (
                   <div className="overflow-x-auto">
                     <table className="w-full text-sm">
-                      <thead><tr className="border-b border-border text-muted-foreground"><th className="text-left py-3 pr-4">Student</th><th className="text-left py-3 pr-4">Progress</th><th className="text-left py-3 pr-4 w-[180px]">Progress Bar</th><th className="text-left py-3 pr-4">Last Active</th><th className="text-left py-3 pr-4">At-Risk</th><th className="text-left py-3">RAG</th></tr></thead>
+                      <thead><tr className="border-b border-border text-muted-foreground"><th className="text-left py-3 pr-4">Student</th><th className="text-center py-3 pr-4">Working At</th><th className="text-center py-3 pr-4">Predicted</th><th className="text-center py-3 pr-4">Target</th><th className="text-left py-3 pr-4">Last Active</th><th className="text-left py-3 pr-4">At-Risk</th><th className="text-left py-3">RAG</th></tr></thead>
                       <tbody>
                         {classStudents.map((s) => {
                           const rag = getRagStatus(s.overallProgress)
                           return (
                             <tr key={s.id} className="border-b border-border/50 hover:bg-muted/50 transition-colors">
                               <td className="py-3 pr-4 font-medium text-foreground">{s.name}</td>
-                              <td className="py-3 pr-4 text-foreground font-semibold">{s.overallProgress}%</td>
-                              <td className="py-3 pr-4"><div className="w-full bg-muted rounded-full h-2"><div className={`h-2 rounded-full ${rag === "green" ? "bg-emerald-500" : rag === "amber" ? "bg-amber-500" : "bg-red-500"}`} style={{ width: `${s.overallProgress}%` }} /></div></td>
+                              <td className={`py-3 pr-4 text-center font-bold ${gcseGradeColor(s.workingAtGrade)}`}>{s.workingAtGrade}</td>
+                              <td className={`py-3 pr-4 text-center font-bold ${predictedGradeColor(s.predictedGrade, s.workingAtGrade)}`}>{s.predictedGrade}</td>
+                              <td className="py-3 pr-4 text-center font-bold text-cyan-400">{s.targetGrade}</td>
                               <td className="py-3 pr-4 text-muted-foreground">{s.lastActive}</td>
                               <td className="py-3 pr-4">{s.atRisk ? <Badge className="bg-red-500/20 text-red-400 border-red-500/30">Yes</Badge> : <span className="text-muted-foreground/70">--</span>}</td>
                               <td className="py-3"><Badge className={ragColors[rag]}>{rag.toUpperCase()}</Badge></td>
@@ -1065,9 +1066,19 @@ export default function ReportsPage() {
                     <h2 className="text-2xl font-bold text-foreground">{selectedStudent.name}</h2>
                     <p className="text-foreground/80 mt-1">{selectedStudent.className} | {selectedStudent.yearGroup}</p>
                   </div>
-                  <div className="text-right">
-                    <p className="text-xs text-muted-foreground">Predicted Grade</p>
-                    <p className="text-4xl font-bold text-foreground mt-1">{getPredictedGrade(selectedStudent.overallProgress)}</p>
+                  <div className="text-right flex items-center gap-5">
+                    <div className="text-center">
+                      <p className="text-xs text-muted-foreground">Working At</p>
+                      <p className={`text-3xl font-bold mt-1 ${gcseGradeColor(selectedStudent.workingAtGrade)}`}>{selectedStudent.workingAtGrade}</p>
+                    </div>
+                    <div className="text-center">
+                      <p className="text-xs text-muted-foreground">Predicted</p>
+                      <p className={`text-3xl font-bold mt-1 ${predictedGradeColor(selectedStudent.predictedGrade, selectedStudent.workingAtGrade)}`}>{selectedStudent.predictedGrade}</p>
+                    </div>
+                    <div className="text-center">
+                      <p className="text-xs text-muted-foreground">Target</p>
+                      <p className="text-3xl font-bold text-cyan-400 mt-1">{selectedStudent.targetGrade}</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1092,10 +1103,10 @@ export default function ReportsPage() {
                 <div>
                   <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-3">Assessment Summary</h3>
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                    <div className="bg-muted/50 rounded-lg p-4 text-center"><p className="text-2xl font-bold text-foreground">{selectedStudent.averageScore}% <span className="text-lg font-normal text-muted-foreground">(G{percentageToGCSEGrade(selectedStudent.averageScore)})</span></p><p className="text-xs text-muted-foreground/70">Avg Score</p></div>
-                    <div className="bg-muted/50 rounded-lg p-4 text-center"><p className="text-2xl font-bold text-foreground">{selectedStudent.assignmentsCompleted}/{selectedStudent.assignmentsTotal}</p><p className="text-xs text-muted-foreground/70">Assignments</p></div>
-                    <div className="bg-muted/50 rounded-lg p-4 text-center"><p className="text-2xl font-bold text-foreground">{selectedStudent.modulesCompleted}</p><p className="text-xs text-muted-foreground/70">Modules Done</p></div>
-                    <div className="bg-muted/50 rounded-lg p-4 text-center"><p className="text-2xl font-bold text-foreground">{selectedStudent.mockExams.length > 0 ? selectedStudent.mockExams[0].grade : "--"}</p><p className="text-xs text-muted-foreground/70">Latest Mock Grade</p></div>
+                    <div className="bg-muted/50 rounded-lg p-4 text-center"><p className={`text-2xl font-bold ${gcseGradeColor(selectedStudent.workingAtGrade)}`}>Grade {selectedStudent.workingAtGrade}</p><p className="text-xs text-muted-foreground/70">Working At Grade</p></div>
+                    <div className="bg-muted/50 rounded-lg p-4 text-center"><p className={`text-2xl font-bold ${predictedGradeColor(selectedStudent.predictedGrade, selectedStudent.workingAtGrade)}`}>Grade {selectedStudent.predictedGrade}</p><p className="text-xs text-muted-foreground/70">Predicted Grade</p></div>
+                    <div className="bg-muted/50 rounded-lg p-4 text-center"><p className="text-2xl font-bold text-cyan-400">Grade {selectedStudent.targetGrade}</p><p className="text-xs text-muted-foreground/70">Target Grade</p></div>
+                    <div className="bg-muted/50 rounded-lg p-4 text-center"><p className="text-2xl font-bold text-foreground">{selectedStudent.assignmentsCompleted}/{selectedStudent.assignmentsTotal}</p><p className="text-xs text-muted-foreground/70">Assignments</p>{selectedStudent.readingAge && <p className="text-xs text-muted-foreground mt-1">Reading Age: {formatReadingAge(selectedStudent.readingAge)}</p>}</div>
                   </div>
                 </div>
 
@@ -1295,9 +1306,13 @@ export default function ReportsPage() {
                               <div className={`w-2.5 h-2.5 rounded-full ${rag === "green" ? "bg-emerald-500" : rag === "amber" ? "bg-amber-500" : "bg-red-500"}`} />
                               <div><p className="text-sm font-medium text-foreground">{s.name}</p><p className="text-xs text-muted-foreground/70">{s.className}</p></div>
                             </div>
-                            <div className="flex items-center gap-4">
-                              <div className="w-24 bg-muted rounded-full h-2"><div className={`h-2 rounded-full ${rag === "green" ? "bg-emerald-500" : rag === "amber" ? "bg-amber-500" : "bg-red-500"}`} style={{ width: `${s.overallProgress}%` }} /></div>
-                              <span className="text-sm font-semibold text-foreground w-10 text-right">{s.overallProgress}%</span>
+                            <div className="flex items-center gap-3">
+                              <span className="text-xs text-muted-foreground">WAG</span>
+                              <span className={`text-sm font-bold ${gcseGradeColor(s.workingAtGrade)}`}>{s.workingAtGrade}</span>
+                              <span className="text-xs text-muted-foreground">Pred</span>
+                              <span className={`text-sm font-bold ${predictedGradeColor(s.predictedGrade, s.workingAtGrade)}`}>{s.predictedGrade}</span>
+                              <span className="text-xs text-muted-foreground">Tgt</span>
+                              <span className="text-sm font-bold text-cyan-400">{s.targetGrade}</span>
                               {s.atRisk && <Badge className="bg-red-500/20 text-red-400 border-red-500/30 text-xs">At Risk</Badge>}
                             </div>
                           </div>
