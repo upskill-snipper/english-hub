@@ -1,0 +1,103 @@
+'use client'
+
+import Link from 'next/link'
+import { ArrowLeft } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { Badge } from '@/components/ui/badge'
+import { InteractivePoemViewer, type PoemData } from '@/components/study'
+
+const poemData: PoemData = {
+  title: "Sonnet 29 -- 'I think of thee!'",
+  poet: 'Elizabeth Barrett Browning',
+  lines: [
+    { text: 'I think of thee! -- my thoughts do twine and bud', annotations: [{ type: 'Extended metaphor', note: 'Thoughts are compared to a vine plant that grows around a tree (her lover). "Twine and bud" suggests organic, natural growth -- her love is alive and flourishing.', color: '#10b981' }] },
+    { text: 'About thee, as wild vines, about a tree,', annotations: [{ type: 'Simile', note: '"Wild vines" suggests her thoughts are uncontrolled and natural. The tree (the lover) is the solid structure around which her thinking grows.', color: '#10b981' }] },
+    { text: 'Put out broad leaves, and soon there\'s nought to see', annotations: [{ type: 'Imagery', note: 'The vine grows so thickly that it obscures the tree entirely. Her thoughts about her lover have become so consuming that they obscure the real person.', color: '#f59e0b' }] },
+    { text: 'Except the straggling green which hides the wood.', annotations: [{ type: 'Key realisation', note: 'This is the problem she identifies: her fantasy ("straggling green") hides the reality ("wood"). Her imagined version of her lover has replaced the actual person.', color: '#ef4444' }] },
+    { text: 'Yet, O my palm-tree, be it understood', annotations: [{ type: 'Apostrophe', note: 'She addresses her lover directly as "my palm-tree" -- a warm, exotic, strong image. The exclamatory "O" shows emotional intensity. "Be it understood" signals an important correction coming.', color: '#8b5cf6' }] },
+    { text: 'I will not have my thoughts instead of thee', annotations: [{ type: 'Volta', note: 'The volta (turn) of the sonnet. EBB rejects fantasy in favour of reality. She does not want her imagined version -- she wants the real, physical person. This is a powerful assertion of desire.', color: '#ef4444' }] },
+    { text: 'Who art dearer, better! Rather, instantly,', annotations: [{ type: 'Exclamation', note: 'The exclamation and "Rather, instantly" convey urgency and passion. The real person is "dearer, better" than any fantasy -- a declaration of genuine, grounded love.', color: '#f59e0b' }] },
+    { text: 'Renew thy presence; as a strong tree should,', annotations: [{ type: 'Imperative', note: '"Renew thy presence" is a command -- EBB takes charge, demanding her lover\'s physical presence. The tree is now "strong", asserting the lover\'s masculine vitality.', color: '#3b82f6' }] },
+    { text: 'Rustle thy boughs and set thy trunk all bare,', annotations: [{ type: 'Sensual imagery', note: '"Set thy trunk all bare" has strong sensual and sexual undertones -- she desires physical intimacy, not just spiritual connection. Remarkably bold for a Victorian woman poet.', color: '#ef4444' }] },
+    { text: 'And let these bands of greenery which insphere thee', annotations: [{ type: 'Self-awareness', note: 'EBB acknowledges that her thoughts ("bands of greenery") have imprisoned ("insphere") her lover in a cage of fantasy. She is self-critical about her own idealisation.', color: '#8b5cf6' }] },
+    { text: 'Drop heavily down, -- burst, shattered, everywhere!', annotations: [{ type: 'Violent imagery', note: 'The vine-thoughts are violently destroyed -- "burst, shattered, everywhere!" The aggressive verbs and caesura create a sense of forceful breaking free. Fantasy is actively rejected.', color: '#ef4444' }] },
+    { text: 'Because, in this deep joy to see and hear thee', annotations: [{ type: 'Sensory language', note: '"See and hear" -- EBB wants physical, sensory experience of her lover, not abstract thoughts. The "deep joy" of reality surpasses any imagined pleasure.', color: '#10b981' }] },
+    { text: 'And breathe within thy shadow a new air,', annotations: [{ type: 'Intimacy', note: 'Breathing in his shadow suggests physical closeness -- sharing the same space and air. "New air" implies his presence transforms and renews her entire world.', color: '#10b981' }] },
+    { text: 'I do not think of thee -- I am too near thee.', annotations: [{ type: 'Paradox', note: 'The poem\'s brilliant final paradox: she began by thinking of him obsessively, but his actual presence makes thought unnecessary. Reality transcends imagination. Presence replaces absence.', color: '#ef4444' }] },
+  ],
+  context: `<p><strong>Elizabeth Barrett Browning (1806-1861)</strong> wrote this sonnet as part of <em>Sonnets from the Portuguese</em> (1850), a sequence of 44 love sonnets addressed to her husband, <strong>Robert Browning</strong>.</p>
+<p>The sonnets document their <strong>secret courtship</strong>. Elizabeth's controlling father forbade any of his children from marrying, so the couple courted in secret through letters and visits. They eventually eloped to Italy in 1846.</p>
+<p>As a woman writing passionate love poetry in the <strong>Victorian era</strong>, EBB was breaking significant conventions. Women were expected to be passive objects of love, not active desiring subjects. This sonnet is remarkable for its <strong>female sexual agency</strong> -- she demands her lover's physical presence and uses imagery with sensual undertones.</p>
+<p>The title "Sonnets from the Portuguese" was a private joke -- Robert called Elizabeth "my little Portuguese" because of her dark complexion, and the title disguised the poems as translations rather than personal confessions.</p>`,
+  summary: `The speaker confesses that she thinks obsessively about her lover. Using an extended metaphor, she compares her thoughts to wild vines growing around a tree -- they have become so thick that they hide the real person beneath.\n\nAt the volta, she rejects this fantasy. She does not want her imagined version of her lover -- she wants the real, physical person, who is "dearer, better" than any thought. She commands him to assert his physical presence and shatter her fantasies like breaking vines.\n\nThe poem ends with a paradox: when he is physically present, she does not need to think of him at all, because reality transcends imagination. The poem moves from obsessive thought to joyful presence, from fantasy to reality.`,
+  formAndStructure: `Form: Petrarchan (Italian) sonnet -- 14 lines with an octave (8 lines) and sestet (6 lines), though EBB loosens the traditional structure.\n\nVolta: The turn occurs at line 6 ("I will not have my thoughts instead of thee"), where the poem shifts from describing the problem (obsessive fantasy) to asserting the solution (demanding reality).\n\nRhyme scheme: Loosely ABBA ABBA CDC DCD, but EBB varies the Petrarchan form, reflecting her desire to break free from constraining forms -- mirroring the poem's thematic rejection of constraining thoughts.\n\nEnjambment: Heavy enjambment, especially in the octave, creates a sense of thoughts spilling over and growing uncontrollably, like the vine imagery.\n\nCaesura: Dramatic caesura in "Drop heavily down, -- burst, shattered, everywhere!" creates a violent breaking rhythm that enacts the shattering of fantasy.\n\nParadox: The final line reverses the opening -- from "I think of thee!" to "I do not think of thee", creating a complete structural arc from absence to presence.`,
+  keyQuotes: [
+    { quote: 'my thoughts do twine and bud', analysis: 'The vine metaphor presents her thoughts as organic and alive -- they grow naturally and uncontrollably. "Twine" suggests both affection and entanglement.', themes: ['Obsession', 'Nature', 'Growth'] },
+    { quote: 'the straggling green which hides the wood', analysis: 'Her fantasies ("green") have obscured the real person ("wood"). EBB recognises the danger of idealisation -- loving an idea rather than a person.', themes: ['Fantasy vs. reality', 'Idealisation'] },
+    { quote: 'O my palm-tree', analysis: 'A tender, intimate address that combines warmth (palm = exotic, strong) with possessiveness ("my"). The apostrophe creates emotional immediacy and directness.', themes: ['Intimacy', 'Desire', 'Tenderness'] },
+    { quote: 'I will not have my thoughts instead of thee', analysis: 'A powerful assertion of agency. EBB actively chooses reality over fantasy, demanding the physical person rather than settling for imagination. Remarkably bold for a Victorian woman.', themes: ['Female agency', 'Choice', 'Reality'] },
+    { quote: 'set thy trunk all bare', analysis: 'Sensual imagery with clear physical and sexual undertones. EBB desires to see her lover as he truly is -- stripped of her projections and physically present.', themes: ['Desire', 'Physicality', 'Honesty'] },
+    { quote: 'burst, shattered, everywhere!', analysis: 'Violent, explosive language destroys the vine-thoughts. The caesura and exclamation create a sense of forceful liberation. Fantasy must be actively destroyed, not gently set aside.', themes: ['Liberation', 'Violence', 'Decisiveness'] },
+    { quote: 'breathe within thy shadow a new air', analysis: 'Physical closeness -- sharing breath and space. His presence transforms her world ("new air"), suggesting renewal and the life-giving quality of genuine love.', themes: ['Intimacy', 'Renewal', 'Presence'] },
+    { quote: 'I do not think of thee -- I am too near thee', analysis: 'The paradoxical conclusion: physical presence makes thought redundant. Reality is so overwhelmingly superior to fantasy that the mind falls silent in the presence of the beloved.', themes: ['Paradox', 'Presence', 'Transcendence'] },
+  ],
+  languageDevices: [
+    { device: 'Extended metaphor (vine/tree)', example: 'my thoughts do twine and bud / About thee, as wild vines, about a tree', effect: 'The sustained comparison of thoughts to vines and the lover to a tree creates a vivid image of obsessive love as something organic but ultimately smothering. It gives the abstract (thought) a physical, visual form.', lineRef: 0 },
+    { device: 'Volta (turn)', example: 'I will not have my thoughts instead of thee', effect: 'The Petrarchan turn marks the shift from problem to resolution. EBB moves from describing passive obsession to actively demanding reality -- a structural enactment of female agency.', lineRef: 5 },
+    { device: 'Imperative verbs', example: 'Renew thy presence... Rustle thy boughs... set thy trunk all bare', effect: 'The commands assert EBB\'s authority and desire. A Victorian woman ordering her lover to present himself physically was remarkably bold and subverts expected gender dynamics.', lineRef: 7 },
+    { device: 'Caesura', example: 'Drop heavily down, -- burst, shattered, everywhere!', effect: 'The dramatic pause followed by explosive monosyllables physically enacts the violent destruction of fantasy. The rhythm itself shatters, mirroring the content.', lineRef: 10 },
+    { device: 'Paradox', example: 'I do not think of thee -- I am too near thee', effect: 'The final line reverses the opening, creating a complete emotional arc. Presence makes thought unnecessary -- a profound statement about authentic love transcending intellectual idealisation.', lineRef: 13 },
+    { device: 'Sensual imagery', example: 'set thy trunk all bare / breathe within thy shadow', effect: 'The physical, bodily imagery asserts sexual desire and intimacy, subverting Victorian expectations of feminine modesty and presenting female desire as natural and legitimate.', lineRef: 8 },
+    { device: 'Exclamatory tone', example: 'I think of thee! / burst, shattered, everywhere!', effect: 'Exclamation marks throughout convey passionate intensity. The poem is not a calm reflection but an urgent, emotionally charged declaration of desire and love.', lineRef: 0 },
+  ],
+}
+
+const COMPARE_POEMS = [
+  { title: "Love's Philosophy", href: '/revision/poetry/love-and-relationships/loves-philosophy', reason: 'Both use natural imagery to express desire, but Shelley persuades while EBB demands.' },
+  { title: "Porphyria's Lover", href: '/revision/poetry/love-and-relationships/porphyrias-lover', reason: 'Both explore desire for possession, but EBB seeks healthy presence while Browning\'s speaker seeks deadly control.' },
+  { title: 'Neutral Tones', href: '/revision/poetry/love-and-relationships/neutral-tones', reason: 'Contrasting tones -- EBB celebrates living love while Hardy mourns its death.' },
+]
+
+export default function Sonnet29Page() {
+  return (
+    <div className="space-y-6">
+      <div>
+        <Button
+          variant="ghost"
+          size="sm"
+          className="mb-3 -ml-2 text-muted-foreground"
+          render={<Link href="/revision/poetry" />}
+        >
+          <ArrowLeft className="size-3.5" />
+          Back to Poetry
+        </Button>
+        <div className="flex items-center gap-3 mb-1">
+          <Badge className="bg-rose-500/10 text-rose-400 border-rose-500/20">Love &amp; Relationships</Badge>
+          <Badge variant="outline">AQA Anthology</Badge>
+        </div>
+      </div>
+
+      <InteractivePoemViewer poem={poemData} />
+
+      {/* Compare With Section */}
+      <div className="rounded-xl border border-border bg-card p-5">
+        <h3 className="text-heading-sm font-heading text-foreground mb-3">Compare With</h3>
+        <div className="grid gap-3 sm:grid-cols-3">
+          {COMPARE_POEMS.map((p) => (
+            <div key={p.title} className="rounded-lg border border-border/60 bg-muted/30 p-3.5">
+              <p className="text-sm font-medium text-foreground mb-1">{p.title}</p>
+              <p className="text-xs text-muted-foreground mb-2.5">{p.reason}</p>
+              <Button
+                variant="outline"
+                size="xs"
+                render={<Link href={p.href} />}
+              >
+                Study poem
+              </Button>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
