@@ -2,9 +2,9 @@
 
 import { useState, useEffect, useMemo } from 'react'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { useAuthStore, useAuthUserLoading, useAuthProfile } from '@/store/auth-store'
-import { Menu, LogOut, School, Sparkles, BookOpen, ChevronDown } from 'lucide-react'
+import { Menu, LogOut, School, Sparkles, BookOpen, ChevronDown, RefreshCw } from 'lucide-react'
 import {
   Sheet,
   SheetContent,
@@ -69,9 +69,10 @@ export function Header() {
   const { user, isLoading } = useAuthUserLoading()
   const profile = useAuthProfile()
   const pathname = usePathname()
+  const router = useRouter()
   const [mobileOpen, setMobileOpen] = useState(false)
   const [isSchoolMember, setIsSchoolMember] = useState(false)
-  const { board, isHydrated: isBoardHydrated } = useBoard()
+  const { board, isHydrated: isBoardHydrated, clearBoard } = useBoard()
 
   const isPremium = profile?.subscription_status === 'pro'
 
@@ -225,15 +226,30 @@ export function Header() {
                       <Badge variant="secondary" className="shrink-0">{boardConfig.shortName}</Badge>
                     </div>
                     <p className="text-sm font-semibold text-foreground leading-tight">{boardConfig.fullName}</p>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="w-full"
-                      render={<Link href="/board-select?change=1" />}
-                      onClick={() => setMobileOpen(false)}
-                    >
-                      Change board
-                    </Button>
+                    <div className="flex flex-col gap-1.5">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="w-full"
+                        render={<Link href="/board-select?change=1" />}
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        Change board
+                      </Button>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          clearBoard()
+                          setMobileOpen(false)
+                          router.push('/board-select')
+                          router.refresh()
+                        }}
+                        className="inline-flex items-center justify-center gap-1.5 rounded-md px-3 py-1.5 text-xs font-medium text-destructive transition-colors hover:bg-destructive/10"
+                      >
+                        <RefreshCw className="h-3 w-3" aria-hidden="true" />
+                        Reset exam board
+                      </button>
+                    </div>
                   </div>
                 ) : (
                   <Button
@@ -366,6 +382,9 @@ function BoardSwitcher({
   board: ExamBoard | null
   isHydrated: boolean
 }) {
+  const router = useRouter()
+  const { clearBoard } = useBoard()
+
   // Avoid hydration mismatch — render a placeholder until the persisted store is ready.
   if (!isHydrated) {
     return <div className="h-8 w-20" aria-hidden="true" />
@@ -385,6 +404,12 @@ function BoardSwitcher({
         Select board
       </Button>
     )
+  }
+
+  const handleReset = () => {
+    clearBoard()
+    router.push('/board-select')
+    router.refresh()
   }
 
   return (
@@ -422,6 +447,10 @@ function BoardSwitcher({
           render={<Link href="/board-select?change=1" />}
         >
           Change board
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={handleReset} className="text-destructive focus:text-destructive">
+          <RefreshCw className="mr-2 h-3.5 w-3.5" aria-hidden="true" />
+          Reset exam board
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
