@@ -1,0 +1,528 @@
+'use client'
+
+import Link from 'next/link'
+import { ArrowLeft, BookOpen, GitCompare } from 'lucide-react'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { InteractivePoemViewer, type PoemData } from '@/components/study/InteractivePoemViewer'
+
+const dickinson: PoemData = {
+  title: 'I started Early \u2013 Took my Dog \u2013',
+  poet: 'Emily Dickinson',
+  lines: [
+    {
+      text: 'I started Early \u2013 Took my Dog \u2013',
+      annotations: [
+        {
+          type: 'Opening',
+          note: 'A deceptively simple opening. Past tense, first person, casual companion (the dog). The line sets up a familiar scene before the poem turns surreal.',
+          color: '#3b82f6',
+        },
+        {
+          type: 'Dashes',
+          note: 'Dickinson\u2019s famous dashes appear immediately. They create pauses inside the line, slowing the pace and giving each phrase its own breath.',
+          color: '#a855f7',
+        },
+      ],
+    },
+    {
+      text: 'And visited the Sea \u2013',
+      annotations: [
+        {
+          type: 'Verb',
+          note: '"Visited" is the verb you would use for a person, not a place. Dickinson treats the sea as if it were a friend or relative she has called on.',
+          color: '#10b981',
+        },
+        {
+          type: 'Key quote',
+          note: 'The sea is immediately personified. The whole poem will treat the ocean as a living, slightly threatening being.',
+          color: '#f59e0b',
+        },
+      ],
+    },
+    {
+      text: 'The Mermaids in the Basement',
+      annotations: [
+        {
+          type: 'Imagery',
+          note: 'The sea floor is reimagined as a "Basement". The domestic vocabulary makes the sea feel familiar but also surreal \u2014 a house with mermaids in the cellar.',
+          color: '#3b82f6',
+        },
+      ],
+    },
+    {
+      text: 'Came out to look at me \u2013',
+      annotations: [
+        {
+          type: 'Personification',
+          note: 'The mermaids are curious, like neighbours looking out of a window. The speaker is the visitor; the sea is at home.',
+          color: '#a855f7',
+        },
+      ],
+    },
+    { text: '' },
+    {
+      text: 'And Frigates \u2013 in the Upper Floor',
+      annotations: [
+        {
+          type: 'Extended metaphor',
+          note: 'The metaphor of the sea as a house continues. Ships ("Frigates") are the upper floor, mermaids are the basement. The sea has architecture.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: 'Extended Hempen Hands \u2013',
+      annotations: [
+        {
+          type: 'Imagery',
+          note: '"Hempen Hands" are ropes \u2014 the rigging of the ships. They reach out as if hands to greet the speaker. The animation of the inanimate is constant in this poem.',
+          color: '#3b82f6',
+        },
+      ],
+    },
+    {
+      text: 'Presuming Me to be a Mouse \u2013',
+      annotations: [
+        {
+          type: 'Self-image',
+          note: 'The speaker is so small to the ships that they treat her as a mouse. The image suggests vulnerability and powerlessness in the face of the sea.',
+          color: '#ef4444',
+        },
+      ],
+    },
+    {
+      text: 'Aground \u2013 upon the Sands \u2013',
+      annotations: [
+        {
+          type: 'Position',
+          note: '"Aground" usually describes a stranded ship. Here it describes the speaker, reinforcing how the boundary between human and nautical is blurring.',
+          color: '#a855f7',
+        },
+      ],
+    },
+    { text: '' },
+    {
+      text: 'But no Man moved Me \u2013 till the Tide',
+      annotations: [
+        {
+          type: 'Volta',
+          note: 'The poem turns. Until now, only ships and mermaids have appeared. Now a "Tide" arrives \u2014 personified as masculine and active.',
+          color: '#f59e0b',
+        },
+        {
+          type: 'Capitalisation',
+          note: 'Dickinson capitalises "Tide" and "Me", elevating both to the level of proper nouns. The encounter is staged like a meeting of two characters.',
+          color: '#a855f7',
+        },
+      ],
+    },
+    {
+      text: 'Went past my simple Shoe \u2013',
+      annotations: [
+        {
+          type: 'Intimacy',
+          note: 'The tide reaches the speaker\u2019s shoe. The contact is small and intimate \u2014 but also the beginning of something more invasive.',
+          color: '#3b82f6',
+        },
+      ],
+    },
+    {
+      text: 'And past my Apron \u2013 and my Belt \u2013',
+      annotations: [
+        {
+          type: 'Rising tide',
+          note: 'The water rises in stages: shoe, apron, belt. Dickinson catalogues the encroachment with each dash signalling the next level of immersion.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: 'And past my Bodice \u2013 too \u2013',
+      annotations: [
+        {
+          type: 'Sexual undertone',
+          note: 'The "Bodice" is the upper part of a woman\u2019s dress. The sea reaching past it carries an unmistakable note of sexual threat. "Too" sounds almost shocked \u2014 as if even she did not expect it.',
+          color: '#ef4444',
+        },
+        {
+          type: 'Key quote',
+          note: 'Dickinson uses the rising tide to suggest a dangerous, unwanted intimacy. The poem becomes uneasy here.',
+          color: '#f59e0b',
+        },
+      ],
+    },
+    { text: '' },
+    {
+      text: 'And made as He would eat me up \u2013',
+      annotations: [
+        {
+          type: 'Threat',
+          note: 'The sea is now actively threatening. "Eat me up" makes the tide a predator with a mouth. The pronoun "He" continues the masculine personification.',
+          color: '#ef4444',
+        },
+      ],
+    },
+    {
+      text: 'As wholly as a Dew',
+      annotations: [
+        {
+          type: 'Simile',
+          note: 'The speaker imagines being absorbed as completely as morning dew is taken up by a flower. The simile makes total annihilation sound delicate \u2014 a disturbing combination.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: 'Upon a Dandelion\u2019s Sleeve \u2013',
+      annotations: [
+        {
+          type: 'Domestic image',
+          note: 'A dandelion is given a "Sleeve" \u2014 another piece of clothing. The natural world is constantly being domesticated and humanised in Dickinson\u2019s vocabulary.',
+          color: '#3b82f6',
+        },
+      ],
+    },
+    {
+      text: 'And then \u2013 I started \u2013 too \u2013',
+      annotations: [
+        {
+          type: 'Echo',
+          note: '"Started" echoes the very first line ("I started Early"). The first "started" meant set out; this one means startled. The same word, two meanings, and the poem now has a current of fear.',
+          color: '#a855f7',
+        },
+      ],
+    },
+    { text: '' },
+    {
+      text: 'And He \u2013 He followed \u2013 close behind \u2013',
+      annotations: [
+        {
+          type: 'Pursuit',
+          note: 'The repeated "He \u2013 He" stutters with anxiety. The sea is no longer merely meeting the speaker \u2014 it is following her. The encounter has become a chase.',
+          color: '#ef4444',
+        },
+        {
+          type: 'Key quote',
+          note: 'The poem\u2019s most disturbing line. The personified sea behaves like a predatory man following a woman home.',
+          color: '#f59e0b',
+        },
+      ],
+    },
+    {
+      text: 'I felt His Silver Heel',
+      annotations: [
+        {
+          type: 'Imagery',
+          note: 'The sea\u2019s "Silver Heel" turns waves into the heel of a boot. The image is at once beautiful (silver) and threatening (heel about to step on her).',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: 'Upon my Ankle \u2013 Then my Shoes',
+      annotations: [
+        {
+          type: 'Reverse',
+          note: 'The waves are now coming up from behind. The pursuit follows the same path the tide rose earlier, in reverse \u2014 ankle, shoes \u2014 mirroring the earlier ascent.',
+          color: '#3b82f6',
+        },
+      ],
+    },
+    {
+      text: 'Would overflow with Pearl \u2013',
+      annotations: [
+        {
+          type: 'Beauty in danger',
+          note: '"Overflow with Pearl" turns the sea foam into precious jewels. Even at its most threatening, the sea is beautiful. Dickinson refuses to make it simply ugly or evil.',
+          color: '#a855f7',
+        },
+      ],
+    },
+    { text: '' },
+    {
+      text: 'Until We met the Solid Town \u2013',
+      annotations: [
+        {
+          type: 'Boundary',
+          note: 'Civilisation \u2014 the "Solid Town" \u2014 appears as the boundary between sea and land. The town is "Solid" in contrast to the fluid sea.',
+          color: '#3b82f6',
+        },
+      ],
+    },
+    {
+      text: 'No One He seemed to know \u2013',
+      annotations: [
+        {
+          type: 'Outsider',
+          note: 'The sea has no acquaintances in the town. The wild element is suddenly out of place in the human world. The pursuit ends because the pursuer no longer belongs.',
+          color: '#a855f7',
+        },
+      ],
+    },
+    {
+      text: 'And bowing \u2013 with a Mighty look \u2013',
+      annotations: [
+        {
+          type: 'Dignity',
+          note: 'The sea bows in farewell, like a courtly visitor who knows when to leave. The retreat is dignified \u2014 not a defeat, just a withdrawal.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: 'At me \u2013 The Sea withdrew \u2013',
+      annotations: [
+        {
+          type: 'Closing',
+          note: 'The sea pulls back. The encounter is over. The poem ends without commentary \u2014 the speaker is left to decide for herself what just happened.',
+          color: '#ef4444',
+        },
+        {
+          type: 'Key quote',
+          note: 'The understated closing. The drama is over but unresolved \u2014 the speaker is unhurt yet altered by the meeting.',
+          color: '#f59e0b',
+        },
+      ],
+    },
+  ],
+
+  context: `
+    <h3>Emily Dickinson (1830&ndash;1886)</h3>
+    <p>Dickinson was an American poet who lived almost her entire life in her family\u2019s house in Amherst, Massachusetts. She wrote nearly 1,800 poems, most of them never published in her lifetime. Her work is marked by short lines, distinctive dashes, unusual capitalisation and a mind interested in death, nature, faith and the inner life.</p>
+
+    <h3>Publication</h3>
+    <p>"I started Early \u2013 Took my Dog \u2013" was written around 1862 and published after Dickinson\u2019s death. Her early editors smoothed out her dashes and capitalisation; modern editions restore them, which matters because the punctuation is part of the meaning.</p>
+
+    <h3>Dickinson and the sea</h3>
+    <p>Dickinson rarely travelled and almost certainly never saw the ocean herself. The poem is therefore an imagined visit, not a record of one. The sea in her work tends to stand for huge, uncontrollable forces \u2014 sometimes God, sometimes death, sometimes desire.</p>
+
+    <h3>Reading the encounter</h3>
+    <p>Many critics read the poem as a coded encounter with male sexuality. The rising tide moves up the speaker\u2019s body in unmistakably bodily stages, the sea is personified as "He", and the pursuit is intimate and threatening. Other readers see it as an encounter with the sublime \u2014 with overwhelming natural force \u2014 or with death itself.</p>
+
+    <h3>Time and Place in this poem</h3>
+    <p>For the Edexcel Time and Place cluster, this poem captures a single visit to a single location. The whole drama happens in one walk \u2014 from town to shore and back \u2014 and the place itself becomes a character. The sea has agency, identity and intent. Place is not just background; it is the second figure in a duet.</p>
+  `,
+
+  summary: `Stanza 1: The speaker sets out early one morning with her dog and "visits" the sea, as if calling on a friend. The sea is described as a house: mermaids live in the basement, and they come to look at the visitor.
+
+Stanza 2: Frigates (warships) live on the upper floor of this sea-house, and their ropes reach out like hands. They mistake the speaker for a stranded mouse on the sand \u2014 she is small and vulnerable in the face of their bulk.
+
+Stanza 3: The tide arrives. It rises slowly up the speaker\u2019s body \u2014 past her shoe, her apron, her belt, her bodice. The encroachment is intimate, even bodily. Each dash marks another stage of the rising water.
+
+Stanza 4: The sea seems about to consume her completely, like dew absorbed by a flower. The speaker is "started" \u2014 startled \u2014 echoing the verb she used in the very first line, but with a new and frightened meaning.
+
+Stanza 5: The sea now follows the speaker, pursuing her closely. She feels his "Silver Heel" on her ankle. Even in pursuit, the foam is described as pearl \u2014 beautiful and dangerous at once.
+
+Stanza 6: The chase ends when they reach the "Solid Town" \u2014 the human, civilised world. The sea recognises no one in the town and, with a "Mighty look", bows to her and withdraws.
+
+Overall meaning: The poem dramatises an encounter between a human speaker and an immense, masculine, partly threatening natural force. The sea behaves like a person \u2014 curious, then intimate, then pursuing, then dignified in retreat. The encounter is open to many readings (sexual, mortal, sublime) but the poem itself remains poised and quiet. Place becomes a character, and the speaker is changed by meeting it.`,
+
+  formAndStructure: `Form: Six four-line stanzas (quatrains), with an ABCB rhyme scheme and a ballad-like rhythm. The form is small and tight, which makes the strangeness of the content feel even more disturbing.
+
+Metre: Common metre \u2014 alternating four-stress and three-stress lines (8.6.8.6 syllables, roughly). This is the metre of hymns and ballads. Dickinson often used hymn metre for poems about subjects far stranger than hymns.
+
+Dashes: The dashes are not punctuation in the ordinary sense. They create pauses, pacing, hesitations and emphasis. Reading the poem out loud, every dash is a tiny breath. The dashes give the poem its strange, halting voice.
+
+Capitalisation: Dickinson capitalises certain nouns \u2014 Tide, Sea, Bodice, Pearl, Solid Town \u2014 to give them weight and personality. Capitalisation turns ordinary objects into characters or symbols.
+
+Six-stage structure: Each stanza is one stage of the encounter: arrival (1), greeting (2), the rising tide (3), the threat (4), the pursuit (5), the withdrawal (6). The narrative is tight and almost cinematic.
+
+Echo and reversal: The verb "started" appears in stanza 1 (set out) and stanza 4 (startled). The water rises up the body in stanza 3 and chases up the body again in stanza 5. These echoes create a sense of inevitability and uncanny mirroring.
+
+Personification: The whole poem rests on the sustained personification of the sea as "He". Every stanza adds another human attribute \u2014 the sea has a basement, a heel, a bow, a "Mighty look".`,
+
+  keyQuotes: [
+    {
+      quote: 'I started Early \u2013 Took my Dog \u2013 / And visited the Sea',
+      analysis:
+        'The opening makes a wild encounter sound like a casual social call. "Visited" is the verb you would use for a friend, immediately personifying the sea. The deceptively domestic tone is what makes the strangeness of the rest of the poem possible.',
+      themes: ['Place', 'Personification', 'Encounter'],
+    },
+    {
+      quote: 'The Mermaids in the Basement / Came out to look at me',
+      analysis:
+        'The sea is reimagined as a house with the mermaids in its cellar. By turning the ocean into architecture, Dickinson makes it strange and familiar at the same time. The mermaids are curious, the speaker is the visitor.',
+      themes: ['Domestic imagery', 'Imagination', 'Place'],
+    },
+    {
+      quote: 'Presuming Me to be a Mouse \u2013 / Aground \u2013 upon the Sands',
+      analysis:
+        'The ships look down at the speaker from the "upper floor" and treat her as a mouse stranded on the beach. The reduction of the speaker to a tiny animal sets up the vulnerability that the rest of the poem will exploit.',
+      themes: ['Powerlessness', 'Scale', 'Vulnerability'],
+    },
+    {
+      quote: 'And past my Bodice \u2013 too \u2013',
+      analysis:
+        'The rising tide is catalogued in stages: shoe, apron, belt, bodice. The "bodice" is intimate clothing, and "too" carries an audible note of surprise or alarm. Many readers hear a sexual undertone here \u2014 a body being unwillingly approached.',
+      themes: ['Intimacy', 'Threat', 'Body'],
+    },
+    {
+      quote: 'And made as He would eat me up \u2013',
+      analysis:
+        'The sea becomes a predator with a mouth. The pronoun "He" sustains the masculine personification, and "eat me up" makes the threat physical and immediate. Coming after the rising tide, this is the moment of greatest danger.',
+      themes: ['Predator', 'Annihilation', 'Power'],
+    },
+    {
+      quote: 'And He \u2013 He followed \u2013 close behind',
+      analysis:
+        'The stuttered repetition of "He \u2013 He" mimics the speaker\u2019s anxiety. The sea is no longer simply touching her \u2014 it is following her. The image is unmistakably one of pursuit. The dashes hold the moment open like a held breath.',
+      themes: ['Pursuit', 'Fear', 'Encounter'],
+    },
+    {
+      quote: 'I felt His Silver Heel / Upon my Ankle',
+      analysis:
+        'The sea is given a "Silver Heel" \u2014 part beautiful jewel, part heavy boot. The image collapses ornament and threat into one. The sea\u2019s contact with the speaker\u2019s ankle is small and physical \u2014 it could be courtly or it could be dangerous.',
+      themes: ['Beauty', 'Threat', 'Body'],
+    },
+    {
+      quote: 'And bowing \u2013 with a Mighty look \u2013 / At me \u2013 The Sea withdrew',
+      analysis:
+        'The closing image is unexpectedly courtly. The sea bows like a gentleman taking his leave. The encounter ends without resolution \u2014 the speaker is unhurt but changed. Dickinson refuses to tell us what to feel.',
+      themes: ['Withdrawal', 'Dignity', 'Ambiguity'],
+    },
+  ],
+
+  languageDevices: [
+    {
+      device: 'Sustained personification',
+      example: 'visited the Sea / The Mermaids in the Basement / He \u2013 He followed',
+      effect:
+        'The whole poem treats the sea as a person, specifically a man. Each stanza adds another human attribute. The personification turns the encounter from "speaker meets sea" into "speaker meets stranger", which is what gives the poem its uncanny intimacy.',
+      lineRef: 1,
+    },
+    {
+      device: 'Dashes',
+      example: 'I started Early \u2013 Took my Dog \u2013',
+      effect:
+        'Dickinson\u2019s dashes create pauses inside lines, slowing the pace, isolating phrases, and giving the poem a halting, almost breathless quality. They make the speaker sound thoughtful, anxious or surprised, depending on context.',
+      lineRef: 0,
+    },
+    {
+      device: 'Capitalisation',
+      example: 'Tide / Sea / Mighty / Solid Town',
+      effect:
+        'Dickinson capitalises ordinary nouns to elevate them. By turning "Tide" and "Sea" into proper nouns, she gives them the weight of characters. The Solid Town becomes the named opposite of the fluid Sea.',
+      lineRef: 9,
+    },
+    {
+      device: 'Extended metaphor',
+      example: 'the sea as a house \u2014 basement, upper floor, hempen hands',
+      effect:
+        'The sea is reimagined as a building with rooms. The metaphor makes the immense ocean small and domestic, while the speaker\u2019s small body becomes the visitor inside it. The reversal of scale destabilises the reader.',
+      lineRef: 2,
+    },
+    {
+      device: 'Repetition / echo',
+      example: 'I started Early... I \u2013 started \u2013 too',
+      effect:
+        'The verb "started" appears twice with completely different meanings: set out and was startled. The echo retroactively darkens the opening, making the casual beginning of the poem feel ominous in hindsight.',
+      lineRef: 19,
+    },
+    {
+      device: 'Common metre',
+      example: 'alternating 8 and 6 syllable lines, ballad rhythm',
+      effect:
+        'The hymn-like metre is reassuring and familiar \u2014 the kind of rhythm a child might recite. The contrast between the soothing form and the disturbing content is one of Dickinson\u2019s most characteristic effects.',
+      lineRef: 0,
+    },
+  ],
+}
+
+const comparisons = [
+  {
+    title: 'To Autumn',
+    poet: 'John Keats',
+    href: '/revision/poetry/edexcel/time-and-place/to-autumn',
+    reason:
+      'Both poems personify a natural force as a single character. Keats\u2019s autumn is peaceful, restful and benign; Dickinson\u2019s sea is curious, intimate and threatening. Compare two very different relationships between speaker and place.',
+    themes: ['Personification', 'Nature', 'Encounter'],
+  },
+  {
+    title: 'Composed Upon Westminster Bridge',
+    poet: 'William Wordsworth',
+    href: '/revision/poetry/edexcel/time-and-place/composed-upon-westminster-bridge',
+    reason:
+      'Both poems describe a single encounter with a place at a specific moment. Wordsworth meets London at dawn and finds peace; Dickinson meets the sea at dawn and finds danger. Compare how the same time of day produces opposite experiences.',
+    themes: ['Place', 'Time', 'Encounter'],
+  },
+  {
+    title: 'London',
+    poet: 'William Blake',
+    href: '/revision/poetry/edexcel/time-and-place/london',
+    reason:
+      'Both poems give a place an active personality. Blake\u2019s London is oppressive and political; Dickinson\u2019s sea is intimate and personal. Compare the political poem and the psychological poem.',
+    themes: ['Place', 'Personification', 'Encounter'],
+  },
+]
+
+export default function IStartedEarlyPage() {
+  return (
+    <div className="space-y-8">
+      <div>
+        <Button
+          variant="ghost"
+          size="sm"
+          className="mb-3 -ml-2 text-muted-foreground"
+          render={<Link href="/revision/poetry/edexcel/time-and-place" />}
+        >
+          <ArrowLeft className="size-3.5" />
+          Back to Time and Place cluster
+        </Button>
+
+        <div className="flex items-center gap-3">
+          <div className="flex size-10 items-center justify-center rounded-xl bg-emerald-500/10">
+            <BookOpen className="size-5 text-emerald-400" />
+          </div>
+          <div>
+            <h1 className="text-heading-lg font-heading text-foreground">
+              I started Early &ndash; Took my Dog
+            </h1>
+            <p className="text-body-sm text-muted-foreground">
+              Emily Dickinson &middot; Edexcel Time and Place anthology
+            </p>
+            <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">Edexcel</Badge>
+          </div>
+        </div>
+      </div>
+
+      <InteractivePoemViewer poem={dickinson} />
+
+      <section className="rounded-xl border border-border bg-card p-5 sm:p-6">
+        <div className="flex items-center gap-2 mb-4">
+          <GitCompare className="size-4.5 text-muted-foreground" />
+          <h2 className="text-heading-sm font-heading text-foreground">Compare with</h2>
+        </div>
+        <p className="text-body-sm text-muted-foreground mb-5">
+          Strong pairings with I started Early &ndash; Took my Dog from the Edexcel Time and Place cluster.
+        </p>
+
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {comparisons.map((c) => (
+            <Link
+              key={c.title}
+              href={c.href}
+              className="group rounded-lg border border-border bg-card p-4 transition-colors hover:border-foreground/20 hover:bg-muted/40"
+            >
+              <h3 className="text-sm font-semibold text-foreground group-hover:text-foreground/90">
+                {c.title}
+              </h3>
+              <p className="text-xs text-muted-foreground mb-2">{c.poet}</p>
+              <p className="text-xs text-muted-foreground leading-relaxed mb-3">{c.reason}</p>
+              <div className="flex flex-wrap gap-1.5">
+                {c.themes.map((t) => (
+                  <span
+                    key={t}
+                    className="rounded-full bg-muted px-2 py-0.5 text-[11px] text-muted-foreground"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+    </div>
+  )
+}

@@ -16,6 +16,7 @@ import {
   GraduationCap,
   ChevronRight,
   Home,
+  CalendarDays,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
@@ -39,6 +40,7 @@ interface NavItem {
 
 const NAV_ITEMS: NavItem[] = [
   { label: 'Hub Home', href: '/revision', icon: Home, colour: 'text-primary' },
+  { label: 'Study Plan', href: '/revision/study-plan', icon: CalendarDays, colour: 'text-primary' },
   { label: 'Poetry', href: '/revision/poetry', icon: FileText, colour: 'text-rose-400' },
   { label: 'Set Texts', href: '/revision/texts', icon: BookText, colour: 'text-blue-400' },
   { label: 'Language Skills', href: '/revision/language', icon: PenTool, colour: 'text-violet-400' },
@@ -51,23 +53,36 @@ const NAV_ITEMS: NavItem[] = [
 // ─── Progress from localStorage ─────────────────────────────────────────────
 
 const PROGRESS_KEY = 'english-hub-revision-progress'
+// Track section visits — once visited, contributes to overall progress
+const SECTION_KEYS = NAV_ITEMS.filter((i) => i.href !== '/revision').map((i) => i.href)
 
 function useRevisionProgress() {
+  const pathname = usePathname()
   const [progress, setProgress] = useState(0)
 
   useEffect(() => {
     try {
       const stored = localStorage.getItem(PROGRESS_KEY)
-      if (stored) {
-        const data = JSON.parse(stored)
-        if (typeof data.percentage === 'number') {
-          setProgress(Math.min(100, Math.max(0, data.percentage)))
-        }
-      }
+      const data: { visited?: string[]; percentage?: number } = stored ? JSON.parse(stored) : {}
+      const visited = new Set(data.visited ?? [])
+
+      // Mark current section as visited if it matches one of the tracked sections
+      const matchedSection = SECTION_KEYS.find(
+        (href) => pathname === href || pathname.startsWith(href + '/'),
+      )
+      if (matchedSection) visited.add(matchedSection)
+
+      const percentage = Math.round((visited.size / SECTION_KEYS.length) * 100)
+      setProgress(Math.min(100, Math.max(0, percentage)))
+
+      localStorage.setItem(
+        PROGRESS_KEY,
+        JSON.stringify({ visited: Array.from(visited), percentage }),
+      )
     } catch {
       // ignore
     }
-  }, [])
+  }, [pathname])
 
   return progress
 }

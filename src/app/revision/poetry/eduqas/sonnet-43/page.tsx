@@ -1,0 +1,426 @@
+'use client'
+
+import Link from 'next/link'
+import { ArrowLeft, BookOpen, GitCompare } from 'lucide-react'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { InteractivePoemViewer } from '@/components/study/InteractivePoemViewer'
+import type { PoemData } from '@/components/study/InteractivePoemViewer'
+
+const sonnet43: PoemData = {
+  title: 'Sonnet 43',
+  poet: 'Elizabeth Barrett Browning',
+  lines: [
+    {
+      text: 'How do I love thee? Let me count the ways.',
+      annotations: [
+        {
+          type: 'Rhetorical question',
+          note: 'The famous opening line is a rhetorical question - the speaker doesn\'t need an answer, only a list. The directness of the question contrasts with the abstract concept of love.',
+          color: '#3b82f6',
+        },
+        {
+          type: 'Key quote',
+          note: 'One of the most famous opening lines in English poetry. The simplicity is deceptive - the rest of the poem is a passionate, mystical attempt to "count" something uncountable.',
+          color: '#f59e0b',
+        },
+      ],
+    },
+    {
+      text: 'I love thee to the depth and breadth and height',
+      annotations: [
+        {
+          type: 'Tricolon',
+          note: '"Depth and breadth and height" - three spatial dimensions. The speaker uses the language of physical measurement to describe immeasurable love.',
+          color: '#a855f7',
+        },
+      ],
+    },
+    {
+      text: 'My soul can reach, when feeling out of sight',
+      annotations: [
+        {
+          type: 'Spirituality',
+          note: '"My soul can reach" - love is not just physical but spiritual. "Out of sight" suggests reaching beyond the visible world into mystical experience.',
+          color: '#3b82f6',
+        },
+      ],
+    },
+    {
+      text: 'For the ends of being and ideal grace.',
+      annotations: [
+        {
+          type: 'Diction',
+          note: '"Ends of being" - the limits of existence. "Ideal grace" - perfect divine grace. The speaker compares her love to a soul reaching toward God.',
+          color: '#3b82f6',
+        },
+        {
+          type: 'Key quote',
+          note: 'EBB establishes the cosmic scale of her love. It reaches as far as her soul can reach toward God Himself.',
+          color: '#f59e0b',
+        },
+      ],
+    },
+    {
+      text: 'I love thee to the level of every day\'s',
+      annotations: [
+        {
+          type: 'Anaphora',
+          note: '"I love thee" - this phrase begins many lines, creating a powerful incantatory rhythm. The repetition builds emotional intensity.',
+          color: '#a855f7',
+        },
+      ],
+    },
+    {
+      text: 'Most quiet need, by sun and candle-light.',
+      annotations: [
+        {
+          type: 'Imagery',
+          note: '"Sun and candle-light" - day and night. The line moves from the cosmic to the domestic. Love operates at every scale, from universal to ordinary.',
+          color: '#10b981',
+        },
+        {
+          type: 'Diction',
+          note: '"Most quiet need" - love is also quiet, ordinary, essential. Not just grand passion but daily companionship.',
+          color: '#3b82f6',
+        },
+      ],
+    },
+    {
+      text: 'I love thee freely, as men strive for Right;',
+      annotations: [
+        {
+          type: 'Simile',
+          note: '"As men strive for Right" - compared to political and moral struggle. Love is freely chosen, like a noble cause. The capitalised "Right" suggests an absolute moral good.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: 'I love thee purely, as they turn from Praise.',
+      annotations: [
+        {
+          type: 'Simile',
+          note: '"As they turn from Praise" - compared to humble people who reject vanity. Love is pure - unselfish, without seeking reward.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: 'I love thee with the passion put to use',
+      annotations: [
+        {
+          type: 'Diction',
+          note: '"Passion put to use" - the intense emotions she previously felt about other things (grief, indignation) are now redirected into love. Love absorbs all her energy.',
+          color: '#3b82f6',
+        },
+      ],
+    },
+    {
+      text: 'In my old griefs, and with my childhood\'s faith.',
+      annotations: [
+        {
+          type: 'Personal',
+          note: '"My old griefs" - EBB had suffered serious illness and the loss of family. "Childhood\'s faith" - the pure, unquestioning belief of a child. Love restores both intensity and innocence.',
+          color: '#3b82f6',
+        },
+      ],
+    },
+    {
+      text: 'I love thee with a love I seemed to lose',
+      annotations: [
+        {
+          type: 'Volta',
+          note: 'A turn toward something restored. The speaker had thought she had lost the capacity for love. Robert Browning\'s love has restored it.',
+          color: '#a855f7',
+        },
+      ],
+    },
+    {
+      text: 'With my lost saints. I love thee with the breath,',
+      annotations: [
+        {
+          type: 'Religious imagery',
+          note: '"My lost saints" - she had lost her religious faith (or saintly figures from her past). Now this love replaces what she had lost. Love is a spiritual experience.',
+          color: '#3b82f6',
+        },
+      ],
+    },
+    {
+      text: 'Smiles, tears, of all my life; and, if God choose,',
+      annotations: [
+        {
+          type: 'Catalogue',
+          note: '"Breath, smiles, tears" - the speaker offers her entire physical and emotional self. "If God choose" - she submits to divine will.',
+          color: '#a855f7',
+        },
+      ],
+    },
+    {
+      text: 'I shall but love thee better after death.',
+      annotations: [
+        {
+          type: 'Closing image',
+          note: 'The final line claims that love will continue and even grow after death. Love is eternal, transcending mortal existence. The greatest possible declaration.',
+          color: '#10b981',
+        },
+        {
+          type: 'Key quote',
+          note: 'The famous closing line. EBB rejects death as the end of love. The promise that love will continue and intensify forever is the ultimate romantic statement.',
+          color: '#f59e0b',
+        },
+      ],
+    },
+  ],
+
+  context: `
+    <h3>Elizabeth Barrett Browning (1806-1861)</h3>
+    <p>EBB was one of the most famous Victorian poets. She suffered from chronic illness from her teenage years and was largely confined to her father\'s house in London. She published her first collection at 14 and was considered for Poet Laureate after Wordsworth\'s death.</p>
+
+    <h3>Love and Marriage</h3>
+    <p>In 1845, EBB began an exchange of letters with the younger poet Robert Browning. They fell in love through correspondence. Her father forbade her to marry, so they eloped to Italy in 1846. They had a happy 15-year marriage until EBB\'s death in 1861.</p>
+
+    <h3>Sonnets from the Portuguese (1850)</h3>
+    <p>"Sonnet 43" (also called "How do I love thee?") is the penultimate poem in EBB\'s sonnet sequence <em>Sonnets from the Portuguese</em>. The title was a private joke - Robert called her his "little Portuguese". The 44 sonnets trace the development of her love for Robert.</p>
+
+    <h3>Petrarchan Sonnet Tradition</h3>
+    <p>EBB writes in the tradition of <strong>Petrarch</strong>, the 14th-century Italian poet whose sonnets to "Laura" defined love poetry for centuries. By using this form, she places her love within a long tradition of literary romance - but as a woman writing to a beloved man, she reverses the conventional gender roles.</p>
+
+    <h3>Victorian Religious Doubt</h3>
+    <p>EBB lived through a period of crisis in Victorian religious belief. The line "my lost saints" suggests she had experienced doubt or loss of faith. Her love for Robert restores spiritual experience - love becomes religion.</p>
+
+    <h3>Female Voice</h3>
+    <p>For centuries, sonnets had been written BY men ABOUT women. EBB writes as a woman declaring love TO a man. This was unusual and powerful. She claims for herself the same right to passionate, articulate love that male poets had always taken.</p>
+  `,
+
+  summary: `Lines 1-4: The speaker opens with a rhetorical question - "How do I love thee?" - and offers to count the ways. She claims her love reaches the spatial limits her soul can reach, "to the depth and breadth and height", to "the ends of being and ideal grace". This is mystical, cosmic love.
+
+Lines 5-8: Love also operates at the everyday level - "by sun and candle-light", in "most quiet need". Love is both ordinary and necessary. She loves freely (like men who strive for political rights) and purely (like those who reject vanity).
+
+Lines 9-12: Love absorbs the passion she once felt for "old griefs" and her "childhood\'s faith". She thought she had lost the capacity to love when she lost "my lost saints" (her faith), but Robert\'s love has restored it. Her love is now her entire being - "breath, smiles, tears".
+
+Lines 13-14: The closing couplet promises that, if God allows, she will love him even better after death. Love transcends mortality.
+
+Overall meaning: "Sonnet 43" is one of the greatest love poems in English. EBB attempts to "count" the dimensions, intensities, and durations of her love. The poem moves from cosmic scale to domestic scale, from physical to spiritual, and finally to eternal. It is a complete declaration of total devotion.`,
+
+  formAndStructure: `Form: Petrarchan sonnet (Italian sonnet) - 14 lines with an octave (8 lines) and sestet (6 lines). The traditional form gives the poem dignity and places it in the long European tradition of love poetry.
+
+Rhyme scheme: ABBAABBA in the octave, CDCDCD in the sestet (variant of Petrarchan). The rhymes are tightly woven, with many repetitions, creating a sense of perfect harmony.
+
+Metre: Iambic pentameter throughout. The regular rhythm gives the poem a steady, prayer-like quality. Some lines are deliberately slowed by long vowels for emphasis.
+
+Anaphora: "I love thee" repeats many times throughout, creating an incantatory rhythm. The repetition builds emotional intensity and gives the poem the quality of a litany or prayer.
+
+Volta: The traditional turn comes at line 9 - "I love thee with the passion put to use". The octave catalogues different kinds of love; the sestet becomes more personal and confessional, drawing on the speaker\'s past griefs.
+
+Spatial language: The poem uses the language of dimensions - depth, breadth, height. Love is given physical scale even though it is immaterial. This makes the abstract feel concrete.
+
+Religious diction: "Soul", "ideal grace", "lost saints", "if God choose" - the poem is full of spiritual language. Love becomes a religious experience, replacing or completing faith.
+
+Closure: The final line promises eternity. The poem ends not with limitation but with expansion - love continues beyond death. The closing couplet has the certainty of a vow.`,
+
+  keyQuotes: [
+    {
+      quote: 'How do I love thee? Let me count the ways',
+      analysis:
+        'One of the most famous opening lines in English poetry. The rhetorical question is direct and intimate. "Count the ways" suggests love can be itemised - but the rest of the poem shows it cannot. The speaker tries to measure something immeasurable.',
+      themes: ['Love', 'Direct address', 'Famous opening'],
+    },
+    {
+      quote: 'I love thee to the depth and breadth and height / My soul can reach',
+      analysis:
+        'The speaker uses spatial dimensions - "depth, breadth, height" - to measure love. The tricolon creates a sense of total coverage. But these are also the dimensions her SOUL can reach, suggesting love is spiritual as well as physical. The scale is cosmic.',
+      themes: ['Cosmic love', 'Tricolon', 'Spirituality'],
+    },
+    {
+      quote: 'For the ends of being and ideal grace',
+      analysis:
+        '"Ends of being" - the limits of existence itself. "Ideal grace" - perfect divine grace, the highest spiritual concept. The speaker compares her love to a soul reaching toward God. Love has theological scale.',
+      themes: ['Religion', 'Limits', 'Divine love'],
+    },
+    {
+      quote: 'I love thee to the level of every day\'s / Most quiet need',
+      analysis:
+        'After the cosmic scale, the poem moves to the domestic. Love is also "everyday" and "quiet" - not just grand passion but daily companionship. The shift from universal to intimate is deeply moving. Love must operate at all scales.',
+      themes: ['Everyday love', 'Domesticity', 'Quiet devotion'],
+    },
+    {
+      quote: 'I love thee freely, as men strive for Right; / I love thee purely, as they turn from Praise',
+      analysis:
+        'Two parallel similes. Love is "free" (not coerced) like political struggle for justice. Love is "pure" (not selfish) like those who reject vanity. EBB compares love to noble moral pursuits. Love is not separate from ethics but a form of ethical commitment.',
+      themes: ['Freedom', 'Purity', 'Moral love'],
+    },
+    {
+      quote: 'I love thee with the passion put to use / In my old griefs',
+      analysis:
+        'The speaker reveals personal history. The intense emotions of past sufferings are now redirected into love. Pain has become passion. This makes the love feel earned, not naive - it carries the weight of past experience.',
+      themes: ['Past suffering', 'Transformation', 'Personal history'],
+    },
+    {
+      quote: 'I love thee with a love I seemed to lose / With my lost saints',
+      analysis:
+        'A confession of past spiritual loss. The speaker had lost her saints - her religious faith or sacred figures. She thought she had lost the capacity for that kind of devotion. But Robert\'s love has restored it. Love replaces religion - or completes it.',
+      themes: ['Religious doubt', 'Restoration', 'Love and faith'],
+    },
+    {
+      quote: 'I shall but love thee better after death',
+      analysis:
+        'The closing line is an extraordinary promise. Love does not end at death - it intensifies. The speaker rejects mortality as a limit on love. This is the most romantic possible declaration: love is eternal, beyond physical existence.',
+      themes: ['Eternal love', 'Death', 'Transcendence'],
+    },
+  ],
+
+  languageDevices: [
+    {
+      device: 'Anaphora',
+      example: 'I love thee ... I love thee ... I love thee',
+      effect:
+        'The phrase "I love thee" repeats throughout the poem, creating an incantatory rhythm. The repetition builds emotional intensity and gives the poem the quality of a prayer or vow. Each repetition adds a new dimension of love.',
+      lineRef: 1,
+    },
+    {
+      device: 'Tricolon',
+      example: 'depth and breadth and height',
+      effect:
+        'Three spatial dimensions create a sense of total coverage. The tricolon makes love feel measurable, even as it claims to exceed measurement. The list captures the speaker\'s attempt to articulate the inexpressible.',
+      lineRef: 2,
+    },
+    {
+      device: 'Religious diction',
+      example: 'soul ... ideal grace ... my lost saints ... if God choose',
+      effect:
+        'The poem is saturated with religious language. Love becomes a spiritual experience, equivalent to faith. The speaker\'s past religious doubt is transformed into a new kind of devotion - to her beloved.',
+      lineRef: 3,
+    },
+    {
+      device: 'Sonnet form',
+      example: 'Traditional Petrarchan sonnet',
+      effect:
+        'The 14-line Petrarchan form gives the poem dignity and places it in centuries of love poetry tradition. The strict form contains and shapes the overflowing emotion. The contrast between formal control and passionate content creates power.',
+      lineRef: 1,
+    },
+    {
+      device: 'Volta',
+      example: 'I love thee with the passion put to use / In my old griefs',
+      effect:
+        'The traditional turn at line 9 shifts the poem from public, abstract dimensions of love to personal, confessional ones. The speaker reveals her past suffering and lost faith. The volta makes the poem feel deeply personal.',
+      lineRef: 9,
+    },
+    {
+      device: 'Simile',
+      example: 'as men strive for Right ... as they turn from Praise',
+      effect:
+        'The similes compare love to noble moral pursuits - political struggle and humility. Love is not separate from ethics but a form of ethical commitment. The comparisons elevate love to the status of moral virtue.',
+      lineRef: 7,
+    },
+    {
+      device: 'Iambic pentameter',
+      example: 'I LOVE thee FREEly, AS men STRIVE for RIGHT',
+      effect:
+        'The regular metre creates a steady, prayer-like rhythm. The iambic pulse mirrors a heartbeat, making the poem feel both controlled and deeply alive. The rhythm carries the reader smoothly through emotional intensity.',
+      lineRef: 7,
+    },
+  ],
+}
+
+const comparisons = [
+  {
+    title: 'To Autumn',
+    poet: 'John Keats',
+    href: '/revision/poetry/eduqas/to-autumn',
+    reason:
+      'Both poems use rich, sensual language to celebrate something precious. Keats celebrates a season; EBB celebrates love. Both use the lyric tradition to express deeply felt emotion in formal poetic structures.',
+    themes: ['Celebration', 'Lyrical form', 'Devotion'],
+  },
+  {
+    title: 'The Soldier',
+    poet: 'Rupert Brooke',
+    href: '/revision/poetry/eduqas/the-soldier',
+    reason:
+      'Both are sonnets about devotion. EBB declares total love for a person; Brooke declares total love for a country. Both use the sonnet form to express absolute commitment.',
+    themes: ['Sonnet form', 'Devotion', 'Total commitment'],
+  },
+  {
+    title: 'Ozymandias',
+    poet: 'Percy Bysshe Shelley',
+    href: '/revision/poetry/eduqas/ozymandias',
+    reason:
+      'Both are sonnets that use the form for very different purposes. Shelley\'s sonnet shows the limits of human power; EBB\'s sonnet claims that love transcends all limits. A perfect contrast in what the form can do.',
+    themes: ['Sonnet form', 'Time', 'Permanence'],
+  },
+]
+
+export default function Sonnet43EduqasPage() {
+  return (
+    <div className="space-y-8">
+      <div>
+        <Button
+          variant="ghost"
+          size="sm"
+          className="mb-3 -ml-2 text-muted-foreground"
+          render={<Link href="/revision/poetry/eduqas" />}
+        >
+          <ArrowLeft className="size-3.5" />
+          Back to Eduqas Poetry
+        </Button>
+
+        <div className="flex items-center gap-3">
+          <div className="flex size-10 items-center justify-center rounded-xl bg-pink-500/10">
+            <BookOpen className="size-5 text-pink-400" />
+          </div>
+          <div>
+            <h1 className="text-heading-lg font-heading text-foreground">
+              Sonnet 43
+            </h1>
+            <p className="text-body-sm text-muted-foreground">
+              Elizabeth Barrett Browning &middot; Eduqas Poetry Anthology
+            </p>
+            <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">Eduqas</Badge>
+          </div>
+        </div>
+      </div>
+
+      <InteractivePoemViewer poem={sonnet43} />
+
+      <section className="rounded-xl border border-border bg-card p-5 sm:p-6">
+        <div className="flex items-center gap-2 mb-4">
+          <GitCompare className="size-4.5 text-muted-foreground" />
+          <h2 className="text-heading-sm font-heading text-foreground">
+            Compare with
+          </h2>
+        </div>
+        <p className="text-body-sm text-muted-foreground mb-5">
+          Strong Eduqas pairings for comparison questions involving Sonnet 43.
+        </p>
+
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {comparisons.map((c) => (
+            <Link
+              key={c.title}
+              href={c.href}
+              className="group rounded-lg border border-border bg-card p-4 transition-colors hover:border-foreground/20 hover:bg-muted/40"
+            >
+              <h3 className="text-sm font-semibold text-foreground group-hover:text-foreground/90">
+                {c.title}
+              </h3>
+              <p className="text-xs text-muted-foreground mb-2">{c.poet}</p>
+              <p className="text-xs text-muted-foreground leading-relaxed mb-3">
+                {c.reason}
+              </p>
+              <div className="flex flex-wrap gap-1.5">
+                {c.themes.map((t) => (
+                  <span
+                    key={t}
+                    className="rounded-full bg-muted px-2 py-0.5 text-[11px] text-muted-foreground"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+    </div>
+  )
+}

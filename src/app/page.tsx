@@ -23,7 +23,6 @@ import {
   LibraryBig,
   CheckCircle,
   Target,
-  TrendingUp,
 } from 'lucide-react'
 import SectionSkeleton from '@/components/home/SectionSkeleton'
 
@@ -349,10 +348,10 @@ export default function Home() {
             {[
               { icon: BookOpen, color: 'text-primary bg-primary/10', value: '470+', label: 'Structured Lessons' },
               { icon: FileText, color: 'text-orange-400 bg-orange-500/10', value: '130+', label: 'Mock Papers' },
-              { icon: Sparkles, color: 'text-cyan-400 bg-cyan-500/10', value: 'AI', label: 'Essay Feedback' },
+              { icon: Lightbulb, color: 'text-rose-400 bg-rose-500/10', value: '30', label: 'Poem Studies' },
+              { icon: Sparkles, color: 'text-cyan-400 bg-cyan-500/10', value: '7', label: 'GCSE-Grade Games' },
               { icon: Layers, color: 'text-purple-400 bg-purple-500/10', value: '2,000+', label: 'Flashcards' },
               { icon: Target, color: 'text-emerald-400 bg-emerald-500/10', value: '1–9', label: 'Grade Tracking' },
-              { icon: Award, color: 'text-amber-400 bg-amber-500/10', value: '5', label: 'Exam Boards' },
             ].map((stat) => (
               <div key={stat.label} className="flex items-center gap-3">
                 <div className={cn('w-10 h-10 rounded-xl flex items-center justify-center shrink-0', stat.color)}>

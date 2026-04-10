@@ -19,6 +19,7 @@ import {
   BarChart3,
   CheckCircle2,
   Flame,
+  CalendarDays,
 } from 'lucide-react'
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
@@ -123,15 +124,24 @@ const QUICK_STATS = [
   { label: 'Quizzes', value: '100+', icon: Brain },
 ]
 
-// ─── Recently studied key ─────────────────────────────────────────────────
+// ─── Recently studied keys ────────────────────────────────────────────────
 
 const RECENTLY_STUDIED_KEY = 'english-hub-recently-studied'
+const STUDIED_POEMS_KEY = 'english-hub-studied-poems'
+const LAST_VISITED_KEY = 'english-hub-last-visited-revision'
 
 interface RecentItem {
   title: string
   href: string
   section: string
   timestamp: number
+}
+
+function slugToTitle(slug: string): string {
+  return slug
+    .split('-')
+    .map((s) => (s.length > 0 ? s[0].toUpperCase() + s.slice(1) : s))
+    .join(' ')
 }
 
 // ─── Suggested items ──────────────────────────────────────────────────────
@@ -180,11 +190,74 @@ export default function RevisionHubPage() {
   useEffect(() => {
     setMounted(true)
     try {
+      const merged: RecentItem[] = []
+      const seen = new Set<string>()
+
+      // 1. Explicit recently-studied entries
       const stored = localStorage.getItem(RECENTLY_STUDIED_KEY)
       if (stored) {
         const parsed: RecentItem[] = JSON.parse(stored)
-        setRecentItems(parsed.slice(0, 4))
+        for (const item of parsed) {
+          if (!seen.has(item.href)) {
+            merged.push(item)
+            seen.add(item.href)
+          }
+        }
       }
+
+      // 2. Last visited revision page (single string)
+      const lastVisited = localStorage.getItem(LAST_VISITED_KEY)
+      if (lastVisited) {
+        try {
+          const parsed = JSON.parse(lastVisited) as { href: string; title: string; section: string; timestamp: number }
+          if (parsed && parsed.href && !seen.has(parsed.href)) {
+            merged.push(parsed)
+            seen.add(parsed.href)
+          }
+        } catch {
+          // legacy plain-string fallback
+          if (!seen.has(lastVisited)) {
+            merged.push({
+              title: slugToTitle(lastVisited.split('/').filter(Boolean).pop() ?? 'Revision'),
+              href: lastVisited,
+              section: 'Revision',
+              timestamp: Date.now(),
+            })
+            seen.add(lastVisited)
+          }
+        }
+      }
+
+      // 3. Studied poem slugs (Set serialised as array)
+      const studiedPoems = localStorage.getItem(STUDIED_POEMS_KEY)
+      if (studiedPoems) {
+        const slugs: string[] = JSON.parse(studiedPoems)
+        for (const slug of slugs) {
+          // poem slugs are stored as bare slugs — try common cluster paths
+          const candidatePaths = [
+            `/revision/poetry/power-and-conflict/${slug}`,
+            `/revision/poetry/love-and-relationships/${slug}`,
+            `/revision/poetry/eduqas/${slug}`,
+          ]
+          for (const href of candidatePaths) {
+            if (seen.has(href)) continue
+            // We can\'t verify existence at runtime, but the link will 404 if missing.
+            // Add the first plausible candidate.
+            merged.push({
+              title: slugToTitle(slug),
+              href,
+              section: 'Poetry',
+              timestamp: Date.now(),
+            })
+            seen.add(href)
+            break
+          }
+        }
+      }
+
+      // Sort by timestamp desc and trim to 5
+      merged.sort((a, b) => b.timestamp - a.timestamp)
+      setRecentItems(merged.slice(0, 5))
     } catch {
       // ignore parse errors
     }
@@ -231,6 +304,34 @@ export default function RevisionHubPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── Study Plan CTA ──────────────────────────────────────────── */}
+      <section className="rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/[0.08] via-card to-violet-500/[0.05] p-6 sm:p-8">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex items-start gap-4">
+            <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-primary/15">
+              <CalendarDays className="size-6 text-primary" />
+            </div>
+            <div>
+              <Badge variant="secondary" className="mb-2">
+                <Sparkles className="mr-1 size-3" />
+                Personalised
+              </Badge>
+              <h2 className="text-heading-md font-heading text-foreground">
+                Build your study plan
+              </h2>
+              <p className="mt-1 max-w-xl text-body-sm text-muted-foreground">
+                Answer 5 quick questions and get a week-by-week revision plan tailored to your
+                exam date, target grade, and weakest area.
+              </p>
+            </div>
+          </div>
+          <Button variant="default" size="lg" render={<Link href="/revision/study-plan" />}>
+            Start diagnostic
+            <ArrowRight className="size-4" />
+          </Button>
         </div>
       </section>
 
@@ -292,7 +393,7 @@ export default function RevisionHubPage() {
             <h2 className="text-heading-lg font-heading text-foreground">Recently Studied</h2>
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
             {recentItems.map((item) => (
               <Link
                 key={item.href + item.timestamp}

@@ -571,6 +571,67 @@ export default function TimeManagementPage() {
         </Tip>
       </Section>
 
+      {/* ── Related Revision ─────────────────────────────────── */}
+      <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
+        <div className="flex items-center gap-3 mb-2">
+          <Sparkles className="size-5 text-primary" />
+          <h2 className="text-heading-md font-heading text-foreground">Build It Into Your Plan</h2>
+        </div>
+        <p className="text-body-sm text-muted-foreground mb-5">
+          Link timing to the rest of your revision strategy.
+        </p>
+        <div className="grid gap-3 sm:grid-cols-2">
+          <Link
+            href="/revision/grade-targets/grade-7"
+            className="group flex items-start gap-3 rounded-xl border border-border/40 bg-background/50 p-4 transition-all hover:border-border hover:bg-background"
+          >
+            <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-cyan-500/10">
+              <Target className="size-4 text-cyan-400" />
+            </div>
+            <div className="min-w-0">
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Grade 7 Standards</p>
+              <p className="text-xs text-muted-foreground mt-0.5">Pace your essays for top-band marks.</p>
+            </div>
+          </Link>
+          <Link
+            href="/revision/grade-targets/grade-9"
+            className="group flex items-start gap-3 rounded-xl border border-border/40 bg-background/50 p-4 transition-all hover:border-border hover:bg-background"
+          >
+            <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-cyan-500/10">
+              <Target className="size-4 text-cyan-400" />
+            </div>
+            <div className="min-w-0">
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Grade 9 Standards</p>
+              <p className="text-xs text-muted-foreground mt-0.5">How top students use every minute.</p>
+            </div>
+          </Link>
+          <Link
+            href="/revision/language/writing"
+            className="group flex items-start gap-3 rounded-xl border border-border/40 bg-background/50 p-4 transition-all hover:border-border hover:bg-background"
+          >
+            <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-violet-500/10">
+              <PenLine className="size-4 text-violet-400" />
+            </div>
+            <div className="min-w-0">
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Writing Tasks</p>
+              <p className="text-xs text-muted-foreground mt-0.5">Plan, draft and check within the time limit.</p>
+            </div>
+          </Link>
+          <Link
+            href="/revision/language/reading"
+            className="group flex items-start gap-3 rounded-xl border border-border/40 bg-background/50 p-4 transition-all hover:border-border hover:bg-background"
+          >
+            <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-blue-500/10">
+              <BookOpen className="size-4 text-blue-400" />
+            </div>
+            <div className="min-w-0">
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Reading Comprehension</p>
+              <p className="text-xs text-muted-foreground mt-0.5">Speed up your text scanning skills.</p>
+            </div>
+          </Link>
+        </div>
+      </section>
+
       {/* ── Navigation ────────────────────────────────────────── */}
       <div className="flex flex-col sm:flex-row gap-3 pt-4">
         <Button

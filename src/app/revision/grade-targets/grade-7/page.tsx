@@ -351,6 +351,69 @@ export default function Grade7Page() {
         )}
       </section>
 
+      {/* ── Related Resources ────────────────────────────────── */}
+      <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
+        <div className="flex items-center gap-3 mb-2">
+          <div className="flex size-9 items-center justify-center rounded-lg bg-primary/10">
+            <ArrowRight className="size-4 text-primary" />
+          </div>
+          <h2 className="text-heading-md font-heading text-foreground">Related Revision</h2>
+        </div>
+        <p className="text-body-sm text-muted-foreground mb-5">
+          Take Grade 7 thinking further with these resources.
+        </p>
+        <div className="grid gap-3 sm:grid-cols-2">
+          <Link
+            href="/revision/exam-technique/essay-structure"
+            className="group flex items-start gap-3 rounded-xl border border-border/40 bg-background/50 p-4 transition-all hover:border-border hover:bg-background"
+          >
+            <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-emerald-500/10">
+              <Target className="size-4 text-emerald-400" />
+            </div>
+            <div className="min-w-0">
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Thesis-led Essay Structure</p>
+              <p className="text-xs text-muted-foreground mt-0.5">Move beyond PEE — build a sustained argument.</p>
+            </div>
+          </Link>
+          <Link
+            href="/revision/exam-technique/question-types"
+            className="group flex items-start gap-3 rounded-xl border border-border/40 bg-background/50 p-4 transition-all hover:border-border hover:bg-background"
+          >
+            <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-emerald-500/10">
+              <MessageSquare className="size-4 text-emerald-400" />
+            </div>
+            <div className="min-w-0">
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Question Types Decoded</p>
+              <p className="text-xs text-muted-foreground mt-0.5">What each command word is really asking for.</p>
+            </div>
+          </Link>
+          <Link
+            href="/revision/poetry"
+            className="group flex items-start gap-3 rounded-xl border border-border/40 bg-background/50 p-4 transition-all hover:border-border hover:bg-background"
+          >
+            <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-rose-500/10">
+              <BookOpen className="size-4 text-rose-400" />
+            </div>
+            <div className="min-w-0">
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Poetry Comparison</p>
+              <p className="text-xs text-muted-foreground mt-0.5">Compare methods, contexts and effects across poems.</p>
+            </div>
+          </Link>
+          <Link
+            href="/revision/language/writing"
+            className="group flex items-start gap-3 rounded-xl border border-border/40 bg-background/50 p-4 transition-all hover:border-border hover:bg-background"
+          >
+            <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-violet-500/10">
+              <PenTool className="size-4 text-violet-400" />
+            </div>
+            <div className="min-w-0">
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Creative & Transactional Writing</p>
+              <p className="text-xs text-muted-foreground mt-0.5">Crafted sentences, deliberate structure, ambitious vocab.</p>
+            </div>
+          </Link>
+        </div>
+      </section>
+
       {/* ── Next Step ────────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-gradient-to-r from-primary/[0.06] via-card to-amber-500/[0.04] p-6 sm:p-8 text-center">
         <h2 className="text-heading-md font-heading text-foreground mb-2">

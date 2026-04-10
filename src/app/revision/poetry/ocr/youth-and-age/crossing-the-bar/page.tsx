@@ -1,0 +1,422 @@
+'use client'
+
+import Link from 'next/link'
+import { ArrowLeft, BookOpen, GitCompare } from 'lucide-react'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { InteractivePoemViewer } from '@/components/study/InteractivePoemViewer'
+import type { PoemData } from '@/components/study/InteractivePoemViewer'
+
+const crossingTheBar: PoemData = {
+  title: 'Crossing the Bar',
+  poet: 'Alfred Lord Tennyson',
+  lines: [
+    {
+      text: 'Sunset and evening star,',
+      annotations: [
+        {
+          type: 'Symbolism',
+          note: '"Sunset" and "evening star" both symbolise the end of the day -- and by extension, the end of life. Tennyson uses dusk as a gentle metaphor for death.',
+          color: '#10b981',
+        },
+        {
+          type: 'Tone',
+          note: 'The poem opens calmly. Sunset is beautiful, not frightening. This sets the tone for the entire poem: death is not something to fear.',
+          color: '#a855f7',
+        },
+      ],
+    },
+    {
+      text: 'And one clear call for me!',
+      annotations: [
+        {
+          type: 'Religious imagery',
+          note: '"One clear call" -- a summons. The capitalisation later of "Pilot" suggests this is a divine call. The exclamation mark expresses readiness, not panic.',
+          color: '#3b82f6',
+        },
+        {
+          type: 'Key quote',
+          note: 'Death is presented as a clear, unmistakable invitation. The speaker is being called home -- and he hears the call distinctly.',
+          color: '#f59e0b',
+        },
+      ],
+    },
+    {
+      text: 'And may there be no moaning of the bar,',
+      annotations: [
+        {
+          type: 'Extended metaphor',
+          note: '"The bar" is a sandbar at the entrance to a harbour, where waves break loudly ("moaning"). Tennyson uses the journey out of harbour as a metaphor for the soul leaving the body. He wishes for a quiet, calm passage.',
+          color: '#10b981',
+        },
+        {
+          type: 'Personification',
+          note: '"Moaning" gives the bar a human voice of grief. Tennyson asks that there be no mourning at his death.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: 'When I put out to sea,',
+      annotations: [
+        {
+          type: 'Metaphor',
+          note: '"Put out to sea" -- the soul setting sail from the harbour of life to the open ocean of eternity. The image is calm and adventurous, not dark or terrifying.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: 'But such a tide as moving seems asleep,',
+      annotations: [
+        {
+          type: 'Imagery',
+          note: '"As moving seems asleep" -- a tide so smooth it barely seems to move at all. Tennyson asks for a death so gentle it feels like sleep.',
+          color: '#10b981',
+        },
+        {
+          type: 'Key quote',
+          note: 'A serene image. He wants the transition to be silent, peaceful, almost imperceptible -- like falling asleep.',
+          color: '#f59e0b',
+        },
+      ],
+    },
+    {
+      text: 'Too full for sound and foam,',
+      annotations: [
+        {
+          type: 'Imagery',
+          note: '"Too full" -- the tide is so deep and powerful that it does not need to make noise. Real strength is silent. The image suggests a quiet, dignified death.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: 'When that which drew from out the boundless deep',
+      annotations: [
+        {
+          type: 'Religious imagery',
+          note: '"That which drew from out the boundless deep" -- the soul that came from the infinite ocean of God or eternity. Tennyson is suggesting that the soul originated in the divine and is now returning home.',
+          color: '#3b82f6',
+        },
+      ],
+    },
+    {
+      text: 'Turns again home.',
+      annotations: [
+        {
+          type: 'Key quote',
+          note: 'The most reassuring line of the first half of the poem. Death is a homecoming -- a return to where the soul originally came from. There is nothing alien or terrifying about it.',
+          color: '#f59e0b',
+        },
+      ],
+    },
+    {
+      text: 'Twilight and evening bell,',
+      annotations: [
+        {
+          type: 'Parallelism',
+          note: 'Stanza 3 mirrors stanza 1: "Sunset and evening star" / "Twilight and evening bell". Both stanzas open with images of evening, but stanza 3 deepens the darkness from sunset to twilight -- the speaker is moving closer to death.',
+          color: '#a855f7',
+        },
+        {
+          type: 'Religious imagery',
+          note: '"Evening bell" suggests the bell of a church or monastery summoning worshippers. Death is a religious call to evening prayer.',
+          color: '#3b82f6',
+        },
+      ],
+    },
+    {
+      text: 'And after that the dark!',
+      annotations: [
+        {
+          type: 'Tone',
+          note: '"The dark!" -- the only mildly fearful note in the poem. After twilight comes night. The exclamation mark gives the line a slight thrill or shudder before the calmness returns.',
+          color: '#a855f7',
+        },
+      ],
+    },
+    {
+      text: 'And may there be no sadness of farewell,',
+      annotations: [
+        {
+          type: 'Address to mourners',
+          note: 'Tennyson is speaking directly to those he leaves behind, asking them not to grieve. This is a poem to console the living as much as it is to face death himself.',
+          color: '#3b82f6',
+        },
+      ],
+    },
+    {
+      text: 'When I embark;',
+      annotations: [
+        {
+          type: 'Metaphor',
+          note: '"Embark" continues the sea voyage metaphor. The soul is boarding the boat that will take it across the bar to the open sea of eternity.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: 'For though from out our bourne of Time and Place',
+      annotations: [
+        {
+          type: 'Diction',
+          note: '"Bourne" is an old word for boundary or limit. Tennyson is saying that even though death takes him beyond the limits of time and space (this earthly life), it is not the end.',
+          color: '#3b82f6',
+        },
+      ],
+    },
+    {
+      text: 'The flood may bear me far,',
+      annotations: [
+        {
+          type: 'Imagery',
+          note: '"The flood" -- the great tide of death will carry him a long distance. Tennyson sounds calm: distance does not frighten him because he knows where he is going.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: 'I hope to see my Pilot face to face',
+      annotations: [
+        {
+          type: 'Religious imagery',
+          note: '"Pilot" is capitalised -- it refers to God. In nautical terms, a pilot is the navigator who guides a ship through dangerous waters. Tennyson believes God has been steering his life all along, and after death he will finally meet his Pilot directly.',
+          color: '#3b82f6',
+        },
+        {
+          type: 'Key quote',
+          note: 'The poem\'s emotional and spiritual climax. The face-to-face meeting with God transforms death from an ending into a long-awaited reunion.',
+          color: '#f59e0b',
+        },
+      ],
+    },
+    {
+      text: 'When I have crost the bar.',
+      annotations: [
+        {
+          type: 'Cyclical structure',
+          note: 'The poem ends with the same image it began with: crossing the bar. The repetition gives the poem a sense of completion. The crossing has happened in the speaker\'s imagination -- he has rehearsed his own death and found peace with it.',
+          color: '#a855f7',
+        },
+      ],
+    },
+  ],
+
+  context: `
+    <h3>Alfred Lord Tennyson (1809--1892)</h3>
+    <p>Alfred, Lord Tennyson, was the most famous poet of the Victorian era. He served as Poet Laureate of Great Britain for over 40 years, longer than anyone before or since. He wrote about big public themes (war, empire, religion) but also private grief, faith and doubt. His most famous works include <em>In Memoriam</em>, <em>The Charge of the Light Brigade</em>, and <em>The Lady of Shalott</em>.</p>
+
+    <h3>Composition (1889)</h3>
+    <p>Tennyson wrote "Crossing the Bar" in <strong>October 1889</strong>, when he was 80 years old, as he was crossing the Solent (the channel between the Isle of Wight and the English mainland) on a steamer. He had been seriously ill, and the poem reflects his thoughts on his approaching death. He insisted that this poem should always be placed at the end of any collection of his work -- a kind of final word to readers.</p>
+
+    <h3>The bar</h3>
+    <p>Literally, "the bar" is a sandbar at the entrance to a harbour. As ships cross it, the changing depth of water often makes the waves break loudly -- the "moaning" of the bar. For Tennyson, this becomes a metaphor for the moment of death: the dangerous, noisy crossing from the harbour of life into the open sea of eternity. He hopes for a calm crossing, when the tide is so high that the bar is silent.</p>
+
+    <h3>Victorian faith and doubt</h3>
+    <p>The Victorian period was a time of religious crisis. Darwin\'s <em>On the Origin of Species</em> (1859) and growing scientific scepticism led many Victorians to question Christian belief. Tennyson himself struggled with doubt throughout his life (most famously in <em>In Memoriam</em>). "Crossing the Bar" represents his final affirmation of faith: he hopes to meet his "Pilot" -- God -- after death.</p>
+  `,
+
+  summary: `Stanza 1: The speaker hears "one clear call" at sunset -- a summons to leave life. He hopes there will be no "moaning of the bar" (no painful, noisy struggle) when he sets out to sea (dies). The metaphor of leaving harbour for the open ocean is established.
+
+Stanza 2: He wishes for a calm tide -- one so deep and gentle it barely seems to move. Such a tide will carry him back to where the soul originally came from: "the boundless deep" (the infinite ocean of God or eternity). Death is reframed as a homecoming.
+
+Stanza 3: As twilight deepens to "the dark", the speaker hears another evening sound -- a bell. He asks his loved ones not to grieve when he "embarks". The sea voyage metaphor continues: he is boarding a ship for an unknown but trusted destination.
+
+Stanza 4: Although the tide may carry him far beyond the limits of time and space, he hopes to meet his "Pilot" -- God, who has been steering his life all along -- "face to face" once he has crossed the bar. The poem ends with calm confidence in a meeting beyond death.
+
+Overall meaning: The poem is a meditation on death by an elderly poet. Tennyson uses the metaphor of a peaceful sea voyage to make death feel calm, beautiful, and welcome -- a long-awaited homecoming and reunion with God, not an end. It is one of the most serene poems about mortality in English literature.`,
+
+  formAndStructure: `Form: Four stanzas, each containing four lines. Each stanza follows an ABAB rhyme scheme. The form is regular and balanced, mirroring the calm, controlled mood of the speaker.
+
+Metre: The metre is irregular, alternating long and short lines (often four feet then two, or five then three). This swelling-and-receding rhythm is deliberate -- it mimics the rise and fall of waves, reinforcing the sea voyage metaphor.
+
+Two-part structure: The poem divides into two halves of two stanzas each. Stanzas 1--2 cover sunset; stanzas 3--4 cover twilight and dark. The deepening night mirrors the speaker\'s movement towards death. Each half ends with the same idea: a gentle return home (stanza 2) and a hope to meet the Pilot (stanza 4).
+
+Extended metaphor: The whole poem is built on the metaphor of crossing a sandbar at the mouth of a harbour. Life is the harbour; death is the bar; eternity is the open sea; God is the Pilot. The metaphor is sustained throughout, never breaking.
+
+Cyclical structure: The first stanza ("the bar") and the last line ("crost the bar") echo each other, framing the poem with the same image. The crossing has happened in the speaker\'s mind -- by the end, he has imagined his death and found peace.
+
+Tone: Calm, reverent, hopeful. There is no fear, no rage. Tennyson presents death as something natural and welcome -- the work of a long life now coming to its quiet end.`,
+
+  keyQuotes: [
+    {
+      quote: 'Sunset and evening star, / And one clear call for me!',
+      analysis:
+        'The opening combines a beautiful evening scene with a divine summons. Sunset symbolises the end of life; the "clear call" is a religious invitation -- there is no doubt or hesitation. The exclamation mark expresses readiness, not fear: the speaker is willing to go.',
+      themes: ['Death', 'Religious calling', 'Acceptance'],
+    },
+    {
+      quote: 'such a tide as moving seems asleep, / Too full for sound and foam',
+      analysis:
+        'Tennyson asks for a death so gentle it barely registers. "Too full for sound and foam" -- the tide is so deep that there is no need for splash or noise. True power is silent. He wants his death to be the same: calm, dignified, almost unnoticed.',
+      themes: ['Peaceful death', 'Imagery', 'Acceptance'],
+    },
+    {
+      quote: 'When that which drew from out the boundless deep / Turns again home',
+      analysis:
+        'Tennyson reframes death as a homecoming. The soul came from the "boundless deep" (the infinite ocean of God or eternity), and now it is going back where it came from. There is nothing terrifying or unfamiliar about death -- it is simply a return.',
+      themes: ['Soul', 'Return', 'Religious belief'],
+    },
+    {
+      quote: 'Twilight and evening bell, / And after that the dark!',
+      analysis:
+        'A subtle deepening from sunset to twilight to darkness -- the speaker is moving closer to death. The "evening bell" is a religious sound (a church bell), and "the dark!" is the only mildly fearful note in the poem. The exclamation mark contains both a shiver and a recognition that the dark must come.',
+      themes: ['Movement towards death', 'Religious imagery', 'Calm fear'],
+    },
+    {
+      quote: 'I hope to see my Pilot face to face / When I have crost the bar',
+      analysis:
+        'The poem\'s spiritual climax. The "Pilot" (capitalised, meaning God) has been guiding the speaker\'s life all along. After death, the speaker will finally meet him "face to face" -- a phrase from the Bible (1 Corinthians 13:12). Death becomes a long-awaited reunion with God, not an end. This is Tennyson\'s final affirmation of his Christian faith.',
+      themes: ['Religious belief', 'Reunion with God', 'Faith'],
+    },
+  ],
+
+  languageDevices: [
+    {
+      device: 'Extended metaphor',
+      example: 'crossing the bar / putting out to sea / the Pilot',
+      effect:
+        'The whole poem is built on a sustained sea voyage metaphor: life is the harbour, death is the bar, eternity is the open ocean, God is the Pilot. The metaphor is never broken, giving the poem unity and depth.',
+      lineRef: 2,
+    },
+    {
+      device: 'Religious imagery',
+      example: 'one clear call / Pilot face to face',
+      effect:
+        'Tennyson weaves religious language throughout: a divine call, a homecoming, a Pilot. This gradually transforms a meditation on death into a meditation on faith. The capital "P" on "Pilot" is the giveaway: God is steering the ship.',
+      lineRef: 1,
+    },
+    {
+      device: 'Personification',
+      example: 'no moaning of the bar',
+      effect:
+        'The bar is given a human voice of grief ("moaning"). Tennyson asks that there be no mourning at his death. The personification softens the imagery -- the bar can be peaceful or sorrowful, depending on how the soul leaves.',
+      lineRef: 2,
+    },
+    {
+      device: 'Symbolism',
+      example: 'Sunset / Twilight / dark',
+      effect:
+        'The progression from sunset to twilight to dark symbolises the speaker\'s gradual approach to death. Each stanza pushes a little further into the night. Yet the imagery remains beautiful, not frightening -- death is the natural close of a long day.',
+      lineRef: 0,
+    },
+    {
+      device: 'Parallelism',
+      example: 'Sunset and evening star / Twilight and evening bell',
+      effect:
+        'Stanzas 1 and 3 begin with parallel imagery -- "evening" combined with a sight (star) or sound (bell). The parallelism creates a sense of stately ritual, like the movements of a church service.',
+      lineRef: 8,
+    },
+    {
+      device: 'Sound and rhythm',
+      example: 'rising and falling line lengths',
+      effect:
+        'Each stanza alternates long and short lines, creating a swelling-and-receding rhythm that mimics ocean waves. The form physically embodies the content: the poem moves like the tide.',
+      lineRef: 4,
+    },
+    {
+      device: 'Cyclical structure',
+      example: '"the bar" (line 3) / "crost the bar" (line 16)',
+      effect:
+        'The poem begins and ends with the same image. The crossing has happened in the speaker\'s imagination -- by the end, he has rehearsed his own death and arrived at peace with it. The structure enacts the journey.',
+      lineRef: 15,
+    },
+  ],
+}
+
+const comparisons = [
+  {
+    title: 'When I Have Fears',
+    poet: 'John Keats',
+    href: '/revision/poetry/ocr/youth-and-age/when-i-have-fears',
+    reason:
+      'A perfect contrast: Keats fears dying young before his work is done; Tennyson, in old age, welcomes death calmly. Both poems face mortality, but from opposite ends of life.',
+    themes: ['Death', 'Mortality', 'Acceptance vs fear'],
+  },
+  {
+    title: 'On My First Son',
+    poet: 'Ben Jonson',
+    href: '/revision/poetry/ocr/youth-and-age/on-my-first-son',
+    reason:
+      'Both poems use religious belief to soften the pain of death. Jonson consoles himself that his son is now safe with God; Tennyson hopes to meet God himself. Both find peace in faith.',
+    themes: ['Death', 'Religious faith', 'Consolation'],
+  },
+  {
+    title: 'Death the Leveller',
+    poet: 'James Shirley',
+    href: '/revision/poetry/ocr/youth-and-age/death-the-leveller',
+    reason:
+      'A striking contrast: Shirley sees death as the universal equaliser that humbles all; Tennyson sees death as a personal homecoming. Both confront mortality but with very different tones.',
+    themes: ['Death', 'Faith', 'Universal vs personal'],
+  },
+]
+
+export default function CrossingTheBarPage() {
+  return (
+    <div className="space-y-8">
+      <div>
+        <Button
+          variant="ghost"
+          size="sm"
+          className="mb-3 -ml-2 text-muted-foreground"
+          render={<Link href="/revision/poetry/ocr/youth-and-age" />}
+        >
+          <ArrowLeft className="size-3.5" />
+          Back to Youth and Age
+        </Button>
+
+        <div className="flex items-center gap-3">
+          <div className="flex size-10 items-center justify-center rounded-xl bg-amber-500/10">
+            <BookOpen className="size-5 text-amber-400" />
+          </div>
+          <div>
+            <h1 className="text-heading-lg font-heading text-foreground">Crossing the Bar</h1>
+            <p className="text-body-sm text-muted-foreground">
+              Alfred Lord Tennyson &middot; Youth and Age cluster
+            </p>
+            <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">OCR</Badge>
+          </div>
+        </div>
+      </div>
+
+      <InteractivePoemViewer poem={crossingTheBar} />
+
+      <section className="rounded-xl border border-border bg-card p-5 sm:p-6">
+        <div className="flex items-center gap-2 mb-4">
+          <GitCompare className="size-4.5 text-muted-foreground" />
+          <h2 className="text-heading-sm font-heading text-foreground">Compare with</h2>
+        </div>
+        <p className="text-body-sm text-muted-foreground mb-5">
+          Strong pairings for the OCR Youth and Age cluster.
+        </p>
+
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {comparisons.map((c) => (
+            <Link
+              key={c.title}
+              href={c.href}
+              className="group rounded-lg border border-border bg-card p-4 transition-colors hover:border-foreground/20 hover:bg-muted/40"
+            >
+              <h3 className="text-sm font-semibold text-foreground group-hover:text-foreground/90">
+                {c.title}
+              </h3>
+              <p className="text-xs text-muted-foreground mb-2">{c.poet}</p>
+              <p className="text-xs text-muted-foreground leading-relaxed mb-3">{c.reason}</p>
+              <div className="flex flex-wrap gap-1.5">
+                {c.themes.map((t) => (
+                  <span
+                    key={t}
+                    className="rounded-full bg-muted px-2 py-0.5 text-[11px] text-muted-foreground"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+    </div>
+  )
+}

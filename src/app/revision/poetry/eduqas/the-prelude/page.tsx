@@ -1,0 +1,730 @@
+'use client'
+
+import Link from 'next/link'
+import { ArrowLeft, BookOpen, GitCompare } from 'lucide-react'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { InteractivePoemViewer } from '@/components/study/InteractivePoemViewer'
+import type { PoemData } from '@/components/study/InteractivePoemViewer'
+
+const prelude: PoemData = {
+  title: 'The Prelude: stealing the boat',
+  poet: 'William Wordsworth',
+  lines: [
+    {
+      text: 'One summer evening (led by her) I found',
+      annotations: [
+        {
+          type: 'Personification',
+          note: '"Led by her" - Nature is personified as female. The young Wordsworth feels guided by Nature into the experience, as if she is teaching him a lesson.',
+          color: '#10b981',
+        },
+        {
+          type: 'Setting',
+          note: 'The opening sets a peaceful scene - "summer evening" suggests warmth and beauty. This calmness will be shattered by the threatening mountain.',
+          color: '#a855f7',
+        },
+      ],
+    },
+    {
+      text: 'A little boat tied to a willow tree',
+      annotations: [
+        {
+          type: 'Imagery',
+          note: '"Little" diminishes the boat, foreshadowing the speaker\'s eventual smallness against nature\'s vastness. The willow is gentle and peaceful.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: 'Within a rocky cave, its usual home.',
+      annotations: [
+        {
+          type: 'Diction',
+          note: 'The boat has a "home" - already personified. Wordsworth attributes life and place to inanimate objects, blurring the line between humans and nature.',
+          color: '#3b82f6',
+        },
+      ],
+    },
+    {
+      text: 'Straight I unloosed her chain, and stepping in',
+      annotations: [
+        {
+          type: 'Action',
+          note: '"Unloosed" - the speaker is taking what is not his. The act is impulsive ("Straight" = immediately), suggesting the recklessness of youth.',
+          color: '#ef4444',
+        },
+      ],
+    },
+    {
+      text: 'Pushed from the shore. It was an act of stealth',
+      annotations: [
+        {
+          type: 'Confession',
+          note: '"Stealth" admits guilt - the speaker knows this is wrong. The poem is honest about the moral ambiguity of his action.',
+          color: '#ef4444',
+        },
+      ],
+    },
+    {
+      text: 'And troubled pleasure, nor without the voice',
+      annotations: [
+        {
+          type: 'Oxymoron',
+          note: '"Troubled pleasure" - the speaker enjoys the transgression but feels uneasy. This captures the complex emotion of doing something forbidden.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: 'Of mountain-echoes did my boat move on;',
+      annotations: [
+        {
+          type: 'Foreshadowing',
+          note: '"Mountain-echoes" - already nature responds to him. The mountains are not silent; they are watching and replying. This foreshadows the central event.',
+          color: '#a855f7',
+        },
+      ],
+    },
+    {
+      text: 'Leaving behind her still, on either side,',
+      annotations: [
+        {
+          type: 'Imagery',
+          note: 'The boat leaves a wake on either side - the speaker is making his mark on the previously undisturbed water. Nature\'s stillness is being broken.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: 'Small circles glittering idly in the moon,',
+      annotations: [
+        {
+          type: 'Imagery',
+          note: '"Glittering idly" - beautiful, peaceful imagery. The moonlit ripples suggest harmony and beauty. The contrast with what follows makes the shift more shocking.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: 'Until they melted all into one track',
+      annotations: [
+        {
+          type: 'Imagery',
+          note: '"Melted" - the ripples disappear into a single trail. The boat is moving steadily, the speaker is in control - or so he thinks.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: 'Of sparkling light. But now, like one who rows,',
+      annotations: [
+        {
+          type: 'Volta',
+          note: '"But now" - the turning point begins. The poem shifts from peaceful description to dramatic confrontation.',
+          color: '#a855f7',
+        },
+      ],
+    },
+    {
+      text: 'Proud of his skill, to reach a chosen point',
+      annotations: [
+        {
+          type: 'Hubris',
+          note: '"Proud of his skill" - the speaker\'s pride is highlighted. This pride is about to be punished by nature.',
+          color: '#ef4444',
+        },
+      ],
+    },
+    {
+      text: 'With an unswerving line, I fixed my view',
+      annotations: [
+        {
+          type: 'Diction',
+          note: '"Unswerving line" - the speaker is confident, deliberate. He thinks he has total control.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: 'Upon the summit of a craggy ridge,',
+      annotations: [
+        {
+          type: 'Setting',
+          note: '"Craggy ridge" - the harsh adjective hints at danger. The speaker uses this ridge as a navigation point but he hasn\'t noticed what lies beyond.',
+          color: '#a855f7',
+        },
+      ],
+    },
+    {
+      text: 'The horizon\'s utmost boundary; far above',
+      annotations: [
+        {
+          type: 'Perspective',
+          note: '"Utmost boundary" - the speaker thinks the ridge is the limit of the visible world. He doesn\'t realise something larger is hidden behind it.',
+          color: '#3b82f6',
+        },
+      ],
+    },
+    {
+      text: 'Was nothing but the stars and the grey sky.',
+      annotations: [
+        {
+          type: 'Imagery',
+          note: 'The sky seems empty - "nothing but the stars". This emptiness is about to be filled by something terrifying.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: 'She was an elfin pinnace; lustily',
+      annotations: [
+        {
+          type: 'Diction',
+          note: '"Elfin pinnace" - elf-like little boat, suggesting magic and lightness. "Lustily" means vigorously - the speaker rows enthusiastically, still confident.',
+          color: '#3b82f6',
+        },
+      ],
+    },
+    {
+      text: 'I dipped my oars into the silent lake,',
+      annotations: [
+        {
+          type: 'Sibilance',
+          note: 'The "s" sounds in "silent" emphasise the stillness about to be broken. The lake is unnaturally quiet, almost watching.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: 'And, as I rose upon the stroke, my boat',
+      annotations: [
+        {
+          type: 'Action',
+          note: 'The speaker is fully engaged in rowing, putting his strength into each stroke. His confidence builds.',
+          color: '#a855f7',
+        },
+      ],
+    },
+    {
+      text: 'Went heaving through the water like a swan;',
+      annotations: [
+        {
+          type: 'Simile',
+          note: '"Like a swan" - graceful, elegant. The speaker compares himself to a beautiful creature. This is the peak of his pride.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: 'When, from behind that craggy steep till then',
+      annotations: [
+        {
+          type: 'Volta',
+          note: '"When" - the second turning point. Something is about to appear from behind the ridge.',
+          color: '#a855f7',
+        },
+      ],
+    },
+    {
+      text: 'The horizon\'s bound, a huge peak, black and huge,',
+      annotations: [
+        {
+          type: 'Repetition',
+          note: '"Huge ... huge" - the repetition emphasises the overwhelming size. Wordsworth uses simple, repeated language to convey awe and terror.',
+          color: '#ef4444',
+        },
+        {
+          type: 'Key quote',
+          note: 'The mountain emerges as if alive. "Black" suggests menace. The repeated "huge" shows the speaker is too overwhelmed for elegant language.',
+          color: '#f59e0b',
+        },
+      ],
+    },
+    {
+      text: 'As if with voluntary power instinct,',
+      annotations: [
+        {
+          type: 'Personification',
+          note: '"Voluntary power" - the mountain has its own will. It is not just a passive landscape but an active, intentional being. This is the sublime: nature as a living, threatening force.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: 'Upreared its head. I struck and struck again,',
+      annotations: [
+        {
+          type: 'Personification',
+          note: '"Upreared its head" - the mountain is described like a giant rising up. The verb "upreared" is animal-like, threatening.',
+          color: '#10b981',
+        },
+        {
+          type: 'Repetition',
+          note: '"Struck and struck again" - the speaker panics, rowing harder. The repetition shows desperation.',
+          color: '#a855f7',
+        },
+      ],
+    },
+    {
+      text: 'And growing still in stature the grim shape',
+      annotations: [
+        {
+          type: 'Imagery',
+          note: '"Growing still in stature" - the mountain seems to grow taller as he flees. "Grim" personifies it as having a serious, hostile expression.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: 'Towered up between me and the stars, and still,',
+      annotations: [
+        {
+          type: 'Sublime',
+          note: 'The mountain "towered up" between him and the stars - blocking out the heavens. This is a key Romantic image of the sublime: nature so vast it dwarfs everything.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: 'For so it seemed, with purpose of its own',
+      annotations: [
+        {
+          type: 'Personification',
+          note: '"Purpose of its own" - the mountain seems to have intention. Wordsworth conveys the young boy\'s terrified perception that nature is hunting him.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: 'And measured motion like a living thing,',
+      annotations: [
+        {
+          type: 'Simile',
+          note: '"Like a living thing" - the simile makes nature alive. The "measured motion" is steady and inexorable, as if the mountain is patient and certain.',
+          color: '#10b981',
+        },
+        {
+          type: 'Key quote',
+          note: 'This line captures the central idea: nature is alive and aware. The Romantic vision is not of dead matter but of a living, conscious universe.',
+          color: '#f59e0b',
+        },
+      ],
+    },
+    {
+      text: 'Strode after me. With trembling oars I turned,',
+      annotations: [
+        {
+          type: 'Imagery',
+          note: '"Strode after me" - the mountain pursues him. "Trembling oars" reveals the speaker\'s fear (and his oars literally shaking). The chase is on.',
+          color: '#ef4444',
+        },
+      ],
+    },
+    {
+      text: 'And through the silent water stole my way',
+      annotations: [
+        {
+          type: 'Diction',
+          note: '"Stole my way" - the speaker is sneaking back. The earlier "act of stealth" comes back. He is now a frightened child trying to undo his transgression.',
+          color: '#3b82f6',
+        },
+      ],
+    },
+    {
+      text: 'Back to the covert of the willow tree;',
+      annotations: [
+        {
+          type: 'Cyclical structure',
+          note: 'He returns to the willow tree - a cyclical journey. But he is changed. The familiar peaceful place is now a "covert" (hiding place).',
+          color: '#a855f7',
+        },
+      ],
+    },
+    {
+      text: 'There in her mooring-place I left my bark,—',
+      annotations: [
+        {
+          type: 'Action',
+          note: 'He returns the boat. The action is over but the experience is not. "Bark" is an old word for boat, giving the moment a literary, meditative quality.',
+          color: '#a855f7',
+        },
+      ],
+    },
+    {
+      text: 'And through the meadows homeward went, in grave',
+      annotations: [
+        {
+          type: 'Tone shift',
+          note: '"Grave" - serious, sombre. The boy walks home changed. The carefree pride is gone.',
+          color: '#a855f7',
+        },
+      ],
+    },
+    {
+      text: 'And serious mood; but after I had seen',
+      annotations: [
+        {
+          type: 'Reflection',
+          note: 'The speaker reflects on the experience as the older Wordsworth narrating his childhood. The poem moves from event to meditation.',
+          color: '#3b82f6',
+        },
+      ],
+    },
+    {
+      text: 'That spectacle, for many days, my brain',
+      annotations: [
+        {
+          type: 'Aftermath',
+          note: 'The vision haunts him "for many days" - the experience has lasting psychological impact. This is what Wordsworth calls a "spot of time".',
+          color: '#3b82f6',
+        },
+      ],
+    },
+    {
+      text: 'Worked with a dim and undetermined sense',
+      annotations: [
+        {
+          type: 'Diction',
+          note: '"Dim and undetermined" - the speaker cannot fully understand what he saw. The experience defies explanation, which is part of the sublime.',
+          color: '#3b82f6',
+        },
+      ],
+    },
+    {
+      text: 'Of unknown modes of being; o\'er my thoughts',
+      annotations: [
+        {
+          type: 'Key quote',
+          note: '"Unknown modes of being" - the speaker now believes there are forms of consciousness he cannot understand. Nature is alive in ways humans cannot grasp.',
+          color: '#f59e0b',
+        },
+      ],
+    },
+    {
+      text: 'There hung a darkness, call it solitude',
+      annotations: [
+        {
+          type: 'Metaphor',
+          note: '"Darkness" hangs over his thoughts. The speaker calls it "solitude" but knows it is more than that - a profound isolation from his previous certainty about the world.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: 'Or blank desertion. No familiar shapes',
+      annotations: [
+        {
+          type: 'Imagery',
+          note: '"Blank desertion" - he feels abandoned. The familiar world has been emptied of meaning.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: 'Remained, no pleasant images of trees,',
+      annotations: [
+        {
+          type: 'Loss',
+          note: '"No pleasant images" - the comforting, gentle nature is gone. The boy can no longer see nature as friendly.',
+          color: '#ef4444',
+        },
+      ],
+    },
+    {
+      text: 'Of sea or sky, no colours of green fields;',
+      annotations: [
+        {
+          type: 'Catalogue',
+          note: 'The list of lost things - sea, sky, green fields - shows the totality of his disillusionment. All of nature is now strange.',
+          color: '#a855f7',
+        },
+      ],
+    },
+    {
+      text: 'But huge and mighty forms, that do not live',
+      annotations: [
+        {
+          type: 'Repetition',
+          note: '"Huge" returns - the same word used for the mountain. The vision of nature as massive, hostile beings now fills his mind.',
+          color: '#a855f7',
+        },
+      ],
+    },
+    {
+      text: 'Like living men, moved slowly through the mind',
+      annotations: [
+        {
+          type: 'Imagery',
+          note: '"Do not live like living men" - these forms are alive but not in a human way. Wordsworth glimpses a non-human consciousness in nature.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: 'By day, and were a trouble to my dreams.',
+      annotations: [
+        {
+          type: 'Closing image',
+          note: 'The poem ends with the lasting trouble - the experience haunts his daytime thoughts and his dreams. The childhood event has shaped him forever.',
+          color: '#a855f7',
+        },
+        {
+          type: 'Key quote',
+          note: 'This is the heart of Wordsworth\'s philosophy: powerful childhood experiences with nature shape the adult mind permanently.',
+          color: '#f59e0b',
+        },
+      ],
+    },
+  ],
+
+  context: `
+    <h3>William Wordsworth (1770-1850)</h3>
+    <p>Wordsworth was one of the founders of English Romanticism, alongside Samuel Taylor Coleridge. He grew up in the Lake District and his deep love of nature shaped his entire poetic vision. He believed that childhood experiences in nature were formative and sacred.</p>
+
+    <h3>The Prelude</h3>
+    <p>The full title is <em>The Prelude, or Growth of a Poet\'s Mind</em>. It is an autobiographical epic poem in which Wordsworth traces his own intellectual and emotional development. He worked on it for most of his life. This extract comes from Book One.</p>
+
+    <h3>"Spots of Time"</h3>
+    <p>Wordsworth believed certain childhood experiences leave a permanent mark on the mind - he called them "spots of time". The boat-stealing episode is one of these. These memories are formative and continue to shape the adult.</p>
+
+    <h3>Romantic Movement</h3>
+    <p>Romantic poets valued <strong>emotion, imagination, and nature</strong> over reason. They saw nature as a teacher and a moral force. Wordsworth in particular believed that nature was alive and could communicate with humans.</p>
+
+    <h3>The Sublime</h3>
+    <p>The Romantic concept of the <strong>sublime</strong> - beauty mixed with terror - is central to this poem. The mountain rising up is sublime: vast, awe-inspiring, and frightening. Wordsworth believed the sublime taught humans humility before the natural world.</p>
+  `,
+
+  summary: `Opening: The young Wordsworth finds a boat tied to a willow tree on a summer evening. He impulsively unties it ("an act of stealth and troubled pleasure") and pushes off into the lake.
+
+Pride: He rows confidently, "proud of his skill", fixing his view on a craggy ridge as a navigation point. He compares his moving boat to a swan.
+
+The mountain appears: From behind the ridge, a "huge peak, black and huge" emerges. The mountain seems to rise up "with voluntary power", towering between him and the stars. It strides after him "like a living thing".
+
+Retreat: Terrified, the speaker turns and rows back. He returns the boat to its mooring under the willow and walks home in a "grave and serious mood".
+
+Aftermath: For many days afterwards, his mind is haunted by "huge and mighty forms" - non-human shapes that move through his thoughts and disturb his dreams. The experience has changed him: he can no longer see nature as friendly and familiar.
+
+Overall meaning: A childhood encounter with the sublime power of nature teaches the young Wordsworth humility and reveals that nature is alive - but not in the gentle, comforting way he had imagined. Pride is punished, and the experience shapes his adult mind forever.`,
+
+  formAndStructure: `Form: Blank verse - unrhymed iambic pentameter. This is the form of epic poetry (Milton\'s Paradise Lost) and gives the personal memory a serious, elevated quality. It also feels natural and conversational.
+
+Length: A continuous 44-line extract from a much longer epic poem. The lack of stanza breaks creates a flowing, unbroken narrative that mirrors how memory works - one image leading to another.
+
+First-person narration: "I found", "I struck", "my brain". The intimacy of the first-person voice gives the poem confessional quality. Wordsworth is sharing a personal, formative memory.
+
+Two voices: The narrator is the adult Wordsworth looking back at his childhood self. We feel both the immediacy of the boy\'s experience and the reflection of the older man.
+
+Structural turn: The poem has a clear volta when the mountain appears ("a huge peak, black and huge"). Before this, the language is graceful and confident. After this, it becomes broken, repetitive, fearful.
+
+Cyclical journey: The boy leaves the willow tree and returns to it - but he is changed. This circular structure mirrors how the experience completes a journey of self-discovery.
+
+Repetition: "Huge ... huge", "struck and struck", "still ... still". The repetitions suggest a child\'s overwhelmed, panicked perception. Words fail him.
+
+Personification: Nature is constantly personified. The boat has a "home", the lake is "silent" (watching), the mountain has "voluntary power" and "purpose". This is Wordsworth\'s pantheistic vision of nature as alive and conscious.`,
+
+  keyQuotes: [
+    {
+      quote: 'an act of stealth / And troubled pleasure',
+      analysis:
+        'The oxymoron captures the conflicted thrill of transgression. "Stealth" admits guilt - he knows it\'s wrong. "Troubled pleasure" shows the complex psychology of doing something forbidden. This sets up the moral framework: he has crossed a line, and nature will respond.',
+      themes: ['Guilt', 'Transgression', 'Childhood'],
+    },
+    {
+      quote: 'Proud of his skill',
+      analysis:
+        'A simple phrase that encapsulates the speaker\'s hubris. He thinks rowing is a "skill" he can perfect. The pride is innocent but it is exactly the pride that nature is about to punish. Wordsworth subtly criticises human arrogance.',
+      themes: ['Pride', 'Hubris', 'Humanity vs nature'],
+    },
+    {
+      quote: 'a huge peak, black and huge',
+      analysis:
+        'The most famous line in the extract. The repetition of "huge" shows the speaker is too overwhelmed for elegant language - he can only repeat. "Black" suggests menace and the unknown. The mountain emerges almost like a living monster, breaking the peaceful spell of the rowing.',
+      themes: ['Sublime', 'Power of nature', 'Fear'],
+    },
+    {
+      quote: 'with voluntary power instinct, / Upreared its head',
+      analysis:
+        'The mountain has "voluntary power" - its own will. "Upreared its head" makes it animal-like, as if a giant beast is rising up. Wordsworth\'s pantheism (belief that nature is alive) is here at full force. This is the sublime: nature so vast it has agency.',
+      themes: ['Personification', 'Sublime', 'Power of nature'],
+    },
+    {
+      quote: 'like a living thing, / Strode after me',
+      analysis:
+        'The simile makes the mountain a living predator. "Strode" suggests a deliberate, purposeful walk. The boy is being hunted. Wordsworth captures the terror of a child\'s perception when nature seems alive and hostile.',
+      themes: ['Sublime', 'Fear', 'Personification'],
+    },
+    {
+      quote: 'unknown modes of being',
+      analysis:
+        'After the experience, the speaker realises there are forms of consciousness he cannot understand. Nature is alive in ways beyond human comprehension. This phrase captures Wordsworth\'s philosophy: there are levels of existence the human mind can sense but not grasp.',
+      themes: ['Sublime', 'Spirituality', 'Limits of understanding'],
+    },
+    {
+      quote: 'No familiar shapes / Remained',
+      analysis:
+        'The boy\'s comfortable view of nature is shattered. The "pleasant images of trees ... colours of green fields" all disappear. The world has been transformed. This is a loss of innocence: he can no longer see nature as a friendly companion.',
+      themes: ['Loss of innocence', 'Childhood', 'Transformation'],
+    },
+    {
+      quote: 'huge and mighty forms ... were a trouble to my dreams',
+      analysis:
+        'The closing lines show the lasting impact. "Huge" returns from the mountain scene. The forms "do not live like living men" - they are alive but in non-human ways. They invade his dreams, showing how a single childhood experience can shape the adult mind permanently.',
+      themes: ['Memory', 'Lasting impact', 'Sublime'],
+    },
+  ],
+
+  languageDevices: [
+    {
+      device: 'Personification',
+      example: 'huge peak ... with voluntary power instinct, / Upreared its head ... Strode after me',
+      effect:
+        'Wordsworth personifies the mountain as a living giant with intention. This is the central technique of the poem - nature is alive, conscious, and powerful. The personification captures both the child\'s terrified perception and Wordsworth\'s philosophical view of nature as a living force.',
+      lineRef: 21,
+    },
+    {
+      device: 'Repetition',
+      example: 'a huge peak, black and huge / struck and struck again',
+      effect:
+        'The repetitions show the speaker overwhelmed by experience - words fail him. They also create a sense of the mountain\'s relentlessness and the speaker\'s panic. The simple repeated language mirrors a child\'s response to fear.',
+      lineRef: 21,
+    },
+    {
+      device: 'Oxymoron',
+      example: 'troubled pleasure',
+      effect:
+        'The oxymoron captures the conflicted emotion of doing something forbidden but exciting. It establishes the moral complexity early: this is not simple wrongdoing but the rich psychological territory of childhood guilt.',
+      lineRef: 5,
+    },
+    {
+      device: 'Simile',
+      example: 'like a swan ... like a living thing',
+      effect:
+        'Two contrasting similes capture the poem\'s journey. First the boat is "like a swan" (graceful, confident). Then the mountain is "like a living thing" (alive, threatening). The shift from elegant to monstrous comparison mirrors the speaker\'s emotional change.',
+      lineRef: 19,
+    },
+    {
+      device: 'Volta',
+      example: 'When, from behind that craggy steep ... a huge peak',
+      effect:
+        'The poem has a clear turning point when the mountain appears. Before, the language is graceful and the speaker confident. After, the language becomes broken and fearful. The volta dramatises the moment of moral and emotional reckoning.',
+      lineRef: 20,
+    },
+    {
+      device: 'Blank verse',
+      example: 'Continuous unrhymed iambic pentameter throughout',
+      effect:
+        'The blank verse gives the personal memory the weight of epic poetry. It feels conversational yet elevated. The lack of rhyme allows the language to flow naturally, mirroring how memory and reflection actually work in the mind.',
+      lineRef: 1,
+    },
+    {
+      device: 'First-person narration',
+      example: 'I found ... I struck ... my brain',
+      effect:
+        'The first person makes the experience intimate and confessional. We feel both the boy\'s immediate terror and the adult\'s reflective wisdom. This dual voice is essential to The Prelude\'s autobiographical project.',
+      lineRef: 1,
+    },
+  ],
+}
+
+const comparisons = [
+  {
+    title: 'To Autumn',
+    poet: 'John Keats',
+    href: '/revision/poetry/eduqas/to-autumn',
+    reason:
+      'Both Romantic poems present nature as awe-inspiring, but Keats sees nature as gentle and abundant while Wordsworth shows it as sublime and threatening. A perfect contrast in Romantic visions of nature.',
+    themes: ['Nature', 'Romantic poetry', 'Awe'],
+  },
+  {
+    title: 'Ozymandias',
+    poet: 'Percy Bysshe Shelley',
+    href: '/revision/poetry/eduqas/ozymandias',
+    reason:
+      'Both poems show nature dwarfing human ambition. Wordsworth\'s mountain humbles a young boy; Shelley\'s desert erases an empire. Both Romantic poets warn of human pride.',
+    themes: ['Power of nature', 'Pride', 'Romantic poetry'],
+  },
+  {
+    title: 'As Imperceptibly as Grief',
+    poet: 'Emily Dickinson',
+    href: '/revision/poetry/eduqas/as-imperceptibly-as-grief',
+    reason:
+      'Both poems explore how subtle natural experiences can have profound emotional effects. Dickinson\'s gentle change is the inverse of Wordsworth\'s violent confrontation, but both shape the speaker\'s consciousness.',
+    themes: ['Nature', 'Emotional impact', 'Memory'],
+  },
+]
+
+export default function PreludeEduqasPage() {
+  return (
+    <div className="space-y-8">
+      <div>
+        <Button
+          variant="ghost"
+          size="sm"
+          className="mb-3 -ml-2 text-muted-foreground"
+          render={<Link href="/revision/poetry/eduqas" />}
+        >
+          <ArrowLeft className="size-3.5" />
+          Back to Eduqas Poetry
+        </Button>
+
+        <div className="flex items-center gap-3">
+          <div className="flex size-10 items-center justify-center rounded-xl bg-emerald-500/10">
+            <BookOpen className="size-5 text-emerald-400" />
+          </div>
+          <div>
+            <h1 className="text-heading-lg font-heading text-foreground">
+              The Prelude: stealing the boat
+            </h1>
+            <p className="text-body-sm text-muted-foreground">
+              William Wordsworth &middot; Eduqas Poetry Anthology
+            </p>
+            <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">Eduqas</Badge>
+          </div>
+        </div>
+      </div>
+
+      <InteractivePoemViewer poem={prelude} />
+
+      <section className="rounded-xl border border-border bg-card p-5 sm:p-6">
+        <div className="flex items-center gap-2 mb-4">
+          <GitCompare className="size-4.5 text-muted-foreground" />
+          <h2 className="text-heading-sm font-heading text-foreground">
+            Compare with
+          </h2>
+        </div>
+        <p className="text-body-sm text-muted-foreground mb-5">
+          Strong Eduqas pairings for comparison questions involving The Prelude.
+        </p>
+
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {comparisons.map((c) => (
+            <Link
+              key={c.title}
+              href={c.href}
+              className="group rounded-lg border border-border bg-card p-4 transition-colors hover:border-foreground/20 hover:bg-muted/40"
+            >
+              <h3 className="text-sm font-semibold text-foreground group-hover:text-foreground/90">
+                {c.title}
+              </h3>
+              <p className="text-xs text-muted-foreground mb-2">{c.poet}</p>
+              <p className="text-xs text-muted-foreground leading-relaxed mb-3">
+                {c.reason}
+              </p>
+              <div className="flex flex-wrap gap-1.5">
+                {c.themes.map((t) => (
+                  <span
+                    key={t}
+                    className="rounded-full bg-muted px-2 py-0.5 text-[11px] text-muted-foreground"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+    </div>
+  )
+}

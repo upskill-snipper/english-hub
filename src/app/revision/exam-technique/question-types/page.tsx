@@ -583,6 +583,67 @@ export default function QuestionTypesPage() {
         </Tip>
       </Section>
 
+      {/* ── Related Revision ─────────────────────────────────── */}
+      <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
+        <div className="flex items-center gap-3 mb-2">
+          <Lightbulb className="size-5 text-primary" />
+          <h2 className="text-heading-md font-heading text-foreground">Apply It</h2>
+        </div>
+        <p className="text-body-sm text-muted-foreground mb-5">
+          Practise spotting command words in real questions.
+        </p>
+        <div className="grid gap-3 sm:grid-cols-2">
+          <Link
+            href="/revision/exam-technique/essay-structure"
+            className="group flex items-start gap-3 rounded-xl border border-border/40 bg-background/50 p-4 transition-all hover:border-border hover:bg-background"
+          >
+            <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-emerald-500/10">
+              <PenLine className="size-4 text-emerald-400" />
+            </div>
+            <div className="min-w-0">
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Essay Structure</p>
+              <p className="text-xs text-muted-foreground mt-0.5">Match each command word to a paragraph plan.</p>
+            </div>
+          </Link>
+          <Link
+            href="/revision/grade-targets/grade-7"
+            className="group flex items-start gap-3 rounded-xl border border-border/40 bg-background/50 p-4 transition-all hover:border-border hover:bg-background"
+          >
+            <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-cyan-500/10">
+              <FileText className="size-4 text-cyan-400" />
+            </div>
+            <div className="min-w-0">
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Grade 7 Standards</p>
+              <p className="text-xs text-muted-foreground mt-0.5">How perceptive responses use the question.</p>
+            </div>
+          </Link>
+          <Link
+            href="/revision/quiz"
+            className="group flex items-start gap-3 rounded-xl border border-border/40 bg-background/50 p-4 transition-all hover:border-border hover:bg-background"
+          >
+            <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-orange-500/10">
+              <Search className="size-4 text-orange-400" />
+            </div>
+            <div className="min-w-0">
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Quizzes</p>
+              <p className="text-xs text-muted-foreground mt-0.5">Test your command-word recall.</p>
+            </div>
+          </Link>
+          <Link
+            href="/revision/poetry"
+            className="group flex items-start gap-3 rounded-xl border border-border/40 bg-background/50 p-4 transition-all hover:border-border hover:bg-background"
+          >
+            <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-rose-500/10">
+              <GitCompare className="size-4 text-rose-400" />
+            </div>
+            <div className="min-w-0">
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Poetry Compare Questions</p>
+              <p className="text-xs text-muted-foreground mt-0.5">Practise compare command-word approaches.</p>
+            </div>
+          </Link>
+        </div>
+      </section>
+
       {/* ── Navigation ────────────────────────────────────────── */}
       <div className="flex flex-col sm:flex-row gap-3 pt-4">
         <Button

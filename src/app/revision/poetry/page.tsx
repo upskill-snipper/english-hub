@@ -29,9 +29,9 @@ type ExamBoard = 'AQA' | 'Edexcel' | 'OCR' | 'WJEC'
 
 const EXAM_BOARDS: { id: ExamBoard; label: string; available: boolean }[] = [
   { id: 'AQA', label: 'AQA', available: true },
-  { id: 'Edexcel', label: 'Edexcel', available: false },
-  { id: 'OCR', label: 'OCR', available: false },
-  { id: 'WJEC', label: 'WJEC Eduqas', available: false },
+  { id: 'Edexcel', label: 'Edexcel', available: true },
+  { id: 'OCR', label: 'OCR', available: true },
+  { id: 'WJEC', label: 'WJEC Eduqas', available: true },
 ]
 
 // ─── Poem data ────────────────────────────────────────────────────────────────
@@ -264,31 +264,97 @@ export default function PoetryRevisionPage() {
         <div className="mt-3 flex items-start gap-2 rounded-lg bg-blue-500/5 border border-blue-500/10 p-3">
           <Info className="mt-0.5 size-4 shrink-0 text-blue-400" />
           <p className="text-caption text-muted-foreground">
-            These poems are from the <strong className="text-foreground">AQA GCSE English Literature</strong> anthology.
-            Edexcel, OCR, and WJEC students study different poems -- support for those boards is coming soon.
+            <strong className="text-foreground">AQA</strong>, <strong className="text-foreground">Edexcel</strong> and <strong className="text-foreground">OCR</strong> anthologies are now available.
+            Each exam board uses a different set of poems -- select your board above. WJEC support is coming soon.
           </p>
         </div>
       </section>
 
-      {/* ── Other Boards Placeholder ───────────────────────────────── */}
-      {selectedBoard !== 'AQA' && (
-        <section className="rounded-2xl border border-dashed border-border bg-muted/30 p-8 sm:p-12 text-center">
-          <Clock className="mx-auto mb-4 size-10 text-muted-foreground/50" />
-          <h2 className="text-heading-lg font-heading text-foreground">
-            {selectedBoard} Poetry -- Coming Soon
-          </h2>
-          <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
-            We are working on full study guides for the {selectedBoard} poetry anthology.
-            In the meantime, our unseen poetry techniques and poetry skills sections below apply to all exam boards.
-          </p>
-          <Button
-            variant="outline"
-            size="sm"
-            className="mt-5"
-            onClick={() => setSelectedBoard('AQA')}
-          >
-            View AQA poems in the meantime
-          </Button>
+      {/* ── OCR available CTA ──────────────────────────────────────── */}
+      {selectedBoard === 'OCR' && (
+        <section className="rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/[0.04] p-6 sm:p-8">
+          <div className="flex items-start gap-4">
+            <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-primary/10">
+              <BookOpen className="size-6 text-primary" />
+            </div>
+            <div className="flex-1">
+              <h2 className="text-heading-lg font-heading text-foreground">
+                OCR Towards a World Unknown
+              </h2>
+              <p className="mt-2 max-w-2xl text-body-sm text-muted-foreground">
+                The OCR GCSE English Literature anthology contains 4 thematic clusters of 15 poems each.
+                You will study one cluster: Love and Relationships, Conflict, Youth and Age, or Power and the Natural World.
+              </p>
+              <Button
+                variant="default"
+                size="sm"
+                className="mt-4"
+                render={<Link href="/revision/poetry/ocr" />}
+              >
+                View OCR Anthology
+                <ArrowRight className="size-3.5" />
+              </Button>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── Edexcel available CTA ──────────────────────────────────── */}
+      {selectedBoard === 'Edexcel' && (
+        <section className="rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/[0.04] p-6 sm:p-8">
+          <div className="flex items-start gap-4">
+            <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-primary/10">
+              <BookOpen className="size-6 text-primary" />
+            </div>
+            <div className="flex-1">
+              <h2 className="text-heading-lg font-heading text-foreground">
+                Pearson Edexcel Poetry Anthology
+              </h2>
+              <p className="mt-2 max-w-2xl text-body-sm text-muted-foreground">
+                The Edexcel GCSE English Literature anthology contains 2 themed clusters of 15 poems each.
+                You will study one cluster: Conflict or Time and Place.
+              </p>
+              <Button
+                variant="default"
+                size="sm"
+                className="mt-4"
+                render={<Link href="/revision/poetry/edexcel" />}
+              >
+                View Edexcel Anthology
+                <ArrowRight className="size-3.5" />
+              </Button>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── WJEC Eduqas available CTA ──────────────────────────────── */}
+      {selectedBoard === 'WJEC' && (
+        <section className="rounded-2xl border border-border/60 bg-gradient-to-br from-card via-card to-primary/[0.04] p-6 sm:p-8">
+          <div className="flex items-start gap-4">
+            <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-primary/10">
+              <BookOpen className="size-6 text-primary" />
+            </div>
+            <div className="flex-1">
+              <h2 className="text-heading-lg font-heading text-foreground">
+                WJEC Eduqas Poetry Anthology
+              </h2>
+              <p className="mt-2 max-w-2xl text-body-sm text-muted-foreground">
+                The WJEC Eduqas GCSE English Literature anthology contains 18 poems that all
+                students study. The exam asks you to compare two poems from the anthology,
+                so building strong pairings is essential.
+              </p>
+              <Button
+                variant="default"
+                size="sm"
+                className="mt-4"
+                render={<Link href="/revision/poetry/eduqas" />}
+              >
+                View Eduqas Anthology
+                <ArrowRight className="size-3.5" />
+              </Button>
+            </div>
+          </div>
         </section>
       )}
 
@@ -583,6 +649,64 @@ export default function PoetryRevisionPage() {
           ))}
         </div>
       </section>}
+
+      {/* ── Related Revision ────────────────────────────────────────── */}
+      <section>
+        <div className="mb-5 flex items-center gap-3">
+          <Sparkles className="size-5 text-primary" />
+          <h2 className="text-heading-lg font-heading text-foreground">Sharpen Your Poetry Marks</h2>
+        </div>
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <Link
+            href="/revision/exam-technique/essay-structure"
+            className="group flex items-start gap-3 rounded-2xl border border-border/60 bg-card p-4 transition-all hover:border-border hover:shadow-card-hover"
+          >
+            <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-emerald-500/10">
+              <FileText className="size-4 text-emerald-400" />
+            </div>
+            <div className="min-w-0">
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Essay Structure</p>
+              <p className="text-xs text-muted-foreground mt-0.5">Build sustained poetry comparisons.</p>
+            </div>
+          </Link>
+          <Link
+            href="/revision/exam-technique/question-types"
+            className="group flex items-start gap-3 rounded-2xl border border-border/60 bg-card p-4 transition-all hover:border-border hover:shadow-card-hover"
+          >
+            <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-emerald-500/10">
+              <GitCompareArrows className="size-4 text-emerald-400" />
+            </div>
+            <div className="min-w-0">
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Compare Command Words</p>
+              <p className="text-xs text-muted-foreground mt-0.5">Decode the comparison question.</p>
+            </div>
+          </Link>
+          <Link
+            href="/revision/grade-targets/grade-9"
+            className="group flex items-start gap-3 rounded-2xl border border-border/60 bg-card p-4 transition-all hover:border-border hover:shadow-card-hover"
+          >
+            <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-cyan-500/10">
+              <Sparkles className="size-4 text-cyan-400" />
+            </div>
+            <div className="min-w-0">
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Grade 9 Poetry</p>
+              <p className="text-xs text-muted-foreground mt-0.5">Conceptualised, top-band readings.</p>
+            </div>
+          </Link>
+          <Link
+            href="/revision/quiz"
+            className="group flex items-start gap-3 rounded-2xl border border-border/60 bg-card p-4 transition-all hover:border-border hover:shadow-card-hover"
+          >
+            <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-orange-500/10">
+              <Wand2 className="size-4 text-orange-400" />
+            </div>
+            <div className="min-w-0">
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Poetry Quizzes</p>
+              <p className="text-xs text-muted-foreground mt-0.5">Test your quote and context recall.</p>
+            </div>
+          </Link>
+        </div>
+      </section>
 
       {/* ── Motivational CTA ────────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-gradient-to-r from-rose-500/[0.06] via-card to-violet-500/[0.04] p-6 sm:p-8 text-center">

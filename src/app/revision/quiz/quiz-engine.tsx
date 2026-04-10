@@ -23,6 +23,32 @@ import { Badge } from '@/components/ui/badge'
 import type { QuizQuestion, Topic } from './quiz-data'
 import { TOPIC_META, getGrade } from './quiz-data'
 
+// ─── Weak topic → revision page mapping ────────────────────────────────────
+
+const TOPIC_REVISION_LINKS: Record<Topic, { href: string; title: string; description: string }[]> = {
+  poetry: [
+    { href: '/revision/poetry', title: 'Poetry Anthology', description: 'Annotated study guides for every poem.' },
+    { href: '/revision/exam-technique/essay-structure', title: 'Comparison Essay Structure', description: 'Build sustained poetry comparisons.' },
+  ],
+  'set-texts': [
+    { href: '/revision/texts', title: 'Set Texts Library', description: 'Plot, character and theme guides.' },
+    { href: '/revision/exam-technique/essay-structure', title: 'Essay Structure', description: 'Plan top-band literature responses.' },
+  ],
+  'language-techniques': [
+    { href: '/revision/language/reading', title: 'Reading Comprehension', description: 'Spot and analyse language techniques.' },
+    { href: '/revision/language/writing', title: 'Writing Skills', description: 'Use techniques in your own writing.' },
+  ],
+  'exam-technique': [
+    { href: '/revision/exam-technique/essay-structure', title: 'Essay Structure', description: 'PEE/PEEL and thesis-led plans.' },
+    { href: '/revision/exam-technique/question-types', title: 'Question Types', description: 'Decode every command word.' },
+    { href: '/revision/exam-technique/time-management', title: 'Time Management', description: 'Pace each paper for top marks.' },
+  ],
+  context: [
+    { href: '/revision/texts', title: 'Set Texts', description: 'Historical, social and literary context.' },
+    { href: '/revision/grade-targets/grade-7', title: 'Grade 7 Standards', description: 'See how context lifts marks.' },
+  ],
+}
+
 // ─── Types ─────────────────────────────────────────────────────────────────
 
 interface QuizEngineProps {
@@ -246,6 +272,49 @@ export function QuizEngine({ questions, mode, onRestart }: QuizEngineProps) {
             })}
           </div>
         </div>
+
+        {/* Recommended revision based on weak topics */}
+        {(() => {
+          const weakTopics = Object.entries(topicBreakdown)
+            .filter(([, data]) => data.total > 0 && data.correct / data.total < 0.7)
+            .sort(([, a], [, b]) => a.correct / a.total - b.correct / b.total)
+            .map(([topic]) => topic as Topic)
+
+          if (weakTopics.length === 0) return null
+
+          const recs = weakTopics
+            .flatMap((t) => TOPIC_REVISION_LINKS[t].map((link) => ({ ...link, topic: t })))
+            .slice(0, 4)
+
+          return (
+            <div className="rounded-2xl border border-border/60 bg-card p-5">
+              <h3 className="text-heading-md font-heading text-foreground mb-1 flex items-center gap-2">
+                <Zap className="size-4 text-orange-400" />
+                Recommended Revision
+              </h3>
+              <p className="text-body-sm text-muted-foreground mb-4">
+                Based on your weakest topic{weakTopics.length > 1 ? 's' : ''} ({weakTopics.map((t) => TOPIC_META[t].label).join(', ')}), focus next on:
+              </p>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {recs.map((rec) => (
+                  <Link
+                    key={rec.href + rec.topic}
+                    href={rec.href}
+                    className="group flex items-start gap-3 rounded-xl border border-border/40 bg-background/50 p-4 transition-all hover:border-border hover:bg-background"
+                  >
+                    <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                      <ChevronRight className="size-4 text-primary" />
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-sm font-semibold text-foreground group-hover:text-primary">{rec.title}</p>
+                      <p className="text-xs text-muted-foreground mt-0.5">{rec.description}</p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )
+        })()}
 
         {/* Question review */}
         <div className="rounded-2xl border border-border/60 bg-card p-5">

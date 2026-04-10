@@ -587,6 +587,67 @@ export default function ReadingPage() {
           </Tabs>
         </div>
       </Section>
+
+      {/* ── Related Revision ─────────────────────────────────── */}
+      <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
+        <div className="flex items-center gap-3 mb-2">
+          <Lightbulb className="size-5 text-primary" />
+          <h2 className="text-heading-md font-heading text-foreground">Take it Further</h2>
+        </div>
+        <p className="text-body-sm text-muted-foreground mb-5">
+          Build on your reading skills with related guides.
+        </p>
+        <div className="grid gap-3 sm:grid-cols-2">
+          <Link
+            href="/revision/exam-technique/essay-structure"
+            className="group flex items-start gap-3 rounded-xl border border-border/40 bg-background/50 p-4 transition-all hover:border-border hover:bg-background"
+          >
+            <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-emerald-500/10">
+              <Target className="size-4 text-emerald-400" />
+            </div>
+            <div className="min-w-0">
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Essay Structure Guide</p>
+              <p className="text-xs text-muted-foreground mt-0.5">Turn close reading into top-band paragraphs.</p>
+            </div>
+          </Link>
+          <Link
+            href="/revision/exam-technique/question-types"
+            className="group flex items-start gap-3 rounded-xl border border-border/40 bg-background/50 p-4 transition-all hover:border-border hover:bg-background"
+          >
+            <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-emerald-500/10">
+              <Target className="size-4 text-emerald-400" />
+            </div>
+            <div className="min-w-0">
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Question Types Decoded</p>
+              <p className="text-xs text-muted-foreground mt-0.5">Match reading techniques to each question.</p>
+            </div>
+          </Link>
+          <Link
+            href="/revision/grade-targets/grade-7"
+            className="group flex items-start gap-3 rounded-xl border border-border/40 bg-background/50 p-4 transition-all hover:border-border hover:bg-background"
+          >
+            <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-cyan-500/10">
+              <BarChart3 className="size-4 text-cyan-400" />
+            </div>
+            <div className="min-w-0">
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Aiming for Grade 7</p>
+              <p className="text-xs text-muted-foreground mt-0.5">See how perceptive reading is rewarded.</p>
+            </div>
+          </Link>
+          <Link
+            href="/revision/quiz"
+            className="group flex items-start gap-3 rounded-xl border border-border/40 bg-background/50 p-4 transition-all hover:border-border hover:bg-background"
+          >
+            <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-orange-500/10">
+              <Search className="size-4 text-orange-400" />
+            </div>
+            <div className="min-w-0">
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Test Yourself</p>
+              <p className="text-xs text-muted-foreground mt-0.5">Quick quizzes on language techniques.</p>
+            </div>
+          </Link>
+        </div>
+      </section>
     </div>
   )
 }

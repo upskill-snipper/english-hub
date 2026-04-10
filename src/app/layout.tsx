@@ -26,13 +26,13 @@ export const metadata: Metadata = {
     template: '%s — The English Hub',
   },
   description:
-    'Professional KS3, GCSE, and IGCSE English tutoring platform. Structured courses, exam-style practice, and revision tools to help you achieve top grades.',
+    'GCSE, IGCSE & KS3 English platform with 470+ courses, 30 interactive poem study pages, 7 GCSE-grade games, a full revision hub (Grade 5/7/9 guides), reading assessment with fluency testing, AI essay feedback, and 130+ mock papers. AQA, Edexcel, OCR & WJEC.',
   alternates: {
     canonical: 'https://theenglishhub.app',
   },
   openGraph: {
     title: 'The English Hub — Master English. Ace Your Exams.',
-    description: 'Expert GCSE, IGCSE & KS3 English courses, practice questions, and revision tools. AQA, Edexcel, OCR & WJEC Eduqas exam boards.',
+    description: '470+ courses, 30 interactive poem studies, 7 GCSE-grade games, full revision hub with grade 5/7/9 targets, reading assessment, AI essay feedback and 130+ mock papers. AQA, Edexcel, OCR & WJEC.',
     url: 'https://theenglishhub.app',
     siteName: 'The English Hub',
     type: 'website',
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'The English Hub — Master English. Ace Your Exams.',
-    description: 'Expert GCSE, IGCSE & KS3 English courses, practice questions, and revision tools. AQA, Edexcel, OCR & WJEC Eduqas exam boards.',
+    description: '470+ courses, 30 interactive poem studies, 7 GCSE-grade games, revision hub, reading assessment & AI essay feedback. AQA, Edexcel, OCR & WJEC.',
     images: ['/api/og'],
   },
 }

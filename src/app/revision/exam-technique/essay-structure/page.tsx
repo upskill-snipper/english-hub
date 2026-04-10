@@ -664,6 +664,67 @@ export default function EssayStructurePage() {
         </Tip>
       </Section>
 
+      {/* ── Related Revision ─────────────────────────────────── */}
+      <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
+        <div className="flex items-center gap-3 mb-2">
+          <Sparkles className="size-5 text-primary" />
+          <h2 className="text-heading-md font-heading text-foreground">Apply It in Your Revision</h2>
+        </div>
+        <p className="text-body-sm text-muted-foreground mb-5">
+          Pair essay structure with these related guides.
+        </p>
+        <div className="grid gap-3 sm:grid-cols-2">
+          <Link
+            href="/revision/grade-targets/grade-5"
+            className="group flex items-start gap-3 rounded-xl border border-border/40 bg-background/50 p-4 transition-all hover:border-border hover:bg-background"
+          >
+            <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-cyan-500/10">
+              <Star className="size-4 text-cyan-400" />
+            </div>
+            <div className="min-w-0">
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Grade 5 Standards</p>
+              <p className="text-xs text-muted-foreground mt-0.5">PEE/PEEL paragraphs in action.</p>
+            </div>
+          </Link>
+          <Link
+            href="/revision/grade-targets/grade-9"
+            className="group flex items-start gap-3 rounded-xl border border-border/40 bg-background/50 p-4 transition-all hover:border-border hover:bg-background"
+          >
+            <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-cyan-500/10">
+              <Star className="size-4 text-cyan-400" />
+            </div>
+            <div className="min-w-0">
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Grade 9 Standards</p>
+              <p className="text-xs text-muted-foreground mt-0.5">Conceptualised, sustained arguments.</p>
+            </div>
+          </Link>
+          <Link
+            href="/revision/language/reading"
+            className="group flex items-start gap-3 rounded-xl border border-border/40 bg-background/50 p-4 transition-all hover:border-border hover:bg-background"
+          >
+            <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-blue-500/10">
+              <BookOpen className="size-4 text-blue-400" />
+            </div>
+            <div className="min-w-0">
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Reading Comprehension</p>
+              <p className="text-xs text-muted-foreground mt-0.5">Find the evidence your essays need.</p>
+            </div>
+          </Link>
+          <Link
+            href="/revision/poetry"
+            className="group flex items-start gap-3 rounded-xl border border-border/40 bg-background/50 p-4 transition-all hover:border-border hover:bg-background"
+          >
+            <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-rose-500/10">
+              <PenLine className="size-4 text-rose-400" />
+            </div>
+            <div className="min-w-0">
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Poetry Analysis</p>
+              <p className="text-xs text-muted-foreground mt-0.5">Practise structures on the anthology.</p>
+            </div>
+          </Link>
+        </div>
+      </section>
+
       {/* ── Navigation ────────────────────────────────────────── */}
       <div className="flex flex-col sm:flex-row gap-3 pt-4">
         <Button

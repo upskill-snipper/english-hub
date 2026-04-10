@@ -15,6 +15,10 @@ import {
   Layout,
   MessageSquare,
   FolderOpen,
+  Feather,
+  Gamepad2,
+  ClipboardCheck,
+  TrendingUp,
 } from 'lucide-react'
 
 const items = [
@@ -24,6 +28,34 @@ const items = [
     title: 'Structured Courses',
     desc: 'From KS3 foundations to GCSE and IGCSE mastery — 470+ expert-written courses covering Reading, Writing, Grammar, Language, and Literature.',
     preview: 'Sample topics: Inference & Deduction, Narrative Writing, Poetry Analysis, Transactional Writing, Shakespeare...',
+  },
+  {
+    icon: Feather,
+    color: 'text-rose-400 bg-rose-500/10',
+    title: '30 Interactive Poem Study Pages',
+    desc: 'Line-by-line analysis of every poem in the AQA, Edexcel & Eduqas anthologies — Power & Conflict, Love & Relationships and more.',
+    preview: 'Includes: Annotated text, context, structure, themes, key quotes and exam-ready interpretations...',
+  },
+  {
+    icon: Gamepad2,
+    color: 'text-fuchsia-400 bg-fuchsia-500/10',
+    title: '7 GCSE-Grade Games',
+    desc: 'Fun, fast-paced games that convert your scores directly into GCSE grades 1–9 so you can see your level instantly.',
+    preview: 'Games: Comprehension Challenge, Grade Climber, Quote Detective, Speed Analysis, Spelling Bee, Theme Matcher, Vocabulary Builder...',
+  },
+  {
+    icon: TrendingUp,
+    color: 'text-lime-400 bg-lime-500/10',
+    title: 'Comprehensive Revision Hub',
+    desc: 'Grade-specific revision guides for Grade 5, Grade 7 and Grade 9 — plus poetry, language, set texts, exam technique and a quick quiz.',
+    preview: 'Sections: Poetry, Language, Texts, Exam Technique, Grade Targets (5/7/9), Quiz...',
+  },
+  {
+    icon: ClipboardCheck,
+    color: 'text-sky-400 bg-sky-500/10',
+    title: 'Reading Assessment & Fluency Test',
+    desc: 'Diagnose reading age, fluency and comprehension in minutes — then get a personalised diagnostic report telling you exactly what to work on next.',
+    preview: 'Includes: Timed fluency test, comprehension questions, reading-age estimate, parent-friendly report...',
   },
   {
     icon: FileQuestion,

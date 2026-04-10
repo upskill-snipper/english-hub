@@ -7,8 +7,9 @@ const FOOTER_SECTIONS = [
     title: 'Product',
     links: [
       { href: '/courses', label: 'Courses' },
-      { href: '/mock-exams', label: 'Mock Exams' },
       { href: '/games', label: 'Games' },
+      { href: '/assessment/reading', label: 'Reading Assessment' },
+      { href: '/mock-exams', label: 'Mock Exams' },
       { href: '/practice', label: 'Practice' },
       { href: '/resources', label: 'Resources' },
       { href: '/pricing', label: 'Pricing' },

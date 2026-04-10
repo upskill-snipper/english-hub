@@ -19,10 +19,10 @@ import { Skeleton } from '@/components/ui/skeleton'
 
 const NAV_LINKS = [
   { href: '/courses', label: 'Courses' },
-  { href: '/mock-exams', label: 'Mock Exams' },
   { href: '/games', label: 'Games' },
-  { href: '/practice', label: 'Practice' },
   { href: '/revision', label: 'Revision' },
+  { href: '/assessment/reading', label: 'Assessment' },
+  { href: '/mock-exams', label: 'Mock Exams' },
   { href: '/for-teachers', label: 'For Teachers' },
   { href: '/for-schools', label: 'For Schools' },
   { href: '/pricing', label: 'Pricing' },

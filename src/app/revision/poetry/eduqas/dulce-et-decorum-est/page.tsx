@@ -1,0 +1,590 @@
+'use client'
+
+import Link from 'next/link'
+import { ArrowLeft, BookOpen, GitCompare } from 'lucide-react'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { InteractivePoemViewer } from '@/components/study/InteractivePoemViewer'
+import type { PoemData } from '@/components/study/InteractivePoemViewer'
+
+const dulce: PoemData = {
+  title: 'Dulce et Decorum Est',
+  poet: 'Wilfred Owen',
+  lines: [
+    {
+      text: 'Bent double, like old beggars under sacks,',
+      annotations: [
+        {
+          type: 'Simile',
+          note: 'The soldiers are compared to "old beggars" - the opposite of the patriotic image of strong young heroes. They are humiliated, broken, prematurely aged.',
+          color: '#10b981',
+        },
+        {
+          type: 'Key quote',
+          note: 'The opening line immediately demolishes the romantic view of war. These are not heroes - they are crushed and pitiful.',
+          color: '#f59e0b',
+        },
+      ],
+    },
+    {
+      text: 'Knock-kneed, coughing like hags, we cursed through sludge,',
+      annotations: [
+        {
+          type: 'Simile',
+          note: '"Like hags" - compared to ugly old women. Owen uses ugly, undignified comparisons to strip away the glamour of war.',
+          color: '#10b981',
+        },
+        {
+          type: 'Diction',
+          note: '"Cursed through sludge" - the harsh language and ugly setting (sludge) destroy any nobility. War is mud and obscenity.',
+          color: '#3b82f6',
+        },
+      ],
+    },
+    {
+      text: 'Till on the haunting flares we turned our backs,',
+      annotations: [
+        {
+          type: 'Diction',
+          note: '"Haunting flares" - the flares illuminate no-man\'s land. They are "haunting" - they will never leave the soldiers\' minds.',
+          color: '#3b82f6',
+        },
+      ],
+    },
+    {
+      text: 'And towards our distant rest began to trudge.',
+      annotations: [
+        {
+          type: 'Verb',
+          note: '"Trudge" - heavy, exhausted walking. There is no marching here. The men can barely move.',
+          color: '#a855f7',
+        },
+      ],
+    },
+    {
+      text: 'Men marched asleep. Many had lost their boots,',
+      annotations: [
+        {
+          type: 'Imagery',
+          note: '"Marched asleep" - paradox. The men are so exhausted they sleep while walking. The image is shocking and pitiful.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: 'But limped on, blood-shod. All went lame; all blind;',
+      annotations: [
+        {
+          type: 'Metaphor',
+          note: '"Blood-shod" - their feet are wrapped in blood instead of boots. The metaphor is grotesque and physical.',
+          color: '#10b981',
+        },
+        {
+          type: 'Repetition',
+          note: '"All went lame; all blind" - the totality of suffering. No one is exempt. The repetition of "all" hammers home the universal misery.',
+          color: '#a855f7',
+        },
+      ],
+    },
+    {
+      text: 'Drunk with fatigue; deaf even to the hoots',
+      annotations: [
+        {
+          type: 'Metaphor',
+          note: '"Drunk with fatigue" - exhaustion is so extreme it resembles drunkenness. The men cannot think straight.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: 'Of gas-shells dropping softly behind.',
+      annotations: [
+        {
+          type: 'Foreshadowing',
+          note: '"Dropping softly" - the deceptive quietness of gas shells, more terrifying than explosive ones. The line ends with the calm before horror.',
+          color: '#a855f7',
+        },
+      ],
+    },
+    {
+      text: 'Gas! GAS! Quick, boys!—An ecstasy of fumbling,',
+      annotations: [
+        {
+          type: 'Capitalisation',
+          note: '"Gas! GAS!" - the second is in capitals, mimicking the rising panic. The poem suddenly accelerates from exhausted trudging to terror.',
+          color: '#a855f7',
+        },
+        {
+          type: 'Oxymoron',
+          note: '"Ecstasy of fumbling" - "ecstasy" usually means joy, but here it means a frenzied, panicked state. The combination is shocking.',
+          color: '#10b981',
+        },
+        {
+          type: 'Key quote',
+          note: 'The volta of the poem. The pace transforms. War\'s horror is no longer creeping - it is immediate.',
+          color: '#f59e0b',
+        },
+      ],
+    },
+    {
+      text: 'Fitting the clumsy helmets just in time;',
+      annotations: [
+        {
+          type: 'Diction',
+          note: '"Clumsy helmets" - the gas masks are awkward and slow to put on. The men barely make it.',
+          color: '#3b82f6',
+        },
+      ],
+    },
+    {
+      text: 'But someone still was yelling out and stumbling,',
+      annotations: [
+        {
+          type: 'Tragedy',
+          note: 'One man fails to get his mask on. Owen focuses on a single victim - the personal becomes universal.',
+          color: '#ef4444',
+        },
+      ],
+    },
+    {
+      text: 'And flound\'ring like a man in fire or lime...',
+      annotations: [
+        {
+          type: 'Simile',
+          note: '"Like a man in fire or lime" - the gas burns the lungs and skin like fire or quicklime. The simile makes the abstract horror concrete.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: 'Dim, through the misty panes and thick green light,',
+      annotations: [
+        {
+          type: 'Imagery',
+          note: '"Misty panes" - the speaker sees through his own gas mask\'s eyepieces. "Thick green light" - the chlorine gas. The colour is unnatural and sickly.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: 'As under a green sea, I saw him drowning.',
+      annotations: [
+        {
+          type: 'Simile',
+          note: '"Under a green sea" - the speaker imagines the gas as water. "I saw him drowning" - chlorine gas attacks the lungs, filling them with fluid. The man literally drowns on dry land.',
+          color: '#10b981',
+        },
+        {
+          type: 'Key quote',
+          note: 'A devastating image. The man drowns in poison gas while the speaker watches helplessly through his mask.',
+          color: '#f59e0b',
+        },
+      ],
+    },
+    {
+      text: 'In all my dreams, before my helpless sight,',
+      annotations: [
+        {
+          type: 'Trauma',
+          note: '"In all my dreams" - the poem moves to the speaker\'s present. Years later, the memory still haunts him. This is what we now call PTSD.',
+          color: '#ef4444',
+        },
+      ],
+    },
+    {
+      text: 'He plunges at me, guttering, choking, drowning.',
+      annotations: [
+        {
+          type: 'Tricolon',
+          note: '"Guttering, choking, drowning" - three present-tense verbs make the death immediate. "Guttering" is what a candle does as it dies - a chilling, slow extinction.',
+          color: '#a855f7',
+        },
+        {
+          type: 'Key quote',
+          note: 'The accumulating verbs make the moment unbearable. The dead man returns in dreams, still dying.',
+          color: '#f59e0b',
+        },
+      ],
+    },
+    {
+      text: 'If in some smothering dreams, you too could pace',
+      annotations: [
+        {
+          type: 'Direct address',
+          note: '"You too" - Owen addresses the reader directly, especially those who romanticise war. This is the poem\'s argumentative purpose.',
+          color: '#3b82f6',
+        },
+      ],
+    },
+    {
+      text: 'Behind the wagon that we flung him in,',
+      annotations: [
+        {
+          type: 'Diction',
+          note: '"Flung him in" - undignified, brutal disposal of the body. Even in death, the soldier is not treated with respect. There is no glory.',
+          color: '#3b82f6',
+        },
+      ],
+    },
+    {
+      text: 'And watch the white eyes writhing in his face,',
+      annotations: [
+        {
+          type: 'Imagery',
+          note: '"White eyes writhing" - the eyes have rolled back in agony. "Writhing" suggests living movement in a dead face. Horrific.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: 'His hanging face, like a devil\'s sick of sin;',
+      annotations: [
+        {
+          type: 'Simile',
+          note: '"Like a devil\'s sick of sin" - even a devil would be disgusted. The simile is shocking and bitter, reversing normal expectations.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: 'If you could hear, at every jolt, the blood',
+      annotations: [
+        {
+          type: 'Aural imagery',
+          note: '"At every jolt" - the cart bumps along, the body jolts. Owen wants the reader to hear and feel each terrible moment.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: 'Come gargling from the froth-corrupted lungs,',
+      annotations: [
+        {
+          type: 'Imagery',
+          note: '"Gargling" - obscene, ugly sound. "Froth-corrupted lungs" - the chlorine has destroyed the lungs from within. Owen refuses to look away.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: 'Obscene as cancer, bitter as the cud',
+      annotations: [
+        {
+          type: 'Simile',
+          note: 'Two similes: "obscene as cancer" and "bitter as the cud". Both are unpleasant, ordinary diseases. War is not heroic - it is degrading.',
+          color: '#10b981',
+        },
+      ],
+    },
+    {
+      text: 'Of vile, incurable sores on innocent tongues,—',
+      annotations: [
+        {
+          type: 'Imagery',
+          note: '"Innocent tongues" - emphasises that these are young men who did nothing wrong. The "incurable sores" cannot be healed by victory or memorial.',
+          color: '#ef4444',
+        },
+      ],
+    },
+    {
+      text: 'My friend, you would not tell with such high zest',
+      annotations: [
+        {
+          type: 'Direct address',
+          note: '"My friend" - sarcastic, bitter. The line is addressed to those who promote war. "High zest" - the enthusiasm with which they tell their lies.',
+          color: '#3b82f6',
+        },
+      ],
+    },
+    {
+      text: 'To children ardent for some desperate glory,',
+      annotations: [
+        {
+          type: 'Pathos',
+          note: '"Children" - emphasising the youth of soldiers. "Desperate glory" - the longing for honour that gets young men killed. They are too young to know better.',
+          color: '#ef4444',
+        },
+      ],
+    },
+    {
+      text: 'The old Lie: Dulce et decorum est',
+      annotations: [
+        {
+          type: 'Capital "Lie"',
+          note: 'The capitalisation of "Lie" emphasises its enormity. This is not just untrue - it is THE Lie, a foundational deception.',
+          color: '#ef4444',
+        },
+      ],
+    },
+    {
+      text: 'Pro patria mori.',
+      annotations: [
+        {
+          type: 'Latin',
+          note: 'The full Latin: "Dulce et decorum est pro patria mori" - "It is sweet and fitting to die for one\'s country". From the Roman poet Horace. Owen ends by quoting (and demolishing) the very motto used to recruit soldiers.',
+          color: '#3b82f6',
+        },
+        {
+          type: 'Key quote',
+          note: 'The poem\'s ending exposes the "Lie" by name. After everything we have just witnessed, the patriotic Latin sounds obscene.',
+          color: '#f59e0b',
+        },
+      ],
+    },
+  ],
+
+  context: `
+    <h3>Wilfred Owen (1893-1918)</h3>
+    <p>Owen was an English poet and soldier. He fought in the trenches of the First World War and was killed in action one week before the Armistice in November 1918. He was 25. Most of his war poetry was published posthumously by his friend Siegfried Sassoon.</p>
+
+    <h3>Composition (1917-1918)</h3>
+    <p>"Dulce et Decorum Est" was written in October 1917 while Owen was being treated for shell shock at Craiglockhart War Hospital in Edinburgh. He had been sent there after a series of traumatic experiences in the trenches.</p>
+
+    <h3>The Title</h3>
+    <p>The title comes from the Roman poet <strong>Horace</strong>: "Dulce et decorum est pro patria mori" - "It is sweet and fitting to die for one\'s country". This Latin tag was widely used in patriotic propaganda to encourage young men to enlist. Owen calls it "the old Lie".</p>
+
+    <h3>Chlorine Gas</h3>
+    <p>Chemical weapons (chlorine, phosgene, mustard gas) were first used in WW1 and caused horrific deaths. Chlorine gas attacks the lungs, causing the victim to drown in their own bodily fluids. Soldiers had to put on masks within seconds of an attack.</p>
+
+    <h3>Owen\'s Purpose</h3>
+    <p>Owen wrote in his preface: "My subject is War, and the pity of War. The Poetry is in the pity." He saw it as his duty to expose the truth of war to those at home who supported it. The poem was originally addressed to <strong>Jessie Pope</strong>, a popular jingoistic poet whose work encouraged young men to enlist.</p>
+
+    <h3>Trench Warfare</h3>
+    <p>WW1 trench warfare was characterised by terrible conditions: mud, cold, rats, lice, disease, and constant shelling. Soldiers spent days under bombardment, often unable to move. The exhaustion and trauma described in the poem were universal experiences.</p>
+  `,
+
+  summary: `Stanza 1 - Exhaustion: Soldiers stagger back from the front line "like old beggars". They are exhausted, lame, blind, marching half-asleep through mud. Some have lost their boots. They cannot hear the gas shells dropping behind them.
+
+Stanza 2 - The gas attack: Suddenly there is a shout - "Gas! GAS!" The men scramble to put on their gas masks. But one soldier fails. Through the misty panes of his mask, the speaker watches him drown in poison gas as if "under a green sea".
+
+Stanza 3 (short) - Trauma: The speaker reveals that this scene returns in his dreams. The dying man "plunges at me, guttering, choking, drowning". The trauma is permanent.
+
+Stanza 4 - Direct address: Owen addresses the reader (and especially those who promote war). He invites us to witness the dead soldier\'s body being thrown into a wagon. He describes the body in graphic detail - the writhing eyes, the gargling blood, the corrupted lungs. He concludes that anyone who saw this would not tell young soldiers "the old Lie": that it is sweet and fitting to die for one\'s country.
+
+Overall meaning: The poem is a savage attack on the patriotic propaganda that sent young men to die in WW1. Owen uses graphic, ugly imagery to expose the gap between the romantic ideal of war and its actual horror. The poem is a moral argument: those who promote war are lying to children.`,
+
+  formAndStructure: `Form: Loosely structured into four stanzas of varying lengths. The form mirrors the chaos of war - it cannot be neatly contained.
+
+Rhyme scheme: Alternating ABAB rhyme throughout, but with deliberate disruptions and pararhymes (near-rhymes). The rhyme provides a tense order beneath the chaotic content.
+
+Metre: Mostly iambic pentameter, but Owen frequently breaks the metre to mirror the disrupted reality of the trenches. The rhythm staggers and stumbles like the soldiers.
+
+Four-stanza structure: Each stanza has a different function:
+- Stanza 1 (8 lines): Slow, exhausted - sets the scene of trench retreat.
+- Stanza 2 (6 lines): Fast, panicked - the gas attack.
+- Stanza 3 (2 lines): Short, isolated - the trauma in the speaker\'s mind.
+- Stanza 4 (12 lines): Long, argumentative - direct address to the reader.
+
+Volta: There are two turns. The first is "Gas! GAS!" - the sudden shift from exhaustion to terror. The second is "If in some smothering dreams" - the shift from past event to present argument.
+
+Tense shifts: The poem moves from past tense (the experience) to present tense (the recurring trauma) to conditional ("If you could hear..."). Owen makes the past inescapable.
+
+Direct address: The poem ends by speaking directly to the reader ("My friend"). This breaks the fourth wall - we are no longer just witnesses, we are accused.
+
+Sound: Heavy use of harsh consonants ("trudge", "sludge", "guttering") and unpleasant vowel sounds. The poem is deliberately ugly to mirror the ugliness of war.`,
+
+  keyQuotes: [
+    {
+      quote: 'Bent double, like old beggars under sacks',
+      analysis:
+        'The opening line immediately demolishes the romantic view of war. The soldiers are not strong young heroes but "old beggars" - prematurely aged, humiliated, crushed under the weight of their packs. The simile reverses every patriotic image.',
+      themes: ['Reality of war', 'Suffering', 'Anti-heroic'],
+    },
+    {
+      quote: 'Knock-kneed, coughing like hags, we cursed through sludge',
+      analysis:
+        'Owen uses ugly, undignified comparisons - the soldiers are like "hags" (ugly old women). They "cursed" - using obscenity, not glorious speech. They moved through "sludge" - mud and filth. Every word destroys nobility.',
+      themes: ['Reality of war', 'Degradation', 'Anti-heroic'],
+    },
+    {
+      quote: 'GAS! Quick, boys! - An ecstasy of fumbling',
+      analysis:
+        'The capitalisation captures the rising panic. The oxymoron "ecstasy of fumbling" pairs an emotion of joy with frantic incompetence. "Ecstasy" comes from a Greek word meaning "standing outside oneself" - the soldiers are dissociated by terror.',
+      themes: ['Panic', 'Trauma', 'Sudden violence'],
+    },
+    {
+      quote: 'As under a green sea, I saw him drowning',
+      analysis:
+        'The chlorine gas is imagined as a green sea. The dying man "drowns" because gas fills the lungs with fluid. The simile makes an alien chemical death feel familiar - and the helplessness of the speaker watching through his own mask is heartbreaking.',
+      themes: ['Death', 'Helplessness', 'Chemical warfare'],
+    },
+    {
+      quote: 'He plunges at me, guttering, choking, drowning',
+      analysis:
+        'The tricolon of present-tense verbs makes the moment immediate and inescapable. "Guttering" is what a candle does as it dies - the soldier\'s life flickers out slowly. The use of present tense shows the trauma never ends - the dead man is always dying in the speaker\'s mind.',
+      themes: ['Trauma', 'PTSD', 'Lasting impact'],
+    },
+    {
+      quote: 'His hanging face, like a devil\'s sick of sin',
+      analysis:
+        'A shocking simile that reverses expectations. Even a devil - the embodiment of evil - would be sickened by what war does. Owen invokes religious imagery to suggest war is worse than damnation.',
+      themes: ['Horror', 'Evil', 'Disgust'],
+    },
+    {
+      quote: 'My friend, you would not tell with such high zest / To children',
+      analysis:
+        'Owen addresses the reader directly. "My friend" is bitterly sarcastic. "Children" emphasises the youth of soldiers - they are not adults making informed choices but boys deceived by lies. The accusation is moral and personal.',
+      themes: ['Argument', 'Moral outrage', 'Youth'],
+    },
+    {
+      quote: 'The old Lie: Dulce et decorum est / Pro patria mori',
+      analysis:
+        'The poem ends by naming "the old Lie" - the Latin phrase claiming it is sweet and fitting to die for your country. After everything we have just witnessed, the patriotic motto sounds obscene. The capital "L" on "Lie" makes it monumental - a foundational deception that has killed millions.',
+      themes: ['Anti-war', 'Patriotism critique', 'Deception'],
+    },
+  ],
+
+  languageDevices: [
+    {
+      device: 'Simile',
+      example: 'like old beggars under sacks ... like a devil\'s sick of sin ... obscene as cancer',
+      effect:
+        'Owen\'s similes consistently use ugly, degrading comparisons. Soldiers are like beggars, hags, devils, cancer victims. Every comparison strips away any romantic or heroic image of war. The cumulative effect is overwhelming disgust.',
+      lineRef: 1,
+    },
+    {
+      device: 'Sensory imagery',
+      example: 'guttering, choking, drowning ... blood gargling from froth-corrupted lungs',
+      effect:
+        'Owen forces the reader to see, hear, and almost taste the horror. The sensory details are deliberately graphic and unpleasant. The reader cannot look away - just as the speaker cannot escape the memory.',
+      lineRef: 16,
+    },
+    {
+      device: 'Direct address',
+      example: 'If in some smothering dreams, you too could pace ... My friend',
+      effect:
+        'In the final stanza, Owen addresses the reader directly, especially those who romanticise war. The "you" forces complicity. We are no longer passive witnesses - we are part of the lie if we don\'t see the truth.',
+      lineRef: 17,
+    },
+    {
+      device: 'Volta',
+      example: 'Gas! GAS! Quick, boys!',
+      effect:
+        'The poem accelerates from slow, exhausted trudging to immediate panic. The shift in pace mirrors the unpredictability of war - peace and horror are seconds apart.',
+      lineRef: 9,
+    },
+    {
+      device: 'Latin allusion',
+      example: 'Dulce et decorum est / Pro patria mori',
+      effect:
+        'Owen quotes Horace\'s patriotic motto only to demolish it. The Latin sounds high-minded and noble - until you place it after the description of a man drowning in poison gas. The juxtaposition is the poem\'s entire argument.',
+      lineRef: 27,
+    },
+    {
+      device: 'Tricolon',
+      example: 'guttering, choking, drowning',
+      effect:
+        'Three present-tense verbs in a row make the death immediate and inescapable. The accumulation creates a sense of slow suffocation. The fact that they are present tense - happening now, in the speaker\'s mind - is devastating.',
+      lineRef: 16,
+    },
+    {
+      device: 'Diction',
+      example: 'sludge, trudge, fumbling, gargling, froth-corrupted',
+      effect:
+        'Owen\'s word choices are deliberately ugly. The harsh consonants and unpleasant sounds make the poem itself feel disgusting. The language enacts the horror it describes.',
+      lineRef: 2,
+    },
+  ],
+}
+
+const comparisons = [
+  {
+    title: 'The Soldier',
+    poet: 'Rupert Brooke',
+    href: '/revision/poetry/eduqas/the-soldier',
+    reason:
+      'The most famous Eduqas pairing. Owen exposes the horror of war; Brooke romanticises death in battle. Brooke\'s "England" is exactly the lie Owen attacks. A perfect study in contrasting WW1 voices.',
+    themes: ['War', 'Patriotism', 'Anti-war'],
+  },
+  {
+    title: 'A Wife in London',
+    poet: 'Thomas Hardy',
+    href: '/revision/poetry/eduqas/a-wife-in-london',
+    reason:
+      'Both poems expose the human cost of war. Hardy shows the suffering at home; Owen shows it at the front. Both use bitter irony to undermine patriotic narratives.',
+    themes: ['War', 'Suffering', 'Irony'],
+  },
+  {
+    title: 'London',
+    poet: 'William Blake',
+    href: '/revision/poetry/eduqas/london',
+    reason:
+      'Both poets attack the institutions of power that cause suffering. Blake\'s "blood down Palace walls" and Owen\'s "the old Lie" share a moral outrage against systems that exploit ordinary people.',
+    themes: ['Institutional critique', 'Power', 'Suffering'],
+  },
+]
+
+export default function DulceEduqasPage() {
+  return (
+    <div className="space-y-8">
+      <div>
+        <Button
+          variant="ghost"
+          size="sm"
+          className="mb-3 -ml-2 text-muted-foreground"
+          render={<Link href="/revision/poetry/eduqas" />}
+        >
+          <ArrowLeft className="size-3.5" />
+          Back to Eduqas Poetry
+        </Button>
+
+        <div className="flex items-center gap-3">
+          <div className="flex size-10 items-center justify-center rounded-xl bg-red-500/10">
+            <BookOpen className="size-5 text-red-400" />
+          </div>
+          <div>
+            <h1 className="text-heading-lg font-heading text-foreground">
+              Dulce et Decorum Est
+            </h1>
+            <p className="text-body-sm text-muted-foreground">
+              Wilfred Owen &middot; Eduqas Poetry Anthology
+            </p>
+            <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">Eduqas</Badge>
+          </div>
+        </div>
+      </div>
+
+      <InteractivePoemViewer poem={dulce} />
+
+      <section className="rounded-xl border border-border bg-card p-5 sm:p-6">
+        <div className="flex items-center gap-2 mb-4">
+          <GitCompare className="size-4.5 text-muted-foreground" />
+          <h2 className="text-heading-sm font-heading text-foreground">
+            Compare with
+          </h2>
+        </div>
+        <p className="text-body-sm text-muted-foreground mb-5">
+          Strong Eduqas pairings for war poetry comparison questions.
+        </p>
+
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {comparisons.map((c) => (
+            <Link
+              key={c.title}
+              href={c.href}
+              className="group rounded-lg border border-border bg-card p-4 transition-colors hover:border-foreground/20 hover:bg-muted/40"
+            >
+              <h3 className="text-sm font-semibold text-foreground group-hover:text-foreground/90">
+                {c.title}
+              </h3>
+              <p className="text-xs text-muted-foreground mb-2">{c.poet}</p>
+              <p className="text-xs text-muted-foreground leading-relaxed mb-3">
+                {c.reason}
+              </p>
+              <div className="flex flex-wrap gap-1.5">
+                {c.themes.map((t) => (
+                  <span
+                    key={t}
+                    className="rounded-full bg-muted px-2 py-0.5 text-[11px] text-muted-foreground"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+    </div>
+  )
+}

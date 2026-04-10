@@ -11,6 +11,7 @@ const ANTHOLOGY_SECTIONS = [
     description:
       "All 15 poems analysed in depth: Ozymandias, London, The Prelude, My Last Duchess, Charge of the Light Brigade, Exposure, Storm on the Island, Bayonet Charge, Remains, Poppies, War Photographer, Tissue, The Emigree, Kamikaze, and Checking Out Me History.",
     poems: 15,
+    board: "AQA",
   },
   {
     title: "Love and Relationships",
@@ -18,6 +19,37 @@ const ANTHOLOGY_SECTIONS = [
     description:
       "All 15 poems analysed: When We Two Parted, Love's Philosophy, Porphyria's Lover, Sonnet 29, Neutral Tones, Letters from Yorkshire, The Farmer's Bride, Walking Away, Eden Rock, Follower, Mother Any Distance, Before You Were Mine, Winter Swans, Singh Song!, and Climbing My Grandfather.",
     poems: 15,
+    board: "AQA",
+  },
+];
+
+const EDEXCEL_SECTIONS = [
+  {
+    title: "Conflict",
+    href: "/revision/poetry/edexcel/conflict",
+    description:
+      "All 15 poems in the Edexcel Conflict anthology, exploring war, prejudice, family tension and internal struggle. Featured study pages: A Poison Tree (Blake) and The Destruction of Sennacherib (Byron).",
+    poems: 15,
+    board: "Edexcel",
+  },
+  {
+    title: "Time and Place",
+    href: "/revision/poetry/edexcel/time-and-place",
+    description:
+      "All 15 poems in the Edexcel Time and Place anthology, exploring landscape, memory and identity. Featured study pages: To Autumn (Keats), Composed Upon Westminster Bridge (Wordsworth), London (Blake) and I started Early - Took my Dog (Dickinson).",
+    poems: 15,
+    board: "Edexcel",
+  },
+];
+
+const EDUQAS_SECTIONS = [
+  {
+    title: "WJEC Eduqas Anthology",
+    href: "/revision/poetry/eduqas",
+    description:
+      "All 18 poems in the single Eduqas anthology, grouped by theme: Nature, War, Love, Power and Identity. Featured study pages: Ozymandias, London, The Prelude, To Autumn, Dulce et Decorum Est, The Soldier, A Wife in London and Sonnet 43.",
+    poems: 18,
+    board: "Eduqas",
   },
 ];
 
@@ -172,14 +204,14 @@ export function PoetryHubClient() {
               <path strokeLinecap="round" strokeLinejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
             </svg>
             <p className="text-sm text-muted-foreground">
-              Anthology poems below are from the <strong className="text-foreground">AQA</strong> specification.
-              Edexcel, OCR, and WJEC poetry guides are coming soon.
+              Full study guides are now available for the <strong className="text-foreground">AQA</strong> and
+              <strong className="text-foreground"> Edexcel, OCR and WJEC Eduqas</strong> anthologies.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ── Anthology sections ───────────────────────────────────── */}
+      {/* ── AQA Anthology sections ───────────────────────────────── */}
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="flex items-center gap-3">
           <h2 className="text-2xl font-bold text-foreground">
@@ -208,7 +240,53 @@ export function PoetryHubClient() {
                   {section.poems} poems
                 </span>
                 <span className="ml-auto rounded-full bg-primary/10 px-2 py-0.5 text-[0.65rem] font-semibold text-primary">
-                  AQA
+                  {section.board}
+                </span>
+              </div>
+              <h3 className="mt-3 text-lg font-bold text-foreground transition-colors group-hover:text-primary">
+                {section.title}
+              </h3>
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
+                {section.description}
+              </p>
+              <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors group-hover:text-foreground">
+                View analysis <ArrowRight />
+              </span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Edexcel Anthology sections ───────────────────────────── */}
+      <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
+        <div className="flex items-center gap-3">
+          <h2 className="text-2xl font-bold text-foreground">
+            Edexcel Anthology Analysis
+          </h2>
+          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+            Edexcel
+          </span>
+        </div>
+        <p className="mt-2 max-w-3xl text-muted-foreground">
+          The Pearson Edexcel anthology has two themed clusters &mdash; you only
+          study one. Choose your cluster below for poem-by-poem study pages,
+          key quotations and comparison practice.
+        </p>
+
+        <div className="mt-8 grid gap-6 sm:grid-cols-2">
+          {EDEXCEL_SECTIONS.map((section) => (
+            <Link
+              key={section.href}
+              href={section.href}
+              className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-md transition hover:border-primary/40 hover:shadow-lg"
+            >
+              <div className="flex items-center gap-1.5">
+                <PoemIcon />
+                <span className="text-sm font-semibold text-foreground">
+                  {section.poems} poems
+                </span>
+                <span className="ml-auto rounded-full bg-primary/10 px-2 py-0.5 text-[0.65rem] font-semibold text-primary">
+                  {section.board}
                 </span>
               </div>
               <h3 className="mt-3 text-lg font-bold text-foreground transition-colors group-hover:text-primary">
@@ -224,23 +302,50 @@ export function PoetryHubClient() {
           ))}
         </div>
 
-        {/* Other exam boards placeholder */}
-        <div className="mt-8 grid gap-6 sm:grid-cols-3">
-          {['Edexcel', 'OCR', 'WJEC Eduqas'].map((board) => (
-            <div
-              key={board}
-              className="flex flex-col items-center justify-center rounded-xl border border-dashed border-border bg-muted/30 p-6 text-center"
+      </section>
+
+      {/* ── WJEC Eduqas Anthology section ────────────────────────── */}
+      <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
+        <div className="flex items-center gap-3">
+          <h2 className="text-2xl font-bold text-foreground">
+            WJEC Eduqas Anthology Analysis
+          </h2>
+          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+            Eduqas
+          </span>
+        </div>
+        <p className="mt-2 max-w-3xl text-muted-foreground">
+          The WJEC Eduqas anthology has 18 poems that all students study,
+          grouped by theme. The exam asks you to compare two poems &mdash;
+          building strong pairings is essential.
+        </p>
+
+        <div className="mt-8 grid gap-6 sm:grid-cols-2">
+          {EDUQAS_SECTIONS.map((section) => (
+            <Link
+              key={section.href}
+              href={section.href}
+              className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-md transition hover:border-primary/40 hover:shadow-lg"
             >
-              <span className="mb-2 rounded-full bg-muted px-3 py-1 text-xs font-semibold text-muted-foreground">
-                Coming Soon
-              </span>
-              <h3 className="text-lg font-bold text-muted-foreground/70">
-                {board} Poetry
+              <div className="flex items-center gap-1.5">
+                <PoemIcon />
+                <span className="text-sm font-semibold text-foreground">
+                  {section.poems} poems
+                </span>
+                <span className="ml-auto rounded-full bg-primary/10 px-2 py-0.5 text-[0.65rem] font-semibold text-primary">
+                  {section.board}
+                </span>
+              </div>
+              <h3 className="mt-3 text-lg font-bold text-foreground transition-colors group-hover:text-primary">
+                {section.title}
               </h3>
-              <p className="mt-1 text-sm text-muted-foreground/60">
-                Full anthology analysis coming soon
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
+                {section.description}
               </p>
-            </div>
+              <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors group-hover:text-foreground">
+                View analysis <ArrowRight />
+              </span>
+            </Link>
           ))}
         </div>
       </section>
