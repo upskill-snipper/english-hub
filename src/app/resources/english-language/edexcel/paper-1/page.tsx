@@ -551,6 +551,50 @@ export default function Paper1Page() {
         </div>
       </section>
 
+      {/* Continue studying */}
+      <section className="px-4 pb-12">
+        <div className="mx-auto max-w-4xl">
+          <div className="rounded-xl border border-primary/20 bg-primary/5 p-6 sm:p-8">
+            <h2 className="text-xl font-bold text-foreground">Continue studying</h2>
+            <p className="mt-2 text-muted-foreground">
+              Build your reading analysis and imaginative writing skills further.
+            </p>
+            <div className="mt-4 flex flex-wrap gap-3">
+              <Link
+                href="/resources/english-language/edexcel/paper-2"
+                className="rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary hover:shadow-md"
+              >
+                Paper 2: Non-Fiction &amp; Transactional Writing
+              </Link>
+              <Link
+                href="/resources/english-language/edexcel/techniques"
+                className="rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary hover:shadow-md"
+              >
+                Language Techniques Guide
+              </Link>
+              <Link
+                href="/resources/writing-skills"
+                className="rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary hover:shadow-md"
+              >
+                Writing Skills
+              </Link>
+              <Link
+                href="/practice"
+                className="rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary hover:shadow-md"
+              >
+                Practice Questions
+              </Link>
+              <Link
+                href="/revision"
+                className="rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary hover:shadow-md"
+              >
+                Revision Hub
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <ExamBoardDisclaimer />
     </>
   );

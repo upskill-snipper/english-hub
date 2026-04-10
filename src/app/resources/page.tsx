@@ -26,7 +26,6 @@ import {
   Lightbulb,
   Layers,
   Quote,
-  GitCompare,
   Mic,
   Users,
   Search,
@@ -103,50 +102,10 @@ const ALL_CATEGORIES: {
   { name: "Glossary", href: "/resources/glossary", icon: Library },
   { name: "Context", href: "/resources/context", icon: Lightbulb },
   { name: "Themes", href: "/resources/themes", icon: Layers },
-  { name: "Comparison", href: "/resources/comparison", icon: GitCompare },
   { name: "Spoken Language", href: "/resources/spoken-language", icon: Mic },
   { name: "Teaching", href: "/resources/teaching", icon: Users },
 ];
 
-/* ─── Exam Boards ────────────────────────────────────────────── */
-
-const EXAM_BOARDS: {
-  name: string;
-  slug: string;
-  color: string;
-  borderHover: string;
-}[] = [
-  {
-    name: "AQA",
-    slug: "aqa",
-    color: "text-blue-400",
-    borderHover: "hover:border-blue-400/50",
-  },
-  {
-    name: "Edexcel",
-    slug: "edexcel",
-    color: "text-violet-400",
-    borderHover: "hover:border-violet-400/50",
-  },
-  {
-    name: "Cambridge (CIE)",
-    slug: "cambridge",
-    color: "text-emerald-400",
-    borderHover: "hover:border-emerald-400/50",
-  },
-  {
-    name: "OCR",
-    slug: "ocr",
-    color: "text-orange-400",
-    borderHover: "hover:border-orange-400/50",
-  },
-  {
-    name: "WJEC / Eduqas",
-    slug: "wjec",
-    color: "text-red-400",
-    borderHover: "hover:border-red-400/50",
-  },
-];
 
 /* ─── Page ────────────────────────────────────────────────────── */
 
@@ -180,10 +139,6 @@ export default function ResourcesPage() {
             <span className="text-border">·</span>
             <span className="rounded-full border border-border bg-card px-3.5 py-1 text-sm font-medium text-muted-foreground">
               19 Categories
-            </span>
-            <span className="text-border">·</span>
-            <span className="rounded-full border border-border bg-card px-3.5 py-1 text-sm font-medium text-muted-foreground">
-              5 Exam Boards
             </span>
           </div>
         </div>
@@ -261,39 +216,6 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      {/* ── Exam Board Section ───────────────────────────────────── */}
-      <section>
-        <div className="mx-auto max-w-5xl px-4 py-20 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold tracking-tight text-foreground">
-            Resources by Exam Board
-          </h2>
-          <p className="mt-2 text-muted-foreground">
-            Find specification-matched content for your exam board.
-          </p>
-
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {EXAM_BOARDS.map((board) => (
-              <Link
-                key={board.slug}
-                href={`/resources/english-literature/${board.slug}`}
-                className={`group rounded-xl border border-border bg-card px-6 py-5 transition-all duration-200 hover:shadow-lg hover:shadow-primary/5 ${board.borderHover}`}
-              >
-                <div className="flex items-center justify-between">
-                  <div>
-                    <h3 className={`text-lg font-semibold ${board.color}`}>
-                      {board.name}
-                    </h3>
-                    <p className="mt-1 text-sm text-muted-foreground">
-                      View {board.name} resources
-                    </p>
-                  </div>
-                  <ArrowRight className="h-5 w-5 text-muted-foreground transition-transform group-hover:translate-x-1" />
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
     </main>
   );
 }

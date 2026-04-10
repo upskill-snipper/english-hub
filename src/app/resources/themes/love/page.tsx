@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 
 /* ─── Metadata ───────────────────────────────────────────────── */
 
@@ -18,8 +17,8 @@ const TEXTS = [
     title: "Romeo and Juliet",
     subtitle: "Types of Love",
     author: "William Shakespeare",
-    colour: "border-[#E74C3C]",
-    tagColour: "bg-[#E74C3C]/10 text-[#E74C3C]",
+    colour: "border-primary",
+    tagColour: "bg-primary/10 text-primary",
     analysis: [
       "Shakespeare presents multiple types of love: Romeo's infatuation with Rosaline (courtly love), the Nurse's bawdy humour (physical love), Capulet's possessive parental love, and the intense, transformative love between Romeo and Juliet.",
       "The religious imagery used by Romeo and Juliet in their first meeting (the shared sonnet) elevates their love above the ordinary, presenting it as sacred and destined.",
@@ -70,8 +69,8 @@ const TEXTS = [
     title: "Pride and Prejudice",
     subtitle: "Love and Social Convention",
     author: "Jane Austen",
-    colour: "border-[#27AE60]",
-    tagColour: "bg-[#27AE60]/10 text-[#27AE60]",
+    colour: "border-primary",
+    tagColour: "bg-primary/10 text-primary",
     analysis: [
       "Austen presents love as inseparable from social reality: marriage in Regency England was an economic transaction, and Elizabeth's refusal to marry for money alone is both romantic and radical.",
       "The novel charts the evolution of mature love through Darcy and Elizabeth's mutual growth -- both must overcome pride and prejudice to see each other clearly.",
@@ -265,7 +264,6 @@ export default function LoveThemePage() {
         </div>
       </section>
 
-      <ExamBoardDisclaimer />
     </>
   );
 }

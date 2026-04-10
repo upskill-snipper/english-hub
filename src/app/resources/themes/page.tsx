@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 
 /* ─── Metadata ───────────────────────────────────────────────── */
 
@@ -8,7 +7,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://theenglishhub.app/resources/themes' },
   title: "Theme Explorer | GCSE English Literature",
   description:
-    "Explore major GCSE English Literature themes across texts. Compare how power, guilt, love, conflict, and social responsibility appear in set texts for AQA, Edexcel, OCR, and Cambridge IGCSE.",
+    "Explore major GCSE English Literature themes across texts. Compare how power, guilt, love, conflict, and social responsibility appear in set texts.",
 };
 
 /* ─── Data ───────────────────────────────────────────────────── */
@@ -20,11 +19,11 @@ const THEMES = [
     description:
       "How writers present power, ambition, and authority across prose, drama, and poetry -- from Macbeth's tyranny to Ozymandias' crumbling empire.",
     texts: ["Macbeth", "An Inspector Calls", "Animal Farm", "Ozymandias", "My Last Duchess"],
-    colour: "border-[#C0392B]",
-    bgColour: "bg-[#C0392B]/10",
-    textColour: "text-[#C0392B]",
+    colour: "border-primary",
+    bgColour: "bg-primary/10",
+    textColour: "text-primary",
     icon: (
-      <svg className="h-10 w-10 text-[#C0392B]" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+      <svg className="h-10 w-10 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0 0 12 9.75c-2.551 0-5.056.2-7.5.582V21" />
       </svg>
     ),
@@ -65,11 +64,11 @@ const THEMES = [
     description:
       "Internal and external conflict across the GCSE canon -- from the Montagues and Capulets to the Power and Conflict anthology.",
     texts: ["Romeo and Juliet", "Power and Conflict Poetry", "Lord of the Flies"],
-    colour: "border-[#D35400]",
-    bgColour: "bg-[#D35400]/10",
-    textColour: "text-[#D35400]",
+    colour: "border-primary",
+    bgColour: "bg-primary/10",
+    textColour: "text-primary",
     icon: (
-      <svg className="h-10 w-10 text-[#D35400]" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+      <svg className="h-10 w-10 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z" />
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 18a3.75 3.75 0 0 0 .495-7.468 5.99 5.99 0 0 0-1.925 3.547 5.975 5.975 0 0 1-2.133-1.001A3.75 3.75 0 0 0 12 18Z" />
       </svg>
@@ -81,11 +80,11 @@ const THEMES = [
     description:
       "Romantic, familial, and unrequited love across drama, prose, and poetry -- from Shakespeare's star-crossed lovers to the Love and Relationships anthology.",
     texts: ["Romeo and Juliet", "Love and Relationships Poetry", "Pride and Prejudice"],
-    colour: "border-[#E74C3C]",
-    bgColour: "bg-[#E74C3C]/10",
-    textColour: "text-[#E74C3C]",
+    colour: "border-primary",
+    bgColour: "bg-primary/10",
+    textColour: "text-primary",
     icon: (
-      <svg className="h-10 w-10 text-[#E74C3C]" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+      <svg className="h-10 w-10 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
       </svg>
     ),
@@ -256,7 +255,7 @@ export default function ThemeExplorerPage() {
             {
               label: "All Resources",
               href: "/resources",
-              desc: "Browse everything by exam board and subject.",
+              desc: "Browse all revision resources.",
             },
           ].map((link) => (
             <Link
@@ -273,7 +272,6 @@ export default function ThemeExplorerPage() {
         </div>
       </section>
 
-      <ExamBoardDisclaimer />
     </>
   );
 }

@@ -8,14 +8,14 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://theenglishhub.app/resources/exam-technique/time-management' },
   title: "Time Management in English Exams",
   description:
-    "Paper-by-paper timing breakdowns for AQA, Edexcel, CAIE, and OCR English exams. Learn how to divide time per question, plan your time allocation, and what to do if you run out of time.",
+    "Paper-by-paper timing breakdowns for GCSE and IGCSE English exams. Learn how to divide time per question, plan your time allocation, and what to do if you run out of time.",
 };
 
 /* ─── Timing data ────────────────────────────────────────────── */
 
 const AQA_TIMINGS = {
   board: "AQA",
-  colour: "bg-[#40197F]",
+  colour: "bg-primary",
   papers: [
     {
       name: "Language Paper 1 -- Explorations in Creative Reading & Writing",
@@ -66,7 +66,7 @@ const AQA_TIMINGS = {
 
 const EDEXCEL_TIMINGS = {
   board: "Edexcel",
-  colour: "bg-[#E5231B]",
+  colour: "bg-primary",
   papers: [
     {
       name: "Language Paper 1 -- Fiction & Imaginative Writing",
@@ -115,7 +115,7 @@ const EDEXCEL_TIMINGS = {
 
 const CAIE_TIMINGS = {
   board: "Cambridge IGCSE",
-  colour: "bg-[#00A651]",
+  colour: "bg-primary",
   papers: [
     {
       name: "Language Paper 1 -- Reading (0500)",
@@ -159,7 +159,7 @@ const CAIE_TIMINGS = {
 
 const OCR_TIMINGS = {
   board: "OCR",
-  colour: "bg-[#2A7DE1]",
+  colour: "bg-primary",
   papers: [
     {
       name: "Language Paper 1 -- Communicating Information & Ideas",
@@ -532,6 +532,32 @@ export default function TimeManagementPage() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Revision link */}
+      <section className="mx-auto max-w-5xl px-4 py-10">
+        <div className="rounded-xl border border-primary/20 bg-primary/5 p-6 text-center">
+          <h2 className="text-lg font-bold text-foreground">
+            Ready to practise?
+          </h2>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Put these timing strategies into practice with timed exam questions and interactive exercises.
+          </p>
+          <div className="mt-4 flex flex-wrap justify-center gap-3">
+            <Link
+              href="/revision/exam-technique"
+              className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow transition hover:bg-primary/90"
+            >
+              Exam technique revision
+            </Link>
+            <Link
+              href="/resources/exam-technique/question-types"
+              className="rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground shadow transition hover:bg-muted"
+            >
+              Question types guide
+            </Link>
           </div>
         </div>
       </section>

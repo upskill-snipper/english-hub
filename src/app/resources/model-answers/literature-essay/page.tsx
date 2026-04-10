@@ -172,7 +172,7 @@ export default function LiteratureEssayPage() {
             <Section id="macbeth" title="Macbeth &mdash; Ambition">
               <div className="mb-6 rounded-xl border border-border bg-card p-6 shadow-md">
                 <p className="mb-2 text-xs font-bold uppercase tracking-wider text-primary">
-                  AQA Literature Paper 1
+                  GCSE Literature -- Extract + Essay
                 </p>
                 <p className="font-medium text-foreground">
                   Starting with this extract, how does Shakespeare present the
@@ -643,7 +643,7 @@ export default function LiteratureEssayPage() {
             <Section id="inspector-calls" title="An Inspector Calls &mdash; Responsibility">
               <div className="mb-6 rounded-xl border border-border bg-card p-6 shadow-md">
                 <p className="mb-2 text-xs font-bold uppercase tracking-wider text-primary">
-                  AQA Literature Paper 2
+                  GCSE Literature -- Essay Question
                 </p>
                 <p className="font-medium text-foreground">
                   How does Priestley present ideas about responsibility in{" "}
@@ -741,7 +741,7 @@ export default function LiteratureEssayPage() {
             <Section id="poetry" title="Poetry Comparison &mdash; Power of Nature">
               <div className="mb-6 rounded-xl border border-border bg-card p-6 shadow-md">
                 <p className="mb-2 text-xs font-bold uppercase tracking-wider text-primary">
-                  AQA Literature Paper 2 &mdash; Power and Conflict
+                  GCSE Literature -- Poetry Comparison
                 </p>
                 <p className="font-medium text-foreground">
                   Compare how the poets present the power of nature in

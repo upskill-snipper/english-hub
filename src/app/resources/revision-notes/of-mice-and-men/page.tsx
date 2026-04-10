@@ -240,6 +240,41 @@ const keyQuotes = [
     analysis:
       "The dream farm offers belonging — the one thing itinerant workers lack. 'We'd belong there' is the emotional heart of the dream: not wealth but home. 'No more runnin'' implies safety and permanence. The conditional tense ('We'd') maintains the dream as hypothetical, hovering between hope and impossibility. Steinbeck makes the dream beautiful precisely so its destruction is devastating.",
   },
+  {
+    quote: "I seen things out here. I wasn't drunk. I don't know if I was asleep. If some guy was with me, he could tell me I was asleep, an' then it would be all right.",
+    chapter: "Chapter 4",
+    speaker: "Crooks",
+    analysis:
+      "Crooks describes the disorienting effect of prolonged isolation: without another person to validate his experience, he cannot distinguish reality from hallucination. 'If some guy was with me' expresses the fundamental human need for companionship not just as comfort but as a means of verifying reality. Steinbeck uses Crooks to argue that isolation is not merely lonely but psychologically destructive.",
+  },
+  {
+    quote: "I coulda made somethin' of myself... Maybe I will yet.",
+    chapter: "Chapter 5",
+    speaker: "Curley's wife",
+    analysis:
+      "Curley's wife clings to her dream of Hollywood stardom even as she knows it is dead. 'Maybe I will yet' is heartbreaking in its futility — she says this minutes before her death. The contrast between her aspirations and her reality (trapped on a ranch, married to a man she despises) encapsulates Steinbeck's critique of the American Dream: it sustains hope but delivers nothing.",
+  },
+  {
+    quote: "I think I knowed from the very first. I think I knowed we'd never do her.",
+    chapter: "Chapter 5",
+    speaker: "George",
+    analysis:
+      "After Curley's wife's death, George admits that the dream was always impossible. 'From the very first' suggests that George has been performing hope rather than genuinely believing. 'We'd never do her' uses the past conditional to close down the future entirely. This confession reframes every earlier recitation of the dream as a kind of prayer George knew would go unanswered — an act of love for Lennie rather than a genuine plan.",
+  },
+  {
+    quote: "Ain't many guys travel around together... I don't know why. Maybe ever'body in the whole damn world is scared of each other.",
+    chapter: "Chapter 2",
+    speaker: "Slim",
+    analysis:
+      "Slim articulates the isolation at the heart of the novel with quiet authority. His observation that people are 'scared of each other' suggests that loneliness is not accidental but the product of mutual fear and distrust. Steinbeck uses Slim — the most perceptive character — to diagnose the social condition that makes George and Lennie's friendship both extraordinary and doomed.",
+  },
+  {
+    quote: "I seen it over an' over — a guy talkin' to another guy and it don't make no difference if he don't hear or understand. The thing is, they're talkin'.",
+    chapter: "Chapter 4",
+    speaker: "Crooks",
+    analysis:
+      "Crooks observes that communication matters more than comprehension. The need to speak to another human being is so fundamental that even being heard imperfectly is better than silence. Steinbeck uses this insight to explain why every character in the novel seeks connection, however imperfect: Curley's wife talks to Lennie knowing he barely understands; Candy talks to his dog. The act of speaking is itself an assertion of humanity.",
+  },
 ];
 
 const contextSections = [
@@ -333,13 +368,13 @@ export default function OfMiceAndMenStudyGuide() {
         </h1>
         <p className="mt-3 max-w-2xl text-lg text-muted-foreground">
           John Steinbeck&rsquo;s 1937 novella. Chapter summaries, character analysis,
-          themes, 14 key quotations with analysis, historical context, and essay planning.
+          themes, 20 key quotations with analysis, historical context, writer&rsquo;s methods, and essay planning.
         </p>
       </div>
 
       {/* Quick nav */}
       <nav className="flex flex-wrap gap-2 text-sm" aria-label="Page sections">
-        {["Chapter Summaries", "Characters", "Themes", "Key Quotes", "Context", "Essay Planning", "Practice Questions"].map(
+        {["Chapter Summaries", "Characters", "Themes", "Key Quotes", "Context", "Essay Planning", "Writer's Methods", "Grade 9 Points", "Exam Questions", "Practice Questions"].map(
           (s) => (
             <a
               key={s}
@@ -433,6 +468,135 @@ export default function OfMiceAndMenStudyGuide() {
                     <li key={j}>&bull; {p}</li>
                   ))}
                 </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Writer's Methods */}
+      <Section id="writers-methods" title="Writer&rsquo;s Methods &amp; Techniques">
+        <div className="space-y-4">
+          {[
+            {
+              method: "Circular Structure",
+              detail:
+                "The novel opens and closes at the same clearing by the Salinas River. This circular structure creates a sense of fate and entrapment: the characters end up exactly where they started, and the dream has achieved nothing. The symmetry also underlines the mercy of George's act: by returning Lennie to the place where they were happiest, George gives his death a kind of peace that the lynch mob would not.",
+            },
+            {
+              method: "Play-Novelette Form",
+              detail:
+                "Steinbeck conceived Of Mice and Men as a 'play-novelette' — a work designed to be performed as a stage play with minimal adaptation. This explains its tight structure: six chapters, each set in a single location, with action driven almost entirely by dialogue. The theatrical form creates immediacy and intensity, as every scene moves the plot towards its inevitable conclusion.",
+            },
+            {
+              method: "Foreshadowing",
+              detail:
+                "Steinbeck uses systematic foreshadowing to create a sense of inevitability. The dead mouse (Ch. 1) foreshadows the dead puppy (Ch. 5) which foreshadows Curley's wife's death (Ch. 5). Candy's dog is shot in the back of the head with Carlson's Luger — the same gun, the same method George later uses on Lennie. George's instruction to return to the brush, Lennie's history in Weed, and the escalating pattern of killing soft things all point towards the final tragedy.",
+            },
+            {
+              method: "Animal Imagery",
+              detail:
+                "Lennie is consistently described through animal similes: he drinks 'like a horse', moves 'the way a bear drags his paws', is 'as strong as a bull'. This imagery dehumanises him even as it generates sympathy, positioning him as a creature of instinct who cannot control his own strength. The animal comparison also connects to the novel's naturalistic philosophy: like the animals, Lennie is governed by impulses he cannot understand.",
+            },
+            {
+              method: "Setting as Symbol",
+              detail:
+                "The Salinas River clearing represents peace and the possibility of the dream. The bunk house represents the transience and depersonalisation of ranch life. Crooks's room represents racial segregation and isolation. The barn represents danger and inevitability (it is where the puppy and Curley's wife die). Steinbeck uses each location to reinforce thematic concerns, making the physical spaces of the novel into moral landscapes.",
+            },
+            {
+              method: "Dialogue and Dialect",
+              detail:
+                "Steinbeck reproduces the vernacular speech of 1930s ranch workers with precision: contractions ('ain't', 'coulda'), non-standard grammar ('don't make no difference'), and regional vocabulary ('bindle stiff'). This creates authenticity and class identity. The characters' limited vocabulary mirrors their limited options. Slim's more measured speech reflects his authority. Curley's wife's language shifts between performed seduction and genuine vulnerability.",
+            },
+            {
+              method: "Naturalism",
+              detail:
+                "Steinbeck writes in the naturalist tradition, presenting characters as products of their environment and biology. The novel suggests that George, Lennie, and the other characters are trapped by forces — economic, social, biological — beyond their control. The detached, observational narrative voice refuses to moralise, allowing the reader to draw their own conclusions about the justice or injustice of the characters' fates.",
+            },
+            {
+              method: "The Dream as Ritual",
+              detail:
+                "The dream farm is recited like a bedtime story: Lennie says 'Tell me — like you done before,' and George performs the familiar narrative. This repetition transforms the dream from a plan into a ritual — a shared act of faith that sustains the relationship. The dream's power lies not in its achievability but in the comfort of its telling. When George recites it for the last time, it becomes a kind of prayer.",
+            },
+          ].map((m) => (
+            <div key={m.method} className="rounded-lg border border-border bg-muted p-4">
+              <h3 className="font-semibold text-foreground">{m.method}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{m.detail}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Grade 9 Exemplar Points */}
+      <Section id="grade-9-points" title="Grade 9 Exemplar Points">
+        <p className="mb-4 text-sm text-muted-foreground">
+          Sophisticated, conceptualised arguments that distinguish Grade 9 responses.
+        </p>
+        <div className="space-y-3">
+          {[
+            "Steinbeck suggests that the American Dream is not merely unachievable but actively harmful: it sustains hope that prevents the characters from confronting the reality of their powerlessness. The dream functions as an opiate, making the intolerable bearable and thereby preventing resistance to the systems that cause suffering.",
+            "George's killing of Lennie can be read as Steinbeck's most damning indictment of 1930s America: a society in which the only act of kindness available to a marginalised man is to kill the person he loves most. The moral framework of the novel collapses here — mercy and murder become indistinguishable because the system offers no humane alternative.",
+            "Curley's wife's namelessness is not merely a reflection of 1930s gender norms but a deliberate authorial choice that implicates the reader. We, like the ranch workers, know her only through her relationship to a man. Steinbeck forces us to experience the same dehumanisation she suffers, making the reader complicit in the structures the novel critiques.",
+            "Crooks's momentary desire to join the dream — and his immediate withdrawal when threatened by Curley's wife — demonstrates that racial prejudice does not merely exclude but actively destroys hope. His retraction ('I didn' mean it. Jus' foolin'') is the most psychologically devastating moment in the novel: he has learned to pre-emptively crush his own aspirations before the white world can do it for him.",
+            "The setting near Soledad (Spanish for 'solitude') is not merely symbolic but deterministic. Steinbeck suggests that loneliness is not a personal failing but a structural condition created by the economic system: itinerant workers are kept mobile, rootless, and disconnected precisely because isolation makes them easier to exploit. Loneliness is a feature of the system, not a bug.",
+            "Steinbeck's decision to suspend time at the moment of Lennie's death — 'a moment settled and hovered and remained for much more than a moment' — transforms a violent act into something almost sacred. The lyrical prose elevates the killing above naturalism into a register of tragic ritual, demanding that the reader honour the weight of what has happened rather than simply moving past it.",
+            "Slim's final line — 'You hadda, George. I swear you hadda' — functions as the novel's moral verdict, but its authority is compromised by the fact that only Slim understands. Carlson's bewildered 'Now what the hell ya suppose is eatin' them two guys?' is the novel's real ending: a world in which genuine moral understanding is the exception, not the rule.",
+            "The parallel between Candy's dog and Lennie is not merely structural but philosophical: both deaths raise the question of who has the right to decide when a life is no longer worth living. Candy's regret at not shooting his own dog provides George with a moral framework, but Steinbeck leaves the ethical question unresolved. The novel asks whether mercy killing is ever truly merciful, or whether it merely makes the unbearable easier for those who survive.",
+          ].map((point, i) => (
+            <div key={i} className="rounded-lg border-l-4 border-accent bg-muted p-4">
+              <p className="text-sm leading-relaxed text-muted-foreground">{point}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Exam Questions with Model Answer Outlines */}
+      <Section id="exam-questions" title="Exam-Style Questions with Model Answer Outlines">
+        <p className="mb-4 text-sm text-muted-foreground">
+          These outlines show how to structure a full-mark GCSE response.
+        </p>
+        <div className="space-y-6">
+          {[
+            {
+              question: "How does Steinbeck present Crooks as a victim of racial prejudice in Of Mice and Men?",
+              outline: [
+                "Introduction: Crooks is the only Black character, and Steinbeck uses his enforced isolation to expose the systematic racism of 1930s America. His treatment on the ranch is a microcosm of Jim Crow segregation.",
+                "Para 1 -- Physical segregation: Crooks lives in the harness room, separate from the other workers. His room is both prison and refuge. Steinbeck uses setting to make racial segregation visible and visceral.",
+                "Para 2 -- Psychological damage: 'A guy goes nuts if he ain't got nobody.' Crooks articulates the mental health consequences of enforced isolation. His initial hostility to Lennie is defensive — he has learned to pre-empt rejection.",
+                "Para 3 -- The brief hope: When Crooks hears about the dream farm, he tentatively asks to join. For a moment, he imagines belonging. This makes Curley's wife's threat all the more devastating: 'I could get you strung up on a tree so easy it ain't even funny.'",
+                "Para 4 -- Withdrawal: After the threat, Crooks retreats: 'I didn' mean it. Jus' foolin'.' He has been reminded of the racial hierarchy and crushes his own hope before the system can do it more brutally. Steinbeck shows that racism destroys not just opportunity but the capacity to dream.",
+                "Conclusion: Steinbeck presents Crooks as a man whose intelligence, pride, and capacity for connection have been systematically destroyed by racism. His brief hope and immediate withdrawal make the reader understand that prejudice does not merely exclude — it annihilates.",
+              ],
+            },
+            {
+              question: "How does Steinbeck use the ending of Of Mice and Men to explore the theme of friendship?",
+              outline: [
+                "Introduction: The ending — George shooting Lennie — is the novel's most morally complex moment, simultaneously an act of murder and an act of love. Steinbeck uses it to argue that friendship in a hostile world is both humanity's greatest resource and its greatest source of pain.",
+                "Para 1 -- The return to the clearing: The circular structure returns to the river where the novel began. George sends Lennie here for safety. The return to their place of peace gives Lennie's death a gentleness the lynch mob would not.",
+                "Para 2 -- The final recitation of the dream: George tells the dream one last time: 'Tell me — like you done before.' The dream is no longer a plan but a farewell — a last act of tenderness. Steinbeck transforms the ritual into an elegy.",
+                "Para 3 -- The mercy killing: George shoots Lennie in the back of the head, mirroring how Carlson shot Candy's dog. Candy's regret ('I shouldn't ought to of let no stranger shoot my dog') provides the moral logic: it is better to do it yourself, with love, than to let strangers do it with cruelty.",
+                "Para 4 -- Slim's understanding: 'You hadda, George. I swear you hadda.' Only Slim understands. Carlson's inability to comprehend George's grief ('Now what the hell ya suppose is eatin' them two guys?') underlines the depth of George and Lennie's bond: it is invisible to those who have never experienced such connection.",
+                "Conclusion: Steinbeck argues that true friendship can demand impossible sacrifices. George's act destroys the only meaningful relationship in his life but saves Lennie from a worse fate. The tragedy is not that George kills Lennie but that the world gives him no other option.",
+              ],
+            },
+            {
+              question: "'Steinbeck presents all of his characters as victims.' How far do you agree?",
+              outline: [
+                "Introduction: While every major character suffers, Steinbeck is careful to distinguish between different kinds of victimhood — economic, racial, gendered, and disability-based — showing how multiple forms of oppression intersect.",
+                "Para 1 -- Economic victims: George, Lennie, Candy, and the other ranch hands are victims of the Great Depression's economic system. They own nothing, have no security, and can be 'canned' at any time. Their poverty is structural, not personal.",
+                "Para 2 -- Curley's wife as victim: She is nameless, trapped in a loveless marriage, denied a voice. Her death is described sympathetically: 'sweet and young.' Yet she also wields power over Crooks through racial threats. Steinbeck shows that victimhood is not simple — victims can also be perpetrators.",
+                "Para 3 -- Crooks as victim of racism: Segregated, threatened with lynching, denied basic human connection. His victimhood is absolute — he has no power to wield over others.",
+                "Para 4 -- Counter-argument: Curley is violent but insecure. Carlson is insensitive but not malicious. Even the boss is suspicious but not cruel. Steinbeck presents a world in which the system creates victims, but not all characters suffer equally. Some (Slim) maintain dignity; others (Curley) respond to their own inadequacies with aggression.",
+                "Conclusion: Steinbeck presents a hierarchy of victimhood determined by race, gender, disability, and class. The novel argues that these systems of oppression are interconnected and that the most vulnerable (Lennie, Crooks, Curley's wife) are crushed by their intersection.",
+              ],
+            },
+          ].map((eq, i) => (
+            <div key={i} className="rounded-lg border border-border bg-card p-4">
+              <h4 className="font-bold text-foreground">{eq.question}</h4>
+              <div className="mt-3 space-y-2">
+                {eq.outline.map((para, j) => (
+                  <p key={j} className="text-sm leading-relaxed text-muted-foreground">{para}</p>
+                ))}
               </div>
             </div>
           ))}

@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 
 /* ─── Expandable Section ─────────────────────────────────────── */
 
@@ -10,7 +9,7 @@ function Section({
   id,
   title,
   badge,
-  colour = "bg-amber-700",
+  colour = "bg-primary",
   children,
   defaultOpen = false,
 }: {
@@ -81,10 +80,10 @@ function TimelineEvent({ year, event }: { year: string; event: string }) {
   return (
     <div className="flex gap-4">
       <div className="flex flex-col items-center">
-        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-amber-500/15 text-xs font-bold text-amber-700 dark:text-amber-300">
+        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/15 text-xs font-bold text-primary">
           {year}
         </span>
-        <div className="mt-1 h-full w-px bg-amber-500/30" />
+        <div className="mt-1 h-full w-px bg-primary/30" />
       </div>
       <p className="pb-6 text-sm text-muted-foreground">{event}</p>
     </div>
@@ -127,7 +126,7 @@ export default function VictorianContextPage() {
       <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
         <div className="mb-8">
           <div className="flex flex-wrap items-center gap-3 mb-2">
-            <span className="rounded-full bg-amber-500/15 px-3 py-1 text-xs font-bold text-amber-700 dark:text-amber-300 uppercase tracking-wider">
+            <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary uppercase tracking-wider">
               1837 -- 1901
             </span>
             <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">A Christmas Carol</span>
@@ -167,7 +166,7 @@ export default function VictorianContextPage() {
 
         <div className="mt-5 space-y-5">
           {/* Social Class System */}
-          <Section id="class" title="The Social Class System" colour="bg-amber-600">
+          <Section id="class" title="The Social Class System" colour="bg-primary">
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 Victorian society was rigidly hierarchical. The <strong>upper class</strong> (aristocracy
@@ -214,7 +213,7 @@ export default function VictorianContextPage() {
           </Section>
 
           {/* Poor Laws and Workhouses */}
-          <Section id="poor-laws" title="Poor Laws & Workhouses" colour="bg-amber-800">
+          <Section id="poor-laws" title="Poor Laws & Workhouses" colour="bg-primary">
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 The <strong>1834 Poor Law Amendment Act</strong> was designed to reduce the cost of
@@ -239,7 +238,7 @@ export default function VictorianContextPage() {
           </Section>
 
           {/* Religion and Science */}
-          <Section id="religion-science" title="Religion vs Science" colour="bg-violet-700">
+          <Section id="religion-science" title="Religion vs Science" colour="bg-primary">
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 The Victorian era saw an unprecedented clash between <strong>religious faith</strong> and
@@ -263,7 +262,7 @@ export default function VictorianContextPage() {
           </Section>
 
           {/* Gender Roles */}
-          <Section id="gender" title="Gender Roles" colour="bg-rose-700">
+          <Section id="gender" title="Gender Roles" colour="bg-primary">
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 Victorian society enforced strict gender roles. Women were expected to embody the
@@ -285,7 +284,7 @@ export default function VictorianContextPage() {
           </Section>
 
           {/* Crime and Punishment */}
-          <Section id="crime" title="Crime & Punishment" colour="bg-red-800">
+          <Section id="crime" title="Crime & Punishment" colour="bg-primary">
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 Victorian cities were plagued by crime, much of it driven by poverty. Overcrowded
@@ -412,7 +411,6 @@ export default function VictorianContextPage() {
         </div>
       </div>
 
-      <ExamBoardDisclaimer />
     </>
   );
 }

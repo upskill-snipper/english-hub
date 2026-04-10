@@ -640,8 +640,8 @@ export default function PersuasiveWritingPage() {
               <div className="space-y-8">
                 {/* Article Template */}
                 <div className="rounded-xl border border-border bg-card shadow-md overflow-hidden">
-                  <div className="bg-primary px-6 py-4">
-                    <h3 className="text-lg font-bold text-white">Article Template</h3>
+                  <div className="bg-primary/[0.08] border-b border-primary/20 px-6 py-4">
+                    <h3 className="text-lg font-bold text-foreground">Article Template</h3>
                   </div>
                   <div className="p-6 space-y-4">
                     <div className="rounded-lg bg-muted p-5 font-mono text-sm text-foreground space-y-3">
@@ -683,8 +683,8 @@ export default function PersuasiveWritingPage() {
 
                 {/* Letter Template */}
                 <div className="rounded-xl border border-border bg-card shadow-md overflow-hidden">
-                  <div className="bg-success px-6 py-4">
-                    <h3 className="text-lg font-bold text-white">Formal Letter Template</h3>
+                  <div className="bg-primary/[0.08] border-b border-primary/20 px-6 py-4">
+                    <h3 className="text-lg font-bold text-foreground">Formal Letter Template</h3>
                   </div>
                   <div className="p-6 space-y-4">
                     <div className="rounded-lg bg-muted p-5 font-mono text-sm text-foreground space-y-3">
@@ -733,8 +733,8 @@ export default function PersuasiveWritingPage() {
 
                 {/* Speech Template */}
                 <div className="rounded-xl border border-border bg-card shadow-md overflow-hidden">
-                  <div className="bg-accent px-6 py-4">
-                    <h3 className="text-lg font-bold text-white">Speech Template</h3>
+                  <div className="bg-primary/[0.08] border-b border-primary/20 px-6 py-4">
+                    <h3 className="text-lg font-bold text-foreground">Speech Template</h3>
                   </div>
                   <div className="p-6 space-y-4">
                     <div className="rounded-lg bg-muted p-5 font-mono text-sm text-foreground space-y-3">
@@ -773,8 +773,8 @@ export default function PersuasiveWritingPage() {
 
                 {/* Report Template */}
                 <div className="rounded-xl border border-border bg-card shadow-md overflow-hidden">
-                  <div className="bg-secondary px-6 py-4">
-                    <h3 className="text-lg font-bold text-white">Report Template</h3>
+                  <div className="bg-primary/[0.08] border-b border-primary/20 px-6 py-4">
+                    <h3 className="text-lg font-bold text-foreground">Report Template</h3>
                   </div>
                   <div className="p-6 space-y-4">
                     <div className="rounded-lg bg-muted p-5 font-mono text-sm text-foreground space-y-3">
@@ -816,8 +816,8 @@ export default function PersuasiveWritingPage() {
 
                 {/* Review Template */}
                 <div className="rounded-xl border border-border bg-card shadow-md overflow-hidden">
-                  <div className="bg-destructive px-6 py-4">
-                    <h3 className="text-lg font-bold text-white">Review Template</h3>
+                  <div className="bg-primary/[0.08] border-b border-primary/20 px-6 py-4">
+                    <h3 className="text-lg font-bold text-foreground">Review Template</h3>
                   </div>
                   <div className="p-6 space-y-4">
                     <div className="rounded-lg bg-muted p-5 font-mono text-sm text-foreground space-y-3">

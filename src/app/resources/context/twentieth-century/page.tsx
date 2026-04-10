@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 
 /* ─── Expandable Section ─────────────────────────────────────── */
 
@@ -10,7 +9,7 @@ function Section({
   id,
   title,
   badge,
-  colour = "bg-slate-700",
+  colour = "bg-primary",
   children,
   defaultOpen = false,
 }: {
@@ -171,7 +170,7 @@ export default function TwentiethCenturyContextPage() {
 
         <div className="mt-5 space-y-5">
           {/* WWI and WWII */}
-          <Section id="wars" title="World War I & World War II" colour="bg-red-800">
+          <Section id="wars" title="World War I & World War II" colour="bg-primary">
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 <strong>World War I (1914-1918)</strong> shattered the certainties of Edwardian Britain.
@@ -197,7 +196,7 @@ export default function TwentiethCenturyContextPage() {
           </Section>
 
           {/* Class System Evolution */}
-          <Section id="class" title="The Changing Class System" colour="bg-amber-700">
+          <Section id="class" title="The Changing Class System" colour="bg-primary">
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 The rigid Edwardian class system -- with its clear divisions between upper, middle,
@@ -221,7 +220,7 @@ export default function TwentiethCenturyContextPage() {
           </Section>
 
           {/* Socialism and Capitalism */}
-          <Section id="socialism" title="Socialism vs Capitalism" colour="bg-blue-800">
+          <Section id="socialism" title="Socialism vs Capitalism" colour="bg-primary">
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 The twentieth century was defined by the ideological battle between
@@ -246,7 +245,7 @@ export default function TwentiethCenturyContextPage() {
           </Section>
 
           {/* Welfare State */}
-          <Section id="welfare" title="The Welfare State" colour="bg-green-700">
+          <Section id="welfare" title="The Welfare State" colour="bg-primary">
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 After WWII, the Labour government of 1945 created the <strong>welfare state</strong>:
@@ -270,7 +269,7 @@ export default function TwentiethCenturyContextPage() {
           </Section>
 
           {/* 1980s Britain */}
-          <Section id="eighties" title="1980s Britain & Thatcherism" colour="bg-slate-800">
+          <Section id="eighties" title="1980s Britain & Thatcherism" colour="bg-primary">
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 <strong>Margaret Thatcher</strong> (Prime Minister 1979-1990) fundamentally reshaped
@@ -425,7 +424,6 @@ export default function TwentiethCenturyContextPage() {
         </div>
       </div>
 
-      <ExamBoardDisclaimer />
     </>
   );
 }

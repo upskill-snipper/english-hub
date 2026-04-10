@@ -53,8 +53,8 @@ const BOARDS: Board[] = [
     totalMarks: 160,
     duration: "1h 45m + 2h 05m",
     uniqueFeature: "Separate fiction and non-fiction components",
-    color: "border-[#27AE60]",
-    accent: "bg-[#27AE60]",
+    color: "border-primary",
+    accent: "bg-primary",
     icon: "E",
   },
   {
@@ -70,8 +70,8 @@ const BOARDS: Board[] = [
     totalMarks: 100,
     duration: "2h + 2h",
     uniqueFeature: "Core and Extended tier options",
-    color: "border-[#E74C3C]",
-    accent: "bg-[#E74C3C]",
+    color: "border-primary",
+    accent: "bg-primary",
     icon: "C",
   },
   {
@@ -104,8 +104,8 @@ const BOARDS: Board[] = [
     totalMarks: 160,
     duration: "1h 45m + 2h",
     uniqueFeature: "Proofreading and editing task in Component 2",
-    color: "border-[#D35400]",
-    accent: "bg-[#D35400]",
+    color: "border-primary",
+    accent: "bg-primary",
     icon: "W",
   },
 ];
@@ -172,19 +172,19 @@ const RESOURCE_LINKS = [
     title: "Writing Skills Guides",
     description: "Master creative, persuasive, and analytical writing techniques with step-by-step guides.",
     href: "/resources/writing-skills",
-    color: "from-primary to-primary",
+    color: "from-primary to-primary/80",
   },
   {
     title: "Language Techniques",
     description: "Learn every language device from metaphor to anaphora with clear examples and effects.",
     href: "/resources/techniques",
-    color: "from-[#27AE60] to-[#2ECC71]",
+    color: "from-accent to-accent/80",
   },
   {
     title: "Practice Questions",
-    description: "Board-specific practice questions with model answers and AI-powered feedback.",
+    description: "Practice exam-style questions with model answers and AI-powered feedback.",
     href: "/practice",
-    color: "from-primary to-primary/80",
+    color: "from-primary to-accent",
   },
 ];
 
@@ -406,23 +406,13 @@ export default function EnglishLanguagePage() {
             <Link
               key={board.slug}
               href={`/resources/english-language/${board.slug}`}
-              className={`group flex flex-col rounded-xl border-2 ${board.color} bg-card p-6 shadow-md transition hover:shadow-lg hover:-translate-y-0.5`}
+              className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-md transition hover:shadow-lg hover:border-primary/30 hover:-translate-y-0.5"
             >
-              {/* Board badge */}
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <span
-                    className={`flex h-10 w-10 items-center justify-center rounded-lg ${board.accent} text-sm font-bold text-white`}
-                  >
-                    {board.icon}
-                  </span>
-                  <div>
-                    <h3 className="text-lg font-bold text-foreground transition-colors group-hover:text-foreground">
-                      {board.name}
-                    </h3>
-                    <span className="text-xs font-medium text-muted-foreground">{board.spec}</span>
-                  </div>
-                </div>
+              <div>
+                <h3 className="text-lg font-bold text-foreground transition-colors group-hover:text-primary">
+                  {board.name}
+                </h3>
+                <span className="text-xs font-medium text-muted-foreground">{board.spec}</span>
               </div>
 
               <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
@@ -517,13 +507,8 @@ export default function EnglishLanguagePage() {
                     <Link
                       key={board.slug}
                       href={`/resources/english-language/${board.slug}`}
-                      className={`inline-flex items-center gap-2 rounded-lg border-2 ${board.color} bg-card px-4 py-2 text-sm font-semibold text-foreground transition hover:shadow-md`}
+                      className="inline-flex items-center gap-2 rounded-lg border border-primary/30 bg-card px-4 py-2 text-sm font-semibold text-foreground transition hover:border-primary hover:shadow-md"
                     >
-                      <span
-                        className={`flex h-6 w-6 items-center justify-center rounded ${board.accent} text-xs font-bold text-white`}
-                      >
-                        {board.icon}
-                      </span>
                       {board.name}
                     </Link>
                   ))}
@@ -694,13 +679,8 @@ export default function EnglishLanguagePage() {
               <Link
                 key={board.slug}
                 href={`/resources/english-language/${board.slug}`}
-                className={`inline-flex items-center gap-2 rounded-lg border-2 ${board.color} bg-card px-4 py-2 text-sm font-semibold text-foreground transition hover:shadow-md hover:-translate-y-0.5`}
+                className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-4 py-2 text-sm font-semibold text-foreground transition hover:border-primary hover:shadow-md hover:-translate-y-0.5"
               >
-                <span
-                  className={`flex h-6 w-6 items-center justify-center rounded ${board.accent} text-xs font-bold text-white`}
-                >
-                  {board.icon}
-                </span>
                 {board.name}
               </Link>
             ))}

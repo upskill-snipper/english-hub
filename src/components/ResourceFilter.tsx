@@ -11,6 +11,7 @@ type Difficulty = 'foundation' | 'higher' | null;
 
 interface ResourceFilters {
   subject: Subject;
+  /** @deprecated Exam board filtering removed — kept for type compatibility */
   examBoards: ExamBoard[];
   topic: string;
   type: ResourceType;
@@ -29,13 +30,6 @@ interface ResourceFilterProps {
 const SUBJECTS: { value: Subject; label: string }[] = [
   { value: 'english-language', label: 'English Language' },
   { value: 'english-literature', label: 'English Literature' },
-];
-
-const EXAM_BOARDS: { value: ExamBoard; label: string }[] = [
-  { value: 'aqa', label: 'AQA' },
-  { value: 'edexcel', label: 'Edexcel' },
-  { value: 'caie', label: 'Cambridge' },
-  { value: 'ocr', label: 'OCR' },
 ];
 
 const RESOURCE_TYPES: { value: ResourceType; label: string }[] = [
@@ -277,7 +271,6 @@ function TopicDropdown({
 function countActiveFilters(filters: ResourceFilters): number {
   let count = 0;
   if (filters.subject) count++;
-  if (filters.examBoards.length > 0) count++;
   if (filters.topic) count++;
   if (filters.type !== 'all') count++;
   if (filters.difficulty) count++;
@@ -297,17 +290,6 @@ function ResourceFilter({ filters, onChange, className = '' }: ResourceFilterPro
       onChange({ ...filters, [key]: value });
     },
     [filters, onChange],
-  );
-
-  const toggleExamBoard = useCallback(
-    (board: ExamBoard) => {
-      const current = filters.examBoards;
-      const next = current.includes(board)
-        ? current.filter((b) => b !== board)
-        : [...current, board];
-      updateFilter('examBoards', next);
-    },
-    [filters.examBoards, updateFilter],
   );
 
   const clearAll = useCallback(() => {
@@ -344,28 +326,6 @@ function ResourceFilter({ filters, onChange, className = '' }: ResourceFilterPro
               }
             >
               {s.label}
-            </Pill>
-          ))}
-        </div>
-      </div>
-
-      {/* Exam board */}
-      <div className={mobile ? 'mt-5' : 'flex items-center gap-2'}>
-        {mobile && (
-          <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-            Exam Board
-          </p>
-        )}
-        {!mobile && <div className="h-6 w-px bg-muted" aria-hidden="true" />}
-        <div className="flex flex-wrap gap-2">
-          {EXAM_BOARDS.map((b) => (
-            <Pill
-              key={b.value}
-              selected={filters.examBoards.includes(b.value)}
-              onClick={() => toggleExamBoard(b.value)}
-              size="sm"
-            >
-              {b.label}
             </Pill>
           ))}
         </div>

@@ -20,7 +20,6 @@ const PAPERS = [
     description:
       "Shakespeare plays including Macbeth, Romeo and Juliet, and more. Post-1914 texts such as An Inspector Calls, Lord of the Flies, and Animal Farm.",
     marks: "80 marks — 50% of GCSE",
-    colour: "bg-primary",
   },
   {
     href: "/resources/english-literature/edexcel/paper-2",
@@ -28,7 +27,6 @@ const PAPERS = [
     description:
       "19th-century novels including A Christmas Carol, Jekyll and Hyde, and Jane Eyre. Poetry anthology (Relationships and Conflict clusters) plus unseen poetry.",
     marks: "80 marks — 50% of GCSE",
-    colour: "bg-primary",
   },
 ];
 
@@ -128,7 +126,7 @@ export default function EdexcelEnglishLiteraturePage() {
               className="group rounded-xl border border-border p-6 shadow-md transition hover:shadow-md"
             >
               <div
-                className={`inline-block rounded-full ${paper.colour} px-3 py-1 text-xs font-semibold text-white`}
+                className="inline-block rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground"
               >
                 {paper.marks}
               </div>
@@ -173,48 +171,38 @@ export default function EdexcelEnglishLiteraturePage() {
         </div>
       </section>
 
-      {/* ── Key differences from AQA ──────────────────────────── */}
+      {/* ── Key exam features ─────────────────────────────────── */}
       <section className="mx-auto max-w-5xl px-4 py-12 sm:py-16">
         <h2 className="text-2xl font-bold text-foreground">
-          How Edexcel Differs from AQA
+          Key features of the Edexcel exam
         </h2>
         <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
-          <div className="rounded-lg border-l-4 border-primary bg-blue-500/10 p-4">
-            <h3 className="font-semibold text-foreground">Closed-book exam</h3>
+          <div className="rounded-lg border-l-4 border-primary bg-primary/5 p-4">
+            <h3 className="font-semibold text-foreground">Fully closed-book</h3>
             <p className="mt-1 text-sm">
               Both Edexcel papers are fully closed-book. You must memorise
-              quotations for every text. AQA provides an extract for Shakespeare
-              and the 19th-century novel, but Edexcel does not.
+              quotations for every text — no extracts are provided for
+              Shakespeare or prose sections.
             </p>
           </div>
-          <div className="rounded-lg border-l-4 border-primary bg-blue-500/10 p-4">
-            <h3 className="font-semibold text-foreground">
-              Different text options
-            </h3>
-            <p className="mt-1 text-sm">
-              Edexcel offers different Post-1914 and 19th-century text choices.
-              For example, Never Let Me Go and Anita and Me are Edexcel options,
-              while AQA offers different modern texts.
-            </p>
-          </div>
-          <div className="rounded-lg border-l-4 border-primary bg-blue-500/10 p-4">
+          <div className="rounded-lg border-l-4 border-primary bg-primary/5 p-4">
             <h3 className="font-semibold text-foreground">
               Poetry anthology clusters
             </h3>
             <p className="mt-1 text-sm">
-              Edexcel uses Relationships and Conflict clusters (15 poems each),
-              while AQA uses Power and Conflict plus Love and Relationships.
+              Edexcel uses Relationships and Conflict clusters (15 poems each).
+              You will be given a named poem and must compare it with another of
+              your choice from the same cluster.
             </p>
           </div>
-          <div className="rounded-lg border-l-4 border-primary bg-blue-500/10 p-4">
+          <div className="rounded-lg border-l-4 border-primary bg-primary/5 p-4">
             <h3 className="font-semibold text-foreground">
               Question structure
             </h3>
             <p className="mt-1 text-sm">
               Edexcel Shakespeare questions give a theme or character to discuss
-              across the whole play (no extract). Post-1914 questions may offer
-              a choice of two essay titles. Poetry requires comparison with a
-              named poem.
+              across the whole play. Post-1914 questions may offer a choice of
+              two essay titles.
             </p>
           </div>
         </div>
@@ -253,7 +241,7 @@ export default function EdexcelEnglishLiteraturePage() {
                 key={obj.ao}
                 className="rounded-lg border border-border bg-card p-5"
               >
-                <span className="inline-block rounded bg-primary px-2 py-0.5 text-xs font-bold text-white">
+                <span className="inline-block rounded bg-primary px-2 py-0.5 text-xs font-bold text-primary-foreground">
                   {obj.ao}
                 </span>
                 <p className="mt-2 text-sm text-muted-foreground">{obj.desc}</p>

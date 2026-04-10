@@ -105,7 +105,7 @@ export default function JekyllAndHydePage() {
       <div className="mb-8 rounded-xl border border-border bg-card p-4 shadow-md">
         <p className="text-sm font-semibold text-muted-foreground mb-3">Jump to section:</p>
         <div className="flex flex-wrap gap-2">
-          {["Plot Summary", "Characters", "Themes", "Key Quotations", "Gothic Elements", "Context", "Structure", "Essay Planning"].map((s) => (
+          {["Plot Summary", "Characters", "Themes", "Key Quotations", "Gothic Elements", "Context", "Structure", "Essay Planning", "Grade 9 Points", "Practice Questions"].map((s) => (
             <a
               key={s}
               href={`#${s.toLowerCase().replace(/\s+/g, "-")}`}
@@ -917,6 +917,89 @@ export default function JekyllAndHydePage() {
             </div>
           </Section>
         </div>
+      </div>
+
+      {/* ────────────────────────────────── GRADE 9 POINTS */}
+      <div id="grade-9">
+        <Section title="Grade 9 Exemplar Points and Interpretations" icon="⭐">
+          <p className="text-sm text-muted-foreground mb-4 italic">These higher-level interpretations demonstrate the sophisticated analysis needed for top grades. Each goes beyond surface reading to consider authorial intent, alternative readings, and structural significance.</p>
+          <div className="space-y-4">
+            <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
+              <h4 className="font-bold text-violet-700 dark:text-violet-300">1. Jekyll as Unreliable Narrator</h4>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                A sophisticated reading questions whether Jekyll&apos;s &ldquo;Full Statement&rdquo; is entirely honest. He frames himself as a victim: &ldquo;It was Hyde, after all, and Hyde alone, that was guilty.&rdquo; But this is self-serving. Jekyll created Hyde, chose to become him, and experienced pleasure in doing so. His confession is an exercise in blame-shifting &mdash; he uses the language of scientific detachment to distance himself from his own actions. A Grade 9 response might argue that Jekyll&apos;s statement is not a confession but a defence, and that Stevenson deliberately makes the reader question whether Jekyll is truly penitent or merely performing penitence.
+              </p>
+            </div>
+            <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
+              <h4 className="font-bold text-violet-700 dark:text-violet-300">2. Hyde as Liberation, Not Just Horror</h4>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                Lower-grade answers treat Hyde purely as a monster. A sophisticated reading acknowledges that Jekyll&apos;s first transformation is described in terms of freedom and pleasure: &ldquo;I felt younger, lighter, happier in body.&rdquo; This complicates the moral framework &mdash; Hyde is not experienced as evil by the person within him. Stevenson suggests that the appeal of vice is precisely what makes it dangerous. Hyde represents not just evil but the intoxicating freedom from social constraint. This makes the novella a far more nuanced critique of Victorian morality: it is not that repressed desires are inherently wicked, but that repressing them creates a dangerous craving for release.
+              </p>
+            </div>
+            <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
+              <h4 className="font-bold text-violet-700 dark:text-violet-300">3. The Failure of Rationality</h4>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                Utterson is the embodiment of rational Victorian masculinity. He investigates methodically, suppresses emotion, and trusts evidence. Yet he fails completely to uncover the truth. The mystery is solved not through rational investigation but through written confessions discovered after death. Stevenson suggests that the rational, empirical mindset that Victorians prized cannot comprehend the irrational depths of human nature. Lanyon, another man of science, dies from the shock of witnessing the irrational. The novella argues that some truths are beyond reason &mdash; a deeply unsettling message for a society that worshipped rationality.
+              </p>
+            </div>
+            <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
+              <h4 className="font-bold text-violet-700 dark:text-violet-300">4. The Impure Salt as Anti-Determinism</h4>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                Jekyll discovers that his original chemicals contained an unknown impurity that was essential to the transformation. He cannot replicate it. This seemingly minor plot detail carries enormous thematic weight: it suggests that the experiment was never fully under scientific control. The transformation depended on an accident, an impurity &mdash; something unplanned and unrepeatable. This undermines the deterministic, mechanistic worldview of Victorian science. The universe contains elements that cannot be predicted, controlled, or replicated. Stevenson uses this detail to argue that humanity&apos;s attempt to master nature through science is fundamentally flawed.
+              </p>
+            </div>
+            <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
+              <h4 className="font-bold text-violet-700 dark:text-violet-300">5. &ldquo;He, I say &mdash; I cannot say, I&rdquo; as the Novella&apos;s Thesis</h4>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                This single sentence encapsulates the novella&apos;s entire philosophical argument. Jekyll cannot decide whether Hyde is &ldquo;he&rdquo; (a separate person) or &ldquo;I&rdquo; (himself). The grammatical confusion mirrors the metaphysical crisis: the boundary between self and other has dissolved. Language itself breaks down because identity has broken down. A Grade 9 response might argue that this is the most important sentence in the novella &mdash; the moment where Stevenson&apos;s exploration of duality moves from theme to form, where the content and the style become one.
+              </p>
+            </div>
+            <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
+              <h4 className="font-bold text-violet-700 dark:text-violet-300">6. Stevenson&apos;s Critique of Victorian Masculinity</h4>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                The novella&apos;s all-male world is not accidental but thematically significant. These men socialise through dinner parties and walks, communicate through formal letters, and express care through silent loyalty. Emotional expression is entirely absent. Stevenson shows that Victorian masculine norms &mdash; restraint, discretion, never discussing the personal &mdash; create the very conditions for Jekyll&apos;s tragedy. The men around Jekyll could have helped him if they had asked direct questions, but their code of gentlemanly discretion prevents it. Stevenson argues that a society that forbids men from being emotionally honest will produce men who are secretly monstrous.
+              </p>
+            </div>
+            <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
+              <h4 className="font-bold text-violet-700 dark:text-violet-300">7. The Novella as Addiction Narrative</h4>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                Jekyll&apos;s relationship with Hyde follows the pattern of addiction: initial pleasure, increasing tolerance, loss of control, failed attempts to stop, and eventual destruction. &ldquo;I felt younger, lighter, happier&rdquo; describes the first &ldquo;high.&rdquo; The involuntary transformations are withdrawal and relapse. The depleting chemical supply parallels a diminishing drug supply. This reading does not diminish the novella&apos;s other themes but adds a layer of psychological realism that explains why Jekyll cannot simply choose to stop, even when he knows the consequences.
+              </p>
+            </div>
+            <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
+              <h4 className="font-bold text-violet-700 dark:text-violet-300">8. The Ending as Anti-Resolution</h4>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                Jekyll&apos;s statement ends mid-sentence, or at least at the point where Jekyll ceases to exist: &ldquo;I bring the life of that unhappy Henry Jekyll to an end.&rdquo; There is no moral conclusion, no redemption, no lesson learned. Utterson presumably reads both letters, but we never see his response. The novella refuses to provide the comfort of closure. Stevenson denies the Victorian expectation of a moral resolution, leaving the reader with unresolved questions about identity, morality, and the nature of evil. This open ending is a radical formal choice that mirrors the novella&apos;s refusal to offer easy answers about human nature.
+              </p>
+            </div>
+          </div>
+        </Section>
+      </div>
+
+      {/* ────────────────────────────────── PRACTICE QUESTIONS */}
+      <div id="practice-questions">
+        <Section title="Practice Questions" icon="📝">
+          <p className="text-sm text-muted-foreground mb-4">
+            Exam-style questions covering the most commonly tested areas. Consider how you would structure a response using PEEL paragraphs, embedded quotations, and contextual links.
+          </p>
+          <div className="space-y-3">
+            {[
+              { q: "How does Stevenson present the theme of duality in the novella? Refer to the whole text in your answer.", marks: 30 },
+              { q: "How does Stevenson use the character of Hyde to explore ideas about evil?", marks: 30 },
+              { q: "How does Stevenson present Victorian society as hypocritical?", marks: 30 },
+              { q: "Starting with the extract, explore how Stevenson creates a sense of mystery and suspense.", marks: 30 },
+              { q: "How does Stevenson use setting to reflect the theme of duality?", marks: 30 },
+              { q: "How does Stevenson present the relationship between science and morality?", marks: 30 },
+              { q: "How does Stevenson use the character of Utterson to explore the theme of secrecy?", marks: 30 },
+              { q: "How does Stevenson present ideas about repression and its consequences?", marks: 30 },
+            ].map((item, i) => (
+              <div key={i} className="rounded-lg border border-border bg-muted/50 p-4">
+                <p className="text-sm font-semibold text-foreground">Question {i + 1}</p>
+                <p className="mt-1 text-sm text-muted-foreground">{item.q} <span className="font-semibold">[{item.marks} marks]</span></p>
+              </div>
+            ))}
+          </div>
+        </Section>
       </div>
 
       {/* Exam Tips */}

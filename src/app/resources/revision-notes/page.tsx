@@ -14,7 +14,6 @@ type TextCard = {
   category: Category;
   boards: string[];
   themes: string[];
-  colour: string;
   icon: string;
   type: "play" | "novel" | "novella" | "allegory" | "anthology";
 };
@@ -30,7 +29,6 @@ const TEXTS: TextCard[] = [
     category: "shakespeare",
     boards: ["AQA", "Edexcel", "CAIE", "OCR"],
     themes: ["Ambition", "Power", "Guilt", "Supernatural"],
-    colour: "from-red-900 to-red-700",
     icon: "crown",
     type: "play",
   },
@@ -41,7 +39,6 @@ const TEXTS: TextCard[] = [
     category: "shakespeare",
     boards: ["AQA", "Edexcel", "CAIE", "OCR"],
     themes: ["Love", "Fate", "Conflict", "Family"],
-    colour: "from-rose-700 to-rose-500",
     icon: "heart",
     type: "play",
   },
@@ -52,7 +49,6 @@ const TEXTS: TextCard[] = [
     category: "shakespeare",
     boards: ["AQA", "Edexcel", "CAIE", "OCR"],
     themes: ["Power", "Colonialism", "Forgiveness", "Magic"],
-    colour: "from-blue-800 to-blue-600",
     icon: "storm",
     type: "play",
   },
@@ -63,7 +59,6 @@ const TEXTS: TextCard[] = [
     category: "shakespeare",
     boards: ["AQA", "Edexcel", "OCR"],
     themes: ["Deception", "Love", "Honour", "Gender"],
-    colour: "from-amber-700 to-amber-500",
     icon: "masks",
     type: "play",
   },
@@ -74,7 +69,6 @@ const TEXTS: TextCard[] = [
     category: "shakespeare",
     boards: ["AQA", "Edexcel", "CAIE", "OCR"],
     themes: ["Justice", "Mercy", "Prejudice", "Appearance vs Reality"],
-    colour: "from-amber-800 to-amber-600",
     icon: "scales",
     type: "play",
   },
@@ -85,7 +79,6 @@ const TEXTS: TextCard[] = [
     category: "shakespeare",
     boards: ["AQA", "Edexcel", "CAIE", "OCR"],
     themes: ["Jealousy", "Race", "Manipulation", "Honour"],
-    colour: "from-emerald-900 to-emerald-700",
     icon: "masks",
     type: "play",
   },
@@ -98,7 +91,6 @@ const TEXTS: TextCard[] = [
     category: "nineteenth",
     boards: ["AQA", "Edexcel", "OCR"],
     themes: ["Redemption", "Poverty", "Social Responsibility", "Christmas"],
-    colour: "from-emerald-800 to-emerald-600",
     icon: "candle",
     type: "novella",
   },
@@ -109,7 +101,6 @@ const TEXTS: TextCard[] = [
     category: "nineteenth",
     boards: ["AQA", "Edexcel", "OCR"],
     themes: ["Duality", "Repression", "Science", "Secrecy"],
-    colour: "from-violet-900 to-violet-700",
     icon: "potion",
     type: "novella",
   },
@@ -120,7 +111,6 @@ const TEXTS: TextCard[] = [
     category: "nineteenth",
     boards: ["AQA", "Edexcel", "OCR"],
     themes: ["Creation", "Responsibility", "Isolation", "Ambition"],
-    colour: "from-slate-800 to-slate-600",
     icon: "bolt",
     type: "novel",
   },
@@ -131,7 +121,6 @@ const TEXTS: TextCard[] = [
     category: "nineteenth",
     boards: ["AQA", "Edexcel", "OCR"],
     themes: ["Class", "Ambition", "Identity", "Loyalty"],
-    colour: "from-yellow-800 to-yellow-600",
     icon: "star",
     type: "novel",
   },
@@ -142,7 +131,6 @@ const TEXTS: TextCard[] = [
     category: "nineteenth",
     boards: ["AQA", "Edexcel", "OCR"],
     themes: ["Independence", "Class", "Gender", "Love"],
-    colour: "from-purple-900 to-purple-700",
     icon: "quill",
     type: "novel",
   },
@@ -153,7 +141,6 @@ const TEXTS: TextCard[] = [
     category: "nineteenth",
     boards: ["AQA", "Edexcel", "OCR"],
     themes: ["Love", "Class", "Pride", "Marriage"],
-    colour: "from-pink-800 to-pink-600",
     icon: "quill",
     type: "novel",
   },
@@ -164,7 +151,6 @@ const TEXTS: TextCard[] = [
     category: "nineteenth",
     boards: ["Edexcel"],
     themes: ["Justice", "Empire", "Reason vs Emotion", "Wealth"],
-    colour: "from-cyan-800 to-cyan-600",
     icon: "magnifier",
     type: "novel",
   },
@@ -175,7 +161,6 @@ const TEXTS: TextCard[] = [
     category: "nineteenth",
     boards: ["AQA", "Edexcel", "OCR"],
     themes: ["Community", "Redemption", "Class", "Isolation"],
-    colour: "from-stone-700 to-stone-500",
     icon: "candle",
     type: "novel",
   },
@@ -188,7 +173,6 @@ const TEXTS: TextCard[] = [
     category: "modern",
     boards: ["AQA", "Edexcel", "OCR"],
     themes: ["Responsibility", "Class", "Gender", "Morality"],
-    colour: "from-amber-800 to-amber-600",
     icon: "magnifier",
     type: "play",
   },
@@ -199,7 +183,6 @@ const TEXTS: TextCard[] = [
     category: "modern",
     boards: ["AQA", "Edexcel", "CAIE", "OCR"],
     themes: ["Civilisation vs Savagery", "Power", "Fear", "Innocence"],
-    colour: "from-orange-800 to-orange-600",
     icon: "fire",
     type: "novel",
   },
@@ -210,7 +193,6 @@ const TEXTS: TextCard[] = [
     category: "modern",
     boards: ["AQA", "Edexcel", "CAIE", "OCR"],
     themes: ["Power", "Corruption", "Revolution", "Propaganda"],
-    colour: "from-red-800 to-red-600",
     icon: "flag",
     type: "allegory",
   },
@@ -221,7 +203,6 @@ const TEXTS: TextCard[] = [
     category: "modern",
     boards: ["AQA", "Edexcel"],
     themes: ["Class", "Nature vs Nurture", "Superstition", "Friendship"],
-    colour: "from-indigo-800 to-indigo-600",
     icon: "twins",
     type: "play",
   },
@@ -232,7 +213,6 @@ const TEXTS: TextCard[] = [
     category: "modern",
     boards: ["AQA", "Edexcel", "OCR"],
     themes: ["Identity", "Mortality", "Ethics", "Memory"],
-    colour: "from-teal-800 to-teal-600",
     icon: "dna",
     type: "novel",
   },
@@ -243,7 +223,6 @@ const TEXTS: TextCard[] = [
     category: "modern",
     boards: ["Edexcel"],
     themes: ["Fear", "Isolation", "Revenge", "Supernatural"],
-    colour: "from-gray-900 to-gray-700",
     icon: "ghost",
     type: "novel",
   },
@@ -254,7 +233,6 @@ const TEXTS: TextCard[] = [
     category: "modern",
     boards: ["AQA", "Edexcel", "OCR"],
     themes: ["Hysteria", "Reputation", "Power", "Integrity"],
-    colour: "from-red-900 to-red-700",
     icon: "fire",
     type: "play",
   },
@@ -265,7 +243,6 @@ const TEXTS: TextCard[] = [
     category: "modern",
     boards: ["AQA", "Edexcel", "OCR"],
     themes: ["Justice", "Immigration", "Masculinity", "Betrayal"],
-    colour: "from-slate-700 to-slate-500",
     icon: "scales",
     type: "play",
   },
@@ -276,7 +253,6 @@ const TEXTS: TextCard[] = [
     category: "modern",
     boards: ["AQA", "Edexcel", "CAIE", "OCR"],
     themes: ["Loneliness", "The American Dream", "Friendship", "Prejudice"],
-    colour: "from-amber-900 to-amber-700",
     icon: "wheat",
     type: "novella",
   },
@@ -289,7 +265,6 @@ const TEXTS: TextCard[] = [
     category: "poetry",
     boards: ["AQA"],
     themes: ["War", "Power", "Identity", "Nature"],
-    colour: "from-stone-800 to-stone-600",
     icon: "scroll",
     type: "anthology",
   },
@@ -300,7 +275,6 @@ const TEXTS: TextCard[] = [
     category: "poetry",
     boards: ["AQA"],
     themes: ["Love", "Memory", "Family", "Distance"],
-    colour: "from-fuchsia-800 to-fuchsia-600",
     icon: "feather",
     type: "anthology",
   },
@@ -332,27 +306,15 @@ const CATEGORIES: { key: Category; label: string; description: string }[] = [
   },
 ];
 
-const BOARDS = ["AQA", "Edexcel", "CAIE", "OCR"] as const;
+/** @deprecated Board filtering removed */
 
 const TYPE_LABELS: Record<string, { label: string; bg: string; text: string }> =
   {
-    play: { label: "Play", bg: "bg-purple-500/15", text: "text-purple-700 dark:text-purple-300" },
-    novel: { label: "Novel", bg: "bg-blue-500/15", text: "text-blue-700 dark:text-blue-300" },
-    novella: {
-      label: "Novella",
-      bg: "bg-cyan-500/15",
-      text: "text-cyan-700",
-    },
-    allegory: {
-      label: "Allegory",
-      bg: "bg-orange-500/15",
-      text: "text-orange-700 dark:text-orange-300",
-    },
-    anthology: {
-      label: "Anthology",
-      bg: "bg-emerald-500/15",
-      text: "text-emerald-700 dark:text-emerald-300",
-    },
+    play: { label: "Play", bg: "bg-primary/10", text: "text-primary" },
+    novel: { label: "Novel", bg: "bg-primary/10", text: "text-primary" },
+    novella: { label: "Novella", bg: "bg-primary/10", text: "text-primary" },
+    allegory: { label: "Allegory", bg: "bg-primary/10", text: "text-primary" },
+    anthology: { label: "Anthology", bg: "bg-primary/10", text: "text-primary" },
   };
 
 /* ─── Icons ──────────────────────────────────────────────────── */
@@ -560,14 +522,9 @@ function Icon({ name }: { name: string }) {
 
 export default function RevisionNotesHub() {
   const [search, setSearch] = useState("");
-  const [activeBoard, setActiveBoard] = useState<string | null>(null);
 
   const filtered = useMemo(() => {
     let result = TEXTS;
-
-    if (activeBoard) {
-      result = result.filter((t) => t.boards.includes(activeBoard));
-    }
 
     if (search.trim()) {
       const q = search.toLowerCase();
@@ -575,13 +532,12 @@ export default function RevisionNotesHub() {
         (t) =>
           t.title.toLowerCase().includes(q) ||
           t.author.toLowerCase().includes(q) ||
-          t.themes.some((th) => th.toLowerCase().includes(q)) ||
-          t.boards.some((b) => b.toLowerCase().includes(q))
+          t.themes.some((th) => th.toLowerCase().includes(q))
       );
     }
 
     return result;
-  }, [search, activeBoard]);
+  }, [search]);
 
   const categoriesWithTexts = CATEGORIES.map((cat) => ({
     ...cat,
@@ -599,7 +555,7 @@ export default function RevisionNotesHub() {
           Comprehensive, exam-focused revision guides for every major GCSE
           English Literature set text. Each guide includes plot summaries,
           character analysis, key quotations with analysis, thematic
-          exploration, historical context, and exam board-specific advice.
+          exploration, historical context, and exam technique advice.
         </p>
       </div>
 
@@ -631,37 +587,6 @@ export default function RevisionNotesHub() {
           />
         </div>
 
-        {/* Exam board filter */}
-        <div className="flex flex-wrap items-center gap-2">
-          <span className="text-sm font-medium text-muted-foreground">
-            Filter by exam board:
-          </span>
-          <button
-            onClick={() => setActiveBoard(null)}
-            className={`rounded-full px-3.5 py-1.5 text-xs font-semibold transition-colors ${
-              activeBoard === null
-                ? "bg-primary text-white"
-                : "bg-muted text-muted-foreground hover:bg-muted"
-            }`}
-          >
-            All Boards
-          </button>
-          {BOARDS.map((board) => (
-            <button
-              key={board}
-              onClick={() =>
-                setActiveBoard(activeBoard === board ? null : board)
-              }
-              className={`rounded-full px-3.5 py-1.5 text-xs font-semibold transition-colors ${
-                activeBoard === board
-                  ? "bg-primary text-white"
-                  : "bg-muted text-muted-foreground hover:bg-primary/10 hover:text-primary"
-              }`}
-            >
-              {board}
-            </button>
-          ))}
-        </div>
       </div>
 
       {/* No results */}
@@ -684,12 +609,11 @@ export default function RevisionNotesHub() {
             No texts found
           </h3>
           <p className="mt-2 text-sm text-muted-foreground">
-            Try adjusting your search or clearing the exam board filter.
+            Try adjusting your search term.
           </p>
           <button
             onClick={() => {
               setSearch("");
-              setActiveBoard(null);
             }}
             className="mt-4 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-white transition hover:bg-primary"
           >
@@ -717,29 +641,25 @@ export default function RevisionNotesHub() {
                       ? `/resources/poetry/${text.slug}`
                       : `/resources/revision-notes/${text.slug}`
                   }
-                  className="group relative flex flex-col overflow-hidden rounded-xl border border-border bg-card shadow-md transition hover:shadow-lg hover:border-primary/40"
+                  className="group relative flex flex-col rounded-xl bg-card border border-border/50 hover:border-primary/25 shadow-sm transition hover:shadow-md"
                 >
-                  {/* Gradient header */}
-                  <div
-                    className={`bg-gradient-to-br ${text.colour} px-5 py-5 text-white`}
-                  >
-                    <div className="flex items-start justify-between">
-                      <div>
-                        <h3 className="text-lg font-bold leading-tight">
-                          {text.title}
-                        </h3>
-                        <p className="mt-1 text-sm text-muted-foreground">
-                          {text.author}
-                        </p>
-                      </div>
-                      <div className="opacity-70">
-                        <Icon name={text.icon} />
-                      </div>
+                  {/* Header */}
+                  <div className="flex items-start justify-between gap-3 px-5 pt-5 pb-3">
+                    <div className="min-w-0">
+                      <h3 className="text-lg font-bold leading-tight text-foreground">
+                        {text.title}
+                      </h3>
+                      <p className="mt-1 text-sm text-muted-foreground">
+                        {text.author}
+                      </p>
+                    </div>
+                    <div className="shrink-0 rounded-lg bg-primary/10 p-2 text-primary">
+                      <Icon name={text.icon} />
                     </div>
                   </div>
 
                   {/* Body */}
-                  <div className="flex flex-1 flex-col p-5">
+                  <div className="flex flex-1 flex-col px-5 pb-5">
                     {/* Type badge */}
                     <div className="mb-3">
                       <span
@@ -757,22 +677,6 @@ export default function RevisionNotesHub() {
                           className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground"
                         >
                           {theme}
-                        </span>
-                      ))}
-                    </div>
-
-                    {/* Boards */}
-                    <div className="mt-4 flex items-center gap-1.5">
-                      {text.boards.map((board) => (
-                        <span
-                          key={board}
-                          className={`rounded px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider ${
-                            activeBoard === board
-                              ? "bg-primary text-white"
-                              : "bg-primary/10 text-primary"
-                          }`}
-                        >
-                          {board}
                         </span>
                       ))}
                     </div>

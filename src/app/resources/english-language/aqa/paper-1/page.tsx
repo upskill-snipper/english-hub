@@ -71,8 +71,14 @@ export default function Paper1Page() {
           </li>
           <li>/</li>
           <li>
+            <Link href="/resources/english-language" className="hover:text-primary transition-colors">
+              English Language
+            </Link>
+          </li>
+          <li>/</li>
+          <li>
             <Link href="/resources/english-language/aqa" className="hover:text-primary transition-colors">
-              AQA English Language
+              AQA
             </Link>
           </li>
           <li>/</li>
@@ -393,6 +399,30 @@ export default function Paper1Page() {
             extract, the writer has moved to&hellip;&rdquo;
           </p>
 
+          <h3 className="mt-4 font-bold text-primary">Example response (Level 4)</h3>
+          <div className="rounded-lg bg-muted p-4 text-sm space-y-2">
+            <p className="italic text-muted-foreground">
+              Extract: A passage describing a character arriving at an abandoned fairground.
+            </p>
+            <p>
+              At the opening, the writer draws the reader&rsquo;s attention to
+              the setting through a wide-angle establishing shot: &ldquo;the rusted
+              gates stretched endlessly along the roadside.&rdquo; This panoramic
+              perspective creates a sense of desolation and scale, positioning the
+              character as small and insignificant against the vast, decaying
+              landscape. The writer then shifts focus inward as the character
+              passes through the gates, narrowing the lens to specific, unsettling
+              details &mdash; &ldquo;a single carousel horse, its painted eye
+              staring.&rdquo; This zoom from wide to close creates a claustrophobic
+              effect, trapping both character and reader inside the setting. By the
+              final paragraph, the writer reverses this structural movement: the
+              focus pulls back outward as the character retreats, but the &ldquo;painted
+              eye&rdquo; from the carousel is echoed in the closing line, creating
+              a circular structure that suggests the character cannot truly escape
+              what they have witnessed.
+            </p>
+          </div>
+
           <h3 className="mt-4 font-bold text-primary">Common mistakes</h3>
           <ul className="ml-5 list-disc space-y-2">
             <li>
@@ -405,6 +435,10 @@ export default function Paper1Page() {
             </li>
             <li>
               Retelling the story instead of analysing how it is organised.
+            </li>
+            <li>
+              Using vague terms like &ldquo;the writer builds tension&rdquo;
+              without explaining <em>how</em> the structure creates that tension.
             </li>
           </ul>
 
@@ -769,6 +803,46 @@ export default function Paper1Page() {
             </li>
           </ul>
         </Section>
+
+        {/* Continue studying */}
+        <div className="rounded-xl border border-primary/20 bg-primary/5 p-6 sm:p-8 mt-6">
+          <h2 className="text-xl font-bold text-foreground">Continue studying</h2>
+          <p className="mt-2 text-muted-foreground">
+            Build your reading analysis and writing skills with these related resources.
+          </p>
+          <div className="mt-4 flex flex-wrap gap-3">
+            <Link
+              href="/resources/english-language/aqa/paper-2"
+              className="rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary hover:shadow-md"
+            >
+              Paper 2: Viewpoints &amp; Perspectives
+            </Link>
+            <Link
+              href="/resources/english-language/aqa/techniques"
+              className="rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary hover:shadow-md"
+            >
+              Language Techniques Guide
+            </Link>
+            <Link
+              href="/resources/writing-skills"
+              className="rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary hover:shadow-md"
+            >
+              Writing Skills
+            </Link>
+            <Link
+              href="/practice"
+              className="rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary hover:shadow-md"
+            >
+              Practice Questions
+            </Link>
+            <Link
+              href="/revision"
+              className="rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary hover:shadow-md"
+            >
+              Revision Hub
+            </Link>
+          </div>
+        </div>
 
         {/* Back link */}
         <div className="pt-4">

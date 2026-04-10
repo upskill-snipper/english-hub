@@ -22,7 +22,7 @@ const TOOLS = [
       "Suggested study plan by phase",
       "Topic checklist by exam board",
     ],
-    colour: "from-primary to-primary/60",
+    colour: "from-primary/[0.08] to-primary/[0.02]",
     icon: (
       <svg className="h-10 w-10" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
@@ -33,14 +33,14 @@ const TOOLS = [
     title: "Quote Flashcards",
     href: "/resources/study-tools/flashcards",
     description:
-      "Pre-made flashcard sets for every key GCSE Literature text. Click to reveal analysis, shuffle for random testing, and track which quotes you have mastered.",
+      "500+ flashcards for quotes, techniques, vocabulary, and exam skills. Spaced repetition scheduling, GCSE grade tracking, and a dedicated difficult cards mode.",
     features: [
-      "Macbeth, ACC, AIC, J&H, R&J sets",
-      "Click-to-reveal analysis",
-      "Shuffle and test mode",
-      "Mastery tracking",
+      "SM-2 spaced repetition algorithm",
+      "GCSE grade equivalent per deck",
+      "Difficult cards mode",
+      "Daily streak and accuracy tracking",
     ],
-    colour: "from-accent to-accent/60",
+    colour: "from-primary/[0.08] to-primary/[0.02]",
     icon: (
       <svg className="h-10 w-10" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 9.776c.112-.017.227-.026.344-.026h15.812c.117 0 .232.009.344.026m-16.5 0a2.25 2.25 0 00-1.883 2.542l.857 6a2.25 2.25 0 002.227 1.932H19.05a2.25 2.25 0 002.227-1.932l.857-6a2.25 2.25 0 00-1.883-2.542m-16.5 0V6A2.25 2.25 0 016 3.75h3.879a1.5 1.5 0 011.06.44l2.122 2.12a1.5 1.5 0 001.06.44H18A2.25 2.25 0 0120.25 9v.776" />
@@ -58,7 +58,7 @@ const TOOLS = [
       "Spaced repetition system",
       "Score tracking",
     ],
-    colour: "from-amber-600 to-amber-400",
+    colour: "from-primary/[0.08] to-primary/[0.02]",
     icon: (
       <svg className="h-10 w-10" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />
@@ -76,7 +76,7 @@ const TOOLS = [
       "Cambridge IGCSE checklists",
       "Auto-saving progress tracker",
     ],
-    colour: "from-emerald-700 to-emerald-500",
+    colour: "from-primary/[0.08] to-primary/[0.02]",
     icon: (
       <svg className="h-10 w-10" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -109,11 +109,11 @@ export default function StudyToolsHub() {
             href={tool.href}
             className="group relative flex flex-col overflow-hidden rounded-xl border border-border bg-card shadow-md transition hover:shadow-lg hover:border-primary/30"
           >
-            {/* Gradient header */}
-            <div className={`bg-gradient-to-br ${tool.colour} px-6 py-6 text-white`}>
+            {/* Header */}
+            <div className={`bg-gradient-to-br ${tool.colour} px-6 py-6`}>
               <div className="flex items-start justify-between">
-                <h2 className="text-xl font-bold leading-tight">{tool.title}</h2>
-                <div className="opacity-80">{tool.icon}</div>
+                <h2 className="text-xl font-bold leading-tight text-foreground">{tool.title}</h2>
+                <div className="text-primary opacity-80">{tool.icon}</div>
               </div>
             </div>
 

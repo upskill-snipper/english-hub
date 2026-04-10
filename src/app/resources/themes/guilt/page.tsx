@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 
 /* ─── Metadata ───────────────────────────────────────────────── */
 
@@ -18,8 +17,8 @@ const TEXTS = [
     title: "Macbeth",
     subtitle: "Guilt and Consequences",
     author: "William Shakespeare",
-    colour: "border-[#C0392B]",
-    tagColour: "bg-[#C0392B]/10 text-[#C0392B]",
+    colour: "border-primary",
+    tagColour: "bg-primary/10 text-primary",
     analysis: [
       "Macbeth experiences guilt immediately after Duncan's murder -- the hallucinated dagger and the voice crying 'sleep no more' show guilt as a supernatural, inescapable force.",
       "Lady Macbeth's guilt is delayed but devastating. Her sleepwalking in Act 5 reveals that suppressed guilt eventually overwhelms even the most determined willpower.",
@@ -70,8 +69,8 @@ const TEXTS = [
     title: "Remains",
     subtitle: "PTSD and Guilt",
     author: "Simon Armitage",
-    colour: "border-[#D35400]",
-    tagColour: "bg-[#D35400]/10 text-[#D35400]",
+    colour: "border-primary",
+    tagColour: "bg-primary/10 text-primary",
     analysis: [
       "Armitage presents guilt as an inescapable psychological wound. The looter's death replays endlessly in the soldier's mind, blurring past and present.",
       "The colloquial, conversational tone makes the guilt feel raw and authentic -- this is not literary guilt but lived, traumatic experience.",
@@ -96,8 +95,8 @@ const TEXTS = [
     title: "A Christmas Carol",
     subtitle: "Scrooge's Guilt",
     author: "Charles Dickens",
-    colour: "border-[#27AE60]",
-    tagColour: "bg-[#27AE60]/10 text-[#27AE60]",
+    colour: "border-primary",
+    tagColour: "bg-primary/10 text-primary",
     analysis: [
       "Dickens uses the supernatural visits to force Scrooge to confront his guilt -- each ghost reveals a different dimension of his moral failure.",
       "The Ghost of Christmas Past triggers guilt about personal relationships Scrooge sacrificed for wealth, particularly his broken engagement to Belle.",
@@ -292,7 +291,6 @@ export default function GuiltThemePage() {
         </div>
       </section>
 
-      <ExamBoardDisclaimer />
     </>
   );
 }

@@ -1,251 +1,217 @@
-"use client";
-
-import { useState } from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 
+export const metadata: Metadata = {
+  title: "English Literature Revision — GCSE & IGCSE | The English Hub",
+  description:
+    "Complete GCSE and IGCSE English Literature revision hub. Study guides for Shakespeare, prose, drama, and poetry. Character analysis, themes, quotations, essay techniques, and exam preparation for all boards.",
+  alternates: {
+    canonical: "https://theenglishhub.app/resources/english-literature",
+  },
+  openGraph: {
+    title: "English Literature Revision — The English Hub",
+    description:
+      "Complete GCSE and IGCSE English Literature revision hub. Study guides, essay techniques, and exam preparation.",
+  },
+};
+
 /* ─── Data ───────────────────────────────────────────────────── */
 
-const BOARDS = [
-  {
-    slug: "aqa",
-    name: "AQA",
-    spec: "8702",
-    description:
-      "Shakespeare, the 19th-century novel, modern texts and drama, plus a poetry anthology and unseen poetry. Two exam papers with no coursework.",
-    papers: [
-      "Paper 1: Shakespeare & 19th-Century Novel",
-      "Paper 2: Modern Texts & Poetry",
-    ],
-    color: "border-primary",
-    bgColor: "bg-primary",
-    students: "~300,000",
-    highlight: "Most popular board in England",
-  },
-  {
-    slug: "edexcel",
-    name: "Edexcel (Pearson)",
-    spec: "1ET0",
-    description:
-      "Shakespeare and post-1914 literature (Paper 1), plus 19th-century novel, poetry anthology, and unseen poetry (Paper 2).",
-    papers: [
-      "Paper 1: Shakespeare & Post-1914 Literature",
-      "Paper 2: 19th-Century Novel & Poetry",
-    ],
-    color: "border-[#27AE60]",
-    bgColor: "bg-[#27AE60]",
-    students: "~180,000",
-    highlight: "Strong international presence",
-  },
-  {
-    slug: "caie",
-    name: "Cambridge IGCSE",
-    spec: "0475",
-    description:
-      "Literature in English covering prose, drama, and poetry from a wide range of international texts with both exam and coursework routes.",
-    papers: ["Paper 1: Poetry & Prose", "Paper 2: Drama"],
-    color: "border-[#E74C3C]",
-    bgColor: "bg-[#E74C3C]",
-    students: "~100,000+",
-    highlight: "Taken in 130+ countries worldwide",
-  },
-  {
-    slug: "ocr",
-    name: "OCR",
-    spec: "J352",
-    description:
-      "Exploring modern and literary heritage texts, plus poetry across time. Two exam components covering Shakespeare, prose, and poetry.",
-    papers: [
-      "Component 01: Exploring Modern & Literary Heritage Texts",
-      "Component 02: Poetry Across Time",
-    ],
-    color: "border-primary",
-    bgColor: "bg-primary",
-    students: "~50,000",
-    highlight: "Cambridge Assessment group",
-  },
-  {
-    slug: "wjec",
-    name: "WJEC Eduqas",
-    spec: "C720QS",
-    description:
-      "Two components covering Shakespeare, poetry anthology, post-1914 prose/drama, 19th-century prose, and unseen poetry. Popular in Wales and increasingly chosen in England.",
-    papers: [
-      "Component 1: Shakespeare & Poetry",
-      "Component 2: Post-1914, 19th-Century Prose & Unseen Poetry",
-    ],
-    color: "border-[#D4AC0D]",
-    bgColor: "bg-[#D4AC0D]",
-    students: "~60,000",
-    highlight: "Default board in Wales",
-  },
-];
-
 const HERO_STATS = [
-  { label: "Exam Boards Covered", value: "5" },
-  { label: "Set Texts Analysed", value: "30+" },
+  { label: "Set Texts Covered", value: "30+" },
+  { label: "Key Quotations", value: "500+" },
   { label: "Revision Notes", value: "200+" },
   { label: "Practice Questions", value: "500+" },
 ];
 
-const OVERVIEW_TOPICS = [
-  "Shakespeare plays in depth",
-  "19th-century novels and their contexts",
-  "Modern prose and drama",
-  "Poetry anthology analysis",
-  "Unseen poetry techniques",
-  "Comparing themes, characters, and writers' methods",
+const CORE_SKILLS = [
+  "Close reading and textual analysis",
+  "Character and theme exploration",
+  "Understanding writers' methods (language, form, structure)",
+  "Historical, social, and cultural context",
+  "Comparing texts and poems effectively",
+  "Essay planning and exam technique",
 ];
 
-const SET_TEXTS_COMPARISON = [
+const TEXT_GUIDES = [
   {
     title: "Macbeth",
-    type: "Shakespeare",
-    boards: { aqa: true, edexcel: true, caie: true, ocr: true, wjec: true },
-    link: "macbeth",
+    author: "William Shakespeare",
+    genre: "Shakespeare",
+    description:
+      "Ambition, guilt, and the supernatural. Explore the Macbeths' descent into tyranny with act-by-act summaries, character analysis, and 20+ key quotations.",
+    href: "/resources/english-literature/aqa/macbeth",
+    themes: ["Ambition", "Guilt", "The Supernatural", "Kingship"],
   },
   {
     title: "Romeo and Juliet",
-    type: "Shakespeare",
-    boards: { aqa: true, edexcel: true, caie: false, ocr: true, wjec: true },
-    link: "romeo-and-juliet",
-  },
-  {
-    title: "The Tempest",
-    type: "Shakespeare",
-    boards: { aqa: true, edexcel: true, caie: false, ocr: true, wjec: false },
-    link: "the-tempest",
+    author: "William Shakespeare",
+    genre: "Shakespeare",
+    description:
+      "Love, fate, and family conflict in Verona. Study the play's dramatic structure, character arcs, and Shakespeare's use of light and dark imagery.",
+    href: "/resources/english-literature/aqa/romeo-and-juliet",
+    themes: ["Love", "Fate", "Conflict", "Family"],
   },
   {
     title: "A Christmas Carol",
-    type: "19th-Century Novel",
-    boards: { aqa: true, edexcel: true, caie: false, ocr: true, wjec: false },
-    link: "christmas-carol",
+    author: "Charles Dickens",
+    genre: "19th-Century Prose",
+    description:
+      "Dickens' powerful critique of Victorian society through Scrooge's transformation. Stave-by-stave analysis, character studies, and contextual links to poverty and philanthropy.",
+    href: "/resources/english-literature/aqa/christmas-carol",
+    themes: ["Redemption", "Social Responsibility", "Poverty", "Christmas"],
   },
   {
     title: "An Inspector Calls",
-    type: "Modern Text",
-    boards: { aqa: true, edexcel: true, caie: false, ocr: true, wjec: true },
-    link: "inspector-calls",
+    author: "J.B. Priestley",
+    genre: "Modern Drama",
+    description:
+      "Priestley's socialist message delivered through a gripping mystery. Examine how each Birling is exposed and what the Inspector represents.",
+    href: "/resources/english-literature/aqa/inspector-calls",
+    themes: ["Social Responsibility", "Class", "Gender", "Generations"],
   },
   {
     title: "Jekyll and Hyde",
-    type: "19th-Century Novel",
-    boards: { aqa: true, edexcel: true, caie: false, ocr: false, wjec: false },
-    link: "jekyll-and-hyde",
-  },
-  {
-    title: "Great Expectations",
-    type: "19th-Century Novel",
-    boards: { aqa: true, edexcel: true, caie: true, ocr: false, wjec: true },
-    link: "great-expectations",
+    author: "Robert Louis Stevenson",
+    genre: "19th-Century Prose",
+    description:
+      "Duality, repression, and Victorian hypocrisy. Analyse how Stevenson uses the Gothic genre to explore the conflict between civilisation and primal instinct.",
+    href: "/resources/english-literature/aqa/jekyll-and-hyde",
+    themes: ["Duality", "Repression", "Science", "Victorian Society"],
   },
   {
     title: "Lord of the Flies",
-    type: "Modern Text",
-    boards: { aqa: true, edexcel: false, caie: true, ocr: false, wjec: false },
-    link: "lord-of-the-flies",
+    author: "William Golding",
+    genre: "Modern Prose",
+    description:
+      "Civilisation versus savagery on a deserted island. Explore Golding's allegorical novel through character symbolism, key episodes, and post-war context.",
+    href: "/resources/english-literature/edexcel/lord-of-the-flies",
+    themes: ["Civilisation vs Savagery", "Power", "Fear", "Innocence"],
+  },
+  {
+    title: "Animal Farm",
+    author: "George Orwell",
+    genre: "Modern Prose",
+    description:
+      "Orwell's biting political allegory of the Russian Revolution. Study how the pigs' rise to power mirrors totalitarian regimes and corrupts ideals of equality.",
+    href: "/resources/english-literature/edexcel/animal-farm",
+    themes: ["Power", "Corruption", "Propaganda", "Equality"],
+  },
+  {
+    title: "To Kill a Mockingbird",
+    author: "Harper Lee",
+    genre: "Modern Prose",
+    description:
+      "Racial injustice in 1930s Alabama seen through a child's eyes. Analyse Atticus Finch's moral courage, Scout's coming of age, and Lee's use of narrative perspective.",
+    href: "/resources/english-literature/caie/to-kill-a-mockingbird",
+    themes: ["Racial Injustice", "Moral Courage", "Innocence", "Empathy"],
   },
 ];
 
-const BOARD_FINDER_QUESTIONS = [
+const POETRY_SECTIONS = [
   {
-    question: "Are you studying in Wales?",
-    yes: "wjec",
-    yesLabel: "Most likely WJEC Eduqas",
+    title: "AQA Power and Conflict",
+    description: "All 15 poems with stanza-by-stanza analysis, techniques, themes, and comparison pairs.",
+    href: "/resources/english-literature/aqa/poetry",
   },
   {
-    question: "Are you taking an IGCSE (international) qualification?",
-    yes: "caie",
-    yesLabel: "Most likely Cambridge IGCSE",
+    title: "Edexcel Relationships and Conflict",
+    description: "Detailed notes on both Edexcel poetry clusters with comparison frameworks.",
+    href: "/resources/english-literature/edexcel/poetry",
   },
   {
-    question: 'Does your spec code start with "8702"?',
-    yes: "aqa",
-    yesLabel: "You are studying AQA",
+    title: "OCR Poetry Anthology",
+    description: "Love and Relationships plus Conflict poetry with analytical breakdowns.",
+    href: "/resources/english-literature/ocr/poetry",
   },
   {
-    question: 'Does your spec code start with "1ET0"?',
-    yes: "edexcel",
-    yesLabel: "You are studying Edexcel",
-  },
-  {
-    question: 'Does your spec code start with "J352"?',
-    yes: "ocr",
-    yesLabel: "You are studying OCR",
+    title: "CAIE Songs of Ourselves",
+    description: "Poems from Volume 1 and Volume 2, with line-by-line annotation and context.",
+    href: "/resources/english-literature/caie/songs-of-ourselves-v1",
   },
 ];
 
-const QUICK_LINKS_TEXTS = [
+const EXAM_INFO_LINKS = [
+  { name: "AQA (8702)", href: "/resources/english-literature/aqa" },
+  { name: "Edexcel (1ET0)", href: "/resources/english-literature/edexcel" },
+  { name: "OCR (J352)", href: "/resources/english-literature/ocr" },
+  { name: "WJEC Eduqas (C720QS)", href: "/resources/english-literature/wjec" },
+  { name: "Cambridge IGCSE (0475)", href: "/resources/english-literature/caie" },
+];
+
+const ESSAY_TIPS = [
   {
-    title: "Macbeth",
-    subtitle: "Shakespeare",
-    href: "/resources/english-literature/aqa/macbeth",
-    icon: "crown",
+    title: "Open with a clear thesis",
+    detail:
+      "Your opening sentence should directly answer the question with a debatable argument. Avoid restating the question. Instead, state your interpretation confidently: for example, 'Shakespeare presents Macbeth's ambition as both his defining strength and his fatal flaw.'",
   },
   {
-    title: "A Christmas Carol",
-    subtitle: "Charles Dickens",
-    href: "/resources/english-literature/aqa/christmas-carol",
-    icon: "book",
+    title: "Embed quotations fluently",
+    detail:
+      "Weave short, precise quotations into your sentences rather than block-quoting. A well-embedded quote looks like part of your own argument: 'Lady Macbeth's imperative to \"unsex me here\" reveals her desire to reject feminine weakness.'",
   },
   {
-    title: "An Inspector Calls",
-    subtitle: "J.B. Priestley",
-    href: "/resources/english-literature/aqa/inspector-calls",
-    icon: "magnifier",
+    title: "Analyse language, not just content",
+    detail:
+      "Move beyond what a quote means to how it creates meaning. Name the technique (metaphor, sibilance, dramatic irony), explain its effect on the reader, and connect it to the writer's purpose. This is where the highest marks live.",
   },
   {
-    title: "Poetry Anthology",
-    subtitle: "AQA Power & Conflict",
-    href: "/resources/english-literature/aqa/paper-2",
-    icon: "feather",
+    title: "Link every point to the writer's purpose",
+    detail:
+      "Examiners call this 'authorial intent.' After analysing a technique, explain why the writer made that choice. What message or effect were they trying to create? How does it connect to the wider themes of the text?",
+  },
+  {
+    title: "Use context purposefully, not as filler",
+    detail:
+      "Context should deepen your analysis, not sit as a separate bolt-on paragraph. Integrate it: 'Dickens presents Scrooge's miserliness to critique the Victorian laissez-faire attitude that allowed poverty to flourish unchecked.'",
+  },
+  {
+    title: "Structure comparison essays integratively",
+    detail:
+      "In comparison questions, alternate between both texts within each paragraph rather than writing about them separately. Use connective phrases like 'Similarly,' 'In contrast,' and 'While X presents... Y instead...'",
   },
 ];
 
-const EXPLORE_SECTIONS = [
+const EXAMPLE_PARAGRAPH = {
+  question: "How does Shakespeare present the theme of ambition in Macbeth?",
+  paragraph: `Shakespeare presents ambition as a destructive force that corrupts moral judgement. In Act 1, Macbeth's aside — "Stars, hide your fires; / Let not light see my black and deep desires" — reveals that murderous ambition already exists within him before Lady Macbeth's influence. The imperative "hide" suggests Macbeth recognises the immorality of his thoughts; he needs darkness to conceal them from both society and God. The modifier "black and deep" creates a semantic field of darkness and concealment, associating his ambition with something hidden, shameful, and bottomless. Shakespeare's use of celestial imagery ("Stars") implies Macbeth is attempting to subvert the natural order — the Great Chain of Being — which a Jacobean audience would have found deeply transgressive. This foreshadows the play's wider pattern: Macbeth's ambition does not simply lead to Duncan's murder, but unravels the entire fabric of nature, as evidenced by the "unnatural" events reported after the regicide.`,
+};
+
+const REVISION_RESOURCES = [
   {
-    title: "Poetry Analysis",
-    description:
-      "Line-by-line annotation, language techniques, and comparison practice for anthology and unseen poems.",
-    href: "/resources/english-literature/aqa/paper-2",
-    color: "from-primary to-primary",
+    title: "Themes",
+    description: "Cross-text theme guides for Power, Love, Guilt, Conflict, and Social Responsibility.",
+    href: "/resources/themes",
   },
   {
-    title: "Themes & Context",
-    description:
-      "Historical, social, and cultural context for every set text. Understand how context shapes meaning.",
-    href: "/resources/english-literature/aqa/paper-1",
-    color: "from-primary to-primary/80",
+    title: "Context",
+    description: "Period-specific context guides: Elizabethan/Jacobean, Victorian, Romantic, and 20th Century.",
+    href: "/resources/context",
   },
   {
-    title: "Comparison Skills",
-    description:
-      "Learn how to compare characters, themes, and writers' methods across texts and poems effectively.",
-    href: "/resources/english-literature/edexcel/paper-2",
-    color: "from-[#27AE60] to-[#52BE80]",
+    title: "Essay Structure",
+    description: "How to plan, structure, and write high-scoring literature essays under exam conditions.",
+    href: "/resources/exam-technique/essay-structure",
+  },
+  {
+    title: "Techniques Glossary",
+    description: "A-Z of literary and language techniques with definitions and examples from set texts.",
+    href: "/resources/glossary",
+  },
+  {
+    title: "Exam Day Tips",
+    description: "Practical advice for managing time, staying calm, and maximising marks on the day.",
+    href: "/resources/exam-technique/exam-day",
+  },
+  {
+    title: "Writing Skills",
+    description: "Improve your expression, vocabulary range, and accuracy for the SPaG marks.",
+    href: "/resources/writing-skills",
   },
 ];
 
 /* ─── Icons ──────────────────────────────────────────────────── */
-
-function ArrowRight({ className = "h-4 w-4" }: { className?: string }) {
-  return (
-    <svg
-      className={`transition-transform group-hover:translate-x-1 ${className}`}
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth={2}
-      stroke="currentColor"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
-      />
-    </svg>
-  );
-}
 
 function CheckIcon() {
   return (
@@ -265,42 +231,56 @@ function CheckIcon() {
   );
 }
 
-function TickCell() {
+function ArrowRight({ className = "h-4 w-4" }: { className?: string }) {
   return (
-    <td className="px-3 py-2.5 text-center">
-      <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-green-500/15 text-green-600">
-        <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-        </svg>
-      </span>
-    </td>
-  );
-}
-
-function CrossCell() {
-  return (
-    <td className="px-3 py-2.5 text-center">
-      <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-muted text-muted-foreground">
-        <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
-        </svg>
-      </span>
-    </td>
+    <svg
+      className={`transition-transform group-hover:translate-x-1 ${className}`}
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={2}
+      stroke="currentColor"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+      />
+    </svg>
   );
 }
 
 function BookIcon() {
   return (
-    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+    <svg
+      className="h-5 w-5"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
+      />
     </svg>
   );
 }
 
 function SparklesIcon() {
   return (
-    <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 0 0-2.455 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+    <svg
+      className="h-6 w-6"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 0 0-2.455 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z"
+      />
     </svg>
   );
 }
@@ -308,45 +288,21 @@ function SparklesIcon() {
 /* ─── Page ───────────────────────────────────────────────────── */
 
 export default function EnglishLiteraturePage() {
-  const [finderResult, setFinderResult] = useState<string | null>(null);
-  const [finderStep, setFinderStep] = useState(0);
-
-  const handleFinderAnswer = (answer: "yes" | "no") => {
-    if (answer === "yes") {
-      setFinderResult(BOARD_FINDER_QUESTIONS[finderStep].yes);
-    } else if (finderStep < BOARD_FINDER_QUESTIONS.length - 1) {
-      setFinderStep(finderStep + 1);
-    } else {
-      setFinderResult("unknown");
-    }
-  };
-
-  const resetFinder = () => {
-    setFinderResult(null);
-    setFinderStep(0);
-  };
-
   return (
     <>
-
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
-        <div className="absolute inset-0 opacity-10" aria-hidden="true">
-          <div className="absolute -right-24 -top-24 h-96 w-96 rounded-full bg-card/20 blur-3xl" />
-          <div className="absolute -bottom-32 -left-32 h-[30rem] w-[30rem] rounded-full bg-primary/30 blur-3xl" />
-        </div>
-
         <div className="relative mx-auto max-w-5xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">
-            GCSE &amp; IGCSE
+            GCSE &amp; IGCSE Revision
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
             English Literature
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-            Explore Shakespeare, poetry, prose, and drama with detailed study
-            guides, character analysis, theme breakdowns, and essay-writing
-            techniques tailored to your exam board.
+            In-depth study guides for Shakespeare, prose, drama, and poetry.
+            Character analysis, theme breakdowns, key quotations, essay
+            techniques, and exam preparation — everything you need in one place.
           </p>
 
           {/* Hero stat cards */}
@@ -372,81 +328,75 @@ export default function EnglishLiteraturePage() {
       <section className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="rounded-xl border border-primary/20 bg-primary/5 p-6 sm:p-8">
           <h2 className="text-xl font-bold text-foreground">
-            What does English Literature cover?
+            What does GCSE English Literature involve?
           </h2>
           <p className="mt-3 leading-relaxed text-muted-foreground">
-            GCSE English Literature requires you to read and respond to a range
-            of literary texts from different periods and genres. You will develop
-            skills in close reading, critical analysis, comparison, and essay
-            writing, demonstrating your understanding of how writers create
-            meaning through language, form, and structure.
+            GCSE English Literature requires you to read, analyse, and respond
+            to a range of literary texts from different periods and genres. You
+            will develop skills in close reading, critical analysis, comparison,
+            and essay writing — demonstrating how writers create meaning through
+            language, form, and structure. These skills are universal across all
+            exam boards; while the specific texts and paper structures vary, the
+            core analytical approach remains the same.
           </p>
           <ul className="mt-4 grid gap-2 sm:grid-cols-2">
-            {OVERVIEW_TOPICS.map((topic) => (
+            {CORE_SKILLS.map((skill) => (
               <li
-                key={topic}
+                key={skill}
                 className="flex items-start gap-2 text-sm text-muted-foreground"
               >
                 <CheckIcon />
-                {topic}
+                {skill}
               </li>
             ))}
           </ul>
         </div>
       </section>
 
-      {/* ── Board Selection Cards ────────────────────────────── */}
+      {/* ── Set Text Study Guides ────────────────────────────── */}
       <section className="mx-auto max-w-5xl px-4 pb-12 sm:px-6 lg:px-8">
         <h2 className="text-2xl font-bold text-foreground">
-          Select your exam board
+          Set text study guides
         </h2>
         <p className="mt-2 text-muted-foreground">
-          Choose your exam board below to access board-specific study guides,
-          text analysis, and exam preparation materials.
+          Detailed revision guides covering plot, characters, themes, key
+          quotations, context, and essay planning. Each guide works for any exam
+          board studying that text.
         </p>
 
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {BOARDS.map((board) => (
+          {TEXT_GUIDES.map((guide) => (
             <Link
-              key={board.slug}
-              href={`/resources/english-literature/${board.slug}`}
-              className={`group flex flex-col rounded-xl border-2 ${board.color} bg-card p-6 shadow-md transition hover:shadow-lg hover:-translate-y-0.5`}
+              key={guide.title}
+              href={guide.href}
+              className="group flex flex-col rounded-xl border border-border bg-card shadow-sm transition hover:shadow-md hover:border-primary/40"
             >
-              <div className="flex items-center justify-between">
-                <h3 className="text-lg font-bold text-foreground transition-colors group-hover:text-foreground">
-                  {board.name}
+              <div className="h-1.5 rounded-t-xl bg-primary" />
+              <div className="flex flex-1 flex-col p-6">
+                <span className="inline-block self-start rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+                  {guide.genre}
+                </span>
+                <h3 className="mt-3 text-lg font-bold text-foreground group-hover:text-primary transition-colors">
+                  {guide.title}
                 </h3>
-                <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-semibold text-muted-foreground">
-                  {board.spec}
-                </span>
-              </div>
-
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
-                {board.description}
-              </p>
-
-              <div className="mt-3">
-                <span
-                  className={`inline-block rounded-full ${board.bgColor}/10 px-2.5 py-0.5 text-xs font-medium text-muted-foreground`}
-                >
-                  {board.highlight}
-                </span>
-              </div>
-
-              <div className="mt-3 space-y-1">
-                {board.papers.map((paper) => (
-                  <p key={paper} className="text-xs text-muted-foreground">
-                    {paper}
-                  </p>
-                ))}
-              </div>
-
-              <div className="mt-3 flex items-center justify-between">
-                <span className="text-xs text-muted-foreground">
-                  ~{board.students} students/year
-                </span>
-                <span className="inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors group-hover:text-foreground">
-                  View resources <ArrowRight />
+                <p className="mt-0.5 text-xs text-muted-foreground">
+                  {guide.author}
+                </p>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
+                  {guide.description}
+                </p>
+                <div className="mt-3 flex flex-wrap gap-1.5">
+                  {guide.themes.map((theme) => (
+                    <span
+                      key={theme}
+                      className="rounded-md bg-muted px-2 py-0.5 text-[11px] font-medium text-muted-foreground"
+                    >
+                      {theme}
+                    </span>
+                  ))}
+                </div>
+                <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary group-hover:underline">
+                  View study guide <ArrowRight />
                 </span>
               </div>
             </Link>
@@ -454,183 +404,34 @@ export default function EnglishLiteraturePage() {
         </div>
       </section>
 
-      {/* ── Which Board Am I Studying? ───────────────────────── */}
-      <section className="bg-muted px-4 py-12 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-center text-2xl font-bold text-foreground">
-            Which board am I studying?
-          </h2>
-          <p className="mt-2 text-center text-muted-foreground">
-            Not sure which exam board your school uses? Answer a few quick
-            questions to find out.
-          </p>
-
-          <div className="mt-8 rounded-xl border border-border bg-card p-6 shadow-md sm:p-8">
-            {finderResult === null ? (
-              <>
-                <p className="text-sm font-medium uppercase tracking-wide text-primary">
-                  Question {finderStep + 1} of{" "}
-                  {BOARD_FINDER_QUESTIONS.length}
-                </p>
-                <p className="mt-3 text-lg font-semibold text-foreground">
-                  {BOARD_FINDER_QUESTIONS[finderStep].question}
-                </p>
-                <div className="mt-6 flex gap-4">
-                  <button
-                    onClick={() => handleFinderAnswer("yes")}
-                    className="rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-white shadow transition hover:bg-primary/90"
-                  >
-                    Yes
-                  </button>
-                  <button
-                    onClick={() => handleFinderAnswer("no")}
-                    className="rounded-lg border border-border bg-card px-6 py-2.5 text-sm font-semibold text-muted-foreground shadow-md transition hover:bg-muted"
-                  >
-                    No
-                  </button>
-                </div>
-              </>
-            ) : finderResult === "unknown" ? (
-              <div className="text-center">
-                <p className="text-lg font-semibold text-foreground">
-                  We could not determine your board automatically.
-                </p>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  Check the front of your textbook, ask your teacher, or look at
-                  your school&apos;s exam entry letter for the specification code.
-                </p>
-                <button
-                  onClick={resetFinder}
-                  className="mt-4 rounded-lg bg-primary px-5 py-2 text-sm font-semibold text-white transition hover:bg-primary/90"
-                >
-                  Try again
-                </button>
-              </div>
-            ) : (
-              <div className="text-center">
-                <p className="text-sm font-medium uppercase tracking-wide text-green-600">
-                  Result
-                </p>
-                <p className="mt-2 text-xl font-bold text-foreground">
-                  {
-                    BOARD_FINDER_QUESTIONS.find((q) => q.yes === finderResult)
-                      ?.yesLabel
-                  }
-                </p>
-                <div className="mt-6 flex items-center justify-center gap-4">
-                  <Link
-                    href={`/resources/english-literature/${finderResult}`}
-                    className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow transition hover:bg-primary/90"
-                  >
-                    Go to{" "}
-                    {BOARDS.find((b) => b.slug === finderResult)?.name}{" "}
-                    resources
-                  </Link>
-                  <button
-                    onClick={resetFinder}
-                    className="rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-muted-foreground shadow-md transition hover:bg-muted"
-                  >
-                    Start over
-                  </button>
-                </div>
-              </div>
-            )}
-          </div>
-
-          <p className="mt-4 text-center text-xs text-muted-foreground">
-            Tip: Your specification code is usually printed on your textbook
-            cover or exam entry paperwork.
-          </p>
-        </div>
-      </section>
-
-      {/* ── Set Texts Comparison Table ────────────────────────── */}
-      <section className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-foreground">
-          Set texts across exam boards
-        </h2>
-        <p className="mt-2 text-muted-foreground">
-          See at a glance which popular set texts appear on each board. Tap a
-          text name to jump to its revision notes.
-        </p>
-
-        <div className="mt-6 overflow-x-auto rounded-xl border border-border shadow-md">
-          <table className="w-full min-w-[600px] text-sm">
-            <thead>
-              <tr className="bg-primary text-white">
-                <th className="px-4 py-3 text-left font-semibold">Text</th>
-                <th className="px-3 py-3 text-left text-xs font-semibold">
-                  Type
-                </th>
-                <th className="px-3 py-3 text-center font-semibold">AQA</th>
-                <th className="px-3 py-3 text-center font-semibold">
-                  Edexcel
-                </th>
-                <th className="px-3 py-3 text-center font-semibold">CAIE</th>
-                <th className="px-3 py-3 text-center font-semibold">OCR</th>
-                <th className="px-3 py-3 text-center font-semibold">WJEC</th>
-              </tr>
-            </thead>
-            <tbody>
-              {SET_TEXTS_COMPARISON.map((text, i) => (
-                <tr
-                  key={text.title}
-                  className={`border-t border-border ${
-                    i % 2 === 0 ? "bg-card" : "bg-muted/50"
-                  }`}
-                >
-                  <td className="px-4 py-2.5 font-medium text-foreground">
-                    <Link
-                      href={`/resources/english-literature/aqa/${text.link}`}
-                      className="hover:underline"
-                    >
-                      {text.title}
-                    </Link>
-                  </td>
-                  <td className="px-3 py-2.5 text-xs text-muted-foreground">
-                    {text.type}
-                  </td>
-                  {text.boards.aqa ? <TickCell /> : <CrossCell />}
-                  {text.boards.edexcel ? <TickCell /> : <CrossCell />}
-                  {text.boards.caie ? <TickCell /> : <CrossCell />}
-                  {text.boards.ocr ? <TickCell /> : <CrossCell />}
-                  {text.boards.wjec ? <TickCell /> : <CrossCell />}
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <p className="mt-3 text-xs text-muted-foreground">
-          Table shows the most commonly studied texts. Each board offers
-          additional options &mdash; check your board page for the full list.
-        </p>
-      </section>
-
-      {/* ── Quick Links to Key Text Revision Notes ───────────── */}
+      {/* ── Poetry Anthologies ───────────────────────────────── */}
       <section className="bg-muted px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-2xl font-bold text-foreground">
-            Quick links: popular revision notes
+            Poetry anthology guides
           </h2>
           <p className="mt-2 text-muted-foreground">
-            Jump straight into revision for the most popular GCSE set texts.
+            Poem-by-poem analysis with stanza breakdowns, technique
+            identification, thematic links, and comparison pairs.
           </p>
 
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {QUICK_LINKS_TEXTS.map((text) => (
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
+            {POETRY_SECTIONS.map((section) => (
               <Link
-                key={text.title}
-                href={text.href}
-                className="group flex items-start gap-3 rounded-xl border border-border bg-card p-4 shadow-md transition hover:shadow-md hover:border-primary/40"
+                key={section.title}
+                href={section.href}
+                className="group flex items-start gap-3 rounded-xl border border-border bg-card p-5 shadow-sm transition hover:shadow-md hover:border-primary/40"
               >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-foreground">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
                   <BookIcon />
                 </div>
                 <div>
-                  <p className="font-semibold text-foreground group-hover:text-foreground transition-colors">
-                    {text.title}
+                  <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">
+                    {section.title}
+                  </h3>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    {section.description}
                   </p>
-                  <p className="text-xs text-muted-foreground">{text.subtitle}</p>
                 </div>
               </Link>
             ))}
@@ -638,14 +439,92 @@ export default function EnglishLiteraturePage() {
         </div>
       </section>
 
+      {/* ── Essay Writing Tips ───────────────────────────────── */}
+      <section className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
+        <h2 className="text-2xl font-bold text-foreground">
+          How to write a top-mark literature essay
+        </h2>
+        <p className="mt-2 text-muted-foreground">
+          These techniques apply across all exam boards and question types.
+          Master them and you will consistently reach the higher mark bands.
+        </p>
+
+        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {ESSAY_TIPS.map((tip, i) => (
+            <div
+              key={tip.title}
+              className="rounded-xl border border-border bg-card p-5"
+            >
+              <div className="flex items-center gap-3">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">
+                  {i + 1}
+                </span>
+                <h3 className="font-semibold text-foreground">{tip.title}</h3>
+              </div>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                {tip.detail}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Example Paragraph ───────────────────────────────── */}
+      <section className="bg-muted px-4 py-12 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="text-2xl font-bold text-foreground">
+            Example analytical paragraph
+          </h2>
+          <p className="mt-2 text-muted-foreground">
+            See how all six essay tips come together in a single paragraph that
+            would score in the top mark band.
+          </p>
+
+          <div className="mt-6 rounded-xl border border-primary/20 bg-card p-6 sm:p-8">
+            <p className="text-sm font-semibold text-primary">
+              Question: {EXAMPLE_PARAGRAPH.question}
+            </p>
+            <blockquote className="mt-4 border-l-4 border-primary/30 pl-4 text-sm leading-relaxed text-muted-foreground italic">
+              {EXAMPLE_PARAGRAPH.paragraph}
+            </blockquote>
+            <div className="mt-4 rounded-lg bg-primary/5 p-4">
+              <p className="text-xs font-semibold text-foreground">
+                What makes this effective:
+              </p>
+              <ul className="mt-2 space-y-1 text-xs text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <CheckIcon /> Opens with a clear thesis answering the question
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckIcon /> Embeds short quotations within the sentence flow
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckIcon /> Names techniques (imperative, semantic field,
+                  celestial imagery) and explains their effects
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckIcon /> Links analysis to authorial intent (Shakespeare
+                  suggests...)
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckIcon /> Integrates context (Jacobean beliefs, Great Chain
+                  of Being) purposefully
+                </li>
+                <li className="flex items-start gap-2">
+                  <CheckIcon /> Extends the point to the wider text
+                  (foreshadowing pattern)
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── AI Feedback Callout ──────────────────────────────── */}
       <section className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="rounded-2xl border bg-gradient-to-b from-primary/[0.06] to-transparent p-8 sm:p-10">
-          <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-card/10 blur-2xl" />
-          <div className="absolute -bottom-16 -left-16 h-56 w-56 rounded-full bg-card/5 blur-3xl" />
-
+        <div className="relative overflow-hidden rounded-2xl border bg-gradient-to-b from-primary/[0.06] to-transparent p-8 sm:p-10">
           <div className="relative flex flex-col items-start gap-6 sm:flex-row sm:items-center">
-            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-card/20 backdrop-blur-sm">
+            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-primary/10">
               <SparklesIcon />
             </div>
             <div className="flex-1">
@@ -656,12 +535,12 @@ export default function EnglishLiteraturePage() {
                 Paste your literature essay and receive instant, detailed
                 feedback on your argument, use of evidence, analysis of
                 language, and exam technique. Our AI marker is calibrated to
-                GCSE mark schemes across all five boards.
+                GCSE mark schemes.
               </p>
             </div>
             <Link
               href="/contact"
-              className="shrink-0 rounded-lg bg-card px-6 py-3 text-sm font-bold text-foreground shadow transition hover:bg-card/90"
+              className="shrink-0 rounded-lg bg-primary px-6 py-3 text-sm font-bold text-primary-foreground shadow transition hover:bg-primary/90"
             >
               Try it free
             </Link>
@@ -669,69 +548,101 @@ export default function EnglishLiteraturePage() {
         </div>
       </section>
 
-      {/* ── Poetry, Themes & Comparison Sections ─────────────── */}
+      {/* ── Revision Resources Grid ─────────────────────────── */}
       <section className="bg-muted px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-2xl font-bold text-foreground">
-            Explore by skill area
+            More revision resources
           </h2>
           <p className="mt-2 text-muted-foreground">
             Strengthen specific skills that examiners reward most highly.
           </p>
 
-          <div className="mt-8 grid gap-6 sm:grid-cols-3">
-            {EXPLORE_SECTIONS.map((section) => (
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {REVISION_RESOURCES.map((resource) => (
               <Link
-                key={section.title}
-                href={section.href}
-                className="group relative overflow-hidden rounded-xl shadow-md transition hover:shadow-lg hover:-translate-y-0.5"
+                key={resource.title}
+                href={resource.href}
+                className="group rounded-xl border border-border bg-card p-5 shadow-sm transition hover:shadow-md hover:border-primary/40"
               >
-                <div
-                  className={`bg-gradient-to-br ${section.color} px-5 py-8 text-white`}
-                >
-                  <h3 className="text-lg font-bold">{section.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    {section.description}
-                  </p>
-                  <span className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-muted-foreground transition-colors group-hover:text-foreground">
-                    Explore <ArrowRight />
-                  </span>
-                </div>
+                <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">
+                  {resource.title}
+                </h3>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  {resource.description}
+                </p>
               </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── Exam Tips Banner ─────────────────────────────────── */}
+      {/* ── Exam Board Information ───────────────────────────── */}
       <section className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="rounded-xl border border-primary/20 bg-primary/5 p-6 sm:p-8">
-          <h2 className="text-xl font-bold text-foreground">
-            Top 5 literature exam tips
-          </h2>
-          <ol className="mt-4 space-y-3">
-            {[
-              "Always embed short, precise quotations within your sentences rather than block-quoting.",
-              "Link every point back to the writer's purpose or message \u2014 examiners call this 'authorial intent'.",
-              "Use subject-specific terminology (metre, sibilance, dramatic irony) naturally and accurately.",
-              "In comparison questions, integrate both texts throughout rather than writing about them separately.",
-              "Leave 5 minutes at the end of each answer to proofread for spelling and expression.",
-            ].map((tip, i) => (
-              <li
-                key={i}
-                className="flex items-start gap-3 text-sm text-muted-foreground"
-              >
-                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
-                  {i + 1}
-                </span>
-                {tip}
-              </li>
-            ))}
-          </ol>
+        <h2 className="text-2xl font-bold text-foreground">
+          Board-specific exam information
+        </h2>
+        <p className="mt-2 text-muted-foreground">
+          While the study guides above work for any board, each exam board has
+          its own paper structure, mark allocation, and assessment weighting.
+          Visit your board&apos;s page for paper breakdowns, grade boundaries,
+          and timing advice.
+        </p>
+
+        <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {EXAM_INFO_LINKS.map((board) => (
+            <Link
+              key={board.name}
+              href={board.href}
+              className="group flex items-center justify-between rounded-lg border border-border bg-card px-5 py-4 transition hover:border-primary/40 hover:shadow-sm"
+            >
+              <span className="font-semibold text-foreground group-hover:text-primary transition-colors">
+                {board.name}
+              </span>
+              <ArrowRight />
+            </Link>
+          ))}
+        </div>
+
+        <p className="mt-4 text-xs text-muted-foreground">
+          Not sure which board you are studying? Check the front cover of your
+          textbook or your exam entry paperwork for the specification code.
+        </p>
+      </section>
+
+      {/* ── Top 5 Literature Exam Tips ───────────────────────── */}
+      <section className="bg-muted px-4 py-12 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-5xl">
+          <div className="rounded-xl border border-primary/20 bg-card p-6 sm:p-8">
+            <h2 className="text-xl font-bold text-foreground">
+              5 quick exam-day reminders
+            </h2>
+            <ol className="mt-4 space-y-3">
+              {[
+                "Read the question twice. Underline the key words (theme, character, how, why) before you start planning.",
+                "Spend 5 minutes planning each essay. Jot down 3-4 points with supporting quotations before writing.",
+                "Always embed short, precise quotations within your sentences rather than block-quoting long passages.",
+                "In comparison questions, integrate both texts throughout each paragraph rather than writing about them separately.",
+                "Leave 5 minutes at the end to proofread for expression, spelling, and punctuation — SPaG marks add up.",
+              ].map((tip, i) => (
+                <li
+                  key={i}
+                  className="flex items-start gap-3 text-sm text-muted-foreground"
+                >
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">
+                    {i + 1}
+                  </span>
+                  {tip}
+                </li>
+              ))}
+            </ol>
+          </div>
         </div>
       </section>
 
-      <ExamBoardDisclaimer />
+      <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
+        <ExamBoardDisclaimer variant="content" />
+      </div>
     </>
   );
 }

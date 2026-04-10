@@ -11,12 +11,14 @@ function Section({
   id,
   title,
   poet,
+  studyHref,
   children,
   defaultOpen = false,
 }: {
   id: string;
   title: string;
   poet: string;
+  studyHref?: string;
   children: React.ReactNode;
   defaultOpen?: boolean;
 }) {
@@ -49,6 +51,19 @@ function Section({
       {open && (
         <div id={`section-${id}`} className="border-t border-border px-5 py-5 space-y-6">
           {children}
+          {studyHref && (
+            <div className="pt-2">
+              <Link
+                href={studyHref}
+                className="inline-flex items-center gap-2 rounded-lg bg-primary/10 px-4 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-primary/20"
+              >
+                Study this poem in depth
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                </svg>
+              </Link>
+            </div>
+          )}
         </div>
       )}
     </div>
@@ -187,18 +202,17 @@ export default function LoveAndRelationshipsPage() {
       <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-            AQA GCSE English Literature &middot; Poetry Anthology
+            GCSE English Literature &middot; Poetry Anthology
           </p>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Love and Relationships
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Complete analysis of all 15 poems in the AQA Love and Relationships cluster. Key quotations, techniques, themes, context, and comparison guidance for every poem.
+            Complete analysis of all 15 poems in the Love and Relationships cluster. Key quotations, techniques, themes, context, and comparison guidance for every poem.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <span className="rounded-full bg-card/15 px-3 py-1 text-sm font-medium">15 Poems</span>
-            <span className="rounded-full bg-card/15 px-3 py-1 text-sm font-medium">75+ Key Quotes</span>
-            <span className="rounded-full bg-card/15 px-3 py-1 text-sm font-medium">AQA Paper 2</span>
+            <span className="rounded-full bg-muted px-3 py-1 text-sm font-medium text-muted-foreground">15 Poems</span>
+            <span className="rounded-full bg-muted px-3 py-1 text-sm font-medium text-muted-foreground">75+ Key Quotes</span>
           </div>
         </div>
       </section>
@@ -331,7 +345,7 @@ export default function LoveAndRelationshipsPage() {
 
           {/* ───────────────────── 1. When We Two Parted ───────────────────── */}
           <div id="when-we-two-parted" style={{ display: visiblePoemIds.has("when-we-two-parted") ? undefined : "none" }}>
-            <Section id="when-we-two-parted" title="When We Two Parted" poet="Lord Byron (1816)" defaultOpen>
+            <Section id="when-we-two-parted" title="When We Two Parted" poet="Lord Byron (1816)" studyHref="/revision/poetry/love-and-relationships/when-we-two-parted" defaultOpen>
 
               <SubSection title="Context">
                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -403,7 +417,7 @@ export default function LoveAndRelationshipsPage() {
 
           {/* ───────────────────── 2. Love's Philosophy ───────────────────── */}
           <div id="love-s-philosophy" style={{ display: visiblePoemIds.has("love-s-philosophy") ? undefined : "none" }}>
-            <Section id="loves-philosophy" title="Love's Philosophy" poet="Percy Bysshe Shelley (1820)">
+            <Section id="loves-philosophy" title="Love's Philosophy" poet="Percy Bysshe Shelley (1820)" studyHref="/revision/poetry/love-and-relationships/loves-philosophy">
 
               <SubSection title="Context">
                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -480,7 +494,7 @@ export default function LoveAndRelationshipsPage() {
 
           {/* ───────────────────── 3. Porphyria's Lover ───────────────────── */}
           <div id="porphyria-s-lover" style={{ display: visiblePoemIds.has("porphyria-s-lover") ? undefined : "none" }}>
-            <Section id="porphyrias-lover" title="Porphyria's Lover" poet="Robert Browning (1836)">
+            <Section id="porphyrias-lover" title="Porphyria's Lover" poet="Robert Browning (1836)" studyHref="/revision/poetry/love-and-relationships/porphyrias-lover">
 
               <SubSection title="Context">
                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -552,7 +566,7 @@ export default function LoveAndRelationshipsPage() {
 
           {/* ───────────────────── 4. Sonnet 29 ───────────────────── */}
           <div id="sonnet-29" style={{ display: visiblePoemIds.has("sonnet-29") ? undefined : "none" }}>
-            <Section id="sonnet-29" title="Sonnet 29 — 'I think of thee!'" poet="Elizabeth Barrett Browning (1850)">
+            <Section id="sonnet-29" title="Sonnet 29 — 'I think of thee!'" poet="Elizabeth Barrett Browning (1850)" studyHref="/revision/poetry/love-and-relationships/sonnet-29">
 
               <SubSection title="Context">
                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -624,7 +638,7 @@ export default function LoveAndRelationshipsPage() {
 
           {/* ───────────────────── 5. Neutral Tones ───────────────────── */}
           <div id="neutral-tones" style={{ display: visiblePoemIds.has("neutral-tones") ? undefined : "none" }}>
-            <Section id="neutral-tones" title="Neutral Tones" poet="Thomas Hardy (1867)">
+            <Section id="neutral-tones" title="Neutral Tones" poet="Thomas Hardy (1867)" studyHref="/revision/poetry/love-and-relationships/neutral-tones">
 
               <SubSection title="Context">
                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -696,7 +710,7 @@ export default function LoveAndRelationshipsPage() {
 
           {/* ───────────────────── 6. Letters from Yorkshire ───────────────────── */}
           <div id="letters-from-yorkshire" style={{ display: visiblePoemIds.has("letters-from-yorkshire") ? undefined : "none" }}>
-            <Section id="letters-yorkshire" title="Letters from Yorkshire" poet="Maura Dooley (2002)">
+            <Section id="letters-yorkshire" title="Letters from Yorkshire" poet="Maura Dooley (2002)" studyHref="/revision/poetry/love-and-relationships/letters-from-yorkshire">
 
               <SubSection title="Context">
                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -768,7 +782,7 @@ export default function LoveAndRelationshipsPage() {
 
           {/* ───────────────────── 7. The Farmer's Bride ───────────────────── */}
           <div id="the-farmer-s-bride" style={{ display: visiblePoemIds.has("the-farmer-s-bride") ? undefined : "none" }}>
-            <Section id="farmers-bride" title="The Farmer's Bride" poet="Charlotte Mew (1916)">
+            <Section id="farmers-bride" title="The Farmer's Bride" poet="Charlotte Mew (1916)" studyHref="/revision/poetry/love-and-relationships/the-farmers-bride">
 
               <SubSection title="Context">
                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -840,7 +854,7 @@ export default function LoveAndRelationshipsPage() {
 
           {/* ───────────────────── 8. Walking Away ───────────────────── */}
           <div id="walking-away" style={{ display: visiblePoemIds.has("walking-away") ? undefined : "none" }}>
-            <Section id="walking-away" title="Walking Away" poet="Cecil Day Lewis (1962)">
+            <Section id="walking-away" title="Walking Away" poet="Cecil Day Lewis (1962)" studyHref="/revision/poetry/love-and-relationships/walking-away">
 
               <SubSection title="Context">
                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -912,7 +926,7 @@ export default function LoveAndRelationshipsPage() {
 
           {/* ───────────────────── 9. Eden Rock ───────────────────── */}
           <div id="eden-rock" style={{ display: visiblePoemIds.has("eden-rock") ? undefined : "none" }}>
-            <Section id="eden-rock" title="Eden Rock" poet="Charles Causley (1988)">
+            <Section id="eden-rock" title="Eden Rock" poet="Charles Causley (1988)" studyHref="/revision/poetry/love-and-relationships/eden-rock">
 
               <SubSection title="Context">
                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -984,7 +998,7 @@ export default function LoveAndRelationshipsPage() {
 
           {/* ───────────────────── 10. Follower ───────────────────── */}
           <div id="follower" style={{ display: visiblePoemIds.has("follower") ? undefined : "none" }}>
-            <Section id="follower" title="Follower" poet="Seamus Heaney (1966)">
+            <Section id="follower" title="Follower" poet="Seamus Heaney (1966)" studyHref="/revision/poetry/love-and-relationships/follower">
 
               <SubSection title="Context">
                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -1056,7 +1070,7 @@ export default function LoveAndRelationshipsPage() {
 
           {/* ───────────────────── 11. Mother, Any Distance ───────────────────── */}
           <div id="mother--any-distance" style={{ display: visiblePoemIds.has("mother--any-distance") ? undefined : "none" }}>
-            <Section id="mother-any-distance" title="Mother, Any Distance" poet="Simon Armitage (1993)">
+            <Section id="mother-any-distance" title="Mother, Any Distance" poet="Simon Armitage (1993)" studyHref="/revision/poetry/love-and-relationships/mother-any-distance">
 
               <SubSection title="Context">
                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -1128,7 +1142,7 @@ export default function LoveAndRelationshipsPage() {
 
           {/* ───────────────────── 12. Before You Were Mine ───────────────────── */}
           <div id="before-you-were-mine" style={{ display: visiblePoemIds.has("before-you-were-mine") ? undefined : "none" }}>
-            <Section id="before-you-were-mine" title="Before You Were Mine" poet="Carol Ann Duffy (1993)">
+            <Section id="before-you-were-mine" title="Before You Were Mine" poet="Carol Ann Duffy (1993)" studyHref="/revision/poetry/love-and-relationships/before-you-were-mine">
 
               <SubSection title="Context">
                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -1200,7 +1214,7 @@ export default function LoveAndRelationshipsPage() {
 
           {/* ───────────────────── 13. Winter Swans ───────────────────── */}
           <div id="winter-swans" style={{ display: visiblePoemIds.has("winter-swans") ? undefined : "none" }}>
-            <Section id="winter-swans" title="Winter Swans" poet="Owen Sheers (2005)">
+            <Section id="winter-swans" title="Winter Swans" poet="Owen Sheers (2005)" studyHref="/revision/poetry/love-and-relationships/winter-swans">
 
               <SubSection title="Context">
                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -1272,7 +1286,7 @@ export default function LoveAndRelationshipsPage() {
 
           {/* ───────────────────── 14. Singh Song! ───────────────────── */}
           <div id="singh-song-" style={{ display: visiblePoemIds.has("singh-song-") ? undefined : "none" }}>
-            <Section id="singh-song" title="Singh Song!" poet="Daljit Nagra (2007)">
+            <Section id="singh-song" title="Singh Song!" poet="Daljit Nagra (2007)" studyHref="/revision/poetry/love-and-relationships/singh-song">
 
               <SubSection title="Context">
                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -1344,7 +1358,7 @@ export default function LoveAndRelationshipsPage() {
 
           {/* ───────────────────── 15. Climbing My Grandfather ───────────────────── */}
           <div id="climbing-my-grandfather" style={{ display: visiblePoemIds.has("climbing-my-grandfather") ? undefined : "none" }}>
-            <Section id="climbing-grandfather" title="Climbing My Grandfather" poet="Andrew Waterhouse (2000)">
+            <Section id="climbing-grandfather" title="Climbing My Grandfather" poet="Andrew Waterhouse (2000)" studyHref="/revision/poetry/love-and-relationships/climbing-my-grandfather">
 
               <SubSection title="Context">
                 <p className="text-sm text-muted-foreground leading-relaxed">

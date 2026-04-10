@@ -151,6 +151,8 @@ export default function MacbethRevisionPage() {
             { label: "Key Quotations", href: "key-quotations" },
             { label: "Context", href: "context" },
             { label: "Essay Planning", href: "essay-planning" },
+            { label: "Writer's Methods", href: "writers-methods" },
+            { label: "Grade 9 Points", href: "grade-9" },
             { label: "Exam Board Tips", href: "exam-board-tips" },
           ].map((s) => (
             <a
@@ -1263,6 +1265,123 @@ export default function MacbethRevisionPage() {
                     <p>The sleepwalking scene (5.1) shows complete reversal: the woman who commanded spirits now cannot command her own mind. Prose replaces verse. &ldquo;Out, damned spot!&rdquo; &mdash; she cannot wash away what she once dismissed with &ldquo;a little water.&rdquo; She probably dies by suicide &mdash; the ultimate loss of control. Context: a Jacobean audience might see her destruction as divine punishment for transgressing her natural role; modern readers might see it as the inevitable cost of suppressing her humanity.</p>
                   </div>
                 </div>
+              </SubSection>
+            </div>
+          </Section>
+        </div>
+
+        {/* ────────────────────────────────────────── WRITER'S METHODS */}
+        <div id="writers-methods">
+          <Section id="methods" title="Writer's Methods and Techniques" badge="10 Techniques" colour="bg-teal-600">
+            <div className="space-y-6">
+              <SubSection id="method-soliloquy" title="Soliloquy and Aside">
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  Shakespeare uses soliloquies to reveal the characters&apos; inner turmoil. Macbeth&apos;s &ldquo;Is this a dagger which I see before me?&rdquo; soliloquy (2.1) and &ldquo;Tomorrow, and tomorrow, and tomorrow&rdquo; (5.5) chart his psychological journey from anxious hesitation to nihilistic despair. Lady Macbeth&apos;s sleepwalking scene (5.1) functions as an involuntary soliloquy &mdash; her unconscious mind reveals what her conscious will suppressed. Soliloquies create dramatic irony: the audience knows the characters&apos; true feelings while other characters do not.
+                </p>
+              </SubSection>
+              <SubSection id="method-imagery" title="Blood Imagery">
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  Blood runs through the play as its dominant image. After Duncan&apos;s murder, Macbeth stares at his hands: &ldquo;Will all great Neptune&apos;s ocean wash this blood / Clean from my hand?&rdquo; Lady Macbeth dismisses this: &ldquo;A little water clears us of this deed.&rdquo; By Act 5, it is she who cannot remove the blood: &ldquo;Out, damned spot!&rdquo; The reversal is structurally deliberate &mdash; blood becomes a symbol of inescapable guilt that transfers from one character to the other. Blood also symbolises the natural order: Duncan&apos;s blood, shed unnaturally, stains everything it touches.
+                </p>
+              </SubSection>
+              <SubSection id="method-dramatic-irony" title="Dramatic Irony">
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  Duncan calls Macbeth&apos;s castle a place where &ldquo;the air nimbly and sweetly recommends itself&rdquo; (1.6) moments before being murdered there. He calls Macbeth &ldquo;a gentleman on whom I built an absolute trust&rdquo; (1.4) just as Macbeth is plotting his death. These ironies heighten the horror and create complicity between audience and murderer: we know what Duncan does not, placing us in the uncomfortable position of silent witnesses.
+                </p>
+              </SubSection>
+              <SubSection id="method-pathetic-fallacy" title="Pathetic Fallacy and the Natural Order">
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  Nature mirrors the moral disorder caused by regicide. On the night of Duncan&apos;s murder, there are &ldquo;lamentings heard i&apos; the air, strange screams of death&rdquo; (2.3). An owl kills a falcon (a lesser bird killing a greater one, mirroring Macbeth killing Duncan). Duncan&apos;s horses &ldquo;eat each other&rdquo; (2.4). Shakespeare uses the Jacobean Great Chain of Being: when the rightful king is murdered, the entire natural order is disrupted. Order is only restored when Malcolm, the legitimate heir, takes the throne.
+                </p>
+              </SubSection>
+              <SubSection id="method-equivocation" title="Equivocation and Paradox">
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  The witches speak in paradoxes: &ldquo;Fair is foul, and foul is fair&rdquo; (1.1). The prophecies are equivocal &mdash; they mean something different from what Macbeth assumes. &ldquo;None of woman born shall harm Macbeth&rdquo; proves true only because Macduff was delivered by Caesarean section. This language of deception connects to the historical context: the Gunpowder Plot (1605) involved equivocation by Catholic conspirators. Shakespeare&apos;s audience would have been deeply suspicious of language that appears truthful but conceals its true meaning.
+                </p>
+              </SubSection>
+              <SubSection id="method-five-act" title="Five-Act Tragic Structure">
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  <em>Macbeth</em> follows the classical five-act tragic structure. Act 1 is exposition (setting, prophecy, temptation). Act 2 is rising action (the murder). Act 3 is the climax/turning point (Banquo&apos;s murder and ghost). Act 4 is falling action (Macbeth&apos;s tyranny deepens). Act 5 is catastrophe (Macbeth&apos;s defeat and death). The play compresses time dramatically &mdash; Macbeth&apos;s rise and fall feels breathlessly fast, reinforcing the sense that ambition consumes its possessor.
+                </p>
+              </SubSection>
+              <SubSection id="method-antithesis" title="Antithesis and Binary Opposites">
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  The play is structured around binary opposites: light/dark, good/evil, order/chaos, loyalty/treachery, appearance/reality. Lady Macbeth instructs Macbeth to &ldquo;look like the innocent flower, / But be the serpent under&apos;t&rdquo; (1.5). The witches invert natural categories: &ldquo;Fair is foul, and foul is fair.&rdquo; These antitheses create a world where nothing is what it seems, and moral certainty is constantly undermined.
+                </p>
+              </SubSection>
+              <SubSection id="method-supernatural" title="The Supernatural as Dramatic Device">
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  The witches, Banquo&apos;s ghost, the floating dagger, and the apparitions serve multiple dramatic functions. They create spectacle and entertainment for the audience. They externalise Macbeth&apos;s inner desires (the dagger leads him to Duncan). They raise the question of agency: do the witches cause Macbeth&apos;s actions, or do they merely reveal what he already wants? For James I&apos;s court, the supernatural had real political significance &mdash; James himself had written <em>Daemonologie</em> (1597) and believed in witchcraft.
+                </p>
+              </SubSection>
+              <SubSection id="method-iambic" title="Iambic Pentameter and Prose">
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  Noble characters speak in iambic pentameter (the rhythm of natural English speech elevated to verse). The witches speak in trochaic tetrameter (&ldquo;Double, double, toil and trouble&rdquo;) &mdash; a shorter, chanting rhythm that sounds unnatural and spelllike. When Lady Macbeth sleepwalks (5.1), she speaks in <em>prose</em>, not verse &mdash; signalling her mental disintegration. The shift from verse to prose marks the collapse of order, reason, and nobility. Shakespeare uses metre as a character tool.
+                </p>
+              </SubSection>
+              <SubSection id="method-stagecraft" title="Stagecraft and Stage Directions">
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  Shakespeare uses visual theatre powerfully. The dagger scene requires the actor to reach for something invisible &mdash; the audience sees Macbeth&apos;s madness but not its cause. Banquo&apos;s ghost appears at the banquet, visible to Macbeth but not to the guests &mdash; creating a split between what different characters perceive. The &ldquo;show of eight kings&rdquo; in Act 4 was designed to flatter James I (who traced his lineage from Banquo). The final scene, where Macduff enters with Macbeth&apos;s head, provides a visual symbol of tyranny defeated.
+                </p>
+              </SubSection>
+            </div>
+          </Section>
+        </div>
+
+        {/* ────────────────────────────────────────── GRADE 9 POINTS */}
+        <div id="grade-9">
+          <Section id="grade-9" title="Grade 9 Exemplar Points and Interpretations" badge="8 Points" colour="bg-amber-600">
+            <p className="text-sm text-muted-foreground mb-4">
+              These higher-level interpretations demonstrate the sophisticated analysis needed for top grades. Each goes beyond surface reading to consider authorial intent, alternative readings, and structural significance.
+            </p>
+            <div className="space-y-6">
+
+              <SubSection id="g9-witches-agency" title="1. The Witches Do Not Cause Anything" defaultOpen>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  Lower-grade answers say the witches &ldquo;make&rdquo; Macbeth kill Duncan. A Grade 9 response recognises that the witches only predict &mdash; they never command. They say Macbeth &ldquo;shalt be king hereafter,&rdquo; not &ldquo;you must kill Duncan.&rdquo; Macbeth makes the interpretive leap from prophecy to murder himself. Banquo hears the same prophecies but does not act on them. This distinction is crucial: Shakespeare presents the witches as a catalyst, not a cause. The real source of evil is Macbeth&apos;s pre-existing ambition, which the witches merely surface. The play explores how external temptation activates internal desire &mdash; but the choice always remains human.
+                </p>
+              </SubSection>
+
+              <SubSection id="g9-lady-macbeth-feminism" title="2. Lady Macbeth and the Performance of Masculinity">
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  Lady Macbeth does not simply reject femininity &mdash; she performs masculinity, exposing it as a social construct rather than a natural state. When she says &ldquo;unsex me here,&rdquo; she is not asking to become a man but to remove the <em>social constraints</em> that prevent women from acting decisively. Her later collapse in Act 5 has been read as the psychological cost of this performance: maintaining a masculine facade while being denied the emotional outlet that her society allows only to women. Shakespeare thus uses Lady Macbeth to question whether gendered behaviour is natural or performed &mdash; a remarkably modern interrogation.
+                </p>
+              </SubSection>
+
+              <SubSection id="g9-macbeth-tragic-hero" title="3. Macbeth as Anti-Tragic Hero">
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  Aristotle&apos;s tragic hero should be fundamentally noble, brought low by a single flaw (hamartia). A sophisticated reading might argue that Macbeth does not fit this model. His ambition is not a flaw in an otherwise noble character &mdash; it is his defining quality. He is described as &ldquo;brave Macbeth&rdquo; in battle, but his bravery is violence, not virtue. His soliloquies show self-awareness (he knows the murder is wrong) but not moral growth &mdash; he acts despite knowing better. Shakespeare may be subverting the tragic hero model: Macbeth is not a good man corrupted but a man whose violence finds a new outlet. This reading makes the play more disturbing: it suggests that the capacity for evil is not an aberration but an integral part of human nature.
+                </p>
+              </SubSection>
+
+              <SubSection id="g9-duncan-ideal" title="4. Duncan as Idealised King &mdash; or Weak One?">
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  Duncan is presented as a gracious, trusting king &mdash; but a top-level response might question whether his naivety is a flaw. He has already been betrayed by one Thane of Cawdor and admits he cannot &ldquo;find the mind&apos;s construction in the face&rdquo; &mdash; he immediately trusts Macbeth with the same title. In the harsh political world of medieval Scotland, Duncan&apos;s trusting nature could be read as political incompetence. Shakespeare may be suggesting that being a good man and being a good king are not the same thing &mdash; a politically astute observation for a playwright writing under James I.
+                </p>
+              </SubSection>
+
+              <SubSection id="g9-tomorrow" title="5. 'Tomorrow and Tomorrow' as Nihilism or Self-Knowledge">
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  Macbeth&apos;s final great soliloquy (&ldquo;Tomorrow, and tomorrow, and tomorrow...&rdquo;) is usually read as nihilistic despair. But a Grade 9 response might argue it represents Macbeth&apos;s most honest moment of self-knowledge. For the first time, he sees life clearly, without the distorting lens of ambition. &ldquo;Life&apos;s but a walking shadow, a poor player / That struts and frets his hour upon the stage&rdquo; &mdash; the theatrical metaphor is self-referential: Macbeth recognises that he has been playing a role (king, tyrant) and that the role has consumed the man. This is not just despair but a form of tragic insight that brings him closer to the audience&apos;s understanding than at any other point in the play.
+                </p>
+              </SubSection>
+
+              <SubSection id="g9-regicide" title="6. Regicide as Cosmic Crime">
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  For a Jacobean audience, killing a king was not merely murder but an assault on the divine order. The Great Chain of Being placed the king directly below God; regicide was therefore a crime against God. This is why nature itself responds to Duncan&apos;s murder with storms, unnatural darkness, and animals behaving abnormally. Shakespeare is not being superstitious &mdash; he is using the belief system of his audience to magnify the horror. A Grade 9 response should connect the pathetic fallacy to the specific Jacobean belief in the Divine Right of Kings, showing how Shakespeare uses contemporary theology to intensify his drama.
+                </p>
+              </SubSection>
+
+              <SubSection id="g9-macduff-counterpart" title="7. Macduff as Macbeth's True Counterpart">
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  Macduff and Macbeth are structurally parallel: both are Scottish nobles, both are warriors, both lose their families (Macbeth loses his relationship with Lady Macbeth; Macduff loses his wife and children literally). But their responses to grief diverge utterly. Macbeth spirals into violence; Macduff channels grief into just action. When Malcolm tells Macduff to &ldquo;dispute it like a man,&rdquo; Macduff replies: &ldquo;I shall do so; / But I must also feel it as a man.&rdquo; This is the play&apos;s alternative model of masculinity: strength that includes emotional vulnerability rather than suppressing it. Macduff represents what Macbeth could have been.
+                </p>
+              </SubSection>
+
+              <SubSection id="g9-play-james" title="8. The Play as Political Propaganda">
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  <em>Macbeth</em> was almost certainly written for James I, who became king of England in 1603. James traced his ancestry from Banquo (the &ldquo;show of eight kings&rdquo; in Act 4 flatters James&apos;s lineage). The play validates James&apos;s rule by showing the chaos that results from illegitimate succession. The witches reflect James&apos;s personal interest in demonology. A Grade 9 response might argue that <em>Macbeth</em> functions partly as political propaganda: it tells the story James wanted told &mdash; that legitimate succession brings order, usurpation brings chaos, and the Stuart line is blessed. Understanding this political context enriches every reading of the play.
+                </p>
               </SubSection>
             </div>
           </Section>

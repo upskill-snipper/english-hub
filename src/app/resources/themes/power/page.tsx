@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 
 /* ─── Metadata ───────────────────────────────────────────────── */
 
@@ -18,8 +17,8 @@ const TEXTS = [
     title: "Macbeth",
     subtitle: "Power and Ambition",
     author: "William Shakespeare",
-    colour: "border-[#C0392B]",
-    tagColour: "bg-[#C0392B]/10 text-[#C0392B]",
+    colour: "border-primary",
+    tagColour: "bg-primary/10 text-primary",
     analysis: [
       "Macbeth's unchecked ambition transforms him from a loyal thane into a tyrannical king, illustrating how the pursuit of power corrupts moral judgment.",
       "Lady Macbeth's initial dominance over her husband subverts Jacobean gender roles, but her eventual madness shows that illegitimate power is unsustainable.",
@@ -70,8 +69,8 @@ const TEXTS = [
     title: "Animal Farm",
     subtitle: "Power and Corruption",
     author: "George Orwell",
-    colour: "border-[#27AE60]",
-    tagColour: "bg-[#27AE60]/10 text-[#27AE60]",
+    colour: "border-primary",
+    tagColour: "bg-primary/10 text-primary",
     analysis: [
       "Orwell uses the allegorical farm to show how revolutionary ideals are corrupted when power is concentrated in the hands of the few.",
       "Napoleon's gradual accumulation of power mirrors Stalin's rise -- from collective leadership to totalitarian control through propaganda, fear, and rewritten history.",
@@ -96,8 +95,8 @@ const TEXTS = [
     title: "Ozymandias",
     subtitle: "Power and Time",
     author: "Percy Bysshe Shelley",
-    colour: "border-[#D35400]",
-    tagColour: "bg-[#D35400]/10 text-[#D35400]",
+    colour: "border-primary",
+    tagColour: "bg-primary/10 text-primary",
     analysis: [
       "Shelley presents human power as ultimately futile in the face of time -- Ozymandias' empire has been reduced to rubble in an empty desert.",
       "The irony of the inscription juxtaposed with the ruined statue is the poem's central device, mocking the arrogance of absolute rulers.",
@@ -327,7 +326,6 @@ export default function PowerThemePage() {
         </div>
       </section>
 
-      <ExamBoardDisclaimer />
     </>
   );
 }

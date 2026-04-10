@@ -794,15 +794,12 @@ export default function LessonPlanDetailPage() {
               Lesson Plans
             </Link>
             <span className="mx-2">/</span>
-            <span className="text-white">{plan.title}</span>
+            <span className="text-foreground">{plan.title}</span>
           </nav>
 
           <div className="flex flex-wrap items-center gap-2">
             <span className="rounded-full bg-card/20 px-3 py-1 text-xs font-semibold backdrop-blur-sm">
               {plan.subject}
-            </span>
-            <span className="rounded-full bg-card/20 px-3 py-1 text-xs font-semibold backdrop-blur-sm">
-              {plan.examBoard}
             </span>
             <span className="rounded-full bg-card/20 px-3 py-1 text-xs font-semibold backdrop-blur-sm">
               {plan.yearGroup}
@@ -882,10 +879,10 @@ export default function LessonPlanDetailPage() {
           </h2>
 
           {/* Starter */}
-          <div className="mt-4 rounded-xl border-l-4 border-[#27AE60] bg-[#27AE60]/5 p-5">
+          <div className="mt-4 rounded-xl border-l-4 border-primary bg-primary/5 p-5">
             <div className="flex items-center justify-between">
-              <h3 className="font-bold text-[#27AE60]">Starter: {plan.starterActivity.title}</h3>
-              <span className="rounded-full bg-[#27AE60]/10 px-2.5 py-0.5 text-xs font-semibold text-[#27AE60]">
+              <h3 className="font-bold text-primary">Starter: {plan.starterActivity.title}</h3>
+              <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary">
                 {plan.starterActivity.duration}
               </span>
             </div>
@@ -905,16 +902,16 @@ export default function LessonPlanDetailPage() {
             {/* Differentiation */}
             <div className="mt-4 space-y-3">
               <h4 className="text-sm font-bold text-foreground">Differentiation</h4>
-              <div className="rounded-lg bg-amber-500/10 border border-amber-500/30 p-4">
-                <p className="text-xs font-bold uppercase tracking-wider text-amber-700 dark:text-amber-300">Support</p>
+              <div className="rounded-lg bg-muted border border-border p-4">
+                <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Support</p>
                 <p className="mt-1 text-sm text-muted-foreground">{plan.mainActivity.differentiation.support}</p>
               </div>
-              <div className="rounded-lg bg-blue-500/10 border border-blue-500/30 p-4">
-                <p className="text-xs font-bold uppercase tracking-wider text-blue-700 dark:text-blue-300">Core</p>
+              <div className="rounded-lg bg-primary/5 border border-primary/20 p-4">
+                <p className="text-xs font-bold uppercase tracking-wider text-primary">Core</p>
                 <p className="mt-1 text-sm text-muted-foreground">{plan.mainActivity.differentiation.core}</p>
               </div>
-              <div className="rounded-lg bg-purple-500/10 border border-purple-500/30 p-4">
-                <p className="text-xs font-bold uppercase tracking-wider text-purple-700 dark:text-purple-300">Extension</p>
+              <div className="rounded-lg bg-primary/10 border border-primary/30 p-4">
+                <p className="text-xs font-bold uppercase tracking-wider text-primary">Extension</p>
                 <p className="mt-1 text-sm text-muted-foreground">{plan.mainActivity.differentiation.extension}</p>
               </div>
             </div>

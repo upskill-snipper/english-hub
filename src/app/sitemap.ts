@@ -11,6 +11,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/courses`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/practice`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${base}/revision`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${base}/revision/poetry`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${base}/revision/texts`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${base}/revision/language`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${base}/revision/flashcards`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${base}/revision/exam-technique`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${base}/revision/grade-targets`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${base}/revision/quiz`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${base}/mock-exams`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${base}/games`, lastModified: now, changeFrequency: 'weekly', priority: 0.6 },
 
@@ -131,15 +138,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/resources/exam-technique`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     ...['essay-structure', 'question-types', 'time-management', 'exam-day'].map((sub) => ({
       url: `${base}/resources/exam-technique/${sub}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
-    })),
-
-    // Comparison skills
-    { url: `${base}/resources/comparison`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    ...['poetry-comparison', 'text-comparison', 'language-comparison'].map((sub) => ({
-      url: `${base}/resources/comparison/${sub}`,
       lastModified: now,
       changeFrequency: 'monthly' as const,
       priority: 0.6,

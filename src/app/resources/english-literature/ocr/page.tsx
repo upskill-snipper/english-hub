@@ -118,14 +118,9 @@ export default function OCREnglishLiteraturePage() {
     <>
 
       {/* ── Hero banner ─────────────────────────────────────────── */}
-      <section
-        className="px-4 py-16 text-white sm:py-20"
-        style={{
-          background: "linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary)) 100%)",
-        }}
-      >
+      <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+          <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
             OCR GCSE (J352)
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
@@ -159,12 +154,10 @@ export default function OCREnglishLiteraturePage() {
           <div className="mt-6 grid gap-5 sm:grid-cols-2">
             {/* Component 01 */}
             <div
-              className="rounded-xl border-l-4 bg-card p-6 shadow-md"
-              style={{ borderColor: "hsl(var(--primary))" }}
+              className="rounded-xl border-l-4 border-primary bg-card p-6 shadow-md"
             >
               <p
-                className="text-xs font-bold uppercase tracking-wider"
-                style={{ color: "hsl(var(--primary))" }}
+                className="text-xs font-bold uppercase tracking-wider text-primary"
               >
                 Component 01
               </p>
@@ -193,12 +186,10 @@ export default function OCREnglishLiteraturePage() {
 
             {/* Component 02 */}
             <div
-              className="rounded-xl border-l-4 bg-card p-6 shadow-md"
-              style={{ borderColor: "hsl(var(--primary))" }}
+              className="rounded-xl border-l-4 border-primary bg-card p-6 shadow-md"
             >
               <p
-                className="text-xs font-bold uppercase tracking-wider"
-                style={{ color: "hsl(var(--primary))" }}
+                className="text-xs font-bold uppercase tracking-wider text-primary"
               >
                 Component 02
               </p>
@@ -253,12 +244,11 @@ export default function OCREnglishLiteraturePage() {
                 className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-md transition hover:shadow-md"
                 style={{
                   borderTopWidth: "3px",
-                  borderTopColor: "hsl(var(--primary))",
+                  borderTopColor: "var(--color-primary)",
                 }}
               >
                 <div
-                  className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg text-white transition"
-                  style={{ backgroundColor: "hsl(var(--primary))" }}
+                  className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-primary-foreground transition"
                 >
                   {s.icon}
                 </div>
@@ -298,19 +288,17 @@ export default function OCREnglishLiteraturePage() {
                 className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-md transition hover:shadow-md"
                 style={{
                   borderTopWidth: "3px",
-                  borderTopColor: "hsl(var(--primary))",
+                  borderTopColor: "var(--color-primary)",
                 }}
               >
                 <div
-                  className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg text-white transition"
-                  style={{ backgroundColor: "hsl(var(--primary))" }}
+                  className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-primary-foreground transition"
                 >
                   {g.icon}
                 </div>
                 <div className="mb-2 flex flex-wrap gap-2">
                   <span
-                    className="rounded-full px-2.5 py-0.5 text-xs font-medium text-white"
-                    style={{ backgroundColor: "hsl(var(--primary))" }}
+                    className="rounded-full bg-primary px-2.5 py-0.5 text-xs font-medium text-primary-foreground"
                   >
                     {g.paper}
                   </span>
@@ -345,8 +333,7 @@ export default function OCREnglishLiteraturePage() {
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             <div
-              className="rounded-xl border-l-4 bg-card p-5 shadow-md"
-              style={{ borderColor: "hsl(var(--primary))" }}
+              className="rounded-xl border-l-4 border-primary bg-card p-5 shadow-md"
             >
               <p className="font-bold text-primary">AO1</p>
               <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">
@@ -357,8 +344,7 @@ export default function OCREnglishLiteraturePage() {
               </p>
             </div>
             <div
-              className="rounded-xl border-l-4 bg-card p-5 shadow-md"
-              style={{ borderColor: "hsl(var(--primary))" }}
+              className="rounded-xl border-l-4 border-primary bg-card p-5 shadow-md"
             >
               <p className="font-bold text-accent">AO2</p>
               <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">
@@ -368,8 +354,7 @@ export default function OCREnglishLiteraturePage() {
               </p>
             </div>
             <div
-              className="rounded-xl border-l-4 bg-card p-5 shadow-md"
-              style={{ borderColor: "hsl(var(--primary))" }}
+              className="rounded-xl border-l-4 border-primary bg-card p-5 shadow-md"
             >
               <p className="font-bold text-primary">AO3</p>
               <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">
@@ -378,8 +363,7 @@ export default function OCREnglishLiteraturePage() {
               </p>
             </div>
             <div
-              className="rounded-xl border-l-4 bg-card p-5 shadow-md"
-              style={{ borderColor: "hsl(var(--primary))" }}
+              className="rounded-xl border-l-4 border-primary bg-card p-5 shadow-md"
             >
               <p className="font-bold text-accent">AO4</p>
               <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">
@@ -462,8 +446,7 @@ export default function OCREnglishLiteraturePage() {
           <div className="mt-4">
             <Link
               href="/resources/english-literature/ocr/grade-boundaries"
-              className="inline-flex items-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold text-white transition hover:opacity-90"
-              style={{ backgroundColor: "hsl(var(--primary))" }}
+              className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90"
             >
               View Grade Boundaries
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">

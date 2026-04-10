@@ -46,6 +46,7 @@ const TYPE_STYLES: Record<ResourceTypeBadge, { bg: string; text: string; ring: s
   },
 };
 
+/** @deprecated Board colours removed — kept for type compat */
 const BOARD_COLORS: Record<ExamBoardLabel, string> = {
   AQA: 'bg-primary/10 text-primary',
   Edexcel: 'bg-success-50 text-success-700',
@@ -104,7 +105,6 @@ function DifficultyIndicator({ level }: { level: DifficultyLevel }) {
 
 function ResourceCard({ resource, className = '' }: ResourceCardProps) {
   const typeStyle = TYPE_STYLES[resource.type];
-  const boardColor = BOARD_COLORS[resource.examBoard];
 
   return (
     <Link
@@ -119,17 +119,12 @@ function ResourceCard({ resource, className = '' }: ResourceCardProps) {
         .filter(Boolean)
         .join(' ')}
     >
-      {/* Top row: type badge + exam board */}
+      {/* Top row: type badge */}
       <div className="flex items-start justify-between gap-2">
         <span
           className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold ring-1 ring-inset ${typeStyle.bg} ${typeStyle.text} ${typeStyle.ring}`}
         >
           {resource.type}
-        </span>
-        <span
-          className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ${boardColor}`}
-        >
-          {resource.examBoard}
         </span>
       </div>
 

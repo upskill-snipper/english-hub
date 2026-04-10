@@ -697,6 +697,82 @@ export default function FrankensteinPage() {
         </div>
       </Section>
 
+      {/* Writer's Methods */}
+      <Section title="Writer&rsquo;s Methods &amp; Techniques" icon="&#9997;">
+        <div className="space-y-4">
+          {[
+            {
+              method: "Frame Narrative (Chinese Box Structure)",
+              detail:
+                "Shelley uses three nested narratives: Walton's letters contain Victor's story, which contains the Creature's story. This structure forces the reader to evaluate multiple perspectives and biases. The Creature's voice, buried at the novel's centre, is paradoxically the most eloquent and sympathetic. The layering also mirrors the theme of responsibility: each narrator passes judgement on the others while avoiding self-examination.",
+            },
+            {
+              method: "Unreliable Narrators",
+              detail:
+                "All three narrators are unreliable. Victor self-pities and self-justifies, presenting himself as a victim rather than acknowledging his culpability. The Creature may exaggerate his early innocence to gain sympathy. Walton is dazzled by Victor and may idealise him. Shelley forces the reader to actively evaluate competing accounts, complicating moral judgements and reflecting the novel's ambiguity about who is the real 'monster'.",
+            },
+            {
+              method: "Gothic Conventions",
+              detail:
+                "Shelley deploys and subverts Gothic conventions: sublime landscapes, transgressive science, the doppelganger, death and decay, and the atmosphere of dread. The creation scene on a 'dreary night of November' is quintessentially Gothic. However, Shelley subverts the genre by making the 'monster' the most sympathetic character, challenging the reader's assumptions about what is truly monstrous.",
+            },
+            {
+              method: "Allusion to Paradise Lost",
+              detail:
+                "Milton's Paradise Lost is directly referenced throughout. The Creature reads it and identifies with both Adam (the first created being, abandoned by his creator) and Satan (the fallen angel who rebels). Victor parallels God as a negligent creator. The novel's epigraph is from Paradise Lost: 'Did I request thee, Maker, from my clay / To mould me Man?' These allusions elevate the Creature's personal tragedy into a universal meditation on creation, abandonment, and rebellion.",
+            },
+            {
+              method: "Doubling and Parallelism",
+              detail:
+                "Victor and the Creature are structured as doubles: both are isolated, both lose everyone they love, both end up in the Arctic, both are consumed by obsession. Walton mirrors Victor, pursuing dangerous ambition in frozen wastes. The doubling reinforces the theme that creator and creation are inextricably bound, and that the monster is not 'other' but a reflection of humanity's own capacity for destruction.",
+            },
+            {
+              method: "Pathetic Fallacy and Sublime Landscapes",
+              detail:
+                "Shelley aligns landscape with emotional and moral states. The Alps represent the sublime --- both beautiful and terrifying. The Arctic represents isolation, obsession, and death. Victor finds temporary peace in mountain scenery but is dwarfed by nature's scale. The Creature inhabits wild, inhospitable spaces, existing outside civilisation. Shelley draws on Romantic ideas of the sublime to create settings that overwhelm human characters.",
+            },
+            {
+              method: "Epistolary Elements",
+              detail:
+                "Walton's letters to Margaret Saville ground the fantastic events in seemingly authentic correspondence. Letters within the narrative (from Elizabeth, Alphonse, and others) create a web of communication and miscommunication. The epistolary form was popular in 18th-century fiction and gives the novel documentary authenticity while reinforcing the theme that truth is always mediated through individual perspective.",
+            },
+            {
+              method: "Ambiguity and Moral Complexity",
+              detail:
+                "Shelley refuses to provide simple moral answers. Victor is both victim and villain; the Creature is both sympathetic and monstrous; creation is both magnificent and horrifying. The novel's multiple narrators prevent any single perspective from dominating. This moral ambiguity is the novel's greatest strength: it forces the reader to make their own judgements about responsibility, justice, and what it means to be human.",
+            },
+          ].map((m) => (
+            <div key={m.method} className="rounded-lg border border-border bg-muted p-4">
+              <h4 className="font-semibold text-foreground">{m.method}</h4>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{m.detail}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Grade 9 Exemplar Points */}
+      <Section title="Grade 9 Exemplar Points" icon="&#11088;">
+        <p className="mb-4 text-sm text-muted-foreground">
+          These sophisticated, conceptualised arguments distinguish Grade 9 responses.
+        </p>
+        <div className="space-y-3">
+          {[
+            "Shelley's frame narrative structure is itself an argument about the nature of truth: by filtering the Creature's story through Victor, and Victor's story through Walton, she demonstrates that all knowledge is mediated and that the most marginalised voices are the hardest to hear. The reader must work through layers of privilege to reach the most important perspective --- a structural enactment of how society silences those it has created and abandoned.",
+            "The Creature's self-education through Paradise Lost, Plutarch's Lives, and The Sorrows of Young Werther is not merely a plot device but a philosophical argument. Shelley suggests that literature can create empathy and moral understanding, but it can also heighten suffering by making the educated outcast aware of exactly what he has been denied. Knowledge without belonging is a form of torture.",
+            "Victor's failure is not that he created life but that he refused to take responsibility for it. Shelley makes a proto-feminist argument about parental duty: Victor plays God (the 'masculine' act of creation) but refuses to mother his creation (the 'feminine' act of nurture). Shelley, whose own mother died giving her life, understood that creation without care is the ultimate act of cruelty.",
+            "The Arctic setting at the novel's beginning and end functions as a moral landscape. The ice represents the endpoint of both Victor's and the Creature's obsessions: a place where nothing can live, where pursuit has consumed everything. Shelley argues that unchecked ambition leads not to discovery but to desolation. The Arctic is what remains when obsession has destroyed every human connection.",
+            "The Creature's demand for a female companion raises questions Shelley deliberately leaves unresolved. Victor destroys the female creature because he fears reproduction --- that the Creature might found a race. His fear is both rational (the consequences are unknowable) and deeply prejudiced (he assumes the offspring would be monstrous). Shelley forces the reader to consider whether Victor's decision is responsible caution or selfish cruelty --- and the novel supports both readings.",
+            "The novel can be read as Shelley's critique of Romanticism from within. Victor embodies the Romantic ideal --- passionate, brilliant, driven by a desire to transcend human limitations --- yet these very qualities destroy him. Shelley, surrounded by Romantic poets who celebrated individual genius (Percy Shelley, Byron), understood the movement's appeal but saw its dangers. The novel argues that genius without empathy is monstrous.",
+            "The blind De Lacey is the only character who shows the Creature kindness, precisely because he cannot see him. Shelley uses this to argue that human prejudice is primarily visual: we judge by appearance and reject what we cannot assimilate aesthetically. The Creature's physical appearance is the sole barrier to his acceptance. Shelley's argument anticipates modern debates about prejudice and challenges the reader to examine their own responses to difference.",
+            "The Creature's final words --- 'I shall ascend my funeral pile triumphantly and exult in the agony of the torturing flames' --- fuse suffering with triumph in a way that undermines any simple reading of his character. He is simultaneously victim and villain, destroyed by others and by himself, seeking peace through self-destruction. Shelley refuses to grant him either redemption or damnation, leaving the reader with the uncomfortable recognition that the most human response to an inhuman world may be self-annihilation.",
+          ].map((point, i) => (
+            <div key={i} className="rounded-lg border-l-4 border-accent bg-muted p-4">
+              <p className="text-sm leading-relaxed text-muted-foreground">{point}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
       {/* Exam Tips */}
       <div className="mt-6 rounded-xl border border-primary/20 bg-primary/10 p-6">
         <h3 className="text-lg font-bold text-foreground">Exam Tips for Frankenstein</h3>

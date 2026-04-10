@@ -15,13 +15,25 @@ const FOOTER_SECTIONS = [
     ],
   },
   {
+    title: 'Revision',
+    links: [
+      { href: '/revision', label: 'Revision Hub' },
+      { href: '/revision/poetry', label: 'Poetry' },
+      { href: '/revision/texts', label: 'Texts' },
+      { href: '/revision/flashcards', label: 'Flashcards' },
+      { href: '/revision/exam-technique', label: 'Exam Technique' },
+      { href: '/revision/language', label: 'Language' },
+      { href: '/revision/grade-targets', label: 'Grade Targets' },
+      { href: '/revision/quiz', label: 'Quiz' },
+    ],
+  },
+  {
     title: 'Resources',
     links: [
-      { href: '/revision', label: 'Revision' },
+      { href: '/resources', label: 'Resources Hub' },
       { href: '/resources/revision-notes', label: 'Study Guides' },
       { href: '/resources/writing-skills', label: 'Writing Skills' },
       { href: '/resources/techniques', label: 'Techniques' },
-      { href: '/resources/poetry', label: 'Poetry' },
       { href: '/resources/model-answers', label: 'Model Answers' },
       { href: '/resources/vocabulary', label: 'Vocabulary' },
       { href: '/resources/study-tools', label: 'Study Tools' },
@@ -61,7 +73,7 @@ export function Footer() {
   return (
     <footer className="border-t border-border/60 bg-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-8 py-10 sm:grid-cols-3 lg:grid-cols-5">
+        <div className="grid grid-cols-2 gap-8 py-10 sm:grid-cols-3 lg:grid-cols-6">
           {FOOTER_SECTIONS.map((section) => (
             <div key={section.title}>
               <h3 className="text-sm font-semibold text-foreground">

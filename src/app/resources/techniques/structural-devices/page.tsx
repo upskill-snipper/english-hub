@@ -2,7 +2,6 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
-import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 
 /* ─── Types ──────────────────────────────────────────────────── */
 
@@ -1722,7 +1721,7 @@ export default function StructuralDevicesPage() {
               Techniques
             </Link>
             <span className="mx-2">/</span>
-            <span className="text-white">Structural Devices</span>
+            <span className="text-foreground">Structural Devices</span>
           </nav>
           <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Structural &amp; Form Devices
@@ -1870,7 +1869,6 @@ export default function StructuralDevicesPage() {
         </div>
       </div>
 
-      <ExamBoardDisclaimer />
     </>
   );
 }

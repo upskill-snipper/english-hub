@@ -367,14 +367,14 @@ export default function TechniquesPage() {
       <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-            AQA GCSE English Language
+            GCSE English Language
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Language Techniques Guide
+            Language &amp; Structural Techniques Guide
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             {techniques.length} techniques with definitions, examples, effects,
-            and model exam responses. Click any technique to expand.
+            and model exam responses. Applicable across all exam boards. Click any technique to expand.
           </p>
         </div>
       </section>
@@ -387,8 +387,8 @@ export default function TechniquesPage() {
           </li>
           <li>/</li>
           <li>
-            <Link href="/resources/english-language/aqa" className="hover:text-primary transition-colors">
-              AQA English Language
+            <Link href="/resources/english-language" className="hover:text-primary transition-colors">
+              English Language
             </Link>
           </li>
           <li>/</li>
@@ -421,6 +421,115 @@ export default function TechniquesPage() {
           </p>
         </div>
 
+        {/* Analysis methodology - NEW depth section */}
+        <div className="rounded-xl border border-border bg-card p-6 sm:p-8 mb-8">
+          <h2 className="text-xl font-bold text-foreground">
+            The difference between feature-spotting and analysis
+          </h2>
+          <p className="mt-3 text-muted-foreground">
+            One of the most common reasons students fail to reach the top mark bands is
+            <strong> feature-spotting</strong> without analysis. Identifying that a writer uses
+            a metaphor is only the starting point. To reach Level 3 and Level 4, you need
+            to explore <em>why</em> that particular metaphor was chosen and <em>what effect</em> it
+            creates.
+          </p>
+          <div className="mt-4 grid gap-4 sm:grid-cols-2">
+            <div className="rounded-lg border border-destructive/20 bg-destructive/5 p-4">
+              <h3 className="text-sm font-bold text-destructive">Weak: feature-spotting</h3>
+              <p className="mt-2 text-sm text-muted-foreground italic">
+                &ldquo;The writer uses a metaphor when they say the classroom was a prison.
+                This is effective because it creates an image in the reader&rsquo;s mind.&rdquo;
+              </p>
+              <p className="mt-2 text-xs text-muted-foreground">
+                This identifies the technique but the analysis is generic. &ldquo;Creates an image&rdquo;
+                could apply to almost any technique.
+              </p>
+            </div>
+            <div className="rounded-lg border border-primary/20 bg-primary/5 p-4">
+              <h3 className="text-sm font-bold text-primary">Strong: analysis</h3>
+              <p className="mt-2 text-sm text-muted-foreground italic">
+                &ldquo;The metaphor of a &lsquo;prison&rsquo; transforms the classroom from a
+                place of learning into one of confinement. The connotations of imprisonment
+                &mdash; punishment, restriction, loss of autonomy &mdash; suggest the students
+                feel trapped rather than educated, implying the educational system itself
+                is oppressive.&rdquo;
+              </p>
+              <p className="mt-2 text-xs text-muted-foreground">
+                This explores specific connotations, the effect on meaning, and the
+                writer&rsquo;s broader purpose.
+              </p>
+            </div>
+          </div>
+
+          <h3 className="mt-6 font-bold text-foreground">The What &rarr; How &rarr; Why framework</h3>
+          <p className="mt-2 text-muted-foreground">
+            Use this three-step approach for every analytical point you make in a reading response:
+          </p>
+          <ol className="mt-3 ml-5 list-decimal space-y-2 text-muted-foreground">
+            <li>
+              <strong>What:</strong> Identify the technique and embed a short quotation.
+              Be specific: do not just name the device, point to the exact words.
+            </li>
+            <li>
+              <strong>How:</strong> Explain how the technique works. What connotations do
+              the words carry? What sound or structural effect is created? How does it
+              interact with the surrounding text?
+            </li>
+            <li>
+              <strong>Why:</strong> Analyse the effect on the reader. What does it make them
+              think, feel, or picture? Why might the writer have chosen this particular word
+              or image over alternatives? What does it reveal about the writer&rsquo;s
+              purpose or attitude?
+            </li>
+          </ol>
+
+          <h3 className="mt-6 font-bold text-foreground">Zooming in on individual words</h3>
+          <p className="mt-2 text-muted-foreground">
+            The highest-scoring responses often focus on a single, carefully chosen word rather
+            than a long quotation. Ask yourself: why did the writer choose <em>this</em> word
+            rather than a synonym? For example, &ldquo;the child <strong>crept</strong> into the
+            room&rdquo; versus &ldquo;the child walked into the room.&rdquo; The verb
+            &ldquo;crept&rdquo; carries connotations of stealth, fear, and vulnerability that
+            &ldquo;walked&rdquo; does not. Exploring these subtle differences is what separates
+            a Level 2 response from a Level 4.
+          </p>
+
+          <h3 className="mt-6 font-bold text-foreground">Using tentative language</h3>
+          <p className="mt-2 text-muted-foreground">
+            Strong analysis uses tentative, exploratory language rather than making absolute
+            statements. Phrases like &ldquo;This could suggest&hellip;&rdquo;,
+            &ldquo;Perhaps the writer intends&hellip;&rdquo;, and &ldquo;This might evoke a
+            sense of&hellip;&rdquo; show the examiner that you are exploring multiple
+            possible meanings rather than stating the obvious. This is a hallmark of
+            perceptive, top-band analysis.
+          </p>
+        </div>
+
+        {/* Quick links to related resources */}
+        <div className="mb-8 grid gap-4 sm:grid-cols-3">
+          <Link
+            href="/resources/techniques/language-devices"
+            className="group rounded-xl border border-border bg-card p-4 transition hover:border-primary/30 hover:shadow-md"
+          >
+            <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">Language Devices</h3>
+            <p className="mt-1 text-sm text-muted-foreground">Full reference for all language techniques across GCSE English.</p>
+          </Link>
+          <Link
+            href="/resources/techniques/structural-devices"
+            className="group rounded-xl border border-border bg-card p-4 transition hover:border-primary/30 hover:shadow-md"
+          >
+            <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">Structural Devices</h3>
+            <p className="mt-1 text-sm text-muted-foreground">How writers structure texts at whole-text, paragraph, and sentence level.</p>
+          </Link>
+          <Link
+            href="/revision"
+            className="group rounded-xl border border-border bg-card p-4 transition hover:border-primary/30 hover:shadow-md"
+          >
+            <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">Revision Hub</h3>
+            <p className="mt-1 text-sm text-muted-foreground">Flashcards, quizzes, and spaced repetition for technique revision.</p>
+          </Link>
+        </div>
+
         {/* Filter */}
         <div className="mb-6 flex flex-wrap gap-2">
           {categories.map((cat) => (
@@ -450,16 +559,57 @@ export default function TechniquesPage() {
           ))}
         </div>
 
+        {/* Continue studying */}
+        <div className="mt-10 rounded-xl border border-primary/20 bg-primary/5 p-6 sm:p-8">
+          <h2 className="text-xl font-bold text-foreground">Continue studying</h2>
+          <p className="mt-2 text-muted-foreground">
+            Now that you know the techniques, put them into practice with reading analysis and
+            writing exercises.
+          </p>
+          <div className="mt-4 flex flex-wrap gap-3">
+            <Link
+              href="/resources/english-language/aqa/paper-1"
+              className="rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary hover:shadow-md"
+            >
+              Paper 1: Reading &amp; Writing
+            </Link>
+            <Link
+              href="/resources/english-language/aqa/paper-2"
+              className="rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary hover:shadow-md"
+            >
+              Paper 2: Viewpoints &amp; Perspectives
+            </Link>
+            <Link
+              href="/resources/writing-skills"
+              className="rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary hover:shadow-md"
+            >
+              Writing Skills
+            </Link>
+            <Link
+              href="/practice"
+              className="rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary hover:shadow-md"
+            >
+              Practice Questions
+            </Link>
+            <Link
+              href="/revision"
+              className="rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary hover:shadow-md"
+            >
+              Revision Hub
+            </Link>
+          </div>
+        </div>
+
         {/* Back link */}
         <div className="pt-8">
           <Link
-            href="/resources/english-language/aqa"
+            href="/resources/english-language"
             className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-primary transition-colors"
           >
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
             </svg>
-            Back to AQA English Language
+            Back to English Language
           </Link>
         </div>
       </div>

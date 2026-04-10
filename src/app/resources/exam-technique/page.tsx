@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://theenglishhub.app/resources/exam-technique' },
   title: "Exam Technique",
   description:
-    "Master the exam techniques that turn knowledge into top grades. Time management, question types, essay structure, and exam-day advice for GCSE and IGCSE English -- AQA, Edexcel, CAIE, and OCR.",
+    "Master the exam techniques that turn knowledge into top grades. Time management, question types, essay structure, and exam-day advice for GCSE and IGCSE English.",
 };
 
 /* ─── Section data ───────────────────────────────────────────── */
@@ -37,12 +37,12 @@ const SECTIONS = [
       </svg>
     ),
     topics: [
-      "AQA timings",
-      "Edexcel timings",
-      "CAIE timings",
-      "OCR timings",
+      "Paper-by-paper timings",
+      "Marks per minute",
+      "Reading time",
       "Running out of time",
       "Planning allocation",
+      "Writing target times",
     ],
   },
   {
@@ -331,6 +331,25 @@ export default function ExamTechniquePage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Revision CTA */}
+      <section className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
+        <div className="rounded-xl border border-primary/20 bg-primary/5 p-6 sm:p-8 text-center">
+          <h2 className="text-xl font-bold text-foreground">
+            Ready to revise?
+          </h2>
+          <p className="mx-auto mt-2 max-w-2xl text-muted-foreground">
+            Put these exam techniques into practice with our interactive revision section --
+            timed exercises, worked examples, and self-assessment quizzes.
+          </p>
+          <Link
+            href="/revision/exam-technique"
+            className="mt-5 inline-block rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-white shadow transition hover:bg-primary/90"
+          >
+            Start exam technique revision
+          </Link>
         </div>
       </section>
 

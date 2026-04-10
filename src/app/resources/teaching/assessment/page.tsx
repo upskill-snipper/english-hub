@@ -286,25 +286,19 @@ export default function AssessmentToolsPage() {
   const [quizComplete, setQuizComplete] = useState(false);
   const [showAllAnswers, setShowAllAnswers] = useState(false);
   const [essayTopicFilter, setEssayTopicFilter] = useState("");
-  const [essayBoardFilter, setEssayBoardFilter] = useState("");
   const [expandedMarkSchemes, setExpandedMarkSchemes] = useState<Set<number>>(new Set());
-  const [markSchemeBoard, setMarkSchemeBoard] = useState("");
 
   const quizQuestions = QUIZ_TOPICS[selectedQuizTopic] || [];
   const currentQuestion = quizQuestions[currentQuestionIndex];
 
   const filteredEssays = ESSAY_QUESTIONS.filter((eq) => {
     const matchesTopic = essayTopicFilter === "" || eq.topic === essayTopicFilter;
-    const matchesBoard = essayBoardFilter === "" || eq.examBoard === essayBoardFilter;
-    return matchesTopic && matchesBoard;
+    return matchesTopic;
   });
 
   const essayTopics = [...new Set(ESSAY_QUESTIONS.map((eq) => eq.topic))];
-  const essayBoards = [...new Set(ESSAY_QUESTIONS.map((eq) => eq.examBoard))];
 
-  const filteredMarkSchemes = MARK_SCHEME_TEMPLATES.filter(
-    (ms) => markSchemeBoard === "" || ms.examBoard === markSchemeBoard
-  );
+  const filteredMarkSchemes = MARK_SCHEME_TEMPLATES;
 
   function startQuiz() {
     setQuizStarted(true);
@@ -382,7 +376,7 @@ export default function AssessmentToolsPage() {
               Teaching Resources
             </Link>
             <span className="mx-2">/</span>
-            <span className="text-white">Assessment Tools</span>
+            <span className="text-foreground">Assessment Tools</span>
           </nav>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
             Assessment Tools
@@ -608,16 +602,6 @@ export default function AssessmentToolsPage() {
                     <option key={t} value={t}>{t}</option>
                   ))}
                 </select>
-                <select
-                  value={essayBoardFilter}
-                  onChange={(e) => setEssayBoardFilter(e.target.value)}
-                  className="rounded-lg border border-border bg-card px-3 py-2.5 text-sm text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
-                >
-                  <option value="">All Exam Boards</option>
-                  {essayBoards.map((b) => (
-                    <option key={b} value={b}>{b}</option>
-                  ))}
-                </select>
               </div>
             </div>
 
@@ -638,11 +622,8 @@ export default function AssessmentToolsPage() {
                     <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary">
                       {eq.topic}
                     </span>
-                    <span className="rounded-full bg-amber-500/10 px-2.5 py-0.5 text-xs font-semibold text-amber-700 dark:text-amber-300">
+                    <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-semibold text-muted-foreground">
                       {eq.marks} marks
-                    </span>
-                    <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
-                      {eq.examBoard}
                     </span>
                   </div>
                   <p className="text-sm font-medium text-foreground">{eq.text}</p>
@@ -666,16 +647,6 @@ export default function AssessmentToolsPage() {
                 </p>
               </div>
               <div className="flex gap-2">
-                <select
-                  value={markSchemeBoard}
-                  onChange={(e) => setMarkSchemeBoard(e.target.value)}
-                  className="rounded-lg border border-border bg-card px-3 py-2.5 text-sm text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
-                >
-                  <option value="">All Boards</option>
-                  <option value="AQA">AQA</option>
-                  <option value="Edexcel">Edexcel</option>
-                  <option value="Generic">Generic</option>
-                </select>
                 <button
                   onClick={handlePrint}
                   className="inline-flex items-center gap-2 rounded-lg border border-primary px-4 py-2.5 text-sm font-semibold text-foreground transition hover:bg-primary/5 print:hidden"
@@ -697,9 +668,6 @@ export default function AssessmentToolsPage() {
                   >
                     <div className="flex items-center gap-3">
                       <h3 className="font-bold text-white">{template.title}</h3>
-                      <span className="rounded-full bg-card/20 px-2 py-0.5 text-xs font-medium text-white">
-                        {template.examBoard}
-                      </span>
                     </div>
                     <svg
                       className={`h-5 w-5 text-muted-foreground transition-transform print:hidden ${expandedMarkSchemes.has(idx) ? "rotate-180" : ""}`}

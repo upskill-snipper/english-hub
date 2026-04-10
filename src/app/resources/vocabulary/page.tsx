@@ -267,7 +267,7 @@ export default function VocabularyHubPage() {
           {[
             { label: "Writing Skills", href: "/resources/writing-skills", desc: "Master creative, persuasive, and analytical writing." },
             { label: "Techniques Reference", href: "/resources/techniques", desc: "60+ language and structural devices explained." },
-            { label: "All Resources", href: "/resources", desc: "Browse everything by exam board and subject." },
+            { label: "All Resources", href: "/resources", desc: "Browse all revision resources." },
           ].map((link) => (
             <Link
               key={link.href}

@@ -17,8 +17,8 @@ const GRADE_CARDS = [
     grade: "5",
     label: "Strong Pass",
     href: "/resources/grade-targets/grade-5",
-    colour: "border-[#27AE60]",
-    bg: "bg-[#27AE60]",
+    colour: "border-emerald-600",
+    bg: "bg-emerald-600",
     tagline: "Solid foundations, clear understanding",
     description:
       "A Grade 5 shows you can explain ideas clearly, use relevant evidence, and write with control. Learn what examiners expect and how to move from a 4 to a secure 5.",
@@ -295,7 +295,7 @@ export default function GradeTargetsPage() {
                         <span
                           className={`inline-block rounded-full px-2.5 py-0.5 text-xs font-bold text-white ${
                             level.grade === "5"
-                              ? "bg-[#27AE60]"
+                              ? "bg-emerald-600"
                               : level.grade === "7"
                               ? "bg-primary"
                               : "bg-primary"
@@ -354,7 +354,7 @@ export default function GradeTargetsPage() {
                       <span
                         className={`mt-1 inline-block rounded-full px-2 py-0.5 text-xs font-semibold ${
                           option.level.includes("4-5")
-                            ? "bg-[#27AE60]/10 text-[#27AE60]"
+                            ? "bg-emerald-600/10 text-emerald-600"
                             : option.level.includes("6-7")
                             ? "bg-primary/10 text-primary"
                             : "bg-primary/10 text-primary"

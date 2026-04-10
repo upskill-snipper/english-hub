@@ -1,670 +1,215 @@
 "use client";
 
 import { useState, useEffect, useCallback, useMemo } from "react";
+import Link from "next/link";
+import {
+  Layers, RotateCcw, ChevronLeft, ChevronRight, BookOpen, Trophy,
+  Flame, Target, Brain, Star, BarChart3, GraduationCap, ArrowRight,
+  CheckCircle2, Clock, Sparkles,
+} from "lucide-react";
+import { flashcardDecks, type FlashcardDeck, type FlashCard } from "@/data/flashcard-data";
+import { cn } from "@/lib/utils";
+import { useFlashcardStore, selectTodayReviewed, selectTodayAccuracy, selectAccuracyRate } from "@/store/flashcard-store";
+import { type Quality, QUALITY_BUTTONS, getStudyQueue, getNewCards, getDueCards, getMasteryPercentage, formatNextReview, formatInterval, previewIntervals, type CardReviewState } from "@/lib/spaced-repetition";
+import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor, gcseGradeBg } from "@/lib/grades";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 
-/* ─── Types ──────────────────────────────────────────────────── */
+/* --- Constants ------------------------------------------------- */
 
-type Flashcard = {
-  id: string;
-  quote: string;
-  character?: string;
-  act?: string;
-  analysis: string;
-  themes: string[];
+const CATEGORY_ICONS: Record<string, typeof BookOpen> = { "Set Texts": BookOpen, Poetry: Sparkles, Techniques: Brain, Grammar: GraduationCap, Vocabulary: BookOpen, "Exam Technique": Target };
+const CATEGORY_ORDER = ["Set Texts", "Poetry", "Techniques", "Vocabulary", "Grammar", "Exam Technique"];
+type StudyMode = "browse" | "study" | "difficult";
+function getDeckCategory(deck: FlashcardDeck): string { return deck.category || "General"; }
+const QUALITY_COLORS: Record<string, string> = {
+  destructive: "bg-red-500/15 text-red-400 hover:bg-red-500/25 border-red-500/30",
+  warning: "bg-amber-500/15 text-amber-400 hover:bg-amber-500/25 border-amber-500/30",
+  success: "bg-emerald-500/15 text-emerald-400 hover:bg-emerald-500/25 border-emerald-500/30",
+  easy: "bg-blue-500/15 text-blue-400 hover:bg-blue-500/25 border-blue-500/30",
 };
 
-type TextSet = {
-  slug: string;
-  title: string;
-  author: string;
-  colour: string;
-  cards: Flashcard[];
-};
-
-/* ─── Flashcard data ─────────────────────────────────────────── */
-
-const FLASHCARD_SETS: TextSet[] = [
-  {
-    slug: "macbeth",
-    title: "Macbeth",
-    author: "William Shakespeare",
-    colour: "from-red-900 to-red-700",
-    cards: [
-      {
-        id: "mac-1",
-        quote: "Fair is foul, and foul is fair",
-        character: "Witches",
-        act: "Act 1, Scene 1",
-        analysis: "Establishes the theme of moral inversion from the very opening. The chiasmus creates a sense of the world turned upside down. Everything in the play will challenge appearances vs reality.",
-        themes: ["Supernatural", "Appearance vs Reality"],
-      },
-      {
-        id: "mac-2",
-        quote: "Stars, hide your fires; / Let not light see my black and deep desires",
-        character: "Macbeth",
-        act: "Act 1, Scene 4",
-        analysis: "Macbeth's aside reveals his ambition is already forming before Lady Macbeth's influence. The imperative 'hide' shows conscious concealment of evil. Light/dark imagery links to the play's moral framework.",
-        themes: ["Ambition", "Appearance vs Reality", "Guilt"],
-      },
-      {
-        id: "mac-3",
-        quote: "Look like th'innocent flower, / But be the serpent under't",
-        character: "Lady Macbeth",
-        act: "Act 1, Scene 5",
-        analysis: "Biblical allusion to the serpent in Eden positions Lady Macbeth as a tempter figure. The simile contrasts beauty ('flower') with deadly intent ('serpent'), reinforcing the theme of deceptive appearances.",
-        themes: ["Appearance vs Reality", "Gender", "Power"],
-      },
-      {
-        id: "mac-4",
-        quote: "Is this a dagger which I see before me, / The handle toward my hand?",
-        character: "Macbeth",
-        act: "Act 2, Scene 1",
-        analysis: "The rhetorical question shows Macbeth's psychological torment. The dagger could be supernatural temptation or guilt-driven hallucination. Either way, it shows the murder consuming his mind before the act itself.",
-        themes: ["Guilt", "Supernatural", "Ambition"],
-      },
-      {
-        id: "mac-5",
-        quote: "Will all great Neptune's ocean wash this blood / Clean from my hand?",
-        character: "Macbeth",
-        act: "Act 2, Scene 2",
-        analysis: "Hyperbolic imagery -- even the god of the ocean cannot cleanse his guilt. The blood symbolises the permanent moral stain of regicide. Contrasts Lady Macbeth's dismissive 'A little water clears us of this deed.'",
-        themes: ["Guilt", "Kingship", "Violence"],
-      },
-      {
-        id: "mac-6",
-        quote: "Out, damned spot! Out, I say!",
-        character: "Lady Macbeth",
-        act: "Act 5, Scene 1",
-        analysis: "Lady Macbeth's sleepwalking reveals her subconscious guilt. The imperative shows desperation. Ironic reversal of her earlier confidence -- she now cannot wash away the imagined blood she once dismissed.",
-        themes: ["Guilt", "Gender", "Madness"],
-      },
-      {
-        id: "mac-7",
-        quote: "I am in blood / Stepp'd in so far that, should I wade no more, / Returning were as tedious as go o'er",
-        character: "Macbeth",
-        act: "Act 3, Scene 4",
-        analysis: "Extended metaphor of a river of blood shows Macbeth has reached the point of no return. 'Tedious' is chillingly casual -- murder has become mundane to him. Shows moral deterioration.",
-        themes: ["Violence", "Guilt", "Power"],
-      },
-      {
-        id: "mac-8",
-        quote: "Unsex me here, / And fill me from the crown to the toe top-full / Of direst cruelty",
-        character: "Lady Macbeth",
-        act: "Act 1, Scene 5",
-        analysis: "Lady Macbeth invokes spirits to remove her femininity, equating womanhood with weakness and compassion. Challenges Jacobean gender norms. 'Crown to toe' suggests total transformation; 'direst' is superlative evil.",
-        themes: ["Gender", "Supernatural", "Power"],
-      },
-      {
-        id: "mac-9",
-        quote: "Life's but a walking shadow, a poor player / That struts and frets his hour upon the stage",
-        character: "Macbeth",
-        act: "Act 5, Scene 5",
-        analysis: "Macbeth's nihilistic soliloquy after Lady Macbeth's death. The theatrical metaphor ('player', 'stage') suggests life is meaningless performance. 'Walking shadow' implies insubstantiality -- his ambition has led to emptiness.",
-        themes: ["Ambition", "Death", "Fate"],
-      },
-      {
-        id: "mac-10",
-        quote: "By the pricking of my thumbs, / Something wicked this way comes",
-        character: "Second Witch",
-        act: "Act 4, Scene 1",
-        analysis: "The Witches now call Macbeth 'wicked' -- he has become more evil than the supernatural forces that tempted him. The rhyming couplet creates an ominous, spell-like quality. Shows Macbeth's complete moral fall.",
-        themes: ["Supernatural", "Evil", "Fate"],
-      },
-    ],
-  },
-  {
-    slug: "christmas-carol",
-    title: "A Christmas Carol",
-    author: "Charles Dickens",
-    colour: "from-emerald-800 to-emerald-600",
-    cards: [
-      {
-        id: "acc-1",
-        quote: "Oh! But he was a tight-fisted hand at the grindstone, Scrooge!",
-        analysis: "The exclamatory 'Oh!' breaks the fourth wall, drawing readers in. 'Tight-fisted' and 'grindstone' create imagery of miserliness and relentless, joyless work. Dickens establishes Scrooge as the embodiment of capitalist greed.",
-        themes: ["Greed", "Isolation"],
-      },
-      {
-        id: "acc-2",
-        quote: "Are there no prisons? Are there no workhouses?",
-        character: "Scrooge",
-        analysis: "Scrooge's rhetorical questions echo the cruel Malthusian attitudes of the Victorian upper class. Dickens uses Scrooge to satirise those who believed poverty was the poor's own fault. These words haunt him when the Ghost of Christmas Present repeats them.",
-        themes: ["Poverty", "Social Responsibility"],
-      },
-      {
-        id: "acc-3",
-        quote: "Mankind was my business!",
-        character: "Marley's Ghost",
-        analysis: "Marley's desperate cry serves as the moral thesis of the novella. 'Business' is recontextualised from commerce to compassion. Dickens argues that true purpose lies in caring for others, not accumulating wealth.",
-        themes: ["Social Responsibility", "Redemption"],
-      },
-      {
-        id: "acc-4",
-        quote: "I will honour Christmas in my heart, and try to keep it all the year",
-        character: "Scrooge",
-        analysis: "Scrooge's pledge marks his completed transformation. 'Honour' and 'heart' show emotional awakening. 'All the year' extends Christmas generosity beyond a single day -- Dickens's message that kindness should be constant.",
-        themes: ["Redemption", "Generosity", "Christmas"],
-      },
-      {
-        id: "acc-5",
-        quote: "This boy is Ignorance. This girl is Want. Beware them both... but most of all beware this boy",
-        character: "Ghost of Christmas Present",
-        analysis: "The allegorical children personify society's failings. Dickens warns that ignorance (of poverty, of others' suffering) is more dangerous than want itself. A direct challenge to his middle-class readers to educate themselves about social inequality.",
-        themes: ["Poverty", "Social Responsibility", "Education"],
-      },
-      {
-        id: "acc-6",
-        quote: "Solitary as an oyster",
-        analysis: "Simile establishing Scrooge's self-imposed isolation. An oyster is hard-shelled and closed off, but contains a pearl -- foreshadowing the goodness hidden within Scrooge. Dickens suggests isolation is a choice that can be reversed.",
-        themes: ["Isolation", "Redemption"],
-      },
-      {
-        id: "acc-7",
-        quote: "He had been Tim's blood horse all the way from church, and had come home rampant",
-        analysis: "Bob Cratchit carrying Tiny Tim shows paternal love despite poverty. 'Blood horse' and 'rampant' are terms of strength and vitality, contrasting with Tim's fragility. Family love compensates for material lack.",
-        themes: ["Family", "Poverty", "Love"],
-      },
-      {
-        id: "acc-8",
-        quote: "Old Marley was as dead as a door-nail",
-        analysis: "The blunt opening establishes a matter-of-fact narrative voice. The cliche 'dead as a door-nail' is deliberately mundane -- Dickens then subverts expectations by making the dead character central to the plot. Sets up the supernatural framework.",
-        themes: ["Death", "Supernatural"],
-      },
-    ],
-  },
-  {
-    slug: "inspector-calls",
-    title: "An Inspector Calls",
-    author: "J.B. Priestley",
-    colour: "from-amber-800 to-amber-600",
-    cards: [
-      {
-        id: "aic-1",
-        quote: "We are members of one body. We are responsible for each other",
-        character: "Inspector Goole",
-        analysis: "The Inspector's final speech articulates Priestley's socialist message. 'One body' echoes Christian theology and socialist collectivism. The declarative sentences are emphatic and moralistic -- the Inspector speaks as Priestley's mouthpiece.",
-        themes: ["Social Responsibility", "Community"],
-      },
-      {
-        id: "aic-2",
-        quote: "If men will not learn that lesson, then they will be taught it in fire and blood and anguish",
-        character: "Inspector Goole",
-        analysis: "Prophetic warning referencing both World Wars (the play is set in 1912, written in 1945). 'Fire and blood and anguish' is a tricolon of destruction. Priestley warns his 1945 audience not to repeat pre-war social failures.",
-        themes: ["Social Responsibility", "War", "Power"],
-      },
-      {
-        id: "aic-3",
-        quote: "But these girls aren't cheap labour -- they're people",
-        character: "Sheila Birling",
-        analysis: "Sheila's moral growth is shown as she recognises workers' humanity. The dash creates a corrective pause. She rejects her father's capitalist view of workers as commodities, representing the younger generation's capacity for change.",
-        themes: ["Social Class", "Gender", "Responsibility"],
-      },
-      {
-        id: "aic-4",
-        quote: "The Titanic -- she sails next week... unsinkable, absolutely unsinkable",
-        character: "Mr Birling",
-        analysis: "Dramatic irony: the audience knows the Titanic sank. Birling's confident repetition ('absolutely unsinkable') establishes him as foolish and overconfident. Priestley undermines capitalist certainty from the play's opening.",
-        themes: ["Dramatic Irony", "Capitalism", "Arrogance"],
-      },
-      {
-        id: "aic-5",
-        quote: "I'm not a child, don't forget. I've a right to know",
-        character: "Sheila Birling",
-        analysis: "Sheila asserts her maturity and independence, challenging the patriarchal family structure. Her demand for truth contrasts with her parents' desire to conceal. Represents generational change and female empowerment.",
-        themes: ["Gender", "Generational Divide"],
-      },
-      {
-        id: "aic-6",
-        quote: "You're squiffy",
-        character: "Sheila (to Eric)",
-        analysis: "Colloquial slang for drunk, used casually by Sheila. Reveals Eric's alcoholism is an open secret the family ignores. Priestley shows the Birlings prioritise appearances over addressing real problems within their own family.",
-        themes: ["Appearance vs Reality", "Family"],
-      },
-      {
-        id: "aic-7",
-        quote: "A man has to make his own way -- has to look after himself",
-        character: "Mr Birling",
-        analysis: "Birling's individualist philosophy is the antithesis of the Inspector's message. Priestley presents this capitalist self-interest as morally bankrupt. The repetition of 'has to' shows Birling treats selfishness as natural law.",
-        themes: ["Capitalism", "Social Responsibility"],
-      },
-      {
-        id: "aic-8",
-        quote: "We don't live alone. We are members of one body",
-        character: "Inspector Goole",
-        analysis: "The metaphor of 'one body' implies society functions like a human body -- if one part suffers, all are affected. Directly counters Birling's individualism. 'We' is inclusive, refusing to let anyone opt out of social responsibility.",
-        themes: ["Social Responsibility", "Community", "Equality"],
-      },
-    ],
-  },
-  {
-    slug: "jekyll-and-hyde",
-    title: "Jekyll and Hyde",
-    author: "Robert Louis Stevenson",
-    colour: "from-violet-900 to-violet-700",
-    cards: [
-      {
-        id: "jh-1",
-        quote: "Man is not truly one, but truly two",
-        character: "Dr Jekyll",
-        analysis: "Jekyll's realisation encapsulates the novella's central theme: duality of human nature. Stevenson challenges Victorian assumptions of moral certainty. 'Truly' repeated suggests this is a fundamental truth society refuses to acknowledge.",
-        themes: ["Duality", "Science", "Victorian Society"],
-      },
-      {
-        id: "jh-2",
-        quote: "I learned to recognise the thorough and primitive duality of man",
-        character: "Dr Jekyll",
-        analysis: "'Primitive' suggests the duality is ancient and innate, not a product of civilisation. 'Thorough' means it permeates every aspect of human nature. Jekyll's scientific language ('recognise', 'learned') frames this as objective discovery.",
-        themes: ["Duality", "Science", "Human Nature"],
-      },
-      {
-        id: "jh-3",
-        quote: "If he be Mr Hyde, I shall be Mr Seek",
-        character: "Utterson",
-        analysis: "Wordplay on hide-and-seek creates dark humour but also establishes the detective-story structure. Utterson's determination to pursue the mystery reflects the Victorian gentleman's need to understand and control. Dramatic irony -- what he finds destroys his worldview.",
-        themes: ["Secrecy", "Victorian Society", "Curiosity"],
-      },
-      {
-        id: "jh-4",
-        quote: "Trampled calmly over the child's body",
-        analysis: "The oxymoron 'trampled calmly' is deeply unsettling -- Hyde's violence is casual, not passionate. The child victim emphasises his complete lack of morality. Stevenson shows evil as indifferent rather than dramatic.",
-        themes: ["Violence", "Evil", "Duality"],
-      },
-      {
-        id: "jh-5",
-        quote: "Satan's signature upon a face",
-        character: "Utterson (describing Hyde)",
-        analysis: "Religious imagery marks Hyde as diabolical. 'Signature' suggests the devil has claimed him -- or that evil is literally written on his body. Reflects the Victorian pseudoscience of physiognomy (reading character from appearance).",
-        themes: ["Evil", "Religion", "Appearance"],
-      },
-      {
-        id: "jh-6",
-        quote: "With ape-like fury",
-        analysis: "Hyde's animalistic behaviour references Darwinian evolution -- he is a regression to a primitive state. 'Ape-like' would have disturbed Victorian readers still debating Darwin. Stevenson links moral degeneration to physical devolution.",
-        themes: ["Evolution", "Violence", "Duality"],
-      },
-      {
-        id: "jh-7",
-        quote: "All human beings, as we meet them, are commingled out of good and evil",
-        character: "Dr Jekyll",
-        analysis: "'Commingled' means thoroughly mixed -- good and evil cannot be separated. This contradicts Jekyll's experiment, which tried to isolate them. The universal 'all human beings' makes this a statement about humanity, not just Jekyll.",
-        themes: ["Duality", "Human Nature", "Morality"],
-      },
-      {
-        id: "jh-8",
-        quote: "I was slowly losing hold of my original and better self, and becoming slowly incorporated with my second and worse",
-        character: "Dr Jekyll",
-        analysis: "'Slowly' repeated shows the gradual, insidious nature of evil's encroachment. 'Incorporated' (made into one body) shows Hyde consuming Jekyll. The comparative 'better/worse' simplifies the complex reality of their shared identity.",
-        themes: ["Duality", "Addiction", "Identity"],
-      },
-    ],
-  },
-  {
-    slug: "romeo-and-juliet",
-    title: "Romeo and Juliet",
-    author: "William Shakespeare",
-    colour: "from-rose-700 to-rose-500",
-    cards: [
-      {
-        id: "rj-1",
-        quote: "A pair of star-cross'd lovers take their life",
-        act: "Prologue",
-        analysis: "The Prologue's spoiler establishes fate as a central force. 'Star-cross'd' blends astrology with destiny -- the stars are literally against them. 'Take their life' has a double meaning: living their life and ending it.",
-        themes: ["Fate", "Love", "Death"],
-      },
-      {
-        id: "rj-2",
-        quote: "O, she doth teach the torches to burn bright!",
-        character: "Romeo",
-        act: "Act 1, Scene 5",
-        analysis: "Romeo's first sight of Juliet uses light imagery -- she outshines artificial light. The personification of torches learning from her elevates Juliet to something transcendent. Iambic pentameter underscores the poetry of first love.",
-        themes: ["Love", "Light/Dark", "Beauty"],
-      },
-      {
-        id: "rj-3",
-        quote: "My only love sprung from my only hate!",
-        character: "Juliet",
-        act: "Act 1, Scene 5",
-        analysis: "Antithesis of 'love' and 'hate' captures the central paradox. 'Only' repeated shows the absolute, all-or-nothing nature of both emotions. The exclamation mark conveys Juliet's shock at discovering Romeo is a Montague.",
-        themes: ["Love", "Conflict", "Fate"],
-      },
-      {
-        id: "rj-4",
-        quote: "But soft, what light through yonder window breaks? / It is the east, and Juliet is the sun",
-        character: "Romeo",
-        act: "Act 2, Scene 2",
-        analysis: "The balcony scene's most famous lines use celestial imagery. Juliet as 'the sun' makes her the centre of Romeo's universe, the source of light and life. 'Breaks' suggests dawn -- Juliet brings a new beginning.",
-        themes: ["Love", "Light/Dark", "Nature"],
-      },
-      {
-        id: "rj-5",
-        quote: "These violent delights have violent ends",
-        character: "Friar Lawrence",
-        act: "Act 2, Scene 6",
-        analysis: "The Friar's warning foreshadows the tragedy. The repetition of 'violent' links passion directly to destruction. 'Delights' becoming 'ends' shows how quickly joy turns to death in the play's compressed timeframe.",
-        themes: ["Fate", "Love", "Death", "Violence"],
-      },
-      {
-        id: "rj-6",
-        quote: "A plague o' both your houses!",
-        character: "Mercutio",
-        act: "Act 3, Scene 1",
-        analysis: "Mercutio's dying curse blames both families equally. 'Plague' invokes disease and divine punishment. His death is the play's turning point -- comedy becomes tragedy. He is the innocent victim of a feud that is not his own.",
-        themes: ["Conflict", "Fate", "Family"],
-      },
-      {
-        id: "rj-7",
-        quote: "O, I am fortune's fool!",
-        character: "Romeo",
-        act: "Act 3, Scene 1",
-        analysis: "After killing Tybalt, Romeo sees himself as a puppet of fate. 'Fortune's fool' uses alliteration and personification to blame destiny rather than his own impulsive violence. Raises the question: is the tragedy fated or self-inflicted?",
-        themes: ["Fate", "Violence", "Responsibility"],
-      },
-      {
-        id: "rj-8",
-        quote: "Death, that hath suck'd the honey of thy breath, / Hath had no power yet upon thy beauty",
-        character: "Romeo",
-        act: "Act 5, Scene 3",
-        analysis: "Dramatic irony: Juliet is not actually dead. 'Honey' makes her breath sweet and precious. Death is personified as a lover, jealously guarding Juliet -- but even death cannot diminish her beauty. Romeo misreads the signs tragically.",
-        themes: ["Death", "Love", "Fate", "Beauty"],
-      },
-      {
-        id: "rj-9",
-        quote: "For never was a story of more woe / Than this of Juliet and her Romeo",
-        act: "Act 5, Scene 3",
-        analysis: "The Prince's closing couplet provides formal closure. 'Her Romeo' shows possession in death -- they finally belong to each other, not their families. The rhyming couplet ('woe'/'Romeo') seals the tragedy with poetic finality.",
-        themes: ["Love", "Death", "Fate", "Family"],
-      },
-    ],
-  },
-];
-
-/* ─── LS key ─────────────────────────────────────────────────── */
-
-const LS_MASTERED = "teh-flashcards-mastered";
-
-/* ─── Component ──────────────────────────────────────────────── */
+/* --- Component ------------------------------------------------- */
 
 export default function FlashcardsPage() {
-  const [activeSet, setActiveSet] = useState<string>(FLASHCARD_SETS[0].slug);
-  const [revealed, setRevealed] = useState<Set<string>>(new Set());
-  const [mastered, setMastered] = useState<Set<string>>(new Set());
-  const [shuffled, setShuffled] = useState(false);
-  const [testMode, setTestMode] = useState(false);
+  const store = useFlashcardStore();
+  const todayReviewed = useFlashcardStore(selectTodayReviewed);
+  const todayAccuracy = useFlashcardStore(selectTodayAccuracy);
+  const overallAccuracy = useFlashcardStore(selectAccuracyRate);
   const [mounted, setMounted] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const [selectedDeckId, setSelectedDeckId] = useState<string | null>(null);
+  const [studyMode, setStudyMode] = useState<StudyMode>("browse");
+  const [currentCardIndex, setCurrentCardIndex] = useState(0);
+  const [isFlipped, setIsFlipped] = useState(false);
+  const [studyQueue, setStudyQueue] = useState<FlashCard[]>([]);
+  useEffect(() => { setMounted(true); }, []);
+  const allDecks = useMemo(() => flashcardDecks, []);
+  const categories = useMemo(() => {
+    const cats = new Map<string, FlashcardDeck[]>();
+    for (const deck of allDecks) { const cat = getDeckCategory(deck); if (!cats.has(cat)) cats.set(cat, []); cats.get(cat)!.push(deck); }
+    const sorted = new Map<string, FlashcardDeck[]>();
+    for (const cat of CATEGORY_ORDER) { if (cats.has(cat)) sorted.set(cat, cats.get(cat)!); }
+    for (const [cat, decks] of cats) { if (!sorted.has(cat)) sorted.set(cat, decks); }
+    return sorted;
+  }, [allDecks]);
+  const filteredDecks = useMemo(() => selectedCategory === "all" ? allDecks : allDecks.filter((d) => getDeckCategory(d) === selectedCategory), [allDecks, selectedCategory]);
+  const selectedDeck = useMemo(() => allDecks.find((d) => d.id === selectedDeckId) ?? null, [allDecks, selectedDeckId]);
+  const getDeckStats = useCallback((deck: FlashcardDeck) => {
+    if (!mounted) return { mastery: 0, due: 0, newCount: 0, grade: 1, difficult: 0 };
+    const mastery = getMasteryPercentage(deck.cards, store.reviewStates);
+    const due = getDueCards(deck.cards, store.reviewStates).length;
+    const newCount = getNewCards(deck.cards, store.reviewStates, 999).length;
+    const grade = percentageToGCSEGrade(mastery);
+    const difficult = deck.cards.filter((c) => { const s = store.reviewStates[c.id]; return s && s.easinessFactor < 2.0; }).length;
+    return { mastery, due, newCount, grade, difficult };
+  }, [mounted, store.reviewStates]);
+  const overallStats = useMemo(() => {
+    if (!mounted) return { totalCards: 0, mastered: 0, due: 0, mastery: 0, grade: 1 };
+    const allCards = allDecks.flatMap((d) => d.cards);
+    const mastery = getMasteryPercentage(allCards, store.reviewStates);
+    const due = getDueCards(allCards, store.reviewStates).length;
+    const mastered = allCards.filter((c) => { const s = store.reviewStates[c.id]; return s && s.interval >= 21; }).length;
+    return { totalCards: allCards.length, mastered, due, mastery, grade: percentageToGCSEGrade(mastery) };
+  }, [mounted, allDecks, store.reviewStates]);
+  const startStudy = useCallback((deck: FlashcardDeck, mode: StudyMode) => {
+    let queue: FlashCard[];
+    if (mode === "difficult") {
+      queue = deck.cards.filter((c) => { const s = store.reviewStates[c.id]; return s && s.easinessFactor < 2.0; });
+      if (queue.length === 0) queue = getDueCards(deck.cards, store.reviewStates);
+    } else { queue = getStudyQueue(deck.cards, store.reviewStates, 10); }
+    if (queue.length === 0) queue = deck.cards.slice(0, 10);
+    setStudyQueue(queue); setCurrentCardIndex(0); setIsFlipped(false); setStudyMode(mode);
+  }, [store.reviewStates]);
+  const handleRate = useCallback((quality: Quality) => {
+    const card = studyQueue[currentCardIndex]; if (!card) return;
+    store.reviewCard(card.id, quality);
+    if (currentCardIndex < studyQueue.length - 1) { setCurrentCardIndex((i) => i + 1); setIsFlipped(false); }
+    else { setStudyMode("browse"); setStudyQueue([]); setCurrentCardIndex(0); }
+  }, [currentCardIndex, studyQueue, store]);
+  const handleResetDeck = useCallback((deck: FlashcardDeck) => {
+    if (confirm("Reset all progress for this deck? This cannot be undone.")) store.resetDeck(deck.cards.map((c) => c.id));
+  }, [store]);
 
-  const currentSet = FLASHCARD_SETS.find((s) => s.slug === activeSet)!;
+  if (!mounted || !store._hasHydrated) return (<div className="flex min-h-[400px] items-center justify-center"><div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" /></div>);
 
-  /* Load mastered from localStorage */
-  useEffect(() => {
-    try {
-      const saved = localStorage.getItem(LS_MASTERED);
-      if (saved) setMastered(new Set(JSON.parse(saved)));
-    } catch {
-      // ignore
-    }
-    setMounted(true);
-  }, []);
-
-  /* Save mastered */
-  useEffect(() => {
-    if (!mounted) return;
-    localStorage.setItem(LS_MASTERED, JSON.stringify([...mastered]));
-  }, [mastered, mounted]);
-
-  /* Cards to display */
-  const displayCards = useMemo(() => {
-    let cards = [...currentSet.cards];
-    if (testMode) {
-      cards = cards.filter((c) => !mastered.has(c.id));
-    }
-    if (shuffled) {
-      for (let i = cards.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [cards[i], cards[j]] = [cards[j], cards[i]];
-      }
-    }
-    return cards;
-  }, [currentSet, shuffled, testMode, mastered]);
-
-  const masteredInSet = currentSet.cards.filter((c) => mastered.has(c.id)).length;
-  const progressPct = Math.round((masteredInSet / currentSet.cards.length) * 100);
-
-  /* Handlers */
-  const toggleReveal = useCallback((id: string) => {
-    setRevealed((prev) => {
-      const next = new Set(prev);
-      if (next.has(id)) next.delete(id);
-      else next.add(id);
-      return next;
-    });
-  }, []);
-
-  const toggleMastered = useCallback((id: string) => {
-    setMastered((prev) => {
-      const next = new Set(prev);
-      if (next.has(id)) next.delete(id);
-      else next.add(id);
-      return next;
-    });
-  }, []);
-
-  const handleShuffle = useCallback(() => {
-    setShuffled(true);
-    setRevealed(new Set());
-    // Force re-render by toggling
-    setShuffled(false);
-    setTimeout(() => setShuffled(true), 0);
-  }, []);
-
-  const revealAll = useCallback(() => {
-    setRevealed(new Set(displayCards.map((c) => c.id)));
-  }, [displayCards]);
-
-  const hideAll = useCallback(() => {
-    setRevealed(new Set());
-  }, []);
-
-  if (!mounted) {
-    return (
-      <div className="flex min-h-[400px] items-center justify-center">
-        <div className="h-8 w-8 animate-spin rounded-full border-4 border-accent border-t-transparent" />
+  /* STUDY MODE */
+  if (studyMode !== "browse" && studyQueue.length > 0 && selectedDeck) {
+    const currentCard = studyQueue[currentCardIndex];
+    const reviewState = store.getReviewState(currentCard.id);
+    const intervals = previewIntervals(reviewState ?? undefined);
+    const progress = ((currentCardIndex + 1) / studyQueue.length) * 100;
+    return (<>
+      <div className="mb-6">
+        <button onClick={() => { setStudyMode("browse"); setStudyQueue([]); }} className="mb-3 inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"><ChevronLeft className="h-4 w-4" />Back to decks</button>
+        <div className="flex items-center justify-between">
+          <div><h1 className="text-2xl font-bold text-foreground">{selectedDeck.title}</h1><p className="mt-1 text-sm text-muted-foreground">{studyMode === "difficult" ? "Difficult cards" : "Study session"} -- Card {currentCardIndex + 1} of {studyQueue.length}</p></div>
+          {studyMode === "difficult" && <Badge variant="destructive"><Flame className="mr-1 h-3 w-3" />Difficult mode</Badge>}
+        </div>
+        <div className="mt-4 h-2 w-full overflow-hidden rounded-full bg-muted"><div className="h-full rounded-full bg-gradient-to-r from-primary to-primary/60 transition-all duration-500" style={{ width: `${progress}%` }} /></div>
       </div>
-    );
+      <div className="mx-auto max-w-2xl">
+        <div className={cn("relative min-h-[320px] cursor-pointer overflow-hidden rounded-2xl border-2 shadow-lg transition-all duration-300", isFlipped ? "border-primary/30 bg-card" : "border-border bg-gradient-to-br from-primary/10 to-primary/5 hover:shadow-xl")} onClick={() => !isFlipped && setIsFlipped(true)}>
+          <div className="absolute top-4 right-4"><span className="text-xs text-muted-foreground">{formatNextReview(reviewState)}</span></div>
+          {!isFlipped ? (
+            <div className="flex min-h-[320px] flex-col items-center justify-center p-8 text-center"><div className="mb-4 rounded-full bg-primary/10 p-3"><BookOpen className="h-6 w-6 text-primary" /></div><p className="text-xl font-semibold leading-relaxed text-foreground">{currentCard.front}</p><p className="mt-6 text-xs text-muted-foreground">Click to reveal answer</p></div>
+          ) : (
+            <div className="flex min-h-[320px] flex-col p-8"><p className="mb-4 text-sm font-semibold text-primary">{currentCard.front}</p><div className="flex-1"><p className="whitespace-pre-line text-sm leading-relaxed text-muted-foreground">{currentCard.back}</p></div></div>
+          )}
+        </div>
+        {isFlipped && (<div className="mt-6"><p className="mb-3 text-center text-sm font-medium text-muted-foreground">How well did you know this?</p><div className="grid grid-cols-4 gap-3">{QUALITY_BUTTONS.map((btn) => (<button key={btn.quality} onClick={() => handleRate(btn.quality)} className={cn("flex flex-col items-center gap-1 rounded-xl border px-3 py-3 text-sm font-semibold transition-all", QUALITY_COLORS[btn.color])}><span>{btn.label}</span><span className="text-[10px] font-normal opacity-70">{formatInterval(intervals[btn.quality])}</span></button>))}</div></div>)}
+        <div className="mt-6 flex items-center justify-between">
+          <Button variant="ghost" size="sm" onClick={() => { if (currentCardIndex > 0) { setCurrentCardIndex((i) => i - 1); setIsFlipped(false); } }} disabled={currentCardIndex === 0}><ChevronLeft className="mr-1 h-4 w-4" />Previous</Button>
+          <span className="text-sm text-muted-foreground">{currentCardIndex + 1} / {studyQueue.length}</span>
+          <Button variant="ghost" size="sm" onClick={() => { if (currentCardIndex < studyQueue.length - 1) { setCurrentCardIndex((i) => i + 1); setIsFlipped(false); } }} disabled={currentCardIndex >= studyQueue.length - 1}>Skip<ChevronRight className="ml-1 h-4 w-4" /></Button>
+        </div>
+      </div>
+    </>);
   }
 
-  return (
-    <>
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-          Quote Flashcards
-        </h1>
-        <p className="mt-3 max-w-3xl text-lg text-muted-foreground leading-relaxed">
-          Pre-made flashcard sets for key GCSE Literature texts. Click any card to reveal the analysis,
-          and mark quotes as mastered to track your progress.
-        </p>
-      </div>
-
-      {/* Text selector */}
-      <div className="mb-6 flex flex-wrap gap-2">
-        {FLASHCARD_SETS.map((set) => (
-          <button
-            key={set.slug}
-            onClick={() => {
-              setActiveSet(set.slug);
-              setRevealed(new Set());
-            }}
-            className={`rounded-lg px-4 py-2 text-sm font-semibold transition-colors ${
-              activeSet === set.slug
-                ? "bg-primary text-white"
-                : "bg-card text-muted-foreground hover:bg-muted border border-border"
-            }`}
-          >
-            {set.title}
-          </button>
-        ))}
-      </div>
-
-      {/* Controls bar */}
-      <div className="mb-6 flex flex-wrap items-center gap-3">
-        <button
-          onClick={handleShuffle}
-          className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-card px-3 py-2 text-sm font-medium text-muted-foreground transition hover:bg-muted"
-        >
-          <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 00-3.7-3.7 48.678 48.678 0 00-7.324 0 4.006 4.006 0 00-3.7 3.7c-.017.22-.032.441-.046.662M19.5 12l3-3m-3 3l-3-3m-12 3c0 1.232.046 2.453.138 3.662a4.006 4.006 0 003.7 3.7 48.656 48.656 0 007.324 0 4.006 4.006 0 003.7-3.7c.017-.22.032-.441.046-.662M4.5 12l3 3m-3-3l-3 3" />
-          </svg>
-          Shuffle
-        </button>
-        <button
-          onClick={revealAll}
-          className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-card px-3 py-2 text-sm font-medium text-muted-foreground transition hover:bg-muted"
-        >
-          Reveal All
-        </button>
-        <button
-          onClick={hideAll}
-          className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-card px-3 py-2 text-sm font-medium text-muted-foreground transition hover:bg-muted"
-        >
-          Hide All
-        </button>
-
-        <div className="h-5 w-px bg-border" />
-
-        <label className="flex cursor-pointer items-center gap-2 text-sm text-muted-foreground">
-          <input
-            type="checkbox"
-            checked={testMode}
-            onChange={(e) => setTestMode(e.target.checked)}
-            className="h-4 w-4 rounded border-border text-primary focus:ring-primary/30"
-          />
-          <span id="test-mode" className="font-medium">Test mode</span>
-          <span className="text-muted-foreground">(hide mastered)</span>
-        </label>
-
-        {/* Progress */}
-        <div className="ml-auto flex items-center gap-2">
-          <span className="text-sm text-muted-foreground">
-            {masteredInSet} / {currentSet.cards.length} mastered
-          </span>
-          <div className="h-2 w-24 overflow-hidden rounded-full bg-muted">
-            <div
-              className="h-full rounded-full bg-gradient-to-r from-primary to-emerald-400 transition-all duration-500"
-              style={{ width: `${progressPct}%` }}
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* Cards grid */}
-      {displayCards.length === 0 ? (
-        <div className="rounded-xl border-2 border-dashed border-border bg-card p-12 text-center">
-          <svg className="mx-auto h-12 w-12 text-emerald-400" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-          <p className="mt-3 text-lg font-semibold text-foreground">All quotes mastered!</p>
-          <p className="mt-1 text-sm text-muted-foreground">
-            Turn off test mode or switch to another text to keep revising.
-          </p>
-        </div>
-      ) : (
-        <div className="grid gap-4 sm:grid-cols-2">
-          {displayCards.map((card) => {
-            const isRevealed = revealed.has(card.id);
-            const isMastered = mastered.has(card.id);
-            return (
-              <div
-                key={card.id}
-                className={`group relative overflow-hidden rounded-xl border bg-card shadow-md transition-all ${
-                  isMastered ? "border-emerald-500/30 bg-emerald-500/10" : "border-border hover:shadow-md"
-                }`}
-              >
-                {/* Quote (always visible) */}
-                <button
-                  onClick={() => toggleReveal(card.id)}
-                  className="w-full text-left"
-                >
-                  <div className={`bg-gradient-to-br ${currentSet.colour} px-5 py-4 text-white`}>
-                    <p className="text-sm font-semibold italic leading-relaxed">
-                      &ldquo;{card.quote}&rdquo;
-                    </p>
-                    {(card.character || card.act) && (
-                      <p className="mt-1.5 text-xs text-muted-foreground">
-                        {[card.character, card.act].filter(Boolean).join(" -- ")}
-                      </p>
-                    )}
-                    <p className="mt-2 text-[10px] uppercase tracking-wider text-white/50">
-                      {isRevealed ? "Click to hide analysis" : "Click to reveal analysis"}
-                    </p>
-                  </div>
-                </button>
-
-                {/* Analysis (revealed) */}
-                {isRevealed && (
-                  <div className="border-t border-border px-5 py-4">
-                    <p className="text-sm leading-relaxed text-muted-foreground">{card.analysis}</p>
-                    <div className="mt-3 flex flex-wrap gap-1.5">
-                      {card.themes.map((theme) => (
-                        <span
-                          key={theme}
-                          className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary"
-                        >
-                          {theme}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {/* Mastered toggle */}
-                <div className="border-t border-border px-5 py-2.5">
-                  <button
-                    onClick={() => toggleMastered(card.id)}
-                    className={`inline-flex items-center gap-1.5 text-xs font-semibold transition-colors ${
-                      isMastered
-                        ? "text-emerald-600 hover:text-emerald-700 dark:text-emerald-300"
-                        : "text-muted-foreground hover:text-primary"
-                    }`}
-                  >
-                    <svg
-                      className="h-4 w-4"
-                      fill={isMastered ? "currentColor" : "none"}
-                      viewBox="0 0 24 24"
-                      strokeWidth={2}
-                      stroke="currentColor"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    {isMastered ? "Mastered" : "Mark as mastered"}
-                  </button>
-                </div>
+  /* BROWSE MODE */
+  return (<>
+    <div className="mb-8"><h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Flashcards</h1><p className="mt-3 max-w-3xl text-lg text-muted-foreground leading-relaxed">Master key quotes, techniques, vocabulary and exam skills with spaced repetition. Cards you find difficult appear more often. Track your progress toward GCSE mastery.</p></div>
+    {/* Stats dashboard */}
+    <div className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="rounded-xl border border-border bg-card p-4 shadow-sm"><div className="flex items-center gap-3"><div className={cn("rounded-lg p-2", gcseGradeBg(overallStats.grade))}><GraduationCap className={cn("h-5 w-5", gcseGradeColor(overallStats.grade))} /></div><div><p className="text-xs text-muted-foreground">Overall grade</p><p className={cn("text-lg font-bold", gcseGradeColor(overallStats.grade))}>{percentageToGCSEGradeLabel(overallStats.mastery)}</p></div></div><div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-muted"><div className="h-full rounded-full bg-gradient-to-r from-primary to-emerald-400 transition-all duration-700" style={{ width: `${overallStats.mastery}%` }} /></div><p className="mt-1.5 text-xs text-muted-foreground">{overallStats.mastered} of {overallStats.totalCards} cards mastered ({overallStats.mastery}%)</p></div>
+      <div className="rounded-xl border border-border bg-card p-4 shadow-sm"><div className="flex items-center gap-3"><div className="rounded-lg bg-amber-500/10 p-2"><Clock className="h-5 w-5 text-amber-400" /></div><div><p className="text-xs text-muted-foreground">Due for review</p><p className="text-lg font-bold text-foreground">{overallStats.due}</p></div></div><p className="mt-3 text-xs text-muted-foreground">Cards that need reviewing today</p></div>
+      <div className="rounded-xl border border-border bg-card p-4 shadow-sm"><div className="flex items-center gap-3"><div className="rounded-lg bg-blue-500/10 p-2"><BarChart3 className="h-5 w-5 text-blue-400" /></div><div><p className="text-xs text-muted-foreground">Reviewed today</p><p className="text-lg font-bold text-foreground">{todayReviewed}</p></div></div><p className="mt-3 text-xs text-muted-foreground">{todayAccuracy > 0 ? `${todayAccuracy}% accuracy today` : "Start studying to track accuracy"}</p></div>
+      <div className="rounded-xl border border-border bg-card p-4 shadow-sm"><div className="flex items-center gap-3"><div className="rounded-lg bg-orange-500/10 p-2"><Flame className="h-5 w-5 text-orange-400" /></div><div><p className="text-xs text-muted-foreground">Study streak</p><p className="text-lg font-bold text-foreground">{store.streak} day{store.streak !== 1 ? "s" : ""}</p></div></div><p className="mt-3 text-xs text-muted-foreground">{overallAccuracy > 0 ? `${overallAccuracy}% lifetime accuracy` : "Keep studying daily"}</p></div>
+    </div>
+    {/* Category filter */}
+    <div className="mb-6 flex flex-wrap gap-2">
+      <button onClick={() => { setSelectedCategory("all"); setSelectedDeckId(null); }} className={cn("rounded-lg px-4 py-2 text-sm font-semibold transition-colors", selectedCategory === "all" ? "bg-primary text-white" : "bg-card text-muted-foreground hover:bg-muted border border-border")}>All decks ({allDecks.length})</button>
+      {Array.from(categories.entries()).map(([cat, decks]) => { const Icon = CATEGORY_ICONS[cat] || BookOpen; return (<button key={cat} onClick={() => { setSelectedCategory(cat); setSelectedDeckId(null); }} className={cn("inline-flex items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-semibold transition-colors", selectedCategory === cat ? "bg-primary text-white" : "bg-card text-muted-foreground hover:bg-muted border border-border")}><Icon className="h-3.5 w-3.5" />{cat} ({decks.length})</button>); })}
+    </div>
+    {selectedDeck ? (
+      <DeckDetail deck={selectedDeck} stats={getDeckStats(selectedDeck)} reviewStates={store.reviewStates} onBack={() => setSelectedDeckId(null)} onStudy={(mode) => startStudy(selectedDeck, mode)} onReset={() => handleResetDeck(selectedDeck)} />
+    ) : (
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {filteredDecks.map((deck) => { const stats = getDeckStats(deck); const Icon = CATEGORY_ICONS[getDeckCategory(deck)] || BookOpen; return (
+          <button key={deck.id} onClick={() => setSelectedDeckId(deck.id)} className="group relative flex flex-col overflow-hidden rounded-xl border border-border bg-card text-left shadow-sm transition-all hover:shadow-md hover:border-primary/30">
+            <div className="h-1 w-full bg-muted"><div className="h-full bg-gradient-to-r from-primary to-emerald-400 transition-all duration-500" style={{ width: `${stats.mastery}%` }} /></div>
+            <div className="flex flex-1 flex-col p-5">
+              <div className="mb-3 flex items-center justify-between"><Badge variant="secondary" className="gap-1"><Icon className="h-3 w-3" />{getDeckCategory(deck)}</Badge><span className={cn("text-xs font-bold", gcseGradeColor(stats.grade))}>{percentageToGCSEGradeLabel(stats.mastery)}</span></div>
+              <h3 className="text-sm font-bold text-foreground leading-snug">{deck.title}</h3>
+              <p className="mt-1 text-xs text-muted-foreground line-clamp-2">{deck.description}</p>
+              <div className="mt-auto flex items-center gap-3 pt-4 text-xs text-muted-foreground">
+                <span className="flex items-center gap-1"><Layers className="h-3 w-3" />{deck.cards.length} cards</span>
+                {stats.due > 0 && <span className="flex items-center gap-1 text-amber-400"><Clock className="h-3 w-3" />{stats.due} due</span>}
+                {stats.difficult > 0 && <span className="flex items-center gap-1 text-red-400"><Flame className="h-3 w-3" />{stats.difficult} hard</span>}
+                {stats.mastery === 100 && <span className="flex items-center gap-1 text-emerald-400"><Trophy className="h-3 w-3" />Complete</span>}
               </div>
-            );
-          })}
-        </div>
-      )}
-
-      {/* Study tip */}
-      <div className="mt-10 rounded-xl border border-primary/20 bg-primary/[0.04] p-6">
-        <h3 className="text-lg font-bold text-foreground">Flashcard revision tips</h3>
-        <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-          <li className="flex items-start gap-2">
-            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-            <span><strong>Test, do not just read.</strong> Try to recall the analysis before clicking to reveal it.</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-            <span><strong>Link quotes to themes.</strong> For each quote, practise explaining how it connects to at least two themes.</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-            <span><strong>Use the shuffle feature.</strong> Randomising the order prevents you from relying on sequential memory.</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-            <span><strong>Revisit mastered quotes.</strong> Turn off test mode periodically to make sure you still remember everything.</span>
-          </li>
-        </ul>
+            </div>
+          </button>); })}
       </div>
-    </>
-  );
+    )}
+    <div className="mt-10 rounded-xl border border-primary/20 bg-primary/[0.04] p-6">
+      <div className="flex items-start justify-between gap-4 flex-wrap">
+        <div><h3 className="text-lg font-bold text-foreground">Looking for more revision tools?</h3><p className="mt-2 text-sm text-muted-foreground">Visit the full revision hub for poetry analysis, set text guides, exam technique, and more.</p></div>
+        <Button variant="outline" size="sm" render={<Link href="/revision/flashcards" />}>Revision flashcards<ArrowRight className="ml-1 h-4 w-4" /></Button>
+      </div>
+    </div>
+    <div className="mt-6 rounded-xl border border-border bg-card p-6">
+      <h3 className="text-lg font-bold text-foreground">How spaced repetition works</h3>
+      <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
+        <li className="flex items-start gap-2"><span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" /><span><strong>Cards adapt to you.</strong> Rate each card after revealing the answer. Cards you find hard will appear more often.</span></li>
+        <li className="flex items-start gap-2"><span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" /><span><strong>Study daily for best results.</strong> Short, regular sessions beat marathon cramming. Aim for 10-20 cards per day.</span></li>
+        <li className="flex items-start gap-2"><span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" /><span><strong>Mastery takes time.</strong> A card is &quot;mastered&quot; after you recall it correctly over 3+ weeks.</span></li>
+        <li className="flex items-start gap-2"><span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" /><span><strong>Use Difficult mode</strong> to focus on cards you struggle with. These have the lowest easiness factor.</span></li>
+      </ul>
+    </div>
+  </>);
+}
+
+/* --- DeckDetail sub-component ---------------------------------- */
+
+function DeckDetail({ deck, stats, reviewStates, onBack, onStudy, onReset }: { deck: FlashcardDeck; stats: { mastery: number; due: number; newCount: number; grade: number; difficult: number }; reviewStates: Record<string, CardReviewState>; onBack: () => void; onStudy: (mode: StudyMode) => void; onReset: () => void; }) {
+  const [showAllCards, setShowAllCards] = useState(false);
+  return (<div>
+    <button onClick={onBack} className="mb-4 inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"><ChevronLeft className="h-4 w-4" />Back to all decks</button>
+    <div className="mb-6 rounded-xl border border-border bg-card p-6 shadow-sm">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+        <div><Badge variant="secondary" className="mb-2">{getDeckCategory(deck)}</Badge><h2 className="text-2xl font-bold text-foreground">{deck.title}</h2><p className="mt-1 text-sm text-muted-foreground">{deck.description}</p></div>
+        <div className="flex flex-col items-end gap-1"><span className={cn("text-2xl font-bold", gcseGradeColor(stats.grade))}>{percentageToGCSEGradeLabel(stats.mastery)}</span><span className="text-xs text-muted-foreground">{stats.mastery}% mastered</span></div>
+      </div>
+      <div className="mt-4 h-2 w-full overflow-hidden rounded-full bg-muted"><div className="h-full rounded-full bg-gradient-to-r from-primary to-emerald-400 transition-all duration-700" style={{ width: `${stats.mastery}%` }} /></div>
+      <div className="mt-4 flex flex-wrap gap-4 text-sm">
+        <span className="flex items-center gap-1.5 text-muted-foreground"><Layers className="h-4 w-4" />{deck.cards.length} total cards</span>
+        <span className="flex items-center gap-1.5 text-amber-400"><Clock className="h-4 w-4" />{stats.due} due</span>
+        <span className="flex items-center gap-1.5 text-blue-400"><Star className="h-4 w-4" />{stats.newCount} new</span>
+        {stats.difficult > 0 && <span className="flex items-center gap-1.5 text-red-400"><Flame className="h-4 w-4" />{stats.difficult} difficult</span>}
+      </div>
+      <div className="mt-5 flex flex-wrap gap-3">
+        <Button onClick={() => onStudy("study")}><BookOpen className="mr-1.5 h-4 w-4" />Study ({stats.due > 0 ? `${stats.due} due` : `${Math.min(10, stats.newCount)} new`})</Button>
+        {stats.difficult > 0 && <Button variant="outline" onClick={() => onStudy("difficult")}><Flame className="mr-1.5 h-4 w-4" />Difficult cards ({stats.difficult})</Button>}
+        <Button variant="ghost" size="sm" onClick={onReset}><RotateCcw className="mr-1.5 h-4 w-4" />Reset progress</Button>
+      </div>
+    </div>
+    <div className="rounded-xl border border-border bg-card shadow-sm">
+      <div className="flex items-center justify-between border-b border-border px-5 py-3"><h3 className="text-sm font-bold text-foreground">All cards</h3><button onClick={() => setShowAllCards(!showAllCards)} className="text-xs font-medium text-primary hover:underline">{showAllCards ? "Collapse" : "Expand all"}</button></div>
+      <div className="divide-y divide-border">
+        {deck.cards.map((card) => { const state = reviewStates[card.id]; const isDifficult = state && state.easinessFactor < 2.0; const isMastered = state && state.interval >= 21; const isDue = state && new Date(state.nextReviewDate) <= new Date(); const isNew = !state; return (
+          <div key={card.id} className="px-5 py-3"><div className="flex items-start justify-between gap-3"><div className="min-w-0 flex-1"><p className="text-sm font-medium text-foreground">{card.front}</p>{showAllCards && <p className="mt-2 whitespace-pre-line text-xs leading-relaxed text-muted-foreground">{card.back}</p>}</div><div className="flex shrink-0 items-center gap-2">{isMastered && <CheckCircle2 className="h-4 w-4 text-emerald-400" />}{isDifficult && !isMastered && <Flame className="h-4 w-4 text-red-400" />}{isDue && !isMastered && !isDifficult && <Clock className="h-4 w-4 text-amber-400" />}{isNew && <Star className="h-4 w-4 text-blue-400" />}<span className="w-16 text-right text-[10px] text-muted-foreground">{formatNextReview(state)}</span></div></div></div>); })}
+      </div>
+    </div>
+  </div>);
 }

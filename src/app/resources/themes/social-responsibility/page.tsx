@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 
 /* ─── Metadata ───────────────────────────────────────────────── */
 
@@ -44,8 +43,8 @@ const TEXTS = [
     title: "A Christmas Carol",
     subtitle: "Social Responsibility and Victorian Poverty",
     author: "Charles Dickens",
-    colour: "border-[#27AE60]",
-    tagColour: "bg-[#27AE60]/10 text-[#27AE60]",
+    colour: "border-primary",
+    tagColour: "bg-primary/10 text-primary",
     analysis: [
       "Dickens wrote the novella as a direct response to the conditions exposed in government reports on child labour and urban poverty in the 1840s.",
       "Scrooge's transformation from miserly isolation to generous community member embodies Dickens' argument that the wealthy have a moral duty to help the poor.",
@@ -266,7 +265,6 @@ export default function SocialResponsibilityThemePage() {
         </div>
       </section>
 
-      <ExamBoardDisclaimer />
     </>
   );
 }

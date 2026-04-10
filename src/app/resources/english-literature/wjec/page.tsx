@@ -20,7 +20,6 @@ const COMPONENTS = [
       "Section A: Shakespeare — one play studied in depth with an extract-based essay question. Section B: Poetry — two poems from the WJEC anthology compared in a single essay.",
     marks: "80 marks — 40% of GCSE",
     duration: "2 hours",
-    colour: "bg-primary",
   },
   {
     title: "Component 2: Post-1914 Prose/Drama, 19th Century Prose & Unseen Poetry",
@@ -28,7 +27,6 @@ const COMPONENTS = [
       "Section A: Post-1914 prose or drama (extract-based and essay). Section B: 19th-century prose (extract-based and essay). Section C: Unseen poetry — one analysis and one comparison.",
     marks: "80 marks — 60% of GCSE",
     duration: "2 hours 30 minutes",
-    colour: "bg-primary",
   },
 ];
 
@@ -106,7 +104,7 @@ export default function WJECEnglishLiteraturePage() {
             >
               <div className="flex items-center gap-3">
                 <div
-                  className={`inline-block rounded-full ${comp.colour} px-3 py-1 text-xs font-semibold text-white`}
+                  className="inline-block rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground"
                 >
                   {comp.marks}
                 </div>
@@ -283,7 +281,7 @@ export default function WJECEnglishLiteraturePage() {
                 key={obj.ao}
                 className="rounded-lg border border-border bg-card p-5"
               >
-                <span className="inline-block rounded bg-primary px-2 py-0.5 text-xs font-bold text-white">
+                <span className="inline-block rounded bg-primary px-2 py-0.5 text-xs font-bold text-primary-foreground">
                   {obj.ao}
                 </span>
                 <p className="mt-2 text-sm text-muted-foreground">{obj.desc}</p>
@@ -293,61 +291,47 @@ export default function WJECEnglishLiteraturePage() {
         </div>
       </section>
 
-      {/* ── Key differences from AQA/Edexcel ──────────────────── */}
+      {/* ── Key features ─────────────────────────────────────── */}
       <section className="bg-muted px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-2xl font-bold text-foreground">
-            How WJEC Eduqas Differs from AQA &amp; Edexcel
+            Key features of the WJEC Eduqas exam
           </h2>
           <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
-            <div className="rounded-lg border-l-4 border-primary bg-blue-500/10 p-4">
-              <h3 className="font-semibold text-foreground">Poetry anthology is compared, not contrasted with unseen</h3>
+            <div className="rounded-lg border-l-4 border-primary bg-primary/5 p-4">
+              <h3 className="font-semibold text-foreground">Both anthology poems are printed</h3>
               <p className="mt-1 text-sm">
                 WJEC Eduqas prints both anthology poems on the paper and asks you to
-                compare them in a single essay. AQA names one poem and asks you to choose
-                a second to compare. Edexcel names one and asks for comparison with another
-                from the cluster. The WJEC approach removes the need to memorise which poem
-                to choose.
+                compare them in a single essay. This removes the need to memorise which
+                poem to choose, but you must be ready to compare any pairing.
               </p>
             </div>
-            <div className="rounded-lg border-l-4 border-primary bg-blue-500/10 p-4">
+            <div className="rounded-lg border-l-4 border-primary bg-primary/5 p-4">
               <h3 className="font-semibold text-foreground">
                 Unseen poetry carries heavy weight
               </h3>
               <p className="mt-1 text-sm">
                 Section C of Component 2 is worth 40 marks (half of the paper, 25% of the
-                total GCSE). This is significantly more than AQA (32 marks across the whole
-                of Paper 2) or Edexcel. Strong unseen poetry skills are essential.
+                total GCSE). Strong unseen poetry skills are essential for a high grade.
               </p>
             </div>
-            <div className="rounded-lg border-l-4 border-primary bg-blue-500/10 p-4">
+            <div className="rounded-lg border-l-4 border-primary bg-primary/5 p-4">
               <h3 className="font-semibold text-foreground">
                 Extract provided for Shakespeare
               </h3>
               <p className="mt-1 text-sm">
-                Like AQA, WJEC Eduqas provides a Shakespeare extract on the paper. Edexcel
-                does not. However, the WJEC question is two-part: part (i) focuses on the
-                extract and part (ii) requires discussion of the whole play.
+                WJEC Eduqas provides a Shakespeare extract on the paper. The question is
+                two-part: part (i) focuses on the extract and part (ii) requires discussion
+                of the whole play.
               </p>
             </div>
-            <div className="rounded-lg border-l-4 border-primary bg-blue-500/10 p-4">
+            <div className="rounded-lg border-l-4 border-primary bg-primary/5 p-4">
               <h3 className="font-semibold text-foreground">
                 40/60 weighting between components
               </h3>
               <p className="mt-1 text-sm">
                 Component 2 (Post-1914, 19th century, and unseen poetry) is worth 60% of
-                the GCSE, making it the more heavily weighted paper. AQA splits 50/50 between
-                its two papers.
-              </p>
-            </div>
-            <div className="rounded-lg border-l-4 border-primary bg-blue-500/10 p-4">
-              <h3 className="font-semibold text-foreground">
-                Different text options
-              </h3>
-              <p className="mt-1 text-sm">
-                WJEC Eduqas offers some unique text choices such as The History Boys,
-                About a Boy, and The War of the Worlds that are not available on AQA or
-                Edexcel specifications.
+                the GCSE, making it the more heavily weighted paper.
               </p>
             </div>
           </div>

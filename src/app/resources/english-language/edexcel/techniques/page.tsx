@@ -331,13 +331,9 @@ export default function TechniquesPage() {
       {/* ── Hero ──────────────────────────────────────────────────── */}
       <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
-          <Link
-            href="/resources/english-language/edexcel"
-            className="mb-4 inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
-          >
-            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
-            Back to Edexcel Hub
-          </Link>
+          <p className="text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-2">
+            GCSE English Language
+          </p>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Language &amp; Structural Techniques
           </h1>
@@ -511,6 +507,50 @@ export default function TechniquesPage() {
                   <strong>Ignoring structure:</strong> Many students only discuss language. Structural analysis (focus shifts, paragraph lengths, openings/endings) can set your response apart.
                 </li>
               </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Continue studying */}
+      <section className="px-4 pb-12">
+        <div className="mx-auto max-w-4xl">
+          <div className="rounded-xl border border-primary/20 bg-primary/5 p-6 sm:p-8">
+            <h2 className="text-xl font-bold text-foreground">Continue studying</h2>
+            <p className="mt-2 text-muted-foreground">
+              Put these techniques into practice with reading analysis and writing exercises.
+            </p>
+            <div className="mt-4 flex flex-wrap gap-3">
+              <Link
+                href="/resources/english-language/edexcel/paper-1"
+                className="rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary hover:shadow-md"
+              >
+                Paper 1: Fiction &amp; Imaginative Writing
+              </Link>
+              <Link
+                href="/resources/english-language/edexcel/paper-2"
+                className="rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary hover:shadow-md"
+              >
+                Paper 2: Non-Fiction &amp; Transactional Writing
+              </Link>
+              <Link
+                href="/resources/writing-skills"
+                className="rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary hover:shadow-md"
+              >
+                Writing Skills
+              </Link>
+              <Link
+                href="/practice"
+                className="rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary hover:shadow-md"
+              >
+                Practice Questions
+              </Link>
+              <Link
+                href="/revision"
+                className="rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary hover:shadow-md"
+              >
+                Revision Hub
+              </Link>
             </div>
           </div>
         </div>

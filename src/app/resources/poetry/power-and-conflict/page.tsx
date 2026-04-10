@@ -11,12 +11,14 @@ function Section({
   id,
   title,
   poet,
+  studyHref,
   children,
   defaultOpen = false,
 }: {
   id: string;
   title: string;
   poet: string;
+  studyHref?: string;
   children: React.ReactNode;
   defaultOpen?: boolean;
 }) {
@@ -49,6 +51,19 @@ function Section({
       {open && (
         <div id={`section-${id}`} className="border-t border-border px-5 py-5 space-y-6">
           {children}
+          {studyHref && (
+            <div className="pt-2">
+              <Link
+                href={studyHref}
+                className="inline-flex items-center gap-2 rounded-lg bg-primary/10 px-4 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-primary/20"
+              >
+                Study this poem in depth
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                </svg>
+              </Link>
+            </div>
+          )}
         </div>
       )}
     </div>
@@ -187,18 +202,17 @@ export default function PowerAndConflictPage() {
       <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-            AQA GCSE English Literature &middot; Poetry Anthology
+            GCSE English Literature &middot; Poetry Anthology
           </p>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Power and Conflict
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Complete analysis of all 15 poems in the AQA Power and Conflict cluster. Key quotations, techniques, themes, context, and comparison guidance for every poem.
+            Complete analysis of all 15 poems in the Power and Conflict cluster. Key quotations, techniques, themes, context, and comparison guidance for every poem.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <span className="rounded-full bg-card/15 px-3 py-1 text-sm font-medium">15 Poems</span>
-            <span className="rounded-full bg-card/15 px-3 py-1 text-sm font-medium">60+ Key Quotes</span>
-            <span className="rounded-full bg-card/15 px-3 py-1 text-sm font-medium">AQA Paper 2</span>
+            <span className="rounded-full bg-muted px-3 py-1 text-sm font-medium text-muted-foreground">15 Poems</span>
+            <span className="rounded-full bg-muted px-3 py-1 text-sm font-medium text-muted-foreground">60+ Key Quotes</span>
           </div>
         </div>
       </section>
@@ -331,7 +345,7 @@ export default function PowerAndConflictPage() {
 
           {/* ───────────────────── 1. Ozymandias ───────────────────── */}
           <div id="ozymandias" style={{ display: visiblePoemIds.has("ozymandias") ? undefined : "none" }}>
-            <Section id="ozymandias" title="Ozymandias" poet="Percy Bysshe Shelley (1818)" defaultOpen>
+            <Section id="ozymandias" title="Ozymandias" poet="Percy Bysshe Shelley (1818)" studyHref="/revision/poetry/power-and-conflict/ozymandias" defaultOpen>
 
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -397,7 +411,7 @@ export default function PowerAndConflictPage() {
 
           {/* ───────────────────── 2. London ───────────────────── */}
           <div id="london" style={{ display: visiblePoemIds.has("london") ? undefined : "none" }}>
-            <Section id="london" title="London" poet="William Blake (1794)">
+            <Section id="london" title="London" poet="William Blake (1794)" studyHref="/revision/poetry/power-and-conflict/london">
 
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -463,7 +477,7 @@ export default function PowerAndConflictPage() {
 
           {/* ───────────────────── 3. Extract from The Prelude ───────────────────── */}
           <div id="the-prelude" style={{ display: visiblePoemIds.has("the-prelude") ? undefined : "none" }}>
-            <Section id="the-prelude" title="Extract from The Prelude" poet="William Wordsworth (1850)">
+            <Section id="the-prelude" title="Extract from The Prelude" poet="William Wordsworth (1850)" studyHref="/revision/poetry/power-and-conflict/the-prelude">
 
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -529,7 +543,7 @@ export default function PowerAndConflictPage() {
 
           {/* ───────────────────── 4. My Last Duchess ───────────────────── */}
           <div id="my-last-duchess" style={{ display: visiblePoemIds.has("my-last-duchess") ? undefined : "none" }}>
-            <Section id="my-last-duchess" title="My Last Duchess" poet="Robert Browning (1842)">
+            <Section id="my-last-duchess" title="My Last Duchess" poet="Robert Browning (1842)" studyHref="/revision/poetry/power-and-conflict/my-last-duchess">
 
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -590,7 +604,7 @@ export default function PowerAndConflictPage() {
 
           {/* ───────────────────── 5. The Charge of the Light Brigade ───────────────────── */}
           <div id="charge-of-the-light-brigade" style={{ display: visiblePoemIds.has("charge-of-the-light-brigade") ? undefined : "none" }}>
-            <Section id="charge-of-the-light-brigade" title="The Charge of the Light Brigade" poet="Alfred Lord Tennyson (1854)">
+            <Section id="charge-of-the-light-brigade" title="The Charge of the Light Brigade" poet="Alfred Lord Tennyson (1854)" studyHref="/revision/poetry/power-and-conflict/charge-of-the-light-brigade">
 
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -651,7 +665,7 @@ export default function PowerAndConflictPage() {
 
           {/* ───────────────────── 6. Exposure ───────────────────── */}
           <div id="exposure" style={{ display: visiblePoemIds.has("exposure") ? undefined : "none" }}>
-            <Section id="exposure" title="Exposure" poet="Wilfred Owen (1917)">
+            <Section id="exposure" title="Exposure" poet="Wilfred Owen (1917)" studyHref="/revision/poetry/power-and-conflict/exposure">
 
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -717,7 +731,7 @@ export default function PowerAndConflictPage() {
 
           {/* ───────────────────── 7. Storm on the Island ───────────────────── */}
           <div id="storm-on-the-island" style={{ display: visiblePoemIds.has("storm-on-the-island") ? undefined : "none" }}>
-            <Section id="storm-on-the-island" title="Storm on the Island" poet="Seamus Heaney (1966)">
+            <Section id="storm-on-the-island" title="Storm on the Island" poet="Seamus Heaney (1966)" studyHref="/revision/poetry/power-and-conflict/storm-on-the-island">
 
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -778,7 +792,7 @@ export default function PowerAndConflictPage() {
 
           {/* ───────────────────── 8. Bayonet Charge ───────────────────── */}
           <div id="bayonet-charge" style={{ display: visiblePoemIds.has("bayonet-charge") ? undefined : "none" }}>
-            <Section id="bayonet-charge" title="Bayonet Charge" poet="Ted Hughes (1957)">
+            <Section id="bayonet-charge" title="Bayonet Charge" poet="Ted Hughes (1957)" studyHref="/revision/poetry/power-and-conflict/bayonet-charge">
 
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -839,7 +853,7 @@ export default function PowerAndConflictPage() {
 
           {/* ───────────────────── 9. Remains ───────────────────── */}
           <div id="remains" style={{ display: visiblePoemIds.has("remains") ? undefined : "none" }}>
-            <Section id="remains" title="Remains" poet="Simon Armitage (2008)">
+            <Section id="remains" title="Remains" poet="Simon Armitage (2008)" studyHref="/revision/poetry/power-and-conflict/remains">
 
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -905,7 +919,7 @@ export default function PowerAndConflictPage() {
 
           {/* ───────────────────── 10. Poppies ───────────────────── */}
           <div id="poppies" style={{ display: visiblePoemIds.has("poppies") ? undefined : "none" }}>
-            <Section id="poppies" title="Poppies" poet="Jane Weir (2009)">
+            <Section id="poppies" title="Poppies" poet="Jane Weir (2009)" studyHref="/revision/poetry/power-and-conflict/poppies">
 
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -971,7 +985,7 @@ export default function PowerAndConflictPage() {
 
           {/* ───────────────────── 11. War Photographer ───────────────────── */}
           <div id="war-photographer" style={{ display: visiblePoemIds.has("war-photographer") ? undefined : "none" }}>
-            <Section id="war-photographer" title="War Photographer" poet="Carol Ann Duffy (1985)">
+            <Section id="war-photographer" title="War Photographer" poet="Carol Ann Duffy (1985)" studyHref="/revision/poetry/power-and-conflict/war-photographer">
 
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -1037,7 +1051,7 @@ export default function PowerAndConflictPage() {
 
           {/* ───────────────────── 12. Tissue ───────────────────── */}
           <div id="tissue" style={{ display: visiblePoemIds.has("tissue") ? undefined : "none" }}>
-            <Section id="tissue" title="Tissue" poet="Imtiaz Dharker (2006)">
+            <Section id="tissue" title="Tissue" poet="Imtiaz Dharker (2006)" studyHref="/revision/poetry/power-and-conflict/tissue">
 
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -1098,7 +1112,7 @@ export default function PowerAndConflictPage() {
 
           {/* ───────────────────── 13. The Emigree ───────────────────── */}
           <div id="the-emigree" style={{ display: visiblePoemIds.has("the-emigree") ? undefined : "none" }}>
-            <Section id="the-emigree" title="The Emigree" poet="Carol Rumens (1993)">
+            <Section id="the-emigree" title="The Emigree" poet="Carol Rumens (1993)" studyHref="/revision/poetry/power-and-conflict/the-emigree">
 
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -1164,7 +1178,7 @@ export default function PowerAndConflictPage() {
 
           {/* ───────────────────── 14. Checking Out Me History ───────────────────── */}
           <div id="checking-out-me-history" style={{ display: visiblePoemIds.has("checking-out-me-history") ? undefined : "none" }}>
-            <Section id="checking-out-me-history" title="Checking Out Me History" poet="John Agard (1996)">
+            <Section id="checking-out-me-history" title="Checking Out Me History" poet="John Agard (1996)" studyHref="/revision/poetry/power-and-conflict/checking-out-me-history">
 
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -1225,7 +1239,7 @@ export default function PowerAndConflictPage() {
 
           {/* ───────────────────── 15. Kamikaze ───────────────────── */}
           <div id="kamikaze" style={{ display: visiblePoemIds.has("kamikaze") ? undefined : "none" }}>
-            <Section id="kamikaze" title="Kamikaze" poet="Beatrice Garland (2013)">
+            <Section id="kamikaze" title="Kamikaze" poet="Beatrice Garland (2013)" studyHref="/revision/poetry/power-and-conflict/kamikaze">
 
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">

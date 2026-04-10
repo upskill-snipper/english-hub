@@ -200,7 +200,7 @@ function ArrowRight() {
 
 function CheckIcon() {
   return (
-    <svg className="h-5 w-5 flex-shrink-0 text-[#27AE60]" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+    <svg className="h-5 w-5 flex-shrink-0 text-emerald-600" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
       <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
     </svg>
   );
@@ -233,7 +233,7 @@ export default function Grade5Page() {
             Grade Targets
           </Link>
           <div className="mt-4 flex items-center justify-center gap-3">
-            <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#27AE60] text-2xl font-bold text-white shadow-lg">
+            <span className="flex h-14 w-14 items-center justify-center rounded-full bg-emerald-600 text-2xl font-bold text-white shadow-lg">
               5
             </span>
             <div className="text-left">
@@ -298,7 +298,7 @@ export default function Grade5Page() {
 
           {["Reading", "Writing", "Literature"].map((category) => (
             <div key={category} className="mt-6">
-              <h3 className="text-sm font-semibold uppercase tracking-wide text-[#27AE60]">
+              <h3 className="text-sm font-semibold uppercase tracking-wide text-emerald-600">
                 {category}
               </h3>
               <div className="mt-2 space-y-2">
@@ -306,11 +306,11 @@ export default function Grade5Page() {
                   (item) => (
                     <label
                       key={item.skill}
-                      className="flex cursor-pointer items-center gap-3 rounded-lg border border-border bg-card p-3 transition hover:border-[#27AE60]/40"
+                      className="flex cursor-pointer items-center gap-3 rounded-lg border border-border bg-card p-3 transition hover:border-emerald-600/40"
                     >
                       <input
                         type="checkbox"
-                        className="h-4 w-4 rounded border-border text-[#27AE60] focus:ring-[#27AE60]"
+                        className="h-4 w-4 rounded border-border text-emerald-600 focus:ring-emerald-600"
                       />
                       <span className="text-sm text-muted-foreground">{item.skill}</span>
                     </label>
@@ -343,7 +343,7 @@ export default function Grade5Page() {
                 <div>
                   <h3 className="font-semibold text-foreground">{item.weakness}</h3>
                   <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                    <span className="font-medium text-[#27AE60]">Fix: </span>
+                    <span className="font-medium text-emerald-600">Fix: </span>
                     {item.fix}
                   </p>
                 </div>
@@ -354,7 +354,7 @@ export default function Grade5Page() {
       </section>
 
       {/* How to improve from 4 to 5 */}
-      <section className="bg-gradient-to-br from-[#27AE60]/5 to-[#27AE60]/10 px-4 py-12 sm:px-6 lg:px-8">
+      <section className="bg-gradient-to-br from-emerald-600/5 to-emerald-600/10 px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
           <h2 className="text-2xl font-bold text-foreground">
             How to move from Grade 4 to Grade 5
@@ -367,9 +367,9 @@ export default function Grade5Page() {
             {IMPROVEMENT_STEPS.map((item) => (
               <div
                 key={item.step}
-                className="rounded-xl border border-[#27AE60]/20 bg-card p-6 shadow-md"
+                className="rounded-xl border border-emerald-600/20 bg-card p-6 shadow-md"
               >
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#27AE60] text-sm font-bold text-white">
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-600 text-sm font-bold text-white">
                   {item.step}
                 </span>
                 <h3 className="mt-3 font-bold text-foreground">{item.title}</h3>
@@ -399,7 +399,7 @@ export default function Grade5Page() {
               className="overflow-hidden rounded-xl border border-border bg-card shadow-md"
             >
               <div className="border-b border-border bg-muted px-6 py-4">
-                <span className="rounded-full bg-[#27AE60]/10 px-3 py-1 text-xs font-semibold text-[#27AE60]">
+                <span className="rounded-full bg-emerald-600/10 px-3 py-1 text-xs font-semibold text-emerald-600">
                   {example.type}
                 </span>
                 <p className="mt-2 font-semibold text-foreground">
@@ -428,8 +428,8 @@ export default function Grade5Page() {
                 </div>
               </div>
 
-              <div className="border-t border-[#27AE60]/20 bg-[#27AE60]/5 px-6 py-4">
-                <h4 className="text-xs font-semibold uppercase tracking-wide text-[#27AE60]">
+              <div className="border-t border-emerald-600/20 bg-emerald-600/5 px-6 py-4">
+                <h4 className="text-xs font-semibold uppercase tracking-wide text-emerald-600">
                   Examiner Comment
                 </h4>
                 <p className="mt-1 text-sm leading-relaxed text-muted-foreground">

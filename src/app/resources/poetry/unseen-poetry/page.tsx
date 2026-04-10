@@ -372,29 +372,29 @@ export default function UnseenPoetryPage() {
               </p>
 
               <div className="grid gap-4 sm:grid-cols-2">
-                <div className="rounded-xl bg-primary p-5 text-white">
-                  <p className="text-xl font-bold mb-1">P -- Point</p>
+                <div className="rounded-xl border-2 border-primary bg-primary/5 p-5">
+                  <p className="text-xl font-bold text-primary mb-1">P -- Point</p>
                   <p className="text-sm text-muted-foreground">
                     Make a clear, concise statement about the poet&apos;s intent or the
                     poem&apos;s effect. This answers the question directly.
                   </p>
                 </div>
-                <div className="rounded-xl bg-primary/90 p-5 text-white">
-                  <p className="text-xl font-bold mb-1">E -- Evidence</p>
+                <div className="rounded-xl border-2 border-primary bg-primary/5 p-5">
+                  <p className="text-xl font-bold text-primary mb-1">E -- Evidence</p>
                   <p className="text-sm text-muted-foreground">
                     Embed a short, precise quotation from the poem. You do not need full
                     lines -- a key phrase or even a single word is often more effective.
                   </p>
                 </div>
-                <div className="rounded-xl bg-primary p-5 text-white">
-                  <p className="text-xl font-bold mb-1">E -- Explain</p>
+                <div className="rounded-xl border-2 border-primary bg-primary/5 p-5">
+                  <p className="text-xl font-bold text-primary mb-1">E -- Explain</p>
                   <p className="text-sm text-muted-foreground">
                     Explain <em>how</em> the language or technique works. Zoom in on
                     individual words, connotations, sound effects, and imagery.
                   </p>
                 </div>
-                <div className="rounded-xl bg-primary/80 p-5 text-white">
-                  <p className="text-xl font-bold mb-1">L -- Link</p>
+                <div className="rounded-xl border-2 border-primary bg-primary/5 p-5">
+                  <p className="text-xl font-bold text-primary mb-1">L -- Link</p>
                   <p className="text-sm text-muted-foreground">
                     Link back to the question, the poem&apos;s wider themes, or offer an
                     alternative interpretation. This is where you show depth.
@@ -506,7 +506,7 @@ export default function UnseenPoetryPage() {
               </p>
 
               <div className="mb-6 overflow-hidden rounded-xl border border-border">
-                <div className="grid grid-cols-2 text-sm font-bold bg-primary text-white">
+                <div className="grid grid-cols-2 text-sm font-bold bg-muted text-foreground">
                   <div className="px-4 py-3">Weak (Separate)</div>
                   <div className="px-4 py-3 border-l border-border">
                     Strong (Integrated)
@@ -920,7 +920,7 @@ export default function UnseenPoetryPage() {
               <div className="overflow-hidden rounded-xl border border-border">
                 <table className="w-full text-sm">
                   <thead>
-                    <tr className="bg-primary text-white text-left">
+                    <tr className="bg-muted text-foreground text-left">
                       <th className="px-4 py-3 font-semibold">Phase</th>
                       <th className="px-4 py-3 font-semibold">Time</th>
                       <th className="px-4 py-3 font-semibold">What to Do</th>

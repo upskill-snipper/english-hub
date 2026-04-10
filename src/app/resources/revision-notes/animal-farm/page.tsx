@@ -487,7 +487,7 @@ export default function AnimalFarmStudyGuide() {
 
       {/* Quick nav */}
       <nav className="flex flex-wrap gap-2 text-sm" aria-label="Page sections">
-        {["Chapter Summaries", "Characters", "Themes", "Key Quotes", "Seven Commandments", "Allegory", "Context", "Essay Planning"].map(
+        {["Chapter Summaries", "Characters", "Themes", "Key Quotes", "Seven Commandments", "Allegory", "Context", "Essay Planning", "Writer's Methods", "Grade 9 Points", "Exam Questions", "Practice Questions"].map(
           (s) => (
             <a
               key={s}
@@ -648,6 +648,137 @@ export default function AnimalFarmStudyGuide() {
                     <li key={j}>&bull; {p}</li>
                   ))}
                 </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Writer's Methods */}
+      <Section id="writers-methods" title="Writer&rsquo;s Methods &amp; Techniques">
+        <div className="space-y-4">
+          {[
+            {
+              method: "Allegory",
+              detail:
+                "The entire novel functions as an extended allegory for the Russian Revolution and the rise of Stalinism. Every character, event, and location has a historical parallel. This allows Orwell to make a complex political argument accessible to readers of all backgrounds. The allegorical form also gives the novel universality: while it maps onto Russian history specifically, its warnings about power, propaganda, and revolution apply to any political system.",
+            },
+            {
+              method: "The Fable Form",
+              detail:
+                "By using animals as characters, Orwell strips political corruption to its essentials. The simplicity of the fable form is deliberately deceptive: it makes the mechanisms of totalitarianism visible and comprehensible. Animals cannot argue back effectively, just as an uneducated populace cannot challenge propaganda. The form also creates dark irony: children's story conventions are used to tell a story of tyranny and murder.",
+            },
+            {
+              method: "Irony",
+              detail:
+                "Orwell uses dramatic irony throughout. The reader sees the pigs' hypocrisy before the animals do. Situational irony abounds: the revolution against human oppression produces animal oppression; Boxer's motto 'I will work harder' hastens his own exploitation; the animals work 'like slaves' after a revolution supposed to free them. Verbal irony appears in Squealer's speeches, where every word means the opposite of what it appears to say.",
+            },
+            {
+              method: "Gradual Alteration of the Commandments",
+              detail:
+                "The progressive rewriting of the Seven Commandments is Orwell's most effective structural device. Each alteration is small enough to seem reasonable in isolation ('No animal shall sleep in a bed with sheets'), but the cumulative effect is total corruption. This mirrors how totalitarian regimes erode rights incrementally. The animals' inability to remember the original wording reflects how populations lose track of their own history.",
+            },
+            {
+              method: "Circular Structure",
+              detail:
+                "The novel ends where it began: with tyranny on Manor Farm. The pigs become indistinguishable from the humans they replaced. This circular structure delivers Orwell's bleakest message: revolution, without structural safeguards against the concentration of power, merely replaces one ruling class with another. The cycle of oppression is unbroken.",
+            },
+            {
+              method: "Third-Person Omniscient Narration",
+              detail:
+                "Orwell uses a detached, matter-of-fact narrative voice that reports horrifying events without emotional commentary. The execution scene in Chapter 7 is described in plain, factual prose, making the violence more shocking by refusing to editorialise. This restrained style forces the reader to supply the moral judgement that the narrator withholds.",
+            },
+            {
+              method: "Symbolism",
+              detail:
+                "Key symbols include: the windmill (Stalin's Five-Year Plans and the exploitation of workers for abstract goals); the farmhouse (the privilege and corruption of the ruling class); the whip (oppression, first human, then porcine); Beasts of England (revolutionary idealism, abolished when it becomes dangerous). Each symbol gains power through repetition and transformation across the novel.",
+            },
+            {
+              method: "Characterisation Through Speech",
+              detail:
+                "Orwell differentiates characters through their language. Squealer speaks in rhetorical questions and false logic. Boxer speaks in simple slogans. Old Major speaks in Marxist rhetoric. The sheep bleat mindless slogans. Benjamin speaks in cynical aphorisms. Napoleon barely speaks at all, ruling through silence and surrogates. The pigs' increasing use of human language mirrors their increasing adoption of human behaviour.",
+            },
+          ].map((m) => (
+            <div key={m.method} className="rounded-lg border border-border bg-muted p-4">
+              <h3 className="font-semibold text-foreground">{m.method}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{m.detail}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Grade 9 Exemplar Points */}
+      <Section id="grade-9-points" title="Grade 9 Exemplar Points">
+        <p className="mb-4 text-sm text-muted-foreground">
+          These are the kinds of sophisticated, conceptualised arguments that distinguish Grade 9 responses.
+          Use them as springboards for your own analysis.
+        </p>
+        <div className="space-y-3">
+          {[
+            "Orwell suggests that the most dangerous form of power is not physical force (the dogs) but the control of narrative (Squealer). The pigs do not need to threaten the animals when they can simply rewrite reality. This anticipates Orwell's concept of 'doublethink' in Nineteen Eighty-Four.",
+            "The novel implies that Boxer's greatest strength --- his physical power --- is also his greatest weakness, because it allows the pigs to extract maximum labour from him while his intellectual limitations prevent him from recognising his exploitation. Orwell suggests that the working class's virtues (loyalty, diligence, selflessness) are precisely what makes them vulnerable to totalitarian abuse.",
+            "Orwell's decision to deny Curley's wife a name in Of Mice and Men has a parallel in Animal Farm: the animals increasingly lose their individual identities as the regime consolidates. The sheep become a single bleating mass; the hens are a collective that rebels and is crushed. Totalitarianism depends on the erasure of individuality.",
+            "Benjamin's refusal to act despite his understanding makes him, in Orwell's schema, as culpable as the pigs. His literacy could challenge Squealer's propaganda; his intelligence could organise resistance. Instead, his cynicism becomes a form of complicity. Orwell argues that political passivity in the face of injustice is itself a moral choice --- and the wrong one.",
+            "The final commandment --- 'All animals are equal, but some animals are more equal than others' --- is not merely a logical absurdity but a demonstration of how language can be used to make inequality seem natural. The oxymoron 'more equal' normalises hierarchy by absorbing it into the language of equality itself. This is Orwell's most concise illustration of how totalitarian regimes co-opt progressive language.",
+            "Orwell's use of the farm setting is itself a political statement: by placing his allegory in the most fundamental economic unit (agricultural production), he suggests that the dynamics of exploitation are not specific to industrialised societies or communist revolutions but are embedded in the basic relationship between labour and ownership.",
+            "The fact that the animals cannot distinguish between pigs and humans in the final scene suggests that power itself --- not the ideology of those who hold it --- is the corrupting force. Orwell's argument is not that communism is uniquely evil but that any system concentrating power in a small elite will produce tyranny.",
+            "Moses the Raven's return in the later chapters suggests that religion is not simply a tool of the old regime but a permanent feature of any hierarchical society. Both Jones and Napoleon find religion useful because it redirects the animals' hope from material improvement to an afterlife, preventing present-tense resistance.",
+          ].map((point, i) => (
+            <div key={i} className="rounded-lg border-l-4 border-accent bg-muted p-4">
+              <p className="text-sm leading-relaxed text-muted-foreground">{point}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Exam Questions with Model Answer Outlines */}
+      <Section id="exam-questions" title="Exam-Style Questions with Model Answer Outlines">
+        <p className="mb-4 text-sm text-muted-foreground">
+          These outlines show how to structure a full-mark GCSE response. Each follows the What-How-Why method:
+          What is Orwell saying? How does he convey it? Why does it matter (context and reader response)?
+        </p>
+        <div className="space-y-6">
+          {[
+            {
+              question: "How does Orwell present the dangers of an uneducated populace in Animal Farm?",
+              outline: [
+                "Introduction: Orwell argues that ignorance enables tyranny. The animals' lack of education is the single most important factor in the pigs' success.",
+                "Para 1 -- Boxer's literacy: He never learns more than four letters. His intellectual limitations make him rely on slogans ('Napoleon is always right') instead of critical thought. Orwell shows that physical strength without intellectual independence is easily exploited.",
+                "Para 2 -- The sheep: Their mindless repetition of 'Four legs good, two legs bad' (later 'better') shows how simplified slogans replace complex thought. Squealer uses them to drown out dissent. Orwell warns that a population reduced to slogans cannot resist manipulation.",
+                "Para 3 -- The commandments: The animals cannot detect changes because most cannot read the wall. 'Several of them would have protested if they could have found the right arguments.' Orwell makes the connection between literacy and political agency explicit.",
+                "Para 4 -- Napoleon's 'education' of the puppies: Education is weaponised. The puppies receive training, not education: they learn obedience, not critical thinking. Orwell shows that controlling education is a key mechanism of totalitarian power.",
+                "Conclusion: Orwell's message is that democracy requires an educated citizenry. Without the ability to read, think critically, and remember, populations are defenceless against propaganda. Link to Orwell's wider concern about the corruption of language.",
+              ],
+            },
+            {
+              question: "How does Orwell use the character of Squealer to explore the power of propaganda?",
+              outline: [
+                "Introduction: Squealer is the novel's most important secondary character because he represents the mechanism by which tyranny is maintained: not force (the dogs) but narrative control.",
+                "Para 1 -- Rhetorical techniques: Squealer uses questions ('Surely you don't want Jones back?'), statistics the animals cannot verify, and emotional manipulation. His ability to 'turn black into white' makes him the pigs' most valuable asset.",
+                "Para 2 -- Rewriting history: Squealer transforms Snowball from hero to traitor, claims Napoleon always supported the windmill, and presents Boxer's death as peaceful. Each revision is small but cumulative. Orwell shows how totalitarian regimes falsify the historical record.",
+                "Para 3 -- The commandments: Squealer's nocturnal alterations of the commandments represent the rewriting of constitutional principles. The animals' failure to detect the changes shows how propaganda exploits poor memory and literacy.",
+                "Para 4 -- Squealer and the dogs: On one occasion, Squealer is found beside the commandments at night with paint and a ladder, accompanied by dogs. The combination of propaganda (Squealer) and force (the dogs) represents the two pillars of totalitarian control.",
+                "Conclusion: Orwell argues that propaganda is more dangerous than force because it makes force seem unnecessary. Squealer does not threaten the animals; he convinces them. Connect to Orwell's later exploration of Newspeak in Nineteen Eighty-Four.",
+              ],
+            },
+            {
+              question: "'The ending of Animal Farm suggests that revolution is pointless.' How far do you agree?",
+              outline: [
+                "Introduction: The ending --- pigs indistinguishable from humans --- could suggest that revolution merely replaces one ruling class with another. However, Orwell's argument is more nuanced: the problem is not revolution itself but the concentration of power.",
+                "Para 1 -- Evidence for the statement: The circular structure returns the farm to tyranny. The final commandment replaces equality with hierarchy. The card game between pigs and humans shows mutual exploitation. Orwell seems deeply pessimistic.",
+                "Para 2 -- Evidence against: The revolution was justified. Jones was cruel and neglectful. Old Major's vision was genuine. The harvest in Chapter 3 shows what collective action can achieve. The failure is not of the revolution but of the revolutionaries.",
+                "Para 3 -- Orwell's political position: Orwell was a democratic socialist. He supported revolution against oppression but opposed the Stalinist corruption of revolutionary ideals. Animal Farm attacks Stalinism, not socialism. His preface to the Ukrainian edition makes this clear.",
+                "Para 4 -- Alternative readings: Benjamin could be read as Orwell's self-critique: the intellectual who sees injustice but does nothing is partly responsible. The novel implies that the revolution failed because the animals did not resist the pigs' power grab early enough.",
+                "Conclusion: Orwell does not argue that revolution is pointless but that it is vulnerable to corruption when power is concentrated without accountability. The novel is a warning, not a counsel of despair.",
+              ],
+            },
+          ].map((eq, i) => (
+            <div key={i} className="rounded-lg border border-border bg-card p-4">
+              <h4 className="font-bold text-foreground">{eq.question}</h4>
+              <div className="mt-3 space-y-2">
+                {eq.outline.map((para, j) => (
+                  <p key={j} className="text-sm leading-relaxed text-muted-foreground">{para}</p>
+                ))}
               </div>
             </div>
           ))}

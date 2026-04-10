@@ -2,7 +2,6 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
-import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 
 /* ─── Types ──────────────────────────────────────────────────── */
 
@@ -1250,7 +1249,7 @@ export default function LanguageDevicesPage() {
               Techniques
             </Link>
             <span className="mx-2">/</span>
-            <span className="text-white">Language Devices</span>
+            <span className="text-foreground">Language Devices</span>
           </nav>
           <h1 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Language &amp; Literary Devices
@@ -1380,7 +1379,6 @@ export default function LanguageDevicesPage() {
         </div>
       </div>
 
-      <ExamBoardDisclaimer />
     </>
   );
 }

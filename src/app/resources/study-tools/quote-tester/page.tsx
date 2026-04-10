@@ -66,7 +66,7 @@ const TEXT_DATA: TextData[] = [
     slug: "macbeth",
     title: "Macbeth",
     author: "William Shakespeare",
-    colour: "from-red-900 to-red-700",
+    colour: "from-primary/[0.08] to-primary/[0.02]",
     questions: [
       {
         id: "qt-mac-1",
@@ -194,7 +194,7 @@ const TEXT_DATA: TextData[] = [
     slug: "christmas-carol",
     title: "A Christmas Carol",
     author: "Charles Dickens",
-    colour: "from-emerald-800 to-emerald-600",
+    colour: "from-primary/[0.08] to-primary/[0.02]",
     questions: [
       {
         id: "qt-acc-1",
@@ -298,7 +298,7 @@ const TEXT_DATA: TextData[] = [
     slug: "inspector-calls",
     title: "An Inspector Calls",
     author: "J.B. Priestley",
-    colour: "from-amber-800 to-amber-600",
+    colour: "from-primary/[0.08] to-primary/[0.02]",
     questions: [
       {
         id: "qt-aic-1",
@@ -402,7 +402,7 @@ const TEXT_DATA: TextData[] = [
     slug: "jekyll-and-hyde",
     title: "Jekyll & Hyde",
     author: "Robert Louis Stevenson",
-    colour: "from-violet-900 to-violet-700",
+    colour: "from-primary/[0.08] to-primary/[0.02]",
     questions: [
       {
         id: "qt-jh-1",
@@ -506,7 +506,7 @@ const TEXT_DATA: TextData[] = [
     slug: "romeo-and-juliet",
     title: "Romeo & Juliet",
     author: "William Shakespeare",
-    colour: "from-rose-700 to-rose-500",
+    colour: "from-primary/[0.08] to-primary/[0.02]",
     questions: [
       {
         id: "qt-rj-1",
@@ -895,8 +895,8 @@ export default function QuoteTesterPage() {
                 key={text.slug}
                 className="group overflow-hidden rounded-xl border border-border bg-card shadow-md transition-all hover:shadow-md"
               >
-                <div className={`bg-gradient-to-br ${text.colour} px-5 py-5 text-white`}>
-                  <h3 className="text-xl font-bold">{text.title}</h3>
+                <div className={`bg-gradient-to-br ${text.colour} px-5 py-5`}>
+                  <h3 className="text-xl font-bold text-foreground">{text.title}</h3>
                   <p className="mt-0.5 text-sm text-muted-foreground">{text.author}</p>
                   <p className="mt-2 text-xs text-muted-foreground">
                     {total} quotes &middot; {mastered} mastered
@@ -1023,7 +1023,7 @@ export default function QuoteTesterPage() {
 
         {/* Score card */}
         <div className="mx-auto max-w-lg overflow-hidden rounded-2xl border border-border bg-card shadow-md">
-          <div className={`bg-gradient-to-br ${activeText?.colour || "from-gray-700 to-gray-500"} p-8 text-center text-white`}>
+          <div className={`bg-gradient-to-br ${activeText?.colour || "from-primary/[0.08] to-primary/[0.02]"} p-8 text-center`}>
             <p className="text-sm font-medium uppercase tracking-wider text-muted-foreground">
               {activeText?.title}
             </p>
@@ -1258,7 +1258,7 @@ export default function QuoteTesterPage() {
         <div className="mx-auto max-w-2xl">
           <div className={`overflow-hidden rounded-2xl border border-border bg-card shadow-md`}>
             {/* Quote display */}
-            <div className={`bg-gradient-to-br ${activeText?.colour || "from-gray-700 to-gray-500"} px-6 py-8 text-white`}>
+            <div className={`bg-gradient-to-br ${activeText?.colour || "from-primary/[0.08] to-primary/[0.02]"} px-6 py-8`}>
               <p className="text-center text-xs font-medium uppercase tracking-wider text-muted-foreground">
                 Identify the quote
               </p>

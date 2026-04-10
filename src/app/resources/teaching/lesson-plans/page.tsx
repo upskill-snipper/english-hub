@@ -204,9 +204,9 @@ export default function LessonPlansPage() {
     return (
       <>
         <div className="flex min-h-[60vh] items-center justify-center px-4">
-          <div className="max-w-md rounded-xl border border-red-500/30 bg-red-500/10 p-8 text-center">
-            <h2 className="text-lg font-bold text-red-700 dark:text-red-300">Teacher Access Only</h2>
-            <p className="mt-2 text-sm text-red-600">
+          <div className="max-w-md rounded-xl border border-border bg-card p-8 text-center">
+            <h2 className="text-lg font-bold text-foreground">Teacher Access Only</h2>
+            <p className="mt-2 text-sm text-muted-foreground">
               Lesson plans are only available to verified teacher accounts.
             </p>
             <Link
@@ -232,7 +232,7 @@ export default function LessonPlansPage() {
               Teaching Resources
             </Link>
             <span className="mx-2">/</span>
-            <span className="text-white">Lesson Plans</span>
+            <span className="text-foreground">Lesson Plans</span>
           </nav>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
             Lesson Plan Library
@@ -339,9 +339,6 @@ export default function LessonPlansPage() {
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary">
                     {lp.subject}
-                  </span>
-                  <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary">
-                    {lp.examBoard}
                   </span>
                 </div>
 

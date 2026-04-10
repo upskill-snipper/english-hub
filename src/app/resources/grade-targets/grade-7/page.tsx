@@ -224,7 +224,7 @@ export default function Grade7Page() {
                 <th className="border-b-2 border-border px-4 py-3 text-left text-sm font-semibold text-muted-foreground uppercase tracking-wide">
                   Area
                 </th>
-                <th className="border-b-2 border-border px-4 py-3 text-left text-sm font-semibold text-[#27AE60] uppercase tracking-wide">
+                <th className="border-b-2 border-border px-4 py-3 text-left text-sm font-semibold text-emerald-600 uppercase tracking-wide">
                   Grade 5/6
                 </th>
                 <th className="border-b-2 border-border px-4 py-3 text-left text-sm font-semibold text-primary uppercase tracking-wide">

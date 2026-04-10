@@ -359,6 +359,108 @@ export default function RomeoAndJulietRevisionPage() {
         </Card>
       </Section>
 
+      {/* ── WRITER'S METHODS ─────────────────────────────────── */}
+      <Section title="Writer's Methods and Techniques" id="writers-methods">
+        <Card title="Dramatic Irony">
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            The Prologue tells the audience from the very first line that the lovers will die. This creates dramatic irony throughout: every moment of happiness is shadowed by the audience&apos;s foreknowledge of tragedy. When Romeo says &ldquo;My life were better ended by their hate, / Than death prorogued, wanting of thy love&rdquo; (2.2), the audience knows he will indeed die because of the hate between the families. This irony intensifies emotional engagement and makes the play feel fated.
+          </p>
+        </Card>
+        <Card title="Sonnet Form">
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            The Prologue is a sonnet, the traditional form for love poetry. More significantly, Romeo and Juliet&apos;s first conversation (1.5) takes the form of a shared sonnet &mdash; they each speak alternate quatrains and share the final couplet. This is structurally unique: sonnets are usually written by a solitary lover. By sharing the form, Shakespeare makes their love collaborative and equal, distinguishing it from Romeo&apos;s earlier one-sided Petrarchan infatuation with Rosaline. The religious imagery (pilgrim, saint, prayer) elevates their love beyond the physical.
+          </p>
+        </Card>
+        <Card title="Oxymorons and Paradox">
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            Oxymorons pervade the play, reflecting its central contradictions: love/hate, life/death, light/dark. Romeo uses them artificially at first (&ldquo;O brawling love, O loving hate&rdquo;) when lovesick over Rosaline. But Juliet&apos;s oxymorons after Tybalt&apos;s death (&ldquo;Beautiful tyrant! fiend angelical!&rdquo;) express a genuine, agonising internal conflict. Shakespeare uses the same literary device to show both superficial and real emotion, inviting the audience to compare them.
+          </p>
+        </Card>
+        <Card title="Light and Dark Imagery">
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            Romeo consistently associates Juliet with light: she &ldquo;doth teach the torches to burn bright,&rdquo; she is &ldquo;the sun,&rdquo; she &ldquo;hangs upon the cheek of night / Like a rich jewel in an Ethiope&apos;s ear.&rdquo; Yet their love thrives in darkness (the balcony at night, the bedroom before dawn) and daylight brings separation and danger. This inversion suggests that their love exists outside the normal social order and that conventional categories are unreliable.
+          </p>
+        </Card>
+        <Card title="Foreshadowing">
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            Shakespeare layers the play with premonitions. Before the ball, Romeo senses &ldquo;some consequence yet hanging in the stars&rdquo; (1.4). Juliet sees Romeo &ldquo;as one dead in the bottom of a tomb&rdquo; (3.5). Friar Lawrence warns that &ldquo;these violent delights have violent ends&rdquo; (2.6). These moments create a mounting sense of inevitability. The characters glimpse their own fate but cannot prevent it, reinforcing the theme of destiny.
+          </p>
+        </Card>
+        <Card title="Compressed Time Structure">
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            The entire play takes place over approximately four days (Sunday to Thursday). Romeo and Juliet meet, fall in love, marry, and die within this compressed timeframe. Shakespeare deliberately accelerates the action to heighten urgency and create a sense of fate racing ahead of the characters. The speed also reflects the intensity of adolescent passion, contrasting with the older generation&apos;s slower, calculating approach to love and marriage.
+          </p>
+        </Card>
+        <Card title="Soliloquy and Aside">
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            Shakespeare uses soliloquies to reveal inner thoughts. Juliet&apos;s soliloquies are particularly significant: &ldquo;Gallop apace, you fiery-footed steeds&rdquo; (3.2) reveals her desire and courage; her potion soliloquy (4.3) shows her terrifying isolation. Romeo&apos;s soliloquy at the tomb (5.3) shows genuine despair. The soliloquies also chart the characters&apos; development: Juliet&apos;s grow in complexity as she matures, while Romeo&apos;s shift from self-indulgent to genuinely tragic.
+          </p>
+        </Card>
+        <Card title="Comic-Tragic Structure">
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            Acts 1-2 follow the conventions of romantic comedy: disguise, witty banter, love at first sight, a secret marriage. Mercutio&apos;s death in Act 3 is the pivot that transforms the play from comedy to tragedy. This structural shift mirrors the play&apos;s thematic argument: the feud corrupts and destroys what could have been a happy love story. Shakespeare shows that violence and hatred can turn any comedy into a tragedy.
+          </p>
+        </Card>
+        <Card title="Patriarchal Language and Power">
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            Shakespeare uses language to reveal power structures. Lord Capulet&apos;s rage at Juliet (&ldquo;Hang thee, young baggage! Disobedient wretch!&rdquo;) uses language of ownership and punishment. &ldquo;Baggage&rdquo; reduces her to an object; &ldquo;hurdle&rdquo; was used to drag traitors to execution. The Nurse and Lady Capulet fall silent during his tirade, showing how patriarchal power silences all women. Shakespeare exposes how control disguised as love becomes tyranny.
+          </p>
+        </Card>
+      </Section>
+
+      {/* ── GRADE 9 POINTS ────────────────────────────────────── */}
+      <Section title="Grade 9 Exemplar Points and Interpretations" id="grade-9">
+        <p className="text-sm text-muted-foreground mb-4">These higher-level interpretations demonstrate the sophisticated analysis needed for top grades. Each goes beyond surface reading to consider authorial intent, alternative readings, and structural significance.</p>
+
+        <Card title="1. The Prologue as Anti-Tragedy">
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            A Grade 9 response might argue that the Prologue undermines the conventions of tragedy. By revealing the ending at the start, Shakespeare removes suspense and replaces it with dramatic irony. The audience watches not to discover <em>what</em> happens but <em>how</em> and <em>why</em>. This shifts responsibility from fate to the feuding families &mdash; and, by extension, to the audience. Shakespeare is not asking us to be surprised by the deaths but to interrogate what causes them. The Prologue is less a plot summary than an accusation.
+          </p>
+        </Card>
+
+        <Card title="2. Juliet as the True Tragic Hero">
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            While the play is named for both lovers, Juliet undergoes the more significant character arc and makes the braver choices. She defies her father, takes the terrifying potion alone, and kills herself without hesitation. Romeo, by contrast, is impulsive rather than courageous &mdash; he acts on emotion, not principle. Juliet&apos;s language is more rational, her soliloquies more complex, and her agency more deliberate. A top-level answer might argue that Shakespeare deliberately centres the emotional and moral weight on a thirteen-year-old girl in a patriarchal society, making a radical statement about female capability.
+          </p>
+        </Card>
+
+        <Card title="3. The Feud as Original Sin">
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            The &ldquo;ancient grudge&rdquo; has no known origin &mdash; its cause is forgotten, yet it persists. A sophisticated reading connects this to the concept of original sin: inherited guilt that individuals did not create but cannot escape. Romeo and Juliet are born into the feud; their love is their attempt to transcend it. Their deaths function as a sacrificial atonement: through their blood, the feud is finally ended. This reading positions the play as a parable about how inherited hatred can only be broken by love and sacrifice.
+          </p>
+        </Card>
+
+        <Card title="4. Fate vs. Free Will: A False Binary">
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            Lower-grade answers treat fate and free will as opposites. A Grade 9 response recognises that Shakespeare deliberately blurs the boundary. Romeo&apos;s &ldquo;Then I defy you, stars!&rdquo; is an act of free will that fulfils the fated outcome. The plague that stops the letter is both random chance and the apparent fulfilment of Mercutio&apos;s curse. Shakespeare suggests that fate operates <em>through</em> human choices &mdash; the characters&apos; impulsiveness, the families&apos; hatred, the Friar&apos;s schemes &mdash; not despite them. Agency and destiny are intertwined, not opposed.
+          </p>
+        </Card>
+
+        <Card title="5. The Shared Sonnet as Structural Revolution">
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            The shared sonnet at the Capulet ball (1.5) is not merely a clever literary device but a radical structural statement. The Petrarchan sonnet tradition is monologic &mdash; one male poet worships a distant, silent woman. By splitting the sonnet between two speakers and making Juliet an equal participant, Shakespeare transforms a form of male desire into a form of mutual love. This is revolutionary: in the 1590s, the beloved was traditionally objectified. Shakespeare makes Juliet a co-author, not just the object of Romeo&apos;s gaze.
+          </p>
+        </Card>
+
+        <Card title="6. The Nurse's Betrayal and Juliet's Isolation">
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            When the Nurse advises Juliet to marry Paris (3.5), it is not merely pragmatic advice but the severing of Juliet&apos;s last emotional connection. Her father threatens her, her mother refuses to help, and now her surrogate mother abandons her. Shakespeare systematically strips away every source of support to isolate Juliet completely, driving her toward the Friar&apos;s desperate plan. Structurally, this isolation is necessary for tragedy: Juliet must face death alone. Thematically, it exposes how patriarchal society fails its women.
+          </p>
+        </Card>
+
+        <Card title="7. Shakespeare's Critique of Honour Culture">
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            Tybalt and Mercutio are both destroyed by the code of male honour. Romeo&apos;s attempt to reject this code (refusing Tybalt&apos;s challenge) is more mature, but it fails &mdash; the culture is too powerful. Shakespeare suggests that toxic masculinity, not personal villainy, drives the tragedy. There is no true villain in the play; there is a <em>system</em> of honour that demands violence and punishes peace. This is a remarkably modern critique: Shakespeare locates the problem in culture, not individuals.
+          </p>
+        </Card>
+
+        <Card title="8. 'All Are Punish'd' -- Collective Guilt">
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            The Prince&apos;s final line includes himself &mdash; &ldquo;All are punish&apos;d&rdquo; means everyone, including the authority that failed to end the feud. This collective guilt challenges the audience: if everyone in Verona is responsible, is the audience complicit too? Shakespeare uses the play&apos;s final moments to extend responsibility beyond the stage. The &ldquo;glooming peace&rdquo; is not triumphant but mournful &mdash; peace achieved through the death of children is not something to celebrate but a devastating indictment of the adults who failed them.
+          </p>
+        </Card>
+      </Section>
+
       {/* ── ESSAY PLANNING ────────────────────────────────────── */}
       <Section title="Essay Planning Templates" id="essay-planning">
         <Card title="&ldquo;How does Shakespeare present love in Romeo and Juliet?&rdquo;">

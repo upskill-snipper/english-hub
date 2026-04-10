@@ -61,7 +61,7 @@ const TEXT_SETS: TextSet[] = [
     slug: "macbeth",
     title: "Macbeth",
     author: "William Shakespeare",
-    colour: "from-red-900 to-red-700",
+    colour: "from-primary/[0.08] to-primary/[0.02]",
     cards: [
       { id: "mac-1", quote: "Fair is foul, and foul is fair", character: "Witches", act: "Act 1, Scene 1", analysis: "Establishes the theme of moral inversion from the very opening. The chiasmus creates a sense of the world turned upside down.", themes: ["Supernatural", "Appearance vs Reality"] },
       { id: "mac-2", quote: "Stars, hide your fires; / Let not light see my black and deep desires", character: "Macbeth", act: "Act 1, Scene 4", analysis: "Macbeth's aside reveals his ambition is already forming before Lady Macbeth's influence. Light/dark imagery links to the play's moral framework.", themes: ["Ambition", "Appearance vs Reality", "Guilt"] },
@@ -79,7 +79,7 @@ const TEXT_SETS: TextSet[] = [
     slug: "christmas-carol",
     title: "A Christmas Carol",
     author: "Charles Dickens",
-    colour: "from-emerald-800 to-emerald-600",
+    colour: "from-primary/[0.08] to-primary/[0.02]",
     cards: [
       { id: "acc-1", quote: "Oh! But he was a tight-fisted hand at the grindstone, Scrooge!", analysis: "The exclamatory 'Oh!' breaks the fourth wall. 'Tight-fisted' and 'grindstone' create imagery of miserliness and relentless, joyless work.", themes: ["Greed", "Isolation"] },
       { id: "acc-2", quote: "Are there no prisons? Are there no workhouses?", character: "Scrooge", analysis: "Scrooge's rhetorical questions echo the cruel Malthusian attitudes of the Victorian upper class. Dickens uses Scrooge to satirise those who blamed the poor.", themes: ["Poverty", "Social Responsibility"] },
@@ -95,7 +95,7 @@ const TEXT_SETS: TextSet[] = [
     slug: "inspector-calls",
     title: "An Inspector Calls",
     author: "J.B. Priestley",
-    colour: "from-amber-800 to-amber-600",
+    colour: "from-primary/[0.08] to-primary/[0.02]",
     cards: [
       { id: "aic-1", quote: "We are members of one body. We are responsible for each other", character: "Inspector Goole", analysis: "The Inspector's final speech articulates Priestley's socialist message. 'One body' echoes Christian theology and socialist collectivism.", themes: ["Social Responsibility", "Community"] },
       { id: "aic-2", quote: "If men will not learn that lesson, then they will be taught it in fire and blood and anguish", character: "Inspector Goole", analysis: "Prophetic warning referencing both World Wars. 'Fire and blood and anguish' is a tricolon of destruction.", themes: ["Social Responsibility", "War", "Power"] },
@@ -111,7 +111,7 @@ const TEXT_SETS: TextSet[] = [
     slug: "jekyll-and-hyde",
     title: "Jekyll and Hyde",
     author: "Robert Louis Stevenson",
-    colour: "from-violet-900 to-violet-700",
+    colour: "from-primary/[0.08] to-primary/[0.02]",
     cards: [
       { id: "jh-1", quote: "Man is not truly one, but truly two", character: "Dr Jekyll", analysis: "Jekyll's realisation encapsulates the novella's central theme: duality of human nature. 'Truly' repeated suggests a fundamental truth society refuses to acknowledge.", themes: ["Duality", "Science", "Victorian Society"] },
       { id: "jh-2", quote: "I learned to recognise the thorough and primitive duality of man", character: "Dr Jekyll", analysis: "'Primitive' suggests the duality is ancient and innate. 'Thorough' means it permeates every aspect of human nature.", themes: ["Duality", "Science", "Human Nature"] },
@@ -127,7 +127,7 @@ const TEXT_SETS: TextSet[] = [
     slug: "romeo-and-juliet",
     title: "Romeo and Juliet",
     author: "William Shakespeare",
-    colour: "from-rose-700 to-rose-500",
+    colour: "from-primary/[0.08] to-primary/[0.02]",
     cards: [
       { id: "rj-1", quote: "A pair of star-cross'd lovers take their life", act: "Prologue", analysis: "The Prologue's spoiler establishes fate as a central force. 'Star-cross'd' blends astrology with destiny.", themes: ["Fate", "Love", "Death"] },
       { id: "rj-2", quote: "O, she doth teach the torches to burn bright!", character: "Romeo", act: "Act 1, Scene 5", analysis: "Romeo's first sight of Juliet uses light imagery -- she outshines artificial light. The personification elevates Juliet to something transcendent.", themes: ["Love", "Light/Dark", "Beauty"] },

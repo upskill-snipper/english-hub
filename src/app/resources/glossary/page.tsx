@@ -2,7 +2,6 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
-import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 
 /* ─── Types ──────────────────────────────────────────────────── */
 
@@ -329,9 +328,9 @@ export default function GlossaryPage() {
           {/* Stats */}
           <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-sm text-muted-foreground">
             <span>{GLOSSARY_TERMS.length} terms</span>
-            <span className="text-white/30">|</span>
+            <span className="text-border">|</span>
             <span>{CATEGORIES.length} categories</span>
-            <span className="text-white/30">|</span>
+            <span className="text-border">|</span>
             <span>Definitions + examples</span>
           </div>
         </div>
@@ -598,7 +597,6 @@ export default function GlossaryPage() {
         </div>
       </section>
 
-      <ExamBoardDisclaimer />
     </>
   );
 }

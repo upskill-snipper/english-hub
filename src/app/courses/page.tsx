@@ -16,9 +16,7 @@ import {
 } from 'lucide-react'
 import { loadAllCourses } from '@/data/course-loader'
 import type { CourseData } from '@/data/courses'
-import { useBoardStore } from '@/store/board-store'
 import { useAuthStore } from '@/store/auth-store'
-import { matchesBoard } from '@/lib/board-filter'
 import { PRICING, PRICING_DISPLAY } from '@/constants/pricing'
 
 import {
@@ -145,7 +143,6 @@ function extractBoards(courses: CourseData[]): string[] {
    ================================================================ */
 
 export default function CourseCataloguePage() {
-  const { selectedBoard } = useBoardStore()
   const { user, profile } = useAuthStore()
 
   const [courses, setCourses] = useState<CourseData[]>([])
@@ -185,7 +182,6 @@ export default function CourseCataloguePage() {
 
   const filtered = useMemo(() => {
     let result = courses.filter((c) => {
-      if (!matchesBoard(c.board, selectedBoard)) return false
       if (activeTier !== 'All' && c.tier?.toUpperCase() !== activeTier) return false
       if (boardFilter !== 'all' && c.board !== boardFilter) return false
       if (searchQuery.trim()) {
@@ -226,7 +222,6 @@ export default function CourseCataloguePage() {
     return sorted
   }, [
     courses,
-    selectedBoard,
     activeTier,
     boardFilter,
     searchQuery,

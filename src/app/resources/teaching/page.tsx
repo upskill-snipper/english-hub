@@ -85,7 +85,7 @@ const SPEC_LINKS = [
       { label: "English Language (1EN0)", url: "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/english-language-2015.html" },
       { label: "English Literature (1ET0)", url: "https://qualifications.pearson.com/en/qualifications/edexcel-gcses/english-literature-2015.html" },
     ],
-    color: "border-[#27AE60]",
+    color: "border-primary",
   },
   {
     board: "OCR",
@@ -101,7 +101,7 @@ const SPEC_LINKS = [
       { label: "First Language English (0500)", url: "https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-igcse-english-first-language-0500/" },
       { label: "Literature in English (0475)", url: "https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-igcse-literature-in-english-0475/" },
     ],
-    color: "border-[#E74C3C]",
+    color: "border-primary",
   },
 ];
 
@@ -120,8 +120,8 @@ export default function TeachingResourcesHub() {
     return (
       <>
         <div className="flex min-h-[60vh] items-center justify-center px-4">
-          <div className="max-w-md rounded-xl border border-red-500/30 bg-red-500/10 p-8 text-center">
-            <svg className="mx-auto h-12 w-12 text-red-400" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+          <div className="max-w-md rounded-xl border border-border bg-card p-8 text-center">
+            <svg className="mx-auto h-12 w-12 text-muted-foreground" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
             </svg>
             <h2 className="mt-4 text-lg font-bold text-red-700 dark:text-red-300">Teacher Access Only</h2>

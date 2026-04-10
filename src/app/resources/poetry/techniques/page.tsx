@@ -1128,7 +1128,7 @@ export default function PoetryTechniquesPage() {
 
       {/* ── How to Write About Form and Structure ──────────────── */}
       {(activeCategory === "All" || activeCategory === "Form Types" || activeCategory === "Structural Devices") && !query && (
-        <section id="form-structure-guide" className="bg-primary/10 px-4 py-12 sm:px-6 lg:px-8">
+        <section id="form-structure-guide" className="border-y border-border bg-muted/30 px-4 py-12 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-6xl">
             <h2 className="text-2xl font-bold text-foreground">How to Write About Form and Structure</h2>
             <p className="mt-2 max-w-3xl text-muted-foreground">
@@ -1303,7 +1303,7 @@ export default function PoetryTechniquesPage() {
 
       {/* ── Exam Tips ──────────────────────────────────────────── */}
       {(activeCategory === "All") && !query && (
-        <section id="exam-tips" className="bg-primary/10 px-4 py-12 sm:px-6 lg:px-8">
+        <section id="exam-tips" className="border-y border-border bg-muted/30 px-4 py-12 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-6xl">
             <h2 className="text-2xl font-bold text-foreground">Exam Tips for Poetry Analysis</h2>
             <div className="mt-8 grid gap-6 sm:grid-cols-2">

@@ -335,7 +335,7 @@ export default function ExamDayPage() {
             {
               title: "Proofread for SPaG errors",
               detail:
-                "Read through your writing and correct any spelling, punctuation, and grammar mistakes. On AQA Language Paper 1 Q5, SPaG is worth up to 16 marks. A missing full stop or a misspelled word is an easy mark thrown away.",
+                "Read through your writing and correct any spelling, punctuation, and grammar mistakes. SPaG can be worth up to 16 marks on some papers. A missing full stop or a misspelled word is an easy mark thrown away.",
             },
             {
               title: "Add missing analysis",
@@ -402,6 +402,24 @@ export default function ExamDayPage() {
               Review question types
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Revision link */}
+      <section className="mx-auto max-w-5xl px-4 py-10">
+        <div className="rounded-xl border border-primary/20 bg-primary/5 p-6 text-center">
+          <h2 className="text-lg font-bold text-foreground">
+            Final revision before exam day
+          </h2>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Run through our interactive exam technique revision to make sure you are fully prepared.
+          </p>
+          <Link
+            href="/revision/exam-technique"
+            className="mt-4 inline-block rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow transition hover:bg-primary/90"
+          >
+            Exam technique revision
+          </Link>
         </div>
       </section>
 

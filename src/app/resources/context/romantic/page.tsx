@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 
 /* ─── Expandable Section ─────────────────────────────────────── */
 
@@ -10,7 +9,7 @@ function Section({
   id,
   title,
   badge,
-  colour = "bg-emerald-700",
+  colour = "bg-primary",
   children,
   defaultOpen = false,
 }: {
@@ -91,7 +90,7 @@ export default function RomanticContextPage() {
       <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
         <div className="mb-8">
           <div className="flex flex-wrap items-center gap-3 mb-2">
-            <span className="rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-bold text-emerald-700 dark:text-emerald-300 uppercase tracking-wider">
+            <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary uppercase tracking-wider">
               1780 -- 1850
             </span>
             <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">Poetry Anthology</span>
@@ -134,7 +133,7 @@ export default function RomanticContextPage() {
 
         <div className="mt-5 space-y-5">
           {/* Key Romantic Ideals */}
-          <Section id="ideals" title="Key Romantic Ideals" colour="bg-emerald-700">
+          <Section id="ideals" title="Key Romantic Ideals" colour="bg-primary">
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <div className="grid gap-4 sm:grid-cols-2">
                 {[
@@ -163,7 +162,7 @@ export default function RomanticContextPage() {
                     detail: "Many Romantics initially supported the French Revolution (1789) as a triumph of liberty. Although they became disillusioned with the violence, the ideal of freedom -- political, personal, and spiritual -- remained central to the movement.",
                   },
                 ].map((item) => (
-                  <div key={item.ideal} className="rounded-lg bg-emerald-500/5 border border-emerald-500/20 p-4">
+                  <div key={item.ideal} className="rounded-lg bg-primary/5 border border-primary/20 p-4">
                     <h3 className="text-sm font-bold text-foreground">{item.ideal}</h3>
                     <p className="mt-2 text-sm text-muted-foreground">{item.detail}</p>
                   </div>
@@ -173,7 +172,7 @@ export default function RomanticContextPage() {
           </Section>
 
           {/* Nature and the Sublime */}
-          <Section id="nature" title="Nature & the Sublime" colour="bg-green-700">
+          <Section id="nature" title="Nature & the Sublime" colour="bg-primary">
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 For the Romantics, <strong>nature</strong> was not merely a backdrop but an active,
@@ -204,7 +203,7 @@ export default function RomanticContextPage() {
           </Section>
 
           {/* Individual Freedom */}
-          <Section id="freedom" title="Individual Freedom & Rebellion" colour="bg-red-700">
+          <Section id="freedom" title="Individual Freedom & Rebellion" colour="bg-primary">
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 The Romantics championed the <strong>rights of the individual</strong> against the
@@ -390,7 +389,6 @@ export default function RomanticContextPage() {
         </div>
       </div>
 
-      <ExamBoardDisclaimer />
     </>
   );
 }

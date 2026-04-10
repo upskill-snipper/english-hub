@@ -256,7 +256,7 @@ export default function PrintableResourcesPage() {
               Teaching Resources
             </Link>
             <span className="mx-2">/</span>
-            <span className="text-white">Printable Resources</span>
+            <span className="text-foreground">Printable Resources</span>
           </nav>
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
             Printable Resources

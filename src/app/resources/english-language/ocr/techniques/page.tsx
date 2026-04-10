@@ -433,6 +433,46 @@ export default function OCRTechniquesPage() {
           </div>
         </section>
 
+        {/* Continue studying */}
+        <div className="mt-12 rounded-xl border border-primary/20 bg-primary/5 p-6 sm:p-8">
+          <h2 className="text-xl font-bold text-foreground">Continue studying</h2>
+          <p className="mt-2 text-muted-foreground">
+            Put these techniques into practice with reading analysis and writing exercises.
+          </p>
+          <div className="mt-4 flex flex-wrap gap-3">
+            <Link
+              href="/resources/english-language/ocr/paper-1"
+              className="rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary hover:shadow-md"
+            >
+              Paper 1: Information &amp; Ideas
+            </Link>
+            <Link
+              href="/resources/english-language/ocr/paper-2"
+              className="rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary hover:shadow-md"
+            >
+              Paper 2: Effects &amp; Impact
+            </Link>
+            <Link
+              href="/resources/writing-skills"
+              className="rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary hover:shadow-md"
+            >
+              Writing Skills
+            </Link>
+            <Link
+              href="/practice"
+              className="rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary hover:shadow-md"
+            >
+              Practice Questions
+            </Link>
+            <Link
+              href="/revision"
+              className="rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary hover:shadow-md"
+            >
+              Revision Hub
+            </Link>
+          </div>
+        </div>
+
         <ExamBoardDisclaimer variant="content" className="mt-12" />
       </div>
 

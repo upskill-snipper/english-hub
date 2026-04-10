@@ -110,7 +110,7 @@ const CHECKLISTS: ChecklistBoard[] = [
   {
     slug: "edexcel-language",
     label: "Edexcel English Language (1EN0)",
-    colour: "border-[#27AE60]",
+    colour: "border-primary",
     sections: [
       {
         title: "Paper 1: Fiction and Imaginative Writing",
@@ -138,7 +138,7 @@ const CHECKLISTS: ChecklistBoard[] = [
   {
     slug: "edexcel-literature",
     label: "Edexcel English Literature (1ET0)",
-    colour: "border-[#27AE60]",
+    colour: "border-primary",
     sections: [
       {
         title: "Paper 1: Shakespeare and Post-1914 Literature",
@@ -165,7 +165,7 @@ const CHECKLISTS: ChecklistBoard[] = [
   {
     slug: "caie-language",
     label: "Cambridge IGCSE First Language (0500)",
-    colour: "border-[#E74C3C]",
+    colour: "border-primary",
     sections: [
       {
         title: "Paper 1: Reading",
@@ -197,7 +197,7 @@ const CHECKLISTS: ChecklistBoard[] = [
   {
     slug: "caie-literature",
     label: "Cambridge IGCSE Literature (0475)",
-    colour: "border-[#E74C3C]",
+    colour: "border-primary",
     sections: [
       {
         title: "Paper 1: Poetry and Prose",

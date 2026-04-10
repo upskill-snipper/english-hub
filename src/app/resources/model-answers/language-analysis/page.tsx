@@ -170,7 +170,7 @@ export default function LanguageAnalysisPage() {
             <Section id="question" title="The Question">
               <div className="rounded-xl border border-border bg-card p-6 shadow-md">
                 <p className="mb-2 text-xs font-bold uppercase tracking-wider text-primary">
-                  AQA English Language Paper 1, Question 2
+                  GCSE English Language -- Reading Question
                 </p>
                 <p className="font-medium leading-relaxed text-foreground">
                   How does the writer use language to describe the setting of the

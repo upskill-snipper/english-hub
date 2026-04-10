@@ -350,25 +350,25 @@ export default function EssayStructurePage() {
                     marks: "8-12 marks",
                     paras: "2-3 paragraphs",
                     structure: "Brief intro line + 2-3 PEEL paragraphs (no separate conclusion needed)",
-                    examples: "AQA Language Q2/Q3, short analysis questions",
+                    examples: "Short language analysis questions",
                   },
                   {
                     marks: "15-20 marks",
                     paras: "3-4 paragraphs",
                     structure: "Short intro + 3 PEEL paragraphs + brief conclusion",
-                    examples: "AQA Language Q4, Edexcel Q6, CAIE summary",
+                    examples: "Evaluative questions, comparison tasks, summary writing",
                   },
                   {
                     marks: "25-30 marks",
                     paras: "4-5 paragraphs",
                     structure: "Introduction + 3-4 PEEL paragraphs + conclusion",
-                    examples: "AQA Literature questions, CAIE Literature",
+                    examples: "Literature extract + essay questions",
                   },
                   {
                     marks: "30-40 marks",
                     paras: "5-6 paragraphs",
                     structure: "Strong introduction + 4-5 PEEL paragraphs + developed conclusion",
-                    examples: "AQA Literature (inc. SPaG), Edexcel Literature",
+                    examples: "Major Literature essays (inc. SPaG marks)",
                   },
                 ].map((row) => (
                   <tr key={row.marks} className="hover:bg-muted/50">
@@ -393,25 +393,25 @@ export default function EssayStructurePage() {
                 marks: "8-12 marks",
                 paras: "2-3 paragraphs",
                 structure: "Brief intro line + 2-3 PEEL paragraphs (no separate conclusion needed)",
-                examples: "AQA Language Q2/Q3, short analysis questions",
+                examples: "Short language analysis questions",
               },
               {
                 marks: "15-20 marks",
                 paras: "3-4 paragraphs",
                 structure: "Short intro + 3 PEEL paragraphs + brief conclusion",
-                examples: "AQA Language Q4, Edexcel Q6, CAIE summary",
+                examples: "Evaluative questions, comparison tasks, summary writing",
               },
               {
                 marks: "25-30 marks",
                 paras: "4-5 paragraphs",
                 structure: "Introduction + 3-4 PEEL paragraphs + conclusion",
-                examples: "AQA Literature questions, CAIE Literature",
+                examples: "Literature extract + essay questions",
               },
               {
                 marks: "30-40 marks",
                 paras: "5-6 paragraphs",
                 structure: "Strong introduction + 4-5 PEEL paragraphs + developed conclusion",
-                examples: "AQA Literature (inc. SPaG), Edexcel Literature",
+                examples: "Major Literature essays (inc. SPaG marks)",
               },
             ].map((row) => (
               <div key={row.marks} className="p-4 space-y-2">
@@ -482,6 +482,32 @@ export default function EssayStructurePage() {
                 </blockquote>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Revision link */}
+      <section className="mx-auto max-w-5xl px-4 py-10">
+        <div className="rounded-xl border border-primary/20 bg-primary/5 p-6 text-center">
+          <h2 className="text-lg font-bold text-foreground">
+            Practise your essay structure
+          </h2>
+          <p className="mt-2 text-sm text-muted-foreground">
+            Use these templates with real exam questions and get instant feedback on your paragraph structure.
+          </p>
+          <div className="mt-4 flex flex-wrap justify-center gap-3">
+            <Link
+              href="/revision/exam-technique"
+              className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow transition hover:bg-primary/90"
+            >
+              Exam technique revision
+            </Link>
+            <Link
+              href="/resources/model-answers"
+              className="rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground shadow transition hover:bg-muted"
+            >
+              See model answers
+            </Link>
           </div>
         </div>
       </section>

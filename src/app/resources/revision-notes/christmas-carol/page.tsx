@@ -93,7 +93,7 @@ export default function ChristmasCarolRevisionPage() {
       <div className="mb-8 rounded-xl border border-border bg-card p-4 shadow-md">
         <p className="text-sm font-semibold text-muted-foreground mb-3">Jump to section:</p>
         <div className="flex flex-wrap gap-2">
-          {["Plot Summary", "Characters", "Themes", "Key Quotations", "Context", "Symbolism", "Essay Planning", "Exam Board Tips"].map((s) => (
+          {["Plot Summary", "Characters", "Themes", "Key Quotations", "Context", "Symbolism", "Essay Planning", "Writer's Methods", "Grade 9 Points", "Exam Board Tips"].map((s) => (
             <a
               key={s}
               href={`#${s.toLowerCase().replace(/\s+/g, "-")}`}
@@ -1096,6 +1096,135 @@ export default function ChristmasCarolRevisionPage() {
                     <li><strong>Conclusion:</strong> Tiny Tim is Dickens&apos;s most powerful rhetorical tool: a figure designed to make the reader feel the human cost of social indifference and the life-saving power of generosity.</li>
                   </ul>
                 </div>
+              </div>
+            </div>
+          </Section>
+        </div>
+
+        {/* ────────────────────────────────────────── WRITER'S METHODS */}
+        <div id="writers-methods">
+          <Section id="methods" title="Writer's Methods and Techniques" badge="9 Techniques" colour="bg-teal-600">
+            <div className="space-y-6">
+              <div className="rounded-lg border border-border p-4">
+                <h3 className="font-bold text-foreground">The Omniscient Narrator</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                  Dickens uses a third-person omniscient narrator who speaks directly to the reader in a chatty, engaging tone. The narrator jokes (&ldquo;Old Marley was as dead as a door-nail&rdquo;), moralises, and guides the reader&apos;s response. This narrative voice creates intimacy and persuasion &mdash; the reader is drawn into the narrator&apos;s worldview. The narrator is essentially Dickens himself, using the story as a vehicle for his social argument. The direct address (&ldquo;Oh!&rdquo;, &ldquo;Mind!&rdquo;) makes the novella feel like a fireside story, reinforcing its oral, carol-like quality.
+                </p>
+              </div>
+              <div className="rounded-lg border border-border p-4">
+                <h3 className="font-bold text-foreground">Allegory and Parable</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                  The novella functions as a moral allegory. Scrooge represents the wealthy Victorian class; the Cratchits represent the deserving poor; Marley&apos;s chains represent the consequences of greed; Ignorance and Want represent society&apos;s neglected children. Each character and event carries symbolic weight beyond its literal meaning. This allegorical structure gives the story universal significance &mdash; it is not about one man but about all of society.
+                </p>
+              </div>
+              <div className="rounded-lg border border-border p-4">
+                <h3 className="font-bold text-foreground">The Five-Stave Structure</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                  Dickens deliberately structures the novella as five &ldquo;staves&rdquo; (musical sections) rather than chapters, reinforcing its identity as a Christmas carol. This musical metaphor suggests harmony and resolution. Stave One establishes the problem; Staves Two to Four provide the education; Stave Five provides the resolution. The structure mirrors a musical composition moving from dissonance to harmony, from Scrooge&apos;s cold isolation to his joyful integration into community.
+                </p>
+              </div>
+              <div className="rounded-lg border border-border p-4">
+                <h3 className="font-bold text-foreground">Listing and Accumulation</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                  Dickens is famous for his lists. Scrooge is described as &ldquo;a squeezing, wrenching, grasping, scraping, clutching, covetous, old sinner&rdquo; &mdash; seven relentless adjectives that overwhelm the reader. The Christmas feast scenes use lists of food to create abundance and warmth. This technique of accumulation creates sensory richness and emotional intensity. When describing misery, the lists are oppressive; when describing joy, they are generous and celebratory.
+                </p>
+              </div>
+              <div className="rounded-lg border border-border p-4">
+                <h3 className="font-bold text-foreground">Pathetic Fallacy and Symbolism</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                  Cold, fog, and darkness are associated with Scrooge and his miserliness. Warmth, light, and fire are associated with generosity and community. Scrooge&apos;s chambers are cold and dark; the Cratchits&apos; home, though poor, is warm and bright. After his transformation, Scrooge notices &ldquo;Golden sunlight; Heavenly sky; sweet fresh air; merry bells.&rdquo; The weather literally changes to reflect his emotional state. The chain Marley wears is a physical symbol of his greed in life &mdash; each link forged by selfishness.
+                </p>
+              </div>
+              <div className="rounded-lg border border-border p-4">
+                <h3 className="font-bold text-foreground">Contrast and Juxtaposition</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                  Dickens constantly contrasts the rich and poor, warmth and cold, generosity and miserliness. The Cratchits&apos; humble but loving Christmas is juxtaposed with Scrooge&apos;s lonely chamber. Fezziwig&apos;s generous party contrasts with Scrooge&apos;s treatment of Bob Cratchit. In Stave Four, the unmourned rich man is contrasted with the deeply mourned Tiny Tim. These juxtapositions drive Dickens&apos;s moral argument: money does not bring happiness; connection and generosity do.
+                </p>
+              </div>
+              <div className="rounded-lg border border-border p-4">
+                <h3 className="font-bold text-foreground">Circular Structure</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                  The novella begins and ends on Christmas Day but with a completely transformed protagonist. Stave One&apos;s cold, dark, isolated Scrooge is replaced by Stave Five&apos;s warm, joyful, connected Scrooge. The same situations recur but with different outcomes: the charity collectors return and receive generosity; Christmas dinner happens with Scrooge present. This circular structure reinforces the theme of redemption &mdash; the same circumstances can produce different results if a person chooses to change.
+                </p>
+              </div>
+              <div className="rounded-lg border border-border p-4">
+                <h3 className="font-bold text-foreground">Exclamatory and Imperative Tone</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                  Dickens uses exclamation marks abundantly, creating a tone of urgency, indignation, and joy depending on the context. The narrator exclaims with horror at Scrooge&apos;s behaviour and with delight at his transformation. This rhetorical energy makes the novella feel passionate and persuasive &mdash; it is not a detached narrative but an impassioned argument. The narrator&apos;s emotional involvement models the response Dickens wants from his readers.
+                </p>
+              </div>
+              <div className="rounded-lg border border-border p-4">
+                <h3 className="font-bold text-foreground">The Supernatural as Moral Device</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                  The three ghosts are not merely plot devices but structural tools that allow Dickens to compress an entire moral education into a single night. Past shows consequences of choices; Present shows current suffering Scrooge ignores; Future shows the ultimate consequence of unchanged behaviour. Each ghost grows more frightening, culminating in the silent, hooded phantom. The supernatural framework allows Dickens to move freely through time and space, showing private scenes the protagonist could not otherwise witness.
+                </p>
+              </div>
+            </div>
+          </Section>
+        </div>
+
+        {/* ────────────────────────────────────────── GRADE 9 POINTS */}
+        <div id="grade-9">
+          <Section id="grade-9" title="Grade 9 Exemplar Points and Interpretations" badge="8 Points" colour="bg-amber-600">
+            <p className="text-sm text-muted-foreground mb-4">
+              These higher-level interpretations demonstrate the sophisticated analysis needed for top grades. Each goes beyond surface reading to consider authorial intent, alternative readings, and structural significance.
+            </p>
+            <div className="space-y-6">
+
+              <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
+                <h3 className="font-bold text-amber-700 dark:text-amber-300">1. The Novella as Political Intervention</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                  <em>A Christmas Carol</em> was not just a story but a deliberate political act. In 1843, Dickens visited a ragged school (a free school for destitute children) and was so horrified that he planned to write a pamphlet called &ldquo;An Appeal to the People of England on Behalf of the Poor Man&apos;s Child.&rdquo; Instead, he wrote <em>A Christmas Carol</em>, realising that fiction would be more persuasive than polemic. The novella was priced cheaply (five shillings) to reach the widest possible audience. A Grade 9 response should recognise that the text is a calculated intervention &mdash; Dickens chose the form (fiction), the timing (Christmas), and the price (affordable) to maximise its social impact.
+                </p>
+              </div>
+
+              <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
+                <h3 className="font-bold text-amber-700 dark:text-amber-300">2. Scrooge&apos;s Transformation: Genuine or Performed?</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                  Most readings take Scrooge&apos;s transformation at face value. A more sophisticated response might question its completeness. Scrooge changes from fear of death, not from genuine empathy. His good deeds in Stave Five are performative and public &mdash; buying the turkey, tipping boys, joining parties. Some critics argue this is &ldquo;Christmas capitalism&rdquo; rather than genuine social change: individual charity replacing systemic reform. A Grade 9 answer could argue that Dickens presents individual transformation as necessary but perhaps insufficient &mdash; the underlying system of workhouses, child labour, and poverty requires structural change that Scrooge&apos;s generosity alone cannot provide.
+                </p>
+              </div>
+
+              <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
+                <h3 className="font-bold text-amber-700 dark:text-amber-300">3. Ignorance and Want as the Novella&apos;s True Climax</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                  While Stave Four&apos;s gravestone revelation is the plot climax, the allegorical climax occurs when the Ghost of Christmas Present reveals the children Ignorance and Want. They are &ldquo;yellow, meagre, ragged, scowling, wolfish&rdquo; &mdash; more animal than human, deformed by neglect. The Ghost warns: &ldquo;Beware them both... but most of all beware this boy, for on his brow I see that written which is Doom.&rdquo; This is Dickens&apos;s most direct political statement: society&apos;s wilful ignorance of poverty will lead to its own destruction. The children are not Scrooge&apos;s victims specifically but <em>society&apos;s</em> &mdash; making this a critique that extends far beyond one man&apos;s greed.
+                </p>
+              </div>
+
+              <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
+                <h3 className="font-bold text-amber-700 dark:text-amber-300">4. The Ghost of Christmas Past&apos;s Light as Truth</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                  The first ghost has a &ldquo;bright clear jet of light&rdquo; springing from its head. When Scrooge cannot bear the painful memories, he presses the extinguisher cap down and suppresses the light &mdash; but the light still gleams underneath. This is a metaphor for truth and self-knowledge: Scrooge can try to suppress the past, but he cannot destroy it. The act of extinguishing light = the act of wilful ignorance. The fact that the light persists suggests that truth is indestructible, even when we refuse to look at it. Scrooge&apos;s entire miserliness is built on suppression of painful truths about his own past.
+                </p>
+              </div>
+
+              <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
+                <h3 className="font-bold text-amber-700 dark:text-amber-300">5. Fezziwig vs. Scrooge as Contrasting Models of Capitalism</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                  Fezziwig is not anti-capitalist &mdash; he is a successful businessman. But he uses his wealth to create joy. Scrooge uses his to accumulate power. The contrast is not between wealth and poverty but between generous and selfish uses of wealth. Dickens is not arguing that capitalism is wrong but that capitalism without conscience is destructive. A Grade 9 response might note that Dickens&apos;s message is reformist rather than revolutionary: he wants to change how the wealthy behave, not overthrow the system. The young Scrooge admires Fezziwig but later chooses the path of cold accumulation &mdash; showing that moral choices, not economic systems, are what Dickens holds responsible.
+                </p>
+              </div>
+
+              <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
+                <h3 className="font-bold text-amber-700 dark:text-amber-300">6. Tiny Tim as Sentimental Propaganda</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                  Tiny Tim is deliberately designed to evoke maximum sympathy: he is young, disabled, brave, pious, and dying. Some critics argue he is a sentimental stereotype rather than a realistic character. A sophisticated response acknowledges this but argues that the sentimentality is <em>intentional</em> and <em>strategic</em>. Dickens knew that statistics about child mortality did not move the wealthy to action; emotional appeal did. Tim is not meant to be a realistic portrayal of a disabled child but a rhetorical tool &mdash; a figure designed to make Scrooge (and the reader) <em>feel</em> the human cost of poverty so intensely that they are moved to act. The sentimentality is the point, not a flaw.
+                </p>
+              </div>
+
+              <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
+                <h3 className="font-bold text-amber-700 dark:text-amber-300">7. The Narrator as Dickens&apos;s Rhetorical Weapon</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                  The omniscient narrator is not neutral. He exclaims, judges, and guides the reader&apos;s response at every turn. When describing Scrooge, the narrator uses aggressive, relentless language. When describing the Cratchits, the language becomes tender and warm. This is deliberate emotional manipulation &mdash; Dickens uses his narrator to ensure the reader responds in the &ldquo;right&rdquo; way. A top-level answer might argue that the narrator functions as a preacher, with the novella as his sermon. The reader is not invited to form their own judgement but is guided firmly toward Dickens&apos;s conclusion.
+                </p>
+              </div>
+
+              <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
+                <h3 className="font-bold text-amber-700 dark:text-amber-300">8. Dickens&apos;s Autobiographical Connection</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                  Dickens experienced poverty firsthand as a child when his father was imprisoned in the Marshalsea debtors&apos; prison and he was sent to work in a blacking factory aged twelve. Young Scrooge&apos;s lonely abandonment at boarding school likely draws on Dickens&apos;s own feelings of childhood neglect. Fan&apos;s rescue mirrors the eventual restoration of family. This autobiographical dimension gives the novella its emotional authenticity. A Grade 9 response might argue that Dickens&apos;s personal experience gives him unique authority to write about both poverty and the possibility of redemption &mdash; he knew both intimately.
+                </p>
               </div>
             </div>
           </Section>

@@ -95,7 +95,7 @@ export default function SpokenLanguagePage() {
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
               href="/resources/spoken-language/topics"
-              className="rounded-lg bg-card px-6 py-3 text-sm font-semibold text-foreground shadow-md transition hover:bg-blue-500/10"
+              className="rounded-lg bg-card px-6 py-3 text-sm font-semibold text-foreground shadow-md transition hover:bg-primary/10"
             >
               Browse 30+ Topic Ideas
             </Link>
@@ -161,9 +161,9 @@ export default function SpokenLanguagePage() {
             <div className="rounded-lg border border-primary/20 bg-primary/5 p-5">
               <p className="text-sm font-semibold text-foreground">Key facts</p>
               <ul className="ml-4 mt-2 list-disc space-y-1 text-sm text-muted-foreground">
-                <li>Required for all GCSE English Language students (AQA, Edexcel, OCR)</li>
+                <li>Required for all GCSE English Language students</li>
                 <li>Reported separately &mdash; does <strong>not</strong> count towards your 9&ndash;1 grade</li>
-                <li>Assessed by your teacher, moderated by the exam board</li>
+                <li>Assessed by your teacher, moderated by your exam board</li>
                 <li>You deliver a presentation, then answer questions</li>
                 <li>Standard English must be used throughout</li>
               </ul>
@@ -188,16 +188,16 @@ export default function SpokenLanguagePage() {
               four outcomes:
             </p>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              <div className="rounded-lg border-2 border-emerald-500 bg-emerald-500/10 p-4 text-center">
-                <p className="text-lg font-bold text-emerald-700 dark:text-emerald-300">Distinction</p>
+              <div className="rounded-lg border-2 border-primary bg-primary/10 p-4 text-center">
+                <p className="text-lg font-bold text-primary">Distinction</p>
                 <p className="mt-1 text-xs text-muted-foreground">Outstanding performance across all three strands</p>
               </div>
-              <div className="rounded-lg border-2 border-primary bg-blue-500/10 p-4 text-center">
+              <div className="rounded-lg border-2 border-primary/60 bg-primary/5 p-4 text-center">
                 <p className="text-lg font-bold text-primary">Merit</p>
                 <p className="mt-1 text-xs text-muted-foreground">Competent and clear across all strands</p>
               </div>
-              <div className="rounded-lg border-2 border-amber-500 bg-amber-500/10 p-4 text-center">
-                <p className="text-lg font-bold text-amber-700 dark:text-amber-300">Pass</p>
+              <div className="rounded-lg border-2 border-border bg-muted p-4 text-center">
+                <p className="text-lg font-bold text-foreground">Pass</p>
                 <p className="mt-1 text-xs text-muted-foreground">Basic competence demonstrated</p>
               </div>
               <div className="rounded-lg border-2 border-border bg-muted p-4 text-center">
@@ -618,7 +618,7 @@ export default function SpokenLanguagePage() {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-border">
-                  <tr className="bg-red-500/5">
+                  <tr className="bg-muted/50">
                     <td className="px-4 py-2">&ldquo;We was going&hellip;&rdquo;</td>
                     <td className="px-4 py-2">&ldquo;We were going&hellip;&rdquo;</td>
                   </tr>
@@ -626,7 +626,7 @@ export default function SpokenLanguagePage() {
                     <td className="px-4 py-2">&ldquo;I done it&rdquo;</td>
                     <td className="px-4 py-2">&ldquo;I did it&rdquo; / &ldquo;I have done it&rdquo;</td>
                   </tr>
-                  <tr className="bg-red-500/5">
+                  <tr className="bg-muted/50">
                     <td className="px-4 py-2">&ldquo;They ain&rsquo;t&rdquo;</td>
                     <td className="px-4 py-2">&ldquo;They are not&rdquo; / &ldquo;They have not&rdquo;</td>
                   </tr>
@@ -634,7 +634,7 @@ export default function SpokenLanguagePage() {
                     <td className="px-4 py-2">&ldquo;Like, basically&hellip;&rdquo;</td>
                     <td className="px-4 py-2">&ldquo;Essentially&hellip;&rdquo; / &ldquo;In summary&hellip;&rdquo;</td>
                   </tr>
-                  <tr className="bg-red-500/5">
+                  <tr className="bg-muted/50">
                     <td className="px-4 py-2">&ldquo;Innit&rdquo; / &ldquo;Yeah&rdquo;</td>
                     <td className="px-4 py-2">&ldquo;Is it not?&rdquo; / &ldquo;Indeed&rdquo;</td>
                   </tr>
@@ -642,7 +642,7 @@ export default function SpokenLanguagePage() {
                     <td className="px-4 py-2">&ldquo;Me and my friend&hellip;&rdquo;</td>
                     <td className="px-4 py-2">&ldquo;My friend and I&hellip;&rdquo;</td>
                   </tr>
-                  <tr className="bg-red-500/5">
+                  <tr className="bg-muted/50">
                     <td className="px-4 py-2">&ldquo;Could of&rdquo;</td>
                     <td className="px-4 py-2">&ldquo;Could have&rdquo;</td>
                   </tr>
@@ -676,7 +676,7 @@ export default function SpokenLanguagePage() {
                 className="rounded-lg border border-border bg-muted p-5"
               >
                 <div className="flex items-start gap-3">
-                  <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-red-500/15 text-xs font-bold text-red-600">
+                  <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
                     {i + 1}
                   </span>
                   <div>
@@ -842,8 +842,8 @@ export default function SpokenLanguagePage() {
 
             <div className="space-y-4">
               {/* Distinction */}
-              <div className="rounded-lg border-2 border-emerald-500 bg-emerald-500/10 p-5">
-                <h3 className="text-lg font-bold text-emerald-700 dark:text-emerald-300">Distinction</h3>
+              <div className="rounded-lg border-2 border-primary bg-primary/10 p-5">
+                <h3 className="text-lg font-bold text-primary">Distinction</h3>
                 <ul className="ml-4 mt-3 list-disc space-y-2 text-sm text-muted-foreground">
                   <li><strong>Presenting:</strong> The presentation is confidently, skilfully, and engagingly delivered with a commanding presence. Content is challenging, well-researched, and compelling. A wide range of rhetorical and presentational techniques is used effectively and deliberately.</li>
                   <li><strong>Listening &amp; Responding:</strong> Responds to questions and feedback perceptively, with authority and in considerable detail. Demonstrates sophisticated critical thinking and the ability to develop and extend ideas spontaneously.</li>
@@ -852,7 +852,7 @@ export default function SpokenLanguagePage() {
               </div>
 
               {/* Merit */}
-              <div className="rounded-lg border-2 border-primary bg-blue-500/10 p-5">
+              <div className="rounded-lg border-2 border-primary/60 bg-primary/5 p-5">
                 <h3 className="text-lg font-bold text-primary">Merit</h3>
                 <ul className="ml-4 mt-3 list-disc space-y-2 text-sm text-muted-foreground">
                   <li><strong>Presenting:</strong> The presentation is clearly and competently delivered with good audience engagement. Content is well-organised, relevant, and supported with evidence. Rhetorical and presentational techniques are used with success.</li>
@@ -862,8 +862,8 @@ export default function SpokenLanguagePage() {
               </div>
 
               {/* Pass */}
-              <div className="rounded-lg border-2 border-amber-500 bg-amber-500/10 p-5">
-                <h3 className="text-lg font-bold text-amber-700 dark:text-amber-300">Pass</h3>
+              <div className="rounded-lg border-2 border-border bg-muted p-5">
+                <h3 className="text-lg font-bold text-foreground">Pass</h3>
                 <ul className="ml-4 mt-3 list-disc space-y-2 text-sm text-muted-foreground">
                   <li><strong>Presenting:</strong> The presentation is delivered with basic competence. Content is understandable and has some structure, though it may lack depth or sustained development. Some attempt is made to use presentational techniques.</li>
                   <li><strong>Listening &amp; Responding:</strong> Responds to questions with simple, relevant answers but may lack development or detail.</li>
@@ -936,7 +936,7 @@ export default function SpokenLanguagePage() {
           </p>
           <Link
             href="/resources/spoken-language/topics"
-            className="mt-6 inline-block rounded-lg bg-card px-8 py-3 text-sm font-semibold text-foreground shadow transition hover:bg-blue-500/10"
+            className="mt-6 inline-block rounded-lg bg-card px-8 py-3 text-sm font-semibold text-foreground shadow transition hover:bg-primary/10"
           >
             Browse All Topics &rarr;
           </Link>

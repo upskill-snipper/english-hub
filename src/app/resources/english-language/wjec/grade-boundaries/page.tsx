@@ -45,10 +45,7 @@ export default function GradeBoundariesPage() {
     <>
 
       {/* Hero */}
-      <section
-        className="px-4 py-16 text-white sm:py-20"
-        style={{ background: "linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary)) 50%, hsl(var(--primary)) 80%)" }}
-      >
+      <section className="border-b bg-gradient-to-b from-primary/[0.06] to-transparent px-4 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">
             WJEC Eduqas GCSE English Language (C700QS)

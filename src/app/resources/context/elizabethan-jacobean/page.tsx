@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 
 /* ─── Expandable Section ─────────────────────────────────────── */
 
@@ -10,7 +9,7 @@ function Section({
   id,
   title,
   badge,
-  colour = "bg-purple-700",
+  colour = "bg-primary",
   children,
   defaultOpen = false,
 }: {
@@ -81,10 +80,10 @@ function TimelineEvent({ year, event }: { year: string; event: string }) {
   return (
     <div className="flex gap-4">
       <div className="flex flex-col items-center">
-        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-purple-500/15 text-xs font-bold text-purple-700 dark:text-purple-300">
+        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary/15 text-xs font-bold text-primary">
           {year}
         </span>
-        <div className="mt-1 h-full w-px bg-purple-500/30" />
+        <div className="mt-1 h-full w-px bg-primary/30" />
       </div>
       <p className="pb-6 text-sm text-muted-foreground">{event}</p>
     </div>
@@ -127,7 +126,7 @@ export default function ElizabethanJacobeanContextPage() {
       <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
         <div className="mb-8">
           <div className="flex flex-wrap items-center gap-3 mb-2">
-            <span className="rounded-full bg-purple-500/15 px-3 py-1 text-xs font-bold text-purple-700 dark:text-purple-300 uppercase tracking-wider">
+            <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary uppercase tracking-wider">
               1558 -- 1625
             </span>
             <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">Macbeth</span>
@@ -168,7 +167,7 @@ export default function ElizabethanJacobeanContextPage() {
 
         <div className="mt-5 space-y-5">
           {/* Great Chain of Being */}
-          <Section id="chain" title="The Great Chain of Being" colour="bg-purple-800">
+          <Section id="chain" title="The Great Chain of Being" colour="bg-primary">
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 Elizabethans and Jacobeans believed in a <strong>divinely ordained hierarchy</strong> that
@@ -190,7 +189,7 @@ export default function ElizabethanJacobeanContextPage() {
           </Section>
 
           {/* Divine Right of Kings */}
-          <Section id="divine-right" title="The Divine Right of Kings" colour="bg-yellow-700">
+          <Section id="divine-right" title="The Divine Right of Kings" colour="bg-primary">
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 The <strong>Divine Right of Kings</strong> was the belief that monarchs were chosen by
@@ -237,7 +236,7 @@ export default function ElizabethanJacobeanContextPage() {
           </Section>
 
           {/* Theatre Conventions */}
-          <Section id="theatre" title="Theatre Conventions" colour="bg-red-700">
+          <Section id="theatre" title="Theatre Conventions" colour="bg-primary">
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 Shakespeare&apos;s theatre was radically different from modern performance. The
@@ -266,7 +265,7 @@ export default function ElizabethanJacobeanContextPage() {
           </Section>
 
           {/* Gender and Marriage */}
-          <Section id="gender" title="Gender & Marriage" colour="bg-rose-700">
+          <Section id="gender" title="Gender & Marriage" colour="bg-primary">
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 Women in Elizabethan and Jacobean England had very limited legal rights. They were
@@ -296,7 +295,7 @@ export default function ElizabethanJacobeanContextPage() {
           </Section>
 
           {/* Religion */}
-          <Section id="religion" title="Religion & the Reformation" colour="bg-blue-800">
+          <Section id="religion" title="Religion & the Reformation" colour="bg-primary">
             <div className="space-y-4 text-sm text-muted-foreground leading-relaxed">
               <p>
                 England underwent a seismic religious upheaval in the sixteenth century. Henry VIII
@@ -431,7 +430,6 @@ export default function ElizabethanJacobeanContextPage() {
         </div>
       </div>
 
-      <ExamBoardDisclaimer />
     </>
   );
 }

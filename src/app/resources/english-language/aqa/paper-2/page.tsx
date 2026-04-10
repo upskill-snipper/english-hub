@@ -67,8 +67,14 @@ export default function Paper2Page() {
           </li>
           <li>/</li>
           <li>
+            <Link href="/resources/english-language" className="hover:text-primary transition-colors">
+              English Language
+            </Link>
+          </li>
+          <li>/</li>
+          <li>
             <Link href="/resources/english-language/aqa" className="hover:text-primary transition-colors">
-              AQA English Language
+              AQA
             </Link>
           </li>
           <li>/</li>
@@ -518,6 +524,46 @@ export default function Paper2Page() {
             </table>
           </div>
         </Section>
+
+        {/* Continue studying */}
+        <div className="rounded-xl border border-primary/20 bg-primary/5 p-6 sm:p-8">
+          <h2 className="text-xl font-bold text-foreground">Continue studying</h2>
+          <p className="mt-2 text-muted-foreground">
+            Strengthen your reading analysis and persuasive writing with these resources.
+          </p>
+          <div className="mt-4 flex flex-wrap gap-3">
+            <Link
+              href="/resources/english-language/aqa/paper-1"
+              className="rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary hover:shadow-md"
+            >
+              Paper 1: Reading &amp; Creative Writing
+            </Link>
+            <Link
+              href="/resources/english-language/aqa/techniques"
+              className="rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary hover:shadow-md"
+            >
+              Language Techniques Guide
+            </Link>
+            <Link
+              href="/resources/writing-skills"
+              className="rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary hover:shadow-md"
+            >
+              Writing Skills
+            </Link>
+            <Link
+              href="/practice"
+              className="rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary hover:shadow-md"
+            >
+              Practice Questions
+            </Link>
+            <Link
+              href="/revision"
+              className="rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-primary hover:shadow-md"
+            >
+              Revision Hub
+            </Link>
+          </div>
+        </div>
 
         {/* Back link */}
         <div className="pt-4">

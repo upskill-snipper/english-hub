@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://theenglishhub.app/resources/model-answers' },
   title: "Model Answers | The English Hub",
   description:
-    "Browse expert model answers for GCSE and IGCSE English Language and Literature. Grade 3, 5, 7, and 9 examples with examiner commentary, technique annotations, and grade-boundary breakdowns for AQA, Edexcel, Cambridge IGCSE, and OCR.",
+    "Browse expert model answers for GCSE and IGCSE English Language and Literature. Grade 3, 5, 7, and 9 examples with examiner commentary, technique annotations, and grade-boundary breakdowns.",
 };
 
 /* ─── Data ───────────────────────────────────────────────────── */
@@ -63,14 +63,6 @@ const QUESTION_TYPES = [
   },
 ];
 
-const EXAM_BOARDS = [
-  { id: "all", label: "All Boards" },
-  { id: "aqa", label: "AQA" },
-  { id: "edexcel", label: "Edexcel" },
-  { id: "caie", label: "Cambridge IGCSE" },
-  { id: "ocr", label: "OCR" },
-];
-
 const GRADE_FILTERS = [
   { id: "all", label: "All Grades" },
   { id: "3", label: "Grade 3" },
@@ -113,49 +105,25 @@ export default function ModelAnswersPage() {
         </ol>
       </nav>
 
-      {/* Filters */}
+      {/* Grade filter */}
       <div className="mx-auto max-w-5xl px-4 pt-8 sm:px-6 lg:px-8">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          {/* Board filter */}
-          <div>
-            <label className="mb-1 block text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-              Exam Board
-            </label>
-            <div className="flex flex-wrap gap-2">
-              {EXAM_BOARDS.map((board) => (
-                <button
-                  key={board.id}
-                  className={`rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
-                    board.id === "all"
-                      ? "bg-primary text-white"
-                      : "bg-muted text-muted-foreground hover:bg-primary/10 hover:text-foreground"
-                  }`}
-                >
-                  {board.label}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Grade filter */}
-          <div>
-            <label className="mb-1 block text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-              Grade Level
-            </label>
-            <div className="flex flex-wrap gap-2">
-              {GRADE_FILTERS.map((grade) => (
-                <button
-                  key={grade.id}
-                  className={`rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
-                    grade.id === "all"
-                      ? "bg-primary text-white"
-                      : "bg-muted text-muted-foreground hover:bg-primary/10 hover:text-foreground"
-                  }`}
-                >
-                  {grade.label}
-                </button>
-              ))}
-            </div>
+        <div>
+          <label className="mb-1 block text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+            Grade Level
+          </label>
+          <div className="flex flex-wrap gap-2">
+            {GRADE_FILTERS.map((grade) => (
+              <button
+                key={grade.id}
+                className={`rounded-full px-4 py-1.5 text-sm font-medium transition-colors ${
+                  grade.id === "all"
+                    ? "bg-primary text-white"
+                    : "bg-muted text-muted-foreground hover:bg-primary/10 hover:text-foreground"
+                }`}
+              >
+                {grade.label}
+              </button>
+            ))}
           </div>
         </div>
       </div>

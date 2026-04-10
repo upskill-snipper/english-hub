@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { AITextArea } from "@/components/AITextArea";
 
 /* ─── Expandable section component ──────────────────────────── */
 
@@ -526,7 +527,7 @@ export default function BloodBrothersStudyGuide() {
 
       {/* Quick nav */}
       <nav className="flex flex-wrap gap-2 text-sm" aria-label="Page sections">
-        {["Scene Summaries", "Characters", "Themes", "Key Quotes", "Dramatic Devices", "Context", "Essay Planning"].map(
+        {["Scene Summaries", "Characters", "Themes", "Key Quotes", "Dramatic Devices", "Context", "Essay Planning", "Writer's Methods", "Grade 9 Points", "Exam Questions", "Practice Questions"].map(
           (s) => (
             <a
               key={s}
@@ -647,6 +648,207 @@ export default function BloodBrothersStudyGuide() {
               </div>
             </div>
           ))}
+        </div>
+      </Section>
+
+      {/* Writer's Methods */}
+      <Section id="writers-methods" title="Writer&rsquo;s Methods &amp; Techniques">
+        <div className="space-y-4">
+          {[
+            {
+              method: "Musical Form",
+              detail:
+                "Russell's choice to write a musical is itself a political act. Songs bypass rational defences and communicate directly through emotion. Mrs Johnstone's songs ('Marilyn Monroe', 'Easy Terms', 'Tell Me It's Not True') create empathy for a character who might otherwise be judged harshly. The Narrator's songs build dread. The contrast between upbeat childhood songs and desperate adult songs mirrors the loss of innocence. Music makes the political argument emotionally irresistible.",
+            },
+            {
+              method: "Dramatic Irony",
+              detail:
+                "The audience knows from the opening that the twins will die and that they are brothers. This transforms every scene: the blood brotherhood ritual is poignant because they are already biological brothers; Mickey's 'I could kill that guy' is agonising foreshadowing; Mrs Lyons's 'you're not the same as him' is bitterly ironic. Russell uses dramatic irony to implicate the audience: like Mrs Johnstone, we know the truth but are powerless to prevent the tragedy.",
+            },
+            {
+              method: "Juxtaposition",
+              detail:
+                "Russell constantly places contrasting scenes side by side. The policeman scene is the most explicit example: identical behaviour produces a threat at the Johnstone house and a polite conversation at the Lyons house. Adult outcomes (university vs factory, councillor vs prisoner) are juxtaposed to show that class, not character, determines fate. This technique makes the political argument visual and undeniable.",
+            },
+            {
+              method: "The Narrator as Greek Chorus",
+              detail:
+                "The Narrator stands outside the action, commenting and warning. He reveals the ending in the prologue, creating dramatic irony. His recurring motifs ('shoes upon the table', 'the devil's got your number') build an atmosphere of inevitability. He breaks the fourth wall, preventing passive engagement. His final question forces the audience to judge: was it superstition or class? Russell uses him to ensure the play is never just entertainment but always argument.",
+            },
+            {
+              method: "Symbolism of Guns",
+              detail:
+                "Guns appear throughout as a motif of escalating danger. At seven, Mickey and Eddie play cowboys with toy guns. As teenagers, they play with air rifles. As an adult, Sammy uses a real gun in the robbery. In the final scene, Mickey holds a real gun pointed at Eddie. The progression from toy to real weapon mirrors the loss of innocence and the way childhood play prefigures adult violence. Russell makes the connection between class deprivation and violence explicit through this sustained symbol.",
+            },
+            {
+              method: "Dialect and Register",
+              detail:
+                "Russell uses language to mark class identity. Mickey speaks in Liverpool dialect: 'Gis a sweet', 'pissed off', 'a good hidin''. Eddie speaks in standard English with formal vocabulary: 'smashing', 'super'. As children, these differences are comic; as adults, they become barriers. Eddie's linguistic confidence gives him access to power (politics, professional life) that Mickey's dialect denies. Language is both symptom and cause of class inequality.",
+            },
+            {
+              method: "Time Compression",
+              detail:
+                "The play covers thirty years in two acts. Russell accelerates time to show how childhood promise is progressively destroyed by adult realities. The rapid ageing prevents the audience from becoming comfortable: just as they enjoy the childhood comedy, the characters age and the tone darkens. This structural pacing mirrors how poverty accelerates ageing and diminishes life chances.",
+            },
+          ].map((m) => (
+            <div key={m.method} className="rounded-lg border border-border bg-muted p-4">
+              <h3 className="font-semibold text-foreground">{m.method}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{m.detail}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Grade 9 Exemplar Points */}
+      <Section id="grade-9-points" title="Grade 9 Exemplar Points">
+        <p className="mb-4 text-sm text-muted-foreground">
+          These sophisticated, conceptualised arguments distinguish Grade 9 responses.
+        </p>
+        <div className="space-y-3">
+          {[
+            "Russell's twins experiment is not merely a dramatic conceit but a rigorous political argument. By making Mickey and Eddie genetically identical, he eliminates every variable except class. The play functions as a controlled experiment in social determinism, arguing that nurture (environment, opportunity, wealth) is overwhelmingly more powerful than nature (genetics, innate ability) in determining life outcomes.",
+            "The superstition functions as a metaphor for all the myths that justify class inequality: the idea that some people are 'meant' to succeed, that poverty reflects personal failing, that social mobility is freely available. Russell suggests that believing in superstition is easier than confronting the political reality that the system is rigged. If we blame fate, we do not have to blame policy.",
+            "Mickey's dependence on antidepressants after prison is not merely personal tragedy but a political indictment. Russell shows how the state manages working-class despair through medication rather than addressing its causes: unemployment, poverty, and hopelessness. Mickey's pills keep him 'level' but destroy his personality, suggesting that the system's response to the damage it causes is to sedate, not to solve.",
+            "Mrs Lyons's descent into paranoia subverts the assumption that wealth guarantees wellbeing. Russell shows that the class system damages everyone: the working class through deprivation, the middle class through anxiety and guilt. Mrs Lyons's possessiveness and instability suggest that privilege purchased through exploitation is inherently unstable.",
+            "The policeman scene is Russell's most efficient argument. In under two minutes, identical behaviour produces opposite outcomes based solely on class. The policeman's language shifts from threatening ('I'd have the law on you') to deferential ('It was more of a prank, really'). Russell demonstrates that the law is not blind but class-conscious, and that justice itself is distributed unequally.",
+            "Mickey's final cry --- 'I could have been him!' --- is devastating because it expresses not merely personal grief but a structural truth. The exclamation is simultaneously about one individual and about every working-class person whose potential was wasted by circumstance. Russell ensures that the audience hears not just Mickey but the political argument: talent is equally distributed; opportunity is not.",
+            "The play's musical form is itself a political choice. Music democratises complex arguments: Russell uses melody and rhythm to communicate class critique to audiences who might resist it in prose or lecture form. The emotional accessibility of songs like 'Tell Me It's Not True' ensures that the political message is felt, not merely understood.",
+            "Russell's decision to set the play in Liverpool is crucial. Liverpool in the 1980s was ground zero of Thatcher's Britain: mass unemployment, managed decline, and the systematic destruction of working-class communities. The play is not a universal fable but a specific historical argument about what happened when government policy abandoned an entire city and its people.",
+          ].map((point, i) => (
+            <div key={i} className="rounded-lg border-l-4 border-accent bg-muted p-4">
+              <p className="text-sm leading-relaxed text-muted-foreground">{point}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Exam Questions with Model Answer Outlines */}
+      <Section id="exam-questions" title="Exam-Style Questions with Model Answer Outlines">
+        <p className="mb-4 text-sm text-muted-foreground">
+          These outlines show how to structure a full-mark GCSE response.
+        </p>
+        <div className="space-y-6">
+          {[
+            {
+              question: "How does Russell present the decline of Mickey throughout Blood Brothers?",
+              outline: [
+                "Introduction: Mickey's trajectory from lively child to depressed, pill-dependent adult is the play's most devastating illustration of how class determines life outcomes. Russell uses Mickey's decline to argue that working-class potential is systematically wasted.",
+                "Para 1 -- Childhood (age seven): Mickey is energetic, funny, and naturally charismatic. 'If I was our Sammy, I'd smash him.' His vitality and humour make the audience love him. Russell establishes this baseline to make his later decline all the more devastating.",
+                "Para 2 -- Adolescence (age fourteen): Mickey is awkward but endearing. He cannot articulate his feelings for Linda. His education has given him no tools for emotional expression. Meanwhile, Eddie's private school has equipped him with confidence and vocabulary. The class gap widens.",
+                "Para 3 -- Adulthood: unemployment, crime, prison: Mickey loses his factory job in the recession. He is drawn into Sammy's armed robbery and imprisoned. Russell shows how poverty creates a chain: unemployment leads to desperation, which leads to crime, which leads to prison. Each link is forged by the class system.",
+                "Para 4 -- Depression and medication: After prison, Mickey is dependent on antidepressants. He is emotionally absent, pushing Linda away. 'What's wrong with you, Mickey?' implies personal failing, but Russell makes clear the cause is structural. The pills keep him alive but destroy who he was.",
+                "Conclusion: Russell argues that Mickey's decline is not personal failure but political murder. The class system systematically destroyed every quality that made him human: his energy, humour, relationships, and hope. 'I could have been him!' is the verdict.",
+              ],
+            },
+            {
+              question: "'Blood Brothers shows that the class system is the real villain.' How far do you agree?",
+              outline: [
+                "Introduction: While the play features individual antagonists (Mrs Lyons, Sammy, arguably the Narrator), Russell consistently directs blame towards the class system itself. The play argues that class is the structural cause of the tragedy.",
+                "Para 1 -- The twins as proof: Identical genetics, different class, radically different outcomes. This eliminates individual character as an explanation. The only variable is class. Russell's argument is methodical: if nature is constant, nurture (class) is the determining factor.",
+                "Para 2 -- The policeman scene: The law treats identical behaviour differently based on class. This shows that even institutions designed to be impartial (the police, the courts) are instruments of class bias. The system is rigged from childhood.",
+                "Para 3 -- Counter-argument: Mrs Lyons's manipulation: She is a middle-class individual who acts villainously. However, her manipulation is enabled by her class position: she has the economic power to take Mrs Johnstone's child and the social authority to enforce the arrangement. Her individual villainy is a product of class privilege.",
+                "Para 4 -- The Narrator's final question: 'Could it be what we, the English, have come to know as class?' Russell poses it as a question but the entire play has been building the answer. By implicating 'we, the English,' he makes class inequality a national, not individual, failing.",
+                "Conclusion: While individuals make choices within the play, Russell argues that those choices are constrained by class. The system is the villain because it determines who gets to choose freely and who does not.",
+              ],
+            },
+            {
+              question: "How does Russell use the character of Linda to explore the effects of class inequality?",
+              outline: [
+                "Introduction: Linda is the play's most resilient character, but her resilience is progressively overwhelmed by the structural pressures of class inequality. Russell uses her to show the impossible position of working-class women.",
+                "Para 1 -- Childhood strength: As a child, Linda is bold and fearless, defending Mickey against bullies. 'Take no notice of him. He's only soft.' She is the strongest character at seven. Russell establishes her as someone whose potential is equal to anyone's.",
+                "Para 2 -- Teenage loyalty: Linda clearly likes Mickey but waits for him to express his feelings. Her frustration at his inability to communicate reflects the emotional limitations imposed by his upbringing. She could have chosen Eddie; she chose Mickey. Russell shows that love crosses class boundaries but cannot survive within them.",
+                "Para 3 -- Adult burden: Linda holds the family together when Mickey collapses. She works, cares for their child, and tries to help Mickey with his depression. The entire burden of poverty falls on her. Russell shows how working-class women bear disproportionate emotional and practical costs.",
+                "Para 4 -- The turn to Eddie: Linda's relationship with Eddie is driven by desperation, not disloyalty. Eddie offers practical help (a job, a house) that the system denies Mickey. Russell refuses to condemn Linda, creating sympathy for all three characters in the love triangle. Her 'betrayal' is the system's, not hers.",
+                "Conclusion: Russell uses Linda to show that individual strength cannot overcome structural inequality. She is the strongest character in the play, yet even she is broken by the system. Her fate argues that class inequality destroys not just individuals but relationships and families.",
+              ],
+            },
+          ].map((eq, i) => (
+            <div key={i} className="rounded-lg border border-border bg-card p-4">
+              <h4 className="font-bold text-foreground">{eq.question}</h4>
+              <div className="mt-3 space-y-2">
+                {eq.outline.map((para, j) => (
+                  <p key={j} className="text-sm leading-relaxed text-muted-foreground">{para}</p>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Practice Questions */}
+      <Section id="practice-questions" title="Practice Questions">
+        <p className="text-sm text-muted-foreground mb-6">
+          Write your answer below each question and receive AI-powered feedback tailored to GCSE English Literature mark schemes.
+          Aim for at least 150 words per response to get meaningful feedback.
+        </p>
+        <div className="space-y-8">
+          <div className="rounded-lg border border-border p-4">
+            <h3 className="font-bold text-foreground mb-1">Question 1</h3>
+            <p className="text-sm text-muted-foreground mb-3">
+              How does Russell present the effects of social class in <em>Blood Brothers</em>?
+              <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
+            </p>
+            <AITextArea
+              placeholder="Write your essay response here..."
+              label="Your answer"
+              subject="English Literature"
+              topic="Blood Brothers - How Russell presents the effects of social class"
+              minWords={150}
+              maxWords={800}
+              rows={10}
+            />
+          </div>
+
+          <div className="rounded-lg border border-border p-4">
+            <h3 className="font-bold text-foreground mb-1">Question 2</h3>
+            <p className="text-sm text-muted-foreground mb-3">
+              How does Russell use the Narrator to create dramatic tension in <em>Blood Brothers</em>?
+              <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
+            </p>
+            <AITextArea
+              placeholder="Write your essay response here..."
+              label="Your answer"
+              subject="English Literature"
+              topic="Blood Brothers - How Russell uses the Narrator to create dramatic tension"
+              minWords={150}
+              maxWords={800}
+              rows={10}
+            />
+          </div>
+
+          <div className="rounded-lg border border-border p-4">
+            <h3 className="font-bold text-foreground mb-1">Question 3</h3>
+            <p className="text-sm text-muted-foreground mb-3">
+              How does Russell present the character of Mrs Johnstone in <em>Blood Brothers</em>?
+              <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
+            </p>
+            <AITextArea
+              placeholder="Write your essay response here..."
+              label="Your answer"
+              subject="English Literature"
+              topic="Blood Brothers - How Russell presents the character of Mrs Johnstone"
+              minWords={150}
+              maxWords={800}
+              rows={10}
+            />
+          </div>
+
+          <div className="rounded-lg border border-border p-4">
+            <h3 className="font-bold text-foreground mb-1">Question 4</h3>
+            <p className="text-sm text-muted-foreground mb-3">
+              How does Russell present the theme of nature versus nurture in <em>Blood Brothers</em>?
+              <span className="ml-2 text-xs font-semibold text-muted-foreground">[30 marks]</span>
+            </p>
+            <AITextArea
+              placeholder="Write your essay response here..."
+              label="Your answer"
+              subject="English Literature"
+              topic="Blood Brothers - How Russell presents the theme of nature versus nurture"
+              minWords={150}
+              maxWords={800}
+              rows={10}
+            />
+          </div>
         </div>
       </Section>
 

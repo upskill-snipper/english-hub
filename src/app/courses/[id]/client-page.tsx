@@ -15,8 +15,6 @@ import {
 import { createClient } from '@/lib/supabase/client'
 import { PRICING } from '@/constants/pricing'
 import { useAuthStore } from '@/store/auth-store'
-import { useBoardStore } from '@/store/board-store'
-import { matchesBoard } from '@/lib/board-filter'
 import type { CourseData } from '@/data/courses'
 import { LearningTip } from '@/components/ui/learning-tip'
 import { Button } from '@/components/ui/button'
@@ -27,7 +25,6 @@ interface CourseDetailPageProps {
 
 export default function CourseDetailPage({ course }: CourseDetailPageProps) {
   const { user, profile } = useAuthStore()
-  const { selectedBoard } = useBoardStore()
 
   const [isEnrolled, setIsEnrolled] = useState(false)
   const [loading, setLoading] = useState(true)
@@ -62,21 +59,6 @@ export default function CourseDetailPage({ course }: CourseDetailPageProps) {
     checkEnrolment()
   }, [user, course.id])
 
-  // Board mismatch — course belongs to a different exam board
-  if (course && selectedBoard && !matchesBoard(course.board, selectedBoard)) {
-    return (
-      <div className="flex min-h-[60vh] flex-col items-center justify-center gap-4 bg-background text-foreground">
-        <h1 className="text-2xl font-bold">Course not available</h1>
-        <p className="text-muted-foreground text-center max-w-md">
-          This course is for the <strong>{course.board}</strong> exam board. You currently have <strong>{selectedBoard}</strong> selected.
-        </p>
-        <Button render={<Link href="/courses" />}>
-          Browse your courses
-        </Button>
-      </div>
-    )
-  }
-
   const hasAccess = isEnrolled || isPro
   const firstModule = course.moduleList[0]
   const firstModuleHref = firstModule ? `/learn/${course.id}/${firstModule.id}` : `/courses`
@@ -91,6 +73,15 @@ export default function CourseDetailPage({ course }: CourseDetailPageProps) {
       ),
     [course.moduleList],
   )
+
+  // Stable module numbering: map each module ID to its original 1-based
+  // position so the displayed number never shifts when the list is
+  // filtered, sorted, or a tab/section is selected.
+  const moduleNumberMap = useMemo(() => {
+    const map = new Map<string, number>()
+    course.moduleList.forEach((mod, i) => map.set(mod.id, i + 1))
+    return map
+  }, [course.moduleList])
 
   return (
     <div className="min-h-screen bg-background">
@@ -200,14 +191,15 @@ export default function CourseDetailPage({ course }: CourseDetailPageProps) {
               </div>
 
               <ol className="space-y-3">
-                {course.moduleList.map((mod, idx) => {
-                  const isFreePreview = idx === 0
+                {course.moduleList.map((mod) => {
+                  const stableNumber = moduleNumberMap.get(mod.id) ?? 1
+                  const isFreePreview = stableNumber === 1
                   const locked = !hasAccess && !isFreePreview
                   const moduleHref = `/learn/${course.id}/${mod.id}`
 
                   const content = (
                     <>
-                      {/* Number circle */}
+                      {/* Number circle — uses stable original position, not filtered index */}
                       <span
                         className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-xs font-bold ${locked ? 'bg-muted text-muted-foreground' : ''}`}
                         style={locked ? undefined : {
@@ -215,7 +207,7 @@ export default function CourseDetailPage({ course }: CourseDetailPageProps) {
                           color: course.color,
                         }}
                       >
-                        {idx + 1}
+                        {stableNumber}
                       </span>
 
                       {/* Details */}

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 
 /* ─── Metadata ───────────────────────────────────────────────── */
 
@@ -18,8 +17,8 @@ const TEXTS = [
     title: "Romeo and Juliet",
     subtitle: "Conflict Between Families, Generations, and Within",
     author: "William Shakespeare",
-    colour: "border-[#C0392B]",
-    tagColour: "bg-[#C0392B]/10 text-[#C0392B]",
+    colour: "border-primary",
+    tagColour: "bg-primary/10 text-primary",
     analysis: [
       "The Montague-Capulet feud is the play's driving conflict, but Shakespeare shows it as irrational and self-destructive -- the 'ancient grudge' has no stated cause.",
       "Internal conflict is equally important: Romeo is torn between love and loyalty, Juliet between family duty and personal desire, and Friar Lawrence between caution and compassion.",
@@ -44,8 +43,8 @@ const TEXTS = [
     title: "Power and Conflict Poetry",
     subtitle: "War, Memory, and the Human Cost of Conflict",
     author: "Various poets",
-    colour: "border-[#D35400]",
-    tagColour: "bg-[#D35400]/10 text-[#D35400]",
+    colour: "border-primary",
+    tagColour: "bg-primary/10 text-primary",
     analysis: [
       "The anthology presents conflict from multiple perspectives: the soldier on the ground (Remains, Bayonet Charge), the civilian (War Photographer, Poppies), and the historical observer (Ozymandias, London).",
       "Many poems explore the gap between the reality of conflict and how it is remembered or reported -- Exposure's 'nothing happens' contrasts with heroic war narratives.",
@@ -70,8 +69,8 @@ const TEXTS = [
     title: "Lord of the Flies",
     subtitle: "Civilisation vs. Savagery",
     author: "William Golding",
-    colour: "border-[#27AE60]",
-    tagColour: "bg-[#27AE60]/10 text-[#27AE60]",
+    colour: "border-primary",
+    tagColour: "bg-primary/10 text-primary",
     analysis: [
       "Golding uses the island as a microcosm to explore whether conflict is an inevitable part of human nature or a product of social breakdown.",
       "The conflict between Ralph (democracy, reason) and Jack (authoritarianism, instinct) allegorises the broader struggle between civilisation and barbarism.",
@@ -264,7 +263,6 @@ export default function ConflictThemePage() {
         </div>
       </section>
 
-      <ExamBoardDisclaimer />
     </>
   );
 }

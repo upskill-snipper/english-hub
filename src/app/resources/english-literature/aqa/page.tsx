@@ -81,8 +81,6 @@ const papers = [
           "You will be given an extract from your studied novel, plus a question. Write about the extract and then the novel as a whole. (30 marks)",
       },
     ],
-    colour: "border-primary",
-    bgColour: "bg-primary",
     href: "/resources/english-literature/aqa/paper-1",
   },
   {
@@ -107,8 +105,6 @@ const papers = [
           "Q1: Analyse one unseen poem (24 marks). Q2: Compare it with a second unseen poem (8 marks).",
       },
     ],
-    colour: "border-primary",
-    bgColour: "bg-primary",
     href: "/resources/english-literature/aqa/paper-2",
   },
 ];
@@ -185,14 +181,12 @@ export default function AqaEnglishLiteraturePage() {
           {papers.map((paper) => (
             <div
               key={paper.paper}
-              className={`rounded-xl border-2 ${paper.colour} overflow-hidden`}
+              className="rounded-xl border border-border overflow-hidden"
             >
               {/* Paper header */}
-              <div
-                className={`${paper.bgColour} px-6 py-4 text-white flex items-center justify-between`}
-              >
+              <div className="border-b border-border bg-primary/5 px-6 py-4 flex items-center justify-between">
                 <div>
-                  <h3 className="text-lg font-bold">
+                  <h3 className="text-lg font-bold text-foreground">
                     {paper.paper}: {paper.title}
                   </h3>
                   <p className="mt-0.5 text-sm text-muted-foreground">
@@ -201,7 +195,7 @@ export default function AqaEnglishLiteraturePage() {
                 </div>
                 <Link
                   href={paper.href}
-                  className="shrink-0 rounded-lg bg-card/20 px-3 py-1.5 text-xs font-semibold text-white hover:bg-card/30 transition"
+                  className="shrink-0 rounded-lg bg-primary px-3 py-1.5 text-xs font-semibold text-primary-foreground hover:bg-primary/90 transition"
                 >
                   Full guide &rarr;
                 </Link>
@@ -283,14 +277,14 @@ export default function AqaEnglishLiteraturePage() {
         <div className="mt-8 overflow-x-auto">
           <table className="w-full min-w-[600px] text-left text-sm">
             <thead>
-              <tr className="border-b-2 border-primary">
+              <tr className="border-b-2 border-border">
                 <th className="py-3 pr-4 font-semibold text-foreground">
                   &nbsp;
                 </th>
                 <th className="py-3 pr-4 font-semibold text-foreground">
                   Paper 1
                 </th>
-                <th className="py-3 font-semibold text-primary">Paper 2</th>
+                <th className="py-3 font-semibold text-foreground">Paper 2</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border">
@@ -350,7 +344,7 @@ export default function AqaEnglishLiteraturePage() {
       </section>
 
       {/* ── Assessment objectives ── */}
-      <section className="bg-primary/10 px-4 py-12 sm:py-16">
+      <section className="bg-muted px-4 py-12 sm:py-16">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-2xl font-bold text-foreground">
             Assessment Objectives (AO1&ndash;AO4)
@@ -367,7 +361,7 @@ export default function AqaEnglishLiteraturePage() {
                 className="rounded-lg bg-card p-5 shadow-md border border-border"
               >
                 <div className="flex items-start gap-4">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground">
                     {obj.ao}
                   </span>
                   <div>

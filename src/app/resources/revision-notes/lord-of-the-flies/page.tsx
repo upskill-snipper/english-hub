@@ -479,7 +479,7 @@ export default function LordOfTheFliesStudyGuide() {
 
       {/* Quick nav */}
       <nav className="flex flex-wrap gap-2 text-sm" aria-label="Page sections">
-        {["Chapter Summaries", "Characters", "Themes", "Key Quotes", "Symbolism", "Context", "Essay Planning"].map(
+        {["Chapter Summaries", "Characters", "Themes", "Key Quotes", "Symbolism", "Context", "Essay Planning", "Writer's Methods", "Grade 9 Points", "Exam Questions", "Practice Questions"].map(
           (s) => (
             <a
               key={s}
@@ -585,6 +585,135 @@ export default function LordOfTheFliesStudyGuide() {
                     <li key={j}>&bull; {p}</li>
                   ))}
                 </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Writer's Methods */}
+      <Section id="writers-methods" title="Writer&rsquo;s Methods &amp; Techniques">
+        <div className="space-y-4">
+          {[
+            {
+              method: "Symbolism",
+              detail:
+                "Golding embeds his argument in a network of symbols: the conch (democracy), Piggy's glasses (reason/science), the signal fire (hope/civilisation), the beast (innate evil), the Lord of the Flies (the devil within), face paint (loss of identity). These symbols gain power through transformation: the conch fades and shatters; the glasses are stolen; the fire becomes destructive. Golding uses symbolism to make abstract philosophical arguments tangible and emotionally compelling.",
+            },
+            {
+              method: "Microcosm",
+              detail:
+                "The island functions as a microcosm of human civilisation. Golding deliberately isolates the boys from adult authority to create a controlled experiment in human nature. Every political system the boys create (democracy, dictatorship, theocracy) mirrors real-world structures. The final irony --- rescue by a warship --- expands the microcosm outward, suggesting that the adult world is simply a larger version of the island's savagery.",
+            },
+            {
+              method: "Foreshadowing",
+              detail:
+                "Golding foreshadows every major event. Roger throwing stones to miss (Ch. 4) prefigures his killing of Piggy (Ch. 11). Jack's hesitation over the first piglet (Ch. 1) foreshadows his later bloodlust. The chant evolving from 'Kill the pig' to 'Kill the beast' foreshadows Simon's murder. The littlun's disappearance in the first fire (Ch. 2) foreshadows the larger deaths to come. This pervasive foreshadowing creates a sense of inevitability.",
+            },
+            {
+              method: "Biblical and Mythological Allusion",
+              detail:
+                "The island is initially an Eden, complete with fruit and beauty, which the boys progressively corrupt. Simon is a Christ figure: he understands the truth, is rejected, and is sacrificed by the mob. 'Lord of the Flies' translates as Beelzebub (the Devil). The dead parachutist descends like a fallen angel. These allusions elevate the boys' story into a universal parable about human nature and the Fall.",
+            },
+            {
+              method: "Pathetic Fallacy and Setting",
+              detail:
+                "Golding aligns weather with moral and emotional states. Simon's murder occurs during a violent storm; the calm beauty of his body drifting out to sea contrasts with the frenzy that killed him. The heat intensifies as tensions rise. The jungle darkens as the boys descend into savagery. The final fire that consumes the island is both literal destruction and a symbol of moral devastation.",
+            },
+            {
+              method: "Contrast and Juxtaposition",
+              detail:
+                "Golding structures the novel around contrasts: Ralph vs Jack, democracy vs dictatorship, reason vs instinct, rescue vs hunting, the conch vs the pig's head. These binaries are not static but shift as the novel progresses. The most devastating contrast is between Simon's brutal murder and the transcendent beauty of his body's departure, forcing the reader to hold violence and grace in the same moment.",
+            },
+            {
+              method: "Deteriorating Language",
+              detail:
+                "The boys' language deteriorates as civilisation breaks down. Early assemblies feature structured debate; later, communication becomes fragmented shouting and ritual chanting. The chant ('Kill the beast! Cut his throat! Spill his blood!') replaces rational speech with rhythmic, hypnotic violence. Ralph's increasing inability to think clearly and articulate his ideas symbolises the fragility of rational thought under pressure.",
+            },
+            {
+              method: "Narrative Voice and Focalisation",
+              detail:
+                "Golding uses a third-person omniscient narrator who can enter any character's thoughts, but he most frequently focalises through Ralph. This creates sympathy for Ralph's struggle to maintain civilisation and allows the reader to experience the gradual loss of rational thought from the inside. The occasional shift to Jack's perspective reveals the seductive appeal of savagery.",
+            },
+          ].map((m) => (
+            <div key={m.method} className="rounded-lg border border-border bg-muted p-4">
+              <h3 className="font-semibold text-foreground">{m.method}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{m.detail}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Grade 9 Exemplar Points */}
+      <Section id="grade-9-points" title="Grade 9 Exemplar Points">
+        <p className="mb-4 text-sm text-muted-foreground">
+          These sophisticated, conceptualised arguments distinguish Grade 9 responses. Use them as springboards for your own analysis.
+        </p>
+        <div className="space-y-3">
+          {[
+            "Golding suggests that civilisation is not a natural state but a fragile, artificial construct that requires constant maintenance. The speed with which the boys descend into savagery implies that the 'veneer' of civilisation is far thinner than society would like to believe. The novel can be read as a direct challenge to the Enlightenment faith in human progress.",
+            "Roger's arc --- from throwing stones to miss to killing Piggy without hesitation --- demonstrates that moral behaviour is not innate but socially enforced. The 'taboo of the old life' is an external restraint, not an internal virtue. When the restraint is removed, cruelty emerges not as an aberration but as a default. Golding implies that all human goodness depends on the threat of consequences.",
+            "Simon's murder is structurally positioned as the novel's moral point of no return. Before this scene, redemption is possible; after it, the boys have crossed a threshold from which there is no return. The fact that even Ralph and Piggy participate implicates every character and, by extension, every reader. Golding refuses to let anyone claim innocence.",
+            "The naval officer who rescues the boys represents not the triumph of civilisation but its hypocrisy. His 'trim cruiser' is a warship --- the adult world is engaged in the same violence, merely at greater scale and with greater efficiency. Golding's final irony suggests that 'civilisation' and 'savagery' differ only in their tools, not their nature.",
+            "The beast's evolution --- from nightmare to snake-thing to dead parachutist to Lord of the Flies --- mirrors the boys' increasing capacity for self-deception. Each iteration of the beast is an externalisation of internal fear. Jack's exploitation of this fear for political gain mirrors real-world demagoguery: create an enemy, offer protection, demand obedience.",
+            "Golding's choice to use British public schoolboys is deliberate and subversive. These are children from the most 'civilised' background imaginable --- yet they become murderers. Golding attacks the Victorian and imperial assumption that British culture represents the pinnacle of civilisation. The novel is an anti-colonial text as much as a philosophical fable.",
+            "Piggy's death and the conch's simultaneous destruction link the death of the intellectual to the death of democracy. Golding implies that democratic societies depend on their thinkers, and that when a society kills its intellectuals (literally or metaphorically), it destroys its capacity for self-governance. The rock that kills Piggy is wielded by Roger, the sadist --- tyranny's enforcement arm eliminating the voice of reason.",
+            "The Lord of the Flies' statement --- 'I'm part of you' --- can be read as Golding's thesis statement for the entire novel. The beast is not an external threat but an internal reality. This insight has been available since Simon's earlier suggestion ('maybe it's only us'), but the boys' refusal to accept it is itself evidence of the beast's power: humanity's deepest evil is the refusal to acknowledge its own capacity for evil.",
+          ].map((point, i) => (
+            <div key={i} className="rounded-lg border-l-4 border-accent bg-muted p-4">
+              <p className="text-sm leading-relaxed text-muted-foreground">{point}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Exam Questions with Model Answer Outlines */}
+      <Section id="exam-questions" title="Exam-Style Questions with Model Answer Outlines">
+        <p className="mb-4 text-sm text-muted-foreground">
+          These outlines show how to structure a full-mark GCSE response using the What-How-Why method.
+        </p>
+        <div className="space-y-6">
+          {[
+            {
+              question: "How does Golding present the loss of innocence in Lord of the Flies?",
+              outline: [
+                "Introduction: Golding uses the boys' descent from schoolchildren to murderers to argue that innocence is not a natural state but a social construct maintained by civilisation. The novel charts specific, irreversible moments of loss.",
+                "Para 1 -- The littlun's disappearance (Ch. 2): The first death, barely acknowledged, establishes that the boys have already begun to devalue human life. The casual response foreshadows greater horrors. Golding shows that the loss of innocence begins not with violence but with indifference.",
+                "Para 2 -- The first kill and the chant (Ch. 4): Jack's face paint liberates him from 'shame and self-consciousness'. The chant ('Kill the pig. Cut her throat. Spill her blood') transforms hunting from necessity to ritual. The imperative verbs and monosyllabic rhythm create a primitive, hypnotic quality that strips away civilised restraint.",
+                "Para 3 -- Simon's murder (Ch. 9): The moral turning point. Even Ralph and Piggy participate. The storm, the darkness, and the frenzied chanting create conditions in which individual moral judgement is overwhelmed by collective hysteria. Golding shows that innocence cannot survive mob psychology.",
+                "Para 4 -- Ralph's weeping (Ch. 12): 'Ralph wept for the end of innocence, the darkness of man's heart.' The tricolon structure gives his grief a ritualistic quality. 'The darkness of man's heart' is the novel's thesis. Ralph has gained knowledge --- of human nature's capacity for evil --- but at the cost of everything else.",
+                "Conclusion: Golding argues that innocence is not lost gradually but at specific moments of moral failure. The novel suggests that the capacity for evil is always present; innocence merely masks it.",
+              ],
+            },
+            {
+              question: "'Piggy is the most important character in Lord of the Flies.' How far do you agree?",
+              outline: [
+                "Introduction: Piggy represents science, reason, and democratic process. His importance lies not in what he achieves but in what his marginalisation and death reveal about human nature and the fragility of civilisation.",
+                "Para 1 -- Piggy as the voice of reason: He consistently advocates for rules, the conch, and rational decision-making. 'Which is better -- to have rules and agree, or to hunt and kill?' His glasses start the fire --- intellectual power literally creating the tools of survival.",
+                "Para 2 -- His physical vulnerability: Asthmatic, overweight, near-sighted. Golding deliberately makes Piggy physically weak to show that intelligence without power is insufficient. Society's thinkers need protection to function. The boys' mockery of Piggy mirrors anti-intellectualism.",
+                "Para 3 -- His death as the end of civilisation: Piggy's death and the conch's destruction occur simultaneously. 'The conch exploded into a thousand white fragments and ceased to exist.' Golding links the death of the intellectual to the death of democracy. After this point, there is no rational voice left.",
+                "Para 4 -- Counter-argument: Simon is arguably more important because he alone grasps the truth about the beast. Ralph is the protagonist and moral centre. Jack drives the plot. However, Piggy's importance is structural: he represents what is lost, and his absence defines the final act.",
+                "Conclusion: Piggy is essential because he embodies the values the novel mourns. His death is the point of no return. Golding uses his fate to argue that civilisation depends on protecting and listening to its thinkers.",
+              ],
+            },
+            {
+              question: "How does Golding use the island setting to explore ideas about human nature?",
+              outline: [
+                "Introduction: The island is a microcosm --- a self-contained world in which Golding conducts his 'experiment' in human nature. Its isolation removes external authority, its beauty offers the possibility of paradise, and its destruction mirrors the boys' moral devastation.",
+                "Para 1 -- The island as Eden: Initially described as a paradise with fruit, lagoons, and fresh water. The boys' corruption of this paradise parallels the Fall in Genesis. Golding suggests that human beings cannot sustain paradise because the capacity for destruction is innate.",
+                "Para 2 -- The jungle as the unconscious: The dense, dark jungle interior represents the unknown and the feared. Simon retreats to a hidden clearing (spiritual contemplation); Jack hunts in the jungle (primal instinct). The jungle is where the Lord of the Flies speaks --- it is the space of confrontation with inner darkness.",
+                "Para 3 -- Castle Rock as tyranny: Jack's fortress at the other end of the island represents authoritarian rule: elevated, fortified, separate from the democratic beach. Its rocky barrenness contrasts with the beach's openness. The geography mirrors the political split between democracy and dictatorship.",
+                "Para 4 -- The island's destruction: The final fire consumes the entire island, paralleling the boys' complete moral devastation. The rescue comes not from the signal fire but from the destructive blaze --- their savagery inadvertently saves them, a bitter irony. The scorched wasteland reflects what the boys have done to themselves and each other.",
+                "Conclusion: Golding uses every aspect of the setting symbolically. The island is not merely a location but an argument: given freedom and resources, human beings will destroy both their environment and each other.",
+              ],
+            },
+          ].map((eq, i) => (
+            <div key={i} className="rounded-lg border border-border bg-card p-4">
+              <h4 className="font-bold text-foreground">{eq.question}</h4>
+              <div className="mt-3 space-y-2">
+                {eq.outline.map((para, j) => (
+                  <p key={j} className="text-sm leading-relaxed text-muted-foreground">{para}</p>
+                ))}
               </div>
             </div>
           ))}

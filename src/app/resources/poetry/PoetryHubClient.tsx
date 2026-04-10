@@ -1,13 +1,4 @@
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
-
-/* ------------------------------------------------------------------ */
-/*  Types                                                              */
-/* ------------------------------------------------------------------ */
-
-type Board = "All" | "AQA" | "Edexcel";
 
 /* ------------------------------------------------------------------ */
 /*  Data                                                               */
@@ -15,31 +6,18 @@ type Board = "All" | "AQA" | "Edexcel";
 
 const ANTHOLOGY_SECTIONS = [
   {
-    title: "AQA Power and Conflict",
+    title: "Power and Conflict",
     href: "/resources/poetry/power-and-conflict",
     description:
       "All 15 poems analysed in depth: Ozymandias, London, The Prelude, My Last Duchess, Charge of the Light Brigade, Exposure, Storm on the Island, Bayonet Charge, Remains, Poppies, War Photographer, Tissue, The Emigree, Kamikaze, and Checking Out Me History.",
     poems: 15,
-    board: "AQA" as const,
-    colour: "border-primary",
   },
   {
-    title: "AQA Love and Relationships",
+    title: "Love and Relationships",
     href: "/resources/poetry/love-and-relationships",
     description:
       "All 15 poems analysed: When We Two Parted, Love's Philosophy, Porphyria's Lover, Sonnet 29, Neutral Tones, Letters from Yorkshire, The Farmer's Bride, Walking Away, Eden Rock, Follower, Mother Any Distance, Before You Were Mine, Winter Swans, Singh Song!, and Climbing My Grandfather.",
     poems: 15,
-    board: "AQA" as const,
-    colour: "border-primary",
-  },
-  {
-    title: "Edexcel Poetry Anthology",
-    href: "/resources/poetry/edexcel-anthology",
-    description:
-      "Analysis of Edexcel GCSE English Literature poetry clusters including Relationships, Conflict, Time and Place. Key poems, techniques, and comparison guidance.",
-    poems: 15,
-    board: "Edexcel" as const,
-    colour: "border-[#27AE60]",
   },
 ];
 
@@ -71,16 +49,16 @@ const SKILL_GUIDES = [
 ];
 
 const TOP_TEN_POEMS = [
-  { title: "Ozymandias", poet: "Percy Bysshe Shelley", board: "AQA" as const, href: "/resources/poetry/power-and-conflict" },
-  { title: "London", poet: "William Blake", board: "AQA" as const, href: "/resources/poetry/power-and-conflict" },
-  { title: "My Last Duchess", poet: "Robert Browning", board: "AQA" as const, href: "/resources/poetry/power-and-conflict" },
-  { title: "Remains", poet: "Simon Armitage", board: "AQA" as const, href: "/resources/poetry/power-and-conflict" },
-  { title: "Exposure", poet: "Wilfred Owen", board: "AQA" as const, href: "/resources/poetry/power-and-conflict" },
-  { title: "Porphyria's Lover", poet: "Robert Browning", board: "AQA" as const, href: "/resources/poetry/love-and-relationships" },
-  { title: "Neutral Tones", poet: "Thomas Hardy", board: "AQA" as const, href: "/resources/poetry/love-and-relationships" },
-  { title: "When We Two Parted", poet: "Lord Byron", board: "AQA" as const, href: "/resources/poetry/love-and-relationships" },
-  { title: "War Photographer", poet: "Carol Ann Duffy", board: "AQA" as const, href: "/resources/poetry/power-and-conflict" },
-  { title: "The Charge of the Light Brigade", poet: "Alfred, Lord Tennyson", board: "AQA" as const, href: "/resources/poetry/power-and-conflict" },
+  { title: "Ozymandias", poet: "Percy Bysshe Shelley", href: "/revision/poetry/power-and-conflict/ozymandias" },
+  { title: "London", poet: "William Blake", href: "/revision/poetry/power-and-conflict/london" },
+  { title: "My Last Duchess", poet: "Robert Browning", href: "/revision/poetry/power-and-conflict/my-last-duchess" },
+  { title: "Remains", poet: "Simon Armitage", href: "/revision/poetry/power-and-conflict/remains" },
+  { title: "Exposure", poet: "Wilfred Owen", href: "/revision/poetry/power-and-conflict/exposure" },
+  { title: "Porphyria's Lover", poet: "Robert Browning", href: "/revision/poetry/love-and-relationships/porphyrias-lover" },
+  { title: "Neutral Tones", poet: "Thomas Hardy", href: "/revision/poetry/love-and-relationships/neutral-tones" },
+  { title: "When We Two Parted", poet: "Lord Byron", href: "/revision/poetry/love-and-relationships/when-we-two-parted" },
+  { title: "War Photographer", poet: "Carol Ann Duffy", href: "/revision/poetry/power-and-conflict/war-photographer" },
+  { title: "The Charge of the Light Brigade", poet: "Alfred, Lord Tennyson", href: "/revision/poetry/power-and-conflict/charge-of-the-light-brigade" },
 ];
 
 const QUICK_TIPS = [
@@ -173,20 +151,6 @@ function getSkillIcon(icon: string) {
 /* ------------------------------------------------------------------ */
 
 export function PoetryHubClient() {
-  const [activeBoard, setActiveBoard] = useState<Board>("All");
-
-  const filteredAnthologies =
-    activeBoard === "All"
-      ? ANTHOLOGY_SECTIONS
-      : ANTHOLOGY_SECTIONS.filter((s) => s.board === activeBoard);
-
-  const filteredTopTen =
-    activeBoard === "All"
-      ? TOP_TEN_POEMS
-      : TOP_TEN_POEMS.filter((p) => p.board === activeBoard);
-
-  const boards: Board[] = ["All", "AQA", "Edexcel"];
-
   return (
     <>
       {/* ── Hero ─────────────────────────────────────────────────── */}
@@ -203,26 +167,6 @@ export function PoetryHubClient() {
             poetic techniques, unseen poetry strategies, and comparison skills
             &mdash; all in one place.
           </p>
-
-          {/* Exam board filter */}
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
-            <span className="mr-1 text-sm font-medium text-muted-foreground">
-              Filter by board:
-            </span>
-            {boards.map((board) => (
-              <button
-                key={board}
-                onClick={() => setActiveBoard(board)}
-                className={`rounded-full px-4 py-2 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
-                  activeBoard === board
-                    ? "bg-card text-foreground shadow-md"
-                    : "bg-muted text-muted-foreground hover:bg-muted/80"
-                }`}
-              >
-                {board === "All" ? "All Boards" : board}
-              </button>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -232,31 +176,22 @@ export function PoetryHubClient() {
           Anthology Analysis
         </h2>
         <p className="mt-2 max-w-3xl text-muted-foreground">
-          In-depth analysis of every poem in your exam board anthology.
+          In-depth analysis of every poem in the GCSE anthology.
           Stanza-by-stanza breakdowns, key quotations with technique
           identification, themes, context, and comparison links.
         </p>
 
-        <div className="mt-8 grid gap-6 lg:grid-cols-3">
-          {filteredAnthologies.length === 0 && (
-            <p className="col-span-full text-sm text-muted-foreground">
-              No anthology sections match the selected board. Try selecting
-              &ldquo;All Boards&rdquo;.
-            </p>
-          )}
-          {filteredAnthologies.map((section) => (
+        <div className="mt-8 grid gap-6 sm:grid-cols-2">
+          {ANTHOLOGY_SECTIONS.map((section) => (
             <Link
               key={section.href}
               href={section.href}
-              className={`group flex flex-col rounded-xl border-2 ${section.colour} bg-card p-6 shadow-md transition hover:shadow-md`}
+              className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-md transition hover:border-primary/40 hover:shadow-lg"
             >
-              <div className="flex items-center justify-between">
-                <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-foreground">
-                  <PoemIcon />
+              <div className="flex items-center gap-1.5">
+                <PoemIcon />
+                <span className="text-sm font-semibold text-foreground">
                   {section.poems} poems
-                </span>
-                <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
-                  {section.board}
                 </span>
               </div>
               <h3 className="mt-3 text-lg font-bold text-foreground transition-colors group-hover:text-primary">
@@ -274,7 +209,7 @@ export function PoetryHubClient() {
       </section>
 
       {/* ── Skills guides ────────────────────────────────────────── */}
-      <section className="bg-card px-4 py-12 sm:px-6 lg:px-8">
+      <section className="border-y border-border bg-muted/30 px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
           <h2 className="text-2xl font-bold text-foreground">Poetry Skills</h2>
           <p className="mt-2 text-muted-foreground">
@@ -287,7 +222,7 @@ export function PoetryHubClient() {
               <Link
                 key={guide.href}
                 href={guide.href}
-                className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-md transition hover:border-primary/40 hover:shadow-md"
+                className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-md transition hover:border-primary/40 hover:shadow-lg"
               >
                 <div className="flex items-center justify-between">
                   {getSkillIcon(guide.icon)}
@@ -321,16 +256,11 @@ export function PoetryHubClient() {
         </p>
 
         <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
-          {filteredTopTen.length === 0 && (
-            <p className="col-span-full text-sm text-muted-foreground">
-              No poems match the selected board.
-            </p>
-          )}
-          {filteredTopTen.map((poem, i) => (
+          {TOP_TEN_POEMS.map((poem, i) => (
             <Link
               key={poem.href}
               href={poem.href}
-              className="group flex items-start gap-3 rounded-lg border border-border bg-card p-4 shadow-md transition hover:border-primary/40 hover:shadow-md"
+              className="group flex items-start gap-3 rounded-lg border border-border bg-card p-4 shadow-md transition hover:border-primary/40 hover:shadow-lg"
             >
               <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white">
                 {i + 1}
@@ -342,9 +272,6 @@ export function PoetryHubClient() {
                 <p className="mt-0.5 truncate text-xs text-muted-foreground">
                   {poem.poet}
                 </p>
-                <span className="mt-1 inline-block rounded-full bg-muted px-2 py-0.5 text-[10px] font-medium text-muted-foreground">
-                  {poem.board}
-                </span>
               </div>
             </Link>
           ))}
@@ -352,7 +279,7 @@ export function PoetryHubClient() {
       </section>
 
       {/* ── Quick tips ───────────────────────────────────────────── */}
-      <section className="bg-card px-4 py-12 sm:px-6 lg:px-8">
+      <section className="border-y border-border bg-muted/30 px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
           <h2 className="text-2xl font-bold text-foreground">
             Top Poetry Exam Tips
@@ -365,7 +292,7 @@ export function PoetryHubClient() {
             {QUICK_TIPS.map((tip) => (
               <div
                 key={tip.title}
-                className="rounded-xl border border-border bg-muted p-5 shadow-md"
+                className="rounded-xl border border-border bg-card p-5 shadow-md"
               >
                 <h3 className="font-semibold text-foreground">{tip.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
@@ -378,7 +305,7 @@ export function PoetryHubClient() {
       </section>
 
       {/* ── How poetry is assessed ───────────────────────────────── */}
-      <section className="bg-primary/5 px-4 py-12 sm:px-6 lg:px-8">
+      <section className="px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-2xl font-bold text-foreground">
             How Poetry Is Assessed

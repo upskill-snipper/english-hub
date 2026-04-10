@@ -2,7 +2,6 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
-import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 
 /* ─── Quick-reference technique data ─────────────────────────── */
 
@@ -511,7 +510,7 @@ export default function TechniquesHubPage() {
             {
               label: "All Resources",
               href: "/resources",
-              desc: "Browse everything by exam board and subject.",
+              desc: "Browse all revision resources.",
             },
           ].map((link) => (
             <Link
@@ -528,7 +527,6 @@ export default function TechniquesHubPage() {
         </div>
       </section>
 
-      <ExamBoardDisclaimer />
     </>
   );
 }

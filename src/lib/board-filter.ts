@@ -1,52 +1,28 @@
 import type { ExamBoard } from '@/store/board-store';
 
 /**
- * Returns true if a course/item matches the selected board.
- * - KS3 users only see items with no board or board='All' (i.e. KS3 content)
- * - AQA/Edexcel/OCR/WJEC users see their board-specific content PLUS generic KS3 content
+ * Board filtering is disabled — all content is accessible to all users
+ * regardless of their selected exam board.
+ *
+ * These functions are kept as no-op stubs because other modules import them.
  */
 export function matchesBoard(
-  itemBoard: string | undefined | null,
-  selectedBoard: ExamBoard | null
+  _itemBoard: string | undefined | null,
+  _selectedBoard: ExamBoard | null
 ): boolean {
-  if (!selectedBoard) return true;       // no board selected yet — show all
-  if (selectedBoard === 'KS3') {
-    // KS3 users only see generic (no board) or 'All' content
-    return !itemBoard || itemBoard === 'All';
-  }
-  if (!itemBoard || itemBoard === 'All') return true; // generic content — show for all exam boards
-  return itemBoard === selectedBoard;    // board-specific — must match
+  return true;
 }
 
-/**
- * For flashcard decks that use board: 'All' to mean universal content.
- */
 export function matchesDeckBoard(
-  deckBoard: string,
-  selectedBoard: ExamBoard | null
+  _deckBoard: string,
+  _selectedBoard: ExamBoard | null
 ): boolean {
-  if (!selectedBoard) return true;
-  if (deckBoard === 'All') return true;
-  if (selectedBoard === 'KS3') return deckBoard === 'All';
-  // IGCSE decks should show for Edexcel users
-  if (deckBoard === 'IGCSE') return selectedBoard === 'Edexcel';
-  return deckBoard === selectedBoard;
+  return true;
 }
 
-/**
- * For practice questions — handles IGCSE as Edexcel subset.
- */
 export function matchesPracticeBoard(
-  question: { id: string; board?: string; tier?: string },
-  selectedBoard: ExamBoard | null
+  _question: { id: string; board?: string; tier?: string },
+  _selectedBoard: ExamBoard | null
 ): boolean {
-  if (!selectedBoard) return true;
-  if (selectedBoard === 'KS3') {
-    // KS3 users only see questions with no board or tier KS3
-    return !question.board || question.board === 'All' || question.board === 'KS3' || question.tier === 'KS3';
-  }
-  const isIgcse = question.id.includes('igcse') || question.tier === 'IGCSE';
-  if (isIgcse) return selectedBoard === 'Edexcel';
-  if (!question.board) return true;
-  return question.board === selectedBoard;
+  return true;
 }
