@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import {
   InteractivePoemViewer,
@@ -299,6 +300,7 @@ export default function PoppiesStudyPage() {
         <p className="text-lg text-muted-foreground">
           Jane Weir (2009) &mdash; AQA Power &amp; Conflict Anthology
         </p>
+        <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">AQA</Badge>
       </header>
 
       {/* ── Theme tokens ──────────────────────────────────────── */}

@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { ArrowLeft, BookOpen, GitCompare } from 'lucide-react'
+import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer } from '@/components/study/InteractivePoemViewer'
 import type { PoemData } from '@/components/study/InteractivePoemViewer'
@@ -425,6 +426,7 @@ export default function OzymandiasPage() {
             <p className="text-body-sm text-muted-foreground">
               Percy Bysshe Shelley &middot; Power and Conflict anthology
             </p>
+            <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">AQA</Badge>
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer } from '@/components/study'
 import type { PoemData } from '@/components/study'
@@ -365,6 +366,7 @@ export default function ChargeOfTheLightBrigadePage() {
         <p className="text-lg text-muted-foreground">
           Alfred Lord Tennyson (1854)
         </p>
+        <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">AQA</Badge>
       </header>
 
       {/* ── Theme tokens ────────────────────────────────────────── */}

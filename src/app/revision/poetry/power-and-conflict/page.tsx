@@ -271,10 +271,15 @@ export default function PowerAndConflictPage() {
         <div className="pointer-events-none absolute -bottom-16 -left-16 h-48 w-48 rounded-full bg-violet-500/5 blur-3xl" />
 
         <div className="relative">
-          <Badge variant="secondary" className="mb-4">
-            <Sparkles className="mr-1 size-3" />
-            AQA GCSE English Literature
-          </Badge>
+          <div className="mb-4 flex flex-wrap items-center gap-2">
+            <Badge variant="secondary">
+              <Sparkles className="mr-1 size-3" />
+              AQA GCSE English Literature
+            </Badge>
+            <Badge className="bg-primary/10 text-primary border-primary/20">
+              AQA Only
+            </Badge>
+          </div>
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
             Power &amp; Conflict Poetry
           </h1>

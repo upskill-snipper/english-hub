@@ -301,6 +301,7 @@ export default function TheEmigreePage() {
           <p className="text-body-sm text-muted-foreground mt-0.5">
             Carol Rumens &middot; Power and Conflict Anthology
           </p>
+          <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">AQA</Badge>
         </div>
       </div>
 

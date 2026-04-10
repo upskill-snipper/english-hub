@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
+import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer, PoemData } from '@/components/study'
 
@@ -444,6 +445,7 @@ export default function StormOnTheIslandPage() {
         <p className="text-lg text-muted-foreground">
           Seamus Heaney &middot; <em>Death of a Naturalist</em> (1966)
         </p>
+        <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">AQA</Badge>
       </header>
 
       {/* Theme tokens */}

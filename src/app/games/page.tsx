@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useCallback, useRef, useMemo, memo } from 'react'
+import Link from 'next/link'
 import {
   Gamepad2,
   Lock,
@@ -15,13 +16,14 @@ import {
   PenTool,
   Sparkles,
   Volume2,
-  Eye,
   Brain,
   RotateCcw,
   ChevronRight,
   Zap,
   Medal,
   Crown,
+  Layers,
+  Target,
 } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
@@ -427,7 +429,7 @@ function getPlayerName(): string {
 function generateSeedEntries(): LeaderboardEntry[] {
   const today = new Date().toISOString()
   const names = shuffleArray(ANONYMOUS_NAMES).slice(0, 8)
-  const games = ['word-scramble', 'quote-match', 'grammar-fix']
+  const games = ['word-scramble', 'quote-match', 'grammar-fix', 'theme-matcher', 'speed-analysis', 'vocabulary-builder', 'spelling-bee']
   const entries: LeaderboardEntry[] = []
 
   // Spread seed entries across all three games
@@ -611,6 +613,8 @@ interface GameDef {
   locked: boolean
   color: string
   gradient: string
+  /** If set, clicking the card navigates to a dedicated game page instead of inline play */
+  href?: string
 }
 
 const GAMES: GameDef[] = [
@@ -645,34 +649,48 @@ const GAMES: GameDef[] = [
     gradient: 'from-amber-500/20 to-amber-500/5',
   },
   {
-    id: 'vocab-builder',
-    title: 'Vocabulary Builder',
-    description: 'Read a definition, guess the word. Multiple difficulty levels.',
-    icon: <Brain className="size-6" />,
-    difficulty: 'Medium',
-    locked: true,
-    color: 'text-cyan-400',
-    gradient: 'from-cyan-500/20 to-cyan-500/5',
+    id: 'theme-matcher',
+    title: 'Theme Matcher',
+    description: 'Match themes to the correct GCSE set texts. Multiple answers per round!',
+    icon: <Layers className="size-6" />,
+    difficulty: 'Hard',
+    locked: false,
+    color: 'text-pink-400',
+    gradient: 'from-pink-500/20 to-pink-500/5',
+    href: '/games/theme-matcher',
   },
   {
-    id: 'device-spotter',
-    title: 'Literary Device Spotter',
-    description: 'Read a passage and identify the literary device being used.',
-    icon: <Eye className="size-6" />,
+    id: 'speed-analysis',
+    title: 'Speed Analysis',
+    description: 'Identify literary devices in short extracts against the clock.',
+    icon: <Target className="size-6" />,
     difficulty: 'Hard',
-    locked: true,
+    locked: false,
     color: 'text-rose-400',
     gradient: 'from-rose-500/20 to-rose-500/5',
+    href: '/games/speed-analysis',
+  },
+  {
+    id: 'vocabulary-builder',
+    title: 'Vocabulary Builder',
+    description: 'Select the correct definition. Wrong words reappear for spaced repetition.',
+    icon: <Brain className="size-6" />,
+    difficulty: 'Medium',
+    locked: false,
+    color: 'text-cyan-400',
+    gradient: 'from-cyan-500/20 to-cyan-500/5',
+    href: '/games/vocabulary-builder',
   },
   {
     id: 'spelling-bee',
     title: 'Spelling Bee',
-    description: 'Audio-style spelling challenge with GCSE-level vocabulary.',
+    description: 'Listen to the definition, type the correct spelling. Difficulty increases.',
     icon: <Volume2 className="size-6" />,
     difficulty: 'Hard',
-    locked: true,
+    locked: false,
     color: 'text-orange-400',
     gradient: 'from-orange-500/20 to-orange-500/5',
+    href: '/games/spelling-bee',
   },
 ]
 
@@ -1254,7 +1272,7 @@ const GameCard = memo(function GameCard({ game, isActive, onPlay }: { game: Game
         isActive && 'ring-2 ring-primary shadow-lg',
         game.locked && 'opacity-80',
       )}
-      onClick={game.locked ? undefined : onPlay}
+      onClick={game.locked || game.href ? undefined : onPlay}
     >
       {/* Gradient accent */}
       <div className={cn('absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-100 transition-opacity duration-300', game.gradient)} />
@@ -1285,15 +1303,26 @@ const GameCard = memo(function GameCard({ game, isActive, onPlay }: { game: Game
 
       {!game.locked && (
         <CardContent className="relative z-[1] pt-0">
-          <Button
-            size="sm"
-            variant={isActive ? 'secondary' : 'default'}
-            className="w-full"
-            onClick={(e) => { e.stopPropagation(); onPlay() }}
-          >
-            {isActive ? 'Playing...' : 'Play Now'}
-            {!isActive && <Zap className="size-3.5 ml-1" />}
-          </Button>
+          {game.href ? (
+            <Button
+              size="sm"
+              className="w-full"
+              render={<Link href={game.href} />}
+            >
+              Play Now
+              <Zap className="size-3.5 ml-1" />
+            </Button>
+          ) : (
+            <Button
+              size="sm"
+              variant={isActive ? 'secondary' : 'default'}
+              className="w-full"
+              onClick={(e) => { e.stopPropagation(); onPlay() }}
+            >
+              {isActive ? 'Playing...' : 'Play Now'}
+              {!isActive && <Zap className="size-3.5 ml-1" />}
+            </Button>
+          )}
         </CardContent>
       )}
     </Card>
@@ -1352,7 +1381,7 @@ export default function GamesPage() {
 
           <div className="flex flex-wrap items-center justify-center gap-4 mt-8 text-xs text-muted-foreground">
             <span className="flex items-center gap-1.5">
-              <CheckCircle className="size-3.5 text-emerald-400" /> 3 Free Games
+              <CheckCircle className="size-3.5 text-emerald-400" /> 7 Free Games
             </span>
             <span className="flex items-center gap-1.5">
               <Trophy className="size-3.5 text-amber-400" /> Track Your Score

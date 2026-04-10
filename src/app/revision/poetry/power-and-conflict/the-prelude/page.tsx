@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { ArrowLeft, BookOpen } from 'lucide-react'
+import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import {
   InteractivePoemViewer,
@@ -415,8 +416,9 @@ export default function ThePreludePage() {
               The Prelude: Stealing the Boat
             </h1>
             <p className="text-body-sm text-muted-foreground">
-              William Wordsworth -- Power and Conflict
+              William Wordsworth &middot; Power and Conflict Anthology
             </p>
+            <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">AQA</Badge>
           </div>
         </div>
       </div>

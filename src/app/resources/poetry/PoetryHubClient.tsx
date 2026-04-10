@@ -167,16 +167,30 @@ export function PoetryHubClient() {
             poetic techniques, unseen poetry strategies, and comparison skills
             &mdash; all in one place.
           </p>
+          <div className="mx-auto mt-5 flex items-center justify-center gap-2 rounded-lg bg-blue-500/5 border border-blue-500/10 p-3 max-w-2xl">
+            <svg className="h-4 w-4 shrink-0 text-blue-400" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+            </svg>
+            <p className="text-sm text-muted-foreground">
+              Anthology poems below are from the <strong className="text-foreground">AQA</strong> specification.
+              Edexcel, OCR, and WJEC poetry guides are coming soon.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* ── Anthology sections ───────────────────────────────────── */}
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-foreground">
-          Anthology Analysis
-        </h2>
+        <div className="flex items-center gap-3">
+          <h2 className="text-2xl font-bold text-foreground">
+            AQA Anthology Analysis
+          </h2>
+          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+            AQA
+          </span>
+        </div>
         <p className="mt-2 max-w-3xl text-muted-foreground">
-          In-depth analysis of every poem in the GCSE anthology.
+          In-depth analysis of every poem in the AQA GCSE anthology.
           Stanza-by-stanza breakdowns, key quotations with technique
           identification, themes, context, and comparison links.
         </p>
@@ -193,6 +207,9 @@ export function PoetryHubClient() {
                 <span className="text-sm font-semibold text-foreground">
                   {section.poems} poems
                 </span>
+                <span className="ml-auto rounded-full bg-primary/10 px-2 py-0.5 text-[0.65rem] font-semibold text-primary">
+                  AQA
+                </span>
               </div>
               <h3 className="mt-3 text-lg font-bold text-foreground transition-colors group-hover:text-primary">
                 {section.title}
@@ -204,6 +221,26 @@ export function PoetryHubClient() {
                 View analysis <ArrowRight />
               </span>
             </Link>
+          ))}
+        </div>
+
+        {/* Other exam boards placeholder */}
+        <div className="mt-8 grid gap-6 sm:grid-cols-3">
+          {['Edexcel', 'OCR', 'WJEC Eduqas'].map((board) => (
+            <div
+              key={board}
+              className="flex flex-col items-center justify-center rounded-xl border border-dashed border-border bg-muted/30 p-6 text-center"
+            >
+              <span className="mb-2 rounded-full bg-muted px-3 py-1 text-xs font-semibold text-muted-foreground">
+                Coming Soon
+              </span>
+              <h3 className="text-lg font-bold text-muted-foreground/70">
+                {board} Poetry
+              </h3>
+              <p className="mt-1 text-sm text-muted-foreground/60">
+                Full anthology analysis coming soon
+              </p>
+            </div>
           ))}
         </div>
       </section>

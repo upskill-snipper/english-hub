@@ -2,6 +2,7 @@
 
 import { ArrowLeft, BookOpen } from 'lucide-react'
 import Link from 'next/link'
+import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer } from '@/components/study'
 import type { PoemData } from '@/components/study'
@@ -599,6 +600,7 @@ export default function MyLastDuchessPage() {
             <p className="text-body-sm text-muted-foreground">
               Robert Browning &middot; Power and Conflict anthology
             </p>
+            <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">AQA</Badge>
           </div>
         </div>
       </div>

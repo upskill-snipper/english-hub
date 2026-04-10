@@ -1,5 +1,6 @@
 import { ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
+import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer } from '@/components/study'
 import type { PoemData } from '@/components/study'
@@ -378,6 +379,7 @@ export default function BayonetChargePage() {
         <p className="text-body-sm text-muted-foreground">
           Ted Hughes &middot; <em>The Hawk in the Rain</em> (1957)
         </p>
+        <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">AQA</Badge>
       </div>
 
       {/* ── Theme tokens ─────────────────────────────────────────── */}

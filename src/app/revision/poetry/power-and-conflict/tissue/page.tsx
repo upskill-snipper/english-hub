@@ -281,8 +281,9 @@ export default function TissuePage() {
           <div>
             <h1 className="text-heading-lg font-heading text-foreground">Tissue</h1>
             <p className="text-body-sm text-muted-foreground">
-              by Imtiaz Dharker -- Power and Conflict Anthology
+              Imtiaz Dharker &middot; Power and Conflict Anthology
             </p>
+            <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">AQA</Badge>
           </div>
         </div>
       </div>

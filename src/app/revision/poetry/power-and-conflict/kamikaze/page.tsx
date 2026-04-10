@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { ArrowLeft, BookOpen, GitCompareArrows, Tag } from 'lucide-react'
+import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { InteractivePoemViewer } from '@/components/study'
 import type { PoemData } from '@/components/study'
@@ -320,8 +321,9 @@ export default function KamikazePage() {
           <div>
             <h1 className="text-heading-lg font-heading text-foreground">Kamikaze</h1>
             <p className="text-body-sm text-muted-foreground">
-              by Beatrice Garland
+              Beatrice Garland &middot; Power and Conflict Anthology
             </p>
+            <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">AQA</Badge>
           </div>
         </div>
       </div>

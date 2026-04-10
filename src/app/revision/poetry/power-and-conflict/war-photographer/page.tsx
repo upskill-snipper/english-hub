@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowLeft, BookOpen, GitCompareArrows } from 'lucide-react'
+import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import {
   InteractivePoemViewer,
@@ -388,6 +389,7 @@ export default function WarPhotographerPage() {
             <p className="text-body-sm text-muted-foreground">
               Carol Ann Duffy &middot; Power and Conflict Anthology
             </p>
+            <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">AQA</Badge>
           </div>
         </div>
       </div>

@@ -14,12 +14,25 @@ import {
   CheckCircle2,
   Swords,
   Heart,
+  Info,
+  Clock,
 } from 'lucide-react'
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Progress } from '@/components/ui/progress'
+
+// ─── Exam boards ─────────────────────────────────────────────────────────────
+
+type ExamBoard = 'AQA' | 'Edexcel' | 'OCR' | 'WJEC'
+
+const EXAM_BOARDS: { id: ExamBoard; label: string; available: boolean }[] = [
+  { id: 'AQA', label: 'AQA', available: true },
+  { id: 'Edexcel', label: 'Edexcel', available: false },
+  { id: 'OCR', label: 'OCR', available: false },
+  { id: 'WJEC', label: 'WJEC Eduqas', available: false },
+]
 
 // ─── Poem data ────────────────────────────────────────────────────────────────
 
@@ -144,6 +157,7 @@ const STUDIED_POEMS_KEY = 'english-hub-studied-poems'
 export default function PoetryRevisionPage() {
   const [studiedSlugs, setStudiedSlugs] = useState<Set<string>>(new Set())
   const [mounted, setMounted] = useState(false)
+  const [selectedBoard, setSelectedBoard] = useState<ExamBoard>('AQA')
 
   useEffect(() => {
     setMounted(true)
@@ -182,14 +196,14 @@ export default function PoetryRevisionPage() {
 
           <Badge variant="secondary" className="mb-4">
             <Sparkles className="mr-1 size-3" />
-            AQA Anthology
+            AQA Poetry Anthology
           </Badge>
 
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
             Poetry Revision
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Master all 30 anthology poems across both clusters. Interactive study pages, key
+            Master all 30 AQA anthology poems across both clusters. Interactive study pages, key
             quotations, technique analysis, and comparison practice -- everything you need for the
             poetry exam.
           </p>
@@ -218,11 +232,71 @@ export default function PoetryRevisionPage() {
         </div>
       </section>
 
+      {/* ── Exam Board Selector ──────────────────────────────────────── */}
+      <section className="rounded-2xl border border-border/60 bg-card p-5 sm:p-6">
+        <div className="mb-4 flex items-center gap-2">
+          <BookOpen className="size-4.5 text-primary" />
+          <h2 className="text-heading-sm font-heading text-foreground">
+            Select your exam board
+          </h2>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          {EXAM_BOARDS.map((board) => (
+            <button
+              key={board.id}
+              onClick={() => setSelectedBoard(board.id)}
+              className={`inline-flex items-center gap-1.5 rounded-lg border px-4 py-2 text-sm font-medium transition-all ${
+                selectedBoard === board.id
+                  ? 'border-primary bg-primary/10 text-primary'
+                  : 'border-border/60 bg-background text-muted-foreground hover:border-border hover:text-foreground'
+              }`}
+            >
+              {board.label}
+              {!board.available && (
+                <Badge variant="outline" className="ml-1 text-[0.6rem] px-1.5 py-0">
+                  <Clock className="mr-0.5 size-2.5" />
+                  Soon
+                </Badge>
+              )}
+            </button>
+          ))}
+        </div>
+        <div className="mt-3 flex items-start gap-2 rounded-lg bg-blue-500/5 border border-blue-500/10 p-3">
+          <Info className="mt-0.5 size-4 shrink-0 text-blue-400" />
+          <p className="text-caption text-muted-foreground">
+            These poems are from the <strong className="text-foreground">AQA GCSE English Literature</strong> anthology.
+            Edexcel, OCR, and WJEC students study different poems -- support for those boards is coming soon.
+          </p>
+        </div>
+      </section>
+
+      {/* ── Other Boards Placeholder ───────────────────────────────── */}
+      {selectedBoard !== 'AQA' && (
+        <section className="rounded-2xl border border-dashed border-border bg-muted/30 p-8 sm:p-12 text-center">
+          <Clock className="mx-auto mb-4 size-10 text-muted-foreground/50" />
+          <h2 className="text-heading-lg font-heading text-foreground">
+            {selectedBoard} Poetry -- Coming Soon
+          </h2>
+          <p className="mx-auto mt-2 max-w-lg text-body-sm text-muted-foreground">
+            We are working on full study guides for the {selectedBoard} poetry anthology.
+            In the meantime, our unseen poetry techniques and poetry skills sections below apply to all exam boards.
+          </p>
+          <Button
+            variant="outline"
+            size="sm"
+            className="mt-5"
+            onClick={() => setSelectedBoard('AQA')}
+          >
+            View AQA poems in the meantime
+          </Button>
+        </section>
+      )}
+
       {/* ── Anthology Sections ──────────────────────────────────────── */}
-      <section>
+      {selectedBoard === 'AQA' && <section>
         <div className="mb-5 flex items-center gap-3">
           <BookOpen className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">Anthology Clusters</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">AQA Anthology Clusters</h2>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2">
@@ -306,13 +380,13 @@ export default function PoetryRevisionPage() {
             </CardContent>
           </Card>
         </div>
-      </section>
+      </section>}
 
       {/* ── Quick Access Grid: All 30 Poems ─────────────────────────── */}
-      <section>
+      {selectedBoard === 'AQA' && <section>
         <div className="mb-5 flex items-center gap-3">
           <FileText className="size-5 text-rose-400" />
-          <h2 className="text-heading-lg font-heading text-foreground">All 30 Poems</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">All 30 AQA Poems</h2>
         </div>
 
         <div className="space-y-6">
@@ -372,7 +446,7 @@ export default function PoetryRevisionPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section>}
 
       {/* ── Unseen Poetry ───────────────────────────────────────────── */}
       <section>
@@ -476,7 +550,7 @@ export default function PoetryRevisionPage() {
       </section>
 
       {/* ── Comparison Practice ──────────────────────────────────────── */}
-      <section>
+      {selectedBoard === 'AQA' && <section>
         <div className="mb-5 flex items-center gap-3">
           <GitCompareArrows className="size-5 text-emerald-400" />
           <h2 className="text-heading-lg font-heading text-foreground">Comparison Practice</h2>
@@ -508,7 +582,7 @@ export default function PoetryRevisionPage() {
             </div>
           ))}
         </div>
-      </section>
+      </section>}
 
       {/* ── Motivational CTA ────────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-gradient-to-r from-rose-500/[0.06] via-card to-violet-500/[0.04] p-6 sm:p-8 text-center">

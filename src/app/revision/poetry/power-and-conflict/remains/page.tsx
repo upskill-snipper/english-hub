@@ -437,8 +437,9 @@ export default function RemainsPage() {
           <div>
             <h1 className="text-heading-lg font-heading text-foreground">Remains</h1>
             <p className="text-body-sm text-muted-foreground">
-              by Simon Armitage -- from <em>The Not Dead</em> (2008)
+              Simon Armitage &middot; Power and Conflict Anthology
             </p>
+            <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">AQA</Badge>
           </div>
         </div>
       </div>

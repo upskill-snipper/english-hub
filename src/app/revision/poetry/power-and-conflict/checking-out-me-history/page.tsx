@@ -337,6 +337,7 @@ export default function CheckingOutMeHistoryPage() {
             <p className="text-body-sm text-muted-foreground">
               John Agard &middot; Power &amp; Conflict Anthology
             </p>
+            <Badge variant="secondary" className="mt-1.5 text-[0.65rem]">AQA</Badge>
           </div>
         </div>
       </div>
