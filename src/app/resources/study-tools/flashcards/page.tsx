@@ -10,6 +10,9 @@ import {
 import { flashcardDecks, type FlashcardDeck, type FlashCard } from "@/data/flashcard-data";
 import { cn } from "@/lib/utils";
 import { useFlashcardStore, selectTodayReviewed, selectTodayAccuracy, selectAccuracyRate } from "@/store/flashcard-store";
+import { useBoard } from "@/hooks/useBoard";
+import { deckMatchesBoard } from "@/lib/board/flashcard-deck-boards";
+import { getBoardConfig } from "@/lib/board/board-store";
 import { type Quality, QUALITY_BUTTONS, getStudyQueue, getNewCards, getDueCards, getMasteryPercentage, formatNextReview, formatInterval, previewIntervals, type CardReviewState } from "@/lib/spaced-repetition";
 import { percentageToGCSEGrade, percentageToGCSEGradeLabel, gcseGradeColor, gcseGradeBg } from "@/lib/grades";
 import { Button } from "@/components/ui/button";
@@ -35,6 +38,7 @@ export default function FlashcardsPage() {
   const todayReviewed = useFlashcardStore(selectTodayReviewed);
   const todayAccuracy = useFlashcardStore(selectTodayAccuracy);
   const overallAccuracy = useFlashcardStore(selectAccuracyRate);
+  const { board, isHydrated: isBoardHydrated } = useBoard();
   const [mounted, setMounted] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [selectedDeckId, setSelectedDeckId] = useState<string | null>(null);
@@ -43,7 +47,13 @@ export default function FlashcardsPage() {
   const [isFlipped, setIsFlipped] = useState(false);
   const [studyQueue, setStudyQueue] = useState<FlashCard[]>([]);
   useEffect(() => { setMounted(true); }, []);
-  const allDecks = useMemo(() => flashcardDecks, []);
+  // Filter decks down to those relevant for the user's chosen board.
+  // Until the board store has hydrated we keep the full list to avoid a flash
+  // of "no decks" on first paint.
+  const allDecks = useMemo(() => {
+    if (!isBoardHydrated || !board) return flashcardDecks;
+    return flashcardDecks.filter((d) => deckMatchesBoard(d.id, board));
+  }, [board, isBoardHydrated]);
   const categories = useMemo(() => {
     const cats = new Map<string, FlashcardDeck[]>();
     for (const deck of allDecks) { const cat = getDeckCategory(deck); if (!cats.has(cat)) cats.set(cat, []); cats.get(cat)!.push(deck); }
@@ -127,8 +137,19 @@ export default function FlashcardsPage() {
   }
 
   /* BROWSE MODE */
+  const boardConfig = getBoardConfig(board);
   return (<>
-    <div className="mb-8"><h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Flashcards</h1><p className="mt-3 max-w-3xl text-lg text-muted-foreground leading-relaxed">Master key quotes, techniques, vocabulary and exam skills with spaced repetition. Cards you find difficult appear more often. Track your progress toward GCSE mastery.</p></div>
+    <div className="mb-8">
+      <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Flashcards</h1>
+      {isBoardHydrated && boardConfig && (
+        <div className="mt-3">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+            For {boardConfig.shortName}
+          </span>
+        </div>
+      )}
+      <p className="mt-3 max-w-3xl text-lg text-muted-foreground leading-relaxed">Master key quotes, techniques, vocabulary and exam skills with spaced repetition. Cards you find difficult appear more often. Track your progress toward GCSE mastery.</p>
+    </div>
     {/* Stats dashboard */}
     <div className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
       <div className="rounded-xl border border-border bg-card p-4 shadow-sm"><div className="flex items-center gap-3"><div className={cn("rounded-lg p-2", gcseGradeBg(overallStats.grade))}><GraduationCap className={cn("h-5 w-5", gcseGradeColor(overallStats.grade))} /></div><div><p className="text-xs text-muted-foreground">Overall grade</p><p className={cn("text-lg font-bold", gcseGradeColor(overallStats.grade))}>{percentageToGCSEGradeLabel(overallStats.mastery)}</p></div></div><div className="mt-3 h-1.5 w-full overflow-hidden rounded-full bg-muted"><div className="h-full rounded-full bg-gradient-to-r from-primary to-emerald-400 transition-all duration-700" style={{ width: `${overallStats.mastery}%` }} /></div><p className="mt-1.5 text-xs text-muted-foreground">{overallStats.mastered} of {overallStats.totalCards} cards mastered ({overallStats.mastery}%)</p></div>

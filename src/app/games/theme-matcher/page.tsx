@@ -5,7 +5,10 @@ import Link from 'next/link'
 import GameShell, { type GameState } from '@/components/games/GameShell'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { ArrowLeft, Check, X } from 'lucide-react'
+import { ArrowLeft, Check, X, Sparkles } from 'lucide-react'
+import { useBoard } from '@/hooks/useBoard'
+import { getBoardConfig } from '@/lib/board/board-store'
+import { getSetTextsForBoard } from '@/lib/board/set-texts'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 
@@ -33,6 +36,29 @@ const ALL_TEXTS = [
   'War Photographer',
   'Tissue',
 ] as const
+
+// Map theme-matcher's display labels to canonical set-text slugs.
+// Poetry titles (e.g. Ozymandias, London) are not individual set texts — they belong
+// to anthologies — so we treat them as universally available.
+const TEXT_TO_SLUG: Record<string, string | null> = {
+  'Macbeth': 'macbeth',
+  'A Christmas Carol': 'a-christmas-carol',
+  'An Inspector Calls': 'an-inspector-calls',
+  'Jekyll and Hyde': 'jekyll-and-hyde',
+  'Romeo and Juliet': 'romeo-and-juliet',
+  'Lord of the Flies': 'lord-of-the-flies',
+  'Animal Farm': 'animal-farm',
+  'Great Expectations': 'great-expectations',
+  'Jane Eyre': 'jane-eyre',
+  'Frankenstein': 'frankenstein',
+  'The Tempest': 'the-tempest',
+  'Much Ado About Nothing': 'much-ado-about-nothing',
+  // Poetry — keep visible for all boards
+  'Ozymandias': null,
+  'London (Blake)': null,
+  'War Photographer': null,
+  'Tissue': null,
+}
 
 const THEME_DATA: ThemeRound[] = [
   {
@@ -133,6 +159,34 @@ function shuffle<T>(arr: T[]): T[] {
 // ─── Component ─────────────────────────────────────────────────────────────────
 
 export default function ThemeMatcherPage() {
+  const { board } = useBoard()
+  const boardConfig = getBoardConfig(board)
+
+  // Filter texts by board: keep texts the user studies, plus all poetry (slug === null).
+  const allowedTexts = useMemo(() => {
+    if (!board) return [...ALL_TEXTS] as string[]
+    const boardSlugs = new Set(getSetTextsForBoard(board).map((t) => t.slug))
+    const filtered = ALL_TEXTS.filter((label) => {
+      const slug = TEXT_TO_SLUG[label]
+      // null = poetry / universal — always include
+      if (slug === null) return true
+      return slug ? boardSlugs.has(slug) : false
+    })
+    // Need at least 6 texts for a meaningful game; otherwise fall back
+    return filtered.length >= 6 ? filtered : ([...ALL_TEXTS] as string[])
+  }, [board])
+
+  // Filter THEME_DATA: only include themes with at least 2 correct texts present in allowedTexts
+  const filteredThemeData = useMemo(() => {
+    const allowedSet = new Set(allowedTexts)
+    return THEME_DATA
+      .map((round) => ({
+        ...round,
+        correctTexts: round.correctTexts.filter((t) => allowedSet.has(t)),
+      }))
+      .filter((round) => round.correctTexts.length >= 2)
+  }, [allowedTexts])
+
   const [gameState, setGameState] = useState<GameState>('idle')
   const [rounds, setRounds] = useState<ThemeRound[]>([])
   const [roundIdx, setRoundIdx] = useState(0)
@@ -143,10 +197,11 @@ export default function ThemeMatcherPage() {
 
   const currentRound = rounds[roundIdx] ?? null
 
-  const textOptions = useMemo(() => shuffle([...ALL_TEXTS]), [roundIdx, gameState])
+  const textOptions = useMemo(() => shuffle(allowedTexts), [roundIdx, gameState, allowedTexts])
 
   const handleStart = useCallback(() => {
-    const shuffled = shuffle(THEME_DATA).slice(0, TOTAL_ROUNDS)
+    const pool = filteredThemeData.length >= TOTAL_ROUNDS ? filteredThemeData : THEME_DATA
+    const shuffled = shuffle(pool).slice(0, TOTAL_ROUNDS)
     setRounds(shuffled)
     setRoundIdx(0)
     setScore(0)
@@ -154,7 +209,7 @@ export default function ThemeMatcherPage() {
     setSelected(new Set())
     setSubmitted(false)
     setGameState('playing')
-  }, [])
+  }, [filteredThemeData])
 
   const handleFinish = useCallback(() => {
     setGameState('finished')
@@ -178,13 +233,13 @@ export default function ThemeMatcherPage() {
     // Score: +1 for each correct selection, +1 for each correct non-selection
     // Simplified: just count how many texts were correctly categorised
     let roundCorrect = 0
-    for (const t of ALL_TEXTS) {
+    for (const t of allowedTexts) {
       const isCorrect = correctSet.has(t)
       const wasSelected = selected.has(t)
       if (isCorrect === wasSelected) roundCorrect++
     }
     setScore((s) => s + roundCorrect)
-    setMaxScore((m) => m + ALL_TEXTS.length)
+    setMaxScore((m) => m + allowedTexts.length)
   }
 
   const handleNext = () => {
@@ -200,15 +255,21 @@ export default function ThemeMatcherPage() {
   return (
     <div className="min-h-screen bg-background">
       <div className="max-w-4xl mx-auto px-4 py-8">
-        <Button
-          variant="ghost"
-          size="sm"
-          className="mb-6"
-          render={<Link href="/games" />}
-        >
-          <ArrowLeft className="size-4 mr-1" />
-          Back to Games
-        </Button>
+        <div className="mb-6 flex items-center justify-between gap-4">
+          <Button
+            variant="ghost"
+            size="sm"
+            render={<Link href="/games" />}
+          >
+            <ArrowLeft className="size-4 mr-1" />
+            Back to Games
+          </Button>
+          {boardConfig && (
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-primary">
+              <Sparkles className="size-3" /> For {boardConfig.shortName}
+            </span>
+          )}
+        </div>
 
         <GameShell
           gameId="theme-matcher"

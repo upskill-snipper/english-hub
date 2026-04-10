@@ -29,10 +29,6 @@ export default function Page() {
       }
       related={[
         { title: '"Something troglodytic"', href: '/analysis/jekyll-hyde/something-troglodytic' },
-        {
-          title: '"Trampled calmly over the child\'s body"',
-          href: '/analysis/jekyll-hyde/trampled-calmly-over-the-childs-body',
-        },
         { title: 'Science theme analysis', href: '/analysis/jekyll-hyde/science-theme-analysis' },
         { title: 'Mr Hyde character analysis', href: '/analysis/jekyll-hyde/mr-hyde-character-analysis' },
       ]}

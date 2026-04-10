@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { getServerBoard } from "@/lib/board/get-server-board";
+import { getBoardConfig, type ExamBoard } from '@/lib/board/board-config';
 
 export const metadata: Metadata = {
   title: "Free English Resources",
@@ -37,12 +39,16 @@ import { LearningTip } from "@/components/ui/learning-tip";
 
 /* ─── Quick Start Cards ──────────────────────────────────────── */
 
-const QUICK_START: {
+type ResourceCard = {
   title: string;
   description: string;
   href: string;
   icon: LucideIcon;
-}[] = [
+  // Boards this card is relevant to. Omit (or 'all') to show for everyone.
+  boards?: ExamBoard[];
+};
+
+const QUICK_START: ResourceCard[] = [
   {
     title: "Revision Notes",
     description: "Concise, exam-focused notes for every text and topic.",
@@ -60,6 +66,8 @@ const QUICK_START: {
     description: "Poem-by-poem guides for every anthology cluster.",
     href: "/resources/poetry",
     icon: Feather,
+    // Cambridge IGCSE has no set poetry anthology
+    boards: ["aqa", "edexcel", "ocr", "eduqas", "edexcel-igcse"],
   },
   {
     title: "Techniques",
@@ -83,15 +91,18 @@ const QUICK_START: {
 
 /* ─── All Categories ─────────────────────────────────────────── */
 
-const ALL_CATEGORIES: {
+type Category = {
   name: string;
   href: string;
   icon: LucideIcon;
-}[] = [
-  { name: "English Literature", href: "/resources/english-literature", icon: BookMarked },
+  boards?: ExamBoard[];
+};
+
+const ALL_CATEGORIES: Category[] = [
+  { name: "English Literature", href: "/resources/english-literature", icon: BookMarked, boards: ["aqa", "edexcel", "ocr", "eduqas", "edexcel-igcse"] },
   { name: "English Language", href: "/resources/english-language", icon: MessageSquare },
   { name: "Revision Notes", href: "/resources/revision-notes", icon: BookOpen },
-  { name: "Poetry", href: "/resources/poetry", icon: Feather },
+  { name: "Poetry", href: "/resources/poetry", icon: Feather, boards: ["aqa", "edexcel", "ocr", "eduqas", "edexcel-igcse"] },
   { name: "Writing Skills", href: "/resources/writing-skills", icon: PenTool },
   { name: "Techniques", href: "/resources/techniques", icon: Sparkles },
   { name: "Model Answers", href: "/resources/model-answers", icon: FileText },
@@ -106,10 +117,20 @@ const ALL_CATEGORIES: {
   { name: "Teaching", href: "/resources/teaching", icon: Users },
 ];
 
+function relevantToBoard<T extends { boards?: ExamBoard[] }>(items: T[], board: ExamBoard | null): T[] {
+  if (!board) return items;
+  return items.filter((item) => !item.boards || item.boards.includes(board));
+}
+
 
 /* ─── Page ────────────────────────────────────────────────────── */
 
-export default function ResourcesPage() {
+export default async function ResourcesPage() {
+  const board = await getServerBoard();
+  const boardConfig = getBoardConfig(board);
+  const quickStart = relevantToBoard(QUICK_START, board);
+  const categories = relevantToBoard(ALL_CATEGORIES, board);
+
   return (
     <main className="min-h-screen bg-background">
       {/* ── Hero Section ─────────────────────────────────────────── */}
@@ -126,6 +147,14 @@ export default function ResourcesPage() {
             <LearningTip categories={['resource', 'study']} side="bottom" size="md" />
           </div>
 
+          {boardConfig && (
+            <div className="mt-4 flex justify-center">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+                For {boardConfig.shortName}
+              </span>
+            </div>
+          )}
+
           <p className="mx-auto mt-5 max-w-2xl text-lg text-muted-foreground">
             A comprehensive library of revision notes, model answers, technique
             guides, and exam preparation tools -- built for GCSE and IGCSE
@@ -134,11 +163,11 @@ export default function ResourcesPage() {
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <span className="rounded-full border border-border bg-card px-3.5 py-1 text-sm font-medium text-muted-foreground">
-              22 Study Guides
+              {quickStart.length + categories.length} Study Guides
             </span>
             <span className="text-border">·</span>
             <span className="rounded-full border border-border bg-card px-3.5 py-1 text-sm font-medium text-muted-foreground">
-              19 Categories
+              {categories.length} Categories
             </span>
           </div>
         </div>
@@ -158,7 +187,7 @@ export default function ResourcesPage() {
           </p>
 
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {QUICK_START.map((item) => {
+            {quickStart.map((item) => {
               const Icon = item.icon;
               return (
                 <Link
@@ -196,7 +225,7 @@ export default function ResourcesPage() {
           </p>
 
           <div className="mt-10 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
-            {ALL_CATEGORIES.map((cat) => {
+            {categories.map((cat) => {
               const Icon = cat.icon;
               return (
                 <Link

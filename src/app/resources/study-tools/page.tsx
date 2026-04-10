@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { getServerBoard } from "@/lib/board/get-server-board";
+import { getBoardConfig, type ExamBoard } from '@/lib/board/board-config';
 
 export const metadata: Metadata = {
   alternates: { canonical: 'https://theenglishhub.app/resources/study-tools' },
@@ -87,7 +89,34 @@ const TOOLS = [
 
 /* ─── Page ───────────────────────────────────────────────────── */
 
-export default function StudyToolsHub() {
+function tailorChecklistFeatures(board: ExamBoard | null): string[] {
+  if (!board) return [
+    "AQA Language & Literature",
+    "Edexcel Language & Literature",
+    "Cambridge IGCSE checklists",
+    "Auto-saving progress tracker",
+  ];
+  const cfg = getBoardConfig(board);
+  const name = cfg?.shortName ?? "";
+  return [
+    `${name} English Language`,
+    `${name} English Literature`,
+    "Topic-by-topic skills tracker",
+    "Auto-saving progress tracker",
+  ];
+}
+
+export default async function StudyToolsHub() {
+  const board = await getServerBoard();
+  const boardConfig = getBoardConfig(board);
+
+  // All study tools are generic but the checklist features should be tailored.
+  const tools = TOOLS.map((tool) =>
+    tool.title === "Progress Checklists"
+      ? { ...tool, features: tailorChecklistFeatures(board) }
+      : tool,
+  );
+
   return (
     <>
       {/* Hero */}
@@ -95,6 +124,13 @@ export default function StudyToolsHub() {
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           Study Tools
         </h1>
+        {boardConfig && (
+          <div className="mt-3">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+              For {boardConfig.shortName}
+            </span>
+          </div>
+        )}
         <p className="mt-3 max-w-3xl text-lg text-muted-foreground leading-relaxed">
           Interactive revision tools designed to help you prepare for your GCSE and IGCSE English exams.
           Plan your revision, test yourself on key quotes, and track your progress across every topic.
@@ -103,7 +139,7 @@ export default function StudyToolsHub() {
 
       {/* Tool cards */}
       <div className="grid gap-6 sm:grid-cols-2">
-        {TOOLS.map((tool) => (
+        {tools.map((tool) => (
           <Link
             key={tool.href}
             href={tool.href}

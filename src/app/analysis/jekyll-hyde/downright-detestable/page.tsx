@@ -30,10 +30,6 @@ export default function Page() {
         'In Chapter 1, Enfield describes Hyde to Utterson. His inability to say exactly what is wrong with him becomes a running motif in the novella — and the phrase "downright detestable" is the clearest admission of that failure.'
       }
       related={[
-        {
-          title: '"Trampled calmly over the child\'s body"',
-          href: '/analysis/jekyll-hyde/trampled-calmly-over-the-childs-body',
-        },
         { title: '"Something troglodytic"', href: '/analysis/jekyll-hyde/something-troglodytic' },
         { title: 'Mr Hyde character analysis', href: '/analysis/jekyll-hyde/mr-hyde-character-analysis' },
         {

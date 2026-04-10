@@ -101,7 +101,7 @@ function getSkillResources(
 ): { type: 'flashcards' | 'practice' | 'module'; label: string; href: string }[] {
   const slug = skill.toLowerCase().replace(/\s+/g, '-')
   return [
-    { type: 'flashcards', label: `${skill} Flashcards`, href: `/flashcards?skill=${slug}` },
+    { type: 'flashcards', label: `${skill} Flashcards`, href: `/resources/study-tools/flashcards?skill=${slug}` },
     { type: 'practice', label: `${skill} Practice Qs`, href: `/practice?skill=${slug}` },
     { type: 'module', label: `${skill} Module`, href: `/courses?focus=${slug}` },
   ]

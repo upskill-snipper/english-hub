@@ -435,7 +435,7 @@ export default function ChargeOfTheLightBrigadePage() {
           Put what you&apos;ve learned into practice with our Power &amp;
           Conflict poetry quiz.
         </p>
-        <Button render={<Link href="/revision/poetry/power-and-conflict/quiz" />}>
+        <Button render={<Link href="/revision/quiz" />}>
           Start quiz
         </Button>
       </section>

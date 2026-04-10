@@ -2,10 +2,12 @@
 
 import { useState, useCallback } from 'react'
 import Link from 'next/link'
-import { ArrowLeft } from 'lucide-react'
+import { ArrowLeft, Sparkles } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import GameShell, { type GameState } from '@/components/games/GameShell'
+import { useBoard } from '@/hooks/useBoard'
+import { getBoardConfig } from '@/lib/board/board-store'
 
 // ─── Passage & Question Types ─────────────────────────────────────────────────
 
@@ -124,6 +126,9 @@ function shuffle<T>(arr: T[]): T[] {
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function ComprehensionChallengePage() {
+  const { board } = useBoard()
+  const boardConfig = getBoardConfig(board)
+
   const [gameState, setGameState] = useState<GameState>('idle')
   const [passages, setPassages] = useState<Passage[]>([])
   const [passageIndex, setPassageIndex] = useState(0)
@@ -184,17 +189,24 @@ export default function ComprehensionChallengePage() {
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8">
-      <div className="mb-6">
+      <div className="mb-6 flex items-center justify-between gap-4">
         <Button variant="ghost" size="sm" render={<Link href="/games" />}>
           <ArrowLeft className="size-4" />
           Back to Games
         </Button>
+        {boardConfig && (
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-primary">
+            <Sparkles className="size-3" /> For {boardConfig.shortName}
+          </span>
+        )}
       </div>
 
       <GameShell
         gameId="comprehension-challenge"
         title="Comprehension Challenge"
-        description="Read passages and answer GCSE-style comprehension questions on inference, language, structure and evaluation."
+        description={boardConfig
+          ? `Read passages and answer ${boardConfig.shortName}-style comprehension questions on inference, language, structure and evaluation.`
+          : 'Read passages and answer GCSE-style comprehension questions on inference, language, structure and evaluation.'}
         difficulty="Higher"
         score={score}
         maxScore={totalQuestions}

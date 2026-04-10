@@ -521,14 +521,6 @@ const comparisons = [
     themes: ['Nature', 'Romantic poetry', 'Awe'],
   },
   {
-    title: 'As Imperceptibly as Grief',
-    poet: 'Emily Dickinson',
-    href: '/revision/poetry/eduqas/as-imperceptibly-as-grief',
-    reason:
-      'Both poems explore the gradual passing of summer and the quiet acceptance of change. Dickinson and Keats share a contemplative tone and a focus on the subtle movements of time.',
-    themes: ['Nature', 'Time', 'Acceptance'],
-  },
-  {
     title: 'Sonnet 43',
     poet: 'Elizabeth Barrett Browning',
     href: '/revision/poetry/eduqas/sonnet-43',

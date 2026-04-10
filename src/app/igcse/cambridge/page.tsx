@@ -19,6 +19,7 @@ import {
 } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   title: 'Cambridge IGCSE English — The English Hub',
@@ -72,7 +73,9 @@ const syllabuses = [
   },
 ]
 
-export default function CambridgeHubPage() {
+export default async function CambridgeHubPage() {
+  await requireIgcseBoard(['cambridge-0500', 'cambridge-0990'])
+
   return (
     <div className="space-y-10 pb-16">
       {/* ── Back link ─────────────────────────────────────────────── */}

@@ -19,6 +19,7 @@ import {
 } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   title: 'Practice Paper 2 (Writing) | Cambridge IGCSE 0990 | The English Hub',
@@ -29,7 +30,9 @@ export const metadata: Metadata = {
   },
 }
 
-export default function PracticePaper2Page() {
+export default async function PracticePaper2Page() {
+  await requireIgcseBoard(['cambridge-0990'])
+
   return (
     <div className="space-y-10 pb-16">
       <div>

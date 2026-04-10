@@ -12,6 +12,7 @@ import {
 } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   title: 'Edexcel IGCSE 4ET1 Anthology Poetry — The English Hub',
@@ -271,7 +272,9 @@ const studyPlan = [
 
 /* ── Page ─────────────────────────────────────────────────────────── */
 
-export default function EdexcelPoetryAnthologyPage() {
+export default async function EdexcelPoetryAnthologyPage() {
+  await requireIgcseBoard(['edexcel-igcse'])
+
   return (
     <div className="space-y-10">
       {/* ── Breadcrumb / header ─────────────────────────────────────── */}

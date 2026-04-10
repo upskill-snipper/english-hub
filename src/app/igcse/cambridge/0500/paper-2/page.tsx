@@ -19,6 +19,7 @@ import {
 } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   title: 'Paper 2 Directed Writing & Composition — Cambridge 0500',
@@ -61,7 +62,9 @@ const compositionOptions = [
   },
 ]
 
-export default function Paper2HubPage() {
+export default async function Paper2HubPage() {
+  await requireIgcseBoard(['cambridge-0500'])
+
   return (
     <div className="space-y-10 pb-16">
       {/* ── Back link ─────────────────────────────────────────────── */}

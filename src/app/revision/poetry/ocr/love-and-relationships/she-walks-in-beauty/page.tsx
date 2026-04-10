@@ -351,22 +351,6 @@ Tone: Calm, admiring, reverent. Byron resists the temptation to be passionate or
 
 const comparisons = [
   {
-    title: 'Sonnet 43',
-    poet: 'Elizabeth Barrett Browning',
-    href: '/revision/poetry/ocr/love-and-relationships/sonnet-43',
-    reason:
-      'Both poems are passionate but reverent declarations of love. Browning counts the ways she loves; Byron catalogues the features of beauty. Both treat love as something almost spiritual -- and both end with a moral or religious flourish.',
-    themes: ['Idealised love', 'Spiritual love', 'Praise'],
-  },
-  {
-    title: 'A Complaint',
-    poet: 'William Wordsworth',
-    href: '/revision/poetry/ocr/love-and-relationships/a-complaint',
-    reason:
-      'Both poems treat love as something gentle and restrained rather than passionate. Where Byron celebrates harmony, Wordsworth mourns its loss. Together they show two sides of quiet, virtuous love.',
-    themes: ['Quiet love', 'Inner feeling', 'Romantic poetry'],
-  },
-  {
     title: 'Neutral Tones',
     poet: 'Thomas Hardy',
     href: '/revision/poetry/ocr/love-and-relationships/neutral-tones',

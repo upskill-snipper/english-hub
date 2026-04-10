@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Drama, ArrowRight, BookOpen, Sparkles } from "lucide-react";
 import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
+import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   alternates: {
@@ -59,7 +60,9 @@ const PLAYS = [
   },
 ];
 
-export default function ShakespeareHubPage() {
+export default async function ShakespeareHubPage() {
+  await requireIgcseBoard(['edexcel-igcse'])
+
   return (
     <main className="min-h-screen bg-background">
       {/* ── Hero ─────────────────────────────────────────────── */}

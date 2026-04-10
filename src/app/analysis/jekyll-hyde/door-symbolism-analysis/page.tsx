@@ -28,10 +28,6 @@ export default function Page() {
       }
       related={[
         { title: 'Fog symbolism analysis', href: '/analysis/jekyll-hyde/fog-symbolism-analysis' },
-        {
-          title: '"Trampled calmly over the child\'s body"',
-          href: '/analysis/jekyll-hyde/trampled-calmly-over-the-childs-body',
-        },
         { title: 'Duality theme analysis', href: '/analysis/jekyll-hyde/duality-theme-analysis' },
         { title: 'Repression theme analysis', href: '/analysis/jekyll-hyde/repression-theme-analysis' },
       ]}

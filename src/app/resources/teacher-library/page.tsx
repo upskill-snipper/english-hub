@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { getServerBoard } from "@/lib/board/get-server-board";
+import { getBoardConfig } from '@/lib/board/board-config';
 
 export const metadata: Metadata = {
   title: "Teacher Resources Library",
@@ -72,16 +74,25 @@ const CATEGORIES: {
   },
 ];
 
-export default function TeacherLibraryHub() {
+export default async function TeacherLibraryHub() {
+  const board = await getServerBoard();
+  const boardConfig = getBoardConfig(board);
   return (
     <main className="min-h-screen bg-background">
       {/* Hero */}
       <section className="border-b border-border bg-card">
         <div className="mx-auto max-w-6xl px-6 py-16">
           <div className="flex flex-col items-start gap-4">
-            <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary ring-1 ring-inset ring-primary/20">
-              For Teachers
-            </span>
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary ring-1 ring-inset ring-primary/20">
+                For Teachers
+              </span>
+              {boardConfig && (
+                <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/5 px-3 py-1 text-xs font-semibold text-primary">
+                  For {boardConfig.shortName}
+                </span>
+              )}
+            </div>
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
               Teacher Resources Library
             </h1>

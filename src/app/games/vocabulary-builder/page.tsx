@@ -5,7 +5,9 @@ import Link from 'next/link'
 import GameShell, { type GameState } from '@/components/games/GameShell'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { ArrowLeft, CheckCircle, XCircle } from 'lucide-react'
+import { ArrowLeft, CheckCircle, XCircle, Sparkles } from 'lucide-react'
+import { useBoard } from '@/hooks/useBoard'
+import { getBoardConfig } from '@/lib/board/board-store'
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 
@@ -86,6 +88,9 @@ function shuffle<T>(arr: T[]): T[] {
 // ─── Component ─────────────────────────────────────────────────────────────────
 
 export default function VocabularyBuilderPage() {
+  const { board } = useBoard()
+  const boardConfig = getBoardConfig(board)
+
   const [gameState, setGameState] = useState<GameState>('idle')
   const [queue, setQueue] = useState<VocabWord[]>([])
   const [qIdx, setQIdx] = useState(0)
@@ -164,15 +169,21 @@ export default function VocabularyBuilderPage() {
   return (
     <div className="min-h-screen bg-background">
       <div className="max-w-4xl mx-auto px-4 py-8">
-        <Button
-          variant="ghost"
-          size="sm"
-          className="mb-6"
-          render={<Link href="/games" />}
-        >
-          <ArrowLeft className="size-4 mr-1" />
-          Back to Games
-        </Button>
+        <div className="mb-6 flex items-center justify-between gap-4">
+          <Button
+            variant="ghost"
+            size="sm"
+            render={<Link href="/games" />}
+          >
+            <ArrowLeft className="size-4 mr-1" />
+            Back to Games
+          </Button>
+          {boardConfig && (
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-primary">
+              <Sparkles className="size-3" /> For {boardConfig.shortName}
+            </span>
+          )}
+        </div>
 
         <GameShell
           gameId="vocabulary-builder"

@@ -1,4 +1,5 @@
 'use client'
+// TODO(board-guard): client component — wrap in server page.tsx that calls requireIgcseBoard(['edexcel-igcse']) once parent edexcel hub guard is verified to cover this route. Parent route is already protected.
 
 import {
   GitCompare,

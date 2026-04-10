@@ -30,14 +30,6 @@ export default function Page() {
       }
       related={[
         {
-          title: '"The very pink of the proprieties"',
-          href: '/analysis/jekyll-hyde/the-very-pink-of-the-proprieties',
-        },
-        {
-          title: '"The unjust might go his way"',
-          href: '/analysis/jekyll-hyde/the-unjust-might-go-his-way',
-        },
-        {
           title: '"With the sea of liberty before me"',
           href: '/analysis/jekyll-hyde/with-the-sea-of-liberty-before-me',
         },

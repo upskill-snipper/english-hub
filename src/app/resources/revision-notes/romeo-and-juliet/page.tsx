@@ -90,7 +90,7 @@ export default function RomeoAndJulietRevisionPage() {
           Romeo and Juliet &mdash; Complete Revision Guide
         </h1>
         <p className="mt-3 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-          Full act-by-act summary, character profiles, themes with evidence, 25+ key quotations with analysis, Elizabethan context, essay planning, and exam board advice.
+          Full act-by-act summary, character profiles, themes with evidence, 25+ key quotations with analysis, Elizabethan context, and essay planning.
         </p>
       </div>
 
@@ -503,39 +503,6 @@ export default function RomeoAndJulietRevisionPage() {
               <p>&ldquo;A glooming peace&rdquo; -- peace at terrible cost. Only catastrophic loss breaks entrenched hatred.</p>
             </div>
           </div>
-        </Card>
-      </Section>
-
-      {/* ── EXAM BOARD TIPS ──────────────────────────────────── */}
-      <Section title="Exam Board Comparison" id="exam-boards">
-        <Card title="AQA -- Paper 1, Section A (30+4 marks, ~50 mins)">
-          <ul className="space-y-2 text-sm text-muted-foreground">
-            <li>&bull; <strong>Format:</strong> Extract + wider play. Roughly 50/50 split.</li>
-            <li>&bull; <strong>AOs:</strong> AO1, AO2, AO3. SPaG marked separately (4 marks).</li>
-            <li>&bull; <strong>Key tip:</strong> Zoom in on individual word choices. Weave context into analysis.</li>
-            <li>&bull; <strong>Closed book.</strong></li>
-          </ul>
-        </Card>
-        <Card title="Edexcel -- Paper 1, Section A (40 marks, ~55 mins)">
-          <ul className="space-y-2 text-sm text-muted-foreground">
-            <li>&bull; <strong>Format:</strong> Extract-based, whole text reference. Heavier AO2 weighting.</li>
-            <li>&bull; <strong>Key tip:</strong> Analyse HOW effects are achieved. Precise terminology.</li>
-            <li>&bull; <strong>Closed book.</strong></li>
-          </ul>
-        </Card>
-        <Card title="CAIE -- Paper 1, Drama (25 marks)">
-          <ul className="space-y-2 text-sm text-muted-foreground">
-            <li>&bull; <strong>Format:</strong> Passage-based OR essay question (choose one).</li>
-            <li>&bull; <strong>Key tip:</strong> Personal engagement and close reading rewarded.</li>
-            <li>&bull; <strong>Open/closed book depends on component variant.</strong></li>
-          </ul>
-        </Card>
-        <Card title="OCR -- Shakespeare component (40 marks)">
-          <ul className="space-y-2 text-sm text-muted-foreground">
-            <li>&bull; <strong>Format:</strong> Extract-based. Depth over breadth.</li>
-            <li>&bull; <strong>Key tip:</strong> Three well-analysed quotes beat ten surface-level ones.</li>
-            <li>&bull; <strong>Closed book.</strong></li>
-          </ul>
         </Card>
       </Section>
 

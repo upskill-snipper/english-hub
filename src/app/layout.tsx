@@ -8,6 +8,8 @@ import { RootLayoutShell } from '@/components/layout/root-layout-shell'
 import { WebsiteJsonLd } from '@/components/seo/json-ld'
 import { CookieConsent } from '@/components/cookie-consent'
 import { UtmCapture } from '@/components/utm-capture'
+import { BoardGate } from '@/components/board/BoardGate'
+import { getServerBoard } from '@/lib/board/get-server-board'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
@@ -53,11 +55,12 @@ export const viewport: Viewport = {
   initialScale: 1,
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const initialBoard = await getServerBoard()
   return (
     <html lang="en" className={monaSans.variable}>
       <head>
@@ -77,7 +80,9 @@ export default function RootLayout({
         </a>
         <SupabaseProvider>
           <TooltipProvider>
-            <RootLayoutShell>{children}</RootLayoutShell>
+            <RootLayoutShell>
+              <BoardGate initialBoard={initialBoard}>{children}</BoardGate>
+            </RootLayoutShell>
             <Toaster richColors position="bottom-right" />
             <CookieConsent />
             <UtmCapture />

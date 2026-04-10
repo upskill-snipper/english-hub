@@ -1,12 +1,15 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useMemo } from 'react'
 import Link from 'next/link'
-import { ArrowLeft } from 'lucide-react'
+import { ArrowLeft, Sparkles } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import GameShell, { type GameState } from '@/components/games/GameShell'
 import type { GCSEGrade } from '@/lib/grades'
+import { useBoard } from '@/hooks/useBoard'
+import { getBoardConfig } from '@/lib/board/board-store'
+import { getSetTextsForBoard } from '@/lib/board/set-texts'
 
 // ─── Question Bank (40+ across grade levels) ──────────────────────────────────
 
@@ -81,6 +84,31 @@ function shuffle<T>(arr: T[]): T[] {
   return a
 }
 
+// Map title substrings to set-text slugs so we can filter board-specific questions.
+// A question is text-specific if its prompt contains one of these substrings.
+const TEXT_REFERENCES: { needle: string; slug: string }[] = [
+  { needle: 'Macbeth', slug: 'macbeth' },
+  { needle: 'Inspector Calls', slug: 'an-inspector-calls' },
+  { needle: 'Christmas Carol', slug: 'a-christmas-carol' },
+  { needle: 'Jekyll and Hyde', slug: 'jekyll-and-hyde' },
+  { needle: 'Lord of the Flies', slug: 'lord-of-the-flies' },
+  { needle: 'Animal Farm', slug: 'animal-farm' },
+  { needle: 'Of Mice and Men', slug: 'of-mice-and-men' },
+  { needle: 'Romeo and Juliet', slug: 'romeo-and-juliet' },
+  { needle: 'Frankenstein', slug: 'frankenstein' },
+  { needle: 'Jane Eyre', slug: 'jane-eyre' },
+  { needle: 'Great Expectations', slug: 'great-expectations' },
+]
+
+function questionAvailableForBoard(prompt: string, allowedSlugs: Set<string>): boolean {
+  for (const ref of TEXT_REFERENCES) {
+    if (prompt.includes(ref.needle) && !allowedSlugs.has(ref.slug)) {
+      return false
+    }
+  }
+  return true
+}
+
 // ─── Grade Ladder ─────────────────────────────────────────────────────────────
 
 const GRADE_LEVELS: GCSEGrade[] = [3, 4, 5, 6, 7, 8, 9]
@@ -123,6 +151,21 @@ const TYPE_LABELS: Record<string, string> = {
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function GradeClimberPage() {
+  const { board } = useBoard()
+  const boardConfig = getBoardConfig(board)
+
+  // Filter the question bank to only include questions that reference texts the user studies.
+  // Generic technique/meaning questions are always included.
+  const filteredBank = useMemo(() => {
+    if (!board) return QUESTION_BANK
+    const allowedSlugs = new Set(getSetTextsForBoard(board).map((t) => t.slug))
+    const filtered = QUESTION_BANK.filter((q) => questionAvailableForBoard(q.prompt, allowedSlugs))
+    // Ensure each grade still has at least one question; fall back to full bank otherwise
+    const gradesPresent = new Set(filtered.map((q) => q.grade))
+    if (gradesPresent.size < 5) return QUESTION_BANK
+    return filtered
+  }, [board])
+
   const [gameState, setGameState] = useState<GameState>('idle')
   const [currentGrade, setCurrentGrade] = useState<GCSEGrade>(3)
   const [maxGradeReached, setMaxGradeReached] = useState<GCSEGrade>(3)
@@ -137,12 +180,12 @@ export default function GradeClimberPage() {
 
   const pickQuestion = useCallback(
     (grade: GCSEGrade, used: Set<number>) => {
-      const candidates = QUESTION_BANK
+      const candidates = filteredBank
         .map((q, i) => ({ q, i }))
         .filter(({ q, i }) => q.grade === grade && !used.has(i))
       if (candidates.length === 0) {
         // Fallback: allow nearby grades
-        const nearby = QUESTION_BANK
+        const nearby = filteredBank
           .map((q, i) => ({ q, i }))
           .filter(({ q, i }) => Math.abs(q.grade - grade) <= 1 && !used.has(i))
         if (nearby.length === 0) return null
@@ -151,7 +194,7 @@ export default function GradeClimberPage() {
       }
       return candidates[Math.floor(Math.random() * candidates.length)]
     },
-    []
+    [filteredBank]
   )
 
   const startNextQuestion = useCallback(
@@ -246,17 +289,24 @@ export default function GradeClimberPage() {
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8">
-      <div className="mb-6">
+      <div className="mb-6 flex items-center justify-between gap-4">
         <Button variant="ghost" size="sm" render={<Link href="/games" />}>
           <ArrowLeft className="size-4" />
           Back to Games
         </Button>
+        {boardConfig && (
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-primary">
+            <Sparkles className="size-3" /> For {boardConfig.shortName}
+          </span>
+        )}
       </div>
 
       <GameShell
         gameId="grade-climber"
         title="Grade Climber"
-        description="Answer questions at increasing difficulty. Get 3 right to climb, 2 wrong to drop back."
+        description={boardConfig
+          ? `Answer ${boardConfig.shortName} questions at increasing difficulty. Get 3 right to climb, 2 wrong to drop back.`
+          : 'Answer questions at increasing difficulty. Get 3 right to climb, 2 wrong to drop back.'}
         difficulty="Higher"
         score={scoreValue}
         maxScore={maxScoreValue}

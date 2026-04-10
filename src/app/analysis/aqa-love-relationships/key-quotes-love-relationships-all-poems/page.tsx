@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { AnalysisBoardGate } from '../_components/AnalysisBoardGate'
 
 const SLUG = 'key-quotes-love-relationships-all-poems'
 const H1 = 'Key Quotes for Every AQA Love and Relationships Poem'
@@ -25,6 +26,7 @@ export default function Page() {
   }
 
   return (
+    <AnalysisBoardGate>
     <main className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <nav className="mb-4 text-sm text-muted-foreground">
@@ -145,5 +147,6 @@ export default function Page() {
         </div>
       </section>
     </main>
+    </AnalysisBoardGate>
   )
 }

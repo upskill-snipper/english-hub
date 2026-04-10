@@ -90,7 +90,7 @@ export default function MuchAdoRevisionPage() {
       <div className="mb-8 rounded-xl border border-border bg-card p-4 shadow-md">
         <p className="text-sm font-semibold text-muted-foreground mb-3">Jump to section:</p>
         <div className="flex flex-wrap gap-2">
-          {["Plot Summary", "Characters", "Themes", "Key Quotations", "Context", "Essay Planning", "Exam Board Tips"].map((s) => (
+          {["Plot Summary", "Characters", "Themes", "Key Quotations", "Context", "Essay Planning"].map((s) => (
             <a
               key={s}
               href={`#${s.toLowerCase().replace(/\s+/g, "-")}`}
@@ -700,67 +700,6 @@ export default function MuchAdoRevisionPage() {
           </Section>
         </div>
 
-        {/* ────────────────────────────────────────── EXAM BOARD TIPS */}
-        <div id="exam-board-tips">
-          <Section id="exam-boards" title="Exam Board Comparison" colour="bg-primary">
-            <div className="space-y-6">
-              <div className="rounded-lg border border-purple-500/30 bg-purple-500/5 p-4">
-                <h3 className="font-bold text-foreground flex items-center gap-2">
-                  <span className="rounded bg-[#40197F] px-2 py-0.5 text-xs font-bold text-white">AQA</span>
-                  AQA GCSE English Literature (8702) &mdash; Paper 1, Section A
-                </h3>
-                <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-                  <li>&bull; <strong>Format:</strong> You receive an extract (roughly 20-30 lines) and must write about how Shakespeare presents a given theme/character, starting with the extract and then exploring the wider play.</li>
-                  <li>&bull; <strong>Marks:</strong> 30 marks + 4 for SPaG = 34 total. Recommended time: ~50 minutes.</li>
-                  <li>&bull; <strong>AOs tested:</strong> AO1 (response and quotation), AO2 (language/structure/form analysis), AO3 (context).</li>
-                  <li>&bull; <strong>Key tip:</strong> Spend roughly 50% of your essay on the extract and 50% on the wider play. Always zoom in on individual words and their effects. Context should be woven in, not bolted on.</li>
-                  <li>&bull; <strong>Closed book:</strong> Yes. You will not have the text in the exam. You need memorised quotations from across the play.</li>
-                </ul>
-              </div>
-
-              <div className="rounded-lg border border-red-500/30 bg-red-500/5 p-4">
-                <h3 className="font-bold text-foreground flex items-center gap-2">
-                  <span className="rounded bg-[#E5231B] px-2 py-0.5 text-xs font-bold text-white">Edexcel</span>
-                  Edexcel GCSE English Literature (1ET0) &mdash; Paper 1, Section A
-                </h3>
-                <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-                  <li>&bull; <strong>Format:</strong> You receive an extract and a question asking how Shakespeare presents a theme/character. You must refer to the extract and the play as a whole.</li>
-                  <li>&bull; <strong>Marks:</strong> 40 marks total. Recommended time: ~55 minutes.</li>
-                  <li>&bull; <strong>AOs tested:</strong> AO1 (ideas and quotation), AO2 (writer&apos;s methods), AO3 (context), AO4 (SPaG, integrated).</li>
-                  <li>&bull; <strong>Key tip:</strong> Edexcel places slightly more weight on writer&apos;s methods (AO2). Make sure you analyse HOW Shakespeare achieves effects, not just WHAT he says. Use terminology precisely.</li>
-                  <li>&bull; <strong>Closed book:</strong> Yes.</li>
-                </ul>
-              </div>
-
-              <div className="rounded-lg border border-green-500/30 bg-green-500/5 p-4">
-                <h3 className="font-bold text-foreground flex items-center gap-2">
-                  <span className="rounded bg-[#00A651] px-2 py-0.5 text-xs font-bold text-white">CAIE</span>
-                  Cambridge IGCSE Literature (0475 / 0992) &mdash; Paper 1 (Drama)
-                </h3>
-                <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-                  <li>&bull; <strong>Format:</strong> Two question options: (a) a passage-based question with a printed extract, or (b) an essay question on the whole text. You choose ONE.</li>
-                  <li>&bull; <strong>Marks:</strong> 25 marks per question. Total paper time: 1hr 30min for two texts.</li>
-                  <li>&bull; <strong>Key tip:</strong> CAIE rewards personal response and close reading. For passage questions, work through the extract systematically. For essay questions, plan carefully and use precise references. CAIE is an open book exam for some routes &mdash; check your specific syllabus variant.</li>
-                  <li>&bull; <strong>Open/Closed book:</strong> Depends on component. Some components are open book (clean copies only).</li>
-                </ul>
-              </div>
-
-              <div className="rounded-lg border border-blue-500/30 bg-blue-500/5 p-4">
-                <h3 className="font-bold text-foreground flex items-center gap-2">
-                  <span className="rounded bg-[#2A7DE1] px-2 py-0.5 text-xs font-bold text-white">OCR</span>
-                  OCR GCSE English Literature (J352) &mdash; Shakespeare Component
-                </h3>
-                <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-                  <li>&bull; <strong>Format:</strong> Extract-based question. You must explore the extract and connect it to the wider play. The question focuses on a theme, character, or dramatic moment.</li>
-                  <li>&bull; <strong>Marks:</strong> 40 marks. Part of a larger paper.</li>
-                  <li>&bull; <strong>AOs tested:</strong> AO1 (response), AO2 (analysis of methods), AO3 (context), AO4 (SPaG).</li>
-                  <li>&bull; <strong>Key tip:</strong> OCR values analytical depth over breadth. It is better to analyse three quotations thoroughly than to mention ten superficially. Show how meaning is created through specific word choices and structural decisions.</li>
-                  <li>&bull; <strong>Closed book:</strong> Yes.</li>
-                </ul>
-              </div>
-            </div>
-          </Section>
-        </div>
       </div>
     </>
   );

@@ -4,6 +4,8 @@ import {
   TeacherResourceCard,
   TeacherResourceGrid,
 } from "@/components/teacher/ResourceCard";
+import { getServerBoard } from "@/lib/board/get-server-board";
+import { getBoardConfig, type ExamBoard } from '@/lib/board/board-config';
 
 export const metadata: Metadata = {
   title: "Mark Schemes — Teacher Library",
@@ -114,7 +116,25 @@ const MARK_SCHEMES = [
   },
 ];
 
-export default function MarkSchemesPage() {
+function markSchemeMatchesBoard(examBoard: string, board: ExamBoard | null): boolean {
+  if (!board) return true;
+  const map: Record<ExamBoard, string> = {
+    aqa: "AQA",
+    edexcel: "Edexcel",
+    ocr: "OCR",
+    eduqas: "Eduqas",
+    "edexcel-igcse": "Edexcel",
+    "cambridge-0500": "Cambridge",
+    "cambridge-0990": "Cambridge",
+  };
+  const label = map[board];
+  return examBoard.toLowerCase().includes(label.toLowerCase());
+}
+
+export default async function MarkSchemesPage() {
+  const board = await getServerBoard();
+  const boardConfig = getBoardConfig(board);
+  const visible = MARK_SCHEMES.filter((m) => markSchemeMatchesBoard(m.examBoard, board));
   return (
     <main className="min-h-screen bg-background">
       <section className="border-b border-border bg-card">
@@ -129,9 +149,16 @@ export default function MarkSchemesPage() {
             <span>/</span>
             <span className="text-foreground">Mark Schemes</span>
           </div>
-          <span className="mt-4 inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary ring-1 ring-inset ring-primary/20">
-            For Teachers
-          </span>
+          <div className="mt-4 flex flex-wrap items-center gap-2">
+            <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary ring-1 ring-inset ring-primary/20">
+              For Teachers
+            </span>
+            {boardConfig && (
+              <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/5 px-3 py-1 text-xs font-semibold text-primary">
+                For {boardConfig.shortName}
+              </span>
+            )}
+          </div>
           <h1 className="mt-3 text-4xl font-bold tracking-tight text-foreground">
             Mark Schemes
           </h1>
@@ -149,7 +176,7 @@ export default function MarkSchemesPage() {
 
       <section className="mx-auto max-w-6xl px-6 py-12">
         <TeacherResourceGrid>
-          {MARK_SCHEMES.map((m) => (
+          {visible.map((m) => (
             <TeacherResourceCard
               key={m.title}
               title={m.title}

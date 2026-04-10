@@ -245,28 +245,12 @@ Personification throughout: The eagle is referred to as "he" from the start. He 
 
 const comparisons = [
   {
-    title: 'Storm on the Island',
-    poet: 'Seamus Heaney',
-    href: '/revision/poetry/ocr/power-and-natural-world/storm-on-the-island',
+    title: 'Browse all poems',
+    poet: 'Power and the Natural World cluster',
+    href: '/revision/poetry/ocr/power-and-natural-world',
     reason:
-      'Both poems present nature as a powerful, threatening force. Tennyson celebrates the eagle\'s controlled power; Heaney shows nature\'s uncontrolled wildness. Both use vivid imagery to make natural forces feel dangerous and alive.',
-    themes: ['Power of nature', 'Predation', 'Wildness'],
-  },
-  {
-    title: 'Ode to the West Wind',
-    poet: 'Percy Bysshe Shelley',
-    href: '/revision/poetry/ocr/power-and-natural-world/ode-to-the-west-wind',
-    reason:
-      'Both poems are studies of natural power. Shelley addresses the wind directly with awe; Tennyson observes the eagle from a distance. Both find in nature a force that humbles human pretensions.',
-    themes: ['Natural power', 'Awe', 'Romantic imagery'],
-  },
-  {
-    title: 'Inversnaid',
-    poet: 'Gerard Manley Hopkins',
-    href: '/revision/poetry/ocr/power-and-natural-world/inversnaid',
-    reason:
-      'Both poems are short, intensely visual descriptions of wild nature. Tennyson focuses on a single creature; Hopkins on a wild stream. Both pack enormous energy into a tiny number of lines, and both use sound to evoke the natural world.',
-    themes: ['Wild nature', 'Brevity and intensity', 'Sound'],
+      'See the full OCR Power and the Natural World anthology for more poems that pair well with Tennyson\'s taut portrait of the eagle.',
+    themes: ['Power of nature', 'Wildness', 'Imagery'],
   },
 ]
 

@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { redirect } from 'next/navigation'
+import { getServerBoard } from '@/lib/board/get-server-board'
 import {
   ArrowRight,
   BookOpen,
@@ -94,7 +96,23 @@ const boards = [
   },
 ]
 
-export default function IgcseHubPage() {
+export default async function IgcseHubPage() {
+  // Route users to the right place based on their saved exam board.
+  const board = await getServerBoard()
+  if (board === 'edexcel-igcse') {
+    redirect('/igcse/edexcel')
+  }
+  if (board === 'cambridge-0500') {
+    redirect('/igcse/cambridge/0500')
+  }
+  if (board === 'cambridge-0990') {
+    redirect('/igcse/cambridge/0990')
+  }
+  // GCSE boards: IGCSE content is not part of their specification.
+  if (board && (['aqa', 'edexcel', 'ocr', 'eduqas'] as const).includes(board as 'aqa' | 'edexcel' | 'ocr' | 'eduqas')) {
+    redirect('/revision?notice=igcse-not-in-spec')
+  }
+  // No board set — show the board selector hub below.
   return (
     <div className="space-y-10 pb-16">
       {/* ── Hero ────────────────────────────────────────────────────── */}

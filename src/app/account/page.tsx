@@ -6,6 +6,9 @@ import Link from 'next/link'
 import { createClient } from '@/lib/supabase/client'
 import { useAuthStore } from '@/store/auth-store'
 import { YEAR_GROUPS, EXAM_BOARDS } from '@/lib/utils'
+import { useBoard } from '@/hooks/useBoard'
+import { getBoardConfig } from '@/lib/board/board-config'
+import { ChangeBoardButton } from '@/components/board/ChangeBoardButton'
 import {
   User,
   Save,
@@ -25,6 +28,8 @@ export default function AccountPage() {
   const router = useRouter()
   const { user, profile, setProfile } = useAuthStore()
   const supabase = createClient()
+  const { board, isHydrated: boardHydrated } = useBoard()
+  const boardConfig = getBoardConfig(board)
 
   const [fullName, setFullName] = useState('')
   const [yearGroup, setYearGroup] = useState('')
@@ -193,6 +198,40 @@ export default function AccountPage() {
         <h1 className="text-3xl font-bold text-foreground mb-8">
           Account Settings
         </h1>
+
+        {/* Exam Board Section */}
+        <section
+          aria-labelledby="account-board-heading"
+          className="bg-card border border-border rounded-xl p-6 mb-6"
+        >
+          <div className="flex items-center gap-3 mb-4">
+            <BookOpen className="w-5 h-5 text-primary" />
+            <h2
+              id="account-board-heading"
+              className="text-xl font-semibold text-foreground"
+            >
+              Studying {boardConfig ? boardConfig.shortName : '—'}
+            </h2>
+          </div>
+
+          {!boardHydrated ? (
+            <div className="h-16 animate-pulse rounded-lg bg-muted/40" />
+          ) : boardConfig ? (
+            <>
+              <p className="text-sm text-muted-foreground mb-4">
+                {boardConfig.fullName}
+              </p>
+              <ChangeBoardButton variant="card" />
+            </>
+          ) : (
+            <>
+              <p className="text-sm text-muted-foreground mb-4">
+                You haven't picked an exam board yet.
+              </p>
+              <ChangeBoardButton variant="card" />
+            </>
+          )}
+        </section>
 
         {/* Profile Section */}
         <section className="bg-card border border-border rounded-xl p-6 mb-6">

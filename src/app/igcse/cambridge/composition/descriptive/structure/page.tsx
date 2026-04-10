@@ -4,6 +4,7 @@ import { Layers, Sparkles, ChevronLeft, Camera } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   title: 'Descriptive Structure — Cambridge IGCSE Composition',
@@ -50,7 +51,9 @@ const zoomStages = [
   },
 ]
 
-export default function StructurePage() {
+export default async function StructurePage() {
+  await requireIgcseBoard(['cambridge-0500', 'cambridge-0990'])
+
   return (
     <div className="space-y-10 pb-16">
       <Button

@@ -4,6 +4,8 @@ import {
   TeacherResourceCard,
   TeacherResourceGrid,
 } from "@/components/teacher/ResourceCard";
+import { getServerBoard } from "@/lib/board/get-server-board";
+import { getBoardConfig } from '@/lib/board/board-config';
 
 export const metadata: Metadata = {
   title: "Worksheets — Teacher Library",
@@ -79,7 +81,9 @@ const HAS_DETAIL = new Set([
   "language-devices-bingo",
 ]);
 
-export default function WorksheetsPage() {
+export default async function WorksheetsPage() {
+  const board = await getServerBoard();
+  const boardConfig = getBoardConfig(board);
   return (
     <main className="min-h-screen bg-background">
       <section className="border-b border-border bg-card">
@@ -94,9 +98,16 @@ export default function WorksheetsPage() {
             <span>/</span>
             <span className="text-foreground">Worksheets</span>
           </div>
-          <span className="mt-4 inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary ring-1 ring-inset ring-primary/20">
-            For Teachers
-          </span>
+          <div className="mt-4 flex flex-wrap items-center gap-2">
+            <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary ring-1 ring-inset ring-primary/20">
+              For Teachers
+            </span>
+            {boardConfig && (
+              <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/5 px-3 py-1 text-xs font-semibold text-primary">
+                For {boardConfig.shortName}
+              </span>
+            )}
+          </div>
           <h1 className="mt-3 text-4xl font-bold tracking-tight text-foreground">
             Worksheets
           </h1>

@@ -1,4 +1,8 @@
+'use client';
+
 import Link from "next/link";
+import { useBoard } from "@/hooks/useBoard";
+import { getBoardConfig } from "@/lib/board/board-store";
 
 /* ------------------------------------------------------------------ */
 /*  Data                                                               */
@@ -90,7 +94,7 @@ const TOP_TEN_POEMS = [
   { title: "Neutral Tones", poet: "Thomas Hardy", href: "/revision/poetry/love-and-relationships/neutral-tones" },
   { title: "When We Two Parted", poet: "Lord Byron", href: "/revision/poetry/love-and-relationships/when-we-two-parted" },
   { title: "War Photographer", poet: "Carol Ann Duffy", href: "/revision/poetry/power-and-conflict/war-photographer" },
-  { title: "The Charge of the Light Brigade", poet: "Alfred, Lord Tennyson", href: "/revision/poetry/power-and-conflict/charge-of-the-light-brigade" },
+  { title: "The Charge of the Light Brigade", poet: "Alfred, Lord Tennyson", href: "/revision/poetry/power-and-conflict/the-charge-of-the-light-brigade" },
 ];
 
 const QUICK_TIPS = [
@@ -183,6 +187,19 @@ function getSkillIcon(icon: string) {
 /* ------------------------------------------------------------------ */
 
 export function PoetryHubClient() {
+  const { board, isHydrated } = useBoard();
+  const boardConfig = getBoardConfig(board);
+
+  // Determine which anthology sections to show based on board.
+  // Default (no board / hydrating): show AQA, Edexcel, and Eduqas.
+  const showAQA = !board || board === "aqa";
+  const showEdexcel = !board || board === "edexcel";
+  const showEduqas = !board || board === "eduqas";
+  const showOCR = board === "ocr";
+  const showEdexcelIgcse = board === "edexcel-igcse";
+  // Cambridge IGCSE has no set poetry anthology
+  const noAnthology = board === "cambridge-0500" || board === "cambridge-0990";
+
   return (
     <>
       {/* ── Hero ─────────────────────────────────────────────────── */}
@@ -194,24 +211,35 @@ export function PoetryHubClient() {
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Poetry Made Clear
           </h1>
+          {isHydrated && boardConfig && (
+            <div className="mt-4 flex justify-center">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+                For {boardConfig.shortName}
+              </span>
+            </div>
+          )}
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Everything you need to master GCSE poetry. Anthology analysis,
             poetic techniques, unseen poetry strategies, and comparison skills
             &mdash; all in one place.
           </p>
-          <div className="mx-auto mt-5 flex items-center justify-center gap-2 rounded-lg bg-blue-500/5 border border-blue-500/10 p-3 max-w-2xl">
-            <svg className="h-4 w-4 shrink-0 text-blue-400" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
-            </svg>
-            <p className="text-sm text-muted-foreground">
-              Full study guides are now available for the <strong className="text-foreground">AQA</strong> and
-              <strong className="text-foreground"> Edexcel, OCR and WJEC Eduqas</strong> anthologies.
-            </p>
-          </div>
+          {isHydrated && noAnthology && (
+            <div className="mx-auto mt-5 flex items-start gap-2 rounded-lg border border-amber-500/20 bg-amber-500/5 p-4 max-w-2xl text-left">
+              <svg className="mt-0.5 h-4 w-4 shrink-0 text-amber-400" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+              </svg>
+              <p className="text-sm text-muted-foreground">
+                Your exam board ({boardConfig?.shortName}) does not require a
+                set poetry anthology. You can still use the unseen poetry and
+                analysis technique guides below to prepare.
+              </p>
+            </div>
+          )}
         </div>
       </section>
 
       {/* ── AQA Anthology sections ───────────────────────────────── */}
+      {showAQA && (
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="flex items-center gap-3">
           <h2 className="text-2xl font-bold text-foreground">
@@ -257,7 +285,10 @@ export function PoetryHubClient() {
         </div>
       </section>
 
+      )}
+
       {/* ── Edexcel Anthology sections ───────────────────────────── */}
+      {showEdexcel && (
       <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
         <div className="flex items-center gap-3">
           <h2 className="text-2xl font-bold text-foreground">
@@ -304,7 +335,10 @@ export function PoetryHubClient() {
 
       </section>
 
+      )}
+
       {/* ── WJEC Eduqas Anthology section ────────────────────────── */}
+      {showEduqas && (
       <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
         <div className="flex items-center gap-3">
           <h2 className="text-2xl font-bold text-foreground">
@@ -350,6 +384,35 @@ export function PoetryHubClient() {
         </div>
       </section>
 
+      )}
+
+      {/* ── OCR placeholder note ─────────────────────────────────── */}
+      {showOCR && (
+        <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
+          <div className="rounded-xl border border-border bg-card p-6">
+            <h2 className="text-xl font-bold text-foreground">OCR Poetry Anthology</h2>
+            <p className="mt-2 text-muted-foreground">
+              Detailed OCR anthology study guides are coming soon. In the
+              meantime, the analysis techniques and unseen poetry resources
+              below will help you prepare for your OCR exam.
+            </p>
+          </div>
+        </section>
+      )}
+
+      {/* ── Edexcel IGCSE placeholder note ───────────────────────── */}
+      {showEdexcelIgcse && (
+        <section className="mx-auto max-w-6xl px-4 pb-12 sm:px-6 lg:px-8">
+          <div className="rounded-xl border border-border bg-card p-6">
+            <h2 className="text-xl font-bold text-foreground">Edexcel IGCSE Poetry Anthology</h2>
+            <p className="mt-2 text-muted-foreground">
+              Edexcel IGCSE anthology study guides are coming soon. The skills
+              and unseen poetry guides below apply to your specification.
+            </p>
+          </div>
+        </section>
+      )}
+
       {/* ── Skills guides ────────────────────────────────────────── */}
       <section className="border-y border-border bg-muted/30 px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-6xl">
@@ -387,7 +450,8 @@ export function PoetryHubClient() {
         </div>
       </section>
 
-      {/* ── Top 10 most tested poems ─────────────────────────────── */}
+      {/* ── Top 10 most tested poems (AQA-specific) ──────────────── */}
+      {showAQA && (
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
         <h2 className="text-2xl font-bold text-foreground">
           10 Most Commonly Tested Poems
@@ -419,6 +483,8 @@ export function PoetryHubClient() {
           ))}
         </div>
       </section>
+
+      )}
 
       {/* ── Quick tips ───────────────────────────────────────────── */}
       <section className="border-y border-border bg-muted/30 px-4 py-12 sm:px-6 lg:px-8">

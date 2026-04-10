@@ -4,6 +4,9 @@ import {
   TeacherResourceCard,
   TeacherResourceGrid,
 } from "@/components/teacher/ResourceCard";
+import { getServerBoard } from "@/lib/board/get-server-board";
+import { getBoardConfig, type ExamBoard } from '@/lib/board/board-config';
+import { textAvailableForBoard } from "@/lib/board/set-texts";
 
 export const metadata: Metadata = {
   title: "Revision Packs — Teacher Library",
@@ -74,7 +77,31 @@ const PACKS = [
   },
 ];
 
-export default function RevisionPacksPage() {
+// Map this page's pack IDs to canonical set-text slugs in @/lib/board/set-texts.
+const PACK_TO_SET_TEXT_SLUG: Record<string, string> = {
+  "jekyll-and-hyde-pack": "jekyll-and-hyde",
+  "macbeth": "macbeth",
+  "inspector-calls": "an-inspector-calls",
+  "a-christmas-carol": "a-christmas-carol",
+  "romeo-and-juliet": "romeo-and-juliet",
+  "animal-farm": "animal-farm",
+  // Anthology packs are AQA-only
+  "power-conflict-anthology": "__aqa-only__",
+  "love-relationships-anthology": "__aqa-only__",
+};
+
+function packMatchesBoard(packId: string, board: ExamBoard | null): boolean {
+  if (!board) return true;
+  const slug = PACK_TO_SET_TEXT_SLUG[packId];
+  if (!slug) return true; // unknown — keep
+  if (slug === "__aqa-only__") return board === "aqa";
+  return textAvailableForBoard(slug, board);
+}
+
+export default async function RevisionPacksPage() {
+  const board = await getServerBoard();
+  const boardConfig = getBoardConfig(board);
+  const visiblePacks = PACKS.filter((p) => packMatchesBoard(p.id, board));
   return (
     <main className="min-h-screen bg-background">
       <section className="border-b border-border bg-card">
@@ -89,9 +116,16 @@ export default function RevisionPacksPage() {
             <span>/</span>
             <span className="text-foreground">Revision Packs</span>
           </div>
-          <span className="mt-4 inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary ring-1 ring-inset ring-primary/20">
-            For Teachers
-          </span>
+          <div className="mt-4 flex flex-wrap items-center gap-2">
+            <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary ring-1 ring-inset ring-primary/20">
+              For Teachers
+            </span>
+            {boardConfig && (
+              <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/5 px-3 py-1 text-xs font-semibold text-primary">
+                For {boardConfig.shortName}
+              </span>
+            )}
+          </div>
           <h1 className="mt-3 text-4xl font-bold tracking-tight text-foreground">
             Revision Packs
           </h1>
@@ -105,7 +139,7 @@ export default function RevisionPacksPage() {
 
       <section className="mx-auto max-w-6xl px-6 py-12">
         <TeacherResourceGrid>
-          {PACKS.map((p) => (
+          {visiblePacks.map((p) => (
             <TeacherResourceCard
               key={p.id}
               title={p.title}

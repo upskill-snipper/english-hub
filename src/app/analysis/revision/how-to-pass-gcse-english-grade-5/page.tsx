@@ -123,7 +123,7 @@ export default function Page() {
         </p>
         <div className="mt-4 flex flex-wrap gap-3">
           <Link
-            href="/auth/signup"
+            href="/auth/register"
             className="inline-flex h-9 items-center justify-center rounded-lg bg-primary px-4 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/85"
           >
             Create a free account

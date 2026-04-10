@@ -5,7 +5,7 @@ import { ArrowRight, BookOpen, Quote, Sparkles, Users, Library, GraduationCap } 
 export const metadata: Metadata = {
   title: 'Jekyll and Hyde Analysis — Quotes, Characters & Themes',
   description:
-    'In-depth Jekyll and Hyde analysis for GCSE English Literature. 15 quote breakdowns, 4 character studies, 4 theme essays, Victorian context and a Grade 9 essay guide — written by GCSE examiners.',
+    'In-depth Jekyll and Hyde analysis for GCSE English Literature. Quote breakdowns, 4 character studies, 4 theme essays, Victorian context and a Grade 9 essay guide — written by GCSE examiners.',
   alternates: {
     canonical: 'https://theenglishhub.app/analysis/jekyll-hyde',
   },
@@ -18,18 +18,6 @@ export const metadata: Metadata = {
 }
 
 const quoteAnalyses = [
-  {
-    title: '"Man is not truly one, but truly two"',
-    slug: 'man-is-not-truly-one-but-truly-two',
-    blurb:
-      'Jekyll\'s central thesis on the dual nature of man, from the "Full Statement of the Case".',
-  },
-  {
-    title: '"Trampled calmly over the child\'s body"',
-    slug: 'trampled-calmly-over-the-childs-body',
-    blurb:
-      'The Carew murder echoes this earlier, chilling introduction to Hyde\'s "hellish" detachment.',
-  },
   {
     title: '"Ape-like fury"',
     slug: 'ape-like-fury',
@@ -61,24 +49,6 @@ const quoteAnalyses = [
       'Enfield\'s visceral, irrational disgust at Hyde and the limits of rational description.',
   },
   {
-    title: '"I had always liked Jekyll"',
-    slug: 'i-had-always-liked-jekyll',
-    blurb:
-      'Lanyon, friendship, betrayal and the emotional cost of Jekyll\'s experiments.',
-  },
-  {
-    title: '"A hissing intake of the breath"',
-    slug: 'a-hissing-intake-of-the-breath',
-    blurb:
-      'Lanyon witnesses the transformation — snake imagery, Eden, and the loss of faith in science.',
-  },
-  {
-    title: '"The unjust might go his way"',
-    slug: 'the-unjust-might-go-his-way',
-    blurb:
-      'Jekyll\'s confession of the "profound duplicity" that drove him to create Hyde.',
-  },
-  {
     title: 'Dual nature of man quotes',
     slug: 'dual-nature-of-man-quotes',
     blurb:
@@ -95,12 +65,6 @@ const quoteAnalyses = [
     slug: 'door-symbolism-analysis',
     blurb:
       'The "blistered and distained" door, secrecy, repression and the Gothic threshold.',
-  },
-  {
-    title: '"The very pink of the proprieties"',
-    slug: 'the-very-pink-of-the-proprieties',
-    blurb:
-      'Jekyll\'s self-description and the pressures of Victorian upper-class respectability.',
   },
   {
     title: '"With the sea of liberty before me"',
@@ -258,7 +222,7 @@ export default function JekyllHydeHubPage() {
           <div>
             <h2 className="text-2xl font-bold text-foreground">Quote &amp; symbol analyses</h2>
             <p className="text-sm text-muted-foreground">
-              15 close-reading pages on the most examinable quotations in the novella.
+              Close-reading pages on the most examinable quotations in the novella.
             </p>
           </div>
         </div>

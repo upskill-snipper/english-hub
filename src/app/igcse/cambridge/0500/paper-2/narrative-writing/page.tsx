@@ -17,6 +17,7 @@ import {
 } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   title: 'Narrative Writing — Cambridge 0500 Paper 2 Section B',
@@ -76,7 +77,9 @@ const dialogueRules = [
   'Contractions ("I\'m", "you\'ve") make speech sound real. Avoid in formal narration.',
 ]
 
-export default function NarrativeWritingPage() {
+export default async function NarrativeWritingPage() {
+  await requireIgcseBoard(['cambridge-0500'])
+
   return (
     <div className="space-y-10 pb-16">
       {/* ── Back link ─────────────────────────────────────────────── */}

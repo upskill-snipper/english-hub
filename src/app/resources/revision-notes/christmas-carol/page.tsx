@@ -93,7 +93,7 @@ export default function ChristmasCarolRevisionPage() {
       <div className="mb-8 rounded-xl border border-border bg-card p-4 shadow-md">
         <p className="text-sm font-semibold text-muted-foreground mb-3">Jump to section:</p>
         <div className="flex flex-wrap gap-2">
-          {["Plot Summary", "Characters", "Themes", "Key Quotations", "Context", "Symbolism", "Essay Planning", "Writer's Methods", "Grade 9 Points", "Exam Board Tips"].map((s) => (
+          {["Plot Summary", "Characters", "Themes", "Key Quotations", "Context", "Symbolism", "Essay Planning", "Writer's Methods", "Grade 9 Points"].map((s) => (
             <a
               key={s}
               href={`#${s.toLowerCase().replace(/\s+/g, "-")}`}
@@ -1225,86 +1225,6 @@ export default function ChristmasCarolRevisionPage() {
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                   Dickens experienced poverty firsthand as a child when his father was imprisoned in the Marshalsea debtors&apos; prison and he was sent to work in a blacking factory aged twelve. Young Scrooge&apos;s lonely abandonment at boarding school likely draws on Dickens&apos;s own feelings of childhood neglect. Fan&apos;s rescue mirrors the eventual restoration of family. This autobiographical dimension gives the novella its emotional authenticity. A Grade 9 response might argue that Dickens&apos;s personal experience gives him unique authority to write about both poverty and the possibility of redemption &mdash; he knew both intimately.
                 </p>
-              </div>
-            </div>
-          </Section>
-        </div>
-
-        {/* ────────────────────────────────────────── EXAM BOARD TIPS */}
-        <div id="exam-board-tips">
-          <Section id="exam-tips" title="Exam Board Differences" badge="AQA / Edexcel / OCR / WJEC / CAIE" colour="bg-rose-600">
-            <div className="space-y-6">
-              <div>
-                <h3 className="text-base font-bold text-foreground mb-2">AQA (English Literature Paper 1, Section B)</h3>
-                <div className="rounded-lg bg-muted p-4">
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li>&bull; <strong>Format:</strong> You will be given an extract and asked to write about a theme or character with reference to the extract and the novella as a whole.</li>
-                    <li>&bull; <strong>Marks:</strong> 30 marks + 4 for spelling, punctuation, and grammar (34 total).</li>
-                    <li>&bull; <strong>Time:</strong> Approximately 50&ndash;55 minutes.</li>
-                    <li>&bull; <strong>Key tip:</strong> Spend about 10&ndash;12 minutes on the extract (close language analysis with terminology) and 30+ minutes on the wider novella. AQA rewards AO2 (analysis of methods) highly &mdash; always name techniques and explain their effects.</li>
-                    <li>&bull; <strong>AO3 (Context):</strong> Integrate context into your analysis rather than bolting it on. E.g., &ldquo;Dickens uses Scrooge&apos;s reference to &lsquo;surplus population&rsquo; to critique Malthusian ideology&rdquo; is better than a separate paragraph about Malthus.</li>
-                    <li>&bull; <strong>Closed book:</strong> You must memorise quotations. Short, flexible quotes are best (e.g., &ldquo;solitary as an oyster&rdquo;).</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-base font-bold text-foreground mb-2">Edexcel (English Literature Paper 1, Section B)</h3>
-                <div className="rounded-lg bg-muted p-4">
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li>&bull; <strong>Format:</strong> Two-part question. Part (a) gives an extract and asks about a specific aspect (approximately 20 marks). Part (b) asks a broader thematic question about the whole text (approximately 20 marks).</li>
-                    <li>&bull; <strong>Time:</strong> Approximately 55 minutes total (split roughly 20/35 between parts).</li>
-                    <li>&bull; <strong>Key tip:</strong> For part (a), focus tightly on the extract with close language analysis. For part (b), range across the whole novella with well-chosen evidence.</li>
-                    <li>&bull; <strong>Closed book:</strong> You will not have the text in the exam (except for the provided extract).</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-base font-bold text-foreground mb-2">OCR (English Literature)</h3>
-                <div className="rounded-lg bg-muted p-4">
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li>&bull; <strong>Format:</strong> Extract-based question requiring analysis of both the extract and the wider text.</li>
-                    <li>&bull; <strong>Key tip:</strong> OCR places strong emphasis on the writer&apos;s purpose and the effect on the reader. Always consider <em>why</em> Dickens makes specific choices (e.g., &ldquo;Dickens presents Tiny Tim sympathetically in order to...&rdquo;).</li>
-                    <li>&bull; <strong>Context:</strong> Show understanding of the Victorian period but always link it directly to the text.</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-base font-bold text-foreground mb-2">WJEC / Eduqas</h3>
-                <div className="rounded-lg bg-muted p-4">
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li>&bull; <strong>Format:</strong> Extract plus a question asking you to consider the extract and the text as a whole.</li>
-                    <li>&bull; <strong>Key tip:</strong> WJEC values a clear, structured response. Use the extract as your starting point, then broaden your discussion. Show how ideas develop or change across the novella.</li>
-                    <li>&bull; <strong>Context:</strong> Keep contextual references brief and embedded in analysis. Do not write separate context paragraphs.</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-base font-bold text-foreground mb-2">CAIE (Cambridge International)</h3>
-                <div className="rounded-lg bg-muted p-4">
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li>&bull; <strong>Format:</strong> Typically a choice of essay or passage-based question. Some specifications may provide an extract; others are entirely essay-based.</li>
-                    <li>&bull; <strong>Key tip:</strong> CAIE rewards sustained personal response and close engagement with language. Develop your argument across the essay rather than listing separate points.</li>
-                    <li>&bull; <strong>Open book (some papers):</strong> Check your specific syllabus &mdash; some CAIE papers allow clean copies of the text. Even so, prepare quotations in advance to save time.</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-base font-bold text-foreground mb-2">General Exam Advice</h3>
-                <div className="rounded-lg bg-blue-500/10 border border-blue-500/30 p-4">
-                  <ul className="space-y-2 text-sm text-blue-700 dark:text-blue-300">
-                    <li>&bull; <strong>Memorise short, versatile quotations</strong> that can be used across multiple themes and questions.</li>
-                    <li>&bull; <strong>Always analyse language:</strong> name the technique (simile, metaphor, listing, repetition, pathetic fallacy), quote the evidence, explain the effect, and link to Dickens&apos;s purpose.</li>
-                    <li>&bull; <strong>Refer to Dickens as a writer making deliberate choices:</strong> &ldquo;Dickens presents...&rdquo;, &ldquo;Dickens uses... to...&rdquo;, &ldquo;Dickens suggests...&rdquo;</li>
-                    <li>&bull; <strong>Use structural analysis:</strong> consider how the novella is organised (five staves, the progression of ghosts, the circular structure from Stave One&apos;s cold to Stave Five&apos;s warmth).</li>
-                    <li>&bull; <strong>Embed context naturally:</strong> Victorian attitudes to poverty, Malthus, the Poor Laws, workhouses, Dickens&apos;s childhood. Never write a standalone &ldquo;context paragraph.&rdquo;</li>
-                    <li>&bull; <strong>Track the transformation:</strong> Whatever the question, Scrooge&apos;s change is always relevant. Show how the theme or character connects to his arc.</li>
-                  </ul>
-                </div>
               </div>
             </div>
           </Section>

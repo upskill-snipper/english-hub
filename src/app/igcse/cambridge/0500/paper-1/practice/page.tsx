@@ -15,6 +15,7 @@ import {
 } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   title: 'Paper 1 Practice Passages — Cambridge 0500',
@@ -93,7 +94,9 @@ The heaven being spread with this pallid screen and the earth with the darkest v
   },
 ]
 
-export default function PracticePage() {
+export default async function PracticePage() {
+  await requireIgcseBoard(['cambridge-0500'])
+
   return (
     <div className="space-y-10 pb-16">
       {/* ── Back link ─────────────────────────────────────────────── */}

@@ -644,14 +644,6 @@ const comparisons = [
       'Both poems show nature dwarfing human ambition. Wordsworth\'s mountain humbles a young boy; Shelley\'s desert erases an empire. Both Romantic poets warn of human pride.',
     themes: ['Power of nature', 'Pride', 'Romantic poetry'],
   },
-  {
-    title: 'As Imperceptibly as Grief',
-    poet: 'Emily Dickinson',
-    href: '/revision/poetry/eduqas/as-imperceptibly-as-grief',
-    reason:
-      'Both poems explore how subtle natural experiences can have profound emotional effects. Dickinson\'s gentle change is the inverse of Wordsworth\'s violent confrontation, but both shape the speaker\'s consciousness.',
-    themes: ['Nature', 'Emotional impact', 'Memory'],
-  },
 ]
 
 export default function PreludeEduqasPage() {

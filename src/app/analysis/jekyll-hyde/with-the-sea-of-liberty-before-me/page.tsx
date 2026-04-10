@@ -29,14 +29,7 @@ export default function Page() {
         'This exhilarating line comes from Jekyll\'s first transformation into Hyde. Stevenson gives Jekyll the vocabulary of ecstatic release — and that is what makes it so morally troubling.'
       }
       related={[
-        {
-          title: '"Man is not truly one, but truly two"',
-          href: '/analysis/jekyll-hyde/man-is-not-truly-one-but-truly-two',
-        },
-        {
-          title: '"The unjust might go his way"',
-          href: '/analysis/jekyll-hyde/the-unjust-might-go-his-way',
-        },
+        { title: 'Dual nature of man quotes', href: '/analysis/jekyll-hyde/dual-nature-of-man-quotes' },
         { title: 'Repression theme analysis', href: '/analysis/jekyll-hyde/repression-theme-analysis' },
         { title: 'Dr Jekyll character analysis', href: '/analysis/jekyll-hyde/dr-jekyll-character-analysis' },
       ]}

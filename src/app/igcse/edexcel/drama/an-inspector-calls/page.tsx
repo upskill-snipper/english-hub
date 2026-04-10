@@ -20,6 +20,7 @@ import {
 } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   title: 'An Inspector Calls — Edexcel IGCSE 4ET1 Study Guide',
@@ -189,7 +190,9 @@ const keyQuotations = [
   },
 ]
 
-export default function InspectorCallsHubPage() {
+export default async function InspectorCallsHubPage() {
+  await requireIgcseBoard(['edexcel-igcse'])
+
   return (
     <div className="space-y-10 pb-16">
       <div>

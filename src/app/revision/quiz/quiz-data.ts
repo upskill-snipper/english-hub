@@ -1,6 +1,8 @@
 // ─── Quiz question bank ────────────────────────────────────────────────────
 // 100+ GCSE English questions across 5 topics
 
+import type { ExamBoard } from '@/lib/board/board-config'
+
 export type Topic = 'poetry' | 'set-texts' | 'language-techniques' | 'exam-technique' | 'context'
 
 export interface QuizQuestion {
@@ -10,6 +12,29 @@ export interface QuizQuestion {
   options: [string, string, string, string]
   correctIndex: number
   explanation: string
+  /**
+   * Which exam boards this question is relevant for. If unspecified, the
+   * question is treated as relevant for ALL GCSE/IGCSE boards (i.e. generic
+   * skill / technique / context questions). Use this field to scope a
+   * question to boards that actually study a particular text or anthology.
+   */
+  boards?: ExamBoard[]
+}
+
+// Topics covered by each board
+export const TOPICS_FOR_BOARD: Record<ExamBoard, Topic[]> = {
+  aqa:             ['poetry', 'set-texts', 'language-techniques', 'exam-technique', 'context'],
+  edexcel:         ['poetry', 'set-texts', 'language-techniques', 'exam-technique', 'context'],
+  ocr:             ['poetry', 'set-texts', 'language-techniques', 'exam-technique', 'context'],
+  eduqas:          ['poetry', 'set-texts', 'language-techniques', 'exam-technique', 'context'],
+  'edexcel-igcse': ['poetry', 'set-texts', 'language-techniques', 'exam-technique', 'context'],
+  'cambridge-0500':['language-techniques', 'exam-technique'],
+  'cambridge-0990':['language-techniques', 'exam-technique'],
+}
+
+export function getTopicsForBoard(board: ExamBoard | null): Topic[] {
+  if (!board) return TOPICS
+  return TOPICS_FOR_BOARD[board] ?? TOPICS
 }
 
 export const TOPIC_META: Record<Topic, { label: string; colour: string; bgColour: string }> = {
@@ -84,6 +109,7 @@ const poetryQuestions: QuizQuestion[] = [
     options: ['William Blake', 'Percy Bysshe Shelley', 'John Keats', 'Lord Byron'],
     correctIndex: 1,
     explanation: 'Percy Bysshe Shelley wrote "Ozymandias" in 1818, exploring themes of power, hubris, and the impermanence of human achievements.',
+    boards: ['aqa'], // Power & Conflict cluster (AQA anthology)
   },
   {
     id: 'p7',
@@ -124,6 +150,7 @@ const poetryQuestions: QuizQuestion[] = [
     options: ['Physical chains on prisoners', 'Mental restrictions imposed by society', 'Decorative jewellery', 'Industrial machinery'],
     correctIndex: 1,
     explanation: 'The metaphor "mind-forg\'d manacles" suggests that people are mentally imprisoned by societal institutions and their own acceptance of oppression.',
+    boards: ['aqa'], // Blake's "London" appears in AQA Power & Conflict cluster
   },
   {
     id: 'p12',
@@ -148,6 +175,7 @@ const poetryQuestions: QuizQuestion[] = [
     options: ['Sonnet', 'Ballad', 'Narrative poem', 'Haiku'],
     correctIndex: 2,
     explanation: 'It is a narrative poem that tells the story of the disastrous British cavalry charge during the Battle of Balaclava in the Crimean War.',
+    boards: ['aqa'], // Power & Conflict cluster
   },
   {
     id: 'p15',
@@ -164,6 +192,7 @@ const poetryQuestions: QuizQuestion[] = [
     options: ['Free verse', 'Dramatic monologue in rhyming couplets', 'Petrarchan sonnet', 'Villanelle'],
     correctIndex: 1,
     explanation: '"My Last Duchess" is a dramatic monologue written in rhyming couplets (heroic couplets), with the Duke speaking to an envoy.',
+    boards: ['aqa'], // Power & Conflict cluster
   },
   {
     id: 'p17',
@@ -188,6 +217,7 @@ const poetryQuestions: QuizQuestion[] = [
     options: ['The opposing army', 'The weather and elements', 'Their own officers', 'Disease'],
     correctIndex: 1,
     explanation: 'In "Exposure", the main enemy is the bitter cold and harsh weather conditions, which Owen presents as more deadly than the enemy soldiers.',
+    boards: ['aqa'], // Power & Conflict cluster
   },
   {
     id: 'p20',
@@ -208,6 +238,7 @@ const setTextQuestions: QuizQuestion[] = [
     options: ['Lady Macbeth', 'Banquo', 'The Three Witches', 'King Duncan'],
     correctIndex: 2,
     explanation: 'The Three Witches (or Weird Sisters) prophesy that Macbeth will become Thane of Cawdor and then King of Scotland.',
+    boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
   {
     id: 'st2',
@@ -216,6 +247,7 @@ const setTextQuestions: QuizQuestion[] = [
     options: ['Revenge', 'Redemption and transformation', 'Romantic love', 'Political ambition'],
     correctIndex: 1,
     explanation: 'Scrooge\'s journey from miserly isolation to generous compassion is the central redemption arc of the novella.',
+    boards: ['aqa', 'edexcel', 'eduqas'],
   },
   {
     id: 'st3',
@@ -224,6 +256,7 @@ const setTextQuestions: QuizQuestion[] = [
     options: ['Birling', 'Goole', 'Croft', 'Smith'],
     correctIndex: 1,
     explanation: 'Inspector Goole -- his name is a homophone of "ghoul", hinting at his supernatural or otherworldly nature.',
+    boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
   {
     id: 'st4',
@@ -232,6 +265,7 @@ const setTextQuestions: QuizQuestion[] = [
     options: ['Hamlet', 'The Tempest', 'Romeo and Juliet', 'Much Ado About Nothing'],
     correctIndex: 2,
     explanation: 'Tybalt is Juliet\'s cousin in "Romeo and Juliet", known as the "Prince of Cats" for his fiery temper and sword skills.',
+    boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
   {
     id: 'st5',
@@ -240,6 +274,7 @@ const setTextQuestions: QuizQuestion[] = [
     options: ['Power and corruption', 'Democracy and civilised order', 'Nature and beauty', 'Fear and danger'],
     correctIndex: 1,
     explanation: 'The conch shell represents democratic power, order, and civilisation. Its destruction symbolises the complete collapse of civilised behaviour.',
+    boards: ['aqa', 'ocr', 'eduqas'],
   },
   {
     id: 'st6',
@@ -248,6 +283,7 @@ const setTextQuestions: QuizQuestion[] = [
     options: ['Working class', 'Lower middle class', 'Upper middle class / industrialist class', 'Aristocracy'],
     correctIndex: 2,
     explanation: 'The Birlings are wealthy industrialists -- upper middle class. Arthur Birling is a prosperous factory owner seeking a knighthood.',
+    boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
   {
     id: 'st7',
@@ -256,6 +292,7 @@ const setTextQuestions: QuizQuestion[] = [
     options: ['Wealth and luxury', 'Duality and the hidden side of respectability', 'Religious faith', 'Scientific progress'],
     correctIndex: 1,
     explanation: 'The contrasting door -- neglected yet attached to a respectable building -- symbolises the duality of human nature and hidden vice behind Victorian respectability.',
+    boards: ['aqa', 'edexcel', 'ocr', 'eduqas'],
   },
   {
     id: 'st8',
@@ -264,6 +301,7 @@ const setTextQuestions: QuizQuestion[] = [
     options: ['Sherlock Holmes', 'Inspector Lestrade', 'Dr John Watson', 'Mycroft Holmes'],
     correctIndex: 2,
     explanation: 'Dr John Watson narrates the stories, providing a more relatable perspective on Holmes\'s extraordinary deductive abilities.',
+    boards: ['aqa'],
   },
   {
     id: 'st9',
@@ -272,6 +310,7 @@ const setTextQuestions: QuizQuestion[] = [
     options: ['She wants a divorce', 'She wants to be stripped of feminine weakness to carry out violence', 'She wants to disguise herself as a man', 'She wants to become invisible'],
     correctIndex: 1,
     explanation: 'Lady Macbeth calls on dark spirits to remove her feminine qualities (compassion, gentleness) so she can be ruthless enough to help murder King Duncan.',
+    boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
   {
     id: 'st10',
@@ -280,6 +319,7 @@ const setTextQuestions: QuizQuestion[] = [
     options: ['It shows Scrooge his future', 'It shows Scrooge how his past shaped his present character', 'It punishes Scrooge for his sins', 'It introduces Scrooge to Tiny Tim'],
     correctIndex: 1,
     explanation: 'The Ghost of Christmas Past reveals formative moments from Scrooge\'s past, showing how experiences like loss and isolation led to his miserly nature.',
+    boards: ['aqa', 'edexcel', 'eduqas'],
   },
   {
     id: 'st11',
@@ -288,6 +328,7 @@ const setTextQuestions: QuizQuestion[] = [
     options: ['Simile', 'Oxymoron', 'Hyperbole', 'Allusion'],
     correctIndex: 1,
     explanation: 'This is an oxymoron -- combining contradictory terms to express Romeo\'s confused feelings about love and the family feud.',
+    boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
   {
     id: 'st12',
@@ -296,6 +337,7 @@ const setTextQuestions: QuizQuestion[] = [
     options: ['1912', '1945', '1918', '1939'],
     correctIndex: 0,
     explanation: 'The play is set in 1912, before both World Wars, though it was written and first performed in 1945. This allows Priestley to use dramatic irony.',
+    boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
   {
     id: 'st13',
@@ -304,6 +346,7 @@ const setTextQuestions: QuizQuestion[] = [
     options: ['Savagery and violence', 'Intellect and rationality', 'Religious faith', 'Physical strength'],
     correctIndex: 1,
     explanation: 'Piggy represents intellect, scientific rationality, and civilised thinking. His glasses (used to make fire) symbolise the power of reason.',
+    boards: ['aqa', 'ocr', 'eduqas'],
   },
   {
     id: 'st14',
@@ -312,6 +355,7 @@ const setTextQuestions: QuizQuestion[] = [
     options: ['Life and vitality', 'Guilt and the consequences of violence', 'Love and passion', 'Loyalty to the king'],
     correctIndex: 1,
     explanation: 'Blood is a recurring motif representing guilt, murder, and moral corruption. Lady Macbeth\'s obsessive hand-washing reveals her guilt.',
+    boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
   {
     id: 'st15',
@@ -320,6 +364,7 @@ const setTextQuestions: QuizQuestion[] = [
     options: ['A wealthy socialite', 'A working-class woman exploited by the Birling family', 'The Inspector\'s wife', 'Sheila\'s school friend'],
     correctIndex: 1,
     explanation: 'Eva Smith is a working-class woman who each member of the Birling family has wronged, ultimately leading to her death.',
+    boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
   {
     id: 'st16',
@@ -328,6 +373,7 @@ const setTextQuestions: QuizQuestion[] = [
     options: ['He represents the greed of the upper classes', 'He symbolises the innocent poor who suffer from society\'s neglect', 'He is the story\'s antagonist', 'He represents Scrooge\'s childhood'],
     correctIndex: 1,
     explanation: 'Tiny Tim represents the vulnerable poor -- especially children -- who suffer due to the indifference of the wealthy. His potential death motivates Scrooge\'s transformation.',
+    boards: ['aqa', 'edexcel', 'eduqas'],
   },
   {
     id: 'st17',
@@ -336,6 +382,7 @@ const setTextQuestions: QuizQuestion[] = [
     options: ['It has no particular significance', 'It reflects the moral and political disorder in Scotland', 'It always represents hope', 'It only appears in stage directions'],
     correctIndex: 1,
     explanation: 'Pathetic fallacy is used throughout -- storms, darkness, and unnatural weather mirror the political turmoil and moral corruption caused by Macbeth\'s actions.',
+    boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
   {
     id: 'st18',
@@ -344,6 +391,7 @@ const setTextQuestions: QuizQuestion[] = [
     options: ['Dr Jekyll', 'Mr Utterson', 'Mr Hyde', 'Dr Lanyon'],
     correctIndex: 2,
     explanation: 'Mr Hyde is described as looking "troglodytic" (cave-dweller-like), suggesting he is primitive, barely human, and connects to fears about evolutionary regression.',
+    boards: ['aqa', 'edexcel', 'ocr', 'eduqas'],
   },
   {
     id: 'st19',
@@ -352,6 +400,7 @@ const setTextQuestions: QuizQuestion[] = [
     options: ['She represents the unchangeable older generation', 'She represents hope for social change in the younger generation', 'She is indifferent to Eva\'s fate', 'She supports her father\'s capitalist views'],
     correctIndex: 1,
     explanation: 'Sheila accepts responsibility and changes her views, representing Priestley\'s hope that the younger generation can build a more just society.',
+    boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
   {
     id: 'st20',
@@ -360,6 +409,7 @@ const setTextQuestions: QuizQuestion[] = [
     options: ['To introduce a subplot', 'To reveal the ending and create dramatic irony', 'To describe the setting in detail', 'To introduce the comic characters'],
     correctIndex: 1,
     explanation: 'The Prologue reveals that the "star-cross\'d lovers" will die, creating dramatic irony as the audience knows the tragic outcome throughout.',
+    boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
 ]
 
@@ -876,10 +926,34 @@ export function shuffle<T>(arr: T[]): T[] {
   return a
 }
 
-/** Pick `count` random questions, optionally filtered by topics */
-export function pickQuestions(count: number, topics?: Topic[]): QuizQuestion[] {
-  const pool = topics && topics.length > 0
-    ? ALL_QUESTIONS.filter((q) => topics.includes(q.topic))
-    : ALL_QUESTIONS
+/** True if a question applies to the given board (untagged = all boards). */
+export function questionMatchesBoard(q: QuizQuestion, board: ExamBoard | null): boolean {
+  if (!board) return true
+  if (!q.boards || q.boards.length === 0) return true
+  return q.boards.includes(board)
+}
+
+/**
+ * Filter questions by topic + board. Pass `null` board to skip filtering by
+ * board, and `undefined`/empty topics to skip filtering by topic.
+ */
+export function getQuestionsForBoard(
+  topics: Topic[] | undefined,
+  board: ExamBoard | null,
+): QuizQuestion[] {
+  return ALL_QUESTIONS.filter((q) => {
+    if (topics && topics.length > 0 && !topics.includes(q.topic)) return false
+    if (!questionMatchesBoard(q, board)) return false
+    return true
+  })
+}
+
+/** Pick `count` random questions, optionally filtered by topics and board */
+export function pickQuestions(
+  count: number,
+  topics?: Topic[],
+  board?: ExamBoard | null,
+): QuizQuestion[] {
+  const pool = getQuestionsForBoard(topics, board ?? null)
   return shuffle(pool).slice(0, count)
 }

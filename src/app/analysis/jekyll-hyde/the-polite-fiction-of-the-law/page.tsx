@@ -31,10 +31,6 @@ export default function Page() {
       }
       related={[
         { title: 'Mr Utterson character analysis', href: '/analysis/jekyll-hyde/mr-utterson-character-analysis' },
-        {
-          title: '"The very pink of the proprieties"',
-          href: '/analysis/jekyll-hyde/the-very-pink-of-the-proprieties',
-        },
         { title: 'Repression theme analysis', href: '/analysis/jekyll-hyde/repression-theme-analysis' },
         { title: 'Victorian society context', href: '/analysis/jekyll-hyde/victorian-society-context' },
       ]}

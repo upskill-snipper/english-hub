@@ -9,6 +9,7 @@ import {
 } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   title: '9-1 vs A*-G grade conversion | Cambridge IGCSE 0990 | The English Hub',
@@ -85,7 +86,9 @@ const rows = [
   },
 ]
 
-export default function GradeConversionPage() {
+export default async function GradeConversionPage() {
+  await requireIgcseBoard(['cambridge-0990'])
+
   return (
     <div className="space-y-10 pb-16">
       <div>

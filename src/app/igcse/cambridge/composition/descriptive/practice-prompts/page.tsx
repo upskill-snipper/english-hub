@@ -4,6 +4,7 @@ import { ListChecks, Sparkles, ChevronLeft } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   title: '30 Descriptive Practice Prompts — Cambridge IGCSE',
@@ -58,7 +59,9 @@ const levelStyle: Record<Level, string> = {
     'bg-purple-500/10 text-purple-700 border-purple-500/20 dark:text-purple-400',
 }
 
-export default function DescriptivePromptsPage() {
+export default async function DescriptivePromptsPage() {
+  await requireIgcseBoard(['cambridge-0500', 'cambridge-0990'])
+
   return (
     <div className="space-y-10 pb-16">
       <Button

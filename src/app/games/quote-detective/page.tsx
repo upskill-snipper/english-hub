@@ -2,10 +2,13 @@
 
 import { useState, useCallback, useMemo } from 'react'
 import Link from 'next/link'
-import { ArrowLeft } from 'lucide-react'
+import { ArrowLeft, Sparkles } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import GameShell, { type GameState } from '@/components/games/GameShell'
+import { useBoard } from '@/hooks/useBoard'
+import { getBoardConfig } from '@/lib/board/board-store'
+import { getSetTextsForBoard } from '@/lib/board/set-texts'
 
 // ─── Quote Bank (30+ quotes from GCSE set texts) ──────────────────────────────
 
@@ -71,6 +74,18 @@ const ALL_TEXTS = [
   'Of Mice and Men',
 ]
 
+// Map the quote bank's simplified display titles to canonical set-text slugs.
+const TEXT_TO_SLUG: Record<string, string> = {
+  'Macbeth': 'macbeth',
+  'An Inspector Calls': 'an-inspector-calls',
+  'A Christmas Carol': 'a-christmas-carol',
+  'Jekyll and Hyde': 'jekyll-and-hyde',
+  'Romeo and Juliet': 'romeo-and-juliet',
+  'Animal Farm': 'animal-farm',
+  'Lord of the Flies': 'lord-of-the-flies',
+  'Of Mice and Men': 'of-mice-and-men',
+}
+
 function shuffle<T>(arr: T[]): T[] {
   const a = [...arr]
   for (let i = a.length - 1; i > 0; i--) {
@@ -80,8 +95,8 @@ function shuffle<T>(arr: T[]): T[] {
   return a
 }
 
-function generateOptions(correctText: string): string[] {
-  const wrong = shuffle(ALL_TEXTS.filter((t) => t !== correctText)).slice(0, 3)
+function generateOptions(correctText: string, pool: string[]): string[] {
+  const wrong = shuffle(pool.filter((t) => t !== correctText)).slice(0, 3)
   return shuffle([correctText, ...wrong])
 }
 
@@ -90,6 +105,29 @@ const QUESTIONS_PER_ROUND = 20
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function QuoteDetectivePage() {
+  const { board } = useBoard()
+  const boardConfig = getBoardConfig(board)
+
+  // Filter quote bank by board: keep only quotes from texts the user studies.
+  // Fall back to the full bank if the board has fewer than ~3 texts represented.
+  const { filteredQuotes, filteredTexts, usingFallback } = useMemo(() => {
+    if (!board) {
+      return { filteredQuotes: QUOTE_BANK, filteredTexts: ALL_TEXTS, usingFallback: false }
+    }
+    const boardSlugs = new Set(getSetTextsForBoard(board).map((t) => t.slug))
+    const allowedTextLabels = ALL_TEXTS.filter((label) => {
+      const slug = TEXT_TO_SLUG[label]
+      return slug ? boardSlugs.has(slug) : false
+    })
+    const filtered = QUOTE_BANK.filter((q) => allowedTextLabels.includes(q.text))
+    // Need at least 3 distinct texts (for multiple-choice variety) and at least 10 quotes
+    const distinctTexts = new Set(filtered.map((q) => q.text))
+    if (filtered.length < 10 || distinctTexts.size < 3) {
+      return { filteredQuotes: QUOTE_BANK, filteredTexts: ALL_TEXTS, usingFallback: true }
+    }
+    return { filteredQuotes: filtered, filteredTexts: allowedTextLabels, usingFallback: false }
+  }, [board])
+
   const [gameState, setGameState] = useState<GameState>('idle')
   const [questions, setQuestions] = useState<
     { quote: string; correctText: string; options: string[] }[]
@@ -102,12 +140,18 @@ export default function QuoteDetectivePage() {
   const currentQ = questions[currentIndex] ?? null
 
   const handleStart = useCallback(() => {
-    const shuffled = shuffle(QUOTE_BANK).slice(0, QUESTIONS_PER_ROUND)
+    // Sample size — if filtered pool has fewer than 20 quotes, repeat the pool to reach
+    // QUESTIONS_PER_ROUND so the user still gets a full game.
+    const pool = [...filteredQuotes]
+    while (pool.length < QUESTIONS_PER_ROUND) {
+      pool.push(...filteredQuotes)
+    }
+    const shuffled = shuffle(pool).slice(0, QUESTIONS_PER_ROUND)
     setQuestions(
       shuffled.map((q) => ({
         quote: q.quote,
         correctText: q.text,
-        options: generateOptions(q.text),
+        options: generateOptions(q.text, filteredTexts),
       }))
     )
     setCurrentIndex(0)
@@ -115,7 +159,7 @@ export default function QuoteDetectivePage() {
     setSelected(null)
     setShowFeedback(false)
     setGameState('playing')
-  }, [])
+  }, [filteredQuotes, filteredTexts])
 
   const handleFinish = useCallback(() => {
     setGameState('finished')
@@ -144,12 +188,17 @@ export default function QuoteDetectivePage() {
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-8">
-      {/* Back nav */}
-      <div className="mb-6">
+      {/* Back nav + board badge */}
+      <div className="mb-6 flex items-center justify-between gap-4">
         <Button variant="ghost" size="sm" render={<Link href="/games" />}>
           <ArrowLeft className="size-4" />
           Back to Games
         </Button>
+        {boardConfig && !usingFallback && (
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-primary">
+            <Sparkles className="size-3" /> For {boardConfig.shortName}
+          </span>
+        )}
       </div>
 
       <GameShell

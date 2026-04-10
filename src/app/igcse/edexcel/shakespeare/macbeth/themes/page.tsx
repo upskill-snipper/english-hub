@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { GraduationCap } from "lucide-react";
 import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
+import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   alternates: {
@@ -100,7 +101,9 @@ const THEMES = [
   },
 ];
 
-export default function MacbethThemesPage() {
+export default async function MacbethThemesPage() {
+  await requireIgcseBoard(['edexcel-igcse'])
+
   return (
     <main className="min-h-screen bg-background">
       {/* ── Hero ─────────────────────────────────────────────── */}

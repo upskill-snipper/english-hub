@@ -1,55 +1,123 @@
-'use client'
-
 import {
   ArrowLeft,
   ArrowRight,
   CheckCircle2,
-  XCircle,
   AlertTriangle,
-  Lightbulb,
+  XCircle,
   Target,
   BookOpen,
   PenTool,
   Sparkles,
-  ChevronDown,
-  ChevronUp,
+  Info,
 } from 'lucide-react'
 import Link from 'next/link'
-import { useState } from 'react'
 import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
+import { getServerBoard } from '@/lib/board/get-server-board'
+import { getBoardConfig } from '@/lib/board/board-config'
+import { getSetTextsForBoard, type SetText } from '@/lib/board/set-texts'
+import {
+  getGradeSystemForBoard,
+  getBoundaryForGrade,
+  gradeNineToLetterEquivalent,
+} from '@/lib/board/grade-boundaries'
+import { Grade5Checklist, Grade5ComparisonExample } from './grade-5-interactive'
 
-/* ── Checklist data ───────────────────────────────────────────────────── */
+/* ── Board-specific example essays keyed by text slug ─────────────────── */
 
-const CHECKLIST_ITEMS = [
-  'I can identify and name language techniques (metaphor, simile, alliteration, etc.)',
-  'I use short, embedded quotes in my paragraphs rather than long block quotes',
-  'I explain the effect of language on the reader, not just what it means',
-  'I use subject terminology correctly (e.g. "the noun/verb/adjective suggests...")',
-  'I write in clear PEE/PEEL paragraphs with a topic sentence',
-  'I can comment on a writer\'s purpose — why they made that choice',
-  'I can identify basic structural features (opening, shift in focus, ending)',
-  'My creative writing uses a range of sentence types for effect',
-  'I plan before I write, even if it is a short plan',
-  'I leave time to check my SPaG (spelling, punctuation, and grammar)',
+type EssayExample = {
+  slug: string
+  title: string
+  author: string
+  lowerEssay: string
+  higherEssay: string
+}
+
+const GRADE_5_EXAMPLES: EssayExample[] = [
+  {
+    slug: 'macbeth',
+    title: 'Macbeth',
+    author: 'William Shakespeare',
+    lowerEssay:
+      '"In Macbeth, Macbeth sees a dagger floating in front of him. He says \'Is this a dagger which I see before me, the handle toward my hand?\' This shows he is going mad because he can see things that are not there. He is about to kill Duncan and feels bad about it."',
+    higherEssay:
+      '"Shakespeare presents Macbeth\'s guilt through the hallucinated dagger, described as a \'fatal vision.\' The adjective \'fatal\' suggests both deadly and fated, hinting that Macbeth feels the killing is inevitable. The fact that he \'cannot clutch\' it creates a sense of his inner conflict. A Jacobean audience would have seen this as a warning from God against the sin he is about to commit."',
+  },
+  {
+    slug: 'an-inspector-calls',
+    title: 'An Inspector Calls',
+    author: 'J.B. Priestley',
+    lowerEssay:
+      '"Priestley shows Mr Birling is a bad man because he says the Titanic is \'unsinkable, absolutely unsinkable.\' This is dramatic irony because the Titanic sank. Priestley does this to show Mr Birling is wrong about lots of things."',
+    higherEssay:
+      '"Priestley uses dramatic irony to undermine Birling\'s authority from the very start. The emphatic repetition of \'unsinkable\' exposes his blind confidence, which Priestley uses to warn a post-war audience about the dangers of capitalist complacency. The adjective \'absolutely\' reinforces how certain — and wrong — Birling is."',
+  },
+  {
+    slug: 'a-christmas-carol',
+    title: 'A Christmas Carol',
+    author: 'Charles Dickens',
+    lowerEssay:
+      '"Dickens shows Scrooge is a bad person at the start. He says he is a \'squeezing, wrenching, grasping, scraping, clutching, covetous, old sinner.\' This shows he is mean and does not like people."',
+    higherEssay:
+      '"Dickens characterises Scrooge through a cumulative list of verbs — \'squeezing, wrenching, grasping\' — each suggesting physical force. The verbs make Scrooge seem predatory, as if his greed is violently extracting value from others. Dickens wanted his Victorian readers to recognise this attitude in themselves and change."',
+  },
+  {
+    slug: 'jekyll-and-hyde',
+    title: 'Dr Jekyll and Mr Hyde',
+    author: 'Robert Louis Stevenson',
+    lowerEssay:
+      '"Stevenson describes Hyde as \'something troglodytic.\' This makes him sound like a caveman and shows he is evil."',
+    higherEssay:
+      '"Stevenson\'s description of Hyde as \'something troglodytic\' dehumanises him — he is not even a person but a \'something.\' The adjective suggests devolution, reflecting Victorian fears about regression and degeneration. A contemporary reader would have recognised this as a warning about the hidden \'primitive\' side of human nature."',
+  },
+  {
+    slug: 'romeo-and-juliet',
+    title: 'Romeo and Juliet',
+    author: 'William Shakespeare',
+    lowerEssay:
+      '"Romeo says Juliet is like the sun. \'But soft, what light through yonder window breaks? It is the east, and Juliet is the sun.\' This shows he loves her."',
+    higherEssay:
+      '"Shakespeare uses a celestial metaphor as Romeo declares Juliet \'is the sun.\' The metaphor elevates her beyond earthly beauty and positions Romeo as someone who needs her to survive, since the sun gives life. A Renaissance audience would have recognised this as hyperbolic courtly love, yet also potentially dangerous in its intensity."',
+  },
+  {
+    slug: 'frankenstein',
+    title: 'Frankenstein',
+    author: 'Mary Shelley',
+    lowerEssay:
+      '"The creature says \'I was benevolent and good; misery made me a fiend.\' This shows he was nice but then became bad because people were mean to him."',
+    higherEssay:
+      '"Shelley uses the creature\'s declaration — \'I was benevolent and good; misery made me a fiend\' — to challenge her Romantic-era readers\' assumptions about innate evil. The past tense \'was\' reveals a lost, corrupted innocence, suggesting that society, not nature, creates monsters. The phrase invites sympathy with a figure who appears monstrous on the surface."',
+  },
+  {
+    slug: 'pride-and-prejudice',
+    title: 'Pride and Prejudice',
+    author: 'Jane Austen',
+    lowerEssay:
+      '"Austen starts the book by saying \'It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.\' This is about how rich men need to get married."',
+    higherEssay:
+      '"Austen opens with a mock-philosophical declaration — \'a truth universally acknowledged\' — that immediately satirises Regency society. The authoritative tone sets up irony: it is not men who want wives but women and their mothers who want rich husbands. Austen exposes how marriage was treated as an economic transaction."',
+  },
 ]
 
-/* ── Component ────────────────────────────────────────────────────────── */
-
-export default function Grade5Page() {
-  const [checkedItems, setCheckedItems] = useState<Set<number>>(new Set())
-  const [showComparison, setShowComparison] = useState(false)
-
-  const toggleItem = (index: number) => {
-    setCheckedItems((prev) => {
-      const next = new Set(prev)
-      if (next.has(index)) next.delete(index)
-      else next.add(index)
-      return next
-    })
+function getExampleForBoard(setTexts: SetText[]): EssayExample | null {
+  for (const example of GRADE_5_EXAMPLES) {
+    if (setTexts.some((t) => t.slug === example.slug)) return example
   }
+  return null
+}
 
-  const progress = Math.round((checkedItems.size / CHECKLIST_ITEMS.length) * 100)
+/* ── Page ─────────────────────────────────────────────────────────────── */
+
+export default async function Grade5Page() {
+  const board = await getServerBoard()
+  const boardConfig = getBoardConfig(board)
+  const setTexts = getSetTextsForBoard(board)
+  const example = getExampleForBoard(setTexts)
+  const gradeSystem = getGradeSystemForBoard(board)
+  const boundary = getBoundaryForGrade(board, '5')
+  const isLetterSystem = gradeSystem === 'A*-G'
+  const displayGradeLabel = isLetterSystem ? `Grade ${gradeNineToLetterEquivalent('5')}` : 'Grade 5'
+  const lowerLabel = isLetterSystem ? 'Grade D' : 'Grade 4'
+  const higherLabel = displayGradeLabel
 
   return (
     <div className="space-y-10 pb-16">
@@ -66,10 +134,13 @@ export default function Grade5Page() {
         </Button>
         <div className="flex items-center gap-3">
           <div className="flex size-10 items-center justify-center rounded-xl bg-cyan-500/10">
-            <span className="text-lg font-bold text-cyan-400">5</span>
+            <span className="text-lg font-bold text-cyan-400">{isLetterSystem ? 'C' : '5'}</span>
           </div>
           <div>
-            <h1 className="text-heading-lg font-heading text-foreground">How to Get a Grade 5</h1>
+            <h1 className="text-heading-lg font-heading text-foreground">
+              How to Get a {displayGradeLabel}
+              {boardConfig && <span className="text-muted-foreground"> — {boardConfig.shortName}</span>}
+            </h1>
             <p className="text-body-sm text-muted-foreground">
               The &quot;strong pass&quot; — clear, explained, and supported responses
             </p>
@@ -77,30 +148,58 @@ export default function Grade5Page() {
         </div>
       </div>
 
+      {/* ── Board-specific note ───────────────────────────────── */}
+      {isLetterSystem && (
+        <div className="rounded-xl border border-primary/20 bg-primary/[0.04] p-4 flex items-start gap-3">
+          <Info className="size-4 shrink-0 text-primary mt-0.5" />
+          <div className="text-xs text-muted-foreground leading-relaxed">
+            <span className="font-semibold text-foreground">Cambridge 0500 uses A*-G grading. </span>
+            For Cambridge 0500, a <span className="font-semibold text-foreground">Grade C</span> is the closest
+            equivalent to a <span className="font-semibold text-foreground">9-1 Grade 5</span>. The advice below applies at this level.
+          </div>
+        </div>
+      )}
+
       {/* ── What Grade 5 Looks Like ──────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
         <div className="flex items-center gap-3 mb-5">
           <div className="flex size-9 items-center justify-center rounded-lg bg-cyan-500/10">
             <Target className="size-4.5 text-cyan-400" />
           </div>
-          <h2 className="text-heading-md font-heading text-foreground">What a Grade 5 Looks Like</h2>
+          <h2 className="text-heading-md font-heading text-foreground">What a {displayGradeLabel} Looks Like</h2>
         </div>
 
         <p className="text-body-sm text-muted-foreground mb-5 max-w-3xl">
-          A Grade 5 response is the &quot;strong pass&quot; — it is above average and shows clear understanding. Examiners describe Grade 5 work as having &quot;clear&quot; and &quot;explained&quot; ideas with relevant evidence. Here is what that means in practice:
+          A {displayGradeLabel} response is the &quot;strong pass&quot; — it is above average and shows clear understanding. Examiners describe it as having &quot;clear&quot; and &quot;explained&quot; ideas with relevant evidence. Here is what that means in practice:
         </p>
+
+        {/* Board-specific mark boundary */}
+        {boardConfig && boundary.percent !== null && (
+          <div className="mb-5 rounded-xl border border-primary/20 bg-primary/[0.04] p-4">
+            <div className="flex items-center gap-2 mb-1.5">
+              <Target className="size-4 text-primary" />
+              <h3 className="text-sm font-semibold text-foreground">
+                {boardConfig.shortName} {boundary.label} Boundary
+              </h3>
+            </div>
+            <p className="text-xs text-muted-foreground leading-relaxed">
+              You need approximately <span className="font-semibold text-primary">{boundary.percent}%</span> of total marks to reach {boundary.label} in {boardConfig.shortName}. This shifts slightly year to year, so always check the latest boundaries.
+              {boundary.systemNote && <> <span className="italic">{boundary.systemNote}</span></>}
+            </p>
+          </div>
+        )}
 
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="rounded-xl border border-border/40 bg-background/50 p-5">
             <h3 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
               <BookOpen className="size-4 text-blue-400" />
-              English Literature (Grade 5)
+              English Literature ({displayGradeLabel})
             </h3>
             <ul className="space-y-2.5">
               {[
                 'Clear understanding of the text and its themes',
                 'Relevant references and quotations used as evidence',
-                'Clear explanation of the effect of writer\'s methods',
+                "Clear explanation of the effect of writer's methods",
                 'Some use of subject terminology (but it does not have to be perfect)',
                 'Ideas are clearly organised in paragraphs',
               ].map((item) => (
@@ -115,7 +214,7 @@ export default function Grade5Page() {
           <div className="rounded-xl border border-border/40 bg-background/50 p-5">
             <h3 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
               <PenTool className="size-4 text-violet-400" />
-              English Language (Grade 5)
+              English Language ({displayGradeLabel})
             </h3>
             <ul className="space-y-2.5">
               {[
@@ -135,7 +234,7 @@ export default function Grade5Page() {
         </div>
       </section>
 
-      {/* ── Key Skills Needed ────────────────────────────────── */}
+      {/* ── Key Skills Needed (universal advice) ─────────────── */}
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
         <div className="flex items-center gap-3 mb-5">
           <div className="flex size-9 items-center justify-center rounded-lg bg-emerald-500/10">
@@ -147,54 +246,48 @@ export default function Grade5Page() {
         <div className="space-y-5">
           <div className="rounded-xl border border-border/40 bg-background/50 p-5">
             <h3 className="text-sm font-semibold text-foreground mb-2">1. Use PEE/PEEL paragraphs consistently</h3>
-            <p className="text-xs text-muted-foreground leading-relaxed mb-3">
-              Every analytical paragraph needs a Point (what you are arguing), Evidence (a short quote), Explanation (what it means and how it works), and ideally a Link back to the question or to a wider theme. This structure alone can lift you from Grade 4 to Grade 5.
+            <p className="text-xs text-muted-foreground leading-relaxed">
+              Every analytical paragraph needs a Point (what you are arguing), Evidence (a short quote), Explanation (what it means and how it works), and ideally a Link back to the question or to a wider theme. This structure alone can lift you one grade.
             </p>
-            <div className="rounded-lg bg-muted/30 p-3 text-xs text-muted-foreground font-mono leading-relaxed">
-              <span className="text-cyan-400 font-semibold">Point:</span> Shakespeare presents Macbeth as increasingly consumed by guilt.<br />
-              <span className="text-emerald-400 font-semibold">Evidence:</span> He sees a &quot;dagger&quot; before him that he &quot;cannot clutch.&quot;<br />
-              <span className="text-violet-400 font-semibold">Explain:</span> The hallucinated dagger shows his guilt is manifesting physically — he cannot escape what he is about to do.<br />
-              <span className="text-amber-400 font-semibold">Link:</span> This shows that even before the murder, Macbeth is already being destroyed by his ambition.
-            </div>
           </div>
 
           <div className="rounded-xl border border-border/40 bg-background/50 p-5">
             <h3 className="text-sm font-semibold text-foreground mb-2">2. Embed short quotes, not long ones</h3>
             <p className="text-xs text-muted-foreground leading-relaxed">
-              Grade 4 students often copy out whole sentences or lines. Grade 5 students pick the key words and weave them into their own sentences. Instead of writing out a full line, pull out two or three words and build your sentence around them. This shows you are selecting deliberately, not just finding any quote.
+              Lower-grade students often copy out whole sentences or lines. Stronger students pick the key words and weave them into their own sentences. Instead of writing out a full line, pull out two or three words and build your sentence around them.
             </p>
           </div>
 
           <div className="rounded-xl border border-border/40 bg-background/50 p-5">
             <h3 className="text-sm font-semibold text-foreground mb-2">3. Name the technique and explain its effect</h3>
             <p className="text-xs text-muted-foreground leading-relaxed">
-              Do not just say &quot;this is a metaphor&quot; and move on. Say what the metaphor does. Does it make something seem dangerous? Beautiful? Fragile? The examiner wants to see that you understand why a writer chose that particular technique. Use phrases like &quot;this suggests...&quot;, &quot;this creates a sense of...&quot;, and &quot;the reader feels...&quot;.
+              Do not just say &quot;this is a metaphor&quot; and move on. Say what the metaphor does. Does it make something seem dangerous? Beautiful? Fragile? Use phrases like &quot;this suggests...&quot;, &quot;this creates a sense of...&quot;, and &quot;the reader feels...&quot;.
             </p>
           </div>
 
           <div className="rounded-xl border border-border/40 bg-background/50 p-5">
             <h3 className="text-sm font-semibold text-foreground mb-2">4. Comment on writer&apos;s purpose</h3>
             <p className="text-xs text-muted-foreground leading-relaxed">
-              Grade 5 is where you start to show awareness of why the writer made their choices. Think about what the writer wants the reader to feel, think, or question. For Literature, consider the context: Shakespeare was writing for a Jacobean audience who believed in the divine right of kings. Dickens wanted to expose the suffering of the poor.
+              This is where you start to show awareness of why the writer made their choices. Think about what the writer wants the reader to feel, think, or question. For Literature, consider the context your board expects.
             </p>
           </div>
 
           <div className="rounded-xl border border-border/40 bg-background/50 p-5">
             <h3 className="text-sm font-semibold text-foreground mb-2">5. Vary your sentence structures in writing tasks</h3>
             <p className="text-xs text-muted-foreground leading-relaxed">
-              For Language papers, your creative and transactional writing needs variety. Use short sentences for impact. Use longer, complex sentences for description. Start some sentences with an adverb or a present participle (&quot;-ing&quot; word). Use a one-word sentence or a question for dramatic effect. This variety is what examiners mean by &quot;crafting&quot;.
+              For Language papers, your creative and transactional writing needs variety. Use short sentences for impact. Use longer, complex sentences for description. Start some sentences with an adverb or a present participle. This variety is what examiners mean by &quot;crafting&quot;.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ── Common Grade 4 Mistakes ──────────────────────────── */}
+      {/* ── Common Mistakes ──────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
         <div className="flex items-center gap-3 mb-5">
           <div className="flex size-9 items-center justify-center rounded-lg bg-red-500/10">
             <AlertTriangle className="size-4.5 text-red-400" />
           </div>
-          <h2 className="text-heading-md font-heading text-foreground">Common Grade 4 Mistakes (and How to Fix Them)</h2>
+          <h2 className="text-heading-md font-heading text-foreground">Common Mistakes (and How to Fix Them)</h2>
         </div>
 
         <div className="space-y-4">
@@ -205,19 +298,15 @@ export default function Grade5Page() {
             },
             {
               mistake: 'Using long, unselected quotes',
-              fix: 'Never quote more than about 6 words. Find the two or three most important words in a quote and embed them into your own sentence. "Macbeth describes the dagger as a \'fatal vision\' — the adjective \'fatal\' suggests..." is much better than copying out the whole speech.',
+              fix: 'Never quote more than about 6 words. Find the two or three most important words in a quote and embed them into your own sentence.',
             },
             {
               mistake: 'Naming a technique but not explaining its effect',
-              fix: 'Every time you identify a technique, immediately follow it with "which creates a sense of..." or "which makes the reader feel...". The technique identification is worth very little on its own — the explanation of effect is where the marks are.',
+              fix: 'Every time you identify a technique, immediately follow it with "which creates a sense of..." or "which makes the reader feel...". The technique identification is worth very little on its own.',
             },
             {
               mistake: 'Not answering the question directly',
-              fix: 'Start every paragraph by referring back to the exact words in the question. If the question asks "How does the writer present conflict?", start your paragraph with "The writer presents conflict through..." This keeps you focused and stops you going off on tangents.',
-            },
-            {
-              mistake: 'Running out of time on the last question',
-              fix: 'Practise writing to time. For a 30-mark Literature essay you have around 40-45 minutes. Plan for 5 minutes, write for 30-35, and check for 5. If you are running out of time, write bullet points for your last paragraph — you will get some credit.',
+              fix: 'Start every paragraph by referring back to the exact words in the question. This keeps you focused and stops you going off on tangents.',
             },
           ].map((item) => (
             <div key={item.mistake} className="rounded-xl border border-border/40 bg-background/50 p-5">
@@ -234,257 +323,38 @@ export default function Grade5Page() {
         </div>
       </section>
 
-      {/* ── Techniques to Practise ────────────────────────────── */}
-      <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
-        <div className="flex items-center gap-3 mb-5">
-          <div className="flex size-9 items-center justify-center rounded-lg bg-violet-500/10">
-            <PenTool className="size-4.5 text-violet-400" />
-          </div>
-          <h2 className="text-heading-md font-heading text-foreground">Specific Techniques to Practise</h2>
+      {/* ── Mastery Checklist (client island) ─────────────────── */}
+      <Grade5Checklist />
+
+      {/* ── Example Comparison (board-filtered) ───────────────── */}
+      {example ? (
+        <Grade5ComparisonExample
+          exampleTitle={example.title}
+          exampleAuthor={example.author}
+          lowerLabel={lowerLabel}
+          higherLabel={higherLabel}
+          lowerEssay={example.lowerEssay}
+          higherEssay={example.higherEssay}
+          contextNote={
+            boardConfig
+              ? `This example uses ${example.title}, which is on the ${boardConfig.shortName} specification.`
+              : undefined
+          }
+        />
+      ) : (
+        <div className="rounded-xl border border-border/40 bg-background/50 p-5 text-xs text-muted-foreground">
+          Example comparisons are filtered based on the texts you study. Set your exam board to see a relevant example.
         </div>
-
-        <div className="grid gap-4 sm:grid-cols-2">
-          <div className="rounded-xl border border-border/40 bg-background/50 p-5">
-            <h3 className="text-sm font-semibold text-foreground mb-2">For Reading/Analysis</h3>
-            <ul className="space-y-2 text-xs text-muted-foreground">
-              <li className="flex items-start gap-2">
-                <span className="shrink-0 mt-0.5 text-cyan-400">1.</span>
-                <span><span className="font-medium text-foreground">Zoom in on single words.</span> Pick one word from a quote and explain why the writer chose that exact word over alternatives.</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="shrink-0 mt-0.5 text-cyan-400">2.</span>
-                <span><span className="font-medium text-foreground">Use &quot;effect on reader&quot; phrases.</span> &quot;This makes the reader feel...&quot;, &quot;This forces the reader to question...&quot;, &quot;This creates tension because...&quot;</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="shrink-0 mt-0.5 text-cyan-400">3.</span>
-                <span><span className="font-medium text-foreground">Link to context (Literature).</span> One sentence per paragraph connecting to historical/social context. &quot;A Jacobean audience would have...&quot;</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="shrink-0 mt-0.5 text-cyan-400">4.</span>
-                <span><span className="font-medium text-foreground">Practise timed paragraphs.</span> Set a 7-minute timer. Write one analytical paragraph. Review it. Repeat. This builds speed and quality together.</span>
-              </li>
-            </ul>
-          </div>
-
-          <div className="rounded-xl border border-border/40 bg-background/50 p-5">
-            <h3 className="text-sm font-semibold text-foreground mb-2">For Writing Tasks</h3>
-            <ul className="space-y-2 text-xs text-muted-foreground">
-              <li className="flex items-start gap-2">
-                <span className="shrink-0 mt-0.5 text-violet-400">1.</span>
-                <span><span className="font-medium text-foreground">Practise openings.</span> Write 10 different openings for the same creative writing prompt. Use weather, dialogue, action, a question, a one-word sentence.</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="shrink-0 mt-0.5 text-violet-400">2.</span>
-                <span><span className="font-medium text-foreground">Learn 5 ambitious vocabulary words per week.</span> Words like &quot;ominous&quot;, &quot;relentless&quot;, &quot;fractured&quot;, &quot;suffocating&quot;, &quot;ethereal&quot;. Use them in your writing naturally.</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="shrink-0 mt-0.5 text-violet-400">3.</span>
-                <span><span className="font-medium text-foreground">Use sensory detail.</span> Do not just say what you see. Include sounds, textures, smells, and physical sensations. This is the fastest way to improve descriptive writing.</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="shrink-0 mt-0.5 text-violet-400">4.</span>
-                <span><span className="font-medium text-foreground">Check SPaG last.</span> Leave 3-5 minutes at the end. Read your work out loud in your head. Fix full stops, capital letters, and any homophone errors (there/their/they&apos;re).</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Mastery Checklist ────────────────────────────────── */}
-      <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
-        <div className="flex items-center gap-3 mb-2">
-          <div className="flex size-9 items-center justify-center rounded-lg bg-amber-500/10">
-            <CheckCircle2 className="size-4.5 text-amber-400" />
-          </div>
-          <h2 className="text-heading-md font-heading text-foreground">Grade 5 Mastery Checklist</h2>
-        </div>
-        <p className="text-body-sm text-muted-foreground mb-5">
-          Tick off each skill as you feel confident with it. Aim to have all of these ticked before your exam.
-        </p>
-
-        {/* Progress bar */}
-        <div className="flex items-center gap-3 mb-5">
-          <div className="flex-1 h-2 rounded-full bg-muted/60">
-            <div
-              className="h-full rounded-full bg-amber-400 transition-all duration-300"
-              style={{ width: `${progress}%` }}
-            />
-          </div>
-          <span className="text-xs font-medium text-muted-foreground">{checkedItems.size}/{CHECKLIST_ITEMS.length}</span>
-        </div>
-
-        <div className="space-y-2">
-          {CHECKLIST_ITEMS.map((item, i) => (
-            <button
-              key={i}
-              onClick={() => toggleItem(i)}
-              className={`w-full text-left flex items-start gap-3 rounded-lg border p-3.5 text-xs transition-all duration-200 ${
-                checkedItems.has(i)
-                  ? 'border-amber-500/30 bg-amber-500/[0.04] text-foreground'
-                  : 'border-border/40 bg-background/50 text-muted-foreground hover:border-border'
-              }`}
-            >
-              <div className={`mt-0.5 flex size-4 shrink-0 items-center justify-center rounded border transition-colors ${
-                checkedItems.has(i)
-                  ? 'border-amber-400 bg-amber-400 text-background'
-                  : 'border-muted-foreground/30'
-              }`}>
-                {checkedItems.has(i) && <CheckCircle2 className="size-3" />}
-              </div>
-              <span className={checkedItems.has(i) ? 'line-through opacity-70' : ''}>{item}</span>
-            </button>
-          ))}
-        </div>
-      </section>
-
-      {/* ── Example Comparison ────────────────────────────────── */}
-      <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
-        <div className="flex items-center gap-3 mb-2">
-          <div className="flex size-9 items-center justify-center rounded-lg bg-primary/10">
-            <Lightbulb className="size-4.5 text-primary" />
-          </div>
-          <h2 className="text-heading-md font-heading text-foreground">Grade 4 vs Grade 5: See the Difference</h2>
-        </div>
-        <p className="text-body-sm text-muted-foreground mb-5">
-          Same question, same text, same quote — but the Grade 5 response does more with it. Study the difference carefully.
-        </p>
-
-        <button
-          onClick={() => setShowComparison(!showComparison)}
-          className="flex items-center gap-2 text-sm font-medium text-primary mb-4 hover:underline"
-        >
-          {showComparison ? <ChevronUp className="size-4" /> : <ChevronDown className="size-4" />}
-          {showComparison ? 'Hide comparison' : 'Show comparison'}
-        </button>
-
-        {showComparison && (
-          <div className="grid gap-4 sm:grid-cols-2">
-            <div className="rounded-xl border border-red-500/20 bg-red-500/[0.03] p-5">
-              <Badge variant="destructive" className="mb-3">Grade 4</Badge>
-              <p className="text-xs text-muted-foreground leading-relaxed italic">
-                &quot;In Macbeth, Macbeth sees a dagger floating in front of him. He says &lsquo;Is this a dagger which I see before me, the handle toward my hand? Come, let me clutch thee.&rsquo; This shows he is going mad because he can see things that are not there. He is about to kill Duncan and feels bad about it.&quot;
-              </p>
-              <div className="mt-3 space-y-1.5">
-                <p className="text-[10px] text-red-400 flex items-start gap-1.5">
-                  <XCircle className="size-3 shrink-0 mt-0.5" />
-                  Long, unselected quote — too much copied text
-                </p>
-                <p className="text-[10px] text-red-400 flex items-start gap-1.5">
-                  <XCircle className="size-3 shrink-0 mt-0.5" />
-                  &quot;Going mad&quot; is vague — no analysis of language
-                </p>
-                <p className="text-[10px] text-red-400 flex items-start gap-1.5">
-                  <XCircle className="size-3 shrink-0 mt-0.5" />
-                  No subject terminology or technique identification
-                </p>
-                <p className="text-[10px] text-red-400 flex items-start gap-1.5">
-                  <XCircle className="size-3 shrink-0 mt-0.5" />
-                  &quot;Feels bad&quot; — too informal and undeveloped
-                </p>
-              </div>
-            </div>
-
-            <div className="rounded-xl border border-emerald-500/20 bg-emerald-500/[0.03] p-5">
-              <Badge className="mb-3 bg-emerald-500/20 text-emerald-400 border-emerald-500/30">Grade 5</Badge>
-              <p className="text-xs text-muted-foreground leading-relaxed italic">
-                &quot;Shakespeare presents Macbeth&apos;s guilt through the hallucinated dagger, described as a &lsquo;fatal vision.&rsquo; The adjective &lsquo;fatal&rsquo; is significant because it has a double meaning — it could mean deadly, foreshadowing Duncan&apos;s murder, or it could mean fated, suggesting that Macbeth feels the killing is inevitable. The fact that he &lsquo;cannot clutch&rsquo; the dagger creates a sense of his inner conflict: he is drawn towards violence but cannot fully commit to it. A Jacobean audience would have seen this as a warning from God against the sin he is about to commit.&quot;
-              </p>
-              <div className="mt-3 space-y-1.5">
-                <p className="text-[10px] text-emerald-400 flex items-start gap-1.5">
-                  <CheckCircle2 className="size-3 shrink-0 mt-0.5" />
-                  Short, embedded quotes woven into analysis
-                </p>
-                <p className="text-[10px] text-emerald-400 flex items-start gap-1.5">
-                  <CheckCircle2 className="size-3 shrink-0 mt-0.5" />
-                  Subject terminology used (&quot;adjective&quot;, &quot;foreshadowing&quot;)
-                </p>
-                <p className="text-[10px] text-emerald-400 flex items-start gap-1.5">
-                  <CheckCircle2 className="size-3 shrink-0 mt-0.5" />
-                  Explains the effect on the reader — &quot;creates a sense of...&quot;
-                </p>
-                <p className="text-[10px] text-emerald-400 flex items-start gap-1.5">
-                  <CheckCircle2 className="size-3 shrink-0 mt-0.5" />
-                  Links to context (Jacobean audience)
-                </p>
-              </div>
-            </div>
-          </div>
-        )}
-      </section>
-
-      {/* ── Related Resources ────────────────────────────────── */}
-      <section className="rounded-2xl border border-border/60 bg-card p-6 sm:p-8">
-        <div className="flex items-center gap-3 mb-2">
-          <div className="flex size-9 items-center justify-center rounded-lg bg-primary/10">
-            <ArrowRight className="size-4 text-primary" />
-          </div>
-          <h2 className="text-heading-md font-heading text-foreground">Related Revision</h2>
-        </div>
-        <p className="text-body-sm text-muted-foreground mb-5">
-          Apply what you have learned with these targeted resources.
-        </p>
-        <div className="grid gap-3 sm:grid-cols-2">
-          <Link
-            href="/revision/exam-technique/essay-structure"
-            className="group flex items-start gap-3 rounded-xl border border-border/40 bg-background/50 p-4 transition-all hover:border-border hover:bg-background"
-          >
-            <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-emerald-500/10">
-              <Target className="size-4 text-emerald-400" />
-            </div>
-            <div className="min-w-0">
-              <p className="text-sm font-semibold text-foreground group-hover:text-primary">PEE/PEEL Essay Structure</p>
-              <p className="text-xs text-muted-foreground mt-0.5">Master the paragraph framework Grade 5 needs.</p>
-            </div>
-          </Link>
-          <Link
-            href="/revision/language/spag"
-            className="group flex items-start gap-3 rounded-xl border border-border/40 bg-background/50 p-4 transition-all hover:border-border hover:bg-background"
-          >
-            <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-violet-500/10">
-              <PenTool className="size-4 text-violet-400" />
-            </div>
-            <div className="min-w-0">
-              <p className="text-sm font-semibold text-foreground group-hover:text-primary">SPaG Mastery</p>
-              <p className="text-xs text-muted-foreground mt-0.5">Spelling, punctuation and grammar — easy marks.</p>
-            </div>
-          </Link>
-          <Link
-            href="/revision/language/reading"
-            className="group flex items-start gap-3 rounded-xl border border-border/40 bg-background/50 p-4 transition-all hover:border-border hover:bg-background"
-          >
-            <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-blue-500/10">
-              <BookOpen className="size-4 text-blue-400" />
-            </div>
-            <div className="min-w-0">
-              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Reading Comprehension</p>
-              <p className="text-xs text-muted-foreground mt-0.5">How to find and embed short, relevant quotes.</p>
-            </div>
-          </Link>
-          <Link
-            href="/revision/poetry"
-            className="group flex items-start gap-3 rounded-xl border border-border/40 bg-background/50 p-4 transition-all hover:border-border hover:bg-background"
-          >
-            <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-rose-500/10">
-              <BookOpen className="size-4 text-rose-400" />
-            </div>
-            <div className="min-w-0">
-              <p className="text-sm font-semibold text-foreground group-hover:text-primary">Poetry Anthology</p>
-              <p className="text-xs text-muted-foreground mt-0.5">Practise PEE/PEEL on every set poem.</p>
-            </div>
-          </Link>
-        </div>
-      </section>
+      )}
 
       {/* ── Next Step ────────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-gradient-to-r from-primary/[0.06] via-card to-emerald-500/[0.04] p-6 sm:p-8 text-center">
-        <h2 className="text-heading-md font-heading text-foreground mb-2">
-          Ready to push higher?
-        </h2>
+        <h2 className="text-heading-md font-heading text-foreground mb-2">Ready to push higher?</h2>
         <p className="text-body-sm text-muted-foreground mb-5 max-w-lg mx-auto">
-          Once you have mastered these Grade 5 skills, the next step is developing more analytical depth and embedding your analysis more seamlessly.
+          Once you have mastered these skills, the next step is developing more analytical depth and embedding your analysis more seamlessly.
         </p>
         <Button variant="default" size="lg" render={<Link href="/revision/grade-targets/grade-7" />}>
-          How to Get a Grade 7
+          {isLetterSystem ? 'How to Get an A' : 'How to Get a Grade 7'}
           <ArrowRight className="size-4" />
         </Button>
       </section>

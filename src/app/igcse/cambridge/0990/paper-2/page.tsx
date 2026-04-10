@@ -20,6 +20,7 @@ import {
 } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   title: 'Paper 2 Directed Writing & Composition | Cambridge IGCSE 0990 | The English Hub',
@@ -69,7 +70,9 @@ const timingRows = [
   { step: 'Proofread both answers', time: '5 min' },
 ]
 
-export default function Paper2Page() {
+export default async function Paper2Page() {
+  await requireIgcseBoard(['cambridge-0990'])
+
   return (
     <div className="space-y-10 pb-16">
       <div>

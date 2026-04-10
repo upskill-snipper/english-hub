@@ -130,8 +130,6 @@ export default function Page() {
         <ul className="mt-3 space-y-2 text-sm">
           <li><Link className="text-primary hover:underline" href="/analysis/revision/how-to-help-your-child-revise-gcse-english">How to help your child revise GCSE English</Link></li>
           <li><Link className="text-primary hover:underline" href="/analysis/revision/gcse-english-vs-english-language-vs-literature">English Language vs Literature explained</Link></li>
-          <li><Link className="text-primary hover:underline" href="/analysis/revision/all-gcse-english-exam-boards-compared">All exam boards compared</Link></li>
-          <li><Link className="text-primary hover:underline" href="/analysis/revision/gcse-english-literature-set-texts-list-2024">Literature set texts list 2024</Link></li>
         </ul>
       </section>
 
@@ -142,7 +140,7 @@ export default function Page() {
         </p>
         <div className="mt-4 flex flex-wrap gap-3">
           <Link
-            href="/auth/signup"
+            href="/auth/register"
             className="inline-flex h-9 items-center justify-center rounded-lg bg-primary px-4 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/85"
           >
             Create a free account

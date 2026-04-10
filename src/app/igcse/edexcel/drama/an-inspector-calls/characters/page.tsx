@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { ArrowLeft, Users, Sparkles, Info } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   title: 'An Inspector Calls Characters — Edexcel IGCSE 4ET1',
@@ -81,7 +82,9 @@ const characters = [
   },
 ]
 
-export default function InspectorCallsCharactersPage() {
+export default async function InspectorCallsCharactersPage() {
+  await requireIgcseBoard(['edexcel-igcse'])
+
   return (
     <div className="space-y-10 pb-16">
       <div>

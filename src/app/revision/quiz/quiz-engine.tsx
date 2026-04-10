@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useCallback, useRef } from 'react'
+import { useState, useEffect, useCallback, useRef, useMemo } from 'react'
 import Link from 'next/link'
 import {
   ArrowLeft,
@@ -20,33 +20,152 @@ import {
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 
+import { useBoard } from '@/hooks/useBoard'
+import type { ExamBoard } from '@/lib/board/board-store'
+
 import type { QuizQuestion, Topic } from './quiz-data'
-import { TOPIC_META, getGrade } from './quiz-data'
+import { TOPIC_META, getGrade, questionMatchesBoard } from './quiz-data'
 
-// ─── Weak topic → revision page mapping ────────────────────────────────────
+// ─── Weak topic → revision page mapping (board-aware) ─────────────────────
 
-const TOPIC_REVISION_LINKS: Record<Topic, { href: string; title: string; description: string }[]> = {
-  poetry: [
-    { href: '/revision/poetry', title: 'Poetry Anthology', description: 'Annotated study guides for every poem.' },
-    { href: '/revision/exam-technique/essay-structure', title: 'Comparison Essay Structure', description: 'Build sustained poetry comparisons.' },
-  ],
-  'set-texts': [
-    { href: '/revision/texts', title: 'Set Texts Library', description: 'Plot, character and theme guides.' },
-    { href: '/revision/exam-technique/essay-structure', title: 'Essay Structure', description: 'Plan top-band literature responses.' },
-  ],
-  'language-techniques': [
-    { href: '/revision/language/reading', title: 'Reading Comprehension', description: 'Spot and analyse language techniques.' },
-    { href: '/revision/language/writing', title: 'Writing Skills', description: 'Use techniques in your own writing.' },
-  ],
-  'exam-technique': [
-    { href: '/revision/exam-technique/essay-structure', title: 'Essay Structure', description: 'PEE/PEEL and thesis-led plans.' },
-    { href: '/revision/exam-technique/question-types', title: 'Question Types', description: 'Decode every command word.' },
-    { href: '/revision/exam-technique/time-management', title: 'Time Management', description: 'Pace each paper for top marks.' },
-  ],
-  context: [
+interface RevisionLink {
+  href: string
+  title: string
+  description: string
+}
+
+function getTopicRevisionLinks(
+  topic: Topic,
+  board: ExamBoard | null,
+): RevisionLink[] {
+  // Poetry — link to the cluster the user actually studies
+  if (topic === 'poetry') {
+    if (board === 'aqa') {
+      return [
+        {
+          href: '/revision/poetry/power-and-conflict',
+          title: 'AQA Power and Conflict',
+          description: 'Annotated study guides for every Power and Conflict poem.',
+        },
+        {
+          href: '/revision/poetry/love-and-relationships',
+          title: 'AQA Love and Relationships',
+          description: 'Annotated guides for every Love and Relationships poem.',
+        },
+        {
+          href: '/revision/exam-technique/essay-structure',
+          title: 'Comparison Essay Structure',
+          description: 'Build sustained poetry comparisons.',
+        },
+      ]
+    }
+    if (board === 'edexcel') {
+      return [
+        {
+          href: '/revision/poetry/edexcel',
+          title: 'Edexcel Poetry Anthology',
+          description: 'Conflict / Time and Place / Relationships clusters.',
+        },
+        {
+          href: '/revision/exam-technique/essay-structure',
+          title: 'Comparison Essay Structure',
+          description: 'Build sustained poetry comparisons.',
+        },
+      ]
+    }
+    if (board === 'eduqas') {
+      return [
+        {
+          href: '/revision/poetry/eduqas',
+          title: 'Eduqas Poetry Anthology',
+          description: 'Annotated guides for the single Eduqas anthology.',
+        },
+        {
+          href: '/revision/exam-technique/essay-structure',
+          title: 'Comparison Essay Structure',
+          description: 'Build sustained poetry comparisons.',
+        },
+      ]
+    }
+    if (board === 'ocr') {
+      return [
+        {
+          href: '/revision/poetry/ocr',
+          title: 'OCR Poetry Cluster',
+          description: 'Annotated guides for every OCR anthology poem.',
+        },
+        {
+          href: '/revision/exam-technique/essay-structure',
+          title: 'Comparison Essay Structure',
+          description: 'Build sustained poetry comparisons.',
+        },
+      ]
+    }
+    if (board === 'edexcel-igcse') {
+      return [
+        {
+          href: '/igcse/edexcel',
+          title: 'Edexcel IGCSE Anthology',
+          description: 'Annotated guides for the IGCSE 4ET1 anthology.',
+        },
+        {
+          href: '/revision/exam-technique/essay-structure',
+          title: 'Comparison Essay Structure',
+          description: 'Build sustained poetry comparisons.',
+        },
+      ]
+    }
+    return [
+      { href: '/revision/poetry', title: 'Poetry Anthology', description: 'Annotated study guides for every poem.' },
+      { href: '/revision/exam-technique/essay-structure', title: 'Comparison Essay Structure', description: 'Build sustained poetry comparisons.' },
+    ]
+  }
+
+  if (topic === 'set-texts') {
+    if (board === 'edexcel-igcse') {
+      return [
+        { href: '/igcse/edexcel', title: 'Edexcel IGCSE Set Texts', description: 'Plot, character and theme guides for IGCSE.' },
+        { href: '/revision/exam-technique/essay-structure', title: 'Essay Structure', description: 'Plan top-band literature responses.' },
+      ]
+    }
+    return [
+      { href: '/revision/texts', title: 'Set Texts Library', description: 'Plot, character and theme guides.' },
+      { href: '/revision/exam-technique/essay-structure', title: 'Essay Structure', description: 'Plan top-band literature responses.' },
+    ]
+  }
+
+  if (topic === 'language-techniques') {
+    if (board === 'cambridge-0500' || board === 'cambridge-0990') {
+      return [
+        { href: '/igcse/cambridge/0500', title: 'Cambridge Reading Skills', description: 'Reading passages and directed response.' },
+        { href: '/revision/language/writing', title: 'Writing Skills', description: 'Use techniques in your own writing.' },
+      ]
+    }
+    return [
+      { href: '/revision/language/reading', title: 'Reading Comprehension', description: 'Spot and analyse language techniques.' },
+      { href: '/revision/language/writing', title: 'Writing Skills', description: 'Use techniques in your own writing.' },
+    ]
+  }
+
+  if (topic === 'exam-technique') {
+    return [
+      { href: '/revision/exam-technique/essay-structure', title: 'Essay Structure', description: 'PEE/PEEL and thesis-led plans.' },
+      { href: '/revision/exam-technique/question-types', title: 'Question Types', description: 'Decode every command word.' },
+      { href: '/revision/exam-technique/time-management', title: 'Time Management', description: 'Pace each paper for top marks.' },
+    ]
+  }
+
+  // context
+  if (board === 'edexcel-igcse') {
+    return [
+      { href: '/igcse/edexcel', title: 'IGCSE Set Texts', description: 'Historical, social and literary context.' },
+      { href: '/revision/grade-targets/grade-7', title: 'Grade 7 Standards', description: 'See how context lifts marks.' },
+    ]
+  }
+  return [
     { href: '/revision/texts', title: 'Set Texts', description: 'Historical, social and literary context.' },
     { href: '/revision/grade-targets/grade-7', title: 'Grade 7 Standards', description: 'See how context lifts marks.' },
-  ],
+  ]
 }
 
 // ─── Types ─────────────────────────────────────────────────────────────────
@@ -84,7 +203,16 @@ function saveResult(result: QuizResult) {
 
 // ─── Component ─────────────────────────────────────────────────────────────
 
-export function QuizEngine({ questions, mode, onRestart }: QuizEngineProps) {
+export function QuizEngine({ questions: rawQuestions, mode, onRestart }: QuizEngineProps) {
+  const { board } = useBoard()
+
+  // Defensive runtime board filter — even if upstream passed mixed questions,
+  // we strip any that are not relevant to the user's exam board.
+  const questions = useMemo(
+    () => rawQuestions.filter((q) => questionMatchesBoard(q, board)),
+    [rawQuestions, board],
+  )
+
   const [currentIndex, setCurrentIndex] = useState(0)
   const [selectedOption, setSelectedOption] = useState<number | null>(null)
   const [hasAnswered, setHasAnswered] = useState(false)
@@ -283,7 +411,7 @@ export function QuizEngine({ questions, mode, onRestart }: QuizEngineProps) {
           if (weakTopics.length === 0) return null
 
           const recs = weakTopics
-            .flatMap((t) => TOPIC_REVISION_LINKS[t].map((link) => ({ ...link, topic: t })))
+            .flatMap((t) => getTopicRevisionLinks(t, board).map((link) => ({ ...link, topic: t })))
             .slice(0, 4)
 
           return (

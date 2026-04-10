@@ -1,6 +1,3 @@
-'use client'
-
-import { useState, useEffect, useMemo } from 'react'
 import Link from 'next/link'
 import {
   BookOpen,
@@ -11,21 +8,22 @@ import {
   Target,
   Brain,
   Sparkles,
-  Clock,
   ArrowRight,
   TrendingUp,
   BookText,
   Zap,
   BarChart3,
-  CheckCircle2,
-  Flame,
   CalendarDays,
 } from 'lucide-react'
 
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { Progress } from '@/components/ui/progress'
+
+import { getServerBoard } from '@/lib/board/get-server-board'
+import { getBoardConfig, type ExamBoard } from '@/lib/board/board-config'
+import { isIgcseBoard } from '@/lib/board/board-filter'
+import { getSetTextsForBoard } from '@/lib/board/set-texts'
+import { RecentlyStudied } from './_components/recently-studied'
 
 // ─── Section data ──────────────────────────────────────────────────────────
 
@@ -38,9 +36,11 @@ interface RevisionSection {
   bgColour: string
   stats: string
   tag?: string
+  /** Boards this section is shown to. Omit to show for all. */
+  boards?: ExamBoard[]
 }
 
-const SECTIONS: RevisionSection[] = [
+const ALL_SECTIONS: RevisionSection[] = [
   {
     title: 'Poetry',
     description:
@@ -51,6 +51,8 @@ const SECTIONS: RevisionSection[] = [
     bgColour: 'bg-rose-500/10',
     stats: '30+ poems',
     tag: 'Popular',
+    // All boards study poetry EXCEPT Cambridge (0500/0990) which are language only
+    boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
   {
     title: 'Set Texts',
@@ -61,6 +63,7 @@ const SECTIONS: RevisionSection[] = [
     colour: 'text-blue-400',
     bgColour: 'bg-blue-500/10',
     stats: '20+ texts',
+    boards: ['aqa', 'edexcel', 'ocr', 'eduqas', 'edexcel-igcse'],
   },
   {
     title: 'Language Skills',
@@ -115,6 +118,11 @@ const SECTIONS: RevisionSection[] = [
   },
 ]
 
+function getSectionsForBoard(board: ExamBoard | null): RevisionSection[] {
+  if (!board) return ALL_SECTIONS
+  return ALL_SECTIONS.filter((s) => !s.boards || s.boards.includes(board))
+}
+
 // ─── Quick stats ──────────────────────────────────────────────────────────
 
 const QUICK_STATS = [
@@ -124,150 +132,21 @@ const QUICK_STATS = [
   { label: 'Quizzes', value: '100+', icon: Brain },
 ]
 
-// ─── Recently studied keys ────────────────────────────────────────────────
-
-const RECENTLY_STUDIED_KEY = 'english-hub-recently-studied'
-const STUDIED_POEMS_KEY = 'english-hub-studied-poems'
-const LAST_VISITED_KEY = 'english-hub-last-visited-revision'
-
-interface RecentItem {
-  title: string
-  href: string
-  section: string
-  timestamp: number
-}
-
-function slugToTitle(slug: string): string {
-  return slug
-    .split('-')
-    .map((s) => (s.length > 0 ? s[0].toUpperCase() + s.slice(1) : s))
-    .join(' ')
-}
-
-// ─── Suggested items ──────────────────────────────────────────────────────
-
-const SUGGESTED_ITEMS = [
-  {
-    title: 'Power and Conflict Poetry',
-    href: '/revision/poetry',
-    section: 'Poetry',
-    reason: 'Essential for AQA Literature',
-    icon: FileText,
-    colour: 'text-rose-400',
-  },
-  {
-    title: 'Essay Structure Guide',
-    href: '/revision/exam-technique',
-    section: 'Exam Technique',
-    reason: 'Boost your marks instantly',
-    icon: Target,
-    colour: 'text-emerald-400',
-  },
-  {
-    title: 'Key Quotes Flashcards',
-    href: '/revision/flashcards',
-    section: 'Flashcards',
-    reason: 'Most effective revision method',
-    icon: Layers,
-    colour: 'text-amber-400',
-  },
-  {
-    title: 'Macbeth Study Guide',
-    href: '/revision/texts',
-    section: 'Set Texts',
-    reason: 'Most popular text',
-    icon: BookText,
-    colour: 'text-blue-400',
-  },
-]
-
 // ─── Component ──────────────────────────────────────────────────────────────
 
-export default function RevisionHubPage() {
-  const [recentItems, setRecentItems] = useState<RecentItem[]>([])
-  const [mounted, setMounted] = useState(false)
+export default async function RevisionHubPage() {
+  const board = await getServerBoard()
+  const config = getBoardConfig(board)
+  const sections = getSectionsForBoard(board)
+  const isIgcse = isIgcseBoard(board)
+  const isCambridge = board === 'cambridge-0500' || board === 'cambridge-0990'
 
-  useEffect(() => {
-    setMounted(true)
-    try {
-      const merged: RecentItem[] = []
-      const seen = new Set<string>()
+  // Pick a board-relevant set text for the suggested-next card
+  const setTexts = getSetTextsForBoard(board)
+  const featuredText = setTexts.find((t) => t.slug === 'macbeth') ?? setTexts[0]
 
-      // 1. Explicit recently-studied entries
-      const stored = localStorage.getItem(RECENTLY_STUDIED_KEY)
-      if (stored) {
-        const parsed: RecentItem[] = JSON.parse(stored)
-        for (const item of parsed) {
-          if (!seen.has(item.href)) {
-            merged.push(item)
-            seen.add(item.href)
-          }
-        }
-      }
-
-      // 2. Last visited revision page (single string)
-      const lastVisited = localStorage.getItem(LAST_VISITED_KEY)
-      if (lastVisited) {
-        try {
-          const parsed = JSON.parse(lastVisited) as { href: string; title: string; section: string; timestamp: number }
-          if (parsed && parsed.href && !seen.has(parsed.href)) {
-            merged.push(parsed)
-            seen.add(parsed.href)
-          }
-        } catch {
-          // legacy plain-string fallback
-          if (!seen.has(lastVisited)) {
-            merged.push({
-              title: slugToTitle(lastVisited.split('/').filter(Boolean).pop() ?? 'Revision'),
-              href: lastVisited,
-              section: 'Revision',
-              timestamp: Date.now(),
-            })
-            seen.add(lastVisited)
-          }
-        }
-      }
-
-      // 3. Studied poem slugs (Set serialised as array)
-      const studiedPoems = localStorage.getItem(STUDIED_POEMS_KEY)
-      if (studiedPoems) {
-        const slugs: string[] = JSON.parse(studiedPoems)
-        for (const slug of slugs) {
-          // poem slugs are stored as bare slugs — try common cluster paths
-          const candidatePaths = [
-            `/revision/poetry/power-and-conflict/${slug}`,
-            `/revision/poetry/love-and-relationships/${slug}`,
-            `/revision/poetry/eduqas/${slug}`,
-          ]
-          for (const href of candidatePaths) {
-            if (seen.has(href)) continue
-            // We can\'t verify existence at runtime, but the link will 404 if missing.
-            // Add the first plausible candidate.
-            merged.push({
-              title: slugToTitle(slug),
-              href,
-              section: 'Poetry',
-              timestamp: Date.now(),
-            })
-            seen.add(href)
-            break
-          }
-        }
-      }
-
-      // Sort by timestamp desc and trim to 5
-      merged.sort((a, b) => b.timestamp - a.timestamp)
-      setRecentItems(merged.slice(0, 5))
-    } catch {
-      // ignore parse errors
-    }
-  }, [])
-
-  const suggestedNext = useMemo(() => {
-    const visitedHrefs = new Set(recentItems.map((r) => r.href))
-    const unvisited = SUGGESTED_ITEMS.filter((s) => !visitedHrefs.has(s.href))
-    return unvisited.length > 0 ? unvisited.slice(0, 3) : SUGGESTED_ITEMS.slice(0, 3)
-  }, [recentItems])
+  const boardName = config?.shortName ?? 'GCSE'
+  const headingPrefix = config ? `Your ${boardName}` : 'Your'
 
   return (
     <div className="space-y-10 pb-16">
@@ -280,15 +159,15 @@ export default function RevisionHubPage() {
         <div className="relative">
           <Badge variant="secondary" className="mb-4">
             <Sparkles className="mr-1 size-3" />
-            GCSE English Revision
+            {config ? config.fullName : 'GCSE English Revision'}
           </Badge>
           <h1 className="text-display-sm font-heading text-foreground sm:text-display">
-            Your Revision Hub
+            {headingPrefix} Revision Hub
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
-            Everything you need to ace your English exams in one place. Interactive study guides,
-            spaced repetition flashcards, and exam technique mastery -- built around how your
-            brain actually learns.
+            {isCambridge
+              ? `Everything you need to ace ${boardName} First Language English. Reading and writing technique, exam strategy, and language analysis -- all built around your specification.`
+              : `Everything you need to ace your ${boardName} English exams in one place. Interactive study guides, spaced repetition flashcards, and exam technique mastery -- built around your specification.`}
           </p>
 
           {/* Quick stats */}
@@ -317,14 +196,14 @@ export default function RevisionHubPage() {
             <div>
               <Badge variant="secondary" className="mb-2">
                 <Sparkles className="mr-1 size-3" />
-                Personalised
+                Personalised for {boardName}
               </Badge>
               <h2 className="text-heading-md font-heading text-foreground">
                 Build your study plan
               </h2>
               <p className="mt-1 max-w-xl text-body-sm text-muted-foreground">
-                Answer 5 quick questions and get a week-by-week revision plan tailored to your
-                exam date, target grade, and weakest area.
+                Answer a few quick questions and get a week-by-week revision plan tailored to your
+                exam date, target grade, and weakest area -- using {boardName} texts and papers.
               </p>
             </div>
           </div>
@@ -339,11 +218,18 @@ export default function RevisionHubPage() {
       <section>
         <div className="mb-5 flex items-center gap-3">
           <GraduationCap className="size-5 text-primary" />
-          <h2 className="text-heading-lg font-heading text-foreground">Explore Sections</h2>
+          <h2 className="text-heading-lg font-heading text-foreground">
+            Explore Sections
+          </h2>
+          {config && (
+            <Badge variant="outline" className="ml-1 text-xs">
+              For {boardName}
+            </Badge>
+          )}
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {SECTIONS.map((section) => (
+          {sections.map((section) => (
             <Link
               key={section.href}
               href={section.href}
@@ -383,71 +269,77 @@ export default function RevisionHubPage() {
             </Link>
           ))}
         </div>
+
+        {/* IGCSE deep-link callout */}
+        {isIgcse && (
+          <div className="mt-5 rounded-2xl border border-cyan-500/20 bg-cyan-500/[0.04] p-5">
+            <div className="flex items-start gap-4">
+              <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-cyan-500/10">
+                <GraduationCap className="size-5 text-cyan-400" />
+              </div>
+              <div className="flex-1">
+                <h3 className="text-heading-md font-heading text-foreground">
+                  IGCSE Resources
+                </h3>
+                <p className="mt-1 text-body-sm text-muted-foreground">
+                  We have dedicated guides, exam papers, and walkthroughs for{' '}
+                  {config?.fullName ?? 'your IGCSE specification'}.
+                </p>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="mt-3"
+                  render={
+                    <Link
+                      href={
+                        board === 'edexcel-igcse'
+                          ? '/igcse/edexcel'
+                          : board === 'cambridge-0500'
+                            ? '/igcse/cambridge/0500'
+                            : '/igcse/cambridge/0990'
+                      }
+                    />
+                  }
+                >
+                  Open IGCSE hub
+                  <ArrowRight className="size-3.5" />
+                </Button>
+              </div>
+            </div>
+          </div>
+        )}
       </section>
 
-      {/* ── Recently Studied ─────────────────────────────────────────── */}
-      {mounted && recentItems.length > 0 && (
-        <section>
-          <div className="mb-5 flex items-center gap-3">
-            <Clock className="size-5 text-muted-foreground" />
-            <h2 className="text-heading-lg font-heading text-foreground">Recently Studied</h2>
-          </div>
+      {/* ── Recently Studied (client) ────────────────────────────────── */}
+      <RecentlyStudied />
 
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-            {recentItems.map((item) => (
-              <Link
-                key={item.href + item.timestamp}
-                href={item.href}
-                className="group flex items-center gap-3 rounded-xl border border-border/60 bg-card p-4 transition-all duration-200 hover:border-border hover:shadow-card-hover"
-              >
-                <div className="flex size-8 items-center justify-center rounded-lg bg-primary/10">
-                  <BookOpen className="size-4 text-primary" />
-                </div>
-                <div className="min-w-0 flex-1">
-                  <p className="truncate text-sm font-medium text-foreground group-hover:text-primary transition-colors">
-                    {item.title}
-                  </p>
-                  <p className="text-xs text-muted-foreground">{item.section}</p>
-                </div>
-                <ArrowRight className="size-3.5 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
-              </Link>
-            ))}
+      {/* ── Featured set text (board-aware) ──────────────────────────── */}
+      {featuredText && !isCambridge && (
+        <section className="rounded-2xl border border-border/60 bg-gradient-to-r from-blue-500/[0.04] via-card to-primary/[0.04] p-6 sm:p-8">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <Badge variant="secondary" className="mb-2">
+                <BookText className="mr-1 size-3" />
+                Featured for {boardName}
+              </Badge>
+              <h2 className="text-heading-md font-heading text-foreground">
+                {featuredText.title}
+              </h2>
+              <p className="mt-1 text-body-sm text-muted-foreground">
+                by {featuredText.author}. One of the most-studied texts on your specification.
+              </p>
+            </div>
+            <Button
+              variant="outline"
+              size="lg"
+              render={<Link href={`/revision/texts/${featuredText.slug}`} />}
+            >
+              Open study guide
+              <ArrowRight className="size-4" />
+            </Button>
           </div>
         </section>
       )}
-
-      {/* ── Suggested Next ───────────────────────────────────────────── */}
-      <section>
-        <div className="mb-5 flex items-center gap-3">
-          <Flame className="size-5 text-orange-400" />
-          <h2 className="text-heading-lg font-heading text-foreground">Suggested Next</h2>
-        </div>
-
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {suggestedNext.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="group flex items-start gap-4 rounded-2xl border border-border/60 bg-card p-5 transition-all duration-200 hover:border-border hover:shadow-card-hover"
-            >
-              <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10">
-                <item.icon className={`size-5 ${item.colour}`} />
-              </div>
-              <div className="min-w-0 flex-1">
-                <h3 className="text-heading-md font-heading text-foreground group-hover:text-primary transition-colors">
-                  {item.title}
-                </h3>
-                <p className="mt-0.5 text-xs text-muted-foreground">{item.section}</p>
-                <div className="mt-2 flex items-center gap-1.5">
-                  <CheckCircle2 className="size-3 text-emerald-400" />
-                  <span className="text-caption text-emerald-400">{item.reason}</span>
-                </div>
-              </div>
-              <ArrowRight className="mt-1 size-4 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
-            </Link>
-          ))}
-        </div>
-      </section>
 
       {/* ── Motivational banner ──────────────────────────────────────── */}
       <section className="rounded-2xl border border-border/60 bg-gradient-to-r from-primary/[0.06] via-card to-violet-500/[0.04] p-6 sm:p-8 text-center">

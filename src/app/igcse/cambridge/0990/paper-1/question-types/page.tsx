@@ -16,6 +16,7 @@ import {
 } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   title: 'Paper 1 Question Types | Cambridge IGCSE 0990 | The English Hub',
@@ -26,7 +27,9 @@ export const metadata: Metadata = {
   },
 }
 
-export default function QuestionTypesPage() {
+export default async function QuestionTypesPage() {
+  await requireIgcseBoard(['cambridge-0990'])
+
   return (
     <div className="space-y-10 pb-16">
       <div>

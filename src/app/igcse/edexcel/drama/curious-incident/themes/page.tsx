@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { ArrowLeft, Sparkles, Info } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   title: 'Curious Incident Themes — Edexcel IGCSE 4ET1',
@@ -71,7 +72,9 @@ const themes = [
   },
 ]
 
-export default function CuriousIncidentThemesPage() {
+export default async function CuriousIncidentThemesPage() {
+  await requireIgcseBoard(['edexcel-igcse'])
+
   return (
     <div className="space-y-10 pb-16">
       <div>

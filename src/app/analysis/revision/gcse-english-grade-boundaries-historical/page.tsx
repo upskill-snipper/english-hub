@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { AnalysisBoardGate } from '../_components/AnalysisBoardGate'
 
 export const metadata: Metadata = {
   title: 'GCSE English Grade Boundaries (Historical Trends) | The English Hub',
@@ -24,6 +25,11 @@ export default function Page() {
   }
 
   return (
+    <AnalysisBoardGate
+      contentBoards={['aqa']}
+      contentName="AQA GCSE English historical grade boundaries"
+      redirectTo="/revision"
+    >
     <main className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <nav className="mb-4 text-sm text-muted-foreground">
@@ -107,7 +113,6 @@ export default function Page() {
         <ul className="mt-3 space-y-2 text-sm">
           <li><Link className="text-primary hover:underline" href="/analysis/revision/gcse-english-grade-boundaries-2024">GCSE English grade boundaries 2024</Link></li>
           <li><Link className="text-primary hover:underline" href="/analysis/revision/gcse-english-pass-rate-statistics">GCSE English pass rate statistics</Link></li>
-          <li><Link className="text-primary hover:underline" href="/analysis/revision/all-gcse-english-exam-boards-compared">All GCSE English exam boards compared</Link></li>
           <li><Link className="text-primary hover:underline" href="/analysis/revision/how-to-get-grade-9-gcse-english-literature">How to get a Grade 9 in GCSE English Literature</Link></li>
         </ul>
       </section>
@@ -119,7 +124,7 @@ export default function Page() {
         </p>
         <div className="mt-4 flex flex-wrap gap-3">
           <Link
-            href="/auth/signup"
+            href="/auth/register"
             className="inline-flex h-9 items-center justify-center rounded-lg bg-primary px-4 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/85"
           >
             Create a free account
@@ -133,5 +138,6 @@ export default function Page() {
         </div>
       </section>
     </main>
+    </AnalysisBoardGate>
   )
 }

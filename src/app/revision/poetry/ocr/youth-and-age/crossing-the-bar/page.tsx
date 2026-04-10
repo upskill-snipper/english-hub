@@ -334,22 +334,6 @@ const comparisons = [
       'A perfect contrast: Keats fears dying young before his work is done; Tennyson, in old age, welcomes death calmly. Both poems face mortality, but from opposite ends of life.',
     themes: ['Death', 'Mortality', 'Acceptance vs fear'],
   },
-  {
-    title: 'On My First Son',
-    poet: 'Ben Jonson',
-    href: '/revision/poetry/ocr/youth-and-age/on-my-first-son',
-    reason:
-      'Both poems use religious belief to soften the pain of death. Jonson consoles himself that his son is now safe with God; Tennyson hopes to meet God himself. Both find peace in faith.',
-    themes: ['Death', 'Religious faith', 'Consolation'],
-  },
-  {
-    title: 'Death the Leveller',
-    poet: 'James Shirley',
-    href: '/revision/poetry/ocr/youth-and-age/death-the-leveller',
-    reason:
-      'A striking contrast: Shirley sees death as the universal equaliser that humbles all; Tennyson sees death as a personal homecoming. Both confront mortality but with very different tones.',
-    themes: ['Death', 'Faith', 'Universal vs personal'],
-  },
 ]
 
 export default function CrossingTheBarPage() {

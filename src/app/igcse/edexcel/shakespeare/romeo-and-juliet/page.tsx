@@ -8,6 +8,7 @@ import {
   GraduationCap,
 } from "lucide-react";
 import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
+import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   alternates: {
@@ -105,7 +106,9 @@ const THEMES_PREVIEW = [
   },
 ];
 
-export default function RomeoAndJulietHubPage() {
+export default async function RomeoAndJulietHubPage() {
+  await requireIgcseBoard(['edexcel-igcse'])
+
   return (
     <main className="min-h-screen bg-background">
       {/* ── Hero ─────────────────────────────────────────────── */}

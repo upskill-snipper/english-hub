@@ -290,28 +290,12 @@ Simple diction: Wordsworth deliberately uses plain, everyday words. There are no
 
 const comparisons = [
   {
-    title: 'A Complaint',
-    poet: 'William Wordsworth',
-    href: '/revision/poetry/ocr/love-and-relationships/a-complaint',
+    title: 'Browse all poems',
+    poet: 'Love and Relationships cluster',
+    href: '/revision/poetry/ocr/love-and-relationships',
     reason:
-      'Two Wordsworth poems on lost intimacy. "She Dwelt" mourns a lost person; "A Complaint" mourns a lost connection. Both use simple language and natural imagery to express grief.',
-    themes: ['Loss', 'Wordsworth', 'Quiet grief'],
-  },
-  {
-    title: 'A Child to his Sick Grandfather',
-    poet: 'Joanna Baillie',
-    href: '/revision/poetry/ocr/love-and-relationships/a-child-to-his-sick-grandfather',
-    reason:
-      'Both poems are restrained but tender expressions of loss. They focus on humble, everyday relationships and the value of love that the wider world might not notice.',
-    themes: ['Tender love', 'Loss', 'Quiet tragedy'],
-  },
-  {
-    title: 'Sonnet 43',
-    poet: 'Elizabeth Barrett Browning',
-    href: '/revision/poetry/ocr/love-and-relationships/sonnet-43',
-    reason:
-      'A study in contrast: Browning lists the many ways she loves; Wordsworth quietly notes that almost no one loved Lucy. Both poems are intensely personal expressions of devotion.',
-    themes: ['Devotion', 'Personal love', 'Form'],
+      'See the full OCR Love and Relationships anthology for more poems that pair well with Wordsworth\'s quiet lament for Lucy.',
+    themes: ['Loss', 'Love', 'Wordsworth'],
   },
 ]
 

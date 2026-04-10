@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { AnalysisBoardGate } from '../_components/AnalysisBoardGate'
 
 export const metadata: Metadata = {
   title: 'Ambition in Macbeth — Theme Analysis | The English Hub',
@@ -19,6 +20,7 @@ export default function Page() {
     mainEntityOfPage: 'https://theenglishhub.app/analysis/macbeth/ambition-theme-analysis',
   }
   return (
+    <AnalysisBoardGate>
     <main className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <nav className="mb-4 text-sm text-muted-foreground">
@@ -141,5 +143,6 @@ export default function Page() {
         </div>
       </section>
     </main>
+    </AnalysisBoardGate>
   )
 }

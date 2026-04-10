@@ -30,14 +30,7 @@ export default function Page() {
       }
       related={[
         { title: 'Mr Hyde character analysis', href: '/analysis/jekyll-hyde/mr-hyde-character-analysis' },
-        {
-          title: '"The very pink of the proprieties"',
-          href: '/analysis/jekyll-hyde/the-very-pink-of-the-proprieties',
-        },
-        {
-          title: '"The unjust might go his way"',
-          href: '/analysis/jekyll-hyde/the-unjust-might-go-his-way',
-        },
+        { title: 'Duality theme analysis', href: '/analysis/jekyll-hyde/duality-theme-analysis' },
         { title: 'Repression theme analysis', href: '/analysis/jekyll-hyde/repression-theme-analysis' },
       ]}
     >

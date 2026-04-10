@@ -29,14 +29,6 @@ export default function Page() {
         'Dr Lanyon is a small role with enormous thematic weight. Stevenson uses him to represent Victorian empirical science and then literally kills him with its failure.'
       }
       related={[
-        {
-          title: '"I had always liked Jekyll"',
-          href: '/analysis/jekyll-hyde/i-had-always-liked-jekyll',
-        },
-        {
-          title: '"A hissing intake of the breath"',
-          href: '/analysis/jekyll-hyde/a-hissing-intake-of-the-breath',
-        },
         { title: 'Science theme analysis', href: '/analysis/jekyll-hyde/science-theme-analysis' },
         { title: 'Dr Jekyll character analysis', href: '/analysis/jekyll-hyde/dr-jekyll-character-analysis' },
       ]}

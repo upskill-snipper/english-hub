@@ -21,6 +21,7 @@ import {
 } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   title: 'Edexcel IGCSE 4ET1 Past Papers — The English Hub',
@@ -91,7 +92,9 @@ const studyTips = [
   },
 ]
 
-export default function EdexcelPastPapersPage() {
+export default async function EdexcelPastPapersPage() {
+  await requireIgcseBoard(['edexcel-igcse'])
+
   return (
     <div className="space-y-10 pb-16">
       {/* ── Back link ───────────────────────────────────────────────── */}

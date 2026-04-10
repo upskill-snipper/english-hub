@@ -553,7 +553,7 @@ const comparisons: Comparison[] = [
   },
   {
     poem: "Porphyria's Lover",
-    link: '/revision/poetry/power-and-conflict/porphyrias-lover',
+    link: '/revision/poetry/love-and-relationships/porphyrias-lover',
     points: [
       'Both are Browning dramatic monologues in which a male speaker kills a woman he claims to love.',
       'The Duke kills through social power ("I gave commands"); Porphyria\'s lover kills with his own hands, making the violence more visceral.',
@@ -563,7 +563,7 @@ const comparisons: Comparison[] = [
   },
   {
     poem: 'The Charge of the Light Brigade',
-    link: '/revision/poetry/power-and-conflict/charge-of-the-light-brigade',
+    link: '/revision/poetry/power-and-conflict/the-charge-of-the-light-brigade',
     points: [
       'Both explore the consequences of unchecked authority — the Duke\'s commands kill his wife; the military "blunder" kills six hundred soldiers.',
       'Tennyson critiques those who give orders from a distance; Browning\'s Duke is himself the one giving lethal commands.',

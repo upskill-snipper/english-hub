@@ -135,8 +135,8 @@ export default function MacbethRevisionPage() {
         </h1>
         <p className="mt-3 max-w-3xl text-lg text-muted-foreground">
           The most comprehensive Macbeth resource you will find. Act-by-act plot summaries, 10 character profiles with key quotes,
-          8 themes with detailed analysis, 30+ quotations with full breakdowns, historical context, 5 essay planning templates,
-          and exam board comparison. Everything you need for your GCSE English Literature exam.
+          8 themes with detailed analysis, 30+ quotations with full breakdowns, historical context, and 5 essay planning templates.
+          Everything you need for your GCSE English Literature exam.
         </p>
       </div>
 
@@ -153,7 +153,6 @@ export default function MacbethRevisionPage() {
             { label: "Essay Planning", href: "essay-planning" },
             { label: "Writer's Methods", href: "writers-methods" },
             { label: "Grade 9 Points", href: "grade-9" },
-            { label: "Exam Board Tips", href: "exam-board-tips" },
           ].map((s) => (
             <a
               key={s.href}
@@ -1383,131 +1382,6 @@ export default function MacbethRevisionPage() {
                   <em>Macbeth</em> was almost certainly written for James I, who became king of England in 1603. James traced his ancestry from Banquo (the &ldquo;show of eight kings&rdquo; in Act 4 flatters James&apos;s lineage). The play validates James&apos;s rule by showing the chaos that results from illegitimate succession. The witches reflect James&apos;s personal interest in demonology. A Grade 9 response might argue that <em>Macbeth</em> functions partly as political propaganda: it tells the story James wanted told &mdash; that legitimate succession brings order, usurpation brings chaos, and the Stuart line is blessed. Understanding this political context enriches every reading of the play.
                 </p>
               </SubSection>
-            </div>
-          </Section>
-        </div>
-
-        {/* ────────────────────────────────────────── EXAM BOARD TIPS */}
-        <div id="exam-board-tips">
-          <Section id="exam-boards" title="Exam Board Comparison" colour="bg-primary">
-            <p className="text-sm text-muted-foreground mb-4">
-              Different exam boards examine <em>Macbeth</em> in slightly different ways. Understanding your specific board&apos;s requirements can gain you marks.
-            </p>
-            <div className="space-y-6">
-              <div className="rounded-lg border border-purple-500/30 bg-purple-500/5 p-4">
-                <h3 className="font-bold text-foreground flex items-center gap-2">
-                  <span className="rounded bg-[#40197F] px-2 py-0.5 text-xs font-bold text-white">AQA</span>
-                  AQA GCSE English Literature (8702) &mdash; Paper 1, Section A
-                </h3>
-                <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-                  <li>&bull; <strong>Format:</strong> You receive a printed extract (roughly 20-30 lines) and a question asking how Shakespeare presents a given theme or character. You must write about the extract <em>and then</em> the wider play.</li>
-                  <li>&bull; <strong>Marks:</strong> 30 marks + 4 for SPaG = 34 total. Recommended time: ~50-55 minutes.</li>
-                  <li>&bull; <strong>AOs tested:</strong> AO1 (response and quotation), AO2 (language/structure/form analysis), AO3 (context).</li>
-                  <li>&bull; <strong>Structure advice:</strong> Spend roughly 50% on the extract and 50% on the wider play. Start with the extract (close analysis of specific words), then move outward to other scenes. Always zoom in on individual words and their effects &mdash; this is where top-band AO2 marks come from.</li>
-                  <li>&bull; <strong>Context tip:</strong> Context should be woven into your analysis, not added as a separate paragraph. Instead of &ldquo;In the Jacobean era...&rdquo; as a bolt-on, integrate it: &ldquo;Shakespeare&apos;s Jacobean audience, who lived under a king who personally wrote about witchcraft, would have found the witches genuinely terrifying, which intensifies...&rdquo;</li>
-                  <li>&bull; <strong>Closed book:</strong> Yes. You need memorised quotations from across the entire play. The extract is printed but everything else must come from memory.</li>
-                </ul>
-              </div>
-
-              <div className="rounded-lg border border-red-500/30 bg-red-500/5 p-4">
-                <h3 className="font-bold text-foreground flex items-center gap-2">
-                  <span className="rounded bg-[#E5231B] px-2 py-0.5 text-xs font-bold text-white">Edexcel</span>
-                  Edexcel GCSE English Literature (1ET0) &mdash; Paper 1, Section A
-                </h3>
-                <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-                  <li>&bull; <strong>Format:</strong> Extract-based question asking how Shakespeare presents a theme or character. You must refer to the extract and the play as a whole.</li>
-                  <li>&bull; <strong>Marks:</strong> 40 marks total. Recommended time: ~55 minutes.</li>
-                  <li>&bull; <strong>AOs tested:</strong> AO1 (ideas and quotation), AO2 (writer&apos;s methods), AO3 (context), AO4 (SPaG &mdash; integrated into the mark, not separate).</li>
-                  <li>&bull; <strong>Key difference from AQA:</strong> Edexcel places slightly more weight on writer&apos;s methods (AO2). Make sure you analyse <em>HOW</em> Shakespeare achieves effects, not just <em>WHAT</em> he says. Use precise terminology: don&apos;t just say &ldquo;metaphor&rdquo; &mdash; say what the metaphor does and why Shakespeare chose it.</li>
-                  <li>&bull; <strong>Structure advice:</strong> Use the extract as your launchpad but move fluidly to the rest of the play. Edexcel rewards essays that track how a theme or character <em>develops</em> across the play, not just isolated moments.</li>
-                  <li>&bull; <strong>Closed book:</strong> Yes.</li>
-                </ul>
-              </div>
-
-              <div className="rounded-lg border border-green-500/30 bg-green-500/5 p-4">
-                <h3 className="font-bold text-foreground flex items-center gap-2">
-                  <span className="rounded bg-[#00A651] px-2 py-0.5 text-xs font-bold text-white">CAIE</span>
-                  Cambridge IGCSE Literature (0475 / 0992) &mdash; Paper 1 (Drama)
-                </h3>
-                <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-                  <li>&bull; <strong>Format:</strong> Two question options per text: (a) a passage-based question with a printed extract, OR (b) an essay question on the whole text. You choose <strong>one</strong>.</li>
-                  <li>&bull; <strong>Marks:</strong> 25 marks per question. Total paper time: 1hr 30min for two texts.</li>
-                  <li>&bull; <strong>Key difference:</strong> CAIE rewards <em>personal response</em> and close reading above all. There is no separate AO for context &mdash; you are assessed on your ability to respond to the text itself. Use context only where it genuinely enhances your reading.</li>
-                  <li>&bull; <strong>Passage-based questions:</strong> Work through the extract systematically. CAIE expects you to analyse specific details closely. You can refer to the wider text to show understanding, but the extract is the focus.</li>
-                  <li>&bull; <strong>Essay questions:</strong> Plan carefully and use precise textual references. CAIE essays should demonstrate a coherent personal reading, not a list of pre-prepared points.</li>
-                  <li>&bull; <strong>Open/Closed book:</strong> Varies by component. Paper 1 is typically <strong>closed book</strong> (0475) or <strong>open book with clean copies</strong> (0992). Check your specific syllabus.</li>
-                </ul>
-              </div>
-
-              <div className="rounded-lg border border-blue-500/30 bg-blue-500/5 p-4">
-                <h3 className="font-bold text-foreground flex items-center gap-2">
-                  <span className="rounded bg-[#2A7DE1] px-2 py-0.5 text-xs font-bold text-white">OCR</span>
-                  OCR GCSE English Literature (J352) &mdash; Shakespeare Component
-                </h3>
-                <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
-                  <li>&bull; <strong>Format:</strong> Extract-based question on a theme, character, or dramatic moment. You explore the extract and connect it to the wider play.</li>
-                  <li>&bull; <strong>Marks:</strong> 40 marks. Part of a larger paper.</li>
-                  <li>&bull; <strong>AOs tested:</strong> AO1 (response), AO2 (analysis of methods), AO3 (context), AO4 (SPaG &mdash; integrated).</li>
-                  <li>&bull; <strong>Key difference:</strong> OCR values <em>analytical depth</em> over breadth. It is far better to analyse three quotations thoroughly than to mention ten superficially. Show how meaning is created through specific word choices, structural decisions, and dramatic techniques.</li>
-                  <li>&bull; <strong>Structure advice:</strong> OCR examiners reward essays that build an <em>argument</em> rather than a list. Your paragraphs should connect and develop a central thesis about the theme or character, not just present isolated observations.</li>
-                  <li>&bull; <strong>Closed book:</strong> Yes.</li>
-                </ul>
-              </div>
-
-              {/* Comparison summary */}
-              <div className="rounded-lg border border-border bg-card p-4">
-                <h3 className="font-bold text-foreground mb-3">At a Glance: Key Differences</h3>
-                <div className="overflow-x-auto">
-                  <table className="w-full text-sm text-left">
-                    <thead>
-                      <tr className="border-b-2 border-border">
-                        <th className="py-2 pr-3 font-bold text-foreground"></th>
-                        <th className="py-2 px-3 font-bold text-[#40197F]">AQA</th>
-                        <th className="py-2 px-3 font-bold text-[#E5231B]">Edexcel</th>
-                        <th className="py-2 px-3 font-bold text-[#00A651]">CAIE</th>
-                        <th className="py-2 px-3 font-bold text-[#2A7DE1]">OCR</th>
-                      </tr>
-                    </thead>
-                    <tbody className="text-muted-foreground">
-                      <tr className="border-b border-border">
-                        <td className="py-2 pr-3 font-semibold">Marks</td>
-                        <td className="py-2 px-3">34 (30+4)</td>
-                        <td className="py-2 px-3">40</td>
-                        <td className="py-2 px-3">25</td>
-                        <td className="py-2 px-3">40</td>
-                      </tr>
-                      <tr className="border-b border-border">
-                        <td className="py-2 pr-3 font-semibold">Format</td>
-                        <td className="py-2 px-3">Extract + wider play</td>
-                        <td className="py-2 px-3">Extract + wider play</td>
-                        <td className="py-2 px-3">Extract OR essay</td>
-                        <td className="py-2 px-3">Extract + wider play</td>
-                      </tr>
-                      <tr className="border-b border-border">
-                        <td className="py-2 pr-3 font-semibold">Open/Closed</td>
-                        <td className="py-2 px-3">Closed</td>
-                        <td className="py-2 px-3">Closed</td>
-                        <td className="py-2 px-3">Varies</td>
-                        <td className="py-2 px-3">Closed</td>
-                      </tr>
-                      <tr className="border-b border-border">
-                        <td className="py-2 pr-3 font-semibold">SPaG</td>
-                        <td className="py-2 px-3">Separate (4)</td>
-                        <td className="py-2 px-3">Integrated</td>
-                        <td className="py-2 px-3">N/A</td>
-                        <td className="py-2 px-3">Integrated</td>
-                      </tr>
-                      <tr>
-                        <td className="py-2 pr-3 font-semibold">Priority</td>
-                        <td className="py-2 px-3">Close word analysis</td>
-                        <td className="py-2 px-3">Writer&apos;s methods</td>
-                        <td className="py-2 px-3">Personal response</td>
-                        <td className="py-2 px-3">Depth over breadth</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
             </div>
           </Section>
         </div>

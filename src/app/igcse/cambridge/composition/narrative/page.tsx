@@ -21,6 +21,7 @@ import {
 } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   title: 'Narrative Writing — Cambridge IGCSE Composition',
@@ -83,7 +84,9 @@ const sections = [
   },
 ]
 
-export default function NarrativeHubPage() {
+export default async function NarrativeHubPage() {
+  await requireIgcseBoard(['cambridge-0500', 'cambridge-0990'])
+
   return (
     <div className="space-y-10 pb-16">
       <Button

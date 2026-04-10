@@ -17,6 +17,7 @@ import {
 } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   title: '0990 vs 0500 — What is the difference? | Cambridge IGCSE | The English Hub',
@@ -77,7 +78,9 @@ const differentRows = [
   },
 ]
 
-export default function Difference0990vs0500Page() {
+export default async function Difference0990vs0500Page() {
+  await requireIgcseBoard(['cambridge-0990'])
+
   return (
     <div className="space-y-10 pb-16">
       {/* Back link */}

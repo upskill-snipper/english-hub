@@ -1,10 +1,34 @@
 'use client'
 
+import { useMemo } from 'react'
 import Link from 'next/link'
+import { BookOpen } from 'lucide-react'
+import { Badge } from '@/components/ui/badge'
+import { useBoard } from '@/hooks/useBoard'
+import { getBoardConfig } from '@/lib/board/board-store'
+import { isGcseBoard, isIgcseBoard } from '@/lib/board/board-filter'
+import type { ExamBoard } from '@/lib/board/board-store'
 
-const FOOTER_SECTIONS = [
+type FooterLink = {
+  href: string
+  label: string
+  // Restrict link to certain boards. If omitted, link is shown for every board.
+  boards?: ExamBoard[]
+  // Restrict to a board type (easier than listing individual boards).
+  boardType?: 'gcse' | 'igcse'
+}
+
+type FooterSection = {
+  title: string
+  // When true the whole section is generic and never filtered (pricing, about, legal, etc).
+  generic?: boolean
+  links: FooterLink[]
+}
+
+const FOOTER_SECTIONS: FooterSection[] = [
   {
     title: 'Product',
+    generic: true,
     links: [
       { href: '/courses', label: 'Courses' },
       { href: '/games', label: 'Games' },
@@ -19,7 +43,13 @@ const FOOTER_SECTIONS = [
     title: 'Revision',
     links: [
       { href: '/revision', label: 'Revision Hub' },
-      { href: '/revision/poetry', label: 'Poetry' },
+      // Poetry clusters are board-specific.
+      { href: '/revision/poetry/power-and-conflict', label: 'Power & Conflict', boards: ['aqa'] },
+      { href: '/revision/poetry/love-and-relationships', label: 'Love & Relationships', boards: ['aqa'] },
+      { href: '/revision/poetry/edexcel', label: 'Edexcel Anthology', boards: ['edexcel'] },
+      { href: '/revision/poetry/ocr', label: 'OCR Anthology', boards: ['ocr'] },
+      { href: '/revision/poetry/eduqas', label: 'Eduqas Anthology', boards: ['eduqas'] },
+      { href: '/revision/poetry', label: 'Poetry', boardType: 'gcse' },
       { href: '/revision/texts', label: 'Texts' },
       { href: '/revision/flashcards', label: 'Flashcards' },
       { href: '/revision/exam-technique', label: 'Exam Technique' },
@@ -29,7 +59,17 @@ const FOOTER_SECTIONS = [
     ],
   },
   {
+    title: 'IGCSE',
+    links: [
+      { href: '/igcse/edexcel', label: 'Edexcel IGCSE', boards: ['edexcel-igcse'] },
+      { href: '/igcse/cambridge/0500', label: 'Cambridge 0500', boards: ['cambridge-0500'] },
+      { href: '/igcse/cambridge/0990', label: 'Cambridge 0990', boards: ['cambridge-0990'] },
+      { href: '/igcse', label: 'IGCSE Hub', boardType: 'igcse' },
+    ],
+  },
+  {
     title: 'Resources',
+    generic: true,
     links: [
       { href: '/resources', label: 'Resources Hub' },
       { href: '/resources/revision-notes', label: 'Study Guides' },
@@ -42,6 +82,7 @@ const FOOTER_SECTIONS = [
   },
   {
     title: 'Company',
+    generic: true,
     links: [
       { href: '/about', label: 'About' },
       { href: '/for-teachers', label: 'For Teachers' },
@@ -53,6 +94,7 @@ const FOOTER_SECTIONS = [
   },
   {
     title: 'Legal',
+    generic: true,
     links: [
       { href: '/privacy-policy', label: 'Privacy Policy' },
       { href: '/terms', label: 'Terms of Service' },
@@ -63,6 +105,7 @@ const FOOTER_SECTIONS = [
   },
   {
     title: 'Support',
+    generic: true,
     links: [
       { href: '/help', label: 'Help Centre' },
       { href: '/faqs', label: 'FAQs' },
@@ -70,12 +113,55 @@ const FOOTER_SECTIONS = [
   },
 ]
 
+function linkMatchesBoard(link: FooterLink, board: ExamBoard | null): boolean {
+  // No board selected — show everything except explicitly-scoped links,
+  // so first-time visitors see the full site map.
+  if (!board) {
+    return !link.boards && !link.boardType
+  }
+  if (link.boards && !link.boards.includes(board)) return false
+  if (link.boardType === 'gcse' && !isGcseBoard(board)) return false
+  if (link.boardType === 'igcse' && !isIgcseBoard(board)) return false
+  return true
+}
+
 export function Footer() {
+  const { board, isHydrated } = useBoard()
+  const effectiveBoard = isHydrated ? board : null
+  const boardConfig = getBoardConfig(effectiveBoard)
+
+  const visibleSections = useMemo(() => {
+    return FOOTER_SECTIONS.map((section) => {
+      if (section.generic) return section
+      const links = section.links.filter((l) => linkMatchesBoard(l, effectiveBoard))
+      return { ...section, links }
+    }).filter((section) => section.links.length > 0)
+  }, [effectiveBoard])
+
   return (
     <footer className="border-t border-border/60 bg-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {boardConfig && (
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border/60 py-4">
+            <div className="flex items-center gap-2 text-sm">
+              <BookOpen className="h-4 w-4 text-muted-foreground" aria-hidden="true" />
+              <span className="text-muted-foreground">Studying</span>
+              <Badge variant="secondary">{boardConfig.shortName}</Badge>
+              <span className="hidden text-muted-foreground sm:inline">
+                — {boardConfig.fullName}
+              </span>
+            </div>
+            <Link
+              href="/board-select?change=1"
+              className="text-sm font-medium text-primary hover:underline underline-offset-4"
+            >
+              Change board
+            </Link>
+          </div>
+        )}
+
         <div className="grid grid-cols-2 gap-8 py-10 sm:grid-cols-3 lg:grid-cols-6">
-          {FOOTER_SECTIONS.map((section) => (
+          {visibleSections.map((section) => (
             <div key={section.title}>
               <h3 className="text-sm font-semibold text-foreground">
                 {section.title}

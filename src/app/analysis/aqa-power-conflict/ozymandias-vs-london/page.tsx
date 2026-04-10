@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { AnalysisBoardGate } from '../_components/AnalysisBoardGate'
 
 const PAGE_URL = 'https://theenglishhub.app/analysis/aqa-power-conflict/ozymandias-vs-london'
 
@@ -22,6 +23,7 @@ export default function Page() {
   }
 
   return (
+    <AnalysisBoardGate>
     <main className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <nav className="mb-4 text-sm text-muted-foreground">
@@ -126,5 +128,6 @@ export default function Page() {
         </div>
       </section>
     </main>
+    </AnalysisBoardGate>
   )
 }

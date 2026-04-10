@@ -604,7 +604,7 @@ export default function PowerAndConflictPage() {
 
           {/* ───────────────────── 5. The Charge of the Light Brigade ───────────────────── */}
           <div id="charge-of-the-light-brigade" style={{ display: visiblePoemIds.has("charge-of-the-light-brigade") ? undefined : "none" }}>
-            <Section id="charge-of-the-light-brigade" title="The Charge of the Light Brigade" poet="Alfred Lord Tennyson (1854)" studyHref="/revision/poetry/power-and-conflict/charge-of-the-light-brigade">
+            <Section id="charge-of-the-light-brigade" title="The Charge of the Light Brigade" poet="Alfred Lord Tennyson (1854)" studyHref="/revision/poetry/power-and-conflict/the-charge-of-the-light-brigade">
 
               <SubSection title="Summary">
                 <p className="text-sm text-muted-foreground leading-relaxed">

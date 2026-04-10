@@ -21,6 +21,7 @@ import {
 } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   title:
@@ -80,7 +81,9 @@ const checklist = [
   'I finished within 45 minutes.',
 ]
 
-export default function SettingAtmospherePage() {
+export default async function SettingAtmospherePage() {
+  await requireIgcseBoard(['cambridge-0500', 'cambridge-0990'])
+
   return (
     <div className="space-y-8 pb-16">
       <header className="space-y-4">

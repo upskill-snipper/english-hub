@@ -4,6 +4,7 @@ import { GraduationCap, Sparkles, ChevronLeft, Target } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   title: 'Composition Mark Scheme — Cambridge IGCSE 0500 / 0990',
@@ -146,7 +147,9 @@ const styleBands = [
   },
 ]
 
-export default function MarkSchemePage() {
+export default async function MarkSchemePage() {
+  await requireIgcseBoard(['cambridge-0500', 'cambridge-0990'])
+
   return (
     <div className="space-y-10 pb-16">
       <Button

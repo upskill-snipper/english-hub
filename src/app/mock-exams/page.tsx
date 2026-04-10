@@ -31,6 +31,8 @@ import {
   type MockExamPaper,
 } from '@/data/mock-exams'
 import { useBoardStore } from '@/store/board-store'
+import { useBoard } from '@/hooks/useBoard'
+import { getBoardConfig, type ExamBoard } from '@/lib/board/board-store'
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -553,24 +555,50 @@ function HowMockExamsWork() {
 
 // ─── Main Page ───────────────────────────────────────────────────────────────
 
+// Map a user's selected ExamBoard ID to the legacy `examBoard` strings used in
+// the static EXAM_CARDS list ("AQA", "Edexcel", "OCR", "WJEC", "CAIE").
+const BOARD_ID_TO_LEGACY: Record<ExamBoard, string[]> = {
+  'aqa': ['AQA'],
+  'edexcel': ['Edexcel'],
+  'ocr': ['OCR'],
+  'eduqas': ['WJEC', 'Eduqas'],
+  'edexcel-igcse': ['Edexcel IGCSE', 'IGCSE'],
+  'cambridge-0500': ['CAIE', 'Cambridge', 'Cambridge 0500'],
+  'cambridge-0990': ['CAIE', 'Cambridge', 'Cambridge 0990'],
+}
+
 export default function MockExamsPage() {
   const allBoards = useMemo(() => getAvailableBoards(), [])
   const { selectedBoard } = useBoardStore()
+  const { board: userBoard, isHydrated: isBoardHydrated } = useBoard()
+  const boardConfig = getBoardConfig(userBoard)
 
   const totalPapers = useMemo(
     () => allBoards.reduce((sum, b) => sum + getMockExamsByBoard(b).length, 0),
     [allBoards]
   )
 
+  // Restrict the visible exam cards to the user's chosen board.
+  // If the board cookie hasn't hydrated yet, show all cards (avoids flash of empty).
+  const boardScopedExams = useMemo(() => {
+    if (!isBoardHydrated || !userBoard) return EXAM_CARDS
+    const legacy = BOARD_ID_TO_LEGACY[userBoard] ?? []
+    return EXAM_CARDS.filter((e) =>
+      legacy.some((name) => e.examBoard.toLowerCase() === name.toLowerCase())
+    )
+  }, [userBoard, isBoardHydrated])
+
   // Filter exam cards based on active tab
   const [activeTab, setActiveTab] = useState<string>('all')
 
   const filteredExams = useMemo(() => {
-    if (activeTab === 'all') return EXAM_CARDS
-    if (activeTab === 'language') return EXAM_CARDS.filter((e) => e.paperType === 'language')
-    if (activeTab === 'literature') return EXAM_CARDS.filter((e) => e.paperType === 'literature')
-    return EXAM_CARDS
-  }, [activeTab])
+    if (activeTab === 'all') return boardScopedExams
+    if (activeTab === 'language') return boardScopedExams.filter((e) => e.paperType === 'language')
+    if (activeTab === 'literature') return boardScopedExams.filter((e) => e.paperType === 'literature')
+    return boardScopedExams
+  }, [activeTab, boardScopedExams])
+
+  const showComingSoon = isBoardHydrated && !!userBoard && boardScopedExams.length === 0
 
   return (
     <div className="min-h-screen bg-background">
@@ -623,10 +651,12 @@ export default function MockExamsPage() {
       <section id="exams" className="max-w-6xl mx-auto px-4 py-12 sm:py-16">
         <div className="mb-8">
           <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
-            AQA Exam Papers
+            {boardConfig ? `${boardConfig.name} Exam Papers` : 'Exam Papers'}
           </h2>
           <p className="text-muted-foreground max-w-2xl">
-            Choose a paper to start. Each mock follows the exact AQA GCSE specification with realistic questions, proper timing, and accurate grade boundaries.
+            Choose a paper to start. Each mock follows the exact{' '}
+            {boardConfig?.name ?? 'GCSE'} specification with realistic questions,
+            proper timing, and accurate grade boundaries.
           </p>
         </div>
 
@@ -640,11 +670,29 @@ export default function MockExamsPage() {
         </Tabs>
 
         {/* Exam cards grid */}
-        <div className="grid md:grid-cols-2 gap-6">
-          {filteredExams.map((exam) => (
-            <ExamPaperCard key={exam.id} exam={exam} />
-          ))}
-        </div>
+        {showComingSoon ? (
+          <div className="rounded-2xl border border-border/40 bg-card/30 p-10 text-center">
+            <GraduationCap className="h-12 w-12 mx-auto mb-4 text-primary/80" />
+            <h3 className="text-xl font-bold text-foreground mb-2">
+              {boardConfig?.name ?? 'Your board'} mock exams — coming soon
+            </h3>
+            <p className="text-muted-foreground max-w-xl mx-auto mb-5">
+              We&apos;re building a full set of timed mock papers for{' '}
+              {boardConfig?.fullName ?? 'your selected board'}. In the meantime, you can
+              still use our flashcards, model answers, and revision notes.
+            </p>
+            <div className="flex gap-3 justify-center flex-wrap">
+              <Button variant="secondary" render={<Link href="/revision" />}>Go to Revision Hub</Button>
+              <Button variant="outline" render={<Link href="/board-select" />}>Change exam board</Button>
+            </div>
+          </div>
+        ) : (
+          <div className="grid md:grid-cols-2 gap-6">
+            {filteredExams.map((exam) => (
+              <ExamPaperCard key={exam.id} exam={exam} />
+            ))}
+          </div>
+        )}
 
         {/* Additional boards note */}
         {totalPapers > 4 && (

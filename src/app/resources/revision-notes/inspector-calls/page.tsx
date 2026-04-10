@@ -91,7 +91,7 @@ export default function InspectorCallsRevisionPage() {
       <div className="mb-8 rounded-xl border border-border bg-card p-4 shadow-md">
         <p className="text-sm font-semibold text-muted-foreground mb-3">Jump to section:</p>
         <div className="flex flex-wrap gap-2">
-          {["Plot Summary", "Characters", "Themes", "Key Quotations", "Context", "Dramatic Devices", "Essay Planning", "Grade 9 Points", "Exam Board Tips"].map((s) => (
+          {["Plot Summary", "Characters", "Themes", "Key Quotations", "Context", "Dramatic Devices", "Essay Planning", "Grade 9 Points"].map((s) => (
             <a
               key={s}
               href={`#${s.toLowerCase().replace(/\s+/g, "-")}`}
@@ -837,75 +837,6 @@ export default function InspectorCallsRevisionPage() {
                   <p><strong>Paragraph 3:</strong> The phone call &mdash; cyclical structure. The events are about to repeat. This denies the older Birlings their escape and forces the audience to confront the question: have <em>you</em> learned the lesson?</p>
                   <p><strong>Paragraph 4:</strong> Birling &ldquo;panic-stricken&rdquo; &mdash; the final image. The man who was so confident at the start is now terrified. Priestley&apos;s structural arc: from complacent certainty to fear. Context: the audience must choose a better path.</p>
                 </div>
-              </div>
-
-            </div>
-          </Section>
-        </div>
-
-        {/* ────────────────────────────────────────── EXAM BOARD TIPS */}
-        <div id="exam-board-tips">
-          <Section id="exam-boards" title="Exam Board Comparison" badge="4 Boards" colour="bg-muted">
-            <div className="space-y-4">
-
-              <div className="rounded-lg border border-border p-4">
-                <h3 className="font-bold text-foreground">AQA English Literature (Paper 2, Section A)</h3>
-                <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                  <li>&bull; <strong>Closed book</strong> &mdash; you must memorise quotations</li>
-                  <li>&bull; You will be given a short extract from the play and a question</li>
-                  <li>&bull; You must write about the extract <em>and</em> the play as a whole</li>
-                  <li>&bull; Marks for AO1 (response to text), AO2 (language/structure/form analysis), AO3 (context), AO4 (SPaG)</li>
-                  <li>&bull; Spend roughly half your time on the extract, half on the wider play</li>
-                  <li>&bull; Always link context to the point you are making &mdash; do not bolt it on separately</li>
-                </ul>
-              </div>
-
-              <div className="rounded-lg border border-border p-4">
-                <h3 className="font-bold text-foreground">Edexcel English Literature (Paper 1, Section B)</h3>
-                <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                  <li>&bull; <strong>Closed book</strong></li>
-                  <li>&bull; Two essay questions; choose one</li>
-                  <li>&bull; No extract provided &mdash; you choose your own evidence</li>
-                  <li>&bull; AO1 (critical response), AO2 (methods), AO3 (context), AO4 (SPaG)</li>
-                  <li>&bull; You must cover the whole play, not just one act</li>
-                  <li>&bull; Use topic sentences to structure each paragraph clearly</li>
-                </ul>
-              </div>
-
-              <div className="rounded-lg border border-border p-4">
-                <h3 className="font-bold text-foreground">WJEC Eduqas English Literature (Component 2, Section A)</h3>
-                <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                  <li>&bull; <strong>Closed book</strong></li>
-                  <li>&bull; Extract-based question plus a wider question on the same text</li>
-                  <li>&bull; AO1 (response), AO2 (writer&apos;s methods), AO4 (context)</li>
-                  <li>&bull; Context is assessed as AO4 here, not AO3</li>
-                  <li>&bull; Focus on how Priestley uses the extract to develop themes or characters</li>
-                </ul>
-              </div>
-
-              <div className="rounded-lg border border-border p-4">
-                <h3 className="font-bold text-foreground">OCR English Literature (Paper 1 or 2 depending on specification)</h3>
-                <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                  <li>&bull; <strong>Closed book</strong></li>
-                  <li>&bull; Extract-based question with requirement to write about the wider text</li>
-                  <li>&bull; AO1 (critical response), AO2 (analysis of methods), AO3 (context)</li>
-                  <li>&bull; Strong emphasis on writer&apos;s methods &mdash; how and why Priestley makes choices</li>
-                  <li>&bull; Use the phrase &ldquo;Priestley presents / uses / suggests / implies&rdquo; to keep focus on the writer</li>
-                </ul>
-              </div>
-
-              <div className="mt-4 rounded-lg bg-primary/5 p-4">
-                <h3 className="font-bold text-foreground">Universal Exam Tips</h3>
-                <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                  <li>&bull; Always refer to Priestley by name &mdash; &ldquo;Priestley presents...&rdquo; not &ldquo;it shows...&rdquo;</li>
-                  <li>&bull; Embed short quotations (2-5 words) within your sentences for fluency</li>
-                  <li>&bull; Integrate context naturally: &ldquo;A 1945 audience, having lived through two world wars, would recognise the dramatic irony of Birling&apos;s confidence&rdquo;</li>
-                  <li>&bull; Analyse individual words: why does Priestley choose <em>this</em> word rather than a synonym?</li>
-                  <li>&bull; Address structural choices: why does this event happen at this point in the play?</li>
-                  <li>&bull; Consider Priestley&apos;s intentions: what does he want the audience to think, feel, or do?</li>
-                  <li>&bull; Write about the play as a <em>construct</em> &mdash; it was deliberately made to convey a message</li>
-                  <li>&bull; Use tentative language for interpretations: &ldquo;perhaps,&rdquo; &ldquo;could suggest,&rdquo; &ldquo;Priestley may be implying&rdquo;</li>
-                </ul>
               </div>
 
             </div>

@@ -2,6 +2,8 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
+import { useBoard } from "@/hooks/useBoard";
+import { getBoardConfig, type ExamBoard } from "@/lib/board/board-store";
 
 /* ─── Types ──────────────────────────────────────────────────── */
 
@@ -306,7 +308,30 @@ const CATEGORIES: { key: Category; label: string; description: string }[] = [
   },
 ];
 
-/** @deprecated Board filtering removed */
+/* ─── Board → label mapping ──────────────────────────────────── */
+// The TEXTS array uses friendly labels (AQA, Edexcel, OCR, CAIE).
+// Map an ExamBoard to the labels that should be considered relevant.
+function boardToLabels(board: ExamBoard | null): string[] | null {
+  if (!board) return null;
+  switch (board) {
+    case "aqa":
+      return ["AQA"];
+    case "edexcel":
+      return ["Edexcel"];
+    case "ocr":
+      return ["OCR"];
+    case "eduqas":
+      // Eduqas isn't in the legacy labels — fall back to the closest matches.
+      return ["AQA", "Edexcel", "OCR"];
+    case "edexcel-igcse":
+      return ["Edexcel"];
+    case "cambridge-0500":
+    case "cambridge-0990":
+      return ["CAIE"];
+    default:
+      return null;
+  }
+}
 
 const TYPE_LABELS: Record<string, { label: string; bg: string; text: string }> =
   {
@@ -522,9 +547,19 @@ function Icon({ name }: { name: string }) {
 
 export default function RevisionNotesHub() {
   const [search, setSearch] = useState("");
+  const { board, isHydrated } = useBoard();
+  const boardConfig = getBoardConfig(board);
 
   const filtered = useMemo(() => {
     let result = TEXTS;
+
+    // Board filter (only after hydration to avoid SSR mismatch)
+    if (isHydrated) {
+      const labels = boardToLabels(board);
+      if (labels) {
+        result = result.filter((t) => t.boards.some((b) => labels.includes(b)));
+      }
+    }
 
     if (search.trim()) {
       const q = search.toLowerCase();
@@ -537,7 +572,7 @@ export default function RevisionNotesHub() {
     }
 
     return result;
-  }, [search]);
+  }, [search, board, isHydrated]);
 
   const categoriesWithTexts = CATEGORIES.map((cat) => ({
     ...cat,
@@ -551,6 +586,13 @@ export default function RevisionNotesHub() {
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           Revision Notes
         </h1>
+        {isHydrated && boardConfig && (
+          <div className="mt-3">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+              For {boardConfig.shortName}
+            </span>
+          </div>
+        )}
         <p className="mt-3 max-w-3xl text-lg leading-relaxed text-muted-foreground">
           Comprehensive, exam-focused revision guides for every major GCSE
           English Literature set text. Each guide includes plot summaries,

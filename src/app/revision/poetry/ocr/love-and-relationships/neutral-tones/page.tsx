@@ -358,28 +358,12 @@ Tone: Cold, bitter, restrained. The poem never shouts -- the emotion is "neutral
 
 const comparisons = [
   {
-    title: 'A Complaint',
-    poet: 'William Wordsworth',
-    href: '/revision/poetry/ocr/love-and-relationships/a-complaint',
-    reason:
-      'Both poems mourn the death of an intimate connection. Wordsworth grieves the cooling of a friendship; Hardy grieves the cooling of a love affair. Both use natural imagery (a fountain, a winter pond) to suggest something once flowing and alive that has now stilled.',
-    themes: ['Lost love', 'Memory', 'Disillusionment'],
-  },
-  {
     title: 'She Walks in Beauty',
     poet: 'Lord Byron',
     href: '/revision/poetry/ocr/love-and-relationships/she-walks-in-beauty',
     reason:
       'A perfect contrast: Byron celebrates a loving woman in radiant terms; Hardy mourns a dying love in colourless ones. Both use light and dark imagery, but where Byron finds harmony, Hardy finds drained emptiness.',
     themes: ['Light and dark', 'Imagery', 'Contrasting moods'],
-  },
-  {
-    title: 'The Farmer\'s Bride',
-    poet: 'Charlotte Mew',
-    href: '/revision/poetry/ocr/love-and-relationships/the-farmers-bride',
-    reason:
-      'Both poems present relationships poisoned by emotional absence. The Farmer\'s wife flees her husband; Hardy\'s lover stares past him. Both speakers are stuck with their unhappiness, unable to escape their failed love.',
-    themes: ['Failed love', 'Emotional distance', 'Unhappiness'],
   },
 ]
 

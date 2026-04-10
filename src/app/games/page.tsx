@@ -30,6 +30,9 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
+import { useBoard } from '@/hooks/useBoard'
+import { getBoardConfig } from '@/lib/board/board-store'
+import { getSetTextsForBoard } from '@/lib/board/set-texts'
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // DATA
@@ -928,7 +931,21 @@ function WordScrambleGame({ onExit }: { onExit: () => void }) {
 // ═══════════════════════════════════════════════════════════════════════════════
 
 function QuoteMatchGame({ onExit }: { onExit: () => void }) {
-  const [questions] = useState(() => shuffleArray(QUOTE_MATCH_DATA).slice(0, 10))
+  const { board } = useBoard()
+
+  // Filter quote match data: keep only quotes whose answer references a text studied by the user's board.
+  // If no board is set, or if filtering would yield too few quotes, fall back to the full bank.
+  const filteredData = useMemo(() => {
+    if (!board) return QUOTE_MATCH_DATA
+    const allowedTitles = getSetTextsForBoard(board).map((t) => t.title.toLowerCase())
+    const filtered = QUOTE_MATCH_DATA.filter((q) =>
+      allowedTitles.some((title) => q.answer.toLowerCase().includes(title))
+    )
+    // If the user's board has fewer than 6 matching quotes, include the full bank as a fallback
+    return filtered.length >= 6 ? filtered : QUOTE_MATCH_DATA
+  }, [board])
+
+  const [questions] = useState(() => shuffleArray(filteredData).slice(0, 10))
   const [currentIndex, setCurrentIndex] = useState(0)
   const [score, setScore] = useState(0)
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null)
@@ -1335,6 +1352,8 @@ const GameCard = memo(function GameCard({ game, isActive, onPlay }: { game: Game
 
 export default function GamesPage() {
   const [activeGame, setActiveGame] = useState<string | null>(null)
+  const { board } = useBoard()
+  const boardConfig = getBoardConfig(board)
 
   const handleExit = useCallback(() => setActiveGame(null), [])
 
@@ -1350,6 +1369,15 @@ export default function GamesPage() {
       default: return null
     }
   }
+
+  // Filter games: hide text-specific games when the user's board has no relevant content.
+  // For now, all boards have at least Macbeth/Inspector Calls so all games stay visible —
+  // but this gives us a hook for future per-board filtering.
+  const visibleGames = useMemo(() => {
+    if (!board) return GAMES
+    // All current games are either generic or have content for every board, so keep all.
+    return GAMES
+  }, [board])
 
   return (
     <div className="min-h-screen bg-background">
@@ -1368,6 +1396,13 @@ export default function GamesPage() {
             <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Learn through play</span>
           </div>
 
+          {boardConfig && (
+            <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/30 rounded-full px-4 py-1.5 mb-4 ml-2">
+              <Sparkles className="size-3.5 text-primary" />
+              <span className="text-xs font-bold text-primary uppercase tracking-wider">For {boardConfig.shortName}</span>
+            </div>
+          )}
+
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-foreground tracking-tight leading-tight mb-4">
             English{' '}
             <span className="bg-gradient-to-r from-emerald-400 via-violet-400 to-amber-400 bg-clip-text text-transparent">
@@ -1376,7 +1411,9 @@ export default function GamesPage() {
           </h1>
 
           <p className="text-muted-foreground text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
-            Sharpen your English skills with fun, interactive games. Perfect for KS3 and GCSE revision - no textbook required.
+            {boardConfig
+              ? `Sharpen your English skills with games tailored to ${boardConfig.shortName} set texts and themes.`
+              : 'Sharpen your English skills with fun, interactive games. Perfect for KS3 and GCSE revision.'}
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 mt-8 text-xs text-muted-foreground">
@@ -1423,7 +1460,7 @@ export default function GamesPage() {
             {activeGame ? 'Other Games' : 'Choose a Game'}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {GAMES.map((game) => (
+            {visibleGames.map((game) => (
               <GameCard
                 key={game.id}
                 game={game}

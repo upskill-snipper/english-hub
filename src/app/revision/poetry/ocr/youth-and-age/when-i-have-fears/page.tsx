@@ -352,22 +352,6 @@ const comparisons = [
       'The perfect contrast: Keats fears dying young before his work is done; Tennyson, in old age, welcomes death calmly. Both poems face mortality, but from opposite ends of life and with opposite emotions.',
     themes: ['Mortality', 'Acceptance vs fear', 'Faith'],
   },
-  {
-    title: 'On My First Son',
-    poet: 'Ben Jonson',
-    href: '/revision/poetry/ocr/youth-and-age/on-my-first-son',
-    reason:
-      'Both poems confront the cruelty of dying before potential is realised. Jonson mourns a child cut off too soon; Keats fears he himself will be cut off too soon. Both grapple with the unfairness of premature death.',
-    themes: ['Premature death', 'Unrealised potential', 'Loss'],
-  },
-  {
-    title: 'To My Nine-Year-Old Self',
-    poet: 'Helen Dunmore',
-    href: '/revision/poetry/ocr/youth-and-age/to-my-nine-year-old-self',
-    reason:
-      'Both poems confront the tension between youth and the awareness of mortality. Keats fears dying young; Dunmore, looking back from older age, mourns the death of her younger self. Both treat youth as something fragile.',
-    themes: ['Youth', 'Mortality', 'Self-reflection'],
-  },
 ]
 
 export default function WhenIHaveFearsPage() {

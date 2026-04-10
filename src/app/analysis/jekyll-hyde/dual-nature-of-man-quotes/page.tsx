@@ -30,10 +30,6 @@ export default function Page() {
         'If you only learn six duality quotes for your GCSE Jekyll and Hyde exam, these are the six. Each one is ranked by how flexibly it can be used across AO1, AO2 and AO3.'
       }
       related={[
-        {
-          title: '"Man is not truly one, but truly two"',
-          href: '/analysis/jekyll-hyde/man-is-not-truly-one-but-truly-two',
-        },
         { title: 'Duality theme analysis', href: '/analysis/jekyll-hyde/duality-theme-analysis' },
         {
           title: '"With the sea of liberty before me"',

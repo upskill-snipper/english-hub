@@ -27,6 +27,7 @@ import {
 } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   title: 'Cambridge IGCSE Composition — The English Hub',
@@ -144,7 +145,9 @@ const craftSections = [
   },
 ]
 
-export default function CompositionHubPage() {
+export default async function CompositionHubPage() {
+  await requireIgcseBoard(['cambridge-0500', 'cambridge-0990'])
+
   return (
     <div className="space-y-10 pb-16">
       {/* Hero */}

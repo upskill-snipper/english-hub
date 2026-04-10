@@ -19,6 +19,7 @@ import {
 } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   title: 'How to pass with Grade 5 | Cambridge IGCSE 0990 | The English Hub',
@@ -84,7 +85,9 @@ const marksToGet = [
   },
 ]
 
-export default function Grade5GuidePage() {
+export default async function Grade5GuidePage() {
+  await requireIgcseBoard(['cambridge-0990'])
+
   return (
     <div className="space-y-10 pb-16">
       <div>

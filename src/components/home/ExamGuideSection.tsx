@@ -34,7 +34,7 @@ export default function ExamGuideSection() {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
           {boards.map((item) => (
-            <Link key={item.board} href={`/exam-guide/${item.board.toLowerCase()}`} className="block group">
+            <Link key={item.board} href="/revision/exam-technique" className="block group">
             <Card
               className={cn(
                 'p-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-card-hover',
@@ -62,7 +62,7 @@ export default function ExamGuideSection() {
         </div>
 
         <div className="text-center mt-12">
-          <Button variant="link" className="text-primary font-semibold" render={<Link href="/exam-guide" />}>
+          <Button variant="link" className="text-primary font-semibold" render={<Link href="/revision/exam-technique" />}>
             View Full Guide &rarr;
           </Button>
         </div>

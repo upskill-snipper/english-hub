@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { AnalysisBoardGate } from '../_components/AnalysisBoardGate'
 
 const SLUG = 'eden-rock-vs-walking-away'
 const H1 = 'Eden Rock vs Walking Away: Memory of Parents Comparison'
@@ -25,6 +26,7 @@ export default function Page() {
   }
 
   return (
+    <AnalysisBoardGate>
     <main className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
@@ -127,5 +129,6 @@ export default function Page() {
         </div>
       </section>
     </main>
+    </AnalysisBoardGate>
   )
 }

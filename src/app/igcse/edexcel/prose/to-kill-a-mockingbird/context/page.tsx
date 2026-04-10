@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { ArrowLeft, Globe, Info, Sparkles } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   title: 'To Kill a Mockingbird Context — Edexcel IGCSE 4ET1',
@@ -57,7 +58,9 @@ const contextBlocks = [
   },
 ]
 
-export default function TkamContextPage() {
+export default async function TkamContextPage() {
+  await requireIgcseBoard(['edexcel-igcse'])
+
   return (
     <div className="space-y-10 pb-16">
       <div>

@@ -4,6 +4,8 @@ import {
   TeacherResourceCard,
   TeacherResourceGrid,
 } from "@/components/teacher/ResourceCard";
+import { getServerBoard } from "@/lib/board/get-server-board";
+import { getBoardConfig, type ExamBoard } from '@/lib/board/board-config';
 
 export const metadata: Metadata = {
   title: "Lesson Plans — Teacher Library",
@@ -204,7 +206,35 @@ const HAS_DETAIL = new Set([
   "power-conflict-comparison",
 ]);
 
-export default function LessonPlansPage() {
+// Map an ExamBoard to the labels we accept on lesson plans (e.g. "AQA / Edexcel").
+function boardLabelsForExamBoard(board: ExamBoard | null): string[] | null {
+  if (!board) return null;
+  switch (board) {
+    case "aqa": return ["AQA"];
+    case "edexcel": return ["Edexcel"];
+    case "ocr": return ["OCR"];
+    case "eduqas": return ["Eduqas"];
+    case "edexcel-igcse": return ["Edexcel"];
+    case "cambridge-0500":
+    case "cambridge-0990":
+      return ["CAIE", "Cambridge"];
+    default: return null;
+  }
+}
+
+function lessonPlanMatchesBoard(planExamBoard: string, board: ExamBoard | null): boolean {
+  // Generic / pedagogical resources stay (KS3, etc.)
+  if (planExamBoard === "KS3") return true;
+  if (!board) return true;
+  const labels = boardLabelsForExamBoard(board);
+  if (!labels) return true;
+  return labels.some((l) => planExamBoard.toLowerCase().includes(l.toLowerCase()));
+}
+
+export default async function LessonPlansPage() {
+  const board = await getServerBoard();
+  const boardConfig = getBoardConfig(board);
+  const visiblePlans = LESSON_PLANS.filter((p) => lessonPlanMatchesBoard(p.examBoard, board));
   return (
     <main className="min-h-screen bg-background">
       <section className="border-b border-border bg-card">
@@ -219,14 +249,21 @@ export default function LessonPlansPage() {
             <span>/</span>
             <span className="text-foreground">Lesson Plans</span>
           </div>
-          <span className="mt-4 inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary ring-1 ring-inset ring-primary/20">
-            For Teachers
-          </span>
+          <div className="mt-4 flex flex-wrap items-center gap-2">
+            <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary ring-1 ring-inset ring-primary/20">
+              For Teachers
+            </span>
+            {boardConfig && (
+              <span className="inline-flex items-center rounded-full border border-primary/30 bg-primary/5 px-3 py-1 text-xs font-semibold text-primary">
+                For {boardConfig.shortName}
+              </span>
+            )}
+          </div>
           <h1 className="mt-3 text-4xl font-bold tracking-tight text-foreground">
             Lesson Plans
           </h1>
           <p className="mt-3 max-w-2xl text-lg text-muted-foreground">
-            20 complete, ready-to-teach GCSE English lesson plans. Each plan
+            {visiblePlans.length} ready-to-teach GCSE English lesson plans. Each plan
             includes learning objectives, a starter, main activity, plenary,
             differentiation notes, and a homework task.
           </p>
@@ -235,7 +272,7 @@ export default function LessonPlansPage() {
 
       <section className="mx-auto max-w-6xl px-6 py-12">
         <TeacherResourceGrid>
-          {LESSON_PLANS.map((plan) => (
+          {visiblePlans.map((plan) => (
             <TeacherResourceCard
               key={plan.id}
               title={plan.title}

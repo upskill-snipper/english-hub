@@ -22,6 +22,7 @@ import {
 } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   title: 'Cambridge IGCSE 0990 (9-1) First Language English — The English Hub',
@@ -115,7 +116,9 @@ const gradeBoundaries = [
   { grade: 4, paper1: 34, paper2: 34 },
 ]
 
-export default function Cambridge0990HubPage() {
+export default async function Cambridge0990HubPage() {
+  await requireIgcseBoard(['cambridge-0990'])
+
   return (
     <div className="space-y-10 pb-16">
       {/* Hero */}

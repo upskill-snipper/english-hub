@@ -30,10 +30,6 @@ export default function Page() {
       }
       related={[
         { title: 'Dr Lanyon character analysis', href: '/analysis/jekyll-hyde/dr-lanyon-character-analysis' },
-        {
-          title: '"A hissing intake of the breath"',
-          href: '/analysis/jekyll-hyde/a-hissing-intake-of-the-breath',
-        },
         { title: '"Ape-like fury"', href: '/analysis/jekyll-hyde/ape-like-fury' },
         { title: 'Victorian society context', href: '/analysis/jekyll-hyde/victorian-society-context' },
       ]}

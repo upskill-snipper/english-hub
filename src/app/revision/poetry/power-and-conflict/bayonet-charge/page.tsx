@@ -322,7 +322,7 @@ const COMPARISONS = [
   {
     poem: 'Charge of the Light Brigade',
     poet: 'Alfred Lord Tennyson',
-    href: '/revision/poetry/power-and-conflict/charge-of-the-light-brigade',
+    href: '/revision/poetry/power-and-conflict/the-charge-of-the-light-brigade',
     points: [
       'Both depict a military charge, but with completely opposing perspectives on war.',
       'Tennyson glorifies the soldiers\' obedience and sacrifice; Hughes shows a terrified individual driven by survival instinct.',

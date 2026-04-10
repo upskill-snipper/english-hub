@@ -19,6 +19,7 @@ import {
 } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   title: 'How to get a Grade 7 | Cambridge IGCSE 0990 | The English Hub',
@@ -73,7 +74,9 @@ const checklist = [
   'I proofread every piece I write in practice',
 ]
 
-export default function Grade7GuidePage() {
+export default async function Grade7GuidePage() {
+  await requireIgcseBoard(['cambridge-0990'])
+
   return (
     <div className="space-y-10 pb-16">
       <div>

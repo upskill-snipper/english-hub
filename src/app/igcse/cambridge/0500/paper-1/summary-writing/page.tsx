@@ -18,6 +18,7 @@ import {
 } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   title: 'Summary Writing — Cambridge 0500 Paper 1 Q3',
@@ -75,7 +76,9 @@ const donts = [
   'Do not use subheadings, bullet points or lists',
 ]
 
-export default function SummaryWritingPage() {
+export default async function SummaryWritingPage() {
+  await requireIgcseBoard(['cambridge-0500'])
+
   return (
     <div className="space-y-10 pb-16">
       {/* ── Back link ─────────────────────────────────────────────── */}

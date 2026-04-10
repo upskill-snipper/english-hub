@@ -17,6 +17,7 @@ import {
 } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   title: 'Descriptive Writing — Cambridge 0500 Paper 2 Section B',
@@ -102,7 +103,9 @@ const mistakes = [
   'Writing in the past tense when present tense would feel more immediate',
 ]
 
-export default function DescriptiveWritingPage() {
+export default async function DescriptiveWritingPage() {
+  await requireIgcseBoard(['cambridge-0500'])
+
   return (
     <div className="space-y-10 pb-16">
       {/* ── Back link ─────────────────────────────────────────────── */}

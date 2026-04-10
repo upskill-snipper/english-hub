@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { AnalysisBoardGate } from './_components/AnalysisBoardGate'
 
 export const metadata: Metadata = {
   title: 'AQA Love and Relationships Analysis: Comparisons, Themes & Quotes | The English Hub',
@@ -59,6 +60,7 @@ export default function AqaLoveRelationshipsHub() {
   }
 
   return (
+    <AnalysisBoardGate>
     <main className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
       <script
         type="application/ld+json"
@@ -184,5 +186,6 @@ export default function AqaLoveRelationshipsHub() {
         </div>
       </section>
     </main>
+    </AnalysisBoardGate>
   )
 }

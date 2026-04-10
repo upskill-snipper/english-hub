@@ -343,12 +343,6 @@ export default function EnglishLanguagePage() {
             >
               Choose your board
             </a>
-            <a
-              href="#comparison"
-              className="rounded-lg border px-5 py-2.5 text-sm font-semibold text-foreground transition hover:bg-muted"
-            >
-              Compare all boards
-            </a>
           </div>
         </div>
       </section>
@@ -523,52 +517,6 @@ export default function EnglishLanguagePage() {
             )}
           </div>
         </div>
-      </section>
-
-      {/* ─── Comparison Table ─────────────────────────────────── */}
-      <section id="comparison" className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-foreground">Board comparison at a glance</h2>
-        <p className="mt-2 text-muted-foreground">
-          Compare key features across all five exam boards to understand the differences.
-        </p>
-
-        <div className="mt-6 overflow-x-auto rounded-xl border border-border shadow-md">
-          <table className="w-full min-w-[640px] text-left text-sm">
-            <thead>
-              <tr className="border-b border-border bg-muted">
-                <th className="px-4 py-3 font-semibold text-foreground">Board</th>
-                <th className="px-4 py-3 font-semibold text-foreground">Spec Code</th>
-                <th className="px-4 py-3 font-semibold text-foreground">Papers</th>
-                <th className="px-4 py-3 font-semibold text-foreground">Total Marks</th>
-                <th className="px-4 py-3 font-semibold text-foreground">Duration</th>
-                <th className="px-4 py-3 font-semibold text-foreground">Unique Feature</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-border">
-              {BOARDS.map((board) => (
-                <tr key={board.slug} className="transition hover:bg-muted/80">
-                  <td className="px-4 py-3">
-                    <Link
-                      href={`/resources/english-language/${board.slug}`}
-                      className="font-semibold text-foreground hover:underline"
-                    >
-                      {board.name}
-                    </Link>
-                  </td>
-                  <td className="px-4 py-3 text-muted-foreground">{board.spec}</td>
-                  <td className="px-4 py-3 text-muted-foreground">{board.papers.length}</td>
-                  <td className="px-4 py-3 text-muted-foreground">{board.totalMarks}</td>
-                  <td className="px-4 py-3 text-muted-foreground">{board.duration}</td>
-                  <td className="px-4 py-3 text-muted-foreground">{board.uniqueFeature}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-
-        <p className="mt-3 text-xs text-muted-foreground">
-          Marks and durations shown are approximate and based on the latest published specifications. Always check the official exam board website for the most current information.
-        </p>
       </section>
 
       {/* ─── Common Skills Across All Boards ─────────────────── */}

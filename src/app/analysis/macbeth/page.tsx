@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { AnalysisBoardGate } from './_components/AnalysisBoardGate'
 
 export const metadata: Metadata = {
   title: 'Macbeth Analysis: Quotes, Themes & Characters | The English Hub',
@@ -56,6 +57,7 @@ export default function MacbethAnalysisHub() {
   }
 
   return (
+    <AnalysisBoardGate>
     <main className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
       <script
         type="application/ld+json"
@@ -160,5 +162,6 @@ export default function MacbethAnalysisHub() {
         </div>
       </section>
     </main>
+    </AnalysisBoardGate>
   )
 }

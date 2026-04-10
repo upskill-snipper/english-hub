@@ -21,6 +21,7 @@ import {
 } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   title: 'Edexcel IGCSE 4ET1 Exam Technique — The English Hub',
@@ -138,7 +139,9 @@ const checklist = [
   'Time for a final read-through and correction',
 ]
 
-export default function EdexcelExamTechniquePage() {
+export default async function EdexcelExamTechniquePage() {
+  await requireIgcseBoard(['edexcel-igcse'])
+
   return (
     <div className="space-y-10 pb-16">
       {/* ── Back link ───────────────────────────────────────────────── */}

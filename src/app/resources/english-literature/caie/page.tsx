@@ -74,21 +74,21 @@ const resourceGroups: ResourceGroup[] = [
       },
       {
         title: "The Merchant of Venice",
-        href: "/resources/english-literature/caie/the-merchant-of-venice",
+        href: "/resources/revision-notes/merchant-of-venice",
         description:
           "Plot summary, character study, themes of justice, mercy, and prejudice, key quotes, and Cambridge exam practice.",
         icon: dramaIcon,
       },
       {
         title: "Othello",
-        href: "/resources/english-literature/caie/othello",
+        href: "/resources/revision-notes/othello",
         description:
           "Shakespeare\u2019s tragedy of jealousy: plot summary, character analysis, themes of race, manipulation, and honour, key quotes, and exam guidance.",
         icon: dramaIcon,
       },
       {
         title: "Romeo and Juliet",
-        href: "/resources/english-literature/caie/romeo-and-juliet",
+        href: "/resources/revision-notes/romeo-and-juliet",
         description:
           "Plot summary, character analysis, themes of love, fate, and conflict, key quotes, and Cambridge exam practice.",
         icon: dramaIcon,
@@ -115,15 +115,8 @@ const resourceGroups: ResourceGroup[] = [
         icon: dramaIcon,
       },
       {
-        title: "Death and the King\u2019s Horseman",
-        href: "/resources/english-literature/caie/death-and-the-kings-horseman",
-        description:
-          "Wole Soyinka\u2019s powerful drama: plot summary, character analysis, themes of duty, colonialism, and cultural clash, key quotes, and exam guidance.",
-        icon: dramaIcon,
-      },
-      {
         title: "An Inspector Calls",
-        href: "/resources/english-literature/caie/an-inspector-calls",
+        href: "/resources/english-literature/caie/inspector-calls",
         description:
           "J.B. Priestley\u2019s morality play: plot summary, character analysis, themes of responsibility and class, key quotes, and exam practice.",
         icon: dramaIcon,
@@ -157,13 +150,6 @@ const resourceGroups: ResourceGroup[] = [
         icon: proseIcon,
       },
       {
-        title: "The War of the Worlds",
-        href: "/resources/english-literature/caie/the-war-of-the-worlds",
-        description:
-          "H.G. Wells\u2019 sci-fi classic: plot summary, character analysis, themes of imperialism and survival, key quotes, and exam guidance.",
-        icon: proseIcon,
-      },
-      {
         title: "Fire on the Mountain",
         href: "/resources/english-literature/caie/fire-on-the-mountain",
         description:
@@ -175,13 +161,6 @@ const resourceGroups: ResourceGroup[] = [
         href: "/resources/english-literature/caie/picnic-at-hanging-rock",
         description:
           "Joan Lindsay\u2019s mystery: plot summary, character analysis, themes of the uncanny and nature, key quotes, and Cambridge exam guidance.",
-        icon: proseIcon,
-      },
-      {
-        title: "The Joy Luck Club",
-        href: "/resources/english-literature/caie/the-joy-luck-club",
-        description:
-          "Amy Tan\u2019s intergenerational saga: plot summary, character analysis, themes of heritage, identity, and mother-daughter bonds, key quotes, and exam guidance.",
         icon: proseIcon,
       },
     ],
@@ -200,14 +179,14 @@ const resourceGroups: ResourceGroup[] = [
       },
       {
         title: "Pride and Prejudice",
-        href: "/resources/english-literature/caie/pride-and-prejudice",
+        href: "/resources/revision-notes/pride-and-prejudice",
         description:
           "Jane Austen\u2019s classic: plot summary, character analysis, themes of class, marriage, and personal growth, key quotes, and exam practice.",
         icon: proseIcon,
       },
       {
         title: "Jane Eyre",
-        href: "/resources/english-literature/caie/jane-eyre",
+        href: "/resources/revision-notes/jane-eyre",
         description:
           "Charlotte Bront\u00eb\u2019s gothic romance: plot summary, character analysis, themes of independence, morality, and love, key quotes, and exam guidance.",
         icon: proseIcon,

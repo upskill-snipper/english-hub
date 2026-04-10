@@ -46,8 +46,6 @@ const parentPages = [
   { slug: 'gcse-english-explained-for-parents', title: 'GCSE English explained for parents' },
   { slug: 'how-to-help-your-child-revise-gcse-english', title: 'How to help your child revise GCSE English' },
   { slug: 'gcse-english-vs-english-language-vs-literature', title: 'GCSE English vs Language vs Literature' },
-  { slug: 'all-gcse-english-exam-boards-compared', title: 'All GCSE English exam boards compared' },
-  { slug: 'gcse-english-literature-set-texts-list-2024', title: 'GCSE English Literature set texts list 2024' },
 ]
 
 export default function RevisionHub() {
@@ -154,7 +152,7 @@ export default function RevisionHub() {
         </p>
         <div className="mt-4 flex flex-wrap gap-3">
           <Link
-            href="/auth/signup"
+            href="/auth/register"
             className="inline-flex h-9 items-center justify-center rounded-lg bg-primary px-4 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary/85"
           >
             Create a free account

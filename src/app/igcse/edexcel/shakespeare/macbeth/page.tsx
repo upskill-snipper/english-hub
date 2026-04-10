@@ -11,6 +11,7 @@ import {
   GraduationCap,
 } from "lucide-react";
 import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
+import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   alternates: {
@@ -98,7 +99,9 @@ const KEY_QUOTES_PREVIEW = [
   { quote: '"Out, damned spot! Out, I say!"', who: "Lady Macbeth, 5.1" },
 ];
 
-export default function MacbethHubPage() {
+export default async function MacbethHubPage() {
+  await requireIgcseBoard(['edexcel-igcse'])
+
   return (
     <main className="min-h-screen bg-background">
       {/* ── Hero ─────────────────────────────────────────────── */}

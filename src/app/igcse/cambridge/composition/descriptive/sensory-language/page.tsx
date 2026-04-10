@@ -4,6 +4,7 @@ import { Eye, Ear, Wind, Hand, Soup, Sparkles, ChevronLeft } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   title: 'Sensory Language — Cambridge IGCSE Descriptive Writing',
@@ -68,7 +69,9 @@ const senses = [
   },
 ]
 
-export default function SensoryLanguagePage() {
+export default async function SensoryLanguagePage() {
+  await requireIgcseBoard(['cambridge-0500', 'cambridge-0990'])
+
   return (
     <div className="space-y-10 pb-16">
       <Button

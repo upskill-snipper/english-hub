@@ -16,6 +16,7 @@ import {
 } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   title: 'Grade Boundaries — Cambridge IGCSE 0500',
@@ -60,7 +61,9 @@ const tips = [
   'Memorise the examiner\'s AO language so your writing sounds like it meets the criteria before the marker has to look.',
 ]
 
-export default function GradeBoundariesPage() {
+export default async function GradeBoundariesPage() {
+  await requireIgcseBoard(['cambridge-0500'])
+
   return (
     <div className="space-y-10 pb-16">
       {/* ── Back link ─────────────────────────────────────────────── */}

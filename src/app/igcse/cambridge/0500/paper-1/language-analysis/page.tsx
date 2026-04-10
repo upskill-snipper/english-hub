@@ -18,6 +18,7 @@ import {
 } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   title: 'Language Analysis — Cambridge 0500 Paper 1 Q2',
@@ -112,7 +113,9 @@ const mistakes = [
   'Running out of time after five words because every paragraph is too long.',
 ]
 
-export default function LanguageAnalysisPage() {
+export default async function LanguageAnalysisPage() {
+  await requireIgcseBoard(['cambridge-0500'])
+
   return (
     <div className="space-y-10 pb-16">
       {/* ── Back link ─────────────────────────────────────────────── */}

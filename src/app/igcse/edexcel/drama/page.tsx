@@ -17,6 +17,7 @@ import {
 } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   title: 'Edexcel IGCSE 4ET1 Modern Drama — The English Hub',
@@ -68,7 +69,9 @@ const dramaTexts = [
   },
 ]
 
-export default function DramaHubPage() {
+export default async function DramaHubPage() {
+  await requireIgcseBoard(['edexcel-igcse'])
+
   return (
     <div className="space-y-10 pb-16">
       <div>

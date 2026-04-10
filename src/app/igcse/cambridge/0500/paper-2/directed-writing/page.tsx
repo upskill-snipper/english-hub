@@ -18,6 +18,7 @@ import {
 } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
 
 export const metadata: Metadata = {
   title: 'Directed Writing — Cambridge 0500 Paper 2 Section A',
@@ -105,7 +106,9 @@ const process = [
   'Close with a line that matches the form and purpose.',
 ]
 
-export default function DirectedWritingPage() {
+export default async function DirectedWritingPage() {
+  await requireIgcseBoard(['cambridge-0500'])
+
   return (
     <div className="space-y-10 pb-16">
       {/* ── Back link ─────────────────────────────────────────────── */}
