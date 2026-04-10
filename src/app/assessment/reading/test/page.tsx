@@ -6,7 +6,6 @@ import Link from "next/link"
 import {
   BookOpen,
   ArrowRight,
-  ArrowLeft,
   Clock,
   CheckCircle,
   Eye,
@@ -49,8 +48,9 @@ interface TestState {
   comprehensionAnswers: ComprehensionAnswer[]
   decodingAnswers: DecodingAnswer[]
   fluencyTimings: FluencyTiming[]
-  // Timing
+  // Timing — cumulative to prevent gaming
   passageStartTime: number | null
+  passageElapsedBeforePause: number // accumulated seconds from previous reading periods
   // Decoding state
   currentDecodingIndex: number
   decodingStartTime: number | null
@@ -65,16 +65,19 @@ interface TestState {
 
 // ─── Timer Display ───────────────────────────────────────────────────────────
 
-function TimerDisplay({ startTime }: { startTime: number | null }) {
-  const [elapsed, setElapsed] = useState(0)
+function TimerDisplay({ startTime, offsetSeconds = 0 }: { startTime: number | null; offsetSeconds?: number }) {
+  const [elapsed, setElapsed] = useState(Math.floor(offsetSeconds))
 
   useEffect(() => {
-    if (!startTime) return
+    if (!startTime) {
+      setElapsed(Math.floor(offsetSeconds))
+      return
+    }
     const interval = setInterval(() => {
-      setElapsed(Math.floor((Date.now() - startTime) / 1000))
+      setElapsed(Math.floor(offsetSeconds + (Date.now() - startTime) / 1000))
     }, 1000)
     return () => clearInterval(interval)
-  }, [startTime])
+  }, [startTime, offsetSeconds])
 
   const mins = Math.floor(elapsed / 60)
   const secs = elapsed % 60
@@ -201,10 +204,12 @@ function PassagePhase({
   passage,
   onFinishReading,
   startTime,
+  elapsedOffset = 0,
 }: {
   passage: ReadingPassage
   onFinishReading: () => void
   startTime: number | null
+  elapsedOffset?: number
 }) {
   return (
     <div className="space-y-6">
@@ -219,12 +224,12 @@ function PassagePhase({
             {passage.wordCount} words
           </p>
         </div>
-        <TimerDisplay startTime={startTime} />
+        <TimerDisplay startTime={startTime} offsetSeconds={elapsedOffset} />
       </div>
 
       <Card>
         <CardContent className="pt-5">
-          <div className="prose prose-invert prose-sm max-w-none">
+          <div className="prose prose-invert prose-sm max-w-none select-none" style={{ userSelect: "none" }}>
             {passage.text.split("\n\n").map((para, i) => (
               <p key={i} className="text-sm leading-relaxed text-white/75 mb-4 last:mb-0">
                 {para}
@@ -237,7 +242,7 @@ function PassagePhase({
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2 text-xs text-white/40">
           <Clock className="h-3.5 w-3.5" />
-          <span>Read the passage carefully, then click when you are finished reading.</span>
+          <span>Read the passage carefully. You cannot return to it once you start the questions.</span>
         </div>
         <Button onClick={onFinishReading}>
           I have finished reading
@@ -256,14 +261,12 @@ function QuestionsPhase({
   currentAnswer,
   onAnswerChange,
   onSubmitAnswer,
-  onBack,
 }: {
   passage: ReadingPassage
   currentQuestionIndex: number
   currentAnswer: string
   onAnswerChange: (answer: string) => void
   onSubmitAnswer: () => void
-  onBack: () => void
 }) {
   const question = passage.questions[currentQuestionIndex]
   if (!question) return null
@@ -342,10 +345,9 @@ function QuestionsPhase({
       </Card>
 
       <div className="flex items-center justify-between">
-        <Button variant="ghost" onClick={onBack} size="sm">
-          <ArrowLeft className="h-4 w-4 mr-1" />
-          Back to passage
-        </Button>
+        <p className="text-xs text-white/40 max-w-[200px]">
+          Answer from memory — you cannot return to the passage.
+        </p>
         <Button
           onClick={onSubmitAnswer}
           disabled={!currentAnswer.trim()}
@@ -505,6 +507,7 @@ export default function ReadingTestPage() {
     decodingAnswers: [],
     fluencyTimings: [],
     passageStartTime: null,
+    passageElapsedBeforePause: 0,
     currentDecodingIndex: 0,
     decodingStartTime: null,
     currentQuestionIndex: 0,
@@ -530,6 +533,7 @@ export default function ReadingTestPage() {
       chronologicalAge: { years, months },
       phase: "passage",
       passageStartTime: Date.now(),
+      passageElapsedBeforePause: 0,
     }))
   }, [])
 
@@ -537,7 +541,9 @@ export default function ReadingTestPage() {
     const passage = passages[state.currentPassageIndex]
     if (!passage || !state.passageStartTime) return
 
-    const readingTimeSeconds = (Date.now() - state.passageStartTime) / 1000
+    // Cumulative time: previously accumulated time + current reading session
+    const currentSessionSeconds = (Date.now() - state.passageStartTime) / 1000
+    const totalReadingTimeSeconds = state.passageElapsedBeforePause + currentSessionSeconds
 
     setState((prev) => ({
       ...prev,
@@ -545,7 +551,7 @@ export default function ReadingTestPage() {
         ...prev.fluencyTimings,
         {
           passageId: passage.id,
-          readingTimeSeconds,
+          readingTimeSeconds: totalReadingTimeSeconds,
           wordCount: passage.wordCount,
           // Estimate words correct as ~95% for self-reported reading
           wordsCorrect: Math.round(passage.wordCount * 0.95),
@@ -554,8 +560,10 @@ export default function ReadingTestPage() {
       phase: "questions",
       currentQuestionIndex: 0,
       currentAnswer: "",
+      // Keep passageStartTime null during questions — timer paused
+      passageStartTime: null,
     }))
-  }, [state.currentPassageIndex, state.passageStartTime, passages])
+  }, [state.currentPassageIndex, state.passageStartTime, state.passageElapsedBeforePause, passages])
 
   const handleAnswerChange = useCallback((answer: string) => {
     setState((prev) => ({ ...prev, currentAnswer: answer }))
@@ -652,7 +660,7 @@ export default function ReadingTestPage() {
           currentAnswer: "",
         }))
       } else {
-        // Move to next passage
+        // Move to next passage — fresh timer for new passage
         setState((prev) => ({
           ...prev,
           comprehensionAnswers: newAnswers,
@@ -661,6 +669,7 @@ export default function ReadingTestPage() {
           phase: "passage",
           currentPassageIndex: prev.currentPassageIndex + 1,
           passageStartTime: Date.now(),
+          passageElapsedBeforePause: 0,
           currentQuestionIndex: 0,
           currentAnswer: "",
         }))
@@ -686,13 +695,7 @@ export default function ReadingTestPage() {
     passages,
   ])
 
-  const handleBackToPassage = useCallback(() => {
-    setState((prev) => ({
-      ...prev,
-      phase: "passage",
-      passageStartTime: Date.now(), // reset timer
-    }))
-  }, [])
+  // Back to passage removed — students must answer from memory for accurate assessment
 
   const handleCeilingContinue = useCallback(() => {
     setState((prev) => ({
@@ -836,6 +839,7 @@ export default function ReadingTestPage() {
           passage={currentPassage}
           onFinishReading={handleFinishReading}
           startTime={state.passageStartTime}
+          elapsedOffset={state.passageElapsedBeforePause}
         />
       )}
 
@@ -846,7 +850,6 @@ export default function ReadingTestPage() {
           currentAnswer={state.currentAnswer}
           onAnswerChange={handleAnswerChange}
           onSubmitAnswer={handleSubmitAnswer}
-          onBack={handleBackToPassage}
         />
       )}
 
