@@ -1,0 +1,6 @@
+question_id,date_received,buyer_name,buyer_contact,channel,category,question,priority,owner,status,date_answered,answer_summary,answer_link,follow_up_required,notes
+Q001,,,,email,,,,founder,open,,,,,
+Q002,,,,call,,,,founder,open,,,,,
+Q003,,,,vdr,,,,founder,open,,,,,
+Q004,,,,,,,,,,,,,,
+Q005,,,,,,,,,,,,,,

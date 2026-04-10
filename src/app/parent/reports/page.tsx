@@ -1,345 +1,382 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import Link from 'next/link'
 import {
-  ArrowLeft,
-  ChevronDown,
-  ChevronUp,
-  FileText,
-  Printer,
+  BookOpen,
   Calendar,
-  User,
+  ChevronRight,
+  FileText,
+  Gamepad2,
+  Mail,
+  Settings2,
+  Sparkles,
+  TrendingUp,
 } from 'lucide-react'
-import { cn } from '@/lib/utils'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
 import { Button } from '@/components/ui/button'
 
-// ── Mock Data ─────────────────────────────────────────────────────────────────
+// TODO: replace with Supabase — generate reports server-side and email via Resend
 
-interface Report {
-  id: string
-  title: string
-  teacher: string
-  date: string
-  type: 'progress' | 'end_of_term' | 'mock_exam'
-  summary: string
-  details: {
-    attendance: string
-    effort: string
-    attainment: string
-    behaviour: string
-    strengths: string
-    areasForImprovement: string
-    parentActions: string
-    teacherComment: string
+const STUDIED_POEMS_KEY = 'english-hub-studied-poems'
+const GAME_SCORES_KEY = 'english-hub-game-scores'
+const QUIZ_HISTORY_KEY = 'english-hub-quiz-history'
+const PARENT_ACCOUNT_KEY = 'english-hub-parent-account'
+
+interface QuizResultLike {
+  date?: string
+  mode?: string
+  percentage?: number
+  grade?: string
+}
+
+interface GameScoreLike {
+  date?: string
+  game?: string
+  score?: number
+}
+
+interface ParentAccountLike {
+  name?: string
+  email?: string
+  childName?: string
+}
+
+interface WeeklyReport {
+  weekStartIso: string
+  weekLabel: string
+  poemsStudied: number
+  quizzesCompleted: number
+  averageScore: number | null
+  gamesPlayed: number
+  estimatedMinutes: number
+  topQuiz: QuizResultLike | null
+}
+
+function safeParse<T>(raw: string | null): T | null {
+  if (!raw) return null
+  try {
+    return JSON.parse(raw) as T
+  } catch {
+    return null
   }
 }
 
-const reports: Report[] = [
-  {
-    id: '1',
-    title: 'Spring Term Progress Report',
-    teacher: 'Ms Richardson',
-    date: '2026-03-15',
-    type: 'progress',
-    summary:
-      'Olivia has made excellent progress this term, particularly in her analysis of Macbeth. Her written expression continues to improve and she engages well in class discussions.',
-    details: {
-      attendance: '96%',
-      effort: 'Excellent',
-      attainment: 'Grade 7 (Above target)',
-      behaviour: 'Outstanding',
-      strengths:
-        'Olivia demonstrates a sophisticated understanding of character motivation in Shakespeare. Her essay writing has improved significantly — she now consistently embeds quotations fluently and develops analytical points with clear topic sentences. Her creative writing for Language Paper 1 is imaginative and well-structured.',
-      areasForImprovement:
-        'Olivia should focus on developing her comparative skills for Language Paper 2 Question 4. She sometimes rushes her unseen poetry responses and would benefit from spending more time planning before writing. Subject terminology could be used more consistently throughout her responses.',
-      parentActions:
-        'Please encourage Olivia to complete her weekly revision modules on The English Hub, particularly the Language Paper 2 content. Reading a broadsheet newspaper article weekly would also help with her non-fiction comprehension.',
-      teacherComment:
-        'Olivia is a pleasure to teach and is on track to achieve her target grade if she maintains her current effort. I am confident she will perform well in her summer exams.',
-    },
-  },
-  {
-    id: '2',
-    title: 'Mock Exam Results — English Literature',
-    teacher: 'Ms Richardson',
-    date: '2026-02-20',
-    type: 'mock_exam',
-    summary:
-      'Olivia achieved a Grade 7 in her English Literature mock exam. This is above the class average of Grade 5 and in line with her target.',
-    details: {
-      attendance: '96%',
-      effort: 'Very Good',
-      attainment: 'Grade 7',
-      behaviour: 'Excellent',
-      strengths:
-        'Olivia performed particularly well on the Macbeth extract question (28/34) and the An Inspector Calls question (26/34). Her analysis was detailed and she used quotations effectively to support her arguments.',
-      areasForImprovement:
-        'The poetry comparison question was weaker (18/30). Olivia needs to practise structuring comparative responses, ensuring she gives equal attention to both poems. Her unseen poetry response (14/24) showed some understanding but lacked depth in analysis of structural features.',
-      parentActions:
-        'Encourage Olivia to use the poetry comparison practice modules on The English Hub. Two practice responses per week would significantly help her confidence in this area.',
-      teacherComment:
-        'A very strong performance overall. With targeted revision on the poetry sections, Olivia could realistically achieve a Grade 8 in the summer.',
-    },
-  },
-  {
-    id: '3',
-    title: 'Autumn Term End of Term Report',
-    teacher: 'Ms Richardson',
-    date: '2025-12-18',
-    type: 'end_of_term',
-    summary:
-      'Olivia has settled well into Year 10 English and has shown a positive attitude towards her GCSE studies. She is beginning to develop the analytical skills needed for the higher grades.',
-    details: {
-      attendance: '94%',
-      effort: 'Good',
-      attainment: 'Grade 6 (On target)',
-      behaviour: 'Very Good',
-      strengths:
-        'Olivia has shown a natural aptitude for creative writing. Her Language Paper 1 Section B responses are engaging and demonstrate a good range of vocabulary. She participates actively in class discussions about Macbeth.',
-      areasForImprovement:
-        'Olivia needs to develop her essay writing stamina — she sometimes runs out of time in timed conditions. Her quotation knowledge for Macbeth needs to be more extensive to achieve the higher grades. Reading for pleasure would also help broaden her vocabulary.',
-      parentActions:
-        'Please ensure Olivia is completing her English homework on time. Encouraging 20 minutes of reading per day would have a significant positive impact on her writing quality.',
-      teacherComment:
-        'Olivia has made a positive start to GCSE English. With consistent effort and regular revision, she has the potential to exceed her target grade.',
-    },
-  },
-]
-
-// ── Helpers ───────────────────────────────────────────────────────────────────
-
-function getTypeBadge(type: Report['type']) {
-  switch (type) {
-    case 'progress':
-      return <Badge className="bg-blue-500/10 text-blue-400 border-blue-500/20">Progress Report</Badge>
-    case 'end_of_term':
-      return <Badge className="bg-purple-500/10 text-purple-400 border-purple-500/20">End of Term</Badge>
-    case 'mock_exam':
-      return <Badge className="bg-amber-500/10 text-amber-400 border-amber-500/20">Mock Exam</Badge>
-  }
+function startOfWeek(date: Date): Date {
+  const d = new Date(date)
+  d.setHours(0, 0, 0, 0)
+  d.setDate(d.getDate() - d.getDay())
+  return d
 }
 
-function formatReportDate(iso: string): string {
-  return new Date(iso).toLocaleDateString('en-GB', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-  })
+function formatWeekRange(startIso: string): string {
+  const start = new Date(startIso)
+  const end = new Date(start)
+  end.setDate(end.getDate() + 6)
+  const fmt = (d: Date) =>
+    d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })
+  return `${fmt(start)} – ${fmt(end)}`
 }
 
-// ── Report Card Component ─────────────────────────────────────────────────────
+function buildReports(): WeeklyReport[] {
+  const poems = safeParse<string[]>(localStorage.getItem(STUDIED_POEMS_KEY)) ?? []
+  const quizzes = safeParse<QuizResultLike[]>(localStorage.getItem(QUIZ_HISTORY_KEY)) ?? []
+  const games = safeParse<GameScoreLike[]>(localStorage.getItem(GAME_SCORES_KEY)) ?? []
 
-function ReportCard({ report }: { report: Report }) {
-  const [expanded, setExpanded] = useState(false)
+  // Build the last 4 weeks, newest first
+  const reports: WeeklyReport[] = []
+  for (let i = 0; i < 4; i++) {
+    const weekStart = startOfWeek(new Date())
+    weekStart.setDate(weekStart.getDate() - i * 7)
+    const weekEnd = new Date(weekStart)
+    weekEnd.setDate(weekStart.getDate() + 7)
 
-  const handlePrint = () => {
-    const printContent = `
-      <html>
-        <head>
-          <title>${report.title}</title>
-          <style>
-            body { font-family: system-ui, sans-serif; padding: 40px; max-width: 800px; margin: 0 auto; color: #1a1a1a; }
-            h1 { font-size: 24px; margin-bottom: 4px; }
-            h2 { font-size: 18px; margin-top: 24px; margin-bottom: 8px; color: #333; }
-            .meta { color: #666; font-size: 14px; margin-bottom: 24px; }
-            .summary { font-size: 15px; line-height: 1.6; margin-bottom: 24px; padding: 16px; background: #f5f5f5; border-radius: 8px; }
-            .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px; }
-            .grid-item { padding: 12px; background: #f9f9f9; border-radius: 6px; }
-            .grid-item strong { display: block; font-size: 12px; text-transform: uppercase; color: #666; margin-bottom: 4px; }
-            .section { margin-bottom: 16px; }
-            .section p { font-size: 14px; line-height: 1.7; color: #333; }
-            .footer { margin-top: 32px; padding-top: 16px; border-top: 1px solid #ddd; font-size: 13px; color: #666; }
-          </style>
-        </head>
-        <body>
-          <h1>${report.title}</h1>
-          <div class="meta">${report.teacher} &mdash; ${formatReportDate(report.date)}</div>
-          <div class="summary">${report.summary}</div>
-          <div class="grid">
-            <div class="grid-item"><strong>Attendance</strong>${report.details.attendance}</div>
-            <div class="grid-item"><strong>Effort</strong>${report.details.effort}</div>
-            <div class="grid-item"><strong>Attainment</strong>${report.details.attainment}</div>
-            <div class="grid-item"><strong>Behaviour</strong>${report.details.behaviour}</div>
-          </div>
-          <h2>Strengths</h2>
-          <div class="section"><p>${report.details.strengths}</p></div>
-          <h2>Areas for Improvement</h2>
-          <div class="section"><p>${report.details.areasForImprovement}</p></div>
-          <h2>Suggested Actions for Parents</h2>
-          <div class="section"><p>${report.details.parentActions}</p></div>
-          <h2>Teacher's Comment</h2>
-          <div class="section"><p>${report.details.teacherComment}</p></div>
-          <div class="footer">The English Hub &mdash; Parent Portal &mdash; Printed ${new Date().toLocaleDateString('en-GB')}</div>
-        </body>
-      </html>
-    `
-    const printWindow = window.open('', '_blank')
-    if (printWindow) {
-      printWindow.document.write(printContent)
-      printWindow.document.close()
-      printWindow.print()
+    const inWeek = (iso?: string) => {
+      if (!iso) return false
+      const d = new Date(iso)
+      return d >= weekStart && d < weekEnd
     }
+
+    const weekQuizzes = quizzes.filter((q) => inWeek(q.date))
+    const weekGames = games.filter((g) => inWeek(g.date))
+    const scores = weekQuizzes.map((q) => q.percentage ?? 0).filter((n) => n > 0)
+    const averageScore = scores.length
+      ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length)
+      : null
+
+    const topQuiz = weekQuizzes.reduce<QuizResultLike | null>((top, q) => {
+      if (!top) return q
+      return (q.percentage ?? 0) > (top.percentage ?? 0) ? q : top
+    }, null)
+
+    reports.push({
+      weekStartIso: weekStart.toISOString(),
+      weekLabel: formatWeekRange(weekStart.toISOString()),
+      // For the latest week, also surface studied poem count as a proxy
+      poemsStudied: i === 0 ? poems.length : 0,
+      quizzesCompleted: weekQuizzes.length,
+      averageScore,
+      gamesPlayed: weekGames.length,
+      estimatedMinutes: weekQuizzes.length * 10 + weekGames.length * 5,
+      topQuiz,
+    })
   }
-
-  return (
-    <Card>
-      <CardContent className="p-0">
-        {/* Collapsed header — always visible */}
-        <button
-          onClick={() => setExpanded(!expanded)}
-          className="flex w-full flex-col gap-3 p-4 text-left transition-colors hover:bg-accent/30 sm:flex-row sm:items-center sm:justify-between sm:p-5"
-        >
-          <div className="flex items-start gap-3">
-            <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-              <FileText className="h-5 w-5 text-primary" />
-            </div>
-            <div className="min-w-0">
-              <p className="text-sm font-medium text-foreground">{report.title}</p>
-              <div className="mt-1 flex flex-wrap items-center gap-2">
-                {getTypeBadge(report.type)}
-                <span className="flex items-center gap-1 text-xs text-muted-foreground">
-                  <User className="h-3 w-3" />
-                  {report.teacher}
-                </span>
-                <span className="flex items-center gap-1 text-xs text-muted-foreground">
-                  <Calendar className="h-3 w-3" />
-                  {formatReportDate(report.date)}
-                </span>
-              </div>
-            </div>
-          </div>
-          <div className="flex items-center gap-2 self-end sm:self-auto">
-            {expanded ? (
-              <ChevronUp className="h-4 w-4 text-muted-foreground" />
-            ) : (
-              <ChevronDown className="h-4 w-4 text-muted-foreground" />
-            )}
-          </div>
-        </button>
-
-        {/* Expanded details */}
-        {expanded && (
-          <div className="border-t border-border">
-            {/* Summary */}
-            <div className="bg-accent/20 px-4 py-3 sm:px-5">
-              <p className="text-sm text-muted-foreground leading-relaxed">{report.summary}</p>
-            </div>
-
-            <div className="px-4 py-4 sm:px-5 sm:py-5">
-              {/* Quick stats grid */}
-              <div className="mb-5 grid grid-cols-2 gap-2 sm:grid-cols-4">
-                {[
-                  { label: 'Attendance', value: report.details.attendance },
-                  { label: 'Effort', value: report.details.effort },
-                  { label: 'Attainment', value: report.details.attainment },
-                  { label: 'Behaviour', value: report.details.behaviour },
-                ].map((stat) => (
-                  <div
-                    key={stat.label}
-                    className="rounded-lg border border-border p-2.5 text-center"
-                  >
-                    <p className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
-                      {stat.label}
-                    </p>
-                    <p className="mt-0.5 text-sm font-bold text-foreground">{stat.value}</p>
-                  </div>
-                ))}
-              </div>
-
-              {/* Detail sections */}
-              <div className="space-y-4">
-                <DetailSection title="Strengths" content={report.details.strengths} />
-                <DetailSection title="Areas for Improvement" content={report.details.areasForImprovement} />
-                <DetailSection title="Suggested Actions for Parents" content={report.details.parentActions} />
-                <DetailSection title="Teacher's Comment" content={report.details.teacherComment} />
-              </div>
-
-              {/* Print button */}
-              <Separator className="my-4" />
-              <div className="flex justify-end">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={(e) => {
-                    e.stopPropagation()
-                    handlePrint()
-                  }}
-                  className="gap-2"
-                >
-                  <Printer className="h-4 w-4" />
-                  Print Report
-                </Button>
-              </div>
-            </div>
-          </div>
-        )}
-      </CardContent>
-    </Card>
-  )
+  return reports
 }
 
-function DetailSection({ title, content }: { title: string; content: string }) {
-  return (
-    <div>
-      <h4 className="mb-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-        {title}
-      </h4>
-      <p className="text-sm leading-relaxed text-foreground/80">{content}</p>
-    </div>
-  )
+function formatMinutes(minutes: number): string {
+  if (minutes <= 0) return '0m'
+  const h = Math.floor(minutes / 60)
+  const m = minutes % 60
+  if (h === 0) return `${m}m`
+  if (m === 0) return `${h}h`
+  return `${h}h ${m}m`
 }
-
-// ── Page Component ────────────────────────────────────────────────────────────
 
 export default function ParentReportsPage() {
+  const [mounted, setMounted] = useState(false)
+  const [account, setAccount] = useState<ParentAccountLike | null>(null)
+  const [reports, setReports] = useState<WeeklyReport[]>([])
+  const [selectedIso, setSelectedIso] = useState<string | null>(null)
+
+  useEffect(() => {
+    setMounted(true)
+    setAccount(safeParse<ParentAccountLike>(localStorage.getItem(PARENT_ACCOUNT_KEY)))
+    const built = buildReports()
+    setReports(built)
+    setSelectedIso(built[0]?.weekStartIso ?? null)
+  }, [])
+
+  const selected = useMemo(
+    () => reports.find((r) => r.weekStartIso === selectedIso) ?? null,
+    [reports, selectedIso]
+  )
+
+  const childName = account?.childName ?? 'your child'
+  const firstName =
+    childName === 'your child' ? 'your child' : childName.split(' ')[0]
+  const parentName = account?.name ?? 'Parent'
+  const parentEmail = account?.email ?? 'you@example.com'
+
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="flex items-center gap-3">
-        <Link href="/parent">
-          <Button variant="ghost" size="icon" className="shrink-0">
-            <ArrowLeft className="h-4 w-4" />
-          </Button>
-        </Link>
+      <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <h1 className="text-heading-lg text-foreground">Reports</h1>
-          <p className="text-body-sm text-muted-foreground">
-            Progress reports from Olivia&apos;s teachers
+          <h1 className="text-2xl font-bold text-foreground sm:text-3xl">
+            Weekly Reports
+          </h1>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Preview the weekly email summaries we send to {parentEmail}.
           </p>
         </div>
+        <Button
+          variant="outline"
+          size="sm"
+          render={<Link href="/parent/settings" />}
+        >
+          <Settings2 className="h-4 w-4" />
+          Notification settings
+        </Button>
       </div>
 
-      {/* Reports count */}
-      <div className="flex items-center gap-2">
-        <Badge variant="secondary">{reports.length} reports</Badge>
-        <span className="text-xs text-muted-foreground">
-          Tap a report to expand full details
-        </span>
-      </div>
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-5">
+        {/* Week list */}
+        <div className="lg:col-span-2">
+          <Card>
+            <CardHeader className="pb-3">
+              <CardTitle className="text-base">Past 4 weeks</CardTitle>
+              <CardDescription>Select a week to preview its report</CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-2">
+              {reports.map((report, index) => {
+                const isSelected = report.weekStartIso === selectedIso
+                return (
+                  <button
+                    key={report.weekStartIso}
+                    type="button"
+                    onClick={() => setSelectedIso(report.weekStartIso)}
+                    className={
+                      'flex w-full items-center justify-between rounded-lg border px-3 py-3 text-left transition-colors ' +
+                      (isSelected
+                        ? 'border-primary/40 bg-primary/10 text-primary'
+                        : 'border-border bg-card text-foreground hover:bg-accent')
+                    }
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                        <Calendar className="h-4 w-4 text-primary" />
+                      </div>
+                      <div className="min-w-0">
+                        <p className="truncate text-sm font-semibold">
+                          {report.weekLabel}
+                        </p>
+                        <p className="text-xs text-muted-foreground">
+                          {index === 0 ? 'This week' : `${index} week${index === 1 ? '' : 's'} ago`}
+                        </p>
+                      </div>
+                    </div>
+                    <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground" />
+                  </button>
+                )
+              })}
+            </CardContent>
+          </Card>
+        </div>
 
-      {/* Report list */}
-      <div className="space-y-3">
-        {reports.map((report) => (
-          <ReportCard key={report.id} report={report} />
-        ))}
-      </div>
+        {/* Report preview */}
+        <div className="lg:col-span-3">
+          <Card>
+            <CardHeader className="border-b border-border bg-muted/30 pb-4">
+              <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                <Mail className="h-3.5 w-3.5" />
+                <span>Email preview</span>
+              </div>
+              <div className="mt-2 space-y-1">
+                <p className="text-xs text-muted-foreground">
+                  <span className="font-medium text-foreground">From:</span>{' '}
+                  reports@theenglishhub.app
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  <span className="font-medium text-foreground">To:</span> {parentEmail}
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  <span className="font-medium text-foreground">Subject:</span>{' '}
+                  {firstName}&apos;s weekly report &middot; {selected?.weekLabel ?? ''}
+                </p>
+              </div>
+            </CardHeader>
+            <CardContent className="space-y-5 pt-6">
+              {selected ? (
+                <>
+                  <div>
+                    <p className="text-sm text-muted-foreground">Hi {parentName},</p>
+                    <p className="mt-3 text-sm text-foreground">
+                      Here&apos;s how {firstName} got on during{' '}
+                      <strong>{selected.weekLabel}</strong> on The English Hub.
+                    </p>
+                  </div>
 
-      {/* Empty state hint */}
-      {reports.length === 0 && (
-        <Card>
-          <CardContent className="flex flex-col items-center justify-center py-12 text-center">
-            <FileText className="h-10 w-10 text-muted-foreground/70" />
-            <p className="mt-3 text-sm font-medium text-muted-foreground">No reports yet</p>
-            <p className="mt-1 text-xs text-muted-foreground/70">
-              Reports from teachers will appear here when available
-            </p>
-          </CardContent>
-        </Card>
-      )}
+                  <Separator />
+
+                  {/* Summary stats */}
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="rounded-lg border border-border p-3">
+                      <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                        <TrendingUp className="h-3.5 w-3.5" />
+                        Time spent
+                      </div>
+                      <p className="mt-1 text-xl font-bold text-foreground">
+                        {formatMinutes(selected.estimatedMinutes)}
+                      </p>
+                    </div>
+                    <div className="rounded-lg border border-border p-3">
+                      <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                        <Sparkles className="h-3.5 w-3.5" />
+                        Avg quiz score
+                      </div>
+                      <p className="mt-1 text-xl font-bold text-foreground">
+                        {selected.averageScore != null
+                          ? `${selected.averageScore}%`
+                          : '—'}
+                      </p>
+                    </div>
+                    <div className="rounded-lg border border-border p-3">
+                      <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                        <BookOpen className="h-3.5 w-3.5" />
+                        Poems studied
+                      </div>
+                      <p className="mt-1 text-xl font-bold text-foreground">
+                        {selected.poemsStudied}
+                      </p>
+                    </div>
+                    <div className="rounded-lg border border-border p-3">
+                      <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                        <Gamepad2 className="h-3.5 w-3.5" />
+                        Games played
+                      </div>
+                      <p className="mt-1 text-xl font-bold text-foreground">
+                        {selected.gamesPlayed}
+                      </p>
+                    </div>
+                  </div>
+
+                  <Separator />
+
+                  {/* Highlight */}
+                  <div>
+                    <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                      Highlight of the week
+                    </p>
+                    {selected.topQuiz ? (
+                      <div className="rounded-lg border border-primary/20 bg-primary/10 p-3">
+                        <p className="text-sm font-semibold text-primary">
+                          {selected.topQuiz.mode ?? 'Top quiz result'}
+                        </p>
+                        <p className="text-xs text-primary/80">
+                          Scored {selected.topQuiz.percentage ?? 0}%
+                          {selected.topQuiz.grade
+                            ? ` (Grade ${selected.topQuiz.grade})`
+                            : ''}
+                        </p>
+                      </div>
+                    ) : (
+                      <p className="rounded-lg border border-dashed border-border p-3 text-sm text-muted-foreground">
+                        No quiz results this week yet.
+                      </p>
+                    )}
+                  </div>
+
+                  <Separator />
+
+                  {/* Suggested focus */}
+                  <div>
+                    <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                      Suggested focus for next week
+                    </p>
+                    <ul className="space-y-2 text-sm text-foreground">
+                      <li className="flex items-start gap-2">
+                        <FileText className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                        Review one poem from the AQA Power &amp; Conflict cluster.
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Sparkles className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                        Complete a short quiz on unseen prose.
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <BookOpen className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                        Read for 20 minutes on three separate days.
+                      </li>
+                    </ul>
+                  </div>
+
+                  <Separator />
+
+                  <div className="flex items-center justify-between">
+                    <p className="text-xs text-muted-foreground">
+                      This is a preview of the actual email we send every{' '}
+                      <strong className="text-foreground">Sunday evening</strong>.
+                    </p>
+                    <Badge variant="secondary" className="text-xs">Preview</Badge>
+                  </div>
+                </>
+              ) : (
+                <p className="py-10 text-center text-sm text-muted-foreground">
+                  {mounted ? 'Select a week to preview its report.' : 'Loading...'}
+                </p>
+              )}
+            </CardContent>
+          </Card>
+        </div>
+      </div>
     </div>
   )
 }

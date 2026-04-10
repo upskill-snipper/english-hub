@@ -1,342 +1,378 @@
 'use client'
 
+import { useEffect, useMemo, useState } from 'react'
 import {
-  ArrowLeft,
-  TrendingUp,
-  TrendingDown,
-  CheckCircle,
-  AlertTriangle,
   BookOpen,
-  Lightbulb,
+  Gamepad2,
+  GraduationCap,
+  Sparkles,
+  TrendingUp,
 } from 'lucide-react'
-import Link from 'next/link'
-import { cn } from '@/lib/utils'
-import { percentageToGCSEGradeLabel, percentageToGCSEGrade, gcseGradeColor } from '@/lib/grades'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Progress } from '@/components/ui/progress'
 import { Separator } from '@/components/ui/separator'
-import { Button } from '@/components/ui/button'
+import { WeeklyActivityChart, type WeeklyActivityPoint } from '@/components/parent/WeeklyActivityChart'
 
-// ── Mock Data ─────────────────────────────────────────────────────────────────
+// ── LocalStorage keys ─────────────────────────────────────────────────────────
+// TODO: replace with Supabase — fetch aggregated progress from the server
 
-const weeklyRevisionTime = [
-  { week: '27 Jan', minutes: 95 },
-  { week: '3 Feb', minutes: 120 },
-  { week: '10 Feb', minutes: 80 },
-  { week: '17 Feb', minutes: 145 },
-  { week: '24 Feb', minutes: 160 },
-  { week: '3 Mar', minutes: 110 },
-  { week: '10 Mar', minutes: 175 },
-  { week: '17 Mar', minutes: 185 },
-]
+const STUDIED_POEMS_KEY = 'english-hub-studied-poems'
+const GAME_SCORES_KEY = 'english-hub-game-scores'
+const QUIZ_HISTORY_KEY = 'english-hub-quiz-history'
+const REVISION_PROGRESS_KEY = 'english-hub-revision-progress'
+const PARENT_ACCOUNT_KEY = 'english-hub-parent-account'
 
-const scoreTrend = [
-  { date: 'Jan 15', score: 62 },
-  { date: 'Jan 28', score: 65 },
-  { date: 'Feb 8', score: 60 },
-  { date: 'Feb 18', score: 68 },
-  { date: 'Mar 1', score: 72 },
-  { date: 'Mar 10', score: 70 },
-  { date: 'Mar 18', score: 78 },
-]
+interface QuizResultLike {
+  date?: string
+  mode?: string
+  score?: number
+  total?: number
+  percentage?: number
+  grade?: string
+}
 
-const topicCompletion = [
-  { topic: 'Shakespeare — Macbeth', completed: 18, total: 20, percentage: 90 },
-  { topic: 'Poetry — Power & Conflict', completed: 12, total: 18, percentage: 67 },
-  { topic: 'Language Paper 1 — Explorations', completed: 14, total: 16, percentage: 88 },
-  { topic: 'Language Paper 2 — Writers\' Viewpoints', completed: 8, total: 16, percentage: 50 },
-  { topic: 'Modern Prose — An Inspector Calls', completed: 10, total: 15, percentage: 67 },
-  { topic: 'Unseen Poetry', completed: 5, total: 10, percentage: 50 },
-]
+interface GameScoreLike {
+  date?: string
+  game?: string
+  score?: number
+}
 
-const strengths = [
-  'Character analysis and quotation embedding',
-  'Language Paper 1 creative writing responses',
-  'Understanding dramatic irony in Shakespeare',
-]
+interface RevisionProgressLike {
+  visited?: string[]
+  percentage?: number
+}
 
-const weaknesses = [
-  'Comparing writers\' perspectives (Paper 2 Q4)',
-  'Unseen poetry analysis — especially structure',
-  'Consistent use of subject terminology',
-]
+interface ParentAccountLike {
+  childName?: string
+}
 
-const teacherNextSteps = [
-  {
-    id: '1',
-    step: 'Focus on Language Paper 2 Question 4 — practise comparing viewpoints using the provided model answers.',
-    priority: 'high' as const,
-  },
-  {
-    id: '2',
-    step: 'Complete the remaining Power & Conflict poetry modules, especially the comparison essay tasks.',
-    priority: 'medium' as const,
-  },
-  {
-    id: '3',
-    step: 'Attempt one unseen poetry response per week to build confidence with unfamiliar texts.',
-    priority: 'medium' as const,
-  },
-  {
-    id: '4',
-    step: 'Review the subject terminology flashcard deck — aim for 90%+ on the test mode.',
-    priority: 'low' as const,
-  },
-]
-
-// ── Helpers ───────────────────────────────────────────────────────────────────
-
-function getPriorityColour(priority: 'high' | 'medium' | 'low') {
-  switch (priority) {
-    case 'high':
-      return 'bg-red-500/10 text-red-400 border-red-500/20'
-    case 'medium':
-      return 'bg-amber-500/10 text-amber-400 border-amber-500/20'
-    case 'low':
-      return 'bg-blue-500/10 text-blue-400 border-blue-500/20'
+function safeParse<T>(raw: string | null): T | null {
+  if (!raw) return null
+  try {
+    return JSON.parse(raw) as T
+  } catch {
+    return null
   }
 }
 
-function getCompletionColour(percentage: number): string {
-  if (percentage >= 80) return 'text-emerald-400'
-  if (percentage >= 60) return 'text-amber-400'
-  return 'text-red-400'
+function formatDate(iso?: string): string {
+  if (!iso) return ''
+  const date = new Date(iso)
+  if (Number.isNaN(date.getTime())) return ''
+  return date.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' })
 }
 
-// ── Component ─────────────────────────────────────────────────────────────────
+// ── Reading age estimation (simple mock heuristic) ────────────────────────────
+function estimateReadingAge(averageScore: number | null, poemCount: number): number {
+  // TODO: replace with Supabase — use real reading age assessments from the app
+  const base = 10
+  const scoreBoost = averageScore != null ? (averageScore / 100) * 5 : 0
+  const poemBoost = Math.min(poemCount * 0.1, 2)
+  return Math.round((base + scoreBoost + poemBoost) * 10) / 10
+}
+
+interface ProgressState {
+  poems: string[]
+  quizzes: QuizResultLike[]
+  games: GameScoreLike[]
+  revisionPercent: number
+  averageScore: number | null
+  highestScore: number | null
+  weekly: WeeklyActivityPoint[]
+  childName: string
+}
+
+function buildProgressState(): ProgressState {
+  const poems = safeParse<string[]>(localStorage.getItem(STUDIED_POEMS_KEY)) ?? []
+  const quizzes = safeParse<QuizResultLike[]>(localStorage.getItem(QUIZ_HISTORY_KEY)) ?? []
+  const games = safeParse<GameScoreLike[]>(localStorage.getItem(GAME_SCORES_KEY)) ?? []
+  const revision = safeParse<RevisionProgressLike>(localStorage.getItem(REVISION_PROGRESS_KEY)) ?? {}
+  const account = safeParse<ParentAccountLike>(localStorage.getItem(PARENT_ACCOUNT_KEY)) ?? {}
+
+  const scores = quizzes.map((q) => q.percentage ?? 0).filter((n) => n > 0)
+  const averageScore = scores.length
+    ? Math.round(scores.reduce((acc, n) => acc + n, 0) / scores.length)
+    : null
+  const highestScore = scores.length ? Math.max(...scores) : null
+
+  // Build 8-week timeline
+  const now = new Date()
+  const weekly: WeeklyActivityPoint[] = []
+  for (let i = 7; i >= 0; i--) {
+    const weekStart = new Date(now)
+    weekStart.setDate(now.getDate() - i * 7 - now.getDay())
+    weekStart.setHours(0, 0, 0, 0)
+    const weekEnd = new Date(weekStart)
+    weekEnd.setDate(weekStart.getDate() + 7)
+
+    const inWeek = (iso?: string) => {
+      if (!iso) return false
+      const d = new Date(iso)
+      return d >= weekStart && d < weekEnd
+    }
+    const weekQuizzes = quizzes.filter((q) => inWeek(q.date)).length
+    const weekGames = games.filter((g) => inWeek(g.date)).length
+    weekly.push({
+      label: weekStart.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' }),
+      minutes: weekQuizzes * 10 + weekGames * 5,
+    })
+  }
+
+  return {
+    poems,
+    quizzes,
+    games,
+    revisionPercent: revision.percentage ?? 0,
+    averageScore,
+    highestScore,
+    weekly,
+    childName: account.childName ?? 'Your child',
+  }
+}
 
 export default function ParentProgressPage() {
-  const maxMinutes = Math.max(...weeklyRevisionTime.map((w) => w.minutes))
-  const maxScore = 100
+  const [mounted, setMounted] = useState(false)
+  const [state, setState] = useState<ProgressState | null>(null)
+
+  useEffect(() => {
+    setMounted(true)
+    setState(buildProgressState())
+  }, [])
+
+  const readingAge = useMemo(() => {
+    if (!state) return 0
+    return estimateReadingAge(state.averageScore, state.poems.length)
+  }, [state])
+
+  const recentQuizzes = state?.quizzes.slice(0, 8) ?? []
 
   return (
     <div className="space-y-6">
-      {/* Header */}
-      <div className="flex items-center gap-3">
-        <Link href="/parent">
-          <Button variant="ghost" size="icon" className="shrink-0">
-            <ArrowLeft className="h-4 w-4" />
-          </Button>
-        </Link>
+      {/* Page header */}
+      <div className="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <h1 className="text-heading-lg text-foreground">Progress</h1>
-          <p className="text-body-sm text-muted-foreground">
-            Detailed breakdown of Olivia&apos;s learning journey
+          <h1 className="text-2xl font-bold text-foreground sm:text-3xl">
+            Detailed Progress
+          </h1>
+          <p className="mt-1 text-sm text-muted-foreground">
+            {mounted && state
+              ? `A complete breakdown of ${state.childName.split(' ')[0]}'s learning.`
+              : 'Loading progress...'}
           </p>
         </div>
+        <Badge variant="secondary" className="w-fit">Read-only view</Badge>
       </div>
 
-      {/* Weekly revision time - bar chart */}
+      {/* Headline stats */}
+      <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+        <Card>
+          <CardContent className="p-4">
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <BookOpen className="h-4 w-4" />
+              <span className="text-xs font-medium uppercase tracking-wider">Poems</span>
+            </div>
+            <p className="mt-2 text-2xl font-bold text-foreground">
+              {state?.poems.length ?? 0}
+            </p>
+            <p className="text-xs text-muted-foreground">studied</p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent className="p-4">
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <Gamepad2 className="h-4 w-4" />
+              <span className="text-xs font-medium uppercase tracking-wider">Games</span>
+            </div>
+            <p className="mt-2 text-2xl font-bold text-foreground">
+              {state?.games.length ?? 0}
+            </p>
+            <p className="text-xs text-muted-foreground">played</p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent className="p-4">
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <Sparkles className="h-4 w-4" />
+              <span className="text-xs font-medium uppercase tracking-wider">Quizzes</span>
+            </div>
+            <p className="mt-2 text-2xl font-bold text-foreground">
+              {state?.quizzes.length ?? 0}
+            </p>
+            <p className="text-xs text-muted-foreground">completed</p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent className="p-4">
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <GraduationCap className="h-4 w-4" />
+              <span className="text-xs font-medium uppercase tracking-wider">Reading age</span>
+            </div>
+            <p className="mt-2 text-2xl font-bold text-foreground">
+              {state ? `${readingAge}` : '—'}
+            </p>
+            <p className="text-xs text-muted-foreground">years (est.)</p>
+          </CardContent>
+        </Card>
+      </div>
+
+      {/* Week-by-week chart */}
+      <WeeklyActivityChart
+        data={state?.weekly ?? []}
+        title="Week-by-week activity"
+        description="Learning time over the last 8 weeks"
+      />
+
+      {/* Quiz scores list */}
       <Card>
-        <CardHeader>
-          <CardTitle className="text-base">Weekly Revision Time</CardTitle>
-          <CardDescription>Last 8 weeks</CardDescription>
+        <CardHeader className="pb-3">
+          <div className="flex items-center justify-between">
+            <div>
+              <CardTitle className="text-base">Recent quiz scores</CardTitle>
+              <CardDescription>
+                Average {state?.averageScore ?? 0}% · Highest {state?.highestScore ?? 0}%
+              </CardDescription>
+            </div>
+            <TrendingUp className="h-4 w-4 text-primary" />
+          </div>
         </CardHeader>
         <CardContent>
-          <div className="flex items-end gap-2 sm:gap-3" style={{ height: 200 }}>
-            {weeklyRevisionTime.map((week, i) => {
-              const heightPercent = (week.minutes / maxMinutes) * 100
-              const isLatest = i === weeklyRevisionTime.length - 1
-              return (
-                <div key={week.week} className="flex flex-1 flex-col items-center gap-1.5">
-                  <span className="text-xs font-medium text-foreground">
-                    {Math.floor(week.minutes / 60)}h{week.minutes % 60 > 0 ? ` ${week.minutes % 60}m` : ''}
-                  </span>
-                  <div
-                    className={cn(
-                      'w-full rounded-t-md transition-all',
-                      isLatest ? 'bg-primary' : 'bg-primary/30'
-                    )}
-                    style={{ height: `${heightPercent}%`, minHeight: 8 }}
-                  />
-                  <span className="text-[10px] text-muted-foreground leading-tight text-center">
-                    {week.week}
-                  </span>
-                </div>
-              )
-            })}
-          </div>
+          {recentQuizzes.length === 0 ? (
+            <p className="rounded-lg border border-dashed border-border p-6 text-center text-sm text-muted-foreground">
+              {mounted ? 'No quizzes completed yet.' : 'Loading...'}
+            </p>
+          ) : (
+            <ul className="space-y-3">
+              {recentQuizzes.map((quiz, index) => {
+                const pct = quiz.percentage ?? 0
+                return (
+                  <li
+                    key={`${quiz.date ?? 'q'}-${index}`}
+                    className="space-y-2 rounded-lg border border-border p-3"
+                  >
+                    <div className="flex items-start justify-between gap-3">
+                      <div className="min-w-0">
+                        <p className="truncate text-sm font-medium text-foreground">
+                          {quiz.mode ?? 'Quiz'}
+                        </p>
+                        <p className="text-xs text-muted-foreground">
+                          {formatDate(quiz.date)}
+                          {quiz.grade ? ` · Grade ${quiz.grade}` : ''}
+                          {quiz.score != null && quiz.total != null
+                            ? ` · ${quiz.score}/${quiz.total}`
+                            : ''}
+                        </p>
+                      </div>
+                      <span className="shrink-0 text-sm font-bold text-foreground">
+                        {pct}%
+                      </span>
+                    </div>
+                    <Progress value={pct} className="h-1.5" />
+                  </li>
+                )
+              })}
+            </ul>
+          )}
         </CardContent>
       </Card>
 
-      {/* Score trend line */}
+      {/* Poems studied */}
       <Card>
-        <CardHeader>
-          <CardTitle className="text-base">Score Trend</CardTitle>
-          <CardDescription>Average quiz/assessment scores over time</CardDescription>
+        <CardHeader className="pb-3">
+          <CardTitle className="text-base">Poems studied</CardTitle>
+          <CardDescription>
+            Poems your child has opened in the revision area
+          </CardDescription>
         </CardHeader>
         <CardContent>
-          {/* Simple SVG line chart */}
-          <div className="relative w-full" style={{ height: 200 }}>
-            <svg
-              viewBox={`0 0 ${(scoreTrend.length - 1) * 100} 100`}
-              preserveAspectRatio="none"
-              className="h-full w-full"
-            >
-              {/* Grid lines */}
-              {[25, 50, 75].map((y) => (
-                <line
-                  key={y}
-                  x1="0"
-                  y1={100 - y}
-                  x2={(scoreTrend.length - 1) * 100}
-                  y2={100 - y}
-                  stroke="currentColor"
-                  className="text-border"
-                  strokeWidth="0.5"
-                />
-              ))}
-
-              {/* Gradient fill */}
-              <defs>
-                <linearGradient id="scoreGradient" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.3" />
-                  <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0" />
-                </linearGradient>
-              </defs>
-
-              {/* Area fill */}
-              <path
-                d={
-                  `M0,${100 - scoreTrend[0].score} ` +
-                  scoreTrend
-                    .map((point, i) => `L${i * 100},${100 - point.score}`)
-                    .join(' ') +
-                  ` L${(scoreTrend.length - 1) * 100},100 L0,100 Z`
-                }
-                fill="url(#scoreGradient)"
-              />
-
-              {/* Line */}
-              <polyline
-                points={scoreTrend
-                  .map((point, i) => `${i * 100},${100 - point.score}`)
-                  .join(' ')}
-                fill="none"
-                stroke="hsl(var(--primary))"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-
-              {/* Data points */}
-              {scoreTrend.map((point, i) => (
-                <circle
-                  key={point.date}
-                  cx={i * 100}
-                  cy={100 - point.score}
-                  r="3"
-                  fill="hsl(var(--primary))"
-                  stroke="hsl(var(--background))"
-                  strokeWidth="1.5"
-                />
-              ))}
-            </svg>
-
-            {/* X-axis labels */}
-            <div className="mt-2 flex justify-between">
-              {scoreTrend.map((point) => (
-                <span key={point.date} className="text-[10px] text-muted-foreground">
-                  {point.date}
-                </span>
-              ))}
+          {state && state.poems.length > 0 ? (
+            <div className="flex flex-wrap gap-2">
+              {state.poems.map((slug) => {
+                const label = slug
+                  .split('-')
+                  .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+                  .join(' ')
+                return (
+                  <Badge key={slug} variant="secondary" className="text-xs">
+                    {label}
+                  </Badge>
+                )
+              })}
             </div>
-          </div>
+          ) : (
+            <p className="rounded-lg border border-dashed border-border p-6 text-center text-sm text-muted-foreground">
+              {mounted ? 'No poems studied yet.' : 'Loading...'}
+            </p>
+          )}
+        </CardContent>
+      </Card>
 
-          {/* Trend summary */}
-          <div className="mt-4 flex items-center gap-2 rounded-lg border border-emerald-500/20 bg-emerald-500/5 px-3 py-2">
-            <TrendingUp className="h-4 w-4 text-emerald-400" />
-            <span className="text-sm text-emerald-400">
-              Improved from {percentageToGCSEGradeLabel(scoreTrend[0].score)} to {percentageToGCSEGradeLabel(scoreTrend[scoreTrend.length - 1].score)}
+      {/* Games played */}
+      <Card>
+        <CardHeader className="pb-3">
+          <CardTitle className="text-base">Games played</CardTitle>
+          <CardDescription>Recent results from learning games</CardDescription>
+        </CardHeader>
+        <CardContent>
+          {state && state.games.length > 0 ? (
+            <ul className="space-y-2">
+              {state.games.slice(0, 10).map((game, index) => (
+                <li
+                  key={`${game.date ?? 'g'}-${index}`}
+                  className="flex items-center justify-between rounded-lg border border-border p-3"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                      <Gamepad2 className="h-4 w-4 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium text-foreground">
+                        {game.game ?? 'Learning game'}
+                      </p>
+                      <p className="text-xs text-muted-foreground">
+                        {formatDate(game.date)}
+                      </p>
+                    </div>
+                  </div>
+                  <span className="text-sm font-bold text-foreground">
+                    {game.score != null ? game.score : '—'}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="rounded-lg border border-dashed border-border p-6 text-center text-sm text-muted-foreground">
+              {mounted ? 'No games played yet.' : 'Loading...'}
+            </p>
+          )}
+        </CardContent>
+      </Card>
+
+      {/* Overall revision progress */}
+      <Card>
+        <CardHeader className="pb-3">
+          <CardTitle className="text-base">Overall revision progress</CardTitle>
+          <CardDescription>Sections visited across the revision hub</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-3">
+          <div className="flex items-center justify-between">
+            <span className="text-sm text-muted-foreground">Hub coverage</span>
+            <span className="text-sm font-bold text-foreground">
+              {state?.revisionPercent ?? 0}%
             </span>
           </div>
-        </CardContent>
-      </Card>
-
-      {/* Module completion by topic */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-base">Module Completion by Topic</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          {topicCompletion.map((topic) => (
-            <div key={topic.topic}>
-              <div className="mb-1.5 flex items-center justify-between">
-                <span className="text-sm text-foreground">{topic.topic}</span>
-                <span className={cn('text-sm font-bold', getCompletionColour(topic.percentage))}>
-                  {topic.completed}/{topic.total}
-                </span>
-              </div>
-              <Progress value={topic.percentage} className="h-2" />
-            </div>
-          ))}
-        </CardContent>
-      </Card>
-
-      {/* Strengths & Weaknesses */}
-      <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-        <Card>
-          <CardHeader className="pb-3">
-            <div className="flex items-center gap-2">
-              <CheckCircle className="h-4 w-4 text-emerald-400" />
-              <CardTitle className="text-base">Strengths</CardTitle>
-            </div>
-          </CardHeader>
-          <CardContent>
-            <ul className="space-y-2.5">
-              {strengths.map((strength, i) => (
-                <li key={i} className="flex items-start gap-2">
-                  <div className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400" />
-                  <span className="text-sm text-muted-foreground">{strength}</span>
-                </li>
-              ))}
-            </ul>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader className="pb-3">
-            <div className="flex items-center gap-2">
-              <AlertTriangle className="h-4 w-4 text-amber-400" />
-              <CardTitle className="text-base">Areas for Improvement</CardTitle>
-            </div>
-          </CardHeader>
-          <CardContent>
-            <ul className="space-y-2.5">
-              {weaknesses.map((weakness, i) => (
-                <li key={i} className="flex items-start gap-2">
-                  <div className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-400" />
-                  <span className="text-sm text-muted-foreground">{weakness}</span>
-                </li>
-              ))}
-            </ul>
-          </CardContent>
-        </Card>
-      </div>
-
-      {/* Teacher's recommended next steps */}
-      <Card>
-        <CardHeader>
-          <div className="flex items-center gap-2">
-            <Lightbulb className="h-4 w-4 text-primary" />
-            <CardTitle className="text-base">Teacher&apos;s Recommended Next Steps</CardTitle>
-          </div>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-3">
-            {teacherNextSteps.map((item) => (
-              <div
-                key={item.id}
-                className="flex flex-col gap-2 rounded-lg border border-border p-3 sm:flex-row sm:items-start sm:gap-3"
-              >
-                <Badge className={cn('shrink-0 w-fit', getPriorityColour(item.priority))}>
-                  {item.priority}
-                </Badge>
-                <p className="text-sm text-muted-foreground">{item.step}</p>
-              </div>
-            ))}
-          </div>
+          <Progress value={state?.revisionPercent ?? 0} className="h-2" />
+          <Separator />
+          <p className="text-xs text-muted-foreground">
+            Tracks which revision sections (Poetry, Set Texts, Language, Flashcards,
+            Exam Technique) have been opened at least once.
+          </p>
         </CardContent>
       </Card>
     </div>

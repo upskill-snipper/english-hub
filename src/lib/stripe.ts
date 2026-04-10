@@ -18,7 +18,31 @@ export const PRICE_IDS = {
   GCSE_LIT_PROSE: requireEnv('STRIPE_PRICE_GCSE_LIT_PROSE'),
   GCSE_REVISION: requireEnv('STRIPE_PRICE_GCSE_REVISION'),
   BUNDLE: requireEnv('STRIPE_PRICE_BUNDLE'),
+  // Parent tier — env var not yet wired; safe-fallback to placeholder so
+  // `requireEnv` doesn't crash prior to Stripe dashboard setup. See
+  // src/app/api/parent/README.md for the launch checklist.
+  PARENT_MONTHLY: process.env.STRIPE_PRICE_PARENT || 'price_TBD_parent',
 } as const
+
+// ── Parent tier plan metadata ──────────────────────────────────────────────
+// Kept alongside PRICE_IDS so all Stripe-facing config lives in one file.
+// If/when a dedicated `src/lib/stripe/plans.ts` is introduced, this export
+// should move there and stripe.ts can re-export for backward compatibility.
+export const PARENT_PLAN = {
+  id: 'parent',
+  name: 'Parent Access',
+  price: 499, // pence
+  priceId: 'price_TBD_parent',
+  interval: 'month',
+  features: [
+    'Read-only access to child progress',
+    'Weekly email reports',
+    'Up to 3 children',
+    'Cancel anytime',
+  ],
+} as const
+
+export const PLANS = [PARENT_PLAN] as const
 
 const _COURSE_PRICE_ENTRIES: Record<string, string> = {
   'ks3-reading': PRICE_IDS.KS3_READING,

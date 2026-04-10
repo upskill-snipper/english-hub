@@ -1,0 +1,11 @@
+Counterparty,Type,Start date,End date,Value,Auto-renew,Notice period,Status,Assignable
+REPLACE WITH COUNTERPARTY,Customer / SaaS subscription,REPLACE WITH DATE,REPLACE WITH DATE,£REPLACE per year,Yes,30 days,Executed,Yes with consent
+REPLACE WITH SUPPLIER,Supplier / Hosting,REPLACE WITH DATE,REPLACE WITH DATE,£REPLACE per month,Yes,60 days,Executed,Yes
+REPLACE WITH AGENCY,Supplier / Marketing,REPLACE WITH DATE,REPLACE WITH DATE,£REPLACE fixed fee,No,N/A,Executed,No
+REPLACE WITH CONTRACTOR,Contractor,REPLACE WITH DATE,REPLACE WITH DATE,£REPLACE per day,No,30 days,Executed,No
+REPLACE WITH LANDLORD,Lease / Office,REPLACE WITH DATE,REPLACE WITH DATE,£REPLACE per year,No,3 months,Executed,No
+REPLACE WITH PARTNER,Partnership / Reseller,REPLACE WITH DATE,REPLACE WITH DATE,Revenue share,Yes,90 days,In review,Yes
+REPLACE WITH PAYMENT PROCESSOR,Supplier / Payments,REPLACE WITH DATE,Open-ended,Transaction fees,Yes,30 days,Executed,No
+REPLACE WITH INVESTOR,Investment / SAFE or ASA,REPLACE WITH DATE,On conversion,£REPLACE principal,N/A,N/A,Executed,No
+REPLACE WITH BANK,Bank / Account facility,REPLACE WITH DATE,Open-ended,£REPLACE fees,Yes,30 days,Executed,No
+REPLACE WITH INSURER,Insurance / Professional indemnity,REPLACE WITH DATE,REPLACE WITH DATE,£REPLACE premium,Yes,30 days,Executed,No

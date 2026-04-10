@@ -1,8 +1,27 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
 import { rateLimit } from '@/lib/rate-limit'
+import {
+  isValidLinkCode,
+  normalizeLinkCode,
+  isLinkCodeExpired,
+} from '@/lib/parent/link-codes'
+import { isParentRole } from '@/lib/parent/access-control'
 
-// ── POST: Link a child account to the authenticated parent ──────────────────
+// ── POST: Redeem a 6-char link code to link parent → child ──────────────────
+//
+// Flow:
+//   1. Student generates a code in their dashboard (server writes a row
+//      into parent_link_codes with a 15-minute TTL).
+//   2. Parent enters the code on /parent/link-child.
+//   3. This endpoint validates the code, consumes it (single-use),
+//      and creates an ACTIVE parent_child_links row.
+//
+// Security:
+//   - Only parent-role users can call this.
+//   - Rate-limited to 5 attempts / hour / parent (brute-force protection).
+//   - Codes are single-use and TTL'd.
+//   - Self-linking is explicitly blocked.
 
 export async function POST(request: NextRequest) {
   try {
@@ -16,92 +35,96 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    // ── Role check: only parent accounts can link children ────────────────
-    const parentRole = user.user_metadata?.role
-    if (parentRole !== 'parent') {
+    // ── Role check ───────────────────────────────────────────────────────────
+    if (!isParentRole(user)) {
       return NextResponse.json(
         { error: 'Only parent accounts can link to a child.' },
         { status: 403 }
       )
     }
 
-    // ── Rate limiting: 5 requests per hour per user ────────────────────────
-    const rateLimitResult = await rateLimit(`link-child:${user.id}`, {
+    // ── Rate limiting: 5 attempts per hour per parent ────────────────────────
+    const rl = await rateLimit(`link-child:${user.id}`, {
       limit: 5,
       windowSeconds: 3600,
     })
 
-    if (!rateLimitResult.success) {
+    if (!rl.success) {
       return NextResponse.json(
-        { error: 'Too many link requests. Please try again later.' },
+        { error: 'Too many link attempts. Please try again in an hour.' },
         { status: 429 }
       )
     }
 
-    let body: { child_email?: string; invite_code?: string }
+    // ── Parse and validate body ──────────────────────────────────────────────
+    let body: { code?: string }
     try {
       body = await request.json()
     } catch {
       return NextResponse.json({ error: 'Invalid request body' }, { status: 400 })
     }
 
-    const { child_email, invite_code } = body
-
-    if (!child_email && !invite_code) {
+    const rawCode = (body.code ?? '').toString()
+    if (!rawCode) {
       return NextResponse.json(
-        { error: 'Please provide either a child email or invite code.' },
+        { error: 'A 6-character link code is required.' },
+        { status: 400 }
+      )
+    }
+
+    const code = normalizeLinkCode(rawCode)
+
+    if (!isValidLinkCode(code)) {
+      return NextResponse.json(
+        {
+          error:
+            'That link code looks wrong. Please check with your child and try again.',
+        },
         { status: 400 }
       )
     }
 
     const serviceClient = createServiceRoleClient()
 
-    // ── Find the child user ──────────────────────────────────────────────────
+    // ── Look up the code ─────────────────────────────────────────────────────
+    const { data: linkCode, error: codeErr } = await serviceClient
+      .from('parent_link_codes')
+      .select('id, code, child_id, expires_at, consumed_at')
+      .eq('code', code)
+      .maybeSingle()
 
-    let childUserId: string | null = null
-
-    if (invite_code) {
-      // Look up invite code in parent_links table (pending invites)
-      const { data: pendingLink, error: inviteErr } = await serviceClient
-        .from('parent_child_links')
-        .select('child_id')
-        .eq('invite_code', invite_code)
-        .eq('status', 'pending')
-        .single()
-
-      if (inviteErr || !pendingLink) {
-        return NextResponse.json(
-          { error: 'Invalid or expired invite code.' },
-          { status: 404 }
-        )
-      }
-      childUserId = pendingLink.child_id
-    } else if (child_email) {
-      // Look up child by email in profiles — use a generic error message
-      // to prevent email enumeration attacks
-      const { data: childProfile, error: profileErr } = await serviceClient
-        .from('profiles')
-        .select('id')
-        .eq('email', child_email)
-        .single()
-
-      if (profileErr || !childProfile) {
-        return NextResponse.json(
-          { error: 'If an account exists with that email, a link request has been sent. Ask your child to check their dashboard.' },
-          { status: 200 }
-        )
-      }
-      childUserId = childProfile.id
+    if (codeErr) {
+      console.error('[parent/link-child] code lookup failed:', codeErr)
+      return NextResponse.json(
+        { error: 'Could not verify link code. Please try again.' },
+        { status: 500 }
+      )
     }
 
-    if (!childUserId) {
+    if (!linkCode) {
       return NextResponse.json(
-        { error: 'Could not find child account.' },
+        { error: 'Invalid or expired link code.' },
         { status: 404 }
       )
     }
 
-    // Prevent linking to yourself
+    if (linkCode.consumed_at) {
+      return NextResponse.json(
+        { error: 'This link code has already been used.' },
+        { status: 410 }
+      )
+    }
+
+    if (isLinkCodeExpired(linkCode.expires_at)) {
+      return NextResponse.json(
+        { error: 'This link code has expired. Ask your child for a new one.' },
+        { status: 410 }
+      )
+    }
+
+    const childUserId: string = linkCode.child_id
+
+    // Prevent self-linking
     if (childUserId === user.id) {
       return NextResponse.json(
         { error: 'You cannot link your own account as a child.' },
@@ -109,24 +132,58 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // ── Check for existing link ──────────────────────────────────────────────
-
+    // ── Check for existing active/pending link ───────────────────────────────
     const { data: existingLink } = await serviceClient
       .from('parent_child_links')
-      .select('id')
+      .select('id, status')
       .eq('parent_id', user.id)
       .eq('child_id', childUserId)
-      .in('status', ['active', 'pending'])
-      .single()
+      .maybeSingle()
 
-    if (existingLink) {
+    if (existingLink && existingLink.status === 'active') {
       return NextResponse.json(
-        { error: 'This child account is already linked or has a pending request.' },
+        { error: 'This child account is already linked.' },
         { status: 409 }
       )
     }
 
-    // ── Create the link as pending (requires child approval) ─────────────
+    // ── Enforce Parent tier cap: up to 3 children per parent ─────────────────
+    const { count: activeCount } = await serviceClient
+      .from('parent_child_links')
+      .select('id', { count: 'exact', head: true })
+      .eq('parent_id', user.id)
+      .eq('status', 'active')
+
+    if ((activeCount ?? 0) >= 3) {
+      return NextResponse.json(
+        {
+          error:
+            'Your Parent plan supports up to 3 linked children. Unlink one to add another.',
+        },
+        { status: 409 }
+      )
+    }
+
+    // ── Atomically consume the code and create the active link ──────────────
+    // Supabase JS doesn't expose a single transaction primitive from the
+    // client library — we consume the code first (so it can't be reused)
+    // then insert the link. If the insert fails, a cron cleanup will
+    // collect the orphaned consumed code.
+    const nowIso = new Date().toISOString()
+
+    const { error: consumeErr } = await serviceClient
+      .from('parent_link_codes')
+      .update({ consumed_at: nowIso, consumed_by_parent_id: user.id })
+      .eq('id', linkCode.id)
+      .is('consumed_at', null) // guard against race
+
+    if (consumeErr) {
+      console.error('[parent/link-child] consume failed:', consumeErr)
+      return NextResponse.json(
+        { error: 'Could not redeem link code. Please try again.' },
+        { status: 500 }
+      )
+    }
 
     const { data: link, error: linkError } = await serviceClient
       .from('parent_child_links')
@@ -134,24 +191,25 @@ export async function POST(request: NextRequest) {
         {
           parent_id: user.id,
           child_id: childUserId,
-          status: 'pending',
-          requested_at: new Date().toISOString(),
+          status: 'active',
+          linked_at: nowIso,
+          requested_at: nowIso,
+          link_code_id: linkCode.id,
         },
         { onConflict: 'parent_id,child_id' }
       )
-      .select()
+      .select('id, status, linked_at')
       .single()
 
     if (linkError) {
-      console.error('Failed to create parent-child link request:', linkError)
+      console.error('[parent/link-child] create link failed:', linkError)
       return NextResponse.json(
-        { error: 'Failed to send link request. Please try again.' },
+        { error: 'Failed to create link. Please try again.' },
         { status: 500 }
       )
     }
 
-    // ── Fetch child profile for response ─────────────────────────────────
-
+    // ── Fetch child profile for response ─────────────────────────────────────
     const { data: childProfile } = await serviceClient
       .from('profiles')
       .select('id, full_name, email')
@@ -161,90 +219,16 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({
       success: true,
       link_id: link.id,
-      status: 'pending',
-      message: 'Link request sent. Your child must approve the request before you can view their progress.',
+      status: link.status,
+      linked_at: link.linked_at,
       child: {
-        id: childProfile?.id,
+        id: childProfile?.id ?? childUserId,
         name: childProfile?.full_name ?? 'Student',
-        email: childProfile?.email,
+        email: childProfile?.email ?? null,
       },
     })
   } catch (error) {
-    console.error('Link child error:', error)
-    return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
-    )
-  }
-}
-
-// ── DELETE: Unlink a child account ──────────────────────────────────────────
-
-export async function DELETE(request: NextRequest) {
-  try {
-    const supabase = createServerSupabaseClient()
-    const {
-      data: { user },
-      error: authError,
-    } = await supabase.auth.getUser()
-
-    if (authError || !user) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-    }
-
-    // ── Role check ────────────────────────────────────────────────────────
-    const parentRole = user.user_metadata?.role
-    if (parentRole !== 'parent') {
-      return NextResponse.json(
-        { error: 'Only parent accounts can unlink children.' },
-        { status: 403 }
-      )
-    }
-
-    // ── Parse child_id from request body ──────────────────────────────────
-    let body: { child_id?: string }
-    try {
-      body = await request.json()
-    } catch {
-      return NextResponse.json({ error: 'Invalid request body' }, { status: 400 })
-    }
-
-    const { child_id } = body
-    if (!child_id) {
-      return NextResponse.json(
-        { error: 'child_id is required.' },
-        { status: 400 }
-      )
-    }
-
-    const serviceClient = createServiceRoleClient()
-
-    const { data: updated, error: deleteError } = await serviceClient
-      .from('parent_child_links')
-      .update({ status: 'unlinked', unlinked_at: new Date().toISOString() })
-      .eq('parent_id', user.id)
-      .eq('child_id', child_id)
-      .eq('status', 'active')
-      .select('id')
-
-    if (deleteError) {
-      console.error('Failed to unlink:', deleteError)
-      return NextResponse.json(
-        { error: 'Failed to unlink accounts.' },
-        { status: 500 }
-      )
-    }
-
-    if (!updated || updated.length === 0) {
-      return NextResponse.json(
-        { error: 'No active link found for this child.' },
-        { status: 404 }
-      )
-    }
-
-    return NextResponse.json({ success: true })
-  } catch (error) {
-    console.error('Unlink error:', error)
+    console.error('[parent/link-child] unhandled error:', error)
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

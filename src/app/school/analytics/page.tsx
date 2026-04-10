@@ -15,6 +15,7 @@ import {
   FileText,
   Clock,
   ChevronRight,
+  LineChart,
 } from "lucide-react"
 import { useAuthStore } from "@/store/auth-store"
 import { percentageToGCSEGrade, gcseGradeColor } from "@/lib/grades"
@@ -310,23 +311,33 @@ export default function SchoolAnalyticsPage() {
             </div>
           </div>
 
-          {/* Date range selector */}
-          <div className="flex items-center gap-2">
-            <Calendar className="h-4 w-4 text-muted-foreground shrink-0" />
-            <div className="flex rounded-lg border border-border bg-muted/40 p-0.5 gap-0.5">
-              {(Object.keys(DATE_RANGE_LABELS) as DateRange[]).map((range) => (
-                <button
-                  key={range}
-                  onClick={() => setDateRange(range)}
-                  className={`rounded-md px-3 py-1.5 text-xs font-medium transition-all duration-200 ${
-                    dateRange === range
-                      ? "bg-background text-foreground shadow-sm"
-                      : "text-muted-foreground hover:text-foreground"
-                  }`}
-                >
-                  {DATE_RANGE_LABELS[range]}
-                </button>
-              ))}
+          <div className="flex items-center gap-3">
+            {/* Internal metrics link (NRR for investors) */}
+            <Button asChild variant="outline" size="sm" className="gap-1.5">
+              <Link href="/school/analytics/nrr">
+                <LineChart className="h-4 w-4 text-emerald-400" />
+                Revenue (NRR)
+              </Link>
+            </Button>
+
+            {/* Date range selector */}
+            <div className="flex items-center gap-2">
+              <Calendar className="h-4 w-4 text-muted-foreground shrink-0" />
+              <div className="flex rounded-lg border border-border bg-muted/40 p-0.5 gap-0.5">
+                {(Object.keys(DATE_RANGE_LABELS) as DateRange[]).map((range) => (
+                  <button
+                    key={range}
+                    onClick={() => setDateRange(range)}
+                    className={`rounded-md px-3 py-1.5 text-xs font-medium transition-all duration-200 ${
+                      dateRange === range
+                        ? "bg-background text-foreground shadow-sm"
+                        : "text-muted-foreground hover:text-foreground"
+                    }`}
+                  >
+                    {DATE_RANGE_LABELS[range]}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         </div>

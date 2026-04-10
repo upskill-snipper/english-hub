@@ -1,0 +1,83 @@
+"use client";
+
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
+
+export interface AOScore {
+  /** e.g. "AO1" */
+  code: string;
+  /** Short description of the assessment objective */
+  label: string;
+  /** Marks awarded */
+  score: number;
+  /** Maximum marks available */
+  max: number;
+}
+
+export interface AOBreakdownProps {
+  scores: AOScore[];
+  className?: string;
+}
+
+/**
+ * Assessment Objective bar chart.
+ * Renders a labelled bar for each AO using theme tokens only.
+ */
+export function AOBreakdown({ scores, className }: AOBreakdownProps) {
+  return (
+    <Card className={cn(className)}>
+      <CardHeader>
+        <CardTitle>Assessment Objectives</CardTitle>
+      </CardHeader>
+      <CardContent className="space-y-4">
+        {scores.map((ao) => {
+          const pct = Math.round((ao.score / ao.max) * 100);
+          return (
+            <div key={ao.code} className="space-y-1.5">
+              <div className="flex items-baseline justify-between gap-2">
+                <div className="flex items-baseline gap-2">
+                  <span className="font-heading text-sm font-bold text-foreground">
+                    {ao.code}
+                  </span>
+                  <span className="text-xs text-muted-foreground">
+                    {ao.label}
+                  </span>
+                </div>
+                <span className="font-mono text-sm font-semibold tabular-nums text-foreground">
+                  {ao.score}
+                  <span className="text-muted-foreground">/{ao.max}</span>
+                </span>
+              </div>
+              <div
+                className="h-2 w-full overflow-hidden rounded-full bg-muted"
+                role="progressbar"
+                aria-valuenow={ao.score}
+                aria-valuemin={0}
+                aria-valuemax={ao.max}
+                aria-label={`${ao.code} ${ao.label}`}
+              >
+                <div
+                  className="h-full rounded-full bg-primary transition-[width] duration-700 ease-out"
+                  style={{ width: `${pct}%` }}
+                />
+              </div>
+              <p className="text-xs text-muted-foreground">
+                {pct}% — {bandLabel(pct)}
+              </p>
+            </div>
+          );
+        })}
+      </CardContent>
+    </Card>
+  );
+}
+
+function bandLabel(pct: number): string {
+  if (pct >= 85) return "Perceptive / conceptualised";
+  if (pct >= 70) return "Thoughtful / developed";
+  if (pct >= 55) return "Clear / relevant";
+  if (pct >= 40) return "Some / attempted";
+  return "Simple / limited";
+}
+
+export default AOBreakdown;

@@ -1,0 +1,9 @@
+Request ID,Request Date,Request Type,Data Subject Name,Data Subject Email,Data Subject Role,School/Account,Verification Method,Verified Date,Received Channel,Request Summary,Assigned To,Status,Due Date,Completed Date,Extension Invoked,Outcome,Data Exported (bytes/format),Data Deleted (summary),Third Parties Notified,Notes,Record Retention Until
+EH-DSR-0001,[REPLACE WITH DATE],SAR,[REPLACE],[REPLACE],Student,[REPLACE],Email confirm + school verify,[REPLACE WITH DATE],privacy@englishhub.tld,Example: full copy of account data,DPO,Received,[REPLACE +1 month],,No,,,,,Example row - delete before use,[REPLACE +3 years]
+EH-DSR-0002,,Erasure,,,Parent,,,,,,,,,,,,,,,,
+EH-DSR-0003,,Rectification,,,Student,,,,,,,,,,,,,,,,
+EH-DSR-0004,,Portability,,,Student,,,,,,,,,,,,,,,,
+EH-DSR-0005,,Objection,,,Parent,,,,,,,,,,,,,,,,
+EH-DSR-0006,,Restriction,,,Student,,,,,,,,,,,,,,,,
+EH-DSR-0007,,Automated-decision,,,Student,,,,,,,,,,,,,,,,
+EH-DSR-0008,,Consent-withdrawal,,,Parent,,,,,,,,,,,,,,,,

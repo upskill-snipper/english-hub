@@ -1,0 +1,5 @@
+contributor_id,full_legal_name,known_as,position_title,awarding_organisations,subject_and_specification,role_type,years_of_experience,first_engagement_date,status,agreement_type,agreement_signed,agreement_signed_date,agreement_location,ip_assignment_in_place,retrospective_assignment_required,retrospective_assignment_signed,marketing_rights_granted,cv_on_file,exam_board_evidence,verification_method,verification_date,verified_by,photograph_on_file,biography_on_file,current_examiner_appointment,can_be_named_in_marketing,notes,last_reviewed_date,reviewed_by
+EH-001,,,,,,,,,ACTIVE,,N,,,N,Y,N,N,N,,,,,N,N,N,N,"Example: currently writing Paper 1 commentary",,
+EH-002,,,,,,,,,HISTORIC,,N,,,N,Y,N,N,N,,,,,N,N,N,N,"Example: wrote three practice papers 2023, no contract — needs retrospective assignment urgently",,
+EH-003,,,,,,,,,ADVISOR,,N,,,N,N,N,N,N,,,,,N,N,N,N,"Example: sits on advisory board, no content contributions",,
+EH-004,,,,,,,,,PROSPECT,,N,,,N,N,N,N,N,,,,,N,N,N,N,"Example: in conversation, no work yet",,

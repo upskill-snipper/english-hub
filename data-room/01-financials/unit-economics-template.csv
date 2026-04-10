@@ -1,0 +1,20 @@
+Metric,Definition,Formula,Segment: Individual,Segment: School/B2B,Blended,Target,Notes
+ACV,Average annual contract value,Total ARR / Paying customers,,,,,
+ARPU (monthly),Average revenue per user per month,MRR / Paying customers,,,,,
+Gross margin %,Gross profit as % of revenue,(Revenue - COGS) / Revenue,,,,,
+Monthly logo churn %,% of customers lost per month,Churned logos / Starting logos,,,,,
+Annual logo churn %,Annualised logo churn,1 - (1 - monthly churn)^12,,,,,
+Monthly gross revenue churn %,% of MRR lost per month (before expansion),Churned MRR / Starting MRR,,,,,
+Monthly net revenue churn %,% of MRR lost per month (after expansion),(Churned - Expansion) / Starting MRR,,,,,
+Net dollar retention (NRR) %,Retention including expansion from existing customers,(Starting MRR + Expansion - Contraction - Churn) / Starting MRR,,,,,
+CAC,Fully-loaded customer acquisition cost,(S&M spend + tooling + salaries) / New customers,,,,,
+Blended CAC,Across all channels,,,,,,
+Paid CAC,Paid channels only,,,,,,
+Organic CAC,Organic channels only,,,,,,
+LTV (simple),Lifetime value,ACV * Gross margin / Monthly churn,,,,,
+LTV (cohort),Lifetime value from cohort retention curves,Sum of cohort revenue over life,,,,,
+LTV / CAC,Ratio,LTV / CAC,,,,,3.0x or higher is healthy for SaaS
+CAC payback (months),Months to recover CAC at contribution margin,CAC / (ACV * Gross margin / 12),,,,,Under 12 months is healthy
+Magic number,Sales efficiency,(Change in ARR * 4) / S&M spend in prior quarter,,,,,Above 0.75 is healthy
+Rule of 40,Growth + profitability,Growth rate % + EBITDA margin %,,,,,40 or higher is healthy
+Burn multiple,Efficiency of burn,Net burn / Net new ARR,,,,,Under 2.0 is good
