@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
+import { useBoard } from "@/hooks/useBoard";
+import { getBoardConfig, type ExamBoard } from "@/lib/board/board-config";
 
 /* ─── Types ──────────────────────────────────────────────────── */
 
@@ -18,6 +20,7 @@ type Board = {
   color: string;
   accent: string;
   icon: string;
+  examBoards: ExamBoard[];
 };
 
 /* ─── Data ───────────────────────────────────────────────────── */
@@ -39,6 +42,7 @@ const BOARDS: Board[] = [
     color: "border-primary",
     accent: "bg-primary",
     icon: "A",
+    examBoards: ["aqa"],
   },
   {
     slug: "edexcel",
@@ -56,6 +60,7 @@ const BOARDS: Board[] = [
     color: "border-primary",
     accent: "bg-primary",
     icon: "E",
+    examBoards: ["edexcel", "edexcel-igcse"],
   },
   {
     slug: "caie",
@@ -73,6 +78,7 @@ const BOARDS: Board[] = [
     color: "border-primary",
     accent: "bg-primary",
     icon: "C",
+    examBoards: ["cambridge-0500", "cambridge-0990"],
   },
   {
     slug: "ocr",
@@ -90,6 +96,7 @@ const BOARDS: Board[] = [
     color: "border-primary",
     accent: "bg-primary",
     icon: "O",
+    examBoards: ["ocr"],
   },
   {
     slug: "wjec",
@@ -107,6 +114,7 @@ const BOARDS: Board[] = [
     color: "border-primary",
     accent: "bg-primary",
     icon: "W",
+    examBoards: ["eduqas"],
   },
 ];
 
@@ -286,6 +294,20 @@ function SkillIcon({ icon }: { icon: string }) {
 export default function EnglishLanguagePage() {
   const [finderStep, setFinderStep] = useState<number | null>(null);
   const [finderResult, setFinderResult] = useState<string[] | null>(null);
+  const { board, isHydrated } = useBoard();
+  const boardConfig = getBoardConfig(board);
+
+  // Render nothing while the client board store is rehydrating so we don't
+  // briefly flash content for a different board.
+  if (!isHydrated) {
+    return null;
+  }
+
+  // STRICT filter: if the user has selected an exam board, only show the
+  // resources/sections that belong to that board.
+  const visibleBoards = board
+    ? BOARDS.filter((b) => b.examBoards.includes(board))
+    : BOARDS;
 
   const handleFinderOption = (boards: string[]) => {
     setFinderResult(boards);
@@ -315,6 +337,13 @@ export default function EnglishLanguagePage() {
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             English Language
           </h1>
+          {boardConfig && (
+            <div className="mt-4 flex justify-center">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+                For {boardConfig.shortName}
+              </span>
+            </div>
+          )}
           <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">
             Master reading analysis, creative writing, and transactional writing with comprehensive
             revision resources tailored to your exam board. Covering all five major boards with
@@ -384,19 +413,28 @@ export default function EnglishLanguagePage() {
       </section>
 
       {/* ─── Board Selection Cards ────────────────────────────── */}
+      {visibleBoards.length > 0 && (
       <section id="boards" className="mx-auto max-w-5xl px-4 pb-12 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-foreground">Select your exam board</h2>
+        <h2 className="text-2xl font-bold text-foreground">
+          {board ? "Your exam board" : "Select your exam board"}
+        </h2>
         <p className="mt-2 text-muted-foreground">
-          Choose your exam board below to access board-specific revision resources, mark schemes,
-          and exam tips. Not sure which board you study? Use our{" "}
-          <a href="#board-finder" className="font-medium text-primary underline underline-offset-2 hover:text-foreground">
-            board finder
-          </a>{" "}
-          below.
+          {board
+            ? "You're viewing resources for your chosen exam board only."
+            : (
+              <>
+                Choose your exam board below to access board-specific revision resources, mark schemes,
+                and exam tips. Not sure which board you study? Use our{" "}
+                <a href="#board-finder" className="font-medium text-primary underline underline-offset-2 hover:text-foreground">
+                  board finder
+                </a>{" "}
+                below.
+              </>
+            )}
         </p>
 
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {BOARDS.map((board) => (
+          {visibleBoards.map((board) => (
             <Link
               key={board.slug}
               href={`/resources/english-language/${board.slug}`}
@@ -431,8 +469,10 @@ export default function EnglishLanguagePage() {
           ))}
         </div>
       </section>
+      )}
 
       {/* ─── Board Finder Helper ──────────────────────────────── */}
+      {!board && (
       <section id="board-finder" className="bg-muted px-4 py-12">
         <div className="mx-auto max-w-3xl">
           <div className="flex items-center gap-3">
@@ -518,6 +558,7 @@ export default function EnglishLanguagePage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* ─── Common Skills Across All Boards ─────────────────── */}
       <section className="bg-muted px-4 py-12">
@@ -617,13 +658,14 @@ export default function EnglishLanguagePage() {
       </section>
 
       {/* ─── Quick Board Links Bar ────────────────────────────── */}
+      {visibleBoards.length > 0 && (
       <section className="border-t border-border bg-card px-4 py-8">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-center text-lg font-bold text-foreground">
-            Jump to your board
+            {board ? "Your exam board" : "Jump to your board"}
           </h2>
           <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
-            {BOARDS.map((board) => (
+            {visibleBoards.map((board) => (
               <Link
                 key={board.slug}
                 href={`/resources/english-language/${board.slug}`}
@@ -635,6 +677,7 @@ export default function EnglishLanguagePage() {
           </div>
         </div>
       </section>
+      )}
 
       <ExamBoardDisclaimer />
     </>

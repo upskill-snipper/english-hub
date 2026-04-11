@@ -190,15 +190,19 @@ export function PoetryHubClient() {
   const { board, isHydrated } = useBoard();
   const boardConfig = getBoardConfig(board);
 
-  // Determine which anthology sections to show based on board.
-  // Default (no board / hydrating): show AQA, Edexcel, and Eduqas.
-  const showAQA = !board || board === "aqa";
-  const showEdexcel = !board || board === "edexcel";
-  const showEduqas = !board || board === "eduqas";
-  const showOCR = board === "ocr";
-  const showEdexcelIgcse = board === "edexcel-igcse";
+  // STRICT board filtering: once hydrated, only render the anthology
+  // section that matches the user's selected board. While rehydrating we
+  // render nothing board-specific to avoid leaking the wrong content.
+  // If no board is set (fresh visitor), show AQA + Edexcel + Eduqas as
+  // the default "something useful to look at" set.
+  const showAQA = isHydrated && (!board || board === "aqa");
+  const showEdexcel = isHydrated && (!board || board === "edexcel");
+  const showEduqas = isHydrated && (!board || board === "eduqas");
+  const showOCR = isHydrated && board === "ocr";
+  const showEdexcelIgcse = isHydrated && board === "edexcel-igcse";
   // Cambridge IGCSE has no set poetry anthology
-  const noAnthology = board === "cambridge-0500" || board === "cambridge-0990";
+  const noAnthology =
+    isHydrated && (board === "cambridge-0500" || board === "cambridge-0990");
 
   return (
     <>

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
+import { getServerBoard } from "@/lib/board/get-server-board";
+import { getBoardConfig, type ExamBoard } from "@/lib/board/board-config";
 
 export const metadata: Metadata = {
   title: "English Literature Revision — GCSE & IGCSE | The English Hub",
@@ -34,7 +36,17 @@ const CORE_SKILLS = [
   "Essay planning and exam technique",
 ];
 
-const TEXT_GUIDES = [
+type TextGuide = {
+  title: string;
+  author: string;
+  genre: string;
+  description: string;
+  href: string;
+  themes: string[];
+  boards: ExamBoard[];
+};
+
+const TEXT_GUIDES: TextGuide[] = [
   {
     title: "Macbeth",
     author: "William Shakespeare",
@@ -43,6 +55,7 @@ const TEXT_GUIDES = [
       "Ambition, guilt, and the supernatural. Explore the Macbeths' descent into tyranny with act-by-act summaries, character analysis, and 20+ key quotations.",
     href: "/resources/english-literature/aqa/macbeth",
     themes: ["Ambition", "Guilt", "The Supernatural", "Kingship"],
+    boards: ["aqa", "edexcel", "ocr", "eduqas", "edexcel-igcse"],
   },
   {
     title: "Romeo and Juliet",
@@ -52,6 +65,7 @@ const TEXT_GUIDES = [
       "Love, fate, and family conflict in Verona. Study the play's dramatic structure, character arcs, and Shakespeare's use of light and dark imagery.",
     href: "/resources/english-literature/aqa/romeo-and-juliet",
     themes: ["Love", "Fate", "Conflict", "Family"],
+    boards: ["aqa", "edexcel", "ocr", "eduqas", "edexcel-igcse"],
   },
   {
     title: "A Christmas Carol",
@@ -61,6 +75,7 @@ const TEXT_GUIDES = [
       "Dickens' powerful critique of Victorian society through Scrooge's transformation. Stave-by-stave analysis, character studies, and contextual links to poverty and philanthropy.",
     href: "/resources/english-literature/aqa/christmas-carol",
     themes: ["Redemption", "Social Responsibility", "Poverty", "Christmas"],
+    boards: ["aqa", "edexcel", "eduqas"],
   },
   {
     title: "An Inspector Calls",
@@ -70,6 +85,7 @@ const TEXT_GUIDES = [
       "Priestley's socialist message delivered through a gripping mystery. Examine how each Birling is exposed and what the Inspector represents.",
     href: "/resources/english-literature/aqa/inspector-calls",
     themes: ["Social Responsibility", "Class", "Gender", "Generations"],
+    boards: ["aqa", "edexcel", "ocr", "eduqas", "edexcel-igcse"],
   },
   {
     title: "Jekyll and Hyde",
@@ -79,6 +95,7 @@ const TEXT_GUIDES = [
       "Duality, repression, and Victorian hypocrisy. Analyse how Stevenson uses the Gothic genre to explore the conflict between civilisation and primal instinct.",
     href: "/resources/english-literature/aqa/jekyll-and-hyde",
     themes: ["Duality", "Repression", "Science", "Victorian Society"],
+    boards: ["aqa", "edexcel", "ocr", "eduqas"],
   },
   {
     title: "Lord of the Flies",
@@ -88,6 +105,7 @@ const TEXT_GUIDES = [
       "Civilisation versus savagery on a deserted island. Explore Golding's allegorical novel through character symbolism, key episodes, and post-war context.",
     href: "/resources/english-literature/edexcel/lord-of-the-flies",
     themes: ["Civilisation vs Savagery", "Power", "Fear", "Innocence"],
+    boards: ["aqa", "ocr", "eduqas"],
   },
   {
     title: "Animal Farm",
@@ -97,6 +115,7 @@ const TEXT_GUIDES = [
       "Orwell's biting political allegory of the Russian Revolution. Study how the pigs' rise to power mirrors totalitarian regimes and corrupts ideals of equality.",
     href: "/resources/english-literature/edexcel/animal-farm",
     themes: ["Power", "Corruption", "Propaganda", "Equality"],
+    boards: ["aqa", "edexcel", "ocr"],
   },
   {
     title: "To Kill a Mockingbird",
@@ -106,38 +125,56 @@ const TEXT_GUIDES = [
       "Racial injustice in 1930s Alabama seen through a child's eyes. Analyse Atticus Finch's moral courage, Scout's coming of age, and Lee's use of narrative perspective.",
     href: "/resources/english-literature/caie/to-kill-a-mockingbird",
     themes: ["Racial Injustice", "Moral Courage", "Innocence", "Empathy"],
+    boards: ["edexcel-igcse", "cambridge-0500", "cambridge-0990"],
   },
 ];
 
-const POETRY_SECTIONS = [
+type PoetrySection = {
+  title: string;
+  description: string;
+  href: string;
+  boards: ExamBoard[];
+};
+
+const POETRY_SECTIONS: PoetrySection[] = [
   {
     title: "AQA Power and Conflict",
     description: "All 15 poems with stanza-by-stanza analysis, techniques, themes, and comparison pairs.",
     href: "/resources/english-literature/aqa/poetry",
+    boards: ["aqa"],
   },
   {
     title: "Edexcel Relationships and Conflict",
     description: "Detailed notes on both Edexcel poetry clusters with comparison frameworks.",
     href: "/resources/english-literature/edexcel/poetry",
+    boards: ["edexcel"],
   },
   {
     title: "OCR Poetry Anthology",
     description: "Love and Relationships plus Conflict poetry with analytical breakdowns.",
     href: "/resources/english-literature/ocr/poetry",
+    boards: ["ocr"],
   },
   {
     title: "CAIE Songs of Ourselves",
     description: "Poems from Volume 1 and Volume 2, with line-by-line annotation and context.",
     href: "/resources/english-literature/caie/songs-of-ourselves-v1",
+    boards: ["cambridge-0500", "cambridge-0990"],
   },
 ];
 
-const EXAM_INFO_LINKS = [
-  { name: "AQA (8702)", href: "/resources/english-literature/aqa" },
-  { name: "Edexcel (1ET0)", href: "/resources/english-literature/edexcel" },
-  { name: "OCR (J352)", href: "/resources/english-literature/ocr" },
-  { name: "WJEC Eduqas (C720QS)", href: "/resources/english-literature/wjec" },
-  { name: "Cambridge IGCSE (0475)", href: "/resources/english-literature/caie" },
+type ExamInfoLink = {
+  name: string;
+  href: string;
+  boards: ExamBoard[];
+};
+
+const EXAM_INFO_LINKS: ExamInfoLink[] = [
+  { name: "AQA (8702)", href: "/resources/english-literature/aqa", boards: ["aqa"] },
+  { name: "Edexcel (1ET0)", href: "/resources/english-literature/edexcel", boards: ["edexcel", "edexcel-igcse"] },
+  { name: "OCR (J352)", href: "/resources/english-literature/ocr", boards: ["ocr"] },
+  { name: "WJEC Eduqas (C720QS)", href: "/resources/english-literature/wjec", boards: ["eduqas"] },
+  { name: "Cambridge IGCSE (0475)", href: "/resources/english-literature/caie", boards: ["cambridge-0500", "cambridge-0990"] },
 ];
 
 const ESSAY_TIPS = [
@@ -287,7 +324,19 @@ function SparklesIcon() {
 
 /* ─── Page ───────────────────────────────────────────────────── */
 
-export default function EnglishLiteraturePage() {
+export default async function EnglishLiteraturePage() {
+  const board = await getServerBoard();
+  const boardConfig = getBoardConfig(board);
+  const textGuides = board
+    ? TEXT_GUIDES.filter((g) => g.boards.includes(board))
+    : TEXT_GUIDES;
+  const poetrySections = board
+    ? POETRY_SECTIONS.filter((s) => s.boards.includes(board))
+    : POETRY_SECTIONS;
+  const examInfoLinks = board
+    ? EXAM_INFO_LINKS.filter((l) => l.boards.includes(board))
+    : EXAM_INFO_LINKS;
+
   return (
     <>
       {/* ── Hero ─────────────────────────────────────────────── */}
@@ -299,6 +348,13 @@ export default function EnglishLiteraturePage() {
           <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
             English Literature
           </h1>
+          {boardConfig && (
+            <div className="mt-4 flex justify-center">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+                For {boardConfig.shortName}
+              </span>
+            </div>
+          )}
           <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">
             In-depth study guides for Shakespeare, prose, drama, and poetry.
             Character analysis, theme breakdowns, key quotations, essay
@@ -354,6 +410,7 @@ export default function EnglishLiteraturePage() {
       </section>
 
       {/* ── Set Text Study Guides ────────────────────────────── */}
+      {textGuides.length > 0 && (
       <section className="mx-auto max-w-5xl px-4 pb-12 sm:px-6 lg:px-8">
         <h2 className="text-2xl font-bold text-foreground">
           Set text study guides
@@ -365,7 +422,7 @@ export default function EnglishLiteraturePage() {
         </p>
 
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {TEXT_GUIDES.map((guide) => (
+          {textGuides.map((guide) => (
             <Link
               key={guide.title}
               href={guide.href}
@@ -403,8 +460,10 @@ export default function EnglishLiteraturePage() {
           ))}
         </div>
       </section>
+      )}
 
       {/* ── Poetry Anthologies ───────────────────────────────── */}
+      {poetrySections.length > 0 && (
       <section className="bg-muted px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-5xl">
           <h2 className="text-2xl font-bold text-foreground">
@@ -416,7 +475,7 @@ export default function EnglishLiteraturePage() {
           </p>
 
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
-            {POETRY_SECTIONS.map((section) => (
+            {poetrySections.map((section) => (
               <Link
                 key={section.title}
                 href={section.href}
@@ -438,6 +497,7 @@ export default function EnglishLiteraturePage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* ── Essay Writing Tips ───────────────────────────────── */}
       <section className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
@@ -578,6 +638,7 @@ export default function EnglishLiteraturePage() {
       </section>
 
       {/* ── Exam Board Information ───────────────────────────── */}
+      {examInfoLinks.length > 0 && (
       <section className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
         <h2 className="text-2xl font-bold text-foreground">
           Board-specific exam information
@@ -590,14 +651,14 @@ export default function EnglishLiteraturePage() {
         </p>
 
         <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {EXAM_INFO_LINKS.map((board) => (
+          {examInfoLinks.map((info) => (
             <Link
-              key={board.name}
-              href={board.href}
+              key={info.name}
+              href={info.href}
               className="group flex items-center justify-between rounded-lg border border-border bg-card px-5 py-4 transition hover:border-primary/40 hover:shadow-sm"
             >
               <span className="font-semibold text-foreground group-hover:text-primary transition-colors">
-                {board.name}
+                {info.name}
               </span>
               <ArrowRight />
             </Link>
@@ -609,6 +670,7 @@ export default function EnglishLiteraturePage() {
           textbook or your exam entry paperwork for the specification code.
         </p>
       </section>
+      )}
 
       {/* ── Top 5 Literature Exam Tips ───────────────────────── */}
       <section className="bg-muted px-4 py-12 sm:px-6 lg:px-8">

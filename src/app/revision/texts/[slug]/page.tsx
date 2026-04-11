@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { notFound } from 'next/navigation'
+import { notFound, redirect } from 'next/navigation'
 import Link from 'next/link'
 import {
   ArrowLeft,
@@ -17,7 +17,8 @@ import {
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { SET_TEXTS, getSetText, type SetText } from '@/lib/board/set-texts'
+import { SET_TEXTS, getSetText, textAvailableForBoard, type SetText } from '@/lib/board/set-texts'
+import { getServerBoard } from '@/lib/board/get-server-board'
 
 // ─── Static params ──────────────────────────────────────────────────────────
 
@@ -119,6 +120,14 @@ export default async function TextStudyGuidePage({
   params: Promise<Params>
 }) {
   const { slug } = await params
+
+  // ── Board guard (STRICT) ────────────────────────────────────────────
+  // Redirect to the texts hub if the user's board does not study this text.
+  const board = await getServerBoard()
+  if (board && !textAvailableForBoard(slug, board)) {
+    redirect('/revision/texts')
+  }
+
   const text = getSetText(slug)
 
   if (!text) {

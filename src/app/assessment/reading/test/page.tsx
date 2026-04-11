@@ -200,6 +200,12 @@ function AgeInputPhase({
 
 // ─── Passage Reading Phase ───────────────────────────────────────────────────
 
+// Maximum plausible reading speed (words per minute). Even exceptional adult
+// readers rarely exceed 450 WPM with comprehension. We use 600 WPM as the
+// hard floor for "how fast someone could physically have read this" to guard
+// against users who click "finished" immediately without reading.
+const MAX_PLAUSIBLE_WPM = 600
+
 function PassagePhase({
   passage,
   onFinishReading,
@@ -211,6 +217,26 @@ function PassagePhase({
   startTime: number | null
   elapsedOffset?: number
 }) {
+  // Minimum seconds required before the "finished reading" button is enabled.
+  // Based on 600 WPM (10 words per second) which is FAR above natural reading.
+  const minReadSeconds = Math.max(10, Math.ceil(passage.wordCount / 10))
+
+  const [elapsedSeconds, setElapsedSeconds] = useState(Math.floor(elapsedOffset))
+
+  useEffect(() => {
+    if (!startTime) {
+      setElapsedSeconds(Math.floor(elapsedOffset))
+      return
+    }
+    const interval = setInterval(() => {
+      setElapsedSeconds(Math.floor(elapsedOffset + (Date.now() - startTime) / 1000))
+    }, 250)
+    return () => clearInterval(interval)
+  }, [startTime, elapsedOffset])
+
+  const canFinish = elapsedSeconds >= minReadSeconds
+  const secondsRemaining = Math.max(0, minReadSeconds - elapsedSeconds)
+
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
@@ -239,12 +265,18 @@ function PassagePhase({
         </CardContent>
       </Card>
 
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between gap-4">
         <div className="flex items-center gap-2 text-xs text-white/40">
           <Clock className="h-3.5 w-3.5" />
-          <span>Read the passage carefully. You cannot return to it once you start the questions.</span>
+          {canFinish ? (
+            <span>Read carefully — you cannot return once you start the questions.</span>
+          ) : (
+            <span>
+              Take your time to read properly. Button unlocks in {secondsRemaining}s.
+            </span>
+          )}
         </div>
-        <Button onClick={onFinishReading}>
+        <Button onClick={onFinishReading} disabled={!canFinish}>
           I have finished reading
           <ArrowRight className="h-4 w-4 ml-2" />
         </Button>
@@ -487,17 +519,32 @@ function CeilingReachedPhase({ onContinue }: { onContinue: () => void }) {
 
 // ─── Main Test Component ─────────────────────────────────────────────────────
 
+// Fisher-Yates shuffle — returns a new array, does not mutate the input
+function shuffle<T>(items: readonly T[]): T[] {
+  const result = [...items]
+  for (let i = result.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[result[i], result[j]] = [result[j], result[i]]
+  }
+  return result
+}
+
 export default function ReadingTestPage() {
   const router = useRouter()
 
-  // Select a subset of passages to use (levels 1-10, picking representative ones)
-  // We use all 10 passages for a thorough assessment
-  const passages = READING_PASSAGES
-
-  // Select decoding words — sample across levels
-  const decodingWordSet = useRef(
-    DECODING_WORDS.filter((_, i) => i % 2 === 0).slice(0, 24)
+  // Per-session randomization: each time a student starts the test, the
+  // questions within each passage are shuffled and the decoding word pool
+  // is resampled, so repeated attempts don't just memorize the answers.
+  // Passages themselves stay in level order so the ceiling rule works.
+  const passages = useRef(
+    READING_PASSAGES.map((p) => ({
+      ...p,
+      questions: shuffle(p.questions),
+    }))
   ).current
+
+  // Randomize decoding words on each test start — pick 24 words across all levels
+  const decodingWordSet = useRef(shuffle(DECODING_WORDS).slice(0, 24)).current
 
   const [state, setState] = useState<TestState>({
     phase: "age-input",

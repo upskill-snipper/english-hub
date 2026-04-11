@@ -224,6 +224,13 @@ function scoreDecoding(
   }
 }
 
+// Cap WPM at a realistic maximum — even exceptional adult readers with full
+// comprehension rarely exceed 450 WPM. Speed readers and skimmers may hit
+// 700+ but comprehension drops dramatically above 500. We cap at 450 so the
+// reading-age norms table (which maps WPM to age) stays within the range
+// it was designed for.
+const MAX_FLUENCY_WPM = 450
+
 function scoreFluency(
   timings: FluencyTiming[]
 ): { wordsPerMinute: number; accuracy: number; adjustedWpm: number } {
@@ -231,13 +238,17 @@ function scoreFluency(
     return { wordsPerMinute: 0, accuracy: 0, adjustedWpm: 0 }
   }
 
-  // Average across all timed passages
+  // Average across all timed passages. Each passage's WPM is individually
+  // capped so one suspiciously-fast passage can't skew the average upward.
   let totalWpm = 0
   let totalAccuracy = 0
 
   for (const timing of timings) {
     const minutes = timing.readingTimeSeconds / 60
-    const wpm = minutes > 0 ? timing.wordCount / minutes : 0
+    const rawWpm = minutes > 0 ? timing.wordCount / minutes : 0
+    // Cap individual passage WPM — any reading faster than this is gaming
+    // the button (clicking "finished" too quickly) rather than genuine fluency.
+    const wpm = Math.min(rawWpm, MAX_FLUENCY_WPM)
     const accuracy =
       timing.wordCount > 0 ? timing.wordsCorrect / timing.wordCount : 0
 
@@ -247,10 +258,10 @@ function scoreFluency(
 
   const avgWpm = totalWpm / timings.length
   const avgAccuracy = totalAccuracy / timings.length
-  const adjustedWpm = avgWpm * avgAccuracy
+  const adjustedWpm = Math.min(avgWpm * avgAccuracy, MAX_FLUENCY_WPM)
 
   return {
-    wordsPerMinute: Math.round(avgWpm),
+    wordsPerMinute: Math.round(Math.min(avgWpm, MAX_FLUENCY_WPM)),
     accuracy: Math.round(avgAccuracy * 100),
     adjustedWpm: Math.round(adjustedWpm),
   }

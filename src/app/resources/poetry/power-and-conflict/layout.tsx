@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { WrongBoardBanner } from '@/components/board/WrongBoardBanner'
 
 export const metadata: Metadata = {
   title: 'Power and Conflict Poetry Anthology',
@@ -13,5 +14,14 @@ export const metadata: Metadata = {
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return children
+  return (
+    <>
+      <WrongBoardBanner
+        contentBoards={['aqa']}
+        contentName="the AQA Power and Conflict poetry anthology"
+        redirectTo="/resources/poetry"
+      />
+      {children}
+    </>
+  )
 }
