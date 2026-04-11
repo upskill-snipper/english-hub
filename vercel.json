@@ -4,6 +4,11 @@
   "devCommand": "npm run dev",
   "installCommand": "npm install --legacy-peer-deps",
   "regions": ["lhr1"],
+  "build": {
+    "env": {
+      "NODE_OPTIONS": "--max-old-space-size=8192"
+    }
+  },
   "crons": [
     {
       "path": "/api/cron/affiliate-confirm",
