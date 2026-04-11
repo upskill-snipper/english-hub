@@ -73,111 +73,196 @@ const WORD_SCRAMBLE_WORDS = [
   { word: 'DENOUEMENT', hint: 'The final resolution of a story' },
 ]
 
-const QUOTE_MATCH_DATA = [
-  {
-    quote: '"To be, or not to be, that is the question."',
-    answer: 'Hamlet - William Shakespeare',
-    options: ['Hamlet - William Shakespeare', 'Macbeth - William Shakespeare', 'Othello - William Shakespeare', 'King Lear - William Shakespeare'],
-  },
-  {
-    quote: '"It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife."',
-    answer: 'Pride and Prejudice - Jane Austen',
-    options: ['Pride and Prejudice - Jane Austen', 'Emma - Jane Austen', 'Sense and Sensibility - Jane Austen', 'Jane Eyre - Charlotte Brontë'],
-  },
-  {
-    quote: '"All animals are equal, but some animals are more equal than others."',
-    answer: 'Animal Farm - George Orwell',
-    options: ['Animal Farm - George Orwell', '1984 - George Orwell', 'Lord of the Flies - William Golding', 'Brave New World - Aldous Huxley'],
-  },
-  {
-    quote: '"The creature was not dead, not indeed wholly alive."',
-    answer: 'Frankenstein - Mary Shelley',
-    options: ['Dracula - Bram Stoker', 'Frankenstein - Mary Shelley', 'The Strange Case of Dr Jekyll and Mr Hyde - R.L. Stevenson', 'The Woman in Black - Susan Hill'],
-  },
+// Curriculum-only quote bank. Every entry is tagged with the GCSE/IGCSE
+// boards that actually study the text. Non-curriculum texts (Harry Potter,
+// Stephen King, Jane Austen outside Pride and Prejudice, etc.) are NOT
+// included — students should only see quotes from their own set texts.
+type QuoteItem = {
+  quote: string
+  textSlug: string // canonical slug from @/lib/board/set-texts
+  answer: string
+  options: string[]
+}
+
+const QUOTE_MATCH_DATA: QuoteItem[] = [
+  // ── Macbeth (AQA, Edexcel, OCR, Eduqas, Edexcel IGCSE) ────────────────────
   {
     quote: '"Is this a dagger which I see before me, the handle toward my hand?"',
-    answer: 'Macbeth - William Shakespeare',
-    options: ['Hamlet - William Shakespeare', 'Macbeth - William Shakespeare', 'Julius Caesar - William Shakespeare', 'Romeo and Juliet - William Shakespeare'],
-  },
-  {
-    quote: '"Big Brother is watching you."',
-    answer: '1984 - George Orwell',
-    options: ['Animal Farm - George Orwell', 'Brave New World - Aldous Huxley', '1984 - George Orwell', 'The Handmaid\'s Tale - Margaret Atwood'],
-  },
-  {
-    quote: '"I think it better that in times like these a poet\'s mouth be silent."',
-    answer: 'On Being Asked for a War Poem - W.B. Yeats',
-    options: ['Dulce et Decorum Est - Wilfred Owen', 'On Being Asked for a War Poem - W.B. Yeats', 'The Soldier - Rupert Brooke', 'Anthem for Doomed Youth - Wilfred Owen'],
-  },
-  {
-    quote: '"Do I dare disturb the universe?"',
-    answer: 'The Love Song of J. Alfred Prufrock - T.S. Eliot',
-    options: ['The Waste Land - T.S. Eliot', 'The Love Song of J. Alfred Prufrock - T.S. Eliot', 'Ozymandias - Percy Bysshe Shelley', 'Invictus - W.E. Henley'],
-  },
-  {
-    quote: '"If music be the food of love, play on."',
-    answer: 'Twelfth Night - William Shakespeare',
-    options: ['A Midsummer Night\'s Dream - William Shakespeare', 'Romeo and Juliet - William Shakespeare', 'Twelfth Night - William Shakespeare', 'The Tempest - William Shakespeare'],
-  },
-  {
-    quote: '"The man in black fled across the desert, and the gunslinger followed."',
-    answer: 'The Dark Tower - Stephen King',
-    options: ['The Dark Tower - Stephen King', 'Dune - Frank Herbert', 'Blood Meridian - Cormac McCarthy', 'The Road - Cormac McCarthy'],
-  },
-  {
-    quote: '"Reader, I married him."',
-    answer: 'Jane Eyre - Charlotte Brontë',
-    options: ['Jane Eyre - Charlotte Brontë', 'Wuthering Heights - Emily Brontë', 'Pride and Prejudice - Jane Austen', 'Tess of the D\'Urbervilles - Thomas Hardy'],
-  },
-  {
-    quote: '"Bent double, like old beggars under sacks."',
-    answer: 'Dulce et Decorum Est - Wilfred Owen',
-    options: ['The Charge of the Light Brigade - Alfred Tennyson', 'Dulce et Decorum Est - Wilfred Owen', 'Exposure - Wilfred Owen', 'Bayonet Charge - Ted Hughes'],
-  },
-  {
-    quote: '"What light through yonder window breaks?"',
-    answer: 'Romeo and Juliet - William Shakespeare',
-    options: ['Romeo and Juliet - William Shakespeare', 'A Midsummer Night\'s Dream - William Shakespeare', 'Hamlet - William Shakespeare', 'Twelfth Night - William Shakespeare'],
-  },
-  {
-    quote: '"I wandered lonely as a cloud."',
-    answer: 'Daffodils - William Wordsworth',
-    options: ['Daffodils - William Wordsworth', 'Tintern Abbey - William Wordsworth', 'Ozymandias - Percy Bysshe Shelley', 'The Tyger - William Blake'],
-  },
-  {
-    quote: '"It was the best of times, it was the worst of times."',
-    answer: 'A Tale of Two Cities - Charles Dickens',
-    options: ['Great Expectations - Charles Dickens', 'A Tale of Two Cities - Charles Dickens', 'Oliver Twist - Charles Dickens', 'A Christmas Carol - Charles Dickens'],
-  },
-  {
-    quote: '"Two roads diverged in a wood, and I -- I took the one less traveled by."',
-    answer: 'The Road Not Taken - Robert Frost',
-    options: ['The Road Not Taken - Robert Frost', 'Stopping by Woods - Robert Frost', 'Invictus - W.E. Henley', 'If - Rudyard Kipling'],
-  },
-  {
-    quote: '"Look on my Works, ye Mighty, and despair!"',
-    answer: 'Ozymandias - Percy Bysshe Shelley',
-    options: ['Ozymandias - Percy Bysshe Shelley', 'The Tyger - William Blake', 'London - William Blake', 'My Last Duchess - Robert Browning'],
-  },
-  {
-    quote: '"Some say the world will end in fire, some say in ice."',
-    answer: 'Fire and Ice - Robert Frost',
-    options: ['The Waste Land - T.S. Eliot', 'Fire and Ice - Robert Frost', 'Ozymandias - Percy Bysshe Shelley', 'Do Not Go Gentle - Dylan Thomas'],
-  },
-  {
-    quote: '"The half-blood prince."',
-    answer: 'Harry Potter and the Half-Blood Prince - J.K. Rowling',
-    options: ['Harry Potter and the Half-Blood Prince - J.K. Rowling', 'The Hobbit - J.R.R. Tolkien', 'The Lion, the Witch and the Wardrobe - C.S. Lewis', 'Northern Lights - Philip Pullman'],
-  },
-  {
-    quote: '"I am no bird; and no net ensnares me."',
-    answer: 'Jane Eyre - Charlotte Brontë',
-    options: ['Wuthering Heights - Emily Brontë', 'Jane Eyre - Charlotte Brontë', 'The Mill on the Floss - George Eliot', 'Middlemarch - George Eliot'],
+    textSlug: 'macbeth',
+    answer: 'Macbeth — William Shakespeare',
+    options: ['Macbeth — William Shakespeare', 'Romeo and Juliet — William Shakespeare', 'An Inspector Calls — J.B. Priestley', 'A Christmas Carol — Charles Dickens'],
   },
   {
     quote: '"Out, out, brief candle! Life\'s but a walking shadow."',
-    answer: 'Macbeth - William Shakespeare',
-    options: ['Macbeth - William Shakespeare', 'Hamlet - William Shakespeare', 'Othello - William Shakespeare', 'King Lear - William Shakespeare'],
+    textSlug: 'macbeth',
+    answer: 'Macbeth — William Shakespeare',
+    options: ['Macbeth — William Shakespeare', 'Romeo and Juliet — William Shakespeare', 'The Merchant of Venice — William Shakespeare', 'Much Ado About Nothing — William Shakespeare'],
+  },
+  {
+    quote: '"Fair is foul, and foul is fair."',
+    textSlug: 'macbeth',
+    answer: 'Macbeth — William Shakespeare',
+    options: ['Macbeth — William Shakespeare', 'An Inspector Calls — J.B. Priestley', 'Romeo and Juliet — William Shakespeare', 'Lord of the Flies — William Golding'],
+  },
+  {
+    quote: '"Look like the innocent flower, but be the serpent under\'t."',
+    textSlug: 'macbeth',
+    answer: 'Macbeth — William Shakespeare',
+    options: ['Macbeth — William Shakespeare', 'Jekyll and Hyde — R.L. Stevenson', 'Frankenstein — Mary Shelley', 'Romeo and Juliet — William Shakespeare'],
+  },
+
+  // ── Romeo and Juliet (AQA, Edexcel, OCR, Eduqas, Edexcel IGCSE) ──────────
+  {
+    quote: '"What light through yonder window breaks?"',
+    textSlug: 'romeo-and-juliet',
+    answer: 'Romeo and Juliet — William Shakespeare',
+    options: ['Romeo and Juliet — William Shakespeare', 'Macbeth — William Shakespeare', 'The Merchant of Venice — William Shakespeare', 'Much Ado About Nothing — William Shakespeare'],
+  },
+  {
+    quote: '"A plague o\' both your houses."',
+    textSlug: 'romeo-and-juliet',
+    answer: 'Romeo and Juliet — William Shakespeare',
+    options: ['Romeo and Juliet — William Shakespeare', 'Macbeth — William Shakespeare', 'An Inspector Calls — J.B. Priestley', 'The Merchant of Venice — William Shakespeare'],
+  },
+
+  // ── An Inspector Calls (AQA, Edexcel, OCR, Eduqas, Edexcel IGCSE) ────────
+  {
+    quote: '"We are members of one body. We are responsible for each other."',
+    textSlug: 'an-inspector-calls',
+    answer: 'An Inspector Calls — J.B. Priestley',
+    options: ['An Inspector Calls — J.B. Priestley', 'A Christmas Carol — Charles Dickens', 'Blood Brothers — Willy Russell', 'Lord of the Flies — William Golding'],
+  },
+  {
+    quote: '"Fire and blood and anguish."',
+    textSlug: 'an-inspector-calls',
+    answer: 'An Inspector Calls — J.B. Priestley',
+    options: ['An Inspector Calls — J.B. Priestley', 'Macbeth — William Shakespeare', 'Jekyll and Hyde — R.L. Stevenson', 'A Christmas Carol — Charles Dickens'],
+  },
+  {
+    quote: '"A man has to make his own way."',
+    textSlug: 'an-inspector-calls',
+    answer: 'An Inspector Calls — J.B. Priestley',
+    options: ['An Inspector Calls — J.B. Priestley', 'Animal Farm — George Orwell', 'Lord of the Flies — William Golding', 'Of Mice and Men — John Steinbeck'],
+  },
+
+  // ── A Christmas Carol (AQA, Edexcel, Eduqas) ──────────────────────────────
+  {
+    quote: '"Are there no prisons? Are there no workhouses?"',
+    textSlug: 'a-christmas-carol',
+    answer: 'A Christmas Carol — Charles Dickens',
+    options: ['A Christmas Carol — Charles Dickens', 'An Inspector Calls — J.B. Priestley', 'Jekyll and Hyde — R.L. Stevenson', 'Great Expectations — Charles Dickens'],
+  },
+  {
+    quote: '"God bless us, every one!"',
+    textSlug: 'a-christmas-carol',
+    answer: 'A Christmas Carol — Charles Dickens',
+    options: ['A Christmas Carol — Charles Dickens', 'Oliver Twist — Charles Dickens', 'Silas Marner — George Eliot', 'Pride and Prejudice — Jane Austen'],
+  },
+  {
+    quote: '"I wear the chain I forged in life."',
+    textSlug: 'a-christmas-carol',
+    answer: 'A Christmas Carol — Charles Dickens',
+    options: ['A Christmas Carol — Charles Dickens', 'Jekyll and Hyde — R.L. Stevenson', 'Frankenstein — Mary Shelley', 'Macbeth — William Shakespeare'],
+  },
+
+  // ── Jekyll and Hyde (AQA, Edexcel, OCR, Eduqas) ──────────────────────────
+  {
+    quote: '"Man is not truly one, but truly two."',
+    textSlug: 'jekyll-and-hyde',
+    answer: 'Jekyll and Hyde — R.L. Stevenson',
+    options: ['Jekyll and Hyde — R.L. Stevenson', 'Frankenstein — Mary Shelley', 'Macbeth — William Shakespeare', 'A Christmas Carol — Charles Dickens'],
+  },
+  {
+    quote: '"With ape-like fury, he was trampling his victim under foot."',
+    textSlug: 'jekyll-and-hyde',
+    answer: 'Jekyll and Hyde — R.L. Stevenson',
+    options: ['Jekyll and Hyde — R.L. Stevenson', 'Frankenstein — Mary Shelley', 'Jane Eyre — Charlotte Brontë', 'Great Expectations — Charles Dickens'],
+  },
+
+  // ── Pride and Prejudice (AQA, Edexcel, OCR, Eduqas) ──────────────────────
+  {
+    quote: '"It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife."',
+    textSlug: 'pride-and-prejudice',
+    answer: 'Pride and Prejudice — Jane Austen',
+    options: ['Pride and Prejudice — Jane Austen', 'Jane Eyre — Charlotte Brontë', 'Silas Marner — George Eliot', 'Frankenstein — Mary Shelley'],
+  },
+
+  // ── Jane Eyre (AQA, OCR) ──────────────────────────────────────────────────
+  {
+    quote: '"I am no bird; and no net ensnares me."',
+    textSlug: 'jane-eyre',
+    answer: 'Jane Eyre — Charlotte Brontë',
+    options: ['Jane Eyre — Charlotte Brontë', 'Pride and Prejudice — Jane Austen', 'Wuthering Heights — Emily Brontë', 'Great Expectations — Charles Dickens'],
+  },
+  {
+    quote: '"Reader, I married him."',
+    textSlug: 'jane-eyre',
+    answer: 'Jane Eyre — Charlotte Brontë',
+    options: ['Jane Eyre — Charlotte Brontë', 'Pride and Prejudice — Jane Austen', 'Silas Marner — George Eliot', 'The Sign of Four — Arthur Conan Doyle'],
+  },
+
+  // ── Frankenstein (AQA, Edexcel, OCR) ──────────────────────────────────────
+  {
+    quote: '"I beheld the wretch — the miserable monster whom I had created."',
+    textSlug: 'frankenstein',
+    answer: 'Frankenstein — Mary Shelley',
+    options: ['Frankenstein — Mary Shelley', 'Jekyll and Hyde — R.L. Stevenson', 'Jane Eyre — Charlotte Brontë', 'A Christmas Carol — Charles Dickens'],
+  },
+
+  // ── Animal Farm (AQA, Edexcel, OCR) ──────────────────────────────────────
+  {
+    quote: '"All animals are equal, but some animals are more equal than others."',
+    textSlug: 'animal-farm',
+    answer: 'Animal Farm — George Orwell',
+    options: ['Animal Farm — George Orwell', 'Lord of the Flies — William Golding', 'Of Mice and Men — John Steinbeck', 'An Inspector Calls — J.B. Priestley'],
+  },
+
+  // ── Lord of the Flies (AQA, OCR, Eduqas) ─────────────────────────────────
+  {
+    quote: '"The thing is — fear can\'t hurt you any more than a dream."',
+    textSlug: 'lord-of-the-flies',
+    answer: 'Lord of the Flies — William Golding',
+    options: ['Lord of the Flies — William Golding', 'Animal Farm — George Orwell', 'Of Mice and Men — John Steinbeck', 'An Inspector Calls — J.B. Priestley'],
+  },
+
+  // ── Of Mice and Men (Edexcel IGCSE) ──────────────────────────────────────
+  {
+    quote: '"A guy needs somebody — to be near him."',
+    textSlug: 'of-mice-and-men',
+    answer: 'Of Mice and Men — John Steinbeck',
+    options: ['Of Mice and Men — John Steinbeck', 'To Kill a Mockingbird — Harper Lee', 'Animal Farm — George Orwell', 'Things Fall Apart — Chinua Achebe'],
+  },
+
+  // ── To Kill a Mockingbird (Edexcel IGCSE) ────────────────────────────────
+  {
+    quote: '"You never really understand a person until you consider things from his point of view."',
+    textSlug: 'to-kill-a-mockingbird',
+    answer: 'To Kill a Mockingbird — Harper Lee',
+    options: ['To Kill a Mockingbird — Harper Lee', 'Of Mice and Men — John Steinbeck', 'Things Fall Apart — Chinua Achebe', 'A View from the Bridge — Arthur Miller'],
+  },
+
+  // ── Things Fall Apart (Edexcel IGCSE) ────────────────────────────────────
+  {
+    quote: '"The white man is very clever... He has put a knife on the things that held us together."',
+    textSlug: 'things-fall-apart',
+    answer: 'Things Fall Apart — Chinua Achebe',
+    options: ['Things Fall Apart — Chinua Achebe', 'To Kill a Mockingbird — Harper Lee', 'Of Mice and Men — John Steinbeck', 'A View from the Bridge — Arthur Miller'],
+  },
+
+  // ── Ozymandias (AQA Power & Conflict, Eduqas anthology, OCR) ─────────────
+  {
+    quote: '"Look on my Works, ye Mighty, and despair!"',
+    textSlug: 'ozymandias',
+    answer: 'Ozymandias — Percy Bysshe Shelley',
+    options: ['Ozymandias — Percy Bysshe Shelley', 'London — William Blake', 'My Last Duchess — Robert Browning', 'The Charge of the Light Brigade — Alfred Tennyson'],
+  },
+
+  // ── Dulce et Decorum Est (Eduqas anthology) ──────────────────────────────
+  {
+    quote: '"Bent double, like old beggars under sacks."',
+    textSlug: 'dulce-et-decorum-est',
+    answer: 'Dulce et Decorum Est — Wilfred Owen',
+    options: ['Dulce et Decorum Est — Wilfred Owen', 'The Charge of the Light Brigade — Alfred Tennyson', 'Bayonet Charge — Ted Hughes', 'Exposure — Wilfred Owen'],
   },
 ]
 
@@ -933,16 +1018,27 @@ function WordScrambleGame({ onExit }: { onExit: () => void }) {
 function QuoteMatchGame({ onExit }: { onExit: () => void }) {
   const { board } = useBoard()
 
-  // Filter quote match data: keep only quotes whose answer references a text studied by the user's board.
-  // If no board is set, or if filtering would yield too few quotes, fall back to the full bank.
+  // Filter the quote bank strictly by textSlug against the user's board's set texts.
+  // Non-curriculum texts are NOT in the bank at all, so the worst case is still
+  // always curriculum content — never Harry Potter, Dune, etc.
   const filteredData = useMemo(() => {
     if (!board) return QUOTE_MATCH_DATA
-    const allowedTitles = getSetTextsForBoard(board).map((t) => t.title.toLowerCase())
-    const filtered = QUOTE_MATCH_DATA.filter((q) =>
-      allowedTitles.some((title) => q.answer.toLowerCase().includes(title))
+    const allowedSlugs = new Set(getSetTextsForBoard(board).map((t) => t.slug))
+    // Also allow poem slugs used by the board's anthology (ozymandias, dulce-et-decorum-est, etc.)
+    // Those aren't in set-texts but are board-specific — map a short allow-list per board.
+    const boardPoemSlugs: Record<string, string[]> = {
+      'aqa': ['ozymandias', 'london', 'my-last-duchess', 'charge-of-the-light-brigade', 'exposure'],
+      'edexcel': ['ozymandias', 'london'],
+      'ocr': ['ozymandias'],
+      'eduqas': ['ozymandias', 'london', 'dulce-et-decorum-est'],
+      'edexcel-igcse': [],
+      'cambridge-0500': [],
+      'cambridge-0990': [],
+    }
+    const poemSlugs = new Set(boardPoemSlugs[board] ?? [])
+    return QUOTE_MATCH_DATA.filter(
+      (q) => allowedSlugs.has(q.textSlug) || poemSlugs.has(q.textSlug)
     )
-    // If the user's board has fewer than 6 matching quotes, include the full bank as a fallback
-    return filtered.length >= 6 ? filtered : QUOTE_MATCH_DATA
   }, [board])
 
   const [questions] = useState(() => shuffleArray(filteredData).slice(0, 10))
@@ -953,6 +1049,26 @@ function QuoteMatchGame({ onExit }: { onExit: () => void }) {
   const [shuffledOptions, setShuffledOptions] = useState<string[]>([])
 
   const currentQuestion = questions[currentIndex]
+
+  // Edge case: board has no literature set texts (Cambridge 0500 / 0990).
+  // Show a friendly fallback instead of an empty game.
+  if (questions.length === 0) {
+    return (
+      <div className="flex flex-col items-center gap-4 py-12 text-center">
+        <BookOpen className="size-12 text-muted-foreground" />
+        <div className="space-y-1">
+          <h3 className="text-xl font-bold text-foreground">No literature set texts for your board</h3>
+          <p className="text-sm text-muted-foreground max-w-md">
+            Your exam board focuses on English Language skills rather than prescribed literature texts.
+            Try the other games in the hub — Word Scramble, Grammar Fix, or literary technique drills.
+          </p>
+        </div>
+        <Button variant="outline" onClick={onExit}>
+          <ArrowLeft className="size-4 mr-1" /> Back to Games
+        </Button>
+      </div>
+    )
+  }
 
   useEffect(() => {
     if (currentQuestion) {

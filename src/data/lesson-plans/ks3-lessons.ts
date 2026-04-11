@@ -1259,7 +1259,7 @@ export const ks3Lessons: LessonPlan[] = [
       title: 'First Lines: Which Book Would You Read?',
       duration: '7 minutes',
       instructions:
-        'Display the opening lines of six well-known books (e.g. "It was a bright cold day in April, and the clocks were striking thirteen" — 1984; "Mr and Mrs Dursley, of number four, Privet Drive, were proud to say that they were perfectly normal, thank you very much" — Harry Potter). Students rank them from most to least intriguing and explain why. Class discussion: what makes a great opening line? List features on the board (mystery, action, unusual detail, voice, setting).',
+        'Display the opening lines of six well-known GCSE set texts (e.g. "It was a bright cold day in April, and the clocks were striking thirteen" — 1984; "It is a truth universally acknowledged..." — Pride and Prejudice; "When Mr Bilbo Baggins..." replaced with "Marley was dead: to begin with" — A Christmas Carol). Students rank them from most to least intriguing and explain why. Class discussion: what makes a great opening line? List features on the board (mystery, action, unusual detail, voice, setting).',
       differentiation: {
         support: 'Provide a word bank for describing effects: "intriguing", "mysterious", "exciting", "unusual".',
         core: 'Students rank and explain their reasoning for their top and bottom choices.',
@@ -1365,7 +1365,7 @@ export const ks3Lessons: LessonPlan[] = [
     ],
     teacherNotes: [
       'This lesson pairs well with Lesson 3 (Creative Writing: Show Don\'t Tell) — students can apply both skills together in a longer writing assessment.',
-      'Use stories and films students know to make the narrative arc accessible. Popular choices: The Hunger Games, Wonder, Harry Potter, or Disney films.',
+      'Use GCSE set texts students will later study to make the narrative arc accessible. Map the arc onto Macbeth (exposition at the witches\' prophecy → climax at the banquet → resolution at Macbeth\'s death), A Christmas Carol (Scrooge\'s redemption), or An Inspector Calls.',
       'Encourage students to plan their stories using the arc before writing — this prevents the common problem of starting with no idea where the story is going.',
       'The opening and ending workshop can be extended over two lessons for deeper practice if needed.',
       'Display the five opening techniques as a permanent classroom poster for reference.',

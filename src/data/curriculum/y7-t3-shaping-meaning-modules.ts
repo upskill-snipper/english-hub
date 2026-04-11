@@ -46,7 +46,7 @@ export const y7T3ShapingMeaningModules: CourseModule[] = [
 <p>Conflict is the engine that drives every narrative. There are four main types:</p>
 
 <ul>
-  <li><strong>Character vs. Character</strong> — A protagonist against an antagonist. Example: Harry Potter vs. Voldemort.</li>
+  <li><strong>Character vs. Character</strong> — A protagonist against an antagonist. Example: Macbeth vs. Macduff.</li>
   <li><strong>Character vs. Nature</strong> — A character struggles against the natural world. Example: a sailor battling a storm.</li>
   <li><strong>Character vs. Society</strong> — A character challenges the rules, expectations, or injustices of their community. Example: a child standing up to unfair school rules.</li>
   <li><strong>Character vs. Self</strong> — An internal struggle with fear, doubt, guilt, or conflicting desires. This is often the most emotionally powerful type of conflict.</li>
@@ -167,7 +167,7 @@ export const y7T3ShapingMeaningModules: CourseModule[] = [
 
 <h3>Why Folk Tales Still Matter</h3>
 
-<p>Folk tales may seem simple, but their themes appear in modern literature, film, and everyday life. The Harry Potter series explores the same themes as ancient folk tales: the power of love, the danger of seeking immortality, and the idea that our choices define us. By studying folk tales, you learn to identify moral themes in any text — a skill that is central to English literature analysis at every level.</p>
+<p>Folk tales may seem simple, but their themes appear across the GCSE set texts. Macbeth explores the same moral themes as ancient folk tales: the danger of unchecked ambition, the corrupting power of prophecy, and the idea that our choices define us. A Christmas Carol retells the classic "redemption" folk tale arc. By studying folk tales, you learn to identify moral themes in any text — a skill that is central to English literature analysis at every level.</p>
 `,
     quiz: [
       { id: 'y7t3-m2-q1', question: 'What is a moral theme?', options: ['The main character in a story', 'The setting of a folk tale', 'The underlying message or lesson a story conveys', 'The climax of the plot'], correct: 2, explanation: 'A moral theme is the underlying message or lesson about human behaviour, values, or society that a story conveys. It answers the question: "What does this story want us to learn?"' },

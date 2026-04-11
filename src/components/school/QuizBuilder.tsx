@@ -231,17 +231,24 @@ const SAMPLE_VOCAB_WORDS = [
   { term: 'Symbolism', definition: 'The use of symbols to represent ideas or qualities' },
 ]
 
+// GCSE set-text quotes only. Used by the teacher QuizBuilder to populate
+// sample quiz questions. Every quote is from a prescribed text on at least
+// one GCSE or IGCSE English Literature specification.
 const SAMPLE_QUOTES = [
-  { quote: '"To be, or not to be, that is the question."', author: 'William Shakespeare, Hamlet' },
-  { quote: '"It is a truth universally acknowledged..."', author: 'Jane Austen, Pride and Prejudice' },
+  { quote: '"Is this a dagger which I see before me?"', author: 'William Shakespeare, Macbeth' },
+  { quote: '"Fair is foul, and foul is fair."', author: 'William Shakespeare, Macbeth' },
+  { quote: '"Out, out, brief candle! Life\'s but a walking shadow."', author: 'William Shakespeare, Macbeth' },
+  { quote: '"What light through yonder window breaks?"', author: 'William Shakespeare, Romeo and Juliet' },
+  { quote: '"We are members of one body. We are responsible for each other."', author: 'J.B. Priestley, An Inspector Calls' },
+  { quote: '"Fire and blood and anguish."', author: 'J.B. Priestley, An Inspector Calls' },
+  { quote: '"Are there no prisons? Are there no workhouses?"', author: 'Charles Dickens, A Christmas Carol' },
+  { quote: '"I wear the chain I forged in life."', author: 'Charles Dickens, A Christmas Carol' },
+  { quote: '"Man is not truly one, but truly two."', author: 'R.L. Stevenson, Jekyll and Hyde' },
+  { quote: '"It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife."', author: 'Jane Austen, Pride and Prejudice' },
+  { quote: '"I am no bird; and no net ensnares me."', author: 'Charlotte Brontë, Jane Eyre' },
   { quote: '"All animals are equal, but some animals are more equal than others."', author: 'George Orwell, Animal Farm' },
-  { quote: '"It was the best of times, it was the worst of times."', author: 'Charles Dickens, A Tale of Two Cities' },
-  { quote: '"The only thing we have to fear is fear itself."', author: 'Franklin D. Roosevelt' },
-  { quote: '"Two roads diverged in a wood, and I — I took the one less traveled by."', author: 'Robert Frost' },
-  { quote: '"Not all those who wander are lost."', author: 'J.R.R. Tolkien' },
-  { quote: '"I think, therefore I am."', author: 'Rene Descartes' },
-  { quote: '"The unexamined life is not worth living."', author: 'Socrates' },
-  { quote: '"In the middle of difficulty lies opportunity."', author: 'Albert Einstein' },
+  { quote: '"Look on my Works, ye Mighty, and despair!"', author: 'Percy Bysshe Shelley, Ozymandias' },
+  { quote: '"Bent double, like old beggars under sacks."', author: 'Wilfred Owen, Dulce et Decorum Est' },
 ]
 
 const QUICK_TEMPLATES: QuickTemplate[] = [
