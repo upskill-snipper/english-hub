@@ -35,7 +35,11 @@ export function SupabaseProvider({ children }: { children: React.ReactNode }) {
     // unlike getSession() which reads from localStorage and can be stale/tampered.
     supabase.auth.getUser().then(({ data: { user }, error: userError }) => {
       if (userError) {
-        console.error('Failed to get user:', userError.message)
+        // "Auth session missing" is expected for unauthenticated visitors on public pages
+        if (!userError.message.includes('Auth session missing')) {
+          console.error('Failed to get user:', userError.message)
+        }
+        setUser(null)
         setLoading(false)
         return
       }

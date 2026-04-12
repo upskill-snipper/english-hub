@@ -606,15 +606,15 @@ export default function MockExamsPage() {
 
         <div className="relative max-w-6xl mx-auto px-4 py-16 sm:py-20 text-center">
           <Badge variant="outline" className="border-primary/20 bg-primary/[0.06] text-primary text-sm font-semibold mb-6 gap-2 px-4 py-1.5">
-            <GraduationCap className="w-4 h-4" /> GCSE Mock Exams
+            <GraduationCap className="w-4 h-4" /> {boardConfig ? `${boardConfig.name} Mock Exams` : 'GCSE Mock Exams'}
           </Badge>
 
           <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-5 tracking-tight">
-            GCSE English Mock Exams
+            {boardConfig ? `${boardConfig.name} English Mock Exams` : 'GCSE English Mock Exams'}
           </h1>
 
           <p className="text-lg text-muted-foreground mb-8 leading-relaxed max-w-2xl mx-auto">
-            Full-length, timed mock exams matching the exact AQA format. Language Paper 1 and 2, Literature Paper 1 and 2 -- complete with grade boundaries, model answers, and mark schemes.
+            Full-length, timed mock exams matching the exact {boardConfig?.name ?? 'AQA'} format. Language Paper 1 and 2, Literature Paper 1 and 2 -- complete with grade boundaries, model answers, and mark schemes.
           </p>
 
           {/* Quick stats */}

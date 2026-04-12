@@ -281,12 +281,12 @@ export default function BoardDashboardHero({ board }: { board: ExamBoard }) {
               className="border-primary/25 bg-primary/[0.06] text-primary text-sm font-semibold mb-5 gap-2 px-4 py-1.5"
             >
               <Target className="w-4 h-4" />
-              {config.shortName} {config.type.toUpperCase()}
+              {config.shortName.toUpperCase().includes(config.type.toUpperCase()) ? config.shortName : `${config.shortName} ${config.type.toUpperCase()}`}
             </Badge>
             <h1 className="text-foreground">
               Welcome back.
               <br />
-              <span className="text-primary">You are studying {config.name} {config.type.toUpperCase()} English.</span>
+              <span className="text-primary">You are studying {config.name.toUpperCase().includes(config.type.toUpperCase()) ? config.name : `${config.name} ${config.type.toUpperCase()}`} English.</span>
             </h1>
             <p className="mt-5 text-body-lg text-muted-foreground max-w-2xl leading-relaxed">
               {config.description} — jump back in where you left off or explore your board&rsquo;s toolkit below.
