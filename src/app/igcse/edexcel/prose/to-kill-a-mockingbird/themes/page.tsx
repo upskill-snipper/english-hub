@@ -32,7 +32,7 @@ const themes = [
     textualMoments:
       'Mrs Dubose chapters (11); the mad-dog shot (10); Atticus\u2019s defence; Boo\u2019s intervention.',
     quote:
-      '“Real courage is… when you know you\u2019re licked before you begin but you begin anyway.”',
+      '”Real courage is… when you\u2019re licked before you begin but you begin anyway.”',
   },
   {
     title: 'Childhood innocence and its loss',

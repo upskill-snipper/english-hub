@@ -32,7 +32,7 @@ const themes = [
     moments:
       'Birling\u2019s Act One speech; the wage strike; the charity refusal.',
     quote:
-      '“If you don\u2019t come down sharply on some of these people, they\u2019d soon be asking for the earth.” — Arthur Birling',
+      '”If you don\u2019t come down sharply on some of these people, they\u2019d soon be asking for the earth.”',
   },
   {
     title: 'Gender and power',

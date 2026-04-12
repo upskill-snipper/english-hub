@@ -129,7 +129,7 @@ const keyQuotations = [
       'Atticus names racism as a kind of collective madness, preparing Jem (and the reader) for the guilty verdict despite clear evidence of Tom\u2019s innocence.',
   },
   {
-    quote: 'Real courage is… when you know you\u2019re licked before you begin but you begin anyway.',
+    quote: 'Real courage is… when you\u2019re licked before you begin but you begin anyway.',
     speaker: 'Atticus Finch on Mrs Dubose',
     analysis:
       'Applied first to Mrs Dubose\u2019s morphine addiction, the definition retroactively frames Atticus\u2019s own doomed defence.',
