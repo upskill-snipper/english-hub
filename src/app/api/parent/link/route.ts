@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getServerSession } from "next-auth";
+import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { z } from "zod";
 import { prisma } from "@/lib/prisma";
 import {
@@ -29,8 +29,9 @@ const unlinkSchema = z.object({
 export async function POST(request: NextRequest) {
   try {
     // ── Authenticate ───────────────────────────────────────────────────
-    const session = await getServerSession();
-    if (!session?.user?.email) {
+    const supabase = createServerSupabaseClient();
+    const { data: { user: authUser }, error: authError } = await supabase.auth.getUser();
+    if (authError || !authUser) {
       return NextResponse.json(
         { error: "Authentication required." },
         { status: 401 }
@@ -38,7 +39,7 @@ export async function POST(request: NextRequest) {
     }
 
     const dbUser = await prisma.user.findUnique({
-      where: { email: session.user.email },
+      where: { email: authUser.email! },
       select: {
         id: true,
         role: true,
@@ -200,8 +201,9 @@ export async function POST(request: NextRequest) {
 export async function DELETE(request: NextRequest) {
   try {
     // ── Authenticate ───────────────────────────────────────────────────
-    const sessionDel = await getServerSession();
-    if (!sessionDel?.user?.email) {
+    const supabaseDel = createServerSupabaseClient();
+    const { data: { user: authUserDel }, error: authErrorDel } = await supabaseDel.auth.getUser();
+    if (authErrorDel || !authUserDel) {
       return NextResponse.json(
         { error: "Authentication required." },
         { status: 401 }
@@ -209,7 +211,7 @@ export async function DELETE(request: NextRequest) {
     }
 
     const dbUserDel = await prisma.user.findUnique({
-      where: { email: sessionDel.user.email },
+      where: { email: authUserDel.email! },
       select: {
         id: true,
         role: true,
@@ -297,8 +299,9 @@ export async function DELETE(request: NextRequest) {
 export async function GET(request: NextRequest) {
   try {
     // ── Authenticate ───────────────────────────────────────────────────
-    const sessionGet = await getServerSession();
-    if (!sessionGet?.user?.email) {
+    const supabaseGet = createServerSupabaseClient();
+    const { data: { user: authUserGet }, error: authErrorGet } = await supabaseGet.auth.getUser();
+    if (authErrorGet || !authUserGet) {
       return NextResponse.json(
         { error: "Authentication required." },
         { status: 401 }
@@ -306,7 +309,7 @@ export async function GET(request: NextRequest) {
     }
 
     const dbUserGet = await prisma.user.findUnique({
-      where: { email: sessionGet.user.email },
+      where: { email: authUserGet.email! },
       select: {
         id: true,
         role: true,

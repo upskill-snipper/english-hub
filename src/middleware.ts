@@ -44,8 +44,30 @@ function isBoardAllowlisted(pathname: string): boolean {
   return false
 }
 
+// Allowed origins for mutation requests (CSRF mitigation via Origin check)
+const ALLOWED_ORIGINS = new Set([
+  'https://theenglishhub.app',
+  'https://www.theenglishhub.app',
+  ...(process.env.NEXT_PUBLIC_SITE_URL ? [process.env.NEXT_PUBLIC_SITE_URL] : []),
+  ...(process.env.NODE_ENV === 'development' ? ['http://localhost:3000'] : []),
+])
+
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
+
+  // ── CSRF: Origin header validation for API mutations ─────────────
+  if (pathname.startsWith('/api/') && request.method !== 'GET' && request.method !== 'HEAD') {
+    // Stripe webhooks come from Stripe servers — skip origin check
+    if (!pathname.startsWith('/api/stripe/webhook') && !pathname.startsWith('/api/cron/')) {
+      const origin = request.headers.get('origin')
+      if (origin && !ALLOWED_ORIGINS.has(origin)) {
+        return NextResponse.json(
+          { error: 'Forbidden: invalid origin' },
+          { status: 403 }
+        )
+      }
+    }
+  }
 
   // Board gate: if no board cookie and path is not allowlisted, redirect to /board-select
   // Run this BEFORE supabase/affiliate so we don't do unnecessary work, but we still

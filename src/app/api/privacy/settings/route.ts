@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getServerSession } from "next-auth";
+import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { prisma } from "@/lib/prisma";
 import { rateLimit, getClientIp } from "@/lib/rate-limit";
 
@@ -7,13 +7,14 @@ import { rateLimit, getClientIp } from "@/lib/rate-limit";
 // Returns privacy settings, data summary, and essay list for the current user
 export async function GET() {
   try {
-    const session = await getServerSession();
-    if (!session?.user?.email) {
+    const supabase = createServerSupabaseClient();
+    const { data: { user: authUser }, error: authError } = await supabase.auth.getUser();
+    if (authError || !authUser) {
       return NextResponse.json({ error: "Unauthorised" }, { status: 401 });
     }
 
     const user = await prisma.user.findUnique({
-      where: { email: session.user.email },
+      where: { email: authUser.email! },
       include: {
         privacySettings: true,
         essays: {
@@ -113,13 +114,14 @@ export async function PUT(request: NextRequest) {
       );
     }
 
-    const session = await getServerSession();
-    if (!session?.user?.email) {
+    const supabase = createServerSupabaseClient();
+    const { data: { user: authUser }, error: authError } = await supabase.auth.getUser();
+    if (authError || !authUser) {
       return NextResponse.json({ error: "Unauthorised" }, { status: 401 });
     }
 
     const user = await prisma.user.findUnique({
-      where: { email: session.user.email },
+      where: { email: authUser.email! },
       select: { id: true },
     });
 

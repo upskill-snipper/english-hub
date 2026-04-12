@@ -199,7 +199,7 @@ export function Footer() {
 
         <div className="border-t border-border/60 py-6 space-y-2">
           <p className="text-center text-xs text-muted-foreground">
-            &copy; 2024–2026 The English Hub. All rights reserved.
+            &copy; 2024–{new Date().getFullYear()} The English Hub. All rights reserved.
           </p>
           <p className="text-center text-xs text-muted-foreground">
             A trading name of Upskill Energy Limited · Company No. 16254656 · Registered in England and Wales

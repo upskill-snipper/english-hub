@@ -100,43 +100,14 @@ export async function POST(request: NextRequest) {
     //   }
     // }
 
-    // Temporary: simulate success until DB is wired up
-    const userStub = {
-      id: "temp-teacher-" + Date.now(),
-      email: data.email.toLowerCase(),
-      firstName: data.firstName,
-      lastName: data.lastName,
-      role: "teacher",
-      schoolName: data.schoolName ?? null,
-      metadata: userMetadata,
-    };
-
-    // ── Response ──────────────────────────────────────────────────────
-    const response = NextResponse.json(
+    // This legacy API route is no longer used — teacher registration happens
+    // via Supabase Auth directly on the client (see auth/teacher-register/page.tsx).
+    return NextResponse.json(
       {
-        message: "Teacher registration successful",
-        user: {
-          id: userStub.id,
-          email: userStub.email,
-          firstName: userStub.firstName,
-          lastName: userStub.lastName,
-          role: userStub.role,
-          schoolName: userStub.schoolName,
-        },
+        error: "This registration endpoint is deprecated. Please use the teacher registration page directly.",
       },
-      { status: 201 }
+      { status: 410 }
     );
-
-    // Set session cookie
-    response.cookies.set("session_token", sessionToken, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "lax",
-      path: "/",
-      expires: sessionExpiry,
-    });
-
-    return response;
   } catch (error) {
     // ── Zod validation errors ─────────────────────────────────────────
     if (error instanceof ZodError) {

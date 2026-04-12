@@ -64,9 +64,9 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    if (body.entries.length > 500) {
+    if (body.entries.length > 100) {
       return NextResponse.json(
-        { error: 'Too many entries. Maximum 500 per sync.' },
+        { error: 'Too many entries (max 100 per request)' },
         { status: 400 }
       )
     }
@@ -126,7 +126,7 @@ export async function POST(request: NextRequest) {
       const batch = newEntries.slice(i, i + BATCH_SIZE)
       const { error } = await supabase.from('student_progress').insert(batch)
       if (error) {
-        errors.push(error.message)
+        errors.push("Failed to sync entry")
       } else {
         synced += batch.length
       }

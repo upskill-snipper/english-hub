@@ -197,6 +197,35 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     );
   }
 
+  // ── Validate field lengths ──────────────────────────────────────────────
+  if (typeof schoolName === 'string' && schoolName.length > 200) {
+    return NextResponse.json({ error: "School name is too long (max 200 characters)" }, { status: 400 });
+  }
+  if (typeof address === 'string' && address.length > 200) {
+    return NextResponse.json({ error: "Address is too long (max 200 characters)" }, { status: 400 });
+  }
+  if (typeof city === 'string' && city.length > 200) {
+    return NextResponse.json({ error: "City is too long (max 200 characters)" }, { status: 400 });
+  }
+  if (typeof postcode === 'string' && postcode.length > 20) {
+    return NextResponse.json({ error: "Postcode is too long (max 20 characters)" }, { status: 400 });
+  }
+  if (typeof adminFirstName === 'string' && adminFirstName.length > 50) {
+    return NextResponse.json({ error: "First name is too long (max 50 characters)" }, { status: 400 });
+  }
+  if (typeof adminLastName === 'string' && adminLastName.length > 50) {
+    return NextResponse.json({ error: "Last name is too long (max 50 characters)" }, { status: 400 });
+  }
+  if (typeof jobTitle === 'string' && jobTitle.length > 100) {
+    return NextResponse.json({ error: "Job title is too long (max 100 characters)" }, { status: 400 });
+  }
+  if (typeof phone === 'string' && phone.length > 30) {
+    return NextResponse.json({ error: "Phone number is too long (max 30 characters)" }, { status: 400 });
+  }
+  if (typeof email === 'string' && email.length > 254) {
+    return NextResponse.json({ error: "Email is too long (max 254 characters)" }, { status: 400 });
+  }
+
   const normalizedEmail = email!.toLowerCase().trim();
   const admin = createServiceRoleClient();
 

@@ -297,7 +297,7 @@ export async function POST(request: NextRequest) {
           errors.push({
             row: rowNumber,
             email,
-            error: createError.message,
+            error: "Failed to create user account",
           });
           continue;
         }
@@ -350,8 +350,7 @@ export async function POST(request: NextRequest) {
           className,
         });
       } catch (err) {
-        const message = err instanceof Error ? err.message : "Unknown error";
-        errors.push({ row: rowNumber, email, error: message });
+        errors.push({ row: rowNumber, email, error: "Failed to process row" });
       }
     }
 

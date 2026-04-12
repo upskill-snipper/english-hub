@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { PRICING } from "@/constants/pricing";
 
 // ─── Types ──────────────────────────────────────────────────────────────
 
@@ -90,7 +91,7 @@ export default function SubscriptionPage() {
   const isTrialing = subscription.status === "TRIALING";
   const isPastDue = subscription.status === "PAST_DUE";
 
-  const monthlyPrice = 8.99;
+  const monthlyPrice = PRICING.STUDENT_MONTHLY;
   const currentPrice = monthlyPrice;
   const billingCycle = "month";
 

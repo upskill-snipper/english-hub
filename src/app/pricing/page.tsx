@@ -113,11 +113,13 @@ function SectionHeading({
   badgeIcon: BadgeIcon,
   title,
   subtitle,
+  as: Tag = 'h2',
 }: {
   badge?: string
   badgeIcon?: React.ElementType
   title: string
   subtitle?: string
+  as?: 'h1' | 'h2' | 'h3'
 }) {
   return (
     <div className="text-center mb-14">
@@ -130,9 +132,9 @@ function SectionHeading({
           {badge}
         </Badge>
       )}
-      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground max-w-3xl mx-auto leading-tight">
+      <Tag className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-foreground max-w-3xl mx-auto leading-tight">
         {title}
-      </h2>
+      </Tag>
       {subtitle && (
         <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
           {subtitle}
@@ -236,6 +238,7 @@ export default function PricingPage() {
       <section className="relative pt-24 pb-16 sm:pt-32 sm:pb-20">
         <div className="max-w-5xl mx-auto px-6">
           <SectionHeading
+            as="h1"
             badge="Pricing"
             badgeIcon={Sparkles}
             title="The AI English platform trusted by schools, teachers, and students."

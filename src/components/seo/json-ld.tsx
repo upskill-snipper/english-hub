@@ -16,7 +16,7 @@ export function WebsiteJsonLd() {
       {
         '@type': 'Offer',
         name: 'Monthly Plan',
-        price: '9.99',
+        price: '8.99',
         priceCurrency: 'GBP',
         availability: 'https://schema.org/InStock',
         priceValidUntil: '2027-01-01',

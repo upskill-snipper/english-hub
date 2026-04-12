@@ -22,7 +22,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <div className="bg-muted text-muted-foreground border-b py-2 text-center text-sm">
         Individual plans from{" "}
         <Link href="/auth/register" className="font-medium text-foreground underline underline-offset-2 hover:opacity-80">
-          &pound;9.99/month
+          &pound;12.99/month
         </Link>{" "}
         or{" "}
         <Link href="/for-schools" className="font-medium text-foreground underline underline-offset-2 hover:opacity-80">

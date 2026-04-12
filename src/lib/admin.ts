@@ -1,4 +1,4 @@
-import { getServerSession } from "next-auth";
+import { createServerSupabaseClient } from "@/lib/supabase/server";
 import { prisma } from "@/lib/prisma";
 import { isSiteAdmin } from "@/lib/site-admin";
 
@@ -98,14 +98,15 @@ export async function requireAdmin(): Promise<{
   email: string;
   role: string;
 }> {
-  const session = await getServerSession();
+  const supabase = createServerSupabaseClient();
+  const { data: { user: authUser }, error: authError } = await supabase.auth.getUser();
 
-  if (!session?.user?.email) {
+  if (authError || !authUser?.email) {
     throw new AdminAuthError("Authentication required", 401);
   }
 
   const user = await prisma.user.findUnique({
-    where: { email: session.user.email },
+    where: { email: authUser.email },
     select: { id: true, email: true, role: true },
   });
 
