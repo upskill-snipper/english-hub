@@ -95,7 +95,7 @@ const keyQuotations = [
       'Alfieri\u2019s diagnosis of Italian-American life: the accommodation between old-country honour and American law. The phrase "settle for half" is the play\u2019s central moral formula.',
   },
   {
-    quote: 'He was as good a man as he had to be in a life that was hard and even.',
+    quote: 'As good a man as he had to be in a life that was hard.',
     speaker: 'Alfieri on Eddie',
     analysis:
       'An epitaph, offered early — Miller uses Alfieri to put moral weight on Eddie before we judge him.',
@@ -149,7 +149,7 @@ const keyQuotations = [
       'Eddie\u2019s final line reveals that his real grief is the loss of Beatrice, not Catherine. Miller gives Beatrice the emotional last word even as Eddie dies.',
   },
   {
-    quote: 'He allowed himself to be wholly known\u2026 I will love him more than all my sensible clients.',
+    quote: 'He allowed himself to be wholly known\u2026 for that I will love him.',
     speaker: 'Alfieri',
     analysis:
       'The play\u2019s ambiguous closing lines: Miller refuses to condemn Eddie, instead offering the classical tragic gesture of recognition.',
@@ -335,6 +335,10 @@ export default async function AViewHubPage() {
           ))}
         </div>
       </section>
+
+      <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
+        Short quotations reproduced under the fair dealing provision of the CDPA 1988 for criticism and review. Full text available from your school or local library.
+      </p>
     </div>
   )
 }

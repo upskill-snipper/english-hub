@@ -187,6 +187,10 @@ export default async function TkamCharactersPage() {
           ))}
         </div>
       </section>
+
+      <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
+        Short quotations reproduced under the fair dealing provision of the CDPA 1988 for criticism and review. Full text available from your school or local library.
+      </p>
     </div>
   )
 }

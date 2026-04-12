@@ -40,8 +40,8 @@ const CHARACTERS = [
     description:
       "A mysterious figure who may be supernatural, a time-traveller, or Priestley's mouthpiece. He systematically exposes each Birling's responsibility for Eva's death. He is authoritative, moral, and unsettling. His name — 'Goole' — sounds like 'ghoul,' suggesting he may not be a real inspector at all. He represents Priestley's socialist message.",
     key_quotes: [
-      '"We don\'t live alone. We are members of one body. We are responsible for each other"',
-      '"If men will not learn that lesson, then they will be taught it in fire and blood and anguish"',
+      '"We are members of one body. We are responsible for each other"',
+      '"they will be taught it in fire and blood and anguish"',
       '"It\'s better to ask for the earth than to take it"',
       '"One person and one line of inquiry at a time"',
     ],
@@ -76,9 +76,9 @@ const CHARACTERS = [
       "Arthur's wife. Cold, snobbish, and prejudiced. She is the most resistant to accepting responsibility. As chair of a charity, she refused to help Eva, judging her for using the Birling name and for being an unmarried pregnant woman. She represents the upper-class hypocrisy and moral failure that Priestley attacks. She condemns the father of Eva's child — not realising it is her own son Eric.",
     key_quotes: [
       '"a girl of that sort"',
-      '"I did nothing wrong. I used my influence on the committee, as I was perfectly entitled to do"',
+      '"I used my influence on the committee, as I was perfectly entitled to do"',
       '"Go and look for the father of the child. It\'s his responsibility"',
-      '"I\'m sorry she should have come to such a horrible end. But I accept no blame for it at all"',
+      '"I accept no blame for it at all"',
     ],
   },
   {
@@ -118,8 +118,8 @@ const THEMES = [
     description:
       "The central message of the play. Priestley argues that we have a duty to care for one another, not just ourselves. The Inspector's final speech — 'We are members of one body. We are responsible for each other' — is Priestley's direct challenge to the audience. Each Birling's failure of responsibility contributes to Eva's death.",
     quotes: [
-      '"We don\'t live alone. We are members of one body. We are responsible for each other"',
-      '"If men will not learn that lesson, then they will be taught it in fire and blood and anguish"',
+      '"We are members of one body. We are responsible for each other"',
+      '"they will be taught it in fire and blood and anguish"',
       '"a man has to mind his own business and look after himself"',
     ],
   },
@@ -130,7 +130,7 @@ const THEMES = [
     quotes: [
       '"a girl of that sort"',
       '"But these girls aren\'t cheap labour — they\'re people"',
-      '"If you think you can bring any pressure to bear upon me, Inspector, you\'re quite mistaken"',
+      '"If you think you can bring any pressure to bear upon me, you\'re quite mistaken"',
     ],
   },
   {

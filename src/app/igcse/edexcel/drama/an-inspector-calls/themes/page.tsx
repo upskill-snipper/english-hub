@@ -32,7 +32,7 @@ const themes = [
     moments:
       'Birling\u2019s Act One speech; the wage strike; the charity refusal.',
     quote:
-      '”If you don\u2019t come down sharply on some of these people, they\u2019d soon be asking for the earth.”',
+      '”Come down sharply on some of these people, they\u2019d soon be asking for the earth.”',
   },
   {
     title: 'Gender and power',
@@ -68,7 +68,7 @@ const themes = [
     moments:
       'The set description (Act One); the passing of the photograph; the Inspector\u2019s exit; the ringing telephone.',
     quote:
-      '”The lighting should be pink and intimate until the Inspector arrives, and then\u2026 brighter and harder.”',
+      '”pink and intimate until the Inspector arrives, and then\u2026 brighter and harder.”',
   },
 ]
 

@@ -68,7 +68,7 @@ const themes = [
     moments:
       'Alfieri\u2019s prologue and epilogue; his warnings to Eddie; the final recognition speech.',
     quote:
-      '“Now we settle for half, and I like it better. But the truth is holy…” — Alfieri',
+      '“We settle for half, and I like it better.” — Alfieri',
   },
 ]
 
@@ -146,6 +146,10 @@ export default async function AViewThemesPage() {
           </article>
         ))}
       </section>
+
+      <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
+        Short quotations reproduced under the fair dealing provision of the CDPA 1988 for criticism and review. Full text available from your school or local library.
+      </p>
     </div>
   )
 }

@@ -41,7 +41,7 @@ const themes = [
     moments:
       'Christopher\u2019s "I do not tell lies" list; Ed\u2019s confession; the discovered letters.',
     quote:
-      '“I do not tell lies. Mother used to say that this was because I was a good person.” — Christopher',
+      '”I do not tell lies.” — Christopher',
   },
   {
     title: 'Independence and growing up',
@@ -146,6 +146,10 @@ export default async function CuriousIncidentThemesPage() {
           </article>
         ))}
       </section>
+
+      <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
+        Short quotations reproduced under the fair dealing provision of the CDPA 1988 for criticism and review. Full text available from your school or local library.
+      </p>
     </div>
   )
 }

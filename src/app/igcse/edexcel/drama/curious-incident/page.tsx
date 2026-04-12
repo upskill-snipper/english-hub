@@ -161,7 +161,7 @@ const keyQuotations = [
       'The play ends on a question, not an answer. Stephens lets the audience decide whether Christopher\u2019s triumphs add up to autonomy, or whether the question must remain open.',
   },
   {
-    quote: 'The dog was dead… I saw that it had a large garden fork sticking out of it.',
+    quote: 'The dog was dead… it had a large garden fork sticking out of it.',
     speaker: 'Christopher',
     analysis:
       'Christopher\u2019s forensic calm is simultaneously comic and disturbing — Stephens keeps the novel\u2019s tonal tightrope intact.',
@@ -342,6 +342,10 @@ export default async function CuriousIncidentHubPage() {
           ))}
         </div>
       </section>
+
+      <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
+        Short quotations reproduced under the fair dealing provision of the CDPA 1988 for criticism and review. Full text available from your school or local library.
+      </p>
     </div>
   )
 }
