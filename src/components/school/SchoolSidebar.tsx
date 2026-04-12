@@ -40,6 +40,7 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
+  DropdownMenuGroup,
   DropdownMenuLabel,
 } from '@/components/ui/dropdown-menu'
 import type { School as SchoolType, SchoolMember, Class } from '@/lib/types'
@@ -217,7 +218,9 @@ export function SchoolSidebar({ school, member, classes }: SchoolSidebarProps) {
               {!isCollapsed && <span>Create</span>}
             </DropdownMenuTrigger>
             <DropdownMenuContent side="bottom" align="start" sideOffset={6}>
-              <DropdownMenuLabel>Create new...</DropdownMenuLabel>
+              <DropdownMenuGroup>
+                <DropdownMenuLabel>Create new...</DropdownMenuLabel>
+              </DropdownMenuGroup>
               <DropdownMenuSeparator />
               <DropdownMenuItem
                 render={

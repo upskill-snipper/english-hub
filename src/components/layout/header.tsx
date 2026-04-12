@@ -17,6 +17,7 @@ import { Badge } from '@/components/ui/badge'
 import {
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
@@ -440,15 +441,17 @@ function BoardSwitcher({
         <ChevronDown className="h-3 w-3 text-muted-foreground" aria-hidden="true" />
       </DropdownMenuTrigger>
       <DropdownMenuContent align="start" sideOffset={6} className="w-72">
-        <DropdownMenuLabel>Your exam board</DropdownMenuLabel>
-        <div className="px-1.5 pb-1.5">
-          <p className="text-sm font-semibold text-foreground leading-tight">
-            {config.fullName}
-          </p>
-          <p className="mt-1 text-xs text-muted-foreground leading-snug">
-            {config.description}
-          </p>
-        </div>
+        <DropdownMenuGroup>
+          <DropdownMenuLabel>Your exam board</DropdownMenuLabel>
+          <div className="px-1.5 pb-1.5">
+            <p className="text-sm font-semibold text-foreground leading-tight">
+              {config.fullName}
+            </p>
+            <p className="mt-1 text-xs text-muted-foreground leading-snug">
+              {config.description}
+            </p>
+          </div>
+        </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem
           render={<Link href="/board-select?change=1" />}
