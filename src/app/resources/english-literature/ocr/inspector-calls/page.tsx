@@ -33,7 +33,7 @@ const keyQuotations = [
       "Mrs Birling's rhetorical question reveals her complete inability to accept social responsibility. The word 'awkward' is a striking understatement — she reduces the consequences of exploitation to mere social inconvenience. The tag question 'wouldn't it?' seeks validation from the audience, but Priestley intends the audience to reject her position entirely.",
   },
   {
-    quote: "Some of these cranks talk and write now, you'd think everybody has to look after everybody else",
+    quote: "these cranks talk and write now, you'd think everybody has to look after everybody else",
     speaker: "Mr Birling (Act 1)",
     analysis:
       "Birling dismisses socialist ideas as the work of 'cranks', revealing his contempt for collective responsibility. Priestley uses dramatic irony: the audience knows that Birling's confident predictions about the Titanic and no war are wrong, undermining his authority. His dismissal of social responsibility is positioned to be equally wrong.",

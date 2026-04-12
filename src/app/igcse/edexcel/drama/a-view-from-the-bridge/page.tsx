@@ -222,7 +222,7 @@ export default async function AViewHubPage() {
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
               A View from the Bridge is in copyright. This guide uses short
-              extracts for fair-use study and criticism.
+              extracts for fair-dealing study and criticism.
             </p>
           </div>
         </div>

@@ -227,7 +227,7 @@ export default async function OmamHubPage() {
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
               Of Mice and Men is in copyright. This guide uses short extracts
-              for fair-use study and criticism. Read the full novella alongside
+              for fair-dealing study and criticism. Read the full novella alongside
               these notes.
             </p>
           </div>

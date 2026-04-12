@@ -116,7 +116,7 @@ export default async function InspectorCallsThemesPage() {
               Key quotations only — read the full text
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
-              Short extracts are included under fair use for study and
+              Short extracts are included under fair dealing for study and
               criticism.
             </p>
           </div>
@@ -150,6 +150,10 @@ export default async function InspectorCallsThemesPage() {
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
         An Inspector Calls &copy; The Estate of J.B. Priestley. Short quotations reproduced under the fair dealing provision of the Copyright, Designs and Patents Act 1988 for the purpose of criticism and review.
+      </p>
+
+      <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
+        Short quotations reproduced under the fair dealing provision of the CDPA 1988 for criticism and review. Full text available from your school or local library.
       </p>
     </div>
   )

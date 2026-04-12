@@ -115,7 +115,7 @@ export default async function DramaHubPage() {
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
               These plays are all in copyright. Our guides include short
-              extracts for fair-use study only. Students should always read or
+              extracts for fair-dealing study only. Students should always read or
               watch the full play alongside these notes.
             </p>
           </div>

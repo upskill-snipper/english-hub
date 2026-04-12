@@ -238,7 +238,7 @@ export default async function InspectorCallsHubPage() {
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
               An Inspector Calls is in copyright. This guide includes short
-              extracts under fair use. Read or watch the full play alongside
+              extracts under fair dealing. Read or watch the full play alongside
               these notes.
             </p>
           </div>
@@ -366,6 +366,10 @@ export default async function InspectorCallsHubPage() {
 
       <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
         An Inspector Calls &copy; The Estate of J.B. Priestley. Short quotations reproduced under the fair dealing provision of the Copyright, Designs and Patents Act 1988 for the purpose of criticism and review.
+      </p>
+
+      <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
+        Short quotations reproduced under the fair dealing provision of the CDPA 1988 for criticism and review. Full text available from your school or local library.
       </p>
     </div>
   )

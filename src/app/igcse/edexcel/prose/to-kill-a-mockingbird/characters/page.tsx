@@ -138,7 +138,7 @@ export default async function TkamCharactersPage() {
           </h1>
           <p className="mt-3 max-w-2xl text-body-lg text-muted-foreground">
             Analytical profiles of the Finches, Ewells, Robinson, Radley and
-            the wider Maycomb cast — with one short, fair-use quotation each.
+            the wider Maycomb cast — with one short, fair-dealing quotation each.
           </p>
         </div>
       </section>
@@ -151,7 +151,7 @@ export default async function TkamCharactersPage() {
               Key quotations only — read the full text
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
-              Short extracts are included under fair use for study and
+              Short extracts are included under fair dealing for study and
               criticism. Read the complete novel for the full characterisation.
             </p>
           </div>

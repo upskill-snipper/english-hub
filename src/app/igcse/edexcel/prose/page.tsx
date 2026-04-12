@@ -148,7 +148,7 @@ export default async function ProseHubPage() {
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
               These texts are all in copyright. Our guides include short
-              extracts for fair-use study and analysis only. Students should
+              extracts for fair-dealing study and analysis only. Students should
               always read the complete novel alongside these notes.
             </p>
           </div>

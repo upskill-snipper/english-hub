@@ -242,7 +242,7 @@ export default async function TkamHubPage() {
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
               To Kill a Mockingbird is in copyright. This guide includes short
-              extracts for fair-use study and analysis only. Read the complete
+              extracts for fair-dealing study and analysis only. Read the complete
               novel alongside these notes.
             </p>
           </div>

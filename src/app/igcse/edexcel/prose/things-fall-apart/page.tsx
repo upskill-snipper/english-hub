@@ -237,7 +237,7 @@ export default async function ThingsFallApartHubPage() {
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
               Things Fall Apart is in copyright. This guide uses short extracts
-              for fair-use study and criticism. Read the full novel alongside
+              for fair-dealing study and criticism. Read the full novel alongside
               these notes.
             </p>
           </div>

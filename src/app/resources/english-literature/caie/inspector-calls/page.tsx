@@ -92,7 +92,7 @@ const keyQuotes = [
       "Sheila accepts collective guilt with the pronoun 'we', echoing the Inspector's communal language. 'Drove' implies relentless pressure, not a single act. Priestley uses Sheila to demonstrate that responsibility cannot be divided into harmless portions: each person's contribution matters.",
   },
   {
-    quote: "She looked as if she could take care of herself. I couldn't be sorry for her",
+    quote: "She looked as if she could take care of herself",
     speaker: "Mrs Birling",
     act: "Act 2",
     analysis:

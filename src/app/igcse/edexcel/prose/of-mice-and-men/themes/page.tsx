@@ -125,7 +125,7 @@ export default async function OmamThemesPage() {
               Key quotations only — read the full text
             </h2>
             <p className="text-body-xs text-muted-foreground leading-relaxed">
-              Short extracts are included under fair use for study and
+              Short extracts are included under fair dealing for study and
               criticism.
             </p>
           </div>

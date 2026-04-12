@@ -106,7 +106,7 @@ const characters = [
       "'Girls of that class'",
       "'I did nothing I'm ashamed of'",
       "'He should be made an example of'",
-      "'I'm sorry she should have come to such a horrible end. But I accept no blame for it at all'",
+      "'I accept no blame for it at all'",
     ],
   },
   {
@@ -182,8 +182,8 @@ const characters = [
       "He represents conscience itself - a force that cannot be dismissed or bribed",
     ],
     keyQuotes: [
-      "'We don't live alone. We are members of one body. We are responsible for each other'",
-      "'If men will not learn that lesson, then they will be taught it in fire and blood and anguish'",
+      "'We are members of one body. We are responsible for each other'",
+      "'they will be taught it in fire and blood and anguish'",
       "'One person and one line of inquiry at a time'",
       "'Public men, Mr Birling, have responsibilities as well as privileges'",
     ],
@@ -225,8 +225,8 @@ const themes = [
     ],
     keyQuotes: [
       "'A man has to mind his own business and look after himself'",
-      "'We don't live alone. We are members of one body. We are responsible for each other'",
-      "'If men will not learn that lesson, then they will be taught it in fire and blood and anguish'",
+      "'We are members of one body. We are responsible for each other'",
+      "'they will be taught it in fire and blood and anguish'",
     ],
   },
   {
@@ -245,7 +245,7 @@ const themes = [
     keyQuotes: [
       "'Girls of that class'",
       "'But these girls aren't cheap labour - they're people'",
-      "'If you don't come down sharply on some of these people, they'd soon be asking for the earth'",
+      "'come down sharply on some of these people, they'd soon be asking for the earth'",
     ],
   },
   {
@@ -264,7 +264,7 @@ const themes = [
     keyQuotes: [
       "'She was young and pretty and warm-hearted - and intensely grateful'",
       "'I was in that state when a chap easily turns nasty'",
-      "'She'd had a lot to say - far too much - so she had to go'",
+      "'She'd had a lot to say — far too much — so she had to go'",
     ],
   },
   {
