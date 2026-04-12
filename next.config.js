@@ -7,8 +7,9 @@ const nextConfig = {
     ignoreBuildErrors: false,
   },
   eslint: {
-    // Linting done locally pre-commit; skip on Vercel to avoid timeout
-    ignoreDuringBuilds: false,
+    // ESLint runs in CI/CD pipeline (.github/workflows/ci.yml), not during
+    // Vercel builds — linting 600+ files causes OOM on the build container.
+    ignoreDuringBuilds: true,
   },
   experimental: {
     instrumentationHook: true,
