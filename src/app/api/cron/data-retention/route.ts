@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import crypto from "crypto";
 import { cleanupExpiredData } from "@/lib/data-retention";
 
 // ─── Cron endpoint for scheduled data retention cleanup ─────────────────
@@ -25,7 +26,13 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    if (!cronSecret || cronSecret !== expectedSecret) {
+    if (
+      !cronSecret ||
+      !crypto.timingSafeEqual(
+        Buffer.from(cronSecret),
+        Buffer.from(expectedSecret)
+      )
+    ) {
       return NextResponse.json(
         { error: "Unauthorised" },
         { status: 401 }
@@ -81,7 +88,14 @@ export async function GET(request: NextRequest) {
   const cronSecret = request.headers.get("x-cron-secret");
   const expectedSecret = process.env.CRON_SECRET;
 
-  if (!expectedSecret || !cronSecret || cronSecret !== expectedSecret) {
+  if (
+    !expectedSecret ||
+    !cronSecret ||
+    !crypto.timingSafeEqual(
+      Buffer.from(cronSecret),
+      Buffer.from(expectedSecret)
+    )
+  ) {
     return NextResponse.json({ error: "Unauthorised" }, { status: 401 });
   }
 

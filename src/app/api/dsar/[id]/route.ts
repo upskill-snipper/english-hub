@@ -1,11 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client";
+import { prisma } from "@/lib/prisma";
 import { z } from "zod";
 import { calculateDeadline, daysUntilDeadline } from "@/lib/dsar";
 import { rateLimit, getClientIp } from "@/lib/rate-limit";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
-
-const prisma = new PrismaClient();
 
 // ─── Validation ────────────────────────────────────────────────────────
 

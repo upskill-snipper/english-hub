@@ -4,11 +4,10 @@
 //   - Reminder before each annual renewal (30 days notice)
 //   - Clear cancellation information in every reminder
 
-import { PrismaClient, SubscriptionPlan, SubscriptionStatus, ReminderType } from "@prisma/client";
+import { SubscriptionPlan, SubscriptionStatus, ReminderType } from "@prisma/client";
+import { prisma } from "@/lib/prisma";
 import { sendEmail } from "./email";
 import { renewalReminderEmail, trialEndingEmail } from "./email-templates";
-
-const prisma = new PrismaClient();
 
 // ─── Types ───────────────────────────────────────────────────────────────
 

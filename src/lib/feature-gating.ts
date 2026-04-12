@@ -34,14 +34,23 @@ export function isFeatureLocked(feature: GatedFeature): boolean {
   return getFeatureUsage(feature) >= FREE_USES_PER_FEATURE
 }
 
-export function isUserPremium(): boolean {
-  // Check localStorage or auth store for premium status
-  if (typeof window === 'undefined') return false
-  return localStorage.getItem('subscription_status') === 'premium'
+/**
+ * Check whether the given subscription status qualifies as premium.
+ *
+ * Accepts the server-provided `subscription_status` from the user's
+ * Supabase profile (available via `useAuthStore`). This value comes
+ * from the database and cannot be spoofed client-side.
+ *
+ * IMPORTANT: Premium-gated *actions* (AI marking, exports, etc.) are
+ * ALSO verified server-side in their API routes. This client-side
+ * check is for UI gating only (showing/hiding upgrade prompts).
+ */
+export function isUserPremium(subscriptionStatus?: string | null): boolean {
+  return subscriptionStatus === 'pro'
 }
 
-export function canUseFeature(feature: GatedFeature): boolean {
-  return isUserPremium() || !isFeatureLocked(feature)
+export function canUseFeature(feature: GatedFeature, subscriptionStatus?: string | null): boolean {
+  return isUserPremium(subscriptionStatus) || !isFeatureLocked(feature)
 }
 
 // Feature display names

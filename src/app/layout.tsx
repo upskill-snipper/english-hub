@@ -91,28 +91,27 @@ export default async function RootLayout({
         <Analytics />
         <SpeedInsights />
         {process.env.NEXT_PUBLIC_GA4_ID && (
-          <Script
-            id="ga4-consent-check"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{
-              __html: `
-                (function() {
-                  var consent = localStorage.getItem('cookie-consent');
-                  if (consent === 'all') {
-                    var s = document.createElement('script');
-                    s.src = 'https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA4_ID}';
-                    s.async = true;
-                    document.head.appendChild(s);
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){dataLayer.push(arguments);}
-                    window.gtag = gtag;
-                    gtag('js', new Date());
-                    gtag('config', '${process.env.NEXT_PUBLIC_GA4_ID}');
-                  }
-                })();
-              `,
-            }}
-          />
+          <>
+            <Script
+              id="ga4-consent-check"
+              strategy="afterInteractive"
+            >
+              {`(function() {
+                var consent = localStorage.getItem('cookie-consent');
+                if (consent === 'all') {
+                  var s = document.createElement('script');
+                  s.src = 'https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA4_ID}';
+                  s.async = true;
+                  document.head.appendChild(s);
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  window.gtag = gtag;
+                  gtag('js', new Date());
+                  gtag('config', '${process.env.NEXT_PUBLIC_GA4_ID}');
+                }
+              })();`}
+            </Script>
+          </>
         )}
       </body>
     </html>

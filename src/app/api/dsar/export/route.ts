@@ -1,10 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client";
+import { prisma } from "@/lib/prisma";
 import { compileUserData } from "@/lib/dsar";
 import { rateLimit, getClientIp } from "@/lib/rate-limit";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
-
-const prisma = new PrismaClient();
 
 // ─── GET /api/dsar/export — Export all user data ───────────────────────
 

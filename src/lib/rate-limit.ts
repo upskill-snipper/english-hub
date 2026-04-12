@@ -104,7 +104,12 @@ export async function rateLimit(
   const client = getRedis()
 
   if (!client) {
-    // Fallback to in-memory (local dev)
+    // Fallback to in-memory — only suitable for local dev.
+    // In production serverless, each instance has its own Map so rate
+    // limiting is effectively disabled.
+    if (process.env.NODE_ENV === 'production') {
+      console.error('[rate-limit] CRITICAL: Redis not configured — rate limiting is non-functional in production')
+    }
     return memRateLimit(key, options)
   }
 
@@ -132,10 +137,15 @@ export async function rateLimit(
 /**
  * Extract client IP from Next.js request headers.
  */
+/**
+ * Extract client IP from request headers.
+ * Prefer `x-real-ip` (set by Vercel/reverse proxy, not spoofable)
+ * over `x-forwarded-for` (can be spoofed by clients).
+ */
 export function getClientIp(headers: Headers): string {
   return (
-    headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
     headers.get('x-real-ip') ||
+    headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
     'unknown'
   )
 }

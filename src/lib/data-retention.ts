@@ -1,8 +1,6 @@
-import { PrismaClient } from "@prisma/client";
+import { prisma } from "@/lib/prisma";
 import { sendEmail } from "@/lib/email";
 import { processChildDormancy, type DormancyResult } from "@/lib/privacy/dormancy";
-
-const prisma = new PrismaClient();
 
 // ─── Retention Periods ──────────────────────────────────────────────────
 

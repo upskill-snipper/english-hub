@@ -118,7 +118,11 @@ export function validateEmail(email: string): boolean {
 
 // ─── IP Hashing ────────────────────────────────────────────────────────
 
-const IP_HASH_SALT = process.env.IP_HASH_SALT || "the-english-hub-ip-salt";
+const IP_HASH_SALT = process.env.IP_HASH_SALT || (
+  process.env.NODE_ENV === "production"
+    ? (() => { console.warn("[security] IP_HASH_SALT not set — using fallback. Set this env var in production."); return "the-english-hub-ip-salt"; })()
+    : "the-english-hub-ip-salt-dev"
+);
 
 /**
  * Hash an IP address for privacy-compliant logging.

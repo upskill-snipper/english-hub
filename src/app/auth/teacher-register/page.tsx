@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import { createClient } from '@/lib/supabase/client'
 import {
   User,
   Mail,
@@ -82,26 +83,39 @@ export default function TeacherRegisterPage() {
     setLoading(true)
 
     try {
-      const res = await fetch('/api/auth/register', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          firstName: firstName.trim(),
-          lastName: lastName.trim(),
-          fullName: `${firstName.trim()} ${lastName.trim()}`,
-          email: email.trim(),
-          password,
-          schoolName: schoolName.trim() || null,
-          role: 'teacher',
-        }),
+      const supabase = createClient()
+      const fullName = `${firstName.trim()} ${lastName.trim()}`
+      const siteUrl = window.location.origin
+
+      const { data, error: signUpError } = await supabase.auth.signUp({
+        email: email.trim(),
+        password,
+        options: {
+          data: { full_name: fullName },
+          emailRedirectTo: `${siteUrl}/auth/callback`,
+        },
       })
 
-      const data = await res.json()
-
-      if (!res.ok) {
-        setError(data.error || 'Registration failed. Please try again.')
+      if (signUpError) {
+        setError(signUpError.message)
         setLoading(false)
         return
+      }
+
+      // Upsert teacher profile
+      if (data.user) {
+        const { error: profileError } = await supabase.from('profiles').upsert({
+          id: data.user.id,
+          email: email.trim(),
+          full_name: fullName,
+          role: 'teacher',
+          school_name: schoolName.trim() || null,
+        })
+
+        if (profileError) {
+          console.error('Profile upsert error:', profileError)
+          // Don't block signup — profile can be updated later
+        }
       }
 
       setSuccess(true)

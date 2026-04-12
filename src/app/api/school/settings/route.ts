@@ -86,16 +86,29 @@ export async function GET(request: NextRequest) {
       .eq("invite_status", "accepted")
 
     const s = school as any
-    return NextResponse.json({
-      settings: school,
-      subscription: {
+    const isAdmin = member.role === "admin"
+
+    // Strip subscription/financial fields for non-admin members
+    const sanitizedSettings = isAdmin
+      ? school
+      : (() => {
+          const { subscription_plan, subscription_status, subscription_expires_at, max_members, ...rest } = s
+          return rest
+        })()
+
+    const response: Record<string, unknown> = { settings: sanitizedSettings }
+
+    if (isAdmin) {
+      response.subscription = {
         plan: s.subscription_plan ?? null,
         status: s.subscription_status ?? null,
         expires_at: s.subscription_expires_at ?? null,
         seats_used: memberCount ?? 0,
         seats_max: s.max_members ?? null,
-      },
-    })
+      }
+    }
+
+    return NextResponse.json(response)
   } catch (error) {
     console.error("School settings get error:", error)
     return NextResponse.json({ error: "Internal server error" }, { status: 500 })

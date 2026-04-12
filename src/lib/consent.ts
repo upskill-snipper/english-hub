@@ -1,6 +1,5 @@
-import { PrismaClient, ConsentType, ConsentMethod } from "@prisma/client";
-
-const prisma = new PrismaClient();
+import { ConsentType, ConsentMethod } from "@prisma/client";
+import { prisma } from "@/lib/prisma";
 
 // ─── Constants ──────────────────────────────────────────────────────────
 

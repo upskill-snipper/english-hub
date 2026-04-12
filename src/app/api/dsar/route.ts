@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client";
+import { prisma } from "@/lib/prisma";
 import { z } from "zod";
 import {
   generateDSARReference,
@@ -10,8 +10,6 @@ import {
 import { sendEmail } from "@/lib/email";
 import { rateLimit, getClientIp } from "@/lib/rate-limit";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
-
-const prisma = new PrismaClient();
 
 // ─── Validation ────────────────────────────────────────────────────────
 

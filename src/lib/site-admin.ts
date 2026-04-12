@@ -8,10 +8,12 @@
  * Add emails here in lowercase. The check is always case-insensitive.
  */
 
-export const SITE_ADMIN_EMAILS: string[] = [
-  'lauren.x@hotmail.co.uk',
-  'calumjohnson@hotmail.com',
-]
+export const SITE_ADMIN_EMAILS: string[] = (
+  process.env.SITE_ADMIN_EMAILS || ''
+)
+  .split(',')
+  .map((e) => e.trim().toLowerCase())
+  .filter(Boolean)
 
 /**
  * Returns true when the given email belongs to a site-wide admin.

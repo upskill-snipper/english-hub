@@ -381,7 +381,7 @@ export async function POST(request: NextRequest) {
           total: job.total,
           success: job.success,
           errors: errors,
-          users: successUsers,
+          users: successUsers.map(({ temporaryPassword: _pw, ...rest }) => rest),
           created_at: new Date(job.createdAt).toISOString(),
         },
         { onConflict: "id" }

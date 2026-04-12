@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import crypto from "crypto";
 import { sendWeeklyReport } from "@/lib/weekly-report";
 
 // ─── Cron endpoint for weekly parent progress reports ─────────────────
@@ -28,7 +29,13 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    if (!cronSecret || cronSecret !== expectedSecret) {
+    if (
+      !cronSecret ||
+      !crypto.timingSafeEqual(
+        Buffer.from(cronSecret),
+        Buffer.from(expectedSecret)
+      )
+    ) {
       return NextResponse.json(
         { error: "Unauthorised" },
         { status: 401 }
@@ -85,12 +92,23 @@ export async function POST(request: NextRequest) {
 
 // ── Health check / status endpoint ────────────────────────────────────
 
-export async function GET() {
+export async function GET(request: NextRequest) {
+  const cronSecret = request.headers.get("x-cron-secret");
+  const expectedSecret = process.env.CRON_SECRET;
+
+  if (
+    !expectedSecret ||
+    !cronSecret ||
+    !crypto.timingSafeEqual(
+      Buffer.from(cronSecret),
+      Buffer.from(expectedSecret)
+    )
+  ) {
+    return NextResponse.json({ error: "Unauthorised" }, { status: 401 });
+  }
+
   return NextResponse.json({
-    endpoint: "weekly-reports",
     status: "ok",
-    description: "Sends weekly progress report emails to opted-in parents",
-    schedule: "Weekly (configurable per parent)",
-    method: "POST with x-cron-secret header",
+    endpoint: "weekly-reports",
   });
 }

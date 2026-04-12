@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useCallback, useRef, useEffect } from 'react'
+import DOMPurify from 'dompurify'
 import { cn } from '@/lib/utils'
 
 /* ── Types ──────────────────────────────────────────────────────── */
@@ -134,7 +135,7 @@ function ContextPanel({ html }: { html: string }) {
   return (
     <div
       className="prose prose-invert prose-sm max-w-none text-sm leading-relaxed text-card-foreground"
-      dangerouslySetInnerHTML={{ __html: html }}
+      dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(html) }}
     />
   )
 }

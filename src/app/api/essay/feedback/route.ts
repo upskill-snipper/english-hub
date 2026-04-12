@@ -4,6 +4,7 @@
 // response for compliance, and returns feedback with content warnings.
 
 import { NextRequest, NextResponse } from "next/server";
+import Anthropic from "@anthropic-ai/sdk";
 import { filterAIResponse, type UserCountry } from "@/lib/content-filter";
 import { getDisclaimer } from "@/lib/ai-disclaimer";
 import { rateLimit } from "@/lib/rate-limit";
@@ -50,21 +51,43 @@ async function generateAIFeedback(
   examBoard: string,
   topic: string
 ): Promise<string> {
-  // TODO(Phase-6): Integrate AI essay feedback via Anthropic Claude API (see commented example below)
-  // Example integration:
-  //
-  // const response = await openai.chat.completions.create({
-  //   model: "gpt-4",
-  //   messages: [
-  //     { role: "system", content: buildSystemPrompt(examBoard, topic) },
-  //     { role: "user", content: essayText },
-  //   ],
-  // });
-  // return response.choices[0].message.content;
+  const apiKey = process.env.ANTHROPIC_API_KEY;
+  if (!apiKey) {
+    throw new Error("AI service is temporarily unavailable.");
+  }
 
-  throw new Error(
-    "AI provider not configured. Set up OpenAI or Anthropic integration."
+  const anthropic = new Anthropic({ apiKey });
+
+  const systemPrompt = [
+    `You are an expert GCSE English teacher providing constructive feedback on student essays.`,
+    `The student is studying the ${examBoard} exam board.`,
+    `The essay topic is: ${topic}.`,
+    ``,
+    `Provide detailed, encouraging feedback covering:`,
+    `1. **Overall impression** (2-3 sentences)`,
+    `2. **Strengths** (3 specific things done well with examples from the text)`,
+    `3. **Areas for improvement** (3 specific suggestions with examples of how to improve)`,
+    `4. **Language & technique** (comment on vocabulary, sentence variety, literary techniques used)`,
+    `5. **Exam tips** (1-2 specific tips for improving marks in the ${examBoard} exam)`,
+    ``,
+    `Be encouraging but honest. Use UK English spelling and terminology.`,
+    `If the submission is not an essay or is inappropriate, respond with: {"error": "INVALID_SUBMISSION"}`,
+  ].join("\n");
+
+  const message = await anthropic.messages.create(
+    {
+      model: "claude-sonnet-4-20250514",
+      max_tokens: 2048,
+      system: systemPrompt,
+      messages: [{ role: "user", content: essayText }],
+    },
+    { timeout: 50_000 }
   );
+
+  return message.content
+    .filter((block): block is Anthropic.TextBlock => block.type === "text")
+    .map((block) => block.text)
+    .join("");
 }
 
 // ─── Audit Logging ──────────────────────────────────────────────────────

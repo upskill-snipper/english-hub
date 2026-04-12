@@ -177,6 +177,7 @@ function LoginForm() {
                     className="pl-11"
                     required
                     autoComplete="email"
+                    aria-invalid={!!error}
                   />
                 </div>
               </div>
@@ -204,6 +205,7 @@ function LoginForm() {
                     className="pl-11 pr-11"
                     required
                     autoComplete="current-password"
+                    aria-invalid={!!error}
                   />
                   <button
                     type="button"

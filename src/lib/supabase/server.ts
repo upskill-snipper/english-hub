@@ -14,7 +14,13 @@ export function createServerSupabaseClient() {
         },
         set(name: string, value: string, options: CookieOptions) {
           try {
-            cookieStore.set({ name, value, ...options })
+            cookieStore.set({
+              name,
+              value,
+              ...options,
+              secure: process.env.NODE_ENV === 'production',
+              sameSite: options.sameSite ?? 'lax',
+            })
           } catch {
             // Server Component — ignore
           }

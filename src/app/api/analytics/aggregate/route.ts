@@ -19,10 +19,8 @@ export const revalidate = 3600
 
 export async function GET() {
   try {
-    // TODO(Phase-7): replace with real Supabase client
-    // import { createServiceRoleClient } from '@/lib/supabase/server'
-    // const supabase = createServiceRoleClient()
-    const supabase = {} as SupabaseClient
+    const { createServiceRoleClient } = await import('@/lib/supabase/server')
+    const supabase = createServiceRoleClient()
 
     const snapshot = await getAggregateSnapshot(supabase)
 

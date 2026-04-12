@@ -53,6 +53,16 @@ export async function POST(request: NextRequest) {
 
   const supabase = createServiceRoleClient()
 
+  // Idempotency check — skip if this event has already been processed
+  const { data: existing } = await supabase
+    .from('webhook_events')
+    .select('event_id')
+    .eq('event_id', event.id)
+    .single()
+  if (existing) {
+    return NextResponse.json({ received: true })
+  }
+
   try {
     switch (event.type) {
       case 'checkout.session.completed': {
@@ -161,7 +171,7 @@ export async function POST(request: NextRequest) {
               if (!res.ok) {
                 const errorBody = await res.text()
                 console.error(
-                  `[stripe/webhook] Failed to send payment_failed email to ${customerEmail}: ${res.status} ${errorBody}`
+                  `[stripe/webhook] Failed to send payment_failed email: ${res.status} ${errorBody}`
                 )
               }
             } catch (err) {
@@ -170,12 +180,12 @@ export async function POST(request: NextRequest) {
             }
           } else {
             console.warn(
-              `[stripe/webhook] invoice.payment_failed: could not resolve email for customer ${customerId}, skipping notification`
+              `[stripe/webhook] invoice.payment_failed: could not resolve email for customer, skipping notification`
             )
           }
         } else {
           console.warn(
-            `[stripe/webhook] RESEND_API_KEY not configured — skipping payment_failed email`
+            '[stripe/webhook] RESEND_API_KEY not configured — skipping payment_failed email'
           )
         }
 
@@ -194,8 +204,10 @@ export async function POST(request: NextRequest) {
 
         // If this is a subscription invoice, ensure status is 'pro'
         // (handles edge case where payment succeeds after past_due)
-        if (paidProfile && (invoice as any).subscription) {
-          const periodEnd = (invoice as any).period_end as number | undefined
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const invoiceAny = invoice as any
+        if (paidProfile && invoiceAny.subscription) {
+          const periodEnd = invoiceAny.period_end as number | undefined
           const subscriptionEndDate = periodEnd
             ? new Date(periodEnd * 1000).toISOString()
             : null
@@ -225,15 +237,15 @@ export async function POST(request: NextRequest) {
 
         try {
           // Resolve subscription ID — may be directly on the charge or via the invoice
+          let subscriptionId: string | null = null
+
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           const chargeAny = charge as any
-          let subscriptionId: string | null =
-            typeof chargeAny.subscription === 'string' ? chargeAny.subscription : null
-
           if (!subscriptionId && chargeAny.invoice) {
             const invoiceId =
               typeof chargeAny.invoice === 'string' ? chargeAny.invoice : chargeAny.invoice?.id
             if (invoiceId) {
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
               const invoice = await stripe.invoices.retrieve(invoiceId) as any
               subscriptionId =
                 typeof invoice.subscription === 'string' ? invoice.subscription : null
@@ -302,6 +314,7 @@ export async function POST(request: NextRequest) {
         const activeStatuses = ['active', 'trialing']
         const subscriptionStatus = activeStatuses.includes(subscription.status) ? 'pro' : 'incomplete'
 
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const periodEnd = (subscription as any).current_period_end as number | undefined
         const subscriptionEndDate = periodEnd
           ? new Date(periodEnd * 1000).toISOString()
@@ -326,6 +339,17 @@ export async function POST(request: NextRequest) {
         // Unhandled event type — acknowledge receipt
         break
       }
+    }
+
+    // Record processed event for idempotency (non-fatal if table doesn't exist)
+    try {
+      await supabase.from('webhook_events').insert({
+        event_id: event.id,
+        event_type: event.type,
+        processed_at: new Date().toISOString(),
+      })
+    } catch {
+      // Non-fatal
     }
 
     return NextResponse.json({ received: true })
@@ -368,9 +392,10 @@ async function handleCheckoutCompleted(
     const activeStatuses = ['active', 'trialing']
     const subscriptionStatus = activeStatuses.includes(subscription.status) ? 'pro' : 'incomplete'
 
-    const periodEnd = (subscription as any).current_period_end as number | undefined
-    const subscriptionEndDate = periodEnd
-      ? new Date(periodEnd * 1000).toISOString()
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const cpEnd = (subscription as any).current_period_end as number | undefined
+    const subscriptionEndDate = cpEnd
+      ? new Date(cpEnd * 1000).toISOString()
       : null
 
     const { error } = await supabase
@@ -441,9 +466,10 @@ async function handleSubscriptionUpdated(
   }
 
   const subscriptionStatus = statusMap[subscription.status] ?? 'free'
-  const periodEnd = (subscription as any).current_period_end as number | undefined
-  const subscriptionEndDate = periodEnd
-    ? new Date(periodEnd * 1000).toISOString()
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const periodEndUpdate = (subscription as any).current_period_end as number | undefined
+  const subscriptionEndDate = periodEndUpdate
+    ? new Date(periodEndUpdate * 1000).toISOString()
     : null
 
   const { error } = await supabase
@@ -480,8 +506,9 @@ async function handleSubscriptionDeleted(
     return
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const sub = subscription as any
-  const endTimestamp: number | undefined =
+  const endTimestamp: number | null | undefined =
     sub.ended_at ?? sub.cancel_at ?? sub.current_period_end
   const subscriptionEndDate = endTimestamp
     ? new Date(endTimestamp * 1000).toISOString()
@@ -560,15 +587,13 @@ async function handleTrialWillEnd(
     JSON.stringify({
       event: 'customer.subscription.trial_will_end',
       subscriptionId: subscription.id,
-      customerId,
-      customerEmail,
       trialEnd: trialEndDate?.toISOString() ?? null,
     })
   )
 
   if (!customerEmail) {
     console.error(
-      `[stripe/webhook] trial_will_end: could not resolve email for customer ${customerId}, skipping notification`
+      '[stripe/webhook] trial_will_end: could not resolve email for customer, skipping notification'
     )
     return
   }
@@ -577,7 +602,7 @@ async function handleTrialWillEnd(
   const resendApiKey = process.env.RESEND_API_KEY
   if (!resendApiKey) {
     console.warn(
-      `[stripe/webhook] RESEND_API_KEY not configured — skipping trial_will_end email for ${customerEmail}`
+      '[stripe/webhook] RESEND_API_KEY not configured — skipping trial_will_end email'
     )
     return
   }

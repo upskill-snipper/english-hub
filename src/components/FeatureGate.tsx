@@ -14,6 +14,7 @@ import {
   isUserPremium,
   FREE_USES_PER_FEATURE,
 } from '@/lib/feature-gating'
+import { useAuthProfile } from '@/store/auth-store'
 
 interface FeatureGateProps {
   feature: GatedFeature
@@ -34,12 +35,13 @@ interface FeatureGateProps {
  * - Premium users bypass everything
  */
 export function FeatureGate({ feature, children, onUse }: FeatureGateProps) {
+  const profile = useAuthProfile()
   const [modalOpen, setModalOpen] = useState(false)
   const [modalVariant, setModalVariant] = useState<'warning' | 'nudge'>('nudge')
-  const [locked, setLocked] = useState(() => !isUserPremium() && isFeatureLocked(feature))
+  const [locked, setLocked] = useState(() => !isUserPremium(profile?.subscription_status) && isFeatureLocked(feature))
   const [remaining, setRemaining] = useState(() => getRemainingUses(feature))
 
-  const premium = isUserPremium()
+  const premium = isUserPremium(profile?.subscription_status)
 
   const handleUse = useCallback(() => {
     // Premium users bypass all gating

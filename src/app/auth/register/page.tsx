@@ -181,6 +181,7 @@ function RegisterForm() {
             body: JSON.stringify({
               parentEmail: parentGuardianEmail,
               studentName: fullName,
+              studentId: data.user.id,
             }),
           })
         } catch (err) {

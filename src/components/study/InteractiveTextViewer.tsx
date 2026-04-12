@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react'
+import DOMPurify from 'dompurify'
 import { ReadingProgressTracker } from './ReadingProgressTracker'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
@@ -240,7 +241,7 @@ function AnnotatedContent({
     const active = annotations.filter((a) => activeOverlays.has(a.type))
 
     if (active.length === 0) {
-      return <div className="prose-reader" dangerouslySetInnerHTML={{ __html: html }} />
+      return <div className="prose-reader" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(html) }} />
     }
 
     // Parse the HTML to plain text for matching, then rebuild with annotations

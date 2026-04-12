@@ -331,14 +331,15 @@ export async function GET(request: NextRequest) {
       }
 
       if (issues.length > 0) {
-        atRiskStudents.push({
+        const entry: AtRiskStudent = {
           userId: student.user_id,
           name: student.full_name ?? "Unknown",
-          email: student.email ?? "",
+          email: member.role === "admin" ? (student.email ?? "") : "",
           yearGroup: student.year_group ?? "Unknown",
           lastActiveAt: student.last_active_at ?? new Date(0).toISOString(),
           issues,
-        });
+        };
+        atRiskStudents.push(entry);
       }
     }
 

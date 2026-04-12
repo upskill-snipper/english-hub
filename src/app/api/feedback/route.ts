@@ -1,32 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { verifyAdmin } from "@/lib/admin-auth";
 import { rateLimit, getClientIp } from "@/lib/rate-limit";
-
-/* ─── Types ──────────────────────────────────────────────────── */
-
-export interface FeedbackEntry {
-  id: string;
-  type: "suggestion" | "issue";
-  status: "new" | "reviewed" | "resolved";
-  createdAt: string;
-  pageUrl: string;
-  userId?: string;
-  email?: string;
-
-  // Suggestion fields
-  subject?: string;
-  message?: string;
-  category?: string;
-
-  // Issue fields
-  issueType?: string;
-  description?: string;
-  severity?: string;
-}
-
-/* ─── In-memory store (replace with DB in production) ────────── */
-
-const feedbackStore: FeedbackEntry[] = [];
+import { createServerSupabaseClient, createServiceRoleClient } from "@/lib/supabase/server";
 
 /* ─── POST — submit feedback ─────────────────────────────────── */
 
@@ -52,7 +27,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Validate and sanitize string fields with length limits
+    // Validate string fields
     if (typeof pageUrl !== "string" || pageUrl.trim().length > 2000) {
       return NextResponse.json(
         { error: "pageUrl must be a string of 2000 characters or fewer" },
@@ -62,10 +37,7 @@ export async function POST(request: NextRequest) {
 
     if (email !== undefined && email !== null) {
       if (typeof email !== "string" || email.length > 320) {
-        return NextResponse.json(
-          { error: "Invalid email" },
-          { status: 400 }
-        );
+        return NextResponse.json({ error: "Invalid email" }, { status: 400 });
       }
     }
 
@@ -88,12 +60,6 @@ export async function POST(request: NextRequest) {
           { status: 400 }
         );
       }
-      if (body.category && (typeof body.category !== "string" || body.category.length > 100)) {
-        return NextResponse.json(
-          { error: "Invalid category" },
-          { status: 400 }
-        );
-      }
     } else if (type === "issue") {
       if (!body.description?.trim()) {
         return NextResponse.json(
@@ -107,18 +73,6 @@ export async function POST(request: NextRequest) {
           { status: 400 }
         );
       }
-      if (body.issueType && (typeof body.issueType !== "string" || body.issueType.length > 100)) {
-        return NextResponse.json(
-          { error: "Invalid issue type" },
-          { status: 400 }
-        );
-      }
-      if (body.severity && (typeof body.severity !== "string" || !["Minor", "Major", "Critical"].includes(body.severity))) {
-        return NextResponse.json(
-          { error: 'Severity must be "Minor", "Major", or "Critical"' },
-          { status: 400 }
-        );
-      }
     } else {
       return NextResponse.json(
         { error: 'Invalid type. Must be "suggestion" or "issue"' },
@@ -126,35 +80,47 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const entry: FeedbackEntry = {
-      id: `fb_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`,
+    // Get optional user ID from session
+    let userId: string | null = null;
+    try {
+      const supabase = createServerSupabaseClient();
+      const { data: { user } } = await supabase.auth.getUser();
+      userId = user?.id ?? null;
+    } catch {
+      // Anonymous feedback is allowed
+    }
+
+    const admin = createServiceRoleClient();
+    const entry = {
       type,
       status: "new",
-      createdAt: new Date().toISOString(),
-      pageUrl: pageUrl.trim(),
-      email: email?.trim() || undefined,
-      // TODO(Phase-7): Extract userId from Supabase auth session (optional — allow anonymous feedback)
-      userId: undefined,
-
-      // Suggestion-specific
-      ...(type === "suggestion" && {
-        subject: body.subject.trim(),
-        message: body.message.trim(),
-        category: body.category?.trim() || "Other",
-      }),
-
-      // Issue-specific
-      ...(type === "issue" && {
-        issueType: body.issueType?.trim() || "Other",
-        description: body.description.trim(),
-        severity: body.severity || "Minor",
-      }),
+      page_url: pageUrl.trim(),
+      email: email?.trim() || null,
+      user_id: userId,
+      subject: type === "suggestion" ? body.subject.trim() : null,
+      message: type === "suggestion" ? body.message.trim() : null,
+      category: type === "suggestion" ? (body.category?.trim() || "Other") : null,
+      issue_type: type === "issue" ? (body.issueType?.trim() || "Other") : null,
+      description: type === "issue" ? body.description.trim() : null,
+      severity: type === "issue" ? (body.severity || "Minor") : null,
     };
 
-    feedbackStore.push(entry);
+    const { data, error: insertError } = await admin
+      .from("feedback_entries")
+      .insert(entry)
+      .select("id")
+      .single();
+
+    if (insertError) {
+      console.error("[feedback] Insert error:", insertError);
+      return NextResponse.json(
+        { error: "Failed to save feedback. Please try again." },
+        { status: 500 }
+      );
+    }
 
     return NextResponse.json(
-      { success: true, id: entry.id },
+      { success: true, id: data.id },
       { status: 201 }
     );
   } catch {
@@ -179,42 +145,33 @@ export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const type = searchParams.get("type");
   const status = searchParams.get("status");
-  const severity = searchParams.get("severity");
 
-  let results = [...feedbackStore];
+  const admin = createServiceRoleClient();
+  let query = admin
+    .from("feedback_entries")
+    .select("*")
+    .order("created_at", { ascending: false })
+    .limit(100);
 
-  if (type) {
-    results = results.filter((f) => f.type === type);
-  }
-  if (status) {
-    results = results.filter((f) => f.status === status);
-  }
-  if (severity) {
-    results = results.filter((f) => f.severity === severity);
-  }
+  if (type) query = query.eq("type", type);
+  if (status) query = query.eq("status", status);
 
-  // Sort newest first
-  results.sort(
-    (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
-  );
+  const { data: results, error: fetchError } = await query;
+
+  if (fetchError) {
+    console.error("[feedback] Fetch error:", fetchError);
+    return NextResponse.json({ error: "Failed to fetch feedback" }, { status: 500 });
+  }
 
   return NextResponse.json({
-    feedback: results,
-    total: results.length,
-    counts: {
-      suggestions: feedbackStore.filter((f) => f.type === "suggestion").length,
-      issues: feedbackStore.filter((f) => f.type === "issue").length,
-      new: feedbackStore.filter((f) => f.status === "new").length,
-      reviewed: feedbackStore.filter((f) => f.status === "reviewed").length,
-      resolved: feedbackStore.filter((f) => f.status === "resolved").length,
-    },
+    feedback: results ?? [],
+    total: results?.length ?? 0,
   });
 }
 
 /* ─── PATCH — update status ──────────────────────────────────── */
 
 export async function PATCH(request: NextRequest) {
-  // Only admins can update feedback status
   const { user, error: authErr } = await verifyAdmin();
   if (authErr === "Unauthorized" || !user) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
@@ -235,21 +192,23 @@ export async function PATCH(request: NextRequest) {
     }
 
     if (!["new", "reviewed", "resolved"].includes(status)) {
-      return NextResponse.json(
-        { error: "Invalid status" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "Invalid status" }, { status: 400 });
     }
 
-    const entry = feedbackStore.find((f) => f.id === id);
-    if (!entry) {
+    const admin = createServiceRoleClient();
+    const { data: entry, error: updateError } = await admin
+      .from("feedback_entries")
+      .update({ status })
+      .eq("id", id)
+      .select()
+      .single();
+
+    if (updateError || !entry) {
       return NextResponse.json(
         { error: "Feedback entry not found" },
         { status: 404 }
       );
     }
-
-    entry.status = status;
 
     return NextResponse.json({ success: true, entry });
   } catch {

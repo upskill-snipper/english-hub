@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
+import crypto from 'crypto'
+import { createServiceRoleClient } from '@/lib/supabase/server'
 
 // In-memory rate limit store: IP -> timestamps of recent requests
 const rateLimitMap = new Map<string, number[]>()
@@ -36,7 +38,7 @@ export async function POST(request: NextRequest) {
     )
   }
 
-  let body: { parentEmail?: string; studentName?: string }
+  let body: { parentEmail?: string; studentName?: string; studentId?: string }
   try {
     body = await request.json()
   } catch {
@@ -46,7 +48,7 @@ export async function POST(request: NextRequest) {
     )
   }
 
-  const { parentEmail, studentName } = body
+  const { parentEmail, studentName, studentId } = body
 
   if (!parentEmail || !studentName) {
     return NextResponse.json(
@@ -64,8 +66,29 @@ export async function POST(request: NextRequest) {
     )
   }
 
+  // Generate a consent token and store it so the parent can verify
+  const consentToken = crypto.randomBytes(32).toString('hex')
+  if (studentId) {
+    try {
+      const supabase = createServiceRoleClient()
+      await supabase.from('consent_tokens').upsert({
+        token: consentToken,
+        student_id: studentId,
+        parent_email: parentEmail,
+        student_name: studentName,
+        expires_at: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString(), // 7 days
+        status: 'pending',
+      })
+    } catch (err) {
+      console.warn('[parent-notify] Failed to store consent token:', err)
+      // Continue — the email will still be sent, consent can be handled manually
+    }
+  }
+
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://theenglishhub.app'
-  const consentUrl = `${siteUrl}/consent`
+  const consentUrl = studentId
+    ? `${siteUrl}/consent?token=${consentToken}`
+    : `${siteUrl}/consent`
   const fromAddress = 'The English Hub <noreply@theenglishhub.app>'
   const subject = 'Parental Consent Required - The English Hub'
 
@@ -106,7 +129,7 @@ export async function POST(request: NextRequest) {
     if (!res.ok) {
       const errorBody = await res.text()
       console.error(
-        `[parent-notify] Failed to send parental consent email to ${parentEmail}: ${res.status} ${errorBody}`
+        `[parent-notify] Failed to send parental consent email: ${res.status} ${errorBody}`
       )
       return NextResponse.json(
         { error: 'Failed to send email' },

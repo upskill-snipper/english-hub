@@ -1,11 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
-import { PrismaClient, Prisma } from "@prisma/client";
+import { Prisma } from "@prisma/client";
+import { prisma } from "@/lib/prisma";
 import { sendEmail } from "@/lib/email";
 import { rateLimit, getClientIp } from "@/lib/rate-limit";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
-
-const prisma = new PrismaClient();
 
 // ─── Environment ────────────────────────────────────────────────────────
 

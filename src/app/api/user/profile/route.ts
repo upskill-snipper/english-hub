@@ -1,10 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { rateLimit, getClientIp } from "@/lib/rate-limit";
-import { createServerSupabaseClient } from "@/lib/supabase/server";
-
-// NOTE: Uncomment once Prisma is wired up:
-// import { prisma } from "@/lib/prisma";
+import { createServerSupabaseClient, createServiceRoleClient } from "@/lib/supabase/server";
 
 // ─── Validation ────────────────────────────────────────────────────────
 
@@ -19,22 +16,14 @@ const updateProfileSchema = z.object({
     .min(1, "Last name is required")
     .max(50, "Last name is too long")
     .optional(),
-  school: z.string().max(200, "School name is too long").nullable().optional(),
+  full_name: z
+    .string()
+    .min(1, "Name is required")
+    .max(100, "Name is too long")
+    .optional(),
+  school_name: z.string().max(200, "School name is too long").nullable().optional(),
+  year_group: z.string().max(20).nullable().optional(),
 });
-
-// ─── Stub user data (replace with DB queries) ─────────────────────────
-
-const STUB_USER = {
-  id: "stub-user-id",
-  email: "alex@example.com",
-  firstName: "Alex",
-  lastName: "Smith",
-  dateOfBirth: new Date(2009, 4, 15), // 15 May 2009
-  school: "Westfield Academy",
-  country: "UK",
-  isMinor: true,
-  createdAt: new Date("2026-01-10"),
-};
 
 // ─── GET /api/user/profile ─────────────────────────────────────────────
 
@@ -61,50 +50,41 @@ export async function GET(request: NextRequest) {
         { status: 401 }
       );
     }
-    const userId = user.id;
 
-    // TODO(Phase-7): Replace STUB_USER with Supabase profiles table query
-    // const user = await prisma.user.findUnique({
-    //   where: { id: userId, accountStatus: "ACTIVE" },
-    //   select: {
-    //     id: true,
-    //     email: true,
-    //     firstName: true,
-    //     lastName: true,
-    //     dateOfBirth: true,
-    //     school: true,
-    //     country: true,
-    //     isMinor: true,
-    //     createdAt: true,
-    //   },
-    // });
-    // if (!user) {
-    //   return NextResponse.json({ error: "User not found" }, { status: 404 });
-    // }
+    // Fetch profile from Supabase profiles table
+    const admin = createServiceRoleClient();
+    const { data: profile, error: profileError } = await admin
+      .from("profiles")
+      .select("id, email, full_name, role, year_group, exam_board, school_name, subscription_status, subscription_end_date, date_of_birth, created_at, updated_at")
+      .eq("id", user.id)
+      .single();
 
-    const profile = STUB_USER;
-
-    const today = new Date();
-    const birthDate = new Date(profile.dateOfBirth);
-    let age = today.getFullYear() - birthDate.getFullYear();
-    const monthDiff = today.getMonth() - birthDate.getMonth();
-    if (
-      monthDiff < 0 ||
-      (monthDiff === 0 && today.getDate() < birthDate.getDate())
-    ) {
-      age--;
+    if (profileError || !profile) {
+      // If no profile row exists, return basic info from auth
+      return NextResponse.json({
+        id: user.id,
+        email: user.email,
+        full_name: user.user_metadata?.full_name ?? null,
+        role: "student",
+        year_group: null,
+        exam_board: null,
+        school_name: null,
+        subscription_status: "free",
+        created_at: user.created_at,
+      });
     }
 
     return NextResponse.json({
-      id: user.id,
-      email: user.email ?? profile.email,
-      firstName: profile.firstName,
-      lastName: profile.lastName,
-      age,
-      isMinor: profile.isMinor,
-      school: profile.school,
-      country: profile.country,
-      createdAt: profile.createdAt.toISOString(),
+      id: profile.id,
+      email: profile.email,
+      full_name: profile.full_name,
+      role: profile.role,
+      year_group: profile.year_group,
+      exam_board: profile.exam_board,
+      school_name: profile.school_name,
+      subscription_status: profile.subscription_status,
+      subscription_end_date: profile.subscription_end_date,
+      created_at: profile.created_at,
     });
   } catch (error) {
     console.error("[Profile GET] Error:", error);
@@ -119,6 +99,18 @@ export async function GET(request: NextRequest) {
 
 export async function PATCH(request: NextRequest) {
   try {
+    const ip = getClientIp(request.headers);
+    const rl = await rateLimit(`profile-update:${ip}`, {
+      limit: 20,
+      windowSeconds: 60,
+    });
+    if (!rl.success) {
+      return NextResponse.json(
+        { error: "Too many requests. Please try again later." },
+        { status: 429, headers: { "Retry-After": String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+      );
+    }
+
     const supabase = createServerSupabaseClient();
     const { data: { user }, error: authError } = await supabase.auth.getUser();
     if (authError || !user) {
@@ -127,7 +119,6 @@ export async function PATCH(request: NextRequest) {
         { status: 401 }
       );
     }
-    const userId = user.id;
 
     const body = await request.json();
     const data = updateProfileSchema.parse(body);
@@ -140,65 +131,34 @@ export async function PATCH(request: NextRequest) {
       );
     }
 
-    const ip =
-      request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ??
-      request.headers.get("x-real-ip") ??
-      "unknown";
+    // Build update object — only include fields that were provided
+    const updateData: Record<string, unknown> = {};
+    if (data.full_name !== undefined) updateData.full_name = data.full_name;
+    if (data.firstName !== undefined && data.lastName !== undefined) {
+      updateData.full_name = `${data.firstName} ${data.lastName}`;
+    }
+    if (data.school_name !== undefined) updateData.school_name = data.school_name;
+    if (data.year_group !== undefined) updateData.year_group = data.year_group;
 
-    // TODO(Phase-7): Replace stub with Supabase profiles table update + audit log insert
-    // const updatedUser = await prisma.$transaction(async (tx) => {
-    //   const user = await tx.user.update({
-    //     where: { id: userId },
-    //     data: {
-    //       ...(data.firstName !== undefined && { firstName: data.firstName }),
-    //       ...(data.lastName !== undefined && { lastName: data.lastName }),
-    //       ...(data.school !== undefined && { school: data.school }),
-    //     },
-    //     select: {
-    //       id: true,
-    //       email: true,
-    //       firstName: true,
-    //       lastName: true,
-    //       school: true,
-    //       country: true,
-    //       isMinor: true,
-    //     },
-    //   });
-    //
-    //   // Audit log
-    //   await tx.auditLog.create({
-    //     data: {
-    //       userId,
-    //       action: "PROFILE_UPDATED",
-    //       resource: "user",
-    //       resourceId: userId,
-    //       details: { fieldsUpdated: Object.keys(data) },
-    //       ipAddress: ip,
-    //     },
-    //   });
-    //
-    //   return user;
-    // });
+    const admin = createServiceRoleClient();
+    const { data: updatedProfile, error: updateError } = await admin
+      .from("profiles")
+      .update(updateData)
+      .eq("id", user.id)
+      .select("id, email, full_name, role, year_group, exam_board, school_name, subscription_status")
+      .single();
 
-    // Temporary stub: merge changes into mock data
-    const updatedUser = {
-      ...STUB_USER,
-      ...(data.firstName !== undefined && { firstName: data.firstName }),
-      ...(data.lastName !== undefined && { lastName: data.lastName }),
-      ...(data.school !== undefined && { school: data.school }),
-    };
+    if (updateError) {
+      console.error("[Profile PATCH] Supabase update error:", updateError);
+      return NextResponse.json(
+        { error: "Failed to update profile." },
+        { status: 500 }
+      );
+    }
 
     return NextResponse.json({
       message: "Profile updated successfully",
-      user: {
-        id: updatedUser.id,
-        email: updatedUser.email,
-        firstName: updatedUser.firstName,
-        lastName: updatedUser.lastName,
-        school: updatedUser.school,
-        country: updatedUser.country,
-        isMinor: updatedUser.isMinor,
-      },
+      user: updatedProfile,
     });
   } catch (error) {
     if (error instanceof z.ZodError) {
