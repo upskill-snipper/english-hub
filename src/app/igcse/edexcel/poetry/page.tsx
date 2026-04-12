@@ -368,20 +368,79 @@ export default async function EdexcelPoetryAnthologyPage() {
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {anthology.map((poem) => {
             const isLinked = Boolean(poem.href)
-            const CardTag: typeof Link | 'div' = isLinked ? Link : 'div'
-            const cardProps = isLinked
-              ? { href: poem.href! }
-              : ({} as { href?: string })
+            const sharedClassName = `group block rounded-xl border border-border bg-card p-4 transition-colors ${
+              isLinked
+                ? 'hover:border-foreground/20 hover:bg-muted/40 cursor-pointer'
+                : 'opacity-90'
+            }`
+
+            if (isLinked) {
+              return (
+                <Link
+                  key={poem.number}
+                  href={poem.href!}
+                  className={sharedClassName}
+                >
+                <div className="flex items-start justify-between gap-3 mb-2">
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs tabular-nums text-muted-foreground/60 font-medium">
+                      {poem.number.toString().padStart(2, '0')}
+                    </span>
+                    {poem.publicDomain ? (
+                      <Unlock className="size-3 text-emerald-400" />
+                    ) : (
+                      <Lock className="size-3 text-muted-foreground/70" />
+                    )}
+                  </div>
+                  {poem.year && (
+                    <span className="text-[10px] text-muted-foreground/60 tabular-nums">
+                      {poem.year}
+                    </span>
+                  )}
+                </div>
+
+                <h3 className="text-sm font-semibold text-foreground group-hover:text-foreground">
+                  {poem.title}
+                </h3>
+                <p className="text-xs text-muted-foreground mb-2">
+                  {poem.poet}
+                </p>
+
+                <p className="text-xs text-muted-foreground leading-relaxed mb-3 line-clamp-3">
+                  {poem.summary}
+                </p>
+
+                <div className="flex flex-wrap gap-1.5 mb-3">
+                  {poem.themes.map((t) => (
+                    <span
+                      key={t}
+                      className="rounded-full bg-muted px-2 py-0.5 text-[10px] text-muted-foreground"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+
+                {poem.publicDomain ? (
+                  <Badge variant="secondary" className="text-[10px]">
+                    Full interactive study guide
+                  </Badge>
+                ) : (
+                  <Badge
+                    variant="outline"
+                    className="text-[10px] text-muted-foreground"
+                  >
+                    Study notes only — see textbook for full text
+                  </Badge>
+                )}
+              </Link>
+              )
+            }
 
             return (
-              <CardTag
+              <div
                 key={poem.number}
-                {...cardProps}
-                className={`group block rounded-xl border border-border bg-card p-4 transition-colors ${
-                  isLinked
-                    ? 'hover:border-foreground/20 hover:bg-muted/40 cursor-pointer'
-                    : 'opacity-90'
-                }`}
+                className={sharedClassName}
               >
                 <div className="flex items-start justify-between gap-3 mb-2">
                   <div className="flex items-center gap-2">
@@ -435,7 +494,7 @@ export default async function EdexcelPoetryAnthologyPage() {
                     Study notes only — see textbook for full text
                   </Badge>
                 )}
-              </CardTag>
+              </div>
             )
           })}
         </div>

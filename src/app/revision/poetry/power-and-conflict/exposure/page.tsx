@@ -407,6 +407,10 @@ export default function ExposurePage() {
           ))}
         </div>
       </section>
+
+      <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
+        Public domain &mdash; quotations from Exposure by Wilfred Owen reproduced freely.
+      </p>
     </div>
   )
 }

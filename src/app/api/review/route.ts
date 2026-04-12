@@ -99,7 +99,7 @@ export async function POST(request: NextRequest) {
       referenceNumber,
       userId,
       essayId,
-      essayTitle: `Essay ${essayId}`, // TODO: look up real title
+      essayTitle: `Essay ${essayId}`, // TODO(Phase-7): Query essay title from Supabase essay_submissions table by essayId
       reason,
       detail: detail.trim(),
       selfAssessment:

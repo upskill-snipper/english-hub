@@ -37,7 +37,7 @@ export async function POST(request: NextRequest) {
 
     // ── Fetch parents who opted in to weekly reports ──────────────────
 
-    // TODO: Replace with real database query
+    // TODO(Phase-7): Replace with Supabase query on parent_settings table (weeklyReportEnabled, reportDay, linked students with active subscriptions)
     // const parents = await prisma.user.findMany({
     //   where: {
     //     role: "PARENT",

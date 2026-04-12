@@ -576,7 +576,6 @@ async function handleTrialWillEnd(
   // Send trial-ending notification via Resend
   const resendApiKey = process.env.RESEND_API_KEY
   if (!resendApiKey) {
-    // TODO: Configure RESEND_API_KEY to enable trial-end email notifications
     console.warn(
       `[stripe/webhook] RESEND_API_KEY not configured — skipping trial_will_end email for ${customerEmail}`
     )

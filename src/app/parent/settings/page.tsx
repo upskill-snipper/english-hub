@@ -26,8 +26,6 @@ import { Label } from '@/components/ui/label'
 import { Separator } from '@/components/ui/separator'
 import { Badge } from '@/components/ui/badge'
 
-// TODO: replace with Supabase — persist settings to parent_profile row
-
 const PARENT_ACCOUNT_KEY = 'english-hub-parent-account'
 
 interface ParentAccount {
@@ -86,7 +84,7 @@ export default function ParentSettingsPage() {
   }, [])
 
   function saveNotifications() {
-    // TODO: replace with Supabase — update parent_profile.notifications
+    // [P2:data] TODO: Supabase — update parent_profile.notifications
     const next: ParentAccount = {
       ...(account ?? {}),
       notifications: {
@@ -122,7 +120,7 @@ export default function ParentSettingsPage() {
 
     setPasswordLoading(true)
     try {
-      // TODO: replace with Supabase — supabase.auth.updateUser({ password })
+      // [P2:auth] TODO: Supabase — supabase.auth.updateUser({ password })
       await new Promise((resolve) => setTimeout(resolve, 400))
       setPasswordMessage('Password updated.')
       setCurrentPassword('')

@@ -25,10 +25,10 @@ const QUOTE_BANK: QuoteEntry[] = [
   { quote: 'Will all great Neptune\'s ocean wash this blood clean from my hand?', text: 'Macbeth' },
   { quote: 'Fair is foul, and foul is fair.', text: 'Macbeth' },
   // An Inspector Calls
-  { quote: 'We don\'t live alone. We are members of one body. We are responsible for each other.', text: 'An Inspector Calls' },
-  { quote: 'If men will not learn that lesson, then they will be taught it in fire and blood and anguish.', text: 'An Inspector Calls' },
+  { quote: 'We are members of one body. We are responsible for each other.', text: 'An Inspector Calls' },
+  { quote: 'They will be taught it in fire and blood and anguish.', text: 'An Inspector Calls' },
   { quote: 'The young ones. They\'re more impressionable.', text: 'An Inspector Calls' },
-  { quote: 'We are all responsible for each other. And I tell you that the time will soon come.', text: 'An Inspector Calls' },
+  { quote: 'We are all responsible for each other.', text: 'An Inspector Calls' },
   // A Christmas Carol
   { quote: 'Are there no prisons? Are there no workhouses?', text: 'A Christmas Carol' },
   { quote: 'I wear the chain I forged in life. I made it link by link, and yard by yard.', text: 'A Christmas Carol' },

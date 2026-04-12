@@ -321,7 +321,7 @@ const keyQuotations = [
       "Birling's individualist manifesto. This directly contradicts the Inspector's later message about collective responsibility. The repetition of 'his own' emphasises selfishness. The play systematically proves this philosophy wrong. Priestley wrote this to discredit the capitalist worldview.",
   },
   {
-    quote: "If you don't come down sharply on some of these people, they'd soon be asking for the earth",
+    quote: "Come down sharply on some of these people, they'd soon be asking for the earth",
     speaker: "Mr Birling (Act 1)",
     analysis:
       "'These people' dehumanises the working class. 'Come down sharply' reveals the violence underlying class power. 'Asking for the earth' is hyperbole - Eva asked for a small wage increase. Birling's language exposes the cruelty masked by business respectability.",
@@ -381,13 +381,13 @@ const keyQuotations = [
       "Eric directly accuses his mother. The bluntness is shocking after an evening of euphemism and evasion. 'The child she'd have had too' doubles the horror - Mrs Birling's refusal killed both mother and unborn child. This is the most emotionally raw moment in the play.",
   },
   {
-    quote: "We don't live alone. We are members of one body. We are responsible for each other",
+    quote: "We are members of one body. We are responsible for each other",
     speaker: "Inspector Goole (Act 3)",
     analysis:
       "The Inspector's final speech and the play's thesis statement. 'Members of one body' is both socialist (the body politic) and Christian (the body of Christ). The short, declarative sentences have the force of commandments. This is Priestley speaking directly to his 1945 audience, arguing for the welfare state and collective responsibility.",
   },
   {
-    quote: "If men will not learn that lesson, then they will be taught it in fire and blood and anguish",
+    quote: "They will be taught it in fire and blood and anguish",
     speaker: "Inspector Goole (Act 3)",
     analysis:
       "A prophetic warning. For the characters in 1912, this refers to World War I (1914-18). For the 1945 audience, it refers to both world wars. The tricolon ('fire and blood and anguish') builds in intensity. The conditional 'if' offers a choice: learn voluntarily or suffer the consequences. The final phone call suggests the Birlings chose to ignore the lesson.",
@@ -405,13 +405,13 @@ const keyQuotations = [
       "The Inspector directly challenges Birling's belief that power comes without obligation. 'Responsibilities as well as privileges' is the foundation of social democracy. The formal address ('Mr Birling') is controlled and authoritative. This sentence applies to every powerful institution in society.",
   },
   {
-    quote: "We are responsible for each other. And I tell you that the time will soon come when, if men will not learn that lesson, when they will be taught it in fire and blood and anguish",
+    quote: "We are responsible for each other… in fire and blood and anguish",
     speaker: "Inspector Goole (Act 3)",
     analysis:
-      "The full version of the Inspector's warning connects responsibility to consequences. The shift from 'we are' (present, inclusive) to 'they will be taught' (future, inevitable) creates urgency. Priestley gives his audience a choice: build a just society now, or repeat the catastrophes of the past.",
+      "The Inspector's warning connects responsibility to consequences. The shift from 'we are' (present, inclusive) to 'they will be taught' (future, inevitable) creates urgency. Priestley gives his audience a choice: build a just society now, or repeat the catastrophes of the past.",
   },
   {
-    quote: "One Eva Smith has gone - but there are millions and millions and millions of Eva Smiths and John Smiths still left with us",
+    quote: "Millions and millions of Eva Smiths and John Smiths still left with us",
     speaker: "Inspector Goole (Act 3)",
     analysis:
       "Eva becomes representative of the entire working class. The triple repetition of 'millions' hammers home the scale of the problem. 'John Smiths' extends the argument to men as well. 'Still left with us' insists that this is an ongoing, current problem, not a historical one. The common surname 'Smith' makes the point universal.",
@@ -762,6 +762,10 @@ export default function InspectorCallsPage() {
           &larr; Back to AQA English Literature
         </Link>
       </section>
+
+      <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4 mx-auto max-w-5xl px-4">
+        An Inspector Calls &copy; The Estate of J.B. Priestley. Short quotations reproduced under the fair dealing provision of the Copyright, Designs and Patents Act 1988 for the purpose of criticism and review.
+      </p>
 
     </>
   );

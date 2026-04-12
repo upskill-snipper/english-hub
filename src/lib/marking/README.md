@@ -31,7 +31,7 @@ HTTP surface:
 Before wiring the engine into the UI (`src/app/marking/*`), confirm:
 
 - [ ] `ANTHROPIC_API_KEY` is set in the deployment environment (Vercel, local `.env.local`).
-- [ ] `@anthropic-ai/sdk` is installed. **TODO:** confirm the dependency is present in `package.json`. If it is missing, run `npm install @anthropic-ai/sdk` — the routes already import it and will not compile otherwise.
+- [x] `@anthropic-ai/sdk` is installed (`^0.80.0` in `package.json`).
 - [ ] Supabase auth is configured — the routes depend on `createServerSupabaseClient()`.
 - [ ] The calling user has an active Pro subscription (checked via `hasActiveSubscription`).
 - [ ] Minor users have parental AI consent (checked via `checkMinorAIConsent`).
@@ -157,11 +157,9 @@ scheme, consider adding a board-specific threshold table.
 
 ## Known TODOs
 
-- [ ] Confirm `@anthropic-ai/sdk` is listed in `package.json`. Routes import
-      `import Anthropic from "@anthropic-ai/sdk"` and will fail to compile
-      otherwise.
-- [ ] Add Edexcel and OCR mark scheme packs.
-- [ ] Persist marking results to Supabase so students can revisit past
+- [x] ~~Confirm `@anthropic-ai/sdk` is listed in `package.json`.~~ Done (`^0.80.0`).
+- [ ] [PHASE:content] Add Edexcel and OCR mark scheme packs.
+- [ ] [PHASE:db-integration] Persist marking results to Supabase so students can revisit past
       feedback (new table, out of scope for this engine).
-- [ ] Wire `/api/mark/stream` to the UI in `src/app/marking/*` once that page
+- [ ] [PHASE:ui] Wire `/api/mark/stream` to the UI in `src/app/marking/*` once that page
       is available.

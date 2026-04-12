@@ -582,6 +582,14 @@ export default function RomeoAndJulietRevisionPage() {
           </div>
         </div>
       </Section>
+
+      {/* Public-domain notice */}
+      <footer className="mt-8 text-center text-xs text-muted-foreground">
+        <p>
+          <em>Romeo and Juliet</em> by William Shakespeare is in the public
+          domain. All quotations are reproduced freely.
+        </p>
+      </footer>
     </div>
   );
 }

@@ -80,7 +80,7 @@ export async function POST(request: NextRequest) {
     // ── Client IP for audit (reuse ip from rate limiter above) ────────
 
     // ── Database operations ───────────────────────────────────────────
-    // TODO: Replace with actual Prisma transaction once schema is migrated.
+    // TODO(Phase-7): Replace stub with Supabase auth + profiles table transaction (see commented Prisma example below)
     //
     // const user = await prisma.$transaction(async (tx) => {
     //   // Check for existing user

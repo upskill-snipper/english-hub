@@ -17,7 +17,7 @@ import {
   PenLine,
 } from 'lucide-react'
 import { useAuthStore } from '@/store/auth-store'
-import { useBoardStore } from '@/store/board-store'
+import { useBoard } from '@/hooks/useBoard'
 import { markSchemes, getPapersForBoard, getQuestionTypes } from '@/data/mark-schemes'
 import { getQuestionsForType } from '@/data/exam-questions'
 import { cn } from '@/lib/utils'
@@ -97,7 +97,7 @@ function getScoreBarColor(score: number, max: number) {
 export default function EssayFeedbackPage() {
   const { user, isLoading } = useAuthStore()
   const router = useRouter()
-  const { selectedBoard: globalBoard } = useBoardStore()
+  const { board: globalBoard } = useBoard()
 
   // Auth redirect guard
   useEffect(() => {
@@ -122,7 +122,7 @@ export default function EssayFeedbackPage() {
 
   // Auto-populate board from global board-gate selection (skip KS3 as essay feedback is GCSE-only)
   useEffect(() => {
-    if (globalBoard && globalBoard !== 'KS3' && board === null) {
+    if (globalBoard && board === null) {
       setBoard(globalBoard)
     }
   }, [globalBoard]) // eslint-disable-line react-hooks/exhaustive-deps

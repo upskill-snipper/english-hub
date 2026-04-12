@@ -871,6 +871,15 @@ export default function AnimalFarmStudyGuide() {
           &larr; Back to Revision Notes
         </a>
       </div>
+
+      {/* Copyright notice */}
+      <footer className="mt-8 text-center text-xs text-muted-foreground">
+        <p>
+          <em>Animal Farm</em> &copy; The Estate of George Orwell. Short
+          quotations are used for criticism and review under fair dealing
+          (CDPA&nbsp;1988, s.30).
+        </p>
+      </footer>
     </div>
   );
 }

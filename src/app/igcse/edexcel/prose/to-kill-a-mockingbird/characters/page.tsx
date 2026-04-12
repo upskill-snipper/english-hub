@@ -22,7 +22,7 @@ const characters = [
     analysis:
       'Six to nine years old across the novel, Scout is a tomboyish, fiercely literate narrator whose first-person voice sits at a productive distance from her child-self. Lee uses a dual perspective: the child\u2019s bewildered observation and the adult\u2019s retrospective judgement. Scout\u2019s moral arc moves from literal, tit-for-tat thinking towards Atticus\u2019s ethic of empathy.',
     quote:
-      '“Until I feared I would lose it, I never loved to read. One does not love breathing.”',
+      '”Until I feared I would lose it, I never loved to read.”',
   },
   {
     name: 'Atticus Finch',
@@ -38,7 +38,7 @@ const characters = [
     analysis:
       'Four years older than Scout, Jem undergoes the novel\u2019s most visible loss of innocence. His fascination with Boo Radley, his growing admiration of Atticus and his shattered faith in Maycomb after Tom\u2019s conviction trace a more bruised coming-of-age than Scout\u2019s. His broken arm, mentioned on page one, becomes the novel\u2019s framing wound.',
     quote:
-      '“I always thought Maycomb folks were the best folks in the world, least that\u2019s what they seemed like.”',
+      '”I always thought Maycomb folks were the best folks in the world…”',
   },
   {
     name: 'Tom Robinson',
@@ -46,7 +46,7 @@ const characters = [
     analysis:
       'A hard-working, physically disabled Black labourer, Tom is falsely accused of raping Mayella Ewell after he responds to her loneliness with kindness. His disabled left arm makes the alleged assault physically impossible, yet the jury still convicts. His death, shot "seventeen times" while trying to escape prison, exposes the hollowness of Atticus\u2019s faith in appeal.',
     quote:
-      '“I felt right sorry for her” — the line that, by expressing a Black man\u2019s pity for a white woman, seals his fate in court.',
+      '”I felt right sorry for her.”',
   },
   {
     name: 'Arthur "Boo" Radley',
@@ -70,7 +70,7 @@ const characters = [
     analysis:
       'The unemployed, alcoholic patriarch of the Ewell family, Bob represents the "poor white" demographic whose only social currency is whiteness. Lee uses him to separate racism from ignorance (Atticus distinguishes the Ewells from the Cunninghams) and to show how racial hierarchy props up otherwise failing masculinities.',
     quote:
-      'He dies attacking Scout and Jem on Halloween — his revenge plot collapsing under Boo\u2019s kitchen knife.',
+      'Bob Ewell attacks the children on Halloween; Boo Radley intervenes.',
   },
   {
     name: 'Mayella Ewell',
@@ -94,7 +94,7 @@ const characters = [
     analysis:
       'Based on Lee\u2019s real childhood friend Truman Capote, Dill brings imagination and melodrama to the Boo Radley games and weeps openly in the courtroom. His tears function as the novel\u2019s emotional interpreter for readers who might otherwise read the trial as procedural.',
     quote:
-      '“It was just him I couldn\u2019t stand… that old Mr Gilmer doin\u2019 him thataway, talking so hateful to him.”',
+      '”It was just him I couldn\u2019t stand… that old Mr Gilmer doin\u2019 him thataway…”',
   },
   {
     name: 'Miss Maudie Atkinson',

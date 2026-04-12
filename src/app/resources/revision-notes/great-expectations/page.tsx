@@ -574,6 +574,14 @@ export default function GreatExpectationsStudyGuide() {
           &larr; Back to Revision Notes
         </a>
       </div>
+
+      {/* Public-domain notice */}
+      <footer className="mt-8 text-center text-xs text-muted-foreground">
+        <p>
+          <em>Great Expectations</em> by Charles Dickens (first published 1861)
+          is in the public domain. All quotations are reproduced freely.
+        </p>
+      </footer>
     </div>
   );
 }

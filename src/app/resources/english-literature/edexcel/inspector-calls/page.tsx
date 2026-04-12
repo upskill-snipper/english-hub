@@ -178,8 +178,8 @@ const THEMES = [
 const KEY_QUOTES = [
   { quote: '"a man has to mind his own business and look after himself and his own"', speaker: "Birling (Act 1)", significance: "Birling's capitalist philosophy — rejected by the play as selfish and harmful." },
   { quote: '"The Titanic... unsinkable, absolutely unsinkable"', speaker: "Birling (Act 1)", significance: "Dramatic irony — the Titanic sank in 1912. Undermines everything Birling says and makes the audience distrust him." },
-  { quote: '"We don\'t live alone. We are members of one body. We are responsible for each other"', speaker: "Inspector (Act 3)", significance: "The play's central message. 'One body' alludes to the Christian idea of the body of Christ — society as a single organism." },
-  { quote: '"If men will not learn that lesson, then they will be taught it in fire and blood and anguish"', speaker: "Inspector (Act 3)", significance: "Prophetic warning — refers to both World Wars. Written in 1945, set in 1912, the audience knows these wars happened because society failed to learn." },
+  { quote: '"We are members of one body. We are responsible for each other"', speaker: "Inspector (Act 3)", significance: "The play's central message. 'One body' alludes to the Christian idea of the body of Christ — society as a single organism." },
+  { quote: '"They will be taught it in fire and blood and anguish"', speaker: "Inspector (Act 3)", significance: "Prophetic warning — refers to both World Wars. Written in 1945, set in 1912, the audience knows these wars happened because society failed to learn." },
   { quote: '"But these girls aren\'t cheap labour — they\'re people"', speaker: "Sheila (Act 1)", significance: "Sheila begins to see the humanity in workers. Marks the start of her transformation." },
   { quote: '"I know I\'m to blame — and I\'m desperately sorry"', speaker: "Sheila (Act 1)", significance: "Genuine remorse — contrasts with her parents' refusal to accept guilt." },
   { quote: '"You\'re pretending everything\'s just as it was before"', speaker: "Sheila (Act 3)", significance: "Sheila recognises that the evening has changed everything. She will not go back to ignorance." },
@@ -523,6 +523,10 @@ export default function InspectorCallsPage() {
       </div>
 
       <ExamBoardDisclaimer variant="content" className="mx-auto max-w-5xl px-4 py-8" />
+
+      <p className="text-xs text-muted-foreground mx-auto max-w-5xl px-4 pb-8 border-t border-border/60 pt-4">
+        An Inspector Calls &copy; The Estate of J.B. Priestley. Short quotations reproduced under the fair dealing provision of the Copyright, Designs and Patents Act 1988 for the purpose of criticism and review.
+      </p>
     </>
   );
 }

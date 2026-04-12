@@ -205,7 +205,7 @@ export async function POST(request: NextRequest) {
         return NextResponse.json({ error: 'Failed to send consent request.' }, { status: 500 })
       }
 
-      // TODO: Send email to parent with consent link
+      // TODO(Phase-5): Send consent email to parent via Resend with link: {SITE_URL}/consent?token={newToken}
       // await sendConsentEmail(parentEmail, newToken, school.name, profile.full_name)
 
       return NextResponse.json({
@@ -231,8 +231,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Failed to send consent request.' }, { status: 500 })
     }
 
-    // TODO: Send email to parent with consent link
-    // The email should contain a link like: {SITE_URL}/consent?token={consentToken}
+    // TODO(Phase-5): Send consent email to parent via Resend with link: {SITE_URL}/consent?token={consentToken}
     // await sendConsentEmail(parentEmail, consentToken, school.name, profile.full_name)
 
     return NextResponse.json({

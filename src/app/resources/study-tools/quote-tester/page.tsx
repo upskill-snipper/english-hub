@@ -314,7 +314,7 @@ const TEXT_DATA: TextData[] = [
       },
       {
         id: "qt-aic-2",
-        quote: "If men will not learn that lesson, then they will be taught it in fire and blood and anguish",
+        quote: "They will be taught it in fire and blood and anguish",
         speaker: "Inspector Goole",
         location: "Act Three",
         technique: "Tricolon / Prophetic warning",

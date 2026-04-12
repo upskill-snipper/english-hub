@@ -23,7 +23,7 @@ const themes = [
     moments:
       'Eddie\u2019s conversation with Alfieri; Marco spitting in Eddie\u2019s face; the final street confrontation.',
     quote:
-      '“I want my name! He didn\u2019t take my name — he\u2019s only a punk. Marco\u2019s got my name.” — Eddie',
+      '”I want my name!\u2026 Marco\u2019s got my name.” — Eddie',
   },
   {
     title: 'Masculinity and sexuality',

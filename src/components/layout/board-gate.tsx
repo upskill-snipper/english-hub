@@ -1,65 +1,56 @@
 'use client'
 
 import { usePathname } from 'next/navigation'
-import { BookOpen, GraduationCap, ArrowRight, Layers, Pencil, FileText, Globe } from 'lucide-react'
-import { useBoardStore, useBoardWithHydration, type ExamBoard } from '@/store/board-store'
+import { BookOpen, GraduationCap, ArrowRight, Pencil, FileText, Globe } from 'lucide-react'
+import { useBoard, type ExamBoard } from '@/hooks/useBoard'
 import { Badge } from '@/components/ui/badge'
 import { cn } from '@/lib/utils'
 
 const boards = [
   {
-    id: 'KS3' as ExamBoard,
-    icon: Layers,
-    color: 'bg-emerald-500',
-    title: 'KS3',
-    subtitle: 'Key Stage 3 English',
-    description: 'Foundation courses in reading, writing, and grammar for Years 7–9.',
-  },
-  {
-    id: 'AQA' as ExamBoard,
+    id: 'aqa' as ExamBoard,
     icon: BookOpen,
     color: 'bg-blue-500',
     title: 'AQA',
     subtitle: 'GCSE English Language & Literature',
-    description: 'AQA-specific courses, practice questions, and revision materials, plus KS3 foundations.',
+    description: 'AQA-specific courses, practice questions, and revision materials.',
   },
   {
-    id: 'Edexcel' as ExamBoard,
+    id: 'edexcel' as ExamBoard,
     icon: GraduationCap,
     color: 'bg-violet-500',
     title: 'Edexcel',
     subtitle: 'GCSE, IGCSE & KS3 English',
-    description: 'Edexcel-specific courses including International GCSE content, plus KS3 foundations.',
+    description: 'Edexcel-specific courses including International GCSE content.',
   },
   {
-    id: 'OCR' as ExamBoard,
+    id: 'ocr' as ExamBoard,
     icon: Pencil,
     color: 'bg-orange-500',
     title: 'OCR',
     subtitle: 'GCSE English Language & Literature',
-    description: 'OCR-specific practice questions and revision materials, plus KS3 foundations.',
+    description: 'OCR-specific practice questions and revision materials.',
   },
   {
-    id: 'CAIE' as ExamBoard,
-    icon: Globe,
-    color: 'bg-purple-500',
-    title: 'CAIE',
-    subtitle: 'Cambridge IGCSE Literature',
-    description: 'Cambridge IGCSE Literature courses covering poetry, prose, and drama (0475/0992).',
-  },
-  {
-    id: 'WJEC' as ExamBoard,
+    id: 'eduqas' as ExamBoard,
     icon: FileText,
     color: 'bg-red-500',
     title: 'WJEC Eduqas',
     subtitle: 'GCSE English Language & Literature',
-    description: 'WJEC Eduqas practice questions and revision materials, plus KS3 foundations.',
+    description: 'WJEC Eduqas practice questions and revision materials.',
+  },
+  {
+    id: 'cambridge-0500' as ExamBoard,
+    icon: Globe,
+    color: 'bg-purple-500',
+    title: 'Cambridge 0500',
+    subtitle: 'Cambridge IGCSE Literature',
+    description: 'Cambridge IGCSE Literature courses covering poetry, prose, and drama.',
   },
 ] as const
 
 export function BoardGate() {
-  const { selectedBoard, _hasHydrated } = useBoardWithHydration()
-  const setBoard = useBoardStore((s) => s.setBoard)
+  const { board: selectedBoard, isHydrated: _hasHydrated, setBoard } = useBoard()
   const pathname = usePathname()
 
   // Don't render during hydration

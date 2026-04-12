@@ -23,7 +23,7 @@ const themes = [
     textualMoments:
       'The trial chapters (17–21); the Missionary Society tea (ch. 24); Atticus\u2019s closing speech; the night at the jail (ch. 15).',
     quote:
-      '“In our courts, when it\u2019s a white man\u2019s word against a black man\u2019s, the white man always wins.”',
+      '”When it\u2019s a white man\u2019s word against a black man\u2019s, the white man always wins.”',
   },
   {
     title: 'Moral courage',
@@ -41,7 +41,7 @@ const themes = [
     textualMoments:
       'The Radley games (ch. 1–5); Jem\u2019s reaction to the verdict (ch. 22); the final walk home.',
     quote:
-      '“It was like watching Atticus walk into the street, raise a rifle to his shoulder and pull the trigger, but watching all the time knowing that the gun was empty.”',
+      '”Like watching Atticus walk into the street, raise a rifle… knowing the gun was empty.”',
   },
   {
     title: 'Empathy and perspective',

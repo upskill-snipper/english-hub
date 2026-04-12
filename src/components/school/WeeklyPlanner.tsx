@@ -1059,7 +1059,7 @@ export function WeeklyPlanner() {
 
           <div className="flex items-center gap-1.5">
             <Tooltip>
-              <TooltipTrigger asChild>
+              <TooltipTrigger>
                 <Button
                   variant="outline"
                   size="sm"
@@ -1083,7 +1083,7 @@ export function WeeklyPlanner() {
             </Tooltip>
 
             <Tooltip>
-              <TooltipTrigger asChild>
+              <TooltipTrigger>
                 <Button
                   variant="outline"
                   size="sm"
@@ -1100,7 +1100,7 @@ export function WeeklyPlanner() {
             </Tooltip>
 
             <Tooltip>
-              <TooltipTrigger asChild>
+              <TooltipTrigger>
                 <Button variant="outline" size="sm" onClick={handlePrint} className="h-8 text-xs gap-1.5">
                   <Printer className="h-3.5 w-3.5" />
                   Print

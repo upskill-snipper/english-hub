@@ -52,6 +52,9 @@ function readBoardCookie(): string | null {
 
 type BoardGateProps = {
   children: React.ReactNode
+  /** Server-side board value passed from layout for SSR consistency. Currently unused
+   *  but accepted so the layout can pass it without a type error. */
+  initialBoard?: import('@/lib/board/board-config').ExamBoard | null
 }
 
 export function BoardGate({ children }: BoardGateProps) {

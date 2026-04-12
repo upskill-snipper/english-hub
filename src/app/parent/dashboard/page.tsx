@@ -25,8 +25,6 @@ import { ChildProgressCard } from '@/components/parent/ChildProgressCard'
 import { WeeklyActivityChart, type WeeklyActivityPoint } from '@/components/parent/WeeklyActivityChart'
 
 // ── LocalStorage keys ─────────────────────────────────────────────────────────
-// TODO: replace with Supabase — read aggregates from server-side queries
-
 const STUDIED_POEMS_KEY = 'english-hub-studied-poems'
 const GAME_SCORES_KEY = 'english-hub-game-scores'
 const QUIZ_HISTORY_KEY = 'english-hub-quiz-history'
@@ -208,7 +206,7 @@ export default function ParentDashboardPage() {
 
   useEffect(() => {
     setMounted(true)
-    // TODO: replace with Supabase — fetch aggregates via server components/RPC
+    // [P2:data] TODO: Supabase — fetch aggregates via server components/RPC
     setAccount(safeParse<ParentAccountLike>(localStorage.getItem(PARENT_ACCOUNT_KEY)))
     setState(buildDashboardState())
   }, [])

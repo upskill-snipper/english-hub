@@ -117,7 +117,7 @@ const keyQuotations = [
       'The Inspector\u2019s socialist thesis. The metaphor of the "one body" is borrowed from the New Testament, giving it moral weight beyond political argument.',
   },
   {
-    quote: 'If men will not learn that lesson, then they will be taught it in fire and blood and anguish.',
+    quote: 'They will be taught it in fire and blood and anguish.',
     speaker: 'Inspector Goole',
     analysis:
       'Post-WW1 and WW2 resonance: the audience hears the wars as the "fire and blood" the Birling class refused to learn from in 1912.',
@@ -147,7 +147,7 @@ const keyQuotations = [
       'Signals generational revolt. Priestley aligns "the right to know" with the younger Birlings throughout.',
   },
   {
-    quote: 'You\u2019re beginning to pretend now that nothing\u2019s really happened at all… I suppose we\u2019re all nice people now.',
+    quote: 'You\u2019re beginning to pretend now that nothing\u2019s really happened at all.',
     speaker: 'Sheila Birling',
     analysis:
       'Sheila sees through the attempted retrenchment of Act Three. Her sarcasm is one of the play\u2019s sharpest moments.',
@@ -159,14 +159,14 @@ const keyQuotations = [
       'Reverses Birling\u2019s "every man for himself". The Inspector is staging a genuinely different moral order.',
   },
   {
-    quote: 'There are millions and millions and millions of Eva Smiths and John Smiths still left with us.',
+    quote: 'Millions and millions of Eva Smiths and John Smiths still left with us.',
     speaker: 'Inspector Goole',
     analysis:
       'The Inspector universalises: Eva is a case but not an exception. The triple "millions" suits a speech meant to feel like a sermon.',
   },
   {
-    quote: 'Nothing much has happened… You and I aren\u2019t the same people who sat down to dinner here.',
-    speaker: 'Sheila and Gerald (paraphrase in her voice)',
+    quote: 'You and I aren\u2019t the same people who sat down to dinner here.',
+    speaker: 'Sheila Birling',
     analysis:
       'Sheila\u2019s transformation is the play\u2019s measure of hope; Gerald\u2019s failure to share it is the play\u2019s measure of despair.',
   },
@@ -177,13 +177,13 @@ const keyQuotations = [
       'Marks the Inspector\u2019s quasi-supernatural knowledge. The line is one of Priestley\u2019s chief tools for making Goole feel more than human.',
   },
   {
-    quote: 'I didn\u2019t install her there so I could make love to her. I made her go to Morgan Terrace because I was sorry for her.',
+    quote: 'I made her go to Morgan Terrace because I was sorry for her.',
     speaker: 'Gerald Croft',
     analysis:
       'Gerald\u2019s self-serving distinction — useful for discussing how Priestley characterises the upper-middle-class male.',
   },
   {
-    quote: 'A girl has just died — on her way to the Infirmary — after swallowing some disinfectant. And a police inspector is on his way here — to ask some — questions —',
+    quote: 'A girl has just died — after swallowing some disinfectant.',
     speaker: 'Arthur Birling (final line)',
     analysis:
       'Priestley\u2019s final trick: the Birlings\u2019 certainty collapses at the curtain. The dashes mimic the shock on the page and in performance.',
@@ -363,6 +363,10 @@ export default async function InspectorCallsHubPage() {
           ))}
         </div>
       </section>
+
+      <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
+        An Inspector Calls &copy; The Estate of J.B. Priestley. Short quotations reproduced under the fair dealing provision of the Copyright, Designs and Patents Act 1988 for the purpose of criticism and review.
+      </p>
     </div>
   )
 }

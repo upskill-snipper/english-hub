@@ -101,8 +101,7 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // TODO: Send confirmation email to teacher
-    // TODO: Send notification email to admin
+    // TODO(Phase-5): Send confirmation email to teacher and notification email to admin via Resend
 
     return NextResponse.json({ success: true, referralCode })
   } catch (error) {

@@ -884,6 +884,14 @@ export default function FrankensteinPage() {
           </div>
         </div>
       </Section>
+
+      {/* Public-domain notice */}
+      <footer className="mt-8 text-center text-xs text-muted-foreground">
+        <p>
+          <em>Frankenstein</em> by Mary Shelley (first published 1818) is in the
+          public domain. All quotations are reproduced freely.
+        </p>
+      </footer>
     </>
   );
 }

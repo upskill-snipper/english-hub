@@ -614,10 +614,58 @@ export default function PrivacyPolicyPage() {
           </p>
         </section>
 
-        {/* 13. Contact Us */}
+        {/* 13. Data Protection Contact */}
         <section>
           <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">
-            13. Contact Us
+            13. Data Protection Contact
+          </h2>
+          <p className="text-muted-foreground leading-relaxed">
+            We have assessed our processing activities under Article 37 of UK GDPR and
+            determined that a formal Data Protection Officer (DPO) appointment is not
+            required at our current scale of operations. However, we take data protection
+            seriously and have appointed a named privacy contact to oversee our data
+            protection compliance and act as the point of contact for data subjects and
+            the ICO.
+          </p>
+          <div className="mt-4 rounded-lg border border-border bg-muted/50 p-5">
+            <h3 className="text-lg font-medium text-foreground mb-3">
+              Named Data Protection Contact
+            </h3>
+            <ul className="list-none pl-0 text-muted-foreground leading-relaxed space-y-1">
+              <li>
+                <strong className="text-foreground">Name:</strong>{' '}
+                [DPO_NAME]
+              </li>
+              <li>
+                <strong className="text-foreground">Email:</strong>{' '}
+                <a href="mailto:[DPO_EMAIL]" className="underline text-foreground">
+                  [DPO_EMAIL]
+                </a>
+              </li>
+            </ul>
+          </div>
+          <p className="text-muted-foreground leading-relaxed mt-4">
+            Our data protection contact is responsible for:
+          </p>
+          <ul className="list-disc pl-6 text-muted-foreground leading-relaxed space-y-1 mt-2">
+            <li>Monitoring compliance with UK GDPR and the Data Protection Act 2018</li>
+            <li>Advising on Data Protection Impact Assessments (DPIAs), particularly for features accessed by children</li>
+            <li>Acting as the point of contact for the Information Commissioner&apos;s Office (ICO)</li>
+            <li>Handling data subject access requests and other rights requests</li>
+            <li>Overseeing compliance with the ICO&apos;s Age Appropriate Design Code (Children&apos;s Code)</li>
+          </ul>
+          <p className="text-muted-foreground leading-relaxed mt-3">
+            This assessment is reviewed annually or whenever there is a significant change
+            in our processing activities. Should our processing activities change to the
+            extent that a formal DPO appointment is required under Article 37, we will
+            make such an appointment and update this policy accordingly.
+          </p>
+        </section>
+
+        {/* 14. Contact Us */}
+        <section>
+          <h2 className="text-xl font-semibold text-foreground mt-8 mb-3">
+            14. Contact Us
           </h2>
           <p className="text-muted-foreground leading-relaxed">
             If you have any questions about this privacy policy, your personal data, or wish to

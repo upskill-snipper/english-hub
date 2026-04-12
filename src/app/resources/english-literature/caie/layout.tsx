@@ -14,7 +14,7 @@ export default async function CaieLitLayout({
   if (board === 'cambridge-0500' || board === 'cambridge-0990') {
     redirect('/resources/english-language/caie')
   }
-  if (board && board !== 'cambridge-0500' && board !== 'cambridge-0990') {
+  if (board) {
     redirect('/resources/english-literature')
   }
   return <>{children}</>

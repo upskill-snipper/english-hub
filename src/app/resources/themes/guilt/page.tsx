@@ -56,7 +56,7 @@ const TEXTS = [
         analysis: "The Inspector's final speech redefines guilt as a social concept: failing to care for others is as morally culpable as direct harm.",
       },
       {
-        text: "\"If men will not learn that lesson, then they will be taught it in fire and blood and anguish\"",
+        text: "\"They will be taught it in fire and blood and anguish\"",
         analysis: "The biblical imagery elevates guilt from personal emotion to prophetic warning -- collective irresponsibility leads to collective suffering (the World Wars).",
       },
       {

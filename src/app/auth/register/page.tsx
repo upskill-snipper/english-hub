@@ -4,7 +4,7 @@ import { useState, useEffect, Suspense } from 'react'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
-import { useBoardStore } from '@/store/board-store'
+import { useBoard } from '@/hooks/useBoard'
 import { Mail, Lock, User, GraduationCap, BookOpen, Loader2, ArrowLeft, CheckCircle, Eye, EyeOff, Calendar, School, Sparkles, Gift, Zap } from 'lucide-react'
 
 import { getUtmParams } from '@/lib/utm'
@@ -18,7 +18,7 @@ import { Alert, AlertDescription } from '@/components/ui/alert'
 
 function RegisterForm() {
   const searchParams = useSearchParams()
-  const selectedBoard = useBoardStore((s) => s.selectedBoard)
+  const { board: selectedBoard } = useBoard()
   const [accountType, setAccountType] = useState<'student' | 'teacher'>(
     searchParams.get('type') === 'teacher' ? 'teacher' : 'student'
   )

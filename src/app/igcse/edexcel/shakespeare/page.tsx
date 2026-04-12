@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Drama, ArrowRight, BookOpen, Sparkles } from "lucide-react";
 import { ExamBoardDisclaimer } from "@/components/ExamBoardDisclaimer";
 import { requireIgcseBoard } from '@/app/igcse/_lib/guard'
@@ -173,14 +173,10 @@ export default async function ShakespeareHubPage() {
                   </div>
                 </div>
                 <div className="mt-6">
-                  <Button asChild size="lg">
-                    <Link
-                      href={`/igcse/edexcel/shakespeare/${play.slug}`}
-                    >
+                  <Link href={`/igcse/edexcel/shakespeare/${play.slug}`} className={buttonVariants({ size: "lg" })}>
                       {play.cta}
                       <ArrowRight className="ml-1 h-4 w-4" />
-                    </Link>
-                  </Button>
+                  </Link>
                 </div>
               </article>
             ))}

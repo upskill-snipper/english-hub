@@ -99,7 +99,7 @@ const subPages = [
 
 const keyQuotations = [
   {
-    quote: 'You never really understand a person until you consider things from his point of view.',
+    quote: 'You never really understand a person until you consider things from his point of view\u2026',
     speaker: 'Atticus Finch',
     analysis:
       'Atticus introduces the novel\u2019s ethic of empathy early, framing moral understanding as an imaginative act. The metaphor recurs at the close when Scout stands on the Radley porch.',
@@ -111,7 +111,7 @@ const keyQuotations = [
       'The central symbol: mockingbirds (later identified with Tom and Boo) harm nothing and only sing. Killing them indexes the novel\u2019s cruelty without cost.',
   },
   {
-    quote: 'Simply because we were licked a hundred years before we started is no reason for us not to try to win.',
+    quote: 'Licked a hundred years before we started… no reason not to try to win.',
     speaker: 'Atticus Finch',
     analysis:
       'Redefines courage as principled action rather than confidence in victory — crucial to how we read his defence of Tom Robinson.',
@@ -123,19 +123,19 @@ const keyQuotations = [
       'Individual ethics vs. democratic pressure — a direct warning about how majorities legitimise injustice.',
   },
   {
-    quote: 'There\u2019s something in our world that makes men lose their heads — they couldn\u2019t be fair if they tried.',
+    quote: 'There\u2019s something in our world that makes men lose their heads\u2026',
     speaker: 'Atticus Finch',
     analysis:
       'Atticus names racism as a kind of collective madness, preparing Jem (and the reader) for the guilty verdict despite clear evidence of Tom\u2019s innocence.',
   },
   {
-    quote: 'I wanted you to see what real courage is… it\u2019s when you know you\u2019re licked before you begin but you begin anyway.',
+    quote: 'Real courage is… when you know you\u2019re licked before you begin but you begin anyway.',
     speaker: 'Atticus Finch on Mrs Dubose',
     analysis:
       'Applied first to Mrs Dubose\u2019s morphine addiction, the definition retroactively frames Atticus\u2019s own doomed defence.',
   },
   {
-    quote: 'Until I feared I would lose it, I never loved to read. One does not love breathing.',
+    quote: 'Until I feared I would lose it, I never loved to read.',
     speaker: 'Scout Finch',
     analysis:
       'Establishes Scout as a literate, observant narrator and sets up Miss Caroline\u2019s class conflict in chapter 2.',
@@ -147,13 +147,13 @@ const keyQuotations = [
       'Elaborates the title symbol in plain moral terms a child can grasp — a technique Lee uses throughout.',
   },
   {
-    quote: 'The witnesses for the state… have presented themselves to you… in the cynical confidence that their testimony would not be doubted.',
-    speaker: 'Atticus Finch (trial speech)',
+    quote: 'Presented themselves… in the cynical confidence that their testimony would not be doubted.',
+    speaker: 'Atticus (trial speech)',
     analysis:
       'Exposes how the Ewells weaponise whiteness; the word "cynical" marks the deliberate nature of the racism.',
   },
   {
-    quote: 'In our courts, when it\u2019s a white man\u2019s word against a black man\u2019s, the white man always wins.',
+    quote: 'When it\u2019s a white man\u2019s word against a black man\u2019s, the white man always wins.',
     speaker: 'Atticus Finch',
     analysis:
       'A plain statement of the structural racism the trial will dramatise. Useful for AO4 (context) and AO1.',
@@ -171,19 +171,19 @@ const keyQuotations = [
       'A gloss on confirmation bias — central to how Maycomb "sees" Tom and refuses to see Mayella\u2019s real attacker.',
   },
   {
-    quote: 'As you grow older, you\u2019ll see white men cheat black men every day of your life.',
+    quote: 'You\u2019ll see white men cheat black men every day of your life.',
     speaker: 'Atticus Finch',
     analysis:
       'A bleak acknowledgement that unsettles the reassuring tone of much of the novel — useful against romanticised readings of Atticus.',
   },
   {
-    quote: 'Hush your mouth! Don\u2019t matter who they are, anybody sets foot in this house\u2019s yo\u2019 comp\u2019ny.',
+    quote: 'Don\u2019t matter who they are, anybody sets foot in this house\u2019s yo\u2019 comp\u2019ny.',
     speaker: 'Calpurnia',
     analysis:
       'Calpurnia rebukes Scout for mocking Walter Cunningham at lunch — class sits alongside race as a target of Lee\u2019s critique.',
   },
   {
-    quote: 'Scout, I think I\u2019m beginning to understand something. I think I\u2019m beginning to understand why Boo Radley\u2019s stayed shut up in the house all this time… it\u2019s because he wants to stay inside.',
+    quote: 'I\u2019m beginning to understand why Boo Radley\u2019s stayed shut up in the house…',
     speaker: 'Jem Finch',
     analysis:
       'Marks Jem\u2019s loss of innocence after the trial: he now reads Maycomb as something to retreat from, not enter.',

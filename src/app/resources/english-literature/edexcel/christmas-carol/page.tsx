@@ -529,6 +529,14 @@ export default function ChristmasCarolPage() {
       </div>
 
       <ExamBoardDisclaimer variant="content" className="mx-auto max-w-5xl px-4 py-8" />
+
+      {/* Public-domain notice */}
+      <footer className="mx-auto max-w-5xl px-4 pb-12 text-center text-xs text-muted-foreground">
+        <p>
+          All quotations from <em>A Christmas Carol</em> by Charles Dickens
+          (first published 1843) are in the public domain.
+        </p>
+      </footer>
     </>
   );
 }

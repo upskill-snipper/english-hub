@@ -559,6 +559,14 @@ export default function SilasMarnerRevisionPage() {
           </Section>
         </div>
       </div>
+
+      {/* Public-domain notice */}
+      <footer className="mt-8 text-center text-xs text-muted-foreground">
+        <p>
+          <em>Silas Marner</em> by George Eliot (first published 1861) is in the
+          public domain. All quotations are reproduced freely.
+        </p>
+      </footer>
     </>
   );
 }

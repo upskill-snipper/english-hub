@@ -183,7 +183,7 @@ export async function POST(request: NextRequest) {
 
     // 12. Extract text
     const responseText = message.content
-      .filter((block): block is { type: "text"; text: string } =>
+      .filter((block): block is Anthropic.TextBlock =>
         block.type === "text",
       )
       .map((block) => block.text)

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import {
   ArrowRight,
   Lightbulb,
@@ -187,12 +187,10 @@ export default async function MuchAdoHubPage() {
             <h2 className="text-2xl font-bold text-foreground">
               Themes overview
             </h2>
-            <Button asChild variant="outline" size="sm">
-              <Link href="/igcse/edexcel/shakespeare/much-ado/themes">
+            <Link href="/igcse/edexcel/shakespeare/much-ado/themes" className={buttonVariants({ variant: "outline", size: "sm" })}>
                 Full themes guide
                 <ArrowRight className="ml-1 h-4 w-4" />
-              </Link>
-            </Button>
+            </Link>
           </div>
           <div className="mt-6 space-y-4">
             {THEMES_PREVIEW.map((t) => (
@@ -307,6 +305,10 @@ export default async function MuchAdoHubPage() {
         variant="content"
         className="mx-auto max-w-5xl px-4 py-8"
       />
+
+      <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4 mx-auto max-w-5xl px-4 pb-8">
+        Much Ado About Nothing by William Shakespeare is in the public domain. Quotations are reproduced freely.
+      </p>
     </main>
   );
 }

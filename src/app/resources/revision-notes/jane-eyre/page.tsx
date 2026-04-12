@@ -816,6 +816,14 @@ export default function JaneEyrePage() {
           </div>
         </div>
       </Section>
+
+      {/* Public-domain notice */}
+      <footer className="mt-8 text-center text-xs text-muted-foreground">
+        <p>
+          <em>Jane Eyre</em> by Charlotte Bront&euml; (first published 1847) is
+          in the public domain. All quotations are reproduced freely.
+        </p>
+      </footer>
     </>
   );
 }

@@ -63,7 +63,7 @@ export async function GET(request: NextRequest) {
     }
     const userId = user.id;
 
-    // TODO: Replace with real DB query:
+    // TODO(Phase-7): Replace STUB_USER with Supabase profiles table query
     // const user = await prisma.user.findUnique({
     //   where: { id: userId, accountStatus: "ACTIVE" },
     //   select: {
@@ -145,7 +145,7 @@ export async function PATCH(request: NextRequest) {
       request.headers.get("x-real-ip") ??
       "unknown";
 
-    // TODO: Replace with real DB transaction:
+    // TODO(Phase-7): Replace stub with Supabase profiles table update + audit log insert
     // const updatedUser = await prisma.$transaction(async (tx) => {
     //   const user = await tx.user.update({
     //     where: { id: userId },

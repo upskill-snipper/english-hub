@@ -19,7 +19,7 @@ import {
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { useAuthStore } from '@/store/auth-store'
-import { useBoardStore } from '@/store/board-store'
+import { useBoard } from '@/hooks/useBoard'
 import { matchesPracticeBoard } from '@/lib/board-filter'
 import { practiceQuestions, type PracticeQuestion } from '@/data/practice-data'
 import { cn, formatTime } from '@/lib/utils'
@@ -77,7 +77,7 @@ function getContextualExaminerTip(
 
 export default function PracticePage() {
   // Filters
-  const { selectedBoard } = useBoardStore()
+  const { board: selectedBoard } = useBoard()
   const [questionType, setQuestionType] = useState<string>('All')
 
   // Question state

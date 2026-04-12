@@ -107,7 +107,7 @@ export function MRRWaterfallChart({ month, className }: MRRWaterfallChartProps) 
               style={{ height: "100%" }}
             >
               <Tooltip>
-                <TooltipTrigger asChild>
+                <TooltipTrigger>
                   <div className="relative h-full w-full">
                     <div
                       className={cn(

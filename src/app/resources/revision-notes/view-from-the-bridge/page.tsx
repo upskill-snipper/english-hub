@@ -537,6 +537,15 @@ export default function ViewFromTheBridgeRevisionPage() {
           </Section>
         </div>
       </div>
+
+      {/* Copyright notice */}
+      <footer className="mt-8 text-center text-xs text-muted-foreground">
+        <p>
+          <em>A View from the Bridge</em> &copy; The Estate of Arthur Miller.
+          Short quotations are used for criticism and review under fair dealing
+          (CDPA&nbsp;1988, s.30).
+        </p>
+      </footer>
     </>
   );
 }

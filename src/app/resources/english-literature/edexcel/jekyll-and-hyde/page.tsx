@@ -667,6 +667,16 @@ export default function JekyllAndHydePage() {
       </div>
 
       <ExamBoardDisclaimer variant="content" className="mx-auto max-w-5xl px-4 py-8" />
+
+      {/* Public-domain notice */}
+      <footer className="mx-auto max-w-5xl px-4 pb-12 text-xs text-muted-foreground">
+        <p>
+          <em>The Strange Case of Dr Jekyll and Mr Hyde</em> by Robert Louis
+          Stevenson was first published in 1886. Stevenson died in 1894 and the
+          text is in the <strong>public domain</strong>. All quotations on this
+          page are reproduced from the original novella.
+        </p>
+      </footer>
     </>
   );
 }

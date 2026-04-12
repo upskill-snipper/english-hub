@@ -592,6 +592,15 @@ export default function CrucibleRevisionPage() {
           </Section>
         </div>
       </div>
+
+      {/* Copyright notice */}
+      <footer className="mt-8 text-center text-xs text-muted-foreground">
+        <p>
+          <em>The Crucible</em> &copy; The Estate of Arthur Miller. Short
+          quotations are used for criticism and review under fair dealing
+          (CDPA&nbsp;1988, s.30).
+        </p>
+      </footer>
     </>
   );
 }

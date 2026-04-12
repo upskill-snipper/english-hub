@@ -30,9 +30,7 @@ import {
   formatExamTime,
   type MockExamPaper,
 } from '@/data/mock-exams'
-import { useBoardStore } from '@/store/board-store'
-import { useBoard } from '@/hooks/useBoard'
-import { getBoardConfig, type ExamBoard } from '@/lib/board/board-store'
+import { useBoard, getBoardConfig, type ExamBoard } from '@/hooks/useBoard'
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
@@ -569,7 +567,6 @@ const BOARD_ID_TO_LEGACY: Record<ExamBoard, string[]> = {
 
 export default function MockExamsPage() {
   const allBoards = useMemo(() => getAvailableBoards(), [])
-  const { selectedBoard } = useBoardStore()
   const { board: userBoard, isHydrated: isBoardHydrated } = useBoard()
   const boardConfig = getBoardConfig(userBoard)
 

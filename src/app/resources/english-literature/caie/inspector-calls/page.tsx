@@ -22,7 +22,7 @@ const keyQuotes = [
       "The Inspector's central moral message, articulating Priestley's socialist vision. 'One body' is a metaphor drawn from Christian theology (the body of Christ), giving the message spiritual authority. The first-person plural 'we' implicates the audience as well as the Birlings, making the lesson universal rather than personal.",
   },
   {
-    quote: "If men will not learn that lesson, then they will be taught it in fire and blood and anguish",
+    quote: "They will be taught it in fire and blood and anguish",
     speaker: "Inspector Goole",
     act: "Act 3",
     analysis:
@@ -92,7 +92,7 @@ const keyQuotes = [
       "Sheila accepts collective guilt with the pronoun 'we', echoing the Inspector's communal language. 'Drove' implies relentless pressure, not a single act. Priestley uses Sheila to demonstrate that responsibility cannot be divided into harmless portions: each person's contribution matters.",
   },
   {
-    quote: "She was very pretty and looked as if she could take care of herself. I couldn't be sorry for her",
+    quote: "She looked as if she could take care of herself. I couldn't be sorry for her",
     speaker: "Mrs Birling",
     act: "Act 2",
     analysis:
@@ -106,7 +106,7 @@ const keyQuotes = [
       "Mrs Birling refuses to accept any responsibility, hiding behind procedural justification. 'Quite justified' is clipped and self-assured. Priestley presents her as the most morally entrenched character: she represents the older generation's refusal to change.",
   },
   {
-    quote: "The girl's dead and we all helped to kill her - and that's what matters",
+    quote: "We all helped to kill her - and that's what matters",
     speaker: "Eric Birling",
     act: "Act 3",
     analysis:
@@ -700,6 +700,10 @@ export default function InspectorCallsStudyGuide() {
         </div>
 
         <ExamBoardDisclaimer variant="content" className="mt-8" />
+
+        <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
+          An Inspector Calls &copy; The Estate of J.B. Priestley. Short quotations reproduced under the fair dealing provision of the Copyright, Designs and Patents Act 1988 for the purpose of criticism and review.
+        </p>
       </div>
 
     </>

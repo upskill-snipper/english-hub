@@ -15,8 +15,6 @@ import {
 } from '@/components/affiliate/mock-data'
 import { ArrowLeft, Sparkles } from 'lucide-react'
 
-// TODO: Supabase — replace with real auth via signInWithPassword
-
 export default function AffiliateLoginPage() {
   const router = useRouter()
   const [email, setEmail] = useState('')
@@ -32,7 +30,7 @@ export default function AffiliateLoginPage() {
       return
     }
     setLoading(true)
-    // TODO: Supabase — use signInWithPassword
+    // TODO(Phase-7): Supabase — use signInWithPassword
     setTimeout(() => {
       const existing = getAccount()
       if (!existing) {

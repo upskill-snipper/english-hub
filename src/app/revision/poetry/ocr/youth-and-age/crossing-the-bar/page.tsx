@@ -366,6 +366,15 @@ export default function CrossingTheBarPage() {
 
       <InteractivePoemViewer poem={crossingTheBar} />
 
+      <section className="rounded-xl border border-border/60 bg-muted/30 p-4 sm:p-5">
+        <p className="text-xs text-muted-foreground leading-relaxed">
+          The text of &ldquo;Crossing the Bar&rdquo; is in the public domain. All annotations
+          and critical commentary on this page are original to english-hub and are provided for
+          private study and educational purposes under the fair dealing provisions of the
+          Copyright, Designs and Patents Act 1988.
+        </p>
+      </section>
+
       <section className="rounded-xl border border-border bg-card p-5 sm:p-6">
         <div className="flex items-center gap-2 mb-4">
           <GitCompare className="size-4.5 text-muted-foreground" />

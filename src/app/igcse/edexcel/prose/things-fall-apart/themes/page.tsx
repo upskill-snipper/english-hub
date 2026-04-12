@@ -23,7 +23,7 @@ const themes = [
     moments:
       'Mr Brown\u2019s conversations with Akunna; the destruction of the church; the killing of the court messenger; the final paragraph.',
     quote:
-      '“He has put a knife on the things that held us together and we have fallen apart.” — Obierika',
+      '”He has put a knife on the things that held us together…” — Obierika',
   },
   {
     title: 'Masculinity and fear of weakness',
@@ -41,7 +41,7 @@ const themes = [
     moments:
       'The killing of twins in the Evil Forest; Nwoye\u2019s conversion; the osu joining the church; Okonkwo\u2019s nostalgia on returning from exile.',
     quote:
-      '“It was not the mad logic of the Trinity that captivated him. He did not understand it… It was the poetry of the new religion, something felt in the marrow.”',
+      '”It was the poetry of the new religion, something felt in the marrow.”',
   },
   {
     title: 'Fate, chi and personal agency',
@@ -58,7 +58,7 @@ const themes = [
     moments:
       'Chielo\u2019s night journey with Ezinma; Uchendu\u2019s "mother is supreme" speech; Ekwefi\u2019s grief; the women\u2019s egwugwu trial.',
     quote:
-      '“A man belongs to his fatherland when things are good and life is sweet. But when there is sorrow and bitterness he finds refuge in his motherland.” — Uchendu',
+      '”When there is sorrow and bitterness he finds refuge in his motherland.” — Uchendu',
   },
   {
     title: 'Language, proverbs and narrative form',

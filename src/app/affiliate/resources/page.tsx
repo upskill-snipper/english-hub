@@ -6,8 +6,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Check, Copy, Download, FileText, Image as ImageIcon } from 'lucide-react'
 
-// TODO: Supabase — stream assets from storage bucket instead of placeholders
-
 const BANNERS = [
   { id: 'banner-1', label: 'Leaderboard', size: '728 × 90' },
   { id: 'banner-2', label: 'Medium Rectangle', size: '300 × 250' },

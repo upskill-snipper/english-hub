@@ -475,6 +475,10 @@ export default function OzymandiasPage() {
           ))}
         </div>
       </section>
+
+      <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
+        Public domain &mdash; quotations from Ozymandias by Percy Bysshe Shelley reproduced freely.
+      </p>
     </div>
   )
 }

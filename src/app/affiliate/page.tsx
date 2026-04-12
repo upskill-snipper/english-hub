@@ -20,8 +20,6 @@ import {
   HeartHandshake,
 } from 'lucide-react'
 
-// TODO: Supabase — swap this landing page to fetch live programme stats
-
 export default function AffiliateLandingPage() {
   return (
     <div className="min-h-screen">

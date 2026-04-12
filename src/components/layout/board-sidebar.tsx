@@ -1,40 +1,21 @@
 'use client'
 
 import { usePathname } from 'next/navigation'
-import { useBoardStore, useBoardWithHydration } from '@/store/board-store'
+import { useBoard, type ExamBoard, getBoardConfig } from '@/hooks/useBoard'
 import { GraduationCap } from 'lucide-react'
 import { Skeleton } from '@/components/ui/skeleton'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { cn } from '@/lib/utils'
 
-import type { ExamBoard } from '@/store/board-store'
-
-const BOARD_INFO: Record<ExamBoard, { subtitle: string; color: string }> = {
-  KS3: {
-    subtitle: 'Key Stage 3 English',
-    color: 'bg-emerald-500',
-  },
-  AQA: {
-    subtitle: 'GCSE English Language & Literature',
-    color: 'bg-blue-500',
-  },
-  Edexcel: {
-    subtitle: 'GCSE & IGCSE English',
-    color: 'bg-violet-500',
-  },
-  CAIE: {
-    subtitle: 'Cambridge IGCSE Literature',
-    color: 'bg-purple-500',
-  },
-  OCR: {
-    subtitle: 'GCSE English Language & Literature',
-    color: 'bg-orange-500',
-  },
-  WJEC: {
-    subtitle: 'GCSE English Language & Literature',
-    color: 'bg-red-500',
-  },
+const BOARD_COLORS: Record<string, string> = {
+  aqa: 'bg-blue-500',
+  edexcel: 'bg-violet-500',
+  ocr: 'bg-orange-500',
+  eduqas: 'bg-red-500',
+  'edexcel-igcse': 'bg-violet-500',
+  'cambridge-0500': 'bg-purple-500',
+  'cambridge-0990': 'bg-purple-500',
 }
 
 function SidebarSkeleton() {
@@ -63,8 +44,7 @@ const HIDDEN_EXACT = ['/']
 
 export function BoardSidebar() {
   const pathname = usePathname()
-  const { selectedBoard, _hasHydrated } = useBoardWithHydration()
-  const clearBoard = useBoardStore((s) => s.clearBoard)
+  const { board: selectedBoard, isHydrated: _hasHydrated, clearBoard } = useBoard()
 
   // Hide on routes that don't need board selection
   if (HIDDEN_EXACT.includes(pathname)) return null
@@ -75,7 +55,10 @@ export function BoardSidebar() {
   // Don't render when no board is selected — the gate overlay handles selection
   if (!selectedBoard) return null
 
-  const { subtitle, color } = BOARD_INFO[selectedBoard]
+  const config = getBoardConfig(selectedBoard)
+  const subtitle = config?.fullName ?? selectedBoard
+  const color = BOARD_COLORS[selectedBoard] ?? 'bg-primary'
+  const displayName = config?.shortName ?? selectedBoard
 
   return (
     <>
@@ -84,7 +67,7 @@ export function BoardSidebar() {
         <div className="flex items-center gap-2">
           <span className={cn('h-2 w-2 rounded-full shrink-0', color)} />
           <span className="text-xs font-semibold text-foreground">
-            {selectedBoard}
+            {displayName}
           </span>
         </div>
         <Button
@@ -111,7 +94,7 @@ export function BoardSidebar() {
 
             {/* Board name */}
             <div className="text-xl font-bold tracking-tight text-foreground">
-              {selectedBoard}
+              {displayName}
             </div>
 
             {/* Subtitle */}

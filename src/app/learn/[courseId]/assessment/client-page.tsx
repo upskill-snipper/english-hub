@@ -21,7 +21,7 @@ import type { CourseData } from '@/data/courses'
 import type { CourseQuiz } from '@/data/courses'
 import { createClient } from '@/lib/supabase/client'
 import { useAuthStore } from '@/store/auth-store'
-import { useBoardStore } from '@/store/board-store'
+import { useBoard } from '@/hooks/useBoard'
 import { matchesBoard } from '@/lib/board-filter'
 import { shuffleArray, formatTime } from '@/lib/utils'
 import { percentageToGCSEGrade, gcseGradeColor } from '@/lib/grades'
@@ -78,7 +78,7 @@ export default function AssessmentPage() {
   const router = useRouter()
   const courseId = params.courseId as string
   const { user, profile } = useAuthStore()
-  const { selectedBoard } = useBoardStore()
+  const { board: selectedBoard } = useBoard()
 
   const [course, setCourseData] = useState<CourseData | null>(null)
   const [courseLoading, setCourseLoading] = useState(true)

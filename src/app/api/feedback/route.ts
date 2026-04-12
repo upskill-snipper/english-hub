@@ -133,7 +133,7 @@ export async function POST(request: NextRequest) {
       createdAt: new Date().toISOString(),
       pageUrl: pageUrl.trim(),
       email: email?.trim() || undefined,
-      // TODO: extract userId from session/auth when available
+      // TODO(Phase-7): Extract userId from Supabase auth session (optional — allow anonymous feedback)
       userId: undefined,
 
       // Suggestion-specific

@@ -152,7 +152,7 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // TODO: notify admin (AFFILIATE_ADMIN_EMAIL) and send applicant confirmation.
+    // TODO(Phase-5): Send applicant confirmation email and notify admin at AFFILIATE_ADMIN_EMAIL via Resend
 
     return NextResponse.json(
       { success: true, application_id: inserted?.id ?? null },

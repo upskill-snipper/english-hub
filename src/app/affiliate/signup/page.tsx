@@ -14,8 +14,6 @@ import {
 } from '@/components/affiliate/mock-data'
 import { ArrowLeft, Sparkles, CheckCircle2 } from 'lucide-react'
 
-// TODO: Supabase — submit signup to affiliates table with pending status
-
 interface FormState {
   name: string
   email: string
@@ -64,7 +62,7 @@ export default function AffiliateSignupPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
-    // TODO: Supabase — insert affiliate row with pending status
+    // TODO(Phase-7): Supabase — insert affiliate row with pending status
     const account = createDefaultAccount({
       name: form.name,
       email: form.email,

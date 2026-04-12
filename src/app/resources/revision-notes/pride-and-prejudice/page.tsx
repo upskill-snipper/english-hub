@@ -452,6 +452,14 @@ export default function PrideAndPrejudicePage() {
           </li>
         </ul>
       </div>
+
+      {/* Public-domain notice */}
+      <footer className="mt-8 text-center text-xs text-muted-foreground">
+        <p>
+          <em>Pride and Prejudice</em> by Jane Austen (first published 1813) is
+          in the public domain. All quotations are reproduced freely.
+        </p>
+      </footer>
     </>
   );
 }

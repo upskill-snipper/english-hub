@@ -335,7 +335,7 @@ export function EngagementTracker({
               {timeDistribution.map(({ hour, count }) => (
                 <TooltipProvider key={hour} delayDuration={100}>
                   <Tooltip>
-                    <TooltipTrigger asChild>
+                    <TooltipTrigger>
                       <div className="flex-1 flex flex-col items-center justify-end h-full">
                         <div
                           className={cn(

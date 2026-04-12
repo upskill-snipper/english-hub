@@ -466,6 +466,10 @@ export default function WarPhotographerPage() {
           ))}
         </div>
       </section>
+
+      <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
+        Short quotations from War Photographer by Carol Ann Duffy reproduced under the fair dealing provision of the CDPA 1988 for criticism and review. Full text available in your AQA anthology.
+      </p>
     </div>
   )
 }

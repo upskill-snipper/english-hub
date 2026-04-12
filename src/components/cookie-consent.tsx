@@ -13,7 +13,7 @@ export function hasAnalyticsConsent(): boolean {
 export function CookieConsent() {
   const [visible, setVisible] = useState(false)
   const [showPreferences, setShowPreferences] = useState(false)
-  const [analyticsEnabled, setAnalyticsEnabled] = useState(true)
+  const [analyticsEnabled, setAnalyticsEnabled] = useState(false)
 
   useEffect(() => {
     const consent = localStorage.getItem('cookie-consent')
@@ -105,15 +105,15 @@ export function CookieConsent() {
               <div className="flex flex-wrap items-center gap-2 shrink-0">
                 <button
                   onClick={() => setShowPreferences(true)}
-                  className="rounded-lg border border-border px-4 py-2 text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+                  className="rounded-lg border border-border px-4 py-2 text-xs font-medium text-foreground hover:bg-muted/50 transition-colors"
                 >
                   Manage Preferences
                 </button>
                 <button
                   onClick={() => saveConsent('essential')}
-                  className="rounded-lg border border-border px-4 py-2 text-xs font-medium text-foreground hover:bg-muted/50 transition-colors"
+                  className="rounded-lg bg-primary px-4 py-2 text-xs font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
                 >
-                  Essential Only
+                  Reject All
                 </button>
                 <button
                   onClick={() => saveConsent('all')}

@@ -158,8 +158,7 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // TODO: Send confirmation email to applicant (and guardian if minor)
-    // TODO: Send notification email to admin (AFFILIATE_ADMIN_EMAIL)
+    // TODO(Phase-5): Send confirmation email to applicant (and guardian if minor) and notify admin at AFFILIATE_ADMIN_EMAIL via Resend
 
     return NextResponse.json({ success: true })
   } catch (error) {

@@ -134,6 +134,10 @@ export default async function TkamContextPage() {
           ))}
         </div>
       </section>
+
+      <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
+        To Kill a Mockingbird is in copyright. Short extracts are included under fair dealing for the purposes of study and criticism.
+      </p>
     </div>
   )
 }

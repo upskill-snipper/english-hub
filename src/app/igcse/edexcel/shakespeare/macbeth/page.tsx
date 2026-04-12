@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import {
   ArrowRight,
   BookOpenText,
@@ -194,12 +194,10 @@ export default async function MacbethHubPage() {
             <h2 className="text-2xl font-bold text-foreground">
               Key quotes preview
             </h2>
-            <Button asChild variant="outline" size="sm">
-              <Link href="/igcse/edexcel/shakespeare/macbeth/quotes">
+            <Link href="/igcse/edexcel/shakespeare/macbeth/quotes" className={buttonVariants({ variant: "outline", size: "sm" })}>
                 See all 20
                 <ArrowRight className="ml-1 h-4 w-4" />
-              </Link>
-            </Button>
+            </Link>
           </div>
           <div className="mt-6 space-y-3">
             {KEY_QUOTES_PREVIEW.map((q) => (
@@ -294,6 +292,10 @@ export default async function MacbethHubPage() {
         variant="content"
         className="mx-auto max-w-5xl px-4 py-8"
       />
+
+      <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4 mx-auto max-w-5xl px-4 pb-8">
+        Macbeth by William Shakespeare is in the public domain. Quotations are reproduced freely.
+      </p>
     </main>
   );
 }

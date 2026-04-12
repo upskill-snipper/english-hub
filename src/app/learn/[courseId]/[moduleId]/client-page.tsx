@@ -23,7 +23,7 @@ import type { CourseData, CourseModule, CourseQuiz } from '@/data/courses'
 import { createClient } from '@/lib/supabase/client'
 import { useAuthUserProfile } from '@/store/auth-store'
 import { useCourseStore, useCourseProgress, useCourseActions } from '@/store/course-store'
-import { useSelectedBoard } from '@/store/board-store'
+import { useBoard } from '@/hooks/useBoard'
 import { matchesBoard } from '@/lib/board-filter'
 
 // ─── Quiz Card ───────────────────────────────────────────────────────────────
@@ -372,7 +372,7 @@ export default function CoursePlayerPage() {
   const { user, profile } = useAuthUserProfile()
   const { completedModules, markModuleComplete } = useCourseProgress()
   const { setCourse, setModule } = useCourseActions()
-  const selectedBoard = useSelectedBoard()
+  const { board: selectedBoard } = useBoard()
 
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [hasAccess, setHasAccess] = useState<boolean | null>(null)

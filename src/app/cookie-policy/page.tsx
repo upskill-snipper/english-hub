@@ -100,10 +100,13 @@ export default function CookiePolicyPage() {
             3.3 Analytics and error-tracking cookies
           </h3>
           <p className="mt-2 text-muted-foreground leading-relaxed">
-            We use Sentry to monitor application errors and performance. Sentry may set cookies
-            or use similar technologies to collect diagnostic data such as error stack traces,
-            browser type, and page URL. This data helps us identify and fix bugs quickly. Sentry
-            does not use this information for advertising purposes.
+            We use Google Analytics 4 (GA4) to understand how visitors use the site, such as
+            which pages are most popular and how users navigate between them. GA4 cookies are
+            only set after you give consent. We use Sentry to monitor application errors and
+            performance. Sentry may set cookies or use similar technologies to collect diagnostic
+            data such as error stack traces, browser type, and page URL. This data helps us
+            identify and fix bugs quickly. Neither Google Analytics nor Sentry uses this
+            information for advertising purposes.
           </p>
 
           {/* Third-party */}
@@ -205,6 +208,20 @@ export default function CookiePolicyPage() {
                   <td className="px-4 py-3">Sentry</td>
                   <td className="px-4 py-3">Tracks error replay session for debugging and performance monitoring</td>
                   <td className="px-4 py-3">Session</td>
+                  <td className="px-4 py-3">Analytics</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-3 font-mono text-xs">_ga</td>
+                  <td className="px-4 py-3">Google Analytics</td>
+                  <td className="px-4 py-3">Distinguishes unique visitors by assigning a randomly generated identifier</td>
+                  <td className="px-4 py-3">2 years</td>
+                  <td className="px-4 py-3">Analytics</td>
+                </tr>
+                <tr>
+                  <td className="px-4 py-3 font-mono text-xs">_ga_*</td>
+                  <td className="px-4 py-3">Google Analytics</td>
+                  <td className="px-4 py-3">Maintains session state for Google Analytics 4</td>
+                  <td className="px-4 py-3">2 years</td>
                   <td className="px-4 py-3">Analytics</td>
                 </tr>
                 <tr>

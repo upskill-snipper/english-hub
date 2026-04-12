@@ -52,7 +52,7 @@ export async function POST(request: NextRequest) {
     const sessionExpiry = getSessionExpiry();
 
     // ── Database operations ───────────────────────────────────────────
-    // TODO: Replace with actual DB transaction once schema is migrated.
+    // TODO(Phase-7): Replace stub with Supabase auth.admin.createUser + teacher_profiles insert (see commented example below)
     //
     // const supabaseAdmin = createServiceRoleClient();
     //

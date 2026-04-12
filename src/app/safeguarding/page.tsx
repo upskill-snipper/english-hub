@@ -195,17 +195,70 @@ export default function SafeguardingPolicyPage() {
               Designated Safeguarding Lead
             </p>
             <p className="mt-2">
+              <strong>Name:</strong> [DSL_NAME]
+            </p>
+            <p className="mt-1">
               <strong>Email:</strong>{" "}
               <a
-                href="mailto:safeguarding@theenglishhub.app"
+                href="mailto:[DSL_EMAIL]"
                 className="font-semibold text-accent hover:text-accent/80 underline"
               >
-                safeguarding@theenglishhub.app
+                [DSL_EMAIL]
+              </a>
+            </p>
+            <p className="mt-1">
+              <strong>Telephone:</strong>{" "}
+              <a
+                href="tel:[DSL_PHONE]"
+                className="font-semibold text-accent hover:text-accent/80 underline"
+              >
+                [DSL_PHONE]
               </a>
             </p>
             <p className="mt-1 text-xs">
               The DSL will acknowledge all safeguarding concerns within 24 hours
               and ensure appropriate action is taken without delay.
+            </p>
+          </div>
+
+          <div className="mt-4 rounded-lg border border-accent/20 bg-accent/5 p-4">
+            <p className="text-sm font-semibold text-primary">
+              How to Report a Concern
+            </p>
+            <p className="mt-2 text-sm">
+              If you have concerns about a child&apos;s safety, contact our
+              Designated Safeguarding Lead at{" "}
+              <a
+                href="mailto:[DSL_EMAIL]"
+                className="font-semibold text-accent hover:text-accent/80 underline"
+              >
+                [DSL_EMAIL]
+              </a>{" "}
+              or call{" "}
+              <a
+                href="tel:[DSL_PHONE]"
+                className="font-semibold text-accent hover:text-accent/80 underline"
+              >
+                [DSL_PHONE]
+              </a>
+              . In an emergency, call{" "}
+              <strong>999</strong>. You can also report concerns to CEOP at{" "}
+              <a
+                href="https://www.ceop.police.uk"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent hover:text-accent/80 underline"
+              >
+                ceop.police.uk
+              </a>{" "}
+              or contact Childline on{" "}
+              <a
+                href="tel:08001111"
+                className="font-semibold text-accent hover:text-accent/80 underline"
+              >
+                0800 1111
+              </a>
+              .
             </p>
           </div>
           <p>

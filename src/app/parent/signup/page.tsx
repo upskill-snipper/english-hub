@@ -71,8 +71,7 @@ export default function ParentSignupPage() {
     setLoading(true)
 
     try {
-      // TODO: replace with Supabase — create parent auth user, insert parent_profile row,
-      // verify the link code and create the parent <-> child relation server-side.
+      // [P2:auth] TODO: Supabase — create auth user, insert parent_profile, verify link code server-side
       await new Promise((resolve) => setTimeout(resolve, 500))
 
       const account = {

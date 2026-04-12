@@ -313,11 +313,9 @@ export default function SchoolAnalyticsPage() {
 
           <div className="flex items-center gap-3">
             {/* Internal metrics link (NRR for investors) */}
-            <Button asChild variant="outline" size="sm" className="gap-1.5">
-              <Link href="/school/analytics/nrr">
+            <Button render={<Link href="/school/analytics/nrr" />} variant="outline" size="sm" className="gap-1.5">
                 <LineChart className="h-4 w-4 text-emerald-400" />
                 Revenue (NRR)
-              </Link>
             </Button>
 
             {/* Date range selector */}

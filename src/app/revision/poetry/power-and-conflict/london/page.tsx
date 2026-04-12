@@ -365,6 +365,10 @@ export default function LondonPage() {
           ))}
         </div>
       </section>
+
+      <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
+        Public domain &mdash; quotations from London by William Blake reproduced freely.
+      </p>
     </div>
   )
 }

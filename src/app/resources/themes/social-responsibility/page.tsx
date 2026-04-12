@@ -34,7 +34,7 @@ const TEXTS = [
         analysis: "Birling's individualist philosophy is positioned early in the play so the audience can watch it be systematically dismantled.",
       },
       {
-        text: "\"If men will not learn that lesson, then they will be taught it in fire and blood and anguish\"",
+        text: "\"They will be taught it in fire and blood and anguish\"",
         analysis: "The prophetic warning gains dramatic irony from the 1912/1945 time gap -- the audience knows the 'fire and blood' of two World Wars proved the Inspector right.",
       },
     ],

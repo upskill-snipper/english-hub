@@ -65,7 +65,7 @@ export async function POST(request: NextRequest) {
 
     // ip already declared above for rate limiting
 
-    // TODO: Replace with real DB query:
+    // TODO(Phase-7): Replace STUB_PASSWORD_HASH with Supabase auth password verification
     // const user = await prisma.user.findUnique({
     //   where: { id: userId, accountStatus: "ACTIVE" },
     //   select: { id: true, passwordHash: true },
@@ -91,7 +91,7 @@ export async function POST(request: NextRequest) {
     // Hash new password
     const newHash = await hashPassword(data.newPassword);
 
-    // TODO: Replace with real DB transaction:
+    // TODO(Phase-7): Replace stub with supabase.auth.admin.updateUserById for password update + audit log insert
     // await prisma.$transaction(async (tx) => {
     //   await tx.user.update({
     //     where: { id: userId },

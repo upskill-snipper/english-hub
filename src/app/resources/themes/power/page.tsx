@@ -52,7 +52,7 @@ const TEXTS = [
     ],
     quotes: [
       {
-        text: "\"If you don't come down sharply on some of these people, they'd soon be asking for the earth\"",
+        text: "\"Come down sharply on some of these people, they'd soon be asking for the earth\"",
         analysis: "Birling's dismissive tone reveals how the powerful dehumanise workers, reducing them to a collective threat rather than individuals.",
       },
       {

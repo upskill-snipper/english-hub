@@ -33,7 +33,7 @@ import {
 } from '@/data/mock-exams'
 import { useAuthUserLoading } from '@/store/auth-store'
 import { useExamStore, useExamPhaseStatus, useExamActions, useExamNavigation, useExamHistory, useExamAnswers } from '@/store/exam-store'
-import { useSelectedBoard, useBoardHydrated } from '@/store/board-store'
+import { useBoard } from '@/hooks/useBoard'
 import { useExamTimer, type TimerWarning } from '@/hooks/useExamTimer'
 
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
@@ -78,7 +78,7 @@ export default function MockExamPage() {
   const { user, isLoading } = useAuthUserLoading()
   const router = useRouter()
   const { phase, _hasHydrated } = useExamPhaseStatus()
-  const boardHydrated = useBoardHydrated()
+  const { isHydrated: boardHydrated } = useBoard()
 
   // Auth redirect guard
   useEffect(() => {
@@ -123,7 +123,7 @@ export default function MockExamPage() {
 // ═══════════════════════════════════════════════════════════════════════════════
 
 function ExamConfigScreen() {
-  const globalBoard = useSelectedBoard()
+  const { board: globalBoard } = useBoard()
   const [selectedBoard, setSelectedBoard] = useState<string | null>(globalBoard)
   const [selectedExamId, setSelectedExamId] = useState<string | null>(null)
   const { startExam } = useExamActions()

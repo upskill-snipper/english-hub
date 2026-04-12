@@ -1,5 +1,5 @@
 'use client'
-// TODO(board-guard): client component — wrap in server page.tsx that calls requireIgcseBoard(['edexcel-igcse']) once parent edexcel hub guard is verified to cover this route. Parent route is already protected.
+// TODO [P2:auth] add layout-level board guard — client page, no server-side requireIgcseBoard
 
 import Link from 'next/link'
 import { ArrowLeft, BookOpen, GitCompare } from 'lucide-react'

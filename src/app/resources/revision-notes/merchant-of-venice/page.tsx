@@ -864,6 +864,14 @@ export default function MerchantOfVeniceRevisionPage() {
           </Section>
         </div>
       </div>
+
+      {/* Public-domain notice */}
+      <footer className="mt-8 text-center text-xs text-muted-foreground">
+        <p>
+          <em>The Merchant of Venice</em> by William Shakespeare is in the
+          public domain. All quotations are reproduced freely.
+        </p>
+      </footer>
     </>
   );
 }

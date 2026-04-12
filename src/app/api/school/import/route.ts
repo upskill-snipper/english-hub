@@ -3,42 +3,10 @@ import { createServerSupabaseClient, createServiceRoleClient } from "@/lib/supab
 import { verifySchoolMember } from "@/lib/school-auth";
 import { rateLimit, getClientIp } from "@/lib/rate-limit";
 
+import type { ImportedUser, ImportJob } from "@/lib/import-job-cache";
+import { setJobInCache } from "@/lib/import-job-cache";
+
 export const dynamic = "force-dynamic";
-
-// ---------------------------------------------------------------------------
-// In-memory job store — survives the request lifetime within the same process.
-// On Vercel each invocation is isolated, so we also persist results to the DB
-// in the import_jobs table (created if not exists via upsert).
-// For simplicity we keep a module-level cache as a fast path for the export
-// endpoint running in the same serverless instance.
-// ---------------------------------------------------------------------------
-
-interface ImportedUser {
-  email: string;
-  temporaryPassword: string;
-  firstName: string;
-  lastName: string;
-  role: string;
-  yearGroup: string;
-  className: string;
-}
-
-interface ImportJob {
-  jobId: string;
-  schoolId: string;
-  createdAt: number;
-  total: number;
-  success: number;
-  errors: Array<{ row: number; email: string; error: string }>;
-  users: ImportedUser[];
-}
-
-// Module-level cache (fast path — same serverless instance only)
-const jobCache = new Map<string, ImportJob>();
-
-export function getJobFromCache(jobId: string): ImportJob | undefined {
-  return jobCache.get(jobId);
-}
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -399,7 +367,7 @@ export async function POST(request: NextRequest) {
     };
 
     // Store in module-level cache (fast path for export endpoint in same instance)
-    jobCache.set(jobId, job);
+    setJobInCache(jobId, job);
 
     // Persist to DB so the export endpoint can retrieve it from any instance.
     // We use a JSONB column for simplicity — create the table if it does not exist

@@ -3,10 +3,9 @@ import { createServerSupabaseClient, createServiceRoleClient } from "@/lib/supab
 import { verifySchoolMember } from "@/lib/school-auth";
 import { rateLimit, getClientIp } from "@/lib/rate-limit";
 
-// Import the in-memory cache from the import route so the export works
-// on the same serverless instance without a DB round-trip.
-// When instances differ the DB fallback is used.
-import { getJobFromCache } from "@/app/api/school/import/route";
+// Import the in-memory cache so the export works on the same serverless
+// instance without a DB round-trip. When instances differ the DB fallback is used.
+import { getJobFromCache } from "@/lib/import-job-cache";
 
 export const dynamic = "force-dynamic";
 

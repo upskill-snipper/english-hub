@@ -68,11 +68,9 @@ export default function NRRDashboardPage() {
         {/* ── Header ─────────────────────────────────────────────────────── */}
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-3">
-            <Button asChild variant="ghost" size="sm" className="gap-1.5">
-              <Link href="/school/analytics">
+            <Button render={<Link href="/school/analytics" />} variant="ghost" size="sm" className="gap-1.5">
                 <ArrowLeft className="h-4 w-4" />
                 Analytics
-              </Link>
             </Button>
             <div className="h-6 w-px bg-border" />
             <div className="flex items-center gap-3">
@@ -91,17 +89,13 @@ export default function NRRDashboardPage() {
           </div>
 
           <div className="flex items-center gap-2">
-            <Button asChild variant="outline" size="sm" className="gap-1.5">
-              <Link href="/school/analytics/nrr/cohorts">
+            <Button render={<Link href="/school/analytics/nrr/cohorts" />} variant="outline" size="sm" className="gap-1.5">
                 <Grid3x3 className="h-4 w-4" />
                 Cohort Heatmap
-              </Link>
             </Button>
-            <Button asChild variant="outline" size="sm" className="gap-1.5">
-              <Link href="/school/analytics/nrr/movements">
+            <Button render={<Link href="/school/analytics/nrr/movements" />} variant="outline" size="sm" className="gap-1.5">
                 <Wallet className="h-4 w-4" />
                 Movements
-              </Link>
             </Button>
             <Button
               size="sm"
@@ -232,11 +226,9 @@ export default function NRRDashboardPage() {
                 Percentage of initial MRR retained, per signup month
               </CardDescription>
             </div>
-            <Button asChild variant="outline" size="sm" className="gap-1.5">
-              <Link href="/school/analytics/nrr/cohorts">
+            <Button render={<Link href="/school/analytics/nrr/cohorts" />} variant="outline" size="sm" className="gap-1.5">
                 Full heatmap
                 <TrendingUp className="h-3.5 w-3.5" />
-              </Link>
             </Button>
           </CardHeader>
           <CardContent>

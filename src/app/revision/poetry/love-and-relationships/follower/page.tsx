@@ -241,6 +241,13 @@ export default function FollowerPage() {
           ))}
         </div>
       </section>
+
+      <footer className="rounded-lg border border-border/40 bg-muted/30 px-4 py-3 text-[11px] leading-relaxed text-muted-foreground">
+        Poem text is reproduced for the purpose of private study and educational
+        criticism under UK fair-dealing provisions (Copyright, Designs and
+        Patents Act 1988, s.30). No commercial use is intended. All quotations
+        remain the intellectual property of the respective rights holders.
+      </footer>
     </div>
   )
 }

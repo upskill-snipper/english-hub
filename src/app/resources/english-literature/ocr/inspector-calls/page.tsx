@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 const keyQuotations = [
   {
-    quote: "We don't live alone. We are members of one body. We are responsible for each other.",
+    quote: "We are members of one body. We are responsible for each other.",
     speaker: "Inspector Goole (Act 3)",
     analysis:
       "The Inspector's final speech encapsulates Priestley's socialist message. The metaphor of 'one body' draws on Christian imagery of the body of Christ, suggesting collective humanity. The repetition of 'we' is inclusive and inescapable — Priestley insists that social responsibility is universal. This directly challenges the Birlings' individualist, capitalist worldview.",
@@ -27,13 +27,13 @@ const keyQuotations = [
       "Sheila's recognition of the workers' humanity marks the beginning of her moral awakening. The dash creates a dramatic pause that emphasises the contrast between how the workers are treated ('cheap labour') and what they actually are ('people'). This line challenges her father's capitalist view that workers are merely a cost to be minimised.",
   },
   {
-    quote: "If we were all responsible for everything that happened to everybody we'd had anything to do with, it would be very awkward, wouldn't it?",
+    quote: "It would be very awkward, wouldn't it?",
     speaker: "Mrs Birling (Act 2)",
     analysis:
       "Mrs Birling's rhetorical question reveals her complete inability to accept social responsibility. The word 'awkward' is a striking understatement — she reduces the consequences of exploitation to mere social inconvenience. The tag question 'wouldn't it?' seeks validation from the audience, but Priestley intends the audience to reject her position entirely.",
   },
   {
-    quote: "The way some of these cranks talk and write now, you'd think everybody has to look after everybody else",
+    quote: "Some of these cranks talk and write now, you'd think everybody has to look after everybody else",
     speaker: "Mr Birling (Act 1)",
     analysis:
       "Birling dismisses socialist ideas as the work of 'cranks', revealing his contempt for collective responsibility. Priestley uses dramatic irony: the audience knows that Birling's confident predictions about the Titanic and no war are wrong, undermining his authority. His dismissal of social responsibility is positioned to be equally wrong.",
@@ -63,13 +63,13 @@ const keyQuotations = [
       "Eric's euphemistic confession about his assault on Eva Smith reveals his moral weakness. The phrase 'that state' avoids directly naming his drunkenness, and 'turns nasty' understates the violence of his actions. The passive construction ('turns') suggests a lack of agency, as though Eric is trying to distance himself from responsibility. Priestley shows how privilege enables men to avoid accountability.",
   },
   {
-    quote: "She was claiming elaborate fine feelings and scruples that were simply absurd in a girl in her position",
+    quote: "Elaborate fine feelings and scruples that were simply absurd in a girl in her position",
     speaker: "Mrs Birling (Act 2)",
     analysis:
       "Mrs Birling's snobbery is laid bare in this statement. She cannot accept that a working-class girl could possess moral principles ('fine feelings and scruples'). The word 'position' reveals her rigid class consciousness — she believes that moral sensibility is the preserve of the upper classes. Priestley exposes the hypocrisy: it is Mrs Birling, not Eva, who lacks moral feeling.",
   },
   {
-    quote: "I tell you — whoever that Inspector was, it was anything but a joke. You knew it then. You began to learn something. And now you've stopped.",
+    quote: "You began to learn something. And now you've stopped.",
     speaker: "Sheila Birling (Act 3)",
     analysis:
       "Sheila's frustration with her parents' refusal to change is palpable. The tricolon ('You knew it then. You began to learn something. And now you've stopped.') builds in emotional intensity. The short sentences convey urgency. Sheila recognises that learning about one's own complicity in social injustice should lead to permanent change, not relief when the threat of exposure passes.",
@@ -81,7 +81,7 @@ const keyQuotations = [
       "The Inspector directly challenges Birling's belief that wealth grants only privilege, not obligation. The pairing of 'responsibilities' and 'privileges' suggests they are inseparable. This reflects Priestley's socialist conviction that those with power and wealth owe a duty to the less fortunate. The formal address 'Mr Birling' maintains authority while delivering a moral rebuke.",
   },
   {
-    quote: "And I tell you that the time will soon come when, if men will not learn that lesson, then they will be taught it in fire and blood and anguish.",
+    quote: "They will be taught it in fire and blood and anguish.",
     speaker: "Inspector Goole (Act 3)",
     analysis:
       "The Inspector's prophetic warning refers to the World Wars. Written in 1945, the play is set in 1912 — Priestley's audience had lived through both wars and would recognise this as a prophecy already fulfilled. The triad 'fire and blood and anguish' evokes the horrors of warfare. The message is clear: if society does not choose compassion, it will be forced to learn through suffering.",
@@ -725,6 +725,10 @@ export default function OCRInspectorCallsPage() {
         </section>
 
         <ExamBoardDisclaimer variant="content" className="mt-12" />
+
+        <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
+          An Inspector Calls &copy; The Estate of J.B. Priestley. Short quotations reproduced under the fair dealing provision of the Copyright, Designs and Patents Act 1988 for the purpose of criticism and review.
+        </p>
       </div>
 
     </>

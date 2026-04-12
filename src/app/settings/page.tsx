@@ -30,7 +30,7 @@ export default function SettingsPage() {
   useEffect(() => {
     // Hydrate notification prefs from profile if available.
     if (profile && typeof profile === 'object') {
-      const p = profile as Record<string, unknown>
+      const p = profile as unknown as Record<string, unknown>
       if (typeof p.email_notifications === 'boolean') {
         setEmailNotifications(p.email_notifications)
       }

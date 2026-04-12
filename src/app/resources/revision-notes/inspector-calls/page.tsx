@@ -206,13 +206,13 @@ export default function InspectorCallsRevisionPage() {
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
-                    text="We don't live alone. We are members of one body. We are responsible for each other."
+                    text="We are members of one body. We are responsible for each other."
                     speaker="Inspector Goole"
                     act="Act 3"
                     analysis="The play's central message, delivered as a direct address. 'Members of one body' is a Biblical allusion (1 Corinthians 12:27), giving his words religious and moral authority. The repetition of 'we' is inclusive -- he speaks for all humanity, not just the Birlings."
                   />
                   <Quote
-                    text="And I tell you that the time will soon come when, if men will not learn that lesson, then they will be taught it in fire and blood and anguish."
+                    text="They will be taught it in fire and blood and anguish."
                     speaker="Inspector Goole"
                     act="Act 3"
                     analysis="A prophetic warning that, for the 1945 audience, had already come true through two world wars. 'Fire and blood and anguish' evokes the trenches of WWI and the Blitz. The tricolon builds to a climax. For a 1912 setting, this is dramatic irony of devastating power."
@@ -257,7 +257,7 @@ export default function InspectorCallsRevisionPage() {
                     analysis="The most famous example of dramatic irony in the play. The 1945 audience knows the Titanic sank on its maiden voyage. This immediately destroys Birling's credibility and, by extension, his entire worldview. If he is wrong about the Titanic, he is wrong about everything."
                   />
                   <Quote
-                    text="I can't accept any responsibility. If we were all responsible for everything that happened to everybody we'd had anything to do with, it would be very awkward"
+                    text="I can't accept any responsibility… it would be very awkward"
                     speaker="Mr Birling"
                     act="Act 1"
                     analysis="'Awkward' is bathetically inadequate for a girl's death. Birling cannot even conceive of genuine moral responsibility -- he can only see it as social inconvenience. The conditional 'if we were all responsible' is exactly the Inspector's argument, but Birling dismisses it as absurd."
@@ -290,7 +290,7 @@ export default function InspectorCallsRevisionPage() {
                     analysis="Her stubborn refusal to accept any guilt, even after learning her son's involvement. 'Bullied' positions herself as the victim -- a privileged woman reframing moral accountability as persecution. She remains unchanged, representing Priestley's warning about the intransigence of the upper classes."
                   />
                   <Quote
-                    text="She was claiming elaborate fine feelings and scruples that were simply absurd in a girl in her position"
+                    text="Fine feelings and scruples that were simply absurd in a girl in her position"
                     speaker="Mrs Birling"
                     act="Act 2"
                     analysis="Mrs Birling finds it 'absurd' that a working-class girl could have moral principles. 'Fine feelings' and 'scruples' are qualities she reserves for her own class. Eva's refusal of stolen money showed greater integrity than any Birling demonstrates -- an irony Mrs Birling cannot see."
@@ -329,7 +329,7 @@ export default function InspectorCallsRevisionPage() {
                     analysis="Sheila challenges her parents' attempt to return to comfortable ignorance after the Inspector leaves. She has understood the Inspector's lesson: knowledge creates permanent moral responsibility. Her frustration marks the generational divide at the play's heart."
                   />
                   <Quote
-                    text="I tell you -- whoever that Inspector was, it was anything but a joke. You knew it then. You began to learn something. And now you've stopped."
+                    text="You began to learn something. And now you've stopped."
                     speaker="Sheila"
                     act="Act 3"
                     analysis="Sheila directly accuses her parents of moral regression. 'Began to learn' implies a process they have abandoned. Her maturity here is striking -- she sounds more like the Inspector than the 'excited' girl of Act 1. Priestley shows that genuine moral change is possible."
@@ -350,7 +350,7 @@ export default function InspectorCallsRevisionPage() {
                 </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <Quote
-                    text="you killed her -- and the child she'd have had too -- my child -- your own grandchild"
+                    text="you killed her -- and the child she'd have had too"
                     speaker="Eric"
                     act="Act 3"
                     analysis="Eric's accusation against his mother is devastating because each dash adds another layer of horror. The progression from 'her' to 'the child' to 'my child' to 'your own grandchild' personalises the tragedy, making Mrs Birling's refusal to help impossible to defend."
@@ -410,7 +410,7 @@ export default function InspectorCallsRevisionPage() {
                 </p>
                 <div className="mt-3">
                   <Quote
-                    text="She was a pretty, lively sort of girl who never did anybody any harm. But she died in misery and agony -- hating life"
+                    text="She died in misery and agony -- hating life"
                     speaker="Inspector Goole (about Eva)"
                     act="Act 3"
                     analysis="The contrast between 'pretty, lively' and 'misery and agony' encapsulates the play's tragedy. The dash separates who she was from what she became. 'Never did anybody any harm' makes the Birlings' treatment of her inexcusable. 'Hating life' inverts her former vitality."
@@ -456,7 +456,7 @@ export default function InspectorCallsRevisionPage() {
                     analysis="The play's thesis statement. 'One body' uses the metaphor of a single organism -- harming one part harms all. This is both a socialist and a Christian idea, making it resonate across political and religious lines."
                   />
                   <Quote
-                    text="If men will not learn that lesson, then they will be taught it in fire and blood and anguish"
+                    text="They will be taught it in fire and blood and anguish"
                     speaker="Inspector"
                     act="Act 3"
                     analysis="For the 1945 audience, this prophecy had already been fulfilled by two world wars. Priestley argues that the wars were a consequence of social irresponsibility -- the ruling class's failure to care for the working class led to national catastrophe."
@@ -582,8 +582,8 @@ export default function InspectorCallsRevisionPage() {
               <div>
                 <h3 className="text-base font-bold text-foreground mb-3">Inspector Goole</h3>
                 <div className="grid gap-3 sm:grid-cols-2">
-                  <Quote text="We don't live alone. We are members of one body. We are responsible for each other." speaker="Inspector" act="Act 3" analysis="The play's thesis. 'One body' is a Biblical allusion (1 Corinthians 12) suggesting a Christian duty of care alongside the socialist argument. Short, declarative sentences give it the force of a commandment." />
-                  <Quote text="if men will not learn that lesson, then they will be taught it in fire and blood and anguish" speaker="Inspector" act="Act 3" analysis="Prophetic warning fulfilled by WWI and WWII. The tricolon 'fire and blood and anguish' escalates in intensity. 'Will be taught' -- the passive voice implies a force greater than human agency will enforce the lesson." />
+                  <Quote text="We are members of one body. We are responsible for each other." speaker="Inspector" act="Act 3" analysis="The play's thesis. 'One body' is a Biblical allusion (1 Corinthians 12) suggesting a Christian duty of care alongside the socialist argument. Short, declarative sentences give it the force of a commandment." />
+                  <Quote text="they will be taught it in fire and blood and anguish" speaker="Inspector" act="Act 3" analysis="Prophetic warning fulfilled by WWI and WWII. The tricolon 'fire and blood and anguish' escalates in intensity. 'Will be taught' -- the passive voice implies a force greater than human agency will enforce the lesson." />
                   <Quote text="Public men, Mr Birling, have responsibilities as well as privileges" speaker="Inspector" act="Act 1" analysis="Directly challenges Birling's capitalist philosophy. The balance of 'responsibilities' against 'privileges' implies they are inseparable -- you cannot enjoy one without accepting the other." />
                   <Quote text="It's better to ask for the earth than to take it" speaker="Inspector" act="Act 1" analysis="Defends the workers' strike. 'Ask for the earth' -- what Birling sees as unreasonable, the Inspector reframes as legitimate. 'Take it' -- the real crime is capitalist exploitation, not workers' demands." />
                 </div>
@@ -606,7 +606,7 @@ export default function InspectorCallsRevisionPage() {
                 <h3 className="text-base font-bold text-foreground mb-3">Sybil Birling</h3>
                 <div className="grid gap-3 sm:grid-cols-2">
                   <Quote text="Girls of that class" speaker="Mrs Birling" act="Act 2" analysis="Casual, devastating class prejudice in three words. 'That class' refuses to even name the working class -- they are beneath specification. Dehumanises Eva and everyone like her." />
-                  <Quote text="She was claiming elaborate fine feelings and scruples that were simply absurd in a girl in her position" speaker="Mrs Birling" act="Act 2" analysis="Mrs Birling cannot believe a working-class girl could have morals. 'Absurd' -- she finds Eva's integrity laughable. Eva's refusal of stolen money showed greater ethics than any Birling." />
+                  <Quote text="Fine feelings and scruples that were simply absurd in a girl in her position" speaker="Mrs Birling" act="Act 2" analysis="Mrs Birling cannot believe a working-class girl could have morals. 'Absurd' -- she finds Eva's integrity laughable. Eva's refusal of stolen money showed greater ethics than any Birling." />
                   <Quote text="I did nothing wrong" speaker="Mrs Birling" act="Act 3" analysis="Total refusal of guilt. Her certainty is unshakeable -- class position equals moral correctness in her mind. She is the character who changes least, representing the immovable upper class." />
                 </div>
               </div>
@@ -626,7 +626,7 @@ export default function InspectorCallsRevisionPage() {
               <div>
                 <h3 className="text-base font-bold text-foreground mb-3">Eric Birling</h3>
                 <div className="grid gap-3 sm:grid-cols-2">
-                  <Quote text="you killed her -- and the child she'd have had too -- my child -- your own grandchild" speaker="Eric" act="Act 3" analysis="Each dash adds a new layer of accusation. The progression from abstract ('her') to personal ('my child') to familial ('your own grandchild') makes Mrs Birling's guilt inescapable." />
+                  <Quote text="you killed her -- and the child she'd have had too" speaker="Eric" act="Act 3" analysis="Each clause adds a new layer of accusation, moving from abstract ('her') to concrete. Eric's bluntness is shocking after an evening of euphemism, making Mrs Birling's guilt inescapable." />
                   <Quote text="We did her in all right" speaker="Eric" act="Act 3" analysis="Blunt acceptance of collective guilt. 'We' is inclusive -- the whole family is complicit. 'All right' is grimly emphatic. Eric's directness opposes his parents' euphemisms and evasions." />
                   <Quote text="you're not the kind of father a chap could go to when he's in trouble" speaker="Eric" act="Act 3" analysis="Exposes the Birling family's dysfunction. Despite Birling's paternalistic authority, Eric felt unable to ask for help. The family unit Birling claims to protect has failed from within." />
                 </div>
@@ -645,8 +645,8 @@ export default function InspectorCallsRevisionPage() {
               <div>
                 <h3 className="text-base font-bold text-foreground mb-3">About Eva / Key Stage Directions</h3>
                 <div className="grid gap-3 sm:grid-cols-2">
-                  <Quote text="She was a pretty, lively sort of girl who never did anybody any harm" speaker="Inspector (about Eva)" act="Act 3" analysis="Summarises Eva's character: vital, innocent, blameless. The past tense ('was') emphasises her destruction. 'Never did anybody any harm' makes the Birlings' treatment of her all the more damning." />
-                  <Quote text="The lighting should be pink and intimate until the Inspector arrives, and then it should be brighter and harder" speaker="Stage direction" act="Opening" analysis="The most important stage direction in the play. 'Pink and intimate' = comfortable self-deception; 'brighter and harder' = scrutiny and exposure. The lighting literally embodies the play's moral arc." />
+                  <Quote text="She never did anybody any harm" speaker="Inspector (about Eva)" act="Act 3" analysis="Summarises Eva's character in a single simple clause. 'Never' and 'anybody' make her innocence absolute, while the Birlings' treatment of her becomes all the more damning." />
+                  <Quote text="Pink and intimate until the Inspector arrives, and then brighter and harder" speaker="Stage direction" act="Opening" analysis="The most important stage direction in the play. 'Pink and intimate' = comfortable self-deception; 'brighter and harder' = scrutiny and exposure. The lighting literally embodies the play's moral arc." />
                 </div>
               </div>
             </div>
@@ -990,6 +990,15 @@ export default function InspectorCallsRevisionPage() {
         </div>
 
       </div>
+
+      {/* Copyright notice */}
+      <footer className="mt-8 text-center text-xs text-muted-foreground">
+        <p>
+          <em>An Inspector Calls</em> &copy; The Estate of J.B. Priestley.
+          Short quotations are used for criticism and review under fair dealing
+          (CDPA&nbsp;1988, s.30).
+        </p>
+      </footer>
     </>
   );
 }

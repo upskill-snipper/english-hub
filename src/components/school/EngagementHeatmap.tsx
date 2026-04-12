@@ -157,7 +157,7 @@ export function EngagementHeatmap({
                   return (
                     <TooltipProvider key={day.date} delayDuration={100}>
                       <Tooltip open={hoveredCell === globalIdx}>
-                        <TooltipTrigger asChild>
+                        <TooltipTrigger>
                           <div
                             className={cn(
                               'h-[13px] w-[13px] rounded-[2px] transition-colors duration-100 cursor-default',

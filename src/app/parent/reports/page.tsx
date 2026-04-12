@@ -24,8 +24,6 @@ import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
 import { Button } from '@/components/ui/button'
 
-// TODO: replace with Supabase — generate reports server-side and email via Resend
-
 const STUDIED_POEMS_KEY = 'english-hub-studied-poems'
 const GAME_SCORES_KEY = 'english-hub-game-scores'
 const QUIZ_HISTORY_KEY = 'english-hub-quiz-history'

@@ -27,12 +27,7 @@ function Tooltip({ ...props }: TooltipPrimitive.Root.Props) {
   return <TooltipPrimitive.Root data-slot="tooltip" {...props} />
 }
 
-type TooltipTriggerProps = TooltipPrimitive.Trigger.Props & {
-  /** Radix-compat: ignored (base-ui always composes) */
-  asChild?: boolean
-}
-
-function TooltipTrigger({ asChild: _asChild, ...props }: TooltipTriggerProps) {
+function TooltipTrigger(props: TooltipPrimitive.Trigger.Props) {
   return <TooltipPrimitive.Trigger data-slot="tooltip-trigger" {...props} />
 }
 

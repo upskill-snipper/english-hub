@@ -4,11 +4,11 @@ const { withSentryConfig } = require('@sentry/nextjs')
 const nextConfig = {
   typescript: {
     // Type checking done locally pre-commit; skip on Vercel to avoid timeout
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: false,
   },
   eslint: {
     // Linting done locally pre-commit; skip on Vercel to avoid timeout
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: false,
   },
   experimental: {
     instrumentationHook: true,
@@ -62,19 +62,9 @@ const nextConfig = {
     ]
   },
 }
-// Sentry wrapping disabled for production builds due to source map upload
-// hanging indefinitely on builds with 700+ routes. Re-enable once we move
-// to a Vercel plan with higher build resources, or once we reduce total
-// route count, or once Sentry's upload-source-maps step is fixed.
-// Error tracking still works at runtime via the Sentry SDK initialisation
-// in sentry.{client,server,edge}.config.ts — only the build-time source
-// map upload is disabled here.
-const disableSentry =
-  process.env.DISABLE_SENTRY === '1' || process.env.VERCEL === '1'
-
-module.exports = disableSentry
-  ? nextConfig
-  : withSentryConfig(nextConfig, {
-      silent: 'warn',
-      hideSourceMaps: true,
-    })
+module.exports = withSentryConfig(nextConfig, {
+  silent: true,
+  hideSourceMaps: true,
+  disableServerWebpackPlugin: process.env.VERCEL === '1',
+  disableClientWebpackPlugin: process.env.VERCEL === '1',
+})

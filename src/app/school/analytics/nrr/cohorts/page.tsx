@@ -54,11 +54,9 @@ export default function CohortsPage() {
         {/* Header */}
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-3">
-            <Button asChild variant="ghost" size="sm" className="gap-1.5">
-              <Link href="/school/analytics/nrr">
+            <Button render={<Link href="/school/analytics/nrr" />} variant="ghost" size="sm" className="gap-1.5">
                 <ArrowLeft className="h-4 w-4" />
                 NRR Dashboard
-              </Link>
             </Button>
             <div className="h-6 w-px bg-border" />
             <div className="flex items-center gap-3">

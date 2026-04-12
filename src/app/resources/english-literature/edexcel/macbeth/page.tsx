@@ -545,6 +545,10 @@ export default function MacbethPage() {
       </div>
 
       <ExamBoardDisclaimer variant="content" className="mx-auto max-w-5xl px-4 py-8" />
+
+      <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4 mx-auto max-w-5xl px-4 pb-8">
+        Macbeth by William Shakespeare is in the public domain. Quotations are reproduced freely.
+      </p>
     </>
   );
 }

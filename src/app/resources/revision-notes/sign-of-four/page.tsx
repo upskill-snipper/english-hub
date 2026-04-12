@@ -697,6 +697,14 @@ export default function SignOfFourPage() {
         </ul>
       </div>
       </div>
+
+      {/* Public-domain notice */}
+      <footer className="mt-8 text-center text-xs text-muted-foreground">
+        <p>
+          <em>The Sign of the Four</em> by Arthur Conan Doyle (first published
+          1890) is in the public domain. All quotations are reproduced freely.
+        </p>
+      </footer>
     </>
   );
 }

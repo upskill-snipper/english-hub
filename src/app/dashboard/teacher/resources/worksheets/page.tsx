@@ -15,7 +15,7 @@ const QUOTES = [
   },
   {
     character: "Inspector Goole",
-    quote: "We don't live alone. We are members of one body. We are responsible for each other.",
+    quote: "We are members of one body. We are responsible for each other.",
     act: "Act 3",
     technique: "Short declarative sentences / tricolon / collective pronoun 'we'",
     effect: "The Inspector's final speech directly contradicts Mr Birling's opening monologue. The shift from 'I' to 'we' mirrors the socialist message. The tricolon builds rhetorical power, echoing political oratory. 'Members of one body' has Christian undertones, giving moral authority to his socialist argument.",
@@ -141,6 +141,9 @@ export default function WorksheetsPage() {
           </li>
         </ol>
       </div>
+      <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
+        An Inspector Calls &copy; The Estate of J.B. Priestley. Short quotations reproduced under the fair dealing provision of the Copyright, Designs and Patents Act 1988 for the purpose of criticism and review.
+      </p>
     </div>
   );
 }

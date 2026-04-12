@@ -476,6 +476,10 @@ export default function ThePreludePage() {
           ))}
         </div>
       </section>
+
+      <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
+        Public domain &mdash; quotations from The Prelude by William Wordsworth reproduced freely.
+      </p>
     </div>
   )
 }

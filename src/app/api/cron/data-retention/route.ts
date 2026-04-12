@@ -51,6 +51,13 @@ export async function POST(request: NextRequest) {
           supportTicketsArchived: summary.supportTicketsArchived,
           expiredMarketingConsents: summary.expiredMarketingConsents,
           childrenPriorityCleanups: summary.childrenPriorityCleanups,
+          childDormancy: summary.childDormancy
+            ? {
+                warningsSent: summary.childDormancy.warningsSent.length,
+                deletions: summary.childDormancy.deletions.length,
+                errors: summary.childDormancy.errors.length,
+              }
+            : null,
         },
         errors: summary.errors.length,
         // Only include error details in non-production for debugging

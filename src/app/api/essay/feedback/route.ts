@@ -50,7 +50,7 @@ async function generateAIFeedback(
   examBoard: string,
   topic: string
 ): Promise<string> {
-  // TODO: Replace with actual AI provider call
+  // TODO(Phase-6): Integrate AI essay feedback via Anthropic Claude API (see commented example below)
   // Example integration:
   //
   // const response = await openai.chat.completions.create({
@@ -71,7 +71,7 @@ async function generateAIFeedback(
 // Logs filtering activity for compliance review.
 
 async function logToAuditTrail(entry: AuditLogEntry): Promise<void> {
-  // TODO: Replace with actual audit logging (database, logging service, etc.)
+  // TODO(Phase-7): Persist audit log entries to Supabase audit_logs table (see commented example below)
 
   // Production implementation example:
   // await db.auditLog.create({ data: entry });
@@ -249,7 +249,7 @@ export async function POST(request: NextRequest) {
       warningCount: filterResult.warnings.length,
     });
 
-    // TODO: Store essay and feedback in database
+    // TODO(Phase-7): Store essay submission and feedback in Supabase essay_submissions table (see commented schema below)
     // await db.essaySubmission.create({
     //   data: {
     //     userId,

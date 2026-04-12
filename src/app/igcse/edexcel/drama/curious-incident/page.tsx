@@ -89,13 +89,13 @@ const characters = [
 
 const keyQuotations = [
   {
-    quote: 'My name is Christopher John Francis Boone. I know all the countries of the world and their capital cities and every prime number up to 7,057.',
+    quote: 'My name is Christopher John Francis Boone. I know all the countries\u2026',
     speaker: 'Christopher',
     analysis:
       'The opening establishes Christopher\u2019s voice — precise, taxonomic, proud. Stephens preserves the novel\u2019s first-person idiom through Siobhan\u2019s reading aloud.',
   },
   {
-    quote: 'Prime numbers are what is left when you have taken all the patterns away. I think prime numbers are like life. They are very logical but you could never work out the rules, even if you spent all your time thinking about them.',
+    quote: 'Prime numbers are what is left when you have taken all the patterns away.',
     speaker: 'Christopher',
     analysis:
       'Christopher\u2019s philosophical metaphor. The play uses projection and staging to visualise prime numbers, turning an internal monologue into theatrical spectacle.',
@@ -161,7 +161,7 @@ const keyQuotations = [
       'The play ends on a question, not an answer. Stephens lets the audience decide whether Christopher\u2019s triumphs add up to autonomy, or whether the question must remain open.',
   },
   {
-    quote: 'The dog was dead. It wasn\u2019t asleep. There was no blood coming out of the dog and no obvious wounds on it… I saw that it had a large garden fork sticking out of it.',
+    quote: 'The dog was dead… I saw that it had a large garden fork sticking out of it.',
     speaker: 'Christopher',
     analysis:
       'Christopher\u2019s forensic calm is simultaneously comic and disturbing — Stephens keeps the novel\u2019s tonal tightrope intact.',

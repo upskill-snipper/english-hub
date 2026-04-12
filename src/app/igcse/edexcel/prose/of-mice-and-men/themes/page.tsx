@@ -23,7 +23,7 @@ const themes = [
     moments:
       'George\u2019s retellings of the dream; Candy\u2019s offer to buy in; Crooks\u2019s hopeful interjection; Curley\u2019s wife\u2019s Salinas story.',
     quote:
-      '“I seen hunderds of men come by on the road an\u2019 on the ranches… every damn one of \u2019em\u2019s got a little piece of land in his head. An\u2019 never a God damn one of \u2019em ever gets it.” — Crooks',
+      '”Every damn one of \u2019em\u2019s got a little piece of land in his head.” — Crooks',
   },
   {
     title: 'Loneliness',
@@ -50,7 +50,7 @@ const themes = [
     moments:
       'Candy\u2019s dog; Crooks\u2019s segregated room; Curley\u2019s wife\u2019s threat to have Crooks lynched; the fight in the bunkhouse.',
     quote:
-      '“Well, you keep your place then, Nigger. I could get you strung up on a tree so easy it ain\u2019t even funny.” — Curley\u2019s wife',
+      '”I could get you strung up on a tree so easy it ain\u2019t even funny.” — Curley\u2019s wife',
   },
   {
     title: 'Fate and predestination',
@@ -77,7 +77,7 @@ const themes = [
     moments:
       'The opening pool description; Lennie\u2019s return at the end; the heron eating the water snake.',
     quote:
-      '“A water snake glided smoothly up the pool… A silent head and beak lanced down and plucked it out by the head.”',
+      '”A silent head and beak lanced down and plucked it out by the head.”',
   },
 ]
 

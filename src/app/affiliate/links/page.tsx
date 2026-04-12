@@ -10,8 +10,6 @@ import { getAccount, type AffiliateAccount } from '@/components/affiliate/mock-d
 import { Check, Copy, Link2, Sparkles } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
-// TODO: Supabase — persist generated tracking links to affiliate_links table
-
 const BASE_URL = 'https://english-hub.app'
 
 const DESTINATIONS = [

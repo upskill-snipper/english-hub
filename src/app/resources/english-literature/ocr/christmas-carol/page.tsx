@@ -705,6 +705,14 @@ export default function OCRChristmasCarolPage() {
         </section>
 
         <ExamBoardDisclaimer variant="content" className="mt-12" />
+
+        {/* Public-domain notice */}
+        <footer className="mt-8 text-center text-xs text-muted-foreground">
+          <p>
+            All quotations from <em>A Christmas Carol</em> by Charles Dickens
+            (first published 1843) are in the public domain.
+          </p>
+        </footer>
       </div>
 
     </>

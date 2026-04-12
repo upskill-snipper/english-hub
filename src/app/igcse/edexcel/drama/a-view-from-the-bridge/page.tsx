@@ -149,7 +149,7 @@ const keyQuotations = [
       'Eddie\u2019s final line reveals that his real grief is the loss of Beatrice, not Catherine. Miller gives Beatrice the emotional last word even as Eddie dies.',
   },
   {
-    quote: 'He allowed himself to be wholly known, and for that I think I will love him more than all my sensible clients.',
+    quote: 'He allowed himself to be wholly known\u2026 I will love him more than all my sensible clients.',
     speaker: 'Alfieri',
     analysis:
       'The play\u2019s ambiguous closing lines: Miller refuses to condemn Eddie, instead offering the classical tragic gesture of recognition.',

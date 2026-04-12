@@ -19,7 +19,7 @@ import {
 } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { useAuthStore } from '@/store/auth-store'
-import { useBoardStore } from '@/store/board-store'
+import { useBoard } from '@/hooks/useBoard'
 import { matchesBoard } from '@/lib/board-filter'
 import { loadAllCourses } from '@/data/course-loader'
 import { formatDate } from '@/lib/utils'
@@ -128,7 +128,7 @@ function CardSkeleton({ className = '' }: { className?: string }) {
 export default function GradeDashboardPage() {
   const { user, isLoading } = useAuthStore()
   const router = useRouter()
-  const { selectedBoard } = useBoardStore()
+  const { board: selectedBoard } = useBoard()
   const [allCourses, setAllCourses] = useState<CourseData[]>([])
   const [assessments, setAssessments] = useState<AssessmentAttempt[]>([])
   const [practiceSessions, setPracticeSessions] = useState<PracticeSession[]>([])

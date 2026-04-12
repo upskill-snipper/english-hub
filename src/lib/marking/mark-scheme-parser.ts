@@ -86,37 +86,42 @@ export function parseMarkScheme(input: RawMarkSchemeInput): ParseResult {
   const errors: ParseError[] = []
 
   const questions: QuestionScheme[] = []
-  let currentQuestion: MutableQuestion | null = null
-  let currentAO: MutableAO | null = null
-  let currentBand: MutableBand | null = null
 
-  // Accept schemes that have no explicit question heading by starting a
-  // default question. If a real question heading appears we replace it.
-  currentQuestion = createDefaultQuestion(input)
+  // Wrap mutable parser state in an object so TypeScript does not narrow
+  // the fields to `null` after the forEach callback mutates them.
+  const state: {
+    question: MutableQuestion | null
+    ao: MutableAO | null
+    band: MutableBand | null
+  } = {
+    question: createDefaultQuestion(input),
+    ao: null,
+    band: null,
+  }
 
   lines.forEach((line, idx) => {
     // Question heading?
     const qMatch = QUESTION_HEADING.exec(line)
     if (qMatch) {
-      finaliseQuestion(currentQuestion, questions)
-      currentQuestion = {
+      finaliseQuestion(state.question, questions)
+      state.question = {
         id: `Q${qMatch[1]}`,
         questionType: qMatch[2]?.trim() ?? "Question",
         taskDescription: "",
         totalMarks: qMatch[3] ? Number(qMatch[3]) : 0,
         aos: [],
       }
-      currentAO = null
-      currentBand = null
+      state.ao = null
+      state.band = null
       return
     }
 
     // AO heading?
     const aMatch = AO_HEADING.exec(line)
     if (aMatch) {
-      if (!currentQuestion) currentQuestion = createDefaultQuestion(input)
-      if (currentAO) currentQuestion.aos.push(currentAO)
-      currentAO = {
+      if (!state.question) state.question = createDefaultQuestion(input)
+      if (state.ao) state.question.aos.push(state.ao)
+      state.ao = {
         id: `AO${aMatch[1]}`,
         label: `AO${aMatch[1]} — ${aMatch[2]?.trim() ?? ""}`,
         description: "",
@@ -124,22 +129,22 @@ export function parseMarkScheme(input: RawMarkSchemeInput): ParseResult {
         weighting: 0,
         bands: [],
       }
-      currentBand = null
+      state.band = null
       return
     }
 
     // Band heading?
     const bMatch = BAND_HEADING.exec(line)
     if (bMatch) {
-      if (!currentAO) {
+      if (!state.ao) {
         errors.push({
           line: idx + 1,
           message: `Band "${line}" found before any AO heading`,
         })
         return
       }
-      if (currentBand) currentAO.bands.push(currentBand)
-      currentBand = {
+      if (state.band) state.ao.bands.push(state.band)
+      state.band = {
         band: `Level ${bMatch[1]}`,
         minMarks: Number(bMatch[2]),
         maxMarks: Number(bMatch[3]),
@@ -151,30 +156,30 @@ export function parseMarkScheme(input: RawMarkSchemeInput): ParseResult {
     }
 
     // Prose — attach to the most specific open node.
-    if (currentBand) {
+    if (state.band) {
       if (line.startsWith("- ") || line.startsWith("• ")) {
-        currentBand.indicators.push(line.replace(/^[-•]\s*/, ""))
+        state.band.indicators.push(line.replace(/^[-•]\s*/, ""))
       } else {
-        currentBand.descriptor = joinProse(currentBand.descriptor, line)
+        state.band.descriptor = joinProse(state.band.descriptor, line)
       }
       return
     }
-    if (currentAO) {
-      currentAO.description = joinProse(currentAO.description, line)
+    if (state.ao) {
+      state.ao.description = joinProse(state.ao.description, line)
       return
     }
-    if (currentQuestion) {
-      currentQuestion.taskDescription = joinProse(
-        currentQuestion.taskDescription,
+    if (state.question) {
+      state.question.taskDescription = joinProse(
+        state.question.taskDescription,
         line,
       )
     }
   })
 
   // Flush any open state.
-  if (currentAO && currentBand) currentAO.bands.push(currentBand)
-  if (currentQuestion && currentAO) currentQuestion.aos.push(currentAO)
-  finaliseQuestion(currentQuestion, questions)
+  if (state.ao && state.band) state.ao.bands.push(state.band)
+  if (state.question && state.ao) state.question.aos.push(state.ao)
+  finaliseQuestion(state.question, questions)
 
   if (questions.length === 0) {
     errors.push({

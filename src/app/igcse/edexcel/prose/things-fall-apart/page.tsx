@@ -122,19 +122,19 @@ const keyQuotations = [
       'The elder\u2019s warning Okonkwo ignores. Achebe stages the killing of Ikemefuna as a choice, not a command.',
   },
   {
-    quote: 'Among the Ibo the art of conversation is regarded very highly, and proverbs are the palm-oil with which words are eaten.',
+    quote: 'Proverbs are the palm-oil with which words are eaten.',
     speaker: 'Narrator',
     analysis:
       'Achebe\u2019s most quoted line about Igbo orality. It also signals his authorial project: translating that tradition into English prose without subordinating it.',
   },
   {
-    quote: 'The white man is very clever. He came quietly and peaceably with his religion. We were amused at his foolishness and allowed him to stay. Now he has won our brothers, and our clan can no longer act like one.',
+    quote: 'Now he has won our brothers, and our clan can no longer act like one.',
     speaker: 'Obierika',
     analysis:
       'Obierika\u2019s diagnosis of colonialism as an internal loosening — more powerful than the external force itself.',
   },
   {
-    quote: 'He has put a knife on the things that held us together and we have fallen apart.',
+    quote: 'He has put a knife on the things that held us together…',
     speaker: 'Obierika',
     analysis:
       'The line that gives the novel its title. Note the passive "have fallen apart" — Achebe holds the clan responsible, too.',
@@ -170,13 +170,13 @@ const keyQuotations = [
       'A question about incommensurable legal systems. Achebe dramatises how colonial courts erase indigenous structures of meaning.',
   },
   {
-    quote: 'He knew that Umuofia would not go to war. He knew because they had let the other messengers escape.',
+    quote: 'He knew that Umuofia would not go to war.',
     speaker: 'Narrator',
     analysis:
       'The moment Okonkwo realises his community will not rise with him. The realisation precedes his suicide.',
   },
   {
-    quote: 'It is an abomination for a man to take his own life. It is an offence against the Earth, and a man who commits it will not be buried by his clansmen.',
+    quote: 'It is an abomination for a man to take his own life…',
     speaker: 'Obierika',
     analysis:
       'Okonkwo\u2019s end is doubly tragic: the warrior who defined himself by clan law dies outside it.',

@@ -127,7 +127,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Failed to activate affiliate' }, { status: 500 })
   }
 
-  // TODO: Send onboarding email with affiliate link
+  // TODO(Phase-5): Send onboarding email with affiliate link via Resend (include referral URL, payout info, and getting-started guide)
 
   return NextResponse.json({
     success: true,

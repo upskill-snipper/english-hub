@@ -439,6 +439,10 @@ export default function ChargeOfTheLightBrigadePage() {
           Start quiz
         </Button>
       </section>
+
+      <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
+        Public domain &mdash; quotations from The Charge of the Light Brigade by Alfred Lord Tennyson reproduced freely.
+      </p>
     </div>
   )
 }

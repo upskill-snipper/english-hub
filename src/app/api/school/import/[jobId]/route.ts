@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createServerSupabaseClient, createServiceRoleClient } from "@/lib/supabase/server";
 import { verifySchoolMember } from "@/lib/school-auth";
-import { getJobFromCache } from "@/app/api/school/import/route";
+import { getJobFromCache } from "@/lib/import-job-cache";
 
 export const dynamic = "force-dynamic";
 

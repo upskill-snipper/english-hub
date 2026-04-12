@@ -28,7 +28,7 @@ import {
   ArrowUpRight,
 } from 'lucide-react'
 
-// TODO: Supabase — hydrate dashboard from server queries instead of localStorage
+// TODO(Phase-7): Supabase — hydrate dashboard from server queries instead of localStorage
 
 export default function AffiliateDashboardPage() {
   const [account, setAccountState] = useState<AffiliateAccount | null>(null)

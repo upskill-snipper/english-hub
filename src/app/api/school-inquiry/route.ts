@@ -123,8 +123,7 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // TODO: Send notification email to admin
-    // TODO: Send confirmation email to the teacher
+    // TODO(Phase-5): Send notification email to admin and confirmation email to the teacher via Resend
 
     return NextResponse.json({ success: true })
   } catch (error) {

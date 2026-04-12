@@ -22,7 +22,7 @@ const characters = [
     analysis:
       'A "heavy-looking, rather portentous man" in his mid-fifties, Birling is the voice of the capitalist status quo. His opening speeches — about unsinkable ships, unstoppable progress and the nonsense of "community" — are demolished by every subsequent revelation. Priestley uses him to show how men in power absorb new information without updating their convictions. His preoccupation with his possible knighthood reveals an unshaken faith that the social order will reward him.',
     quote:
-      '“If we were all responsible for everything that happened to everybody… it would be very awkward, wouldn\u2019t it?”',
+      '”It would be very awkward, wouldn\u2019t it?”',
   },
   {
     name: 'Sybil Birling',
@@ -62,7 +62,7 @@ const characters = [
     analysis:
       'Eva never appears on stage. Priestley\u2019s most important dramatic choice: she is reconstructed entirely through the Birlings\u2019 stories and the Inspector\u2019s photographs. Her absence makes her a representative figure — the name changes (Eva Smith, Daisy Renton, Mrs Birling) tracking the working-class woman\u2019s instability in the Edwardian economy. Whether "she" is one person or several, the Inspector argues, the moral calculus is identical.',
     quote:
-      'Inspector: “There are a lot of young women living that sort of existence in every city and big town in this country, Miss Birling.”',
+      'Inspector: “Young women living that sort of existence in every city… Miss Birling.”',
   },
   {
     name: 'Inspector Goole',
@@ -70,7 +70,7 @@ const characters = [
     analysis:
       '"Not a big man but… an impression of massiveness, solidity and purposefulness." Priestley\u2019s stage directions deliberately mark Goole as more than human. He knows details he could not know; his name is a pun on "ghoul"; his final speech has the cadence of a sermon. Whether he is a spirit, a dream, a rehearsal, or a device, his function is to collapse Edwardian complacency in two hours of stage time.',
     quote:
-      '“We don\u2019t live alone. We are members of one body. We are responsible for each other.”',
+      '”We are members of one body. We are responsible for each other.”',
   },
   {
     name: 'Edna',
@@ -161,6 +161,10 @@ export default async function InspectorCallsCharactersPage() {
           ))}
         </div>
       </section>
+
+      <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
+        An Inspector Calls &copy; The Estate of J.B. Priestley. Short quotations reproduced under the fair dealing provision of the Copyright, Designs and Patents Act 1988 for the purpose of criticism and review.
+      </p>
     </div>
   )
 }

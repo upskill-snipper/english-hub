@@ -1,5 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 import { sendEmail } from "@/lib/email";
+import { processChildDormancy, type DormancyResult } from "@/lib/privacy/dormancy";
 
 const prisma = new PrismaClient();
 
@@ -45,6 +46,8 @@ export interface CleanupSummary {
   supportTicketsArchived: number;
   expiredMarketingConsents: number;
   childrenPriorityCleanups: number;
+  /** Children's Code Standard 8 – dormant child account processing */
+  childDormancy: DormancyResult | null;
   errors: { userId?: string; step: string; message: string }[];
 }
 
@@ -128,6 +131,7 @@ export async function cleanupExpiredData(): Promise<CleanupSummary> {
     supportTicketsArchived: 0,
     expiredMarketingConsents: 0,
     childrenPriorityCleanups: 0,
+    childDormancy: null,
     errors: [],
   };
 
@@ -159,6 +163,33 @@ export async function cleanupExpiredData(): Promise<CleanupSummary> {
   } catch (err) {
     summary.errors.push({
       step: "children_cleanup_query",
+      message: err instanceof Error ? err.message : String(err),
+    });
+  }
+
+  // ── 1b. Children's Code Standard 8: dormant child account cleanup ───
+  //
+  // Child accounts inactive for 12 months (shorter than the general
+  // 2-year threshold) are warned and then hard-deleted after a 30-day
+  // grace period. This runs before general cleanup to ensure child data
+  // minimisation takes priority per ICO guidance.
+
+  try {
+    // TODO(Phase-7): test with real Supabase data
+    const dormancyResult = await processChildDormancy(prisma);
+    summary.childDormancy = dormancyResult;
+
+    // Roll child dormancy deletions into the overall hard-delete count
+    for (const d of dormancyResult.deletions) {
+      summary.hardDeletedAccounts.push(d.userId);
+      summary.childrenPriorityCleanups++;
+    }
+
+    // Roll child dormancy errors into the summary
+    summary.errors.push(...dormancyResult.errors);
+  } catch (err) {
+    summary.errors.push({
+      step: "child_dormancy_processing",
       message: err instanceof Error ? err.message : String(err),
     });
   }
@@ -297,12 +328,10 @@ export async function cleanupExpiredData(): Promise<CleanupSummary> {
   }
 
   // ── 4. Anonymise usage/analytics data older than 12 months ─────────
-  // TODO: Implement when UsageEvent model is added to schema
-  // Currently no UsageEvent model exists in the Prisma schema.
+  // [PHASE:schema-extension] Implement when UsageEvent model is added to Prisma schema.
 
   // ── 5. Archive/delete support tickets older than 2 years ───────────
-  // TODO: Implement when SupportTicket model is added to schema
-  // Currently no SupportTicket model exists in the Prisma schema.
+  // [PHASE:schema-extension] Implement when SupportTicket model is added to Prisma schema.
 
   // ── 6. Clean up expired marketing consent records ──────────────────
 
@@ -416,7 +445,7 @@ export async function anonymiseUser(userId: string): Promise<void> {
       where: { userId },
     });
 
-    // 5. Usage events - TODO: Implement when UsageEvent model is added
+    // 5. Usage events - [PHASE:schema-extension] awaiting UsageEvent model
 
     // 6. Audit
     await tx.auditLog.create({
@@ -489,14 +518,12 @@ export async function hardDeleteUser(userId: string): Promise<void> {
     // 4. Delete privacy settings
     await tx.privacySettings.deleteMany({ where: { userId } });
 
-    // 5. Delete usage events
-    // TODO: Implement when UsageEvent model is added to schema
+    // 5. Delete usage events -- [PHASE:schema-extension] awaiting UsageEvent model
 
     // 6. Delete data access requests
     await tx.dataAccessRequest.deleteMany({ where: { userId } });
 
-    // 7. Archive support tickets (content already redacted during cleanup)
-    // TODO: Implement when SupportTicket model is added to schema
+    // 7. Archive support tickets -- [PHASE:schema-extension] awaiting SupportTicket model
 
     // 8. Delete subscription (but payment invoices are retained separately)
     await tx.subscription.delete({ where: { userId } }).catch(() => {
@@ -871,11 +898,9 @@ export async function generateComplianceReport(): Promise<ComplianceReport> {
         },
       },
     }),
-    // Individual usage data older than 12 months not anonymised
-    // TODO: Implement when UsageEvent model is added to schema
+    // [PHASE:schema-extension] UsageEvent count - awaiting model
     Promise.resolve(0),
-    // Resolved support tickets older than 2 years not archived
-    // TODO: Implement when SupportTicket model is added to schema
+    // [PHASE:schema-extension] SupportTicket count - awaiting model
     Promise.resolve(0),
   ]);
 

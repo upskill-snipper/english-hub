@@ -126,7 +126,7 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // TODO: Send notification email to admin (ADMIN_EMAILS)
+    // TODO(Phase-5): Send notification email to admin (ADMIN_EMAILS) via Resend when a new creator application is submitted
 
     return NextResponse.json({ success: true })
   } catch (error) {

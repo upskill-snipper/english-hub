@@ -94,7 +94,7 @@ const keyQuotations = [
       'Names the novella\u2019s central problem. The line is repeated across the book in slightly different forms, acting as a refrain.',
   },
   {
-    quote: 'With us it ain\u2019t like that. We got a future. We got somebody to talk to that gives a damn about us.',
+    quote: 'We got a future. We got somebody to talk to…',
     speaker: 'George',
     analysis:
       'Completes the refrain with the dream of belonging. The repetition emphasises that this dream is partly spoken into existence.',
@@ -112,13 +112,13 @@ const keyQuotations = [
       'The moment the dream becomes financially concrete — and therefore, in Steinbeck\u2019s pessimistic logic, the moment it begins to die.',
   },
   {
-    quote: 'A guy needs somebody — to be near him… I tell ya a guy gets too lonely an\u2019 he gets sick.',
+    quote: 'A guy needs somebody… a guy gets too lonely an\u2019 he gets sick.',
     speaker: 'Crooks',
     analysis:
       'Extends the novella\u2019s loneliness theme to the ranch\u2019s most isolated figure. Crooks diagnoses loneliness as a pathology, not a mood.',
   },
   {
-    quote: 'You got no rights comin\u2019 in a colored man\u2019s room… I can\u2019t play because I\u2019m black.',
+    quote: 'You got no rights comin\u2019 in a colored man\u2019s room…',
     speaker: 'Crooks',
     analysis:
       'Crooks both asserts and explains the segregation imposed on him — a micro-history of Jim Crow inside a Californian bunkhouse.',
@@ -136,13 +136,13 @@ const keyQuotations = [
       'Steinbeck\u2019s title comes from Burns\u2019s poem "To a Mouse". The epigraph announces fatalism before the story even begins.',
   },
   {
-    quote: 'I ought to of shot that dog myself, George. I shouldn\u2019t ought to of let no stranger shoot my dog.',
+    quote: 'I ought to of shot that dog myself, George.',
     speaker: 'Candy',
     analysis:
       'The line Steinbeck uses to prepare George\u2019s final decision — it frames killing Lennie as the most honourable option available.',
   },
   {
-    quote: 'No, Lennie. I ain\u2019t mad. I never been mad, an\u2019 I ain\u2019t now. That\u2019s a thing I want ya to know.',
+    quote: 'I ain\u2019t mad. I never been mad, an\u2019 I ain\u2019t now.',
     speaker: 'George',
     analysis:
       'George\u2019s last words before shooting Lennie. The simple, conversational register makes the moment more devastating.',

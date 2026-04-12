@@ -85,7 +85,7 @@ const teachingGuide = {
   keyQuotes: [
     { quote: "We are members of one body. We are responsible for each other.", speaker: "Inspector Goole", significance: "Priestley's central thesis -- collective responsibility" },
     { quote: "A man has to mind his own business and look after himself and his own.", speaker: "Mr Birling", significance: "Capitalist individualism that Priestley systematically undermines" },
-    { quote: "If men will not learn that lesson, then they will be taught it in fire and blood and anguish.", speaker: "Inspector Goole", significance: "Prophetic warning alluding to both World Wars" },
+    { quote: "They will be taught it in fire and blood and anguish.", speaker: "Inspector Goole", significance: "Prophetic warning alluding to both World Wars" },
     { quote: "But these girls aren't cheap labour -- they're people.", speaker: "Sheila Birling", significance: "Sheila's moral awakening and generational shift" },
     { quote: "The Titanic -- she sails next week... absolutely unsinkable.", speaker: "Mr Birling", significance: "Dramatic irony that undermines Birling's authority" },
   ],
@@ -722,6 +722,10 @@ export default function FreeResourcesPage() {
             </Button>
           </div>
         </section>
+
+        <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
+          An Inspector Calls &copy; The Estate of J.B. Priestley. Short quotations reproduced under the fair dealing provision of the Copyright, Designs and Patents Act 1988 for the purpose of criticism and review.
+        </p>
       </div>
     </div>
   )

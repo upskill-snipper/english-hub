@@ -617,6 +617,15 @@ export default function ToAutumnPage() {
           ))}
         </div>
       </section>
+
+      <footer className="rounded-lg border border-border/40 bg-muted/30 px-4 py-3 text-[0.7rem] leading-relaxed text-muted-foreground">
+        <p>
+          &ldquo;To Autumn&rdquo; by John Keats (1819) is in the public domain.
+          All quotations on this page are used for the purpose of criticism,
+          review and educational study under fair dealing (s.30 Copyright,
+          Designs and Patents Act 1988).
+        </p>
+      </footer>
     </div>
   )
 }

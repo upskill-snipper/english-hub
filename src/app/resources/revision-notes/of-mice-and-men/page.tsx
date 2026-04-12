@@ -689,6 +689,15 @@ export default function OfMiceAndMenStudyGuide() {
           &larr; Back to Revision Notes
         </a>
       </div>
+
+      {/* Copyright notice */}
+      <footer className="mt-8 text-center text-xs text-muted-foreground">
+        <p>
+          <em>Of Mice and Men</em> &copy; The Estate of John Steinbeck. Short
+          quotations are used for criticism and review under fair dealing
+          (CDPA&nbsp;1988, s.30).
+        </p>
+      </footer>
     </div>
   );
 }

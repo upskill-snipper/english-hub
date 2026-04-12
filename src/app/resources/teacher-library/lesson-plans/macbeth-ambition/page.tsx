@@ -325,6 +325,10 @@ export default function MacbethAmbitionLessonPlan() {
             </li>
           </ul>
         </section>
+
+        <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
+          Macbeth by William Shakespeare is in the public domain. Quotations are reproduced freely.
+        </p>
       </article>
     </main>
   );

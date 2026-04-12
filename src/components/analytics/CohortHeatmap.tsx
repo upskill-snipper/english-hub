@@ -64,7 +64,7 @@ export function CohortHeatmap({
                 return (
                   <td key={m} className="p-0">
                     <Tooltip>
-                      <TooltipTrigger asChild>
+                      <TooltipTrigger>
                         <div
                           className={cn(
                             "flex h-8 w-14 items-center justify-center rounded-md text-[11px] font-semibold tabular-nums transition-transform hover:scale-105",

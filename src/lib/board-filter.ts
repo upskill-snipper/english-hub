@@ -1,4 +1,4 @@
-import type { ExamBoard } from '@/store/board-store';
+import type { ExamBoard } from '@/lib/board/board-store';
 
 /**
  * Board filtering is disabled — all content is accessible to all users

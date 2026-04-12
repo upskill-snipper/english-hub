@@ -23,7 +23,7 @@ const themes = [
     moments:
       'Birling\u2019s "a man has to make his own way" speech; the Inspector\u2019s Act Three speech; Sheila\u2019s "we all helped to kill her".',
     quote:
-      '“We don\u2019t live alone. We are members of one body. We are responsible for each other.”',
+      '”We are members of one body. We are responsible for each other.”',
   },
   {
     title: 'Class and capitalism',
@@ -41,7 +41,7 @@ const themes = [
     moments:
       'Sheila at Milwards; Gerald at the Palace Bar; Eric\u2019s confession; Mrs Birling\u2019s charity decision.',
     quote:
-      '“I don\u2019t suppose for a moment that we can understand why the girl committed suicide. Girls of that class —” — Mrs Birling',
+      '”Girls of that class —“ — Mrs Birling',
   },
   {
     title: 'Age versus youth',
@@ -68,7 +68,7 @@ const themes = [
     moments:
       'The set description (Act One); the passing of the photograph; the Inspector\u2019s exit; the ringing telephone.',
     quote:
-      '“The lighting should be pink and intimate until the Inspector arrives, and then it should be brighter and harder.”',
+      '”The lighting should be pink and intimate until the Inspector arrives, and then\u2026 brighter and harder.”',
   },
 ]
 
@@ -147,6 +147,10 @@ export default async function InspectorCallsThemesPage() {
           </article>
         ))}
       </section>
+
+      <p className="text-xs text-muted-foreground mt-8 border-t border-border/60 pt-4">
+        An Inspector Calls &copy; The Estate of J.B. Priestley. Short quotations reproduced under the fair dealing provision of the Copyright, Designs and Patents Act 1988 for the purpose of criticism and review.
+      </p>
     </div>
   )
 }

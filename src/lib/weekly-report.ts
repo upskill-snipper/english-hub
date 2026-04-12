@@ -1,6 +1,10 @@
 import { sendEmail } from "@/lib/email";
 import { percentageToGCSEGradeLabel } from "@/lib/grades";
 
+// [PHASE:db-integration] This file currently returns mock data.
+// Replace mock queries and hardcoded IDs with Prisma calls once the
+// parent-student linking tables are available.
+
 // ─── Configuration ────────────────────────────────────────────────────
 
 const BASE_URL = process.env.NEXTAUTH_URL || "https://theenglishhub.app";
@@ -41,41 +45,13 @@ export async function generateWeeklyReport(
   studentId: string
 ): Promise<WeeklyReportData | null> {
   try {
-    // TODO: Replace with real database queries using Prisma
-    //
-    // const parent = await prisma.user.findUnique({ where: { id: parentId } });
-    // const student = await prisma.user.findUnique({ where: { id: studentId } });
-    // const weekStart = getStartOfWeek(new Date());
-    // const weekEnd = getEndOfWeek(new Date());
-    //
-    // const essays = await prisma.essay.findMany({
-    //   where: {
-    //     userId: studentId,
-    //     createdAt: { gte: weekStart, lte: weekEnd },
-    //   },
-    //   include: { feedback: true },
-    // });
-    //
-    // const previousWeekEssays = await prisma.essay.findMany({
-    //   where: {
-    //     userId: studentId,
-    //     createdAt: {
-    //       gte: subDays(weekStart, 7),
-    //       lte: subDays(weekEnd, 7),
-    //     },
-    //   },
-    // });
-    //
-    // Calculate averages, trends, projected grades, strengths, etc.
-
-    // For now, return mock data structure to demonstrate the shape
+    // Mock data -- see [PHASE:db-integration] note at top of file
     const now = new Date();
     const weekStart = new Date(now);
     weekStart.setDate(now.getDate() - now.getDay() + 1); // Monday
     const weekEnd = new Date(weekStart);
     weekEnd.setDate(weekStart.getDate() + 6); // Sunday
 
-    // TODO: Remove mock data once database is connected
     const report: WeeklyReportData = {
       parentName: "Parent",
       parentEmail: "parent@example.com",
@@ -110,20 +86,7 @@ export async function sendWeeklyReport(
   parentId: string
 ): Promise<{ success: boolean; sent: number; failed: number }> {
   try {
-    // TODO: Replace with real database query
-    // const parent = await prisma.user.findUnique({
-    //   where: { id: parentId },
-    //   include: { linkedStudents: true },
-    // });
-
-    // TODO: Fetch linked students from database
-    // const linkedStudents = await prisma.parentStudent.findMany({
-    //   where: { parentId },
-    //   include: { student: true },
-    // });
-
-    // For each linked student, generate a report and send
-    // TODO: Replace with real student IDs from database
+    // Mock student list -- see [PHASE:db-integration] note at top of file
     const mockStudentIds = ["student_1"];
     let sent = 0;
     let failed = 0;
