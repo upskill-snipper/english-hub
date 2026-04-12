@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, useCallback } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
@@ -79,47 +79,32 @@ function countWords(text: string): number {
   return trimmed.split(/\s+/).length;
 }
 
-/** Deterministic-ish fake band score generator. */
-function fakeResult(essay: string) {
-  const words = countWords(essay);
-  const lexicalDiversity =
-    new Set(essay.toLowerCase().split(/\W+/).filter(Boolean)).size;
-  const base =
-    Math.min(9, Math.max(3, Math.round((words / 250 + lexicalDiversity / 120))));
-
-  // AOs sum roughly to the grade band
-  const aos = [
-    {
-      code: "AO1",
-      label: "Read, understand and respond; use textual references",
-      score: Math.min(12, base + 3),
-      max: 12,
-    },
-    {
-      code: "AO2",
-      label: "Analyse language, form and structure",
-      score: Math.min(12, base + 2),
-      max: 12,
-    },
-    {
-      code: "AO3",
-      label: "Show understanding of context",
-      score: Math.min(6, Math.max(2, Math.round(base / 1.5))),
-      max: 6,
-    },
-    {
-      code: "AO4",
-      label: "Accurate spelling, punctuation and grammar",
-      score: Math.min(4, Math.max(1, Math.round(base / 2))),
-      max: 4,
-    },
-  ];
-
-  return {
-    grade: base,
-    confidence: 70 + ((words + lexicalDiversity) % 25),
-    aos,
+/**
+ * Map the submit-form board + paper values to the mark-scheme id
+ * expected by the API (e.g. "AQA" + "lit-p1" -> "aqa-lit-paper1").
+ */
+function resolveMarkSchemeId(board: string, paper: string): string {
+  const b = board.toLowerCase();
+  const subjectMap: Record<string, string> = {
+    "lit-p1": "lit-paper1",
+    "lit-p2": "lit-paper2",
+    "lang-p1": "lang-paper1",
+    "lang-p2": "lang-paper2",
   };
+  return `${b}-${subjectMap[paper] ?? paper}`;
+}
+
+/**
+ * Return a user-friendly error message based on an API response status.
+ */
+function friendlyError(status: number, body: string): string {
+  if (status === 401) return "You need to sign in before submitting an essay for marking.";
+  if (status === 403) return body || "You don't have access to AI marking. Please upgrade to Pro.";
+  if (status === 429) return "You've reached the daily marking limit. Please try again tomorrow.";
+  if (status === 400) return body || "There was a problem with your submission. Please check your essay and try again.";
+  if (status === 503) return body || "The AI marking service is temporarily unavailable. Please try again in a few minutes.";
+  if (status >= 500) return "Something went wrong on our end. Please try again later.";
+  return body || "An unexpected error occurred. Please try again.";
 }
 
 /* ─── Page ─────────────────────────────────────────────────── */
@@ -132,6 +117,7 @@ export default function SubmitEssayPage() {
   const [title, setTitle] = useState<string>("");
   const [essay, setEssay] = useState<string>("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const wordCount = countWords(essay);
   const questionOptions = useMemo(
@@ -141,50 +127,113 @@ export default function SubmitEssayPage() {
   const canSubmit =
     board && paper && question && essay.trim().length > 0 && wordCount >= 50;
 
-  async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    if (!canSubmit || isSubmitting) return;
-    setIsSubmitting(true);
+  const handleSubmit = useCallback(
+    async (e: React.FormEvent) => {
+      e.preventDefault();
+      if (!canSubmit || isSubmitting) return;
+      setIsSubmitting(true);
+      setError(null);
 
-    // TODO: call /api/mark endpoint
-    const result = fakeResult(essay);
-    const id = `mk_${Date.now().toString(36)}`;
-    const boardLabel =
-      BOARDS.find((b) => b.value === board)?.label ?? board;
-    const paperLabel = PAPERS.find((p) => p.value === paper)?.label ?? paper;
-    const questionLabel =
-      questionOptions.find((q) => q.value === question)?.label ?? question;
+      const id = `mk_${Date.now().toString(36)}`;
+      const boardLabel =
+        BOARDS.find((b) => b.value === board)?.label ?? board;
+      const paperLabel =
+        PAPERS.find((p) => p.value === paper)?.label ?? paper;
+      const questionLabel =
+        questionOptions.find((q) => q.value === question)?.label ?? question;
+      const markSchemeId = resolveMarkSchemeId(board, paper);
 
-    const entry = {
-      id,
-      title: title.trim() || questionLabel,
-      board: boardLabel,
-      paper: paperLabel,
-      question: questionLabel,
-      essay,
-      wordCount,
-      grade: result.grade,
-      confidence: result.confidence,
-      aos: result.aos,
-      submittedAt: new Date().toISOString(),
-    };
+      try {
+        const res = await fetch("/api/mark", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            markSchemeId,
+            questionId: question,
+            questionText: questionLabel,
+            essay,
+          }),
+        });
 
-    try {
-      const raw = localStorage.getItem("english-hub-marking-history");
-      const prev = raw ? JSON.parse(raw) : [];
-      const next = [entry, ...prev];
-      localStorage.setItem(
-        "english-hub-marking-history",
-        JSON.stringify(next)
-      );
-    } catch {
-      /* ignore */
-    }
+        if (!res.ok) {
+          let message = "";
+          try {
+            const errBody = await res.json();
+            message = errBody?.error ?? errBody?.message ?? "";
+          } catch {
+            /* non-JSON body */
+          }
+          setError(friendlyError(res.status, message));
+          setIsSubmitting(false);
+          return;
+        }
 
-    // Fake latency so the spinner is believable
-    await new Promise((r) => setTimeout(r, 800));
-    router.push(`/marking/results/${id}`);
-  }
+        const data = await res.json();
+        const result = data.result;
+
+        // Map API MarkingResult into the localStorage entry shape
+        const entry = {
+          id,
+          title: title.trim() || questionLabel,
+          board: boardLabel,
+          paper: paperLabel,
+          question: questionLabel,
+          essay,
+          wordCount,
+          // Grade & scoring
+          grade: parseInt(result.predictedGrade, 10) || 0,
+          predictedGrade: result.predictedGrade,
+          gradeBand: result.gradeBand,
+          totalMarks: result.totalMarks,
+          maxMarks: result.maxMarks,
+          confidence: Math.round(
+            (result.totalMarks / result.maxMarks) * 100
+          ),
+          // AO breakdown — map to the shape the results page expects
+          aos: (result.aoScores ?? []).map(
+            (ao: { id: string; label: string; marks: number; maxMarks: number; band?: string; justification?: string; evidence?: string[] }) => ({
+              code: ao.id,
+              label: ao.label,
+              score: ao.marks,
+              max: ao.maxMarks,
+              band: ao.band,
+              justification: ao.justification,
+              evidence: ao.evidence,
+            })
+          ),
+          // Feedback from the AI
+          strengths: result.strengths,
+          improvements: result.improvements,
+          nextStepsToNextGrade: result.nextStepsToNextGrade,
+          summary: result.summary,
+          markSchemeId: result.markSchemeId,
+          remaining: data.remaining,
+          submittedAt: new Date().toISOString(),
+        };
+
+        try {
+          const raw = localStorage.getItem("english-hub-marking-history");
+          const prev = raw ? JSON.parse(raw) : [];
+          const next = [entry, ...prev];
+          localStorage.setItem(
+            "english-hub-marking-history",
+            JSON.stringify(next)
+          );
+        } catch {
+          /* ignore localStorage errors */
+        }
+
+        router.push(`/marking/results/${id}`);
+      } catch (err) {
+        console.error("[marking/submit] fetch error", err);
+        setError(
+          "Could not reach the marking server. Please check your connection and try again."
+        );
+        setIsSubmitting(false);
+      }
+    },
+    [board, paper, question, questionOptions, title, essay, wordCount, canSubmit, isSubmitting, router]
+  );
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 lg:px-8">
@@ -353,6 +402,16 @@ export default function SubmitEssayPage() {
               </div>
             </div>
 
+            {/* ── Error banner ───────────────────────────── */}
+            {error && (
+              <div
+                role="alert"
+                className="rounded-lg border border-destructive/30 bg-destructive/10 px-4 py-3 text-sm text-destructive"
+              >
+                {error}
+              </div>
+            )}
+
             {/* ── Submit ─────────────────────────────────── */}
             <div className="flex flex-col-reverse items-stretch gap-3 sm:flex-row sm:justify-end">
               <Button
@@ -367,9 +426,21 @@ export default function SubmitEssayPage() {
                 size="lg"
                 disabled={!canSubmit || isSubmitting}
               >
-                {isSubmitting ? "Marking..." : "Submit for marking"}
+                {isSubmitting ? (
+                  <span className="flex items-center gap-2">
+                    <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
+                    Marking your essay…
+                  </span>
+                ) : (
+                  "Submit for marking"
+                )}
               </Button>
             </div>
+            {isSubmitting && (
+              <p className="text-center text-xs text-muted-foreground">
+                AI marking usually takes 5–15 seconds. Please don&apos;t close this page.
+              </p>
+            )}
           </form>
         </CardContent>
       </Card>

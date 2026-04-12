@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { PrismaClient } from "@prisma/client";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
+import { rateLimit } from "@/lib/rate-limit";
 
 const prisma = new PrismaClient();
 
@@ -27,6 +28,15 @@ export async function PATCH(
     const { data: { user: authUser }, error: authError } = await supabase.auth.getUser();
     if (authError || !authUser) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+
+    // ── Rate limit: 30 per minute per user ────────────────────────────
+    const rl = await rateLimit(`safeguarding-report:${authUser.id}`, { limit: 30, windowSeconds: 60 });
+    if (!rl.success) {
+      return NextResponse.json(
+        { error: "Too many requests. Please try again later." },
+        { status: 429, headers: { "Retry-After": String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+      );
     }
     const sessionUserId = authUser.id;
 

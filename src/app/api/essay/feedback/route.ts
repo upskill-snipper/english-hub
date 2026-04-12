@@ -166,8 +166,8 @@ export async function POST(request: NextRequest) {
 
     // 2. Rate limit: 20 essays per hour per user
     const rl = await rateLimit(`essay-feedback-v2:${user.id}`, {
-      limit: 20,
-      windowSeconds: 3600,
+      limit: 10,
+      windowSeconds: 86_400,
     });
     if (!rl.success) {
       return rateLimitResponse(rl.resetAt);

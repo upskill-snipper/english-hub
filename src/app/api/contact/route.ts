@@ -32,7 +32,7 @@ export async function POST(request: NextRequest) {
   try {
     // ── Rate limit: 5 per IP per hour ───────────────────
     const ip = getClientIp(request.headers)
-    const rl = await rateLimit(`contact:${ip}`, { limit: 5, windowSeconds: 3600 })
+    const rl = await rateLimit(`contact:${ip}`, { limit: 3, windowSeconds: 3600 })
     if (!rl.success) {
       return NextResponse.json(
         { error: 'Too many requests. Please try again later.' },

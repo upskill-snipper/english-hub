@@ -272,6 +272,36 @@ export default function SampleMarkingPage() {
         />
       </div>
 
+      {/* ── Text-specific essay banks ────────────────────── */}
+      <section className="mt-10 rounded-xl border border-border bg-muted/30 p-5">
+        <h2 className="mb-1 font-heading text-lg font-bold text-foreground">
+          Text-specific essay banks
+        </h2>
+        <p className="mb-4 text-xs text-muted-foreground">
+          Full model essays at multiple grades with paragraph-level examiner
+          annotations.
+        </p>
+        <div className="grid gap-3 sm:grid-cols-2">
+          <Link
+            href="/marking/sample/macbeth"
+            className="group flex items-center gap-3 rounded-lg border border-border bg-card p-4 transition-colors hover:border-primary/40 hover:bg-primary/5"
+          >
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/15 font-heading text-lg font-extrabold text-primary">
+              5
+            </span>
+            <div>
+              <p className="text-sm font-semibold text-foreground group-hover:text-primary">
+                Macbeth
+              </p>
+              <p className="text-xs text-muted-foreground">
+                5 essays &middot; Lady Macbeth &amp; Guilt &middot; Grades 5, 7
+                &amp; 9
+              </p>
+            </div>
+          </Link>
+        </div>
+      </section>
+
       {/* ── Footer CTA ────────────────────────────────────── */}
       <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-between">
         <Button variant="outline" render={<Link href="/marking" />}>

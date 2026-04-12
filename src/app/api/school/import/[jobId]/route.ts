@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { createServerSupabaseClient, createServiceRoleClient } from "@/lib/supabase/server";
 import { verifySchoolMember } from "@/lib/school-auth";
 import { getJobFromCache } from "@/lib/import-job-cache";
+import { rateLimit } from "@/lib/rate-limit";
 
 export const dynamic = "force-dynamic";
 
@@ -25,6 +26,15 @@ export async function GET(
 
     if (authError || !user) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+
+    // ── Rate limit: 60 per minute per user ────────────────────────────
+    const rl = await rateLimit(`school-import-job:${user.id}`, { limit: 60, windowSeconds: 60 });
+    if (!rl.success) {
+      return NextResponse.json(
+        { error: "Too many requests. Please try again later." },
+        { status: 429, headers: { "Retry-After": String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+      );
     }
 
     // 2. School admin check

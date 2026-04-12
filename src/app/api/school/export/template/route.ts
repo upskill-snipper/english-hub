@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { rateLimit, getClientIp } from "@/lib/rate-limit";
 
 export const dynamic = "force-dynamic";
 
@@ -47,6 +48,16 @@ function buildCsv(headers: string[], rows: string[][]): string {
 // ---------------------------------------------------------------------------
 
 export async function GET(request: NextRequest) {
+  // ── Rate limit: 30 per minute per IP ──────────────────────────────────
+  const ip = getClientIp(request.headers);
+  const rl = await rateLimit(`school-export-template:${ip}`, { limit: 30, windowSeconds: 60 });
+  if (!rl.success) {
+    return NextResponse.json(
+      { error: "Too many requests. Please try again later." },
+      { status: 429, headers: { "Retry-After": String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+    );
+  }
+
   const { searchParams } = new URL(request.url);
   const type = (searchParams.get("type") ?? "student").toLowerCase().trim();
 

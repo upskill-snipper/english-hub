@@ -22,8 +22,8 @@ export async function POST(request: NextRequest) {
     // ── Rate limit: 10 attempts per 15 minutes per IP ──────────────────
     const ip = getClientIp(request.headers);
     const rl = await rateLimit(`register:${ip}`, {
-      limit: 10,
-      windowSeconds: 900,
+      limit: 5,
+      windowSeconds: 3600,
     });
     if (!rl.success) {
       return NextResponse.json(

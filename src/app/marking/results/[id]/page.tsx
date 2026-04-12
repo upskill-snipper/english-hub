@@ -22,6 +22,12 @@ import {
 
 /* ─── Types ────────────────────────────────────────────────── */
 
+interface FeedbackItem {
+  point: string;
+  suggestion?: string;
+  quote?: string;
+}
+
 interface StoredResult {
   id: string;
   title: string;
@@ -31,9 +37,18 @@ interface StoredResult {
   essay: string;
   wordCount: number;
   grade: number;
+  predictedGrade?: string;
+  gradeBand?: string;
+  totalMarks?: number;
+  maxMarks?: number;
   confidence: number;
   aos: AOScore[];
   submittedAt: string;
+  // AI feedback fields
+  strengths?: FeedbackItem[];
+  improvements?: FeedbackItem[];
+  nextStepsToNextGrade?: string[];
+  summary?: string;
 }
 
 /* ─── Fallback mock so the page always renders ─────────────── */
@@ -78,40 +93,30 @@ const FALLBACK: StoredResult = {
     "Shakespeare presents ambition in Macbeth as a destructive and corrupting force that ultimately leads to the downfall of those who pursue it without moral restraint. From the outset, Macbeth is described as 'brave Macbeth', a loyal soldier whose reputation is built on heroism. However, once the witches plant the seed of prophecy, his 'vaulting ambition' quickly overwhelms his better judgement.\n\nShakespeare uses the metaphor of 'vaulting ambition, which o'erleaps itself' to suggest that ambition, when unchecked, becomes self-defeating. The equestrian imagery implies a rider attempting to mount a horse with too much force, only to fall on the other side. This foreshadows Macbeth's eventual downfall and positions ambition as inherently dangerous when divorced from virtue.\n\nContextually, a Jacobean audience would have read Macbeth's ambition through the lens of the divine right of kings. Regicide was not just treason but a sin against God's order. Shakespeare, writing during the reign of James I—himself the target of the Gunpowder Plot—deliberately uses Macbeth to reinforce the idea that usurping a divinely-appointed monarch leads to chaos and damnation.\n\nBy the end of the play, Macbeth's ambition has hollowed him out. His famous 'tomorrow and tomorrow and tomorrow' soliloquy reveals a man whose pursuit of power has robbed life of meaning. The repetition mirrors the monotony of a life devoid of purpose, and the metaphor of the 'walking shadow' reduces his existence to something insubstantial. Shakespeare thus uses Macbeth's tragic arc to warn that unrestrained ambition does not elevate—it erodes.",
 };
 
-const FALLBACK_ANNOTATIONS: Annotation[] = [
-  {
-    id: "a1",
-    paragraphIndex: 0,
-    quote: "'brave Macbeth'",
-    kind: "strength",
-    comment:
-      "Strong embedded quotation supporting AO1. Consider commenting on why Shakespeare establishes this before subverting it.",
-  },
-  {
-    id: "a2",
-    paragraphIndex: 1,
-    quote: "equestrian imagery",
-    kind: "technique",
-    comment:
-      "Good AO2 terminology. Push further — what does the collapse of the horse symbolise about self-destruction?",
-  },
-  {
-    id: "a3",
-    paragraphIndex: 2,
-    quote: "divine right of kings",
-    kind: "strength",
-    comment:
-      "Precise and relevant AO3 context. This links the argument to Jacobean politics clearly.",
-  },
-  {
-    id: "a4",
-    paragraphIndex: 3,
-    quote: "reduces his existence to something insubstantial",
-    kind: "improve",
-    comment:
-      "Idea is strong but phrasing is general. Try: 'the metaphor reduces his identity to a mere theatrical illusion' for sharper AO2.",
-  },
+// Fallback feedback for legacy entries that don't have AI feedback stored
+const FALLBACK_STRENGTHS = [
+  "Clear thesis sustained across the response",
+  "Judicious use of embedded quotations supporting AO1",
+  "Relevant contextual links to Jacobean politics (AO3)",
 ];
+const FALLBACK_IMPROVEMENTS = [
+  "Push analytical vocabulary beyond general description",
+  "Zoom in on individual word choices for deeper AO2",
+  "Maintain consistent formality in phrasing",
+];
+const FALLBACK_NEXT_STEPS = [
+  "Develop conceptualised arguments — show the examiner what the writer is DOING",
+  "Integrate methods analysis at word/phrase level, not just metaphor-level",
+  "Link context to the writer's intention, not just background facts",
+];
+
+/** Find the paragraph index that contains the given quote substring. */
+function findParagraphForQuote(paragraphs: string[], quote: string): number {
+  const normalised = quote.toLowerCase().replace(/['']/g, "'");
+  return paragraphs.findIndex((p) =>
+    p.toLowerCase().replace(/['']/g, "'").includes(normalised)
+  );
+}
 
 /* ─── Page ─────────────────────────────────────────────────── */
 
@@ -157,26 +162,32 @@ export default function ResultsPage({
     .map((p) => p.trim())
     .filter(Boolean);
 
-  // Use fallback annotations — real ones would come from /api/mark
-  const annotations = FALLBACK_ANNOTATIONS.filter(
-    (a) => a.paragraphIndex < paragraphs.length
-  );
+  // Build annotations from AO evidence quotes if available
+  const annotations: Annotation[] = result.aos
+    .flatMap((ao, aoIdx) => {
+      const evidence = (ao as AOScore & { evidence?: string[] }).evidence;
+      if (!Array.isArray(evidence)) return [];
+      return evidence.map((quote, evIdx) => ({
+        id: `ao${aoIdx}-ev${evIdx}`,
+        paragraphIndex: findParagraphForQuote(paragraphs, quote),
+        quote,
+        kind: "technique" as const,
+        comment: (ao as AOScore & { justification?: string }).justification ?? `${ao.code}: ${ao.label}`,
+      }));
+    })
+    .filter((a) => a.paragraphIndex >= 0 && a.paragraphIndex < paragraphs.length);
 
-  const strengths = [
-    "Clear thesis sustained across the response",
-    "Judicious use of embedded quotations supporting AO1",
-    "Relevant contextual links to Jacobean politics (AO3)",
-  ];
-  const improvements = [
-    "Push analytical vocabulary beyond general description",
-    "Zoom in on individual word choices for deeper AO2",
-    "Maintain consistent formality in phrasing",
-  ];
-  const nextGradeAdvice = [
-    "Develop conceptualised arguments — show the examiner what the writer is DOING",
-    "Integrate methods analysis at word/phrase level, not just metaphor-level",
-    "Link context to the writer's intention, not just background facts",
-  ];
+  // Use real AI feedback when available, fall back to the hardcoded defaults
+  // only if the stored result doesn't include AI feedback (e.g. old entries)
+  const strengths: string[] = result.strengths?.length
+    ? result.strengths.map((s) => s.point)
+    : FALLBACK_STRENGTHS;
+  const improvements: string[] = result.improvements?.length
+    ? result.improvements.map((s) => s.point)
+    : FALLBACK_IMPROVEMENTS;
+  const nextGradeAdvice: string[] = result.nextStepsToNextGrade?.length
+    ? result.nextStepsToNextGrade
+    : FALLBACK_NEXT_STEPS;
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
@@ -277,6 +288,20 @@ export default function ResultsPage({
         </Card>
       </div>
 
+      {/* ── Summary ─────────────────────────────────────────── */}
+      {result.summary && (
+        <Card className="mt-6">
+          <CardHeader>
+            <CardTitle>Examiner summary</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-sm leading-relaxed text-foreground">
+              {result.summary}
+            </p>
+          </CardContent>
+        </Card>
+      )}
+
       {/* ── Annotated essay ───────────────────────────────── */}
       <div className="mt-6">
         <AnnotatedEssay paragraphs={paragraphs} annotations={annotations} />
@@ -292,7 +317,6 @@ export default function ResultsPage({
         </Button>
       </div>
 
-      {/* TODO: call /api/mark endpoint — currently using localStorage + FALLBACK */}
     </div>
   );
 }

@@ -10,6 +10,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createServerSupabaseClient, createServiceRoleClient } from '@/lib/supabase/server'
 import { getTierForReferralCount } from '@/lib/affiliate/tiers'
+import { rateLimit } from '@/lib/rate-limit'
 
 export async function GET(request: NextRequest) {
   try {
@@ -20,6 +21,15 @@ export async function GET(request: NextRequest) {
 
     if (!user) {
       return NextResponse.json({ error: 'Authentication required' }, { status: 401 })
+    }
+
+    // ── Rate limit: 30 per minute per user ────────────────────────────
+    const rl = await rateLimit(`affiliate-payouts:${user.id}`, { limit: 30, windowSeconds: 60 })
+    if (!rl.success) {
+      return NextResponse.json(
+        { error: 'Too many requests. Please try again later.' },
+        { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+      )
     }
 
     const { searchParams } = request.nextUrl

@@ -66,7 +66,7 @@ async function parsePayload(request: NextRequest): Promise<ClickPayload | null> 
 async function handle(request: NextRequest): Promise<NextResponse> {
   const ip = getClientIp(request.headers)
   const rl = await rateLimit(`affiliate-click:${ip}`, {
-    limit: 120,
+    limit: 100,
     windowSeconds: 60,
   })
   if (!rl.success) {

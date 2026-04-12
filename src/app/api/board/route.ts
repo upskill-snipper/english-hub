@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
 import type { ExamBoard } from '@/lib/board/board-config'
+import { rateLimit, getClientIp } from '@/lib/rate-limit'
 
 // ─── Validation ─────────────────────────────────────────────────────────
 
@@ -26,6 +27,16 @@ const COOKIE_MAX_AGE = 60 * 60 * 24 * 365 // 1 year
 // server components can read it on the next request.
 
 export async function POST(request: NextRequest) {
+  // ── Rate limit: 10 per minute per IP ──────────────────────────────────
+  const ip = getClientIp(request.headers)
+  const rl = await rateLimit(`board:${ip}`, { limit: 10, windowSeconds: 60 })
+  if (!rl.success) {
+    return NextResponse.json(
+      { error: 'Too many requests. Please try again later.' },
+      { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+    )
+  }
+
   let body: unknown
   try {
     body = await request.json()

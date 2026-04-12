@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import PptxGenJS from 'pptxgenjs'
+import { rateLimit, getClientIp } from '@/lib/rate-limit'
 
 // ─── Brand constants ──────────────────────────────────────────────────────────
 
@@ -334,6 +335,16 @@ function buildResourcePptx(data: ResourcePptxData): PptxGenJS {
 
 export async function POST(request: NextRequest) {
   try {
+    // ── Rate limit: 20 per hour per IP ──────────────────────────────────
+    const ip = getClientIp(request.headers)
+    const rl = await rateLimit(`generate-pptx:${ip}`, { limit: 20, windowSeconds: 3600 })
+    if (!rl.success) {
+      return NextResponse.json(
+        { error: 'Too many requests. Please try again later.' },
+        { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+      )
+    }
+
     const body = await request.json()
     const { variant, topic, data } = body as {
       variant: 'lesson-plan' | 'resource'
