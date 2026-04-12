@@ -210,6 +210,40 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     })),
 
+    // Analysis pages
+    ...['macbeth', 'jekyll-hyde', 'inspector-calls', 'christmas-carol',
+      'aqa-love-relationships', 'aqa-power-conflict', 'language-paper', 'revision',
+    ].map((slug) => ({
+      url: `${base}/analysis/${slug}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })),
+
+    // Assessment
+    { url: `${base}/assessment/reading`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+
+    // Revision text sub-pages
+    ...['macbeth', 'romeo-and-juliet', 'jekyll-and-hyde', 'christmas-carol',
+      'an-inspector-calls', 'animal-farm', 'lord-of-the-flies', 'great-expectations',
+      'frankenstein', 'jane-eyre', 'much-ado-about-nothing', 'the-tempest',
+      'of-mice-and-men',
+    ].map((text) => ({
+      url: `${base}/revision/texts/${text}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })),
+
+    // Revision poetry sub-pages
+    { url: `${base}/revision/poetry/power-and-conflict`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${base}/revision/poetry/love-and-relationships`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+
+    // Auth pages (public)
+    { url: `${base}/auth/register`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/auth/login`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${base}/auth/teacher-register`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+
     // Info & legal pages
     { url: `${base}/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${base}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
