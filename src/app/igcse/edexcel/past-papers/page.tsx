@@ -35,19 +35,19 @@ export const metadata: Metadata = {
 const officialSources = [
   {
     name: 'Pearson Qualifications — Past papers and mark schemes',
-    href: 'https://qualifications.pearson.com/en/qualifications/edexcel-international-gcses/english-literature-2016.html',
+    href: 'https://qualifications.pearson.com/en/qualifications/edexcel-international-gcses.html',
     description:
       'The official Edexcel site hosts question papers, mark schemes and examiner reports for every series since the 2016 specification launch.',
   },
   {
     name: 'Pearson Qualifications — Specification and sample assessment',
-    href: 'https://qualifications.pearson.com/en/qualifications/edexcel-international-gcses/english-literature-2016.html',
+    href: 'https://qualifications.pearson.com/en/qualifications/edexcel-international-gcses.html',
     description:
       'Sample assessment materials (SAMs), the full specification document and the poetry anthology are all available as free downloads.',
   },
   {
     name: 'Pearson Examiner reports',
-    href: 'https://qualifications.pearson.com/en/qualifications/edexcel-international-gcses/english-literature-2016.html',
+    href: 'https://qualifications.pearson.com/en/qualifications/edexcel-international-gcses.html',
     description:
       'Examiner commentary for each series explains where candidates lost marks and highlights the techniques top-band answers use.',
   },

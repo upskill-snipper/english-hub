@@ -142,7 +142,7 @@ export default function GradeBoundariesPage() {
             <strong>guide</strong> only. Your actual grade boundary may be
             slightly higher or lower. Always check the{" "}
             <a
-              href="https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-igcse-english-first-language-0500/grade-thresholds/"
+              href="https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-igcse-english-first-language-0500/past-papers/"
               target="_blank"
               rel="noopener noreferrer"
               className="underline font-semibold hover:text-warn-900"

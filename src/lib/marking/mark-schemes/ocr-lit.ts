@@ -2,7 +2,7 @@
 // J352 — Component 01 and Component 02.
 // Based on the OCR J352 specification (9-1 GCSE).
 //
-// Source: https://www.ocr.org.uk/qualifications/gcse/english-literature-j352-from-2015/
+// Source: https://www.ocr.org.uk/qualifications/gcse/english-literature-j352/
 // ────────────────────────────────────────────────────────────────────────────
 
 import type { MarkScheme, AssessmentObjective } from "./types"
@@ -306,7 +306,7 @@ export const ocrLitComponent01: MarkScheme = {
   durationMinutes: 120,
   version: "J352/01",
   sourceUrl:
-    "https://www.ocr.org.uk/qualifications/gcse/english-literature-j352-from-2015/",
+    "https://www.ocr.org.uk/qualifications/gcse/english-literature-j352/",
   questions: [
     {
       id: "Section A",
@@ -351,7 +351,7 @@ export const ocrLitComponent02: MarkScheme = {
   durationMinutes: 120,
   version: "J352/02",
   sourceUrl:
-    "https://www.ocr.org.uk/qualifications/gcse/english-literature-j352-from-2015/",
+    "https://www.ocr.org.uk/qualifications/gcse/english-literature-j352/",
   questions: [
     {
       id: "Section A",

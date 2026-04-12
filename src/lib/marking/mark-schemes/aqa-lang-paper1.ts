@@ -2,7 +2,7 @@
 // Explorations in Creative Reading and Writing — 1 hour 45 minutes, 80 marks.
 // Based on the AQA 8700 specification.
 //
-// Source: https://www.aqa.org.uk/subjects/english/gcse/english-language-8700
+// Source: https://www.aqa.org.uk/subjects/english/gcse/english-8700
 // ────────────────────────────────────────────────────────────────────────────
 
 import type { MarkScheme, AssessmentObjective } from "./types"
@@ -346,7 +346,7 @@ export const aqaLangPaper1: MarkScheme = {
   durationMinutes: 105,
   version: "8700/1",
   sourceUrl:
-    "https://www.aqa.org.uk/subjects/english/gcse/english-language-8700/assessment-resources",
+    "https://www.aqa.org.uk/subjects/english/gcse/english-8700/assessment-resources",
   questions: [
     {
       id: "Q1",

@@ -89,7 +89,7 @@ export default function GradeBoundariesPage() {
             only. Your actual grade boundary may be slightly higher or lower.
             Always check the{" "}
             <a
-              href="https://www.wjec.co.uk/qualifications/grade-boundaries/"
+              href="https://www.eduqas.co.uk/qualifications/english-literature-gcse/"
               target="_blank"
               rel="noopener noreferrer"
               className="underline font-semibold hover:text-warn-900"

@@ -74,8 +74,8 @@ const SPEC_LINKS = [
   {
     board: "AQA",
     links: [
-      { label: "English Language (8700)", url: "https://www.aqa.org.uk/subjects/english/gcse/english-language-8700" },
-      { label: "English Literature (8702)", url: "https://www.aqa.org.uk/subjects/english/gcse/english-literature-8702" },
+      { label: "English Language (8700)", url: "https://www.aqa.org.uk/subjects/english/gcse/english-8700" },
+      { label: "English Literature (8702)", url: "https://www.aqa.org.uk/subjects/english/gcse/english-8702" },
     ],
     color: "border-primary",
   },
@@ -90,8 +90,8 @@ const SPEC_LINKS = [
   {
     board: "OCR",
     links: [
-      { label: "English Language (J351)", url: "https://www.ocr.org.uk/qualifications/gcse/english-language-j351-from-2015/" },
-      { label: "English Literature (J352)", url: "https://www.ocr.org.uk/qualifications/gcse/english-literature-j352-from-2015/" },
+      { label: "English Language (J351)", url: "https://www.ocr.org.uk/qualifications/gcse/english-language-j351/" },
+      { label: "English Literature (J352)", url: "https://www.ocr.org.uk/qualifications/gcse/english-literature-j352/" },
     ],
     color: "border-primary",
   },

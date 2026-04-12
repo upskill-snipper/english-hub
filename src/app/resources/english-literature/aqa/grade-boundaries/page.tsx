@@ -91,7 +91,7 @@ export default function GradeBoundariesPage() {
             only. Your actual grade boundary may be slightly higher or lower.
             Always check the{" "}
             <a
-              href="https://www.aqa.org.uk/results/grade-boundaries"
+              href="https://www.aqa.org.uk/exams-administration/results-days/grade-boundaries"
               target="_blank"
               rel="noopener noreferrer"
               className="underline font-semibold hover:text-warn-900"

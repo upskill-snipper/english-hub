@@ -89,7 +89,7 @@ export default function GradeBoundariesPage() {
             only. Your actual grade boundary may be slightly higher or lower.
             Always check the{" "}
             <a
-              href="https://www.ocr.org.uk/administration/stage-4-results/grade-boundaries/"
+              href="https://www.ocr.org.uk/administration/results/"
               target="_blank"
               rel="noopener noreferrer"
               className="underline font-semibold hover:text-warn-900"

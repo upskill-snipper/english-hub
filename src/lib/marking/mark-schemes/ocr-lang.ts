@@ -2,7 +2,7 @@
 // J351 — Component 01 and Component 02.
 // Based on the OCR J351 specification (9-1 GCSE).
 //
-// Source: https://www.ocr.org.uk/qualifications/gcse/english-language-j351-from-2015/
+// Source: https://www.ocr.org.uk/qualifications/gcse/english-language-j351/
 // ────────────────────────────────────────────────────────────────────────────
 
 import type { MarkScheme, AssessmentObjective } from "./types"
@@ -434,7 +434,7 @@ export const ocrLangComponent01: MarkScheme = {
   durationMinutes: 120,
   version: "J351/01",
   sourceUrl:
-    "https://www.ocr.org.uk/qualifications/gcse/english-language-j351-from-2015/",
+    "https://www.ocr.org.uk/qualifications/gcse/english-language-j351/",
   questions: [
     {
       id: "Q1",
@@ -755,7 +755,7 @@ export const ocrLangComponent02: MarkScheme = {
   durationMinutes: 120,
   version: "J351/02",
   sourceUrl:
-    "https://www.ocr.org.uk/qualifications/gcse/english-language-j351-from-2015/",
+    "https://www.ocr.org.uk/qualifications/gcse/english-language-j351/",
   questions: [
     {
       id: "Q1",

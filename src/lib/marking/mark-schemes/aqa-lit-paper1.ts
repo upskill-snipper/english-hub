@@ -3,7 +3,7 @@
 // Based on the AQA 8702 specification. Descriptors are summarised from the
 // publicly-available AQA mark schemes and generic mark scheme grids.
 //
-// Source: https://www.aqa.org.uk/subjects/english/gcse/english-literature-8702
+// Source: https://www.aqa.org.uk/subjects/english/gcse/english-8702
 // ────────────────────────────────────────────────────────────────────────────
 
 import type { MarkScheme, AssessmentObjective } from "./types"
@@ -294,7 +294,7 @@ export const aqaLitPaper1: MarkScheme = {
   durationMinutes: 105,
   version: "8702/1",
   sourceUrl:
-    "https://www.aqa.org.uk/subjects/english/gcse/english-literature-8702/assessment-resources",
+    "https://www.aqa.org.uk/subjects/english/gcse/english-8702/assessment-resources",
   questions: [
     {
       id: "Section A",
