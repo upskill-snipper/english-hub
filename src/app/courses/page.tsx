@@ -17,6 +17,8 @@ import {
 import { loadAllCourses } from '@/data/course-loader'
 import type { CourseData } from '@/data/courses'
 import { useAuthStore } from '@/store/auth-store'
+import { useBoard } from '@/hooks/useBoard'
+import type { ExamBoard } from '@/hooks/useBoard'
 import { PRICING, PRICING_DISPLAY } from '@/constants/pricing'
 
 import {
@@ -138,12 +140,38 @@ function extractBoards(courses: CourseData[]): string[] {
   return Array.from(boards).sort()
 }
 
+/**
+ * Map the user's selected ExamBoard slug to the display-name values used
+ * in course data.  A single ExamBoard may match multiple display names
+ * (e.g. Edexcel IGCSE courses are tagged either "Edexcel" or "Edexcel IGCSE").
+ */
+function boardSlugToDisplayNames(board: ExamBoard): string[] {
+  switch (board) {
+    case 'aqa':
+      return ['AQA']
+    case 'edexcel':
+      return ['Edexcel']
+    case 'ocr':
+      return ['OCR']
+    case 'eduqas':
+      return ['WJEC']
+    case 'edexcel-igcse':
+      return ['Edexcel', 'Edexcel IGCSE', 'Edexcel IAL']
+    case 'cambridge-0500':
+    case 'cambridge-0990':
+      return ['CAIE', 'Cambridge']
+    default:
+      return []
+  }
+}
+
 /* ================================================================
    Page Component
    ================================================================ */
 
 export default function CourseCataloguePage() {
   const { user, profile } = useAuthStore()
+  const { board: userBoard, isHydrated: boardHydrated } = useBoard()
 
   const [courses, setCourses] = useState<CourseData[]>([])
   const [isLoading, setIsLoading] = useState(true)
@@ -157,6 +185,7 @@ export default function CourseCataloguePage() {
     new Set(),
   )
 
+  const hasManuallySelectedBoard = useRef(false)
   const hasManuallySelectedTier = useRef(false)
 
   useEffect(() => {
@@ -165,6 +194,19 @@ export default function CourseCataloguePage() {
       setIsLoading(false)
     })
   }, [])
+
+  // Sync board filter from the global board store when it hydrates,
+  // unless the user has already manually changed the board dropdown.
+  useEffect(() => {
+    if (!boardHydrated || hasManuallySelectedBoard.current) return
+    if (!userBoard) return
+    const displayNames = boardSlugToDisplayNames(userBoard)
+    if (displayNames.length > 0) {
+      // Use the first display name as the filter value; the filtering
+      // logic below will match against all display names for the board.
+      setBoardFilter(displayNames[0])
+    }
+  }, [boardHydrated, userBoard])
 
   useEffect(() => {
     if (hasManuallySelectedTier.current) return
@@ -178,12 +220,26 @@ export default function CourseCataloguePage() {
 
   const availableBoards = useMemo(() => extractBoards(courses), [courses])
 
+  // The set of board display names that match the active boardFilter.
+  // When the filter comes from the user's global board selection,
+  // a single ExamBoard may correspond to several display names.
+  const activeBoardNames = useMemo<Set<string> | null>(() => {
+    if (boardFilter === 'all') return null
+    // Check if the boardFilter was set from an ExamBoard slug
+    if (userBoard) {
+      const names = boardSlugToDisplayNames(userBoard)
+      if (names.includes(boardFilter)) return new Set(names)
+    }
+    // Manual dropdown pick — match exactly
+    return new Set([boardFilter])
+  }, [boardFilter, userBoard])
+
   /* ── filtered + sorted ─────────────────────────────────────── */
 
   const filtered = useMemo(() => {
     let result = courses.filter((c) => {
       if (activeTier !== 'All' && c.tier?.toUpperCase() !== activeTier) return false
-      if (boardFilter !== 'all' && c.board !== boardFilter) return false
+      if (activeBoardNames && !(c.board && activeBoardNames.has(c.board))) return false
       if (searchQuery.trim()) {
         const q = searchQuery.toLowerCase()
         if (
@@ -201,7 +257,7 @@ export default function CourseCataloguePage() {
     if (result.length === 0 && courses.length > 0 && !searchQuery.trim()) {
       result = courses.filter((c) => {
         if (activeTier !== 'All' && c.tier?.toUpperCase() !== activeTier) return false
-        if (boardFilter !== 'all' && c.board !== boardFilter) return false
+        if (activeBoardNames && !(c.board && activeBoardNames.has(c.board))) return false
         if (activeCategory !== 'all' && deriveCategory(c) !== activeCategory) return false
         return true
       })
@@ -223,7 +279,7 @@ export default function CourseCataloguePage() {
   }, [
     courses,
     activeTier,
-    boardFilter,
+    activeBoardNames,
     searchQuery,
     activeCategory,
     sortKey,
@@ -423,7 +479,10 @@ export default function CourseCataloguePage() {
           </div>
 
           {availableBoards.length > 0 && (
-            <Select value={boardFilter} onValueChange={setBoardFilter}>
+            <Select value={boardFilter} onValueChange={(v) => {
+              hasManuallySelectedBoard.current = true
+              setBoardFilter(v)
+            }}>
               <SelectTrigger className="w-[140px]">
                 <SelectValue placeholder="Exam Board" />
               </SelectTrigger>
@@ -493,6 +552,7 @@ export default function CourseCataloguePage() {
                 setSearchQuery('')
                 setActiveCategory('all')
                 handleTierChange('All')
+                hasManuallySelectedBoard.current = true
                 setBoardFilter('all')
               }}
               className="mt-6 inline-flex items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 transition-colors"
